@@ -56,7 +56,7 @@ Hay diferencias menores en otros lugares, como al final de Génesis 31, donde el
 
 ## Cómo maneja Open Word Bible los números
 
-Open Word Bible numera cada versículo como lo hace su texto fuente. Para el Antiguo Testamento es el Códice de Leningrado de Westminster, así que Malaquías tiene tres capítulos, Joel cuatro, y el título de un salmo es su primer versículo. Donde esto importa, el primer versículo afectado lleva una nota al pie. La de Malaquías 3:19 explica que sus seis versículos se numeran 4:1-6 en muchas otras Biblias, y que Open Word Bible sigue la numeración del texto hebreo que traduce. Joel 3:1 tiene una nota del mismo tipo, y también el título del Salmo 3, que todavía no está traducido al español, así que aquí se muestra en inglés:
+Open Word Bible numera cada versículo como lo hace su texto fuente. Para el Antiguo Testamento es el Códice de Leningrado de Westminster, así que Malaquías tiene tres capítulos, Joel cuatro, y el título de un salmo es su primer versículo. Donde esto importa, el primer versículo afectado lleva una nota al pie. La de Malaquías 3:19 explica que sus seis versículos se numeran 4:1-6 en muchas otras Biblias, y que Open Word Bible sigue la numeración del texto hebreo que traduce. Joel 3:1 tiene una nota del mismo tipo, y también el título del Salmo 3:
 
 > {{OWB:PSA.3.1.s1:B}}
 

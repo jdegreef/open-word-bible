@@ -72,6 +72,26 @@
           "L": "तो मैं कहता हूँ, क्या परमेश्वर ने अपनी प्रजा को ठुकरा दिया?",
           "B": "तो मैं पूछता हूँ: क्या परमेश्वर ने अपनी प्रजा को ठुकरा दिया है?",
           "R": "तो मैं यह पूछता हूँ: क्या परमेश्वर ने अपने ही लोगों को ठुकरा दिया है?"
+        },
+        "uk": {
+          "L": "Отже, кажу: хіба Бог відкинув свій народ?",
+          "B": "Тож я питаю: чи Бог відкинув свій народ?",
+          "R": "Тож я питаю: чи відкинув Бог свій власний народ?"
+        },
+        "ja": {
+          "L": "それでは、わたしは言います。神はご自分の民を退けられたのでしょうか？",
+          "B": "それでは、尋ねます。神はご自分の民を退けられたのでしょうか？",
+          "R": "では、こう尋ねます。神はご自分の民を見捨てられたのでしょうか？"
+        },
+        "id": {
+          "L": "Jadi aku berkata, apakah Allah telah menolak umat-{{deity_pronoun:nya|Nya}}?",
+          "B": "Jadi aku bertanya: apakah Allah telah menolak umat-{{deity_pronoun:nya|Nya}}?",
+          "R": "Jadi saya bertanya: Apakah Allah sudah menolak umat-{{deity_pronoun:nya|Nya}} sendiri?"
+        },
+        "zh": {
+          "L": "那么我要说：难道{{god_term:神|上帝}}丢弃了{{deity_pronoun:他|祂}}的子民吗？",
+          "B": "所以我要问：{{god_term:神|上帝}}已经弃绝{{deity_pronoun:他|祂}}的子民了吗？",
+          "R": "所以我要问：{{god_term:神|上帝}}已经抛弃了{{deity_pronoun:他|祂}}自己的百姓吗？"
         }
       },
       "decisions": [
@@ -321,6 +341,68 @@
           "reason": "Devanagari has no capital letters, so the setting has nothing to change (style guide section 7); God takes the honorific third person and the reflexive \"अपनी\" at every level. The same holds through this file.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011001004"
+          ],
+          "choice": "\"退ける\" (L, B); \"見捨てる\" (R)",
+          "alternatives": [
+            "\"捨てる\" at every level"
+          ],
+          "reason": "The verb means to push away or cast off (m3). \"退ける\" keeps the picture of pushing away; Readable says \"見捨てる\", the everyday word for abandoning someone who is one's own. The same pair is used in verse 2.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n45011001006"
+          ],
+          "choice": "\"{{god_term:神|上帝}}\": 神 by default, 上帝 as the reader's setting",
+          "alternatives": [
+            "a fixed \"神\"",
+            "a fixed \"上帝\""
+          ],
+          "reason": "Every word naming the one God is a god_term span, so the reader can choose 神 or 上帝; the meaning is the same.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011001008"
+          ],
+          "choice": "\"子民\" (L, B); \"百姓\" (R)",
+          "alternatives": [],
+          "reason": "The glossary's words for God's people, as in 9:25-26.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -400,6 +482,26 @@
           "L": "ऐसा कभी न हो! क्योंकि मैं भी इस्राएली हूँ, अब्राहम के वंश का, बिन्यामीन के गोत्र का।",
           "B": "कदापि नहीं! मैं स्वयं इस्राएली हूँ, अब्राहम का वंशज, बिन्यामीन के गोत्र का।",
           "R": "बिलकुल नहीं! मैं भी तो इस्राएली हूँ। मैं अब्राहम के परिवार से हूँ, बिन्यामीन के गोत्र से।"
+        },
+        "uk": {
+          "L": "Нехай не буде! Бо і я ізраїльтянин, з насіння Авраама, з племені Веніямина.",
+          "B": "Аж ніяк! Я й сам ізраїльтянин, нащадок Авраама, з племені Веніямина.",
+          "R": "Звичайно, ні! Я теж ізраїльтянин. Я походжу з родини Авраама, з племені Веніямина."
+        },
+        "ja": {
+          "L": "決してそうではありません！なぜなら、わたしもまたイスラエル人であり、アブラハムの子孫、ベニヤミンの部族の[者]だからです。",
+          "B": "決してそうではありません！わたし自身もイスラエル人で、アブラハムの子孫であり、ベニヤミン族の者です。",
+          "R": "そんなことはありません！わたしもイスラエル人です。わたしはアブラハムの子孫で、ベニヤミン族の出身です。"
+        },
+        "id": {
+          "L": "Jangan sampai terjadi! Sebab aku juga orang Israel, dari keturunan Abraham, dari suku Benyamin.",
+          "B": "Sekali-kali tidak! Aku sendiri orang Israel, keturunan Abraham, dari suku Benyamin.",
+          "R": "Tentu saja tidak! Saya juga orang Israel. Saya berasal dari keluarga Abraham, dari suku Benyamin."
+        },
+        "zh": {
+          "L": "但愿不会这样！因为我本身也是以色列人，出自亚伯拉罕的后裔，[属于]便雅悯支派。",
+          "B": "绝对不是！我自己就是以色列人，是亚伯拉罕的后代，来自便雅悯支派。",
+          "R": "当然不是！我也是以色列人。我来自亚伯拉罕的家族，是便雅悯支派的人。"
         }
       },
       "decisions": [
@@ -699,6 +801,52 @@
           "reason": "The same strong denials as in 9:14, without adding a word for God that the Greek does not have.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011001018",
+            "n45011001021"
+          ],
+          "choice": "\"子孫\" (every level); \"ベニヤミン\"",
+          "alternatives": [
+            "\"種\" (L)",
+            "\"家系\" (R)"
+          ],
+          "reason": "\"Seed\" means offspring; \"子孫\" is the word used for it through Romans (1:3; 4:13-18; 9:7-8), since \"種\" for offspring is unnatural in modern Japanese. The tribe's name takes the usual Japanese form ベニヤミン, used throughout Romans.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011001010",
+            "n45011001011"
+          ],
+          "choice": "\"但愿不会这样！\" (L); \"绝对不是！\" (B); \"当然不是！\" (R)",
+          "alternatives": [
+            "绝不可以 / 当然不行 after a question about what we should do",
+            "断乎不是"
+          ],
+          "reason": "Paul's strongest denial, mē genoito (3:4, 6, 31; 6:2, 15; 7:7, 13; 9:14; 11:1, 11). Literal keeps the wish form, as Luke 20:16 renders the same Greek (但愿不会这样); Balanced and Readable give a plain, strong denial. The English has one form at each level whatever the question asks, so Chinese keeps one wording per level through the letter rather than varying it by the question. The Union Version's 断乎不是 / 断乎不可 is old-Bible Chinese.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -775,6 +923,26 @@
           "L": "परमेश्वर ने अपनी प्रजा को नहीं ठुकराया, जिसे उन्होंने पहले से जाना।",
           "B": "परमेश्वर ने अपनी उस प्रजा को नहीं ठुकराया है जिसे उन्होंने पहले से जान लिया था।",
           "R": "नहीं, परमेश्वर ने अपने लोगों को नहीं ठुकराया है। उन्होंने शुरू से ही उन्हें जाना और उन्हें चुन लिया था।"
+        },
+        "uk": {
+          "L": "Не відкинув Бог свого народу, який {{deity_pronoun:він|Він}} наперед пізнав.",
+          "B": "Бог не відкинув свого народу, який {{deity_pronoun:він|Він}} заздалегідь пізнав.",
+          "R": "Ні, Бог не відкинув свого народу. Він знав їх і вибрав їх від самого початку."
+        },
+        "ja": {
+          "L": "神は、前もって知っておられたご自分の民を退けられませんでした。",
+          "B": "神は、前もって知っておられたご自分の民を退けてはおられません。",
+          "R": "いいえ、神はご自分の民を見捨ててはおられません。神は初めから彼らを知り、選んでおられたのです。"
+        },
+        "id": {
+          "L": "Allah tidak menolak umat-{{deity_pronoun:nya|Nya}}, yang telah {{deity_pronoun:dia|Dia}} kenal sebelumnya.",
+          "B": "Allah tidak menolak umat-{{deity_pronoun:nya|Nya}}, yang telah {{deity_pronoun:dia|Dia}} kenal sebelumnya.",
+          "R": "Tidak, Allah tidak menolak umat-{{deity_pronoun:nya|Nya}}. Sejak semula {{deity_pronoun:dia|Dia}} sudah mengenal dan memilih mereka."
+        },
+        "zh": {
+          "L": "{{god_term:神|上帝}}并未丢弃{{deity_pronoun:他|祂}}的子民，就是{{deity_pronoun:他|祂}}预先所认识的。",
+          "B": "{{god_term:神|上帝}}没有弃绝{{deity_pronoun:他|祂}}的子民，就是{{deity_pronoun:他|祂}}早已预先认识的子民。",
+          "R": "不，{{god_term:神|上帝}}没有抛弃{{deity_pronoun:他|祂}}的百姓。{{deity_pronoun:他|祂}}从起初就认识他们，拣选了他们。"
         }
       },
       "decisions": [
@@ -914,6 +1082,26 @@
           "reason": "\"Предвидел\" would mean only knowing what will happen; the meaning decision takes \"foreknew\" as knowing and choosing beforehand, which \"предузнал\" and \"знал наперёд\" leave open and Readable spells out.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011002009"
+          ],
+          "choice": "\"前もって知っておられた\"",
+          "alternatives": [
+            "\"予知された\""
+          ],
+          "reason": "The verb means knowing beforehand in the sense of choosing as one's own (m1). \"予知\" sounds like mere prediction; \"前もって知る\" keeps the personal knowing, which Readable spells out as knowing and choosing.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -997,6 +1185,26 @@
           "L": "या क्या तुम नहीं जानते कि पवित्रशास्त्र एलिय्याह [के प्रसंग] में क्या कहता है, कि वह इस्राएल के विरुद्ध परमेश्वर से विनती करता है?",
           "B": "या क्या तुम नहीं जानते कि पवित्रशास्त्र एलिय्याह की कथा में क्या कहता है, कि उसने इस्राएल के विरुद्ध परमेश्वर से कैसे दुहाई दी?",
           "R": "क्या तुम्हें याद है कि पवित्रशास्त्र एलिय्याह की कहानी में क्या कहता है? उसने इस्राएल के लोगों के बारे में परमेश्वर से शिकायत की थी।"
+        },
+        "uk": {
+          "L": "Чи ви не знаєте, що каже Писання в [розповіді про] Іллю, як він звертається до Бога проти Ізраїлю?",
+          "B": "Чи ви не знаєте, що каже Писання в розповіді про Іллю, як він звинувачував Ізраїль перед Богом?",
+          "R": "Памʼятаєте, що каже Писання в розповіді про Іллю? Він скаржився Богові на народ Ізраїлю."
+        },
+        "ja": {
+          "L": "それとも、エリヤ[の箇所]で聖書が何と言っているか、すなわち彼がイスラエルを訴えて神にどのように願い出ているかを、あなたがたは知らないのですか？",
+          "B": "それとも、エリヤの物語で、彼がイスラエルを神に訴えたことを聖書がどう語っているか、あなたがたは知らないのですか？",
+          "R": "聖書にあるエリヤの話を覚えていますか？エリヤはイスラエルの人々のことで、神に不満を訴えました。"
+        },
+        "id": {
+          "L": "Atau tidak tahukah kalian apa yang dikatakan Kitab Suci tentang Elia, bagaimana ia mengadu kepada Allah melawan Israel?",
+          "B": "Atau tidak tahukah kalian apa yang dikatakan Kitab Suci dalam kisah Elia, bagaimana ia mengadukan Israel kepada Allah?",
+          "R": "Kalian ingat apa yang dikatakan Kitab Suci dalam kisah Elia? Dia mengeluh kepada Allah tentang bangsa Israel."
+        },
+        "zh": {
+          "L": "还是你们不知道经上在[关于]以利亚[的经文]里怎么说，他怎样向{{god_term:神|上帝}}控告以色列呢？",
+          "B": "还是你们不知道，经上在以利亚的故事中怎么说，他如何向{{god_term:神|上帝}}控诉以色列？",
+          "R": "你们记得圣经在以利亚的故事里怎么说吗？他向{{god_term:神|上帝}}抱怨以色列人。"
         }
       },
       "decisions": [
@@ -1178,6 +1386,27 @@
           "reason": "In Amharic church use ማለደ means to plead on someone's behalf, the opposite of what Elijah did; the meaning note says he accused Israel before God. Literal uses the neutral ያመለክታል, 'petitions'.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011002020"
+          ],
+          "choice": "\"訴えて……願い出ている\" (L); \"訴えた\" (B); \"不満を訴えました\" (R)",
+          "alternatives": [
+            "\"とりなす\""
+          ],
+          "reason": "With \"against\" the verb means bringing a complaint (m2). \"とりなす\" would suggest praying on Israel's behalf, the opposite of what Elijah does. Literal keeps the present tense of the story; Balanced and Readable tell it in the past.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1262,6 +1491,26 @@
           "L": "\"हे प्रभु, उन्होंने तेरे भविष्यद्वक्ताओं को मार डाला, तेरी वेदियों को ढा दिया, और मैं ही अकेला बचा हूँ, और वे मेरे प्राण के खोजी हैं।\"",
           "B": "\"हे प्रभु, उन्होंने तेरे भविष्यद्वक्ताओं को मार डाला है और तेरी वेदियों को ढा दिया है। मैं ही अकेला बचा हूँ, और अब वे मेरी जान लेने की कोशिश में हैं।\"",
           "R": "\"हे प्रभु, उन्होंने तेरे नबियों को मार डाला है। उन्होंने तेरी वेदियाँ तोड़ डाली हैं। केवल मैं ही बचा हूँ, और अब वे मुझे भी मार डालना चाहते हैं।\""
+        },
+        "uk": {
+          "L": "«Господи, вони вбили {{deity_pronoun:твоїх|Твоїх}} пророків, зруйнували {{deity_pronoun:твої|Твої}} жертовники, і я залишився сам, і шукають мого життя.»",
+          "B": "«Господи, вони вбили {{deity_pronoun:твоїх|Твоїх}} пророків і зруйнували {{deity_pronoun:твої|Твої}} жертовники. Я залишився один, і тепер вони намагаються відібрати в мене життя.»",
+          "R": "«Господи, вони вбили {{deity_pronoun:твоїх|Твоїх}} пророків. Вони зруйнували {{deity_pronoun:твої|Твої}} жертовники. Я залишився один, і тепер вони хочуть убити мене.»"
+        },
+        "ja": {
+          "L": "「主よ、彼らはあなたの預言者たちを殺し、あなたの祭壇を打ち壊した。そしてわたしはただ一人残された。しかも彼らはわたしの命を求めている。」",
+          "B": "「主よ、彼らはあなたの預言者たちを殺し、あなたの祭壇を壊した。わたしだけが残ったが、彼らは今、わたしの命まで奪おうとしている。」",
+          "R": "「主よ、彼らはあなたの預言者たちを殺した。あなたの祭壇も壊した。残ったのはわたし一人だけなのに、今度はわたしを殺そうとしている。」"
+        },
+        "id": {
+          "L": "\"Tuhan, mereka telah membunuh nabi-nabi-{{deity_pronoun:mu|Mu}}, mereka telah meruntuhkan mezbah-mezbah-{{deity_pronoun:mu|Mu}}, dan hanya aku seorang diri yang tertinggal, dan mereka mencari nyawaku.\"",
+          "B": "\"Tuhan, mereka telah membunuh para nabi-{{deity_pronoun:mu|Mu}} dan merobohkan mezbah-mezbah-{{deity_pronoun:mu|Mu}}. Hanya aku seorang yang tersisa, dan sekarang mereka berusaha mencabut nyawaku.\"",
+          "R": "\"Tuhan, mereka sudah membunuh nabi-nabi-{{deity_pronoun:mu|Mu}}. Mereka sudah menghancurkan mezbah-mezbah-{{deity_pronoun:mu|Mu}}. Hanya saya yang masih tersisa, dan sekarang mereka mau membunuh saya.\""
+        },
+        "zh": {
+          "L": "“主啊，{{deity_pronoun:你|祢}}的先知他们已经杀害了，{{deity_pronoun:你|祢}}的祭坛他们已经挖倒了，我被留下，独自一人，而他们正在寻求我的性命。”",
+          "B": "“主啊，他们杀害了{{deity_pronoun:你|祢}}的先知，毁坏了{{deity_pronoun:你|祢}}的祭坛。如今只留下我一个，他们还想要夺我的性命。”",
+          "R": "“主啊，他们杀死了{{deity_pronoun:你|祢}}的先知。他们毁掉了{{deity_pronoun:你|祢}}的祭坛。现在只有我一个人活下来，他们还想杀我。”"
         }
       },
       "decisions": [
@@ -1444,6 +1693,46 @@
           "reason": "People praying to God say तू, the intimate address of Hindi devotion (style guide section 4).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n45011003001"
+          ],
+          "choice": "plain style (\"殺した\", \"求めている\") in Elijah's prayer",
+          "alternatives": [
+            "です・ます体 (\"殺しました\")"
+          ],
+          "reason": "This is Scripture quoted inside the letter, and quoted Scripture keeps the plain style in Japanese, as the Japanese brief sets for the letters; the prayer still addresses God as \"主よ\" and \"あなた\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011003001"
+          ],
+          "choice": "\"主啊\", with no divine_name span",
+          "alternatives": [],
+          "reason": "Paul quotes 1 Kings 19 in Greek, where the address is kyrios, so Chinese writes \"主\", as the English writes \"Lord\". The words are drafted here; no Gospel or Acts quotes them.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1517,6 +1806,26 @@
           "L": "पर ईश्वरीय उत्तर उससे क्या कहता है?",
           "B": "पर परमेश्वर ने उसे क्या उत्तर दिया?",
           "R": "पर परमेश्वर ने जवाब में उससे क्या कहा?"
+        },
+        "uk": {
+          "L": "Але що каже йому Божа відповідь?",
+          "B": "Але що відповів йому Бог?",
+          "R": "Але що Бог сказав йому у відповідь?"
+        },
+        "ja": {
+          "L": "しかし、神のお告げは彼に何と言っていますか？",
+          "B": "しかし、神は彼に何とお答えになったでしょうか？",
+          "R": "では、神は彼にどう答えられたでしょうか？"
+        },
+        "id": {
+          "L": "Tetapi apa jawaban ilahi kepadanya?",
+          "B": "Tetapi apa jawaban Allah kepadanya?",
+          "R": "Tetapi apa yang Allah katakan kepadanya untuk menjawabnya?"
+        },
+        "zh": {
+          "L": "但是那神圣的答复对他说什么呢？",
+          "B": "但{{god_term:神|上帝}}是怎样回答他的呢？",
+          "R": "但是{{god_term:神|上帝}}回答他什么呢？"
         }
       },
       "decisions": [
@@ -1592,6 +1901,25 @@
             "\"परमेश्वर का उत्तर\""
           ],
           "reason": "Literal keeps the Greek noun, which means an answer given by God (meaning decision m1); \"ईश्वरीय\" is the ordinary adjective for divine and does not name another god. Balanced and Readable name God.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011004006"
+          ],
+          "choice": "\"神のお告げ\"",
+          "alternatives": [
+            "\"神託\""
+          ],
+          "reason": "The noun is a reply given by God (m1). \"神託\" suggests pagan oracles; \"お告げ\" is a plain word for a message from God, and Literal keeps it as the subject of \"say\" as the Greek does.",
           "uncertain": false,
           "footnote": false
         }
@@ -1671,6 +1999,26 @@
           "L": "\"मैंने अपने लिए सात हज़ार {{gender:लोग|पुरुष}} रख छोड़े हैं, जिन्होंने बाल के आगे घुटने नहीं टेके।\"",
           "B": "\"मैंने अपने लिए सात हज़ार {{gender:लोग|पुरुष}} बचा रखे हैं जिन्होंने बाल के आगे घुटने नहीं टेके हैं।\"",
           "R": "\"मैंने अपने लिए सात हज़ार {{gender:लोग|पुरुष}} बचा रखे हैं। उन्होंने बाल देवता के आगे झुककर उसकी पूजा नहीं की है।\""
+        },
+        "uk": {
+          "L": "«Я залишив для себе сім тисяч {{gender:людей|мужів}}, які не схилили коліна перед Ваалом.»",
+          "B": "«Я зберіг для себе сім тисяч {{gender:людей|мужів}}, які не схилили коліна перед Ваалом.»",
+          "R": "«Я зберіг для себе сім тисяч {{gender:людей|мужів}}. Вони не вклонялися Ваалові.»"
+        },
+        "ja": {
+          "L": "「わたしは自分のために、バアルにひざをかがめなかった七千人を残しておいた。」",
+          "B": "「わたしは、バアルにひざをかがめなかった七千人を、自分のために残しておいた。」",
+          "R": "「わたしは七千人を自分のために残しておいた。彼らはバアルの前にひざまずいて拝むことをしなかった。」"
+        },
+        "id": {
+          "L": "\"Aku telah menyisakan bagi diri-{{deity_pronoun:ku|Ku}} tujuh ribu orang yang tidak bertekuk lutut kepada Baal.\"",
+          "B": "\"Aku telah menyisakan bagi diri-{{deity_pronoun:ku|Ku}} tujuh ribu orang yang tidak bertekuk lutut di hadapan Baal.\"",
+          "R": "\"Aku sudah menyisakan tujuh ribu orang bagi diri-{{deity_pronoun:ku|Ku}}. Mereka tidak sujud menyembah Baal.\""
+        },
+        "zh": {
+          "L": "“我给自己留了七千{{gender:人|个男人}}，他们不曾向巴力弯过膝。”",
+          "B": "“我为自己保留了七千{{gender:人|个男人}}，他们没有向巴力下跪。”",
+          "R": "“我为自己保留了七千{{gender:人|个男人}}。他们没有向巴力跪拜。”"
         }
       },
       "decisions": [
@@ -1894,6 +2242,88 @@
           "reason": "As in Acts 17:34: the faithful Israelites counted by heads (meaning decision m2), with the span the English has.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n45011004010"
+          ],
+          "choice": "{{gender:людей|мужів}}; \"для себе\" with no deity_pronoun span",
+          "alternatives": [
+            "{{gender:людей|чоловіків}}"
+          ],
+          "reason": "andras counts the faithful by heads (m2), so the inclusive default is \"людей\", with the traditional \"мужів\" as the brief's alternative; the reflexive \"себе\" takes no capital, where English has {{deity_pronoun:myself|Myself}}.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n45011004010"
+          ],
+          "choice": "\"七千人\" with no gender span",
+          "alternatives": [
+            "\"{{gender:七千人|七千人の男たち}}\""
+          ],
+          "reason": "The English uses a gender span for \"men\". Japanese counts people with the inclusive counter 人, which says what the meaning decision says (m2), so no span is needed.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n45011004010"
+          ],
+          "choice": "\"七千{{gender:人|个男人}}\"",
+          "alternatives": [
+            "\"七千人\", with no span"
+          ],
+          "reason": "The Greek word is male, but the faithful are counted by heads (meaning note m2); Chinese can show either reading, as the English span does, with \"人\" by default.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n45011004008"
+          ],
+          "choice": "\"自己\" and \"我\", with no deity_pronoun span",
+          "alternatives": [],
+          "reason": "The English spans God's \"myself\"; Chinese has no reverent form of the first person (style guide section 4). The same holds for God's \"me\" in 11:27.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1973,6 +2403,26 @@
           "L": "सो इसी प्रकार इस वर्तमान समय में भी अनुग्रह के चुनाव के अनुसार एक बचा हुआ अंश हुआ है।",
           "B": "इसी तरह इस समय भी एक बचा हुआ अंश है, जो अनुग्रह से चुना गया है।",
           "R": "आज भी ऐसा ही है। इस्राएल के कुछ लोग अब भी बचे हुए हैं। ये वे थोड़े-से लोग हैं जिन्हें परमेश्वर ने अपने अनुग्रह से चुना है।"
+        },
+        "uk": {
+          "L": "Так само і в теперішній час постав залишок згідно з обранням благодаті.",
+          "B": "Так само і тепер є залишок, обраний з благодаті.",
+          "R": "Так само й сьогодні. Деякі з Ізраїлю ще залишилися, це залишок, який Бог вибрав зі своєї благодаті."
+        },
+        "ja": {
+          "L": "それゆえ、同じように今の時にも、恵みの選びによる残りの者が生じています。",
+          "B": "同じように、今の時にも、恵みによって選ばれた残りの者がいます。",
+          "R": "今も同じです。イスラエルの中には、まだ残されている人たちがいます。神が恵みによって選ばれた、残りの者たちです。"
+        },
+        "id": {
+          "L": "Demikianlah juga pada masa sekarang ini ada suatu sisa menurut pilihan kasih karunia.",
+          "B": "Demikian juga pada masa sekarang ini ada suatu sisa yang dipilih oleh kasih karunia.",
+          "R": "Begitu juga sekarang. Sebagian dari bangsa Israel masih tersisa, yaitu orang-orang yang Allah pilih karena kasih karunia-{{deity_pronoun:nya|Nya}}."
+        },
+        "zh": {
+          "L": "所以这样，在现今的时候，也出现了按着恩典之拣选的余民。",
+          "B": "同样，现今也有余民，是按恩典蒙拣选的。",
+          "R": "今天也是一样。以色列人中仍有一些人留下来，就是{{god_term:神|上帝}}凭{{deity_pronoun:他|祂}}的恩典所拣选的余民。"
         }
       },
       "decisions": [
@@ -2196,6 +2646,50 @@
           "reason": "The key term for grace, the same word at every level so the argument of verses 5-6 can be followed.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011005008"
+          ],
+          "choice": "\"残りの者\"",
+          "alternatives": [
+            "\"残された者\"",
+            "\"残党\""
+          ],
+          "reason": "The remnant is the part of Israel God keeps for himself (m1). \"残りの者\" is the plain word, used for the remnant through chapter 11; \"the rest\" in verse 7 is said with \"ほかの者たち\" so that the two are not confused.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011005010",
+            "n45011005011"
+          ],
+          "choice": "\"恩典\"; \"拣选\"",
+          "alternatives": [
+            "\"恩惠\""
+          ],
+          "reason": "The glossary's key term for grace, kept every time through Paul's argument (11:5-6), with \"拣选\" for God's choosing as in 9:11.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2275,6 +2769,26 @@
           "L": "और यदि अनुग्रह से, तो फिर कामों से नहीं, नहीं तो अनुग्रह फिर अनुग्रह न रहता।",
           "B": "और यदि यह अनुग्रह से है, तो कामों से नहीं; नहीं तो अनुग्रह अनुग्रह नहीं रहता।",
           "R": "और अगर परमेश्वर ने उन्हें अनुग्रह से चुना, तो यह उनके कामों के कारण नहीं था। अगर ऐसा होता, तो अनुग्रह सचमुच अनुग्रह नहीं रहता।"
+        },
+        "uk": {
+          "L": "А якщо з благодаті, то вже не з діл, бо [тоді] благодать уже не була б благодаттю.",
+          "B": "А якщо це з благодаті, то вже не з діл. Інакше благодать перестала б бути благодаттю.",
+          "R": "А якщо Бог вибрав їх з благодаті, то не через те, що вони робили. Якби було інакше, благодать не була б справжньою благодаттю."
+        },
+        "ja": {
+          "L": "そして、もし恵みによるのなら、もはや行いから[出たもの]ではありません。さもなければ、恵みはもはや恵みでなくなるからです。",
+          "B": "恵みによるのであれば、もはや行いによるのではありません。もしそうでなければ、恵みはもう恵みでなくなります。",
+          "R": "神が恵みによって選ばれたのなら、それはその人たちの行動によるのではありません。もし行動によるのなら、恵みは本当の恵みではなくなってしまいます。"
+        },
+        "id": {
+          "L": "Dan jika oleh kasih karunia, [hal itu] bukan lagi karena perbuatan, sebab [jika demikian] kasih karunia bukan lagi kasih karunia.",
+          "B": "Dan jika hal itu karena kasih karunia, hal itu tidak berasal dari perbuatan; jika tidak, kasih karunia bukan lagi kasih karunia.",
+          "R": "Dan kalau Allah memilih mereka karena kasih karunia, itu bukan karena apa yang mereka lakukan. Kalau karena perbuatan mereka, kasih karunia bukanlah kasih karunia yang sebenarnya."
+        },
+        "zh": {
+          "L": "而如果是凭恩典，[那就]不再是出于行为；否则恩典就再也不成为恩典了。",
+          "B": "如果是凭着恩典，那就不是出于行为；要不然，恩典就不再算是恩典了。",
+          "R": "如果{{god_term:神|上帝}}是凭恩典拣选了他们，那就不是因为他们所做的事。如果是那样，恩典就不是真正的恩典了。"
         }
       },
       "decisions": [
@@ -2448,6 +2962,26 @@
           "L": "तो क्या?",
           "B": "तो फिर क्या?",
           "R": "तो इसका क्या मतलब है?"
+        },
+        "uk": {
+          "L": "Що ж тоді?",
+          "B": "Що ж тоді?",
+          "R": "Тож що це означає?"
+        },
+        "ja": {
+          "L": "では、どうなのでしょうか？",
+          "B": "では、どういうことになるのでしょうか？",
+          "R": "では、これはどういうことでしょうか？"
+        },
+        "id": {
+          "L": "Lalu apa?",
+          "B": "Lalu bagaimana?",
+          "R": "Jadi, apa artinya ini?"
+        },
+        "zh": {
+          "L": "那么怎样呢？",
+          "B": "那又怎样呢？",
+          "R": "那么，这是什么意思呢？"
         }
       },
       "decisions": [
@@ -2608,6 +3142,26 @@
           "L": "जिसे इस्राएल ढूँढ़ रहा है, वह उसे नहीं मिला, पर चुने हुओं को मिल गया; और बाक़ी कठोर किए गए, \\v 8 जैसा लिखा है, \"परमेश्वर ने उन्हें जड़ता की आत्मा दी, ऐसी आँखें जो न देखें और ऐसे कान जो न सुनें, आज के दिन तक।\"",
           "B": "इस्राएल जिसे ढूँढ़ रहा था, वह उसे नहीं मिला। जिन्हें परमेश्वर ने चुना, उन्हें वह मिल गया, पर बाक़ी लोग कठोर बना दिए गए, \\v 8 जैसा लिखा है, \"परमेश्वर ने उन्हें सुन्न कर देनेवाली आत्मा दी है, ऐसी आँखें जो नहीं देखतीं और ऐसे कान जो नहीं सुनते, आज के दिन तक।\"",
           "R": "इसलिए इस्राएल के लोगों को वह नहीं मिला जिसे वे ढूँढ़ रहे थे। केवल उन्हें मिला जिन्हें परमेश्वर ने चुना था। बाक़ी लोगों को परमेश्वर ने हठीला बना दिया। \\v 8 जैसा पवित्रशास्त्र कहता है, \"परमेश्वर ने उनकी बुद्धि मंद कर दी। उन्होंने उन्हें ऐसी आँखें दीं जो देख नहीं सकतीं और ऐसे कान जो सुन नहीं सकते, और वे आज तक वैसे ही हैं।\""
+        },
+        "uk": {
+          "L": "Чого шукає Ізраїль, того він не здобув, а обрані здобули; решта ж закамʼяніли, \\v 8 як написано: «Дав їм Бог духа отупіння, очі, щоб не бачити, і вуха, щоб не чути, до сьогоднішнього дня.»",
+          "B": "Ізраїль не здобув того, чого шукав. Ті, кого Бог вибрав, здобули це, а решта закамʼяніли, \\v 8 як написано: «Бог дав їм духа заціпеніння, очі, які не бачать, і вуха, які не чують, до цього самого дня.»",
+          "R": "Тож народ Ізраїлю не знайшов того, що шукав. Знайшли це лише ті, кого вибрав Бог. Решту Бог зробив упертими. \\v 8 Як каже Писання: «Бог притупив їхній розум. Він дав їм очі, які не можуть бачити, і вуха, які не можуть чути, і вони такі й досі.»"
+        },
+        "ja": {
+          "L": "イスラエルは追い求めているもの、それを得ませんでしたが、選ばれた者たちは[それを]得ました。そして、ほかの者たちはかたくなにされました。\\v 8 次のように書かれているとおりです。「神は彼らに無感覚の霊を与え、見ないための目と聞かないための耳を[与えた]。今日この日に至るまで。」",
+          "B": "イスラエルは、追い求めていたものを得ませんでした。神に選ばれた者たちはそれを得ましたが、ほかの者たちはかたくなにされたのです。\\v 8 こう書かれているとおりです。「神は彼らに感覚を鈍らせる霊を与え、見えない目と聞こえない耳を与えた。今日この日に至るまで。」",
+          "R": "こうして、イスラエルの人々は探し求めていたものを見つけられませんでした。それを見つけたのは、神に選ばれた人たちだけです。神はほかの人たちの心をかたくなにされました。\\v 8 聖書にこう書いてあるとおりです。「神は彼らの心を鈍くした。見えない目と聞こえない耳を与えた。彼らは今日までそのままだ。」"
+        },
+        "id": {
+          "L": "Apa yang sedang dicari Israel, itu tidak diperolehnya, tetapi orang-orang pilihan memperoleh[nya]; dan yang lain telah dikeraskan, \\v 8 sebagaimana ada tertulis, \"Allah memberi mereka roh yang membuat mereka terlelap, mata [supaya] tidak melihat dan telinga [supaya] tidak mendengar, sampai hari ini.\"",
+          "B": "Israel tidak memperoleh apa yang dicarinya. Orang-orang yang dipilih Allah memperolehnya, tetapi yang lain telah dikeraskan hatinya, \\v 8 seperti yang tertulis, \"Allah telah memberi mereka roh yang membuat mereka mati rasa, mata yang tidak melihat dan telinga yang tidak mendengar, sampai hari ini.\"",
+          "R": "Jadi bangsa Israel tidak menemukan apa yang mereka cari. Hanya orang-orang yang Allah pilih yang menemukannya. Allah membuat yang lain menjadi keras kepala. \\v 8 Seperti yang dikatakan Kitab Suci, \"Allah membuat pikiran mereka tumpul. {{deity_pronoun:dia|Dia}} memberi mereka mata yang tidak dapat melihat dan telinga yang tidak dapat mendengar, dan mereka masih seperti itu sampai sekarang.\""
+        },
+        "zh": {
+          "L": "以色列所追寻的，这个它没有获得，但被拣选的[人]获得了[它]；其余的人却被弄得刚硬了，\\v 8 正如经上写着：“{{god_term:神|上帝}}赐给他们一个麻木的灵，使眼睛不看见，耳朵不听见，直到今天这日子。”",
+          "B": "以色列没有得到它所寻求的。{{god_term:神|上帝}}所拣选的人得到了，其余的人却变得刚硬，\\v 8 正如经上写着：“{{god_term:神|上帝}}给了他们一个麻木的灵，一双看不见的眼睛，一对听不见的耳朵，直到今天。”",
+          "R": "所以，以色列人没有找到他们所寻找的。只有{{god_term:神|上帝}}所拣选的人找到了。{{god_term:神|上帝}}使其余的人变得顽固。\\v 8 正如圣经上说：“{{god_term:神|上帝}}使他们的心思迟钝。{{deity_pronoun:他|祂}}给他们看不见的眼睛、听不见的耳朵，他们直到今天还是这样。”"
         }
       },
       "decisions": [
@@ -3000,6 +3554,70 @@
           "reason": "The same picture as 9:18: Literal and Balanced keep hardening, Readable says \"stubborn\", as the English does, here and in verse 25.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011007016"
+          ],
+          "choice": "\"かたくなにされる\" (L, B); \"心をかたくなにされました\" (R)",
+          "alternatives": [
+            "\"頑固にされる\"",
+            "\"心が鈍くされる\""
+          ],
+          "reason": "Hardening is a picture of becoming unable to see or respond, done by God (m3). \"かたくな\" is the plain Japanese word for a heart that will not yield, and is kept for this verb in chapter 11 (verse 25 uses the noun form). Readable adds \"心\" and names God as the one who acts, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n45011008003"
+          ],
+          "choice": "\"与えた\" in the quotation; \"かたくなにされました\" in Paul's own words",
+          "alternatives": [
+            "\"与えられた\" in the quotation too"
+          ],
+          "reason": "Quoted Scripture keeps the plain style without respect forms; Paul's own sentences about God's action use the light respect forms the Japanese brief sets for letters.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011008008"
+          ],
+          "choice": "\"麻木的灵\" (L, B); \"心思迟钝\" (R)",
+          "alternatives": [
+            "\"昏睡的灵\""
+          ],
+          "reason": "The phrase is a numbness that keeps them from understanding (meaning note m5); \"麻木\" says numbness plainly. Deuteronomy 29:4 and Isaiah 29:10 are not quoted this way in the Gospels or Acts, so the line is drafted here.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3101,6 +3719,26 @@
           "L": "और दाऊद कहता है, \"उनकी मेज़ उनके लिए फंदा और जाल और ठोकर का कारण और बदला बन जाए; \\v 10 उनकी आँखों पर अंधेरा छा जाए कि वे न देखें, और तू उनकी पीठ सदा झुकाए रख।\"",
           "B": "और दाऊद कहता है, \"उनकी मेज़ उनके लिए फंदा और जाल बन जाए, ठोकर का कारण और उचित दंड बन जाए। \\v 10 उनकी आँखें धुँधली हो जाएँ कि वे देख न सकें, और तू उनकी पीठ सदा के लिए झुकाए रख।\"",
           "R": "और दाऊद कहता है, \"जिन भोजों का वे आनंद लेते हैं, वे ही उनके लिए फंदा बन जाएँ जो उन्हें पकड़ ले। वे ठोकर खाकर गिरें और अपने किए का फल पाएँ। \\v 10 उनकी आँखों के आगे अंधेरा छा जाए कि वे देख न सकें। तू उनकी पीठ सदा के लिए झुकाए रख।\""
+        },
+        "uk": {
+          "L": "І Давид каже: «Нехай стане їхній стіл сільцем, і пасткою, і спотиканням, і відплатою їм; \\v 10 нехай потемніють їхні очі, щоб не бачити, і їхню спину постійно згинай.»",
+          "B": "І Давид каже: «Нехай їхній стіл обернеться на пастку і сітку, на камінь спотикання і справедливу кару для них. \\v 10 Нехай потемніють їхні очі, щоб вони не бачили, і тримай їхні спини зігнутими завжди.»",
+          "R": "І Давид каже: «Нехай їжа, якою вони тішаться, стане пасткою, що їх зловить. Нехай вони спіткнуться, впадуть і отримають те, на що заслуговують. \\v 10 Нехай потемніють їхні очі, щоб вони не бачили. Тримай їхні спини низько зігнутими завжди.»"
+        },
+        "ja": {
+          "L": "そして、ダビデは言います。「彼らの食卓が、彼らにとって、わなとなり、網となり、つまずきとなり、報いとなるように。\\v 10 彼らの目が暗くされて、見えなくなるように。彼らの背をいつまでも曲げてください。」",
+          "B": "ダビデもこう言っています。「彼らの食卓が、わなとなり網となり、つまずきとなり、当然の報いとなるように。\\v 10 彼らの目が暗くなって、見えなくなるように。彼らの背をいつまでもかがませてください。」",
+          "R": "ダビデもこう言っています。「彼らが楽しむ食事が、彼らを捕らえるわなとなるように。彼らがつまずいて倒れ、受けるべき罰を受けるように。\\v 10 彼らの目が暗くなって、見えなくなるように。彼らの背中をいつまでも低くかがませてください。」"
+        },
+        "id": {
+          "L": "Dan Daud berkata, \"Biarlah meja mereka menjadi jerat dan perangkap dan batu sandungan dan pembalasan bagi mereka; \\v 10 biarlah mata mereka digelapkan supaya tidak melihat, dan bungkukkanlah punggung mereka senantiasa.\"",
+          "B": "Dan Daud berkata, \"Kiranya hidangan mereka menjadi jerat dan jaring, batu sandungan dan hukuman yang setimpal bagi mereka. \\v 10 Kiranya mata mereka menjadi gelap sehingga tidak dapat melihat, dan biarlah punggung mereka terus terbungkuk untuk selamanya.\"",
+          "R": "Dan Daud berkata, \"Semoga makanan yang mereka nikmati menjadi perangkap yang menjerat mereka. Semoga mereka tersandung dan jatuh dan menerima apa yang pantas mereka terima. \\v 10 Semoga mata mereka menjadi gelap sehingga mereka tidak dapat melihat. Buatlah punggung mereka terus membungkuk selamanya.\""
+        },
+        "zh": {
+          "L": "大卫也说：“让他们的餐桌变成圈套、变成猎网、变成绊跌的东西，并成为对他们的报应；\\v 10 让他们的眼睛变得昏暗而看不见，又使他们的背一直弯着。”",
+          "B": "大卫又说：“愿他们的餐桌变成圈套和罗网，成为绊脚石，成为他们应得的惩罚。\\v 10 愿他们的眼睛昏暗，以致看不见；叫他们的背永远弯着。”",
+          "R": "大卫也说：“愿他们所享受的饭食，成为捕捉他们的陷阱。愿他们跌倒，得到他们应得的报应。\\v 10 愿他们的眼睛昏暗，看不见东西。叫他们的背永远弯下去。”"
         }
       },
       "decisions": [
@@ -3422,6 +4060,64 @@
           "reason": "The last command of the psalm is spoken to God, so it takes the address of prayer, तू (style guide section 4); the other lines are wishes in the third person, as Hindi prays them.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n45011009004",
+            "n45011010014"
+          ],
+          "choice": "wishes as \"〜ように\"; the command to God as \"〜てください\"",
+          "alternatives": [
+            "plain imperatives (\"〜となれ\", \"曲げよ\")"
+          ],
+          "reason": "The psalm is a prayer. Its third-person commands are wishes, said in Japanese with \"〜ように\"; the last verb is a command addressed to God, and a bare plain imperative to God would sound rude in Japanese, so all levels use the request form while the rest of the quotation keeps the plain style of quoted Scripture.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "layer": "meaning",
+          "language": null,
+          "category": "allusion",
+          "tokens": [
+            "n45011009018",
+            "n45011010010"
+          ],
+          "choice": "Psalm 69:23-24 in the Greek Old Testament",
+          "alternatives": [],
+          "reason": "Paul follows the Greek of Psalm 69:23-24 (69:22-23 in many Bibles), which has \"a retribution\" where the Hebrew may read \"for those at ease\", and \"bend their backs always\" where the Hebrew has \"make their loins shake continually\". Both pray that the enemies' own table become a trap and that they be weighed down.",
+          "uncertain": false,
+          "footnote": true,
+          "id": "m6"
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011009006"
+          ],
+          "choice": "\"餐桌\" (L, B); \"所享受的饭食\" (R)",
+          "alternatives": [
+            "\"筵席\""
+          ],
+          "reason": "The table stands for the meals and good things they rely on (meaning note m2); Psalm 69:22-23 is not quoted in the Gospels or Acts, so the lines are drafted here.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3495,6 +4191,26 @@
           "L": "तो मैं कहता हूँ, क्या उन्होंने इसलिए ठोकर खाई कि गिर पड़ें?",
           "B": "तो मैं पूछता हूँ: क्या उन्होंने ऐसी ठोकर खाई कि सदा के लिए गिर पड़ें?",
           "R": "तो मैं यह पूछता हूँ: जब इस्राएल के लोगों ने ठोकर खाई, तो क्या वे ऐसे गिरे कि फिर कभी न उठें?"
+        },
+        "uk": {
+          "L": "Отже, кажу: хіба вони спіткнулися, щоб упасти?",
+          "B": "Тож я питаю: хіба вони спіткнулися так, щоб упасти назавжди?",
+          "R": "Тож я питаю: коли народ Ізраїлю спіткнувся, хіба він упав і вже ніколи не підведеться?"
+        },
+        "ja": {
+          "L": "それでは、わたしは言います。彼らは倒れてしまうほどにつまずいたのでしょうか？",
+          "B": "それでは、尋ねます。彼らはつまずいて、そのまま倒れてしまったのでしょうか？",
+          "R": "では、こう尋ねます。イスラエルの人々はつまずきましたが、倒れたまま二度と起き上がれないのでしょうか？"
+        },
+        "id": {
+          "L": "Jadi aku berkata, apakah mereka tersandung supaya mereka jatuh?",
+          "B": "Jadi aku bertanya: apakah mereka tersandung sehingga jatuh untuk selamanya?",
+          "R": "Jadi saya bertanya: Ketika bangsa Israel tersandung, apakah mereka jatuh dan tidak pernah bangun lagi?"
+        },
+        "zh": {
+          "L": "所以我说：难道他们绊了一下，是为了要倒下吗？",
+          "B": "所以我要问：他们绊倒，是要从此一蹶不振吗？",
+          "R": "所以我要问：以色列人绊了一跤，是不是就此倒下，再也起不来了呢？"
         }
       },
       "decisions": [
@@ -3631,6 +4347,25 @@
           "reason": "Paul sets tripping against falling down for good (m2). Vietnamese \"vấp ngã\" would join the two, so the verbs are kept apart, and \"luôn\" (for good) says what the second one means, as the English Balanced does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011011005"
+          ],
+          "choice": "\"倒れてしまうほどに\"",
+          "alternatives": [
+            "\"倒れるために\""
+          ],
+          "reason": "The conjunction can express purpose or result (m3). Japanese has no single word for both; \"ために\" would state a purpose, while \"ほどに\" asks about the outcome, which is what Paul's answer goes on to speak of.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3712,6 +4447,26 @@
           "L": "ऐसा कभी न हो! पर उनके अपराध से अन्यजातियों को उद्धार [मिला], कि उन्हें जलन दिलाए।",
           "B": "कदापि नहीं! बल्कि उनके अपराध के द्वारा अन्यजातियों तक उद्धार पहुँचा है, ताकि इस्राएल के मन में जलन जागे।",
           "R": "बिलकुल नहीं! उन्होंने अपराध किया, और इसी के कारण ग़ैर-यहूदियों तक उद्धार पहुँचा। यह इसलिए हुआ कि इस्राएल के लोगों को जलन हो।"
+        },
+        "uk": {
+          "L": "Нехай не буде! Але через їхній переступ спасіння [прийшло] до язичників, щоб викликати в них ревнощі.",
+          "B": "Аж ніяк! Навпаки, через їхній переступ спасіння прийшло до язичників, щоб Ізраїль заревнував.",
+          "R": "Звичайно, ні! Через те, що вони вчинили зле, порятунок прийшов до неюдеїв. Це мало викликати ревнощі в народу Ізраїлю."
+        },
+        "ja": {
+          "L": "決してそうではありません！むしろ、彼らの過ちによって、救いが異邦人に[来ました]。それは彼らにねたみを起こさせるためです。",
+          "B": "決してそうではありません！むしろ、彼らの過ちによって救いが異邦人に及び、イスラエルにねたみを起こさせることになったのです。",
+          "R": "そんなことはありません！彼らがあやまちを犯したので、救いがユダヤ人でない人々に届きました。それは、イスラエルの人々にねたみを起こさせるためでした。"
+        },
+        "id": {
+          "L": "Jangan sampai terjadi! Tetapi oleh pelanggaran mereka keselamatan [telah datang] kepada bangsa-bangsa lain, untuk membuat mereka cemburu.",
+          "B": "Sekali-kali tidak! Sebaliknya, melalui pelanggaran mereka keselamatan telah datang kepada bangsa-bangsa lain, supaya Israel menjadi cemburu.",
+          "R": "Tentu saja tidak! Karena mereka berbuat salah, keselamatan sudah datang kepada orang-orang bukan Yahudi. Hal itu dimaksudkan untuk membuat bangsa Israel cemburu."
+        },
+        "zh": {
+          "L": "但愿不会这样！而是借着他们的过犯，救恩[来到]外邦人那里，为的是使他们嫉妒。",
+          "B": "绝对不是！而是因为他们的过错，救恩已经临到外邦人，好叫以色列生出嫉妒。",
+          "R": "当然不是！因为他们做错了，救恩就来到了非犹太人当中。这是要让以色列人嫉妒。"
         }
       },
       "decisions": [
@@ -4071,6 +4826,71 @@
           "reason": "The Greek word is a false step, a wrong (meaning decision m2), not the general word for sin, which stays \"पाप\"; trespass is \"अपराध\" through Romans (4:25, 5:15-20). \"ग़लती\" would say a mere mistake. The same word stands in verse 12.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011011012"
+          ],
+          "choice": "переступ (L, B)",
+          "alternatives": [
+            "провина",
+            "падіння",
+            "гріх"
+          ],
+          "reason": "paraptōma is a false step, a wrong (m2); \"переступ\" keeps the picture of stepping aside, as in Romans 4-5. Kept in 11:12; Readable says \"хибний крок\", \"вчинили зле\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011011019"
+          ],
+          "choice": "\"ねたみを起こさせる\" (every level)",
+          "alternatives": [
+            "\"嫉妬させる\"",
+            "\"うらやましいと思わせる\" (R)"
+          ],
+          "reason": "The jealousy meant is Israel wanting for itself the salvation the Gentiles now have (m3). \"ねたみを起こさせる\" keeps the word of Deuteronomy 32:21 as quoted in 10:19, at every level, so that a reader hears the quotation return; the same words are used in verse 14.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011011012"
+          ],
+          "choice": "\"过犯\" (L); \"过错\" (B); \"做错了\" (R)",
+          "alternatives": [
+            "\"过失\""
+          ],
+          "reason": "The word is a false step, a wrong (meaning note m2); Literal uses the glossary's word for transgression, Balanced and Readable everyday words, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4156,6 +4976,26 @@
           "L": "और यदि उनका अपराध जगत के लिए धन और उनकी घटी अन्यजातियों के लिए धन [हुई], तो उनकी परिपूर्णता कितना अधिक!",
           "B": "और यदि उनका अपराध संसार के लिए धन बना, और उनकी हार अन्यजातियों के लिए धन बनी, तो उनकी परिपूर्णता कितना अधिक धन लाएगी!",
           "R": "उनके अपराध से संसार को बड़ी आशिष मिली। उनकी हार से ग़ैर-यहूदियों को बड़ी आशिष मिली। तो सोचो, जब उनकी पूरी गिनती भीतर आ जाएगी, तब आशिष कितनी बड़ी होगी!"
+        },
+        "uk": {
+          "L": "А якщо їхній переступ — багатство для світу, а їхня втрата — багатство для язичників, то наскільки більше їхня повнота!",
+          "B": "А якщо їхній переступ означає багатство для світу, а їхня втрата — багатство для язичників, то наскільки більше багатство принесе їхня повнота!",
+          "R": "Їхній хибний крок приніс великі благословення світові. Їхня втрата принесла великі благословення неюдеям. Тож подумайте, наскільки більшим буде благословення, коли їх буде приведено в повному числі!"
+        },
+        "ja": {
+          "L": "さて、もし彼らの過ちが世にとっての富[となり]、彼らの敗北が異邦人にとっての富[となる]のなら、彼らの満ちることは、なおさらどれほど[の富となるでしょう]！",
+          "B": "彼らの過ちが世の富となり、彼らの失敗が異邦人の富となるのなら、彼らの数が満ちるときには、どれほど豊かな富がもたらされることでしょう！",
+          "R": "イスラエルのあやまちは、世界の人々に大きな祝福をもたらしました。彼らの失敗は、ユダヤ人でない人々に大きな祝福をもたらしました。それなら、彼らの数が満ちて、みな迎え入れられるときには、どれほど大きな祝福になるか考えてみてください！"
+        },
+        "id": {
+          "L": "Dan jika pelanggaran mereka [berarti] kekayaan bagi dunia, dan kekalahan mereka [berarti] kekayaan bagi bangsa-bangsa lain, terlebih lagi kepenuhan mereka!",
+          "B": "Jika pelanggaran mereka berarti kekayaan bagi dunia, dan kegagalan mereka berarti kekayaan bagi bangsa-bangsa lain, betapa lebih besar lagi kekayaan yang akan dibawa oleh kepenuhan mereka!",
+          "R": "Langkah mereka yang salah membawa berkat yang besar bagi dunia. Kerugian mereka membawa berkat yang besar bagi orang-orang bukan Yahudi. Jadi bayangkan betapa jauh lebih besar berkat itu ketika jumlah mereka yang penuh dibawa masuk!"
+        },
+        "zh": {
+          "L": "而如果他们的过犯[意味着]世界的财富，他们的亏损[意味着]外邦人的财富，那么他们的满数更要[带来]多少[财富]呢！",
+          "B": "既然他们的过错使世界富足，他们的失败使外邦人富足，那么他们达到满数的时候，会带来多么更大的富足啊！",
+          "R": "他们的过错给世界带来了极大的福气。他们的失败给非犹太人带来了极大的福气。所以，想一想，当他们全数被带进来的时候，那福气会有多大！"
         }
       },
       "decisions": [
@@ -4422,6 +5262,49 @@
           "reason": "The same Greek word as \"the full number\" in verse 25 (meaning decision m3); Literal and Balanced keep one word for both, Readable says the full number in both places.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011012017"
+          ],
+          "choice": "\"彼らの満ちること\" (L); \"彼らの数が満ちる\" (B); \"彼らの数が満ちて、みな迎え入れられる\" (R)",
+          "alternatives": [
+            "\"彼らの完成\"",
+            "\"彼らの全体\""
+          ],
+          "reason": "The word means their full number, Israel restored as a whole (m3). Literal keeps the bare noun; Balanced and Readable say \"数が満ちる\", the same wording used for the Gentiles in verse 25, so the reader hears the link.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011012017"
+          ],
+          "choice": "\"满数\" (L, B); \"全数\" (R)",
+          "alternatives": [
+            "\"丰满\""
+          ],
+          "reason": "Their fullness is their full number (meaning note m3); the same word is used for the full number of the Gentiles in 11:25.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4494,6 +5377,26 @@
           "L": "पर मैं तुमसे, अन्यजातियों से, कहता हूँ।",
           "B": "अब मैं तुमसे बात कर रहा हूँ जो अन्यजाति हो।",
           "R": "अब मैं तुमसे बात कर रहा हूँ जो ग़ैर-यहूदी हो।"
+        },
+        "uk": {
+          "L": "А вам кажу, язичникам.",
+          "B": "А тепер я звертаюся до вас, язичників.",
+          "R": "А тепер я звертаюся до вас, неюдеїв."
+        },
+        "ja": {
+          "L": "しかし、わたしは異邦人であるあなたがたに言います。",
+          "B": "さて、異邦人であるあなたがたに言います。",
+          "R": "さて、ユダヤ人でないみなさんに言います。"
+        },
+        "id": {
+          "L": "Tetapi aku berbicara kepada kalian, bangsa-bangsa lain.",
+          "B": "Sekarang aku berbicara kepada kalian yang bukan orang Yahudi.",
+          "R": "Sekarang saya berbicara kepada kalian yang bukan orang Yahudi."
+        },
+        "zh": {
+          "L": "但我是对你们外邦人说的。",
+          "B": "现在我要对你们这些外邦人说话。",
+          "R": "现在我要对你们这些非犹太人说话。"
         }
       },
       "decisions": [
@@ -4645,6 +5548,26 @@
           "L": "इसलिए जहाँ तक मैं अन्यजातियों का प्रेरित हूँ, मैं अपनी सेवा की महिमा करता हूँ, \\v 14 कि किसी रीति से मैं अपने शरीर में जलन उपजाऊँ और उनमें से कुछ का उद्धार करूँ।",
           "B": "इसलिए क्योंकि मैं अन्यजातियों के लिए प्रेरित हूँ, मैं अपनी सेवा को बड़ा महत्त्व देता हूँ, \\v 14 इस आशा से कि किसी तरह मैं अपने शरीर के नातेदारों में जलन जगाऊँ और उनमें से कुछ का उद्धार करूँ।",
           "R": "परमेश्वर ने मुझे ग़ैर-यहूदियों के पास प्रेरित बनाकर भेजा है, इसलिए मैं इस काम को बहुत महत्त्व देता हूँ। \\v 14 मैं आशा करता हूँ कि किसी तरह मैं अपने लोगों, यानी यहूदियों, में जलन जगा सकूँ और उनमें से कुछ का उद्धार करूँ।"
+        },
+        "uk": {
+          "L": "Оскільки ж я апостол язичників, я прославляю своє служіння, \\v 14 чи не викличу якось ревнощів у своїх [родичів] за тілом і не спасу декого з них.",
+          "B": "Тож оскільки я апостол для язичників, я надаю великої ваги своєму служінню, \\v 14 сподіваючись якось викликати ревнощі у своїх кровних родичів і спасти декого з них.",
+          "R": "Бог послав мене як апостола до неюдеїв, тож я дуже ціную цю працю. \\v 14 Я сподіваюся, що якось зможу викликати ревнощі у свого народу, юдеїв, і врятувати декого з них."
+        },
+        "ja": {
+          "L": "それで、わたしは異邦人の使徒である限り、自分の務めを栄光あるものとしています。\\v 14 もしかしたら、わたしと肉を同じくする者たちにねたみを起こさせ、彼らのうちの何人かを救えるかもしれないと[思うからです]。",
+          "B": "それで、異邦人のための使徒として、わたしは自分の務めを重んじています。\\v 14 なんとかして肉親である同胞にねたみを起こさせ、彼らのうちの何人かでも救いたいと願っているのです。",
+          "R": "神はわたしを、ユダヤ人でない人々のための使徒として遣わされました。だからわたしは、この働きを大切にしています。\\v 14 そうすれば、同じ民族のユダヤ人にねたみを起こさせ、その中の何人かでも救うことができるかもしれないと願っているのです。"
+        },
+        "id": {
+          "L": "Jadi, karena aku adalah rasul bagi bangsa-bangsa lain, aku memuliakan pelayananku, \\v 14 kalau-kalau aku dapat membuat dagingku cemburu dan menyelamatkan beberapa dari mereka.",
+          "B": "Jadi, karena aku adalah rasul bagi bangsa-bangsa lain, aku menjunjung tinggi pelayananku, \\v 14 dengan harapan bahwa entah bagaimana aku dapat membuat kaum sedarahku cemburu dan menyelamatkan beberapa dari mereka.",
+          "R": "Allah mengutus saya sebagai rasul kepada orang-orang bukan Yahudi, jadi saya menganggap penting pekerjaan ini. \\v 14 Saya berharap dengan cara apa pun saya dapat membuat bangsa saya sendiri, orang Yahudi, cemburu, dan menyelamatkan beberapa dari mereka."
+        },
+        "zh": {
+          "L": "因此，既然我是外邦人的使徒，我就荣耀我的事奉，\\v 14 或许我能使我的骨肉嫉妒，并拯救他们当中的一些人。",
+          "B": "所以，既然我是被派到外邦人那里的使徒，我就看重我的事奉，\\v 14 盼望能设法激起我自己骨肉同胞的嫉妒，好拯救他们当中的一些人。",
+          "R": "{{god_term:神|上帝}}差派我作使徒，到非犹太人那里去，所以我很重视这份工作。\\v 14 我希望能用某种方法让我自己的同胞，就是犹太人，产生嫉妒，好拯救他们当中的一些人。"
         }
       },
       "decisions": [
@@ -4994,6 +5917,107 @@
           "reason": "My flesh means my own people (meaning decision m2). Balanced keeps the key word \"शरीर\" in an ordinary Hindi phrase for blood relations, as the English keeps \"flesh and blood\"; Readable names them.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n45011014004",
+            "n45011014005",
+            "n45011014006"
+          ],
+          "choice": "у своїх [родичів] за тілом",
+          "alternatives": [
+            "у свого тіла"
+          ],
+          "reason": "\"My flesh\" means Paul's own people (m2); a bare \"моє тіло\" would read as his body, so Literal supplies \"родичів\" and keeps \"за тілом\" as in 9:3.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011014006"
+          ],
+          "choice": "\"わたしと肉を同じくする者たち\" (L); \"肉親である同胞\" (B); \"同じ民族のユダヤ人\" (R)",
+          "alternatives": [
+            "\"わたしの肉\" (L)"
+          ],
+          "reason": "\"My flesh\" means Paul's fellow Jews, his kin (m2). A bare \"わたしの肉\" would be unclear in Japanese, so Literal keeps the word 肉 in a phrase for kinship; Balanced uses 肉親, the ordinary word for blood relatives, which also keeps 肉; Readable names the people.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011013017"
+          ],
+          "choice": "\"栄光あるものとしています\" (L); \"重んじています\" (B)",
+          "alternatives": [
+            "\"あがめる\""
+          ],
+          "reason": "With \"my ministry\" as its object the verb means holding it in honor (m1). \"あがめる\" is used for worshiping God and would be wrong here; Literal keeps the word 栄光, and Balanced and Readable give the sense.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011013017"
+          ],
+          "choice": "\"memuliakan pelayananku\" (L); \"menjunjung tinggi\" (B); \"menganggap penting\" (R)",
+          "alternatives": [],
+          "reason": "Here the verb glorify means to honor and make the most of the ministry (m1); Literal keeps the key term's verb, and Balanced and Readable say the sense.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011014006"
+          ],
+          "choice": "\"我的骨肉\" (L); \"骨肉同胞\" (B); \"同胞，就是犹太人\" (R)",
+          "alternatives": [
+            "\"我的肉体\""
+          ],
+          "reason": "\"My flesh\" here is Paul's own people (meaning note m2); \"骨肉\" keeps the bodily word in a Chinese phrase for kin, as the English Balanced keeps \"flesh and blood\". \"肉体\" would read as the sinful self.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5076,6 +6100,26 @@
           "L": "क्योंकि यदि उनका ठुकराया जाना जगत का मेल [हुआ], तो उनका ग्रहण किया जाना मरे हुओं में से जीवन के सिवा क्या होगा?",
           "B": "क्योंकि यदि उनके ठुकराए जाने का अर्थ संसार का परमेश्वर से मेल है, तो उनके ग्रहण किए जाने का अर्थ क्या होगा? मरे हुओं में से जीवन से कम कुछ नहीं!",
           "R": "जब परमेश्वर ने उन्हें अलग कर दिया, तब संसार का परमेश्वर से मेल कराया गया और वह परमेश्वर का मित्र बन गया। तो जब परमेश्वर उन्हें वापस ले लेंगे, तब कैसा होगा? वह तो मरे हुओं में से जी उठने जैसा होगा!"
+        },
+        "uk": {
+          "L": "Бо якщо їхнє відкинення — примирення світу, то що [буде їхнє] прийняття, як не життя з мертвих?",
+          "B": "Бо якщо їхнє відкинення означає примирення світу, то що означатиме їхнє прийняття? Ніщо інше, як життя з мертвих!",
+          "R": "Коли Бог відсунув їх убік, світ повернувся до Бога і примирився з {{deity_pronoun:ним|Ним}}. То що ж буде, коли Бог прийме їх назад? Це буде життя з мертвих!"
+        },
+        "ja": {
+          "L": "もし彼らが捨て置かれることが世の和解[である]なら、彼らが受け入れられることは、死者の中からの命でなくて何でしょうか？",
+          "B": "もし彼らが捨て置かれたことが世の和解となったのなら、彼らが受け入れられることは何を意味するでしょうか？それはまさに、死者の中からの命です！",
+          "R": "神が彼らをわきに置かれたとき、世界の人々は神のもとに連れ戻され、神と仲直りしました。それなら、神が彼らをもう一度受け入れられるときは、どうなるでしょうか？それは、死んだ人たちの中からよみがえる命です！"
+        },
+        "id": {
+          "L": "Sebab jika penolakan mereka [berarti] pendamaian dunia, apakah [artinya] penerimaan [mereka] selain hidup dari antara orang mati?",
+          "B": "Sebab jika penolakan mereka berarti pendamaian dunia, apa arti penerimaan mereka? Tidak kurang dari hidup dari antara orang mati!",
+          "R": "Ketika Allah menyisihkan mereka, dunia dibawa kembali kepada Allah dan menjadi sahabat-{{deity_pronoun:nya|Nya}}. Jadi, bagaimana nanti ketika Allah menerima mereka kembali? Itu seperti hidup dari kematian!"
+        },
+        "zh": {
+          "L": "因为如果他们被弃绝[就是]世界的和好，那么他们的被接纳，除了是从死人中[得的]生命，还会是什么呢？",
+          "B": "因为如果他们被弃绝，带来了世界的和好，那么他们被接纳，又会带来什么呢？那无异于从死人中复活的生命！",
+          "R": "当{{god_term:神|上帝}}把他们放在一边的时候，世人就被带回到{{god_term:神|上帝}}那里，与{{deity_pronoun:他|祂}}和好了。那么，当{{god_term:神|上帝}}重新接纳他们的时候，会是怎样的情形呢？那将是从死里复活的生命！"
         }
       },
       "decisions": [
@@ -5325,6 +6369,49 @@
           "reason": "The Romans key term for reconciliation, \"मेल कराना\"; Balanced and Readable say with whom: with God (meaning decision m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011015004"
+          ],
+          "choice": "\"捨て置かれる\" (L, B); \"わきに置かれた\" (R)",
+          "alternatives": [
+            "\"退けられる\"",
+            "\"捨てられる\""
+          ],
+          "reason": "This is God's setting Israel aside for a time, not the final casting off denied in verses 1-2 (m1). \"退ける\" is kept for the verb of verses 1-2, and \"捨てられる\" would sound final; \"捨て置く\" and \"わきに置く\" say that they have been left aside.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011015006"
+          ],
+          "choice": "\"和好\"",
+          "alternatives": [
+            "\"和睦\""
+          ],
+          "reason": "The church's word for reconciliation with God, kept for Paul's key term.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5408,6 +6495,26 @@
           "L": "और यदि पहला फल पवित्र है, तो गूँधा हुआ आटा भी; और यदि जड़ पवित्र है, तो डालियाँ भी।",
           "B": "यदि पहले फल के रूप में चढ़ाया गया आटे का भाग पवित्र है, तो पूरा गूँधा हुआ आटा भी पवित्र है; और यदि जड़ पवित्र है, तो डालियाँ भी पवित्र हैं।",
           "R": "अगर गूँधे हुए आटे का पहला हिस्सा परमेश्वर को चढ़ाया जाए और वह पवित्र हो, तो सारा आटा भी पवित्र होता है। और अगर पेड़ की जड़ पवित्र है, तो उसकी डालियाँ भी पवित्र हैं।"
+        },
+        "uk": {
+          "L": "А якщо першоплід святий, то й заміс; і якщо корінь святий, то й гілки.",
+          "B": "Якщо частка тіста, принесена як першоплоди, свята, то святий і весь заміс; і якщо корінь святий, то святі й гілки.",
+          "R": "Якщо перший шматок тіста принесено Богові і він святий, то й усе тісто святе. І якщо корінь дерева святий, то святі і його гілки."
+        },
+        "ja": {
+          "L": "さて、初穂が聖なるものであれば、こね粉の全体もそうです。また、根が聖なるものであれば、枝もそうです。",
+          "B": "初穂として献げられたパン生地が聖なるものであれば、こね粉の全体も聖なるものです。根が聖なるものであれば、枝もそうです。",
+          "R": "パン生地の最初のひとかたまりが神にささげられて聖なるものとなれば、こね粉の全部も聖なるものです。そして、木の根が聖なるものなら、その枝も聖なるものです。"
+        },
+        "id": {
+          "L": "Dan jika roti sulung [adalah] kudus, demikian juga seluruh adonan; dan jika akarnya kudus, demikian juga cabang-cabangnya.",
+          "B": "Jika bagian adonan yang dipersembahkan sebagai buah sulung itu kudus, demikian juga seluruh adonan itu; dan jika akarnya kudus, demikian juga cabang-cabangnya.",
+          "R": "Kalau potongan adonan yang pertama dipersembahkan kepada Allah dan menjadi kudus, seluruh adonan juga kudus. Dan kalau akar sebuah pohon kudus, cabang-cabangnya juga kudus."
+        },
+        "zh": {
+          "L": "而如果初熟之物是圣的，那么面团也[是]；如果根是圣的，那么枝子也[是]。",
+          "B": "如果作为初熟之物献上的那份面团是圣洁的，那么整团面也是圣洁的；如果树根是圣洁的，枝子也是圣洁的。",
+          "R": "如果把第一块面团献给{{god_term:神|上帝}}，它是圣洁的，那么整批面团也都是圣洁的。如果一棵树的根是圣洁的，它的枝子也是圣洁的。"
         }
       },
       "decisions": [
@@ -5563,6 +6670,27 @@
           "reason": "በኩራት is the Bible word for the first portion offered to God (Numbers 15:17-21); Balanced adds that it is a portion of dough, and Readable explains it.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011016004",
+            "n45011016008"
+          ],
+          "choice": "\"初穂\" and \"こね粉\"",
+          "alternatives": [
+            "\"最初の一部\""
+          ],
+          "reason": "The picture is the offering of the first of the dough (m1). \"初穂\" is the familiar word for the first part given to God; since it suggests grain, Balanced names the dough, and Readable drops the church word and describes the offering.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5669,6 +6797,26 @@
           "L": "पर यदि कुछ डालियाँ तोड़ी गईं, और तुम जंगली जैतून होकर उनके बीच में कलम किए गए और जैतून की चिकनाई की जड़ के सहभागी बने, \\v 18 तो डालियों पर घमंड न करना; और यदि तुम घमंड करो, [तो जान लो कि] तुम जड़ को नहीं सँभालते, पर जड़ तुम्हें।",
           "B": "अब यदि कुछ डालियाँ तोड़ दी गईं, और तुम, जो जंगली जैतून की टहनी थे, उनके बीच कलम किए गए और अब जैतून की उपजाऊ जड़ में भागी हो, \\v 18 तो उन डालियों पर घमंड मत करो। यदि तुम घमंड करो, तो याद रखो: तुम जड़ को नहीं सँभालते; जड़ तुम्हें सँभालती है।",
           "R": "जैतून के पेड़ की कुछ डालियाँ तोड़ दी गईं। तुम जंगली जैतून की उस टहनी जैसे हो जिसे दूसरी डालियों के बीच उस पेड़ में जोड़ दिया गया। अब तुम उस भरपूर रस में भागी हो जो उसकी जड़ से ऊपर आता है। \\v 18 इसलिए यह मत सोचो कि तुम उन असली डालियों से बेहतर हो। अगर तुम्हें घमंड करने का मन हो, तो यह याद रखो: तुम जड़ को नहीं सँभालते। जड़ तुम्हें सँभालती है।"
+        },
+        "uk": {
+          "L": "А якщо деякі з гілок були відламані, а ти, бувши дикою маслиною, був прищеплений між ними і став спільником кореня, [що дає] поживний сік маслини, \\v 18 не хвалися перед гілками; а якщо хвалишся, [памʼятай, що] не ти тримаєш корінь, а корінь тебе.",
+          "B": "Якщо ж деякі гілки були відламані, а ти, хоч і пагін дикої маслини, був прищеплений між ними і тепер маєш частку в багатому корені маслини, \\v 18 не хвалися перед гілками. А якщо хвалишся, памʼятай: не ти тримаєш корінь, а корінь тримає тебе.",
+          "R": "Деякі гілки маслини були відламані. Ти — наче пагін з дикої маслини, який прищепили до дерева серед інших гілок. Тепер ти живишся поживним соком, що йде від її кореня. \\v 18 Тож не думай, що ти кращий за природні гілки. Якщо тобі хочеться хвалитися, памʼятай: не ти тримаєш корінь. Корінь тримає тебе."
+        },
+        "ja": {
+          "L": "しかし、もし枝のいくつかが折り取られ、野生のオリーブであるあなたがその間に接ぎ木されて、オリーブの木の根の豊かさにともにあずかる者となったのなら、\\v 18 その枝に対して誇ってはなりません。しかし、もし誇るなら、根を支えているのはあなたではなく、根があなたを[支えているのです]。",
+          "B": "さて、もし枝のいくつかが折り取られ、野生のオリーブの枝であるあなたが、その間に接ぎ木されて、オリーブの木の豊かな根にともにあずかるようになったのなら、\\v 18 その枝に対して誇ってはなりません。たとえ誇るとしても、覚えておきなさい。あなたが根を支えているのではなく、根があなたを支えているのです。",
+          "R": "オリーブの木の枝のいくつかは、折り取られました。あなたは、野生のオリーブの木から取った枝のようなもので、ほかの枝の間に接ぎ木されたのです。今あなたは、根から上がってくる豊かな養分を分けてもらっています。\\v 18 ですから、もとからある枝よりも自分のほうが上だと思わないでください。誇りたくなったら、このことを覚えていてください。あなたが根を支えているのではありません。根があなたを支えているのです。"
+        },
+        "id": {
+          "L": "Tetapi jika beberapa cabang telah dipatahkan, dan engkau, sebagai zaitun liar, telah dicangkokkan di antara mereka dan turut mendapat bagian dari akar yang penuh getah pohon zaitun itu, \\v 18 janganlah bermegah terhadap cabang-cabang itu; tetapi jika engkau bermegah, [ingatlah bahwa] bukan engkau yang menopang akar, melainkan akar itu yang [menopang] engkau.",
+          "B": "Jika beberapa cabang telah dipatahkan, dan engkau, walaupun hanya tunas zaitun liar, telah dicangkokkan di antara mereka dan sekarang turut menikmati akar pohon zaitun yang subur itu, \\v 18 janganlah bermegah terhadap cabang-cabang itu. Jika engkau bermegah, ingatlah: bukan engkau yang menopang akar itu; akar itulah yang menopang engkau.",
+          "R": "Beberapa cabang pohon zaitun sudah dipatahkan. Kamu seperti tunas dari pohon zaitun liar yang disambungkan pada pohon itu di antara cabang-cabang yang lain. Sekarang kamu turut menikmati getah yang subur yang naik dari akarnya. \\v 18 Jadi jangan menganggap dirimu lebih baik daripada cabang-cabang yang asli. Kalau kamu tergoda untuk menyombongkan diri, ingatlah ini: Bukan kamu yang menopang akar itu. Akar itulah yang menopang kamu."
+        },
+        "zh": {
+          "L": "但如果有些枝子被折断了，而你本是一棵野橄榄，却被嫁接在它们中间，成了与[它们]同享橄榄树肥美之根的伙伴，\\v 18 那就不要对那些枝子夸口；如果你真的夸口，[要记住]：支撑根的并不是你，而是根[支撑]着你。",
+          "B": "如果有些枝子被折断了，而你虽是野橄榄的嫩枝，却被嫁接在它们当中，如今一同分享橄榄树丰沛的根，\\v 18 那就不要对那些枝子夸口。你若夸口，要记住：不是你撑住根，是根撑住你。",
+          "R": "橄榄树的一些枝子被折断了。你就像一棵野橄榄树的嫩枝，被接到这棵树上，长在其他枝子中间。现在你分享从树根上来的丰富汁液。\\v 18 所以不要以为你比那些原来的枝子更好。如果你想要夸口，就要记住这件事：不是你撑住树根，而是树根撑住你。"
         }
       },
       "decisions": [
@@ -5739,7 +6887,7 @@
           ],
           "reason": "The oldest manuscripts have two genitives in a row, \"of the root of the richness\"; some manuscripts add \"and\" between them, and others leave out \"the root\". The meaning is the same. Reviewers must check the details against the SBLGNT apparatus.",
           "uncertain": false,
-          "footnote": true
+          "footnote": false
         },
         {
           "id": "m5",
@@ -6162,6 +7310,133 @@
           "reason": "\"कलम करना\" is the gardener's word for grafting; Readable says what grafting does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n45011017007"
+          ],
+          "choice": "ти (singular) through 11:17-24",
+          "alternatives": [
+            "ви"
+          ],
+          "reason": "Paul addresses one Gentile believer as an example (m2), with the Greek singular, so Ukrainian keeps \"ти\"; the tree is \"маслина\", the wild one \"дика маслина\", and grafting \"прищепити\" throughout.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011017007"
+          ],
+          "choice": "singular \"あなた\" (not \"あなたがた\" or \"みなさん\") through verses 17-24",
+          "alternatives": [
+            "\"あなたがた\" (L, B), \"みなさん\" (R)"
+          ],
+          "reason": "Paul speaks to one imagined Gentile believer as an example (m2), so every level keeps the singular \"あなた\" for this passage, as it does for the readers' plural elsewhere with \"あなたがた\" and \"みなさん\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011017011"
+          ],
+          "choice": "\"接ぎ木される\"; \"野生のオリーブ\"",
+          "alternatives": [
+            "\"つがれる\""
+          ],
+          "reason": "\"接ぎ木\" is the ordinary Japanese word for grafting and is used for the whole olive-tree picture through verse 24.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n45011017007"
+          ],
+          "choice": "\"engkau\" (L, B), \"kamu\" (R) for the one Gentile believer addressed",
+          "alternatives": [
+            "\"kalian\""
+          ],
+          "reason": "Paul addresses one Gentile believer as an example (m2), so the singular of address, as for the imagined listener of chapter 2, through 11:24.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011017011"
+          ],
+          "choice": "\"嫁接\" (L, B); \"接到……上\" (R)",
+          "alternatives": [
+            "\"接上\""
+          ],
+          "reason": "\"嫁接\" is the gardener's word for grafting (meaning note m3), used through verses 17-24; Readable says \"joined onto\", as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011018002",
+            "n45011018007"
+          ],
+          "choice": "\"夸口\" (every level)",
+          "alternatives": [
+            "\"自夸\""
+          ],
+          "reason": "One scheme for kauchaomai, kauchēma and kauchēsis through the letter, as in 1 and 2 Corinthians. Literal always says \"夸口\", so the reader can trace it. Where Paul's argument turns on boasting itself, the boast in the law, in works or over others that he criticises (2:17, 23; 3:27; 4:2; 11:18), every level keeps \"夸口\". Where the boast is proper, in hope, in troubles and in God (5:2, 3, 11) and in Paul's work (15:17), Balanced says \"以……为荣\" (\"引以为荣\" where the thing is not named); Readable says \"欢喜\" where the English Readable says \"rejoice\" (5:2-11) and \"引以为荣\" where it speaks of pride (15:17). \"感到自豪\" and \"夸耀\" are not used for this word.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6236,6 +7511,26 @@
           "L": "फिर तुम कहोगे, \"डालियाँ इसलिए तोड़ी गईं कि मैं कलम किया जाऊँ।\"",
           "B": "तब तुम कहोगे, \"डालियाँ इसलिए तोड़ी गईं कि मैं कलम किया जा सकूँ।\"",
           "R": "तब शायद तुम कहो, \"परमेश्वर ने वे डालियाँ इसलिए तोड़ीं कि मेरे लिए जगह बने।\""
+        },
+        "uk": {
+          "L": "Отже, скажеш: «Гілки були відламані, щоб я був прищеплений.»",
+          "B": "Тоді ти скажеш: «Гілки відламали, щоб прищепити мене.»",
+          "R": "Тоді ти можеш сказати: «Бог відламав ті гілки, щоб звільнити місце для мене.»"
+        },
+        "ja": {
+          "L": "それで、あなたは言うでしょう。「枝が折り取られたのは、わたしが接ぎ木されるためだった」と。",
+          "B": "すると、あなたは言うでしょう。「枝が折り取られたのは、わたしが接ぎ木されるためだったのだ」と。",
+          "R": "するとあなたは、「神があの枝を折り取られたのは、わたしの場所を空けるためだったのだ」と言うかもしれません。"
+        },
+        "id": {
+          "L": "Lalu engkau akan berkata, \"Cabang-cabang telah dipatahkan supaya aku dicangkokkan.\"",
+          "B": "Lalu engkau akan berkata, \"Cabang-cabang itu dipatahkan supaya aku dapat dicangkokkan.\"",
+          "R": "Lalu mungkin kamu berkata, \"Allah mematahkan cabang-cabang itu untuk memberi tempat bagi aku.\""
+        },
+        "zh": {
+          "L": "于是你会说：“枝子被折断，是为了让我被嫁接进去。”",
+          "B": "那么你会说：“那些枝子被折断，是要让我能被嫁接上去。”",
+          "R": "那么你也许会说：“{{god_term:神|上帝}}把那些枝子折断，是为了给我腾出位置。”"
         }
       },
       "decisions": [
@@ -6374,6 +7669,26 @@
           "L": "ठीक; वे अविश्वास के कारण तोड़ी गईं, पर तुम विश्वास से खड़े हो।",
           "B": "यह सच है। वे अपने अविश्वास के कारण तोड़ी गईं, पर तुम विश्वास से दृढ़ खड़े हो।",
           "R": "यह सच है। पर वे इसलिए तोड़ी गईं कि उन्होंने विश्वास नहीं किया। और तुम केवल अपने विश्वास के कारण अब भी पेड़ पर बने हुए हो।"
+        },
+        "uk": {
+          "L": "Добре; через невірство вони були відламані, а ти стоїш вірою.",
+          "B": "Це правда. Вони були відламані через своє невірство, а ти тримаєшся завдяки вірі.",
+          "R": "Це правда. Але їх відламали, бо вони не вірили. А ти все ще на дереві тільки завдяки своїй вірі."
+        },
+        "ja": {
+          "L": "そのとおりです。彼らは不信仰によって折り取られ、あなたは信仰によって立っています。",
+          "B": "そのとおりです。彼らは不信仰のために折り取られましたが、あなたは信仰によってしっかり立っているのです。",
+          "R": "確かにそうです。でも、彼らが折り取られたのは、信じなかったからです。そしてあなたが今もそこにいるのは、ただあなたの信仰によるのです。"
+        },
+        "id": {
+          "L": "Baiklah; mereka dipatahkan karena ketidakpercayaan, tetapi engkau berdiri karena iman.",
+          "B": "Memang benar. Mereka dipatahkan karena ketidakpercayaan mereka, tetapi engkau berdiri teguh karena iman.",
+          "R": "Itu benar. Tetapi mereka dipatahkan karena mereka tidak percaya. Dan kamu masih ada di situ hanya karena imanmu."
+        },
+        "zh": {
+          "L": "说得对；他们是因着不信被折断的，但你是凭着信心站立的。",
+          "B": "没错。他们因为不信而被折断，你却是凭着信心站稳的。",
+          "R": "这是真的。但是他们被折断，是因为他们不信。而你还留在树上，只是因为你有信心。"
         }
       },
       "decisions": [
@@ -6508,6 +7823,26 @@
           "reason": "The word here is not believing (m2), set against faith. \"Bất tín\" was used in 3:3 for unfaithfulness, the other sense of the same Greek word, so the plain \"không tin\" is used here.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011020003"
+          ],
+          "choice": "\"不信仰\" (L, B); \"信じなかった\" (R)",
+          "alternatives": [
+            "\"不信\""
+          ],
+          "reason": "Unbelief here is refusing to believe the gospel, set against faith (m2). \"不信仰\" pairs with \"信仰\" in the same sentence; Readable uses the verb 信じる, kept at every level.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6580,6 +7915,26 @@
           "L": "ऊँची बातें मत सोचो, पर डरो;",
           "B": "घमंड मत करो, पर डरो।",
           "R": "इसलिए घमंड मत करो। इसके बजाय परमेश्वर का भय मानो।"
+        },
+        "uk": {
+          "L": "Не думай високо [про себе], а бійся.",
+          "B": "Не будь гордим, а бійся.",
+          "R": "Тож не гордися. Краще бійся Бога."
+        },
+        "ja": {
+          "L": "高ぶったことを思ってはなりません。むしろ、恐れなさい。",
+          "B": "思い上がってはなりません。むしろ恐れなさい。",
+          "R": "ですから、思い上がらないでください。むしろ、神を恐れてください。"
+        },
+        "id": {
+          "L": "Jangan memikirkan hal-hal yang tinggi, tetapi takutlah.",
+          "B": "Jangan sombong, tetapi takutlah.",
+          "R": "Jadi jangan sombong. Sebaliknya, takutlah kepada Allah."
+        },
+        "zh": {
+          "L": "不要心存高傲的念头，而要惧怕。",
+          "B": "不要骄傲，倒要心存畏惧。",
+          "R": "所以不要骄傲，反倒要敬畏{{god_term:神|上帝}}。"
         }
       },
       "decisions": [
@@ -6734,6 +8089,26 @@
           "L": "क्योंकि यदि परमेश्वर ने स्वाभाविक डालियों को न छोड़ा, तो तुम्हें भी न छोड़ेंगे।",
           "B": "क्योंकि यदि परमेश्वर ने उन डालियों को नहीं छोड़ा जो पेड़ पर स्वाभाविक रूप से उगी थीं, तो वे तुम्हें भी नहीं छोड़ेंगे।",
           "R": "परमेश्वर ने उन डालियों को नहीं छोड़ा जो स्वभाव से उस पेड़ की थीं। इसलिए अगर तुम घमंडी हो जाओ, तो वे तुम्हें भी नहीं छोड़ेंगे।"
+        },
+        "uk": {
+          "L": "Бо якщо Бог не пощадив природних гілок, то й тебе {{deity_pronoun:він|Він}} не пощадить.",
+          "B": "Бо якщо Бог не пощадив гілок, що природно росли на дереві, {{deity_pronoun:він|Він}} не пощадить і тебе.",
+          "R": "Бог не пощадив гілок, які за природою належали дереву. Тож якщо ти загордишся, {{deity_pronoun:він|Він}} не пощадить і тебе."
+        },
+        "ja": {
+          "L": "なぜなら、もし神が本来の枝を惜しまれなかったとすれば、あなたをも惜しまれないからです。",
+          "B": "神が、もともと木に生えていた枝さえ容赦されなかったのなら、あなたも容赦されないでしょう。",
+          "R": "神は、もともとその木のものだった枝を容赦されませんでした。ですから、もしあなたが思い上がるなら、神はあなたも容赦されないでしょう。"
+        },
+        "id": {
+          "L": "Sebab jika Allah tidak menyayangkan cabang-cabang asli, {{deity_pronoun:dia|Dia}} juga tidak akan menyayangkan engkau.",
+          "B": "Sebab jika Allah tidak menyayangkan cabang-cabang yang tumbuh secara asli pada pohon itu, {{deity_pronoun:dia|Dia}} juga tidak akan menyayangkan engkau.",
+          "R": "Allah tidak menyayangkan cabang-cabang yang memang asli dari pohon itu. Jadi kalau kamu menjadi sombong, {{deity_pronoun:dia|Dia}} juga tidak akan menyayangkan kamu."
+        },
+        "zh": {
+          "L": "因为如果{{god_term:神|上帝}}没有宽免那些照本性[长出]的枝子，{{deity_pronoun:他|祂}}也不会宽免你。",
+          "B": "因为如果{{god_term:神|上帝}}没有宽容那些天然长在树上的枝子，{{deity_pronoun:他|祂}}也不会宽容你。",
+          "R": "{{god_term:神|上帝}}没有放过那些天生属于这棵树的枝子。所以如果你骄傲起来，{{deity_pronoun:他|祂}}也不会放过你。"
         }
       },
       "decisions": [
@@ -6880,6 +8255,28 @@
           "reason": "Portuguese leaves out the subject pronoun where God has just been named, so Literal and Balanced have no deity_pronoun span where the English has \"he\"; Readable names the subject in a new sentence and keeps it.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011021010",
+            "n45011021013"
+          ],
+          "choice": "\"惜しまれない\" (L); \"容赦されない\" (B, R)",
+          "alternatives": [
+            "\"大目に見る\""
+          ],
+          "reason": "To spare is to hold back from punishing. Literal keeps \"惜しむ\", the closest Japanese to the Greek verb; Balanced and Readable say \"容赦する\", which is clearer in a warning about judgment.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6971,6 +8368,26 @@
           "L": "इसलिए परमेश्वर की कृपा और कठोरता को देखो: जो गिर गए उन पर कठोरता, पर तुम पर परमेश्वर की कृपा, यदि तुम [उस] कृपा में बने रहो; नहीं तो तुम भी काट डाले जाओगे।",
           "B": "इसलिए परमेश्वर की कृपा और कठोरता दोनों पर ध्यान दो: जो गिर गए, उनके प्रति कठोरता, पर तुम्हारे प्रति परमेश्वर की कृपा, जब तक तुम उनकी कृपा में बने रहो। नहीं तो तुम भी काट डाले जाओगे।",
           "R": "इसलिए सोचो कि परमेश्वर कितने कृपालु हैं, और कितने कठोर भी हैं। जो गिर गए, उनके साथ वे कठोर रहे। पर वे तुम पर कृपा करते हैं, जब तक तुम उनकी कृपा के सहारे जीते रहो। अगर तुम ऐसा न करो, तो तुम भी काट डाले जाओगे।"
+        },
+        "uk": {
+          "L": "Тож бач доброту і суворість Бога: на тих, хто впав, — суворість, а на тебе — Божа доброта, якщо перебуватимеш у доброті; інакше й ти будеш відрубаний.",
+          "B": "Тож зверни увагу і на доброту, і на суворість Бога: суворість до тих, хто впав, а Божа доброта до тебе, доки ти тримаєшся {{deity_pronoun:його|Його}} доброти. Інакше й тебе буде відрубано.",
+          "R": "Тож подумай, який Бог добрий і який {{deity_pronoun:він|Він}} суворий. Він був суворий до тих, хто впав. Але {{deity_pronoun:він|Він}} добрий до тебе, доки ти й далі живеш у {{deity_pronoun:його|Його}} доброті. Якщо ні, тебе теж буде відрубано."
+        },
+        "ja": {
+          "L": "それゆえ、神の慈しみと厳しさを見なさい。倒れた者たちの上には厳しさが、しかしあなたの上には神の慈しみが[あります]。もしあなたがその慈しみにとどまっているならです。そうでなければ、あなたも切り取られるでしょう。",
+          "B": "ですから、神の慈しみと厳しさの両方に目を留めなさい。倒れた者たちには厳しさが、あなたには神の慈しみが向けられています。ただし、あなたが神の慈しみにとどまり続けるならです。そうでなければ、あなたも切り取られるでしょう。",
+          "R": "ですから、神がどんなに優しい方か、そしてまた、どんなに厳しい方かを考えてみてください。神は倒れた人たちには厳しくされました。でも、あなたには優しくしてくださっています。ただしそれは、あなたが神の優しさの中にとどまり続けるならです。そうしなければ、あなたも切り取られてしまいます。"
+        },
+        "id": {
+          "L": "Jadi lihatlah kebaikan dan kekerasan Allah: atas mereka yang telah jatuh, kekerasan, tetapi atasmu, kebaikan Allah, jika engkau tetap dalam kebaikan [itu]; jika tidak, engkau juga akan dipotong.",
+          "B": "Jadi perhatikanlah kebaikan dan juga kekerasan Allah: kekerasan terhadap mereka yang telah jatuh, tetapi kebaikan Allah terhadap engkau, asalkan engkau tetap tinggal dalam kebaikan-{{deity_pronoun:nya|Nya}}. Jika tidak, engkau pun akan dipotong.",
+          "R": "Jadi pikirkanlah betapa baiknya Allah, dan juga betapa kerasnya {{deity_pronoun:dia|Dia}}. {{deity_pronoun:dia|Dia}} keras terhadap mereka yang jatuh. Tetapi {{deity_pronoun:dia|Dia}} baik kepadamu, asalkan kamu tetap hidup dalam kebaikan-{{deity_pronoun:nya|Nya}}. Kalau tidak, kamu juga akan dipotong."
+        },
+        "zh": {
+          "L": "那么，要看{{god_term:神|上帝}}的仁慈和严厉：落在跌倒的人身上的是严厉，落在你身上的是{{god_term:神|上帝}}的仁慈，如果你持续留在[那]仁慈中；否则你也会被砍掉。",
+          "B": "所以，要留意{{god_term:神|上帝}}的仁慈和严厉：对跌倒的人是严厉，对你却是{{god_term:神|上帝}}的仁慈，只要你继续留在{{deity_pronoun:他|祂}}的仁慈里。否则，你也会被砍掉。",
+          "R": "所以要想一想，{{god_term:神|上帝}}多么仁慈，{{deity_pronoun:他|祂}}又多么严厉。{{deity_pronoun:他|祂}}对那些跌倒的人很严厉。但{{deity_pronoun:他|祂}}对你很仁慈，只要你一直活在{{deity_pronoun:他|祂}}的仁慈里。如果你不这样，你也会被砍掉。"
         }
       },
       "decisions": [
@@ -7155,6 +8572,51 @@
           "reason": "This is God's kindness (meaning decision m1), a different Greek word from grace, so it is \"कृपा\" and \"अनुग्रह\" stays for grace.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011022003",
+            "n45011022005"
+          ],
+          "choice": "\"慈しみ\" and \"厳しさ\" (L, B); \"優しい\" and \"厳しい\" (R)",
+          "alternatives": [
+            "\"恵み\" for kindness",
+            "\"いつくしみ\" in kana"
+          ],
+          "reason": "Kindness is God's goodness and generosity (m1), a different word from grace, so it is not said with \"恵み\". \"慈しみ\" is the written word for God's kindness at Literal and Balanced; Readable uses the everyday \"優しい\". \"厳しさ\" is the plain word for sternness in judgment (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011022003",
+            "n45011022005"
+          ],
+          "choice": "\"仁慈\" and \"严厉\"",
+          "alternatives": [
+            "\"恩慈\""
+          ],
+          "reason": "Plain modern words for God's kindness and severity (meaning notes m1-m2), kept the same through the verse so the contrast is heard.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -7238,6 +8700,26 @@
           "L": "और वे भी, यदि अविश्वास में न रहें, तो कलम किए जाएँगे; क्योंकि परमेश्वर उन्हें फिर कलम करने में समर्थ हैं।",
           "B": "और वे भी, यदि अविश्वास में न बने रहें, तो कलम किए जाएँगे, क्योंकि परमेश्वर उन्हें फिर से कलम करने की सामर्थ्य रखते हैं।",
           "R": "और अगर इस्राएल के लोग विश्वास करने से इनकार करना छोड़ दें, तो वे फिर से पेड़ में जोड़ दिए जाएँगे। परमेश्वर में उन्हें फिर से जोड़ने की शक्ति है।"
+        },
+        "uk": {
+          "L": "І вони теж, якщо не залишатимуться в невірстві, будуть прищеплені; бо Бог спроможний знову прищепити їх.",
+          "B": "І вони теж, якщо не залишаться в невірстві, будуть прищеплені, бо Бог має силу прищепити їх назад.",
+          "R": "І якщо народ Ізраїлю перестане відмовлятися вірити, їх знову приєднають до дерева. Бог має силу повернути їх на місце."
+        },
+        "ja": {
+          "L": "そして彼らもまた、不信仰にとどまらないなら、接ぎ木されるでしょう。神は彼らを再び接ぎ木することがおできになるからです。",
+          "B": "彼らも、不信仰にとどまり続けないなら、接ぎ木されます。神には、彼らをもう一度接ぎ木する力があるからです。",
+          "R": "そしてイスラエルの人々も、信じようとしない心を捨てるなら、もう一度その木に接ぎ木されます。神には、彼らをもとどおりにする力があるのです。"
+        },
+        "id": {
+          "L": "Dan mereka juga, jika mereka tidak tetap dalam ketidakpercayaan, akan dicangkokkan; sebab Allah berkuasa untuk mencangkokkan mereka kembali.",
+          "B": "Dan mereka pun, jika mereka tidak tetap dalam ketidakpercayaan, akan dicangkokkan, sebab Allah berkuasa mencangkokkan mereka kembali.",
+          "R": "Dan kalau bangsa Israel berhenti menolak untuk percaya, mereka akan disambungkan pada pohon itu lagi. Allah berkuasa memasang mereka kembali."
+        },
+        "zh": {
+          "L": "而那些人，如果他们不继续留在不信里，也将被嫁接进去，因为{{god_term:神|上帝}}能够再把他们嫁接上。",
+          "B": "至于他们，如果不再停留在不信之中，也会被嫁接回去，因为{{god_term:神|上帝}}有能力把他们再接上去。",
+          "R": "如果以色列人不再拒绝相信，他们会再被接回树上。{{god_term:神|上帝}}有能力把他们接回去。"
         }
       },
       "decisions": [
@@ -7413,6 +8895,26 @@
           "L": "क्योंकि यदि तुम उस जैतून से, जो स्वभाव से जंगली है, काटे गए और स्वभाव के विरुद्ध अच्छे जैतून में कलम किए गए, तो ये, जो स्वाभाविक [डालियाँ] हैं, अपने ही जैतून में कितने अधिक कलम किए जाएँगे!",
           "B": "आख़िर, यदि तुम उस जैतून से काटे गए जो स्वभाव से जंगली है, और स्वभाव के विरुद्ध एक अच्छे जैतून में कलम किए गए, तो ये स्वाभाविक डालियाँ कितनी आसानी से अपने ही जैतून में फिर कलम की जाएँगी!",
           "R": "तुम एक जंगली जैतून के पेड़ से काटे गए, जिस पर तुम स्वाभाविक रूप से उगे थे। फिर, पेड़ों के उगने के आम तरीक़े के विरुद्ध, तुम्हें बाग़ के जैतून में जोड़ दिया गया। असली डालियाँ तो उसी पेड़ की हैं। इसलिए परमेश्वर के लिए उन्हें उनके अपने पेड़ में वापस जोड़ना और भी आसान होगा!"
+        },
+        "uk": {
+          "L": "Бо якщо ти був відрізаний від маслини, дикої за природою, і всупереч природі прищеплений до садової маслини, то наскільки більше ці, природні [гілки], будуть прищеплені до своєї власної маслини!",
+          "B": "Зрештою, якщо тебе відрізали від маслини, що за природою дика, і всупереч природі прищепили до садової маслини, то наскільки легше буде прищепити ці природні гілки назад до їхньої власної маслини!",
+          "R": "Тебе відрізали від дикої маслини, де ти ріс природно. Потім, усупереч тому, як зазвичай ростуть рослини, тебе приєднали до садової маслини. А природні гілки належать саме цьому дереву. Тож Богові буде ще легше приєднати їх назад до їхнього власного дерева!"
+        },
+        "ja": {
+          "L": "なぜなら、もしあなたが、本来野生であるオリーブから切り取られ、本来の性質に反して栽培されたオリーブに接ぎ木されたのなら、まして、本来の[枝である]これらの者は、どれほどたやすく自分自身のオリーブの木に接ぎ木されることでしょう！",
+          "B": "もしあなたが、もともと野生のオリーブの木から切り取られ、自然に反して、栽培されたオリーブの木に接ぎ木されたのなら、もともとの枝であるこの人たちが自分のオリーブの木に接ぎ木されることは、なおさらたやすいはずです！",
+          "R": "あなたは、野生のオリーブの木から切り取られました。もともとそこで育っていたのです。それなのに、ふつうの育ち方とは逆に、人が育てたオリーブの木に接ぎ木されました。もともとの枝は、その木のものです。ですから、神が彼らを自分たちの木に接ぎ戻されるのは、もっとたやすいことです！"
+        },
+        "id": {
+          "L": "Sebab jika engkau telah dipotong dari pohon zaitun yang menurut asalnya liar, dan berlawanan dengan asalnya telah dicangkokkan pada pohon zaitun yang dibudidayakan, terlebih lagi mereka ini, [cabang-cabang] yang asli, akan dicangkokkan pada pohon zaitun mereka sendiri!",
+          "B": "Bagaimanapun, jika engkau telah dipotong dari pohon yang aslinya zaitun liar, lalu, berlawanan dengan sifat alaminya, dicangkokkan pada pohon zaitun kebun, terlebih mudah lagi cabang-cabang asli ini dicangkokkan kembali pada pohon zaitun mereka sendiri!",
+          "R": "Kamu dipotong dari pohon zaitun liar, tempat kamu tumbuh secara alami. Lalu, berlawanan dengan cara tumbuhan biasanya tumbuh, kamu disambungkan pada pohon zaitun kebun. Cabang-cabang yang asli adalah milik pohon itu. Jadi Allah akan lebih mudah lagi menyambungkan mereka kembali pada pohon mereka sendiri!"
+        },
+        "zh": {
+          "L": "因为你若是从那按本性是野的橄榄树上被砍下来，又违反本性被嫁接到栽培的橄榄树上，那么这些按本性的[枝子]，更要被嫁接回他们自己的橄榄树上了！",
+          "B": "毕竟，你是从天生的野橄榄树上被剪下来，又违反常理被嫁接到栽种的橄榄树上；那么这些天然的枝子要被接回自己的橄榄树上，就更加容易了！",
+          "R": "你是从一棵野橄榄树上被剪下来的，你原本自然地长在那里。后来，违反了植物通常生长的方式，你被接到一棵园子里的橄榄树上。那些天然的枝子本来就属于这棵树。所以，{{god_term:神|上帝}}把它们接回自己的树上，就更容易了！"
         }
       },
       "decisions": [
@@ -7562,6 +9064,48 @@
           "reason": "Readable needs an everyday word for a tree people plant and tend, as the English \"garden olive tree\"; in Brazil fruit trees grow in a \"pomar\", not a \"jardim\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011024011",
+            "n45011024012"
+          ],
+          "choice": "\"本来の性質に反して\" (L); \"自然に反して\" (B); \"ふつうの育ち方とは逆に\" (R)",
+          "alternatives": [
+            "\"不自然に\""
+          ],
+          "reason": "The phrase describes unusual gardening, not wrongdoing (m1). \"不自然\" would suggest something odd or wrong; the chosen phrases say only that it goes against the way things normally grow.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n45011024016",
+            "n45011024017"
+          ],
+          "choice": "\"どれほどたやすく\"",
+          "alternatives": [
+            "\"どれほど\" alone"
+          ],
+          "reason": "Japanese cannot leave \"how much more\" without saying more of what; Literal supplies \"たやすく\" from the argument from the harder to the easier (m2), as Balanced and Readable also say.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -7626,54 +9170,74 @@
       "literal_gloss": "Not for I want you to be ignorant, brothers, of the mystery this, that not you be in yourselves wise, that a hardening in part to the Israel has happened until which the fullness of the Gentiles may come in, \\v 26 and so all Israel will be saved; as it has been written: Will come out of Zion the delivering [one], he will turn away ungodliness from Jacob.",
       "renderings": {
         "en": {
-          "L": "For I do not want you to be ignorant, {{gender:brothers and sisters|brothers}}, of this mystery, so that you may not be wise in your own [eyes]: that a hardening in part has come to Israel until the fullness of the Gentiles has come in, \\v 26 and in this way all Israel will be saved, just as it is written, \"The Deliverer will come out of Zion; {{deity_pronoun:he|He}} will turn away ungodliness from Jacob.\"",
-          "B": "{{gender:Brothers and sisters|Brothers}}, I want you to understand this mystery, so that you will not think yourselves wise: a hardening has come upon part of Israel until the full number of the Gentiles comes in. \\v 26 And in this way all Israel will be saved. As it is written, \"Out of Zion will come the Deliverer; {{deity_pronoun:he|He}} will turn ungodliness away from Jacob.\"",
-          "R": "{{gender:Brothers and sisters|Brothers}}, I want you to know a secret that God has now made known. Then you will not think you are wiser than you are. Part of Israel has been made stubborn, but only until the full number of people who are not Jews has come in. \\v 26 And in this way all Israel will be saved. As Scripture says, \"The One who rescues will come from Zion. He will turn the people of Jacob away from their ungodly ways.\""
+          "L": "For I do not want you to be ignorant, {{gender:brothers and sisters|brothers}}, of this mystery, so that you may not be wise in your own [eyes]: that a hardening in part has come to Israel until the fullness of the Gentiles has come in, \\v 26 and in this way all Israel will be saved, just as it is written, \\q \"The Deliverer will come out of Zion; \\q {{deity_pronoun:he|He}} will turn away ungodliness from Jacob.\"",
+          "B": "{{gender:Brothers and sisters|Brothers}}, I want you to understand this mystery, so that you will not think yourselves wise: a hardening has come upon part of Israel until the full number of the Gentiles comes in. \\v 26 And in this way all Israel will be saved. As it is written, \\q \"Out of Zion will come the Deliverer; \\q {{deity_pronoun:he|He}} will turn ungodliness away from Jacob.\"",
+          "R": "{{gender:Brothers and sisters|Brothers}}, I want you to know a secret that God has now made known. Then you will not think you are wiser than you are. Part of Israel has been made stubborn, but only until the full number of people who are not Jews has come in. \\v 26 And in this way all Israel will be saved. As Scripture says, \\q \"The One who rescues will come from Zion. \\q He will turn the people of Jacob away from their ungodly ways.\""
         },
         "es": {
-          "L": "Porque no quiero que {{plural_you:ignoren|ignoréis}}, hermanos, este misterio, para que no {{plural_you:sean|seáis}} sabios en {{plural_you:su|vuestra}} propia [opinión]: que un endurecimiento en parte le ha sobrevenido a Israel hasta que haya entrado la plenitud de los gentiles, \\v 26 y de este modo todo Israel será salvo, tal como está escrito: «Vendrá de Sion el Libertador; apartará de Jacob la impiedad.»",
-          "B": "Hermanos, quiero que {{plural_you:entiendan|entendáis}} este misterio, para que no {{plural_you:se crean|os creáis}} sabios: un endurecimiento ha venido sobre una parte de Israel hasta que entre el número completo de los gentiles. \\v 26 Y de este modo todo Israel será salvo. Como está escrito: «De Sion vendrá el Libertador; apartará de Jacob la impiedad.»",
-          "R": "Hermanos, quiero que {{plural_you:conozcan|conozcáis}} un misterio, un plan secreto que Dios ahora ha dado a conocer. Así no {{plural_you:se creerán|os creeréis}} más sabios de lo que {{plural_you:son|sois}}. Una parte de Israel se ha vuelto terca, pero solo hasta que haya entrado el número completo de los que no son judíos. \\v 26 Y de este modo todo Israel será salvo. Como dice la Escritura: «El que rescata vendrá de Sion. Hará que el pueblo de Jacob deje de vivir sin Dios.»"
+          "L": "Porque no quiero que {{plural_you:ignoren|ignoréis}}, hermanos, este misterio, para que no {{plural_you:sean|seáis}} sabios en {{plural_you:su|vuestra}} propia [opinión]: que un endurecimiento en parte le ha sobrevenido a Israel hasta que haya entrado la plenitud de los gentiles, \\v 26 y de este modo todo Israel será salvo, tal como está escrito: \\q «Vendrá de Sion el Libertador; \\q apartará de Jacob la impiedad.»",
+          "B": "Hermanos, quiero que {{plural_you:entiendan|entendáis}} este misterio, para que no {{plural_you:se crean|os creáis}} sabios: un endurecimiento ha venido sobre una parte de Israel hasta que entre el número completo de los gentiles. \\v 26 Y de este modo todo Israel será salvo. Como está escrito: \\q «De Sion vendrá el Libertador; \\q apartará de Jacob la impiedad.»",
+          "R": "Hermanos, quiero que {{plural_you:conozcan|conozcáis}} un misterio, un plan secreto que Dios ahora ha dado a conocer. Así no {{plural_you:se creerán|os creeréis}} más sabios de lo que {{plural_you:son|sois}}. Una parte de Israel se ha vuelto terca, pero solo hasta que haya entrado el número completo de los que no son judíos. \\v 26 Y de este modo todo Israel será salvo. Como dice la Escritura: \\q «El que rescata vendrá de Sion. \\q Hará que el pueblo de Jacob deje de vivir sin Dios.»"
         },
         "sw": {
-          "L": "Kwa maana sitaki mkose kuijua siri hii, ndugu, ili msiwe wenye hekima kwa maoni yenu wenyewe: kwamba ugumu kwa sehemu umekuja juu ya Israeli hadi utimilifu wa watu wa mataifa utakapoingia, \\v 26 na hivyo Israeli wote wataokolewa, kama ilivyoandikwa: \"Mwokoaji atakuja kutoka Sayuni; ataondoa kutomcha Mungu kutoka kwa Yakobo.\"",
-          "B": "Ndugu, nataka mwielewe siri hii, ili msijione kuwa wenye hekima: ugumu umekuja juu ya sehemu ya Israeli hadi idadi kamili ya watu wa mataifa itakapoingia. \\v 26 Na hivyo ndivyo Israeli wote watakavyookolewa. Kama ilivyoandikwa: \"Mwokoaji atakuja kutoka Sayuni; ataondoa kutomcha Mungu kutoka kwa Yakobo.\"",
-          "R": "Ndugu, nataka mjue siri ambayo Mungu ameifunua sasa. Hapo hamtajiona kuwa wenye hekima kuliko mlivyo. Baadhi ya watu wa Israeli wamefanywa wakaidi, lakini ni mpaka idadi kamili ya watu wasio Wayahudi itakapokuwa imeingia. \\v 26 Na hivyo ndivyo Israeli wote watakavyookolewa. Kama Maandiko yanavyosema: \"Yule anayeokoa atakuja kutoka Sayuni. Atawageuza watu wa Yakobo waache njia zao za kutomcha Mungu.\""
+          "L": "Kwa maana sitaki mkose kuijua siri hii, ndugu, ili msiwe wenye hekima kwa maoni yenu wenyewe: kwamba ugumu kwa sehemu umekuja juu ya Israeli hadi utimilifu wa watu wa mataifa utakapoingia, \\v 26 na hivyo Israeli wote wataokolewa, kama ilivyoandikwa: \\q \"Mwokoaji atakuja kutoka Sayuni; \\q ataondoa kutomcha Mungu kutoka kwa Yakobo.\"",
+          "B": "Ndugu, nataka mwielewe siri hii, ili msijione kuwa wenye hekima: ugumu umekuja juu ya sehemu ya Israeli hadi idadi kamili ya watu wa mataifa itakapoingia. \\v 26 Na hivyo ndivyo Israeli wote watakavyookolewa. Kama ilivyoandikwa: \\q \"Mwokoaji atakuja kutoka Sayuni; \\q ataondoa kutomcha Mungu kutoka kwa Yakobo.\"",
+          "R": "Ndugu, nataka mjue siri ambayo Mungu ameifunua sasa. Hapo hamtajiona kuwa wenye hekima kuliko mlivyo. Baadhi ya watu wa Israeli wamefanywa wakaidi, lakini ni mpaka idadi kamili ya watu wasio Wayahudi itakapokuwa imeingia. \\v 26 Na hivyo ndivyo Israeli wote watakavyookolewa. Kama Maandiko yanavyosema: \\q \"Yule anayeokoa atakuja kutoka Sayuni. \\q Atawageuza watu wa Yakobo waache njia zao za kutomcha Mungu.\""
         },
         "fr": {
-          "L": "Car je ne veux pas que vous ignoriez, {{gender:frères et sœurs|frères}}, ce mystère, afin que vous ne soyez pas sages à vos propres [yeux] : un endurcissement est survenu en partie à Israël jusqu’à ce que la plénitude des nations soit entrée, \\v 26 et ainsi tout Israël sera sauvé, selon qu’il est écrit : « Le Libérateur viendra de Sion ; {{deity_pronoun:il|Il}} détournera de Jacob l’impiété. »",
-          "B": "{{gender:Frères et sœurs|Frères}}, je veux que vous compreniez ce mystère, pour que vous ne vous preniez pas pour des sages : une partie d’Israël a été frappée d’endurcissement jusqu’à ce que le nombre complet des non-Juifs soit entré. \\v 26 Et c’est ainsi que tout Israël sera sauvé. Comme il est écrit : « De Sion viendra le Libérateur ; {{deity_pronoun:il|Il}} écartera de Jacob l’impiété. »",
-          "R": "{{gender:Frères et sœurs|Frères}}, je veux que vous connaissiez un secret que Dieu a maintenant fait connaître. Alors vous ne vous croirez pas plus sages que vous ne l’êtes. Une partie d’Israël a été rendue obstinée, mais seulement jusqu’à ce que le nombre complet de ceux qui ne sont pas juifs soit entré. \\v 26 Et c’est ainsi que tout Israël sera sauvé. Comme le dit l’Écriture : « Celui qui délivre viendra de Sion. Il détournera le peuple de Jacob de sa vie sans Dieu. »"
+          "L": "Car je ne veux pas que vous ignoriez, {{gender:frères et sœurs|frères}}, ce mystère, afin que vous ne soyez pas sages à vos propres [yeux] : un endurcissement est survenu en partie à Israël jusqu’à ce que la plénitude des nations soit entrée, \\v 26 et ainsi tout Israël sera sauvé, selon qu’il est écrit : \\q « Le Libérateur viendra de Sion ; \\q {{deity_pronoun:il|Il}} détournera de Jacob l’impiété. »",
+          "B": "{{gender:Frères et sœurs|Frères}}, je veux que vous compreniez ce mystère, pour que vous ne vous preniez pas pour des sages : une partie d’Israël a été frappée d’endurcissement jusqu’à ce que le nombre complet des non-Juifs soit entré. \\v 26 Et c’est ainsi que tout Israël sera sauvé. Comme il est écrit : \\q « De Sion viendra le Libérateur ; \\q {{deity_pronoun:il|Il}} écartera de Jacob l’impiété. »",
+          "R": "{{gender:Frères et sœurs|Frères}}, je veux que vous connaissiez un secret que Dieu a maintenant fait connaître. Alors vous ne vous croirez pas plus sages que vous ne l’êtes. Une partie d’Israël a été rendue obstinée, mais seulement jusqu’à ce que le nombre complet de ceux qui ne sont pas juifs soit entré. \\v 26 Et c’est ainsi que tout Israël sera sauvé. Comme le dit l’Écriture : \\q « Celui qui délivre viendra de Sion. \\q Il détournera le peuple de Jacob de sa vie sans Dieu. »"
         },
         "ko": {
-          "L": "{{gender:형제자매|형제}} 여러분, 나는 여러분이 이 비밀을 알지 못하기를 원하지 않습니다. 여러분이 스스로 지혜롭다고 여기지 않게 하려는 것입니다. 곧 이스라엘에게 부분적으로 완고함이 생긴 것은 이방 사람들의 충만한 수가 들어올 때까지이며, \\v 26 이와 같이 온 이스라엘이 구원을 받을 것입니다. 기록된 대로입니다. \"구원자가 시온에서 와서, 야곱에게서 경건하지 않음을 없앨 것이다.\"",
-          "B": "{{gender:형제자매|형제}} 여러분, 나는 여러분이 이 비밀을 알기를 바랍니다. 그래야 여러분이 스스로 지혜롭다고 생각하지 않을 것입니다. 이스라엘의 일부가 완고해졌는데, 그것은 이방 사람들의 수가 다 찰 때까지입니다. \\v 26 그리고 이렇게 해서 온 이스라엘이 구원을 받을 것입니다. 기록된 대로입니다. \"구원자가 시온에서 와서, 야곱에게서 경건하지 않은 것을 없애 버릴 것이다.\"",
-          "R": "{{gender:형제자매|형제}} 여러분, 나는 여러분이 하나님께서 이제 알려 주신 비밀을 알기를 바랍니다. 그러면 여러분은 자기가 실제보다 더 지혜롭다고 생각하지 않을 것입니다. 이스라엘의 일부는 고집스러워졌습니다. 그러나 그것은 유대인이 아닌 사람들이 정해진 수만큼 다 들어올 때까지입니다. \\v 26 그리고 이렇게 해서 온 이스라엘이 구원을 받을 것입니다. 성경에 이렇게 기록되어 있습니다. \"구원자가 시온에서 올 것이다. 그가 야곱의 백성을 경건하지 않은 길에서 돌이킬 것이다.\""
+          "L": "{{gender:형제자매|형제}} 여러분, 나는 여러분이 이 비밀을 알지 못하기를 원하지 않습니다. 여러분이 스스로 지혜롭다고 여기지 않게 하려는 것입니다. 곧 이스라엘에게 부분적으로 완고함이 생긴 것은 이방 사람들의 충만한 수가 들어올 때까지이며, \\v 26 이와 같이 온 이스라엘이 구원을 받을 것입니다. 기록된 대로입니다. \\q \"구원자가 시온에서 와서, 야곱에게서 경건하지 않음을 없앨 것이다.\"",
+          "B": "{{gender:형제자매|형제}} 여러분, 나는 여러분이 이 비밀을 알기를 바랍니다. 그래야 여러분이 스스로 지혜롭다고 생각하지 않을 것입니다. 이스라엘의 일부가 완고해졌는데, 그것은 이방 사람들의 수가 다 찰 때까지입니다. \\v 26 그리고 이렇게 해서 온 이스라엘이 구원을 받을 것입니다. 기록된 대로입니다. \\q \"구원자가 시온에서 와서, \\q 야곱에게서 경건하지 않은 것을 없애 버릴 것이다.\"",
+          "R": "{{gender:형제자매|형제}} 여러분, 나는 여러분이 하나님께서 이제 알려 주신 비밀을 알기를 바랍니다. 그러면 여러분은 자기가 실제보다 더 지혜롭다고 생각하지 않을 것입니다. 이스라엘의 일부는 고집스러워졌습니다. 그러나 그것은 유대인이 아닌 사람들이 정해진 수만큼 다 들어올 때까지입니다. \\v 26 그리고 이렇게 해서 온 이스라엘이 구원을 받을 것입니다. 성경에 이렇게 기록되어 있습니다. \\q \"구원자가 시온에서 올 것이다. \\q 그가 야곱의 백성을 경건하지 않은 길에서 돌이킬 것이다.\""
         },
         "vi": {
-          "L": "Vì, thưa {{gender:anh chị em|anh em}}, tôi không muốn anh chị em không biết sự mầu nhiệm này, để anh chị em khỏi tự cho mình là khôn ngoan: rằng sự chai lì đã đến trên một phần Y-sơ-ra-ên cho đến khi sự đầy trọn của các dân ngoại đã vào, \\v 26 và như thế cả Y-sơ-ra-ên sẽ được cứu, như có chép: \"Đấng Giải Cứu sẽ đến từ Si-ôn; {{deity_pronoun:ngài|Ngài}} sẽ cất bỏ sự không tin kính khỏi Gia-cốp.\"",
-          "B": "Thưa {{gender:anh chị em|anh em}}, tôi muốn anh chị em hiểu sự mầu nhiệm này, để anh chị em khỏi tự cho mình là khôn ngoan: một phần dân Y-sơ-ra-ên đã bị chai lì cho đến khi số trọn vẹn các dân ngoại được đem vào. \\v 26 Và như thế, cả Y-sơ-ra-ên sẽ được cứu. Như có lời chép: \"Đấng Giải Cứu sẽ đến từ Si-ôn; {{deity_pronoun:ngài|Ngài}} sẽ cất bỏ sự không tin kính khỏi Gia-cốp.\"",
-          "R": "Thưa {{gender:anh chị em|anh em}}, tôi muốn anh chị em biết một điều bí mật mà nay Đức Chúa Trời đã bày tỏ. Như vậy anh chị em sẽ không nghĩ rằng mình khôn ngoan hơn thực tế. Một phần dân Y-sơ-ra-ên đã trở nên ương ngạnh, nhưng chỉ cho đến khi đủ số những người không phải Do Thái đã vào. \\v 26 Và như thế, cả Y-sơ-ra-ên sẽ được cứu. Như Kinh Thánh chép: \"Đấng Giải Cứu sẽ đến từ Si-ôn. Ngài sẽ khiến dân của Gia-cốp từ bỏ những đường lối không tin kính của họ.\""
+          "L": "Vì, thưa {{gender:anh chị em|anh em}}, tôi không muốn anh chị em không biết sự mầu nhiệm này, để anh chị em khỏi tự cho mình là khôn ngoan: rằng sự chai lì đã đến trên một phần Y-sơ-ra-ên cho đến khi sự đầy trọn của các dân ngoại đã vào, \\v 26 và như thế cả Y-sơ-ra-ên sẽ được cứu, như có chép: \\q \"Đấng Giải Cứu sẽ đến từ Si-ôn; \\q {{deity_pronoun:ngài|Ngài}} sẽ cất bỏ sự không tin kính khỏi Gia-cốp.\"",
+          "B": "Thưa {{gender:anh chị em|anh em}}, tôi muốn anh chị em hiểu sự mầu nhiệm này, để anh chị em khỏi tự cho mình là khôn ngoan: một phần dân Y-sơ-ra-ên đã bị chai lì cho đến khi số trọn vẹn các dân ngoại được đem vào. \\v 26 Và như thế, cả Y-sơ-ra-ên sẽ được cứu. Như có lời chép: \\q \"Đấng Giải Cứu sẽ đến từ Si-ôn; \\q {{deity_pronoun:ngài|Ngài}} sẽ cất bỏ sự không tin kính khỏi Gia-cốp.\"",
+          "R": "Thưa {{gender:anh chị em|anh em}}, tôi muốn anh chị em biết một điều bí mật mà nay Đức Chúa Trời đã bày tỏ. Như vậy anh chị em sẽ không nghĩ rằng mình khôn ngoan hơn thực tế. Một phần dân Y-sơ-ra-ên đã trở nên ương ngạnh, nhưng chỉ cho đến khi đủ số những người không phải Do Thái đã vào. \\v 26 Và như thế, cả Y-sơ-ra-ên sẽ được cứu. Như Kinh Thánh chép: \\q \"Đấng Giải Cứu sẽ đến từ Si-ôn. \\q Ngài sẽ khiến dân của Gia-cốp từ bỏ những đường lối không tin kính của họ.\""
         },
         "pt": {
-          "L": "Pois não quero que vocês ignorem, {{gender:irmãos e irmãs|irmãos}}, este mistério, para que não sejam sábios aos seus próprios [olhos]: que um endurecimento em parte veio sobre Israel até que a plenitude das nações tenha entrado, \\v 26 e assim todo o Israel será salvo, assim como está escrito: \"Virá de Sião o Libertador; {{deity_pronoun:ele|Ele}} afastará de Jacó as impiedades.\"",
-          "B": "{{gender:Irmãos e irmãs|Irmãos}}, quero que vocês entendam este mistério, para que não se considerem sábios: um endurecimento veio sobre uma parte de Israel, até que entre o número completo dos não judeus. \\v 26 E desse modo todo o Israel será salvo. Como está escrito: \"De Sião virá o Libertador; {{deity_pronoun:ele|Ele}} afastará de Jacó a impiedade.\"",
-          "R": "{{gender:Irmãos e irmãs|Irmãos}}, quero que vocês conheçam um segredo que Deus agora revelou. Assim vocês não vão se achar mais sábios do que são. Uma parte de Israel ficou teimosa, mas só até que entre o número completo dos que não são judeus. \\v 26 E desse modo todo o Israel será salvo. Como diz a Escritura: \"Aquele que salva virá de Sião. Ele vai afastar o povo de Jacó dos seus caminhos sem Deus.\""
+          "L": "Pois não quero que vocês ignorem, {{gender:irmãos e irmãs|irmãos}}, este mistério, para que não sejam sábios aos seus próprios [olhos]: que um endurecimento em parte veio sobre Israel até que a plenitude das nações tenha entrado, \\v 26 e assim todo o Israel será salvo, assim como está escrito: \\q \"Virá de Sião o Libertador; \\q {{deity_pronoun:ele|Ele}} afastará de Jacó as impiedades.\"",
+          "B": "{{gender:Irmãos e irmãs|Irmãos}}, quero que vocês entendam este mistério, para que não se considerem sábios: um endurecimento veio sobre uma parte de Israel, até que entre o número completo dos não judeus. \\v 26 E desse modo todo o Israel será salvo. Como está escrito: \\q \"De Sião virá o Libertador; \\q {{deity_pronoun:ele|Ele}} afastará de Jacó a impiedade.\"",
+          "R": "{{gender:Irmãos e irmãs|Irmãos}}, quero que vocês conheçam um segredo que Deus agora revelou. Assim vocês não vão se achar mais sábios do que são. Uma parte de Israel ficou teimosa, mas só até que entre o número completo dos que não são judeus. \\v 26 E desse modo todo o Israel será salvo. Como diz a Escritura: \\q \"Aquele que salva virá de Sião. \\q Ele vai afastar o povo de Jacó dos seus caminhos sem Deus.\""
         },
         "am": {
-          "L": "{{gender:ወንድሞችና እኅቶች|ወንድሞች}} ሆይ፣ በራሳችሁ [ዓይን] ጠቢባን እንዳትሆኑ ይህን ምሥጢር እንዳታውቁ አልወድምና፤ ይኸውም የአሕዛብ ሙላት እስኪገባ ድረስ በእስራኤል ላይ ከፊል መደንደን መጥቷል፤ \\v 26 እንዲሁም እስራኤል ሁሉ ይድናል፤ እንዲህ ተብሎ እንደ ተጻፈ፦ «አዳኙ ከጽዮን ይመጣል፤ ከያዕቆብም ኢአምላካዊነትን ያስወግዳል።»",
-          "B": "{{gender:ወንድሞችና እኅቶች|ወንድሞች}} ሆይ፣ በራሳችሁ ጠቢባን እንደ ሆናችሁ እንዳታስቡ ይህን ምሥጢር እንድታስተውሉ እፈልጋለሁ፤ ይኸውም የአሕዛብ ሙሉ ቁጥር እስኪገባ ድረስ ከእስራኤል ከፊሉ ደንድኗል። \\v 26 በዚህም መንገድ እስራኤል ሁሉ ይድናል። እንዲህ ተብሎ እንደ ተጻፈ፦ «አዳኙ ከጽዮን ይመጣል፤ ኢአምላካዊነትን ከያዕቆብ ያስወግዳል።»",
-          "R": "{{gender:ወንድሞችና እኅቶች|ወንድሞች}} ሆይ፣ እግዚአብሔር አሁን የገለጠውን አንድ ምሥጢር እንድታውቁ እፈልጋለሁ። ይህን ስታውቁ ካላችሁ በላይ ጠቢባን እንደ ሆናችሁ አታስቡም። ከእስራኤል ከፊሉ ልበ ደንዳና ሆኗል፤ ይህ ግን አይሁድ ያልሆኑ ሕዝቦች ሙሉ ቁጥር እስኪገባ ድረስ ብቻ ነው። \\v 26 በዚህም መንገድ እስራኤል ሁሉ ይድናል። መጽሐፍ ቅዱስ እንደሚለው፣ «የሚያድነው ከጽዮን ይመጣል። የያዕቆብን ሕዝብ ከኃጢአተኛ መንገዳቸው ይመልሳቸዋል።»"
+          "L": "{{gender:ወንድሞችና እኅቶች|ወንድሞች}} ሆይ፣ በራሳችሁ [ዓይን] ጠቢባን እንዳትሆኑ ይህን ምሥጢር እንዳታውቁ አልወድምና፤ ይኸውም የአሕዛብ ሙላት እስኪገባ ድረስ በእስራኤል ላይ ከፊል መደንደን መጥቷል፤ \\v 26 እንዲሁም እስራኤል ሁሉ ይድናል፤ እንዲህ ተብሎ እንደ ተጻፈ፦ \\q «አዳኙ ከጽዮን ይመጣል፤ \\q ከያዕቆብም ኢአምላካዊነትን ያስወግዳል።»",
+          "B": "{{gender:ወንድሞችና እኅቶች|ወንድሞች}} ሆይ፣ በራሳችሁ ጠቢባን እንደ ሆናችሁ እንዳታስቡ ይህን ምሥጢር እንድታስተውሉ እፈልጋለሁ፤ ይኸውም የአሕዛብ ሙሉ ቁጥር እስኪገባ ድረስ ከእስራኤል ከፊሉ ደንድኗል። \\v 26 በዚህም መንገድ እስራኤል ሁሉ ይድናል። እንዲህ ተብሎ እንደ ተጻፈ፦ \\q «አዳኙ ከጽዮን ይመጣል፤ \\q ኢአምላካዊነትን ከያዕቆብ ያስወግዳል።»",
+          "R": "{{gender:ወንድሞችና እኅቶች|ወንድሞች}} ሆይ፣ እግዚአብሔር አሁን የገለጠውን አንድ ምሥጢር እንድታውቁ እፈልጋለሁ። ይህን ስታውቁ ካላችሁ በላይ ጠቢባን እንደ ሆናችሁ አታስቡም። ከእስራኤል ከፊሉ ልበ ደንዳና ሆኗል፤ ይህ ግን አይሁድ ያልሆኑ ሕዝቦች ሙሉ ቁጥር እስኪገባ ድረስ ብቻ ነው። \\v 26 በዚህም መንገድ እስራኤል ሁሉ ይድናል። መጽሐፍ ቅዱስ እንደሚለው፣ \\q «የሚያድነው ከጽዮን ይመጣል። \\q የያዕቆብን ሕዝብ ከኃጢአተኛ መንገዳቸው ይመልሳቸዋል።»"
         },
         "ru": {
-          "L": "Ведь я не хочу, чтобы вы не знали, {{gender:братья и сёстры|братья}}, этой тайны, чтобы вы не были мудрыми в собственных [глазах]: что ожесточение отчасти постигло Израиль, пока не войдёт полнота язычников, \\v 26 и так весь Израиль будет спасён, как написано: «Придёт из Сиона Избавитель, {{deity_pronoun:он|Он}} отвратит нечестие от Иакова.»",
-          "B": "{{gender:Братья и сёстры|Братья}}, я хочу, чтобы вы поняли эту тайну и не считали себя мудрыми: часть Израиля постигло ожесточение до тех пор, пока не войдёт полное число язычников. \\v 26 И так весь Израиль будет спасён. Как написано: «Из Сиона придёт Избавитель; {{deity_pronoun:он|Он}} отвратит нечестие от Иакова.»",
-          "R": "{{gender:Братья и сёстры|Братья}}, я хочу, чтобы вы знали тайну, которую Бог теперь открыл. Тогда вы не будете думать, что вы мудрее, чем на самом деле. Часть Израиля стала упрямой, но только до тех пор, пока не войдёт полное число людей из других народов. \\v 26 И так будет спасён весь Израиль. Как говорит Писание: «Избавитель придёт из Сиона. Он отвратит потомков Иакова от их нечестивых путей.»"
+          "L": "Ведь я не хочу, чтобы вы не знали, {{gender:братья и сёстры|братья}}, этой тайны, чтобы вы не были мудрыми в собственных [глазах]: что ожесточение отчасти постигло Израиль, пока не войдёт полнота язычников, \\v 26 и так весь Израиль будет спасён, как написано: \\q «Придёт из Сиона Избавитель, \\q {{deity_pronoun:он|Он}} отвратит нечестие от Иакова.»",
+          "B": "{{gender:Братья и сёстры|Братья}}, я хочу, чтобы вы поняли эту тайну и не считали себя мудрыми: часть Израиля постигло ожесточение до тех пор, пока не войдёт полное число язычников. \\v 26 И так весь Израиль будет спасён. Как написано: \\q «Из Сиона придёт Избавитель; \\q {{deity_pronoun:он|Он}} отвратит нечестие от Иакова.»",
+          "R": "{{gender:Братья и сёстры|Братья}}, я хочу, чтобы вы знали тайну, которую Бог теперь открыл. Тогда вы не будете думать, что вы мудрее, чем на самом деле. Часть Израиля стала упрямой, но только до тех пор, пока не войдёт полное число людей из других народов. \\v 26 И так будет спасён весь Израиль. Как говорит Писание: \\q «Избавитель придёт из Сиона. \\q Он отвратит потомков Иакова от их нечестивых путей.»"
         },
         "hi": {
-          "L": "क्योंकि, {{gender:भाइयो और बहनो|भाइयो}}, मैं नहीं चाहता कि तुम इस भेद से अनजान रहो, ताकि तुम अपने आप को बुद्धिमान न समझो: कि इस्राएल पर कुछ अंश तक कठोरता आ गई है, जब तक अन्यजातियों की परिपूर्णता भीतर न आ जाए, \\v 26 और इस प्रकार सारा इस्राएल उद्धार पाएगा, जैसा लिखा है, \"छुड़ानेवाला सिय्योन से आएगा; वह याकूब से अभक्ति को दूर करेगा।\"",
-          "B": "{{gender:भाइयो और बहनो|भाइयो}}, मैं चाहता हूँ कि तुम इस भेद को समझ लो, ताकि तुम अपने आप को बुद्धिमान न समझने लगो: इस्राएल के एक भाग पर कठोरता आ गई है, जब तक अन्यजातियों की पूरी गिनती भीतर न आ जाए। \\v 26 और इस प्रकार सारा इस्राएल उद्धार पाएगा। जैसा लिखा है, \"सिय्योन से छुड़ानेवाला आएगा; वह याकूब से अभक्ति को दूर करेगा।\"",
-          "R": "{{gender:भाइयो और बहनो|भाइयो}}, मैं चाहता हूँ कि तुम एक भेद जान लो जिसे परमेश्वर ने अब प्रकट किया है। तब तुम अपने आप को जितने हो उससे ज़्यादा बुद्धिमान नहीं समझोगे। इस्राएल का एक भाग हठीला बना दिया गया है, पर केवल तब तक जब तक ग़ैर-यहूदियों की पूरी गिनती भीतर न आ जाए। \\v 26 और इस तरह सारा इस्राएल उद्धार पाएगा। जैसा पवित्रशास्त्र कहता है, \"बचानेवाला सिय्योन से आएगा। वह याकूब के लोगों को उनके अभक्ति के कामों से फेर देगा।\""
+          "L": "क्योंकि, {{gender:भाइयो और बहनो|भाइयो}}, मैं नहीं चाहता कि तुम इस भेद से अनजान रहो, ताकि तुम अपने आप को बुद्धिमान न समझो: कि इस्राएल पर कुछ अंश तक कठोरता आ गई है, जब तक अन्यजातियों की परिपूर्णता भीतर न आ जाए, \\v 26 और इस प्रकार सारा इस्राएल उद्धार पाएगा, जैसा लिखा है, \\q \"छुड़ानेवाला सिय्योन से आएगा; \\q वह याकूब से अभक्ति को दूर करेगा।\"",
+          "B": "{{gender:भाइयो और बहनो|भाइयो}}, मैं चाहता हूँ कि तुम इस भेद को समझ लो, ताकि तुम अपने आप को बुद्धिमान न समझने लगो: इस्राएल के एक भाग पर कठोरता आ गई है, जब तक अन्यजातियों की पूरी गिनती भीतर न आ जाए। \\v 26 और इस प्रकार सारा इस्राएल उद्धार पाएगा। जैसा लिखा है, \\q \"सिय्योन से छुड़ानेवाला आएगा; \\q वह याकूब से अभक्ति को दूर करेगा।\"",
+          "R": "{{gender:भाइयो और बहनो|भाइयो}}, मैं चाहता हूँ कि तुम एक भेद जान लो जिसे परमेश्वर ने अब प्रकट किया है। तब तुम अपने आप को जितने हो उससे ज़्यादा बुद्धिमान नहीं समझोगे। इस्राएल का एक भाग हठीला बना दिया गया है, पर केवल तब तक जब तक ग़ैर-यहूदियों की पूरी गिनती भीतर न आ जाए। \\v 26 और इस तरह सारा इस्राएल उद्धार पाएगा। जैसा पवित्रशास्त्र कहता है, \\q \"बचानेवाला सिय्योन से आएगा। \\q वह याकूब के लोगों को उनके अभक्ति के कामों से फेर देगा।\""
+        },
+        "uk": {
+          "L": "Бо не хочу, щоб ви не знали, {{gender:брати і сестри|брати}}, цієї таємниці, щоб ви не були мудрими у власних [очах]: що закамʼяніння частково спіткало Ізраїль, доки не ввійде повнота язичників, \\v 26 і так увесь Ізраїль буде спасений, як написано: \\q «Прийде із Сіону Визволитель; \\q {{deity_pronoun:він|Він}} відверне нечестивість від Якова.»",
+          "B": "{{gender:Брати і сестри|Брати}}, я хочу, щоб ви зрозуміли цю таємницю, щоб ви не вважали себе мудрими: закамʼяніння спіткало частину Ізраїлю, доки не ввійде повне число язичників. \\v 26 І так увесь Ізраїль буде спасений. Як написано: \\q «Із Сіону прийде Визволитель; \\q {{deity_pronoun:він|Він}} відверне нечестивість від Якова.»",
+          "R": "{{gender:Брати і сестри|Брати}}, я хочу, щоб ви знали таємницю, яку Бог тепер відкрив. Тоді ви не думатимете, що ви мудріші, ніж є насправді. Частина Ізраїлю стала упертою, але тільки доти, доки не ввійде повне число неюдеїв. \\v 26 І так увесь Ізраїль буде врятований. Як каже Писання: \\q «Той, хто рятує, прийде із Сіону. \\q Він відверне народ Якова від його нечестивих шляхів.»"
+        },
+        "ja": {
+          "L": "というのは、{{gender:きょうだいたち|兄弟たち}}、あなたがたが自分[の目に]賢い者とならないように、わたしはこの奥義をあなたがたに知らずにいてほしくないからです。すなわち、かたくなさが一部分イスラエルに生じたのは、異邦人の満ちる数が入って来るまでであり、\\v 26 こうして、全イスラエルが救われるということです。次のように書かれているとおりです。 \\q 「救い出す者がシオンから来て、ヤコブから不敬虔を取り除く。」",
+          "B": "{{gender:きょうだいたち|兄弟たち}}、あなたがたが自分を賢い者だと思わないように、この奥義を知っておいてほしいのです。それは、イスラエルの一部がかたくなになったのは、異邦人の数が満ちて入って来るまでのことだ、ということです。\\v 26 こうして、全イスラエルが救われます。こう書かれているとおりです。 \\q 「救い出す方がシオンから来て、ヤコブから不敬虔を取り除く。」",
+          "R": "{{gender:きょうだいたち|兄弟たち}}、神が今明らかにされた秘密を、みなさんに知ってほしいのです。そうすれば、自分を実際以上に賢いと思わずにすみます。イスラエルの一部は心をかたくなにされました。でもそれは、ユダヤ人でない人々の数が満ちて、みな迎え入れられるまでのことです。\\v 26 このようにして、イスラエル全体が救われるのです。聖書にこう書いてあるとおりです。 \\q 「助け出す方がシオンから来る。 \\q その方はヤコブの民を、神を敬わない生き方から立ち返らせる。」"
+        },
+        "id": {
+          "L": "Sebab aku tidak ingin kalian tidak mengetahui rahasia ini, saudara-saudara, supaya kalian tidak menganggap diri kalian bijaksana: bahwa sebagian Israel telah mengalami pengerasan hati sampai jumlah penuh bangsa-bangsa lain telah masuk, \\v 26 dan dengan demikian seluruh Israel akan diselamatkan, sebagaimana ada tertulis, \\q \"Dari Sion akan datang Penyelamat; \\q {{deity_pronoun:dia|Dia}} akan menyingkirkan kefasikan dari Yakub.\"",
+          "B": "Saudara-saudara, aku ingin kalian memahami rahasia ini, supaya kalian tidak menganggap diri kalian bijaksana: sebagian Israel telah mengalami pengerasan hati sampai jumlah penuh bangsa-bangsa lain telah masuk. \\v 26 Dan dengan cara itu seluruh Israel akan diselamatkan. Seperti yang tertulis, \\q \"Dari Sion akan datang Sang Penyelamat; \\q {{deity_pronoun:dia|Dia}} akan menjauhkan kefasikan dari Yakub.\"",
+          "R": "Saudara-saudara, saya ingin kalian mengetahui suatu rahasia yang sekarang sudah Allah nyatakan. Dengan begitu kalian tidak akan menganggap diri kalian lebih bijaksana daripada yang sebenarnya. Sebagian bangsa Israel sudah dibuat keras kepala, tetapi hanya sampai jumlah penuh orang-orang bukan Yahudi sudah masuk. \\v 26 Dan dengan cara itu seluruh Israel akan diselamatkan. Seperti yang dikatakan Kitab Suci, \\q \"Dia yang menyelamatkan akan datang dari Sion. \\q {{deity_pronoun:dia|Dia}} akan membawa keturunan Yakub berbalik dari cara hidup mereka yang jahat.\""
+        },
+        "zh": {
+          "L": "因为我不希望你们对这奥秘一无所知，{{gender:弟兄姐妹|弟兄}}们，好使你们不至于自视为有智慧：就是刚硬已部分地临到以色列，直到外邦人的满数进来，\\v 26 这样，全体以色列将要得救，正如经上写着： \\q “拯救者将从锡安来到； \\q {{deity_pronoun:他|祂}}要从雅各那里除去不敬虔。”",
+          "B": "{{gender:弟兄姐妹|弟兄}}们，我要你们明白这个奥秘，免得你们自认为聪明：以色列有一部分人已经刚硬了，直到外邦人的全数都进来。\\v 26 这样，全体以色列都将得救。正如经上写着： \\q “拯救者要从锡安出来； \\q {{deity_pronoun:他|祂}}要使雅各转离不敬虔。”",
+          "R": "{{gender:弟兄姐妹|弟兄}}们，我要你们知道一个秘密，这是{{god_term:神|上帝}}现在才揭示出来的。这样，你们就不会自以为比实际上更有智慧。以色列有一部分人变得顽固了，但这只到非犹太人全数进来为止。\\v 26 这样，以色列全体都会得救。正如圣经上说： \\q “那位拯救者要从锡安来。 \\q {{deity_pronoun:他|祂}}要使雅各的子民离开他们不敬虔的行为。”"
         }
       },
       "decisions": [
@@ -8274,6 +9838,150 @@
           "reason": "In the words of Scripture God speaks of the coming Deliverer, who is most likely Christ (meaning decision m7), so the title takes plain singular forms, as titles do in the guide (section 7b).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011025008"
+          ],
+          "choice": "таємниця",
+          "alternatives": [
+            "тайна"
+          ],
+          "reason": "mystērion is part of God's plan once hidden and now made known (m1); \"таємниця\" is the word the Ukrainian brief settles for it in Ephesians, and Romans keeps it (16:25). The hardening is \"закамʼяніння\", as in 9:18 and 11:7.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011025008"
+          ],
+          "choice": "\"奥義\" (L, B); \"神が今明らかにされた秘密\" (R)",
+          "alternatives": [
+            "\"秘密\" (L, B)",
+            "\"神秘\""
+          ],
+          "reason": "A mystery in Paul is a part of God's plan once hidden and now revealed (m1). \"奥義\" is the established word for this; \"神秘\" suggests something beyond understanding. Readable explains it, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011026003",
+            "n45011026004",
+            "n45011026012"
+          ],
+          "choice": "\"全イスラエル\" (L, B); \"イスラエル全体\" (R); \"救い出す者\" (L), \"救い出す方\" (B), \"助け出す方\" (R)",
+          "alternatives": [
+            "\"イスラエルの人はみな\"",
+            "\"救い主\""
+          ],
+          "reason": "\"All Israel\" is the people as a whole (m5); \"全イスラエル\" and \"イスラエル全体\" speak of the nation, where \"みな\" would count every member. The Deliverer is the one who rescues (m7); \"救い主\" is kept for the Greek word for savior. Balanced and Readable say \"方\" for him; the quotation is otherwise in the plain style of Scripture.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "layer": "meaning",
+          "language": null,
+          "category": "allusion",
+          "tokens": [
+            "n45011026010",
+            "n45011026014"
+          ],
+          "choice": "from Zion ... turn away ungodliness from Jacob: Isaiah 59:20 in the Greek Old Testament",
+          "alternatives": [],
+          "reason": "The Hebrew of Isaiah 59:20 reads \"a redeemer will come to Zion, to those in Jacob who turn from transgression\". The Greek Old Testament reads \"for the sake of Zion\" and \"he will turn away ungodliness from Jacob\", so that the redeemer is the one who removes the sin; Paul has \"from Zion\". He joins the line to Isaiah 27:9 (11:27).",
+          "uncertain": false,
+          "footnote": true,
+          "id": "m8"
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011026011",
+            "n45011026012"
+          ],
+          "choice": "\"Penyelamat\" (L), \"Sang Penyelamat\" (B), \"Dia yang menyelamatkan\" (R), with the deity_pronoun span on \"Dia\"",
+          "alternatives": [
+            "\"Penebus\""
+          ],
+          "reason": "The Greek word means one who rescues (m7), most likely Christ, so the span follows the English; \"Penebus\" is kept for the redeemer of the glossary.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011025008"
+          ],
+          "choice": "\"奥秘\" (L, B); \"秘密……现在才揭示出来\" (R)",
+          "alternatives": [],
+          "reason": "A part of God's plan once hidden and now made known (meaning note m1); Readable explains it, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011026012"
+          ],
+          "choice": "\"拯救者\"",
+          "alternatives": [
+            "\"救主\""
+          ],
+          "reason": "The word is \"the one who rescues\" (meaning note m7); \"救主\" is kept for the title Savior.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -8305,54 +10013,74 @@
       "literal_gloss": "And this to them the from me covenant, when I take away the sins of them.",
       "renderings": {
         "en": {
-          "L": "\"And this [is] the covenant from {{deity_pronoun:me|Me}} with them, when I take away their sins.\"",
-          "B": "\"And this will be {{deity_pronoun:my|My}} covenant with them, when I take their sins away.\"",
+          "L": "\"And this [is] the covenant from {{deity_pronoun:me|Me}} with them, \\q when I take away their sins.\"",
+          "B": "\"And this will be {{deity_pronoun:my|My}} covenant with them, \\q when I take their sins away.\"",
           "R": "\"This is the covenant I will make with them when I take away their sins.\""
         },
         "es": {
-          "L": "«Y este [es] para ellos el pacto de {{deity_pronoun:mí|Mí}}, cuando yo quite sus pecados.»",
-          "B": "«Y cuando les quite sus pecados, este será {{deity_pronoun:mi|Mi}} pacto con ellos.»",
+          "L": "«Y este [es] para ellos el pacto de {{deity_pronoun:mí|Mí}}, \\q cuando yo quite sus pecados.»",
+          "B": "«Y cuando les quite sus pecados, \\q este será {{deity_pronoun:mi|Mi}} pacto con ellos.»",
           "R": "«Este es el pacto que haré con ellos cuando les quite sus pecados.»"
         },
         "sw": {
-          "L": "\"Na hili [ndilo] agano kutoka {{deity_pronoun:kwangu|Kwangu}} kwao, nitakapoziondoa dhambi zao.\"",
-          "B": "\"Nitakapoziondoa dhambi zao, hili ndilo litakalokuwa agano {{deity_pronoun:langu|Langu}} pamoja nao.\"",
+          "L": "\"Na hili [ndilo] agano kutoka {{deity_pronoun:kwangu|Kwangu}} kwao, \\q nitakapoziondoa dhambi zao.\"",
+          "B": "\"Nitakapoziondoa dhambi zao, \\q hili ndilo litakalokuwa agano {{deity_pronoun:langu|Langu}} pamoja nao.\"",
           "R": "\"Hili ndilo agano nitakalofanya nao nitakapoziondoa dhambi zao.\""
         },
         "fr": {
-          "L": "« Et ceci [est] pour eux l’alliance de {{deity_pronoun:ma|Ma}} part, quand j’ôterai leurs péchés. »",
-          "B": "« Et voici quelle sera {{deity_pronoun:mon|Mon}} alliance avec eux, lorsque j’enlèverai leurs péchés. »",
+          "L": "« Et ceci [est] pour eux l’alliance de {{deity_pronoun:ma|Ma}} part, \\q quand j’ôterai leurs péchés. »",
+          "B": "« Et voici quelle sera {{deity_pronoun:mon|Mon}} alliance avec eux, \\q lorsque j’enlèverai leurs péchés. »",
           "R": "« Voici l’alliance que je ferai avec eux quand j’enlèverai leurs péchés. »"
         },
         "ko": {
-          "L": "\"내가 그들의 죄를 없앨 때, 이것이 나에게서 [나온] 그들과의 언약이다.\"",
-          "B": "\"내가 그들의 죄를 없앨 때, 이것이 그들과 맺을 나의 언약이 될 것이다.\"",
+          "L": "\"내가 그들의 죄를 없앨 때, \\q 이것이 나에게서 [나온] 그들과의 언약이다.\"",
+          "B": "\"내가 그들의 죄를 없앨 때, \\q 이것이 그들과 맺을 나의 언약이 될 것이다.\"",
           "R": "\"내가 그들의 죄를 없앨 때, 나는 그들과 이 언약을 맺을 것이다.\""
         },
         "vi": {
-          "L": "\"Và đây [là] giao ước từ {{deity_pronoun:ta|Ta}} với họ, khi {{deity_pronoun:ta|Ta}} cất tội lỗi của họ đi.\"",
-          "B": "\"Và đây sẽ là giao ước của {{deity_pronoun:ta|Ta}} với họ, khi {{deity_pronoun:ta|Ta}} cất tội lỗi họ đi.\"",
+          "L": "\"Và đây [là] giao ước từ {{deity_pronoun:ta|Ta}} với họ, \\q khi {{deity_pronoun:ta|Ta}} cất tội lỗi của họ đi.\"",
+          "B": "\"Và đây sẽ là giao ước của {{deity_pronoun:ta|Ta}} với họ, \\q khi {{deity_pronoun:ta|Ta}} cất tội lỗi họ đi.\"",
           "R": "\"Đây là giao ước {{deity_pronoun:ta|Ta}} sẽ lập với họ khi {{deity_pronoun:ta|Ta}} cất bỏ tội lỗi của họ.\""
         },
         "pt": {
-          "L": "\"E esta [é] a aliança da {{deity_pronoun:minha|Minha}} parte com eles, quando eu tirar os pecados deles.\"",
-          "B": "\"E esta será a {{deity_pronoun:minha|Minha}} aliança com eles, quando eu tirar os pecados deles.\"",
+          "L": "\"E esta [é] a aliança da {{deity_pronoun:minha|Minha}} parte com eles, \\q quando eu tirar os pecados deles.\"",
+          "B": "\"E esta será a {{deity_pronoun:minha|Minha}} aliança com eles, \\q quando eu tirar os pecados deles.\"",
           "R": "\"Esta é a aliança que farei com eles quando eu tirar os pecados deles.\""
         },
         "am": {
-          "L": "«ኃጢአታቸውን በማስወግድበት ጊዜ፣ ከእኔ ዘንድ ከእነርሱ ጋር ያለው ኪዳንም ይህ [ነው]።»",
+          "L": "«ኃጢአታቸውን በማስወግድበት ጊዜ፣ \\q ከእኔ ዘንድ ከእነርሱ ጋር ያለው ኪዳንም ይህ [ነው]።»",
           "B": "«ኃጢአታቸውን በማስወግድበት ጊዜ ከእነርሱ ጋር የምገባው ኪዳኔ ይህ ይሆናል።»",
           "R": "«ኃጢአታቸውን ሳስወግድ ከእነርሱ ጋር የምገባው ኪዳን ይህ ነው።»"
         },
         "ru": {
-          "L": "«И это [будет] им завет от {{deity_pronoun:меня|Меня}}, когда {{deity_pronoun:я|Я}} сниму их грехи.»",
-          "B": "«И таким будет {{deity_pronoun:мой|Мой}} завет с ними, когда {{deity_pronoun:я|Я}} сниму с них их грехи.»",
+          "L": "«И это [будет] им завет от {{deity_pronoun:меня|Меня}}, \\q когда {{deity_pronoun:я|Я}} сниму их грехи.»",
+          "B": "«И таким будет {{deity_pronoun:мой|Мой}} завет с ними, \\q когда {{deity_pronoun:я|Я}} сниму с них их грехи.»",
           "R": "«Вот завет, который {{deity_pronoun:я|Я}} заключу с ними, когда сниму с них их грехи.»"
         },
         "hi": {
-          "L": "\"और उनके साथ मेरी ओर से यह वाचा [होगी], जब मैं उनके पापों को दूर कर दूँगा।\"",
-          "B": "\"और जब मैं उनके पाप दूर कर दूँगा, तब उनके साथ मेरी यही वाचा होगी।\"",
+          "L": "\"और उनके साथ मेरी ओर से यह वाचा [होगी], \\q जब मैं उनके पापों को दूर कर दूँगा।\"",
+          "B": "\"और जब मैं उनके पाप दूर कर दूँगा, \\q तब उनके साथ मेरी यही वाचा होगी।\"",
           "R": "\"जब मैं उनके पाप दूर कर दूँगा, तब मैं उनके साथ यही वाचा बाँधूँगा।\""
+        },
+        "uk": {
+          "L": "«І це їм заповіт від {{deity_pronoun:мене|Мене}}, \\q коли заберу їхні гріхи.»",
+          "B": "«І це буде {{deity_pronoun:мій|Мій}} заповіт з ними, \\q коли заберу їхні гріхи.»",
+          "R": "«Ось заповіт, який укладу з ними, коли заберу їхні гріхи.»"
+        },
+        "ja": {
+          "L": "「そして、これが彼らに対するわたしからの契約である。 \\q わたしが彼らの罪を取り除くときに。」",
+          "B": "「わたしが彼らの罪を取り除くとき、 \\q これが彼らとのわたしの契約となる。」",
+          "R": "「わたしが彼らの罪を取り除くとき、わたしは彼らとこの契約を結ぶ。」"
+        },
+        "id": {
+          "L": "\"Dan inilah perjanjian-{{deity_pronoun:ku|Ku}} dengan mereka, \\q apabila {{deity_pronoun:aku|Aku}} menghapus dosa-dosa mereka.\"",
+          "B": "\"Dan inilah perjanjian-{{deity_pronoun:ku|Ku}} dengan mereka, \\q apabila {{deity_pronoun:aku|Aku}} menghapuskan dosa-dosa mereka.\"",
+          "R": "\"Inilah perjanjian yang akan {{deity_pronoun:aku|Aku}} buat dengan mereka ketika {{deity_pronoun:aku|Aku}} menghapus dosa-dosa mereka.\""
+        },
+        "zh": {
+          "L": "“并且这是从我[而来]给他们的约， \\q 就是当我除掉他们的罪的时候。”",
+          "B": "“这将是我与他们所立的约， \\q 那时我要把他们的罪除去。”",
+          "R": "“当我除去他们的罪的时候，这就是我要与他们订立的盟约。”"
         }
       },
       "decisions": [
@@ -8497,6 +10225,45 @@
           "reason": "ኪዳን is the Bible word for God's binding commitment to his people; ስምምነት would sound like a contract between equals.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n45011027008"
+          ],
+          "choice": "the \"when\" clause first (B, R)",
+          "alternatives": [
+            "the covenant first, the \"when\" clause trailing, as in Literal"
+          ],
+          "reason": "Japanese puts a time clause before the main clause; Literal keeps the Greek order with a trailing clause, while Balanced and Readable put it first and supply a future verb, as the meaning decision says (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011027007"
+          ],
+          "choice": "\"约\" (L, B); \"盟约\" (R)",
+          "alternatives": [],
+          "reason": "The glossary's key term for covenant at each level.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -8579,6 +10346,26 @@
           "L": "सुसमाचार के विचार से वे तुम्हारे कारण शत्रु [हैं], पर चुनाव के विचार से बापदादों के कारण प्रिय हैं।",
           "B": "जहाँ तक सुसमाचार की बात है, वे तुम्हारे भले के लिए शत्रु हैं; पर जहाँ तक परमेश्वर के चुनाव की बात है, वे कुलपिताओं के कारण प्रिय हैं।",
           "R": "जहाँ तक सुसमाचार की बात है, वे अभी परमेश्वर के शत्रु हैं, और इसमें तुम्हारी भलाई हुई है। पर परमेश्वर ने उन्हें चुना था, और वे उनके पूर्वजों अब्राहम, इसहाक और याकूब के कारण अब भी उनसे प्रेम करते हैं।"
+        },
+        "uk": {
+          "L": "Щодо Євангелія — [вони] вороги заради вас, а щодо обрання — улюблені заради батьків;",
+          "B": "Щодо Євангелія, вони вороги заради вашого добра; але щодо Божого обрання, вони любі Богові заради патріархів.",
+          "R": "Коли йдеться про Добру звістку, вони тепер Божі вороги, і це сталося вам на добро. Але Бог вибрав їх, і {{deity_pronoun:він|Він}} і далі любить їх через їхніх предків Авраама, Ісаака і Якова."
+        },
+        "ja": {
+          "L": "福音について言えば、彼らはあなたがたのゆえに敵[とされていますが]、選びについて言えば、父祖たちのゆえに愛されている者[です]。",
+          "B": "福音について言えば、彼らはあなたがたのために敵となっていますが、神の選びについて言えば、父祖たちのゆえに愛されているのです。",
+          "R": "良い知らせについて言えば、彼らは今、神の敵になっています。それはみなさんのためでした。けれども神は彼らを選ばれたので、その先祖アブラハム、イサク、ヤコブのゆえに、今も彼らを愛しておられます。"
+        },
+        "id": {
+          "L": "Dalam hal Injil, [mereka adalah] seteru demi kalian; tetapi dalam hal pilihan, [mereka adalah] kekasih demi bapa-bapa leluhur.",
+          "B": "Sejauh menyangkut Injil, mereka adalah seteru Allah demi kalian; tetapi sejauh menyangkut pilihan Allah, mereka dikasihi karena para bapa leluhur.",
+          "R": "Dalam hal kabar baik, sekarang mereka adalah musuh Allah, dan hal itu terjadi demi kebaikan kalian. Tetapi Allah memilih mereka, dan {{deity_pronoun:dia|Dia}} masih mengasihi mereka karena nenek moyang mereka, Abraham, Ishak, dan Yakub."
+        },
+        "zh": {
+          "L": "从福音来看，[他们]因你们的缘故[是]仇敌；但从拣选来看，[他们]因先祖们的缘故[是]蒙爱的。",
+          "B": "在福音的事上，他们为了你们的益处成了仇敌；但在{{god_term:神|上帝}}的拣选上，他们因先祖的缘故仍是蒙爱的。",
+          "R": "说到好消息，他们现在成了{{god_term:神|上帝}}的仇敌，而这是为了你们的好处。但是{{god_term:神|上帝}}拣选了他们，而且因为他们的祖先亚伯拉罕、以撒和雅各，{{deity_pronoun:他|祂}}仍然爱他们。"
         }
       },
       "decisions": [
@@ -8763,6 +10550,28 @@
           "reason": "The style guide's term for the gospel, noted where it first appears in this chapter.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011028015"
+          ],
+          "choice": "\"父祖たち\" (L, B); \"先祖アブラハム、イサク、ヤコブ\" (R)",
+          "alternatives": [
+            "\"先祖たち\" (L, B)",
+            "\"父たち\""
+          ],
+          "reason": "The fathers are the patriarchs (m4). \"父祖たち\" is the written word for the forefathers of a people; Readable says \"先祖\" and names them, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -8839,6 +10648,26 @@
           "L": "क्योंकि परमेश्वर के वरदान और बुलाहट अटल हैं।",
           "B": "क्योंकि परमेश्वर के वरदान और उनकी बुलाहट कभी वापस नहीं लिए जाते।",
           "R": "परमेश्वर जो वरदान देते हैं और जिन लोगों को बुलाते हैं, उनके बारे में वे अपना मन कभी नहीं बदलते।"
+        },
+        "uk": {
+          "L": "Бо дари і покликання Бога — безповоротні.",
+          "B": "Бо дари і покликання Бога ніколи не відкликаються.",
+          "R": "Бог ніколи не передумує щодо дарів, які {{deity_pronoun:він|Він}} дає, чи щодо людей, яких {{deity_pronoun:він|Він}} кличе."
+        },
+        "ja": {
+          "L": "なぜなら、神の賜物と召しとは、悔やまれることのないものだからです。",
+          "B": "神の賜物と召しは、決して取り消されることがないのです。",
+          "R": "神は、ご自分が与えられた贈り物についても、ご自分が呼ばれた人々についても、決して考えを変えられません。"
+        },
+        "id": {
+          "L": "Sebab karunia-karunia dan panggilan Allah [adalah] tidak dapat ditarik kembali.",
+          "B": "Sebab karunia-karunia dan panggilan Allah tidak pernah ditarik kembali.",
+          "R": "Allah tidak pernah berubah pikiran tentang pemberian-pemberian yang {{deity_pronoun:dia|Dia}} berikan atau tentang orang-orang yang {{deity_pronoun:dia|Dia}} panggil."
+        },
+        "zh": {
+          "L": "因为{{god_term:神|上帝}}的恩赐和呼召是不可撤销的。",
+          "B": "因为{{god_term:神|上帝}}的恩赐和呼召，永远不会收回。",
+          "R": "{{god_term:神|上帝}}对{{deity_pronoun:他|祂}}所赐的恩赐、对{{deity_pronoun:他|祂}}所呼召的人，从来不会改变心意。"
         }
       },
       "decisions": [
@@ -8971,6 +10800,28 @@
           "reason": "Literal keeps the Greek picture, gifts God will never regret giving; Balanced says they are never taken back.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011029001",
+            "n45011029007"
+          ],
+          "choice": "\"悔やまれることのない\" (L); \"取り消されることがない\" (B); \"考えを変えられません\" (R); \"召し\" (L, B)",
+          "alternatives": [
+            "\"変わることのない\""
+          ],
+          "reason": "The word means \"without regret\": God does not change his mind about what he gave (m1). Literal keeps the idea of regret; Balanced says the gifts are never taken back; Readable says it in a plain phrase about God. \"召し\" is the church word for God's calling, kept for the noun; Readable says whom God called.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -9065,6 +10916,26 @@
           "L": "क्योंकि जैसे तुमने पहले परमेश्वर की आज्ञा न मानी, पर अब इनके आज्ञा न मानने से तुम पर दया हुई, \\v 31 वैसे ही इन्होंने भी अब आज्ञा न मानी, तुम पर [हुई] दया के लिए, कि उन पर भी अब दया हो।",
           "B": "एक समय तुम परमेश्वर की आज्ञा नहीं मानते थे, पर अब इनके आज्ञा न मानने के कारण तुम पर दया हुई है। \\v 31 इसी तरह इन्होंने भी अब आज्ञा नहीं मानी, ताकि उस दया के द्वारा जो परमेश्वर ने तुम पर की है, अब उन पर भी दया हो।",
           "R": "एक समय तुम परमेश्वर की बात नहीं मानते थे। पर अब परमेश्वर ने तुम पर दया की है, क्योंकि इस्राएल के लोगों ने उनकी बात नहीं मानी। \\v 31 इसी तरह अब उन्होंने बात मानने से इनकार किया है, ताकि उस दया के कारण जो परमेश्वर ने तुम पर की है, अब उन पर भी दया हो।"
+        },
+        "uk": {
+          "L": "Бо як ви колись не корилися Богові, а тепер помилувані через їхню непокору, \\v 31 так і вони тепер не корилися заради милості, [виявленої] вам, щоб і вони тепер були помилувані.",
+          "B": "Колись ви не корилися Богові, а тепер вам виявлено милість через їхню непокору. \\v 31 Так само й вони тепер стали непокірними, щоб через милість, яку Бог виявив вам, і їм тепер було виявлено милість.",
+          "R": "Колись ви не слухалися Бога. Але тепер Бог виявив вам милість, бо народ Ізраїлю не послухався. \\v 31 Так само й вони тепер відмовилися слухатися, щоб і вони тепер отримали милість через ту милість, яку Бог виявив вам."
+        },
+        "ja": {
+          "L": "ちょうどあなたがたが、かつては神に不従順でしたが、今は彼らの不従順によってあわれみを受けたように、\\v 31 そのように彼らもまた今は、あなたがたへのあわれみのために不従順となりました。それは、彼ら自身も今あわれみを受けるためです。",
+          "B": "あなたがたは、かつては神に不従順でしたが、今は彼らの不従順によってあわれみを受けました。\\v 31 同じように、彼らも今は不従順になっています。それは、神があなたがたに示されたあわれみによって、彼らも今あわれみを受けるためです。",
+          "R": "みなさんは、以前は神に従いませんでした。でも今は、イスラエルの人々が従わなかったので、神にあわれんでいただきました。\\v 31 同じように、彼らも今は従おうとしません。それは、神がみなさんに示されたあわれみによって、彼らも今あわれみを受けるためです。"
+        },
+        "id": {
+          "L": "Sebab sama seperti kalian dahulu tidak taat kepada Allah tetapi sekarang telah menerima belas kasihan karena ketidaktaatan mereka, \\v 31 demikian juga mereka sekarang telah tidak taat, demi belas kasihan [yang ditunjukkan] kepada kalian, supaya mereka juga sekarang menerima belas kasihan.",
+          "B": "Dahulu kalian tidak taat kepada Allah, tetapi sekarang kalian telah dikasihani karena ketidaktaatan mereka. \\v 31 Demikian juga mereka sekarang telah tidak taat, supaya oleh belas kasihan yang telah Allah tunjukkan kepada kalian, mereka pun sekarang dapat dikasihani.",
+          "R": "Dulu kalian tidak menaati Allah. Tetapi sekarang Allah sudah menunjukkan belas kasihan kepada kalian, karena bangsa Israel tidak taat. \\v 31 Dengan cara yang sama, sekarang mereka menolak untuk taat, supaya mereka juga sekarang menerima belas kasihan karena belas kasihan yang Allah tunjukkan kepada kalian."
+        },
+        "zh": {
+          "L": "因为正如你们从前不顺从{{god_term:神|上帝}}，如今却因他们的不顺从而蒙了怜悯，\\v 31 这些人如今也同样不顺从了，为了[向]你们[显出的]怜悯，好使他们如今也蒙怜悯。",
+          "B": "你们从前不顺从{{god_term:神|上帝}}，如今却因为他们的不顺从而蒙了怜悯。\\v 31 同样，他们如今也不顺从，好让他们借着{{god_term:神|上帝}}向你们所施的怜悯，现在也能蒙怜悯。",
+          "R": "从前你们不顺从{{god_term:神|上帝}}。但现在{{god_term:神|上帝}}怜悯了你们，因为以色列人不顺从。\\v 31 同样，他们现在也拒绝顺从，为的是让他们也能因{{god_term:神|上帝}}向你们所施的怜悯，现在就蒙怜悯。"
         }
       },
       "decisions": [
@@ -9307,6 +11178,46 @@
           "reason": "To disobey is to refuse to obey, especially by not believing (m1). \"Không vâng phục\" is the opposite of the \"vâng phục\" of 1:5 and 10:16; Readable says \"vâng lời\", the everyday word. \"Thương xót\" is kept for mercy, as in 9:15.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n45011031007",
+            "n45011031008"
+          ],
+          "choice": "\"あなたがたへのあわれみのために\" before the verb \"不従順となりました\" (L)",
+          "alternatives": [
+            "\"あなたがたへのあわれみによって、彼ら自身も……\" (the reading of Balanced and Readable)"
+          ],
+          "reason": "The Greek places the phrase between the verb and \"so that\", and it can go with either (m2). Literal keeps it inside the first clause, where Japanese \"ために\" leaves both senses open; Balanced and Readable join it to what follows, as the English Balanced and Readable do.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011030005"
+          ],
+          "choice": "\"不従順\" (L, B); \"従わない\" (R)",
+          "alternatives": [
+            "\"不信仰\""
+          ],
+          "reason": "The verb means refusing to obey, which in Romans includes unbelief (m1). \"不従順\" keeps it apart from \"不信仰\" in verses 20 and 23, and is used again for the noun in verse 32.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -9386,6 +11297,26 @@
           "L": "क्योंकि परमेश्वर ने सब को आज्ञा न मानने में बंद कर दिया है, ताकि वे सब पर दया करें।",
           "B": "क्योंकि परमेश्वर ने सब को एक साथ आज्ञा न मानने के बंदीगृह में बंद कर दिया है, ताकि वे सब पर दया करें।",
           "R": "परमेश्वर ने सब लोगों को आज्ञा न मानने की क़ैद में डाल दिया है, ताकि वे सब पर दया कर सकें।"
+        },
+        "uk": {
+          "L": "Бо Бог замкнув усіх у непокорі, щоб {{deity_pronoun:він|Він}} усіх помилував.",
+          "B": "Бо Бог разом замкнув усіх у непокорі, щоб {{deity_pronoun:він|Він}} міг виявити милість усім.",
+          "R": "Бог посадив усіх у вʼязницю непокори, щоб {{deity_pronoun:він|Він}} міг виявити милість кожному."
+        },
+        "ja": {
+          "L": "なぜなら、神はすべての人を不従順のうちに閉じ込められたからです。それは、すべての人をあわれむためです。",
+          "B": "神はすべての人を不従順の中に閉じ込められました。すべての人をあわれむためです。",
+          "R": "神はすべての人を、不従順という牢屋に閉じ込められました。それは、すべての人にあわれみを示すためです。"
+        },
+        "id": {
+          "L": "Sebab Allah telah mengurung semua orang dalam ketidaktaatan, supaya {{deity_pronoun:dia|Dia}} dapat menunjukkan belas kasihan kepada semua orang.",
+          "B": "Sebab Allah telah mengurung semua orang bersama-sama dalam ketidaktaatan, supaya {{deity_pronoun:dia|Dia}} dapat menunjukkan belas kasihan kepada semua orang.",
+          "R": "Allah sudah memasukkan semua orang ke dalam penjara ketidaktaatan, supaya {{deity_pronoun:dia|Dia}} dapat menunjukkan belas kasihan kepada semua orang."
+        },
+        "zh": {
+          "L": "因为{{god_term:神|上帝}}已把众人一同关在不顺从里，好叫{{deity_pronoun:他|祂}}能怜悯众人。",
+          "B": "因为{{god_term:神|上帝}}把所有人都一起锁在不顺从之中，好让{{deity_pronoun:他|祂}}向所有人施怜悯。",
+          "R": "{{god_term:神|上帝}}把每个人都关进了不顺从的监牢，为的是让{{deity_pronoun:他|祂}}可以怜悯每一个人。"
         }
       },
       "decisions": [
@@ -9540,54 +11471,74 @@
       "literal_gloss": "O depth of riches and of wisdom and of knowledge of God; how unsearchable the judgments of him and untraceable the ways of him.",
       "renderings": {
         "en": {
-          "L": "O [the] depth of [the] riches and wisdom and knowledge of God! How unsearchable [are] {{deity_pronoun:his|His}} judgments and untraceable {{deity_pronoun:his|His}} ways!",
-          "B": "How deep are the riches and the wisdom and the knowledge of God! How impossible to search out {{deity_pronoun:his|His}} judgments, and how impossible to trace {{deity_pronoun:his|His}} ways!",
-          "R": "How great God's riches are! How deep {{deity_pronoun:his|His}} wisdom and knowledge are! No one can fully understand {{deity_pronoun:his|His}} decisions. No one can trace the paths {{deity_pronoun:he|He}} takes."
+          "L": "O [the] depth of [the] riches and wisdom and knowledge of God! \\q How unsearchable [are] {{deity_pronoun:his|His}} judgments and untraceable {{deity_pronoun:his|His}} ways!",
+          "B": "How deep are the riches and the wisdom and the knowledge of God! \\q How impossible to search out {{deity_pronoun:his|His}} judgments, \\q and how impossible to trace {{deity_pronoun:his|His}} ways!",
+          "R": "How great God's riches are! How deep {{deity_pronoun:his|His}} wisdom and knowledge are! \\q No one can fully understand {{deity_pronoun:his|His}} decisions. \\q No one can trace the paths {{deity_pronoun:he|He}} takes."
         },
         "es": {
-          "L": "¡Oh profundidad de [las] riquezas y de [la] sabiduría y del conocimiento de Dios! ¡Cuán inescrutables [son] {{deity_pronoun:sus|Sus}} juicios e imposibles de rastrear {{deity_pronoun:sus|Sus}} caminos!",
-          "B": "¡Qué profundas son las riquezas y la sabiduría y el conocimiento de Dios! ¡Qué imposible es investigar {{deity_pronoun:sus|Sus}} juicios y seguir el rastro de {{deity_pronoun:sus|Sus}} caminos!",
-          "R": "¡Qué grandes son las riquezas de Dios! ¡Qué profundos son {{deity_pronoun:su|Su}} sabiduría y {{deity_pronoun:su|Su}} conocimiento! Nadie puede entender del todo {{deity_pronoun:sus|Sus}} decisiones. Nadie puede seguir los caminos por donde {{deity_pronoun:él|Él}} va."
+          "L": "¡Oh profundidad de [las] riquezas y de [la] sabiduría y del conocimiento de Dios! \\q ¡Cuán inescrutables [son] {{deity_pronoun:sus|Sus}} juicios e imposibles de rastrear {{deity_pronoun:sus|Sus}} caminos!",
+          "B": "¡Qué profundas son las riquezas y la sabiduría y el conocimiento de Dios! \\q ¡Qué imposible es investigar {{deity_pronoun:sus|Sus}} juicios y seguir el rastro de {{deity_pronoun:sus|Sus}} caminos!",
+          "R": "¡Qué grandes son las riquezas de Dios! ¡Qué profundos son {{deity_pronoun:su|Su}} sabiduría y {{deity_pronoun:su|Su}} conocimiento! \\q Nadie puede entender del todo {{deity_pronoun:sus|Sus}} decisiones. \\q Nadie puede seguir los caminos por donde {{deity_pronoun:él|Él}} va."
         },
         "sw": {
-          "L": "Ee kina cha utajiri na hekima na maarifa ya Mungu! Jinsi gani hukumu {{deity_pronoun:zake|Zake}} hazichunguziki, na njia {{deity_pronoun:zake|Zake}} hazifuatiliki!",
-          "B": "Utajiri na hekima na maarifa ya Mungu ni ya kina kirefu mno! Hakuna awezaye kuzichunguza hukumu {{deity_pronoun:zake|Zake}}, wala kuzifuatilia njia {{deity_pronoun:zake|Zake}}!",
-          "R": "Utajiri wa Mungu ni mkubwa kiasi gani! Hekima {{deity_pronoun:yake|Yake}} na maarifa {{deity_pronoun:yake|Yake}} ni ya kina kirefu mno! Hakuna mtu anayeweza kuelewa kikamilifu maamuzi {{deity_pronoun:yake|Yake}}. Hakuna anayeweza kufuatilia njia anazopita."
+          "L": "Ee kina cha utajiri na hekima na maarifa ya Mungu! \\q Jinsi gani hukumu {{deity_pronoun:zake|Zake}} hazichunguziki, \\q na njia {{deity_pronoun:zake|Zake}} hazifuatiliki!",
+          "B": "Utajiri na hekima na maarifa ya Mungu ni ya kina kirefu mno! \\q Hakuna awezaye kuzichunguza hukumu {{deity_pronoun:zake|Zake}}, \\q wala kuzifuatilia njia {{deity_pronoun:zake|Zake}}!",
+          "R": "Utajiri wa Mungu ni mkubwa kiasi gani! Hekima {{deity_pronoun:yake|Yake}} na maarifa {{deity_pronoun:yake|Yake}} ni ya kina kirefu mno! \\q Hakuna mtu anayeweza kuelewa kikamilifu maamuzi {{deity_pronoun:yake|Yake}}. \\q Hakuna anayeweza kufuatilia njia anazopita."
         },
         "fr": {
-          "L": "Ô profondeur de [la] richesse et de [la] sagesse et de [la] connaissance de Dieu ! Combien {{deity_pronoun:ses|Ses}} jugements [sont] insondables, et {{deity_pronoun:ses|Ses}} voies impossibles à suivre à la trace !",
-          "B": "Que la richesse, la sagesse et la connaissance de Dieu sont profondes ! Qu’il est impossible de sonder {{deity_pronoun:ses|Ses}} jugements, et impossible de suivre la trace de {{deity_pronoun:ses|Ses}} chemins !",
-          "R": "Que les richesses de Dieu sont grandes ! Que {{deity_pronoun:sa|Sa}} sagesse et {{deity_pronoun:sa|Sa}} connaissance sont profondes ! Personne ne peut comprendre complètement {{deity_pronoun:ses|Ses}} décisions. Personne ne peut suivre la trace des chemins qu’{{deity_pronoun:il|Il}} prend."
+          "L": "Ô profondeur de [la] richesse et de [la] sagesse et de [la] connaissance de Dieu ! \\q Combien {{deity_pronoun:ses|Ses}} jugements [sont] insondables, \\q et {{deity_pronoun:ses|Ses}} voies impossibles à suivre à la trace !",
+          "B": "Que la richesse, la sagesse et la connaissance de Dieu sont profondes ! \\q Qu’il est impossible de sonder {{deity_pronoun:ses|Ses}} jugements, \\q et impossible de suivre la trace de {{deity_pronoun:ses|Ses}} chemins !",
+          "R": "Que les richesses de Dieu sont grandes ! Que {{deity_pronoun:sa|Sa}} sagesse et {{deity_pronoun:sa|Sa}} connaissance sont profondes ! \\q Personne ne peut comprendre complètement {{deity_pronoun:ses|Ses}} décisions. \\q Personne ne peut suivre la trace des chemins qu’{{deity_pronoun:il|Il}} prend."
         },
         "ko": {
-          "L": "오, 하나님의 부요함과 지혜와 지식은 얼마나 깊습니까! 그분의 판단들은 얼마나 헤아릴 수 없으며, 그분의 길들은 얼마나 찾을 수 없습니까!",
-          "B": "하나님의 부요하심과 지혜와 지식은 얼마나 깊습니까! 그분의 판단은 아무도 헤아릴 수 없고, 그분의 길은 아무도 더듬어 찾을 수 없습니다!",
-          "R": "하나님의 부요하심은 얼마나 큽니까! 그분의 지혜와 지식은 얼마나 깊습니까! 그분이 내리시는 결정을 누구도 다 이해할 수 없습니다. 그분이 가시는 길을 누구도 따라가 찾아낼 수 없습니다."
+          "L": "오, 하나님의 부요함과 지혜와 지식은 얼마나 깊습니까! \\q 그분의 판단들은 얼마나 헤아릴 수 없으며, \\q 그분의 길들은 얼마나 찾을 수 없습니까!",
+          "B": "하나님의 부요하심과 지혜와 지식은 얼마나 깊습니까! \\q 그분의 판단은 아무도 헤아릴 수 없고, \\q 그분의 길은 아무도 더듬어 찾을 수 없습니다!",
+          "R": "하나님의 부요하심은 얼마나 큽니까! 그분의 지혜와 지식은 얼마나 깊습니까! \\q 그분이 내리시는 결정을 누구도 다 이해할 수 없습니다. \\q 그분이 가시는 길을 누구도 따라가 찾아낼 수 없습니다."
         },
         "vi": {
-          "L": "Ôi, sâu thẳm thay sự giàu có, sự khôn ngoan và tri thức của Đức Chúa Trời! Các phán quyết của {{deity_pronoun:ngài|Ngài}} thật không thể dò xét, và các đường lối của {{deity_pronoun:ngài|Ngài}} thật không thể truy tìm!",
-          "B": "Sự giàu có, sự khôn ngoan và tri thức của Đức Chúa Trời sâu thẳm biết bao! Những phán quyết của {{deity_pronoun:ngài|Ngài}} không ai dò thấu được, và đường lối của {{deity_pronoun:ngài|Ngài}} không ai lần theo được!",
-          "R": "Sự giàu có của Đức Chúa Trời lớn lao biết bao! Sự khôn ngoan và hiểu biết của {{deity_pronoun:ngài|Ngài}} sâu xa biết bao! Không ai có thể hiểu thấu hết những quyết định của {{deity_pronoun:ngài|Ngài}}. Không ai có thể lần theo những con đường {{deity_pronoun:ngài|Ngài}} đi."
+          "L": "Ôi, sâu thẳm thay sự giàu có, sự khôn ngoan và tri thức của Đức Chúa Trời! \\q Các phán quyết của {{deity_pronoun:ngài|Ngài}} thật không thể dò xét, \\q và các đường lối của {{deity_pronoun:ngài|Ngài}} thật không thể truy tìm!",
+          "B": "Sự giàu có, sự khôn ngoan và tri thức của Đức Chúa Trời sâu thẳm biết bao! \\q Những phán quyết của {{deity_pronoun:ngài|Ngài}} không ai dò thấu được, \\q và đường lối của {{deity_pronoun:ngài|Ngài}} không ai lần theo được!",
+          "R": "Sự giàu có của Đức Chúa Trời lớn lao biết bao! Sự khôn ngoan và hiểu biết của {{deity_pronoun:ngài|Ngài}} sâu xa biết bao! \\q Không ai có thể hiểu thấu hết những quyết định của {{deity_pronoun:ngài|Ngài}}. \\q Không ai có thể lần theo những con đường {{deity_pronoun:ngài|Ngài}} đi."
         },
         "pt": {
-          "L": "Ó profundidade [da] riqueza, e da sabedoria, e do conhecimento de Deus! Como [são] impossíveis de sondar os {{deity_pronoun:seus|Seus}} juízos, e de rastrear os {{deity_pronoun:seus|Seus}} caminhos!",
-          "B": "Como são profundas a riqueza, a sabedoria e o conhecimento de Deus! Ninguém consegue investigar os {{deity_pronoun:seus|Seus}} juízos, ninguém consegue seguir o rastro dos {{deity_pronoun:seus|Seus}} caminhos!",
-          "R": "Como são grandes as riquezas de Deus! Como são profundos a {{deity_pronoun:sua|Sua}} sabedoria e o {{deity_pronoun:seu|Seu}} conhecimento! Ninguém consegue entender por completo as {{deity_pronoun:suas|Suas}} decisões. Ninguém consegue seguir os caminhos por onde {{deity_pronoun:ele|Ele}} anda."
+          "L": "Ó profundidade [da] riqueza, e da sabedoria, e do conhecimento de Deus! \\q Como [são] impossíveis de sondar os {{deity_pronoun:seus|Seus}} juízos, \\q e de rastrear os {{deity_pronoun:seus|Seus}} caminhos!",
+          "B": "Como são profundas a riqueza, a sabedoria e o conhecimento de Deus! \\q Ninguém consegue investigar os {{deity_pronoun:seus|Seus}} juízos, \\q ninguém consegue seguir o rastro dos {{deity_pronoun:seus|Seus}} caminhos!",
+          "R": "Como são grandes as riquezas de Deus! Como são profundos a {{deity_pronoun:sua|Sua}} sabedoria e o {{deity_pronoun:seu|Seu}} conhecimento! \\q Ninguém consegue entender por completo as {{deity_pronoun:suas|Suas}} decisões. \\q Ninguém consegue seguir os caminhos por onde {{deity_pronoun:ele|Ele}} anda."
         },
         "am": {
-          "L": "ኦ የእግዚአብሔር የብልጽግናና የጥበብ የእውቀትም ጥልቀት! ፍርዶቹ እንዴት የማይመረመሩ፣ መንገዶቹም እንዴት የማይደረስባቸው [ናቸው]!",
-          "B": "የእግዚአብሔር ብልጽግና፣ ጥበብና እውቀት እንዴት ጥልቅ ነው! ፍርዶቹን መመርመር፣ መንገዶቹንም መከታተል እንዴት የማይቻል ነው!",
-          "R": "የእግዚአብሔር ብልጽግና እንዴት ታላቅ ነው! ጥበቡና እውቀቱ እንዴት ጥልቅ ነው! ውሳኔዎቹን ማንም ሙሉ በሙሉ ሊረዳ አይችልም። የሚሄድባቸውንም መንገዶች ማንም ሊከታተል አይችልም።"
+          "L": "ኦ የእግዚአብሔር የብልጽግናና የጥበብ የእውቀትም ጥልቀት! \\q ፍርዶቹ እንዴት የማይመረመሩ፣ \\q መንገዶቹም እንዴት የማይደረስባቸው [ናቸው]!",
+          "B": "የእግዚአብሔር ብልጽግና፣ ጥበብና እውቀት እንዴት ጥልቅ ነው! \\q ፍርዶቹን መመርመር፣ \\q መንገዶቹንም መከታተል እንዴት የማይቻል ነው!",
+          "R": "የእግዚአብሔር ብልጽግና እንዴት ታላቅ ነው! ጥበቡና እውቀቱ እንዴት ጥልቅ ነው! \\q ውሳኔዎቹን ማንም ሙሉ በሙሉ ሊረዳ አይችልም። \\q የሚሄድባቸውንም መንገዶች ማንም ሊከታተል አይችልም።"
         },
         "ru": {
-          "L": "О глубина богатства, и мудрости, и знания Божьего! Как неисследимы {{deity_pronoun:его|Его}} суды и пути {{deity_pronoun:его|Его}} не выследить!",
-          "B": "Как глубоки богатство, мудрость и знание Бога! Невозможно исследовать {{deity_pronoun:его|Его}} решения, невозможно проследить {{deity_pronoun:его|Его}} пути!",
-          "R": "Как велико Божье богатство! Как глубоки {{deity_pronoun:его|Его}} мудрость и знание! Никто не может до конца понять {{deity_pronoun:его|Его}} решения. Никто не может проследить, какими путями {{deity_pronoun:он|Он}} идёт."
+          "L": "О глубина богатства, и мудрости, и знания Божьего! \\q Как неисследимы {{deity_pronoun:его|Его}} суды и пути {{deity_pronoun:его|Его}} не выследить!",
+          "B": "Как глубоки богатство, мудрость и знание Бога! \\q Невозможно исследовать {{deity_pronoun:его|Его}} решения, \\q невозможно проследить {{deity_pronoun:его|Его}} пути!",
+          "R": "Как велико Божье богатство! Как глубоки {{deity_pronoun:его|Его}} мудрость и знание! \\q Никто не может до конца понять {{deity_pronoun:его|Его}} решения. \\q Никто не может проследить, какими путями {{deity_pronoun:он|Он}} идёт."
         },
         "hi": {
-          "L": "अहा, परमेश्वर का धन और बुद्धि और ज्ञान कितना गहरा है! उनके निर्णय कैसे अगम और उनके मार्ग कैसे अथाह हैं!",
-          "B": "परमेश्वर का धन और उनकी बुद्धि और उनका ज्ञान कितना गहरा है! उनके निर्णयों की थाह कोई नहीं ले सकता, और उनके मार्गों का पता कोई नहीं लगा सकता!",
-          "R": "परमेश्वर का धन कितना बड़ा है! उनकी बुद्धि और उनका ज्ञान कितना गहरा है! उनके फ़ैसलों को कोई पूरी तरह नहीं समझ सकता। वे जिन रास्तों पर चलते हैं, उनका पीछा कोई नहीं कर सकता।"
+          "L": "अहा, परमेश्वर का धन और बुद्धि और ज्ञान कितना गहरा है! \\q उनके निर्णय कैसे अगम और उनके मार्ग कैसे अथाह हैं!",
+          "B": "परमेश्वर का धन और उनकी बुद्धि और उनका ज्ञान कितना गहरा है! \\q उनके निर्णयों की थाह कोई नहीं ले सकता, \\q और उनके मार्गों का पता कोई नहीं लगा सकता!",
+          "R": "परमेश्वर का धन कितना बड़ा है! उनकी बुद्धि और उनका ज्ञान कितना गहरा है! \\q उनके फ़ैसलों को कोई पूरी तरह नहीं समझ सकता। \\q वे जिन रास्तों पर चलते हैं, उनका पीछा कोई नहीं कर सकता।"
+        },
+        "uk": {
+          "L": "О глибино багатства, і мудрості, і пізнання Бога! \\q Які неможливо дослідити {{deity_pronoun:його|Його}} присуди, \\q і неможливо вистежити {{deity_pronoun:його|Його}} шляхи!",
+          "B": "Яке глибоке багатство, і мудрість, і пізнання Бога! \\q Неможливо збагнути {{deity_pronoun:його|Його}} присудів, \\q і неможливо простежити {{deity_pronoun:його|Його}} шляхів!",
+          "R": "Яке велике Боже багатство! Яка глибока {{deity_pronoun:його|Його}} мудрість і {{deity_pronoun:його|Його}} знання! \\q Ніхто не може повністю зрозуміти {{deity_pronoun:його|Його}} рішень. \\q Ніхто не може простежити шляхів, якими {{deity_pronoun:він|Він}} іде."
+        },
+        "ja": {
+          "L": "ああ、神の富と知恵と知識の深さよ！ \\q その定めはなんと調べ尽くしがたく、 \\q その道はなんとたどりがたいことでしょう！",
+          "B": "神の富と知恵と知識は、なんと深いのでしょう！ \\q 神の定めはだれにも調べ尽くすことができず、 \\q 神の道はだれにもたどることができません！",
+          "R": "神の豊かさは、なんと大きいのでしょう！神の知恵と知識は、なんと深いのでしょう！ \\q 神が決められることを、だれも完全には理解できません。 \\q 神の進まれる道を、だれもたどることはできません。"
+        },
+        "id": {
+          "L": "O dalamnya kekayaan dan hikmat dan pengetahuan Allah! \\q Betapa tak terselidiki keputusan-keputusan-{{deity_pronoun:nya|Nya}} dan tak terselami jalan-jalan-{{deity_pronoun:nya|Nya}}!",
+          "B": "Betapa dalamnya kekayaan, hikmat, dan pengetahuan Allah! \\q Betapa mustahil menyelidiki keputusan-keputusan-{{deity_pronoun:nya|Nya}}, \\q dan betapa mustahil menelusuri jalan-jalan-{{deity_pronoun:nya|Nya}}!",
+          "R": "Betapa besar kekayaan Allah! Betapa dalam hikmat dan pengetahuan-{{deity_pronoun:nya|Nya}}! \\q Tidak ada yang dapat memahami sepenuhnya keputusan-keputusan-{{deity_pronoun:nya|Nya}}. \\q Tidak ada yang dapat menelusuri jalan-jalan yang {{deity_pronoun:dia|Dia}} tempuh."
+        },
+        "zh": {
+          "L": "啊，{{god_term:神|上帝}}的丰富、智慧和知识是何等深奥！ \\q {{deity_pronoun:他|祂}}的判断多么不可探究，{{deity_pronoun:他|祂}}的道路多么无法追踪！",
+          "B": "{{god_term:神|上帝}}的丰富、智慧和知识是多么深厚！ \\q {{deity_pronoun:他|祂}}的判断多么无法探测， \\q {{deity_pronoun:他|祂}}的道路多么无从追溯！",
+          "R": "{{god_term:神|上帝}}的财富何等丰盛！{{deity_pronoun:他|祂}}的智慧和知识何等深奥！ \\q 没有人能完全明白{{deity_pronoun:他|祂}}的决定。 \\q 也没有人能追踪{{deity_pronoun:他|祂}}所走的路。"
         }
       },
       "decisions": [
@@ -9781,6 +11732,46 @@
           "reason": "The verse is well known in an older wording; it is drafted afresh from the Greek, with ብልጽግና for 'riches' as in 11:12, and the three things that are deep kept apart (meaning note m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011033012"
+          ],
+          "choice": "\"定め\" (L, B); \"神が決められること\" (R)",
+          "alternatives": [
+            "\"裁き\""
+          ],
+          "reason": "The word here means the decisions God makes in governing history (m2). \"裁き\" would suggest condemnation; \"定め\" is what God has decided.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011033002"
+          ],
+          "choice": "\"何等深奥\" (L); \"多么深厚\" (B)",
+          "alternatives": [],
+          "reason": "A well-known doxology, drafted from the Greek in modern Chinese; the familiar classical exclamation is not used.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -9853,6 +11844,26 @@
           "L": "क्योंकि \"प्रभु के मन को किसने जाना है?\"",
           "B": "क्योंकि \"प्रभु के मन को किसने जाना है?\"",
           "R": "जैसा पवित्रशास्त्र कहता है, \"प्रभु क्या सोचते हैं, यह कौन कभी जान पाया है?\""
+        },
+        "uk": {
+          "L": "Бо «хто пізнав думку Господа?»",
+          "B": "Бо «хто знав думку Господа?»",
+          "R": "Як каже Писання: «Хто коли-небудь знав, що думає Господь?»"
+        },
+        "ja": {
+          "L": "なぜなら、「だれが主の思いを知っただろうか？」",
+          "B": "なぜなら、「だれが主の思いを知っていただろうか？」",
+          "R": "聖書にこう書いてあります。「主の考えを、いったいだれが知っていただろうか？」"
+        },
+        "id": {
+          "L": "Sebab \"siapakah yang telah mengetahui pikiran Tuhan?\"",
+          "B": "Sebab \"siapakah yang telah mengenal pikiran Tuhan?\"",
+          "R": "Seperti yang dikatakan Kitab Suci, \"Siapa yang pernah tahu apa yang dipikirkan Tuhan?\""
+        },
+        "zh": {
+          "L": "因为“有谁认识了主的心思？”",
+          "B": "因为“谁曾知道主的心思？”",
+          "R": "正如圣经上说：“有谁曾经知道主在想什么呢？”"
         }
       },
       "decisions": [
@@ -9872,7 +11883,7 @@
           "alternatives": [],
           "reason": "Paul quotes the old Greek translation of Isaiah 40:13, as he does in 1 Corinthians 2:16. The Hebrew reads \"Who has measured the Spirit of the LORD?\", with the divine name; the Greek has \"Lord\". The quotation continues in the next sentence.",
           "uncertain": false,
-          "footnote": false
+          "footnote": true
         },
         {
           "id": "m2",
@@ -9948,6 +11959,25 @@
           "reason": "Isaiah has the divine name, but the Greek quotation has \"Lord\". As in 9:28 and 10:13, the New Testament wording is followed with \"Chúa\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011034005"
+          ],
+          "choice": "\"主\", with no divine_name span",
+          "alternatives": [],
+          "reason": "Paul quotes Isaiah 40:13 in Greek, where the word is kyrios; Chinese writes \"主\", as the English writes \"Lord\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -10020,6 +12050,26 @@
           "L": "\"या उनका सलाहकार कौन हुआ है?\"",
           "B": "\"या कौन उनका सलाहकार रहा है?\"",
           "R": "\"या किसने कभी उन्हें सलाह दी है?\""
+        },
+        "uk": {
+          "L": "«Або хто став {{deity_pronoun:його|Його}} порадником?»",
+          "B": "«Або хто був {{deity_pronoun:його|Його}} радником?»",
+          "R": "«Або хто коли-небудь давав {{deity_pronoun:йому|Йому}} пораду?»"
+        },
+        "ja": {
+          "L": "「あるいは、だれが主の助言者となっただろうか？」",
+          "B": "「あるいは、だれが主の相談相手であっただろうか？」",
+          "R": "「だれが主に助言したことがあるだろうか？」"
+        },
+        "id": {
+          "L": "\"Atau siapakah yang telah menjadi penasihat-{{deity_pronoun:nya|Nya}}?\"",
+          "B": "\"Atau siapakah yang pernah menjadi penasihat-{{deity_pronoun:nya|Nya}}?\"",
+          "R": "\"Atau siapa yang pernah memberi-{{deity_pronoun:nya|Nya}} nasihat?\""
+        },
+        "zh": {
+          "L": "“或有谁成了{{deity_pronoun:他|祂}}的谋士？”",
+          "B": "“又有谁做过{{deity_pronoun:他|祂}}的参谋？”",
+          "R": "“或者有谁曾给{{deity_pronoun:他|祂}}出过主意？”"
         }
       },
       "decisions": [
@@ -10059,6 +12109,27 @@
           "reason": "Readable uses a plain verb.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n45011034009"
+          ],
+          "choice": "\"主\" for the pronoun \"his\" (L, B, R); \"神\" for \"him\" in verse 35 (R)",
+          "alternatives": [
+            "\"彼の\""
+          ],
+          "reason": "Japanese does not use 彼 for God, and a bare pronoun would be unclear, so the questions name the Lord of the line before. Literal does not bracket it, since it renders the Greek pronoun rather than adding a word.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -10085,23 +12156,23 @@
       "literal_gloss": "Or who has first given to him, and it will be repaid to him?",
       "renderings": {
         "en": {
-          "L": "\"Or who has first given to {{deity_pronoun:him|Him}}, and it will be repaid to him?\"",
+          "L": "\"Or who has first given to {{deity_pronoun:him|Him}}, \\q and it will be repaid to him?\"",
           "B": "\"Or who has given {{deity_pronoun:him|Him}} anything first and must be paid back?\"",
           "R": "\"Has anyone ever given God a gift, so that God must pay them back?\""
         },
         "es": {
-          "L": "«¿O quién {{deity_pronoun:le|Le}} ha dado primero, y le será devuelto?»",
-          "B": "«¿O quién {{deity_pronoun:le|Le}} ha dado algo primero, para que tenga que devolvérselo?»",
+          "L": "«¿O quién {{deity_pronoun:le|Le}} ha dado primero, \\q y le será devuelto?»",
+          "B": "«¿O quién {{deity_pronoun:le|Le}} ha dado algo primero, \\q para que tenga que devolvérselo?»",
           "R": "«¿Alguien ha hecho alguna vez un regalo a Dios, de modo que Dios tenga que pagárselo?»"
         },
         "sw": {
-          "L": "\"Au ni nani aliyempa kwanza, naye atalipwa?\"",
-          "B": "\"Au ni nani aliyempa kitu kwanza, hata alazimike kumlipa?\"",
+          "L": "\"Au ni nani aliyempa kwanza, \\q naye atalipwa?\"",
+          "B": "\"Au ni nani aliyempa kitu kwanza, \\q hata alazimike kumlipa?\"",
           "R": "\"Je, kuna mtu aliyewahi kumpa Mungu zawadi, hata Mungu alazimike kumlipa?\""
         },
         "fr": {
-          "L": "« Ou qui {{deity_pronoun:lui|Lui}} a donné le premier, pour qu’on doive le lui rendre ? »",
-          "B": "« Ou qui {{deity_pronoun:lui|Lui}} a donné quelque chose en premier, pour qu’{{deity_pronoun:il|Il}} doive le lui rendre ? »",
+          "L": "« Ou qui {{deity_pronoun:lui|Lui}} a donné le premier, \\q pour qu’on doive le lui rendre ? »",
+          "B": "« Ou qui {{deity_pronoun:lui|Lui}} a donné quelque chose en premier, \\q pour qu’{{deity_pronoun:il|Il}} doive le lui rendre ? »",
           "R": "« Quelqu’un a-t-il jamais fait un cadeau à Dieu, pour que Dieu doive le lui rendre ? »"
         },
         "ko": {
@@ -10110,13 +12181,13 @@
           "R": "\"누가 하나님께 먼저 선물을 드려서, 하나님께서 그 사람에게 갚아 주셔야 하겠느냐?\""
         },
         "vi": {
-          "L": "\"Hoặc ai đã cho {{deity_pronoun:ngài|Ngài}} trước, và sẽ được đền trả lại?\"",
-          "B": "\"Hay ai đã cho {{deity_pronoun:ngài|Ngài}} điều gì trước, để {{deity_pronoun:ngài|Ngài}} phải trả lại cho người ấy?\"",
+          "L": "\"Hoặc ai đã cho {{deity_pronoun:ngài|Ngài}} trước, \\q và sẽ được đền trả lại?\"",
+          "B": "\"Hay ai đã cho {{deity_pronoun:ngài|Ngài}} điều gì trước, \\q để {{deity_pronoun:ngài|Ngài}} phải trả lại cho người ấy?\"",
           "R": "\"Có ai từng tặng Đức Chúa Trời một món quà, để Đức Chúa Trời phải đền đáp lại cho họ không?\""
         },
         "pt": {
-          "L": "\"Ou quem primeiro {{deity_pronoun:lhe|Lhe}} deu, e lhe será retribuído?\"",
-          "B": "\"Ou quem {{deity_pronoun:lhe|Lhe}} deu alguma coisa primeiro, para ter de ser pago de volta?\"",
+          "L": "\"Ou quem primeiro {{deity_pronoun:lhe|Lhe}} deu, \\q e lhe será retribuído?\"",
+          "B": "\"Ou quem {{deity_pronoun:lhe|Lhe}} deu alguma coisa primeiro, \\q para ter de ser pago de volta?\"",
           "R": "\"Alguém já deu um presente a Deus, para que Deus tenha de lhe pagar de volta?\""
         },
         "am": {
@@ -10125,14 +12196,34 @@
           "R": "«እግዚአብሔር መልሶ እንዲከፍለው ለእግዚአብሔር ስጦታ የሰጠ ማን አለ?»"
         },
         "ru": {
-          "L": "«Или кто прежде дал {{deity_pronoun:ему|Ему}}, и ему будет воздано?»",
+          "L": "«Или кто прежде дал {{deity_pronoun:ему|Ему}}, \\q и ему будет воздано?»",
           "B": "«Или кто первым дал {{deity_pronoun:ему|Ему}} что-нибудь, так что {{deity_pronoun:он|Он}} должен вернуть долг?»",
           "R": "«Кто-нибудь когда-нибудь дарил Богу подарок, чтобы Бог был обязан отплатить ему?»"
         },
         "hi": {
-          "L": "\"या किसने पहले उन्हें कुछ दिया है, कि उसे उसका बदला दिया जाए?\"",
+          "L": "\"या किसने पहले उन्हें कुछ दिया है, \\q कि उसे उसका बदला दिया जाए?\"",
           "B": "\"या किसने उन्हें पहले कुछ दिया है कि उसे बदले में चुकाया जाए?\"",
           "R": "\"क्या किसी ने कभी परमेश्वर को कोई भेंट दी है, कि परमेश्वर को उसे बदले में कुछ चुकाना पड़े?\""
+        },
+        "uk": {
+          "L": "«Або хто наперед дав {{deity_pronoun:йому|Йому}}, \\q і йому буде віддано?»",
+          "B": "«Або хто дав {{deity_pronoun:йому|Йому}} щось першим, \\q щоб {{deity_pronoun:він|Він}} мусив віддавати?»",
+          "R": "«Чи хтось колись дав Богові дарунок, щоб Бог мусив йому віддати?»"
+        },
+        "ja": {
+          "L": "「あるいは、だれが先に主に与えて、 \\q その人に報いが返されるだろうか？」",
+          "B": "「あるいは、だれがまず主に何かを与えて、 \\q お返しを受けて当然だろうか？」",
+          "R": "「神に先に贈り物をして、神からお返しを受けるはずの人がいるだろうか？」"
+        },
+        "id": {
+          "L": "\"Atau siapakah yang lebih dahulu memberi kepada-{{deity_pronoun:nya|Nya}}, \\q sehingga hal itu akan dibalas kepadanya?\"",
+          "B": "\"Atau siapakah yang pernah memberi sesuatu kepada-{{deity_pronoun:nya|Nya}} lebih dahulu sehingga harus dibayar kembali?\"",
+          "R": "\"Pernahkah seseorang memberi Allah suatu pemberian, sehingga Allah harus membalasnya?\""
+        },
+        "zh": {
+          "L": "“或有谁先给了{{deity_pronoun:他|祂}}， \\q 而那人将得到偿还呢？”",
+          "B": "“又有谁先给过{{deity_pronoun:他|祂}}什么，所以必须得到回报呢？”",
+          "R": "“有谁曾经送过礼物给{{god_term:神|上帝}}，以致{{god_term:神|上帝}}必须回报那人呢？”"
         }
       },
       "decisions": [
@@ -10274,54 +12365,74 @@
       "literal_gloss": "Because from him and through him and to him the all things; to him the glory to the ages, amen.",
       "renderings": {
         "en": {
-          "L": "For from {{deity_pronoun:him|Him}} and through {{deity_pronoun:him|Him}} and to {{deity_pronoun:him|Him}} [are] all things. To {{deity_pronoun:him|Him}} [be] the glory forever. Amen.",
-          "B": "For all things are from {{deity_pronoun:him|Him}} and through {{deity_pronoun:him|Him}} and for {{deity_pronoun:him|Him}}. To {{deity_pronoun:him|Him}} be glory forever! Amen.",
-          "R": "Everything comes from {{deity_pronoun:him|Him}}. Everything exists through {{deity_pronoun:him|Him}} and for {{deity_pronoun:him|Him}}. Let all glory be {{deity_pronoun:his|His}} forever! Amen."
+          "L": "For from {{deity_pronoun:him|Him}} and through {{deity_pronoun:him|Him}} and to {{deity_pronoun:him|Him}} [are] all things. \\q To {{deity_pronoun:him|Him}} [be] the glory forever. Amen.",
+          "B": "For all things are from {{deity_pronoun:him|Him}} and through {{deity_pronoun:him|Him}} and for {{deity_pronoun:him|Him}}. \\q To {{deity_pronoun:him|Him}} be glory forever! Amen.",
+          "R": "Everything comes from {{deity_pronoun:him|Him}}. Everything exists through {{deity_pronoun:him|Him}} and for {{deity_pronoun:him|Him}}. \\q Let all glory be {{deity_pronoun:his|His}} forever! Amen."
         },
         "es": {
-          "L": "Porque de {{deity_pronoun:él|Él}} y por medio de {{deity_pronoun:él|Él}} y hacia {{deity_pronoun:él|Él}} [son] todas las cosas. A {{deity_pronoun:él|Él}} [sea] la gloria por los siglos. Amén.",
-          "B": "Porque todas las cosas son de {{deity_pronoun:él|Él}}, por medio de {{deity_pronoun:él|Él}} y para {{deity_pronoun:él|Él}}. ¡A {{deity_pronoun:él|Él}} la gloria para siempre! Amén.",
-          "R": "Todo viene de {{deity_pronoun:él|Él}}. Todo existe por medio de {{deity_pronoun:él|Él}} y para {{deity_pronoun:él|Él}}. ¡Que toda la gloria sea {{deity_pronoun:suya|Suya}} para siempre! Amén."
+          "L": "Porque de {{deity_pronoun:él|Él}} y por medio de {{deity_pronoun:él|Él}} y hacia {{deity_pronoun:él|Él}} [son] todas las cosas. \\q A {{deity_pronoun:él|Él}} [sea] la gloria por los siglos. Amén.",
+          "B": "Porque todas las cosas son de {{deity_pronoun:él|Él}}, por medio de {{deity_pronoun:él|Él}} y para {{deity_pronoun:él|Él}}. \\q ¡A {{deity_pronoun:él|Él}} la gloria para siempre! Amén.",
+          "R": "Todo viene de {{deity_pronoun:él|Él}}. Todo existe por medio de {{deity_pronoun:él|Él}} y para {{deity_pronoun:él|Él}}. \\q ¡Que toda la gloria sea {{deity_pronoun:suya|Suya}} para siempre! Amén."
         },
         "sw": {
-          "L": "Kwa maana kutoka {{deity_pronoun:kwake|Kwake}}, na kupitia {{deity_pronoun:yeye|Yeye}}, na kuelekea {{deity_pronoun:kwake|Kwake}} [ni] vitu vyote. Kwake [uwe] utukufu hata milele. Amina.",
-          "B": "Kwa maana vitu vyote vimetoka {{deity_pronoun:kwake|Kwake}}, vipo kupitia {{deity_pronoun:yeye|Yeye}}, na ni kwa ajili {{deity_pronoun:yake|Yake}}. Utukufu uwe {{deity_pronoun:kwake|Kwake}} milele! Amina.",
-          "R": "Kila kitu kinatoka {{deity_pronoun:kwake|Kwake}}. Kila kitu kipo kupitia {{deity_pronoun:yeye|Yeye}} na kwa ajili {{deity_pronoun:yake|Yake}}. Utukufu wote na uwe {{deity_pronoun:wake|Wake}} milele! Amina."
+          "L": "Kwa maana kutoka {{deity_pronoun:kwake|Kwake}}, na kupitia {{deity_pronoun:yeye|Yeye}}, na kuelekea {{deity_pronoun:kwake|Kwake}} [ni] vitu vyote. \\q Kwake [uwe] utukufu hata milele. Amina.",
+          "B": "Kwa maana vitu vyote vimetoka {{deity_pronoun:kwake|Kwake}}, vipo kupitia {{deity_pronoun:yeye|Yeye}}, \\q na ni kwa ajili {{deity_pronoun:yake|Yake}}. Utukufu uwe {{deity_pronoun:kwake|Kwake}} milele! Amina.",
+          "R": "Kila kitu kinatoka {{deity_pronoun:kwake|Kwake}}. Kila kitu kipo kupitia {{deity_pronoun:yeye|Yeye}} na kwa ajili {{deity_pronoun:yake|Yake}}. \\q Utukufu wote na uwe {{deity_pronoun:wake|Wake}} milele! Amina."
         },
         "fr": {
-          "L": "Car de {{deity_pronoun:lui|Lui}}, et par {{deity_pronoun:lui|Lui}}, et pour {{deity_pronoun:lui|Lui}} [sont] toutes choses. À {{deity_pronoun:lui|Lui}} la gloire pour les siècles. Amen.",
-          "B": "Car tout est de {{deity_pronoun:lui|Lui}}, par {{deity_pronoun:lui|Lui}} et pour {{deity_pronoun:lui|Lui}}. À {{deity_pronoun:lui|Lui}} soit la gloire éternellement ! Amen.",
-          "R": "Tout vient de {{deity_pronoun:lui|Lui}}. Tout existe par {{deity_pronoun:lui|Lui}} et pour {{deity_pronoun:lui|Lui}}. Que toute la gloire {{deity_pronoun:lui|Lui}} revienne pour toujours ! Amen."
+          "L": "Car de {{deity_pronoun:lui|Lui}}, et par {{deity_pronoun:lui|Lui}}, et pour {{deity_pronoun:lui|Lui}} [sont] toutes choses. \\q À {{deity_pronoun:lui|Lui}} la gloire pour les siècles. Amen.",
+          "B": "Car tout est de {{deity_pronoun:lui|Lui}}, par {{deity_pronoun:lui|Lui}} et pour {{deity_pronoun:lui|Lui}}. \\q À {{deity_pronoun:lui|Lui}} soit la gloire éternellement ! Amen.",
+          "R": "Tout vient de {{deity_pronoun:lui|Lui}}. Tout existe par {{deity_pronoun:lui|Lui}} et pour {{deity_pronoun:lui|Lui}}. \\q Que toute la gloire {{deity_pronoun:lui|Lui}} revienne pour toujours ! Amen."
         },
         "ko": {
-          "L": "만물이 그분에게서 [나오고], 그분을 통하여 [있고], 그분께로 [돌아가기] 때문입니다. 그분께 영광이 영원히 [있기를 바랍니다]. 아멘.",
-          "B": "모든 것이 그분에게서 나오고, 그분을 통해 있고, 그분을 위해 있기 때문입니다. 그분께 영원히 영광이 있기를 빕니다! 아멘.",
-          "R": "모든 것이 그분에게서 나옵니다. 모든 것이 그분을 통해, 그리고 그분을 위해 있습니다. 모든 영광이 영원히 그분께 있기를 빕니다! 아멘."
+          "L": "만물이 그분에게서 [나오고], 그분을 통하여 [있고], 그분께로 [돌아가기] 때문입니다. \\q 그분께 영광이 영원히 [있기를 바랍니다]. 아멘.",
+          "B": "모든 것이 그분에게서 나오고, 그분을 통해 있고, 그분을 위해 있기 때문입니다. \\q 그분께 영원히 영광이 있기를 빕니다! 아멘.",
+          "R": "모든 것이 그분에게서 나옵니다. 모든 것이 그분을 통해, 그리고 그분을 위해 있습니다. \\q 모든 영광이 영원히 그분께 있기를 빕니다! 아멘."
         },
         "vi": {
-          "L": "Vì từ {{deity_pronoun:ngài|Ngài}}, bởi {{deity_pronoun:ngài|Ngài}} và hướng về {{deity_pronoun:ngài|Ngài}} [là] muôn vật. Nguyện vinh quang [thuộc về] {{deity_pronoun:ngài|Ngài}} đời đời! A-men.",
-          "B": "Vì muôn vật đều từ {{deity_pronoun:ngài|Ngài}}, qua {{deity_pronoun:ngài|Ngài}} và vì {{deity_pronoun:ngài|Ngài}}. Nguyện vinh quang thuộc về {{deity_pronoun:ngài|Ngài}} đời đời! A-men.",
-          "R": "Mọi vật đến từ {{deity_pronoun:ngài|Ngài}}. Mọi vật có được là nhờ {{deity_pronoun:ngài|Ngài}} và vì {{deity_pronoun:ngài|Ngài}}. Nguyện mọi vinh quang thuộc về {{deity_pronoun:ngài|Ngài}} đời đời! A-men."
+          "L": "Vì từ {{deity_pronoun:ngài|Ngài}}, bởi {{deity_pronoun:ngài|Ngài}} và hướng về {{deity_pronoun:ngài|Ngài}} [là] muôn vật. \\q Nguyện vinh quang [thuộc về] {{deity_pronoun:ngài|Ngài}} đời đời! A-men.",
+          "B": "Vì muôn vật đều từ {{deity_pronoun:ngài|Ngài}}, qua {{deity_pronoun:ngài|Ngài}} và vì {{deity_pronoun:ngài|Ngài}}. \\q Nguyện vinh quang thuộc về {{deity_pronoun:ngài|Ngài}} đời đời! A-men.",
+          "R": "Mọi vật đến từ {{deity_pronoun:ngài|Ngài}}. Mọi vật có được là nhờ {{deity_pronoun:ngài|Ngài}} và vì {{deity_pronoun:ngài|Ngài}}. \\q Nguyện mọi vinh quang thuộc về {{deity_pronoun:ngài|Ngài}} đời đời! A-men."
         },
         "pt": {
-          "L": "Porque {{deity_pronoun:dele|Dele}}, e por meio {{deity_pronoun:dele|Dele}}, e para {{deity_pronoun:ele|Ele}} [são] todas as coisas. A {{deity_pronoun:ele|Ele}} a glória para sempre. Amém.",
-          "B": "Pois todas as coisas vêm {{deity_pronoun:dele|Dele}}, existem por meio {{deity_pronoun:dele|Dele}} e são para {{deity_pronoun:ele|Ele}}. A {{deity_pronoun:ele|Ele}} seja a glória para sempre! Amém.",
-          "R": "Tudo vem {{deity_pronoun:dele|Dele}}. Tudo existe por meio {{deity_pronoun:dele|Dele}} e para {{deity_pronoun:ele|Ele}}. Que toda a glória seja {{deity_pronoun:dele|Dele}} para sempre! Amém."
+          "L": "Porque {{deity_pronoun:dele|Dele}}, e por meio {{deity_pronoun:dele|Dele}}, e para {{deity_pronoun:ele|Ele}} [são] todas as coisas. \\q A {{deity_pronoun:ele|Ele}} a glória para sempre. Amém.",
+          "B": "Pois todas as coisas vêm {{deity_pronoun:dele|Dele}}, existem por meio {{deity_pronoun:dele|Dele}} e são para {{deity_pronoun:ele|Ele}}. \\q A {{deity_pronoun:ele|Ele}} seja a glória para sempre! Amém.",
+          "R": "Tudo vem {{deity_pronoun:dele|Dele}}. Tudo existe por meio {{deity_pronoun:dele|Dele}} e para {{deity_pronoun:ele|Ele}}. \\q Que toda a glória seja {{deity_pronoun:dele|Dele}} para sempre! Amém."
         },
         "am": {
-          "L": "ምክንያቱም ሁሉም ነገር ከእርሱ፣ በእርሱ በኩል፣ ወደ እርሱም [ነው]። ክብሩ ለእርሱ እስከ ዘመናት [ይሁን]። አሜን።",
-          "B": "ሁሉም ነገር ከእርሱ የተገኘ፣ በእርሱ በኩል የሆነና ለእርሱ የሆነ ነውና። ክብር ለዘላለም ለእርሱ ይሁን! አሜን።",
-          "R": "ሁሉም ነገር የሚመጣው ከእርሱ ነው። ሁሉም ነገር የሚኖረው በእርሱና ለእርሱ ነው። ክብር ሁሉ ለዘላለም የእርሱ ይሁን! አሜን።"
+          "L": "ምክንያቱም ሁሉም ነገር ከእርሱ፣ በእርሱ በኩል፣ ወደ እርሱም [ነው]። \\q ክብሩ ለእርሱ እስከ ዘመናት [ይሁን]። አሜን።",
+          "B": "ሁሉም ነገር ከእርሱ የተገኘ፣ በእርሱ በኩል የሆነና ለእርሱ የሆነ ነውና። \\q ክብር ለዘላለም ለእርሱ ይሁን! አሜን።",
+          "R": "ሁሉም ነገር የሚመጣው ከእርሱ ነው። ሁሉም ነገር የሚኖረው በእርሱና ለእርሱ ነው። \\q ክብር ሁሉ ለዘላለም የእርሱ ይሁን! አሜን።"
         },
         "ru": {
-          "L": "Ведь из {{deity_pronoun:него|Него}}, и через {{deity_pronoun:него|Него}}, и к {{deity_pronoun:нему|Нему}} всё. Ему слава вовеки. Аминь.",
-          "B": "Ведь всё — от {{deity_pronoun:него|Него}}, через {{deity_pronoun:него|Него}} и для {{deity_pronoun:него|Него}}. Ему слава вовеки! Аминь.",
-          "R": "Всё происходит от {{deity_pronoun:него|Него}}. Всё существует через {{deity_pronoun:него|Него}} и для {{deity_pronoun:него|Него}}. Пусть вся слава принадлежит {{deity_pronoun:ему|Ему}} вечно! Аминь."
+          "L": "Ведь из {{deity_pronoun:него|Него}}, и через {{deity_pronoun:него|Него}}, и к {{deity_pronoun:нему|Нему}} всё. \\q Ему слава вовеки. Аминь.",
+          "B": "Ведь всё — от {{deity_pronoun:него|Него}}, через {{deity_pronoun:него|Него}} и для {{deity_pronoun:него|Него}}. \\q Ему слава вовеки! Аминь.",
+          "R": "Всё происходит от {{deity_pronoun:него|Него}}. Всё существует через {{deity_pronoun:него|Него}} и для {{deity_pronoun:него|Него}}. \\q Пусть вся слава принадлежит {{deity_pronoun:ему|Ему}} вечно! Аминь."
         },
         "hi": {
-          "L": "क्योंकि उन्हीं से और उन्हीं के द्वारा और उन्हीं के लिए सब कुछ [है]। उन्हीं की महिमा युगानुयुग [हो]। आमीन।",
-          "B": "क्योंकि सब कुछ उन्हीं से, उन्हीं के द्वारा और उन्हीं के लिए है। उनकी महिमा युगानुयुग होती रहे! आमीन।",
-          "R": "सब कुछ उन्हीं से आता है। सब कुछ उन्हीं के द्वारा और उन्हीं के लिए बना है। सारी महिमा सदा उन्हीं की हो! आमीन।"
+          "L": "क्योंकि उन्हीं से और उन्हीं के द्वारा और उन्हीं के लिए सब कुछ [है]। \\q उन्हीं की महिमा युगानुयुग [हो]। आमीन।",
+          "B": "क्योंकि सब कुछ उन्हीं से, उन्हीं के द्वारा और उन्हीं के लिए है। \\q उनकी महिमा युगानुयुग होती रहे! आमीन।",
+          "R": "सब कुछ उन्हीं से आता है। सब कुछ उन्हीं के द्वारा और उन्हीं के लिए बना है। \\q सारी महिमा सदा उन्हीं की हो! आमीन।"
+        },
+        "uk": {
+          "L": "Бо від {{deity_pronoun:нього|Нього}}, і через {{deity_pronoun:нього|Нього}}, і до {{deity_pronoun:нього|Нього}} — усе. \\q Йому слава навіки. Амінь.",
+          "B": "Бо від {{deity_pronoun:нього|Нього}}, через {{deity_pronoun:нього|Нього}} і для {{deity_pronoun:нього|Нього}} існує все. \\q Йому слава навіки! Амінь.",
+          "R": "Усе походить від {{deity_pronoun:нього|Нього}}. Усе існує через {{deity_pronoun:нього|Нього}} і для {{deity_pronoun:нього|Нього}}. \\q Нехай уся слава буде {{deity_pronoun:його|Його}} навіки! Амінь."
+        },
+        "ja": {
+          "L": "なぜなら、すべてのものは、この方から、この方によって、この方に向かって[ある]からです。 \\q この方に栄光が世々にありますように。アーメン。",
+          "B": "すべてのものは、神から出て、神によって成り、神のためにあるのです。 \\q 栄光が永遠に神にありますように！アーメン。",
+          "R": "すべてのものは神から出ています。すべてのものは神によって存在し、神のためにあります。 \\q すべての栄光が、いつまでも神のものでありますように！アーメン。"
+        },
+        "id": {
+          "L": "Sebab dari {{deity_pronoun:dia|Dia}} dan melalui {{deity_pronoun:dia|Dia}} dan kepada {{deity_pronoun:dia|Dia}} [adalah] segala sesuatu. \\q Bagi {{deity_pronoun:dia|Dia}} kemuliaan selama-lamanya. Amin.",
+          "B": "Sebab segala sesuatu berasal dari {{deity_pronoun:dia|Dia}}, ada melalui {{deity_pronoun:dia|Dia}}, dan ada untuk {{deity_pronoun:dia|Dia}}. \\q Bagi {{deity_pronoun:dia|Dia}}lah kemuliaan selama-lamanya! Amin.",
+          "R": "Segala sesuatu datang dari {{deity_pronoun:dia|Dia}}. Segala sesuatu ada melalui {{deity_pronoun:dia|Dia}} dan untuk {{deity_pronoun:dia|Dia}}. \\q Biarlah segala kemuliaan menjadi milik-{{deity_pronoun:nya|Nya}} selama-lamanya! Amin."
+        },
+        "zh": {
+          "L": "因为万物都是出于{{deity_pronoun:他|祂}}、借着{{deity_pronoun:他|祂}}、归向{{deity_pronoun:他|祂}}。 \\q 愿荣耀归给{{deity_pronoun:他|祂}}，直到永远。阿们。",
+          "B": "因为万物都是从{{deity_pronoun:他|祂}}而来，借着{{deity_pronoun:他|祂}}而有，也是为了{{deity_pronoun:他|祂}}而存在。 \\q 愿荣耀归给{{deity_pronoun:他|祂}}，直到永远！阿们。",
+          "R": "万物都是从{{deity_pronoun:他|祂}}而来。万物借着{{deity_pronoun:他|祂}}存在，也为{{deity_pronoun:他|祂}}存在。 \\q 愿一切荣耀永远都归给{{deity_pronoun:他|祂}}！阿们。"
         }
       },
       "decisions": [
@@ -10506,6 +12617,28 @@
             "ለዘላለም (forever)"
           ],
           "reason": "Literal keeps the Greek 'to the ages'; Balanced and Readable say ለዘላለም, the ordinary word for forever.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45011036003",
+            "n45011036017"
+          ],
+          "choice": "\"この方\" (L); \"神\" (B, R); \"世々に\" (L), \"永遠に\" (B), \"いつまでも\" (R)",
+          "alternatives": [
+            "\"彼\""
+          ],
+          "reason": "Japanese does not use 彼 for God. Literal keeps the run of pronouns as \"この方\", the respectful demonstrative; Balanced and Readable name God. \"To the ages\" means forever (m3): Literal keeps the plural of ages with \"世々\".",
           "uncertain": false,
           "footnote": false
         }

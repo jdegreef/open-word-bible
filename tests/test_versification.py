@@ -4,7 +4,7 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 from owb import refs, versification
-from owb.sources import macula_hebrew, open_bibles, sblgnt
+from owb.sources import macula_greek, macula_hebrew, open_bibles, sblgnt
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
@@ -66,6 +66,36 @@ class VersificationTest(unittest.TestCase):
         self.assertEqual(ids(versification.to_source(ref("REV.13.1"))), ["REV.12.18", "REV.13.1"])
         self.assertEqual(ids(versification.to_english(ref("JHN.3.16"))), ["JHN.3.16"])
         self.assertEqual(versification.english_chapters("REV", 12), [12, 13])
+
+    def test_hebrew_half_verses(self):
+        # Two Hebrew verses that make one English verse, which the verse map
+        # pairs only by their second half (OLD_TESTAMENT_HALVES).
+        for first, second, english in (("NUM.25.19", "NUM.26.1", "NUM.26.1"),
+                                       ("1SA.20.42", "1SA.21.1", "1SA.20.42"),
+                                       ("1CH.12.4", "1CH.12.5", "1CH.12.4")):
+            with self.subTest(english):
+                self.assertEqual(ids(versification.to_english(ref(first))), [english])
+                self.assertEqual(ids(versification.to_english(ref(second))), [english])
+                self.assertEqual(ids(versification.to_source(ref(english))), [first, second])
+
+    def test_only_psalm_titles_have_no_english_number(self):
+        hebrew = set(macula_hebrew.verses())
+        unnumbered = {h.book for h in hebrew if not versification.to_english(h)}
+        self.assertEqual(unnumbered, {"PSA"})
+
+    def test_niv_numbering(self):
+        # The NIV numbers as the KJV does, except that 3 John has a verse 15.
+        self.assertEqual(ids(versification.to_niv(ref("3JN.1.15"))), ["3JN.1.15"])
+        self.assertEqual(ids(versification.from_niv(ref("3JN.1.15"))), ["3JN.1.15"])
+        self.assertEqual(ids(versification.from_niv(ref("3JN.1.14"))), ["3JN.1.14"])
+        for verse_id, niv in (("MAL.3.19", ["MAL.4.1"]), ("JOL.3.1", ["JOL.2.28"]), ("PSA.3.1", []),
+                              ("PSA.51.3", ["PSA.51.1"]), ("2CO.13.13", ["2CO.13.14"]),
+                              ("REV.12.18", ["REV.13.1"]), ("ISA.63.19", ["ISA.63.19", "ISA.64.1"]),
+                              ("JHN.3.16", ["JHN.3.16"])):
+            with self.subTest(verse_id):
+                self.assertEqual(ids(versification.to_niv(ref(verse_id))), niv)
+        self.assertEqual(versification.niv_ids(["3JN.1.14", "3JN.1.15", "MAL.3.19"]),
+                         ["3JN.1.14", "3JN.1.15", "MAL.4.1"])
 
     def test_derive_from_a_verse_map(self):
         xml = """<verseMap><book osisID="Ps">
@@ -153,11 +183,12 @@ class NewTestamentNumberingTest(unittest.TestCase):
     # Not renumbered: absent from the SBLGNT's text.
     OMITTED = {"MAT.17.21", "MAT.18.11", "MAT.23.14", "MRK.7.16", "MRK.9.44", "MRK.9.46",
                "MRK.11.26", "MRK.15.28", "LUK.17.36", "LUK.23.17", "JHN.5.4", "ACT.8.37",
-               "ACT.15.34", "ACT.24.7", "ACT.28.29", "ROM.16.25", "ROM.16.26", "ROM.16.27"}
+               "ACT.15.34", "ACT.24.7", "ACT.28.29"}
 
     def test_every_verse_lands_once(self):
         nt = refs.BOOK_CODES[refs.BOOK_CODES.index("MAT"):]
-        greek = [r for code in nt for r in sblgnt.load_book(code)]
+        # The SBLGNT, with Romans 16:25-27 from Nestle 1904 (macula_greek.SUPPLEMENT).
+        greek = [r for code in nt for r in sblgnt.load_book(code)] + sorted(macula_greek.SUPPLEMENT)
         kjv = {refs.Ref(*key) for key in open_bibles.load("kjv") if key[0] in nt}
         mapped = {e for r in greek for e in versification.to_english(r)}
         self.assertEqual(mapped - kjv, set())

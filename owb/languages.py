@@ -7,6 +7,12 @@ language means adding it to data/languages.json, writing its catalog
 words (owb/morph.py); the site, the validator and the backend read the list
 from here. The backend's reviewer roles check the list in the database, so
 a new language also needs `manage.py makemigrations accounts`.
+
+A language written right to left says so with "dir": "rtl" (Hebrew among
+the originals; a reading language such as Arabic once one is added); the
+others are left to right. Pages in such a language are built with
+<html dir="rtl">, and text in a language whose direction differs from what
+surrounds it gets its own dir (docs/adding-a-language.md, "Right to left").
 """
 import json
 from pathlib import Path
@@ -21,6 +27,24 @@ ORIGINAL = {lang["code"]: lang for lang in _DATA["original"]}
 # The reading languages' codes: ("en", "es", ...).
 CODES = tuple(READING)
 
+DIRECTIONS = ("ltr", "rtl")
+for _lang in (*_DATA["reading"], *_DATA["original"]):
+    if _lang.get("dir", "ltr") not in DIRECTIONS:
+        raise ValueError(f"data/languages.json: {_lang['code']}: dir must be one of {DIRECTIONS}")
+
+# Other codes the site tags text with, and the language whose script they
+# are written in: the Aramaic passages (arc) and a saved Hebrew word (he)
+# are in the Hebrew script.
+_SCRIPT_OF = {"arc": "hbo", "he": "hbo"}
+
+# Every code written right to left, reading and original languages and
+# their aliases: {"hbo", "arc", "he"} while no reading language is.
+RTL = frozenset(code for code, lang in {**READING, **ORIGINAL}.items() if lang.get("dir") == "rtl")
+RTL |= {alias for alias, code in _SCRIPT_OF.items() if code in RTL}
+
+# The reading languages written right to left: () while there are none.
+RTL_READING = tuple(code for code in CODES if code in RTL)
+
 
 def native(code):
     """A reading language's own name: "Español"."""
@@ -31,3 +55,9 @@ def settings(code):
     """The reader settings only this language has, each with its options'
     labels: {"plural_you": ["ustedes", "vosotros"]} for Spanish."""
     return READING[code].get("settings", {})
+
+
+def direction(code):
+    """"rtl" for a language written right to left, else "ltr". A tag with a
+    region or script ("ar-EG") counts as its language."""
+    return "rtl" if code.split("-")[0] in RTL else "ltr"

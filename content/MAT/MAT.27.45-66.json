@@ -76,6 +76,26 @@
           "L": "छठे घंटे से नौवें घंटे तक सारे देश पर अँधेरा छाया रहा।",
           "B": "दोपहर बारह बजे सारे देश पर अँधेरा छा गया, और वह दोपहर तीन बजे तक रहा।",
           "R": "दोपहर के बारह बजे पूरे देश में अँधेरा हो गया। तीन बजे तक अँधेरा ही रहा।"
+        },
+        "uk": {
+          "L": "А від шостої години настала темрява по всій землі аж до девʼятої години.",
+          "B": "Опівдні по всій землі настала темрява, і тривала вона до третьої години пополудні.",
+          "R": "О дванадцятій годині дня вся земля стала темною. Темрява тривала аж до третьої години пополудні."
+        },
+        "ja": {
+          "L": "さて、第六の時から全地に闇が生じ、第九の時まで続いた。",
+          "B": "正午になると、全地は闇に覆われ、それが午後三時まで続いた。",
+          "R": "昼の十二時になると、あたり一面が暗くなりました。その暗さは、午後三時まで続きました。"
+        },
+        "id": {
+          "L": "Mulai dari jam keenam kegelapan meliputi seluruh daerah itu sampai jam kesembilan.",
+          "B": "Mulai pukul dua belas siang, kegelapan meliputi seluruh negeri itu sampai pukul tiga sore.",
+          "R": "Mulai pukul dua belas siang, seluruh negeri itu menjadi gelap sampai pukul tiga sore."
+        },
+        "zh": {
+          "L": "从第六时起，黑暗笼罩了全地，直到第九时。",
+          "B": "中午十二点，黑暗笼罩了整个大地，一直持续到下午三点。",
+          "R": "中午十二点的时候，整片土地都变黑了。一直黑到下午三点。"
         }
       },
       "decisions": [
@@ -400,6 +420,77 @@
           "reason": "Style guide section 5: Literal keeps the Greek count of hours from sunrise, and Balanced and Readable give the time as a modern Hindi reader counts it. The same in 27:46.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40027045003",
+            "n40027045004",
+            "n40027045012",
+            "n40027045013"
+          ],
+          "choice": "\"опівдні\", \"до третьої години пополудні\" (B); \"о дванадцятій годині дня\" (R)",
+          "alternatives": [
+            "\"від шостої години до девʼятої\""
+          ],
+          "reason": "The day was counted from sunrise; Literal keeps the Greek count, Balanced and Readable give the time as a modern reader counts it. The same in 27:46.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40027045003",
+            "n40027045013",
+            "n40027045010"
+          ],
+          "choice": "\"第六の時\", \"第九の時\" (L); \"正午\", \"午後三時\" (B); \"昼の十二時\", \"午後三時\" (R); \"全地\" (L, B), \"あたり一面\" (R); likewise 27:46",
+          "alternatives": [
+            "\"正午ごろ\" at Literal"
+          ],
+          "reason": "Literal keeps the ancient count of hours from sunrise; Balanced and Readable give the time as a modern reader counts it (meaning decision m1). The words are those of Mark 15:33 in Japanese, and \"全地\" leaves open how far the darkness reached, as the Greek does (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40027045003",
+            "n40027045004",
+            "n40027045012",
+            "n40027045013"
+          ],
+          "choice": "\"第六时\", \"第九时\" (L); \"中午十二点\", \"下午三点\" (B, R)",
+          "alternatives": [
+            "\"午正\", \"申初\"",
+            "\"第六时\" at every level"
+          ],
+          "reason": "Literal keeps the ancient count of hours from sunrise; Balanced and Readable give the time as a modern reader counts it (meaning decision m1), as the style guide section 10 sets out. The traditional Chinese double-hours (午正, 申初) are not used: few readers know them.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -482,6 +573,26 @@
           "L": "और नौवें घंटे के लगभग यीशु ने ऊँचे स्वर से पुकारकर कहा, \"एली, एली, लमा शबक्तनी?\"",
           "B": "लगभग तीन बजे यीशु ने ऊँचे स्वर से पुकारा: \"एली, एली, लमा शबक्तनी?\"",
           "R": "लगभग तीन बजे यीशु ज़ोर से चिल्लाए, \"एली, एली, लमा शबक्तनी?\""
+        },
+        "uk": {
+          "L": "А близько девʼятої години Ісус скрикнув гучним голосом, кажучи: «Елі, Елі, лема савахтані?»",
+          "B": "Близько третьої години Ісус голосно закричав: «Елі, Елі, лема савахтані?»",
+          "R": "Близько третьої години Ісус голосно закричав: «Елі, Елі, лема савахтані?»"
+        },
+        "ja": {
+          "L": "そして第九の時ごろ、イエスは大声で叫んで言われた。「エリ、エリ、レマ、サバクタニ？」",
+          "B": "午後三時ごろ、イエスは大声で叫ばれた。「エリ、エリ、レマ、サバクタニ？」",
+          "R": "午後三時ごろ、イエスは大きな声で叫ばれました。「エリ、エリ、レマ、サバクタニ？」"
+        },
+        "id": {
+          "L": "Kira-kira jam kesembilan berserulah Yesus dengan suara nyaring, \"Eli, Eli, lema sabakhtani?\"",
+          "B": "Kira-kira pukul tiga sore Yesus berseru dengan suara keras, \"Eli, Eli, lema sabakhtani?\"",
+          "R": "Sekitar pukul tiga sore Yesus berseru dengan suara keras, \"Eli, Eli, lema sabakhtani?\""
+        },
+        "zh": {
+          "L": "约在第九时，耶稣大声呼喊，说：“以利，以利，勒马撒巴赫他尼？”",
+          "B": "大约下午三点，耶稣大声呼喊：“以利，以利，勒马撒巴赫他尼？”",
+          "R": "大约下午三点，耶稣大声喊着说：“以利，以利，勒马撒巴赫他尼？”"
         }
       },
       "decisions": [
@@ -777,6 +888,111 @@
           "reason": "As in the English, every level keeps the words Jesus spoke, as Matthew keeps them before translating them; the misunderstanding in 27:47 depends on hearing \"एली\". Hindi writes them in its own script, following the SBLGNT spelling.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40027046012",
+            "n40027046013",
+            "n40027046014",
+            "n40027046015"
+          ],
+          "choice": "\"Елі, Елі, лема савахтані\"",
+          "alternatives": [
+            "\"Ілі, Ілі, лима савахтані\""
+          ],
+          "reason": "The cry is kept in Ukrainian letters at every level, as the English keeps it, and translated in the next sentence; the spelling follows the SBLGNT forms.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40027046012",
+            "n40027046013",
+            "n40027046014",
+            "n40027046015"
+          ],
+          "choice": "\"エリ、エリ、レマ、サバクタニ\" in katakana at every level",
+          "alternatives": [
+            "\"エロイ、エロイ\" as in Mark 15:34"
+          ],
+          "reason": "The Gospels' shared form for Matthew. The words are kept as sounds, as Matthew keeps them, because he translates them in the next sentence and the bystanders' mistake in 27:47 depends on how \"エリ\" sounds (meaning decision m2). The rest of the line follows Mark 15:34 in Japanese.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40027046001",
+            "n40027046002",
+            "n40027046003",
+            "n40027046004",
+            "n40027046005",
+            "n40027046006",
+            "n40027046007",
+            "n40027046008",
+            "n40027046009",
+            "n40027046010",
+            "n40027046011",
+            "n40027046012",
+            "n40027046013",
+            "n40027046014",
+            "n40027046015"
+          ],
+          "choice": "\"Eli, Eli, lema sabakhtani\"",
+          "alternatives": [],
+          "reason": "Matthew's form of the cry, transliterated by the style guide's rules (ch > kh), beside Mark's \"Eloi, Eloi, lama sabakhtani\" (15:34); added to the glossary.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40027046012",
+            "n40027046013",
+            "n40027046014",
+            "n40027046015"
+          ],
+          "choice": "\"以利，以利，勒马撒巴赫他尼\"",
+          "alternatives": [
+            "\"以利，以利，拉马撒巴各大尼\""
+          ],
+          "reason": "As the English keeps the words in Latin letters, every level keeps them as sounds, transliterated from the Greek spelling by the style guide's rules (section 6), since Matthew gives the words and then translates them. \"以利\" is written with the same characters that begin \"以利亚\" (Elijah), so the misunderstanding in 27:47 can be heard.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -853,6 +1069,26 @@
           "L": "अर्थात्, \"हे मेरे परमेश्वर, हे मेरे परमेश्वर, तूने मुझे क्यों त्याग दिया?\"",
           "B": "इसका अर्थ है, \"हे मेरे परमेश्वर, हे मेरे परमेश्वर, तूने मुझे क्यों छोड़ दिया?\"",
           "R": "इन शब्दों का मतलब है, \"हे मेरे परमेश्वर, हे मेरे परमेश्वर, तूने मुझे क्यों बिलकुल अकेला छोड़ दिया?\""
+        },
+        "uk": {
+          "L": "Тобто: «Боже мій, Боже {{deity_pronoun:мій|Мій}}, чому {{deity_pronoun:ти|Ти}} {{deity_pronoun:мене|Мене}} покинув?»",
+          "B": "Це означає: «Боже мій, Боже {{deity_pronoun:мій|Мій}}, чому {{deity_pronoun:ти|Ти}} {{deity_pronoun:мене|Мене}} залишив?»",
+          "R": "Ці слова означають: «Боже мій, Боже {{deity_pronoun:мій|Мій}}, чому {{deity_pronoun:ти|Ти}} залишив {{deity_pronoun:мене|Мене}} зовсім самого?»"
+        },
+        "ja": {
+          "L": "すなわち、「わたしの神よ、わたしの神よ、なぜわたしを見捨てたのか？」ということである。",
+          "B": "これは、「わたしの神よ、わたしの神よ、なぜわたしを見捨てたのか？」という意味である。",
+          "R": "この言葉は、「わたしの神よ、わたしの神よ、どうしてわたしをひとりぼっちにしたのか？」という意味です。"
+        },
+        "id": {
+          "L": "Artinya, \"Allah-{{deity_pronoun:ku|Ku}}, Allah-{{deity_pronoun:ku|Ku}}, mengapa {{deity_pronoun:engkau|Engkau}} meninggalkan {{deity_pronoun:aku|Aku}}?\"",
+          "B": "Artinya, \"Allah-{{deity_pronoun:ku|Ku}}, Allah-{{deity_pronoun:ku|Ku}}, mengapa {{deity_pronoun:engkau|Engkau}} meninggalkan {{deity_pronoun:aku|Aku}}?\"",
+          "R": "Artinya, \"Allah-{{deity_pronoun:ku|Ku}}, Allah-{{deity_pronoun:ku|Ku}}, kenapa {{deity_pronoun:engkau|Engkau}} meninggalkan {{deity_pronoun:aku|Aku}}?\""
+        },
+        "zh": {
+          "L": "就是：“我的{{god_term:神|上帝}}，我的{{god_term:神|上帝}}，{{deity_pronoun:你|祢}}为什么撇弃了我？”",
+          "B": "意思是：“我的{{god_term:神|上帝}}，我的{{god_term:神|上帝}}，{{deity_pronoun:你|祢}}为什么抛弃了我？”",
+          "R": "这些话的意思是：“我的{{god_term:神|上帝}}，我的{{god_term:神|上帝}}，{{deity_pronoun:你|祢}}为什么丢下我孤零零一个人？”"
         }
       },
       "decisions": [
@@ -1111,6 +1347,50 @@
           "reason": "Jesus speaks to God with \"तू\", the intimate address of Hindi prayer (style guide section 4). Devanagari has no capital letters, so the English deity_pronoun setting has nothing to change here.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n40027046018",
+            "n40027046024"
+          ],
+          "choice": "\"わたしの神よ\" and the plain \"見捨てたのか\" (L, B); \"ひとりぼっちにしたのか\" (R)",
+          "alternatives": [
+            "\"わが神\"",
+            "\"お見捨てになったのですか\""
+          ],
+          "reason": "Jesus speaks to God in plain, intimate speech, as in his other prayers, and the cry is worded as in Mark 15:34 in Japanese. Readable says what being forsaken means (meaning decision m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40027046018"
+          ],
+          "choice": "{{god_term:神|上帝}}; \"我\" with no span",
+          "alternatives": [
+            "上帝"
+          ],
+          "reason": "Every word naming the one God is written in the Chinese god_term setting: \"神\" by default, \"上帝\" for readers who choose it; the setting changes the word only (style guide section 4). Jesus's \"我\" takes no span, since Chinese has no reverent first person; \"你\" for God does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1189,6 +1469,26 @@
           "L": "और जो वहाँ खड़े थे, उनमें से कुछ ने सुनकर कहा, \"यह एलिय्याह को पुकारता है।\"",
           "B": "यह सुनकर पास खड़े कुछ लोग बोले, \"यह आदमी एलिय्याह को बुला रहा है!\"",
           "R": "वहाँ खड़े कुछ लोगों ने उनकी आवाज़ सुनी। उन्होंने कहा, \"यह एलिय्याह को बुला रहा है!\""
+        },
+        "uk": {
+          "L": "А деякі з тих, що стояли там, почувши, казали: «Цей кличе Іллю.»",
+          "B": "Дехто з тих, що стояли поблизу, почувши це, казали: «Цей чоловік кличе Іллю!»",
+          "R": "Деякі люди, що стояли там, почули {{deity_pronoun:його|Його}}. Вони казали: «Він кличе Іллю!»"
+        },
+        "ja": {
+          "L": "そこに立っていた者たちのうちのある者たちは、[これを]聞いて言っていた。「この男はエリヤを呼んでいる。」",
+          "B": "そばに立っていた人々のうちの何人かが、これを聞いて言った。「こいつはエリヤを呼んでいるぞ！」",
+          "R": "そこに立っていた人たちの何人かが、イエスの声を聞いて言いました。「エリヤを呼んでいるぞ！」"
+        },
+        "id": {
+          "L": "Mendengar itu, beberapa orang yang berdiri di situ berkata, \"Orang ini memanggil Elia.\"",
+          "B": "Ketika mendengar itu, beberapa orang yang berdiri di dekat situ berkata, \"Orang ini memanggil Elia!\"",
+          "R": "Beberapa orang yang berdiri di situ mendengarnya dan berkata, \"Dengar, dia memanggil Nabi Elia!\""
+        },
+        "zh": {
+          "L": "那里站着的人当中，有些听见了，就说：“这[人]在叫以利亚。”",
+          "B": "站在旁边的人有几个听见了，就说：“这家伙在呼唤以利亚！”",
+          "R": "站在那里的一些人听见了{{deity_pronoun:他|祂}}的话。他们说：“{{deity_pronoun:他|祂}}在叫以利亚！”"
         }
       },
       "decisions": [
@@ -1360,6 +1660,26 @@
           "reason": "As the English \"this fellow\": \"sujeito\" carries the scorn the pronoun may have (m3) without being slang.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40027047011"
+          ],
+          "choice": "\"この男\" (L); \"こいつ\" (B)",
+          "alternatives": [
+            "\"この人\""
+          ],
+          "reason": "The pronoun may carry scorn (meaning decision m3). Literal keeps a plain demonstrative that can sound cold; Balanced brings out the tone, as the English \"this fellow\" does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1444,6 +1764,26 @@
           "L": "और तुरंत उनमें से एक ने दौड़कर स्पंज लिया, और उसे खट्टे दाखरस से भरकर सरकंडे पर रखा, और उन्हें पिलाने लगा।",
           "B": "उनमें से एक तुरंत दौड़ा और एक स्पंज ले आया। उसने उसे खट्टे दाखरस में भिगोया, एक छड़ी के सिरे पर रखा, और उन्हें पीने के लिए ऊपर बढ़ाया।",
           "R": "उनमें से एक तुरंत दौड़कर एक स्पंज ले आया। उसने उसे सस्ते खट्टे दाखरस से भरा और एक छड़ी के सिरे पर लगाया। फिर उसने उसे यीशु के मुँह तक ऊपर उठाया ताकि वे पी सकें।"
+        },
+        "uk": {
+          "L": "І зараз же один із них, підбігши і взявши губку, наповнив [її] оцтом і, наклавши на очеретину, давав {{deity_pronoun:йому|Йому}} пити.",
+          "B": "Один із них відразу підбіг і взяв губку. Він намочив її кислим вином, настромив на палицю і підніс {{deity_pronoun:йому|Йому}} напитися.",
+          "R": "Один із них одразу побіг і приніс губку. Він намочив її дешевим кислим вином і настромив на кінець палиці. Потім він підніс її до Ісусових вуст, щоб {{deity_pronoun:він|Він}} міг напитися."
+        },
+        "ja": {
+          "L": "そしてすぐに、彼らのうちの一人が走って行き、海綿を取って酸いぶどう酒を含ませ、あしの棒に付けて、イエスに飲ませようとしていた。",
+          "B": "すぐに、そのうちの一人が走って行って海綿を取り、酸いぶどう酒を含ませて棒の先に付け、イエスに飲ませようとした。",
+          "R": "すぐに、その中の一人が走って行って、スポンジを取って来ました。そして、それに安いすっぱいぶどう酒を含ませて、棒の先に付けました。それから、イエスの口もとに差し出して、飲ませようとしました。"
+        },
+        "id": {
+          "L": "Dan segeralah datang seorang dari mereka; ia mengambil bunga karang, mencelupkannya ke dalam anggur asam, lalu mencucukkannya pada buluh dan memberi Yesus minum.",
+          "B": "Seorang dari mereka segera berlari mengambil bunga karang, mencelupkannya ke dalam anggur asam, menaruhnya pada ujung sebatang buluh, lalu mengangkatnya supaya {{deity_pronoun:dia|Dia}} minum.",
+          "R": "Saat itu juga salah seorang dari mereka berlari mengambil spons. Dia mencelupkan spons itu ke dalam anggur asam, menaruhnya di ujung tongkat, lalu mengangkatnya ke mulut Yesus supaya {{deity_pronoun:dia|Dia}} bisa minum."
+        },
+        "zh": {
+          "L": "他们当中有一个立刻跑过去，拿了海绵，灌满酸酒，套在芦苇上，递给{{deity_pronoun:他|祂}}喝。",
+          "B": "其中一人马上跑去拿了一块海绵，在酸酒里浸透，插在一根棍子的顶端，举起来给{{deity_pronoun:他|祂}}喝。",
+          "R": "其中一个人马上跑去拿来一块海绵。他让海绵吸满廉价的酸酒，放在一根棍子的顶端。然后他把海绵举到耶稣嘴边，好让{{deity_pronoun:他|祂}}喝。"
         }
       },
       "decisions": [
@@ -1678,6 +2018,70 @@
           "reason": "Literal keeps the traditional word; Balanced and Readable say it was cheap wine gone sour, the common drink, as the meaning decision explains.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40027048012"
+          ],
+          "choice": "\"оцет\" (L); \"кисле вино\" (B, R)",
+          "alternatives": [
+            "\"оцет\" at every level"
+          ],
+          "reason": "The drink was cheap wine gone sour, the soldiers' common drink; Literal keeps the familiar word of Psalm 69:21, Balanced and Readable say what it was.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40027048012",
+            "n40027048009"
+          ],
+          "choice": "\"酸いぶどう酒\", \"海綿\" (L, B); \"安いすっぱいぶどう酒\", \"スポンジ\" (R)",
+          "alternatives": [
+            "\"酢\""
+          ],
+          "reason": "The same words as Mark 15:36 and John 19:29 in Japanese. The drink was cheap soured wine (meaning decision m1), not vinegar, so \"酢\" is not used.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40027048009"
+          ],
+          "choice": "\"酸酒\"",
+          "alternatives": [
+            "\"醋\""
+          ],
+          "reason": "Cheap wine gone sour, a common drink (meaning decision m1); \"醋\" in modern Chinese is vinegar for cooking.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1756,6 +2160,26 @@
           "L": "पर बाक़ी लोग कहने लगे, \"रहने दो; देखें कि एलिय्याह उसे बचाने आता है या नहीं।\"",
           "B": "पर बाक़ी लोगों ने उससे कहा, \"ठहरो, देखें कि एलिय्याह उसे बचाने आता है या नहीं।\"",
           "R": "पर दूसरों ने कहा, \"रुको! चलो देखें कि एलिय्याह आकर उसे बचाता है या नहीं।\""
+        },
+        "uk": {
+          "L": "А інші казали: «Залиш, побачимо, чи прийде Ілля спасти {{deity_pronoun:його|Його}}.»",
+          "B": "Але інші сказали йому: «Почекай, подивимося, чи прийде Ілля спасти {{deity_pronoun:його|Його}}.»",
+          "R": "Але інші казали: «Стривай! Почекаймо й побачимо, чи прийде Ілля і спасе {{deity_pronoun:його|Його}}.»"
+        },
+        "ja": {
+          "L": "しかし、ほかの者たちは言っていた。「放っておけ。エリヤが彼を救いに来るかどうか、見てみよう。」",
+          "B": "しかし、ほかの者たちは言った。「待て。エリヤがこの男を救いに来るかどうか、見ようではないか。」",
+          "R": "でも、ほかの人たちは言いました。「やめろ！エリヤがこの男を救いに来るかどうか、待って見ていよう。」"
+        },
+        "id": {
+          "L": "Tetapi orang-orang lain berkata, \"Jangan, baiklah kita lihat, apakah Elia datang untuk menyelamatkan {{deity_pronoun:dia|Dia}}.\"",
+          "B": "Tetapi yang lain berkata, \"Tunggu, mari kita lihat apakah Elia datang untuk menyelamatkan-{{deity_pronoun:nya|Nya}}.\"",
+          "R": "Tetapi yang lain berkata, \"Tunggu, kita lihat saja apakah Nabi Elia akan datang menyelamatkan-{{deity_pronoun:nya|Nya}}.\""
+        },
+        "zh": {
+          "L": "其余的人却说：“算了吧，我们来看看以利亚是否来救{{deity_pronoun:他|祂}}。”",
+          "B": "但其余的人对他说：“等一等，看以利亚会不会来救{{deity_pronoun:他|祂}}。”",
+          "R": "其他人却说：“住手！我们等着看以利亚会不会来救{{deity_pronoun:他|祂}}。”"
         }
       },
       "decisions": [
@@ -1825,6 +2249,25 @@
           "choice": "\"ông ấy\" with no deity_pronoun span",
           "alternatives": [],
           "reason": "The bystanders' own word for Jesus, as in the Vietnamese Mark 15:36; it has no capital form for the setting.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40027049005"
+          ],
+          "choice": "\"放っておけ\" (L); \"待て\" (B); \"やめろ\" (R)",
+          "alternatives": [],
+          "reason": "The word means let be, and here most likely hold off (meaning decision m1). Literal keeps \"let be\", as Mark 15:36 does in Japanese; Balanced and Readable follow the English sense.",
           "uncertain": false,
           "footnote": false
         }
@@ -1904,6 +2347,26 @@
           "L": "और यीशु ने फिर ऊँचे स्वर से चिल्लाकर [अपनी] आत्मा त्याग दी।",
           "B": "यीशु ने एक बार फिर ऊँचे स्वर से पुकारा, और अपनी आत्मा त्याग दी।",
           "R": "यीशु फिर ज़ोर से चिल्लाए। तब उन्होंने अपनी आत्मा छोड़ दी और उनकी मृत्यु हो गई।"
+        },
+        "uk": {
+          "L": "А Ісус, знову скрикнувши гучним голосом, віддав дух.",
+          "B": "Ісус знову голосно закричав і віддав свій дух.",
+          "R": "Ісус знову голосно закричав. Тоді {{deity_pronoun:він|Він}} віддав свій дух і помер."
+        },
+        "ja": {
+          "L": "しかしイエスは、再び大声で叫んで、霊を手放された。",
+          "B": "イエスは再び大声で叫ばれ、ご自分の霊を手放された。",
+          "R": "イエスは、もう一度大きな声で叫ばれました。そして、霊を手放して、死なれました。"
+        },
+        "id": {
+          "L": "Yesus berseru pula dengan suara nyaring lalu menyerahkan nyawa-{{deity_pronoun:nya|Nya}}.",
+          "B": "Sekali lagi Yesus berseru dengan suara keras, lalu {{deity_pronoun:dia|Dia}} menyerahkan roh-{{deity_pronoun:nya|Nya}}.",
+          "R": "Yesus berseru lagi dengan suara keras, lalu {{deity_pronoun:dia|Dia}} menyerahkan roh-{{deity_pronoun:nya|Nya}} dan meninggal."
+        },
+        "zh": {
+          "L": "耶稣再一次大声呼喊，就放下了[{{deity_pronoun:他|祂}}的]灵。",
+          "B": "耶稣再次大声呼喊，然后交出了{{deity_pronoun:他|祂}}的灵。",
+          "R": "耶稣又大声喊了一声，然后{{deity_pronoun:他|祂}}交出了{{deity_pronoun:他|祂}}的灵，就死了。"
         }
       },
       "decisions": [
@@ -2090,6 +2553,29 @@
           "reason": "He let his spirit go, and so died (meaning decision): Literal keeps the Greek picture, which shows that he gave up his life himself; Balanced uses the Korean idiom for dying of the Korean Mark 15:37, and Readable says that he died, as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40027050008",
+            "n40027050010"
+          ],
+          "choice": "\"霊を手放された\" at every level; Readable adds \"死なれました\"",
+          "alternatives": [
+            "\"息を引き取られた\" as in Mark 15:37",
+            "\"霊をお渡しになった\" as in John 19:30"
+          ],
+          "reason": "Matthew's verb is not Mark's \"breathed his last\" or John's \"handed over\": it means let go (meaning decision m1), and suggests that Jesus gave up his life himself. \"手放す\" keeps that picture; Readable says plainly that he died, as the English does.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2208,6 +2694,26 @@
           "L": "और देखो, मन्दिर का परदा ऊपर से नीचे तक फटकर दो टुकड़े हो गया, और धरती डोल गई, और चट्टानें फट गईं, \\v 52 और क़ब्रें खुल गईं, और सोए हुए पवित्र लोगों की बहुत सी देहें जी उठीं, \\v 53 और [यीशु के] जी उठने के बाद वे क़ब्रों से निकलकर पवित्र नगर में गए और बहुतों को दिखाई दिए।",
           "B": "तब मन्दिर का परदा ऊपर से नीचे तक फटकर दो भाग हो गया। धरती काँप उठी और चट्टानें फट गईं। \\v 52 क़ब्रें खुल गईं, और परमेश्वर के बहुत से पवित्र लोगों की देहें, जो मृत्यु की नींद सो चुके थे, जिलाई गईं। \\v 53 यीशु के जी उठने के बाद वे क़ब्रों से निकलकर पवित्र नगर में गए और बहुत लोगों को दिखाई दिए।",
           "R": "उसी समय मन्दिर का परदा ऊपर से नीचे तक फटकर दो टुकड़े हो गया। धरती हिल गई, और चट्टानें फट गईं। \\v 52 क़ब्रें खुल गईं, और परमेश्वर के बहुत से लोग जो मर चुके थे, फिर से जीवित किए गए। \\v 53 वे अपनी क़ब्रों से बाहर निकले। यीशु के फिर से जी उठने के बाद वे पवित्र नगर यरूशलेम में गए, और बहुत लोगों ने उन्हें देखा।"
+        },
+        "uk": {
+          "L": "І ось завіса храму роздерлася надвоє згори донизу, і земля затряслася, і скелі розкололися, \\v 52 і гробниці відкрилися, і багато тіл святих, що спочили, воскресли, \\v 53 і, вийшовши з гробниць після {{deity_pronoun:його|Його}} воскресіння, ввійшли до святого міста і зʼявилися багатьом.",
+          "B": "І тоді завіса в храмі роздерлася надвоє, згори аж донизу. Земля затремтіла, і скелі розкололися. \\v 52 Гробниці відкрилися, і тіла багатьох Божих святих людей, що спочили смертним сном, воскресли. \\v 53 Вийшовши з гробниць після того, як Ісус воскрес, вони ввійшли до святого міста і зʼявилися багатьом людям.",
+          "R": "У ту мить завіса в храмі розірвалася на дві частини, згори донизу. Земля затряслася, і скелі розкололися. \\v 52 Гробниці відкрилися, і багато Божих людей, які померли, ожили. \\v 53 Вони вийшли зі своїх гробниць. Після того як Ісус воскрес, вони прийшли до Єрусалима, святого міста, і багато людей їх бачили."
+        },
+        "ja": {
+          "L": "すると、なんと、神殿の垂れ幕が上から下まで二つに裂かれ、地は揺り動かされ、岩は裂かれ、\\v 52 墓が開かれ、眠りについていた聖なる者たちの多くの体が起こされた。\\v 53 そして彼らは墓から出て、イエスの復活の後、聖なる都に入り、多くの人々に現れた。",
+          "B": "すると、神殿の垂れ幕が上から下まで真っ二つに裂けた。地は揺れ動き、岩は裂けた。\\v 52 墓が開いて、眠りについていた神の聖なる民のうち、多くの者の体が起こされた。\\v 53 彼らは、イエスが復活された後に墓から出て来て、聖なる都に入り、多くの人々に姿を現した。",
+          "R": "その時、神殿の垂れ幕が、上からいちばん下まで二つに裂けました。地面が揺れて、岩が裂けました。\\v 52 墓が開いて、死んでいた神の民の多くが生き返りました。\\v 53 その人たちは、墓から出て来ました。そして、イエスが生き返られた後、聖なる都エルサレムに入って、多くの人たちの前に姿を現しました。"
+        },
+        "id": {
+          "L": "Dan lihatlah, tabir Bait Suci terbelah dua dari atas sampai ke bawah dan terjadilah gempa bumi, dan bukit-bukit batu terbelah, \\v 52 dan kuburan-kuburan terbuka dan banyak orang kudus yang telah meninggal bangkit. \\v 53 Dan sesudah kebangkitan Yesus, mereka pun keluar dari kubur, lalu masuk ke kota kudus dan menampakkan diri kepada banyak orang.",
+          "B": "Lalu tirai Bait Suci terbelah dua dari atas sampai ke bawah. Bumi berguncang, dan batu-batu terbelah. \\v 52 Kuburan-kuburan terbuka, dan tubuh banyak orang kudus milik Allah yang telah meninggal dibangkitkan. \\v 53 Sesudah Yesus bangkit, mereka keluar dari kuburan, lalu masuk ke kota kudus dan menampakkan diri kepada banyak orang.",
+          "R": "Saat itu juga tirai di dalam rumah Allah robek menjadi dua dari atas sampai ke bawah. Terjadi gempa bumi, dan batu-batu besar terbelah. \\v 52 Kuburan-kuburan terbuka, dan banyak umat Allah yang sudah meninggal dihidupkan kembali. \\v 53 Sesudah Yesus bangkit, mereka keluar dari kuburan dan masuk ke kota suci Yerusalem. Di sana banyak orang melihat mereka."
+        },
+        "zh": {
+          "L": "看哪，殿的幔子从顶端到底部被撕成两半，大地被震动，岩石被劈开，\\v 52 墓穴被打开，许多已经睡了的圣徒的身体被兴起，\\v 53 他们在{{deity_pronoun:他|祂}}被兴起以后从墓穴出来，进了圣城，向许多人显现。",
+          "B": "就在那时，殿的幔子从上到下撕裂成两片。大地震动，岩石崩开。\\v 52 墓穴敞开了，许多在死亡中安睡的{{god_term:神|上帝}}的圣徒，身体都被兴起来了。\\v 53 耶稣复活以后，他们从墓穴里出来，进入圣城，让许多人看见了他们。",
+          "R": "就在那一刻，圣殿里的幔子从上到下撕成了两块。地在摇动，岩石也裂开了。\\v 52 坟墓都裂开了，许多属于{{god_term:神|上帝}}、已经死去的人又活了过来。\\v 53 他们从坟墓里出来。耶稣复活以后，他们进了耶路撒冷这座圣城，许多人都看见了他们。"
         }
       },
       "decisions": [
@@ -2602,6 +3108,138 @@
           "reason": "The honorific \"उनके\" for Jesus would here read as \"their\", the raised holy ones, so Literal names Jesus in brackets.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40027051002",
+            "n40027051004",
+            "n40027051006"
+          ],
+          "choice": "\"すると、なんと\" (L) for \"behold\" in narration, not rendered (B, R); \"神殿の垂れ幕\" at every level; \"裂かれた\" (L), \"裂けた\" (B, R)",
+          "alternatives": [
+            "\"見なさい\" (L)",
+            "\"聖所の幕\""
+          ],
+          "reason": "In narration Literal gives \"behold\" as \"なんと\", as in 8:24 and 12:46, and Balanced and Readable carry it in the flow. The curtain is worded as in Mark 15:38: \"神殿\" for the sanctuary at every level, without saying which curtain (meaning decision m1); Literal keeps the passive that points to God.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n40027053006",
+            "n40027053008"
+          ],
+          "choice": "\"イエスの復活の後\" between leaving the tombs and entering the city (L); with leaving the tombs (B); with entering the city (R)",
+          "alternatives": [],
+          "reason": "The phrase may belong with either verb (meaning decision m2). Literal keeps the Greek order so both readings stay open; Balanced and Readable follow the English Balanced and Readable.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40027051001",
+            "n40027051002",
+            "n40027051003",
+            "n40027051004",
+            "n40027051005",
+            "n40027051006",
+            "n40027051007",
+            "n40027051008",
+            "n40027051009",
+            "n40027051010",
+            "n40027051011",
+            "n40027051012",
+            "n40027051013",
+            "n40027051014",
+            "n40027051015",
+            "n40027051016",
+            "n40027051017",
+            "n40027051018",
+            "n40027051019",
+            "n40027051020",
+            "n40027051021",
+            "n40027052001",
+            "n40027052002",
+            "n40027052003",
+            "n40027052004",
+            "n40027052005",
+            "n40027052006",
+            "n40027052007",
+            "n40027052008",
+            "n40027052009",
+            "n40027052010",
+            "n40027052011",
+            "n40027053001",
+            "n40027053002",
+            "n40027053003",
+            "n40027053004",
+            "n40027053005",
+            "n40027053006",
+            "n40027053007",
+            "n40027053008",
+            "n40027053009",
+            "n40027053010",
+            "n40027053011",
+            "n40027053012",
+            "n40027053013",
+            "n40027053014",
+            "n40027053015",
+            "n40027053016",
+            "n40027053017"
+          ],
+          "choice": "\"tirai Bait Suci\" (L, B); \"tirai di dalam rumah Allah\" (R) for the naos curtain",
+          "alternatives": [],
+          "reason": "The glossary's \"Bait Suci\" for naos at Literal and Balanced, as in Mark 15:38; \"orang kudus\" (L, B), \"umat Allah\" (R) for hagioi.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40027052010"
+          ],
+          "choice": "\"圣徒\" (L, B); \"属于神的人\" (R); {{god_term:神|上帝}} at B and R",
+          "alternatives": [
+            "\"圣民\""
+          ],
+          "reason": "The glossary's words for the holy ones, God's faithful people. Where Balanced and Readable name God, as the English does, the word takes the god_term setting.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2693,6 +3331,26 @@
           "L": "और सूबेदार और जो उसके साथ यीशु की पहरेदारी कर रहे थे, भूकंप और जो कुछ हो रहा था उसे देखकर बहुत डर गए और कहने लगे, \"सचमुच यह परमेश्वर का पुत्र था!\"",
           "B": "सूबेदार और उसके साथ के सैनिक, जो यीशु पर पहरा दे रहे थे, भूकंप और सब कुछ जो हो रहा था देखकर भय से भर गए। \"सचमुच यह मनुष्य परमेश्वर का पुत्र था!\" उन्होंने कहा।",
           "R": "रोमी सेना का एक सूबेदार और उसके साथ के सैनिक यीशु की पहरेदारी कर रहे थे। उन्होंने भूकंप और बाक़ी सब कुछ होते देखा, और वे बहुत डर गए। उन्होंने कहा, \"यह आदमी सचमुच परमेश्वर का पुत्र था!\""
+        },
+        "uk": {
+          "L": "А сотник і ті, що з ним стерегли Ісуса, побачивши землетрус і те, що діялося, дуже злякалися, кажучи: «Справді, Божим Сином був цей!»",
+          "B": "Сотник і ті, хто разом із ним стеріг Ісуса, побачили землетрус і все, що сталося, і їх охопив страх. «Цей чоловік справді був Божим Сином!» — казали вони.",
+          "R": "Римський офіцер і воїни, які були з ним, стерегли Ісуса. Вони побачили землетрус і все інше, що сталося, і дуже злякалися. Вони казали: «Цей чоловік справді був Божим Сином!»"
+        },
+        "ja": {
+          "L": "さて百人隊長と、彼と一緒にイエスを見張っていた者たちは、地震と起こった事とを見て、非常に恐れて言った。「まことに、この人は神の子であった！」",
+          "B": "百人隊長と、一緒にイエスの見張りをしていた者たちは、地震や、起こったさまざまなことを見て、ひどく恐れた。「この人は本当に神の子だった！」と彼らは言った。",
+          "R": "ローマ軍の百人隊長と、一緒にいた兵士たちは、イエスを見張っていました。その人たちは、地震や、ほかのいろいろな出来事を見て、とても怖くなりました。そして言いました。「この人は本当に神の子だった！」"
+        },
+        "id": {
+          "L": "Kepala pasukan dan prajurit-prajuritnya yang menjaga Yesus menjadi sangat takut ketika mereka melihat gempa bumi dan apa yang telah terjadi, lalu berkata, \"Sungguh, orang ini adalah Anak Allah.\"",
+          "B": "Perwira dan prajurit-prajurit yang bersama dia menjaga Yesus melihat gempa bumi dan semua yang terjadi itu, dan mereka sangat ketakutan. \"Sungguh, orang ini adalah Anak Allah!\" kata mereka.",
+          "R": "Perwira tentara Romawi dan anak buahnya yang menjaga Yesus melihat gempa bumi dan semua yang terjadi. Mereka sangat takut dan berkata, \"Orang ini benar-benar Anak Allah!\""
+        },
+        "zh": {
+          "L": "那百夫长，以及跟他一起看守耶稣的人，看见了地震和发生的种种事情，就大大地惧怕，说：“这[人]确实是{{god_term:神|上帝}}的儿子！”",
+          "B": "百夫长和跟他一起看守耶稣的士兵看见了地震和所发生的一切，心中充满恐惧。“这个人确实是{{god_term:神|上帝}}的儿子！”他们说。",
+          "R": "那个罗马军官和他手下的士兵正在看守耶稣。他们看见了地震和其他发生的事，就非常害怕。他们说：“这个人真的是{{god_term:神|上帝}}的儿子！”"
         }
       },
       "decisions": [
@@ -2964,6 +3622,69 @@
           "reason": "\"सूबेदार\" is the familiar Hindi word for an officer over a company of soldiers; Readable adds \"रोमी सेना का\" to say who he was, as the English does (as at 8:5).",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40027054003"
+          ],
+          "choice": "\"сотник\" (L, B); \"римський офіцер\" (R)",
+          "alternatives": [
+            "\"центуріон\""
+          ],
+          "reason": "The Gospels' convention for the Roman officer over about a hundred men; Readable says what he was.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40027054021",
+            "n40027054022",
+            "n40027054003"
+          ],
+          "choice": "\"神の子\" at every level; \"百人隊長\" (R \"ローマ軍の百人隊長\")",
+          "alternatives": [
+            "\"神の子の一人\""
+          ],
+          "reason": "Japanese has no articles, so \"神の子\" keeps the openness of the Greek (meaning decision m1) and answers the mockers' words of 27:40, 43; the confession is worded as in Mark 15:39 in Japanese.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40027054003"
+          ],
+          "choice": "\"百夫长\" (L, B); \"罗马军官\" (R)",
+          "alternatives": [],
+          "reason": "\"百夫长\" is the usual Chinese word for a centurion; Readable says what he was, as the English Readable does. \"神的儿子\" has no article in Chinese, so it keeps the openness of the Greek \"God's Son\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3048,6 +3769,26 @@
           "L": "और वहाँ बहुत सी स्त्रियाँ दूर से देख रही थीं, जो गलील से यीशु की सेवा करती हुई उनके पीछे-पीछे आई थीं;",
           "B": "बहुत सी स्त्रियाँ दूर खड़ी देख रही थीं। ये स्त्रियाँ गलील से ही यीशु के साथ आई थीं और उनकी ज़रूरतें पूरी करती थीं।",
           "R": "बहुत सी स्त्रियाँ भी वहाँ थीं। वे दूर से देख रही थीं। वे गलील से यीशु के पीछे-पीछे आई थीं, ताकि उनकी मदद और देखभाल करें।"
+        },
+        "uk": {
+          "L": "А було там багато жінок, що дивилися здалека, які йшли за Ісусом від Галилеї, служачи {{deity_pronoun:йому|Йому}};",
+          "B": "Там же здалека дивилося багато жінок. Вони прийшли за Ісусом аж із Галилеї і дбали про {{deity_pronoun:нього|Нього}}.",
+          "R": "Там було й багато жінок. Вони дивилися здалека. Вони прийшли за Ісусом із Галилеї, щоб допомагати {{deity_pronoun:йому|Йому}} і піклуватися про {{deity_pronoun:нього|Нього}}."
+        },
+        "ja": {
+          "L": "また、そこには多くの女たちがいて、遠くから見ていた。彼女たちは、ガリラヤからイエスに従って来て、イエスに仕えていた者たちであった。",
+          "B": "大勢の女たちが、遠くから見守っていた。この女たちは、ガリラヤからずっとイエスに従って来て、仕えていた人たちである。",
+          "R": "大勢の女の人たちも、そこにいました。遠くから見ていたのです。この人たちは、イエスを手伝い、イエスの世話をするために、ガリラヤからずっとイエスについて来ていました。"
+        },
+        "id": {
+          "L": "Dan ada di situ banyak perempuan yang melihat dari jauh, yaitu perempuan-perempuan yang mengikuti Yesus dari Galilea untuk melayani {{deity_pronoun:dia|Dia}}.",
+          "B": "Ada banyak perempuan yang melihat dari jauh. Perempuan-perempuan itu telah mengikuti Yesus dari Galilea dan melayani-{{deity_pronoun:nya|Nya}}.",
+          "R": "Banyak perempuan melihat semua itu dari jauh. Mereka sudah mengikuti Yesus dari Galilea dan membantu memenuhi kebutuhan-{{deity_pronoun:nya|Nya}}."
+        },
+        "zh": {
+          "L": "当时还有许多妇女在那里从远处看着，她们曾经从加利利一路跟随耶稣，供应{{deity_pronoun:他|祂}}的需要；",
+          "B": "还有好几位妇女站在远处观看。这些妇女从加利利一路跟随耶稣来到这里，供应{{deity_pronoun:他|祂}}的需要。",
+          "R": "那里也有很多妇女。她们站在很远的地方看着。她们从加利利就一直跟着耶稣，帮助{{deity_pronoun:他|祂}}，照顾{{deity_pronoun:他|祂}}。"
         }
       },
       "decisions": [
@@ -3125,6 +3866,27 @@
             "\"봉사하다\""
           ],
           "reason": "Providing for his needs (meaning decision), in the words of the Korean Mark 15:41.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40027055016"
+          ],
+          "choice": "\"仕える\" (L, B); \"手伝い……世話をする\" (R)",
+          "alternatives": [
+            "\"もてなす\""
+          ],
+          "reason": "The verb means to serve and provide for (meaning decision m1); the wording matches Mark 15:41 in Japanese, and Readable says what the serving was.",
           "uncertain": false,
           "footnote": false
         }
@@ -3214,6 +3976,26 @@
           "L": "जिनमें मरियम मगदलीनी, और याकूब और यूसुफ़ की माता मरियम, और जब्दी के पुत्रों की माता थीं।",
           "B": "उनमें मरियम मगदलीनी, याकूब और यूसुफ़ की माता मरियम, और जब्दी के पुत्रों की माता थीं।",
           "R": "मगदला नगर की मरियम वहाँ थीं। याकूब और यूसुफ़ की माँ मरियम भी थीं। जब्दी के पुत्रों याकूब और यूहन्ना की माँ भी वहाँ थीं।"
+        },
+        "uk": {
+          "L": "серед яких була Марія Магдалина, і Марія, мати Якова і Йосифа, і мати синів Зеведеєвих.",
+          "B": "Серед них були Марія Магдалина, Марія, мати Якова і Йосифа, і мати синів Зеведея.",
+          "R": "Там була Марія з містечка Магдала. Була й Марія, мати Якова і Йосифа. Була там і мати Якова та Івана, синів Зеведея."
+        },
+        "ja": {
+          "L": "その中には、マグダラのマリア、ヤコブとヨセフの母マリア、そしてゼベダイの息子たちの母がいた。",
+          "B": "その中には、マグダラのマリア、ヤコブとヨセフの母マリア、ゼベダイの息子たちの母がいた。",
+          "R": "マグダラという町から来たマリアがいました。ヤコブとヨセフの母マリアもいました。ゼベダイの息子たち、つまりヤコブとヨハネの母もいました。"
+        },
+        "id": {
+          "L": "Di antara mereka terdapat Maria Magdalena, dan Maria ibu Yakobus dan Yusuf, dan ibu anak-anak Zebedeus.",
+          "B": "Di antara mereka ada Maria Magdalena, Maria ibu Yakobus dan Yusuf, dan ibu anak-anak Zebedeus.",
+          "R": "Di antara mereka ada Maria Magdalena, Maria ibu Yakobus dan Yusuf, dan istri Zebedeus."
+        },
+        "zh": {
+          "L": "在她们当中有抹大拉的马利亚、雅各和约瑟的母亲马利亚，还有西庇太儿子们的母亲。",
+          "B": "她们中间有抹大拉的马利亚、雅各和约瑟的母亲马利亚，以及西庇太的儿子们的母亲。",
+          "R": "从抹大拉镇来的马利亚在那里。雅各和约瑟的母亲马利亚也在那里。西庇太的儿子雅各和约翰的母亲也在那里。"
         }
       },
       "decisions": [
@@ -3365,6 +4147,27 @@
           "reason": "The established Protestant form (style guide, section 5); Literal brackets what Korean adds to the Greek \"the Magdalene\". Matthew's spelling here is Joseph, where Mark has Joses.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40027056013"
+          ],
+          "choice": "\"ヨセフ\" for this Joseph; \"ゼベダイの息子たちの母\" as in 20:20",
+          "alternatives": [
+            "\"ヨセ\" as in Mark 15:40"
+          ],
+          "reason": "Matthew spells the name as Joseph, not Mark's Joses, so Japanese writes \"ヨセフ\", as in 13:55 (meaning decision m2). The mother of Zebedee's sons is named as in 20:20.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3448,6 +4251,26 @@
           "L": "और जब साँझ हुई, तो अरिमतिया का एक धनी मनुष्य आया, जिसका नाम यूसुफ़ था, जो आप भी यीशु का चेला बन गया था;",
           "B": "जब साँझ होने लगी, तब यूसुफ़ आया, जो अरिमतिया नगर का एक धनी मनुष्य था और यीशु का चेला भी बन गया था।",
           "R": "उस शाम यूसुफ़ नाम का एक धनी आदमी आया। वह अरिमतिया नगर का था। वह भी यीशु का चेला बन गया था।"
+        },
+        "uk": {
+          "L": "А коли настав вечір, прийшов багатий чоловік з Ариматеї, на імʼя Йосиф, який і сам став учнем Ісуса;",
+          "B": "Коли вже вечоріло, прийшов Йосиф, багатий чоловік з міста Ариматеї, який теж став одним з учнів Ісуса.",
+          "R": "Того вечора прийшов багатий чоловік на імʼя Йосиф. Він був родом із містечка Ариматея. Він теж став учнем Ісуса."
+        },
+        "ja": {
+          "L": "夕方になると、アリマタヤ出身の金持ちの人が来た。名をヨセフといい、彼自身もイエスの弟子になっていた。",
+          "B": "夕方になって、アリマタヤ出身の金持ちで、ヨセフという人が来た。この人もイエスの弟子になっていた。",
+          "R": "その日の夕方、ヨセフというお金持ちの人が来ました。アリマタヤという町の出身で、この人もイエスの弟子になっていました。"
+        },
+        "id": {
+          "L": "Menjelang malam datanglah seorang kaya, orang Arimatea, yang bernama Yusuf dan yang telah menjadi murid Yesus juga.",
+          "B": "Menjelang malam, datanglah Yusuf, seorang kaya dari kota Arimatea, yang juga telah menjadi murid Yesus.",
+          "R": "Waktu hari sudah sore, seorang kaya bernama Yusuf datang. Dia berasal dari kota Arimatea, dan dia juga pengikut Yesus."
+        },
+        "zh": {
+          "L": "傍晚到了，有一个从亚利马太来的富人来了，名叫约瑟，他本人也已成了耶稣的门徒；",
+          "B": "天快黑的时候，约瑟来了。他是亚利马太镇的一个富人，也已经成了耶稣的门徒。",
+          "R": "那天傍晚，一个名叫约瑟的富人来了。他是从亚利马太镇来的。他也已经成了耶稣的门徒。"
         }
       },
       "decisions": [
@@ -3658,6 +4481,44 @@
           "reason": "The Russian style guide keeps \"ученик\" at every level.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40027057014"
+          ],
+          "choice": "\"弟子\" at Readable too",
+          "alternatives": [
+            "\"イエスに従う人\" as the English Readable's follower"
+          ],
+          "reason": "The verb is the one of 28:19, to be made a disciple (meaning decision m4). The Japanese books keep \"弟子\" at every level, and it is an everyday word, so Readable does not need the English Readable's change.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40027057008"
+          ],
+          "choice": "\"亚利马太\"",
+          "alternatives": [],
+          "reason": "Arimathea is not in the glossary; \"亚利马太\" is the conventional form of the name in Chinese Bibles.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3734,6 +4595,26 @@
           "L": "उसने पिलातुस के पास जाकर यीशु की देह माँगी।",
           "B": "वह पिलातुस के पास गया और उसने यीशु की देह माँगी।",
           "R": "यूसुफ़ ने पिलातुस के पास जाकर उससे यीशु की देह माँगी।"
+        },
+        "uk": {
+          "L": "Цей, прийшовши до Пилата, попросив тіла Ісуса.",
+          "B": "Він прийшов до Пилата і попросив віддати йому Ісусове тіло.",
+          "R": "Йосиф пішов до Пилата і попросив у нього Ісусове тіло."
+        },
+        "ja": {
+          "L": "この人はピラトのところに行って、イエスの体を願い求めた。",
+          "B": "ヨセフはピラトのところに行き、イエスの体を引き取りたいと願い出た。",
+          "R": "ヨセフはピラトのところに行って、イエスの体を引き取らせてほしいと願いました。"
+        },
+        "id": {
+          "L": "Ia pergi menghadap Pilatus dan meminta mayat Yesus.",
+          "B": "Ia pergi menghadap Pilatus dan meminta jenazah Yesus.",
+          "R": "Dia pergi kepada Pilatus dan meminta jenazah Yesus."
+        },
+        "zh": {
+          "L": "他来到彼拉多面前，要求耶稣的身体。",
+          "B": "他去见彼拉多，请求领取耶稣的遗体。",
+          "R": "约瑟去见彼拉多，向他要耶稣的遗体。"
         }
       },
       "decisions": [
@@ -3889,6 +4770,26 @@
           "L": "तब पिलातुस ने [उसे] दे देने की आज्ञा दी।",
           "B": "तब पिलातुस ने आज्ञा दी कि देह उसे सौंप दी जाए।",
           "R": "पिलातुस ने आदेश दिया कि देह यूसुफ़ को दे दी जाए।"
+        },
+        "uk": {
+          "L": "Тоді Пилат звелів віддати [його].",
+          "B": "Тоді Пилат наказав віддати йому тіло.",
+          "R": "Пилат наказав віддати тіло Йосифові."
+        },
+        "ja": {
+          "L": "そこでピラトは、[それを]渡すように命じた。",
+          "B": "そこでピラトは、それをヨセフに渡すよう命じた。",
+          "R": "ピラトは、イエスの体をヨセフに渡すように命令しました。"
+        },
+        "id": {
+          "L": "Pilatus memerintahkan untuk menyerahkannya kepadanya.",
+          "B": "Lalu Pilatus memerintahkan supaya jenazah itu diserahkan kepadanya.",
+          "R": "Lalu Pilatus memerintahkan supaya jenazah itu diberikan kepadanya."
+        },
+        "zh": {
+          "L": "于是彼拉多下令[把身体]交[给他]。",
+          "B": "彼拉多随即下令把遗体交给他。",
+          "R": "彼拉多就下令把遗体交给约瑟。"
         }
       },
       "decisions": [
@@ -4045,6 +4946,26 @@
           "L": "और यूसुफ़ ने देह लेकर उसे सन की साफ़ चादर में लपेटा, \\v 60 और उसे अपनी नई क़ब्र में रखा, जो उसने चट्टान में खुदवाई थी; और क़ब्र के द्वार पर एक बड़ा पत्थर लुढ़काकर वह चला गया।",
           "B": "यूसुफ़ ने देह ली और उसे सन की एक साफ़ चादर में लपेटा। \\v 60 फिर उसने उसे अपनी उस नई क़ब्र में रखा जो उसने अपने लिए चट्टान में खुदवाई थी, क़ब्र के द्वार पर एक बड़ा पत्थर लुढ़का दिया, और चला गया।",
           "R": "यूसुफ़ ने देह ली और उसे सन के साफ़ कपड़े में लपेटा। \\v 60 उसने देह को अपनी नई क़ब्र में रखा, जो चट्टान को काटकर बनाई गई थी। फिर उसने क़ब्र का मुँह बंद करने के लिए उसके आगे एक बड़ा पत्थर लुढ़का दिया, और वह चला गया।"
+        },
+        "uk": {
+          "L": "І, взявши тіло, Йосиф обгорнув його чистим полотном \\v 60 і поклав його у своїй новій гробниці, яку висік у скелі; і, прикотивши великий камінь до входу гробниці, відійшов.",
+          "B": "Йосиф узяв тіло й обгорнув його чистим лляним полотном. \\v 60 Потім він поклав його у своїй новій гробниці, яку висік для себе в скелі, прикотив великий камінь до входу в гробницю і пішов.",
+          "R": "Йосиф узяв тіло і загорнув його в чисте лляне полотно. \\v 60 Він поклав тіло у свою нову гробницю, висічену в скелі. Потім він прикотив великий камінь до входу, щоб закрити гробницю, і пішов."
+        },
+        "ja": {
+          "L": "そしてヨセフは体を受け取って、それをきれいな亜麻布で包み、\\v 60 岩に掘った自分の新しい墓に納めた。そして墓の戸口に大きな石を転がしておいて、立ち去った。",
+          "B": "ヨセフはその体を受け取り、清潔な亜麻布で包んだ。\\v 60 そして、自分のために岩を掘って造っておいた新しい墓に納め、墓の入り口に大きな石を転がしてふさぎ、立ち去った。",
+          "R": "ヨセフはイエスの体を受け取って、亜麻でできたきれいな布で包みました。\\v 60 そして、岩をくりぬいて作った自分の新しい墓の中に、その体を置きました。それから、大きな石を転がして墓の入り口をふさぎ、帰って行きました。"
+        },
+        "id": {
+          "L": "Dan Yusuf pun mengambil mayat itu, mengapaninya dengan kain lenan yang putih bersih, \\v 60 lalu membaringkannya di dalam kuburnya yang baru, yang digalinya di dalam bukit batu, dan sesudah menggulingkan sebuah batu besar ke pintu kubur itu, pergilah ia.",
+          "B": "Yusuf mengambil jenazah itu dan membungkusnya dengan kain lenan yang bersih. \\v 60 Lalu ia membaringkannya di dalam kuburnya yang baru, yang dipahatnya di dalam bukit batu untuk dirinya sendiri. Ia menggulingkan sebuah batu besar untuk menutup pintu kubur itu, lalu pergi.",
+          "R": "Yusuf mengambil jenazah Yesus dan membungkusnya dengan kain lenan yang bersih. \\v 60 Lalu dia meletakkan jenazah itu di kuburan baru miliknya, yang dipahat di bukit batu. Dia menggulingkan sebuah batu besar untuk menutup pintu kuburan itu, lalu pergi."
+        },
+        "zh": {
+          "L": "约瑟领了身体，拿洁净的麻布把它包起来，\\v 60 放进他那凿在岩石里的新墓中；他把一块巨石滚过去挡住墓门，然后离开了。",
+          "B": "约瑟接过遗体，用一块洁净的麻布把它缠好，\\v 60 然后把它放在他为自己在岩石中凿成的新墓里，又滚来一块大石头堵住墓口，才离开。",
+          "R": "约瑟接过遗体，用一块干净的麻布包好。\\v 60 他把遗体放进自己的新坟墓里，那坟墓是在岩石里凿出来的。然后他滚来一块大石头，挡住坟墓的入口，把坟墓封好，就走了。"
         }
       },
       "decisions": [
@@ -4214,6 +5135,51 @@
           "reason": "The pronoun refers to \"тело\" (the body), as the Greek neuter does, not to Jesus himself, so it takes no setting.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40027060008"
+          ],
+          "choice": "\"гробниця\"",
+          "alternatives": [
+            "\"гріб\"",
+            "\"могила\""
+          ],
+          "reason": "A tomb cut in the rock and closed with a stone; \"гробниця\" names that, \"гріб\" is old and \"могила\" suggests a grave dug in the ground. The same through chapters 27-28.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40027060008",
+            "n40027060016",
+            "n40027060019"
+          ],
+          "choice": "\"墓\"; \"戸口\" (L), \"入り口\" (B, R); \"石を転がして\"",
+          "alternatives": [
+            "\"墓所\""
+          ],
+          "reason": "The tomb and its stone are worded as in Mark 15:46 in Japanese, so that the women's finding in 28:1-2 reads the same in both Gospels (meaning decision m3).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4295,6 +5261,26 @@
           "L": "और मरियम मगदलीनी और दूसरी मरियम वहाँ क़ब्र के सामने बैठी थीं।",
           "B": "मरियम मगदलीनी वहाँ थीं, और दूसरी मरियम भी; वे क़ब्र की ओर मुँह किए बैठी थीं।",
           "R": "मगदला की मरियम और दूसरी मरियम वहाँ थीं। वे क़ब्र के सामने बैठी थीं।"
+        },
+        "uk": {
+          "L": "А була там Марія Магдалина та інша Марія, що сиділи навпроти гробниці.",
+          "B": "Там була Марія Магдалина та інша Марія; вони сиділи навпроти гробниці.",
+          "R": "Там були Марія з Магдали та інша Марія. Вони сиділи навпроти гробниці."
+        },
+        "ja": {
+          "L": "そこには、マグダラのマリアともう一人のマリアがいて、墓の向かいに座っていた。",
+          "B": "マグダラのマリアともう一人のマリアは、そこで墓の方を向いて座っていた。",
+          "R": "マグダラから来たマリアと、もう一人のマリアがそこにいました。二人は、墓の向かい側に座っていました。"
+        },
+        "id": {
+          "L": "Tetapi Maria Magdalena dan Maria yang lain tinggal di situ duduk di depan kubur itu.",
+          "B": "Maria Magdalena dan Maria yang lain ada di situ, duduk di depan kubur itu.",
+          "R": "Maria Magdalena dan Maria yang lain ada di sana. Mereka duduk di depan kuburan itu."
+        },
+        "zh": {
+          "L": "当时抹大拉的马利亚在那里，还有另一个马利亚，她们坐在墓的对面。",
+          "B": "抹大拉的马利亚也在那里，另一个马利亚也在，她们面对着墓坐着。",
+          "R": "抹大拉的马利亚和另一个马利亚在那里。她们坐在坟墓对面。"
         }
       },
       "decisions": [
@@ -4448,6 +5434,26 @@
           "L": "और अगले दिन, जो तैयारी के दिन के बाद का दिन है, प्रधान याजक और फ़रीसी पिलातुस के पास इकट्ठे हुए \\v 63 और कहा, \"श्रीमान, हमें याद आया है कि उस भरमाने वाले ने जीते जी कहा था, 'तीन दिन के बाद मैं जी उठता हूँ।'",
           "B": "अगले दिन, जो तैयारी के दिन के बाद का दिन था, प्रधान याजक और फ़रीसी इकट्ठे होकर पिलातुस के पास आए। \\v 63 \"महोदय,\" उन्होंने कहा, \"हमें याद आया है कि उस धोखेबाज़ ने अपने जीते जी कहा था: 'तीन दिन के बाद मैं जी उठूँगा।'",
           "R": "अगला दिन सब्त था, यानी तैयारी के दिन के बाद का दिन। प्रधान याजक और फ़रीसी मिलकर पिलातुस के पास गए। \\v 63 उन्होंने कहा, \"महोदय, हमें याद है कि उस झूठे आदमी ने अपने जीते जी एक बात कही थी। उसने कहा था, 'तीन दिन के बाद मैं फिर से जी उठूँगा।'"
+        },
+        "uk": {
+          "L": "А наступного дня, що є після Приготування, зібралися старші священники і фарисеї до Пилата, \\v 63 кажучи: «Пане, ми згадали, що той обманщик сказав, ще бувши живим: “Після трьох днів {{deity_pronoun:я|Я}} воскресаю.”",
+          "B": "Наступного дня, тобто після дня Приготування, старші священники і фарисеї разом прийшли до Пилата. \\v 63 «Пане», — сказали вони, — «ми згадали, що той ошуканець казав, ще коли був живий: “Після трьох днів {{deity_pronoun:я|Я}} воскресну.”",
+          "R": "Наступного дня була субота, день після дня Приготування. Старші священники і фарисеї разом пішли до Пилата. \\v 63 Вони сказали: «Пане, ми згадали, що казав той брехун, коли {{deity_pronoun:він|Він}} був ще живий. Він казав: “Після трьох днів {{deity_pronoun:я|Я}} оживу.”"
+        },
+        "ja": {
+          "L": "さて翌日、すなわち準備の日の次の日、祭司長たちとファリサイ派の人々がピラトのもとに集まって、\\v 63 言った。「閣下、あの惑わす者がまだ生きていたとき、『三日の後にわたしは起こされる』と言ったのを、わたしたちは思い出しました。",
+          "B": "その翌日、つまり準備の日の次の日、祭司長たちとファリサイ派の人々は、そろってピラトのところに来た。\\v 63 「閣下」と彼らは言った。「あのぺてん師がまだ生きていたとき、『三日の後、わたしは復活させられる』と言っていたのを思い出しました。",
+          "R": "次の日は安息日で、準備の日の次の日でした。祭司長たちとファリサイ派の人々は、そろってピラトのところに行きました。\\v 63 そして言いました。「総督さま、思い出したことがあります。あのうそつきがまだ生きていたとき、こう言っていました。『三日たったら、わたしは生き返る。』"
+        },
+        "id": {
+          "L": "Keesokan harinya, yaitu sesudah hari persiapan, datanglah imam-imam kepala dan orang-orang Farisi bersama-sama menghadap Pilatus, \\v 63 dan mereka berkata, \"Tuan, kami ingat, bahwa si penyesat itu sewaktu hidup-{{deity_pronoun:nya|Nya}} berkata, 'Sesudah tiga hari {{deity_pronoun:aku|Aku}} akan bangkit.'",
+          "B": "Keesokan harinya, sesudah hari persiapan, imam-imam kepala dan orang-orang Farisi bersama-sama menghadap Pilatus. \\v 63 \"Tuan,\" kata mereka, \"kami teringat bahwa penipu itu pernah berkata ketika {{deity_pronoun:dia|Dia}} masih hidup, 'Sesudah tiga hari {{deity_pronoun:aku|Aku}} akan dibangkitkan.'",
+          "R": "Besoknya, yaitu hari Sabat, imam-imam kepala dan orang-orang Farisi pergi menghadap Pilatus. \\v 63 Mereka berkata, \"Tuan, kami ingat bahwa waktu penipu itu masih hidup, {{deity_pronoun:dia|Dia}} pernah berkata, 'Sesudah tiga hari {{deity_pronoun:aku|Aku}} akan bangkit.'"
+        },
+        "zh": {
+          "L": "次日，也就是预备日过后的那一天，祭司长和法利赛人一同到彼拉多面前聚集，\\v 63 说：“大人，我们想起来了，那个迷惑人的在{{deity_pronoun:他|祂}}还活着的时候说过：‘三天之后我被兴起。’",
+          "B": "第二天，就是预备日的后一天，祭司长和法利赛人一起来见彼拉多。\\v 63 “大人，”他们说，“我们想起那个骗子在{{deity_pronoun:他|祂}}还活着的时候说过的一句话：‘三天以后我会复活。’",
+          "R": "第二天是安息日，也就是预备日的后一天。祭司长和法利赛人一起去见彼拉多。\\v 63 他们说：“大人，我们记得那个骗子在{{deity_pronoun:他|祂}}还活着的时候说过一句话。{{deity_pronoun:他|祂}}说：‘三天以后我要活过来。’"
         }
       },
       "decisions": [
@@ -4851,6 +5857,180 @@
           "reason": "Here kyrios is a polite address to the governor (meaning decision m4), which the style guide renders \"श्रीमान\" or \"महोदय\". Jesus' enemies speak of him without honorifics; the narrative's honorific forms are not theirs.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40027062008"
+          ],
+          "choice": "\"Приготування\" (L); \"день Приготування\" (B, R)",
+          "alternatives": [
+            "\"пʼятниця\""
+          ],
+          "reason": "The day of preparation before the Sabbath; the name is kept, and Readable says the next day was the Sabbath, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-2",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40027063002"
+          ],
+          "choice": "\"Пане\"",
+          "alternatives": [
+            "\"Господи\""
+          ],
+          "reason": "Kyrios here is the polite address to the governor; Ukrainian says \"пане\", and the vocative carries the courtesy.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n40027063002",
+            "n40027063007"
+          ],
+          "choice": "\"閣下\" (L, B), \"総督さま\" (R), with です・ます to Pilate; \"惑わす者\" (L), \"ぺてん師\" (B), \"うそつき\" (R)",
+          "alternatives": [
+            "\"主よ\""
+          ],
+          "reason": "Spoken to the governor the word is a title of respect (meaning decision m4), so the leaders address him politely, as in Acts in Japanese. The word for Jesus means one who leads people astray (m2), and each level keeps the contempt.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40027062008"
+          ],
+          "choice": "\"準備の日\" at every level",
+          "alternatives": [
+            "\"金曜日\""
+          ],
+          "reason": "The day before the Sabbath (meaning decision m1), worded as in Mark 15:42 and John 19:14 in Japanese; Readable says which day followed, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40027062001",
+            "n40027062002",
+            "n40027062003",
+            "n40027062004",
+            "n40027062005",
+            "n40027062006",
+            "n40027062007",
+            "n40027062008",
+            "n40027062009",
+            "n40027062010",
+            "n40027062011",
+            "n40027062012",
+            "n40027062013",
+            "n40027062014",
+            "n40027062015",
+            "n40027062016",
+            "n40027063001",
+            "n40027063002",
+            "n40027063003",
+            "n40027063004",
+            "n40027063005",
+            "n40027063006",
+            "n40027063007",
+            "n40027063008",
+            "n40027063009",
+            "n40027063010",
+            "n40027063011",
+            "n40027063012",
+            "n40027063013",
+            "n40027063014"
+          ],
+          "choice": "\"hari persiapan\" (L, B); \"hari Sabat\" (R)",
+          "alternatives": [],
+          "reason": "The day before the Sabbath; Readable names the day that followed, as the English Readable explains it.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40027062014"
+          ],
+          "choice": "\"法利赛人\"",
+          "alternatives": [],
+          "reason": "The glossary's form for the Pharisees, at every level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40027063002"
+          ],
+          "choice": "\"大人\"",
+          "alternatives": [
+            "\"主啊\"",
+            "\"先生\""
+          ],
+          "reason": "\"Sir\" (kyrie) to the governor is a polite address (meaning decision m4); \"大人\" is the Chinese address to an official, and keeps it apart from \"主\" for the Lord.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4950,6 +6130,26 @@
           "L": "इसलिए आज्ञा दीजिए कि तीसरे दिन तक क़ब्र की रखवाली की जाए, कहीं ऐसा न हो कि उसके चेले आकर उसे चुरा ले जाएँ और लोगों से कहें, 'वह मरे हुओं में से जी उठा है,' और पिछला धोखा पहले से भी बुरा हो।\"",
           "B": "इसलिए आज्ञा दीजिए कि तीसरे दिन तक क़ब्र पर पक्का पहरा रहे। नहीं तो उसके चेले आकर उसे चुपके से ले जा सकते हैं और लोगों में घोषणा कर सकते हैं, 'वह मरे हुओं में से जी उठा है।' और यह आख़िरी धोखा पहले वाले से भी ज़्यादा हानि करेगा।\"",
           "R": "इसलिए कृपया आज्ञा दीजिए कि तीसरे दिन तक क़ब्र पर पहरा रहे। अगर आप ऐसा नहीं करेंगे, तो उसके चेले आकर उसकी देह चुरा सकते हैं। फिर वे लोगों से कहेंगे, 'वह मौत से जी उठा है!' यह आख़िरी झूठ पहले वाले से भी बुरा होगा।\""
+        },
+        "uk": {
+          "L": "Тож накажи забезпечити гробницю аж до третього дня, щоб {{deity_pronoun:його|Його}} учні, прийшовши, не вкрали {{deity_pronoun:його|Його}} і не сказали народові: “Воскрес із мертвих”, — і буде останній обман гірший за перший.»",
+          "B": "Тож накажи надійно стерегти гробницю до третього дня. Інакше {{deity_pronoun:його|Його}} учні можуть прийти, потай забрати {{deity_pronoun:його|Його}} і оголосити народові: “Він воскрес із мертвих.” І цей останній обман буде гірший за перший.»",
+          "R": "Тож, будь ласка, накажи вартувати біля гробниці до третього дня. Якщо ти цього не зробиш, {{deity_pronoun:його|Його}} учні можуть прийти і вкрасти {{deity_pronoun:його|Його}} тіло. Тоді вони скажуть людям: “Він ожив!” Ця остання брехня буде ще гірша за першу.»"
+        },
+        "ja": {
+          "L": "ですから、三日目まで墓を厳重に守るよう命じてください。さもないと、彼の弟子たちが来て彼を盗み出し、民に『彼は死者の中から起こされた』と言うかもしれません。そうなれば、最後の惑わしは最初のものよりもひどくなるでしょう。」",
+          "B": "ですから、三日目まで墓をしっかり見張るように命じてください。そうしないと、あの男の弟子たちが来て、こっそりあの男を盗み出し、『あの男は死者の中から復活させられた』と民衆に言いふらすかもしれません。そうなると、この最後のぺてんは、最初のものよりもっとひどいことになります。」",
+          "R": "ですから、三日目まで墓を見張るように命令してください。そうしないと、あの男の弟子たちが来て、体を盗んで行くかもしれません。そして、人々に『あの男は死んだ人たちの中から生き返った！』と言うでしょう。そうなったら、この最後のうそは、最初のうそよりもっとひどいことになります。」"
+        },
+        "id": {
+          "L": "Karena itu perintahkanlah untuk menjaga kubur itu sampai hari yang ketiga; jikalau tidak, murid-murid-{{deity_pronoun:nya|Nya}} mungkin datang untuk mencuri {{deity_pronoun:dia|Dia}}, lalu mengatakan kepada rakyat, 'Dia telah bangkit dari antara orang mati,' sehingga penyesatan yang terakhir akan lebih buruk akibatnya dari pada yang pertama.\"",
+          "B": "Karena itu, perintahkanlah supaya kubur itu dijaga dengan ketat sampai hari ketiga. Kalau tidak, murid-murid-{{deity_pronoun:nya|Nya}} mungkin datang, mencuri jenazah-{{deity_pronoun:nya|Nya}}, lalu berkata kepada rakyat, 'Dia telah dibangkitkan dari antara orang mati.' Penipuan yang terakhir ini akan lebih buruk daripada yang pertama.\"",
+          "R": "Karena itu, tolong perintahkan supaya kuburan itu dijaga ketat sampai hari ketiga. Kalau tidak, murid-murid-{{deity_pronoun:nya|Nya}} bisa datang mencuri jenazah-{{deity_pronoun:nya|Nya}}, lalu berkata kepada orang-orang, 'Dia sudah bangkit dari kematian.' Kalau itu terjadi, kebohongan yang terakhir ini akan lebih buruk daripada yang pertama.\""
+        },
+        "zh": {
+          "L": "所以，你吩咐人把坟墓守牢，直到第三天，免得{{deity_pronoun:他|祂}}的门徒来把{{deity_pronoun:他|祂}}偷走，然后对百姓说：‘{{deity_pronoun:他|祂}}已经从死人中被兴起了’，这样，最后的骗局就比起初的更坏了。”",
+          "B": "因此，请您下令严加看守那坟墓，直到第三天。不然，{{deity_pronoun:他|祂}}的门徒可能会来，把{{deity_pronoun:他|祂}}偷偷带走，然后向百姓宣布：‘{{deity_pronoun:他|祂}}已经从死人中复活了。’那样，这最后的骗局造成的危害就比先前的更大了。”",
+          "R": "所以请您下令，派人看守坟墓，直到第三天。不然的话，{{deity_pronoun:他|祂}}的门徒可能会来偷走{{deity_pronoun:他|祂}}的身体，然后告诉百姓：‘{{deity_pronoun:他|祂}}从死里活过来了！’这最后的谎言就比第一个还要糟糕。”"
         }
       },
       "decisions": [
@@ -5095,6 +6295,46 @@
           "reason": "Korean cannot hang a negative purpose clause and the final \"and the last deception will be\" on one command; Literal keeps every part in order with two requests and a closing sentence.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40027064021",
+            "n40027064029"
+          ],
+          "choice": "\"起こされた\" (L), \"復活させられた\" (B), \"生き返った\" (R); \"惑わし\" (L), \"ぺてん\" (B), \"うそ\" (R)",
+          "alternatives": [],
+          "reason": "The verb of raising keeps Matthew's words in the passion predictions (16:21; 20:19) at each level, so that the leaders are heard quoting the promise. The noun echoes the word for Jesus in 27:63 (meaning decision m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n40027064001"
+          ],
+          "choice": "\"您\" (B, R); \"你\" (L)",
+          "alternatives": [
+            "\"你\" at every level"
+          ],
+          "reason": "The chief priests are petitioning the Roman governor: Balanced and Readable use the polite \"您\" for respectful address to an official; Literal keeps the source's single \"you\" (style guide section 5).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5172,6 +6412,26 @@
           "L": "पिलातुस ने उनसे कहा, \"तुम्हारे पास पहरेदार हैं; जाओ, जैसा तुम जानते हो वैसी रखवाली करो।\"",
           "B": "पिलातुस ने उनसे कहा, \"पहरेदार ले जाओ। जाओ और जैसा तुम ठीक समझो, वैसे उसकी रखवाली करो।\"",
           "R": "पिलातुस ने कहा, \"तुम कुछ सैनिक ले सकते हो। जाओ और जैसे भी तुम जानते हो, क़ब्र की अच्छी तरह रखवाली करो।\""
+        },
+        "uk": {
+          "L": "Сказав їм Пилат: «Маєте варту; ідіть, забезпечте, як знаєте.»",
+          "B": "Пилат відповів їм: «Беріть варту. Ідіть і стережіть гробницю так, як вважаєте за потрібне.»",
+          "R": "Пилат сказав: «Можете взяти воїнів. Ідіть і стережіть гробницю якнайкраще.»"
+        },
+        "ja": {
+          "L": "ピラトは彼らに言った。「あなたがたには番兵がいる。行って、あなたがたの知っているとおりに、しっかり守るがよい。」",
+          "B": "ピラトは彼らに言った。「番兵を連れて行くがよい。行って、思うとおりにしっかり守りを固めなさい。」",
+          "R": "ピラトは言いました。「兵士を何人か連れて行ってよい。行って、できるかぎりしっかり墓を見張りなさい。」"
+        },
+        "id": {
+          "L": "Kata Pilatus kepada mereka, \"Ini penjaga-penjaga bagi kalian, pergilah dan jagalah kubur itu sebaik-baiknya.\"",
+          "B": "Pilatus berkata kepada mereka, \"Kalian boleh membawa penjaga. Pergilah dan jagalah kubur itu sebaik-baiknya menurut cara kalian.\"",
+          "R": "Pilatus berkata kepada mereka, \"Bawalah beberapa penjaga. Pergilah dan jagalah kuburan itu sebaik mungkin.\""
+        },
+        "zh": {
+          "L": "彼拉多对他们说：“你们有一队卫兵；去，照你们所知道的方法把[它]封固好。”",
+          "B": "彼拉多告诉他们：“你们可以带一队卫兵去。按你们认为最好的办法去把守吧。”",
+          "R": "彼拉多说：“你们可以带些士兵去。用你们知道的最好办法看守坟墓吧。”"
         }
       },
       "decisions": [
@@ -5290,6 +6550,28 @@
           "reason": "A guard of soldiers on watch (meaning decision); \"파수꾼\" is the older church word.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40027065005",
+            "n40027065006"
+          ],
+          "choice": "\"あなたがたには番兵がいる\" (L), a statement; \"番兵を連れて行くがよい\" (B), \"兵士を何人か連れて行ってよい\" (R), a permission; \"番兵\" (L, B), \"兵士\" (R), also in 27:66 and 28:11",
+          "alternatives": [
+            "\"警備兵\""
+          ],
+          "reason": "The verb can be a statement or a command (meaning decision m1); Literal keeps the statement, Balanced and Readable follow the English. Pilate speaks to the leaders plainly, as a governor.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5369,6 +6651,26 @@
           "L": "तब उन्होंने जाकर पत्थर पर मुहर लगाई और पहरेदारों के साथ क़ब्र को सुरक्षित किया।",
           "B": "उन्होंने जाकर पत्थर पर मुहर लगा दी, और पहरेदारों को वहाँ तैनात करके क़ब्र को सुरक्षित कर दिया।",
           "R": "तब वे क़ब्र के पास गए। उन्होंने पत्थर पर मुहर लगाई, और उसकी रखवाली के लिए सैनिकों को वहाँ छोड़ दिया।"
+        },
+        "uk": {
+          "L": "А вони, пішовши, забезпечили гробницю, запечатавши камінь, з вартою.",
+          "B": "Вони пішли, запечатали камінь і, поставивши варту, надійно убезпечили гробницю.",
+          "R": "Тож вони пішли до гробниці. Вони поставили печатку на камені і залишили там воїнів стерегти її."
+        },
+        "ja": {
+          "L": "そこで彼らは行って、石に封印をし、番兵と共に墓の守りを固めた。",
+          "B": "彼らは行って石に封印をし、番兵を置いて墓の守りを固めた。",
+          "R": "そこで、祭司長たちは墓に行きました。そして、石に封印をして、兵士たちに墓を見張らせました。"
+        },
+        "id": {
+          "L": "Lalu pergilah mereka dan dengan bantuan penjaga-penjaga itu mereka memeterai kubur itu dan menjaganya.",
+          "B": "Lalu mereka pergi dan memeterai batu itu, dan dengan penjaga-penjaga itu mereka mengamankan kubur itu.",
+          "R": "Lalu mereka pergi ke kuburan itu. Mereka memeterai batu penutup kuburan dan menempatkan penjaga-penjaga di sana."
+        },
+        "zh": {
+          "L": "于是他们去了，在石头上加了封印，又连同卫兵，把坟墓封固好了。",
+          "B": "他们去了，封住那块石头，又派卫兵驻守，使坟墓万无一失。",
+          "R": "于是他们到坟墓那里去。他们在石头上加了封印，又留下士兵在那里看守。"
         }
       },
       "decisions": [

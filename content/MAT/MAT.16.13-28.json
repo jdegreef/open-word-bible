@@ -87,6 +87,26 @@
           "L": "जब यीशु कैसरिया फिलिप्पी के क्षेत्रों में आए, तो वे अपने चेलों से पूछने लगे, \"लोग क्या कहते हैं, मनुष्य का पुत्र कौन है?\"",
           "B": "जब यीशु कैसरिया फिलिप्पी के आस-पास के इलाक़े में पहुँचे, तो उन्होंने अपने चेलों से एक प्रश्न किया: \"लोगों के कहने के अनुसार मनुष्य का पुत्र कौन है?\"",
           "R": "यीशु कैसरिया फिलिप्पी नगर के पास के इलाक़े में गए। वहाँ उन्होंने अपने चेलों से पूछा, \"लोग क्या कहते हैं कि मनुष्य का पुत्र कौन है?\""
+        },
+        "uk": {
+          "L": "Прийшовши ж Ісус в околиці Кесарії Филипової, питав своїх учнів, кажучи: «Ким, кажуть люди, є Син Людський?»",
+          "B": "Коли Ісус прийшов в околиці Кесарії Филипової, {{deity_pronoun:він|Він}} запитав своїх учнів: «За кого люди вважають Сина Людського?»",
+          "R": "Ісус пішов у край біля міста Кесарії Филипової. Там {{deity_pronoun:він|Він}} запитав своїх учнів: «Що кажуть люди: хто такий Син Людський?»"
+        },
+        "ja": {
+          "L": "さて、イエスはフィリポ・カイサリアの地方に来られると、ご自分の弟子たちに尋ねて言っておられた。「人々は、人の子をだれだと言っているか？」",
+          "B": "イエスはフィリポ・カイサリア地方に行かれたとき、弟子たちにお尋ねになった。「人々は、人の子のことをだれだと言っているか？」",
+          "R": "イエスは、フィリポ・カイサリアという町の近くの地方へ行かれました。そこで弟子たちに尋ねられました。「人々は、人の子のことをだれだと言っているか？」"
+        },
+        "id": {
+          "L": "Dan setelah Yesus tiba di daerah Kaisarea Filipi, {{deity_pronoun:dia|Dia}} bertanya kepada murid-murid-{{deity_pronoun:nya|Nya}}, katanya, \"Kata orang, siapakah Anak Manusia itu?\"",
+          "B": "Ketika Yesus tiba di daerah Kaisarea Filipi, {{deity_pronoun:dia|Dia}} bertanya kepada murid-murid-{{deity_pronoun:nya|Nya}}, \"Menurut orang, siapakah Anak Manusia itu?\"",
+          "R": "Waktu Yesus sampai di daerah kota Kaisarea Filipi, {{deity_pronoun:dia|Dia}} bertanya kepada murid-murid-{{deity_pronoun:nya|Nya}}, \"Menurut orang-orang, siapakah {{deity_pronoun:aku|Aku}}, Anak Manusia ini?\""
+        },
+        "zh": {
+          "L": "耶稣到了凯撒利亚腓立比的境内，就问{{deity_pronoun:他|祂}}的门徒说：“人们说人子是谁？”",
+          "B": "耶稣来到凯撒利亚腓立比一带，向{{deity_pronoun:他|祂}}的门徒提出一个问题：“人们说人子是谁？”",
+          "R": "耶稣到了凯撒利亚腓立比城附近的地区。{{deity_pronoun:他|祂}}在那里问{{deity_pronoun:他|祂}}的门徒：“大家都说人子是谁？”"
         }
       },
       "decisions": [
@@ -504,6 +524,146 @@
           "reason": "The settled title, the same at every level.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40016013019"
+          ],
+          "choice": "\"люди\" with no gender span",
+          "alternatives": [
+            "{{gender:люди|мужі}}"
+          ],
+          "reason": "The Greek anthrōpoi means people in general, and Ukrainian \"люди\" is already inclusive, so the English gender span has no Ukrainian counterpart here; the same holds for \"хто\", \"хтось\", \"себе\" and \"свій\" in the sayings that follow.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40016013008",
+            "n40016013010"
+          ],
+          "choice": "\"フィリポ・カイサリア\"",
+          "alternatives": [
+            "\"ピリポ・カイザリヤ\""
+          ],
+          "reason": "The town's name in the conventional modern form, as in Mark 8:27; it keeps it apart from Caesarea on the coast (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40016013019"
+          ],
+          "choice": "\"人々\" with no gender span",
+          "alternatives": [],
+          "reason": "The English Literal puts \"people (men)\" under the gender setting; \"人々\" is already inclusive in Japanese, so no span is needed, as in Mark 8:27.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40016013022",
+            "n40016013024"
+          ],
+          "choice": "\"人子\"",
+          "alternatives": [],
+          "reason": "The glossary's form of the title at every level, never under the gender setting.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40016013019"
+          ],
+          "choice": "\"人们\" with no gender setting",
+          "alternatives": [
+            "{{gender:人们|男人们}}"
+          ],
+          "reason": "The English Literal uses the gender setting for \"men\" meaning people in general, here and in 16:23-27. Chinese \"人们\", \"人\" and \"自己\" are already inclusive, so the Chinese has no gender spans in this passage.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-3",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40016013008",
+            "n40016013010"
+          ],
+          "choice": "\"凯撒利亚腓立比\"",
+          "alternatives": [
+            "\"该撒利亚腓立比\""
+          ],
+          "reason": "The glossary's form, with \"凯撒\", the modern standard form of Caesar.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-4",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40016013013"
+          ],
+          "choice": "\"门徒\"",
+          "alternatives": [
+            "\"跟随者\" (R)"
+          ],
+          "reason": "The glossary's word for disciples at every level, Readable included where the English Readable says \"followers\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -589,6 +749,26 @@
           "L": "उन्होंने कहा, \"कुछ [कहते हैं] यूहन्ना बपतिस्मा देनेवाला, और कुछ एलिय्याह, और दूसरे यिर्मयाह या भविष्यद्वक्ताओं में से कोई एक।\"",
           "B": "उन्होंने उत्तर दिया, \"कुछ लोग कहते हैं यूहन्ना बपतिस्मा देनेवाला; कुछ कहते हैं एलिय्याह; और कुछ कहते हैं यिर्मयाह या भविष्यद्वक्ताओं में से कोई और।\"",
           "R": "उन्होंने जवाब दिया, \"कुछ लोग कहते हैं कि आप यूहन्ना बपतिस्मा देनेवाले हैं। कुछ कहते हैं कि आप एलिय्याह हैं। और कुछ कहते हैं कि आप यिर्मयाह या दूसरे नबियों में से कोई एक हैं।\""
+        },
+        "uk": {
+          "L": "А вони сказали: «Одні — Іваном Хрестителем, інші ж — Іллею, ще інші — Єремією або одним із пророків.»",
+          "B": "Вони відповіли: «Одні кажуть, що Іван Хреститель, інші — що Ілля, а ще інші — Єремія або хтось інший із пророків.»",
+          "R": "Вони відповіли: «Одні люди кажуть, що {{deity_pronoun:ти|Ти}} — Іван Хреститель. Інші кажуть, що {{deity_pronoun:ти|Ти}} — Ілля. А ще інші кажуть, що {{deity_pronoun:ти|Ти}} — Єремія або хтось інший із пророків.»"
+        },
+        "ja": {
+          "L": "彼らは言った。「ある人々は洗礼者ヨハネ、ほかの人々はエリヤ、また、ほかの人々はエレミヤか預言者の一人[だと言っています]。」",
+          "B": "弟子たちは答えた。「洗礼者ヨハネだと言う人もいれば、エリヤだと言う人もいます。また、エレミヤだとか、預言者の一人だとか言う人もいます。」",
+          "R": "弟子たちは答えました。「あなたのことを洗礼者ヨハネだと言う人たちがいます。エリヤだと言う人たちもいます。また、エレミヤだとか、ほかの預言者の一人だとか言う人たちもいます。」"
+        },
+        "id": {
+          "L": "Dan mereka berkata, \"Ada yang mengatakan Yohanes Pembaptis, ada juga yang mengatakan Elia, dan ada pula yang mengatakan Yeremia atau salah seorang dari para nabi.\"",
+          "B": "Mereka menjawab, \"Ada yang mengatakan Yohanes Pembaptis, ada yang mengatakan Elia, dan ada pula yang mengatakan Yeremia atau salah seorang nabi yang lain.\"",
+          "R": "Mereka menjawab, \"Ada yang mengatakan {{deity_pronoun:engkau|Engkau}} Yohanes Pembaptis. Ada yang mengatakan {{deity_pronoun:engkau|Engkau}} Nabi Elia, dan ada juga yang mengatakan {{deity_pronoun:engkau|Engkau}} Nabi Yeremia atau salah seorang nabi yang lain.\""
+        },
+        "zh": {
+          "L": "他们说：“一些[人说]施洗约翰，另一些[说]以利亚，又有一些[说]耶利米，或者众先知中的一位。”",
+          "B": "他们回答：“有的说施洗约翰，有的说以利亚，也有的说耶利米，或别的哪一位先知。”",
+          "R": "他们回答：“有些人说{{deity_pronoun:你|祢}}是施洗约翰。有些人说{{deity_pronoun:你|祢}}是以利亚。还有些人说{{deity_pronoun:你|祢}}是耶利米，或者是别的先知中的一位。”"
         }
       },
       "decisions": [
@@ -838,6 +1018,26 @@
           "L": "वे उनसे कहते हैं, \"परंतु तुम लोग, तुम क्या कहते हो कि मैं कौन हूँ?\"",
           "B": "फिर उन्होंने उनसे पूछा, \"और तुम लोग? तुम्हारे अनुसार मैं कौन हूँ?\"",
           "R": "तब यीशु ने उनसे पूछा, \"और तुम लोग? तुम क्या कहते हो कि मैं कौन हूँ?\""
+        },
+        "uk": {
+          "L": "Каже їм: «А ви ким {{deity_pronoun:мене|Мене}} називаєте?»",
+          "B": "Тоді {{deity_pronoun:він|Він}} запитав їх: «А ви за кого {{deity_pronoun:мене|Мене}} вважаєте?»",
+          "R": "Тоді Ісус запитав їх: «А ви? Ким ви {{deity_pronoun:мене|Мене}} вважаєте?»"
+        },
+        "ja": {
+          "L": "イエスは彼らに言われる。「では、あなたがたは、わたしをだれだと言うのか？」",
+          "B": "イエスは彼らにお尋ねになった。「では、あなたがたは、わたしをだれだと言うのか？」",
+          "R": "そこでイエスは弟子たちに尋ねられました。「では、あなたたちはどうなのか？わたしをだれだと言うのか？」"
+        },
+        "id": {
+          "L": "Dia berkata kepada mereka, \"Tetapi kalian, siapakah {{deity_pronoun:aku|Aku}} ini menurut kalian?\"",
+          "B": "Lalu {{deity_pronoun:dia|Dia}} bertanya kepada mereka, \"Tetapi menurut kalian sendiri, siapakah {{deity_pronoun:aku|Aku}} ini?\"",
+          "R": "Yesus bertanya lagi, \"Tetapi menurut kalian, siapakah {{deity_pronoun:aku|Aku}}?\""
+        },
+        "zh": {
+          "L": "{{deity_pronoun:他|祂}}对他们说：“可是你们，你们说我是谁？”",
+          "B": "于是{{deity_pronoun:他|祂}}问他们：“至于你们，你们说我是谁？”",
+          "R": "然后耶稣问他们：“你们呢？你们说我是谁？”"
         }
       },
       "decisions": [
@@ -971,6 +1171,24 @@
           "reason": "The Greek \"you\" is plural and stressed, setting the disciples against the crowds; \"तुम लोग\" makes the plural and the contrast plain.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n40016015001",
+            "n40016015003"
+          ],
+          "choice": "\"言われる\" (L); \"お尋ねになった\" (B); \"尋ねられました\" (R); \"では、あなたがたは\" first",
+          "alternatives": [],
+          "reason": "Literal keeps the Greek present of narration. The emphatic \"you\" (m1) stands first with \"では\" at every level, as in Mark 8:29.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1053,6 +1271,26 @@
           "L": "शमौन पतरस ने उत्तर देकर कहा, \"आप ही मसीह हैं, जीवित परमेश्वर के पुत्र।\"",
           "B": "शमौन पतरस ने उत्तर दिया, \"आप मसीह हैं, जीवित परमेश्वर के पुत्र।\"",
           "R": "शमौन पतरस ने जवाब दिया, \"आप मसीह हैं। आप उस परमेश्वर के पुत्र हैं जो जीवित हैं।\""
+        },
+        "uk": {
+          "L": "А Симон Петро, відповідаючи, сказав: «Ти — {{christos:Христос|Месія}}, Син Бога живого.»",
+          "B": "Симон Петро відповів: «Ти — {{christos:Христос|Месія}}, Син Бога живого.»",
+          "R": "Симон Петро відповів: «Ти — {{christos:Христос|Месія}}. Ти — Син Бога, що живе.»"
+        },
+        "ja": {
+          "L": "シモン・ペトロが答えて言った。「あなたは{{christos:キリスト|メシア}}、生きておられる神の子です。」",
+          "B": "シモン・ペトロが答えた。「あなたは{{christos:キリスト|メシア}}、生きておられる神の子です。」",
+          "R": "シモン・ペトロは答えました。「あなたは{{christos:キリスト|メシア}}です。今も生きておられる神の子です。」"
+        },
+        "id": {
+          "L": "Simon Petrus menjawab dan berkata, \"Engkaulah {{christos:Kristus|Mesias}}, Anak Allah yang hidup.\"",
+          "B": "Simon Petrus menjawab, \"Engkaulah {{christos:Kristus|Mesias}}, Anak Allah yang hidup.\"",
+          "R": "Simon Petrus menjawab, \"Engkaulah {{christos:Kristus|Sang Mesias}}, Raja yang dijanjikan Allah. Engkaulah Anak Allah yang hidup.\""
+        },
+        "zh": {
+          "L": "西门彼得回答说：“{{deity_pronoun:你|祢}}是{{christos:基督|弥赛亚}}，是那位活着的{{god_term:神|上帝}}的儿子。”",
+          "B": "西门彼得回答：“{{deity_pronoun:你|祢}}就是{{christos:基督|弥赛亚}}，永活的{{god_term:神|上帝}}的儿子。”",
+          "R": "西门彼得回答：“{{deity_pronoun:你|祢}}是{{christos:基督|弥赛亚}}。{{deity_pronoun:你|祢}}是那位永远活着的{{god_term:神|上帝}}的儿子。”"
         }
       },
       "decisions": [
@@ -1342,6 +1580,89 @@
           "reason": "The christos setting as the style guide gives it. Russian has no article, so \"the Christ\" and \"Christ\" read alike; the dash shows that the title is the predicate.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40016016015"
+          ],
+          "choice": "\"生きておられる神\" (L, B); \"今も生きておられる神\" (R)",
+          "alternatives": [
+            "\"生ける神\""
+          ],
+          "reason": "\"生ける\" is a classical form; the living God, who lives and acts (m3), is said in modern Japanese with the respect form Peter uses of God. Peter speaks to Jesus politely.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40016016009"
+          ],
+          "choice": "{{christos:基督|弥赛亚}}",
+          "alternatives": [],
+          "reason": "As the English, the title is in the christos setting: \"基督\" by default, \"弥赛亚\" as the alternative. Chinese has no article, so nothing stands for the English \"the\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40016016013"
+          ],
+          "choice": "{{god_term:神|上帝}}",
+          "alternatives": [
+            "\"神\" fixed",
+            "\"上帝\" fixed"
+          ],
+          "reason": "Every word naming the one God is written in the Chinese god_term setting: \"神\" by default, \"上帝\" as the reader's alternative (style guide section 4).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-3",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40016016015"
+          ],
+          "choice": "\"活着的\" (L); \"永活的\" (B); \"永远活着的\" (R)",
+          "alternatives": [
+            "\"永生\""
+          ],
+          "reason": "\"The living God\" is the God who lives and acts. Literal says it plainly, Balanced uses the church's word for it, and Readable spells it out. The familiar Chinese form of Peter's words is not followed.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1434,6 +1755,26 @@
           "L": "यीशु ने उत्तर देकर उससे कहा, \"धन्य हो तुम, शमौन बार-योना, क्योंकि मांस और लहू ने [यह] तुम पर प्रकट नहीं किया, परंतु मेरे पिता ने जो स्वर्ग में हैं।",
           "B": "यीशु ने उत्तर में उससे कहा, \"शमौन, योना के पुत्र, तुम धन्य हो! किसी मनुष्य ने तुम्हें यह नहीं दिखाया; यह मेरे स्वर्गीय पिता ने दिखाया है।",
           "R": "यीशु ने जवाब दिया, \"शमौन, योना के पुत्र, परमेश्वर ने तुम्हें आशीष दी है! किसी इंसान ने तुम्हें यह नहीं बताया। स्वर्ग में रहनेवाले मेरे पिता ने तुम्हें यह दिखाया है।"
+        },
+        "uk": {
+          "L": "А Ісус, відповідаючи, сказав йому: «Блаженний ти, Симоне Вар-Йоно, бо не плоть і кров відкрили тобі [це], а {{deity_pronoun:мій|Мій}} Отець, що на небесах.",
+          "B": "Ісус сказав йому у відповідь: «Ти блаженний, Симоне, сину Йони! Це не людина тобі відкрила, а {{deity_pronoun:мій|Мій}} Отець, що на небі.",
+          "R": "Ісус відповів: «Симоне, сину Йони, Бог тебе благословив! Жодна людина тобі цього не показала. Це показав тобі {{deity_pronoun:мій|Мій}} Отець, що на небі."
+        },
+        "ja": {
+          "L": "イエスは答えて彼に言われた。「あなたは幸いだ、シモン・バルヨナ。肉と血があなたに[これを]現したのではなく、天におられるわたしの父が[現された]からである。",
+          "B": "イエスはこれに答えて言われた。「ヨナの子シモン、あなたは幸いである。あなたにこのことを現したのは人間ではなく、天におられるわたしの父である。",
+          "R": "イエスは答えられました。「ヨナの子シモン、あなたは幸せだ！このことをあなたに示したのは、人間ではない。天におられるわたしの父が示されたのだ。"
+        },
+        "id": {
+          "L": "Dan Yesus menjawab dan berkata kepadanya, \"Berbahagialah engkau, Simon bin Yunus, sebab bukan daging dan darah yang menyatakan hal itu kepadamu, melainkan Bapa-{{deity_pronoun:ku|Ku}} yang di surga.",
+          "B": "Yesus menjawab dia, \"Berbahagialah engkau, Simon anak Yunus! Bukan manusia yang menyatakan hal ini kepadamu, melainkan Bapa-{{deity_pronoun:ku|Ku}} di surga.",
+          "R": "Yesus berkata kepadanya, \"Simon anak Yunus, kamu sungguh bahagia! Bukan manusia yang memberitahukan hal itu kepadamu, tetapi Bapa-{{deity_pronoun:ku|Ku}} di surga."
+        },
+        "zh": {
+          "L": "耶稣回答他说：“你是有福的，西门巴约拿，因为启示[这事]给你的不是血肉，而是我那在天上的父。",
+          "B": "耶稣回答他：“约拿的儿子西门，你是有福的！这不是人向你显明的，而是我在天上的父。",
+          "R": "耶稣回答：“约拿的儿子西门，{{god_term:神|上帝}}赐福给你了！没有人把这件事告诉你，是我在天上的父让你知道的。"
         }
       },
       "decisions": [
@@ -1796,6 +2137,113 @@
           "reason": "Literal keeps the Aramaic form in its traditional Russian spelling; Balanced and Readable translate it.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40016017010"
+          ],
+          "choice": "\"Симоне Вар-Йоно\" (L); \"Симоне, сину Йони\" (B, R)",
+          "alternatives": [
+            "\"Симоне, сину Йонин\""
+          ],
+          "reason": "Literal keeps the Aramaic form in the vocative; Balanced and Readable say what it means, with the plain genitive \"сину Йони\" rather than the older possessive adjective.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40016017007",
+            "n40016017010",
+            "n40016017012",
+            "n40016017014"
+          ],
+          "choice": "\"幸いだ\" (L), \"幸いである\" (B), \"幸せだ\" (R); \"バルヨナ\" (L), \"ヨナの子シモン\" (B, R); \"肉と血\" (L), \"人間\" (B, R)",
+          "alternatives": [
+            "\"神があなたを祝福された\" (R)"
+          ],
+          "reason": "Blessed takes the Gospels' Beatitude forms (m4). Literal keeps the Aramaic name and the idiom; Balanced and Readable translate them (m1, m2), as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40016017001",
+            "n40016017002",
+            "n40016017003",
+            "n40016017004",
+            "n40016017005",
+            "n40016017006",
+            "n40016017007",
+            "n40016017008",
+            "n40016017009",
+            "n40016017010",
+            "n40016017011",
+            "n40016017012",
+            "n40016017013",
+            "n40016017014",
+            "n40016017015",
+            "n40016017016",
+            "n40016017017",
+            "n40016017018",
+            "n40016017019",
+            "n40016017020",
+            "n40016017021",
+            "n40016017022",
+            "n40016017023",
+            "n40016017024",
+            "n40016017025"
+          ],
+          "choice": "\"Simon bin Yunus\" (L); \"Simon anak Yunus\" (B, R)",
+          "alternatives": [],
+          "reason": "Literal keeps the Aramaic patronymic, Bariōna, in its established Indonesian form \"bin\"; Balanced and Readable say \"anak\".",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40016017010"
+          ],
+          "choice": "\"巴约拿\" (L); \"约拿的儿子\" (B, R)",
+          "alternatives": [],
+          "reason": "As the English: Literal keeps the Aramaic form, transliterated as one name (\"巴\" for \"bar\", son, and \"约拿\" as the glossary's Jonah); Balanced and Readable translate it.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1886,6 +2334,26 @@
           "L": "और मैं भी तुमसे कहता हूँ कि तुम पतरस हो, और इसी चट्टान पर मैं अपनी कलीसिया का निर्माण करूँगा, और अधोलोक के द्वार उसे जीत न सकेंगे।",
           "B": "और मैं तुमसे कहता हूँ: तुम पतरस हो, और इस चट्टान पर मैं अपनी कलीसिया खड़ी करूँगा। अधोलोक के द्वार भी उस पर विजय न पा सकेंगे।",
           "R": "और मैं तुमसे कहता हूँ, तुम पतरस हो। (पतरस नाम का अर्थ है 'चट्टान'।) इसी चट्टान पर मैं अपनी कलीसिया बनाऊँगा। मृत्यु के लोक के द्वार भी उसे हरा नहीं सकेंगे।"
+        },
+        "uk": {
+          "L": "І {{deity_pronoun:я|Я}} ж тобі кажу, що ти — Петро, і на цій скелі {{deity_pronoun:я|Я}} збудую свою церкву, і ворота Гадесу не подолають її.",
+          "B": "І {{deity_pronoun:я|Я}} кажу тобі: ти — Петро, і на цій скелі {{deity_pronoun:я|Я}} збудую свою церкву. Брама світу мертвих її не здолає.",
+          "R": "А {{deity_pronoun:я|Я}} кажу тобі: ти — Петро. (Імʼя Петро означає “скеля”.) На цій скелі {{deity_pronoun:я|Я}} збудую свою церкву. Навіть брама світу мертвих не матиме сили її перемогти."
+        },
+        "ja": {
+          "L": "そして、わたしもあなたに言う。あなたはペトロである。そして、この岩の上に、わたしはわたしの教会を建てる。陰府の門もそれに打ち勝つことはない。",
+          "B": "わたしも言っておく。あなたはペトロ、つまり岩である。この岩の上に、わたしはわたしの教会を建てる。陰府の門も、教会に打ち勝つことはない。",
+          "R": "わたしも言っておく。あなたはペトロだ。（ペトロという名前は『岩』という意味だ。）この岩の上に、わたしはわたしの教会を建てる。死者の世界の門でさえ、教会を打ち負かすことはできない。"
+        },
+        "id": {
+          "L": "Dan {{deity_pronoun:aku|Aku}} pun berkata kepadamu: {{deity_pronoun:engkau|Engkau}} adalah Petrus, dan di atas batu karang ini {{deity_pronoun:aku|Aku}} akan mendirikan jemaat-{{deity_pronoun:ku|Ku}}, dan alam maut tidak akan menguasainya.",
+          "B": "Dan {{deity_pronoun:aku|Aku}} berkata kepadamu: engkau adalah Petrus, dan di atas batu karang ini {{deity_pronoun:aku|Aku}} akan membangun gereja-{{deity_pronoun:ku|Ku}}. Gerbang dunia orang mati tidak akan menguasainya.",
+          "R": "Aku berkata kepadamu: kamu adalah Petrus. (Nama Petrus artinya 'batu karang.') Di atas batu karang ini {{deity_pronoun:aku|Aku}} akan membangun gereja-{{deity_pronoun:ku|Ku}}. Kuasa maut pun tidak akan bisa mengalahkannya."
+        },
+        "zh": {
+          "L": "我也告诉你：你是彼得，在这块磐石上我要建造我的教会，阴间的门不能胜过它。",
+          "B": "我告诉你：你是彼得，我要在这块磐石上建立我的教会。阴间的门绝不能胜过它。",
+          "R": "我告诉你，你是彼得。（彼得这个名字的意思是‘磐石’。）我要在这块磐石上建立我的教会。就连死人之地的大门也不能打败它。"
         }
       },
       "decisions": [
@@ -2505,6 +2973,237 @@
           "reason": "The settled term for the community of Jesus's people, as the style guide gives it for this verse.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40016018008",
+            "n40016018013"
+          ],
+          "choice": "\"Петро\" ... \"скеля\"",
+          "alternatives": [
+            "\"камінь\""
+          ],
+          "reason": "Ukrainian cannot keep the play on Petros and petra; \"скеля\" gives the sense of a rock to build on, and Readable explains the name in brackets as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-2",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40016018017"
+          ],
+          "choice": "\"свою церкву\"",
+          "alternatives": [
+            "\"Мою церкву\""
+          ],
+          "reason": "Ukrainian uses the reflexive \"свій\" when the subject owns the thing, so it takes no deity_pronoun span; \"церква\" for ekklēsia as the style guide settles.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40016018008",
+            "n40016018013"
+          ],
+          "choice": "\"ペトロ\" and \"岩\"; \"ペトロ、つまり岩である\" (B); \"（ペトロという名前は『岩』という意味だ。）\" (R)",
+          "alternatives": [
+            "\"ペトロ（岩）\" (L)",
+            "\"ケファ\""
+          ],
+          "reason": "The name and the word for rock share a root (m1), which Japanese cannot hear in \"ペトロ\" and \"岩\". Literal keeps the two words side by side; Balanced says that the name means rock; Readable explains it, as the English Readable does (r-en-2). None of them says what the rock is, which the meaning decision leaves open (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40016018017",
+            "n40016018020"
+          ],
+          "choice": "\"教会\" at every level; \"陰府\" (L, B), \"死者の世界\" (R)",
+          "alternatives": [
+            "\"集会\"",
+            "\"地獄\""
+          ],
+          "reason": "\"教会\" is the brief's word for the community Jesus gathers (m3), the people, not a building. Hades is the realm of the dead (m4), never Gehenna, so it is not \"地獄\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40016018001",
+            "n40016018002",
+            "n40016018003",
+            "n40016018004",
+            "n40016018005",
+            "n40016018006",
+            "n40016018007",
+            "n40016018008",
+            "n40016018009",
+            "n40016018010",
+            "n40016018011",
+            "n40016018012",
+            "n40016018013",
+            "n40016018014",
+            "n40016018015",
+            "n40016018016",
+            "n40016018017",
+            "n40016018018",
+            "n40016018019",
+            "n40016018020",
+            "n40016018021",
+            "n40016018022",
+            "n40016018023"
+          ],
+          "choice": "\"Petrus ... batu karang\"; \"jemaat\" (L), \"gereja\" (B, R) for ekklēsia",
+          "alternatives": [],
+          "reason": "Indonesian cannot keep the Greek wordplay, so Readable says what \"Petrus\" means; the meaning decision on the rock is not resolved by the wording. The whole people of Jesus is meant, so the glossary's \"gereja\" at Balanced and Readable.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-id-2",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40016018001",
+            "n40016018002",
+            "n40016018003",
+            "n40016018004",
+            "n40016018005",
+            "n40016018006",
+            "n40016018007",
+            "n40016018008",
+            "n40016018009",
+            "n40016018010",
+            "n40016018011",
+            "n40016018012",
+            "n40016018013",
+            "n40016018014",
+            "n40016018015",
+            "n40016018016",
+            "n40016018017",
+            "n40016018018",
+            "n40016018019",
+            "n40016018020",
+            "n40016018021",
+            "n40016018022",
+            "n40016018023"
+          ],
+          "choice": "\"alam maut\" (L); \"gerbang dunia orang mati\" (B); \"kuasa maut\" (R) for the gates of Hades",
+          "alternatives": [],
+          "reason": "Hades is \"dunia orang mati\" at Balanced; Literal and Readable say what its gates stand for.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n40016018008",
+            "n40016018013"
+          ],
+          "choice": "\"彼得\" and \"磐石\" with no explanation in the text",
+          "alternatives": [
+            "\"彼得（意思是磐石）\""
+          ],
+          "reason": "In Greek the name Peter (Petros) and the word for rock (petra) sound alike. The Chinese name \"彼得\" does not carry the sense, so the play on words is lost at Literal and Balanced; Readable explains it in brackets, as the English does.",
+          "uncertain": false,
+          "footnote": true
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40016018020"
+          ],
+          "choice": "\"阴间\" (L, B); \"死人之地\" (R)",
+          "alternatives": [
+            "\"地狱\""
+          ],
+          "reason": "The glossary's word for Hades is \"阴间\", the realm of the dead, which every Chinese reader knows; \"地狱\" would confuse it with Gehenna. Readable says it plainly.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-3",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40016018017"
+          ],
+          "choice": "\"教会\"",
+          "alternatives": [],
+          "reason": "The glossary's word at every level; the meaning decision says it is a people, not a building.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2604,6 +3303,26 @@
           "L": "मैं तुम्हें स्वर्ग के राज्य की कुंजियाँ दूँगा, और जो कुछ भी तुम धरती पर बाँधो, वह स्वर्ग में बाँधा जा चुका होगा, और जो कुछ भी तुम धरती पर खोलो, वह स्वर्ग में खोला जा चुका होगा।\"",
           "B": "मैं तुम्हें स्वर्ग के राज्य की कुंजियाँ सौंपूँगा: जो तुम धरती पर बाँधोगे, वह स्वर्ग में बँधा रहेगा, और जो तुम धरती पर खोलोगे, वह स्वर्ग में खुला रहेगा।\"",
           "R": "मैं तुम्हें स्वर्ग के राज्य की चाबियाँ दूँगा। जिस बात को तुम धरती पर मना करोगे, वह स्वर्ग में भी मना होगी। जिस बात की तुम धरती पर अनुमति दोगे, उसकी स्वर्ग में भी अनुमति होगी।\""
+        },
+        "uk": {
+          "L": "Дам тобі ключі Царства Небесного, і що звʼяжеш на землі, буде звʼязане на небесах, і що розвʼяжеш на землі, буде розвʼязане на небесах.»",
+          "B": "Я дам тобі ключі Царства Небесного: що ти звʼяжеш на землі, те буде звʼязане на небі, і що ти розвʼяжеш на землі, те буде розвʼязане на небі.»",
+          "R": "Я дам тобі ключі від Небесного Царства. Що ти заборониш на землі, те буде заборонене на небі. Що ти дозволиш на землі, те буде дозволене на небі.»"
+        },
+        "ja": {
+          "L": "わたしはあなたに天の国の鍵を与える。そして、あなたが地上で縛るものは何でも、天において縛られたものとなり、あなたが地上で解くものは何でも、天において解かれたものとなる。」",
+          "B": "わたしはあなたに天の国の鍵を授ける。あなたが地上で縛ることは、天でも縛られ、あなたが地上で解くことは、天でも解かれる。」",
+          "R": "わたしは天の国の鍵をあなたに渡そう。あなたが地上で禁じることは、天でも禁じられる。あなたが地上で許すことは、天でも許される。」"
+        },
+        "id": {
+          "L": "Aku akan memberikan kepadamu kunci-kunci Kerajaan Surga, dan apa yang engkau ikat di bumi akan terikat di surga, dan apa yang engkau lepaskan di bumi akan terlepas di surga.\"",
+          "B": "Aku akan menyerahkan kepadamu kunci-kunci Kerajaan Surga: apa yang engkau ikat di bumi akan terikat di surga, dan apa yang engkau lepaskan di bumi akan terlepas di surga.\"",
+          "R": "Aku akan memberikan kepadamu kunci Kerajaan Surga. Apa yang kamu larang di bumi akan dilarang juga di surga, dan apa yang kamu izinkan di bumi akan diizinkan juga di surga.\""
+        },
+        "zh": {
+          "L": "我要把天国的钥匙交给你；你在地上捆绑什么，在天上就已经被捆绑了；你在地上释放什么，在天上就已经被释放了。”",
+          "B": "我要把天国的钥匙交给你：你在地上捆住的，在天上也会被捆住；你在地上解开的，在天上也会被解开。”",
+          "R": "我要把天国的钥匙给你。你在地上禁止的，在天上也会被禁止；你在地上允许的，在天上也会被允许。”"
         }
       },
       "decisions": [
@@ -2992,6 +3711,90 @@
           "reason": "The settled term for the book.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40016019006",
+            "n40016019008"
+          ],
+          "choice": "\"Царство Небесне\" (L, B); \"Небесне Царство\" (R)",
+          "alternatives": [],
+          "reason": "The style guide's term for the kingdom of heaven: the traditional order at Literal and Balanced, the everyday order at Readable.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40016019012",
+            "n40016019024"
+          ],
+          "choice": "\"縛る\" / \"解く\" (L, B); \"禁じる\" / \"許す\" (R)",
+          "alternatives": [
+            "\"つなぐ\" / \"解く\""
+          ],
+          "reason": "Literal and Balanced keep the teachers' picture words; Readable gives their sense, forbid and permit (m2). \"縛る\" is the plain verb, chosen over the familiar church wording. The same pair should be used in 18:18.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40016019006",
+            "n40016019008"
+          ],
+          "choice": "\"天国\"",
+          "alternatives": [
+            "\"天上的国\" (R)"
+          ],
+          "reason": "The glossary's word for the kingdom of heaven at every level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40016019017",
+            "n40016019029"
+          ],
+          "choice": "\"就已经被捆绑了\"; \"就已经被释放了\"",
+          "alternatives": [
+            "\"也要捆绑\""
+          ],
+          "reason": "Literal keeps the Greek future perfect: what is bound on earth will be found already bound in heaven. Balanced and Readable say it more simply.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3071,6 +3874,26 @@
           "L": "तब उन्होंने चेलों को आज्ञा दी कि किसी से न कहें कि वे ही मसीह हैं।",
           "B": "तब उन्होंने चेलों को सख़्ती से मना किया कि किसी को न बताएँ कि वे ही मसीह हैं।",
           "R": "तब यीशु ने अपने चेलों को चेतावनी दी कि वे किसी को न बताएँ कि यीशु ही मसीह हैं।"
+        },
+        "uk": {
+          "L": "Тоді {{deity_pronoun:він|Він}} наказав учням, щоб нікому не казали, що {{deity_pronoun:він|Він}} — {{christos:Христос|Месія}}.",
+          "B": "Тоді {{deity_pronoun:він|Він}} суворо заборонив учням казати будь-кому, що {{deity_pronoun:він|Він}} — {{christos:Христос|Месія}}.",
+          "R": "Тоді Ісус попередив своїх учнів, щоб вони нікому не казали, що {{deity_pronoun:він|Він}} — {{christos:Христос|Месія}}."
+        },
+        "ja": {
+          "L": "そのとき、イエスは、ご自分が{{christos:キリスト|メシア}}であることをだれにも言わないようにと、弟子たちに命じられた。",
+          "B": "それからイエスは、ご自分が{{christos:キリスト|メシア}}であることをだれにも話さないようにと、弟子たちに厳しく命じられた。",
+          "R": "それからイエスは弟子たちに、ご自分が{{christos:キリスト|メシア}}であることをだれにも話さないように、と注意されました。"
+        },
+        "id": {
+          "L": "Lalu {{deity_pronoun:dia|Dia}} melarang murid-murid-{{deity_pronoun:nya|Nya}} memberitahukan kepada siapa pun bahwa {{deity_pronoun:dia|Dia}}lah {{christos:Kristus|Mesias}}.",
+          "B": "Kemudian {{deity_pronoun:dia|Dia}} dengan keras melarang murid-murid memberitahukan kepada siapa pun bahwa {{deity_pronoun:dia|Dia}}lah {{christos:Kristus|Mesias}}.",
+          "R": "Lalu Yesus melarang murid-murid-{{deity_pronoun:nya|Nya}} memberi tahu siapa pun bahwa {{deity_pronoun:dia|Dia}}lah {{christos:Kristus|Sang Mesias}}."
+        },
+        "zh": {
+          "L": "那时{{deity_pronoun:他|祂}}命令门徒，不要告诉任何人{{deity_pronoun:他|祂}}就是{{christos:基督|弥赛亚}}。",
+          "B": "然后{{deity_pronoun:他|祂}}严严地吩咐门徒，不准把{{deity_pronoun:他|祂}}是{{christos:基督|弥赛亚}}的事告诉任何人。",
+          "R": "然后耶稣警告{{deity_pronoun:他|祂}}的门徒，不要告诉别人{{deity_pronoun:他|祂}}是{{christos:基督|弥赛亚}}。"
         }
       },
       "decisions": [
@@ -3270,6 +4093,26 @@
           "L": "तब से यीशु अपने चेलों पर यह प्रकट करने लगे कि उनका यरूशलेम जाना ज़रूरी है, और पुरनियों, प्रधान याजकों और शास्त्रियों की ओर से बहुत कुछ सहना, और मार डाला जाना, और तीसरे दिन जिलाया जाना।",
           "B": "उस समय से यीशु अपने चेलों को साफ़-साफ़ बताने लगे कि उन्हें यरूशलेम जाना होगा। वहाँ बुज़ुर्ग अगुवों, प्रधान याजकों और व्यवस्था के शिक्षकों के हाथों उन्हें बहुत दुःख सहना पड़ेगा; वे मार डाले जाएँगे, और तीसरे दिन जिलाए जाएँगे।",
           "R": "उस समय से यीशु अपने चेलों को समझाने लगे कि उनके साथ क्या होना ज़रूरी है। उन्हें यरूशलेम जाना था। वहाँ बुज़ुर्ग अगुवे, प्रधान याजक और व्यवस्था के शिक्षक उन्हें बहुत दुःख देंगे। उन्हें मार डाला जाएगा। फिर तीसरे दिन परमेश्वर उन्हें मरे हुओं में से जिला उठाएँगे।"
+        },
+        "uk": {
+          "L": "Відтоді почав Ісус показувати своїм учням, що {{deity_pronoun:йому|Йому}} треба піти до Єрусалима, і багато постраждати від старійшин, і старших священників, і книжників, і бути вбитим, і третього дня бути воскрешеним.",
+          "B": "Відтоді Ісус почав відкрито показувати своїм учням, що {{deity_pronoun:він|Він}} мусить піти до Єрусалима. Там {{deity_pronoun:він|Він}} багато вистраждає від старійшин, старших священників і учителів Закону; {{deity_pronoun:його|Його}} вбʼють, і третього дня {{deity_pronoun:він|Він}} буде воскрешений.",
+          "R": "Відтоді Ісус почав пояснювати своїм учням, що має з {{deity_pronoun:ним|Ним}} статися. Він мав піти до Єрусалима. Там старійшини, старші священники й учителі Закону завдадуть {{deity_pronoun:йому|Йому}} багато страждань. Його вбʼють. А третього дня Бог воскресить {{deity_pronoun:його|Його}} з мертвих."
+        },
+        "ja": {
+          "L": "そのときから、イエスは、ご自分がエルサレムへ行って、長老たち、祭司長たち、律法学者たちから多くの苦しみを受け、殺され、三日目に起こされなければならないことを、ご自分の弟子たちに示し始められた。",
+          "B": "そのときから、イエスは、ご自分が必ずエルサレムに行くことになっていると、弟子たちにはっきり示し始められた。そこで長老たち、祭司長たち、律法学者たちから多くの苦しみを受け、殺され、三日目に復活させられるのである。",
+          "R": "そのときから、イエスは、ご自分に必ず起こることを、弟子たちに説明し始められました。イエスはエルサレムへ行かなければならない。そこで、民の指導者たちや祭司長たちや律法の先生たちから、ひどい苦しみを受ける。そして殺される。しかし三日目に、神がイエスを死から生き返らせてくださる。イエスはそう話されたのです。"
+        },
+        "id": {
+          "L": "Sejak saat itu Yesus mulai menyatakan kepada murid-murid-{{deity_pronoun:nya|Nya}} bahwa {{deity_pronoun:dia|Dia}} harus pergi ke Yerusalem dan menanggung banyak penderitaan dari pihak tua-tua, imam-imam kepala dan ahli-ahli Taurat, lalu dibunuh dan dibangkitkan pada hari ketiga.",
+          "B": "Sejak saat itu Yesus mulai menjelaskan dengan terus terang kepada murid-murid-{{deity_pronoun:nya|Nya}} bahwa {{deity_pronoun:dia|Dia}} harus pergi ke Yerusalem. Di sana {{deity_pronoun:dia|Dia}} akan banyak menderita dari pihak tua-tua, imam-imam kepala dan ahli-ahli Taurat; {{deity_pronoun:dia|Dia}} akan dibunuh, dan pada hari ketiga {{deity_pronoun:dia|Dia}} akan dibangkitkan.",
+          "R": "Sejak saat itu Yesus mulai menjelaskan kepada murid-murid-{{deity_pronoun:nya|Nya}} bahwa {{deity_pronoun:dia|Dia}} harus pergi ke Yerusalem. Di sana para pemimpin Yahudi, imam-imam kepala dan guru-guru agama Yahudi akan membuat-{{deity_pronoun:nya|Nya}} sangat menderita. Dia akan dibunuh, tetapi pada hari ketiga Allah akan membangkitkan-{{deity_pronoun:nya|Nya}}."
+        },
+        "zh": {
+          "L": "从那时起，耶稣开始向{{deity_pronoun:他|祂}}的门徒表明：{{deity_pronoun:他|祂}}必须离开这里往耶路撒冷去，在那里从长老、祭司长和文士手中遭受许多苦难，又被杀害，然后在第三天被兴起。",
+          "B": "从那时起，耶稣开始清楚地向{{deity_pronoun:他|祂}}的门徒说明，{{deity_pronoun:他|祂}}必须到耶路撒冷去。{{deity_pronoun:他|祂}}要在那里受长老、祭司长和文士的许多折磨；{{deity_pronoun:他|祂}}要被杀，然后在第三天被兴起。",
+          "R": "从那时起，耶稣开始向{{deity_pronoun:他|祂}}的门徒解释{{deity_pronoun:他|祂}}必须经历的事。{{deity_pronoun:他|祂}}必须到耶路撒冷去。在那里，长老、祭司长和律法教师会使{{deity_pronoun:他|祂}}受许多苦。{{deity_pronoun:他|祂}}会被杀死。然后在第三天，{{god_term:神|上帝}}会使{{deity_pronoun:他|祂}}从死里复活。"
         }
       },
       "decisions": [
@@ -3645,6 +4488,126 @@
           "reason": "The same opening words as at 4:17, at each level, so readers can see the parallel.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40016021023"
+          ],
+          "choice": "\"старші священники\"",
+          "alternatives": [
+            "\"первосвященики\""
+          ],
+          "reason": "The plural archiereis are the leading priests; \"первосвященик\" is kept for the one high priest, as the style guide settles.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-2",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40016021025"
+          ],
+          "choice": "\"книжники\" (L); \"учителі Закону\" (B, R)",
+          "alternatives": [],
+          "reason": "The scribes were teachers of the Law, not copyists; Literal keeps the traditional word.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40016021011",
+            "n40016021032"
+          ],
+          "choice": "\"なければならない\" (L), \"必ず……ことになっている\" (B, R); \"起こされ\" (L), \"復活させられる\" (B), \"神が……生き返らせてくださる\" (R)",
+          "alternatives": [
+            "\"復活する\""
+          ],
+          "reason": "The necessity is God's plan (m2), said as in Mark 8:31. The verb for rising is passive, with God as the one who raises (m3), unlike Mark's active verb, so each level keeps the passive or names God. \"そのときから……し始められた\" should match the Japanese of 4:17 (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40016021021"
+          ],
+          "choice": "\"民の指導者たち\" for the elders (R)",
+          "alternatives": [],
+          "reason": "Readable explains the elders as leaders of the people, as in Mark 8:31.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40016021021",
+            "n40016021023",
+            "n40016021025"
+          ],
+          "choice": "\"长老\"; \"祭司长\"; \"文士\" (L, B), \"律法教师\" (R)",
+          "alternatives": [],
+          "reason": "The glossary's words for the three groups of the council; Readable keeps \"祭司长\", a plain word in Chinese, where the English Readable says \"leading priests\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40016021032"
+          ],
+          "choice": "\"被兴起\" (L, B); \"神会使他从死里复活\" (R)",
+          "alternatives": [
+            "\"复活\""
+          ],
+          "reason": "The verb is passive: God raises him (meaning note). Literal and Balanced keep the passive; Readable names God, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3729,6 +4692,26 @@
           "L": "तब पतरस उन्हें अलग ले जाकर डाँटने लगा, \"[परमेश्वर] आप पर दया करे, प्रभु! आपके साथ ऐसा कभी नहीं होगा।\"",
           "B": "पतरस उन्हें एक ओर ले गया और आपत्ति करने लगा। \"परमेश्वर न करे, प्रभु!\" उसने कहा। \"आपके साथ ऐसा कभी नहीं होगा!\"",
           "R": "पतरस यीशु को अलग ले गया और उनसे कहने लगा कि वे ग़लत हैं। \"नहीं, प्रभु!\" उसने कहा। \"परमेश्वर आपके साथ ऐसा कभी न होने दें!\""
+        },
+        "uk": {
+          "L": "І, відвівши {{deity_pronoun:його|Його}} [набік], Петро почав {{deity_pronoun:йому|Йому}} докоряти, кажучи: «Милостивий [Бог] до {{deity_pronoun:тебе|Тебе}}, Господи! Ніколи цього з {{deity_pronoun:тобою|Тобою}} не буде.»",
+          "B": "Петро відвів {{deity_pronoun:його|Його}} вбік і почав заперечувати. «Боже борони, Господи!» — сказав він. — «Ніколи з {{deity_pronoun:тобою|Тобою}} такого не станеться!»",
+          "R": "Петро відвів Ісуса вбік і почав казати {{deity_pronoun:йому|Йому}}, що {{deity_pronoun:він|Він}} помиляється. «Ні, Господи!» — сказав він. — «Нехай Бог не допустить, щоб таке з {{deity_pronoun:тобою|Тобою}} сталося!»"
+        },
+        "ja": {
+          "L": "すると、ペトロはイエスをわきへ連れて行き、戒め始めて言った。「主よ、[神が]あなたをあわれんでくださいますように。このことは決してあなたに起こりません。」",
+          "B": "するとペトロは、イエスをわきへ連れて行き、いさめ始めた。「主よ、とんでもないことです」とペトロは言った。「そんなことがあなたに起こるはずはありません！」",
+          "R": "するとペトロは、イエスをほかの人たちから離れた所へ連れて行き、それは間違っていると言い始めました。「主よ、いけません！」とペトロは言いました。「どうか神が、そんなことが決してあなたに起こらないようにしてくださいますように！」"
+        },
+        "id": {
+          "L": "Tetapi Petrus menarik-{{deity_pronoun:nya|Nya}} ke samping dan mulai menegur-{{deity_pronoun:nya|Nya}}, katanya, \"Kiranya Allah mengasihani {{deity_pronoun:engkau|Engkau}}, Tuhan; hal itu sekali-kali tidak akan menimpa {{deity_pronoun:engkau|Engkau}}.\"",
+          "B": "Tetapi Petrus menarik-{{deity_pronoun:nya|Nya}} ke samping dan mulai membantah. \"Allah tidak akan membiarkan hal itu, Tuhan!\" katanya. \"Hal itu sama sekali tidak akan terjadi pada-{{deity_pronoun:mu|Mu}}!\"",
+          "R": "Tetapi Petrus menarik Yesus ke samping dan mulai menegur-{{deity_pronoun:nya|Nya}}. \"Jangan, Tuhan!\" katanya. \"Semoga Allah menjauhkan hal itu dari-{{deity_pronoun:mu|Mu}}!\""
+        },
+        "zh": {
+          "L": "彼得就拉{{deity_pronoun:他|祂}}到一边，开始责备{{deity_pronoun:他|祂}}说：“[愿{{god_term:神|上帝}}]怜悯{{deity_pronoun:你|祢}}，主啊！这事绝不会发生在{{deity_pronoun:你|祢}}身上。”",
+          "B": "彼得把{{deity_pronoun:他|祂}}拉到一边，开始劝阻{{deity_pronoun:他|祂}}。“主啊，{{god_term:神|上帝}}不容许这样！”他说，“这样的事绝不会临到{{deity_pronoun:你|祢}}！”",
+          "R": "彼得把耶稣拉到一边，开始对{{deity_pronoun:他|祂}}说{{deity_pronoun:他|祂}}错了。“不，主啊！”他说，“愿{{god_term:神|上帝}}保守{{deity_pronoun:你|祢}}，绝不让这样的事发生在{{deity_pronoun:你|祢}}身上！”"
         }
       },
       "decisions": [
@@ -3973,6 +4956,26 @@
           "reason": "The Greek is a set phrase for warding off something terrible; the Amharic idiom \"እግዚአብሔር ያርቀው\" does the same work, while Literal keeps the Greek's own wording.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40016022007",
+            "n40016022010"
+          ],
+          "choice": "\"戒め始めて\" (L), \"いさめ始めた\" (B), \"それは間違っていると言い始めました\" (R); \"[神が]あなたをあわれんでくださいますように\" (L), \"とんでもないことです\" (B)",
+          "alternatives": [],
+          "reason": "The rebuke is worded as in Mark 8:32 (m3); \"いさめる\" is said of correcting someone above oneself. The idiom is a strong refusal (m1): Literal keeps its wish for God's mercy, Balanced gives its force. Peter speaks politely to Jesus.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4063,6 +5066,26 @@
           "L": "परंतु उन्होंने मुड़कर पतरस से कहा, \"मेरे पीछे जाओ, शैतान! तुम मेरे लिए ठोकर हो, क्योंकि तुम्हारा मन परमेश्वर की बातों में नहीं, बल्कि मनुष्यों की बातों में लगा है।\"",
           "B": "यीशु ने मुड़कर पतरस से कहा, \"मेरे पीछे हट जाओ, शैतान! तुम मेरे रास्ते की ठोकर हो। तुम्हारा ध्यान परमेश्वर के उद्देश्यों पर नहीं, मनुष्यों के उद्देश्यों पर है।\"",
           "R": "यीशु ने मुड़कर पतरस से कहा, \"मेरे पीछे हट जाओ, शैतान! तुम मुझे गिराने की कोशिश कर रहे हो। तुम वैसे नहीं सोच रहे जैसे परमेश्वर सोचते हैं। तुम वैसे सोच रहे हो जैसे लोग सोचते हैं।\""
+        },
+        "uk": {
+          "L": "А {{deity_pronoun:він|Він}}, обернувшись, сказав Петрові: «Іди геть за {{deity_pronoun:мене|Мене}}, сатано! Ти — камінь спотикання для {{deity_pronoun:мене|Мене}}, бо думаєш не про Боже, а про людське.»",
+          "B": "Ісус обернувся і сказав Петрові: «Відійди за {{deity_pronoun:мене|Мене}}, сатано! Ти стоїш на {{deity_pronoun:моїй|Моїй}} дорозі, як камінь спотикання. Ти думаєш не про Божі задуми, а про людські.»",
+          "R": "Ісус обернувся і сказав Петрові: «Відійди за {{deity_pronoun:мене|Мене}}, сатано! Ти хочеш, щоб {{deity_pronoun:я|Я}} впав. Ти думаєш не так, як думає Бог. Ти думаєш так, як думають люди.»"
+        },
+        "ja": {
+          "L": "しかし、イエスは振り向いて、ペトロに言われた。「わたしの後ろへ行け、サタン。あなたはわたしのつまずきである。あなたは神のことではなく、人間のことを考えているからだ。」",
+          "B": "イエスは振り向いて、ペトロに言われた。「わたしの後ろに回れ、サタン！あなたはわたしの行く道に置かれたつまずきの石だ。あなたは、神が心にかけておられることではなく、人間が心にかけることを考えている。」",
+          "R": "イエスは振り向いて、ペトロに言われました。「サタン、わたしの後ろに下がりなさい！あなたは、わたしをつまずかせようとしている。あなたは人間と同じように考えていて、神のように考えていない。」"
+        },
+        "id": {
+          "L": "Tetapi {{deity_pronoun:dia|Dia}} berpaling dan berkata kepada Petrus, \"Enyahlah dari belakang-{{deity_pronoun:ku|Ku}}, Satan! Engkau adalah batu sandungan bagi-{{deity_pronoun:ku|Ku}}, sebab engkau tidak memikirkan apa yang dipikirkan Allah, melainkan apa yang dipikirkan manusia.\"",
+          "B": "Yesus berpaling dan berkata kepada Petrus, \"Pergilah ke belakang-{{deity_pronoun:ku|Ku}}, Satan! Engkau menjadi batu sandungan di jalan-{{deity_pronoun:ku|Ku}}. Pikiranmu bukan tertuju kepada maksud Allah, melainkan kepada maksud manusia.\"",
+          "R": "Yesus berbalik dan berkata kepada Petrus, \"Pergi dari hadapan-{{deity_pronoun:ku|Ku}}, Satan! Kamu menghalangi {{deity_pronoun:aku|Aku}}. Kamu tidak memikirkan apa yang Allah kehendaki, tetapi apa yang manusia inginkan.\""
+        },
+        "zh": {
+          "L": "{{deity_pronoun:他|祂}}却转过身来，对彼得说：“到我后面去，撒但！你是我的绊脚石，因为你心里想的不是{{god_term:神|上帝}}的事，而是人的事。”",
+          "B": "耶稣转过身来，对彼得说：“撒但，走开，到我后面去！你是挡在我路上的绊脚石。你所想的不是{{god_term:神|上帝}}的心意，而是人的心意。”",
+          "R": "耶稣转过身来，对彼得说：“撒但，退到我后面去！你是想使我跌倒。你不是照着{{god_term:神|上帝}}的想法去想，而是照着人的想法去想。”"
         }
       },
       "decisions": [
@@ -4384,6 +5407,66 @@
           "reason": "\"Get behind me\" means out of my way and back to a follower's place; Balanced keeps the picture of the way, which the stumbling block that follows continues.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40016023008",
+            "n40016023011"
+          ],
+          "choice": "\"わたしの後ろ\" at every level, as in Mark 8:33; \"つまずき\" (L), \"つまずきの石\" (B), \"つまずかせようとしている\" (R)",
+          "alternatives": [
+            "\"邪魔をする者\""
+          ],
+          "reason": "\"Behind me\" is a follower's place, the phrase of 16:24 (m2), so every level keeps \"わたしの後ろ\". The stumbling block is a thing that trips (m3); Balanced keeps the picture of the path. The rest is worded as in Mark 8:33.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40016023023"
+          ],
+          "choice": "\"人間\" with no gender span",
+          "alternatives": [],
+          "reason": "The English Literal puts \"people (men)\" under the gender setting; \"人間\" already means human beings of either sex.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40016023010"
+          ],
+          "choice": "\"撒但\"",
+          "alternatives": [
+            "\"撒旦\""
+          ],
+          "reason": "The glossary's form, the one the Chinese Bibles use.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4474,6 +5557,26 @@
           "L": "तब यीशु ने अपने चेलों से कहा, \"यदि कोई मेरे पीछे चलना चाहता है, तो वह स्वयं को नकारे, अपना क्रूस उठाए और मेरा अनुसरण करे।",
           "B": "तब यीशु ने अपने चेलों से कहा, \"जो कोई मेरे पीछे आना चाहता है, उसे अपनी इच्छाओं को त्यागना होगा, अपना क्रूस उठाना होगा और मेरे पीछे चलना होगा।",
           "R": "तब यीशु ने अपने चेलों से कहा, \"जो कोई मेरे पीछे आना चाहता है, उसे ख़ुद को पहले रखना छोड़ना होगा। उसे अपना क्रूस उठाकर मेरे पीछे चलना होगा।"
+        },
+        "uk": {
+          "L": "Тоді Ісус сказав своїм учням: «Якщо хтось хоче йти за {{deity_pronoun:мною|Мною}}, нехай зречеться себе, і візьме свій хрест, і йде за {{deity_pronoun:мною|Мною}}.",
+          "B": "Тоді Ісус сказав своїм учням: «Хто хоче йти за {{deity_pronoun:мною|Мною}}, той мусить відмовитися від себе, підняти свій хрест і йти за {{deity_pronoun:мною|Мною}}.",
+          "R": "Тоді Ісус сказав своїм учням: «Хто хоче йти за {{deity_pronoun:мною|Мною}}, має перестати ставити себе на перше місце. Нехай несе свій хрест і йде за {{deity_pronoun:мною|Мною}}."
+        },
+        "ja": {
+          "L": "そのとき、イエスはご自分の弟子たちに言われた。「だれかがわたしの後から来たいと思うなら、その人は自分を否み、自分の十字架を担い、そしてわたしに従いなさい。",
+          "B": "そのとき、イエスは弟子たちに言われた。「わたしの後から来たいと願う者は、だれであれ、自分を否み、自分の十字架を担って、わたしについて来なさい。",
+          "R": "それからイエスは弟子たちに言われました。「わたしと一緒に来たいなら、だれでも、自分のために生きるのをやめなさい。自分の十字架を担いで、わたしについて来なさい。"
+        },
+        "id": {
+          "L": "Lalu Yesus berkata kepada murid-murid-{{deity_pronoun:nya|Nya}}, \"Setiap orang yang mau mengikut {{deity_pronoun:aku|Aku}}, ia harus menyangkal dirinya, memikul salibnya dan mengikut {{deity_pronoun:aku|Aku}}.",
+          "B": "Lalu Yesus berkata kepada murid-murid-{{deity_pronoun:nya|Nya}}, \"Siapa pun yang mau mengikut {{deity_pronoun:aku|Aku}}, ia harus menyangkal dirinya, memikul salibnya, dan mengikut {{deity_pronoun:aku|Aku}}.",
+          "R": "Lalu Yesus berkata kepada murid-murid-{{deity_pronoun:nya|Nya}}, \"Orang yang mau mengikut {{deity_pronoun:aku|Aku}} harus berhenti mementingkan dirinya sendiri. Dia harus memikul salibnya dan mengikut {{deity_pronoun:aku|Aku}}, walaupun dia harus menderita."
+        },
+        "zh": {
+          "L": "那时耶稣对{{deity_pronoun:他|祂}}的门徒说：“若有人想要跟在我后面来，就要弃绝自己，拿起自己的十字架，跟随我。",
+          "B": "于是耶稣对{{deity_pronoun:他|祂}}的门徒说：“凡愿意跟随我的，都必须放下自己，扛起自己的十字架，跟着我走。",
+          "R": "然后耶稣对{{deity_pronoun:他|祂}}的门徒说：“谁想要跟随我，就不可再把自己放在第一位。这样的人必须背着自己的十字架跟随我。"
         }
       },
       "decisions": [
@@ -4723,6 +5826,44 @@
           "reason": "Amharic \"ማንም\" (anyone) covers men and women, and the masculine suffix on \"ራሱን\" and \"መስቀሉን\" is the only form Amharic has for anyone at all, so there are not two wordings for the setting to choose between. The same holds in 16:25-27.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40016024009",
+            "n40016024015"
+          ],
+          "choice": "\"その人\", \"自分\", \"だれでも\", \"人\", \"一人一人\" with no gender span (16:24-27)",
+          "alternatives": [],
+          "reason": "The English puts its pronouns under the gender setting in Literal; the Japanese words are already inclusive, so no span is needed here or in 16:25-27. The saying is worded as in Mark 8:34, with \"自分を否み\" for the verb of Peter's denial (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n40016024015",
+            "n40016024020"
+          ],
+          "choice": "\"自己\" with no gender setting",
+          "alternatives": [],
+          "reason": "The English Literal puts \"them / him\", \"themselves / himself\" and \"their / his\" in the gender setting. Chinese says \"自己\", which is already inclusive, and leaves the pronoun out, so no setting is needed.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4811,6 +5952,26 @@
           "L": "क्योंकि जो अपने जीवन को बचाना चाहता है, वह उसे गँवा देगा; परंतु जो मेरे कारण अपना जीवन गँवाता है, वह उसे पा लेगा।",
           "B": "जो लोग अपना जीवन सुरक्षित रखना चाहते हैं, वे उसे खो देंगे, और जो मेरे लिए अपना जीवन खो देते हैं, वे उसे पा लेंगे।",
           "R": "जो लोग अपनी ज़िंदगी अपने लिए बचाकर रखने की कोशिश करते हैं, वे उसे खो देंगे। पर जो मेरे लिए अपनी ज़िंदगी दे देते हैं, वे उसे पा लेंगे।"
+        },
+        "uk": {
+          "L": "Бо хто захоче своє життя спасти, той втратить його; а хто втратить своє життя заради {{deity_pronoun:мене|Мене}}, той знайде його.",
+          "B": "Хто хоче вберегти своє життя, той його втратить, а хто втратить своє життя заради {{deity_pronoun:мене|Мене}}, той його знайде.",
+          "R": "Хто намагається зберегти своє життя для себе, той його втратить. А хто віддасть своє життя за {{deity_pronoun:мене|Мене}}, той його знайде."
+        },
+        "ja": {
+          "L": "自分の命を救おうと望む者は、だれでもそれを失い、わたしのために自分の命を失う者は、だれでもそれを見いだすからである。",
+          "B": "自分の命を守ろうとする者は、それを失い、わたしのために命を失う者は、かえってそれを見いだすのである。",
+          "R": "自分のために命を守ろうとする人は、その命を失う。しかし、わたしのために命を手放す人は、その命を見いだすのだ。"
+        },
+        "id": {
+          "L": "Sebab siapa yang mau menyelamatkan nyawanya, ia akan kehilangan nyawanya; tetapi siapa yang kehilangan nyawanya karena {{deity_pronoun:aku|Aku}}, ia akan mendapatkannya.",
+          "B": "Orang yang ingin mempertahankan nyawanya akan kehilangan nyawanya, tetapi orang yang kehilangan nyawanya karena {{deity_pronoun:aku|Aku}} akan mendapatkannya.",
+          "R": "Orang yang mementingkan hidupnya sendiri akan kehilangan hidupnya. Tetapi orang yang rela kehilangan hidupnya karena {{deity_pronoun:aku|Aku}} akan mendapat hidup yang sejati."
+        },
+        "zh": {
+          "L": "因为谁想保全自己的性命，就会失去它；但谁为了我失去自己的性命，就会找到它。",
+          "B": "那些想要保住自己性命的人，反而会失去性命；那些为我失去性命的人，却会得到性命。",
+          "R": "想要为自己留住生命的人，会失去生命。但是为了我而舍弃生命的人，会得到生命。"
         }
       },
       "decisions": [
@@ -5017,6 +6178,50 @@
           "reason": "The Greek word is both life and self. Literal keeps \"душа\", the word's traditional Russian rendering, which carries the self; Balanced and Readable say \"жизнь\", as the saying is about losing one's life. The same in 16:26.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40016025006",
+            "n40016025016"
+          ],
+          "choice": "\"життя\" for psychē",
+          "alternatives": [
+            "\"душа\""
+          ],
+          "reason": "Here psychē is a person's life and self, kept and lost; \"душа\" would suggest only the inner soul. The same word is kept through 16:26.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40016025006",
+            "n40016025020"
+          ],
+          "choice": "\"命\" at every level in 16:25-26; \"見いだす\"; Balanced and Readable in the words of 10:39",
+          "alternatives": [
+            "\"魂\" (16:26)"
+          ],
+          "reason": "One word runs through the saying (m1; 16:26 m2), so \"命\" is kept for it, as in Mark 8:35-37. Matthew's \"find\" differs from Mark's \"save\". The saying repeats 10:39 (m2), so Balanced and Readable, which say the same in both places, use the Japanese of 10:39; Literal keeps this verse's \"wants to save\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5098,6 +6303,26 @@
           "L": "क्योंकि मनुष्य को क्या लाभ पहुँचेगा, यदि वह पूरा संसार कमा ले, परंतु अपने जीवन से हाथ धो बैठे?",
           "B": "मान लो कोई सारा संसार हासिल कर ले, पर अपना जीवन गँवा दे। इससे उसे क्या लाभ होगा?",
           "R": "मान लो किसी इंसान को सारी दुनिया मिल जाए, पर उसका असली जीवन खो जाए। तब दुनिया उसके किस काम आएगी?"
+        },
+        "uk": {
+          "L": "Бо яка користь буде людині, якщо вона здобуде весь світ, а своє життя втратить?",
+          "B": "Припустімо, хтось здобуде весь світ, але втратить своє життя. Що йому з того?",
+          "R": "Уяви, що людина здобула для себе весь світ, але втратила своє справжнє життя. Яка тоді їй користь зі світу?"
+        },
+        "ja": {
+          "L": "人は、たとえ全世界を手に入れても、自分の命を失うなら、何の得になるだろうか？",
+          "B": "たとえ全世界を手に入れても、そのために自分の命を失ってしまうなら、その人に何の得があるだろうか？",
+          "R": "ある人が世界じゅうのものを自分のものにしたとしよう。でも、自分の本当の命を失ってしまったら、世界はその人にとって何の役に立つだろうか？"
+        },
+        "id": {
+          "L": "Sebab apa gunanya seorang memperoleh seluruh dunia, tetapi kehilangan nyawanya?",
+          "B": "Apa gunanya seseorang memperoleh seluruh dunia, tetapi kehilangan nyawanya?",
+          "R": "Kalau seseorang memiliki seluruh dunia, tetapi kehilangan hidupnya, apa untungnya?"
+        },
+        "zh": {
+          "L": "因为一个人即使得到了整个世界，却赔掉自己的生命，又有什么益处呢？",
+          "B": "假如有人得到了全世界，却失去了自己的生命，那对自己有什么用呢？",
+          "R": "假如一个人为自己得到了全世界，却失去了真正的生命，那么这个世界对这人还有什么用呢？"
         }
       },
       "decisions": [
@@ -5296,6 +6521,26 @@
           "L": "या मनुष्य अपने जीवन के बदले में क्या देगा?",
           "B": "या कोई अपना जीवन वापस ख़रीदने के लिए क्या दे सकता है?",
           "R": "कोई अपना जीवन वापस पाने के लिए क्या क़ीमत दे सकता है? कुछ भी नहीं!"
+        },
+        "uk": {
+          "L": "Або що дасть людина в обмін за своє життя?",
+          "B": "Або чим можна викупити своє життя?",
+          "R": "Що можна заплатити, щоб повернути своє життя? Нічого!"
+        },
+        "ja": {
+          "L": "あるいは、人は自分の命と引き換えに、何を差し出すだろうか？",
+          "B": "人は、自分の命を買い戻すために、何を支払うことができるだろうか？",
+          "R": "人は、自分の命を取り戻すために、何を差し出せるだろうか？それほど値打ちのあるものは何もない！"
+        },
+        "id": {
+          "L": "Atau apa yang dapat diberikan seorang sebagai ganti nyawanya?",
+          "B": "Atau apa yang dapat diberikan seseorang untuk menebus nyawanya?",
+          "R": "Tidak ada apa pun yang bisa dia berikan untuk mendapatkan kembali hidupnya."
+        },
+        "zh": {
+          "L": "或者，人要拿什么来交换自己的生命呢？",
+          "B": "或者，人能拿什么把自己的生命赎回来呢？",
+          "R": "人能付出什么，把自己的生命换回来呢？什么都不能！"
         }
       },
       "decisions": [
@@ -5486,6 +6731,26 @@
           "L": "क्योंकि मनुष्य का पुत्र अपने पिता की महिमा में अपने स्वर्गदूतों के साथ आनेवाला है, और तब वह हर एक को उसके आचरण के अनुसार चुकाएगा।",
           "B": "क्योंकि मनुष्य का पुत्र अपने स्वर्गदूतों के साथ अपने पिता की महिमा में आनेवाला है, और तब वह हर एक व्यक्ति को उसके किए का बदला देंगे।",
           "R": "मनुष्य का पुत्र अपने स्वर्गदूतों के साथ आएगा, और उसके पास उसके पिता की महिमा होगी। तब वह हर एक व्यक्ति को उसके कामों का फल देंगे।"
+        },
+        "uk": {
+          "L": "Бо має Син Людський прийти у славі свого Отця зі своїми ангелами, і тоді {{deity_pronoun:він|Він}} віддасть кожному за його вчинками.",
+          "B": "Бо Син Людський прийде зі своїми ангелами у славі свого Отця, і тоді {{deity_pronoun:він|Він}} віддасть кожному за тим, що той зробив.",
+          "R": "Син Людський прийде зі своїми ангелами, і в {{deity_pronoun:нього|Нього}} буде слава {{deity_pronoun:його|Його}} Отця. Тоді {{deity_pronoun:він|Він}} відплатить кожному за те, що той зробив."
+        },
+        "ja": {
+          "L": "なぜなら、人の子は、その父の栄光のうちに、その天使たちと共に来ようとしており、そのとき、各人にその行いに応じて報いるからである。",
+          "B": "人の子は、父の栄光のうちに、天使たちを従えて来ようとしている。そのとき人の子は、一人一人にその行いに応じて報いる。",
+          "R": "人の子は、自分の天使たちと一緒に来る。そのとき、父の栄光を身にまとっている。そして、一人一人に、その人がしたことに応じて報いる。"
+        },
+        "id": {
+          "L": "Sebab Anak Manusia akan datang dalam kemuliaan Bapa-{{deity_pronoun:nya|Nya}} bersama malaikat-malaikat-{{deity_pronoun:nya|Nya}}, dan pada waktu itu {{deity_pronoun:dia|Dia}} akan membalas setiap orang menurut perbuatannya.",
+          "B": "Sebab Anak Manusia akan datang bersama malaikat-malaikat-{{deity_pronoun:nya|Nya}} dalam kemuliaan Bapa-{{deity_pronoun:nya|Nya}}, dan pada waktu itu {{deity_pronoun:dia|Dia}} akan membalas setiap orang sesuai dengan perbuatannya.",
+          "R": "Aku, Anak Manusia, akan datang bersama malaikat-malaikat-{{deity_pronoun:ku|Ku}} dengan kemuliaan Bapa-{{deity_pronoun:ku|Ku}}. Pada waktu itu {{deity_pronoun:aku|Aku}} akan membalas setiap orang sesuai dengan perbuatannya."
+        },
+        "zh": {
+          "L": "因为人子快要带着{{deity_pronoun:他|祂}}的天使，在{{deity_pronoun:他|祂}}父的荣耀中来临；那时{{deity_pronoun:他|祂}}要按每个人所做的回报每个人。",
+          "B": "人子将要和{{deity_pronoun:他|祂}}的天使一同降临，带着{{deity_pronoun:他|祂}}父的荣耀；那时{{deity_pronoun:他|祂}}要按照每个人所做的事给予报应。",
+          "R": "人子将要和{{deity_pronoun:他|祂}}的天使一起来，{{deity_pronoun:他|祂}}会有{{deity_pronoun:他|祂}}父的荣耀。那时，{{deity_pronoun:他|祂}}要按照每个人所做的事，给每个人应得的报应。"
         }
       },
       "decisions": [
@@ -5795,6 +7060,26 @@
           "L": "मैं तुमसे सच कहता हूँ, यहाँ खड़े लोगों में से कुछ हैं जो मृत्यु का स्वाद कभी नहीं चखेंगे, जब तक कि मनुष्य के पुत्र को उसके राज्य में आते हुए न देख लें।\"",
           "B": "मैं तुमसे सच कहता हूँ, यहाँ खड़े लोगों में कुछ ऐसे हैं जो तब तक मृत्यु का स्वाद नहीं चखेंगे जब तक वे मनुष्य के पुत्र को उसके राज्य में आते न देख लें।\"",
           "R": "मैं तुमसे सच कहता हूँ, यहाँ खड़े कुछ लोग तब तक नहीं मरेंगे जब तक वे मनुष्य के पुत्र को राजा बनकर आते न देख लें।\""
+        },
+        "uk": {
+          "L": "Істинно кажу вам, що є дехто з тих, хто тут стоїть, які не скуштують смерті, доки не побачать Сина Людського, що йде у своєму Царстві.»",
+          "B": "Істинно кажу вам: серед тих, хто тут стоїть, є такі, що не скуштують смерті, поки не побачать Сина Людського, який приходить у своєму Царстві.»",
+          "R": "Кажу вам правду: деякі з тих, хто тут стоїть, не помруть, поки не побачать, як Син Людський приходить як Цар.»"
+        },
+        "ja": {
+          "L": "アーメン、あなたがたに言う。ここに立っている者たちのうちのある者たちは、人の子がその王国のうちに来るのを見るまでは、決して死を味わわない。」",
+          "B": "まことに、あなたがたに言っておく。ここに立っている人々の中には、人の子がその国の王として来るのを見るまで、決して死を味わわない者たちがいる。」",
+          "R": "本当のことを言おう。ここに立っている人たちの中には、死ぬ前に、人の子が王として来るのを見る人たちがいる。」"
+        },
+        "id": {
+          "L": "Amin, {{deity_pronoun:aku|Aku}} berkata kepada kalian, di antara orang-orang yang berdiri di sini ada yang tidak akan mengecap maut sebelum mereka melihat Anak Manusia datang dalam Kerajaan-{{deity_pronoun:nya|Nya}}.\"",
+          "B": "Sesungguhnya {{deity_pronoun:aku|Aku}} berkata kepada kalian, di antara orang-orang yang berdiri di sini ada yang tidak akan mati sebelum mereka melihat Anak Manusia datang dalam Kerajaan-{{deity_pronoun:nya|Nya}}.\"",
+          "R": "Aku mengatakan yang sebenarnya kepada kalian: ada di antara kalian yang berdiri di sini yang tidak akan mati sebelum melihat {{deity_pronoun:aku|Aku}}, Anak Manusia, datang sebagai Raja.\""
+        },
+        "zh": {
+          "L": "阿们，我告诉你们，站在这里的人中，有一些在看见人子在{{deity_pronoun:他|祂}}的国里来临以前，绝不会尝到死味。”",
+          "B": "我确实告诉你们，站在这里的人当中，有些人在看见人子在{{deity_pronoun:他|祂}}的国度里来临之前，必不会尝到死亡的滋味。”",
+          "R": "我把实话告诉你们，站在这里的人当中，有些人在死以前，就会看见人子作为王来临。”"
         }
       },
       "decisions": [
@@ -6128,6 +7413,67 @@
           "choice": "\"Истинно говорю вам\" (L, B); \"Говорю вам правду\" (R)",
           "alternatives": [],
           "reason": "The settled wording for Jesus's solemn opening.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40016028001"
+          ],
+          "choice": "\"Істинно кажу вам\" (L, B); \"Кажу вам правду\" (R)",
+          "alternatives": [],
+          "reason": "The style guide's form for amēn legō hymin, kept the same through the Gospels.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40016028001",
+            "n40016028025"
+          ],
+          "choice": "\"アーメン、あなたがたに言う\" (L), \"まことに、あなたがたに言っておく\" (B), \"本当のことを言おう\" (R); \"その王国のうちに来る\" (L), \"その国の王として来る\" (B), \"王として来る\" (R)",
+          "alternatives": [],
+          "reason": "The shared Gospel formula for amēn, and the frame of Mark 9:1. The kingdom here is the Son of Man's royal rule (m1), so Balanced and Readable say he comes as king; \"死を味わう\" is kept at Literal and Balanced, as in Mark (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n40016028001",
+            "n40016028002"
+          ],
+          "choice": "\"阿们，我告诉你们\" (L); \"我确实告诉你们\" (B); \"我把实话告诉你们\" (R)",
+          "alternatives": [
+            "\"我实在告诉你们\""
+          ],
+          "reason": "The style guide's formula for Jesus's solemn \"Truly I tell you\" (section 12), one form per level through the book.",
           "uncertain": false,
           "footnote": false
         }

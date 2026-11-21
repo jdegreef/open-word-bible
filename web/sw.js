@@ -69,7 +69,8 @@ function trim(cache) {
 }
 
 // The shared reader data a chapter page loads (scripts/build_site.py
-// chapter_shared, reader_shared), which a saved book keeps with its pages:
+// chapter_shared, chapter_language_data, reader_shared), which a saved book
+// keeps with its pages:
 // a fresh copy of a page may name a newer version.
 var SHARED = /<script src="(\/(?:chapter-data\/[^"?]+|reader-[a-z]+)\.js\?v=[0-9a-f]+)"><\/script>/g;
 

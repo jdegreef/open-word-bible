@@ -76,6 +76,31 @@
           "L": "Итак, придя, Иисус нашёл, что [Лазарь] уже четыре дня в гробнице.",
           "B": "Когда Иисус пришёл, {{deity_pronoun:он|Он}} узнал, что Лазарь уже четыре дня в гробнице.",
           "R": "Когда Иисус пришёл, {{deity_pronoun:он|Он}} узнал, что Лазарь уже четыре дня лежит в гробнице."
+        },
+        "uk": {
+          "L": "Тож Ісус, прийшовши, знайшов, що [Лазар] уже чотири дні у гробниці.",
+          "B": "Коли Ісус прийшов, {{deity_pronoun:він|Він}} дізнався, що Лазар уже чотири дні у гробниці.",
+          "R": "Коли Ісус прибув, {{deity_pronoun:він|Він}} дізнався, що Лазар уже чотири дні лежить у гробниці."
+        },
+        "ja": {
+          "L": "そこでイエスは来られて、[ラザロが]すでに四日間墓の中にいるのを見いだされた。",
+          "B": "イエスが来てみられると、ラザロは墓に葬られて、すでに四日たっていた。",
+          "R": "イエスが着かれると、ラザロが墓に入れられてから、もう四日もたっていることがわかりました。"
+        },
+        "id": {
+          "L": "Ketika Yesus tiba, {{deity_pronoun:dia|Dia}} mendapati [Lazarus] sudah empat hari berada di dalam kubur.",
+          "B": "Ketika Yesus tiba, {{deity_pronoun:dia|Dia}} mendapati bahwa Lazarus sudah empat hari berada di dalam kubur.",
+          "R": "Ketika Yesus sampai, {{deity_pronoun:dia|Dia}} mendengar bahwa Lazarus sudah empat hari dikuburkan."
+        },
+        "zh": {
+          "L": "耶稣来到，发现[拉撒路]已经在坟墓里四天了。",
+          "B": "耶稣到了那里，{{deity_pronoun:他|祂}}发现拉撒路已经在坟墓里四天了。",
+          "R": "耶稣到了以后，{{deity_pronoun:他|祂}}才知道拉撒路已经在坟墓里四天了。"
+        },
+        "ar": {
+          "L": "فلمّا جاء يسوع، وجد أنّ لعازر له أربعة أيّام في القبر.",
+          "B": "ولمّا وصل يسوع، وجد أنّ لعازر قد مضى على دفنه أربعة أيّام.",
+          "R": "ولمّا وصل يسوع، علم أنّ لعازر كان قد وُضع في القبر منذ أربعة أيّام."
         }
       },
       "alignments": [
@@ -168,6 +193,89 @@
           "language": "en",
           "level": "B",
           "target_span": "already"
+        },
+        {
+          "tokens": [
+            "n43011017003",
+            "n43011017004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "イエス"
+        },
+        {
+          "tokens": [
+            "n43011017001"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "来て"
+        },
+        {
+          "tokens": [
+            "n43011017005"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "みられる"
+        },
+        {
+          "tokens": [
+            "n43011017006"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ラザロ"
+        },
+        {
+          "tokens": [
+            "n43011017012",
+            "n43011017013"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "墓"
+        },
+        {
+          "tokens": [
+            "n43011017011"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "に"
+        },
+        {
+          "tokens": [
+            "n43011017010"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "葬られて"
+        },
+        {
+          "tokens": [
+            "n43011017008"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "すでに"
+        },
+        {
+          "tokens": [
+            "n43011017007",
+            "n43011017009"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "四日"
+        },
+        {
+          "tokens": [
+            "n43011017010"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "たっていた"
         }
       ],
       "decisions": [
@@ -433,6 +541,49 @@
           "reason": "The Greek says \"him\"; after \"Иисус\" a Russian pronoun would be unclear, so every level names Lazarus, Literal in brackets.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n43011017001",
+            "n43011017005"
+          ],
+          "choice": "\"来られて\", \"見いだされた\" (L); \"来てみられる\" (B); \"着かれる\" (R)",
+          "alternatives": [
+            "plain \"来て\", \"見いだした\""
+          ],
+          "reason": "As throughout John in Japanese, the narrator uses light respect forms (〜れる / 〜られる, お〜になる) for what Jesus and God do, at every level, and for no one else. This holds through the passage.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n43011017006"
+          ],
+          "choice": "\"[ラザロが]\" (L); \"ラザロ\" (B, R)",
+          "alternatives": [
+            "\"彼が\""
+          ],
+          "reason": "The Greek says \"him\"; Japanese avoids 彼 and names Lazarus, Literal in brackets.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -511,6 +662,31 @@
           "L": "Вифания же была близ Иерусалима, стадиях в пятнадцати.",
           "B": "Вифания была недалеко от Иерусалима, примерно в {{units:трёх километрах|пятнадцати стадиях}}.",
           "R": "Вифания была близко от Иерусалима, всего примерно в {{units:трёх километрах|пятнадцати стадиях}}."
+        },
+        "uk": {
+          "L": "А Віфанія була поблизу Єрусалима, приблизно за пʼятнадцять стадій.",
+          "B": "Віфанія була поблизу Єрусалима, приблизно за {{units:три кілометри|пʼятнадцять стадій}}.",
+          "R": "Віфанія була недалеко від Єрусалима, лише приблизно за {{units:три кілометри|пʼятнадцять стадій}}."
+        },
+        "ja": {
+          "L": "さて、ベタニアはエルサレムの近くで、十五スタディオンほど離れていた。",
+          "B": "ベタニアはエルサレムの近くにあり、{{units:3キロメートル|十五スタディオン}}ほど離れていた。",
+          "R": "ベタニアはエルサレムのすぐ近くで、{{units:3キロメートル|十五スタディオン}}ほどしか離れていませんでした。"
+        },
+        "id": {
+          "L": "Betania itu dekat Yerusalem, kira-kira lima belas stadia jauhnya.",
+          "B": "Betania letaknya dekat Yerusalem, kira-kira {{units:tiga kilometer|lima belas stadia}} jauhnya.",
+          "R": "Betania letaknya dekat Yerusalem, hanya sekitar {{units:tiga kilometer|lima belas stadia}} jauhnya."
+        },
+        "zh": {
+          "L": "伯大尼离耶路撒冷很近，相距约有十五个斯塔迪亚。",
+          "B": "伯大尼离耶路撒冷很近，相距{{units:约3公里|约十五个斯塔迪亚}}。",
+          "R": "伯大尼离耶路撒冷很近，只有{{units:约3公里|约十五个斯塔迪亚}}远。"
+        },
+        "ar": {
+          "L": "وكانت بيت عنيا على مقربة من أورشليم، تبعد نحو خمس عشرة غلوة.",
+          "B": "وكانت بيت عنيا قرب أورشليم، على بعد نحو {{units:3 كيلومترات|خمس عشرة غلوة}}.",
+          "R": "وكانت بيت عنيا قريبة من أورشليم، على بعد {{units:3 كيلومترات|خمس عشرة غلوة}} تقريبًا فقط."
         }
       },
       "alignments": [
@@ -572,6 +748,65 @@
           "language": "en",
           "level": "B",
           "target_span": "away"
+        },
+        {
+          "tokens": [
+            "n43011018003",
+            "n43011018004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ベタニア"
+        },
+        {
+          "tokens": [
+            "n43011018006",
+            "n43011018007"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "エルサレム"
+        },
+        {
+          "tokens": [
+            "n43011018005"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "近く"
+        },
+        {
+          "tokens": [
+            "n43011018001"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あり"
+        },
+        {
+          "tokens": [
+            "n43011018010",
+            "n43011018011"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "{{units:3キロメートル|十五スタディオン}}"
+        },
+        {
+          "tokens": [
+            "n43011018008"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ほど"
+        },
+        {
+          "tokens": [
+            "n43011018009"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "離れていた"
         }
       ],
       "decisions": [
@@ -848,6 +1083,95 @@
           "reason": "The English gives miles by default; Russian, as the style guide sets out (section 7), gives the metric distance by default, rounded as the Greek \"about\" allows (fifteen stadia is a little under three kilometres), with the original measure as the alternative. Literal keeps the stadia.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n43011018008",
+            "n43011018009",
+            "n43011018010",
+            "n43011018011"
+          ],
+          "choice": "приблизно за {{units:три кілометри|пʼятнадцять стадій}}, metric by default",
+          "alternatives": [
+            "{{units:дві милі|пʼятнадцять стадій}}"
+          ],
+          "reason": "The Ukrainian units setting is metric by default, unlike the English (US miles); fifteen stadia is a little under 3 km. Literal keeps the Greek unit.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n43011018010",
+            "n43011018011"
+          ],
+          "choice": "{{units:3キロメートル|十五スタディオン}}ほど (B, R)",
+          "alternatives": [
+            "{{units:約3キロメートル|十五スタディオン}}",
+            "miles, as the English"
+          ],
+          "reason": "Japanese readers measure in metric, so the units setting gives kilometers by default, unlike the English (miles); the original measure is the alternative. \"ほど\" stays outside the span so that both options keep the Greek \"about\". Literal keeps the ancient unit. Arabic digits are used only in the modern measure.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n43011018008",
+            "n43011018009",
+            "n43011018010",
+            "n43011018011"
+          ],
+          "choice": "{{units:tiga kilometer|lima belas stadia}} (B, R); \"lima belas stadia\" with no span (L)",
+          "alternatives": [
+            "{{units:2,8 kilometer|lima belas stadia}}"
+          ],
+          "reason": "m1: fifteen stadia is about 2.8 kilometers. As at 6:19, the default is metric, rounded, with the Greek unit as the alternative, against the English miles.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n43011018010",
+            "n43011018011"
+          ],
+          "choice": "{{units:约3公里|约十五个斯塔迪亚}}",
+          "alternatives": [
+            "{{units:约2英里|约十五个斯塔迪亚}}"
+          ],
+          "reason": "The units setting gives the distance in metric terms by default, as in every language but English (which gives miles), with the Greek stadia as the alternative; Literal keeps the stadia. Fifteen stadia are a little under three kilometres.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -932,6 +1256,31 @@
           "L": "Многие же из иудеев пришли к Марфе и Марии, чтобы утешить их о брате [их].",
           "B": "Многие иудеи пришли к Марфе и Марии, чтобы утешить их в горе о брате.",
           "R": "Многие иудеи пришли из Иерусалима, чтобы утешить Марфу и Марию, потому что у них умер брат."
+        },
+        "uk": {
+          "L": "А багато з юдеїв прийшли до Марти й Марії, щоб утішити їх щодо [їхнього] брата.",
+          "B": "Багато юдеїв прийшли до Марти й Марії, щоб розрадити їх у горі за братом.",
+          "R": "Багато юдеїв прийшли з Єрусалима, щоб утішити Марту й Марію, бо помер їхній брат."
+        },
+        "ja": {
+          "L": "そして、ユダヤ人たちのうちの多くの者が、[彼女たちの]兄弟のことで二人を慰めるために、マルタとマリアのところに来ていた。",
+          "B": "大勢のユダヤ人が、兄弟を亡くしたマルタとマリアを慰めるために来ていた。",
+          "R": "エルサレムから大勢のユダヤ人が、マルタとマリアを慰めるために来ていました。二人の兄弟が死んだからです。"
+        },
+        "id": {
+          "L": "Banyak orang Yahudi telah datang kepada Marta dan Maria untuk menghibur mereka karena saudara mereka.",
+          "B": "Banyak orang Yahudi telah datang kepada Marta dan Maria untuk menghibur mereka atas kematian saudara mereka.",
+          "R": "Banyak orang Yahudi datang dari Yerusalem untuk menghibur Marta dan Maria, karena saudara mereka meninggal."
+        },
+        "zh": {
+          "L": "有许多犹太人已经来到马大和马利亚那里，要为[她们的]兄弟安慰她们。",
+          "B": "许多犹太人来到马大和马利亚那里，为她们兄弟的去世安慰她们。",
+          "R": "许多犹太人从耶路撒冷来安慰马大和马利亚，因为她们的兄弟死了。"
+        },
+        "ar": {
+          "L": "وكان كثيرون من اليهود قد جاؤوا إلى مرثا ومريم ليعزّوهما عن أخيهما.",
+          "B": "وكان كثير من اليهود قد أتوا إلى مرثا ومريم ليواسوهما في فقد أخيهما.",
+          "R": "وكان كثير من اليهود قد جاؤوا من أورشليم ليعزّوا مرثا ومريم، لأنّ أخاهما مات."
         }
       },
       "alignments": [
@@ -1027,6 +1376,92 @@
           "language": "en",
           "level": "B",
           "target_span": "their brother"
+        },
+        {
+          "tokens": [
+            "n43011019001"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "大勢の"
+        },
+        {
+          "tokens": [
+            "n43011019003",
+            "n43011019004",
+            "n43011019005"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ユダヤ人"
+        },
+        {
+          "tokens": [
+            "n43011019016",
+            "n43011019017"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "兄弟"
+        },
+        {
+          "tokens": [
+            "n43011019015"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "亡くした"
+        },
+        {
+          "tokens": [
+            "n43011019008",
+            "n43011019009"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "マルタ"
+        },
+        {
+          "tokens": [
+            "n43011019010"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "と"
+        },
+        {
+          "tokens": [
+            "n43011019011"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "マリア"
+        },
+        {
+          "tokens": [
+            "n43011019013",
+            "n43011019014"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "慰める"
+        },
+        {
+          "tokens": [
+            "n43011019012"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ために"
+        },
+        {
+          "tokens": [
+            "n43011019006",
+            "n43011019007"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "来ていた"
         }
       ],
       "decisions": [
@@ -1294,6 +1729,71 @@
           "reason": "Here the word means the Jewish mourners who had come to the house (meaning decision m1), not the authorities, so every level keeps \"иудеи\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43011019005"
+          ],
+          "choice": "\"ユダヤ人たち\" (L); \"ユダヤ人\" (B, R)",
+          "alternatives": [
+            "\"ユダヤ人の指導者たち\""
+          ],
+          "reason": "Here the word means the mourners (m1), not the authorities, so Balanced and Readable say ユダヤ人 rather than ユダヤ人の指導者たち. Literal always keeps ユダヤ人たち.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43011019005"
+          ],
+          "choice": "\"犹太人\"",
+          "alternatives": [
+            "\"犹太领袖\""
+          ],
+          "reason": "Here the word means the Jewish mourners in the house, not the authorities, so every level says \"犹太人\", as the English does. Literal writes \"犹太人\" for John's word everywhere.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-1",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43011019003",
+            "n43011019004",
+            "n43011019005"
+          ],
+          "choice": "\"اليهود\" at every level",
+          "alternatives": [
+            "\"قادة اليهود\""
+          ],
+          "reason": "Here \"the Jews\" are people from Jerusalem and the country around who had come to mourn (m1), not the authorities, so no level says \"leaders\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1377,6 +1877,31 @@
           "L": "Итак, Марфа, когда услышала, что Иисус идёт, вышла {{deity_pronoun:ему|Ему}} навстречу; Мария же сидела в доме.",
           "B": "Когда Марфа услышала, что Иисус идёт, она вышла {{deity_pronoun:ему|Ему}} навстречу, а Мария осталась сидеть дома.",
           "R": "Когда Марфа услышала, что Иисус идёт, она вышла {{deity_pronoun:ему|Ему}} навстречу. А Мария осталась дома и сидела там."
+        },
+        "uk": {
+          "L": "Тож Марта, коли почула, що Ісус іде, вийшла {{deity_pronoun:йому|Йому}} назустріч; а Марія сиділа вдома.",
+          "B": "Коли Марта почула, що Ісус іде, вона вийшла {{deity_pronoun:йому|Йому}} назустріч, а Марія лишалася сидіти вдома.",
+          "R": "Коли Марта почула, що Ісус іде, вона вийшла {{deity_pronoun:йому|Йому}} назустріч. А Марія залишилася вдома й сиділа в хаті."
+        },
+        "ja": {
+          "L": "そこでマルタは、イエスが来られると聞いたとき、出迎えた。しかしマリアは家の中に座っていた。",
+          "B": "マルタはイエスが来られると聞いて、出迎えに行ったが、マリアは家の中に座ったままだった。",
+          "R": "マルタは、イエスが来られると聞いて、迎えに出て行きました。けれども、マリアは家の中に座ったままでいました。"
+        },
+        "id": {
+          "L": "Ketika Marta mendengar bahwa Yesus datang, ia pergi menyongsong {{deity_pronoun:dia|Dia}}; tetapi Maria tetap duduk di rumah.",
+          "B": "Ketika Marta mendengar bahwa Yesus sedang datang, ia pergi menyongsong {{deity_pronoun:dia|Dia}}, sedangkan Maria tetap duduk di rumah.",
+          "R": "Ketika Marta mendengar bahwa Yesus sedang datang, ia keluar untuk menyambut {{deity_pronoun:dia|Dia}}. Tetapi Maria tetap tinggal di rumah, duduk di dalam."
+        },
+        "zh": {
+          "L": "马大听见耶稣要来了，就去迎接{{deity_pronoun:他|祂}}；马利亚却仍坐在家里。",
+          "B": "马大听说耶稣来了，就出去迎接{{deity_pronoun:他|祂}}；马利亚却一直坐在家里。",
+          "R": "马大听说耶稣来了，就出去迎接{{deity_pronoun:他|祂}}。但是马利亚留在家里，坐在屋子里。"
+        },
+        "ar": {
+          "L": "فلمّا سمعت مرثا أنّ يسوع آتٍ، لاقته؛ وأمّا مريم فكانت جالسة في البيت.",
+          "B": "ولمّا سمعت مرثا أنّ يسوع قادم، خرجت لملاقاته، بينما بقيت مريم جالسة في البيت.",
+          "R": "ولمّا سمعت مرثا أنّ يسوع قادم، خرجت لتلاقيه. أمّا مريم فبقيت في البيت جالسة."
         }
       },
       "alignments": [
@@ -1485,6 +2010,98 @@
           "language": "en",
           "level": "B",
           "target_span": "the house"
+        },
+        {
+          "tokens": [
+            "n43011020001",
+            "n43011020003"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "マルタ"
+        },
+        {
+          "tokens": [
+            "n43011020007"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "イエス"
+        },
+        {
+          "tokens": [
+            "n43011020008"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "来られる"
+        },
+        {
+          "tokens": [
+            "n43011020006"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "と"
+        },
+        {
+          "tokens": [
+            "n43011020004",
+            "n43011020005"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "聞いて"
+        },
+        {
+          "tokens": [
+            "n43011020009",
+            "n43011020010"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "出迎えに行った"
+        },
+        {
+          "tokens": [
+            "n43011020012"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "が"
+        },
+        {
+          "tokens": [
+            "n43011020011"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "マリア"
+        },
+        {
+          "tokens": [
+            "n43011020014",
+            "n43011020015"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "家"
+        },
+        {
+          "tokens": [
+            "n43011020013"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "の中に"
+        },
+        {
+          "tokens": [
+            "n43011020016"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "座ったままだった"
         }
       ],
       "decisions": [
@@ -1704,6 +2321,31 @@
           "L": "Итак, сказала Марфа Иисусу: «Господи, если бы {{deity_pronoun:ты|Ты}} был здесь, не умер бы брат мой.",
           "B": "Марфа сказала Иисусу: «Господи, будь {{deity_pronoun:ты|Ты}} здесь, мой брат не умер бы.",
           "R": "Марфа сказала Иисусу: «Господи, если бы {{deity_pronoun:ты|Ты}} был здесь, мой брат был бы жив."
+        },
+        "uk": {
+          "L": "Тож Марта сказала Ісусові: «Господи, якби {{deity_pronoun:ти|Ти}} був тут, мій брат не помер би;",
+          "B": "Марта сказала Ісусові: «Господи, коли б {{deity_pronoun:ти|Ти}} був тут, мій брат не помер би.",
+          "R": "Марта сказала Ісусові: «Господи, якби {{deity_pronoun:ти|Ти}} був тут, мій брат був би живий."
+        },
+        "ja": {
+          "L": "そこでマルタはイエスに言った。「主よ、もしあなたがここにいてくださったなら、わたしの兄弟は死ななかったでしょう。",
+          "B": "マルタはイエスに言った。「主よ、もしここにいてくださったなら、わたしの兄弟は死なずにすんだでしょう。",
+          "R": "マルタはイエスに言いました。「主よ、もしあなたがここにいてくださったら、わたしの兄弟は今も生きていたはずです。"
+        },
+        "id": {
+          "L": "Lalu Marta berkata kepada Yesus, \"Tuhan, jika {{deity_pronoun:engkau|Engkau}} ada di sini, saudaraku tidak akan mati;",
+          "B": "Marta berkata kepada Yesus, \"Tuhan, seandainya {{deity_pronoun:engkau|Engkau}} ada di sini, saudaraku tidak akan meninggal.",
+          "R": "Marta berkata kepada Yesus, \"Tuhan, kalau {{deity_pronoun:engkau|Engkau}} ada di sini, saudaraku pasti masih hidup."
+        },
+        "zh": {
+          "L": "马大对耶稣说：“主啊，{{deity_pronoun:你|祢}}若在这里，我的兄弟就不会死了。",
+          "B": "马大对耶稣说：“主啊，要是{{deity_pronoun:你|祢}}在这里，我的兄弟就不会死。",
+          "R": "马大对耶稣说：“主啊，如果{{deity_pronoun:你|祢}}在这里，我的兄弟现在还会活着。"
+        },
+        "ar": {
+          "L": "فقالت مرثا ليسوع: «يا ربّ، لو كنت هنا لما مات أخي.",
+          "B": "فقالت مرثا ليسوع: «يا ربّ، لو كنت هنا، ما كان أخي ليموت.",
+          "R": "وقالت مرثا ليسوع: «يا ربّ، لو كنت هنا، لكان أخي ما زال حيًّا."
         }
       },
       "alignments": [
@@ -1807,6 +2449,107 @@
           "language": "en",
           "level": "B",
           "target_span": "have died"
+        },
+        {
+          "tokens": [
+            "n43011021003",
+            "n43011021004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "マルタ"
+        },
+        {
+          "tokens": [
+            "n43011021006",
+            "n43011021007"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "イエス"
+        },
+        {
+          "tokens": [
+            "n43011021005"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "に"
+        },
+        {
+          "tokens": [
+            "n43011021001"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "言った"
+        },
+        {
+          "tokens": [
+            "n43011021008"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "主"
+        },
+        {
+          "tokens": [
+            "n43011021009"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "もし"
+        },
+        {
+          "tokens": [
+            "n43011021011"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ここ"
+        },
+        {
+          "tokens": [
+            "n43011021010"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "いてくださった"
+        },
+        {
+          "tokens": [
+            "n43011021009"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "なら"
+        },
+        {
+          "tokens": [
+            "n43011021017"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたしの"
+        },
+        {
+          "tokens": [
+            "n43011021015",
+            "n43011021016"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "兄弟"
+        },
+        {
+          "tokens": [
+            "n43011021012",
+            "n43011021013",
+            "n43011021014"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "死なずにすんだでしょう"
         }
       ],
       "decisions": [
@@ -1975,6 +2718,49 @@
           "reason": "The style guide sets 합쇼체 for people speaking to Jesus and 해라체 for Jesus; Korean does not address a master with a pronoun. This holds for the conversation in 11:21-27.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n43011021008"
+          ],
+          "choice": "\"主よ\" at every level; Martha speaks politely (です・ます, \"いてくださった\")",
+          "alternatives": [
+            "\"先生\" (B, R)"
+          ],
+          "reason": "Martha is one of those who love and trust Jesus (m1), so as with the disciples she says 主よ at every level, not 先生. She speaks to him politely throughout the scene.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n43011021008",
+            "n43011021017"
+          ],
+          "choice": "Martha and Mary say \"aku\" to Jesus",
+          "alternatives": [
+            "\"saya\""
+          ],
+          "reason": "The sisters speak to Jesus as a close friend of the family (11:5), so the plain \"aku\" of those near to him, with \"Tuhan\" as their address.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2055,6 +2841,31 @@
           "L": "И теперь знаю, что, чего бы {{deity_pronoun:ты|Ты}} ни попросил у Бога, даст {{deity_pronoun:тебе|Тебе}} Бог.»",
           "B": "И даже теперь я знаю, что Бог даст {{deity_pronoun:тебе|Тебе}} всё, о чём {{deity_pronoun:ты|Ты}} {{deity_pronoun:его|Его}} попросишь.»",
           "R": "И я знаю, что даже теперь, если {{deity_pronoun:ты|Ты}} попросишь у Бога чего-нибудь, {{deity_pronoun:он|Он}} даст {{deity_pronoun:тебе|Тебе}} это.»"
+        },
+        "uk": {
+          "L": "і тепер знаю, що чого лише {{deity_pronoun:ти|Ти}} попросиш у Бога, дасть {{deity_pronoun:тобі|Тобі}} Бог.»",
+          "B": "Та й тепер я знаю, що Бог дасть {{deity_pronoun:тобі|Тобі}} все, чого {{deity_pronoun:ти|Ти}} в {{deity_pronoun:нього|Нього}} попросиш.»",
+          "R": "І я знаю, що навіть тепер, якщо {{deity_pronoun:ти|Ти}} попросиш у Бога будь-що, {{deity_pronoun:він|Він}} дасть це {{deity_pronoun:тобі|Тобі}}.»"
+        },
+        "ja": {
+          "L": "そして今でも、あなたが神に求めるものは何でも、神はあなたにお与えになると、わたしは知っています。」",
+          "B": "今でも、あなたが神にお求めになることは何でも、神はかなえてくださると、わたしは知っています。」",
+          "R": "そして今からでも、あなたが神に何かを願われるなら、神はそれをあなたに与えてくださると、わたしは知っています。」"
+        },
+        "id": {
+          "L": "tetapi sekarang pun aku tahu bahwa apa saja yang {{deity_pronoun:engkau|Engkau}} minta kepada Allah, Allah akan memberikannya kepada-{{deity_pronoun:mu|Mu}}.\"",
+          "B": "Tetapi sekarang pun aku tahu bahwa Allah akan memberikan kepada-{{deity_pronoun:mu|Mu}} apa saja yang {{deity_pronoun:engkau|Engkau}} minta kepada-{{deity_pronoun:nya|Nya}}.\"",
+          "R": "Dan aku tahu bahwa sekarang pun, kalau {{deity_pronoun:engkau|Engkau}} meminta apa saja kepada Allah, {{deity_pronoun:dia|Dia}} akan memberikannya kepada-{{deity_pronoun:mu|Mu}}.\""
+        },
+        "zh": {
+          "L": "就是现在，我也知道，{{deity_pronoun:你|祢}}无论向{{god_term:神|上帝}}求什么，{{god_term:神|上帝}}都会赐给{{deity_pronoun:你|祢}}。”",
+          "B": "即使到了现在，我也知道，{{god_term:神|上帝}}会把{{deity_pronoun:你|祢}}向{{deity_pronoun:他|祂}}求的一切都赐给{{deity_pronoun:你|祢}}。”",
+          "R": "我知道，即使是现在，只要{{deity_pronoun:你|祢}}向{{god_term:神|上帝}}求什么，{{deity_pronoun:他|祂}}都会给{{deity_pronoun:你|祢}}。”"
+        },
+        "ar": {
+          "L": "وأنا أعلم الآن أيضًا أنّ كلّ ما تطلبه من الله يعطيك الله إيّاه».",
+          "B": "وحتّى الآن أعرف أنّ الله سيعطيك أيّ شيء تطلبه منه».",
+          "R": "وأنا أعرف أنّك حتّى الآن، إن طلبت من الله أيّ شيء، فسيعطيك إيّاه»."
         }
       },
       "alignments": [
@@ -2148,6 +2959,83 @@
           "language": "en",
           "level": "B",
           "target_span": "for"
+        },
+        {
+          "tokens": [
+            "n43011022001",
+            "n43011022002"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "今でも"
+        },
+        {
+          "tokens": [
+            "n43011022008",
+            "n43011022009"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "神"
+        },
+        {
+          "tokens": [
+            "n43011022007"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "お求めになる"
+        },
+        {
+          "tokens": [
+            "n43011022005",
+            "n43011022006"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ことは何でも"
+        },
+        {
+          "tokens": [
+            "n43011022012",
+            "n43011022013"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "神"
+        },
+        {
+          "tokens": [
+            "n43011022010",
+            "n43011022011"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "かなえてくださる"
+        },
+        {
+          "tokens": [
+            "n43011022004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "と"
+        },
+        {
+          "tokens": [
+            "n43011022003"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43011022003"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "知っています"
         }
       ],
       "decisions": [
@@ -2290,6 +3178,50 @@
           "reason": "God takes the reader setting as in the narrative; the title \"Chúa\" stands for \"you\" and is always capitalised.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43011022010",
+            "n43011022013"
+          ],
+          "choice": "\"神はかなえてくださる\" (B); \"神はそれをあなたに与えてくださる\" (R)",
+          "alternatives": [
+            "\"神はあなたにお与えになる\" at every level"
+          ],
+          "reason": "Literal keeps the Greek's \"God will give to you\". Balanced says \"grant\" as Japanese speaks of a request; Readable keeps \"give\" with \"それを\" for the thing asked. Martha's polite speech gives God the respect forms.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n43011022009",
+            "n43011022013"
+          ],
+          "choice": "{{god_term:神|上帝}}",
+          "alternatives": [
+            "a fixed \"神\"",
+            "a fixed \"上帝\""
+          ],
+          "reason": "Every word for the one God is a Chinese reader setting: \"神\" by default, \"上帝\" as the alternative. Both name the same God; the setting changes only the word. The pronouns for God (B, R) and for Jesus take the deity_pronoun setting, as in the English.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2365,6 +3297,31 @@
           "L": "Говорит ей Иисус: «Воскреснет брат твой.»",
           "B": "Иисус сказал ей: «Твой брат воскреснет.»",
           "R": "Иисус сказал ей: «Твой брат воскреснет из мёртвых.»"
+        },
+        "uk": {
+          "L": "Каже їй Ісус: «Воскресне твій брат.»",
+          "B": "Ісус сказав їй: «Твій брат воскресне.»",
+          "R": "Ісус сказав їй: «Твій брат воскресне з мертвих.»"
+        },
+        "ja": {
+          "L": "イエスは彼女に言われる。「あなたの兄弟はよみがえる。」",
+          "B": "イエスはマルタに言われた。「あなたの兄弟はよみがえる。」",
+          "R": "イエスはマルタに言われました。「あなたの兄弟は死から生き返る。」"
+        },
+        "id": {
+          "L": "Yesus berkata kepadanya, \"Saudaramu akan bangkit.\"",
+          "B": "Yesus berkata kepadanya, \"Saudaramu akan bangkit.\"",
+          "R": "Yesus berkata kepadanya, \"Saudaramu akan bangkit dari kematian.\""
+        },
+        "zh": {
+          "L": "耶稣对她说：“你的兄弟要复活。”",
+          "B": "耶稣告诉她：“你的兄弟会复活的。”",
+          "R": "耶稣对她说：“你的兄弟会从死人中活过来。”"
+        },
+        "ar": {
+          "L": "يقول لها يسوع: «سيقوم أخوك».",
+          "B": "فقال لها يسوع: «سيقوم أخوك».",
+          "R": "فقال لها يسوع: «سيقوم أخوك من الموت»."
         }
       },
       "alignments": [
@@ -2417,6 +3374,56 @@
           "language": "en",
           "level": "B",
           "target_span": "will rise again"
+        },
+        {
+          "tokens": [
+            "n43011023003",
+            "n43011023004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "イエス"
+        },
+        {
+          "tokens": [
+            "n43011023002"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "マルタ"
+        },
+        {
+          "tokens": [
+            "n43011023001"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "言われた"
+        },
+        {
+          "tokens": [
+            "n43011023008"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなたの"
+        },
+        {
+          "tokens": [
+            "n43011023006",
+            "n43011023007"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "兄弟"
+        },
+        {
+          "tokens": [
+            "n43011023005"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "よみがえる"
         }
       ],
       "decisions": [
@@ -2703,6 +3710,88 @@
           "reason": "John's historic present is kept at Literal; Balanced and Readable use the past, as Russian narrative does. This applies to 11:24 and 11:27.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43011023001"
+          ],
+          "choice": "historic present \"Каже\" at Literal (also 11:24, 11:27)",
+          "alternatives": [
+            "\"Сказав\""
+          ],
+          "reason": "docs/john-terms.md: Literal keeps John's historic present, Balanced and Readable use the past; noted once in this passage.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-2",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43011023005"
+          ],
+          "choice": "\"воскресне\"",
+          "alternatives": [
+            "\"встане\"",
+            "\"оживе\""
+          ],
+          "reason": "The verb for rising from death; \"воскреснути\" is the plain Ukrainian word and ties to \"воскресіння\" in 11:24-25. Readable adds \"з мертвих\", as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43011023001"
+          ],
+          "choice": "\"言われる\" (L); \"言われた\" (B); \"言われました\" (R)",
+          "alternatives": [],
+          "reason": "John tells the story in the present tense for vividness. Literal keeps the present; Balanced and Readable tell it in the past, as Japanese narrative does. This applies to every such verb in the passage (verses 23, 24 and 27).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43011023005"
+          ],
+          "choice": "\"よみがえる\" (L, B); \"死から生き返る\" (R)",
+          "alternatives": [
+            "\"起き上がる\" (L)",
+            "\"復活する\""
+          ],
+          "reason": "\"Rise\" here is rising from death (m2), which よみがえる says without a bare \"stand up\". Readable says it in everyday words. The noun in verse 24 is 復活.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2784,6 +3873,31 @@
           "L": "Говорит {{deity_pronoun:ему|Ему}} Марфа: «Знаю, что воскреснет в воскресение, в последний день.»",
           "B": "Марфа ответила: «Я знаю, что он воскреснет, когда воскреснут мёртвые, в последний день.»",
           "R": "Марфа ответила: «Я знаю, что он оживёт в последний день, когда воскреснут все мёртвые.»"
+        },
+        "uk": {
+          "L": "Каже {{deity_pronoun:йому|Йому}} Марта: «Знаю, що він воскресне у воскресінні в останній день.»",
+          "B": "Марта відповіла: «Я знаю, що він воскресне, коли воскреснуть мертві, в останній день.»",
+          "R": "Марта відповіла: «Я знаю, що він оживе в останній день, коли мертві воскреснуть.»"
+        },
+        "ja": {
+          "L": "マルタは[イエス]に言う。「終わりの日の復活のときに、[兄弟が]よみがえることは知っています。」",
+          "B": "マルタは答えた。「死んだ人々がよみがえる終わりの日に、兄弟もよみがえることは知っています。」",
+          "R": "マルタは答えました。「終わりの日に死んだ人たちが生き返るとき、兄弟も生き返ることは知っています。」"
+        },
+        "id": {
+          "L": "Marta berkata kepada-{{deity_pronoun:nya|Nya}}, \"Aku tahu bahwa ia akan bangkit pada waktu kebangkitan pada hari terakhir.\"",
+          "B": "Marta menjawab, \"Aku tahu ia akan bangkit ketika orang-orang mati dibangkitkan, pada hari terakhir.\"",
+          "R": "Marta menjawab, \"Aku tahu bahwa ia akan hidup kembali pada hari terakhir, ketika orang-orang mati bangkit.\""
+        },
+        "zh": {
+          "L": "马大对{{deity_pronoun:他|祂}}说：“我知道他会在末日的复活中复活。”",
+          "B": "马大回答：“我知道他会复活，那是在末日死人复活的时候。”",
+          "R": "马大回答：“我知道到了最后的日子，死人复活的时候，他会再活过来。”"
+        },
+        "ar": {
+          "L": "تقول له مرثا: «أعلم أنّه سيقوم في القيامة، في اليوم الأخير».",
+          "B": "فأجابت مرثا: «أعرف أنّه سيقوم عندما يقوم الأموات، في اليوم الأخير».",
+          "R": "فأجابت مرثا: «أعرف أنّه سيعود إلى الحياة في اليوم الأخير، حين يقوم الأموات»."
         }
       },
       "alignments": [
@@ -2847,6 +3961,83 @@
           "language": "en",
           "level": "B",
           "target_span": "the last day"
+        },
+        {
+          "tokens": [
+            "n43011024003",
+            "n43011024004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "マルタ"
+        },
+        {
+          "tokens": [
+            "n43011024001"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "答えた"
+        },
+        {
+          "tokens": [
+            "n43011024008",
+            "n43011024009",
+            "n43011024010"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "死んだ人々がよみがえる"
+        },
+        {
+          "tokens": [
+            "n43011024012",
+            "n43011024013",
+            "n43011024014"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "終わりの日"
+        },
+        {
+          "tokens": [
+            "n43011024011"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "に"
+        },
+        {
+          "tokens": [
+            "n43011024007"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "兄弟"
+        },
+        {
+          "tokens": [
+            "n43011024007"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "よみがえる"
+        },
+        {
+          "tokens": [
+            "n43011024006"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "こと"
+        },
+        {
+          "tokens": [
+            "n43011024005"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "知っています"
         }
       ],
       "decisions": [
@@ -2988,6 +4179,26 @@
           "reason": "The particle \"은\" gives Korean the note of the meaning decision: a firm belief, but one that puts the comfort far off.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43011024010"
+          ],
+          "choice": "\"死んだ人々がよみがえる\" (B); \"死んだ人たちが生き返る\" (R); \"復活\" (L)",
+          "alternatives": [
+            "\"復活\" at every level"
+          ],
+          "reason": "\"The resurrection\" is the raising of all the dead at the end (m1); Balanced and Readable say what it is, Literal keeps the noun.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3090,6 +4301,31 @@
           "L": "Сказал ей Иисус: «Я — воскресение и жизнь. Верующий в {{deity_pronoun:меня|Меня}}, даже если умрёт, будет жить; \\v 26 и всякий живущий и верующий в {{deity_pronoun:меня|Меня}} никак не умрёт вовек. Веришь ли ты этому?»",
           "B": "Иисус сказал ей: «Я — воскресение и жизнь. Тот, кто верит в {{deity_pronoun:меня|Меня}}, даже если умрёт, будет жить, \\v 26 и всякий, кто живёт и верит в {{deity_pronoun:меня|Меня}}, никогда не умрёт. Веришь ли ты в это?»",
           "R": "Иисус сказал ей: «Я — воскресение, и {{deity_pronoun:я|Я}} — жизнь. Кто верит в {{deity_pronoun:меня|Меня}}, будет жить, даже если умрёт. \\v 26 И всякий, кто живёт и верит в {{deity_pronoun:меня|Меня}}, никогда не умрёт. Ты веришь в это?»"
+        },
+        "uk": {
+          "L": "Ісус сказав їй: «Я — воскресіння і життя. Хто вірить у {{deity_pronoun:мене|Мене}}, хоч і помре, житиме; \\v 26 і кожен, хто живе і вірить у {{deity_pronoun:мене|Мене}}, ніяк не помре повік. Чи віриш у це?»",
+          "B": "Ісус сказав їй: «Я — воскресіння і життя. Хто вірить у {{deity_pronoun:мене|Мене}}, той, навіть якщо помре, житиме, \\v 26 і кожен, хто живе і вірить у {{deity_pronoun:мене|Мене}}, ніколи не помре. Чи віриш ти в це?»",
+          "R": "Ісус сказав їй: «Я — воскресіння, і {{deity_pronoun:я|Я}} — життя. Хто вірить у {{deity_pronoun:мене|Мене}}, той житиме, навіть якщо помре. \\v 26 І кожен, хто живе і вірить у {{deity_pronoun:мене|Мене}}, ніколи не помре. Ти віриш у це?»"
+        },
+        "ja": {
+          "L": "イエスは彼女に言われた。「わたしは復活であり、命である。わたしを信じる者は、たとえ死んでも生きる。\\v 26 また、生きていてわたしを信じる者はだれでも、いつまでも決して死なない。あなたはこれを信じるか？」",
+          "B": "イエスはマルタに言われた。「わたしは復活であり、命である。わたしを信じる者は、たとえ死んでも生きる。\\v 26 生きていてわたしを信じる者はだれも、決して死ぬことはない。あなたはこれを信じるか？」",
+          "R": "イエスはマルタに言われました。「わたしが復活だ。そして、わたしが命だ。わたしを信じる人は、たとえ死んでも生きる。\\v 26 生きていてわたしを信じる人はみな、決して死なない。あなたはこれを信じるか？」"
+        },
+        "id": {
+          "L": "Yesus berkata kepadanya, \"Akulah kebangkitan dan hidup; siapa yang percaya kepada-{{deity_pronoun:ku|Ku}}, ia akan hidup walaupun ia sudah mati, \\v 26 dan setiap orang yang hidup dan percaya kepada-{{deity_pronoun:ku|Ku}} sekali-kali tidak akan mati selama-lamanya. Percayakah engkau akan hal ini?\"",
+          "B": "Yesus berkata kepadanya, \"Akulah kebangkitan dan hidup. Siapa yang percaya kepada-{{deity_pronoun:ku|Ku}} akan hidup, walaupun ia mati, \\v 26 dan setiap orang yang hidup dan percaya kepada-{{deity_pronoun:ku|Ku}} tidak akan mati untuk selama-lamanya. Percayakah engkau akan hal ini?\"",
+          "R": "Yesus berkata kepadanya, \"Akulah kebangkitan, dan {{deity_pronoun:aku|Aku}}lah hidup. Siapa saja yang percaya kepada-{{deity_pronoun:ku|Ku}} akan hidup, walaupun ia mati. \\v 26 Dan setiap orang yang hidup dan percaya kepada-{{deity_pronoun:ku|Ku}} tidak akan pernah mati. Apakah kamu percaya akan hal ini?\""
+        },
+        "zh": {
+          "L": "耶稣对她说：“我是那复活，也是那生命。信入我的人即使死了，仍要活；\\v 26 并且每一个活着又信入我的人，永远绝不会死。你信这个吗？”",
+          "B": "耶稣对她说：“我是复活和生命。信我的人即使死了，也会活着，\\v 26 而所有活着又信我的人，永远都不会死。你信这一点吗？”",
+          "R": "耶稣对她说：“我是复活，我是生命。信我的人，就算死了，也会活着。\\v 26 所有活着又信我的人，永远不会死。你相信这件事吗？”"
+        },
+        "ar": {
+          "L": "قال لها يسوع: «أنا هو القيامة والحياة. الذي يؤمن بي، وإن مات، سيحيا؛ \\v 26 وكلّ من يحيا ويؤمن بي لن يموت إلى الأبد. أتؤمنين أنت بهذا؟»",
+          "B": "فقال لها يسوع: «أنا هو القيامة والحياة. الذين يؤمنون بي سيحيون حتّى لو ماتوا، \\v 26 وكلّ الذين يعيشون ويؤمنون بي لن يموتوا أبدًا. هل تؤمنين بهذا؟»",
+          "R": "قال لها يسوع: «أنا هو القيامة، وأنا هو الحياة. كلّ من يؤمن بي سيحيا، حتّى إن مات. \\v 26 وكلّ حيّ يؤمن بي لن يموت أبدًا. فهل تصدّقين هذا؟»"
         }
       },
       "alignments": [
@@ -3316,6 +4552,201 @@
           "language": "en",
           "level": "B",
           "target_span": "this"
+        },
+        {
+          "tokens": [
+            "n43011025003",
+            "n43011025004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "イエス"
+        },
+        {
+          "tokens": [
+            "n43011025002"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "マルタ"
+        },
+        {
+          "tokens": [
+            "n43011025001"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "言われた"
+        },
+        {
+          "tokens": [
+            "n43011025005"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43011025007",
+            "n43011025008"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "復活"
+        },
+        {
+          "tokens": [
+            "n43011025006",
+            "n43011025009"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "であり"
+        },
+        {
+          "tokens": [
+            "n43011025010",
+            "n43011025011"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "命"
+        },
+        {
+          "tokens": [
+            "n43011025006"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "である"
+        },
+        {
+          "tokens": [
+            "n43011025015"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43011025013",
+            "n43011025014"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "信じる"
+        },
+        {
+          "tokens": [
+            "n43011025012"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "者"
+        },
+        {
+          "tokens": [
+            "n43011025016"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "たとえ"
+        },
+        {
+          "tokens": [
+            "n43011025017"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "死んでも"
+        },
+        {
+          "tokens": [
+            "n43011025018"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "生きる"
+        },
+        {
+          "tokens": [
+            "n43011026004",
+            "n43011026005"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "生きていて"
+        },
+        {
+          "tokens": [
+            "n43011026008"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43011026006",
+            "n43011026007"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "信じる"
+        },
+        {
+          "tokens": [
+            "n43011026003"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "者"
+        },
+        {
+          "tokens": [
+            "n43011026002"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "だれも"
+        },
+        {
+          "tokens": [
+            "n43011026009",
+            "n43011026010",
+            "n43011026012",
+            "n43011026013",
+            "n43011026014"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "決して"
+        },
+        {
+          "tokens": [
+            "n43011026011"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "死ぬことはない"
+        },
+        {
+          "tokens": [
+            "n43011026016"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "これ"
+        },
+        {
+          "tokens": [
+            "n43011026015"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "信じるか"
         }
       ],
       "decisions": [
@@ -3892,6 +5323,167 @@
           "reason": "The English has a gender setting on \"they die / he dies\". The Russian verb has no gender in the future tense, and \"кто\" is inclusive, so there is no setting.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n43011025012",
+            "n43011025013",
+            "n43011025014",
+            "n43011025015"
+          ],
+          "choice": "\"хто вірить ..., хоч і помре\" with no gender setting",
+          "alternatives": [
+            "{{gender:той|він}}"
+          ],
+          "reason": "Ukrainian \"хто ..., той\" and the verb without a pronoun already cover men and women, so the English gender setting has no Ukrainian span here.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n43011025017"
+          ],
+          "choice": "\"たとえ死んでも\" with no gender span",
+          "alternatives": [],
+          "reason": "The English needs a gender span for its pronoun; Japanese needs no pronoun here, and 者 and 人 are already inclusive, so there is no span. This holds through the passage.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43011025005",
+            "n43011025006"
+          ],
+          "choice": "\"わたしが復活である。そして、わたしが命である。\" (R)",
+          "alternatives": [
+            "\"わたしは復活であり、命である\""
+          ],
+          "reason": "Readable repeats \"I am\" for each noun, as the English Readable does, and uses が to put the weight on Jesus himself (m2): resurrection is not only a future event but this person. Jesus' speech stays in the plain style.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43011025005",
+            "n43011025006"
+          ],
+          "choice": "\"我是……\" at every level",
+          "alternatives": [
+            "\"我就是……\" (B, R)"
+          ],
+          "reason": "Jesus's \"I am\" sayings with a predicate keep one form through John, \"我是……\" at every level, as at 6:35 and 8:12; \"我就是\" is kept for \"I am he\" (18:5-8).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43011025013",
+            "n43011025014"
+          ],
+          "choice": "\"信入我的人\" (L); \"信我的人\" (B, R)",
+          "alternatives": [
+            "\"信靠我的人\"",
+            "\"相信我的人\""
+          ],
+          "reason": "\"Believe in\" (with eis) is \"信入\" at Literal, keeping the Greek preposition as Matthew 18:6 does, and \"信\" with its object at Balanced and Readable (\"信我\"), as through John (1:12).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-3",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n43011025017"
+          ],
+          "choice": "\"即使死了\" / \"就算死了\", with no gender span",
+          "alternatives": [
+            "{{gender:他们死了|他死了}}"
+          ],
+          "reason": "The English pronoun takes the gender setting. Chinese needs no pronoun here (\"信我的人……死了\"), so no span is written.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-1",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n43011025012",
+            "n43011025013",
+            "n43011025014",
+            "n43011025015",
+            "n43011025016",
+            "n43011025017",
+            "n43011025018",
+            "n43011026001",
+            "n43011026002",
+            "n43011026003",
+            "n43011026004",
+            "n43011026005",
+            "n43011026006",
+            "n43011026007",
+            "n43011026008",
+            "n43011026009",
+            "n43011026010",
+            "n43011026011"
+          ],
+          "choice": "\"الذي\", \"كلّ من\" ... \"مات\" with no gender setting",
+          "alternatives": [],
+          "reason": "The English offers \"they die\"/\"he dies\" as a setting. The Arabic word already speaks of anyone, man or woman, so there is no wording for the setting to change.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3979,6 +5571,31 @@
           "L": "Говорит {{deity_pronoun:ему|Ему}}: «Да, Господи; я поверила, что {{deity_pronoun:ты|Ты}} — {{christos:Христос|Мессия}}, Сын Божий, приходящий в мир.»",
           "B": "Она ответила: «Да, Господи. Я поверила, что {{deity_pronoun:ты|Ты}} — {{christos:Христос|Мессия}}, Сын Божий, тот, кто приходит в мир.»",
           "R": "Марфа ответила: «Да, Господи. Я верю, что {{deity_pronoun:ты|Ты}} — {{christos:Христос|Мессия}}, Сын Божий. Ты — тот, кого Бог обещал послать в мир.»"
+        },
+        "uk": {
+          "L": "Каже {{deity_pronoun:йому|Йому}}: «Так, Господи; я повірила, що {{deity_pronoun:ти|Ти}} {{christos:Христос|Месія}}, Син Божий, що приходить у світ.»",
+          "B": "Вона відповіла: «Так, Господи. Я вірю, що {{deity_pronoun:ти|Ти}} {{christos:Христос|Месія}}, Син Божий, той, хто приходить у світ.»",
+          "R": "Марта відповіла: «Так, Господи. Я справді вірю, що {{deity_pronoun:ти|Ти}} {{christos:Христос|Месія}}, Син Божий. Ти той, кого Бог обіцяв послати у світ.»"
+        },
+        "ja": {
+          "L": "彼女は[イエス]に言う。「はい、主よ。わたしは、あなたが{{christos:キリスト|メシア}}、神の子、世に来られる方であると、信じてきました。」",
+          "B": "マルタは答えた。「はい、主よ。あなたが{{christos:キリスト|メシア}}、神の子、世に来られる方であると、わたしは信じております。」",
+          "R": "マルタは答えました。「はい、主よ。わたしは、あなたが{{christos:キリスト|メシア}}であり、神の子であると、心から信じています。あなたこそ、神がこの世に送ると約束された方です。」"
+        },
+        "id": {
+          "L": "Dia berkata kepada-{{deity_pronoun:nya|Nya}}, \"Ya, Tuhan; aku telah percaya bahwa {{deity_pronoun:engkau|Engkau}}lah {{christos:Kristus|Mesias}}, Anak Allah, {{deity_pronoun:dia|Dia}} yang datang ke dalam dunia.\"",
+          "B": "Marta menjawab, \"Ya, Tuhan. Aku percaya bahwa {{deity_pronoun:engkau|Engkau}}lah {{christos:Kristus|Mesias}}, Anak Allah, {{deity_pronoun:dia|Dia}} yang akan datang ke dalam dunia.\"",
+          "R": "Marta menjawab, \"Ya, Tuhan. Aku sungguh percaya bahwa {{deity_pronoun:engkau|Engkau}}lah {{christos:Kristus|Mesias}}, Anak Allah. Engkaulah yang dijanjikan Allah akan diutus ke dunia.\""
+        },
+        "zh": {
+          "L": "她对{{deity_pronoun:他|祂}}说：“是的，主啊，我已经信{{deity_pronoun:你|祢}}是{{christos:基督|弥赛亚}}，是{{god_term:神|上帝}}的儿子，就是那要来到世界上的那一位。”",
+          "B": "她回答：“是的，主啊。我一直信{{deity_pronoun:你|祢}}是{{christos:基督|弥赛亚}}，是{{god_term:神|上帝}}的儿子，是那要来到世界上的那一位。”",
+          "R": "马大回答：“是的，主啊。我真的相信{{deity_pronoun:你|祢}}是{{christos:基督|弥赛亚}}，是{{god_term:神|上帝}}的儿子。{{deity_pronoun:你|祢}}就是{{god_term:神|上帝}}应许要差到世界上来的那一位。”"
+        },
+        "ar": {
+          "L": "تقول له: «نعم يا ربّ؛ أنا آمنت بأنّك أنت المسيح، ابن الله، الآتي إلى العالم».",
+          "B": "فأجابت: «نعم يا ربّ. لقد آمنت بأنّك المسيح، ابن الله، الذي يأتي إلى العالم».",
+          "R": "فأجابت مرثا: «نعم يا ربّ. أنا أؤمن فعلًا بأنّك المسيح، ابن الله. أنت الذي وعد الله أن يرسله إلى العالم»."
         }
       },
       "alignments": [
@@ -4098,6 +5715,123 @@
           "language": "en",
           "level": "B",
           "target_span": "the world"
+        },
+        {
+          "tokens": [
+            "n43011027001"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "答えた"
+        },
+        {
+          "tokens": [
+            "n43011027003"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "はい"
+        },
+        {
+          "tokens": [
+            "n43011027004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "主"
+        },
+        {
+          "tokens": [
+            "n43011027008"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなた"
+        },
+        {
+          "tokens": [
+            "n43011027010",
+            "n43011027011"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "{{christos:キリスト|メシア}}"
+        },
+        {
+          "tokens": [
+            "n43011027012",
+            "n43011027013",
+            "n43011027014",
+            "n43011027015"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "神の子"
+        },
+        {
+          "tokens": [
+            "n43011027018",
+            "n43011027019"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "世"
+        },
+        {
+          "tokens": [
+            "n43011027017"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "に"
+        },
+        {
+          "tokens": [
+            "n43011027020"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "来られる"
+        },
+        {
+          "tokens": [
+            "n43011027016"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "方"
+        },
+        {
+          "tokens": [
+            "n43011027009"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "である"
+        },
+        {
+          "tokens": [
+            "n43011027007"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "と"
+        },
+        {
+          "tokens": [
+            "n43011027005"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43011027006"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "信じております"
         }
       ],
       "decisions": [
@@ -4432,6 +6166,70 @@
             "\"я уверовала\""
           ],
           "reason": "The Greek perfect is a settled faith, emphatically her own (meaning decision m1). The perfective \"поверила\" keeps the key verb \"верить\"; Readable puts it in the present, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43011027005",
+            "n43011027006"
+          ],
+          "choice": "\"я повірила\" (L), \"я вірю\" (B)",
+          "alternatives": [
+            "\"я повірила\" at every level"
+          ],
+          "reason": "The Greek perfect is a settled faith, begun and still held (meaning decision m1); Literal keeps the past of the act, Balanced and Readable say the faith that lasts.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43011027005",
+            "n43011027006"
+          ],
+          "choice": "\"わたしは……信じてきました\" (L); \"わたしは信じております\" (B); \"心から信じています\" (R)",
+          "alternatives": [
+            "\"信じました\""
+          ],
+          "reason": "The perfect describes a faith that began and still holds, and \"I\" is emphatic (m1). Literal shows the lasting past with 〜てきました, Balanced with 〜ております, Readable carries the emphasis with 心から.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n43011027011"
+          ],
+          "choice": "{{christos:基督|弥赛亚}}",
+          "alternatives": [
+            "\"那位基督\""
+          ],
+          "reason": "The title takes the christos setting, \"基督\" by default and \"弥赛亚\" as the alternative, as the English does. Chinese has no article to keep, so the title stands alone.",
           "uncertain": false,
           "footnote": false
         }

@@ -3,10 +3,15 @@ builds from the site's own search documents, and the endpoint, in each site
 language."""
 import sys
 import time
+from datetime import timedelta
+from types import SimpleNamespace
+from unittest import mock
 
 from django.conf import settings
 from django.core.cache import cache
+from django.db import connection
 from django.test import SimpleTestCase, TestCase
+from django.utils import timezone
 
 from api import views
 from backend_tests.test_backend import import_content, load_extract_words
@@ -22,6 +27,14 @@ def verse_ids(doc):
 
 
 class SearchTest(TestCase):
+    def _should_check_constraints(self, connection):
+        # Django re-checks every deferred foreign key at the end of each
+        # test. Here that means every row setUpTestData imported (the whole
+        # Bible in every language): 8 s a test locally and minutes on a CI
+        # runner once the review-state indexes made the tables bigger. The
+        # import is the same for every test and each test is rolled back.
+        return False
+
     @classmethod
     def setUpTestData(cls):
         load_extract_words()
@@ -87,10 +100,59 @@ class SearchTest(TestCase):
     def test_search_budget_leaves_languages_for_the_next_run(self):
         # Past the deadline no language is started, and the ones done stay.
         before = SearchEntry.objects.count()
-        self.assertEqual(search.rebuild(until=time.monotonic() - 1), {})
+        self.assertEqual(search.rebuild(until=time.time() - 1), {})
+        self.assertEqual(search.rebuild(stop=time.time() - 1), {})
         self.assertEqual(SearchEntry.objects.count(), before)
         # The records loaded for one language don't outlive the rebuild.
         self.assertIsNone(build_site.SEARCH_LANG)
+
+    def test_a_stopped_update_keeps_its_batches_and_the_next_finishes(self):
+        # Render stops a pre-deploy at 30 minutes; a language whose update
+        # would run past --deadline writes what it can in committed batches
+        # and leaves the rest for the next run.
+        docs = build_site.search_documents("sw")["docs"]
+        self.addCleanup(search.site_build)   # one language's records must not outlive the test
+        clock = [0.0]
+        write = search._write
+
+        def first_batch_only(*args):
+            write(*args)
+            clock[0] = 100.0   # the deadline has come
+
+        with mock.patch.object(search, "CHUNK", 100), mock.patch.object(search, "_write", first_batch_only), \
+                mock.patch.object(search, "time", SimpleNamespace(time=lambda: clock[0])):
+            change = search._rebuild_language(search.site_build("sw"), "sw", full=True, stop=50.0)
+        self.assertEqual((change.added, change.left), (100, len(docs) - 100))
+        self.assertEqual(SearchEntry.objects.filter(language="sw").count(), 100)
+        self.assertIsNone(SearchLanguage.objects.get(code="sw").checked)
+        # Left behind, it goes first next time.
+        self.assertEqual(search.order(build_site.LANGUAGES)[0], "sw")
+        kept = set(SearchEntry.objects.filter(language="sw").values_list("id", flat=True))
+        change = search._rebuild_language(search.site_build("sw"), "sw", full=False)
+        self.assertEqual((change.added, change.removed, change.left), (len(docs) - 100, 0, 0))
+        entries = SearchEntry.objects.filter(language="sw").order_by("position", "sub")
+        self.assertEqual([e.doc for e in entries], docs)
+        self.assertTrue(kept <= set(entries.values_list("id", flat=True)))
+        self.assertIsNotNone(SearchLanguage.objects.get(code="sw").checked)
+
+    def test_an_update_out_of_time_changes_nothing(self):
+        self.addCleanup(search.site_build)
+        first = SearchEntry.objects.filter(language="en", kind="v").order_by("position", "sub").first()
+        first.doc = {**first.doc, "u": "/stale/"}
+        first.save()
+        change = search._rebuild_language(search.site_build("en"), "en", full=False, stop=time.time() - 1)
+        self.assertEqual((change.added, change.removed, change.left), (0, 0, 1))
+        self.assertTrue(SearchEntry.objects.filter(id=first.id).exists())
+
+    def test_languages_waiting_longest_go_first(self):
+        languages = list(build_site.LANGUAGES)
+        SearchLanguage.objects.update(checked=timezone.now())
+        SearchLanguage.objects.filter(code=languages[-1]).update(checked=None)
+        SearchLanguage.objects.filter(code=languages[0]).update(checked=timezone.now() + timedelta(hours=1))
+        self.assertEqual(search.order(languages), [languages[-1], *languages[1:-1], languages[0]])
+        # Never brought up to date: the newest language first.
+        SearchLanguage.objects.update(checked=None)
+        self.assertEqual(search.order(languages), languages[::-1])
 
     def test_one_languages_records_give_the_same_documents(self):
         # The rebuild loads only a language's renderings (English's where a
@@ -241,6 +303,56 @@ class SearchTest(TestCase):
         # the example until Song of Songs was drafted.)
         self.assertIsNone(self.get(q="love 3", lang="en")["reference"])
 
+    # ---- Japanese ---------------------------------------------------------
+
+    def test_japanese_words_are_found_inside_a_clause(self):
+        # Japanese has no spaces: in John 3:16 "ひとり子" and "永遠の命" sit in
+        # the middle of a run of kana and kanji, and a single kanji is a word.
+        for q in ("ひとり子", "永遠の命", "愛"):
+            with self.subTest(q=q):
+                found = set().union(*(verse_ids(d) for d in self.every(q, "verse", lang="ja")))
+                self.assertIn("JHN.3.16", found)
+        # The pairs must follow one another: these are all in the verse, but
+        # not in this order.
+        found = set().union(*(verse_ids(d) for d in self.every("命永遠", "verse", lang="ja")))
+        self.assertNotIn("JHN.3.16", found)
+
+    def test_japanese_voicing_marks_are_kept(self):
+        # ガ is not カ: "ガリラヤ" (John 2:1) must not be searched as "カリラヤ".
+        found = set().union(*(verse_ids(d) for d in self.every("ガリラヤ", "verse", lang="ja")))
+        self.assertIn("JHN.2.1", found)
+        self.assertEqual(self.get(q="カリラヤ", lang="ja")["totals"].get("verse", 0), 0)
+
+    def test_indonesian_searches_its_own_text(self):
+        # Indonesian now has every book: its site finds its own sentences,
+        # and references by its book names and abbreviations. Its entries
+        # use the Indonesian stemmer.
+        ref = self.get(q="Yohanes 3:16", lang="id")["reference"]
+        self.assertEqual((ref["label"], ref["url"]), ("Yohanes 3:16", "/id/jhn/3/#v16"))
+        self.assertEqual(self.get(q="Yoh 3:16", lang="id")["reference"]["url"], "/id/jhn/3/#v16")
+        self.assertGreater(self.get(q="terang", lang="id")["totals"].get("verse", 0), 0)
+        self.assertEqual(search.config("id"), "owb_indonesian")
+        with connection.cursor() as cur:
+            cur.execute("SELECT to_tsvector('owb_indonesian', 'dikasihi') @@ to_tsquery('owb_indonesian', 'kasih')")
+            self.assertTrue(cur.fetchone()[0])
+
+    def test_arabic_is_stemmed_after_it_is_folded(self):
+        # owb_arabic (translation 0016) takes off the attached preposition
+        # and the article and the ending, on text folded as search.fold
+        # folds it, so "كلمة" finds "بِالْكَلِمَةِ" (by the word).
+        self.assertEqual(search.config("ar"), "owb_arabic")
+        word = search.fold("\u0628\u0650\u0627\u0644\u0652\u0643\u064e\u0644\u0650\u0645\u064e\u0629\u0650")
+        query = search.fold("\u0643\u0644\u0645\u0629")
+        with connection.cursor() as cur:
+            cur.execute("SELECT to_tsvector('owb_arabic', %s) @@ plainto_tsquery('owb_arabic', %s)", [word, query])
+            self.assertTrue(cur.fetchone()[0])
+
+    def test_japanese_references_with_full_width_digits(self):
+        ref = self.get(q="ヨハネによる福音書３：１６", lang="ja")["reference"]
+        self.assertEqual((ref["label"], ref["url"]), ("ヨハネによる福音書 3:16", "/ja/jhn/3/#v16"))
+        ref = self.get(q="ガラテヤの信徒への手紙 1:1", lang="ja")["reference"]
+        self.assertEqual(ref["label"], "ガラテヤの信徒への手紙 1:1")
+
     # ---- The request ------------------------------------------------------
 
     def test_bad_parameters(self):
@@ -260,6 +372,70 @@ class SearchNotReadyTest(TestCase):
     def test_before_the_first_import(self):
         response = self.client.get("/api/search/", {"q": "light"})
         self.assertEqual(response.status_code, 503)
+
+
+class JapaneseTextTest(SimpleTestCase):
+    def test_runs_of_kanji_and_kana_become_pairs(self):
+        self.assertEqual(search.ngrams("神の愛を。").split(), ["神の", "の愛", "愛を", "を", "。"])
+        # One character stands alone; other text is left as it is; the
+        # middle dot between the parts of a name ends a run.
+        self.assertEqual(search.ngrams("人").split(), ["人"])
+        self.assertEqual(search.ngrams("2人 abc").split(), ["2", "人", "abc"])
+        self.assertEqual(search.ngrams("シモン・ペトロ").split(), ["シモ", "モン", "ン", "・", "ペト", "トロ", "ロ"])
+
+    def test_terms_split_at_runs(self):
+        self.assertEqual(search.cjk_terms("ペトロ2"), ["ペトロ", "2"])
+        self.assertEqual(search.bigrams("永遠の命"), ["永遠", "遠の", "の命"])
+
+    def test_fold_keeps_voicing_marks_and_narrows_wide_letters(self):
+        self.assertEqual(search.fold("ガリラヤ"), "ガリラヤ")
+        self.assertEqual(search.fold("ポ"), "ポ")
+        self.assertEqual(search.fold("３：１６ Ａｂ\u3000x"), "3:16 ab x")
+        self.assertEqual(search.fold("Señor"), "senor")
+        # The site's book aliases are folded the same way.
+        self.assertEqual(build_site.fold("ガラテヤ３"), search.fold("ガラテヤ３"))
+
+    def test_fold_makes_arabic_letters_typed_either_way_one(self):
+        # الْكَلِمَةُ with its vowels, أ for ا, Persian ی and ک, tatweel,
+        # Arabic-Indic and Persian digits.
+        for text in ("\u0627\u0644\u0652\u0643\u064e\u0644\u0650\u0645\u064e\u0629\u064f",
+                     "\u0623\u0628\u0631\u0627\u0647\u064a\u0645 \u0645\u0648\u0633\u0649",
+                     "\u06a9\u062a\u0627\u0628 \u0639\u06cc\u0633\u06cc \u0627\u0644\u0644\u0640\u0647",
+                     "\u0663:\u0661\u0666 \u06f3:\u06f1\u06f6"):
+            self.assertEqual(search.fold(text), build_site.fold(text), text)
+        self.assertEqual(search.fold("\u0623\u0628\u0631\u0627\u0647\u064a\u0645"),
+                         "\u0627\u0628\u0631\u0627\u0647\u064a\u0645")
+        self.assertEqual(search.fold("\u06a9\u06cc"), "\u0643\u064a")
+        self.assertEqual(search.fold("\u0663:\u0661\u0666"), "3:16")
+
+    def test_arabic_script_is_indexed_folded(self):
+        # Postgres's unaccent leaves Arabic marks and letters as they are, so
+        # the fields are folded before they are indexed, as a query is.
+        fields = ("\u0631\u0627\u0639\u0648\u062b", "", "\u0625\u0650\u0644\u0652\u0647\u064f \u06a9")
+        self.assertEqual(search.indexed("owb_simple", fields),
+                         ("\u0631\u0627\u0639\u0648\u062b", None, "\u0627\u0644\u0647 \u0643"))
+        self.assertEqual(search.indexed("owb_english", ("Ruth", "", "word")), (None, None, None))
+
+
+class ChineseTextTest(SimpleTestCase):
+    def test_chinese_is_searched_by_bigrams(self):
+        self.assertEqual(search.config("zh"), search.CJK)
+        self.assertEqual(search.ngrams("神爱世人。").split(), ["神爱", "爱世", "世人", "人", "。"])
+        self.assertEqual(search.cjk_terms("约翰福音3"), ["约翰福音", "3"])
+
+    def test_each_setting_option_is_indexed_beside_its_neighbours(self):
+        # The word for God and the divine name are setting spans: 神的国 and
+        # 上帝的国 must both be bigrams of the sentence, not 神 and 上帝 side
+        # by side before 的国.
+        doc = {"k": "v", "x": {"B": "{{god_term:神|上帝}}的国降临，{{divine_name:上主|雅威}}说"}}
+        _, _, body = search.indexed(search.CJK, search.fields(doc), doc)
+        for pair in ("神的", "上帝", "帝的", "主说", "威说"):
+            self.assertIn(pair, body.split())
+        self.assertEqual(search.readings(doc["x"]).split(search.GAP),
+                         ["神的国降临，上主说", "上帝的国降临，上主说", "神的国降临，雅威说", "上帝的国降临，雅威说"])
+        # The entry's own text is unchanged; other configurations index the fields as they are.
+        self.assertIn("神 上帝的国", search.fields(doc)[2])
+        self.assertEqual(search.indexed("owb_english", search.fields(doc), doc), (None, None, None))
 
 
 class PlanTest(SimpleTestCase):

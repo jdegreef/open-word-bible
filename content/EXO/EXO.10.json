@@ -91,6 +91,26 @@
           "L": "И сказал {{divine_name:ГОСПОДЬ|Яхве}} Моисею: «Войди к фараону, ведь {{deity_pronoun:я|Я}} отягчил его сердце и сердце его рабов, чтобы {{deity_pronoun:мне|Мне}} совершить эти {{deity_pronoun:мои|Мои}} знамения среди него,",
           "B": "{{divine_name:ГОСПОДЬ|Яхве}} сказал Моисею: «Пойди к фараону. Это {{deity_pronoun:я|Я}} ожесточил его сердце и сердца его придворных, чтобы совершить эти {{deity_pronoun:мои|Мои}} знамения среди них,",
           "R": "{{divine_name:ГОСПОДЬ|Яхве}} сказал Моисею: «Иди к фараону. Я сделал его и его придворных упрямыми. Я сделал это, чтобы совершить среди них эти великие чудеса."
+        },
+        "ja": {
+          "L": "{{divine_name:主|ヤハウェ}}はモーセに言われた。「ファラオのところに行きなさい。わたしが彼の心と彼の家臣たちの心を重くしたのは、わたしのこれらのしるしを彼のただ中に置くため、",
+          "B": "{{divine_name:主|ヤハウェ}}はモーセに言われた。「ファラオのところに行きなさい。彼の心と家臣たちの心をかたくなにしたのは、このわたしである。それは、わたしのこれらのしるしを彼らのただ中で行うため、",
+          "R": "{{divine_name:主|ヤハウェ}}はモーセに言われました。「ファラオのところへ行きなさい。わたしは、ファラオと家来たちをがんこにした。それは、彼らの間で、これらの力あるしるしを行うためだ。"
+        },
+        "uk": {
+          "L": "І сказав {{divine_name:ГОСПОДЬ|Ягве}} Мойсеєві: «Увійди до фараона, бо я зробив важким його серце і серце його рабів, щоб покласти ці {{deity_pronoun:мої|Мої}} знаки посеред нього,",
+          "B": "{{divine_name:ГОСПОДЬ|Ягве}} сказав Мойсеєві: «Піди до фараона. Це я зробив упертим його серце й серця його урядовців, щоб учинити ці {{deity_pronoun:мої|Мої}} знаки серед них,",
+          "R": "{{divine_name:ГОСПОДЬ|Ягве}} сказав Мойсеєві: «Піди до фараона. Я зробив упертими його самого і його урядовців. Я зробив це, щоб учинити серед них ці великі знаки."
+        },
+        "id": {
+          "L": "Dan {{divine_name:TUHAN|Yahweh}} berfirman kepada Musa, \"Masuklah menghadap Firaun, sebab {{divine_name:ALLAH|Yahweh}}ku telah memberatkan hatinya dan hati para pegawainya, supaya {{divine_name:ALLAH|Yahweh}}ku dapat mengadakan tanda-tanda-{{deity_pronoun:ku|Ku}} ini di tengah-tengah mereka,",
+          "B": "{{divine_name:TUHAN|Yahweh}} berfirman kepada Musa, \"Pergilah menghadap Firaun. {{divine_name:ALLAH|Yahweh}}ku sendirilah yang telah mendegilkan hatinya dan hati para pegawainya, supaya {{divine_name:ALLAH|Yahweh}}ku dapat mengadakan tanda-tanda-{{deity_pronoun:ku|Ku}} ini di tengah-tengah mereka,",
+          "R": "{{divine_name:TUHAN|Yahweh}} berfirman kepada Musa, \"Pergilah kepada Firaun. {{divine_name:ALLAH|Yahweh}}ku sudah membuat dia dan para pegawainya keras kepala. {{divine_name:ALLAH|Yahweh}}ku melakukan ini supaya {{divine_name:ALLAH|Yahweh}}ku dapat mengadakan tanda-tanda yang hebat ini di antara mereka."
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}对摩西说：“你要进去见法老，因为我已经使他的心和他臣仆的心沉重，好让我把我的这些神迹显在他们当中，",
+          "B": "{{divine_name:上主|雅威}}对摩西说：“你进去见法老。是我使他和他臣子的心顽固起来，好在他们当中施行我的这些神迹，",
+          "R": "{{divine_name:上主|雅威}}对摩西说：“你去见法老。我已经让他和他的官员固执起来。我这样做，是为了在他们当中行这些大能的神迹。"
         }
       },
       "decisions": [
@@ -271,6 +291,71 @@
           "reason": "Devanagari has no capital letters, so the deity_pronoun setting has nothing to change and Hindi has no deity_pronoun spans; respect for God is carried by the honorific forms at every level.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o020100010161",
+            "o020100010171",
+            "o020100010172"
+          ],
+          "choice": "The purpose clauses of 10:1 and 10:2 end with \"ため、\" and run on into verse 2",
+          "alternatives": [
+            "Close the sentence at the end of verse 1"
+          ],
+          "reason": "Hebrew and English run one sentence across both verses; Japanese keeps each purpose in its own verse by joining them with \"ため、\" … \"ためである\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020100010101",
+            "o020100010121",
+            "o020100010141"
+          ],
+          "choice": "\"使……沉重\" (Literal); \"使……顽固起来\" (Balanced); \"固执起来\" (Readable)",
+          "alternatives": [
+            "\"使……刚硬\""
+          ],
+          "reason": "The verb \"make heavy\" keeps its Literal word through the plagues (7:14; 8:11), apart from \"刚硬\" (\"make hard\", 7:3) and \"强硬\" (\"make strong\", verse 20); Balanced and Readable say what it means.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020100010051",
+            "o020100010061"
+          ],
+          "choice": "\"臣仆\" (Literal); \"臣子\" (Balanced); \"官员\" (Readable)",
+          "alternatives": [],
+          "reason": "Pharaoh's \"servants\" are his officials; the glossary's forms, kept through the plagues.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -367,6 +452,26 @@
           "L": "и чтобы ты рассказывал в уши {{gender:твоих детей и детей твоих детей|твоего сына и сына твоего сына}}, как {{deity_pronoun:я|Я}} посмеялся над Египтом, и о {{deity_pronoun:моих|Моих}} знамениях, которые {{deity_pronoun:я|Я}} совершил среди них; и узнаете, что {{deity_pronoun:я|Я}} — {{divine_name:ГОСПОДЬ|Яхве}}.»",
           "B": "и чтобы ты мог рассказать {{gender:своим детям и внукам|своим сыновьям и внукам}}, как {{deity_pronoun:я|Я}} посрамил Египет и какие знамения совершил среди них. И вы все узнаете, что {{deity_pronoun:я|Я}} — {{divine_name:ГОСПОДЬ|Яхве}}.»",
           "R": "Я сделал это и для того, чтобы ты мог рассказать {{gender:своим детям и внукам|своим сыновьям и внукам}}, как {{deity_pronoun:я|Я}} посрамил египтян. Ты расскажешь им о чудесах, которые {{deity_pronoun:я|Я}} совершил среди них. Тогда вы все узнаете, что {{deity_pronoun:я|Я}} — {{divine_name:ГОСПОДЬ|Яхве}}.»"
+        },
+        "ja": {
+          "L": "また、わたしがエジプトをどのように弄んだか、わたしが彼らの間に置いたわたしのしるしを、あなたが、あなたの子とあなたの子の子の耳に語り伝えるためである。そしてあなたがたは、わたしが{{divine_name:主|ヤハウェ}}であることを知る。」",
+          "B": "また、わたしがどのようにエジプトを笑いものにしたか、彼らの間でどのようなしるしを行ったかを、あなたが子や孫に語り伝えるためである。こうしてあなたがたは皆、わたしが{{divine_name:主|ヤハウェ}}であることを知るようになる。」",
+          "R": "また、わたしがエジプト人をどのように笑いものにしたかを、あなたが子どもや孫に話して聞かせるためでもある。わたしが彼らの間で行ったしるしのことを、話して聞かせるのだ。そうすれば、あなたたちはみな、わたしが{{divine_name:主|ヤハウェ}}であることを知るだろう。」"
+        },
+        "uk": {
+          "L": "і щоб ти розповідав у вуха {{gender:твоїх дітей і дітей твоїх дітей|твого сина і сина твого сина}}, як я поглумився з Єгипту, і про {{deity_pronoun:мої|Мої}} знаки, які я вчинив серед них; і ви пізнаєте, що я — {{divine_name:ГОСПОДЬ|Ягве}}».",
+          "B": "і щоб ти міг розповідати {{gender:своїм дітям і онукам|своїм синам і онукам}}, як я посміявся з Єгипту, і про знаки, які я вчинив серед них. І ви всі пізнаєте, що я — {{divine_name:ГОСПОДЬ|Ягве}}».",
+          "R": "Я зробив це й для того, щоб ти міг розповісти {{gender:своїм дітям і онукам|своїм синам і онукам}}, як я осоромив єгиптян. Ти розповіси їм про знаки, які я вчинив серед них. Тоді ви всі знатимете, що я — {{divine_name:ГОСПОДЬ|Ягве}}»."
+        },
+        "id": {
+          "L": "dan supaya engkau menceritakan kepada telinga anakmu dan cucumu bagaimana {{divine_name:ALLAH|Yahweh}}ku telah mempermainkan orang Mesir, dan tanda-tanda-{{deity_pronoun:ku|Ku}} yang telah {{deity_pronoun:ku|Ku}}adakan di antara mereka; dan kalian akan mengetahui bahwa Akulah {{divine_name:TUHAN|Yahweh}}.\"",
+          "B": "dan supaya engkau dapat menceritakan kepada anak-anak dan cucu-cucumu bagaimana {{divine_name:ALLAH|Yahweh}}ku telah mempermainkan Mesir, dan tentang tanda-tanda yang telah {{deity_pronoun:ku|Ku}}adakan di antara mereka. Dan kalian semua akan mengetahui bahwa Akulah {{divine_name:TUHAN|Yahweh}}.\"",
+          "R": "{{divine_name:ALLAH|Yahweh}}ku juga melakukannya supaya kamu dapat menceritakan kepada anak-anak dan cucu-cucumu bagaimana {{divine_name:ALLAH|Yahweh}}ku mempermainkan orang Mesir. Kamu akan menceritakan kepada mereka tanda-tanda yang {{deity_pronoun:ku|Ku}}adakan di antara orang Mesir. Lalu kalian semua akan tahu bahwa Aku ini {{divine_name:TUHAN|Yahweh}}.\""
+        },
+        "zh": {
+          "L": "也好让你把我怎样愚弄埃及，以及我在他们当中所显的神迹，讲给{{gender:你的儿女和你儿女的儿女|你的儿子和你儿子的儿子}}的耳朵听；你们就会知道我是{{divine_name:上主|雅威}}。”",
+          "B": "也好让你把我怎样戏弄埃及人、怎样在他们当中施行神迹的事，讲给{{gender:你的儿女和孙儿女|你的儿子和孙子}}听。这样你们都会知道我是{{divine_name:上主|雅威}}。”",
+          "R": "我这样做，也是要让你把我怎样使埃及人出丑的事，讲给{{gender:你的儿女和孙儿女|你的儿子和孙子}}听。你要告诉他们我在埃及人当中所行的神迹。那时你们都会知道我是{{divine_name:上主|雅威}}。”"
         }
       },
       "decisions": [
@@ -567,6 +672,119 @@
           "reason": "The words mean the generations to come (m2), daughters as well as sons, and Hindi has the same two wordings the English offers: the inclusive one by default, \"पुत्र\", \"बेटे\" and \"पोते\" with the traditional setting.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o020100020041",
+            "o020100020042",
+            "o020100020051",
+            "o020100020052",
+            "o020100020061",
+            "o020100020062"
+          ],
+          "choice": "\"あなたの子とあなたの子の子\" (L), \"子や孫\" (B), \"子どもや孫\" (R), with no gender span",
+          "alternatives": [
+            "{{gender:子や孫|息子や孫息子}}"
+          ],
+          "reason": "The Japanese words for child and grandchild already include daughters, so the English gender setting needs no Japanese span.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020100020091"
+          ],
+          "choice": "\"弄んだ\" (L), \"笑いものにした\" (B, R)",
+          "alternatives": [
+            "\"懲らしめた\""
+          ],
+          "reason": "The verb means to deal mockingly with, to make a fool of (uncertain, see the meaning footnote).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o020100020032",
+            "o020100020041",
+            "o020100020052",
+            "o020100020061"
+          ],
+          "choice": "\"{{gender:твоїх дітей і дітей твоїх дітей|твого сина і сина твого сина}}\" (L); \"{{gender:своїм дітям і онукам|своїм синам і онукам}}\" (B, R)",
+          "alternatives": [
+            "\"онукам\" without a span"
+          ],
+          "reason": "The Hebrew means the generations to come (m2); Ukrainian has two real wordings, as English does, so the span is kept.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020100020091",
+            "o020100020162"
+          ],
+          "choice": "\"mempermainkan\"; \"kalian\" for the closing \"you will know\"",
+          "alternatives": [],
+          "reason": "God dealt mockingly with Egypt (m1); the last verb is plural, all Israel (m3), so \"kalian\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o020100020032",
+            "o020100020041",
+            "o020100020052",
+            "o020100020061"
+          ],
+          "choice": "gender spans \"{{gender:你的儿女和你儿女的儿女|你的儿子和你儿子的儿子}}\" (Literal), \"{{gender:你的儿女和孙儿女|你的儿子和孙子}}\" (Balanced, Readable)",
+          "alternatives": [],
+          "reason": "As the English: the children who are told include daughters, so the inclusive form is the default and the Hebrew's \"son and son's son\" the alternative.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -663,8 +881,28 @@
         },
         "ru": {
           "L": "И пришли Моисей и Аарон к фараону и сказали ему: «Так говорит {{divine_name:ГОСПОДЬ|Яхве}}, Бог евреев: “Доколе ты будешь отказываться смириться передо {{deity_pronoun:мной|Мной}}? Отпусти {{deity_pronoun:мой|Мой}} народ, чтобы они служили {{deity_pronoun:мне|Мне}}.",
-          "B": "Моисей и Аарон пришли к фараону и сказали ему: «Вот что говорит {{divine_name:ГОСПОДЬ|Яхве}}, Бог евреев: “Сколько ещё ты будешь отказываться покориться {{deity_pronoun:мне|Мне}}? Отпусти {{deity_pronoun:мой|Мой}} народ, чтобы они служили {{deity_pronoun:мне|Мне}}.",
+          "B": "Моисей и Аарон пришли к фараону и сказали ему: «Так говорит {{divine_name:ГОСПОДЬ|Яхве}}, Бог евреев: “Сколько ещё ты будешь отказываться покориться {{deity_pronoun:мне|Мне}}? Отпусти {{deity_pronoun:мой|Мой}} народ, чтобы они служили {{deity_pronoun:мне|Мне}}.",
           "R": "Моисей и Аарон пошли к фараону. Они сказали ему: «Вот что говорит {{divine_name:ГОСПОДЬ|Яхве}}, Бог евреев: “Сколько ещё ты будешь слишком горд, чтобы уступить {{deity_pronoun:мне|Мне}}? Отпусти {{deity_pronoun:мой|Мой}} народ, чтобы они поклонялись {{deity_pronoun:мне|Мне}}."
+        },
+        "ja": {
+          "L": "モーセとアロンはファラオのところに行き、彼に言った。「ヘブライ人の神、{{divine_name:主|ヤハウェ}}はこう言われます。『いつまで、あなたはわたしの前にへりくだることを拒むのか？わたしの民を去らせなさい。彼らがわたしに仕えるためである。",
+          "B": "そこでモーセとアロンはファラオのところに行き、彼に告げた。「ヘブライ人の神、{{divine_name:主|ヤハウェ}}はこう言われます。『いつまで、わたしの前に身をかがめることを拒み続けるのか？わたしの民を去らせなさい。彼らがわたしに仕えることができるように。",
+          "R": "そこでモーセとアロンは、ファラオのところへ行きました。そしてファラオに言いました。「ヘブライ人の神、{{divine_name:主|ヤハウェ}}はこう言われます。『いつまで意地を張って、わたしに従わないでいるのか？わたしの民を行かせなさい。彼らがわたしを礼拝できるようにしなさい。"
+        },
+        "uk": {
+          "L": "І прийшли Мойсей та Аарон до фараона і сказали йому: «Так говорить {{divine_name:ГОСПОДЬ|Ягве}}, Бог євреїв: “Доки ти відмовлятимешся впокоритися переді {{deity_pronoun:мною|Мною}}? Відпусти {{deity_pronoun:мій|Мій}} народ, щоб вони служили {{deity_pronoun:мені|Мені}}.",
+          "B": "Тож Мойсей та Аарон прийшли до фараона й сказали йому: «Так говорить {{divine_name:ГОСПОДЬ|Ягве}}, Бог євреїв: “Доки ти не хотітимеш схилитися переді {{deity_pronoun:мною|Мною}}? Відпусти {{deity_pronoun:мій|Мій}} народ, щоб вони служили {{deity_pronoun:мені|Мені}}.",
+          "R": "Тож Мойсей та Аарон пішли до фараона. Вони сказали йому: «Ось що каже {{divine_name:ГОСПОДЬ|Ягве}}, Бог євреїв: “Як довго ти будеш такий гордий, що не скоришся {{deity_pronoun:мені|Мені}}? Відпусти {{deity_pronoun:мій|Мій}} народ, щоб вони могли поклонитися {{deity_pronoun:мені|Мені}}."
+        },
+        "id": {
+          "L": "Lalu Musa dan Harun masuk menghadap Firaun dan berkata kepadanya, \"Beginilah firman {{divine_name:TUHAN|Yahweh}}, Allah orang Ibrani: 'Berapa lama lagi engkau menolak untuk merendahkan diri di hadapan-{{deity_pronoun:ku|Ku}}? Biarkanlah umat-{{deity_pronoun:ku|Ku}} pergi, supaya mereka beribadah kepada-{{deity_pronoun:ku|Ku}}.",
+          "B": "Musa dan Harun menghadap Firaun dan berkata kepadanya, \"Beginilah firman {{divine_name:TUHAN|Yahweh}}, Allah orang Ibrani: 'Berapa lama lagi engkau menolak tunduk kepada-{{deity_pronoun:ku|Ku}}? Biarkanlah umat-{{deity_pronoun:ku|Ku}} pergi, supaya mereka beribadah kepada-{{deity_pronoun:ku|Ku}}.",
+          "R": "Lalu Musa dan Harun pergi menghadap Firaun. Mereka berkata kepadanya, \"Inilah firman {{divine_name:TUHAN|Yahweh}}, Allah orang Ibrani: 'Berapa lama lagi kamu terlalu sombong untuk tunduk kepada-{{deity_pronoun:ku|Ku}}? Biarkan umat-{{deity_pronoun:ku|Ku}} pergi supaya mereka dapat beribadah kepada-{{deity_pronoun:ku|Ku}}."
+        },
+        "zh": {
+          "L": "摩西和亚伦就进去见法老，对他说：“{{divine_name:上主|雅威}}，希伯来人的{{god_term:神|上帝}}，如此说：‘你拒绝在我面前谦卑要到几时呢？让我的子民走，好让他们事奉我。",
+          "B": "于是摩西和亚伦进去见法老，对他说：“{{divine_name:上主|雅威}}，希伯来人的{{god_term:神|上帝}}，这样说：‘你不肯在我面前低头，要到什么时候呢？释放我的子民，让他们可以事奉我。",
+          "R": "于是摩西和亚伦去见法老。他们对他说：“{{divine_name:上主|雅威}}，希伯来人的{{god_term:神|上帝}}，说：‘你还要骄傲多久，不肯向我屈服呢？让我的百姓走，好让他们敬拜我。"
         }
       },
       "decisions": [
@@ -769,6 +1007,47 @@
           "reason": "Moses addresses the king in 합쇼체 (9:29), but the words he quotes are God's, spoken from God to Pharaoh in the plain style.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o020100030111",
+            "o020100030122"
+          ],
+          "choice": "\"神\" written as a god_term span (\"{{god_term:神|上帝}}\"), with \"上帝\" as the reader's alternative",
+          "alternatives": [
+            "\"上帝\" as the default"
+          ],
+          "reason": "Chinese style guide section 4: every word naming the one God is a god_term span; here \"希伯来人的神\" / \"希伯来人的上帝\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020100030203"
+          ],
+          "choice": "\"让我的子民走，好让他们事奉我\" (Literal); \"释放我的子民，让他们可以事奉我\" (Balanced); \"让我的百姓走，好让他们敬拜我\" (Readable)",
+          "alternatives": [],
+          "reason": "God's demand has one wording per level through the plagues (7:16; 8:16; 9:1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -853,6 +1132,26 @@
           "L": "Ведь если ты отказываешься отпустить {{deity_pronoun:мой|Мой}} народ, вот, {{deity_pronoun:я|Я}} наведу завтра саранчу на твою область.",
           "B": "Если ты откажешься отпустить {{deity_pronoun:мой|Мой}} народ, то завтра {{deity_pronoun:я|Я}} наведу саранчу на твою страну.",
           "R": "Если ты и теперь не отпустишь {{deity_pronoun:мой|Мой}} народ, завтра {{deity_pronoun:я|Я}} нашлю на твою землю тучи саранчи."
+        },
+        "ja": {
+          "L": "もしあなたがわたしの民を去らせることを拒むなら、見なさい、わたしは明日、あなたの領土にいなごを送り込む。",
+          "B": "もしわたしの民を去らせることを拒むなら、明日、わたしはあなたの国境の内にいなごを送り込む。",
+          "R": "それでもわたしの民を行かせないなら、明日、わたしはあなたの国に、いなごの大群を送る。"
+        },
+        "uk": {
+          "L": "Бо якщо ти відмовишся відпустити {{deity_pronoun:мій|Мій}} народ, ось я наведу завтра сарану на твою територію.",
+          "B": "Якщо ти відмовишся відпустити {{deity_pronoun:мій|Мій}} народ, то завтра я наведу сарану на твою країну.",
+          "R": "Якщо ти й далі не відпускатимеш {{deity_pronoun:мого|Мого}} народу, завтра я нашлю на твою країну хмари сарани."
+        },
+        "id": {
+          "L": "Sebab jika engkau menolak membiarkan umat-{{deity_pronoun:ku|Ku}} pergi, lihatlah, besok {{divine_name:ALLAH|Yahweh}}ku akan mendatangkan belalang ke dalam daerahmu.",
+          "B": "Jika engkau menolak melepaskan umat-{{deity_pronoun:ku|Ku}}, besok {{divine_name:ALLAH|Yahweh}}ku akan mendatangkan belalang ke dalam wilayahmu.",
+          "R": "Kalau kamu masih tidak mau membiarkan umat-{{deity_pronoun:ku|Ku}} pergi, besok {{divine_name:ALLAH|Yahweh}}ku akan mengirimkan kawanan belalang ke negerimu."
+        },
+        "zh": {
+          "L": "你若拒绝让我的子民走，看哪，明天我要使蝗虫进入你的境内。",
+          "B": "你若拒绝释放我的子民，明天我就要使蝗虫进入你的国境。",
+          "R": "如果你还是不让我的百姓走，明天我就要让成群的蝗虫飞进你的国家。"
         }
       },
       "decisions": [
@@ -904,6 +1203,47 @@
             "\"des criquets\""
           ],
           "reason": "Strictly the swarming insect is a \"criquet\" (the desert locust), but \"sauterelle\" is the word French readers know for this plague, and it is still understood as the swarming kind.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020100040111"
+          ],
+          "choice": "\"いなご\" for the locust ('arbeh), in kana at every level",
+          "alternatives": [
+            "\"ばった\"",
+            "\"蝗\""
+          ],
+          "reason": "The usual word in Japanese Bibles and everyday speech for the swarming locust; the kanji is not in common use.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020100040111"
+          ],
+          "choice": "\"belalang\"",
+          "alternatives": [],
+          "reason": "The glossary word for locust.",
           "uncertain": false,
           "footnote": false
         }
@@ -1013,6 +1353,26 @@
           "L": "И она покроет око земли, и нельзя будет видеть землю; и она поест остаток уцелевшего, что осталось у вас от града, и поест всякое дерево, растущее у вас в поле.",
           "B": "Она покроет лицо земли так, что никто не сможет увидеть землю. Она поест всё, что уцелело от града, всё, что у вас ещё осталось, и объест всякое дерево, растущее у вас в поле.",
           "R": "Саранчи будет так много, что никто не сможет увидеть землю. Она съест всё, что не побил град. Она объест листья со всех ваших деревьев в полях."
+        },
+        "ja": {
+          "L": "それは地の面を覆い、だれも地を見ることができなくなる。それは、逃れて残ったもの、雹を免れてあなたがたに残されているものの残りを食い尽くし、野に生えているあなたがたのすべての木を食い尽くす。",
+          "B": "いなごは地の面を覆い、地面が見えなくなるほどになる。雹の害を免れて残っているものを、すべて食い尽くし、野に生えているあなたがたの木を、一本残らず食い荒らす。",
+          "R": "いなごがあまりにも多くて、地面がまったく見えなくなる。ひょうでだめにならずに残ったものを、いなごは全部食べてしまう。野原にあるあなたたちの木の葉も、みな食べてしまう。"
+        },
+        "uk": {
+          "L": "І вкриє вона око землі, і не можна буде бачити землі; і зʼїсть вона решту вцілілого, що залишилося вам від граду, і зʼїсть кожне ваше дерево, що росте в полі.",
+          "B": "Вона вкриє лице землі так, що ніхто не побачить ґрунту. Вона пожере все, що вціліло від граду, усе, що у вас ще лишилося, і обʼїсть кожне ваше дерево, що росте в полі.",
+          "R": "Сарани буде стільки, що ніхто не побачить землі. Вона зʼїсть усе, що не знищив град. Вона обʼїсть листя з усіх ваших дерев у полях."
+        },
+        "id": {
+          "L": "Dan belalang itu akan menutupi muka bumi, sehingga orang tidak dapat melihat tanah; dan belalang itu akan memakan sisa yang luput, yang tertinggal bagimu dari hujan es, dan akan memakan setiap pohon yang tumbuh bagimu di padang.",
+          "B": "Belalang itu akan menutupi permukaan tanah, sehingga tidak ada orang yang dapat melihat tanah. Belalang itu akan menghabiskan apa saja yang luput dari hujan es, semua yang masih tersisa padamu, dan akan memakan setiap pohonmu yang tumbuh di padang.",
+          "R": "Belalang itu akan begitu banyak, sehingga tidak seorang pun dapat melihat tanah. Belalang itu akan memakan semua yang tidak dirusak oleh hujan es. Belalang itu akan memakan daun semua pohonmu yang ada di padang."
+        },
+        "zh": {
+          "L": "它们要遮盖地的眼目，以致没有人能看见地；它们要吃掉那逃过的、冰雹留给你们剩下的，也要吃掉你们田间所长的一切树木。",
+          "B": "蝗虫要遮满地面，叫人看不见地。它们要吞吃冰雹过后剩下的一切，就是你们仅存的东西，也要啃食你们田野里生长的每一棵树。",
+          "R": "蝗虫会多得让人看不见地面。冰雹没有毁坏的，它们都会吃掉。它们会把你们田野里所有树上的叶子都吃光。"
         }
       },
       "decisions": [
@@ -1199,6 +1559,68 @@
           "reason": "Russian \"саранча\" is a feminine singular for the whole swarm, as the Hebrew uses a singular (m3), so every level says \"она\" where English says \"they\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020100050031"
+          ],
+          "choice": "\"地の面\" for \"the eye of the land\" at Literal",
+          "alternatives": [
+            "\"地の目\""
+          ],
+          "reason": "\"地の目\" is not Japanese; \"面\" keeps the picture of the visible surface, as the meaning decision explains.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020100050031",
+            "o020100050041",
+            "o020100050042",
+            "o020100050012"
+          ],
+          "choice": "\"око землі\" and \"вона\" for the swarm",
+          "alternatives": [
+            "\"поверхню землі\""
+          ],
+          "reason": "Literal keeps the Hebrew \"eye of the land\" (m1); \"сарана\" is a feminine collective noun, so the swarm is \"вона\" as one body (m3), where the English says \"they\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020100050031",
+            "o020100050041",
+            "o020100050042"
+          ],
+          "choice": "\"地的眼目\"",
+          "alternatives": [
+            "\"地面\""
+          ],
+          "reason": "Literal keeps the Hebrew picture, \"the eye of the land\", as the English Literal does; Balanced and Readable say \"地面\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1307,6 +1729,26 @@
           "L": "И наполнят твои дома, и дома всех твоих рабов, и дома всех египтян, чего не видели твои отцы и отцы твоих отцов со дня, как они на земле, до этого дня.”» И повернулся он и вышел от фараона.",
           "B": "Ею наполнятся твои дома, дома всех твоих придворных и всех египтян. Такого не видели твои предки — ни твои отцы, ни их отцы — за всё время, что они живут на этой земле.”» Потом Моисей повернулся и вышел от фараона.",
           "R": "Она наполнит твои дома, дома твоих придворных и всех египтян. Ничего подобного не было с тех пор, как ваш народ стал жить на этой земле, — ни при ваших родителях, ни при ваших дедах.”» Потом Моисей развернулся и ушёл от фараона."
+        },
+        "ja": {
+          "L": "それは、あなたの家々、あなたのすべての家臣たちの家々、すべてのエジプト人の家々に満ちる。あなたの父たちも、あなたの父たちの父たちも、彼らがこの地上にいるようになった日から今日に至るまで、見たことのないものである。』」そして彼は向きを変えて、ファラオのもとから出て行った。",
+          "B": "あなたの家々も、家臣たちの家々も、エジプト人すべての家々も、いなごで満ちる。それは、あなたの先祖たちが、父の代にも祖父の代にも、この地に住むようになってから今日まで、一度も見たことのない光景である。』」そう言うと、モーセは向きを変えて、ファラオのもとから出て行った。",
+          "R": "いなごは、あなたの家にも、家来たちの家にも、エジプト人みんなの家にもいっぱいになる。あなたの親の代にも、祖父母の代にも、あなたたちの民がこの地に住み始めてから、こんなことは一度もなかった。』」そしてモーセは向きを変えて、ファラオのところから出て行きました。"
+        },
+        "uk": {
+          "L": "І наповнить вона твої доми, і доми всіх твоїх рабів, і доми всіх єгиптян, [чого] не бачили твої батьки і батьки твоїх батьків від дня, коли вони були на землі, і до цього дня”». І обернувся він, і вийшов від фараона.",
+          "B": "Твої доми будуть повні нею, а також доми всіх твоїх урядовців і всіх єгиптян. Такого не бачили твої предки, ні батьки, ні діди, відколи живуть на цій землі”». Тоді Мойсей обернувся й вийшов від фараона.",
+          "R": "Вона заповнить твої доми, доми твоїх урядовців і всіх єгиптян. Нічого такого не бувало, відколи твій народ живе на цій землі, ні за твоїх батьків, ні за твоїх дідів”». Тоді Мойсей обернувся й пішов від фараона."
+        },
+        "id": {
+          "L": "Dan belalang itu akan memenuhi rumah-rumahmu dan rumah-rumah semua pegawaimu dan rumah-rumah semua orang Mesir, yang tidak pernah dilihat oleh nenek moyangmu dan nenek moyang nenek moyangmu sejak hari mereka ada di atas tanah ini sampai hari ini.'\" Lalu ia berbalik dan keluar dari hadapan Firaun.",
+          "B": "Rumah-rumahmu akan penuh dengan belalang, demikian juga rumah semua pegawaimu dan rumah semua orang Mesir. Itu suatu hal yang tidak pernah dilihat oleh ayah-ayahmu maupun kakek-kakekmu selama mereka hidup di tanah ini.'\" Lalu Musa berbalik dan keluar dari hadapan Firaun.",
+          "R": "Belalang itu akan memenuhi rumah-rumahmu dan rumah-rumah para pegawaimu dan semua orang Mesir. Hal seperti ini belum pernah terjadi sejak bangsamu mulai tinggal di negeri ini, tidak juga pada zaman orang tuamu atau zaman kakek nenekmu.'\" Lalu Musa berbalik dan meninggalkan Firaun."
+        },
+        "zh": {
+          "L": "它们要充满你的房屋、你众臣仆的房屋和所有埃及人的房屋，是你的祖先和你祖先的祖先，从他们在这地上的日子直到今日，都没有见过的。’”他就转身，从法老那里出去了。",
+          "B": "您的宫室要满了蝗虫，您所有臣子的房屋和所有埃及人的房屋也是这样。这是您的祖先，无论是您的父辈还是他们的父辈，自从住在这片土地上以来，从来没有见过的。’”说完，摩西就转身离开了法老。",
+          "R": "它们会挤满您的宫室，也会挤满您官员的房子和所有埃及人的房子。从您的祖先最初住在这地方以来，无论在您父母的时代还是在您祖父母的时代，都没有发生过这样的事。’”然后摩西转身离开了法老。"
         }
       },
       "decisions": [
@@ -1357,6 +1799,47 @@
           "alternatives": [],
           "reason": "Balanced and Readable name Moses; Literal keeps \"he\".",
           "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020100060222",
+            "o020100060232"
+          ],
+          "choice": "\"Musa\" named (B, R)",
+          "alternatives": [],
+          "reason": "The Hebrew says only \"he turned\" (m2, Moses); Balanced and Readable name him, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o020100060121",
+            "o020100060132",
+            "o020100060141"
+          ],
+          "choice": "\"您\" for Pharaoh in God's message as Moses delivers it",
+          "alternatives": [
+            "\"你\""
+          ],
+          "reason": "Moses and Aaron say \"您\" to Pharaoh at Balanced and Readable (Chinese glossary); here the English Balanced and Readable turn the end of the message into Moses' own words to the king.",
+          "uncertain": true,
           "footnote": false
         }
       ],
@@ -1455,6 +1938,26 @@
           "L": "И сказали фараону его рабы: «Доколе этот [человек] будет нам западнёй? Отпусти людей, чтобы они служили {{divine_name:ГОСПОДУ|Яхве}}, своему Богу. Неужели ты ещё не знаешь, что погиб Египет?»",
           "B": "Придворные фараона сказали ему: «Сколько ещё этот человек будет для нас ловушкой? Отпусти этих людей, пусть служат {{divine_name:ГОСПОДУ|Яхве}}, своему Богу. Неужели ты ещё не понял, что Египет погибает?»",
           "R": "Придворные фараона сказали ему: «Сколько ещё этот человек будет причинять нам беды? Отпусти этих людей поклониться {{divine_name:ГОСПОДУ|Яхве}}, их Богу. Египет уже разорён! Неужели ты не видишь?»"
+        },
+        "ja": {
+          "L": "ファラオの家臣たちは彼に言った。「いつまで、この者はわたしたちにとって罠となるのでしょうか？その男たちを去らせ、彼らの神、{{divine_name:主|ヤハウェ}}に仕えさせてください。エジプトが滅びてしまったことが、まだおわかりにならないのですか？」",
+          "B": "ファラオの家臣たちは王に言った。「いつまで、この男はわたしたちを陥れる罠となるのでしょうか？あの者たちを去らせて、彼らの神、{{divine_name:主|ヤハウェ}}に仕えさせてください。エジプトがもう滅びかけていることを、まだお悟りにならないのですか？」",
+          "R": "ファラオの家来たちはファラオに言いました。「いつまで、この男のせいで、わたしたちは苦しまなければならないのですか？あの人たちを行かせて、彼らの神、{{divine_name:主|ヤハウェ}}を礼拝させてください。エジプトはもうめちゃくちゃです。おわかりにならないのですか？」"
+        },
+        "uk": {
+          "L": "І сказали раби фараона йому: «Доки цей [чоловік] буде нам пасткою? Відпусти цих людей, щоб вони служили {{divine_name:ГОСПОДУ|Ягве}}, своєму Богові. Хіба ти ще не знаєш, що Єгипет загинув?»",
+          "B": "Фараонові урядовці сказали йому: «Доки цей чоловік буде для нас пасткою? Відпусти людей, нехай служать {{divine_name:ГОСПОДУ|Ягве}}, своєму Богові. Невже ти досі не зрозумів, що Єгипет пропав?»",
+          "R": "Фараонові урядовці сказали йому: «Скільки ще цей чоловік завдаватиме нам лиха? Відпусти людей, нехай ідуть поклонитися {{divine_name:ГОСПОДУ|Ягве}}, своєму Богові. Єгипет уже зруйнований! Невже ти цього не бачиш?»"
+        },
+        "id": {
+          "L": "Dan para pegawai Firaun berkata kepadanya, \"Berapa lama lagi orang ini menjadi jerat bagi kita? Biarkanlah orang-orang itu pergi, supaya mereka beribadah kepada {{divine_name:TUHAN|Yahweh}}, Allah mereka. Belum tahukah Tuanku bahwa Mesir sudah binasa?\"",
+          "B": "Para pegawai Firaun berkata kepadanya, \"Berapa lama lagi orang ini menjadi jerat bagi kita? Biarkanlah orang-orang itu pergi beribadah kepada {{divine_name:TUHAN|Yahweh}}, Allah mereka. Belum sadarkah Tuanku bahwa Mesir sudah hancur?\"",
+          "R": "Para pegawai Firaun berkata kepadanya, \"Berapa lama lagi orang ini akan menyusahkan kita? Biarkan orang-orang itu pergi beribadah kepada {{divine_name:TUHAN|Yahweh}}, Allah mereka. Mesir sudah hancur! Apakah Baginda tidak melihatnya?\""
+        },
+        "zh": {
+          "L": "法老的臣仆对他说：“这人作我们的网罗要到几时呢？让这些男人走，好让他们事奉{{divine_name:上主|雅威}}他们的{{god_term:神|上帝}}。你还不知道埃及已经败亡了吗？”",
+          "B": "法老的臣子对他说：“这人要成为我们的陷阱到几时呢？让这些男人去事奉{{divine_name:上主|雅威}}他们的{{god_term:神|上帝}}吧。难道您还看不出埃及已经完了吗？”",
+          "R": "法老的官员对他说：“这个人还要给我们带来多少麻烦呢？让这些男人去敬拜{{divine_name:上主|雅威}}他们的{{god_term:神|上帝}}吧。埃及已经毁了！您还看不出来吗？”"
         }
       },
       "decisions": [
@@ -1668,6 +2171,108 @@
           "reason": "Courtiers address their king with \"आप\". \"The men\" may mean the men only (m2), so Hindi says \"पुरुष\" with no setting, as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o020100070011",
+            "o020100070012",
+            "o020100070021"
+          ],
+          "choice": "Pharaoh's officials speak to him with respect forms (\"おわかりにならない\", \"お悟りにならない\")",
+          "alternatives": [
+            "plain speech"
+          ],
+          "reason": "Courtiers pleading with their king; their urgency shows in the questions, not in dropping the courtesy.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020100070131",
+            "o020100070132"
+          ],
+          "choice": "\"あの者たち\" (B), \"あの人たち\" (R) for \"the men\"; \"その男たち\" at Literal",
+          "alternatives": [
+            "\"男たち\" at every level"
+          ],
+          "reason": "Here the word may mean the people as a whole (uncertain, see the meaning footnote), so Balanced and Readable keep it open; in 10:11 Pharaoh's \"men\" are only the males and stay \"男たち\".",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020100070132"
+          ],
+          "choice": "\"kita\", inclusive, in the officials' words; \"Tuanku\" (L, B), \"Baginda\" (R)",
+          "alternatives": [],
+          "reason": "The officials count the king with themselves in the danger, so \"kita\"; they address him in the court form. \"orang-orang itu\" leaves open whether \"the men\" means the males or the people (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o020100070211"
+          ],
+          "choice": "\"您\" for Pharaoh in his officials' words",
+          "alternatives": [
+            "\"你\""
+          ],
+          "reason": "Officials speak to their king; Balanced and Readable say \"您\", Literal \"你\", as the Chinese glossary sets.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020100070132"
+          ],
+          "choice": "\"男人\", with no gender span",
+          "alternatives": [],
+          "reason": "As the English: the officials may mean the men only, so no inclusive form is offered.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1759,6 +2364,26 @@
           "L": "И возвратили Моисея и Аарона к фараону, и он сказал им: «Пойдите, служите {{divine_name:ГОСПОДУ|Яхве}}, вашему Богу. Кто именно пойдёт?»",
           "B": "Моисея и Аарона привели обратно к фараону, и он сказал им: «Идите, служите {{divine_name:ГОСПОДУ|Яхве}}, вашему Богу. Но кто же именно пойдёт?»",
           "R": "Моисея и Аарона снова привели к фараону. Он сказал им: «Идите и поклонитесь {{divine_name:ГОСПОДУ|Яхве}}, вашему Богу. Но кто из вашего народа пойдёт?»"
+        },
+        "ja": {
+          "L": "モーセとアロンはファラオのもとに連れ戻された。彼は彼らに言った。「行って、あなたがたの神、{{divine_name:主|ヤハウェ}}に仕えよ。だが、行くのはだれとだれか？」",
+          "B": "モーセとアロンがファラオのもとに連れ戻されると、ファラオは彼らに言った。「行って、あなたがたの神、{{divine_name:主|ヤハウェ}}に仕えるがよい。だが、いったいだれが行くのか？」",
+          "R": "そこで、モーセとアロンはファラオのところに連れ戻されました。ファラオは二人に言いました。「行って、あなたたちの神、{{divine_name:主|ヤハウェ}}を礼拝するがよい。だが、だれが行くのか？」"
+        },
+        "uk": {
+          "L": "І повернули Мойсея та Аарона до фараона, і він сказав їм: «Ідіть, служіть {{divine_name:ГОСПОДУ|Ягве}}, вашому Богові. Хто і хто піде?»",
+          "B": "Мойсея та Аарона знову привели до фараона, і він сказав їм: «Ідіть, служіть {{divine_name:ГОСПОДУ|Ягве}}, вашому Богові. Але хто саме піде?»",
+          "R": "Тож Мойсея та Аарона знову привели до фараона. Він сказав їм: «Ідіть, поклоніться {{divine_name:ГОСПОДУ|Ягве}}, вашому Богові. Але хто з ваших людей піде?»"
+        },
+        "id": {
+          "L": "Lalu Musa dan Harun dibawa kembali kepada Firaun, dan ia berkata kepada mereka, \"Pergilah, beribadahlah kepada {{divine_name:TUHAN|Yahweh}}, Allah kalian; tetapi siapa sajakah yang akan pergi?\"",
+          "B": "Musa dan Harun dibawa kembali kepada Firaun, dan ia berkata kepada mereka, \"Pergilah beribadah kepada {{divine_name:TUHAN|Yahweh}}, Allah kalian. Tetapi siapa saja yang akan pergi?\"",
+          "R": "Jadi Musa dan Harun dibawa kembali kepada Firaun. Ia berkata kepada mereka, \"Pergilah beribadah kepada {{divine_name:TUHAN|Yahweh}}, Allah kalian. Tetapi siapa saja dari bangsamu yang akan pergi?\""
+        },
+        "zh": {
+          "L": "摩西和亚伦被带回到法老那里，法老对他们说：“你们去，事奉{{divine_name:上主|雅威}}你们的{{god_term:神|上帝}}。要去的是谁和谁呢？”",
+          "B": "摩西和亚伦被带回到法老面前，法老对他们说：“你们去事奉{{divine_name:上主|雅威}}你们的{{god_term:神|上帝}}吧。但究竟哪些人要去呢？”",
+          "R": "于是摩西和亚伦被带回到法老那里。法老对他们说：“你们去敬拜{{divine_name:上主|雅威}}你们的{{god_term:神|上帝}}吧。可是你们的人当中，哪些人要去呢？”"
         }
       },
       "decisions": [
@@ -1906,6 +2531,26 @@
           "L": "И сказал Моисей: «С нашими молодыми и с нашими старыми мы пойдём, с нашими сыновьями и с нашими дочерьми, с нашим мелким скотом и с нашим крупным скотом мы пойдём, потому что у нас праздник {{divine_name:ГОСПОДА|Яхве}}.»",
           "B": "Моисей сказал: «Мы пойдём все — и молодые, и старые. Пойдут наши сыновья и дочери, пойдут и наши стада, мелкий и крупный скот, потому что у нас праздник {{divine_name:ГОСПОДА|Яхве}}.»",
           "R": "Моисей сказал: «Пойдут все — и молодые, и старые. Пойдут наши сыновья и дочери. Мы возьмём своих овец, коз и коров. Это праздник {{divine_name:ГОСПОДА|Яхве}}, и он для всех нас.»"
+        },
+        "ja": {
+          "L": "モーセは言った。「わたしたちは若い者たちと年寄りたちと共に行きます。息子たちと娘たちと共に、羊の群れと牛の群れと共に行きます。わたしたちにとって{{divine_name:主|ヤハウェ}}の祭りだからです。」",
+          "B": "モーセは言った。「若い者も年老いた者も、みな行きます。息子も娘も、羊も牛も連れて行きます。わたしたちは{{divine_name:主|ヤハウェ}}の祭りを行うのですから。」",
+          "R": "モーセは言いました。「みんなで行きます。若い人もお年寄りもです。息子たちも娘たちも行きます。羊ややぎや牛も連れて行きます。これは{{divine_name:主|ヤハウェ}}のための祭りで、わたしたちみんなのための祭りなのです。」"
+        },
+        "uk": {
+          "L": "І сказав Мойсей: «З нашими молодими і з нашими старими ми підемо; з нашими синами і з нашими дочками, з нашою дрібною худобою і з нашою великою худобою ми підемо, бо в нас свято {{divine_name:ГОСПОДНЄ|Ягве}}».",
+          "B": "Мойсей сказав: «Ми підемо всі, і молоді, і старі. Підуть наші сини й дочки, наші отари й череди, бо ми справляємо свято {{divine_name:ГОСПОДНЄ|Ягве}}».",
+          "R": "Мойсей сказав: «Підуть усі, молоді й старі. Підуть наші сини й дочки. Ми візьмемо наших овець, кіз і корів. Це свято {{divine_name:ГОСПОДНЄ|Ягве}}, і воно для всіх нас»."
+        },
+        "id": {
+          "L": "Dan Musa berkata, \"Dengan orang-orang muda kami dan dengan orang-orang tua kami kami akan pergi, dengan anak-anak laki-laki kami dan dengan anak-anak perempuan kami, dengan kambing domba kami dan dengan lembu sapi kami kami akan pergi, sebab kami harus mengadakan perayaan bagi {{divine_name:TUHAN|Yahweh}}.\"",
+          "B": "Musa menjawab, \"Kami akan pergi bersama orang muda dan orang tua. Anak-anak kami, laki-laki dan perempuan, akan pergi, dan kambing domba serta lembu sapi kami juga, sebab kami akan mengadakan perayaan bagi {{divine_name:TUHAN|Yahweh}}.\"",
+          "R": "Musa berkata, \"Semua orang akan pergi, yang muda dan yang tua. Anak-anak kami, laki-laki dan perempuan, akan pergi. Kami akan membawa domba, kambing, dan sapi kami. Ini perayaan bagi {{divine_name:TUHAN|Yahweh}}, dan perayaan ini untuk kami semua.\""
+        },
+        "zh": {
+          "L": "摩西说：“我们要和我们的年轻人、我们的老年人一同去；我们要和我们的儿子、我们的女儿，和我们的羊群、我们的牛群一同去，因为我们要向{{divine_name:上主|雅威}}守节。”",
+          "B": "摩西说：“我们老老少少都要去，我们的儿女要去，我们的羊群牛群也要去，因为我们要守{{divine_name:上主|雅威}}的节期。”",
+          "R": "摩西说：“所有的人都要去，年轻的和年老的都要去。我们的儿子和女儿都要去。我们还要带着我们的绵羊、山羊和牛。这是{{divine_name:上主|雅威}}的节期，是我们所有人的节期。”"
         }
       },
       "decisions": [
@@ -1999,6 +2644,47 @@
           "reason": "The word is a pilgrimage feast held for God (meaning decision); \"kỳ lễ\" is a sacred feast at its set time, where \"lễ hội\" would sound like a popular fair.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020100090121"
+          ],
+          "choice": "\"祭り\" for the festival (chag)",
+          "alternatives": [
+            "\"祭典\"",
+            "\"巡礼祭\""
+          ],
+          "reason": "The everyday word, used for Israel's feasts later in the book (the feast of unleavened bread, 12:17).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [],
+          "choice": "\"свято {{divine_name:ГОСПОДНЄ|Ягве}}\" with the adjective in the default and the bare name in the alternative",
+          "alternatives": [
+            "\"свято {{divine_name:ГОСПОДА|Ягве}}\""
+          ],
+          "reason": "Ukrainian forms the possessive adjective from \"Господь\" (\"Господнє свято\"), but \"Ягве\" takes no adjective; each option is inflected on its own, as the terms note does for \"страх Господній\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2090,6 +2776,26 @@
           "L": "И он сказал им: «Пусть так будет {{divine_name:ГОСПОДЬ|Яхве}} с вами, как я отпущу вас и ваших детей! Смотрите, ведь зло у вас перед лицом.",
           "B": "Фараон сказал им: «Пусть {{divine_name:ГОСПОДЬ|Яхве}} будет с вами настолько же, насколько я отпущу вас с вашими детьми! Ясно, что вы замышляете зло.",
           "R": "Фараон стал насмехаться над ними: «Ну да, {{divine_name:ГОСПОДЬ|Яхве}} будет с вами — так же верно, как я отпущу вас вместе с детьми! Ясно, что вы задумали что-то плохое."
+        },
+        "ja": {
+          "L": "彼は彼らに言った。「わたしがあなたがたと、あなたがたの幼い子らを去らせるように、{{divine_name:主|ヤハウェ}}があなたがたと共にあるように！見ろ、悪があなたがたの顔の前にある。",
+          "B": "ファラオは彼らに言った。「わたしがあなたがたを幼い子どもたちと一緒に去らせるのと同じくらい確かに、{{divine_name:主|ヤハウェ}}があなたがたと共にいるとよいな！あなたがたが悪事をたくらんでいるのは明らかだ。",
+          "R": "ファラオは二人をあざけって言いました。「ああ、{{divine_name:主|ヤハウェ}}があなたたちと共にいるだろうよ。わたしが子どもたちまで連れて行かせるのと同じくらい確かにな！あなたたちが何か悪いことをたくらんでいるのは、見え見えだ。"
+        },
+        "uk": {
+          "L": "І сказав він їм: «Нехай так буде {{divine_name:ГОСПОДЬ|Ягве}} з вами, як я відпущу вас і ваших малих! Дивіться, бо лихе перед вашим обличчям.",
+          "B": "Фараон сказав їм: «Нехай {{divine_name:ГОСПОДЬ|Ягве}} буде з вами так само певно, як я відпущу вас разом з вашими дітьми! Ясно, що ви задумали лихе.",
+          "R": "Фараон посміявся з них. «Аякже, {{divine_name:ГОСПОДЬ|Ягве}} буде з вами, так само певно, як я дозволю вам узяти з собою дітей! Ви явно задумали щось лихе."
+        },
+        "id": {
+          "L": "Tetapi ia berkata kepada mereka, \"Biarlah {{divine_name:TUHAN|Yahweh}} menyertai kalian, sama seperti aku akan membiarkan kalian dan anak-anak kecil kalian pergi! Lihat, kejahatan ada di depan muka kalian.",
+          "B": "Firaun berkata kepada mereka, \"Semoga {{divine_name:TUHAN|Yahweh}} menyertai kalian, sama pastinya dengan aku membiarkan kalian pergi bersama anak-anak kecil kalian! Jelas kalian merencanakan sesuatu yang jahat.",
+          "R": "Firaun mengejek mereka. \"Oh, tentu, {{divine_name:TUHAN|Yahweh}} akan menyertai kalian, sama pastinya dengan aku membiarkan kalian membawa anak-anak kalian! Jelas kalian merencanakan sesuatu yang jahat."
+        },
+        "zh": {
+          "L": "法老对他们说：“我让你们和你们的孩子走的时候，愿{{divine_name:上主|雅威}}也这样与你们同在！你们看，恶事就在你们面前。",
+          "B": "法老对他们说：“我会让你们带着孩子走吗？那么{{divine_name:上主|雅威}}就会与你们同在吧！你们分明是心怀恶意。",
+          "R": "法老嘲笑他们说：“哼，{{divine_name:上主|雅威}}会与你们同在，就像我会让你们带着孩子走一样！你们明明是在打坏主意。"
         }
       },
       "decisions": [
@@ -2202,6 +2908,51 @@
           "reason": "Amharic keeps the ironic blessing as the Hebrew does; Readable adds \"he mocked them\" (\"አፌዘባቸው\") as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020100100031",
+            "o020100100041"
+          ],
+          "choice": "Pharaoh's wish is given an ironic tone (\"とよいな！\", \"だろうよ\")",
+          "alternatives": [
+            "a sincere-sounding \"共にいるように\""
+          ],
+          "reason": "The meaning decision reads it as mockery meaning \"I will never let you go\"; a straight blessing would mislead a Japanese reader.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020100100031",
+            "o020100100041",
+            "o020100100051",
+            "o020100100071",
+            "o020100100081",
+            "o020100100111"
+          ],
+          "choice": "Pharaoh's mocking wish kept as a wish; \"anak-anak kecil\" for the little ones",
+          "alternatives": [],
+          "reason": "The words mean \"I will never let you go\" (m1); the mockery is left to the reader at Literal and Balanced, and Readable says that he mocked, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2292,6 +3043,26 @@
           "L": "Не так! Пойдите же, мужчины, и служите {{divine_name:ГОСПОДУ|Яхве}}, ведь этого вы и ищете.» И выгнали их от лица фараона.",
           "B": "Нет уж! Пусть идут одни мужчины и служат {{divine_name:ГОСПОДУ|Яхве}}: ведь вы этого и хотите.» И их выгнали от фараона.",
           "R": "Нет! Пусть идут только ваши мужчины и поклоняются {{divine_name:ГОСПОДУ|Яхве}}. Вы ведь об этом и просили.» И Моисея и Аарона прогнали от фараона."
+        },
+        "ja": {
+          "L": "そうではない。さあ、男たちが行って、{{divine_name:主|ヤハウェ}}に仕えよ。それこそ、あなたがたが求めていることだ。」そして人々は、彼らをファラオの前から追い出した。",
+          "B": "そうはいかない。男たちだけが行って、{{divine_name:主|ヤハウェ}}に仕えるがよい。あなたがたが求めているのは、それなのだから。」こうして二人はファラオの前から追い払われた。",
+          "R": "だめだ。男だけが行って、{{divine_name:主|ヤハウェ}}を礼拝せよ。それが、あなたたちの願いなのだろう。」そしてモーセとアロンは、ファラオの前から追い出されました。"
+        },
+        "uk": {
+          "L": "Не так! Ідіть тепер, чоловіки, і служіть {{divine_name:ГОСПОДУ|Ягве}}, бо цього ви шукаєте». І вигнали їх з-перед обличчя фараона.",
+          "B": "Ні, не так! Ідіть ви, чоловіки, і служіть {{divine_name:ГОСПОДУ|Ягве}}, адже саме цього ви й хочете». І їх прогнали від фараона.",
+          "R": "Ні! Тільки ваші чоловіки можуть піти поклонитися {{divine_name:ГОСПОДУ|Ягве}}. Ви ж цього й просили». Тоді Мойсея та Аарона прогнали від фараона."
+        },
+        "id": {
+          "L": "Tidak demikian! Pergilah kalian, orang laki-laki saja, dan beribadahlah kepada {{divine_name:TUHAN|Yahweh}}, sebab itulah yang kalian minta.\" Lalu mereka diusir dari hadapan Firaun.",
+          "B": "Tidak begitu! Kalian, kaum laki-laki, boleh pergi beribadah kepada {{divine_name:TUHAN|Yahweh}}, sebab itulah yang kalian inginkan.\" Lalu mereka diusir dari hadapan Firaun.",
+          "R": "Tidak! Hanya kaum laki-laki yang boleh pergi beribadah kepada {{divine_name:TUHAN|Yahweh}}. Itulah yang kalian minta, bukan?\" Lalu Musa dan Harun diusir dari hadapan Firaun."
+        },
+        "zh": {
+          "L": "不可这样！你们男人去事奉{{divine_name:上主|雅威}}吧，因为这是你们所求的。”于是他们把他们从法老面前赶了出去。",
+          "B": "不行！你们男人可以去事奉{{divine_name:上主|雅威}}，这本来就是你们想要的。”说完，他们就被赶出了法老的面前。",
+          "R": "不行！只有你们的男人可以去敬拜{{divine_name:上主|雅威}}。反正这就是你们要求的。”然后摩西和亚伦就被赶出了法老的宫。"
         }
       },
       "decisions": [
@@ -2473,6 +3244,26 @@
           "L": "И сказал {{divine_name:ГОСПОДЬ|Яхве}} Моисею: «Простри свою руку над землёй Египта для саранчи, чтобы она поднялась на землю Египта и поела всю траву земли, всё, что оставил град.»",
           "B": "{{divine_name:ГОСПОДЬ|Яхве}} сказал Моисею: «Протяни руку над землёй Египта, чтобы пришла саранча. Она налетит на землю Египта и поест всю зелень в стране, всё, что уцелело от града.»",
           "R": "{{divine_name:ГОСПОДЬ|Яхве}} сказал Моисею: «Протяни руку над Египтом. Тогда на землю налетит саранча. Она съест все растения, которые не побил град.»"
+        },
+        "ja": {
+          "L": "{{divine_name:主|ヤハウェ}}はモーセに言われた。「いなごのために、エジプトの地の上にあなたの手を伸ばしなさい。いなごがエジプトの地に上って来て、地のすべての草、雹が残したすべてのものを食い尽くすように。」",
+          "B": "{{divine_name:主|ヤハウェ}}はモーセに言われた。「エジプトの地の上に手を差し伸べて、いなごを呼び寄せなさい。いなごはエジプトの地に上って来て、雹が残したもの、この国のあらゆる草を食い尽くす。」",
+          "R": "{{divine_name:主|ヤハウェ}}はモーセに言われました。「エジプトの上に手を差し出しなさい。そうすれば、いなごがこの地に上って来る。そして、ひょうでだめにならなかった草を、すべて食べてしまう。」"
+        },
+        "uk": {
+          "L": "І сказав {{divine_name:ГОСПОДЬ|Ягве}} Мойсеєві: «Простягни свою руку над землею Єгипту по сарану, щоб вона прийшла на землю Єгипту і зʼїла всяку рослину землі, усе, що залишив град».",
+          "B": "{{divine_name:ГОСПОДЬ|Ягве}} сказав Мойсеєві: «Простягни руку над єгипетською землею, щоб прийшла сарана. Вона налетить на єгипетську землю й пожере всі рослини в країні, усе, що вціліло від граду».",
+          "R": "{{divine_name:ГОСПОДЬ|Ягве}} сказав Мойсеєві: «Простягни руку над Єгиптом. Тоді на землю налетить сарана. Вона зʼїсть усі рослини, яких не знищив град»."
+        },
+        "id": {
+          "L": "Dan {{divine_name:TUHAN|Yahweh}} berfirman kepada Musa, \"Ulurkanlah tanganmu atas tanah Mesir untuk mendatangkan belalang, supaya belalang itu naik ke atas tanah Mesir dan memakan segala tumbuhan di negeri itu, segala yang ditinggalkan oleh hujan es.\"",
+          "B": "{{divine_name:TUHAN|Yahweh}} berfirman kepada Musa, \"Ulurkanlah tanganmu atas tanah Mesir untuk mendatangkan belalang. Belalang itu akan naik ke atas tanah Mesir dan memakan setiap tumbuhan di negeri itu, segala yang tersisa dari hujan es.\"",
+          "R": "{{divine_name:TUHAN|Yahweh}} berfirman kepada Musa, \"Ulurkan tanganmu atas Mesir. Lalu belalang akan datang ke negeri itu. Belalang itu akan memakan semua tanaman yang tidak dirusak oleh hujan es.\""
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}对摩西说：“你要向埃及地伸手，使蝗虫上到埃及地，吃尽地上一切的植物，就是冰雹所留下的一切。”",
+          "B": "{{divine_name:上主|雅威}}对摩西说：“你向埃及地伸手，召来蝗虫。它们会上到埃及地，吃尽这地一切的植物，就是冰雹剩下的一切。”",
+          "R": "{{divine_name:上主|雅威}}对摩西说：“你向埃及伸手。那时蝗虫就会上来，遍满那地。冰雹没有毁坏的植物，它们都会吃掉。”"
         }
       },
       "decisions": [
@@ -2607,6 +3398,26 @@
           "L": "И простёр Моисей свой посох над землёй Египта, и {{divine_name:ГОСПОДЬ|Яхве}} навёл на землю восточный ветер на весь тот день и на всю ночь. Настало утро, и восточный ветер принёс саранчу.",
           "B": "Моисей протянул свой посох над землёй Египта, и {{divine_name:ГОСПОДЬ|Яхве}} послал восточный ветер, который дул над землёй весь тот день и всю ночь. А когда настало утро, восточный ветер принёс саранчу.",
           "R": "Моисей протянул посох над Египтом. И {{divine_name:ГОСПОДЬ|Яхве}} сделал так, что весь тот день и всю ночь над землёй дул ветер с востока. Утром прилетела саранча, которую принёс ветер."
+        },
+        "ja": {
+          "L": "モーセがエジプトの地の上に杖を伸ばすと、{{divine_name:主|ヤハウェ}}はその日一日中、また一晩中、東風をその地に吹かせられた。朝になると、東風がいなごを運んで来た。",
+          "B": "そこでモーセがエジプトの地の上に杖を差し伸べると、{{divine_name:主|ヤハウェ}}は、その日一日中、また夜通し、東風をこの地に吹きつけられた。朝になると、東風に運ばれて、いなごがやって来ていた。",
+          "R": "そこでモーセは、エジプトの上に杖を差し出しました。すると{{divine_name:主|ヤハウェ}}は、その日一日中、そして一晩中、東から風を吹かせられました。朝になると、その風に運ばれて、いなごがやって来ました。"
+        },
+        "uk": {
+          "L": "І простягнув Мойсей свою палицю над землею Єгипту, і {{divine_name:ГОСПОДЬ|Ягве}} навів східний вітер на землю весь той день і всю ніч. [Коли] настав ранок, східний вітер приніс сарану.",
+          "B": "Тож Мойсей простягнув палицю над єгипетською землею, і {{divine_name:ГОСПОДЬ|Ягве}} послав східний вітер, який дув над країною весь той день і всю ніч. Коли настав ранок, східний вітер приніс сарану.",
+          "R": "Тож Мойсей простягнув палицю над Єгиптом. І {{divine_name:ГОСПОДЬ|Ягве}} зробив так, що весь той день і всю ніч над країною дув вітер зі сходу. Уранці налетіла сарана, яку приніс вітер."
+        },
+        "id": {
+          "L": "Lalu Musa mengulurkan tongkatnya atas tanah Mesir, dan {{divine_name:TUHAN|Yahweh}} mendatangkan angin timur ke atas negeri itu sepanjang hari itu dan sepanjang malam; ketika pagi tiba, angin timur itu telah membawa belalang.",
+          "B": "Musa mengulurkan tongkatnya atas tanah Mesir, dan {{divine_name:TUHAN|Yahweh}} membuat angin timur bertiup atas negeri itu sepanjang hari dan sepanjang malam. Ketika pagi tiba, belalang sudah datang, dibawa oleh angin timur itu.",
+          "R": "Lalu Musa mengulurkan tongkatnya atas Mesir. {{divine_name:TUHAN|Yahweh}} membuat angin bertiup dari timur melintasi negeri itu sepanjang hari dan sepanjang malam. Pada pagi harinya belalang-belalang itu datang, dibawa oleh angin itu."
+        },
+        "zh": {
+          "L": "摩西就向埃及地伸出他的杖，{{divine_name:上主|雅威}}使东风在那地上刮了一整天一整夜；到了早晨，东风把蝗虫带来了。",
+          "B": "于是摩西向埃及地伸出杖，{{divine_name:上主|雅威}}就使东风吹过那地，刮了一整天一整夜。到了早晨，蝗虫已经随着东风来到了。",
+          "R": "于是摩西向埃及伸出杖。{{divine_name:上主|雅威}}让风从东边吹过那地，吹了一整天一整夜。到了早上，风就把蝗虫带来了。"
         }
       },
       "decisions": [
@@ -2737,6 +3548,26 @@
           "L": "И поднялась саранча на всю землю Египта и легла во всей области Египта, весьма тяжёлая; прежде неё не бывало такой саранчи, как эта, и после неё не будет такой.",
           "B": "Саранча налетела на всю землю Египта и опустилась по всей стране несметными тучами. Такой саранчи никогда прежде не было и после не будет.",
           "R": "Саранча налетела на весь Египет и опустилась повсюду. Её было огромное множество. Никогда раньше не было столько саранчи, и никогда больше не будет."
+        },
+        "ja": {
+          "L": "いなごはエジプトの全地に上って来て、エジプトの全領土にとどまった。非常に重かった。これより前にこのようないなごはなく、これより後にもこのようなものはないであろう。",
+          "B": "いなごはエジプト全土を襲い、そのすべての領土に、おびただしい数で降り立った。これほどのいなごの大群は、以前にもなかったし、これから後もないであろう。",
+          "R": "いなごはエジプト中にやって来て、あらゆる所に降りました。ものすごい数でした。こんなにたくさんのいなごは、前にも一度もなかったし、これからも二度とないでしょう。"
+        },
+        "uk": {
+          "L": "І прийшла сарана на всю землю Єгипту, і сіла в усій території Єгипту, дуже тяжка; перед нею не було такої сарани, як ця, і після неї не буде такої.",
+          "B": "Сарана заполонила всю єгипетську землю й осіла по всій країні величезною хмарою. Ніколи раніше не було такої сарани й ніколи вже не буде.",
+          "R": "Сарана налетіла на весь Єгипет і сіла всюди. Її було страшенно багато. Такої сили сарани ще ніколи не було й більше ніколи не буде."
+        },
+        "id": {
+          "L": "Dan belalang itu naik ke atas seluruh tanah Mesir dan hinggap di seluruh daerah Mesir, sangat banyak; sebelumnya tidak pernah ada belalang seperti itu, dan sesudahnya tidak akan ada lagi yang seperti itu.",
+          "B": "Belalang itu menyerbu seluruh tanah Mesir dan hinggap di seluruh wilayahnya dalam jumlah yang sangat besar. Belum pernah ada kawanan belalang seperti itu, dan tidak akan pernah ada lagi.",
+          "R": "Belalang-belalang itu datang ke seluruh Mesir dan hinggap di mana-mana. Jumlahnya sangat banyak. Belum pernah ada belalang sebanyak itu, dan tidak akan pernah ada lagi."
+        },
+        "zh": {
+          "L": "蝗虫上到埃及全地，落在埃及的四境，极其沉重；在这以前没有像这样的蝗虫，在这以后也不会有。",
+          "B": "蝗虫飞遍整个埃及地，成群地落在埃及境内。以前从来没有过这样多的蝗虫，以后也不会再有。",
+          "R": "蝗虫飞遍了整个埃及，到处都是。蝗虫多得数不清。以前从来没有过这么多蝗虫，以后也不会再有了。"
         }
       },
       "decisions": [
@@ -2789,6 +3620,26 @@
             "\"muy pesadas\""
           ],
           "reason": "\"Pesadas\" said of insects would suggest their weight; \"densas\" keeps the picture of a heavy, thick mass, which is what the Hebrew means here. French has \"très denses\" for the same reason.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020100140111",
+            "o020100140121"
+          ],
+          "choice": "\"极其沉重\"",
+          "alternatives": [
+            "\"极其众多\""
+          ],
+          "reason": "Literal keeps the Hebrew \"very heavy\", as the English Literal does; the meaning is dense, immense, which Balanced and Readable say.",
           "uncertain": false,
           "footnote": false
         }
@@ -2902,6 +3753,26 @@
           "L": "И покрыла она око всей земли, и потемнела земля; и поела она всю траву земли и все плоды деревьев, которые оставил град, и не осталось никакой зелени ни на деревьях, ни на полевой траве во всей земле Египта.",
           "B": "Она покрыла лицо всей земли, так что земля потемнела. Она поела все растения в стране и все плоды на деревьях, которые пощадил град. По всей земле Египта ни на деревьях, ни на полевых растениях не осталось ни одного зелёного листа.",
           "R": "Она покрыла землю так, что земля стала тёмной. Она съела все растения и все плоды на деревьях, которые не побил град. Во всём Египте не осталось ни одного зелёного листочка ни на деревьях, ни на растениях."
+        },
+        "ja": {
+          "L": "それは全地の面を覆い、地は暗くなった。それは地のすべての草と、雹が残した木のすべての実を食い尽くした。エジプトの全地で、木にも野の草にも、緑のものは何も残らなかった。",
+          "B": "いなごは全地の面を覆い、地は暗くなった。いなごはこの国のあらゆる草と、雹を免れた木の実をことごとく食い尽くした。エジプト全土で、木にも野の草にも、緑の葉は一枚も残らなかった。",
+          "R": "いなごが地面をおおって、あたりが暗くなるほどでした。ひょうでだめにならなかった草や木の実を、いなごはみんな食べてしまいました。エジプト中で、木にも草にも、緑の葉は一枚も残りませんでした。"
+        },
+        "uk": {
+          "L": "І вкрила вона око всієї землі, і потемніла земля; і зʼїла вона всяку рослину землі і всі плоди дерев, які залишив град, і не залишилося нічого зеленого ні на дереві, ні на польовій рослині в усій землі Єгипту.",
+          "B": "Вона вкрила лице всієї землі, аж земля потемніла. Вона пожерла всі рослини в країні й усі плоди на деревах, що вціліли від граду. По всій єгипетській землі не лишилося жодного зеленого листка ні на деревах, ні на польових рослинах.",
+          "R": "Сарана вкрила землю так, що та потемніла. Вона зʼїла всі рослини й усі плоди на деревах, яких не знищив град. В усьому Єгипті не лишилося жодного зеленого листка ні на дереві, ні на рослині."
+        },
+        "id": {
+          "L": "Dan belalang itu menutupi muka seluruh bumi, sehingga negeri itu menjadi gelap, dan belalang itu memakan segala tumbuhan di negeri itu dan segala buah pohon-pohonan yang ditinggalkan oleh hujan es, dan tidak ada yang hijau yang tertinggal pada pohon-pohonan atau pada tumbuhan di padang di seluruh tanah Mesir.",
+          "B": "Belalang itu menutupi permukaan seluruh negeri sampai negeri itu menjadi gelap. Belalang itu memakan habis setiap tumbuhan di negeri itu dan semua buah pada pohon-pohon yang luput dari hujan es. Di seluruh tanah Mesir tidak ada lagi daun hijau pada pohon atau tumbuhan di padang.",
+          "R": "Belalang-belalang itu menutupi tanah sampai tanah itu menjadi gelap karenanya. Mereka memakan setiap tanaman dan semua buah di pohon yang tidak dirusak oleh hujan es. Tidak ada sehelai daun hijau pun yang tersisa pada pohon atau tanaman di seluruh Mesir."
+        },
+        "zh": {
+          "L": "它们遮盖了全地的眼目，地就黑暗了；它们吃了地上一切的植物和冰雹留下的一切树上的果子；在埃及全地，无论是树木或田间的植物，连一点青绿的都没有留下。",
+          "B": "蝗虫遮满了全地，以致地都变黑了。它们吃光了这地一切的植物，和冰雹过后树上剩下的果子。在整个埃及地，无论树木还是田间的植物，连一片绿叶也没有留下。",
+          "R": "蝗虫盖满了地面，地都被它们遮黑了。冰雹没有毁坏的植物和树上的果子，它们全都吃光了。在整个埃及，没有一棵树、没有一株植物还留下一片绿叶。"
         }
       },
       "decisions": [
@@ -3042,6 +3913,26 @@
           "L": "И поспешил фараон призвать Моисея и Аарона и сказал: «Я согрешил перед {{divine_name:ГОСПОДОМ|Яхве}}, вашим Богом, и перед вами.",
           "B": "Фараон поспешно вызвал Моисея и Аарона и сказал: «Я согрешил перед {{divine_name:ГОСПОДОМ|Яхве}}, вашим Богом, и перед вами тоже.",
           "R": "Фараон быстро позвал Моисея и Аарона. Он сказал: «Я согрешил перед {{divine_name:ГОСПОДОМ|Яхве}}, вашим Богом, и согрешил перед вами."
+        },
+        "ja": {
+          "L": "ファラオは急いでモーセとアロンを呼んで言った。「わたしは、あなたがたの神、{{divine_name:主|ヤハウェ}}に対して、またあなたがたに対して罪を犯した。",
+          "B": "ファラオは急いでモーセとアロンを呼び寄せて言った。「わたしは、あなたがたの神、{{divine_name:主|ヤハウェ}}に対して罪を犯した。あなたがたに対してもだ。",
+          "R": "ファラオは、すぐにモーセとアロンを呼びました。そして言いました。「わたしは、あなたたちの神、{{divine_name:主|ヤハウェ}}に対して罪を犯した。あなたたちに対しても罪を犯した。"
+        },
+        "uk": {
+          "L": "І поспішив фараон покликати Мойсея та Аарона і сказав: «Я згрішив проти {{divine_name:ГОСПОДА|Ягве}}, вашого Бога, і проти вас.",
+          "B": "Фараон поспіхом покликав Мойсея та Аарона й сказав: «Я згрішив проти {{divine_name:ГОСПОДА|Ягве}}, вашого Бога, і проти вас теж.",
+          "R": "Фараон швидко покликав Мойсея та Аарона. Він сказав: «Я згрішив проти {{divine_name:ГОСПОДА|Ягве}}, вашого Бога, і згрішив проти вас."
+        },
+        "id": {
+          "L": "Lalu Firaun segera memanggil Musa dan Harun dan berkata, \"Aku telah berdosa terhadap {{divine_name:TUHAN|Yahweh}}, Allah kalian, dan terhadap kalian.",
+          "B": "Firaun cepat-cepat memanggil Musa dan Harun. Ia berkata, \"Aku telah berdosa terhadap {{divine_name:TUHAN|Yahweh}}, Allah kalian, dan juga terhadap kalian.",
+          "R": "Firaun cepat-cepat memanggil Musa dan Harun. Ia berkata, \"Aku telah berdosa terhadap {{divine_name:TUHAN|Yahweh}}, Allah kalian, dan aku telah berdosa terhadap kalian."
+        },
+        "zh": {
+          "L": "法老急忙召了摩西和亚伦来，说：“我得罪了{{divine_name:上主|雅威}}你们的{{god_term:神|上帝}}，也得罪了你们。",
+          "B": "法老赶紧派人叫来摩西和亚伦，说：“我得罪了{{divine_name:上主|雅威}}你们的{{god_term:神|上帝}}，也得罪了你们。",
+          "R": "法老赶快叫来摩西和亚伦。他说：“我得罪了{{divine_name:上主|雅威}}你们的{{god_term:神|上帝}}，也得罪了你们。"
         }
       },
       "decisions": [
@@ -3165,6 +4056,26 @@
           "L": "И теперь прости, пожалуйста, мой грех только на этот раз и помолитесь {{divine_name:ГОСПОДУ|Яхве}}, вашему Богу, чтобы {{deity_pronoun:он|Он}} только удалил от меня эту смерть.»",
           "B": "Прошу, простите мой грех, только в этот раз. Умолите {{divine_name:ГОСПОДА|Яхве}}, вашего Бога, чтобы {{deity_pronoun:он|Он}} хотя бы отвёл от меня эту смерть.»",
           "R": "Пожалуйста, простите мой грех только в этот раз. Помолитесь {{divine_name:ГОСПОДУ|Яхве}}, вашему Богу. Попросите {{deity_pronoun:его|Его}} избавить меня от этой смертоносной саранчи.»"
+        },
+        "ja": {
+          "L": "どうか今、今度だけはわたしの罪を赦してくれ。そして、ただこの死だけをわたしから取り去ってくださるように、あなたがたの神、{{divine_name:主|ヤハウェ}}に祈り願ってくれ。」",
+          "B": "どうか今度だけは、わたしの罪を赦してほしい。あなたがたの神、{{divine_name:主|ヤハウェ}}に願って、せめてこの死をわたしから取り除いてもらいたい。」",
+          "R": "どうか今度だけは、わたしの罪をゆるしてくれ。あなたたちの神、{{divine_name:主|ヤハウェ}}に祈ってくれ。この恐ろしいいなごから、わたしを救ってくださるように頼んでくれ。」"
+        },
+        "uk": {
+          "L": "А тепер прости, прошу, мій гріх тільки цього разу і благайте {{divine_name:ГОСПОДА|Ягве}}, вашого Бога, щоб {{deity_pronoun:він|Він}} відвернув від мене тільки цю смерть».",
+          "B": "Тож прости, будь ласка, мій гріх, тільки цього разу. Благайте {{divine_name:ГОСПОДА|Ягве}}, вашого Бога, щоб відвернув від мене хоча б цю смерть».",
+          "R": "Прости, будь ласка, мій гріх тільки цей один раз. Помоліться {{divine_name:ГОСПОДУ|Ягве}}, вашому Богові. Попросіть {{deity_pronoun:його|Його}} врятувати мене від цієї смертоносної сарани»."
+        },
+        "id": {
+          "L": "Dan sekarang, ampunilah kiranya dosaku sekali ini saja, dan mohonkanlah kepada {{divine_name:TUHAN|Yahweh}}, Allah kalian, supaya {{deity_pronoun:dia|Dia}} menjauhkan dari padaku maut ini saja.\"",
+          "B": "Sekarang, tolong ampunilah dosaku, sekali ini saja. Mohonlah kepada {{divine_name:TUHAN|Yahweh}}, Allah kalian, supaya setidaknya {{deity_pronoun:dia|Dia}} menjauhkan maut ini dari padaku.\"",
+          "R": "Tolong ampuni dosaku sekali ini saja. Berdoalah kepada {{divine_name:TUHAN|Yahweh}}, Allah kalian. Mintalah kepada-{{deity_pronoun:nya|Nya}} supaya {{deity_pronoun:dia|Dia}} menyelamatkan aku dari belalang yang mematikan ini.\""
+        },
+        "zh": {
+          "L": "现在求你们只这一次饶恕我的罪，恳求{{divine_name:上主|雅威}}你们的{{god_term:神|上帝}}，使{{deity_pronoun:他|祂}}只要从我身上除去这死亡。”",
+          "B": "现在求你们饶恕我的罪，只这一次就好。请你们求{{divine_name:上主|雅威}}你们的{{god_term:神|上帝}}，至少从我身上除去这致命的灾祸。”",
+          "R": "求你们饶恕我的罪，就这一次。请你们向{{divine_name:上主|雅威}}你们的{{god_term:神|上帝}}祷告，求{{deity_pronoun:他|祂}}救我脱离这些要命的蝗虫。”"
         }
       },
       "decisions": [
@@ -3257,6 +4168,49 @@
           "reason": "The Hebrew \"forgive\" is singular, addressed to Moses, and \"entreat\" is plural, addressed to both brothers (m2). Portuguese shows the change with the imperatives that go with \"você\" and \"vocês\": \"perdoe\" and then \"orem\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o020100170021",
+            "o020100170031"
+          ],
+          "choice": "Pharaoh asks forgiveness with \"〜てくれ\" / \"〜てほしい\", still without polite forms",
+          "alternatives": [
+            "\"お赦しください\""
+          ],
+          "reason": "The Hebrew \"please\" makes this a real plea, but a king does not take up polite speech to his subjects; Japanese softens the request instead.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020100170021"
+          ],
+          "choice": "\"赦す\" (L, B), \"ゆるす\" (R) for forgive",
+          "alternatives": [
+            "\"許す\""
+          ],
+          "reason": "The settled spelling for forgiving sin (style guide 7a).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3333,6 +4287,26 @@
           "L": "И вышел он от фараона и помолился {{divine_name:ГОСПОДУ|Яхве}}.",
           "B": "Моисей вышел от фараона и помолился {{divine_name:ГОСПОДУ|Яхве}}.",
           "R": "Моисей ушёл от фараона и помолился {{divine_name:ГОСПОДУ|Яхве}}."
+        },
+        "ja": {
+          "L": "彼はファラオのもとから出て、{{divine_name:主|ヤハウェ}}に祈り願った。",
+          "B": "モーセはファラオの前から退いて、{{divine_name:主|ヤハウェ}}に祈った。",
+          "R": "モーセはファラオのところを出て、{{divine_name:主|ヤハウェ}}に祈りました。"
+        },
+        "uk": {
+          "L": "І вийшов він від фараона, і благав {{divine_name:ГОСПОДА|Ягве}}.",
+          "B": "Мойсей вийшов від фараона й помолився {{divine_name:ГОСПОДУ|Ягве}}.",
+          "R": "Мойсей пішов від фараона й помолився {{divine_name:ГОСПОДУ|Ягве}}."
+        },
+        "id": {
+          "L": "Lalu ia keluar dari hadapan Firaun dan memohon kepada {{divine_name:TUHAN|Yahweh}}.",
+          "B": "Musa keluar dari hadapan Firaun dan berdoa kepada {{divine_name:TUHAN|Yahweh}}.",
+          "R": "Musa meninggalkan Firaun dan berdoa kepada {{divine_name:TUHAN|Yahweh}}."
+        },
+        "zh": {
+          "L": "他就从法老那里出去，恳求{{divine_name:上主|雅威}}。",
+          "B": "摩西从法老面前出来，向{{divine_name:上主|雅威}}祈求。",
+          "R": "摩西离开法老，向{{divine_name:上主|雅威}}祷告。"
         }
       },
       "decisions": [
@@ -3460,6 +4434,26 @@
           "L": "И обратил {{divine_name:ГОСПОДЬ|Яхве}} [ветер в] весьма сильный морской ветер, и он поднял саранчу и бросил её в Тростниковое море; не осталось ни одной саранчи во всей области Египта.",
           "B": "Тогда {{divine_name:ГОСПОДЬ|Яхве}} повернул ветер. С запада подул сильнейший ветер, поднял саранчу и унёс её в Красное море. Во всей стране Египта не осталось ни одной саранчи.",
           "R": "Тогда {{divine_name:ГОСПОДЬ|Яхве}} сделал так, что ветер переменился. С запада подул очень сильный ветер. Он подхватил саранчу и унёс её в Красное море. Во всём Египте не осталось ни одной саранчи."
+        },
+        "ja": {
+          "L": "{{divine_name:主|ヤハウェ}}は[風を]非常に強い海風に変えられた。それはいなごを運び上げ、葦の海に追いやった。エジプトの全領土に、いなごは一匹も残らなかった。",
+          "B": "すると{{divine_name:主|ヤハウェ}}は風の向きを変えられた。西から激しい風が吹いて、いなごを巻き上げ、紅海に追いやった。エジプトの全領土に、いなごは一匹も残らなかった。",
+          "R": "すると{{divine_name:主|ヤハウェ}}は、風の向きを変えられました。西からとても強い風が吹いて、いなごを吹き上げ、紅海に吹き飛ばしました。エジプト中に、いなごは一匹も残りませんでした。"
+        },
+        "uk": {
+          "L": "І повернув {{divine_name:ГОСПОДЬ|Ягве}} [вітер на] дуже сильний морський вітер, і він підняв сарану і вкинув її в Очеретяне море; не залишилося жодної сарани в усій території Єгипту.",
+          "B": "Тоді {{divine_name:ГОСПОДЬ|Ягве}} змінив вітер. Із заходу подув буревій, підхопив сарану й змів її в Червоне море. В усій єгипетській землі не лишилося жодної сарани.",
+          "R": "Тоді {{divine_name:ГОСПОДЬ|Ягве}} змінив вітер. Подув дуже сильний вітер із заходу. Він підхопив сарану й заніс її в Червоне море. У Єгипті не лишилося жодної сарани."
+        },
+        "id": {
+          "L": "Dan {{divine_name:TUHAN|Yahweh}} membalikkan angin menjadi angin barat yang sangat kuat, dan angin itu mengangkat belalang itu dan menghalaunya ke Laut Teberau; tidak tertinggal seekor belalang pun di seluruh daerah Mesir.",
+          "B": "Lalu {{divine_name:TUHAN|Yahweh}} membalikkan arah angin. Angin barat yang sangat kencang bertiup, mengangkat belalang itu, dan menghalaunya ke Laut Merah. Di seluruh wilayah Mesir tidak tertinggal seekor belalang pun.",
+          "R": "Lalu {{divine_name:TUHAN|Yahweh}} mengubah arah angin. Angin yang sangat kuat bertiup dari barat. Angin itu mengangkat belalang-belalang itu dan meniupnya ke Laut Merah. Tidak seekor belalang pun yang tertinggal di Mesir."
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}转了[风，成为]极强的海风，把蝗虫刮起来，吹进芦苇海；在埃及的四境，连一只蝗虫也没有留下。",
+          "B": "{{divine_name:上主|雅威}}就使风向转变，从西边刮来一阵强风，把蝗虫卷起来，吹进红海。在埃及全境，连一只蝗虫也没有留下。",
+          "R": "然后{{divine_name:上主|雅威}}让风转了方向。一阵很强的风从西边吹来，把蝗虫卷起来，吹进了红海。埃及连一只蝗虫也没有留下。"
         }
       },
       "decisions": [
@@ -3661,6 +4655,93 @@
           "reason": "For the whole of Exodus. The Hebrew name is \"Sea of Reeds\" (m2); Literal keeps it, Balanced and Readable give the name the sea is known by, as Acts 7:36 does in this translation.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020100190111",
+            "o020100190112",
+            "o020100190121"
+          ],
+          "choice": "\"葦の海\" (L), \"紅海\" (B, R) for the Sea of Reeds",
+          "alternatives": [
+            "\"紅海\" at every level"
+          ],
+          "reason": "As the English: Literal gives the Hebrew name, the other levels the sea's familiar name (see the meaning footnote).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020100190111",
+            "o020100190121"
+          ],
+          "choice": "\"Очеретяне море\" (L); \"Червоне море\" (B, R)",
+          "alternatives": [
+            "\"Червоне море\" at every level"
+          ],
+          "reason": "Literal keeps the Hebrew name, the Sea of Reeds; Balanced and Readable use the name readers know (m2), as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020100190031",
+            "o020100190041",
+            "o020100190111",
+            "o020100190121"
+          ],
+          "choice": "\"Laut Teberau\" (L); \"Laut Merah\" (B, R); \"angin barat\"",
+          "alternatives": [],
+          "reason": "The glossary forms for the Sea of Reeds (m2), for the whole of Exodus. The Hebrew \"sea wind\" blows from the Mediterranean, the west (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020100190111",
+            "o020100190121"
+          ],
+          "choice": "\"芦苇海\" (Literal); \"红海\" (Balanced, Readable)",
+          "alternatives": [],
+          "reason": "As the English level and the Chinese glossary: Literal translates the Hebrew name, Balanced and Readable use the familiar name.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3740,6 +4821,26 @@
           "L": "Но укрепил {{divine_name:ГОСПОДЬ|Яхве}} сердце фараона, и он не отпустил {{gender:детей Израиля|сынов Израиля}}.",
           "B": "Но {{divine_name:ГОСПОДЬ|Яхве}} ожесточил сердце фараона, и тот не отпустил израильтян.",
           "R": "Но {{divine_name:ГОСПОДЬ|Яхве}} сделал фараона упрямым. Поэтому он не отпустил израильтян."
+        },
+        "ja": {
+          "L": "しかし{{divine_name:主|ヤハウェ}}はファラオの心を強固にされたので、彼はイスラエルの子らを去らせなかった。",
+          "B": "しかし{{divine_name:主|ヤハウェ}}はファラオの心をかたくなにされたので、ファラオはイスラエルの人々を去らせなかった。",
+          "R": "しかし{{divine_name:主|ヤハウェ}}は、ファラオをがんこにされました。それでファラオは、イスラエルの人々を行かせませんでした。"
+        },
+        "uk": {
+          "L": "Але {{divine_name:ГОСПОДЬ|Ягве}} зробив твердим серце фараона, і він не відпустив {{gender:нащадків Ізраїля|синів Ізраїля}}.",
+          "B": "Проте {{divine_name:ГОСПОДЬ|Ягве}} зробив фараона впертим, і той не відпустив ізраїльтян.",
+          "R": "Але {{divine_name:ГОСПОДЬ|Ягве}} зробив фараона впертим. Тому він не відпустив ізраїльтян."
+        },
+        "id": {
+          "L": "Tetapi {{divine_name:TUHAN|Yahweh}} mengeraskan hati Firaun, dan ia tidak membiarkan bani Israel pergi.",
+          "B": "Namun {{divine_name:TUHAN|Yahweh}} membuat hati Firaun keras, dan ia tidak melepaskan orang Israel.",
+          "R": "Tetapi {{divine_name:TUHAN|Yahweh}} membuat Firaun keras kepala. Karena itu ia tidak membiarkan orang Israel pergi."
+        },
+        "zh": {
+          "L": "但{{divine_name:上主|雅威}}使法老的心强硬，他就不让{{gender:以色列的子孙|以色列的儿子}}走。",
+          "B": "但{{divine_name:上主|雅威}}使法老的心顽固，他就不肯释放以色列人。",
+          "R": "但{{divine_name:上主|雅威}}让法老固执，所以他不让以色列人走。"
         }
       },
       "decisions": [
@@ -3793,6 +4894,26 @@
             "\"affermit le cœur\""
           ],
           "reason": "Literal keeps the two Hebrew verbs apart, as the English does: \"rendre lourd\" for kabed (verse 1), \"rendre fort\" for chazaq here and in verse 27. Balanced and Readable say \"obstiné\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o020100200012",
+            "o020100200041"
+          ],
+          "choice": "Literal \"{{gender:以色列的子孙|以色列的儿子}}\"; Balanced and Readable \"以色列人\" with no span",
+          "alternatives": [],
+          "reason": "As the Chinese glossary sets: \"以色列人\" already includes men and women, so Balanced and Readable need no gender span where the English has one; Literal keeps the Hebrew \"sons of\" with the span.",
           "uncertain": false,
           "footnote": false
         }
@@ -3882,6 +5003,26 @@
           "L": "И сказал {{divine_name:ГОСПОДЬ|Яхве}} Моисею: «Простри свою руку к небу, чтобы была тьма над землёй Египта, и [чтобы] тьму можно было осязать.»",
           "B": "{{divine_name:ГОСПОДЬ|Яхве}} сказал Моисею: «Подними руку к небу, и землю Египта покроет тьма, такая густая, что её можно будет ощутить.»",
           "R": "{{divine_name:ГОСПОДЬ|Яхве}} сказал Моисею: «Подними руку к небу. Тогда в земле Египта станет темно. Будет так темно, что люди смогут почувствовать тьму.»"
+        },
+        "ja": {
+          "L": "{{divine_name:主|ヤハウェ}}はモーセに言われた。「あなたの手を天に向かって伸ばしなさい。エジプトの地の上に闇があるように。闇が手で触れられるほどになるように。」",
+          "B": "{{divine_name:主|ヤハウェ}}はモーセに言われた。「天に向かって手を差し伸べなさい。エジプトの地を闇が覆う。手で触れられるほどの濃い闇である。」",
+          "R": "{{divine_name:主|ヤハウェ}}はモーセに言われました。「空に向かって手を上げなさい。そうすれば、エジプトの国は暗やみになる。手でさわれるほどの、まっ暗やみになる。」"
+        },
+        "uk": {
+          "L": "І сказав {{divine_name:ГОСПОДЬ|Ягве}} Мойсеєві: «Простягни свою руку до неба, щоб була темрява над землею Єгипту, і [щоб] темряву можна було обмацати».",
+          "B": "{{divine_name:ГОСПОДЬ|Ягве}} сказав Мойсеєві: «Підніми руку до неба, і на єгипетську землю зійде темрява, така густа, що її можна буде відчути на дотик».",
+          "R": "{{divine_name:ГОСПОДЬ|Ягве}} сказав Мойсеєві: «Підніми руку до неба. Тоді в Єгипті стане темно. Буде так темно, що люди відчуватимуть темряву на дотик»."
+        },
+        "id": {
+          "L": "Dan {{divine_name:TUHAN|Yahweh}} berfirman kepada Musa, \"Ulurkanlah tanganmu ke arah langit, supaya ada kegelapan atas tanah Mesir, kegelapan yang dapat diraba.\"",
+          "B": "{{divine_name:TUHAN|Yahweh}} berfirman kepada Musa, \"Angkatlah tanganmu ke arah langit, dan kegelapan akan meliputi tanah Mesir, kegelapan yang begitu pekat sehingga dapat diraba.\"",
+          "R": "{{divine_name:TUHAN|Yahweh}} berfirman kepada Musa, \"Angkat tanganmu ke arah langit. Lalu tanah Mesir akan menjadi gelap. Gelapnya begitu pekat sampai orang dapat merasakannya.\""
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}对摩西说：“你要向天伸手，使埃及地上有黑暗，[这]黑暗是可以摸得着的。”",
+          "B": "{{divine_name:上主|雅威}}对摩西说：“你向天空举手，黑暗就会笼罩埃及地，这黑暗浓得人可以摸得到。”",
+          "R": "{{divine_name:上主|雅威}}对摩西说：“你向天空举起手。那时埃及地就会变黑。那黑暗浓得人都能感觉得到。”"
         }
       },
       "decisions": [
@@ -3956,6 +5097,28 @@
             "o breu"
           ],
           "reason": "For the whole book (10:21-23): \"trevas\" is the Portuguese word for deep, total darkness and the name of this plague. Readable says \"escuro\" and \"escuridão\", the everyday words, as the English Readable says \"dark\". \"Apalpar\" at Literal is the verb for feeling one's way (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020100210101",
+            "o020100210151"
+          ],
+          "choice": "\"闇\" (L, B), \"暗やみ\" (R)",
+          "alternatives": [
+            "\"暗黒\""
+          ],
+          "reason": "The ordinary word; Readable uses the softer everyday form.",
           "uncertain": false,
           "footnote": false
         }
@@ -4044,6 +5207,26 @@
           "L": "И простёр Моисей свою руку к небу, и была густая тьма во всей земле Египта три дня.",
           "B": "Моисей поднял руку к небу, и на три дня всю землю Египта окутала непроглядная тьма.",
           "R": "Моисей поднял руку к небу. Тогда во всём Египте на три дня стало совсем темно."
+        },
+        "ja": {
+          "L": "モーセが天に向かって手を伸ばすと、三日の間、エジプトの全地に暗黒の闇があった。",
+          "B": "モーセが天に向かって手を差し伸べると、三日の間、エジプト全土を深い闇が覆った。",
+          "R": "そこでモーセは、空に向かって手を上げました。すると三日の間、エジプト中がまっ暗になりました。"
+        },
+        "uk": {
+          "L": "І простягнув Мойсей свою руку до неба, і настала темрява мороку в усій землі Єгипту на три дні.",
+          "B": "Тож Мойсей підняв руку до неба, і на три дні всю єгипетську землю огорнула непроглядна темрява.",
+          "R": "Тож Мойсей підняв руку до неба. І на три дні по всьому Єгипту стало зовсім темно."
+        },
+        "id": {
+          "L": "Lalu Musa mengulurkan tangannya ke arah langit, dan ada kegelapan yang pekat di seluruh tanah Mesir tiga hari lamanya.",
+          "B": "Musa mengangkat tangannya ke arah langit, dan kegelapan yang pekat meliputi seluruh tanah Mesir selama tiga hari.",
+          "R": "Lalu Musa mengangkat tangannya ke arah langit. Seluruh Mesir menjadi gelap gulita selama tiga hari."
+        },
+        "zh": {
+          "L": "摩西就向天伸手，埃及全地就有了幽暗的黑暗，共三天。",
+          "B": "于是摩西向天空举手，整个埃及地就一片漆黑，长达三天。",
+          "R": "于是摩西向天空举起手。整个埃及都变得一片漆黑，黑了三天。"
         }
       },
       "decisions": [
@@ -4153,6 +5336,26 @@
           "L": "Не видел никто {{gender:другого|своего брата}}, и никто не вставал со своего места три дня; а у всех {{gender:детей Израиля|сынов Израиля}} был свет в их жилищах.",
           "B": "Три дня никто не видел друг друга, и никто не трогался с места. А у всех израильтян в их жилищах был свет.",
           "R": "Три дня никто не мог никого увидеть, и никто не сходил с места. Но во всех домах израильтян был свет."
+        },
+        "ja": {
+          "L": "三日の間、人は互いに見ることができず、だれも自分の場所から立ち上がらなかった。しかし、イスラエルの子らにはみな、その住まいに光があった。",
+          "B": "三日の間、だれも互いの姿を見ることができず、だれもその場から動かなかった。しかしイスラエルの人々のところでは、どの家にも光があった。",
+          "R": "三日の間、だれもほかの人の姿が見えず、だれもその場所から動きませんでした。けれども、イスラエルの人々の家には、どこにも明かりがありました。"
+        },
+        "uk": {
+          "L": "Не бачив ніхто {{gender:іншого|свого брата}}, і не вставав ніхто зі свого місця три дні; а всі {{gender:нащадки Ізраїля|сини Ізраїля}} мали світло в своїх оселях.",
+          "B": "Три дні ніхто не бачив нікого й ніхто не рушав з місця. А в усіх ізраїльтян було світло в їхніх домівках.",
+          "R": "Три дні ніхто не бачив нікого, і ніхто не рушав з місця. Але в усіх домівках ізраїльтян було світло."
+        },
+        "id": {
+          "L": "Seorang tidak dapat melihat saudaranya, dan tidak ada seorang pun yang bangkit dari tempatnya tiga hari lamanya; tetapi pada semua bani Israel ada terang di tempat kediaman mereka.",
+          "B": "Selama tiga hari tidak seorang pun dapat melihat orang lain, dan tidak seorang pun beranjak dari tempatnya. Tetapi semua orang Israel mendapat terang di tempat tinggal mereka.",
+          "R": "Selama tiga hari tidak seorang pun dapat melihat orang lain, dan tidak seorang pun bergerak dari tempatnya. Tetapi ada terang di semua rumah orang Israel."
+        },
+        "zh": {
+          "L": "三天之久，人看不见{{gender:别人|他的兄弟}}，也没有人从自己的地方起来；但所有{{gender:以色列的子孙|以色列的儿子}}的住处都有光。",
+          "B": "三天之久，人人都看不见别人，也没有人离开自己所在的地方。但以色列人的住处都有光亮。",
+          "R": "三天之久，谁也看不见谁，谁也不能离开自己所在的地方。但以色列人的家里都有光。"
         }
       },
       "decisions": [
@@ -4324,6 +5527,74 @@
           "reason": "English has a second gender span for \"their / his\" place. Russian \"свой\" serves for men and women alike, so only \"{{gender:другого|своего брата}}\" needs the setting.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o020100230031",
+            "o020100230051",
+            "o020100230052"
+          ],
+          "choice": "\"人は互いに\" / \"だれも\" with no gender span for \"a man ... his brother\"",
+          "alternatives": [
+            "\"人は自分の兄弟を\""
+          ],
+          "reason": "The idiom means no one could see anyone else (see the meaning decision); Japanese says that without a gendered word, so the English gender spans need no Japanese span.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o020100230031",
+            "o020100230051",
+            "o020100230052",
+            "o020100230071",
+            "o020100230081",
+            "o020100230092",
+            "o020100230093"
+          ],
+          "choice": "\"{{gender:іншого|свого брата}}\" for the first span; \"зі свого місця\" with no span",
+          "alternatives": [
+            "a span on \"свого місця\" too"
+          ],
+          "reason": "The reflexive \"свого\" covers \"his\" and \"their\" alike, so the second English span needs none in Ukrainian; Balanced and Readable say \"ніхто ... нікого\", which is already inclusive.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o020100230071",
+            "o020100230081",
+            "o020100230092",
+            "o020100230093"
+          ],
+          "choice": "\"自己的地方\" with no gender span, where the English Literal has \"{{gender:their|his}}\"",
+          "alternatives": [],
+          "reason": "Chinese \"自己\" is already inclusive; only \"his brother\" (\"{{gender:别人|他的兄弟}}\") has two Chinese wordings, so only it takes a span.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4415,6 +5686,26 @@
           "L": "И призвал фараон Моисея и сказал: «Пойдите, служите {{divine_name:ГОСПОДУ|Яхве}}; только ваш мелкий скот и ваш крупный скот пусть останется; и ваши дети пусть идут с вами.»",
           "B": "Фараон вызвал Моисея и сказал: «Идите и служите {{divine_name:ГОСПОДУ|Яхве}}. Только ваши стада, мелкий и крупный скот, пусть останутся; даже ваши дети могут пойти с вами.»",
           "R": "Тогда фараон позвал Моисея. Он сказал: «Идите и поклонитесь {{divine_name:ГОСПОДУ|Яхве}}. Вы можете взять с собой даже детей. Но ваши овцы, козы и коровы должны остаться здесь.»"
+        },
+        "ja": {
+          "L": "ファラオはモーセを呼んで言った。「行って、{{divine_name:主|ヤハウェ}}に仕えよ。ただし、あなたがたの羊の群れと牛の群れは残しておけ。あなたがたの幼い子らも、あなたがたと一緒に行ってよい。」",
+          "B": "ファラオはモーセを呼び寄せて言った。「行って、{{divine_name:主|ヤハウェ}}に仕えるがよい。ただ、羊の群れと牛の群れだけは置いて行け。幼い子どもたちは一緒に連れて行ってもよい。」",
+          "R": "ファラオはモーセを呼んで言いました。「行って、{{divine_name:主|ヤハウェ}}を礼拝せよ。子どもたちも連れて行ってよい。だが、羊ややぎや牛は、ここに残して行け。」"
+        },
+        "uk": {
+          "L": "І покликав фараон Мойсея і сказав: «Ідіть, служіть {{divine_name:ГОСПОДУ|Ягве}}; тільки ваша дрібна худоба і ваша велика худоба будуть затримані. І ваші малі нехай ідуть з вами».",
+          "B": "Фараон покликав Мойсея й сказав: «Ідіть, служіть {{divine_name:ГОСПОДУ|Ягве}}. Тільки отари й череди ваші мають лишитися; навіть дітей можете взяти з собою».",
+          "R": "Тоді фараон покликав Мойсея. Він сказав: «Ідіть, поклоніться {{divine_name:ГОСПОДУ|Ягве}}. Можете навіть узяти з собою дітей. Але ваші вівці, кози й корови мусять лишитися тут»."
+        },
+        "id": {
+          "L": "Lalu Firaun memanggil Musa dan berkata, \"Pergilah, beribadahlah kepada {{divine_name:TUHAN|Yahweh}}; hanya kambing domba dan lembu sapi kalian harus ditinggalkan; anak-anak kecil kalian pun boleh pergi bersama kalian.\"",
+          "B": "Firaun memanggil Musa dan berkata, \"Pergilah beribadah kepada {{divine_name:TUHAN|Yahweh}}. Hanya kambing domba dan lembu sapi kalian harus tinggal di sini; anak-anak kecil kalian pun boleh ikut bersama kalian.\"",
+          "R": "Lalu Firaun memanggil Musa. Ia berkata, \"Pergilah beribadah kepada {{divine_name:TUHAN|Yahweh}}. Kalian bahkan boleh membawa anak-anak kalian. Tetapi domba, kambing, dan sapi kalian harus tinggal di sini.\""
+        },
+        "zh": {
+          "L": "法老召了摩西来，说：“你们去，事奉{{divine_name:上主|雅威}}；只是你们的羊群和你们的牛群要留下。你们的孩子也可以和你们一同去。”",
+          "B": "法老召来摩西，说：“你们去事奉{{divine_name:上主|雅威}}吧。只有你们的羊群牛群要留下，连你们的孩子也可以和你们一同去。”",
+          "R": "然后法老叫来摩西。他说：“你们去敬拜{{divine_name:上主|雅威}}吧。你们甚至可以带着孩子一起去。但是你们的绵羊、山羊和牛必须留在这里。”"
         }
       },
       "decisions": [
@@ -4572,6 +5863,26 @@
           "L": "И сказал Моисей: «И ты сам дашь в наши руки жертвы и всесожжения, чтобы мы принесли [их] {{divine_name:ГОСПОДУ|Яхве}}, нашему Богу.",
           "B": "Моисей сказал: «Ты сам даже должен дать нам в руки жертвы и всесожжения, чтобы мы принесли их {{divine_name:ГОСПОДУ|Яхве}}, нашему Богу.",
           "R": "Моисей сказал: «Ты должен ещё и дать нам животных для жертв и всесожжений, чтобы мы принесли их {{divine_name:ГОСПОДУ|Яхве}}, нашему Богу."
+        },
+        "ja": {
+          "L": "モーセは言った。「あなた自身もまた、いけにえと焼き尽くすささげ物をわたしたちの手に渡して、わたしたちがわたしたちの神、{{divine_name:主|ヤハウェ}}に[それらを]ささげられるようにしなければなりません。",
+          "B": "モーセは言った。「わたしたちの神、{{divine_name:主|ヤハウェ}}にささげるいけにえと焼き尽くすささげ物を、あなた自らがわたしたちの手に渡してくださらなければなりません。",
+          "R": "モーセは言いました。「わたしたちの神、{{divine_name:主|ヤハウェ}}に、いけにえや焼いてささげるいけにえをささげるための動物も、わたしたちに持たせてください。"
+        },
+        "uk": {
+          "L": "І сказав Мойсей: «Ти й сам маєш дати в наші руки жертви і всепалення, щоб ми принесли [їх] {{divine_name:ГОСПОДУ|Ягве}}, нашому Богові.",
+          "B": "Мойсей сказав: «Ти ще й сам маєш дати нам жертви й всепалення, щоб ми принесли їх {{divine_name:ГОСПОДУ|Ягве}}, нашому Богові.",
+          "R": "Мойсей сказав: «Ти маєш також дати нам тварин для жертв і всепалень, щоб ми принесли їх {{divine_name:ГОСПОДУ|Ягве}}, нашому Богові."
+        },
+        "id": {
+          "L": "Tetapi Musa berkata, \"Tuanku sendiri pun harus menyerahkan ke tangan kami korban sembelihan dan korban bakaran, supaya kami mempersembahkannya kepada {{divine_name:TUHAN|Yahweh}}, Allah kami.",
+          "B": "Musa berkata, \"Tuanku sendiri bahkan harus memberikan kepada kami korban sembelihan dan korban bakaran untuk kami persembahkan kepada {{divine_name:TUHAN|Yahweh}}, Allah kami.",
+          "R": "Musa berkata, \"Baginda juga harus membiarkan kami membawa binatang untuk korban sembelihan dan korban bakaran yang akan kami persembahkan kepada {{divine_name:TUHAN|Yahweh}}, Allah kami."
+        },
+        "zh": {
+          "L": "摩西说：“你也要把祭物和燔祭交在我们手中，好让我们献给{{divine_name:上主|雅威}}我们的{{god_term:神|上帝}}。",
+          "B": "摩西说：“您甚至还得把祭物和燔祭交在我们手里，让我们献给{{divine_name:上主|雅威}}我们的{{god_term:神|上帝}}。",
+          "R": "摩西说：“您也必须让我们带着牲畜，好向{{divine_name:上主|雅威}}我们的{{god_term:神|上帝}}献祭物和全烧的祭。"
         }
       },
       "decisions": [
@@ -4750,6 +6061,114 @@
           "reason": "For the whole of Exodus, as the Pentateuch note settles: the offering burned whole on the altar (m2) is \"всесожжение\" at every level.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020100250071",
+            "o020100250081",
+            "o020100250082"
+          ],
+          "choice": "\"いけにえ\" for sacrifices (zevachim), \"焼き尽くすささげ物\" (L, B), \"焼いてささげるいけにえ\" (R) for burnt offerings",
+          "alternatives": [
+            "\"全焼のいけにえ\""
+          ],
+          "reason": "The forms settled in Genesis 8:20.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020100250071",
+            "o020100250082"
+          ],
+          "choice": "\"жертви і всепалення\"",
+          "alternatives": [
+            "\"жертвоприношення\""
+          ],
+          "reason": "The terms note's \"всепалення\" for the burnt offering, used through the book; \"жертва\" for the sacrifice in general.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020100250071",
+            "o020100250082"
+          ],
+          "choice": "\"korban sembelihan dan korban bakaran\"",
+          "alternatives": [],
+          "reason": "The two main kinds of animal offering (m2); \"korban bakaran\" is the glossary term, and \"korban sembelihan\" the slain sacrifice beside it.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020100250071",
+            "o020100250082"
+          ],
+          "choice": "\"燔祭\" (Literal, Balanced); \"全烧的祭\" (Readable)",
+          "alternatives": [],
+          "reason": "The Chinese glossary's forms for the burnt offering.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o020100250031",
+            "o020100250041",
+            "o020100250051",
+            "o020100250062"
+          ],
+          "choice": "\"您\" for Pharaoh in Moses' words",
+          "alternatives": [
+            "\"你\""
+          ],
+          "reason": "As the Chinese glossary sets, Moses says \"您\" to Pharaoh at Balanced and Readable, \"你\" at Literal.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4850,6 +6269,26 @@
           "L": "И наш скот тоже пойдёт с нами; не останется ни копыта, потому что из него мы возьмём, чтобы служить {{divine_name:ГОСПОДУ|Яхве}}, нашему Богу, а мы сами не знаем, чем нам служить {{divine_name:ГОСПОДУ|Яхве}}, пока не придём туда.»",
           "B": "И наш скот пойдёт с нами; не останется ни одного копыта. Ведь из него мы должны взять то, чем будем служить {{divine_name:ГОСПОДУ|Яхве}}, нашему Богу, и, пока не придём на место, мы сами не знаем, что нам понадобится для служения {{divine_name:ГОСПОДУ|Яхве}}.»",
           "R": "Все наши животные должны пойти с нами. Мы не оставим ни одного. Мы должны выбрать из них тех, кого принесём, когда будем поклоняться {{divine_name:ГОСПОДУ|Яхве}}, нашему Богу. Мы не узнаем, какие животные нужны для поклонения {{divine_name:ГОСПОДУ|Яхве}}, пока не придём туда.»"
+        },
+        "ja": {
+          "L": "わたしたちの家畜もまた、わたしたちと共に行きます。ひづめ一つも残されません。わたしたちは、その中から取って、わたしたちの神、{{divine_name:主|ヤハウェ}}に仕えなければならないからです。わたしたちは、そこに着くまで、何をもって{{divine_name:主|ヤハウェ}}に仕えるべきか、わたしたち自身にもわからないのです。」",
+          "B": "わたしたちの家畜も一緒に連れて行きます。ひづめ一つ残しはしません。わたしたちの神、{{divine_name:主|ヤハウェ}}に仕えるためのものは、その中から取らなければならないからです。それに、どれを用いて{{divine_name:主|ヤハウェ}}に仕えるべきかは、その場所に着くまで、わたしたち自身にもわかりません。」",
+          "R": "わたしたちの家畜は、全部連れて行きます。一頭も残しません。わたしたちの神、{{divine_name:主|ヤハウェ}}を礼拝するときに使う動物を、その中から選ばなければならないからです。{{divine_name:主|ヤハウェ}}を礼拝するためにどの動物が必要かは、向こうに着くまでわからないのです。」"
+        },
+        "uk": {
+          "L": "І наша худоба теж піде з нами; не залишиться й копита, бо з неї ми мусимо взяти, щоб служити {{divine_name:ГОСПОДУ|Ягве}}, нашому Богові, а ми самі не знаємо, чим маємо служити {{divine_name:ГОСПОДУ|Ягве}}, доки не прийдемо туди».",
+          "B": "Наша худоба теж піде з нами, не лишиться жодного копита. Саме з неї ми маємо взяти те, чим служитимемо {{divine_name:ГОСПОДУ|Ягве}}, нашому Богові, а доки не прийдемо на місце, ми й самі не знаємо, що нам знадобиться, щоб служити {{divine_name:ГОСПОДУ|Ягве}}».",
+          "R": "Уся наша худоба мусить піти з нами. Ми не залишимо жодної тварини. Нам треба буде вибрати з них деяких для поклоніння {{divine_name:ГОСПОДУ|Ягве}}, нашому Богові. А яких саме, ми не знатимемо, доки не прийдемо туди, щоб поклонитися {{divine_name:ГОСПОДУ|Ягве}}»."
+        },
+        "id": {
+          "L": "Dan juga ternak kami harus pergi bersama kami; tidak boleh tertinggal satu kuku pun, sebab dari ternak itulah kami harus mengambil untuk beribadah kepada {{divine_name:TUHAN|Yahweh}}, Allah kami, dan kami sendiri tidak tahu dengan apa kami harus beribadah kepada {{divine_name:TUHAN|Yahweh}} sampai kami tiba di sana.\"",
+          "B": "Ternak kami juga harus ikut bersama kami; tidak satu kuku pun boleh tertinggal. Dari ternak itulah kami harus mengambil apa yang kami pakai untuk beribadah kepada {{divine_name:TUHAN|Yahweh}}, Allah kami, dan sebelum kami sampai di tempat itu, kami sendiri tidak tahu mana yang kami perlukan untuk beribadah kepada {{divine_name:TUHAN|Yahweh}}.\"",
+          "R": "Semua ternak kami harus ikut bersama kami. Tidak seekor pun akan kami tinggalkan. Kami harus memilih beberapa dari ternak itu untuk dipakai ketika kami beribadah kepada {{divine_name:TUHAN|Yahweh}}, Allah kami. Kami tidak akan tahu mana yang kami perlukan untuk beribadah kepada {{divine_name:TUHAN|Yahweh}} sampai kami tiba di sana.\""
+        },
+        "zh": {
+          "L": "我们的牲畜也要和我们一同去，连一只蹄子也不留下，因为我们必须从中取[一些]来事奉{{divine_name:上主|雅威}}我们的{{god_term:神|上帝}}；而且我们在到达那里以前，自己也不知道要用什么来事奉{{divine_name:上主|雅威}}。”",
+          "B": "我们的牲畜也要和我们一同去，连一只蹄子都不留下。我们必须从其中挑选来事奉{{divine_name:上主|雅威}}我们的{{god_term:神|上帝}}；在到达那地方以前，我们自己也说不准需要用哪些来事奉{{divine_name:上主|雅威}}。”",
+          "R": "我们所有的牲畜都必须跟我们一起去，一头也不能留下。我们要从中挑选一些，用来敬拜{{divine_name:上主|雅威}}我们的{{god_term:神|上帝}}。我们要到了那里，才会知道敬拜{{divine_name:上主|雅威}}需要用哪些牲畜。”"
         }
       },
       "decisions": [
@@ -4979,6 +6418,26 @@
           "L": "Но укрепил {{divine_name:ГОСПОДЬ|Яхве}} сердце фараона, и он не захотел отпустить их.",
           "B": "Но {{divine_name:ГОСПОДЬ|Яхве}} ожесточил сердце фараона, и тот не согласился отпустить их.",
           "R": "Но {{divine_name:ГОСПОДЬ|Яхве}} сделал фараона упрямым. Он отказался отпустить их."
+        },
+        "ja": {
+          "L": "しかし{{divine_name:主|ヤハウェ}}はファラオの心を強固にされたので、彼は彼らを去らせようとしなかった。",
+          "B": "しかし{{divine_name:主|ヤハウェ}}がファラオの心をかたくなにされたので、ファラオは彼らを去らせることを承知しなかった。",
+          "R": "しかし{{divine_name:主|ヤハウェ}}は、ファラオをがんこにされました。ファラオは、彼らを行かせようとしませんでした。"
+        },
+        "uk": {
+          "L": "Але {{divine_name:ГОСПОДЬ|Ягве}} зробив твердим серце фараона, і він не захотів відпустити їх.",
+          "B": "Але {{divine_name:ГОСПОДЬ|Ягве}} зробив фараона впертим, і той не погодився їх відпустити.",
+          "R": "Але {{divine_name:ГОСПОДЬ|Ягве}} зробив фараона впертим. Він відмовився відпустити їх."
+        },
+        "id": {
+          "L": "Tetapi {{divine_name:TUHAN|Yahweh}} mengeraskan hati Firaun, dan ia tidak mau membiarkan mereka pergi.",
+          "B": "Tetapi {{divine_name:TUHAN|Yahweh}} membuat hati Firaun keras, dan ia tidak mau membiarkan mereka pergi.",
+          "R": "Tetapi {{divine_name:TUHAN|Yahweh}} membuat Firaun keras kepala. Ia menolak membiarkan mereka pergi."
+        },
+        "zh": {
+          "L": "但{{divine_name:上主|雅威}}使法老的心强硬，他就不愿意让他们走。",
+          "B": "但{{divine_name:上主|雅威}}使法老的心顽固，他就不肯让他们走。",
+          "R": "但{{divine_name:上主|雅威}}让法老固执，他不肯让他们走。"
         }
       },
       "decisions": [
@@ -5120,6 +6579,26 @@
           "L": "И сказал ему фараон: «Уйди от меня! Берегись, больше не смей видеть моё лицо, потому что в тот день, когда увидишь моё лицо, ты умрёшь.»",
           "B": "Фараон сказал ему: «Прочь с глаз моих! Берегись: никогда больше не являйся ко мне. В тот день, когда ты снова увидишь моё лицо, ты умрёшь.»",
           "R": "Фараон сказал Моисею: «Уходи от меня! И берегись! Никогда больше не приходи ко мне. Если ты ещё раз придёшь ко мне, в тот же день ты умрёшь.»"
+        },
+        "ja": {
+          "L": "ファラオは彼に言った。「わたしのところから去れ！気をつけよ。二度とわたしの顔を見るな。わたしの顔を見る日に、あなたは死ぬのだ。」",
+          "B": "ファラオはモーセに言った。「わたしの前から消えうせろ！気をつけるがよい。二度とわたしの前に出るな。今度わたしの顔を見たら、その日にあなたは死ぬのだ。」",
+          "R": "ファラオはモーセに言いました。「出て行け！気をつけろ。二度とわたしの前に来るな。今度わたしの前に来たら、その日にあなたは死ぬのだ。」"
+        },
+        "uk": {
+          "L": "І сказав йому фараон: «Іди від мене! Стережися, не бачи більше мого обличчя, бо того дня, коли побачиш моє обличчя, помреш».",
+          "B": "Фараон сказав йому: «Геть з моїх очей! Стережися: не показуйся мені більше. Того дня, коли ти ще раз побачиш моє обличчя, ти помреш».",
+          "R": "Фараон сказав Мойсеєві: «Іди геть від мене! Стережися! Ніколи більше не приходь до мене. Якщо ти ще колись прийдеш до мене, того ж дня помреш»."
+        },
+        "id": {
+          "L": "Lalu Firaun berkata kepadanya, \"Pergilah dari hadapanku; jagalah dirimu, jangan lagi melihat mukaku, sebab pada hari engkau melihat mukaku, engkau akan mati.\"",
+          "B": "Firaun berkata kepadanya, \"Enyahlah dari hadapanku! Awas, jangan pernah datang menghadap aku lagi. Jika engkau melihat mukaku sekali lagi, pada hari itu juga engkau akan mati.\"",
+          "R": "Firaun berkata kepada Musa, \"Pergi dari sini! Hati-hati! Jangan pernah datang menemui aku lagi. Kalau kamu datang menghadap aku lagi, kamu akan mati pada hari itu juga.\""
+        },
+        "zh": {
+          "L": "法老对他说：“你离开我去吧！你要小心，不要再见我的面，因为你见我面的那一天，你就必死。”",
+          "B": "法老对他说：“滚出去！你要当心，不要再到我面前来。你哪一天再见我的面，那一天你就要死。”",
+          "R": "法老对摩西说：“你走吧！你要小心！不准你再来见我。如果你再到我面前来，你当天就会被处死。”"
         }
       },
       "decisions": [
@@ -5188,6 +6667,27 @@
             "\"तू\""
           ],
           "reason": "Pharaoh says \"तुम\" to Moses and Aaron throughout, and Moses and Aaron say \"आप\" to him. His anger and threat are in the words; in Exodus \"तू\" is kept for address to God.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o020100280161"
+          ],
+          "choice": "Pharaoh keeps \"あなた\" for Moses as he drives him out; the harshness is in \"去れ\" / \"消えうせろ\" / \"出て行け\" and the threat itself",
+          "alternatives": [
+            "\"おまえ\" (B, R)"
+          ],
+          "reason": "Pharaoh speaks plainly to Moses and Aaron but calls them \"あなた\" / \"あなたがた\" (R \"あなたたち\") through chapters 5-12; \"おまえたち\" is kept for his words to the Hebrew labourers and foremen.",
           "uncertain": false,
           "footnote": false
         }
@@ -5268,6 +6768,26 @@
           "L": "И сказал Моисей: «Правильно ты сказал; больше я не увижу твоего лица.»",
           "B": "Моисей сказал: «Ты прав. Больше я не увижу твоего лица.»",
           "R": "Моисей сказал: «Хорошо. Я больше никогда к тебе не приду.»"
+        },
+        "ja": {
+          "L": "モーセは言った。「あなたの言われたとおりです。わたしは二度とあなたの顔を見ません。」",
+          "B": "モーセは言った。「おっしゃるとおりです。わたしがあなたの顔を見るのは、これが最後です。」",
+          "R": "モーセは言いました。「わかりました。もう二度と、あなたに会いに来ることはありません。」"
+        },
+        "uk": {
+          "L": "І сказав Мойсей: «Правильно ти сказав; я більше не побачу твого обличчя».",
+          "B": "Мойсей сказав: «Твоя правда. Я бачу твоє обличчя востаннє».",
+          "R": "Мойсей сказав: «Добре. Я більше ніколи до тебе не прийду»."
+        },
+        "id": {
+          "L": "Dan Musa berkata, \"Benar perkataan Tuanku; aku tidak akan melihat muka Tuanku lagi.\"",
+          "B": "Musa berkata, \"Tuanku benar. Inilah terakhir kalinya aku melihat muka Tuanku.\"",
+          "R": "Musa berkata, \"Baiklah. Saya tidak akan pernah datang menemui Baginda lagi.\""
+        },
+        "zh": {
+          "L": "摩西说：“你说得对，我不会再见你的面了。”",
+          "B": "摩西说：“您说得对。这是我最后一次见您的面。”",
+          "R": "摩西说：“好吧。我再也不会来见您了。”"
         }
       },
       "decisions": [

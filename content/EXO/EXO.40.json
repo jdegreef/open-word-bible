@@ -70,6 +70,26 @@
           "L": "И говорил {{divine_name:ГОСПОДЬ|Яхве}} Моисею, говоря:",
           "B": "{{divine_name:ГОСПОДЬ|Яхве}} сказал Моисею:",
           "R": "{{divine_name:ГОСПОДЬ|Яхве}} сказал Моисею:"
+        },
+        "ja": {
+          "L": "そして{{divine_name:主|ヤハウェ}}はモーセに告げて言われた。",
+          "B": "{{divine_name:主|ヤハウェ}}はモーセに言われた。",
+          "R": "{{divine_name:主|ヤハウェ}}はモーセに言われました。"
+        },
+        "uk": {
+          "L": "І промовив {{divine_name:ГОСПОДЬ|Ягве}} до Мойсея, кажучи:",
+          "B": "{{divine_name:ГОСПОДЬ|Ягве}} сказав Мойсеєві:",
+          "R": "{{divine_name:ГОСПОДЬ|Ягве}} сказав Мойсеєві:"
+        },
+        "id": {
+          "L": "Dan {{divine_name:TUHAN|Yahweh}} berfirman kepada Musa, demikian,",
+          "B": "{{divine_name:TUHAN|Yahweh}} berfirman kepada Musa,",
+          "R": "{{divine_name:TUHAN|Yahweh}} berfirman kepada Musa,"
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}对摩西说话，说：",
+          "B": "{{divine_name:上主|雅威}}对摩西说：",
+          "R": "{{divine_name:上主|雅威}}对摩西说："
         }
       },
       "decisions": [
@@ -190,6 +210,28 @@
           "reason": "The Pentateuch terms list: God addresses one person with the familiar singular.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o020400010012",
+            "o020400010021"
+          ],
+          "choice": "God's instructions in 40:2-15 in the plain style, commands \"〜なさい\" (L, B), \"〜しなさい\" (R), Moses addressed as \"あなた\"",
+          "alternatives": [
+            "です・ます"
+          ],
+          "reason": "As in God's tabernacle instructions in chapters 25-31; the narrator uses \"言われた\" for God.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -272,6 +314,26 @@
           "L": "«В день первого месяца, в первый [день] месяца, поставь скинию шатра встречи.",
           "B": "«В первый день первого месяца поставь скинию, шатёр встречи.",
           "R": "«В первый день первого месяца поставь священный шатёр — скинию. Это шатёр встречи."
+        },
+        "ja": {
+          "L": "「第一の月の日、その月の一日に、あなたは会見の天幕の幕屋を建てなさい。",
+          "B": "「第一の月の一日に、幕屋、すなわち会見の天幕を建てなさい。",
+          "R": "「第一の月の一日に、幕屋を建てなさい。それは聖なるテントで、神と会うテントである。"
+        },
+        "uk": {
+          "L": "«У день першого місяця, першого [дня] місяця, поставиш скинію намету зустрічі.",
+          "B": "«Першого дня першого місяця постав скинію, намет зустрічі.",
+          "R": "«Першого дня першого місяця постав скинію, священний намет. Це намет зустрічі."
+        },
+        "id": {
+          "L": "\"Pada hari pertama bulan yang pertama, pada tanggal satu bulan itu, engkau harus mendirikan Kemah Suci, Kemah Pertemuan itu.",
+          "B": "\"Pada hari pertama bulan pertama, dirikanlah Kemah Suci, yaitu Kemah Pertemuan.",
+          "R": "\"Pada hari pertama bulan pertama, dirikanlah Kemah Suci, kemah yang kudus itu. Itulah Kemah Pertemuan."
+        },
+        "zh": {
+          "L": "“第一个月的[那]日，就是那月的初一，你要立起会幕的帐幕。",
+          "B": "“正月初一，你要把帐幕，就是会幕，立起来。",
+          "R": "“正月初一，你必须把帐幕，就是那神圣的帐篷，立起来。它就是会幕。"
         }
       },
       "decisions": [
@@ -473,6 +535,92 @@
           "reason": "The Pentateuch note's terms for the mishkan; Readable names both once at the start of the chapter, as the English Readable explains \"tabernacle\" here.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020400020091",
+            "o020400020101"
+          ],
+          "choice": "tent of meeting \"神と会うテント\" (R), \"会見の天幕\" (L, B), as in EXO 27:21",
+          "alternatives": [
+            "\"会見の天幕\""
+          ],
+          "reason": "Readable says what the tent is for; the Readable sentence keeps it as a description, not a quotation, so no inner brackets are added.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020400020011",
+            "o020400020012",
+            "o020400020022",
+            "o020400020032",
+            "o020400020042"
+          ],
+          "choice": "\"第一の月の一日\"",
+          "alternatives": [
+            "\"一月一日\""
+          ],
+          "reason": "\"一月一日\" would be read as January 1; the Hebrew year begins in spring (meaning decision m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020400020022",
+            "o020400020032",
+            "o020400020042"
+          ],
+          "choice": "正月初一 (B, R); 第一个月的[那]日，就是那月的初一 (L)",
+          "alternatives": [
+            "一月一日"
+          ],
+          "reason": "The style guide's form for a date: the first month as 正月 at Balanced and Readable, where the English names it the first month; Literal keeps the Hebrew's words.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "register",
+          "tokens": [
+            "o020400020061"
+          ],
+          "choice": "你要…… for the instructions (L, B); 你必须…… (R)",
+          "alternatives": [
+            "你当……"
+          ],
+          "reason": "The style guide's forms for commands in the laws and instructions of Exodus 20-40.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -555,6 +703,26 @@
           "L": "И поставь там ковчег свидетельства, и закрой ковчег завесой.",
           "B": "Поставь в ней ковчег свидетельства и закрой ковчег завесой.",
           "R": "Поставь внутри ковчег, в котором хранятся каменные доски завета. Потом повесь перед ковчегом внутреннюю завесу, чтобы закрыть его."
+        },
+        "ja": {
+          "L": "そしてあなたはそこに証しの箱を置き、垂れ幕でその箱を覆い隠しなさい。",
+          "B": "その中に証しの箱を置き、垂れ幕で箱を隔てなさい。",
+          "R": "その中に、契約の板を納めた箱を置きなさい。それから箱の前に奥の垂れ幕を掛けて、箱を隠しなさい。"
+        },
+        "uk": {
+          "L": "І поставиш там ковчег свідчення, і заслониш ковчег завісою.",
+          "B": "Постав у ній ковчег свідчення й заслони ковчег завісою.",
+          "R": "Постав усередині ковчег, у якому лежать таблиці завіту. Потім повісь перед ковчегом внутрішню завісу, щоб закрити його."
+        },
+        "id": {
+          "L": "Dan engkau harus menaruh di sana tabut loh hukum, dan engkau harus menyekat tabut itu dengan tirai.",
+          "B": "Taruhlah tabut loh hukum di dalamnya, dan sekatlah tabut itu dengan tirai.",
+          "R": "Taruhlah tabut tempat loh-loh perjanjian di dalamnya. Lalu gantungkanlah tirai dalam di depan tabut itu untuk menyekatnya."
+        },
+        "zh": {
+          "L": "你要把见证的柜安放在那里，用帘幕把柜遮掩起来。",
+          "B": "你要把约柜安放在里面，用帘幕把约柜遮隔起来。",
+          "R": "你必须把存放刻着诫命的两块石版的约柜放在帐幕里面，然后在约柜前面挂上里面的帘幕，把它遮隔起来。"
         }
       },
       "decisions": [
@@ -712,6 +880,26 @@
           "L": "И внеси стол, и разложи то, что на нём раскладывается; и внеси светильник, и поставь его лампады.",
           "B": "Внеси стол и разложи по порядку то, что на нём должно быть. Внеси светильник и поставь на него лампады.",
           "R": "Внеси стол и разложи на нём хлеб рядами. Внеси светильник и поставь на место его лампады."
+        },
+        "ja": {
+          "L": "そしてあなたは机を運び入れ、その上に並べるべきものを整えなさい。また燭台を運び入れ、そのともし火皿を据えなさい。",
+          "B": "机を運び入れ、その上に置くものを整えて並べなさい。燭台を運び入れ、そのともし火皿を据えなさい。",
+          "R": "机を運び入れ、その上にパンを並べなさい。燭台を運び入れ、ランプをそれぞれの場所に置きなさい。"
+        },
+        "uk": {
+          "L": "І внесеш стіл, і розкладеш те, що належить розкладати на ньому, і внесеш світильник, і поставиш його лампи.",
+          "B": "Внеси стіл і розклади на ньому в порядку те, що на ньому має бути. Внеси світильник і постав на ньому його лампи.",
+          "R": "Внеси стіл і розклади на ньому хліб рядами. Внеси світильник і постав його лампи на місце."
+        },
+        "id": {
+          "L": "Dan engkau harus membawa masuk meja itu, dan mengatur apa yang harus diatur di atasnya; dan engkau harus membawa masuk kaki pelita itu, dan memasang pelita-pelitanya.",
+          "B": "Bawalah masuk meja itu dan aturlah apa yang harus ada di atasnya. Bawalah masuk kaki pelita itu dan pasanglah pelita-pelitanya.",
+          "R": "Bawalah masuk meja itu dan susunlah roti di atasnya berderet-deret. Bawalah masuk kaki pelita itu dan pasanglah pelita-pelitanya."
+        },
+        "zh": {
+          "L": "你要把桌子搬进去，把上面的物品摆列整齐；又要把灯台搬进去，把灯安上。",
+          "B": "你要把桌子搬进去，把该摆在上面的东西按次序摆好；又要把灯台搬进去，把灯安上。",
+          "R": "要把桌子搬进去，把饼一行一行地摆在上面。要把灯台搬进去，把灯安好。"
         }
       },
       "decisions": [
@@ -871,6 +1059,26 @@
           "L": "И поставь золотой жертвенник для курения перед ковчегом свидетельства, и повесь занавес для входа в скинию.",
           "B": "Поставь золотой жертвенник для курений перед ковчегом свидетельства и повесь занавес у входа в скинию.",
           "R": "Поставь золотой жертвенник для сжигания благовоний перед ковчегом, в котором хранятся каменные доски завета, с наружной стороны внутренней завесы. Потом повесь занавес у входа в священный шатёр."
+        },
+        "ja": {
+          "L": "そしてあなたは香のための金の祭壇を証しの箱の前に置き、幕屋の入り口の幕を[掛けなさい]。",
+          "B": "香をたくための金の祭壇を証しの箱の前に置き、幕屋の入り口に幕を掛けなさい。",
+          "R": "香をたくための金の祭壇を、契約の板を納めた箱の前、奥の垂れ幕の外側に置きなさい。それから、幕屋の入り口に幕を掛けなさい。"
+        },
+        "uk": {
+          "L": "І поставиш золотий жертовник для кадіння перед ковчегом свідчення, і повісиш запону входу до скинії.",
+          "B": "Постав золотий жертовник кадіння перед ковчегом свідчення й повісь запону при вході до скинії.",
+          "R": "Постав золотий жертовник для спалювання кадила перед ковчегом, у якому лежать таблиці завіту, по зовнішній бік внутрішньої завіси. Потім повісь запону при вході до скинії."
+        },
+        "id": {
+          "L": "Dan engkau harus menaruh mezbah emas untuk ukupan di depan tabut loh hukum, dan engkau harus memasang tirai penutup pintu Kemah Suci.",
+          "B": "Taruhlah mezbah emas untuk ukupan di depan tabut loh hukum, dan gantungkanlah tirai penutup di pintu masuk Kemah Suci.",
+          "R": "Taruhlah mezbah emas untuk membakar ukupan di depan tabut tempat loh-loh perjanjian, di sebelah luar tirai dalam. Lalu gantungkanlah tirai penutup di pintu masuk Kemah Suci."
+        },
+        "zh": {
+          "L": "你要把烧香的金坛安放在见证的柜前，又要挂上帐幕门口的门帘。",
+          "B": "你要把烧香用的金坛放在约柜前面，又要在帐幕的入口挂上门帘。",
+          "R": "要把烧香用的金坛放在约柜前面，就在里面那道帘幕的外边。然后在帐幕的入口挂上门帘。"
         }
       },
       "decisions": [
@@ -1000,6 +1208,26 @@
           "L": "И поставь жертвенник всесожжения перед входом в скинию шатра встречи.",
           "B": "Поставь жертвенник всесожжения перед входом в скинию, шатёр встречи.",
           "R": "Поставь жертвенник для всесожжений перед входом в священный шатёр, шатёр встречи."
+        },
+        "ja": {
+          "L": "そしてあなたは焼き尽くすささげ物の祭壇を、会見の天幕の幕屋の入り口の前に置きなさい。",
+          "B": "焼き尽くすささげ物の祭壇を、幕屋、すなわち会見の天幕の入り口の前に据えなさい。",
+          "R": "焼いてささげるいけにえのための祭壇を、幕屋、つまり神と会うテントの入り口の前に置きなさい。"
+        },
+        "uk": {
+          "L": "І поставиш жертовник всепалення перед входом до скинії намету зустрічі.",
+          "B": "Постав жертовник всепалення перед входом до скинії, намету зустрічі.",
+          "R": "Постав жертовник для всепалень перед входом до скинії, намету зустрічі."
+        },
+        "id": {
+          "L": "Dan engkau harus menaruh mezbah korban bakaran di depan pintu Kemah Suci, Kemah Pertemuan itu.",
+          "B": "Taruhlah mezbah korban bakaran di depan pintu masuk Kemah Suci, yaitu Kemah Pertemuan.",
+          "R": "Taruhlah mezbah untuk korban bakaran di depan pintu masuk Kemah Suci, yaitu Kemah Pertemuan."
+        },
+        "zh": {
+          "L": "你要把燔祭坛安放在会幕的帐幕门前。",
+          "B": "你要把燔祭坛安放在帐幕，就是会幕的入口前面。",
+          "R": "要把献全烧祭的祭坛放在帐幕，就是会幕的入口前面。"
         }
       },
       "decisions": [
@@ -1100,6 +1328,26 @@
           "L": "И поставь умывальник между шатром встречи и жертвенником, и налей туда воды.",
           "B": "Поставь умывальник между шатром встречи и жертвенником и наполни его водой.",
           "R": "Поставь медную чашу для омовения между шатром встречи и жертвенником и наполни её водой."
+        },
+        "ja": {
+          "L": "そしてあなたは洗盤を会見の天幕と祭壇の間に置き、そこに水を入れなさい。",
+          "B": "洗盤を会見の天幕と祭壇の間に置き、それに水を入れなさい。",
+          "R": "青銅の大きな水盤を、神と会うテントと祭壇の間に置いて、水を満たしなさい。"
+        },
+        "uk": {
+          "L": "І поставиш умивальницю між наметом зустрічі і жертовником, і наллєш туди води.",
+          "B": "Постав умивальницю між наметом зустрічі й жертовником і налий у неї води.",
+          "R": "Постав мідну умивальницю між наметом зустрічі й жертовником і наповни її водою."
+        },
+        "id": {
+          "L": "Dan engkau harus menaruh bejana pembasuhan di antara Kemah Pertemuan dan mezbah, dan mengisinya dengan air.",
+          "B": "Taruhlah bejana pembasuhan di antara Kemah Pertemuan dan mezbah, lalu isilah dengan air.",
+          "R": "Taruhlah bejana tembaga itu di antara Kemah Pertemuan dan mezbah, lalu isilah dengan air."
+        },
+        "zh": {
+          "L": "你要把水盆安放在会幕和坛的中间，在里面盛水。",
+          "B": "你要把水盆安放在会幕和祭坛中间，在盆里盛上水。",
+          "R": "要把大铜盆放在会幕和祭坛中间，把盆装满水。"
         }
       },
       "decisions": [
@@ -1214,6 +1462,26 @@
           "L": "И устрой двор вокруг, и повесь занавес для ворот двора.",
           "B": "Устрой вокруг двор и повесь занавес у ворот двора.",
           "R": "Устрой вокруг двор и повесь занавес у ворот двора."
+        },
+        "ja": {
+          "L": "そしてあなたは周りに庭を設け、庭の門の幕を[掛けなさい]。",
+          "B": "その周りに庭を設け、庭の門に幕を掛けなさい。",
+          "R": "その周りに庭を作り、庭の門に幕を掛けなさい。"
+        },
+        "uk": {
+          "L": "І поставиш подвірʼя довкола, і повісиш запону брами подвірʼя.",
+          "B": "Встанови довкола неї подвірʼя й повісь запону при брамі подвірʼя.",
+          "R": "Встанови довкола неї подвірʼя й повісь запону при брамі подвірʼя."
+        },
+        "id": {
+          "L": "Dan engkau harus mendirikan pelataran di sekelilingnya, dan memasang tirai penutup pintu gerbang pelataran.",
+          "B": "Dirikanlah pelataran di sekelilingnya, dan gantungkanlah tirai penutup di pintu gerbang pelataran.",
+          "R": "Dirikanlah pelataran di sekelilingnya, dan gantungkanlah tirai penutup di pintu gerbang pelataran."
+        },
+        "zh": {
+          "L": "你要在四围立起院子，挂上院门的门帘。",
+          "B": "你要在四周立起院子，在院门挂上门帘。",
+          "R": "要在四周立起院子，在院门挂上门帘。"
         }
       },
       "decisions": [
@@ -1328,6 +1596,26 @@
           "L": "И возьми масло помазания, и помажь скинию и всё, что в ней, и освяти её и все её принадлежности, и она будет святой.",
           "B": "Потом возьми масло помазания и помажь скинию и всё, что в ней. Освяти её и все её принадлежности, и она будет святой.",
           "R": "Потом возьми масло для помазания и помажь священный шатёр и всё, что в нём. Так ты отделишь для Бога его и все его принадлежности, и он будет святым."
+        },
+        "ja": {
+          "L": "そしてあなたは注ぎの油を取り、幕屋とその中にあるすべてのものに油を注ぎ、それとそのすべての器具を聖別しなさい。そうすれば、それは聖なるものとなる。",
+          "B": "それから注ぎの油を取って、幕屋とその中のすべてのものに油を注ぎ、幕屋とそのすべての器具を聖別しなさい。そうすれば、それは聖なるものとなる。",
+          "R": "それから、油注ぎに使う油を取って、幕屋とその中にあるすべてのものに油を注ぎなさい。こうして、幕屋とそのすべての道具をわたしのために取り分けなさい。そうすれば、それは聖なるものとなる。"
+        },
+        "uk": {
+          "L": "І візьмеш олію помазання, і помажеш скинію і все, що [в] ній, і освятиш її і все її приладдя, і буде вона святою.",
+          "B": "Тоді візьми олію помазання й помаж скинію та все, що в ній. Освяти її та все її приладдя, і вона буде святою.",
+          "R": "Потім візьми олію для помазання й помаж скинію та все, що в ній. Так ти відділиш її та все її приладдя для Бога, і вона буде святою."
+        },
+        "id": {
+          "L": "Dan engkau harus mengambil minyak urapan, dan mengurapi Kemah Suci dan segala yang ada di dalamnya, dan menguduskannya beserta segala perkakasnya, sehingga semuanya itu menjadi kudus.",
+          "B": "Lalu ambillah minyak urapan, dan urapilah Kemah Suci dan segala yang ada di dalamnya. Kuduskanlah Kemah Suci itu dengan segala perabotnya, sehingga semuanya menjadi kudus.",
+          "R": "Lalu ambillah minyak urapan dan urapilah Kemah Suci dan segala yang ada di dalamnya. Dengan begitu engkau mengkhususkan Kemah Suci dan semua perlengkapannya bagi Allah, dan semuanya akan menjadi kudus."
+        },
+        "zh": {
+          "L": "你要取膏抹的油，抹帐幕和其中的一切，使它和它的一切器具成圣，它就成为圣的。",
+          "B": "然后你要取膏油，抹帐幕和里面的一切。你要使帐幕和它所有的器具分别为圣，它就会成为圣的。",
+          "R": "然后要拿膏抹用的油，抹帐幕和里面所有的东西。这样，你就把帐幕和它所有的器具分别出来归给{{god_term:神|上帝}}，它就会成为圣的。"
         }
       },
       "decisions": [
@@ -1496,6 +1784,64 @@
           "reason": "Readable says what consecrating means, setting apart as God's own, as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020400090122"
+          ],
+          "choice": "qiddesh \"聖別する\" (L, B), \"わたしのために取り分ける\" (R)",
+          "alternatives": [
+            "\"聖なるものとして取り分ける\""
+          ],
+          "reason": "As in 28:41 (EXO 25-28); the Readable English \"set apart for God\" is in God's own mouth, so Japanese says \"わたしのために\" (meaning decision m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020400090122"
+          ],
+          "choice": "使……成圣 (L), 分别为圣 (B) for qiddash (consecrate)",
+          "alternatives": [
+            "祝圣"
+          ],
+          "reason": "Setting apart as belonging to God (the meaning decision), the forms of 28:41 and 29; Readable says 分别出来归给神, as the English Readable says \"set apart for God\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o020400090122"
+          ],
+          "choice": "{{god_term:神|上帝}} in 分别出来归给神",
+          "alternatives": [],
+          "reason": "Every word naming God is written {{god_term:神|上帝}}, so the reader can choose 神 or 上帝; the English Readable writes \"God\" plainly. Recorded on the chapter's first record with the setting.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1585,6 +1931,26 @@
           "L": "И помажь жертвенник всесожжения и все его принадлежности, и освяти жертвенник, и будет жертвенник святыней святынь.",
           "B": "Помажь жертвенник всесожжения и все его принадлежности. Освяти жертвенник, и он будет великой святыней.",
           "R": "Помажь жертвенник для всесожжений и всё, что нужно для него. Отдели жертвенник для Бога, и он будет особенно святым."
+        },
+        "ja": {
+          "L": "そしてあなたは焼き尽くすささげ物の祭壇とそのすべての器具に油を注ぎ、その祭壇を聖別しなさい。そうすれば、祭壇は聖なるものの中の聖なるものとなる。",
+          "B": "焼き尽くすささげ物の祭壇とそのすべての器具に油を注ぎ、祭壇を聖別しなさい。そうすれば、祭壇は最も聖なるものとなる。",
+          "R": "焼いてささげるいけにえのための祭壇と、それに使うすべての道具に油を注ぎなさい。祭壇をわたしのために取り分けなさい。そうすれば、それはいちばん聖なるものとなる。"
+        },
+        "uk": {
+          "L": "І помажеш жертовник всепалення і все його приладдя, і освятиш жертовник, і буде жертовник найсвятішим.",
+          "B": "Помаж жертовник всепалення й усе його приладдя. Освяти жертовник, і він буде найсвятішим.",
+          "R": "Помаж жертовник для всепалень і всі речі, якими користуються біля нього. Відділи жертовник для Бога, і він буде найсвятішим."
+        },
+        "id": {
+          "L": "Dan engkau harus mengurapi mezbah korban bakaran beserta segala perkakasnya, dan menguduskan mezbah itu, sehingga mezbah itu menjadi mahakudus.",
+          "B": "Urapilah mezbah korban bakaran dengan segala perkakasnya. Kuduskanlah mezbah itu, sehingga menjadi mahakudus.",
+          "R": "Urapilah mezbah untuk korban bakaran dan semua alat-alatnya. Khususkanlah mezbah itu bagi Allah, dan mezbah itu akan menjadi sangat kudus."
+        },
+        "zh": {
+          "L": "你要抹燔祭坛和它的一切器具，使坛成圣，坛就成为至圣的。",
+          "B": "你要抹燔祭坛和它所有的器具，使坛分别为圣，坛就会成为至圣的。",
+          "R": "要抹献全烧祭的祭坛和它上面用的所有东西。要把坛分别出来归给{{god_term:神|上帝}}，它就会成为至圣的。"
         }
       },
       "decisions": [
@@ -1725,6 +2091,28 @@
           "reason": "Literal keeps the Hebrew superlative but not the phrase \"Святое святых\", which this translation keeps for the Most Holy Place.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020400100131",
+            "o020400100141"
+          ],
+          "choice": "至圣的 for \"holy of holies\" said of the altar",
+          "alternatives": [
+            "圣中之圣"
+          ],
+          "reason": "Most holy (the meaning decision); the same words as the Most Holy Place 至圣所, without the 所.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1805,6 +2193,26 @@
           "L": "И помажь умывальник и его подставку, и освяти его.",
           "B": "Помажь умывальник и его подставку и освяти его.",
           "R": "Помажь медную чашу и её подставку и отдели её для Бога."
+        },
+        "ja": {
+          "L": "そしてあなたは洗盤とその台に油を注ぎ、それを聖別しなさい。",
+          "B": "洗盤とその台に油を注いで、聖別しなさい。",
+          "R": "青銅の大きな水盤とその台にも油を注いで、わたしのために取り分けなさい。"
+        },
+        "uk": {
+          "L": "І помажеш умивальницю і її підставу, і освятиш її.",
+          "B": "Помаж умивальницю з її підставою й освяти її.",
+          "R": "Помаж мідну умивальницю та її підставу й відділи її для Бога."
+        },
+        "id": {
+          "L": "Dan engkau harus mengurapi bejana pembasuhan dan kakinya, dan menguduskannya.",
+          "B": "Urapilah bejana pembasuhan dengan kakinya, dan kuduskanlah.",
+          "R": "Urapilah bejana tembaga itu dan kakinya, dan khususkanlah bagi Allah."
+        },
+        "zh": {
+          "L": "你要抹水盆和盆座，使它成圣。",
+          "B": "你要抹水盆和盆座，使它分别为圣。",
+          "R": "要抹大铜盆和它的座，把它分别出来归给{{god_term:神|上帝}}。"
         }
       },
       "decisions": [
@@ -1923,6 +2331,26 @@
           "L": "И подведи Аарона и его сыновей ко входу в шатёр встречи, и омой их водой.",
           "B": "Подведи Аарона и его сыновей ко входу в шатёр встречи и омой их водой.",
           "R": "Пусть Аарон и его сыновья подойдут ко входу в шатёр встречи, и омой их водой."
+        },
+        "ja": {
+          "L": "そしてあなたはアロンとその子らを会見の天幕の入り口に近づかせ、彼らを水で洗いなさい。",
+          "B": "アロンとその子らを会見の天幕の入り口に連れて来て、水で彼らを洗いなさい。",
+          "R": "アロンとその息子たちを、神と会うテントの入り口に来させて、彼らを水で洗いなさい。"
+        },
+        "uk": {
+          "L": "І приведеш Аарона і синів його до входу намету зустрічі, і обмиєш їх водою.",
+          "B": "Приведи Аарона та його синів до входу в намет зустрічі й обмий їх водою.",
+          "R": "Хай Аарон і його сини підійдуть до входу в намет зустрічі, і обмий їх водою."
+        },
+        "id": {
+          "L": "Dan engkau harus membawa Harun dan anak-anaknya mendekat ke pintu Kemah Pertemuan, dan membasuh mereka dengan air.",
+          "B": "Bawalah Harun dan anak-anaknya ke pintu masuk Kemah Pertemuan dan basuhlah mereka dengan air.",
+          "R": "Suruhlah Harun dan anak-anaknya datang ke pintu masuk Kemah Pertemuan, dan basuhlah mereka dengan air."
+        },
+        "zh": {
+          "L": "你要使亚伦和他的儿子们到会幕门口来，用水洗他们。",
+          "B": "你要带亚伦和他的儿子们到会幕的入口，用水洗他们。",
+          "R": "要叫亚伦和他的儿子们到会幕的入口来，用水为他们洗净。"
         }
       },
       "decisions": [
@@ -2027,6 +2455,26 @@
           "L": "И облеки Аарона в святые одежды, и помажь его, и освяти его, и он будет священником {{deity_pronoun:мне|Мне}}.",
           "B": "Облеки Аарона в святые одежды, помажь его и освяти его, чтобы он служил {{deity_pronoun:мне|Мне}} священником.",
           "R": "Надень на Аарона святую одежду. Помажь его и отдели его для {{deity_pronoun:меня|Меня}}, чтобы он служил {{deity_pronoun:мне|Мне}} священником."
+        },
+        "ja": {
+          "L": "そしてあなたはアロンに聖なる衣服を着せ、彼に油を注ぎ、彼を聖別しなさい。そうすれば、彼はわたしに祭司として仕える。",
+          "B": "アロンに聖なる衣服を着せ、油を注いで聖別し、祭司としてわたしに仕えさせなさい。",
+          "R": "アロンに聖なる服を着せなさい。彼に油を注いで、わたしのために取り分け、祭司としてわたしに仕えられるようにしなさい。"
+        },
+        "uk": {
+          "L": "І одягнеш Аарона [у] священні шати, і помажеш його, і освятиш його, і він служитиме {{deity_pronoun:мені|Мені}} як священник.",
+          "B": "Одягни Аарона у священні шати, помаж його й освяти його, щоб він служив {{deity_pronoun:мені|Мені}} як священник.",
+          "R": "Одягни Аарона у священний одяг. Помаж його й відділи його для {{deity_pronoun:мене|Мене}}, щоб він міг служити {{deity_pronoun:мені|Мені}} як священник."
+        },
+        "id": {
+          "L": "Dan engkau harus mengenakan pakaian kudus kepada Harun, mengurapi dia dan menguduskan dia, supaya ia melayani-{{deity_pronoun:ku|Ku}} sebagai imam.",
+          "B": "Kenakanlah pakaian kudus kepada Harun, urapilah dia dan kuduskanlah dia, supaya ia melayani-{{deity_pronoun:ku|Ku}} sebagai imam.",
+          "R": "Pakaikanlah pakaian kudus kepada Harun. Urapilah dia dan khususkanlah dia bagi-{{deity_pronoun:ku|Ku}}, supaya dia dapat melayani-{{deity_pronoun:ku|Ku}} sebagai imam."
+        },
+        "zh": {
+          "L": "你要给亚伦穿上圣衣，膏他，使他成圣，他就可以作祭司事奉我。",
+          "B": "你要给亚伦穿上圣衣，膏他，使他分别为圣，好让他作祭司事奉我。",
+          "R": "要给亚伦穿上圣洁的衣服。要膏他，把他分别出来归给我，好让他作祭司事奉我。"
         }
       },
       "decisions": [
@@ -2139,6 +2587,46 @@
           "reason": "\"याजक\" is the Pentateuch terms note's word for priest, as in the New Testament; \"पुरोहित\" is a Hindu family priest.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o020400130122"
+          ],
+          "choice": "\"わたし\" with no deity_pronoun span",
+          "alternatives": [
+            "a span"
+          ],
+          "reason": "Japanese has no capital letters, so the English deity_pronoun setting has nothing to change (style guide section 7).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o020400130121"
+          ],
+          "choice": "我, with no deity_pronoun span",
+          "alternatives": [],
+          "reason": "God speaking says 我; Chinese has no reverent form of the first person (style guide section 4), so the English span on \"me / Me\" has no Chinese counterpart.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2216,6 +2704,26 @@
           "L": "И сыновей его подведи, и облеки их в хитоны.",
           "B": "Потом подведи его сыновей и облеки их в хитоны.",
           "R": "Потом пусть подойдут его сыновья, и надень на них хитоны."
+        },
+        "ja": {
+          "L": "そして彼の子らをあなたは近づかせ、彼らに長衣を着せなさい。",
+          "B": "次に、彼の子らを進み出させ、長衣を着せなさい。",
+          "R": "それから、アロンの息子たちを前に来させて、長い服を着せなさい。"
+        },
+        "uk": {
+          "L": "А синів його приведеш, і одягнеш їх [у] хітони.",
+          "B": "Потім приведи його синів і одягни їх у хітони.",
+          "R": "Потім хай підійдуть його сини, і одягни їх у сорочки."
+        },
+        "id": {
+          "L": "Dan anak-anaknya harus kaubawa mendekat, dan engkau harus mengenakan kemeja kepada mereka.",
+          "B": "Lalu suruhlah anak-anaknya maju dan kenakanlah kemeja kepada mereka.",
+          "R": "Lalu suruhlah anak-anaknya maju, dan pakaikanlah kemeja kepada mereka."
+        },
+        "zh": {
+          "L": "你又要使他的儿子们近前来，给他们穿上内袍。",
+          "B": "然后你要带他的儿子们上前来，给他们穿上内袍。",
+          "R": "然后要叫他的儿子们上前来，给他们穿上内袍。"
         }
       },
       "decisions": [
@@ -2327,6 +2835,26 @@
           "L": "И помажь их, как ты помазал их отца, и они будут священниками {{deity_pronoun:мне|Мне}}; и будет помазание их для них вечным священством в их поколениях.»",
           "B": "Помажь их, как помазал их отца, чтобы и они служили {{deity_pronoun:мне|Мне}} священниками. Их помазание даст им священство на все времена, из поколения в поколение.»",
           "R": "Помажь их так же, как ты помазал их отца, чтобы они могли служить {{deity_pronoun:мне|Мне}} священниками. Так как они помазаны, они и их потомки будут священниками навсегда.»"
+        },
+        "ja": {
+          "L": "そしてあなたが彼らの父に油を注いだように、彼らにも油を注ぎなさい。そうすれば、彼らはわたしに祭司として仕える。そして彼らの油注ぎは、代々にわたって、彼らにとって永遠の祭司職となる。」",
+          "B": "彼らの父に油を注いだように彼らにも油を注ぎ、彼らもまた祭司としてわたしに仕えるようにしなさい。彼らが受ける油注ぎによって、彼らは代々にわたって永遠に祭司職を担うのである。」",
+          "R": "彼らの父に油を注いだのと同じように、彼らにも油を注ぎなさい。そうすれば、彼らは祭司としてわたしに仕えることができる。油を注がれることによって、彼らもその子孫も、いつまでも祭司となるのである。」"
+        },
+        "uk": {
+          "L": "І помажеш їх так, як помазав їхнього батька, і вони служитимуть {{deity_pronoun:мені|Мені}} як священники; і буде їм їхнє помазання на вічне священство в їхніх поколіннях».",
+          "B": "Помаж їх так, як помазав їхнього батька, щоб і вони служили {{deity_pronoun:мені|Мені}} як священники. Їхнє помазання дасть їм священство, що триватиме навіки, з покоління в покоління».",
+          "R": "Помаж їх так само, як помазав їхнього батька, щоб вони могли служити {{deity_pronoun:мені|Мені}} як священники. Через те, що вони помазані, вони та їхні нащадки будуть священниками повік»."
+        },
+        "id": {
+          "L": "Dan engkau harus mengurapi mereka seperti engkau telah mengurapi ayah mereka, supaya mereka melayani-{{deity_pronoun:ku|Ku}} sebagai imam; dan pengurapan mereka itu akan menjadikan mereka imam untuk selama-lamanya, turun-temurun.\"",
+          "B": "Urapilah mereka seperti engkau mengurapi ayah mereka, supaya mereka juga melayani-{{deity_pronoun:ku|Ku}} sebagai imam. Pengurapan itu akan memberi mereka jabatan imam untuk selama-lamanya, turun-temurun.\"",
+          "R": "Urapilah mereka dengan cara yang sama seperti engkau mengurapi ayah mereka, supaya mereka dapat melayani-{{deity_pronoun:ku|Ku}} sebagai imam. Karena mereka diurapi, mereka dan keturunan mereka akan menjadi imam untuk selamanya.\""
+        },
+        "zh": {
+          "L": "你要膏他们，像膏他们的父亲一样，他们就可以作祭司事奉我；他们受了膏，就要世世代代永远承接祭司的职分。”",
+          "B": "你要膏他们，就像膏他们的父亲一样，让他们也作祭司事奉我。他们受的膏，要使他们得着祭司的职分，世世代代，直到永远。”",
+          "R": "要膏他们，就像你膏他们的父亲一样，好让他们作祭司事奉我。因为他们受了膏，他们和他们的子孙就要永远作祭司。”"
         }
       },
       "decisions": [
@@ -2395,6 +2923,29 @@
             "\"የዘላለም ሥርዓት\" (a lasting statute)"
           ],
           "reason": "\"ክህነት\" is the priestly office; the Hebrew word here is the perpetuity of the office, not a statute.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020400150132",
+            "o020400150141",
+            "o020400150152"
+          ],
+          "choice": "\"永遠の祭司職\" (L), \"永遠に祭司職を担う\" (B), \"いつまでも祭司となる\" (R); generations \"代々\"",
+          "alternatives": [
+            "\"とこしえの祭司職\""
+          ],
+          "reason": "The priesthood stays with Aaron's family for all time (meaning decision m1); \"代々\" as for \"generations\" elsewhere in Exodus.",
           "uncertain": false,
           "footnote": false
         }
@@ -2476,6 +3027,26 @@
           "L": "И сделал Моисей по всему, что повелел ему {{divine_name:ГОСПОДЬ|Яхве}}; так он сделал.",
           "B": "Моисей исполнил всё, что повелел ему {{divine_name:ГОСПОДЬ|Яхве}}. Именно так он и сделал.",
           "R": "Моисей сделал всё, что велел ему {{divine_name:ГОСПОДЬ|Яхве}}."
+        },
+        "ja": {
+          "L": "そしてモーセは、{{divine_name:主|ヤハウェ}}が彼に命じられたすべてのことに従って行った。そのように彼は行った。",
+          "B": "モーセは、{{divine_name:主|ヤハウェ}}が命じられたとおりに、すべてを行った。まさにそのとおりに行ったのである。",
+          "R": "モーセは、{{divine_name:主|ヤハウェ}}が言われたことを、すべてそのとおりに行いました。"
+        },
+        "uk": {
+          "L": "І зробив Мойсей за всім, що {{divine_name:ГОСПОДЬ|Ягве}} наказав йому; так зробив він.",
+          "B": "Мойсей виконав усе, що {{divine_name:ГОСПОДЬ|Ягве}} наказав йому. Саме так він і зробив.",
+          "R": "Мойсей зробив усе, що {{divine_name:ГОСПОДЬ|Ягве}} сказав йому зробити."
+        },
+        "id": {
+          "L": "Dan Musa melakukan sesuai dengan segala yang diperintahkan {{divine_name:TUHAN|Yahweh}} kepadanya; demikianlah ia lakukan.",
+          "B": "Musa melakukan segala yang diperintahkan {{divine_name:TUHAN|Yahweh}} kepadanya. Tepat demikianlah ia lakukan.",
+          "R": "Musa melakukan semua yang diperintahkan {{divine_name:TUHAN|Yahweh}} kepadanya."
+        },
+        "zh": {
+          "L": "摩西就照着{{divine_name:上主|雅威}}吩咐他的一切去做；他就这样做了。",
+          "B": "摩西完全照着{{divine_name:上主|雅威}}吩咐他的去做。他正是这样做的。",
+          "R": "摩西做了{{divine_name:上主|雅威}}吩咐他做的一切。"
         }
       },
       "decisions": [
@@ -2525,6 +3096,47 @@
           "choice": "one clause",
           "alternatives": [],
           "reason": "Readable makes the doubled statement a single sentence; Literal and Balanced keep the repetition.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020400160012",
+            "o020400160081",
+            "o020400160091"
+          ],
+          "choice": "Worded as Noah's obedience in Genesis 6:22 (\"…命じられたすべてのことに従って行った。そのように彼は行った。\")",
+          "alternatives": [],
+          "reason": "The Hebrew repeats Noah's words (meaning decision m1); the Japanese of Genesis 6:22 is reused so the echo can be heard.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020400160081",
+            "o020400160091"
+          ],
+          "choice": "他就这样做了 for \"so he did\"",
+          "alternatives": [
+            "他便如此行了"
+          ],
+          "reason": "The emphatic repetition is kept at Literal and Balanced; Readable makes one clause, as the English Readable does.",
           "uncertain": false,
           "footnote": false
         }
@@ -2611,6 +3223,26 @@
           "L": "И было в первый месяц, во второй год, в первый [день] месяца, была поставлена скиния.",
           "B": "Во второй год, в первый день первого месяца, скиния была поставлена.",
           "R": "Так священный шатёр был поставлен в первый день первого месяца. Это было на второй год после того, как израильтяне вышли из Египта."
+        },
+        "ja": {
+          "L": "そして第二の年の第一の月、その月の一日に、幕屋が建てられた。",
+          "B": "第二年の第一の月の一日に、幕屋が建てられた。",
+          "R": "こうして、第一の月の一日に、幕屋が建てられました。それは、イスラエルの人々がエジプトを出てから二年目のことでした。"
+        },
+        "uk": {
+          "L": "І сталося першого місяця, другого року, першого [дня] місяця, поставлено скинію.",
+          "B": "Другого року, першого дня першого місяця, скинію було поставлено.",
+          "R": "Отже, скинію поставили першого дня першого місяця. Це було на другий рік після того, як ізраїльтяни вийшли з Єгипту."
+        },
+        "id": {
+          "L": "Dan terjadilah pada bulan yang pertama, pada tahun yang kedua, pada tanggal satu bulan itu, Kemah Suci didirikan.",
+          "B": "Pada tahun kedua, pada hari pertama bulan pertama, Kemah Suci didirikan.",
+          "R": "Jadi Kemah Suci didirikan pada hari pertama bulan pertama. Saat itu tahun kedua sejak orang Israel keluar dari Mesir."
+        },
+        "zh": {
+          "L": "在第二年的第一个月，那月的初一，帐幕被立起来了。",
+          "B": "第二年正月初一，帐幕立起来了。",
+          "R": "于是帐幕在正月初一立起来了。这是以色列人离开埃及以后的第二年。"
         }
       },
       "decisions": [
@@ -2737,6 +3369,85 @@
           "reason": "The Pentateuch note gives \"израильтяне\" at Balanced and Readable with no span: the Russian word already covers men and women.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o020400170022",
+            "o020400170042"
+          ],
+          "choice": "\"第二の年の第一の月\": year before month",
+          "alternatives": [
+            "\"第一の月、第二の年の\""
+          ],
+          "reason": "Japanese gives the larger unit of time first; the passive \"建てられた\" is kept (meaning decision m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o020400170081"
+          ],
+          "choice": "\"イスラエルの人々\" with no gender span",
+          "alternatives": [
+            "{{gender:イスラエルの人々|イスラエルの子ら}}"
+          ],
+          "reason": "The Japanese is already inclusive, as in the rest of Exodus; the English needs a span for \"sons\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020400170011",
+            "o020400170012"
+          ],
+          "choice": "a time clause for wayehi (\"and it came about\")",
+          "alternatives": [
+            "那时"
+          ],
+          "reason": "The style guide's form for wayehi at Literal is a time clause; the date itself is the time.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o020400170081",
+            "o020400170092"
+          ],
+          "choice": "以色列人, with no gender span",
+          "alternatives": [
+            "{{gender:以色列人|以色列的儿子}}"
+          ],
+          "reason": "As the glossary has it, 以色列人 already includes men and women, so the English Readable's gender span has no Chinese counterpart. Recorded once for this chapter.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2830,6 +3541,26 @@
           "L": "И поставил Моисей скинию; и положил её подножия, и поставил её рамы, и вставил её перекладины, и поставил её столбы.",
           "B": "Моисей поставил скинию. Он положил её подножия, установил рамы, вставил перекладины и поставил столбы.",
           "R": "Моисей поставил священный шатёр. Он положил на место его подножия и поставил в них рамы. Он вставил перекладины и поставил его столбы."
+        },
+        "ja": {
+          "L": "そしてモーセは幕屋を建てた。そして彼はその台座を置き、その枠板を立て、その横木を入れ、その柱を立てた。",
+          "B": "モーセは幕屋を建てた。台座を据え、枠板を立て、横木を通し、柱を立てた。",
+          "R": "モーセは幕屋を建てました。まず台座を置き、そこに枠板を立てました。横木を通し、柱を立てました。"
+        },
+        "uk": {
+          "L": "І поставив Мойсей скинію; і поклав її підстави, і поставив її рами, і вклав її поперечки, і поставив її стовпи.",
+          "B": "Мойсей поставив скинію. Він поклав її підстави, встановив рами, вклав поперечки й поставив стовпи.",
+          "R": "Мойсей поставив скинію. Він поклав на місце її підстави й поставив у них рами. Він вклав поперечки й поставив її стовпи."
+        },
+        "id": {
+          "L": "Dan Musa mendirikan Kemah Suci, dan ia memasang alas-alasnya, dan ia mendirikan papan-papannya, dan ia memasang kayu-kayu lintangnya, dan ia mendirikan tiang-tiangnya.",
+          "B": "Musa mendirikan Kemah Suci. Ia memasang alas-alasnya, menegakkan papan-papannya, memasang kayu-kayu lintangnya, dan mendirikan tiang-tiangnya.",
+          "R": "Musa mendirikan Kemah Suci. Dia memasang alas-alasnya dan menegakkan papan-papan di atasnya. Dia memasang kayu-kayu lintang dan mendirikan tiang-tiangnya."
+        },
+        "zh": {
+          "L": "摩西立起帐幕，安上它的底座，立起它的竖板，穿上它的横木，立起它的柱子。",
+          "B": "摩西立起帐幕。他安放底座，把竖板放好，装上横木，又立起柱子。",
+          "R": "摩西立起帐幕。他把底座放好，把竖板插进底座，装上横木，又立起柱子。"
         }
       },
       "decisions": [
@@ -2977,6 +3708,26 @@
           "L": "И распростёр шатёр над скинией, и положил покрышку шатра на него сверху, как повелел {{divine_name:ГОСПОДЬ|Яхве}} Моисею.",
           "B": "Он раскинул шатёр над скинией и положил поверх него покрышку шатра, как повелел {{divine_name:ГОСПОДЬ|Яхве}} Моисею.",
           "R": "Он раскинул над священным шатром внешний шатёр из козьей шерсти, а поверх него положил кожаные покрышки. Всё это он сделал, как повелел {{divine_name:ГОСПОДЬ|Яхве}} Моисею."
+        },
+        "ja": {
+          "L": "そして彼は幕屋の上に天幕を広げ、天幕の覆いをその上に、上から掛けた。{{divine_name:主|ヤハウェ}}がモーセに命じられたとおりであった。",
+          "B": "彼は幕屋の上に天幕を広げ、その上に天幕の覆いを掛けた。{{divine_name:主|ヤハウェ}}がモーセに命じられたとおりであった。",
+          "R": "幕屋の上に、やぎの毛で作った外側のテントを広げ、その上に革の覆いを掛けました。モーセは、{{divine_name:主|ヤハウェ}}が命じられたとおりに、すべてを行いました。"
+        },
+        "uk": {
+          "L": "І розпростер намет над скинією, і поклав покриття намету на нього, зверху, так, як {{divine_name:ГОСПОДЬ|Ягве}} наказав Мойсеєві.",
+          "B": "Він розпростер намет над скинією й поклав зверху на нього покриття намету, так, як {{divine_name:ГОСПОДЬ|Ягве}} наказав Мойсеєві.",
+          "R": "Він розпростер над скинією зовнішній намет із козячої вовни, а зверху поклав шкіряні покриття. Він зробив усе так, як {{divine_name:ГОСПОДЬ|Ягве}} наказав Мойсеєві."
+        },
+        "id": {
+          "L": "Dan ia membentangkan kemah itu di atas Kemah Suci, dan ia menaruh tudung kemah itu di atasnya, seperti yang diperintahkan {{divine_name:TUHAN|Yahweh}} kepada Musa.",
+          "B": "Ia membentangkan kemah itu di atas Kemah Suci dan menaruh tudung kemah di atasnya, tepat seperti yang diperintahkan {{divine_name:TUHAN|Yahweh}} kepada Musa.",
+          "R": "Dia membentangkan kemah luar dari bulu kambing di atas Kemah Suci, lalu menaruh tudung-tudung dari kulit di atasnya. Semuanya dilakukannya tepat seperti yang diperintahkan {{divine_name:TUHAN|Yahweh}} kepada Musa."
+        },
+        "zh": {
+          "L": "他在帐幕上铺开帐篷，又把帐篷的顶盖盖在它上面，照着{{divine_name:上主|雅威}}吩咐摩西的。",
+          "B": "他在帐幕上铺开帐篷，又把帐篷的顶盖盖在上面，正如{{divine_name:上主|雅威}}吩咐摩西的。",
+          "R": "他把山羊毛做的外层帐篷铺在帐幕上，又在上面盖上皮革的顶盖。这一切都是照着{{divine_name:上主|雅威}}吩咐摩西的做的。"
         }
       },
       "decisions": [
@@ -3111,6 +3862,49 @@
           "reason": "The refrain of chapter 39 is heard seven times more here (meaning decision m2); Hindi keeps it word for word, as in chapter 39.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o020400190121",
+            "o020400190122",
+            "o020400190131",
+            "o020400190141",
+            "o020400190151",
+            "o020400190161"
+          ],
+          "choice": "R \"モーセは、{{divine_name:主|ヤハウェ}}が命じられたとおりに、すべてを行いました\": Moses as subject, \"to Moses\" left implicit",
+          "alternatives": [
+            "\"{{divine_name:主|ヤハウェ}}がモーセに命じられたとおりに、すべてを行いました\""
+          ],
+          "reason": "Moses is the one who does it all in the Readable English; naming him twice in one Japanese sentence is heavy.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020400190011"
+          ],
+          "choice": "\"seperti yang diperintahkan TUHAN kepada Musa\" (L), \"tepat seperti ...\" (B, R) for the refrain of verses 19-32",
+          "alternatives": [],
+          "reason": "The refrain closes each step of the setting up seven times; one form per level keeps it audible, as in chapter 39.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3208,6 +4002,26 @@
           "L": "И взял и положил свидетельство в ковчег, и вставил шесты в ковчег, и положил место умилостивления на ковчег сверху.",
           "B": "Он взял свидетельство и положил его в ковчег, вставил в ковчег шесты и положил сверху на ковчег место умилостивления.",
           "R": "Он взял каменные доски завета и положил их в ковчег. Он вставил на место шесты ковчега. Потом он положил сверху на ковчег его крышку, где покрываются грехи."
+        },
+        "ja": {
+          "L": "そして彼は証しを取ってそれを箱の中に入れ、担ぎ棒を箱に付け、贖いの座を箱の上に、上から置いた。",
+          "B": "彼は証しの板を取って箱に納め、担ぎ棒を箱に通し、贖いの座を箱の上に載せた。",
+          "R": "モーセは契約の板を取って、箱の中に入れました。担ぎ棒を箱に取り付けました。そして、箱のふた、つまり罪がおおわれる場所である贖いの座を、箱の上に載せました。"
+        },
+        "uk": {
+          "L": "І взяв, і поклав свідчення в ковчег, і вклав жердини в ковчег, і поклав місце очищення на ковчег, зверху.",
+          "B": "Він узяв свідчення й поклав його в ковчег, вклав у ковчег жердини й поклав віко ковчега зверху.",
+          "R": "Він узяв таблиці завіту й поклав їх у ковчег. Він вклав жердини на місце в ковчег. Потім він поклав зверху віко ковчега, місце, де покриваються гріхи."
+        },
+        "id": {
+          "L": "Dan ia mengambil dan menaruh loh hukum ke dalam tabut, dan ia memasang kayu-kayu pengusung pada tabut itu, dan ia menaruh tutup pendamaian di atas tabut itu.",
+          "B": "Ia mengambil loh hukum dan menaruhnya ke dalam tabut, memasang kayu-kayu pengusung pada tabut itu, dan menaruh tutup pendamaian di atas tabut itu.",
+          "R": "Dia mengambil loh-loh perjanjian dan menaruhnya di dalam tabut. Dia memasang tongkat-tongkat pengusung pada tabut itu. Lalu dia menaruh tutup tabut, tempat dosa-dosa ditutupi, di atas tabut itu."
+        },
+        "zh": {
+          "L": "他把见证版取来，放在柜里，把杠穿在柜上，把赎罪盖安在柜的上面。",
+          "B": "他把见证版拿来放在约柜里，把杠装在约柜上，又把赎罪盖安放在约柜上面。",
+          "R": "他把刻着诫命的两块石版拿来，放进约柜里。他把杠子装在约柜上。然后他把约柜的盖子，就是遮盖罪的地方，盖在约柜上面。"
         }
       },
       "decisions": [
@@ -3314,6 +4128,27 @@
           "reason": "The testimony is the stone tablets of the covenant (meaning decision m1). Literal and Balanced use the Pentateuch terms note's word; Readable says what it is, as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020400200042"
+          ],
+          "choice": "见证版 (L, B); 刻着诫命的两块石版 (R) for the testimony",
+          "alternatives": [
+            "法版",
+            "约版"
+          ],
+          "reason": "The glossary's forms for the tablets.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3407,6 +4242,26 @@
           "L": "И внёс ковчег в скинию, и повесил завесу для закрытия, и закрыл ковчег свидетельства, как повелел {{divine_name:ГОСПОДЬ|Яхве}} Моисею.",
           "B": "Он внёс ковчег в скинию и повесил завесу, которая служит заграждением, и закрыл ею ковчег свидетельства, как повелел {{divine_name:ГОСПОДЬ|Яхве}} Моисею.",
           "R": "Он внёс ковчег в священный шатёр и повесил внутреннюю завесу, чтобы закрыть ковчег, в котором хранятся каменные доски завета. Всё это он сделал, как повелел {{divine_name:ГОСПОДЬ|Яхве}} Моисею."
+        },
+        "ja": {
+          "L": "そして彼は箱を幕屋の中に運び入れ、仕切りの垂れ幕を掛け、証しの箱を覆い隠した。{{divine_name:主|ヤハウェ}}がモーセに命じられたとおりであった。",
+          "B": "彼は箱を幕屋に運び入れ、仕切りの垂れ幕を掛けて、証しの箱を見えないように隔てた。{{divine_name:主|ヤハウェ}}がモーセに命じられたとおりであった。",
+          "R": "モーセは箱を幕屋の中に運び入れ、奥の垂れ幕を掛けて、契約の板を納めた箱を隠しました。モーセは、{{divine_name:主|ヤハウェ}}が命じられたとおりに、すべてを行いました。"
+        },
+        "uk": {
+          "L": "І вніс ковчег до скинії, і повісив завісу запони, і заслонив ковчег свідчення, так, як {{divine_name:ГОСПОДЬ|Ягве}} наказав Мойсеєві.",
+          "B": "Він вніс ковчег до скинії й повісив завісу, що слугує заслоною, і закрив ковчег свідчення від погляду, так, як {{divine_name:ГОСПОДЬ|Ягве}} наказав Мойсеєві.",
+          "R": "Він вніс ковчег до скинії й повісив внутрішню завісу, щоб закрити ковчег, у якому лежать таблиці завіту. Він зробив усе так, як {{divine_name:ГОСПОДЬ|Ягве}} наказав Мойсеєві."
+        },
+        "id": {
+          "L": "Dan ia membawa tabut itu masuk ke dalam Kemah Suci, dan ia memasang tirai penyekat, dan ia menyekat tabut loh hukum, seperti yang diperintahkan {{divine_name:TUHAN|Yahweh}} kepada Musa.",
+          "B": "Ia membawa tabut itu masuk ke dalam Kemah Suci dan menggantungkan tirai penyekat, sehingga tabut loh hukum tertutup dari pandangan, tepat seperti yang diperintahkan {{divine_name:TUHAN|Yahweh}} kepada Musa.",
+          "R": "Dia membawa tabut itu masuk ke dalam Kemah Suci dan menggantungkan tirai dalam untuk menyekat tabut tempat loh-loh perjanjian itu. Semuanya dilakukannya tepat seperti yang diperintahkan {{divine_name:TUHAN|Yahweh}} kepada Musa."
+        },
+        "zh": {
+          "L": "他把柜抬进帐幕，挂上遮掩的帘幕，把见证的柜遮掩起来，照着{{divine_name:上主|雅威}}吩咐摩西的。",
+          "B": "他把约柜抬进帐幕，挂上作为遮隔的帘幕，把约柜遮隔起来，正如{{divine_name:上主|雅威}}吩咐摩西的。",
+          "R": "他把约柜抬进帐幕，挂上里面的帘幕，把存放刻着诫命的两块石版的约柜遮隔起来。这一切都是照着{{divine_name:上主|雅威}}吩咐摩西的做的。"
         }
       },
       "decisions": [
@@ -3545,6 +4400,26 @@
           "L": "И поставил стол в шатре встречи, на стороне скинии к северу, вне завесы.",
           "B": "Он поставил стол в шатре встречи, на северной стороне скинии, снаружи от завесы.",
           "R": "Он поставил стол в шатре встречи, на северной стороне священного шатра, перед внутренней завесой."
+        },
+        "ja": {
+          "L": "そして彼は机を会見の天幕の中、幕屋の北側、垂れ幕の外に置いた。",
+          "B": "彼は机を、会見の天幕の中の、幕屋の北側、垂れ幕の外に置いた。",
+          "R": "モーセは、神と会うテントの中の、幕屋の北側で、奥の垂れ幕の外に机を置きました。"
+        },
+        "uk": {
+          "L": "І поставив стіл у наметі зустрічі, на боці скинії північному, поза завісою.",
+          "B": "Він поставив стіл у наметі зустрічі з північного боку скинії, поза завісою.",
+          "R": "Він поставив стіл у наметі зустрічі, з північного боку скинії, поза внутрішньою завісою."
+        },
+        "id": {
+          "L": "Dan ia menaruh meja di dalam Kemah Pertemuan, pada sisi utara Kemah Suci, di luar tirai.",
+          "B": "Ia menaruh meja di dalam Kemah Pertemuan, di sisi utara Kemah Suci, di luar tirai.",
+          "R": "Dia menaruh meja di dalam Kemah Pertemuan, di sisi utara Kemah Suci, di luar tirai dalam."
+        },
+        "zh": {
+          "L": "他把桌子安放在会幕里，在帐幕的北边，在帘幕外面。",
+          "B": "他把桌子安放在会幕里，在帐幕的北面，帘幕的外面。",
+          "R": "他把桌子放在会幕里，在帐幕的北面，里面那道帘幕的外面。"
         }
       },
       "decisions": [
@@ -3663,6 +4538,26 @@
           "L": "И разложил на нём хлеб рядами перед {{divine_name:ГОСПОДОМ|Яхве}}, как повелел {{divine_name:ГОСПОДЬ|Яхве}} Моисею.",
           "B": "Он разложил на нём хлеб рядами перед {{divine_name:ГОСПОДОМ|Яхве}}, как повелел {{divine_name:ГОСПОДЬ|Яхве}} Моисею.",
           "R": "Он разложил хлеб рядами на столе перед {{divine_name:ГОСПОДОМ|Яхве}}. Это он сделал, как повелел {{divine_name:ГОСПОДЬ|Яхве}} Моисею."
+        },
+        "ja": {
+          "L": "そして彼はその上に、{{divine_name:主|ヤハウェ}}の前にパンを整えて並べた。{{divine_name:主|ヤハウェ}}がモーセに命じられたとおりであった。",
+          "B": "その上に、{{divine_name:主|ヤハウェ}}の前にパンを並べて供えた。{{divine_name:主|ヤハウェ}}がモーセに命じられたとおりであった。",
+          "R": "モーセは、{{divine_name:主|ヤハウェ}}の前の机の上にパンを並べました。{{divine_name:主|ヤハウェ}}がモーセに命じられたとおりにしたのです。"
+        },
+        "uk": {
+          "L": "І розклав на ньому рядами хліб перед {{divine_name:ГОСПОДОМ|Ягве}}, так, як {{divine_name:ГОСПОДЬ|Ягве}} наказав Мойсеєві.",
+          "B": "Він розклав на ньому хліб рядами перед {{divine_name:ГОСПОДОМ|Ягве}}, так, як {{divine_name:ГОСПОДЬ|Ягве}} наказав Мойсеєві.",
+          "R": "Він розклав хліб рядами на столі перед {{divine_name:ГОСПОДОМ|Ягве}}. Він зробив це так, як {{divine_name:ГОСПОДЬ|Ягве}} наказав Мойсеєві."
+        },
+        "id": {
+          "L": "Dan ia mengatur di atasnya susunan roti di hadapan {{divine_name:TUHAN|Yahweh}}, seperti yang diperintahkan {{divine_name:TUHAN|Yahweh}} kepada Musa.",
+          "B": "Ia menyusun roti di atasnya berderet-deret di hadapan {{divine_name:TUHAN|Yahweh}}, tepat seperti yang diperintahkan {{divine_name:TUHAN|Yahweh}} kepada Musa.",
+          "R": "Dia menyusun roti berderet-deret di atas meja itu di hadapan {{divine_name:TUHAN|Yahweh}}. Dia melakukannya tepat seperti yang diperintahkan {{divine_name:TUHAN|Yahweh}} kepada Musa."
+        },
+        "zh": {
+          "L": "他在桌子上，在{{divine_name:上主|雅威}}面前，把饼摆列整齐，照着{{divine_name:上主|雅威}}吩咐摩西的。",
+          "B": "他在{{divine_name:上主|雅威}}面前把饼一行一行地摆在桌子上，正如{{divine_name:上主|雅威}}吩咐摩西的。",
+          "R": "他在{{divine_name:上主|雅威}}面前，把饼一行一行地摆在桌子上。这都是照着{{divine_name:上主|雅威}}吩咐摩西的做的。"
         }
       },
       "decisions": [
@@ -3783,6 +4678,26 @@
           "L": "И поставил светильник в шатре встречи, напротив стола, на стороне скинии к югу.",
           "B": "Он поставил светильник в шатре встречи напротив стола, на южной стороне скинии.",
           "R": "Он поставил светильник в шатре встречи, напротив стола, на южной стороне священного шатра."
+        },
+        "ja": {
+          "L": "そして彼は燭台を会見の天幕の中、机の向かい側、幕屋の南側に置いた。",
+          "B": "燭台を、会見の天幕の中の、机の向かい側、幕屋の南側に置いた。",
+          "R": "燭台は、神と会うテントの中の、机の向かい側、幕屋の南側に置きました。"
+        },
+        "uk": {
+          "L": "І поставив світильник у наметі зустрічі, навпроти стола, на боці скинії південному.",
+          "B": "Він поставив світильник у наметі зустрічі навпроти стола, з південного боку скинії.",
+          "R": "Він поставив світильник у наметі зустрічі, навпроти стола, з південного боку скинії."
+        },
+        "id": {
+          "L": "Dan ia menaruh kaki pelita di dalam Kemah Pertemuan, berhadapan dengan meja, pada sisi selatan Kemah Suci.",
+          "B": "Ia menaruh kaki pelita di dalam Kemah Pertemuan, berhadapan dengan meja, di sisi selatan Kemah Suci.",
+          "R": "Dia menaruh kaki pelita di dalam Kemah Pertemuan, berhadapan dengan meja, di sisi selatan Kemah Suci."
+        },
+        "zh": {
+          "L": "他把灯台安放在会幕里，在桌子的对面，在帐幕的南边。",
+          "B": "他把灯台安放在会幕里，在桌子的对面，帐幕的南面。",
+          "R": "他把灯台放在会幕里，在桌子的对面，帐幕的南面。"
         }
       },
       "decisions": [
@@ -3880,6 +4795,26 @@
           "L": "И поставил лампады перед {{divine_name:ГОСПОДОМ|Яхве}}, как повелел {{divine_name:ГОСПОДЬ|Яхве}} Моисею.",
           "B": "Он поставил лампады перед {{divine_name:ГОСПОДОМ|Яхве}}, как повелел {{divine_name:ГОСПОДЬ|Яхве}} Моисею.",
           "R": "Он поставил на место лампады перед {{divine_name:ГОСПОДОМ|Яхве}}. Это он сделал, как повелел {{divine_name:ГОСПОДЬ|Яхве}} Моисею."
+        },
+        "ja": {
+          "L": "そして彼は{{divine_name:主|ヤハウェ}}の前にともし火皿を据えた。{{divine_name:主|ヤハウェ}}がモーセに命じられたとおりであった。",
+          "B": "{{divine_name:主|ヤハウェ}}の前にともし火皿を据えた。{{divine_name:主|ヤハウェ}}がモーセに命じられたとおりであった。",
+          "R": "ランプを{{divine_name:主|ヤハウェ}}の前に置きました。{{divine_name:主|ヤハウェ}}がモーセに命じられたとおりにしたのです。"
+        },
+        "uk": {
+          "L": "І поставив лампи перед {{divine_name:ГОСПОДОМ|Ягве}}, так, як {{divine_name:ГОСПОДЬ|Ягве}} наказав Мойсеєві.",
+          "B": "Він поставив лампи перед {{divine_name:ГОСПОДОМ|Ягве}}, так, як {{divine_name:ГОСПОДЬ|Ягве}} наказав Мойсеєві.",
+          "R": "Він поставив лампи на місце перед {{divine_name:ГОСПОДОМ|Ягве}}. Він зробив це так, як {{divine_name:ГОСПОДЬ|Ягве}} наказав Мойсеєві."
+        },
+        "id": {
+          "L": "Dan ia memasang pelita-pelita di hadapan {{divine_name:TUHAN|Yahweh}}, seperti yang diperintahkan {{divine_name:TUHAN|Yahweh}} kepada Musa.",
+          "B": "Ia memasang pelita-pelita di hadapan {{divine_name:TUHAN|Yahweh}}, tepat seperti yang diperintahkan {{divine_name:TUHAN|Yahweh}} kepada Musa.",
+          "R": "Dia memasang pelita-pelita di hadapan {{divine_name:TUHAN|Yahweh}}. Dia melakukannya tepat seperti yang diperintahkan {{divine_name:TUHAN|Yahweh}} kepada Musa."
+        },
+        "zh": {
+          "L": "他在{{divine_name:上主|雅威}}面前安上灯，照着{{divine_name:上主|雅威}}吩咐摩西的。",
+          "B": "他在{{divine_name:上主|雅威}}面前把灯安上，正如{{divine_name:上主|雅威}}吩咐摩西的。",
+          "R": "他在{{divine_name:上主|雅威}}面前把灯安好。这都是照着{{divine_name:上主|雅威}}吩咐摩西的做的。"
         }
       },
       "decisions": [
@@ -3917,6 +4852,49 @@
             "불을 켰다"
           ],
           "reason": "The meaning decision footnotes that the verb may mean mounting the lamps or lighting them; Korean follows the English reading, mounting, and the footnote gives the other.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020400250012"
+          ],
+          "choice": "\"据えた\" / \"置きました\" (mounted the lamps)",
+          "alternatives": [
+            "\"ともした\""
+          ],
+          "reason": "The English reads ya'al as setting the lamps in place; lighting them is the alternative in the footnote (meaning decision m1).",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020400250012"
+          ],
+          "choice": "поставив",
+          "alternatives": [
+            "засвітив",
+            "запалив"
+          ],
+          "reason": "The verb can mean mounting the lamps or lighting them; поставив keeps the first sense, as in verse 4, without ruling out the second as firmly as засвітив would.",
           "uncertain": false,
           "footnote": false
         }
@@ -3999,6 +4977,26 @@
           "L": "И поставил золотой жертвенник в шатре встречи, перед завесой,",
           "B": "Он поставил золотой жертвенник в шатре встречи, перед завесой,",
           "R": "Он поставил золотой жертвенник в шатре встречи, перед внутренней завесой."
+        },
+        "ja": {
+          "L": "そして彼は金の祭壇を会見の天幕の中、垂れ幕の前に置き、",
+          "B": "金の祭壇を、会見の天幕の中の、垂れ幕の前に置き、",
+          "R": "金の祭壇は、神と会うテントの中の、奥の垂れ幕の前に置きました。"
+        },
+        "uk": {
+          "L": "І поставив золотий жертовник у наметі зустрічі, перед завісою,",
+          "B": "Він поставив золотий жертовник у наметі зустрічі, перед завісою,",
+          "R": "Він поставив золотий жертовник у наметі зустрічі, перед внутрішньою завісою."
+        },
+        "id": {
+          "L": "Dan ia menaruh mezbah emas di dalam Kemah Pertemuan, di depan tirai,",
+          "B": "Ia menaruh mezbah emas di dalam Kemah Pertemuan, di depan tirai,",
+          "R": "Dia menaruh mezbah emas di dalam Kemah Pertemuan, di depan tirai dalam."
+        },
+        "zh": {
+          "L": "他把金坛安放在会幕里，在帘幕前面，",
+          "B": "他把金坛安放在会幕里，在帘幕前面，",
+          "R": "他把金坛放在会幕里，在里面那道帘幕的前面。"
         }
       },
       "decisions": [
@@ -4114,6 +5112,26 @@
           "L": "и воскурил на нём благовонное курение, как повелел {{divine_name:ГОСПОДЬ|Яхве}} Моисею.",
           "B": "и сжёг на нём благоуханное курение, как повелел {{divine_name:ГОСПОДЬ|Яхве}} Моисею.",
           "R": "Он сжёг на нём душистые благовония. Это он сделал, как повелел {{divine_name:ГОСПОДЬ|Яхве}} Моисею."
+        },
+        "ja": {
+          "L": "その上で香りのよい香をたいた。{{divine_name:主|ヤハウェ}}がモーセに命じられたとおりであった。",
+          "B": "その上で香りのよい香をたいた。{{divine_name:主|ヤハウェ}}がモーセに命じられたとおりであった。",
+          "R": "その上で、よい香りの香をたきました。{{divine_name:主|ヤハウェ}}がモーセに命じられたとおりにしたのです。"
+        },
+        "uk": {
+          "L": "і спалив на ньому запашне кадило, так, як {{divine_name:ГОСПОДЬ|Ягве}} наказав Мойсеєві.",
+          "B": "і спалив на ньому запашне кадило, так, як {{divine_name:ГОСПОДЬ|Ягве}} наказав Мойсеєві.",
+          "R": "Він спалив на ньому запашне кадило. Він зробив це так, як {{divine_name:ГОСПОДЬ|Ягве}} наказав Мойсеєві."
+        },
+        "id": {
+          "L": "dan ia membakar di atasnya ukupan dari rempah-rempah, seperti yang diperintahkan {{divine_name:TUHAN|Yahweh}} kepada Musa.",
+          "B": "lalu membakar ukupan yang harum di atasnya, tepat seperti yang diperintahkan {{divine_name:TUHAN|Yahweh}} kepada Musa.",
+          "R": "Dia membakar ukupan yang harum di atasnya. Dia melakukannya tepat seperti yang diperintahkan {{divine_name:TUHAN|Yahweh}} kepada Musa."
+        },
+        "zh": {
+          "L": "在上面烧了香料做的香，照着{{divine_name:上主|雅威}}吩咐摩西的。",
+          "B": "在坛上烧了芬芳的香，正如{{divine_name:上主|雅威}}吩咐摩西的。",
+          "R": "他在坛上烧了气味芬芳的香。这都是照着{{divine_name:上主|雅威}}吩咐摩西的做的。"
         }
       },
       "decisions": [
@@ -4224,6 +5242,26 @@
           "L": "И поставил занавес для входа в скинию.",
           "B": "Он повесил занавес у входа в скинию.",
           "R": "Он повесил занавес у входа в священный шатёр."
+        },
+        "ja": {
+          "L": "そして彼は幕屋の入り口の幕を掛けた。",
+          "B": "幕屋の入り口に幕を掛けた。",
+          "R": "幕屋の入り口に幕を掛けました。"
+        },
+        "uk": {
+          "L": "І повісив запону входу до скинії.",
+          "B": "Він повісив запону при вході до скинії.",
+          "R": "Він повісив запону при вході до скинії."
+        },
+        "id": {
+          "L": "Dan ia memasang tirai penutup pintu Kemah Suci.",
+          "B": "Ia menggantungkan tirai penutup di pintu masuk Kemah Suci.",
+          "R": "Dia menggantungkan tirai penutup di pintu masuk Kemah Suci."
+        },
+        "zh": {
+          "L": "他挂上帐幕门口的门帘。",
+          "B": "他在帐幕的入口挂上门帘。",
+          "R": "他在帐幕的入口挂上门帘。"
         }
       },
       "decisions": [
@@ -4306,7 +5344,7 @@
       "renderings": {
         "en": {
           "L": "And the altar of burnt offering he set [at] the entrance of the tabernacle of the tent of meeting, and he offered up on it the burnt offering and the grain offering, just as {{divine_name:the LORD|Yahweh}} had commanded Moses.",
-          "B": "He set the altar of burnt offering at the entrance to the tabernacle, the tent of meeting, and offered on it the burnt offering and the grain offering, just as {{divine_name:the LORD|Yahweh}} had commanded Moses.",
+          "B": "He placed the altar of burnt offering at the entrance of the tabernacle, the tent of meeting, and on it he offered up the burnt offering and the grain offering, just as {{divine_name:the LORD|Yahweh}} had commanded Moses.",
           "R": "He set up the altar for burnt offerings near the entrance to the tabernacle, the tent of meeting. On it he offered the burnt offering and the grain offering. He did this just as {{divine_name:the LORD|Yahweh}} had commanded Moses."
         },
         "es": {
@@ -4353,6 +5391,26 @@
           "L": "И жертвенник всесожжения поставил [у] входа в скинию шатра встречи, и вознёс на нём всесожжение и хлебное приношение, как повелел {{divine_name:ГОСПОДЬ|Яхве}} Моисею.",
           "B": "Он поставил жертвенник всесожжения у входа в скинию, шатёр встречи, и принёс на нём всесожжение и хлебное приношение, как повелел {{divine_name:ГОСПОДЬ|Яхве}} Моисею.",
           "R": "Он поставил жертвенник для всесожжений рядом со входом в священный шатёр, шатёр встречи. На нём он принёс всесожжение и хлебное приношение. Это он сделал, как повелел {{divine_name:ГОСПОДЬ|Яхве}} Моисею."
+        },
+        "ja": {
+          "L": "そして焼き尽くすささげ物の祭壇を、彼は会見の天幕の幕屋の入り口に据え、その上で焼き尽くすささげ物と穀物のささげ物をささげた。{{divine_name:主|ヤハウェ}}がモーセに命じられたとおりであった。",
+          "B": "焼き尽くすささげ物の祭壇を、幕屋、すなわち会見の天幕の入り口に据え、その上で焼き尽くすささげ物と穀物のささげ物をささげた。{{divine_name:主|ヤハウェ}}がモーセに命じられたとおりであった。",
+          "R": "焼いてささげるいけにえのための祭壇を、幕屋、つまり神と会うテントの入り口の近くに置きました。その上で、焼いてささげるいけにえと穀物のささげ物をささげました。{{divine_name:主|ヤハウェ}}がモーセに命じられたとおりにしたのです。"
+        },
+        "uk": {
+          "L": "А жертовник всепалення поставив [біля] входу скинії намету зустрічі, і приніс на ньому всепалення і хлібну жертву, так, як {{divine_name:ГОСПОДЬ|Ягве}} наказав Мойсеєві.",
+          "B": "Він поставив жертовник всепалення біля входу до скинії, намету зустрічі, і приніс на ньому всепалення й хлібну жертву, так, як {{divine_name:ГОСПОДЬ|Ягве}} наказав Мойсеєві.",
+          "R": "Він поставив жертовник для всепалень біля входу до скинії, намету зустрічі. На ньому він приніс всепалення й хлібну жертву. Він зробив це так, як {{divine_name:ГОСПОДЬ|Ягве}} наказав Мойсеєві."
+        },
+        "id": {
+          "L": "Dan mezbah korban bakaran ia taruh [di] pintu Kemah Suci, Kemah Pertemuan itu, dan ia mempersembahkan di atasnya korban bakaran dan korban sajian, seperti yang diperintahkan {{divine_name:TUHAN|Yahweh}} kepada Musa.",
+          "B": "Ia menaruh mezbah korban bakaran di depan pintu masuk Kemah Suci, yaitu Kemah Pertemuan, dan di atasnya ia mempersembahkan korban bakaran dan korban sajian, tepat seperti yang diperintahkan {{divine_name:TUHAN|Yahweh}} kepada Musa.",
+          "R": "Dia menaruh mezbah untuk korban bakaran dekat pintu masuk Kemah Suci, yaitu Kemah Pertemuan. Di atasnya dia mempersembahkan korban bakaran dan korban sajian. Dia melakukannya tepat seperti yang diperintahkan {{divine_name:TUHAN|Yahweh}} kepada Musa."
+        },
+        "zh": {
+          "L": "他把燔祭坛安放在会幕的帐幕门口，在坛上献了燔祭和素祭，照着{{divine_name:上主|雅威}}吩咐摩西的。",
+          "B": "他把燔祭坛安放在帐幕，就是会幕的入口，在坛上献上燔祭和素祭，正如{{divine_name:上主|雅威}}吩咐摩西的。",
+          "R": "他把献全烧祭的祭坛安放在帐幕，就是会幕的入口附近。他在坛上献上全烧的祭和谷物祭。这都是照着{{divine_name:上主|雅威}}吩咐摩西的做的。"
         }
       },
       "decisions": [
@@ -4451,6 +5509,53 @@
           "reason": "The Pentateuch terms note's words for the burnt offering and the grain offering, the first offerings made on the new altar (meaning decision m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020400290141",
+            "o020400290142"
+          ],
+          "choice": "minchah \"穀物のささげ物\" (L, B), \"穀物のささげ物\" (R)",
+          "alternatives": [
+            "\"素祭\""
+          ],
+          "reason": "A plain description, matching \"焼き尽くすささげ物\" (L, B) and \"ささげ物\" (R) for offerings in Exodus.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020400290121",
+            "o020400290122",
+            "o020400290141",
+            "o020400290142"
+          ],
+          "choice": "燔祭和素祭 (L, B); 全烧的祭和谷物祭 (R)",
+          "alternatives": [
+            "全燔祭",
+            "素食祭"
+          ],
+          "reason": "The glossary's words for the burnt offering and the grain offering.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4537,6 +5642,26 @@
           "L": "И поставил умывальник между шатром встречи и жертвенником, и налил туда воды для омовения.",
           "B": "Между шатром встречи и жертвенником он поставил умывальник и наполнил его водой для омовения.",
           "R": "Он поставил медную чашу для омовения между шатром встречи и жертвенником и наполнил её водой для омовения."
+        },
+        "ja": {
+          "L": "そして彼は洗盤を会見の天幕と祭壇の間に置き、そこに洗うための水を入れた。",
+          "B": "会見の天幕と祭壇の間に洗盤を置き、洗うための水をそれに満たした。",
+          "R": "青銅の大きな水盤を、神と会うテントと祭壇の間に置き、体を洗うための水を満たしました。"
+        },
+        "uk": {
+          "L": "І поставив умивальницю між наметом зустрічі і жертовником, і налив туди води для вмивання.",
+          "B": "Між наметом зустрічі й жертовником він поставив умивальницю й налив у неї води для вмивання.",
+          "R": "Він поставив мідну умивальницю між наметом зустрічі й жертовником і наповнив її водою для вмивання."
+        },
+        "id": {
+          "L": "Dan ia menaruh bejana pembasuhan di antara Kemah Pertemuan dan mezbah, dan ia mengisinya dengan air untuk membasuh.",
+          "B": "Di antara Kemah Pertemuan dan mezbah ia menaruh bejana pembasuhan, lalu mengisinya dengan air untuk membasuh.",
+          "R": "Dia menaruh bejana tembaga itu di antara Kemah Pertemuan dan mezbah, lalu mengisinya dengan air untuk membasuh."
+        },
+        "zh": {
+          "L": "他把水盆安放在会幕和坛的中间，在里面盛水，为了洗濯。",
+          "B": "他把水盆安放在会幕和祭坛中间，在盆里盛满洗濯用的水。",
+          "R": "他把大铜盆放在会幕和祭坛中间，装满洗濯用的水。"
         }
       },
       "decisions": [
@@ -4655,6 +5780,26 @@
           "L": "И омывали из него Моисей, и Аарон, и его сыновья свои руки и свои ноги.",
           "B": "Моисей, Аарон и сыновья Аарона омывали из него руки и ноги.",
           "R": "Моисей, Аарон и сыновья Аарона мыли в ней руки и ноги."
+        },
+        "ja": {
+          "L": "そしてモーセとアロンとその子らは、そこから[水を取って]自分たちの手と足を洗うのであった。",
+          "B": "モーセとアロンとアロンの子らは、そこから水を取って手と足を洗うのであった。",
+          "R": "モーセとアロンとアロンの息子たちは、その水で手と足を洗いました。"
+        },
+        "uk": {
+          "L": "І мили з неї Мойсей, і Аарон, і сини його свої руки і свої ноги.",
+          "B": "Мойсей, Аарон і Ааронові сини мили водою з неї руки й ноги.",
+          "R": "Мойсей, Аарон і Ааронові сини мили з неї руки й ноги."
+        },
+        "id": {
+          "L": "Dan Musa dan Harun dan anak-anaknya membasuh tangan dan kaki mereka dengan air dari situ.",
+          "B": "Musa, Harun dan anak-anak Harun biasa membasuh tangan dan kaki mereka dengan air dari bejana itu.",
+          "R": "Musa, Harun dan anak-anak Harun memakainya untuk membasuh tangan dan kaki mereka."
+        },
+        "zh": {
+          "L": "摩西、亚伦和他的儿子们在那里洗他们的手和脚。",
+          "B": "摩西、亚伦和亚伦的儿子们常用盆里的水洗手洗脚。",
+          "R": "摩西、亚伦和亚伦的儿子们用它来洗手洗脚。"
         }
       },
       "decisions": [
@@ -4707,6 +5852,26 @@
           ],
           "reason": "The narrative tenses give way to the imparfait because the verse most likely describes what they did each time (m1), as verse 32 goes on to say; the passé simple would point to a single washing on the day the tabernacle was set up.",
           "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020400310012"
+          ],
+          "choice": "\"洗うのであった\": a repeated practice",
+          "alternatives": [
+            "\"洗った\" (once)"
+          ],
+          "reason": "The English reads the verb as habitual (\"would wash\"), with verse 32 (meaning decision m1, uncertain).",
+          "uncertain": true,
           "footnote": false
         }
       ],
@@ -4795,6 +5960,26 @@
           "L": "Когда они входили в шатёр встречи и когда приближались к жертвеннику, они омывались, как повелел {{divine_name:ГОСПОДЬ|Яхве}} Моисею.",
           "B": "Всякий раз, когда они входили в шатёр встречи или подходили к жертвеннику, они омывались, как повелел {{divine_name:ГОСПОДЬ|Яхве}} Моисею.",
           "R": "Они мылись каждый раз, когда входили в шатёр встречи или подходили к жертвеннику. Так повелел {{divine_name:ГОСПОДЬ|Яхве}} Моисею."
+        },
+        "ja": {
+          "L": "彼らが会見の天幕に入るとき、また祭壇に近づくとき、彼らは洗った。{{divine_name:主|ヤハウェ}}がモーセに命じられたとおりであった。",
+          "B": "彼らは会見の天幕に入るたびに、また祭壇に近づくたびに、手足を洗った。{{divine_name:主|ヤハウェ}}がモーセに命じられたとおりであった。",
+          "R": "彼らは、神と会うテントに入るときや祭壇に近づくときには、いつも手足を洗いました。それは、{{divine_name:主|ヤハウェ}}がモーセに命じられたとおりでした。"
+        },
+        "uk": {
+          "L": "Коли входили вони до намету зустрічі і коли наближалися до жертовника, вони милися, так, як {{divine_name:ГОСПОДЬ|Ягве}} наказав Мойсеєві.",
+          "B": "Щоразу, коли вони входили до намету зустрічі чи наближалися до жертовника, вони милися, так, як {{divine_name:ГОСПОДЬ|Ягве}} наказав Мойсеєві.",
+          "R": "Вони милися щоразу, коли входили до намету зустрічі або наближалися до жертовника. Так {{divine_name:ГОСПОДЬ|Ягве}} наказав Мойсеєві."
+        },
+        "id": {
+          "L": "Apabila mereka masuk ke dalam Kemah Pertemuan dan apabila mereka mendekat ke mezbah, mereka membasuh diri, seperti yang diperintahkan {{divine_name:TUHAN|Yahweh}} kepada Musa.",
+          "B": "Setiap kali mereka masuk ke dalam Kemah Pertemuan atau mendekat ke mezbah, mereka membasuh diri, tepat seperti yang diperintahkan {{divine_name:TUHAN|Yahweh}} kepada Musa.",
+          "R": "Mereka membasuh diri setiap kali mereka masuk ke dalam Kemah Pertemuan atau mendekat ke mezbah. Semua itu tepat seperti yang diperintahkan {{divine_name:TUHAN|Yahweh}} kepada Musa."
+        },
+        "zh": {
+          "L": "他们进会幕的时候，和走近坛的时候，就洗濯，照着{{divine_name:上主|雅威}}吩咐摩西的。",
+          "B": "每当他们进入会幕或走近祭坛的时候，他们都洗濯，正如{{divine_name:上主|雅威}}吩咐摩西的。",
+          "R": "他们每次进入会幕或走近祭坛时，都要洗濯。这都是照着{{divine_name:上主|雅威}}吩咐摩西的做的。"
         }
       },
       "decisions": [
@@ -4903,6 +6088,26 @@
           "L": "И устроил он двор вокруг скинии и жертвенника, и повесил занавес для ворот двора. И окончил Моисей работу.",
           "B": "Он устроил двор вокруг скинии и жертвенника и повесил занавес у ворот двора. Так Моисей окончил работу.",
           "R": "Он устроил двор вокруг священного шатра и жертвенника и повесил занавес у ворот двора. Так Моисей закончил работу."
+        },
+        "ja": {
+          "L": "そして彼は幕屋と祭壇の周りに庭を設け、庭の門の幕を掛けた。そしてモーセはその仕事を完成した。",
+          "B": "幕屋と祭壇の周りに庭を設け、庭の門に幕を掛けた。こうしてモーセはその仕事を完成した。",
+          "R": "幕屋と祭壇の周りに庭を作り、庭の門に幕を掛けました。こうして、モーセは仕事をやり終えました。"
+        },
+        "uk": {
+          "L": "І поставив подвірʼя довкола скинії і жертовника, і повісив запону брами подвірʼя. І завершив Мойсей роботу.",
+          "B": "Він встановив подвірʼя довкола скинії й жертовника й повісив запону при брамі подвірʼя. Так Мойсей завершив роботу.",
+          "R": "Він встановив подвірʼя довкола скинії й жертовника й повісив запону при брамі подвірʼя. Так Мойсей завершив роботу."
+        },
+        "id": {
+          "L": "Dan ia mendirikan pelataran di sekeliling Kemah Suci dan mezbah, dan ia memasang tirai penutup pintu gerbang pelataran. Demikianlah Musa menyelesaikan pekerjaan itu.",
+          "B": "Ia mendirikan pelataran di sekeliling Kemah Suci dan mezbah, dan menggantungkan tirai penutup untuk pintu gerbang pelataran. Demikianlah Musa menyelesaikan pekerjaan itu.",
+          "R": "Dia mendirikan pelataran di sekeliling Kemah Suci dan mezbah, dan menggantungkan tirai penutup di pintu gerbang pelataran. Demikianlah Musa menyelesaikan pekerjaan itu."
+        },
+        "zh": {
+          "L": "他在帐幕和坛的四围立起院子，挂上院门的门帘。摩西就完成了这工作。",
+          "B": "他在帐幕和祭坛四周立起院子，在院门挂上门帘。这样，摩西完成了这工作。",
+          "R": "他在帐幕和祭坛四周立起院子，在院门挂上门帘。就这样，摩西完成了这工作。"
         }
       },
       "decisions": [
@@ -4977,6 +6182,47 @@
           ],
           "reason": "The verb and noun are those of God completing his work in Genesis 2:2 (m1), and Portuguese uses the words Genesis 2:2 has in Portuguese: \"concluiu a sua obra\" (L), \"tinha terminado a sua obra\" (R). \"Obra\" is the word of 39:43 for the same noun.",
           "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020400330122"
+          ],
+          "choice": "\"完成した\" (L, B), as in 39:32",
+          "alternatives": [
+            "\"終えた\""
+          ],
+          "reason": "Echoes God finishing his work in Genesis 2:2 (\"完成された\"), as the Hebrew does (meaning decision m1); no respect form, since Moses is the subject.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020400330122"
+          ],
+          "choice": "完成 for vayekhal (completed)",
+          "alternatives": [
+            "做完"
+          ],
+          "reason": "The verb of Genesis 2:2, where God completes his work (the meaning decision notes the echo); one verb at every level so the echo can be heard.",
+          "uncertain": true,
           "footnote": false
         }
       ],
@@ -5059,6 +6305,26 @@
           "L": "И покрыло облако шатёр встречи, и слава {{divine_name:ГОСПОДА|Яхве}} наполнила скинию.",
           "B": "Тогда облако покрыло шатёр встречи, и скиния наполнилась славой {{divine_name:ГОСПОДА|Яхве}}.",
           "R": "Тогда облако покрыло шатёр встречи, и священный шатёр наполнился славой {{divine_name:ГОСПОДА|Яхве}}."
+        },
+        "ja": {
+          "L": "そして雲が会見の天幕を覆い、{{divine_name:主|ヤハウェ}}の栄光が幕屋に満ちた。",
+          "B": "そのとき、雲が会見の天幕を覆い、幕屋は{{divine_name:主|ヤハウェ}}の栄光で満たされた。",
+          "R": "すると、雲が神と会うテントを覆い、幕屋は{{divine_name:主|ヤハウェ}}の栄光でいっぱいになりました。"
+        },
+        "uk": {
+          "L": "І хмара покрила намет зустрічі, і слава {{divine_name:ГОСПОДНЯ|Ягве}} наповнила скинію.",
+          "B": "Тоді хмара покрила намет зустрічі, і слава {{divine_name:ГОСПОДНЯ|Ягве}} наповнила скинію.",
+          "R": "Тоді хмара покрила намет зустрічі, і скинія сповнилася славою {{divine_name:ГОСПОДНЬОЮ|Ягве}}."
+        },
+        "id": {
+          "L": "Dan awan itu menutupi Kemah Pertemuan, dan kemuliaan {{divine_name:TUHAN|Yahweh}} memenuhi Kemah Suci.",
+          "B": "Lalu awan itu menutupi Kemah Pertemuan, dan Kemah Suci dipenuhi kemuliaan {{divine_name:TUHAN|Yahweh}}.",
+          "R": "Lalu awan itu menutupi Kemah Pertemuan, dan Kemah Suci penuh dengan kemuliaan {{divine_name:TUHAN|Yahweh}}."
+        },
+        "zh": {
+          "L": "云彩遮盖了会幕，{{divine_name:上主|雅威}}的荣耀充满了帐幕。",
+          "B": "于是云彩遮盖了会幕，帐幕里充满了{{divine_name:上主|雅威}}的荣耀。",
+          "R": "这时，云彩盖住了会幕，整个帐幕都充满了{{divine_name:上主|雅威}}的荣耀。"
         }
       },
       "decisions": [
@@ -5152,6 +6418,28 @@
           "reason": "\"महिमा\" is the New Testament's word for glory (as in Hebrews 9:5, \"the cherubim of glory\"), kept here for God's visible presence filling the tabernacle (meaning decision m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020400340062",
+            "o020400340071"
+          ],
+          "choice": "荣耀 for kavod",
+          "alternatives": [
+            "荣光"
+          ],
+          "reason": "The glossary's word for glory, at every level; 云彩 for the cloud, as at Sinai (24:15-16).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5241,6 +6529,26 @@
           "L": "И не мог Моисей войти в шатёр встречи, потому что облако осенило его и слава {{divine_name:ГОСПОДА|Яхве}} наполнила скинию.",
           "B": "Моисей не мог войти в шатёр встречи, потому что облако опустилось на него и скиния была полна славы {{divine_name:ГОСПОДА|Яхве}}.",
           "R": "Моисей не мог войти в шатёр встречи. Облако опустилось на него и осталось там, и слава {{divine_name:ГОСПОДА|Яхве}} наполнила священный шатёр."
+        },
+        "ja": {
+          "L": "そしてモーセは会見の天幕に入ることができなかった。雲がその上に宿り、{{divine_name:主|ヤハウェ}}の栄光が幕屋に満ちていたからである。",
+          "B": "モーセは会見の天幕に入ることができなかった。雲がその上にとどまり、幕屋が{{divine_name:主|ヤハウェ}}の栄光で満ちていたからである。",
+          "R": "モーセは、神と会うテントの中に入ることができませんでした。雲がその上にずっととどまり、{{divine_name:主|ヤハウェ}}の栄光が幕屋に満ちていたからです。"
+        },
+        "uk": {
+          "L": "І не міг Мойсей увійти до намету зустрічі, бо хмара спочила на ньому, і слава {{divine_name:ГОСПОДНЯ|Ягве}} наповнила скинію.",
+          "B": "Мойсей не міг увійти до намету зустрічі, бо на ньому спочила хмара, і скинію наповнила слава {{divine_name:ГОСПОДНЯ|Ягве}}.",
+          "R": "Мойсей не міг увійти до намету зустрічі. Хмара зупинилася на ньому й лишилася, а слава {{divine_name:ГОСПОДНЯ|Ягве}} наповнила скинію."
+        },
+        "id": {
+          "L": "Dan Musa tidak dapat masuk ke dalam Kemah Pertemuan, sebab awan itu diam di atasnya, dan kemuliaan {{divine_name:TUHAN|Yahweh}} memenuhi Kemah Suci.",
+          "B": "Musa tidak dapat masuk ke dalam Kemah Pertemuan, sebab awan itu telah turun dan tinggal di atasnya, dan Kemah Suci penuh dengan kemuliaan {{divine_name:TUHAN|Yahweh}}.",
+          "R": "Musa tidak dapat masuk ke dalam Kemah Pertemuan. Awan itu telah turun dan tinggal di atasnya, dan kemuliaan {{divine_name:TUHAN|Yahweh}} memenuhi Kemah Suci."
+        },
+        "zh": {
+          "L": "摩西无法进入会幕，因为云彩已经停驻在它上面，{{divine_name:上主|雅威}}的荣耀充满了帐幕。",
+          "B": "摩西不能进入会幕，因为云彩已经停留在上面，帐幕里充满了{{divine_name:上主|雅威}}的荣耀。",
+          "R": "摩西不能进到会幕里面去。云彩已经停在会幕上面，不再离开，{{divine_name:上主|雅威}}的荣耀充满了帐幕。"
         }
       },
       "decisions": [
@@ -5374,6 +6682,47 @@
           "reason": "Amharic usually places a \"because\" clause before the main verb; Literal keeps the Hebrew order with \"...ነበርና\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020400350091"
+          ],
+          "choice": "shakan \"宿り\" (L), \"とどまり\" (B), \"ずっととどまり\" (R)",
+          "alternatives": [
+            "\"降りて\""
+          ],
+          "reason": "As for the glory on Sinai in 24:16; the cloud came to rest and stayed (meaning decision m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020400350091"
+          ],
+          "choice": "停驻 (L), 停留 (B) for shakhan (settled)",
+          "alternatives": [
+            "居住"
+          ],
+          "reason": "Came to rest and stay (the meaning decision); the verb of God's dwelling, for which Readable says 停在……上面，不再离开.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5457,6 +6806,26 @@
           "L": "И когда поднималось облако над скинией, отправлялись {{gender:дети Израиля|сыны Израиля}} во всех своих странствиях.",
           "B": "Всякий раз, когда облако поднималось над скинией, израильтяне снимались со стоянки и двигались дальше, на всех этапах своего пути.",
           "R": "Каждый раз, когда облако поднималось над священным шатром, израильтяне сворачивали лагерь и шли дальше. Так было во всё время их странствий."
+        },
+        "ja": {
+          "L": "そして雲が幕屋の上から上がるときには、イスラエルの子らは、彼らのすべての旅路において出発した。",
+          "B": "雲が幕屋の上から上ると、イスラエルの人々は宿営をたたんで旅立った。旅のどの段階でもそうであった。",
+          "R": "雲が幕屋の上から離れて上ると、イスラエルの人々は宿営をたたんで出発しました。旅のあいだ、ずっとそうしていました。"
+        },
+        "uk": {
+          "L": "І коли хмара піднімалася з-над скинії, {{gender:нащадки|сини}} Ізраїля вирушали, в усіх своїх мандрівках.",
+          "B": "Щоразу, коли хмара піднімалася з-над скинії, ізраїльтяни згортали табір і рушали далі, на кожному етапі своїх мандрів.",
+          "R": "Щоразу, коли хмара піднімалася з-над скинії, ізраїльтяни збирали свій табір і рушали далі. Так вони робили протягом усіх своїх мандрів."
+        },
+        "id": {
+          "L": "Dan apabila awan itu naik dari atas Kemah Suci, berangkatlah bani Israel dalam segala perjalanan mereka.",
+          "B": "Setiap kali awan itu naik dari atas Kemah Suci, orang Israel membongkar perkemahan dan berangkat, di setiap tahap perjalanan mereka.",
+          "R": "Setiap kali awan itu naik dari atas Kemah Suci, orang Israel membongkar perkemahan mereka dan berangkat. Begitulah yang mereka lakukan selama perjalanan mereka."
+        },
+        "zh": {
+          "L": "每当云彩从帐幕上面升起，{{gender:以色列的子孙|以色列的儿子}}就起程，在他们一切的行程中[都是这样]。",
+          "B": "在他们整个旅程的每一段，每当云彩从帐幕上面升起来，以色列人就拔营起程。",
+          "R": "每当云彩从帐幕上面升起来，以色列人就收起营帐，继续往前走。在他们一路的旅程中，他们都是这样做的。"
         }
       },
       "decisions": [
@@ -5543,6 +6912,50 @@
           "reason": "As the Pentateuch terms note sets, Literal offers \"the children\" or \"the sons\" of Israel; Balanced and Readable say \"इस्राएली\", which needs no setting.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o020400360061",
+            "o020400360071"
+          ],
+          "choice": "\"イスラエルの子ら\" (L), \"イスラエルの人々\" (B, R) with no gender span",
+          "alternatives": [
+            "{{gender:イスラエルの人々|イスラエルの子ら}}"
+          ],
+          "reason": "The Japanese is already inclusive; the English needs a span for \"sons\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o020400360081",
+            "o020400360082",
+            "o020400360091",
+            "o020400360092"
+          ],
+          "choice": "在他们整个旅程的每一段 placed first",
+          "alternatives": [
+            "……，在他们一切的行程中都是这样"
+          ],
+          "reason": "Chinese puts the time phrase before the clause it governs; the content stays in the verse.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5623,6 +7036,26 @@
           "L": "А если облако не поднималось, то они не отправлялись до того дня, когда оно поднималось.",
           "B": "Если же облако оставалось на месте, то и они оставались, до того дня, когда оно поднималось.",
           "R": "Если облако не поднималось, они оставались там, где были. Они ждали до того дня, когда оно поднималось."
+        },
+        "ja": {
+          "L": "そしてもし雲が上がらなければ、それが上がる日まで、彼らは出発しなかった。",
+          "B": "雲がそこにとどまっている間は、彼らもとどまり、雲が上る日まで待った。",
+          "R": "雲が上らなければ、人々はその場にとどまりました。雲が上る日まで、待っていたのです。"
+        },
+        "uk": {
+          "L": "А якщо хмара не піднімалася, то вони не вирушали аж до дня, коли вона піднімалася.",
+          "B": "Якщо хмара залишалася на місці, вони теж залишалися аж до дня, коли вона піднімалася.",
+          "R": "Якщо хмара не піднімалася, вони лишалися там, де були. Вони чекали до того дня, коли вона піднімалася."
+        },
+        "id": {
+          "L": "Tetapi jika awan itu tidak naik, mereka tidak berangkat sampai hari awan itu naik.",
+          "B": "Jika awan itu tetap di tempatnya, mereka pun tetap tinggal, sampai hari awan itu naik.",
+          "R": "Kalau awan itu tidak naik, mereka tetap tinggal di tempat itu. Mereka menunggu sampai hari awan itu naik."
+        },
+        "zh": {
+          "L": "云彩若不升起，他们就不起程，直等到它升起的那一天。",
+          "B": "如果云彩停着不动，他们也就留在原地，直到云彩升起来的那一天。",
+          "R": "如果云彩没有升起，他们就留在原地，一直等到云彩升起的那一天。"
         }
       },
       "decisions": [
@@ -5746,6 +7179,26 @@
           "L": "Ибо облако {{divine_name:ГОСПОДА|Яхве}} [было] над скинией днём, и огонь был в нём ночью, перед глазами всего дома Израиля, во всех их странствиях.",
           "B": "Днём облако {{divine_name:ГОСПОДА|Яхве}} стояло над скинией, а ночью в нём горел огонь. Весь дом Израиля видел это на всех этапах своего пути.",
           "R": "Днём облако {{divine_name:ГОСПОДА|Яхве}} стояло над священным шатром, а ночью в облаке был огонь. Весь народ Израиля видел это всё время, пока они странствовали."
+        },
+        "ja": {
+          "L": "なぜなら、彼らのすべての旅路において、イスラエルの全家の目の前で、昼は{{divine_name:主|ヤハウェ}}の雲が幕屋の上に[あり]、夜はその中に火があったからである。",
+          "B": "昼は{{divine_name:主|ヤハウェ}}の雲が幕屋の上にとどまり、夜はその中に火が輝いていた。イスラエルの家の全員が、旅のどの段階でもそれを見ることができた。",
+          "R": "昼のあいだは{{divine_name:主|ヤハウェ}}の雲が幕屋の上にとどまり、夜になると雲の中に火がありました。イスラエルの人々はみな、旅を続けるあいだ、いつもそれを見ることができました。"
+        },
+        "uk": {
+          "L": "Бо хмара {{divine_name:ГОСПОДНЯ|Ягве}} [була] над скинією вдень, а вогонь був у ній уночі, на очах усього дому Ізраїля, в усіх їхніх мандрівках.",
+          "B": "Удень хмара {{divine_name:ГОСПОДНЯ|Ягве}} стояла над скинією, а вночі в ній палав вогонь. Увесь дім Ізраїля бачив це на кожному етапі своїх мандрів.",
+          "R": "Удень хмара {{divine_name:ГОСПОДНЯ|Ягве}} стояла над скинією, а вночі в хмарі був вогонь. Увесь народ Ізраїля бачив це весь час, поки вони мандрували."
+        },
+        "id": {
+          "L": "Sebab awan {{divine_name:TUHAN|Yahweh}} [ada] di atas Kemah Suci pada siang hari, dan api ada di dalamnya pada malam hari, di depan mata seluruh kaum Israel dalam segala perjalanan mereka.",
+          "B": "Pada siang hari awan {{divine_name:TUHAN|Yahweh}} berada di atas Kemah Suci, dan pada malam hari ada api yang menyala di dalamnya. Seluruh kaum Israel dapat melihatnya di setiap tahap perjalanan mereka.",
+          "R": "Pada siang hari awan {{divine_name:TUHAN|Yahweh}} berada di atas Kemah Suci, dan pada malam hari ada api di dalam awan itu. Seluruh bangsa Israel dapat melihatnya selama mereka berjalan."
+        },
+        "zh": {
+          "L": "因为{{divine_name:上主|雅威}}的云彩白天在帐幕上面，夜里又有火在云中，以色列全家在他们一切的行程中都亲眼看得见。",
+          "B": "白天，{{divine_name:上主|雅威}}的云彩停在帐幕上方；夜里，云中有火发出亮光。在他们旅程的每一段，以色列全家都看得见。",
+          "R": "白天，{{divine_name:上主|雅威}}的云彩停在帐幕上面；到了夜里，云中就有火。以色列所有的百姓在一路的旅程中，一直都看得见。"
         }
       },
       "decisions": [
@@ -5870,6 +7323,88 @@
           "choice": "\"የእስራኤል ቤት\" for the house of Israel (Readable \"የእስራኤል ሕዝብ\")",
           "alternatives": [],
           "reason": "Readable names the people, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o020400380111",
+            "o020400380112",
+            "o020400380151",
+            "o020400380152"
+          ],
+          "choice": "\"in all their journeys, before the eyes of all the house of Israel\" moved to the head of the sentence",
+          "alternatives": [
+            "at the end, after \"火があった\""
+          ],
+          "reason": "A Japanese sentence ending in \"…からである\" cannot carry the phrases after it.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020400380101",
+            "o020400380102"
+          ],
+          "choice": "\"雲の中に火がありました\": the fire within the cloud",
+          "alternatives": [
+            "\"幕屋の中に火が\""
+          ],
+          "reason": "The English reads \"in it\" as in the cloud (meaning decision m2, uncertain).",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020400380011"
+          ],
+          "choice": "\"kaum Israel\" (L, B), \"bangsa Israel\" (R) for the house of Israel",
+          "alternatives": [],
+          "reason": "\"kaum\" carries the Hebrew \"house\" as a people; Readable says \"bangsa\", as the English Readable says the people of Israel.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020400380131",
+            "o020400380141"
+          ],
+          "choice": "以色列全家 (L, B); 以色列所有的百姓 (R) for \"all the house of Israel\"",
+          "alternatives": [
+            "以色列家"
+          ],
+          "reason": "The whole people; Readable says the people, as the English Readable does.",
           "uncertain": false,
           "footnote": false
         }

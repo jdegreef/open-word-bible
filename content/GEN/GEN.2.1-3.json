@@ -74,8 +74,88 @@
           "L": "И были завершены небеса и земля, и всё их воинство.",
           "B": "Так небеса и земля были закончены со всем, что в них.",
           "R": "Так Бог закончил создавать небеса и землю и всё, что в них есть."
+        },
+        "uk": {
+          "L": "І були завершені небеса і земля, і все їхнє воїнство.",
+          "B": "Так було завершено небо і землю з усім, що в них.",
+          "R": "Так Бог закінчив творити небо і землю та все, що в них."
+        },
+        "ja": {
+          "L": "そして天と地は完成された、またそのすべての群れも。",
+          "B": "こうして天と地と、その中にあるすべてのものが完成された。",
+          "R": "こうして神は、天と地と、その中にあるすべてのものを造り終えられました。"
+        },
+        "id": {
+          "L": "Dan langit dan bumi telah diselesaikan, dan segala isinya.",
+          "B": "Demikianlah langit dan bumi diselesaikan, dengan segala isinya.",
+          "R": "Demikianlah Allah selesai membuat langit dan bumi dan segala isinya."
+        },
+        "zh": {
+          "L": "于是天和地，以及其中的万象，都完成了。",
+          "B": "这样，天和地以及其中的一切都完成了。",
+          "R": "就这样，{{god_term:神|上帝}}造好了天和地，以及天上地下的一切。"
+        },
+        "tl": {
+          "L": "At natapos ang kalangitan at ang lupa, at ang lahat ng kanilang hukbo.",
+          "B": "Kaya natapos ang kalangitan at ang lupa, pati ang lahat ng naroon.",
+          "R": "Kaya natapos ng Diyos ang paglikha sa kalangitan at sa lupa at sa lahat ng naroon."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010020010011"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "So"
+        },
+        {
+          "tokens": [
+            "o010020010021",
+            "o010020010022"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the heavens"
+        },
+        {
+          "tokens": [
+            "o010020010031"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010020010032",
+            "o010020010033"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the earth"
+        },
+        {
+          "tokens": [
+            "o010020010012"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "were completed"
+        },
+        {
+          "tokens": [
+            "o010020010041",
+            "o010020010042",
+            "o010020010051",
+            "o010020010052"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "with everything in them"
+        }
+      ],
       "decisions": [
         {
           "id": "m1",
@@ -318,6 +398,94 @@
           "reason": "The Hebrew word is an army or host, here everything that fills the heavens and the earth (m1). Literal keeps \"воинство\", the word Russian uses for a heavenly host; Balanced and Readable say what it means.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010020010051"
+          ],
+          "choice": "\"そのすべての群れ\" (L); \"その中にあるすべてのもの\" (B, R)",
+          "alternatives": [
+            "\"万象\"",
+            "\"軍勢\""
+          ],
+          "reason": "The word is used of an army, but here means everything that fills the heavens and the earth (m1). Literal keeps a word for a great company, 群れ; Balanced and Readable say what is meant.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010020010041",
+            "o010020010042",
+            "o010020010051",
+            "o010020010052"
+          ],
+          "choice": "\"segala isinya\" for all their host",
+          "alternatives": [
+            "\"segala tentaranya\""
+          ],
+          "reason": "The Hebrew \"host\" here is everything that fills the heavens and the earth (m1), not an army, so every level says \"segala isinya\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010020010042",
+            "o010020010051",
+            "o010020010052"
+          ],
+          "choice": "\"其中的万象\"",
+          "alternatives": [
+            "万物",
+            "其中的军队"
+          ],
+          "reason": "\"Their host\" is everything that fills the heavens and the earth (meaning decision m1). \"万象\" (all the array of things) keeps the picture of a great company in order; Balanced and Readable say \"一切\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-tl-1",
+          "layer": "rendering",
+          "language": "tl",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010020010041",
+            "o010020010042",
+            "o010020010051",
+            "o010020010052"
+          ],
+          "choice": "\"ang lahat ng kanilang hukbo\" (all their host) at Literal",
+          "alternatives": [],
+          "reason": "Literal keeps the Hebrew \"host\", the great company that fills the heavens and the earth (m1); \"hukbo\" is the word of \"the LORD of hosts\" (style guide section 4), so the reader can see the link. Balanced and Readable say what it means.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -408,8 +576,162 @@
           "L": "И Бог закончил в седьмой день своё дело, которое {{deity_pronoun:он|Он}} делал, и {{deity_pronoun:он|Он}} почил в седьмой день от всего своего дела, которое {{deity_pronoun:он|Он}} сделал.",
           "B": "В седьмой день Бог завершил работу, которую {{deity_pronoun:он|Он}} вёл, и в седьмой день {{deity_pronoun:он|Он}} прекратил всю работу, которую {{deity_pronoun:он|Он}} сделал.",
           "R": "Когда настал седьмой день, Бог закончил свою работу. Поэтому в седьмой день {{deity_pronoun:он|Он}} отдыхал от всей работы, которую {{deity_pronoun:он|Он}} делал."
+        },
+        "uk": {
+          "L": "І завершив Бог сьомого дня свою працю, яку {{deity_pronoun:він|Він}} робив, і {{deity_pronoun:він|Він}} спочив сьомого дня від усієї своєї праці, яку {{deity_pronoun:він|Він}} робив.",
+          "B": "Сьомого дня Бог довів до кінця працю, яку {{deity_pronoun:він|Він}} виконував, і сьомого дня {{deity_pronoun:він|Він}} припинив усю працю, яку {{deity_pronoun:він|Він}} зробив.",
+          "R": "Коли настав сьомий день, Бог уже закінчив свою працю. Тож сьомого дня {{deity_pronoun:він|Він}} відпочив від усієї праці, яку {{deity_pronoun:він|Він}} виконував."
+        },
+        "ja": {
+          "L": "そして第七の日に、神はご自分がしてこられたわざを完成された。そして第七の日に、ご自分がしてこられたすべてのわざから休まれた。",
+          "B": "七日目に、神はそれまでしてこられたわざを終えられ、七日目に、なさったすべてのわざをやめて休まれた。",
+          "R": "七日目が来たとき、神はご自分の仕事を終えておられました。それで七日目に、それまでしてこられたすべての仕事を休まれました。"
+        },
+        "id": {
+          "L": "Dan pada hari ketujuh Allah menyelesaikan pekerjaan-{{deity_pronoun:nya|Nya}} yang telah {{deity_pronoun:dia|Dia}} lakukan, dan {{deity_pronoun:dia|Dia}} beristirahat pada hari ketujuh dari segala pekerjaan-{{deity_pronoun:nya|Nya}} yang telah {{deity_pronoun:dia|Dia}} lakukan.",
+          "B": "Pada hari ketujuh Allah mengakhiri pekerjaan yang sedang {{deity_pronoun:dia|Dia}} lakukan, dan pada hari ketujuh {{deity_pronoun:dia|Dia}} berhenti dari segala pekerjaan yang telah {{deity_pronoun:dia|Dia}} lakukan.",
+          "R": "Ketika hari ketujuh tiba, Allah sudah menyelesaikan pekerjaan-{{deity_pronoun:nya|Nya}}. Jadi pada hari ketujuh {{deity_pronoun:dia|Dia}} beristirahat dari semua pekerjaan yang sudah {{deity_pronoun:dia|Dia}} lakukan."
+        },
+        "zh": {
+          "L": "到第七日，{{god_term:神|上帝}}完成了{{deity_pronoun:他|祂}}所做的工作；{{deity_pronoun:他|祂}}就在第七日从{{deity_pronoun:他|祂}}所做的一切工作中安息了。",
+          "B": "到了第七日，{{god_term:神|上帝}}结束了{{deity_pronoun:他|祂}}一直在做的工作；在第七日，{{deity_pronoun:他|祂}}停下{{deity_pronoun:他|祂}}所做的一切工作，安息了。",
+          "R": "到第七日，{{god_term:神|上帝}}已经完成了{{deity_pronoun:他|祂}}的工作。所以在第七日，{{deity_pronoun:他|祂}}停下了{{deity_pronoun:他|祂}}所有的工作，安息了。"
+        },
+        "tl": {
+          "L": "At sa ikapitong araw ay tinapos ng Diyos ang {{deity_pronoun:kaniyang|Kaniyang}} gawain na {{deity_pronoun:kaniyang|Kaniyang}} ginawa, at nagpahinga {{deity_pronoun:siya|Siya}} sa ikapitong araw mula sa lahat ng {{deity_pronoun:kaniyang|Kaniyang}} gawain na {{deity_pronoun:kaniyang|Kaniyang}} ginawa.",
+          "B": "Sa ikapitong araw ay tinapos ng Diyos ang gawaing {{deity_pronoun:kaniyang|Kaniyang}} ginagawa, at sa ikapitong araw ay tumigil {{deity_pronoun:siya|Siya}} sa lahat ng gawaing {{deity_pronoun:kaniyang|Kaniyang}} ginawa.",
+          "R": "Pagdating ng ikapitong araw, natapos na ng Diyos ang {{deity_pronoun:kaniyang|Kaniyang}} gawain. Kaya sa ikapitong araw ay nagpahinga {{deity_pronoun:siya|Siya}} mula sa lahat ng gawaing {{deity_pronoun:kaniyang|Kaniyang}} ginagawa."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010020020031"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "On"
+        },
+        {
+          "tokens": [
+            "o010020020041",
+            "o010020020042"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the seventh"
+        },
+        {
+          "tokens": [
+            "o010020020032"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "day"
+        },
+        {
+          "tokens": [
+            "o010020020021"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "God"
+        },
+        {
+          "tokens": [
+            "o010020020012"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "brought to an end"
+        },
+        {
+          "tokens": [
+            "o010020020051",
+            "o010020020052"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the work"
+        },
+        {
+          "tokens": [
+            "o010020020061",
+            "o010020020071"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "{{deity_pronoun:he|He}} had been doing"
+        },
+        {
+          "tokens": [
+            "o010020020081"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010020020091"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "on"
+        },
+        {
+          "tokens": [
+            "o010020020101",
+            "o010020020102"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the seventh"
+        },
+        {
+          "tokens": [
+            "o010020020092"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "day"
+        },
+        {
+          "tokens": [
+            "o010020020082"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "{{deity_pronoun:he|He}} stopped"
+        },
+        {
+          "tokens": [
+            "o010020020111",
+            "o010020020112"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "all"
+        },
+        {
+          "tokens": [
+            "o010020020121",
+            "o010020020122"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the work"
+        },
+        {
+          "tokens": [
+            "o010020020131",
+            "o010020020141"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "{{deity_pronoun:he|He}} had done"
+        }
+      ],
       "decisions": [
         {
           "id": "m1",
@@ -697,6 +1019,137 @@
           "reason": "The Hebrew word is singular, a task or piece of skilled work (m4). Literal keeps one \"дело\"; Balanced and Readable say \"работа\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010020020082"
+          ],
+          "choice": "\"спочив\" (L), \"припинив\" (B), \"відпочив\" (R)",
+          "alternatives": [
+            "перестав"
+          ],
+          "reason": "The verb is to stop or cease (meaning decision m3), the root of the Sabbath; Literal keeps the traditional word, Balanced says that God stopped, Readable the everyday word.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010020020051",
+            "o010020020082"
+          ],
+          "choice": "\"わざ\" (L, B), \"仕事\" (R) for the work; \"休まれた\" (L), \"やめて休まれた\" (B) for rested",
+          "alternatives": [
+            "\"働き\"",
+            "\"安息された\""
+          ],
+          "reason": "The verb means to stop or cease from work (m3), so Balanced says that God stopped; the work is a task, especially skilled work (m4), which わざ carries.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010020020082"
+          ],
+          "choice": "\"beristirahat\" (L, R); \"berhenti\" (B)",
+          "alternatives": [],
+          "reason": "The Hebrew verb means to stop, to cease from work (m3); Balanced says \"berhenti\" as the English says stopped, and Literal and Readable keep \"beristirahat\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o010020020021"
+          ],
+          "choice": "{{god_term:神|上帝}} for every word naming God",
+          "alternatives": [
+            "上帝 as the default"
+          ],
+          "reason": "The Chinese reader setting: \"神\" by default, \"上帝\" as the alternative (style guide section 4); this note stands for the whole passage.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010020020082",
+            "o010020020092",
+            "o010020020102"
+          ],
+          "choice": "\"在第七日……安息了\", as Hebrews 4:4",
+          "alternatives": [
+            "第七天",
+            "歇了……的工"
+          ],
+          "reason": "Hebrews 4:4 quotes the second half of this verse, and the Hebrew says the same; its Chinese wording is kept at each level, \"第七日\" included, and the verse's first half uses \"第七日\" to match. Balanced and Readable say \"停下……安息了\" (stopped, rested: meaning decision m3), so that God is not seen to work on the seventh day (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-tl-1",
+          "layer": "rendering",
+          "language": "tl",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010020020082",
+            "o010020020051",
+            "o010020020052",
+            "o010020020121",
+            "o010020020122"
+          ],
+          "choice": "\"nagpahinga\" (rested) at Literal and Readable; \"tumigil\" (stopped) at Balanced; \"gawain\" (work)",
+          "alternatives": [],
+          "reason": "The Hebrew verb is to stop or cease (m3), the root of \"sabbath\". Balanced says \"tumigil\", as the English Balanced says \"stopped\"; Literal and Readable use \"nagpahinga\", the word of the sabbath rest. \"gawain\" is a task or piece of work (m4). \"kaniyang ginawa\" (that he had done) takes the span on \"kaniyang\", the form Tagalog uses before a verb.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -788,8 +1241,197 @@
           "L": "И Бог благословил седьмой день и освятил его, потому что в нём {{deity_pronoun:он|Он}} почил от всего своего дела, которое Бог сотворил, чтобы сделать.",
           "B": "Бог благословил седьмой день и отделил его как святой, потому что в этот день {{deity_pronoun:он|Он}} прекратил всю свою работу, всё, что Бог сотворил и создал.",
           "R": "Бог благословил седьмой день и сделал его святым днём. В этот день {{deity_pronoun:он|Он}} отдыхал от всей работы, которую {{deity_pronoun:он|Он}} делал, когда творил мир."
+        },
+        "uk": {
+          "L": "І благословив Бог сьомий день і освятив його, бо в нього {{deity_pronoun:він|Він}} спочив від усієї своєї праці, яку Бог створив, щоб зробити.",
+          "B": "Бог благословив сьомий день і відокремив його як святий, бо того дня {{deity_pronoun:він|Він}} спочив від усієї своєї праці — від усього, що Бог створив і зробив.",
+          "R": "Бог благословив сьомий день і зробив його святим днем. Того дня {{deity_pronoun:він|Він}} відпочив від усієї праці, яку виконував, творячи світ."
+        },
+        "ja": {
+          "L": "そして神は第七の日を祝福し、それを聖とされた。その日に、神が創造して造られたすべてのわざから休まれたからである。",
+          "B": "神は七日目を祝福し、聖なる日として取り分けられた。その日に神は、創造し、造られたすべてのわざを終えて休まれたからである。",
+          "R": "神は七日目を祝福し、特別な聖なる日とされました。その日に、世界を造るすべての仕事を終えて休まれたからです。"
+        },
+        "id": {
+          "L": "Dan Allah memberkati hari ketujuh dan menguduskannya, karena pada hari itu {{deity_pronoun:dia|Dia}} beristirahat dari segala pekerjaan-{{deity_pronoun:nya|Nya}} yang telah Allah ciptakan untuk dibuat.",
+          "B": "Allah memberkati hari ketujuh dan menguduskannya, sebab pada hari itu {{deity_pronoun:dia|Dia}} beristirahat dari segala pekerjaan-{{deity_pronoun:nya|Nya}}, yaitu semua yang telah Allah ciptakan dan buat.",
+          "R": "Allah memberkati hari ketujuh dan menjadikannya hari yang kudus. Pada hari itu {{deity_pronoun:dia|Dia}} beristirahat dari semua pekerjaan yang sudah {{deity_pronoun:dia|Dia}} lakukan ketika menciptakan dunia."
+        },
+        "zh": {
+          "L": "{{god_term:神|上帝}}赐福给第七日，使它成为圣，因为在这一日{{deity_pronoun:他|祂}}从{{god_term:神|上帝}}所创造而做成的一切工作中安息了。",
+          "B": "{{god_term:神|上帝}}赐福给第七日，把它分别为圣，因为在那一日，{{deity_pronoun:他|祂}}停下了{{deity_pronoun:他|祂}}所有的工作，就是{{god_term:神|上帝}}所创造、所做成的一切，安息了。",
+          "R": "{{god_term:神|上帝}}赐福给第七日，使它成为一个圣洁的日子。在那一日，{{deity_pronoun:他|祂}}停下了{{deity_pronoun:他|祂}}创造世界时所做的一切工作，安息了。"
+        },
+        "tl": {
+          "L": "At pinagpala ng Diyos ang ikapitong araw at itinalaga itong banal, sapagkat sa araw na iyon ay nagpahinga {{deity_pronoun:siya|Siya}} mula sa lahat ng {{deity_pronoun:kaniyang|Kaniyang}} gawain na nilikha ng Diyos upang gawin.",
+          "B": "Pinagpala ng Diyos ang ikapitong araw at ibinukod ito bilang banal, sapagkat sa araw na iyon ay nagpahinga {{deity_pronoun:siya|Siya}} mula sa lahat ng {{deity_pronoun:kaniyang|Kaniyang}} gawain, ang lahat ng nilikha at ginawa ng Diyos.",
+          "R": "Pinagpala ng Diyos ang ikapitong araw at ginawa itong banal na araw. Sa araw na iyon ay nagpahinga {{deity_pronoun:siya|Siya}} mula sa lahat ng gawaing {{deity_pronoun:kaniyang|Kaniyang}} ginawa sa paglikha sa sanlibutan."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010020030021"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "God"
+        },
+        {
+          "tokens": [
+            "o010020030012"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "blessed"
+        },
+        {
+          "tokens": [
+            "o010020030051",
+            "o010020030052"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the seventh"
+        },
+        {
+          "tokens": [
+            "o010020030041"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "day"
+        },
+        {
+          "tokens": [
+            "o010020030061"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010020030062"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "set"
+        },
+        {
+          "tokens": [
+            "o010020030072"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "it"
+        },
+        {
+          "tokens": [
+            "o010020030062"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "apart as holy"
+        },
+        {
+          "tokens": [
+            "o010020030081"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "since"
+        },
+        {
+          "tokens": [
+            "o010020030091",
+            "o010020030092"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "on that day"
+        },
+        {
+          "tokens": [
+            "o010020030101"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "{{deity_pronoun:he|He}} rested"
+        },
+        {
+          "tokens": [
+            "o010020030111"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "from"
+        },
+        {
+          "tokens": [
+            "o010020030112"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "all"
+        },
+        {
+          "tokens": [
+            "o010020030122"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "{{deity_pronoun:his|His}}"
+        },
+        {
+          "tokens": [
+            "o010020030121"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "work"
+        },
+        {
+          "tokens": [
+            "o010020030131"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "all that"
+        },
+        {
+          "tokens": [
+            "o010020030151"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "God"
+        },
+        {
+          "tokens": [
+            "o010020030141"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "had created"
+        },
+        {
+          "tokens": [
+            "o010020030161"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010020030162"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "made"
+        }
+      ],
       "decisions": [
         {
           "id": "m1",
@@ -993,6 +1635,108 @@
             "\"освятил его\""
           ],
           "reason": "Literal keeps \"освятил\". The word means set apart as belonging to God (m1); Balanced says so, since \"освятить\" now suggests a church blessing with holy water.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010020030062"
+          ],
+          "choice": "\"聖とされた\" (L); \"聖なる日として取り分けられた\" (B); \"特別な聖なる日とされました\" (R)",
+          "alternatives": [
+            "\"聖別された\""
+          ],
+          "reason": "To make holy is to set apart as belonging to God (m1). 聖別 is a church word few readers know; Balanced states the setting apart in plain words.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010020030062",
+            "o010020030071",
+            "o010020030072"
+          ],
+          "choice": "\"menguduskan\" (L, B); \"menjadikannya hari yang kudus\" (R)",
+          "alternatives": [],
+          "reason": "\"menguduskan\" is the glossary word for making holy, setting apart for God (m1); Readable says it with the common words \"hari yang kudus\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010020030062"
+          ],
+          "choice": "\"分别为圣\"",
+          "alternatives": [
+            "定为圣日"
+          ],
+          "reason": "To make holy is to set apart as belonging to God (meaning decision m1); \"分别为圣\" says both, as the English Balanced adds \"set apart\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o010020030141",
+            "o010020030161",
+            "o010020030162"
+          ],
+          "choice": "\"所创造而做成的\"",
+          "alternatives": [
+            "所创造的"
+          ],
+          "reason": "Literal keeps the Hebrew \"created to make\" (meaning decision m2) with two verbs; Balanced says \"所创造、所做成的\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-tl-1",
+          "layer": "rendering",
+          "language": "tl",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010020030062",
+            "o010020030071",
+            "o010020030072"
+          ],
+          "choice": "\"itinalaga itong banal\" (L); \"ibinukod ito bilang banal\" (set it apart as holy) at Balanced",
+          "alternatives": [],
+          "reason": "To make holy is to set apart as God's (m1). \"ibukod\" (set apart) says the action, as the English Balanced does; Literal uses \"italaga\", to dedicate. \"sanlibutan\" (the world) at Readable is the glossary word.",
           "uncertain": false,
           "footnote": false
         }

@@ -81,6 +81,26 @@
           "L": "И я, придя к вам, {{gender:братья и сёстры|братья}}, пришёл не с превосходством слова или мудрости, возвещая вам свидетельство Божье.",
           "B": "Так и я, {{gender:братья и сёстры|братья}}, когда пришёл к вам и возвещал вам Божье свидетельство, пришёл не с впечатляющей речью и не с превосходящей мудростью.",
           "R": "Так было и со мной, {{gender:братья и сёстры|братья}}. Когда я пришёл к вам, я пришёл рассказать вам о том, что сделал Бог. Но я не старался поразить вас красивыми речами или умными мыслями."
+        },
+        "uk": {
+          "L": "І я, прийшовши до вас, {{gender:брати і сестри|брати}}, прийшов не з перевагою слова чи мудрості, звіщаючи вам свідчення Боже.",
+          "B": "Так і я, {{gender:брати і сестри|брати}}, коли прийшов до вас і звіщав вам Боже свідчення, прийшов не з вражаючим красномовством і не з вищою мудрістю.",
+          "R": "Так було і зі мною, {{gender:брати і сестри|брати}}. Коли я прийшов до вас, я прийшов розповісти вам, що зробив Бог. Але я не намагався вразити вас гарними промовами чи розумними думками."
+        },
+        "ja": {
+          "L": "{{gender:きょうだいたち|兄弟たち}}、わたしもまた、あなたがたのところに行って神の証しを告げ知らせたとき、言葉や知恵の卓越さをもって行ったのではありません。",
+          "B": "{{gender:きょうだいたち|兄弟たち}}、わたし自身も、あなたがたのところに行って神の証しを伝えたとき、人を感心させる話しぶりや優れた知恵をもって行ったのではありません。",
+          "R": "{{gender:きょうだいたち|兄弟たち}}、わたしも同じでした。わたしがみなさんのところに行ったのは、神がしてくださったことを伝えるためでした。でもわたしは、りっぱな演説やかしこい考えで、みなさんを感心させようとはしませんでした。"
+        },
+        "id": {
+          "L": "Dan aku, ketika aku datang kepada kalian, saudara-saudara, tidak datang dengan keunggulan perkataan atau hikmat untuk memberitakan kepada kalian kesaksian Allah.",
+          "B": "Demikian juga aku, saudara-saudara, ketika aku datang kepada kalian dan memberitakan kesaksian Allah kepada kalian, aku tidak datang dengan perkataan yang memukau atau hikmat yang hebat.",
+          "R": "Begitu juga dengan saya, saudara-saudara. Ketika saya datang kepada kalian, saya datang untuk memberitahukan apa yang telah Allah lakukan. Tetapi saya tidak berusaha membuat kalian kagum dengan pidato yang indah atau gagasan yang pintar."
+        },
+        "zh": {
+          "L": "至于我，{{gender:弟兄姐妹|弟兄}}们，我到你们那里去的时候，并不是凭着高超的言语或智慧去的，[我]向你们宣扬了{{god_term:神|上帝}}的见证。",
+          "B": "{{gender:弟兄姐妹|弟兄}}们，就我来说，我到你们那里向你们宣告{{god_term:神|上帝}}的见证时，并没有用动听的言辞或高超的智慧。",
+          "R": "{{gender:弟兄姐妹|弟兄}}们，我也是这样。我到你们那里去的时候，是要告诉你们{{god_term:神|上帝}}做了什么。可是我没有想用漂亮的讲演或巧妙的想法来打动你们。"
         }
       },
       "decisions": [
@@ -368,6 +388,71 @@
           "reason": "The gender setting, as in the English: Paul addresses the whole church, women and men (m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46002001009",
+            "n46002001010",
+            "n46002001012"
+          ],
+          "choice": "\"言葉や知恵の卓越さ\" (L); \"人を感心させる話しぶりや優れた知恵\" (B); \"りっぱな演説やかしこい考え\" (R)",
+          "alternatives": [
+            "\"すぐれた言葉や知恵\""
+          ],
+          "reason": "The polished speaking that won admiration (m3); \"知恵\" stays the key word at L and B.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n46002001018"
+          ],
+          "choice": "{{god_term:神|上帝}} for every word naming God",
+          "alternatives": [
+            "上帝 as the default"
+          ],
+          "reason": "The Chinese reader setting: \"神\" by default, \"上帝\" as the alternative (style guide section 4). It changes the word, never the meaning; this note stands for the whole chapter.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n46002001005"
+          ],
+          "choice": "{{gender:弟兄姐妹|弟兄}}们",
+          "alternatives": [
+            "弟兄们"
+          ],
+          "reason": "As in 1:10: Paul addresses the whole church, women and men; the traditional form is the alternative.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -449,6 +534,26 @@
           "L": "Ведь я решил не знать среди вас ничего, кроме Иисуса {{christos:Христа|Мессии}}, и {{deity_pronoun:его|Его}} распятого.",
           "B": "Я твёрдо решил: пока я среди вас, я буду знать только Иисуса {{christos:Христа|Мессию}}, и притом распятого.",
           "R": "Пока я был с вами, я решил думать и говорить только об Иисусе {{christos:Христе|Мессии}} и о том, как {{deity_pronoun:он|Он}} умер на кресте."
+        },
+        "uk": {
+          "L": "Бо я вирішив не знати між вами нічого, крім Ісуса {{christos:Христа|Месії}}, і {{deity_pronoun:його|Його}} розпʼятого.",
+          "B": "Я ухвалив таке рішення: поки я серед вас, я знатиму тільки Ісуса {{christos:Христа|Месію}}, і {{deity_pronoun:його|Його}} як розпʼятого.",
+          "R": "Поки я був з вами, я вирішив думати й говорити тільки про Ісуса {{christos:Христа|Месію}} і про те, як {{deity_pronoun:він|Він}} помер на хресті."
+        },
+        "ja": {
+          "L": "というのは、わたしは、あなたがたの間では、イエス・{{christos:キリスト|メシア}}、しかも十字架につけられたこの方のほかは、何も知るまいと決めたからです。",
+          "B": "わたしは、あなたがたの間にいる間、イエス・{{christos:キリスト|メシア}}、それも十字架につけられた方のほかには、何も知るまいと心に決めていたのです。",
+          "R": "みなさんといっしょにいたとき、わたしは、イエス・{{christos:キリスト|メシア}}のこと、そしてこの方が十字架の上で死なれたことだけを考え、話そうと決めていました。"
+        },
+        "id": {
+          "L": "Sebab aku memutuskan untuk tidak mengetahui apa pun di antara kalian selain Yesus {{christos:Kristus|Mesias}}, dan {{deity_pronoun:dia|Dia}} yang disalibkan.",
+          "B": "Keputusanku adalah ini: selama aku berada di antara kalian, satu-satunya yang mau kuketahui adalah Yesus {{christos:Kristus|Sang Mesias}}, dan {{deity_pronoun:dia|Dia}} sebagai yang disalibkan.",
+          "R": "Selama saya bersama kalian, saya memutuskan bahwa satu-satunya hal yang saya pikirkan dan bicarakan adalah Yesus {{christos:Kristus|Sang Mesias}}, dan bagaimana {{deity_pronoun:dia|Dia}} mati di kayu salib."
+        },
+        "zh": {
+          "L": "因为我决意在你们中间什么都不知道，只知道耶稣{{christos:基督|弥赛亚}}，而且是被钉在十字架上的{{deity_pronoun:他|祂}}。",
+          "B": "我当时定意：在你们中间，我只要知道一件事，就是耶稣{{christos:基督|弥赛亚}}，并且是被钉在十字架上的{{deity_pronoun:他|祂}}。",
+          "R": "我和你们在一起的时候，就决定只想、只讲耶稣{{christos:基督|弥赛亚}}，讲{{deity_pronoun:他|祂}}怎样死在十字架上。"
         }
       },
       "decisions": [
@@ -798,6 +903,26 @@
           "L": "И я был у вас в немощи, и в страхе, и в большом трепете, \\v 4 и слово моё и проповедь моя — не в убедительности мудрости, но в доказательстве Духа и силы, \\v 5 чтобы вера ваша была не в мудрости людей, но в силе Божьей.",
           "B": "Когда я был у вас, я был слаб, боялся и сильно трепетал. \\v 4 Моя весть и моя проповедь держались не на убеждающей силе мудрости: они были доказательством, которое давали Дух и сила, \\v 5 чтобы ваша вера основывалась не на человеческой мудрости, а на силе Божьей.",
           "R": "Когда я был у вас, я чувствовал себя слабым. Мне было страшно, и меня всего трясло. \\v 4 Когда я говорил и проповедовал вам, я не старался убедить вас умными доводами. Вместо этого с силой действовал Божий Дух, и это доказывало, что моя весть истинна. \\v 5 Так было для того, чтобы ваша вера зависела не от человеческой мудрости, а от силы Божьей."
+        },
+        "uk": {
+          "L": "І я був у вас у немочі, і в страху, і в тремтінні великому, \\v 4 і слово моє, і проповідь моя [були] не в переконливості мудрості, а у виявленні Духа і сили, \\v 5 щоб віра ваша була не в мудрості людей, а в силі Божій.",
+          "B": "Коли я був з вами, я був немічний і боявся, і дуже тремтів. \\v 4 Моя мова і моя проповідь не спиралися на переконливу силу мудрості; вони були доказом, який дали Дух і сила, \\v 5 щоб ваша віра трималася не на людській мудрості, а на Божій силі.",
+          "R": "Коли я був з вами, я почувався слабким. Я боявся і весь тремтів. \\v 4 Коли я говорив і проповідував вам, я не пробував переконати вас розумними доводами. Натомість Божий Дух діяв із силою, і це довело, що моя звістка правдива. \\v 5 Так було для того, щоб ваша віра не залежала від людської мудрості. Вона мала залежати від Божої сили."
+        },
+        "ja": {
+          "L": "わたしも、弱さと恐れと多くのおののきのうちに、あなたがたのところにいました。\\v 4 そして、わたしの言葉もわたしの宣教も、知恵の説得によらず、霊と力の証明によるものでした。\\v 5 それは、あなたがたの信仰が人の知恵によらず、神の力によるものとなるためです。",
+          "B": "あなたがたのところにいたとき、わたしは弱く、恐れ、ひどく震えていました。\\v 4 わたしの言葉もわたしの宣教も、知恵の持つ説得力に頼ったものではなく、霊と力によって示された証拠だったのです。\\v 5 それは、あなたがたの信仰が人間の知恵ではなく、神の力に基づくものとなるためでした。",
+          "R": "みなさんといっしょにいたとき、わたしは自分の弱さを感じていました。こわくて、体じゅうが震えていました。\\v 4 みなさんに話し、教えたとき、わたしはかしこい議論でみなさんを説き伏せようとはしませんでした。その代わりに、神の聖霊が力をもって働いてくださって、わたしの言葉が本当であることを示してくださったのです。\\v 5 それは、みなさんの信仰が人間の知恵ではなく、神の力に支えられるためでした。"
+        },
+        "id": {
+          "L": "Dan aku ada di antara kalian dalam kelemahan dan dalam ketakutan dan dalam sangat gentar, \\v 4 dan perkataanku dan pemberitaanku [bukan] dengan bujukan hikmat, tetapi dengan bukti dari Roh dan dari kuasa, \\v 5 supaya iman kalian jangan bergantung pada hikmat manusia, tetapi pada kuasa Allah.",
+          "B": "Selama aku bersama kalian, aku lemah dan takut, dan aku sangat gemetar. \\v 4 Perkataanku dan pemberitaanku tidak bersandar pada kepandaian hikmat untuk membujuk; perkataan itu adalah bukti yang diberikan oleh Roh dan oleh kuasa, \\v 5 supaya iman kalian tidak berdasar pada hikmat manusia, tetapi pada kuasa Allah.",
+          "R": "Ketika saya bersama kalian, saya merasa lemah. Saya takut, dan seluruh tubuh saya gemetar. \\v 4 Ketika saya berbicara dan berkhotbah kepada kalian, saya tidak berusaha meyakinkan kalian dengan alasan-alasan yang pintar. Sebaliknya, Roh Allah bekerja dengan kuasa, dan hal itu membuktikan bahwa pesan saya benar. \\v 5 Hal ini terjadi supaya iman kalian tidak bergantung pada hikmat manusia. Iman kalian akan bergantung pada kuasa Allah."
+        },
+        "zh": {
+          "L": "我在你们那里，是在软弱、惧怕和极大的战兢之中；\\v 4 我的话语和我的宣讲，不在于智慧的说服，而在于圣灵和能力的证明，\\v 5 好使你们的信心不是建立在人的智慧上，而是建立在{{god_term:神|上帝}}的能力上。",
+          "B": "我和你们在一起的时候，软弱又害怕，浑身战抖。\\v 4 我所讲的信息和我的传道，并不是倚靠智慧的说服力，而是由圣灵和能力所给的证明，\\v 5 好叫你们的信心不是以人的智慧为根基，而是以{{god_term:神|上帝}}的能力为根基。",
+          "R": "我和你们在一起的时候，觉得自己很软弱。我很害怕，全身发抖。\\v 4 我对你们讲道传信息的时候，没有用巧妙的道理来说服你们。相反，{{god_term:神|上帝}}的灵大有能力地做工，证明我的信息是真的。\\v 5 这样，你们的信心就不是依靠人的智慧，而是依靠{{god_term:神|上帝}}的能力。"
         }
       },
       "decisions": [
@@ -1169,6 +1294,86 @@
           "reason": "The Greek word is a word for proof (m4); \"явление\" (Synodal) now suggests an appearance.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n46002005009"
+          ],
+          "choice": "мудрість людей, with no gender span",
+          "alternatives": [
+            "{{gender:людей|мужів}}"
+          ],
+          "reason": "The English Literal offers \"men\" as the traditional reading. Ukrainian \"люди\" already means human beings, men and women, and the style guide gives no gender span where Ukrainian is already inclusive; so through the letter \"людина, люди\" take none.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n46002005009"
+          ],
+          "choice": "\"人の知恵\" (L), with no gender span",
+          "alternatives": [
+            "\"{{gender:人々|人間たち}}の知恵\""
+          ],
+          "reason": "The English Literal has a gender span on \"men\"; Japanese \"人\" already includes everyone (style 7a). The same holds for the spans in 2:9, 11, 14 and 15.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46002004016"
+          ],
+          "choice": "\"霊\" (L, B); \"神の聖霊\" (R), with light respect forms for the Spirit (\"働いてくださって\")",
+          "alternatives": [
+            "\"御霊\" (not used in this house style)"
+          ],
+          "reason": "As Galatians: 霊 at L and B, 聖霊 at R. The Holy Spirit is treated like God and Christ (book terms), so the respect forms apply. Book-wide.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n46002005009"
+          ],
+          "choice": "\"人的智慧\" with no gender span",
+          "alternatives": [
+            "{{gender:人|男人}}的智慧"
+          ],
+          "reason": "The English Literal spans \"people|men\"; Chinese \"人\" already means human beings, men and women, so it needs no setting (style guide section 8). The same holds for the English gender spans in 2:9, 2:11 and 2:14-15.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1256,6 +1461,26 @@
           "L": "Мудрость же мы говорим среди зрелых, но мудрость не этого века и не правителей этого века, упраздняемых.",
           "B": "И всё же есть мудрость, о которой мы говорим среди зрелых. Это не мудрость нынешнего века и не мудрость его правителей, чья власть уже упраздняется.",
           "R": "Но мы учим мудрости людей, которые выросли в вере. Это не та мудрость, которую ценят люди в нынешнем веке. Это и не мудрость правителей этого века, а их власть уже подходит к концу."
+        },
+        "uk": {
+          "L": "Мудрість же ми говоримо між досконалими, але мудрість не цього віку і не правителів цього віку, що зникають.",
+          "B": "А проте є мудрість, яку ми говоримо серед зрілих. Це не мудрість теперішнього віку і не мудрість його правителів, чия влада вже доходить кінця.",
+          "R": "Але ми таки навчаємо мудрості людей, які дорослі у своїй вірі. Це не та мудрість, яку цінують люди теперішнього віку. Це й не мудрість правителів цього віку, а їхня влада вже закінчується."
+        },
+        "ja": {
+          "L": "しかし、わたしたちは成熟した者たちの間では知恵を語ります。ただしそれは、この時代の知恵ではなく、無力にされつつあるこの時代の支配者たちの[知恵]でもありません。",
+          "B": "それでも、成熟した人々の間では、わたしたちも知恵を語ります。それはこの時代の知恵ではなく、この時代の支配者たちの知恵でもありません。彼らの力は、すでに終わらされようとしています。",
+          "R": "でも、信仰の上で大人になった人たちには、わたしたちも知恵を教えています。それは、今の時代の人々が大切にしているような知恵ではありません。今の時代の支配者たちの知恵でもありません。その支配者たちの力は、もう終わりかけています。"
+        },
+        "id": {
+          "L": "Namun kami memang memberitakan hikmat di antara orang-orang yang dewasa, tetapi hikmat yang bukan dari zaman ini dan bukan dari para penguasa zaman ini, yang sedang ditiadakan.",
+          "B": "Namun ada hikmat yang kami beritakan di antara orang-orang yang sudah dewasa. Hikmat itu bukan hikmat zaman sekarang ini, juga bukan hikmat para penguasanya, yang kuasanya sudah sedang diakhiri.",
+          "R": "Tetapi kami memang mengajarkan hikmat kepada orang-orang yang sudah dewasa dalam iman. Hikmat itu bukan jenis hikmat yang dihargai orang pada zaman sekarang ini. Hikmat itu juga bukan hikmat para penguasa zaman ini, dan kuasa mereka sudah mulai berakhir."
+        },
+        "zh": {
+          "L": "然而在成熟的人中间，我们也讲智慧，但不是这时代的智慧，也不是这时代那些正在归于无有的统治者的智慧。",
+          "B": "不过，在成熟的人中间，我们确实讲一种智慧。这智慧不属于当今这个时代，也不属于这个时代的统治者，他们的权势已经在被废除了。",
+          "R": "但是对那些信心已经长大成熟的人，我们确实教导智慧。那不是当今这个时代的人所看重的智慧，也不是这个时代那些统治者的智慧，他们的权势已经在走向结束了。"
         }
       },
       "decisions": [
@@ -1674,6 +1899,159 @@
           "reason": "\"Совершенный\" (Synodal) suggests people without fault; the sense is believers grown up in faith (m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46002006004",
+            "n46002006005",
+            "n46002006006"
+          ],
+          "choice": "досконалі (L); зрілі (B); дорослі у своїй вірі (R)",
+          "alternatives": [
+            "досконалі at every level"
+          ],
+          "reason": "The Corinthians note reads teleioi as the mature, not a spiritual elite. \"Досконалі\" keeps the Greek word at Literal; \"зрілі\" says at Balanced that it is growth, not perfection.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-2",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46002006019",
+            "n46002006020"
+          ],
+          "choice": "що зникають",
+          "alternatives": [
+            "що минають",
+            "що знищуються"
+          ],
+          "reason": "\"Що зникають\" keeps the present of a power already being undone (m5), the word Paul uses again in 1:28 (\"звести нанівець\").",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46002006006"
+          ],
+          "choice": "\"成熟した者たち\" (L); \"成熟した人々\" (B); \"信仰の上で大人になった人たち\" (R)",
+          "alternatives": [
+            "\"完全な者たち\""
+          ],
+          "reason": "\"完全な\" would suggest a spiritual elite; the sense is believers grown up in faith (m2, book terms).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46002006015",
+            "n46002006020"
+          ],
+          "choice": "\"支配者たち\"; \"無力にされつつある\" (L); \"終わらされようとしています\" (B); \"終わりかけています\" (R)",
+          "alternatives": [
+            "\"指導者たち\""
+          ],
+          "reason": "Leaves open whether human or spiritual rulers are meant (m4); Balanced keeps the passive, with God as the one undoing them (m5).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n46002006001",
+            "n46002006002",
+            "n46002006003"
+          ],
+          "choice": "\"kami\" for Paul and his fellow preachers in 2:6-13",
+          "alternatives": [
+            "\"kita\""
+          ],
+          "reason": "Paul speaks of what he and those who preach with him say to the mature, so the exclusive \"kami\" through 2:13, and \"kita\" where all believers are meant (2:7, 2:10, 2:12, 2:16).",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46002006006"
+          ],
+          "choice": "\"成熟的人\" (L, B); \"信心已经长大成熟的人\" (R)",
+          "alternatives": [
+            "完全的人"
+          ],
+          "reason": "Believers who have grown up in faith (meaning decision m2), not a spiritual elite; \"完全的人\" would suggest people without fault.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46002006015"
+          ],
+          "choice": "\"统治者\"",
+          "alternatives": [
+            "有权有位的人",
+            "掌权者"
+          ],
+          "reason": "The rulers of this age are the human authorities who crucified Jesus, possibly with the powers behind them (meaning decision m4); \"统治者\" names rulers without narrowing it.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1759,6 +2137,26 @@
           "L": "но мы говорим Божью мудрость в тайне, [мудрость] скрытую, которую Бог заранее определил прежде веков для нашей славы.",
           "B": "Нет, мы говорим о Божьей мудрости, о тайне, которая была скрыта. Бог предназначил её прежде веков для нашей славы.",
           "R": "Мы говорим о Божьей мудрости, которая раньше была тайной. Бог держал её скрытой. Но задолго до сотворения мира {{deity_pronoun:он|Он}} задумал её, чтобы мы получили часть в {{deity_pronoun:его|Его}} славе."
+        },
+        "uk": {
+          "L": "але ми говоримо Божу мудрість у таємниці, приховану, яку Бог наперед призначив перед віками для нашої слави.",
+          "B": "Натомість ми говоримо Божу мудрість, таємницю, яка була прихована. Бог задумав її ще перед віками для нашої слави.",
+          "R": "Ми говоримо про Божу мудрість, яка колись була секретом. Бог тримав її прихованою. Але ще задовго до того, як почався світ, {{deity_pronoun:він|Він}} задумав її, щоб ми мали частку в {{deity_pronoun:його|Його}} славі."
+        },
+        "ja": {
+          "L": "むしろわたしたちは、奥義のうちにある神の知恵、隠されていた[知恵]を語ります。それは、神がわたしたちの栄光のために、もろもろの時代より前に、あらかじめ定めておられたものです。",
+          "B": "わたしたちが語る知恵は神ご自身の知恵であり、これまで隠されてきた奥義です。神はそれを、わたしたちの栄光のために、時代が始まる前から定めておられました。",
+          "R": "わたしたちが話しているのは、神の知恵です。それは、前は秘密にされていました。神がそれを隠しておられたのです。でも神は、世界が始まるずっと前から、わたしたちがご自分の栄光にあずかれるように、この計画を立てておられました。"
+        },
+        "id": {
+          "L": "tetapi kami memberitakan hikmat Allah dalam suatu rahasia, [hikmat] yang telah tersembunyi, yang telah ditentukan Allah dari semula sebelum zaman-zaman untuk kemuliaan kita.",
+          "B": "Sebaliknya, hikmat yang kami beritakan adalah hikmat Allah sendiri, suatu rahasia yang selama ini disembunyikan. Allah telah merencanakannya sebelum zaman-zaman untuk kemuliaan kita.",
+          "R": "Kami berbicara tentang hikmat Allah, yang dulu merupakan rahasia. Allah menyembunyikannya. Tetapi jauh sebelum dunia dijadikan, {{deity_pronoun:dia|Dia}} sudah merencanakannya supaya kita turut menikmati kemuliaan-{{deity_pronoun:nya|Nya}}."
+        },
+        "zh": {
+          "L": "而是我们讲{{god_term:神|上帝}}的智慧，[是]在奥秘之中、一直被隐藏的那[智慧]，{{god_term:神|上帝}}在诸时代以前就为我们的荣耀预先定下了它。",
+          "B": "我们所讲的，是{{god_term:神|上帝}}自己的智慧，是一个一直被隐藏的奥秘。{{god_term:神|上帝}}在诸时代之前就定下了它，为了我们的荣耀。",
+          "R": "我们讲的是{{god_term:神|上帝}}的智慧，这智慧从前是个秘密。{{god_term:神|上帝}}把它隐藏起来了。但是早在世界开始以前，{{deity_pronoun:他|祂}}就计划好了，要让我们分享{{deity_pronoun:他|祂}}的荣耀。"
         }
       },
       "decisions": [
@@ -2083,6 +2481,70 @@
           "reason": "Russian \"тайна\" is both Paul's term and the everyday word for a secret, so one word serves every level; Readable adds that it used to be a secret (m2). \"Таинство\" now names a church sacrament.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46002007006"
+          ],
+          "choice": "таємниця (L, B); секрет (R), for mystērion through the letter",
+          "alternatives": [
+            "тайна"
+          ],
+          "reason": "The Corinthians note has \"mystery\" at Literal and Balanced and \"secret\" at Readable. \"Таємниця\" is the word the style guide uses in Ephesians; \"тайна\" is the older church form.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46002007006"
+          ],
+          "choice": "\"奥義\" (L, B); \"秘密にされていました\" (R)",
+          "alternatives": [
+            "\"神秘\"",
+            "\"秘められた計画\" (B)"
+          ],
+          "reason": "Book terms: mystery (L, B), secret now made known (R); \"奥義\" is kept for God's mystery, as in the Thessalonians drafts.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46002007006"
+          ],
+          "choice": "\"奥秘\" (L, B); \"秘密\" (R)",
+          "alternatives": [
+            "奥秘 at every level"
+          ],
+          "reason": "As the English: \"mystery\" is Paul's term, kept as Romans' \"奥秘\"; Readable says \"秘密\" and that it is now told (meaning decision m2), since \"奥秘\" can suggest something that can never be understood.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2168,6 +2630,26 @@
           "L": "которую никто из правителей этого века не понял; ведь если бы поняли, не распяли бы Господа славы.",
           "B": "Ни один из правителей этого века не постиг этой мудрости. Если бы постигли, они не распяли бы Господа славы.",
           "R": "Никто из правителей нынешнего века не понял Божьей мудрости. Если бы поняли, они не казнили бы на кресте Господа славы."
+        },
+        "uk": {
+          "L": "якої ніхто з правителів цього віку не пізнав; бо якби пізнали, то не розпʼяли б Господа слави.",
+          "B": "Жоден із правителів цього віку не збагнув цієї мудрості. Якби вони її збагнули, то не розпʼяли б Господа слави.",
+          "R": "Ніхто з правителів теперішнього віку не зрозумів Божої мудрості. Якби вони зрозуміли, то не вбили б славного Господа на хресті."
+        },
+        "ja": {
+          "L": "この[知恵]を、この時代の支配者たちはだれ一人知りませんでした。もし知っていたなら、栄光の主を十字架につけはしなかったでしょう。",
+          "B": "この時代の支配者たちは、だれ一人この知恵を悟りませんでした。もし悟っていたなら、栄光の主を十字架につけたりはしなかったはずです。",
+          "R": "今の時代の支配者たちは、だれもこの神の知恵がわかりませんでした。もしわかっていたら、栄光に輝く主を十字架につけて殺したりはしなかったでしょう。"
+        },
+        "id": {
+          "L": "yang tidak dimengerti oleh seorang pun dari para penguasa zaman ini; sebab seandainya mereka mengerti[nya], mereka tidak akan menyalibkan Tuhan yang mulia.",
+          "B": "Tidak seorang pun dari para penguasa zaman ini yang memahami hikmat ini. Seandainya mereka memahaminya, mereka tidak akan menyalibkan Tuhan yang mulia.",
+          "R": "Tidak seorang pun dari para penguasa zaman sekarang ini yang mengerti hikmat Allah. Seandainya mereka mengerti, mereka tidak akan membunuh Tuhan yang mulia di kayu salib."
+        },
+        "zh": {
+          "L": "这时代的统治者中，没有一个明白这智慧；因为如果他们明白了，就不会把荣耀的主钉死在十字架上。",
+          "B": "这个时代的统治者没有一个领悟这智慧。他们若领悟了，就不会把荣耀的主钉死在十字架上。",
+          "R": "当今这个时代的统治者，没有一个明白{{god_term:神|上帝}}的智慧。如果他们明白了，就不会把这位荣耀的主杀死在十字架上。"
         }
       },
       "decisions": [
@@ -2376,6 +2858,26 @@
           "L": "Но, как написано: «Чего глаз не видел, и ухо не слышало, и что не поднималось на сердце человека, — всё, что Бог приготовил любящим {{deity_pronoun:его|Его}}.»",
           "B": "Но так говорит Писание: «Чего никогда не видел глаз и не слышало ухо, что никогда не рождалось в человеческом сердце, — это Бог приготовил для тех, кто любит {{deity_pronoun:его|Его}}.»",
           "R": "Но Писание говорит: «Никто никогда этого не видел и об этом не слышал. Никто даже не мечтал об этом. Вот что Бог приготовил для людей, которые любят {{deity_pronoun:его|Его}}.»"
+        },
+        "uk": {
+          "L": "Але, як написано: «Чого око не бачило, і вухо не чуло, і на серце людині не спадало, те Бог приготував тим, хто любить {{deity_pronoun:його|Його}}».",
+          "B": "Але про це каже Писання: «Чого жодне око не бачило і жодне вухо не чуло, що ніколи не спадало на людське серце, — це Бог приготував тим, хто любить {{deity_pronoun:його|Його}}».",
+          "R": "Але ось що кажуть Писання: «Ніхто ніколи такого не бачив і не чув про таке. Нікому таке навіть не снилося. Ось що Бог приготував для людей, які любять {{deity_pronoun:його|Його}}»."
+        },
+        "ja": {
+          "L": "しかし、こう書かれているとおりです。「目が見ず、耳が聞かず、人の心に上りもしなかったもの、神が自分を愛する者たちのために備えたすべてのもの。」",
+          "B": "しかし、聖書に書かれているとおりです。「目がまだ見たこともなく、耳がまだ聞いたこともなく、人の心に浮かんだこともないもの、それを神は、自分を愛する者たちのために備えた。」",
+          "R": "しかし、聖書にはこう書いてあります。「だれも、それを見たことも聞いたこともない。だれも、それを思い描いたことさえない。それこそ、神が、自分を愛する人々のために用意したものだ。」"
+        },
+        "id": {
+          "L": "Tetapi, sebagaimana ada tertulis, \"Hal-hal yang tidak pernah dilihat oleh mata dan tidak pernah didengar oleh telinga, dan yang tidak pernah timbul di dalam hati manusia, semua yang telah Allah sediakan bagi mereka yang mengasihi {{deity_pronoun:dia|Dia}}.\"",
+          "B": "Tetapi inilah yang digambarkan Kitab Suci: \"Hal-hal yang tidak pernah dilihat mata dan tidak pernah didengar telinga, hal-hal yang tidak pernah terpikir oleh hati manusia mana pun: semua itu telah Allah siapkan bagi mereka yang mengasihi {{deity_pronoun:dia|Dia}}.\"",
+          "R": "Tetapi inilah yang dikatakan Kitab Suci: \"Tidak ada orang yang pernah melihatnya atau mendengarnya. Tidak ada orang yang pernah membayangkannya. Itulah yang sudah Allah siapkan bagi orang-orang yang mengasihi {{deity_pronoun:dia|Dia}}.\""
+        },
+        "zh": {
+          "L": "但正如经上写着：“那些眼睛没有见过、耳朵没有听过、也没有上到人心里的事，凡{{god_term:神|上帝}}为爱{{deity_pronoun:他|祂}}的人所预备的。”",
+          "B": "但正如经上写着：“眼睛从未见过、耳朵从未听过、人心也从未浮现过的事，这些就是{{god_term:神|上帝}}为爱{{deity_pronoun:他|祂}}的人所预备的。”",
+          "R": "但圣经上是这样说的：“从来没有人看见过，也没有人听说过。甚至连想都没有人想到过。这就是{{god_term:神|上帝}}为爱{{deity_pronoun:他|祂}}的人所预备的。”"
         }
       },
       "decisions": [
@@ -2657,6 +3159,93 @@
           "reason": "Literal keeps the Hebrew-style idiom; it means to occur to someone, to be imagined (meaning decision m3), which Balanced and Readable say.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46002009012",
+            "n46002009013",
+            "n46002009014",
+            "n46002009015",
+            "n46002009016",
+            "n46002009017"
+          ],
+          "choice": "на серце людині не спадало",
+          "alternatives": [
+            "не приходило до серця людини"
+          ],
+          "reason": "The Greek \"come up upon the heart\" means to be imagined (m3); \"спадати на думку\" is the living Ukrainian idiom, and \"на серце\" keeps the Greek's heart. Ukrainian \"людина\" needs no gender span.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n46002009004",
+            "n46002009018"
+          ],
+          "choice": "Literal leaves the quotation unfinished, a string of noun phrases with no main verb",
+          "alternatives": [
+            "\"…を、神は備えた\""
+          ],
+          "reason": "The Greek sentence is incomplete and verse 10 completes the thought (m2); Balanced and Readable supply the verb as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n46002009019",
+            "n46002009024"
+          ],
+          "choice": "Plain style in the quotation (\"備えた\", \"自分を愛する\")",
+          "alternatives": [
+            "\"備えてくださった\""
+          ],
+          "reason": "Quoted Scripture keeps the plain style (style 4, 7a).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46002009013",
+            "n46002009014",
+            "n46002009017"
+          ],
+          "choice": "\"上到人心里\"",
+          "alternatives": [
+            "人心也未曾想到"
+          ],
+          "reason": "Literal keeps the picture of the idiom \"come up upon the heart\" (meaning decision m3); Balanced says \"浮现\", Readable \"想到\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2742,6 +3331,26 @@
           "L": "Ведь нам Бог открыл [это] через Духа; ведь Дух всё исследует, и глубины Божьи.",
           "B": "И именно нам Бог открыл это через Духа. Ведь нет ничего, чего не исследовал бы Дух, — даже глубин Божьих.",
           "R": "А нам Бог показал это через своего Духа. Дух видит всё, даже самые глубокие тайны Бога."
+        },
+        "uk": {
+          "L": "Бо нам обʼявив Бог через Духа; бо Дух усе досліджує, навіть глибини Божі.",
+          "B": "І саме нам Бог це відкрив через Духа. Бо для Духа немає нічого недослідженого, навіть Божі глибини.",
+          "R": "Але Бог показав це нам через свого Духа. Дух проникає в усе, навіть у найглибші Божі думки."
+        },
+        "ja": {
+          "L": "というのは、神は霊を通して、わたしたちに[それらを]啓示されたからです。霊はすべてのことを、神の深みさえも探り究められるからです。",
+          "B": "そして神は、霊を通して、ほかでもないわたしたちに、それを明らかにしてくださいました。霊は、すべてのことを、神の深みに至るまで探り究められるのです。",
+          "R": "神は、ご自分の聖霊を通して、これらのことをわたしたちに示してくださいました。聖霊は、すべてのことを、神についてのいちばん深いことまで、知り尽くしておられます。"
+        },
+        "id": {
+          "L": "Sebab kepada kita Allah telah menyatakan [hal-hal itu] melalui Roh; sebab Roh menyelidiki segala sesuatu, bahkan hal-hal yang dalam dari Allah.",
+          "B": "Dan kepada kitalah Allah telah menyatakannya, melalui Roh. Sebab tidak ada yang tidak terselami oleh Roh, bahkan hal-hal yang dalam dari Allah pun tidak.",
+          "R": "Tetapi Allah sudah menunjukkan hal-hal ini kepada kita melalui Roh-{{deity_pronoun:nya|Nya}}. Roh itu menyelami segala sesuatu, bahkan hal-hal yang paling dalam tentang Allah."
+        },
+        "zh": {
+          "L": "因为{{god_term:神|上帝}}借着圣灵把[这些事]启示给了我们；因为圣灵鉴察万有，连{{god_term:神|上帝}}的深处也[鉴察]。",
+          "B": "而{{god_term:神|上帝}}正是向我们，借着圣灵把这些事显明出来了。因为没有什么是圣灵鉴察不到的，连{{god_term:神|上帝}}深奥的事也不例外。",
+          "R": "但{{god_term:神|上帝}}借着{{deity_pronoun:他|祂}}的灵，把这些事告诉了我们。圣灵察看一切，甚至{{god_term:神|上帝}}最深的事也知道。"
         }
       },
       "decisions": [
@@ -2967,6 +3576,68 @@
           "reason": "God is the subject, so Russian uses the reflexive \"свой\", which takes no setting; the English has one for \"his\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46002010008"
+          ],
+          "choice": "свого Духа, with no deity_pronoun span",
+          "alternatives": [
+            "{{deity_pronoun:його|Його}} Духа"
+          ],
+          "reason": "The English Readable says \"his Spirit\"; Ukrainian uses the reflexive \"свій\" when the possessor is the subject, and the style guide gives the reflexive no span.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46002010013"
+          ],
+          "choice": "\"探り究められる\" (L, B); \"知り尽くしておられます\" (R)",
+          "alternatives": [
+            "\"調べる\""
+          ],
+          "reason": "The Spirit knows thoroughly, not hunting for what he does not know (m4).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46002010008",
+            "n46002010011"
+          ],
+          "choice": "\"圣灵\" for \"the Spirit\"",
+          "alternatives": [
+            "那灵"
+          ],
+          "reason": "The Spirit here is the Spirit of God, the Holy Spirit (meaning decision m3); the style guide writes \"圣灵\" where the English says \"the Spirit\" of God.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3050,6 +3721,26 @@
           "L": "Ведь кто из людей знает то, что [в] человеке, кроме духа человека, который в нём?",
           "B": "В самом деле, кто из людей знает, что происходит внутри другого человека? Это знает только его собственный дух, живущий в нём.",
           "R": "Подумайте: никто не может знать, о чём думает другой человек. Это знает только его собственный дух, глубоко внутри."
+        },
+        "uk": {
+          "L": "Бо хто з людей знає те, що в людині, крім духа людини, що в ній?",
+          "B": "Зрештою, хто з людей знає, що відбувається всередині іншої людини? Знає це лише її власний дух усередині неї.",
+          "R": "Подумайте самі: ніхто не може знати, що думає інша людина. Тільки її власний дух, глибоко всередині, знає це."
+        },
+        "ja": {
+          "L": "というのは、人のうちにあるその人の霊のほかに、人間のだれが、その人のことを知っているでしょうか？",
+          "B": "実際、人の内面で何が起きているかを、だれが知っているでしょうか？それを知っているのは、その人の内にある、その人自身の霊だけです。",
+          "R": "考えてみてください。ほかの人が何を考えているかは、だれにもわかりません。それがわかるのは、その人の心の奥にある、その人自身の霊だけです。"
+        },
+        "id": {
+          "L": "Sebab siapakah di antara manusia yang mengetahui hal-hal tentang seseorang selain roh orang itu sendiri yang ada di dalam dirinya?",
+          "B": "Bagaimanapun juga, siapakah yang mengetahui apa yang ada di dalam diri orang lain? Hanya roh orang itu sendiri di dalam dirinya yang mengetahuinya.",
+          "R": "Pikirkanlah: tidak ada orang yang dapat mengetahui apa yang dipikirkan orang lain. Hanya roh orang itu sendiri, jauh di dalam dirinya, yang mengetahuinya."
+        },
+        "zh": {
+          "L": "因为在人中间，有谁知道一个人的事，除了那人里面的灵以外呢？",
+          "B": "毕竟，有谁知道另一个人内心在想什么呢？只有那人里面自己的灵知道。",
+          "R": "想一想：没有人能知道别人在想什么。只有那人自己深处的灵知道。"
         }
       },
       "decisions": [
@@ -3359,6 +4050,27 @@
           "reason": "Russian \"человек\" means a human being, man or woman, and the pronoun that agrees with it is generic; the style guide puts no gender setting on it.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n46002011004",
+            "n46002011007",
+            "n46002011016"
+          ],
+          "choice": "\"人間\", \"その人\" (L), with no gender spans",
+          "alternatives": [
+            "gender spans as in the English Literal"
+          ],
+          "reason": "Japanese \"人\" and \"その人\" are inclusive already (style 7a).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3439,6 +4151,26 @@
           "L": "Так и Божьего никто не познал, кроме Духа Божьего.",
           "B": "Так же и того, что в Боге, не знает никто, кроме Божьего Духа.",
           "R": "Так же и о том, что думает Бог, знает только Божий Дух."
+        },
+        "uk": {
+          "L": "Так само і того, що Боже, ніхто не пізнав, крім Духа Божого.",
+          "B": "Так само те, що в Бозі, не знає ніхто, крім Божого Духа.",
+          "R": "Так само тільки Божий Дух знає, що думає Бог."
+        },
+        "ja": {
+          "L": "同じように、神のことも、神の霊のほかにはだれも知りません。",
+          "B": "同じように、神のことは、神の霊のほかにはだれにもわかりません。",
+          "R": "同じように、神が考えておられることは、神の霊だけがご存じです。"
+        },
+        "id": {
+          "L": "Demikian juga tidak seorang pun mengetahui hal-hal tentang Allah selain Roh Allah.",
+          "B": "Demikian juga hal-hal tentang Allah tidak diketahui oleh siapa pun selain Roh Allah.",
+          "R": "Dengan cara yang sama, hanya Roh Allah yang tahu apa yang Allah pikirkan."
+        },
+        "zh": {
+          "L": "照样，{{god_term:神|上帝}}的事，除了{{god_term:神|上帝}}的灵以外，也从来没有人明白过。",
+          "B": "同样，只有{{god_term:神|上帝}}的灵知道{{god_term:神|上帝}}的事，此外没有人知道。",
+          "R": "同样，只有{{god_term:神|上帝}}的灵知道{{god_term:神|上帝}}在想什么。"
         }
       },
       "decisions": [
@@ -3590,6 +4322,26 @@
           "L": "Мы же приняли не дух мира, а Духа, который от Бога, чтобы знать дарованное нам Богом.",
           "B": "А мы получили не дух мира. Мы получили Духа, который от Бога, чтобы понимать всё, что Бог по благодати даровал нам.",
           "R": "Нам дан не тот дух, который свойствен этому миру. Бог дал нам своего собственного Духа. Теперь мы можем понимать всё доброе, что Бог дал нам даром."
+        },
+        "uk": {
+          "L": "А ми прийняли не духа світу, а Духа, що від Бога, щоб ми знали те, що Бог дарував нам.",
+          "B": "Ми ж отримали не духа світу. Ми отримали Духа, який від Бога, щоб розпізнати все, що Бог з благодаті дарував нам.",
+          "R": "Нам не дано духа, який належить цьому світові. Бог дав нам свого власного Духа. Тепер ми можемо зрозуміти все добре, що Бог щедро дав нам."
+        },
+        "ja": {
+          "L": "しかし、わたしたちが受けたのは世の霊ではなく、神からの霊です。それは、神からわたしたちに恵みとして与えられたものを、わたしたちが知るためです。",
+          "B": "わたしたちが受けたのは、世の霊ではありません。神から来る霊です。それは、神が恵みによってわたしたちに与えてくださったものを、わたしたちが知るためです。",
+          "R": "わたしたちが与えられたのは、この世に属する霊ではありません。神は、ご自分の聖霊をわたしたちに与えてくださいました。それで今、わたしたちは、神が惜しみなく与えてくださったすべての良いものを、理解することができるのです。"
+        },
+        "id": {
+          "L": "Dan kita tidak menerima roh dunia, tetapi Roh yang berasal dari Allah, supaya kita mengetahui hal-hal yang dikaruniakan Allah kepada kita.",
+          "B": "Kita tidak menerima roh dunia ini. Kita telah menerima Roh yang datang dari Allah, supaya kita dapat mengenali segala sesuatu yang telah Allah karuniakan kepada kita.",
+          "R": "Kita tidak diberi roh yang dimiliki dunia ini. Allah sudah memberi kita Roh-{{deity_pronoun:nya|Nya}} sendiri. Sekarang kita dapat mengerti semua hal baik yang telah Allah berikan kepada kita dengan cuma-cuma."
+        },
+        "zh": {
+          "L": "然而我们没有领受世界的灵，却领受了那出于{{god_term:神|上帝}}的灵，好使我们知道那些由{{god_term:神|上帝}}白白赐给我们的事。",
+          "B": "至于我们，我们没有接受这世界的灵。我们接受的是从{{god_term:神|上帝}}而来的灵，好让我们认识{{god_term:神|上帝}}凭恩典赐给我们的一切。",
+          "R": "{{god_term:神|上帝}}没有把属于这世界的灵给我们。{{god_term:神|上帝}}把{{deity_pronoun:他|祂}}自己的灵给了我们。现在我们能明白{{god_term:神|上帝}}白白赐给我们的一切好东西。"
         }
       },
       "decisions": [
@@ -3790,6 +4542,27 @@
           "reason": "\"Дух\" is capitalised only for God's Spirit; \"the spirit of the world\" is an outlook (m2) and keeps a small letter.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46002012022"
+          ],
+          "choice": "\"恵みとして与えられた\" (L); \"恵みによって…与えてくださった\" (B); \"惜しみなく与えてくださった\" (R)",
+          "alternatives": [
+            "\"賜った\""
+          ],
+          "reason": "The verb is from the grace family (m3); Readable says \"freely\" as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3873,6 +4646,26 @@
           "L": "О чём и говорим не в словах, которым научила человеческая мудрость, а в [словах], которым научил Дух, объясняя духовное духовным.",
           "B": "Об этом мы и говорим, и наши слова — не уроки, усвоенные у человеческой мудрости. Их учит Дух, и так мы объясняем духовное словами, которые даёт Дух.",
           "R": "Вот об этом мы и говорим. Мы говорим не словами, которым нас научила человеческая мудрость. Мы говорим словами, которым нас научил Дух. Так словами Духа мы объясняем то, что приходит от Духа."
+        },
+        "uk": {
+          "L": "Про це ми й говоримо не словами, навченими людською мудрістю, а [словами], навченими Духом, тлумачачи духовне духовним.",
+          "B": "Коли ми говоримо про це, наші слова — не уроки людської мудрості. Їх навчає Дух, і тому ми пояснюємо духовне словами, які дає Дух.",
+          "R": "Ось про що ми говоримо. Ми не вживаємо слів, яких нас навчила людська мудрість. Ми вживаємо слова, яких нас навчив Дух. Тож ми пояснюємо словами Духа те, що походить від Духа."
+        },
+        "ja": {
+          "L": "わたしたちはそれらのことを語るのにも、人間の知恵に教えられた言葉によらず、霊に教えられた[言葉]によって、霊的なことを霊的な[言葉]で解き明かしているのです。",
+          "B": "わたしたちがこれらのことを語るとき、その言葉は人間の知恵から学んだものではありません。霊が教えてくださる言葉です。こうしてわたしたちは、霊的なことを、霊が与えてくださる言葉で説明するのです。",
+          "R": "わたしたちが話しているのは、そういうことです。わたしたちは、人間の知恵が教えた言葉を使いません。聖霊が教えてくださった言葉を使います。ですから、聖霊から来ることを説明するのに、聖霊の言葉を使うのです。"
+        },
+        "id": {
+          "L": "Hal-hal itu juga kami beritakan, bukan dengan kata-kata yang diajarkan oleh hikmat manusia, tetapi dengan [kata-kata] yang diajarkan oleh Roh, menafsirkan hal-hal rohani dengan [kata-kata] rohani.",
+          "B": "Ketika kami berbicara tentang hal-hal ini, kata-kata kami bukanlah pelajaran dari hikmat manusia. Roh yang mengajarkannya, dan karena itu kami menjelaskan hal-hal rohani dengan kata-kata yang diberikan Roh.",
+          "R": "Itulah yang kami bicarakan. Kami tidak memakai kata-kata yang diajarkan oleh hikmat manusia. Kami memakai kata-kata yang diajarkan Roh kepada kami. Jadi kami memakai kata-kata dari Roh untuk menjelaskan hal-hal yang datang dari Roh."
+        },
+        "zh": {
+          "L": "这些[事]我们也在讲论，所用的不是人的智慧所教的话，而是圣灵所教的[话]，以属灵的[话]阐释属灵的事。",
+          "B": "我们讲这些事的时候，所用的言语不是从人的智慧学来的，而是圣灵所教导的；所以我们用圣灵所赐的言语，来讲解属灵的事。",
+          "R": "这就是我们所讲的。我们用的不是人的智慧教给我们的话，而是圣灵教给我们的话。所以我们用圣灵的话，来解释从圣灵来的事。"
         }
       },
       "decisions": [
@@ -4064,6 +4857,51 @@
           "reason": "\"आत्मिक\" says \"of the Spirit\", as in Romans 1:11 and 15:27; \"आध्यात्मिक\" is the general word for religious or inner matters and would lose the link to God's Spirit.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46002013014",
+            "n46002013015",
+            "n46002013016"
+          ],
+          "choice": "\"霊的なことを霊的な[言葉]で解き明かす\" (L); \"霊が与えてくださる言葉で説明する\" (B, R)",
+          "alternatives": [
+            "\"霊的な人々に霊的なことを\""
+          ],
+          "reason": "Follows the shared reading (m3, m4, both uncertain); the other reading is in the meaning decisions.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46002013014",
+            "n46002013015"
+          ],
+          "choice": "\"属灵的\" (L, B); \"从圣灵来的\" (R)",
+          "alternatives": [
+            "灵性的"
+          ],
+          "reason": "Pneumatikos means what comes from and belongs to the Spirit (meaning decision m3). \"属灵\" is the church's word for it and keeps the link with the Spirit; \"灵性\" suggests a person's religious feeling. Readable says where it comes from, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4152,6 +4990,26 @@
           "L": "Естественный же человек не принимает того, что от Духа Божьего, ведь для него это глупость, и он не может познать [этого], потому что [это] исследуется духовно.",
           "B": "Человек, у которого есть лишь природная жизнь, не принимает того, что принадлежит Духу Божьему. Всё это кажется ему глупостью, и он не может этого понять, потому что верно оценить это можно только с помощью Духа.",
           "R": "Люди, у которых нет Божьего Духа, не принимают того, что приходит от Духа. Они думают, что это глупость. Они не могут этого понять, потому что только Дух помогает людям увидеть, что всё это значит на самом деле."
+        },
+        "uk": {
+          "L": "А природна людина не приймає того, що від Духа Божого, бо для неї це безумство, і вона не може [цього] пізнати, бо це досліджується духовно.",
+          "B": "Людина, яка має тільки природне життя, не приймає того, що належить Божому Духові. Їй усе це здається безумством, і вона не може цього збагнути, бо правильно оцінити це можна тільки Духом.",
+          "R": "Люди, які не мають Божого Духа, не приймуть того, що походить від Духа. Вони вважають це безглуздям. Вони не можуть цього зрозуміти, бо тільки Дух може допомогти людям побачити, що це насправді означає."
+        },
+        "ja": {
+          "L": "しかし、自然のままの人は、神の霊のことを受け入れません。その人にとって、それは愚かさだからです。また、その人はそれを知ることができません。それは霊的に吟味されるものだからです。",
+          "B": "生まれつきの命しか持たない人は、神の霊に属することを受け入れません。その人には、それがみな愚かに思えるのです。その人はそれを理解することができません。それは、霊によってしか正しく見極められないからです。",
+          "R": "神の霊を持っていない人たちは、聖霊から来ることを受け入れようとしません。それを愚かだと思うのです。その人たちには、それがわかりません。聖霊が助けてくださらなければ、その本当の意味を見分けることはできないからです。"
+        },
+        "id": {
+          "L": "Tetapi manusia alamiah tidak menerima hal-hal dari Roh Allah, sebab hal-hal itu adalah kebodohan baginya, dan ia tidak dapat mengetahui[nya], karena hal-hal itu dinilai secara rohani.",
+          "B": "Orang yang hanya memiliki hidup alamiah tidak menyambut apa yang berasal dari Roh Allah. Semua itu tampak bodoh baginya, dan ia tidak dapat memahaminya, sebab hal itu hanya dapat dinilai dengan benar oleh Roh.",
+          "R": "Orang-orang yang tidak mempunyai Roh Allah tidak mau menerima hal-hal yang datang dari Roh. Mereka menganggap hal-hal itu bodoh. Mereka tidak dapat mengerti hal-hal itu, karena hanya Roh yang dapat menolong orang melihat apa arti hal-hal itu yang sebenarnya."
+        },
+        "zh": {
+          "L": "然而天然的人不接受{{god_term:神|上帝}}之灵的事，因为[这些事]对这人是愚蠢，这人也不能明白，因为[它们]是属灵地被审察的。",
+          "B": "只有天然生命的人，不接纳属于{{god_term:神|上帝}}之灵的事。在这样的人看来，这一切都是愚蠢的；这种人也无法领会，因为只有借着圣灵才能正确地衡量这些事。",
+          "R": "没有{{god_term:神|上帝}}的灵的人，不会接受从圣灵来的事。他们认为这些事很愚蠢。他们无法明白，因为只有圣灵才能帮助人看清这些事真正的意思。"
         }
       },
       "decisions": [
@@ -4602,6 +5460,158 @@
           "reason": "\"Душевный\" (Synodal) now means warm-hearted or kind. The sense is a person with only ordinary human life, without God's Spirit (m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46002014001",
+            "n46002014003"
+          ],
+          "choice": "природна людина (L); людина, яка має тільки природне життя (B); люди, які не мають Божого Духа (R)",
+          "alternatives": [
+            "душевна людина"
+          ],
+          "reason": "The Corinthians note's levels for psychikos. \"Душевна людина\" is the older calque, but in modern Ukrainian \"душевний\" means warm-hearted, the opposite of what Paul says. Ukrainian \"людина\" needs no gender span.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-2",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46002014020",
+            "n46002014021"
+          ],
+          "choice": "досліджується (L); оцінити (B)",
+          "alternatives": [
+            "судиться",
+            "розсуджується"
+          ],
+          "reason": "The Corinthians note keeps \"examine, assess\" for anakrinō, with the courtroom sense in chapter 4. \"Досліджувати\" at Literal, \"оцінювати\" at Balanced, carry over into 2:15 and 4:3-4.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46002014001",
+            "n46002014003"
+          ],
+          "choice": "\"自然のままの人\" (L); \"生まれつきの命しか持たない人\" (B); \"神の霊を持っていない人たち\" (R), with no gender span",
+          "alternatives": [
+            "\"生まれながらの人\"",
+            "\"肉の人\" (kept for sarkinos, 3:1)"
+          ],
+          "reason": "psychikos: a person with only ordinary human life (m1, book terms); Japanese \"人\" is inclusive.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46002014021"
+          ],
+          "choice": "\"吟味される\" (L); \"見極められる\" (B), the same verb as 2:15",
+          "alternatives": [
+            "\"判断される\"",
+            "\"裁かれる\" (kept for 4:3-4)"
+          ],
+          "reason": "anakrinō is one word through 2:14-15, so Japanese keeps one verb at each level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46002014001",
+            "n46002014003"
+          ],
+          "choice": "\"天然的人\" (L); \"只有天然生命的人\" (B); \"没有神的灵的人\" (R)",
+          "alternatives": [
+            "属血气的人",
+            "属魂的人"
+          ],
+          "reason": "Someone who has only ordinary human life, without God's Spirit (meaning decision m1), in the three forms of the English levels. psychikos is \"天然的\" at Literal and Balanced here and in 15:44-46 (\"天然的身体\"), set against pneumatikos \"属灵的\". The Union Version's \"属血气的人\" is not used: \"血气\" sounds like flesh and passion, which is sarkikos (3:3), not psychikos, and \"属魂的人\" is not plain Chinese.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n46002014013"
+          ],
+          "choice": "\"这人\" with no gender span",
+          "alternatives": [
+            "他"
+          ],
+          "reason": "The English Literal spans \"that person|him\"; Chinese \"这人\" is already neither male nor female, so it needs no setting.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-3",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46002014021"
+          ],
+          "choice": "\"审察\" (L); \"衡量\" (B); R gives the sense",
+          "alternatives": [
+            "看透",
+            "判断"
+          ],
+          "reason": "Anakrino is \"examine\" in the English Literal and \"weigh, assess\" at Balanced; Literal keeps one word for it through 2:14-15 and 4:3-4, so that the courtroom sense of chapter 4 can be traced.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4680,6 +5690,26 @@
           "L": "Духовный же исследует всё, а его самого никто не исследует.",
           "B": "А духовный человек может верно оценить всё, но никто не в состоянии оценить его самого.",
           "R": "Но люди, у которых есть Дух, могут правильно судить обо всём. А никто без Духа не может судить о них."
+        },
+        "uk": {
+          "L": "А духовна [людина] досліджує все, сама ж ніким не досліджується.",
+          "B": "А духовна людина здатна оцінити все, тоді як ніхто не може оцінити її саму.",
+          "R": "А люди, які мають Духа, можуть судити про все, що правдиве. І ніхто без Духа не може судити про них."
+        },
+        "ja": {
+          "L": "しかし、霊の人はすべてのことを吟味しますが、その人自身はだれからも吟味されません。",
+          "B": "しかし、霊の人はすべてのことを見極めることができます。一方、だれもその人を見極める立場にはありません。",
+          "R": "しかし、聖霊を持っている人は、すべてのことについて、何が本当かを見分けることができます。そして、聖霊を持っていない人は、その人を判断することはできません。"
+        },
+        "id": {
+          "L": "Tetapi orang rohani menilai segala sesuatu, tetapi ia sendiri tidak dinilai oleh siapa pun.",
+          "B": "Tetapi orang rohani dapat menilai segala sesuatu, sedangkan tidak seorang pun yang berhak menilai orang seperti itu.",
+          "R": "Tetapi orang-orang yang mempunyai Roh dapat menilai apa yang benar tentang segala sesuatu. Dan tidak seorang pun yang tidak mempunyai Roh dapat menilai mereka."
+        },
+        "zh": {
+          "L": "属灵的人却审察万事，而这人自己却不受任何人审察。",
+          "B": "但属灵的人能够评断一切，却没有人有资格评断这样的人。",
+          "R": "但是有圣灵的人能够判断一切事情的真相。没有圣灵的人，也没有一个能判断他们。"
         }
       },
       "decisions": [
@@ -4857,6 +5887,46 @@
           "reason": "Portuguese makes the adjective a noun, \"o espiritual\", as the Greek does, and that form already means anyone, man or woman, like \"quem\"; the \"ele mesmo\" that refers back to it is ordinary generic Portuguese (style guide section 7). Adding \"[a pessoa]\" would supply a noun the Greek does not have, so Literal has no gender span where the English has one.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46002015003"
+          ],
+          "choice": "\"霊の人\" (L, B); \"聖霊を持っている人\" (R)",
+          "alternatives": [
+            "\"霊的な人\""
+          ],
+          "reason": "One who has God's Spirit and is guided by him (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46002015003"
+          ],
+          "choice": "\"有圣灵的人\"",
+          "alternatives": [
+            "属灵的人"
+          ],
+          "reason": "As the English Readable: the spiritual person is one who has God's Spirit (meaning decision m1); Literal and Balanced keep \"属灵的人\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4932,6 +6002,26 @@
           "L": "Ведь «кто познал ум Господа, кто наставит {{deity_pronoun:его|Его}}?»",
           "B": "Ведь «кто когда-либо знал ум Господа настолько, чтобы наставлять {{deity_pronoun:его|Его}}?»",
           "R": "Писание спрашивает: «Кто знает, о чём думает Господь? Кто может чему-нибудь {{deity_pronoun:его|Его}} научить?»"
+        },
+        "uk": {
+          "L": "Бо «хто пізнав розум Господа, щоб навчити {{deity_pronoun:його|Його}}?»",
+          "B": "Бо «хто коли-небудь так добре пізнав думку Господа, щоб навчати {{deity_pronoun:його|Його}}?»",
+          "R": "Писання питає: «Хто знає, що думає Господь? Хто може навчити {{deity_pronoun:його|Його}} чогось?»"
+        },
+        "ja": {
+          "L": "なぜなら、「だれが主の思いを知ったのか、だれが主を教えるのか？」",
+          "B": "実に、「だれが主の思いを知って、主を教えることができるだろうか？」",
+          "R": "聖書はこう問いかけています。「だれが、主の考えていることを知っているだろうか？だれが、主に何かを教えることができるだろうか？」"
+        },
+        "id": {
+          "L": "Sebab \"siapakah yang telah mengetahui pikiran Tuhan, yang akan mengajari {{deity_pronoun:dia|Dia}}?\"",
+          "B": "Sebab \"siapakah yang pernah mengenal pikiran Tuhan sehingga dapat mengajari {{deity_pronoun:dia|Dia}}?\"",
+          "R": "Kitab Suci bertanya, \"Siapa yang tahu apa yang dipikirkan Tuhan? Siapa yang dapat mengajarkan sesuatu kepada-{{deity_pronoun:nya|Nya}}?\""
+        },
+        "zh": {
+          "L": "因为“有谁认识了主的心思，[有谁]会教导{{deity_pronoun:他|祂}}呢？”",
+          "B": "因为“谁曾知道主的心思，足以教导{{deity_pronoun:他|祂}}呢？”",
+          "R": "圣经上问：“有谁曾经知道主在想什么呢？有谁能教导{{deity_pronoun:他|祂}}什么呢？”"
         }
       },
       "decisions": [
@@ -4954,7 +6044,7 @@
           "alternatives": [],
           "reason": "Isaiah 40:12-14 asks who could measure the world or teach God anything. Paul quotes the Greek form of verse 13, as he does in Romans 11:34, without an introduction. Where the Greek has \"mind\", the Hebrew has \"spirit\": \"Who has measured the Spirit of the LORD?\" The Hebrew word fits Paul's subject closely.",
           "uncertain": false,
-          "footnote": false
+          "footnote": true
         },
         {
           "id": "m2",
@@ -5118,6 +6208,69 @@
           "reason": "Paul quotes Isaiah 40:13 with the Greek word for \"Lord\" (m2), so it is \"Господь\", not the capitals kept for the divine name in the Old Testament itself.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46002016005"
+          ],
+          "choice": "Господь, with no divine_name span",
+          "alternatives": [
+            "ГОСПОДЬ"
+          ],
+          "reason": "Isaiah 40:13 has the divine name (m2), but Paul quotes the Greek with kyrios. In the New Testament the divine name stays \"Господь\" with no span, as the shared terms note says.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46002016005"
+          ],
+          "choice": "\"主\" in the quotation, plain style",
+          "alternatives": [
+            "\"主なる神\""
+          ],
+          "reason": "Isaiah 40:13 has God's own name here (m2); the English keeps \"Lord\", and so does Japanese.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46002016005"
+          ],
+          "choice": "\"主\"; first question as Romans 11:34",
+          "alternatives": [
+            "{{divine_name:上主|雅威}}"
+          ],
+          "reason": "Isaiah 40:13 is quoted with the Greek word for Lord, so Chinese writes \"主\" (style guide section 4); the meaning decision m2 names the divine name behind it. Romans 11:34 quotes the same words, so each level keeps Romans' wording for the first question.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5190,6 +6343,26 @@
           "L": "Мы же имеем ум {{christos:Христа|Мессии}}.",
           "B": "А у нас есть ум {{christos:Христа|Мессии}}.",
           "R": "А нам дан ум {{christos:Христа|Мессии}}. Через Духа мы понимаем, как {{deity_pronoun:он|Он}} думает."
+        },
+        "uk": {
+          "L": "А ми маємо розум {{christos:Христа|Месії}}.",
+          "B": "А ми маємо розум {{christos:Христа|Месії}}.",
+          "R": "Але нам дано розум {{christos:Христа|Месії}}. Через Духа ми розуміємо, як {{deity_pronoun:він|Він}} думає."
+        },
+        "ja": {
+          "L": "しかし、わたしたちは{{christos:キリスト|メシア}}の思いを持っています。",
+          "B": "しかし、わたしたちには{{christos:キリスト|メシア}}の思いがあります。",
+          "R": "しかしわたしたちは、{{christos:キリスト|メシア}}の思いを与えられています。聖霊によって、わたしたちは、{{christos:キリスト|メシア}}がどのように考えておられるかがわかるのです。"
+        },
+        "id": {
+          "L": "Tetapi kita memiliki pikiran {{christos:Kristus|Mesias}}.",
+          "B": "Tetapi kita memiliki pikiran {{christos:Kristus|Mesias}}.",
+          "R": "Tetapi kita sudah diberi pikiran {{christos:Kristus|Mesias}}. Melalui Roh kita mengerti bagaimana {{deity_pronoun:dia|Dia}} berpikir."
+        },
+        "zh": {
+          "L": "但我们有{{christos:基督|弥赛亚}}的心思。",
+          "B": "而我们有{{christos:基督|弥赛亚}}的心思。",
+          "R": "但是我们已经得到了{{christos:基督|弥赛亚}}的心思。借着圣灵，我们明白{{deity_pronoun:他|祂}}是怎样想的。"
         }
       },
       "decisions": [
@@ -5322,6 +6495,73 @@
             "mawazo"
           ],
           "reason": "\"Nia\" (mind, way of thinking) for the Greek word in both halves of verse 16, so the Lord's mind in Isaiah and the mind of Christ stay the same word, as in 1:10.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46002016011",
+            "n46002016012"
+          ],
+          "choice": "розум (every level, in 2:16 both times)",
+          "alternatives": [
+            "думка",
+            "помисел"
+          ],
+          "reason": "Paul answers the quotation with the same word, so \"розум Господа\" and \"розум Христа\" keep one Ukrainian noun.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46002016011"
+          ],
+          "choice": "\"思い\" for nous in both sentences of 2:16",
+          "alternatives": [
+            "\"心\"",
+            "\"考え\""
+          ],
+          "reason": "The same word links \"the mind of the Lord\" and \"the mind of Christ\" (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46002016011"
+          ],
+          "choice": "\"心思\"",
+          "alternatives": [
+            "心",
+            "意念"
+          ],
+          "reason": "The same word as \"the mind of the Lord\" in the quotation just before, so that the reader sees Christ standing where Isaiah has the Lord (meaning decision m2).",
           "uncertain": false,
           "footnote": false
         }

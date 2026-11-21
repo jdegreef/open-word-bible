@@ -19,3 +19,7 @@ python3 -m pip install --quiet --disable-pip-version-check -r backend/requiremen
 python3 .claude/hooks/guard_edits.py --build-cache
 # Lint and validate what Claude commits (scripts/git-hooks/pre-commit).
 git config core.hooksPath scripts/git-hooks
+# Merge translation JSON structurally (scripts/merge_json.py, .gitattributes),
+# so merging main into a branch that adds another language doesn't conflict.
+git config merge.owbjson.name "Open Word Bible JSON merge"
+git config merge.owbjson.driver "python3 scripts/merge_json.py %O %A %B %P"

@@ -94,6 +94,12 @@ jobs:
         env:
           OWB_BUILT_SITE: site
         run: python3 -m unittest discover -s tests -t .
+      # A report, never a failure: footnotes whose verse words the
+      # alternative, and verses and entries at odds with a terms glossary
+      # (the admin's Checks page shows the same lists).
+      - name: Content checks (report only)
+        continue-on-error: true
+        run: python3 scripts/content_checks.py
 
   backend:
     name: Backend (Django + Postgres)
@@ -106,7 +112,10 @@ jobs:
     # leaves room for a slow runner: on 2026-10-16 a run that passed every
     # test was cancelled at 20 minutes while it tore down the test database,
     # and on 2026-11-04 one was cancelled at 30 (it passed in 12 on the PR).
-    timeout-minutes: 45
+    # With every language's Bible imported the tests take 31 to 38 minutes on
+    # main (2026-11-20), and the review-state and Bible-order indexes add about
+    # ten more, so 45 was cancelling passing runs.
+    timeout-minutes: 60
     services:
       postgres:
         image: postgres:16

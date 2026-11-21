@@ -72,6 +72,31 @@
           "L": "Итак, снова взяли иудеи камни, чтобы побить {{deity_pronoun:его|Его}} камнями.",
           "B": "Иудеи, которые окружили {{deity_pronoun:его|Его}}, снова схватили камни, чтобы побить {{deity_pronoun:его|Его}}.",
           "R": "Тогда иудеи, стоявшие вокруг Иисуса, снова взяли камни. Они хотели забить {{deity_pronoun:его|Его}} камнями до смерти."
+        },
+        "uk": {
+          "L": "Тож юдеї знову взяли каміння, щоб побити {{deity_pronoun:його|Його}} камінням.",
+          "B": "Юдеї, що обступили {{deity_pronoun:його|Його}}, знову взяли каміння, щоб побити {{deity_pronoun:його|Його}}.",
+          "R": "Тоді юдеї, що стояли навколо Ісуса, знову набрали каміння. Вони хотіли закидати {{deity_pronoun:його|Його}} камінням на смерть."
+        },
+        "ja": {
+          "L": "そこでユダヤ人たちは、イエスを石で打つために、再び石を取り上げた。",
+          "B": "イエスを取り囲んでいたユダヤ人たちは、再び石を取り上げ、イエスを石で打とうとした。",
+          "R": "すると、イエスの周りにいたユダヤ人たちは、また石を拾い上げました。イエスを石で打ち殺そうとしたのです。"
+        },
+        "id": {
+          "L": "Lalu orang-orang Yahudi mengambil batu lagi untuk melempari {{deity_pronoun:dia|Dia}}.",
+          "B": "Sekali lagi orang-orang Yahudi yang mengerumuni {{deity_pronoun:dia|Dia}} memungut batu untuk melempari {{deity_pronoun:dia|Dia}}.",
+          "R": "Lalu orang-orang Yahudi yang berdiri di sekeliling Yesus memungut batu lagi. Mereka mau melempari {{deity_pronoun:dia|Dia}} dengan batu sampai mati."
+        },
+        "zh": {
+          "L": "犹太人于是再次举起石头，为要用石头打死{{deity_pronoun:他|祂}}。",
+          "B": "围着{{deity_pronoun:他|祂}}的犹太人又一次捡起石头，要用石头打死{{deity_pronoun:他|祂}}。",
+          "R": "站在耶稣周围的犹太人又捡起了石头。他们想用石头把{{deity_pronoun:他|祂}}砸死。"
+        },
+        "ar": {
+          "L": "فرفع اليهود أيضًا حجارة ليرجموه.",
+          "B": "ومرّة أخرى التقط اليهود الذين تجمّعوا حوله حجارة ليرجموه.",
+          "R": "عندئذ التقط اليهود الواقفون حول يسوع حجارة من جديد. فقد أرادوا أن يقتلوه رجمًا."
         }
       },
       "alignments": [
@@ -124,6 +149,56 @@
           "language": "en",
           "level": "B",
           "target_span": "{{deity_pronoun:him|Him}}"
+        },
+        {
+          "tokens": [
+            "n43010031005",
+            "n43010031006"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ユダヤ人たち"
+        },
+        {
+          "tokens": [
+            "n43010031003"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "再び"
+        },
+        {
+          "tokens": [
+            "n43010031004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "石"
+        },
+        {
+          "tokens": [
+            "n43010031001"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "取り上げ"
+        },
+        {
+          "tokens": [
+            "n43010031009"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "イエス"
+        },
+        {
+          "tokens": [
+            "n43010031007",
+            "n43010031008"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "石で打とうとした"
         }
       ],
       "decisions": [
@@ -459,6 +534,69 @@
           "reason": "Here the word means the hearers of 10:24 (meaning decision m1), not the authorities alone and not the Jewish people as a whole; Balanced and Readable keep \"иудеи\" and say who they were. This holds for 10:33.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43010031006"
+          ],
+          "choice": "\"イエスを取り囲んでいたユダヤ人たち\" (B); \"イエスの周りにいたユダヤ人たち\" (R)",
+          "alternatives": [
+            "\"ユダヤ人の指導者たち\""
+          ],
+          "reason": "The word means the group of hearers of 10:24 (m1), not the authorities alone nor the people as a whole; Balanced and Readable tie it to those present, as the English does. Readable says that stoning was meant to kill (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43010031006"
+          ],
+          "choice": "\"犹太人\" (L); \"围着{{deity_pronoun:他|祂}}的犹太人\" (B); \"站在耶稣周围的犹太人\" (R)",
+          "alternatives": [
+            "\"犹太领袖\""
+          ],
+          "reason": "Here the word means the group of hearers of 10:24 (meaning decision m1), not the authorities alone and not the Jewish people as a whole; Balanced and Readable say so, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-1",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43010031005",
+            "n43010031006"
+          ],
+          "choice": "\"اليهود\" (L), \"اليهود الذين تجمّعوا حوله\", \"اليهود الواقفون حول يسوع\" (B, R)",
+          "alternatives": [
+            "\"قادة اليهود\""
+          ],
+          "reason": "These are the hostile hearers who had gathered around Jesus in the temple (m1). Balanced and Readable say so, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -544,6 +682,31 @@
           "L": "Ответил им Иисус: «Много добрых дел {{deity_pronoun:я|Я}} показал вам от Отца; за какое из этих дел вы побиваете {{deity_pronoun:меня|Меня}} камнями?»",
           "B": "Иисус сказал им: «Я показал вам много добрых дел, которые от Отца. За какое из этих дел вы хотите побить {{deity_pronoun:меня|Меня}} камнями?»",
           "R": "Но Иисус сказал им: «Я сделал у вас на глазах много добрых дел. Все они были от Отца. За какое из них вы хотите побить {{deity_pronoun:меня|Меня}} камнями?»"
+        },
+        "uk": {
+          "L": "Ісус відповів їм: «Багато добрих діл {{deity_pronoun:я|Я}} показав вам від Отця; за яке з них діло ви {{deity_pronoun:мене|Мене}} каменуєте?»",
+          "B": "Ісус сказав їм: «Я показав вам багато добрих діл, що походять від Отця. За яке з цих діл ви хочете побити {{deity_pronoun:мене|Мене}} камінням?»",
+          "R": "Але Ісус сказав їм: «Я зробив перед вашими очима багато добрих діл. Усі вони були від Отця. За яке з них ви збираєтеся побити {{deity_pronoun:мене|Мене}} камінням?»"
+        },
+        "ja": {
+          "L": "イエスは彼らにお答えになった。「父から出た多くの良い業を、わたしはあなたがたに示した。そのうちのどの業のために、あなたがたはわたしを石で打とうとするのか？」",
+          "B": "イエスは彼らに言われた。「わたしは、父から出た多くの良い業をあなたがたに示してきた。そのうちのどの業のために、わたしを石で打とうとしているのか？」",
+          "R": "しかしイエスは彼らに言われました。「わたしは、あなたたちの目の前で多くの良い業をしてきた。それはみな、父から出たものだ。そのうちのどの業のために、わたしを石で打とうとしているのか？」"
+        },
+        "id": {
+          "L": "Yesus menjawab mereka, \"Banyak pekerjaan baik dari Bapa telah {{deity_pronoun:aku|Aku}} tunjukkan kepada kalian; karena pekerjaan manakah di antaranya kalian mau melempari {{deity_pronoun:aku|Aku}} dengan batu?\"",
+          "B": "Yesus berkata kepada mereka, \"Aku telah menunjukkan kepada kalian banyak pekerjaan baik yang berasal dari Bapa. Karena pekerjaan yang mana kalian mau melempari {{deity_pronoun:aku|Aku}} dengan batu?\"",
+          "R": "Tetapi Yesus berkata kepada mereka, \"Aku sudah melakukan banyak pekerjaan baik di depan mata kalian. Semuanya berasal dari Bapa. Karena pekerjaan yang mana kalian mau melempari {{deity_pronoun:aku|Aku}} dengan batu?\""
+        },
+        "zh": {
+          "L": "耶稣回答他们：“许多美好的作为，我从父那里显明给你们看了；你们是为了其中的哪一件作为，要用石头打我？”",
+          "B": "耶稣对他们说：“我已经把许多从父那里来的美好作为显给你们看。你们想用石头打我，是因为其中的哪一件呢？”",
+          "R": "但是耶稣对他们说：“我在你们眼前做了许多美好的作为，这些都是从父那里来的。你们要用石头打我，是为了其中的哪一件呢？”"
+        },
+        "ar": {
+          "L": "أجابهم يسوع: «أعمالًا حسنة كثيرة أريتكم من عند الآب؛ فبسبب أيّ عمل منها ترجمونني؟»",
+          "B": "فقال لهم يسوع: «أريتكم أعمالًا صالحة كثيرة مصدرها الآب. فمن أجل أيّ عمل منها تريدون أن ترجموني؟»",
+          "R": "لكنّ يسوع قال لهم: «عملت أمامكم أعمالًا صالحة كثيرة لكي تروها. وكلّها جاءت من الآب. فمن أجل أيّ واحد منها ستقتلونني رجمًا؟»"
         }
       },
       "alignments": [
@@ -676,6 +839,136 @@
           "language": "en",
           "level": "B",
           "target_span": "for"
+        },
+        {
+          "tokens": [
+            "n43010032003",
+            "n43010032004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "イエス"
+        },
+        {
+          "tokens": [
+            "n43010032002"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "彼ら"
+        },
+        {
+          "tokens": [
+            "n43010032001"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "言われた"
+        },
+        {
+          "tokens": [
+            "n43010032011",
+            "n43010032012"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "父"
+        },
+        {
+          "tokens": [
+            "n43010032010"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "から"
+        },
+        {
+          "tokens": [
+            "n43010032005"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "多くの"
+        },
+        {
+          "tokens": [
+            "n43010032007"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "良い"
+        },
+        {
+          "tokens": [
+            "n43010032006"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "業"
+        },
+        {
+          "tokens": [
+            "n43010032009"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなたがた"
+        },
+        {
+          "tokens": [
+            "n43010032008"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "示してきた"
+        },
+        {
+          "tokens": [
+            "n43010032015"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "そのうちの"
+        },
+        {
+          "tokens": [
+            "n43010032014"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "どの"
+        },
+        {
+          "tokens": [
+            "n43010032016"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "業"
+        },
+        {
+          "tokens": [
+            "n43010032013"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "のために"
+        },
+        {
+          "tokens": [
+            "n43010032017"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43010032018"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "石で打とうとしているのか"
         }
       ],
       "decisions": [
@@ -920,6 +1213,51 @@
           "reason": "\"tốt đẹp\" adds the sense of fine and admirable that the meaning decision gives the word.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43010032007",
+            "n43010032018"
+          ],
+          "choice": "\"良い業\"; \"石で打とうとする\"",
+          "alternatives": [
+            "\"立派な業\""
+          ],
+          "reason": "\"良い\" is the same word as in \"良い羊飼い\" (10:11), as in the Greek (m1), and it returns in verse 33. The verb describes an act under way, stones in hand but not yet thrown (m3), so every level says \"打とうとする\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43010032006",
+            "n43010032007"
+          ],
+          "choice": "\"美好的作为\"",
+          "alternatives": [
+            "\"善事\"",
+            "\"好事\""
+          ],
+          "reason": "\"Good\" here is fine, noble, worth admiring (meaning decision m1); \"作为\" is kept for \"works\" at every level, as in 9:3-4, since the word returns in 10:33, 37 and 38.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1008,6 +1346,31 @@
           "L": "Ответили {{deity_pronoun:ему|Ему}} иудеи: «Не за доброе дело побиваем {{deity_pronoun:тебя|Тебя}} камнями, но за богохульство, и за то, что {{deity_pronoun:ты|Ты}}, будучи человеком, делаешь себя Богом.»",
           "B": "Иудеи ответили {{deity_pronoun:ему|Ему}}: «Мы побиваем {{deity_pronoun:тебя|Тебя}} камнями не за доброе дело. Мы делаем это за богохульство: {{deity_pronoun:ты|Ты}} всего лишь человек, а делаешь себя Богом.»",
           "R": "Иудеи ответили: «Мы хотим побить {{deity_pronoun:тебя|Тебя}} камнями не за то, что {{deity_pronoun:ты|Ты}} сделал что-то доброе. Мы хотим побить {{deity_pronoun:тебя|Тебя}} камнями, потому что {{deity_pronoun:ты|Ты}} оскорбляешь Бога своими словами. Ты всего лишь человек, а выдаёшь себя за Бога!»"
+        },
+        "uk": {
+          "L": "Юдеї відповіли {{deity_pronoun:йому|Йому}}: «Не за добре діло ми каменуємо {{deity_pronoun:тебе|Тебе}}, а за богохульство, і що {{deity_pronoun:ти|Ти}}, бувши людиною, робиш себе Богом.»",
+          "B": "Юдеї відповіли {{deity_pronoun:йому|Йому}}: «Ми хочемо побити {{deity_pronoun:тебе|Тебе}} камінням не за добре діло. Це за богохульство: {{deity_pronoun:ти|Ти}} лише людина, а робиш себе Богом.»",
+          "R": "Юдеї відповіли: «Ми хочемо побити {{deity_pronoun:тебе|Тебе}} камінням не за те, що {{deity_pronoun:ти|Ти}} зробив щось добре. Ми робимо це, бо {{deity_pronoun:ти|Ти}} зневажаєш Бога своїми словами. Ти лише людина, а видаєш себе за Бога!»"
+        },
+        "ja": {
+          "L": "ユダヤ人たちはイエスに答えた。「良い業のことで、我々はあなたを石で打つのではなく、冒涜のため、また、あなたが人間でありながら、自分を神としているからである。」",
+          "B": "ユダヤ人たちはイエスに答えた。「良い業のことで、あなたを石で打つのではない。神を冒涜したからだ。あなたはただの人間なのに、自分を神としている。」",
+          "R": "ユダヤ人たちは答えました。「良いことをしたから、あなたを石で打つのではない。あなたの言うことが神を侮辱しているからだ。あなたはただの人間なのに、自分を神だと言っている！」"
+        },
+        "id": {
+          "L": "Orang-orang Yahudi menjawab-{{deity_pronoun:nya|Nya}}, \"Bukan karena pekerjaan baik kami melempari {{deity_pronoun:engkau|Engkau}}, melainkan karena hujatan, dan karena {{deity_pronoun:engkau|Engkau}}, yang hanya seorang manusia, menyamakan diri-{{deity_pronoun:mu|Mu}} dengan Allah.\"",
+          "B": "Orang-orang Yahudi itu menjawab-{{deity_pronoun:nya|Nya}}, \"Kami melempari {{deity_pronoun:engkau|Engkau}} bukan karena pekerjaan baik, melainkan karena {{deity_pronoun:engkau|Engkau}} menghujat Allah: {{deity_pronoun:engkau|Engkau}} hanya seorang manusia, tetapi {{deity_pronoun:engkau|Engkau}} menganggap diri-{{deity_pronoun:mu|Mu}} Allah.\"",
+          "R": "Orang-orang Yahudi itu menjawab, \"Kami melempari {{deity_pronoun:engkau|Engkau}} bukan karena {{deity_pronoun:engkau|Engkau}} berbuat baik. Kami melempari {{deity_pronoun:engkau|Engkau}} karena perkataan-{{deity_pronoun:mu|Mu}} menghina Allah. Engkau hanya manusia, tetapi {{deity_pronoun:engkau|Engkau}} mengaku diri-{{deity_pronoun:mu|Mu}} Allah!\""
+        },
+        "zh": {
+          "L": "犹太人回答{{deity_pronoun:他|祂}}：“我们用石头打{{deity_pronoun:你|祢}}，不是为了美好的作为，而是为了亵渎[的话]，因为{{deity_pronoun:你|祢}}身为人，却使{{deity_pronoun:你|祢}}自己成为{{god_term:神|上帝}}。”",
+          "B": "犹太人回答{{deity_pronoun:他|祂}}：“我们用石头打{{deity_pronoun:你|祢}}，不是因为什么美好的作为，而是因为{{deity_pronoun:你|祢}}亵渎{{god_term:神|上帝}}：{{deity_pronoun:你|祢}}不过是个人，却把{{deity_pronoun:你|祢}}自己当成{{god_term:神|上帝}}。”",
+          "R": "犹太人回答：“我们用石头打{{deity_pronoun:你|祢}}，不是因为{{deity_pronoun:你|祢}}做了好事。我们打{{deity_pronoun:你|祢}}，是因为{{deity_pronoun:你|祢}}说的话侮辱了{{god_term:神|上帝}}。{{deity_pronoun:你|祢}}只是一个人，却把{{deity_pronoun:你|祢}}自己说成是{{god_term:神|上帝}}！”"
+        },
+        "ar": {
+          "L": "أجابه اليهود: «لسنا نرجمك لأجل عمل حسن، بل لأجل تجديف، ولأنّك وأنت إنسان تجعل نفسك إلهًا».",
+          "B": "فأجابه اليهود: «نحن لا نرجمك بسبب عمل صالح، بل بسبب التجديف: فأنت لست إلّا إنسانًا، وتجعل نفسك الله».",
+          "R": "فأجاب اليهود: «نحن لا نرجمك لأنّك عملت شيئًا صالحًا. بل نرجمك لأنّ ما تقوله إهانة لله. فأنت مجرّد إنسان، لكنّك تجعل نفسك الله!»"
         }
       },
       "alignments": [
@@ -1163,6 +1526,145 @@
           "language": "en",
           "level": "B",
           "target_span": "God"
+        },
+        {
+          "tokens": [
+            "n43010033003",
+            "n43010033004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ユダヤ人たち"
+        },
+        {
+          "tokens": [
+            "n43010033002"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "イエス"
+        },
+        {
+          "tokens": [
+            "n43010033001"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "答えた"
+        },
+        {
+          "tokens": [
+            "n43010033006"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "良い"
+        },
+        {
+          "tokens": [
+            "n43010033007"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "業"
+        },
+        {
+          "tokens": [
+            "n43010033005"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "のことで"
+        },
+        {
+          "tokens": [
+            "n43010033010"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなた"
+        },
+        {
+          "tokens": [
+            "n43010033009"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "石で打つ"
+        },
+        {
+          "tokens": [
+            "n43010033008"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "のではない"
+        },
+        {
+          "tokens": [
+            "n43010033013"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "神を冒涜した"
+        },
+        {
+          "tokens": [
+            "n43010033011",
+            "n43010033012"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "からだ"
+        },
+        {
+          "tokens": [
+            "n43010033016"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなた"
+        },
+        {
+          "tokens": [
+            "n43010033017"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ただの人間"
+        },
+        {
+          "tokens": [
+            "n43010033014",
+            "n43010033018"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "なのに"
+        },
+        {
+          "tokens": [
+            "n43010033020"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "自分"
+        },
+        {
+          "tokens": [
+            "n43010033021"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "神"
+        },
+        {
+          "tokens": [
+            "n43010033019"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "としている"
         }
       ],
       "decisions": [
@@ -1503,6 +2005,114 @@
           "reason": "Readable explains the word \"богохульство\" (meaning decision m2); Literal and Balanced keep it.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43010033013"
+          ],
+          "choice": "\"богохульство\" (L, B), \"зневажаєш Бога\" (R)",
+          "alternatives": [
+            "\"блюзнірство\""
+          ],
+          "reason": "The term settled for blasphemy in the Passion narratives; \"блюзнірство\" is current too but leans to mockery of the sacred in general. The same with \"богохульствуєш\" in 10:36.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43010033013",
+            "n43010033021"
+          ],
+          "choice": "\"冒涜\" (L, B); \"神を侮辱している\" (R); \"神\" (not \"神々の一人\")",
+          "alternatives": [
+            "\"一人の神\""
+          ],
+          "reason": "Readable explains blasphemy in everyday words (m2). \"God\" is the one God of Israel, as m3 decides; the footnote gives \"a god\". The speakers address Jesus with a curt \"あなた\" through this scene.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n43010033021"
+          ],
+          "choice": "\"{{god_term:神|上帝}}\"",
+          "alternatives": [
+            "\"神\" with no setting",
+            "\"上帝\" with no setting"
+          ],
+          "reason": "Every word naming the one God is written with the god_term setting: \"神\" by default, \"上帝\" as the reader's alternative. Here they mean the one God of Israel (meaning decision m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-1",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43010033019",
+            "n43010033020",
+            "n43010033021"
+          ],
+          "choice": "\"إلهًا\" (L), \"الله\" (B, R)",
+          "alternatives": [],
+          "reason": "The charge is that he makes himself God, the one God of Israel (m3). Literal keeps the Greek word without an article, which Arabic hears as \"a god\"; Balanced and Readable say \"God\", as the English does at every level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-2",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43010033012",
+            "n43010033013",
+            "n43010033014",
+            "n43010033015"
+          ],
+          "choice": "\"إهانة لله\" (R) for blasphemy",
+          "alternatives": [
+            "\"تجديف\""
+          ],
+          "reason": "Blasphemy is speaking in a way that dishonors God (m2). Readable says what the word means.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1586,6 +2196,31 @@
           "L": "Ответил им Иисус: «Разве не написано в Законе вашем: “Я сказал: ‘Вы — боги’”?",
           "B": "Иисус ответил им: «Разве не сказано в вашем собственном Законе: “Я сказал: ‘Вы — боги’”?",
           "R": "Иисус ответил им: «В вашем же Законе Бог говорит: “Я сказал: ‘Вы — боги.’”"
+        },
+        "uk": {
+          "L": "Ісус відповів їм: «Хіба не написано у вашому Законі: “Я сказав: ‘Ви боги’”?",
+          "B": "Ісус відповів їм: «Хіба ваш власний Закон не каже: “Я сказав: ‘Ви боги’”?",
+          "R": "Ісус відповів їм: «У вашому власному Законі Бог каже: “Я сказав: ‘Ви боги.’”"
+        },
+        "ja": {
+          "L": "イエスは彼らにお答えになった。「あなたがたの律法に、『わたしは言った。「あなたがたは神々である。」』と書かれているではないか？",
+          "B": "イエスは彼らにお答えになった。「あなたがた自身の律法に、『わたしは言った。「あなたがたは神々である。」』と書いてあるではないか？",
+          "R": "イエスは彼らにお答えになりました。「あなたたち自身の律法の中で、神はこう言っておられる。『わたしは言った。「あなたたちは神々だ。」』"
+        },
+        "id": {
+          "L": "Yesus menjawab mereka, \"Bukankah ada tertulis di dalam hukum Taurat kalian, 'Aku telah berfirman, Kalian adalah allah'?",
+          "B": "Yesus menjawab mereka, \"Bukankah hukum Taurat kalian sendiri berkata, 'Aku telah berfirman, \"Kalian adalah allah\"'?",
+          "R": "Yesus menjawab mereka, \"Di dalam hukum Taurat kalian sendiri Allah berfirman, 'Aku telah berkata, \"Kalian adalah allah.\"'"
+        },
+        "zh": {
+          "L": "耶稣回答他们：“在你们的律法上不是写着‘我说过：“你们是神明”’吗？",
+          "B": "耶稣回答他们：“你们自己的律法上不也说‘我说过：“你们是神明”’吗？",
+          "R": "耶稣回答他们：“在你们自己的律法里，{{god_term:神|上帝}}说：‘我说过：“你们是神明。”’"
+        },
+        "ar": {
+          "L": "أجابهم يسوع: «أليس مكتوبًا في شريعتكم: أنا قلت: إنّكم آلهة؟",
+          "B": "فأجابهم يسوع: «أما تقول شريعتكم أنتم: أنا قلت إنّكم آلهة؟",
+          "R": "فأجابهم يسوع: «في شريعتكم أنتم يقول الله: أنا قلت إنّكم آلهة."
         }
       },
       "alignments": [
@@ -1680,6 +2315,113 @@
           "language": "en",
           "level": "B",
           "target_span": "gods"
+        },
+        {
+          "tokens": [
+            "n43010034003",
+            "n43010034004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "イエス"
+        },
+        {
+          "tokens": [
+            "n43010034002"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "彼ら"
+        },
+        {
+          "tokens": [
+            "n43010034001"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "お答えになった"
+        },
+        {
+          "tokens": [
+            "n43010034011"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなたがた自身の"
+        },
+        {
+          "tokens": [
+            "n43010034009",
+            "n43010034010"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "律法"
+        },
+        {
+          "tokens": [
+            "n43010034008"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "に"
+        },
+        {
+          "tokens": [
+            "n43010034013"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43010034014"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "言った"
+        },
+        {
+          "tokens": [
+            "n43010034016"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなたがた"
+        },
+        {
+          "tokens": [
+            "n43010034015"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "神々"
+        },
+        {
+          "tokens": [
+            "n43010034016"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "である"
+        },
+        {
+          "tokens": [
+            "n43010034006",
+            "n43010034007"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "書いてある"
+        },
+        {
+          "tokens": [
+            "n43010034005"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ではないか"
         }
       ],
       "decisions": [
@@ -1697,7 +2439,7 @@
           ],
           "reason": "\"Your\" is missing from a few early witnesses, among them P45, the first hand of Codex Sinaiticus and Codex Bezae. Most manuscripts have it, and it matches 8:17 (\"your law\") and 15:25 (\"their law\"). The sense is hardly changed. A reviewer should check this against the apparatus.",
           "uncertain": false,
-          "footnote": true
+          "footnote": false
         },
         {
           "id": "m2",
@@ -1968,6 +2710,117 @@
           "reason": "\"Your law\" means the Scriptures as a whole (meaning decision m2), so it takes the capital the style guide gives the Law. Those called gods in Psalm 82:6 are human beings (meaning decision m3), so \"боги\" is lowercase. The psalm's words are a third-level quotation, as section 7b of the style guide sets out.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43010034010"
+          ],
+          "choice": "\"Закон\", capitalised, for the Scriptures here",
+          "alternatives": [
+            "\"Писання\""
+          ],
+          "reason": "Jesus quotes a psalm as \"your law\": the word means the Scriptures as a whole (meaning decision m2); Ukrainian keeps \"Закон\" so the reader sees the word Jesus used. \"боги\" is lowercase, as for \"a god\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43010034010",
+            "n43010034015"
+          ],
+          "choice": "\"律法\"; \"神々\"; quotation within quotation as 『』 and 「」",
+          "alternatives": [],
+          "reason": "\"律法\" here means Scripture as a whole (m2), kept as the word John wrote. The quoted psalm (m3) has two levels of quotation inside Jesus' words, given as 『』 and then 「」. Readable names God as the speaker, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43010034013",
+            "n43010034014",
+            "n43010034015",
+            "n43010034016"
+          ],
+          "choice": "\"allah\" in lowercase for the \"gods\" of Psalm 82:6",
+          "alternatives": [
+            "\"ilah-ilah\"",
+            "\"dewa\""
+          ],
+          "reason": "m3: God calls human beings \"gods\" in the psalm. The brief writes false or other gods as lowercase \"allah\" (Style, section 4); here it keeps the play on the word God uses of himself. \"hukum Taurat\" for the Scriptures as a whole, as the Greek \"law\" is used here (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43010034015"
+          ],
+          "choice": "\"神明\" for \"gods\", with no god_term span (also 10:35)",
+          "alternatives": [
+            "\"神\"",
+            "\"众神\""
+          ],
+          "reason": "In Psalm 82:6 God calls human beings \"gods\" (meaning decision m3); the word does not name the one God, so it takes no setting, and \"神明\" keeps it apart from \"{{god_term:神|上帝}}\" in 10:33 and 10:36. The third level of quotation uses double marks again, as the style guide says.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-1",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43010034009",
+            "n43010034010",
+            "n43010034011"
+          ],
+          "choice": "\"شريعتكم\" for the Psalms",
+          "alternatives": [
+            "\"كتبكم\""
+          ],
+          "reason": "\"Your law\" here means the Scriptures as a whole (m2), since the words come from Psalm 82. The Arabic keeps \"law\" as the English does; the word was used for all of Scripture.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2072,6 +2925,31 @@
           "L": "Если {{deity_pronoun:он|Он}} назвал богами тех, к кому было слово Божье, и Писание не может быть нарушено, \\v 36 то тому, кого Отец освятил и послал в мир, вы говорите: “Ты богохульствуешь”, — потому что {{deity_pronoun:я|Я}} сказал: “Я — Сын Божий”?",
           "B": "Если {{deity_pronoun:он|Он}} назвал богами тех людей, к которым было обращено слово Божье, а Писание не может быть отменено, \\v 36 то как вы можете говорить тому, кого Отец посвятил и послал в мир: “Ты богохульствуешь”, — за то, что {{deity_pronoun:я|Я}} сказал: “Я — Сын Божий”?",
           "R": "Бог назвал богами тех людей, которые получили {{deity_pronoun:его|Его}} слово. А то, что говорит Писание, никто не может отменить. \\v 36 Отец избрал {{deity_pronoun:меня|Меня}} для своего дела и послал {{deity_pronoun:меня|Меня}} в мир. Так как же вы можете говорить, что {{deity_pronoun:я|Я}} оскорбляю Бога, потому что {{deity_pronoun:я|Я}} сказал: “Я — Сын Божий”?"
+        },
+        "uk": {
+          "L": "Якщо {{deity_pronoun:він|Він}} назвав богами тих, до кого було Боже слово, а Писання не може бути порушене, \\v 36 [то про того], кого Отець освятив і послав у світ, ви кажете: “Ти богохульствуєш”, бо {{deity_pronoun:я|Я}} сказав: “Я Син Божий”?",
+          "B": "Якщо {{deity_pronoun:він|Він}} назвав богами тих, до кого прийшло Боже слово, а Писання не може бути скасоване, \\v 36 то як ви можете казати {{deity_pronoun:йому|Йому}}, тому, кого Отець освятив і послав у світ: “Ти богохульствуєш”, бо {{deity_pronoun:я|Я}} сказав: “Я Син Божий”?",
+          "R": "Бог назвав богами людей, які отримали {{deity_pronoun:його|Його}} слово. А те, що каже Писання, ніхто не може відкинути. \\v 36 Отець відокремив {{deity_pronoun:мене|Мене}} для своєї справи й послав {{deity_pronoun:мене|Мене}} у світ. То як ви можете казати, що {{deity_pronoun:я|Я}} зневажаю Бога, бо {{deity_pronoun:я|Я}} сказав: “Я Син Божий”?"
+        },
+        "ja": {
+          "L": "[神が]、神の言葉が臨んだあの人々を神々と呼ばれたのなら、そして聖書が廃されることはありえないのだから、\\v 36 父が聖別して世に遣わされた者について、あなたがたは『あなたは冒涜している』と言うのか？わたしが『わたしは神の子である』と言ったからといって。",
+          "B": "神の言葉を受けた人々を、神が神々と呼ばれたのなら、そして聖書が廃されることはありえないのなら、\\v 36 父が取り分けて世に遣わされた者に向かって、どうしてあなたがたは『あなたは神を冒涜している』と言えるのか？わたしが『わたしは神の子である』と言ったからだというのか？",
+          "R": "神は、ご自分の言葉を受けた人々を神々と呼ばれた。そして、聖書に書かれていることは、だれも無効にできない。\\v 36 父は、ご自分の働きのためにわたしを選び分けて、この世に遣わされた。それなのにどうして、あなたたちは、わたしが『わたしは神の子だ』と言ったからといって、神を侮辱していると言うのか？"
+        },
+        "id": {
+          "L": "Jika {{deity_pronoun:dia|Dia}} menyebut mereka allah, kepada siapa firman Allah datang, dan Kitab Suci tidak dapat dibatalkan, \\v 36 bagaimana mungkin kalian berkata kepada {{deity_pronoun:dia|Dia}} yang dikuduskan dan diutus Bapa ke dalam dunia, 'Engkau menghujat Allah,' karena {{deity_pronoun:aku|Aku}} berkata, 'Aku Anak Allah'?",
+          "B": "Kalau {{deity_pronoun:dia|Dia}} menyebut mereka allah, yaitu orang-orang yang kepadanya firman Allah datang, dan Kitab Suci tidak dapat dibatalkan, \\v 36 bagaimana kalian dapat berkata kepada {{deity_pronoun:dia|Dia}} yang dikuduskan dan diutus Bapa ke dalam dunia, 'Engkau menghujat Allah,' karena {{deity_pronoun:aku|Aku}} berkata, 'Aku Anak Allah'?",
+          "R": "Allah menyebut mereka allah, yaitu orang-orang yang menerima firman-{{deity_pronoun:nya|Nya}}. Dan tidak ada orang yang dapat membatalkan apa yang dikatakan Kitab Suci. \\v 36 Bapa telah menguduskan {{deity_pronoun:aku|Aku}} untuk pekerjaan-{{deity_pronoun:nya|Nya}} dan mengutus {{deity_pronoun:aku|Aku}} ke dalam dunia. Jadi, bagaimana kalian bisa berkata bahwa {{deity_pronoun:aku|Aku}} menghina Allah karena {{deity_pronoun:aku|Aku}} berkata, 'Aku Anak Allah'?"
+        },
+        "zh": {
+          "L": "如果那些{{god_term:神|上帝}}的话临到他们的[人]，{{deity_pronoun:他|祂}}尚且称他们为神明，而且经文是不能被废除的，\\v 36 那么对父分别为圣并差到世界里来的那一位，你们却说‘{{deity_pronoun:你|祢}}在亵渎’，只因为我说了‘我是{{god_term:神|上帝}}的儿子’吗？",
+          "B": "如果{{deity_pronoun:他|祂}}把那些领受了{{god_term:神|上帝}}话语的人称为神明，而且经文是不能废弃的，\\v 36 那么对父分别出来、差到世界上来的这一位，你们怎么能说‘{{deity_pronoun:你|祢}}在亵渎’，只因为我说了‘我是{{god_term:神|上帝}}的儿子’呢？",
+          "R": "{{god_term:神|上帝}}称那些领受{{deity_pronoun:他|祂}}话语的人为神明。而且，没有人能推翻圣经上说的话。\\v 36 父把我分别出来做{{deity_pronoun:他|祂}}的工作，又差我到世界上来。那么，我说‘我是{{god_term:神|上帝}}的儿子’，你们怎么能说我侮辱了{{god_term:神|上帝}}呢？"
+        },
+        "ar": {
+          "L": "فإن كان دعا أولئك آلهة، الذين جاءت إليهم كلمة الله، والكتاب لا يُنقض، \\v 36 فهل تقولون للذي قدّسه الآب وبعثه إلى العالم: أنت تجدّف، لأنّي قلت: أنا ابن الله؟",
+          "B": "فإن كان قد دعاهم آلهة، أولئك الذين جاءتهم كلمة الله، والكتاب لا يمكن أن يُبطل، \\v 36 فكيف تقولون للذي خصّصه الآب وأرسله إلى العالم: أنت تجدّف، لأنّي قلت: أنا ابن الله؟",
+          "R": "دعا الله آلهة أولئك الناس الذين تلقّوا كلمته. ولا أحد يقدر أن يلغي ما يقوله الكتاب. \\v 36 والآب خصّصني لعمله وأرسلني إلى العالم. فكيف تقولون إنّي أهين الله لأنّي قلت: أنا ابن الله؟"
         }
       },
       "alignments": [
@@ -2306,6 +3184,234 @@
           "language": "en",
           "level": "B",
           "target_span": "of God"
+        },
+        {
+          "tokens": [
+            "n43010035007",
+            "n43010035008",
+            "n43010035009",
+            "n43010035010"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "神の言葉"
+        },
+        {
+          "tokens": [
+            "n43010035005",
+            "n43010035006",
+            "n43010035011"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "受けた"
+        },
+        {
+          "tokens": [
+            "n43010035002"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "人々"
+        },
+        {
+          "tokens": [
+            "n43010035003"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "神"
+        },
+        {
+          "tokens": [
+            "n43010035004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "神々"
+        },
+        {
+          "tokens": [
+            "n43010035003"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "呼ばれた"
+        },
+        {
+          "tokens": [
+            "n43010035001"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "のなら"
+        },
+        {
+          "tokens": [
+            "n43010035012"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "そして"
+        },
+        {
+          "tokens": [
+            "n43010035016",
+            "n43010035017"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "聖書"
+        },
+        {
+          "tokens": [
+            "n43010035015"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "廃される"
+        },
+        {
+          "tokens": [
+            "n43010035013",
+            "n43010035014"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ことはありえない"
+        },
+        {
+          "tokens": [
+            "n43010036002",
+            "n43010036003"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "父"
+        },
+        {
+          "tokens": [
+            "n43010036004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "取り分けて"
+        },
+        {
+          "tokens": [
+            "n43010036008",
+            "n43010036009"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "世"
+        },
+        {
+          "tokens": [
+            "n43010036007"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "に"
+        },
+        {
+          "tokens": [
+            "n43010036005",
+            "n43010036006"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "遣わされた"
+        },
+        {
+          "tokens": [
+            "n43010036001"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "者"
+        },
+        {
+          "tokens": [
+            "n43010036010"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなたがた"
+        },
+        {
+          "tokens": [
+            "n43010036013"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなた"
+        },
+        {
+          "tokens": [
+            "n43010036013"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "神を冒涜している"
+        },
+        {
+          "tokens": [
+            "n43010036011"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "言える"
+        },
+        {
+          "tokens": [
+            "n43010036015"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43010036019"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43010036016",
+            "n43010036017",
+            "n43010036018"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "神の子"
+        },
+        {
+          "tokens": [
+            "n43010036019"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "である"
+        },
+        {
+          "tokens": [
+            "n43010036015"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "言った"
+        },
+        {
+          "tokens": [
+            "n43010036014"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "から"
         }
       ],
       "decisions": [
@@ -2832,6 +3938,110 @@
           "reason": "The English supplies \"him\" with the setting; Russian uses the demonstrative \"тому\", which is not a personal pronoun and takes none.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43010036004"
+          ],
+          "choice": "\"освятив\" (L, B), \"відокремив для своєї справи\" (R)",
+          "alternatives": [
+            "\"посвятив\""
+          ],
+          "reason": "Set apart for God and for a task he gives (meaning decision m5); \"освятити\" is the word for making holy and setting apart, Readable says what it means.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n43010036011",
+            "n43010036015"
+          ],
+          "choice": "\"『あなたは冒涜している』と言うのか。わたしが『わたしは神の子である』と言ったからといって\" (L); \"……と言えるのか。……と言ったからだというのか\" (B)",
+          "alternatives": [
+            "the reason clause before the main verb"
+          ],
+          "reason": "Japanese would normally put \"because I said ...\" before \"you say\", which would reverse the order of the two quotations; the reason is given after the question so that both appear in the Greek order. Verse 35 stays an \"if\" clause leading into verse 36 at Literal and Balanced; Readable states it as a fact, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43010035007",
+            "n43010036004"
+          ],
+          "choice": "\"神の言葉が臨んだ\" (L), \"神の言葉を受けた\" (B, R); \"聖別して\" (L), \"取り分けて\" (B), \"選び分けて\" (R)",
+          "alternatives": [
+            "\"聖別して\" at every level"
+          ],
+          "reason": "Literal keeps the Old Testament idiom for God's word coming to someone (m3). The verb means to set apart for God and his task (m5); Balanced and Readable say that plainly, since \"聖別\" is a church word that young readers do not know. Literal brackets \"[神が]\", the subject the Greek leaves understood (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43010036004"
+          ],
+          "choice": "\"分别为圣\" (L); \"分别出来\" (B, R)",
+          "alternatives": [
+            "\"使……成圣\""
+          ],
+          "reason": "Set apart for God and for a task he gives (meaning decision m5); \"成圣\" would suggest moral purity, which is not the point. Readable adds \"做{{deity_pronoun:他|祂}}的工作\", as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-1",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43010036004"
+          ],
+          "choice": "\"قدّسه\" (L), \"خصّصه\" (B), \"خصّصني لعمله\" (R)",
+          "alternatives": [],
+          "reason": "To consecrate is to set apart for God and for a task he gives (m5). Literal keeps the temple word; Balanced and Readable say \"set apart\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2910,6 +4120,31 @@
           "L": "Если {{deity_pronoun:я|Я}} не делаю дел Отца {{deity_pronoun:моего|Моего}}, не верьте {{deity_pronoun:мне|Мне}};",
           "B": "Если {{deity_pronoun:я|Я}} не делаю дел {{deity_pronoun:моего|Моего}} Отца, не верьте {{deity_pronoun:мне|Мне}}.",
           "R": "Не верьте {{deity_pronoun:мне|Мне}}, если {{deity_pronoun:я|Я}} не делаю дел {{deity_pronoun:моего|Моего}} Отца."
+        },
+        "uk": {
+          "L": "Якщо {{deity_pronoun:я|Я}} не роблю діл {{deity_pronoun:мого|Мого}} Отця, не вірте {{deity_pronoun:мені|Мені}};",
+          "B": "Якщо {{deity_pronoun:я|Я}} не роблю діл свого Отця, не вірте {{deity_pronoun:мені|Мені}}.",
+          "R": "Не вірте {{deity_pronoun:мені|Мені}}, якщо {{deity_pronoun:я|Я}} не роблю діл свого Отця."
+        },
+        "ja": {
+          "L": "もしわたしが、わたしの父の業を行っていないなら、わたしを信じてはならない。",
+          "B": "わたしが父の業を行っていないのなら、わたしを信じてはならない。",
+          "R": "もしわたしが、わたしの父の業をしていないなら、わたしを信じてはいけない。"
+        },
+        "id": {
+          "L": "Jika {{deity_pronoun:aku|Aku}} tidak melakukan pekerjaan-pekerjaan Bapa-{{deity_pronoun:ku|Ku}}, janganlah percaya kepada-{{deity_pronoun:ku|Ku}};",
+          "B": "Kalau {{deity_pronoun:aku|Aku}} tidak melakukan pekerjaan-pekerjaan Bapa-{{deity_pronoun:ku|Ku}}, janganlah percaya kepada-{{deity_pronoun:ku|Ku}}.",
+          "R": "Jangan percaya kepada-{{deity_pronoun:ku|Ku}} kalau {{deity_pronoun:aku|Aku}} tidak melakukan pekerjaan-pekerjaan Bapa-{{deity_pronoun:ku|Ku}}."
+        },
+        "zh": {
+          "L": "如果我没有在做我父的作为，就不要信我；",
+          "B": "如果我没有做我父的作为，就不要信我。",
+          "R": "要是我没有做我父的作为，你们就不要信我。"
+        },
+        "ar": {
+          "L": "إن كنت لست أعمل أعمال أبي، فلا تصدّقوني؛",
+          "B": "إن لم أكن أعمل أعمال أبي، فلا تصدّقوني.",
+          "R": "لا تصدّقوني إن كنت لا أعمل أعمال أبي."
         }
       },
       "alignments": [
@@ -2994,6 +4229,59 @@
           "language": "en",
           "level": "B",
           "target_span": "{{deity_pronoun:me|Me}}"
+        },
+        {
+          "tokens": [
+            "n43010037006",
+            "n43010037007",
+            "n43010037008"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "父"
+        },
+        {
+          "tokens": [
+            "n43010037004",
+            "n43010037005"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "業"
+        },
+        {
+          "tokens": [
+            "n43010037002",
+            "n43010037003"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "行っていない"
+        },
+        {
+          "tokens": [
+            "n43010037001"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "のなら"
+        },
+        {
+          "tokens": [
+            "n43010037011"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43010037009",
+            "n43010037010"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "信じてはならない"
         }
       ],
       "decisions": [
@@ -3148,6 +4436,25 @@
           "reason": "The verb here means to accept someone's word, not to trust in his person (meaning decision m2), and \"crer em\" is kept for that trust (10:42). Literal uses \"crer\" with the plain object; Balanced and Readable say \"acreditar em mim\", which in everyday Portuguese means to take someone at his word.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n43010037001"
+          ],
+          "choice": "the condition first (R)",
+          "alternatives": [
+            "\"你们不要信我，如果……\""
+          ],
+          "reason": "The English Readable puts the command first; in Chinese a condition comes before its main clause, so Readable keeps the Greek order.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3238,6 +4545,31 @@
           "L": "Если же делаю, то, даже если {{deity_pronoun:мне|Мне}} не верите, делам верьте, чтобы вы познали и продолжали познавать, что Отец во {{deity_pronoun:мне|Мне}} и {{deity_pronoun:я|Я}} в Отце.»",
           "B": "Но если {{deity_pronoun:я|Я}} делаю их, то, даже если вы не верите {{deity_pronoun:мне|Мне}}, верьте делам. Тогда вы узнаете и будете знать всё глубже, что Отец во {{deity_pronoun:мне|Мне}} и {{deity_pronoun:я|Я}} в Отце.»",
           "R": "Но если {{deity_pronoun:я|Я}} делаю их, верьте тому, что показывают эти дела, даже если не верите {{deity_pronoun:мне|Мне}}. Тогда вы поймёте и будете понимать всё больше, что Отец во {{deity_pronoun:мне|Мне}} и {{deity_pronoun:я|Я}} в Отце.»"
+        },
+        "uk": {
+          "L": "а якщо роблю, то хоч {{deity_pronoun:мені|Мені}} не вірите, діл повірте, щоб ви пізнали і знали, що в {{deity_pronoun:мені|Мені}} Отець, і {{deity_pronoun:я|Я}} в Отці.»",
+          "B": "А якщо роблю, то навіть коли не вірите {{deity_pronoun:мені|Мені}}, повірте ділам. Тоді ви пізнаєте і далі знатимете, що Отець у {{deity_pronoun:мені|Мені}}, а {{deity_pronoun:я|Я}} в Отці.»",
+          "R": "А якщо роблю, то повірте тому, що показують ці діла, навіть якщо не вірите {{deity_pronoun:мені|Мені}}. Тоді ви побачите і дедалі краще розумітимете, що Отець у {{deity_pronoun:мені|Мені}}, а {{deity_pronoun:я|Я}} в Отці.»"
+        },
+        "ja": {
+          "L": "しかし、もし行っているなら、たとえわたしを信じなくても、その業を信じなさい。それは、父がわたしのうちに[おられ]、わたしが父のうちにいることを、あなたがたが知るようになり、また知り続けるためである。」",
+          "B": "しかし、行っているのなら、たとえわたしを信じなくても、業を信じなさい。そうすれば、父がわたしのうちにおられ、わたしが父のうちにいることを、あなたがたは知るようになり、さらに知り続けるだろう。」",
+          "R": "しかし、もし行っているなら、たとえわたしを信じなくても、業が示していることを信じなさい。そうすれば、父がわたしのうちにおられ、わたしが父のうちにいることが分かり、ますますよく分かるようになる。」"
+        },
+        "id": {
+          "L": "tetapi jika {{deity_pronoun:aku|Aku}} melakukannya, sekalipun kalian tidak percaya kepada-{{deity_pronoun:ku|Ku}}, percayalah kepada pekerjaan-pekerjaan itu, supaya kalian mengetahui dan terus mengetahui, bahwa Bapa ada di dalam {{deity_pronoun:aku|Aku}} dan {{deity_pronoun:aku|Aku}} di dalam Bapa.\"",
+          "B": "Tetapi kalau {{deity_pronoun:aku|Aku}} melakukannya, sekalipun kalian tidak percaya kepada-{{deity_pronoun:ku|Ku}}, percayalah kepada pekerjaan-pekerjaan itu. Dengan begitu kalian akan tahu, dan terus mengerti, bahwa Bapa ada di dalam {{deity_pronoun:aku|Aku}} dan {{deity_pronoun:aku|Aku}} ada di dalam Bapa.\"",
+          "R": "Tetapi kalau {{deity_pronoun:aku|Aku}} melakukannya, percayalah kepada apa yang ditunjukkan oleh pekerjaan-pekerjaan itu, sekalipun kalian tidak percaya kepada-{{deity_pronoun:ku|Ku}}. Lalu kalian akan melihat, dan makin lama makin mengerti, bahwa Bapa ada di dalam {{deity_pronoun:aku|Aku}} dan {{deity_pronoun:aku|Aku}} ada di dalam Bapa.\""
+        },
+        "zh": {
+          "L": "可是如果我在做，就算你们不信我，也要信那些作为，好使你们认识，并且继续认识：父在我里面，我在父里面。”",
+          "B": "但如果我在做，那么即使你们不信我，也要信这些作为。这样，你们就会明白，并且会一直明白：父在我里面，我在父里面。”",
+          "R": "但如果我在做，那么就算你们不信我，也要相信这些作为所显明的。这样你们就会看清楚，而且越来越看清楚：父在我里面，我也在父里面。”"
+        },
+        "ar": {
+          "L": "ولكن إن كنت أعمل، فإن لم تصدّقوني صدّقوا الأعمال، لكي تعرفوا وتظلّوا تعرفون أنّ الآب فيّ وأنا في الآب».",
+          "B": "أمّا إن كنت أعملها، فحتّى لو لم تصدّقوني، صدّقوا الأعمال. وعندئذ تعرفون، وتستمرّون في المعرفة، أنّ الآب فيّ وأنا في الآب».",
+          "R": "أمّا إن كنت أعملها، فصدّقوا ما تبيّنه الأعمال، حتّى لو لم تصدّقوني. وعندئذ سترون، وتزدادون فهمًا يومًا بعد يوم، أنّ الآب فيّ وأنا في الآب»."
         }
       },
       "alignments": [
@@ -3411,6 +4743,162 @@
           "language": "en",
           "level": "B",
           "target_span": "the Father"
+        },
+        {
+          "tokens": [
+            "n43010038002"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "しかし"
+        },
+        {
+          "tokens": [
+            "n43010038003"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "行っている"
+        },
+        {
+          "tokens": [
+            "n43010038001"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "のなら"
+        },
+        {
+          "tokens": [
+            "n43010038004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "たとえ"
+        },
+        {
+          "tokens": [
+            "n43010038005"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43010038006",
+            "n43010038007"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "信じなくても"
+        },
+        {
+          "tokens": [
+            "n43010038008",
+            "n43010038009"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "業"
+        },
+        {
+          "tokens": [
+            "n43010038010"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "信じなさい"
+        },
+        {
+          "tokens": [
+            "n43010038011"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "そうすれば"
+        },
+        {
+          "tokens": [
+            "n43010038018",
+            "n43010038019"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "父"
+        },
+        {
+          "tokens": [
+            "n43010038017"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43010038016"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "のうちに"
+        },
+        {
+          "tokens": [
+            "n43010038020"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43010038022",
+            "n43010038023"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "父"
+        },
+        {
+          "tokens": [
+            "n43010038021"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "のうちに"
+        },
+        {
+          "tokens": [
+            "n43010038015"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "こと"
+        },
+        {
+          "tokens": [
+            "n43010038012"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "知るようになり"
+        },
+        {
+          "tokens": [
+            "n43010038013"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "さらに"
+        },
+        {
+          "tokens": [
+            "n43010038014"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "知り続ける"
         }
       ],
       "decisions": [
@@ -3510,7 +4998,7 @@
           ],
           "reason": "Many later manuscripts read \"in him\", as the King James Version does. The sense is the same. A reviewer should check this against the apparatus.",
           "uncertain": false,
-          "footnote": false
+          "footnote": true
         },
         {
           "id": "r-en-1",
@@ -3675,6 +5163,49 @@
           "reason": "The Greek uses the same verb twice, first for coming to know and then for going on knowing (meaning decision m2); each level keeps both steps.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43010038012",
+            "n43010038014"
+          ],
+          "choice": "\"知るようになり、また知り続ける\" (L, B); \"分かり、ますますよく分かるようになる\" (R)",
+          "alternatives": [],
+          "reason": "The same verb twice, first for coming to know and then for knowing that goes on (m2); every level shows the change of tense.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-1",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "grammar",
+          "tokens": [
+            "n43010038012",
+            "n43010038013",
+            "n43010038014"
+          ],
+          "choice": "\"تعرفوا وتظلّوا تعرفون\" (L), \"تعرفون، وتستمرّون في المعرفة\" (B), \"سترون، وتزدادون فهمًا\" (R)",
+          "alternatives": [
+            "\"تعرفوا وتؤمنوا\""
+          ],
+          "reason": "The text read here has two forms of \"know\": come to recognize it, and then go on understanding it (m2). Each level keeps both steps.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3753,6 +5284,31 @@
           "L": "Итак, снова искали {{deity_pronoun:его|Его}} схватить; и {{deity_pronoun:он|Он}} ушёл из руки их.",
           "B": "Тогда они снова попытались арестовать {{deity_pronoun:его|Его}}, но {{deity_pronoun:он|Он}} ускользнул из их рук.",
           "R": "Тогда они снова попытались схватить Иисуса, но {{deity_pronoun:он|Он}} ушёл от них."
+        },
+        "uk": {
+          "L": "Тож знову шукали схопити {{deity_pronoun:його|Його}}; і {{deity_pronoun:він|Він}} вийшов з їхніх рук.",
+          "B": "Тож вони знову намагалися заарештувати {{deity_pronoun:його|Його}}, але {{deity_pronoun:він|Він}} вислизнув у них з рук.",
+          "R": "Тоді вони знову спробували схопити Ісуса, але {{deity_pronoun:він|Він}} утік від них."
+        },
+        "ja": {
+          "L": "そこで彼らは、再びイエスを捕らえようとしていた。しかしイエスは、彼らの手から逃れて出て行かれた。",
+          "B": "そこで彼らはまたイエスを捕らえようとしたが、イエスは彼らの手を逃れられた。",
+          "R": "そこで彼らは、またイエスを捕まえようとしましたが、イエスは彼らのところから逃れて行かれました。"
+        },
+        "id": {
+          "L": "Lalu mereka berusaha lagi menangkap {{deity_pronoun:dia|Dia}}, dan {{deity_pronoun:dia|Dia}} luput dari tangan mereka.",
+          "B": "Karena itu sekali lagi mereka berusaha menangkap {{deity_pronoun:dia|Dia}}, tetapi {{deity_pronoun:dia|Dia}} meloloskan diri dari tangan mereka.",
+          "R": "Jadi mereka berusaha lagi menangkap Yesus, tetapi {{deity_pronoun:dia|Dia}} berhasil lolos dari mereka."
+        },
+        "zh": {
+          "L": "于是他们又设法要捉拿{{deity_pronoun:他|祂}}；{{deity_pronoun:他|祂}}却从他们的手中出去了。",
+          "B": "于是他们又一次想要逮捕{{deity_pronoun:他|祂}}，{{deity_pronoun:他|祂}}却从他们手中脱身了。",
+          "R": "于是他们又想抓住耶稣，可是{{deity_pronoun:他|祂}}从他们那里逃走了。"
+        },
+        "ar": {
+          "L": "فطلبوا أيضًا أن يمسكوه، فخرج من أيديهم.",
+          "B": "فحاولوا مرّة أخرى أن يعتقلوه، لكنّه أفلت من أيديهم.",
+          "R": "فحاولوا من جديد أن يقبضوا على يسوع، لكنّه نجا منهم."
         }
       },
       "alignments": [
@@ -3836,6 +5392,88 @@
           "language": "en",
           "level": "B",
           "target_span": "hands"
+        },
+        {
+          "tokens": [
+            "n43010039002"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "そこで"
+        },
+        {
+          "tokens": [
+            "n43010039003"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "また"
+        },
+        {
+          "tokens": [
+            "n43010039004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "イエス"
+        },
+        {
+          "tokens": [
+            "n43010039005"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "捕らえよう"
+        },
+        {
+          "tokens": [
+            "n43010039001"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "とした"
+        },
+        {
+          "tokens": [
+            "n43010039006"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "が"
+        },
+        {
+          "tokens": [
+            "n43010039007"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "イエス"
+        },
+        {
+          "tokens": [
+            "n43010039011"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "彼ら"
+        },
+        {
+          "tokens": [
+            "n43010039009",
+            "n43010039010"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "手"
+        },
+        {
+          "tokens": [
+            "n43010039007",
+            "n43010039008"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "逃れられた"
         }
       ],
       "decisions": [
@@ -3994,6 +5632,24 @@
           "reason": "Literal keeps the singular \"hand\", so the reader can see the link with 10:28-29 (meaning decision m4).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43010039010"
+          ],
+          "choice": "\"彼らの手から\" (L), \"彼らの手を逃れられた\" (B)",
+          "alternatives": [],
+          "reason": "Literal and Balanced keep \"hand\", which Japanese also uses for power over someone, so the link with 10:28-29 can be seen (m4); Readable says plainly that he got away (m3).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4079,6 +5735,31 @@
           "L": "И {{deity_pronoun:он|Он}} ушёл снова за Иордан, на то место, где Иоанн сначала крестил, и остался там.",
           "B": "Тогда Иисус снова ушёл за Иордан, на то место, где Иоанн крестил в первое время, и {{deity_pronoun:он|Он}} остался там.",
           "R": "Потом Иисус вернулся на другой берег реки Иордан. Он пришёл на то место, где Иоанн вначале крестил людей, и {{deity_pronoun:он|Он}} остался там."
+        },
+        "uk": {
+          "L": "І {{deity_pronoun:він|Він}} знову пішов на той бік Йордану, до місця, де Іван спочатку хрестив, і залишився там.",
+          "B": "Тоді Ісус знову перейшов на другий бік Йордану, до того місця, де Іван хрестив на початку, і там залишився.",
+          "R": "Тоді Ісус повернувся на другий бік річки Йордан. Він пішов до того місця, де Іван уперше хрестив людей, і там залишився."
+        },
+        "ja": {
+          "L": "そしてイエスは再びヨルダン[川]の向こう側、ヨハネが最初に洗礼を授けていた場所へ去って行かれ、そこに滞在された。",
+          "B": "イエスは再びヨルダン川の向こう側、ヨハネが初めのころ洗礼を授けていた所に行き、そこに滞在された。",
+          "R": "それからイエスは、ヨルダン川の向こう岸に戻られました。ヨハネが最初に人々に洗礼を授けていた場所です。イエスは、そこにしばらくおられました。"
+        },
+        "id": {
+          "L": "Dan {{deity_pronoun:dia|Dia}} pergi lagi ke seberang sungai Yordan, ke tempat Yohanes mula-mula membaptis, dan {{deity_pronoun:dia|Dia}} tinggal di sana.",
+          "B": "Lalu Yesus kembali ke seberang sungai Yordan, ke tempat Yohanes membaptis pada mulanya, dan {{deity_pronoun:dia|Dia}} tinggal di sana.",
+          "R": "Lalu Yesus kembali ke seberang Sungai Yordan. Dia pergi ke tempat Yohanes dulu mula-mula membaptis orang, dan {{deity_pronoun:dia|Dia}} tinggal di sana."
+        },
+        "zh": {
+          "L": "{{deity_pronoun:他|祂}}再次离开，到了约旦河对岸，就是约翰最初在那里施洗的地方，并且留在那里。",
+          "B": "然后耶稣回到约旦河对岸，到了约翰早期施洗的地方，就在那里住下。",
+          "R": "然后耶稣回到约旦河的另一边。{{deity_pronoun:他|祂}}去了约翰最早给人施洗的地方，就在那里住了下来。"
+        },
+        "ar": {
+          "L": "ثمّ انصرف ثانية إلى عبر الأردنّ، إلى الموضع الذي كان يوحنّا يعمّد فيه في البدء، وأقام هناك.",
+          "B": "ثمّ عاد يسوع إلى ما وراء الأردنّ، إلى الموضع الذي عمّد فيه يوحنّا في الأيّام الأولى، وأقام هناك.",
+          "R": "ثمّ رجع يسوع إلى الضفّة الأخرى من نهر الأردنّ. وذهب إلى المكان الذي كان يوحنّا قد عمّد فيه الناس أوّل الأمر، وبقي هناك."
         }
       },
       "alignments": [
@@ -4204,6 +5885,107 @@
           "language": "en",
           "level": "B",
           "target_span": "there"
+        },
+        {
+          "tokens": [
+            "n43010040002"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "イエス"
+        },
+        {
+          "tokens": [
+            "n43010040003"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "再び"
+        },
+        {
+          "tokens": [
+            "n43010040005",
+            "n43010040006"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ヨルダン川"
+        },
+        {
+          "tokens": [
+            "n43010040004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "向こう側"
+        },
+        {
+          "tokens": [
+            "n43010040012"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ヨハネ"
+        },
+        {
+          "tokens": [
+            "n43010040013",
+            "n43010040014"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "初めのころ"
+        },
+        {
+          "tokens": [
+            "n43010040011",
+            "n43010040015"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "洗礼を授けていた"
+        },
+        {
+          "tokens": [
+            "n43010040008",
+            "n43010040009",
+            "n43010040010"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "所"
+        },
+        {
+          "tokens": [
+            "n43010040007"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "に"
+        },
+        {
+          "tokens": [
+            "n43010040002"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "行き"
+        },
+        {
+          "tokens": [
+            "n43010040018"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "そこ"
+        },
+        {
+          "tokens": [
+            "n43010040017"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "滞在された"
         }
       ],
       "decisions": [
@@ -4379,6 +6161,27 @@
           "reason": "Vietnamese names a river with \"sông\"; it is bracketed at Literal because the Greek has only the name.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43010040017"
+          ],
+          "choice": "\"滞在された\" (L, B); \"しばらくおられました\" (R)",
+          "alternatives": [
+            "\"とどまられた\""
+          ],
+          "reason": "Here the verb has its ordinary sense of staying in a place (m4), so the book's theological word \"とどまる\" is not used.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4468,6 +6271,31 @@
           "L": "И многие пришли к {{deity_pronoun:нему|Нему}} и говорили: «Иоанн не сотворил ни одного знамения, но всё, что Иоанн сказал об этом [человеке], было истинно.»",
           "B": "Многие люди приходили к {{deity_pronoun:нему|Нему}}. «Иоанн не совершил ни одного знамения», — говорили они, — «но всё, что Иоанн сказал об этом человеке, было истинным.»",
           "R": "Многие люди пришли к Иисусу. Они всё повторяли: «Иоанн не сделал ни одного знака. Но всё, что Иоанн сказал об этом человеке, оказалось правдой.»"
+        },
+        "uk": {
+          "L": "І багато хто приходив до {{deity_pronoun:нього|Нього}}, і казали: «Іван не зробив жодного знака, але все, що Іван сказав про цього, було правдою.»",
+          "B": "До {{deity_pronoun:нього|Нього}} приходило багато людей. «Іван не зробив жодного знака», — казали вони, — «але все, що Іван говорив про цього чоловіка, правда.»",
+          "R": "До Ісуса приходило багато людей. Вони казали: «Іван не робив знаків. Але все, що Іван казав про цього чоловіка, виявилося правдою.»"
+        },
+        "ja": {
+          "L": "そして多くの人々がイエスのもとに来て、言っていた。「ヨハネは何一つしるしを行わなかったが、ヨハネがこの[方]について言ったことは、すべて真実であった。」",
+          "B": "大勢の人々がイエスのもとに来た。「ヨハネは一つのしるしも行わなかった」と彼らは言った。「しかし、ヨハネがこの方について話したことは、どれも真実だった。」",
+          "R": "大勢の人がイエスのところに来ました。そして口々に言いました。「ヨハネは一つもしるしを行わなかった。でも、ヨハネがこの方について言ったことは、みな本当だったのだ。」"
+        },
+        "id": {
+          "L": "Dan banyak orang datang kepada-{{deity_pronoun:nya|Nya}} dan berkata, \"Yohanes memang tidak melakukan satu tanda pun, tetapi segala sesuatu yang dikatakan Yohanes tentang orang ini benar.\"",
+          "B": "Banyak orang datang kepada-{{deity_pronoun:nya|Nya}}. \"Yohanes memang tidak melakukan satu tanda pun,\" kata mereka, \"tetapi semua yang dikatakan Yohanes tentang orang ini benar.\"",
+          "R": "Banyak orang datang kepada Yesus. Mereka terus berkata, \"Yohanes tidak pernah melakukan tanda apa pun. Tetapi semua yang dikatakan Yohanes tentang orang ini ternyata benar.\""
+        },
+        "zh": {
+          "L": "有许多人来到{{deity_pronoun:他|祂}}那里，他们一直说：“约翰确实没有行过任何神迹，可是约翰关于这个[人]所讲的一切，全都是真实的。”",
+          "B": "有许多人来到{{deity_pronoun:他|祂}}那里。“约翰一个神迹都没有行，”他们说，“但是约翰关于这个人所说的每一句话都是真的。”",
+          "R": "有很多人来到耶稣那里。他们一直说：“约翰从来没有行过神迹。可是约翰说的关于这个人的每一件事，都证明是真的。”"
+        },
+        "ar": {
+          "L": "وأتى إليه كثيرون وكانوا يقولون: «يوحنّا لم يعمل آية واحدة، لكنّ كلّ ما قاله يوحنّا عن هذا كان حقًّا».",
+          "B": "وجاء إليه كثيرون من الناس وقالوا: «يوحنّا لم يصنع ولا آية واحدة، لكنّ كلّ كلمة قالها يوحنّا عن هذا الرجل كانت صادقة».",
+          "R": "وجاء كثير من الناس إلى يسوع. وكانوا يردّدون: «يوحنّا لم يصنع أيّ آيات قطّ. لكنّ كلّ ما قاله يوحنّا عن هذا الرجل تبيّن أنّه صحيح»."
         }
       },
       "alignments": [
@@ -4623,6 +6451,151 @@
           "language": "en",
           "level": "B",
           "target_span": "true"
+        },
+        {
+          "tokens": [
+            "n43010041002"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "大勢の人々"
+        },
+        {
+          "tokens": [
+            "n43010041005"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "イエス"
+        },
+        {
+          "tokens": [
+            "n43010041004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "のもとに"
+        },
+        {
+          "tokens": [
+            "n43010041003"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "来た"
+        },
+        {
+          "tokens": [
+            "n43010041009"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ヨハネ"
+        },
+        {
+          "tokens": [
+            "n43010041013"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "一つの"
+        },
+        {
+          "tokens": [
+            "n43010041011"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "しるし"
+        },
+        {
+          "tokens": [
+            "n43010041012",
+            "n43010041013"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "行わなかった"
+        },
+        {
+          "tokens": [
+            "n43010041007"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "言った"
+        },
+        {
+          "tokens": [
+            "n43010041015"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "しかし"
+        },
+        {
+          "tokens": [
+            "n43010041018"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ヨハネ"
+        },
+        {
+          "tokens": [
+            "n43010041020"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "この方"
+        },
+        {
+          "tokens": [
+            "n43010041019"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "について"
+        },
+        {
+          "tokens": [
+            "n43010041017"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "話した"
+        },
+        {
+          "tokens": [
+            "n43010041016"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "こと"
+        },
+        {
+          "tokens": [
+            "n43010041014"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "どれも"
+        },
+        {
+          "tokens": [
+            "n43010041021"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "真実"
+        },
+        {
+          "tokens": [
+            "n43010041022"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "だった"
         }
       ],
       "decisions": [
@@ -4855,6 +6828,45 @@
           "reason": "The book-wide choice for John's word \"sign\": never \"чудо\" (docs/john-terms.md).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n43010041007"
+          ],
+          "choice": "\"……と彼らは言った。\" between two quotations",
+          "alternatives": [],
+          "reason": "The English Balanced puts \"they said\" inside the quotation, making two quotations; Japanese Balanced does the same so that the quotations match. \"口々に\" at Readable gives the sense of the imperfect, said again and again (m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43010041011"
+          ],
+          "choice": "\"神迹\" for \"sign\"",
+          "alternatives": [
+            "\"记号\"",
+            "\"奇迹\""
+          ],
+          "reason": "A deed that points beyond itself to who Jesus is (meaning decision m2); \"神迹\" is the church's word for it, as in 9:16, and \"奇迹\" (miracle) is avoided.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4928,6 +6940,31 @@
           "L": "И многие поверили в {{deity_pronoun:него|Него}} там.",
           "B": "И многие люди там поверили в {{deity_pronoun:него|Него}}.",
           "R": "И многие люди там поверили в Иисуса."
+        },
+        "uk": {
+          "L": "І багато хто там повірив у {{deity_pronoun:нього|Нього}}.",
+          "B": "І багато людей там повірили в {{deity_pronoun:нього|Нього}}.",
+          "R": "І багато людей там повірили в Ісуса."
+        },
+        "ja": {
+          "L": "そして多くの者が、そこでイエスを信じた。",
+          "B": "そこでは、多くの人々がイエスを信じた。",
+          "R": "そこでは、たくさんの人がイエスを信じました。"
+        },
+        "id": {
+          "L": "Dan di sana banyak orang percaya kepada-{{deity_pronoun:nya|Nya}}.",
+          "B": "Dan banyak orang di sana percaya kepada-{{deity_pronoun:nya|Nya}}.",
+          "R": "Dan banyak orang di sana percaya kepada Yesus."
+        },
+        "zh": {
+          "L": "在那里有许多人信入了{{deity_pronoun:他|祂}}。",
+          "B": "那里有许多人信了{{deity_pronoun:他|祂}}。",
+          "R": "那里有很多人信了耶稣。"
+        },
+        "ar": {
+          "L": "فآمن به هناك كثيرون.",
+          "B": "وآمن به كثيرون من الناس هناك.",
+          "R": "وآمن بيسوع كثير من الناس هناك."
         }
       },
       "alignments": [
@@ -4978,6 +7015,39 @@
           "language": "en",
           "level": "B",
           "target_span": "{{deity_pronoun:him|Him}}"
+        },
+        {
+          "tokens": [
+            "n43010042006"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "そこ"
+        },
+        {
+          "tokens": [
+            "n43010042002"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "多くの人々"
+        },
+        {
+          "tokens": [
+            "n43010042005"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "イエス"
+        },
+        {
+          "tokens": [
+            "n43010042003",
+            "n43010042004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "信じた"
         }
       ],
       "decisions": [

@@ -1,6 +1,12 @@
 """Source loading. Sources are found via OWB_VENDOR, defaulting to vendor/."""
+import os
+import subprocess
+import tempfile
 import unittest
+from pathlib import Path
+from unittest import mock
 
+import owb.sources
 from owb import refs
 from owb.sources import macula_greek, macula_hebrew, sblgnt
 
@@ -58,6 +64,19 @@ class MaculaGreekTest(unittest.TestCase):
         tok = macula_greek.load_tokens("JHN.1.1")[4]
         self.assertEqual((tok.lemma, tok.morph, tok.strong, tok.gloss), ("λόγος", "N-NSM", "3056", "Word"))
 
+    def test_romans_16_25_27_come_from_nestle_1904(self):
+        # The pinned SBLGNT has no 16:25-27; MACULA's Nestle 1904 supplies them,
+        # after 16:24 and before 1 Corinthians, and nothing else.
+        self.assertEqual(sblgnt.load_verses("ROM.16.25", "ROM.16.27"), [])
+        toks = macula_greek.load_tokens("ROM.16.24", "ROM.16.27")
+        self.assertEqual((toks[0].id, toks[-1].id), ("n45016024001", "n45016027015"))
+        verses = list(macula_greek._all_tokens())
+        at = verses.index(refs.Ref("ROM", 16, 27))
+        self.assertEqual((verses[at - 1], verses[at + 1]), (refs.Ref("ROM", 16, 26), refs.Ref("1CO", 1, 1)))
+        self.assertEqual(set(macula_greek.supplement_verses()), macula_greek.SUPPLEMENT)
+        self.assertEqual(macula_greek.text_id_for(["ROM.16.25", "ROM.16.27"]), "Nestle1904@macula-greek")
+        self.assertEqual(macula_greek.text_id_for(["ROM.16.24", "ROM.16.25"]), "SBLGNT@v1.2")
+
 
 class MaculaHebrewTest(unittest.TestCase):
     def test_streamed_verses_match_the_loaded_ones(self):
@@ -69,6 +88,39 @@ class MaculaHebrewTest(unittest.TestCase):
             self.assertEqual((sref, smorphemes), (ref, morphemes))
         self.assertIsNone(next(streamed, None))
         self.assertEqual(next(iter(loaded)), refs.Ref("GEN", 1, 1))
+
+
+class GitCloneSourceTest(unittest.TestCase):
+    """A source kept as a clone without its files is read with git show,
+    which must reach that clone even inside a git hook, where git exports
+    GIT_DIR and GIT_INDEX_FILE for the repository being committed to."""
+
+    def test_read_from_clone_ignores_outer_git_environment(self):
+        def git(*args, cwd):
+            out = subprocess.run(
+                ["git", "-c", "user.name=t", "-c", "user.email=t@example.org", *args],
+                cwd=cwd, check=True, capture_output=True, text=True,
+                env=owb.sources.clone_env())
+            return out.stdout.strip()
+
+        with tempfile.TemporaryDirectory() as vendor:
+            clone = Path(vendor) / "fake-source"
+            clone.mkdir()
+            git("init", "-q", cwd=clone)
+            (clone / "data.txt").write_text("from the clone\n", encoding="utf-8")
+            git("add", "data.txt", cwd=clone)
+            git("commit", "-q", "-m", "data", cwd=clone)
+            commit = git("rev-parse", "HEAD", cwd=clone)
+            (clone / "data.txt").unlink()
+
+            outer = Path(git("rev-parse", "--absolute-git-dir", cwd=owb.sources.ROOT))
+            hook_env = {"OWB_VENDOR": vendor, "GIT_DIR": str(outer),
+                        "GIT_INDEX_FILE": str(outer / "index"),
+                        "GIT_WORK_TREE": str(owb.sources.ROOT)}
+            with mock.patch.dict(os.environ, hook_env), \
+                    mock.patch.dict(owb.sources.LOCK, {"fake-source": {"commit": commit}}):
+                self.assertEqual(owb.sources.read_text("fake-source", "data.txt"),
+                                 "from the clone\n")
 
 
 if __name__ == "__main__":

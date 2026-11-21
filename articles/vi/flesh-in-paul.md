@@ -10,15 +10,13 @@ Trong Ga-la-ti 2:20, Phao-lô nói rằng sự sống ông hiện đang sống �
 
 Từ Hy Lạp là {{LEMMA:GAL.5.17:3}} (*sarx*). Nó xuất hiện khoảng chín mươi lần trong các thư mang tên Phao-lô, và nó bao trùm một phạm vi rộng hơn bất kỳ từ đơn lẻ nào trong tiếng Anh hay tiếng Việt. Các bản Kinh Thánh tiếng Anh cũ dịch nó là “flesh” (xác thịt) gần như ở mọi nơi và để người đọc tự tìm ra nghĩa. Một số bản hiện đại nói “sinful nature” (bản tính tội lỗi) ở nhiều chỗ, và những bản khác nói “human nature” (bản chất con người), “human descent” (dòng dõi con người) hay “worldly” (thuộc về thế gian). Bài viết này trình bày phạm vi nghĩa ấy, và cho thấy Open Word Bible làm gì ở mỗi cấp độ.
 
-Một lưu ý: phần Cựu Ước của Open Word Bible chưa được dịch sang tiếng Việt, nên câu trích từ Ê-sai hiện ra bằng bản tiếng Anh, và những gì bài viết nói về lời văn của câu ấy là nói về bản tiếng Anh. Các thư của Phao-lô và Phúc Âm Giăng thì đã có bản tiếng Việt.
-
 ## Từ này đến từ đâu
 
 Bối cảnh là Kinh Thánh Hê-bơ-rơ. Từ chỉ xác thịt trong đó, *bāśār*, có nghĩa là phần mềm của thân thể, rồi từ đó là mọi loài sinh vật, và đặc biệt là con người trong sự yếu đuối của họ. Ê-sai 40:6 nói {{HEBREW:ISA.40.6:7-8}}, “mọi xác thịt đều là cỏ”:
 
 > {{OWB:ISA.40.6.s1:B}}
 
-Cấp độ Cân bằng tiếng Anh nói “Humankind is grass” (loài người là cỏ), vì đó là nghĩa của cụm từ Hê-bơ-rơ. “Xác thịt” ở đây không phải là tội lỗi. Nó yếu ớt và chóng qua, được đặt cạnh lời của Đức Chúa Trời, là lời “còn lại đời đời” (câu 8). Bản Bảy Mươi (Septuagint), bản dịch Cựu Ước sang tiếng Hy Lạp, dịch từ Hê-bơ-rơ này bằng *sarx*, và Phao-lô đọc Kinh Thánh của ông bằng tiếng Hy Lạp ấy.
+Cấp độ Cân bằng nói “Loài người là cỏ”, vì đó là nghĩa của cụm từ Hê-bơ-rơ. “Xác thịt” ở đây không phải là tội lỗi. Nó yếu ớt và chóng qua, được đặt cạnh lời của Đức Chúa Trời, là lời “còn lại đời đời” (câu 8). Bản Bảy Mươi (Septuagint), bản dịch Cựu Ước sang tiếng Hy Lạp, dịch từ Hê-bơ-rơ này bằng *sarx*, và Phao-lô đọc Kinh Thánh của ông bằng tiếng Hy Lạp ấy.
 
 Cùng nghĩa đơn giản đó cũng có trong Phúc Âm Giăng. “Ngôi Lời đã trở nên xác thịt” ({{GREEK:JHN.1.14:3-5}}) có nghĩa là Ngôi Lời đã trở nên con người trọn vẹn, có cả thân thể. Quyết định về nghĩa của bản ghi nói như vậy, và cấp độ Dễ đọc viết “Ngôi Lời đã trở thành một con người”. Xác thịt theo nghĩa này là tốt: Con Đức Chúa Trời đã mặc lấy nó.
 

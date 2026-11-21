@@ -11,7 +11,7 @@ var OWBMarkup = (function () {
   var VERSE = /\\v (\d+) ?/;
   // The settings a span may name: each has a control in the reader
   // (owb/markup.py SETTINGS is the same list).
-  var SETTINGS = ["gender", "christos", "divine_name", "deity_pronoun", "units", "plural_you"];
+  var SETTINGS = ["gender", "christos", "divine_name", "deity_pronoun", "units", "plural_you", "god_term"];
   // The option a setting shows until the reader picks one, where it is not
   // the first: pronouns for God are capitalised by default (owb/markup.py
   // DEFAULTS is the same).
@@ -59,7 +59,23 @@ var OWBMarkup = (function () {
     return out;
   }
 
+  // The original words behind one aligned piece of a rendering, as one
+  // string: words [{text, after, position}] in the source's order. MACULA
+  // Hebrew gives each morpheme its own row, with nothing "after" a prefix
+  // or stem that the next morpheme of the same word follows ("and" + "the"
+  // + "earth"), so those are joined without a space; separate words, Greek
+  // or Hebrew, are joined with one.
+  function joinWords(words) {
+    var out = "";
+    words.forEach(function (w, i) {
+      var prev = words[i - 1];
+      var joined = prev && prev.after === "" && prev.position === w.position;
+      out += (i && !joined ? " " : "") + w.text;
+    });
+    return out.trim();
+  }
+
   return { SPAN: SPAN, VERSE: VERSE, SETTINGS: SETTINGS, DEFAULTS: DEFAULTS, SETTINGS_VERSION: 2,
            defaults: defaults, defaultOption: defaultOption, fromSaved: fromSaved,
-           render: render, splitVerses: splitVerses };
+           render: render, splitVerses: splitVerses, joinWords: joinWords };
 })();

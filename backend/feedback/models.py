@@ -36,6 +36,12 @@ class ReaderMessage(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, db_index=True)
 
     class Meta:
+        indexes = [
+            # The inbox and the dashboard: messages in one status, oldest or newest first.
+            models.Index(fields=["status", "created_at"], name="reader_message_status"),
+            # verse__startswith="JHN.": a book's messages (the admin's book page).
+            models.Index(fields=["verse"], opclasses=["varchar_pattern_ops"], name="message_verse"),
+        ]
         ordering = ["-created_at"]
 
     def __str__(self):

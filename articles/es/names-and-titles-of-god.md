@@ -49,11 +49,11 @@ En la visión de Isaías, «vi al Señor sentado en un trono» (Isaías 6:1), la
 
 ## «Mi señor» en el Salmo 110
 
-La diferencia entre *Adonai* y la palabra corriente para un amo importa sobre todo en el Salmo 110:1, el versículo del Antiguo Testamento que el Nuevo Testamento cita con más frecuencia. Los Salmos aún no están traducidos al español; nuestra Equilibrada en inglés dice:
+La diferencia entre *Adonai* y la palabra corriente para un amo importa sobre todo en el Salmo 110:1, el versículo del Antiguo Testamento que el Nuevo Testamento cita con más frecuencia. Nuestra Equilibrada dice:
 
 > {{OWB:PSA.110.1.s1:B}}
 
-El registro explica que el segundo «lord» no es *Adonai*, sino *ʾădōnî*, la manera habitual de dirigirse a un superior, sobre todo a un rey. El texto hebreo la vocaliza de otro modo que el título usado para Dios en el versículo 5. Por eso los borradores escriben «my lord» («mi señor») con minúscula, y la Sencilla dice «my lord the king» («mi señor el rey»), para que no se tome por Dios.
+El registro explica que el segundo «señor» no es *Adonai*, sino *ʾădōnî*, la manera habitual de dirigirse a un superior, sobre todo a un rey. El texto hebreo la vocaliza de otro modo que el título usado para Dios en el versículo 5. Por eso los borradores escriben «mi señor» con minúscula, y la Sencilla dice «mi señor el rey», para que no se tome por Dios.
 
 En griego, en cambio, las dos palabras se convirtieron en *kyrios*, «Señor». Cuando Jesús cita el salmo, pregunta cómo podía David llamar «Señor» a su propio descendiente (Mateo 22:41-45). Aquí los borradores escriben «El Señor le dijo a mi Señor», con mayúscula en ambos, porque el Evangelio lee el salmo como referido al Mesías. Una decisión de significado de Mateo 22:44 lo explica: el primer «Señor» representa el nombre de Dios, «mi Señor» una palabra hebrea distinta usada para un amo o un rey, y «en griego ambas son "Señor"». El mismo versículo se traduce de dos maneras en dos lugares, y los registros dicen por qué.
 
@@ -63,7 +63,7 @@ El título {{LEMMA:1SA.1.3:9.2}} {{HEBREW:1SA.1.3:10}} (*YHWH ṣəbāʾôt*) ap
 
 La decisión de significado de 1 Samuel 1:3 explica la palabra. *Ṣəbāʾôt* es el plural de una palabra que designa un ejército, una gran multitud formada en filas. Se usa para los ejércitos de Israel, para el sol, la luna y las estrellas, y para los seres celestiales que rodean el trono de Dios. Unida al nombre de Dios, presenta al SEÑOR como el Rey que manda sobre todos los poderes del cielo y de la tierra. El registro relaciona el título en Samuel con el arca, «entronizado sobre los querubines», y con David, que sale contra Goliat en el nombre del SEÑOR de los ejércitos, el Dios de los ejércitos de Israel (17:45).
 
-Las principales opciones en inglés se repasan en [El nombre divino en la traducción](/articles/the-divine-name-in-translation/). Samuel e Isaías solo están por ahora en inglés. Allí, el nivel Literal de Open Word Bible conserva el tradicional «the LORD of hosts», y la Equilibrada y la Sencilla dicen «the LORD of Armies» («el SEÑOR de los Ejércitos»). La decisión de redacción da la razón: «hosts» hoy significa casi siempre «anfitriones», y «Armies» expresa el significado con claridad sin perder la imagen de un comandante. Se consideró «Almighty» («Todopoderoso») y se descartó, porque convierte la imagen en una cualidad abstracta. En español el problema no existe: «el SEÑOR de los ejércitos» es la fórmula tradicional (la Reina-Valera dice «Jehová de los ejércitos») y sigue siendo clara. La visión de Isaías, en la Equilibrada inglesa, dice:
+Las principales opciones en inglés se repasan en [El nombre divino en la traducción](/articles/the-divine-name-in-translation/). En inglés, el nivel Literal de Open Word Bible conserva el tradicional «the LORD of hosts», y la Equilibrada y la Sencilla dicen «the LORD of Armies» («el SEÑOR de los Ejércitos»). La decisión de redacción da la razón: «hosts» hoy significa casi siempre «anfitriones», y «Armies» expresa el significado con claridad sin perder la imagen de un comandante. Se consideró «Almighty» («Todopoderoso») y se descartó, porque convierte la imagen en una cualidad abstracta. En español el problema no existe: «el SEÑOR de los ejércitos» es la fórmula tradicional (la Reina-Valera dice «Jehová de los ejércitos») y sigue siendo clara. La visión de Isaías, en la Equilibrada, dice:
 
 > {{OWB:ISA.6.3.s1:B}}
 

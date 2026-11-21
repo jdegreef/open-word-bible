@@ -79,6 +79,24 @@ class MorphTest(unittest.TestCase):
                          " · 3-е лицо, единственное число")
         self.assertEqual(morph.describe("N-DSF", "ru"),
                          "Существительное · дательный, единственное число, женский род")
+        self.assertEqual(morph.describe("V-2AAI-3S", "uk"),
+                         "Дієслово · другий аорист, дійсний спосіб, активний стан · 3-тя особа, однина")
+        self.assertEqual(morph.describe("N-DSF", "uk"), "Іменник · давальний, однина, жіночий рід")
+        self.assertEqual(morph.describe("V-2AAI-3S", "ja"), "動詞 · 第二アオリスト、直説法、能動態 · 三人称単数")
+        self.assertEqual(morph.describe("N-DSF", "ja"), "名詞 · 与格、単数、女性")
+        self.assertEqual(morph.describe("V-2AAI-3S", "id"),
+                         "Kata kerja · aoris kedua, indikatif, aktif · orang ketiga tunggal")
+        self.assertEqual(morph.describe("N-DSF", "id"), "Kata benda · datif, tunggal, feminin")
+        self.assertEqual(morph.describe("V-2AAI-3S", "zh"), "动词 · 第二不定过去时，直陈语气，主动态 · 第三人称单数")
+        self.assertEqual(morph.describe("N-DSF", "zh"), "名词 · 与格，单数，阴性")
+        self.assertEqual(morph.describe("V-2AAI-3S", "ar"),
+                         "فعل · الأوريست الثاني، الخبري، المعلوم · الغائب، مفرد")
+        self.assertEqual(morph.describe("N-DSF", "ar"), "اسم · القابل، مفرد، مؤنّث")
+        self.assertEqual(morph.describe("V-2AAI-3S", "tl"),
+                         "Pandiwa · ikalawang aoristo, indikatibo, aktibo · ikatlong panauhan isahan")
+        self.assertEqual(morph.describe("N-DSF", "tl"), "Pangngalan · datibo, isahan, pambabae")
+        self.assertEqual(morph.describe("V-2AAI-3S", "fa"), "فعل · آئوریست دوم، اخباری، معلوم · سوم شخص مفرد")
+        self.assertEqual(morph.describe("N-DSF", "fa"), "اسم · داتیو، مفرد، مؤنث")
 
     def test_every_hebrew_code_in_the_extracts_is_described(self):
         words = [w for path in (ROOT / "data" / "hbo").glob("*.json")
@@ -115,6 +133,21 @@ class MorphTest(unittest.TestCase):
         self.assertEqual(morph.describe_hebrew("Vqw3ms", "ru"),
                          "Глагол · Qal · повествовательное прошедшее (ваййиктол)"
                          " · 3-е лицо мужской род единственное число")
+        self.assertEqual(morph.describe_hebrew("Vqw3ms", "uk"),
+                         "Дієслово · Qal · розповідний минулий (ваййіктол)"
+                         " · 3-тя особа чоловічий рід однина")
+        self.assertEqual(morph.describe_hebrew("Vqw3ms", "ja"),
+                         "動詞 · Qal · 物語の過去（ワイイクトル） · 三人称 男性 単数")
+        self.assertEqual(morph.describe_hebrew("Vqw3ms", "id"),
+                         "Kata kerja · Qal · narasi lampau (wayyiqtol) · orang ketiga maskulin tunggal")
+        self.assertEqual(morph.describe_hebrew("Vqw3ms", "zh"),
+                         "动词 · Qal · 叙事过去式（wayyiqtol） · 第三人称 阳性 单数")
+        self.assertEqual(morph.describe_hebrew("Vqw3ms", "ar"),
+                         "فعل · Qal · السرد الماضي (wayyiqtol) · الغائب مذكّر مفرد")
+        self.assertEqual(morph.describe_hebrew("Vqw3ms", "tl"),
+                         "Pandiwa · Qal · salaysay ng nakaraan (wayyiqtol) · ikatlong panauhan panlalaki isahan")
+        self.assertEqual(morph.describe_hebrew("Vqw3ms", "fa"),
+                         "فعل · Qal · ماضی روایی (wayyiqtol) · سوم شخص مذکر مفرد")
         # Aramaic stems share letters with Hebrew ones but not names.
         self.assertEqual(morph.describe_hebrew("Vai3ms", "en", "A"),
                          "Verb · Aphel · imperfect (yiqtol) · 3rd person masculine singular")

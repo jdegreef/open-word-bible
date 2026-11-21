@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 import build_site  # noqa: E402
-from tests.site_build import built_site  # noqa: E402
+from tests.site_build import built_site, sitemap_text  # noqa: E402
 from owb import validate  # noqa: E402
 
 
@@ -79,7 +79,7 @@ class ArticlesTest(unittest.TestCase):
                 self.assertTrue(target.is_file() or (target / "index.html").is_file(), (path, href))
 
     def test_articles_are_in_the_nav_sitemap_and_home_page(self):
-        sitemap = (self.out / "sitemap.xml").read_text(encoding="utf-8")
+        sitemap = sitemap_text(self.out)
         for a in self.articles:
             self.assertIn(f"{build_site.SITE_URL}/articles/{a['slug']}/", sitemap)
         home = (self.out / "index.html").read_text(encoding="utf-8")
@@ -213,7 +213,7 @@ class SiteChromeTest(unittest.TestCase):
             # Links stay in the page's language: /es/ pages link to /es/.
             # (The menu lists the books translated into it: Matthew, in
             # every language that has it.)
-            lang = re.search(r'<html lang="([a-z]+)">', text)[1]
+            lang = re.search(r'<html lang="([a-z]+)"[ >]', text)[1]
             if lang in matthew:
                 self.assertIn(f'href="{build_site.url(lang, "/read/#mat")}"', text, path)
         about = (out / "about" / "index.html").read_text(encoding="utf-8")

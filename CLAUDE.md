@@ -39,6 +39,11 @@ summarises the data model.
 found in the source data, or a status other than `ai_draft`; CI's
 `owb.validate` is still the check of record.
 
+Translation JSON in `content/` and `data/` merges structurally
+(`scripts/merge_json.py`, set up by the session start hook), so merging main
+into a branch that adds another language to the same files doesn't
+conflict. A conflict it reports is a real one: both sides changed one value.
+
 ## Before pushing
 
 `scripts/check.sh` runs all of these but the backend tests;

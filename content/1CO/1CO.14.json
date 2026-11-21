@@ -74,6 +74,26 @@
           "L": "Стремитесь к любви, ревнуйте же о духовных [дарах], а больше всего — чтобы вам пророчествовать.",
           "B": "Стремитесь к любви и всем сердцем желайте духовных даров, а больше всего — пророчествовать.",
           "R": "Прежде всего старайтесь любить других. И старайтесь получить дары, которые даёт Дух, а больше всего — дар пророчества, то есть способность передавать слова от Бога."
+        },
+        "uk": {
+          "L": "Женіться за любовʼю, ревнуйте ж про духовні [дари], а найбільше, щоб ви пророкували.",
+          "B": "Прагніть любові і всім серцем бажайте духовних дарів, а найбільше пророкування.",
+          "R": "Понад усе старайтеся любити інших. І щиро прагніть отримати дари, які дає Дух, найбільше дар пророцтва, щоб передавати вістки від Бога."
+        },
+        "ja": {
+          "L": "愛を追い求めなさい。また、霊的な[賜物]を熱心に求めなさい。しかし、特に預言することを[求めなさい]。",
+          "B": "愛を追い求めなさい。そして、霊の賜物を熱心に求めなさい。中でも、預言することを求めなさい。",
+          "R": "何よりも、人を愛することに力を注いでください。そして、聖霊がくださる贈り物をいただけるように、熱心に求めてください。中でも、預言する贈り物、つまり神から与えられた言葉を語る贈り物を求めてください。"
+        },
+        "id": {
+          "L": "Kejarlah kasih, dan berusahalah dengan giat untuk memperoleh karunia-karunia rohani, tetapi terutama supaya kalian bernubuat.",
+          "B": "Berusahalah memperoleh kasih, dan rindukanlah karunia-karunia rohani, terutama karunia untuk bernubuat.",
+          "R": "Lebih dari segala sesuatu, berusahalah sungguh-sungguh untuk mengasihi orang lain. Dan berusahalah untuk menerima karunia-karunia yang diberikan Roh, terutama karunia nubuat, yaitu menyampaikan pesan dari Allah."
+        },
+        "zh": {
+          "L": "你们要追求爱，也要热心渴慕属灵的[恩赐]，更要渴慕能说预言。",
+          "B": "你们要竭力追求爱，也要一心渴慕属灵的恩赐，最要紧的是说预言。",
+          "R": "最重要的是，你们要努力爱别人。也要努力得到圣灵所赐的恩赐，最要紧的是说预言的恩赐，就是传讲从{{god_term:神|上帝}}来的信息。"
         }
       },
       "decisions": [
@@ -429,6 +449,47 @@
           "reason": "The same words as in 12:31 and 14:39 at each level, so that readers can see Paul take up the command again. \"Ревновать о\" is kept at Literal; in current Russian it usually means jealousy.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n46014001011"
+          ],
+          "choice": "{{god_term:神|上帝}}",
+          "alternatives": [
+            "上帝 as the default",
+            "a fixed 神"
+          ],
+          "reason": "Every word naming the one God is a god_term span: \"神\" by default, \"上帝\" for readers who choose it. The two name the same God; only the wording changes.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46014001004"
+          ],
+          "choice": "热心渴慕 (L); 一心渴慕 (B); 努力得到 (R)",
+          "alternatives": [
+            "切慕"
+          ],
+          "reason": "One wording per level for this verb here and in 14:39, so readers can see Paul take up the command again (m4).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -512,6 +573,26 @@
           "L": "Ведь говорящий на языке говорит не людям, а Богу, ведь никто не понимает, духом же он говорит тайны;",
           "B": "Тот, кто говорит на языке, говорит не людям, а Богу. Никто не понимает, что он говорит: в духе он произносит тайны.",
           "R": "Когда люди говорят на языках, они говорят не другим людям, а Богу. Никто другой не может их понять. Дух помогает им говорить, но то, что они говорят, остаётся тайной для всех остальных."
+        },
+        "uk": {
+          "L": "Бо хто говорить мовою, говорить не людям, а Богові, бо ніхто не розуміє; а духом [він] говорить таємниці.",
+          "B": "Хто говорить мовою, той говорить не людям, а Богові. Ніхто не розуміє сказаного; у Дусі мовець говорить таємниці.",
+          "R": "Коли люди говорять мовами, вони говорять не до інших людей. Вони говорять до Бога. Ніхто інший не може їх зрозуміти. Дух допомагає їм говорити, але те, що вони кажуть, для всіх інших — таємниця."
+        },
+        "ja": {
+          "L": "というのは、異言で語る者は、人々に語るのではなく、神に語るのです。だれも聞き取れないからです。しかし、[その人は]霊によって奥義を語っているのです。",
+          "B": "異言で語る人は、人に向かってではなく、神に向かって語っています。だれもその言葉を理解できません。その人は、霊によって奥義を語っているのです。",
+          "R": "異言で話す人は、ほかの人に話しているのではありません。神に話しているのです。ほかの人には、だれにも分かりません。聖霊が助けて話させてくださっていますが、その人が話していることは、ほかの人にとっては秘密のままなのです。"
+        },
+        "id": {
+          "L": "Sebab orang yang berbicara dalam bahasa roh tidak berbicara kepada manusia tetapi kepada Allah, sebab tidak ada seorang pun yang mengerti; tetapi dalam Roh ia mengucapkan rahasia-rahasia.",
+          "B": "Orang yang berbicara dalam bahasa roh tidak berbicara kepada manusia tetapi kepada Allah. Tidak ada seorang pun yang mengerti apa yang dikatakannya; dalam Roh ia mengucapkan rahasia-rahasia.",
+          "R": "Kalau orang berbicara dalam bahasa roh, mereka tidak berbicara kepada orang lain. Mereka berbicara kepada Allah. Tidak ada orang lain yang dapat mengerti mereka. Roh menolong mereka berbicara, tetapi apa yang mereka katakan merupakan rahasia bagi semua orang lain."
+        },
+        "zh": {
+          "L": "因为说方言的人不是对人说话，而是对{{god_term:神|上帝}}说话，因为没有人听得懂；然而[这人]是在圣灵里说出奥秘。",
+          "B": "说方言的人不是在对人说话，而是在对{{god_term:神|上帝}}说话。没有人听得懂他所说的；他是在圣灵里说出奥秘。",
+          "R": "人说方言的时候，不是在对别人说话，而是在对{{god_term:神|上帝}}说话。别人都听不懂。圣灵在帮助他们说话，可是他们所说的，对其他人来说是个奥秘。"
         }
       },
       "decisions": [
@@ -808,6 +889,92 @@
           "reason": "The key term \"тайна\" is kept at every level, with its sense here given in meaning decision m4; Readable says to whom it is hidden. \"Дух\" and \"духом\" are lowercase in Literal and Balanced to leave open, with the Greek, whether the human spirit is meant.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46014002016"
+          ],
+          "choice": "говорити мовою, мовами (as in 12:10)",
+          "alternatives": [
+            "говорити язиками"
+          ],
+          "reason": "The gift keeps the name fixed in 12:8-10; \"мова\" in the singular for one utterance, as the Greek has the singular here.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46014002013"
+          ],
+          "choice": "\"霊によって\" (L, B); \"聖霊が助けて話させてくださって\" (R)",
+          "alternatives": [
+            "\"自分の霊で\""
+          ],
+          "reason": "Read as the Holy Spirit giving the speech (m3, uncertain, footnoted in the English).",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46014002003",
+            "n46014002004"
+          ],
+          "choice": "\"说方言\" (every level)",
+          "alternatives": [
+            "\"说自己没有学过的语言\" (Readable)",
+            "\"说灵言\"",
+            "\"舌音\""
+          ],
+          "reason": "\"说方言\" is the Chinese church's word for the gift of tongues, as at Mark 16:17 and Acts 10:46 and 19:6. It is kept at every level through chapters 12-14, because the English Readable keeps \"tongues\" here; at Mark 16:17 and Acts 19:6 Readable says \"语言\" the speaker has not learned, as the English Readable says \"languages\" there. The meaning decision reads tongues as speech given by the Spirit; where the English speaks of languages (13:1; 14:10-11, 21), Chinese says \"语言\". Interpretation is \"翻译\" throughout.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46014002016"
+          ],
+          "choice": "奥秘",
+          "alternatives": [
+            "秘密"
+          ],
+          "reason": "The key term \"mystery\" is kept at every level, as in 13:2; its sense here, things hidden from the hearers, is in m4.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -885,6 +1052,26 @@
           "L": "А пророчествующий говорит людям [для] созидания, и ободрения, и утешения.",
           "B": "А тот, кто пророчествует, говорит людям, и его слова укрепляют их, ободряют и утешают.",
           "R": "А люди, которые пророчествуют, говорят другим. Их слова помогают другим становиться сильнее, дают им смелость и утешают их."
+        },
+        "uk": {
+          "L": "А хто пророкує, говорить людям [на] збудування, і заохочення, і розраду.",
+          "B": "А хто пророкує, той говорить людям, і його слова будують їх, підбадьорюють і втішають.",
+          "R": "Але люди, які пророкують, говорять до інших. Те, що вони кажуть, допомагає іншим зміцніти, додає їм відваги і втішає їх."
+        },
+        "ja": {
+          "L": "しかし、預言する者は、人々に向かって、建て上げと励ましと慰めを語ります。",
+          "B": "しかし、預言する人は人々に向かって語り、その言葉は人々を造り上げ、励まし、慰めます。",
+          "R": "でも、預言する人は、ほかの人たちに向かって話します。その言葉は、人々を強くし、勇気づけ、慰めます。"
+        },
+        "id": {
+          "L": "Tetapi orang yang bernubuat berbicara kepada manusia [untuk] membangun dan menasihati dan menghibur.",
+          "B": "Tetapi orang yang bernubuat berbicara kepada manusia, dan perkataannya membangun, menguatkan, dan menghibur mereka.",
+          "R": "Tetapi orang yang bernubuat berbicara kepada orang lain. Apa yang mereka katakan menolong orang lain menjadi lebih kuat, memberi mereka semangat, dan menghibur mereka."
+        },
+        "zh": {
+          "L": "但说预言的人是对人说话，[为了]建立、劝勉和安慰。",
+          "B": "但说预言的人是对人说话，他的话能建立人、鼓励人、安慰人。",
+          "R": "但说预言的人是对别人说话。他们说的话能帮助别人成长得更坚强，给他们勇气，也安慰他们。"
         }
       },
       "decisions": [
@@ -1195,6 +1382,70 @@
           "reason": "The Synodal \"назидание\" now means moralising. Literal keeps the building picture with \"созидание\", as in 8:1 and 10:23; Balanced and Readable say what it does, as in those verses.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46014003006"
+          ],
+          "choice": "збудування (L); будувати (B); допомагати зміцніти (R), for oikodomē, oikodomeō through chapter 14",
+          "alternatives": [
+            "повчання"
+          ],
+          "reason": "The Corinthians note keeps the building picture of 3:9-10 and 8:1. \"Повчання\" would turn building up into teaching.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46014003006"
+          ],
+          "choice": "\"建て上げ\" (L); \"造り上げ\" (B); \"強くする\" (R), through chapter 14",
+          "alternatives": [
+            "\"徳を高める\""
+          ],
+          "reason": "Making the church grow strong like a rising building (m1); the same words as for oikodomeō in 8:1.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46014003006"
+          ],
+          "choice": "建立 (L, B); 成长得更坚强 (R)",
+          "alternatives": [
+            "造就",
+            "造就人"
+          ],
+          "reason": "\"建立\" keeps Paul's picture of a building rising, as in Romans 14:19 and 15:2; Readable says \"成长得更坚强\" through the chapter, as the English Readable says \"grow stronger\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1272,6 +1523,26 @@
           "L": "Говорящий на языке созидает себя, а пророчествующий созидает церковь.",
           "B": "Те, кто говорит на языке, укрепляют самих себя, а те, кто пророчествует, укрепляют церковь.",
           "R": "Люди, которые говорят на языках, помогают стать сильнее только себе. А люди, которые пророчествуют, помогают стать сильнее всей церкви."
+        },
+        "uk": {
+          "L": "Хто говорить мовою, будує себе; а хто пророкує, будує церкву.",
+          "B": "Ті, хто говорить мовою, будують самих себе, а ті, хто пророкує, будують церкву.",
+          "R": "Люди, які говорять мовами, допомагають зміцніти лише собі. А люди, які пророкують, допомагають зміцніти всій церкві."
+        },
+        "ja": {
+          "L": "異言で語る者は自分自身を建て上げ、預言する者は教会を建て上げます。",
+          "B": "異言で語る人は自分自身を造り上げますが、預言する人は教会を造り上げます。",
+          "R": "異言で話す人は、自分だけを強くします。でも、預言する人は、教会全体を強くするのです。"
+        },
+        "id": {
+          "L": "Orang yang berbicara dalam bahasa roh membangun dirinya sendiri, tetapi orang yang bernubuat membangun jemaat.",
+          "B": "Mereka yang berbicara dalam bahasa roh membangun diri mereka sendiri, tetapi mereka yang bernubuat membangun jemaat.",
+          "R": "Orang yang berbicara dalam bahasa roh hanya menolong dirinya sendiri menjadi lebih kuat. Tetapi orang yang bernubuat menolong seluruh jemaat menjadi lebih kuat."
+        },
+        "zh": {
+          "L": "说方言的人是建立自己，说预言的人却是建立教会。",
+          "B": "说方言的人建立的是自己，说预言的人建立的却是教会。",
+          "R": "说方言的人只帮助自己成长得更坚强。但说预言的人帮助整个教会成长得更坚强。"
         }
       },
       "decisions": [
@@ -1505,6 +1776,64 @@
           "reason": "The English Literal has gender spans on the pronouns for the one who speaks in a tongue, here and in verses 13, 24-25, 28 and 37-38. Russian uses the reflexive \"себя\" or a masculine form after \"тот, кто\" / \"кто-то\", which already covers men and women, so Russian has no gender span in this chapter.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n46014004004",
+            "n46014004005"
+          ],
+          "choice": "себе, with no gender span",
+          "alternatives": [
+            "{{gender:себе|себе самого}}"
+          ],
+          "reason": "The Ukrainian reflexive \"себе\" has no gender, so the English span has nothing to change.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n46014004004"
+          ],
+          "choice": "\"自分自身\" with no gender span",
+          "alternatives": [
+            "a gender span as in the English themselves/himself"
+          ],
+          "reason": "Japanese \"自分自身\" is already inclusive, so the English pronoun span is not needed (style 7a).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n46014004004"
+          ],
+          "choice": "自己, with no gender span",
+          "alternatives": [
+            "{{gender:他们自己|他自己}}"
+          ],
+          "reason": "The English Literal has a gender span (themselves / himself). Chinese \"自己\" and \"这人\" are already inclusive, so this chapter writes no gender span where the English has one for a person who may be a man or a woman.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1599,6 +1928,26 @@
           "L": "Хочу же, чтобы все вы говорили на языках, а больше — чтобы вы пророчествовали; больше же пророчествующий, чем говорящий на языках, разве только он [и] истолковывает, чтобы церковь получила созидание.",
           "B": "Я был бы рад, если бы все вы говорили на языках, но ещё больше — если бы вы пророчествовали. Тот, кто пророчествует, больше того, кто говорит на языках, если только тот не истолковывает сказанное, чтобы церковь получила то, что её укрепляет.",
           "R": "Я хотел бы, чтобы каждый из вас говорил на языках, но гораздо больше я хочу, чтобы вы пророчествовали. Пророчество важнее говорения на языках, если только говорящий не объясняет, что он сказал. Тогда вся церковь может становиться сильнее."
+        },
+        "uk": {
+          "L": "Хочу ж, щоб ви всі говорили мовами, але радше щоб пророкували; бо більший той, хто пророкує, ніж той, хто говорить мовами, хіба що [він] тлумачить, щоб церква отримала збудування.",
+          "B": "Я був би радий, якби всі ви говорили мовами, але ще радіший, якби ви пророкували. Ті, хто пророкує, більші за тих, хто говорить мовами, хіба що вони також тлумачать, щоб церква отримала те, що її будує.",
+          "R": "Я хотів би, щоб кожен із вас говорив мовами, але набагато більше хотів би, щоб ви пророкували. Пророкувати важливіше, ніж говорити мовами, хіба що ті, хто говорить, також тлумачать сказане. Тоді вся церква може зміцніти."
+        },
+        "ja": {
+          "L": "わたしは、あなたがた皆が異言で語ることを望みますが、それ以上に、あなたがたが預言することを[望みます]。預言する者は、異言で語る者よりもまさっています。ただし、[異言で語る者が]解き明かして、教会が建て上げられるのなら別です。",
+          "B": "わたしは、あなたがた皆が異言で語るなら喜びますが、預言するなら、なおいっそう喜びます。預言する人は、異言で語る人よりもまさっています。ただし、異言で語る人がそれを解き明かして、教会が造り上げられるのであれば、話は別です。",
+          "R": "わたしは、みなさん一人一人が異言で話せたらいいと思います。でも、それよりも、みなさんが預言してくれるほうが、ずっとうれしいのです。預言することは、異言で話すことよりも大切です。ただし、異言で話す人が、自分の話したことの意味を説明するなら別です。そうすれば、教会全体が強くされるからです。"
+        },
+        "id": {
+          "L": "Dan aku ingin kalian semua berbicara dalam bahasa roh, tetapi lebih lagi supaya kalian bernubuat; dan orang yang bernubuat [lebih besar] daripada orang yang berbicara dalam bahasa roh, kecuali kalau ia menafsirkannya, supaya jemaat dibangun.",
+          "B": "Aku senang jika kalian semua berbicara dalam bahasa roh, tetapi aku lebih senang lagi jika kalian bernubuat. Orang yang bernubuat lebih besar daripada orang yang berbicara dalam bahasa roh, kecuali jika ia juga menafsirkannya, sehingga jemaat menerima sesuatu yang membangunnya.",
+          "R": "Saya ingin setiap orang dari kalian berbicara dalam bahasa roh, tetapi saya jauh lebih ingin kalian bernubuat. Bernubuat lebih penting daripada berbicara dalam bahasa roh, kecuali kalau orang yang berbicara itu juga menafsirkan apa yang dikatakannya. Dengan begitu seluruh jemaat dapat menjadi lebih kuat."
+        },
+        "zh": {
+          "L": "我愿意你们都说方言，但更愿意你们说预言；说预言的比说方言的更大，除非[说方言的人]能翻译出来，好使教会得到建立。",
+          "B": "我乐意你们都说方言，但更乐意你们说预言。说预言的人比说方言的人更大，除非说方言的人也能翻译，好让教会得到建立。",
+          "R": "我希望你们每个人都能说方言，但我更希望你们说预言。说预言比说方言更重要，除非说方言的人也能把自己所说的翻译出来。那样，整个教会就能成长得更坚强。"
         }
       },
       "decisions": [
@@ -1730,6 +2079,50 @@
           "reason": "\"Kufasiri\" is to explain what was said so that hearers understand it, which is this gift (meaning decision); \"kutafsiri\" today mostly means translating a text from one language to another. The noun \"tafsiri\" (verse 26) and \"mfasiri\" (interpreter, verse 28) belong to the same family.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n46014005019",
+            "n46014005022"
+          ],
+          "choice": "The \"unless he interprets\" clause follows the comparison as a separate \"ただし……\" sentence",
+          "alternatives": [
+            "\"解き明かすのでなければ\" before the comparison"
+          ],
+          "reason": "Japanese puts a condition before its main clause; a following \"ただし\" keeps Paul's order of thought (m3, uncertain).",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46014005022"
+          ],
+          "choice": "翻译",
+          "alternatives": [
+            "解释",
+            "翻出来"
+          ],
+          "reason": "The gift turns the tongue into speech the church understands (m3); \"翻译\" says that plainly, where \"解释\" would suggest explaining what was already understood. One word through the chapter (verses 5, 13, 26-28).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1825,6 +2218,26 @@
           "L": "Теперь же, {{gender:братья и сёстры|братья}}, если я приду к вам, говоря на языках, какую пользу я вам принесу, если не буду говорить вам или в откровении, или в знании, или в пророчестве, или в учении?",
           "B": "Итак, {{gender:братья и сёстры|братья}}, допустим, я приду к вам и буду говорить на языках. Какая вам от меня польза, если то, что я скажу, не принесёт откровения, или знания, или пророчества, или учения?",
           "R": "{{gender:Братья и сёстры|Братья}}, допустим, я приду к вам и буду говорить только на языках. Это вам совсем не поможет. Чтобы помочь вам, мне нужно принести вам откровение от Бога, или знание, или пророчество, или учение."
+        },
+        "uk": {
+          "L": "А тепер, {{gender:брати і сестри|брати}}, якщо я прийду до вас, говорячи мовами, яку користь я вам принесу, якщо не говоритиму вам або в обʼявленні, або в знанні, або в пророцтві, або в навчанні?",
+          "B": "Тож, {{gender:брати і сестри|брати}}, припустімо, я прийду до вас і говоритиму мовами. Яка вам від мене користь, якщо те, що я кажу, не принесе вам ні обʼявлення, ні знання, ні пророцтва, ні навчання?",
+          "R": "{{gender:Брати і сестри|Брати}}, припустімо, я приїхав би до вас і говорив би лише мовами. Це вам зовсім не допомогло б. Щоб допомогти вам, я мав би принести вам обʼявлення від Бога, або знання, або пророцтво, або навчання."
+        },
+        "ja": {
+          "L": "しかし今、{{gender:きょうだいたち|兄弟たち}}、もしわたしが異言で語りながらあなたがたのところに行っても、啓示によってか、知識によってか、預言によってか、教えによってかであなたがたに語らないなら、わたしはあなたがたに何の益になるでしょうか？",
+          "B": "ですから、{{gender:きょうだいたち|兄弟たち}}、考えてみなさい。わたしがあなたがたのところに行って、異言で語るとします。わたしの語ることが、啓示も、知識も、預言も、教えももたらさないなら、あなたがたに何の役に立つでしょうか？",
+          "R": "{{gender:きょうだいたち|兄弟たち}}、もしわたしがみなさんのところに行って、異言だけで話したとしましょう。それでは、みなさんのためにまったくなりません。みなさんの助けになるためには、神から示されたことか、知識か、預言か、教えを伝えなければならないのです。"
+        },
+        "id": {
+          "L": "Tetapi sekarang, saudara-saudara, jika aku datang kepada kalian dengan berbicara dalam bahasa roh, apakah gunanya bagi kalian, kecuali aku berbicara kepada kalian dengan penyataan atau dengan pengetahuan atau dengan nubuat atau dengan pengajaran?",
+          "B": "Jadi, saudara-saudara, misalkan aku datang kepada kalian dan berbicara dalam bahasa roh. Apa gunanya aku bagi kalian, jika apa yang kukatakan kepada kalian tidak membawa penyataan, atau pengetahuan, atau nubuat, atau pengajaran?",
+          "R": "Saudara-saudara, misalkan saya datang mengunjungi kalian dan hanya berbicara dalam bahasa roh. Hal itu sama sekali tidak menolong kalian. Untuk menolong kalian, saya harus membawa kepada kalian penyataan dari Allah, atau pengetahuan, atau nubuat, atau pengajaran."
+        },
+        "zh": {
+          "L": "但现在，{{gender:弟兄姐妹|弟兄}}们，我若到你们那里说方言，若不是用启示，或用知识，或用预言，或用教导对你们说话，我对你们会有什么益处呢？",
+          "B": "所以，{{gender:弟兄姐妹|弟兄}}们，假设我到你们那里去，只说方言；如果我对你们说的话不带来启示、知识、预言或教导，我对你们有什么用处呢？",
+          "R": "{{gender:弟兄姐妹|弟兄}}们，假设我去看你们，只用方言说话。那对你们一点帮助也没有。要帮助你们，我就得带给你们从{{god_term:神|上帝}}来的启示，或是知识，或是预言，或是教导。"
         }
       },
       "decisions": [
@@ -2019,6 +2432,47 @@
           "reason": "The whole church, women and men, is addressed, so the inclusive vocative is the default, as through the letter.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46014006019"
+          ],
+          "choice": "\"啓示\" (L, B); \"神から示されたこと\" (R)",
+          "alternatives": [
+            "\"黙示\""
+          ],
+          "reason": "Kinds of speech the church can understand (m3); R avoids the hard word \"啓示\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n46014006003"
+          ],
+          "choice": "{{gender:弟兄姐妹|弟兄}}们",
+          "alternatives": [
+            "弟兄们"
+          ],
+          "reason": "Paul addresses the whole church, men and women; the gender span gives \"弟兄姐妹\" by default and the traditional \"弟兄\" as the alternative, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2108,6 +2562,26 @@
           "L": "Так и неодушевлённые [предметы], издающие звук, будь то свирель или арфа, — если они не дают различия в звуках, как узнать, что играют на свирели или на арфе?",
           "B": "Подумайте о неживых инструментах, которые издают звук, — например, о флейте или арфе. Если их звуки не отличаются один от другого, как понять, что играют на флейте или на арфе?",
           "R": "Музыкальные инструменты, например флейта и арфа, не живые, но они издают звуки. Если каждая нота не звучит ясно и отдельно, никто не поймёт, какую мелодию играют."
+        },
+        "uk": {
+          "L": "Так само й бездушні [речі], що видають звук, чи сопілка, чи гусла: якщо не дадуть різниці звукам, як пізнати, що грають на сопілці чи на гуслах?",
+          "B": "Подумайте про інструменти, хоч вони й неживі, які видають звук, як-от сопілка чи гусла. Якщо їхні звуки не відрізняються, як можна впізнати, що грають на сопілці чи на гуслах?",
+          "R": "Музичні інструменти, як-от сопілка чи гусла, неживі, але вони видають звуки. Якщо кожен звук не лунає чітко й окремо, ніхто не зможе впізнати, яку мелодію грають."
+        },
+        "ja": {
+          "L": "同様に、命のないものでも、笛であれ竪琴であれ、音を出すものが、音に区別をつけないなら、笛で吹かれているものや竪琴で弾かれているものが、どうして分かるでしょうか？",
+          "B": "笛や竪琴のように、命のない楽器でも音を出します。その音にはっきりした区別がなければ、何が笛で吹かれ、何が竪琴で弾かれているのか、どうして分かるでしょうか？",
+          "R": "笛やたて琴のような楽器は、生きてはいませんが、音を出します。でも、一つ一つの音がはっきりと違って聞こえなければ、どんな曲が演奏されているのか、だれにも分かりません。"
+        },
+        "id": {
+          "L": "Demikian juga benda-benda mati yang mengeluarkan bunyi, entah seruling atau kecapi: jika tidak memberikan perbedaan dalam nada-nadanya, bagaimana orang dapat mengetahui apa yang ditiup dengan seruling atau apa yang dipetik dengan kecapi?",
+          "B": "Pikirkanlah alat-alat musik, yang walaupun benda mati, mengeluarkan bunyi, seperti seruling atau kecapi. Jika nada-nadanya tidak jelas berbeda, bagaimana orang dapat tahu lagu apa yang dimainkan pada seruling atau kecapi itu?",
+          "R": "Alat-alat musik seperti seruling dan kecapi tidak hidup, tetapi mengeluarkan bunyi. Kalau setiap nada tidak terdengar jelas dan berbeda, tidak ada orang yang dapat tahu lagu apa yang sedang dimainkan."
+        },
+        "zh": {
+          "L": "同样，没有生命却发出声音的[东西]，无论是笛子还是竖琴，若是音符没有分别，吹奏的或弹奏的怎能让人辨认出来呢？",
+          "B": "想想那些乐器吧，它们虽没有生命，却能发出声音，比如笛子或竖琴。如果音符不清楚分明，别人怎能听出笛子或竖琴奏的是什么呢？",
+          "R": "像笛子和竖琴这样的乐器，虽然不是活的，却能发出声音。如果每一个音都不清楚、没有分别，就没有人能听出演奏的是什么曲子。"
         }
       },
       "decisions": [
@@ -2292,6 +2766,75 @@
           "reason": "The aulos was a wind instrument (meaning decision m2); Literal keeps the Bible word \"свирель\", and Balanced and Readable use the instrument familiar today, as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46014007007",
+            "n46014007009"
+          ],
+          "choice": "сопілка, гусла",
+          "alternatives": [
+            "флейта, арфа",
+            "авлос, кіфара"
+          ],
+          "reason": "The aulos was a reed pipe and the kithara a plucked stringed instrument. \"Сопілка\" and \"гусла\" are the Ukrainian folk instruments nearest to them, and read as everyday words; \"арфа\" is a different, larger instrument. A reviewer may prefer \"флейта, ліра\".",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46014007007",
+            "n46014007009"
+          ],
+          "choice": "\"笛\", \"竪琴\" (L, B); \"たて琴\" in kana (R)",
+          "alternatives": [
+            "\"フルート\"",
+            "\"ハープ\""
+          ],
+          "reason": "A wind and a stringed instrument of the Greek world (m2); \"竪\" is not a Jōyō kanji, so R writes it in kana.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46014007007",
+            "n46014007009"
+          ],
+          "choice": "笛子, 竖琴",
+          "alternatives": [
+            "箫",
+            "琴"
+          ],
+          "reason": "The nearest instruments familiar to modern Chinese readers, a wind and a stringed instrument (m2); \"箫\" and \"琴\" would bring in Chinese instruments.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2370,6 +2913,26 @@
           "L": "И ведь если труба издаёт неясный звук, кто станет готовиться к битве?",
           "B": "И если труба подаёт сигнал, который никто не может разобрать, кто будет готовиться к бою?",
           "R": "В армии труба зовёт солдат готовиться к бою. Но если труба не играет ясный сигнал, никто не поймёт, что пора готовиться."
+        },
+        "uk": {
+          "L": "Бо й коли сурма дасть невиразний звук, хто готуватиметься до бою?",
+          "B": "І якщо сурма подасть сигнал, якого ніхто не може розібрати, хто готуватиметься до бою?",
+          "R": "У війську сурма кличе воїнів готуватися до бою. Але якщо сурма не просурмить чітко, ніхто не знатиме, що настав час готуватися."
+        },
+        "ja": {
+          "L": "実際、もしラッパがはっきりしない音を出すなら、だれが戦いの準備をするでしょうか？",
+          "B": "また、ラッパが聞き分けられない合図を鳴らすなら、だれが戦いに備えるでしょうか？",
+          "R": "軍隊では、ラッパが兵士たちに、戦いの準備をするように知らせます。でも、ラッパがはっきりした合図を鳴らさなければ、準備をする時が来たことは、だれにも分かりません。"
+        },
+        "id": {
+          "L": "Sebab jika nafiri mengeluarkan bunyi yang tidak jelas, siapakah yang akan bersiap untuk berperang?",
+          "B": "Dan jika nafiri membunyikan tanda yang tidak dapat dikenali, siapa yang akan bersiap untuk bertempur?",
+          "R": "Dalam pasukan, bunyi nafiri memberi tahu para prajurit untuk bersiap berperang. Tetapi kalau nafiri tidak dibunyikan dengan jelas, tidak ada yang tahu bahwa sudah waktunya untuk bersiap."
+        },
+        "zh": {
+          "L": "再者，号角若吹出不清楚的声音，谁会准备作战呢？",
+          "B": "如果号角吹出的信号让人分辨不清，谁会准备上阵呢？",
+          "R": "在军队里，号角声告诉士兵准备作战。可是如果号角吹得不清楚，就没有人知道该准备了。"
         }
       },
       "decisions": [
@@ -2507,6 +3070,26 @@
           "L": "Так и вы: если языком не произносите внятного слова, как узнать, что говорится?",
           "B": "Так и с вами: если ваш язык не произносит понятной речи, как поймут то, что вы говорите?",
           "R": "С вами то же самое. Когда вы говорите, другим нужны слова, которые они могут понять. Иначе они не поймут, что вы хотите сказать."
+        },
+        "uk": {
+          "L": "Так і ви: якщо язиком не дасте зрозумілого слова, як пізнати сказане?",
+          "B": "Так і з вами: якщо ваш язик не вимовляє мови, яка має сенс, як зрозуміють те, що ви кажете?",
+          "R": "Так само і з вами. Коли ви говорите, іншим потрібні слова, які вони можуть зрозуміти. Інакше вони не збагнуть, що ви маєте на увазі."
+        },
+        "ja": {
+          "L": "同じように、あなたがたも、舌によってはっきりした言葉を出さないなら、語られていることがどうして分かるでしょうか？",
+          "B": "あなたがたも同じです。舌で意味の分かる言葉を語らなければ、あなたがたの言うことがどうして理解されるでしょうか？",
+          "R": "みなさんも同じです。話すときには、ほかの人に分かる言葉が必要です。そうでなければ、何を言いたいのか、だれにも分かりません。"
+        },
+        "id": {
+          "L": "Demikian juga kalian: jika kalian tidak mengucapkan perkataan yang jelas dengan lidah kalian, bagaimana orang dapat mengetahui apa yang dikatakan?",
+          "B": "Demikian juga dengan kalian: jika lidah kalian tidak menghasilkan ucapan yang dapat dipahami, bagaimana orang akan mengerti apa yang kalian katakan?",
+          "R": "Begitu juga dengan kalian. Kalau kalian berbicara, orang lain memerlukan kata-kata yang dapat mereka pahami. Kalau tidak, mereka tidak dapat mengerti apa maksud kalian."
+        },
+        "zh": {
+          "L": "你们也是这样：若不借着舌头说出清楚的话，所说的怎能被人明白呢？",
+          "B": "你们也是如此：如果你们的舌头说不出有意义的话，别人怎能明白你们在说什么呢？",
+          "R": "你们也是一样。你们说话的时候，别人需要听得懂的话，不然他们就不知道你们的意思。"
         }
       },
       "decisions": [
@@ -2686,6 +3269,68 @@
           "reason": "Here the word is the tongue as the organ of speech (meaning decision m1), so Hindi uses \"जीभ\", not \"भाषा\", the name of the gift.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46014009004",
+            "n46014009005",
+            "n46014009006"
+          ],
+          "choice": "язик (the organ of speech)",
+          "alternatives": [
+            "мова"
+          ],
+          "reason": "Here glōssa is the tongue as the organ of speech (m1), so Ukrainian says \"язик\" and not \"мова\", the word kept for the gift.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46014009006"
+          ],
+          "choice": "\"舌\" (L, B), not \"異言\"",
+          "alternatives": [
+            "\"異言によって\""
+          ],
+          "reason": "Here the word is the tongue as the organ of speech (m1, uncertain); Japanese has to choose, and \"舌\" keeps the picture of the instruments.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46014009006"
+          ],
+          "choice": "舌头",
+          "alternatives": [
+            "方言"
+          ],
+          "reason": "Here the same Greek word means the tongue as the organ of speech (m1), so Chinese says \"舌头\", not \"方言\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2758,6 +3403,26 @@
           "L": "Ведь вы будете говорить на воздух.",
           "B": "Вы будете говорить в пустоту.",
           "R": "Ваши слова пропадут зря, как будто вы говорите с ветром."
+        },
+        "uk": {
+          "L": "Бо ви будете говорити на вітер.",
+          "B": "Ви говоритимете в порожнечу.",
+          "R": "Ваші слова будуть марні, як розмова з вітром."
+        },
+        "ja": {
+          "L": "あなたがたは空気に向かって語る者となるからです。",
+          "B": "あなたがたは、むなしく空に向かって語ることになるのです。",
+          "R": "みなさんの言葉は、風に向かって話すように、むだになってしまいます。"
+        },
+        "id": {
+          "L": "Sebab kalian akan berbicara kepada udara.",
+          "B": "Kalian akan berbicara kepada udara kosong.",
+          "R": "Kata-kata kalian akan sia-sia, seperti berbicara kepada angin."
+        },
+        "zh": {
+          "L": "因为你们将是向空气说话。",
+          "B": "你们就是在对着空气说话。",
+          "R": "你们说的话会白白浪费掉，就像对着风说话一样。"
         }
       },
       "decisions": [
@@ -2861,6 +3526,27 @@
           "reason": "\"Falar ao vento\" is the Portuguese idiom for words that reach no one, close to the Greek picture of the air (m1), as the English Readable uses \"talking to the wind\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46014009018",
+            "n46014009019",
+            "n46014009020"
+          ],
+          "choice": "на вітер",
+          "alternatives": [
+            "у повітря"
+          ],
+          "reason": "The Greek \"into the air\" means to no purpose (m1); \"говорити на вітер\" is the matching Ukrainian idiom, and keeps the picture of air.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2939,6 +3625,26 @@
           "L": "Столько, может быть, родов языков в мире, и ничто не без смысла;",
           "B": "Кто знает, сколько в мире языков? И ни один из них не лишён смысла.",
           "R": "В мире очень-очень много языков, и каждый из них что-то значит для людей, которые на нём говорят."
+        },
+        "uk": {
+          "L": "Є, може, стільки різних мов у світі, і жодна не без значення;",
+          "B": "Хто знає, скільки є мов у світі? І жодна з них не позбавлена значення.",
+          "R": "У світі дуже-дуже багато мов, і кожна з них щось означає для людей, які нею говорять."
+        },
+        "ja": {
+          "L": "世には、おそらく、それほど多くの種類の言語があり、意味を持たないものは一つもありません。",
+          "B": "世界にどれほど多くの言語があることでしょう。しかも、意味を持たないものは一つもありません。",
+          "R": "世界には、とてもたくさんの言葉があります。そして、どの言葉も、それを話す人々にとっては意味があるのです。"
+        },
+        "id": {
+          "L": "Ada, mungkin, begitu banyak macam bahasa di dunia, dan tidak ada [satu pun] yang tidak mempunyai arti;",
+          "B": "Entah berapa banyak bahasa yang ada di dunia? Dan tidak satu pun dari bahasa-bahasa itu yang tidak mempunyai arti.",
+          "R": "Ada banyak sekali bahasa di dunia, dan setiap bahasa itu mempunyai arti bagi orang-orang yang memakainya."
+        },
+        "zh": {
+          "L": "世上或许有这么多种语言，而且没有一种是没有意义的；",
+          "B": "谁知道世上有多少种语言呢？可是其中没有一种是毫无意义的。",
+          "R": "世上有很多很多种语言，每一种对说它的人来说都有意思。"
         }
       },
       "decisions": [
@@ -3199,6 +3905,69 @@
           "reason": "The word here is human languages (meaning decision m2), but it is a different word from the tongues of the gift. Hindi \"बोली\" is a language as it is spoken, and keeps it apart from \"भाषा\", the name of the gift in this chapter, in verses 10-11.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46014010005"
+          ],
+          "choice": "мови for phōnai",
+          "alternatives": [
+            "голоси",
+            "звуки"
+          ],
+          "reason": "The English renders phōnai \"languages\", which Ukrainian follows; but Ukrainian \"мова\" is also the word for the gift of tongues (glōssai), so the two Greek words meet in one Ukrainian word here. m3's wordplay (\"soundless\") is lost, as in English.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46014010008"
+          ],
+          "choice": "\"世界\" (B, R); \"世\" (L)",
+          "alternatives": [
+            "\"この世\""
+          ],
+          "reason": "The inhabited world with its many peoples (m4), not the world opposed to God; \"この世\" would suggest the second.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46014010005"
+          ],
+          "choice": "语言",
+          "alternatives": [
+            "声音"
+          ],
+          "reason": "The Greek word is \"sounds\", meaning human languages here (m2), as every English level says; \"语言\" keeps it apart from \"方言\", the gift.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3284,6 +4053,26 @@
           "L": "Итак, если я не знаю силы языка, я буду для говорящего иноземцем, и говорящий [будет] для меня иноземцем.",
           "B": "Если я не понимаю языка, на котором кто-то говорит, мы будем друг для друга иноземцами: я — для говорящего, а говорящий — для меня.",
           "R": "Если я не понимаю, что говорит человек, мы как люди из разных стран, которые не могут поговорить друг с другом."
+        },
+        "uk": {
+          "L": "Тож якщо я не знаю значення мови, то буду для того, хто говорить, чужинцем, і той, хто говорить, для мене чужинець.",
+          "B": "Якщо я не розумію мови, якою хтось говорить, ми будемо одне для одного чужинцями: я для мовця, а мовець для мене.",
+          "R": "Якщо я не розумію, що хтось каже, то ми наче чужинці з різних країн, які не можуть поговорити одне з одним."
+        },
+        "ja": {
+          "L": "ですから、もしわたしがその言語の意味を知らないなら、わたしは語る者にとって外国人となり、語る者もわたしにとって外国人となるでしょう。",
+          "B": "ですから、もしだれかが話す言葉の意味がわたしに分からなければ、わたしはその人にとって外国人であり、その人もわたしにとって外国人です。",
+          "R": "もし、わたしがだれかの話していることを理解できなければ、わたしたちは、互いに話の通じない、違う国から来た者どうしのようなものです。"
+        },
+        "id": {
+          "L": "Jadi jika aku tidak mengetahui arti bahasa itu, aku akan menjadi orang asing bagi orang yang berbicara, dan orang yang berbicara [akan menjadi] orang asing bagiku.",
+          "B": "Jika aku tidak memahami bahasa yang dipakai seseorang, kami akan menjadi orang asing satu sama lain: aku bagi orang yang berbicara itu, dan dia bagiku.",
+          "R": "Kalau saya tidak mengerti apa yang dikatakan seseorang, kami seperti orang-orang asing dari negeri yang berbeda yang tidak dapat bercakap-cakap satu sama lain."
+        },
+        "zh": {
+          "L": "所以，我若不明白那语言的意思，我对说话的人来说就是外族人，说话的人对我来说也是外族人。",
+          "B": "如果我听不懂别人说的语言，我们彼此就都是外族人：我对说话的人是外族人，说话的人对我也是外族人。",
+          "R": "如果我听不懂别人在说什么，我们就像是从不同国家来的陌生人，彼此没法交谈。"
         }
       },
       "decisions": [
@@ -3476,6 +4265,70 @@
           "reason": "\"Варвар\" now means someone uncivilised, which is not the point (meaning decision m2); \"иноземец\" is someone from another land and language.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46014011012"
+          ],
+          "choice": "чужинець",
+          "alternatives": [
+            "варвар"
+          ],
+          "reason": "barbaros is someone whose language one cannot understand (m2). Ukrainian \"варвар\" now means a savage, so \"чужинець\" says what Paul means.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46014011012"
+          ],
+          "choice": "\"外国人\" (L, B); \"違う国から来た者どうし\" (R)",
+          "alternatives": [
+            "\"野蛮人\"",
+            "\"異国人\""
+          ],
+          "reason": "Someone whose language one cannot understand (m2); \"野蛮人\" would add a judgment the word does not carry here.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46014011012",
+            "n46014011018"
+          ],
+          "choice": "外族人",
+          "alternatives": [
+            "化外之人",
+            "野蛮人"
+          ],
+          "reason": "The Greek word names someone whose language one cannot understand (m2); \"野蛮人\" would say uncivilized, which is not the point.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3558,6 +4411,26 @@
           "L": "Так и вы, поскольку вы ревнители духов, ради созидания церкви стремитесь преуспевать.",
           "B": "Так и с вами. Раз вы так стремитесь к действиям Духа, старайтесь иметь их в изобилии, чтобы укреплять церковь.",
           "R": "Это верно и для вас. Вы очень хотите, чтобы Дух действовал через вас. Так старайтесь, чтобы у вас было много даров, которые помогают церкви становиться сильнее."
+        },
+        "uk": {
+          "L": "Так і ви, оскільки ви ревнителі духів, прагніть мати їх із надлишком для збудування церкви.",
+          "B": "Так і з вами. Оскільки ви так прагнете проявів Духа, прагніть мати їх щедро для збудування церкви.",
+          "R": "Так і з вами. Ви дуже хочете, щоб Дух діяв через вас. Тож старайтеся мати багато дарів, які допомагають церкві зміцніти."
+        },
+        "ja": {
+          "L": "同じように、あなたがたも、霊[の働き]を熱心に求める者なのですから、教会を建て上げるために、豊かになるよう求めなさい。",
+          "B": "あなたがたも同じです。霊の働きをそれほど熱心に求めているのですから、教会を造り上げるために、それが豊かに与えられるように求めなさい。",
+          "R": "みなさんも同じです。みなさんは、聖霊が自分を通して働いてくださることを、心から願っています。それなら、教会を強くする贈り物を、たくさんいただけるように努めてください。"
+        },
+        "id": {
+          "L": "Demikian juga kalian, karena kalian berusaha dengan giat untuk memperoleh karunia-karunia roh, berusahalah supaya kalian berlimpah-limpah untuk membangun jemaat.",
+          "B": "Demikian juga dengan kalian. Karena kalian begitu rindu akan pekerjaan Roh, usahakanlah supaya kalian memilikinya dengan berlimpah untuk membangun jemaat.",
+          "R": "Hal itu juga berlaku bagi kalian. Kalian sungguh-sungguh ingin Roh bekerja melalui kalian. Jadi berusahalah dengan sungguh-sungguh untuk memiliki banyak karunia yang menolong jemaat menjadi lebih kuat."
+        },
+        "zh": {
+          "L": "你们也是这样，既然你们热衷于众灵[的工作]，就要寻求在建立教会的事上丰盛有余。",
+          "B": "你们也是一样。既然你们这样渴慕圣灵的工作，就当为了建立教会，追求在这些事上丰丰富富。",
+          "R": "对你们来说也是这样。你们很想让圣灵借着你们工作。那么，就要努力多得到那些能帮助教会成长得更坚强的恩赐。"
         }
       },
       "decisions": [
@@ -3711,6 +4584,47 @@
           "reason": "The meaning decision reads the plural \"spirits\" as the many ways the one Spirit is at work in the gifts, uncertain and footnoted; Literal keeps the plural of the Greek.",
           "uncertain": true,
           "footnote": true
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46014012007"
+          ],
+          "choice": "\"霊[の働き]\" (L); \"霊の働き\" (B); \"聖霊が自分を通して働いてくださること\" (R)",
+          "alternatives": [
+            "\"諸霊\"",
+            "\"霊的な賜物\""
+          ],
+          "reason": "The plural \"spirits\" read as the ways the one Spirit is at work in the gifts (m1, uncertain, footnoted in the English).",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n46014012007"
+          ],
+          "choice": "众灵[的工作]",
+          "alternatives": [
+            "属灵的恩赐"
+          ],
+          "reason": "Literal keeps the Greek plural \"spirits\" and brackets what it means, the workings of the one Spirit (m1); Balanced and Readable say \"圣灵的工作\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3785,6 +4699,26 @@
           "L": "Поэтому говорящий на языке пусть молится, чтобы истолковывать.",
           "B": "Поэтому тот, кто говорит на языке, пусть просит у Бога силы ещё и истолковать его.",
           "R": "Поэтому люди, которые говорят на языках, должны молиться, чтобы Бог помог им ещё и объяснить, что они сказали."
+        },
+        "uk": {
+          "L": "Тому хто говорить мовою, нехай молиться, щоб тлумачити.",
+          "B": "Тож кожен, хто говорить мовою, нехай просить у Бога сили також тлумачити її.",
+          "R": "Тож люди, які говорять мовами, мають молитися, щоб Бог допоміг їм також тлумачити сказане."
+        },
+        "ja": {
+          "L": "ですから、異言で語る者は、解き明かすことができるように祈りなさい。",
+          "B": "ですから、異言で語る人は、それを解き明かす力も与えられるように、神に願い求めなさい。",
+          "R": "ですから、異言で話す人は、自分の話したことの意味を説明することもできるように、神に祈ってください。"
+        },
+        "id": {
+          "L": "Karena itu orang yang berbicara dalam bahasa roh hendaklah berdoa supaya ia dapat menafsirkannya.",
+          "B": "Karena itu, siapa pun yang berbicara dalam bahasa roh hendaklah meminta kepada Allah kemampuan untuk menafsirkannya juga.",
+          "R": "Jadi orang yang berbicara dalam bahasa roh hendaklah berdoa supaya Allah juga menolongnya menafsirkan apa yang dikatakannya."
+        },
+        "zh": {
+          "L": "所以，说方言的人应当祷告，求能翻译[出来]。",
+          "B": "因此，说方言的人都应当求{{god_term:神|上帝}}也赐下翻译方言的能力。",
+          "R": "所以说方言的人应当祷告，求{{god_term:神|上帝}}也帮助他们翻译自己所说的话。"
         }
       },
       "decisions": [
@@ -3839,6 +4773,27 @@
             "pray that he may interpret"
           ],
           "reason": "Balanced and Readable say to whom the prayer is made and what is asked (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n46014013005",
+            "n46014013006",
+            "n46014013007"
+          ],
+          "choice": "нехай молиться, щоб тлумачити, with no gender span",
+          "alternatives": [
+            "{{gender:щоб вони тлумачили|щоб він тлумачив}}"
+          ],
+          "reason": "The Ukrainian infinitive needs no pronoun, so the English span has nothing to change.",
           "uncertain": false,
           "footnote": false
         }
@@ -3922,6 +4877,26 @@
           "L": "Ведь если я молюсь на языке, мой дух молится, а мой ум бесплоден.",
           "B": "Когда я молюсь на языке, молится мой дух, а мой ум не приносит плода.",
           "R": "Когда я молюсь на языках, мой дух молится, но мой ум не делает ничего полезного."
+        },
+        "uk": {
+          "L": "Бо коли я молюся мовою, мій дух молиться, а мій розум безплідний.",
+          "B": "Коли я молюся мовою, то молиться мій дух, а мій розум не приносить плоду.",
+          "R": "Коли я молюся мовами, мій дух молиться, але мій розум не робить нічого корисного."
+        },
+        "ja": {
+          "L": "というのは、もしわたしが異言で祈るなら、わたしの霊は祈っていますが、わたしの知性は実を結ばないからです。",
+          "B": "わたしが異言で祈るとき、祈っているのはわたしの霊であって、わたしの知性は何の実も結ばないのです。",
+          "R": "わたしが異言で祈るとき、わたしの霊は祈っていますが、わたしの理解する力は、何の役にも立っていません。"
+        },
+        "id": {
+          "L": "Sebab jika aku berdoa dalam bahasa roh, rohku berdoa, tetapi akal budiku tidak berbuah.",
+          "B": "Ketika aku berdoa dalam bahasa roh, rohkulah yang berdoa, sedangkan akal budiku tidak menghasilkan buah.",
+          "R": "Ketika saya berdoa dalam bahasa roh, roh saya berdoa, tetapi pikiran saya tidak melakukan sesuatu yang berguna."
+        },
+        "zh": {
+          "L": "因为我若用方言祷告，是我的灵在祷告，我的心思却是不结果子的。",
+          "B": "我用方言祷告的时候，是我的灵在祷告，我的心思却结不出果子。",
+          "R": "我用方言祷告的时候，我的灵在祷告，可是我的头脑却没做什么有用的事。"
         }
       },
       "decisions": [
@@ -4108,6 +5083,94 @@
           "reason": "This is Paul's own spirit (meaning decision m1), not God's Spirit. Hindi gives the human spirit its ordinary feminine agreement, so the reader can tell it from the Holy Spirit, who takes masculine agreement (style guide section 6). The same in verses 15-16.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46014014005",
+            "n46014014006",
+            "n46014014007"
+          ],
+          "choice": "дух, lowercase, for the speaker's own spirit (14:14-16)",
+          "alternatives": [
+            "Дух"
+          ],
+          "reason": "m1 says it is Paul's own inner self, moved by God's Spirit; the English writes it lowercase, and so does Ukrainian, while \"Дух\" is kept for the Holy Spirit (14:2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46014014011"
+          ],
+          "choice": "\"知性\" (L, B); \"理解する力\" (R), through 14:19",
+          "alternatives": [
+            "\"思い\" (used for the mind of the Lord in 2:16)",
+            "\"理性\""
+          ],
+          "reason": "The power of understanding set against the spirit (m2); \"思い\" would not make the contrast clear here.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46014014006"
+          ],
+          "choice": "\"わたしの霊\" for the speaker's own spirit",
+          "alternatives": [
+            "\"聖霊\""
+          ],
+          "reason": "The speaker's inner self, moved by God's Spirit (m1, uncertain); \"霊\" keeps it apart from the R word \"聖霊\".",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46014014006",
+            "n46014014011"
+          ],
+          "choice": "我的灵 (no 圣); 心思 (L, B), 头脑 (R)",
+          "alternatives": [
+            "悟性"
+          ],
+          "reason": "\"Spirit\" here is Paul's own spirit (m1), so it is \"灵\", not \"圣灵\"; \"心思\" is the plain word for the mind that understands and thinks (m2).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4178,6 +5241,26 @@
           "L": "Что же тогда?",
           "B": "Что же из этого следует?",
           "R": "Так что же я буду делать?"
+        },
+        "uk": {
+          "L": "Що ж тоді?",
+          "B": "Що ж із цього випливає?",
+          "R": "Тож що я робитиму?"
+        },
+        "ja": {
+          "L": "では、どうなのでしょうか？",
+          "B": "では、どうすればよいのでしょうか？",
+          "R": "では、わたしはどうするのでしょうか？"
+        },
+        "id": {
+          "L": "Jadi bagaimana?",
+          "B": "Lalu apa kesimpulannya?",
+          "R": "Jadi, apa yang akan saya lakukan?"
+        },
+        "zh": {
+          "L": "那么怎样呢？",
+          "B": "那么，结论是什么呢？",
+          "R": "那么，我要怎么做呢？"
         }
       },
       "decisions": [
@@ -4216,6 +5299,27 @@
             "What then is it?"
           ],
           "reason": "Balanced gives the sense of the question; Readable puts it in terms of what Paul will do, which the next sentence answers.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46014015001",
+            "n46014015002",
+            "n46014015003"
+          ],
+          "choice": "那么怎样呢？",
+          "alternatives": [
+            "那么，这是什么呢？"
+          ],
+          "reason": "Literal uses the form settled in Romans for \"What then?\"; Balanced and Readable give the sense, as the English does.",
           "uncertain": false,
           "footnote": false
         }
@@ -4301,6 +5405,26 @@
           "L": "Буду молиться духом, буду молиться и умом; буду петь хвалу духом, буду петь хвалу и умом.",
           "B": "Я буду молиться духом и буду молиться также умом. Я буду петь хвалу духом и буду петь хвалу также умом.",
           "R": "Я буду молиться своим духом, на языках, и буду молиться умом, словами, которые понимаю. Я буду петь своим духом, на языках, и буду петь умом, словами, которые понимаю."
+        },
+        "uk": {
+          "L": "Молитимуся духом, молитимуся ж і розумом; співатиму духом, співатиму ж і розумом;",
+          "B": "Я молитимуся духом і молитимуся також розумом. Я співатиму хвалу духом і співатиму хвалу також розумом.",
+          "R": "Я молитимуся своїм духом, мовами, і молитимуся також своїм розумом, словами, які я розумію. Я співатиму своїм духом, мовами, і співатиму також своїм розумом, словами, які я розумію."
+        },
+        "ja": {
+          "L": "わたしは霊で祈り、また知性でも祈ります。霊で賛美の歌を歌い、また知性でも賛美の歌を歌います。",
+          "B": "わたしは霊によって祈り、知性によっても祈ります。霊によって賛美を歌い、知性によっても賛美を歌います。",
+          "R": "わたしは、自分の霊によって異言で祈り、また、自分の理解する力によって、自分に分かる言葉でも祈ります。自分の霊によって異言で賛美を歌い、また、自分の理解する力によって、自分に分かる言葉でも歌います。"
+        },
+        "id": {
+          "L": "Aku akan berdoa dengan roh, tetapi aku akan berdoa juga dengan akal budi; aku akan bermazmur dengan roh, tetapi aku akan bermazmur juga dengan akal budi.",
+          "B": "Aku akan berdoa dengan rohku, dan aku akan berdoa juga dengan akal budiku. Aku akan menyanyikan pujian dengan rohku, dan aku akan menyanyikan pujian juga dengan akal budiku.",
+          "R": "Saya akan berdoa dengan roh saya, dalam bahasa roh, dan saya juga akan berdoa dengan pikiran saya, dengan kata-kata yang saya mengerti. Saya akan bernyanyi dengan roh saya, dalam bahasa roh, dan saya juga akan bernyanyi dengan pikiran saya, dengan kata-kata yang saya mengerti."
+        },
+        "zh": {
+          "L": "我会以灵祷告，但也会以心思祷告；我会以灵歌颂，但也会以心思歌颂。",
+          "B": "我要在灵里祷告，同时也用我的心思祷告。我要在灵里歌颂，同时也用我的心思歌颂。",
+          "R": "我会用我的灵，用方言祷告；我也会用我的头脑，用我明白的话祷告。我会用我的灵，用方言唱诗；我也会用我的头脑，用我明白的话唱诗。"
         }
       },
       "decisions": [
@@ -4509,6 +5633,26 @@
           "L": "Иначе, если ты благословляешь [Бога] духом, как занимающий место непосвящённого скажет «Аминь» на твоё благодарение?",
           "B": "Иначе, если ты благословляешь Бога духом, как тот, кто оказался на месте непосвящённого, скажет «Аминь» на твою благодарственную молитву?",
           "R": "Допустим, ты славишь Бога только своим духом. Человек, который не понимает, не сможет сказать «Аминь», чтобы согласиться с твоей благодарственной молитвой."
+        },
+        "uk": {
+          "L": "Бо інакше, якщо ти благословляєш [Бога] духом, то як той, хто займає місце непосвяченого, скаже «Амінь» на твою подяку?",
+          "B": "Інакше, якщо ти благословляєш Бога духом, як той, хто перебуває на місці непосвяченого, скаже «Амінь» на твою молитву подяки?",
+          "R": "Припустімо, ти хвалиш Бога лише своїм духом. Хтось там, хто не розуміє, не зможе сказати «Амінь», щоб погодитися з твоєю молитвою подяки."
+        },
+        "ja": {
+          "L": "そうでなければ、もしあなたが霊で[神を]ほめたたえるなら、事情を知らない人の立場にいる者は、あなたの感謝に対して、どうして「アーメン」と言うでしょうか？",
+          "B": "そうでないと、あなたが霊によって神をほめたたえても、事情を知らない人の立場にいる人は、あなたの感謝の祈りに、どうして「アーメン」と言えるでしょうか？",
+          "R": "もし、あなたが自分の霊だけで神を賛美したとしましょう。そこにいる人で、その言葉が分からない人は、あなたの感謝の祈りに心を合わせて、「アーメン」と言うことができません。"
+        },
+        "id": {
+          "L": "Sebab jika tidak demikian, jika engkau memuji [Allah] dengan roh, bagaimana orang yang menempati tempat orang awam dapat mengucapkan \"Amin\" atas ucapan syukurmu?",
+          "B": "Kalau tidak, jika engkau memuji Allah dengan rohmu, bagaimana orang yang berada di tempat orang awam dapat mengucapkan \"Amin\" atas doa syukurmu?",
+          "R": "Misalkan kamu memuji Allah hanya dengan rohmu. Orang yang ada di situ yang tidak mengerti tidak dapat mengucapkan \"Amin\" untuk menyetujui doa syukurmu."
+        },
+        "zh": {
+          "L": "不然，你若用灵称颂[{{god_term:神|上帝}}]，那占着局外人位置的人，怎能在你的感谢上说“阿们”呢？",
+          "B": "不然，你若在灵里称颂{{god_term:神|上帝}}，处在局外人位置上的人，怎能在你感恩的祷告之后说“阿们”呢？",
+          "R": "假设你只用你的灵赞美{{god_term:神|上帝}}，在场听不懂的人就没法说“阿们”来认同你感恩的祷告。"
         }
       },
       "decisions": [
@@ -4936,6 +6080,93 @@
           "reason": "The Synodal \"простолюдин\" now means a commoner. \"Непосвящённый\" says that the person stands outside what is happening, without deciding between the readings in meaning decision m3; Readable names the one thing certain, that the person does not understand. Paul speaks to one reader here, so Russian says \"ты\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46014016010"
+          ],
+          "choice": "непосвячений (L, B); той, хто не розуміє (R), for idiōtēs (14:16, 23-24)",
+          "alternatives": [
+            "невіглас",
+            "простий"
+          ],
+          "reason": "The Corinthians note has \"outsider\" at Literal and Balanced and \"someone who does not understand\" at Readable. \"Непосвячений\" is one outside a circle who does not share its knowledge (m3); \"невіглас\" is an insult.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46014016010"
+          ],
+          "choice": "\"事情を知らない人\" (L, B); \"その言葉が分からない人\" (R); also 14:23-24",
+          "alternatives": [
+            "\"部外者\"",
+            "\"素人\"",
+            "\"求道者\""
+          ],
+          "reason": "Someone in the gathering who cannot understand the tongue, perhaps not yet fully part of the church (m3, uncertain, footnoted); the wording leaves the second sense open.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n46014016004"
+          ],
+          "choice": "\"engkau\" (L, B), \"kamu\" (R) through 14:17; \"orang awam\" (L, B) for the outsider",
+          "alternatives": [
+            "\"kalian\""
+          ],
+          "reason": "The Greek has the singular \"you\" here, one worshiper praying aloud; the outsider (m3) is one who does not share the gift, \"orang awam\" in the sense of one without it.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46014016010"
+          ],
+          "choice": "局外人 (L, B); 听不懂的人 (R)",
+          "alternatives": [
+            "不通方言的人",
+            "初信的人"
+          ],
+          "reason": "\"局外人\" says that the person stands outside what is happening, without choosing between the readings in m3; Readable names the one thing certain, that the person does not understand.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5008,6 +6239,26 @@
           "L": "ведь [он] не знает, что ты говоришь.",
           "B": "Этот человек не имеет понятия, что ты говоришь.",
           "R": "Этот человек не знает, что ты говоришь."
+        },
+        "uk": {
+          "L": "бо [він] не знає, що ти кажеш.",
+          "B": "Ця людина гадки не має, що ти кажеш.",
+          "R": "Ця людина не знає, що ти кажеш."
+        },
+        "ja": {
+          "L": "あなたが何を言っているのか、[その人は]知らないからです。",
+          "B": "その人には、あなたが何を言っているのか、まったく分からないのです。",
+          "R": "その人には、あなたが何を言っているのかが分からないからです。"
+        },
+        "id": {
+          "L": "karena [orang itu] tidak mengetahui apa yang engkau katakan.",
+          "B": "Orang itu sama sekali tidak tahu apa yang engkau katakan.",
+          "R": "Orang itu tidak tahu apa yang kamu katakan."
+        },
+        "zh": {
+          "L": "因为[这局外人]不知道你在说什么。",
+          "B": "那人根本不知道你在说什么。",
+          "R": "那人不知道你在说什么。"
         }
       },
       "decisions": [
@@ -5120,6 +6371,26 @@
           "L": "Ты-то хорошо благодаришь, но другой не созидается.",
           "B": "Твоя благодарность, может быть, и хороша, но другого человека она не укрепляет.",
           "R": "Твоя благодарственная молитва, может быть, и хорошая, но другому человеку она не помогает становиться сильнее."
+        },
+        "uk": {
+          "L": "Бо ти добре дякуєш, але інший не будується.",
+          "B": "Твоя подяка, можливо, і добра, але вона нічим не будує іншої людини.",
+          "R": "Твоя молитва подяки, можливо, добра, але вона не допомагає іншій людині зміцніти."
+        },
+        "ja": {
+          "L": "あなたは確かに立派に感謝していますが、ほかの人は建て上げられません。",
+          "B": "あなたの感謝の祈りは立派でも、ほかの人を造り上げることにはなりません。",
+          "R": "あなたの感謝の祈りはよいものかもしれません。でも、ほかの人を強くすることにはならないのです。"
+        },
+        "id": {
+          "L": "Sebab engkau memang mengucap syukur dengan baik, tetapi orang lain itu tidak dibangun.",
+          "B": "Ucapan syukurmu mungkin baik, tetapi tidak membangun orang lain itu sama sekali.",
+          "R": "Doa syukurmu mungkin baik, tetapi tidak menolong orang lain itu menjadi lebih kuat."
+        },
+        "zh": {
+          "L": "你感谢得固然好，但别人却没有得到建立。",
+          "B": "你的感谢也许很好，但对别人却毫无建立。",
+          "R": "你感恩的祷告也许很好，可是它不能帮助别人成长得更坚强。"
         }
       },
       "decisions": [
@@ -5249,6 +6520,26 @@
           "L": "Благодарю Бога, больше всех вас говорю на языках;",
           "B": "Я благодарен Богу, что говорю на языках больше, чем каждый из вас.",
           "R": "Я говорю на языках больше любого из вас и благодарю за это Бога."
+        },
+        "uk": {
+          "L": "Дякую Богові, що говорю мовами більше за всіх вас;",
+          "B": "Я вдячний Богові, що говорю мовами більше, ніж будь-хто з вас.",
+          "R": "Я говорю мовами більше за будь-кого з вас, і я дякую за це Богові."
+        },
+        "ja": {
+          "L": "わたしは神に感謝します。わたしはあなたがたのだれよりも多く異言で語っています。",
+          "B": "わたしは、あなたがたのだれよりも多く異言で語っていることを、神に感謝しています。",
+          "R": "わたしは、みなさんのだれよりもたくさん異言で話します。そして、そのことを神に感謝しています。"
+        },
+        "id": {
+          "L": "Aku mengucap syukur kepada Allah, aku berbicara dalam bahasa roh lebih dari kalian semua;",
+          "B": "Aku bersyukur kepada Allah bahwa aku berbicara dalam bahasa roh lebih dari kalian semua.",
+          "R": "Saya berbicara dalam bahasa roh lebih banyak daripada kalian semua, dan saya bersyukur kepada Allah untuk hal itu."
+        },
+        "zh": {
+          "L": "我感谢{{god_term:神|上帝}}，我说方言比你们众人都多；",
+          "B": "我感谢{{god_term:神|上帝}}，因为我说方言比你们每一个人都多。",
+          "R": "我说方言比你们任何人都多，我为这事感谢{{god_term:神|上帝}}。"
         }
       },
       "decisions": [
@@ -5437,6 +6728,26 @@
           "L": "Но в церкви хочу лучше пять слов сказать умом моим, чтобы и других наставить, чем 10 000 слов на языке.",
           "B": "Но на собрании церкви я лучше скажу пять слов умом, чтобы научить и других, чем тысячи и тысячи слов на языке.",
           "R": "Но на собрании церкви я лучше скажу пять слов, которые понимаю сам, чтобы и другие могли научиться, чем тысячи слов на языках."
+        },
+        "uk": {
+          "L": "але в церкві хочу сказати пʼять слів своїм розумом, щоб і інших навчити, ніж десять тисяч слів мовою.",
+          "B": "Але коли збирається церква, я радше скажу пʼять слів своїм розумом, щоб навчити й інших, ніж тисячі й тисячі слів мовою.",
+          "R": "Але коли церква збирається разом, я волію сказати пʼять слів, які я розумію, щоб інші теж могли з них навчитися, ніж тисячі слів мовами."
+        },
+        "ja": {
+          "L": "しかし、教会では、異言で一万の言葉を[語る]よりも、ほかの人たちをも教えるために、わたしの知性で五つの言葉を語りたいのです。",
+          "B": "しかし、教会の集まりでは、異言で何千何万という言葉を語るよりも、ほかの人たちを教えるために、自分の知性で五つの言葉を語るほうを選びます。",
+          "R": "でも、教会の集まりでは、異言で何千もの言葉を話すよりも、自分に分かる言葉を五つだけ話して、ほかの人たちも学べるようにしたいのです。"
+        },
+        "id": {
+          "L": "Tetapi dalam jemaat aku lebih suka mengucapkan lima kata dengan akal budiku, supaya aku juga mengajar orang lain, daripada sepuluh ribu kata dalam bahasa roh.",
+          "B": "Tetapi apabila jemaat berkumpul, aku lebih suka mengucapkan lima kata dengan akal budiku, supaya aku juga mengajar orang lain, daripada beribu-ribu kata dalam bahasa roh.",
+          "R": "Tetapi ketika jemaat berkumpul, saya lebih suka mengucapkan lima kata yang saya mengerti, supaya orang lain juga dapat belajar dari kata-kata itu, daripada ribuan kata dalam bahasa roh."
+        },
+        "zh": {
+          "L": "但在教会里，我宁愿用我的心思说五句话，好使我也教导别人，强过用方言说一万句话。",
+          "B": "但在教会聚会的时候，我宁可用我的心思说五句话去教导别人，也不愿用方言说千千万万句话。",
+          "R": "但在教会聚会的时候，我宁愿说五句我自己明白的话，好让别人也能从中学到东西，也不愿用方言说成千上万句话。"
         }
       },
       "decisions": [
@@ -5577,6 +6888,47 @@
           "reason": "Written in words, as the Portuguese style guide writes round numbers in running text; the English Literal writes the figure.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n46014019016"
+          ],
+          "choice": "The \"than ten thousand words\" comparison comes first",
+          "alternatives": [
+            "comparison last, as in the Greek"
+          ],
+          "reason": "Japanese states what is passed over before what is preferred (〜よりも); \"一万\" (L) in kanji numerals, \"何千何万\" (B) for a number too great to count (m4).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46014019016"
+          ],
+          "choice": "一万 (L); 千千万万 (B); 成千上万 (R)",
+          "alternatives": [
+            "10000"
+          ],
+          "reason": "Literal keeps the number, in Chinese numerals as counts are written; Balanced and Readable give its sense, a number too great to count (m4).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5659,6 +7011,26 @@
           "L": "{{gender:Братья и сёстры|Братья}}, не будьте детьми умом, но во зле будьте младенцами, а умом будьте зрелыми.",
           "B": "{{gender:Братья и сёстры|Братья}}, не рассуждайте как дети. Во зле будьте младенцами, а в понимании будьте взрослыми.",
           "R": "{{gender:Братья и сёстры|Братья}}, перестаньте думать как маленькие дети. Когда речь идёт о плохих делах, будьте как младенцы, которые ничего о них не знают. Но в том, как вы думаете, будьте взрослыми."
+        },
+        "uk": {
+          "L": "{{gender:Брати і сестри|Брати}}, не будьте дітьми розумом, але на зло будьте немовлятами, а розумом ставайте досконалими.",
+          "B": "{{gender:Брати і сестри|Брати}}, не думайте, як діти. У тому, що стосується зла, будьте немовлятами, а розумінням будьте дорослими.",
+          "R": "{{gender:Брати і сестри|Брати}}, годі думати, як малі діти. Коли йдеться про те, щоб чинити зло, будьте як немовлята, які нічого про нього не знають. Але у своєму мисленні будьте дорослими."
+        },
+        "ja": {
+          "L": "{{gender:きょうだいたち|兄弟たち}}、考え方において子どもになってはいけません。むしろ、悪においては幼子でありなさい。しかし、考え方においては成熟した者になりなさい。",
+          "B": "{{gender:きょうだいたち|兄弟たち}}、子どものような考え方をしてはいけません。悪いことについては赤ん坊のようでありなさい。しかし、物事を理解することにおいては大人になりなさい。",
+          "R": "{{gender:きょうだいたち|兄弟たち}}、小さな子どものような考え方は、もうやめてください。悪いことをすることについては、何も知らない赤ちゃんのようでいてください。でも、考え方においては、大人になってください。"
+        },
+        "id": {
+          "L": "Saudara-saudara, janganlah menjadi anak-anak dalam pemikiran kalian; sebaliknya, dalam kejahatan jadilah bayi, tetapi dalam pemikiran kalian jadilah dewasa.",
+          "B": "Saudara-saudara, janganlah berpikir seperti anak-anak. Dalam hal kejahatan jadilah seperti bayi, tetapi dalam pengertian jadilah orang dewasa.",
+          "R": "Saudara-saudara, berhentilah berpikir seperti anak kecil. Dalam hal berbuat jahat, jadilah seperti bayi yang tidak tahu apa-apa tentang hal itu. Tetapi dalam cara berpikir, jadilah orang dewasa."
+        },
+        "zh": {
+          "L": "{{gender:弟兄姐妹|弟兄}}们，不要在思想上成为孩童；而在邪恶上要像婴儿，在思想上要成为成熟的人。",
+          "B": "{{gender:弟兄姐妹|弟兄}}们，不要像小孩子那样思考。至于恶事，你们要像婴儿一样；至于理解力，你们要像成年人。",
+          "R": "{{gender:弟兄姐妹|弟兄}}们，不要再像小孩子那样想事情了。说到做坏事，你们要像对它一无所知的婴儿。但在思想方面，你们要做成年人。"
         }
       },
       "decisions": [
@@ -5787,6 +7159,27 @@
           "reason": "The meaning decision ties the word to \"the mature\" of 2:6; Literal keeps the same Korean word.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46014020003",
+            "n46014020010",
+            "n46014020014"
+          ],
+          "choice": "досконалі",
+          "alternatives": [
+            "дорослі"
+          ],
+          "reason": "The Greek word is teleioi, as in 2:6, so Literal keeps \"досконалі\" from there; Balanced and Readable say \"grown up\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5876,6 +7269,26 @@
           "L": "В Законе написано: «Иноязычными и устами иных буду говорить этому народу, и даже так не послушают {{deity_pronoun:меня|Меня}}, говорит Господь.»",
           "B": "В Законе написано: «Через говорящих на других языках и через уста чужеземцев {{deity_pronoun:я|Я}} буду говорить этому народу, но и тогда они не послушают {{deity_pronoun:меня|Меня}}, говорит Господь.»",
           "R": "В Законе, то есть в записанном Слове Бога, Господь говорит: «Я буду говорить этому народу через чужеземцев, которые говорят на других языках. Но они всё равно не послушают {{deity_pronoun:меня|Меня}}.»"
+        },
+        "uk": {
+          "L": "У Законі написано: «Іншомовними і устами чужих говоритиму цьому народові, і навіть так не послухають {{deity_pronoun:мене|Мене}}, каже Господь».",
+          "B": "У Законі написано: «Через тих, хто говорить іншими мовами, і через уста чужинців говоритиму цьому народові, і навіть тоді вони не послухаються {{deity_pronoun:мене|Мене}}, каже Господь».",
+          "R": "У Законі, Божому записаному слові, Господь каже: «Я говоритиму цьому народові через чужинців, які говорять іншими мовами. Але вони все одно не слухатимуть {{deity_pronoun:мене|Мене}}»."
+        },
+        "ja": {
+          "L": "律法にこう書かれています。「異なる舌の者たちによって、また、ほかの者たちの唇によって、わたしはこの民に語る。しかし、そうしても、彼らはわたしに聞き従わないと、主は言う。」",
+          "B": "律法にこう書かれています。「ほかの言葉を話す人々を通して、また、よそ者の唇を通して、わたしはこの民に語る。しかし、そのときでさえ、彼らはわたしに耳を傾けないと、主は言う。」",
+          "R": "神の言葉が書かれている律法の中で、主はこう言っておられます。「わたしは、ほかの言葉を話す外国の人たちを通して、この民に語る。それでも、彼らはわたしの言うことを聞かない。」"
+        },
+        "id": {
+          "L": "Dalam hukum Taurat ada tertulis, \"Oleh [orang-orang yang berbahasa] lain dan oleh bibir orang-orang lain {{deity_pronoun:aku|Aku}} akan berbicara kepada bangsa ini, dan sekalipun demikian mereka tidak akan mendengarkan {{deity_pronoun:aku|Aku}}, firman Tuhan.\"",
+          "B": "Ada tertulis dalam hukum Taurat: \"Melalui orang-orang yang berbicara dalam bahasa lain, dan melalui bibir orang-orang asing, {{deity_pronoun:aku|Aku}} akan berbicara kepada bangsa ini; tetapi sekalipun demikian mereka tidak akan mendengarkan {{deity_pronoun:aku|Aku}}, firman Tuhan.\"",
+          "R": "Dalam hukum Taurat, yaitu firman Allah yang tertulis, Tuhan berkata, \"Aku akan berbicara kepada bangsa ini melalui orang-orang asing yang berbicara dalam bahasa lain. Tetapi mereka tetap tidak akan mendengarkan {{deity_pronoun:aku|Aku}}.\""
+        },
+        "zh": {
+          "L": "律法上写着：“我要借着说别种语言的人，借着别人的嘴唇，向这百姓说话；即使这样，他们也不会听从我，主这样说。”",
+          "B": "律法上写着：“我要借着说外族语言的人，借着外人的嘴唇，向这百姓说话；即使那样，他们也不会听我的，主说。”",
+          "R": "在律法，就是{{god_term:神|上帝}}写下来的话里，主说：“我要借着说其他语言的外族人，向这百姓说话。可是他们仍然不会听我的。”"
         }
       },
       "decisions": [
@@ -6261,6 +7674,154 @@
           "reason": "God speaks of himself, so the pronoun takes the deity_pronoun setting as in the English. So does \"я\" mid-sentence in Balanced; in Readable the quotation opens with \"Я\", written plainly at the start of the sentence.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46014021021",
+            "n46014021022"
+          ],
+          "choice": "Господь, with no divine_name span",
+          "alternatives": [
+            "ГОСПОДЬ"
+          ],
+          "reason": "Isaiah has the divine name behind \"Lord\" (m3); Paul quotes it in Greek, and in the New Testament it stays \"Господь\", as in 1:31.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-2",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46014021003"
+          ],
+          "choice": "Закон, with a capital, for the Scriptures as a whole",
+          "alternatives": [
+            "Писання"
+          ],
+          "reason": "Paul calls Isaiah \"the law\" (m2); Ukrainian keeps his word, \"Закон\", as the Readable explains.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n46014021022"
+          ],
+          "choice": "The quotation in plain style (\"語る\", \"主は言う\"); R's frame uses the respect form \"言っておられます\"; \"わたし\" with no deity_pronoun span",
+          "alternatives": [
+            "\"主は言われる\" inside the quotation"
+          ],
+          "reason": "Quoted Scripture stays plain (style 4); God's own speech uses \"わたし\" and Japanese has no capital letters (style 7).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46014021003",
+            "n46014021021",
+            "n46014021022"
+          ],
+          "choice": "\"hukum Taurat\" for the Scriptures as a whole; \"firman Tuhan\" with no divine_name span",
+          "alternatives": [],
+          "reason": "The Greek has \"the law\" for Isaiah (m2) and kyrios, so \"Tuhan\", as the style guide sets for New Testament quotations; God's \"Aku\" takes the deity_pronoun span.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46014021022"
+          ],
+          "choice": "主",
+          "alternatives": [
+            "{{divine_name:上主|雅威}}"
+          ],
+          "reason": "Paul quotes Isaiah 28:11-12 with the Greek word \"Lord\", so Chinese writes \"主\"; the divine name stands behind it in Isaiah (m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n46014021020"
+          ],
+          "choice": "我, with no deity_pronoun span",
+          "alternatives": [
+            "a reverent form of 我"
+          ],
+          "reason": "The English spans \"me\" (Me) where God speaks of himself. Chinese has no reverent form of the first person, so \"我\" takes no span.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-3",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46014021007"
+          ],
+          "choice": "说别种语言的人 (L), 说外族语言的人 (B), 说其他语言的外族人 (R)",
+          "alternatives": [
+            "说别种方言的人"
+          ],
+          "reason": "In Isaiah the \"other tongues\" are foreign languages (m4), so Chinese says \"语言\", as for the \"other tongues\" of Acts 2:4; \"方言\" would sound like a dialect. The link with the gift of tongues in verse 22 is carried by the Greek word, not the Chinese one.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6349,6 +7910,26 @@
           "L": "Так что языки служат знамением не для верующих, а для неверующих, пророчество же — не для неверующих, а для верующих.",
           "B": "Итак, языки служат знамением, но это знамение для неверующих, а не для верующих. А пророчество — для верующих, а не для неверующих.",
           "R": "Поэтому говорение на языках — знак для людей, которые не верят, а не для верующих. А пророчество — для верующих, а не для тех, кто не верит."
+        },
+        "uk": {
+          "L": "Тож мови є на знак не для тих, хто вірує, а для невіруючих; а пророцтво не для невіруючих, а для тих, хто вірує.",
+          "B": "Тож мови є знаком, але знаком для невіруючих, а не для тих, хто вірує. А пророцтво, навпаки, для тих, хто вірує, а не для невіруючих.",
+          "R": "Тож говоріння мовами — знак для людей, які не вірують, а не для віруючих. А пророцтво — для віруючих, а не для людей, які не вірують."
+        },
+        "ja": {
+          "L": "こういうわけで、異言は、信じている者たちのためではなく、信仰のない者たちのためのしるしであり、預言は、信仰のない者たちのためではなく、信じている者たちのためのものです。",
+          "B": "ですから、異言はしるしとして役立ちますが、それは信仰のない人たちのためのしるしで、信じている人たちのためではありません。一方、預言は信じている人たちのためのもので、信仰のない人たちのためではありません。",
+          "R": "ですから、異言で話すことは、イエスを信じていない人たちへのしるしであって、信じている人たちへのしるしではありません。でも、預言は、信じている人たちのためのもので、信じていない人たちのためのものではありません。"
+        },
+        "id": {
+          "L": "Jadi bahasa roh adalah tanda, bukan bagi orang-orang yang percaya, tetapi bagi orang-orang yang tidak percaya; tetapi nubuat [adalah tanda] bukan bagi orang-orang yang tidak percaya, tetapi bagi orang-orang yang percaya.",
+          "B": "Jadi bahasa roh berfungsi sebagai tanda, tetapi tanda itu bagi orang-orang yang tidak percaya, bukan bagi mereka yang percaya. Sebaliknya, nubuat adalah bagi mereka yang percaya, bukan bagi orang-orang yang tidak percaya.",
+          "R": "Jadi berbicara dalam bahasa roh adalah tanda bagi orang-orang yang tidak percaya, bukan bagi orang-orang yang percaya. Tetapi nubuat adalah bagi orang-orang yang percaya, bukan bagi orang-orang yang tidak percaya."
+        },
+        "zh": {
+          "L": "这样看来，方言是作为记号，不是给信的人，而是给不信的人；预言却不是给不信的人，而是给信的人。",
+          "B": "所以，方言作为一个记号，是给不信的人的，不是给信的人的；而预言是给信的人的，不是给不信的人的。",
+          "R": "所以，说方言是给不信的人的一个记号，不是给信的人的。但预言是给信的人的，不是给不信的人的。"
         }
       },
       "decisions": [
@@ -6606,6 +8187,50 @@
           "reason": "As settled in John: \"знамение\" at Literal and Balanced, \"знак\" at Readable, never \"чудо\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46014022012"
+          ],
+          "choice": "\"信仰のない者/人たち\" (L, B); \"イエスを信じていない人たち\" (R)",
+          "alternatives": [
+            "\"不信者\"",
+            "\"未信者\""
+          ],
+          "reason": "People who do not believe in Christ (m4); the same wording as 10:27.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46014022005"
+          ],
+          "choice": "记号",
+          "alternatives": [
+            "神迹",
+            "标志"
+          ],
+          "reason": "A sign that points to something, here a sign of judgment (m2); \"神迹\" would suggest a miracle.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6695,6 +8320,26 @@
           "L": "Итак, если вся церковь соберётся вместе и все будут говорить на языках, а войдут непосвящённые или неверующие, не скажут ли они: «Вы безумствуете»?",
           "B": "Представьте, что вся церковь собралась в одном месте и все говорят на языках. Если войдут непосвящённые или неверующие, разве они не скажут, что вы сошли с ума?",
           "R": "Представьте, что вся церковь собралась вместе и все говорят на языках. А потом входят люди, которые не понимают или не верят. Они скажут, что вы сошли с ума!"
+        },
+        "uk": {
+          "L": "Тож якщо збереться вся церква разом і всі говоритимуть мовами, а ввійдуть непосвячені чи невіруючі, хіба не скажуть: «Ви шаленієте»?",
+          "B": "Уявіть, що вся церква зібралася в одному місці і всі говорять мовами. Якщо ввійдуть непосвячені чи невіруючі, хіба вони не скажуть, що ви збожеволіли?",
+          "R": "Уявіть, що вся церква збирається разом і всі говорять мовами. Потім заходять люди, які не розуміють, або ті, хто не вірує. Вони скажуть, що ви втратили розум!"
+        },
+        "ja": {
+          "L": "ですから、もし教会全体が同じ[場所]に集まり、皆が異言で語っているところに、事情を知らない人か信仰のない人が入って来たら、その人たちは「あなたがたは正気でない」と言わないでしょうか？",
+          "B": "教会全体が一か所に集まって、皆が異言で語っているとしましょう。そこへ事情を知らない人や信仰のない人が入って来たら、あなたがたは気が変になっていると言うのではないでしょうか？",
+          "R": "教会全体が集まって、みんなが異言で話していると考えてみてください。そこへ、よく分かっていない人や、イエスを信じていない人が入って来ます。その人たちは、みなさんの頭がおかしくなったと言うでしょう。"
+        },
+        "id": {
+          "L": "Jadi jika seluruh jemaat berkumpul di satu tempat dan semuanya berbicara dalam bahasa roh, lalu masuklah orang-orang awam atau orang-orang yang tidak percaya, bukankah mereka akan berkata, \"Kalian gila\"?",
+          "B": "Bayangkan seluruh jemaat berkumpul di satu tempat, dan semua orang berbicara dalam bahasa roh. Jika orang-orang awam atau orang-orang yang tidak percaya masuk, bukankah mereka akan berkata bahwa kalian sudah gila?",
+          "R": "Bayangkan seluruh jemaat berkumpul dan semua orang berbicara dalam bahasa roh. Lalu masuklah beberapa orang yang tidak mengerti, atau yang tidak percaya. Mereka akan berkata bahwa kalian sudah tidak waras!"
+        },
+        "zh": {
+          "L": "所以，若全教会聚集在同一个[地方]，大家都说方言，而有局外人或不信的人进来，他们不会说“你们在发狂”吗？",
+          "B": "试想全教会聚集在一处，每个人都在说方言。这时若有局外人或不信的人走进来，他们不会说你们疯了吗？",
+          "R": "想象一下，全教会聚在一起，每个人都在说方言。这时有一些听不懂的人，或是不信的人进来。他们一定会说你们都疯了！"
         }
       },
       "decisions": [
@@ -6914,6 +8559,26 @@
           "L": "Если же все пророчествуют и войдёт какой-нибудь неверующий или непосвящённый, он обличается всеми, он испытывается всеми, \\v 25 тайны его сердца становятся явными, и так, пав на лицо, он поклонится Богу, возвещая: «Истинно Бог среди вас.»",
           "B": "Но если все пророчествуют и входит какой-нибудь неверующий или непосвящённый, то слова всех обличают его, и слова всех испытывают его. \\v 25 Тайны его сердца выходят наружу, и он падёт ниц, поклонится Богу и скажет: «Бог действительно среди вас!»",
           "R": "Но представьте, что все пророчествуют, и тут входит неверующий или человек, который не понимает. То, что все говорят, покажет ему его грех и заставит его внимательно посмотреть на свою жизнь. \\v 25 Тайное в его сердце выйдет наружу. Тогда он поклонится до земли и будет славить Бога. Он скажет: «Бог правда здесь, среди вас!»"
+        },
+        "uk": {
+          "L": "А якщо всі пророкуватимуть, а ввійде якийсь невіруючий чи непосвячений, його викривають усі, його досліджують усі; \\v 25 таємниці його серця стають явні, і так, упавши на обличчя, він поклониться Богові, проголошуючи: «Справді Бог між вами».",
+          "B": "Але якщо всі пророкують, а входить якийсь невіруючий чи непосвячений, то сказане всіма викриває його і сказане всіма досліджує його. \\v 25 Таємниці його серця виходять на світло, і так він упаде ниць і поклониться Богові, проголошуючи: «Бог справді серед вас!»",
+          "R": "Але припустімо, усі пророкують, коли заходить невіруючий або хтось, хто не розуміє. Те, що всі кажуть, покаже йому його гріх і змусить його уважно подивитися на своє життя. \\v 25 Таємне в його серці вийде на світло. Тоді він схилиться обличчям до землі і поклониться Богові. Він скаже: «Бог справді тут, серед вас!»"
+        },
+        "ja": {
+          "L": "しかし、皆が預言しているところに、だれか信仰のない人か事情を知らない人が入って来るなら、その人は皆によって罪を指摘され、皆によって吟味され、\\v 25 その人の心の秘密があらわになります。こうして、その人はひれ伏して神を礼拝し、「本当に、神はあなたがたの間におられる」と言い表すでしょう。",
+          "B": "しかし、皆が預言しているところに、信仰のない人や事情を知らない人が入って来れば、その人は皆の語ることによって罪を示され、皆の語ることによって吟味されます。\\v 25 そして、心に秘めていたことが明るみに出され、ひれ伏して神を礼拝し、「神は本当にあなたがたの中におられます」と告白するでしょう。",
+          "R": "でも、みんなが預言しているところに、イエスを信じていない人や、よく分かっていない人が入って来たとしましょう。みんなの語る言葉が、その人に自分の罪を気づかせ、自分の生き方をよく見つめさせるでしょう。\\v 25 その人が心の中に隠していたことが、明るみに出されます。そして、その人は地面に顔をつけてひれ伏し、神を礼拝するでしょう。そして、「神は本当にここに、みなさんの中におられます」と言うでしょう。"
+        },
+        "id": {
+          "L": "Tetapi jika semuanya bernubuat, dan seorang yang tidak percaya atau orang awam masuk, ia diyakinkan oleh semua, ia diselidiki oleh semua; \\v 25 rahasia-rahasia hatinya menjadi nyata, dan demikianlah, sambil sujud dengan mukanya ke tanah, ia akan menyembah Allah, sambil menyatakan, \"Sungguh, Allah ada di antara kalian.\"",
+          "B": "Tetapi jika semua orang bernubuat, lalu seorang yang tidak percaya atau orang awam masuk, ia diinsafkan oleh apa yang dikatakan semua orang dan diperiksa oleh apa yang dikatakan semua orang. \\v 25 Rahasia-rahasia hatinya terbuka, dan karena itu ia akan sujud dan menyembah Allah, sambil berkata, \"Allah sungguh-sungguh ada di antara kalian!\"",
+          "R": "Tetapi misalkan semua orang sedang bernubuat ketika seorang yang tidak percaya atau seorang yang tidak mengerti masuk. Apa yang dikatakan semua orang akan menunjukkan dosanya kepadanya dan membuatnya memeriksa hidupnya baik-baik. \\v 25 Hal-hal yang tersembunyi di dalam hatinya akan terbuka. Lalu dia akan bersujud ke tanah dan menyembah Allah. Dia akan berkata, \"Allah benar-benar ada di sini di antara kalian!\""
+        },
+        "zh": {
+          "L": "但若所有人都说预言，又有一个不信的人或局外人进来，这人就被众人指出罪来，被众人审察，\\v 25 这人心里的隐秘就显露出来，于是这人就会脸伏于地，敬拜{{god_term:神|上帝}}，宣告说：“{{god_term:神|上帝}}真的在你们中间。”",
+          "B": "但如果每个人都在说预言，这时有一个不信的人或局外人进来，众人所说的话会使这人知罪，也会审察这人。\\v 25 这人心里隐藏的事被显露出来，于是就会俯伏在地敬拜{{god_term:神|上帝}}，宣告说：“{{god_term:神|上帝}}真的在你们中间！”",
+          "R": "但是假设每个人都在说预言，这时有一个不信的人，或是一个听不懂的人进来。大家所说的话会让这人看见自己的罪，使这人认真察看自己的生活。\\v 25 这人心里隐藏的事会被揭露出来。于是这人会跪下，脸贴着地，敬拜{{god_term:神|上帝}}。这人会说：“{{god_term:神|上帝}}真的在这里，在你们中间！”"
         }
       },
       "decisions": [
@@ -7281,6 +8946,93 @@
           "reason": "The English has gender spans on the pronouns for this person. Russian \"неверующий\" and its masculine pronouns are the generic form that covers men and women, as in Romans 14 and verse 4 here, so Russian has no setting.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n46014024007",
+            "n46014024008",
+            "n46014024009",
+            "n46014024010"
+          ],
+          "choice": "він, його for the visitor, with no gender span",
+          "alternatives": [
+            "{{gender:її|його}}"
+          ],
+          "reason": "The English offers \"they|he\". Ukrainian has no gender-free singular pronoun, and \"невіруючий, непосвячений\" are generic masculines heard as anyone; a span \"її|його\" would make the default a woman only, so there is no span, as in 8:10.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n46014024011"
+          ],
+          "choice": "\"その人\" with no gender spans",
+          "alternatives": [
+            "gender spans as in the English they/he"
+          ],
+          "reason": "Japanese leaves the pronoun out or says \"その人\", which is already inclusive (style 7a).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n46014024007"
+          ],
+          "choice": "这人, with no gender span",
+          "alternatives": [
+            "{{gender:他们|他}}"
+          ],
+          "reason": "The English spans the pronouns for this person, who may be a man or a woman. Chinese says \"这人\", which is already inclusive, so no span is needed.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46014025010",
+            "n46014025011",
+            "n46014025012"
+          ],
+          "choice": "脸伏于地 (L); 俯伏在地 (B); 跪下，脸贴着地 (R)",
+          "alternatives": [],
+          "reason": "The glossary's formula for falling on one's face, the posture of worship (m4).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -7352,6 +9104,26 @@
           "L": "Что же тогда, {{gender:братья и сёстры|братья}}?",
           "B": "Что же из этого следует, {{gender:братья и сёстры|братья}}?",
           "R": "Так что всё это значит для вас, {{gender:братья и сёстры|братья}}?"
+        },
+        "uk": {
+          "L": "Що ж тоді, {{gender:брати і сестри|брати}}?",
+          "B": "Що ж із цього випливає, {{gender:брати і сестри|брати}}?",
+          "R": "Тож що все це означає для вас, {{gender:брати і сестри|брати}}?"
+        },
+        "ja": {
+          "L": "{{gender:きょうだいたち|兄弟たち}}、では、どうなのでしょうか？",
+          "B": "{{gender:きょうだいたち|兄弟たち}}、では、どうすればよいのでしょうか？",
+          "R": "{{gender:きょうだいたち|兄弟たち}}、では、これはみなさんにとって、どういうことなのでしょうか？"
+        },
+        "id": {
+          "L": "Jadi bagaimana, saudara-saudara?",
+          "B": "Lalu apa kesimpulannya, saudara-saudara?",
+          "R": "Jadi, apa artinya semua ini bagi kalian, saudara-saudara?"
+        },
+        "zh": {
+          "L": "那么怎样呢，{{gender:弟兄姐妹|弟兄}}们？",
+          "B": "那么，{{gender:弟兄姐妹|弟兄}}们，结论是什么呢？",
+          "R": "{{gender:弟兄姐妹|弟兄}}们，那么这一切对你们有什么意义呢？"
         }
       },
       "decisions": [
@@ -7390,6 +9162,27 @@
             "What then is it?"
           ],
           "reason": "As in verse 15, Balanced and Readable give the sense of the question.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n46014026004"
+          ],
+          "choice": "The address \"きょうだいたち/兄弟たち\" comes first",
+          "alternatives": [
+            "the address after the question, as in the Greek"
+          ],
+          "reason": "Japanese puts an address at the start of the sentence (style 7a).",
           "uncertain": false,
           "footnote": false
         }
@@ -7476,6 +9269,26 @@
           "L": "Когда вы собираетесь, у каждого есть псалом, есть учение, есть откровение, есть язык, есть истолкование; всё пусть будет для созидания.",
           "B": "Когда вы собираетесь, у каждого из вас что-то есть: псалом, учение, откровение, язык, истолкование. Всё должно делаться для того, чтобы укреплять церковь.",
           "R": "Когда вы собираетесь вместе, каждому из вас есть чем поделиться. У одного песня хвалы Богу. У другого — учение или откровение от Бога. Другой говорит на языке, а ещё кто-то объясняет сказанное. Всё, что вы делаете, должно помогать церкви становиться сильнее."
+        },
+        "uk": {
+          "L": "Коли сходитеся, кожен має псалом, має навчання, має обʼявлення, має мову, має тлумачення; нехай усе буде на збудування.",
+          "B": "Коли ви збираєтеся, кожен із вас щось має: псалом, навчання, обʼявлення, мову, тлумачення. Усе має робитися для того, щоб будувати церкву.",
+          "R": "Коли ви збираєтеся разом, кожен із вас має чим поділитися. Одна людина має пісню хвали. Інша — навчання чи обʼявлення від Бога. Інша говорить мовою, а ще інша тлумачить її. Усе, що ви робите, має допомагати церкві зміцніти."
+        },
+        "ja": {
+          "L": "あなたがたが集まるときには、それぞれが賛美の歌を持ち、教えを持ち、啓示を持ち、異言を持ち、解き明かしを持っています。すべてのことを、建て上げのために行いなさい。",
+          "B": "あなたがたが集まるときには、一人一人が何かを持っています。賛美の歌、教え、啓示、異言、異言の解き明かしなどです。すべてを、教会を造り上げるために行いなさい。",
+          "R": "みなさんが集まるときには、一人一人が、何か分かち合うものを持っています。ある人は賛美の歌を、ある人は教えや神から示されたことを持っています。ある人は異言で話し、ほかの人はその意味を説明します。みなさんがすることは何でも、教会を強くするものでなければなりません。"
+        },
+        "id": {
+          "L": "Apabila kalian berkumpul, masing-masing mempunyai mazmur, mempunyai pengajaran, mempunyai penyataan, mempunyai bahasa roh, mempunyai penafsiran; hendaklah semuanya dilakukan untuk membangun.",
+          "B": "Apabila kalian berkumpul, masing-masing kalian membawa sesuatu: mazmur, pengajaran, penyataan, bahasa roh, penafsiran. Semuanya harus dilakukan untuk membangun jemaat.",
+          "R": "Kalau kalian berkumpul, masing-masing kalian mempunyai sesuatu untuk dibagikan. Ada yang membawa nyanyian pujian. Yang lain membawa pengajaran, atau penyataan dari Allah. Yang lain berbicara dalam bahasa roh, dan yang lain menafsirkannya. Segala sesuatu yang kalian lakukan harus menolong jemaat menjadi lebih kuat."
+        },
+        "zh": {
+          "L": "每当你们聚集的时候，各人有诗篇，有教导，有启示，有方言，有翻译；一切都要为了建立而行。",
+          "B": "每当你们聚会，你们每个人都有可分享的：一首诗篇、一个教导、一个启示、一种方言、一个翻译。一切都应当为建立教会而做。",
+          "R": "你们聚会的时候，每个人都有可以分享的。有人有一首赞美的诗歌，有人有一个教导，或是从{{god_term:神|上帝}}来的启示。有人说方言，有人把它翻译出来。你们所做的一切，都必须帮助教会成长得更坚强。"
         }
       },
       "decisions": [
@@ -7682,6 +9495,27 @@
           "reason": "The meaning decision reads the word as a song of praise, a psalm of Scripture or a new song; \"시편\" would name only the book.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46014026008"
+          ],
+          "choice": "\"賛美の歌\" at every level",
+          "alternatives": [
+            "\"詩編\""
+          ],
+          "reason": "A song of praise to God, perhaps from Scripture or a new song (m3); \"詩編\" would point only to the first.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -7765,6 +9599,26 @@
           "L": "Если кто-то говорит на языке, [пусть говорят] по двое или самое большее по трое, и по очереди, а один пусть истолковывает;",
           "B": "Что касается говорения на языке, пусть говорят двое или самое большее трое, каждый в свою очередь, и пусть один истолковывает.",
           "R": "Если люди говорят на языках, то на одном собрании это должны делать только двое или трое. Пусть говорят по очереди, и один человек должен объяснить, что они сказали."
+        },
+        "uk": {
+          "L": "Якщо хтось говорить мовою, [нехай це будуть] двоє або щонайбільше троє, і по черзі, і один нехай тлумачить.",
+          "B": "Щодо говоріння мовою, нехай це роблять двоє або щонайбільше троє, кожен по черзі, і нехай одна людина тлумачить.",
+          "R": "Якщо люди говорять мовами, то на одному зібранні це мають робити лише двоє чи троє. Вони мають говорити по черзі, і хтось один мусить тлумачити те, що вони кажуть."
+        },
+        "ja": {
+          "L": "もし異言で語る人がいるなら、二人か、多くても三人で、順番に[語り]、一人が解き明かしなさい。",
+          "B": "異言で語る場合は、二人か、多くても三人が、順番に語り、一人がそれを解き明かすようにしなさい。",
+          "R": "異言で話す人がいるなら、一回の集まりで、二人か三人だけにしてください。順番に話し、一人がその意味を説明しなければなりません。"
+        },
+        "id": {
+          "L": "Jika ada yang berbicara dalam bahasa roh, [hendaklah] dua, atau paling banyak tiga orang, dan bergiliran; dan hendaklah seorang menafsirkannya.",
+          "B": "Tentang berbicara dalam bahasa roh, hendaklah dilakukan oleh dua orang, atau paling banyak tiga orang, masing-masing bergiliran, dan hendaklah seorang menafsirkannya.",
+          "R": "Kalau ada orang yang berbicara dalam bahasa roh, hanya dua atau tiga orang yang boleh melakukannya dalam satu pertemuan. Mereka harus bergiliran, dan satu orang harus menafsirkan apa yang mereka katakan."
+        },
+        "zh": {
+          "L": "若有人说方言，[只可]两个人，至多三个人，并且轮流说，还要有一个人翻译。",
+          "B": "至于说方言，应当由两个人，最多三个人来说，一个接一个地说，并且要有一个人翻译。",
+          "R": "如果有人说方言，每次聚会只能有两三个人说。他们要轮流说，还必须有一个人把他们所说的翻译出来。"
         }
       },
       "decisions": [
@@ -7923,6 +9777,26 @@
           "L": "Если же нет истолкователя, пусть молчит в церкви, а говорит себе и Богу.",
           "B": "Если нет никого, кто мог бы истолковать, говорящий должен молчать в церкви и говорить только себе и Богу.",
           "R": "Если на собрании нет никого, кто может объяснить, тем, кто говорит на языках, нужно молчать. Они могут тихо говорить сами с собой и с Богом."
+        },
+        "uk": {
+          "L": "А якщо немає тлумача, нехай мовчить у церкві, а говорить собі і Богові.",
+          "B": "Якщо немає кому тлумачити, мовець нехай мовчить у церкві і говорить лише сам до себе і до Бога.",
+          "R": "Якщо там немає нікого, хто може тлумачити, ті, хто говорить мовами, мають мовчати під час зібрання. Вони можуть тихо говорити самі до себе і до Бога."
+        },
+        "ja": {
+          "L": "しかし、もし解き明かす者がいないなら、教会では黙っていて、自分自身と神に向かって語りなさい。",
+          "B": "解き明かす人がいなければ、異言で語る人は教会では黙っていて、自分自身と神に対してだけ語りなさい。",
+          "R": "意味を説明できる人がいなければ、異言で話す人は、集まりの間は黙っていてください。自分自身と神に向かって、静かに話せばよいのです。"
+        },
+        "id": {
+          "L": "Tetapi jika tidak ada penafsir, hendaklah ia berdiam diri dalam jemaat, dan hendaklah ia berbicara kepada dirinya sendiri dan kepada Allah.",
+          "B": "Jika tidak ada yang dapat menafsirkan, orang yang berbicara itu hendaklah berdiam diri di dalam jemaat, dan berbicara hanya kepada dirinya sendiri dan kepada Allah.",
+          "R": "Kalau tidak ada orang yang dapat menafsirkan, orang-orang yang berbicara dalam bahasa roh harus diam selama pertemuan. Mereka dapat berbicara pelan-pelan kepada diri mereka sendiri dan kepada Allah."
+        },
+        "zh": {
+          "L": "若没有翻译的人，就当在教会中静默，只对自己和{{god_term:神|上帝}}说话。",
+          "B": "如果没有人能翻译，说方言的人就应当在教会中保持静默，只对自己和{{god_term:神|上帝}}说话。",
+          "R": "如果在场没有人能翻译，说方言的人就应当在聚会中安静下来。他们可以轻声地对自己和{{god_term:神|上帝}}说话。"
         }
       },
       "decisions": [
@@ -8138,6 +10012,47 @@
           "reason": "The same Russian verb for the same Greek verb in verses 28, 30 and 34, so that readers can compare them.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n46014028006"
+          ],
+          "choice": "нехай мовчить; собі, сам до себе, with no gender span",
+          "alternatives": [
+            "{{gender:собі|йому самому}}"
+          ],
+          "reason": "The Ukrainian imperative needs no pronoun and the reflexive has no gender, so the English span has nothing to change.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46014028006"
+          ],
+          "choice": "静默 (L); 保持静默 (B); 安静 (R)",
+          "alternatives": [
+            "闭口不言"
+          ],
+          "reason": "One wording per level for this verb in verses 28, 30 and 34, so that readers can compare them, as the English does (m1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -8215,6 +10130,26 @@
           "L": "Пророки же пусть говорят двое или трое, а прочие пусть рассуждают.",
           "B": "Что касается пророков, пусть говорят двое или трое, а остальные пусть взвешивают их слова.",
           "R": "На собрании могут говорить два или три пророка. Остальные должны внимательно обдумать то, что они сказали, чтобы понять, от Бога ли это."
+        },
+        "uk": {
+          "L": "А пророки нехай говорять двоє чи троє, а інші нехай розсуджують.",
+          "B": "Щодо пророків, нехай говорять двоє чи троє, а інші нехай зважують їхні слова.",
+          "R": "Двоє чи троє пророків можуть говорити на зібранні. Інші мають уважно обдумати те, що вони кажуть, щоб побачити, чи це від Бога."
+        },
+        "ja": {
+          "L": "また、預言者たちは二人か三人が語り、ほかの者たちは[語られたことを]見分けなさい。",
+          "B": "預言者については、二人か三人が語り、ほかの人たちは、語られたことをよく見分けなさい。",
+          "R": "一回の集まりで、預言者が二人か三人、話してよいでしょう。ほかの人たちは、その人たちが話したことが神から来たものかどうか、よく考えてください。"
+        },
+        "id": {
+          "L": "Dan hendaklah dua atau tiga nabi berbicara, dan hendaklah yang lain menilai [apa yang dikatakan].",
+          "B": "Tentang para nabi, hendaklah dua atau tiga orang berbicara, dan hendaklah yang lain menimbang perkataan mereka.",
+          "R": "Dua atau tiga nabi boleh berbicara dalam satu pertemuan. Yang lain harus memikirkan baik-baik apa yang mereka katakan, untuk melihat apakah hal itu berasal dari Allah."
+        },
+        "zh": {
+          "L": "至于先知，要两个或三个人说，其他的人要衡量[所说的话]。",
+          "B": "至于先知，可以有两三个人说话，其余的人要衡量他们的话。",
+          "R": "每次聚会可以有两三个先知说话。其他人要仔细想想他们所说的，看看是不是从{{god_term:神|上帝}}来的。"
         }
       },
       "decisions": [
@@ -8394,6 +10329,68 @@
           "reason": "\"Avaliar\" is to weigh and assess, not to condemn (m1); \"julgar\" would suggest passing judgment on the prophets.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46014029010"
+          ],
+          "choice": "розсуджують (L); зважують (B)",
+          "alternatives": [
+            "судять"
+          ],
+          "reason": "m1: weigh what is said to tell what comes from God. The verb is diakrinō, as in the \"розрізнення духів\" of 12:10, so Literal keeps the sense of discerning rather than passing sentence.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46014029010"
+          ],
+          "choice": "\"見分けなさい\" (L, B)",
+          "alternatives": [
+            "\"吟味しなさい\"",
+            "\"判断しなさい\""
+          ],
+          "reason": "To tell what comes from God (m1); \"見分ける\" ties it to \"霊を見分けること\" in 12:10.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46014029010"
+          ],
+          "choice": "衡量",
+          "alternatives": [
+            "分辨",
+            "批评"
+          ],
+          "reason": "\"衡量\" means to weigh and assess, not to condemn (m1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -8469,6 +10466,26 @@
           "L": "Если же другому, сидящему, будет откровение, первый пусть молчит.",
           "B": "А если что-то будет открыто другому, сидящему там, первый говорящий должен молчать.",
           "R": "Если Бог что-то покажет другому человеку, который сидит там, первый пророк должен замолчать и дать этому человеку говорить."
+        },
+        "uk": {
+          "L": "А якщо іншому, що сидить, буде обʼявлено, перший нехай мовчить.",
+          "B": "А якщо щось буде відкрито іншому, хто сидить там, перший мовець нехай замовкне.",
+          "R": "Якщо Бог покаже щось іншій людині, яка там сидить, перший пророк має замовкнути і дати говорити тій людині."
+        },
+        "ja": {
+          "L": "しかし、座っているほかの者に[何かが]啓示されたなら、最初の者は黙りなさい。",
+          "B": "座っているほかの人に何かが示されたら、最初に語っていた人は黙りなさい。",
+          "R": "もし、そこに座っているほかの人に、神が何かを示されたなら、最初の預言者は話すのをやめて、その人に話させてください。"
+        },
+        "id": {
+          "L": "Tetapi jika [sesuatu] dinyatakan kepada orang lain yang sedang duduk, hendaklah yang pertama berdiam diri.",
+          "B": "Dan jika sesuatu dinyatakan kepada orang lain yang sedang duduk di situ, pembicara yang pertama hendaklah berdiam diri.",
+          "R": "Kalau Allah menunjukkan sesuatu kepada orang lain yang sedang duduk di situ, nabi yang pertama harus diam dan membiarkan orang itu berbicara."
+        },
+        "zh": {
+          "L": "但若有坐着的另一个人得了启示，先说的那人就当静默。",
+          "B": "如果坐在那里的另一个人得到了启示，先说话的人就应当保持静默。",
+          "R": "如果{{god_term:神|上帝}}把一件事显示给坐在那里的另一个人，第一位先知就应当安静下来，让那个人说。"
         }
       },
       "decisions": [
@@ -8651,6 +10668,26 @@
           "L": "Ведь вы можете все по одному пророчествовать, чтобы все учились и все ободрялись, \\v 32 и духи пророков пророкам подчиняются, \\v 33 ведь Бог не [Бог] беспорядка, но мира, как во всех церквях святых.",
           "B": "Вы все можете пророчествовать по очереди, чтобы все вы учились и все ободрялись. \\v 32 Пророки владеют своим духом. \\v 33 Бог — Бог мира, а не беспорядка, как это и во всех церквях святого народа Божьего.",
           "R": "Все вы можете пророчествовать по одному, чтобы каждый мог чему-то научиться и каждый получил ободрение. \\v 32 Пророки могут владеть собой, когда пророчествуют. \\v 33 Бог не создаёт неразберихи. Он даёт мир. Так во всех церквях Божьего народа."
+        },
+        "uk": {
+          "L": "Бо всі можете по одному пророкувати, щоб усі навчалися і всі заохочувалися; \\v 32 і духи пророків коряться пророкам, \\v 33 бо Бог не [Бог] безладу, а миру, як у всіх церквах святих.",
+          "B": "Ви всі можете пророкувати, кожен по черзі, щоб усі ви навчалися і всі заохочувалися. \\v 32 Пророки владні над власними духами. \\v 33 Бог — Бог миру, а не безладу, як це є в усіх церквах Божого святого народу.",
+          "R": "Усі ви можете пророкувати, по одному, щоб усі могли навчатися і всі могли отримувати підбадьорення. \\v 32 Пророки можуть володіти собою, коли пророкують. \\v 33 Бог не створює безладу. Він дає мир. Так є в усіх церквах Божого народу."
+        },
+        "ja": {
+          "L": "というのは、あなたがたは皆、一人ずつ預言することができるからです。それは、皆が学び、皆が励まされるためです。\\v 32 そして、預言者たちの霊は預言者たちに服従します。\\v 33 神は無秩序の[神]ではなく、平和の[神]だからです。聖なる者たちのすべての教会においてそうであるように。",
+          "B": "あなたがたは皆、順番に一人ずつ預言することができます。そうすれば、皆が学び、皆が励まされます。\\v 32 預言者は、自分の霊を自分で治めることができるのです。\\v 33 神は混乱の神ではなく、平和の神だからです。これは、神の聖なる民のすべての教会で行われているとおりです。",
+          "R": "みなさんはみな、一人ずつ順番に預言することができます。そうすれば、みんなが学ぶことができ、みんなが励まされます。\\v 32 預言者は、預言するときに、自分を抑えることができるのです。\\v 33 神は、混乱を起こされる方ではありません。平和をもたらしてくださる方です。神の民のすべての教会でも、そのようにしています。"
+        },
+        "id": {
+          "L": "Sebab kalian semua dapat bernubuat seorang demi seorang, supaya semua belajar dan semua dikuatkan; \\v 32 dan roh para nabi tunduk kepada para nabi, \\v 33 sebab Allah [adalah Allah] bukan kekacauan, tetapi damai sejahtera, seperti di semua jemaat orang-orang kudus.",
+          "B": "Kalian semua dapat bernubuat, masing-masing pada gilirannya, supaya kalian semua belajar dan kalian semua dikuatkan. \\v 32 Para nabi dapat menguasai roh mereka sendiri. \\v 33 Allah adalah Allah damai sejahtera, bukan Allah kekacauan, seperti yang berlaku di semua jemaat umat Allah yang kudus.",
+          "R": "Kalian semua dapat bernubuat, satu per satu, supaya semua orang dapat belajar dan semua orang dapat dikuatkan. \\v 32 Para nabi dapat mengendalikan diri mereka ketika mereka bernubuat. \\v 33 Allah tidak menimbulkan kekacauan. {{deity_pronoun:dia|Dia}} membawa damai. Hal itu berlaku di semua jemaat umat Allah."
+        },
+        "zh": {
+          "L": "因为你们全都能够逐一说预言，好让众人都学习，众人都得劝勉；\\v 32 而且先知们的灵服从先知们，\\v 33 因为{{god_term:神|上帝}}不是混乱的[{{god_term:神|上帝}}]，而是平安的[{{god_term:神|上帝}}]，正如在圣徒的众教会中一样。",
+          "B": "你们都可以轮流说预言，好让大家都能学习，都能得到鼓励。\\v 32 先知能控制自己的灵。\\v 33 {{god_term:神|上帝}}是平安的{{god_term:神|上帝}}，不是混乱的{{god_term:神|上帝}}；在圣徒的所有教会中都是这样。",
+          "R": "你们都可以说预言，一次一个人。这样，每个人都能学习，每个人都能得到鼓励。\\v 32 先知说预言的时候，能够控制自己。\\v 33 {{god_term:神|上帝}}不会造成混乱，{{god_term:神|上帝}}带来平安。在属于{{god_term:神|上帝}}的所有人的教会里，都是这样。"
         }
       },
       "decisions": [
@@ -8987,6 +11024,89 @@
           "reason": "The holy ones are God's people, set apart for him (meaning decision m6): the term settled in Acts at Literal and Balanced; Readable says \"परमेश्वर के लोग\", as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46014033008"
+          ],
+          "choice": "\"平和\" at every level",
+          "alternatives": [
+            "\"平安\""
+          ],
+          "reason": "Order and harmony among people, as God gives it (m4); the NT table keeps \"平安\" for greeting and inner peace.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n46014033009",
+            "n46014033015"
+          ],
+          "choice": "\"as in all the churches\" closes verse 33 as its own sentence",
+          "alternatives": [
+            "joined to verse 34"
+          ],
+          "reason": "The phrase belongs with what comes before (m5, uncertain, footnoted).",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46014033015"
+          ],
+          "choice": "圣徒 (L, B); 属于{{god_term:神|上帝}}的人 (R)",
+          "alternatives": [
+            "圣洁的人"
+          ],
+          "reason": "The holy ones are every believer, the people God has set apart: the glossary's \"圣徒\" at Literal and Balanced, as in Romans, also where the English Balanced says \"God's holy people\"; Readable says \"属于神的人\", the Romans Readable form.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46014032005"
+          ],
+          "choice": "服从",
+          "alternatives": [
+            "顺服"
+          ],
+          "reason": "The verb for being subject, the same Chinese as in verse 34, so the link is visible, as the English keeps it.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -9072,6 +11192,26 @@
           "L": "Женщины в церквях пусть молчат, ведь им не позволено говорить; но пусть подчиняются, как и Закон говорит.",
           "B": "В церквях женщины должны молчать. Им не позволено говорить; они должны подчиняться, как говорит и Закон.",
           "R": "На собраниях церкви женщины должны молчать. Им не разрешается говорить. Они должны быть покорными, как говорит и Закон."
+        },
+        "uk": {
+          "L": "Жінки в церквах нехай мовчать, бо їм не дозволено говорити; а нехай коряться, як і Закон каже.",
+          "B": "У церквах жінки мають мовчати. Їм не дозволено говорити; натомість вони мають коритися, як каже і Закон.",
+          "R": "На церковних зібраннях жінки мають мовчати. Їм не дозволено говорити. Натомість вони мають бути покірними, як каже і Закон."
+        },
+        "ja": {
+          "L": "女たちは、諸教会では黙っているべきです。彼女たちには語ることが許されていないからです。むしろ、律法も言っているとおり、従う立場にいるべきです。",
+          "B": "教会の集まりでは、女たちは黙っているべきです。彼女たちには話すことが許されていません。律法も言っているように、むしろ従う立場にいるべきです。",
+          "R": "教会の集まりでは、女の人たちは黙っていなければなりません。話すことは許されていません。律法にもあるように、むしろ従う立場にいなければなりません。"
+        },
+        "id": {
+          "L": "Hendaklah perempuan-perempuan berdiam diri dalam jemaat-jemaat, sebab mereka tidak diizinkan untuk berbicara; tetapi hendaklah mereka tunduk, sebagaimana juga dikatakan oleh hukum Taurat.",
+          "B": "Di dalam jemaat-jemaat, perempuan-perempuan harus berdiam diri. Mereka tidak diizinkan berbicara; sebaliknya mereka harus tunduk, seperti yang juga dikatakan hukum Taurat.",
+          "R": "Dalam pertemuan-pertemuan jemaat, para perempuan harus diam. Mereka tidak diizinkan berbicara. Sebaliknya, mereka harus tunduk, seperti yang juga dikatakan hukum Taurat."
+        },
+        "zh": {
+          "L": "妇女在众教会中要静默，因为不准她们说话；她们倒要服从，正如律法也说的。",
+          "B": "在众教会中，妇女要保持静默。她们不被准许说话，而要服从，正如律法也这样说。",
+          "R": "在教会的聚会中，妇女必须安静。她们不可以说话，而必须顺从，正如律法也这样说。"
         }
       },
       "decisions": [
@@ -9107,7 +11247,7 @@
           ],
           "reason": "Verses 34-35 are found in every known manuscript of the letter, but not all in the same place: some manuscripts, Greek and Latin witnesses of the so-called Western text, place them after verse 40, at the end of the chapter. Because of this displacement, some scholars think the verses began as a note in the margin that copyists later put into the text at two different points, and so question whether Paul wrote them; others hold that he did and that the verses were moved by copyists. The SBLGNT prints them here, and this translation follows it. Reviewers must check the evidence against the SBLGNT apparatus.",
           "uncertain": true,
-          "footnote": true
+          "footnote": false
         },
         {
           "id": "m2",
@@ -9459,6 +11599,116 @@
           "reason": "As in 11:3-16, women in the gathering in general (meaning decision m2); \"жёны\" would decide for wives. The law is capitalised as the Law of Moses, though Paul does not say which law (m4).",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46014034013"
+          ],
+          "choice": "коритися (L, B); бути покірними (R)",
+          "alternatives": [
+            "підкорятися"
+          ],
+          "reason": "m5: to take one's place in an order under another, with the one to whom it is owed left unstated. \"Коритися\" is the same verb as in 14:32, where the spirits of prophets \"коряться\" prophets, so the link stays visible.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-2",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46014034016",
+            "n46014034017",
+            "n46014034018"
+          ],
+          "choice": "Закон, with a capital",
+          "alternatives": [
+            "закон"
+          ],
+          "reason": "Paul does not say which law (m4); Ukrainian follows the style guide's capital for God's law, as in 14:21, and leaves the question to the meaning decision.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46014034002",
+            "n46014034013"
+          ],
+          "choice": "\"女たち\" (L, B), \"女の人たち\" (R); \"従う立場にいる\" with no object",
+          "alternatives": [
+            "\"妻たち\"",
+            "\"夫に従う\""
+          ],
+          "reason": "Women in the gathering in general (m2, uncertain), and to whom they are subject is not stated (m5); Japanese keeps both open, and the word for women matches 11:3-16.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46014034013"
+          ],
+          "choice": "服从 (L, B); 顺从 (R), with no object",
+          "alternatives": [
+            "顺服丈夫",
+            "服从男人"
+          ],
+          "reason": "No level says to whom the women are subject, since the Greek does not (m5); \"服从\" is the same word as in verse 32.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46014034002"
+          ],
+          "choice": "妇女",
+          "alternatives": [
+            "妻子"
+          ],
+          "reason": "Women in the gathering in general (m2), as the English; \"wives\" is the English footnote's reading.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -9544,6 +11794,26 @@
           "L": "Если же они хотят чему-то научиться, пусть спрашивают дома своих мужей, ведь стыдно женщине говорить в церкви.",
           "B": "Если они хотят что-то узнать, пусть задают вопросы своим мужьям дома. Стыдно женщине говорить, когда собирается церковь.",
           "R": "Если они хотят что-то узнать, пусть спрашивают своих мужей, когда они дома. Стыдно женщине говорить на собрании церкви."
+        },
+        "uk": {
+          "L": "А якщо хочуть чогось навчитися, нехай питають удома своїх чоловіків, бо соромно жінці говорити в церкві.",
+          "B": "Якщо вони хочуть чогось навчитися, нехай питають своїх чоловіків удома. Соромно жінці говорити, коли збирається церква.",
+          "R": "Якщо вони хочуть щось дізнатися, нехай запитають своїх чоловіків, коли будуть удома. Соромно жінці говорити на церковному зібранні."
+        },
+        "ja": {
+          "L": "もし何かを学びたいと思うなら、家で自分の夫に尋ねるべきです。女が教会で語るのは恥ずべきことだからです。",
+          "B": "何か知りたいことがあるなら、家で自分の夫に尋ねるべきです。教会の集まりで女が語るのは、恥ずべきことです。",
+          "R": "何かについて知りたいことがあれば、家にいるときに、自分の夫に聞くべきです。教会の集まりで女の人が話すのは、恥ずかしいことだからです。"
+        },
+        "id": {
+          "L": "Dan jika mereka ingin mempelajari sesuatu, hendaklah mereka bertanya kepada suami mereka sendiri di rumah; sebab memalukan bagi perempuan untuk berbicara dalam jemaat.",
+          "B": "Jika ada sesuatu yang ingin mereka pelajari, hendaklah mereka menanyakannya kepada suami mereka sendiri di rumah. Memalukan bagi seorang perempuan untuk berbicara ketika jemaat berkumpul.",
+          "R": "Kalau mereka ingin mengetahui sesuatu, mereka harus bertanya kepada suami mereka sendiri di rumah. Memalukan bagi seorang perempuan untuk berbicara dalam pertemuan jemaat."
+        },
+        "zh": {
+          "L": "但她们若想学些什么，就要在家中询问她们自己的丈夫；因为一个妇女在教会里说话，是羞耻的事。",
+          "B": "若有什么事她们想学，就当回到家里，把问题向自己的丈夫提出来。因为妇女在教会聚会时发言，是不光彩的。",
+          "R": "如果她们想了解什么，应当等到在家的时候，去问自己的丈夫。因为妇女在教会的聚会中说话，是让人觉得羞耻的事。"
         }
       },
       "decisions": [
@@ -9785,6 +12055,26 @@
           "L": "Или от вас слово Божье вышло, или к вам одним дошло?",
           "B": "Или Божье слово вышло от вас? Разве оно пришло к вам одним?",
           "R": "Вы думаете, что Божья весть началась с вас? Вы думаете, что только вы её получили?"
+        },
+        "uk": {
+          "L": "Чи від вас вийшло Боже слово, чи до вас самих воно дійшло?",
+          "B": "Чи це від вас вийшло Боже слово? Чи воно дійшло тільки до вас і більше ні до кого?",
+          "R": "Ви думаєте, що Божа звістка почалася з вас? Ви думаєте, що тільки ви її отримали?"
+        },
+        "ja": {
+          "L": "それとも、神の言葉はあなたがたから出たのでしょうか、あるいは、あなたがただけに届いたのでしょうか？",
+          "B": "それとも、神の言葉はあなたがたから出たのですか？あなたがただけに届いたのですか？",
+          "R": "みなさんは、神の言葉が自分たちから始まったと思っているのですか？自分たちだけがそれを受け取ったと思っているのですか？"
+        },
+        "id": {
+          "L": "Atau apakah firman Allah keluar dari kalian, atau hanya sampai kepada kalian saja?",
+          "B": "Atau apakah firman Allah berasal dari kalian? Apakah firman itu hanya datang kepada kalian saja?",
+          "R": "Apakah kalian pikir pesan Allah dimulai dari kalian? Apakah kalian pikir hanya kalian yang menerimanya?"
+        },
+        "zh": {
+          "L": "或者，{{god_term:神|上帝}}的道是从你们那里出去的吗？或者它只达到了你们吗？",
+          "B": "难道{{god_term:神|上帝}}的道是从你们那里发出的？难道它只来到你们这里，没有到别人那里？",
+          "R": "你们以为{{god_term:神|上帝}}的信息是从你们开始的吗？你们以为只有你们才领受了它吗？"
         }
       },
       "decisions": [
@@ -9896,6 +12186,27 @@
           "reason": "Readable uses a plainer word for the same thing (m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46014036005"
+          ],
+          "choice": "{{god_term:神|上帝}}的道 (L, B); {{god_term:神|上帝}}的信息 (R)",
+          "alternatives": [
+            "神的道理"
+          ],
+          "reason": "The forms settled in Acts for the word of God, the message of the gospel (m3).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -9977,6 +12288,26 @@
           "L": "Если кто-то думает, что он пророк или духовный, пусть признаёт, что то, что я пишу вам, — Господне;",
           "B": "Если кто-то считает себя пророком или духовным человеком, пусть признает, что то, что я вам пишу, — от Господа.",
           "R": "Может быть, некоторые из вас думают, что вы пророки или что у вас есть особые дары от Духа. Если так, вы должны понять, что то, что я вам пишу, — от Господа."
+        },
+        "uk": {
+          "L": "Якщо хтось вважає себе пророком чи духовним, нехай визнає, що те, що я пишу вам, — від Господа;",
+          "B": "Якщо хтось вважає себе пророком чи духовною людиною, він має визнати, що те, що я пишу вам, походить від Господа.",
+          "R": "Дехто з вас, можливо, думає, що він пророк або має особливі дари від Духа. Якщо так, ви повинні побачити, що те, що я пишу вам, походить від Господа."
+        },
+        "ja": {
+          "L": "もしだれかが、自分は預言者である、あるいは霊の人であると思うなら、わたしがあなたがたに書いていることは主から出たものであると認めなさい。",
+          "B": "自分は預言者だ、あるいは霊の人だと思う人は、わたしがあなたがたに書いていることが主から来ていることを認めるべきです。",
+          "R": "みなさんの中には、自分は預言者だとか、聖霊から特別な贈り物をいただいていると思っている人がいるかもしれません。もしそうなら、わたしがみなさんに書いていることが、主から来ていることを認めてください。"
+        },
+        "id": {
+          "L": "Jika seseorang menganggap dirinya nabi atau orang rohani, hendaklah ia mengakui bahwa apa yang kutuliskan kepada kalian adalah dari Tuhan.",
+          "B": "Jika seseorang menganggap dirinya nabi atau orang rohani, ia harus mengakui bahwa apa yang kutuliskan kepada kalian berasal dari Tuhan.",
+          "R": "Mungkin ada di antara kalian yang menganggap diri kalian nabi atau mempunyai karunia khusus dari Roh. Kalau begitu, kalian harus menyadari bahwa apa yang saya tuliskan kepada kalian berasal dari Tuhan."
+        },
+        "zh": {
+          "L": "若有人自认是先知或属灵的人，这人就当认清：我写给你们的事，是出于主的。",
+          "B": "谁若自视为先知，或认为自己是属灵的人，就应当承认，我现在写给你们的是从主而来的。",
+          "R": "你们中间有些人可能认为自己是先知，或是有圣灵所赐的特别恩赐。如果是这样，你们就应当看清楚，我写给你们的是从主来的。"
         }
       },
       "decisions": [
@@ -9996,7 +12327,7 @@
           ],
           "reason": "Many manuscripts add the word for 'command' after 'of the Lord', some in the singular and some in the plural. The SBLGNT follows manuscripts that lack it, and the different forms of the addition suggest that copyists supplied it to complete the phrase. The sense is much the same: what Paul writes carries the Lord's authority. Reviewers must check the evidence against the SBLGNT apparatus.",
           "uncertain": false,
-          "footnote": true
+          "footnote": false
         },
         {
           "id": "m2",
@@ -10118,6 +12449,27 @@
           "reason": "The Greek says only \"is of the Lord\"; Hindi \"प्रभु की\" needs a noun, which Literal supplies in brackets with the commonest sense of the phrase. Balanced and Readable say \"प्रभु की ओर से\".",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n46014037006",
+            "n46014037007"
+          ],
+          "choice": "вважає себе; він, with no gender span",
+          "alternatives": [
+            "{{gender:вона|він}}"
+          ],
+          "reason": "Ukrainian \"себе\" has no gender, and the generic \"хтось ... він\" covers men and women; there is no second wording for the setting.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -10190,6 +12542,26 @@
           "L": "Если же кто-то не признаёт, он не признан.",
           "B": "Тот, кто отказывается это признать, и сам не будет признан.",
           "R": "Если кто-то отказывается это признать, то и Бог не признает этого человека."
+        },
+        "uk": {
+          "L": "А якщо хтось не визнає, то й він не визнаний.",
+          "B": "Хто відмовляється це визнати, той і сам не визнаний.",
+          "R": "Якщо хтось відмовляється це визнати, то Бог теж не визнає цієї людини."
+        },
+        "ja": {
+          "L": "しかし、もしだれかが[これを]認めないなら、その人は認められません。",
+          "B": "これを認めようとしない人は、その人自身も認められません。",
+          "R": "もし、これを認めようとしない人がいるなら、神もその人を認めてくださいません。"
+        },
+        "id": {
+          "L": "Tetapi jika seseorang tidak mengakui [hal ini], ia tidak diakui.",
+          "B": "Siapa pun yang tidak mau mengakui hal ini, ia pun tidak diakui.",
+          "R": "Kalau ada orang yang tidak mau mengakui hal ini, Allah juga tidak mengakui orang itu."
+        },
+        "zh": {
+          "L": "但若有人不承认[这事]，这人也不被承认。",
+          "B": "谁拒绝承认这事，谁也不被承认。",
+          "R": "如果有人拒绝承认这事，{{god_term:神|上帝}}也不会承认这个人。"
         }
       },
       "decisions": [
@@ -10341,6 +12713,71 @@
           "reason": "Literal and Balanced keep one verb for both halves, so the play of m3 can be heard; Readable says who does not know him (God, m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46014038004",
+            "n46014038005"
+          ],
+          "choice": "визнає ... визнаний",
+          "alternatives": [
+            "не знає ... не знаний"
+          ],
+          "reason": "m3 notes a play on one verb; \"визнавати, визнаний\" keeps it in one Ukrainian verb at every level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46014038005"
+          ],
+          "choice": "\"認めない\" / \"認められません\" (L, B), with God named only at R",
+          "alternatives": [
+            "\"知らないままでいなさい\" (the other reading)"
+          ],
+          "reason": "A statement, as the SBLGNT prints it (m1), with God as the one who does not recognize (m2); both uncertain and footnoted. L and B keep the play on one verb (m3).",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46014038004",
+            "n46014038005"
+          ],
+          "choice": "不承认 ... 不被承认",
+          "alternatives": [
+            "不知道 ... 不被知道"
+          ],
+          "reason": "One verb, \"承认\", keeps Paul's play on words (m3); Readable names God as the one who does not recognize, as the English Readable does, which is not certain (m2).",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -10420,6 +12857,26 @@
           "L": "Итак, мои {{gender:братья и сёстры|братья}}, ревнуйте о том, чтобы пророчествовать, и не запрещайте говорить на языках;",
           "B": "Итак, мои {{gender:братья и сёстры|братья}}, всем сердцем желайте пророчествовать и не запрещайте говорить на языках.",
           "R": "Поэтому, мои {{gender:братья и сёстры|братья}}, старайтесь пророчествовать. И не запрещайте людям говорить на языках."
+        },
+        "uk": {
+          "L": "Тож, мої {{gender:брати і сестри|брати}}, ревнуйте про те, щоб пророкувати, і не забороняйте говорити мовами;",
+          "B": "Тож, мої {{gender:брати і сестри|брати}}, усім серцем прагніть пророкувати і не забороняйте нікому говорити мовами.",
+          "R": "Тож, мої {{gender:брати і сестри|брати}}, щиро прагніть пророкувати. І не забороняйте людям говорити мовами."
+        },
+        "ja": {
+          "L": "ですから、わたしの{{gender:きょうだいたち|兄弟たち}}、預言することを熱心に求めなさい。また、異言で語ることを禁じてはいけません。",
+          "B": "ですから、わたしの{{gender:きょうだいたち|兄弟たち}}、預言することを熱心に求めなさい。異言で語ることを妨げてはいけません。",
+          "R": "ですから、わたしの{{gender:きょうだいたち|兄弟たち}}、預言することを熱心に求めてください。また、人が異言で話すのを止めてはいけません。"
+        },
+        "id": {
+          "L": "Jadi, saudara-saudaraku, berusahalah dengan giat untuk bernubuat, dan janganlah melarang orang berbicara dalam bahasa roh.",
+          "B": "Jadi, saudara-saudaraku, rindukanlah karunia bernubuat, dan janganlah melarang siapa pun berbicara dalam bahasa roh.",
+          "R": "Jadi, saudara-saudara, berusahalah sungguh-sungguh untuk bernubuat. Dan janganlah melarang orang berbicara dalam bahasa roh."
+        },
+        "zh": {
+          "L": "所以，我的{{gender:弟兄姐妹|弟兄}}们，你们要热心渴慕说预言，也不要禁止说方言。",
+          "B": "所以，我的{{gender:弟兄姐妹|弟兄}}们，你们要一心渴慕说预言，也不要阻止人说方言。",
+          "R": "所以，{{gender:弟兄姐妹|弟兄}}们，你们要努力说预言。也不要阻止别人说方言。"
         }
       },
       "decisions": [
@@ -10563,6 +13020,26 @@
           "L": "Всё же пусть будет пристойно и по порядку.",
           "B": "Но пусть всё совершается достойно и в должном порядке.",
           "R": "Но следите за тем, чтобы всё делалось правильно и по порядку."
+        },
+        "uk": {
+          "L": "А все нехай буде пристойно і за порядком.",
+          "B": "Але нехай усе відбувається пристойно і належним порядком.",
+          "R": "Але подбайте, щоб усе робилося пристойно і впорядковано."
+        },
+        "ja": {
+          "L": "しかし、すべてのことを、ふさわしく、秩序に従って行いなさい。",
+          "B": "ただし、すべてのことは、見苦しくないように、また順序を守って行いなさい。",
+          "R": "でも、何をするときも、ふさわしいやり方で、きちんと順序よく行うようにしてください。"
+        },
+        "id": {
+          "L": "Tetapi hendaklah segala sesuatu dilakukan dengan sopan dan dengan teratur.",
+          "B": "Tetapi hendaklah segala sesuatu dilakukan dengan pantas dan dengan tertib.",
+          "R": "Tetapi pastikanlah bahwa segala sesuatu dilakukan dengan pantas dan dengan teratur."
+        },
+        "zh": {
+          "L": "但一切都要合宜地、按着次序去做。",
+          "B": "但一切都要做得得体，井然有序。",
+          "R": "但是要确保每一件事都做得恰当，有条有理。"
         }
       },
       "decisions": [

@@ -70,6 +70,12 @@ class MarkupTest(unittest.TestCase):
         text2 = "If I go, I will come"
         self.assertEqual([text2[s:e] for s, e in markup.alignment_ranges(text2, ["I", "I"])], ["I", "I"])
         self.assertEqual(markup.alignment_ranges(text2, ["I"])[0][0], 3)
+        # Japanese has no spaces: 言 is a word of 言は, but "ight" is no word of "light".
+        text3 = "初めに、言はおられた。"
+        self.assertEqual([text3[s:e] for s, e in markup.alignment_ranges(text3, ["初めに", "言", "おられた"])],
+                         ["初めに", "言", "おられた"])
+        with self.assertRaisesRegex(ValueError, "not found"):
+            markup.alignment_ranges("the light", ["ight"])
         for bad, reason in ((["shines", "light"], "after the previous"),
                             (["darkness"], "not found in rendering"),
                             (["of {{gender:all"], "cuts a setting span"),

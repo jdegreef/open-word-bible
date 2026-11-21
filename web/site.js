@@ -1,3 +1,74 @@
+// Right to left (owb/languages.py; docs/adding-a-language.md). A page in a
+// language written right to left is <html dir="rtl">; while any reading
+// language is, each page names the codes written right to left in its
+// owb-rtl tag. Then every element the scripts tag with a lang gets its own
+// dir where that language's direction differs from its nearest ancestor
+// with one, as build_site.py's isolate_directions does for the page as
+// served: an Arabic verse in an English parallel column, an English
+// fallback or a Greek word on an Arabic page. A dir set by a script stays.
+// Without the tag (every reading language left to right) nothing is
+// watched. window.OWBDir: rtl (the page's direction), sign (1, or -1 on a
+// right-to-left page, for left and right keys), of(code), and
+// create(codes), the same for a list of codes (tests/js/bidi.test.mjs).
+// Scripts that may run before this one (reader.js, compare.js) read
+// <html dir> themselves.
+(function () {
+  "use strict";
+  function create(codes) {
+    var rtl = {};
+    codes.forEach(function (c) { if (c) rtl[c] = true; });
+    var ours = typeof WeakSet === "function" ? new WeakSet() : null;
+
+    function of(code) { return code && rtl[String(code).split("-")[0]] ? "rtl" : "ltr"; }
+
+    function around(node) {
+      for (var p = node.parentElement; p; p = p.parentElement) {
+        var d = p.getAttribute("dir");
+        if (d === "rtl" || d === "ltr") return d;
+      }
+      return "ltr";
+    }
+
+    // One element: its dir, if it needs one.
+    function fix(node) {
+      var mine = !!ours && ours.has(node);
+      if (node.hasAttribute("dir") && !mine) return;
+      var code = node.getAttribute("lang");
+      var want = code ? of(code) : null;
+      if (want && want !== around(node)) {
+        node.setAttribute("dir", want);
+        if (ours) ours.add(node);
+      } else if (mine) {
+        node.removeAttribute("dir");
+        ours.delete(node);
+      }
+    }
+
+    // An element and everything in it, parents first.
+    function sweep(node) {
+      if (!node || node.nodeType !== 1) return;
+      if (node.hasAttribute("lang") && node.parentElement) fix(node);
+      Array.prototype.forEach.call(node.querySelectorAll("[lang]"), fix);
+    }
+
+    return { of: of, fix: fix, sweep: sweep };
+  }
+
+  var root = document.documentElement;
+  var meta = document.querySelector('meta[name="owb-rtl"]');
+  var dirs = create(meta ? meta.getAttribute("content").split(" ") : []);
+  var rtl = root.getAttribute("dir") === "rtl";
+  window.OWBDir = { rtl: rtl, sign: rtl ? -1 : 1, of: dirs.of, create: create };
+  if (!meta || typeof MutationObserver !== "function") return;
+  new MutationObserver(function (changes) {
+    changes.forEach(function (c) {
+      if (c.type === "attributes") dirs.sweep(c.target);
+      else Array.prototype.forEach.call(c.addedNodes, dirs.sweep);
+    });
+  }).observe(root, { subtree: true, childList: true, attributes: true, attributeFilter: ["lang"] });
+  if (document.body) dirs.sweep(document.body);
+})();
+
 // The display menu behind the gear in the header (see colour_menu in
 // scripts/build_site.py): the colour mode, then the reading text's size,
 // typeface and line spacing. Each radiogroup is one setting (data-pref); a
@@ -62,7 +133,7 @@
     options.forEach(function (o, i) {
       o.addEventListener("click", function () { choose(group, o.getAttribute("data-value")); });
       o.addEventListener("keydown", function (e) {
-        var step = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key];
+        var step = { ArrowDown: 1, ArrowRight: window.OWBDir.sign, ArrowUp: -1, ArrowLeft: -window.OWBDir.sign }[e.key];
         if (!step) return;
         e.preventDefault();
         var next = options[(i + step + options.length) % options.length];
@@ -587,6 +658,31 @@ window.OWBStudy = (function () {
     write("owb.words", all, "owb:words");
     return all[lemma];
   }
+  // Word pairs kept from Parallel (owb.pairs, on this device): a source
+  // word and what two languages made of it in one verse, newest first.
+  // Keeping one also saves its dictionary form to the word list.
+  var PAIRS = "owb.pairs", MAX_PAIRS = 300;
+  function pairs() {
+    try {
+      var v = JSON.parse(localStorage.getItem(PAIRS) || "[]");
+      return Array.isArray(v) ? v.filter(function (p) { return p && p.w && p.a && p.b; }) : [];
+    } catch (e) { return []; }
+  }
+  function pairKey(p) { return [p.w, p.v, p.a[0], p.a[1], p.b[0], p.b[1]].join("\u0001"); }
+  function hasPair(p) {
+    var k = pairKey(p);
+    return pairs().some(function (x) { return pairKey(x) === k; });
+  }
+  function setPair(p, on) {
+    var k = pairKey(p);
+    var list = pairs().filter(function (x) { return pairKey(x) !== k; });
+    if (on) {
+      list.unshift({ w: p.w, g: String(p.g || "").slice(0, 120), l: p.l, s: p.s, a: p.a, b: p.b, v: p.v, u: p.u, at: Date.now() });
+      if (!(word(p.w) || {}).s) setWord(p.w, { s: true }, { g: p.g, l: p.l });
+    }
+    try { localStorage.setItem(PAIRS, JSON.stringify(list.slice(0, MAX_PAIRS))); } catch (e) { /* full or blocked */ }
+    document.dispatchEvent(new Event("owb:words"));
+  }
   function lookups() {
     try {
       var v = JSON.parse(localStorage.getItem("owb.lookups") || "[]");
@@ -604,7 +700,8 @@ window.OWBStudy = (function () {
 
   return { read: read, write: write, kept: kept, collections: collections, cleanTag: cleanTag,
            hasTag: hasTag, withTag: withTag, dropCollection: dropCollection,
-           word: word, setWord: setWord, lookups: lookups, lookedUp: lookedUp, forgetLookups: forgetLookups };
+           word: word, setWord: setWord, lookups: lookups, lookedUp: lookedUp, forgetLookups: forgetLookups,
+           pairs: pairs, hasPair: hasPair, setPair: setPair };
 })();
 
 // A key term's "Save to word list" (save_word_button in
@@ -630,7 +727,8 @@ window.OWBStudy = (function () {
 // Sync for a signed-in reader (backend accounts/reading.py): bookmarks,
 // highlights, notes and collections (owb.marks), passage notes (owb.notes),
 // the word list (owb.words), the reading place (owb.place), reading-plan
-// progress (owb.plans, web/plans.js), the reader's own plans (owb.myplans)
+// progress (owb.plans, web/plans.js), the reader's own plans (owb.myplans),
+// the verses they are memorizing (owb.memory, web/memorize.js)
 // and the reader's settings (owb.settings, web/reader.js) go to the account
 // and come back merged, the latest change to each verse, note, word and plan
 // winning, and the latest copy of the settings, so they follow the reader
@@ -668,7 +766,7 @@ window.OWBStudy = (function () {
     return JSON.stringify({ marks: read("owb.marks", {}), place: read("owb.place", null),
                             plans: read("owb.plans", null), settings: settings(),
                             notes: read("owb.notes", {}), words: read("owb.words", {}),
-                            myplans: read("owb.myplans", {}) });
+                            myplans: read("owb.myplans", {}), memory: read("owb.memory", {}) });
   }
   function hash(text) {
     for (var h = 5381, i = 0; i < text.length; i++) h = (h * 33 + text.charCodeAt(i)) | 0;
@@ -691,6 +789,7 @@ window.OWBStudy = (function () {
     changed = takeEach("owb.notes", merged.notes) || changed;
     changed = takeEach("owb.words", merged.words) || changed;
     changed = takeEach("owb.myplans", merged.myplans) || changed;
+    changed = takeEach("owb.memory", merged.memory) || changed;
     var place = read("owb.place", null);
     if (merged.place && (!place || merged.place.at > (place.at || 0))) { write("owb.place", merged.place); changed = true; }
     if (merged.plans) {
@@ -747,7 +846,7 @@ window.OWBStudy = (function () {
   }
 
   function soon() { clearTimeout(timer); timer = setTimeout(sync, 1500); }
-  ["owb:marks", "owb:notes", "owb:words", "owb:myplans"].forEach(function (e) { document.addEventListener(e, soon); });
+  ["owb:marks", "owb:notes", "owb:words", "owb:myplans", "owb:memory"].forEach(function (e) { document.addEventListener(e, soon); });
   document.addEventListener("owb:plans-change", soon);
   document.addEventListener("owb:settings", soon);
   document.addEventListener("owb:account", function () { stopped = false; sync(); });
@@ -801,7 +900,7 @@ window.OWBStudy = (function () {
     tabs.forEach(function (tab, n) {
       tab.addEventListener("click", function () { select(n); });
       tab.addEventListener("keydown", function (e) {
-        var d = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
+        var d = (e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0) * window.OWBDir.sign;
         if (d) { e.preventDefault(); select((n + d + tabs.length) % tabs.length, true); }
       });
     });

@@ -14,6 +14,25 @@ ROOT = Path(__file__).resolve().parents[2]
 LOCK = json.loads((ROOT / "sources.lock.json").read_text(encoding="utf-8"))
 
 
+# Variables that point git at a particular repository (`git rev-parse
+# --local-env-vars`). Git sets some of them for hooks (GIT_DIR and
+# GIT_INDEX_FILE in a linked worktree), and a nested `git -C <vendor clone>`
+# would then read the outer repository instead of the clone.
+GIT_REPO_ENV = (
+    "GIT_ALTERNATE_OBJECT_DIRECTORIES", "GIT_CONFIG", "GIT_CONFIG_PARAMETERS",
+    "GIT_CONFIG_COUNT", "GIT_OBJECT_DIRECTORY", "GIT_DIR", "GIT_WORK_TREE",
+    "GIT_IMPLICIT_WORK_TREE", "GIT_GRAFT_FILE", "GIT_INDEX_FILE",
+    "GIT_NO_REPLACE_OBJECTS", "GIT_REPLACE_REF_BASE", "GIT_PREFIX",
+    "GIT_SHALLOW_FILE", "GIT_COMMON_DIR",
+)
+
+
+def clone_env():
+    """os.environ without the variables that would redirect git away from a
+    vendor clone."""
+    return {k: v for k, v in os.environ.items() if k not in GIT_REPO_ENV}
+
+
 def vendor_dir():
     return Path(os.environ.get("OWB_VENDOR", ROOT / "vendor"))
 
@@ -46,7 +65,7 @@ def read_text(name, relpath):
         out = subprocess.run(
             ["git", "-C", str(source_dir(name)), "-c", "gc.auto=0",
              "show", f"{commit}:{relpath}"],
-            check=True, capture_output=True)
+            check=True, capture_output=True, env=clone_env())
         return out.stdout.decode("utf-8")
     raise FileNotFoundError(
         f"{name}/{relpath} not found under {vendor_dir()}; "

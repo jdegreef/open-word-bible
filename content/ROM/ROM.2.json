@@ -85,6 +85,26 @@
           "L": "इसलिए हे मनुष्य, तुम, जो दोष लगाते हो, चाहे कोई भी हो, निरुत्तर हो; क्योंकि जिस बात में तुम दूसरे पर दोष लगाते हो, उसी में अपने आप को दोषी ठहराते हो, क्योंकि तुम, जो दोष लगाते हो, वही काम करते हो;",
           "B": "इसलिए, तुम चाहे कोई भी हो, जब तुम दूसरों पर दोष लगाते हो, तो तुम्हारे पास कोई बहाना नहीं है। दूसरे पर दोष लगाकर तुम स्वयं को दोषी ठहराते हो, क्योंकि तुम, जो दोष लगाते हो, ठीक वही काम करते हो।",
           "R": "इसलिए यदि तुम दूसरे लोगों पर दोष लगाते हो, तो तुम्हारे पास कोई बहाना नहीं है, चाहे तुम कोई भी हो। जब तुम दूसरों पर दोष लगाते हो, तो असल में तुम अपने आप पर दोष लगा रहे हो, क्योंकि तुम भी वही काम करते हो जो वे करते हैं।"
+        },
+        "uk": {
+          "L": "Тому ти не маєш вимовки, о людино, кожен, хто судить; бо в чому судиш іншого, себе самого засуджуєш, бо те саме чиниш ти, що судиш;",
+          "B": "Тож ти не маєш вимовки, хоч би хто ти був, коли судиш інших. Осуджуючи іншого, ти засуджуєш себе самого, бо ти, суддя, робиш те саме.",
+          "R": "Тож якщо ти судиш інших людей, ти не маєш вимовки, хоч би хто ти був. Коли ти судиш інших, ти насправді засуджуєш себе, бо робиш те саме, що й вони."
+        },
+        "ja": {
+          "L": "それゆえ、ああ人よ、すべて裁く者よ、あなたには弁解の余地がありません。というのは、あなたは他人を裁くその事において、自分自身を罪に定めているからです。裁くあなたが、同じことを行っているからです。",
+          "B": "ですから、他人を裁くあなたは、だれであっても弁解の余地がありません。他人を裁くことで、あなたは自分自身を罪に定めているのです。裁くあなた自身が、同じことをしているからです。",
+          "R": "ですから、ほかの人を裁くなら、あなたがだれであっても、言い訳はできません。ほかの人を裁くとき、あなたは本当は自分自身を裁いているのです。あなたも、その人たちと同じことをしているからです。"
+        },
+        "id": {
+          "L": "Karena itu engkau tidak dapat berdalih, hai manusia, siapa pun engkau yang menghakimi; sebab dalam hal engkau menghakimi orang lain, engkau menghukum dirimu sendiri, karena engkau yang menghakimi melakukan hal-hal yang sama;",
+          "B": "Jadi engkau tidak punya dalih, siapa pun engkau, kalau engkau menghakimi orang lain. Dengan menghakimi orang lain engkau menghukum dirimu sendiri, sebab engkau, sang hakim, melakukan hal-hal yang sama.",
+          "R": "Jadi kalau kamu menghakimi orang lain, kamu tidak punya alasan, siapa pun kamu. Ketika kamu menghakimi orang lain, sebenarnya kamu menghakimi dirimu sendiri, karena kamu melakukan hal-hal yang sama dengan yang mereka lakukan."
+        },
+        "zh": {
+          "L": "所以，人哪，你这每一个审判人的，都没有借口；因为你审判别人的那件事，正是在定你自己的罪，因为你这审判人的，也在做同样的事；",
+          "B": "所以，无论你是谁，你审判别人，就没有借口。你审判别人的时候，就是在定自己的罪，因为你这审判人的，也做同样的事。",
+          "R": "所以，如果你审判别人，无论你是谁，你都没有借口。你审判别人的时候，其实是在审判你自己，因为你做的事和他们一样。"
         }
       },
       "decisions": [
@@ -542,6 +562,114 @@
           "reason": "Paul argues with an imagined listener (meaning decision m2), in the singular. Hindi \"तू\" would sound insulting here, so he says \"तुम\", as he does to his readers.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n45002001004",
+            "n45002001005"
+          ],
+          "choice": "\"о людино\" without a gender span",
+          "alternatives": [
+            "{{gender:о людино|о чоловіче}}"
+          ],
+          "reason": "The English has {{gender:person|man}} here and {{gender:their|his}} in 2:6. Ukrainian \"людино\" and \"кожен ... його\" already include men and women, so no setting is used in this chapter.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n45002001005",
+            "n45002001003"
+          ],
+          "choice": "\"ああ人よ\" (L); \"あなたは、だれであっても\" (B, R); the imagined listener is \"あなた\" at every level, also at Readable",
+          "alternatives": [
+            "\"みなさん\" at Readable",
+            "\"{{gender:人|男}}よ\""
+          ],
+          "reason": "Paul turns from the readers to a single imagined listener (m2), so Readable too says \"あなた\" rather than its usual \"みなさん\" for the readers. \"人よ\" already means any human being, so Japanese needs no gender span where the English Literal has one (verses 1 and 3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n45002001004",
+            "n45002001005"
+          ],
+          "choice": "the imagined listener is \"engkau\" (L, B) and \"kamu\" (R); \"hai manusia\" (L, B) for \"O person\"",
+          "alternatives": [
+            "\"kalian\"",
+            "\"Anda\""
+          ],
+          "reason": "Paul turns to one imagined listener (m2), so the singular \"you\" of address between equals at each level (style guide section 5), not the plural \"kalian\", wherever Romans uses this style of debate.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n45002001004",
+            "n45002001005"
+          ],
+          "choice": "\"人哪\" with no gender span",
+          "alternatives": [
+            "{{gender:人哪|男人哪}}"
+          ],
+          "reason": "The English spans \"person / man\"; Chinese 人 already means any human being, so there is no second wording to offer. The same holds wherever the English spans \"people / men\" or \"their / his\" in this chapter (verses 3, 6, 16, 29).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45002001008",
+            "n45002001016"
+          ],
+          "choice": "\"审判\" for judging others and for God's judging; \"定……的罪\" for condemn",
+          "alternatives": [
+            "论断"
+          ],
+          "reason": "Paul uses one verb for the person who judges others and for God who judges (verses 1-3, 12, 16, 27); one Chinese word keeps the turn of his argument visible.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -624,6 +752,26 @@
           "L": "और हम जानते हैं कि ऐसे काम करनेवालों पर परमेश्वर का न्याय सत्य के अनुसार होता है।",
           "B": "हम जानते हैं कि ऐसे काम करनेवालों पर परमेश्वर का न्याय सत्य पर आधारित है।",
           "R": "हम जानते हैं कि जब परमेश्वर ऐसे काम करनेवाले लोगों का न्याय करते हैं, तो वे सच के अनुसार न्याय करते हैं।"
+        },
+        "uk": {
+          "L": "А ми знаємо, що суд Божий за істиною на тих, хто таке чинить.",
+          "B": "Ми знаємо, що Божий суд над тими, хто таке робить, ґрунтується на істині.",
+          "R": "Ми знаємо: коли Бог судить людей, які таке роблять, {{deity_pronoun:він|Він}} судить справедливо, за правдою."
+        },
+        "ja": {
+          "L": "また、わたしたちは、このようなことを行う者たちに対する神の裁きが、真理に基づいていることを知っています。",
+          "B": "神の裁きは、このようなことをする者たちに、真実に従って下されます。そのことをわたしたちは知っています。",
+          "R": "神がこういうことをする人々を裁かれるとき、真実に従って裁かれることを、わたしたちは知っています。"
+        },
+        "id": {
+          "L": "Dan kita tahu bahwa penghakiman Allah sesuai dengan kebenaran atas orang-orang yang melakukan hal-hal seperti itu.",
+          "B": "Kita tahu bahwa penghakiman Allah atas orang-orang yang berbuat demikian berdasarkan kebenaran.",
+          "R": "Kita tahu bahwa ketika Allah menghakimi orang-orang yang melakukan hal-hal ini, {{deity_pronoun:dia|Dia}} menghakimi dengan benar."
+        },
+        "zh": {
+          "L": "我们知道，{{god_term:神|上帝}}的审判是照着真理临到做这样事的人。",
+          "B": "我们知道，{{god_term:神|上帝}}对做这种事的人的审判，是以真理为根据的。",
+          "R": "我们知道，{{god_term:神|上帝}}审判做这些事的人时，{{deity_pronoun:他|祂}}是按照真理来审判的。"
         }
       },
       "decisions": [
@@ -693,6 +841,27 @@
             "\"deity_pronoun\" spans"
           ],
           "reason": "Devanagari has no capital letters, so the English deity_pronoun setting has nothing to change in Hindi. Respect for God comes from the honorific third person at every level (style guide, sections 4 and 7). The same through this chapter.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n45002002007"
+          ],
+          "choice": "{{god_term:神|上帝}} for every word naming God",
+          "alternatives": [
+            "上帝 as the default"
+          ],
+          "reason": "The Chinese reader setting: \"神\" by default, \"上帝\" as the alternative (style guide section 4). It changes the word, never the meaning; this note stands for the whole chapter.",
           "uncertain": false,
           "footnote": false
         }
@@ -783,6 +952,26 @@
           "L": "और हे मनुष्य, तुम जो ऐसे काम करनेवालों पर दोष लगाते हो और [स्वयं] वही करते हो, क्या यह समझते हो कि तुम परमेश्वर के न्याय से बच जाओगे?",
           "B": "जब तुम ऐसे काम करनेवालों पर दोष लगाते हो और फिर भी स्वयं वही करते हो, तो क्या तुम सचमुच सोचते हो कि परमेश्वर के न्याय से बच जाओगे?",
           "R": "तुम दूसरों पर ये काम करने का दोष लगाते हो, पर तुम भी वही करते हो। क्या तुम सोचते हो कि परमेश्वर तुम्हारा न्याय नहीं करेंगे?"
+        },
+        "uk": {
+          "L": "Чи ж думаєш ти, о людино, що судиш тих, хто таке чинить, і [сам] робиш це, що ти уникнеш суду Божого?",
+          "B": "Ти судиш тих, хто таке робить, а сам робиш те саме, — невже ти справді думаєш, що уникнеш Божого суду?",
+          "R": "Ти судиш інших за такі вчинки, але й сам їх робиш. Невже ти думаєш, що Бог не судитиме тебе?"
+        },
+        "ja": {
+          "L": "ああ人よ、このようなことを行う者たちを裁きながら、自分でも同じことをしているあなたは、あなたこそ神の裁きを逃れられると考えているのですか？",
+          "B": "このようなことをする者たちを裁きながら、自分でも同じことをしているあなたが、神の裁きを逃れられると本気で思っているのですか？",
+          "R": "あなたは、こういうことをする人を裁きながら、自分でも同じことをしています。それなのに、神に裁かれないと思っているのですか？"
+        },
+        "id": {
+          "L": "Dan apakah engkau menyangka ini, hai manusia, engkau yang menghakimi orang-orang yang melakukan hal-hal seperti itu dan melakukannya [sendiri], bahwa engkau akan luput dari penghakiman Allah?",
+          "B": "Engkau menghakimi orang-orang yang berbuat demikian, padahal engkau sendiri juga melakukannya. Sungguhkah engkau mengira bahwa engkau akan luput dari penghakiman Allah?",
+          "R": "Kamu menghakimi orang lain karena melakukan hal-hal ini, tetapi kamu juga melakukannya. Apakah kamu pikir Allah tidak akan menghakimi kamu?"
+        },
+        "zh": {
+          "L": "人哪，你这审判做这种事的人、自己也做的，你以为这样就能躲过{{god_term:神|上帝}}的审判吗？",
+          "B": "你审判做这种事的人，自己却也在做，难道你真以为可以躲过{{god_term:神|上帝}}的审判吗？",
+          "R": "你审判别人做这些事，可是你自己也做。你以为{{god_term:神|上帝}}不会审判你吗？"
         }
       },
       "decisions": [
@@ -926,6 +1115,26 @@
           "L": "या क्या तुम उनकी कृपा और सहनशीलता और धीरज के धन को तुच्छ जानते हो, और यह नहीं जानते कि परमेश्वर की कृपा तुम्हें मन फिराव की ओर ले जा रही है?",
           "B": "या क्या तुम उनकी भरपूर कृपा, सहनशीलता और धीरज को हल्का समझते हो? क्या तुम नहीं देखते कि परमेश्वर तुम पर इसलिए कृपा करते हैं कि तुम्हें मन फिराव तक ले आएँ?",
           "R": "परमेश्वर तुम पर बहुत कृपालु और धीरजवंत रहे हैं, और उन्होंने अपना क्रोध रोके रखा है। क्या तुम सोचते हो कि इससे कोई फ़र्क़ नहीं पड़ता? परमेश्वर तुम पर कृपा करते हैं ताकि तुम अपने पापों से मुड़कर उनके पास लौट आओ।"
+        },
+        "uk": {
+          "L": "Чи ти зневажаєш багатство {{deity_pronoun:його|Його}} доброти, і терпіння, і довготерпіння, не знаючи, що Божа доброта веде тебе до покаяння?",
+          "B": "Чи, може, ти легковажиш тим, який {{deity_pronoun:він|Він}} багатий на доброту, терпимість і терпеливість? Хіба ти не бачиш, що Бог добрий до тебе, щоб привести тебе до покаяння?",
+          "R": "Бог був дуже добрий і терплячий до тебе, і {{deity_pronoun:він|Він}} стримував свій гнів. Ти думаєш, що це не має значення? Бог добрий до тебе, щоб ти відвернувся від своїх гріхів і повернувся до {{deity_pronoun:нього|Нього}}."
+        },
+        "ja": {
+          "L": "それとも、神の慈愛と猶予と寛容の豊かさを軽んじているのですか？神の慈愛があなたを悔い改めに導いていることを知らないで。",
+          "B": "それとも、神が豊かな慈愛と寛容をもって裁きを猶予しておられることを、軽んじているのですか？神が慈しみ深くあられるのは、あなたを悔い改めに導くためだということが、分からないのですか？",
+          "R": "神はあなたにとても優しく、辛抱強くしてくださり、怒りを抑えてこられました。それをどうでもよいことだと思っているのですか？神があなたに優しくしてくださるのは、あなたが罪から離れて、神のもとに立ち返るためなのです。"
+        },
+        "id": {
+          "L": "Atau apakah engkau meremehkan kekayaan kebaikan-{{deity_pronoun:nya|Nya}} dan kesabaran-{{deity_pronoun:nya|Nya}} dan kelapangan hati-{{deity_pronoun:nya|Nya}}, tidak mengetahui bahwa kebaikan Allah menuntunmu kepada pertobatan?",
+          "B": "Atau apakah engkau menganggap remeh betapa kaya {{deity_pronoun:dia|Dia}} dalam kebaikan, kesabaran, dan kelapangan hati? Tidakkah engkau melihat bahwa Allah baik kepadamu untuk membawamu kepada pertobatan?",
+          "R": "Allah sudah sangat baik dan sabar kepadamu, dan {{deity_pronoun:dia|Dia}} sudah menahan murka-{{deity_pronoun:nya|Nya}}. Apakah kamu pikir hal itu tidak penting? Allah baik kepadamu supaya kamu berbalik dari dosa-dosamu dan kembali kepada-{{deity_pronoun:nya|Nya}}."
+        },
+        "zh": {
+          "L": "或者，你是轻看{{deity_pronoun:他|祂}}那丰富的仁慈、容忍和耐心，不知道{{god_term:神|上帝}}的仁慈正在引导你悔改吗？",
+          "B": "还是你轻视{{deity_pronoun:他|祂}}丰富的仁慈、宽容和忍耐？难道你看不出，{{god_term:神|上帝}}恩待你，是为了带领你悔改吗？",
+          "R": "{{god_term:神|上帝}}对你非常仁慈，非常有耐心，{{deity_pronoun:他|祂}}一直忍住，没有向你发怒。你以为这些都不重要吗？{{god_term:神|上帝}}恩待你，是要你离开罪，回到{{deity_pronoun:他|祂}}身边。"
         }
       },
       "decisions": [
@@ -1154,6 +1363,87 @@
           "reason": "The style guide's key term for repentance: \"मन फिराव\" at Literal and Balanced, the plain \"पापों से मुड़ना\" at Readable, as in the Gospels. \"पश्चाताप\" means regret, not the turning around the word means (meaning decision m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45002004021"
+          ],
+          "choice": "\"щоб ти відвернувся від своїх гріхів і повернувся до Нього\"",
+          "alternatives": [
+            "\"до покаяння\""
+          ],
+          "reason": "Readable spells out what repentance means (m3), as the style guide allows and as the English Readable does; Literal and Balanced keep \"покаяння\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45002004009",
+            "n45002004012"
+          ],
+          "choice": "\"猶予\" and \"寛容\" (L, B); \"怒りを抑えて\" and \"辛抱強く\" (R)",
+          "alternatives": [
+            "\"忍耐\" for either word"
+          ],
+          "reason": "The first word is a pause before punishment, the second slowness to anger (m1). \"忍耐\" is kept for endurance (2:7), as in James, so the two words here are \"猶予\" and \"寛容\"; Readable explains them.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45002004021"
+          ],
+          "choice": "\"罪から離れて、神のもとに立ち返る\" (R); \"悔い改め\" (L, B)",
+          "alternatives": [
+            "\"悔い改め\" at every level"
+          ],
+          "reason": "Repentance is a turning from sin back to God (m3), not only regret. Readable says so in everyday words, as the style guide allows.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45002004021"
+          ],
+          "choice": "\"悔改\" (L, B); \"离开罪，回到神身边\" (R)",
+          "alternatives": [
+            "回心转意"
+          ],
+          "reason": "The glossary's word for repentance; Readable says what it means, in the words Mark 1:15 uses at that level.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1248,6 +1538,26 @@
           "L": "पर अपनी कठोरता और मन न फिरानेवाले हृदय के अनुसार तुम क्रोध के दिन के लिए, और परमेश्वर के धर्मी न्याय के प्रकट होने [के दिन] के लिए, अपने लिए क्रोध इकट्ठा कर रहे हो, \\v 6 जो हर एक को उसके कामों के अनुसार बदला देंगे;",
           "B": "पर तुम्हारा मन कठोर है और मन फिराना नहीं चाहता, इसलिए तुम क्रोध के उस दिन के लिए अपने ऊपर क्रोध का ढेर लगा रहे हो, जब परमेश्वर अपना धर्मी न्याय प्रकट करेंगे। \\v 6 वे हर एक को उसके कामों के अनुसार फल देंगे।",
           "R": "पर तुम ज़िद्दी हो और अपने पापों से मुड़ना नहीं चाहते। इसलिए तुम अपने विरुद्ध परमेश्वर का क्रोध बढ़ाते जा रहे हो, उस दिन के लिए जब वे अपना क्रोध प्रकट करेंगे। उस दिन परमेश्वर सब का न्याय करेंगे, और उनका न्याय सही होगा। \\v 6 वे हर व्यक्ति को उसके कामों का बदला देंगे।"
+        },
+        "uk": {
+          "L": "А через твердість свою і нерозкаяне серце ти збираєш собі гнів на день гніву й обʼявлення праведного суду Божого, \\v 6 який віддасть кожному за ділами його;",
+          "B": "Але твоє серце затверділо й не хоче покаятися, і так ти накопичуєш собі гнів на день гніву, коли Бог обʼявить свій праведний суд. \\v 6 Він віддасть кожному за його ділами.",
+          "R": "Але ти впертий і не хочеш відвернутися від своїх гріхів. Тож Божий гнів проти тебе дедалі більшає аж до дня, коли Бог покаже свій гнів. Того дня Бог судитиме всіх, і {{deity_pronoun:його|Його}} суд буде справедливим. \\v 6 Він відплатить кожній людині за те, що вона зробила."
+        },
+        "ja": {
+          "L": "しかし、あなたは、自分のかたくなさと悔い改めない心のゆえに、怒りと神の正しい裁きの啓示との日に向けて、自分のために怒りを蓄えています。\\v 6 神は、一人一人に、その人の行いに応じて報いられます。",
+          "B": "しかしあなたは、心がかたくなで悔い改めようとしないので、怒りの日に向けて、自分のために怒りを積み上げています。その日、神は正しい裁きを明らかにされます。\\v 6 神は、一人一人に、その行いにふさわしく報いられます。",
+          "R": "でもあなたは強情で、罪から離れようとしません。そのため、あなたに対する神の怒りはますます大きくなっていきます。それは、神がその怒りを示される日のために、たまっていくのです。その日、神はすべての人を裁かれ、その裁きは正しいものです。\\v 6 神は一人一人に、その人がしたことに応じて報いられます。"
+        },
+        "id": {
+          "L": "Tetapi oleh kekerasan hatimu dan hatimu yang tidak mau bertobat, engkau sedang menimbun murka bagi dirimu sendiri pada hari murka dan [hari] dinyatakannya penghakiman Allah yang adil, \\v 6 yang akan membalas setiap orang sesuai dengan perbuatannya;",
+          "B": "Tetapi hatimu keras dan tidak mau bertobat, sehingga engkau menimbun murka bagi dirimu sendiri menjelang hari murka, ketika Allah menyatakan penghakiman-{{deity_pronoun:nya|Nya}} yang adil. \\v 6 {{deity_pronoun:dia|Dia}} akan memberi setiap orang apa yang layak bagi perbuatannya.",
+          "R": "Tetapi kamu keras kepala dan tidak mau berbalik dari dosa-dosamu. Jadi kamu sedang membuat murka Allah terhadapmu semakin besar, menunggu hari ketika {{deity_pronoun:dia|Dia}} akan menyatakan murka-{{deity_pronoun:nya|Nya}}. Pada hari itu Allah akan menghakimi semua orang, dan penghakiman-{{deity_pronoun:nya|Nya}} adil. \\v 6 {{deity_pronoun:dia|Dia}} akan membalas setiap orang sesuai dengan apa yang telah dilakukannya."
+        },
+        "zh": {
+          "L": "然而你按着你的刚硬和不肯悔改的心，正在为自己积存愤怒，[要在]愤怒的日子，就是{{god_term:神|上帝}}公义的审判显明的日子[临到]；\\v 6 {{deity_pronoun:他|祂}}要按照每个人的行为回报每个人；",
+          "B": "可是你的心刚硬，不肯悔改，你就是在为自己堆积愤怒，等着那愤怒的日子，那时{{god_term:神|上帝}}要显明{{deity_pronoun:他|祂}}公义的审判。\\v 6 {{deity_pronoun:他|祂}}要按每个人的行为，给每个人应得的报应。",
+          "R": "可是你很固执，不肯离开你的罪。这样，你就使{{god_term:神|上帝}}对你的怒气越积越多，等到那一天，{{deity_pronoun:他|祂}}要显明{{deity_pronoun:他|祂}}的怒气。那一天，{{god_term:神|上帝}}要审判所有的人，{{deity_pronoun:他|祂}}的审判是公正的。\\v 6 {{deity_pronoun:他|祂}}要按每个人所做的，回报每一个人。"
         }
       },
       "decisions": [
@@ -1561,6 +1871,49 @@
           "reason": "\"Каждому... его\" is the ordinary Russian for every person, man or woman; the English needs a span for \"his\", Russian does not.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n45002006007"
+          ],
+          "choice": "\"その人の\" / \"その\" with no gender span",
+          "alternatives": [
+            "\"{{gender:その人の|彼の}}\""
+          ],
+          "reason": "The English needs a setting for \"their/his\"; Japanese \"その人\" is already inclusive.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45002005011",
+            "n45002005014"
+          ],
+          "choice": "\"愤怒\" (L, B); \"怒气\" (R)",
+          "alternatives": [
+            "忿怒"
+          ],
+          "reason": "As in 1:18: God's wrath is 愤怒, the standard modern form; Readable says 怒气, as the English Readable says \"anger\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1642,6 +1995,26 @@
           "L": "जो भले काम में धीरज से महिमा और आदर और अमरता की खोज में हैं, उन्हें अनन्त जीवन;",
           "B": "जो भले काम में लगे रहकर महिमा, आदर और अमरता की खोज करते हैं, उन्हें वे अनन्त जीवन देंगे।",
           "R": "कुछ लोग भलाई करते रहते हैं, क्योंकि वे परमेश्वर से महिमा और आदर चाहते हैं, और ऐसा जीवन चाहते हैं जो कभी नाश न हो। परमेश्वर उन्हें अनन्त जीवन देंगे।"
+        },
+        "uk": {
+          "L": "тим, які стійкістю в доброму ділі шукають слави, і честі, і нетління, — вічне життя;",
+          "B": "Тих, хто наполегливо робить добро, шукаючи слави, честі й безсмертя, {{deity_pronoun:він|Він}} нагородить вічним життям.",
+          "R": "Деякі люди далі роблять добро, бо хочуть слави й честі від Бога і життя, якого ніщо не може знищити. Бог дасть їм вічне життя."
+        },
+        "ja": {
+          "L": "すなわち、忍耐をもって善い行いをし、栄光と誉れと朽ちないことを求める者たちには、永遠の命を[与えられます]。",
+          "B": "忍耐強く善を行い、栄光と誉れと朽ちない命を求める人々には、神は永遠の命をお与えになります。",
+          "R": "ある人々は、神からの栄光と誉れと、決して滅びることのない命を求めて、よいことを続けます。神はその人々に永遠の命を与えてくださいます。"
+        },
+        "id": {
+          "L": "kepada mereka yang dengan ketekunan dalam perbuatan baik mencari kemuliaan dan kehormatan dan ketidakbinasaan, hidup yang kekal;",
+          "B": "Kepada mereka yang tekun berbuat baik dan mencari kemuliaan, kehormatan, dan hidup yang tidak dapat binasa, {{deity_pronoun:dia|Dia}} akan memberikan hidup kekal.",
+          "R": "Ada orang-orang yang terus berbuat baik, karena mereka menginginkan kemuliaan dan kehormatan dari Allah serta hidup yang tidak dapat binasa. Allah akan memberi mereka hidup kekal."
+        },
+        "zh": {
+          "L": "对那些凭着忍耐行善、寻求荣耀、尊贵和不朽的人，[赐下]永生；",
+          "B": "那些坚持不懈地行善，寻求荣耀、尊贵和不朽的人，{{deity_pronoun:他|祂}}要以永生回报他们。",
+          "R": "有些人一直坚持做好事，因为他们想从{{god_term:神|上帝}}那里得到荣耀和尊贵，也想得到永远不会毁坏的生命。{{god_term:神|上帝}}要把永生赐给他们。"
         }
       },
       "decisions": [
@@ -1883,6 +2256,26 @@
           "L": "पर जो स्वार्थ से [चलते] हैं और सत्य को नहीं मानते, पर अधर्म को मानते हैं, उन पर क्रोध और कोप; \\v 9 हर एक मनुष्य के प्राण पर, जो बुराई करता है, क्लेश और संकट, पहले यहूदी पर और यूनानी पर भी;",
           "B": "पर जो स्वार्थ से प्रेरित हैं, जो सत्य को ठुकराते हैं और उसके बदले बुराई के पीछे चलते हैं, उन पर क्रोध और कोप पड़ेगा। \\v 9 हर उस मनुष्य पर, जो बुराई करता है, क्लेश और संकट आएगा, पहले यहूदी पर, और यूनानी पर भी।",
           "R": "पर कुछ लोग केवल अपनी ही परवाह करते हैं। वे सच को नहीं मानते, और ग़लत काम करना चुनते हैं। परमेश्वर उन पर अपना क्रोध और कोप प्रकट करेंगे। \\v 9 जो भी बुराई करता है, वह दुःख और संकट भोगेगा, पहले यहूदी, और फिर ग़ैर-यहूदी भी।"
+        },
+        "uk": {
+          "L": "а тим, які [діють] із самолюбства і не коряться істині, а коряться неправедності, — гнів і лють; \\v 9 скорбота і утиск на кожну душу людини, яка чинить зло, і юдея насамперед, і грека;",
+          "B": "А тих, кого веде себелюбне суперництво, хто відкидає істину й натомість іде за неправедністю, чекає гнів і лють. \\v 9 Біда й тривога буде кожній людині, яка чинить зло, спершу юдеєві, а також грекові.",
+          "R": "Але деякі люди дбають тільки про себе. Вони не хочуть слухатися правди і вибирають робити зло. Бог покаже їм свій гнів і лють. \\v 9 Кожна людина, яка чинить зло, страждатиме від болю й біди, спершу юдеї, а потім і неюдеї."
+        },
+        "ja": {
+          "L": "しかし、利己心から[行動し]、真理に従わず、不義に従う者たちには、怒りと憤りが[下ります]。\\v 9 悪を行う人間のすべての魂の上には、まずユダヤ人に、またギリシア人にも、苦難と苦悩が[あります]。",
+          "B": "しかし、自分の利益ばかりを求め、真理を退けて不正に従う人々には、怒りと憤りが下ります。\\v 9 悪を行う人にはだれにでも、苦難と苦悩が臨みます。まずユダヤ人に、そしてギリシア人にもです。",
+          "R": "でも、ある人々は自分のことしか考えません。真理に従おうとせず、悪いことをするほうを選びます。神はその人々に激しくお怒りになります。\\v 9 悪いことをする人はみな、苦しみと悩みにあいます。まずユダヤ人が、そしてユダヤ人でない人々もです。"
+        },
+        "id": {
+          "L": "tetapi kepada mereka yang [bertindak] karena kepentingan diri sendiri dan tidak menaati kebenaran tetapi menaati kelaliman, murka dan geram; \\v 9 penderitaan dan kesesakan atas setiap jiwa manusia yang melakukan yang jahat, baik orang Yahudi terlebih dahulu maupun orang Yunani;",
+          "B": "Tetapi bagi mereka yang didorong oleh kepentingan diri sendiri, yang menolak kebenaran dan malah mengikuti kejahatan, akan ada murka dan geram. \\v 9 Akan ada penderitaan dan kesesakan bagi setiap manusia yang berbuat jahat, pertama orang Yahudi dan juga orang Yunani.",
+          "R": "Tetapi ada orang-orang yang hanya memikirkan diri sendiri. Mereka tidak mau menaati kebenaran, dan mereka memilih berbuat jahat. Allah akan menunjukkan murka dan geram-{{deity_pronoun:nya|Nya}} kepada mereka. \\v 9 Setiap orang yang berbuat jahat akan mengalami penderitaan dan kesusahan, pertama orang Yahudi, lalu juga orang bukan Yahudi."
+        },
+        "zh": {
+          "L": "但对那些出于自私的野心、不顺从真理、反倒顺从不义的人，[有]愤怒和烈怒；\\v 9 患难和困苦要临到每一个作恶之人的灵魂，先是犹太人，也是希腊人；",
+          "B": "但那些被自私的野心驱使、拒绝真理、反去随从不义的人，将要承受愤怒和烈怒。\\v 9 每一个作恶的人都要遭受患难和痛苦，先是犹太人，也有希腊人。",
+          "R": "但有些人只顾自己。他们不肯顺从真理，却选择做错事。{{god_term:神|上帝}}要向他们发出{{deity_pronoun:他|祂}}的怒气和烈怒。\\v 9 每一个作恶的人都要受痛苦和患难，先是犹太人，然后也有非犹太人。"
         }
       },
       "decisions": [
@@ -2076,6 +2469,27 @@
           "reason": "Readable says what \"Greek\" means here, as in 1:16.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45002009016"
+          ],
+          "choice": "\"希腊人\" (L, B); \"非犹太人\" (R)",
+          "alternatives": [
+            "外邦人"
+          ],
+          "reason": "\"Greek\" here means anyone who is not a Jew. Literal and Balanced keep the word; Readable says what it means, as in 1:16 and as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2159,6 +2573,26 @@
           "L": "पर हर एक भलाई करनेवाले को महिमा और आदर और शान्ति, पहले यहूदी को और यूनानी को भी;",
           "B": "पर हर भलाई करनेवाले को महिमा, आदर और शान्ति मिलेगी, पहले यहूदी को, और यूनानी को भी।",
           "R": "पर जो भी भलाई करता है, उसे परमेश्वर महिमा, आदर और शान्ति देंगे, पहले यहूदी को, और फिर ग़ैर-यहूदी को भी।"
+        },
+        "uk": {
+          "L": "а слава, і честь, і мир кожному, хто чинить добро, і юдеєві насамперед, і грекові;",
+          "B": "А слава, честь і мир будуть кожному, хто робить добро, спершу юдеєві, а також грекові.",
+          "R": "Але Бог дасть славу, честь і мир кожному, хто робить добро, спершу юдеям, а потім і неюдеям."
+        },
+        "ja": {
+          "L": "しかし、善を行うすべての者には、まずユダヤ人に、またギリシア人にも、栄光と誉れと平和が[あります]。",
+          "B": "しかし、善を行う人にはだれにでも、栄光と誉れと平和が与えられます。まずユダヤ人に、そしてギリシア人にもです。",
+          "R": "でも、よいことをする人にはみな、神が栄光と誉れと平和を与えてくださいます。まずユダヤ人に、そしてユダヤ人でない人々にもです。"
+        },
+        "id": {
+          "L": "tetapi kemuliaan dan kehormatan dan damai sejahtera bagi setiap orang yang melakukan yang baik, baik bagi orang Yahudi terlebih dahulu maupun bagi orang Yunani;",
+          "B": "Tetapi akan ada kemuliaan, kehormatan, dan damai sejahtera bagi setiap orang yang berbuat baik, pertama orang Yahudi dan juga orang Yunani.",
+          "R": "Tetapi Allah akan memberikan kemuliaan, kehormatan, dan damai kepada setiap orang yang berbuat baik, pertama kepada orang Yahudi, lalu juga kepada orang bukan Yahudi."
+        },
+        "zh": {
+          "L": "但荣耀、尊贵和平安[要归给]每一个行善的人，先是犹太人，也是希腊人；",
+          "B": "但每一个行善的人都要得着荣耀、尊贵和平安，先是犹太人，也有希腊人。",
+          "R": "但{{god_term:神|上帝}}要把荣耀、尊贵和平安赐给每一个做好事的人，先是犹太人，然后也有非犹太人。"
         }
       },
       "decisions": [
@@ -2240,6 +2674,27 @@
           "reason": "As in 1:16.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45002010006"
+          ],
+          "choice": "\"平和\" rather than \"平安\"",
+          "alternatives": [
+            "\"平安\""
+          ],
+          "reason": "Here peace is the wholeness and right relationship with God (m2), which Romans renders \"平和\" (5:1); \"平安\" is kept for the greeting (1:7) and inner calm.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2314,6 +2769,26 @@
           "L": "क्योंकि परमेश्वर के यहाँ पक्षपात नहीं है।",
           "B": "क्योंकि परमेश्वर एक को दूसरे से बढ़कर नहीं मानते।",
           "R": "परमेश्वर किसी का पक्षपात नहीं करते।"
+        },
+        "uk": {
+          "L": "Бо немає упередженості в Бога.",
+          "B": "Бо Бог не віддає переваги одній людині перед іншою.",
+          "R": "Бог не має улюбленців."
+        },
+        "ja": {
+          "L": "というのは、神には分け隔てがないからです。",
+          "B": "神は人を分け隔てなさらないからです。",
+          "R": "神はえこひいきをなさいません。"
+        },
+        "id": {
+          "L": "Sebab tidak ada keberpihakan pada Allah.",
+          "B": "Sebab Allah tidak memihak kepada siapa pun.",
+          "R": "Allah tidak pilih kasih."
+        },
+        "zh": {
+          "L": "因为在{{god_term:神|上帝}}那里没有偏私。",
+          "B": "因为{{god_term:神|上帝}}不会偏袒任何人。",
+          "R": "{{god_term:神|上帝}}没有偏心。"
         }
       },
       "decisions": [
@@ -2431,6 +2906,26 @@
           "L": "क्योंकि जितनों ने व्यवस्था के बिना पाप किया, वे व्यवस्था के बिना नाश भी होंगे, और जितनों ने व्यवस्था में [रहकर] पाप किया, उनका न्याय व्यवस्था के द्वारा होगा;",
           "B": "जो व्यवस्था पाए बिना पाप करते हैं, वे व्यवस्था के बिना ही नाश होंगे, और जो व्यवस्था के अधीन रहते हुए पाप करते हैं, उनका न्याय व्यवस्था से होगा।",
           "R": "कुछ लोगों के पास परमेश्वर की व्यवस्था नहीं है, वह व्यवस्था जो उन्होंने मूसा को दी। जब वे पाप करते हैं, तो वे नाश होंगे, चाहे उनके पास व्यवस्था नहीं थी। दूसरों के पास व्यवस्था है। जब वे पाप करते हैं, तो व्यवस्था उनका न्याय करेगी।"
+        },
+        "uk": {
+          "L": "Бо всі, хто без Закону згрішили, без Закону й загинуть; і всі, хто в Законі згрішили, через Закон будуть суджені;",
+          "B": "Ті, хто грішить, не маючи Закону, і загинуть без Закону, а ті, хто грішить, живучи під Законом, будуть суджені Законом.",
+          "R": "Деякі люди не мають Божого Закону — Закону, який {{deity_pronoun:він|Він}} дав Мойсеєві. Коли вони грішать, вони загинуть, хоч і не мали Закону. Інші мають Закон. Коли вони грішать, Закон судитиме їх."
+        },
+        "ja": {
+          "L": "というのは、律法なしに罪を犯した者は皆、律法なしに滅び、律法のもとで罪を犯した者は皆、律法によって裁かれるからです。",
+          "B": "律法を持たずに罪を犯した人は、律法とかかわりなく滅び、律法のもとで罪を犯した人は、律法によって裁かれます。",
+          "R": "神の律法、つまり神がモーセに与えられた律法を持っていない人々がいます。その人々が罪を犯すなら、律法を持っていなくても滅びます。律法を持っている人々もいます。その人々が罪を犯すなら、律法によって裁かれます。"
+        },
+        "id": {
+          "L": "Sebab semua orang yang berdosa tanpa hukum Taurat juga akan binasa tanpa hukum Taurat, dan semua orang yang berdosa di bawah hukum Taurat akan dihakimi oleh hukum Taurat;",
+          "B": "Mereka yang berdosa tanpa memiliki hukum Taurat akan binasa tanpa hukum Taurat, dan mereka yang berdosa sementara hidup di bawah hukum Taurat akan dihakimi oleh hukum Taurat.",
+          "R": "Ada orang-orang yang tidak memiliki hukum Allah, yaitu hukum yang {{deity_pronoun:dia|Dia}} berikan kepada Musa. Ketika mereka berbuat dosa, mereka akan binasa, walaupun mereka tidak memiliki hukum itu. Ada orang lain yang memiliki hukum itu. Ketika mereka berbuat dosa, hukum itu akan menghakimi mereka."
+        },
+        "zh": {
+          "L": "因为凡是没有律法而犯罪的，也要没有律法而灭亡；凡是在律法中犯罪的，要借着律法受审判；",
+          "B": "那些没有律法而犯罪的人，就算没有律法也会灭亡；那些在律法之下犯罪的人，要按律法受审判。",
+          "R": "有些人没有{{god_term:神|上帝}}的律法，就是{{deity_pronoun:他|祂}}赐给摩西的律法。他们犯了罪，就会灭亡，虽然他们没有律法。另一些人有律法。他们犯了罪，律法就要审判他们。"
         }
       },
       "decisions": [
@@ -2668,6 +3163,88 @@
           "reason": "Key term through Romans: the law of Moses (meaning decision m1) is \"व्यवस्था\" at every level, as in the Gospels and Acts.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45002012011",
+            "n45002012014"
+          ],
+          "choice": "Закон, capitalised, for the law of Moses",
+          "alternatives": [
+            "закон"
+          ],
+          "reason": "The style guide writes \"Закон\" for God's law (m1) and \"закон\" for a ruling principle (2:14 \"самі собі закон\", 3:27, 7:21-23), so the reader can tell the two apart, though the Greek often has no article.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n45002012011"
+          ],
+          "choice": "\"神の律法、つまり神がモーセに与えられた律法\" (R); \"律法\" at every level",
+          "alternatives": [
+            "\"神のおきて\" at Readable"
+          ],
+          "reason": "Romans keeps \"律法\" at every level for the law of Moses (m1); Readable says once which law is meant, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45002012011",
+            "n45002012014"
+          ],
+          "choice": "\"hukum Taurat\" (L, B); \"hukum Allah ... yang Dia berikan kepada Musa\", then \"hukum itu\" (R)",
+          "alternatives": [],
+          "reason": "The glossary term for the law of Moses (m1), for the whole letter; Readable names it as the English Readable does. Lowercase \"hukum\" alone where Paul speaks of a law or principle in general (7:21-23).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45002012011"
+          ],
+          "choice": "\"律法\" for nomos",
+          "alternatives": [
+            "法律"
+          ],
+          "reason": "The glossary's word for the law of Moses, at every level and through Romans; 法律 is a state's law.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2749,6 +3326,26 @@
           "L": "क्योंकि परमेश्वर के सामने व्यवस्था के सुननेवाले धर्मी नहीं, पर व्यवस्था पर चलनेवाले धर्मी ठहराए जाएँगे।",
           "B": "व्यवस्था को सुन लेने से कोई परमेश्वर के सामने धर्मी नहीं होता; जो व्यवस्था पर चलते हैं, उन्हीं को परमेश्वर धर्मी ठहराएँगे।",
           "R": "केवल व्यवस्था सुन लेने से लोग परमेश्वर की दृष्टि में सही नहीं हो जाते। जो व्यवस्था पर चलते हैं, उन्हीं को परमेश्वर अपनी दृष्टि में सही ठहराएँगे।"
+        },
+        "uk": {
+          "L": "Бо не слухачі Закону праведні перед Богом, але виконавці Закону будуть виправдані.",
+          "B": "Не ті, хто слухає Закон, праведні перед Богом, а ті, хто виконує Закон, будуть виправдані.",
+          "R": "Тільки слухати Закон — цього мало, щоб бути праведним перед Богом. Бог виправдає тих, хто робить те, що каже Закон."
+        },
+        "ja": {
+          "L": "というのは、律法を聞く者が神の前に正しいのではなく、律法を行う者が義とされるからです。",
+          "B": "律法を聞くだけで、神の前に正しい者となるのではありません。律法の命じることを行う者こそが、神によって義とされるのです。",
+          "R": "律法をただ聞くだけでは、神の前に正しい者とはなりません。律法の命じることを行う人を、神は正しい者と認めてくださいます。"
+        },
+        "id": {
+          "L": "Sebab bukan pendengar hukum Taurat [yang] benar di hadapan Allah, tetapi pelaku hukum Taurat yang akan dibenarkan.",
+          "B": "Mendengar hukum Taurat tidak membuat seseorang benar di hadapan Allah; orang yang melakukan apa yang dikatakan hukum Tauratlah yang akan dinyatakan benar oleh Allah.",
+          "R": "Hanya mendengar hukum Taurat tidak membuat orang benar di hadapan Allah. Allah akan menerima sebagai orang benar mereka yang melakukan apa yang dikatakan hukum Taurat."
+        },
+        "zh": {
+          "L": "因为在{{god_term:神|上帝}}面前为义的，不是律法的听众，而是律法的实行者将被称义。",
+          "B": "单听律法并不能使人在{{god_term:神|上帝}}面前成为义人；遵行律法所说的人，才是{{god_term:神|上帝}}要称为义的人。",
+          "R": "只是听律法，并不能使人在{{god_term:神|上帝}}面前成为义人。{{god_term:神|上帝}}要把遵行律法的人接纳为义人。"
         }
       },
       "decisions": [
@@ -2992,6 +3589,89 @@
           "reason": "Key term: to justify is \"धर्मी ठहराना\" at Literal and Balanced, keeping the link with \"धर्मी\" and \"धार्मिकता\". Readable says what it means, to be declared right in God's sight (meaning decision m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45002013014"
+          ],
+          "choice": "виправдати at every level",
+          "alternatives": [
+            "\"оголосити праведним\"",
+            "\"визнати праведним\""
+          ],
+          "reason": "The style guide keeps \"виправдати\" for dikaioō at every level in Romans: in Ukrainian it says what the Greek says (declared righteous, acquitted, m2), shares its root with \"праведний\", and lets the reader follow the argument of chapters 3-5.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45002013014"
+          ],
+          "choice": "\"義とされる\" (L, B); \"神は正しい者と認めてくださいます\" (R)",
+          "alternatives": [
+            "\"正しいと宣言される\""
+          ],
+          "reason": "Settled here for Romans: the law-court verb of God's verdict (m2) is \"義とする / 義とされる\" at Literal and Balanced, which keeps it with \"義\" and \"正しい\"; Readable says what the verdict is, with God as the one who gives it.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45002013014"
+          ],
+          "choice": "\"dibenarkan\" (L); \"dinyatakan benar oleh Allah\" (B); \"menerima sebagai orang benar\" (R)",
+          "alternatives": [],
+          "reason": "The glossary has \"membenarkan\" (L, B) and \"menyatakan benar\" (R) for justify, from the root of \"kebenaran\", which keeps Paul's argument visible; Balanced here follows the English \"declare righteous\", and Readable the English Readable.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45002013014"
+          ],
+          "choice": "\"称义\" (L), \"称为义\" (B); \"接纳为义人\" (R)",
+          "alternatives": [
+            "算为义人 (R)"
+          ],
+          "reason": "The glossary's forms for justify: declared righteous before God. Readable takes 接纳为义人 rather than 算为义人 so that 算作 stays free for \"count, reckon\" (logizomai), which Romans 4 keeps apart from justify.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3078,6 +3758,26 @@
           "L": "क्योंकि जब अन्यजाति, जिनके पास व्यवस्था नहीं है, स्वभाव से व्यवस्था की बातें करते हैं, तो व्यवस्था न रखते हुए भी वे अपने लिए स्वयं व्यवस्था हैं;",
           "B": "अन्यजातियों के पास व्यवस्था नहीं है। फिर भी जब वे स्वभाव से व्यवस्था की बातों पर चलते हैं, तो वे अपने लिए स्वयं व्यवस्था बन जाते हैं, यद्यपि व्यवस्था उन्हें कभी दी नहीं गई।",
           "R": "ग़ैर-यहूदी लोगों के पास परमेश्वर की व्यवस्था नहीं है। पर कभी-कभी वे बिना सिखाए ही वह करते हैं जो व्यवस्था कहती है। जब वे ऐसा करते हैं, तो वे दिखाते हैं कि वे व्यवस्था के बिना भी सही और ग़लत को पहचानते हैं।"
+        },
+        "uk": {
+          "L": "Бо коли язичники, які не мають Закону, з природи чинять те, що від Закону, то вони, не маючи Закону, самі собі закон;",
+          "B": "Язичники не мають Закону. Та коли вони з природи виконують те, чого вимагає Закон, вони стають законом самі для себе, хоч Закону їм ніколи не було дано.",
+          "R": "Люди, які не є юдеями, не мають Божого Закону. Але інколи вони роблять те, що каже Закон, хоч їх цього ніхто не вчив. Коли вони так роблять, вони показують, що знають, що добре, а що погано, навіть без Закону."
+        },
+        "ja": {
+          "L": "というのは、律法を持たない異邦人が、本性によって律法の[命じる]ことを行うとき、律法を持たないこの人々は、自分自身に対して律法となっているからです。",
+          "B": "異邦人は律法を持っていません。しかし、本性に従って律法の命じることを行うとき、律法を与えられていなくても、自分の内に律法を持っていることになるのです。",
+          "R": "ユダヤ人でない人々は、神の律法を持っていません。でも、教えられなくても、律法の命じることをすることがあります。そのとき、律法がなくても、何が正しく何がまちがっているかを知っていることを示しているのです。"
+        },
+        "id": {
+          "L": "Sebab apabila bangsa-bangsa lain, yang tidak memiliki hukum Taurat, oleh dorongan alami melakukan hal-hal yang dituntut hukum Taurat, mereka ini, walaupun tidak memiliki hukum Taurat, menjadi hukum bagi diri mereka sendiri;",
+          "B": "Bangsa-bangsa lain tidak memiliki hukum Taurat. Namun apabila secara alami mereka melakukan apa yang dikatakan hukum Taurat, mereka menjadi hukum bagi diri mereka sendiri, walaupun hukum Taurat tidak pernah diberikan kepada mereka.",
+          "R": "Orang-orang bukan Yahudi tidak memiliki hukum Allah. Tetapi kadang-kadang mereka melakukan apa yang dikatakan hukum itu tanpa pernah diajarkan. Kalau mereka melakukannya, mereka menunjukkan bahwa mereka tahu mana yang benar dan mana yang salah, walaupun tanpa hukum itu."
+        },
+        "zh": {
+          "L": "因为每当那些没有律法的外邦人凭本性行出律法[所要求]的事，这些人虽然没有律法，对自己来说就是律法；",
+          "B": "外邦人没有律法。可是当他们凭本性去做律法要求的事，虽然律法从来没有赐给他们，他们自己心里就有了律法的要求。",
+          "R": "非犹太人没有{{god_term:神|上帝}}的律法。可是有时候，他们没有人教，也会去做律法所要求的事。他们这样做，就表明他们知道什么是对，什么是错，虽然他们没有律法。"
         }
       },
       "decisions": [
@@ -3311,6 +4011,49 @@
           "reason": "The key term for Gentiles through Romans, as the style guide has it.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45002014017",
+            "n45002014018",
+            "n45002014019"
+          ],
+          "choice": "\"自分の内に律法を持っている\" (B); \"何が正しく何がまちがっているかを知っている\" (R)",
+          "alternatives": [
+            "\"自分自身が律法である\""
+          ],
+          "reason": "\"自分が律法だ\" would suggest people who make their own rules, the opposite of Paul's point (m3). Literal keeps the Greek's form with \"自分自身に対して\"; Balanced and Readable say what it means.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45002014017",
+            "n45002014018",
+            "n45002014019"
+          ],
+          "choice": "\"他们自己心里就有了律法的要求\"",
+          "alternatives": [
+            "他们自己就是自己的律法"
+          ],
+          "reason": "In Chinese \"to be one's own law\" can sound like doing as one pleases, the opposite of Paul's point. Balanced says that the law's demand is within them; Literal keeps the form (对自己来说就是律法).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3420,6 +4163,26 @@
           "L": "वे व्यवस्था का काम अपने हृदयों में लिखा हुआ दिखाते हैं, उनका विवेक भी [उनके] साथ गवाही देता है, और उनके विचार आपस में [उन्हें] दोषी या निर्दोष भी ठहराते हैं, \\v 16 उस दिन जब परमेश्वर मेरे सुसमाचार के अनुसार मसीह यीशु के द्वारा मनुष्यों की गुप्त बातों का न्याय करेंगे।",
           "B": "उनका आचरण दिखाता है कि व्यवस्था का काम उनके हृदयों में लिखा है। उनका विवेक भी गवाही देता है, और उनके विचार आपस में बहस करते हैं, कभी उन्हें दोषी ठहराते हैं, कभी उनका बचाव करते हैं, \\v 16 उस दिन, जब परमेश्वर मसीह यीशु के द्वारा लोगों के जीवन की छिपी बातों का न्याय करेंगे, जैसा मेरा सुनाया हुआ सुसमाचार कहता है।",
           "R": "उनका जीवन दिखाता है कि जो व्यवस्था माँगती है, वह उनके हृदयों में लिखा है। उनका विवेक भी इस बात से सहमत है। उनके विचार कभी उनसे कहते हैं कि वे दोषी हैं, और कभी कहते हैं कि वे दोषी नहीं हैं। \\v 16 यह सब उस दिन सामने आएगा, जब परमेश्वर मसीह यीशु के द्वारा हर व्यक्ति की गुप्त बातों का न्याय करेंगे। यही वह सुसमाचार कहता है जो मैं सुनाता हूँ।"
+        },
+        "uk": {
+          "L": "Вони показують діло Закону, написане в їхніх серцях, коли разом [з ними] свідчить їхнє сумління, а їхні думки між собою то звинувачують, то й захищають [їх], \\v 16 у день, коли Бог судить таємне людей згідно з моїм Євангелієм через {{christos:Христа|Месію}} Ісуса.",
+          "B": "Їхня поведінка показує, що діло Закону написане в їхніх серцях. Їхнє сумління теж свідчить про це, а їхні думки сперечаються між собою, то звинувачуючи їх, то захищаючи, \\v 16 того дня, коли Бог через {{christos:Христа|Месію}} Ісуса судитиме приховане в житті людей, як каже Євангеліє, яке я проповідую.",
+          "R": "Їхнє життя показує, що те, чого вимагає Закон, написане в їхніх серцях. Їхнє сумління з цим погоджується. Думки то кажуть їм, що вони винні, то кажуть, що невинні. \\v 16 Усе це вийде на світло того дня, коли Бог через {{christos:Христа|Месію}} Ісуса судитиме таємниці кожної людини. Так каже Добра звістка, яку я проповідую."
+        },
+        "ja": {
+          "L": "彼らは、律法の行いが自分たちの心に記されていることを示しています。彼らの良心も共に証しし、彼らの思いも互いの間で責めたり、あるいは弁明したりしています。\\v 16 [それは]わたしの福音によれば、神が{{christos:キリスト|メシア}}・イエスを通して人々の隠れたことを裁かれる日に[起こります]。",
+          "B": "彼らの行いは、律法の求めることが彼らの心に記されていることを示しています。彼らの良心もそれを証しし、彼らの思いも互いに論じ合って、ある時は彼らを責め、ある時は弁護します。\\v 16 それは、神が{{christos:キリスト|メシア}}・イエスを通して、人々の隠れたことを裁かれる日のことです。わたしが伝える福音が告げているとおりです。",
+          "R": "その人々の生き方は、律法が求めることが心に書かれていることを示しています。その人々の良心も、そうだと認めます。心の中の考えが、ある時は自分を責め、ある時は自分をかばいます。\\v 16 このすべてが明らかになるのは、神が{{christos:キリスト|メシア}}・イエスを通して、すべての人の秘密を裁かれる日です。わたしが伝えている良い知らせは、そう告げています。"
+        },
+        "id": {
+          "L": "Mereka menunjukkan bahwa pekerjaan hukum Taurat tertulis di dalam hati mereka, hati nurani mereka turut bersaksi dan pikiran mereka saling menuduh atau bahkan membela [mereka], \\v 16 pada hari ketika Allah menghakimi hal-hal yang tersembunyi dalam diri manusia sesuai dengan Injilku melalui {{christos:Kristus|Mesias}} Yesus.",
+          "B": "Perbuatan mereka menunjukkan bahwa tuntutan hukum Taurat tertulis di dalam hati mereka. Hati nurani mereka juga ikut bersaksi, dan pikiran mereka saling berdebat, kadang menuduh mereka, kadang membela mereka, \\v 16 pada hari ketika Allah, melalui {{christos:Kristus|Mesias}} Yesus, menghakimi hal-hal yang tersembunyi dalam hidup manusia, sesuai dengan Injil yang kuberitakan.",
+          "R": "Hidup mereka menunjukkan bahwa apa yang dituntut hukum Taurat tertulis di dalam hati mereka. Hati nurani mereka setuju dengan hal itu. Pikiran mereka kadang berkata bahwa mereka bersalah, dan kadang berkata bahwa mereka tidak bersalah. \\v 16 Semua ini akan terungkap pada hari ketika Allah menghakimi rahasia setiap orang melalui {{christos:Kristus|Mesias}} Yesus. Itulah yang dikatakan kabar baik yang saya beritakan."
+        },
+        "zh": {
+          "L": "他们表明律法的工作已写在他们心里；他们的良心也一同作见证，他们的思想在彼此之间控告，或者也辩护，\\v 16 就在{{god_term:神|上帝}}按照我的福音，借着{{christos:基督|弥赛亚}}耶稣审判人们隐藏之事的那一天。",
+          "B": "他们的行为表明，律法所要求的已经写在他们心里。他们的良心也作见证，他们的思想彼此争论，有时控告他们，有时为他们辩护，\\v 16 直到那一天，{{god_term:神|上帝}}要借着{{christos:基督|弥赛亚}}耶稣审判人生活中隐藏的事，正如我所传的福音所说的。",
+          "R": "他们的生活表明，律法所要求的已经写在他们心里。他们的良心也同意这一点。他们的思想有时告诉他们是有罪的，有时告诉他们是无罪的。\\v 16 到了那一天，{{god_term:神|上帝}}要借着{{christos:基督|弥赛亚}}耶稣审判每个人心里的秘密，这一切都要显露出来。这就是我所传的好消息所说的。"
         }
       },
       "decisions": [
@@ -3642,6 +4405,50 @@
           "reason": "\"विवेक\" is the common Hindi word for conscience, the inner sense of right and wrong (meaning decision m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n45002016001",
+            "n45002016002"
+          ],
+          "choice": "verse 16 opens a new sentence that names the day",
+          "alternatives": [
+            "one sentence with \"…日に\" closing verse 15"
+          ],
+          "reason": "Japanese would have to put \"on the day\" before the accusing thoughts of verse 15. Each level instead begins verse 16 with \"それは…日\", so the content stays after its own verse marker and the link of m4 (the thoughts are heard on that day) is kept.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n45002016016",
+            "n45002016017"
+          ],
+          "choice": "{{christos:基督|弥赛亚}}耶稣",
+          "alternatives": [
+            "耶稣{{christos:基督|弥赛亚}}"
+          ],
+          "reason": "Paul's order \"Christ Jesus\", kept as the Greek has it, with the title setting.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3769,6 +4576,26 @@
           "L": "पर यदि तुम यहूदी कहलाते हो, और व्यवस्था पर भरोसा रखते हो, और परमेश्वर पर गर्व करते हो, \\v 18 और [उनकी] इच्छा जानते हो, और व्यवस्था की शिक्षा पाकर उत्तम बातों को पसंद करते हो, \\v 19 और तुम्हें भरोसा है कि तुम स्वयं अंधों के अगुवे, अँधेरे में पड़े हुओं की ज्योति, \\v 20 नासमझों के सिखानेवाले, बालकों के शिक्षक हो, और व्यवस्था में ज्ञान और सत्य का स्वरूप तुम्हारे पास है, \\v 21 तो क्या तुम, जो दूसरे को सिखाते हो, अपने आप को नहीं सिखाते?",
           "B": "अब, तुम अपने आप को यहूदी कहते हो। तुम व्यवस्था पर भरोसा रखते हो और परमेश्वर पर गर्व करते हो। \\v 18 तुम उनकी इच्छा जानते हो, और क्योंकि व्यवस्था ने तुम्हें सिखाया है, तुम पहचान सकते हो कि सबसे ज़रूरी क्या है। \\v 19 तुम्हें पक्का भरोसा है कि तुम अंधों के अगुवे हो और अँधेरे में रहनेवालों के लिए ज्योति हो, \\v 20 नासमझों को सुधारनेवाले और छोटों को सिखानेवाले हो, क्योंकि व्यवस्था में तुम्हारे पास ज्ञान और सत्य का पूरा स्वरूप है। \\v 21 तो तुम दूसरों को सिखाते हो; क्या तुम अपने आप को नहीं सिखाओगे?",
           "R": "तुम अपने आप को यहूदी कहते हो। तुम परमेश्वर की व्यवस्था पर भरोसा रखते हो, और तुम्हें गर्व है कि तुम परमेश्वर के हो। \\v 18 तुम जानते हो कि परमेश्वर क्या चाहते हैं, और व्यवस्था ने तुम्हें सिखाया है कि जो सबसे अच्छा है, उसे चुनो। \\v 19 तुम्हें पक्का भरोसा है कि तुम उन लोगों को रास्ता दिखा सकते हो जो रास्ता नहीं देख सकते, और अँधेरे में रहनेवालों के लिए रोशनी बन सकते हो। \\v 20 तुम सोचते हो कि तुम मूर्खों को सुधार सकते हो और उन्हें सिखा सकते हो जो छोटे बच्चों जैसे हैं, क्योंकि व्यवस्था में ज्ञान और सच तुम्हारे सामने साफ़-साफ़ रखे हैं। \\v 21 तुम दूसरों को सिखाते हो। तो तुम अपने आप को क्यों नहीं सिखाते?"
+        },
+        "uk": {
+          "L": "А якщо ти називаєшся юдеєм, і спираєшся на Закон, і хвалишся Богом, \\v 18 і знаєш волю [Божу], і схвалюєш найкраще, навчений із Закону, \\v 19 і переконаний, що ти сам — провідник сліпих, світло тих, хто в темряві, \\v 20 наставник нерозумних, учитель немовлят, що маєш у Законі втілення знання й істини, — \\v 21 то ти, навчаючи іншого, себе самого не навчаєш?",
+          "B": "Ось ти називаєш себе юдеєм. Ти покладаєшся на Закон і хвалишся Богом. \\v 18 Ти знаєш {{deity_pronoun:його|Його}} волю і, навчений Законом, умієш розрізнити, що найважливіше. \\v 19 Ти певен, що можеш вести сліпих і бути світлом для тих, хто в темряві, \\v 20 наставляти нерозумних і навчати малих, бо в Законі маєш саму суть знання й істини. \\v 21 Отже, ти навчаєш інших — а себе не навчиш?",
+          "R": "Ти називаєш себе юдеєм. Ти покладаєшся на Божий Закон і пишаєшся тим, що належиш Богові. \\v 18 Ти знаєш, чого хоче Бог, і Закон навчив тебе вибирати найкраще. \\v 19 Ти певен, що можеш вести людей, які не бачать дороги, і бути світлом для тих, хто живе в темряві. \\v 20 Ти думаєш, що можеш виправляти нерозумних і навчати тих, хто ще як малі діти, бо в Законі ти маєш знання й правду, ясно викладені. \\v 21 Ти навчаєш інших людей. То чому ж ти не навчаєш себе?"
+        },
+        "ja": {
+          "L": "しかし、もしあなたがユダヤ人と名乗り、律法に頼り、神を誇りとし、\\v 18 [神の]御心を知り、律法から教えを受けて、すぐれたことをわきまえ、\\v 19 自分は目の見えない者たちの道案内、闇の中にいる者たちの光、\\v 20 愚かな者の教育者、幼子の教師であり、律法のうちに知識と真理の具体的な形を持っていると確信しているなら――\\v 21 それでは、他人を教えるあなたは、自分自身を教えないのですか？",
+          "B": "さて、あなたはユダヤ人と名乗っています。律法に頼り、神を誇りとしています。\\v 18 神の御心を知っており、律法から教えを受けているので、何が最も大切かを見分けることができます。\\v 19 あなたは、自分が目の見えない人の道案内であり、闇の中にいる人々の光であり、\\v 20 愚かな者を正す者、幼い者の教師であると確信しています。律法のうちに、知識と真理のまさに具体的な形を持っているからです。\\v 21 それなら、他人を教えるあなたは、自分自身を教えないのですか？",
+          "R": "あなたは自分をユダヤ人と呼んでいます。神の律法に頼り、自分が神のものであることを誇りにしています。\\v 18 神が何を望んでおられるかを知り、律法から、何がいちばんよいかを選ぶことを教えられています。\\v 19 あなたは、道が見えない人々を導き、闇の中に生きる人々の光になれると思っています。\\v 20 愚かな人を正し、幼い子どものような人々を教えることができると思っています。律法の中に、知識と真理がはっきりと示されているからです。\\v 21 あなたはほかの人を教えています。それなら、なぜ自分自身を教えないのですか？"
+        },
+        "id": {
+          "L": "Tetapi jika engkau menyebut dirimu orang Yahudi dan bersandar pada hukum Taurat dan bermegah dalam Allah \\v 18 dan mengetahui kehendak-{{deity_pronoun:nya|Nya}} dan menyetujui hal-hal yang utama, karena diajar oleh hukum Taurat, \\v 19 dan yakin bahwa engkau sendiri adalah penuntun orang buta, terang bagi mereka yang di dalam kegelapan, \\v 20 pendidik orang bodoh, pengajar anak-anak, karena memiliki dalam hukum Taurat wujud pengetahuan dan kebenaran; \\v 21 engkau yang mengajar orang lain, tidakkah engkau mengajar dirimu sendiri?",
+          "B": "Engkau menyebut dirimu orang Yahudi. Engkau bersandar pada hukum Taurat dan bermegah dalam Allah. \\v 18 {{deity_pronoun:engkau|Engkau}} mengetahui kehendak-{{deity_pronoun:nya|Nya}}, dan karena hukum Taurat telah mengajarmu, engkau dapat membedakan apa yang paling penting. \\v 19 {{deity_pronoun:engkau|Engkau}} yakin bahwa engkau dapat menuntun orang buta dan menjadi terang bagi orang-orang yang berada dalam kegelapan, \\v 20 pendidik orang-orang bodoh dan pengajar orang-orang muda, karena di dalam hukum Taurat engkau memiliki wujud pengetahuan dan kebenaran yang sesungguhnya. \\v 21 Jadi engkau mengajar orang lain; tidakkah engkau mau mengajar dirimu sendiri?",
+          "R": "Kamu menyebut dirimu orang Yahudi. Kamu percaya pada hukum Allah, dan kamu bangga karena kamu milik Allah. \\v 18 Kamu tahu apa yang Allah kehendaki, dan hukum Taurat sudah mengajarmu untuk memilih apa yang terbaik. \\v 19 Kamu yakin bahwa kamu dapat menuntun orang-orang yang tidak dapat melihat jalan, dan menjadi terang bagi mereka yang hidup dalam kegelapan. \\v 20 Kamu pikir kamu dapat menegur orang-orang bodoh dan mengajar mereka yang seperti anak kecil, karena di dalam hukum Taurat kamu memiliki pengetahuan dan kebenaran yang tersusun dengan jelas. \\v 21 Kamu mengajar orang lain. Jadi, mengapa kamu tidak mengajar dirimu sendiri?"
+        },
+        "zh": {
+          "L": "但如果你自称为犹太人，倚靠律法，因{{god_term:神|上帝}}而夸口，\\v 18 又知道[{{god_term:神|上帝}}的]旨意，从律法受了教导，能分辨什么是更美的，\\v 19 又深信自己是瞎眼之人的向导，是在黑暗里的人的光，\\v 20 是愚昧人的导师，是小孩子的老师，在律法中有知识和真理的具体形式；\\v 21 那么你这教导人的，不教导你自己吗？",
+          "B": "你自称是犹太人，倚靠律法，因{{god_term:神|上帝}}而夸口。\\v 18 你知道{{deity_pronoun:他|祂}}的旨意，又因为受了律法的教导，能分辨什么是最重要的。\\v 19 你确信自己能引导瞎眼的人，能作在黑暗中的人的光，\\v 20 能纠正愚昧的人，能教导年幼的人，因为你在律法中有知识和真理的完整轮廓。\\v 21 那么，你教导别人，难道不教导自己吗？",
+          "R": "你称自己为犹太人。你信靠{{god_term:神|上帝}}的律法，又因为你属于{{god_term:神|上帝}}而夸口。\\v 18 你知道{{god_term:神|上帝}}要什么，律法也教导你选择最好的。\\v 19 你确信自己能带领看不见路的人，能作那些活在黑暗里的人的光。\\v 20 你认为你能纠正愚蠢的人，能教导那些像小孩子一样的人，因为在律法里，知识和真理都清清楚楚地摆在你面前。\\v 21 你教导别人，那你为什么不教导你自己呢？"
         }
       },
       "decisions": [
@@ -4059,6 +4886,49 @@
           "reason": "Paul uses one verb for boasting, both wrongly (2:23, 3:27) and rightly (5:2-3, 5:11). \"गर्व\" can be either, while \"घमंड\" is only pride in a bad sense, so \"गर्व करना\" is used through Romans and the context shows which is meant.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n45002017001",
+            "n45002021001",
+            "n45002021002"
+          ],
+          "choice": "the \"if\" clause breaks off with \"――\" before verse 21",
+          "alternatives": [
+            "close the \"if\" clause with a supplied main clause"
+          ],
+          "reason": "The Greek \"if\" sentence never reaches its \"then\" (m1). Literal keeps the break with a dash, which Japanese uses for a sentence that breaks off; Balanced and Readable state each point directly, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45002017010"
+          ],
+          "choice": "\"夸口\" (every level)",
+          "alternatives": [
+            "夸耀",
+            "感到自豪 (Balanced, Readable)"
+          ],
+          "reason": "One scheme for kauchaomai, kauchēma and kauchēsis through the letter, as in 1 and 2 Corinthians. Literal always says \"夸口\", so the reader can trace it. Where Paul's argument turns on boasting itself, the boast in the law, in works or over others that he criticises (2:17, 23; 3:27; 4:2; 11:18), every level keeps \"夸口\". Where the boast is proper, in hope, in troubles and in God (5:2, 3, 11) and in Paul's work (15:17), Balanced says \"以……为荣\" (\"引以为荣\" where the thing is not named); Readable says \"欢喜\" where the English Readable says \"rejoice\" (5:2-11) and \"引以为荣\" where it speaks of pride (15:17). \"感到自豪\" and \"夸耀\" are not used for this word.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4131,6 +5001,26 @@
           "L": "तुम जो चोरी न करने का प्रचार करते हो, क्या तुम चोरी करते हो?",
           "B": "तुम प्रचार करते हो कि लोग चोरी न करें; क्या तुम चोरी करते हो?",
           "R": "तुम लोगों से कहते हो कि चोरी मत करो। क्या तुम चोरी करते हो?"
+        },
+        "uk": {
+          "L": "Ти, що проповідуєш не красти, крадеш?",
+          "B": "Ти проповідуєш, що не можна красти, — а сам крадеш?",
+          "R": "Ти кажеш людям не красти. А ти крадеш?"
+        },
+        "ja": {
+          "L": "盗むなと説くあなたが、盗むのですか？",
+          "B": "あなたは人に盗んではならないと説きながら、自分は盗むのですか？",
+          "R": "あなたは人に、盗んではいけないと言います。では、あなたは盗んでいませんか？"
+        },
+        "id": {
+          "L": "Engkau yang memberitakan supaya jangan mencuri, apakah engkau mencuri?",
+          "B": "Engkau mengajarkan bahwa orang tidak boleh mencuri; apakah engkau sendiri mencuri?",
+          "R": "Kamu berkata kepada orang lain supaya jangan mencuri. Apakah kamu mencuri?"
+        },
+        "zh": {
+          "L": "你这宣讲不可偷盗的，你偷盗吗？",
+          "B": "你宣讲人不该偷盗，你自己偷盗吗？",
+          "R": "你告诉别人不要偷东西。你自己偷不偷呢？"
         }
       },
       "decisions": [
@@ -4236,6 +5126,26 @@
           "L": "तुम जो कहते हो कि व्यभिचार न करना, क्या तुम व्यभिचार करते हो?",
           "B": "तुम कहते हो कि लोग व्यभिचार न करें; क्या तुम व्यभिचार करते हो?",
           "R": "तुम कहते हो कि किसी को अपने पति या पत्नी से विश्वासघात नहीं करना चाहिए। क्या तुम ऐसा करते हो?"
+        },
+        "uk": {
+          "L": "Ти, що кажеш не чинити перелюбу, чиниш перелюб?",
+          "B": "Ти кажеш, що не можна чинити перелюбу, — а сам чиниш перелюб?",
+          "R": "Ти кажеш, що ніхто не повинен зраджувати в шлюбі. А ти зраджуєш?"
+        },
+        "ja": {
+          "L": "姦淫するなと言うあなたが、姦淫するのですか？",
+          "B": "あなたは人に姦淫してはならないと言いながら、自分は姦淫するのですか？",
+          "R": "あなたは、結婚の相手を裏切ってはいけないと言います。では、あなたは裏切っていませんか？"
+        },
+        "id": {
+          "L": "Engkau yang mengatakan supaya jangan berzina, apakah engkau berzina?",
+          "B": "Engkau mengatakan bahwa orang tidak boleh berzina; apakah engkau sendiri berzina?",
+          "R": "Kamu berkata bahwa tidak seorang pun boleh tidak setia kepada pasangannya. Apakah kamu sendiri tidak setia?"
+        },
+        "zh": {
+          "L": "你这说不可奸淫的，你奸淫吗？",
+          "B": "你说人不该通奸，你自己通奸吗？",
+          "R": "你说任何人都不可以对婚姻不忠。你自己有没有不忠呢？"
         }
       },
       "decisions": [
@@ -4386,6 +5296,26 @@
           "L": "तुम जो मूरतों से घृणा करते हो, क्या तुम मन्दिरों को लूटते हो?",
           "B": "तुम मूर्तियों से घृणा करते हो; क्या तुम मन्दिरों को लूटते हो?",
           "R": "तुम मूर्तियों से नफ़रत करते हो। पर क्या तुम मूर्तियों के मन्दिरों से चोरी करते हो?"
+        },
+        "uk": {
+          "L": "Ти, що гидуєш ідолами, грабуєш храми?",
+          "B": "Ти гидуєш ідолами — а сам обкрадаєш храми?",
+          "R": "Ти ненавидиш ідолів. Але хіба ти не крадеш із храмів, де стоять ідоли?"
+        },
+        "ja": {
+          "L": "偶像を忌み嫌うあなたが、神殿の物を盗むのですか？",
+          "B": "あなたは偶像を忌み嫌いながら、神殿の物を盗むのですか？",
+          "R": "あなたは偶像を嫌っています。でも、偶像の神殿から物を盗んでいませんか？"
+        },
+        "id": {
+          "L": "Engkau yang jijik terhadap berhala, apakah engkau merampok kuil-kuil?",
+          "B": "Engkau membenci berhala; apakah engkau merampok kuil-kuil?",
+          "R": "Kamu membenci berhala. Tetapi apakah kamu mencuri dari kuil-kuil berhala?"
+        },
+        "zh": {
+          "L": "你这憎恶偶像的，你抢劫神庙吗？",
+          "B": "你憎恨偶像，自己却抢劫神庙吗？",
+          "R": "你恨偶像。可是你会不会去偷拜偶像的庙里的东西呢？"
         }
       },
       "decisions": [
@@ -4487,6 +5417,26 @@
           "reason": "These are pagan temples (m1), so the word is not capitalised; \"Храм\" with a capital is kept for the Temple in Jerusalem.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45002022010"
+          ],
+          "choice": "\"神庙\", with no god_term span",
+          "alternatives": [
+            "偶像的庙"
+          ],
+          "reason": "The temples are pagan ones, so 神 here does not name God and takes no setting (style guide section 4).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4566,6 +5516,26 @@
           "L": "तुम जो व्यवस्था पर गर्व करते हो, क्या व्यवस्था का उल्लंघन करके परमेश्वर का अनादर करते हो?",
           "B": "तुम व्यवस्था पर गर्व करते हो; क्या तुम उसे तोड़कर परमेश्वर का अनादर करते हो?",
           "R": "तुम्हें गर्व है कि तुम्हारे पास व्यवस्था है। पर क्या तुम उसे तोड़कर परमेश्वर का अनादर करते हो?"
+        },
+        "uk": {
+          "L": "Ти, що хвалишся Законом, через переступ Закону безчестиш Бога?",
+          "B": "Ти пишаєшся Законом — а сам безчестиш Бога, порушуючи його?",
+          "R": "Ти пишаєшся тим, що маєш Закон. Але чи не безчестиш ти Бога, коли порушуєш Закон?"
+        },
+        "ja": {
+          "L": "律法を誇りとするあなたが、律法の違反によって神を辱めるのですか？",
+          "B": "あなたは律法を誇りとしながら、律法を破って神を辱めるのですか？",
+          "R": "あなたは律法を持っていることを誇っています。でも、律法を破って神をはずかしめていませんか？"
+        },
+        "id": {
+          "L": "Engkau yang bermegah dalam hukum Taurat, apakah engkau mempermalukan Allah melalui pelanggaran hukum Taurat?",
+          "B": "Engkau bermegah dalam hukum Taurat; apakah engkau mempermalukan Allah dengan melanggarnya?",
+          "R": "Kamu bangga karena memiliki hukum Taurat. Tetapi apakah kamu mempermalukan Allah dengan melanggarnya?"
+        },
+        "zh": {
+          "L": "你这以律法夸口的，借着违犯律法羞辱{{god_term:神|上帝}}吗？",
+          "B": "你以律法夸口，却因破坏律法而羞辱{{god_term:神|上帝}}吗？",
+          "R": "你因为有律法而夸口。可是你会不会因为违反律法而使{{god_term:神|上帝}}受羞辱呢？"
         }
       },
       "decisions": [
@@ -4718,6 +5688,26 @@
           "L": "क्योंकि \"तुम्हारे कारण अन्यजातियों में परमेश्वर के नाम की निंदा की जाती है,\" जैसा लिखा है।",
           "B": "जैसा लिखा है, \"तुम्हारे कारण अन्यजातियों में परमेश्वर के नाम का अपमान होता है।\"",
           "R": "पवित्रशास्त्र कहता है, \"तुम्हारे कारण ग़ैर-यहूदी लोग परमेश्वर के नाम की बुराई करते हैं।\""
+        },
+        "uk": {
+          "L": "Бо «імʼя Боже через вас зневажається серед язичників», як написано.",
+          "B": "Як написано: «Через вас імʼя Боже ганьблять серед язичників.»",
+          "R": "Писання каже: «Через вас люди, які не є юдеями, говорять погане про Боже імʼя.»"
+        },
+        "ja": {
+          "L": "なぜなら、「神の名は、あなたがたのゆえに異邦人の間で冒瀆されている」と書かれているとおりだからです。",
+          "B": "「あなたがたのせいで、神の名は異邦人の間で侮られている」と書かれているとおりです。",
+          "R": "聖書にこう書いてあります。「あなたがたのせいで、ユダヤ人でない人々は神の名を悪く言っている。」"
+        },
+        "id": {
+          "L": "Sebab \"nama Allah dihujat di antara bangsa-bangsa lain karena kalian,\" sebagaimana ada tertulis.",
+          "B": "Seperti yang tertulis, \"Karena kalian nama Allah dihina di antara bangsa-bangsa lain.\"",
+          "R": "Kitab Suci berkata, \"Karena kalian, orang-orang yang bukan Yahudi menjelek-jelekkan nama Allah.\""
+        },
+        "zh": {
+          "L": "因为“{{god_term:神|上帝}}的名因为你们的缘故，在外邦人中被亵渎”，正如经上写着的。",
+          "B": "正如经上写着：“因为你们，{{god_term:神|上帝}}的名在外邦人中受到侮辱。”",
+          "R": "圣经上说：“因为你们的缘故，非犹太人说{{god_term:神|上帝}}的名的坏话。”"
         }
       },
       "decisions": [
@@ -4741,9 +5731,9 @@
           ],
           "choice": "Isaiah 52:5, read with Ezekiel 36:20-23",
           "alternatives": [],
-          "reason": "The words follow the Greek translation of Isaiah 52:5. In Isaiah, the nations mock God's name because his people are in exile; Ezekiel 36:20-23 says the exile came from Israel's own sin. Paul applies the verse to those who break the law they teach.",
+          "reason": "The words follow the Greek translation of Isaiah 52:5. In Isaiah, the nations mock God's name because his people are in exile; Ezekiel 36:20-23 says the exile came from Israel's own sin. Paul applies the verse to those who break the law they teach. The Greek adds \"because of you\" and \"among the nations\", which the Hebrew does not have.",
           "uncertain": false,
-          "footnote": false
+          "footnote": true
         },
         {
           "id": "m2",
@@ -4882,6 +5872,77 @@
           "reason": "Literal keeps the old word for speaking against God's name; Balanced and Readable say it plainly (m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n45002024012",
+            "n45002024013"
+          ],
+          "choice": "\"…と書かれているとおりだからです\" after the quotation (L)",
+          "alternatives": [
+            "\"聖書に…と書かれているとおり\" first"
+          ],
+          "reason": "Japanese, like the Greek, can name the source after the quotation, so Literal keeps the Greek order; Balanced follows with \"と書かれているとおりです\", and Readable introduces it first, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45002024001",
+            "n45002024002",
+            "n45002024003",
+            "n45002024004",
+            "n45002024005",
+            "n45002024006",
+            "n45002024007",
+            "n45002024008",
+            "n45002024009",
+            "n45002024010",
+            "n45002024011"
+          ],
+          "choice": "\"kalian\" inside the quotation",
+          "alternatives": [],
+          "reason": "The quotation (Isaiah 52:5) speaks to Israel as a people, so its \"you\" is plural, unlike the \"engkau\" of Paul's imagined listener around it; the Greek has the plural here too.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45002024012",
+            "n45002024013"
+          ],
+          "choice": "\"经上写着\" (L, B); \"圣经上说\" (R)",
+          "alternatives": [
+            "经上所记"
+          ],
+          "reason": "The formula for quoting Scripture as settled in Matthew, kept through Romans.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4966,6 +6027,26 @@
           "L": "यदि तुम व्यवस्था पर चलो तो ख़तने से लाभ तो है; पर यदि तुम व्यवस्था का उल्लंघन करनेवाले हो, तो तुम्हारा ख़तना ख़तनारहित दशा बन गया है।",
           "B": "यदि तुम व्यवस्था का पालन करो, तो ख़तने का मूल्य है। पर यदि तुम व्यवस्था तोड़ते हो, तो तुम बिना ख़तने के जैसे ही हो।",
           "R": "यदि तुम व्यवस्था मानते हो, तो ख़तना होने से तुम्हें लाभ है। पर यदि तुम व्यवस्था तोड़ते हो, तो ऐसा है मानो तुम्हारा ख़तना कभी हुआ ही नहीं।"
+        },
+        "uk": {
+          "L": "Бо обрізання корисне, якщо ти виконуєш Закон; а якщо ти переступник Закону, твоє обрізання стало необрізанням.",
+          "B": "Обрізання чогось варте, якщо ти дотримуєшся Закону. Але якщо ти порушуєш Закон, то ти все одно що необрізаний.",
+          "R": "Обрізання допомагає тобі, якщо ти слухаєшся Закону. Але якщо ти порушуєш Закон, то це так, ніби тебе ніколи не обрізали."
+        },
+        "ja": {
+          "L": "というのは、割礼は、あなたが律法を行うなら確かに益があります。しかし、律法の違反者であるなら、あなたの割礼は無割礼になってしまったのです。",
+          "B": "割礼は、あなたが律法を守るなら意味があります。しかし律法を破るなら、あなたは割礼を受けていないのと同じです。",
+          "R": "割礼を受けていることは、律法に従うなら役に立ちます。でも律法を破るなら、割礼を一度も受けなかったのと同じです。"
+        },
+        "id": {
+          "L": "Sebab sunat memang berguna jika engkau melakukan hukum Taurat; tetapi jika engkau pelanggar hukum Taurat, sunatmu telah menjadi ketidaksunatan.",
+          "B": "Sunat memang ada gunanya kalau engkau menaati hukum Taurat. Tetapi kalau engkau melanggar hukum Taurat, engkau sama saja dengan orang yang tidak bersunat.",
+          "R": "Disunat memang ada gunanya kalau kamu menaati hukum Taurat. Tetapi kalau kamu melanggar hukum Taurat, kamu sama seperti orang yang tidak pernah disunat."
+        },
+        "zh": {
+          "L": "因为如果你实行律法，割礼确实有益处；但如果你是违犯律法的，你的割礼就已经成了未受割礼。",
+          "B": "你若遵守律法，割礼就有价值。但你若违反律法，你就跟没受割礼的人一样了。",
+          "R": "如果你遵守律法，受割礼对你就有帮助。但如果你违反律法，就好像你从来没有受过割礼一样。"
         }
       },
       "decisions": [
@@ -5119,6 +6200,27 @@
           "reason": "Paul uses \"circumcision\" and \"uncircumcision\" both for the rite and for the people who have or lack it (Jews and Gentiles, 2:26; 3:30). Literal keeps the abstract pair \"መገረዝ\" and \"አለመገረዝ\" as the Greek has it; Balanced and Readable say \"the uncircumcised man\" where a person is meant.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45002025016"
+          ],
+          "choice": "\"無割礼\" (L); \"割礼を受けていない\" (B, R)",
+          "alternatives": [
+            "\"包皮\""
+          ],
+          "reason": "The word stands for the state of being uncircumcised (m2). Literal keeps the noun \"無割礼\" so the Greek's bold phrase shows; Balanced and Readable say it of the person, as through Romans.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5202,6 +6304,26 @@
           "L": "इसलिए यदि ख़तनारहित [मनुष्य] व्यवस्था की विधियों को माने, तो क्या उसकी ख़तनारहित दशा ख़तना न गिनी जाएगी?",
           "B": "तो यदि कोई ख़तनारहित पुरुष व्यवस्था की माँगें पूरी करे, तो क्या परमेश्वर उसे ख़तना किया हुआ नहीं गिनेंगे?",
           "R": "तो मान लो कि कोई पुरुष, जिसका ख़तना नहीं हुआ, वह करता है जो व्यवस्था माँगती है। क्या परमेश्वर उसे ऐसे स्वीकार नहीं करेंगे मानो उसका ख़तना हुआ हो?"
+        },
+        "uk": {
+          "L": "Отже, якщо необрізання дотримується постанов Закону, хіба його необрізання не зарахується за обрізання?",
+          "B": "Отже, якщо необрізаний чоловік дотримується того, чого вимагає Закон, хіба Бог не зарахує його як обрізаного?",
+          "R": "Отже, уяви собі чоловіка, який не обрізаний, але робить те, чого вимагає Закон. Хіба Бог не прийме його так, ніби він обрізаний?"
+        },
+        "ja": {
+          "L": "それで、もし無割礼の者が律法の定めを守るなら、その人の無割礼は割礼と見なされないでしょうか？",
+          "B": "それで、割礼を受けていない人が律法の求めることを守るなら、神はその人を割礼を受けた者と見なされないでしょうか？",
+          "R": "では、割礼を受けていない人が、律法の求めることを行ったとします。神はその人を、割礼を受けた人のように受け入れてくださらないでしょうか？"
+        },
+        "id": {
+          "L": "Jadi, jika orang yang tidak bersunat memelihara tuntutan-tuntutan hukum Taurat, tidakkah ketidaksunatannya akan dianggap sebagai sunat?",
+          "B": "Jadi, jika seorang laki-laki yang tidak bersunat melakukan apa yang dituntut hukum Taurat, tidakkah Allah akan menganggapnya sebagai orang yang bersunat?",
+          "R": "Jadi, misalkan ada seorang laki-laki yang tidak disunat, tetapi dia melakukan apa yang dituntut hukum Taurat. Tidakkah Allah akan menerimanya seolah-olah dia sudah disunat?"
+        },
+        "zh": {
+          "L": "所以，如果那未受割礼的人遵守律法的规定，他的未受割礼不就被算作割礼吗？",
+          "B": "所以，一个没有受割礼的人如果遵守律法的要求，{{god_term:神|上帝}}不就会把他算作受了割礼的人吗？",
+          "R": "假设一个没有受割礼的人做了律法所要求的事。{{god_term:神|上帝}}不就会接纳他，好像他受了割礼一样吗？"
         }
       },
       "decisions": [
@@ -5345,6 +6467,26 @@
           "reason": "The verb is the one Paul uses for God's reckoning in chapter 4 (meaning decision m2), so Literal and Balanced use \"गिनना\" here as there.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45002026016"
+          ],
+          "choice": "\"算作\" for logizomai",
+          "alternatives": [
+            "算为"
+          ],
+          "reason": "God's reckoning, the word Romans 4 uses eleven times; 算作 is kept for it through the letter.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5429,6 +6571,26 @@
           "L": "और जो स्वभाव से ख़तनारहित है और व्यवस्था को पूरा करता है, वह तुम्हारा न्याय करेगा, जो लेख और ख़तना पाकर भी व्यवस्था का उल्लंघन करते हो।",
           "B": "जो पुरुष जन्म से ख़तनारहित है पर व्यवस्था को पूरा करता है, वह तुम्हारा न्याय करेगा, क्योंकि तुम्हारे पास लिखी हुई व्यवस्था और ख़तना दोनों हैं, फिर भी तुम व्यवस्था तोड़ते हो।",
           "R": "कुछ लोगों का ख़तना नहीं हुआ, पर वे व्यवस्था मानते हैं। वे दिखाएँगे कि तुम दोषी हो। तुम्हारे पास लिखी हुई व्यवस्था है और तुम्हारा ख़तना हुआ है, फिर भी तुम व्यवस्था तोड़ते हो।"
+        },
+        "uk": {
+          "L": "І необрізання від природи, що виконує Закон, судитиме тебе, який із буквою та обрізанням [є] переступником Закону.",
+          "B": "Той, хто від народження необрізаний, але виконує Закон, засудить тебе, бо ти маєш писаний Закон і обрізаний, а все ж порушуєш Закон.",
+          "R": "Деякі люди не обрізані, але слухаються Закону. Вони покажуть, що ти винний. Ти маєш писаний Закон і ти обрізаний, але все одно порушуєш Закон."
+        },
+        "ja": {
+          "L": "そして、生まれつき無割礼でありながら律法を全うする者が、文字と割礼を持ちながら律法の違反者であるあなたを裁くでしょう。",
+          "B": "生まれつき割礼を受けていなくても律法を実行する人が、書かれた律法を持ち、割礼を受けていながら律法を破るあなたを裁くことになります。",
+          "R": "割礼を受けていなくても、律法に従う人々がいます。その人々は、あなたに罪があることを示すでしょう。あなたは書かれた律法を持ち、割礼も受けています。それなのに、律法を破っているのです。"
+        },
+        "id": {
+          "L": "Dan orang yang secara lahiriah tidak bersunat, yang memenuhi hukum Taurat, akan menghakimi engkau, yang dengan [hukum] tertulis dan sunat [adalah] pelanggar hukum Taurat.",
+          "B": "Laki-laki yang sejak lahir tidak bersunat tetapi melakukan hukum Taurat akan menghakimi engkau, yang memiliki hukum Taurat secara tertulis dan bersunat, tetapi melanggar hukum Taurat.",
+          "R": "Ada orang-orang yang tidak disunat, tetapi mereka menaati hukum Taurat. Mereka akan menunjukkan bahwa kamu bersalah. Kamu memiliki hukum Taurat yang tertulis dan kamu sudah disunat, tetapi kamu tetap melanggar hukum Taurat."
+        },
+        "zh": {
+          "L": "而且那生来未受割礼却成全律法的人，要审判你这有律法条文和割礼、却违犯律法的人。",
+          "B": "那生来没有受割礼、却遵行律法的人，要审判你这有成文律法、受了割礼，却仍然违反律法的人。",
+          "R": "有些人没有受割礼，却遵守律法。他们会显明你是有罪的。你有写成文字的律法，也受了割礼，可是你还是违反律法。"
         }
       },
       "decisions": [
@@ -5657,6 +6819,26 @@
           "L": "क्योंकि वह यहूदी नहीं जो बाहर से [यहूदी] है, और न वह ख़तना है जो बाहर शरीर में है;",
           "B": "क्योंकि कोई बाहरी बातों से यहूदी नहीं होता, और ख़तना कोई बाहरी चीज़ नहीं जो शरीर में हो।",
           "R": "सच्चा यहूदी वह नहीं जो बाहर से दिखाई देता है। सच्चा ख़तना शरीर पर कोई निशान नहीं है।"
+        },
+        "uk": {
+          "L": "Бо не той юдей, хто [юдей] назовні, і не те обрізання, що назовні, на тілі;",
+          "B": "Бо людина не є юдеєм через те, що видно назовні, і обрізання — це не щось зовнішнє на тілі.",
+          "R": "Справжнього юдея робить юдеєм не те, що видно ззовні. Справжнє обрізання — це не знак на тілі."
+        },
+        "ja": {
+          "L": "というのは、外見上の[ユダヤ人]がユダヤ人なのではなく、外見上の肉における[割礼]が割礼なのでもないからです。",
+          "B": "外見によってユダヤ人なのではなく、体に施された外見上のものが割礼なのでもありません。",
+          "R": "本当のユダヤ人とは、外から見える姿で決まるのではありません。本当の割礼とは、体につけられた印のことではありません。"
+        },
+        "id": {
+          "L": "Sebab bukan orang [yang tampak Yahudi] secara lahiriah [yang] adalah orang Yahudi, dan bukan yang secara lahiriah dalam daging [yang] adalah sunat;",
+          "B": "Sebab seseorang bukanlah orang Yahudi karena apa yang tampak dari luar, dan sunat bukanlah sesuatu yang lahiriah pada tubuh.",
+          "R": "Yang membuat seseorang menjadi orang Yahudi sejati bukanlah apa yang dapat dilihat dari luar. Sunat yang sejati bukanlah tanda pada tubuh."
+        },
+        "zh": {
+          "L": "因为并不是外表[是犹太人]的就是犹太人，割礼也不是外表上在肉体上的[那一种]；",
+          "B": "因为一个人是不是犹太人，不在于外表；割礼也不是身体外表上的事。",
+          "R": "一个人是不是真正的犹太人，不在于外表看得见的东西。真正的割礼也不是身体上的记号。"
         }
       },
       "decisions": [
@@ -5821,6 +7003,26 @@
           "L": "पर यहूदी वही है जो भीतर से [यहूदी] है, और ख़तना वही है जो हृदय का है, आत्मा के द्वारा, न कि लेख के द्वारा; उसकी प्रशंसा मनुष्यों की ओर से नहीं, परंतु परमेश्वर की ओर से [होती है]।",
           "B": "नहीं, यहूदी वही है जो भीतर से यहूदी है, और असली ख़तना हृदय का है, आत्मा के द्वारा, न कि लिखी हुई व्यवस्था के द्वारा। ऐसे व्यक्ति की प्रशंसा मनुष्यों से नहीं, परमेश्वर से होती है।",
           "R": "सच्चा यहूदी वह है जो भीतर से, हृदय से, यहूदी है। सच्चा ख़तना परमेश्वर का आत्मा हृदय में करता है। यह लिखी हुई व्यवस्था का पालन करने से नहीं होता। ऐसे लोगों की प्रशंसा परमेश्वर करते हैं, चाहे दूसरे लोग उनकी प्रशंसा न करें।"
+        },
+        "uk": {
+          "L": "але той юдей, хто [юдей] потаємно, і обрізання — серця, Духом, а не буквою; його похвала не від людей, а від Бога.",
+          "B": "Ні, справжній юдей — той, хто юдей усередині, і справжнє обрізання — це обрізання серця, Духом, а не буквою. Така людина дістає похвалу не від людей, а від Бога.",
+          "R": "Справжній юдей — це юдей усередині, у серці. Справжнє обрізання робить у серці Божий Дух. Воно не приходить через виконання писаного Закону. Таких людей хвалить Бог, навіть якщо інші люди їх не хвалять."
+        },
+        "ja": {
+          "L": "かえって、内に隠れた[ユダヤ人]こそユダヤ人であり、割礼は文字によらず霊による心の[割礼]です。その人の称賛は人々からではなく、神から[来ます]。",
+          "B": "そうではなく、内面においてユダヤ人である人こそユダヤ人であり、意味のある割礼とは、文字によらず霊による心の割礼です。その人は人々からではなく、神からほめられるのです。",
+          "R": "本当のユダヤ人とは、心の中がユダヤ人である人です。本当の割礼は、聖霊によって心に施されるものです。書かれた律法を守ることによってではありません。このような人は、たとえ人々からほめられなくても、神からほめられるのです。"
+        },
+        "id": {
+          "L": "tetapi orang [yang Yahudi] secara batiniah [adalah] orang Yahudi, dan sunat [adalah] sunat hati, oleh Roh, bukan oleh [hukum] tertulis; pujiannya [datang] bukan dari manusia tetapi dari Allah.",
+          "B": "Bukan, orang Yahudi sejati adalah orang yang Yahudi di dalam batinnya, dan sunat yang berarti adalah sunat hati, oleh Roh dan bukan oleh hukum yang tertulis. Pujian bagi orang seperti itu datang dari Allah, bukan dari manusia.",
+          "R": "Orang Yahudi sejati adalah orang yang Yahudi di dalam batinnya, di dalam hatinya. Sunat yang sejati dilakukan pada hati oleh Roh Allah. Sunat itu tidak terjadi dengan menaati hukum yang tertulis. Orang seperti ini dipuji oleh Allah, walaupun orang lain tidak memujinya."
+        },
+        "zh": {
+          "L": "而是在隐藏处[是犹太人]的，才是犹太人；割礼也是心的[割礼]，凭着圣灵，不凭着条文；他所得的称赞不是出于人，而是出于{{god_term:神|上帝}}。",
+          "B": "不，内心是犹太人的，才是真正的犹太人；有效的割礼是心里的割礼，是借着圣灵，不是借着条文。这样的人得到的称赞是从{{god_term:神|上帝}}来的，不是从人来的。",
+          "R": "真正的犹太人是内心的犹太人。真正的割礼是{{god_term:神|上帝}}的灵在人心里做成的，不是靠遵守写成文字的律法。这样的人得到{{god_term:神|上帝}}的称赞，即使别人不称赞他们。"
         }
       },
       "decisions": [
@@ -5957,6 +7159,29 @@
             "дух"
           ],
           "reason": "The meaning decision (m2) reads this as God's Spirit, so it is capitalised at every level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n45002029011",
+            "n45002029013"
+          ],
+          "choice": "\"霊\" (L, B); \"聖霊\" (R); \"文字\" (L, B), \"書かれた律法を守ること\" (R)",
+          "alternatives": [
+            "\"聖霊\"",
+            "\"心\" for the human spirit"
+          ],
+          "reason": "Spirit and letter stand together as in 7:6 (m2), so the word is God's Spirit, written \"霊\" as through Romans; Readable names the Holy Spirit, as through Romans at that level, and says what \"the letter\" stands for, as the English does.",
           "uncertain": false,
           "footnote": false
         }

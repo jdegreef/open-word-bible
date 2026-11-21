@@ -78,8 +78,133 @@
           "L": "Вот книга родословия Адама. В день, когда Бог сотворил человека, по подобию Бога {{deity_pronoun:он|Он}} создал {{gender:их|его}}.",
           "B": "Вот записанная история рода Адама. Когда Бог сотворил человека, {{deity_pronoun:он|Он}} создал их по подобию Бога.",
           "R": "Вот список потомков Адама. Когда Бог сотворил людей, {{deity_pronoun:он|Он}} сделал их похожими на Бога."
+        },
+        "uk": {
+          "L": "Це книга покоління Адама. У день, коли Бог створив людину, на подобу Бога {{deity_pronoun:він|Він}} зробив її.",
+          "B": "Це записаний родовід Адама. Коли Бог створив людей, {{deity_pronoun:він|Він}} зробив їх подібними до Бога.",
+          "R": "Це перелік Адамового роду. Коли Бог створив людей, {{deity_pronoun:він|Він}} зробив їх схожими на Бога."
+        },
+        "ja": {
+          "L": "これはアダムの系図の書である。神が人を創造された日に、神の似姿に人を造られた。",
+          "B": "これはアダムの家系の記録である。神は人を創造されたとき、神に似たものとして人を造られた。",
+          "R": "これは、アダムの家族の記録です。神は人をお造りになったとき、神に似た者として造られました。"
+        },
+        "id": {
+          "L": "Inilah kitab riwayat keturunan Adam. Pada hari Allah menciptakan manusia, menurut rupa Allah {{deity_pronoun:dia|Dia}} menjadikan mereka.",
+          "B": "Inilah catatan tertulis tentang keturunan Adam. Ketika Allah menciptakan manusia, {{deity_pronoun:dia|Dia}} menjadikan mereka menurut rupa Allah.",
+          "R": "Inilah daftar keluarga Adam. Ketika Allah menciptakan manusia, {{deity_pronoun:dia|Dia}} menjadikan mereka serupa dengan Allah."
+        },
+        "zh": {
+          "L": "这是亚当世系的册子。在{{god_term:神|上帝}}创造人的日子，{{deity_pronoun:他|祂}}按着{{god_term:神|上帝}}的样式造了{{gender:他们|他}}。",
+          "B": "这是亚当家族世系的记录。{{god_term:神|上帝}}创造人的时候，{{deity_pronoun:他|祂}}按着{{god_term:神|上帝}}的样式造了他们。",
+          "R": "这是亚当家族的名单。{{god_term:神|上帝}}创造人的时候，{{deity_pronoun:他|祂}}造他们，要他们像{{god_term:神|上帝}}。"
+        },
+        "tl": {
+          "L": "Ito ang aklat ng mga salinlahi ni Adan. Sa araw na nilikha ng Diyos ang tao, ayon sa wangis ng Diyos ay ginawa {{deity_pronoun:niya|Niya}} {{gender:sila|siya}}.",
+          "B": "Ito ang nakasulat na talaan ng angkan ni Adan. Nang likhain ng Diyos ang tao, ginawa {{deity_pronoun:niya|Niya}} sila ayon sa wangis ng Diyos.",
+          "R": "Ito ang listahan ng pamilya ni Adan. Nang likhain ng Diyos ang tao, ginawa {{deity_pronoun:niya|Niya}} silang katulad ng Diyos."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010050010011"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "This is"
+        },
+        {
+          "tokens": [
+            "o010050010021"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the written account"
+        },
+        {
+          "tokens": [
+            "o010050010041"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "of Adam's"
+        },
+        {
+          "tokens": [
+            "o010050010031"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "family line"
+        },
+        {
+          "tokens": [
+            "o010050010051",
+            "o010050010052"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "When"
+        },
+        {
+          "tokens": [
+            "o010050010071"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "God"
+        },
+        {
+          "tokens": [
+            "o010050010061"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "created"
+        },
+        {
+          "tokens": [
+            "o010050010081"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "{{gender:human beings|man}}"
+        },
+        {
+          "tokens": [
+            "o010050010111",
+            "o010050010122"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "{{deity_pronoun:he|He}} made them"
+        },
+        {
+          "tokens": [
+            "o010050010091"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "in"
+        },
+        {
+          "tokens": [
+            "o010050010092"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the likeness"
+        },
+        {
+          "tokens": [
+            "o010050010101"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "of God"
+        }
+      ],
       "decisions": [
         {
           "id": "m1",
@@ -458,6 +583,172 @@
           "reason": "The Hebrew is \"the book of the generations\", a written record of the family line (m1); Literal keeps both words, with \"родословие\" as in 2:4.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o010050010041",
+            "o010050010081"
+          ],
+          "choice": "\"людина\", \"люди\" with no gender span, as in 1:26-27",
+          "alternatives": [
+            "a gender span as the English"
+          ],
+          "reason": "Ukrainian \"людина\" already means a human being of either sex, so the English choice between \"humankind\" and \"man\" does not arise; \"Адам\" is the name of the man, and \"людина\" the word for humankind.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o010050010081",
+            "o010050010122"
+          ],
+          "choice": "\"人\" for humankind and no pronoun for \"them\", with no gender span; \"系図の書\" (L), \"家系の記録\" (B), \"家族の記録\" (R)",
+          "alternatives": [
+            "{{gender:人|男}}"
+          ],
+          "reason": "The same word is the name Adam and the word for humankind (m2). Japanese 人 already includes man and woman, so the English gender setting has nothing to switch, as in 1:26. The book of the generations is a written record of the family line (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o010050010011",
+            "o010050010021",
+            "o010050010031",
+            "o010050010041",
+            "o010050010051",
+            "o010050010052",
+            "o010050010061",
+            "o010050010071",
+            "o010050010081",
+            "o010050010091",
+            "o010050010092",
+            "o010050010101",
+            "o010050010111",
+            "o010050010121",
+            "o010050010122"
+          ],
+          "choice": "\"manusia\" and \"mereka\" with no gender span",
+          "alternatives": [],
+          "reason": "As at 1:26: Indonesian \"manusia\" and \"mereka\" already include men and women, so the English gender spans of verses 1 and 2 have no Indonesian counterpart.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o010050010071"
+          ],
+          "choice": "{{god_term:神|上帝}} for every word naming God",
+          "alternatives": [
+            "上帝 as the default"
+          ],
+          "reason": "The Chinese reader setting: \"神\" by default, \"上帝\" as the alternative (style guide section 4); this note stands for the whole chapter.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010050010021",
+            "o010050010031"
+          ],
+          "choice": "\"世系的册子\" (L); \"家族世系的记录\" (B); \"家族的名单\" (R)",
+          "alternatives": [
+            "后代 (L)",
+            "来历 (L, 2:4)",
+            "家谱 (B)"
+          ],
+          "reason": "The toledot heading (\"these are the generations of\"), one scheme through Genesis (2:4; 5:1; 6:9; 10:1; 11:10, 27; 25:12, 19; 36:1, 9; 37:2): Literal keeps one noun for the Hebrew word at every heading, \"这些是……的世系\" (5:1 \"……世系的册子\", the book of the generations), as the English Literal keeps \"generations\"; Balanced and Readable say what kind of account follows, as the English level does: \"story\" 故事, \"account of the family (line)\" 家族的记录 / 家族世系的记录, \"list\" 名单.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-3",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010050010081",
+            "o010050010092"
+          ],
+          "choice": "\"人\" with no gender span; \"样式\" as 1:26",
+          "alternatives": [
+            "人类"
+          ],
+          "reason": "\"Adam\" is both a name and the word for humankind here (meaning decision m2); Chinese \"人\" is already inclusive and needs no span, while Literal and Balanced keep the English span on the singular pronoun with {{gender:他们|他}} at Literal. The likeness of God takes up 1:26-27 (m3), so \"样式\" is kept.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-tl-1",
+          "layer": "rendering",
+          "language": "tl",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010050010021",
+            "o010050010031",
+            "o010050010041",
+            "o010050010081"
+          ],
+          "choice": "\"aklat ng mga salinlahi\" (book of the generations) at Literal; \"nakasulat na talaan ng angkan\" (written record of the family line) at Balanced; \"Adan\" and \"tao\"",
+          "alternatives": [],
+          "reason": "Literal keeps the heading word of 2:4 (m1). The Hebrew uses one word for Adam and for humankind (m2); Tagalog has two, \"Adan\" for the man and \"tao\" for humankind, so the link is lost and the meaning decision gives it. As in 1:26-27, \"tao\" takes no gender span, and \"him\" is \"{{gender:sila|siya}}\" at Literal.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -544,8 +835,121 @@
           "L": "Мужчиной и женщиной {{deity_pronoun:он|Он}} сотворил их, и {{deity_pronoun:он|Он}} благословил их и назвал их имя Человек в день их сотворения.",
           "B": "Он сотворил их мужчиной и женщиной. Он благословил их и дал им имя Человек, когда они были сотворены.",
           "R": "Он сделал их мужчинами и женщинами. Он благословил их и назвал их людьми в тот день, когда {{deity_pronoun:он|Он}} их сделал."
+        },
+        "uk": {
+          "L": "Чоловіком і жінкою {{deity_pronoun:він|Він}} створив їх, і {{deity_pronoun:він|Він}} благословив їх і назвав їхнє імʼя Людина в день, коли їх було створено.",
+          "B": "Він створив їх чоловіком і жінкою. Він благословив їх і дав їм імʼя Людина, коли їх було створено.",
+          "R": "Він зробив їх чоловіком і жінкою. Він благословив їх і дав їм імʼя Людина того дня, коли {{deity_pronoun:він|Він}} їх створив."
+        },
+        "ja": {
+          "L": "男と女に神は彼らを創造し、彼らを祝福して、彼らが創造された日に、その名を人と呼ばれた。",
+          "B": "神は彼らを男と女とに創造された。そして彼らを祝福し、彼らが創造されたとき、その名を人と名づけられた。",
+          "R": "神は人を男と女とにお造りになりました。そして二人を祝福し、お造りになったその日に、「人」という名前をつけられました。"
+        },
+        "id": {
+          "L": "Laki-laki dan perempuan {{deity_pronoun:dia|Dia}} menciptakan mereka, dan {{deity_pronoun:dia|Dia}} memberkati mereka dan memberi mereka nama Manusia pada hari mereka diciptakan.",
+          "B": "Dia menciptakan mereka laki-laki dan perempuan. Dia memberkati mereka dan menamai mereka Manusia ketika mereka diciptakan.",
+          "R": "Dia menjadikan mereka laki-laki dan perempuan. Dia memberkati mereka dan memberi mereka nama Manusia pada hari {{deity_pronoun:dia|Dia}} menjadikan mereka."
+        },
+        "zh": {
+          "L": "{{deity_pronoun:他|祂}}把他们造成男的和女的，{{deity_pronoun:他|祂}}又赐福给他们，并在他们被创造的日子，称他们的名字为人。",
+          "B": "{{deity_pronoun:他|祂}}造了男人和女人。{{deity_pronoun:他|祂}}赐福给他们，在他们被造的时候，给他们取名叫人。",
+          "R": "{{deity_pronoun:他|祂}}造他们，有男有女。{{deity_pronoun:他|祂}}祝福他们，在{{deity_pronoun:他|祂}}造他们的那天，给他们取名叫人。"
+        },
+        "tl": {
+          "L": "Lalaki at babae ay nilikha {{deity_pronoun:niya|Niya}} sila, at pinagpala {{deity_pronoun:niya|Niya}} sila at tinawag ang kanilang pangalan na Tao sa araw na sila ay nilikha.",
+          "B": "Nilikha {{deity_pronoun:niya|Niya}} silang lalaki at babae. Pinagpala {{deity_pronoun:niya|Niya}} sila at pinangalanang Tao nang sila ay likhain.",
+          "R": "Ginawa {{deity_pronoun:niya|Niya}} silang lalaki at babae. Pinagpala {{deity_pronoun:niya|Niya}} sila at binigyan ng pangalang Tao sa araw na ginawa {{deity_pronoun:niya|Niya}} sila."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010050020031",
+            "o010050020032"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "He created them"
+        },
+        {
+          "tokens": [
+            "o010050020011"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "male"
+        },
+        {
+          "tokens": [
+            "o010050020021"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010050020022"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "female"
+        },
+        {
+          "tokens": [
+            "o010050020042",
+            "o010050020052"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "He blessed them"
+        },
+        {
+          "tokens": [
+            "o010050020061"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010050020062",
+            "o010050020081",
+            "o010050020082"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "named them"
+        },
+        {
+          "tokens": [
+            "o010050020091"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "{{gender:Humankind|Man}}"
+        },
+        {
+          "tokens": [
+            "o010050020101",
+            "o010050020102"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "when"
+        },
+        {
+          "tokens": [
+            "o010050020111",
+            "o010050020112"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "they were created"
+        }
+      ],
       "decisions": [
         {
           "id": "m1",
@@ -652,6 +1056,95 @@
           "reason": "The name God gives is the Hebrew word for human beings, man and woman together (m1). Russian \"человек\" says this in both settings, so there is no span where the English has \"Humankind\" / \"Man\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010050020062",
+            "o010050020081",
+            "o010050020082",
+            "o010050020091"
+          ],
+          "choice": "\"Людина\" as the name of man and woman together",
+          "alternatives": [
+            "Адам"
+          ],
+          "reason": "The name is the Hebrew word for humankind (meaning decision m1); \"Людина\" says that and covers both, while \"Адам\" would read as the man's own name.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o010050020091"
+          ],
+          "choice": "\"人\" as the name for man and woman together, with no gender span; quoted as 「人」 at Readable",
+          "alternatives": [
+            "{{gender:人|男}}",
+            "\"アダム\""
+          ],
+          "reason": "The name given is for man and woman together (m1); 人 says that, so no setting is needed. Readable marks it as a name with brackets.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o010050020091"
+          ],
+          "choice": "\"人\" for the name, with no gender span",
+          "alternatives": [
+            "{{gender:人|男人}}"
+          ],
+          "reason": "The name given to man and woman together is the word for humankind (meaning decision m1). The English gives \"Humankind\" with \"Man\" as the traditional setting; Chinese \"男人\" would mean a male, not humankind, so the Chinese has one word and no span. The first clause repeats 1:27's Chinese at each level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-tl-1",
+          "layer": "rendering",
+          "language": "tl",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o010050020062",
+            "o010050020081",
+            "o010050020082",
+            "o010050020091"
+          ],
+          "choice": "\"Tao\" as the name, with no gender span",
+          "alternatives": [],
+          "reason": "The name for man and woman together (m1) is \"Tao\", which already means a human being of either sex; the English options \"Humankind\" and \"Man\" are both \"Tao\" in Tagalog, so there is nothing for a setting to change.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -740,8 +1233,130 @@
           "L": "И Адам жил 130 лет и родил [сына] по своему подобию, по своему образу, и назвал его имя Сиф.",
           "B": "Когда Адам прожил 130 лет, у него родился сын, подобный ему, по его образу, и он назвал его Сиф.",
           "R": "Когда Адаму было 130 лет, у него родился сын, похожий на него, и он назвал его Сиф."
+        },
+        "uk": {
+          "L": "І жив Адам 130 років, і породив [сина] на свою подобу, за своїм образом, і назвав його імʼя Сит.",
+          "B": "Коли Адам прожив 130 років, у нього народився син, подібний до нього, на його образ, і він назвав його Сит.",
+          "R": "Коли Адамові було 130 років, у нього народився син, схожий на нього, і він назвав його Сит."
+        },
+        "ja": {
+          "L": "そしてアダムは百三十年生きて、自分の似姿に、自分のかたちに従って[男の子を]もうけ、その名をセトと呼んだ。",
+          "B": "アダムは百三十歳のとき、自分に似た、自分のかたちの男の子をもうけ、セトと名づけた。",
+          "R": "アダムが百三十歳のとき、自分によく似た男の子が生まれました。アダムはその子をセトと名づけました。"
+        },
+        "id": {
+          "L": "Dan Adam hidup 130 tahun, lalu memperanakkan [seorang anak laki-laki] menurut rupanya, menurut gambarnya, dan menamainya Set.",
+          "B": "Ketika Adam berumur 130 tahun, ia mendapat seorang anak laki-laki yang serupa dengan dia, menurut gambarnya sendiri, dan ia menamainya Set.",
+          "R": "Ketika Adam berumur 130 tahun, dia mendapat seorang anak laki-laki yang mirip dengan dia, dan dia menamainya Set."
+        },
+        "zh": {
+          "L": "亚当活了一百三十年，生了[一个儿子]，像他自己的样式，照着他的形像，称他的名字为塞特。",
+          "B": "亚当活到一百三十岁时，生了一个儿子，有他自己的样式、自己的形像，给他取名叫塞特。",
+          "R": "亚当一百三十岁的时候，生了一个儿子，很像他自己。他给这儿子取名叫塞特。"
+        },
+        "tl": {
+          "L": "At nabuhay si Adan nang 130 taon at nagkaroon [ng anak na lalaki] ayon sa kaniyang wangis, ayon sa kaniyang larawan, at tinawag niya ang kaniyang pangalan na Set.",
+          "B": "Nang mabuhay na si Adan nang 130 taon, nagkaroon siya ng anak na lalaki na kawangis niya, ayon sa kaniyang sariling larawan, at pinangalanan niya itong Set.",
+          "R": "Nang 130 taong gulang na si Adan, nagkaroon siya ng anak na lalaking kamukha niya, at pinangalanan niya itong Set."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010050030021"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Adam"
+        },
+        {
+          "tokens": [
+            "o010050030012"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "had lived"
+        },
+        {
+          "tokens": [
+            "o010050030031",
+            "o010050030041",
+            "o010050030042",
+            "o010050030051"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "130 years"
+        },
+        {
+          "tokens": [
+            "o010050030062"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "he had a son"
+        },
+        {
+          "tokens": [
+            "o010050030071"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "in"
+        },
+        {
+          "tokens": [
+            "o010050030072",
+            "o010050030073"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "his own likeness"
+        },
+        {
+          "tokens": [
+            "o010050030081"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "in"
+        },
+        {
+          "tokens": [
+            "o010050030082",
+            "o010050030083"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "his own image"
+        },
+        {
+          "tokens": [
+            "o010050030091"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010050030092",
+            "o010050030111",
+            "o010050030112"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "he named him"
+        },
+        {
+          "tokens": [
+            "o010050030121"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Seth"
+        }
+      ],
       "decisions": [
         {
           "id": "m1",
@@ -1110,6 +1725,151 @@
           "reason": "The Hebrew verb is used of the father. \"Родить\" of a man is the traditional Russian biblical usage and Literal keeps it through the lists; Balanced says \"стал отцом\", Readable \"у него родился сын\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010050030031",
+            "o010050030042",
+            "o010050030072",
+            "o010050030082"
+          ],
+          "choice": "ages in kanji numerals (\"百三十年\"); \"年生きて\" (L), \"歳のとき\" (B, R); \"似姿\" and \"かたち\" as in 1:26",
+          "alternatives": [
+            "Arabic digits (130年)"
+          ],
+          "reason": "As the style guide sets, numbers in running text are written in kanji. Likeness and image repeat the words of 1:26, since Seth is like Adam as Adam was made like God (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010050030011",
+            "o010050030012",
+            "o010050030021",
+            "o010050030031",
+            "o010050030041",
+            "o010050030042",
+            "o010050030051",
+            "o010050030061",
+            "o010050030062",
+            "o010050030071",
+            "o010050030072",
+            "o010050030073",
+            "o010050030081",
+            "o010050030082",
+            "o010050030083",
+            "o010050030091",
+            "o010050030092",
+            "o010050030101",
+            "o010050030111",
+            "o010050030112",
+            "o010050030121"
+          ],
+          "choice": "the genealogy's formulas: \"hidup ... lalu memperanakkan\" (L); \"berumur ... menjadi ayah\" (B); \"mendapat anak laki-laki bernama\" (R); \"mati\" (L, B), \"meninggal\" (R); numbers as the EYD writes them",
+          "alternatives": [],
+          "reason": "One wording at each level through the genealogies of Genesis. A number that takes one or two words is written in words, others in digits (style guide section 10); a person's death is \"mati\" at Literal and Balanced and \"meninggal\" at Readable, as the glossary sets.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010050030012",
+            "o010050030062"
+          ],
+          "choice": "\"X活了N年，就生了Y\" (L); \"X活到N岁时，成了Y的父亲\" (B); \"X N岁的时候，生了一个儿子，名叫Y\" (R), with the other refrains of the list",
+          "alternatives": [
+            "X活到N岁，生了Y"
+          ],
+          "reason": "One wording per level for each refrain of the genealogies of chapters 5 and 11, where the Hebrew repeats the same pattern: \"X活了N年，就生了Y\" (L), \"X活到N岁时，成了Y的父亲\" (B), \"X N岁的时候，生了一个儿子，名叫Y\" (R); \"X生了Y以后，又活了N年，也生了儿子和女儿\" (L), \"Y出生以后，X又活了N年，还生了其他的儿女\" (B), \"……他还有其他的儿子和女儿\" (R); and in chapter 5 \"X所有的日子是N年，他就死了\" (L), \"X的一生总共有N年，然后他死了\" (B), \"X活到N岁，然后就死了\" (R). Ages and years in Chinese numerals. Ages are written with the larger part first, as Chinese counts (the Hebrew often gives the smaller first).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010050030073",
+            "o010050030083"
+          ],
+          "choice": "\"样式\" and \"形像\", the words of 1:26",
+          "alternatives": [],
+          "reason": "As Adam was made like God, Seth is like Adam (meaning decision m1): the same two words are kept, in the Hebrew's reversed order.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-tl-1",
+          "layer": "rendering",
+          "language": "tl",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010050030031",
+            "o010050030042",
+            "o010050030051"
+          ],
+          "choice": "digits for ages over a hundred (\"130 taon\"); Tagalog words for smaller numbers (\"siyamnapung taon\")",
+          "alternatives": [],
+          "reason": "The style guide writes numbers in Tagalog words, and digits where the words would be long and the English uses digits (section 10); \"isandaan at tatlumpung taon\" would be long in a list of many such ages. The ages are those of the Hebrew text (m2). The same through the genealogies of Genesis.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-tl-2",
+          "layer": "rendering",
+          "language": "tl",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o010050030031",
+            "o010050030042"
+          ],
+          "choice": "\"naging anak niya si ...\" (L), \"naging ama siya ni ...\" (B), \"nagkaroon siya ng anak na lalaki na si ...\" (R) for \"fathered\"",
+          "alternatives": [],
+          "reason": "The genealogy formula of Ruth 4:18 at Literal, so the new name comes last as in the Hebrew; Balanced says \"became the father of\", as the English Balanced does, and Readable \"had a son named\". For the whole chapter.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1194,8 +1954,113 @@
           "L": "И дней Адама после того, как он родил Сифа, было 800 лет, и он родил сыновей и дочерей.",
           "B": "После рождения Сифа Адам прожил 800 лет и родил других сыновей и дочерей.",
           "R": "После рождения Сифа Адам прожил ещё 800 лет. У него были и другие сыновья и дочери."
+        },
+        "uk": {
+          "L": "І було днів Адама після того, як він породив Сита, 800 років, і він породив синів і дочок.",
+          "B": "Після народження Сита Адам прожив 800 років і мав інших синів і дочок.",
+          "R": "Після того як народився Сит, Адам прожив ще 800 років. У нього були й інші сини та дочки."
+        },
+        "ja": {
+          "L": "そしてアダムがセトをもうけた後の日々は八百年であった。そして彼は息子たちと娘たちをもうけた。",
+          "B": "セトが生まれた後、アダムは八百年生き、ほかにも息子や娘をもうけた。",
+          "R": "セトが生まれた後、アダムはさらに八百年生きました。ほかにも息子や娘が生まれました。"
+        },
+        "id": {
+          "L": "Dan umur Adam setelah ia memperanakkan Set ialah delapan ratus tahun, dan ia memperanakkan anak-anak laki-laki dan perempuan.",
+          "B": "Setelah Set lahir, Adam hidup delapan ratus tahun lagi dan mendapat anak-anak laki-laki dan perempuan.",
+          "R": "Setelah Set lahir, Adam masih hidup delapan ratus tahun lagi. Dia juga mendapat anak-anak laki-laki dan perempuan yang lain."
+        },
+        "zh": {
+          "L": "亚当生塞特以后的日子是八百年，他也生了儿子和女儿。",
+          "B": "塞特出生以后，亚当又活了八百年，还生了其他的儿女。",
+          "R": "塞特出生以后，亚当又活了八百年。他还有其他的儿子和女儿。"
+        },
+        "tl": {
+          "L": "At ang mga araw ni Adan pagkatapos maging anak niya si Set ay 800 taon, at nagkaroon siya ng mga anak na lalaki at mga anak na babae.",
+          "B": "Pagkasilang ni Set, nabuhay pa si Adan nang 800 taon at nagkaroon ng iba pang mga anak na lalaki at babae.",
+          "R": "Pagkasilang ni Set, nabuhay pa si Adan nang 800 taon. Nagkaroon pa siya ng ibang mga anak na lalaki at babae."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010050040041"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "After"
+        },
+        {
+          "tokens": [
+            "o010050040051",
+            "o010050040052",
+            "o010050040071"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Seth was born"
+        },
+        {
+          "tokens": [
+            "o010050040031"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Adam"
+        },
+        {
+          "tokens": [
+            "o010050040012",
+            "o010050040021"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "lived"
+        },
+        {
+          "tokens": [
+            "o010050040081",
+            "o010050040091",
+            "o010050040101"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "800 years"
+        },
+        {
+          "tokens": [
+            "o010050040111"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010050040112",
+            "o010050040121"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "had other sons"
+        },
+        {
+          "tokens": [
+            "o010050040131"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010050040132"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "daughters"
+        }
+      ],
       "decisions": [
         {
           "id": "m1",
@@ -1341,8 +2206,84 @@
           "L": "И всех дней, которые прожил Адам, было 930 лет, и он умер.",
           "B": "Всего Адам прожил 930 лет, а потом умер.",
           "R": "Адам умер, когда ему было 930 лет."
+        },
+        "uk": {
+          "L": "І було всіх днів Адама, які він прожив, 930 років, і він помер.",
+          "B": "Усього Адам прожив 930 років, а потім помер.",
+          "R": "Адам дожив до 930 років, а потім помер."
+        },
+        "ja": {
+          "L": "そしてアダムが生きたすべての日は九百三十年であった。そして彼は死んだ。",
+          "B": "アダムの生涯は合わせて九百三十年であった。そして彼は死んだ。",
+          "R": "アダムは九百三十歳まで生きて、死にました。"
+        },
+        "id": {
+          "L": "Dan seluruh umur Adam ialah 930 tahun, lalu ia mati.",
+          "B": "Jadi Adam hidup seluruhnya 930 tahun, lalu ia mati.",
+          "R": "Adam hidup sampai berumur 930 tahun, lalu dia meninggal."
+        },
+        "zh": {
+          "L": "亚当活着的所有日子是九百三十年，他就死了。",
+          "B": "亚当的一生总共有九百三十年，然后他死了。",
+          "R": "亚当活到九百三十岁，然后就死了。"
+        },
+        "tl": {
+          "L": "At ang lahat ng araw na nabuhay si Adan ay 930 taon, at namatay siya.",
+          "B": "Sa kabuuan, nabuhay si Adan nang 930 taon, at pagkatapos ay namatay siya.",
+          "R": "Nabuhay si Adan hanggang 930 taong gulang, at pagkatapos ay namatay siya."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010050050021",
+            "o010050050031"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Altogether"
+        },
+        {
+          "tokens": [
+            "o010050050041"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Adam"
+        },
+        {
+          "tokens": [
+            "o010050050012",
+            "o010050050051",
+            "o010050050061"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "lived"
+        },
+        {
+          "tokens": [
+            "o010050050071",
+            "o010050050081",
+            "o010050050091",
+            "o010050050101",
+            "o010050050102",
+            "o010050050111"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "930 years"
+        },
+        {
+          "tokens": [
+            "o010050050121",
+            "o010050050122"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and then he died"
+        }
+      ],
       "decisions": [
         {
           "id": "m1",
@@ -1416,6 +2357,46 @@
             "\"ዐረፈ\" (rested, a polite word for died)"
           ],
           "reason": "The plain \"he died\" is the refrain of the list (meaning decision m1), and it is heard all the more where it is missing, for Enoch (5:24). The polite \"ዐረፈ\" would soften it and would blur the word God used in 2:17.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010050050122"
+          ],
+          "choice": "one fixed wording for the chapter's refrains: \"息子たちと娘たちをもうけた\" / \"ほかにも息子や娘\"; \"そして彼は死んだ\" (L, B), \"死にました\" (R)",
+          "alternatives": [
+            "varying the wording from verse to verse"
+          ],
+          "reason": "The list repeats the same sentences for each generation, ending with \"and he died\" (m1); keeping one wording lets the pattern, and its break at Enoch (5:23-24), be seen.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-tl-1",
+          "layer": "rendering",
+          "language": "tl",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o010050050122"
+          ],
+          "choice": "\"at namatay siya\" (and he died) at the end of each life",
+          "alternatives": [],
+          "reason": "The refrain of the list (m1) is kept in the same three words at Literal, and in the same form at each level, so the reader hears it and notices where it is missing (verse 24).",
           "uncertain": false,
           "footnote": false
         }
@@ -1497,8 +2478,79 @@
           "L": "И Сиф жил 105 лет и родил Еноса.",
           "B": "Когда Сиф прожил 105 лет, он стал отцом Еноса.",
           "R": "Когда Сифу было 105 лет, у него родился сын по имени Енос."
+        },
+        "uk": {
+          "L": "І жив Сит 105 років, і породив Еноса.",
+          "B": "Коли Сит прожив 105 років, він став батьком Еноса.",
+          "R": "Коли Ситові було 105 років, у нього народився син Енос."
+        },
+        "ja": {
+          "L": "そしてセトは百五年生きて、エノシュをもうけた。",
+          "B": "セトは百五歳のとき、エノシュの父となった。",
+          "R": "セトが百五歳のとき、エノシュという息子が生まれました。"
+        },
+        "id": {
+          "L": "Dan Set hidup seratus lima tahun, lalu memperanakkan Enos.",
+          "B": "Ketika Set berumur seratus lima tahun, ia menjadi ayah Enos.",
+          "R": "Ketika Set berumur seratus lima tahun, dia mendapat anak laki-laki bernama Enos."
+        },
+        "zh": {
+          "L": "塞特活了一百零五年，就生了以挪士。",
+          "B": "塞特活到一百零五岁时，成了以挪士的父亲。",
+          "R": "塞特一百零五岁的时候，生了一个儿子，名叫以挪士。"
+        },
+        "tl": {
+          "L": "At nabuhay si Set nang 105 taon at naging anak niya si Enos.",
+          "B": "Nang mabuhay na si Set nang 105 taon, naging ama siya ni Enos.",
+          "R": "Nang 105 taong gulang na si Set, nagkaroon siya ng anak na lalaki na si Enos."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010050060021"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Seth"
+        },
+        {
+          "tokens": [
+            "o010050060012"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "had lived"
+        },
+        {
+          "tokens": [
+            "o010050060031",
+            "o010050060041",
+            "o010050060051",
+            "o010050060052",
+            "o010050060061"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "105 years"
+        },
+        {
+          "tokens": [
+            "o010050060072"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "he became the father"
+        },
+        {
+          "tokens": [
+            "o010050060091"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "of Enosh"
+        }
+      ],
       "decisions": [],
       "status": "ai_draft"
     },
@@ -1584,8 +2636,115 @@
           "L": "И Сиф жил после того, как родил Еноса, 807 лет, и родил сыновей и дочерей.",
           "B": "После рождения Еноса Сиф прожил 807 лет и родил других сыновей и дочерей.",
           "R": "После рождения Еноса Сиф прожил ещё 807 лет. У него были и другие сыновья и дочери."
+        },
+        "uk": {
+          "L": "І жив Сит після того, як породив Еноса, 807 років, і породив синів і дочок.",
+          "B": "Після народження Еноса Сит прожив 807 років і мав інших синів і дочок.",
+          "R": "Після того як народився Енос, Сит прожив ще 807 років. У нього були й інші сини та дочки."
+        },
+        "ja": {
+          "L": "そしてセトはエノシュをもうけた後、八百七年生きて、息子たちと娘たちをもうけた。",
+          "B": "エノシュが生まれた後、セトは八百七年生き、ほかにも息子や娘をもうけた。",
+          "R": "エノシュが生まれた後、セトはさらに八百七年生きました。ほかにも息子や娘が生まれました。"
+        },
+        "id": {
+          "L": "Dan Set hidup setelah memperanakkan Enos 807 tahun, dan ia memperanakkan anak-anak laki-laki dan perempuan.",
+          "B": "Setelah Enos lahir, Set hidup 807 tahun lagi dan mendapat anak-anak laki-laki dan perempuan.",
+          "R": "Setelah Enos lahir, Set masih hidup 807 tahun lagi. Dia juga mendapat anak-anak laki-laki dan perempuan yang lain."
+        },
+        "zh": {
+          "L": "塞特生了以挪士以后，又活了八百零七年，也生了儿子和女儿。",
+          "B": "以挪士出生以后，塞特又活了八百零七年，还生了其他的儿女。",
+          "R": "以挪士出生以后，塞特又活了八百零七年。他还有其他的儿子和女儿。"
+        },
+        "tl": {
+          "L": "At nabuhay si Set pagkatapos maging anak niya si Enos nang 807 taon, at nagkaroon siya ng mga anak na lalaki at mga anak na babae.",
+          "B": "Pagkasilang ni Enos, nabuhay pa si Set nang 807 taon at nagkaroon ng iba pang mga anak na lalaki at babae.",
+          "R": "Pagkasilang ni Enos, nabuhay pa si Set nang 807 taon. Nagkaroon pa siya ng ibang mga anak na lalaki at babae."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010050070031"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "After"
+        },
+        {
+          "tokens": [
+            "o010050070041",
+            "o010050070042",
+            "o010050070061"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Enosh was born"
+        },
+        {
+          "tokens": [
+            "o010050070021"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Seth"
+        },
+        {
+          "tokens": [
+            "o010050070012"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "lived"
+        },
+        {
+          "tokens": [
+            "o010050070071",
+            "o010050070081",
+            "o010050070091",
+            "o010050070092",
+            "o010050070101",
+            "o010050070111"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "807 years"
+        },
+        {
+          "tokens": [
+            "o010050070121"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010050070122",
+            "o010050070131"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "had other sons"
+        },
+        {
+          "tokens": [
+            "o010050070141"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010050070142"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "daughters"
+        }
+      ],
       "decisions": [],
       "status": "ai_draft"
     },
@@ -1666,8 +2825,83 @@
           "L": "И всех дней Сифа было 912 лет, и он умер.",
           "B": "Всего Сиф прожил 912 лет, а потом умер.",
           "R": "Сиф умер, когда ему было 912 лет."
+        },
+        "uk": {
+          "L": "І було всіх днів Сита 912 років, і він помер.",
+          "B": "Усього Сит прожив 912 років, а потім помер.",
+          "R": "Сит дожив до 912 років, а потім помер."
+        },
+        "ja": {
+          "L": "そしてセトのすべての日は九百十二年であった。そして彼は死んだ。",
+          "B": "セトの生涯は合わせて九百十二年であった。そして彼は死んだ。",
+          "R": "セトは九百十二歳まで生きて、死にました。"
+        },
+        "id": {
+          "L": "Dan seluruh umur Set ialah 912 tahun, lalu ia mati.",
+          "B": "Jadi Set hidup seluruhnya 912 tahun, lalu ia mati.",
+          "R": "Set hidup sampai berumur 912 tahun, lalu dia meninggal."
+        },
+        "zh": {
+          "L": "塞特所有的日子是九百一十二年，他就死了。",
+          "B": "塞特的一生总共有九百一十二年，然后他死了。",
+          "R": "塞特活到九百一十二岁，然后就死了。"
+        },
+        "tl": {
+          "L": "At ang lahat ng araw ni Set ay 912 taon, at namatay siya.",
+          "B": "Sa kabuuan, nabuhay si Set nang 912 taon, at pagkatapos ay namatay siya.",
+          "R": "Nabuhay si Set hanggang 912 taong gulang, at pagkatapos ay namatay siya."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010050080021",
+            "o010050080031"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Altogether"
+        },
+        {
+          "tokens": [
+            "o010050080041"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Seth"
+        },
+        {
+          "tokens": [
+            "o010050080012"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "lived"
+        },
+        {
+          "tokens": [
+            "o010050080051",
+            "o010050080061",
+            "o010050080071",
+            "o010050080081",
+            "o010050080082",
+            "o010050080091",
+            "o010050080101"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "912 years"
+        },
+        {
+          "tokens": [
+            "o010050080111",
+            "o010050080112"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and then he died"
+        }
+      ],
       "decisions": [],
       "status": "ai_draft"
     },
@@ -1743,8 +2977,76 @@
           "L": "И Енос жил девяносто лет и родил Каинана.",
           "B": "Когда Енос прожил девяносто лет, он стал отцом Каинана.",
           "R": "Когда Еносу было девяносто лет, у него родился сын по имени Каинан."
+        },
+        "uk": {
+          "L": "І жив Енос девʼяносто років, і породив Каїнана.",
+          "B": "Коли Енос прожив девʼяносто років, він став батьком Каїнана.",
+          "R": "Коли Еносові було девʼяносто років, у нього народився син Каїнан."
+        },
+        "ja": {
+          "L": "そしてエノシュは九十年生きて、ケナンをもうけた。",
+          "B": "エノシュは九十歳のとき、ケナンの父となった。",
+          "R": "エノシュが九十歳のとき、ケナンという息子が生まれました。"
+        },
+        "id": {
+          "L": "Dan Enos hidup sembilan puluh tahun, lalu memperanakkan Kenan.",
+          "B": "Ketika Enos berumur sembilan puluh tahun, ia menjadi ayah Kenan.",
+          "R": "Ketika Enos berumur sembilan puluh tahun, dia mendapat anak laki-laki bernama Kenan."
+        },
+        "zh": {
+          "L": "以挪士活了九十年，就生了该南。",
+          "B": "以挪士活到九十岁时，成了该南的父亲。",
+          "R": "以挪士九十岁的时候，生了一个儿子，名叫该南。"
+        },
+        "tl": {
+          "L": "At nabuhay si Enos nang siyamnapung taon at naging anak niya si Kenan.",
+          "B": "Nang mabuhay na si Enos nang siyamnapung taon, naging ama siya ni Kenan.",
+          "R": "Nang siyamnapung taong gulang na si Enos, nagkaroon siya ng anak na lalaki na si Kenan."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010050090021"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Enosh"
+        },
+        {
+          "tokens": [
+            "o010050090012"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "had lived"
+        },
+        {
+          "tokens": [
+            "o010050090031",
+            "o010050090041"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "ninety years"
+        },
+        {
+          "tokens": [
+            "o010050090052"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "he became the father"
+        },
+        {
+          "tokens": [
+            "o010050090071"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "of Kenan"
+        }
+      ],
       "decisions": [
         {
           "id": "m1",
@@ -1844,6 +3146,107 @@
           "reason": "The names take their usual Brazilian form, as in 4:18; \"Matusalém\" is how Brazilian readers know the name.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010050090071"
+          ],
+          "choice": "\"Каїнан\" for Kenan, as Luke 3:37",
+          "alternatives": [
+            "Кенан"
+          ],
+          "reason": "The New Testament form of the name is kept (see GEN.1.1), so that the genealogies of Genesis and Luke name him alike.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010050090031"
+          ],
+          "choice": "\"ケナン\" for Kenan, and in this chapter \"マハラルエル\", \"イエレド\", \"メトシェラ\" (as Luke 3:37), \"ノア\", \"セム\", \"ハム\", \"ヤフェト\"",
+          "alternatives": [
+            "\"カイナム\", the form Luke 3:37 gives from the Greek"
+          ],
+          "reason": "Names already in the Japanese New Testament keep that form. Luke's カイナム follows a Greek spelling that differs from the Hebrew; Genesis transcribes the Hebrew ケナン, so the same man has two forms, as he does in English (Kenan, Cainan).",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010050090031"
+          ],
+          "choice": "\"Kenan\"",
+          "alternatives": [],
+          "reason": "The established form, which keeps the Hebrew; added to the glossary with \"Mahalaleel\" and \"Yared\" (verses 12 and 15).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010050090061"
+          ],
+          "choice": "\"该南\" (Kenan), \"玛勒列\" (Mahalalel), \"雅列\" (Jared), \"玛土撒拉\" (Methuselah)",
+          "alternatives": [],
+          "reason": "The forms of Luke 3:36-38 in this translation, which lists the same line; names are not wording. Kenan's line has names like those in Cain's (meaning decision m1), and Chinese keeps each Hebrew name's own form.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-tl-1",
+          "layer": "rendering",
+          "language": "tl",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010050090071"
+          ],
+          "choice": "\"Kenan\", and in verses 12-20 \"Mahalalel\" and \"Jared\"",
+          "alternatives": [
+            "\"Cainan\""
+          ],
+          "reason": "Formed by the rules of section 6. \"Cainan\" (the older Spanish-derived form, also in Luke 3:37) is not used, since it is easily confused with \"Cain\" in a chapter that sets the two lines side by side (m1). Added to the glossary.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1931,8 +3334,116 @@
           "L": "И Енос жил после того, как родил Каинана, 815 лет, и родил сыновей и дочерей.",
           "B": "После рождения Каинана Енос прожил 815 лет и родил других сыновей и дочерей.",
           "R": "После рождения Каинана Енос прожил ещё 815 лет. У него были и другие сыновья и дочери."
+        },
+        "uk": {
+          "L": "І жив Енос після того, як породив Каїнана, 815 років, і породив синів і дочок.",
+          "B": "Після народження Каїнана Енос прожив 815 років і мав інших синів і дочок.",
+          "R": "Після того як народився Каїнан, Енос прожив ще 815 років. У нього були й інші сини та дочки."
+        },
+        "ja": {
+          "L": "そしてエノシュはケナンをもうけた後、八百十五年生きて、息子たちと娘たちをもうけた。",
+          "B": "ケナンが生まれた後、エノシュは八百十五年生き、ほかにも息子や娘をもうけた。",
+          "R": "ケナンが生まれた後、エノシュはさらに八百十五年生きました。ほかにも息子や娘が生まれました。"
+        },
+        "id": {
+          "L": "Dan Enos hidup setelah memperanakkan Kenan 815 tahun, dan ia memperanakkan anak-anak laki-laki dan perempuan.",
+          "B": "Setelah Kenan lahir, Enos hidup 815 tahun lagi dan mendapat anak-anak laki-laki dan perempuan.",
+          "R": "Setelah Kenan lahir, Enos masih hidup 815 tahun lagi. Dia juga mendapat anak-anak laki-laki dan perempuan yang lain."
+        },
+        "zh": {
+          "L": "以挪士生了该南以后，又活了八百一十五年，也生了儿子和女儿。",
+          "B": "该南出生以后，以挪士又活了八百一十五年，还生了其他的儿女。",
+          "R": "该南出生以后，以挪士又活了八百一十五年。他还有其他的儿子和女儿。"
+        },
+        "tl": {
+          "L": "At nabuhay si Enos pagkatapos maging anak niya si Kenan nang 815 taon, at nagkaroon siya ng mga anak na lalaki at mga anak na babae.",
+          "B": "Pagkasilang ni Kenan, nabuhay pa si Enos nang 815 taon at nagkaroon ng iba pang mga anak na lalaki at babae.",
+          "R": "Pagkasilang ni Kenan, nabuhay pa si Enos nang 815 taon. Nagkaroon pa siya ng ibang mga anak na lalaki at babae."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010050100031"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "After"
+        },
+        {
+          "tokens": [
+            "o010050100041",
+            "o010050100042",
+            "o010050100061"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Kenan was born"
+        },
+        {
+          "tokens": [
+            "o010050100021"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Enosh"
+        },
+        {
+          "tokens": [
+            "o010050100012"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "lived"
+        },
+        {
+          "tokens": [
+            "o010050100071",
+            "o010050100081",
+            "o010050100091",
+            "o010050100101",
+            "o010050100102",
+            "o010050100111",
+            "o010050100121"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "815 years"
+        },
+        {
+          "tokens": [
+            "o010050100131"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010050100132",
+            "o010050100141"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "had other sons"
+        },
+        {
+          "tokens": [
+            "o010050100151"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010050100152"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "daughters"
+        }
+      ],
       "decisions": [],
       "status": "ai_draft"
     },
@@ -2012,8 +3523,82 @@
           "L": "И всех дней Еноса было 905 лет, и он умер.",
           "B": "Всего Енос прожил 905 лет, а потом умер.",
           "R": "Енос умер, когда ему было 905 лет."
+        },
+        "uk": {
+          "L": "І було всіх днів Еноса 905 років, і він помер.",
+          "B": "Усього Енос прожив 905 років, а потім помер.",
+          "R": "Енос дожив до 905 років, а потім помер."
+        },
+        "ja": {
+          "L": "そしてエノシュのすべての日は九百五年であった。そして彼は死んだ。",
+          "B": "エノシュの生涯は合わせて九百五年であった。そして彼は死んだ。",
+          "R": "エノシュは九百五歳まで生きて、死にました。"
+        },
+        "id": {
+          "L": "Dan seluruh umur Enos ialah 905 tahun, lalu ia mati.",
+          "B": "Jadi Enos hidup seluruhnya 905 tahun, lalu ia mati.",
+          "R": "Enos hidup sampai berumur 905 tahun, lalu dia meninggal."
+        },
+        "zh": {
+          "L": "以挪士所有的日子是九百零五年，他就死了。",
+          "B": "以挪士的一生总共有九百零五年，然后他死了。",
+          "R": "以挪士活到九百零五岁，然后就死了。"
+        },
+        "tl": {
+          "L": "At ang lahat ng araw ni Enos ay 905 taon, at namatay siya.",
+          "B": "Sa kabuuan, nabuhay si Enos nang 905 taon, at pagkatapos ay namatay siya.",
+          "R": "Nabuhay si Enos hanggang 905 taong gulang, at pagkatapos ay namatay siya."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010050110021",
+            "o010050110031"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Altogether"
+        },
+        {
+          "tokens": [
+            "o010050110041"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Enosh"
+        },
+        {
+          "tokens": [
+            "o010050110012"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "lived"
+        },
+        {
+          "tokens": [
+            "o010050110051",
+            "o010050110061",
+            "o010050110071",
+            "o010050110072",
+            "o010050110081",
+            "o010050110091"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "905 years"
+        },
+        {
+          "tokens": [
+            "o010050110101",
+            "o010050110102"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and then he died"
+        }
+      ],
       "decisions": [],
       "status": "ai_draft"
     },
@@ -2089,9 +3674,99 @@
           "L": "И Каинан жил семьдесят лет и родил Малелеила.",
           "B": "Когда Каинан прожил семьдесят лет, он стал отцом Малелеила.",
           "R": "Когда Каинану было семьдесят лет, у него родился сын по имени Малелеил."
+        },
+        "uk": {
+          "L": "І жив Каїнан сімдесят років, і породив Малелеїла.",
+          "B": "Коли Каїнан прожив сімдесят років, він став батьком Малелеїла.",
+          "R": "Коли Каїнанові було сімдесят років, у нього народився син Малелеїл."
+        },
+        "ja": {
+          "L": "そしてケナンは七十年生きて、マハラルエルをもうけた。",
+          "B": "ケナンは七十歳のとき、マハラルエルの父となった。",
+          "R": "ケナンが七十歳のとき、マハラルエルという息子が生まれました。"
+        },
+        "id": {
+          "L": "Dan Kenan hidup tujuh puluh tahun, lalu memperanakkan Mahalaleel.",
+          "B": "Ketika Kenan berumur tujuh puluh tahun, ia menjadi ayah Mahalaleel.",
+          "R": "Ketika Kenan berumur tujuh puluh tahun, dia mendapat anak laki-laki bernama Mahalaleel."
+        },
+        "zh": {
+          "L": "该南活了七十年，就生了玛勒列。",
+          "B": "该南活到七十岁时，成了玛勒列的父亲。",
+          "R": "该南七十岁的时候，生了一个儿子，名叫玛勒列。"
+        },
+        "tl": {
+          "L": "At nabuhay si Kenan nang pitumpung taon at naging anak niya si Mahalalel.",
+          "B": "Nang mabuhay na si Kenan nang pitumpung taon, naging ama siya ni Mahalalel.",
+          "R": "Nang pitumpung taong gulang na si Kenan, nagkaroon siya ng anak na lalaki na si Mahalalel."
         }
       },
-      "decisions": [],
+      "alignments": [
+        {
+          "tokens": [
+            "o010050120021"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Kenan"
+        },
+        {
+          "tokens": [
+            "o010050120012"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "had lived"
+        },
+        {
+          "tokens": [
+            "o010050120031",
+            "o010050120041"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "seventy years"
+        },
+        {
+          "tokens": [
+            "o010050120052"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "he became the father"
+        },
+        {
+          "tokens": [
+            "o010050120071"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "of Mahalalel"
+        }
+      ],
+      "decisions": [
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010050120031"
+          ],
+          "choice": "\"Mahalaleel\"",
+          "alternatives": [
+            "\"Mahalalel\""
+          ],
+          "reason": "The established church form, which writes the two Hebrew vowels of the name's last part; kept by the style guide's first rule.",
+          "uncertain": false,
+          "footnote": false
+        }
+      ],
       "status": "ai_draft"
     },
     {
@@ -2176,8 +3851,115 @@
           "L": "И Каинан жил после того, как родил Малелеила, 840 лет, и родил сыновей и дочерей.",
           "B": "После рождения Малелеила Каинан прожил 840 лет и родил других сыновей и дочерей.",
           "R": "После рождения Малелеила Каинан прожил ещё 840 лет. У него были и другие сыновья и дочери."
+        },
+        "uk": {
+          "L": "І жив Каїнан після того, як породив Малелеїла, 840 років, і породив синів і дочок.",
+          "B": "Після народження Малелеїла Каїнан прожив 840 років і мав інших синів і дочок.",
+          "R": "Після того як народився Малелеїл, Каїнан прожив ще 840 років. У нього були й інші сини та дочки."
+        },
+        "ja": {
+          "L": "そしてケナンはマハラルエルをもうけた後、八百四十年生きて、息子たちと娘たちをもうけた。",
+          "B": "マハラルエルが生まれた後、ケナンは八百四十年生き、ほかにも息子や娘をもうけた。",
+          "R": "マハラルエルが生まれた後、ケナンはさらに八百四十年生きました。ほかにも息子や娘が生まれました。"
+        },
+        "id": {
+          "L": "Dan Kenan hidup setelah memperanakkan Mahalaleel 840 tahun, dan ia memperanakkan anak-anak laki-laki dan perempuan.",
+          "B": "Setelah Mahalaleel lahir, Kenan hidup 840 tahun lagi dan mendapat anak-anak laki-laki dan perempuan.",
+          "R": "Setelah Mahalaleel lahir, Kenan masih hidup 840 tahun lagi. Dia juga mendapat anak-anak laki-laki dan perempuan yang lain."
+        },
+        "zh": {
+          "L": "该南生了玛勒列以后，又活了八百四十年，也生了儿子和女儿。",
+          "B": "玛勒列出生以后，该南又活了八百四十年，还生了其他的儿女。",
+          "R": "玛勒列出生以后，该南又活了八百四十年。他还有其他的儿子和女儿。"
+        },
+        "tl": {
+          "L": "At nabuhay si Kenan pagkatapos maging anak niya si Mahalalel nang 840 taon, at nagkaroon siya ng mga anak na lalaki at mga anak na babae.",
+          "B": "Pagkasilang ni Mahalalel, nabuhay pa si Kenan nang 840 taon at nagkaroon ng iba pang mga anak na lalaki at babae.",
+          "R": "Pagkasilang ni Mahalalel, nabuhay pa si Kenan nang 840 taon. Nagkaroon pa siya ng ibang mga anak na lalaki at babae."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010050130031"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "After"
+        },
+        {
+          "tokens": [
+            "o010050130041",
+            "o010050130042",
+            "o010050130061"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Mahalalel was born"
+        },
+        {
+          "tokens": [
+            "o010050130021"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Kenan"
+        },
+        {
+          "tokens": [
+            "o010050130012"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "lived"
+        },
+        {
+          "tokens": [
+            "o010050130071",
+            "o010050130081",
+            "o010050130091",
+            "o010050130092",
+            "o010050130101",
+            "o010050130111"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "840 years"
+        },
+        {
+          "tokens": [
+            "o010050130121"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010050130122",
+            "o010050130131"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "had other sons"
+        },
+        {
+          "tokens": [
+            "o010050130141"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010050130142"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "daughters"
+        }
+      ],
       "decisions": [],
       "status": "ai_draft"
     },
@@ -2257,8 +4039,82 @@
           "L": "И всех дней Каинана было 910 лет, и он умер.",
           "B": "Всего Каинан прожил 910 лет, а потом умер.",
           "R": "Каинан умер, когда ему было 910 лет."
+        },
+        "uk": {
+          "L": "І було всіх днів Каїнана 910 років, і він помер.",
+          "B": "Усього Каїнан прожив 910 років, а потім помер.",
+          "R": "Каїнан дожив до 910 років, а потім помер."
+        },
+        "ja": {
+          "L": "そしてケナンのすべての日は九百十年であった。そして彼は死んだ。",
+          "B": "ケナンの生涯は合わせて九百十年であった。そして彼は死んだ。",
+          "R": "ケナンは九百十歳まで生きて、死にました。"
+        },
+        "id": {
+          "L": "Dan seluruh umur Kenan ialah 910 tahun, lalu ia mati.",
+          "B": "Jadi Kenan hidup seluruhnya 910 tahun, lalu ia mati.",
+          "R": "Kenan hidup sampai berumur 910 tahun, lalu dia meninggal."
+        },
+        "zh": {
+          "L": "该南所有的日子是九百一十年，他就死了。",
+          "B": "该南的一生总共有九百一十年，然后他死了。",
+          "R": "该南活到九百一十岁，然后就死了。"
+        },
+        "tl": {
+          "L": "At ang lahat ng araw ni Kenan ay 910 taon, at namatay siya.",
+          "B": "Sa kabuuan, nabuhay si Kenan nang 910 taon, at pagkatapos ay namatay siya.",
+          "R": "Nabuhay si Kenan hanggang 910 taong gulang, at pagkatapos ay namatay siya."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010050140021",
+            "o010050140031"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Altogether"
+        },
+        {
+          "tokens": [
+            "o010050140041"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Kenan"
+        },
+        {
+          "tokens": [
+            "o010050140012"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "lived"
+        },
+        {
+          "tokens": [
+            "o010050140051",
+            "o010050140061",
+            "o010050140071",
+            "o010050140072",
+            "o010050140081",
+            "o010050140091"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "910 years"
+        },
+        {
+          "tokens": [
+            "o010050140101",
+            "o010050140102"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and then he died"
+        }
+      ],
       "decisions": [],
       "status": "ai_draft"
     },
@@ -2337,8 +4193,79 @@
           "L": "И Малелеил жил шестьдесят пять лет и родил Иареда.",
           "B": "Когда Малелеил прожил шестьдесят пять лет, он стал отцом Иареда.",
           "R": "Когда Малелеилу было шестьдесят пять лет, у него родился сын по имени Иаред."
+        },
+        "uk": {
+          "L": "І жив Малелеїл шістдесят пʼять років, і породив Яреда.",
+          "B": "Коли Малелеїл прожив шістдесят пʼять років, він став батьком Яреда.",
+          "R": "Коли Малелеїлові було шістдесят пʼять років, у нього народився син Яред."
+        },
+        "ja": {
+          "L": "そしてマハラルエルは六十五年生きて、イエレドをもうけた。",
+          "B": "マハラルエルは六十五歳のとき、イエレドの父となった。",
+          "R": "マハラルエルが六十五歳のとき、イエレドという息子が生まれました。"
+        },
+        "id": {
+          "L": "Dan Mahalaleel hidup 65 tahun, lalu memperanakkan Yared.",
+          "B": "Ketika Mahalaleel berumur 65 tahun, ia menjadi ayah Yared.",
+          "R": "Ketika Mahalaleel berumur 65 tahun, dia mendapat anak laki-laki bernama Yared."
+        },
+        "zh": {
+          "L": "玛勒列活了六十五年，就生了雅列。",
+          "B": "玛勒列活到六十五岁时，成了雅列的父亲。",
+          "R": "玛勒列六十五岁的时候，生了一个儿子，名叫雅列。"
+        },
+        "tl": {
+          "L": "At nabuhay si Mahalalel nang animnapu't limang taon at naging anak niya si Jared.",
+          "B": "Nang mabuhay na si Mahalalel nang animnapu't limang taon, naging ama siya ni Jared.",
+          "R": "Nang animnapu't limang taong gulang na si Mahalalel, nagkaroon siya ng anak na lalaki na si Jared."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010050150021"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Mahalalel"
+        },
+        {
+          "tokens": [
+            "o010050150012"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "had lived"
+        },
+        {
+          "tokens": [
+            "o010050150031",
+            "o010050150041",
+            "o010050150051",
+            "o010050150052",
+            "o010050150061"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "sixty-five years"
+        },
+        {
+          "tokens": [
+            "o010050150072"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "he became the father"
+        },
+        {
+          "tokens": [
+            "o010050150091"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "of Jared"
+        }
+      ],
       "decisions": [],
       "status": "ai_draft"
     },
@@ -2424,8 +4351,115 @@
           "L": "И Малелеил жил после того, как родил Иареда, 830 лет, и родил сыновей и дочерей.",
           "B": "После рождения Иареда Малелеил прожил 830 лет и родил других сыновей и дочерей.",
           "R": "После рождения Иареда Малелеил прожил ещё 830 лет. У него были и другие сыновья и дочери."
+        },
+        "uk": {
+          "L": "І жив Малелеїл після того, як породив Яреда, 830 років, і породив синів і дочок.",
+          "B": "Після народження Яреда Малелеїл прожив 830 років і мав інших синів і дочок.",
+          "R": "Після того як народився Яред, Малелеїл прожив ще 830 років. У нього були й інші сини та дочки."
+        },
+        "ja": {
+          "L": "そしてマハラルエルはイエレドをもうけた後、八百三十年生きて、息子たちと娘たちをもうけた。",
+          "B": "イエレドが生まれた後、マハラルエルは八百三十年生き、ほかにも息子や娘をもうけた。",
+          "R": "イエレドが生まれた後、マハラルエルはさらに八百三十年生きました。ほかにも息子や娘が生まれました。"
+        },
+        "id": {
+          "L": "Dan Mahalaleel hidup setelah memperanakkan Yared 830 tahun, dan ia memperanakkan anak-anak laki-laki dan perempuan.",
+          "B": "Setelah Yared lahir, Mahalaleel hidup 830 tahun lagi dan mendapat anak-anak laki-laki dan perempuan.",
+          "R": "Setelah Yared lahir, Mahalaleel masih hidup 830 tahun lagi. Dia juga mendapat anak-anak laki-laki dan perempuan yang lain."
+        },
+        "zh": {
+          "L": "玛勒列生了雅列以后，又活了八百三十年，也生了儿子和女儿。",
+          "B": "雅列出生以后，玛勒列又活了八百三十年，还生了其他的儿女。",
+          "R": "雅列出生以后，玛勒列又活了八百三十年。他还有其他的儿子和女儿。"
+        },
+        "tl": {
+          "L": "At nabuhay si Mahalalel pagkatapos maging anak niya si Jared nang 830 taon, at nagkaroon siya ng mga anak na lalaki at mga anak na babae.",
+          "B": "Pagkasilang ni Jared, nabuhay pa si Mahalalel nang 830 taon at nagkaroon ng iba pang mga anak na lalaki at babae.",
+          "R": "Pagkasilang ni Jared, nabuhay pa si Mahalalel nang 830 taon. Nagkaroon pa siya ng ibang mga anak na lalaki at babae."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010050160031"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "After"
+        },
+        {
+          "tokens": [
+            "o010050160041",
+            "o010050160042",
+            "o010050160061"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Jared was born"
+        },
+        {
+          "tokens": [
+            "o010050160021"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Mahalalel"
+        },
+        {
+          "tokens": [
+            "o010050160012"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "lived"
+        },
+        {
+          "tokens": [
+            "o010050160071",
+            "o010050160081",
+            "o010050160091",
+            "o010050160092",
+            "o010050160101",
+            "o010050160111"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "830 years"
+        },
+        {
+          "tokens": [
+            "o010050160121"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010050160122",
+            "o010050160131"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "had other sons"
+        },
+        {
+          "tokens": [
+            "o010050160141"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010050160142"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "daughters"
+        }
+      ],
       "decisions": [],
       "status": "ai_draft"
     },
@@ -2507,8 +4541,84 @@
           "L": "И всех дней Малелеила было 895 лет, и он умер.",
           "B": "Всего Малелеил прожил 895 лет, а потом умер.",
           "R": "Малелеил умер, когда ему было 895 лет."
+        },
+        "uk": {
+          "L": "І було всіх днів Малелеїла 895 років, і він помер.",
+          "B": "Усього Малелеїл прожив 895 років, а потім помер.",
+          "R": "Малелеїл дожив до 895 років, а потім помер."
+        },
+        "ja": {
+          "L": "そしてマハラルエルのすべての日は八百九十五年であった。そして彼は死んだ。",
+          "B": "マハラルエルの生涯は合わせて八百九十五年であった。そして彼は死んだ。",
+          "R": "マハラルエルは八百九十五歳まで生きて、死にました。"
+        },
+        "id": {
+          "L": "Dan seluruh umur Mahalaleel ialah 895 tahun, lalu ia mati.",
+          "B": "Jadi Mahalaleel hidup seluruhnya 895 tahun, lalu ia mati.",
+          "R": "Mahalaleel hidup sampai berumur 895 tahun, lalu dia meninggal."
+        },
+        "zh": {
+          "L": "玛勒列所有的日子是八百九十五年，他就死了。",
+          "B": "玛勒列的一生总共有八百九十五年，然后他死了。",
+          "R": "玛勒列活到八百九十五岁，然后就死了。"
+        },
+        "tl": {
+          "L": "At ang lahat ng araw ni Mahalalel ay 895 taon, at namatay siya.",
+          "B": "Sa kabuuan, nabuhay si Mahalalel nang 895 taon, at pagkatapos ay namatay siya.",
+          "R": "Nabuhay si Mahalalel hanggang 895 taong gulang, at pagkatapos ay namatay siya."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010050170021",
+            "o010050170031"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Altogether"
+        },
+        {
+          "tokens": [
+            "o010050170041"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Mahalalel"
+        },
+        {
+          "tokens": [
+            "o010050170012"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "lived"
+        },
+        {
+          "tokens": [
+            "o010050170051",
+            "o010050170061",
+            "o010050170062",
+            "o010050170071",
+            "o010050170081",
+            "o010050170082",
+            "o010050170091",
+            "o010050170101"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "895 years"
+        },
+        {
+          "tokens": [
+            "o010050170111",
+            "o010050170112"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and then he died"
+        }
+      ],
       "decisions": [],
       "status": "ai_draft"
     },
@@ -2589,8 +4699,81 @@
           "L": "И Иаред жил 162 года и родил Еноха.",
           "B": "Когда Иаред прожил 162 года, он стал отцом Еноха.",
           "R": "Когда Иареду было 162 года, у него родился сын по имени Енох."
+        },
+        "uk": {
+          "L": "І жив Яред 162 роки, і породив Еноха.",
+          "B": "Коли Яред прожив 162 роки, він став батьком Еноха.",
+          "R": "Коли Яредові було 162 роки, у нього народився син Енох."
+        },
+        "ja": {
+          "L": "そしてイエレドは百六十二年生きて、エノクをもうけた。",
+          "B": "イエレドは百六十二歳のとき、エノクの父となった。",
+          "R": "イエレドが百六十二歳のとき、エノクという息子が生まれました。"
+        },
+        "id": {
+          "L": "Dan Yared hidup 162 tahun, lalu memperanakkan Henokh.",
+          "B": "Ketika Yared berumur 162 tahun, ia menjadi ayah Henokh.",
+          "R": "Ketika Yared berumur 162 tahun, dia mendapat anak laki-laki bernama Henokh."
+        },
+        "zh": {
+          "L": "雅列活了一百六十二年，就生了以诺。",
+          "B": "雅列活到一百六十二岁时，成了以诺的父亲。",
+          "R": "雅列一百六十二岁的时候，生了一个儿子，名叫以诺。"
+        },
+        "tl": {
+          "L": "At nabuhay si Jared nang 162 taon at naging anak niya si Enoc.",
+          "B": "Nang mabuhay na si Jared nang 162 taon, naging ama siya ni Enoc.",
+          "R": "Nang 162 taong gulang na si Jared, nagkaroon siya ng anak na lalaki na si Enoc."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010050180021"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Jared"
+        },
+        {
+          "tokens": [
+            "o010050180012"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "had lived"
+        },
+        {
+          "tokens": [
+            "o010050180031",
+            "o010050180041",
+            "o010050180042",
+            "o010050180051",
+            "o010050180061",
+            "o010050180062",
+            "o010050180071"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "162 years"
+        },
+        {
+          "tokens": [
+            "o010050180082"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "he became the father"
+        },
+        {
+          "tokens": [
+            "o010050180101"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "of Enoch"
+        }
+      ],
       "decisions": [],
       "status": "ai_draft"
     },
@@ -2673,8 +4856,112 @@
           "L": "И Иаред жил после того, как родил Еноха, 800 лет, и родил сыновей и дочерей.",
           "B": "После рождения Еноха Иаред прожил 800 лет и родил других сыновей и дочерей.",
           "R": "После рождения Еноха Иаред прожил ещё 800 лет. У него были и другие сыновья и дочери."
+        },
+        "uk": {
+          "L": "І жив Яред після того, як породив Еноха, 800 років, і породив синів і дочок.",
+          "B": "Після народження Еноха Яред прожив 800 років і мав інших синів і дочок.",
+          "R": "Після того як народився Енох, Яред прожив ще 800 років. У нього були й інші сини та дочки."
+        },
+        "ja": {
+          "L": "そしてイエレドはエノクをもうけた後、八百年生きて、息子たちと娘たちをもうけた。",
+          "B": "エノクが生まれた後、イエレドは八百年生き、ほかにも息子や娘をもうけた。",
+          "R": "エノクが生まれた後、イエレドはさらに八百年生きました。ほかにも息子や娘が生まれました。"
+        },
+        "id": {
+          "L": "Dan Yared hidup setelah memperanakkan Henokh delapan ratus tahun, dan ia memperanakkan anak-anak laki-laki dan perempuan.",
+          "B": "Setelah Henokh lahir, Yared hidup delapan ratus tahun lagi dan mendapat anak-anak laki-laki dan perempuan.",
+          "R": "Setelah Henokh lahir, Yared masih hidup delapan ratus tahun lagi. Dia juga mendapat anak-anak laki-laki dan perempuan yang lain."
+        },
+        "zh": {
+          "L": "雅列生了以诺以后，又活了八百年，也生了儿子和女儿。",
+          "B": "以诺出生以后，雅列又活了八百年，还生了其他的儿女。",
+          "R": "以诺出生以后，雅列又活了八百年。他还有其他的儿子和女儿。"
+        },
+        "tl": {
+          "L": "At nabuhay si Jared pagkatapos maging anak niya si Enoc nang 800 taon, at nagkaroon siya ng mga anak na lalaki at mga anak na babae.",
+          "B": "Pagkasilang ni Enoc, nabuhay pa si Jared nang 800 taon at nagkaroon ng iba pang mga anak na lalaki at babae.",
+          "R": "Pagkasilang ni Enoc, nabuhay pa si Jared nang 800 taon. Nagkaroon pa siya ng ibang mga anak na lalaki at babae."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010050190031"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "After"
+        },
+        {
+          "tokens": [
+            "o010050190041",
+            "o010050190042",
+            "o010050190061"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Enoch was born"
+        },
+        {
+          "tokens": [
+            "o010050190021"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Jared"
+        },
+        {
+          "tokens": [
+            "o010050190012"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "lived"
+        },
+        {
+          "tokens": [
+            "o010050190071",
+            "o010050190081",
+            "o010050190091"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "800 years"
+        },
+        {
+          "tokens": [
+            "o010050190101"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010050190102",
+            "o010050190111"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "had other sons"
+        },
+        {
+          "tokens": [
+            "o010050190121"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010050190122"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "daughters"
+        }
+      ],
       "decisions": [],
       "status": "ai_draft"
     },
@@ -2756,8 +5043,84 @@
           "L": "И всех дней Иареда было 962 года, и он умер.",
           "B": "Всего Иаред прожил 962 года, а потом умер.",
           "R": "Иаред умер, когда ему было 962 года."
+        },
+        "uk": {
+          "L": "І було всіх днів Яреда 962 роки, і він помер.",
+          "B": "Усього Яред прожив 962 роки, а потім помер.",
+          "R": "Яред дожив до 962 років, а потім помер."
+        },
+        "ja": {
+          "L": "そしてイエレドのすべての日は九百六十二年であった。そして彼は死んだ。",
+          "B": "イエレドの生涯は合わせて九百六十二年であった。そして彼は死んだ。",
+          "R": "イエレドは九百六十二歳まで生きて、死にました。"
+        },
+        "id": {
+          "L": "Dan seluruh umur Yared ialah 962 tahun, lalu ia mati.",
+          "B": "Jadi Yared hidup seluruhnya 962 tahun, lalu ia mati.",
+          "R": "Yared hidup sampai berumur 962 tahun, lalu dia meninggal."
+        },
+        "zh": {
+          "L": "雅列所有的日子是九百六十二年，他就死了。",
+          "B": "雅列的一生总共有九百六十二年，然后他死了。",
+          "R": "雅列活到九百六十二岁，然后就死了。"
+        },
+        "tl": {
+          "L": "At ang lahat ng araw ni Jared ay 962 taon, at namatay siya.",
+          "B": "Sa kabuuan, nabuhay si Jared nang 962 taon, at pagkatapos ay namatay siya.",
+          "R": "Nabuhay si Jared hanggang 962 taong gulang, at pagkatapos ay namatay siya."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010050200021",
+            "o010050200031"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Altogether"
+        },
+        {
+          "tokens": [
+            "o010050200041"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Jared"
+        },
+        {
+          "tokens": [
+            "o010050200012"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "lived"
+        },
+        {
+          "tokens": [
+            "o010050200051",
+            "o010050200061",
+            "o010050200062",
+            "o010050200071",
+            "o010050200081",
+            "o010050200082",
+            "o010050200091",
+            "o010050200101"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "962 years"
+        },
+        {
+          "tokens": [
+            "o010050200111",
+            "o010050200112"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and then he died"
+        }
+      ],
       "decisions": [],
       "status": "ai_draft"
     },
@@ -2835,8 +5198,78 @@
           "L": "И Енох жил шестьдесят пять лет и родил Мафусала.",
           "B": "Когда Енох прожил шестьдесят пять лет, он стал отцом Мафусала.",
           "R": "Когда Еноху было шестьдесят пять лет, у него родился сын по имени Мафусал."
+        },
+        "uk": {
+          "L": "І жив Енох шістдесят пʼять років, і породив Метушелаха.",
+          "B": "Коли Енох прожив шістдесят пʼять років, він став батьком Метушелаха.",
+          "R": "Коли Енохові було шістдесят пʼять років, у нього народився син Метушелах."
+        },
+        "ja": {
+          "L": "そしてエノクは六十五年生きて、メトシェラをもうけた。",
+          "B": "エノクは六十五歳のとき、メトシェラの父となった。",
+          "R": "エノクが六十五歳のとき、メトシェラという息子が生まれました。"
+        },
+        "id": {
+          "L": "Dan Henokh hidup 65 tahun, lalu memperanakkan Metusalah.",
+          "B": "Ketika Henokh berumur 65 tahun, ia menjadi ayah Metusalah.",
+          "R": "Ketika Henokh berumur 65 tahun, dia mendapat anak laki-laki bernama Metusalah."
+        },
+        "zh": {
+          "L": "以诺活了六十五年，就生了玛土撒拉。",
+          "B": "以诺活到六十五岁时，成了玛土撒拉的父亲。",
+          "R": "以诺六十五岁的时候，生了一个儿子，名叫玛土撒拉。"
+        },
+        "tl": {
+          "L": "At nabuhay si Enoc nang animnapu't limang taon at naging anak niya si Matusalem.",
+          "B": "Nang mabuhay na si Enoc nang animnapu't limang taon, naging ama siya ni Matusalem.",
+          "R": "Nang animnapu't limang taong gulang na si Enoc, nagkaroon siya ng anak na lalaki na si Matusalem."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010050210021"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Enoch"
+        },
+        {
+          "tokens": [
+            "o010050210012"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "had lived"
+        },
+        {
+          "tokens": [
+            "o010050210031",
+            "o010050210041",
+            "o010050210042",
+            "o010050210051"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "sixty-five years"
+        },
+        {
+          "tokens": [
+            "o010050210062"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "he became the father"
+        },
+        {
+          "tokens": [
+            "o010050210081"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "of Methuselah"
+        }
+      ],
       "decisions": [],
       "status": "ai_draft"
     },
@@ -2922,8 +5355,129 @@
           "L": "И Енох ходил с Богом после того, как родил Мафусала, 300 лет, и родил сыновей и дочерей.",
           "B": "После рождения Мафусала Енох ходил с Богом 300 лет и родил других сыновей и дочерей.",
           "R": "После рождения Мафусала Енох жил близко к Богу 300 лет. У него были и другие сыновья и дочери."
+        },
+        "uk": {
+          "L": "І ходив Енох з Богом після того, як породив Метушелаха, 300 років, і породив синів і дочок.",
+          "B": "Після народження Метушелаха Енох ходив з Богом 300 років і мав інших синів і дочок.",
+          "R": "Після того як народився Метушелах, Енох 300 років жив у близькості з Богом. У нього були й інші сини та дочки."
+        },
+        "ja": {
+          "L": "そしてエノクはメトシェラをもうけた後、三百年神と共に歩み、息子たちと娘たちをもうけた。",
+          "B": "メトシェラが生まれた後、エノクは三百年、神と共に歩み、ほかにも息子や娘をもうけた。",
+          "R": "メトシェラが生まれた後、エノクは三百年の間、神のすぐそばで生きました。ほかにも息子や娘が生まれました。"
+        },
+        "id": {
+          "L": "Dan Henokh hidup bergaul dengan Allah setelah memperanakkan Metusalah tiga ratus tahun, dan ia memperanakkan anak-anak laki-laki dan perempuan.",
+          "B": "Setelah Metusalah lahir, Henokh hidup bergaul dengan Allah tiga ratus tahun dan mendapat anak-anak laki-laki dan perempuan.",
+          "R": "Setelah Metusalah lahir, Henokh hidup dekat dengan Allah selama tiga ratus tahun. Dia juga mendapat anak-anak laki-laki dan perempuan yang lain."
+        },
+        "zh": {
+          "L": "以诺与{{god_term:神|上帝}}同行，[是]在他生了玛土撒拉以后，共三百年；他也生了儿子和女儿。",
+          "B": "玛土撒拉出生以后，以诺与{{god_term:神|上帝}}同行了三百年，还生了其他的儿女。",
+          "R": "玛土撒拉出生以后，以诺和{{god_term:神|上帝}}亲近地生活了三百年。他还有其他的儿子和女儿。"
+        },
+        "tl": {
+          "L": "At lumakad si Enoc na kasama ng Diyos pagkatapos maging anak niya si Matusalem nang 300 taon, at nagkaroon siya ng mga anak na lalaki at mga anak na babae.",
+          "B": "Pagkasilang ni Matusalem, lumakad si Enoc na kasama ng Diyos nang 300 taon at nagkaroon ng iba pang mga anak na lalaki at babae.",
+          "R": "Pagkasilang ni Matusalem, namuhay si Enoc nang malapit sa Diyos sa loob ng 300 taon. Nagkaroon pa siya ng ibang mga anak na lalaki at babae."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010050220051"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "After"
+        },
+        {
+          "tokens": [
+            "o010050220061",
+            "o010050220062",
+            "o010050220081"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Methuselah was born"
+        },
+        {
+          "tokens": [
+            "o010050220021"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Enoch"
+        },
+        {
+          "tokens": [
+            "o010050220012"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "walked"
+        },
+        {
+          "tokens": [
+            "o010050220031"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "with"
+        },
+        {
+          "tokens": [
+            "o010050220041",
+            "o010050220042"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "God"
+        },
+        {
+          "tokens": [
+            "o010050220091",
+            "o010050220101",
+            "o010050220111"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "300 years"
+        },
+        {
+          "tokens": [
+            "o010050220121"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010050220122",
+            "o010050220131"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "had other sons"
+        },
+        {
+          "tokens": [
+            "o010050220141"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010050220142"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "daughters"
+        }
+      ],
       "decisions": [
         {
           "id": "m1",
@@ -3079,6 +5633,117 @@
           "reason": "To walk with God is to live in close fellowship with him (m1). Literal and Balanced keep the Hebrew picture of walking; Readable says what it means, as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010050220012",
+            "o010050220031",
+            "o010050220041",
+            "o010050220042"
+          ],
+          "choice": "\"ходив з Богом\" (L, B), \"жив у близькості з Богом\" (R)",
+          "alternatives": [
+            "ходив перед Богом",
+            "жив побожно"
+          ],
+          "reason": "The Hebrew picture of walking with someone is kept at Literal and Balanced, as for Noah (6:9); Readable says what it means (meaning decision m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010050220012"
+          ],
+          "choice": "\"神と共に歩み\" (L, B); \"神のすぐそばで生きました\" (R)",
+          "alternatives": [
+            "\"神に従って生き\""
+          ],
+          "reason": "To walk with God is to live in close fellowship with him (m1). Literal and Balanced keep the picture of walking, which the reader will meet again with Noah (6:9); Readable says its sense, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010050220012",
+            "o010050220021",
+            "o010050220031"
+          ],
+          "choice": "\"hidup bergaul dengan Allah\" (L, B); \"hidup dekat dengan Allah\" (R)",
+          "alternatives": [
+            "\"berjalan dengan Allah\""
+          ],
+          "reason": "The Hebrew \"walked with God\" means a life lived in close fellowship with him; Indonesian \"berjalan dengan\" would read as a walk, so Literal and Balanced say \"hidup bergaul dengan\", and Readable says close to God as the English Readable does. The same words are used for Noah (6:9).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010050220012",
+            "o010050220031"
+          ],
+          "choice": "\"与{{god_term:神|上帝}}同行\" (L, B); \"和{{god_term:神|上帝}}亲近地生活\" (R)",
+          "alternatives": [],
+          "reason": "\"Walked with God\" is close fellowship with God (meaning decision m1). Literal and Balanced keep the picture, a fixed phrase of the church's vocabulary; Readable says what it means, as the English Readable does. Literal keeps the Hebrew order, with \"walked\" first, here and in verse 24.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-tl-1",
+          "layer": "rendering",
+          "language": "tl",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "idiom",
+          "tokens": [
+            "o010050220012",
+            "o010050220031",
+            "o010050220041",
+            "o010050220042"
+          ],
+          "choice": "\"lumakad na kasama ng Diyos\" (walked with God) at Literal and Balanced; \"namuhay nang malapit sa Diyos\" (lived close to God) at Readable",
+          "alternatives": [],
+          "reason": "The Hebrew picture of close fellowship (m1) reads naturally in Tagalog as a walk taken together; Readable says what it means, as the English Readable does. The same in verse 24 and of Noah in 6:9. \"Matusalem\" is the glossary form.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3159,8 +5824,75 @@
           "L": "И всех дней Еноха было 365 лет.",
           "B": "Всего Енох прожил 365 лет.",
           "R": "Енох прожил на земле 365 лет."
+        },
+        "uk": {
+          "L": "І було всіх днів Еноха 365 років.",
+          "B": "Усього Енох прожив 365 років.",
+          "R": "Енох прожив на землі 365 років."
+        },
+        "ja": {
+          "L": "そしてエノクのすべての日は三百六十五年であった。",
+          "B": "エノクの生涯は合わせて三百六十五年であった。",
+          "R": "エノクは地上で三百六十五年生きました。"
+        },
+        "id": {
+          "L": "Dan seluruh umur Henokh ialah 365 tahun.",
+          "B": "Jadi Henokh hidup seluruhnya 365 tahun.",
+          "R": "Henokh hidup di bumi selama 365 tahun."
+        },
+        "zh": {
+          "L": "以诺所有的日子是三百六十五年。",
+          "B": "以诺的一生总共有三百六十五年。",
+          "R": "以诺在地上活了三百六十五年。"
+        },
+        "tl": {
+          "L": "At ang lahat ng araw ni Enoc ay 365 taon.",
+          "B": "Sa kabuuan, nabuhay si Enoc nang 365 taon.",
+          "R": "Nabuhay si Enoc sa lupa nang 365 taon."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010050230021",
+            "o010050230031"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Altogether"
+        },
+        {
+          "tokens": [
+            "o010050230041"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Enoch"
+        },
+        {
+          "tokens": [
+            "o010050230012"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "lived"
+        },
+        {
+          "tokens": [
+            "o010050230051",
+            "o010050230061",
+            "o010050230062",
+            "o010050230071",
+            "o010050230081",
+            "o010050230082",
+            "o010050230091",
+            "o010050230101"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "365 years"
+        }
+      ],
       "decisions": [
         {
           "id": "m1",
@@ -3276,8 +6008,117 @@
           "L": "И Енох ходил с Богом, и его не стало, потому что Бог взял его.",
           "B": "Енох ходил с Богом, а потом его не стало, потому что Бог забрал его.",
           "R": "Енох жил близко к Богу. Потом однажды он исчез, потому что Бог забрал его."
+        },
+        "uk": {
+          "L": "І ходив Енох з Богом, і не стало його, бо взяв його Бог.",
+          "B": "Енох ходив з Богом, а потім його не стало, бо Бог забрав його.",
+          "R": "Енох жив у близькості з Богом. А одного дня він зник, бо Бог забрав його до себе."
+        },
+        "ja": {
+          "L": "そしてエノクは神と共に歩み、そして彼はいなくなった。神が彼を取られたからである。",
+          "B": "エノクは神と共に歩んだ。そして彼はいなくなった。神が彼を取り去られたからである。",
+          "R": "エノクは神のすぐそばで生きました。そしてある日、エノクはいなくなりました。神がエノクを連れて行かれたからです。"
+        },
+        "id": {
+          "L": "Dan Henokh hidup bergaul dengan Allah, lalu ia tidak ada lagi, sebab Allah mengambilnya.",
+          "B": "Henokh hidup bergaul dengan Allah, lalu ia tidak ada lagi, sebab Allah telah mengangkatnya.",
+          "R": "Henokh hidup dekat dengan Allah. Lalu suatu hari dia hilang, karena Allah mengambilnya."
+        },
+        "zh": {
+          "L": "以诺一直与{{god_term:神|上帝}}同行，他就不在了，因为{{god_term:神|上帝}}把他接走了。",
+          "B": "以诺常与{{god_term:神|上帝}}同行，后来他就不见了，因为{{god_term:神|上帝}}把他接走了。",
+          "R": "以诺和{{god_term:神|上帝}}很亲近。后来有一天，他不见了，因为{{god_term:神|上帝}}把他接走了。"
+        },
+        "tl": {
+          "L": "At lumakad si Enoc na kasama ng Diyos, at wala na siya, sapagkat kinuha siya ng Diyos.",
+          "B": "Lumakad si Enoc na kasama ng Diyos, at pagkatapos ay wala na siya, sapagkat kinuha siya ng Diyos.",
+          "R": "Namuhay si Enoc nang malapit sa Diyos. Pagkatapos, isang araw ay nawala siya, sapagkat kinuha siya ng Diyos."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010050240021"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Enoch"
+        },
+        {
+          "tokens": [
+            "o010050240012"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "walked"
+        },
+        {
+          "tokens": [
+            "o010050240031"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "with"
+        },
+        {
+          "tokens": [
+            "o010050240041",
+            "o010050240042"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "God"
+        },
+        {
+          "tokens": [
+            "o010050240051"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and then"
+        },
+        {
+          "tokens": [
+            "o010050240052",
+            "o010050240053"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "he was no more"
+        },
+        {
+          "tokens": [
+            "o010050240061"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "because"
+        },
+        {
+          "tokens": [
+            "o010050240091"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "God"
+        },
+        {
+          "tokens": [
+            "o010050240071"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "took"
+        },
+        {
+          "tokens": [
+            "o010050240082"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "him away"
+        }
+      ],
       "decisions": [
         {
           "id": "m1",
@@ -3389,6 +6230,30 @@
           "reason": "The Hebrew says \"with God\", of close fellowship (m1 of verse 22); Hebrews 11:5 says that Enoch pleased God.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010050240052",
+            "o010050240053",
+            "o010050240071"
+          ],
+          "choice": "\"不在了\" (L), \"不见了\" (B, R); \"把他接走了\"",
+          "alternatives": [
+            "取去",
+            "他就不在世了"
+          ],
+          "reason": "Enoch did not die but was taken by God (meaning decision m1). \"接走\" is the verb of Hebrews 11:5 in this translation, which tells this verse's story, and \"不在了\" keeps the Hebrew \"he was not\" without saying he died.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3470,8 +6335,81 @@
           "L": "И Мафусал жил 187 лет и родил Ламеха.",
           "B": "Когда Мафусал прожил 187 лет, он стал отцом Ламеха.",
           "R": "Когда Мафусалу было 187 лет, у него родился сын по имени Ламех."
+        },
+        "uk": {
+          "L": "І жив Метушелах 187 років, і породив Ламеха.",
+          "B": "Коли Метушелах прожив 187 років, він став батьком Ламеха.",
+          "R": "Коли Метушелахові було 187 років, у нього народився син Ламех."
+        },
+        "ja": {
+          "L": "そしてメトシェラは百八十七年生きて、レメクをもうけた。",
+          "B": "メトシェラは百八十七歳のとき、レメクの父となった。",
+          "R": "メトシェラが百八十七歳のとき、レメクという息子が生まれました。"
+        },
+        "id": {
+          "L": "Dan Metusalah hidup 187 tahun, lalu memperanakkan Lamekh.",
+          "B": "Ketika Metusalah berumur 187 tahun, ia menjadi ayah Lamekh.",
+          "R": "Ketika Metusalah berumur 187 tahun, dia mendapat anak laki-laki bernama Lamekh."
+        },
+        "zh": {
+          "L": "玛土撒拉活了一百八十七年，就生了拉麦。",
+          "B": "玛土撒拉活到一百八十七岁时，成了拉麦的父亲。",
+          "R": "玛土撒拉一百八十七岁的时候，生了一个儿子，名叫拉麦。"
+        },
+        "tl": {
+          "L": "At nabuhay si Matusalem nang 187 taon at naging anak niya si Lamec.",
+          "B": "Nang mabuhay na si Matusalem nang 187 taon, naging ama siya ni Lamec.",
+          "R": "Nang 187 taong gulang na si Matusalem, nagkaroon siya ng anak na lalaki na si Lamec."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010050250021"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Methuselah"
+        },
+        {
+          "tokens": [
+            "o010050250012"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "had lived"
+        },
+        {
+          "tokens": [
+            "o010050250031",
+            "o010050250041",
+            "o010050250042",
+            "o010050250051",
+            "o010050250061",
+            "o010050250062",
+            "o010050250071"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "187 years"
+        },
+        {
+          "tokens": [
+            "o010050250082"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "he became the father"
+        },
+        {
+          "tokens": [
+            "o010050250101"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "of Lamech"
+        }
+      ],
       "decisions": [],
       "status": "ai_draft"
     },
@@ -3559,8 +6497,117 @@
           "L": "И Мафусал жил после того, как родил Ламеха, 782 года, и родил сыновей и дочерей.",
           "B": "После рождения Ламеха Мафусал прожил 782 года и родил других сыновей и дочерей.",
           "R": "После рождения Ламеха Мафусал прожил ещё 782 года. У него были и другие сыновья и дочери."
+        },
+        "uk": {
+          "L": "І жив Метушелах після того, як породив Ламеха, 782 роки, і породив синів і дочок.",
+          "B": "Після народження Ламеха Метушелах прожив 782 роки і мав інших синів і дочок.",
+          "R": "Після того як народився Ламех, Метушелах прожив ще 782 роки. У нього були й інші сини та дочки."
+        },
+        "ja": {
+          "L": "そしてメトシェラはレメクをもうけた後、七百八十二年生きて、息子たちと娘たちをもうけた。",
+          "B": "レメクが生まれた後、メトシェラは七百八十二年生き、ほかにも息子や娘をもうけた。",
+          "R": "レメクが生まれた後、メトシェラはさらに七百八十二年生きました。ほかにも息子や娘が生まれました。"
+        },
+        "id": {
+          "L": "Dan Metusalah hidup setelah memperanakkan Lamekh 782 tahun, dan ia memperanakkan anak-anak laki-laki dan perempuan.",
+          "B": "Setelah Lamekh lahir, Metusalah hidup 782 tahun lagi dan mendapat anak-anak laki-laki dan perempuan.",
+          "R": "Setelah Lamekh lahir, Metusalah masih hidup 782 tahun lagi. Dia juga mendapat anak-anak laki-laki dan perempuan yang lain."
+        },
+        "zh": {
+          "L": "玛土撒拉生了拉麦以后，又活了七百八十二年，也生了儿子和女儿。",
+          "B": "拉麦出生以后，玛土撒拉又活了七百八十二年，还生了其他的儿女。",
+          "R": "拉麦出生以后，玛土撒拉又活了七百八十二年。他还有其他的儿子和女儿。"
+        },
+        "tl": {
+          "L": "At nabuhay si Matusalem pagkatapos maging anak niya si Lamec nang 782 taon, at nagkaroon siya ng mga anak na lalaki at mga anak na babae.",
+          "B": "Pagkasilang ni Lamec, nabuhay pa si Matusalem nang 782 taon at nagkaroon ng iba pang mga anak na lalaki at babae.",
+          "R": "Pagkasilang ni Lamec, nabuhay pa si Matusalem nang 782 taon. Nagkaroon pa siya ng ibang mga anak na lalaki at babae."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010050260031"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "After"
+        },
+        {
+          "tokens": [
+            "o010050260041",
+            "o010050260042",
+            "o010050260061"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Lamech was born"
+        },
+        {
+          "tokens": [
+            "o010050260021"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Methuselah"
+        },
+        {
+          "tokens": [
+            "o010050260012"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "lived"
+        },
+        {
+          "tokens": [
+            "o010050260071",
+            "o010050260081",
+            "o010050260082",
+            "o010050260091",
+            "o010050260101",
+            "o010050260102",
+            "o010050260111",
+            "o010050260121"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "782 years"
+        },
+        {
+          "tokens": [
+            "o010050260131"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010050260132",
+            "o010050260141"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "had other sons"
+        },
+        {
+          "tokens": [
+            "o010050260151"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010050260152"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "daughters"
+        }
+      ],
       "decisions": [],
       "status": "ai_draft"
     },
@@ -3642,8 +6689,84 @@
           "L": "И всех дней Мафусала было 969 лет, и он умер.",
           "B": "Всего Мафусал прожил 969 лет, а потом умер.",
           "R": "Мафусал умер, когда ему было 969 лет."
+        },
+        "uk": {
+          "L": "І було всіх днів Метушелаха 969 років, і він помер.",
+          "B": "Усього Метушелах прожив 969 років, а потім помер.",
+          "R": "Метушелах дожив до 969 років, а потім помер."
+        },
+        "ja": {
+          "L": "そしてメトシェラのすべての日は九百六十九年であった。そして彼は死んだ。",
+          "B": "メトシェラの生涯は合わせて九百六十九年であった。そして彼は死んだ。",
+          "R": "メトシェラは九百六十九歳まで生きて、死にました。"
+        },
+        "id": {
+          "L": "Dan seluruh umur Metusalah ialah 969 tahun, lalu ia mati.",
+          "B": "Jadi Metusalah hidup seluruhnya 969 tahun, lalu ia mati.",
+          "R": "Metusalah hidup sampai berumur 969 tahun, lalu dia meninggal."
+        },
+        "zh": {
+          "L": "玛土撒拉所有的日子是九百六十九年，他就死了。",
+          "B": "玛土撒拉的一生总共有九百六十九年，然后他死了。",
+          "R": "玛土撒拉活到九百六十九岁，然后就死了。"
+        },
+        "tl": {
+          "L": "At ang lahat ng araw ni Matusalem ay 969 taon, at namatay siya.",
+          "B": "Sa kabuuan, nabuhay si Matusalem nang 969 taon, at pagkatapos ay namatay siya.",
+          "R": "Nabuhay si Matusalem hanggang 969 taong gulang, at pagkatapos ay namatay siya."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010050270021",
+            "o010050270031"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Altogether"
+        },
+        {
+          "tokens": [
+            "o010050270041"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Methuselah"
+        },
+        {
+          "tokens": [
+            "o010050270012"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "lived"
+        },
+        {
+          "tokens": [
+            "o010050270051",
+            "o010050270061",
+            "o010050270062",
+            "o010050270071",
+            "o010050270081",
+            "o010050270082",
+            "o010050270091",
+            "o010050270101"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "969 years"
+        },
+        {
+          "tokens": [
+            "o010050270111",
+            "o010050270112"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and then he died"
+        }
+      ],
       "decisions": [
         {
           "id": "m1",
@@ -3740,8 +6863,81 @@
           "L": "И Ламех жил 182 года и родил сына.",
           "B": "Когда Ламех прожил 182 года, у него родился сын.",
           "R": "Когда Ламеху было 182 года, у него родился сын."
+        },
+        "uk": {
+          "L": "І жив Ламех 182 роки, і породив сина.",
+          "B": "Коли Ламех прожив 182 роки, у нього народився син.",
+          "R": "Коли Ламехові було 182 роки, у нього народився син."
+        },
+        "ja": {
+          "L": "そしてレメクは百八十二年生きて、男の子をもうけた。",
+          "B": "レメクは百八十二歳のとき、男の子をもうけた。",
+          "R": "レメクが百八十二歳のとき、男の子が生まれました。"
+        },
+        "id": {
+          "L": "Dan Lamekh hidup 182 tahun, lalu memperanakkan seorang anak laki-laki.",
+          "B": "Ketika Lamekh berumur 182 tahun, ia mendapat seorang anak laki-laki.",
+          "R": "Ketika Lamekh berumur 182 tahun, dia mendapat seorang anak laki-laki."
+        },
+        "zh": {
+          "L": "拉麦活了一百八十二年，生了一个儿子。",
+          "B": "拉麦活到一百八十二岁时，生了一个儿子。",
+          "R": "拉麦一百八十二岁的时候，生了一个儿子。"
+        },
+        "tl": {
+          "L": "At nabuhay si Lamec nang 182 taon at nagkaroon ng isang anak na lalaki.",
+          "B": "Nang mabuhay na si Lamec nang 182 taon, nagkaroon siya ng isang anak na lalaki.",
+          "R": "Nang 182 taong gulang na si Lamec, nagkaroon siya ng isang anak na lalaki."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010050280021"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Lamech"
+        },
+        {
+          "tokens": [
+            "o010050280012"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "had lived"
+        },
+        {
+          "tokens": [
+            "o010050280031",
+            "o010050280041",
+            "o010050280042",
+            "o010050280051",
+            "o010050280061",
+            "o010050280062",
+            "o010050280071"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "182 years"
+        },
+        {
+          "tokens": [
+            "o010050280082"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "he had"
+        },
+        {
+          "tokens": [
+            "o010050280091"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "a son"
+        }
+      ],
       "decisions": [
         {
           "id": "m1",
@@ -3849,8 +7045,193 @@
           "L": "И он назвал его имя Ной, говоря: «Этот утешит нас в нашей работе и в мучительном труде наших рук, от земли, которую проклял {{divine_name:ГОСПОДЬ|Яхве}}.»",
           "B": "Он назвал его Ной, сказав: «Он принесёт нам облегчение в нашей работе и в мучительном труде наших рук на земле, которую проклял {{divine_name:ГОСПОДЬ|Яхве}}.»",
           "R": "Он назвал его Ной. Он сказал: «Этот мальчик даст нам отдых от нашей тяжёлой работы, от всего тяжкого труда, который нам приходится делать на земле, которую проклял {{divine_name:ГОСПОДЬ|Яхве}}.»"
+        },
+        "uk": {
+          "L": "І назвав він його імʼя Ной, кажучи: «Цей утішить нас у нашій праці й у тяжкому труді наших рук від землі, яку прокляв {{divine_name:ГОСПОДЬ|Ягве}}.»",
+          "B": "Він назвав його Ной, кажучи: «Він принесе нам полегшу в нашій праці й у тяжкому труді наших рук, якого завдає земля, проклята {{divine_name:ГОСПОДОМ|Ягве}}.»",
+          "R": "Він назвав його Ной. Він сказав: «Цей хлопчик дасть нам відпочинок від тяжкої праці, від усього важкого труду, який ми мусимо робити на землі, що її прокляв {{divine_name:ГОСПОДЬ|Ягве}}.»"
+        },
+        "ja": {
+          "L": "そして彼はその名をノアと呼んで言った。「この子は、{{divine_name:主|ヤハウェ}}が呪われた土からの、わたしたちの働きと、わたしたちの手の苦労から、わたしたちを慰めるであろう。」",
+          "B": "彼はその子をノアと名づけて言った。「この子は、{{divine_name:主|ヤハウェ}}が呪われた土のために、わたしたちが働き、手で苦労していることから、わたしたちに安らぎを与えてくれるだろう。」",
+          "R": "レメクはその子をノアと名づけました。そして言いました。「{{divine_name:主|ヤハウェ}}がのろわれた土地で、わたしたちはつらい仕事をし、ひどく苦労している。この子は、そこからわたしたちを休ませてくれるだろう。」"
+        },
+        "id": {
+          "L": "Dan ia menamainya Nuh, katanya, \"Anak ini akan menghibur kita dalam pekerjaan kita dan dalam jerih payah tangan kita, [yang datang] dari tanah yang telah dikutuk {{divine_name:TUHAN|Yahweh}}.\"",
+          "B": "Ia menamainya Nuh, katanya, \"Anak ini akan memberi kita kelegaan dari pekerjaan kita dan dari jerih payah tangan kita, karena tanah yang telah dikutuk {{divine_name:TUHAN|Yahweh}}.\"",
+          "R": "Dia menamainya Nuh. Dia berkata, \"Anak ini akan memberi kita istirahat dari kerja keras kita, dari semua pekerjaan berat yang harus kita lakukan di tanah yang sudah dikutuk {{divine_name:TUHAN|Yahweh}}.\""
+        },
+        "zh": {
+          "L": "他称他的名字为挪亚，说：“这一个要在我们的工作上，和我们手中的劳苦上安慰我们，[这劳苦]是由于{{divine_name:上主|雅威}}所诅咒的土地。”",
+          "B": "他给儿子取名叫挪亚，说：“他要使我们从劳作中、从双手的辛苦中得到舒解，这辛苦是{{divine_name:上主|雅威}}所诅咒的土地带来的。”",
+          "R": "他给儿子取名叫挪亚。他说：“这孩子要让我们从辛苦的工作中得到安息，就是我们在{{divine_name:上主|雅威}}所诅咒的土地上必须做的一切苦工。”"
+        },
+        "tl": {
+          "L": "At tinawag niya ang kaniyang pangalan na Noe, na sinasabi, \"Ito ang aaliw sa atin sa ating gawain at sa mabigat na paggawa ng ating mga kamay, mula sa lupang isinumpa {{divine_name:ng PANGINOON|ni Yahweh}}.\"",
+          "B": "Pinangalanan niya siyang Noe, na sinasabi, \"Siya ang magbibigay sa atin ng ginhawa mula sa ating gawain at sa mabigat na paggawa ng ating mga kamay, dahil sa lupang isinumpa {{divine_name:ng PANGINOON|ni Yahweh}}.\"",
+          "R": "Pinangalanan niya siyang Noe. Sinabi niya, \"Ang batang ito ang magbibigay sa atin ng pahinga mula sa ating mabigat na trabaho, mula sa lahat ng mabigat na paggawang kailangan nating gawin sa lupang isinumpa {{divine_name:ng PANGINOON|ni Yahweh}}.\""
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010050290012",
+            "o010050290031",
+            "o010050290032"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "He named him"
+        },
+        {
+          "tokens": [
+            "o010050290041"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Noah"
+        },
+        {
+          "tokens": [
+            "o010050290051",
+            "o010050290052"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "saying"
+        },
+        {
+          "tokens": [
+            "o010050290061",
+            "o010050290071"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "He will bring"
+        },
+        {
+          "tokens": [
+            "o010050290072"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "us"
+        },
+        {
+          "tokens": [
+            "o010050290071"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "relief"
+        },
+        {
+          "tokens": [
+            "o010050290081"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "from"
+        },
+        {
+          "tokens": [
+            "o010050290083"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "our"
+        },
+        {
+          "tokens": [
+            "o010050290082"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "work"
+        },
+        {
+          "tokens": [
+            "o010050290091"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010050290092"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "from"
+        },
+        {
+          "tokens": [
+            "o010050290093"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the painful toil"
+        },
+        {
+          "tokens": [
+            "o010050290102"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "our"
+        },
+        {
+          "tokens": [
+            "o010050290101"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "hands"
+        },
+        {
+          "tokens": [
+            "o010050290111"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "caused by"
+        },
+        {
+          "tokens": [
+            "o010050290121",
+            "o010050290122"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the ground"
+        },
+        {
+          "tokens": [
+            "o010050290131"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "that"
+        },
+        {
+          "tokens": [
+            "o010050290151"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "{{divine_name:the LORD|Yahweh}}"
+        },
+        {
+          "tokens": [
+            "o010050290141",
+            "o010050290142"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "has cursed"
+        }
+      ],
       "decisions": [
         {
           "id": "m1",
@@ -4078,6 +7459,138 @@
           "reason": "The words repeat 3:17 (m2), so Literal and Balanced use the same phrase as there.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010050290041",
+            "o010050290071",
+            "o010050290072"
+          ],
+          "choice": "\"утішить\" (L), \"принесе полегшу\" (B), \"дасть відпочинок\" (R)",
+          "alternatives": [
+            "заспокоїть"
+          ],
+          "reason": "The name sounds like both \"rest\" and \"comfort\" (meaning decision m1); the levels take one sense each, as the English does, and the note explains the sound.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010050290041",
+            "o010050290071"
+          ],
+          "choice": "\"ノア\" (as in the New Testament); \"慰める\" (L), \"安らぎを与える\" (B), \"休ませる\" (R)",
+          "alternatives": [
+            "\"ノア(休み)\""
+          ],
+          "reason": "The name sounds like the Hebrew words for rest and comfort (m1). Japanese cannot keep the sound; the three levels between them carry both senses. \"苦労\" and the cursed ground repeat the words of 3:17 (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010050290021"
+          ],
+          "choice": "\"Nuh\"; \"kita\", inclusive",
+          "alternatives": [],
+          "reason": "\"Nuh\" is the glossary form, shared by church and Islamic usage. Lamech speaks of his whole family's toil with his hearers included, so \"kita\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010050290072",
+            "o010050290093"
+          ],
+          "choice": "\"安慰\" (L); \"舒解\" (B); \"安息\" (R); \"劳苦\" and \"诅咒\" as 3:17",
+          "alternatives": [],
+          "reason": "The name Noah sounds like \"rest\" and \"comfort\" (meaning decision m1); Chinese \"挪亚\" cannot show it, so each level picks one side of the sound, as the English levels do. The painful toil and the cursed ground take up 3:17 (m2), whose Chinese words are kept.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o010050290151"
+          ],
+          "choice": "{{divine_name:上主|雅威}} for YHWH",
+          "alternatives": [
+            "雅威 as the default"
+          ],
+          "reason": "The title \"上主\" by default, with the name \"雅威\" as the alternative (style guide section 4).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-tl-1",
+          "layer": "rendering",
+          "language": "tl",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010050290041",
+            "o010050290071",
+            "o010050290072",
+            "o010050290093",
+            "o010050290101",
+            "o010050290102",
+            "o010050290122",
+            "o010050290141",
+            "o010050290142"
+          ],
+          "choice": "\"Noe\"; \"atin\", \"ating\" (inclusive \"us\", \"our\"); \"mabigat na paggawa\" (painful toil)",
+          "alternatives": [],
+          "reason": "\"Noe\" is the glossary form; the Hebrew name sounds like \"rest\" and \"comfort\" (m1). Lamech speaks of all who work the cursed ground, his hearers included: inclusive \"atin\". \"mabigat na paggawa\" is the toil of 3:17 at Balanced (m2).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4166,8 +7679,117 @@
           "L": "И Ламех жил после того, как родил Ноя, 595 лет, и родил сыновей и дочерей.",
           "B": "После рождения Ноя Ламех прожил 595 лет и родил других сыновей и дочерей.",
           "R": "После рождения Ноя Ламех прожил ещё 595 лет. У него были и другие сыновья и дочери."
+        },
+        "uk": {
+          "L": "І жив Ламех після того, як породив Ноя, 595 років, і породив синів і дочок.",
+          "B": "Після народження Ноя Ламех прожив 595 років і мав інших синів і дочок.",
+          "R": "Після того як народився Ной, Ламех прожив ще 595 років. У нього були й інші сини та дочки."
+        },
+        "ja": {
+          "L": "そしてレメクはノアをもうけた後、五百九十五年生きて、息子たちと娘たちをもうけた。",
+          "B": "ノアが生まれた後、レメクは五百九十五年生き、ほかにも息子や娘をもうけた。",
+          "R": "ノアが生まれた後、レメクはさらに五百九十五年生きました。ほかにも息子や娘が生まれました。"
+        },
+        "id": {
+          "L": "Dan Lamekh hidup setelah memperanakkan Nuh 595 tahun, dan ia memperanakkan anak-anak laki-laki dan perempuan.",
+          "B": "Setelah Nuh lahir, Lamekh hidup 595 tahun lagi dan mendapat anak-anak laki-laki dan perempuan.",
+          "R": "Setelah Nuh lahir, Lamekh masih hidup 595 tahun lagi. Dia juga mendapat anak-anak laki-laki dan perempuan yang lain."
+        },
+        "zh": {
+          "L": "拉麦生了挪亚以后，又活了五百九十五年，也生了儿子和女儿。",
+          "B": "挪亚出生以后，拉麦又活了五百九十五年，还生了其他的儿女。",
+          "R": "挪亚出生以后，拉麦又活了五百九十五年。他还有其他的儿子和女儿。"
+        },
+        "tl": {
+          "L": "At nabuhay si Lamec pagkatapos maging anak niya si Noe nang 595 taon, at nagkaroon siya ng mga anak na lalaki at mga anak na babae.",
+          "B": "Pagkasilang ni Noe, nabuhay pa si Lamec nang 595 taon at nagkaroon ng iba pang mga anak na lalaki at babae.",
+          "R": "Pagkasilang ni Noe, nabuhay pa si Lamec nang 595 taon. Nagkaroon pa siya ng ibang mga anak na lalaki at babae."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010050300031"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "After"
+        },
+        {
+          "tokens": [
+            "o010050300041",
+            "o010050300042",
+            "o010050300061"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Noah was born"
+        },
+        {
+          "tokens": [
+            "o010050300021"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Lamech"
+        },
+        {
+          "tokens": [
+            "o010050300012"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "lived"
+        },
+        {
+          "tokens": [
+            "o010050300071",
+            "o010050300081",
+            "o010050300082",
+            "o010050300091",
+            "o010050300101",
+            "o010050300102",
+            "o010050300111",
+            "o010050300121"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "595 years"
+        },
+        {
+          "tokens": [
+            "o010050300131"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010050300132",
+            "o010050300141"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "had other sons"
+        },
+        {
+          "tokens": [
+            "o010050300151"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010050300152"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "daughters"
+        }
+      ],
       "decisions": [],
       "status": "ai_draft"
     },
@@ -4249,8 +7871,84 @@
           "L": "И всех дней Ламеха было 777 лет, и он умер.",
           "B": "Всего Ламех прожил 777 лет, а потом умер.",
           "R": "Ламех умер, когда ему было 777 лет."
+        },
+        "uk": {
+          "L": "І було всіх днів Ламеха 777 років, і він помер.",
+          "B": "Усього Ламех прожив 777 років, а потім помер.",
+          "R": "Ламех дожив до 777 років, а потім помер."
+        },
+        "ja": {
+          "L": "そしてレメクのすべての日は七百七十七年であった。そして彼は死んだ。",
+          "B": "レメクの生涯は合わせて七百七十七年であった。そして彼は死んだ。",
+          "R": "レメクは七百七十七歳まで生きて、死にました。"
+        },
+        "id": {
+          "L": "Dan seluruh umur Lamekh ialah 777 tahun, lalu ia mati.",
+          "B": "Jadi Lamekh hidup seluruhnya 777 tahun, lalu ia mati.",
+          "R": "Lamekh hidup sampai berumur 777 tahun, lalu dia meninggal."
+        },
+        "zh": {
+          "L": "拉麦所有的日子是七百七十七年，他就死了。",
+          "B": "拉麦的一生总共有七百七十七年，然后他死了。",
+          "R": "拉麦活到七百七十七岁，然后就死了。"
+        },
+        "tl": {
+          "L": "At ang lahat ng araw ni Lamec ay 777 taon, at namatay siya.",
+          "B": "Sa kabuuan, nabuhay si Lamec nang 777 taon, at pagkatapos ay namatay siya.",
+          "R": "Nabuhay si Lamec hanggang 777 taong gulang, at pagkatapos ay namatay siya."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010050310021",
+            "o010050310031"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Altogether"
+        },
+        {
+          "tokens": [
+            "o010050310041"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Lamech"
+        },
+        {
+          "tokens": [
+            "o010050310012"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "lived"
+        },
+        {
+          "tokens": [
+            "o010050310051",
+            "o010050310061",
+            "o010050310062",
+            "o010050310071",
+            "o010050310081",
+            "o010050310082",
+            "o010050310091",
+            "o010050310101"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "777 years"
+        },
+        {
+          "tokens": [
+            "o010050310111",
+            "o010050310112"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and then he died"
+        }
+      ],
       "decisions": [],
       "status": "ai_draft"
     },
@@ -4334,8 +8032,96 @@
           "L": "И Ною было 500 лет, и Ной родил Сима, Хама и Иафета.",
           "B": "Когда Ною исполнилось 500 лет, он стал отцом Сима, Хама и Иафета.",
           "R": "Когда Ною было 500 лет, у него было три сына: Сим, Хам и Иафет."
+        },
+        "uk": {
+          "L": "І був Ной сином пʼятисот років, і породив Ной Сима, Хама і Яфета.",
+          "B": "Коли Ною було 500 років, він став батьком Сима, Хама і Яфета.",
+          "R": "Коли Ною було 500 років, у нього було троє синів: Сим, Хам і Яфет."
+        },
+        "ja": {
+          "L": "そしてノアは五百歳であった。そしてノアはセム、ハム、ヤフェトをもうけた。",
+          "B": "ノアは五百歳になった後、セム、ハム、ヤフェトの父となった。",
+          "R": "ノアが五百歳のとき、セム、ハム、ヤフェトという三人の息子が生まれました。"
+        },
+        "id": {
+          "L": "Dan Nuh berumur lima ratus tahun, dan Nuh memperanakkan Sem, Ham, dan Yafet.",
+          "B": "Setelah Nuh berumur lima ratus tahun, ia menjadi ayah Sem, Ham, dan Yafet.",
+          "R": "Ketika Nuh berumur lima ratus tahun, dia mendapat tiga anak laki-laki: Sem, Ham, dan Yafet."
+        },
+        "zh": {
+          "L": "挪亚到了五百岁，挪亚就生了闪、含和雅弗。",
+          "B": "挪亚五百岁以后，做了闪、含和雅弗的父亲。",
+          "R": "挪亚五百岁的时候，有了三个儿子：闪、含和雅弗。"
+        },
+        "tl": {
+          "L": "At si Noe ay 500 taong gulang, at naging anak ni Noe sina Sem, Cam at Jafet.",
+          "B": "Nang 500 taong gulang na si Noe, naging ama siya nina Sem, Cam at Jafet.",
+          "R": "Nang 500 taong gulang na si Noe, nagkaroon siya ng tatlong anak na lalaki: sina Sem, Cam at Jafet."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010050320012",
+            "o010050320021"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Noah was"
+        },
+        {
+          "tokens": [
+            "o010050320031",
+            "o010050320041",
+            "o010050320051",
+            "o010050320061"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "500 years old"
+        },
+        {
+          "tokens": [
+            "o010050320072",
+            "o010050320081"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "he became the father"
+        },
+        {
+          "tokens": [
+            "o010050320101"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "of Shem"
+        },
+        {
+          "tokens": [
+            "o010050320121"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Ham"
+        },
+        {
+          "tokens": [
+            "o010050320131"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010050320141"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Japheth"
+        }
+      ],
       "decisions": [
         {
           "id": "m1",
@@ -4367,6 +8153,70 @@
           "choice": "Shem, Ham and Japheth: the usual order, not necessarily the order of birth",
           "alternatives": [],
           "reason": "The three sons are always listed in this order (6:10; 10:1), but 9:24 calls Ham the youngest, and 10:21 may call Japheth the eldest. The verse does not say they were born in one year; 500 is when Noah began to have sons. The line now opens out into the peoples of chapter 10.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010050320031",
+            "o010050320041",
+            "o010050320051",
+            "o010050320061"
+          ],
+          "choice": "\"сином пʼятисот років\", keeping the Hebrew idiom for age",
+          "alternatives": [
+            "було 500 років"
+          ],
+          "reason": "Literal keeps \"a son of N years\" here and wherever the English Literal does; the number is spelt out because the idiom needs the genitive. Balanced and Readable say the age as Ukrainian does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010050320081",
+            "o010050320091",
+            "o010050320101"
+          ],
+          "choice": "\"闪、含和雅弗\"",
+          "alternatives": [],
+          "reason": "The glossary's forms, with the enumeration comma and \"和\" before the last name. The usual order is kept, not necessarily the order of birth (meaning decision m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-tl-1",
+          "layer": "rendering",
+          "language": "tl",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010050320101",
+            "o010050320121",
+            "o010050320141"
+          ],
+          "choice": "\"Sem\", \"Cam\", \"Jafet\"",
+          "alternatives": [],
+          "reason": "The glossary forms, in the Hebrew order (m2), with the plural markers \"sina\", \"nina\".",
           "uncertain": false,
           "footnote": false
         }

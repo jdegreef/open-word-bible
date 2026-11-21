@@ -95,6 +95,26 @@
           "L": "Когда выйдешь на войну против твоих врагов и увидишь коня и колесницу, народ многочисленнее тебя, не бойся их, потому что с тобой {{divine_name:ГОСПОДЬ|Яхве}}, твой Бог, который вывел тебя из земли Египта.",
           "B": "Когда ты выступишь на войну против своих врагов и увидишь перед собой коней, колесницы и войско больше твоего, не бойся их. С тобой {{divine_name:ГОСПОДЬ|Яхве}}, твой Бог, который вывел тебя из земли Египта.",
           "R": "Ты будешь выходить на войну со своими врагами и можешь увидеть, что у них есть кони и колесницы и войско больше твоего. Не бойся их. С тобой {{divine_name:ГОСПОДЬ|Яхве}}, твой Бог. Это {{deity_pronoun:он|Он}} вывел тебя из Египта."
+        },
+        "ja": {
+          "L": "あなたが敵に向かって戦いに出て行き、馬と戦車、あなたよりも多い民を見ても、彼らを恐れてはならない。あなたをエジプトの地から導き上られたあなたの神、{{divine_name:主|ヤハウェ}}が、あなたと共におられるからである。",
+          "B": "あなたが敵との戦いに出て行き、馬や戦車や、自分よりも大きな軍勢に向かうときも、彼らを恐れてはならない。あなたをエジプトの地から導き上られたあなたの神、{{divine_name:主|ヤハウェ}}が、あなたと共におられる。",
+          "R": "あなたが敵と戦いに出て行くと、敵には馬や戦車があり、あなたよりも大きな軍隊がいるかもしれない。けれども、彼らをこわがってはいけない。あなたの神、{{divine_name:主|ヤハウェ}}が、あなたと共におられる。あなたをエジプトから連れ出されたのは、この方である。"
+        },
+        "uk": {
+          "L": "Коли вийдеш на війну проти своїх ворогів і побачиш коня й колесницю, народ, численніший за тебе, не бійся їх, бо {{divine_name:ГОСПОДЬ|Ягве}}, твій Бог, з тобою, який вивів тебе з краю Єгипту.",
+          "B": "Коли вирушиш на війну проти своїх ворогів і побачиш перед собою коней, колесниці й військо, більше за твоє, не бійся їх. {{divine_name:ГОСПОДЬ|Ягве}}, твій Бог, який вивів тебе з краю Єгипту, з тобою.",
+          "R": "Ти виходитимеш воювати зі своїми ворогами й можеш побачити, що вони мають коней і колесниці та більше військо, ніж у тебе. Не бійся їх. {{divine_name:ГОСПОДЬ|Ягве}}, твій Бог, з тобою. Це {{deity_pronoun:він|Він}} вивів тебе з Єгипту."
+        },
+        "id": {
+          "L": "Apabila engkau keluar berperang melawan musuhmu dan engkau melihat kuda dan kereta perang, rakyat yang lebih banyak daripadamu, janganlah engkau takut kepada mereka, sebab {{divine_name:TUHAN|Yahweh}}, Allahmu, yang membawa engkau keluar dari tanah Mesir, menyertai engkau.",
+          "B": "Apabila engkau maju berperang melawan musuhmu dan menghadapi kuda, kereta perang, dan pasukan yang lebih besar daripada pasukanmu, jangan takut kepada mereka. {{divine_name:TUHAN|Yahweh}}, Allahmu, yang membawa engkau keluar dari tanah Mesir, menyertai engkau.",
+          "R": "Kalian akan pergi berperang melawan musuh kalian, dan mungkin kalian melihat bahwa mereka mempunyai kuda dan kereta perang dan tentara yang lebih besar daripada tentara kalian. Jangan takut kepada mereka. {{divine_name:TUHAN|Yahweh}}, Allah kalian, menyertai kalian. Dialah yang membawa kalian keluar dari Mesir."
+        },
+        "zh": {
+          "L": "你出去与你的仇敌争战，看见马匹和战车，又有比你更多的军民，你不可怕他们，因为领你从埃及地上来的{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}与你同在。",
+          "B": "你出去和仇敌作战的时候，若看见马匹、战车和比你更多的军队，不要怕他们，因为领你出埃及地的{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}与你同在。",
+          "R": "你出去和仇敌作战的时候，可能会看见他们有马匹、战车，军队也比你的多。不要怕他们。{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}与你同在。领你离开埃及的，正是{{deity_pronoun:他|祂}}。"
         }
       },
       "decisions": [
@@ -321,6 +341,73 @@
           "reason": "Devanagari has no capital letters, so the English deity_pronoun setting has nothing to change in Hindi, and the Hindi text has no deity_pronoun spans. Respect for God comes from the honorific third person at every level. The same through this chapter.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o050200010171"
+          ],
+          "choice": "神 (default), 上帝 (reader setting)",
+          "alternatives": [
+            "上帝 as the default",
+            "a fixed 神"
+          ],
+          "reason": "The word for God is the Chinese reader setting god_term: \"神\" by default, \"上帝\" for readers who choose it. The English has no such setting.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050200010131"
+          ],
+          "choice": "不可怕 (L), 不要怕 (B), 不要怕 (R)",
+          "alternatives": [
+            "不要害怕"
+          ],
+          "reason": "The style guide's \"不要怕\" for \"Fear not\" at Balanced; Literal keeps the law's \"不可\" and Readable the plain \"不要怕\" here, where the English has a command rather than the reassurance formula.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-3",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o050200010191",
+            "o050200010192",
+            "o050200010193",
+            "o050200010201",
+            "o050200010202",
+            "o050200010211"
+          ],
+          "choice": "the relative clause before \"the LORD your God\"",
+          "alternatives": [
+            "after it"
+          ],
+          "reason": "Chinese puts the relative clause \"领你从埃及地上来的\" before the name it describes.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -405,6 +492,26 @@
           "L": "И будет: когда вы приблизитесь к битве, пусть подойдёт священник и скажет народу.",
           "B": "Когда вы будете приближаться к битве, священник должен выйти вперёд и обратиться к войску.",
           "R": "Прямо перед началом битвы священник должен выйти вперёд и поговорить с воинами."
+        },
+        "ja": {
+          "L": "そして、あなたがたが戦いに近づくとき、祭司は進み出て民に語らなければならない。",
+          "B": "あなたがたが戦いに臨むときには、祭司が進み出て兵士たちに語らなければならない。",
+          "R": "戦いが始まる直前に、祭司は前に出て、兵士たちに話さなければならない。"
+        },
+        "uk": {
+          "L": "І буде, коли ви наблизитеся до битви, то нехай підійде священник і говорить до народу.",
+          "B": "Коли ви наближатиметеся до битви, священник має вийти вперед і звернутися до війська.",
+          "R": "Перед самим початком битви священник мусить вийти вперед і заговорити до воїнів."
+        },
+        "id": {
+          "L": "Dan apabila kalian mendekati pertempuran, imam harus tampil dan berbicara kepada bangsa itu.",
+          "B": "Apabila kalian sudah dekat dengan medan pertempuran, imam harus tampil dan berbicara kepada pasukan.",
+          "R": "Sesaat sebelum pertempuran dimulai, imam harus maju dan berbicara kepada para prajurit."
+        },
+        "zh": {
+          "L": "你们将要上阵的时候，祭司要上前来对百姓讲话。",
+          "B": "你们快要上阵的时候，祭司要上前对军队讲话。",
+          "R": "战斗快要开始的时候，祭司必须走上前，对士兵们讲话。"
         }
       },
       "decisions": [
@@ -454,6 +561,27 @@
           "choice": "the troops / the soldiers",
           "alternatives": [],
           "reason": "Balanced and Readable name the people by their role in this setting. Literal keeps \"people\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050200020091",
+            "o050200020092"
+          ],
+          "choice": "ha'am (the people gathered for battle) \"兵士たち\" at Balanced and Readable; \"民\" at Literal",
+          "alternatives": [
+            "\"民\" at every level"
+          ],
+          "reason": "The people here are the men gathered for battle, as the English troops / soldiers.",
           "uncertain": false,
           "footnote": false
         }
@@ -553,6 +681,26 @@
           "L": "И пусть скажет им: “Слушай, Израиль: вы приближаетесь сегодня к битве с вашими врагами. Пусть не слабеет ваше сердце, не бойтесь, и не смущайтесь, и не ужасайтесь перед ними,",
           "B": "Пусть он скажет им: “Слушай, Израиль: сегодня вы идёте в бой против своих врагов. Не падайте духом. Не бойтесь, не впадайте в смятение и не трепещите перед ними,",
           "R": "Он должен сказать им: “Слушай, Израиль! Сегодня вы идёте сражаться со своими врагами. Не теряйте мужества. Не бойтесь, не паникуйте и не приходите в ужас перед ними."
+        },
+        "ja": {
+          "L": "彼は彼らに言わなければならない。『聞きなさい、イスラエルよ。あなたがたは今日、あなたがたの敵に向かって戦いに近づいている。あなたがたの心を弱らせてはならない。恐れてはならない。慌ててはならない。彼らの前でおののいてはならない。",
+          "B": "祭司は彼らにこう言う。『イスラエルよ、聞きなさい。あなたがたは今日、敵との戦いに臨もうとしている。気落ちしてはならない。恐れてはならない。うろたえてはならない。敵の前でおじけづいてはならない。",
+          "R": "祭司は兵士たちに、こう言わなければならない。『イスラエルよ、聞きなさい。今日あなたたちは、敵と戦いに行く。勇気をなくしてはいけない。こわがってはいけない。あわててはいけない。敵の前でおびえてはいけない。"
+        },
+        "uk": {
+          "L": "І нехай скаже їм: “Слухай, Ізраїлю: ви наближаєтеся сьогодні до битви з вашими ворогами. Нехай не слабне ваше серце; не бійтеся, і не метушіться, і не тремтіть перед ними,",
+          "B": "Він має сказати їм: “Слухай, Ізраїлю: сьогодні ви йдете в бій проти своїх ворогів. Не занепадайте духом. Не бійтеся, не панікуйте й не тремтіть від жаху перед ними,",
+          "R": "Він мусить сказати їм: “Слухай, Ізраїлю! Сьогодні ви йдете воювати зі своїми ворогами. Не втрачайте відваги. Не бійтеся, не панікуйте й не жахайтеся їх."
+        },
+        "id": {
+          "L": "Dan ia harus berkata kepada mereka, 'Dengarlah, hai Israel, kalian pada hari ini akan maju berperang melawan musuh kalian; janganlah lemah hati kalian, janganlah takut dan janganlah gugup dan janganlah gemetar terhadap mereka,",
+          "B": "Ia harus berkata kepada mereka, 'Dengarlah, hai Israel: hari ini kalian akan maju berperang melawan musuh kalian. Jangan tawar hati. Jangan takut, jangan panik, dan jangan gemetar ketakutan terhadap mereka,",
+          "R": "Ia harus berkata kepada mereka, 'Dengarlah, hai Israel! Hari ini kalian akan berperang melawan musuh kalian. Jangan kehilangan semangat. Jangan takut, jangan panik, dan jangan ketakutan terhadap mereka."
+        },
+        "zh": {
+          "L": "他要对他们说：‘听啊，以色列：你们今天将要上阵与你们的仇敌争战。不要胆怯，不要惧怕，不要惊慌，也不要因他们而战兢，",
+          "B": "他要对他们说：‘听啊，以色列：今天你们要上阵攻打仇敌了。不要灰心，不要惧怕，不要惊慌，也不要在他们面前吓得退缩，",
+          "R": "他必须对他们说：‘听啊，以色列！今天你们要去和仇敌打仗了。不要失去勇气。不要害怕，不要惊慌，也不要被他们吓倒。"
         }
       },
       "decisions": [
@@ -799,6 +947,72 @@
           "reason": "The call that opens Moses' own teaching in 6:4 (m1); the singular \"Слушай\" is kept at every level, as the Hebrew has it, before the plural \"вы\" that follows.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050200030031"
+          ],
+          "choice": "\"Слухай, Ізраїлю\" with the rest in \"ви\"",
+          "alternatives": [
+            "all plural"
+          ],
+          "reason": "The call is to Israel as one, as in 6:4; the words that follow address the soldiers in the plural, as the Hebrew does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050200030031",
+            "o050200030041"
+          ],
+          "choice": "听啊，以色列",
+          "alternatives": [
+            "以色列啊，你要听"
+          ],
+          "reason": "The call \"Hear, Israel\" (m1) that opens Moses' teaching; the priest takes it up in the words of 6:4 in Chinese.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050200030151",
+            "o050200030171",
+            "o050200030191"
+          ],
+          "choice": "惧怕, 惊慌, 战兢 (L)",
+          "alternatives": [
+            "害怕"
+          ],
+          "reason": "The three words for losing nerve (m3), from milder to stronger; Balanced ends with \"吓得退缩\" and Readable with \"吓倒\", as the English Balanced brings out the strongest.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -885,6 +1099,26 @@
           "L": "потому что {{divine_name:ГОСПОДЬ|Яхве}}, ваш Бог, — тот, кто идёт с вами, чтобы сражаться за вас с вашими врагами, чтобы спасти вас.”",
           "B": "потому что {{divine_name:ГОСПОДЬ|Яхве}}, ваш Бог, идёт с вами. Он будет сражаться за вас с вашими врагами и даст вам победу.”",
           "R": "{{divine_name:ГОСПОДЬ|Яхве}}, ваш Бог, идёт с вами. Он будет сражаться за вас с вашими врагами, и {{deity_pronoun:он|Он}} спасёт вас.”"
+        },
+        "ja": {
+          "L": "あなたがたの神、{{divine_name:主|ヤハウェ}}は、あなたがたと共に行き、あなたがたのために敵と戦い、あなたがたを救ってくださる方だからである。』",
+          "B": "あなたがたの神、{{divine_name:主|ヤハウェ}}が、あなたがたと共に行かれる。あなたがたのために敵と戦い、勝利を与えてくださるのである。』",
+          "R": "あなたたちの神、{{divine_name:主|ヤハウェ}}が、あなたたちと一緒に行かれる。あなたたちのために敵と戦い、あなたたちを救ってくださる。』"
+        },
+        "uk": {
+          "L": "бо {{divine_name:ГОСПОДЬ|Ягве}}, ваш Бог, — той, хто йде з вами, щоб воювати за вас із вашими ворогами, щоб спасти вас.”",
+          "B": "бо {{divine_name:ГОСПОДЬ|Ягве}}, ваш Бог, — той, хто йде з вами. Він воюватиме за вас проти ваших ворогів і дасть вам перемогу.”",
+          "R": "{{divine_name:ГОСПОДЬ|Ягве}}, ваш Бог, іде з вами. Він воюватиме з вашими ворогами за вас і спасе вас.”"
+        },
+        "id": {
+          "L": "sebab {{divine_name:TUHAN|Yahweh}}, Allah kalian, {{deity_pronoun:dia|Dia}}lah yang berjalan menyertai kalian untuk berperang bagi kalian melawan musuh kalian, untuk menyelamatkan kalian.'",
+          "B": "sebab {{divine_name:TUHAN|Yahweh}}, Allah kalian, {{deity_pronoun:dia|Dia}}lah yang berjalan menyertai kalian. Dia akan berperang bagi kalian melawan musuh kalian dan memberikan kemenangan kepada kalian.'",
+          "R": "{{divine_name:TUHAN|Yahweh}}, Allah kalian, berjalan menyertai kalian. Dia akan memerangi musuh kalian bagi kalian, dan {{deity_pronoun:dia|Dia}} akan menyelamatkan kalian.'"
+        },
+        "zh": {
+          "L": "因为{{divine_name:上主|雅威}}你们的{{god_term:神|上帝}}就是与你们同去的那一位，要为你们攻击你们的仇敌，拯救你们。’",
+          "B": "因为{{divine_name:上主|雅威}}你们的{{god_term:神|上帝}}与你们同去，要为你们和仇敌争战，使你们得胜。’",
+          "R": "{{divine_name:上主|雅威}}你们的{{god_term:神|上帝}}与你们同去，要为你们和仇敌作战。{{deity_pronoun:他|祂}}要拯救你们。’"
         }
       },
       "decisions": [
@@ -956,6 +1190,27 @@
             "\"Đức Chúa Trời của các ngươi\""
           ],
           "reason": "The Hebrew keeps the singular \"your God\", the formula of the whole book, while the verbs around it are plural; Literal follows it.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050200040032"
+          ],
+          "choice": "你们的 (plural)",
+          "alternatives": [
+            "你的"
+          ],
+          "reason": "The priest speaks to the army in the plural (verses 3-4), so \"the LORD your God\" is \"上主你们的神\" here, as again in verse 18.",
           "uncertain": false,
           "footnote": false
         }
@@ -1060,6 +1315,26 @@
           "L": "И пусть надзиратели говорят народу, говоря: “Кто тот человек, который построил новый дом и не освятил его? Пусть идёт и возвратится в свой дом, чтобы не умер он в битве и другой человек не освятил его.",
           "B": "Потом надзиратели должны сказать войску: “Есть ли кто-нибудь, кто построил новый дом и ещё не освятил его? Пусть идёт домой, иначе он может погибнуть в бою и дом освятит кто-то другой.",
           "R": "Потом помощники должны сказать воинам: “Есть ли здесь кто-нибудь, кто построил новый дом, но ещё не освятил его? Пусть идёт домой. Иначе он может погибнуть в битве, и в его дом войдёт другой человек."
+        },
+        "ja": {
+          "L": "そして下役たちは民に語って言わなければならない。『新しい家を建てて、まだそれを奉献していない者はだれか？その者は行って、自分の家に帰るがよい。彼が戦いで死に、ほかの者がそれを奉献することのないためである。",
+          "B": "それから役人たちは兵士たちに言いなさい。『新しい家を建てたのに、まだ奉献していない者はいるか？その者は家に帰りなさい。戦いで死んで、ほかの者がその家を奉献することにならないためである。",
+          "R": "それから役人たちは、兵士たちに言わなければならない。『新しい家を建てたのに、まだ使い始めていない人はいるか？その人は家に帰りなさい。そうしないと、戦いで死んでしまい、ほかの人がその家を使い始めることになる。"
+        },
+        "uk": {
+          "L": "І нехай урядники говорять до народу, кажучи: “Хто той чоловік, що збудував новий дім і не освятив його? Нехай іде й повернеться до свого дому, щоб не загинув у битві і не освятив його інший чоловік.",
+          "B": "Тоді урядники мають сказати війську: “Чи хтось збудував новий дім і ще не освятив його? Нехай повертається додому, бо може загинути в бою, і хтось інший освятить його.",
+          "R": "Тоді урядники мусять сказати воїнам: “Чи є тут чоловік, що збудував новий дім, але ще не освятив його? Нехай іде додому. Інакше він може загинути в битві, а інший чоловік освятить його дім."
+        },
+        "id": {
+          "L": "Dan para petugas harus berbicara kepada bangsa itu, demikian, 'Siapakah orang yang telah mendirikan rumah baru, tetapi belum menahbiskannya? Ia boleh pergi dan pulang ke rumahnya, supaya jangan ia mati dalam pertempuran dan orang lain menahbiskannya.",
+          "B": "Lalu para petugas harus berkata kepada pasukan, 'Adakah orang yang telah membangun rumah baru, tetapi belum menahbiskannya? Ia boleh pulang ke rumahnya, supaya jangan ia mati dalam pertempuran dan orang lain yang menahbiskannya.",
+          "R": "Lalu para petugas harus berkata kepada para prajurit, 'Adakah di antara kalian yang sudah membangun rumah baru, tetapi belum menahbiskannya? Ia harus pulang. Kalau tidak, mungkin ia mati dalam pertempuran, dan orang lain yang akan menahbiskan rumahnya."
+        },
+        "zh": {
+          "L": "官长要对百姓说：‘谁建造了新房子，还没有献房呢？他可以回家去，免得他死在战场上，别人去献那房子。",
+          "B": "然后官长要对军队说：‘有谁建了新房子，还没有献房呢？他应该回家去，免得他死在战场上，由别人来献那房子。",
+          "R": "然后官员必须对士兵们说：‘这里有谁建了新房子，还没有献房入住呢？他应该回家去。不然他可能死在战场上，他的房子就由别人去献了。"
         }
       },
       "decisions": [
@@ -1300,6 +1575,116 @@
           "reason": "Hanak, to dedicate a house, means to begin living in it (m2). Literal and Balanced keep the act; Readable says what it amounts to. The Synodal \"обновить\" no longer reads this way.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050200050022"
+          ],
+          "choice": "shoterim \"下役たち\" (Literal), \"役人たち\" (Balanced, Readable)",
+          "alternatives": [
+            "\"下役\""
+          ],
+          "reason": "The officers who keep the rolls and pass on orders; the same pair as 1:15 and 16:18 through the chapter.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050200050131"
+          ],
+          "choice": "chanakh \"奉献する\" (L, B), \"使い始める\" (R)",
+          "alternatives": [
+            "\"献げる\""
+          ],
+          "reason": "To dedicate a new house was to begin living in it; Readable says that.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050200050131"
+          ],
+          "choice": "\"освятити дім\"",
+          "alternatives": [
+            "\"посвятити дім\"",
+            "\"почати жити в домі\""
+          ],
+          "reason": "The Hebrew verb means to dedicate, that is, to begin using the house; \"освятити\" keeps the solemn sense and is the usual Ukrainian word for dedicating a house.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050200050021",
+            "o050200050022"
+          ],
+          "choice": "官长 (L, B), 官员 (R)",
+          "alternatives": [
+            "长官"
+          ],
+          "reason": "The shoterim (m1), as at 16:18.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050200050131",
+            "o050200050132",
+            "o050200050221",
+            "o050200050222"
+          ],
+          "choice": "献房 (L, B), 献房入住 (R)",
+          "alternatives": [
+            "奉献"
+          ],
+          "reason": "\"Dedicate a house\" (m2) is to begin living in it with a rite; \"献房\" keeps the word, and Readable adds \"入住\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1393,6 +1778,26 @@
           "L": "И кто тот человек, который насадил виноградник и не начал пользоваться им? Пусть идёт и возвратится в свой дом, чтобы не умер он в битве и другой человек не начал пользоваться им.",
           "B": "Есть ли кто-нибудь, кто посадил виноградник и ещё не вкусил его плодов? Пусть идёт домой, иначе он может погибнуть в бою и плоды достанутся кому-то другому.",
           "R": "Есть ли здесь кто-нибудь, кто посадил виноградник, но ещё не ел с него винограда? Пусть идёт домой. Иначе он может погибнуть в битве, и виноград будет есть другой человек."
+        },
+        "ja": {
+          "L": "また、ぶどう畑を作って、まだそれを俗用にしていない者はだれか？その者は行って、自分の家に帰るがよい。彼が戦いで死に、ほかの者がそれを俗用にすることのないためである。",
+          "B": "ぶどう畑を作ったのに、まだその実を味わっていない者はいるか？その者は家に帰りなさい。戦いで死んで、ほかの者がそれを味わうことにならないためである。",
+          "R": "ぶどう畑を作ったのに、まだそのぶどうを食べていない人はいるか？その人は家に帰りなさい。そうしないと、戦いで死んでしまい、ほかの人がそれを食べることになる。"
+        },
+        "uk": {
+          "L": "І хто той чоловік, що насадив виноградник і не почав користуватися ним? Нехай іде й повернеться до свого дому, щоб не загинув у битві і не почав користуватися ним інший чоловік.",
+          "B": "Чи хтось насадив виноградник і ще не почав тішитися його плодами? Нехай повертається додому, бо може загинути в бою, і хтось інший тішитиметься ними.",
+          "R": "Чи є тут чоловік, що насадив виноградник, але ще не їв його винограду? Нехай іде додому. Інакше він може загинути в битві, а інший чоловік їстиме той виноград."
+        },
+        "id": {
+          "L": "Dan siapakah orang yang telah membuat kebun anggur, tetapi belum mulai menikmati hasilnya? Ia boleh pergi dan pulang ke rumahnya, supaya jangan ia mati dalam pertempuran dan orang lain menikmati hasilnya.",
+          "B": "Adakah orang yang telah menanami kebun anggur, tetapi belum mulai menikmati buahnya? Ia boleh pulang ke rumahnya, supaya jangan ia mati dalam pertempuran dan orang lain yang menikmatinya.",
+          "R": "Adakah di antara kalian yang sudah menanami kebun anggur, tetapi belum makan buah anggurnya? Ia harus pulang. Kalau tidak, mungkin ia mati dalam pertempuran, dan orang lain yang akan memakannya."
+        },
+        "zh": {
+          "L": "谁栽了葡萄园，还没有开始享用它的果子呢？他可以回家去，免得他死在战场上，别人去享用。",
+          "B": "有谁栽了葡萄园，还没有开始享用园中的果子呢？他应该回家去，免得他死在战场上，由别人来享用。",
+          "R": "有谁栽了葡萄园，还没有吃过园里的葡萄呢？他应该回家去。不然他可能死在战场上，由别人去吃那些葡萄。"
         }
       },
       "decisions": [
@@ -1474,6 +1879,48 @@
             "\"दाख की बारी\" at every level"
           ],
           "reason": "As in Matthew, the vineyard is \"दाख की बारी\" at Literal and Balanced and the everyday \"अंगूर का बाग़\" at Readable. To put it to common use is to eat its fruit for the first time as ordinary food (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050200060071",
+            "o050200060161"
+          ],
+          "choice": "chillel \"俗用にする\" at Literal",
+          "alternatives": [
+            "\"初物を食べる\""
+          ],
+          "reason": "The vineyard's first years' fruit was set apart; to put it to common use is to eat it as ordinary food, as the meaning note says.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050200060071",
+            "o050200060072",
+            "o050200060161",
+            "o050200060162"
+          ],
+          "choice": "开始享用",
+          "alternatives": [
+            "当作平常之物使用"
+          ],
+          "reason": "\"Put to common use\" (m1) is to eat the fruit as ordinary food after the first years. Literal says \"开始享用它的果子\", since a Chinese verb for making something common would not be understood.",
           "uncertain": false,
           "footnote": false
         }
@@ -1569,6 +2016,26 @@
           "L": "И кто тот человек, который обручился с женщиной и не взял её? Пусть идёт и возвратится в свой дом, чтобы не умер он в битве и другой человек не взял её.”",
           "B": "Есть ли кто-нибудь, кто обручился с женщиной и ещё не женился на ней? Пусть идёт домой, иначе он может погибнуть в бою и на ней женится кто-то другой.”",
           "R": "Есть ли здесь кто-нибудь, кто обещал жениться на женщине, но ещё не женился? Пусть идёт домой. Иначе он может погибнуть в битве, и на ней женится другой человек.”"
+        },
+        "ja": {
+          "L": "また、女と婚約して、まだ彼女をめとっていない者はだれか？その者は行って、自分の家に帰るがよい。彼が戦いで死に、ほかの者が彼女をめとることのないためである。』",
+          "B": "女性と婚約したのに、まだ結婚していない者はいるか？その者は家に帰りなさい。戦いで死んで、ほかの者がその女性と結婚することにならないためである。』",
+          "R": "結婚の約束をしたのに、まだ結婚していない人はいるか？その人は家に帰りなさい。そうしないと、戦いで死んでしまい、ほかの人がその女の人と結婚することになる。』"
+        },
+        "uk": {
+          "L": "І хто той чоловік, що заручився з жінкою і не взяв її? Нехай іде й повернеться до свого дому, щоб не загинув у битві і не взяв її інший чоловік.”",
+          "B": "Чи хтось заручився з жінкою і ще не одружився з нею? Нехай повертається додому, бо може загинути в бою, і хтось інший одружиться з нею.”",
+          "R": "Чи є тут чоловік, що пообіцяв одружитися з жінкою, але ще не одружився з нею? Нехай іде додому. Інакше він може загинути в битві, а інший чоловік одружиться з нею.”"
+        },
+        "id": {
+          "L": "Dan siapakah orang yang telah bertunangan dengan seorang perempuan, tetapi belum mengawininya? Ia boleh pergi dan pulang ke rumahnya, supaya jangan ia mati dalam pertempuran dan orang lain mengawininya.'",
+          "B": "Adakah orang yang telah bertunangan dengan seorang perempuan, tetapi belum menikahinya? Ia boleh pulang ke rumahnya, supaya jangan ia mati dalam pertempuran dan orang lain yang menikahi perempuan itu.'",
+          "R": "Adakah di antara kalian yang sudah berjanji untuk menikahi seorang perempuan, tetapi belum menikahinya? Ia harus pulang. Kalau tidak, mungkin ia mati dalam pertempuran, dan orang lain yang akan menikahi perempuan itu.'"
+        },
+        "zh": {
+          "L": "谁聘定了妻子，还没有娶她呢？他可以回家去，免得他死在战场上，别人去娶她。’",
+          "B": "有谁和女子订了婚，还没有娶她呢？他应该回家去，免得他死在战场上，由别人娶了她。’",
+          "R": "有谁答应要娶一个女子，还没有和她结婚呢？他应该回家去。不然他可能死在战场上，由别人娶了她。’"
         }
       },
       "decisions": [
@@ -1747,6 +2214,26 @@
           "L": "И пусть ещё скажут надзиратели народу и скажут: “Кто тот человек, боящийся и робкий сердцем? Пусть идёт и возвратится в свой дом, чтобы не растаяло сердце его братьев, как его сердце.”",
           "B": "И пусть надзиратели скажут войску ещё: “Есть ли кто-нибудь, кто боится и пал духом? Пусть идёт домой, чтобы не лишить мужества своих товарищей, как он сам его лишился.”",
           "R": "Потом помощники должны ещё сказать: “Есть ли здесь кто-нибудь, кто боится? Может, кто-то потерял мужество? Пусть идёт домой. Иначе и другие воины потеряют мужество, как и он.”"
+        },
+        "ja": {
+          "L": "下役たちはさらに民に語って言わなければならない。『恐れて心の弱っている者はだれか？その者は行って、自分の家に帰るがよい。彼の兄弟たちの心が、彼の心のように溶けることのないためである。』",
+          "B": "役人たちはさらに兵士たちに言いなさい。『恐れている者、気の弱い者はいるか？その者は家に帰りなさい。仲間の兵士たちまで、彼のように気落ちさせないためである。』",
+          "R": "それから役人たちは、さらにこう言わなければならない。『こわがっている人はいるか？勇気をなくしてしまった人はいるか？その人は家に帰りなさい。そうしないと、ほかの兵士たちも、その人と同じように勇気をなくしてしまう。』"
+        },
+        "uk": {
+          "L": "І нехай урядники ще говорять до народу і скажуть: “Хто той чоловік, що боязкий і слабкий серцем? Нехай іде й повернеться до свого дому, щоб не розтануло серце його братів, як його серце.”",
+          "B": "Урядники мають також сказати війську: “Чи хтось боїться або занепав духом? Нехай повертається додому, щоб не позбавити відваги своїх товаришів, як позбувся її сам.”",
+          "R": "Тоді урядники мусять також сказати: “Чи є тут чоловік, який боїться? Чи він утратив відвагу? Нехай іде додому. Інакше інші воїни теж утратять відвагу, як і він.”"
+        },
+        "id": {
+          "L": "Dan para petugas harus berbicara lagi kepada bangsa itu dan berkata, 'Siapakah orang yang takut dan lemah hati? Ia boleh pergi dan pulang ke rumahnya, supaya hati saudara-saudaranya jangan menjadi tawar seperti hatinya.'",
+          "B": "Para petugas harus berkata lagi kepada pasukan, 'Adakah orang yang takut atau tawar hati? Ia boleh pulang ke rumahnya, supaya ia tidak membuat hati rekan-rekannya tawar seperti hatinya.'",
+          "R": "Kemudian para petugas juga harus berkata, 'Adakah di antara kalian yang takut? Adakah yang kehilangan semangat? Ia harus pulang. Kalau tidak, prajurit-prajurit yang lain akan kehilangan semangat juga, sama seperti dia.'"
+        },
+        "zh": {
+          "L": "官长还要对百姓说：‘谁害怕胆怯呢？他可以回家去，免得他弟兄的心像他的心一样融化。’",
+          "B": "官长还要对军队说：‘有谁害怕或胆怯吗？他应该回家去，免得他使同伴像他一样灰心。’",
+          "R": "然后官员还必须说：‘这里有谁害怕吗？有谁失去了勇气吗？他应该回家去。不然其他士兵也会像他一样失去勇气。’"
         }
       },
       "decisions": [
@@ -1840,6 +2327,31 @@
           "reason": "Literal keeps the Hebrew picture of the heart melting; it means losing courage (meaning decision), as Balanced and Readable say.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050200080161",
+            "o050200080181",
+            "o050200080191",
+            "o050200080192",
+            "o050200080201",
+            "o050200080202",
+            "o050200080203"
+          ],
+          "choice": "心……融化",
+          "alternatives": [
+            "丧胆"
+          ],
+          "reason": "\"The heart melt\" (m1) keeps its picture at Literal; Balanced and Readable give the sense.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1926,6 +2438,26 @@
           "L": "И будет: когда надзиратели окончат говорить народу, пусть поставят начальников войск во главе народа.",
           "B": "Когда надзиратели закончат говорить с войском, пусть поставят над ним командиров отрядов.",
           "R": "Когда помощники закончат говорить с воинами, они должны выбрать командиров, которые поведут войско."
+        },
+        "ja": {
+          "L": "そして、下役たちが民に語り終えたとき、彼らは民の先頭に軍の長たちを任命しなければならない。",
+          "B": "役人たちは兵士たちに語り終えたら、彼らを率いる部隊の長たちを任命しなければならない。",
+          "R": "役人たちは兵士たちに話し終えたら、軍隊を率いる隊長たちを選ばなければならない。"
+        },
+        "uk": {
+          "L": "І буде, коли урядники закінчать говорити до народу, то нехай поставлять воєначальників на чолі народу.",
+          "B": "Коли урядники закінчать говорити до війська, вони мають призначити командирів загонів, щоб вели їх.",
+          "R": "Коли урядники закінчать говорити до воїнів, вони мусять вибрати командирів, щоб вели військо."
+        },
+        "id": {
+          "L": "Dan apabila para petugas selesai berbicara kepada bangsa itu, mereka harus mengangkat panglima-panglima pasukan untuk memimpin bangsa itu.",
+          "B": "Apabila para petugas sudah selesai berbicara kepada pasukan, mereka harus mengangkat panglima-panglima pasukan untuk memimpin mereka.",
+          "R": "Apabila para petugas sudah selesai berbicara kepada para prajurit, mereka harus memilih panglima-panglima untuk memimpin tentara."
+        },
+        "zh": {
+          "L": "官长对百姓讲完了话，就要在百姓前头派立众军的长官。",
+          "B": "官长对军队讲完话以后，就要派立各队的将领来率领他们。",
+          "R": "官员对士兵们讲完话以后，必须选出将领来带领军队。"
         }
       },
       "decisions": [
@@ -2059,6 +2591,26 @@
           "L": "Когда подойдёшь к городу, чтобы воевать против него, предложи ему мир.",
           "B": "Когда ты подойдёшь к городу, чтобы напасть на него, сначала предложи ему условия мира.",
           "R": "Когда ты идёшь нападать на город, сначала предложи его жителям заключить мир."
+        },
+        "ja": {
+          "L": "あなたがある町に近づいてそれと戦おうとするときは、それに平和を呼びかけなければならない。",
+          "B": "ある町を攻めようとして近づいたときは、まず和平の条件を申し出なさい。",
+          "R": "ある町を攻めに行くときは、まず、そこの人々に平和を結ぼうと申し出なさい。"
+        },
+        "uk": {
+          "L": "Коли наблизишся до міста, щоб воювати проти нього, то запропонуй йому мир.",
+          "B": "Коли підійдеш до міста, щоб напасти на нього, спершу запропонуй йому умови миру.",
+          "R": "Коли підеш нападати на місто, спершу запропонуй його людям укласти мир."
+        },
+        "id": {
+          "L": "Apabila engkau mendekati sebuah kota untuk berperang melawannya, engkau harus menawarkan perdamaian kepadanya.",
+          "B": "Apabila engkau mendekati sebuah kota untuk menyerangnya, tawarkanlah lebih dahulu syarat-syarat perdamaian kepadanya.",
+          "R": "Apabila kalian pergi untuk menyerang sebuah kota, tawarkanlah lebih dahulu perdamaian kepada penduduknya."
+        },
+        "zh": {
+          "L": "你临近一座城要攻打它的时候，要先向它宣告和平。",
+          "B": "你进到一座城附近要攻打它的时候，先要向城里的人提出和平的条件。",
+          "R": "你要去攻打一座城的时候，先要提出和城里的人讲和。"
         }
       },
       "decisions": [
@@ -2206,6 +2758,26 @@
           "L": "И будет: если он ответит тебе миром и откроет тебе, то весь народ, который найдётся в нём, будет у тебя на подневольных работах и будет служить тебе.",
           "B": "Если он примет твоё предложение мира и откроет тебе ворота, то все его жители должны стать твоими подневольными работниками и служить тебе.",
           "R": "Если его жители согласятся заключить мир и откроют тебе ворота, все они должны выполнять для тебя подневольную работу и служить тебе."
+        },
+        "ja": {
+          "L": "そして、もしその町が平和をもってあなたに答え、あなたに[門を]開くなら、その中にいる民はみな、あなたのために強制労働に服し、あなたに仕えなければならない。",
+          "B": "もしその町が和平に応じて門を開くなら、そこにいる民はみな、あなたのために強制労働に服し、あなたに仕えなければならない。",
+          "R": "もし町の人々が平和を結ぶことに同意し、あなたに門を開くなら、彼らはみな、あなたのために働かされ、あなたに仕えなければならない。"
+        },
+        "uk": {
+          "L": "І буде, якщо воно відповість тобі миром і відчинить тобі, то буде так: увесь народ, що знайдеться в ньому, стане тобі підневільним робітником і служитиме тобі.",
+          "B": "Якщо воно прийме твою пропозицію миру й відчинить тобі свої брами, то всі люди в ньому мають стати твоїми підневільними робітниками й служити тобі.",
+          "R": "Якщо його люди погодяться на мир і відчинять тобі свої брами, вони всі мусять виконувати для тебе примусову працю й служити тобі."
+        },
+        "id": {
+          "L": "Dan apabila ia menjawab dengan damai kepadamu dan membuka [pintu gerbangnya] bagimu, seluruh rakyat yang didapati di dalamnya harus menjadi pekerja rodi bagimu dan melayani engkau.",
+          "B": "Jika kota itu menerima tawaran perdamaianmu dan membuka pintu gerbangnya bagimu, seluruh penduduknya harus menjadi pekerja paksa bagimu dan melayani engkau.",
+          "R": "Jika penduduknya setuju untuk berdamai dan membuka pintu gerbang mereka bagi kalian, mereka semua harus melakukan kerja paksa bagi kalian dan melayani kalian."
+        },
+        "zh": {
+          "L": "它若以和平回答你，给你开城，城里所有的人都要给你服劳役，服事你。",
+          "B": "那城若接受你的和平条件，向你打开城门，城里所有的人都要为你服劳役，服事你。",
+          "R": "如果城里的人同意讲和，为你打开城门，他们就都必须为你做苦工，服事你。"
         }
       },
       "decisions": [
@@ -2360,6 +2932,50 @@
           "reason": "The word names a work levy owed to the stronger power, not slavery; \"ባሪያ\" is avoided.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050200110141"
+          ],
+          "choice": "\"підневільні робітники\" (L, B), \"примусова праця\" (R)",
+          "alternatives": [
+            "\"данина\"",
+            "\"кріпаки\""
+          ],
+          "reason": "The Hebrew word names a work levy owed to a stronger power; the Ukrainian avoids words tied to Ukrainian history such as \"кріпаки\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050200110141",
+            "o050200110142"
+          ],
+          "choice": "服劳役 (L, B), 做苦工 (R)",
+          "alternatives": [
+            "作奴隶"
+          ],
+          "reason": "The mas (m2) is a work levy owed to the stronger power, \"劳役\"; Readable says \"做苦工\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2442,6 +3058,26 @@
           "L": "А если не заключит он мира с тобой и будет воевать с тобой, то осади его.",
           "B": "Но если он откажется заключить с тобой мир и вступит с тобой в бой, осади его.",
           "R": "Но город может отказаться заключить с тобой мир и решить сражаться с тобой. Тогда окружи его и отрежь от всего."
+        },
+        "ja": {
+          "L": "しかし、もしそれがあなたと和を結ばず、あなたと戦いを交えるなら、あなたはそれを包囲しなければならない。",
+          "B": "しかし、もしその町が和平を拒んで、あなたと戦おうとするなら、その町を包囲しなさい。",
+          "R": "けれども、その町が平和を結ぶことを断って、あなたと戦おうとするかもしれない。そのときは、町を取り囲んで、外から何も入らないようにしなさい。"
+        },
+        "uk": {
+          "L": "А якщо воно не укладе миру з тобою і поведе з тобою війну, то обложи його.",
+          "B": "Але якщо воно відмовиться укласти з тобою мир і воюватиме проти тебе, обложи його.",
+          "R": "Але місто може відмовитися укласти з тобою мир і вирішити воювати з тобою. Тоді оточи його й відріж від усього."
+        },
+        "id": {
+          "L": "Tetapi apabila ia tidak mau berdamai dengan engkau dan melakukan perang melawan engkau, engkau harus mengepungnya.",
+          "B": "Tetapi jika kota itu menolak berdamai dengan engkau dan memerangi engkau, kepunglah kota itu.",
+          "R": "Tetapi mungkin penduduk kota itu menolak berdamai dan memutuskan untuk memerangi kalian. Kalau begitu, kepunglah kota itu."
+        },
+        "zh": {
+          "L": "它若不与你和好，反而与你争战，你就要围困它。",
+          "B": "那城若拒绝与你讲和，反而与你交战，你就要围困它。",
+          "R": "但是城里的人也许不肯讲和，反而决定和你打仗。那么你就要包围那城，断绝它的一切来往。"
         }
       },
       "decisions": [
@@ -2576,6 +3212,26 @@
           "L": "И {{divine_name:ГОСПОДЬ|Яхве}}, твой Бог, предаст его в твою руку, и порази всех его мужчин острием меча.",
           "B": "Когда {{divine_name:ГОСПОДЬ|Яхве}}, твой Бог, отдаст его тебе в руки, предай мечу всех его мужчин.",
           "R": "{{divine_name:ГОСПОДЬ|Яхве}}, твой Бог, даст тебе захватить его. Тогда убей всех мужчин в этом городе."
+        },
+        "ja": {
+          "L": "そしてあなたの神、{{divine_name:主|ヤハウェ}}はそれをあなたの手に渡される。あなたはその中のすべての男子を剣の刃で打たなければならない。",
+          "B": "あなたの神、{{divine_name:主|ヤハウェ}}がその町をあなたの手に渡されたら、その中の男子をみな剣にかけなさい。",
+          "R": "あなたの神、{{divine_name:主|ヤハウェ}}は、あなたにその町を取らせてくださる。そうしたら、町の男たちをみな殺しなさい。"
+        },
+        "uk": {
+          "L": "І {{divine_name:ГОСПОДЬ|Ягве}}, твій Бог, дасть його в твою руку, і вразиш кожного чоловіка в ньому вістрям меча.",
+          "B": "Коли {{divine_name:ГОСПОДЬ|Ягве}}, твій Бог, віддасть його тобі, вразь мечем усіх його чоловіків.",
+          "R": "{{divine_name:ГОСПОДЬ|Ягве}}, твій Бог, дасть тобі здобути його. Тоді вбий усіх чоловіків у місті."
+        },
+        "id": {
+          "L": "Dan {{divine_name:TUHAN|Yahweh}}, Allahmu, akan menyerahkannya ke dalam tanganmu, dan engkau harus membunuh setiap laki-laki di dalamnya dengan mata pedang.",
+          "B": "Apabila {{divine_name:TUHAN|Yahweh}}, Allahmu, menyerahkannya kepadamu, bunuhlah semua laki-laki di dalamnya dengan pedang.",
+          "R": "{{divine_name:TUHAN|Yahweh}}, Allah kalian, akan membuat kalian dapat merebutnya. Lalu bunuhlah semua laki-laki di kota itu."
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}要把它交在你手中，你就要用刀击杀城中所有的男丁。",
+          "B": "{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}把那城交在你手中的时候，你要用刀杀死城里所有的男人。",
+          "R": "{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}会让你攻下那城。那时你要杀掉城里所有的男人。"
         }
       },
       "decisions": [
@@ -2647,6 +3303,27 @@
           "choice": "put to the sword / kill",
           "alternatives": [],
           "reason": "Balanced uses a common English phrase for killing with the sword; Readable says it plainly. Both say \"men\" for \"males\" (m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050200130091",
+            "o050200130092",
+            "o050200130101"
+          ],
+          "choice": "用刀",
+          "alternatives": [
+            "用刀口"
+          ],
+          "reason": "\"The mouth of the sword\" (m2) is its edge; Literal says \"用刀击杀\", which is the natural Chinese for the same.",
           "uncertain": false,
           "footnote": false
         }
@@ -2750,6 +3427,26 @@
           "L": "Только женщин, и детей, и скот, и всё, что будет в городе, всю добычу из него возьми себе, и ешь добычу твоих врагов, которую дал тебе {{divine_name:ГОСПОДЬ|Яхве}}, твой Бог.",
           "B": "Но женщин, детей, скот и всё остальное, что есть в городе, всю его добычу, вы можете взять себе. Ты можешь пользоваться добычей своих врагов, которую дал тебе {{divine_name:ГОСПОДЬ|Яхве}}, твой Бог.",
           "R": "Но женщин, детей, животных и всё остальное в городе ты можешь оставить себе. Пользуйся всем, что ты взял у своих врагов. Это дал тебе {{divine_name:ГОСПОДЬ|Яхве}}, твой Бог."
+        },
+        "ja": {
+          "L": "ただし、女たちと幼い子どもたちと家畜、また町の中にあるすべてのもの、そのすべての戦利品は、あなたは自分のために奪い取ってよい。あなたは、あなたの神、{{divine_name:主|ヤハウェ}}があなたに与えてくださったあなたの敵の戦利品を食べてよい。",
+          "B": "ただし、女たちと子どもたちと家畜、そのほか町にあるすべてのもの、そのすべての戦利品は、自分のものとして奪い取ってよい。あなたの神、{{divine_name:主|ヤハウェ}}が与えてくださった敵の戦利品を、あなたは用いてよい。",
+          "R": "けれども、女の人たちと子どもたちと家畜、そのほか町にあるすべてのものは、自分のものにしてよい。敵から取ったものは、すべて使ってよい。あなたの神、{{divine_name:主|ヤハウェ}}が、それをあなたに与えてくださったのである。"
+        },
+        "uk": {
+          "L": "Тільки жінок, і дітей, і худобу, і все, що буде в місті, всю його здобич, візьми собі як здобич, і їж здобич своїх ворогів, яку {{divine_name:ГОСПОДЬ|Ягве}}, твій Бог, дав тобі.",
+          "B": "Але жінок, дітей, худобу й усе інше в місті, всю його здобич, можеш забрати собі. Можеш користуватися здобиччю своїх ворогів, яку дав тобі {{divine_name:ГОСПОДЬ|Ягве}}, твій Бог.",
+          "R": "Але жінок, дітей, тварин і все інше в місті можеш залишити собі. Можеш користуватися всім, що візьмеш у своїх ворогів. Це дав тобі {{divine_name:ГОСПОДЬ|Ягве}}, твій Бог."
+        },
+        "id": {
+          "L": "Hanya perempuan-perempuan dan anak-anak kecil dan ternak dan segala yang ada di dalam kota itu, segala jarahannya, boleh kaujarah bagimu, dan engkau boleh makan jarahan musuhmu, yang diberikan {{divine_name:TUHAN|Yahweh}}, Allahmu, kepadamu.",
+          "B": "Tetapi perempuan, anak-anak, ternak, dan segala sesuatu yang lain di dalam kota itu, seluruh jarahannya, boleh kauambil sebagai rampasan bagimu. Engkau boleh memakai jarahan musuhmu, yang telah diberikan {{divine_name:TUHAN|Yahweh}}, Allahmu, kepadamu.",
+          "R": "Tetapi kalian boleh mengambil perempuan, anak-anak, ternak, dan semua barang lain di kota itu untuk kalian sendiri. Kalian boleh menikmati semua yang kalian ambil dari musuh kalian. {{divine_name:TUHAN|Yahweh}}, Allah kalian, sudah memberikannya kepada kalian."
+        },
+        "zh": {
+          "L": "只有妇女、孩童、牲畜和城中所有的一切，就是一切的战利品，你可以为自己掠取；你仇敌的战利品，就是{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}赐给你的，你可以吃用。",
+          "B": "但是妇女、儿童、牲畜和城里其他的一切，就是所有的战利品，你们可以掠取归自己。你们可以享用仇敌的战利品，那是{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}赐给你的。",
+          "R": "但是妇女、孩子、牲畜和城里其他的一切，你们可以留给自己。你们从仇敌那里得来的一切，都可以享用。那是{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}赐给你的。"
         }
       },
       "decisions": [
@@ -2843,6 +3540,26 @@
           "reason": "The English Balanced and Readable say \"for yourselves\", but the Hebrew is singular here, so Portuguese keeps \"tu\" (\"para ti\", \"podes\") as it does through verses 10-17.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050200140131",
+            "o050200140132"
+          ],
+          "choice": "\"食べる\" at Literal for \"eat the spoil\"",
+          "alternatives": [
+            "\"享受する\""
+          ],
+          "reason": "Literal keeps the Hebrew verb; Balanced and Readable say use, as the meaning note.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2930,6 +3647,26 @@
           "L": "Так поступай со всеми городами, далёкими от тебя очень, которые не из городов этих народов.",
           "B": "Так поступай со всеми городами, которые находятся очень далеко от тебя и не принадлежат здешним народам.",
           "R": "Так поступай со всеми городами, которые далеко от тебя. Но это не касается городов тех народов, которые живут в земле, куда ты идёшь."
+        },
+        "ja": {
+          "L": "あなたから非常に遠く離れた、これらの国々の町々ではないすべての町に対して、あなたはこのようにしなければならない。",
+          "B": "あなたから遠く離れた町々、すなわち、ここにいる国々のものでない町々には、すべてこのようにしなさい。",
+          "R": "あなたから遠く離れた町々には、すべてこのようにしなさい。けれども、これは、これからあなたが入って行く土地に住む国々の町々のためのきまりではない。"
+        },
+        "uk": {
+          "L": "Так чини всім містам, дуже далеким від тебе, які не з міст цих народів.",
+          "B": "Так ти маєш чинити з усіма містами, які дуже далеко від тебе, з тими, що не належать до тутешніх народів.",
+          "R": "Так чини з усіма містами, що далеко від тебе. Але це не стосується міст тих народів, які живуть у краю, куди ти входиш."
+        },
+        "id": {
+          "L": "Demikianlah harus kaulakukan kepada segala kota yang sangat jauh dari padamu, yang tidak termasuk kota-kota bangsa-bangsa di sini.",
+          "B": "Demikianlah harus kauperlakukan semua kota yang letaknya sangat jauh dari padamu, yang bukan kota-kota bangsa-bangsa di sini.",
+          "R": "Perlakukanlah dengan cara itu semua kota yang jauh dari kalian. Tetapi aturan ini tidak berlaku bagi kota-kota bangsa yang tinggal di negeri yang akan kalian masuki."
+        },
+        "zh": {
+          "L": "离你很远、不属于这些民族之城的所有城，你都要这样对待。",
+          "B": "离你很远、不属于这里各民族的所有城，你都要这样对待。",
+          "R": "对待所有离你很远的城，都要这样做。但是这不适用于住在你要进去的那地方的各民族的城。"
         }
       },
       "decisions": [
@@ -3075,6 +3812,26 @@
           "L": "Только в городах этих народов, которые {{divine_name:ГОСПОДЬ|Яхве}}, твой Бог, даёт тебе в надел, не оставляй в живых ни одной души.",
           "B": "Но в городах этих народов, которые {{divine_name:ГОСПОДЬ|Яхве}}, твой Бог, даёт тебе в удел, не оставляй в живых никого, кто дышит.",
           "R": "Но иначе поступай с городами в той земле, которую {{divine_name:ГОСПОДЬ|Яхве}}, твой Бог, даёт тебе в собственность. Там ты не должен оставлять в живых никого."
+        },
+        "ja": {
+          "L": "ただし、あなたの神、{{divine_name:主|ヤハウェ}}があなたに嗣業として与えてくださるこれらの民の町々では、息のあるものを一人も生かしておいてはならない。",
+          "B": "しかし、あなたの神、{{divine_name:主|ヤハウェ}}が嗣業として与えてくださるこれらの民の町々では、息のあるものを一人も生かしておいてはならない。",
+          "R": "あなたの神、{{divine_name:主|ヤハウェ}}があなたのものとして与えてくださる土地の町々では、話が違う。そこでは、だれ一人生かしておいてはいけない。"
+        },
+        "uk": {
+          "L": "Тільки в містах цих народів, які {{divine_name:ГОСПОДЬ|Ягве}}, твій Бог, дає тобі в спадщину, не залишай живою жодної душі.",
+          "B": "Але в містах цих народів, які {{divine_name:ГОСПОДЬ|Ягве}}, твій Бог, дає тобі в спадщину, не залишай живим нічого, що дихає.",
+          "R": "Але з містами в краю, який {{divine_name:ГОСПОДЬ|Ягве}}, твій Бог, дає тобі у власність, інакше. Там ти не повинен залишити живим нікого."
+        },
+        "id": {
+          "L": "Tetapi dari kota-kota bangsa-bangsa ini, yang diberikan {{divine_name:TUHAN|Yahweh}}, Allahmu, kepadamu menjadi milik pusaka, janganlah kaubiarkan hidup apa pun yang bernapas.",
+          "B": "Tetapi di kota-kota bangsa-bangsa ini, yang diberikan {{divine_name:TUHAN|Yahweh}}, Allahmu, kepadamu menjadi milik pusaka, janganlah kaubiarkan hidup apa pun yang bernapas.",
+          "R": "Tetapi lain halnya dengan kota-kota di negeri yang diberikan {{divine_name:TUHAN|Yahweh}}, Allah kalian, kepada kalian menjadi milik kalian. Di sana kalian tidak boleh membiarkan seorang pun hidup."
+        },
+        "zh": {
+          "L": "只是这些民族的城，就是{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}赐给你作产业的，凡有气息的，你一个也不可存留。",
+          "B": "但是在这些民族的城里，就是{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}赐给你作产业的地方，凡有气息的，一个也不可留下活口。",
+          "R": "但是在{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}赐给你作为自己产业的那地上，城里的情况就不同了。在那里，你一个人也不可留下。"
         }
       },
       "decisions": [
@@ -3218,6 +3975,26 @@
           "L": "Но предай, предай их заклятию: хеттов, и аморреев, хананеев, и ферезеев, евеев, и иевусеев, как повелел тебе {{divine_name:ГОСПОДЬ|Яхве}}, твой Бог,",
           "B": "Ты должен полностью предать их заклятию: хеттов, аморреев, хананеев, ферезеев, евеев и иевусеев, как повелел тебе {{divine_name:ГОСПОДЬ|Яхве}}, твой Бог,",
           "R": "Ты должен полностью уничтожить их, как народы, отданные {{divine_name:ГОСПОДУ|Яхве}}: хеттов, аморреев, хананеев, ферезеев, евеев и иевусеев. Так повелел тебе {{divine_name:ГОСПОДЬ|Яхве}}, твой Бог."
+        },
+        "ja": {
+          "L": "あなたは彼らを必ず滅ぼし尽くさなければならない。ヘト人とアモリ人、カナン人とペリジ人、ヒビ人とエブス人を、あなたの神、{{divine_name:主|ヤハウェ}}があなたに命じられたとおりに。",
+          "B": "ヘト人、アモリ人、カナン人、ペリジ人、ヒビ人、エブス人を、あなたの神、{{divine_name:主|ヤハウェ}}が命じられたとおり、ことごとく滅ぼし尽くしなさい。",
+          "R": "あなたは彼らを、{{divine_name:主|ヤハウェ}}にささげられたものとして、完全に滅ぼしなさい。ヘト人、アモリ人、カナン人、ペリジ人、ヒビ人、エブス人である。これが、あなたの神、{{divine_name:主|ヤハウェ}}が命じられたことである。"
+        },
+        "uk": {
+          "L": "А конче віддай їх на знищення: хетеїв, і амореїв, ханаанеїв, і періззеїв, хівеїв, і євусеїв, як наказав тобі {{divine_name:ГОСПОДЬ|Ягве}}, твій Бог,",
+          "B": "Ти мусиш цілковито віддати їх на знищення: хетеїв, амореїв, ханаанеїв, періззеїв, хівеїв і євусеїв, як наказав тобі {{divine_name:ГОСПОДЬ|Ягве}}, твій Бог,",
+          "R": "Ти мусиш повністю знищити їх, як віддане {{divine_name:ГОСПОДУ|Ягве}}: хетеїв, амореїв, ханаанеїв, періззеїв, хівеїв і євусеїв. Так наказав тобі {{divine_name:ГОСПОДЬ|Ягве}}, твій Бог."
+        },
+        "id": {
+          "L": "Sebab engkau harus benar-benar mengkhususkan mereka untuk dimusnahkan, orang Het dan orang Amori, orang Kanaan dan orang Feris, orang Hewi dan orang Yebus, seperti yang diperintahkan {{divine_name:TUHAN|Yahweh}}, Allahmu, kepadamu,",
+          "B": "Engkau harus mengkhususkan mereka seluruhnya untuk dimusnahkan, yaitu orang Het, orang Amori, orang Kanaan, orang Feris, orang Hewi, dan orang Yebus, seperti yang diperintahkan {{divine_name:TUHAN|Yahweh}}, Allahmu, kepadamu,",
+          "R": "Kalian harus memusnahkan mereka sama sekali sebagai milik {{divine_name:TUHAN|Yahweh}}, yaitu orang Het, orang Amori, orang Kanaan, orang Feris, orang Hewi, dan orang Yebus. Itulah yang diperintahkan {{divine_name:TUHAN|Yahweh}}, Allah kalian, kepada kalian."
+        },
+        "zh": {
+          "L": "你必须把他们彻底毁灭，就是赫人和亚摩利人、迦南人和比利洗人、希未人和耶布斯人，正如{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}所吩咐你的，",
+          "B": "你必须把他们彻底毁灭，就是赫人、亚摩利人、迦南人、比利洗人、希未人和耶布斯人，正如{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}所吩咐你的，",
+          "R": "你必须把他们完全毁灭，当作献给{{divine_name:上主|雅威}}的，就是赫人、亚摩利人、迦南人、比利洗人、希未人和耶布斯人。这是{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}吩咐你的。"
         }
       },
       "decisions": [
@@ -3437,6 +4214,85 @@
           "reason": "The Pentateuch note gives \"хетты\", \"аморреи\", \"хананеи\"; the other three take their traditional Russian Bible forms. Literal keeps the Hebrew pairs joined by \"и\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050200170021",
+            "o050200170031"
+          ],
+          "choice": "charam \"滅ぼし尽くす\" (L, B), \"主にささげられたものとして、完全に滅ぼす\" (R), as EXO",
+          "alternatives": [
+            "\"聖絶する\""
+          ],
+          "reason": "\"聖絶\" is a church coinage most readers do not know; Readable gives the sense of giving over to the LORD, as the English Readable.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050200170021",
+            "o050200170031",
+            "o050200170032"
+          ],
+          "choice": "彻底毁灭 (L, B), 完全毁灭，当作献给……的 (R)",
+          "alternatives": [
+            "灭绝"
+          ],
+          "reason": "The ḥerem (m1) as Numbers 21:2-3 in Chinese.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050200170042",
+            "o050200170051",
+            "o050200170052",
+            "o050200170053",
+            "o050200170061",
+            "o050200170062",
+            "o050200170071",
+            "o050200170072",
+            "o050200170073",
+            "o050200170081",
+            "o050200170082",
+            "o050200170091",
+            "o050200170092",
+            "o050200170093"
+          ],
+          "choice": "赫人, 亚摩利人, 迦南人, 比利洗人, 希未人, 耶布斯人",
+          "alternatives": [
+            "赫人的"
+          ],
+          "reason": "The glossary's names for the peoples of the land.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3527,6 +4383,26 @@
           "L": "чтобы они не научили вас делать по всем их мерзостям, которые они делали для своих богов, и вы не согрешили против {{divine_name:ГОСПОДА|Яхве}}, вашего Бога.",
           "B": "чтобы они не научили вас делать все те мерзости, которые они совершали для своих богов, и вы не согрешили против {{divine_name:ГОСПОДА|Яхве}}, вашего Бога.",
           "R": "Иначе они научили бы вас делать все те отвратительные вещи, которые они делают, поклоняясь своим богам, и вы согрешили бы против {{divine_name:ГОСПОДА|Яхве}}, вашего Бога."
+        },
+        "ja": {
+          "L": "それは、彼らが自分たちの神々のために行ってきたそのすべての忌むべきことにならって行うことを、あなたがたに教えることのないため、またあなたがたが、あなたがたの神、{{divine_name:主|ヤハウェ}}に対して罪を犯すことのないためである。",
+          "B": "それは、彼らが自分たちの神々のために行ってきた忌むべきことを、すべてあなたがたにまねさせ、あなたがたの神、{{divine_name:主|ヤハウェ}}に対して罪を犯させることのないためである。",
+          "R": "そうしないと、彼らは自分たちの神々を拝むためにしている、ひどく汚らわしいことを、すべてあなたたちに教えてしまう。そして、あなたたちは、あなたたちの神、{{divine_name:主|ヤハウェ}}に対して罪を犯すことになる。"
+        },
+        "uk": {
+          "L": "щоб вони не навчили вас чинити за всіма їхніми гидотами, які вони чинили для своїх богів, і ви не згрішили проти {{divine_name:ГОСПОДА|Ягве}}, вашого Бога.",
+          "B": "щоб вони не навчили вас наслідувати всі гидоти, які вони чинили для своїх богів, і так не довели вас до гріха проти {{divine_name:ГОСПОДА|Ягве}}, вашого Бога.",
+          "R": "Інакше вони навчили б вас чинити всі ті огидні речі, якими вони вшановують своїх богів, і ви згрішили б проти {{divine_name:ГОСПОДА|Ягве}}, вашого Бога."
+        },
+        "id": {
+          "L": "supaya mereka jangan mengajar kalian untuk melakukan segala kekejian mereka, yang mereka lakukan bagi allah-allah mereka, sehingga kalian berdosa terhadap {{divine_name:TUHAN|Yahweh}}, Allah kalian.",
+          "B": "supaya mereka tidak mengajar kalian meniru segala kekejian yang mereka lakukan bagi allah-allah mereka, sehingga kalian berdosa terhadap {{divine_name:TUHAN|Yahweh}}, Allah kalian.",
+          "R": "Kalau tidak, mereka akan mengajar kalian melakukan segala hal menjijikkan yang mereka lakukan untuk menyembah allah-allah mereka, dan kalian akan berdosa terhadap {{divine_name:TUHAN|Yahweh}}, Allah kalian."
+        },
+        "zh": {
+          "L": "免得他们教导你们去行他们向他们的神明所行一切可憎的事，你们就得罪{{divine_name:上主|雅威}}你们的{{god_term:神|上帝}}。",
+          "B": "免得他们教你们仿效他们为自己的神明所做一切令人厌恶的事，使你们得罪{{divine_name:上主|雅威}}你们的{{god_term:神|上帝}}。",
+          "R": "不然，他们会教你们去做他们敬拜自己神明时所做的一切令人恶心的事，你们就会得罪{{divine_name:上主|雅威}}你们的{{god_term:神|上帝}}。"
         }
       },
       "decisions": [
@@ -3596,6 +4472,28 @@
           "choice": "detestable practices / disgusting things they do to worship",
           "alternatives": [],
           "reason": "Balanced says \"detestable\" for the older \"abominations\", as in 17:1; Readable uses a plainer word and says that these things were done in worship.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050200180081",
+            "o050200180082"
+          ],
+          "choice": "可憎的事 (L), 令人厌恶的事 (B), 令人恶心的事 (R)",
+          "alternatives": [
+            "可憎恶的"
+          ],
+          "reason": "As 17:1 and 18:9.",
           "uncertain": false,
           "footnote": false
         }
@@ -3710,6 +4608,26 @@
           "L": "Когда будешь осаждать город много дней, воюя против него, чтобы захватить его, не губи его деревьев, занося на них топор, потому что от них ты можешь есть, а их не руби. Разве дерево поля — человек, чтобы уйти от тебя в осаду?",
           "B": "Когда ты долго осаждаешь город, воюя против него, чтобы захватить его, не губи его деревьев, поднимая на них топор. Ты можешь есть их плоды; не руби их. Разве дерево в поле — человек, чтобы и его осаждать?",
           "R": "Тебе может понадобиться долго окружать город и сражаться, чтобы захватить его. Даже тогда не губи его плодовые деревья и не руби их топором. Ты можешь есть их плоды, так что не руби их. Деревья — не люди. Они не враги, с которыми ты воюешь."
+        },
+        "ja": {
+          "L": "あなたが町を長い日々包囲し、それと戦ってそれを攻め取ろうとするとき、斧をそれに振るって、その木々を滅ぼしてはならない。あなたはそれから食べるのだから、それを切り倒してはならない。野の木は人であろうか、あなたの前から包囲の中に入るとは？",
+          "B": "町を攻め取ろうとして長い間包囲するときも、斧を振るってその木々を滅ぼしてはならない。その実を食べることができるのだから、切り倒してはならない。野の木が人間だというのか、あなたがそれまで包囲しなければならないとは？",
+          "R": "町を取ろうとして、長い間取り囲んで戦わなければならないこともある。それでも、斧で切り倒して、町の果物の木をだめにしてはいけない。その実を食べることができるのだから、切り倒してはいけない。木は人間ではない。あなたが戦っている敵ではないのである。"
+        },
+        "uk": {
+          "L": "Коли облягатимеш місто багато днів, воюючи проти нього, щоб його здобути, не нищ його дерев, замахуючись на них сокирою, бо з них ти їстимеш, і не зрубуй їх. Хіба польове дерево — людина, щоб іти від тебе в облогу?",
+          "B": "Коли довго облягатимеш місто, воюючи, щоб його здобути, не нищ його дерев, рубаючи їх сокирою. Ти можеш їсти їхні плоди; не зрубуй їх. Хіба дерево в полі — людина, щоб і його облягати?",
+          "R": "Тобі, можливо, доведеться довго облягати місто, воюючи, щоб його здобути. Але навіть тоді не нищ його плодових дерев, рубаючи їх сокирою. Ти можеш їсти їхні плоди, тож не зрубуй їх. Дерева — не люди. Вони не вороги, з якими ти воюєш."
+        },
+        "id": {
+          "L": "Apabila engkau mengepung sebuah kota berhari-hari lamanya, dengan berperang melawannya untuk merebutnya, janganlah engkau merusak pohon-pohonnya dengan mengayunkan kapak terhadapnya, sebab buahnya boleh kaumakan, tetapi janganlah engkau menebangnya. Sebab apakah pohon di padang itu manusia, sehingga harus kaukepung juga?",
+          "B": "Apabila engkau mengepung sebuah kota untuk waktu yang lama dan memeranginya untuk merebutnya, jangan merusak pohon-pohonnya dengan menebangnya dengan kapak. Engkau boleh memakan buahnya; jangan menebangnya. Apakah pohon di padang itu manusia, sehingga engkau harus mengepungnya juga?",
+          "R": "Mungkin kalian harus mengepung sebuah kota untuk waktu yang lama sambil berperang untuk merebutnya. Sekalipun begitu, jangan merusak pohon-pohon buahnya dengan menebangnya dengan kapak. Kalian dapat makan buahnya, jadi jangan menebangnya. Pohon bukan manusia. Pohon bukan musuh yang kalian perangi."
+        },
+        "zh": {
+          "L": "你若许多日子围困一座城，攻打它要夺取它，就不可挥斧砍伐它的树木，毁坏它们，因为你可以吃它们[的果子]，不可砍伐它们。难道田间的树木是人，要在你面前被围困吗？",
+          "B": "你若长时间围困一座城，攻打它要夺取它，不可挥斧砍坏城周围的树木。你可以吃树上的果子，所以不可砍伐它们。难道田野的树木是人，你也要围困它们吗？",
+          "R": "你可能要包围一座城很长时间，攻打它要把它夺下来。即使这样，也不要用斧头砍坏那里的果树。你可以吃树上的果子，所以不要砍掉它们。树木不是人，不是你要攻打的敌人。"
         }
       },
       "decisions": [
@@ -3839,6 +4757,47 @@
           "reason": "Readable states the answer the question expects (m1) instead of asking it.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o050200190241",
+            "o050200190242",
+            "o050200190251"
+          ],
+          "choice": "The rhetorical question is placed last, with \"？\" after the purpose clause (\"…入るとは？\")",
+          "alternatives": [
+            "\"野の木は人であろうか？\" alone"
+          ],
+          "reason": "Japanese puts the question first and the clause that explains it after, keeping the Hebrew's question that expects \"no\".",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050200190231"
+          ],
+          "choice": "\"Хіба польове дерево — людина, щоб іти від тебе в облогу?\"",
+          "alternatives": [
+            "a statement"
+          ],
+          "reason": "Literal keeps the Hebrew question, which expects the answer \"no\"; Readable turns it into a plain statement, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3935,6 +4894,26 @@
           "L": "Только дерево, о котором ты знаешь, что оно не дерево для еды, его можешь губить и рубить, и строй осадные сооружения против города, который ведёт с тобой войну, пока он не падёт.",
           "B": "Только те деревья, о которых ты знаешь, что они не дают плодов для еды, ты можешь губить и рубить, чтобы строить осадные сооружения против города, который воюет с тобой, пока он не падёт.",
           "R": "Но ты можешь рубить деревья, о которых знаешь, что они не дают плодов. Строй из них насыпи и башни, чтобы нападать на город, который с тобой воюет, пока ты не победишь его."
+        },
+        "ja": {
+          "L": "ただ、食べ物の[実のなる]木でないとあなたが知っている木、それは滅ぼして切り倒してよい。そしてあなたは、あなたと戦いを交えている町に対して、それが陥落するまで、包囲の塁を築かなければならない。",
+          "B": "ただ、食べられる実をつけないとわかっている木だけは、滅ぼして切り倒してよい。それで、あなたと戦っている町に対して、それが陥落するまで包囲の塁を築きなさい。",
+          "R": "けれども、食べられる実がならないとわかっている木は、切り倒してよい。それを使って、あなたと戦っている町を攻めるための坂や塔を作りなさい。町が負けるまで、そうしなさい。"
+        },
+        "uk": {
+          "L": "Тільки дерево, про яке знаєш, що воно не плодове, його можеш нищити й зрубувати, і будуй облогові споруди проти міста, яке веде з тобою війну, аж поки воно не впаде.",
+          "B": "Тільки ті дерева, про які знаєш, що вони не дають їжі, можеш нищити й зрубувати, щоб будувати облогові споруди проти міста, яке воює з тобою, аж поки воно не впаде.",
+          "R": "Але можеш зрубувати дерева, про які знаєш, що вони не дають їжі. Використай їх, щоб будувати насипи й вежі для наступу на місто, яке воює з тобою, аж поки його не буде переможено."
+        },
+        "id": {
+          "L": "Hanya pohon-pohon yang kauketahui bukan pohon yang buahnya dapat dimakan, itulah yang boleh kaurusak dan kautebang, untuk mendirikan alat pengepungan terhadap kota yang berperang melawan engkau itu, sampai kota itu jatuh.",
+          "B": "Hanya pohon-pohon yang kauketahui tidak menghasilkan makanan yang boleh kaurusak dan kautebang untuk membangun alat-alat pengepungan terhadap kota yang berperang melawan engkau, sampai kota itu jatuh.",
+          "R": "Tetapi kalian boleh menebang pohon-pohon yang kalian ketahui tidak menghasilkan makanan. Pakailah kayunya untuk membangun tanjakan dan menara untuk menyerang kota yang memerangi kalian, sampai kota itu dikalahkan."
+        },
+        "zh": {
+          "L": "只是你知道不是结果子可吃的树木，你可以毁坏、砍伐，用来建造攻城的工事，攻击那与你争战的城，直到它陷落。",
+          "B": "只有你知道不结可吃果子的树木，你才可以毁坏砍伐，用来建造攻城的工事，攻打那与你交战的城，直到它陷落。",
+          "R": "但是你可以砍掉你知道不结可吃果子的树木，用来建造攻城的斜坡和高塔，攻打那和你作战的城，直到把它打败。"
         }
       },
       "decisions": [

@@ -11,13 +11,25 @@ Matching follows the language of each document's own text, not the
 site's: notes are written in English, and a sentence not yet translated is
 shown, and found, in English. Each language has a text search
 configuration that removes accents and then stems (migrations 0003 and
-0009): owb_english, owb_spanish, owb_french, owb_portuguese, and
-owb_simple for languages Postgres has no stemmer for. Every entry is also
+0009, 0010, 0012, 0016): owb_english, owb_spanish, owb_french,
+owb_portuguese, owb_russian, owb_indonesian, owb_arabic, and owb_simple for
+languages Postgres has no stemmer for. Every entry is also
 indexed word for word (owb_simple, the lowest weight), so words a stemmer
 drops ("I am") or shortens ("runn" while typing "running") still match. A
 query word matches an entry in its stemmed forms, in the entry's own
 language only, or word for word as the start of a word (tsquery explains
 why). A "quoted phrase" matches word for word, in order.
+
+Japanese and Chinese are written without spaces, and Postgres's parser
+takes a run of kanji and kana (or Chinese characters) as one word, so a
+word could only be found at the start of a clause. Japanese and Chinese
+entries (owb_cjk, migration 0011) are indexed by character bigrams instead
+(ngrams): each run becomes its overlapping pairs and its last character,
+and a query term in those scripts becomes the phrase of its pairs, so it
+matches anywhere inside a run. The entries keep their text as it is; only
+the vector is built from the pairs, and a sentence's vector from each of
+its readings (readings), so that a setting's word joins the words beside
+it: {{god_term:神|上帝}}的国 is found as 神的国 and as 上帝的国.
 """
 import functools
 import hashlib
@@ -33,6 +45,7 @@ from typing import NamedTuple
 
 from django.conf import settings
 from django.db import connection, transaction
+from django.utils import timezone
 
 from translation.models import SearchEntry, SearchLanguage, SearchWord
 
@@ -40,8 +53,19 @@ from translation.models import SearchEntry, SearchLanguage, SearchWord
 KINDS = {"passage": "c", "verse": "v", "note": "n", "article": "a"}
 NAMES = {code: name for name, code in KINDS.items()}
 CONFIGS = {"en": "owb_english", "es": "owb_spanish", "fr": "owb_french", "pt": "owb_portuguese",
-           "ru": "owb_russian"}
+           "ru": "owb_russian", "ja": "owb_cjk", "id": "owb_indonesian", "zh": "owb_cjk",
+           "ar": "owb_arabic"}
 SIMPLE = "owb_simple"
+# Entries in languages written without spaces between words: indexed and
+# queried by character bigrams (ngrams).
+CJK = "owb_cjk"
+# A run of kanji, hiragana or katakana (with the long-vowel mark and the
+# iteration marks), the characters Japanese writes words in. The middle dot
+# (・) between the parts of a name is punctuation, so it ends a run.
+CJK_RUN = re.compile("[\u3005-\u3007\u3041-\u3096\u309d\u309e\u30a1-\u30fa\u30fc-\u30ff\u31f0-\u31ff"
+                     "\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff\uff66-\uff9f\U00020000-\U0003134f]+")
+# The shortest query searched: two characters, or one kanji or kana (a word
+# in Japanese, where one Latin letter is not).
 MIN_QUERY = 2
 SPAN = re.compile(r"\{\{([a-z_]+):([^{}]*)\}\}")
 VERSE_MARK = re.compile(r"\\v \d+ ?")
@@ -53,19 +77,69 @@ def config(lang):
     return CONFIGS.get(lang, SIMPLE)
 
 
+def bigrams(run):
+    """A run's overlapping pairs of characters ("神の愛": 神の, の愛); a single
+    character stands alone."""
+    return [run[i:i + 2] for i in range(len(run) - 1)] or [run]
+
+
+def ngrams(text):
+    """text as owb_cjk indexes it: each run of kanji and kana as its pairs and
+    then its last character on its own, so a one-character query (a single
+    kanji) can match at any place in a run, the end included, as a prefix.
+    "神の愛を" becomes "神の の愛 愛を を"; other text is left as it is."""
+    def pieces(m):
+        run = m[0]
+        return " " + " ".join(bigrams(run) + ([run[-1]] if len(run) > 1 else [])) + " "
+    return CJK_RUN.sub(pieces, text)
+
+
+def cjk_terms(text):
+    """A term's pieces for an owb_cjk query: each run of kanji and kana, and
+    the words between them ("ペトロ2": ペトロ, 2)."""
+    return [p for p in re.split(f"({CJK_RUN.pattern})", text) if p and not p.isspace()]
+
+
+# The kana voicing marks (゛ ゜) are combining marks but not accents: without
+# them ガ would be カ. They are kept, and compose again with their kana.
+KANA_MARKS = {0x3099, 0x309A}
+# Full-width ASCII (Ｈ, ３, ：) and the ideographic space, as Japanese input
+# often types them: "ヨハネによる福音書３：１６" is "ヨハネによる福音書3:16".
+WIDE = {**{c: c - 0xFEE0 for c in range(0xFF01, 0xFF5F)}, 0x3000: 0x20}
+
+
+# Arabic script, as Arabic and Persian are typed: the short vowels and other
+# marks (harakat, which fold removes with every combining mark) and the
+# tatweel stretching a word dropped; alef with hamza or madda and alef wasla
+# as alef, the hamza seats waw and yeh as their letters, alef maqsura and the
+# Persian yeh (ی) as yeh (ي), the Persian keheh (ک) as kaf (ك); Arabic-Indic
+# and Persian digits as ASCII. A word written either way then finds the
+# other. Teh marbuta (ة) stays: the Arabic stemmer takes it off a word
+# (كلمة, الكلمة: كلم) but leaves a heh after the article (الكلمه: كلمه).
+# The site's search.js and build_site.fold do the same.
+ARABIC = {0x0640: None, 0x0670: None, **dict.fromkeys(range(0x064B, 0x0660)),
+          0x0622: 0x0627, 0x0623: 0x0627, 0x0625: 0x0627, 0x0671: 0x0627, 0x0624: 0x0648,
+          0x0626: 0x064A, 0x0649: 0x064A, 0x06CC: 0x064A, 0x06A9: 0x0643,
+          **{0x0660 + i: 0x30 + i for i in range(10)},
+          **{0x06F0 + i: 0x30 + i for i in range(10)}}
+ARABIC_LETTER = re.compile("[\u0600-\u06ff\u0750-\u077f\u0870-\u08ff]")
+
+
 @functools.cache
 def _marks():
-    """Every combining mark, for str.translate to remove."""
-    return dict.fromkeys(c for c in range(sys.maxunicode + 1) if unicodedata.combining(chr(c)))
+    """Every combining mark but the kana voicing marks, for str.translate to remove."""
+    return dict.fromkeys(c for c in range(sys.maxunicode + 1)
+                         if unicodedata.combining(chr(c)) and c not in KANA_MARKS)
 
 
 def fold(text):
-    """Lower case, accents removed, curly quotes straightened (as the site's
-    search.js folds text)."""
+    """Lower case, accents removed, full-width letters, digits and signs made
+    ASCII, curly quotes straightened (as the site's search.js folds text)."""
     # Composed again after the marks go, so a Korean syllable stays one
     # character, as Postgres indexes it (NFD splits it into its letters).
-    text = unicodedata.normalize("NFC", unicodedata.normalize("NFD", text.lower()).translate(_marks()))
-    text = text.replace("\u0111", "d")   # Vietnamese đ, as unaccent does
+    text = unicodedata.normalize("NFC", unicodedata.normalize("NFD", text.translate(WIDE).lower())
+                                 .translate(_marks()))
+    text = text.replace("\u0111", "d").translate(ARABIC)   # Vietnamese đ, as unaccent does
     return re.sub("[‘’ʼ]", "'", re.sub("[“”«»]", '"', text))
 
 
@@ -109,6 +183,49 @@ def fields(doc):
 
 
 ENTRY_COLUMNS = ("language", "kind", "position", "sub", "config", "title", "extra", "body", "doc")
+# What the vector is built from, where it differs from the entry's text: the
+# bigrams of an owb_cjk entry's fields (NULL for the others).
+INDEXED_COLUMNS = ("title_v", "extra_v", "body_v")
+
+
+def readings(levels):
+    """Each level as a reader can see it, for a sentence's owb_cjk vector:
+    every span at its first option; each setting at each of its other
+    options, the others at their first; and every span at its second,
+    third, ... option. everything() puts a span's options side by side
+    ("神 上帝的国"), which breaks a bigram across the span's edge; these
+    keep each option beside its neighbours ("神的国", "上帝的国")."""
+    out = []
+    for text in levels.values():
+        spans = [(m[1], m[2].split("|")) for m in SPAN.finditer(text)]
+        choices = [{}]
+        for name in dict.fromkeys(n for n, _ in spans):
+            most = max(len(o) for n, o in spans if n == name)
+            choices += [{name: i} for i in range(1, most)]
+        most = max((len(o) for _, o in spans), default=1)
+        choices += [{n: i for n, _ in spans} for i in range(1, most)]
+        for choice in choices:
+            def pick(m, choice=choice):
+                options = m[2].split("|")
+                i = choice.get(m[1], 0)
+                return options[i] if i < len(options) else options[0]
+            reading = VERSE_MARK.sub(" ", SPAN.sub(pick, text))
+            if reading not in out:
+                out.append(reading)
+    return GAP.join(out)
+
+
+def indexed(config_name, doc_fields, doc=None):
+    """The text each field is indexed as: its bigrams for owb_cjk; a field in
+    Arabic script folded as fold folds a query (Postgres's unaccent leaves
+    its marks and letters as they are); else None (the field itself). A
+    sentence's body is indexed from its readings for owb_cjk."""
+    if config_name != CJK:
+        return tuple(f.translate(ARABIC) if f and ARABIC_LETTER.search(f) else None
+                     for f in doc_fields)
+    if doc is not None and doc["k"] == "v":
+        doc_fields = (*doc_fields[:2], readings(doc["x"]))
+    return tuple(ngrams(f) for f in doc_fields)
 
 
 def _copy(cursor, table, columns, rows):
@@ -152,6 +269,8 @@ class Change(NamedTuple):
     entries: int
     added: int
     removed: int
+    # Documents not written yet: the deadline came first (_rebuild_language).
+    left: int = 0
 
 
 def plan(old, new):
@@ -201,28 +320,53 @@ def plan(old, new):
     return delete, places
 
 
-def rebuild(full=False, until=None, separate=False):
+# New entries are written this many at a time, each batch committed, so a
+# language whose update outlasts a deploy keeps what it wrote.
+CHUNK = 2000
+
+
+def order(languages):
+    """languages in the order rebuild() takes them: any never brought fully
+    up to date first, newest language first among those (a language just
+    added has the most to write), then the one that has waited longest. In
+    the fixed order the last language (Indonesian, the newest) was the one a
+    deploy always reached late, with its first fifty books to write: deploys
+    ran into Render's limit and saved none of it."""
+    checked = dict(SearchLanguage.objects.values_list("code", "checked"))
+    rank = {lang: i for i, lang in enumerate(languages)}
+    never = sorted((lang for lang in languages if checked.get(lang) is None), key=lambda lang: -rank[lang])
+    return never + sorted((lang for lang in languages if checked.get(lang) is not None),
+                          key=lambda lang: (checked[lang], rank[lang]))
+
+
+def rebuild(full=False, until=None, separate=False, stop=None):
     """Bring the search tables up to date with the site's documents in every
     site language, rewriting only the entries whose documents changed (all
-    of them with full=True). Each language is a transaction of its own, so
-    a deploy stopped part way keeps the languages it finished, and the next
-    picks up from there. With until (a time.monotonic() value), no language
-    is started after that time: those left out wait for the next rebuild.
+    of them with full=True). Each language is updated in batches that are
+    committed as they go, so a deploy stopped part way keeps what it wrote,
+    and the next picks up from there. With until (a time.time() value), no
+    language is started after that time: those left out wait for the next
+    rebuild. With stop (also a time.time() value), a language started before
+    until writes no new batch once stop is near (_rebuild_language), so the
+    whole update ends by then whatever a merge changed.
     With separate=True, each language is updated in a process of its own
     (manage.py update_search), so memory doesn't build up from one to the
-    next. Returns {language: Change} for the languages it brought up to date."""
+    next. Returns {language: Change} for the languages it worked on; a
+    Change with left > 0 was stopped part way."""
     site = site_build()
     with transaction.atomic():
         SearchLanguage.objects.exclude(code__in=site.LANGUAGES).delete()
         SearchEntry.objects.exclude(language__in=site.LANGUAGES).delete()
         SearchWord.objects.exclude(language__in=site.LANGUAGES).delete()
+    if stop is not None:
+        until = stop if until is None else min(until, stop)
     changes = {}
     try:
-        for lang in site.LANGUAGES:
-            if until is not None and time.monotonic() > until:
+        for lang in order(site.LANGUAGES):
+            if until is not None and time.time() > until:
                 break
-            changes[lang] = (_rebuild_separately(lang, full) if separate
-                             else _rebuild_language(site_build(lang), lang, full))
+            changes[lang] = (_rebuild_separately(lang, full, stop) if separate
+                             else _rebuild_language(site_build(lang), lang, full, stop))
         return changes
     finally:
         # Records that hold one language's renderings must not outlive the
@@ -230,24 +374,36 @@ def rebuild(full=False, until=None, separate=False):
         site_build()
 
 
-def _rebuild_separately(lang, full):
+def _rebuild_separately(lang, full, stop=None):
     command = [sys.executable, str(settings.BASE_DIR / "manage.py"), "update_search", lang]
     if full:
         command.append("--all")
+    if stop is not None:
+        command += ["--stop", str(stop)]
     out = subprocess.run(command, check=True, stdout=subprocess.PIPE, text=True).stdout
     return Change(**json.loads(out.splitlines()[-1]))
 
 
-@transaction.atomic
-def _rebuild_language(site, lang, full):
+def _rebuild_language(site, lang, full, stop=None, out=None):
+    """Bring lang's entries up to date. The entries of changed documents are
+    deleted, and the new ones written CHUNK at a time, each batch in a
+    transaction of its own: a stopped update leaves some documents out of
+    search for a while, never a half-written entry, and the next update
+    finds the batches written as entries to keep (plan). With stop (a
+    time.time() value), no batch is started that, at the pace of the last
+    one, would end after it; the documents left are counted in Change.left.
+    Only an update that wrote everything marks the language checked. With
+    out (a function taking a line), says how long each step took: the
+    deploy log once showed nothing for 25 minutes before Render stopped it."""
+    began = time.time()
     data = site.search_documents(lang)
     # The documents are all that's needed now: the records go (every cache
     # cleared), so the memory they held serves the work below.
     site_build(site.SEARCH_LANG)
-    SearchLanguage.objects.update_or_create(code=lang, defaults=dict(books=data["books"], pages=data["pages"]))
     docs = [(doc, config(doc.get("l", lang))) for doc in data["docs"]]
     entries, words = _table(), SearchWord._meta.db_table
-    with connection.cursor() as cursor:
+    with transaction.atomic(), connection.cursor() as cursor:
+        SearchLanguage.objects.update_or_create(code=lang, defaults=dict(books=data["books"], pages=data["pages"]))
         # A full rebuild, or the first, matches nothing, so needs no keys.
         cursor.execute(f"SELECT id, position, sub, {'NULL' if full else KEY_SQL} FROM {entries} "
                        "WHERE language = %s ORDER BY position, sub", [lang])
@@ -257,42 +413,80 @@ def _rebuild_language(site, lang, full):
         delete, places = (None if full or not old else plan(old, [key(c, doc) for doc, c in docs])) or (
             [row[0] for row in old], [(i, i, 0) for i in range(len(docs))])
         del old
+        if out:
+            out(f"search {lang}: {len(docs)} documents, {len(delete)} to remove, {len(places)} to write "
+                f"(planned in {time.time() - began:.0f} s)")
         if not delete and not places and SearchWord.objects.filter(language=lang).exists():
+            SearchLanguage.objects.filter(code=lang).update(checked=timezone.now())
             return Change(len(docs), 0, 0)
+        if stop is not None and time.time() > stop:
+            # Out of time already: change nothing, so search stays as it was,
+            # but mark the language behind, so it goes first next time.
+            SearchLanguage.objects.filter(code=lang).update(checked=None)
+            return Change(len(docs), 0, 0, len(places))
         if delete:
             cursor.execute(f"DELETE FROM {entries} WHERE id = ANY(%s)", [delete])
-        # New entries go through a scratch table, so each row is written
-        # once, with its vector, rather than inserted and then updated.
-        cursor.execute("""CREATE TEMPORARY TABLE search_load (language text, kind text,
-            position integer, sub integer, config text, title text, extra text, body text, doc jsonb)
-            ON COMMIT DROP""")
-        # A generator: a full rebuild's rows, held at once, are as big again
-        # as the documents.
-        rows = ((lang, docs[i][0]["k"], position, sub, docs[i][1], *fields(docs[i][0]),
-                 json.dumps(docs[i][0], ensure_ascii=False)) for i, position, sub in places)
-        _copy(cursor, "search_load", ENTRY_COLUMNS, rows)
-        cursor.execute(f"""INSERT INTO {entries} ({', '.join(ENTRY_COLUMNS)}, vector)
-            SELECT {', '.join(ENTRY_COLUMNS)},
-              setweight(to_tsvector(config::regconfig, title), 'A')
-              || setweight(to_tsvector(config::regconfig, extra), 'B')
-              || setweight(to_tsvector(config::regconfig, body), 'C')
-              || setweight(to_tsvector('{SIMPLE}', concat_ws(' ', title, extra, body)), 'D')
-            FROM search_load ORDER BY position, sub""")
-        # Dropped now as well as at commit: inside a test the transaction
-        # never commits, and the next rebuild would find it still there.
-        cursor.execute("DROP TABLE search_load")
+    written, pace, writing = 0, 0.0, time.time()
+    for at in range(0, len(places), CHUNK):
+        if stop is not None and time.time() + pace > stop:
+            break
+        batch = time.time()
+        with transaction.atomic(), connection.cursor() as cursor:
+            _write(cursor, lang, docs, places[at:at + CHUNK])
+        written += len(places[at:at + CHUNK])
+        pace = time.time() - batch
+    left = len(places) - written
+    if out:
+        out(f"search {lang}: wrote {written} in {time.time() - writing:.0f} s"
+            + (f", {left} left for the next run" if left else ""))
+    with transaction.atomic(), connection.cursor() as cursor:
         found = Counter()
         for doc, _ in docs:
-            found.update(w for w in re.findall(r"[^\W\d_][\w']{2,62}", fold(" ".join(fields(doc)))))
+            # Words for "did you mean": a run of kanji and kana is a clause,
+            # not a word, so it is left out.
+            found.update(w for w in re.findall(r"[^\W\d_][\w']{2,62}", fold(" ".join(fields(doc))))
+                         if not CJK_RUN.search(w))
         SearchWord.objects.filter(language=lang).delete()
         _copy(cursor, words, ("language", "word", "count"), ((lang, w, n) for w, n in found.items()))
+        # Behind (None) goes first next time (order).
+        SearchLanguage.objects.filter(code=lang).update(checked=None if left else timezone.now())
         # Fresh statistics for the planner. Without them it can take the
         # tables for empty (after a full rebuild's delete, or a vacuum that
         # ran while they were) and plan a search that ranks every match
         # once for every entry: hours instead of milliseconds.
         for model in (SearchEntry, SearchWord, SearchLanguage):
             cursor.execute(f"ANALYZE {model._meta.db_table}")
-    return Change(len(docs), len(places), len(delete))
+    if out:
+        out(f"search {lang}: done in {time.time() - began:.0f} s")
+    return Change(len(docs), written, len(delete), left)
+
+
+def _write(cursor, lang, docs, places):
+    """Write the entries for places, [(index in docs, position, sub)]."""
+    # New entries go through a scratch table, so each row is written
+    # once, with its vector, rather than inserted and then updated.
+    cursor.execute("""CREATE TEMPORARY TABLE search_load (language text, kind text,
+        position integer, sub integer, config text, title text, extra text, body text, doc jsonb,
+        title_v text, extra_v text, body_v text)
+        ON COMMIT DROP""")
+    # A generator: a full rebuild's rows, held at once, are as big again
+    # as the documents.
+    rows = ((lang, docs[i][0]["k"], position, sub, docs[i][1], *f,
+             json.dumps(docs[i][0], ensure_ascii=False), *indexed(docs[i][1], f, docs[i][0]))
+            for i, position, sub in places for f in [fields(docs[i][0])])
+    _copy(cursor, "search_load", ENTRY_COLUMNS + INDEXED_COLUMNS, rows)
+    cursor.execute(f"""INSERT INTO {_table()} ({', '.join(ENTRY_COLUMNS)}, vector)
+        SELECT {', '.join(ENTRY_COLUMNS)},
+          setweight(to_tsvector(config::regconfig, coalesce(title_v, title)), 'A')
+          || setweight(to_tsvector(config::regconfig, coalesce(extra_v, extra)), 'B')
+          || setweight(to_tsvector(config::regconfig, coalesce(body_v, body)), 'C')
+          || setweight(to_tsvector('{SIMPLE}', concat_ws(' ', coalesce(title_v, title),
+                                                          coalesce(extra_v, extra),
+                                                          coalesce(body_v, body))), 'D')
+        FROM search_load ORDER BY position, sub""")
+    # Dropped now as well as at commit: inside a test the transaction
+    # never commits, and the next rebuild would find it still there.
+    cursor.execute("DROP TABLE search_load")
 
 
 # ---- Queries ------------------------------------------------------------
@@ -337,7 +531,13 @@ def tsquery(lang, query_terms):
     as prefixes, nor across languages: Spanish "verbo" stems to "verb",
     which would otherwise find English notes about verbs. A quoted phrase
     matches word for word only, in order: a stemmer drops common words
-    ("from", "above"), and "born from above" would shrink to "born"."""
+    ("from", "above"), and "born from above" would shrink to "born".
+
+    In owb_cjk entries, indexed by bigrams (ngrams), a run of kanji and kana
+    matches as the phrase of its pairs, so anywhere inside a clause, and a
+    single kanji or kana as the start of a pair; the words between runs
+    match as elsewhere. Within a term or a quoted phrase, the runs and words
+    must all be there but need not touch."""
     configs = sorted({config(lang), config("en")})
     columns, params = [], []
     for cfg in configs:
@@ -346,7 +546,11 @@ def tsquery(lang, query_terms):
             prefix = text if len(text) == 1 else f"{text}:*"
             # Only letters and digits reach to_tsquery, so a query can't
             # inject tsquery operators.
-            if phrase:
+            if cfg == CJK:
+                sql, more = _cjk_query(text, phrase)
+                parts.append(sql)
+                params += more
+            elif phrase:
                 parts.append("phraseto_tsquery(%s::regconfig, %s)")
                 params += [SIMPLE, text]
             elif cfg == SIMPLE:
@@ -357,6 +561,26 @@ def tsquery(lang, query_terms):
                 params += [cfg, text, SIMPLE, prefix]
         columns.append(" && ".join(parts) + f" AS {cfg}")
     return Query("SELECT " + ", ".join(columns), params, configs)
+
+
+def _cjk_query(text, phrase):
+    """One term (or quoted phrase) as an owb_cjk tsquery: (sql, params)."""
+    parts, params = [], []
+    for piece in cjk_terms(text):
+        if CJK_RUN.fullmatch(piece):
+            if len(piece) == 1:
+                parts.append("to_tsquery(%s::regconfig, %s)")
+                params += [CJK, f"{piece}:*"]
+            else:
+                parts.append("phraseto_tsquery(%s::regconfig, %s)")
+                params += [CJK, " ".join(bigrams(piece))]
+        elif phrase or not re.fullmatch(r"\w+", piece):
+            parts.append("phraseto_tsquery(%s::regconfig, %s)")
+            params += [CJK, piece]
+        else:
+            parts.append("to_tsquery(%s::regconfig, %s)")
+            params += [CJK, piece if len(piece) == 1 else f"{piece}:*"]
+    return "(" + " && ".join(parts) + ")", params
 
 
 def _table():
@@ -474,7 +698,9 @@ def suggest(lang, query_terms):
     common word in lang's documents, if that query finds something."""
     changed, words = False, []
     for text, phrase in query_terms:
-        if phrase or len(text) < 3:
+        # Japanese has no word list to suggest from (a run of kana and kanji
+        # is a clause, not a word).
+        if phrase or len(text) < 3 or CJK_RUN.search(text):
             words.append(text)
             continue
         if counts(lang, tsquery(lang, [(text, False)])):
@@ -504,7 +730,7 @@ def search(lang, q, kind=None, offset=0, limit=20, sort="relevance", per=8):
     q = q.replace("\x00", "").strip()[:200]
     answer = {"query": q, "lang": lang}
     query_terms = terms(q)
-    if len(q) < MIN_QUERY or not query_terms:
+    if (len(q) < MIN_QUERY and not CJK_RUN.fullmatch(q)) or not query_terms:
         return {**answer, "reference": None, "totals": {}, "results": [], "suggestion": None}
     query = tsquery(lang, query_terms)
     if kind:

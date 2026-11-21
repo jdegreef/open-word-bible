@@ -10,8 +10,6 @@ Les plus anciens manuscrits du Nouveau Testament étaient écrits en lettres cap
 
 La plupart du temps, cela ne pose aucune difficulté. La grammaire montre clairement où une phrase finit et où la suivante commence. Mais de temps à autre, une virgule décide de ce que dit un verset. Open Word Bible consigne ces choix comme des décisions de sens dans la catégorie *ponctuation*, et marque incertaines celles qui sont difficiles. Elle suit d'ordinaire la ponctuation du Nouveau Testament grec de la SBL, l'édition qu'elle traduit, mais les virgules des éditeurs sont elles aussi un jugement, et le dossier le dit quand la traduction les lit autrement.
 
-Tous les livres cités ici ne sont pas encore traduits en français dans Open Word Bible ; là où ils ne le sont pas, les citations de la traduction apparaissent dans sa version anglaise.
-
 ## Romains 9:5 : une virgule ou un point ?
 
 Paul énumère ce qui appartient à Israël : l'adoption, la gloire, les alliances, la Loi, le culte, les promesses, les patriarches, et enfin le Messie lui-même. Puis viennent ces mots :

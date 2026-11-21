@@ -52,8 +52,6 @@ Ici, les trois niveaux se séparent, et la décision de formulation dit comment.
 
 > {{OWB:AMO.8.2.s1:R}}
 
-(Amos, Jérémie, Ésaïe et Michée ne sont pas encore traduits en français dans Open Word Bible ; les citations de ces livres sont donc tirées de sa version anglaise.)
-
 ## L'amandier et le veilleur
 
 La première vision de Jérémie fonctionne de la même façon. Le SEIGNEUR lui demande ce qu'il voit, et Jérémie répond : "une branche d'amandier". Le SEIGNEUR répond qu'il "veille" sur sa parole pour l'accomplir.

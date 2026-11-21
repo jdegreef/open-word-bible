@@ -86,6 +86,26 @@
           "L": "Если будет тяжба между людьми, и они приступят к суду, и [судьи] будут судить их, и оправдают правого, и обвинят виновного,",
           "B": "Допустим, у двоих людей спор, они идут в суд, и судьи решают дело: правого признают невиновным, а неправого — виновным.",
           "R": "Допустим, двое людей поссорились и пошли в суд. Судьи выслушивают дело. Они объявляют одного невиновным, а другого — виновным."
+        },
+        "ja": {
+          "L": "人々の間に争いがあり、彼らが裁きの場に近づき、[裁く者たちが]彼らを裁いて、正しい者を正しいとし、悪い者を悪いと宣告したとき、",
+          "B": "二人の人の間に争いがあって、訴えに出て、裁く者たちがその件を裁き、正しい方を無罪とし、悪い方を有罪としたとする。",
+          "R": "二人の人がけんかをして、裁判に訴えたとする。裁く人たちは話を聞いて、一人は罪がなく、もう一人は罪があると言い渡す。"
+        },
+        "uk": {
+          "L": "Коли буде суперечка між {{gender:людьми|чоловіками}}, і вони прийдуть на суд, і їх розсудять, і виправдають праведного, і визнають винним винного,",
+          "B": "Припустімо, двоє людей мають суперечку й ідуть до суду, і судді розсуджують справу, виправдовуючи того, хто правий, і визнаючи винним того, хто неправий.",
+          "R": "Припустімо, двоє людей посварилися й понесли справу до суду. Судді розглядають справу. Вони кажуть, що одна людина невинна, а друга винна."
+        },
+        "id": {
+          "L": "Apabila ada perselisihan di antara orang-orang, dan mereka datang ke pengadilan, dan mereka diadili, orang yang benar harus dinyatakan benar dan orang yang bersalah harus dinyatakan bersalah.",
+          "B": "Apabila ada perselisihan di antara dua orang dan mereka pergi ke pengadilan, lalu para hakim memutuskan perkara mereka dengan membenarkan yang benar dan menyalahkan yang bersalah,",
+          "R": "Mungkin dua orang bertengkar dan membawa perkaranya ke pengadilan. Para hakim memeriksa perkara itu. Mereka menyatakan bahwa yang seorang tidak bersalah dan yang lain bersalah."
+        },
+        "zh": {
+          "L": "人与人之间若有争执，他们来到审判[的地方]，[审判官]审判他们，就要宣告有理的人无罪，宣告有罪的人有罪，",
+          "B": "假如两个人有纠纷，上了法庭，审判官审理这案件，判有理的一方无罪，判无理的一方有罪。",
+          "R": "假如两个人吵架，告到法庭。审判官审理这件案子。他们判定一个人无罪，另一个人有罪。"
         }
       },
       "decisions": [
@@ -248,6 +268,81 @@
           "reason": "The English Literal has a gender span (\"people / men\"). Russian \"люди\" already includes men and women, as the style guide says, so no span is needed; the parties are whoever they are (m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o050250010051"
+          ],
+          "choice": "\"人々\" (Literal), \"二人の人\" (Balanced, Readable) with no gender span",
+          "alternatives": [],
+          "reason": "Japanese 人 already includes men and women, so the English span on 'men' is not needed.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o050250010051"
+          ],
+          "choice": "\"人与人之间\" (L); \"两个人\" (B, R), with no span",
+          "alternatives": [],
+          "reason": "The parties to the dispute, whoever they are (m3): Chinese \"人\" is already inclusive, so it takes no span where the English Literal has \"people / men\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o050250010092"
+          ],
+          "choice": "\"[审判官]\"",
+          "alternatives": [],
+          "reason": "As the English Literal, the judges are supplied in brackets, since the Hebrew says only \"they judge them\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-3",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o050250010011",
+            "o050250010021"
+          ],
+          "choice": "\"不可……\" (L, B); \"不要……\" / \"必须……\" (R)",
+          "alternatives": [],
+          "reason": "The law's commands follow the style guide (section 11) through this chapter.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -339,6 +434,26 @@
           "L": "то будет так: если виновный заслуживает побоев, пусть судья велит ему лечь и прикажет бить его при себе, по счёту, сообразно его вине.",
           "B": "Если виновный заслуживает побоев, судья должен велеть ему лечь и наказать его ударами при себе, столькими, сколько заслуживает его проступок.",
           "R": "Если виновного нужно наказать побоями, судья должен велеть ему лечь. Потом его должны бить, пока судья смотрит. Число ударов должно соответствовать тому, насколько тяжёл проступок."
+        },
+        "ja": {
+          "L": "もしその悪い者が打たれるに値するなら、裁く者は彼を伏させ、自分の前で、その罪にふさわしい数だけ、彼を打たせなければならない。",
+          "B": "もし有罪とされた者がむち打ちに値するなら、裁く者はその人を伏させ、自分の目の前で、その罪にふさわしい数だけむちで打たせなければならない。",
+          "R": "罪のある人が、打たれる罰を受けるべきなら、裁く人はその人を横にならせなければならない。そして、裁く人の見ている前で、その人を打たせなければならない。打つ回数は、その人がした悪いことの重さに合わせなければならない。"
+        },
+        "uk": {
+          "L": "то буде, якщо винний заслуговує побиття, то нехай суддя покладе його і звелить бити його перед собою, за мірою його провини, лічбою.",
+          "B": "Якщо винний заслуговує побиття, суддя має звеліти покласти його й бити в його присутності стільки ударів, скільки заслуговує його провина.",
+          "R": "Якщо винного треба покарати побиттям, суддя мусить звеліти йому лягти. Тоді його мають бити на очах у судді. Кількість ударів мусить відповідати тому, наскільки тяжке було зло."
+        },
+        "id": {
+          "L": "Dan apabila orang yang bersalah itu patut dipukul, hakim harus menyuruhnya berbaring dan menyuruh memukulnya di hadapannya, sesuai dengan kesalahannya, dengan sejumlah pukulan.",
+          "B": "jika orang yang bersalah itu patut dipukul, hakim harus menyuruhnya berbaring dan menyuruh orang memukulnya di hadapannya dengan sejumlah pukulan yang sesuai dengan kesalahannya.",
+          "R": "Jika orang yang bersalah itu harus dihukum dengan pukulan, hakim harus menyuruhnya berbaring. Lalu ia harus dipukul sementara hakim melihatnya. Jumlah pukulannya harus sesuai dengan beratnya kesalahan itu."
+        },
+        "zh": {
+          "L": "那有罪的人若是该打的，审判官就要叫他伏在地上，按他的罪，照数目在自己面前打他。",
+          "B": "如果有罪的人应当受鞭打，审判官就要叫他趴下，在自己面前按他的罪行应得的数目鞭打他。",
+          "R": "如果有罪的人应该受到责打，审判官必须叫他趴下。然后要在审判官面前打他。打的次数要和他犯错的轻重相当。"
         }
       },
       "decisions": [
@@ -448,6 +563,25 @@
           "reason": "The Hebrew idiom means one who deserves a beating (m1); a word-for-word \"son of striking\" would not be understood in Hindi.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050250020031"
+          ],
+          "choice": "\"заслуговує побиття\"",
+          "alternatives": [
+            "\"син биття\""
+          ],
+          "reason": "Even Literal gives the sense of the Hebrew idiom \"a son of striking\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -536,6 +670,26 @@
           "L": "Сорок [ударов] можно нанести ему, не больше, чтобы, если станут бить его сверх этого многими ударами, не был унижен брат твой в глазах твоих.",
           "B": "Ему можно дать до сорока ударов, но не больше. Если бить его гораздо больше, твой собрат-израильтянин будет унижен в твоих глазах.",
           "R": "Ему нельзя давать больше сорока ударов. Если дать больше, это опозорит его, и ты перестанешь уважать своего собрата-израильтянина."
+        },
+        "ja": {
+          "L": "四十[回]、彼は彼を打ってよい。[それ以上]加えてはならない。もしこれ以上に多くの打ち傷を加えて彼を打つなら、あなたの兄弟があなたの目の前で辱められることになるからである。",
+          "B": "四十回までは打ってよいが、それ以上は加えてはならない。それよりも多く打たれるなら、あなたの同胞があなたの目の前で、さげすまれる者となってしまう。",
+          "R": "四十回より多く打ってはいけない。もっと多く打てば、その人に恥をかかせることになる。そうなれば、あなたは同じイスラエル人を、もう大切な人として見なくなってしまう。"
+        },
+        "uk": {
+          "L": "Сорок ударів можна йому завдати; нехай не додає, щоб, коли додасть бити його понад це багатьма ударами, не був зневажений твій брат у твоїх очах.",
+          "B": "Йому можна завдати до сорока ударів, але не більше. Якби його били набагато більше, твій брат-ізраїльтянин був би приниженим у твоїх очах.",
+          "R": "Йому не можна завдавати більше ніж сорок ударів. Якби він отримав більше, це зганьбило б його, і ти більше не дивився б на свого брата-ізраїльтянина з повагою."
+        },
+        "id": {
+          "L": "Empat puluh kali ia boleh dipukul, jangan lebih, supaya jangan, apabila ia dipukul lebih dari itu dengan banyak pukulan, saudaramu itu menjadi hina di matamu.",
+          "B": "Ia boleh dipukul sampai empat puluh kali, tetapi tidak lebih. Jika ia dipukul jauh lebih banyak dari itu, saudaramu sebangsa itu akan direndahkan di matamu.",
+          "R": "Ia tidak boleh dipukul lebih dari empat puluh kali. Kalau ia dipukul lebih dari itu, ia akan dipermalukan, dan kalian tidak akan lagi menghormati sesama orang Israel itu."
+        },
+        "zh": {
+          "L": "他可以打他四十下，不可多打；免得多打，过于这数，打他许多下，你的弟兄就在你眼前被轻贱。",
+          "B": "最多可以打他四十下，不可再多。如果打得比这多得多，你的以色列同胞在你眼中就被贬低了。",
+          "R": "不可以打他超过四十下。如果打得更多，就会使他受羞辱，你们也不会再尊重这位以色列同胞了。"
         }
       },
       "decisions": [
@@ -599,6 +753,25 @@
           "choice": "your fellow Israelite",
           "alternatives": [],
           "reason": "Balanced and Readable say \"fellow Israelite\" for \"your brother\", which here means a member of the same people, as in 15:2. Literal keeps \"your brother\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050250030131"
+          ],
+          "choice": "'your brother' as \"あなたの兄弟\" (Literal), \"あなたの同胞\" (Balanced), \"同じイスラエル人\" (Readable), here and in 24:7, 24:14",
+          "alternatives": [],
+          "reason": "The fellow Israelite, as the English Balanced and Readable say it.",
           "uncertain": false,
           "footnote": false
         }
@@ -674,6 +847,26 @@
           "L": "Не заграждай рта молотящему волу.",
           "B": "Не надевай намордника на вола, когда он молотит зерно.",
           "R": "Когда бык молотит зерно, не надевай ему на морду намордник. Пусть ест."
+        },
+        "ja": {
+          "L": "脱穀している牛に口輪をはめてはならない。",
+          "B": "穀物を踏んで脱穀している牛に、口輪をはめてはならない。",
+          "R": "牛が穀物の上を歩いて、実を穂から外しているとき、牛の口をしばってはいけない。牛に食べさせなさい。"
+        },
+        "uk": {
+          "L": "Не завʼязуй рота волові, коли він молотить.",
+          "B": "Не завʼязуй рота волові, коли він молотить збіжжя.",
+          "R": "Коли віл ходить по збіжжю, щоб відділити зерно від стебел, не завʼязуй йому рота. Нехай їсть."
+        },
+        "id": {
+          "L": "Janganlah engkau memberangus lembu yang sedang mengirik.",
+          "B": "Jangan memberangus lembu yang sedang mengirik gandum.",
+          "R": "Apabila seekor lembu sedang berjalan di atas gandum untuk memisahkan bulirnya dari tangkainya, jangan mengikat mulutnya. Biarkanlah ia makan."
+        },
+        "zh": {
+          "L": "你不可给正在踩谷的牛戴上笼嘴。",
+          "B": "不要给打谷的牛戴上笼嘴。",
+          "R": "牛在打谷的时候，就是在谷物上走来走去、使谷粒脱离谷秆的时候，不要把它的嘴套住。要让它吃。"
         }
       },
       "decisions": [
@@ -872,6 +1065,68 @@
           "reason": "Paul quotes this verse in 1 Corinthians 9:9 (m2), and the Hebrew is the same as his Greek. The Russian of that verse in this translation is kept at each level; Readable adds \"Пусть ест.\" as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050250040011",
+            "o050250040021"
+          ],
+          "choice": "\"脱穀している牛に口輪をはめてはならない\" (Literal, Balanced)",
+          "alternatives": [],
+          "reason": "The same words as the Japanese of 1 Corinthians 9:9 and 1 Timothy 5:18, which quote this law.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050250040031"
+          ],
+          "choice": "\"Не завʼязуй рота волові, коли він молотить\"",
+          "alternatives": [
+            "\"Не надівай намордника\""
+          ],
+          "reason": "The verse is cited in 1 Corinthians 9:9 and 1 Timothy 5:18; the plain wording keeps it easy to recognise there.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050250040021",
+            "o050250040031"
+          ],
+          "choice": "as 1 Corinthians 9:9 and 1 Timothy 5:18 at each level",
+          "alternatives": [
+            "\"不可给打谷的牛戴上笼嘴\" (B)"
+          ],
+          "reason": "Paul quotes this law (m2) and the Hebrew says the same, so the New Testament's Chinese is kept at each level, Balanced's \"不要\" included. Readable adds what threshing is and the point of the law, as the English Readable does (m1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -979,6 +1234,26 @@
           "L": "Если братья живут вместе, и один из них умрёт, и сына нет у него, пусть жена умершего не выходит на сторону за чужого человека. Деверь её пусть войдёт к ней, и возьмёт её себе в жёны, и исполнит перед ней долг деверя.",
           "B": "Если братья живут вместе на родовой земле и один из них умрёт, не оставив сына, его вдова не должна выходить замуж за человека не из их семьи. Пусть её деверь женится на ней и так исполнит перед ней долг деверя.",
           "R": "Братья могут жить рядом на земле своей семьи. Если один из них умрёт, а сына у него нет, его вдова не должна выходить замуж за человека не из семьи. На ней должен жениться брат её умершего мужа. Это долг брата перед умершим братом."
+        },
+        "ja": {
+          "L": "兄弟たちが一緒に住んでいて、彼らのうちの一人が死に、彼に息子がいないときは、死んだ者の妻は、外の、よその男に[嫁いで]はならない。彼女の夫の兄弟が彼女のところに入り、彼女をめとって自分の妻とし、夫の兄弟としての務めを彼女に果たさなければならない。",
+          "B": "兄弟たちが一族の土地で一緒に住んでいて、そのうちの一人が息子のないまま死んだなら、その妻は一族の外の者と結婚してはならない。その夫の兄弟が彼女をめとり、夫の兄弟としての務めを果たさなければならない。",
+          "R": "兄弟たちが、家族の土地で近くに住んでいることがある。そのうちの一人が、息子がいないまま死んだら、その妻は家族の外の男と結婚してはいけない。死んだ夫の兄弟が、その人と結婚しなければならない。これは、義理の兄弟が、死んだ兄弟のために果たす務めである。"
+        },
+        "uk": {
+          "L": "Коли брати живуть разом, і один із них помре, і не матиме сина, то нехай дружина померлого не виходить заміж поза родину за чужого чоловіка. Брат її чоловіка нехай увійде до неї, і візьме її собі за дружину, і виконає щодо неї обовʼязок дівера.",
+          "B": "Коли брати живуть разом на родинній землі й один із них помре без сина, його вдова не повинна виходити заміж за когось поза родиною. Натомість брат її чоловіка має одружитися з нею й так виконати щодо неї обовʼязок дівера.",
+          "R": "Брати можуть жити поруч на родинній землі. Якщо один із них помре й не матиме сина, його вдова не повинна виходити заміж за чоловіка з іншої родини. Брат її померлого чоловіка мусить одружитися з нею. Це обовʼязок, який брат має перед своїм померлим братом."
+        },
+        "id": {
+          "L": "Apabila saudara-saudara tinggal bersama-sama dan salah seorang dari mereka mati dengan tidak meninggalkan anak laki-laki, janganlah istri orang yang mati itu kawin dengan orang asing di luar; saudara suaminya harus menghampiri dia dan mengambil dia menjadi istrinya dan melakukan kewajiban ipar kepadanya.",
+          "B": "Apabila beberapa orang bersaudara tinggal bersama di tanah keluarga dan salah seorang dari mereka meninggal tanpa mempunyai anak laki-laki, jandanya tidak boleh kawin dengan orang di luar keluarga itu. Saudara suaminya harus mengawininya dan dengan demikian melakukan kewajiban seorang ipar kepadanya.",
+          "R": "Mungkin beberapa orang bersaudara tinggal berdekatan di tanah keluarga mereka. Jika salah seorang dari mereka meninggal tanpa mempunyai anak laki-laki, jandanya tidak boleh menikah dengan laki-laki dari luar keluarga itu. Saudara suaminya yang sudah meninggal itu harus menikahinya. Itulah kewajiban seorang ipar kepada saudaranya yang sudah meninggal."
+        },
+        "zh": {
+          "L": "兄弟住在一起的时候，若他们中间有一个死了，没有儿子，那死人的妻子就不可在[家族]以外[嫁]给陌生的男人；她丈夫的兄弟要进到她那里，娶她为妻，向她尽丈夫兄弟的本分。",
+          "B": "兄弟在家族的地业上一起生活，其中一个死了，没有留下儿子，他的遗孀就不可嫁给家族以外的人。她丈夫的兄弟要娶她，向她尽丈夫兄弟应尽的义务。",
+          "R": "兄弟们可能住在一起，在家族的土地上生活。如果其中一个死了，没有儿子，他的遗孀就不可以嫁给家族以外的男人。她死去丈夫的兄弟必须娶她。这是兄弟对死去的兄弟应尽的责任。"
         }
       },
       "decisions": [
@@ -1253,6 +1528,106 @@
           "reason": "Russian has an exact word for a husband's brother, \"деверь\", which keeps the Hebrew's single word and the custom named after it (m1). Readable says \"брат её умершего мужа\", since \"деверь\" is no longer known to many readers.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050250050181",
+            "o050250050242"
+          ],
+          "choice": "yibbem \"夫の兄弟としての務めを果たす\" (Literal, Balanced), \"義理の兄弟が果たす務め\" (Readable)",
+          "alternatives": [],
+          "reason": "Says what the custom is (levirate marriage) without a technical word.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050250050181"
+          ],
+          "choice": "\"обовʼязок дівера\"",
+          "alternatives": [
+            "\"левіратний шлюб\""
+          ],
+          "reason": "\"Дівер\" is the ordinary Ukrainian word for a husband's brother, so the duty can be named without the technical term \"levirate\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [],
+          "choice": "\"kewajiban ipar\" for the duty of the levir",
+          "alternatives": [],
+          "reason": "Indonesian \"ipar\" is the brother-in-law; \"kewajiban ipar\" says what he owes his dead brother's widow.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050250050181",
+            "o050250050242"
+          ],
+          "choice": "\"她丈夫的兄弟\"; \"尽丈夫兄弟的本分\" (L), \"应尽的义务\" (B), \"应尽的责任\" (R)",
+          "alternatives": [
+            "\"小叔子\""
+          ],
+          "reason": "The levirate duty (m1), worded as Genesis 38:8 has it, but with the neutral \"丈夫的兄弟\": Chinese must choose an older or younger brother, and the law says neither, as Matthew 22:24 decided with \"兄弟\". The Sadducees' summary of this law in Matthew 22:24, Mark 12:19 and Luke 20:28 is a paraphrase of the Greek, so its wording is not copied here.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050250050131",
+            "o050250050142"
+          ],
+          "choice": "\"遗孀\"",
+          "alternatives": [
+            "\"寡妇\""
+          ],
+          "reason": "\"The wife of the dead man\" is his widow; Balanced and Readable say \"遗孀\", the word Genesis 38 uses for the same duty, through verses 5-9. Literal keeps \"死人的妻子\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1340,6 +1715,26 @@
           "L": "И будет [так]: первенец, которого она родит, встанет на имя умершего брата его, чтобы не изгладилось имя его из Израиля.",
           "B": "Первый сын, которого она родит, будет носить имя умершего брата, чтобы имя умершего не исчезло из Израиля.",
           "R": "Её первого сына будут считать сыном умершего. Так имя семьи умершего не исчезнет из Израиля."
+        },
+        "ja": {
+          "L": "そして彼女が産む長子は、死んだ彼の兄弟の名を継ぎ、彼の名がイスラエルから消し去られないようにしなければならない。",
+          "B": "彼女が産む最初の息子は、死んだ兄弟の名を継がなければならない。こうして、死んだ者の名がイスラエルから消し去られないようにする。",
+          "R": "その人が産む最初の息子は、死んだ人の息子とされる。そうすれば、死んだ人の家の名が、イスラエルから消えてしまうことはない。"
+        },
+        "uk": {
+          "L": "І буде, що первісток, якого вона народить, стане на імʼя свого померлого брата, щоб не стерлося його імʼя з Ізраїлю.",
+          "B": "Перший син, якого вона народить, має носити імʼя померлого брата, щоб імʼя померлого не стерлося з Ізраїлю.",
+          "R": "Її перший син вважатиметься сином померлого. Так родинне імʼя померлого не зникне з Ізраїлю."
+        },
+        "id": {
+          "L": "Dan anak sulung yang dilahirkannya harus meneruskan nama saudaranya yang mati itu, supaya nama itu jangan terhapus dari Israel.",
+          "B": "Anak sulung yang dilahirkannya harus meneruskan nama saudaranya yang sudah meninggal itu, supaya nama orang yang meninggal itu tidak terhapus dari Israel.",
+          "R": "Anak laki-laki pertama yang dilahirkannya akan dianggap anak orang yang sudah meninggal itu. Dengan begitu nama keluarga orang itu tidak akan hilang dari Israel."
+        },
+        "zh": {
+          "L": "她所生的头胎儿子要立在他死去兄弟的名下，使他的名不从以色列中被抹掉。",
+          "B": "她生的头一个儿子要承继死去兄弟的名，这样，死者的名就不会从以色列中被抹去。",
+          "R": "她生的第一个儿子要算作死者的儿子。这样，死者的家族名字就不会从以色列中消失。"
         }
       },
       "decisions": [
@@ -1511,6 +1906,26 @@
           "L": "А если человек не захочет взять жену брата своего, пусть жена брата его пойдёт к воротам, к старейшинам, и скажет: “Деверь мой отказывается восставить имя брату своему в Израиле; он не хочет исполнить мне долг деверя.”",
           "B": "Но если он не захочет жениться на вдове своего брата, пусть она пойдёт к старейшинам у городских ворот и скажет: “Мой деверь отказывается сохранить имя своего брата в Израиле. Он не хочет исполнить передо мной долг деверя.”",
           "R": "Но брат может не захотеть жениться на вдове своего брата. Тогда она должна пойти к старейшинам города у городских ворот. Она должна сказать им: “Брат моего мужа не хочет сохранить имя семьи моего умершего мужа в Израиле. Он отказывается исполнить свой долг и жениться на мне.”"
+        },
+        "ja": {
+          "L": "しかし、もしその人が自分の兄弟の妻をめとることを望まないなら、その兄弟の妻は門のところに、長老たちのところに上って行って言わなければならない。『わたしの夫の兄弟は、イスラエルの中で自分の兄弟のために名を起こすことを拒み、わたしに夫の兄弟としての務めを果たそうとしません。』",
+          "B": "しかし、もしその人が兄弟の妻をめとろうとしないなら、彼女は町の門にいる長老たちのところに上って行って、こう言わなければならない。『わたしの夫の兄弟は、イスラエルの中で兄弟の名を残すことを拒み、夫の兄弟としての務めをわたしに果たそうとしません。』",
+          "R": "しかし、その兄弟が、死んだ兄弟の妻と結婚したくないと思うかもしれない。そのときは、妻は町の門にいる町の指導者たちのところに行って、こう言わなければならない。『夫の兄弟は、わたしの死んだ夫の家の名を、イスラエルに残そうとしません。わたしと結婚する務めを果たそうとしないのです。』"
+        },
+        "uk": {
+          "L": "А якщо той чоловік не захоче взяти дружину свого брата, то нехай піде дружина його брата до брами, до старших, і скаже: “Мій дівер відмовляється підняти своєму братові імʼя в Ізраїлі; він не хоче виконати щодо мене обовʼязку дівера.”",
+          "B": "Але якщо чоловік не хоче одружуватися з удовою свого брата, вона має піти до старших біля міської брами й сказати: “Мій дівер відмовляється зберегти імʼя свого брата в Ізраїлі. Він не хоче виконати щодо мене обовʼязку дівера.”",
+          "R": "Але брат може не захотіти одружитися з удовою свого брата. Тоді вона мусить піти до старших міста біля міської брами. Вона мусить сказати їм: “Мій дівер не хоче зберегти родинне імʼя мого померлого чоловіка в Ізраїлі. Він відмовляється виконати свій обовʼязок і одружитися зі мною.”"
+        },
+        "id": {
+          "L": "Tetapi apabila laki-laki itu tidak suka mengambil istri saudaranya, istri saudaranya itu harus pergi ke pintu gerbang kepada tua-tua dan berkata, 'Iparku menolak menegakkan nama saudaranya di Israel; ia tidak mau melakukan kewajiban ipar kepadaku.'",
+          "B": "Tetapi jika laki-laki itu tidak mau mengawini janda saudaranya, perempuan itu harus pergi kepada tua-tua di pintu gerbang kota dan berkata, 'Iparku menolak mempertahankan nama saudaranya di Israel. Ia tidak mau melakukan kewajiban ipar kepadaku.'",
+          "R": "Tetapi mungkin saudara itu tidak mau menikahi janda saudaranya. Kalau begitu, perempuan itu harus pergi kepada para pemimpin kota di pintu gerbang kota. Ia harus berkata kepada mereka, 'Iparku tidak mau mempertahankan nama keluarga suamiku yang sudah meninggal di Israel. Ia menolak melakukan kewajibannya dan menikahi aku.'"
+        },
+        "zh": {
+          "L": "那人若不愿意娶他兄弟的妻子，他兄弟的妻子就要上到城门那里，到长老面前，说：‘我丈夫的兄弟不肯在以色列中为他的兄弟兴起名字；他不愿意向我尽丈夫兄弟的本分。’",
+          "B": "但如果那人不愿意娶他兄弟的遗孀，她就要到城门口长老那里去，说：‘我丈夫的兄弟不肯在以色列中延续他兄弟的名，不肯为我尽丈夫兄弟的义务。’",
+          "R": "但是，那兄弟可能不想娶他兄弟的遗孀。那么，她必须到城门口去见城里的领袖，告诉他们：‘我丈夫的兄弟不肯在以色列中延续我死去丈夫的家族名字。他不肯尽他的责任娶我。’"
         }
       },
       "decisions": [
@@ -1696,6 +2111,63 @@
           "reason": "The English Readable says \"town leaders\". Russian \"старейшины\" is plain and current for the older men who judged at the gate (m1), and the Russian New Testament keeps it at every level, so Readable keeps it too.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o050250070101",
+            "o050250070103",
+            "o050250070122"
+          ],
+          "choice": "The widow speaks to the elders politely (です・ます)",
+          "alternatives": [],
+          "reason": "A petitioner before the town's court, as the style guide asks for speech to those in authority.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050250070122"
+          ],
+          "choice": "elders \"町の指導者たち\" (Readable); \"長老たち\" (Literal, Balanced)",
+          "alternatives": [],
+          "reason": "As the English Readable 'town leaders'.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050250070122"
+          ],
+          "choice": "\"城里的领袖\"",
+          "alternatives": [
+            "\"长老\""
+          ],
+          "reason": "As the English Readable \"town leaders\": the elders were the older men who led the town and sat as its court at the gate (m1). Literal and Balanced keep \"长老\". So in verses 8-9.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1783,6 +2255,26 @@
           "L": "И позовут его старейшины его города и поговорят с ним; и [если] он будет стоять [на своём] и скажет: “Не хочу взять её”,",
           "B": "Тогда старейшины его города должны позвать его и поговорить с ним. Если он будет стоять на своём и скажет: “Я не хочу жениться на ней”,",
           "R": "Тогда старейшины его города должны позвать его и поговорить с ним. Но он может и тогда сказать: “Я не хочу жениться на ней.”"
+        },
+        "ja": {
+          "L": "そして彼の町の長老たちは彼を呼び出して、彼に語らなければならない。[それでも]彼が[言い張って]立ち、『わたしは彼女をめとりたくない』と言うなら、",
+          "B": "そこで町の長老たちは、その人を呼び出して話をしなければならない。それでもその人が拒み続けて、『わたしは彼女をめとりたくありません』と言うなら、",
+          "R": "町の指導者たちは、その人を呼んで話をしなければならない。それでもその人は、『わたしはその人と結婚したくありません』と言うかもしれない。"
+        },
+        "uk": {
+          "L": "І нехай покличуть його старші його міста й поговорять із ним; і якщо він стоятиме на своєму і скаже: “Не хочу брати її,”",
+          "B": "Тоді старші його міста мають викликати його й поговорити з ним. Якщо він стоїть на своїй відмові й каже: “Я не хочу одружуватися з нею,”",
+          "R": "Тоді старші його міста мусять покликати його й поговорити з ним. Але він може й далі казати: “Я не хочу одружуватися з нею.”"
+        },
+        "id": {
+          "L": "Dan tua-tua kotanya harus memanggil dia dan berbicara kepadanya; dan apabila ia tetap pada pendiriannya dan berkata, 'Aku tidak suka mengambil dia,'",
+          "B": "Lalu tua-tua kotanya harus memanggilnya dan berbicara dengannya. Jika ia tetap menolak dan berkata, 'Aku tidak mau mengawininya,'",
+          "R": "Lalu para pemimpin kotanya harus memanggil dia dan berbicara dengannya. Tetapi ia mungkin tetap berkata, 'Aku tidak mau menikahinya.'"
+        },
+        "zh": {
+          "L": "他城里的长老就要召他来，对他说话；[若]他站定[不改]，说：‘我不愿意娶她。’",
+          "B": "他城里的长老就要召他来，跟他谈。如果他坚持拒绝，说：‘我不想娶她。’",
+          "R": "然后，他城里的领袖必须叫他来，跟他谈。但他可能仍然说：‘我不想娶她。’"
         }
       },
       "decisions": [
@@ -1938,6 +2430,26 @@
           "L": "то пусть жена брата его подойдёт к нему на глазах у старейшин, и снимет сандалию его с ноги его, и плюнет ему в лицо, и ответит, и скажет: “Так поступают с человеком, который не строит дом брата своего.”",
           "B": "то вдова его брата должна подойти к нему перед старейшинами, снять сандалию с его ноги и плюнуть ему в лицо. И пусть она объявит: “Так поступают с каждым, кто отказывается построить семью своему брату.”",
           "R": "Тогда, пока старейшины смотрят, вдова должна подойти к нему. Она должна снять с его ноги одну сандалию и плюнуть ему в лицо. Потом она должна сказать: “Вот что бывает с человеком, который не хочет дать своему брату семью.”"
+        },
+        "ja": {
+          "L": "その兄弟の妻は、長老たちの目の前で彼に近づき、彼の足からそのサンダルを脱がせ、彼の顔につばを吐きかけ、答えて言わなければならない。『自分の兄弟の家を建てない人は、このようにされる。』",
+          "B": "その兄弟の妻は、長老たちの前でその人に近づき、その足からサンダルを脱がせ、その顔につばを吐きかけて、こう言わなければならない。『兄弟の家を建てようとしない者は、このようにされるのだ。』",
+          "R": "そのときは、指導者たちが見ている前で、妻がその人に近づかなければならない。その人の片方のサンダルを足から脱がせ、顔につばを吐きかけなければならない。そして、こう言わなければならない。『自分の兄弟に家族を与えようとしない男は、こういう目にあうのだ。』"
+        },
+        "uk": {
+          "L": "то нехай підійде до нього дружина його брата на очах старших, і зніме його сандалю з його ноги, і плюне йому в обличчя, і відповість, і скаже: “Так робиться чоловікові, який не будує дому свого брата.”",
+          "B": "тоді вдова його брата має підійти до нього перед старшими, зняти сандалю з його ноги й плюнути йому в обличчя. Тоді вона має заявити: “Так буде зроблено кожному чоловікові, який не хоче збудувати родину свого брата.”",
+          "R": "Тоді на очах у старших удова мусить підійти до нього. Вона мусить зняти одну з його сандаль із ноги й плюнути йому в обличчя. Тоді вона мусить сказати: “Ось що буває з чоловіком, який не хоче дати своєму братові родини.”"
+        },
+        "id": {
+          "L": "istri saudaranya itu harus mendekati dia di depan mata tua-tua, dan menanggalkan kasutnya dari kakinya, dan meludahi mukanya, dan menjawab dan berkata, 'Beginilah dilakukan kepada orang yang tidak mau membangun keluarga saudaranya.'",
+          "B": "janda saudaranya itu harus mendekatinya di depan tua-tua, menanggalkan kasutnya dari kakinya, dan meludahi mukanya. Lalu ia harus berkata, 'Beginilah dilakukan kepada setiap orang yang tidak mau membangun keluarga saudaranya.'",
+          "R": "Kalau begitu, di depan para pemimpin itu, janda itu harus mendekati dia. Ia harus menanggalkan salah satu kasut dari kaki laki-laki itu dan meludahi mukanya. Lalu ia harus berkata, 'Inilah yang terjadi pada laki-laki yang tidak mau memberikan keluarga kepada saudaranya.'"
+        },
+        "zh": {
+          "L": "他兄弟的妻子就要在长老眼前近前到他那里，把他的鞋从他脚上脱下来，向他的脸吐唾沫，并且回答说：‘不建立他兄弟家室的人，就要这样受对待。’",
+          "B": "他兄弟的遗孀就要在长老面前走到他那里，脱下他脚上的鞋，向他脸上吐唾沫，然后宣告：‘谁不肯为他的兄弟建立家庭，就要受这样的对待。’",
+          "R": "然后，那遗孀必须在城里的领袖面前走到他那里，从他的一只脚上脱下一只鞋，向他的脸吐唾沫。然后她要说：‘不肯帮兄弟建立家庭的人，就会受这样的对待。’"
         }
       },
       "decisions": [
@@ -2050,6 +2562,45 @@
           "reason": "\"जूती\" is the plain open shoe of the Hindi village; pulling it off is the sign that he gives up his right and his duty (m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o050250090102",
+            "o050250090111",
+            "o050250090112"
+          ],
+          "choice": "The widow's words of disgrace in the plain style (〜される / 〜のだ)",
+          "alternatives": [],
+          "reason": "A public formula pronounced against the man, not a request to the court.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050250090122",
+            "o050250090132"
+          ],
+          "choice": "\"回答说\"",
+          "alternatives": [],
+          "reason": "The formula \"answered and said\" (style guide section 12): 回答说 at Literal; Balanced says \"宣告\" for her public declaration, Readable \"说\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2127,6 +2678,26 @@
           "L": "И будет наречено имя его в Израиле: “Дом разутого.”",
           "B": "И его семью будут звать в Израиле: “Семья того, с кого сняли сандалию.”",
           "R": "С тех пор его семью в Израиле будут называть так: “Семья человека, с которого сняли сандалию.”"
+        },
+        "ja": {
+          "L": "そして彼の名はイスラエルの中で、『サンダルを脱がされた者の家』と呼ばれる。",
+          "B": "その人の家は、イスラエルの中で『サンダルを脱がされた者の家』と呼ばれるようになる。",
+          "R": "それからは、その人の家族はイスラエルの中で、『サンダルを脱がされた男の家族』と呼ばれるようになる。"
+        },
+        "uk": {
+          "L": "І нехай буде назване його імʼя в Ізраїлі: “Дім того, з кого знято сандалю.”",
+          "B": "І його родину знатимуть в Ізраїлі як “Родина того, з кого знято сандалю.”",
+          "R": "Відтоді його родину знатимуть в Ізраїлі як “Родина чоловіка, з якого зняли сандалю.”"
+        },
+        "id": {
+          "L": "Dan nama keluarganya di Israel akan disebut 'Keluarga orang yang kasutnya ditanggalkan.'",
+          "B": "Keluarganya akan dikenal di Israel sebagai 'Keluarga orang yang kasutnya ditanggalkan.'",
+          "R": "Sejak saat itu, keluarganya akan dikenal di Israel sebagai 'Keluarga orang yang kasutnya ditanggalkan.'"
+        },
+        "zh": {
+          "L": "在以色列中，他的名要被称为‘被脱去鞋的人的家’。",
+          "B": "他的家族在以色列中要被称为‘被人脱了鞋的那人的家族’。",
+          "R": "从那以后，他的家族在以色列中会被人叫作‘被人脱掉鞋的那人的家族’。"
         }
       },
       "decisions": [
@@ -2298,6 +2869,26 @@
           "L": "Если будут драться люди вместе, человек с братом своим, и подойдёт жена одного, чтобы выручить своего мужа из руки бьющего его, и протянет руку свою и схватит [его] за срамные части,",
           "B": "Если двое мужчин дерутся и жена одного из них подойдёт, чтобы выручить мужа от того, кто его бьёт, и протянет руку и схватит другого за половые органы,",
           "R": "Допустим, двое мужчин дерутся, и жена одного из них подходит, чтобы помочь мужу против того, кто его бьёт. Она протягивает руку и хватает того человека за половые органы."
+        },
+        "ja": {
+          "L": "男たちが、すなわち、ある人とその兄弟とが、一緒に取っ組み合っているとき、その一方の妻が、自分の夫を打っている者の手から救い出そうとして近づき、手を伸ばして、その[男の]陰部をつかんだなら、",
+          "B": "二人の男が取っ組み合いのけんかをしていて、一方の妻が、夫を打っている相手の男から夫を救おうとして近づき、手を伸ばして、その男の陰部をつかんだなら、",
+          "R": "二人の男がけんかをしていて、一人の妻が、夫をなぐっている男から夫を助けようとして近づくことがあるかもしれない。妻は手を伸ばして、その男の陰部をつかむ。"
+        },
+        "uk": {
+          "L": "Коли битимуться чоловіки разом, чоловік і його брат, і підійде дружина одного, щоб урятувати свого чоловіка з руки того, хто його бʼє, і простягне свою руку, і схопить його за соромні частини,",
+          "B": "Якщо двоє чоловіків бʼються між собою, і дружина одного з них підходить, щоб урятувати свого чоловіка від того, хто його бʼє, і простягає руку й хапає іншого чоловіка за соромні частини,",
+          "R": "Припустімо, двоє чоловіків бʼються, і дружина одного з них підходить, щоб допомогти своєму чоловікові проти того, хто його бʼє. Вона простягає руку й хапає того чоловіка за соромні частини."
+        },
+        "id": {
+          "L": "Apabila dua orang laki-laki berkelahi, seorang dengan saudaranya, dan istri salah seorang mendekat untuk melepaskan suaminya dari tangan orang yang memukulnya, dan ia mengulurkan tangannya dan memegang kemaluan orang itu,",
+          "B": "Jika dua orang laki-laki berkelahi, lalu istri salah seorang dari mereka datang untuk melepaskan suaminya dari orang yang memukulnya, dan perempuan itu mengulurkan tangannya dan memegang kemaluan laki-laki itu,",
+          "R": "Mungkin dua orang laki-laki berkelahi, lalu istri salah seorang dari mereka datang untuk menolong suaminya melawan laki-laki yang memukulnya. Perempuan itu mengulurkan tangan dan memegang kemaluan laki-laki itu."
+        },
+        "zh": {
+          "L": "若有人彼此争斗，就是一人与他的弟兄，其中一人的妻子近前来，要救她丈夫脱离打他之人的手，就伸手抓住[那人]的下体，",
+          "B": "如果两个男人彼此打架，其中一人的妻子上前，要从打她丈夫的人手中救出丈夫，她伸手抓住了那人的下体，",
+          "R": "假如两个男人在打架，其中一人的妻子过来，帮她丈夫对付打他的人。她伸手抓住那人的下体。"
         }
       },
       "decisions": [
@@ -2440,6 +3031,26 @@
           "L": "то отсеки ей руку; да не пощадит [её] глаз твой.",
           "B": "то ты должен отсечь ей руку. Не жалей её.",
           "R": "Тогда ты должен отрубить ей руку. Не жалей её."
+        },
+        "ja": {
+          "L": "あなたは彼女の手を切り落とさなければならない。あなたの目は[彼女を]あわれんではならない。",
+          "B": "あなたはその女の手を切り落としなさい。あわれみをかけてはならない。",
+          "R": "そのときは、その女の手を切り落としなさい。かわいそうだと思ってはいけない。"
+        },
+        "uk": {
+          "L": "то відітни її долоню; нехай не жаліє твоє око.",
+          "B": "то ти мусиш відтяти їй руку. Не май до неї жалю.",
+          "R": "Тоді ти мусиш відтяти їй руку. Не жалій її."
+        },
+        "id": {
+          "L": "engkau harus memotong tangannya; janganlah matamu merasa sayang.",
+          "B": "engkau harus memotong tangannya. Jangan mengasihaninya.",
+          "R": "Kalau begitu, kalian harus memotong tangannya. Jangan merasa kasihan kepadanya."
+        },
+        "zh": {
+          "L": "你就要砍断她的手；你的眼不可顾惜[她]。",
+          "B": "你就必须砍断她的手，不可怜惜她。",
+          "R": "那么，你必须砍掉她的手。不要为她难过。"
         }
       },
       "decisions": [
@@ -2574,6 +3185,26 @@
           "L": "Пусть не будет у тебя в мешке твоём камня и камня, большого и малого.",
           "B": "Не носи в своём мешке двух разных гирь, тяжёлую и лёгкую.",
           "R": "Не держи в своём мешке два набора гирь, тяжёлые и лёгкие."
+        },
+        "ja": {
+          "L": "あなたの袋の中に、大きいのと小さいのと、石と石とがあってはならない。",
+          "B": "あなたの袋に、重いのと軽いのと、二種類の重りを入れておいてはならない。",
+          "R": "袋の中に、重いのと軽いのと、二種類のおもりを入れておいてはいけない。"
+        },
+        "uk": {
+          "L": "Нехай не буде в тебе у твоїй торбі каменя і каменя, великого й малого.",
+          "B": "Не носи у своїй торбі двох різних гир, важкого й легкого.",
+          "R": "Не тримай у своїй торбі двох наборів гир, важкого й легкого."
+        },
+        "id": {
+          "L": "Janganlah ada di dalam pundi-pundimu dua macam batu timbangan, yang besar dan yang kecil.",
+          "B": "Jangan membawa dua macam batu timbangan di dalam pundi-pundimu, yang berat dan yang ringan.",
+          "R": "Jangan menyimpan dua macam batu timbangan di dalam kantong kalian, yang berat dan yang ringan."
+        },
+        "zh": {
+          "L": "你的袋子里不可有两种石头，大的和小的。",
+          "B": "你的袋子里不可带两种不同的砝码，一种重，一种轻。",
+          "R": "不要在袋子里放两套砝码，一套重，一套轻。"
         }
       },
       "decisions": [
@@ -2710,6 +3341,47 @@
           "reason": "Literal keeps the Hebrew \"a stone and a stone\": weights were stones, and the repetition means two kinds for the same unit (m2). Balanced and Readable say \"гири\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050250130051",
+            "o050250130062"
+          ],
+          "choice": "\"石と石\" (Literal), \"二種類の重り\" (Balanced), \"二種類のおもり\" (Readable)",
+          "alternatives": [],
+          "reason": "The Hebrew repeats 'a stone and a stone' for two weights; Literal keeps the repetition.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050250130051",
+            "o050250130062"
+          ],
+          "choice": "\"砝码\"",
+          "alternatives": [
+            "\"法码\""
+          ],
+          "reason": "The stones were weights for a balance (m1); Balanced and Readable say \"砝码\", the standard modern form; Literal keeps \"石头\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2790,6 +3462,26 @@
           "L": "Пусть не будет у тебя в доме твоём ефы и ефы, большой и малой.",
           "B": "Не держи в своём доме двух разных мер для зерна, большую и малую.",
           "R": "Не держи у себя дома две разные корзины для того, чтобы мерить зерно, большую и маленькую."
+        },
+        "ja": {
+          "L": "あなたの家に、大きいのと小さいのと、エファとエファとがあってはならない。",
+          "B": "あなたの家に、大きいのと小さいのと、二種類の穀物の升を置いておいてはならない。",
+          "R": "家の中に、大きいのと小さいのと、二種類の穀物をはかるかごを置いておいてはいけない。"
+        },
+        "uk": {
+          "L": "Нехай не буде в тебе у твоєму домі ефи і ефи, великої й малої.",
+          "B": "Не тримай у своєму домі двох різних мірок для зерна, великої й малої.",
+          "R": "Не тримай у своєму домі двох різних кошиків для міряння зерна, великого й малого."
+        },
+        "id": {
+          "L": "Janganlah ada di dalam rumahmu dua macam efa, yang besar dan yang kecil.",
+          "B": "Jangan menyimpan dua macam takaran di rumahmu, yang besar dan yang kecil.",
+          "R": "Jangan menyimpan dua macam keranjang untuk menakar gandum di rumah kalian, yang besar dan yang kecil."
+        },
+        "zh": {
+          "L": "你的家里不可有两种伊法，大的和小的。",
+          "B": "你的家里不可有两种不同的量器，一种大，一种小。",
+          "R": "不要在家里放两种不同的量谷物的篮子，一个大，一个小。"
         }
       },
       "decisions": [
@@ -2910,6 +3602,25 @@
           "reason": "The English has no units span here, since the point is the measuring vessel, not its size (m1); so neither does the Hindi. Literal keeps the name, and Balanced and Readable say what it was, as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050250140051"
+          ],
+          "choice": "\"ефа\" (L), \"мірка для зерна\" (B), \"кошик для міряння зерна\" (R)",
+          "alternatives": [
+            "an amount in litres"
+          ],
+          "reason": "The verse is about two sizes of the same measuring vessel, not an amount, so no units span is needed; Literal keeps the name of the measure.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3005,6 +3716,26 @@
           "L": "Камень полный и верный пусть будет у тебя, ефа полная и верная пусть будет у тебя, чтобы продлились дни твои на земле, которую {{divine_name:ГОСПОДЬ|Яхве}}, Бог твой, даёт тебе.",
           "B": "Гири у тебя должны быть полновесные и честные, и меры — полные и честные, чтобы ты долго жил на земле, которую {{divine_name:ГОСПОДЬ|Яхве}}, твой Бог, даёт тебе.",
           "R": "Твои гири и меры должны быть честными и правильными. Тогда ты будешь долго жить на земле, которую {{divine_name:ГОСПОДЬ|Яхве}}, твой Бог, даёт тебе."
+        },
+        "ja": {
+          "L": "完全で正しい石を、あなたは持たなければならない。完全で正しいエファを、あなたは持たなければならない。あなたの神、{{divine_name:主|ヤハウェ}}があなたに与えようとしておられる土地で、あなたの日々が長くなるためである。",
+          "B": "あなたは、欠けたところのない正しい重りと、欠けたところのない正しい升を持ちなさい。そうすれば、あなたの神、{{divine_name:主|ヤハウェ}}が与えようとしておられる土地で、長く生きることができる。",
+          "R": "おもりも、ますも、正しい大きさの、ごまかしのないものを使いなさい。そうすれば、あなたの神、{{divine_name:主|ヤハウェ}}が与えてくださる土地で、長く生きることができる。"
+        },
+        "uk": {
+          "L": "Повний і справедливий камінь нехай буде в тебе, повна й справедлива ефа нехай буде в тебе, щоб довгими були твої дні на землі, яку {{divine_name:ГОСПОДЬ|Ягве}}, твій Бог, дає тобі.",
+          "B": "Ти мусиш мати гирі повні й чесні та мірки повні й чесні, щоб ти довго жив на землі, яку {{divine_name:ГОСПОДЬ|Ягве}}, твій Бог, дає тобі.",
+          "R": "Твої гирі й мірки мусять бути чесними й правильного розміру. Тоді ти довго житимеш на землі, яку {{divine_name:ГОСПОДЬ|Ягве}}, твій Бог, дає тобі."
+        },
+        "id": {
+          "L": "Batu timbangan yang utuh dan benar haruslah ada padamu, efa yang utuh dan benar haruslah ada padamu, supaya lanjut umurmu di tanah yang diberikan {{divine_name:TUHAN|Yahweh}}, Allahmu, kepadamu.",
+          "B": "Engkau harus mempunyai batu timbangan yang tepat dan jujur, dan takaran yang tepat dan jujur, supaya lanjut umurmu di negeri yang diberikan {{divine_name:TUHAN|Yahweh}}, Allahmu, kepadamu.",
+          "R": "Batu timbangan dan takaran kalian harus jujur dan tepat ukurannya. Dengan begitu kalian akan hidup lama di negeri yang diberikan {{divine_name:TUHAN|Yahweh}}, Allah kalian, kepada kalian."
+        },
+        "zh": {
+          "L": "你要有完整、公正的石头；你要有完整、公正的伊法，好让你的年日在{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}赐给你的地上得以延长。",
+          "B": "你要用足重而公正的砝码，足量而公正的量器，好让你在{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}赐给你的地上享长寿。",
+          "R": "你的砝码和量器都必须诚实准确。这样，你就会在{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}赐给你的地方活得长久。"
         }
       },
       "decisions": [
@@ -3099,6 +3830,26 @@
           "reason": "For the passage (verses 13-16): the word is the one for righteousness and justice (m1), and Portuguese \"justo\" says both that a weight is accurate and that it is right before God, so every level keeps it where the English Balanced and Readable say \"honest\". Literal keeps \"pedra\" and \"efa\", as the English keeps \"stone\" and \"ephah\"; Balanced and Readable say \"pesos\" and \"medidas\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o050250150181",
+            "o050250150182"
+          ],
+          "choice": "{{god_term:神|上帝}}",
+          "alternatives": [],
+          "reason": "Every word naming the one God is a god_term span: \"神\" by default, \"上帝\" for readers who choose it. The two name the same God; only the wording changes.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3177,6 +3928,26 @@
           "L": "Ведь мерзость для {{divine_name:ГОСПОДА|Яхве}}, Бога твоего, всякий, кто делает это, всякий, кто делает неправду.",
           "B": "Ведь {{divine_name:ГОСПОДУ|Яхве}}, твоему Богу, отвратителен всякий, кто так поступает, всякий, кто поступает нечестно.",
           "R": "Это потому, что {{divine_name:ГОСПОДЬ|Яхве}}, твой Бог, ненавидит, когда кто-то так поступает и обманывает других."
+        },
+        "ja": {
+          "L": "これらのことをするすべての者、不正を行うすべての者は、あなたの神、{{divine_name:主|ヤハウェ}}にとって忌むべきものだからである。",
+          "B": "このようなことをする者、不正を行う者はみな、あなたの神、{{divine_name:主|ヤハウェ}}にとって忌むべきものだからである。",
+          "R": "このようなことをして人をだます人はだれでも、あなたの神、{{divine_name:主|ヤハウェ}}にとって、ひどく汚らわしいものなのだ。"
+        },
+        "uk": {
+          "L": "Бо гидота для {{divine_name:ГОСПОДА|Ягве}}, твого Бога, кожен, хто чинить це, кожен, хто чинить кривду.",
+          "B": "Бо {{divine_name:ГОСПОДЬ|Ягве}}, твій Бог, гидує кожним, хто чинить таке, кожним, хто діє нечесно.",
+          "R": "Це тому, що {{divine_name:ГОСПОДЬ|Ягве}}, твій Бог, ненавидить, коли хтось чинить таке й ошукує інших."
+        },
+        "id": {
+          "L": "Sebab setiap orang yang melakukan hal-hal ini, setiap orang yang berbuat curang, adalah kekejian bagi {{divine_name:TUHAN|Yahweh}}, Allahmu.",
+          "B": "Sebab {{divine_name:TUHAN|Yahweh}}, Allahmu, jijik terhadap setiap orang yang melakukan hal-hal seperti itu, setiap orang yang berbuat curang.",
+          "R": "Ini karena {{divine_name:TUHAN|Yahweh}}, Allah kalian, membenci setiap orang yang melakukan hal-hal itu dan menipu orang lain."
+        },
+        "zh": {
+          "L": "因为做这些事的每一个人，就是一切行不义的人，都是{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}所憎恶的。",
+          "B": "因为{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}厌恶做这些事的人，就是一切行事不诚实的人。",
+          "R": "这是因为{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}恨恶做这些事、欺骗别人的人。"
         }
       },
       "decisions": [
@@ -3328,6 +4099,26 @@
           "L": "Помни, что сделал тебе Амалик в пути, когда вы выходили из Египта,",
           "B": "Помни, что сделал тебе Амалик в пути, когда вы шли из Египта,",
           "R": "Помни, что сделали тебе амаликитяне, когда вы шли из Египта."
+        },
+        "ja": {
+          "L": "あなたがたがエジプトから出て来たとき、道中で、アマレクがあなたにしたことを覚えていなさい。",
+          "B": "あなたがたがエジプトから出て来た旅の途中で、アマレクがあなたにしたことを思い起こしなさい。",
+          "R": "あなたたちがエジプトを出て旅をしていたとき、アマレク人があなたにしたことを思い出しなさい。"
+        },
+        "uk": {
+          "L": "Памʼятай, що зробив тобі Амалек у дорозі, коли ви виходили з Єгипту,",
+          "B": "Памʼятай, що зробив тобі Амалек у твоїй дорозі з Єгипту,",
+          "R": "Памʼятай, що зробили тобі амаликитяни, коли ви йшли з Єгипту."
+        },
+        "id": {
+          "L": "Ingatlah apa yang dilakukan Amalek kepadamu di jalan ketika kalian keluar dari Mesir,",
+          "B": "Ingatlah apa yang dilakukan Amalek kepadamu dalam perjalananmu keluar dari Mesir,",
+          "R": "Ingatlah apa yang dilakukan orang Amalek kepada kalian waktu kalian dalam perjalanan keluar dari Mesir."
+        },
+        "zh": {
+          "L": "你要记得你出埃及的时候，亚玛力在路上向你所做的事，",
+          "B": "要记住你出埃及的路上，亚玛力人向你所做的事，",
+          "R": "要记住你离开埃及的路上，亚玛力人对你做了什么。"
         }
       },
       "decisions": [
@@ -3457,6 +4248,65 @@
           "reason": "The traditional Russian Bible form of the name is \"Амалик\". Readable names the people, as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050250170061"
+          ],
+          "choice": "\"アマレク\" (Literal, Balanced), \"アマレク人\" (Readable)",
+          "alternatives": [],
+          "reason": "The name as in Exodus 17; Readable names the people, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050250170061"
+          ],
+          "choice": "\"Амалек\" (L, B), \"амаликитяни\" (R)",
+          "alternatives": [
+            "\"Амалик\""
+          ],
+          "reason": "Literal and Balanced keep the people's name as one person, as the Hebrew does; Readable names the people.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050250170061"
+          ],
+          "choice": "\"亚玛力\" (L); \"亚玛力人\" (B, R)",
+          "alternatives": [],
+          "reason": "As Exodus 17:8: Literal keeps the ancestor's name used for the people, Balanced and Readable name the people, and say \"他们\" in verse 18.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3547,6 +4397,26 @@
           "L": "как он встретил тебя в пути и поразил у тебя задних, всех ослабевших позади тебя, когда ты был утомлён и измучен; и он не боялся Бога.",
           "B": "как они встретили тебя в пути, когда ты устал и выбился из сил, и ударили тебе в тыл, перебив всех, кто отставал. Они не боялись Бога.",
           "R": "Они вышли против тебя на дороге. Ты устал и выбился из сил. Они напали сзади и убили тех, кто не успевал за всеми. Они совсем не боялись Бога."
+        },
+        "ja": {
+          "L": "彼は道中であなたに出会い、あなたが疲れて弱り果てていたとき、あなたの後ろにいた落伍者たちをみな、あなたのしんがりで討ち取った。彼は神を恐れなかった。",
+          "B": "彼らは、あなたが疲れて弱り果てていたとき、道であなたを待ち受け、後ろから襲いかかって、遅れていた者たちをみな打ち倒した。彼らは神を畏れなかった。",
+          "R": "アマレク人は、道であなたに向かって来た。あなたは疲れて、くたくたになっていた。彼らは後ろから攻めて来て、ついて来られなかった人たちを殺した。彼らは神を少しもおそれ敬わなかった。"
+        },
+        "uk": {
+          "L": "як він зустрів тебе в дорозі й ударив по тобі ззаду, по всіх знесилених позаду тебе, коли ти був виснажений і втомлений; і він не боявся Бога.",
+          "B": "як вони зустріли тебе в дорозі, коли ти був утомлений і виснажений, і вдарили по твоїх задніх рядах, вбиваючи всіх, хто відставав. Вони не боялися Бога.",
+          "R": "Вони вийшли проти тебе на дорозі. Ти був утомлений і виснажений. Вони напали ззаду й убили тих, хто не встигав за іншими. Вони зовсім не шанували Бога."
+        },
+        "id": {
+          "L": "bagaimana ia menyerang engkau di jalan dan memukul semua orang lemah di belakangmu, ketika engkau lelah dan lesu; dan ia tidak takut akan Allah.",
+          "B": "bagaimana mereka menyerang engkau di jalan ketika engkau lelah dan letih, dan menghantam barisan belakangmu, membunuh semua orang yang tertinggal. Mereka tidak takut akan Allah.",
+          "R": "Mereka keluar menyerang kalian di jalan. Kalian sedang lelah dan letih. Mereka menyerang dari belakang dan membunuh orang-orang yang tidak dapat mengikuti rombongan. Mereka sama sekali tidak menghormati Allah."
+        },
+        "zh": {
+          "L": "他怎样在路上与你相遇，攻击你的后队，就是所有落在你后面的软弱的人，那时你疲乏困倦；他也不敬畏{{god_term:神|上帝}}。",
+          "B": "他们在你途中迎面而来，在你疲惫不堪的时候，袭击你队伍的后方，把所有掉队的人都杀了。他们一点也不敬畏{{god_term:神|上帝}}。",
+          "R": "他们在路上出来攻击你。那时你又累又没有力气。他们从后面攻击，杀死那些跟不上的人。他们一点也不尊敬{{god_term:神|上帝}}。"
         }
       },
       "decisions": [
@@ -3674,6 +4544,27 @@
           "reason": "As in the English, Balanced and Readable speak of Amalek as a people, \"they\", where Literal keeps the Hebrew's singular.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050250180122",
+            "o050250180131",
+            "o050250180141"
+          ],
+          "choice": "fear God \"恐れる\" (Literal), \"畏れる\" (Balanced), \"おそれ敬う\" (Readable)",
+          "alternatives": [],
+          "reason": "The DEU-2 forms for fearing God.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3779,6 +4670,26 @@
           "L": "И будет [так]: когда {{divine_name:ГОСПОДЬ|Яхве}}, Бог твой, даст тебе покой от всех врагов твоих вокруг, в земле, которую {{divine_name:ГОСПОДЬ|Яхве}}, Бог твой, даёт тебе в наследие, чтобы овладеть ею, изгладь память об Амалике из-под небес. Не забудь.",
           "B": "Так вот, когда {{divine_name:ГОСПОДЬ|Яхве}}, твой Бог, даст тебе покой от всех окружающих тебя врагов в земле, которую {{divine_name:ГОСПОДЬ|Яхве}}, твой Бог, даёт тебе в наследие во владение, ты должен изгладить память об Амалике из-под небес. Не забудь.",
           "R": "Поэтому, когда {{divine_name:ГОСПОДЬ|Яхве}}, твой Бог, избавит тебя от всех врагов вокруг в земле, которую {{divine_name:ГОСПОДЬ|Яхве}}, твой Бог, даёт тебе во владение, ты должен стереть с земли всякий след амаликитян. Не забудь!"
+        },
+        "ja": {
+          "L": "あなたの神、{{divine_name:主|ヤハウェ}}が、あなたの神、{{divine_name:主|ヤハウェ}}が嗣業としてあなたに与えて所有させようとしておられる地で、周りのすべての敵からあなたを守って休ませてくださるとき、あなたはアマレクの記憶を天の下から消し去らなければならない。忘れてはならない。",
+          "B": "あなたの神、{{divine_name:主|ヤハウェ}}が嗣業として与え、所有させようとしておられる地で、あなたの神、{{divine_name:主|ヤハウェ}}が周りのすべての敵から守って安らぎを与えてくださるとき、あなたはアマレクの記憶を天の下から消し去りなさい。忘れてはならない。",
+          "R": "あなたの神、{{divine_name:主|ヤハウェ}}は、あなたのものとして土地を与えてくださる。あなたの神、{{divine_name:主|ヤハウェ}}がその土地で、周りのすべての敵から守って、あなたを平和に暮らさせてくださるとき、あなたはアマレク人を、地上から一人残らず消し去りなさい。忘れてはいけない。"
+        },
+        "uk": {
+          "L": "І буде, коли {{divine_name:ГОСПОДЬ|Ягве}}, твій Бог, дасть тобі спокій від усіх твоїх ворогів довкола в краю, який {{divine_name:ГОСПОДЬ|Ягве}}, твій Бог, дає тобі в спадщину, щоб заволодіти ним, зітри памʼять про Амалека з-під неба. Не забудь.",
+          "B": "Тож коли {{divine_name:ГОСПОДЬ|Ягве}}, твій Бог, дасть тобі спокій від усіх ворогів довкола тебе в краю, який {{divine_name:ГОСПОДЬ|Ягве}}, твій Бог, дає тобі в спадщину, ти мусиш стерти памʼять про Амалека з-під неба. Не забудь.",
+          "R": "Тож коли {{divine_name:ГОСПОДЬ|Ягве}}, твій Бог, дасть тобі мир від усіх твоїх ворогів довкола в краю, який {{divine_name:ГОСПОДЬ|Ягве}}, твій Бог, дає тобі у власність, ти мусиш стерти з землі всякий слід амаликитян. Не забудь!"
+        },
+        "id": {
+          "L": "Dan apabila {{divine_name:TUHAN|Yahweh}}, Allahmu, telah memberikan keamanan kepadamu dari semua musuhmu di sekeliling, di negeri yang diberikan {{divine_name:TUHAN|Yahweh}}, Allahmu, kepadamu menjadi milik pusaka untuk mendudukinya, engkau harus menghapus ingatan akan Amalek dari kolong langit; janganlah engkau lupa.",
+          "B": "Jadi, apabila {{divine_name:TUHAN|Yahweh}}, Allahmu, telah memberikan keamanan kepadamu dari semua musuh di sekelilingmu di negeri yang diberikan {{divine_name:TUHAN|Yahweh}}, Allahmu, kepadamu menjadi milik pusaka untuk diduduki, engkau harus menghapus ingatan akan Amalek dari kolong langit. Jangan lupa!",
+          "R": "Jadi, apabila {{divine_name:TUHAN|Yahweh}}, Allah kalian, sudah memberikan keamanan kepada kalian dari semua musuh di sekeliling kalian di negeri yang diberikan {{divine_name:TUHAN|Yahweh}}, Allah kalian, kepada kalian menjadi milik kalian, kalian harus menghapus setiap ingatan akan Amalek dari muka bumi. Jangan lupa!"
+        },
+        "zh": {
+          "L": "将来，{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}在{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}赐给你作产业、让你得为业的地上，使你得享安息，不受四围一切仇敌[侵扰]的时候，你要把亚玛力的记忆从天底下抹掉。你不可忘记。",
+          "B": "所以，当{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}在{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}赐给你作产业、让你占领的地上，使你得享安宁、不再受四围一切仇敌侵扰的时候，你要从天底下抹去对亚玛力的记忆。不可忘记。",
+          "R": "所以，当{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}在{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}赐给你、作为你自己的地上，使你得享太平，不再受四围仇敌攻击的时候，你必须把亚玛力人从地上完全消灭，连一点痕迹也不留。不要忘记！"
         }
       },
       "decisions": [
@@ -3905,6 +4816,62 @@
             "the Hebrew order, with the land clause after \"all around\""
           ],
           "reason": "Amharic puts the place before the verb it belongs to, so \"in the land the LORD your God is giving you\" comes first; both divine names are kept.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o050250190022"
+          ],
+          "choice": "The land clause placed before 'when the LORD gives you rest'",
+          "alternatives": [],
+          "reason": "Japanese puts the relative clause first; Readable makes it a sentence of its own.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [],
+          "choice": "\"Amalek\" (L, B), \"orang Amalek\" (R)",
+          "alternatives": [],
+          "reason": "The glossary's form; Readable names the people, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050250190171",
+            "o050250190191",
+            "o050250190211",
+            "o050250190212"
+          ],
+          "choice": "\"把亚玛力的记忆从天底下抹掉\" (L); \"从天底下抹去对亚玛力的记忆\" (B)",
+          "alternatives": [],
+          "reason": "The words of Exodus 17:14, which this command recalls, at Literal and Balanced; Readable says what it means (m2), as the English does.",
           "uncertain": false,
           "footnote": false
         }

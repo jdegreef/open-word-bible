@@ -95,7 +95,7 @@ if (typeof document !== "undefined") (function () {
 
     if (e.t) {
       var term = el("p", "word-term");
-      var a = el("a", "button ghost", UI.term + " →");
+      var a = el("a", "button ghost", UI.term + (document.documentElement.dir === "rtl" ? " \u2190" : " \u2192"));
       a.href = DATA.termUrl + e.t + "/";
       term.appendChild(a);
       box.appendChild(term);

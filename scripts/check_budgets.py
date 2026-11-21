@@ -12,6 +12,7 @@ the pull request.
 """
 import argparse
 import gzip
+import re
 import sys
 from pathlib import Path
 
@@ -31,15 +32,20 @@ BUDGETS = {
     # Since 2026-10-19 a page is measured with its chapter's shared reader
     # data (chapter-data/), which every language's page loads; 262 KB
     # (ko/psa/119) on 2026-11-01 once the records, with every language's
-    # decisions, moved there from the page.
-    "chapter_page_gz": 290 * KB,
+    # decisions, moved there from the page; 294 KB (am/jhn/6) on 2026-11-09
+    # once John had Japanese, the eleventh language; 410 KB (am/psa/119) on
+    # 2026-11-12 once Psalms had Hindi, Russian, Ukrainian and Japanese.
+    "chapter_page_gz": 470 * KB,
     # The largest script or style sheet (not counting the reader data
     # scripts, chapter-data/ and reader-<lang>.js) [21 KB, reader.js; 26 KB on
     # 2026-10-13 after the verse panel tools, poetry lines and account sync;
     # 33.1 KB on 2026-10-17 with personal verse notes; 39 KB on 2026-10-30
     # with the study tools, own plans and reading groups; 41.5 KB on
-    # 2026-11-03 with setting presets].
-    "js_css_asset_gz": 44 * KB,
+    # 2026-11-03 with setting presets; 47.7 KB on 2026-11-14 with memorizing
+    # in the reader, links from notes to articles and speaker labels; 53.3 KB
+    # on 2026-11-17 with Parallel's language pair tools, word links across
+    # languages and their word card, furigana and the spoken word lit].
+    "js_css_asset_gz": 58 * KB,
     # Every file in the site [703 MB; 909 MB on 2026-10-14 with Numbers to
     # Ruth; 1,150 MB later that day with 1 Samuel to 2 Chronicles; 1,810 MB
     # with Vietnamese and Korean as site languages, each about 250 MB, since
@@ -51,9 +57,19 @@ BUDGETS = {
     # reader_shared); 2,263 MB on 2026-10-23 with Portuguese and Amharic as
     # site languages, each about 210 MB; 1,541 MB on 2026-11-01 once the
     # sentence records came from chapter-data/ rather than every
-    # language's page (each language then about 130 MB)].
-    # Grows with each book translated and each language added.
-    "site_total": 2800 * MB,
+    # language's page (each language then about 130 MB); 2,996 MB on
+    # 2026-11-14 with Indonesian as the thirteenth site language and
+    # footnotes in every reader language; 3,579 MB on 2026-11-19 with
+    # Chinese (Simplified) as the fourteenth, its folder about 95 MB before
+    # any Chinese text is drafted; +150 MB on 2026-11-20 for Arabic as the
+    # fifteenth, its folder about as big as Chinese's before any Arabic text
+    # is drafted, with room for its first books; +150 MB the same day for
+    # Tagalog as the sixteenth, its folder about 95 MB before its first
+    # books; +180 MB the same day for Persian as the seventeenth (CI measured 3,752 MB with Persian and
+    # without Arabic, so its folder is about 175 MB before any Persian text)].
+    # Grows with each book translated and each language added. Languages
+    # added at the same time each add their own increment.
+    "site_total": 4180 * MB,
 }
 
 
@@ -75,12 +91,15 @@ def is_reader_data(rel):
     return rel.parts[0] == "chapter-data" or (len(rel.parts) == 1 and rel.name.startswith("reader-"))
 
 
+CHAPTER_DATA = re.compile(rb'<script src="/(chapter-data/[^"?]+\.js)\?v=[0-9a-f]+"></script>')
+
+
 def chapter_page_gz(site, path):
-    """A chapter page's gzipped size with its chapter's shared reader data,
-    which it loads (the language's is shared by every chapter)."""
-    book, chapter = path.relative_to(site).parts[-3:-1]
-    data = site / "chapter-data" / book / f"{chapter}.js"
-    return gzipped(path) + (gzipped(data) if data.is_file() else 0)
+    """A chapter page's gzipped size with the chapter's reader data it loads:
+    the shared records and the text of its own language (and any it falls
+    back on). The language's interface data is shared by every chapter."""
+    loaded = {rel.decode() for rel in CHAPTER_DATA.findall(path.read_bytes())}
+    return gzipped(path) + sum(gzipped(site / rel) for rel in loaded if (site / rel).is_file())
 
 
 def largest(paths, measure):

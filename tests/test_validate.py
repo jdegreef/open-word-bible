@@ -38,6 +38,17 @@ class ValidateTest(unittest.TestCase):
         record["source"]["text"] += " "
         self.assertTrue(any("source.text" in e for e in validate.validate_record(record)))
 
+    def test_romans_16_25_27_name_the_nestle_1904_text(self):
+        path = EXAMPLE.parents[1] / "ROM" / "ROM.16.json"
+        record = next(r for r in json.loads(path.read_text(encoding="utf-8"))["records"]
+                      if r["id"] == "ROM.16.25.s1")
+        self.assertEqual(validate.validate_record(record), [])
+        record["source"]["text_id"] = "SBLGNT@v1.2"
+        self.assertTrue(any("is not the text" in e for e in validate.validate_record(record)))
+        other = example_records()[0]
+        other["source"]["text_id"] = "Nestle1904@macula-greek"
+        self.assertTrue(any("is not the text" in e for e in validate.validate_record(other)))
+
     def test_unknown_setting_fails(self):
         record = example_records()[0]
         record["renderings"]["en"]["B"] = "In the {{colour:beginning|start}}"
@@ -232,6 +243,16 @@ class ValidateTest(unittest.TestCase):
             errors = validate.validate_record(record)
             self.assertTrue(any("decisions[0].reason: names" in e for e in errors), (text, errors))
 
+    def test_a_people_and_its_ancient_language_may_be_named(self):
+        # Persian kings and Arabic cognates of Hebrew words are history, not
+        # wording, even once Arabic and Persian are reading languages.
+        for text in ("The Persian king Cyrus.", "An Arabic word of the same root means \"to cover\"."):
+            record = example_records()[0]
+            record["decisions"][0]["reason"] = text
+            errors = validate.validate_record(record)
+            self.assertFalse(any("names" in e for e in errors), (text, errors))
+        self.assertEqual(validate.HISTORICAL_NAMES, {"Arabic", "Persian"})
+
     def test_meaning_decision_with_a_setting_fails(self):
         record = example_records()[0]
         record["decisions"][0]["choice"] = "{{gender:all people|men}}"
@@ -307,6 +328,48 @@ class ValidateTest(unittest.TestCase):
             lemmas = {t.lemma for v in words.values() for t in v if t.strong == strong}
             self.assertIn(term["lemma"], lemmas, strong)
 
+    def _content_record(self, path, rid):
+        path = EXAMPLE.parents[1] / path
+        return next(r for r in json.loads(path.read_text(encoding="utf-8"))["records"] if r["id"] == rid)
+
+    def test_old_testament_key_term_keeps_its_english_by_level(self):
+        # Ruth 1:8, chesed: "faithful love" at Balanced in the historical books.
+        record = self._content_record("RUT/RUT.1.json", "RUT.1.8.s1")
+        hesed = {t.id for t in validate.macula_hebrew.tokens_for_refs(["RUT.1.8"]).values()
+                 if t.strong == "2617"}
+        record["decisions"] = [d for d in record["decisions"] if not hesed & set(d["tokens"])]
+        self.assertEqual(validate.validate_record(record), [])
+        record["renderings"]["en"]["B"] = record["renderings"]["en"]["B"].replace("faithful love", "kindness")
+        self.assertTrue(any("renderings.en.B: key term 'loyal love (hesed)'" in e
+                            for e in validate.validate_record(record)))
+
+    def test_a_term_settled_by_sense_is_not_checked(self):
+        nephesh = validate.KEY_TERMS[("hbo", "5315")]
+        self.assertFalse(validate.is_checked(nephesh))
+        self.assertTrue(validate.is_checked(validate.KEY_TERMS[("hbo", "2617")]))
+        record = self._content_record("GEN/GEN.2.4-25.json", "GEN.2.7.s1")
+        for level in "LBR":
+            record["renderings"]["en"][level] = re.sub(r"\b(being|soul|life|creature)\b", "thing",
+                                                       record["renderings"]["en"][level])
+        self.assertFalse(any("nephesh" in e for e in validate.validate_record(record)))
+
+    def test_a_pending_key_term_record_is_skipped(self):
+        # Psalm 46:5 once waited in a patch file, listed under the term's
+        # `pending`; the fix is applied, so the record is checked again.
+        term = validate.KEY_TERMS[("hbo", "6918")]
+        self.assertNotIn("PSA.46.5.s1", term.get("pending", ()))
+        record = self._content_record("PSA/PSA.46.json", "PSA.46.5.s1")
+        self.assertEqual(validate.validate_record(record), [])
+        record["renderings"]["en"]["B"] = record["renderings"]["en"]["B"].replace("holy", "sacred")
+        self.assertTrue(any("key term 'holy (qadosh)'" in e for e in validate.validate_record(record)))
+        term.setdefault("pending", []).append("PSA.46.5.s1")
+        try:
+            self.assertEqual(validate.validate_record(record), [])
+        finally:
+            term["pending"].remove("PSA.46.5.s1")
+            if not term["pending"]:
+                del term["pending"]
+
     def test_key_terms_are_matched_by_language(self):
         # Hebrew Strong's 4100 ("what", Genesis 2:19) is not Greek 4100 ("believe").
         path = EXAMPLE.parents[1] / "GEN" / "GEN.2.4-25.json"
@@ -329,6 +392,88 @@ class ValidateTest(unittest.TestCase):
         record["renderings"]["en"]["R"] += " {{plural_you:you all|you}}"
         self.assertIn("renderings.en.R: plural_you is not a setting in this language",
                       validate.validate_record(record))
+
+    def test_god_term_is_chinese_only(self):
+        # The word for God, 神 or 上帝, is a Chinese reader setting; the
+        # English stands in for the rest of the Chinese text here.
+        record = next(r for r in example_records() if r["id"] == "JHN.1.3.s1")
+        record["renderings"]["zh"] = {level: text + " {{god_term:神|上帝}}的话"
+                                      for level, text in record["renderings"]["en"].items()}
+        self.assertEqual(validate.validate_record(record), [])
+        record["renderings"]["en"]["R"] += " {{god_term:God|the Lord}}"
+        self.assertIn("renderings.en.R: god_term is not a setting in this language",
+                      validate.validate_record(record))
+
+    def test_tagalog_spans_hold_the_case_marker(self):
+        # Tagalog marks a title (ang, ng, sa) and a name (si, ni, kay) with
+        # different particles, so the marker, and a following linker, go
+        # inside the span (docs/tagalog-style.md, section 4).
+        record = next(r for r in example_records() if r["id"] == "JHN.1.3.s1")
+        record["renderings"]["tl"] = {
+            level: text + " Ito ang salita {{divine_name:ng PANGINOON|ni Yahweh}};"
+                          " {{divine_name:ang PANGINOONG|si Yahweh na}} Diyos;"
+                          " sa {{deity_pronoun:kaniyang|Kaniyang}} pangalan."
+            for level, text in record["renderings"]["en"].items()}
+        self.assertEqual(validate.validate_record(record), [])
+
+    def test_chinese_deity_pronouns_take_their_reverent_forms(self):
+        # Chinese has no capitals: 他 / 祂 and 你 / 祢 are its pairs, and
+        # only in Chinese; any other pair is still a change of wording.
+        record = next(r for r in example_records() if r["id"] == "JHN.1.3.s1")
+        record["renderings"]["zh"] = {level: text + " {{deity_pronoun:他|祂}} {{deity_pronoun:你|祢}}"
+                                      for level, text in record["renderings"]["en"].items()}
+        self.assertEqual(validate.validate_record(record), [])
+        record["renderings"]["zh"]["B"] += " {{deity_pronoun:他|你}}"
+        self.assertTrue(any(e.startswith("renderings.zh.B: deity_pronoun alternative")
+                            for e in validate.validate_record(record)))
+        del record["renderings"]["zh"]
+        record["renderings"]["en"]["B"] += " {{deity_pronoun:他|祂}}"
+        self.assertTrue(any(e.startswith("renderings.en.B: deity_pronoun alternative must be the default capitalised")
+                            for e in validate.validate_record(record)))
+
+    def test_persian_letters_and_digits_are_persian(self):
+        # The Arabic yeh and kaf, and Arabic-Indic digits, look like
+        # Persian's own in many fonts; in Persian text they are refused.
+        record = next(r for r in example_records() if r["id"] == "JHN.1.3.s1")
+        record["renderings"]["fa"] = {level: text + " \u06cc\u06a9 \u06f3"
+                                      for level, text in record["renderings"]["en"].items()}
+        self.assertEqual(validate.validate_record(record), [])
+        record["renderings"]["fa"]["B"] += " \u064a"
+        record["renderings"]["fa"]["R"] += " \u0663"
+        errors = validate.validate_record(record)
+        self.assertTrue(any(e.startswith("renderings.fa.B: the Arabic") for e in errors), errors)
+        self.assertTrue(any(e.startswith("renderings.fa.R: the Arabic") for e in errors), errors)
+        # Another language may write them (an Arabic word quoted in English).
+        del record["renderings"]["fa"]
+        record["renderings"]["en"]["B"] += " \u064a"
+        self.assertEqual(validate.validate_record(record), [])
+
+    def test_renderings_hold_no_direction_marks(self):
+        record = next(r for r in example_records() if r["id"] == "JHN.1.3.s1")
+        record["renderings"]["en"]["L"] += "\u200f"
+        self.assertTrue(any(e.startswith("renderings.en.L: a direction mark")
+                            for e in validate.validate_record(record)))
+
+    def test_persian_is_not_named_but_the_persians_may_be(self):
+        # A meaning decision may speak of the Persians (Esther, Daniel) but
+        # not of Persian wording, by its own name or as Farsi.
+        self.assertIsNone(validate.TARGET_LANGUAGE_NAMES.search("Cyrus the Persian; a Persian loanword"))
+        self.assertIsNotNone(validate.TARGET_LANGUAGE_NAMES.search("Farsi says it otherwise"))
+        self.assertIsNotNone(validate.TARGET_LANGUAGE_NAMES.search("\u0641\u0627\u0631\u0633\u06cc"))
+
+    def test_indonesian_renderings_keep_the_record_id(self):
+        # Indonesian's code is "id", which is also the name of a record's
+        # and a decision's own field. (The English stands in for Indonesian
+        # text here.)
+        record = next(r for r in example_records() if r["id"] == "JHN.1.3.s1")
+        record["renderings"]["id"] = copy.deepcopy(record["renderings"]["en"])
+        decision = copy.deepcopy(next(d for d in record["decisions"] if d["layer"] == "rendering"))
+        taken = {d["id"] for d in record["decisions"]}
+        free = next(f"r-id-{n}" for n in range(1, 1000) if f"r-id-{n}" not in taken)
+        decision.update({"id": free, "language": "id"})
+        record["decisions"].append(decision)
+        self.assertEqual(validate.validate_record(record), [])
+        self.assertEqual(record["id"], "JHN.1.3.s1")
 
     def test_rendering_in_a_language_not_in_the_registry_fails(self):
         record = example_records()[0]

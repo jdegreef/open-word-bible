@@ -4,14 +4,18 @@
 //
 // The verse comes from the address (?v=JHN.3.16, or ?ref=John 3:16 from the
 // form). Our text and its decisions are read from the verse's chapter
-// data, the script its chapter page loads (found in the page, so with the
-// page's version), which the reader caches for offline use anyway; the other
+// data, the scripts its chapter page loads (found in the page, so with the
+// page's versions: the chapter's records and the page language's text),
+// which the reader caches for offline use anyway; the other
 // Bibles from /editions/<BOOK>/<chapter>.json. Reader settings (inclusive
 // language, Christ or Messiah, ...) are the reader's own, from owb.settings.
 (function () {
   "use strict";
   var DATA = JSON.parse(document.getElementById("cmp-data").textContent);
   var UI = DATA.ui;
+  // Arrows that point the way the page reads (<html dir="rtl">).
+  var RTL = document.documentElement.dir === "rtl";
+  var BACK = RTL ? "\u2192" : "\u2190", FORWARD = RTL ? "\u2190" : "\u2192";
   var box = document.getElementById("cmp");
   var status = document.getElementById("cmp-status");
   var form = document.getElementById("cmp-form");
@@ -60,21 +64,34 @@
     }
     return cache[url];
   }
-  // The reader's data for a chapter (window.OWB_CHAPTER), from the script
-  // its page loads.
+  // The reader's data for a chapter, from the scripts its page loads: the
+  // records (window.OWB_CHAPTER), then each language's renderings and
+  // rendering decisions (window.OWB_TEXTS[lang]), joined as reader.js joins them.
   function chapterData(code, chapter) {
     var url = chapterPage(code, chapter);
     function text(r) {
       if (!r.ok) throw new Error(r.status);
       return r.text();
     }
+    // A script's JSON, from where its assignment ends.
+    function json(script, from) { return JSON.parse(script.slice(from).replace(/;\s*$/, "")); }
     if (!cache[url]) {
       cache[url] = fetch(url).then(text).then(function (page) {
-        var m = /<script src="(\/chapter-data\/[^"]+)"><\/script>/.exec(page);
-        if (!m) throw new Error("no data");
-        return fetch(m[1]).then(text);
-      }).then(function (script) {
-        return JSON.parse(script.slice(script.indexOf("=") + 1).replace(/;\s*$/, "").replace(/<\\\//g, "</"));
+        var re = /<script src="(\/chapter-data\/[^"]+)"><\/script>/g, m, srcs = [];
+        while ((m = re.exec(page))) srcs.push(m[1]);
+        if (!srcs.length) throw new Error("no data");
+        return Promise.all(srcs.map(function (src) { return fetch(src).then(text); }));
+      }).then(function (scripts) {
+        var data = json(scripts[0], scripts[0].indexOf("=") + 1);
+        data.records.forEach(function (r) { r.renderings = {}; });
+        scripts.slice(1).forEach(function (script) {
+          var m = /window\.OWB_TEXTS\["([a-z]+)"\]=/.exec(script), lang = m[1], t = json(script, m.index + m[0].length);
+          data.records.forEach(function (r) {
+            if (t.renderings[r.id]) r.renderings[lang] = t.renderings[r.id];
+            if (t.decisions[r.id]) r.decisions = r.decisions.concat(t.decisions[r.id]);
+          });
+        });
+        return data;
       });
       cache[url].catch(function () { delete cache[url]; });
     }
@@ -114,10 +131,20 @@
     if (level) meta.appendChild(el("span", "cmp-levels", " · " + level));
     if (d.uncertain) meta.appendChild(el("span", "badge unc", UI.uncertain));
     c.appendChild(meta);
-    c.appendChild(el("h3", "cmp-choice", render(d.choice)));
-    if (d.alternatives && d.alternatives.length)
-      c.appendChild(el("p", "cmp-also", UI.also + d.alternatives.map(render).join("; ")));
-    c.appendChild(el("p", "cmp-reason", render(d.reason)));
+    // Decisions are written in English: on another language's page their
+    // words are tagged lang="en", so they read left to right on a
+    // right-to-left page (web/site.js gives them their dir) and a screen
+    // reader voices them in English. The labels around them are the page's.
+    var english = DATA.lang !== "en";
+    var choice = c.appendChild(el("h3", "cmp-choice", render(d.choice)));
+    if (english) choice.lang = "en";
+    if (d.alternatives && d.alternatives.length) {
+      var also = c.appendChild(el("p", "cmp-also", UI.also));
+      var alts = also.appendChild(el("span", null, d.alternatives.map(render).join("; ")));
+      if (english) alts.lang = "en";
+    }
+    var reason = c.appendChild(el("p", "cmp-reason", render(d.reason)));
+    if (english) reason.lang = "en";
     return c;
   }
 
@@ -129,12 +156,12 @@
       if (vid) a.href = "?v=" + vid; else a.setAttribute("aria-disabled", "true");
       return a;
     }
-    p.appendChild(step("← " + UI.prev, verse > 1 ? code + "." + chapter + "." + (verse - 1) : null));
-    var read = el("a", "button", UI.read + " →");
+    p.appendChild(step(BACK + " " + UI.prev, verse > 1 ? code + "." + chapter + "." + (verse - 1) : null));
+    var read = el("a", "button", UI.read + " " + FORWARD);
     read.href = translated(code, chapter) ? chapterPage(code, chapter) + "#v" + verse : chapterPage(code, chapter);
     if (!translated(code, chapter)) read.hidden = true;
     p.appendChild(read);
-    p.appendChild(step(UI.next + " →", next));
+    p.appendChild(step(UI.next + " " + FORWARD, next));
     return p;
   }
 

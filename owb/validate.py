@@ -13,6 +13,9 @@ settled English word at every level, and poetic line markers (\\q) sit only
 between a verse's words in renderings (markup.line_errors).
 
 Usage: python3 -m owb.validate content/en/JHN/JHN.1.1-2.json [...]
+
+A translation of notes or cards (data/notes/<lang>/<BOOK>.json,
+data/cards/<lang>/<kind>.json) given here is checked by owb.notes instead.
 """
 import json
 import re
@@ -33,19 +36,40 @@ LEVELS = _DEFS["level"]["enum"]
 LAYERS = _DEFS["decision"]["properties"]["layer"]["enum"]
 CATEGORIES = _DEFS["decision"]["properties"]["category"]["enum"]
 MEANING_CATEGORIES = _DEFS["decision"]["then"]["properties"]["category"]["enum"]
-# The edition each source language is translated from.
-TEXT_ID_FOR = {"grc": "SBLGNT@v1.2", "hbo": macula_hebrew.TEXT_ID, "arc": macula_hebrew.TEXT_ID}
+# The edition each source language is translated from. Greek is the SBLGNT,
+# except the few verses it does not print (macula_greek.text_id_for).
+TEXT_ID_FOR = {"grc": macula_greek.TEXT_ID, "hbo": macula_hebrew.TEXT_ID, "arc": macula_hebrew.TEXT_ID}
 RECORD_ID = re.compile(_PROPS["id"]["pattern"])
 LANGUAGE = re.compile(_DEFS["language"]["pattern"])
 
 # A meaning decision is shared by every language, so it must not name one of
 # the languages the translation is made into (in English or in that language),
-# nor Spanish by its other name or Portuguese, which may come next.
-TARGET_LANGUAGE_NAMES = re.compile(r"\b(" + "|".join(
-    [n for lang in languages.READING.values() for n in dict.fromkeys([lang["name"], lang["native"]])]
-    + ["castellano", "Portuguese", "portugu\u00eas"]) + r")\b", re.IGNORECASE)
+# nor Spanish by its other name or Portuguese, which may come next, nor
+# Chinese without "(Simplified)", nor Persian as Farsi.
+# Reading languages' English names that are also the names of a people and
+# an ancient language a meaning decision may speak of (the Persian kings of
+# Ezra and Esther, an Arabic cognate of a rare Hebrew word): they are not
+# taken as naming a reading language. The native names still are.
+HISTORICAL_NAMES = {"Arabic", "Persian"}
+TARGET_LANGUAGE_NAMES = re.compile(r"(?<!\w)(" + "|".join(map(re.escape,
+    [n for lang in languages.READING.values() for n in dict.fromkeys([lang["name"], lang["native"]])
+     if n not in HISTORICAL_NAMES]
+    + ["castellano", "Portuguese", "portugu\u00eas", "Chinese", "Farsi"])) + r")(?!\w)", re.IGNORECASE)
 # Reader settings only some languages have ({{plural_you:...}} is Spanish).
 LANGUAGE_SETTINGS = {name for lang in languages.READING.values() for name in lang.get("settings", {})}
+# A deity_pronoun span capitalises the pronoun ({{deity_pronoun:he|He}}).
+# Chinese has no capitals; its reverent forms take the radical 礻 instead:
+# 他 / 祂 ("he") and 你 / 祢 ("you"), these pairs only (docs/chinese-style.md).
+DEITY_PRONOUN_PAIRS = {"zh": {("他", "祂"), ("你", "祢")}}
+# Persian has its own yeh, kaf and digits (ی ک ۰-۹); the Arabic ones look
+# the same in many fonts but are other letters to search, sorting and a
+# screen reader (docs/persian-style.md section 7).
+FOREIGN_CHARACTERS = {"fa": (re.compile("[\u064a\u0643\u0660-\u0669]"),
+                             "the Arabic \u064a, \u0643 or Arabic-Indic digits; Persian writes "
+                             "\u06cc, \u06a9 and \u06f0-\u06f9")}
+# Text is stored in logical order in every language and the site sets its
+# direction, so a rendering holds no direction marks or embeddings.
+DIRECTION_MARKS = re.compile("[\u200e\u200f\u202a-\u202e\u2066-\u2069]")
 
 # Keyed by (source language, Strong's number): Greek and Hebrew Strong's
 # numbers overlap (4100 is "believe" in Greek and "what" in Hebrew).
@@ -87,7 +111,7 @@ def _fields(obj, schema_obj, where, errors):
     return True
 
 
-def _check_markup(text, where, errors):
+def _check_markup(text, where, errors, lang=None):
     if not isinstance(text, str):
         errors.append(f"{where}: must be a string")
         return
@@ -105,11 +129,14 @@ def _check_markup(text, where, errors):
         elif any(o != o.strip() for o in options):
             errors.append(f"{where}: {span.setting} span option has spaces at its edge")
         elif span.setting == "deity_pronoun" and any(
-                o != options[0][:1].upper() + options[0][1:] for o in options[1:]):
-            # The setting only capitalises the pronoun; any other change of
-            # wording would be a decision, not a setting.
+                o != options[0][:1].upper() + options[0][1:] for o in options[1:]) and (
+                tuple(options) not in DEITY_PRONOUN_PAIRS.get(lang, ())):
+            # The setting only capitalises the pronoun (or, in Chinese, gives
+            # it its reverent form); any other change of wording would be a
+            # decision, not a setting.
             errors.append(f"{where}: deity_pronoun alternative must be the default "
-                          "capitalised")
+                          "capitalised"
+                          + (" or its reverent form (他|祂, 你|祢)" if lang in DEITY_PRONOUN_PAIRS else ""))
 
 
 def _strings(obj, where):
@@ -140,6 +167,14 @@ def check_original_language(record, errors):
 def key_term(token_id, strong):
     """The key term (data/key_terms.json) a source word is, or None."""
     return KEY_TERMS.get((token_language(token_id), strong))
+
+
+def is_checked(term):
+    """Whether owb.validate holds the English to a key term's words. A term
+    whose English is settled by sense (nephesh, ruach, mishpat: soul, life
+    or person; spirit, wind or breath) says "checked": false; its rule is in
+    its note and a meaning decision says which sense a passage has."""
+    return term.get("checked", True) is not False
 
 
 def key_term_words(term, level):
@@ -179,7 +214,8 @@ def check_key_terms(record, tokens, errors):
         return
     for tok in tokens:
         term = key_term(tok.id, tok.strong)
-        if term is None or tok.id in explained:
+        if (term is None or tok.id in explained or not is_checked(term)
+                or record.get("id") in term.get("pending", ())):
             continue
         for level, text in sorted(english.items()):
             allowed = key_term_words(term, level)
@@ -265,7 +301,8 @@ def validate_record(record, known_tokens=None, original_language=True):
             errors.append(f"source.language: {source.get('language')!r} not allowed")
         if source.get("text_id") not in TEXT_IDS:
             errors.append(f"source.text_id: {source.get('text_id')!r} not allowed")
-        elif source.get("text_id") != TEXT_ID_FOR.get(source.get("language")):
+        elif source.get("text_id") != (macula_greek.text_id_for(verse_ids) if source.get("language") == "grc"
+                                       else TEXT_ID_FOR.get(source.get("language"))):
             errors.append(f"source.text_id: {source.get('text_id')!r} is not the text "
                           f"for {source.get('language')!r}")
         source_tokens = source.get("tokens") or []
@@ -327,7 +364,7 @@ def validate_record(record, known_tokens=None, original_language=True):
             errors.append(f"renderings.{lang}: must have exactly {LEVELS}")
             continue
         for level, text in levels.items():
-            _check_markup(text, f"renderings.{lang}.{level}", errors)
+            _check_markup(text, f"renderings.{lang}.{level}", errors, lang)
             check_verses(text, f"renderings.{lang}.{level}")
             used = {span.setting for span in markup.spans(text)} if isinstance(text, str) else set()
             own = languages.READING.get(lang, {}).get("settings", {})
@@ -336,6 +373,12 @@ def validate_record(record, known_tokens=None, original_language=True):
             if isinstance(text, str):
                 for reason in markup.line_errors(text):
                     errors.append(f"renderings.{lang}.{level}: {reason}")
+                if DIRECTION_MARKS.search(text):
+                    errors.append(f"renderings.{lang}.{level}: a direction mark (U+200E, U+200F, "
+                                  "U+202A-U+202E, U+2066-U+2069); the site sets direction")
+                foreign, what = FOREIGN_CHARACTERS.get(lang, (None, None))
+                if foreign and foreign.search(text):
+                    errors.append(f"renderings.{lang}.{level}: {what}")
 
     by_rendering = {}
     for i, al in enumerate(record.get("alignments", [])):
@@ -395,13 +438,13 @@ def validate_record(record, known_tokens=None, original_language=True):
         if d.get("category") not in CATEGORIES:
             errors.append(f"{where}.category: {d.get('category')!r} not allowed")
         check_tokens(d.get("tokens"), f"{where}.tokens")
-        _check_markup(d.get("choice"), f"{where}.choice", errors)
+        _check_markup(d.get("choice"), f"{where}.choice", errors, d.get("language"))
         alternatives = d.get("alternatives")
         if not isinstance(alternatives, list):
             errors.append(f"{where}.alternatives: must be a list")
         else:
             for alt in alternatives:
-                _check_markup(alt, f"{where}.alternatives", errors)
+                _check_markup(alt, f"{where}.alternatives", errors, d.get("language"))
         if not (isinstance(d.get("reason"), str) and d.get("reason").strip()):
             errors.append(f"{where}.reason: must be a non-empty string")
         for flag in ("uncertain", "footnote"):
@@ -438,7 +481,9 @@ def validate_file(path):
 
 
 def main(paths):
-    errors = [e for p in paths for e in validate_file(p)]
+    from owb import notes  # translations of notes and cards (data/notes/, data/cards/)
+    errors = [e for p in paths for e in (notes.check_file(p) if notes.is_translation_file(p)
+                                         else validate_file(p))]
     for e in errors:
         print(e)
     print(f"{len(paths)} file(s), {len(errors)} error(s)")

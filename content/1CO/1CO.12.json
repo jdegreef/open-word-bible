@@ -72,6 +72,26 @@
           "L": "Относительно же духовных [даров], {{gender:братья и сёстры|братья}}, не хочу, чтобы вы были в неведении.",
           "B": "Теперь о духовных дарах, {{gender:братья и сёстры|братья}}: я хочу, чтобы вы хорошо знали о них.",
           "R": "Теперь, {{gender:братья и сёстры|братья}}, я хочу научить вас тому, что касается даров, которые даёт Дух. Я хочу, чтобы вы ясно их понимали."
+        },
+        "uk": {
+          "L": "А щодо духовних [дарів], {{gender:брати і сестри|брати}}, не хочу, щоб ви були в незнанні.",
+          "B": "А тепер про духовні дари, {{gender:брати і сестри|брати}}: я хочу, щоб ви добре це знали.",
+          "R": "Тепер, {{gender:брати і сестри|брати}}, я хочу навчити вас про дари, які дає Дух. Я хочу, щоб ви ясно їх розуміли."
+        },
+        "ja": {
+          "L": "さて、霊的な[賜物]については、{{gender:きょうだいたち|兄弟たち}}、あなたがたに知らないでいてほしくありません。",
+          "B": "さて、霊の賜物について、{{gender:きょうだいたち|兄弟たち}}、あなたがたにはよく知っておいてほしいのです。",
+          "R": "さて、{{gender:きょうだいたち|兄弟たち}}、聖霊がくださる贈り物について教えたいと思います。みなさんに、それをはっきりと分かってほしいのです。"
+        },
+        "id": {
+          "L": "Dan tentang karunia-karunia rohani, saudara-saudara, aku tidak ingin kalian tidak mengetahuinya.",
+          "B": "Sekarang tentang karunia-karunia rohani, saudara-saudara: aku ingin kalian mengetahuinya dengan baik.",
+          "R": "Sekarang, saudara-saudara, saya ingin mengajar kalian tentang karunia-karunia yang diberikan Roh. Saya ingin kalian memahaminya dengan jelas."
+        },
+        "zh": {
+          "L": "关于属灵的[恩赐]，{{gender:弟兄姐妹|弟兄}}们，我不愿意你们无知。",
+          "B": "现在谈谈属灵的恩赐，{{gender:弟兄姐妹|弟兄}}们：我希望你们对此有充分的认识。",
+          "R": "{{gender:弟兄姐妹|弟兄}}们，现在我要教导你们关于圣灵所赐的恩赐。我要你们清楚地明白这些恩赐。"
         }
       },
       "decisions": [
@@ -467,6 +487,92 @@
           "reason": "Paul addresses the whole church, women and men; the key-term span of Paul's letters.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46012001003",
+            "n46012001004"
+          ],
+          "choice": "духовні [дари] (L); духовні дари (B); дари, які дає Дух (R) for pneumatika; дар for charisma (12:4)",
+          "alternatives": [
+            "харизми"
+          ],
+          "reason": "The Corinthians note keeps \"spiritual gifts\" for pneumatika (12:1) and plain \"gift\" for charisma, as in 1:7.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46012001004"
+          ],
+          "choice": "\"霊的な[賜物]\" (L); \"霊の賜物\" (B); \"聖霊がくださる贈り物\" (R)",
+          "alternatives": [
+            "\"霊的な人々\"",
+            "\"霊的なこと\""
+          ],
+          "reason": "Read as the gifts that come from the Spirit (m2, uncertain); R keeps \"贈り物\" for the gifts as in 1:7, and \"聖霊\" for the Spirit.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n46012001004"
+          ],
+          "choice": "\"属灵的[恩赐]\" (L); \"属灵的恩赐\" (B); \"圣灵所赐的恩赐\" (R)",
+          "alternatives": [
+            "\"属灵的人\""
+          ],
+          "reason": "The Greek has only the adjective; the levels supply \"恩赐\" as the meaning decision chooses, as the English does, which footnotes \"spiritual people\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n46012001005"
+          ],
+          "choice": "{{gender:弟兄姐妹|弟兄}}们",
+          "alternatives": [
+            "\"弟兄们\""
+          ],
+          "reason": "The address is to the whole church, women and men: \"弟兄姐妹\" by default, the traditional \"弟兄\" as the alternative.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -548,6 +654,26 @@
           "L": "Вы знаете, что, когда вы были язычниками, [вы ходили] к безгласным идолам, куда бы вас ни вели, увлекаемые.",
           "B": "Вы знаете, как было, когда вы были язычниками: вас влекло к безмолвным идолам, и вы шли, куда бы вас ни вели.",
           "R": "Вы помните, какой была ваша жизнь до того, как вы поверили. Вас тянуло то туда, то сюда, и в конце концов вы поклонялись идолам, которые даже говорить не могут."
+        },
+        "uk": {
+          "L": "Ви знаєте, що коли ви були язичниками, [вас] водило до німих ідолів, як вас вели.",
+          "B": "Ви знаєте, як було, коли ви були язичниками: вас зносило до ідолів, які не можуть говорити, і несло туди, куди вас вели.",
+          "R": "Ви памʼятаєте, яким було ваше життя, перш ніж ви повірили. Вас тягнуло то туди, то сюди, і зрештою ви поклонялися ідолам, які навіть говорити не можуть."
+        },
+        "ja": {
+          "L": "あなたがたが知っているとおり、あなたがたが異邦人であったとき、導かれるままに、物を言わない偶像のもとへ連れて行かれていました。",
+          "B": "ご存じのように、あなたがたがまだ異邦人であったころは、口のきけない偶像のもとへ、引かれるままに連れ去られていたのです。",
+          "R": "イエスを信じる前に、みなさんがどんな生き方をしていたか、覚えているでしょう。あちらこちらへと引っ張り回され、口もきけない偶像を拝むようになっていたのです。"
+        },
+        "id": {
+          "L": "Kalian tahu bahwa ketika kalian masih menjadi bangsa-bangsa lain, [kalian] terseret kepada berhala-berhala yang bisu, bagaimanapun kalian dibawa.",
+          "B": "Kalian tahu bagaimana keadaan kalian ketika kalian masih menyembah dewa-dewa: kalian dihanyutkan kepada berhala-berhala yang tidak dapat berbicara, terbawa ke mana pun kalian dituntun.",
+          "R": "Kalian ingat bagaimana hidup kalian sebelum kalian percaya. Kalian ditarik ke sana kemari, dan akhirnya kalian menyembah berhala-berhala yang bahkan tidak dapat berbicara."
+        },
+        "zh": {
+          "L": "你们知道，当你们是外邦人的时候，无论怎样被引领，都被带去归向那些哑巴偶像。",
+          "B": "你们知道，你们还是异教徒的时候，是怎样被卷去拜那些不会说话的偶像，被人随意牵着走。",
+          "R": "你们还记得你们信主以前的生活是什么样子。你们被拉来拉去，最后去拜那些连话都不会说的偶像。"
         }
       },
       "decisions": [
@@ -817,6 +943,47 @@
           "reason": "The key term for ethne at Literal and Balanced; here the point is that they worshipped idols (meaning decision m1), which \"язычники\" says in Russian. Readable says \"до того, как вы поверили\", as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46012002004"
+          ],
+          "choice": "\"異邦人\" (L, B); \"イエスを信じる前\" (R)",
+          "alternatives": [
+            "\"異教徒\""
+          ],
+          "reason": "People outside God's people who worshiped other gods (m1); \"異邦人\" is the NT table's word, and R follows the English R in saying when, not who.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46012002004"
+          ],
+          "choice": "\"外邦人\" (L); \"异教徒\" (B); \"信主以前\" (R)",
+          "alternatives": [
+            "\"外邦人\" at every level"
+          ],
+          "reason": "The point is that they worshiped idols, not only that they were not Jews (the meaning decision); Literal keeps the glossary's \"外邦人\", as the English Literal keeps \"Gentiles\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -907,6 +1074,26 @@
           "L": "Поэтому даю вам знать, что никто, говорящий Духом Божьим, не говорит: «Иисус проклят», и никто не может сказать: «Иисус — Господь», кроме как Духом Святым.",
           "B": "Вот почему я ясно говорю вам: никто, говорящий через Духа Божьего, никогда не скажет: «Иисус проклят», и никто не может сказать: «Иисус — Господь», кроме как через Святого Духа.",
           "R": "Поэтому я хочу, чтобы вы поняли вот что. Когда Дух Божий ведёт людей говорить, они никогда не скажут: «Иисус проклят». И только Святой Дух может побудить человека сказать: «Иисус — Господь.»"
+        },
+        "uk": {
+          "L": "Тому даю вам знати, що ніхто, говорячи Духом Божим, не каже: «Ісус — проклятий», і ніхто не може сказати: «Ісус — Господь», як тільки Святим Духом.",
+          "B": "Ось чому я пояснюю вам: ніхто, хто говорить через Божого Духа, ніколи не каже: «Ісус проклятий», і ніхто не може сказати: «Ісус — Господь», як тільки через Святого Духа.",
+          "R": "Тож я хочу, щоб ви зрозуміли ось що. Коли Божий Дух спонукає людей говорити, вони ніколи не кажуть: «Ісус проклятий». І тільки Святий Дух може спонукати когось сказати: «Ісус — Господь»."
+        },
+        "ja": {
+          "L": "ですから、わたしはあなたがたに知らせます。神の霊によって語る者はだれも、「イエスは呪われよ」とは言わず、また、聖霊によらなければ、だれも「イエスは主である」と言うことはできません。",
+          "B": "ですから、あなたがたにはっきり言っておきます。神の霊によって語る人は、だれも「イエスは呪われている」とは言いません。また、聖霊によらなければ、だれも「イエスは主である」と言うことはできません。",
+          "R": "ですから、このことを分かってほしいのです。神の霊に導かれて話している人が、「イエスは呪われている」と言うことは決してありません。また、聖霊に導かれなければ、だれも「イエスは主です」と言うことはできないのです。"
+        },
+        "id": {
+          "L": "Karena itu aku memberitahukan kepada kalian bahwa tidak seorang pun yang berbicara oleh Roh Allah berkata, \"Terkutuklah Yesus,\" dan tidak seorang pun dapat berkata, \"Yesus [adalah] Tuhan,\" selain oleh Roh Kudus.",
+          "B": "Itulah sebabnya aku menjelaskan hal ini kepada kalian: tidak seorang pun yang berbicara oleh Roh Allah akan berkata, \"Terkutuklah Yesus,\" dan tidak seorang pun dapat berkata, \"Yesus adalah Tuhan,\" selain oleh Roh Kudus.",
+          "R": "Jadi saya ingin kalian mengerti hal ini. Kalau Roh Allah memimpin orang untuk berbicara, mereka tidak pernah berkata, \"Terkutuklah Yesus.\" Dan hanya Roh Kudus yang dapat memimpin seseorang untuk berkata, \"Yesus adalah Tuhan.\""
+        },
+        "zh": {
+          "L": "所以我让你们知道，借着{{god_term:神|上帝}}的灵说话的，没有人说“耶稣[是]该受诅咒的”；除了借着圣灵，也没有人能说“耶稣[是]主”。",
+          "B": "所以我要向你们说明：凡借着{{god_term:神|上帝}}的灵说话的人，没有一个会说：“耶稣是被诅咒的。”而且除非借着圣灵，没有人能说：“耶稣是主。”",
+          "R": "所以我要你们明白这件事。{{god_term:神|上帝}}的灵带领人说话的时候，他们绝不会说：“耶稣是被诅咒的。”而且只有圣灵能带领人说：“耶稣是主。”"
         }
       },
       "decisions": [
@@ -1199,6 +1386,91 @@
           "reason": "The curse is spoken by someone who rejects Jesus and takes the plain verb, as opponents speak of Jesus plainly (style guide section 7b); the confession of faith takes the honorific \"हैं\". Literal leaves the verbs in brackets, since the Greek has none.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46012003011"
+          ],
+          "choice": "проклятий",
+          "alternatives": [
+            "анатема"
+          ],
+          "reason": "\"Анатема\" is the Greek word borrowed into church language, now heard as excommunication; \"проклятий\" says under God's curse (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46012003011"
+          ],
+          "choice": "\"呪われよ\" (L); \"呪われている\" (B, R)",
+          "alternatives": [
+            "\"アナテマ\""
+          ],
+          "reason": "Under God's curse, handed over to destruction (m1); L keeps the curse formula, B and R say it as a statement beside \"イエスは主である\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n46012003008"
+          ],
+          "choice": "{{god_term:神|上帝}}",
+          "alternatives": [
+            "\"上帝\" as the default",
+            "a fixed \"神\""
+          ],
+          "reason": "Every word naming the one God is a god_term span: \"神\" by default, \"上帝\" for readers who choose it. The two name the same God; only the wording changes.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46012003011"
+          ],
+          "choice": "\"该受诅咒的\" (L); \"被诅咒的\" (B, R)",
+          "alternatives": [
+            "\"可咒诅的\""
+          ],
+          "reason": "Under God's curse, handed over to destruction (the meaning decision); \"诅咒\" is the glossary's word. Both sayings are read as statements, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1274,6 +1546,26 @@
           "L": "Различия же даров есть, но Дух тот же;",
           "B": "Дары даются по-разному, но Дух, который их даёт, — один и тот же.",
           "R": "Дух даёт разным людям разные дары, но это всегда один и тот же Дух."
+        },
+        "uk": {
+          "L": "А є розподіли дарів, але той самий Дух.",
+          "B": "Дари роздаються по-різному, але той самий Дух дає їх.",
+          "R": "Дух дає різним людям різні дари, але це завжди той самий Дух."
+        },
+        "ja": {
+          "L": "さて、賜物はさまざまに分け与えられていますが、霊は同じです。",
+          "B": "賜物はさまざまな形で分け与えられていますが、それを与えてくださるのは同じ霊です。",
+          "R": "聖霊は、いろいろな人に、いろいろな贈り物をくださいます。でも、それをくださるのは、いつも同じ聖霊です。"
+        },
+        "id": {
+          "L": "Dan ada berbagai-bagai karunia, tetapi Roh yang sama.",
+          "B": "Karunia-karunia diberikan dengan berbagai cara, tetapi Roh yang memberikannya adalah Roh yang sama.",
+          "R": "Roh memberikan karunia yang berbeda-beda kepada orang yang berbeda-beda, tetapi Roh itu selalu sama."
+        },
+        "zh": {
+          "L": "恩赐有不同的分配，但[是]同一位圣灵。",
+          "B": "恩赐以不同的方式分给人，但赐恩赐的是同一位圣灵。",
+          "R": "圣灵把不同的恩赐给不同的人，但始终是同一位圣灵。"
         }
       },
       "decisions": [
@@ -1567,6 +1859,49 @@
           "reason": "Charisma is \"дар\" at every level in chapters 12-14 so that readers can follow the word; the Synodal \"дарования\" is bookish.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46012004003"
+          ],
+          "choice": "\"恩赐\"",
+          "alternatives": [
+            "\"属灵恩赐\"",
+            "\"天赋\""
+          ],
+          "reason": "The word is \"恩赐\" at every level in chapters 12-14, as in Romans 12:6: a gift given freely by God's grace (the meaning decision), not a natural talent. \"属灵的恩赐\" is kept for the adjective of 12:1, as the English keeps \"gifts\" and \"spiritual gifts\" apart.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46012004001"
+          ],
+          "choice": "\"分配\" (L); \"以不同的方式分给人\" (B, R)",
+          "alternatives": [
+            "\"分别\""
+          ],
+          "reason": "Different gifts given out to different people (the meaning decision); the same word opens verses 4, 5 and 6, so each level repeats its wording.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1642,6 +1977,26 @@
           "L": "и различия служений есть, и Господь тот же;",
           "B": "Служения даются по-разному, и тот, кому служат, — один и тот же Господь.",
           "R": "Есть разные способы служить, но все мы служим одному и тому же Господу."
+        },
+        "uk": {
+          "L": "І є розподіли служінь, і той самий Господь.",
+          "B": "Служіння роздаються по-різному, і служать усі тому самому Господу.",
+          "R": "Є різні способи служити, але всі ми служимо тому самому Господу."
+        },
+        "ja": {
+          "L": "また、奉仕はさまざまに分け与えられていますが、主は同じです。",
+          "B": "奉仕もさまざまな形で分け与えられていますが、仕えている相手は同じ主です。",
+          "R": "人に仕えるやり方はいろいろありますが、わたしたちはみな、同じ主に仕えているのです。"
+        },
+        "id": {
+          "L": "Dan ada berbagai-bagai pelayanan, dan Tuhan yang sama.",
+          "B": "Pelayanan-pelayanan diberikan dengan berbagai cara, dan Tuhan yang dilayani adalah Tuhan yang sama.",
+          "R": "Ada berbagai cara untuk melayani, tetapi kita semua melayani Tuhan yang sama."
+        },
+        "zh": {
+          "L": "事奉也有不同的分配，但[是]同一位主。",
+          "B": "事奉以不同的方式分给人，所服事的是同一位主。",
+          "R": "服事的方式各不相同，但我们服事的都是同一位主。"
         }
       },
       "decisions": [
@@ -1759,6 +2114,71 @@
           "reason": "The meaning decision reads the word as ways of serving others; \"직분\" would suggest church offices.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46012005003"
+          ],
+          "choice": "служіння for diakoniai",
+          "alternatives": [
+            "служби"
+          ],
+          "reason": "As in 3:5, the diakonos family is \"служитель, служіння\" through the letter.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46012005003"
+          ],
+          "choice": "\"奉仕\" (L, B); \"人に仕えるやり方\" (R)",
+          "alternatives": [
+            "\"務め\"",
+            "\"ミニストリー\""
+          ],
+          "reason": "Ways of serving others (m1); \"奉仕\" is the living church word, R says it plainly.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46012005003"
+          ],
+          "choice": "\"事奉\" (L, B); the verb \"服事\" (B, R)",
+          "alternatives": [
+            "职事",
+            "服事者",
+            "仆役",
+            "执事"
+          ],
+          "reason": "diakonia and diakonos as Romans and 2 Corinthians have them. \"事奉\" is the ministry at Literal and Balanced (Romans 11:13; 2 Corinthians 3:7-9), here the ministries the one Lord gives (12:5) and the household of Stephanas's service to the holy ones (16:15). \"仆人\" is diakonos at Literal and Balanced (Romans 13:4; 15:8; 2 Corinthians 3:6), never \"执事\", the church office (Romans 16:1). Readable says \"工作\" or the verb \"服事\", as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1840,6 +2260,26 @@
           "L": "и различия действий есть, но Бог тот же, действующий всё во всех.",
           "B": "Действия силы даются по-разному, но это один и тот же Бог, который совершает их все во всех.",
           "R": "Божья сила действует по-разному, но это один и тот же Бог, который делает всё это в каждом из нас."
+        },
+        "uk": {
+          "L": "І є розподіли дій, а той самий Бог, який діє все в усіх.",
+          "B": "Прояви сили роздаються по-різному, але той самий Бог чинить усе це в кожному.",
+          "R": "Божа сила діє по-різному, але той самий Бог робить усе це в кожному з нас."
+        },
+        "ja": {
+          "L": "また、働きはさまざまに分け与えられていますが、神は同じです。この方が、すべての人の中で、すべてのことを行われるのです。",
+          "B": "力ある働きもさまざまな形で分け与えられていますが、すべての人の中でそのすべてを行われるのは、同じ神です。",
+          "R": "神の力は、いろいろな形で働きます。でも、わたしたち一人一人の中で、そのすべてをしてくださるのは、同じ神です。"
+        },
+        "id": {
+          "L": "Dan ada berbagai-bagai perbuatan ajaib, tetapi Allah yang sama, yang mengerjakan semuanya di dalam semua orang.",
+          "B": "Perbuatan-perbuatan kuasa diberikan dengan berbagai cara, tetapi Allah yang mengerjakan semuanya di dalam setiap orang adalah Allah yang sama.",
+          "R": "Kuasa Allah bekerja dengan berbagai cara, tetapi Allah yang sama yang melakukan semua hal ini di dalam setiap orang dari kita."
+        },
+        "zh": {
+          "L": "运作也有不同的分配，但[是]同一位{{god_term:神|上帝}}，在所有人里面运作一切。",
+          "B": "大能的作为以不同的方式分给人，但在每个人身上成就这一切的，是同一位{{god_term:神|上帝}}。",
+          "R": "{{god_term:神|上帝}}的能力以不同的方式运行，但在我们每个人身上做这一切事的，是同一位{{god_term:神|上帝}}。"
         }
       },
       "decisions": [
@@ -1972,6 +2412,28 @@
           "reason": "Literal keeps the noun and the verb from one root, as the Greek does (m1); Balanced says \"ações do poder de Deus ... realiza\", as the English \"workings of power\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46012006003",
+            "n46012006010"
+          ],
+          "choice": "\"运作\" (L); \"大能的作为\" (B); \"能力……运行\" (R)",
+          "alternatives": [
+            "\"功用\""
+          ],
+          "reason": "What God's power produces, things done by his power at work (the meaning decision); Literal keeps the noun and verb of one root, as the Greek has.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2049,6 +2511,26 @@
           "L": "Каждому же даётся проявление Духа на пользу.",
           "B": "Каждому дано то, в чём Дух открыто действует, и дано это на общее благо.",
           "R": "В каждом из нас Дух действует так, что это видят другие. Бог даёт это, чтобы помочь всей церкви."
+        },
+        "uk": {
+          "L": "А кожному дається виявлення Духа на користь.",
+          "B": "Кожному дано такий спосіб, у який Дух відкрито діє, і це дано для добра всіх.",
+          "R": "У кожному з нас Дух діє так, що інші можуть це бачити. Бог дає це, щоб допомогти всій церкві."
+        },
+        "ja": {
+          "L": "さて、一人一人に霊の現れが与えられているのは、益となるためです。",
+          "B": "一人一人に、霊の働きがはっきりと現れるようにされています。それは、全体の益となるためです。",
+          "R": "わたしたち一人一人の中で、聖霊は、ほかの人にも分かるような形で働いておられます。神がそうしてくださるのは、教会全体を助けるためです。"
+        },
+        "id": {
+          "L": "Dan kepada masing-masing diberikan penyataan Roh untuk kepentingan bersama.",
+          "B": "Kepada setiap orang diberikan suatu cara Roh bekerja dengan nyata, dan hal itu diberikan untuk kebaikan semua orang.",
+          "R": "Di dalam setiap orang dari kita, Roh bekerja dengan cara yang dapat dilihat orang lain. Allah memberikan hal ini untuk menolong seluruh jemaat."
+        },
+        "zh": {
+          "L": "圣灵的显现赐给每个人，是为了[众人的]益处。",
+          "B": "每个人都得到一种方式，让圣灵在他身上公开地运行，这是为了众人的好处。",
+          "R": "圣灵在我们每个人身上运行，是别人可以看得见的。{{god_term:神|上帝}}赐下这些，是要帮助整个教会。"
         }
       },
       "decisions": [
@@ -2146,6 +2628,47 @@
             "for the common good"
           ],
           "reason": "Readable names the giver (m3) and says whose good is meant (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46012007005"
+          ],
+          "choice": "\"霊の現れ\" (L); \"霊の働きがはっきりと現れる\" (B); \"ほかの人にも分かるような形で働いておられます\" (R)",
+          "alternatives": [
+            "\"霊の顕現\""
+          ],
+          "reason": "The Spirit made visible, shown to be at work (m1); \"顕現\" is too technical for B.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46012007005"
+          ],
+          "choice": "\"让圣灵……公开地运行\" (B); \"圣灵……运行，是别人可以看得见的\" (R)",
+          "alternatives": [
+            "\"圣灵的显现\""
+          ],
+          "reason": "The Spirit made visible, shown to be present and at work (the meaning decision); Literal keeps the noun, Balanced and Readable say what it means, as the English does.",
           "uncertain": false,
           "footnote": false
         }
@@ -2261,6 +2784,26 @@
           "L": "Ведь одному через Духа даётся слово мудрости, другому же слово знания по тому же Духу, \\v 9 иному вера тем же Духом, другому дары исцелений одним Духом, \\v 10 другому действия сил, другому пророчество, другому различение духов, иному роды языков, другому истолкование языков;",
           "B": "Одному через Духа даётся слово мудрости, другому тем же Духом — слово знания, \\v 9 иному тем же Духом — вера, другому одним Духом — дары исцеления, \\v 10 другому — сила совершать чудеса, другому — пророчество, другому — способность различать духов, иному — разные языки, а другому — истолкование языков.",
           "R": "Одному человеку Дух помогает говорить с мудростью. Другому тот же Дух помогает говорить со знанием. \\v 9 Тот же Дух даёт одному человеку особый дар веры, а другому — дары исцелять людей. \\v 10 Один человек может совершать чудеса. Другой может пророчествовать. Другой может распознать, какие духи от Бога, а какие нет. Один человек может говорить на разных языках, а другой может объяснить, что было сказано на этих языках."
+        },
+        "uk": {
+          "L": "Бо одному через Духа дається слово мудрості, а іншому слово знання за тим самим Духом, \\v 9 іншому віра тим самим Духом, іншому дари зцілень тим одним Духом, \\v 10 іншому дії чудес, іншому пророцтво, іншому розрізнення духів, іншому різні мови, іншому тлумачення мов.",
+          "B": "Через Духа одному дано вістку мудрості, іншому, тим самим Духом, вістку знання, \\v 9 іншому, тим самим Духом, віру, іншому, тим одним Духом, дари зцілення, \\v 10 іншому силу творити чуда, іншому пророцтво, іншому здатність розрізняти духів, іншому різні види мов, а ще іншому тлумачення мов.",
+          "R": "Дух допомагає одній людині говорити мудро. Той самий Дух допомагає іншій людині говорити зі знанням. \\v 9 Той самий Дух дає одній людині особливий дар віри, а іншій — дари зціляти людей. \\v 10 Одна людина має силу творити чуда. Інша може пророкувати. Ще інша може розпізнати, які духи від Бога, а які ні. Одна людина може говорити різними мовами, а інша може тлумачити те, що сказано цими мовами."
+        },
+        "ja": {
+          "L": "というのは、ある人には霊によって知恵の言葉が与えられ、ほかの人には同じ霊に従って知識の言葉が、\\v 9 ほかの人には同じ霊によって信仰が、ほかの人には一つの霊によって癒やしの賜物が、\\v 10 ほかの人には奇跡を行う働きが、ほかの人には預言が、ほかの人には霊を見分けることが、ほかの人には種々の異言が、ほかの人には異言の解き明かしが[与えられているからです]。",
+          "B": "ある人は霊によって知恵の言葉を与えられ、ある人は同じ霊によって知識の言葉を、\\v 9 ある人は同じ霊によって信仰を、ある人は一つの霊によって癒やしの賜物を、\\v 10 ある人は奇跡を行う力を、ある人は預言を、ある人は霊を見分ける力を、ある人はさまざまな種類の異言を、ある人は異言を解き明かす力を与えられています。",
+          "R": "聖霊は、ある人には、知恵のある言葉を語れるようにしてくださいます。同じ聖霊が、ほかの人には、知識のある言葉を語れるようにしてくださいます。\\v 9 同じ聖霊が、ある人には特別な信仰をくださり、ほかの人には、病気の人をいやす力をくださいます。\\v 10 ある人は、奇跡を行う力を持っています。ほかの人は、預言をすることができます。ほかの人は、どの霊が神から来たもので、どの霊がそうでないかを見分けることができます。ある人は、いろいろな種類の異言（聖霊によって与えられる、習ったことのない言葉）で話すことができ、ほかの人は、異言で語られたことの意味を説明することができます。"
+        },
+        "id": {
+          "L": "Sebab kepada yang seorang diberikan melalui Roh perkataan hikmat, dan kepada yang lain perkataan pengetahuan menurut Roh yang sama, \\v 9 kepada yang lain iman oleh Roh yang sama, kepada yang lain karunia-karunia penyembuhan oleh Roh yang satu itu, \\v 10 kepada yang lain kuasa untuk mengadakan mukjizat, kepada yang lain nubuat, kepada yang lain kemampuan untuk membedakan roh-roh, kepada yang lain berbagai-bagai bahasa roh, kepada yang lain penafsiran bahasa roh.",
+          "B": "Melalui Roh yang seorang diberi perkataan hikmat; yang lain, oleh Roh yang sama, perkataan pengetahuan; \\v 9 yang lain, oleh Roh yang sama, iman; yang lain, oleh Roh yang satu itu, karunia-karunia penyembuhan; \\v 10 yang lain, kuasa untuk mengadakan mukjizat; yang lain, nubuat; yang lain, kemampuan untuk membedakan roh-roh; yang lain, berbagai macam bahasa roh; dan yang lain lagi, penafsiran bahasa roh.",
+          "R": "Roh menolong seseorang untuk berbicara dengan hikmat. Roh yang sama menolong orang lain untuk berbicara dengan pengetahuan. \\v 9 Roh yang sama memberi seseorang karunia iman yang istimewa, dan memberi orang lain karunia untuk menyembuhkan orang. \\v 10 Seseorang mempunyai kuasa untuk mengadakan mukjizat. Yang lain dapat bernubuat. Yang lain dapat membedakan roh mana yang berasal dari Allah dan mana yang tidak. Seseorang dapat berbicara dalam berbagai macam bahasa roh, dan yang lain dapat menafsirkan apa yang dikatakan dalam bahasa roh."
+        },
+        "zh": {
+          "L": "因为借着圣灵，有人得着智慧的话语，另有人照着同一位圣灵得着知识的话语，\\v 9 又有人借着同一位圣灵得着信心，又有人借着那一位圣灵得着各样医治的恩赐，\\v 10 又有人得着行奇迹的各种作为，又有人得着预言，又有人得着辨别众灵[的能力]，又有人得着各种方言，又有人得着方言的翻译。",
+          "B": "借着圣灵，有一个人得到智慧的信息；另一个人借着同一位圣灵，得到知识的信息；\\v 9 另一个人借着同一位圣灵，得到信心；另一个人借着那一位圣灵，得到医治的恩赐；\\v 10 另一个人得到行奇迹的能力；另一个人得到预言；另一个人得到分辨灵的能力；另一个人得到各种不同的方言；还有一个人得到方言的翻译。",
+          "R": "圣灵帮助一个人带着智慧说话。同一位圣灵帮助另一个人带着知识说话。\\v 9 同一位圣灵给一个人特别的信心，又给另一个人医治病人的恩赐。\\v 10 有人有行奇迹的能力。有人能说预言。有人能分辨哪些灵是从{{god_term:神|上帝}}来的，哪些不是。有人能说各种不同的方言，还有人能把用方言所说的话翻译出来。"
         }
       },
       "decisions": [
@@ -2854,6 +3397,203 @@
           "reason": "\"Языки\" keeps the Greek's word for tongue and language, used through chapters 12-14 (meaning decision m6); \"истолкование\" names the gift of putting it into understandable words (m7). These names are kept wherever the gifts return.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46012008008",
+            "n46012008009",
+            "n46012008012",
+            "n46012008013",
+            "n46012009008",
+            "n46012009009",
+            "n46012010002",
+            "n46012010003",
+            "n46012010007",
+            "n46012010008",
+            "n46012010010",
+            "n46012010011",
+            "n46012010012",
+            "n46012010013",
+            "n46012010014"
+          ],
+          "choice": "слово мудрості, слово знання, віра, дари зцілень, дії чудес, пророцтво, розрізнення духів, різні мови, тлумачення мов (L); вістка мудрості, вістка знання, ..., здатність розрізняти духів, різні види мов, тлумачення мов (B): the same names through chapters 12 to 14",
+          "alternatives": [
+            "язики",
+            "дар мов"
+          ],
+          "reason": "The Corinthians note fixes the names of the gifts at each level. For glōssai Ukrainian \"мови\" is the word for tongues and for languages at once, as the Greek is; the English footnotes \"languages\", which the Ukrainian already says. \"Язики\" is archaic and now means a body part only.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-2",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46012010005"
+          ],
+          "choice": "пророцтво, пророкувати",
+          "alternatives": [
+            "проповідь"
+          ],
+          "reason": "Prophecy is a message from God for the church (m4), kept apart from preaching.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46012010011",
+            "n46012010013"
+          ],
+          "choice": "\"異言\" at every level; \"異言の解き明かし\" (L), \"異言を解き明かす力\" (B), \"異言で語られたことの意味を説明する\" (R); R explains \"異言\" once in brackets",
+          "alternatives": [
+            "\"いろいろな言語\"",
+            "\"舌\""
+          ],
+          "reason": "Speech given by the Spirit in a language the speaker has not learned (m6, uncertain); \"異言\" is the only current name for the gift, so R keeps it and explains it the first time.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46012009009"
+          ],
+          "choice": "\"癒やしの賜物\" (L, B); \"病気の人をいやす力\" (R)",
+          "alternatives": [
+            "\"いやしの賜物\""
+          ],
+          "reason": "Each healing is itself a gift (m3); kanji 癒やし at L and B, kana at R (style 7a).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46012010010",
+            "n46012010011",
+            "n46012010013",
+            "n46012010014"
+          ],
+          "choice": "\"bahasa roh\" and \"penafsiran bahasa roh\" at every level; \"mukjizat\"; \"bernubuat\"",
+          "alternatives": [
+            "\"bahasa lidah\""
+          ],
+          "reason": "The glossary words for tongues, miracles and prophesy, used through chapters 12-14; \"bahasa roh\" is the established Indonesian term for speech given by the Spirit in a language the speaker has not learned (m6).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46012008008",
+            "n46012008012",
+            "n46012009008",
+            "n46012010002",
+            "n46012010005",
+            "n46012010007",
+            "n46012010013"
+          ],
+          "choice": "names of the gifts: \"智慧的话语\", \"知识的话语\" (L), \"智慧的信息\", \"知识的信息\" (B); \"医治的恩赐\"; \"行奇迹的作为\" (L), \"行奇迹的能力\" (B, R); \"预言\", \"说预言\"; \"辨别众灵\" (L), \"分辨灵的能力\" (B); \"方言的翻译\" (L, B)",
+          "alternatives": [
+            "\"智慧的言语\"",
+            "\"行异能\"",
+            "\"翻方言\""
+          ],
+          "reason": "These names are kept wherever the gifts come back (12:28-30; chapters 13-14), as the English keeps its names. \"信息\" at Balanced shows that the first two are gifts of speaking (the meaning decision). \"预言\" / \"说预言\" for prophecy, as Romans 12:6 and Acts 19:6; \"奇迹\" keeps \"神迹\" free for signs (John).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46012010010",
+            "n46012010011"
+          ],
+          "choice": "\"各种方言\" (L); \"各种不同的方言\" (B, R)",
+          "alternatives": [
+            "\"说自己没有学过的语言\" (Readable)",
+            "\"说灵言\"",
+            "\"舌音\""
+          ],
+          "reason": "\"说方言\" is the Chinese church's word for the gift of tongues, as at Mark 16:17 and Acts 10:46 and 19:6. It is kept at every level through chapters 12-14, because the English Readable keeps \"tongues\" here; at Mark 16:17 and Acts 19:6 Readable says \"语言\" the speaker has not learned, as the English Readable says \"languages\" there. The meaning decision reads tongues as speech given by the Spirit; where the English speaks of languages (13:1; 14:10-11, 21), Chinese says \"语言\". Interpretation is \"翻译\" throughout.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-3",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n46012009002",
+            "n46012010007"
+          ],
+          "choice": "\"特别的信心\"; \"哪些灵是从神来的，哪些不是\"",
+          "alternatives": [
+            "\"信心\"; \"分辨灵\""
+          ],
+          "reason": "Readable says that this faith is a particular gift, not the faith every believer has, and what telling spirits apart means (the meaning decisions), as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2936,6 +3676,26 @@
           "L": "Всё же это производит один и тот же Дух, разделяя каждому особо, как {{deity_pronoun:он|Он}} хочет.",
           "B": "Один и тот же Дух действует во всём этом, наделяя каждого в отдельности так, как {{deity_pronoun:он|Он}} пожелает.",
           "R": "Всё это делает один Дух. Дух решает, какие дары дать каждому человеку."
+        },
+        "uk": {
+          "L": "А все це чинить один і той самий Дух, розділяючи кожному особисто, як {{deity_pronoun:він|Він}} хоче.",
+          "B": "Один і той самий Дух діє в усьому цьому, даючи кожному окремо так, як {{deity_pronoun:він|Він}} вирішує.",
+          "R": "Усе це робить один Дух. Дух вирішує, які дари дати кожній людині."
+        },
+        "ja": {
+          "L": "しかし、これらすべてのことを行われるのは、一つの同じ霊であり、霊はお望みのままに、一人一人に個別に分け与えておられるのです。",
+          "B": "これらすべてのことを行っておられるのは、ただ一つの同じ霊です。霊は、お望みのままに、一人一人にそれぞれ分け与えてくださいます。",
+          "R": "これらすべてのことをしておられるのは、ただ一つの聖霊です。聖霊が、一人一人にどの贈り物を与えるかを決めておられるのです。"
+        },
+        "id": {
+          "L": "Tetapi semuanya ini dikerjakan oleh Roh yang satu dan yang sama, yang membagikan kepada masing-masing secara khusus sebagaimana {{deity_pronoun:dia|Dia}} kehendaki.",
+          "B": "Roh yang satu dan yang sama bekerja dalam semuanya ini, dan memberikan kepada setiap orang secara khusus sebagaimana yang {{deity_pronoun:dia|Dia}} kehendaki.",
+          "R": "Roh yang satu itulah yang melakukan semua hal ini. Roh itu yang memutuskan karunia mana yang {{deity_pronoun:dia|Dia}} berikan kepada setiap orang."
+        },
+        "zh": {
+          "L": "但这一切都是那独一又同一的圣灵所运作的，{{deity_pronoun:他|祂}}照着{{deity_pronoun:他|祂}}的意愿，个别地分给每一个人。",
+          "B": "这一切都是同一位圣灵在其中运行，{{deity_pronoun:他|祂}}照着{{deity_pronoun:他|祂}}所定意的，分别赐给每一个人。",
+          "R": "做这一切事的是同一位圣灵。圣灵决定把哪些恩赐给每一个人。"
         }
       },
       "decisions": [
@@ -3127,6 +3887,67 @@
           "reason": "The Spirit is a person; Russian \"Дух\" is masculine, and its pronoun takes the deity_pronoun setting as in the English. Readable repeats \"Дух\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n46012011015"
+          ],
+          "choice": "{{deity_pronoun:він|Він}} for the Spirit",
+          "alternatives": [
+            "воно",
+            "він"
+          ],
+          "reason": "The Corinthians note: the Holy Spirit takes the deity_pronoun setting like God and Christ, and is never \"it\". Ukrainian \"Дух\" is masculine, so \"він\" agrees with it naturally.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n46012011015"
+          ],
+          "choice": "\"お望みのままに\" with no deity_pronoun span",
+          "alternatives": [
+            "a deity_pronoun span as in the English"
+          ],
+          "reason": "Japanese has no capital letters, so the English he/He span becomes a respect form for the Spirit (style 7).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n46012011015"
+          ],
+          "choice": "{{deity_pronoun:他|祂}}",
+          "alternatives": [
+            "\"它\""
+          ],
+          "reason": "The Spirit is a person and is never \"它\"; the pronoun takes the deity_pronoun setting, as the English does. Readable repeats \"圣灵\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3219,6 +4040,26 @@
           "L": "Ведь как тело одно и имеет много членов, все же члены тела, будучи многими, — одно тело, так и {{christos:Христос|Мессия}};",
           "B": "Тело — одно целое, но в нём много частей; и все его части, хотя их много, составляют одно тело. Так и {{christos:Христос|Мессия}}.",
           "R": "Тело — это одно целое, но в нём много частей. Частей много, но вместе они составляют одно тело. Так же и {{christos:Христос|Мессия}} со своим народом."
+        },
+        "uk": {
+          "L": "Бо як тіло одне і має багато членів, а всі члени тіла, хоч їх багато, є одне тіло, так і {{christos:Христос|Месія}}.",
+          "B": "Тіло — одне ціле, і все ж воно має багато частин; усі його частини, хоч їх і багато, становлять одне тіло. Так само і з {{christos:Христом|Месією}}.",
+          "R": "Тіло — одне, але в нього багато частин. Частин багато, але разом вони — одне тіло. Так само і з {{christos:Христом|Месією}} та {{deity_pronoun:його|Його}} народом."
+        },
+        "ja": {
+          "L": "というのは、ちょうど体が一つであっても多くの肢体を持ち、体の肢体はすべて、多くあっても一つの体であるように、{{christos:キリスト|メシア}}もまたそうだからです。",
+          "B": "体は一つでありながら、多くの部分を持っています。体の部分は多くても、すべてで一つの体を成しています。{{christos:キリスト|メシア}}もそれと同じです。",
+          "R": "体は一つですが、たくさんの部分があります。たくさんの部分があっても、全部がいっしょになって一つの体になっています。{{christos:キリスト|メシア}}と、{{christos:キリスト|メシア}}に属する人々も、それと同じです。"
+        },
+        "id": {
+          "L": "Sebab sama seperti tubuh itu satu dan mempunyai banyak anggota, dan semua anggota tubuh itu, sekalipun banyak, adalah satu tubuh, demikian juga {{christos:Kristus|Mesias}}.",
+          "B": "Tubuh itu satu kesatuan, tetapi mempunyai banyak anggota; semua anggotanya, walaupun banyak, membentuk satu tubuh. Demikian juga dengan {{christos:Kristus|Mesias}}.",
+          "R": "Tubuh itu satu, tetapi mempunyai banyak bagian. Tubuh itu mempunyai banyak bagian, tetapi bersama-sama bagian-bagian itu membentuk satu tubuh. Begitu juga dengan {{christos:Kristus|Mesias}} dan umat-{{deity_pronoun:nya|Nya}}."
+        },
+        "zh": {
+          "L": "因为正如身体是一个，却有许多肢体，并且身体所有的肢体，虽然众多，却是一个身体，{{christos:基督|弥赛亚}}也[是]如此。",
+          "B": "身体是一个整体，却有许多部分；所有的部分虽然很多，却组成一个身体。{{christos:基督|弥赛亚}}也是一样。",
+          "R": "一个身体是一个整体，但它有很多部分。它有很多部分，但这些部分合起来成为一个身体。{{christos:基督|弥赛亚}}和{{deity_pronoun:他|祂}}的子民也是这样。"
         }
       },
       "decisions": [
@@ -3553,6 +4394,92 @@
           "reason": "\"Члены\" now usually means members of a club or party; Balanced and Readable keep the picture of a body (meaning decision m1). Literal keeps \"члены\". In Readable, \"со своим народом\" uses the reflexive, which takes no deity_pronoun span where the English has one on \"his\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46012012008",
+            "n46012012014"
+          ],
+          "choice": "члени (L); частини (B, R), as in 6:15, through chapter 12",
+          "alternatives": [
+            "органи"
+          ],
+          "reason": "The Corinthians note's levels for melē; \"член\" names a limb of the body and a member of a group at once.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46012012008"
+          ],
+          "choice": "\"肢体\" (L); \"部分\" (B, R), through chapter 12",
+          "alternatives": [
+            "\"器官\"",
+            "\"部位\""
+          ],
+          "reason": "The limbs and organs of a body (m1); \"肢体\" as in 6:15 at L, and the everyday \"部分\" where the English says parts.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46012012008",
+            "n46012012014"
+          ],
+          "choice": "\"肢体\" (L); \"部分\" (B, R)",
+          "alternatives": [
+            "\"成员\"",
+            "\"肢体\" at every level"
+          ],
+          "reason": "melē are the limbs and organs of a body (meaning decision). As in Romans 12:4-5, Literal keeps the traditional \"肢体\"; Balanced and Readable say \"部分\" or \"身体的一部分\", the parts of a body, so the picture of a body is plain, as the English does, in 6:15 and through 12:12-27. \"成员\" would mean members of a group.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n46012012025"
+          ],
+          "choice": "\"{{christos:基督|弥赛亚}}和{{deity_pronoun:他|祂}}的子民\"",
+          "alternatives": [
+            "\"基督\" alone"
+          ],
+          "reason": "Readable makes clear that Christ is meant together with those who belong to him (the meaning decision), as the English Readable does, with the deity_pronoun span.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3644,6 +4571,26 @@
           "L": "И ведь одним Духом все мы в одно тело были крещены, иудеи ли, греки ли, рабы ли, свободные ли, и все одним Духом были напоены.",
           "B": "Все мы были крещены одним Духом в одно тело — иудеи или греки, рабы или свободные, — и все мы были напоены одним Духом.",
           "R": "Неважно, иудеи мы или не-иудеи, рабы или свободные. Все мы были крещены одним Духом, и это сделало нас одним телом. Бог дал каждому из нас одного и того же Духа, как воду, которую пьют."
+        },
+        "uk": {
+          "L": "Бо й одним Духом ми всі в одне тіло хрестилися, чи юдеї, чи греки, чи раби, чи вільні, і всі одним Духом напоєні.",
+          "B": "Справді, усіх нас хрещено одним Духом в одне тіло, чи були ми юдеями, чи греками, рабами чи вільними, і всіх нас напоєно одним Духом.",
+          "R": "Неважливо, чи ми юдеї, чи греки, раби чи вільні. Усіх нас охрещено одним Духом, і це зробило нас одним тілом. Бог дав кожному з нас того самого Духа, як воду, щоб пити."
+        },
+        "ja": {
+          "L": "実際、ユダヤ人であれギリシア人であれ、奴隷であれ自由な者であれ、わたしたちは皆、一つの霊において一つの体へと洗礼を受け、皆、一つの霊を飲む者とされたのです。",
+          "B": "実際、わたしたちは、ユダヤ人であってもギリシア人であっても、奴隷であっても自由な身分の者であっても、皆、一つの霊によって洗礼を受けて一つの体となり、皆、一つの霊を飲ませていただいたのです。",
+          "R": "ユダヤ人か、ユダヤ人でないか、奴隷か、自由な人かは、問題ではありません。わたしたちはみな、一つの聖霊によって洗礼を受け、そのことによって一つの体とされました。神は、わたしたち一人一人に、同じ聖霊を、飲む水のように与えてくださったのです。"
+        },
+        "id": {
+          "L": "Sebab dalam satu Roh kita semua telah dibaptis menjadi satu tubuh, baik orang Yahudi maupun orang Yunani, baik budak maupun orang merdeka, dan kita semua diberi minum dari satu Roh.",
+          "B": "Sebab kita semua telah dibaptis dalam satu Roh menjadi satu tubuh, entah kita orang Yahudi atau orang Yunani, budak atau orang merdeka, dan kita semua telah diberi minum dari satu Roh.",
+          "R": "Tidak menjadi soal apakah kita orang Yahudi atau orang Yunani, budak atau orang merdeka. Kita semua dibaptis dalam satu Roh, dan hal itu menjadikan kita satu tubuh. Allah memberi setiap orang dari kita Roh yang sama, seperti air untuk diminum."
+        },
+        "zh": {
+          "L": "因为我们全都在一位圣灵里受洗，归入一个身体，无论是犹太人或是希腊人，无论是奴隶或是自由人，并且全都被赐予一位圣灵来喝。",
+          "B": "的确，我们所有人都在一位圣灵里受洗，归入一个身体，不管我们是犹太人还是希腊人，是奴隶还是自由人；我们也都被赐予同一位圣灵来喝。",
+          "R": "不管我们是犹太人还是希腊人，是奴隶还是自由人，都没有关系。我们都在同一位圣灵里受了洗，这使我们成为一个身体。{{god_term:神|上帝}}把同一位圣灵赐给我们每一个人，就像给我们水喝一样。"
         }
       },
       "decisions": [
@@ -3982,6 +4929,111 @@
           "reason": "\"Раб\" at every level, as the style guide keeps it; the verse sets slave against free (meaning decision m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46012013017"
+          ],
+          "choice": "раби at every level",
+          "alternatives": [
+            "слуги"
+          ],
+          "reason": "The Corinthians note says \"slave\" at every level where slavery itself is the point, as here with \"slave and free\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n46012013013",
+            "n46012013015"
+          ],
+          "choice": "The list \"ユダヤ人であれ……自由な者であれ\" comes before the verb at every level",
+          "alternatives": [
+            "after \"洗礼を受け\""
+          ],
+          "reason": "Japanese puts the \"whether ... or\" clause before the main verb; the sense is unchanged (m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46012013004",
+            "n46012013005"
+          ],
+          "choice": "\"一つの霊において\" (L); \"一つの霊によって\" (B, R)",
+          "alternatives": [
+            "\"一つの霊の中に\""
+          ],
+          "reason": "The Spirit is the one in whom believers are baptized (m1, uncertain); L keeps \"in\", B and R say it in natural Japanese.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46012013017"
+          ],
+          "choice": "\"奴隶\"",
+          "alternatives": [
+            "\"仆人\""
+          ],
+          "reason": "\"奴隶\" at every level in \"slave or free\", as the glossary keeps it where slavery itself is the point: the deepest divisions of the ancient world, overcome in the one body (the meaning decision).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46012013024"
+          ],
+          "choice": "\"被赐予……来喝\" (B); \"就像给我们水喝一样\" (R)",
+          "alternatives": [
+            "\"饮于\""
+          ],
+          "reason": "Made to drink means given the Spirit, as water is given to the thirsty (the meaning decision); Balanced and Readable keep the picture and make plain that the Spirit is given.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4059,6 +5111,26 @@
           "L": "И ведь тело не один член, но многие.",
           "B": "Ведь тело состоит не из одной части, а из многих.",
           "R": "Тело — это не одна часть. В нём много частей."
+        },
+        "uk": {
+          "L": "Бо й тіло не один член, а багато.",
+          "B": "Зрештою, тіло складається не з однієї частини. У нього їх багато.",
+          "R": "Тіло — це не одна частина. У нього багато частин."
+        },
+        "ja": {
+          "L": "実際、体は一つの肢体ではなく、多くの[肢体から成っています]。",
+          "B": "体は一つの部分からできているのではありません。多くの部分からできているのです。",
+          "R": "体は一つの部分だけではありません。たくさんの部分があります。"
+        },
+        "id": {
+          "L": "Sebab tubuh juga bukan terdiri dari satu anggota, tetapi banyak.",
+          "B": "Bagaimanapun juga, tubuh tidak terdiri dari satu anggota saja. Tubuh mempunyai banyak anggota.",
+          "R": "Tubuh tidak hanya terdiri dari satu bagian. Tubuh mempunyai banyak bagian."
+        },
+        "zh": {
+          "L": "其实，身体并不是只有一个肢体，而是有许多。",
+          "B": "毕竟，一个身体不是由一个部分构成的，而是有许多部分。",
+          "R": "身体不只是一个部分。它有许多部分。"
         }
       },
       "decisions": [
@@ -4184,6 +5256,26 @@
           "L": "Если скажет нога: «Так как я не рука, я не из тела», разве поэтому она не из тела?",
           "B": "Допустим, нога говорит: «Я не рука, поэтому я не принадлежу к телу.» Разве от этого она меньше принадлежит к телу?",
           "R": "Допустим, нога сказала бы: «Я не рука, значит, я не часть тела.» Но она всё равно часть тела!"
+        },
+        "uk": {
+          "L": "Якщо скаже нога: «Через те, що я не рука, я не з тіла», то хіба через це вона не з тіла?",
+          "B": "Припустімо, нога каже: «Я не рука, тож я не належу до тіла». Хіба вона через це менше належить до тіла?",
+          "R": "Припустімо, нога сказала б: «Я не рука, тож я не частина тіла». Вона все одно була б частиною тіла!"
+        },
+        "ja": {
+          "L": "もし足が、「わたしは手ではないから、体に属していない」と言ったとしても、それだから体に属していないということになるでしょうか？",
+          "B": "たとえ足が、「わたしは手ではないから、体の一部ではない」と言ったとしても、そのために体の一部でなくなるでしょうか？",
+          "R": "たとえば、足が「わたしは手ではないから、体の一部ではない」と言ったとします。それでも、足は体の一部なのです。"
+        },
+        "id": {
+          "L": "Jika kaki berkata, \"Karena aku bukan tangan, aku tidak termasuk tubuh,\" apakah karena itu ia tidak termasuk tubuh?",
+          "B": "Misalkan kaki berkata, \"Aku bukan tangan, jadi aku tidak termasuk tubuh.\" Apakah karena itu ia kurang menjadi bagian dari tubuh?",
+          "R": "Misalkan kaki berkata, \"Aku bukan tangan, jadi aku bukan bagian dari tubuh.\" Kaki itu tetap bagian dari tubuh!"
+        },
+        "zh": {
+          "L": "假如脚说：“因为我不是手，所以我不属于身体”，它难道就因此不属于身体了吗？",
+          "B": "假如脚说：“我不是手，所以我不属于身体。”难道它就因此不算身体的一部分了吗？",
+          "R": "假如脚说：“我不是手，所以我不是身体的一部分。”它仍然是身体的一部分！"
         }
       },
       "decisions": [
@@ -4327,6 +5419,26 @@
           "reason": "The Greek's two negatives (m1) become the Portuguese idiom \"nem por isso deixa de ser\", which keeps both and reads naturally; \"não é por isso que não é do corpo\" would be hard to follow.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n46012015017",
+            "n46012015018"
+          ],
+          "choice": "\"它仍然是身体的一部分！\"",
+          "alternatives": [
+            "a question"
+          ],
+          "reason": "Readable gives the answer the question expects (the meaning decision), as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4416,6 +5528,26 @@
           "L": "И если скажет ухо: «Так как я не глаз, я не из тела», не поэтому оно не из тела.",
           "B": "И если ухо говорит: «Я не глаз, поэтому я не принадлежу к телу», от этого оно не меньше принадлежит к телу.",
           "R": "Или допустим, ухо сказало бы: «Я не глаз, значит, я не часть тела.» Оно всё равно часть тела."
+        },
+        "uk": {
+          "L": "І якщо скаже вухо: «Через те, що я не око, я не з тіла», то не через це воно не з тіла.",
+          "B": "І якщо вухо каже: «Я не око, тож я не належу до тіла», то воно через це не менше належить до тіла.",
+          "R": "Або припустімо, вухо сказало б: «Я не око, тож я не частина тіла». Воно все одно було б частиною тіла."
+        },
+        "ja": {
+          "L": "また、もし耳が、「わたしは目ではないから、体に属していない」と言ったとしても、それだから体に属していないということにはなりません。",
+          "B": "また、耳が、「わたしは目ではないから、体の一部ではない」と言ったとしても、そのために体の一部でなくなるわけではありません。",
+          "R": "また、耳が「わたしは目ではないから、体の一部ではない」と言ったとします。それでも、耳は体の一部なのです。"
+        },
+        "id": {
+          "L": "Dan jika telinga berkata, \"Karena aku bukan mata, aku tidak termasuk tubuh,\" bukan karena itu ia tidak termasuk tubuh.",
+          "B": "Dan jika telinga berkata, \"Aku bukan mata, jadi aku tidak termasuk tubuh,\" karena itu ia tidak kurang menjadi bagian dari tubuh.",
+          "R": "Atau misalkan telinga berkata, \"Aku bukan mata, jadi aku bukan bagian dari tubuh.\" Telinga itu tetap bagian dari tubuh."
+        },
+        "zh": {
+          "L": "假如耳朵说：“因为我不是眼睛，所以我不属于身体”，它也并不因此就不属于身体。",
+          "B": "假如耳朵说：“我不是眼睛，所以我不属于身体。”它也不会因此就不算身体的一部分。",
+          "R": "或者假如耳朵说：“我不是眼睛，所以我不是身体的一部分。”它仍然是身体的一部分。"
         }
       },
       "decisions": [
@@ -4556,6 +5688,26 @@
           "L": "Если всё тело — глаз, где слух?",
           "B": "Если бы всё тело было только глазом, как бы оно слышало?",
           "R": "Если бы тело было только глазом, оно не могло бы слышать."
+        },
+        "uk": {
+          "L": "Якщо все тіло — око, то де слух?",
+          "B": "Якби тіло було лише оком, як би воно чуло?",
+          "R": "Якби тіло було тільки оком, воно не могло б чути."
+        },
+        "ja": {
+          "L": "もし体全体が目であるなら、聴覚はどこに[あるでしょうか]？",
+          "B": "もし体全体が目だけだったら、どうして聞くことができるでしょうか？",
+          "R": "もし体全体が目だけだったら、聞くことはできません。"
+        },
+        "id": {
+          "L": "Jika seluruh tubuh [adalah] mata, di manakah pendengaran?",
+          "B": "Jika seluruh tubuh hanya mata, bagaimana tubuh itu dapat mendengar?",
+          "R": "Kalau seluruh tubuh hanya mata, tubuh itu tidak dapat mendengar."
+        },
+        "zh": {
+          "L": "如果整个身体[都是]眼睛，听觉[会在]哪里呢？",
+          "B": "如果全身只是一只眼睛，它怎么听呢？",
+          "R": "如果身体只是一只眼睛，它就听不见了。"
         }
       },
       "decisions": [
@@ -4666,6 +5818,26 @@
           "L": "Если всё — слух, где обоняние?",
           "B": "Если бы всё оно было ухом, чем бы оно чувствовало запах?",
           "R": "Если бы оно было только ухом, оно не могло бы чувствовать запахов."
+        },
+        "uk": {
+          "L": "Якщо все — слух, то де нюх?",
+          "B": "Якби воно було все вухом, чим би воно відчувало запахи?",
+          "R": "Якби воно було тільки вухом, воно не могло б відчувати запахів."
+        },
+        "ja": {
+          "L": "もし全体が聴覚であるなら、嗅覚はどこに[あるでしょうか]？",
+          "B": "もし全体が耳だけだったら、どこでにおいをかぐのでしょうか？",
+          "R": "もし全体が耳だけだったら、においをかぐことはできません。"
+        },
+        "id": {
+          "L": "Jika seluruhnya [adalah] pendengaran, di manakah penciuman?",
+          "B": "Jika seluruhnya telinga, dengan apa tubuh itu mencium bau?",
+          "R": "Kalau seluruhnya hanya telinga, tubuh itu tidak dapat mencium bau."
+        },
+        "zh": {
+          "L": "如果整个[都是]听觉，嗅觉[会在]哪里呢？",
+          "B": "如果全身都是耳朵，它用什么来闻呢？",
+          "R": "如果身体只是一只耳朵，它就闻不到气味了。"
         }
       },
       "decisions": [
@@ -4804,6 +5976,26 @@
           "L": "Но теперь Бог расположил члены, каждый из них, в теле, как {{deity_pronoun:он|Он}} пожелал.",
           "B": "Но на самом деле Бог расположил в теле каждую часть так, как {{deity_pronoun:он|Он}} счёл нужным.",
           "R": "Но Бог поместил каждую часть тела именно туда, куда {{deity_pronoun:он|Он}} хотел."
+        },
+        "uk": {
+          "L": "А тепер Бог розмістив члени, кожен із них, у тілі так, як {{deity_pronoun:він|Він}} захотів.",
+          "B": "Але насправді Бог розташував кожну частину в тілі так, як {{deity_pronoun:він|Він}} вважав за потрібне.",
+          "R": "Але Бог поставив кожну частину тіла саме там, де {{deity_pronoun:він|Він}} хотів."
+        },
+        "ja": {
+          "L": "しかし実際、神は肢体を、その一つ一つを、お望みのままに体の中に置かれたのです。",
+          "B": "しかし実際には、神はお考えのままに、体の部分の一つ一つを体の中に配置されたのです。",
+          "R": "でも、神は、体の一つ一つの部分を、ご自分が望まれたところに置かれました。"
+        },
+        "id": {
+          "L": "Tetapi sekarang Allah telah menempatkan anggota-anggota, masing-masing di dalam tubuh, sebagaimana yang {{deity_pronoun:dia|Dia}} kehendaki.",
+          "B": "Tetapi sesungguhnya, Allah telah menyusun setiap anggota di dalam tubuh sebagaimana yang {{deity_pronoun:dia|Dia}} anggap baik.",
+          "R": "Tetapi Allah sudah menempatkan setiap bagian tubuh tepat di tempat yang {{deity_pronoun:dia|Dia}} inginkan."
+        },
+        "zh": {
+          "L": "但事实上，{{god_term:神|上帝}}照着{{deity_pronoun:他|祂}}所愿意的，把肢体一个一个都安放在身体里。",
+          "B": "但事实是，{{god_term:神|上帝}}照着{{deity_pronoun:他|祂}}认为合适的，把每一个部分都安排在身体里。",
+          "R": "但是{{god_term:神|上帝}}把身体的每一个部分，都放在{{deity_pronoun:他|祂}}想要它们在的地方。"
         }
       },
       "decisions": [
@@ -4916,6 +6108,26 @@
           "L": "А если бы все были одним членом, где тело?",
           "B": "Если бы всё было одной частью, разве это было бы тело?",
           "R": "Если бы все части были одинаковыми, не было бы тела."
+        },
+        "uk": {
+          "L": "А якби все було одним членом, то де [було б] тіло?",
+          "B": "Якби все було однією частиною, то що це було б за тіло?",
+          "R": "Якби всі частини були однакові, то не було б тіла."
+        },
+        "ja": {
+          "L": "もしすべてが一つの肢体であったなら、体はどこに[あるでしょうか]？",
+          "B": "もし全部が一つの部分だったら、それはどんな体になるでしょうか？",
+          "R": "もし全部の部分が同じだったら、体はなくなってしまいます。"
+        },
+        "id": {
+          "L": "Dan jika semuanya satu anggota, di manakah tubuh?",
+          "B": "Jika semuanya hanya satu anggota, tubuh macam apakah itu?",
+          "R": "Kalau semua bagian sama, tidak akan ada tubuh."
+        },
+        "zh": {
+          "L": "如果它们全都是一个肢体，身体[会在]哪里呢？",
+          "B": "如果整个只是一个部分，那还算什么身体呢？",
+          "R": "如果所有的部分都一样，就没有身体了。"
         }
       },
       "decisions": [
@@ -5030,6 +6242,26 @@
           "L": "Но теперь членов много, а тело одно.",
           "B": "А на самом деле частей много, а тело одно.",
           "R": "Итак, частей много, но они составляют одно тело."
+        },
+        "uk": {
+          "L": "А тепер членів багато, а тіло одне.",
+          "B": "А так частин багато, а тіло одне.",
+          "R": "Тож частин багато, але разом вони становлять лише одне тіло."
+        },
+        "ja": {
+          "L": "しかし実際、肢体は多くあり、体は一つです。",
+          "B": "実際、部分は多くても、体は一つです。",
+          "R": "ですから、たくさんの部分がありますが、それがいっしょになって、一つの体になっているのです。"
+        },
+        "id": {
+          "L": "Tetapi sekarang [ada] banyak anggota, tetapi satu tubuh.",
+          "B": "Sesungguhnya, anggota itu banyak, tetapi tubuh itu satu.",
+          "R": "Jadi ada banyak bagian, tetapi semuanya membentuk hanya satu tubuh."
+        },
+        "zh": {
+          "L": "但实际上，有许多肢体，却只有一个身体。",
+          "B": "事实上，部分虽然很多，身体却是一个。",
+          "R": "所以，身体有许多部分，但它们只组成一个身体。"
         }
       },
       "decisions": [
@@ -5136,6 +6368,26 @@
           "L": "Не может же глаз сказать руке: «Ты мне не нужна», или опять голова ногам: «Вы мне не нужны.»",
           "B": "Поэтому глаз не может сказать руке: «Я обойдусь без тебя», и голова не может сказать ногам: «Я обойдусь без вас.»",
           "R": "Глаз не может сказать руке: «Я могу прожить без тебя.» Голова не может сказать ногам: «Я могу прожить без вас.»"
+        },
+        "uk": {
+          "L": "І не може око сказати руці: «Ти мені не потрібна», або знову голова ногам: «Ви мені не потрібні».",
+          "B": "Тож око не може сказати руці: «Я обійдуся без тебе», і голова не може сказати ногам: «Я обійдуся без вас».",
+          "R": "Око не може сказати руці: «Я можу жити без тебе». Голова не може сказати ногам: «Я можу жити без вас»."
+        },
+        "ja": {
+          "L": "そして、目は手に向かって、「わたしはあなたを必要としない」と言うことはできず、また頭は足に向かって、「わたしはあなたがたを必要としない」と[言うことはできません]。",
+          "B": "ですから、目が手に向かって、「あなたがいなくてもかまわない」と言うことはできません。頭が足に向かって、「あなたがたがいなくてもかまわない」と言うこともできません。",
+          "R": "目が手に、「あなたがいなくても困らない」と言うことはできません。頭が足に、「あなたたちがいなくても困らない」と言うこともできません。"
+        },
+        "id": {
+          "L": "Dan mata tidak dapat berkata kepada tangan, \"Aku tidak membutuhkan engkau,\" atau kepala kepada kaki, \"Aku tidak membutuhkan kalian.\"",
+          "B": "Jadi mata tidak dapat berkata kepada tangan, \"Aku tidak memerlukan engkau,\" dan kepala tidak dapat berkata kepada kaki, \"Aku tidak memerlukan kalian.\"",
+          "R": "Mata tidak dapat berkata kepada tangan, \"Aku tidak perlu kamu.\" Kepala tidak dapat berkata kepada kaki, \"Aku tidak perlu kalian.\""
+        },
+        "zh": {
+          "L": "眼睛不能对手说：“我不需要你。”头也不能再对脚说：“我不需要你们。”",
+          "B": "所以，眼睛不能对手说：“没有你我也行。”头也不能对脚说：“没有你们我也行。”",
+          "R": "眼睛不能对手说：“没有你我也过得去。”头也不能对脚说：“没有你们我也过得去。”"
         }
       },
       "decisions": [
@@ -5341,6 +6593,49 @@
           "reason": "The Greek says singular \"you\" to one hand and plural \"you\" to both feet (meaning decision m2). In a body part's dismissive words Hindi shows that with \"तू\" and \"तुम\".",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46012021020"
+          ],
+          "choice": "\"あなた\" to the hand, \"あなたがた\" (L, B) / \"あなたたち\" (R) to the feet",
+          "alternatives": [
+            "\"あなた\" both times"
+          ],
+          "reason": "Paul's Greek moves from one hand to both feet (m2); Japanese marks the plural.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46012021010",
+            "n46012021020"
+          ],
+          "choice": "\"你\"; \"你们\"",
+          "alternatives": [
+            "\"你\" for both"
+          ],
+          "reason": "The Greek \"you\" is the same word to the one hand and to both feet; Chinese says \"你\" and \"你们\" for one and two (the meaning decision). The two sayings keep the same words at each level, as the Greek does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5447,6 +6742,26 @@
           "L": "Напротив, гораздо более члены тела, кажущиеся слабейшими, необходимы, \\v 23 и те, которые мы считаем менее почётными в теле, тех облекаем большей честью, и наши непристойные [части] имеют большее благообразие, \\v 24 а пристойные наши не имеют нужды.",
           "B": "Совсем наоборот. Те части тела, которые кажутся слабее, тем более необходимы. \\v 23 Те части, которые мы считаем менее достойными чести, мы как раз и облекаем большей честью, и те части, которые мы не показываем, покрываем с большей заботой о приличии, \\v 24 а те, которые можно показывать, в такой заботе не нуждаются.",
           "R": "На самом деле те части тела, которые кажутся слабее, нужны нам ещё больше. \\v 23 Те части, которые мы считаем менее важными, мы чтим больше всего. С особой заботой мы прикрываем интимные части тела, \\v 24 а частям, которые видят другие, такая забота не нужна."
+        },
+        "uk": {
+          "L": "Навпаки, ще більше потрібні члени тіла, які здаються слабшими, \\v 23 і ті [частини] тіла, які ми вважаємо менш почесними, ми оточуємо більшою честю, і наші непристойні [частини] мають більшу пристойність, \\v 24 а пристойні наші не мають потреби.",
+          "B": "Зовсім навпаки. Частини тіла, які здаються слабшими, ще більше потрібні. \\v 23 Саме ті частини, які ми вважаємо менш шанованими, ми вдягаємо з більшою честю, а ті, яких ми не показуємо, ми прикриваємо з більшою дбайливістю про пристойність, \\v 24 тоді як ті, що їх можна показувати, такої дбайливості не потребують.",
+          "R": "Насправді ті частини тіла, які здаються слабшими, потрібні нам ще більше. \\v 23 Ті частини, які ми вважаємо менш важливими, ми шануємо найбільше. Ми особливо дбайливо прикриваємо інтимні частини свого тіла, \\v 24 а частини, які бачать інші, такої дбайливості не потребують."
+        },
+        "ja": {
+          "L": "それどころか、体の肢体のうちで、より弱いと見える[もの]のほうが、ずっと必要なのです。\\v 23 また、体のうちで、より尊くないと思っている[部分]に、わたしたちはいっそうの尊さをまとわせます。そして、わたしたちの見苦しい[部分]は、いっそう品よく装われ、\\v 24 見苦しくない[部分]には、その必要がありません。",
+          "B": "それどころか、体の中でほかより弱いと見える部分が、かえってずっと必要なのです。\\v 23 わたしたちは、体の中であまり尊くないと思う部分を、いっそう尊いものとして衣で包みます。人に見せない部分は、いっそう慎み深く覆われます。\\v 24 人に見せてよい部分には、そのような配慮はいりません。",
+          "R": "実は、体の中で弱そうに見える部分こそ、もっと必要なのです。\\v 23 わたしたちは、あまり大切でないと思っている部分を、いちばん大切に扱います。人に見せない体の部分は、特に気をつけて覆います。\\v 24 でも、ほかの人に見える部分には、そのような気づかいはいりません。"
+        },
+        "id": {
+          "L": "Sebaliknya, terlebih lagi anggota-anggota tubuh yang tampaknya lebih lemah itu diperlukan, \\v 23 dan [anggota-anggota] tubuh yang kita anggap kurang terhormat, kepada mereka kita berikan penghormatan lebih besar, dan [anggota-anggota] kita yang tidak elok mendapat kesopanan yang lebih besar, \\v 24 tetapi [anggota-anggota] kita yang elok tidak memerlukan[nya].",
+          "B": "Justru sebaliknya. Anggota-anggota tubuh yang tampaknya lebih lemah malah lebih diperlukan. \\v 23 Anggota-anggota yang kita anggap kurang terhormat, justru itulah yang kita tutupi dengan penghormatan yang lebih besar, dan anggota-anggota yang tidak kita perlihatkan ditutupi dengan kesopanan yang lebih besar, \\v 24 sedangkan anggota-anggota yang dapat diperlihatkan tidak memerlukan perhatian seperti itu.",
+          "R": "Sebenarnya, bagian-bagian tubuh yang tampaknya lebih lemah justru adalah bagian yang lebih kita perlukan. \\v 23 Bagian-bagian yang kita anggap kurang penting justru paling kita hormati. Kita memberi perhatian khusus untuk menutupi bagian-bagian tubuh kita yang tidak pantas dilihat, \\v 24 tetapi bagian-bagian yang dilihat orang tidak memerlukan perhatian itu."
+        },
+        "zh": {
+          "L": "恰恰相反，身体上那些显得比较软弱的肢体，更是必需的；\\v 23 身体上那些我们以为比较不光彩的，我们就给它们披上更大的尊荣；我们那些不宜示人的[部分]，就有了更大的端庄，\\v 24 而我们那些可以示人的[部分]却不需要[这样]。",
+          "B": "正好相反，身体上那些看来比较软弱的部分，反而更加需要。\\v 23 我们认为不太值得尊重的部分，正是我们用更大的尊重去遮盖的；我们不露出来的部分，也被更加用心地遮盖，以保持端庄，\\v 24 而那些可以露出来的部分，就不需要这样的照顾。",
+          "R": "其实，身体上那些看起来比较软弱的部分，正是我们更需要的。\\v 23 我们认为不太重要的部分，正是我们最尊重的。我们会特别小心地遮盖身体上的隐私部位，\\v 24 而别人看得见的部分，就不需要这样的照顾。"
         }
       },
       "decisions": [
@@ -5632,6 +6947,73 @@
           "reason": "Portuguese has one root for all three words, as the Greek does, so Literal keeps Paul's wordplay (m4) where the English Literal has to say \"not fit to be seen ... fit to be seen\". \"Decoro\" is decency and fitness to be seen, which suits the modest sense (m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46012023014",
+            "n46012023016",
+            "n46012024003"
+          ],
+          "choice": "непристойні ... пристойність ... пристойні",
+          "alternatives": [
+            "негарні",
+            "сороміцькі"
+          ],
+          "reason": "m4 notes the play on what is fit to be seen. The root \"-пристой-\" carries all three Greek words, so the play stays at Literal.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46012023014",
+            "n46012024003"
+          ],
+          "choice": "\"見苦しい[部分]\" / \"見苦しくない[部分]\" (L); \"人に見せない部分\" / \"人に見せてよい部分\" (B); \"人に見せない体の部分\" / \"ほかの人に見える部分\" (R)",
+          "alternatives": [
+            "\"恥ずかしい部分\""
+          ],
+          "reason": "The parts people keep covered (m3); L keeps a pair of words on one root to hold the play on words (m4).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46012023014",
+            "n46012023016",
+            "n46012024003"
+          ],
+          "choice": "\"不宜示人的\", \"可以示人的\" (L); \"不露出来的\", \"可以露出来的\" (B); \"隐私部位\", \"别人看得见的部分\" (R)",
+          "alternatives": [
+            "\"不俊美的\", \"俊美的\""
+          ],
+          "reason": "Each level keeps the contrast between what is covered and what is shown, Paul's play on words (the meaning decision), in plain and modest words: these are the parts people keep covered.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5718,14 +7100,34 @@
           "R": "እግዚአብሔር አካልን ያዋቀረው ክብር ለሚያስፈልጋቸው ክፍሎች የበለጠ ክብር በሚሰጥ መንገድ ነው። \\v 25 ይህን ያደረገው አካሉ እንዳይከፋፈል፣ ክፍሎቹም ሁሉ አንዱ ለሌላው በእኩል እንዲያስቡ ነው።"
         },
         "hi": {
-          "L": "पर परमेश्वर ने शरीर को मिला-जुलाकर बनाया, और जिस [अंग] में कमी थी, उसे अधिक आदर दिया, \\v 25 ताकि शरीर में फूट न हो, पर अंग एक दूसरे की बराबर चिन्ता करें।",
-          "B": "पर परमेश्वर ने शरीर को ऐसे जोड़ा है कि जिस अंग में कमी है, उसे अधिक आदर मिले, \\v 25 ताकि शरीर में फूट न पड़े, बल्कि उसके सब अंग एक दूसरे की बराबर चिन्ता करें।",
+          "L": "पर परमेश्वर ने शरीर को मिला-जुलाकर बनाया, और जिस [अंग] में कमी थी, उसे अधिक आदर दिया, \\v 25 ताकि शरीर में फूट न हो, पर अंग एक दूसरे की बराबर चिंता करें।",
+          "B": "पर परमेश्वर ने शरीर को ऐसे जोड़ा है कि जिस अंग में कमी है, उसे अधिक आदर मिले, \\v 25 ताकि शरीर में फूट न पड़े, बल्कि उसके सब अंग एक दूसरे की बराबर चिंता करें।",
           "R": "परमेश्वर ने शरीर को ऐसे जोड़ा है कि जिन अंगों को आदर की ज़रूरत है, उन्हें अधिक आदर मिले। \\v 25 उन्होंने ऐसा इसलिए किया कि शरीर बँट न जाए, और उसके सब अंग एक दूसरे की बराबर परवाह करें।"
         },
         "ru": {
           "L": "Но Бог соразмерил тело, недостающему дав большую честь, \\v 25 чтобы не было разделения в теле, а члены одинаково заботились друг о друге.",
           "B": "Но Бог соединил тело воедино и дал больше чести той части, которой её недостаёт, \\v 25 чтобы в теле не было раскола, а все его части одинаково заботились друг о друге.",
           "R": "Бог устроил тело так, что больше чести получают те части, которые в ней нуждаются. \\v 25 Он сделал это, чтобы тело не было разделено и все его части одинаково заботились друг о друге."
+        },
+        "uk": {
+          "L": "Але Бог склав тіло, давши більшу честь тому, чому [її] бракує, \\v 25 щоб не було розколу в тілі, а щоб члени однаково дбали одне про одного.",
+          "B": "Але Бог зʼєднав тіло в одне ціле і дав більшу честь тій частині, якій її бракує, \\v 25 щоб у тілі не було розколу, а щоб усі його частини однаково дбали одна про одну.",
+          "R": "Бог склав тіло так, що частини, які цього потребують, мають більше честі. \\v 25 Він зробив це, щоб тіло не було розділене і щоб усі його частини однаково дбали одна про одну."
+        },
+        "ja": {
+          "L": "しかし神は、欠けている[部分]にいっそうの尊さを与えて、体を組み合わされました。\\v 25 それは、体の中に分裂がなく、肢体が互いに同じように配慮し合うためです。",
+          "B": "しかし神は、劣っている部分にいっそうの尊さを与えて、体を一つに調和させてくださいました。\\v 25 それは、体の中に分裂が起こらず、各部分が互いに同じように気づかい合うためです。",
+          "R": "神は、尊さの足りない部分にもっと尊さを与えるようにして、体を組み立ててくださいました。\\v 25 それは、体がばらばらに分かれることがなく、すべての部分が互いに同じように気づかい合うためです。"
+        },
+        "id": {
+          "L": "Tetapi Allah telah menyusun tubuh itu, dengan memberikan penghormatan lebih besar kepada [anggota] yang kekurangan [penghormatan], \\v 25 supaya jangan ada perpecahan di dalam tubuh, tetapi supaya anggota-anggota saling memperhatikan dengan sama.",
+          "B": "Tetapi Allah telah memadukan tubuh itu dan memberikan penghormatan lebih besar kepada anggota yang kurang, \\v 25 supaya tubuh itu tidak terpecah-pecah, tetapi semua anggotanya saling memperhatikan dengan sama rata.",
+          "R": "Allah menyusun tubuh dengan cara yang memberikan penghormatan lebih besar kepada bagian-bagian yang memerlukannya. \\v 25 {{deity_pronoun:dia|Dia}} melakukan ini supaya tubuh tidak terpecah-pecah, dan semua bagiannya saling memperhatikan dengan sama."
+        },
+        "zh": {
+          "L": "但{{god_term:神|上帝}}把身体调和在一起，把更多的尊荣赐给那缺少的[部分]，\\v 25 好使身体上没有分裂，而是各肢体彼此同样地关心。",
+          "B": "但是{{god_term:神|上帝}}把身体调配得十分和谐，把更多的尊荣赐给那有欠缺的部分，\\v 25 免得身体分裂，而是让所有的部分都同样地彼此关心。",
+          "R": "{{god_term:神|上帝}}把身体组合起来，使那些需要尊荣的部分得到更多的尊荣。\\v 25 {{deity_pronoun:他|祂}}这样做，是要使身体不分裂，并且所有的部分都同样地互相关心。"
         }
       },
       "decisions": [
@@ -5907,6 +7309,86 @@
           "reason": "The same word as the divisions in the church (1:10; 11:18; meaning decision m2), so Literal and Balanced use \"फूट\" here too and the link is heard.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46012025004"
+          ],
+          "choice": "розкол",
+          "alternatives": [
+            "поділ"
+          ],
+          "reason": "m2 notes it is the same word as the divisions in Corinth (1:10; 11:18), where Ukrainian has \"розколи\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46012025004"
+          ],
+          "choice": "\"分裂\" (L, B); \"ばらばらに分かれる\" (R)",
+          "alternatives": [
+            "\"仲間割れ\""
+          ],
+          "reason": "The same word as for the divisions at Corinth (m2); \"分裂\" lets a reader hear 1:10 again.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46012025004"
+          ],
+          "choice": "\"分裂\"",
+          "alternatives": [
+            "\"分门别类\""
+          ],
+          "reason": "The same word as for the divisions in the church at Corinth (1:10; 11:18), so Literal and Balanced use the same Chinese word (the meaning decision).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n46012024010"
+          ],
+          "choice": "{{deity_pronoun:他|祂}}",
+          "alternatives": [
+            "\"他\" with no span"
+          ],
+          "reason": "Readable begins a new sentence and names God as the one who acts; the English Readable's \"He\" stands at the start of a sentence, but Chinese has no capitals, so the pronoun for God takes the deity_pronoun span.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5990,6 +7472,26 @@
           "L": "И если страдает один член, страдают с ним все члены; если прославляется член, радуются с ним все члены.",
           "B": "Если одной части больно, все части разделяют её боль; если одну часть почитают, все части разделяют её радость.",
           "R": "Если одной части тела больно, всем остальным частям тоже больно. Если одной части оказана честь, все остальные части радуются вместе с ней."
+        },
+        "uk": {
+          "L": "І коли страждає один член, страждають з ним усі члени; коли прославляється член, радіють з ним усі члени.",
+          "B": "Якщо одна частина страждає, усі частини страждають разом з нею; якщо одну частину вшановують, усі частини радіють разом з нею.",
+          "R": "Якщо одній частині тіла болить, то й усім іншим частинам болить разом з нею. Якщо одну частину шанують, то й усі інші частини радіють разом з нею."
+        },
+        "ja": {
+          "L": "そして、一つの肢体が苦しめば、すべての肢体が共に苦しみ、一つの肢体が尊ばれれば、すべての肢体が共に喜びます。",
+          "B": "一つの部分が苦しめば、すべての部分が共に苦しみ、一つの部分が尊ばれれば、すべての部分が共に喜びます。",
+          "R": "体の一つの部分が痛むと、ほかの部分もみな、いっしょに痛みます。一つの部分がほめられると、ほかの部分もみな、いっしょに喜びます。"
+        },
+        "id": {
+          "L": "Dan jika satu anggota menderita, semua anggota turut menderita; jika satu anggota dihormati, semua anggota turut bersukacita.",
+          "B": "Jika satu anggota sakit, semua anggota turut merasakan sakitnya; jika satu anggota dihormati, semua anggota turut merasakan sukacitanya.",
+          "R": "Kalau satu bagian tubuh sakit, semua bagian yang lain ikut merasa sakit. Kalau satu bagian dihormati, semua bagian yang lain ikut bergembira."
+        },
+        "zh": {
+          "L": "并且，若有一个肢体受苦，众肢体都与它同受苦楚；若有一个肢体得尊荣，众肢体都与它同欢喜。",
+          "B": "一个部分疼痛，所有的部分都分担它的痛苦；一个部分得到尊荣，所有的部分都分享它的喜乐。",
+          "R": "如果身体的一个部分痛了，其他所有的部分都会跟着痛。如果一个部分受到尊重，其他所有的部分都会跟着高兴。"
         }
       },
       "decisions": [
@@ -6084,6 +7586,48 @@
           "reason": "The key term for this verb is \"прославлять\", but here it means human honour, not glory (meaning decision m1). Literal keeps the verb; Balanced and Readable say \"честь\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46012026011"
+          ],
+          "choice": "\"尊ばれる\" (L, B); \"ほめられる\" (R)",
+          "alternatives": [
+            "\"栄光を受ける\""
+          ],
+          "reason": "Here the verb means being honored by others (m1), not God's glory.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46012026011"
+          ],
+          "choice": "\"得尊荣\" (L, B); \"受到尊重\" (R)",
+          "alternatives": [
+            "\"得荣耀\""
+          ],
+          "reason": "The settled word for this verb is \"荣耀\", but here it means human honor, not glory (the meaning decision), as the English says \"honored\" at every level.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6160,6 +7704,26 @@
           "L": "Вы же — тело {{christos:Христа|Мессии}}, и члены — каждый в своей части.",
           "B": "Вы — тело {{christos:Христа|Мессии}}, и каждый из вас в отдельности — его часть.",
           "R": "Все вместе вы — тело {{christos:Христа|Мессии}}, и каждый из вас — часть этого тела."
+        },
+        "uk": {
+          "L": "А ви — тіло {{christos:Христа|Месії}}, і члени кожен зокрема.",
+          "B": "Ви — тіло {{christos:Христа|Месії}}, і кожен із вас окремо — одна з його частин.",
+          "R": "Разом ви — тіло {{christos:Христа|Месії}}, і кожен із вас — частина цього тіла."
+        },
+        "ja": {
+          "L": "さて、あなたがたは{{christos:キリスト|メシア}}の体であり、それぞれがその肢体です。",
+          "B": "あなたがたは{{christos:キリスト|メシア}}の体であり、一人一人がその部分です。",
+          "R": "みなさんは、いっしょになって{{christos:キリスト|メシア}}の体なのです。そして、みなさん一人一人が、その体の一部なのです。"
+        },
+        "id": {
+          "L": "Dan kalian [adalah] tubuh {{christos:Kristus|Mesias}}, dan masing-masing [adalah] anggotanya.",
+          "B": "Kalian adalah tubuh {{christos:Kristus|Mesias}}, dan masing-masing kalian adalah anggotanya.",
+          "R": "Bersama-sama kalian adalah tubuh {{christos:Kristus|Mesias}}, dan setiap orang dari kalian adalah bagian dari tubuh itu."
+        },
+        "zh": {
+          "L": "如今你们是{{christos:基督|弥赛亚}}的身体，并且按各自的部分[是]肢体。",
+          "B": "你们是{{christos:基督|弥赛亚}}的身体，你们每个人都是其中的一部分。",
+          "R": "你们合在一起就是{{christos:基督|弥赛亚}}的身体，你们每一个人都是这身体的一部分。"
         }
       },
       "decisions": [
@@ -6312,6 +7876,26 @@
           "reason": "The wording of the Vietnamese Ephesians 4:12 and Romans 7:4.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n46012027005"
+          ],
+          "choice": "{{christos:基督|弥赛亚}}的",
+          "alternatives": [
+            "{{christos:基督的|弥赛亚的}}"
+          ],
+          "reason": "The English spans the possessive (\"Christ's / the Messiah's\"); Chinese spans only the noun and writes \"的\" after it, so both options read naturally.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6403,6 +7987,26 @@
           "L": "И одних Бог поставил в церкви, во-первых, апостолами, во-вторых, пророками, в-третьих, учителями, затем силы, затем дары исцелений, помощи, управления, роды языков.",
           "B": "Бог поставил в церкви одних людей: во-первых, апостолов, во-вторых, пророков, в-третьих, учителей. Затем идут чудеса, потом дары исцеления, способность помогать, способность руководить и разные языки.",
           "R": "Бог дал церкви разных людей для разной работы. Во-первых, это апостолы, во-вторых, пророки, в-третьих, учители. Потом это люди, которые совершают чудеса, люди, у которых есть дары исцелять, люди, которые помогают другим, люди, которые руководят, и люди, которые говорят на разных языках."
+        },
+        "uk": {
+          "L": "І одних Бог поставив у церкві: по-перше, апостолів, по-друге, пророків, по-третє, учителів, потім чуда, потім дари зцілень, допомоги, керування, різні мови.",
+          "B": "У церкві Бог поставив деяких людей: по-перше, апостолів, по-друге, пророків, по-третє, учителів. Після них ідуть чуда, потім дари зцілення, здатність допомагати, здатність керувати і різні види мов.",
+          "R": "Бог дав церкві різних людей для різної праці. Спершу апостолів, по-друге, пророків, по-третє, учителів. Далі є люди, які творять чуда, люди, які мають дари зціляти, люди, які допомагають іншим, люди, які провадять, і люди, які говорять різними мовами."
+        },
+        "ja": {
+          "L": "そして神は、教会の中にある人たちを置かれました。第一に使徒たち、第二に預言者たち、第三に教師たち、次に奇跡、次に癒やしの賜物、助け、導き、種々の異言です。",
+          "B": "神は教会の中に、いろいろな人を置かれました。第一に使徒、第二に預言者、第三に教師です。その次に奇跡を行う力、それから癒やしの賜物、助ける力、導く力、さまざまな種類の異言があります。",
+          "R": "神は、教会に、いろいろな働きをする人たちを置いてくださいました。第一に使徒、第二に預言者、第三に教える人です。それから、奇跡を行う人、病気の人をいやす贈り物を持っている人、ほかの人を助ける人、人々を導く人、いろいろな種類の異言で話す人がいます。"
+        },
+        "id": {
+          "L": "Dan mereka yang telah ditetapkan Allah di dalam jemaat [adalah] pertama rasul-rasul, kedua nabi-nabi, ketiga pengajar-pengajar, kemudian mukjizat-mukjizat, kemudian karunia-karunia penyembuhan, pertolongan-pertolongan, kepemimpinan-kepemimpinan, berbagai-bagai bahasa roh.",
+          "B": "Di dalam jemaat Allah telah menempatkan beberapa orang: pertama rasul-rasul, kedua nabi-nabi, ketiga pengajar-pengajar. Sesudah itu mukjizat-mukjizat, lalu karunia-karunia penyembuhan, kemampuan untuk menolong, kemampuan untuk memimpin, dan berbagai macam bahasa roh.",
+          "R": "Allah sudah memberi jemaat orang-orang yang berbeda untuk pekerjaan yang berbeda. Pertama ada rasul-rasul, kedua nabi-nabi, dan ketiga guru-guru. Lalu ada orang-orang yang mengadakan mukjizat, orang-orang yang mempunyai karunia menyembuhkan, orang-orang yang menolong orang lain, orang-orang yang memimpin, dan orang-orang yang berbicara dalam berbagai macam bahasa roh."
+        },
+        "zh": {
+          "L": "{{god_term:神|上帝}}在教会中所设立的，首先是使徒，第二是先知，第三是教师，然后是奇迹，然后是医治的恩赐、帮助、引导、各种方言。",
+          "B": "{{god_term:神|上帝}}在教会中设立了一些人：首先是使徒，其次是先知，再次是教师。然后是行奇迹的能力，然后是医治的恩赐、帮助人的能力、引导人的能力，以及各种不同的方言。",
+          "R": "{{god_term:神|上帝}}在教会里安排了不同的人做不同的工作。首先是使徒，其次是先知，第三是教师。然后有行奇迹的人、有医治恩赐的人、帮助别人的人、带领人的人，还有能说各种不同方言的人。"
         }
       },
       "decisions": [
@@ -6711,6 +8315,116 @@
           "reason": "The prophet term of the style guide (section 6). Here the prophets are members of the church who speak a message from God (11:4; 12:10).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46012028021",
+            "n46012028022"
+          ],
+          "choice": "допомоги, керування (L); здатність допомагати, здатність керувати (B)",
+          "alternatives": [
+            "управління",
+            "кормчество"
+          ],
+          "reason": "m5: guiding is giving direction to the church, as a helmsman steers; \"керувати\" keeps that picture in everyday Ukrainian.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46012028021",
+            "n46012028022"
+          ],
+          "choice": "\"助け、導き\" (L); \"助ける力、導く力\" (B); \"ほかの人を助ける人、人々を導く人\" (R)",
+          "alternatives": [
+            "\"援助、管理\"",
+            "\"治める者\""
+          ],
+          "reason": "Acts of help for the weak, and the gift of giving direction to the church (m4, m5, uncertain).",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46012028015"
+          ],
+          "choice": "\"教師\" (L, B); \"教える人\" (R)",
+          "alternatives": [
+            "\"先生\""
+          ],
+          "reason": "\"先生\" is kept for the title Teacher; R uses the everyday phrase.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46012028021",
+            "n46012028022"
+          ],
+          "choice": "\"帮助\", \"引导\" (L); \"帮助人的能力\", \"引导人的能力\" (B); \"帮助别人的人\", \"带领人的人\" (R)",
+          "alternatives": [
+            "\"治理事的\""
+          ],
+          "reason": "Literal keeps the bare nouns; Balanced shows that they are gifts like the others, acts of help for the weak and needy and the gift of giving direction (the meaning decisions); Readable names the people, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46012028015",
+            "n46012028023"
+          ],
+          "choice": "\"教师\"; \"各种方言\" (L), \"各种不同的方言\" (B), \"各种不同方言\" (R)",
+          "alternatives": [
+            "\"老师\""
+          ],
+          "reason": "\"教师\" for teachers in the church, keeping \"老师\" for Jesus addressed as Teacher. Tongues as in verse 10.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6781,6 +8495,26 @@
           "L": "Разве все апостолы?",
           "B": "Разве все апостолы?",
           "R": "Не все апостолы."
+        },
+        "uk": {
+          "L": "Хіба всі апостоли?",
+          "B": "Хіба всі апостоли?",
+          "R": "Не всі апостоли."
+        },
+        "ja": {
+          "L": "皆が使徒だというのでしょうか？",
+          "B": "皆が使徒でしょうか？",
+          "R": "みんなが使徒というわけではありません。"
+        },
+        "id": {
+          "L": "Bukankah tidak semua [adalah] rasul?",
+          "B": "Apakah semua orang rasul?",
+          "R": "Tidak semua orang adalah rasul."
+        },
+        "zh": {
+          "L": "并不是所有人都[是]使徒，[对吗]？",
+          "B": "难道每个人都是使徒吗？",
+          "R": "不是每个人都是使徒。"
         }
       },
       "decisions": [
@@ -6911,6 +8645,69 @@
           "reason": "\"እንዴ\" marks surprise and expects the answer no, as the Greek question does; a negative question in Amharic would expect yes. The same form is used through verses 29-30.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n46012029001",
+            "n46012029002",
+            "n46012029003"
+          ],
+          "choice": "Хіба всі ... ? (L, B); statements (R), through 12:29-30",
+          "alternatives": [
+            "Чи ж усі ... ?"
+          ],
+          "reason": "Questions expecting the answer \"no\" (m1): \"хіба\" carries the expectation, so Literal needs no English-style tag. Readable turns them into statements, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n46012029001"
+          ],
+          "choice": "\"……だというのでしょうか？\" (L); \"……でしょうか？\" (B); statements \"……というわけではありません\" (R), verses 29-30",
+          "alternatives": [
+            "\"まさか……ではないでしょう\""
+          ],
+          "reason": "Questions expecting the answer no (m1); R makes them statements as the English R does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n46012029001"
+          ],
+          "choice": "statements instead of questions (verses 29-30)",
+          "alternatives": [
+            "questions"
+          ],
+          "reason": "Readable gives the answer each question expects (the meaning decision), as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6981,6 +8778,26 @@
           "L": "Разве все пророки?",
           "B": "Разве все пророки?",
           "R": "Не все пророки."
+        },
+        "uk": {
+          "L": "Хіба всі пророки?",
+          "B": "Хіба всі пророки?",
+          "R": "Не всі пророки."
+        },
+        "ja": {
+          "L": "皆が預言者だというのでしょうか？",
+          "B": "皆が預言者でしょうか？",
+          "R": "みんなが預言者というわけではありません。"
+        },
+        "id": {
+          "L": "Bukankah tidak semua [adalah] nabi?",
+          "B": "Apakah semua orang nabi?",
+          "R": "Tidak semua orang adalah nabi."
+        },
+        "zh": {
+          "L": "并不是所有人都[是]先知，[对吗]？",
+          "B": "难道每个人都是先知吗？",
+          "R": "不是每个人都是先知。"
         }
       },
       "decisions": [
@@ -7067,6 +8884,26 @@
           "L": "Разве все учители?",
           "B": "Разве все учители?",
           "R": "Не все учители."
+        },
+        "uk": {
+          "L": "Хіба всі учителі?",
+          "B": "Хіба всі учителі?",
+          "R": "Не всі учителі."
+        },
+        "ja": {
+          "L": "皆が教師だというのでしょうか？",
+          "B": "皆が教師でしょうか？",
+          "R": "みんなが教える人というわけではありません。"
+        },
+        "id": {
+          "L": "Bukankah tidak semua [adalah] pengajar?",
+          "B": "Apakah semua orang pengajar?",
+          "R": "Tidak semua orang adalah guru."
+        },
+        "zh": {
+          "L": "并不是所有人都[是]教师，[对吗]？",
+          "B": "难道每个人都是教师吗？",
+          "R": "不是每个人都是教师。"
         }
       },
       "decisions": [
@@ -7153,6 +8990,26 @@
           "L": "Разве все [совершают] силы?",
           "B": "Разве все совершают чудеса?",
           "R": "Не все совершают чудеса."
+        },
+        "uk": {
+          "L": "Хіба всі [чинять] чуда?",
+          "B": "Хіба всі творять чуда?",
+          "R": "Не всі творять чуда."
+        },
+        "ja": {
+          "L": "皆が[奇跡を行う者]だというのでしょうか？",
+          "B": "皆が奇跡を行うでしょうか？",
+          "R": "みんなが奇跡を行うわけではありません。"
+        },
+        "id": {
+          "L": "Bukankah tidak semua [mengadakan] mukjizat?",
+          "B": "Apakah semua orang mengadakan mukjizat?",
+          "R": "Tidak semua orang mengadakan mukjizat."
+        },
+        "zh": {
+          "L": "并不是所有人都[行]奇迹，[对吗]？",
+          "B": "难道每个人都能行奇迹吗？",
+          "R": "不是每个人都能行奇迹。"
         }
       },
       "decisions": [
@@ -7186,6 +9043,25 @@
             "miracles"
           ],
           "reason": "Literal supplies what the question means.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n46012029012"
+          ],
+          "choice": "[行]奇迹",
+          "alternatives": [
+            "\"奇迹\" alone"
+          ],
+          "reason": "Literal supplies what the question means, people who do miracles (the meaning decision), as the English Literal does.",
           "uncertain": false,
           "footnote": false
         }
@@ -7260,6 +9136,26 @@
           "L": "Разве все имеют дары исцелений?",
           "B": "Разве у всех есть дары исцеления?",
           "R": "Не у всех есть дары исцелять людей."
+        },
+        "uk": {
+          "L": "Хіба всі мають дари зцілень?",
+          "B": "Хіба всі мають дари зцілення?",
+          "R": "Не всі мають дари зціляти людей."
+        },
+        "ja": {
+          "L": "皆が癒やしの賜物を持っているというのでしょうか？",
+          "B": "皆が癒やしの賜物を持っているでしょうか？",
+          "R": "みんなが病気の人をいやす贈り物を持っているわけではありません。"
+        },
+        "id": {
+          "L": "Bukankah tidak semua mempunyai karunia-karunia penyembuhan?",
+          "B": "Apakah semua orang mempunyai karunia penyembuhan?",
+          "R": "Tidak semua orang mempunyai karunia untuk menyembuhkan orang."
+        },
+        "zh": {
+          "L": "并不是所有人都有各样医治的恩赐，[对吗]？",
+          "B": "难道每个人都有医治的恩赐吗？",
+          "R": "不是每个人都有医治病人的恩赐。"
         }
       },
       "decisions": [
@@ -7350,6 +9246,26 @@
           "L": "Разве все говорят на языках?",
           "B": "Разве все говорят на языках?",
           "R": "Не все говорят на языках."
+        },
+        "uk": {
+          "L": "Хіба всі говорять мовами?",
+          "B": "Хіба всі говорять мовами?",
+          "R": "Не всі говорять мовами."
+        },
+        "ja": {
+          "L": "皆が異言で語るというのでしょうか？",
+          "B": "皆が異言で語るでしょうか？",
+          "R": "みんなが異言で話すわけではありません。"
+        },
+        "id": {
+          "L": "Bukankah tidak semua berbicara dalam bahasa roh?",
+          "B": "Apakah semua orang berbicara dalam bahasa roh?",
+          "R": "Tidak semua orang berbicara dalam bahasa roh."
+        },
+        "zh": {
+          "L": "并不是所有人都说方言，[对吗]？",
+          "B": "难道每个人都说方言吗？",
+          "R": "不是每个人都能说方言。"
         }
       },
       "decisions": [
@@ -7364,6 +9280,30 @@
           "choice": "tongues: the gift of verses 10 and 28",
           "alternatives": [],
           "reason": "Speaking in tongues was valued highly in Corinth (14:1-25). Paul says plainly that it is not given to everyone, and so cannot be the sign that someone has the Spirit.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46012030008",
+            "n46012030009"
+          ],
+          "choice": "\"说方言\" (every level)",
+          "alternatives": [
+            "\"说自己没有学过的语言\" (Readable)",
+            "\"说灵言\"",
+            "\"舌音\""
+          ],
+          "reason": "\"说方言\" is the Chinese church's word for the gift of tongues, as at Mark 16:17 and Acts 10:46 and 19:6. It is kept at every level through chapters 12-14, because the English Readable keeps \"tongues\" here; at Mark 16:17 and Acts 19:6 Readable says \"语言\" the speaker has not learned, as the English Readable says \"languages\" there. The meaning decision reads tongues as speech given by the Spirit; where the English speaks of languages (13:1; 14:10-11, 21), Chinese says \"语言\". Interpretation is \"翻译\" throughout.",
           "uncertain": false,
           "footnote": false
         }
@@ -7436,6 +9376,26 @@
           "L": "Разве все истолковывают?",
           "B": "Разве все истолковывают?",
           "R": "Не все могут объяснить, что сказано на языках."
+        },
+        "uk": {
+          "L": "Хіба всі тлумачать?",
+          "B": "Хіба всі тлумачать?",
+          "R": "Не всі можуть тлумачити те, що сказано мовами."
+        },
+        "ja": {
+          "L": "皆が解き明かすというのでしょうか？",
+          "B": "皆が異言を解き明かすでしょうか？",
+          "R": "みんなが、異言で語られたことの意味を説明できるわけではありません。"
+        },
+        "id": {
+          "L": "Bukankah tidak semua menafsirkan?",
+          "B": "Apakah semua orang menafsirkan?",
+          "R": "Tidak semua orang dapat menafsirkan apa yang dikatakan dalam bahasa roh."
+        },
+        "zh": {
+          "L": "并不是所有人都翻译，[对吗]？",
+          "B": "难道每个人都能翻译吗？",
+          "R": "不是每个人都能把用方言所说的话翻译出来。"
         }
       },
       "decisions": [
@@ -7469,6 +9429,25 @@
             "interpret"
           ],
           "reason": "Readable says what is interpreted (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n46012030012"
+          ],
+          "choice": "\"把用方言所说的话翻译出来\"",
+          "alternatives": [
+            "\"翻译\" alone"
+          ],
+          "reason": "Readable says what is interpreted, as the English Readable does (the meaning decision); \"翻译\" is the word for interpretation of tongues in verse 10 and chapter 14.",
           "uncertain": false,
           "footnote": false
         }
@@ -7544,6 +9523,26 @@
           "L": "Ревнуйте же о дарах больших.",
           "B": "Стремитесь же всем сердцем к большим дарам.",
           "R": "Старайтесь получить большие дары."
+        },
+        "uk": {
+          "L": "Ревнуйте ж про більші дари.",
+          "B": "Але прагніть усім серцем більших дарів.",
+          "R": "Щиро прагніть отримати більші дари."
+        },
+        "ja": {
+          "L": "しかし、より大きな賜物を熱心に求めなさい。",
+          "B": "しかし、もっと大きな賜物を熱心に求めなさい。",
+          "R": "もっと大きな贈り物をいただけるように、熱心に求めてください。"
+        },
+        "id": {
+          "L": "Tetapi berusahalah dengan giat untuk memperoleh karunia-karunia yang lebih besar.",
+          "B": "Tetapi rindukanlah karunia-karunia yang lebih besar.",
+          "R": "Berusahalah sungguh-sungguh untuk menerima karunia-karunia yang lebih besar."
+        },
+        "zh": {
+          "L": "但你们要热切追求那更大的恩赐。",
+          "B": "但你们要一心追求更大的恩赐。",
+          "R": "你们要努力求得更大的恩赐。"
         }
       },
       "decisions": [
@@ -7657,6 +9656,67 @@
           "reason": "The verb can mean jealous rivalry (3:3), but the meaning decision reads it here as a good eagerness, and a command.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46012031001"
+          ],
+          "choice": "ревнуйте про",
+          "alternatives": [
+            "заздріть"
+          ],
+          "reason": "m3: be zealous, seek eagerly. \"Ревнувати про\" is the Bible idiom for zeal toward something; it is not the jealousy of 10:22, which takes another construction.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46012031001"
+          ],
+          "choice": "Command \"熱心に求めなさい\" (L, B), \"熱心に求めてください\" (R)",
+          "alternatives": [
+            "\"あなたがたは熱心に求めている\" (a statement)"
+          ],
+          "reason": "Read as a command (m1, uncertain, footnoted in the English).",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46012031001"
+          ],
+          "choice": "\"热切追求\" (L); \"一心追求\" (B); \"努力求得\" (R)",
+          "alternatives": [
+            "\"切切地求\""
+          ],
+          "reason": "A command: seek eagerly, set your heart on (the meaning decisions); the English footnotes a reading as a statement.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -7731,6 +9791,26 @@
           "L": "И ещё показываю вам путь, превосходящий всё.",
           "B": "А теперь я покажу вам путь, который ни с чем не сравнить.",
           "R": "А сейчас я покажу вам путь, который лучше всего остального."
+        },
+        "uk": {
+          "L": "І ще покажу вам дорогу понад усяку міру.",
+          "B": "А тепер я покажу вам дорогу, з якою ніщо не зрівняється.",
+          "R": "А тепер я покажу вам шлях, кращий за все інше."
+        },
+        "ja": {
+          "L": "そして、さらに、並外れた道をあなたがたに示します。",
+          "B": "そして今、わたしはあなたがたに、何にもまさる道を示しましょう。",
+          "R": "でも今、ほかのどんなものよりもすぐれた道を、みなさんに教えましょう。"
+        },
+        "id": {
+          "L": "Dan lagi aku menunjukkan kepada kalian jalan yang jauh melampaui segala ukuran.",
+          "B": "Dan sekarang aku akan menunjukkan kepada kalian jalan yang tidak ada bandingannya.",
+          "R": "Tetapi sekarang saya akan menunjukkan kepada kalian suatu jalan yang lebih baik daripada segala sesuatu yang lain."
+        },
+        "zh": {
+          "L": "而且我还要把一条无比超越的道路指示你们。",
+          "B": "现在我要把一条无与伦比的道路指给你们看。",
+          "R": "现在我要告诉你们一条比什么都好的道路。"
         }
       },
       "decisions": [
@@ -7834,6 +9914,28 @@
             "\"ከሁሉ የሚበልጥ መንገድ\" (the most excellent way)"
           ],
           "reason": "Literal follows \"beyond measure\"; Balanced says \"without equal\". The familiar \"ከሁሉ የሚበልጥ መንገድ\" is the wording of a well-known Amharic Bible and is not used.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n46012031010",
+            "n46012031011"
+          ],
+          "choice": "\"无比超越的道路\" (L); \"无与伦比的道路\" (B); \"比什么都好的道路\" (R)",
+          "alternatives": [
+            "\"最妙的道\""
+          ],
+          "reason": "A way better than all others, the way of love that chapter 13 describes (the meaning decisions); worded from the Greek, not in the familiar phrasing.",
           "uncertain": false,
           "footnote": false
         }

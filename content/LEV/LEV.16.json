@@ -81,6 +81,26 @@
           "L": "И говорил {{divine_name:ГОСПОДЬ|Яхве}} Моисею после смерти двух сыновей Аарона, когда они приблизились пред лицо {{divine_name:ГОСПОДА|Яхве}} и умерли.",
           "B": "{{divine_name:ГОСПОДЬ|Яхве}} обратился к Моисею после того, как два сына Аарона приблизились к {{divine_name:ГОСПОДУ|Яхве}} и умерли.",
           "R": "Два сына Аарона умерли, когда подошли слишком близко к {{divine_name:ГОСПОДУ|Яхве}}. После этого {{divine_name:ГОСПОДЬ|Яхве}} обратился к Моисею."
+        },
+        "ja": {
+          "L": "そして、アロンの二人の子が{{divine_name:主|ヤハウェ}}の前に近づいて死んだ、その死の後に、{{divine_name:主|ヤハウェ}}はモーセに語られた。",
+          "B": "アロンの二人の息子が{{divine_name:主|ヤハウェ}}に近づいて死んだ後、{{divine_name:主|ヤハウェ}}はモーセに語られた。",
+          "R": "アロンの二人の息子は、{{divine_name:主|ヤハウェ}}に近づきすぎて死にました。その後、{{divine_name:主|ヤハウェ}}はモーセに話されました。"
+        },
+        "uk": {
+          "L": "І {{divine_name:ГОСПОДЬ|Ягве}} промовив до Мойсея після смерті двох синів Аарона, коли вони наблизилися перед {{divine_name:ГОСПОДА|Ягве}} і померли.",
+          "B": "{{divine_name:ГОСПОДЬ|Ягве}} заговорив до Мойсея після того, як двоє Ааронових синів наблизилися до {{divine_name:ГОСПОДА|Ягве}} і померли.",
+          "R": "Двоє Ааронових синів померли, коли підійшли надто близько до {{divine_name:ГОСПОДА|Ягве}}. Після цього {{divine_name:ГОСПОДЬ|Ягве}} заговорив до Мойсея."
+        },
+        "id": {
+          "L": "Dan {{divine_name:TUHAN|Yahweh}} berfirman kepada Musa sesudah kematian kedua anak Harun, ketika mereka mendekat ke hadapan {{divine_name:TUHAN|Yahweh}} lalu mati.",
+          "B": "{{divine_name:TUHAN|Yahweh}} berfirman kepada Musa sesudah kedua anak Harun datang mendekat ke hadapan {{divine_name:TUHAN|Yahweh}} lalu mati.",
+          "R": "Kedua anak Harun mati ketika mereka datang terlalu dekat kepada {{divine_name:TUHAN|Yahweh}}. Sesudah itu {{divine_name:TUHAN|Yahweh}} berfirman kepada Musa."
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}在亚伦的两个儿子死了以后，对摩西说话；他们是走近{{divine_name:上主|雅威}}面前时死的。",
+          "B": "亚伦的两个儿子走近{{divine_name:上主|雅威}}面前，死了；此后{{divine_name:上主|雅威}}对摩西说话。",
+          "R": "亚伦的两个儿子太靠近{{divine_name:上主|雅威}}，就死了。这事以后，{{divine_name:上主|雅威}}对摩西说话。"
         }
       },
       "decisions": [
@@ -117,7 +137,7 @@
           ],
           "reason": "The Westminster Leningrad Codex says only that they \"drew near before Yahweh\". The Septuagint adds that they offered strange fire, as in 10:1, which is probably an explanation drawn from that verse. The Hebrew is followed here, and the meaning is the same.",
           "uncertain": true,
-          "footnote": true
+          "footnote": false
         },
         {
           "id": "m3",
@@ -211,6 +231,48 @@
           "reason": "Hindi puts the time clause before the main verb, so Literal keeps the Hebrew's clauses in one sentence with \"after the death\" first, and Balanced gives the background in its own sentence, as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030160010081",
+            "o030160010091"
+          ],
+          "choice": "sons of Aaron: \"アロンの二人の子\" (L), \"アロンの二人の息子\" (B, R); they are not named, as in the Hebrew (Nadab and Abihu, 10:1)",
+          "alternatives": [
+            "name them \"ナダブとアビフ\" at R"
+          ],
+          "reason": "The English does not name them either; the meaning decision points to chapter 10.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o030160010011",
+            "o030160010061"
+          ],
+          "choice": "亚伦的两个儿子……死了；此后{{divine_name:上主|雅威}}对摩西说话",
+          "alternatives": [
+            "{{divine_name:上主|雅威}}在亚伦的两个儿子……死了以后，对摩西说话"
+          ],
+          "reason": "Chinese puts the time clause first; Balanced tells the deaths first and then the speech, as the English Readable does, to keep the sentence short. The verse boundary is not crossed.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -271,7 +333,7 @@
       "literal_gloss": "And said Yahweh to Moses, speak to Aaron your brother, and let him not come at every time into the holy [place] from inside to the veil, to [the] face of the cover which [is] on the ark, and he will not die, for in the cloud I will appear over the cover.",
       "renderings": {
         "en": {
-          "L": "And {{divine_name:the LORD|Yahweh}} said to Moses, \"Speak to Aaron your brother, that he not come at any time into the holy place inside the veil, before the cover which [is] on the ark, so that he does not die; for in the cloud I appear over the cover.",
+          "L": "And {{divine_name:the LORD|Yahweh}} said to Moses, \"Speak to Aaron your brother, that he not come at any time into the holy place inside the veil, before the mercy seat which [is] on the ark, so that he does not die; for in the cloud I appear over the mercy seat.",
           "B": "{{divine_name:The LORD|Yahweh}} said to Moses, \"Speak to your brother Aaron. He may not go at any time he pleases into the Most Holy Place behind the curtain, before the mercy seat that is on the ark, so that he will not die. For it is in the cloud above the mercy seat that I appear.",
           "R": "{{divine_name:The LORD|Yahweh}} said to Moses, \"Give your brother Aaron this warning. He must not go into the Most Holy Place whenever he likes. That is the room behind the curtain, where the cover of the ark is. If he goes in at the wrong time, he will die. For I appear in the cloud above the cover of the ark."
         },
@@ -319,6 +381,26 @@
           "L": "И сказал {{divine_name:ГОСПОДЬ|Яхве}} Моисею: «Скажи Аарону, брату твоему, чтобы не входил во всякое время во святилище внутрь за завесу, пред место умилостивления, которое на ковчеге, чтобы не умереть; потому что в облаке {{deity_pronoun:я|Я}} являюсь над местом умилостивления.",
           "B": "{{divine_name:ГОСПОДЬ|Яхве}} сказал Моисею: «Скажи своему брату Аарону, что он не может входить когда захочет в Святое святых, за завесу, к месту умилостивления на ковчеге, чтобы не умереть. Ведь {{deity_pronoun:я|Я}} являюсь в облаке над местом умилостивления.",
           "R": "{{divine_name:ГОСПОДЬ|Яхве}} сказал Моисею: «Предупреди своего брата Аарона. Он не должен входить в Святое святых, когда ему захочется. Это комната за занавесом, где стоит ковчег с крышкой. Если он войдёт туда не вовремя, он умрёт. Ведь {{deity_pronoun:я|Я}} являюсь в облаке над крышкой ковчега."
+        },
+        "ja": {
+          "L": "そして{{divine_name:主|ヤハウェ}}はモーセに言われた。「あなたの兄弟アロンに告げなさい。彼はいつでも垂れ幕の内側の聖所に、箱の上にある贖いの座の前に入ってはならない。そうすれば死ぬことはない。わたしは雲の中で、贖いの座の上に現れるからである。",
+          "B": "{{divine_name:主|ヤハウェ}}はモーセに言われた。「あなたの兄アロンに告げなさい。好きな時にいつでも、垂れ幕の奥の至聖所に入り、箱の上の贖いの座の前に出てはならない。死ぬことのないためである。わたしは雲の中にあって、贖いの座の上に現れるからである。",
+          "R": "{{divine_name:主|ヤハウェ}}はモーセに言われました。「あなたの兄アロンに、こう注意しておきなさい。アロンは、好きな時に、いちばん聖なる所に入ってはいけない。そこは垂れ幕の奥の部屋で、契約の箱のふたである贖いの座がある所だ。決められた時以外に入ると、アロンは死ぬ。わたしは雲の中にあって、贖いの座の上に現れるからである。"
+        },
+        "uk": {
+          "L": "І сказав {{divine_name:ГОСПОДЬ|Ягве}} до Мойсея: «Говори до Аарона, свого брата, щоб він не входив будь-коли до святилища за завісу, перед місце очищення, що на ковчезі, щоб він не помер; бо в хмарі {{deity_pronoun:я|Я}} зʼявляюся над місцем очищення.",
+          "B": "{{divine_name:ГОСПОДЬ|Ягве}} сказав Мойсеєві: «Скажи своєму братові Ааронові: він не може входити, коли йому заманеться, до Святеє Святих за завісу, перед віко, що на ковчезі, щоб він не помер. Бо саме в хмарі над віком ковчега {{deity_pronoun:я|Я}} зʼявляюся.",
+          "R": "{{divine_name:ГОСПОДЬ|Ягве}} сказав Мойсеєві: «Попередь свого брата Аарона. Йому не можна входити до найсвятішого місця, коли йому захочеться. Це кімната за завісою, де стоїть віко ковчега. Якщо він увійде не в той час, то помре. Бо {{deity_pronoun:я|Я}} зʼявляюся в хмарі над віком ковчега."
+        },
+        "id": {
+          "L": "Dan {{divine_name:TUHAN|Yahweh}} berfirman kepada Musa, \"Katakanlah kepada Harun, saudaramu, supaya ia jangan sewaktu-waktu masuk ke dalam tempat kudus di balik tirai, ke depan tutup pendamaian yang [ada] di atas tabut, supaya ia jangan mati; sebab di dalam awan {{deity_pronoun:aku|Aku}} menampakkan diri di atas tutup pendamaian.",
+          "B": "{{divine_name:TUHAN|Yahweh}} berfirman kepada Musa, \"Katakanlah kepada Harun, saudaramu, bahwa ia tidak boleh masuk ke Ruang Mahakudus di balik tirai, ke depan tutup pendamaian yang ada di atas tabut, kapan saja ia mau, supaya ia tidak mati. Sebab di dalam awan di atas tutup pendamaian itulah {{deity_pronoun:aku|Aku}} menampakkan diri.",
+          "R": "{{divine_name:TUHAN|Yahweh}} berfirman kepada Musa, \"Berilah peringatan ini kepada Harun, saudaramu. Dia tidak boleh masuk ke Ruang Mahakudus kapan saja dia mau. Itulah ruangan di balik tirai, tempat tutup tabut perjanjian berada. Kalau dia masuk pada waktu yang salah, dia akan mati. Sebab {{deity_pronoun:aku|Aku}} menampakkan diri di dalam awan di atas tutup tabut itu."
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}对摩西说：“你要告诉你的哥哥亚伦，不可随时进入帘幕里面的圣所，到约柜上的赎罪盖前，免得他死，因为我要在云中显现在赎罪盖上。",
+          "B": "{{divine_name:上主|雅威}}对摩西说：“你要告诉你的哥哥亚伦，他不可随意在任何时候进入帘幕后面的至圣所，到约柜上的赎罪盖前面，免得他死亡。因为我是在赎罪盖上方的云中显现的。",
+          "R": "{{divine_name:上主|雅威}}对摩西说：“你要这样警告你的哥哥亚伦：他不可想什么时候进至圣所就什么时候进去。至圣所就是帘幕后面的那个房间，约柜的盖子就在那里。如果他在不对的时候进去，就会死。因为我在约柜的盖子上方的云中显现。"
         }
       },
       "decisions": [
@@ -642,6 +724,146 @@
           "reason": "The Hebrew says only \"the holy place\"; the place behind the curtain is the Most Holy Place, which Balanced and Readable name, as the English does, with the form of Hebrews 9.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030160020141",
+            "o030160020142"
+          ],
+          "choice": "haqqodesh inside the veil: \"聖所\" (L, as the Hebrew \"the holy [place]\"), \"至聖所\" (B), \"いちばん聖なる所\" (R), through chapter 16",
+          "alternatives": [
+            "\"至聖所\" at L too"
+          ],
+          "reason": "The English Balanced and Readable name the inner room; Literal keeps the Hebrew's plain \"the holy\". The forms match EXO 26:33-34.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030160020191",
+            "o030160020192",
+            "o030160020291",
+            "o030160020292"
+          ],
+          "choice": "kapporet: \"贖いの座\" at every level (as HEB 9:5 and Exodus), explained at R once as \"契約の箱のふた\"",
+          "alternatives": [
+            "\"ふた\"",
+            "\"贖罪所\""
+          ],
+          "reason": "The English Literal says \"cover\", Balanced \"mercy seat\"; Japanese has one established term that carries both the lid and the atonement made there (meaning decision m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030160020141",
+            "o030160020142"
+          ],
+          "choice": "\"місце очищення\" (Literal), \"віко ковчега\" (Balanced, Readable) for the cover; \"святилище\" (Literal), \"Святеє Святих\" (Balanced), \"найсвятіше місце\" (Readable) for the inner room",
+          "alternatives": [
+            "\"престол благодаті\"",
+            "\"віко\" at Literal"
+          ],
+          "reason": "The shared terms note settles both. Literal \"місце очищення\" keeps the link with the verb of atonement that runs through this chapter; Literal says \"святилище\" where the Hebrew and the English Literal say only \"the holy place\". Book-wide choice.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030160020191",
+            "o030160020192",
+            "o030160020222",
+            "o030160020141",
+            "o030160020142",
+            "o030160020151",
+            "o030160020162"
+          ],
+          "choice": "\"tutup pendamaian\" (L, B), \"tutup tabut\" (R) for the mercy seat; \"tempat kudus di balik tirai\" (L), \"Ruang Mahakudus\" (B, R)",
+          "alternatives": [],
+          "reason": "\"tutup pendamaian\" is the glossary term for the gold lid on the ark, the place of God's presence and of atonement (m1); Readable calls it plainly the cover of the ark, as the English Readable does. The holy place inside the veil is the inner room (m2), which Balanced and Readable name with the glossary's \"Ruang Mahakudus\". For the whole chapter.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030160020191",
+            "o030160020192",
+            "o030160020222"
+          ],
+          "choice": "赎罪盖 (L, B); 约柜的盖子 (R)",
+          "alternatives": [
+            "施恩座"
+          ],
+          "reason": "The glossary's and Exodus 25:17's words for the kapporet, used through the chapter; 施恩座 (the CUV's word, and Hebrews 9:5's in some versions) is the main alternative. The curtain is 帘幕, as Exodus 26:33.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030160020141",
+            "o030160020142",
+            "o030160020162"
+          ],
+          "choice": "至圣所 (B, R); 帘幕里面的圣所 (L)",
+          "alternatives": [
+            "圣所"
+          ],
+          "reason": "The Hebrew says \"the holy place inside the veil\": Literal keeps it; Balanced and Readable name the inner room 至圣所, the Most Holy Place, as the English does, here and through the chapter.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -726,6 +948,26 @@
           "L": "Вот с чем войдёт Аарон во святилище: с быком, молодым из стада, в жертву за грех и с бараном во всесожжение.",
           "B": "Аарон может войти в Святое святых только так: с молодым быком в жертву за грех и с бараном во всесожжение.",
           "R": "Вот как Аарон должен входить в Святое святых. Он должен привести молодого быка в жертву за грех и барана во всесожжение."
+        },
+        "ja": {
+          "L": "これをもって、アロンは聖所に入る。すなわち、罪のためのささげ物として牛の群れの若い雄牛と、焼き尽くすささげ物として雄羊とをもって[入る]。",
+          "B": "アロンが至聖所に入るときは、次のようにしなければならない。罪のためのささげ物として若い雄牛を、焼き尽くすささげ物として雄羊を携えて来るのである。",
+          "R": "アロンがいちばん聖なる所に入るときは、こうしなければならない。罪を取り除くためのささげ物として若い雄牛を、焼いてささげるいけにえとして雄羊を連れて来るのである。"
+        },
+        "uk": {
+          "L": "З цим Аарон входитиме до святилища: з молодим биком з великої худоби на жертву за гріх і з бараном на всепалення.",
+          "B": "Аарон може входити до Святеє Святих лише так: з молодим биком на жертву за гріх і з бараном на всепалення.",
+          "R": "Ось як Аарон мусить входити до найсвятішого місця. Він мусить привести молодого бика як жертву за гріх і барана як всепалення."
+        },
+        "id": {
+          "L": "Dengan ini Harun boleh masuk ke dalam tempat kudus: dengan seekor lembu jantan, seekor yang muda dari lembu sapi, untuk korban penghapus dosa, dan seekor domba jantan untuk korban bakaran.",
+          "B": "Harun hanya boleh masuk ke Ruang Mahakudus dengan cara ini: dengan seekor lembu jantan muda untuk korban penghapus dosa dan seekor domba jantan untuk korban bakaran.",
+          "R": "Beginilah caranya Harun harus masuk ke Ruang Mahakudus. Dia harus membawa seekor lembu jantan muda sebagai korban penghapus dosa dan seekor domba jantan sebagai korban bakaran."
+        },
+        "zh": {
+          "L": "亚伦进圣所要这样：带一头公牛，就是牛群中的幼牛，作赎罪祭，又带一只公羊作燔祭。",
+          "B": "亚伦进至圣所只能这样：带一头小公牛作赎罪祭，一只公羊作燔祭。",
+          "R": "亚伦进至圣所时必须这样做：他必须带一头小公牛作赎罪祭，一只公羊作全烧的祭。"
         }
       },
       "decisions": [
@@ -907,6 +1149,26 @@
           "L": "Хитон льняной, священный, наденет он, и льняное нижнее бельё будет на плоти его, и льняным поясом опояшется, и льняным тюрбаном обвяжет [голову]; это священные одежды, и омоет он водой плоть свою и наденет их.",
           "B": "Пусть он наденет священный льняной хитон, на тело — льняное нижнее бельё, опояшется льняным поясом и обвяжет голову льняным тюрбаном. Так как эти одежды священны, пусть он прежде омоет тело водой и только потом наденет их.",
           "R": "Он должен надеть священную льняную рубашку и льняное нижнее бельё. Он должен повязать льняной пояс и обмотать голову льняным тюрбаном. Эта одежда священна. Поэтому он должен сначала вымыть тело водой, а потом одеться."
+        },
+        "ja": {
+          "L": "彼は聖なる亜麻布の長衣を着、亜麻布のももひきを自分の肉の上に着け、亜麻布の帯を締め、亜麻布のターバンを巻かなければならない。これらは聖なる衣服である。彼は自分の肉を水で洗い、それらを着る。",
+          "B": "彼は聖なる亜麻布の長衣を着て、亜麻布のももひきを身に着け、亜麻布の帯を締め、亜麻布のターバンを頭に巻かなければならない。これらは聖なる衣服であるから、水で体を洗ってから、それを着る。",
+          "R": "アロンは、聖なる亜麻布の長い服と、亜麻布の下着を着なければならない。亜麻布の帯を締め、亜麻布のターバンを頭に巻く。これらは聖なる服である。だから、まず水で体を洗い、それから服を着なければならない。"
+        },
+        "uk": {
+          "L": "Святий лляний хітон він одягне, і лляні спідні штани будуть на його тілі, і лляним поясом він підпережеться, і лляним тюрбаном він обвʼяже [голову]. Це святі шати; і він обмиє своє тіло водою і одягне їх.",
+          "B": "Він має бути вбраний у святий лляний хітон, на тілі — лляна спідня одежа, лляний пояс довкола стану і лляний тюрбан, намотаний на голову. Оскільки ця одежа свята, він має обмити тіло водою і тоді вдягнути її.",
+          "R": "Він мусить одягнути святий лляний хітон і лляну спідню білизну. Він мусить підперезатися лляним поясом і обмотати голову лляним тюрбаном. Ця одежа свята. Тому він мусить спершу помитися водою, а тоді вдягнутися."
+        },
+        "id": {
+          "L": "Kemeja lenan yang kudus haruslah ia kenakan, dan celana lenan haruslah ada pada tubuhnya, dan dengan ikat pinggang lenan haruslah ia mengikat [dirinya], dan dengan serban lenan haruslah ia membalut [kepalanya]. Itulah pakaian kudus; dan haruslah ia membasuh tubuhnya dengan air dan mengenakannya.",
+          "B": "Ia harus mengenakan kemeja lenan yang kudus, dengan celana lenan pada tubuhnya, ikat pinggang lenan terikat padanya, dan serban lenan terlilit di kepalanya. Karena pakaian ini kudus, ia harus membasuh tubuhnya dengan air sebelum mengenakannya.",
+          "R": "Dia harus memakai kemeja lenan yang kudus dan celana dalam lenan. Dia harus memakai ikat pinggang lenan dan melilitkan serban lenan di kepalanya. Pakaian ini kudus. Karena itu dia harus mandi dahulu sebelum mengenakannya."
+        },
+        "zh": {
+          "L": "他要穿上圣洁的麻布内袍，麻布裤子要穿在他的肉体上，他要束上麻布腰带，缠上麻布头巾；这些是圣衣；他要用水洗他的肉体，然后穿上。",
+          "B": "他要穿上圣洁的麻布内袍，贴身穿麻布内裤，腰间系上麻布腰带，头上缠着麻布头巾。这些都是圣衣，所以他要先用水洗身，然后穿上。",
+          "R": "他必须穿上圣洁的麻布内袍和麻布内裤。他必须系上麻布腰带，头上缠上麻布头巾。这些衣服是圣洁的，所以他必须先洗澡，然后再穿上。"
         }
       },
       "decisions": [
@@ -1094,6 +1356,34 @@
           "reason": "The names settled for the priests' garments in Exodus; here they are of plain linen (meaning decision m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030160040011",
+            "o030160040021",
+            "o030160040061",
+            "o030160040111",
+            "o030160040141",
+            "o030160040161",
+            "o030160040171"
+          ],
+          "choice": "内袍; 麻布裤子 (L), 麻布内裤 (B, R); 腰带; 头巾; 圣衣",
+          "alternatives": [
+            "长衣",
+            "冠冕"
+          ],
+          "reason": "The high priest's garments in the words of Exodus 28:4, 39, 42 and Leviticus 8:7-9, here all of plain linen (麻布).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1178,6 +1468,26 @@
           "L": "И от общины {{gender:детей Израиля|сынов Израиля}} возьмёт он двух козлов в жертву за грех и одного барана во всесожжение.",
           "B": "От общины израильтян пусть он возьмёт двух козлов в жертву за грех и одного барана во всесожжение.",
           "R": "Израильский народ должен дать ему двух козлов в жертву за грех и одного барана во всесожжение."
+        },
+        "ja": {
+          "L": "そしてイスラエルの子らの会衆から、彼は罪のためのささげ物として雄やぎ二匹を、焼き尽くすささげ物として雄羊一匹を取らなければならない。",
+          "B": "イスラエルの人々の共同体から、彼は罪のためのささげ物として雄やぎ二匹と、焼き尽くすささげ物として雄羊一匹を受け取る。",
+          "R": "イスラエルの共同体の人々は、罪を取り除くためのささげ物として雄やぎ二匹を、焼いてささげるいけにえとして雄羊一匹を、アロンに渡さなければならない。"
+        },
+        "uk": {
+          "L": "А від громади {{gender:нащадків Ізраїля|синів Ізраїля}} він візьме двох козлів на жертву за гріх і одного барана на всепалення.",
+          "B": "Від громади ізраїльтян він має взяти двох козлів на жертву за гріх і одного барана на всепалення.",
+          "R": "Люди з громади Ізраїлю мусять дати йому двох козлів на жертву за гріх і одного барана на всепалення."
+        },
+        "id": {
+          "L": "Dan dari umat bani Israel haruslah ia mengambil dua ekor kambing jantan untuk korban penghapus dosa, dan seekor domba jantan untuk korban bakaran.",
+          "B": "Dari umat Israel ia harus mengambil dua ekor kambing jantan untuk korban penghapus dosa dan seekor domba jantan untuk korban bakaran.",
+          "R": "Umat Israel harus memberikan kepadanya dua ekor kambing jantan untuk korban penghapus dosa dan seekor domba jantan untuk korban bakaran."
+        },
+        "zh": {
+          "L": "他要从{{gender:以色列的子孙|以色列的儿子}}的会众中取两只公山羊作赎罪祭，一只公羊作燔祭。",
+          "B": "他要从以色列人的会众中取两只公山羊作赎罪祭，一只公羊作燔祭。",
+          "R": "以色列的会众必须给他两只公山羊作赎罪祭，一只公羊作全烧的祭。"
         }
       },
       "decisions": [
@@ -1358,6 +1668,26 @@
           "reason": "As settled for the Pentateuch, Balanced and Readable say \"израильтяне\", which already includes men and women, so they need no setting where the English has one; Literal keeps the span.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o030160050041",
+            "o030160050051"
+          ],
+          "choice": "以色列人 (no span)",
+          "alternatives": [
+            "以色列的子孙 / 以色列的儿子 in a gender span"
+          ],
+          "reason": "The English Balanced spans \"Israelites / sons of Israel\"; the glossary has plain 以色列人 at Balanced and Readable, which already includes everyone, so no span here or in verses 16-34; Literal keeps the span.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1443,6 +1773,26 @@
           "L": "И приведёт Аарон быка жертвы за грех, который за него самого, и совершит умилостивление за себя и за дом свой.",
           "B": "Аарон приведёт быка в жертву за грех за себя самого и так совершит умилостивление за себя и за свой дом.",
           "R": "Аарон должен привести быка в жертву за грех за себя. Так он совершит умилостивление за себя и за свою семью."
+        },
+        "ja": {
+          "L": "そしてアロンは、自分のための罪のためのささげ物の雄牛をささげ、自分と自分の家のために贖いをする。",
+          "B": "アロンは、自分のための罪のためのささげ物である雄牛をささげ、自分と家族のために贖いをする。",
+          "R": "アロンは、自分のための、罪を取り除くためのささげ物として、雄牛をささげなければならない。こうしてアロンは、自分と家族のために罪の償いをする。"
+        },
+        "uk": {
+          "L": "І Аарон піднесе бика жертви за гріх, що за нього самого, і звершить очищення за себе і за свій дім.",
+          "B": "Аарон приведе бика, жертву за гріх за себе, і так звершить очищення за себе і за свою родину.",
+          "R": "Аарон мусить привести бика як жертву за гріх за себе. Так він звершить очищення за себе і за свою родину."
+        },
+        "id": {
+          "L": "Dan Harun haruslah mempersembahkan lembu jantan korban penghapus dosa yang [adalah] untuk dirinya sendiri, dan mengadakan pendamaian bagi dirinya dan bagi keluarganya.",
+          "B": "Harun harus membawa maju lembu jantan yang menjadi korban penghapus dosa bagi dirinya sendiri, dan dengan demikian mengadakan pendamaian bagi dirinya dan keluarganya.",
+          "R": "Harun harus membawa lembu jantan itu sebagai korban penghapus dosa bagi dirinya sendiri. Dengan cara itu dia menghapus dosanya sendiri dan dosa keluarganya."
+        },
+        "zh": {
+          "L": "亚伦要奉上为自己作赎罪祭的公牛，为自己和他的家人赎罪。",
+          "B": "亚伦要把为自己献的赎罪祭公牛牵来，为自己和家人赎罪。",
+          "R": "亚伦必须带来那头公牛，为自己献作赎罪祭。这样，他就为自己和家人除去罪。"
         }
       },
       "decisions": [
@@ -1516,6 +1866,27 @@
             "\"ኃጢአቱ እንዲሰረይ ያደርጋል\" at Readable"
           ],
           "reason": "The Pentateuch terms list lets Readable follow its English level; the English Readable keeps \"make atonement\" through this chapter, so the Amharic keeps the verb \"ማስተስረይ\" too and lets the surrounding sentences explain what is cleansed. The noun is \"ማስተስረያ\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030160060082"
+          ],
+          "choice": "\"为……赎罪\" (L, B); \"除去……的罪\" (R)",
+          "alternatives": [
+            "为……赎罪 throughout"
+          ],
+          "reason": "The glossary's forms for \"make atonement for\" where the rite deals with a person's sin, as Leviticus 1-7 set them: \"为……赎罪\" at Literal and Balanced, \"除去……的罪\" at Readable. Readable keeps one wording for each other kind of atonement: \"为……举行赎罪的仪式\" where it removes uncleanness that is no sin (12:7-8; 14:18-31; 15:15, 30) and where the rite is named without a person (16:17, 27), and \"为……行洁净礼\" where a thing is cleansed (8:15; 14:53; 16:16-20, 33).",
           "uncertain": false,
           "footnote": false
         }
@@ -1601,6 +1972,26 @@
           "L": "И возьмёт он двух козлов и поставит их перед {{divine_name:ГОСПОДОМ|Яхве}} у входа в шатёр встречи.",
           "B": "Пусть он возьмёт двух козлов и поставит их перед {{divine_name:ГОСПОДОМ|Яхве}} у входа в шатёр встречи.",
           "R": "Он должен взять двух козлов и поставить их перед {{divine_name:ГОСПОДОМ|Яхве}} у входа в шатёр встречи."
+        },
+        "ja": {
+          "L": "そして彼は二匹の雄やぎを取り、それらを{{divine_name:主|ヤハウェ}}の前、会見の天幕の入り口に立たせる。",
+          "B": "次に、彼は二匹の雄やぎを取り、会見の天幕の入り口で{{divine_name:主|ヤハウェ}}の前に立たせる。",
+          "R": "そして、二匹の雄やぎを、神と会うテントの入り口に連れて行き、{{divine_name:主|ヤハウェ}}の前に立たせなければならない。"
+        },
+        "uk": {
+          "L": "І він візьме двох козлів і поставить їх перед {{divine_name:ГОСПОДОМ|Ягве}} [при] вході намету зустрічі.",
+          "B": "Він візьме двох козлів і поставить їх перед {{divine_name:ГОСПОДОМ|Ягве}} при вході до намету зустрічі.",
+          "R": "Він мусить узяти двох козлів і поставити їх перед {{divine_name:ГОСПОДОМ|Ягве}} при вході до намету зустрічі."
+        },
+        "id": {
+          "L": "Dan haruslah ia mengambil kedua kambing jantan itu dan menempatkannya di hadapan {{divine_name:TUHAN|Yahweh}} [di] pintu Kemah Pertemuan.",
+          "B": "Ia harus mengambil kedua kambing itu dan menempatkannya di hadapan {{divine_name:TUHAN|Yahweh}} di pintu Kemah Pertemuan.",
+          "R": "Dia harus mengambil kedua kambing itu dan menempatkannya di hadapan {{divine_name:TUHAN|Yahweh}} di pintu Kemah Pertemuan."
+        },
+        "zh": {
+          "L": "他要取那两只公山羊，使它们站在{{divine_name:上主|雅威}}面前，在会幕门口。",
+          "B": "他要牵那两只公山羊，让它们站在会幕门口，在{{divine_name:上主|雅威}}面前。",
+          "R": "他必须把两只公山羊牵来，让它们站在会幕门口，在{{divine_name:上主|雅威}}面前。"
         }
       },
       "decisions": [
@@ -1747,6 +2138,26 @@
           "L": "И бросит Аарон на двух козлов жребии: один жребий для {{divine_name:ГОСПОДА|Яхве}} и один жребий для Азазела.",
           "B": "Над двумя козлами Аарон бросит два жребия: один жребий для {{divine_name:ГОСПОДА|Яхве}}, а другой для Азазела.",
           "R": "Аарон должен бросить жребий, чтобы выбрать одного из двух козлов. Один жребий — для {{divine_name:ГОСПОДА|Яхве}}, а другой — для Азазела."
+        },
+        "ja": {
+          "L": "そしてアロンは二匹の雄やぎについてくじを引く。一つのくじは{{divine_name:主|ヤハウェ}}のため、一つのくじはアザゼルのためである。",
+          "B": "アロンは二匹の雄やぎのためにくじを引く。一つは{{divine_name:主|ヤハウェ}}のため、一つはアザゼルのためのくじである。",
+          "R": "アロンはくじを引いて、二匹の雄やぎのどちらがどちらになるかを決めなければならない。一つのくじは{{divine_name:主|ヤハウェ}}のため、もう一つのくじはアザゼルのためである。"
+        },
+        "uk": {
+          "L": "І Аарон кине на двох козлів жереб: один жереб для {{divine_name:ГОСПОДА|Ягве}} і один жереб для Азазела.",
+          "B": "Над двома козлами Аарон кине два жереби: один жереб для {{divine_name:ГОСПОДА|Ягве}}, а другий для Азазела.",
+          "R": "Аарон мусить кинути жереб, щоб вибрати між двома козлами. Один жереб — для {{divine_name:ГОСПОДА|Ягве}}, а другий — для Азазела."
+        },
+        "id": {
+          "L": "Dan Harun haruslah membuang undi atas kedua kambing jantan itu, satu undi bagi {{divine_name:TUHAN|Yahweh}} dan satu undi bagi Azazel.",
+          "B": "Harun harus membuang dua undi atas kedua kambing itu, satu undi bagi {{divine_name:TUHAN|Yahweh}} dan satu undi bagi Azazel.",
+          "R": "Harun harus membuang undi untuk memilih di antara kedua kambing itu. Undi yang satu untuk {{divine_name:TUHAN|Yahweh}}, dan undi yang lain untuk Azazel."
+        },
+        "zh": {
+          "L": "亚伦要为那两只公山羊抽签：一签归{{divine_name:上主|雅威}}，一签归阿撒泻勒。",
+          "B": "亚伦要为这两只公山羊抽签，一签归给{{divine_name:上主|雅威}}，一签归给阿撒泻勒。",
+          "R": "亚伦必须用抽签的方法为两只公山羊做选择。一签是归{{divine_name:上主|雅威}}的，另一签是归阿撒泻勒的。"
         }
       },
       "decisions": [
@@ -1999,6 +2410,119 @@
           "reason": "The Hebrew name is left as a name, as the English leaves it; what it means is uncertain (the meaning decisions). The Synodal \"для отпущения\" reads one interpretation into the text.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030160080121",
+            "o030160080122"
+          ],
+          "choice": "Azazel: transliterated \"アザゼル\" at every level, kept as a name",
+          "alternatives": [
+            "\"贖罪のやぎ\" / \"身代わりのやぎ\" (scapegoat)",
+            "\"荒れ野の霊\""
+          ],
+          "reason": "Its meaning is unknown (meaning decision m1, footnoted); the English keeps the name, and so does the Japanese.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030160080012",
+            "o030160080061"
+          ],
+          "choice": "\"Азазел\" as a name at every level",
+          "alternatives": [
+            "\"козел відпущення\""
+          ],
+          "reason": "The English keeps the Hebrew word as a name, as the meaning decisions read it; Ukrainian transcribes it. \"Козел відпущення\" would decide the meaning in the wording. Book-wide choice.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030160080122",
+            "o030160080061",
+            "o030160080071"
+          ],
+          "choice": "\"Azazel\" as a name at every level; \"undi\" for the lots",
+          "alternatives": [
+            "\"kambing pelepasan\""
+          ],
+          "reason": "The word's meaning is unknown, and it reads most naturally as a name standing opposite Yahweh's (m1, uncertain), so Indonesian keeps it as a name and does not render it as \"kambing hitam\" or \"kambing pengganti\". Lots let God decide (m2); \"membuang undi\" is the ordinary phrase. Verses 10 and 26 keep \"Azazel\" too.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030160080122"
+          ],
+          "choice": "阿撒泻勒",
+          "alternatives": [
+            "替罪羊",
+            "代罪的羊",
+            "放逐"
+          ],
+          "reason": "The meaning decision keeps Azazel as a name of unknown meaning. It is written in its conventional Chinese transliteration at every level (verses 8, 10, 26), not translated as 替罪羊 \"scapegoat\", which would decide that the word names the goat itself.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030160080061",
+            "o030160080071"
+          ],
+          "choice": "抽签",
+          "alternatives": [
+            "拈阄"
+          ],
+          "reason": "\"Lots\" as the ordinary modern 抽签, as Acts 1:26 and John 19:24 in this translation; 拈阄 is the older Bible word.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2084,6 +2608,26 @@
           "L": "И приведёт Аарон козла, на которого вышел жребий для {{divine_name:ГОСПОДА|Яхве}}, и принесёт его [в] жертву за грех.",
           "B": "Затем Аарон приведёт козла, на которого выпал жребий для {{divine_name:ГОСПОДА|Яхве}}, и принесёт его в жертву за грех.",
           "R": "Аарон должен привести козла, выбранного жребием для {{divine_name:ГОСПОДА|Яхве}}. Он должен принести его в жертву за грех."
+        },
+        "ja": {
+          "L": "そしてアロンは、{{divine_name:主|ヤハウェ}}のためのくじが当たった雄やぎをささげ、それを罪のためのささげ物とする。",
+          "B": "アロンは、{{divine_name:主|ヤハウェ}}のためのくじが当たった雄やぎを引いて来て、罪のためのささげ物としてささげる。",
+          "R": "アロンは、{{divine_name:主|ヤハウェ}}のくじで選ばれた雄やぎを連れて来て、罪を取り除くためのささげ物としてささげなければならない。"
+        },
+        "uk": {
+          "L": "І Аарон піднесе козла, на якого випав жереб для {{divine_name:ГОСПОДА|Ягве}}, і принесе його [як] жертву за гріх.",
+          "B": "Потім Аарон приведе козла, на якого випав жереб для {{divine_name:ГОСПОДА|Ягве}}, і принесе його як жертву за гріх.",
+          "R": "Аарон мусить привести козла, на якого випав жереб для {{divine_name:ГОСПОДА|Ягве}}. Він мусить принести його як жертву за гріх."
+        },
+        "id": {
+          "L": "Dan Harun haruslah mempersembahkan kambing jantan yang kena undi bagi {{divine_name:TUHAN|Yahweh}}, dan melakukannya [sebagai] korban penghapus dosa.",
+          "B": "Lalu Harun harus membawa maju kambing yang terpilih oleh undi bagi {{divine_name:TUHAN|Yahweh}} dan mempersembahkannya sebagai korban penghapus dosa.",
+          "R": "Harun harus membawa kambing yang terpilih oleh undi untuk {{divine_name:TUHAN|Yahweh}}. Dia harus mempersembahkannya sebagai korban penghapus dosa."
+        },
+        "zh": {
+          "L": "亚伦要把归{{divine_name:上主|雅威}}的签所落到的那只公山羊奉上，作赎罪祭。",
+          "B": "亚伦要把抽中归{{divine_name:上主|雅威}}的那只公山羊牵来，献作赎罪祭。",
+          "R": "亚伦必须把抽中归{{divine_name:上主|雅威}}的那只公山羊牵来，献作赎罪祭。"
         }
       },
       "decisions": [
@@ -2217,6 +2761,26 @@
           "L": "А козёл, на которого вышел жребий для Азазела, будет поставлен живым перед {{divine_name:ГОСПОДОМ|Яхве}}, чтобы совершить над ним умилостивление, чтобы отослать его к Азазелу в пустыню.",
           "B": "А козла, на которого выпал жребий для Азазела, нужно поставить живым перед {{divine_name:ГОСПОДОМ|Яхве}}, чтобы с ним совершить умилостивление, отослав его в пустыню к Азазелу.",
           "R": "Другого козла, выбранного жребием для Азазела, нужно оставить живым и поставить перед {{divine_name:ГОСПОДОМ|Яхве}}. Он тоже нужен для умилостивления. Его отправят в пустыню к Азазелу."
+        },
+        "ja": {
+          "L": "そしてアザゼルのためのくじが当たった雄やぎは、生きたまま{{divine_name:主|ヤハウェ}}の前に立たせておく。それによって贖いをするため、それをアザゼルのために荒れ野へ送り出すためである。",
+          "B": "しかし、アザゼルのためのくじが当たった雄やぎは、生きたまま{{divine_name:主|ヤハウェ}}の前に立たせておく。それを荒れ野のアザゼルのもとへ送り出すことによって、贖いをするためである。",
+          "R": "アザゼルのくじで選ばれたもう一匹の雄やぎは、殺さずに生かしておき、{{divine_name:主|ヤハウェ}}の前に連れて来なければならない。この雄やぎも、罪の償いをするための役目を果たす。この雄やぎは、荒れ野のアザゼルのところへ送り出されるのである。"
+        },
+        "uk": {
+          "L": "А козла, на якого випав жереб для Азазела, поставлять живим перед {{divine_name:ГОСПОДОМ|Ягве}}, щоб звершити очищення над ним, щоб відіслати його до Азазела в пустелю.",
+          "B": "А козла, на якого випав жереб для Азазела, поставлять живим перед {{divine_name:ГОСПОДОМ|Ягве}}, щоб ним звершити очищення, відіславши його в пустелю до Азазела.",
+          "R": "Другого козла, на якого випав жереб для Азазела, мусять залишити живим і поставити перед {{divine_name:ГОСПОДОМ|Ягве}}. Він має свою частку в очищенні. Його відішлють у пустелю до Азазела."
+        },
+        "id": {
+          "L": "Dan kambing jantan yang kena undi bagi Azazel haruslah ditempatkan hidup-hidup di hadapan {{divine_name:TUHAN|Yahweh}}, untuk mengadakan pendamaian dengannya, untuk melepaskannya kepada Azazel ke padang gurun.",
+          "B": "Tetapi kambing yang terpilih oleh undi bagi Azazel harus ditempatkan hidup-hidup di hadapan {{divine_name:TUHAN|Yahweh}}, supaya dengan kambing itu pendamaian diadakan, yaitu dengan melepaskannya ke padang gurun kepada Azazel.",
+          "R": "Kambing yang lain, yang terpilih oleh undi untuk Azazel, harus dibiarkan hidup dan dibawa ke hadapan {{divine_name:TUHAN|Yahweh}}. Kambing itu ikut dipakai untuk menghapus dosa. Kambing itu akan dilepaskan ke padang gurun kepada Azazel."
+        },
+        "zh": {
+          "L": "但归阿撒泻勒的签所落到的那只公山羊，要活着站在{{divine_name:上主|雅威}}面前，在它身上赎罪，把它打发到旷野去，归阿撒泻勒。",
+          "B": "但抽中归阿撒泻勒的那只公山羊，要活着安置在{{divine_name:上主|雅威}}面前，用它来赎罪，把它送到旷野去，归阿撒泻勒。",
+          "R": "另一只抽中归阿撒泻勒的公山羊，必须活着带到{{divine_name:上主|雅威}}面前。它在赎罪的事上也有作用。它要被送到荒野去，归阿撒泻勒。"
         }
       },
       "decisions": [
@@ -2327,6 +2891,27 @@
           "reason": "The forms settled in Matthew for the wilderness; \"रेगिस्तान\" would suggest sand dunes.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030160100112",
+            "o030160100121",
+            "o030160100122"
+          ],
+          "choice": "\"mengadakan pendamaian dengannya\" (L, B), \"ikut dipakai untuk menghapus dosa\" (R)",
+          "alternatives": [],
+          "reason": "The live goat itself is the means of the rite of atonement (m1, uncertain), as verses 21-22 explain.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2421,6 +3006,26 @@
           "L": "И приведёт Аарон быка жертвы за грех, который за него самого, и совершит умилостивление за себя и за дом свой, и заколет быка жертвы за грех, который за него самого.",
           "B": "Аарон приведёт быка своей жертвы за грех и совершит умилостивление за себя и за свой дом. Он заколет этого быка.",
           "R": "Аарон должен привести быка в жертву за грех за себя. Это для умилостивления за него самого и за его семью. Он должен заколоть этого быка."
+        },
+        "ja": {
+          "L": "そしてアロンは自分のための罪のためのささげ物の雄牛をささげ、自分と自分の家のために贖いをする。そして彼は自分のための罪のためのささげ物の雄牛を屠る。",
+          "B": "アロンは自分のための罪のためのささげ物である雄牛をささげ、自分と家族のために贖いをする。そして、その雄牛を屠る。",
+          "R": "アロンは、自分のための、罪を取り除くためのささげ物として、雄牛を連れて来る。それは、自分と家族のために罪の償いをするためである。アロンはその雄牛を殺さなければならない。"
+        },
+        "uk": {
+          "L": "І Аарон піднесе бика жертви за гріх, що за нього самого, і звершить очищення за себе і за свій дім, і заколе бика жертви за гріх, що за нього самого.",
+          "B": "Аарон приведе бика своєї жертви за гріх і звершить очищення за себе і свою родину. Він заколе цього бика.",
+          "R": "Аарон мусить привести бика як жертву за гріх за себе. Це щоб звершити очищення за себе і свою родину. Він мусить забити бика."
+        },
+        "id": {
+          "L": "Dan Harun haruslah mempersembahkan lembu jantan korban penghapus dosa yang [adalah] untuk dirinya sendiri, dan mengadakan pendamaian bagi dirinya dan bagi keluarganya; dan haruslah ia menyembelih lembu jantan korban penghapus dosa yang [adalah] untuk dirinya sendiri.",
+          "B": "Harun harus membawa maju lembu jantan korban penghapus dosa bagi dirinya sendiri dan mengadakan pendamaian bagi dirinya dan keluarganya. Ia harus menyembelih lembu itu.",
+          "R": "Harun harus membawa lembu jantan sebagai korban penghapus dosa bagi dirinya sendiri. Korban itu untuk menghapus dosanya dan dosa keluarganya. Dia harus menyembelih lembu itu."
+        },
+        "zh": {
+          "L": "亚伦要奉上为自己作赎罪祭的公牛，为自己和他的家人赎罪；他要宰那为自己作赎罪祭的公牛。",
+          "B": "亚伦要把为自己献的赎罪祭公牛牵来，为自己和家人赎罪。他要宰这头公牛。",
+          "R": "亚伦必须带来那头为自己献作赎罪祭的公牛。这是为了除去他自己和他家人的罪。他必须宰杀这头公牛。"
         }
       },
       "decisions": [
@@ -2552,6 +3157,26 @@
           "L": "И возьмёт он полную кадильницу горящих углей с жертвенника, что перед {{divine_name:ГОСПОДОМ|Яхве}}, и полные пригоршни свои мелко истолчённого благовонного курения, и внесёт внутрь за завесу.",
           "B": "Пусть он наполнит кадильницу горящими углями с жертвенника, который перед {{divine_name:ГОСПОДОМ|Яхве}}, возьмёт две пригоршни мелко истолчённых благовоний и внесёт их за завесу.",
           "R": "Он должен наполнить совок для углей горящими углями с жертвенника перед {{divine_name:ГОСПОДОМ|Яхве}}. Он должен взять также две пригоршни душистых благовоний, истолчённых в мелкий порошок. Он должен внести их в комнату за занавесом."
+        },
+        "ja": {
+          "L": "そして彼は{{divine_name:主|ヤハウェ}}の前の祭壇の上から、燃える炭火を火皿いっぱいに取り、細かく砕いた香料の香を両手いっぱいに取って、垂れ幕の内側に携えて入る。",
+          "B": "彼は{{divine_name:主|ヤハウェ}}の前にある祭壇から、燃えている炭火を火皿いっぱいに取り、細かく砕いた香りのよい香を両手に一杯取って、垂れ幕の奥に携えて入る。",
+          "R": "アロンは、{{divine_name:主|ヤハウェ}}の前にある祭壇から燃えている炭を取って、香をたくための皿をいっぱいにしなければならない。また、細かい粉にした、よい香りの香を両手に一杯取る。そして、それを垂れ幕の奥の部屋に持って入る。"
+        },
+        "uk": {
+          "L": "І він візьме повну кадильницю вогняного вугілля з жертовника з-перед {{divine_name:ГОСПОДА|Ягве}} і повні свої пригорщі пахучого кадила, дрібно стовченого, і внесе [їх] за завісу.",
+          "B": "Він наповнить кадильницю жаром із жертовника, що перед {{divine_name:ГОСПОДОМ|Ягве}}, візьме дві пригорщі дрібно стовченого пахучого кадила і внесе їх за завісу.",
+          "R": "Він мусить наповнити посудину для вогню жаром із жертовника, що перед {{divine_name:ГОСПОДОМ|Ягве}}. Він мусить також узяти дві пригорщі пахучого кадила, стовченого на дрібний порошок. Він має внести це в кімнату за завісою."
+        },
+        "id": {
+          "L": "Dan haruslah ia mengambil perbaraan yang penuh dengan bara api dari atas mezbah, dari hadapan {{divine_name:TUHAN|Yahweh}}, dan kedua tangannya penuh dengan ukupan wangi yang ditumbuk halus, dan membawa[nya] masuk ke balik tirai.",
+          "B": "Ia harus mengisi perbaraan dengan bara api dari mezbah yang ada di hadapan {{divine_name:TUHAN|Yahweh}}, mengambil dua genggam ukupan wangi yang ditumbuk halus, lalu membawa semuanya masuk ke balik tirai.",
+          "R": "Dia harus mengisi wadah api dengan bara dari mezbah di hadapan {{divine_name:TUHAN|Yahweh}}. Dia juga harus mengambil dua genggam ukupan yang harum, yang sudah ditumbuk menjadi bubuk halus. Dia harus membawa semua itu masuk ke ruangan di balik tirai."
+        },
+        "zh": {
+          "L": "他要从{{divine_name:上主|雅威}}面前的坛上取满满一火盆的火炭，又取满满两捧捣细的芬芳的香，带进帘幕里面。",
+          "B": "他要从{{divine_name:上主|雅威}}面前的祭坛上取火炭，盛满一火盆，再取两捧捣细的芬芳的香，带进帘幕里面。",
+          "R": "他必须从{{divine_name:上主|雅威}}面前的祭坛上取烧着的火炭，盛满一个火盆。他也必须取两捧磨成细粉的芬芳的香。他必须把这些带进帘幕后面的房间。"
         }
       },
       "decisions": [
@@ -2631,6 +3256,27 @@
           "reason": "The censer used with incense is ጥና, as in Leviticus 10:1 and Numbers 16; the altar's firepans in Exodus keep የእሳት ማንሻ.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030160120032"
+          ],
+          "choice": "火盆",
+          "alternatives": [
+            "香炉"
+          ],
+          "reason": "The Hebrew is the pan for carrying coals, the 火盆 of the altar's utensils in Exodus 27:3; 香炉 would suggest a standing incense burner.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2676,7 +3322,7 @@
       "literal_gloss": "And he will put the incense on the fire before Yahweh, and will cover [the] cloud of the incense the cover which [is] on the testimony, and he will not die.",
       "renderings": {
         "en": {
-          "L": "And he shall put the incense on the fire before {{divine_name:the LORD|Yahweh}}, and the cloud of the incense shall cover the cover which [is] on the testimony, so that he does not die.",
+          "L": "And he shall put the incense on the fire before {{divine_name:the LORD|Yahweh}}, and the cloud of the incense shall cover the mercy seat which [is] on the testimony, so that he does not die.",
           "B": "There before {{divine_name:the LORD|Yahweh}} he is to lay the incense on the fire, and the cloud of incense will cover the mercy seat above the testimony. So he will not die.",
           "R": "There, in front of {{divine_name:the LORD|Yahweh}}, he must put the incense on the fire. Then the smoke of the incense will hide the cover on the covenant box. That way he will not die."
         },
@@ -2724,6 +3370,26 @@
           "L": "И положит он курение на огонь перед {{divine_name:ГОСПОДОМ|Яхве}}, и покроет облако курения место умилостивления, которое над свидетельством, чтобы не умереть ему.",
           "B": "Там, перед {{divine_name:ГОСПОДОМ|Яхве}}, он положит благовония на огонь, и облако благовоний покроет место умилостивления над свидетельством. Так он не умрёт.",
           "R": "Там, перед {{divine_name:ГОСПОДОМ|Яхве}}, он должен положить благовония на огонь. Тогда дым благовоний закроет крышку ковчега завета. Так он не умрёт."
+        },
+        "ja": {
+          "L": "そして彼は{{divine_name:主|ヤハウェ}}の前で香を火の上に置き、香の雲が証しの上にある贖いの座を覆う。そうすれば彼は死なない。",
+          "B": "そして{{divine_name:主|ヤハウェ}}の前で、香を火の上に載せる。すると香の雲が、証しの板の上にある贖いの座を覆う。こうして彼は死を免れる。",
+          "R": "そこで、{{divine_name:主|ヤハウェ}}の前で、香を火の上に置かなければならない。すると香の煙が、契約の板を納めた箱の上の贖いの座を隠す。そうすれば、アロンは死なない。"
+        },
+        "uk": {
+          "L": "І він покладе кадило на вогонь перед {{divine_name:ГОСПОДОМ|Ягве}}, і хмара кадила вкриє місце очищення, що на свідченні, щоб він не помер.",
+          "B": "Там, перед {{divine_name:ГОСПОДОМ|Ягве}}, він покладе кадило на вогонь, і хмара кадила вкриє віко над свідченням. Так він не помре.",
+          "R": "Там, перед {{divine_name:ГОСПОДОМ|Ягве}}, він мусить покласти кадило на вогонь. Тоді дим кадила заховає віко на ковчезі завіту. Так він не помре."
+        },
+        "id": {
+          "L": "Dan haruslah ia menaruh ukupan itu di atas api di hadapan {{divine_name:TUHAN|Yahweh}}, dan awan ukupan itu haruslah menutupi tutup pendamaian yang [ada] di atas [loh-loh] kesaksian, supaya ia jangan mati.",
+          "B": "Di sana, di hadapan {{divine_name:TUHAN|Yahweh}}, ia harus menaruh ukupan itu di atas api, dan awan ukupan itu akan menutupi tutup pendamaian di atas loh-loh kesaksian. Dengan demikian ia tidak akan mati.",
+          "R": "Di sana, di hadapan {{divine_name:TUHAN|Yahweh}}, dia harus menaruh ukupan itu di atas api. Asap ukupan itu akan menyelubungi tutup tabut perjanjian. Dengan begitu dia tidak akan mati."
+        },
+        "zh": {
+          "L": "他要在{{divine_name:上主|雅威}}面前把香放在火上，使香的烟云遮盖见证版上的赎罪盖，免得他死。",
+          "B": "他要在{{divine_name:上主|雅威}}面前把香放在火上，香的烟云就会遮盖见证版上方的赎罪盖。这样他就不会死。",
+          "R": "他必须在那里，在{{divine_name:上主|雅威}}面前，把香放在火上。香的烟会遮住约柜的盖子。这样他就不会死。"
         }
       },
       "decisions": [
@@ -2857,6 +3523,68 @@
           "reason": "Literal and Balanced keep the Pentateuch terms note's word for the testimony, the tablets; Readable says what it was kept in, as the English Readable says \"the covenant box\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030160130151",
+            "o030160130152"
+          ],
+          "choice": "edut (the testimony): \"証し\" (L), \"証しの板\" (B), \"契約の板を納めた箱\" (R), as in Exodus",
+          "alternatives": [
+            "\"契約の箱\""
+          ],
+          "reason": "The testimony is the two stone tablets kept in the ark (meaning decision m2); Readable names the box that holds them, as the English Readable says \"the covenant box\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o030160130152"
+          ],
+          "choice": "\"[loh-loh] kesaksian\" (L), \"loh-loh kesaksian\" (B), \"tabut perjanjian\" (R) for \"the testimony\"",
+          "alternatives": [],
+          "reason": "The testimony is the pair of covenant tablets kept in the ark (m2), worded as in Numbers.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030160130152"
+          ],
+          "choice": "见证版 (L, B); 约柜 (R)",
+          "alternatives": [
+            "法版"
+          ],
+          "reason": "\"The testimony\" is the two stone tablets kept in the ark (meaning decision): the glossary's 见证版 at Literal and Balanced; Readable names the ark that holds them, as the English \"covenant box\" does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2907,7 +3635,7 @@
       "literal_gloss": "And he will take some of [the] blood of the bull and sprinkle with his finger on [the] face of the cover eastward, and before the cover he will sprinkle seven times some of the blood with his finger.",
       "renderings": {
         "en": {
-          "L": "And he shall take some of the blood of the bull and sprinkle [it] with his finger on the front of the cover, on the east side; and before the cover he shall sprinkle some of the blood with his finger seven times.",
+          "L": "And he shall take some of the blood of the bull and sprinkle [it] with his finger on the front of the mercy seat, on the east side; and before the mercy seat he shall sprinkle some of the blood with his finger seven times.",
           "B": "Some of the bull's blood he is to take and sprinkle with his finger on the east side of the mercy seat, on its front. In front of the mercy seat, too, he is to sprinkle some of the blood with his finger, seven times.",
           "R": "He must take some of the bull's blood. With his finger he must sprinkle it on the front of the cover of the ark, on the east side. Then he must sprinkle some of the blood with his finger seven times in front of the cover."
         },
@@ -2955,6 +3683,26 @@
           "L": "И возьмёт он крови быка и покропит пальцем своим на переднюю сторону места умилостивления, к востоку, и перед местом умилостивления покропит кровью пальцем своим семь раз.",
           "B": "Он возьмёт немного крови быка и пальцем покропит ею на восточную, переднюю сторону места умилостивления. И перед местом умилостивления он тоже покропит кровью пальцем семь раз.",
           "R": "Он должен взять немного крови быка. Пальцем он должен покропить ею переднюю сторону крышки ковчега, с восточной стороны. Потом он должен пальцем семь раз покропить кровью перед крышкой."
+        },
+        "ja": {
+          "L": "そして彼は雄牛の血を[いくらか]取り、指で贖いの座の面、東側に振りかける。また贖いの座の前に、指で血を七度振りかける。",
+          "B": "雄牛の血を少し取り、指で贖いの座の東側の正面に振りかける。また贖いの座の前にも、指で血を七度振りかける。",
+          "R": "アロンは雄牛の血を少し取らなければならない。そして指で、その血を贖いの座の正面の東側にふりかける。それから、贖いの座の前にも、指で血を七回ふりかける。"
+        },
+        "uk": {
+          "L": "І він візьме з крові бика і покропить своїм пальцем на передній бік місця очищення, на схід; а перед місцем очищення покропить з крові своїм пальцем сім разів.",
+          "B": "Він візьме трохи бикової крові й покропить пальцем на східний, передній бік віка. І перед віком він покропить кровʼю пальцем сім разів.",
+          "R": "Він мусить узяти трохи бикової крові. Пальцем він має покропити нею передній бік віка ковчега зі східного боку. Потім він мусить пальцем покропити кровʼю сім разів перед віком."
+        },
+        "id": {
+          "L": "Dan haruslah ia mengambil sebagian dari darah lembu jantan itu dan memercikkan[nya] dengan jarinya ke bagian depan tutup pendamaian, di sebelah timur; dan di depan tutup pendamaian itu haruslah ia memercikkan sebagian dari darah itu dengan jarinya tujuh kali.",
+          "B": "Ia harus mengambil sebagian darah lembu itu dan memercikkannya dengan jarinya ke sebelah timur tutup pendamaian, pada bagian depannya. Di depan tutup pendamaian itu juga ia harus memercikkan sebagian darah itu dengan jarinya tujuh kali.",
+          "R": "Dia harus mengambil sebagian darah lembu itu. Dengan jarinya dia harus memercikkannya ke bagian depan tutup tabut, di sebelah timur. Lalu dia harus memercikkan sebagian darah itu dengan jarinya tujuh kali di depan tutup itu."
+        },
+        "zh": {
+          "L": "他要取些公牛的血，用指头弹在赎罪盖的前面，就是东边；又要在赎罪盖前用指头弹血七次。",
+          "B": "他要取一些公牛的血，用指头弹在赎罪盖东面，就是它的前面。他也要用指头在赎罪盖前弹血七次。",
+          "R": "他必须取一些公牛的血，用指头弹在约柜的盖子前面，就是东边。然后他必须用指头在盖子前面把血弹七次。"
         }
       },
       "decisions": [
@@ -3096,7 +3844,7 @@
       "literal_gloss": "And he will slaughter [the] male goat of the sin offering which [is] for the people, and bring its blood to from inside to the veil, and do with its blood just as he did with the blood of the bull, and sprinkle it on the cover and before the cover.",
       "renderings": {
         "en": {
-          "L": "And he shall slaughter the male goat of the sin offering which [is] for the people, and bring its blood inside the veil, and do with its blood just as he did with the blood of the bull, and sprinkle it on the cover and before the cover.",
+          "L": "And he shall slaughter the male goat of the sin offering which [is] for the people, and bring its blood inside the veil, and do with its blood just as he did with the blood of the bull, and sprinkle it on the mercy seat and before the mercy seat.",
           "B": "Then he is to slaughter the goat that is the sin offering for the people and bring its blood inside the curtain. He is to do with this blood what he did with the bull's blood, sprinkling it on the mercy seat and before it.",
           "R": "Next he must kill the goat that is the sin offering for the people. He must bring its blood into the room behind the curtain. He must do with it just what he did with the bull's blood. He must sprinkle it on the cover of the ark and in front of it."
         },
@@ -3144,6 +3892,26 @@
           "L": "И заколет он козла жертвы за грех, который за народ, и внесёт кровь его внутрь за завесу, и сделает с кровью его так же, как сделал с кровью быка, и покропит ею на место умилостивления и перед местом умилостивления.",
           "B": "Затем он заколет козла жертвы за грех за народ и внесёт его кровь за завесу. С этой кровью он сделает то же, что сделал с кровью быка: покропит ею на место умилостивления и перед ним.",
           "R": "Потом он должен заколоть козла в жертву за грех за народ. Он должен внести его кровь в комнату за занавесом. С ней он должен сделать то же, что с кровью быка. Он должен покропить ею крышку ковчега и перед ней."
+        },
+        "ja": {
+          "L": "そして彼は民のための罪のためのささげ物の雄やぎを屠り、その血を垂れ幕の内側に携えて入り、雄牛の血にしたのと同じように、その血にもして、それを贖いの座の上と贖いの座の前に振りかける。",
+          "B": "次に、民のための罪のためのささげ物である雄やぎを屠り、その血を垂れ幕の内側に携えて入る。そして雄牛の血でしたのと同じように、この血でも行い、贖いの座の上とその前に振りかける。",
+          "R": "次に、民のための、罪を取り除くためのささげ物である雄やぎを殺さなければならない。その血を垂れ幕の奥の部屋に持って入り、雄牛の血でしたのと同じようにする。その血を贖いの座の上と、その前にふりかけるのである。"
+        },
+        "uk": {
+          "L": "І він заколе козла жертви за гріх, що за народ, і внесе його кров за завісу, і зробить з його кровʼю так, як зробив з кровʼю бика, і покропить нею на місце очищення і перед місцем очищення.",
+          "B": "Потім він заколе козла, жертву за гріх за народ, і внесе його кров за завісу. З цією кровʼю він зробить те саме, що з биковою, покропивши нею віко і перед ним.",
+          "R": "Далі він мусить забити козла, жертву за гріх за народ. Він мусить внести його кров у кімнату за завісою. Він має зробити з нею те саме, що з биковою кровʼю. Він мусить покропити нею віко ковчега і перед ним."
+        },
+        "id": {
+          "L": "Dan haruslah ia menyembelih kambing jantan korban penghapus dosa yang [adalah] untuk bangsa itu, dan membawa darahnya masuk ke balik tirai, dan melakukan dengan darahnya sama seperti yang ia lakukan dengan darah lembu jantan itu, dan memercikkannya ke atas tutup pendamaian dan ke depan tutup pendamaian.",
+          "B": "Sesudah itu ia harus menyembelih kambing yang menjadi korban penghapus dosa bagi bangsa itu dan membawa darahnya masuk ke balik tirai. Ia harus melakukan dengan darah ini apa yang ia lakukan dengan darah lembu itu, yaitu memercikkannya ke atas tutup pendamaian dan ke depannya.",
+          "R": "Sesudah itu dia harus menyembelih kambing yang menjadi korban penghapus dosa bagi bangsa itu. Dia harus membawa darahnya masuk ke ruangan di balik tirai. Dia harus melakukan dengan darah itu sama seperti yang dia lakukan dengan darah lembu. Dia harus memercikkannya ke atas tutup tabut dan ke depannya."
+        },
+        "zh": {
+          "L": "他要宰那为百姓作赎罪祭的公山羊，把它的血带进帘幕里面，用它的血照他用公牛的血所行的去行，弹在赎罪盖上和赎罪盖前。",
+          "B": "然后他要宰那为百姓作赎罪祭的公山羊，把血带进帘幕里面。他要照处理公牛血的方式处理这血，把它弹在赎罪盖上和赎罪盖前。",
+          "R": "接着他必须宰杀那为百姓作赎罪祭的公山羊。他必须把它的血带进帘幕后面的房间。他必须像处理公牛的血一样处理这血，把血弹在约柜的盖子上和盖子前面。"
         }
       },
       "decisions": [
@@ -3259,6 +4027,26 @@
           "L": "И совершит он умилостивление за святилище от нечистот {{gender:детей Израиля|сынов Израиля}} и от преступлений их, во всех грехах их; и так сделает он для шатра встречи, пребывающего с ними посреди нечистот их.",
           "B": "Так он совершит умилостивление за Святое святых, очистив его от нечистот израильтян, от их преступлений и всех их грехов. То же он сделает и для шатра встречи, который пребывает с ними посреди их нечистот.",
           "R": "Так он совершит умилостивление за Святое святых. Его нужно очистить от нечистого, что сделали израильтяне, от всех их грехов и от их бунта против Бога. То же он должен сделать и для всего шатра встречи. Он стоит среди народа, хотя люди нечисты."
+        },
+        "ja": {
+          "L": "こうして彼は、イスラエルの子らの汚れと、その背きと、そのすべての罪のゆえに、聖所のために贖いをする。また、彼らの汚れのただ中で彼らと共にとどまる会見の天幕のためにも、同じようにする。",
+          "B": "こうして彼は至聖所のために贖いをし、イスラエルの人々の汚れと、背きと、すべての罪からそれを清める。彼らの汚れのただ中で彼らと共にある会見の天幕のためにも、同じようにする。",
+          "R": "こうしてアロンは、いちばん聖なる所のために罪の償いをする。イスラエルの人々がしてきた汚れたことや、神に背いたことや、すべての罪から、その場所を清めなければならない。神と会うテントのほかの部分のためにも、同じようにする。人々は汚れているが、そのテントは人々のただ中にあるからである。"
+        },
+        "uk": {
+          "L": "І він звершить очищення за святилище від нечистот {{gender:нащадків Ізраїля|синів Ізраїля}} і від їхніх переступів, усіх їхніх гріхів; і так він зробить для намету зустрічі, що перебуває з ними посеред їхніх нечистот.",
+          "B": "Так він звершить очищення за Святеє Святих, очистивши його від нечистот ізраїльтян, від їхніх переступів і всіх їхніх гріхів. Те саме він має зробити для намету зустрічі, що перебуває з ними посеред їхніх нечистот.",
+          "R": "Так він звершить очищення за найсвятіше місце. Його треба очистити від нечистого, що зробили ізраїльтяни, від усіх їхніх гріхів і бунту проти Бога. Те саме він мусить зробити для решти намету зустрічі. Він стоїть серед людей, хоч вони нечисті."
+        },
+        "id": {
+          "L": "Dan haruslah ia mengadakan pendamaian bagi tempat kudus itu, karena kenajisan-kenajisan bani Israel dan karena pelanggaran-pelanggaran mereka, segala dosa mereka; dan demikianlah haruslah ia lakukan bagi Kemah Pertemuan, yang tinggal bersama mereka di tengah-tengah kenajisan-kenajisan mereka.",
+          "B": "Demikianlah ia mengadakan pendamaian bagi Ruang Mahakudus, menyucikannya dari kenajisan orang Israel, dari pelanggaran-pelanggaran mereka dan segala dosa mereka. Hal yang sama harus ia lakukan bagi Kemah Pertemuan, yang tetap tinggal bersama mereka di tengah-tengah kenajisan mereka.",
+          "R": "Dengan cara itu dia menghapus kenajisan Ruang Mahakudus. Ruangan itu harus dibersihkan dari hal-hal najis yang dilakukan orang Israel, dari semua dosa dan pemberontakan mereka terhadap Allah. Dia harus melakukan hal yang sama bagi bagian lain dari Kemah Pertemuan. Kemah itu berdiri di tengah-tengah umat, walaupun mereka tidak bersih."
+        },
+        "zh": {
+          "L": "他要因{{gender:以色列的子孙|以色列的儿子}}的种种不洁和他们的过犯，就是他们的一切罪，在圣所赎罪；他也要这样为会幕行，就是那在他们种种不洁之中与他们同在的会幕。",
+          "B": "这样，他就为至圣所赎罪，洁净它，除去以色列人的种种不洁、他们的过犯和他们的一切罪。他也要为会幕这样行，因为会幕就在他们中间，在他们的种种不洁之中。",
+          "R": "他就这样为至圣所行洁净礼。至圣所必须洁净，除去以色列人所做的不洁净的事，就是他们的一切罪和他们背叛{{god_term:神|上帝}}的事。他必须为会幕的其余部分也这样做。会幕在百姓中间，虽然他们是不洁净的。"
         }
       },
       "decisions": [
@@ -3464,6 +4252,144 @@
           "reason": "The term settled for the Pentateuch for \"transgression\", a breaking away from God; Readable says \"бунт против Бога\", as the English Readable says \"turning against God\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030160160041",
+            "o030160160042",
+            "o030160160071",
+            "o030160160072",
+            "o030160160073",
+            "o030160160074",
+            "o030160160091",
+            "o030160160092"
+          ],
+          "choice": "the three words for wrong: tum'ah \"汚れ\", pesha' \"背き\" (L, B) / \"神に背いたこと\" (R), chatta't \"罪\"; in verse 21 'avon \"咎\" (L, B), \"悪いこと\" (R)",
+          "alternatives": [
+            "\"反逆\" for pesha'"
+          ],
+          "reason": "The words are kept apart, as the meaning decision lists every kind of wrong; \"背き\" is the usual Japanese word for pesha' against God.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030160160042",
+            "o030160160073"
+          ],
+          "choice": "\"переступи\" (Literal, Balanced), \"бунт проти Бога\" (Readable) for transgressions",
+          "alternatives": [
+            "\"провини\""
+          ],
+          "reason": "The shared terms note gives \"переступ\" for this word; Readable says what it is, deliberate rebellion, as the English Readable says \"turning against God\". Book-wide choice.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030160160012",
+            "o030160160031",
+            "o030160160032",
+            "o030160160042",
+            "o030160160073",
+            "o030160160091"
+          ],
+          "choice": "\"kenajisan\", \"pelanggaran\", \"dosa\" for the three words; atonement \"bagi tempat kudus\"",
+          "alternatives": [],
+          "reason": "The sanctuary itself is cleansed of the people's defilement (m1), so Readable speaks of removing its uncleanness. \"pelanggaran\" is the glossary word for transgression; Readable says \"pemberontakan terhadap Allah\", as the English Readable says \"turning against God\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030160160042",
+            "o030160160073",
+            "o030160160091"
+          ],
+          "choice": "不洁; 过犯 (L, B), 背叛{{god_term:神|上帝}}的事 (R); 罪",
+          "alternatives": [
+            "污秽",
+            "叛逆"
+          ],
+          "reason": "The three words for the wrong and defilement of Israel (meaning decision) take the glossary's forms: 不洁 for uncleanness, 过犯 for transgression (peshaʿ), 罪 for sin; Readable explains the transgressions as turning against God, as the English does. Kept in verse 21.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o030160160073"
+          ],
+          "choice": "{{god_term:神|上帝}}",
+          "alternatives": [
+            "神 only"
+          ],
+          "reason": "The word God, supplied at Readable as in the English, is written with the god_term setting: 神 by default, 上帝 for readers who choose it (style guide section 4). Also in verses 21 and 29.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-3",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030160160012"
+          ],
+          "choice": "\"为……赎罪\" (L, B); \"为……行洁净礼\" (R)",
+          "alternatives": [
+            "\"除去……的罪\" (R)"
+          ],
+          "reason": "Here atonement is made for a thing (the altar, a house, the sanctuary and the tent), which the meaning decision says is cleansed, not forgiven. Readable says \"为……行洁净礼\", since a thing has no sin to remove; Literal and Balanced keep the glossary's \"为……赎罪\". The same in 8:15, 14:53 and 16:16-20, 33.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3562,6 +4488,26 @@
           "L": "И никого не будет в шатре встречи, когда он войдёт совершить умилостивление во святилище, пока не выйдет; и совершит он умилостивление за себя, и за дом свой, и за всё собрание Израиля.",
           "B": "Пока Аарон находится внутри, совершая умилостивление в Святом святых, никто не должен быть в шатре встречи, пока он не выйдет. Он совершает умилостивление за себя, за свой дом и за всё собрание Израиля.",
           "R": "Когда Аарон входит в Святое святых, чтобы совершить умилостивление, никто другой не должен быть в шатре встречи. Все должны оставаться снаружи, пока он не выйдет. Он совершит умилостивление за себя, за свою семью и за весь народ Израиля."
+        },
+        "ja": {
+          "L": "そして彼が聖所で贖いをするために入って行くときから、彼が出て来るまで、だれも会見の天幕の中にいてはならない。こうして彼は、自分と自分の家と、イスラエルの全集会のために贖いをする。",
+          "B": "アロンが至聖所で贖いをするために中に入っている間は、彼が出て来るまで、だれも会見の天幕の中にいてはならない。彼は自分と家族と、イスラエルの集会全体のために贖いをする。",
+          "R": "アロンが罪の償いをするために、いちばん聖なる所に入るときには、ほかのだれも、神と会うテントの中にいてはいけない。アロンが出て来るまで、外にいなければならない。アロンは、自分と家族と、イスラエルのすべての人々のために、罪の償いをする。"
+        },
+        "uk": {
+          "L": "І жодної людини не буде в наметі зустрічі, коли він входитиме звершити очищення у святилищі, аж поки він не вийде; і він звершить очищення за себе, і за свій дім, і за все зібрання Ізраїля.",
+          "B": "Поки Аарон усередині звершує очищення у Святеє Святих, нікого не має бути в наметі зустрічі, аж поки він не вийде. Він звершує очищення за себе, за свою родину і за все зібрання Ізраїля.",
+          "R": "Нікому іншому не можна бути в наметі зустрічі, коли Аарон входить до найсвятішого місця, щоб звершити очищення. Усі мусять бути надворі, поки він не вийде. Він звершить очищення за себе, за свою родину і за весь народ Ізраїлю."
+        },
+        "id": {
+          "L": "Dan tidak seorang pun boleh berada di dalam Kemah Pertemuan apabila ia masuk untuk mengadakan pendamaian di tempat kudus itu, sampai ia keluar; dan haruslah ia mengadakan pendamaian bagi dirinya dan bagi keluarganya dan bagi seluruh perhimpunan Israel.",
+          "B": "Selama Harun berada di dalam untuk mengadakan pendamaian di Ruang Mahakudus, tidak seorang pun boleh berada di dalam Kemah Pertemuan sampai ia keluar lagi. Ia mengadakan pendamaian bagi dirinya, bagi keluarganya dan bagi seluruh perhimpunan Israel.",
+          "R": "Tidak seorang pun boleh berada di dalam Kemah Pertemuan ketika Harun masuk ke Ruang Mahakudus untuk menghapus dosa. Mereka harus tetap di luar sampai dia keluar lagi. Dia akan menghapus dosanya sendiri, dosa keluarganya dan dosa seluruh bangsa Israel."
+        },
+        "zh": {
+          "L": "他进圣所赎罪的时候，会幕里不可有任何人，直到他出来；他要为自己和他的家人，并以色列的全体大会赎罪。",
+          "B": "亚伦进至圣所赎罪的时候，任何人都不可在会幕里，直到他出来。他要为自己、为他的家人，也为以色列全体会众赎罪。",
+          "R": "亚伦进入至圣所举行赎罪的仪式时，会幕里不可以有任何别的人。他们必须留在外面，直到他出来。他要除去他自己、他家人和全体以色列人的罪。"
         }
       },
       "decisions": [
@@ -3751,6 +4697,26 @@
           "L": "И выйдет он к жертвеннику, что перед {{divine_name:ГОСПОДОМ|Яхве}}, и совершит за него умилостивление, и возьмёт крови быка и крови козла, и возложит на рога жертвенника вокруг.",
           "B": "Затем он выйдет к жертвеннику, который перед {{divine_name:ГОСПОДОМ|Яхве}}, и совершит за него умилостивление. Он возьмёт немного крови быка и козла и помажет ею рога жертвенника со всех сторон.",
           "R": "Потом он должен выйти к жертвеннику перед {{divine_name:ГОСПОДОМ|Яхве}} и совершить за него умилостивление. Он должен взять немного крови быка и немного крови козла. Он должен помазать ею все выступы по углам жертвенника, похожие на рога."
+        },
+        "ja": {
+          "L": "そして彼は{{divine_name:主|ヤハウェ}}の前にある祭壇のところに出て行き、そのために贖いをする。彼は雄牛の血[の一部]と雄やぎの血[の一部]を取り、祭壇の周りの角につける。",
+          "B": "次に、彼は{{divine_name:主|ヤハウェ}}の前にある祭壇のところに出て行き、祭壇のために贖いをする。雄牛の血と雄やぎの血を少し取り、祭壇の四隅の角に塗る。",
+          "R": "それからアロンは、{{divine_name:主|ヤハウェ}}の前にある祭壇のところに出て行き、祭壇のために罪の償いをしなければならない。雄牛の血と、雄やぎの血を少し取り、祭壇の四隅の、角のように突き出た所に塗る。"
+        },
+        "uk": {
+          "L": "І він вийде до жертовника, що перед {{divine_name:ГОСПОДОМ|Ягве}}, і звершить очищення за нього, і візьме з крові бика і з крові козла, і покладе [її] на роги жертовника довкола.",
+          "B": "Потім він вийде до жертовника, що перед {{divine_name:ГОСПОДОМ|Ягве}}, і звершить очищення за нього. Узявши трохи крові бика й козла, він помаже нею роги жертовника з усіх боків.",
+          "R": "Потім він мусить вийти до жертовника перед {{divine_name:ГОСПОДОМ|Ягве}} і звершити очищення за нього. Він мусить узяти трохи бикової крові й трохи козлиної. Він має помазати нею всі кути жертовника, що стирчать угору, як роги."
+        },
+        "id": {
+          "L": "Dan haruslah ia keluar ke mezbah yang [ada] di hadapan {{divine_name:TUHAN|Yahweh}} dan mengadakan pendamaian baginya; dan haruslah ia mengambil sebagian dari darah lembu jantan itu dan sebagian dari darah kambing jantan itu dan menaruh[nya] pada tanduk-tanduk mezbah sekelilingnya.",
+          "B": "Kemudian ia harus keluar ke mezbah yang ada di hadapan {{divine_name:TUHAN|Yahweh}} dan mengadakan pendamaian baginya. Ia harus mengambil sebagian darah lembu dan darah kambing itu dan mengoleskannya pada tanduk-tanduk mezbah di setiap sisinya.",
+          "R": "Lalu dia harus keluar ke mezbah di hadapan {{divine_name:TUHAN|Yahweh}} dan menghapus kenajisannya. Dia harus mengambil sebagian darah lembu dan sebagian darah kambing. Dia harus mengoleskannya pada semua tanduk di sudut-sudut mezbah itu."
+        },
+        "zh": {
+          "L": "他要出来，到{{divine_name:上主|雅威}}面前的坛那里，为坛赎罪；他要取些公牛的血和公山羊的血，抹在坛四周的角上。",
+          "B": "然后他要出来，到{{divine_name:上主|雅威}}面前的祭坛那里，为祭坛赎罪。他要取一些公牛和公山羊的血，抹在祭坛四面的角上。",
+          "R": "然后他必须出来，到{{divine_name:上主|雅威}}面前的祭坛那里，为祭坛行洁净礼。他必须取一些公牛的血和公山羊的血，抹在祭坛四个角上像角一样突出来的地方。"
         }
       },
       "decisions": [
@@ -3893,6 +4859,26 @@
           "L": "И покропит на него кровью пальцем своим семь раз, и очистит его, и освятит его от нечистот {{gender:детей Израиля|сынов Израиля}}.",
           "B": "Он пальцем покропит кровью на жертвенник семь раз. Так он очистит его от нечистот израильтян и снова освятит.",
           "R": "Пальцем он должен семь раз покропить кровью на жертвенник. Это снова сделает его чистым и святым, свободным от нечистого, что сделали израильтяне."
+        },
+        "ja": {
+          "L": "そして彼は指でその血を七度その上に振りかけ、イスラエルの子らの汚れからそれを清め、聖別する。",
+          "B": "彼は指で血を祭壇の上に七度振りかける。こうしてイスラエルの人々の汚れから祭壇を清め、再び聖なるものとする。",
+          "R": "指で、その血を祭壇の上に七回ふりかけなければならない。そうすれば、祭壇はイスラエルの人々の汚れから清められ、再び聖なるものになる。"
+        },
+        "uk": {
+          "L": "І він покропить на нього з крові своїм пальцем сім разів, і очистить його, і освятить його від нечистот {{gender:нащадків Ізраїля|синів Ізраїля}}.",
+          "B": "Він покропить кровʼю жертовник пальцем сім разів. Так він очистить його від нечистот ізраїльтян і знову освятить.",
+          "R": "Пальцем він мусить покропити кровʼю жертовник сім разів. Від цього жертовник знову стане чистим і святим, вільним від нечистого, що зробили ізраїльтяни."
+        },
+        "id": {
+          "L": "Dan haruslah ia memercikkan sebagian dari darah itu ke atasnya dengan jarinya tujuh kali, dan menyucikannya dan menguduskannya dari kenajisan-kenajisan bani Israel.",
+          "B": "Ia harus memercikkan sebagian darah itu ke atas mezbah dengan jarinya tujuh kali. Demikianlah ia menyucikan mezbah itu dari kenajisan orang Israel dan menguduskannya kembali.",
+          "R": "Dengan jarinya dia harus memercikkan sebagian darah itu ke atas mezbah tujuh kali. Dengan begitu mezbah itu menjadi bersih dan kudus kembali, bebas dari hal-hal najis yang dilakukan orang Israel."
+        },
+        "zh": {
+          "L": "他要用指头把些血弹在坛上七次，洁净它，使它成圣，脱离{{gender:以色列的子孙|以色列的儿子}}的种种不洁。",
+          "B": "他要用指头把一些血弹在祭坛上七次。这样他就洁净祭坛，除去以色列人的种种不洁，使它重新成为圣洁。",
+          "R": "他必须用指头把一些血弹在祭坛上七次。这样，祭坛就重新变得洁净和圣洁，不再沾染以色列人所做的不洁净的事。"
         }
       },
       "decisions": [
@@ -4017,6 +5003,26 @@
           "L": "И когда закончит он совершать умилостивление за святилище, и шатёр встречи, и жертвенник, то приведёт козла живого.",
           "B": "Завершив умилостивление за Святое святых, шатёр встречи и жертвенник, он приведёт козла, который ещё жив.",
           "R": "Аарон закончит совершать умилостивление за Святое святых, весь шатёр встречи и жертвенник. Тогда он должен привести козла, который остался живым."
+        },
+        "ja": {
+          "L": "そして彼が聖所と会見の天幕と祭壇のための贖いを終えたとき、彼は生きている雄やぎをささげる。",
+          "B": "至聖所と会見の天幕と祭壇のための贖いを終えたなら、彼はまだ生きている雄やぎを引いて来る。",
+          "R": "アロンは、いちばん聖なる所と、神と会うテントのほかの部分と、祭壇のために、罪の償いを終える。それから、まだ生きている雄やぎを連れて来なければならない。"
+        },
+        "uk": {
+          "L": "І коли він закінчить звершувати очищення за святилище, і намет зустрічі, і жертовник, він піднесе живого козла.",
+          "B": "Коли він закінчить звершувати очищення за Святеє Святих, намет зустрічі й жертовник, він приведе козла, що ще живий.",
+          "R": "Аарон закінчить звершувати очищення за найсвятіше місце, решту намету зустрічі і жертовник. Тоді він мусить привести козла, який ще живий."
+        },
+        "id": {
+          "L": "Dan apabila ia telah selesai mengadakan pendamaian bagi tempat kudus dan Kemah Pertemuan dan mezbah, haruslah ia mempersembahkan kambing jantan yang hidup itu.",
+          "B": "Setelah selesai mengadakan pendamaian bagi Ruang Mahakudus, Kemah Pertemuan dan mezbah, ia harus membawa maju kambing yang masih hidup itu.",
+          "R": "Harun akan selesai menghapus kenajisan Ruang Mahakudus, bagian lain dari Kemah Pertemuan, dan mezbah. Sesudah itu dia harus membawa kambing yang masih hidup itu."
+        },
+        "zh": {
+          "L": "他为圣所、会幕和坛赎罪完了，就要奉上那只活的公山羊。",
+          "B": "他为至圣所、会幕和祭坛赎罪完毕以后，就要把那只还活着的公山羊牵来。",
+          "R": "亚伦为至圣所、会幕的其余部分和祭坛行完洁净礼以后，必须把那只还活着的公山羊牵来。"
         }
       },
       "decisions": [
@@ -4150,6 +5156,26 @@
           "L": "И возложит Аарон обе руки свои на голову живого козла, и исповедует над ним все беззакония {{gender:детей Израиля|сынов Израиля}} и все преступления их, во всех грехах их, и возложит их на голову козла, и отошлёт [его] рукой человека, [стоящего] наготове, в пустыню.",
           "B": "Аарон возложит обе руки на голову живого козла и исповедует над ним всю вину израильтян, все их преступления, все их грехи. Так он возложит их на голову козла и отошлёт его в пустыню с человеком, заранее приготовленным для этого.",
           "R": "Аарон должен положить обе руки на голову живого козла. Он должен исповедать над ним всю вину израильтян, все их грехи и их бунт против Бога. Так он переложит их грехи на голову козла. Потом человек, выбранный для этого, должен увести козла в пустыню."
+        },
+        "ja": {
+          "L": "そしてアロンは両手を生きている雄やぎの頭に押し当て、イスラエルの子らのすべての咎と、そのすべての背き、そのすべての罪をその上で告白し、それらを雄やぎの頭に載せ、備えている人の手によって荒れ野に送り出す。",
+          "B": "アロンは生きている雄やぎの頭に両手を置き、イスラエルの人々のすべての咎、すべての背き、すべての罪をその上で告白する。こうして、それらを雄やぎの頭に載せ、そのために備えておいた人に引かせて、荒れ野へ送り出す。",
+          "R": "アロンは、生きている雄やぎの頭に両手を置かなければならない。そして、イスラエルの人々がしたすべての悪いことと、すべての罪と、神に背いたことを、その雄やぎの上で言い表す。こうして、人々の罪を雄やぎの頭に載せるのである。それから、この役目のために選ばれた人が、その雄やぎを荒れ野へ連れて行く。"
+        },
+        "uk": {
+          "L": "І Аарон обіпре обидві свої руки на голову живого козла, і визнає над ним усі беззаконня {{gender:нащадків Ізраїля|синів Ізраїля}} і всі їхні переступи, усі їхні гріхи, і покладе їх на голову козла, і відішле [його] в пустелю рукою призначеного чоловіка.",
+          "B": "Аарон покладе обидві руки на голову живого козла і визнає над ним усі провини ізраїльтян, усі їхні переступи, усі їхні гріхи. Так він покладе їх на голову козла і відішле його в пустелю з чоловіком, приготованим для цього.",
+          "R": "Аарон мусить покласти обидві руки на голову живого козла. Він мусить визнати над ним усе зло, яке зробили ізраїльтяни, усі їхні гріхи і бунт проти Бога. Так він покладе їхні гріхи на голову козла. Потім чоловік, вибраний для цього, мусить відвести козла в пустелю."
+        },
+        "id": {
+          "L": "Dan Harun haruslah menumpangkan kedua tangannya ke atas kepala kambing jantan yang hidup itu, dan mengakui di atasnya segala kesalahan bani Israel dan segala pelanggaran mereka, segala dosa mereka, dan haruslah ia menaruhnya ke atas kepala kambing itu dan melepaskan[nya] ke padang gurun dengan perantaraan seseorang yang [sudah] siap.",
+          "B": "Harun harus meletakkan kedua tangannya di atas kepala kambing yang hidup itu dan mengakui di atasnya segala kesalahan orang Israel, segala pelanggaran mereka, segala dosa mereka. Demikianlah ia menaruh semuanya itu ke atas kepala kambing itu, lalu menyuruh seseorang yang sudah disiapkan untuk tugas itu membawanya pergi ke padang gurun.",
+          "R": "Harun harus meletakkan kedua tangannya di atas kepala kambing yang hidup itu. Dia harus mengakui di atasnya semua kejahatan yang dilakukan orang Israel, semua dosa dan pemberontakan mereka terhadap Allah. Dengan cara itu dia menaruh dosa-dosa mereka ke atas kepala kambing itu. Lalu seorang laki-laki yang sudah dipilih untuk tugas itu harus membawa kambing itu pergi ke padang gurun."
+        },
+        "zh": {
+          "L": "亚伦要把他的两只手按在那只活公山羊的头上，在它身上承认{{gender:以色列的子孙|以色列的儿子}}一切的罪孽和他们一切的过犯，就是他们的一切罪，把这些都放在公山羊的头上，借着一个预备好的人的手，把它打发到旷野去。",
+          "B": "亚伦要把双手按在那只活公山羊的头上，在它身上承认以色列人的一切罪过、一切过犯和一切罪。他要这样把这些罪都放在公山羊的头上，再交给一个事先预备好的人，把它送到旷野去。",
+          "R": "亚伦必须把双手按在那只活公山羊的头上。他必须在它身上承认以色列人所做的一切坏事，就是他们的一切罪和他们背叛{{god_term:神|上帝}}的事。这样，他就把他们的罪放在公山羊的头上。然后，一个被选来做这事的人必须把公山羊带到荒野去。"
         }
       },
       "decisions": [
@@ -4310,6 +5336,29 @@
           "reason": "The pair settled for the Pentateuch: Literal keeps the traditional word, Balanced and Readable say \"вина\", the wrong done and the guilt it brings.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030160210112",
+            "o030160210151",
+            "o030160210201"
+          ],
+          "choice": "罪孽 (L), 罪过 (B), 坏事 (R); 过犯; 罪",
+          "alternatives": [
+            "罪恶"
+          ],
+          "reason": "The glossary's 罪孽 for ʿawon at Literal and 罪过 at Balanced; Readable says 坏事 \"the evil they have done\", as the English \"evil\". The hands are laid on the goat with 按 as in Exodus 29:10.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4397,6 +5446,26 @@
           "L": "И понесёт козёл на себе все беззакония их в землю отрезанную; и отпустит он козла в пустыне.",
           "B": "Козёл унесёт на себе всю их вину в бесплодную землю, и человек отпустит козла в пустыне.",
           "R": "Козёл унесёт всю их вину туда, где никто не живёт. Человек должен отпустить козла на свободу в пустыне."
+        },
+        "ja": {
+          "L": "そして雄やぎは彼らのすべての咎を自分の上に負って、断ち切られた地へ[行く]。彼は雄やぎを荒れ野に放つ。",
+          "B": "雄やぎは彼らのすべての咎を身に負って、荒れ果てた地へ行く。その人は雄やぎを荒れ野に放つ。",
+          "R": "その雄やぎは、人々のすべての罪を背負って、だれも住んでいない所へ運んで行く。その人は、雄やぎを荒れ野に放してやらなければならない。"
+        },
+        "uk": {
+          "L": "І козел понесе на собі всі їхні беззаконня до відрізаної землі; і він відпустить козла в пустелі.",
+          "B": "Козел понесе на собі всі їхні провини в безлюдний край, а чоловік відпустить козла в пустелі.",
+          "R": "Козел понесе всі їхні гріхи туди, де ніхто не живе. Чоловік мусить відпустити козла на волю в пустелі."
+        },
+        "id": {
+          "L": "Dan kambing itu akan menanggung pada dirinya segala kesalahan mereka ke tanah yang terpencil; dan haruslah ia melepaskan kambing itu di padang gurun.",
+          "B": "Kambing itu akan menanggung segala kesalahan mereka ke tanah yang tandus, dan orang itu harus melepaskan kambing itu di padang gurun.",
+          "R": "Kambing itu akan membawa pergi semua dosa mereka ke tempat yang tidak didiami orang. Laki-laki itu harus melepaskan kambing itu di padang gurun."
+        },
+        "zh": {
+          "L": "这公山羊要担当他们一切的罪孽，带到一个隔绝的地方；他要在旷野里把公山羊放走。",
+          "B": "这公山羊要担着他们的一切罪过，到荒凉的地方去；那人要在旷野里把公山羊放走。",
+          "R": "这公山羊会把他们所有的罪带到没有人住的地方。那人必须在荒野里放走这公山羊。"
         }
       },
       "decisions": [
@@ -4542,6 +5611,26 @@
           "L": "И войдёт Аарон в шатёр встречи, и снимет льняные одежды, которые надевал, когда входил во святилище, и оставит их там.",
           "B": "После этого Аарон войдёт в шатёр встречи. Там он снимет льняные одежды, которые надел, чтобы войти в Святое святых, и оставит их в шатре.",
           "R": "Потом Аарон должен войти в шатёр встречи. Он должен снять льняную одежду, в которой входил в Святое святых. Он должен оставить её там."
+        },
+        "ja": {
+          "L": "そしてアロンは会見の天幕に入り、聖所に入ったときに着た亜麻布の衣服を脱ぎ、それをそこに置いておく。",
+          "B": "その後、アロンは会見の天幕に入る。そこで、至聖所に入るときに着た亜麻布の衣服を脱ぎ、天幕の中に置いておく。",
+          "R": "それからアロンは、神と会うテントに入らなければならない。いちばん聖なる所に入るときに着た亜麻布の服を脱いで、そこに置いておく。"
+        },
+        "uk": {
+          "L": "І Аарон увійде до намету зустрічі, і скине лляні шати, які одягнув, коли входив до святилища, і залишить їх там.",
+          "B": "Після цього Аарон увійде до намету зустрічі. Там він зніме лляні шати, які одягнув, щоб увійти до Святеє Святих, і залишить їх у наметі.",
+          "R": "Потім Аарон мусить увійти в намет зустрічі. Він мусить зняти лляну одежу, у якій входив до найсвятішого місця. Він мусить залишити її там."
+        },
+        "id": {
+          "L": "Dan Harun haruslah masuk ke dalam Kemah Pertemuan dan menanggalkan pakaian lenan yang ia kenakan ketika ia masuk ke dalam tempat kudus, dan haruslah ia meninggalkannya di sana.",
+          "B": "Sesudah itu Harun harus masuk ke dalam Kemah Pertemuan. Di sana ia harus menanggalkan pakaian lenan yang ia kenakan untuk masuk ke Ruang Mahakudus, dan meninggalkannya di dalam kemah itu.",
+          "R": "Lalu Harun harus masuk ke dalam Kemah Pertemuan. Dia harus menanggalkan pakaian lenan yang dia pakai untuk masuk ke Ruang Mahakudus. Dia harus meninggalkannya di sana."
+        },
+        "zh": {
+          "L": "亚伦要进会幕，脱下他进圣所时所穿的麻布衣服，把它们留在那里。",
+          "B": "然后亚伦要进会幕，脱下他进至圣所时穿的麻布衣服，把衣服留在会幕里。",
+          "R": "然后亚伦必须进会幕。他必须脱下他进至圣所时穿的麻布衣服，把它们留在那里。"
         }
       },
       "decisions": [
@@ -4663,6 +5752,26 @@
           "L": "И омоет он плоть свою водой на святом месте, и наденет одежды свои, и выйдет, и принесёт всесожжение своё и всесожжение народа, и совершит умилостивление за себя и за народ.",
           "B": "Пусть он омоет тело водой на святом месте и наденет свои обычные одежды. Затем он выйдет и принесёт всесожжение за себя и всесожжение за народ, совершая умилостивление за себя и за народ.",
           "R": "Он должен вымыться на святом месте и надеть свою обычную одежду священника. Потом он должен выйти и принести два всесожжения: одно за себя и одно за народ. Так он совершит умилостивление за себя и за народ."
+        },
+        "ja": {
+          "L": "そして彼は聖なる場所で自分の肉を水で洗い、自分の衣服を着て出て来て、自分の焼き尽くすささげ物と民の焼き尽くすささげ物をささげ、自分と民のために贖いをする。",
+          "B": "彼は聖なる場所で水で体を洗い、いつもの衣服を着る。それから出て来て、自分のための焼き尽くすささげ物と民のための焼き尽くすささげ物をささげ、自分と民のために贖いをする。",
+          "R": "アロンは聖なる場所で水浴びをして、いつもの祭司の服を着なければならない。それから出て来て、焼いてささげるいけにえを二つ、一つは自分のために、もう一つは民のためにささげる。こうしてアロンは、自分と民のために罪の償いをする。"
+        },
+        "uk": {
+          "L": "І він обмиє своє тіло водою на святому місці, і одягне свої шати, і вийде, і принесе своє всепалення і всепалення народу, і звершить очищення за себе і за народ.",
+          "B": "Він обмиє тіло водою на святому місці й одягне свою звичайну одежу. Потім він вийде і принесе всепалення за себе і всепалення за народ, звершуючи очищення за себе і за народ.",
+          "R": "Він мусить помитися на святому місці й одягнути свою звичайну священницьку одежу. Потім він мусить вийти і принести два всепалення, одне за себе, а друге за народ. Так він звершить очищення за себе і за народ."
+        },
+        "id": {
+          "L": "Dan haruslah ia membasuh tubuhnya dengan air di tempat yang kudus dan mengenakan pakaiannya, lalu keluar dan mempersembahkan korban bakarannya dan korban bakaran bangsa itu, dan mengadakan pendamaian bagi dirinya dan bagi bangsa itu.",
+          "B": "Ia harus membasuh tubuhnya dengan air di tempat yang kudus dan mengenakan pakaiannya yang biasa. Lalu ia harus keluar dan mempersembahkan korban bakaran bagi dirinya dan korban bakaran bagi bangsa itu, untuk mengadakan pendamaian bagi dirinya dan bagi bangsa itu.",
+          "R": "Dia harus mandi di tempat yang kudus dan memakai pakaian imamnya yang biasa. Lalu dia harus keluar dan mempersembahkan dua korban bakaran, satu untuk dirinya sendiri dan satu untuk bangsa itu. Dengan cara itu dia menghapus dosanya sendiri dan dosa bangsa itu."
+        },
+        "zh": {
+          "L": "他要在圣洁的地方用水洗他的肉体，穿上他的衣服，出来献上他的燔祭和百姓的燔祭，为自己和百姓赎罪。",
+          "B": "他要在圣洁的地方用水洗身，穿上他平常的衣服，然后出来献上自己的燔祭和百姓的燔祭，为自己和百姓赎罪。",
+          "R": "他必须在圣洁的地方洗澡，穿上他平常作大祭司穿的衣服。然后他必须出来献上两份全烧的祭，一份为自己，一份为百姓。这样，他就除去自己和百姓的罪。"
         }
       },
       "decisions": [
@@ -4790,6 +5899,26 @@
           "L": "И жир жертвы за грех воскурит он на жертвеннике.",
           "B": "Жир жертвы за грех пусть он сожжёт на жертвеннике.",
           "R": "Жир от жертвы за грех он тоже должен сжечь на жертвеннике."
+        },
+        "ja": {
+          "L": "そして罪のためのささげ物の脂肪を、彼は祭壇で煙にする。",
+          "B": "罪のためのささげ物の脂肪は、祭壇の上で焼いて煙にする。",
+          "R": "罪を取り除くためのささげ物の脂肪も、祭壇の上で焼かなければならない。"
+        },
+        "uk": {
+          "L": "А лій жертви за гріх він оберне на дим на жертовнику.",
+          "B": "Лій жертви за гріх він спалить на жертовнику.",
+          "R": "Він мусить спалити на жертовнику й жир жертви за гріх."
+        },
+        "id": {
+          "L": "Dan lemak korban penghapus dosa itu haruslah ia bakar menjadi asap di atas mezbah.",
+          "B": "Lemak korban penghapus dosa harus ia bakar di atas mezbah.",
+          "R": "Dia juga harus membakar lemak korban penghapus dosa di atas mezbah."
+        },
+        "zh": {
+          "L": "他要把赎罪祭的脂肪在坛上烧成烟。",
+          "B": "他要把赎罪祭的脂肪放在祭坛上烧，使烟上升。",
+          "R": "他也必须把赎罪祭的脂肪放在祭坛上烧掉。"
         }
       },
       "decisions": [
@@ -4922,6 +6051,26 @@
           "L": "А отпускающий козла к Азазелу выстирает одежды свои и омоет плоть свою водой, и после этого войдёт в стан.",
           "B": "Человек, который отвёл козла к Азазелу, пусть выстирает свою одежду и омоется водой, прежде чем вернуться в стан.",
           "R": "Человек, который отпустил козла к Азазелу, должен выстирать свою одежду и вымыться. После этого он может вернуться в лагерь."
+        },
+        "ja": {
+          "L": "そしてアザゼルのために雄やぎを放した者は、自分の衣服を洗い、自分の肉を水で洗う。その後、彼は宿営に入ることができる。",
+          "B": "アザゼルのもとへ雄やぎを連れて行った者は、衣服を洗い、水で体を洗ってから、宿営に戻ることができる。",
+          "R": "アザゼルのために雄やぎを放した人は、服を洗い、水浴びをしなければならない。その後で、宿営に戻ってもよい。"
+        },
+        "uk": {
+          "L": "А той, хто відпускає козла до Азазела, випере свою одежу, і обмиє своє тіло водою, і після того може ввійти до табору.",
+          "B": "Чоловік, який відвів козла до Азазела, має випрати свою одежу й обмитися водою, перш ніж повернеться до табору.",
+          "R": "Чоловік, який відпустив козла до Азазела, мусить випрати свою одежу і помитися. Після цього він може повернутися до табору."
+        },
+        "id": {
+          "L": "Dan orang yang melepaskan kambing itu kepada Azazel haruslah mencuci pakaiannya dan membasuh tubuhnya dengan air, dan sesudah itu ia boleh masuk ke perkemahan.",
+          "B": "Orang yang membawa kambing itu pergi kepada Azazel harus mencuci pakaiannya dan mandi dengan air sebelum ia kembali ke perkemahan.",
+          "R": "Laki-laki yang melepaskan kambing itu kepada Azazel harus mencuci pakaiannya dan mandi. Sesudah itu dia boleh kembali ke perkemahan."
+        },
+        "zh": {
+          "L": "那放公山羊归阿撒泻勒的人要洗他的衣服，用水洗他的肉体，然后才可以进营。",
+          "B": "那把公山羊送去归阿撒泻勒的人，要洗衣服，用水洗澡，然后才可以回到营里。",
+          "R": "那把公山羊放走、归阿撒泻勒的人，必须洗自己的衣服，然后洗澡。之后他才可以回到营里。"
         }
       },
       "decisions": [
@@ -5069,6 +6218,26 @@
           "L": "А быка жертвы за грех и козла жертвы за грех, кровь которых была внесена для умилостивления во святилище, вынесут за стан, и сожгут в огне шкуры их, и мясо их, и нечистоты их.",
           "B": "А быка и козла жертв за грех, кровь которых была внесена в Святое святых для умилостивления, нужно вынести за стан, и там сжечь их шкуры, мясо и помёт.",
           "R": "Кровь быка и козла, принесённых в жертву за грех, внесли в Святое святых для умилостивления. Поэтому остальное от этих животных нужно вынести за пределы лагеря. Их шкуры, мясо и помёт нужно там сжечь."
+        },
+        "ja": {
+          "L": "そして聖所で贖いをするためにその血が携え入れられた、罪のためのささげ物の雄牛と罪のためのささげ物の雄やぎは、宿営の外に運び出され、その皮と肉と糞は火で焼かれる。",
+          "B": "罪のためのささげ物の雄牛と雄やぎは、その血が贖いのために至聖所に携え入れられたものであるから、宿営の外に運び出し、その皮と肉と糞を火で焼かなければならない。",
+          "R": "罪を取り除くためのささげ物の雄牛と雄やぎの血は、罪の償いをするために、いちばん聖なる所に持って入られた。だから、その動物の残りは、宿営の外に運び出さなければならない。その皮も肉もふんも、そこで焼いてしまう。"
+        },
+        "uk": {
+          "L": "А бика жертви за гріх і козла жертви за гріх, чию кров внесли, щоб звершити очищення у святилищі, винесуть за межі табору, і спалять у вогні їхні шкури, і їхнє мʼясо, і їхній гній.",
+          "B": "Бика і козла жертв за гріх, чию кров внесли до Святеє Святих для очищення, треба винести за табір, і там спалити їхні шкури, мʼясо і гній.",
+          "R": "Кров бика і козла для жертв за гріх внесли до найсвятішого місця, щоб звершити очищення. Тож решту цих тварин мусять винести за табір. Там мусять спалити їхні шкури, мʼясо і гній."
+        },
+        "id": {
+          "L": "Dan lembu jantan korban penghapus dosa dan kambing jantan korban penghapus dosa, yang darahnya dibawa masuk untuk mengadakan pendamaian di tempat kudus itu, haruslah dibawa orang ke luar perkemahan, dan kulitnya dan dagingnya dan kotorannya haruslah dibakar dengan api.",
+          "B": "Lembu dan kambing korban penghapus dosa, yang darahnya dibawa masuk ke Ruang Mahakudus untuk mengadakan pendamaian, harus dibawa orang ke luar perkemahan, dan di sana kulit, daging dan kotorannya harus dibakar.",
+          "R": "Darah lembu dan kambing untuk korban penghapus dosa sudah dibawa masuk ke Ruang Mahakudus untuk menghapus dosa. Karena itu sisa hewan-hewan itu harus dibawa ke luar perkemahan. Kulitnya, dagingnya dan kotorannya harus dibakar habis di sana."
+        },
+        "zh": {
+          "L": "作赎罪祭的公牛和作赎罪祭的公山羊，它们的血既被带进圣所赎罪，[人]就要把它们带到营外；他们要用火把它们的皮、肉和粪烧掉。",
+          "B": "至于作赎罪祭的公牛和公山羊，它们的血既然被带进至圣所赎罪，就要有人把它们带到营外，把它们的皮、肉和粪都烧掉。",
+          "R": "那作赎罪祭的公牛和公山羊，它们的血已经被带进至圣所，用来举行赎罪的仪式。所以，这两只牲畜其余的部分必须被带到营外。它们的皮、肉和粪必须在那里烧掉。"
         }
       },
       "decisions": [
@@ -5196,6 +6365,26 @@
           "L": "И сжигающий их выстирает одежды свои и омоет плоть свою водой, и после этого войдёт в стан.",
           "B": "Тот, кто их сжигает, пусть выстирает свою одежду и омоется водой, прежде чем вернуться в стан.",
           "R": "Человек, который их сжигает, должен выстирать свою одежду и вымыться. После этого он может вернуться в лагерь."
+        },
+        "ja": {
+          "L": "そしてそれらを焼く者は、自分の衣服を洗い、自分の肉を水で洗う。その後、彼は宿営に入ることができる。",
+          "B": "それらを焼いた者は、衣服を洗い、水で体を洗ってから、宿営に戻ることができる。",
+          "R": "それを焼いた人は、服を洗い、水浴びをしなければならない。その後で、宿営に戻ってもよい。"
+        },
+        "uk": {
+          "L": "А той, хто спалює їх, випере свою одежу, і обмиє своє тіло водою, і після того може ввійти до табору.",
+          "B": "Той, хто їх спалює, має випрати свою одежу й обмитися водою, перш ніж повернеться до табору.",
+          "R": "Чоловік, який їх спалює, мусить випрати свою одежу і помитися. Після цього він може повернутися до табору."
+        },
+        "id": {
+          "L": "Dan orang yang membakarnya haruslah mencuci pakaiannya dan membasuh tubuhnya dengan air, dan sesudah itu ia boleh masuk ke perkemahan.",
+          "B": "Orang yang membakarnya harus mencuci pakaiannya dan mandi dengan air sebelum ia kembali ke perkemahan.",
+          "R": "Laki-laki yang membakarnya harus mencuci pakaiannya dan mandi. Sesudah itu dia boleh kembali ke perkemahan."
+        },
+        "zh": {
+          "L": "烧它们的人要洗他的衣服，用水洗他的肉体，然后才可以进营。",
+          "B": "烧这些东西的人要洗衣服，用水洗澡，然后才可以回到营里。",
+          "R": "烧这些东西的人必须洗自己的衣服，然后洗澡。之后他才可以回到营里。"
         }
       },
       "decisions": [
@@ -5315,6 +6504,26 @@
           "L": "И будет это для вас вечным установлением: в седьмой месяц, в десятый [день] месяца смиряйте души ваши и никакой работы не делайте, ни туземец, ни пришелец, живущий среди вас.",
           "B": "Это будет для вас вечным установлением: в десятый день седьмого месяца смиряйте себя постом и не делайте никакой работы, ни коренной житель, ни пришелец, который живёт среди вас.",
           "R": "Это вечное установление. В десятый день седьмого месяца вы должны ничего не есть и смиряться перед Богом. Нельзя делать никакой работы. Это правило и для рождённых в Израиле, и для чужеземцев, которые живут среди вас."
+        },
+        "ja": {
+          "L": "そしてこれはあなたがたにとって永遠の定めとなる。第七の月の十日に、あなたがたは自らを苦しめ、どんな仕事もしてはならない。この地に生まれた者も、あなたがたの間に寄留している寄留者も[同じである]。",
+          "B": "これはあなたがたにとって永遠の定めである。第七の月の十日には、断食して身を低くし、どんな仕事もしてはならない。この地に生まれた者も、あなたがたの間に住む寄留者も同じである。",
+          "R": "これは、いつまでも守るべききまりである。第七の月の十日には、あなたたちは食事をせずに、神の前にへりくだりなさい。どんな仕事もしてはいけない。このきまりは、イスラエルに生まれた人にも、あなたたちの間に住んでいる外国から来た人にも当てはまる。"
+        },
+        "uk": {
+          "L": "І це буде для вас вічна постанова: у сьомому місяці, десятого [дня] місяця, упокорюйте свої душі і жодної роботи не робіть, ні корінний житель, ні приходько, що мешкає серед вас.",
+          "B": "Це має бути для вас вічна постанова. Десятого дня сьомого місяця впокорюйтеся постом і не виконуйте жодної роботи. Це стосується і корінного жителя, і приходька, що живе серед вас.",
+          "R": "Це правило на всі часи. Десятого дня сьомого місяця ви мусите не їсти й упокоритися перед Богом. Вам не можна виконувати жодної роботи. Це правило для тих, хто народився в Ізраїлі, і для чужинців, які живуть серед вас."
+        },
+        "id": {
+          "L": "Dan haruslah ini menjadi ketetapan untuk selama-lamanya bagi kalian: pada bulan ketujuh, pada [hari] kesepuluh bulan itu, haruslah kalian merendahkan diri dan janganlah kalian melakukan pekerjaan apa pun, baik orang asli maupun pendatang yang tinggal sebagai pendatang di antara kalian.",
+          "B": "Inilah ketetapan yang berlaku untuk selama-lamanya bagi kalian. Pada tanggal sepuluh bulan ketujuh kalian harus merendahkan diri dengan berpuasa dan tidak melakukan pekerjaan apa pun. Hal ini berlaku bagi orang Israel asli maupun bagi pendatang yang tinggal di antara kalian.",
+          "R": "Inilah peraturan untuk selama-lamanya. Pada tanggal sepuluh bulan ketujuh, kalian harus berpuasa dan merendahkan diri di hadapan Allah. Kalian tidak boleh melakukan pekerjaan apa pun. Peraturan ini berlaku bagi orang Israel asli dan bagi orang asing yang tinggal di antara kalian."
+        },
+        "zh": {
+          "L": "这要作你们永远的定例：在第七个月，这月的初十，你们要使自己受苦，什么工都不可做，无论是本地人，或是在你们中间寄居的人。",
+          "B": "这要作你们永久的定例：七月初十，你们要禁食，谦卑自己，什么工都不可做。无论是本地人，还是寄居在你们中间的人，都要这样。",
+          "R": "这是你们必须永远遵守的规定：每年七月十日，你们必须不吃东西，在{{god_term:神|上帝}}面前谦卑自己。你们不要做任何工作。这规定是给生来就是以色列人的，也是给住在你们中间的外来的人的。"
         }
       },
       "decisions": [
@@ -5765,6 +6974,169 @@
           "reason": "The pair settled for the Pentateuch for a foreigner living among Israel.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030160290091",
+            "o030160290111",
+            "o030160290112"
+          ],
+          "choice": "'innah nefesh (afflict yourselves): \"自らを苦しめる\" (L), \"断食して身を低くする\" (B), \"食事をせずに、神の前にへりくだる\" (R), here and in verse 31",
+          "alternatives": [
+            "\"魂を苦しめる\" at L",
+            "\"断食する\" alone"
+          ],
+          "reason": "Literal keeps the image; Balanced and Readable say what it means, humbling oneself before God above all by fasting (meaning decision m1), as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030160290161",
+            "o030160290162",
+            "o030160290171",
+            "o030160290172",
+            "o030160290173"
+          ],
+          "choice": "native and sojourner: \"この地に生まれた者\" / \"寄留者\" (L, B), \"イスラエルに生まれた人\" / \"外国から来た人\" (R), as in Exodus",
+          "alternatives": [
+            "\"よそ者\" at R"
+          ],
+          "reason": "Keeps the Exodus forms; \"外国から来た人\" states the meaning decision m2 without the harsher \"よそ者\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030160290091"
+          ],
+          "choice": "\"упокорюйте свої душі\" (Literal), \"впокорюйтеся постом\" (Balanced), \"не їсти й упокоритися перед Богом\" (Readable)",
+          "alternatives": [
+            "\"смиряйте свої душі\""
+          ],
+          "reason": "The phrase means self-denial, chiefly fasting; Balanced and Readable say so, as the English does. Book-wide choice, also for chapter 23.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-2",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030160290162",
+            "o030160290173"
+          ],
+          "choice": "\"корінний житель\" and \"приходько\" (Literal, Balanced); \"ті, хто народився в Ізраїлі\" and \"чужинці\" (Readable)",
+          "alternatives": [
+            "\"тубілець\"",
+            "\"захожий\""
+          ],
+          "reason": "The shared terms note gives \"приходько\" at Literal and Balanced and \"чужинець\" at Readable for the foreigner who lives in Israel. Book-wide choice.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030160290091",
+            "o030160290111",
+            "o030160290112",
+            "o030160290173",
+            "o030160290182"
+          ],
+          "choice": "\"merendahkan diri\" (L), \"merendahkan diri dengan berpuasa\" (B), \"berpuasa dan merendahkan diri\" (R); \"pendatang\" (L, B), \"orang asing yang tinggal di antara kalian\" (R)",
+          "alternatives": [],
+          "reason": "To afflict oneself is to humble oneself before God, above all by fasting (m1), which Balanced and Readable name. \"pendatang\" is the glossary word for the resident outsider (m2), as in Ruth.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030160290091",
+            "o030160290111",
+            "o030160290112"
+          ],
+          "choice": "使自己受苦 (L); 禁食，谦卑自己 (B); 不吃东西，在{{god_term:神|上帝}}面前谦卑自己 (R)",
+          "alternatives": [
+            "刻苦己心"
+          ],
+          "reason": "\"Afflict yourselves\" means to humble oneself before God, above all by fasting (meaning decision). Literal keeps the Hebrew verb, 使自己受苦; Balanced and Readable say what it is, as the English does. The CUV's 刻苦己心 is not used. This is the day Leviticus 23:27 names 赎罪日, the Day of Atonement. Also in verse 31.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030160290031",
+            "o030160290041",
+            "o030160290162",
+            "o030160290173"
+          ],
+          "choice": "永远的定例 (L, B), 必须永远遵守的规定 (R); 本地人, 在你们中间寄居的人 (L, B), 外来的人 (R)",
+          "alternatives": [
+            "永远的规定"
+          ],
+          "reason": "The glossary's forms for \"a lasting statute\" and for the sojourner (ger); Readable spells the rule out and names the native as 生来就是以色列人的, as Exodus 12:49 does. Kept in verses 31 and 34.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5852,6 +7224,26 @@
           "L": "Потому что в этот день совершит он за вас умилостивление, чтобы очистить вас; от всех грехов ваших перед {{divine_name:ГОСПОДОМ|Яхве}} будете вы чисты.",
           "B": "Ведь в этот день за вас будет совершено умилостивление, чтобы очистить вас, и перед {{divine_name:ГОСПОДОМ|Яхве}} вы будете чисты от всех своих грехов.",
           "R": "В этот день за вас будет совершено умилостивление, чтобы сделать вас чистыми. Тогда вы будете чисты перед {{divine_name:ГОСПОДОМ|Яхве}}, свободны от всех своих грехов."
+        },
+        "ja": {
+          "L": "この日に、彼があなたがたのために贖いをし、あなたがたを清めるからである。あなたがたは{{divine_name:主|ヤハウェ}}の前で、すべての罪から清くなる。",
+          "B": "この日に、あなたがたを清めるための贖いがなされ、あなたがたは{{divine_name:主|ヤハウェ}}の前で、すべての罪から清くなるからである。",
+          "R": "この日に、あなたたちのために罪の償いがなされ、あなたたちは清められる。そして{{divine_name:主|ヤハウェ}}の前で、すべての罪がなくなって、清くなるのである。"
+        },
+        "uk": {
+          "L": "Бо цього дня він звершить очищення за вас, щоб очистити вас; від усіх ваших гріхів перед {{divine_name:ГОСПОДОМ|Ягве}} ви будете чисті.",
+          "B": "Бо цього дня буде звершено очищення за вас, щоб очистити вас, і перед {{divine_name:ГОСПОДОМ|Ягве}} ви будете чисті від усіх своїх гріхів.",
+          "R": "Це день, коли буде звершено очищення за вас, щоб зробити вас чистими. Тоді ви будете чисті перед {{divine_name:ГОСПОДОМ|Ягве}}, вільні від усіх своїх гріхів."
+        },
+        "id": {
+          "L": "Sebab pada hari ini ia akan mengadakan pendamaian bagi kalian, untuk mentahirkan kalian; dari segala dosa kalian di hadapan {{divine_name:TUHAN|Yahweh}} kalian akan tahir.",
+          "B": "Sebab pada hari ini pendamaian akan diadakan bagi kalian untuk mentahirkan kalian, sehingga di hadapan {{divine_name:TUHAN|Yahweh}} kalian tahir dari segala dosa kalian.",
+          "R": "Inilah hari ketika dosa kalian akan dihapus, supaya kalian menjadi bersih. Kalian akan bersih di hadapan {{divine_name:TUHAN|Yahweh}}, bebas dari semua dosa kalian."
+        },
+        "zh": {
+          "L": "因为在这一天，他要为你们赎罪，使你们洁净；你们要在{{divine_name:上主|雅威}}面前脱离你们一切的罪，得以洁净。",
+          "B": "因为在这一天，要为你们赎罪，洁净你们，使你们在{{divine_name:上主|雅威}}面前得以洁净，脱离你们一切的罪。",
+          "R": "这一天要为你们除去罪，使你们洁净。这样，你们在{{divine_name:上主|雅威}}面前就是洁净的，脱离了你们所有的罪。"
         }
       },
       "decisions": [
@@ -6063,6 +7455,26 @@
           "L": "Суббота покоя это для вас, и смиряйте души ваши; [это] вечное установление.",
           "B": "Это для вас суббота полного покоя, день, когда вы смиряете себя постом. Это вечное установление.",
           "R": "Это для вас день полного покоя. Вы должны ничего не есть и смиряться. Это вечное установление."
+        },
+        "ja": {
+          "L": "それはあなたがたにとって全き休みの安息日である。あなたがたは自らを苦しめなければならない。[これは]永遠の定めである。",
+          "B": "これは、あなたがたにとって完全な休みの安息日であり、断食して身を低くする日である。これは永遠の定めである。",
+          "R": "この日は、あなたたちが完全に休む日である。食事をせずに、へりくだりなさい。これは、いつまでも守るべききまりである。"
+        },
+        "uk": {
+          "L": "Це субота повного спочинку для вас, і упокорюйте свої душі; [це] вічна постанова.",
+          "B": "Це для вас субота повного спочинку, день, щоб упокорюватися постом. Це вічна постанова.",
+          "R": "Це для вас день повного відпочинку. Ви мусите не їсти й упокоритися. Це правило на всі часи."
+        },
+        "id": {
+          "L": "Itulah sabat perhentian bagi kalian, dan haruslah kalian merendahkan diri; [itulah] ketetapan untuk selama-lamanya.",
+          "B": "Itulah hari Sabat, hari perhentian penuh bagi kalian, hari untuk merendahkan diri dengan berpuasa. Inilah ketetapan untuk selama-lamanya.",
+          "R": "Itulah hari perhentian penuh bagi kalian. Kalian harus berpuasa dan merendahkan diri. Inilah peraturan untuk selama-lamanya."
+        },
+        "zh": {
+          "L": "这是你们完全安息的安息日，你们要使自己受苦；这是永远的定例。",
+          "B": "这是你们完全休息的安息日，是禁食、谦卑自己的日子。这是永久的定例。",
+          "R": "这是你们完全休息的日子。你们必须不吃东西，谦卑自己。这是你们必须永远遵守的规定。"
         }
       },
       "decisions": [
@@ -6224,6 +7636,71 @@
           "reason": "The phrase of Exodus 31:15 for the fullest rest (m1), in the words Exodus uses: \"sábado de descanso solene\" at Literal and Balanced, \"dia de descanso completo\" at Readable, as the English Readable does, since this day is not the seventh day of the week.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030160310011",
+            "o030160310021"
+          ],
+          "choice": "\"субота повного спочинку\" (Literal, Balanced), \"день повного відпочинку\" (Readable)",
+          "alternatives": [
+            "\"субота субот\""
+          ],
+          "reason": "The doubled Hebrew phrase is a superlative of rest; \"повного спочинку\" carries it. Book-wide choice, also for chapter 23.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030160310011",
+            "o030160310021"
+          ],
+          "choice": "\"sabat perhentian\" (L), \"hari Sabat, hari perhentian penuh\" (B), \"hari perhentian penuh\" (R)",
+          "alternatives": [],
+          "reason": "A day of the fullest rest, like the weekly Sabbath (m1); \"hari Sabat\" is the glossary term, used at Balanced, and Readable gives only its meaning, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030160310011",
+            "o030160310021"
+          ],
+          "choice": "完全安息的安息日 (L); 完全休息的安息日 (B); 完全休息的日子 (R)",
+          "alternatives": [
+            "圣安息日",
+            "大安息日"
+          ],
+          "reason": "\"A sabbath of sabbath-rest\" is a day of the fullest rest, like the weekly Sabbath (meaning decision): Chinese doubles the idea with 完全 and keeps 安息日 at Literal and Balanced; Readable says a day of complete rest, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6319,6 +7796,26 @@
           "L": "И совершит умилостивление священник, которого помажут и которого посвятят быть священником вместо отца его, и наденет он льняные одежды, одежды священные.",
           "B": "Умилостивление будет совершать священник, который помазан и посвящён служить священником вместо своего отца. Пусть он надевает льняные одежды, священные одежды,",
           "R": "В будущем умилостивление будет совершать священник, который помазан и поставлен первосвященником вместо своего отца. Он должен надевать священную льняную одежду."
+        },
+        "ja": {
+          "L": "そして、油注がれ、その父に代わって祭司として仕えるためにその手を満たされた祭司が、贖いをする。彼は亜麻布の衣服、聖なる衣服を着る。",
+          "B": "贖いは、油を注がれ、父に代わって祭司として仕えるために任職された祭司が行う。彼は亜麻布の衣服、すなわち聖なる衣服を着て、",
+          "R": "後の時代には、油を注がれて、父の後を継いで大祭司に任命された祭司が、罪の償いをする。その祭司は、聖なる亜麻布の服を着なければならない。"
+        },
+        "uk": {
+          "L": "І звершить очищення священник, якого помажуть і якого посвятять служити священником замість його батька, і він одягне лляні шати, святі шати.",
+          "B": "Очищення звершуватиме священник, якого помазали й посвятили служити священником замість його батька. Він має вдягнути лляні шати, святі шати,",
+          "R": "У наступні роки очищення звершуватиме священник, якого помажуть і поставлять первосвящеником на місце його батька. Він мусить одягнути святу лляну одежу."
+        },
+        "id": {
+          "L": "Dan imam yang diurapi dan yang ditahbiskan untuk melayani sebagai imam menggantikan ayahnya haruslah mengadakan pendamaian, dan haruslah ia mengenakan pakaian lenan, pakaian kudus itu.",
+          "B": "Pendamaian itu harus diadakan oleh imam yang telah diurapi dan ditahbiskan untuk melayani sebagai imam menggantikan ayahnya. Ia harus mengenakan pakaian lenan, pakaian yang kudus itu,",
+          "R": "Pada tahun-tahun yang akan datang, penghapusan dosa itu akan dilakukan oleh imam yang diurapi dan diangkat menjadi imam besar menggantikan ayahnya. Dia harus memakai pakaian lenan yang kudus."
+        },
+        "zh": {
+          "L": "那被膏立、被授予圣职、接替他父亲作祭司的祭司要赎罪；他要穿上麻布衣服，就是圣衣。",
+          "B": "赎罪的事要由那受膏、被授予圣职、接替父亲作祭司的祭司来做。他要穿上麻布衣服，就是圣衣，",
+          "R": "以后，赎罪的事要由那受膏、接替他父亲作大祭司的祭司来做。他必须穿上圣洁的麻布衣服。"
         }
       },
       "decisions": [
@@ -6448,6 +7945,29 @@
           "reason": "The Hebrew idiom \"fill the hand\" means to ordain a priest; Literal says \"посвятят\", as the English Literal says \"ordained\", since \"наполнить руку\" means nothing in Russian.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o030160320071",
+            "o030160320081",
+            "o030160320092"
+          ],
+          "choice": "被授予圣职",
+          "alternatives": [
+            "承接圣职",
+            "手被充满"
+          ],
+          "reason": "The Hebrew \"fill his hand\" is the idiom for ordaining a priest (meaning decision); Chinese says it plainly, as the English \"ordained\" does; Readable folds it into 接替他父亲作大祭司.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6541,6 +8061,26 @@
           "L": "И совершит он умилостивление за святое святилище, и за шатёр встречи и за жертвенник совершит он умилостивление, и за священников и за весь народ собрания совершит он умилостивление.",
           "B": "и совершает умилостивление за святое святилище, за шатёр встречи и за жертвенник, а также за священников и за весь народ собрания.",
           "R": "Он совершит умилостивление за Святое святых, шатёр встречи и жертвенник. Он также совершит умилостивление за священников и за весь народ."
+        },
+        "ja": {
+          "L": "そして彼は聖なる聖所のために贖いをし、会見の天幕と祭壇のために贖いをし、祭司たちと集会のすべての民のために贖いをする。",
+          "B": "聖なる聖所のため、会見の天幕と祭壇のため、また祭司たちと集会のすべての民のために、贖いをする。",
+          "R": "その祭司は、いちばん聖なる所と、神と会うテントと、祭壇のために、罪の償いをする。また、祭司たちとすべての民のためにも、罪の償いをする。"
+        },
+        "uk": {
+          "L": "І він звершить очищення за святе святилище, і за намет зустрічі, і за жертовник звершить очищення, і за священників, і за весь народ зібрання звершить очищення.",
+          "B": "і звершити очищення за святе святилище, за намет зустрічі й жертовник, а також за священників і за весь народ зібрання.",
+          "R": "Він звершить очищення за найсвятіше місце, намет зустрічі і жертовник. Він звершить очищення також за священників і за весь народ."
+        },
+        "id": {
+          "L": "Dan haruslah ia mengadakan pendamaian bagi tempat kudus yang kudus itu, dan bagi Kemah Pertemuan dan bagi mezbah haruslah ia mengadakan pendamaian, dan bagi para imam dan bagi seluruh bangsa perhimpunan itu haruslah ia mengadakan pendamaian.",
+          "B": "dan mengadakan pendamaian bagi Ruang Mahakudus, bagi Kemah Pertemuan dan bagi mezbah, dan juga bagi para imam dan seluruh bangsa dalam perhimpunan itu.",
+          "R": "Dia akan menghapus kenajisan Ruang Mahakudus, Kemah Pertemuan dan mezbah. Dia juga akan menghapus dosa para imam dan seluruh bangsa."
+        },
+        "zh": {
+          "L": "他要为圣洁的圣所赎罪，他要为会幕和坛赎罪，他也要为众祭司和大会的全体百姓赎罪。",
+          "B": "为圣洁的圣所、为会幕和祭坛赎罪，也为众祭司和会众的全体百姓赎罪。",
+          "R": "他要为至圣所、会幕和祭坛行洁净礼。他也要除去众祭司和全体百姓的罪。"
         }
       },
       "decisions": [
@@ -6690,6 +8230,26 @@
           "L": "И будет это для вас вечным установлением: совершать умилостивление за {{gender:детей Израиля|сынов Израиля}} от всех грехов их один раз в году.» И сделал он так, как повелел {{divine_name:ГОСПОДЬ|Яхве}} Моисею.",
           "B": "Это будет для вас вечным установлением: один раз в году совершать умилостивление за израильтян за все их грехи.» И Аарон сделал так, как {{divine_name:ГОСПОДЬ|Яхве}} повелел Моисею.",
           "R": "Это вечное установление. Каждый год один раз нужно совершать умилостивление за израильтян за все их грехи.» И Аарон сделал всё, что {{divine_name:ГОСПОДЬ|Яхве}} повелел Моисею."
+        },
+        "ja": {
+          "L": "そしてこれはあなたがたにとって永遠の定めとなる。年に一度、イスラエルの子らのすべての罪のために、彼らの贖いをするためである。」そして彼は、{{divine_name:主|ヤハウェ}}がモーセに命じられたとおりに行った。",
+          "B": "これはあなたがたにとって永遠の定めであり、年に一度、イスラエルの人々のすべての罪のために贖いがなされるのである。」アロンは、{{divine_name:主|ヤハウェ}}がモーセに命じられたとおりに行った。",
+          "R": "これは、いつまでも守るべききまりである。毎年一度、イスラエルの人々のすべての罪のために、罪の償いがなされなければならない。」アロンは、{{divine_name:主|ヤハウェ}}がモーセに命じられたことを、すべてそのとおりに行いました。"
+        },
+        "uk": {
+          "L": "І це буде для вас вічна постанова: звершувати очищення за {{gender:нащадків Ізраїля|синів Ізраїля}} від усіх їхніх гріхів раз на рік.» І він зробив так, як {{divine_name:ГОСПОДЬ|Ягве}} наказав Мойсеєві.",
+          "B": "Це має бути для вас вічна постанова: раз на рік звершувати очищення за ізраїльтян за всі їхні гріхи.» І Аарон зробив так, як {{divine_name:ГОСПОДЬ|Ягве}} наказав Мойсеєві.",
+          "R": "Це правило на всі часи. Раз на рік мусять звершувати очищення за ізраїльтян за всі їхні гріхи.» І Аарон зробив усе, що {{divine_name:ГОСПОДЬ|Ягве}} наказав Мойсеєві."
+        },
+        "id": {
+          "L": "Dan haruslah ini menjadi ketetapan untuk selama-lamanya bagi kalian, untuk mengadakan pendamaian bagi bani Israel karena segala dosa mereka sekali setahun.\" Dan ia melakukan sama seperti yang diperintahkan {{divine_name:TUHAN|Yahweh}} kepada Musa.",
+          "B": "Inilah ketetapan untuk selama-lamanya bagi kalian, yaitu bahwa sekali setahun pendamaian diadakan bagi orang Israel karena segala dosa mereka.\" Lalu Harun melakukan seperti yang diperintahkan {{divine_name:TUHAN|Yahweh}} kepada Musa.",
+          "R": "Inilah peraturan untuk selama-lamanya. Sekali setahun dosa orang Israel harus dihapus, semua dosa mereka.\" Lalu Harun melakukan semua yang diperintahkan {{divine_name:TUHAN|Yahweh}} kepada Musa."
+        },
+        "zh": {
+          "L": "这要作你们永远的定例，每年一次因{{gender:以色列的子孙|以色列的儿子}}的一切罪为他们赎罪。”他就照着{{divine_name:上主|雅威}}所吩咐摩西的行了。",
+          "B": "这要作你们永久的定例：每年一次，为以色列人的一切罪赎罪。”亚伦就照着{{divine_name:上主|雅威}}吩咐摩西的去做了。",
+          "R": "这是你们必须永远遵守的规定。每年一次，必须为以色列人除去他们所有的罪。”亚伦就照着{{divine_name:上主|雅威}}吩咐摩西的一切去做了。"
         }
       },
       "decisions": [

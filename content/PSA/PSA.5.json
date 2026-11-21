@@ -61,6 +61,31 @@
           "L": "ለመዘምራን አለቃ፤ ለዋሽንቶች። የዳዊት መዝሙር።",
           "B": "ለመዘምራን አለቃ። በዋሽንት። የዳዊት መዝሙር።",
           "R": "ለመዘምራን አለቃ። በዋሽንት የሚዘመር። ዳዊት የዘመረው መዝሙር።"
+        },
+        "hi": {
+          "L": "संगीत-निर्देशक के लिए: बाँसुरियों के लिए। दाऊद का भजन।",
+          "B": "संगीत-निर्देशक के लिए। बाँसुरियों के लिए। दाऊद का भजन।",
+          "R": "गायक-मंडली के अगुवे के लिए। बाँसुरियों पर बजाने के लिए। दाऊद का गीत।"
+        },
+        "ru": {
+          "L": "Руководителю хора: для флейт. Псалом Давида.",
+          "B": "Руководителю хора. Для флейт. Псалом Давида.",
+          "R": "Для руководителя музыкантов. Исполнять на флейтах. Песнь Давида."
+        },
+        "ja": {
+          "L": "指揮する者のために。笛に合わせて。ダビデの賛歌。",
+          "B": "音楽を導く者のために。笛に合わせて。ダビデの賛歌。",
+          "R": "音楽を導く人のために。笛で演奏する。ダビデの歌。"
+        },
+        "uk": {
+          "L": "Для диригента: для сопілок. Псалом Давида.",
+          "B": "Для диригента хору. Для сопілок. Псалом Давида.",
+          "R": "Для того, хто керує співом. Грати на сопілках. Пісня Давида."
+        },
+        "id": {
+          "L": "Untuk pemimpin musik: untuk suling. [Sebuah] mazmur Daud.",
+          "B": "Untuk pemimpin musik. Untuk suling. Mazmur Daud.",
+          "R": "Untuk pemimpin musik. Dimainkan dengan suling. Lagu pujian karangan Daud."
         }
       },
       "decisions": [
@@ -220,6 +245,88 @@
           "reason": "The Ethiopic script has no capital letters, so the setting that capitalises pronouns for God has nothing to change in Amharic; pronouns for God are written plainly.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190050010032"
+          ],
+          "choice": "\"बाँसुरियों के लिए\"",
+          "alternatives": [
+            "a tune name, kept as a name"
+          ],
+          "reason": "The word may name an instrument or a tune (meaning m3); the English takes it as flutes, and the Hindi follows the English level, as the poetry note asks for these terms.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190050010032"
+          ],
+          "choice": "'el-hannechilot \"笛に合わせて\" (L, B), \"笛で演奏する\" (R)",
+          "alternatives": [
+            "ネヒロトに合わせて"
+          ],
+          "reason": "As the English reads it, an instrument; whether it is an instrument or a tune is uncertain (m3).",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190050010032"
+          ],
+          "choice": "\"сопілки\" for the flutes of the title",
+          "alternatives": [
+            "\"флейти\""
+          ],
+          "reason": "The heading names a wind instrument; \"сопілка\" is the plain Ukrainian word for a simple pipe, as uncertain as the Hebrew term itself.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190050010032"
+          ],
+          "choice": "\"suling\" for \"the flutes\"",
+          "alternatives": [],
+          "reason": "The glossary word; whether the Hebrew names an instrument or a tune is uncertain (m3).",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -248,44 +355,69 @@
       "literal_gloss": "My words give ear to, YHWH; consider my sighing.",
       "renderings": {
         "en": {
-          "L": "To my words give ear, {{divine_name:LORD|Yahweh}}; perceive my sighing.",
-          "B": "{{divine_name:LORD|Yahweh}}, hear what I say; take note of my sighs.",
-          "R": "{{divine_name:LORD|Yahweh}}, please listen to what I am saying. Pay attention to my quiet groans."
+          "L": "To my words give ear, {{divine_name:LORD|Yahweh}}; \\q perceive my sighing.",
+          "B": "{{divine_name:LORD|Yahweh}}, hear what I say; \\q take note of my sighs.",
+          "R": "{{divine_name:LORD|Yahweh}}, please listen to what I am saying. \\q Pay attention to my quiet groans."
         },
         "fr": {
-          "L": "À mes paroles prête l’oreille, {{divine_name:SEIGNEUR|Yahvé}} ; discerne mon soupir.",
-          "B": "{{divine_name:SEIGNEUR|Yahvé}}, écoute ce que je dis ; prête attention à mes soupirs.",
-          "R": "{{divine_name:SEIGNEUR|Yahvé}}, je {{deity_pronoun:t’|T’}}en prie, écoute ce que je dis. Fais attention à mes plaintes murmurées."
+          "L": "À mes paroles prête l’oreille, {{divine_name:SEIGNEUR|Yahvé}} ; \\q discerne mon soupir.",
+          "B": "{{divine_name:SEIGNEUR|Yahvé}}, écoute ce que je dis ; \\q prête attention à mes soupirs.",
+          "R": "{{divine_name:SEIGNEUR|Yahvé}}, je {{deity_pronoun:t’|T’}}en prie, écoute ce que je dis. \\q Fais attention à mes plaintes murmurées."
         },
         "sw": {
-          "L": "Uyategee sikio maneno yangu, Ee {{divine_name:BWANA|Yahwe}}; utambue kuugua kwangu.",
-          "B": "Ee {{divine_name:BWANA|Yahwe}}, sikia ninayosema; uyaangalie maugulio yangu.",
-          "R": "{{divine_name:BWANA|Yahwe}}, tafadhali sikiliza ninayosema. Uangalie jinsi ninavyougua kimya kimya."
+          "L": "Uyategee sikio maneno yangu, Ee {{divine_name:BWANA|Yahwe}}; \\q utambue kuugua kwangu.",
+          "B": "Ee {{divine_name:BWANA|Yahwe}}, sikia ninayosema; \\q uyaangalie maugulio yangu.",
+          "R": "{{divine_name:BWANA|Yahwe}}, tafadhali sikiliza ninayosema. \\q Uangalie jinsi ninavyougua kimya kimya."
         },
         "es": {
-          "L": "A mis palabras presta oído, {{divine_name:SEÑOR|Yahvé}}; percibe mi suspiro.",
-          "B": "{{divine_name:SEÑOR|Yahvé}}, oye lo que digo; toma en cuenta mis suspiros.",
-          "R": "{{divine_name:SEÑOR|Yahvé}}, por favor, escucha lo que digo. Presta atención a mis gemidos callados."
+          "L": "A mis palabras presta oído, {{divine_name:SEÑOR|Yahvé}}; \\q percibe mi suspiro.",
+          "B": "{{divine_name:SEÑOR|Yahvé}}, oye lo que digo; \\q toma en cuenta mis suspiros.",
+          "R": "{{divine_name:SEÑOR|Yahvé}}, por favor, escucha lo que digo. \\q Presta atención a mis gemidos callados."
         },
         "vi": {
-          "L": "Xin lắng tai nghe những lời của tôi, lạy {{divine_name:CHÚA|Gia-vê}}; xin thấu hiểu tiếng than thở của tôi.",
-          "B": "Lạy {{divine_name:CHÚA|Gia-vê}}, xin nghe những gì tôi nói; xin để ý đến tiếng thở than của tôi.",
-          "R": "Lạy {{divine_name:CHÚA|Gia-vê}}, xin hãy nghe những gì tôi đang nói. Xin để ý đến những tiếng rên rỉ khẽ của tôi."
+          "L": "Xin lắng tai nghe những lời của tôi, lạy {{divine_name:CHÚA|Gia-vê}}; \\q xin thấu hiểu tiếng than thở của tôi.",
+          "B": "Lạy {{divine_name:CHÚA|Gia-vê}}, xin nghe những gì tôi nói; \\q xin để ý đến tiếng thở than của tôi.",
+          "R": "Lạy {{divine_name:CHÚA|Gia-vê}}, xin hãy nghe những gì tôi đang nói. \\q Xin để ý đến những tiếng rên rỉ khẽ của tôi."
         },
         "ko": {
-          "L": "제 말에 귀를 기울여 주십시오, {{divine_name:주|야훼}}여. 제 탄식을 헤아려 주십시오.",
-          "B": "{{divine_name:주|야훼}}여, 제 말을 들어 주십시오. 제 탄식에 마음을 써 주십시오.",
-          "R": "{{divine_name:주|야훼}}여, 제가 드리는 말씀을 들어 주십시오. 제 작은 신음 소리에 귀 기울여 주십시오."
+          "L": "제 말에 귀를 기울여 주십시오, {{divine_name:주|야훼}}여. \\q 제 탄식을 헤아려 주십시오.",
+          "B": "{{divine_name:주|야훼}}여, 제 말을 들어 주십시오. \\q 제 탄식에 마음을 써 주십시오.",
+          "R": "{{divine_name:주|야훼}}여, 제가 드리는 말씀을 들어 주십시오. \\q 제 작은 신음 소리에 귀 기울여 주십시오."
         },
         "pt": {
-          "L": "Às minhas palavras dá ouvidos, {{divine_name:SENHOR|Javé}}; percebe o meu suspiro.",
-          "B": "{{divine_name:SENHOR|Javé}}, ouve o que eu digo; repara nos meus suspiros.",
-          "R": "{{divine_name:SENHOR|Javé}}, por favor, escuta o que estou dizendo. Presta atenção aos meus gemidos baixinhos."
+          "L": "Às minhas palavras dá ouvidos, {{divine_name:SENHOR|Javé}}; \\q percebe o meu suspiro.",
+          "B": "{{divine_name:SENHOR|Javé}}, ouve o que eu digo; \\q repara nos meus suspiros.",
+          "R": "{{divine_name:SENHOR|Javé}}, por favor, escuta o que estou dizendo. \\q Presta atenção aos meus gemidos baixinhos."
         },
         "am": {
-          "L": "ለቃሌ ጆሮ ስጥ፣ {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፤ መቃተቴን አስተውል።",
-          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ የምለውን ስማ፤ ቃተቴንም ልብ በል።",
-          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ እባክህ የምናገረውን አድምጥ። ቀስ ብዬ የማቃስተውንም ልብ በል።"
+          "L": "ለቃሌ ጆሮ ስጥ፣ {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፤ \\q መቃተቴን አስተውል።",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ የምለውን ስማ፤ \\q ቃተቴንም ልብ በል።",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ እባክህ የምናገረውን አድምጥ። \\q ቀስ ብዬ የማቃስተውንም ልብ በል።"
+        },
+        "hi": {
+          "L": "मेरे शब्दों पर कान लगा, हे {{divine_name:प्रभु|याहवे}}; \\q मेरी आहों को समझ।",
+          "B": "हे {{divine_name:प्रभु|याहवे}}, मेरी बात सुन; \\q मेरी आहों पर ध्यान दे।",
+          "R": "हे {{divine_name:प्रभु|याहवे}}, कृपया मेरी बात सुन। \\q मेरे धीमे कराहने पर ध्यान दे।"
+        },
+        "ru": {
+          "L": "К словам моим склони ухо, {{divine_name:ГОСПОДИ|Яхве}}; \\q вникни в мой вздох.",
+          "B": "{{divine_name:ГОСПОДИ|Яхве}}, услышь, что я говорю; \\q обрати внимание на мои вздохи.",
+          "R": "{{divine_name:ГОСПОДИ|Яхве}}, пожалуйста, выслушай, что я говорю. \\q Обрати внимание на мои тихие стоны."
+        },
+        "ja": {
+          "L": "わたしの言葉に耳を傾けてください、{{divine_name:主|ヤハウェ}}よ。 \\q わたしのうめきを悟ってください。",
+          "B": "{{divine_name:主|ヤハウェ}}よ、わたしの言うことを聞いてください。 \\q わたしのため息に心を留めてください。",
+          "R": "{{divine_name:主|ヤハウェ}}よ、どうか、わたしの言うことを聞いてください。 \\q わたしの小さなうめき声に、気づいてください。"
+        },
+        "uk": {
+          "L": "Моїх слів послухай, {{divine_name:ГОСПОДИ|Ягве}}; \\q зрозумій моє зітхання.",
+          "B": "{{divine_name:ГОСПОДИ|Ягве}}, почуй, що я кажу; \\q зверни увагу на мої зітхання.",
+          "R": "{{divine_name:ГОСПОДИ|Ягве}}, прошу, послухай, що я кажу. \\q Зверни увагу на мої тихі стогони."
+        },
+        "id": {
+          "L": "Berilah telinga kepada perkataanku, {{divine_name:TUHAN|Yahweh}}; \\q perhatikanlah keluh kesahku.",
+          "B": "{{divine_name:TUHAN|Yahweh}}, dengarkanlah perkataanku; \\q perhatikanlah keluhanku.",
+          "R": "{{divine_name:TUHAN|Yahweh}}, dengarkanlah apa yang aku katakan. \\q Perhatikanlah rintihanku."
         }
       },
       "decisions": [
@@ -373,44 +505,69 @@
       "literal_gloss": "Attend to the sound of my cry for help, my king and my God, for to you I pray.",
       "renderings": {
         "en": {
-          "L": "Pay attention to the sound of my cry for help, my King and my God, for to {{deity_pronoun:you|You}} I pray.",
-          "B": "Listen to me crying for help, my King and my God, because it is to {{deity_pronoun:you|You}} that I pray.",
-          "R": "Hear me as I call for help, my King and my God. I am praying to {{deity_pronoun:you|You}}."
+          "L": "Pay attention to the sound of my cry for help, my King and my God, \\q for to {{deity_pronoun:you|You}} I pray.",
+          "B": "Listen to me crying for help, my King and my God, \\q because it is to {{deity_pronoun:you|You}} that I pray.",
+          "R": "Hear me as I call for help, my King and my God. \\q I am praying to {{deity_pronoun:you|You}}."
         },
         "fr": {
-          "L": "Sois attentif au son de mon cri au secours, mon Roi et mon Dieu, car vers {{deity_pronoun:toi|Toi}} je prie.",
-          "B": "Écoute-moi crier au secours, mon Roi et mon Dieu, car c’est {{deity_pronoun:toi|Toi}} que je prie.",
-          "R": "Entends-moi quand j’appelle au secours, mon Roi et mon Dieu. C’est {{deity_pronoun:toi|Toi}} que je prie."
+          "L": "Sois attentif au son de mon cri au secours, mon Roi et mon Dieu, \\q car vers {{deity_pronoun:toi|Toi}} je prie.",
+          "B": "Écoute-moi crier au secours, mon Roi et mon Dieu, \\q car c’est {{deity_pronoun:toi|Toi}} que je prie.",
+          "R": "Entends-moi quand j’appelle au secours, mon Roi et mon Dieu. \\q C’est {{deity_pronoun:toi|Toi}} que je prie."
         },
         "sw": {
-          "L": "Isikilize sauti ya kilio changu cha kuomba msaada, Mfalme wangu na Mungu wangu, kwa maana {{deity_pronoun:kwako|Kwako}} ninaomba.",
-          "B": "Unisikilize ninapolia kuomba msaada, Mfalme wangu na Mungu wangu, kwa sababu ni {{deity_pronoun:wewe|Wewe}} ninayekuomba.",
-          "R": "Unisikie ninapoita kuomba msaada, Mfalme wangu na Mungu wangu. Ninakuomba {{deity_pronoun:wewe|Wewe}}."
+          "L": "Isikilize sauti ya kilio changu cha kuomba msaada, \\q Mfalme wangu na Mungu wangu, \\q kwa maana {{deity_pronoun:kwako|Kwako}} ninaomba.",
+          "B": "Unisikilize ninapolia kuomba msaada, Mfalme wangu na Mungu wangu, \\q kwa sababu ni {{deity_pronoun:wewe|Wewe}} ninayekuomba.",
+          "R": "Unisikie ninapoita kuomba msaada, Mfalme wangu na Mungu wangu. \\q Ninakuomba {{deity_pronoun:wewe|Wewe}}."
         },
         "es": {
-          "L": "Atiende a la voz de mi clamor, Rey mío y Dios mío, porque a {{deity_pronoun:ti|Ti}} oro.",
-          "B": "Escúchame cuando clamo pidiendo ayuda, Rey mío y Dios mío, porque es a {{deity_pronoun:ti|Ti}} a quien oro.",
-          "R": "Óyeme cuando pido ayuda, Rey mío y Dios mío. Estoy orando a {{deity_pronoun:ti|Ti}}."
+          "L": "Atiende a la voz de mi clamor, Rey mío y Dios mío, \\q porque a {{deity_pronoun:ti|Ti}} oro.",
+          "B": "Escúchame cuando clamo pidiendo ayuda, Rey mío y Dios mío, \\q porque es a {{deity_pronoun:ti|Ti}} a quien oro.",
+          "R": "Óyeme cuando pido ayuda, Rey mío y Dios mío. \\q Estoy orando a {{deity_pronoun:ti|Ti}}."
         },
         "vi": {
-          "L": "Xin chú ý đến tiếng kêu cứu của tôi, lạy Vua của tôi và Đức Chúa Trời của tôi, vì tôi cầu nguyện với {{deity_pronoun:ngài|Ngài}}.",
-          "B": "Xin lắng nghe tôi kêu cứu, lạy Vua của tôi và Đức Chúa Trời của tôi, vì chính {{deity_pronoun:ngài|Ngài}} là Đấng tôi cầu nguyện.",
-          "R": "Lạy Vua của tôi và Đức Chúa Trời của tôi, xin nghe tôi kêu cứu. Tôi đang cầu nguyện với {{deity_pronoun:ngài|Ngài}}."
+          "L": "Xin chú ý đến tiếng kêu cứu của tôi, \\q lạy Vua của tôi và Đức Chúa Trời của tôi, \\q vì tôi cầu nguyện với {{deity_pronoun:ngài|Ngài}}.",
+          "B": "Xin lắng nghe tôi kêu cứu, lạy Vua của tôi và Đức Chúa Trời của tôi, \\q vì chính {{deity_pronoun:ngài|Ngài}} là Đấng tôi cầu nguyện.",
+          "R": "Lạy Vua của tôi và Đức Chúa Trời của tôi, xin nghe tôi kêu cứu. \\q Tôi đang cầu nguyện với {{deity_pronoun:ngài|Ngài}}."
         },
         "ko": {
-          "L": "제가 도움을 청하여 부르짖는 소리에 귀 기울여 주십시오, 저의 왕, 저의 하나님. 제가 주님께 기도하기 때문입니다.",
-          "B": "저의 왕, 저의 하나님, 도와 달라고 부르짖는 제 소리를 들어 주십시오. 제가 기도하는 분은 바로 주님이십니다.",
-          "R": "저의 왕, 저의 하나님, 도와 달라고 외치는 저를 들어 주십시오. 저는 주님께 기도합니다."
+          "L": "제가 도움을 청하여 부르짖는 소리에 귀 기울여 주십시오, \\q 저의 왕, 저의 하나님. \\q 제가 주님께 기도하기 때문입니다.",
+          "B": "저의 왕, 저의 하나님, 도와 달라고 부르짖는 제 소리를 들어 주십시오. \\q 제가 기도하는 분은 바로 주님이십니다.",
+          "R": "저의 왕, 저의 하나님, 도와 달라고 외치는 저를 들어 주십시오. \\q 저는 주님께 기도합니다."
         },
         "pt": {
-          "L": "Atende à voz do meu clamor por socorro, meu Rei e meu Deus, porque a {{deity_pronoun:ti|Ti}} eu oro.",
-          "B": "Escuta o meu grito de socorro, meu Rei e meu Deus, porque é a {{deity_pronoun:ti|Ti}} que eu oro.",
-          "R": "Ouve quando eu peço ajuda, meu Rei e meu Deus. Estou orando a {{deity_pronoun:ti|Ti}}."
+          "L": "Atende à voz do meu clamor por socorro, meu Rei e meu Deus, \\q porque a {{deity_pronoun:ti|Ti}} eu oro.",
+          "B": "Escuta o meu grito de socorro, meu Rei e meu Deus, \\q porque é a {{deity_pronoun:ti|Ti}} que eu oro.",
+          "R": "Ouve quando eu peço ajuda, meu Rei e meu Deus. \\q Estou orando a {{deity_pronoun:ti|Ti}}."
         },
         "am": {
-          "L": "ንጉሤና አምላኬ ሆይ፣ የርዳታ ጩኸቴን ድምፅ አድምጥ፤ ወደ አንተ እጸልያለሁና።",
-          "B": "ንጉሤና አምላኬ ሆይ፣ ርዳታ ለማግኘት ስጮኽ ስማኝ፤ የምጸልየው ወደ አንተ ነውና።",
-          "R": "ንጉሤና አምላኬ ሆይ፣ ርዳታ ፍለጋ ስጣራ ስማኝ። ወደ አንተ እጸልያለሁ።"
+          "L": "ንጉሤና አምላኬ ሆይ፣ \\q የርዳታ ጩኸቴን ድምፅ አድምጥ፤ \\q ወደ አንተ እጸልያለሁና።",
+          "B": "ንጉሤና አምላኬ ሆይ፣ ርዳታ ለማግኘት ስጮኽ ስማኝ፤ \\q የምጸልየው ወደ አንተ ነውና።",
+          "R": "ንጉሤና አምላኬ ሆይ፣ ርዳታ ፍለጋ ስጣራ ስማኝ። \\q ወደ አንተ እጸልያለሁ።"
+        },
+        "hi": {
+          "L": "मेरी दुहाई की आवाज़ पर ध्यान दे, हे मेरे राजा और मेरे परमेश्वर, \\q क्योंकि मैं तुझी से प्रार्थना करता हूँ।",
+          "B": "हे मेरे राजा और मेरे परमेश्वर, मदद के लिए मेरी पुकार सुन, \\q क्योंकि मैं तुझी से प्रार्थना करता हूँ।",
+          "R": "हे मेरे राजा और मेरे परमेश्वर, जब मैं मदद के लिए पुकारूँ तो मेरी सुन। \\q मैं तुझसे प्रार्थना कर रहा हूँ।"
+        },
+        "ru": {
+          "L": "Прислушайся к звуку моего крика о помощи, Царь мой и Бог мой, \\q ведь именно {{deity_pronoun:тебе|Тебе}} я молюсь.",
+          "B": "Услышь, как я кричу о помощи, мой Царь и мой Бог, \\q потому что я молюсь {{deity_pronoun:тебе|Тебе}}.",
+          "R": "Услышь, как я зову на помощь, мой Царь и мой Бог. \\q Я молюсь {{deity_pronoun:тебе|Тебе}}."
+        },
+        "ja": {
+          "L": "わたしの助けを求める叫びの声に、心を向けてください、わたしの王、わたしの神よ。 \\q あなたに、わたしは祈るのだから。",
+          "B": "わたしの王、わたしの神よ、助けを求めて叫ぶわたしの声を聞いてください。 \\q わたしが祈るのは、あなたに向かってなのだから。",
+          "R": "わたしの王、わたしの神よ、助けを求めるわたしの声を聞いてください。 \\q わたしは、あなたに祈っている。"
+        },
+        "uk": {
+          "L": "Прислухайся до голосу мого благання про допомогу, \\q мій Царю і мій Боже, бо до {{deity_pronoun:тебе|Тебе}} я молюся.",
+          "B": "Послухай, як я кличу на допомогу, мій Царю і мій Боже, \\q бо саме до {{deity_pronoun:тебе|Тебе}} я молюся.",
+          "R": "Почуй мене, коли я кличу на допомогу, мій Царю і мій Боже. \\q Я молюся до {{deity_pronoun:тебе|Тебе}}."
+        },
+        "id": {
+          "L": "Perhatikanlah suara teriakku minta tolong, ya Rajaku dan Allahku, \\q sebab kepada-{{deity_pronoun:mu|Mu}} aku berdoa.",
+          "B": "Dengarkanlah aku berteriak minta tolong, ya Rajaku dan Allahku, \\q sebab kepada-{{deity_pronoun:mu|Mu}}lah aku berdoa.",
+          "R": "Dengarlah aku ketika aku berseru minta tolong, ya Rajaku dan Allahku. \\q Aku berdoa kepada-{{deity_pronoun:mu|Mu}}."
         }
       },
       "decisions": [
@@ -484,6 +641,47 @@
           "reason": "David, himself a king, calls God his King (see the meaning decision); the capital shows it is a title for God, as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190050030041"
+          ],
+          "choice": "Царь with a capital",
+          "alternatives": [
+            "царь"
+          ],
+          "reason": "\"Царь\" is a title of God here, the king's own King (m1), and is capitalised like \"Бог\", as the English capitalises \"King\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190050030041",
+            "o190050030052"
+          ],
+          "choice": "malki ve'lohai \"わたしの王、わたしの神よ\" at every level",
+          "alternatives": [],
+          "reason": "Japanese has no capitals; the order and the vocative よ show the address, and the meaning decision (the king's own King) is kept by 王 and 神 side by side.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -514,44 +712,69 @@
       "literal_gloss": "YHWH, [in the] morning you hear my voice; [in the] morning I arrange for you and watch.",
       "renderings": {
         "en": {
-          "L": "{{divine_name:LORD|Yahweh}}, [in the] morning {{deity_pronoun:you|You}} hear my voice; [in the] morning I set [it] out before {{deity_pronoun:you|You}} and keep watch.",
-          "B": "{{divine_name:LORD|Yahweh}}, at daybreak {{deity_pronoun:you|You}} hear my voice. At daybreak I set everything out before {{deity_pronoun:you|You}} and keep watch.",
-          "R": "{{divine_name:LORD|Yahweh}}, every morning {{deity_pronoun:you|You}} hear me. Every morning I bring my requests to {{deity_pronoun:you|You}} and wait for {{deity_pronoun:you|You}} to answer."
+          "L": "{{divine_name:LORD|Yahweh}}, [in the] morning {{deity_pronoun:you|You}} hear my voice; \\q [in the] morning I set [it] out before {{deity_pronoun:you|You}} and keep watch.",
+          "B": "{{divine_name:LORD|Yahweh}}, at daybreak {{deity_pronoun:you|You}} hear my voice. \\q At daybreak I set everything out before {{deity_pronoun:you|You}} and keep watch.",
+          "R": "{{divine_name:LORD|Yahweh}}, every morning {{deity_pronoun:you|You}} hear me. \\q Every morning I bring my requests to {{deity_pronoun:you|You}} and wait for {{deity_pronoun:you|You}} to answer."
         },
         "fr": {
-          "L": "{{divine_name:SEIGNEUR|Yahvé}}, [au] matin {{deity_pronoun:tu|Tu}} entends ma voix ; [au] matin je [la] dispose devant {{deity_pronoun:toi|Toi}} et je guette.",
-          "B": "{{divine_name:SEIGNEUR|Yahvé}}, dès l’aube {{deity_pronoun:tu|Tu}} entends ma voix. Dès l’aube je prépare tout devant {{deity_pronoun:toi|Toi}} et je reste aux aguets.",
-          "R": "{{divine_name:SEIGNEUR|Yahvé}}, chaque matin {{deity_pronoun:tu|Tu}} m’entends. Chaque matin je {{deity_pronoun:te|Te}} présente mes demandes et j’attends que {{deity_pronoun:tu|Tu}} répondes."
+          "L": "{{divine_name:SEIGNEUR|Yahvé}}, [au] matin {{deity_pronoun:tu|Tu}} entends ma voix ; \\q [au] matin je [la] dispose devant {{deity_pronoun:toi|Toi}} et je guette.",
+          "B": "{{divine_name:SEIGNEUR|Yahvé}}, dès l’aube {{deity_pronoun:tu|Tu}} entends ma voix. \\q Dès l’aube je prépare tout devant {{deity_pronoun:toi|Toi}} et je reste aux aguets.",
+          "R": "{{divine_name:SEIGNEUR|Yahvé}}, chaque matin {{deity_pronoun:tu|Tu}} m’entends. \\q Chaque matin je {{deity_pronoun:te|Te}} présente mes demandes et j’attends que {{deity_pronoun:tu|Tu}} répondes."
         },
         "sw": {
-          "L": "Ee {{divine_name:BWANA|Yahwe}}, asubuhi unasikia sauti yangu; asubuhi ninapanga [maombi yangu] mbele {{deity_pronoun:yako|Yako}} na kungoja kwa makini.",
-          "B": "Ee {{divine_name:BWANA|Yahwe}}, kunapopambazuka unasikia sauti yangu. Kunapopambazuka ninaweka kila kitu mbele {{deity_pronoun:yako|Yako}} na kukesha nikingoja.",
-          "R": "{{divine_name:BWANA|Yahwe}}, kila asubuhi unanisikia. Kila asubuhi ninakuletea maombi yangu na kungoja {{deity_pronoun:wewe|Wewe}} unijibu."
+          "L": "Ee {{divine_name:BWANA|Yahwe}}, asubuhi unasikia sauti yangu; \\q asubuhi ninapanga [maombi yangu] mbele {{deity_pronoun:yako|Yako}} na kungoja kwa makini.",
+          "B": "Ee {{divine_name:BWANA|Yahwe}}, kunapopambazuka unasikia sauti yangu. \\q Kunapopambazuka ninaweka kila kitu mbele {{deity_pronoun:yako|Yako}} na kukesha nikingoja.",
+          "R": "{{divine_name:BWANA|Yahwe}}, kila asubuhi unanisikia. \\q Kila asubuhi ninakuletea maombi yangu na kungoja {{deity_pronoun:wewe|Wewe}} unijibu."
         },
         "es": {
-          "L": "{{divine_name:SEÑOR|Yahvé}}, [de] mañana {{deity_pronoun:tú|Tú}} oyes mi voz; [de] mañana [la] presento delante de {{deity_pronoun:ti|Ti}} y quedo vigilante.",
-          "B": "{{divine_name:SEÑOR|Yahvé}}, al amanecer {{deity_pronoun:tú|Tú}} oyes mi voz. Al amanecer pongo todo delante de {{deity_pronoun:ti|Ti}} y quedo vigilante.",
-          "R": "{{divine_name:SEÑOR|Yahvé}}, cada mañana {{deity_pronoun:tú|Tú}} me oyes. Cada mañana {{deity_pronoun:te|Te}} presento mis peticiones y espero {{deity_pronoun:tu|Tu}} respuesta."
+          "L": "{{divine_name:SEÑOR|Yahvé}}, [de] mañana {{deity_pronoun:tú|Tú}} oyes mi voz; \\q [de] mañana [la] presento delante de {{deity_pronoun:ti|Ti}} y quedo vigilante.",
+          "B": "{{divine_name:SEÑOR|Yahvé}}, al amanecer {{deity_pronoun:tú|Tú}} oyes mi voz. \\q Al amanecer pongo todo delante de {{deity_pronoun:ti|Ti}} y quedo vigilante.",
+          "R": "{{divine_name:SEÑOR|Yahvé}}, cada mañana {{deity_pronoun:tú|Tú}} me oyes. \\q Cada mañana {{deity_pronoun:te|Te}} presento mis peticiones y espero {{deity_pronoun:tu|Tu}} respuesta."
         },
         "vi": {
-          "L": "Lạy {{divine_name:CHÚA|Gia-vê}}, [vào] buổi sáng {{deity_pronoun:ngài|Ngài}} nghe tiếng tôi; [vào] buổi sáng tôi bày [lời cầu nguyện] ra trước mặt {{deity_pronoun:ngài|Ngài}} và trông đợi.",
-          "B": "Lạy {{divine_name:CHÚA|Gia-vê}}, lúc rạng đông {{deity_pronoun:ngài|Ngài}} nghe tiếng tôi. Lúc rạng đông tôi bày mọi điều ra trước mặt {{deity_pronoun:ngài|Ngài}} và chờ trông.",
-          "R": "Lạy {{divine_name:CHÚA|Gia-vê}}, mỗi buổi sáng {{deity_pronoun:ngài|Ngài}} nghe tiếng tôi. Mỗi buổi sáng tôi dâng những lời cầu xin lên {{deity_pronoun:ngài|Ngài}} và chờ đợi {{deity_pronoun:ngài|Ngài}} trả lời."
+          "L": "Lạy {{divine_name:CHÚA|Gia-vê}}, [vào] buổi sáng {{deity_pronoun:ngài|Ngài}} nghe tiếng tôi; \\q [vào] buổi sáng tôi bày [lời cầu nguyện] ra trước mặt {{deity_pronoun:ngài|Ngài}} và trông đợi.",
+          "B": "Lạy {{divine_name:CHÚA|Gia-vê}}, lúc rạng đông {{deity_pronoun:ngài|Ngài}} nghe tiếng tôi. \\q Lúc rạng đông tôi bày mọi điều ra trước mặt {{deity_pronoun:ngài|Ngài}} và chờ trông.",
+          "R": "Lạy {{divine_name:CHÚA|Gia-vê}}, mỗi buổi sáng {{deity_pronoun:ngài|Ngài}} nghe tiếng tôi. \\q Mỗi buổi sáng tôi dâng những lời cầu xin lên {{deity_pronoun:ngài|Ngài}} và chờ đợi {{deity_pronoun:ngài|Ngài}} trả lời."
         },
         "ko": {
-          "L": "{{divine_name:주|야훼}}여, 아침에 주님께서 제 목소리를 들으십니다. 아침에 제가 주님 앞에 [그것을] 차려 놓고 지켜봅니다.",
-          "B": "{{divine_name:주|야훼}}여, 동틀 때 주님께서 제 목소리를 들으십니다. 동틀 때 제가 모든 것을 주님 앞에 차려 놓고 살피며 기다립니다.",
-          "R": "{{divine_name:주|야훼}}여, 아침마다 주님께서 제 말을 들으십니다. 아침마다 저는 주님께 제 소원을 아뢰고, 주님께서 응답해 주시기를 기다립니다."
+          "L": "{{divine_name:주|야훼}}여, 아침에 주님께서 제 목소리를 들으십니다. \\q 아침에 제가 주님 앞에 [그것을] 차려 놓고 지켜봅니다.",
+          "B": "{{divine_name:주|야훼}}여, 동틀 때 주님께서 제 목소리를 들으십니다. \\q 동틀 때 제가 모든 것을 주님 앞에 차려 놓고 살피며 기다립니다.",
+          "R": "{{divine_name:주|야훼}}여, 아침마다 주님께서 제 말을 들으십니다. \\q 아침마다 저는 주님께 제 소원을 아뢰고, 주님께서 응답해 주시기를 기다립니다."
         },
         "pt": {
-          "L": "{{divine_name:SENHOR|Javé}}, [de] manhã {{deity_pronoun:tu|Tu}} ouves a minha voz; [de] manhã eu ponho [tudo] em ordem diante de {{deity_pronoun:ti|Ti}} e fico vigiando.",
-          "B": "{{divine_name:SENHOR|Javé}}, ao romper do dia {{deity_pronoun:tu|Tu}} ouves a minha voz. Ao romper do dia eu ponho tudo diante de {{deity_pronoun:ti|Ti}} e fico de vigia.",
-          "R": "{{divine_name:SENHOR|Javé}}, toda manhã {{deity_pronoun:tu|Tu}} me ouves. Toda manhã eu trago a {{deity_pronoun:ti|Ti}} os meus pedidos e espero que {{deity_pronoun:tu|Tu}} respondas."
+          "L": "{{divine_name:SENHOR|Javé}}, [de] manhã {{deity_pronoun:tu|Tu}} ouves a minha voz; \\q [de] manhã eu ponho [tudo] em ordem diante de {{deity_pronoun:ti|Ti}} e fico vigiando.",
+          "B": "{{divine_name:SENHOR|Javé}}, ao romper do dia {{deity_pronoun:tu|Tu}} ouves a minha voz. \\q Ao romper do dia eu ponho tudo diante de {{deity_pronoun:ti|Ti}} e fico de vigia.",
+          "R": "{{divine_name:SENHOR|Javé}}, toda manhã {{deity_pronoun:tu|Tu}} me ouves. \\q Toda manhã eu trago a {{deity_pronoun:ti|Ti}} os meus pedidos e espero que {{deity_pronoun:tu|Tu}} respondas."
         },
         "am": {
-          "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ በማለዳ ድምፄን ትሰማለህ፤ በማለዳ [ጸሎቴን] በፊትህ አቀርባለሁ፤ እጠባበቃለሁም።",
-          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ጎሕ ሲቀድ ድምፄን ትሰማለህ። ጎሕ ሲቀድ ሁሉን በፊትህ አቀርባለሁ፤ እጠባበቃለሁም።",
-          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ በየማለዳው ትሰማኛለህ። በየማለዳው ልመናዬን ወደ አንተ አቀርባለሁ፤ እስክትመልስልኝም እጠብቃለሁ።"
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ በማለዳ ድምፄን ትሰማለህ፤ \\q በማለዳ [ጸሎቴን] በፊትህ አቀርባለሁ፤ እጠባበቃለሁም።",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ጎሕ ሲቀድ ድምፄን ትሰማለህ። \\q ጎሕ ሲቀድ ሁሉን በፊትህ አቀርባለሁ፤ እጠባበቃለሁም።",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ በየማለዳው ትሰማኛለህ። \\q በየማለዳው ልመናዬን ወደ አንተ አቀርባለሁ፤ እስክትመልስልኝም እጠብቃለሁ።"
+        },
+        "hi": {
+          "L": "हे {{divine_name:प्रभु|याहवे}}, भोर को तू मेरी आवाज़ सुनता है; \\q भोर को मैं [उसे] तेरे सामने सजाकर रखता हूँ और ताकता रहता हूँ।",
+          "B": "हे {{divine_name:प्रभु|याहवे}}, पौ फटते ही तू मेरी आवाज़ सुनता है। \\q पौ फटते ही मैं सब कुछ तेरे सामने रखता हूँ और राह देखता रहता हूँ।",
+          "R": "हे {{divine_name:प्रभु|याहवे}}, हर सुबह तू मेरी सुनता है। \\q हर सुबह मैं अपनी विनतियाँ तेरे पास लाता हूँ और तेरे उत्तर की राह देखता हूँ।"
+        },
+        "ru": {
+          "L": "{{divine_name:ГОСПОДИ|Яхве}}, утром {{deity_pronoun:ты|Ты}} слышишь мой голос; \\q утром я раскладываю [всё] перед {{deity_pronoun:тобой|Тобой}} и высматриваю.",
+          "B": "{{divine_name:ГОСПОДИ|Яхве}}, на рассвете {{deity_pronoun:ты|Ты}} слышишь мой голос. \\q На рассвете я раскладываю всё перед {{deity_pronoun:тобой|Тобой}} и смотрю, ожидая.",
+          "R": "{{divine_name:ГОСПОДИ|Яхве}}, каждое утро {{deity_pronoun:ты|Ты}} слышишь меня. \\q Каждое утро я приношу {{deity_pronoun:тебе|Тебе}} свои просьбы и жду, когда {{deity_pronoun:ты|Ты}} ответишь."
+        },
+        "ja": {
+          "L": "{{divine_name:主|ヤハウェ}}よ、朝に、あなたはわたしの声を聞かれる。 \\q 朝に、わたしはあなたの前に[それを]整え、待ち望む。",
+          "B": "{{divine_name:主|ヤハウェ}}よ、夜明けに、あなたはわたしの声を聞いてくださる。 \\q 夜明けに、わたしはすべてをあなたの前に整えて、見張りながら待つ。",
+          "R": "{{divine_name:主|ヤハウェ}}よ、毎朝、あなたはわたしの声を聞いてくださる。 \\q 毎朝、わたしは願いごとをあなたに申し上げ、答えてくださるのを待つ。"
+        },
+        "uk": {
+          "L": "{{divine_name:ГОСПОДИ|Ягве}}, [уранці] {{deity_pronoun:ти|Ти}} чуєш мій голос; \\q [уранці] я викладаю [це] перед {{deity_pronoun:тобою|Тобою}} і чекаю.",
+          "B": "{{divine_name:ГОСПОДИ|Ягве}}, на світанку {{deity_pronoun:ти|Ти}} чуєш мій голос. \\q На світанку я викладаю все перед {{deity_pronoun:тобою|Тобою}} і чекаю.",
+          "R": "{{divine_name:ГОСПОДИ|Ягве}}, щоранку {{deity_pronoun:ти|Ти}} чуєш мене. \\q Щоранку я приношу {{deity_pronoun:тобі|Тобі}} свої прохання й чекаю, що {{deity_pronoun:ти|Ти}} відповіси."
+        },
+        "id": {
+          "L": "{{divine_name:TUHAN|Yahweh}}, [pada waktu] pagi {{deity_pronoun:engkau|Engkau}} mendengar suaraku; \\q [pada waktu] pagi aku mengatur [doaku] di hadapan-{{deity_pronoun:mu|Mu}} dan menunggu.",
+          "B": "{{divine_name:TUHAN|Yahweh}}, pada waktu fajar {{deity_pronoun:engkau|Engkau}} mendengar suaraku. \\q Pada waktu fajar aku menyiapkan segala sesuatu di hadapan-{{deity_pronoun:mu|Mu}} dan berjaga-jaga.",
+          "R": "{{divine_name:TUHAN|Yahweh}}, setiap pagi {{deity_pronoun:engkau|Engkau}} mendengar aku. \\q Setiap pagi aku membawa permohonanku kepada-{{deity_pronoun:mu|Mu}} dan menunggu jawaban-{{deity_pronoun:mu|Mu}}."
         }
       },
       "decisions": [
@@ -620,6 +843,63 @@
           "reason": "Readable takes the verb as prayer (m1) and says what the watching is for (m2).",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190050040061"
+          ],
+          "choice": "\"सजाकर रखता हूँ\" (L); \"सब कुछ तेरे सामने रखता हूँ\" (B)",
+          "alternatives": [],
+          "reason": "The verb means to set in order, a prayer or a sacrifice (meaning m1); Literal and Balanced leave the object open, as the English does, and Readable takes it as prayer.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190050040061"
+          ],
+          "choice": "'e'erokh-lekha \"あなたの前に[それを]整え\" (L), \"すべてをあなたの前に整えて\" (B), Readable as the English (\"願いごとを…申し上げ\")",
+          "alternatives": [
+            "祈りを整え",
+            "いけにえを並べ"
+          ],
+          "reason": "The object (a prayer or a sacrifice) is uncertain (m1), so Literal and Balanced say only \"set out\"; Readable follows the English Readable's requests, with the humble 申し上げる for the speaker's own act.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190050040061"
+          ],
+          "choice": "\"mengatur [doaku]\" (L)",
+          "alternatives": [],
+          "reason": "What the psalmist sets out, a prayer or a sacrifice, is uncertain (m1); Literal supplies prayer in brackets, as the English Readable reads it.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -649,44 +929,69 @@
       "literal_gloss": "For not a God delighting [in] wickedness [are] you; not will sojourn with you evil.",
       "renderings": {
         "en": {
-          "L": "For not a God delighting [in] wickedness [are] {{deity_pronoun:you|You}}; evil will not sojourn with {{deity_pronoun:you|You}}.",
-          "B": "For {{deity_pronoun:you|You}} are not a God who takes pleasure in wickedness; evil cannot be {{deity_pronoun:your|Your}} guest.",
-          "R": "You are not a God who enjoys what is wicked. No evil person can live near {{deity_pronoun:you|You}}."
+          "L": "For not a God delighting [in] wickedness [are] {{deity_pronoun:you|You}}; \\q evil will not sojourn with {{deity_pronoun:you|You}}.",
+          "B": "For {{deity_pronoun:you|You}} are not a God who takes pleasure in wickedness; \\q evil cannot be {{deity_pronoun:your|Your}} guest.",
+          "R": "You are not a God who enjoys what is wicked. \\q No evil person can live near {{deity_pronoun:you|You}}."
         },
         "fr": {
-          "L": "Car [{{deity_pronoun:tu|Tu}} n’es] pas un Dieu qui se plaît à la méchanceté, {{deity_pronoun:toi|Toi}} ; le mal ne séjournera pas chez {{deity_pronoun:toi|Toi}}.",
-          "B": "Car {{deity_pronoun:tu|Tu}} n’es pas un Dieu qui se plaît à la méchanceté ; le mal ne peut pas être {{deity_pronoun:ton|Ton}} hôte.",
-          "R": "Tu n’es pas un Dieu qui aime ce qui est mauvais. Aucune personne mauvaise ne peut vivre près de {{deity_pronoun:toi|Toi}}."
+          "L": "Car [{{deity_pronoun:tu|Tu}} n’es] pas un Dieu qui se plaît à la méchanceté, {{deity_pronoun:toi|Toi}} ; \\q le mal ne séjournera pas chez {{deity_pronoun:toi|Toi}}.",
+          "B": "Car {{deity_pronoun:tu|Tu}} n’es pas un Dieu qui se plaît à la méchanceté ; \\q le mal ne peut pas être {{deity_pronoun:ton|Ton}} hôte.",
+          "R": "Tu n’es pas un Dieu qui aime ce qui est mauvais. \\q Aucune personne mauvaise ne peut vivre près de {{deity_pronoun:toi|Toi}}."
         },
         "sw": {
-          "L": "Kwa maana {{deity_pronoun:wewe|Wewe}} si Mungu apendezwaye na uovu; ubaya hautakaa pamoja {{deity_pronoun:nawe|Nawe}}.",
-          "B": "Kwa maana {{deity_pronoun:wewe|Wewe}} si Mungu anayefurahia uovu; ubaya hauwezi kuwa mgeni {{deity_pronoun:wako|Wako}}.",
-          "R": "Wewe si Mungu anayependa mambo maovu. Hakuna mtu mwovu anayeweza kukaa karibu {{deity_pronoun:nawe|Nawe}}."
+          "L": "Kwa maana {{deity_pronoun:wewe|Wewe}} si Mungu apendezwaye na uovu; \\q ubaya hautakaa pamoja {{deity_pronoun:nawe|Nawe}}.",
+          "B": "Kwa maana {{deity_pronoun:wewe|Wewe}} si Mungu anayefurahia uovu; \\q ubaya hauwezi kuwa mgeni {{deity_pronoun:wako|Wako}}.",
+          "R": "Wewe si Mungu anayependa mambo maovu. \\q Hakuna mtu mwovu anayeweza kukaa karibu {{deity_pronoun:nawe|Nawe}}."
         },
         "es": {
-          "L": "Porque {{deity_pronoun:tú|Tú}} no [eres] un Dios que se complace [en la] maldad; el mal no morará junto a {{deity_pronoun:ti|Ti}}.",
-          "B": "Porque {{deity_pronoun:tú|Tú}} no eres un Dios que se agrade de la maldad; el mal no puede ser {{deity_pronoun:tu|Tu}} huésped.",
-          "R": "Tú no eres un Dios al que le guste lo malo. Ninguna persona malvada puede vivir cerca de {{deity_pronoun:ti|Ti}}."
+          "L": "Porque {{deity_pronoun:tú|Tú}} no [eres] un Dios que se complace [en la] maldad; \\q el mal no morará junto a {{deity_pronoun:ti|Ti}}.",
+          "B": "Porque {{deity_pronoun:tú|Tú}} no eres un Dios que se agrade de la maldad; \\q el mal no puede ser {{deity_pronoun:tu|Tu}} huésped.",
+          "R": "Tú no eres un Dios al que le guste lo malo. \\q Ninguna persona malvada puede vivir cerca de {{deity_pronoun:ti|Ti}}."
         },
         "vi": {
-          "L": "Vì {{deity_pronoun:ngài|Ngài}} không phải [là] một Đức Chúa Trời ưa thích điều gian ác; điều ác sẽ không ở trọ với {{deity_pronoun:ngài|Ngài}}.",
-          "B": "Vì {{deity_pronoun:ngài|Ngài}} không phải là Đức Chúa Trời vui thích điều gian ác; điều ác không thể làm khách của {{deity_pronoun:ngài|Ngài}}.",
-          "R": "Ngài không phải là Đức Chúa Trời ưa thích điều gian ác. Không kẻ ác nào được sống gần {{deity_pronoun:ngài|Ngài}}."
+          "L": "Vì {{deity_pronoun:ngài|Ngài}} không phải [là] một Đức Chúa Trời ưa thích điều gian ác; \\q điều ác sẽ không ở trọ với {{deity_pronoun:ngài|Ngài}}.",
+          "B": "Vì {{deity_pronoun:ngài|Ngài}} không phải là Đức Chúa Trời vui thích điều gian ác; \\q điều ác không thể làm khách của {{deity_pronoun:ngài|Ngài}}.",
+          "R": "Ngài không phải là Đức Chúa Trời ưa thích điều gian ác. \\q Không kẻ ác nào được sống gần {{deity_pronoun:ngài|Ngài}}."
         },
         "ko": {
-          "L": "참으로 주님은 악을 기뻐하는 하나님이 아니시니, 악이 주님과 함께 머물지 못합니다.",
-          "B": "주님은 악을 즐거워하시는 하나님이 아니십니다. 악은 주님의 손님이 될 수 없습니다.",
-          "R": "주님은 악한 것을 좋아하시는 하나님이 아니십니다. 악한 사람은 누구도 주님 곁에서 살 수 없습니다."
+          "L": "참으로 주님은 악을 기뻐하는 하나님이 아니시니, \\q 악이 주님과 함께 머물지 못합니다.",
+          "B": "주님은 악을 즐거워하시는 하나님이 아니십니다. \\q 악은 주님의 손님이 될 수 없습니다.",
+          "R": "주님은 악한 것을 좋아하시는 하나님이 아니십니다. \\q 악한 사람은 누구도 주님 곁에서 살 수 없습니다."
         },
         "pt": {
-          "L": "Porque não [és] um Deus que tem prazer na maldade, {{deity_pronoun:tu|Tu}}; o mal não se hospedará {{deity_pronoun:contigo|Contigo}}.",
-          "B": "Pois {{deity_pronoun:tu|Tu}} não és um Deus que tem prazer na maldade; o mal não pode ser {{deity_pronoun:teu|Teu}} hóspede.",
-          "R": "Tu não és um Deus que gosta do que é mau. Nenhuma pessoa má pode morar perto de {{deity_pronoun:ti|Ti}}."
+          "L": "Porque não [és] um Deus que tem prazer na maldade, {{deity_pronoun:tu|Tu}}; \\q o mal não se hospedará {{deity_pronoun:contigo|Contigo}}.",
+          "B": "Pois {{deity_pronoun:tu|Tu}} não és um Deus que tem prazer na maldade; \\q o mal não pode ser {{deity_pronoun:teu|Teu}} hóspede.",
+          "R": "Tu não és um Deus que gosta do que é mau. \\q Nenhuma pessoa má pode morar perto de {{deity_pronoun:ti|Ti}}."
         },
         "am": {
-          "L": "አንተ በክፋት ደስ የሚልህ አምላክ አይደለህምና፤ ክፉ ከአንተ ጋር አያድርም።",
-          "B": "አንተ በክፋት የምትደሰት አምላክ አይደለህምና፤ ክፉ ነገር እንግዳህ ሊሆን አይችልም።",
-          "R": "አንተ በክፉ ነገር የምትደሰት አምላክ አይደለህም። ክፉ ሰው በአጠገብህ ሊኖር አይችልም።"
+          "L": "አንተ በክፋት ደስ የሚልህ አምላክ አይደለህምና፤ \\q ክፉ ከአንተ ጋር አያድርም።",
+          "B": "አንተ በክፋት የምትደሰት አምላክ አይደለህምና፤ \\q ክፉ ነገር እንግዳህ ሊሆን አይችልም።",
+          "R": "አንተ በክፉ ነገር የምትደሰት አምላክ አይደለህም። \\q ክፉ ሰው በአጠገብህ ሊኖር አይችልም።"
+        },
+        "hi": {
+          "L": "क्योंकि तू दुष्टता से प्रसन्न होनेवाला परमेश्वर नहीं [है]; \\q बुराई तेरे साथ नहीं टिकेगी।",
+          "B": "क्योंकि तू ऐसा परमेश्वर नहीं जो दुष्टता से प्रसन्न होता है; \\q बुराई तेरी मेहमान नहीं हो सकती।",
+          "R": "तू ऐसा परमेश्वर नहीं है जिसे दुष्टता अच्छी लगे। \\q कोई दुष्ट व्यक्ति तेरे पास नहीं रह सकता।"
+        },
+        "ru": {
+          "L": "Ведь не Бог, желающий нечестия, — {{deity_pronoun:ты|Ты}}; \\q не поселится у {{deity_pronoun:тебя|Тебя}} злое.",
+          "B": "Ведь {{deity_pronoun:ты|Ты}} — не тот Бог, которому нравится нечестие; \\q зло не может быть {{deity_pronoun:твоим|Твоим}} гостем.",
+          "R": "Ты не тот Бог, которому нравится злое. \\q Ни один злой человек не может жить рядом с {{deity_pronoun:тобой|Тобой}}."
+        },
+        "ja": {
+          "L": "まことに、あなたは悪を喜ぶ神ではない。 \\q 悪はあなたのもとに宿ることがない。",
+          "B": "あなたは、悪を喜ばれる神ではないからだ。 \\q 悪は、あなたのもとに客として身を寄せることができない。",
+          "R": "あなたは、悪いことを好まれる神ではない。 \\q 悪い人は、あなたのそばに住むことができない。"
+        },
+        "uk": {
+          "L": "Бо не Бог, що любить беззаконня, — {{deity_pronoun:ти|Ти}}; \\q зло не перебуватиме з {{deity_pronoun:тобою|Тобою}}.",
+          "B": "Бо {{deity_pronoun:ти|Ти}} не Бог, якому до вподоби нечестя; \\q зло не може бути {{deity_pronoun:твоїм|Твоїм}} гостем.",
+          "R": "Ти не той Бог, якому подобається зло. \\q Жодна зла людина не може жити поруч із {{deity_pronoun:тобою|Тобою}}."
+        },
+        "id": {
+          "L": "Sebab bukan Allah yang berkenan [kepada] kefasikan [adalah] {{deity_pronoun:engkau|Engkau}}; \\q kejahatan tidak akan menumpang pada-{{deity_pronoun:mu|Mu}}.",
+          "B": "Sebab {{deity_pronoun:engkau|Engkau}} bukanlah Allah yang senang akan kefasikan; \\q kejahatan tidak dapat menjadi tamu-{{deity_pronoun:mu|Mu}}.",
+          "R": "Engkau bukan Allah yang menyukai kejahatan. \\q Tidak ada orang jahat yang dapat tinggal dekat-{{deity_pronoun:mu|Mu}}."
         }
       },
       "decisions": [
@@ -738,6 +1043,47 @@
           "reason": "Readable takes the word as a person (m2), as verse 6 continues.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190050050081"
+          ],
+          "choice": "\"तेरे साथ नहीं टिकेगी\" (L); \"तेरी मेहमान नहीं हो सकती\" (B)",
+          "alternatives": [
+            "\"परदेशी होकर रहना\""
+          ],
+          "reason": "The verb is the one used for a sojourner, here staying as a guest (meaning m1). Literal says the plain \"टिकना\" (to stay), Balanced the guest.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "register",
+          "tokens": [
+            "o190050050021",
+            "o190050050031"
+          ],
+          "choice": "\"悪を喜ぶ神ではない\" (L) is left without a respect form because it says what God is not; B, R use the respect form (喜ばれる, 好まれる) in the positive phrase they negate",
+          "alternatives": [
+            "お喜びにならない神"
+          ],
+          "reason": "A negated respect form 喜ばれない could read \"cannot rejoice\"; the Psalter keeps 〜られない out of God's negatives (Job, Proverbs).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -768,44 +1114,69 @@
       "literal_gloss": "Not will take their stand [the] boasters before your eyes; you hate all doers of iniquity.",
       "renderings": {
         "en": {
-          "L": "Boasters will not take their stand before {{deity_pronoun:your|Your}} eyes; {{deity_pronoun:you|You}} hate all workers of iniquity.",
-          "B": "Those who boast cannot stand in {{deity_pronoun:your|Your}} sight; {{deity_pronoun:you|You}} hate all who practice evil.",
-          "R": "Proud people cannot stand in front of {{deity_pronoun:you|You}}. You hate everyone who does evil."
+          "L": "Boasters will not take their stand before {{deity_pronoun:your|Your}} eyes; \\q {{deity_pronoun:you|You}} hate all workers of iniquity.",
+          "B": "Those who boast cannot stand in {{deity_pronoun:your|Your}} sight; \\q {{deity_pronoun:you|You}} hate all who practice evil.",
+          "R": "Proud people cannot stand in front of {{deity_pronoun:you|You}}. \\q You hate everyone who does evil."
         },
         "fr": {
-          "L": "Les vantards ne se tiendront pas devant {{deity_pronoun:tes|Tes}} yeux ; {{deity_pronoun:tu|Tu}} hais tous ceux qui pratiquent l’iniquité.",
-          "B": "Ceux qui se vantent ne peuvent pas tenir sous {{deity_pronoun:ton|Ton}} regard ; {{deity_pronoun:tu|Tu}} détestes tous ceux qui font le mal.",
-          "R": "Les orgueilleux ne peuvent pas se présenter devant {{deity_pronoun:toi|Toi}}. Tu détestes tous ceux qui font le mal."
+          "L": "Les vantards ne se tiendront pas devant {{deity_pronoun:tes|Tes}} yeux ; \\q {{deity_pronoun:tu|Tu}} hais tous ceux qui pratiquent l’iniquité.",
+          "B": "Ceux qui se vantent ne peuvent pas tenir sous {{deity_pronoun:ton|Ton}} regard ; \\q {{deity_pronoun:tu|Tu}} détestes tous ceux qui font le mal.",
+          "R": "Les orgueilleux ne peuvent pas se présenter devant {{deity_pronoun:toi|Toi}}. \\q Tu détestes tous ceux qui font le mal."
         },
         "sw": {
-          "L": "Wenye majivuno hawatasimama mbele ya macho {{deity_pronoun:yako|Yako}}; {{deity_pronoun:wewe|Wewe}} unawachukia wote watendao uovu.",
-          "B": "Wenye kujivuna hawawezi kusimama machoni {{deity_pronoun:pako|Pako}}; unawachukia wote wanaotenda maovu.",
-          "R": "Watu wenye kiburi hawawezi kusimama mbele {{deity_pronoun:yako|Yako}}. Unamchukia kila mtu anayetenda maovu."
+          "L": "Wenye majivuno hawatasimama mbele ya macho {{deity_pronoun:yako|Yako}}; \\q {{deity_pronoun:wewe|Wewe}} unawachukia wote watendao uovu.",
+          "B": "Wenye kujivuna hawawezi kusimama machoni {{deity_pronoun:pako|Pako}}; \\q unawachukia wote wanaotenda maovu.",
+          "R": "Watu wenye kiburi hawawezi kusimama mbele {{deity_pronoun:yako|Yako}}. \\q Unamchukia kila mtu anayetenda maovu."
         },
         "es": {
-          "L": "Los jactanciosos no se mantendrán delante de {{deity_pronoun:tus|Tus}} ojos; {{deity_pronoun:tú|Tú}} aborreces a todos los que hacen iniquidad.",
-          "B": "Los que se jactan no pueden estar en pie ante {{deity_pronoun:tu|Tu}} mirada; {{deity_pronoun:tú|Tú}} odias a todos los que practican el mal.",
-          "R": "La gente orgullosa no puede estar delante de {{deity_pronoun:ti|Ti}}. Tú odias a todos los que hacen el mal."
+          "L": "Los jactanciosos no se mantendrán delante de {{deity_pronoun:tus|Tus}} ojos; \\q {{deity_pronoun:tú|Tú}} aborreces a todos los que hacen iniquidad.",
+          "B": "Los que se jactan no pueden estar en pie ante {{deity_pronoun:tu|Tu}} mirada; \\q {{deity_pronoun:tú|Tú}} odias a todos los que practican el mal.",
+          "R": "La gente orgullosa no puede estar delante de {{deity_pronoun:ti|Ti}}. \\q Tú odias a todos los que hacen el mal."
         },
         "vi": {
-          "L": "Những kẻ khoe khoang sẽ không đứng được trước mắt {{deity_pronoun:ngài|Ngài}}; {{deity_pronoun:ngài|Ngài}} ghét mọi kẻ làm điều gian ác.",
-          "B": "Những kẻ khoác lác không thể đứng trước mặt {{deity_pronoun:ngài|Ngài}}; {{deity_pronoun:ngài|Ngài}} ghét tất cả những kẻ làm điều ác.",
-          "R": "Những kẻ kiêu ngạo không thể đứng trước mặt {{deity_pronoun:ngài|Ngài}}. Ngài ghét mọi kẻ làm điều ác."
+          "L": "Những kẻ khoe khoang sẽ không đứng được trước mắt {{deity_pronoun:ngài|Ngài}}; \\q {{deity_pronoun:ngài|Ngài}} ghét mọi kẻ làm điều gian ác.",
+          "B": "Những kẻ khoác lác không thể đứng trước mặt {{deity_pronoun:ngài|Ngài}}; \\q {{deity_pronoun:ngài|Ngài}} ghét tất cả những kẻ làm điều ác.",
+          "R": "Những kẻ kiêu ngạo không thể đứng trước mặt {{deity_pronoun:ngài|Ngài}}. \\q Ngài ghét mọi kẻ làm điều ác."
         },
         "ko": {
-          "L": "자랑하는 자들이 주님의 눈앞에 서지 못하고, 주님께서는 악을 행하는 모든 자를 미워하십니다.",
-          "B": "뽐내는 자들은 주님 앞에 설 수 없습니다. 주님께서는 악을 일삼는 자들을 모두 미워하십니다.",
-          "R": "교만한 사람들은 주님 앞에 설 수 없습니다. 주님께서는 악한 일을 하는 사람을 모두 미워하십니다."
+          "L": "자랑하는 자들이 주님의 눈앞에 서지 못하고, \\q 주님께서는 악을 행하는 모든 자를 미워하십니다.",
+          "B": "뽐내는 자들은 주님 앞에 설 수 없습니다. \\q 주님께서는 악을 일삼는 자들을 모두 미워하십니다.",
+          "R": "교만한 사람들은 주님 앞에 설 수 없습니다. \\q 주님께서는 악한 일을 하는 사람을 모두 미워하십니다."
         },
         "pt": {
-          "L": "Os fanfarrões não se apresentarão diante dos {{deity_pronoun:teus|Teus}} olhos; {{deity_pronoun:tu|Tu}} odeias todos os que fazem iniquidade.",
-          "B": "Os que se gabam não conseguem ficar de pé à {{deity_pronoun:tua|Tua}} vista; {{deity_pronoun:tu|Tu}} odeias todos os que praticam o mal.",
-          "R": "Os orgulhosos não conseguem ficar diante de {{deity_pronoun:ti|Ti}}. Tu odeias todos os que fazem o mal."
+          "L": "Os fanfarrões não se apresentarão diante dos {{deity_pronoun:teus|Teus}} olhos; \\q {{deity_pronoun:tu|Tu}} odeias todos os que fazem iniquidade.",
+          "B": "Os que se gabam não conseguem ficar de pé à {{deity_pronoun:tua|Tua}} vista; \\q {{deity_pronoun:tu|Tu}} odeias todos os que praticam o mal.",
+          "R": "Os orgulhosos não conseguem ficar diante de {{deity_pronoun:ti|Ti}}. \\q Tu odeias todos os que fazem o mal."
         },
         "am": {
-          "L": "ትምክህተኞች በዓይኖችህ ፊት አይቆሙም፤ ዓመፅን የሚሠሩትን ሁሉ ትጠላለህ።",
-          "B": "የሚታበዩ በፊትህ ሊቆሙ አይችሉም፤ ክፉ የሚያደርጉትን ሁሉ ትጠላለህ።",
-          "R": "ትዕቢተኞች በፊትህ መቆም አይችሉም። ክፉ የሚያደርገውን ሁሉ ትጠላለህ።"
+          "L": "ትምክህተኞች በዓይኖችህ ፊት አይቆሙም፤ \\q ዓመፅን የሚሠሩትን ሁሉ ትጠላለህ።",
+          "B": "የሚታበዩ በፊትህ ሊቆሙ አይችሉም፤ \\q ክፉ የሚያደርጉትን ሁሉ ትጠላለህ።",
+          "R": "ትዕቢተኞች በፊትህ መቆም አይችሉም። \\q ክፉ የሚያደርገውን ሁሉ ትጠላለህ።"
+        },
+        "hi": {
+          "L": "घमंड करनेवाले तेरी आँखों के सामने खड़े न रहेंगे; \\q तू सब अधर्म के काम करनेवालों से घृणा करता है।",
+          "B": "डींग मारनेवाले तेरी दृष्टि में टिक नहीं सकते; \\q तू सब बुराई करनेवालों से घृणा करता है।",
+          "R": "घमंडी लोग तेरे सामने खड़े नहीं हो सकते। \\q तू हर बुरा काम करनेवाले से घृणा करता है।"
+        },
+        "ru": {
+          "L": "Хвастуны не устоят перед {{deity_pronoun:твоими|Твоими}} глазами; \\q {{deity_pronoun:ты|Ты}} ненавидишь всех, кто творит неправду.",
+          "B": "Хвастуны не могут стоять у {{deity_pronoun:тебя|Тебя}} на виду; \\q {{deity_pronoun:ты|Ты}} ненавидишь всех, кто делает зло.",
+          "R": "Гордые люди не могут стоять перед {{deity_pronoun:тобой|Тобой}}. \\q Ты ненавидишь всех, кто делает зло."
+        },
+        "ja": {
+          "L": "高ぶる者たちは、あなたの目の前に立つことがない。 \\q あなたは、悪を行う者たちをみな憎まれる。",
+          "B": "誇り高ぶる者たちは、あなたの前に立つことができない。 \\q あなたは、悪を行う者たちをみな憎まれる。",
+          "R": "いばっている人たちは、あなたの前に立つことができない。 \\q あなたは、悪いことをする人たちを、みな憎まれる。"
+        },
+        "uk": {
+          "L": "Хвальки не встоять перед {{deity_pronoun:твоїми|Твоїми}} очима; \\q {{deity_pronoun:ти|Ти}} ненавидиш усіх, хто чинить беззаконня.",
+          "B": "Ті, хто хвалиться, не встоять перед {{deity_pronoun:твоїм|Твоїм}} поглядом; \\q {{deity_pronoun:ти|Ти}} ненавидиш усіх, хто чинить зло.",
+          "R": "Горді люди не можуть стояти перед {{deity_pronoun:тобою|Тобою}}. \\q Ти ненавидиш кожного, хто чинить зло."
+        },
+        "id": {
+          "L": "Orang-orang congkak tidak akan bertahan di depan mata-{{deity_pronoun:mu|Mu}}; \\q {{deity_pronoun:engkau|Engkau}} membenci semua orang yang melakukan kejahatan.",
+          "B": "Orang-orang yang menyombongkan diri tidak dapat berdiri di hadapan-{{deity_pronoun:mu|Mu}}; \\q {{deity_pronoun:engkau|Engkau}} membenci semua orang yang melakukan kejahatan.",
+          "R": "Orang-orang sombong tidak dapat berdiri di hadapan-{{deity_pronoun:mu|Mu}}. \\q Engkau membenci setiap orang yang berbuat jahat."
         }
       },
       "decisions": [
@@ -871,6 +1242,48 @@
           "reason": "The Hebrew \"workers of iniquity\" are people whose habit is to do wrong. Literal keeps \"iniquidad\", Balanced and Readable say \"el mal\", as the English moves from \"iniquity\" to \"evil\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190050060061"
+          ],
+          "choice": "po'alei 'awen \"悪を行う者たち\" (L, B), \"悪いことをする人たち\" (R); for the Psalter",
+          "alternatives": [
+            "不法を行う者たち"
+          ],
+          "reason": "As Proverbs 10:29 (po'ale 'awen 悪を行う者たち).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190050060091"
+          ],
+          "choice": "\"ті, хто чинить беззаконня\" (L), \"ті, хто чинить зло\" (B, R) for the workers of iniquity, through the book",
+          "alternatives": [
+            "\"робітники неправди\""
+          ],
+          "reason": "Literal keeps the word iniquity; Balanced and Readable say what such people do.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -899,44 +1312,69 @@
       "literal_gloss": "You destroy speakers of falsehood; [a] man of blood and deceit YHWH abhors.",
       "renderings": {
         "en": {
-          "L": "You destroy speakers of lies; {{gender:a person|a man}} of bloodshed and deceit {{divine_name:the LORD|Yahweh}} abhors.",
-          "B": "You bring liars to ruin. {{divine_name:The LORD|Yahweh}} loathes those who shed blood and deceive.",
-          "R": "You destroy people who lie. {{divine_name:The LORD|Yahweh}} hates people who kill and trick others."
+          "L": "You destroy speakers of lies; \\q {{gender:a person|a man}} of bloodshed and deceit {{divine_name:the LORD|Yahweh}} abhors.",
+          "B": "You bring liars to ruin. \\q {{divine_name:The LORD|Yahweh}} loathes those who shed blood and deceive.",
+          "R": "You destroy people who lie. \\q {{divine_name:The LORD|Yahweh}} hates people who kill and trick others."
         },
         "fr": {
-          "L": "Tu fais périr ceux qui disent le mensonge ; {{gender:la personne|l’homme}} de sang et de fraude, {{divine_name:le SEIGNEUR|Yahvé}} l’a en horreur.",
-          "B": "Tu mènes les menteurs à leur perte. {{divine_name:Le SEIGNEUR|Yahvé}} a en horreur ceux qui versent le sang et qui trompent.",
-          "R": "Tu détruis les gens qui mentent. {{divine_name:Le SEIGNEUR|Yahvé}} déteste ceux qui tuent et qui trompent les autres."
+          "L": "Tu fais périr ceux qui disent le mensonge ; \\q {{gender:la personne|l’homme}} de sang et de fraude, {{divine_name:le SEIGNEUR|Yahvé}} l’a en horreur.",
+          "B": "Tu mènes les menteurs à leur perte. \\q {{divine_name:Le SEIGNEUR|Yahvé}} a en horreur ceux qui versent le sang et qui trompent.",
+          "R": "Tu détruis les gens qui mentent. \\q {{divine_name:Le SEIGNEUR|Yahvé}} déteste ceux qui tuent et qui trompent les autres."
         },
         "sw": {
-          "L": "Unawaangamiza wasemao uongo; mtu wa damu na hila {{divine_name:BWANA|Yahwe}} humchukia kabisa.",
-          "B": "Unawaletea maangamizi waongo. {{divine_name:BWANA|Yahwe}} anawachukia kabisa wanaomwaga damu na kudanganya.",
-          "R": "Unawaangamiza watu wanaosema uongo. {{divine_name:BWANA|Yahwe}} anawachukia watu wanaoua na kuwadanganya wengine."
+          "L": "Unawaangamiza wasemao uongo; \\q mtu wa damu na hila {{divine_name:BWANA|Yahwe}} humchukia kabisa.",
+          "B": "Unawaletea maangamizi waongo. \\q {{divine_name:BWANA|Yahwe}} anawachukia kabisa wanaomwaga damu na kudanganya.",
+          "R": "Unawaangamiza watu wanaosema uongo. \\q {{divine_name:BWANA|Yahwe}} anawachukia watu wanaoua na kuwadanganya wengine."
         },
         "es": {
-          "L": "Destruyes a los que dicen mentiras; {{divine_name:el SEÑOR|Yahvé}} aborrece {{gender:a la persona|al hombre}} de sangre y de engaño.",
-          "B": "Tú llevas a la ruina a los mentirosos. {{divine_name:El SEÑOR|Yahvé}} detesta a los que derraman sangre y engañan.",
-          "R": "Tú destruyes a los que mienten. {{divine_name:El SEÑOR|Yahvé}} odia a los que matan y engañan a los demás."
+          "L": "Destruyes a los que dicen mentiras; \\q {{divine_name:el SEÑOR|Yahvé}} aborrece {{gender:a la persona|al hombre}} de sangre y de engaño.",
+          "B": "Tú llevas a la ruina a los mentirosos. \\q {{divine_name:El SEÑOR|Yahvé}} detesta a los que derraman sangre y engañan.",
+          "R": "Tú destruyes a los que mienten. \\q {{divine_name:El SEÑOR|Yahvé}} odia a los que matan y engañan a los demás."
         },
         "vi": {
-          "L": "Ngài hủy diệt những kẻ nói dối; kẻ đổ máu và gian trá, {{divine_name:CHÚA|Gia-vê}} ghê tởm.",
-          "B": "Ngài làm cho kẻ nói dối bị diệt vong. {{divine_name:CHÚA|Gia-vê}} ghê tởm những kẻ làm đổ máu và lừa gạt.",
-          "R": "Ngài tiêu diệt những kẻ nói dối. {{divine_name:CHÚA|Gia-vê}} ghét những kẻ giết người và lừa gạt người khác."
+          "L": "Ngài hủy diệt những kẻ nói dối; \\q kẻ đổ máu và gian trá, {{divine_name:CHÚA|Gia-vê}} ghê tởm.",
+          "B": "Ngài làm cho kẻ nói dối bị diệt vong. \\q {{divine_name:CHÚA|Gia-vê}} ghê tởm những kẻ làm đổ máu và lừa gạt.",
+          "R": "Ngài tiêu diệt những kẻ nói dối. \\q {{divine_name:CHÚA|Gia-vê}} ghét những kẻ giết người và lừa gạt người khác."
         },
         "ko": {
-          "L": "주님께서는 거짓을 말하는 자들을 멸하십니다. 피와 속임수의 사람을 {{divine_name:주|야훼}}께서는 몹시 싫어하십니다.",
-          "B": "주님께서는 거짓말하는 자들을 망하게 하십니다. {{divine_name:주|야훼}}께서는 피 흘리고 속이는 자들을 역겨워하십니다.",
-          "R": "주님께서는 거짓말하는 사람들을 없애십니다. {{divine_name:주|야훼}}께서는 사람을 죽이고 남을 속이는 사람들을 미워하십니다."
+          "L": "주님께서는 거짓을 말하는 자들을 멸하십니다. \\q 피와 속임수의 사람을 {{divine_name:주|야훼}}께서는 몹시 싫어하십니다.",
+          "B": "주님께서는 거짓말하는 자들을 망하게 하십니다. \\q {{divine_name:주|야훼}}께서는 피 흘리고 속이는 자들을 역겨워하십니다.",
+          "R": "주님께서는 거짓말하는 사람들을 없애십니다. \\q {{divine_name:주|야훼}}께서는 사람을 죽이고 남을 속이는 사람들을 미워하십니다."
         },
         "pt": {
-          "L": "Tu destróis os que falam mentiras; {{gender:a pessoa|o homem}} de sangue e de engano {{divine_name:o SENHOR|Javé}} abomina.",
-          "B": "Tu levas à ruína os mentirosos. {{divine_name:O SENHOR|Javé}} detesta os que derramam sangue e enganam.",
-          "R": "Tu destróis as pessoas que mentem. {{divine_name:O SENHOR|Javé}} odeia quem mata e engana os outros."
+          "L": "Tu destróis os que falam mentiras; \\q {{gender:a pessoa|o homem}} de sangue e de engano {{divine_name:o SENHOR|Javé}} abomina.",
+          "B": "Tu levas à ruína os mentirosos. \\q {{divine_name:O SENHOR|Javé}} detesta os que derramam sangue e enganam.",
+          "R": "Tu destróis as pessoas que mentem. \\q {{divine_name:O SENHOR|Javé}} odeia quem mata e engana os outros."
         },
         "am": {
-          "L": "ሐሰትን የሚናገሩትን ታጠፋለህ፤ ደም የሚያፈስሰውንና አታላዩን ሰው {{divine_name:እግዚአብሔር|ያህዌ}} ይጸየፋል።",
-          "B": "ውሸታሞችን ታጠፋለህ። ደም የሚያፈስሱትንና የሚያታልሉትን {{divine_name:እግዚአብሔር|ያህዌ}} ይጸየፋቸዋል።",
-          "R": "የሚዋሹ ሰዎችን ታጠፋለህ። ሰው የሚገድሉትንና ሌሎችን የሚያታልሉትን ሰዎች {{divine_name:እግዚአብሔር|ያህዌ}} ይጠላቸዋል።"
+          "L": "ሐሰትን የሚናገሩትን ታጠፋለህ፤ \\q ደም የሚያፈስሰውንና አታላዩን ሰው {{divine_name:እግዚአብሔር|ያህዌ}} ይጸየፋል።",
+          "B": "ውሸታሞችን ታጠፋለህ። \\q ደም የሚያፈስሱትንና የሚያታልሉትን {{divine_name:እግዚአብሔር|ያህዌ}} ይጸየፋቸዋል።",
+          "R": "የሚዋሹ ሰዎችን ታጠፋለህ። \\q ሰው የሚገድሉትንና ሌሎችን የሚያታልሉትን ሰዎች {{divine_name:እግዚአብሔር|ያህዌ}} ይጠላቸዋል።"
+        },
+        "hi": {
+          "L": "तू झूठ बोलनेवालों को नष्ट करता है; \\q रक्तपात और छल करनेवाले {{gender:व्यक्ति|आदमी}} से {{divine_name:प्रभु|याहवे}} घृणा करते हैं।",
+          "B": "तू झूठों को विनाश में डालता है। \\q जो ख़ून बहाते और छल करते हैं, उनसे {{divine_name:प्रभु|याहवे}} घिन करते हैं।",
+          "R": "तू झूठ बोलनेवालों को नष्ट कर देता है। \\q जो लोग हत्या करते और दूसरों को धोखा देते हैं, उनसे {{divine_name:प्रभु|याहवे}} घृणा करते हैं।"
+        },
+        "ru": {
+          "L": "Ты уничтожаешь говорящих ложь; \\q человека крови и обмана {{divine_name:ГОСПОДЬ|Яхве}} гнушается.",
+          "B": "Ты губишь лжецов. \\q {{divine_name:ГОСПОДЬ|Яхве}} гнушается теми, кто проливает кровь и обманывает.",
+          "R": "Ты уничтожаешь людей, которые лгут. \\q {{divine_name:ГОСПОДЬ|Яхве}} ненавидит тех, кто убивает и обманывает других."
+        },
+        "ja": {
+          "L": "あなたは偽りを語る者たちを滅ぼされる。 \\q 血を流す者と欺く者を、{{divine_name:主|ヤハウェ}}は忌み嫌われる。",
+          "B": "あなたは、うそを言う者たちを滅ぼされる。 \\q {{divine_name:主|ヤハウェ}}は、血を流す者と欺く者を、忌み嫌われる。",
+          "R": "あなたは、うそをつく人たちを滅ぼされる。 \\q {{divine_name:主|ヤハウェ}}は、人を殺す人や人をだます人を、ひどく嫌われる。"
+        },
+        "uk": {
+          "L": "Ти губиш тих, хто говорить неправду; \\q {{gender:кровожерливою й підступною людиною|кровожерливим і підступним чоловіком}} гидує {{divine_name:ГОСПОДЬ|Ягве}}.",
+          "B": "Ти доводиш брехунів до загибелі. \\q {{divine_name:ГОСПОДЬ|Ягве}} гидує тими, хто проливає кров і обманює.",
+          "R": "Ти знищуєш людей, які брешуть. \\q {{divine_name:ГОСПОДЬ|Ягве}} ненавидить тих, хто вбиває й ошукує інших."
+        },
+        "id": {
+          "L": "Engkau membinasakan orang-orang yang berkata dusta; \\q orang penumpah darah dan penipu dibenci {{divine_name:TUHAN|Yahweh}}.",
+          "B": "Engkau membinasakan para pendusta. \\q {{divine_name:TUHAN|Yahweh}} muak terhadap orang yang menumpahkan darah dan menipu.",
+          "R": "Engkau membinasakan orang-orang yang berbohong. \\q {{divine_name:TUHAN|Yahweh}} membenci orang-orang yang membunuh dan menipu orang lain."
         }
       },
       "decisions": [
@@ -1061,6 +1499,82 @@
           "reason": "Amharic \"ሰው\" covers man and woman, and the generic masculine that follows in 5:13 is inclusive, so the setting has nothing to change in this psalm.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o190050070011",
+            "o190050070071",
+            "o190050070081"
+          ],
+          "choice": "\"तू\" and then honorific \"घृणा करते हैं\"",
+          "alternatives": [],
+          "reason": "The psalm turns from speaking to God to speaking about him (meaning m2); the Hindi turns with it from \"तू\" to the honorific third person, as the poetry note has it.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190050070041"
+          ],
+          "choice": "\"{{gender:व्यक्ति|आदमी}}\"",
+          "alternatives": [],
+          "reason": "As the English, and as at 1:1, the phrase describes anyone violent and deceitful. Balanced and Readable say \"those who\", with no span. In verse 13, the Hindi \"उसे\" is the same for a man or a woman, so the Hindi needs no span where the English Literal has one.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190050070051"
+          ],
+          "choice": "человека, with no gender span",
+          "alternatives": [
+            "{{gender:человека|мужа}}"
+          ],
+          "reason": "The English Literal offers \"a person\" and \"a man\" through the gender setting; Russian \"человек\" already includes everyone who is violent and deceitful, so it needs no setting, as in the Russian New Testament.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190050070041"
+          ],
+          "choice": "'ish damim umirmah \"血を流す者と欺く者\" with no gender span",
+          "alternatives": [
+            "{{gender:人|男}}"
+          ],
+          "reason": "者 already covers anyone, so the English span (a person / a man) is not needed.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1097,44 +1611,69 @@
       "literal_gloss": "But I, in [the] abundance of your loyal love, will enter your house; I will bow down toward [the] temple of your holiness in fear of you.",
       "renderings": {
         "en": {
-          "L": "But I, in [the] abundance of {{deity_pronoun:your|Your}} loyal love, will enter {{deity_pronoun:your|Your}} house; I will bow down toward [the] temple of {{deity_pronoun:your|Your}} holiness in fear of {{deity_pronoun:you|You}}.",
-          "B": "But I, because {{deity_pronoun:your|Your}} loyal love is so great, will come into {{deity_pronoun:your|Your}} house; in awe of {{deity_pronoun:you|You}} I will bow down toward {{deity_pronoun:your|Your}} holy temple.",
-          "R": "But because {{deity_pronoun:your|Your}} love is so great and so faithful, I will come into {{deity_pronoun:your|Your}} house. I will bow down toward {{deity_pronoun:your|Your}} holy temple, full of respect for {{deity_pronoun:you|You}}."
+          "L": "But I, in [the] abundance of {{deity_pronoun:your|Your}} loyal love, will enter {{deity_pronoun:your|Your}} house; \\q I will bow down toward [the] temple of {{deity_pronoun:your|Your}} holiness in fear of {{deity_pronoun:you|You}}.",
+          "B": "But I, because {{deity_pronoun:your|Your}} loyal love is so great, will come into {{deity_pronoun:your|Your}} house; \\q in awe of {{deity_pronoun:you|You}} I will bow down toward {{deity_pronoun:your|Your}} holy temple.",
+          "R": "But because {{deity_pronoun:your|Your}} love is so great and so faithful, I will come into {{deity_pronoun:your|Your}} house. \\q I will bow down toward {{deity_pronoun:your|Your}} holy temple, full of respect for {{deity_pronoun:you|You}}."
         },
         "fr": {
-          "L": "Mais moi, dans [l’]abondance de {{deity_pronoun:ton|Ton}} amour loyal, j’entrerai dans {{deity_pronoun:ta|Ta}} maison ; je me prosternerai vers [le] temple de {{deity_pronoun:ta|Ta}} sainteté dans {{deity_pronoun:ta|Ta}} crainte.",
-          "B": "Mais moi, parce que {{deity_pronoun:ton|Ton}} amour fidèle est si grand, j’entrerai dans {{deity_pronoun:ta|Ta}} maison ; rempli de respect pour {{deity_pronoun:toi|Toi}}, je me prosternerai vers {{deity_pronoun:ton|Ton}} saint temple.",
-          "R": "Mais parce que {{deity_pronoun:ton|Ton}} amour est si grand et si fidèle, j’entrerai dans {{deity_pronoun:ta|Ta}} maison. Je me prosternerai vers {{deity_pronoun:ton|Ton}} temple saint, plein de respect pour {{deity_pronoun:toi|Toi}}."
+          "L": "Mais moi, dans [l’]abondance de {{deity_pronoun:ton|Ton}} amour loyal, j’entrerai dans {{deity_pronoun:ta|Ta}} maison ; \\q je me prosternerai vers [le] temple de {{deity_pronoun:ta|Ta}} sainteté dans {{deity_pronoun:ta|Ta}} crainte.",
+          "B": "Mais moi, parce que {{deity_pronoun:ton|Ton}} amour fidèle est si grand, j’entrerai dans {{deity_pronoun:ta|Ta}} maison ; \\q rempli de respect pour {{deity_pronoun:toi|Toi}}, je me prosternerai vers {{deity_pronoun:ton|Ton}} saint temple.",
+          "R": "Mais parce que {{deity_pronoun:ton|Ton}} amour est si grand et si fidèle, j’entrerai dans {{deity_pronoun:ta|Ta}} maison. \\q Je me prosternerai vers {{deity_pronoun:ton|Ton}} temple saint, plein de respect pour {{deity_pronoun:toi|Toi}}."
         },
         "sw": {
-          "L": "Lakini mimi, kwa wingi wa upendo {{deity_pronoun:wako|Wako}} usiokoma, nitaingia nyumbani {{deity_pronoun:mwako|Mwako}}; nitasujudu kuelekea hekalu la utakatifu {{deity_pronoun:wako|Wako}} kwa kukucha.",
-          "B": "Lakini mimi, kwa sababu upendo {{deity_pronoun:wako|Wako}} usiokoma ni mkuu sana, nitaingia nyumbani {{deity_pronoun:mwako|Mwako}}; kwa kukucha nitasujudu kuelekea hekalu {{deity_pronoun:lako|Lako}} takatifu.",
-          "R": "Lakini kwa sababu upendo {{deity_pronoun:wako|Wako}} usiokoma ni mkuu sana, nitaingia nyumbani {{deity_pronoun:mwako|Mwako}}. Nitasujudu kuelekea hekalu {{deity_pronoun:lako|Lako}} takatifu, nikiwa na heshima kuu {{deity_pronoun:kwako|Kwako}}."
+          "L": "Lakini mimi, kwa wingi wa upendo {{deity_pronoun:wako|Wako}} usiokoma, nitaingia nyumbani {{deity_pronoun:mwako|Mwako}}; \\q nitasujudu kuelekea hekalu la utakatifu {{deity_pronoun:wako|Wako}} kwa kukucha.",
+          "B": "Lakini mimi, kwa sababu upendo {{deity_pronoun:wako|Wako}} usiokoma ni mkuu sana, nitaingia nyumbani {{deity_pronoun:mwako|Mwako}}; \\q kwa kukucha nitasujudu kuelekea hekalu {{deity_pronoun:lako|Lako}} takatifu.",
+          "R": "Lakini kwa sababu upendo {{deity_pronoun:wako|Wako}} usiokoma ni mkuu sana, nitaingia nyumbani {{deity_pronoun:mwako|Mwako}}. \\q Nitasujudu kuelekea hekalu {{deity_pronoun:lako|Lako}} takatifu, nikiwa na heshima kuu {{deity_pronoun:kwako|Kwako}}."
         },
         "es": {
-          "L": "Pero yo, por [la] abundancia de {{deity_pronoun:tu|Tu}} amor leal, entraré en {{deity_pronoun:tu|Tu}} casa; me postraré hacia [el] templo de {{deity_pronoun:tu|Tu}} santidad con temor de {{deity_pronoun:ti|Ti}}.",
-          "B": "Pero yo, porque {{deity_pronoun:tu|Tu}} amor fiel es tan grande, entraré en {{deity_pronoun:tu|Tu}} casa; con reverencia ante {{deity_pronoun:ti|Ti}} me inclinaré hacia {{deity_pronoun:tu|Tu}} santo templo.",
-          "R": "Pero como {{deity_pronoun:tu|Tu}} amor es tan grande y tan fiel, entraré en {{deity_pronoun:tu|Tu}} casa. Me inclinaré hacia {{deity_pronoun:tu|Tu}} santo templo, lleno de respeto por {{deity_pronoun:ti|Ti}}."
+          "L": "Pero yo, por [la] abundancia de {{deity_pronoun:tu|Tu}} amor leal, entraré en {{deity_pronoun:tu|Tu}} casa; \\q me postraré hacia [el] templo de {{deity_pronoun:tu|Tu}} santidad con temor de {{deity_pronoun:ti|Ti}}.",
+          "B": "Pero yo, porque {{deity_pronoun:tu|Tu}} amor fiel es tan grande, entraré en {{deity_pronoun:tu|Tu}} casa; \\q con reverencia ante {{deity_pronoun:ti|Ti}} me inclinaré hacia {{deity_pronoun:tu|Tu}} santo templo.",
+          "R": "Pero como {{deity_pronoun:tu|Tu}} amor es tan grande y tan fiel, entraré en {{deity_pronoun:tu|Tu}} casa. \\q Me inclinaré hacia {{deity_pronoun:tu|Tu}} santo templo, lleno de respeto por {{deity_pronoun:ti|Ti}}."
         },
         "vi": {
-          "L": "Nhưng tôi, nhờ [sự] dư dật của tình yêu thương thành tín của {{deity_pronoun:ngài|Ngài}}, sẽ vào nhà {{deity_pronoun:ngài|Ngài}}; tôi sẽ cúi lạy hướng về đền thờ của sự thánh khiết của {{deity_pronoun:ngài|Ngài}} trong sự kính sợ {{deity_pronoun:ngài|Ngài}}.",
-          "B": "Nhưng tôi, nhờ tình yêu thương thành tín lớn lao của {{deity_pronoun:ngài|Ngài}}, sẽ được vào nhà {{deity_pronoun:ngài|Ngài}}; với lòng kính sợ {{deity_pronoun:ngài|Ngài}}, tôi sẽ cúi lạy hướng về đền thánh của {{deity_pronoun:ngài|Ngài}}.",
-          "R": "Nhưng vì tình thương không hề thay đổi của {{deity_pronoun:ngài|Ngài}} thật lớn lao, tôi sẽ vào nhà {{deity_pronoun:ngài|Ngài}}. Tôi sẽ cúi lạy hướng về đền thánh của {{deity_pronoun:ngài|Ngài}}, lòng đầy tôn kính {{deity_pronoun:ngài|Ngài}}."
+          "L": "Nhưng tôi, nhờ [sự] dư dật của tình yêu thương thành tín của {{deity_pronoun:ngài|Ngài}}, sẽ vào nhà {{deity_pronoun:ngài|Ngài}}; \\q tôi sẽ cúi lạy hướng về đền thờ của sự thánh khiết của {{deity_pronoun:ngài|Ngài}} trong sự kính sợ {{deity_pronoun:ngài|Ngài}}.",
+          "B": "Nhưng tôi, nhờ tình yêu thương thành tín lớn lao của {{deity_pronoun:ngài|Ngài}}, sẽ được vào nhà {{deity_pronoun:ngài|Ngài}}; \\q với lòng kính sợ {{deity_pronoun:ngài|Ngài}}, tôi sẽ cúi lạy hướng về đền thánh của {{deity_pronoun:ngài|Ngài}}.",
+          "R": "Nhưng vì tình thương không hề thay đổi của {{deity_pronoun:ngài|Ngài}} thật lớn lao, tôi sẽ vào nhà {{deity_pronoun:ngài|Ngài}}. \\q Tôi sẽ cúi lạy hướng về đền thánh của {{deity_pronoun:ngài|Ngài}}, lòng đầy tôn kính {{deity_pronoun:ngài|Ngài}}."
         },
         "ko": {
-          "L": "그러나 저는 주님의 풍성한 한결같은 사랑으로 주님의 집에 들어가겠습니다. 주님을 경외하며 주님의 거룩함의 성전을 향하여 엎드리겠습니다.",
-          "B": "그러나 저는 주님의 한결같은 사랑이 크시기에 주님의 집에 들어가겠습니다. 주님을 경외하며 주님의 거룩한 성전을 향해 엎드려 절하겠습니다.",
-          "R": "그러나 주님의 변함없는 사랑이 크시기에 저는 주님의 집에 들어가겠습니다. 주님을 깊이 존경하는 마음으로 주님의 거룩한 성전을 향해 엎드리겠습니다."
+          "L": "그러나 저는 주님의 풍성한 한결같은 사랑으로 주님의 집에 들어가겠습니다. \\q 주님을 경외하며 주님의 거룩함의 성전을 향하여 엎드리겠습니다.",
+          "B": "그러나 저는 주님의 한결같은 사랑이 크시기에 주님의 집에 들어가겠습니다. \\q 주님을 경외하며 주님의 거룩한 성전을 향해 엎드려 절하겠습니다.",
+          "R": "그러나 주님의 변함없는 사랑이 크시기에 저는 주님의 집에 들어가겠습니다. \\q 주님을 깊이 존경하는 마음으로 주님의 거룩한 성전을 향해 엎드리겠습니다."
         },
         "pt": {
-          "L": "Mas eu, pela abundância do {{deity_pronoun:teu|Teu}} amor leal, entrarei na {{deity_pronoun:tua|Tua}} casa; eu me prostrarei voltado para o templo da {{deity_pronoun:tua|Tua}} santidade, com temor de {{deity_pronoun:ti|Ti}}.",
-          "B": "Mas eu, porque o {{deity_pronoun:teu|Teu}} amor leal é tão grande, entrarei na {{deity_pronoun:tua|Tua}} casa; com reverência diante de {{deity_pronoun:ti|Ti}}, eu me curvarei voltado para o {{deity_pronoun:teu|Teu}} templo santo.",
-          "R": "Mas, como o {{deity_pronoun:teu|Teu}} amor é tão grande e tão fiel, eu vou entrar na {{deity_pronoun:tua|Tua}} casa. Vou me curvar voltado para o {{deity_pronoun:teu|Teu}} templo santo, cheio de respeito por {{deity_pronoun:ti|Ti}}."
+          "L": "Mas eu, pela abundância do {{deity_pronoun:teu|Teu}} amor leal, entrarei na {{deity_pronoun:tua|Tua}} casa; \\q eu me prostrarei voltado para o templo da {{deity_pronoun:tua|Tua}} santidade, com temor de {{deity_pronoun:ti|Ti}}.",
+          "B": "Mas eu, porque o {{deity_pronoun:teu|Teu}} amor leal é tão grande, entrarei na {{deity_pronoun:tua|Tua}} casa; \\q com reverência diante de {{deity_pronoun:ti|Ti}}, eu me curvarei voltado para o {{deity_pronoun:teu|Teu}} templo santo.",
+          "R": "Mas, como o {{deity_pronoun:teu|Teu}} amor é tão grande e tão fiel, eu vou entrar na {{deity_pronoun:tua|Tua}} casa. \\q Vou me curvar voltado para o {{deity_pronoun:teu|Teu}} templo santo, cheio de respeito por {{deity_pronoun:ti|Ti}}."
         },
         "am": {
-          "L": "እኔ ግን በጽኑ ፍቅርህ ብዛት ወደ ቤትህ እገባለሁ፤ አንተን በመፍራት ወደ ቅድስናህ መቅደስ እሰግዳለሁ።",
-          "B": "እኔ ግን ጽኑ ፍቅርህ ታላቅ ስለ ሆነ ወደ ቤትህ እገባለሁ፤ አንተን በመፍራት ወደ ቅዱስ መቅደስህ እሰግዳለሁ።",
-          "R": "እኔ ግን ጽኑ ፍቅርህ ታላቅ ስለ ሆነ ወደ ቤትህ እመጣለሁ። አንተን በማክበር ወደ ቅዱስ መቅደስህ እሰግዳለሁ።"
+          "L": "እኔ ግን በጽኑ ፍቅርህ ብዛት ወደ ቤትህ እገባለሁ፤ \\q አንተን በመፍራት ወደ ቅድስናህ መቅደስ እሰግዳለሁ።",
+          "B": "እኔ ግን ጽኑ ፍቅርህ ታላቅ ስለ ሆነ ወደ ቤትህ እገባለሁ፤ \\q አንተን በመፍራት ወደ ቅዱስ መቅደስህ እሰግዳለሁ።",
+          "R": "እኔ ግን ጽኑ ፍቅርህ ታላቅ ስለ ሆነ ወደ ቤትህ እመጣለሁ። \\q አንተን በማክበር ወደ ቅዱስ መቅደስህ እሰግዳለሁ።"
+        },
+        "hi": {
+          "L": "पर मैं, तेरे अटल प्रेम की बहुतायत से, तेरे भवन में प्रवेश करूँगा; \\q मैं तेरे भय में तेरी पवित्रता के मन्दिर की ओर दंडवत करूँगा।",
+          "B": "पर मैं, तेरे अटल प्रेम की महानता के कारण, तेरे भवन में आऊँगा; \\q तेरे प्रति श्रद्धा और भय में मैं तेरे पवित्र मन्दिर की ओर झुककर दंडवत करूँगा।",
+          "R": "पर तेरा अटल प्रेम इतना महान है कि मैं तेरे भवन में आऊँगा। \\q तेरा गहरा आदर करते हुए मैं तेरे पवित्र मन्दिर की ओर झुककर दंडवत करूँगा।"
+        },
+        "ru": {
+          "L": "А я — по обилию {{deity_pronoun:твоей|Твоей}} неизменной любви — войду в {{deity_pronoun:твой|Твой}} дом; \\q я поклонюсь, [обратившись] к храму {{deity_pronoun:твоей|Твоей}} святости, в страхе перед {{deity_pronoun:тобой|Тобой}}.",
+          "B": "А я, потому что {{deity_pronoun:твоя|Твоя}} неизменная любовь так велика, войду в {{deity_pronoun:твой|Твой}} дом; \\q в благоговении перед {{deity_pronoun:тобой|Тобой}} я поклонюсь, обратившись к {{deity_pronoun:твоему|Твоему}} святому храму.",
+          "R": "Но {{deity_pronoun:твоя|Твоя}} неизменная любовь так велика, что я могу прийти в {{deity_pronoun:твой|Твой}} дом. \\q Я поклонюсь, обратившись к {{deity_pronoun:твоему|Твоему}} святому храму, с глубоким почтением к {{deity_pronoun:тебе|Тебе}}."
+        },
+        "ja": {
+          "L": "しかしわたしは、あなたの誠実の豊かさによって、あなたの家に入り、 \\q あなたを恐れつつ、あなたの聖なる神殿に向かってひれ伏す。",
+          "B": "しかしわたしは、あなたの変わらぬいつくしみが豊かなので、 \\q あなたの家に入り、あなたを畏れつつ、あなたの聖なる神殿に向かってひれ伏す。",
+          "R": "しかし、あなたの変わらぬいつくしみは、とても大きい。だから、わたしはあなたの家に入る。 \\q あなたを心からおそれ敬い、あなたの聖なる神殿に向かってひれ伏す。"
+        },
+        "uk": {
+          "L": "А я, з великої {{deity_pronoun:твоєї|Твоєї}} незмінної любові, увійду в {{deity_pronoun:твій|Твій}} дім; \\q я вклонюся до храму {{deity_pronoun:твоєї|Твоєї}} святості в страху перед {{deity_pronoun:тобою|Тобою}}.",
+          "B": "А я, бо така велика {{deity_pronoun:твоя|Твоя}} незмінна любов, увійду в {{deity_pronoun:твій|Твій}} дім; \\q у благоговінні перед {{deity_pronoun:тобою|Тобою}} я вклонюся до {{deity_pronoun:твого|Твого}} святого храму.",
+          "R": "Але завдяки {{deity_pronoun:твоїй|Твоїй}} такій великій і вірній любові я ввійду в {{deity_pronoun:твій|Твій}} дім. \\q Я вклонюся до {{deity_pronoun:твого|Твого}} святого храму, сповнений пошани до {{deity_pronoun:тебе|Тебе}}."
+        },
+        "id": {
+          "L": "Tetapi aku, oleh besarnya kasih setia-{{deity_pronoun:mu|Mu}}, akan masuk ke rumah-{{deity_pronoun:mu|Mu}}; \\q aku akan sujud ke arah bait kekudusan-{{deity_pronoun:mu|Mu}} dengan takut akan {{deity_pronoun:engkau|Engkau}}.",
+          "B": "Tetapi aku, karena kasih setia-{{deity_pronoun:mu|Mu}} begitu besar, akan masuk ke rumah-{{deity_pronoun:mu|Mu}}; \\q dengan hormat dan takut kepada-{{deity_pronoun:mu|Mu}} aku akan sujud ke arah bait-{{deity_pronoun:mu|Mu}} yang kudus.",
+          "R": "Tetapi karena kasih setia-{{deity_pronoun:mu|Mu}} begitu besar, aku akan masuk ke rumah-{{deity_pronoun:mu|Mu}}. \\q Aku akan sujud ke arah rumah-{{deity_pronoun:mu|Mu}} yang kudus dengan penuh hormat kepada-{{deity_pronoun:mu|Mu}}."
         }
       },
       "decisions": [
@@ -1384,6 +1923,148 @@
           "reason": "The terms list keeps \"ጽኑ ፍቅር\" for ḥesed through the Psalter, Readable included, for the English \"love so great and so faithful\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190050080031"
+          ],
+          "choice": "\"अटल प्रेम\" at every level",
+          "alternatives": [
+            "\"करुणा\"",
+            "\"दया\""
+          ],
+          "reason": "God's hesed, love that keeps faith (meaning m1), is \"अटल प्रेम\" at every level of the psalms, as the poetry note settles; Readable keeps it where the English says \"so great and so faithful\", since \"अटल\" already says the faithfulness.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190050080081"
+          ],
+          "choice": "\"मन्दिर\"",
+          "alternatives": [],
+          "reason": "The word is hekhal, the temple or palace of God (meaning m3), \"मन्दिर\" as the history note settles; \"भवन\" is the house.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190050080031"
+          ],
+          "choice": "неизменная любовь at every level",
+          "alternatives": [
+            "милость",
+            "верная любовь"
+          ],
+          "reason": "The Psalms terms note settles God's hesed as \"неизменная любовь\" at every level: love that keeps faith (m1). Readable says \"так велика\" for the abundance, where the English Readable says \"so great and so faithful\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190050080031"
+          ],
+          "choice": "chesed of God \"誠実\" (L), \"変わらぬいつくしみ\" (B, R); for the whole Psalter",
+          "alternatives": [
+            "恵み",
+            "慈しみ",
+            "変わらない愛 (Lamentations R)"
+          ],
+          "reason": "The forms of the refrain of 1 Chronicles 16:34 (= Psalms 106:1, 107:1, 118, 136), which the Psalter repeats; Literal 誠実 keeps the link with chesed between people and with chasid (4:4).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190050080031"
+          ],
+          "choice": "\"незмінна любов\" (L, B), \"вірна любов\" (R) for hesed, through the book",
+          "alternatives": [
+            "\"милість\"",
+            "\"милосердя\""
+          ],
+          "reason": "Hesed is love that keeps faith; \"милість\" alone sounds like pity or favour shown from above. The refrains and Psalm 136 keep the same words.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190050080011",
+            "o190050080012",
+            "o190050080021",
+            "o190050080022",
+            "o190050080031",
+            "o190050080032",
+            "o190050080041",
+            "o190050080051",
+            "o190050080052",
+            "o190050080061",
+            "o190050080071",
+            "o190050080081",
+            "o190050080091",
+            "o190050080092",
+            "o190050080101",
+            "o190050080102",
+            "o190050080103"
+          ],
+          "choice": "\"kasih setia\" for \"loyal love\" at every level",
+          "alternatives": [],
+          "reason": "The glossary term for hesed, kept at Readable too, where the English says \"love so great and so faithful\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1418,44 +2099,69 @@
       "literal_gloss": "YHWH, lead me in your righteousness because of those watching me; make straight before me your way.",
       "renderings": {
         "en": {
-          "L": "{{divine_name:LORD|Yahweh}}, lead me in {{deity_pronoun:your|Your}} righteousness because of those who watch me; make straight before me {{deity_pronoun:your|Your}} way.",
-          "B": "{{divine_name:LORD|Yahweh}}, guide me in {{deity_pronoun:your|Your}} righteousness, because my enemies are watching; level {{deity_pronoun:your|Your}} road in front of me.",
-          "R": "{{divine_name:LORD|Yahweh}}, my enemies are watching for me to fall. Lead me in {{deity_pronoun:your|Your}} right ways. Make {{deity_pronoun:your|Your}} path straight and clear in front of me."
+          "L": "{{divine_name:LORD|Yahweh}}, lead me in {{deity_pronoun:your|Your}} righteousness because of those who watch me; \\q make straight before me {{deity_pronoun:your|Your}} way.",
+          "B": "{{divine_name:LORD|Yahweh}}, guide me in {{deity_pronoun:your|Your}} righteousness, because my enemies are watching; \\q level {{deity_pronoun:your|Your}} road in front of me.",
+          "R": "{{divine_name:LORD|Yahweh}}, my enemies are watching for me to fall. Lead me in {{deity_pronoun:your|Your}} right ways. \\q Make {{deity_pronoun:your|Your}} path straight and clear in front of me."
         },
         "fr": {
-          "L": "{{divine_name:SEIGNEUR|Yahvé}}, conduis-moi dans {{deity_pronoun:ta|Ta}} justice à cause de ceux qui me guettent ; aplanis devant moi {{deity_pronoun:ton|Ton}} chemin.",
-          "B": "{{divine_name:SEIGNEUR|Yahvé}}, guide-moi par {{deity_pronoun:ta|Ta}} justice, car mes ennemis m’épient ; rends {{deity_pronoun:ta|Ta}} route bien droite devant moi.",
-          "R": "{{divine_name:SEIGNEUR|Yahvé}}, mes ennemis attendent que je tombe. Conduis-moi sur {{deity_pronoun:tes|Tes}} chemins justes. Rends {{deity_pronoun:ton|Ton}} chemin droit et dégagé devant moi."
+          "L": "{{divine_name:SEIGNEUR|Yahvé}}, conduis-moi dans {{deity_pronoun:ta|Ta}} justice à cause de ceux qui me guettent ; \\q aplanis devant moi {{deity_pronoun:ton|Ton}} chemin.",
+          "B": "{{divine_name:SEIGNEUR|Yahvé}}, guide-moi par {{deity_pronoun:ta|Ta}} justice, car mes ennemis m’épient ; \\q rends {{deity_pronoun:ta|Ta}} route bien droite devant moi.",
+          "R": "{{divine_name:SEIGNEUR|Yahvé}}, mes ennemis attendent que je tombe. Conduis-moi sur {{deity_pronoun:tes|Tes}} chemins justes. \\q Rends {{deity_pronoun:ton|Ton}} chemin droit et dégagé devant moi."
         },
         "sw": {
-          "L": "Ee {{divine_name:BWANA|Yahwe}}, uniongoze katika haki {{deity_pronoun:yako|Yako}} kwa sababu ya wanaonivizia; uinyoshe njia {{deity_pronoun:yako|Yako}} mbele yangu.",
-          "B": "Ee {{divine_name:BWANA|Yahwe}}, uniongoze katika haki {{deity_pronoun:yako|Yako}}, kwa sababu adui zangu wananiangalia; usawazishe barabara {{deity_pronoun:yako|Yako}} mbele yangu.",
-          "R": "{{divine_name:BWANA|Yahwe}}, adui zangu wananiangalia wakingoja nianguke. Uniongoze katika njia {{deity_pronoun:zako|Zako}} zilizo sawa. Uifanye njia {{deity_pronoun:yako|Yako}} iwe nyoofu na wazi mbele yangu."
+          "L": "Ee {{divine_name:BWANA|Yahwe}}, uniongoze katika haki {{deity_pronoun:yako|Yako}} kwa sababu ya wanaonivizia; \\q uinyoshe njia {{deity_pronoun:yako|Yako}} mbele yangu.",
+          "B": "Ee {{divine_name:BWANA|Yahwe}}, uniongoze katika haki {{deity_pronoun:yako|Yako}}, \\q kwa sababu adui zangu wananiangalia; \\q usawazishe barabara {{deity_pronoun:yako|Yako}} mbele yangu.",
+          "R": "{{divine_name:BWANA|Yahwe}}, adui zangu wananiangalia wakingoja nianguke. \\q Uniongoze katika njia {{deity_pronoun:zako|Zako}} zilizo sawa. \\q Uifanye njia {{deity_pronoun:yako|Yako}} iwe nyoofu na wazi mbele yangu."
         },
         "es": {
-          "L": "{{divine_name:SEÑOR|Yahvé}}, guíame en {{deity_pronoun:tu|Tu}} justicia a causa de los que me acechan; endereza delante de mí {{deity_pronoun:tu|Tu}} camino.",
-          "B": "{{divine_name:SEÑOR|Yahvé}}, condúceme en {{deity_pronoun:tu|Tu}} justicia, porque mis enemigos están vigilando; allana {{deity_pronoun:tu|Tu}} camino delante de mí.",
-          "R": "{{divine_name:SEÑOR|Yahvé}}, mis enemigos están esperando a que yo caiga. Guíame por {{deity_pronoun:tus|Tus}} caminos rectos. Haz que {{deity_pronoun:tu|Tu}} senda sea recta y despejada delante de mí."
+          "L": "{{divine_name:SEÑOR|Yahvé}}, guíame en {{deity_pronoun:tu|Tu}} justicia a causa de los que me acechan; \\q endereza delante de mí {{deity_pronoun:tu|Tu}} camino.",
+          "B": "{{divine_name:SEÑOR|Yahvé}}, condúceme en {{deity_pronoun:tu|Tu}} justicia, porque mis enemigos están vigilando; \\q allana {{deity_pronoun:tu|Tu}} camino delante de mí.",
+          "R": "{{divine_name:SEÑOR|Yahvé}}, mis enemigos están esperando a que yo caiga. Guíame por {{deity_pronoun:tus|Tus}} caminos rectos. \\q Haz que {{deity_pronoun:tu|Tu}} senda sea recta y despejada delante de mí."
         },
         "vi": {
-          "L": "Lạy {{divine_name:CHÚA|Gia-vê}}, xin dẫn tôi trong sự công chính của {{deity_pronoun:ngài|Ngài}} vì cớ những kẻ rình rập tôi; xin làm cho đường lối {{deity_pronoun:ngài|Ngài}} ngay thẳng trước mặt tôi.",
-          "B": "Lạy {{divine_name:CHÚA|Gia-vê}}, xin dắt dẫn tôi trong sự công chính của {{deity_pronoun:ngài|Ngài}}, vì kẻ thù tôi đang rình rập; xin san phẳng con đường của {{deity_pronoun:ngài|Ngài}} trước mặt tôi.",
-          "R": "Lạy {{divine_name:CHÚA|Gia-vê}}, kẻ thù tôi đang rình chờ tôi vấp ngã. Xin dẫn tôi đi trong đường lối ngay thẳng của {{deity_pronoun:ngài|Ngài}}. Xin làm cho con đường của {{deity_pronoun:ngài|Ngài}} thẳng và rõ ràng trước mặt tôi."
+          "L": "Lạy {{divine_name:CHÚA|Gia-vê}}, xin dẫn tôi trong sự công chính của {{deity_pronoun:ngài|Ngài}} vì cớ những kẻ rình rập tôi; \\q xin làm cho đường lối {{deity_pronoun:ngài|Ngài}} ngay thẳng trước mặt tôi.",
+          "B": "Lạy {{divine_name:CHÚA|Gia-vê}}, xin dắt dẫn tôi trong sự công chính của {{deity_pronoun:ngài|Ngài}}, \\q vì kẻ thù tôi đang rình rập; \\q xin san phẳng con đường của {{deity_pronoun:ngài|Ngài}} trước mặt tôi.",
+          "R": "Lạy {{divine_name:CHÚA|Gia-vê}}, kẻ thù tôi đang rình chờ tôi vấp ngã. \\q Xin dẫn tôi đi trong đường lối ngay thẳng của {{deity_pronoun:ngài|Ngài}}. \\q Xin làm cho con đường của {{deity_pronoun:ngài|Ngài}} thẳng và rõ ràng trước mặt tôi."
         },
         "ko": {
-          "L": "{{divine_name:주|야훼}}여, 저를 노리는 자들 때문에 주님의 의로 저를 인도하시고, 제 앞에 주님의 길을 곧게 하여 주십시오.",
-          "B": "{{divine_name:주|야훼}}여, 제 원수들이 지켜보고 있으니 주님의 의로 저를 이끌어 주시고, 제 앞에 주님의 길을 평탄하게 해 주십시오.",
-          "R": "{{divine_name:주|야훼}}여, 제 원수들이 제가 넘어지기를 기다리며 지켜보고 있습니다. 주님의 바른 길로 저를 이끌어 주십시오. 제 앞에 주님의 길을 곧고 환하게 열어 주십시오."
+          "L": "{{divine_name:주|야훼}}여, 저를 노리는 자들 때문에 주님의 의로 저를 인도하시고, \\q 제 앞에 주님의 길을 곧게 하여 주십시오.",
+          "B": "{{divine_name:주|야훼}}여, 제 원수들이 지켜보고 있으니 주님의 의로 \\q 저를 이끌어 주시고, \\q 제 앞에 주님의 길을 평탄하게 해 주십시오.",
+          "R": "{{divine_name:주|야훼}}여, 제 원수들이 제가 넘어지기를 기다리며 지켜보고 있습니다. \\q 주님의 바른 길로 저를 이끌어 주십시오. \\q 제 앞에 주님의 길을 곧고 환하게 열어 주십시오."
         },
         "pt": {
-          "L": "{{divine_name:SENHOR|Javé}}, conduze-me na {{deity_pronoun:tua|Tua}} justiça por causa dos que me vigiam; torna reto à minha frente o {{deity_pronoun:teu|Teu}} caminho.",
-          "B": "{{divine_name:SENHOR|Javé}}, leva-me pela {{deity_pronoun:tua|Tua}} justiça, porque os meus inimigos estão me observando; aplana à minha frente a {{deity_pronoun:tua|Tua}} estrada.",
-          "R": "{{divine_name:SENHOR|Javé}}, os meus inimigos estão esperando que eu caia. Guia-me nos {{deity_pronoun:teus|Teus}} caminhos certos. Deixa o {{deity_pronoun:teu|Teu}} caminho reto e livre à minha frente."
+          "L": "{{divine_name:SENHOR|Javé}}, conduze-me na {{deity_pronoun:tua|Tua}} justiça por causa dos que me vigiam; \\q torna reto à minha frente o {{deity_pronoun:teu|Teu}} caminho.",
+          "B": "{{divine_name:SENHOR|Javé}}, leva-me pela {{deity_pronoun:tua|Tua}} justiça, porque os meus inimigos estão me observando; \\q aplana à minha frente a {{deity_pronoun:tua|Tua}} estrada.",
+          "R": "{{divine_name:SENHOR|Javé}}, os meus inimigos estão esperando que eu caia. Guia-me nos {{deity_pronoun:teus|Teus}} caminhos certos. \\q Deixa o {{deity_pronoun:teu|Teu}} caminho reto e livre à minha frente."
         },
         "am": {
-          "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ስለሚጠባበቁኝ በጽድቅህ ምራኝ፤ መንገድህን በፊቴ አቅና።",
-          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ጠላቶቼ ይመለከቱኛልና በጽድቅህ ምራኝ፤ መንገድህን በፊቴ ደልዳላ አድርግ።",
-          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ጠላቶቼ እስክወድቅ ድረስ ይጠብቃሉ። በትክክለኛው መንገድህ ምራኝ። መንገድህን በፊቴ ቀጥተኛና ግልጽ አድርግልኝ።"
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ስለሚጠባበቁኝ በጽድቅህ ምራኝ፤ \\q መንገድህን በፊቴ አቅና።",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ \\q ጠላቶቼ ይመለከቱኛልና በጽድቅህ ምራኝ፤ \\q መንገድህን በፊቴ ደልዳላ አድርግ።",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ጠላቶቼ እስክወድቅ ድረስ ይጠብቃሉ። \\q በትክክለኛው መንገድህ ምራኝ። \\q መንገድህን በፊቴ ቀጥተኛና ግልጽ አድርግልኝ።"
+        },
+        "hi": {
+          "L": "हे {{divine_name:प्रभु|याहवे}}, मेरी घात में लगे लोगों के कारण अपनी धार्मिकता में मेरी अगुवाई कर; \\q मेरे आगे अपना मार्ग सीधा कर।",
+          "B": "हे {{divine_name:प्रभु|याहवे}}, अपनी धार्मिकता में मेरा मार्गदर्शन कर, क्योंकि मेरे शत्रु ताक में हैं; \\q मेरे आगे अपना रास्ता समतल कर।",
+          "R": "हे {{divine_name:प्रभु|याहवे}}, मेरे दुश्मन ताक में हैं कि मैं कब गिरूँ। मुझे अपने सही मार्गों पर ले चल। \\q अपना रास्ता मेरे आगे सीधा और साफ़ कर दे।"
+        },
+        "ru": {
+          "L": "{{divine_name:ГОСПОДИ|Яхве}}, веди меня в {{deity_pronoun:твоей|Твоей}} праведности из-за тех, кто подстерегает меня; \\q сделай прямым передо мной {{deity_pronoun:твой|Твой}} путь.",
+          "B": "{{divine_name:ГОСПОДИ|Яхве}}, направляй меня в {{deity_pronoun:твоей|Твоей}} праведности, потому что враги следят за мной; \\q расчисти {{deity_pronoun:твою|Твою}} дорогу передо мной.",
+          "R": "{{divine_name:ГОСПОДИ|Яхве}}, мои враги ждут, когда я упаду. Веди меня {{deity_pronoun:твоими|Твоими}} правильными путями. \\q Сделай {{deity_pronoun:твою|Твою}} дорогу прямой и ясной передо мной."
+        },
+        "ja": {
+          "L": "{{divine_name:主|ヤハウェ}}よ、わたしを見張る者たちのゆえに、あなたの義のうちにわたしを導いてください。 \\q わたしの前に、あなたの道をまっすぐにしてください。",
+          "B": "{{divine_name:主|ヤハウェ}}よ、わたしの敵が見張っているので、あなたの義によってわたしを導いてください。 \\q わたしの前に、あなたの道を平らにしてください。",
+          "R": "{{divine_name:主|ヤハウェ}}よ、敵が、わたしの倒れるのを待ち構えている。あなたの正しい道に、わたしを導いてください。 \\q わたしの前に、あなたの道をまっすぐに、はっきりと示してください。"
+        },
+        "uk": {
+          "L": "{{divine_name:ГОСПОДИ|Ягве}}, веди мене у {{deity_pronoun:твоїй|Твоїй}} праведності через тих, хто пильнує за мною; \\q вирівняй переді мною {{deity_pronoun:твою|Твою}} дорогу.",
+          "B": "{{divine_name:ГОСПОДИ|Ягве}}, провадь мене у {{deity_pronoun:твоїй|Твоїй}} праведності, бо мої вороги стежать; \\q вирівняй {{deity_pronoun:твою|Твою}} дорогу переді мною.",
+          "R": "{{divine_name:ГОСПОДИ|Ягве}}, мої вороги чекають, коли я впаду. Веди мене {{deity_pronoun:твоїми|Твоїми}} правильними шляхами. \\q Зроби {{deity_pronoun:твою|Твою}} стежку прямою й ясною переді мною."
+        },
+        "id": {
+          "L": "{{divine_name:TUHAN|Yahweh}}, tuntunlah aku dalam kebenaran-{{deity_pronoun:mu|Mu}} karena orang-orang yang mengintai aku; \\q ratakanlah jalan-{{deity_pronoun:mu|Mu}} di depanku.",
+          "B": "{{divine_name:TUHAN|Yahweh}}, pimpinlah aku dalam kebenaran-{{deity_pronoun:mu|Mu}}, sebab musuh-musuhku mengintai; \\q ratakanlah jalan-{{deity_pronoun:mu|Mu}} di depanku.",
+          "R": "{{divine_name:TUHAN|Yahweh}}, musuh-musuhku sedang menunggu aku jatuh. Tuntunlah aku di jalan-jalan-{{deity_pronoun:mu|Mu}} yang benar. \\q Buatlah jalan-{{deity_pronoun:mu|Mu}} lurus dan jelas di depanku."
         }
       },
       "decisions": [
@@ -1522,6 +2228,29 @@
           "reason": "Readable says what the enemies are watching for (m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190050090031",
+            "o190050090032",
+            "o190050090033"
+          ],
+          "choice": "tsedaqah of God \"義\" (L, B), Readable by sense (\"あなたの正しい道\"); for the Psalter",
+          "alternatives": [
+            "正義"
+          ],
+          "reason": "義 is the key term for righteousness; m2 reads \"as you are righteous\", which Readable shows in a plain phrase as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1558,44 +2287,69 @@
       "literal_gloss": "For there is not in his mouth [anything] reliable; their inward part [is] destruction; an open grave [is] their throat; their tongue they make smooth.",
       "renderings": {
         "en": {
-          "L": "For there is nothing reliable in their mouth; their inner self [is] destruction; an open grave [is] their throat; their tongue they make smooth.",
-          "B": "Not one thing they say is reliable; deep inside them is only ruin. Their throats are graves left open, and their tongues are smooth with flattery.",
-          "R": "You cannot trust anything they say. Inside, they only want to destroy. What comes out of their mouths is deadly, like an open grave. They say nice things they do not mean."
+          "L": "For there is nothing reliable in their mouth; their inner self [is] destruction; \\q an open grave [is] their throat; \\q their tongue they make smooth.",
+          "B": "Not one thing they say is reliable; deep inside them is only ruin. \\q Their throats are graves left open, \\q and their tongues are smooth with flattery.",
+          "R": "You cannot trust anything they say. Inside, they only want to destroy. \\q What comes out of their mouths is deadly, like an open grave. \\q They say nice things they do not mean."
         },
         "fr": {
-          "L": "Car il n’y a rien de sûr dans leur bouche ; leur intérieur [est] ruine ; un tombeau ouvert [est] leur gosier ; leur langue, ils [la] rendent lisse.",
-          "B": "Rien de ce qu’ils disent n’est sûr ; au fond d’eux il n’y a que ruine. Leur gorge est une tombe ouverte, et leur langue est douce de flatteries.",
-          "R": "On ne peut se fier à rien de ce qu’ils disent. Au fond, ils ne veulent que détruire. Ce qui sort de leur bouche est mortel, comme une tombe ouverte. Ils disent des choses gentilles qu’ils ne pensent pas."
+          "L": "Car il n’y a rien de sûr dans leur bouche ; leur intérieur [est] ruine ; \\q un tombeau ouvert [est] leur gosier ; \\q leur langue, ils [la] rendent lisse.",
+          "B": "Rien de ce qu’ils disent n’est sûr ; au fond d’eux il n’y a que ruine. \\q Leur gorge est une tombe ouverte, \\q et leur langue est douce de flatteries.",
+          "R": "On ne peut se fier à rien de ce qu’ils disent. Au fond, ils ne veulent que détruire. \\q Ce qui sort de leur bouche est mortel, comme une tombe ouverte. \\q Ils disent des choses gentilles qu’ils ne pensent pas."
         },
         "sw": {
-          "L": "Kwa maana hakuna [kitu] cha kuaminika kinywani mwao; ndani yao [ni] maangamizi; kaburi lililo wazi [ni] koo lao; ulimi wao wanaulainisha.",
-          "B": "Hakuna neno moja wanalosema linaloaminika; ndani yao kuna maangamizi tu. Koo zao ni makaburi yaliyoachwa wazi, na ndimi zao ni laini kwa kujipendekeza.",
-          "R": "Huwezi kuamini chochote wanachosema. Ndani yao wanataka tu kuharibu. Maneno yanayotoka vinywani mwao ni ya mauti, kama kaburi lililo wazi. Wanasema maneno matamu wasiyoyamaanisha."
+          "L": "Kwa maana hakuna [kitu] cha kuaminika kinywani mwao; ndani yao [ni] maangamizi; \\q kaburi lililo wazi [ni] koo lao; \\q ulimi wao wanaulainisha.",
+          "B": "Hakuna neno moja wanalosema linaloaminika; ndani yao kuna maangamizi tu. \\q Koo zao ni makaburi yaliyoachwa wazi, \\q na ndimi zao ni laini kwa kujipendekeza.",
+          "R": "Huwezi kuamini chochote wanachosema. Ndani yao wanataka tu kuharibu. Maneno yanayotoka vinywani mwao ni ya mauti, \\q kama kaburi lililo wazi. \\q Wanasema maneno matamu wasiyoyamaanisha."
         },
         "es": {
-          "L": "Porque no hay en su boca [nada] fiable; su interior [es] destrucción; su garganta [es] un sepulcro abierto; su lengua hacen suave.",
-          "B": "Nada de lo que dicen es confiable; en su interior solo hay ruina. Sus gargantas son tumbas abiertas, y sus lenguas son suaves de tanto halagar.",
-          "R": "No se puede confiar en nada de lo que dicen. Por dentro solo quieren destruir. Lo que sale de su boca es mortal, como una tumba abierta. Dicen cosas bonitas que no sienten."
+          "L": "Porque no hay en su boca [nada] fiable; su interior [es] destrucción; \\q su garganta [es] un sepulcro abierto; \\q su lengua hacen suave.",
+          "B": "Nada de lo que dicen es confiable; en su interior solo hay ruina. \\q Sus gargantas son tumbas abiertas, \\q y sus lenguas son suaves de tanto halagar.",
+          "R": "No se puede confiar en nada de lo que dicen. Por dentro solo quieren destruir. \\q Lo que sale de su boca es mortal, como una tumba abierta. \\q Dicen cosas bonitas que no sienten."
         },
         "vi": {
-          "L": "Vì trong miệng chúng không có [điều gì] đáng tin cậy; lòng dạ chúng [là] sự hủy hoại; cổ họng chúng [là] mồ mả mở toang; lưỡi chúng, chúng làm cho trơn tru.",
-          "B": "Chẳng một lời nào chúng nói là đáng tin; trong lòng chúng chỉ toàn sự hủy hoại. Cổ họng chúng là mồ mả để ngỏ, và lưỡi chúng trơn tru những lời nịnh hót.",
-          "R": "Không thể tin bất cứ điều gì chúng nói. Bên trong, chúng chỉ muốn hủy diệt. Những gì ra từ miệng chúng đều gây chết chóc, như một ngôi mộ mở toang. Chúng nói những lời ngọt ngào mà lòng không thật."
+          "L": "Vì trong miệng chúng không có [điều gì] đáng tin cậy; lòng dạ chúng [là] sự hủy hoại; \\q cổ họng chúng [là] mồ mả mở toang; \\q lưỡi chúng, chúng làm cho trơn tru.",
+          "B": "Chẳng một lời nào chúng nói là đáng tin; trong lòng chúng chỉ toàn sự hủy hoại. \\q Cổ họng chúng là mồ mả để ngỏ, \\q và lưỡi chúng trơn tru những lời nịnh hót.",
+          "R": "Không thể tin bất cứ điều gì chúng nói. Bên trong, chúng chỉ muốn hủy diệt. Những gì ra từ miệng chúng đều gây chết chóc, \\q như một ngôi mộ mở toang. \\q Chúng nói những lời ngọt ngào mà lòng không thật."
         },
         "ko": {
-          "L": "참으로 그들의 입에는 믿을 만한 것이 없고, 그들의 속은 파멸이며, 그들의 목구멍은 열린 무덤이고, 그들은 그들의 혀를 매끄럽게 합니다.",
-          "B": "그들이 하는 말은 하나도 믿을 수 없고, 그들의 속에는 파멸뿐입니다. 그들의 목구멍은 열어 놓은 무덤이고, 그들의 혀는 아첨으로 매끄럽습니다.",
-          "R": "그들이 하는 말은 아무것도 믿을 수 없습니다. 그들은 속으로 망가뜨릴 생각만 합니다. 그들의 입에서 나오는 말은 열린 무덤처럼 죽음을 부릅니다. 그들은 마음에도 없는 좋은 말을 합니다."
+          "L": "참으로 그들의 입에는 믿을 만한 것이 없고, 그들의 속은 파멸이며, \\q 그들의 목구멍은 열린 무덤이고, \\q 그들은 그들의 혀를 매끄럽게 합니다.",
+          "B": "그들이 하는 말은 하나도 믿을 수 없고, 그들의 속에는 파멸뿐입니다. \\q 그들의 목구멍은 열어 놓은 무덤이고, \\q 그들의 혀는 아첨으로 매끄럽습니다.",
+          "R": "그들이 하는 말은 아무것도 믿을 수 없습니다. 그들은 속으로 망가뜨릴 생각만 합니다. \\q 그들의 입에서 나오는 말은 열린 무덤처럼 죽음을 부릅니다. \\q 그들은 마음에도 없는 좋은 말을 합니다."
         },
         "pt": {
-          "L": "Porque não há nada confiável na boca deles; o seu interior [é] destruição; a garganta deles [é] um túmulo aberto; a sua língua eles tornam lisa.",
-          "B": "Não há uma só coisa confiável no que dizem; por dentro só há ruína. A garganta deles é um túmulo deixado aberto, e a língua deles é lisa de bajulação.",
-          "R": "Não dá para confiar em nada do que eles dizem. Por dentro, só querem destruir. O que sai da boca deles é mortal, como um túmulo aberto. Eles dizem coisas bonitas que não sentem."
+          "L": "Porque não há nada confiável na boca deles; o seu interior [é] destruição; \\q a garganta deles [é] um túmulo aberto; \\q a sua língua eles tornam lisa.",
+          "B": "Não há uma só coisa confiável no que dizem; por dentro só há ruína. \\q A garganta deles é um túmulo deixado aberto, \\q e a língua deles é lisa de bajulação.",
+          "R": "Não dá para confiar em nada do que eles dizem. Por dentro, só querem destruir. \\q O que sai da boca deles é mortal, como um túmulo aberto. \\q Eles dizem coisas bonitas que não sentem."
         },
         "am": {
-          "L": "በአፋቸው የሚታመን ነገር የለምና፤ ውስጣቸው ጥፋት [ነው]፤ ጉሮሮአቸው የተከፈተ መቃብር [ነው]፤ በምላሳቸው ያለሰልሳሉ።",
-          "B": "ከሚናገሩት አንዱ እንኳ የሚታመን አይደለም፤ ውስጣቸው ጥፋት ብቻ ነው። ጉሮሮአቸው የተከፈተ መቃብር ነው፤ ምላሳቸውም በሽንገላ የለሰለሰ ነው።",
-          "R": "የሚናገሩትን ምንም ማመን አይቻልም። በውስጣቸው ማጥፋትን ብቻ ይፈልጋሉ። ከአፋቸው የሚወጣው እንደ ተከፈተ መቃብር ገዳይ ነው። የማያስቡትን መልካም ቃል ይናገራሉ።"
+          "L": "በአፋቸው የሚታመን ነገር የለምና፤ ውስጣቸው ጥፋት [ነው]፤ \\q ጉሮሮአቸው የተከፈተ መቃብር [ነው]፤ \\q በምላሳቸው ያለሰልሳሉ።",
+          "B": "ከሚናገሩት አንዱ እንኳ የሚታመን አይደለም፤ ውስጣቸው ጥፋት ብቻ ነው። \\q ጉሮሮአቸው የተከፈተ መቃብር ነው፤ \\q ምላሳቸውም በሽንገላ የለሰለሰ ነው።",
+          "R": "የሚናገሩትን ምንም ማመን አይቻልም። በውስጣቸው ማጥፋትን ብቻ ይፈልጋሉ። \\q ከአፋቸው የሚወጣው እንደ ተከፈተ መቃብር ገዳይ ነው። \\q የማያስቡትን መልካም ቃል ይናገራሉ።"
+        },
+        "hi": {
+          "L": "क्योंकि उनके मुँह में कुछ भी भरोसे योग्य नहीं; उनका भीतरी भाग विनाश [है]; \\q उनका गला खुली हुई क़ब्र [है]; \\q वे अपनी जीभ से चिकनी-चुपड़ी बातें करते हैं।",
+          "B": "उनकी कही एक भी बात भरोसे की नहीं; उनके भीतर केवल विनाश है। \\q उनका गला खुली छोड़ी हुई क़ब्र है, \\q और उनकी जीभ चापलूसी से चिकनी है।",
+          "R": "उनकी किसी बात पर भरोसा नहीं किया जा सकता। भीतर से वे केवल नाश करना चाहते हैं। \\q उनके मुँह से जो निकलता है, वह खुली क़ब्र की तरह घातक है। \\q वे ऐसी मीठी बातें कहते हैं जो उनके मन में नहीं होतीं।"
+        },
+        "ru": {
+          "L": "Ведь в их устах нет [ничего] надёжного; нутро их — погибель; \\q гортань их — открытый гроб; \\q язык свой они делают гладким.",
+          "B": "Ни одному их слову нельзя верить; глубоко внутри у них одна погибель. \\q Их горло — открытая могила, \\q а языки гладки от лести.",
+          "R": "Ничему из того, что они говорят, нельзя верить. Внутри они хотят только губить. \\q То, что они говорят, смертельно, как смрад из открытой могилы. \\q Они говорят приятное, но думают иначе."
+        },
+        "ja": {
+          "L": "まことに、彼の口には確かなものがない。 \\q 彼らの内側は破滅であり、彼らの喉は開かれた墓。 \\q 彼らは舌を滑らかにする。",
+          "B": "彼らの言うことには、一つとして確かなものがない。その心の奥にあるのは滅びだけだ。 \\q 彼らの喉は開いたままの墓、 \\q その舌はへつらいで滑らかだ。",
+          "R": "彼らの言うことは、何一つ信用できない。心の中では、滅ぼすことしか考えていない。 \\q その口から出る言葉は、開いた墓のように人を死なせる。 \\q 心にもない、うまいことばかりを言う。"
+        },
+        "uk": {
+          "L": "Бо немає в їхніх устах нічого певного; їхнє нутро — загибель; \\q відкрита могила — їхня гортань; \\q своїм язиком вони лестять.",
+          "B": "Жодне їхнє слово не варте довіри; усередині в них — лише руїна. \\q Їхні горлянки — розкриті могили, \\q а язики гладенькі від лестощів.",
+          "R": "Нічому, що вони кажуть, не можна вірити. У душі вони хочуть лише руйнувати. \\q Те, що виходить з їхніх уст, смертельне, як відкрита могила. \\q Вони кажуть приємне, але не мають цього на думці."
+        },
+        "id": {
+          "L": "Sebab tidak ada yang dapat dipercaya di dalam mulut mereka; batin mereka [adalah] kebinasaan; \\q kubur yang terbuka [adalah] kerongkongan mereka; \\q lidah mereka mereka licinkan.",
+          "B": "Tidak satu pun perkataan mereka dapat dipercaya; di dalam hati mereka hanya ada kebinasaan. \\q Kerongkongan mereka adalah kubur yang terbuka, \\q dan lidah mereka licin oleh rayuan.",
+          "R": "Kalian tidak dapat memercayai apa pun yang mereka katakan. Di dalam hati, mereka hanya ingin membinasakan. \\q Apa yang keluar dari mulut mereka mematikan, seperti kubur yang terbuka. \\q Mereka mengucapkan kata-kata manis yang tidak sungguh-sungguh."
         }
       },
       "decisions": [
@@ -1726,6 +2480,117 @@
           "reason": "Paul quotes the Greek translation, which agrees with the Hebrew on the open grave but has \"deceive\" for the Hebrew \"make smooth\" (meaning decision m4); the psalm keeps the Hebrew.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190050100071",
+            "o190050100081",
+            "o190050100091",
+            "o190050100111"
+          ],
+          "choice": "\"उनका गला खुली हुई क़ब्र [है]\" (L), \"उनका गला खुली छोड़ी हुई क़ब्र है\" (B), \"खुली क़ब्र\" (R); \"चिकनी-चुपड़ी बातें\", \"चापलूसी\"",
+          "alternatives": [
+            "\"वे अपनी जीभों से छल करते हैं\", as Romans 3:13"
+          ],
+          "reason": "Romans 3:13 quotes this line, and the Hindi keeps its wording for the open grave at Literal and Balanced and its \"खुली क़ब्र\" at Readable. Where Romans follows the Greek translation (\"they deceive\"), the Hindi follows the Hebrew: they make their tongue smooth, they flatter (meaning m4).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190050100071",
+            "o190050100081",
+            "o190050100091",
+            "o190050100112"
+          ],
+          "choice": "the words of Romans 3:13 for the open grave; \"делают гладким\", \"гладки от лести\" for the tongue",
+          "alternatives": [
+            "языками своими они обманывают (Romans 3:13)"
+          ],
+          "reason": "Romans 3:13 quotes the line, so Russian keeps its wording for the throat at each level (гортань их — открытый гроб; их горло — открытая могила; смрад из открытой могилы). For the tongue Romans follows the Greek translation, \"they deceive\"; the Hebrew says they make it smooth, that is, they flatter (m4), and Russian translates the Hebrew.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190050100033"
+          ],
+          "choice": "их устах, они (plural)",
+          "alternatives": [
+            "в его устах"
+          ],
+          "reason": "\"His mouth\" means the mouth of each of them (m1), so every level says \"их\", as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190050100071",
+            "o190050100081",
+            "o190050100091",
+            "o190050100101",
+            "o190050100111"
+          ],
+          "choice": "qever-patuach gronam \"彼らの喉は開かれた墓\" (L), \"彼らの喉は開いたままの墓\" (B), as Romans 3:13; the tongue clause follows the Hebrew (\"make smooth\"), not Romans' 欺く",
+          "alternatives": [
+            "舌で欺く (Romans 3:13)"
+          ],
+          "reason": "Paul quotes the Greek translation; where it reads as the Hebrew (the open grave) the Japanese of Romans 3:13 is kept, and where it differs (the Greek \"they deceive\") the Hebrew is followed.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190050100033"
+          ],
+          "choice": "befihu \"彼の口\" (L) kept singular beside 彼らの, as the Hebrew",
+          "alternatives": [],
+          "reason": "m1: the mouth of each of them; Balanced and Readable say 彼らの言うこと as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1762,44 +2627,69 @@
       "literal_gloss": "Hold them guilty, God; may they fall by their schemes; for the multitude of their transgressions drive them out, for they have rebelled against you.",
       "renderings": {
         "en": {
-          "L": "Hold them guilty, God; let them fall by their own counsels; for the multitude of their transgressions thrust them out, for they have rebelled against {{deity_pronoun:you|You}}.",
-          "B": "Hold them to account, God! Let them be tripped up by their own schemes. Thrust them away for all their many crimes, since it is against {{deity_pronoun:you|You}} that they have rebelled.",
-          "R": "God, make them pay for what they have done! Let their own evil plans make them fall. Push them away because they have sinned so many times. They have turned against {{deity_pronoun:you|You}}."
+          "L": "Hold them guilty, God; let them fall by their own counsels; \\q for the multitude of their transgressions thrust them out, \\q for they have rebelled against {{deity_pronoun:you|You}}.",
+          "B": "Hold them to account, God! Let them be tripped up by their own schemes. \\q Thrust them away for all their many crimes, \\q since it is against {{deity_pronoun:you|You}} that they have rebelled.",
+          "R": "God, make them pay for what they have done! Let their own evil plans make them fall. \\q Push them away because they have sinned so many times. \\q They have turned against {{deity_pronoun:you|You}}."
         },
         "fr": {
-          "L": "Déclare-les coupables, Dieu ; qu’ils tombent par leurs propres desseins ; pour la multitude de leurs transgressions, chasse-les, car ils se sont rebellés contre {{deity_pronoun:toi|Toi}}.",
-          "B": "Fais-leur rendre des comptes, Dieu ! Qu’ils soient pris au piège de leurs propres complots. Rejette-les pour leurs crimes si nombreux, puisque c’est contre {{deity_pronoun:toi|Toi}} qu’ils se sont révoltés.",
-          "R": "Dieu, fais-leur payer ce qu’ils ont fait ! Que leurs propres plans mauvais les fassent tomber. Repousse-les, parce qu’ils ont péché tant de fois. Ils se sont tournés contre {{deity_pronoun:toi|Toi}}."
+          "L": "Déclare-les coupables, Dieu ; qu’ils tombent par leurs propres desseins ; \\q pour la multitude de leurs transgressions, chasse-les, \\q car ils se sont rebellés contre {{deity_pronoun:toi|Toi}}.",
+          "B": "Fais-leur rendre des comptes, Dieu ! Qu’ils soient pris au piège de leurs propres complots. \\q Rejette-les pour leurs crimes si nombreux, \\q puisque c’est contre {{deity_pronoun:toi|Toi}} qu’ils se sont révoltés.",
+          "R": "Dieu, fais-leur payer ce qu’ils ont fait ! Que leurs propres plans mauvais les fassent tomber. \\q Repousse-les, parce qu’ils ont péché tant de fois. \\q Ils se sont tournés contre {{deity_pronoun:toi|Toi}}."
         },
         "sw": {
-          "L": "Uwahesabu kuwa na hatia, Ee Mungu; waanguke kwa mashauri yao wenyewe; kwa wingi wa makosa yao uwafukuze, kwa maana wameasi dhidi {{deity_pronoun:yako|Yako}}.",
-          "B": "Uwawajibishe, Ee Mungu! Wajikwae kwa njama zao wenyewe. Uwatupe mbali kwa sababu ya makosa yao mengi, kwa kuwa ni {{deity_pronoun:wewe|Wewe}} waliyekuasi.",
-          "R": "Mungu, uwalipize kwa yale waliyoyatenda! Mipango yao miovu iwaangushe. Uwasukume mbali kwa sababu wametenda dhambi mara nyingi sana. Wamekuasi {{deity_pronoun:wewe|Wewe}}."
+          "L": "Uwahesabu kuwa na hatia, \\q Ee Mungu; waanguke kwa mashauri yao wenyewe; \\q kwa wingi wa makosa yao uwafukuze, \\q kwa maana wameasi dhidi {{deity_pronoun:yako|Yako}}.",
+          "B": "Uwawajibishe, Ee Mungu! \\q Wajikwae kwa njama zao wenyewe. \\q Uwatupe mbali kwa sababu ya makosa yao mengi, \\q kwa kuwa ni {{deity_pronoun:wewe|Wewe}} waliyekuasi.",
+          "R": "Mungu, uwalipize kwa yale waliyoyatenda! \\q Mipango yao miovu iwaangushe. \\q Uwasukume mbali kwa sababu wametenda dhambi mara nyingi sana. \\q Wamekuasi {{deity_pronoun:wewe|Wewe}}."
         },
         "es": {
-          "L": "Decláralos culpables, oh Dios; que caigan por sus propios consejos; por la multitud de sus transgresiones échalos fuera, porque se han rebelado contra {{deity_pronoun:ti|Ti}}.",
-          "B": "¡Pídeles cuentas, oh Dios! Que sus propias intrigas los hagan tropezar. Recházalos por todos sus muchos crímenes, porque contra {{deity_pronoun:ti|Ti}} se han rebelado.",
-          "R": "Dios, ¡hazlos pagar por lo que han hecho! Que sus propios planes malvados los hagan caer. Échalos lejos, porque han pecado muchísimas veces. Se han puesto en contra de {{deity_pronoun:ti|Ti}}."
+          "L": "Decláralos culpables, oh Dios; que caigan por sus propios consejos; \\q por la multitud de sus transgresiones échalos fuera, \\q porque se han rebelado contra {{deity_pronoun:ti|Ti}}.",
+          "B": "¡Pídeles cuentas, oh Dios! Que sus propias intrigas los hagan tropezar. \\q Recházalos por todos sus muchos crímenes, \\q porque contra {{deity_pronoun:ti|Ti}} se han rebelado.",
+          "R": "Dios, ¡hazlos pagar por lo que han hecho! Que sus propios planes malvados los hagan caer. \\q Échalos lejos, porque han pecado muchísimas veces. \\q Se han puesto en contra de {{deity_pronoun:ti|Ti}}."
         },
         "vi": {
-          "L": "Xin định tội chúng, lạy Đức Chúa Trời; nguyện chúng ngã xuống bởi chính mưu kế của chúng; vì vô số vi phạm của chúng, xin đuổi chúng ra, vì chúng đã phản nghịch {{deity_pronoun:ngài|Ngài}}.",
-          "B": "Lạy Đức Chúa Trời, xin bắt chúng chịu tội! Nguyện chúng vấp ngã vì chính mưu kế của mình. Xin xua đuổi chúng vì vô số tội ác của chúng, vì chính {{deity_pronoun:ngài|Ngài}} là Đấng chúng đã phản nghịch.",
-          "R": "Lạy Đức Chúa Trời, xin bắt chúng trả giá cho những gì chúng đã làm! Nguyện chính những mưu ác của chúng làm chúng ngã. Xin xua đuổi chúng đi vì chúng đã phạm tội quá nhiều lần. Chúng đã chống lại {{deity_pronoun:ngài|Ngài}}."
+          "L": "Xin định tội chúng, lạy Đức Chúa Trời; \\q nguyện chúng ngã xuống bởi chính mưu kế của chúng; \\q vì vô số vi phạm của chúng, xin đuổi chúng ra, \\q vì chúng đã phản nghịch {{deity_pronoun:ngài|Ngài}}.",
+          "B": "Lạy Đức Chúa Trời, xin bắt chúng chịu tội! \\q Nguyện chúng vấp ngã vì chính mưu kế của mình. \\q Xin xua đuổi chúng vì vô số tội ác của chúng, \\q vì chính {{deity_pronoun:ngài|Ngài}} là Đấng chúng đã phản nghịch.",
+          "R": "Lạy Đức Chúa Trời, \\q xin bắt chúng trả giá cho những gì chúng đã làm! \\q Nguyện chính những mưu ác của chúng làm chúng ngã. Xin xua đuổi chúng đi vì chúng đã phạm tội quá nhiều lần. \\q Chúng đã chống lại {{deity_pronoun:ngài|Ngài}}."
         },
         "ko": {
-          "L": "하나님, 그들에게 죄를 물으십시오. 그들이 자기 꾀에 넘어지게 하십시오. 그들의 많은 허물 때문에 그들을 쫓아내십시오. 그들이 주님께 반역했기 때문입니다.",
-          "B": "하나님, 그들에게 책임을 물으십시오! 그들이 자기 음모에 걸려 넘어지게 하십시오. 그 많은 죄 때문에 그들을 내쫓으십시오. 그들이 거역한 분은 바로 주님이십니다.",
-          "R": "하나님, 그들이 한 일의 대가를 치르게 해 주십시오! 그들의 악한 계획이 그들을 넘어뜨리게 하십시오. 그들이 수없이 죄를 지었으니 그들을 멀리 쫓아내십시오. 그들은 주님께 등을 돌렸습니다."
+          "L": "하나님, 그들에게 죄를 물으십시오. \\q 그들이 자기 꾀에 넘어지게 하십시오. \\q 그들의 많은 허물 때문에 그들을 쫓아내십시오. \\q 그들이 주님께 반역했기 때문입니다.",
+          "B": "하나님, 그들에게 책임을 물으십시오! \\q 그들이 자기 음모에 걸려 넘어지게 하십시오. \\q 그 많은 죄 때문에 그들을 내쫓으십시오. \\q 그들이 거역한 분은 바로 주님이십니다.",
+          "R": "하나님, 그들이 한 일의 대가를 치르게 해 주십시오! \\q 그들의 악한 계획이 그들을 넘어뜨리게 하십시오. \\q 그들이 수없이 죄를 지었으니 그들을 멀리 쫓아내십시오. \\q 그들은 주님께 등을 돌렸습니다."
         },
         "pt": {
-          "L": "Trata-os como culpados, ó Deus; que caiam pelas suas próprias tramas; pela multidão das suas transgressões lança-os fora, porque se revoltaram contra {{deity_pronoun:ti|Ti}}.",
-          "B": "Pede contas a eles, ó Deus! Que tropecem nas suas próprias tramas. Lança-os longe por todos os seus muitos crimes, já que foi contra {{deity_pronoun:ti|Ti}} que se rebelaram.",
-          "R": "Deus, faz que eles paguem pelo que fizeram! Que os seus próprios planos maus os façam cair. Manda-os para longe, porque pecaram muitas vezes. Eles se voltaram contra {{deity_pronoun:ti|Ti}}."
+          "L": "Trata-os como culpados, ó Deus; que caiam pelas suas próprias tramas; \\q pela multidão das suas transgressões lança-os fora, \\q porque se revoltaram contra {{deity_pronoun:ti|Ti}}.",
+          "B": "Pede contas a eles, ó Deus! Que tropecem nas suas próprias tramas. \\q Lança-os longe por todos os seus muitos crimes, \\q já que foi contra {{deity_pronoun:ti|Ti}} que se rebelaram.",
+          "R": "Deus, faz que eles paguem pelo que fizeram! Que os seus próprios planos maus os façam cair. \\q Manda-os para longe, porque pecaram muitas vezes. \\q Eles se voltaram contra {{deity_pronoun:ti|Ti}}."
         },
         "am": {
-          "L": "እግዚአብሔር ሆይ፣ በደለኞች አድርጋቸው፤ በራሳቸው ምክር ይውደቁ፤ ስለ መተላለፋቸው ብዛት አውጥተህ ጣላቸው፤ በአንተ ላይ ዐምፀዋልና።",
-          "B": "እግዚአብሔር ሆይ፣ ተጠያቂ አድርጋቸው! በገዛ ሤራቸው ይሰናከሉ። ስለ በደላቸው ብዛት ከፊትህ አስወግዳቸው፤ ያመፁት በአንተ ላይ ነውና።",
-          "R": "እግዚአብሔር ሆይ፣ ለሠሩት ሥራ ዋጋቸውን ስጣቸው! ክፉ ዕቅዳቸው ራሳቸውን ይጣላቸው። ብዙ ጊዜ ኃጢአት ስለ ሠሩ ከአንተ አርቃቸው። በአንተ ላይ ተነሥተዋል።"
+          "L": "እግዚአብሔር ሆይ፣ \\q በደለኞች አድርጋቸው፤ \\q በራሳቸው ምክር ይውደቁ፤ ስለ መተላለፋቸው ብዛት አውጥተህ ጣላቸው፤ \\q በአንተ ላይ ዐምፀዋልና።",
+          "B": "እግዚአብሔር ሆይ፣ \\q ተጠያቂ አድርጋቸው! በገዛ ሤራቸው ይሰናከሉ። \\q ስለ በደላቸው ብዛት ከፊትህ አስወግዳቸው፤ \\q ያመፁት በአንተ ላይ ነውና።",
+          "R": "እግዚአብሔር ሆይ፣ \\q ለሠሩት ሥራ ዋጋቸውን ስጣቸው! \\q ክፉ ዕቅዳቸው ራሳቸውን ይጣላቸው። ብዙ ጊዜ ኃጢአት ስለ ሠሩ ከአንተ አርቃቸው። \\q በአንተ ላይ ተነሥተዋል።"
+        },
+        "hi": {
+          "L": "हे परमेश्वर, उन्हें दोषी ठहरा; वे अपनी ही युक्तियों से गिर पड़ें; \\q उनके अपराधों की बहुतायत के कारण उन्हें निकाल दे, \\q क्योंकि उन्होंने तुझसे विद्रोह किया है।",
+          "B": "हे परमेश्वर, उनसे हिसाब ले! वे अपनी ही चालों में फँसकर गिरें। \\q उनके बहुत-से अपराधों के कारण उन्हें दूर धकेल दे, \\q क्योंकि उन्होंने तुझी से विद्रोह किया है।",
+          "R": "हे परमेश्वर, उन्हें उनके किए की सज़ा दे! उनकी अपनी बुरी योजनाएँ ही उन्हें गिरा दें। \\q उन्हें दूर धकेल दे, क्योंकि उन्होंने बहुत बार पाप किया है। \\q वे तेरे विरुद्ध हो गए हैं।"
+        },
+        "ru": {
+          "L": "Признай их виновными, Боже; пусть падут они из-за собственных замыслов; \\q за множество их преступлений изгони их, \\q потому что они восстали против {{deity_pronoun:тебя|Тебя}}.",
+          "B": "Призови их к ответу, Боже! Пусть их собственные козни собьют их с ног. \\q Отбрось их прочь за все их многочисленные преступления, \\q ведь они восстали именно против {{deity_pronoun:тебя|Тебя}}.",
+          "R": "Боже, пусть они заплатят за то, что сделали! \\q Пусть их собственные злые планы приведут их к падению. \\q Прогони их, потому что они грешили так много раз. Они восстали против {{deity_pronoun:тебя|Тебя}}."
+        },
+        "ja": {
+          "L": "神よ、彼らを罪ある者としてください。彼らが自分たちの計りごとによって倒れるように。 \\q その背きの多さのゆえに、彼らを追い払ってください。 \\q 彼らはあなたに逆らったからだ。",
+          "B": "神よ、彼らに罪の責めを負わせてください！彼らが自分たちの企てによってつまずくように。 \\q その多くの背きのゆえに、彼らを追い払ってください。 \\q 彼らが逆らったのは、あなたに対してなのだから。",
+          "R": "神よ、彼らがしたことの報いを、彼らに受けさせてください！ \\q 自分たちの悪い計画のせいで、倒れるように。何度も罪を犯したのだから、彼らを追い払ってください。 \\q 彼らは、あなたに背いたのだ。"
+        },
+        "uk": {
+          "L": "Визнай їх винними, Боже; нехай упадуть через власні задуми; \\q за безліч їхніх переступів відкинь їх, \\q бо вони збунтувалися проти {{deity_pronoun:тебе|Тебе}}.",
+          "B": "Притягни їх до відповіді, Боже! Нехай спіткнуться на власних підступах. \\q Відкинь їх за всі їхні численні злочини, \\q бо саме проти {{deity_pronoun:тебе|Тебе}} вони збунтувалися.",
+          "R": "Боже, нехай вони відповідають за те, що зробили! \\q Нехай їхні власні злі плани зібʼють їх з ніг. \\q Відштовхни їх, бо вони так багато разів грішили. Вони повстали проти {{deity_pronoun:тебе|Тебе}}."
+        },
+        "id": {
+          "L": "Nyatakanlah mereka bersalah, ya Allah; biarlah mereka jatuh oleh rancangan mereka sendiri; \\q karena banyaknya pelanggaran mereka buanglah mereka, \\q sebab mereka telah memberontak terhadap {{deity_pronoun:engkau|Engkau}}.",
+          "B": "Tuntutlah pertanggungjawaban mereka, ya Allah! Biarlah mereka tersandung oleh rencana jahat mereka sendiri. \\q Buanglah mereka karena banyaknya kejahatan mereka, \\q sebab terhadap {{deity_pronoun:engkau|Engkau}}lah mereka memberontak.",
+          "R": "Ya Allah, hukumlah mereka atas apa yang telah mereka lakukan! Biarlah rencana jahat mereka sendiri membuat mereka jatuh. \\q Usirlah mereka karena mereka sudah begitu sering berbuat dosa. \\q Mereka sudah melawan {{deity_pronoun:engkau|Engkau}}."
         }
       },
       "decisions": [
@@ -1866,6 +2756,26 @@
           "reason": "Readable says what holding them guilty means (m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190050110061",
+            "o190050110091"
+          ],
+          "choice": "pesha' \"背き\" (L, B), Readable by sense; marah \"逆らう\" (L, B), \"背く\" (R)",
+          "alternatives": [],
+          "reason": "As Lamentations and Job: pesha' is open revolt (m3), kept apart from chet' (罪) and 'avon (咎).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1905,44 +2815,69 @@
       "literal_gloss": "And let all who take refuge in you rejoice; forever let them shout for joy, and may you shelter them, and let those who love your name exult in you.",
       "renderings": {
         "en": {
-          "L": "But let all who take refuge in {{deity_pronoun:you|You}} rejoice; forever let them shout for joy; and may {{deity_pronoun:you|You}} shelter them, and let those who love {{deity_pronoun:your|Your}} name exult in {{deity_pronoun:you|You}}.",
-          "B": "But let everyone who makes {{deity_pronoun:you|You}} their refuge be glad and sing for joy forever. Keep them under {{deity_pronoun:your|Your}} cover, and those who love {{deity_pronoun:your|Your}} name will find their joy in {{deity_pronoun:you|You}}.",
-          "R": "But let everyone who runs to {{deity_pronoun:you|You}} for safety be glad. Let them sing for joy forever. Protect them, so that those who love {{deity_pronoun:you|You}} will be happy because of {{deity_pronoun:you|You}}."
+          "L": "But let all who take refuge in {{deity_pronoun:you|You}} rejoice; forever let them shout for joy; \\q and may {{deity_pronoun:you|You}} shelter them, and let those who love {{deity_pronoun:your|Your}} name exult in {{deity_pronoun:you|You}}.",
+          "B": "But let everyone who makes {{deity_pronoun:you|You}} their refuge be glad and sing for joy forever. \\q Keep them under {{deity_pronoun:your|Your}} cover, and those who love {{deity_pronoun:your|Your}} name will find their joy in {{deity_pronoun:you|You}}.",
+          "R": "But let everyone who runs to {{deity_pronoun:you|You}} for safety be glad. Let them sing for joy forever. \\q Protect them, so that those who love {{deity_pronoun:you|You}} will be happy because of {{deity_pronoun:you|You}}."
         },
         "fr": {
-          "L": "Mais que se réjouissent tous ceux qui se réfugient en {{deity_pronoun:toi|Toi}} ; pour toujours, qu’ils crient de joie ; et puisses-{{deity_pronoun:tu|Tu}} les abriter, et qu’exultent en {{deity_pronoun:toi|Toi}} ceux qui aiment {{deity_pronoun:ton|Ton}} nom !",
-          "B": "Mais que tous ceux qui font de {{deity_pronoun:toi|Toi}} leur refuge soient dans la joie et chantent de bonheur pour toujours. Garde-les à {{deity_pronoun:ton|Ton}} abri, et ceux qui aiment {{deity_pronoun:ton|Ton}} nom trouveront leur joie en {{deity_pronoun:toi|Toi}}.",
-          "R": "Mais que tous ceux qui courent se mettre à l’abri auprès de {{deity_pronoun:toi|Toi}} soient heureux. Qu’ils chantent de joie pour toujours. Protège-les, pour que ceux qui {{deity_pronoun:t’|T’}}aiment soient heureux grâce à {{deity_pronoun:toi|Toi}}."
+          "L": "Mais que se réjouissent tous ceux qui se réfugient en {{deity_pronoun:toi|Toi}} ; pour toujours, qu’ils crient de joie ; \\q et puisses-{{deity_pronoun:tu|Tu}} les abriter, et qu’exultent en {{deity_pronoun:toi|Toi}} ceux qui aiment {{deity_pronoun:ton|Ton}} nom !",
+          "B": "Mais que tous ceux qui font de {{deity_pronoun:toi|Toi}} leur refuge soient dans la joie et chantent de bonheur pour toujours. \\q Garde-les à {{deity_pronoun:ton|Ton}} abri, et ceux qui aiment {{deity_pronoun:ton|Ton}} nom trouveront leur joie en {{deity_pronoun:toi|Toi}}.",
+          "R": "Mais que tous ceux qui courent se mettre à l’abri auprès de {{deity_pronoun:toi|Toi}} soient heureux. Qu’ils chantent de joie pour toujours. \\q Protège-les, pour que ceux qui {{deity_pronoun:t’|T’}}aiment soient heureux grâce à {{deity_pronoun:toi|Toi}}."
         },
         "sw": {
-          "L": "Lakini wafurahi wote wanaokimbilia {{deity_pronoun:kwako|Kwako}}; milele washangilie kwa furaha; {{deity_pronoun:nawe|Nawe}} uwafunike, na wale walipendao jina {{deity_pronoun:lako|Lako}} washangilie ndani {{deity_pronoun:yako|Yako}}.",
-          "B": "Lakini kila anayekufanya {{deity_pronoun:wewe|Wewe}} kuwa kimbilio lake afurahi na kuimba kwa furaha milele. Uwahifadhi chini ya ulinzi {{deity_pronoun:wako|Wako}}, nao walipendao jina {{deity_pronoun:lako|Lako}} watapata furaha yao ndani {{deity_pronoun:yako|Yako}}.",
-          "R": "Lakini wote wanaokukimbilia {{deity_pronoun:wewe|Wewe}} ili wapate usalama wafurahi. Waimbe kwa furaha milele. Uwalinde, ili wale wanaokupenda wafurahi kwa sababu {{deity_pronoun:yako|Yako}}."
+          "L": "Lakini wafurahi wote wanaokimbilia {{deity_pronoun:kwako|Kwako}}; milele washangilie kwa furaha; {{deity_pronoun:nawe|Nawe}} uwafunike, \\q na wale walipendao jina {{deity_pronoun:lako|Lako}} washangilie ndani {{deity_pronoun:yako|Yako}}.",
+          "B": "Lakini kila anayekufanya {{deity_pronoun:wewe|Wewe}} kuwa kimbilio lake afurahi na kuimba kwa furaha milele. Uwahifadhi chini ya ulinzi {{deity_pronoun:wako|Wako}}, \\q nao walipendao jina {{deity_pronoun:lako|Lako}} watapata furaha yao ndani {{deity_pronoun:yako|Yako}}.",
+          "R": "Lakini wote wanaokukimbilia {{deity_pronoun:wewe|Wewe}} ili wapate usalama wafurahi. Waimbe kwa furaha milele. \\q Uwalinde, ili wale wanaokupenda wafurahi kwa sababu {{deity_pronoun:yako|Yako}}."
         },
         "es": {
-          "L": "Pero que se alegren todos los que se refugian en {{deity_pronoun:ti|Ti}}; para siempre canten con júbilo; y que {{deity_pronoun:tú|Tú}} los cubras, y que se regocijen en {{deity_pronoun:ti|Ti}} los que aman {{deity_pronoun:tu|Tu}} nombre.",
-          "B": "Pero que todos los que hacen de {{deity_pronoun:ti|Ti}} su refugio se alegren y canten de alegría para siempre. Cúbrelos con {{deity_pronoun:tu|Tu}} protección, y los que aman {{deity_pronoun:tu|Tu}} nombre encontrarán en {{deity_pronoun:ti|Ti}} su alegría.",
-          "R": "Pero que se alegren todos los que corren hacia {{deity_pronoun:ti|Ti}} para estar a salvo. Que canten de alegría para siempre. Protégelos, para que los que {{deity_pronoun:te|Te}} aman sean felices gracias a {{deity_pronoun:ti|Ti}}."
+          "L": "Pero que se alegren todos los que se refugian en {{deity_pronoun:ti|Ti}}; para siempre canten con júbilo; \\q y que {{deity_pronoun:tú|Tú}} los cubras, y que se regocijen en {{deity_pronoun:ti|Ti}} los que aman {{deity_pronoun:tu|Tu}} nombre.",
+          "B": "Pero que todos los que hacen de {{deity_pronoun:ti|Ti}} su refugio se alegren y canten de alegría para siempre. \\q Cúbrelos con {{deity_pronoun:tu|Tu}} protección, y los que aman {{deity_pronoun:tu|Tu}} nombre encontrarán en {{deity_pronoun:ti|Ti}} su alegría.",
+          "R": "Pero que se alegren todos los que corren hacia {{deity_pronoun:ti|Ti}} para estar a salvo. Que canten de alegría para siempre. \\q Protégelos, para que los que {{deity_pronoun:te|Te}} aman sean felices gracias a {{deity_pronoun:ti|Ti}}."
         },
         "vi": {
-          "L": "Nhưng nguyện tất cả những ai nương náu nơi {{deity_pronoun:ngài|Ngài}} được vui mừng; nguyện họ reo hò mãi mãi; và nguyện {{deity_pronoun:ngài|Ngài}} che chở họ, và nguyện những người yêu mến danh {{deity_pronoun:ngài|Ngài}} hớn hở trong {{deity_pronoun:ngài|Ngài}}.",
-          "B": "Nhưng nguyện tất cả những ai lấy {{deity_pronoun:ngài|Ngài}} làm nơi ẩn náu được vui mừng và reo hát đến muôn đời. Xin che chở họ dưới sự bảo bọc của {{deity_pronoun:ngài|Ngài}}, thì những người yêu mến danh {{deity_pronoun:ngài|Ngài}} sẽ tìm được niềm vui nơi {{deity_pronoun:ngài|Ngài}}.",
-          "R": "Nhưng nguyện tất cả những ai chạy đến với {{deity_pronoun:ngài|Ngài}} để được an toàn đều vui mừng. Nguyện họ reo hát mãi mãi. Xin bảo vệ họ, để những người yêu mến {{deity_pronoun:ngài|Ngài}} được vui vẻ vì {{deity_pronoun:ngài|Ngài}}."
+          "L": "Nhưng nguyện tất cả những ai nương náu nơi {{deity_pronoun:ngài|Ngài}} được vui mừng; nguyện họ reo hò mãi mãi; và nguyện {{deity_pronoun:ngài|Ngài}} che chở họ, \\q và nguyện những người yêu mến danh {{deity_pronoun:ngài|Ngài}} hớn hở trong {{deity_pronoun:ngài|Ngài}}.",
+          "B": "Nhưng nguyện tất cả những ai lấy {{deity_pronoun:ngài|Ngài}} làm nơi ẩn náu được vui mừng và reo hát đến muôn đời. Xin che chở họ dưới sự bảo bọc của {{deity_pronoun:ngài|Ngài}}, \\q thì những người yêu mến danh {{deity_pronoun:ngài|Ngài}} sẽ tìm được niềm vui nơi {{deity_pronoun:ngài|Ngài}}.",
+          "R": "Nhưng nguyện tất cả những ai chạy đến với {{deity_pronoun:ngài|Ngài}} để được an toàn đều vui mừng. Nguyện họ reo hát mãi mãi. \\q Xin bảo vệ họ, để những người yêu mến {{deity_pronoun:ngài|Ngài}} được vui vẻ vì {{deity_pronoun:ngài|Ngài}}."
         },
         "ko": {
-          "L": "그러나 주님께 피하는 모든 사람은 기뻐하고, 영원히 기뻐 외치게 하십시오. 주님께서 그들을 덮어 보호하시니, 주님의 이름을 사랑하는 사람들이 주님 안에서 즐거워하게 하십시오.",
-          "B": "그러나 주님을 피난처로 삼는 사람은 모두 기뻐하며 영원히 기쁨의 노래를 부르게 하십시오. 그들을 주님의 보호 아래 덮어 주십시오. 그러면 주님의 이름을 사랑하는 사람들이 주님 안에서 기쁨을 얻을 것입니다.",
-          "R": "그러나 안전을 찾아 주님께 달려오는 사람은 모두 기뻐하게 하십시오. 그들이 영원히 기뻐 노래하게 하십시오. 그들을 지켜 주셔서, 주님을 사랑하는 사람들이 주님 때문에 행복하게 해 주십시오."
+          "L": "그러나 주님께 피하는 모든 사람은 기뻐하고, 영원히 기뻐 외치게 하십시오. 주님께서 그들을 덮어 보호하시니, \\q 주님의 이름을 사랑하는 사람들이 주님 안에서 즐거워하게 하십시오.",
+          "B": "그러나 주님을 피난처로 삼는 사람은 모두 기뻐하며 영원히 기쁨의 노래를 부르게 하십시오. 그들을 주님의 보호 아래 덮어 주십시오. \\q 그러면 주님의 이름을 사랑하는 사람들이 주님 안에서 기쁨을 얻을 것입니다.",
+          "R": "그러나 안전을 찾아 주님께 달려오는 사람은 모두 기뻐하게 하십시오. 그들이 영원히 기뻐 노래하게 하십시오. \\q 그들을 지켜 주셔서, 주님을 사랑하는 사람들이 주님 때문에 행복하게 해 주십시오."
         },
         "pt": {
-          "L": "Mas alegrem-se todos os que se refugiam em {{deity_pronoun:ti|Ti}}; para sempre gritem de alegria; e que {{deity_pronoun:tu|Tu}} os protejas, e exultem em {{deity_pronoun:ti|Ti}} os que amam o {{deity_pronoun:teu|Teu}} nome.",
-          "B": "Mas que todos os que fazem de {{deity_pronoun:ti|Ti}} o seu refúgio fiquem alegres e cantem de alegria para sempre. Guarda-os debaixo da {{deity_pronoun:tua|Tua}} proteção, e os que amam o {{deity_pronoun:teu|Teu}} nome encontrarão alegria em {{deity_pronoun:ti|Ti}}.",
-          "R": "Mas que todos os que correm para {{deity_pronoun:ti|Ti}} em busca de proteção fiquem alegres. Que cantem de alegria para sempre. Protege-os, para que os que {{deity_pronoun:te|Te}} amam fiquem felizes por causa de {{deity_pronoun:ti|Ti}}."
+          "L": "Mas alegrem-se todos os que se refugiam em {{deity_pronoun:ti|Ti}}; para sempre gritem de alegria; \\q e que {{deity_pronoun:tu|Tu}} os protejas, e exultem em {{deity_pronoun:ti|Ti}} os que amam o {{deity_pronoun:teu|Teu}} nome.",
+          "B": "Mas que todos os que fazem de {{deity_pronoun:ti|Ti}} o seu refúgio fiquem alegres e cantem de alegria para sempre. \\q Guarda-os debaixo da {{deity_pronoun:tua|Tua}} proteção, e os que amam o {{deity_pronoun:teu|Teu}} nome encontrarão alegria em {{deity_pronoun:ti|Ti}}.",
+          "R": "Mas que todos os que correm para {{deity_pronoun:ti|Ti}} em busca de proteção fiquem alegres. Que cantem de alegria para sempre. \\q Protege-os, para que os que {{deity_pronoun:te|Te}} amam fiquem felizes por causa de {{deity_pronoun:ti|Ti}}."
         },
         "am": {
-          "L": "በአንተ የሚጠለሉ ሁሉ ግን ደስ ይበላቸው፤ ለዘላለም እልል ይበሉ፤ አንተም ጋርዳቸው፤ ስምህን የሚወዱም በአንተ ሐሤት ያድርጉ።",
-          "B": "አንተን መጠጊያ የሚያደርጉ ሁሉ ግን ደስ ይበላቸው፤ ለዘላለምም በእልልታ ይዘምሩ። በጥላህ ሥር ሸሽጋቸው፤ ስምህን የሚወዱም በአንተ ደስታቸውን ያገኛሉ።",
-          "R": "ለደኅንነት ወደ አንተ የሚሮጡ ሁሉ ግን ደስ ይበላቸው። ለዘላለም በደስታ ይዘምሩ። ጠብቃቸው፤ አንተን የሚወዱ ሁሉ በአንተ ምክንያት ደስ እንዲላቸው።"
+          "L": "በአንተ የሚጠለሉ ሁሉ ግን ደስ ይበላቸው፤ ለዘላለም እልል ይበሉ፤ አንተም ጋርዳቸው፤ \\q ስምህን የሚወዱም በአንተ ሐሤት ያድርጉ።",
+          "B": "አንተን መጠጊያ የሚያደርጉ ሁሉ ግን ደስ ይበላቸው፤ ለዘላለምም በእልልታ ይዘምሩ። በጥላህ ሥር ሸሽጋቸው፤ \\q ስምህን የሚወዱም በአንተ ደስታቸውን ያገኛሉ።",
+          "R": "ለደኅንነት ወደ አንተ የሚሮጡ ሁሉ ግን ደስ ይበላቸው። ለዘላለም በደስታ ይዘምሩ። ጠብቃቸው፤ \\q አንተን የሚወዱ ሁሉ በአንተ ምክንያት ደስ እንዲላቸው።"
+        },
+        "hi": {
+          "L": "पर जितने तुझमें शरण लेते हैं, वे सब आनंद करें; वे सदा जयजयकार करें; \\q और तू उन्हें ढाँपे रहे, और जो तेरे नाम से प्रेम करते हैं, वे तुझमें मगन हों।",
+          "B": "पर जो कोई तुझे अपना शरणस्थान बनाता है, वह आनंदित हो और सदा आनंद से गाता रहे। \\q उन्हें अपनी छाया में रख, और जो तेरे नाम से प्रेम करते हैं, वे तुझमें आनंद पाएँगे।",
+          "R": "पर जो कोई सुरक्षा के लिए भागकर तेरे पास आता है, वह आनंदित हो। वे सदा आनंद से गाते रहें। \\q उनकी रक्षा कर, ताकि जो तुझसे प्रेम करते हैं, वे तेरे कारण आनंदित रहें।"
+        },
+        "ru": {
+          "L": "Но пусть радуются все, кто укрывается в {{deity_pronoun:тебе|Тебе}}; вечно пусть ликуют; \\q и укрой их, и пусть торжествуют в {{deity_pronoun:тебе|Тебе}} любящие {{deity_pronoun:твоё|Твоё}} имя.",
+          "B": "Но пусть все, кто делает {{deity_pronoun:тебя|Тебя}} своим прибежищем, радуются и поют от радости вечно. \\q Укрой их своей защитой, и любящие {{deity_pronoun:твоё|Твоё}} имя найдут свою радость в {{deity_pronoun:тебе|Тебе}}.",
+          "R": "Но пусть радуется каждый, кто бежит к {{deity_pronoun:тебе|Тебе}} за защитой. Пусть они вечно поют от радости. \\q Защити их, чтобы те, кто любит {{deity_pronoun:тебя|Тебя}}, радовались благодаря {{deity_pronoun:тебе|Тебе}}."
+        },
+        "ja": {
+          "L": "しかし、あなたに身を避ける者はみな喜び、とこしえに喜び歌うように。あなたが彼らをかばってくださるように。 \\q あなたの名を愛する者たちが、あなたによって喜び躍るように。",
+          "B": "しかし、あなたを避け所とする人はみな喜び、いつまでも喜び歌うように。彼らをあなたの覆いの下に守ってください。 \\q そうすれば、あなたの名を愛する人たちは、あなたのうちに喜びを見いだす。",
+          "R": "しかし、あなたのもとに逃げ込む人は、みな喜ぶように。いつまでも喜んで歌うように。その人たちを守ってください。 \\q そうすれば、あなたを愛する人たちは、あなたのおかげで幸せになる。"
+        },
+        "uk": {
+          "L": "Але нехай радіють усі, хто шукає притулку в {{deity_pronoun:тобі|Тобі}}; повіки нехай співають від радості; \\q і нехай {{deity_pronoun:ти|Ти}} покриваєш їх, і нехай тішаться {{deity_pronoun:тобою|Тобою}} ті, хто любить {{deity_pronoun:твоє|Твоє}} імʼя.",
+          "B": "Але нехай кожен, хто робить {{deity_pronoun:тебе|Тебе}} своїм притулком, радіє і співає від радості повіки. \\q Сховай їх під {{deity_pronoun:твоїм|Твоїм}} покровом, і ті, хто любить {{deity_pronoun:твоє|Твоє}} імʼя, знайдуть свою радість у {{deity_pronoun:тобі|Тобі}}.",
+          "R": "Але нехай радіє кожен, хто біжить до {{deity_pronoun:тебе|Тебе}} по захист. Нехай вони вічно співають від радості. \\q Захисти їх, щоб ті, хто любить {{deity_pronoun:тебе|Тебе}}, були щасливі завдяки {{deity_pronoun:тобі|Тобі}}."
+        },
+        "id": {
+          "L": "Tetapi biarlah semua orang yang berlindung pada-{{deity_pronoun:mu|Mu}} bersukacita; untuk selama-lamanya biarlah mereka bersorak-sorai; \\q dan kiranya {{deity_pronoun:engkau|Engkau}} menaungi mereka, dan biarlah orang-orang yang mencintai nama-{{deity_pronoun:mu|Mu}} bergembira di dalam {{deity_pronoun:engkau|Engkau}}.",
+          "B": "Tetapi biarlah setiap orang yang menjadikan {{deity_pronoun:engkau|Engkau}} tempat perlindungan bersukacita dan bersorak-sorai untuk selama-lamanya. \\q Naungilah mereka, dan orang-orang yang mencintai nama-{{deity_pronoun:mu|Mu}} akan menemukan sukacita mereka di dalam {{deity_pronoun:engkau|Engkau}}.",
+          "R": "Tetapi biarlah setiap orang yang lari kepada-{{deity_pronoun:mu|Mu}} untuk mencari perlindungan bergembira. Biarlah mereka bernyanyi dengan sukacita untuk selama-lamanya. \\q Lindungilah mereka, supaya orang-orang yang mengasihi {{deity_pronoun:engkau|Engkau}} berbahagia karena {{deity_pronoun:engkau|Engkau}}."
         }
       },
       "decisions": [
@@ -2026,6 +2961,27 @@
           "reason": "As at 2:12.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190050120031"
+          ],
+          "choice": "укрывается в тебе (L); делает тебя своим прибежищем (B); бежит к тебе за защитой (R)",
+          "alternatives": [
+            "уповает на тебя"
+          ],
+          "reason": "As at 2:12: the verb (chasah) means to seek shelter (m1), and each level keeps one wording for it through the Psalms.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2055,44 +3011,69 @@
       "literal_gloss": "For you bless [the] righteous, YHWH; like the shield, [with] favor you surround him.",
       "renderings": {
         "en": {
-          "L": "For {{deity_pronoun:you|You}} bless [the] righteous, {{divine_name:LORD|Yahweh}}; like the large shield, [with] favor {{deity_pronoun:you|You}} surround {{gender:them|him}}.",
-          "B": "For {{deity_pronoun:you|You}} bless the righteous, {{divine_name:LORD|Yahweh}}; {{deity_pronoun:your|Your}} favor surrounds them like a great shield.",
-          "R": "{{divine_name:LORD|Yahweh}}, {{deity_pronoun:you|You}} always bless people who do what is right. Your kindness protects them on every side, like a big shield."
+          "L": "For {{deity_pronoun:you|You}} bless [the] righteous, {{divine_name:LORD|Yahweh}}; \\q like the large shield, \\q [with] favor {{deity_pronoun:you|You}} surround {{gender:them|him}}.",
+          "B": "For {{deity_pronoun:you|You}} bless the righteous, {{divine_name:LORD|Yahweh}}; \\q {{deity_pronoun:your|Your}} favor surrounds them \\q like a great shield.",
+          "R": "{{divine_name:LORD|Yahweh}}, {{deity_pronoun:you|You}} always bless people who do what is right. \\q Your kindness protects them on every side, \\q like a big shield."
         },
         "fr": {
-          "L": "Car {{deity_pronoun:toi|Toi}}, {{deity_pronoun:tu|Tu}} bénis [le] juste, {{divine_name:SEIGNEUR|Yahvé}} ; comme le grand bouclier, [de] faveur {{deity_pronoun:tu|Tu}} l’entoures.",
-          "B": "Car {{deity_pronoun:tu|Tu}} bénis le juste, {{divine_name:SEIGNEUR|Yahvé}} ; {{deity_pronoun:ta|Ta}} faveur l’entoure comme un grand bouclier.",
-          "R": "{{divine_name:SEIGNEUR|Yahvé}}, {{deity_pronoun:tu|Tu}} bénis toujours ceux qui font ce qui est juste. Ta bonté les protège de tous côtés, comme un grand bouclier."
+          "L": "Car {{deity_pronoun:toi|Toi}}, {{deity_pronoun:tu|Tu}} bénis [le] juste, {{divine_name:SEIGNEUR|Yahvé}} ; \\q comme le grand bouclier, \\q [de] faveur {{deity_pronoun:tu|Tu}} l’entoures.",
+          "B": "Car {{deity_pronoun:tu|Tu}} bénis le juste, {{divine_name:SEIGNEUR|Yahvé}} ; \\q {{deity_pronoun:ta|Ta}} faveur l’entoure \\q comme un grand bouclier.",
+          "R": "{{divine_name:SEIGNEUR|Yahvé}}, {{deity_pronoun:tu|Tu}} bénis toujours ceux qui font ce qui est juste. \\q Ta bonté les protège de tous côtés, \\q comme un grand bouclier."
         },
         "sw": {
-          "L": "Kwa maana {{deity_pronoun:wewe|Wewe}} unambariki mwenye haki, Ee {{divine_name:BWANA|Yahwe}}; kama ngao kubwa, kwa wema unamzunguka.",
-          "B": "Kwa maana {{deity_pronoun:wewe|Wewe}} unawabariki wenye haki, Ee {{divine_name:BWANA|Yahwe}}; wema {{deity_pronoun:wako|Wako}} unawazunguka kama ngao kubwa.",
-          "R": "{{divine_name:BWANA|Yahwe}}, {{deity_pronoun:wewe|Wewe}} unawabariki daima watu wanaotenda haki. Wema {{deity_pronoun:wako|Wako}} unawalinda pande zote, kama ngao kubwa."
+          "L": "Kwa maana {{deity_pronoun:wewe|Wewe}} unambariki mwenye haki, \\q Ee {{divine_name:BWANA|Yahwe}}; \\q kama ngao kubwa, kwa wema unamzunguka.",
+          "B": "Kwa maana {{deity_pronoun:wewe|Wewe}} unawabariki wenye haki, \\q Ee {{divine_name:BWANA|Yahwe}}; \\q wema {{deity_pronoun:wako|Wako}} unawazunguka kama ngao kubwa.",
+          "R": "{{divine_name:BWANA|Yahwe}}, {{deity_pronoun:wewe|Wewe}} unawabariki daima watu wanaotenda haki. \\q Wema {{deity_pronoun:wako|Wako}} unawalinda pande zote, kama ngao kubwa."
         },
         "es": {
-          "L": "Porque {{deity_pronoun:tú|Tú}} bendices [al] justo, {{divine_name:SEÑOR|Yahvé}}; como [con] el escudo grande, [con] favor lo rodeas.",
-          "B": "Porque {{deity_pronoun:tú|Tú}} bendices al justo, {{divine_name:SEÑOR|Yahvé}}; {{deity_pronoun:tu|Tu}} favor lo rodea como un gran escudo.",
-          "R": "{{divine_name:SEÑOR|Yahvé}}, {{deity_pronoun:tú|Tú}} siempre bendices a los que hacen lo correcto. Tu bondad los protege por todos lados, como un escudo grande."
+          "L": "Porque {{deity_pronoun:tú|Tú}} bendices [al] justo, {{divine_name:SEÑOR|Yahvé}}; \\q como [con] el escudo grande, \\q [con] favor lo rodeas.",
+          "B": "Porque {{deity_pronoun:tú|Tú}} bendices al justo, {{divine_name:SEÑOR|Yahvé}}; \\q {{deity_pronoun:tu|Tu}} favor lo rodea como un gran escudo.",
+          "R": "{{divine_name:SEÑOR|Yahvé}}, {{deity_pronoun:tú|Tú}} siempre bendices a los que hacen lo correcto. \\q Tu bondad los protege por todos lados, \\q como un escudo grande."
         },
         "vi": {
-          "L": "Vì {{deity_pronoun:ngài|Ngài}} ban phước cho người công chính, lạy {{divine_name:CHÚA|Gia-vê}}; như cái khiên lớn, {{deity_pronoun:ngài|Ngài}} bao bọc người ấy [bằng] ân huệ.",
-          "B": "Vì {{deity_pronoun:ngài|Ngài}} ban phước cho người công chính, lạy {{divine_name:CHÚA|Gia-vê}}; ân huệ của {{deity_pronoun:ngài|Ngài}} bao bọc họ như cái khiên lớn.",
-          "R": "Lạy {{divine_name:CHÚA|Gia-vê}}, {{deity_pronoun:ngài|Ngài}} luôn ban phước cho những người làm điều ngay thẳng. Lòng tốt của {{deity_pronoun:ngài|Ngài}} bảo vệ họ mọi phía, như một cái khiên lớn."
+          "L": "Vì {{deity_pronoun:ngài|Ngài}} ban phước cho người công chính, \\q lạy {{divine_name:CHÚA|Gia-vê}}; \\q như cái khiên lớn, {{deity_pronoun:ngài|Ngài}} bao bọc người ấy [bằng] ân huệ.",
+          "B": "Vì {{deity_pronoun:ngài|Ngài}} ban phước cho người công chính, \\q lạy {{divine_name:CHÚA|Gia-vê}}; \\q ân huệ của {{deity_pronoun:ngài|Ngài}} bao bọc họ như cái khiên lớn.",
+          "R": "Lạy {{divine_name:CHÚA|Gia-vê}}, {{deity_pronoun:ngài|Ngài}} luôn ban phước cho những người làm điều ngay thẳng. \\q Lòng tốt của {{deity_pronoun:ngài|Ngài}} bảo vệ họ mọi phía, như một cái khiên lớn."
         },
         "ko": {
-          "L": "참으로 주님께서는 의인에게 복을 주십니다, {{divine_name:주|야훼}}여. 큰 방패처럼 은총으로 그를 두르십니다.",
-          "B": "{{divine_name:주|야훼}}여, 주님께서는 의인에게 복을 주시니, 주님의 은총이 큰 방패처럼 그들을 둘러쌉니다.",
-          "R": "{{divine_name:주|야훼}}여, 주님께서는 바르게 사는 사람들에게 늘 복을 주십니다. 주님의 은혜가 큰 방패처럼 그들을 사방에서 지켜 줍니다."
+          "L": "참으로 주님께서는 의인에게 복을 주십니다, \\q {{divine_name:주|야훼}}여. \\q 큰 방패처럼 은총으로 그를 두르십니다.",
+          "B": "{{divine_name:주|야훼}}여, 주님께서는 의인에게 복을 주시니, \\q 주님의 은총이 큰 방패처럼 \\q 그들을 둘러쌉니다.",
+          "R": "{{divine_name:주|야훼}}여, 주님께서는 바르게 사는 사람들에게 늘 복을 주십니다. \\q 주님의 은혜가 큰 방패처럼 그들을 사방에서 지켜 줍니다."
         },
         "pt": {
-          "L": "Porque {{deity_pronoun:tu|Tu}} abençoas [o] justo, {{divine_name:SENHOR|Javé}}; como [com] o escudo grande, {{deity_pronoun:tu|Tu}} o cercas [de] favor.",
-          "B": "Pois {{deity_pronoun:tu|Tu}} abençoas os justos, {{divine_name:SENHOR|Javé}}; o {{deity_pronoun:teu|Teu}} favor os cerca como um grande escudo.",
-          "R": "{{divine_name:SENHOR|Javé}}, {{deity_pronoun:tu|Tu}} sempre abençoas as pessoas que fazem o que é certo. A {{deity_pronoun:tua|Tua}} bondade as protege por todos os lados, como um escudo grande."
+          "L": "Porque {{deity_pronoun:tu|Tu}} abençoas [o] justo, {{divine_name:SENHOR|Javé}}; \\q como [com] o escudo grande, \\q {{deity_pronoun:tu|Tu}} o cercas [de] favor.",
+          "B": "Pois {{deity_pronoun:tu|Tu}} abençoas os justos, {{divine_name:SENHOR|Javé}}; \\q o {{deity_pronoun:teu|Teu}} favor os cerca como um grande escudo.",
+          "R": "{{divine_name:SENHOR|Javé}}, {{deity_pronoun:tu|Tu}} sempre abençoas as pessoas que fazem o que é certo. \\q A {{deity_pronoun:tua|Tua}} bondade as protege por todos os lados, \\q como um escudo grande."
         },
         "am": {
-          "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ አንተ ጻድቁን ትባርካለህና፤ እንደ ትልቅ ጋሻ በሞገስ ትከብበዋለህ።",
-          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ አንተ ጻድቃንን ትባርካለህና፤ ሞገስህ እንደ ታላቅ ጋሻ ይከብባቸዋል።",
-          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ትክክል የሆነውን የሚያደርጉትን ሰዎች ሁልጊዜ ትባርካለህ። ቸርነትህ እንደ ትልቅ ጋሻ በዙሪያቸው ሁሉ ይጠብቃቸዋል።"
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ \\q አንተ ጻድቁን ትባርካለህና፤ \\q እንደ ትልቅ ጋሻ በሞገስ ትከብበዋለህ።",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ \\q አንተ ጻድቃንን ትባርካለህና፤ \\q ሞገስህ እንደ ታላቅ ጋሻ ይከብባቸዋል።",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ትክክል የሆነውን የሚያደርጉትን ሰዎች ሁልጊዜ ትባርካለህ። \\q ቸርነትህ እንደ ትልቅ ጋሻ በዙሪያቸው ሁሉ ይጠብቃቸዋል።"
+        },
+        "hi": {
+          "L": "क्योंकि हे {{divine_name:प्रभु|याहवे}}, तू धर्मी को आशीष देता है; \\q बड़ी ढाल की तरह \\q तू [अपनी] कृपा से उसे घेरे रहता है।",
+          "B": "क्योंकि हे {{divine_name:प्रभु|याहवे}}, तू धर्मियों को आशीष देता है; \\q तेरी कृपा बड़ी ढाल की तरह \\q उन्हें घेरे रहती है।",
+          "R": "हे {{divine_name:प्रभु|याहवे}}, तू सही काम करनेवालों को सदा आशीष देता है। \\q तेरी कृपा एक बड़ी ढाल की तरह \\q हर ओर से उनकी रक्षा करती है।"
+        },
+        "ru": {
+          "L": "Ведь {{deity_pronoun:ты|Ты}} благословляешь праведного, {{divine_name:ГОСПОДИ|Яхве}}; \\q как большим щитом, \\q благосклонностью {{deity_pronoun:ты|Ты}} окружаешь его.",
+          "B": "Ведь {{deity_pronoun:ты|Ты}} благословляешь праведных, {{divine_name:ГОСПОДИ|Яхве}}; \\q {{deity_pronoun:твоя|Твоя}} благосклонность окружает их, \\q как большой щит.",
+          "R": "{{divine_name:ГОСПОДИ|Яхве}}, {{deity_pronoun:ты|Ты}} всегда благословляешь тех, кто поступает правильно. \\q Твоя доброта защищает их со всех сторон, \\q как большой щит."
+        },
+        "ja": {
+          "L": "まことに、あなたは正しい者を祝福される、{{divine_name:主|ヤハウェ}}よ。 \\q 大盾のように、 \\q 恵みをもって彼を囲まれる。",
+          "B": "{{divine_name:主|ヤハウェ}}よ、あなたは正しい人を祝福される。 \\q あなたの恵みが、 \\q 大きな盾のように、その人たちを囲む。",
+          "R": "{{divine_name:主|ヤハウェ}}よ、あなたは、正しいことをする人たちを、いつも祝福してくださる。 \\q あなたのやさしさが、 \\q 大きな盾のように、その人たちをまわりから守る。"
+        },
+        "uk": {
+          "L": "Бо {{deity_pronoun:ти|Ти}} благословляєш праведного, {{divine_name:ГОСПОДИ|Ягве}}; \\q як великим щитом, \\q прихильністю {{deity_pronoun:ти|Ти}} оточуєш його.",
+          "B": "Бо {{deity_pronoun:ти|Ти}} благословляєш праведних, {{divine_name:ГОСПОДИ|Ягве}}; \\q {{deity_pronoun:твоя|Твоя}} прихильність оточує їх, \\q як великий щит.",
+          "R": "{{divine_name:ГОСПОДИ|Ягве}}, {{deity_pronoun:ти|Ти}} завжди благословляєш тих, хто чинить правильно. \\q Твоя доброта захищає їх з усіх боків, \\q як великий щит."
+        },
+        "id": {
+          "L": "Sebab {{deity_pronoun:engkau|Engkau}} memberkati orang benar, {{divine_name:TUHAN|Yahweh}}; \\q seperti perisai besar \\q [dengan] perkenanan {{deity_pronoun:engkau|Engkau}} melingkupi dia.",
+          "B": "Sebab {{deity_pronoun:engkau|Engkau}} memberkati orang benar, {{divine_name:TUHAN|Yahweh}}; \\q perkenanan-{{deity_pronoun:mu|Mu}} melingkupi mereka \\q seperti perisai yang besar.",
+          "R": "{{divine_name:TUHAN|Yahweh}}, {{deity_pronoun:engkau|Engkau}} selalu memberkati orang-orang yang melakukan apa yang benar. \\q Kebaikan-{{deity_pronoun:mu|Mu}} melindungi mereka dari segala sisi, \\q seperti perisai yang besar."
         }
       },
       "decisions": [
@@ -2216,6 +3197,49 @@
           "choice": "o justo ... o, with no gender span",
           "alternatives": [],
           "reason": "The English Literal puts \"them|him\" under the gender setting. Portuguese \"o justo\" with the pronoun \"o\" is the ordinary generic way of speaking of anyone who is righteous, as \"quem\" is (m3), so there is no separate inclusive wording to offer; Balanced and Readable say \"os justos\", \"as pessoas\", as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190050130082"
+          ],
+          "choice": "его, with no gender span",
+          "alternatives": [
+            "{{gender:их|его}}"
+          ],
+          "reason": "\"Его\" refers back to \"праведного\", which in Russian stands for anyone who is righteous (m3), so no setting is needed where the English offers \"them\" and \"him\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190050130071",
+            "o190050130041",
+            "o190050130082"
+          ],
+          "choice": "ratson \"恵み\" (L, B), \"やさしさ\" (R); tsinnah \"大盾\" (L), \"大きな盾\" (B, R), apart from magen \"盾\"; the righteous \"彼\" (L, singular as the Hebrew), \"その人たち\" (B, R), with no gender span",
+          "alternatives": [
+            "好意",
+            "{{gender:その人たち|彼}}"
+          ],
+          "reason": "m1 distinguishes the large shield from the small magen; m3 reads \"him\" as anyone righteous, which Balanced and Readable say with a plural as the English does.",
           "uncertain": false,
           "footnote": false
         }

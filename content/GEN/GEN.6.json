@@ -80,8 +80,121 @@
           "L": "И было, когда люди начали умножаться на лице земли и у них родились дочери,",
           "B": "Когда люди стали умножаться на земле и у них рождались дочери,",
           "R": "Пришло время, когда на земле стало намного больше людей, и у них родилось много дочерей."
+        },
+        "uk": {
+          "L": "І сталося, коли люди почали множитися на поверхні землі й у них народилися дочки,",
+          "B": "Коли людей на землі стало більше і в них народилися дочки,",
+          "R": "Настав час, коли людей на землі стало дуже багато, і в них народилося багато дочок."
+        },
+        "ja": {
+          "L": "そして、人が地の面に増え始め、彼らに娘たちが生まれたとき、",
+          "B": "人が地上に増え始め、彼らに娘たちが生まれたとき、",
+          "R": "やがて、地上の人の数がとても多くなり、たくさんの娘たちが生まれるようになりました。"
+        },
+        "id": {
+          "L": "Dan terjadilah, ketika manusia mulai bertambah banyak di atas permukaan tanah dan anak-anak perempuan lahir bagi mereka,",
+          "B": "Ketika manusia mulai bertambah banyak di bumi dan anak-anak perempuan lahir bagi mereka,",
+          "R": "Lalu tiba waktunya manusia di bumi menjadi makin banyak, dan banyak anak perempuan lahir bagi mereka."
+        },
+        "zh": {
+          "L": "那时，人开始在地面上增多，又有女儿为他们出生，",
+          "B": "人开始在地上增多，又有女儿为他们出生的时候，",
+          "R": "后来，地上的人越来越多，他们也生了许多女儿。"
+        },
+        "tl": {
+          "L": "At nangyari, nang magsimulang dumami ang tao sa ibabaw ng lupa at may mga anak na babaing ipinanganak sa kanila,",
+          "B": "Nang magsimulang dumami ang mga tao sa lupa at may mga anak na babaing isinilang sa kanila,",
+          "R": "Dumating ang panahon na lubhang dumami ang mga tao sa lupa, at maraming anak na babae ang isinilang sa kanila."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010060010012",
+            "o010060010021"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "When"
+        },
+        {
+          "tokens": [
+            "o010060010041",
+            "o010060010042"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "{{gender:people|men}}"
+        },
+        {
+          "tokens": [
+            "o010060010031"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "began"
+        },
+        {
+          "tokens": [
+            "o010060010051",
+            "o010060010052"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "to increase in number"
+        },
+        {
+          "tokens": [
+            "o010060010061",
+            "o010060010071"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "on"
+        },
+        {
+          "tokens": [
+            "o010060010081",
+            "o010060010082"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the earth"
+        },
+        {
+          "tokens": [
+            "o010060010091"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010060010092"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "daughters"
+        },
+        {
+          "tokens": [
+            "o010060010101"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "were born"
+        },
+        {
+          "tokens": [
+            "o010060010111",
+            "o010060010112"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "to them"
+        }
+      ],
       "decisions": [
         {
           "id": "m1",
@@ -217,6 +330,103 @@
           "reason": "The Hebrew means people in general (m1). Russian \"люди\" and \"человек\" already include men and women, so where the English has \"humankind\" or \"people\" with the traditional \"man\" or \"men\", Russian needs no setting, in this chapter and the next.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o010060010042"
+          ],
+          "choice": "\"люди\", \"дочки людей\" with no gender span",
+          "alternatives": [
+            "a gender span as the English"
+          ],
+          "reason": "Ukrainian \"люди\" and \"людина\" already mean people of both sexes (as in 1:26 and 5:1), so the English \"humankind\" or \"man\" choice does not arise; the same holds through 6:7.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o010060010042"
+          ],
+          "choice": "\"人\" (and \"人の娘たち\" in verses 2 and 4) with no gender span",
+          "alternatives": [
+            "{{gender:人|男たち}}"
+          ],
+          "reason": "The word means people in general (m1); Japanese 人 already says that, so the English gender setting has nothing to switch, as in 1:26.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010060010011"
+          ],
+          "choice": "\"Dan terjadilah\" (L)",
+          "alternatives": [],
+          "reason": "The narrative formula \"and it came to pass\" as the style guide sets it (section 12a): Literal \"dan terjadilah\", Balanced and Readable a time clause. As at 1:26, \"manusia\" carries no gender span.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o010060010042"
+          ],
+          "choice": "\"人\" with no gender span, through the chapter",
+          "alternatives": [
+            "a gender span on 人"
+          ],
+          "reason": "The English spans \"humankind\" (traditional \"man\"); Chinese \"人\" already means people in general (meaning decision m1) and needs no span. \"And it came to pass\" is \"那时\" at Literal and a time clause at Balanced (style guide section 12).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-tl-1",
+          "layer": "rendering",
+          "language": "tl",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o010060010042"
+          ],
+          "choice": "\"ang tao\", \"ang mga tao\" with no gender span, through Genesis 6",
+          "alternatives": [],
+          "reason": "As in 1:26, Tagalog \"tao\" means people of either sex, so the English spans \"humankind|man\" and \"people|men\" have no Tagalog counterpart (style guide section 8). Where the English span changes \"they\" to \"he\", Tagalog has \"sila|siya\" (verse 3).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -305,8 +515,131 @@
           "L": "что сыны Божьи увидели, что дочери человеческие красивы, и брали себе в жёны всех, кого выбирали.",
           "B": "сыны Божьи увидели, что дочери людей красивы, и брали в жёны любых из них, каких выбирали.",
           "R": "Сыновья Бога увидели, что эти дочери красивы, и брали себе в жёны любых, каких хотели."
+        },
+        "uk": {
+          "L": "що сини Божі побачили, що дочки людей гарні, і брали собі жінок з-поміж усіх, кого вибирали.",
+          "B": "сини Божі побачили, що людські дочки вродливі, і брали собі за дружин тих, кого хотіли.",
+          "R": "Сини Бога побачили, що ці дочки вродливі, і брали собі за дружин тих, кого хотіли."
+        },
+        "ja": {
+          "L": "神の子らは、人の娘たちが美しいのを見た。そして彼らは、自分が選んだすべての者の中から、自分のために妻をめとった。",
+          "B": "神の子らは、人の娘たちが美しいのを見て、その中から好きな者を選んで妻とした。",
+          "R": "神の子たちは、その娘たちが美しいのを見て、だれでも好きな者を妻にしました。"
+        },
+        "id": {
+          "L": "bahwa anak-anak Allah melihat bahwa anak-anak perempuan manusia itu cantik, dan mereka mengambil bagi diri mereka istri dari semua yang mereka pilih.",
+          "B": "anak-anak Allah melihat bahwa anak-anak perempuan manusia itu cantik, lalu mereka mengawini siapa saja yang mereka pilih.",
+          "R": "Anak-anak Allah melihat bahwa anak-anak perempuan itu cantik, lalu mereka mengambil siapa saja yang mereka inginkan menjadi istri mereka."
+        },
+        "zh": {
+          "L": "{{god_term:神|上帝}}的众子看见人的女儿们是好看的，就从他们所选中的一切[女子]中，为自己娶了妻子。",
+          "B": "{{god_term:神|上帝}}的众子看见人的女儿们很美，就娶了他们所选中的任何一个。",
+          "R": "{{god_term:神|上帝}}的众子看到这些女儿很美丽，就随意娶她们中任何想要的人作妻子。"
+        },
+        "tl": {
+          "L": "na nakita ng mga anak ng Diyos na ang mga anak na babae ng tao ay magaganda, at kumuha sila para sa kanilang sarili ng mga asawa mula sa lahat ng kanilang pinili.",
+          "B": "nakita ng mga anak ng Diyos na magaganda ang mga anak na babae ng mga tao, at napangasawa nila ang sinumang kanilang piliin.",
+          "R": "Nakita ng mga anak ng Diyos na magaganda ang mga anak na babaing ito, at kinuha nila bilang asawa ang sinuman sa kanila na kanilang gustuhin."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010060020021"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the sons"
+        },
+        {
+          "tokens": [
+            "o010060020031",
+            "o010060020032"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "of God"
+        },
+        {
+          "tokens": [
+            "o010060020012"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "saw"
+        },
+        {
+          "tokens": [
+            "o010060020071"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "that"
+        },
+        {
+          "tokens": [
+            "o010060020051"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the daughters"
+        },
+        {
+          "tokens": [
+            "o010060020061",
+            "o010060020062"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "of {{gender:humans|men}}"
+        },
+        {
+          "tokens": [
+            "o010060020081",
+            "o010060020091"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "were beautiful"
+        },
+        {
+          "tokens": [
+            "o010060020101"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010060020102",
+            "o010060020111",
+            "o010060020112",
+            "o010060020121"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "they married"
+        },
+        {
+          "tokens": [
+            "o010060020131",
+            "o010060020132"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "any of them"
+        },
+        {
+          "tokens": [
+            "o010060020141",
+            "o010060020151"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "they chose"
+        }
+      ],
       "decisions": [
         {
           "id": "m1",
@@ -430,6 +763,117 @@
           "reason": "The Hebrew phrase most likely means heavenly beings (m1), but it is kept as it stands so that the reader can weigh it; \"Божьи\", not \"Божии\", as the Russian New Testament writes it.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010060020021",
+            "o010060020032"
+          ],
+          "choice": "\"神の子ら\" (L, B), \"神の子たち\" (R), with no explanation in the text",
+          "alternatives": [
+            "\"天の者たち\"",
+            "\"神の使いたち\""
+          ],
+          "reason": "The phrase most likely means heavenly beings, but this is uncertain (m1); Japanese keeps the phrase as the English does and leaves the sense to the footnote.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010060020021",
+            "o010060020031",
+            "o010060020032"
+          ],
+          "choice": "\"anak-anak Allah\" at every level",
+          "alternatives": [
+            "\"malaikat-malaikat\""
+          ],
+          "reason": "The Hebrew phrase most likely means heavenly beings, though this is uncertain (m1); Indonesian keeps the phrase as the English does and leaves the meaning to the note.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o010060020032"
+          ],
+          "choice": "{{god_term:神|上帝}} for every word naming God",
+          "alternatives": [
+            "上帝 as the default"
+          ],
+          "reason": "The Chinese reader setting (style guide section 4); this note stands for the whole chapter.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010060020021",
+            "o010060020032"
+          ],
+          "choice": "\"{{god_term:神|上帝}}的众子\"",
+          "alternatives": [
+            "{{god_term:神|上帝}}的儿子们",
+            "天使"
+          ],
+          "reason": "Most likely heavenly beings (meaning decision m1), but every English level keeps \"the sons of God\", so Chinese keeps the phrase too, in the glossary's form for Job; \"众子\" marks a class of beings rather than God's own children. \"好看\" (L) is the Hebrew \"good\" in the sense good-looking, the pattern of 3:6 (m2).",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-tl-1",
+          "layer": "rendering",
+          "language": "tl",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010060020021",
+            "o010060020031",
+            "o010060020032"
+          ],
+          "choice": "\"mga anak ng Diyos\" (sons of God) with no gender span",
+          "alternatives": [],
+          "reason": "The Hebrew \"sons of God\" are heavenly beings (m1); \"mga anak\" here means \"sons\" in context, and adding \"na lalaki\" would make a phrase the source does not have. The phrase is kept the same in verse 4 and in Job 1:6.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -521,8 +965,171 @@
           "L": "И {{divine_name:ГОСПОДЬ|Яхве}} сказал: «Мой дух не будет пребывать в человеке вечно, ведь он — плоть; и его дней будет 120 лет.»",
           "B": "Тогда {{divine_name:ГОСПОДЬ|Яхве}} сказал: «Мой дух не будет вечно оставаться в людях, потому что они смертны. Их дней будет 120 лет.»",
           "R": "Тогда {{divine_name:ГОСПОДЬ|Яхве}} сказал: «Я не позволю {{deity_pronoun:моему|Моему}} дыханию жизни вечно оставаться в людях. Они всего лишь люди. Они будут жить не больше 120 лет.»"
+        },
+        "uk": {
+          "L": "І сказав {{divine_name:ГОСПОДЬ|Ягве}}: «Не перебуватиме {{deity_pronoun:мій|Мій}} дух у людині повіки, бо вона ж — плоть; і будуть її дні — 120 років.»",
+          "B": "Тоді {{divine_name:ГОСПОДЬ|Ягве}} сказав: «Мій дух не залишатиметься в людях вічно, бо вони смертні. Їхніх днів буде 120 років.»",
+          "R": "Тоді {{divine_name:ГОСПОДЬ|Ягве}} сказав: «Я не дозволю, щоб {{deity_pronoun:мій|Мій}} подих життя залишався в людях вічно. Вони лише люди. Вони житимуть не більше як 120 років.»"
+        },
+        "ja": {
+          "L": "そして{{divine_name:主|ヤハウェ}}は言われた。「わたしの霊は、永遠に人のうちにとどまることはない。人はまさしく肉だからである。人の日々は百二十年となる。」",
+          "B": "そこで{{divine_name:主|ヤハウェ}}は言われた。「わたしの霊は、いつまでも人のうちにとどまりはしない。人は死ぬべき者だからである。人の生きる日は百二十年となる。」",
+          "R": "そこで{{divine_name:主|ヤハウェ}}は言われました。「わたしは、わたしの命の息を、いつまでも人の中にとどめてはおかない。人はただの人間にすぎない。人は百二十年より長くは生きない。」"
+        },
+        "id": {
+          "L": "Dan {{divine_name:TUHAN|Yahweh}} berfirman, \"Roh-{{deity_pronoun:ku|Ku}} tidak akan tinggal di dalam manusia untuk selama-lamanya, karena mereka memang daging; dan umur mereka akan 120 tahun.\"",
+          "B": "Kemudian {{divine_name:TUHAN|Yahweh}} berfirman, \"Roh-{{deity_pronoun:ku|Ku}} tidak akan tinggal di dalam manusia untuk selama-lamanya, karena mereka fana. Umur mereka akan 120 tahun.\"",
+          "R": "Lalu {{divine_name:TUHAN|Yahweh}} berfirman, \"Aku tidak akan membiarkan napas hidup dari-{{deity_pronoun:ku|Ku}} tinggal di dalam manusia untuk selama-lamanya. Mereka hanyalah manusia. Mereka tidak akan hidup lebih dari 120 tahun.\""
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}说：“我的灵不会永远留在人里面，因为{{gender:他们|他}}也是肉体；{{gender:他们|他}}的日子要是一百二十年。”",
+          "B": "然后{{divine_name:上主|雅威}}说：“我的灵不会永远留在人里面，因为他们是必死的。他们的日子将是一百二十年。”",
+          "R": "然后{{divine_name:上主|雅威}}说：“我不会让我赐的生命气息永远留在人里面。他们只不过是人。他们最多只能活一百二十年。”"
+        },
+        "tl": {
+          "L": "At sinabi {{divine_name:ng PANGINOON|ni Yahweh}}, \"Hindi mananatili ang aking espiritu sa tao magpakailanman, sapagkat {{gender:sila|siya}} ay laman nga; at ang {{gender:kanilang|kaniyang}} mga araw ay magiging 120 taon.\"",
+          "B": "Pagkatapos ay sinabi {{divine_name:ng PANGINOON|ni Yahweh}}, \"Hindi mananatili ang aking espiritu sa tao magpakailanman, sapagkat sila ay may kamatayan. Ang kanilang mga araw ay magiging 120 taon.\"",
+          "R": "Pagkatapos ay sinabi {{divine_name:ng PANGINOON|ni Yahweh}}, \"Hindi ko hahayaang manatili sa mga tao magpakailanman ang hiningang bigay ko. Mga tao lamang sila. Hindi sila mabubuhay nang higit sa 120 taon.\""
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010060030011"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Then"
+        },
+        {
+          "tokens": [
+            "o010060030021"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "{{divine_name:the LORD|Yahweh}}"
+        },
+        {
+          "tokens": [
+            "o010060030012"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "said"
+        },
+        {
+          "tokens": [
+            "o010060030052"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "My"
+        },
+        {
+          "tokens": [
+            "o010060030051"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "spirit"
+        },
+        {
+          "tokens": [
+            "o010060030031"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "will not"
+        },
+        {
+          "tokens": [
+            "o010060030041"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "stay"
+        },
+        {
+          "tokens": [
+            "o010060030061"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "in"
+        },
+        {
+          "tokens": [
+            "o010060030062"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "{{gender:human beings|man}}"
+        },
+        {
+          "tokens": [
+            "o010060030071",
+            "o010060030072"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "forever"
+        },
+        {
+          "tokens": [
+            "o010060030081",
+            "o010060030082",
+            "o010060030083"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "for"
+        },
+        {
+          "tokens": [
+            "o010060030091",
+            "o010060030101"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "they are mortal"
+        },
+        {
+          "tokens": [
+            "o010060030122"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Their"
+        },
+        {
+          "tokens": [
+            "o010060030121"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "days"
+        },
+        {
+          "tokens": [
+            "o010060030111",
+            "o010060030112"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "will be"
+        },
+        {
+          "tokens": [
+            "o010060030131",
+            "o010060030141",
+            "o010060030142",
+            "o010060030151"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "120 years"
+        }
+      ],
       "decisions": [
         {
           "id": "m1",
@@ -803,6 +1410,109 @@
           "reason": "\"शरीर\" is the translation's word for flesh as mortal human nature, as in Romans; Balanced and Readable say mortal, only human, as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o010060030062",
+            "o010060030091"
+          ],
+          "choice": "\"人\" with no gender span for the English humankind / they / their spans; \"肉\" (L), \"死ぬべき者\" (B), \"ただの人間\" (R) for flesh",
+          "alternatives": [
+            "\"彼は肉である\""
+          ],
+          "reason": "Japanese 人 covers men and women, and the pronouns are repeated as 人, so no setting is needed. Flesh here means mortal, as the English Balanced and Readable say.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010060030051",
+            "o010060030052"
+          ],
+          "choice": "\"Roh-{{deity_pronoun:ku|Ku}}\" (L, B); \"napas hidup dari-{{deity_pronoun:ku|Ku}}\" (R)",
+          "alternatives": [],
+          "reason": "The spirit here is the breath of life God gives (m2); Literal and Balanced keep \"roh\" with the span on God's \"-Ku\", and Readable says breath of life as the English Readable does. \"mereka\" for the Hebrew \"he\" needs no gender span.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o010060030021",
+            "o010060030052"
+          ],
+          "choice": "{{divine_name:上主|雅威}}; \"我的\" with no deity pronoun span",
+          "alternatives": [],
+          "reason": "The divine name setting as in chapters 2-4 (style guide section 4). The English spans God's \"my\" here and in verses 13, 17 and 18; Chinese has no reverent first person, so God speaking says plain \"我\". Literal mirrors the English gender spans on the Hebrew singular with {{gender:他们|他}}.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010060030101"
+          ],
+          "choice": "\"肉体\" (L); \"必死的\" (B); \"只不过是人\" (R)",
+          "alternatives": [
+            "血气"
+          ],
+          "reason": "\"Flesh\" here is mortal, weak human nature; Literal keeps the word, Balanced and Readable say what it means, as the English levels do.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-tl-1",
+          "layer": "rendering",
+          "language": "tl",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010060030051",
+            "o010060030052"
+          ],
+          "choice": "\"ang aking espiritu\" (my spirit) at Literal and Balanced, lowercase; \"ang hiningang bigay ko\" (the breath I give) at Readable",
+          "alternatives": [],
+          "reason": "The spirit here is the breath of life God gives (m2), not the Holy Spirit, so \"espiritu\" is lowercase, as the English writes \"spirit\". The English Readable puts a span on \"my\"; Tagalog \"ko\" and \"aking\" for God take none (style guide section 4).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -905,8 +1615,217 @@
           "L": "Нефилимы были на земле в те дни, и также после того, когда сыны Божьи входили к дочерям человеческим и те рожали им. Это были богатыри, которые [были] издревле, прославленные люди.",
           "B": "Нефилимы были на земле в те дни и также после, когда сыны Божьи сходились с дочерьми людей и те рожали им детей. Это были богатыри древности, прославленные люди.",
           "R": "В те дни, и позже тоже, на земле были великаны, которых называли нефилимами. В то время сыновья Бога имели детей от дочерей людей. Эти дети выросли и стали знаменитыми героями далёкого прошлого."
+        },
+        "uk": {
+          "L": "Нефілими були на землі в ті дні, а також і потім, коли сини Божі входили до дочок людей, і ті народжували їм [дітей]. Це [були] могутні мужі, що [були] віддавна, мужі слави.",
+          "B": "Нефілими були на землі в ті дні, а також згодом, коли сини Божі сходилися з дочками людей і ті народжували їм дітей. Це були могутні мужі давнини, славетні люди.",
+          "R": "У ті дні, а також пізніше, на землі жили велетні, яких називали нефілимами. Тоді сини Бога мали дітей від людських дочок. Ці діти виросли й стали славними героями давніх часів."
+        },
+        "ja": {
+          "L": "そのころ、またその後にも、地上にはネフィリムがいた。神の子らが人の娘たちのところに入り、彼女たちが彼らに[子を]産んだときである。彼らは昔からの勇士たち、名のある者たちであった。",
+          "B": "そのころ、またその後にも、地上にはネフィリムがいた。神の子らが人の娘たちと交わり、彼女たちが子を産んだころのことである。彼らは昔の勇士たち、名高い者たちであった。",
+          "R": "そのころ、またその後にも、地上にはネフィリムと呼ばれる大男たちがいました。そのころ、神の子たちが人の娘たちとの間に子どもをもうけました。その子どもたちは成長して、昔の有名な英雄たちになりました。"
+        },
+        "id": {
+          "L": "Orang-orang Nefilim ada di bumi pada masa itu, dan juga sesudahnya, ketika anak-anak Allah menghampiri anak-anak perempuan manusia, dan mereka melahirkan [anak-anak] bagi mereka. Merekalah orang-orang perkasa pada zaman dahulu, orang-orang yang termasyhur.",
+          "B": "Orang-orang Nefilim ada di bumi pada masa itu, dan juga sesudahnya, ketika anak-anak Allah berhubungan dengan anak-anak perempuan manusia, dan perempuan-perempuan itu melahirkan anak-anak bagi mereka. Merekalah orang-orang perkasa pada zaman dahulu, orang-orang yang terkenal.",
+          "R": "Pada masa itu, dan juga sesudahnya, ada raksasa di bumi yang disebut Nefilim. Pada waktu itu anak-anak Allah mendapat anak dari anak-anak perempuan manusia. Anak-anak itu menjadi pahlawan-pahlawan terkenal pada zaman dahulu."
+        },
+        "zh": {
+          "L": "那些日子，以及后来，拿非利人在地上，就是{{god_term:神|上帝}}的众子进到人的女儿们那里，她们为他们生[孩子]的时候。他们就是古时的勇士，是有名的人。",
+          "B": "在那些日子，以及后来，地上有拿非利人；那时{{god_term:神|上帝}}的众子与人的女儿们同房，她们为他们生了孩子。这些人就是古时的勇士，是有名望的人。",
+          "R": "在那些日子，以及后来，地上有巨人，叫作拿非利人。那时，{{god_term:神|上帝}}的众子和人的女儿们生了孩子。这些孩子长大后，成了古时有名的英雄。"
+        },
+        "tl": {
+          "L": "Ang mga Nefilim ay nasa lupa nang mga araw na iyon, at pagkatapos din nito, nang sipingan ng mga anak ng Diyos ang mga anak na babae ng tao at nanganak sila [ng mga anak] para sa kanila. Sila ang mga makapangyarihang lalaki noong unang panahon, ang mga lalaking bantog.",
+          "B": "Ang mga Nefilim ay nasa lupa nang mga araw na iyon, at pagkatapos din nito, nang sipingan ng mga anak ng Diyos ang mga anak na babae ng mga tao at nagkaanak sila sa kanila. Sila ang mga makapangyarihang lalaki noong unang panahon, ang mga bantog na lalaki.",
+          "R": "Nang mga araw na iyon, at pagkatapos din nito, may mga higanteng tinatawag na Nefilim sa lupa. Nang panahong iyon ay nagkaanak ang mga anak ng Diyos sa mga anak na babae ng mga tao. Lumaki ang mga batang iyon at naging mga bantog na bayani noong unang panahon."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010060040011",
+            "o010060040012"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "The Nephilim"
+        },
+        {
+          "tokens": [
+            "o010060040021"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "were"
+        },
+        {
+          "tokens": [
+            "o010060040031"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "on"
+        },
+        {
+          "tokens": [
+            "o010060040032"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the earth"
+        },
+        {
+          "tokens": [
+            "o010060040041"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "in"
+        },
+        {
+          "tokens": [
+            "o010060040042",
+            "o010060040051",
+            "o010060040052"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "those days"
+        },
+        {
+          "tokens": [
+            "o010060040061"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010060040062"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "also"
+        },
+        {
+          "tokens": [
+            "o010060040071",
+            "o010060040081"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "afterward"
+        },
+        {
+          "tokens": [
+            "o010060040091"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "when"
+        },
+        {
+          "tokens": [
+            "o010060040111"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the sons"
+        },
+        {
+          "tokens": [
+            "o010060040121",
+            "o010060040122"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "of God"
+        },
+        {
+          "tokens": [
+            "o010060040101",
+            "o010060040131"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "had relations with"
+        },
+        {
+          "tokens": [
+            "o010060040141"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the daughters"
+        },
+        {
+          "tokens": [
+            "o010060040151",
+            "o010060040152"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "of {{gender:humans|men}}"
+        },
+        {
+          "tokens": [
+            "o010060040161"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010060040162",
+            "o010060040171",
+            "o010060040172"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "they bore them children"
+        },
+        {
+          "tokens": [
+            "o010060040181"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "These were"
+        },
+        {
+          "tokens": [
+            "o010060040191",
+            "o010060040192"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the mighty men"
+        },
+        {
+          "tokens": [
+            "o010060040201",
+            "o010060040211",
+            "o010060040212"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "of old"
+        },
+        {
+          "tokens": [
+            "o010060040221",
+            "o010060040231",
+            "o010060040232"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the famous men"
+        }
+      ],
       "decisions": [
         {
           "id": "m1",
@@ -1170,6 +2089,135 @@
           "reason": "The Hebrew name is kept, as in the English (m1). \"Исполины\", the traditional word, comes from the Greek translation and decides that they were giants; Readable says so and gives the name.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010060040012"
+          ],
+          "choice": "\"нефілими\", left as a name, with Readable saying they were giants",
+          "alternatives": [
+            "велетні at every level",
+            "ісполини"
+          ],
+          "reason": "The word is left untranslated (meaning decision m1), as in Numbers 13:33; Readable adds what it describes, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010060040012",
+            "o010060040192"
+          ],
+          "choice": "\"ネフィリム\" left untranslated, with \"大男たち\" added at Readable; \"勇士たち\" (L, B), \"英雄たち\" (R)",
+          "alternatives": [
+            "\"巨人\" at every level"
+          ],
+          "reason": "The Nephilim were a people of great size and strength, and the name is left untranslated as in the English (m1); Readable explains it as the English Readable does.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010060040012"
+          ],
+          "choice": "\"Nefilim\", left untranslated",
+          "alternatives": [
+            "\"orang-orang raksasa\""
+          ],
+          "reason": "The name is kept as the English keeps it (m1), in the Indonesian spelling with \"f\"; Readable adds \"raksasa\" (giants) as the English Readable does. Added to the glossary.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010060040012"
+          ],
+          "choice": "\"拿非利人\"; \"巨人，叫作拿非利人\" (R)",
+          "alternatives": [
+            "伟人",
+            "巨人 at every level"
+          ],
+          "reason": "The Nephilim are a people of great size and strength, left untranslated (meaning decision m1): Chinese keeps the conventional transliteration, and Readable explains it, as the English Readable does. \"勇士\" is the glossary's word for the mighty men (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010060040101"
+          ],
+          "choice": "\"进到……那里\" (L); \"同房\" (B)",
+          "alternatives": [],
+          "reason": "The Hebrew's three euphemisms for sexual union, one form each through Genesis: \"knew\" (yada) \"认识\" at Literal, as this translation's Matthew 1:25 and Luke 1:34 do; \"went in to\" (bo el) \"进到她那里\" at Literal; \"lay with\" (shakhav im) \"同寝\" at Literal. Balanced and Readable say it plainly, as the English level does: \"有了夫妻关系\" where the English says \"was intimate with\", otherwise \"同房\" (B, R), with \"同寝\" or \"睡\" where the English Balanced or Readable keeps \"lay with\" or \"sleep with\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-tl-1",
+          "layer": "rendering",
+          "language": "tl",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010060040012",
+            "o010060040192",
+            "o010060040221",
+            "o010060040231",
+            "o010060040232"
+          ],
+          "choice": "\"Nefilim\" (with \"mga higanteng tinatawag na\" at Readable); \"mga lalaking bantog\" (men of renown)",
+          "alternatives": [],
+          "reason": "The Hebrew word is left untranslated (m1), in the Filipino spelling \"Nefilim\" (ph > f). Readable explains it, as the English Readable does. \"bantog\" is famous, renowned (m2).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1258,8 +2306,174 @@
           "L": "И {{divine_name:ГОСПОДЬ|Яхве}} увидел, что велико зло человека на земле, и всякое намерение помыслов его сердца [было] только злым весь день.",
           "B": "{{divine_name:ГОСПОДЬ|Яхве}} увидел, как велико стало зло людей на земле и что все намерения их сердечных помыслов всё время были только злыми.",
           "R": "{{divine_name:ГОСПОДЬ|Яхве}} увидел, какими злыми стали люди на земле. Всё, о чём они думали и что задумывали, всё время было злым."
+        },
+        "uk": {
+          "L": "І побачив {{divine_name:ГОСПОДЬ|Ягве}}, що велике зло людини на землі, і всякий задум думок її серця [був] лише злий увесь день.",
+          "B": "{{divine_name:ГОСПОДЬ|Ягве}} побачив, яким великим стало зло людського роду на землі і що всі задуми й думки їхнього серця були постійно лише злі.",
+          "R": "{{divine_name:ГОСПОДЬ|Ягве}} побачив, якими злими стали люди на землі. Усе, про що вони думали й що задумували, завжди було лише злом."
+        },
+        "ja": {
+          "L": "そして{{divine_name:主|ヤハウェ}}は、地上で人の悪が大きく、その心の思いのすべての傾きが、一日中ただ悪であるのを見られた。",
+          "B": "{{divine_name:主|ヤハウェ}}は、地上に人の悪がはなはだしくなり、その心に思い計ることがみな、いつもただ悪いことばかりであるのをご覧になった。",
+          "R": "{{divine_name:主|ヤハウェ}}は、地上の人々がとても悪くなってしまったのをご覧になりました。人々が心に思うことや計画することは、いつも悪いことばかりでした。"
+        },
+        "id": {
+          "L": "Dan {{divine_name:TUHAN|Yahweh}} melihat bahwa kejahatan manusia besar di bumi, dan segala kecenderungan pikiran hatinya hanyalah jahat sepanjang hari.",
+          "B": "{{divine_name:TUHAN|Yahweh}} melihat betapa besarnya kejahatan manusia di bumi, dan bahwa segala kecenderungan pikiran hati mereka selalu hanya jahat.",
+          "R": "{{divine_name:TUHAN|Yahweh}} melihat betapa jahatnya manusia di bumi. Segala sesuatu yang mereka pikirkan dan rencanakan selalu jahat."
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}看见人在地上的邪恶很大，并且人心中思想的每一个意念，整天都只是恶的。",
+          "B": "{{divine_name:上主|雅威}}看到人类在地上的罪恶有多大，他们心里所想的一切意念整天都只是恶的。",
+          "R": "{{divine_name:上主|雅威}}看到地上的人变得多么邪恶。他们所想的、所计划的，一直都是坏事。"
+        },
+        "tl": {
+          "L": "At nakita {{divine_name:ng PANGINOON|ni Yahweh}} na malaki ang kasamaan ng tao sa lupa, at ang bawat hilig ng mga isipan ng kaniyang puso ay masama lamang sa buong araw.",
+          "B": "Nakita {{divine_name:ng PANGINOON|ni Yahweh}} kung gaano na kalaki ang kasamaan ng sangkatauhan sa lupa, at na ang bawat hilig ng mga isipan ng kanilang puso ay masama lamang sa lahat ng oras.",
+          "R": "Nakita {{divine_name:ng PANGINOON|ni Yahweh}} kung gaano na kasama ang mga tao sa lupa. Lahat ng kanilang iniisip at binabalak ay masama sa lahat ng oras."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010060050021"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "{{divine_name:The LORD|Yahweh}}"
+        },
+        {
+          "tokens": [
+            "o010060050012"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "saw"
+        },
+        {
+          "tokens": [
+            "o010060050031"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "how"
+        },
+        {
+          "tokens": [
+            "o010060050041"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "great"
+        },
+        {
+          "tokens": [
+            "o010060050051"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the wickedness"
+        },
+        {
+          "tokens": [
+            "o010060050061",
+            "o010060050062"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "of {{gender:the human race|man}}"
+        },
+        {
+          "tokens": [
+            "o010060050071"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "on"
+        },
+        {
+          "tokens": [
+            "o010060050072"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the earth"
+        },
+        {
+          "tokens": [
+            "o010060050081"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010060050082"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "every"
+        },
+        {
+          "tokens": [
+            "o010060050091"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "inclination"
+        },
+        {
+          "tokens": [
+            "o010060050101"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "of the thoughts"
+        },
+        {
+          "tokens": [
+            "o010060050111",
+            "o010060050112"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "of their hearts"
+        },
+        {
+          "tokens": [
+            "o010060050121"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "was only"
+        },
+        {
+          "tokens": [
+            "o010060050131"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "evil"
+        },
+        {
+          "tokens": [
+            "o010060050141"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "all"
+        },
+        {
+          "tokens": [
+            "o010060050151",
+            "o010060050152"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the time"
+        }
+      ],
       "decisions": [
         {
           "id": "m1",
@@ -1331,6 +2545,27 @@
             "\"इच्छा\""
           ],
           "reason": "The word is what the mind forms, all that people planned and intended (m1). \"कल्पना\" is what the mind shapes; Readable says \"thought and planned\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-tl-1",
+          "layer": "rendering",
+          "language": "tl",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010060050091",
+            "o010060050101",
+            "o010060050111",
+            "o010060050112"
+          ],
+          "choice": "\"hilig ng mga isipan ng kaniyang puso\" (inclination of the thoughts of his heart); \"sangkatauhan\" (the human race) at Balanced",
+          "alternatives": [],
+          "reason": "\"hilig\" is the leaning or bent of the mind (m1). \"sangkatauhan\" is all humankind, the word for the English Balanced's \"the human race\", and it is already inclusive.",
           "uncertain": false,
           "footnote": false
         }
@@ -1415,8 +2650,133 @@
           "L": "И {{divine_name:ГОСПОДЬ|Яхве}} пожалел, что {{deity_pronoun:он|Он}} создал человека на земле, и {{deity_pronoun:он|Он}} скорбел в своём сердце.",
           "B": "И {{divine_name:ГОСПОДЬ|Яхве}} пожалел, что {{deity_pronoun:он|Он}} создал людей на земле, и {{deity_pronoun:его|Его}} сердце было глубоко опечалено.",
           "R": "{{divine_name:ГОСПОДЬ|Яхве}} сожалел, что {{deity_pronoun:он|Он}} сделал людей на земле. Ему было очень больно на сердце."
+        },
+        "uk": {
+          "L": "І пожалкував {{divine_name:ГОСПОДЬ|Ягве}}, що {{deity_pronoun:він|Він}} зробив людину на землі, і {{deity_pronoun:він|Він}} засмутився до глибини свого серця.",
+          "B": "Тож {{divine_name:ГОСПОДЬ|Ягве}} пожалкував, що {{deity_pronoun:він|Він}} створив людей на землі, і {{deity_pronoun:його|Його}} серце глибоко засмутилося.",
+          "R": "{{divine_name:ГОСПОДЬ|Ягве}} жалкував, що {{deity_pronoun:він|Він}} зробив людей на землі. Це глибоко ранило {{deity_pronoun:його|Його}} серце."
+        },
+        "ja": {
+          "L": "そして{{divine_name:主|ヤハウェ}}は、地上に人を造ったことを悔やみ、その心に痛みを覚えられた。",
+          "B": "{{divine_name:主|ヤハウェ}}は、地上に人を造ったことを悔やまれ、心を深く痛められた。",
+          "R": "{{divine_name:主|ヤハウェ}}は、地上に人を造ったことを悔やまれました。そして、心をひどく痛められました。"
+        },
+        "id": {
+          "L": "Dan {{divine_name:TUHAN|Yahweh}} menyesal bahwa {{deity_pronoun:dia|Dia}} telah menjadikan manusia di bumi, dan hati-{{deity_pronoun:nya|Nya}} sangat berduka.",
+          "B": "Jadi {{divine_name:TUHAN|Yahweh}} menyesal bahwa {{deity_pronoun:dia|Dia}} telah menjadikan manusia di bumi, dan hati-{{deity_pronoun:nya|Nya}} sangat pedih.",
+          "R": "{{divine_name:TUHAN|Yahweh}} menyesal bahwa {{deity_pronoun:dia|Dia}} telah menjadikan manusia di bumi. Hati-{{deity_pronoun:nya|Nya}} sangat sedih."
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}因{{deity_pronoun:他|祂}}在地上造了人而后悔，{{deity_pronoun:他|祂}}的心深感痛苦。",
+          "B": "于是{{divine_name:上主|雅威}}为{{deity_pronoun:他|祂}}在地上造了人感到懊悔，{{deity_pronoun:他|祂}}的心非常难过。",
+          "R": "{{divine_name:上主|雅威}}很难过，因为{{deity_pronoun:他|祂}}在地上造了人。{{deity_pronoun:他|祂}}的心深深地受了伤。"
+        },
+        "tl": {
+          "L": "At nagsisi {{divine_name:ang PANGINOON|si Yahweh}} na ginawa {{deity_pronoun:niya|Niya}} ang tao sa lupa, at nagdalamhati {{deity_pronoun:siya|Siya}} sa {{deity_pronoun:kaniyang|Kaniyang}} puso.",
+          "B": "Kaya nagsisi {{divine_name:ang PANGINOON|si Yahweh}} na ginawa {{deity_pronoun:niya|Niya}} ang tao sa lupa, at labis na nabagabag ang {{deity_pronoun:kaniyang|Kaniyang}} puso.",
+          "R": "Nalungkot {{divine_name:ang PANGINOON|si Yahweh}} na ginawa {{deity_pronoun:niya|Niya}} ang mga tao sa lupa. Labis na nasaktan ang {{deity_pronoun:kaniyang|Kaniyang}} puso."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010060060011"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "So"
+        },
+        {
+          "tokens": [
+            "o010060060021"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "{{divine_name:the LORD|Yahweh}}"
+        },
+        {
+          "tokens": [
+            "o010060060012"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "regretted"
+        },
+        {
+          "tokens": [
+            "o010060060031"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "that"
+        },
+        {
+          "tokens": [
+            "o010060060041"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "{{deity_pronoun:he|He}} had made"
+        },
+        {
+          "tokens": [
+            "o010060060061",
+            "o010060060062"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "{{gender:human beings|man}}"
+        },
+        {
+          "tokens": [
+            "o010060060071"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "on"
+        },
+        {
+          "tokens": [
+            "o010060060072"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the earth"
+        },
+        {
+          "tokens": [
+            "o010060060081"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010060060102"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "{{deity_pronoun:his|His}}"
+        },
+        {
+          "tokens": [
+            "o010060060101"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "heart"
+        },
+        {
+          "tokens": [
+            "o010060060082",
+            "o010060060091"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "was deeply troubled"
+        }
+      ],
       "decisions": [
         {
           "id": "m1",
@@ -1576,6 +2936,89 @@
           "reason": "The Hebrew speaks of God's sorrow in human terms (m1). \"Раскаяться\" now means to repent of a wrong one has done, which the verse does not say.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010060060012"
+          ],
+          "choice": "\"пожалкував\"",
+          "alternatives": [
+            "розкаявся"
+          ],
+          "reason": "God's sorrow said in human terms (meaning decision m1); \"розкаявся\" would suggest repentance for a wrong.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010060060012",
+            "o010060060082"
+          ],
+          "choice": "\"悔やまれ\" for regretted; \"心を痛められた\" for grieved to his heart",
+          "alternatives": [
+            "\"後悔された\"",
+            "\"思い直された\""
+          ],
+          "reason": "The text speaks of God's sorrow in human terms (m1, m2); 悔やむ carries sorrow over what was done without suggesting a mistake corrected, as 後悔 can.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010060060012"
+          ],
+          "choice": "\"menyesal\" at every level",
+          "alternatives": [
+            "\"mengubah keputusan-Nya\""
+          ],
+          "reason": "Here the Hebrew verb is God's sorrow over what he made (m1), not a change of course announced, so every level says \"menyesal\", as the English says regretted; compare Jonah 3:9.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-tl-1",
+          "layer": "rendering",
+          "language": "tl",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010060060012"
+          ],
+          "choice": "\"nagsisi\" (regretted) at Literal and Balanced; \"nalungkot\" (was sorry) at Readable",
+          "alternatives": [],
+          "reason": "\"magsisi\" is the ordinary Tagalog word for regretting what one has done, said of God in human terms (m1), as the Hebrew does. Readable says \"nalungkot\", which does not suggest God did wrong, as the English Readable says \"was sorry\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1673,8 +3116,197 @@
           "L": "И {{divine_name:ГОСПОДЬ|Яхве}} сказал: «Я сотру человека, которого {{deity_pronoun:я|Я}} сотворил, с лица земли, от человека до скота, до ползающих и до птиц небес, потому что {{deity_pronoun:я|Я}} жалею, что создал их.»",
           "B": "И {{divine_name:ГОСПОДЬ|Яхве}} сказал: «Я сотру с лица земли людей, которых {{deity_pronoun:я|Я}} сотворил, а с ними и скот, существ, которые ползают по земле, и птиц неба, потому что {{deity_pronoun:я|Я}} жалею, что создал их.»",
           "R": "И {{divine_name:ГОСПОДЬ|Яхве}} сказал: «Я уничтожу людей, которых {{deity_pronoun:я|Я}} сотворил. Я уберу их с земли вместе с животными, ползающими существами и птицами неба. Мне жаль, что {{deity_pronoun:я|Я}} сделал их.»"
+        },
+        "uk": {
+          "L": "І сказав {{divine_name:ГОСПОДЬ|Ягве}}: «Я зітру людину, яку {{deity_pronoun:я|Я}} створив, з поверхні землі, від людини до тварин, до плазунів і до птахів небес, бо {{deity_pronoun:я|Я}} жалкую, що зробив їх.»",
+          "B": "Тож {{divine_name:ГОСПОДЬ|Ягве}} сказав: «Я зітру з поверхні землі людей, яких {{deity_pronoun:я|Я}} створив, а разом із ними тварин, плазунів і птахів неба, бо {{deity_pronoun:я|Я}} жалкую, що зробив їх.»",
+          "R": "Тож {{divine_name:ГОСПОДЬ|Ягве}} сказав: «Я знищу людей, яких {{deity_pronoun:я|Я}} створив. Я заберу їх із землі разом із тваринами, плазунами й птахами неба. Мені шкода, що {{deity_pronoun:я|Я}} їх зробив.»"
+        },
+        "ja": {
+          "L": "そして{{divine_name:主|ヤハウェ}}は言われた。「わたしが創造した人を、地の面から消し去る。人から家畜、這うもの、天の鳥に至るまで。わたしはそれらを造ったことを悔やむからである。」",
+          "B": "そこで{{divine_name:主|ヤハウェ}}は言われた。「わたしが創造した人を、地の面から消し去ろう。人とともに、家畜も、地を這うものも、空の鳥も。わたしはそれらを造ったことを悔やむからだ。」",
+          "R": "そこで{{divine_name:主|ヤハウェ}}は言われました。「わたしが造った人を消し去ろう。地上から取り除こう。動物も、地をはう小さな生き物も、空の鳥も一緒に。わたしはそれらを造ったことを悔やんでいる。」"
+        },
+        "id": {
+          "L": "Dan {{divine_name:TUHAN|Yahweh}} berfirman, \"Aku akan menghapus manusia yang telah {{deity_pronoun:aku|Aku}} ciptakan dari atas permukaan tanah, dari manusia sampai binatang, sampai binatang melata, dan sampai burung-burung di langit, sebab {{deity_pronoun:aku|Aku}} menyesal bahwa {{deity_pronoun:aku|Aku}} telah menjadikan mereka.\"",
+          "B": "Jadi {{divine_name:TUHAN|Yahweh}} berfirman, \"Aku akan menghapus dari muka bumi manusia yang telah {{deity_pronoun:aku|Aku}} ciptakan, dan bersama mereka binatang-binatang, binatang yang merayap di tanah, dan burung-burung di langit, sebab {{deity_pronoun:aku|Aku}} menyesal telah menjadikan mereka.\"",
+          "R": "Jadi {{divine_name:TUHAN|Yahweh}} berfirman, \"Aku akan memusnahkan manusia yang telah {{deity_pronoun:aku|Aku}} ciptakan. Aku akan melenyapkan mereka dari bumi, bersama binatang-binatang, binatang yang merayap, dan burung-burung di langit. Aku menyesal telah menjadikan mereka.\""
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}说：“我要把我所创造的人从地面上抹去，从人到牲畜、到爬物、到天上的飞鸟，因为我后悔造了他们。”",
+          "B": "于是{{divine_name:上主|雅威}}说：“我要把我所造的人从地面上抹去，连同牲畜、在地上爬行的动物和天空的飞鸟，因为我后悔造了他们。”",
+          "R": "于是{{divine_name:上主|雅威}}说：“我要除掉我所造的人。我要把他们从地上除去，还有动物、爬行的动物和天空的鸟。我很后悔造了他们。”"
+        },
+        "tl": {
+          "L": "At sinabi {{divine_name:ng PANGINOON|ni Yahweh}}, \"Papawiin ko ang tao na aking nilikha mula sa ibabaw ng lupa, mula sa tao hanggang sa mga hayop, hanggang sa mga gumagapang, at hanggang sa mga ibon sa langit, sapagkat nagsisisi ako na ginawa ko sila.\"",
+          "B": "Kaya sinabi {{divine_name:ng PANGINOON|ni Yahweh}}, \"Papawiin ko sa ibabaw ng lupa ang mga taong aking nilikha, at kasama nila ang mga hayop, ang mga nilalang na gumagapang sa lupa at ang mga ibon sa langit, sapagkat nagsisisi ako na ginawa ko sila.\"",
+          "R": "Kaya sinabi {{divine_name:ng PANGINOON|ni Yahweh}}, \"Lilipulin ko ang mga taong nilikha ko. Aalisin ko sila sa lupa, kasama ang mga hayop, ang mga nilalang na gumagapang at ang mga ibon sa langit. Nalulungkot ako na ginawa ko sila.\""
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010060070011"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "So"
+        },
+        {
+          "tokens": [
+            "o010060070021"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "{{divine_name:the LORD|Yahweh}}"
+        },
+        {
+          "tokens": [
+            "o010060070012"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "said"
+        },
+        {
+          "tokens": [
+            "o010060070031"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "I will wipe"
+        },
+        {
+          "tokens": [
+            "o010060070081",
+            "o010060070082"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "from"
+        },
+        {
+          "tokens": [
+            "o010060070091"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the face"
+        },
+        {
+          "tokens": [
+            "o010060070101",
+            "o010060070102"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "of the earth"
+        },
+        {
+          "tokens": [
+            "o010060070051",
+            "o010060070052"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the human beings"
+        },
+        {
+          "tokens": [
+            "o010060070061",
+            "o010060070071"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "I have created"
+        },
+        {
+          "tokens": [
+            "o010060070111",
+            "o010060070112"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and with them"
+        },
+        {
+          "tokens": [
+            "o010060070121",
+            "o010060070131"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the animals"
+        },
+        {
+          "tokens": [
+            "o010060070141",
+            "o010060070151"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the creatures that move along the ground"
+        },
+        {
+          "tokens": [
+            "o010060070161",
+            "o010060070162"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010060070171"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the birds"
+        },
+        {
+          "tokens": [
+            "o010060070181",
+            "o010060070182"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "of the sky"
+        },
+        {
+          "tokens": [
+            "o010060070191"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "for"
+        },
+        {
+          "tokens": [
+            "o010060070201"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "I regret"
+        },
+        {
+          "tokens": [
+            "o010060070211"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "that"
+        },
+        {
+          "tokens": [
+            "o010060070221",
+            "o010060070222"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "I made them"
+        }
+      ],
       "decisions": [
         {
           "id": "m1",
@@ -1707,6 +3339,25 @@
           "choice": "from humankind to animals: the animals share the judgment",
           "alternatives": [],
           "reason": "The animals were given to humankind's rule (1:26-28), so they share its fate. The list runs through the creatures of the sixth and fifth days in reverse, as if creation were being undone.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-tl-1",
+          "layer": "rendering",
+          "language": "tl",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010060070031"
+          ],
+          "choice": "\"papawiin\" (wipe away) at Literal and Balanced; \"lilipulin\" (destroy) at Readable",
+          "alternatives": [],
+          "reason": "\"pawiin\" is to wipe away or blot out (m1), the verb of 7:4 and 7:23 too; Readable says \"lipulin\", to destroy completely.",
           "uncertain": false,
           "footnote": false
         }
@@ -1783,8 +3434,84 @@
           "L": "А Ной нашёл благоволение в глазах {{divine_name:ГОСПОДА|Яхве}}.",
           "B": "Но Ной нашёл благоволение у {{divine_name:ГОСПОДА|Яхве}}.",
           "R": "Но {{divine_name:ГОСПОДЬ|Яхве}} был доволен Ноем."
+        },
+        "uk": {
+          "L": "А Ной знайшов ласку в очах {{divine_name:ГОСПОДА|Ягве}}.",
+          "B": "Але Ной знайшов ласку в {{divine_name:ГОСПОДА|Ягве}}.",
+          "R": "Але {{divine_name:ГОСПОДЬ|Ягве}} був задоволений Ноєм."
+        },
+        "ja": {
+          "L": "しかしノアは{{divine_name:主|ヤハウェ}}の目に恵みを得た。",
+          "B": "しかしノアは{{divine_name:主|ヤハウェ}}の恵みを受けた。",
+          "R": "けれども、{{divine_name:主|ヤハウェ}}はノアを喜ばれました。"
+        },
+        "id": {
+          "L": "Tetapi Nuh mendapat kasih karunia di mata {{divine_name:TUHAN|Yahweh}}.",
+          "B": "Tetapi Nuh mendapat kasih karunia dari {{divine_name:TUHAN|Yahweh}}.",
+          "R": "Tetapi {{divine_name:TUHAN|Yahweh}} berkenan kepada Nuh."
+        },
+        "zh": {
+          "L": "但挪亚在{{divine_name:上主|雅威}}的眼中得着恩惠。",
+          "B": "但挪亚得到了{{divine_name:上主|雅威}}的恩待。",
+          "R": "但{{divine_name:上主|雅威}}喜欢挪亚。"
+        },
+        "tl": {
+          "L": "Ngunit si Noe ay nakasumpong ng biyaya sa mga mata {{divine_name:ng PANGINOON|ni Yahweh}}.",
+          "B": "Ngunit kinalugdan {{divine_name:ng PANGINOON|ni Yahweh}} si Noe.",
+          "R": "Ngunit nalugod {{divine_name:ang PANGINOON|si Yahweh}} kay Noe."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010060080011"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "But"
+        },
+        {
+          "tokens": [
+            "o010060080012"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Noah"
+        },
+        {
+          "tokens": [
+            "o010060080021"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "found"
+        },
+        {
+          "tokens": [
+            "o010060080031"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "favor"
+        },
+        {
+          "tokens": [
+            "o010060080041",
+            "o010060080042"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "with"
+        },
+        {
+          "tokens": [
+            "o010060080051"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "{{divine_name:the LORD|Yahweh}}"
+        }
+      ],
       "decisions": [
         {
           "id": "m1",
@@ -1943,6 +3670,108 @@
           "reason": "The Hebrew word is favour and kindness shown to someone (m1). \"Благодать\" is kept in the New Testament for the Greek charis; \"благоволение\" is the favour one finds with someone.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010060080021",
+            "o010060080031"
+          ],
+          "choice": "\"знайшов ласку\"",
+          "alternatives": [
+            "знайшов милість",
+            "знайшов благодать"
+          ],
+          "reason": "Book-wide for \"find favor in the eyes of\" (18:3; 19:19; 30:27; 32:5; 33:8-15; 39:4; 47:29; 50:4): \"ласка\" is the favour of one who is greater, said the same way of God and of people.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010060080031"
+          ],
+          "choice": "\"恵み\" for favor",
+          "alternatives": [
+            "\"好意\""
+          ],
+          "reason": "Favor here is grace and kindness received from God (m1); 恵み is the key term for grace in the Japanese New Testament, and the link is wanted.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010060080021",
+            "o010060080031"
+          ],
+          "choice": "\"mendapat kasih karunia\" (L, B)",
+          "alternatives": [
+            "\"mendapat belas kasihan\""
+          ],
+          "reason": "The Hebrew word is grace and kindness received (m1); \"kasih karunia\" is the glossary's key term for grace. Readable says it with God as subject, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010060080031"
+          ],
+          "choice": "\"恩惠\" (L); \"恩待\" (B)",
+          "alternatives": [
+            "恩典",
+            "蒙恩"
+          ],
+          "reason": "To find favor is to receive grace and kindness (meaning decision m1). As the English keeps \"grace\" as a key term for the New Testament, Chinese keeps \"恩典\" for it and says \"恩惠\" / \"恩待\" in this phrase.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-tl-1",
+          "layer": "rendering",
+          "language": "tl",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010060080021",
+            "o010060080031"
+          ],
+          "choice": "\"nakasumpong ng biyaya\" (found grace) at Literal",
+          "alternatives": [],
+          "reason": "The Hebrew word is grace and kindness shown (m1), and \"biyaya\" is the glossary word for grace; Literal keeps the Hebrew \"found grace in the eyes of\". Balanced and Readable say that the LORD was pleased with him, as in Ruth 2:2, 10.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2026,8 +3855,149 @@
           "L": "Вот родословие Ноя. Ной был человеком праведным, непорочным он был среди своих поколений; с Богом ходил Ной.",
           "B": "Вот история Ноя. Ной был праведным человеком, непорочным среди людей своего времени, и он ходил с Богом.",
           "R": "Вот история Ноя. Ной поступал правильно и жил хорошей жизнью, не так, как другие люди его времени. Он был близок к Богу."
+        },
+        "uk": {
+          "L": "Це покоління Ноя. Ной був чоловік праведний, бездоганний він був серед своїх поколінь; з Богом ходив Ной.",
+          "B": "Це історія Ноя. Ной був праведним чоловіком, бездоганним серед людей свого часу, і він ходив з Богом.",
+          "R": "Це розповідь про Ноя. Ной робив те, що правильно, і жив чесно, не так, як інші люди його часу. Він був близький до Бога."
+        },
+        "ja": {
+          "L": "これはノアの系図である。ノアは正しい人で、その世代の中で全き者であった。ノアは神と共に歩んだ。",
+          "B": "これはノアの物語である。ノアは正しい人で、同じ時代の人々の中で非の打ちどころのない者であり、神と共に歩んだ。",
+          "R": "これはノアの物語です。ノアは正しいことを行い、まっすぐに生きた人で、同じ時代のほかの人々とは違っていました。ノアは神のすぐそばで生きました。"
+        },
+        "id": {
+          "L": "Inilah riwayat Nuh. Nuh adalah seorang yang benar, tidak bercela di antara orang-orang sezamannya; Nuh hidup bergaul dengan Allah.",
+          "B": "Inilah kisah Nuh. Nuh adalah orang benar, tidak bercela di antara orang-orang sezamannya, dan ia hidup bergaul dengan Allah.",
+          "R": "Inilah kisah Nuh. Nuh melakukan apa yang benar dan hidup dengan baik, tidak seperti orang-orang lain pada zamannya. Dia hidup dekat dengan Allah."
+        },
+        "zh": {
+          "L": "这些是挪亚的世系。挪亚是一个公义的人，在他那一代人中无可指责；与{{god_term:神|上帝}}同行的，是挪亚。",
+          "B": "这是挪亚的故事。挪亚是个正直公义的人，在同时代的人中毫无过错，他常与{{god_term:神|上帝}}同行。",
+          "R": "这是挪亚的故事。挪亚做正确的事，过着好的生活，和他那个时代的其他人不一样。他和{{god_term:神|上帝}}很亲近。"
+        },
+        "tl": {
+          "L": "Ito ang mga salinlahi ni Noe. Si Noe ay isang lalaking matuwid, walang kapintasan sa kaniyang mga salinlahi; lumakad si Noe na kasama ng Diyos.",
+          "B": "Ito ang kasaysayan ni Noe. Si Noe ay isang lalaking matuwid, walang kapintasan sa gitna ng mga tao sa kaniyang panahon, at lumakad siya na kasama ng Diyos.",
+          "R": "Ito ang kasaysayan ni Noe. Ginawa ni Noe ang tama at namuhay siya nang mabuti, hindi tulad ng ibang mga tao sa kaniyang panahon. Malapit siya sa Diyos."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010060090011"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "This"
+        },
+        {
+          "tokens": [
+            "o010060090021"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the story"
+        },
+        {
+          "tokens": [
+            "o010060090031"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "of Noah"
+        },
+        {
+          "tokens": [
+            "o010060090041"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Noah"
+        },
+        {
+          "tokens": [
+            "o010060090081"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "was"
+        },
+        {
+          "tokens": [
+            "o010060090061"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "a righteous"
+        },
+        {
+          "tokens": [
+            "o010060090051"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "man"
+        },
+        {
+          "tokens": [
+            "o010060090071"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "blameless"
+        },
+        {
+          "tokens": [
+            "o010060090091"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "among the people of"
+        },
+        {
+          "tokens": [
+            "o010060090093"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "his"
+        },
+        {
+          "tokens": [
+            "o010060090092"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "time"
+        },
+        {
+          "tokens": [
+            "o010060090121",
+            "o010060090131"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "he walked"
+        },
+        {
+          "tokens": [
+            "o010060090101"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "with"
+        },
+        {
+          "tokens": [
+            "o010060090111",
+            "o010060090112"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "God"
+        }
+      ],
       "decisions": [
         {
           "id": "m1",
@@ -2180,6 +4150,112 @@
           "reason": "\"धर्मी\" is the translation's word for righteous. The word for blameless means whole, of complete integrity (m2); it is the word the Law uses for an animal without defect, and \"निर्दोष\" is used for both.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010060090071"
+          ],
+          "choice": "\"бездоганний\"",
+          "alternatives": [
+            "непорочний",
+            "досконалий"
+          ],
+          "reason": "Whole, of complete integrity (meaning decision m2); \"непорочний\" now suggests sexual purity, \"досконалий\" sinlessness.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010060090021",
+            "o010060090071"
+          ],
+          "choice": "\"系図\" (L), \"物語\" (B, R) for the generations; \"全き者\" (L), \"非の打ちどころのない者\" (B) for blameless",
+          "alternatives": [
+            "\"由来\" as in 2:4",
+            "\"完全な者\""
+          ],
+          "reason": "For a person, Literal says 系図, as in 5:1; Balanced and Readable follow the English \"story\". Blameless means whole, of complete integrity (m2), which 完全 would overstate as sinless.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010060090061"
+          ],
+          "choice": "\"orang benar\", \"tidak bercela\"",
+          "alternatives": [],
+          "reason": "\"benar\" and \"orang benar\" are the glossary words for righteous (m1); \"tidak bercela\" for blameless, whole in integrity (m2). \"hidup bergaul dengan Allah\" as for Enoch (5:22, m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010060090021",
+            "o010060090061",
+            "o010060090071"
+          ],
+          "choice": "\"世系\" (L), \"故事\" (B, R); \"公义的人\" and \"无可指责\" (L)",
+          "alternatives": [
+            "事迹 (L)",
+            "义人……完全人"
+          ],
+          "reason": "The toledot heading (\"these are the generations of\"), one scheme through Genesis (2:4; 5:1; 6:9; 10:1; 11:10, 27; 25:12, 19; 36:1, 9; 37:2): Literal keeps one noun for the Hebrew word at every heading, \"这些是……的世系\" (5:1 \"……世系的册子\", the book of the generations), as the English Literal keeps \"generations\"; Balanced and Readable say what kind of account follows, as the English level does: \"story\" 故事, \"account of the family (line)\" 家族的记录 / 家族世系的记录, \"list\" 名单. Righteous is doing what is right in God's eyes, blameless is whole integrity (meaning decisions m1, m2). \"与{{god_term:神|上帝}}同行\" repeats Enoch's phrase (5:22, 24; m3); Literal keeps the Hebrew order, with God first.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-tl-1",
+          "layer": "rendering",
+          "language": "tl",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010060090061",
+            "o010060090071"
+          ],
+          "choice": "\"matuwid\" (righteous); \"walang kapintasan\" (blameless)",
+          "alternatives": [],
+          "reason": "\"matuwid\" is the word of \"katuwiran\" in the glossary (m1); \"walang kapintasan\" is without a flaw, whole (m2). \"lumakad na kasama ng Diyos\" is the phrase of Enoch in 5:22 (m3).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2259,8 +4335,99 @@
           "L": "И Ной родил трёх сыновей: Сима, Хама и Иафета.",
           "B": "У Ноя было три сына: Сим, Хам и Иафет.",
           "R": "У Ноя было три сына, их звали Сим, Хам и Иафет."
+        },
+        "uk": {
+          "L": "І породив Ной трьох синів: Сима, Хама і Яфета.",
+          "B": "Ной мав трьох синів: Сима, Хама і Яфета.",
+          "R": "У Ноя було троє синів — Сим, Хам і Яфет."
+        },
+        "ja": {
+          "L": "そしてノアは三人の息子、セム、ハム、ヤフェトをもうけた。",
+          "B": "ノアには三人の息子、セム、ハム、ヤフェトがいた。",
+          "R": "ノアには、セム、ハム、ヤフェトという三人の息子がいました。"
+        },
+        "id": {
+          "L": "Dan Nuh memperanakkan tiga anak laki-laki: Sem, Ham, dan Yafet.",
+          "B": "Nuh mempunyai tiga anak laki-laki: Sem, Ham, dan Yafet.",
+          "R": "Nuh mempunyai tiga anak laki-laki, yaitu Sem, Ham, dan Yafet."
+        },
+        "zh": {
+          "L": "挪亚生了三个儿子，[他们是]闪、含和雅弗。",
+          "B": "挪亚有三个儿子：闪、含和雅弗。",
+          "R": "挪亚有三个儿子，名叫闪、含和雅弗。"
+        },
+        "tl": {
+          "L": "At naging anak ni Noe ang tatlong lalaki: sina Sem, Cam at Jafet.",
+          "B": "Nagkaroon si Noe ng tatlong anak na lalaki: sina Sem, Cam at Jafet.",
+          "R": "Nagkaroon si Noe ng tatlong anak na lalaki na ang mga pangalan ay Sem, Cam at Jafet."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010060100021"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Noah"
+        },
+        {
+          "tokens": [
+            "o010060100012"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "had"
+        },
+        {
+          "tokens": [
+            "o010060100031"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "three"
+        },
+        {
+          "tokens": [
+            "o010060100041"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "sons"
+        },
+        {
+          "tokens": [
+            "o010060100061"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Shem"
+        },
+        {
+          "tokens": [
+            "o010060100081"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Ham"
+        },
+        {
+          "tokens": [
+            "o010060100091"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010060100101"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Japheth"
+        }
+      ],
       "decisions": [],
       "status": "ai_draft"
     },
@@ -2340,8 +4507,103 @@
           "L": "И земля была испорчена перед Богом, и земля наполнилась насилием.",
           "B": "Земля в глазах Бога была испорчена и полна насилия.",
           "R": "Бог видел, что мир прогнил. Он был полон насилия."
+        },
+        "uk": {
+          "L": "І була зіпсована земля перед Богом, і наповнилася земля насильством.",
+          "B": "А земля була зіпсована в Божих очах і сповнена насильства.",
+          "R": "Бог бачив, що світ зовсім зіпсувався. Він був повний насильства."
+        },
+        "ja": {
+          "L": "そして地は神の前に堕落し、地は暴虐で満ちていた。",
+          "B": "そのころ、地は神の前に堕落し、暴虐に満ちていた。",
+          "R": "神がご覧になると、世界はすっかり腐りきっていました。そして、暴力でいっぱいでした。"
+        },
+        "id": {
+          "L": "Dan bumi telah rusak di hadapan Allah, dan bumi penuh [dengan] kekerasan.",
+          "B": "Bumi telah rusak di mata Allah dan penuh dengan kekerasan.",
+          "R": "Allah melihat bahwa dunia sudah busuk. Dunia penuh dengan kekerasan."
+        },
+        "zh": {
+          "L": "并且地在{{god_term:神|上帝}}面前败坏了，地被暴力充满。",
+          "B": "那时，大地在{{god_term:神|上帝}}眼中已经败坏，到处充满了暴力。",
+          "R": "{{god_term:神|上帝}}看到世界已经烂透了。到处都是暴力。"
+        },
+        "tl": {
+          "L": "At ang lupa ay sira sa harap ng Diyos, at ang lupa ay napuno ng karahasan.",
+          "B": "Ang lupa ay sira na sa paningin ng Diyos at puno ng karahasan.",
+          "R": "Nakita ng Diyos na bulok na ang mundo. Puno ito ng karahasan."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010060110021",
+            "o010060110022"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the earth"
+        },
+        {
+          "tokens": [
+            "o010060110012"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "was corrupt"
+        },
+        {
+          "tokens": [
+            "o010060110031"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "in"
+        },
+        {
+          "tokens": [
+            "o010060110041",
+            "o010060110042"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "God's"
+        },
+        {
+          "tokens": [
+            "o010060110032"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "sight"
+        },
+        {
+          "tokens": [
+            "o010060110051"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010060110052",
+            "o010060110061",
+            "o010060110062"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "full of"
+        },
+        {
+          "tokens": [
+            "o010060110071"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "violence"
+        }
+      ],
       "decisions": [
         {
           "id": "m1",
@@ -2452,6 +4714,68 @@
           "reason": "The verb means ruined, spoiled (m1), and comes back in verses 12, 13 and 17 (\"destroy\"). \"बिगड़ना\" and \"बिगाड़ना\" keep that link in Literal and Balanced.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010060110012",
+            "o010060110071"
+          ],
+          "choice": "\"堕落し\" (L, B), \"腐りきって\" (R) for corrupt; \"暴虐\" (L, B), \"暴力\" (R) for violence",
+          "alternatives": [
+            "\"腐敗し\"",
+            "\"不法\""
+          ],
+          "reason": "Corrupt means ruined, spoiled (m1), and violence is wrongdoing that harms others (m2). The Hebrew uses the same verb for corrupt (verses 11-12) and destroy (verse 13); Japanese needs two verbs, and the link is left to the note.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010060110012"
+          ],
+          "choice": "\"rusak\" (L, B), \"busuk\" (R) for corrupt; \"kekerasan\" for violence",
+          "alternatives": [],
+          "reason": "The Hebrew verb is ruined, spoiled (m1), and is used again for God's destroying in verse 13; Indonesian cannot keep one verb for both and says \"rusak\" and \"membinasakan\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-tl-1",
+          "layer": "rendering",
+          "language": "tl",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010060110012",
+            "o010060110071"
+          ],
+          "choice": "\"sira\" (ruined, corrupt) at Literal and Balanced, \"bulok\" (rotten) at Readable; \"karahasan\" (violence)",
+          "alternatives": [],
+          "reason": "The Hebrew verb is to ruin or spoil (m1), the same verb as \"destroy\" in verse 13; Literal and Balanced use \"sira\" here and \"sisirain\" there, so the link is kept. \"karahasan\" is violence that harms others (m2).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2538,8 +4862,143 @@
           "L": "И Бог увидел землю, и вот, она была испорчена, потому что всякая плоть испортила свой путь на земле.",
           "B": "Бог увидел, как испорчена стала земля, потому что все люди на земле испортили свои пути.",
           "R": "Бог посмотрел на мир и увидел, как он прогнил. Все люди на земле пошли злыми путями."
+        },
+        "uk": {
+          "L": "І побачив Бог землю, і ось вона зіпсована, бо всяка плоть зіпсувала свою дорогу на землі.",
+          "B": "Бог побачив, якою зіпсованою стала земля, бо всі люди на землі зіпсували свої дороги.",
+          "R": "Бог подивився на світ і побачив, який він зіпсований. Усі люди на землі стали жити лихо."
+        },
+        "ja": {
+          "L": "そして神は地を見られた。するとなんと、それは堕落していた。すべての肉が地上でその道を堕落させていたからである。",
+          "B": "神が地をご覧になると、それは堕落していた。地上のすべての人が、その道を堕落させていたからである。",
+          "R": "神が世界をご覧になると、それはひどく腐りきっていました。地上のすべての人が、悪い道に進んでいたのです。"
+        },
+        "id": {
+          "L": "Dan Allah melihat bumi, dan lihatlah, bumi itu rusak, sebab segala makhluk telah merusak jalannya di bumi.",
+          "B": "Allah melihat betapa rusaknya bumi, sebab semua manusia di bumi telah merusak jalan hidupnya.",
+          "R": "Allah melihat ke dunia dan melihat betapa busuknya dunia itu. Semua orang di bumi sudah mengikuti jalan yang jahat."
+        },
+        "zh": {
+          "L": "{{god_term:神|上帝}}看大地，看哪，它已经败坏了，因为一切血肉之躯在地上都败坏了自己的道路。",
+          "B": "{{god_term:神|上帝}}看到大地败坏到了什么地步，因为地上所有的人都已经走上败坏的道路。",
+          "R": "{{god_term:神|上帝}}看着世界，看到它烂得多么厉害。地上所有的人都已经走上了邪恶的路。"
+        },
+        "tl": {
+          "L": "At nakita ng Diyos ang lupa, at narito, ito ay sira, sapagkat sinira ng lahat ng laman ang kaniyang lakad sa lupa.",
+          "B": "Nakita ng Diyos kung gaano na kasira ang lupa, sapagkat sinira ng lahat ng tao sa lupa ang kanilang pamumuhay.",
+          "R": "Tiningnan ng Diyos ang mundo at nakita kung gaano na ito kabulok. Bumaling na sa masasamang gawain ang lahat ng tao sa lupa."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010060120021"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "God"
+        },
+        {
+          "tokens": [
+            "o010060120012"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "saw"
+        },
+        {
+          "tokens": [
+            "o010060120051",
+            "o010060120052"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "how"
+        },
+        {
+          "tokens": [
+            "o010060120061"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "corrupt"
+        },
+        {
+          "tokens": [
+            "o010060120041",
+            "o010060120042"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the earth"
+        },
+        {
+          "tokens": [
+            "o010060120061"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "had become"
+        },
+        {
+          "tokens": [
+            "o010060120071"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "for"
+        },
+        {
+          "tokens": [
+            "o010060120091"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "all"
+        },
+        {
+          "tokens": [
+            "o010060120101"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the people"
+        },
+        {
+          "tokens": [
+            "o010060120131"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "on"
+        },
+        {
+          "tokens": [
+            "o010060120141",
+            "o010060120142"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "earth"
+        },
+        {
+          "tokens": [
+            "o010060120081"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "had corrupted"
+        },
+        {
+          "tokens": [
+            "o010060120121",
+            "o010060120122"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "their ways"
+        }
+      ],
       "decisions": [
         {
           "id": "m1",
@@ -2630,6 +5089,87 @@
             "\"सब शरीर\""
           ],
           "reason": "\"All flesh\" means all living creatures, or all people (m1); Hindi \"सब शरीर\" would not be understood, so Literal says \"all living creatures\", and Balanced and Readable say \"all the people\", as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010060120091",
+            "o010060120101"
+          ],
+          "choice": "\"всяка плоть\"",
+          "alternatives": [
+            "всяке тіло",
+            "усі люди"
+          ],
+          "reason": "Literal keeps the Hebrew \"all flesh\" here and in the flood story (6:13, 17, 19; 7:15-21; 9:11-17), where it means all living creatures or all people; Balanced and Readable say which.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010060120091",
+            "o010060120101"
+          ],
+          "choice": "\"segala makhluk\" (L) for all flesh",
+          "alternatives": [
+            "\"segala daging\""
+          ],
+          "reason": "The Hebrew \"all flesh\" can mean all living creatures or all people (m1); Literal says \"segala makhluk\", which keeps both, since \"daging\" alone would be read as meat.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010060120091",
+            "o010060120101"
+          ],
+          "choice": "\"一切血肉之躯\" (L); \"所有的人\" (B, R)",
+          "alternatives": [
+            "凡有血气的"
+          ],
+          "reason": "The glossary's forms for \"all flesh\": Literal keeps the image, Balanced and Readable say \"people\", the main sense here (meaning decision m1), as the English levels do. Literal's \"看哪\" keeps the echo of 1:31 (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-tl-1",
+          "layer": "rendering",
+          "language": "tl",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010060120091",
+            "o010060120101"
+          ],
+          "choice": "\"ang lahat ng laman\" (all flesh) at Literal",
+          "alternatives": [],
+          "reason": "Literal keeps the Hebrew \"all flesh\", all living creatures or all people (m1); Balanced and Readable say \"all the people\", as the English does.",
           "uncertain": false,
           "footnote": false
         }
@@ -2727,8 +5267,182 @@
           "L": "И Бог сказал Ною: «Конец всякой плоти пришёл передо {{deity_pronoun:мной|Мной}}, потому что земля наполнилась насилием из-за них; и вот, {{deity_pronoun:я|Я}} погублю их вместе с землёй.",
           "B": "И Бог сказал Ною: «Я решил положить конец всем людям, потому что из-за них земля наполнилась насилием. Я погублю их вместе с землёй.",
           "R": "И Бог сказал Ною: «Я положу конец всем людям. Земля полна их насилия. Поэтому {{deity_pronoun:я|Я}} погублю их, а вместе с ними и землю."
+        },
+        "uk": {
+          "L": "І сказав Бог Ноєві: «Кінець усякої плоті прийшов переді {{deity_pronoun:мною|Мною}}, бо земля наповнилася насильством через них; і ось {{deity_pronoun:я|Я}} знищу їх разом із землею.",
+          "B": "Тож Бог сказав Ноєві: «Я вирішив покласти край усім людям, бо через них земля сповнилася насильства. Я знищу їх разом із землею.",
+          "R": "Тож Бог сказав Ноєві: «Я покладу край усім людям. Земля повна їхнього насильства. Тому {{deity_pronoun:я|Я}} знищу їх, а разом із ними й землю."
+        },
+        "ja": {
+          "L": "そして神はノアに言われた。「すべての肉の終わりが、わたしの前に来た。地は彼らのゆえに暴虐で満ちているからである。そして見なさい、わたしは彼らを地とともに滅ぼす。",
+          "B": "そこで神はノアに言われた。「わたしは、すべての人を終わらせることにした。地は彼らのために暴虐で満ちているからである。わたしは彼らを地とともに滅ぼそうとしている。",
+          "R": "そこで神はノアに言われました。「わたしは、すべての人を終わらせることにした。地は人々の暴力でいっぱいだ。だからわたしは、人々を地とともに滅ぼす。"
+        },
+        "id": {
+          "L": "Dan Allah berfirman kepada Nuh, \"Kesudahan segala makhluk telah datang ke hadapan-{{deity_pronoun:ku|Ku}}, sebab bumi telah penuh [dengan] kekerasan karena mereka; dan lihatlah, {{deity_pronoun:aku|Aku}} akan membinasakan mereka bersama-sama dengan bumi.",
+          "B": "Jadi Allah berfirman kepada Nuh, \"Aku telah memutuskan untuk mengakhiri hidup semua manusia, sebab bumi telah penuh dengan kekerasan karena mereka. Aku akan membinasakan mereka bersama-sama dengan bumi.",
+          "R": "Jadi Allah berfirman kepada Nuh, \"Aku akan mengakhiri hidup semua manusia. Bumi penuh dengan kekerasan mereka. Jadi {{deity_pronoun:aku|Aku}} akan membinasakan mereka, dan bumi juga."
+        },
+        "zh": {
+          "L": "{{god_term:神|上帝}}对挪亚说：“一切血肉之躯的结局已经来到我面前，因为地因他们充满了暴力；看哪，我就要毁灭他们，连同大地。",
+          "B": "于是{{god_term:神|上帝}}对挪亚说：“我已经决定要终结所有的人，因为地上因他们充满了暴力。我要毁灭他们，大地也不能幸免。",
+          "R": "于是{{god_term:神|上帝}}对挪亚说：“我要让所有的人都灭亡。地上满是他们的暴力。所以我要毁灭他们，也要毁灭大地。"
+        },
+        "tl": {
+          "L": "At sinabi ng Diyos kay Noe, \"Ang wakas ng lahat ng laman ay dumating na sa harap ko, sapagkat ang lupa ay napuno ng karahasan dahil sa kanila; at narito, sisirain ko sila kasama ng lupa.",
+          "B": "Kaya sinabi ng Diyos kay Noe, \"Ipinasya kong wakasan ang lahat ng tao, sapagkat napuno ng karahasan ang lupa dahil sa kanila. Sisirain ko sila kasama ng lupa.",
+          "R": "Kaya sinabi ng Diyos kay Noe, \"Wawakasan ko na ang lahat ng tao. Puno ang lupa ng kanilang karahasan. Kaya lilipulin ko sila, at ang lupa kasama nila."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010060130011"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "So"
+        },
+        {
+          "tokens": [
+            "o010060130021"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "God"
+        },
+        {
+          "tokens": [
+            "o010060130012"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "said"
+        },
+        {
+          "tokens": [
+            "o010060130031"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "to"
+        },
+        {
+          "tokens": [
+            "o010060130032"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Noah"
+        },
+        {
+          "tokens": [
+            "o010060130071",
+            "o010060130081",
+            "o010060130082",
+            "o010060130083"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "I have decided to put"
+        },
+        {
+          "tokens": [
+            "o010060130041"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "an end"
+        },
+        {
+          "tokens": [
+            "o010060130051",
+            "o010060130061"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "to all people"
+        },
+        {
+          "tokens": [
+            "o010060130091"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "for"
+        },
+        {
+          "tokens": [
+            "o010060130111",
+            "o010060130112"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the earth"
+        },
+        {
+          "tokens": [
+            "o010060130101"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "is filled"
+        },
+        {
+          "tokens": [
+            "o010060130121"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "with violence"
+        },
+        {
+          "tokens": [
+            "o010060130131",
+            "o010060130132",
+            "o010060130133"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "because of them"
+        },
+        {
+          "tokens": [
+            "o010060130141",
+            "o010060130142",
+            "o010060130143"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "I am going"
+        },
+        {
+          "tokens": [
+            "o010060130151",
+            "o010060130152"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "to destroy them"
+        },
+        {
+          "tokens": [
+            "o010060130161"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "along with"
+        },
+        {
+          "tokens": [
+            "o010060130171",
+            "o010060130172"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the earth"
+        }
+      ],
       "decisions": [
         {
           "id": "m1",
@@ -2944,8 +5658,168 @@
           "L": "Сделай себе ковчег из дерева гофер; с отделениями ты сделаешь ковчег, и ты покроешь его изнутри и снаружи смолой.",
           "B": "Сделай себе ковчег из дерева гофер. Сделай в нём отделения и покрой его смолой внутри и снаружи.",
           "R": "Построй огромный корабль из хорошего дерева. Сделай в нём комнаты и покрой его внутри и снаружи смолой, чтобы туда не проникала вода."
+        },
+        "uk": {
+          "L": "Зроби собі ковчег з дерева гофер; з кімнатами зробиш ковчег і обмажеш його зсередини й ззовні смолою.",
+          "B": "Зроби собі ковчег з дерева гофер. Зроби в ньому кімнати й обмаж його смолою зсередини і ззовні.",
+          "R": "Збудуй величезний корабель із доброго дерева. Зроби в ньому кімнати й обмаж його зсередини і ззовні смолою, щоб не пропускав води."
+        },
+        "ja": {
+          "L": "あなたのために、ゴフェルの木で箱舟を造りなさい。箱舟に部屋を造り、その内側と外側を瀝青で塗りなさい。",
+          "B": "あなたはゴフェルの木で箱舟を造りなさい。箱舟の中に部屋を造り、内側にも外側にもタールを塗りなさい。",
+          "R": "じょうぶな木で、とても大きな舟を造りなさい。舟の中に部屋を造り、水が入らないように、内側にも外側にもタールを塗りなさい。"
+        },
+        "id": {
+          "L": "Buatlah bagimu sebuah bahtera dari kayu gofir; bahtera itu harus kaubuat [dengan] bilik-bilik, dan kaulapisi dengan pakal di dalam dan di luarnya.",
+          "B": "Buatlah bagimu sebuah bahtera dari kayu gofir. Buatlah bilik-bilik di dalamnya, dan lapisilah bagian dalam dan luarnya dengan pakal.",
+          "R": "Buatlah sebuah kapal yang sangat besar dari kayu yang baik. Buatlah kamar-kamar di dalamnya, dan lapisilah bagian dalam dan luarnya dengan ter supaya air tidak bisa masuk."
+        },
+        "zh": {
+          "L": "你要为自己造一只歌斐木的方舟；要在方舟里造出隔间，又要用沥青涂抹它的里面和外面。",
+          "B": "你要给自己造一只歌斐木方舟，在里面做隔间，里里外外都涂上沥青。",
+          "R": "你要用好木头造一艘很大的船。在船里做一些房间，船的里面和外面都要涂上沥青，好让水进不来。"
+        },
+        "tl": {
+          "L": "Gumawa ka para sa iyong sarili ng isang arko na yari sa kahoy na gofer; gagawa ka ng mga silid sa arko, at papahiran mo ito sa loob at sa labas ng alkitran.",
+          "B": "Gumawa ka ng isang arko na yari sa kahoy na gofer. Gumawa ka ng mga silid dito, at pahiran mo ito ng alkitran sa loob at sa labas.",
+          "R": "Gumawa ka ng isang napakalaking bangka mula sa matibay na kahoy. Gumawa ka ng mga silid dito, at pahiran mo ito ng alkitran sa loob at sa labas upang hindi mapasok ng tubig."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010060140011"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Make"
+        },
+        {
+          "tokens": [
+            "o010060140021",
+            "o010060140022"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "yourself"
+        },
+        {
+          "tokens": [
+            "o010060140031"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "an ark"
+        },
+        {
+          "tokens": [
+            "o010060140051"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "of gopher"
+        },
+        {
+          "tokens": [
+            "o010060140041"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "wood"
+        },
+        {
+          "tokens": [
+            "o010060140071"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Make"
+        },
+        {
+          "tokens": [
+            "o010060140061"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "rooms"
+        },
+        {
+          "tokens": [
+            "o010060140081",
+            "o010060140091",
+            "o010060140092"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "in it"
+        },
+        {
+          "tokens": [
+            "o010060140101"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010060140102"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "coat"
+        },
+        {
+          "tokens": [
+            "o010060140112"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "it"
+        },
+        {
+          "tokens": [
+            "o010060140121",
+            "o010060140122"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "inside"
+        },
+        {
+          "tokens": [
+            "o010060140131"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010060140132",
+            "o010060140133"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "out"
+        },
+        {
+          "tokens": [
+            "o010060140141"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "with"
+        },
+        {
+          "tokens": [
+            "o010060140142"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "pitch"
+        }
+      ],
       "decisions": [
         {
           "id": "m1",
@@ -3294,6 +6168,118 @@
           "reason": "The Hebrew word is a chest-shaped boat (m1). \"Ковчег\" is the name readers know, used for Noah's ark through Genesis; Readable says \"корабль\", as Hebrews 11:7 does at Readable.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010060140031",
+            "o010060140092"
+          ],
+          "choice": "\"ковчег\" (L, B), \"величезний корабель\", then \"корабель\" (R)",
+          "alternatives": [
+            "скриня",
+            "човен"
+          ],
+          "reason": "Noah's ark is \"ковчег\" (docs/ukrainian-ot-terms.md), the word of Hebrews 11:7; Readable calls it a ship, as the English says a boat, through chapters 6-9.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010060140031",
+            "o010060140051",
+            "o010060140142"
+          ],
+          "choice": "\"箱舟\" (L, B), \"とても大きな舟\" / \"舟\" (R); \"ゴフェルの木\" (L, B), \"じょうぶな木\" (R); \"瀝青\" (L), \"タール\" (B, R)",
+          "alternatives": [
+            "\"方舟\"",
+            "\"糸杉\""
+          ],
+          "reason": "The ark is a chest-shaped boat (m1), which 箱舟 pictures; the wood is not known today (m2), so its name is transcribed. God commands Noah with 〜しなさい at every level.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010060140031",
+            "o010060140092"
+          ],
+          "choice": "\"bahtera\" (L, B); \"kapal yang sangat besar\" (R); \"kayu gofir\"; \"pakal\" (L, B), \"ter\" (R)",
+          "alternatives": [],
+          "reason": "\"bahtera\" is the established word for the ark, a chest-shaped boat (m1); Readable says a huge boat as the English Readable does. The wood is not known today (m2), so its name is kept.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010060140031",
+            "o010060140051"
+          ],
+          "choice": "\"方舟\" (L, B), as Hebrews 11:7; \"一艘很大的船\" (R); \"歌斐木\" (L, B), \"好木头\" (R)",
+          "alternatives": [
+            "船 at every level"
+          ],
+          "reason": "The ark is a chest-shaped boat (meaning decision m1); \"方舟\" is the glossary's word and Hebrews 11:7's. Readable says what it is, as the English Readable says \"a huge boat\". Gopher wood is a kind of wood not known today (m2): Literal and Balanced keep the conventional transliteration, Readable says only \"good wood\", as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-tl-1",
+          "layer": "rendering",
+          "language": "tl",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010060140031",
+            "o010060140092",
+            "o010060140051",
+            "o010060140102",
+            "o010060140142"
+          ],
+          "choice": "\"arko\" (ark) at Literal and Balanced, \"napakalaking bangka\" (huge boat) at Readable; \"kahoy na gofer\" (gopher wood); \"alkitran\" (pitch)",
+          "alternatives": [],
+          "reason": "\"arko\" is the established church word for Noah's ark, a chest-shaped vessel (m1); Readable says what it was. The Hebrew wood is not known today (m2), so Literal and Balanced keep its name and Readable says \"matibay na kahoy\" (strong wood). \"alkitran\" is pitch or tar for sealing (m4).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3382,8 +6368,138 @@
           "L": "И вот как ты сделаешь его: длина ковчега — 300 локтей, его ширина — пятьдесят локтей, и его высота — тридцать локтей.",
           "B": "Вот как ты должен его сделать: длина ковчега — {{units:135 метров|300 локтей}}, ширина — {{units:22,5 метра|пятьдесят локтей}}, высота — {{units:13,5 метра|тридцать локтей}}.",
           "R": "Вот какого размера его сделать: {{units:135 метров|300 локтей}} в длину, {{units:22,5 метра|пятьдесят локтей}} в ширину и {{units:13,5 метра|тридцать локтей}} в высоту."
+        },
+        "uk": {
+          "L": "І ось як ти зробиш його: довжина ковчега — 300 ліктів, його ширина — пʼятдесят ліктів, а його висота — тридцять ліктів.",
+          "B": "Ось як ти маєш його зробити: ковчег має бути {{units:135 метрів|300 ліктів}} завдовжки, {{units:22,5 метра|пʼятдесят ліктів}} завширшки і {{units:13,5 метра|тридцять ліктів}} заввишки.",
+          "R": "Ось якого розміру його зробити: {{units:135 метрів|300 ліктів}} завдовжки, {{units:22,5 метра|пʼятдесят ліктів}} завширшки і {{units:13,5 метра|тридцять ліктів}} заввишки."
+        },
+        "ja": {
+          "L": "そしてこれが、あなたがそれを造る方法である。箱舟の長さは三百キュビト、その幅は五十キュビト、その高さは三十キュビト。",
+          "B": "次のようにして造りなさい。箱舟の長さは{{units:約135メートル|三百キュビト}}、幅は{{units:約22.5メートル|五十キュビト}}、高さは{{units:約13.5メートル|三十キュビト}}とする。",
+          "R": "大きさは、こうしなさい。長さ{{units:約135メートル|三百キュビト}}、幅{{units:約22.5メートル|五十キュビト}}、高さ{{units:約13.5メートル|三十キュビト}}。"
+        },
+        "id": {
+          "L": "Dan beginilah engkau harus membuatnya: panjang bahtera itu 300 hasta, lebarnya lima puluh hasta, dan tingginya tiga puluh hasta.",
+          "B": "Beginilah engkau harus membuatnya: panjang bahtera itu {{units:135 meter|300 hasta}}, lebarnya {{units:22,5 meter|lima puluh hasta}}, dan tingginya {{units:13,5 meter|tiga puluh hasta}}.",
+          "R": "Beginilah besarnya: panjangnya {{units:135 meter|300 hasta}}, lebarnya {{units:22,5 meter|lima puluh hasta}}, dan tingginya {{units:13,5 meter|tiga puluh hasta}}."
+        },
+        "zh": {
+          "L": "你要这样造它：方舟的长度三百肘，宽度五十肘，高度三十肘。",
+          "B": "你要这样造：方舟要长{{units:约135米|三百肘}}，宽{{units:约22.5米|五十肘}}，高{{units:约13.5米|三十肘}}。",
+          "R": "船要造这么大：长{{units:约135米|三百肘}}，宽{{units:约22.5米|五十肘}}，高{{units:约13.5米|三十肘}}。"
+        },
+        "tl": {
+          "L": "At ganito mo ito gagawin: ang haba ng arko ay 300 siko, ang luwang nito ay limampung siko, at ang taas nito ay tatlumpung siko.",
+          "B": "Ganito mo ito gagawin: ang arko ay {{units:mga 135 metro|300 siko}} ang haba, {{units:mga 23 metro|limampung siko}} ang luwang at {{units:mga 14 metro|tatlumpung siko}} ang taas.",
+          "R": "Ganito kalaki ang gagawin mo: {{units:mga 135 metro|300 siko}} ang haba, {{units:mga 23 metro|limampung siko}} ang luwang at {{units:mga 14 metro|tatlumpung siko}} ang taas."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010060150012"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "This is"
+        },
+        {
+          "tokens": [
+            "o010060150021"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "how"
+        },
+        {
+          "tokens": [
+            "o010060150031"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "you are to make"
+        },
+        {
+          "tokens": [
+            "o010060150042"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "it"
+        },
+        {
+          "tokens": [
+            "o010060150091",
+            "o010060150092"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the ark"
+        },
+        {
+          "tokens": [
+            "o010060150051",
+            "o010060150061",
+            "o010060150071"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "{{units:450 feet|300 cubits}}"
+        },
+        {
+          "tokens": [
+            "o010060150081"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "long"
+        },
+        {
+          "tokens": [
+            "o010060150101",
+            "o010060150111"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "{{units:75 feet|fifty cubits}}"
+        },
+        {
+          "tokens": [
+            "o010060150121",
+            "o010060150122"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "wide"
+        },
+        {
+          "tokens": [
+            "o010060150131"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010060150132",
+            "o010060150141"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "{{units:45 feet|thirty cubits}}"
+        },
+        {
+          "tokens": [
+            "o010060150151",
+            "o010060150152"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "high"
+        }
+      ],
       "decisions": [
         {
           "id": "m1",
@@ -3572,6 +6688,111 @@
           "reason": "Russian readers measure in metres, so the default is metric, with the cubit at 45 cm (the English uses US feet). Literal keeps the cubits, \"локти\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o010060150071",
+            "o010060150111",
+            "o010060150141"
+          ],
+          "choice": "Metric by default (the cubit as 45 cm), with the cubits as the alternative; Literal keeps the cubits, as the English Literal does",
+          "alternatives": [
+            "feet, as the English"
+          ],
+          "reason": "Book-wide (docs/ukrainian-ot-terms.md): Ukrainian readers measure in metres, so the default differs from the English US units; the values follow the English conversion, with a decimal comma.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o010060150071"
+          ],
+          "choice": "metric lengths by default, with the cubits as the alternative: {{units:約135メートル|三百キュビト}}; Literal keeps \"キュビト\"",
+          "alternatives": [
+            "feet, as in the English",
+            "\"アンマ\" for cubit"
+          ],
+          "reason": "As the style guide sets, Japanese units spans are metric by default (a cubit is about 45 centimeters, m1), which differs from the English feet. キュビト is the usual Japanese name for the unit and is used for every cubit in Genesis (7:20 too).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o010060150071",
+            "o010060150111",
+            "o010060150141"
+          ],
+          "choice": "metric measures by default, \"hasta\" as the units setting: \"{{units:135 meter|300 hasta}}\"",
+          "alternatives": [],
+          "reason": "As the Indonesian style guide sets (section 8), measures are metric by default with the original unit as the alternative, where the English gives US units; the cubit is reckoned at 45 centimeters (m1). Literal keeps \"hasta\" with no span. For the whole of Genesis.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o010060150071",
+            "o010060150111",
+            "o010060150141"
+          ],
+          "choice": "{{units:约135米|三百肘}}, {{units:约22.5米|五十肘}}, {{units:约13.5米|三十肘}}",
+          "alternatives": [
+            "feet, as the English default"
+          ],
+          "reason": "Chinese gives metric measures by default, with the original cubits as the setting's alternative (style guide section 8), where the English gives feet; a cubit is about 45 centimeters (meaning decision m1). Literal keeps cubits with no span. The same in verse 16.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-tl-1",
+          "layer": "rendering",
+          "language": "tl",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o010060150071",
+            "o010060150111",
+            "o010060150141"
+          ],
+          "choice": "metres by default, cubits (\"siko\") as the alternative",
+          "alternatives": [],
+          "reason": "Tagalog gives metric units by default with the original unit as the alternative, as every language but English does (style guide section 8); a cubit is about 45 centimetres (m1). Literal keeps the cubits with no span.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3666,8 +6887,209 @@
           "L": "Кровлю ты сделаешь для ковчега, и в локоть ты закончишь его сверху; и вход ковчега ты поставишь в его боку; [с] нижним, вторым и третьим [ярусами] ты сделаешь его.",
           "B": "Сделай для ковчега кровлю и доведи её до {{units:45 сантиметров|одного локтя}} от верха. Сделай дверь сбоку ковчега и сделай в нём нижнюю, среднюю и верхнюю палубы.",
           "R": "Сделай для него крышу, а под самой крышей со всех сторон — проём высотой в {{units:45 сантиметров|один локоть}}. Сделай дверь сбоку. Построй корабль с тремя палубами: нижней, средней и верхней."
+        },
+        "uk": {
+          "L": "Дах зробиш для ковчега, і на лікоть закінчиш його згори; а вхід до ковчега зробиш у його боці; [з] нижнім, другим і третім [ярусами] зробиш його.",
+          "B": "Зроби для ковчега дах і закінчи його на {{units:45 сантиметрів|лікоть}} від верху. Зроби двері в боці ковчега і влаштуй у ньому нижню, середню й верхню палуби.",
+          "R": "Зроби для нього дах, а попід дахом навколо — отвір {{units:45 сантиметрів|в один лікоть}} заввишки. Зроби двері в боці. Збудуй корабель із трьома палубами: нижньою, середньою і верхньою."
+        },
+        "ja": {
+          "L": "箱舟に屋根を造り、上へ一キュビトに仕上げなさい。そして箱舟の入り口をその側面に設け、下の段、二段目、三段目[の甲板]で造りなさい。",
+          "B": "箱舟に屋根を造り、上から{{units:約45センチメートル|一キュビト}}のところで仕上げなさい。箱舟の側面には戸口を設け、下と中と上の三階に造りなさい。",
+          "R": "舟に屋根をつけ、屋根のすぐ下に、ぐるりと{{units:約45センチメートル|一キュビト}}の高さのすき間を空けなさい。舟の横に戸を一つつけなさい。舟は、下の階、真ん中の階、上の階の三階建てにしなさい。"
+        },
+        "id": {
+          "L": "Atap harus kaubuat bagi bahtera itu, dan sampai satu hasta engkau harus menyelesaikannya dari atas; dan pintu bahtera itu harus kaupasang pada sisinya; [dengan] tingkat bawah, kedua, dan ketiga engkau harus membuatnya.",
+          "B": "Buatlah atap bagi bahtera itu dan selesaikanlah sampai {{units:45 sentimeter|satu hasta}} dari atas. Pasanglah pintu pada sisi bahtera itu, dan buatlah bahtera itu bertingkat tiga: tingkat bawah, tengah, dan atas.",
+          "R": "Buatlah atap untuk kapal itu, dengan celah setinggi {{units:45 sentimeter|satu hasta}} di bawah atap di sekelilingnya. Pasanglah sebuah pintu di sisinya. Buatlah kapal itu bertingkat tiga: tingkat bawah, tingkat tengah, dan tingkat atas."
+        },
+        "zh": {
+          "L": "你要为方舟造一个顶，在上面一肘的地方把它完成；方舟的门要开在它的侧面；你要把它造成下、第二、第三[层]。",
+          "B": "要给方舟造一个顶，在离顶{{units:约45厘米|一肘}}的地方完工。在方舟的侧面开一个门，方舟要造成下、中、上三层。",
+          "R": "要给船造一个顶，在顶的下面，四周留一个{{units:约45厘米|一肘}}高的开口。在船的侧面开一个门。船要造三层：下层、中层和上层。"
+        },
+        "tl": {
+          "L": "Gagawa ka ng bubong para sa arko, at hanggang isang siko ay tatapusin mo ito sa itaas; at ang pintuan ng arko ay ilalagay mo sa tagiliran nito; [na may] mababa, ikalawa at ikatlong [palapag] mo ito gagawin.",
+          "B": "Gumawa ka ng bubong para sa arko at tapusin mo ito nang {{units:mga 45 sentimetro|isang siko}} mula sa itaas. Maglagay ka ng pinto sa tagiliran ng arko, at gawin mo itong may mababa, gitna at itaas na palapag.",
+          "R": "Gumawa ka ng bubong para rito, na may puwang na {{units:mga 45 sentimetro|isang siko}} ang taas sa ilalim mismo ng bubong sa buong palibot. Maglagay ka ng pinto sa tagiliran. Gawin mo ang bangka na may tatlong palapag: isang palapag sa ibaba, isa sa gitna at isa sa itaas."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010060160021"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Make"
+        },
+        {
+          "tokens": [
+            "o010060160011"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "a roof"
+        },
+        {
+          "tokens": [
+            "o010060160031"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "for"
+        },
+        {
+          "tokens": [
+            "o010060160032"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the ark"
+        },
+        {
+          "tokens": [
+            "o010060160041"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010060160061",
+            "o010060160062"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "finish it"
+        },
+        {
+          "tokens": [
+            "o010060160042"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "to"
+        },
+        {
+          "tokens": [
+            "o010060160051"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "{{units:18 inches|a cubit}}"
+        },
+        {
+          "tokens": [
+            "o010060160071",
+            "o010060160072"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "from"
+        },
+        {
+          "tokens": [
+            "o010060160073",
+            "o010060160074"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the top"
+        },
+        {
+          "tokens": [
+            "o010060160111"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Put"
+        },
+        {
+          "tokens": [
+            "o010060160082"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "a door"
+        },
+        {
+          "tokens": [
+            "o010060160101"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "in"
+        },
+        {
+          "tokens": [
+            "o010060160102",
+            "o010060160103"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the side"
+        },
+        {
+          "tokens": [
+            "o010060160091",
+            "o010060160092"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "of the ark"
+        },
+        {
+          "tokens": [
+            "o010060160081"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010060160151",
+            "o010060160152"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "make it"
+        },
+        {
+          "tokens": [
+            "o010060160121"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "with lower"
+        },
+        {
+          "tokens": [
+            "o010060160131"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "middle"
+        },
+        {
+          "tokens": [
+            "o010060160141"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010060160142"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "upper decks"
+        }
+      ],
       "decisions": [
         {
           "id": "m1",
@@ -3871,8 +7293,197 @@
           "L": "А {{deity_pronoun:я|Я}}, вот, {{deity_pronoun:я|Я}} навожу потоп, воду на землю, чтобы погубить всякую плоть, в которой [есть] дыхание жизни, из-под небес; всё, что на земле, погибнет.",
           "B": "Что до {{deity_pronoun:меня|Меня}}, то {{deity_pronoun:я|Я}} наведу на землю потоп, воды, чтобы погубить под небом всякое существо, в котором есть дыхание жизни. Всё, что на земле, умрёт.",
           "R": "Я пошлю на землю потоп. Он погубит всё живое под небом, всё, что дышит. Всё на земле умрёт."
+        },
+        "uk": {
+          "L": "А {{deity_pronoun:я|Я}}, ось {{deity_pronoun:я|Я}} наводжу потоп, воду на землю, щоб знищити всяку плоть, у якій [є] подих життя, з-під небес; усе, що [є] на землі, загине.",
+          "B": "Що ж до {{deity_pronoun:мене|Мене}}, то {{deity_pronoun:я|Я}} наведу потоп, воду на землю, щоб знищити під небом усяку істоту, у якій є подих життя. Усе, що на землі, помре.",
+          "R": "Я пошлю на землю потоп. Він знищить під небом кожну живу істоту, яка дихає. Усе, що на землі, помре."
+        },
+        "ja": {
+          "L": "そしてわたしは、見なさい、わたしは洪水を、地の上の水をもたらそうとしている。天の下から、命の息のあるすべての肉を滅ぼすためである。地にあるすべてのものは息絶える。",
+          "B": "わたし自身が、洪水を、地の上に水をもたらそうとしている。天の下から、命の息をもつすべての生き物を滅ぼすためである。地上のすべてのものは死に絶える。",
+          "R": "わたしは、地の上に大洪水を送る。それは、空の下で息をしているすべての生き物を滅ぼす。地上のすべてのものが死ぬ。"
+        },
+        "id": {
+          "L": "Dan {{deity_pronoun:aku|Aku}}, lihatlah, {{deity_pronoun:aku|Aku}} akan mendatangkan air bah, air ke atas bumi, untuk membinasakan segala makhluk yang ada napas hidup di dalamnya dari bawah langit; segala yang ada di bumi akan binasa.",
+          "B": "Dari pihak-{{deity_pronoun:ku|Ku}} sendiri, {{deity_pronoun:aku|Aku}} akan mendatangkan air bah, yaitu air yang meliputi bumi, untuk membinasakan dari bawah langit segala makhluk yang bernapas. Segala yang ada di bumi akan mati.",
+          "R": "Aku akan mendatangkan banjir besar ke atas bumi. Banjir itu akan membinasakan setiap makhluk hidup di bawah langit yang bernapas. Segala yang ada di bumi akan mati."
+        },
+        "zh": {
+          "L": "至于我，看哪，我要带来洪水，就是在地上的水，来毁灭天下一切里面有生命的气息的血肉之躯；地上的一切都要灭亡。",
+          "B": "至于我，我要让洪水淹没大地，毁灭天下一切有生命的气息的活物。地上的一切都要死亡。",
+          "R": "我要让洪水淹没大地。它要毁灭天下所有会呼吸的活物。地上的一切都要死。"
+        },
+        "tl": {
+          "L": "At ako, narito, dadalhin ko ang baha, tubig sa lupa, upang sirain ang lahat ng laman na may hininga ng buhay sa ilalim ng langit; ang lahat ng nasa lupa ay mamamatay.",
+          "B": "Ako naman ay magpapadala ng baha, tubig sa ibabaw ng lupa, upang lipulin sa ilalim ng langit ang bawat nilalang na may hininga ng buhay. Mamamatay ang lahat ng nasa lupa.",
+          "R": "Magpapadala ako ng baha sa buong lupa. Lilipulin nito ang bawat nilalang na humihinga sa ilalim ng langit. Mamamatay ang lahat ng nasa lupa."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010060170011"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "For {{deity_pronoun:my|My}} part"
+        },
+        {
+          "tokens": [
+            "o010060170012"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "I"
+        },
+        {
+          "tokens": [
+            "o010060170021",
+            "o010060170022"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "am about"
+        },
+        {
+          "tokens": [
+            "o010060170031"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "to bring"
+        },
+        {
+          "tokens": [
+            "o010060170051",
+            "o010060170052"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the flood"
+        },
+        {
+          "tokens": [
+            "o010060170061"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "water"
+        },
+        {
+          "tokens": [
+            "o010060170071"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "over"
+        },
+        {
+          "tokens": [
+            "o010060170081",
+            "o010060170082"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the earth"
+        },
+        {
+          "tokens": [
+            "o010060170091",
+            "o010060170092"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "to destroy"
+        },
+        {
+          "tokens": [
+            "o010060170161",
+            "o010060170162",
+            "o010060170171",
+            "o010060170172"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "from under the sky"
+        },
+        {
+          "tokens": [
+            "o010060170101",
+            "o010060170111"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "every creature"
+        },
+        {
+          "tokens": [
+            "o010060170121"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "that has"
+        },
+        {
+          "tokens": [
+            "o010060170141"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the breath"
+        },
+        {
+          "tokens": [
+            "o010060170151"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "of life"
+        },
+        {
+          "tokens": [
+            "o010060170131",
+            "o010060170132"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "in it"
+        },
+        {
+          "tokens": [
+            "o010060170181",
+            "o010060170191"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Everything"
+        },
+        {
+          "tokens": [
+            "o010060170201"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "on"
+        },
+        {
+          "tokens": [
+            "o010060170202"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "earth"
+        },
+        {
+          "tokens": [
+            "o010060170211"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "will die"
+        }
+      ],
       "decisions": [
         {
           "id": "m1",
@@ -4072,6 +7683,112 @@
           "reason": "The Hebrew word is used only for this flood (m1). Russian \"потоп\" is likewise kept for it; \"наводнение\" is any flood.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010060170051",
+            "o010060170052",
+            "o010060170061"
+          ],
+          "choice": "\"потоп\" at every level",
+          "alternatives": [
+            "повінь"
+          ],
+          "reason": "The word is used only for this flood (meaning decision m1); \"потоп\" is the Ukrainian word for it, while \"повінь\" is any river flood.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010060170052"
+          ],
+          "choice": "\"洪水\" (L, B), \"大洪水\" (R)",
+          "alternatives": [
+            "\"大水\""
+          ],
+          "reason": "The word is used only for this flood (m1); Japanese has no separate word, so 洪水 is used with the article sense carried by context, and Readable marks its size.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010060170051",
+            "o010060170052",
+            "o010060170061"
+          ],
+          "choice": "\"air bah\" (L, B); \"banjir besar\" (R)",
+          "alternatives": [],
+          "reason": "The Hebrew word is used only for this flood (m1); \"air bah\" is the established Indonesian word for it, and Readable says a great flood.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010060170011"
+          ],
+          "choice": "\"至于我\"; \"生命的气息\" as 2:7",
+          "alternatives": [],
+          "reason": "\"And I, look, I\" is God's emphasis on his own action (meaning decision m2), which \"至于我\" carries; the breath of life is the gift of 2:7 (m3), whose words are kept. \"洪水\" is the word for this flood alone (m1), as Matthew 24:38-39.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-tl-1",
+          "layer": "rendering",
+          "language": "tl",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010060170051",
+            "o010060170052",
+            "o010060170061",
+            "o010060170141",
+            "o010060170151"
+          ],
+          "choice": "\"ang baha\" (the flood); \"hininga ng buhay\" (breath of life)",
+          "alternatives": [],
+          "reason": "\"baha\" is the ordinary word for a flood, and with \"ang\" it names this one (m1). \"hininga ng buhay\" is the phrase of 2:7 (m3).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4164,8 +7881,190 @@
           "L": "Но с тобой {{deity_pronoun:я|Я}} установлю {{deity_pronoun:мой|Мой}} завет, и ты войдёшь в ковчег, ты, и твои сыновья, и твоя жена, и жёны твоих сыновей с тобой.",
           "B": "Но с тобой {{deity_pronoun:я|Я}} установлю {{deity_pronoun:мой|Мой}} завет, и ты войдёшь в ковчег: ты, твои сыновья, твоя жена и жёны твоих сыновей с тобой.",
           "R": "Но с тобой {{deity_pronoun:я|Я}} заключу завет. Ты войдёшь в корабль со своей женой, своими сыновьями и их жёнами."
+        },
+        "uk": {
+          "L": "Але {{deity_pronoun:я|Я}} встановлю {{deity_pronoun:мій|Мій}} завіт із тобою, і ти ввійдеш до ковчега — ти, і твої сини, і твоя жінка, і жінки твоїх синів із тобою.",
+          "B": "Але {{deity_pronoun:я|Я}} встановлю з тобою {{deity_pronoun:мій|Мій}} завіт, і ти ввійдеш до ковчега: ти, твої сини, твоя дружина й дружини твоїх синів із тобою.",
+          "R": "Але з тобою {{deity_pronoun:я|Я}} укладу завіт. Ти ввійдеш до корабля разом зі своєю дружиною, синами та їхніми дружинами."
+        },
+        "ja": {
+          "L": "しかしわたしは、あなたとわたしの契約を立てる。あなたは箱舟に入る。あなたと、あなたの息子たちと、あなたの妻と、あなたの息子たちの妻たちが、あなたとともに。",
+          "B": "しかしわたしは、あなたとわたしの契約を立てる。あなたは箱舟に入りなさい。あなたも、あなたの息子たちも、あなたの妻も、息子たちの妻たちも、あなたとともに。",
+          "R": "しかしわたしは、あなたと契約を結ぶ。あなたは、妻と息子たちと、息子たちの妻たちと一緒に、舟に入りなさい。"
+        },
+        "id": {
+          "L": "Tetapi {{deity_pronoun:aku|Aku}} akan meneguhkan perjanjian-{{deity_pronoun:ku|Ku}} dengan engkau, dan engkau akan masuk ke dalam bahtera itu, engkau dan anak-anakmu dan istrimu dan istri-istri anak-anakmu bersama-sama dengan engkau.",
+          "B": "Tetapi {{deity_pronoun:aku|Aku}} akan meneguhkan perjanjian-{{deity_pronoun:ku|Ku}} dengan engkau, dan engkau akan masuk ke dalam bahtera itu: engkau, anak-anakmu, istrimu, dan menantu-menantumu bersama-sama dengan engkau.",
+          "R": "Tetapi {{deity_pronoun:aku|Aku}} akan mengadakan perjanjian dengan kamu. Kamu akan masuk ke dalam kapal itu bersama istrimu, anak-anakmu, dan istri-istri mereka."
+        },
+        "zh": {
+          "L": "但我要与你坚立我的约，你要进入方舟，你和你的儿子们、你的妻子，以及你儿子们的妻子们，都要与你一同[进去]。",
+          "B": "但我要与你坚立我的约，你要进入方舟，你和你的儿子们、你的妻子和你的儿媳们都要与你一起。",
+          "R": "但我要和你立一个盟约。你要和你的妻子、你的儿子们和他们的妻子一起进入船里。"
+        },
+        "tl": {
+          "L": "Ngunit itatatag ko ang aking tipan sa iyo, at papasok ka sa arko, ikaw at ang iyong mga anak at ang iyong asawa at ang mga asawa ng iyong mga anak na kasama mo.",
+          "B": "Ngunit itatatag ko ang aking tipan sa iyo, at papasok ka sa arko: ikaw, ang iyong mga anak, ang iyong asawa at ang mga asawa ng iyong mga anak na kasama mo.",
+          "R": "Ngunit gagawa ako ng isang tipan sa iyo. Papasok ka sa bangka kasama ang iyong asawa, ang iyong mga anak na lalaki at ang kanilang mga asawa."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010060180011"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "But"
+        },
+        {
+          "tokens": [
+            "o010060180012"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "I will establish"
+        },
+        {
+          "tokens": [
+            "o010060180032"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "{{deity_pronoun:my|My}}"
+        },
+        {
+          "tokens": [
+            "o010060180031"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "covenant"
+        },
+        {
+          "tokens": [
+            "o010060180041"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "with"
+        },
+        {
+          "tokens": [
+            "o010060180042"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "you"
+        },
+        {
+          "tokens": [
+            "o010060180051"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010060180052",
+            "o010060180061"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "you will enter"
+        },
+        {
+          "tokens": [
+            "o010060180071",
+            "o010060180072"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the ark"
+        },
+        {
+          "tokens": [
+            "o010060180081"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "you"
+        },
+        {
+          "tokens": [
+            "o010060180093"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "your"
+        },
+        {
+          "tokens": [
+            "o010060180092"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "sons"
+        },
+        {
+          "tokens": [
+            "o010060180103"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "your"
+        },
+        {
+          "tokens": [
+            "o010060180102"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "wife"
+        },
+        {
+          "tokens": [
+            "o010060180111"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010060180122"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "your"
+        },
+        {
+          "tokens": [
+            "o010060180121"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "sons'"
+        },
+        {
+          "tokens": [
+            "o010060180112"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "wives"
+        },
+        {
+          "tokens": [
+            "o010060180131",
+            "o010060180132"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "with you"
+        }
+      ],
       "decisions": [
         {
           "id": "m1",
@@ -4360,6 +8259,115 @@
           "reason": "\"Завет\" is the word for God's covenant through the Pentateuch, as in the Russian New Testament. Here it appears for the first time (m1). \"Установлю\" keeps the Hebrew \"establish\"; Readable says \"заключу\", the verb Russian uses with an agreement.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010060180012",
+            "o010060180031",
+            "o010060180032"
+          ],
+          "choice": "\"завіт\" at every level",
+          "alternatives": [
+            "угода",
+            "союз"
+          ],
+          "reason": "Book-wide (docs/ukrainian-ot-terms.md), the word of Acts 7:8; \"угода\" would make it a contract between equals.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010060180031"
+          ],
+          "choice": "\"契約\" for covenant; \"立てる\" (L, B), \"結ぶ\" (R)",
+          "alternatives": [
+            "\"約束\""
+          ],
+          "reason": "This is the first time the word covenant appears (m1); 契約 is the word used for the covenants through the Japanese Bible, and is kept at every level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010060180012",
+            "o010060180031",
+            "o010060180032"
+          ],
+          "choice": "\"perjanjian\" for covenant",
+          "alternatives": [],
+          "reason": "The glossary word, at its first appearance (m1); \"meneguhkan\" (L, B) for establishing it.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010060180012",
+            "o010060180031"
+          ],
+          "choice": "\"坚立我的约\" (L, B); \"立一个盟约\" (R)",
+          "alternatives": [
+            "立约 at every level"
+          ],
+          "reason": "The first time the word covenant appears (meaning decision m1): the glossary's \"约\" (L, B) and \"盟约\" (R). \"坚立\" keeps \"establish\"; Readable says \"make\", as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-tl-1",
+          "layer": "rendering",
+          "language": "tl",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010060180012",
+            "o010060180031",
+            "o010060180032"
+          ],
+          "choice": "\"tipan\" (covenant)",
+          "alternatives": [],
+          "reason": "\"tipan\" is the glossary word for a covenant (m1), at every level, from its first appearance here. The English puts a span on God's \"my\"; Tagalog \"aking\" takes none (style guide section 4).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4450,8 +8458,146 @@
           "L": "И из всего живого, из всякой плоти, по двое из каждого ты введёшь в ковчег, чтобы сохранить [их] в живых с тобой; мужского и женского [пола] они будут.",
           "B": "Введи в ковчег по паре от всякого живого существа, самца и самку, чтобы сохранить их в живых вместе с тобой.",
           "R": "Возьми в корабль по два животных каждого вида, самца и самку, чтобы они остались живы вместе с тобой."
+        },
+        "uk": {
+          "L": "І з усього живого, з усякої плоті, по двоє з кожного введеш до ковчега, щоб зберегти [їх] живими з тобою; самець і самиця будуть вони.",
+          "B": "Введи до ковчега по двоє з усіх живих істот, самця й самицю, щоб зберегти їх живими разом із тобою.",
+          "R": "Візьми до корабля по двоє тварин кожного виду, самця й самицю, щоб вони залишилися живі разом із тобою."
+        },
+        "ja": {
+          "L": "そしてすべての生き物、すべての肉の中から、それぞれ二つずつを箱舟に連れて入り、あなたとともに生き延びさせなさい。それらは雄と雌でなければならない。",
+          "B": "またすべての生き物の中から、雄と雌を二つずつ箱舟に連れて入り、あなたとともに生き延びさせなさい。",
+          "R": "また、あらゆる種類の動物を、雄と雌の二ひきずつ舟に連れて入り、あなたと一緒に生き延びられるようにしなさい。"
+        },
+        "id": {
+          "L": "Dan dari segala yang hidup, dari segala makhluk, dua dari setiap jenis harus kaubawa ke dalam bahtera itu untuk memelihara [hidupnya] bersama-sama dengan engkau; jantan dan betina haruslah semuanya itu.",
+          "B": "Bawalah ke dalam bahtera itu dua dari setiap makhluk hidup, jantan dan betina, untuk memelihara hidupnya bersama-sama dengan engkau.",
+          "R": "Bawalah ke dalam kapal itu dua ekor dari setiap jenis binatang, jantan dan betina, supaya semuanya tetap hidup bersama kamu."
+        },
+        "zh": {
+          "L": "从各样活物、从一切血肉之躯中，每一种两只，你要带进方舟，好在你身边存活下来；它们要有雄有雌。",
+          "B": "你要把每一种活物各两只，一雄一雌，带进方舟，让它们和你一起存活。",
+          "R": "你要把每一种动物都带两只进船，一只雄的，一只雌的，好让它们和你一起活下来。"
+        },
+        "tl": {
+          "L": "At sa bawat may buhay, sa lahat ng laman, magdadala ka ng tigdalawa sa bawat uri sa arko upang panatilihing buhay [ang mga ito] na kasama mo; sila ay magiging lalaki at babae.",
+          "B": "Magdala ka sa arko ng tigdalawa sa bawat nilalang na may buhay, isang lalaki at isang babae, upang mapanatili silang buhay na kasama mo.",
+          "R": "Magdala ka sa bangka ng tigdalawa sa bawat uri ng hayop, isang lalaki at isang babae, upang manatili silang buhay na kasama mo."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010060190071"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Bring"
+        },
+        {
+          "tokens": [
+            "o010060190081"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "into"
+        },
+        {
+          "tokens": [
+            "o010060190091",
+            "o010060190092"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the ark"
+        },
+        {
+          "tokens": [
+            "o010060190051"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "two"
+        },
+        {
+          "tokens": [
+            "o010060190012"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "of"
+        },
+        {
+          "tokens": [
+            "o010060190013"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "every"
+        },
+        {
+          "tokens": [
+            "o010060190021",
+            "o010060190022",
+            "o010060190031",
+            "o010060190032",
+            "o010060190041"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "living creature"
+        },
+        {
+          "tokens": [
+            "o010060190121",
+            "o010060190141"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "a male"
+        },
+        {
+          "tokens": [
+            "o010060190131"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010060190132"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "a female"
+        },
+        {
+          "tokens": [
+            "o010060190101",
+            "o010060190102"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "to keep them alive"
+        },
+        {
+          "tokens": [
+            "o010060190111"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "with"
+        },
+        {
+          "tokens": [
+            "o010060190112"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "you"
+        }
+      ],
       "decisions": [
         {
           "id": "m1",
@@ -4466,6 +8612,27 @@
           "choice": "two of every kind, male and female: enough to begin again",
           "alternatives": [],
           "reason": "A male and a female of every kind are kept alive to fill the earth again. In 7:2-3 God gives a fuller instruction: seven pairs of clean animals and birds, needed also for sacrifice after the flood (8:20).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-tl-1",
+          "layer": "rendering",
+          "language": "tl",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010060190051",
+            "o010060190121",
+            "o010060190132"
+          ],
+          "choice": "\"tigdalawa\" (two of each); \"lalaki at babae\" for the animals",
+          "alternatives": [],
+          "reason": "\"tigdalawa\" is the Tagalog distributive \"two each\" (m1). Tagalog says \"lalaki\" and \"babae\" (male and female) of animals too, so the phrase matches 1:27.",
           "uncertain": false,
           "footnote": false
         }
@@ -4564,8 +8731,148 @@
           "L": "Из птиц по их виду, и из скота по его виду, из всякого ползающего [существа] земли по его виду, по двое из каждого придут к тебе, чтобы сохраниться в живых.",
           "B": "По паре от каждого вида птиц, от каждого вида животных и от каждого вида существ, которые ползают по земле, придут к тебе, чтобы остаться в живых.",
           "R": "По два из каждого вида птиц, каждого вида животных и каждого вида маленьких животных придут к тебе, чтобы ты сохранил им жизнь."
+        },
+        "uk": {
+          "L": "З птахів за їхнім видом, і з тварин за їхнім видом, з усіх плазунів землі за їхнім видом — по двоє з кожного прийдуть до тебе, щоб зберегти [їх] живими.",
+          "B": "По двоє з кожного виду птахів, кожного виду тварин і кожного виду плазунів прийдуть до тебе, щоб залишитися живими.",
+          "R": "По двоє з кожного виду птахів, тварин і дрібних створінь прийдуть до тебе, щоб ти зберіг їх живими."
+        },
+        "ja": {
+          "L": "鳥の中から種類に従って、家畜の中から種類に従って、土の上を這うすべてのものの中から種類に従って、それぞれ二つずつがあなたのところに来て、生き延びるようにする。",
+          "B": "あらゆる種類の鳥、あらゆる種類の家畜、あらゆる種類の地を這うものが、二つずつあなたのところに来て、生き延びるようにする。",
+          "R": "あらゆる種類の鳥も、動物も、地をはう小さな生き物も、二ひきずつあなたのところに来る。あなたはそれらを生かしておきなさい。"
+        },
+        "id": {
+          "L": "Dari burung-burung menurut jenisnya, dan dari binatang-binatang menurut jenisnya, dari segala binatang melata di tanah menurut jenisnya, dua dari setiap jenis akan datang kepadamu untuk dipelihara hidupnya.",
+          "B": "Dua dari setiap jenis burung, dari setiap jenis binatang, dan dari setiap jenis binatang yang merayap di tanah akan datang kepadamu untuk dipelihara hidupnya.",
+          "R": "Dua ekor dari setiap jenis burung, setiap jenis binatang, dan setiap jenis binatang kecil akan datang kepadamu, supaya kamu dapat memelihara hidup mereka."
+        },
+        "zh": {
+          "L": "飞鸟照着它们的种类，牲畜照着它们的种类，地面上的一切爬物照着它的种类，每一种两只要到你那里来，好存活下来。",
+          "B": "各种飞鸟、各种牲畜和各种在地上爬行的动物，每种两只，都要到你这里来，好保住性命。",
+          "R": "每一种鸟、每一种动物和每一种爬行的小动物，都会有两只到你这里来，好让你使它们活下来。"
+        },
+        "tl": {
+          "L": "Sa mga ibon ayon sa kanilang uri, at sa mga hayop ayon sa kanilang uri, sa bawat gumagapang sa lupa ayon sa uri nito, tigdalawa sa bawat uri ang pupunta sa iyo upang panatilihing buhay [ang mga ito].",
+          "B": "Pupunta sa iyo ang tigdalawa sa bawat uri ng ibon, sa bawat uri ng hayop at sa bawat uri ng nilalang na gumagapang sa lupa, upang mapanatiling buhay.",
+          "R": "Pupunta sa iyo ang tigdalawa sa bawat uri ng ibon, sa bawat uri ng hayop at sa bawat uri ng maliliit na nilalang, upang mapanatili mo silang buhay."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010060200101",
+            "o010060200111",
+            "o010060200112"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Two"
+        },
+        {
+          "tokens": [
+            "o010060200011",
+            "o010060200021",
+            "o010060200022",
+            "o010060200023"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "of every kind"
+        },
+        {
+          "tokens": [
+            "o010060200012",
+            "o010060200013"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "of bird"
+        },
+        {
+          "tokens": [
+            "o010060200032",
+            "o010060200051",
+            "o010060200052",
+            "o010060200053"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "of every kind"
+        },
+        {
+          "tokens": [
+            "o010060200041",
+            "o010060200042"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "of animal"
+        },
+        {
+          "tokens": [
+            "o010060200031"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010060200061",
+            "o010060200062",
+            "o010060200091",
+            "o010060200092",
+            "o010060200093"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "of every kind"
+        },
+        {
+          "tokens": [
+            "o010060200071"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "of creature that moves"
+        },
+        {
+          "tokens": [
+            "o010060200081",
+            "o010060200082"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "along the ground"
+        },
+        {
+          "tokens": [
+            "o010060200121"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "will come"
+        },
+        {
+          "tokens": [
+            "o010060200131",
+            "o010060200132"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "to you"
+        },
+        {
+          "tokens": [
+            "o010060200141",
+            "o010060200142"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "to be kept alive"
+        }
+      ],
       "decisions": [
         {
           "id": "m1",
@@ -4599,6 +8906,23 @@
           "choice": "will come to you: the animals come of themselves",
           "alternatives": [],
           "reason": "Noah does not have to hunt for them: they will come to him (7:9, 15).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010060200011"
+          ],
+          "choice": "\"照着它们的种类\"",
+          "alternatives": [],
+          "reason": "The words of chapter 1 (meaning decision m1): Literal keeps chapter 1's Chinese for \"according to its kind\".",
           "uncertain": false,
           "footnote": false
         }
@@ -4691,8 +9015,148 @@
           "L": "А ты возьми себе из всякой пищи, которую едят, и собери [её] к себе, и она будет пищей тебе и им.»",
           "B": "Возьми с собой всякую пищу, которую едят, и сделай запас, чтобы она была пищей тебе и им.»",
           "R": "Возьми всякую еду, которую едите ты и животные, и сложи её в корабле для вас всех.»"
+        },
+        "uk": {
+          "L": "А ти візьми собі всякої їжі, яку їдять, і збери [її] в себе, і буде вона тобі й їм на їжу.»",
+          "B": "Візьми з собою всякої їжі, яку їдять, і запаси її, щоб вона була їжею тобі та їм.»",
+          "R": "Візьми всяку їжу, яку їдять люди й тварини, і зберігай її на кораблі для всіх вас.»"
+        },
+        "ja": {
+          "L": "そしてあなたは、食べられるあらゆる食物を取って、自分のところに集めなさい。それはあなたとそれらのための食物となる。」",
+          "B": "また、食べられるあらゆる食物を携えて蓄えておきなさい。それはあなたとそれらの食物となる。」",
+          "R": "また、あなたたちや動物が食べるあらゆる食べ物を、舟に積んでおきなさい。」"
+        },
+        "id": {
+          "L": "Dan engkau, ambillah bagimu dari segala makanan yang dimakan, dan kumpulkanlah [itu] padamu, dan itu akan menjadi makanan bagimu dan bagi mereka.\"",
+          "B": "Bawalah segala jenis makanan yang biasa dimakan dan simpanlah, untuk menjadi makanan bagimu dan bagi mereka.\"",
+          "R": "Bawalah segala jenis makanan yang dimakan oleh kamu dan binatang-binatang itu, dan simpanlah di kapal untuk kalian semua.\""
+        },
+        "zh": {
+          "L": "至于你，你要为自己拿各种可吃的食物，把[它]收集到你那里，它要给你和它们作食物。”",
+          "B": "你要带上各种可吃的食物，储存起来，给你和它们吃。”",
+          "R": "你要带上你和动物吃的各种食物，把它们储存在船上，给你们大家吃。”"
+        },
+        "tl": {
+          "L": "At ikaw, kumuha ka para sa iyong sarili ng lahat ng pagkaing kinakain, at tipunin mo [ito] para sa iyo, at ito ay magiging pagkain para sa iyo at para sa kanila.\"",
+          "B": "Magdala ka ng bawat uri ng pagkaing kinakain at mag-imbak ka nito, upang maging pagkain para sa iyo at para sa kanila.\"",
+          "R": "Magdala ka ng lahat ng uri ng pagkaing kinakain ninyo at ng mga hayop, at iimbak mo ito sa bangka para sa inyong lahat.\""
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010060210012",
+            "o010060210021"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Take"
+        },
+        {
+          "tokens": [
+            "o010060210031",
+            "o010060210032"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "with you"
+        },
+        {
+          "tokens": [
+            "o010060210041",
+            "o010060210042"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "every kind"
+        },
+        {
+          "tokens": [
+            "o010060210051"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "of food"
+        },
+        {
+          "tokens": [
+            "o010060210061"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "that"
+        },
+        {
+          "tokens": [
+            "o010060210071"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "is eaten"
+        },
+        {
+          "tokens": [
+            "o010060210081"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010060210082",
+            "o010060210091",
+            "o010060210092"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "store it up"
+        },
+        {
+          "tokens": [
+            "o010060210101",
+            "o010060210102"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "to be"
+        },
+        {
+          "tokens": [
+            "o010060210131",
+            "o010060210132"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "food"
+        },
+        {
+          "tokens": [
+            "o010060210111",
+            "o010060210112"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "for you"
+        },
+        {
+          "tokens": [
+            "o010060210121"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010060210122",
+            "o010060210123"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "for them"
+        }
+      ],
       "decisions": [],
       "status": "ai_draft"
     },
@@ -4771,8 +9235,93 @@
           "L": "И Ной поступил согласно всему, что повелел ему Бог; так он и сделал.",
           "B": "Ной сделал всё точно так, как повелел ему Бог.",
           "R": "Ной сделал всё, что Бог велел ему сделать."
+        },
+        "uk": {
+          "L": "І зробив Ной усе, як наказав йому Бог; так він і зробив.",
+          "B": "Ной зробив усе точно так, як наказав йому Бог.",
+          "R": "Ной зробив усе, що сказав йому Бог."
+        },
+        "ja": {
+          "L": "そしてノアは、神が彼に命じられたすべてのことに従って行った。そのように彼は行った。",
+          "B": "ノアは、神が命じられたとおりに、すべてを行った。",
+          "R": "ノアは、神が言われたことを、すべてそのとおりに行いました。"
+        },
+        "id": {
+          "L": "Dan Nuh melakukan sesuai dengan segala yang diperintahkan Allah kepadanya; demikianlah ia lakukan.",
+          "B": "Nuh melakukan semuanya tepat seperti yang diperintahkan Allah kepadanya.",
+          "R": "Nuh melakukan semua yang Allah suruh dia lakukan."
+        },
+        "zh": {
+          "L": "挪亚就照着{{god_term:神|上帝}}吩咐他的一切去做；他就这样做了。",
+          "B": "挪亚完全照着{{god_term:神|上帝}}的吩咐做了一切。",
+          "R": "挪亚做了{{god_term:神|上帝}}告诉他要做的每一件事。"
+        },
+        "tl": {
+          "L": "At ginawa ni Noe ang ayon sa lahat ng iniutos sa kaniya ng Diyos; gayon ang ginawa niya.",
+          "B": "Ginawa ni Noe ang lahat ng bagay ayon sa iniutos sa kaniya ng Diyos.",
+          "R": "Ginawa ni Noe ang lahat ng sinabi sa kaniya ng Diyos na gawin."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010060220021"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Noah"
+        },
+        {
+          "tokens": [
+            "o010060220012",
+            "o010060220091"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "did"
+        },
+        {
+          "tokens": [
+            "o010060220032"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "everything"
+        },
+        {
+          "tokens": [
+            "o010060220031",
+            "o010060220041"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "just as"
+        },
+        {
+          "tokens": [
+            "o010060220071"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "God"
+        },
+        {
+          "tokens": [
+            "o010060220051"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "commanded"
+        },
+        {
+          "tokens": [
+            "o010060220062"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "him"
+        }
+      ],
       "decisions": [
         {
           "id": "m1",

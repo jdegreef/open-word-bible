@@ -10,8 +10,6 @@ Avant l'imprimerie, chaque exemplaire du Nouveau Testament était copié à la m
 
 Une traduction doit décider quels mots elle traduit. Cet article explique comment Open Word Bible le fait, et ce que voit un lecteur quand les manuscrits se séparent.
 
-Tous les livres cités ici ne sont pas encore traduits en français dans Open Word Bible ; là où ils ne le sont pas, les citations de la traduction apparaissent dans sa version anglaise.
-
 ## Un texte fixe
 
 Open Word Bible traduit une seule édition publiée du grec : le Nouveau Testament grec de la SBL, édité par Michael Holmes et publié en 2010, figé dans une version exacte. Son éditeur a pesé les manuscrits et imprimé le texte qu'il jugeait le plus probablement original. Pour l'Ancien Testament, la base est le Codex de Leningrad de Westminster, une édition numérique du plus ancien manuscrit complet de la Bible hébraïque. Partir d'éditions fixes permet de rattacher chaque mot de la traduction à un texte source connu, et de vérifier à nouveau chaque résultat plus tard. Voir [Pourquoi nous ne tapons jamais le grec ni l'hébreu à la main](/articles/never-typed-by-hand/).
@@ -20,7 +18,7 @@ Suivre une édition n'est pas cacher ses choix. Là où les manuscrits diffèren
 
 ## Quand il y a une note
 
-Toutes les variantes n'appellent pas une note. En Jean 3:16, beaucoup de manuscrits lisent "son Fils" là où certains des plus anciens ont "le Fils". L'anglais a de toute façon besoin de "his" ("son"), le sens est le même, et le dossier signale la variante sans note.
+Toutes les variantes n'appellent pas une note. En Jean 3:16, beaucoup de manuscrits lisent "son Fils" là où certains des plus anciens ont "le Fils". L'Équilibrée et la Simple disent de toute façon "son Fils", le sens est le même, et le dossier signale la variante sans note.
 
 Quand une variante change ce qu'un lecteur comprendrait, il y a une note. Éphésiens 1:1 en est un exemple. Presque tous les manuscrits plus tardifs adressent la lettre aux croyants {{GREEK:EPH.1.1:12-13}}, "à Éphèse". Certains des plus anciens, parmi lesquels le papyrus P46 et la première main du Codex Sinaiticus et du Codex Vaticanus, n'ont pas ces mots. La traduction suit l'édition de la SBL et garde "à Éphèse", et une note donne la leçon plus courte. Le dossier ajoute que la lettre ne contient aucune salutation personnelle et parle de la foi des lecteurs comme de quelque chose dont Paul a entendu parler ; elle a donc peut-être été écrite pour plusieurs Églises de la province d'Asie, dont Éphèse était la ville principale.
 

@@ -81,6 +81,26 @@
           "L": "В третий месяц по выходе {{gender:детей Израиля|сынов Израиля}} из земли Египта, в этот день пришли они [в] пустыню Синай.",
           "B": "Израильтяне пришли в Синайскую пустыню в первый день третьего месяца после их выхода из земли Египта.",
           "R": "Израильтяне пришли в Синайскую пустыню в начале третьего месяца после того, как ушли из Египта."
+        },
+        "ja": {
+          "L": "イスラエルの子らがエジプトの地を出て行ってから第三の月、その日に、彼らはシナイの荒れ野に来た。",
+          "B": "イスラエルの人々は、エジプトの地を出てから三か月目に入ったその日に、シナイの荒れ野に着いた。",
+          "R": "イスラエルの人々は、エジプトを出てから三か月目の初めに、シナイの荒れ野に着きました。"
+        },
+        "uk": {
+          "L": "Третього місяця після виходу {{gender:нащадків|синів}} Ізраїля з землі єгипетської, того самого дня прийшли вони до пустелі Синай.",
+          "B": "Ізраїльтяни прибули до Синайської пустелі в день, коли почався третій місяць після їхнього виходу з єгипетської землі.",
+          "R": "Ізраїльтяни дійшли до Синайської пустелі на початку третього місяця після того, як вийшли з Єгипту."
+        },
+        "id": {
+          "L": "Pada bulan ketiga sesudah bani Israel keluar dari tanah Mesir, pada hari itu juga mereka sampai di padang gurun Sinai.",
+          "B": "Orang Israel tiba di padang gurun Sinai pada hari pertama bulan ketiga sesudah mereka keluar dari tanah Mesir.",
+          "R": "Orang Israel sampai di padang gurun Sinai pada awal bulan ketiga sesudah mereka meninggalkan Mesir."
+        },
+        "zh": {
+          "L": "在{{gender:以色列的子孙|以色列的儿子}}从埃及地出来以后的第三个月，就在这一天，他们来到了西奈的旷野。",
+          "B": "以色列人离开埃及地以后，在第三个月开始的那一天，来到了西奈旷野。",
+          "R": "以色列人离开埃及以后，在第三个月的第一天到达了西奈荒野。"
         }
       },
       "decisions": [
@@ -323,6 +343,94 @@
           "reason": "The Hebrew \"on this day\" is read as the first day of the month (m1); Balanced says so, as Readable does with \"в начале\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020190010111",
+            "o020190010121"
+          ],
+          "choice": "\"シナイの荒れ野\" at every level, Readable too (English Readable \"Desert of Sinai\")",
+          "alternatives": [
+            "\"シナイの砂漠\" (R)"
+          ],
+          "reason": "\"荒れ野\" is kept for midbar at every level in Exodus (EXO 13-18 notes); Sinai is \"シナイ\" as in Acts 7:30, 38.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020190010011",
+            "o020190010012",
+            "o020190010081",
+            "o020190010082",
+            "o020190010091",
+            "o020190010092"
+          ],
+          "choice": "\"三か月目に入ったその日\" (B), \"三か月目の初め\" (R) for 'in the third month ... on this day'",
+          "alternatives": [
+            "\"第三の月のその日\" (B)"
+          ],
+          "reason": "Follows the meaning decision (the first day of the third month); Literal keeps the Hebrew's 'on this day'.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020190010111",
+            "o020190010121"
+          ],
+          "choice": "пустеля Синай",
+          "alternatives": [
+            "Синайська пустеля"
+          ],
+          "reason": "L keeps the name as a noun; B and R use the adjective, which is the usual Ukrainian place name.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o020190010041",
+            "o020190010051"
+          ],
+          "choice": "\"以色列人\" with no gender span",
+          "alternatives": [
+            "{{gender:以色列的子孙|以色列的儿子}}"
+          ],
+          "reason": "The English Balanced and Readable span \"Israelites|sons of Israel\"; Chinese \"以色列人\" already means the whole people, men and women, so it takes no span (glossary: the sons of Israel). Literal keeps the span \"以色列的子孙|以色列的儿子\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -409,6 +517,26 @@
           "L": "И отправились они из Рефидима, и пришли [в] пустыню Синай, и расположились станом в пустыне; и стал там Израиль станом перед горой.",
           "B": "Они вышли из Рефидима и пришли в Синайскую пустыню, и там, в пустыне, разбили стан. Израиль расположился там станом напротив горы.",
           "R": "Они ушли из Рефидима и пришли в Синайскую пустыню. Там, в пустыне, они разбили лагерь, и шатры Израиля стояли напротив горы."
+        },
+        "ja": {
+          "L": "そして彼らはレフィディムを旅立ち、シナイの荒れ野に来て、荒れ野に宿営した。そしてイスラエルはそこで、山の前に宿営した。",
+          "B": "彼らはレフィディムを旅立ってシナイの荒れ野に入り、その荒れ野に宿営していた。イスラエルはそこで、山に向かって宿営した。",
+          "R": "人々はレフィディムを出発して、シナイの荒れ野に来ていました。そして、その荒れ野で宿営しました。イスラエルの人々は、山に向かってテントを張りました。"
+        },
+        "uk": {
+          "L": "І вирушили вони з Рефідиму, і прийшли до пустелі Синай, і отаборилися в пустелі; і отаборився там Ізраїль навпроти гори.",
+          "B": "Вони вирушили з Рефідиму й прийшли в Синайську пустелю, і там, у пустелі, стали табором. Ізраїль отаборився там навпроти гори.",
+          "R": "Вони покинули Рефідим і прийшли в Синайську пустелю. Там, у пустелі, вони поставили табір, і намети Ізраїля стояли навпроти гори."
+        },
+        "id": {
+          "L": "Dan mereka berangkat dari Rafidim dan sampai di padang gurun Sinai, lalu berkemah di padang gurun itu; dan Israel berkemah di sana di depan gunung itu.",
+          "B": "Mereka telah berangkat dari Rafidim dan masuk ke padang gurun Sinai, lalu berkemah di padang gurun itu. Israel berkemah di sana, berhadapan dengan gunung itu.",
+          "R": "Mereka telah meninggalkan Rafidim dan masuk ke padang gurun Sinai. Mereka berkemah di padang gurun itu, dan kemah-kemah Israel menghadap ke gunung itu."
+        },
+        "zh": {
+          "L": "他们从利非订起行，来到西奈的旷野，就在旷野安营；以色列在那里，在山的对面安营。",
+          "B": "他们从利非订起程，来到西奈旷野，就在旷野里安营。以色列在那里安营，面对着那座山。",
+          "R": "他们离开了利非订，来到西奈荒野，在荒野里扎营。以色列人的帐篷都面对着那座山。"
         }
       },
       "decisions": [
@@ -498,6 +626,47 @@
             "a montanha"
           ],
           "reason": "\"Monte\" is the Portuguese word for a mountain where God meets his people (\"o monte Sinai\", \"o monte de Deus\"), the word Matthew 5:1 also uses in Portuguese and Exodus 3:1 uses for \"o monte de Deus\"; \"a montanha\" is the ordinary geographic word and reads as scenery. Lowercase \"monte\" before the name, as Portuguese writes \"o monte Sinai\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020190020021",
+            "o020190020022"
+          ],
+          "choice": "Rephidim \"レフィディム\"",
+          "alternatives": [
+            "\"レフィデム\""
+          ],
+          "reason": "Transcribed from the Hebrew by the pattern of the other Exodus names.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020190020022"
+          ],
+          "choice": "\"利非订\" for Rephidim",
+          "alternatives": [],
+          "reason": "Rephidim is not in the glossary; \"利非订\" is the conventional form of the name in Chinese Bibles.",
           "uncertain": false,
           "footnote": false
         }
@@ -593,6 +762,26 @@
           "L": "И Моисей взошёл к Богу, и воззвал к нему {{divine_name:ГОСПОДЬ|Яхве}} с горы, говоря: «Так скажи дому Иакова и возвести {{gender:детям Израиля|сынам Израиля}}:",
           "B": "Моисей поднялся к Богу, и {{divine_name:ГОСПОДЬ|Яхве}} позвал его с горы: «Скажи это дому Иакова и возвести израильтянам:",
           "R": "Моисей поднялся на гору, чтобы встретиться с Богом. {{divine_name:ГОСПОДЬ|Яхве}} позвал его с горы и сказал: «Вот что ты должен сказать потомкам Иакова, израильтянам:"
+        },
+        "ja": {
+          "L": "そしてモーセは神のもとに登って行った。すると{{divine_name:主|ヤハウェ}}が山から彼に呼びかけて言われた。「あなたはこのようにヤコブの家に言い、イスラエルの子らに告げなさい。",
+          "B": "モーセが神のもとへ登って行くと、{{divine_name:主|ヤハウェ}}は山から彼に呼びかけて言われた。「ヤコブの家にこう言い、イスラエルの人々に告げなさい。",
+          "R": "モーセは神に会うために山に登って行きました。すると、{{divine_name:主|ヤハウェ}}が山からモーセに呼びかけて言われました。「ヤコブの一族、イスラエルの人々に、こう伝えなさい。"
+        },
+        "uk": {
+          "L": "А Мойсей піднявся до Бога, і закликав його {{divine_name:ГОСПОДЬ|Ягве}} з гори, кажучи: «Так скажеш домові Якова і сповістиш {{gender:нащадкам|синам}} Ізраїля:",
+          "B": "Мойсей піднявся до Бога, і {{divine_name:ГОСПОДЬ|Ягве}} покликав його з гори: «Скажи це домові Якова й оголоси ізраїльтянам:",
+          "R": "Мойсей піднявся на гору, щоб зустрітися з Богом. {{divine_name:ГОСПОДЬ|Ягве}} покликав його з гори й сказав: «Ось що ти маєш сказати родині Якова, ізраїльтянам:"
+        },
+        "id": {
+          "L": "Lalu Musa naik menghadap Allah, dan {{divine_name:TUHAN|Yahweh}} memanggil dia dari gunung itu, firman-{{deity_pronoun:nya|Nya}}, \"Beginilah harus kaukatakan kepada keturunan Yakub dan kauberitahukan kepada bani Israel:",
+          "B": "Musa naik menghadap Allah, dan {{divine_name:TUHAN|Yahweh}} memanggil dia dari gunung itu: \"Katakanlah ini kepada keturunan Yakub, dan beritahukanlah kepada orang Israel:",
+          "R": "Musa mendaki gunung itu untuk bertemu dengan Allah. {{divine_name:TUHAN|Yahweh}} memanggil dia dari gunung itu dan berfirman, \"Inilah yang harus kamu katakan kepada keluarga Yakub, yaitu orang Israel:"
+        },
+        "zh": {
+          "L": "摩西上到{{god_term:神|上帝}}那里，{{divine_name:上主|雅威}}从山上呼唤他，说：“你要这样对雅各家说，又要告诉{{gender:以色列的子孙|以色列的儿子}}：",
+          "B": "摩西上到{{god_term:神|上帝}}那里，{{divine_name:上主|雅威}}从山上呼唤他：“你要这样对雅各家说，向以色列人宣告：",
+          "R": "摩西上山去见{{god_term:神|上帝}}。{{divine_name:上主|雅威}}从山上呼唤他，说：“你要把这些话告诉雅各的家族，就是以色列人："
         }
       },
       "decisions": [
@@ -664,6 +853,95 @@
             "አምላክ (God, a god)"
           ],
           "reason": "Where Elohim plainly means the one God of Israel and YHWH does not stand beside it, Amharic says \"እግዚአብሔር\", the ordinary name for God; \"አምላክ\" is kept for \"a god\", \"the God of ...\" and \"my God, your God\". The divine name YHWH has its own setting span.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o020190030051",
+            "o020190030052",
+            "o020190030061",
+            "o020190030062",
+            "o020190030071"
+          ],
+          "choice": "Light respect forms for God's acts in narration (\"言われた\", \"降りて来られた\", \"呼び寄せられた\"); God speaks plain to Moses (\"〜なさい\" at every level, as in Genesis), and Moses speaks to God in です・ます",
+          "alternatives": [
+            "no respect forms for God"
+          ],
+          "reason": "As in Genesis and EXO 1-18; noted once for Exodus 19-23.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020190030131",
+            "o020190030132",
+            "o020190030141"
+          ],
+          "choice": "\"ヤコブの一族\" (R) for 'the house of Jacob'",
+          "alternatives": [
+            "\"ヤコブの家\""
+          ],
+          "reason": "\"家\" for a people is unclear to a new reader; Readable, like the English Readable, says 'family' and joins the two names as one people (meaning decision).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020190030132",
+            "o020190030141",
+            "o020190030162",
+            "o020190030171"
+          ],
+          "choice": "\"keturunan Yakub\" (L, B), \"keluarga Yakub\" (R) for \"the house of Jacob\"",
+          "alternatives": [],
+          "reason": "The same people named twice (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o020190030042"
+          ],
+          "choice": "{{god_term:神|上帝}}",
+          "alternatives": [
+            "上帝 as the default"
+          ],
+          "reason": "Every word naming the one God is a god_term span: \"神\" by default, \"上帝\" for readers who choose it. The two words name the same God; the setting changes wording only.",
           "uncertain": false,
           "footnote": false
         }
@@ -752,6 +1030,26 @@
           "L": "“Вы видели, что {{deity_pronoun:я|Я}} сделал с Египтом, и [как] {{deity_pronoun:я|Я}} нёс вас на орлиных крыльях и принёс вас к себе.",
           "B": "“Вы своими глазами видели, что {{deity_pronoun:я|Я}} сделал с египтянами и как {{deity_pronoun:я|Я}} поднял вас на орлиных крыльях и принёс сюда, ко {{deity_pronoun:мне|Мне}}.",
           "R": "“Вы видели, что {{deity_pronoun:я|Я}} сделал с египтянами. Я нёс вас в пути, как орёл носит своих птенцов на крыльях, и {{deity_pronoun:я|Я}} привёл вас сюда, чтобы вы были со {{deity_pronoun:мной|Мной}}."
+        },
+        "ja": {
+          "L": "『あなたがた自身が、わたしがエジプトにしたことを見た。そしてわたしは鷲の翼の上にあなたがたを載せて運び、あなたがたをわたしのもとに連れて来た。",
+          "B": "『あなたがたは、わたしがエジプト人にしたことを自分の目で見た。また、わたしが鷲の翼に乗せるようにしてあなたがたを運び、わたしのもとに連れて来たことも見た。",
+          "R": "『あなたたちは、わたしがエジプト人にしたことを見た。わしがひなを翼に乗せて運ぶように、わたしはあなたたちを運んで、わたしのいるこの所に連れて来た。"
+        },
+        "uk": {
+          "L": "“Ви самі бачили, що Я зробив Єгиптові, і як Я ніс вас на орлиних крилах і привів вас до {{deity_pronoun:мене|Мене}}.",
+          "B": "“Ви на власні очі бачили, що Я зробив єгиптянам і як Я підняв вас на орлиних крилах і привів сюди, до {{deity_pronoun:мене|Мене}}.",
+          "R": "“Ви бачили, що Я зробив єгиптянам. Я ніс вас у дорозі, як орел несе на крилах своїх пташенят, і привів вас сюди, щоб ви були зі {{deity_pronoun:мною|Мною}}."
+        },
+        "id": {
+          "L": "'Kalian sendiri telah melihat apa yang {{deity_pronoun:ku|Ku}}lakukan kepada orang Mesir, dan bagaimana {{divine_name:ALLAH|Yahweh}}ku telah mendukung kalian di atas sayap rajawali dan membawa kalian kepada-{{deity_pronoun:ku|Ku}}.",
+          "B": "'Kalian telah melihat dengan mata kalian sendiri apa yang {{deity_pronoun:ku|Ku}}lakukan kepada orang Mesir, dan bagaimana {{divine_name:ALLAH|Yahweh}}ku mengangkat kalian di atas sayap rajawali dan membawa kalian ke sini kepada-{{deity_pronoun:ku|Ku}}.",
+          "R": "'Kalian telah melihat apa yang {{deity_pronoun:ku|Ku}}lakukan kepada orang Mesir. {{divine_name:ALLAH|Yahweh}}ku membawa kalian di sepanjang jalan seperti burung rajawali membawa anak-anaknya di atas sayapnya, dan {{divine_name:ALLAH|Yahweh}}ku membawa kalian ke sini untuk bersama-{{deity_pronoun:ku|Ku}}."
+        },
+        "zh": {
+          "L": "‘你们自己看见了我向埃及所做的，[也看见]我怎样用鹰的翅膀背着你们，把你们带到我这里。",
+          "B": "‘你们亲眼看见了我向埃及人所做的事，也看见我怎样用鹰的翅膀托起你们，带你们到这里来到我面前。",
+          "R": "‘你们看见了我对埃及人做的事。我一路背着你们，就像老鹰用翅膀背着它的小鹰一样。我把你们带到这里，和我在一起。"
         }
       },
       "decisions": [
@@ -948,6 +1246,70 @@
           "reason": "Modern Russian word order for the image of God carrying Israel safely; the Synodal adjective \"орлих\" is not used.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020190040101"
+          ],
+          "choice": "\"鷲\" (L, B), \"わし\" (R)",
+          "alternatives": [
+            "\"はげわし\""
+          ],
+          "reason": "The meaning decision allows vultures, but \"eagle\" is the image the verse is known by; Readable writes the non-Jōyō kanji in kana.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020190040101"
+          ],
+          "choice": "орлиних",
+          "alternatives": [
+            "шулік",
+            "грифів"
+          ],
+          "reason": "The bird of strength and care that Ukrainian readers know from this image; the exact species is uncertain.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020190040062",
+            "o020190040091",
+            "o020190040101"
+          ],
+          "choice": "\"rajawali\" for the eagles",
+          "alternatives": [],
+          "reason": "The large bird of prey (m2); \"rajawali\" is the common word.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1043,6 +1405,26 @@
           "L": "И теперь, если вы будете внимательно слушать {{deity_pronoun:мой|Мой}} голос и соблюдать {{deity_pronoun:мой|Мой}} завет, то будете {{deity_pronoun:мне|Мне}} собственностью из всех народов, потому что {{deity_pronoun:моя|Моя}} вся земля.",
           "B": "Итак, если вы будете по-настоящему слушать {{deity_pronoun:мой|Мой}} голос и хранить {{deity_pronoun:мой|Мой}} завет, то из всех народов вы будете {{deity_pronoun:моим|Моим}} особым сокровищем. Вся земля принадлежит {{deity_pronoun:мне|Мне}},",
           "R": "Итак, если вы будете по-настоящему слушаться {{deity_pronoun:меня|Меня}} и хранить {{deity_pronoun:мой|Мой}} завет, вы будете {{deity_pronoun:моим|Моим}} особым сокровищем среди всех народов. Ведь вся земля — {{deity_pronoun:моя|Моя}},"
+        },
+        "ja": {
+          "L": "そして今、もしあなたがたが確かにわたしの声に聞き従い、わたしの契約を守るなら、あなたがたはすべての民の中から、わたしの宝となる。全地はわたしのものだからである。",
+          "B": "ですから今、もしあなたがたが本当にわたしの声に聞き従い、わたしの契約を守り続けるなら、あなたがたはすべての民の中で、わたしの特別な宝となる。全地はわたしのものであり、",
+          "R": "だから今、もしあなたたちが本当にわたしの言うことを聞いて、わたしの契約を守るなら、あなたたちは、すべての民の中で、わたしの大切な宝物となる。それは、世界中がわたしのものだからだ。"
+        },
+        "uk": {
+          "L": "А тепер, якщо ви справді слухатимете {{deity_pronoun:мого|Мого}} голосу і зберігатимете {{deity_pronoun:мій|Мій}} завіт, то будете {{deity_pronoun:мені|Мені}} особливою власністю з-поміж усіх народів, бо вся земля — {{deity_pronoun:моя|Моя}}.",
+          "B": "Тож тепер, якщо ви справді слухатимете {{deity_pronoun:мого|Мого}} голосу й триматиметеся {{deity_pronoun:мого|Мого}} завіту, то з-поміж усіх народів будете {{deity_pronoun:моїм|Моїм}} особливим скарбом. Уся земля належить {{deity_pronoun:мені|Мені}},",
+          "R": "Тож тепер, якщо ви справді слухатимете {{deity_pronoun:мене|Мене}} й дотримуватиметеся {{deity_pronoun:мого|Мого}} завіту, ви будете {{deity_pronoun:моїм|Моїм}} особливим скарбом з-поміж усіх народів. Бо вся земля — {{deity_pronoun:моя|Моя}},"
+        },
+        "id": {
+          "L": "Dan sekarang, jika kalian sungguh-sungguh mendengarkan suara-{{deity_pronoun:ku|Ku}} dan memegang perjanjian-{{deity_pronoun:ku|Ku}}, kalian akan menjadi milik-{{deity_pronoun:ku|Ku}} sendiri dari antara segala bangsa, sebab seluruh bumi adalah milik-{{deity_pronoun:ku|Ku}}.",
+          "B": "Jadi sekarang, jika kalian sungguh-sungguh mendengarkan suara-{{deity_pronoun:ku|Ku}} dan memegang perjanjian-{{deity_pronoun:ku|Ku}}, dari antara segala bangsa kalian akan menjadi harta-{{deity_pronoun:ku|Ku}} yang istimewa. Seluruh bumi adalah milik-{{deity_pronoun:ku|Ku}},",
+          "R": "Jadi sekarang, kalau kalian sungguh-sungguh mendengarkan {{divine_name:ALLAH|Yahweh}}ku dan memegang perjanjian-{{deity_pronoun:ku|Ku}}, kalian akan menjadi harta istimewa-{{deity_pronoun:ku|Ku}} sendiri di antara semua bangsa. Sebab seluruh bumi adalah milik-{{deity_pronoun:ku|Ku}},"
+        },
+        "zh": {
+          "L": "现在，你们若确实听从我的声音，遵守我的约，你们就要从万民当中归我作珍贵的产业，因为全地都属于我。",
+          "B": "所以现在，你们若真正听从我的声音，持守我的约，你们就要在万民之中作我自己珍爱的宝贝。整个世界都属于我，",
+          "R": "所以现在，你们要是真心听从我，遵守我的约，你们就会在所有的民族当中成为我自己的宝贝。这是因为整个世界都是我的，"
         }
       },
       "decisions": [
@@ -1375,6 +1757,112 @@
           "reason": "The Pentateuch note settles \"завет\" for the covenant at every level, the word of the New Testament.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020190050111"
+          ],
+          "choice": "segullah: \"宝\" (L), \"特別な宝\" (B), \"大切な宝物\" (R)",
+          "alternatives": [
+            "\"所有の民\"",
+            "\"わたしのもの\""
+          ],
+          "reason": "The meaning decision reads a personal treasure, specially owned and valued; \"宝\" says both owning and valuing.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o020190050141",
+            "o020190050151",
+            "o020190050152",
+            "o020190050161",
+            "o020190050171",
+            "o020190050172"
+          ],
+          "choice": "\"全地はわたしのものであり、\" (B) runs on into verse 6",
+          "alternatives": [
+            "\"全地はわたしのものだからである。\""
+          ],
+          "reason": "As the English Balanced, this leaves open whether the clause gives a reason or a contrast (meaning decision, uncertain).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020190050111"
+          ],
+          "choice": "особливою власністю",
+          "alternatives": [
+            "скарбом",
+            "надбанням"
+          ],
+          "reason": "L keeps the sense of something personally owned; B and R say treasure, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020190050111"
+          ],
+          "choice": "\"milik-{{deity_pronoun:ku|Ku}} sendiri\" (L); \"harta-{{deity_pronoun:ku|Ku}} yang istimewa\" (B, R)",
+          "alternatives": [],
+          "reason": "A personal treasure, specially owned and valued (m2); the wording is chosen apart from the familiar church phrase.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020190050111"
+          ],
+          "choice": "\"珍贵的产业\" (L); \"珍爱的宝贝\" / \"宝贝\" (B, R)",
+          "alternatives": [
+            "属我的子民"
+          ],
+          "reason": "The word is a personal treasure, owned and prized; Literal keeps \"possession\" as \"产业\" with \"珍贵\", Balanced and Readable say \"treasure\" as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1460,6 +1948,26 @@
           "L": "А вы будете {{deity_pronoun:мне|Мне}} царством священников и народом святым.” Вот слова, которые ты скажешь {{gender:детям Израиля|сынам Израиля}}.»",
           "B": "и вы будете царством священников и святым народом, который принадлежит {{deity_pronoun:мне|Мне}}.” Вот слова, которые ты должен сказать израильтянам.»",
           "R": "и вы будете царством священников, которые служат {{deity_pronoun:мне|Мне}}, народом, отделённым для {{deity_pronoun:меня|Меня}}.” Передай эти слова израильтянам.»"
+        },
+        "ja": {
+          "L": "そしてあなたがた自身は、わたしにとって祭司の王国、聖なる国民となる。』これが、あなたがイスラエルの子らに語るべき言葉である。」",
+          "B": "あなたがたは、わたしのものである祭司の王国、聖なる国民となる。』これが、あなたがイスラエルの人々に語るべき言葉である。」",
+          "R": "そして、あなたたちは、わたしに仕える祭司の王国となり、わたしのために取り分けられた国民となる。』この言葉を、イスラエルの人々に伝えなさい。」"
+        },
+        "uk": {
+          "L": "А ви будете {{deity_pronoun:мені|Мені}} царством священників і народом святим”. Оце слова, які ти скажеш {{gender:нащадкам|синам}} Ізраїля».",
+          "B": "і ви будете царством священників і святим народом, що належить {{deity_pronoun:мені|Мені}}”. Ось слова, які ти маєш сказати ізраїльтянам».",
+          "R": "і ви будете царством священників, які служать {{deity_pronoun:мені|Мені}}, народом, відокремленим для {{deity_pronoun:мене|Мене}}”. Перекажи ці слова ізраїльтянам»."
+        },
+        "id": {
+          "L": "Dan kalian akan menjadi bagi-{{deity_pronoun:ku|Ku}} kerajaan imam dan bangsa yang kudus.' Itulah perkataan yang harus kaukatakan kepada bani Israel.\"",
+          "B": "dan kalian akan menjadi kerajaan imam dan bangsa yang kudus, milik-{{deity_pronoun:ku|Ku}}.' Itulah perkataan yang harus kausampaikan kepada orang Israel.\"",
+          "R": "dan kalian akan menjadi kerajaan para imam yang melayani {{divine_name:ALLAH|Yahweh}}ku, bangsa yang dikhususkan bagi-{{deity_pronoun:ku|Ku}}.' Sampaikanlah perkataan ini kepada orang Israel.\""
+        },
+        "zh": {
+          "L": "你们自己要归我，成为祭司的国度和圣洁的民族。’这些就是你要对{{gender:以色列的子孙|以色列的儿子}}说的话。”",
+          "B": "你们要成为祭司的国度，成为圣洁的国民，归属于我。’这些就是你要对以色列人讲的话。”",
+          "R": "你们要成为事奉我的祭司的国度，成为属于我的国民。’你要把这些话告诉以色列人。”"
         }
       },
       "decisions": [
@@ -1662,6 +2170,100 @@
           "reason": "The Pentateuch note settles \"священник\" for the priest; \"a kingdom of priests\" is a people who all serve God as priests do (m1), so the noun is kept rather than an adjective.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020190060041",
+            "o020190060051",
+            "o020190060061",
+            "o020190060062",
+            "o020190060071"
+          ],
+          "choice": "\"祭司の王国、聖なる国民\" (L, B); Readable explains both as the English Readable does",
+          "alternatives": [
+            "\"祭司の国\""
+          ],
+          "reason": "\"聖なる国民\" matches the Japanese of 1 Peter 2:9, which takes up this verse.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020190060041",
+            "o020190060051"
+          ],
+          "choice": "царство священників",
+          "alternatives": [
+            "священниче царство"
+          ],
+          "reason": "Keeps the two nouns side by side, so priests stays a noun as in the English.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020190060041",
+            "o020190060051",
+            "o020190060062",
+            "o020190060071"
+          ],
+          "choice": "\"kerajaan imam\"; \"bangsa yang kudus\"",
+          "alternatives": [],
+          "reason": "A people who all serve God as priests (m1), and a nation set apart to belong to God (m2), with the glossary words.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020190060041",
+            "o020190060051",
+            "o020190060062",
+            "o020190060071"
+          ],
+          "choice": "\"祭司的国度\"; \"圣洁的民族\" (L), \"圣洁的国民\" (B), \"属于我的国民\" (R)",
+          "alternatives": [
+            "属君王的祭司群体 (1 Peter 2:9, L)",
+            "事奉君王的祭司 (1 Peter 2:9, B, R)"
+          ],
+          "reason": "1 Peter 2:9 echoes this verse. \"A holy nation\" is the same in the Hebrew and keeps 1 Peter's Chinese at each level (with \"我\" for God speaking at R). \"A kingdom of priests\" is drafted from the Hebrew: 1 Peter follows the Greek Old Testament's \"royal priesthood\" (\"属君王的祭司群体\"), which says something different.",
+          "uncertain": false,
+          "footnote": true
         }
       ],
       "status": "ai_draft"
@@ -1753,6 +2355,26 @@
           "L": "И пришёл Моисей и созвал старейшин народа, и предложил им все эти слова, которые повелел ему {{divine_name:ГОСПОДЬ|Яхве}}.",
           "B": "Моисей вернулся и созвал старейшин народа. Он изложил им все эти слова, как повелел ему {{divine_name:ГОСПОДЬ|Яхве}}.",
           "R": "Моисей вернулся и собрал старейшин народа. Он пересказал им всё, что {{divine_name:ГОСПОДЬ|Яхве}} велел ему сказать."
+        },
+        "ja": {
+          "L": "そしてモーセは来て、民の長老たちを呼び寄せ、{{divine_name:主|ヤハウェ}}が彼に命じられたこれらすべての言葉を彼らの前に置いた。",
+          "B": "モーセは戻って民の長老たちを呼び集め、{{divine_name:主|ヤハウェ}}が命じられたとおりに、これらの言葉をすべて彼らの前に示した。",
+          "R": "モーセは戻って、民の指導者たちを呼び集めました。そして、{{divine_name:主|ヤハウェ}}から伝えるように命じられたことを、すべて話しました。"
+        },
+        "uk": {
+          "L": "І прийшов Мойсей, і скликав старійшин народу, і виклав перед ними всі ці слова, які наказав йому {{divine_name:ГОСПОДЬ|Ягве}}.",
+          "B": "Мойсей повернувся й скликав старійшин народу. Він виклав їм усі ці слова, як наказав йому {{divine_name:ГОСПОДЬ|Ягве}}.",
+          "R": "Мойсей повернувся й скликав провідників народу. Він переказав їм усе, що {{divine_name:ГОСПОДЬ|Ягве}} звелів йому сказати."
+        },
+        "id": {
+          "L": "Lalu datanglah Musa dan memanggil tua-tua bangsa itu dan membentangkan di depan mereka segala perkataan ini, yang diperintahkan {{divine_name:TUHAN|Yahweh}} kepadanya.",
+          "B": "Musa kembali dan memanggil tua-tua bangsa itu. Ia membentangkan di hadapan mereka segala perkataan ini, seperti yang diperintahkan {{divine_name:TUHAN|Yahweh}} kepadanya.",
+          "R": "Musa kembali dan mengumpulkan para pemimpin bangsa itu. Ia memberi tahu mereka semua yang diperintahkan {{divine_name:TUHAN|Yahweh}} kepadanya untuk dikatakan."
+        },
+        "zh": {
+          "L": "摩西来了，召集百姓的长老，把{{divine_name:上主|雅威}}吩咐他的这一切话都摆在他们面前。",
+          "B": "摩西回来，召集了百姓的长老，照着{{divine_name:上主|雅威}}吩咐他的，把这一切话向他们陈明。",
+          "R": "摩西回去，召集了百姓的领袖，把{{divine_name:上主|雅威}}吩咐他说的一切都告诉了他们。"
         }
       },
       "decisions": [
@@ -1801,6 +2423,45 @@
           "choice": "leaders",
           "alternatives": [],
           "reason": "Readable says \"leaders\" for \"elders\", as elsewhere in Exodus.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020190070041",
+            "o020190070042"
+          ],
+          "choice": "\"指導者たち\" (R) for 'elders'; \"長老たち\" (L, B)",
+          "alternatives": [
+            "\"長老たち\" (R)"
+          ],
+          "reason": "As the English Readable 'leaders': the meaning decision reads them as the people's representatives, not simply old men.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020190070042"
+          ],
+          "choice": "\"领袖\" for elders",
+          "alternatives": [
+            "长老"
+          ],
+          "reason": "Readable says \"leaders\" as the English Readable does; Literal and Balanced keep the glossary's \"长老\".",
           "uncertain": false,
           "footnote": false
         }
@@ -1892,6 +2553,26 @@
           "L": "И ответил весь народ вместе и сказал: «Всё, что сказал {{divine_name:ГОСПОДЬ|Яхве}}, сделаем.» И передал Моисей слова народа {{divine_name:ГОСПОДУ|Яхве}}.",
           "B": "Весь народ ответил как один: «Мы сделаем всё, что сказал {{divine_name:ГОСПОДЬ|Яхве}}.» И Моисей передал слова народа {{divine_name:ГОСПОДУ|Яхве}}.",
           "R": "Весь народ ответил вместе: «Мы сделаем всё, что сказал {{divine_name:ГОСПОДЬ|Яхве}}.» Тогда Моисей вернулся к {{divine_name:ГОСПОДУ|Яхве}} и рассказал {{deity_pronoun:ему|Ему}}, что ответил народ."
+        },
+        "ja": {
+          "L": "そして民は皆共に答えて言った。「{{divine_name:主|ヤハウェ}}が語られたことをすべて、わたしたちは行います。」そしてモーセは民の言葉を{{divine_name:主|ヤハウェ}}のもとに持ち帰った。",
+          "B": "民は皆、声を合わせて答えた。「{{divine_name:主|ヤハウェ}}が語られたことを、わたしたちはすべて行います。」モーセは民の言葉を{{divine_name:主|ヤハウェ}}のもとに持ち帰った。",
+          "R": "民はみな声をそろえて、「{{divine_name:主|ヤハウェ}}が言われたことを、わたしたちはみな行います」と答えました。そこでモーセは{{divine_name:主|ヤハウェ}}のところに戻って、民の答えを伝えました。"
+        },
+        "uk": {
+          "L": "І відповів увесь народ разом і сказав: «Усе, що говорив {{divine_name:ГОСПОДЬ|Ягве}}, ми зробимо». І переказав Мойсей слова народу {{divine_name:ГОСПОДУ|Ягве}}.",
+          "B": "Народ відповів одностайно: «Ми зробимо все, що сказав {{divine_name:ГОСПОДЬ|Ягве}}». І Мойсей переніс слова народу назад до {{divine_name:ГОСПОДА|Ягве}}.",
+          "R": "Усі люди відповіли разом: «Ми зробимо все, що сказав {{divine_name:ГОСПОДЬ|Ягве}}». Тоді Мойсей повернувся до {{divine_name:ГОСПОДА|Ягве}} і переказав {{deity_pronoun:йому|Йому}}, що сказав народ."
+        },
+        "id": {
+          "L": "Dan seluruh bangsa itu menjawab bersama-sama dan berkata, \"Segala yang telah difirmankan {{divine_name:TUHAN|Yahweh}} akan kami lakukan.\" Lalu Musa menyampaikan kembali perkataan bangsa itu kepada {{divine_name:TUHAN|Yahweh}}.",
+          "B": "Seluruh bangsa itu menjawab serentak, \"Segala yang telah difirmankan {{divine_name:TUHAN|Yahweh}} akan kami lakukan.\" Lalu Musa menyampaikan jawaban bangsa itu kepada {{divine_name:TUHAN|Yahweh}}.",
+          "R": "Semua orang menjawab bersama-sama, \"Kami akan melakukan semua yang telah difirmankan {{divine_name:TUHAN|Yahweh}}.\" Lalu Musa kembali kepada {{divine_name:TUHAN|Yahweh}} dan memberi tahu-{{deity_pronoun:nya|Nya}} apa yang dikatakan bangsa itu."
+        },
+        "zh": {
+          "L": "全体百姓一起回答，说：“{{divine_name:上主|雅威}}所说的一切，我们都要做。”摩西就把百姓的话带回给{{divine_name:上主|雅威}}。",
+          "B": "百姓异口同声地回答：“{{divine_name:上主|雅威}}所说的一切，我们都会去做。”摩西就把百姓的话转达给{{divine_name:上主|雅威}}。",
+          "R": "所有的百姓一起回答：“{{divine_name:上主|雅威}}说的一切，我们都会照着做。”于是摩西回到{{divine_name:上主|雅威}}那里，把百姓的话告诉了{{deity_pronoun:他|祂}}。"
         }
       },
       "decisions": [
@@ -1936,6 +2617,26 @@
           "choice": "brought back the words: reported the answer",
           "alternatives": [],
           "reason": "Moses goes between God and the people, carrying God's word to them and their answer back to God.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020190080081",
+            "o020190080101"
+          ],
+          "choice": "\"kami\", exclusive",
+          "alternatives": [],
+          "reason": "The people answer God through Moses, so \"kami\".",
           "uncertain": false,
           "footnote": false
         }
@@ -2045,6 +2746,26 @@
           "L": "И сказал {{divine_name:ГОСПОДЬ|Яхве}} Моисею: «Вот, {{deity_pronoun:я|Я}} приду к тебе в густоте облака, чтобы слышал народ, когда {{deity_pronoun:я|Я}} буду говорить с тобой, и также тебе поверили навсегда.» И пересказал Моисей слова народа {{divine_name:ГОСПОДУ|Яхве}}.",
           "B": "{{divine_name:ГОСПОДЬ|Яхве}} сказал Моисею: «Вот, {{deity_pronoun:я|Я}} приду к тебе в густом, тёмном облаке, чтобы народ слышал, как {{deity_pronoun:я|Я}} говорю с тобой, и доверял тебе отныне.» Моисей пересказал слова народа {{divine_name:ГОСПОДУ|Яхве}}.",
           "R": "{{divine_name:ГОСПОДЬ|Яхве}} сказал Моисею: «Я приду к тебе в густом тёмном облаке. Народ услышит, как {{deity_pronoun:я|Я}} говорю с тобой, и тогда люди всегда будут тебе доверять.» Моисей передал {{divine_name:ГОСПОДУ|Яхве}} ответ народа."
+        },
+        "ja": {
+          "L": "そして{{divine_name:主|ヤハウェ}}はモーセに言われた。「見なさい、わたしは濃い雲の中で、あなたのもとに来る。わたしがあなたと語るのを民が聞き、また、いつまでもあなたを信じるためである。」そしてモーセは民の言葉を{{divine_name:主|ヤハウェ}}に告げた。",
+          "B": "{{divine_name:主|ヤハウェ}}はモーセに言われた。「さあ、わたしは暗く厚い雲の中にあって、あなたのもとに来る。わたしがあなたと語るのを民が聞いて、これから後いつまでも、あなたを信じるようになるためである。」モーセは民の言葉を{{divine_name:主|ヤハウェ}}に告げた。",
+          "R": "{{divine_name:主|ヤハウェ}}はモーセに言われました。「わたしは、黒く厚い雲の中であなたのところに来る。わたしがあなたと話すのを民が聞けば、彼らはいつまでもあなたを信頼するだろう。」モーセは民の答えを{{divine_name:主|ヤハウェ}}に伝えました。"
+        },
+        "uk": {
+          "L": "І сказав {{divine_name:ГОСПОДЬ|Ягве}} Мойсеєві: «Ось Я прийду до тебе в густій хмарі, щоб чув народ, як Я говоритиму з тобою, і також повірив тобі навіки». І розповів Мойсей слова народу {{divine_name:ГОСПОДУ|Ягве}}.",
+          "B": "{{divine_name:ГОСПОДЬ|Ягве}} сказав Мойсеєві: «Ось Я прийду до тебе в темній, важкій хмарі, щоб народ чув, як Я говорю з тобою, і відтепер довіряв тобі». І Мойсей переказав слова народу {{divine_name:ГОСПОДУ|Ягве}}.",
+          "R": "{{divine_name:ГОСПОДЬ|Ягве}} сказав Мойсеєві: «Я прийду до тебе в густій темній хмарі. Люди почують, як Я розмовляю з тобою, і тоді завжди тобі довірятимуть». Мойсей передав {{divine_name:ГОСПОДУ|Ягве}} відповідь народу."
+        },
+        "id": {
+          "L": "Dan {{divine_name:TUHAN|Yahweh}} berfirman kepada Musa, \"Lihatlah, {{divine_name:ALLAH|Yahweh}}ku akan datang kepadamu dalam awan yang tebal, supaya bangsa itu mendengar apabila {{divine_name:ALLAH|Yahweh}}ku berbicara dengan engkau, dan juga supaya mereka percaya kepadamu untuk selama-lamanya.\" Lalu Musa memberitahukan perkataan bangsa itu kepada {{divine_name:TUHAN|Yahweh}}.",
+          "B": "{{divine_name:TUHAN|Yahweh}} berfirman kepada Musa, \"Lihat, {{divine_name:ALLAH|Yahweh}}ku akan datang kepadamu dalam awan yang gelap dan tebal, supaya bangsa itu mendengar ketika {{divine_name:ALLAH|Yahweh}}ku berbicara dengan engkau, dan sejak itu mereka akan percaya kepadamu.\" Musa menyampaikan perkataan bangsa itu kepada {{divine_name:TUHAN|Yahweh}}.",
+          "R": "{{divine_name:TUHAN|Yahweh}} berfirman kepada Musa, \"{{divine_name:ALLAH|Yahweh}}ku akan datang kepadamu dalam awan yang tebal dan gelap. Bangsa itu akan mendengar {{divine_name:ALLAH|Yahweh}}ku berbicara dengan kamu, lalu mereka akan selalu percaya kepadamu.\" Musa menyampaikan jawaban bangsa itu kepada {{divine_name:TUHAN|Yahweh}}."
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}对摩西说：“看哪，我要在浓云之中来到你那里，为要让百姓听见我和你说话，也让他们永远信你。”摩西把百姓的话告诉了{{divine_name:上主|雅威}}。",
+          "B": "{{divine_name:上主|雅威}}对摩西说：“看，我要在一片又浓又暗的云中到你这里来，让百姓听见我和你说话，从此信任你。”摩西把百姓的话禀告了{{divine_name:上主|雅威}}。",
+          "R": "{{divine_name:上主|雅威}}对摩西说：“我要在又厚又黑的云中到你那里。百姓会听见我和你说话，这样他们就会一直信任你。”摩西把百姓的回答转告了{{divine_name:上主|雅威}}。"
         }
       },
       "decisions": [
@@ -2092,6 +2813,46 @@
           "alternatives": [],
           "reason": "Verse 8 has already said that Moses brought the people's answer back. This may repeat that report as the setting for God's reply, or it may be a second report after God's word in this verse.",
           "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020190090051"
+          ],
+          "choice": "hinneh in God's speech: \"見なさい\" (L), \"さあ\" (B), left out (R)",
+          "alternatives": [
+            "\"見よ\""
+          ],
+          "reason": "As the Genesis notes; the English Readable also drops it.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020190090051"
+          ],
+          "choice": "\"看哪\" (L), \"看\" (B), left out (R)",
+          "alternatives": [],
+          "reason": "The formula for hinneh in every book (style guide section 12): Literal keeps the call to attention, Balanced softens it, Readable leaves it out as the English Readable does.",
+          "uncertain": false,
           "footnote": false
         }
       ],
@@ -2180,6 +2941,26 @@
           "L": "И сказал {{divine_name:ГОСПОДЬ|Яхве}} Моисею: «Пойди к народу и освяти их сегодня и завтра, и пусть выстирают свои одежды,",
           "B": "{{divine_name:ГОСПОДЬ|Яхве}} сказал Моисею: «Пойди к народу и сегодня и завтра освяти их. Пусть они выстирают свои одежды",
           "R": "{{divine_name:ГОСПОДЬ|Яхве}} сказал Моисею: «Пойди к народу. Сегодня и завтра сделай их святыми и готовыми встретиться со {{deity_pronoun:мной|Мной}}. Пусть они выстирают свою одежду"
+        },
+        "ja": {
+          "L": "そして{{divine_name:主|ヤハウェ}}はモーセに言われた。「民のところに行き、今日と明日、彼らを聖別しなさい。そして彼らに自分たちの衣服を洗わせ、",
+          "B": "{{divine_name:主|ヤハウェ}}はモーセに言われた。「民のところに行って、今日と明日、彼らを聖別しなさい。彼らは自分の衣服を洗い、",
+          "R": "{{divine_name:主|ヤハウェ}}はモーセに言われました。「民のところに行きなさい。今日と明日、彼らを清めて、わたしに会う用意をさせなさい。彼らは自分の服を洗って、"
+        },
+        "uk": {
+          "L": "І сказав {{divine_name:ГОСПОДЬ|Ягве}} Мойсеєві: «Іди до народу і освяти їх сьогодні та завтра, і нехай виперуть свій одяг,",
+          "B": "{{divine_name:ГОСПОДЬ|Ягве}} сказав Мойсеєві: «Іди до народу й сьогодні та завтра освячуй їх. Вони мають випрати свій одяг",
+          "R": "{{divine_name:ГОСПОДЬ|Ягве}} сказав Мойсеєві: «Іди до людей. Сьогодні й завтра зроби їх святими й готовими до зустрічі зі {{deity_pronoun:мною|Мною}}. Вони мають випрати свій одяг"
+        },
+        "id": {
+          "L": "Dan {{divine_name:TUHAN|Yahweh}} berfirman kepada Musa, \"Pergilah kepada bangsa itu dan kuduskanlah mereka hari ini dan besok, dan hendaklah mereka mencuci pakaian mereka,",
+          "B": "{{divine_name:TUHAN|Yahweh}} berfirman kepada Musa, \"Pergilah kepada bangsa itu, dan hari ini dan besok kuduskanlah mereka. Mereka harus mencuci pakaian mereka",
+          "R": "{{divine_name:TUHAN|Yahweh}} berfirman kepada Musa, \"Pergilah kepada bangsa itu. Hari ini dan besok, kuduskanlah mereka supaya mereka siap bertemu dengan {{divine_name:ALLAH|Yahweh}}ku. Mereka harus mencuci pakaian mereka"
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}对摩西说：“你到百姓那里去，今天和明天要使他们成圣，叫他们洗净自己的衣服，",
+          "B": "{{divine_name:上主|雅威}}吩咐摩西：“你到百姓那里去，今天和明天要使他们分别为圣。他们必须洗净衣服，",
+          "R": "{{divine_name:上主|雅威}}吩咐摩西：“你到百姓那里去。今天和明天，你要让他们成为圣洁，准备好来见我。他们必须把衣服洗干净，"
         }
       },
       "decisions": [
@@ -2349,6 +3130,70 @@
           "reason": "\"Освятить\" is to make holy, ready to come near God (m1); Readable spells it out.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020190100081",
+            "o020190100082",
+            "o020190100083"
+          ],
+          "choice": "qiddesh (of people): \"聖別する\" (L, B), \"清めて、わたしに会う用意をさせる\" (R)",
+          "alternatives": [
+            "\"きよめる\" (L, B)"
+          ],
+          "reason": "\"聖別\" is the church word kept from EXO 13:2; Readable says what it means here, as the English Readable does (make them holy and ready to meet God).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020190100083"
+          ],
+          "choice": "освяти",
+          "alternatives": [
+            "очисти"
+          ],
+          "reason": "The word for making holy, ready to come near God; R explains it.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020190100082"
+          ],
+          "choice": "\"使……成圣\" (L), \"使……分别为圣\" (B), \"让……成为圣洁\" (R)",
+          "alternatives": [
+            "自洁"
+          ],
+          "reason": "To consecrate is to make holy, set apart and ready to come near God. Balanced says \"set apart as holy\"; Readable uses everyday words. Kept through 19:14, 22-23.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2438,6 +3283,26 @@
           "L": "и пусть будут готовы к третьему дню, потому что в третий день сойдёт {{divine_name:ГОСПОДЬ|Яхве}} на глазах всего народа на гору Синай.",
           "B": "и будут готовы к третьему дню, потому что в третий день {{divine_name:ГОСПОДЬ|Яхве}} сойдёт на гору Синай на глазах у всего народа.",
           "R": "и будут готовы к третьему дню. В этот день {{divine_name:ГОСПОДЬ|Яхве}} сойдёт на гору Синай, и весь народ это увидит."
+        },
+        "ja": {
+          "L": "第三の日に備えさせなさい。第三の日に、{{divine_name:主|ヤハウェ}}がすべての民の目の前でシナイ山の上に降りて来るからである。",
+          "B": "三日目に備えなければならない。三日目に、{{divine_name:主|ヤハウェ}}が民全員の見ている前で、シナイ山に降りて来るからである。",
+          "R": "三日目には用意ができているようにしなさい。その日に{{divine_name:主|ヤハウェ}}がシナイ山に降りて来る。民はみな、それを見るだろう。"
+        },
+        "uk": {
+          "L": "і нехай будуть готові на третій день, бо третього дня зійде {{divine_name:ГОСПОДЬ|Ягве}} на очах усього народу на гору Синай.",
+          "B": "і бути готовими на третій день, бо на третій день {{divine_name:ГОСПОДЬ|Ягве}} зійде на гору Синай на очах усього народу.",
+          "R": "і бути готовими на третій день. Саме тоді {{divine_name:ГОСПОДЬ|Ягве}} зійде на гору Синай, і всі люди це побачать."
+        },
+        "id": {
+          "L": "dan bersiap untuk hari ketiga, sebab pada hari ketiga {{divine_name:TUHAN|Yahweh}} akan turun di depan mata seluruh bangsa itu di atas gunung Sinai.",
+          "B": "dan bersiap untuk hari ketiga, sebab pada hari ketiga {{divine_name:TUHAN|Yahweh}} akan turun ke atas gunung Sinai disaksikan oleh seluruh bangsa itu.",
+          "R": "dan bersiap pada hari ketiga. Pada hari itulah {{divine_name:TUHAN|Yahweh}} akan turun ke atas gunung Sinai, dan seluruh bangsa itu akan melihatnya."
+        },
+        "zh": {
+          "L": "并且要为第三天作好准备，因为在第三天，{{divine_name:上主|雅威}}要当着全体百姓的眼前下到西奈山上。",
+          "B": "也要为第三天准备好，因为第三天{{divine_name:上主|雅威}}要在全体百姓的注视下降到西奈山上。",
+          "R": "要在第三天准备好。那一天{{divine_name:上主|雅威}}要下到西奈山上，所有的百姓都会看见。"
         }
       },
       "decisions": [
@@ -2490,6 +3355,28 @@
             "\"내가 내려가겠다\""
           ],
           "reason": "God speaks of himself in the third person by name; Korean keeps the name and gives it the honorific, as the narrative does, at every level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o020190110081",
+            "o020190110091"
+          ],
+          "choice": "God speaking of himself in the third person uses plain \"降りて来る\", without respect forms",
+          "alternatives": [
+            "\"降りて来られる\""
+          ],
+          "reason": "Respect forms are the narrator's for God; God does not honour himself in his own speech.",
           "uncertain": false,
           "footnote": false
         }
@@ -2585,6 +3472,26 @@
           "L": "И проведи границу для народа вокруг, говоря: “Берегитесь восходить на гору и касаться её края. Всякий, кто коснётся горы, непременно будет предан смерти.",
           "B": "Обозначь для народа границу вокруг горы и предупреди их: “Берегитесь! Не поднимайтесь на гору и даже не касайтесь её подножия. Всякий, кто коснётся горы, должен быть предан смерти.",
           "R": "Проведи вокруг горы черту, за которую народ не должен заходить. Скажи им: “Будьте осторожны! Не поднимайтесь на гору и даже не касайтесь её подножия. Того, кто коснётся горы, нужно предать смерти."
+        },
+        "ja": {
+          "L": "そして、あなたは民のために周りに境を設けて言いなさい。『山に登ることも、その端に触れることもないよう、あなたがたは自分自身に気をつけなさい。山に触れる者はだれでも、必ず死刑に処されなければならない。",
+          "B": "民のために山の周りに境界を定めて、こう警告しなさい。『気をつけなさい。山に登ってはならない。山のふもとに触れることもしてはならない。山に触れる者はだれでも、死刑に処されなければならない。",
+          "R": "山の周りに、民が越えてはならない線を引きなさい。そして民に言いなさい。『気をつけなさい。山に登ってはならない。山のすそに触れてもいけない。山に触れる者はだれでも、死刑にされなければならない。"
+        },
+        "uk": {
+          "L": "І встанови межу для народу довкола, кажучи: “Стережіться, щоб не підніматися на гору і не торкатися краю її. Кожен, хто торкнеться гори, неодмінно буде скараний на смерть.",
+          "B": "Познач для народу межу навколо гори й застережи їх: “Стережіться! Не піднімайтеся на гору й навіть не торкайтеся її краю. Кожен, хто торкнеться гори, має бути скараний на смерть.",
+          "R": "Познач лінію навколо гори, яку люди не повинні переходити. Скажи їм: “Будьте обережні! Не піднімайтеся на гору й навіть не торкайтеся її підніжжя. Кожного, хто торкнеться гори, треба скарати на смерть."
+        },
+        "id": {
+          "L": "Dan engkau harus memasang batas bagi bangsa itu di sekeliling, demikian, 'Jagalah diri kalian supaya jangan naik ke gunung itu atau menyentuh kakinya. Setiap orang yang menyentuh gunung itu pasti dihukum mati.",
+          "B": "Pasanglah batas di sekeliling bagi bangsa itu, dan peringatkanlah mereka, 'Jagalah diri kalian! Jangan mendaki gunung itu atau menyentuh kakinya. Siapa pun yang menyentuh gunung itu harus dihukum mati.",
+          "R": "Buatlah garis batas di sekeliling gunung itu yang tidak boleh dilewati bangsa itu. Katakan kepada mereka, 'Hati-hati! Jangan naik ke gunung itu atau menyentuh kakinya. Siapa pun yang menyentuh gunung itu harus dihukum mati."
+        },
+        "zh": {
+          "L": "你要在四周为百姓划定界限，说：‘你们要当心，不可上山，也不可碰到山的边缘。凡碰到这山的，必定要被处死。",
+          "B": "你要在山的四周为百姓划出界线，警告他们：‘你们要当心！不可上山，连山的边缘也不可碰。凡碰到这山的，都要被处死。",
+          "R": "你要在山的四周画一条线，百姓不可越过。你要告诉他们：‘要小心！不要上山，连山脚也不要碰。谁碰了这山，都必须被处死。"
         }
       },
       "decisions": [
@@ -2737,6 +3644,28 @@
           "reason": "The Hebrew repeats the verb to make the sentence certain. Literal shows the doubling with \"ፈጽሞ\" (surely); Balanced gives the ruling as a law does; Readable says plainly that he must be put to death. These chapters keep this wording for the formula.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020190120151",
+            "o020190120161"
+          ],
+          "choice": "mot yumat: \"必ず死刑に処されなければならない\" (L), \"死刑に処されなければならない\" (B), \"死刑にされなければならない\" (R), kept for Exodus 19-23",
+          "alternatives": [
+            "\"必ず殺されなければならない\" (L)"
+          ],
+          "reason": "A legal sentence of death by the community; \"処される\" matches Mark 7:10 at Balanced. Literal marks the doubled verb with \"必ず\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2829,6 +3758,26 @@
           "L": "Не коснётся его рука, но непременно будет побит камнями или непременно застрелен; скот ли, человек ли — не будет жить.” Когда протяжно затрубит рог, они взойдут на гору.»",
           "B": "Никто не должен прикасаться к такому человеку рукой: его нужно побить камнями или застрелить из лука. Животное это или человек, оно не должно остаться в живых.” Когда рог протрубит протяжно, они могут подняться на гору.»",
           "R": "Не прикасайтесь к нему. Убейте его камнями или стрелами издалека. Это относится и к животным, и к людям. Они не должны жить.” Когда протяжно протрубит бараний рог, они могут подняться на гору.»"
+        },
+        "ja": {
+          "L": "手がその者に触れてはならない。その者は必ず石で打ち殺されるか、必ず射殺されなければならないからである。獣であれ人であれ、生きていてはならない。』雄羊の角笛が長く鳴るとき、彼らは山に登る。」",
+          "B": "そのような者には手を触れてはならない。その者は石で打ち殺されるか、矢で射殺されなければならない。獣であっても人であっても、生かしておいてはならない。』雄羊の角笛が長く鳴り響いたら、彼らは山に登ってよい。」",
+          "R": "その人に手で触れてはいけない。離れた所から石を投げるか、矢を射るかして殺しなさい。動物でも人でも同じである。生かしておいてはならない。』角笛が長く鳴り響いたら、民は山に登ってよい。」"
+        },
+        "uk": {
+          "L": "Жодна рука не торкнеться його, бо його неодмінно побʼють камінням або неодмінно прострелять; чи то худоба, чи то людина — не житиме”. Коли довго сурмитиме баранячий ріг, вони піднімуться на гору».",
+          "B": "Ніхто не повинен торкатися такого. Його треба побити камінням або застрелити стрілами. Чи то тварина, чи людина — вона не повинна жити”. Коли баранячий ріг протяжно засурмить, вони можуть піднятися на гору».",
+          "R": "Не торкайтеся такої людини. Убийте її здалека камінням або стрілами. Це стосується і тварин, і людей. Вони не повинні жити”. Коли баранячий ріг довго засурмить, вони можуть піднятися на гору»."
+        },
+        "id": {
+          "L": "Tidak boleh ada tangan yang menyentuhnya, tetapi ia pasti dilempari dengan batu atau dipanah; baik binatang maupun manusia, ia tidak boleh hidup.' Apabila sangkakala ditiup panjang, barulah mereka boleh naik ke gunung itu.\"",
+          "B": "Tidak seorang pun boleh menyentuh orang itu; ia harus dilempari batu atau dipanah. Baik binatang maupun manusia, ia tidak boleh hidup.' Apabila sangkakala ditiup panjang, mereka boleh naik ke gunung itu.\"",
+          "R": "Jangan sentuh orang itu. Bunuhlah dia dengan batu atau anak panah dari jauh. Hal itu berlaku bagi binatang maupun manusia. Mereka tidak boleh hidup.' Apabila sangkakala ditiup panjang, mereka boleh naik ke gunung itu.\""
+        },
+        "zh": {
+          "L": "不可有手碰他，因为他必定要被石头打死，或者必定要被箭射死；无论是牲畜还是人，都不得存活。’羊角号长鸣的时候，他们就要上山。”",
+          "B": "谁也不可动手碰这样的人；那人必须被石头打死，或被箭射死。无论是牲畜还是人，都不可存活。’羊角号吹出长音的时候，他们才可以上山。”",
+          "R": "不要用手碰那个人。要从远处用石头打死他，或者用箭射死他。牲畜和人都一样，都不可以活下来。’羊角号吹出长长的声音时，他们才可以上山。”"
         }
       },
       "decisions": [
@@ -3077,6 +4026,129 @@
           "reason": "The yovel is a ram's horn blown as a signal (m2), not a metal trumpet.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020190130181",
+            "o020190130182"
+          ],
+          "choice": "yovel / shofar: \"雄羊の角笛\" (L, B), \"角笛\" (R); shofar alone \"角笛\" at every level",
+          "alternatives": [
+            "\"ラッパ\""
+          ],
+          "reason": "A ram's horn, not a metal trumpet; \"ラッパ\" is kept for the Greek salpinx in the New Testament.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020190130141"
+          ],
+          "choice": "\"人\" for 'ish here, with no gender span",
+          "alternatives": [
+            "{{gender:人|男}}"
+          ],
+          "reason": "Japanese \"人\" already covers any human being, so the English gender span is not needed.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020190130182"
+          ],
+          "choice": "баранячий ріг",
+          "alternatives": [
+            "сурма",
+            "шофар"
+          ],
+          "reason": "The horn is named for what it is; a borrowed name would need explaining.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020190130182"
+          ],
+          "choice": "\"sangkakala\" for the ram's horn",
+          "alternatives": [],
+          "reason": "The glossary word for the shofar, kept through Sinai.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o020190130141"
+          ],
+          "choice": "\"人\" with no gender span",
+          "alternatives": [
+            "{{gender:人|男人}}"
+          ],
+          "reason": "The English Literal spans \"human|man\"; Chinese \"人\" already means any person, so no span is needed.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020190130182"
+          ],
+          "choice": "\"羊角号\" for the ram's horn",
+          "alternatives": [
+            "号角",
+            "角"
+          ],
+          "reason": "The ram's horn (yovel here, shofar in 19:16, 19) is \"羊角号\" at every level, so the reader sees it is an animal's horn, not a metal trumpet.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3162,6 +4234,26 @@
           "L": "И сошёл Моисей с горы к народу, и освятил народ, и они выстирали свои одежды.",
           "B": "Моисей сошёл с горы к народу. Он освятил народ, и они выстирали свои одежды.",
           "R": "Моисей спустился с горы к народу. Он сделал их святыми, и они выстирали свою одежду."
+        },
+        "ja": {
+          "L": "そしてモーセは山から民のところに下り、民を聖別した。そして彼らは自分たちの衣服を洗った。",
+          "B": "モーセは山を下りて民のところに行き、民を聖別した。彼らは自分の衣服を洗った。",
+          "R": "モーセは山を下りて民のところに行き、民を清めました。人々は自分の服を洗いました。"
+        },
+        "uk": {
+          "L": "І зійшов Мойсей з гори до народу, і освятив народ, і випрали вони свій одяг.",
+          "B": "Мойсей зійшов з гори до народу. Він приготував людей, освятивши їх, і вони випрали свій одяг.",
+          "R": "Мойсей зійшов з гори до людей. Він зробив їх святими, і вони випрали свій одяг."
+        },
+        "id": {
+          "L": "Lalu Musa turun dari gunung itu kepada bangsa itu dan menguduskan bangsa itu, dan mereka mencuci pakaian mereka.",
+          "B": "Musa turun dari gunung itu kepada bangsa itu. Ia menguduskan mereka, dan mereka mencuci pakaian mereka.",
+          "R": "Musa turun dari gunung itu kepada bangsa itu. Ia menguduskan mereka, dan mereka mencuci pakaian mereka."
+        },
+        "zh": {
+          "L": "摩西从山上下到百姓那里，使百姓成圣，他们就洗净了自己的衣服。",
+          "B": "摩西从山上下到百姓那里，使他们分别为圣，作好准备；他们也洗净了衣服。",
+          "R": "摩西下山到百姓那里，让他们成为圣洁。他们也把衣服洗干净了。"
         }
       },
       "decisions": [
@@ -3277,6 +4369,26 @@
           "L": "И сказал он народу: «Будьте готовы к трём дням; не приближайтесь к женщине.»",
           "B": "Моисей сказал народу: «Будьте готовы к третьему дню. До тех пор ни один мужчина не должен вступать в близость с женщиной.»",
           "R": "Моисей сказал народу: «Приготовьтесь к третьему дню. До тех пор мужчины не должны ложиться ни с одной женщиной.»"
+        },
+        "ja": {
+          "L": "そして彼は民に言った。「三日に向けて備えていなさい。女に近づいてはならない。」",
+          "B": "モーセは民に言った。「三日目に備えておきなさい。それまでは、男は女と関係を持ってはならない。」",
+          "R": "モーセは民に言いました。「三日目のために用意をしなさい。それまで、男の人は女の人と寝てはいけない。」"
+        },
+        "uk": {
+          "L": "І сказав він народові: «Будьте готові на три дні; не наближайтеся до жінки».",
+          "B": "Мойсей сказав народові: «Будьте готові через три дні. А доти жоден чоловік хай не має статевих стосунків з жінкою».",
+          "R": "Мойсей сказав людям: «Будьте готові на третій день. А доти чоловіки не повинні спати з жінками»."
+        },
+        "id": {
+          "L": "Dan ia berkata kepada bangsa itu, \"Bersiaplah untuk hari ketiga; janganlah kalian mendekati perempuan.\"",
+          "B": "Musa berkata kepada bangsa itu, \"Bersiaplah untuk hari ketiga. Sampai saat itu, janganlah kalian bersetubuh dengan perempuan.\"",
+          "R": "Musa berkata kepada bangsa itu, \"Bersiaplah untuk hari ketiga. Sampai saat itu, kaum laki-laki tidak boleh tidur dengan perempuan.\""
+        },
+        "zh": {
+          "L": "他对百姓说：“你们要为三天后作好准备；不要接近妇人。”",
+          "B": "摩西对百姓说：“三天之后要准备好。在那以前，男人都不可与女人同房。”",
+          "R": "摩西对百姓说：“要为第三天作好准备。在那以前，男人不要和任何女人同房。”"
         }
       },
       "decisions": [
@@ -3346,6 +4458,29 @@
           "choice": "\"đàn ông không được ăn nằm với đàn bà\" (B); \"không được ngủ với phụ nữ\" (R)",
           "alternatives": [],
           "reason": "\"Do not draw near to a woman\" means sexual relations (meaning decision); Balanced and Readable say so in the decent words Vietnamese uses for it, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o020190150081",
+            "o020190150091",
+            "o020190150101",
+            "o020190150111"
+          ],
+          "choice": "\"男は女と関係を持ってはならない\" (B), \"男の人は女の人と寝てはいけない\" (R)",
+          "alternatives": [
+            "\"女に近づいてはならない\" (B)"
+          ],
+          "reason": "The meaning decision reads the idiom as sexual relations; Balanced and Readable say so plainly and name the men, as the English does.",
           "uncertain": false,
           "footnote": false
         }
@@ -3449,6 +4584,26 @@
           "L": "И было на третий день, когда наступило утро, были громы и молнии, и тяжёлое облако на горе, и звук рога, очень сильный; и вострепетал весь народ, который [был] в стане.",
           "B": "Когда на третий день наступило утро, загремел гром и засверкали молнии. Тяжёлое облако лежало на горе, и очень громко трубил рог. Все в стане дрожали от страха.",
           "R": "Утром третьего дня начались гром и молнии. Густое облако покрыло гору, и очень громко трубил бараний рог. Все в лагере дрожали от страха."
+        },
+        "ja": {
+          "L": "そして第三の日になり、朝になると、雷鳴と稲妻があり、山の上には重い雲があり、角笛の音が非常に強く[響いた]。そして宿営にいたすべての民は震えた。",
+          "B": "三日目の朝になると、雷が鳴り響き、稲妻がひらめいた。重い雲が山の上にあり、角笛の音がひときわ高く鳴り響いた。宿営にいた者は皆、恐れて震えた。",
+          "R": "三日目の朝、かみなりが鳴り、いなずまが光りました。黒く厚い雲が山をおおい、角笛がとても大きな音で鳴りました。宿営にいた人々はみな、恐ろしくて震えました。"
+        },
+        "uk": {
+          "L": "І сталося третього дня, коли настав ранок, і були громи та блискавки, і важка хмара на горі, і звук баранячого рогу дуже сильний; і затремтів увесь народ, що був у таборі.",
+          "B": "Коли настав ранок третього дня, загриміли громи й заблищали блискавки. На горі лежала важка хмара, і дуже гучно засурмив баранячий ріг. Усі в таборі тремтіли від страху.",
+          "R": "Уранці третього дня загриміло й заблискало. Густа хмара вкрила гору, і дуже гучно засурмив баранячий ріг. Усі в таборі тремтіли від страху."
+        },
+        "id": {
+          "L": "Dan terjadilah pada hari ketiga, ketika hari pagi, ada guruh dan kilat dan awan yang tebal di atas gunung itu dan bunyi sangkakala yang sangat keras, dan gemetarlah seluruh bangsa yang ada di perkemahan.",
+          "B": "Ketika pagi tiba pada hari ketiga, guruh menggelegar dan kilat sambar-menyambar. Awan yang tebal menutupi gunung itu, dan sangkakala berbunyi sangat keras. Seluruh bangsa yang ada di perkemahan gemetar ketakutan.",
+          "R": "Pada pagi hari ketiga, ada guruh dan kilat. Awan tebal menutupi gunung itu, dan sangkakala berbunyi sangat keras. Semua orang di perkemahan gemetar ketakutan."
+        },
+        "zh": {
+          "L": "到了第三天，天亮的时候，山上有雷声、闪电和浓厚的云，还有羊角号的声音，极其响亮；在营里的全体百姓都发抖。",
+          "B": "第三天早晨，雷声隆隆，闪电交加，一片浓云笼罩在山上，羊角号的声音非常响亮。营里的每一个人都吓得发抖。",
+          "R": "第三天早上，有打雷和闪电。一片厚厚的云盖住了山，羊角号吹得非常响。营里的每一个人都怕得发抖。"
         }
       },
       "decisions": [
@@ -3621,6 +4776,26 @@
           "L": "И вывел Моисей народ навстречу Богу из стана, и они встали у подножия горы.",
           "B": "Моисей вывел народ из стана навстречу Богу, и они встали внизу, у горы.",
           "R": "Моисей вывел народ из лагеря, чтобы встретиться с Богом. Люди собрались у подножия горы."
+        },
+        "ja": {
+          "L": "そしてモーセは神に会わせるために民を宿営から連れ出した。そして彼らは山の下手に立ち並んだ。",
+          "B": "モーセは神に会わせるために、民を宿営から連れ出した。彼らは山のふもとに立った。",
+          "R": "モーセは、神に会わせるために、民を宿営から連れ出しました。人々は山のふもとに集まりました。"
+        },
+        "uk": {
+          "L": "І вивів Мойсей народ з табору назустріч Богові, і стали вони під горою.",
+          "B": "Мойсей вивів народ із табору назустріч Богові, і вони стали біля підніжжя гори.",
+          "R": "Мойсей вивів людей з табору, щоб зустрітися з Богом. Вони зібралися біля підніжжя гори."
+        },
+        "id": {
+          "L": "Lalu Musa membawa bangsa itu keluar dari perkemahan untuk menjumpai Allah, dan mereka berdiri di kaki gunung itu.",
+          "B": "Musa membawa bangsa itu keluar dari perkemahan untuk menjumpai Allah, dan mereka berdiri di kaki gunung itu.",
+          "R": "Musa memimpin bangsa itu keluar dari perkemahan untuk bertemu dengan Allah. Mereka berkumpul di kaki gunung itu."
+        },
+        "zh": {
+          "L": "摩西把百姓从营中领出来，去和{{god_term:神|上帝}}相会，他们就在山的下部站立。",
+          "B": "摩西带领百姓从营里出来，去与{{god_term:神|上帝}}相会，他们就在山下各站其位。",
+          "R": "摩西领着百姓走出营地，去见{{god_term:神|上帝}}。他们聚集在山脚下。"
         }
       },
       "decisions": [
@@ -3749,6 +4924,26 @@
           "L": "А гора Синай дымилась вся, потому что {{divine_name:ГОСПОДЬ|Яхве}} сошёл на неё в огне; и поднимался её дым, как дым печи, и вся гора сильно сотрясалась.",
           "B": "Вся гора Синай дымилась, потому что {{divine_name:ГОСПОДЬ|Яхве}} сошёл на неё в огне. Её дым поднимался, как дым из обжигальной печи, и вся гора сильно сотрясалась.",
           "R": "Гора Синай была вся в дыму, потому что {{divine_name:ГОСПОДЬ|Яхве}} сошёл на неё в огне. Дым поднимался, как из огромной печи, и вся гора сильно тряслась."
+        },
+        "ja": {
+          "L": "そしてシナイ山は全体が煙っていた。{{divine_name:主|ヤハウェ}}が火の中でその上に降りて来られたからである。そしてその煙はかまどの煙のように立ち上り、山全体が激しく震えた。",
+          "B": "シナイ山は全体が煙に包まれていた。{{divine_name:主|ヤハウェ}}が火の中で山の上に降りて来られたからである。煙はかまどから出る煙のように立ち上り、山全体が激しく揺れ動いた。",
+          "R": "シナイ山は煙でいっぱいでした。{{divine_name:主|ヤハウェ}}が火の中で山の上に降りて来られたからです。煙は大きなかまどの煙のように立ち上り、山全体が激しく揺れました。"
+        },
+        "uk": {
+          "L": "А гора Синай уся димілася, бо {{divine_name:ГОСПОДЬ|Ягве}} зійшов на неї в огні; і йшов дим її, як дим печі, і вся гора сильно тремтіла.",
+          "B": "Уся гора Синай димилася, бо {{divine_name:ГОСПОДЬ|Ягве}} зійшов на неї в огні. Дим від неї здіймався, як дим від печі для випалу, і вся гора дуже сильно трусилася.",
+          "R": "Гора Синай була вся в диму, бо {{divine_name:ГОСПОДЬ|Ягве}} зійшов на неї в огні. Дим здіймався, як дим від величезної печі, і вся гора сильно тряслася."
+        },
+        "id": {
+          "L": "Dan gunung Sinai seluruhnya berasap, karena {{divine_name:TUHAN|Yahweh}} telah turun ke atasnya dalam api; dan asapnya naik seperti asap tanur, dan seluruh gunung itu gemetar dengan hebat.",
+          "B": "Seluruh gunung Sinai berasap, sebab {{divine_name:TUHAN|Yahweh}} telah turun ke atasnya dalam api. Asapnya membubung seperti asap dari tanur, dan seluruh gunung itu berguncang dengan hebat.",
+          "R": "Gunung Sinai penuh dengan asap, sebab {{divine_name:TUHAN|Yahweh}} telah turun ke atasnya dalam api. Asap itu naik seperti asap dari tungku yang sangat besar, dan seluruh gunung itu berguncang dengan keras."
+        },
+        "zh": {
+          "L": "西奈山整个都在冒烟，因为{{divine_name:上主|雅威}}在火中下到了山上；它的烟往上升，好像窑的烟，整座山都剧烈地震动。",
+          "B": "整座西奈山烟雾弥漫，因为{{divine_name:上主|雅威}}在火中降临到山上。山上的烟向上升腾，好像从窑里冒出来的烟，整座山猛烈地震动。",
+          "R": "西奈山上满了烟，因为{{divine_name:上主|雅威}}在火中下到了山上。烟往上冒，像从一个大炉子里冒出来的一样，整座山都在剧烈摇动。"
         }
       },
       "decisions": [
@@ -3813,6 +5008,46 @@
           "choice": "a huge oven",
           "alternatives": [],
           "reason": "Readable says \"huge oven\" for \"kiln\", a word many readers do not know.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020190180141",
+            "o020190180142"
+          ],
+          "choice": "kivshan \"かまど\" (L, B), \"大きなかまど\" (R)",
+          "alternatives": [
+            "\"炉\""
+          ],
+          "reason": "As Genesis 19:28; Readable adds 'large' as the English Readable's 'huge oven'.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020190180142"
+          ],
+          "choice": "\"tanur\" for the kiln",
+          "alternatives": [],
+          "reason": "A furnace for firing (m2); \"tanur\" is the standard word.",
           "uncertain": false,
           "footnote": false
         }
@@ -3900,6 +5135,26 @@
           "L": "И звук рога шёл и становился очень сильным; Моисей говорил, и Бог отвечал ему голосом.",
           "B": "Звук рога становился всё сильнее и сильнее. Моисей говорил, а Бог отвечал ему голосом, подобным грому.",
           "R": "Бараний рог трубил всё громче. Моисей говорил, а Бог отвечал ему голосом, который звучал, как гром."
+        },
+        "ja": {
+          "L": "そして角笛の音はますます非常に強くなっていった。モーセが語ると、神は声をもって彼に答えられた。",
+          "B": "角笛の音はますます高く鳴り響いていった。モーセが語ると、神は雷のような声で彼に答えられた。",
+          "R": "角笛の音は、どんどん大きくなっていきました。モーセが話すと、神はかみなりのように響く声で答えられました。"
+        },
+        "uk": {
+          "L": "І звук баранячого рогу ставав дедалі сильнішим; Мойсей говорив, а Бог відповідав йому голосом.",
+          "B": "Звук баранячого рогу ставав дедалі гучнішим. Мойсей говорив, а Бог відповідав йому голосом, подібним до грому.",
+          "R": "Баранячий ріг сурмив дедалі гучніше. Мойсей говорив, а Бог відповідав йому голосом, що звучав, як грім."
+        },
+        "id": {
+          "L": "Dan bunyi sangkakala itu makin lama makin keras; Musa berbicara, dan Allah menjawabnya dengan suara.",
+          "B": "Bunyi sangkakala itu makin lama makin keras. Musa berbicara, dan Allah menjawabnya dengan suara seperti guruh.",
+          "R": "Bunyi sangkakala itu makin keras. Musa berbicara, dan Allah menjawabnya dengan suara yang terdengar seperti guruh."
+        },
+        "zh": {
+          "L": "羊角号的声音越来越响，极其响亮；摩西说话，{{god_term:神|上帝}}就用声音回答他。",
+          "B": "羊角号的声音越来越响。摩西说话，{{god_term:神|上帝}}就用如雷的声音回答他。",
+          "R": "羊角号越吹越响。摩西说话，{{god_term:神|上帝}}就用像打雷一样的声音回答他。"
         }
       },
       "decisions": [
@@ -4094,6 +5349,26 @@
           "L": "И сошёл {{divine_name:ГОСПОДЬ|Яхве}} на гору Синай, на вершину горы, и призвал {{divine_name:ГОСПОДЬ|Яхве}} Моисея на вершину горы, и взошёл Моисей.",
           "B": "{{divine_name:ГОСПОДЬ|Яхве}} сошёл на гору Синай, на её вершину, и позвал Моисея на вершину. И Моисей поднялся.",
           "R": "{{divine_name:ГОСПОДЬ|Яхве}} сошёл на вершину горы Синай. Он позвал Моисея подняться на вершину, и Моисей поднялся."
+        },
+        "ja": {
+          "L": "そして{{divine_name:主|ヤハウェ}}はシナイ山の上、山の頂に降りて来られた。そして{{divine_name:主|ヤハウェ}}はモーセを山の頂に呼び寄せられ、モーセは登って行った。",
+          "B": "{{divine_name:主|ヤハウェ}}はシナイ山の頂に降りて来られ、モーセを山の頂に呼び寄せられた。そこでモーセは登って行った。",
+          "R": "{{divine_name:主|ヤハウェ}}はシナイ山の頂上に降りて来られました。そして、頂上まで登って来るようにモーセを呼ばれたので、モーセは登って行きました。"
+        },
+        "uk": {
+          "L": "І зійшов {{divine_name:ГОСПОДЬ|Ягве}} на гору Синай, на вершину гори, і покликав {{divine_name:ГОСПОДЬ|Ягве}} Мойсея на вершину гори, і піднявся Мойсей.",
+          "B": "{{divine_name:ГОСПОДЬ|Ягве}} зійшов на гору Синай, на її вершину, і покликав Мойсея на вершину. І Мойсей піднявся.",
+          "R": "{{divine_name:ГОСПОДЬ|Ягве}} зійшов на вершину гори Синай. Він покликав Мойсея піднятися на вершину, і Мойсей піднявся."
+        },
+        "id": {
+          "L": "Lalu {{divine_name:TUHAN|Yahweh}} turun ke atas gunung Sinai, ke puncak gunung itu, dan {{divine_name:TUHAN|Yahweh}} memanggil Musa ke puncak gunung itu, lalu naiklah Musa.",
+          "B": "{{divine_name:TUHAN|Yahweh}} turun ke atas gunung Sinai, ke puncaknya, dan memanggil Musa naik ke puncak itu. Musa pun naik.",
+          "R": "{{divine_name:TUHAN|Yahweh}} turun ke puncak gunung Sinai. {{deity_pronoun:dia|Dia}} memanggil Musa untuk naik ke puncak, dan Musa pun naik."
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}下到西奈山上，到了山顶；{{divine_name:上主|雅威}}呼唤摩西到山顶去，摩西就上去了。",
+          "B": "{{divine_name:上主|雅威}}降到西奈山上，到了山的顶峰，又召摩西上到顶峰，于是摩西就上去了。",
+          "R": "{{divine_name:上主|雅威}}下到西奈山顶。{{deity_pronoun:他|祂}}叫摩西上山顶来，摩西就上去了。"
         }
       },
       "decisions": [
@@ -4232,6 +5507,26 @@
           "L": "И сказал {{divine_name:ГОСПОДЬ|Яхве}} Моисею: «Сойди, предупреди народ, чтобы они не прорвались к {{divine_name:ГОСПОДУ|Яхве}}, чтобы посмотреть, и не пали многие из них.",
           "B": "{{divine_name:ГОСПОДЬ|Яхве}} сказал Моисею: «Сойди и строго предупреди народ, чтобы они не прорвались за черту к {{divine_name:ГОСПОДУ|Яхве}}, чтобы посмотреть, и чтобы многие из них не погибли.",
           "R": "{{divine_name:ГОСПОДЬ|Яхве}} сказал Моисею: «Спустись и предупреди народ. Они не должны заходить за черту, чтобы поглазеть на {{divine_name:ГОСПОДА|Яхве}}. Если они это сделают, многие из них погибнут."
+        },
+        "ja": {
+          "L": "そして{{divine_name:主|ヤハウェ}}はモーセに言われた。「下りて行って、民に警告しなさい。彼らが見ようとして{{divine_name:主|ヤハウェ}}のもとに押し破って来て、彼らのうちの多くの者が倒れることのないように。",
+          "B": "{{divine_name:主|ヤハウェ}}はモーセに言われた。「下りて行って、民に厳しく警告しなさい。彼らが見ようとして境を越え、{{divine_name:主|ヤハウェ}}のもとに押し寄せて、多くの者が倒れて死ぬことのないようにするためである。",
+          "R": "{{divine_name:主|ヤハウェ}}はモーセに言われました。「下りて行って、民に注意しなさい。{{divine_name:主|ヤハウェ}}を見ようとして、線を越えて来てはならない。もし越えて来たら、多くの者が死ぬことになる。"
+        },
+        "uk": {
+          "L": "І сказав {{divine_name:ГОСПОДЬ|Ягве}} Мойсеєві: «Зійди, застережи народ, щоб не прорвалися вони до {{divine_name:ГОСПОДА|Ягве}}, щоб дивитися, і не загинуло з них багато.",
+          "B": "{{divine_name:ГОСПОДЬ|Ягве}} сказав Мойсеєві: «Зійди й суворо застережи народ, щоб вони не проривалися через межу до {{divine_name:ГОСПОДА|Ягве}}, щоб подивитися, бо тоді багато з них загине.",
+          "R": "{{divine_name:ГОСПОДЬ|Ягве}} сказав Мойсеєві: «Зійди й застережи людей. Вони не повинні переходити лінію, щоб прийти й дивитися на {{divine_name:ГОСПОДА|Ягве}}. Якщо вони це зроблять, багато з них помре."
+        },
+        "id": {
+          "L": "Lalu {{divine_name:TUHAN|Yahweh}} berfirman kepada Musa, \"Turunlah, peringatkanlah bangsa itu, supaya mereka jangan menerobos kepada {{divine_name:TUHAN|Yahweh}} untuk melihat, sehingga banyak dari mereka akan tewas.",
+          "B": "{{divine_name:TUHAN|Yahweh}} berfirman kepada Musa, \"Turunlah dan peringatkanlah bangsa itu dengan keras, supaya mereka jangan menerobos batas menuju {{divine_name:TUHAN|Yahweh}} untuk melihat, sehingga banyak dari mereka tewas.",
+          "R": "{{divine_name:TUHAN|Yahweh}} berfirman kepada Musa, \"Turunlah dan peringatkanlah bangsa itu. Mereka tidak boleh melewati garis batas untuk datang dan menatap {{divine_name:TUHAN|Yahweh}}. Kalau mereka melakukannya, banyak dari mereka akan mati."
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}对摩西说：“你下去，警告百姓，免得他们闯过来到{{divine_name:上主|雅威}}面前观看，他们中间就有许多人倒下。",
+          "B": "{{divine_name:上主|雅威}}对摩西说：“你下去，严严地警告百姓，免得他们越过界限，闯到{{divine_name:上主|雅威}}这里来观看，以致他们中间有许多人倒毙。",
+          "R": "{{divine_name:上主|雅威}}对摩西说：“你下去警告百姓。他们不可越过那条线，过来盯着{{divine_name:上主|雅威}}看。要是他们这样做，他们中间就会有许多人死去。"
         }
       },
       "decisions": [
@@ -4359,6 +5654,26 @@
           "L": "И также священники, приближающиеся к {{divine_name:ГОСПОДУ|Яхве}}, пусть освятятся, чтобы {{divine_name:ГОСПОДЬ|Яхве}} не поразил их.»",
           "B": "И священники, которые приближаются к {{divine_name:ГОСПОДУ|Яхве}}, тоже должны освятиться, чтобы {{divine_name:ГОСПОДЬ|Яхве}} не обрушился на них.»",
           "R": "Даже священники, которые подходят близко к {{divine_name:ГОСПОДУ|Яхве}}, должны сделать себя святыми. Иначе {{divine_name:ГОСПОДЬ|Яхве}} поразит их.»"
+        },
+        "ja": {
+          "L": "また、{{divine_name:主|ヤハウェ}}に近づく祭司たちも自分自身を聖別しなければならない。{{divine_name:主|ヤハウェ}}が彼らに向かって打ちかかることのないためである。」",
+          "B": "{{divine_name:主|ヤハウェ}}に近づく祭司たちもまた、自分の身を聖別しなければならない。そうしないと、{{divine_name:主|ヤハウェ}}が彼らに向かって突然襲いかかるだろう。」",
+          "R": "{{divine_name:主|ヤハウェ}}に近づく祭司たちでさえ、自分の身を清めなければならない。そうしないと、{{divine_name:主|ヤハウェ}}が彼らを打ち倒すことになる。」"
+        },
+        "uk": {
+          "L": "І також священники, що наближаються до {{divine_name:ГОСПОДА|Ягве}}, нехай освятяться, щоб не вразив їх {{divine_name:ГОСПОДЬ|Ягве}}».",
+          "B": "І священники, які наближаються до {{divine_name:ГОСПОДА|Ягве}}, теж мають освятитися, щоб {{divine_name:ГОСПОДЬ|Ягве}} не вибухнув на них гнівом».",
+          "R": "Навіть священники, які підходять близько до {{divine_name:ГОСПОДА|Ягве}}, мають зробити себе святими. Інакше {{divine_name:ГОСПОДЬ|Ягве}} уразить їх на смерть»."
+        },
+        "id": {
+          "L": "Dan juga para imam yang mendekat kepada {{divine_name:TUHAN|Yahweh}} harus menguduskan diri, supaya {{divine_name:TUHAN|Yahweh}} jangan menyerang mereka.\"",
+          "B": "Para imam yang datang mendekat kepada {{divine_name:TUHAN|Yahweh}} juga harus menguduskan diri, supaya {{divine_name:TUHAN|Yahweh}} tidak menyerang mereka.\"",
+          "R": "Bahkan para imam yang datang dekat kepada {{divine_name:TUHAN|Yahweh}} harus menguduskan diri. Kalau tidak, {{divine_name:TUHAN|Yahweh}} akan membunuh mereka.\""
+        },
+        "zh": {
+          "L": "那些亲近{{divine_name:上主|雅威}}的祭司也要使自己成圣，免得{{divine_name:上主|雅威}}突然击打他们。”",
+          "B": "那些来到{{divine_name:上主|雅威}}面前的祭司，也必须使自己分别为圣，免得{{divine_name:上主|雅威}}猛然击杀他们。”",
+          "R": "连那些走近{{divine_name:上主|雅威}}的祭司也必须让自己成为圣洁。不然的话，{{divine_name:上主|雅威}}会击杀他们。”"
         }
       },
       "decisions": [
@@ -4487,6 +5802,26 @@
           "reason": "The Pentateuch note's term, as in the New Testament.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020190220081",
+            "o020190220101"
+          ],
+          "choice": "вразив",
+          "alternatives": [
+            "вирвався проти них"
+          ],
+          "reason": "The verb is a sudden breaking out; L uses a strike word Ukrainian can carry, B keeps the burst.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4582,6 +5917,26 @@
           "L": "И сказал Моисей {{divine_name:ГОСПОДУ|Яхве}}: «Не может народ взойти на гору Синай, потому что {{deity_pronoun:ты|Ты}} сам предупредил нас, говоря: “Проведи границу вокруг горы и освяти её.”»",
           "B": "Моисей ответил {{divine_name:ГОСПОДУ|Яхве}}: «Народ никак не сможет подняться на гору Синай. Ты сам предупредил нас: “Обозначь границу вокруг горы и считай её святой.”»",
           "R": "Моисей сказал {{divine_name:ГОСПОДУ|Яхве}}: «Люди не поднимутся на гору. Ты уже предупредил нас. Ты велел нам провести черту вокруг горы и считать её святой.»"
+        },
+        "ja": {
+          "L": "そしてモーセは{{divine_name:主|ヤハウェ}}に言った。「民はシナイ山に登ることができません。あなたご自身が、『山に境を設けて、それを聖別しなさい』と言って、わたしたちに警告されたからです。」",
+          "B": "モーセは{{divine_name:主|ヤハウェ}}に答えた。「民がシナイ山に登ることなど、できるはずがありません。あなたがわたしたちに、『山の周りに境界を定め、山を聖別しなさい』と警告されたのですから。」",
+          "R": "モーセは{{divine_name:主|ヤハウェ}}に言いました。「民は山に登って来ることはできません。あなたがもう、わたしたちに注意してくださいました。山の周りに線を引いて、山を聖なる所として守るようにと言われたのです。」"
+        },
+        "uk": {
+          "L": "І сказав Мойсей {{divine_name:ГОСПОДУ|Ягве}}: «Не може народ піднятися на гору Синай, бо {{deity_pronoun:ти|Ти}} {{deity_pronoun:сам|Сам}} застеріг нас, кажучи: “Встанови межі для гори і освяти її”».",
+          "B": "Мойсей відповів {{divine_name:ГОСПОДУ|Ягве}}: «Народ ніяк не може піднятися на гору Синай. Ти ж застеріг нас: “Познач межу навколо гори й вважай її святою”».",
+          "R": "Мойсей сказав {{divine_name:ГОСПОДУ|Ягве}}: «Люди не можуть піднятися на гору. Ти вже застеріг нас. Ти звелів нам позначити лінію навколо гори й берегти її святість»."
+        },
+        "id": {
+          "L": "Lalu Musa berkata kepada {{divine_name:TUHAN|Yahweh}}, \"Bangsa itu tidak dapat naik ke gunung Sinai, sebab {{deity_pronoun:engkau|Engkau}} sendiri telah memperingatkan kami, demikian, 'Pasanglah batas sekeliling gunung itu dan kuduskanlah dia.'\"",
+          "B": "Musa menjawab {{divine_name:TUHAN|Yahweh}}, \"Bangsa itu tidak mungkin mendaki gunung Sinai. {{deity_pronoun:engkau|Engkau}} sendiri telah memperingatkan kami: 'Pasanglah batas di sekeliling gunung itu dan kuduskanlah gunung itu.'\"",
+          "R": "Musa berkata kepada {{divine_name:TUHAN|Yahweh}}, \"Bangsa itu tidak dapat naik ke gunung itu. {{deity_pronoun:engkau|Engkau}} sudah memperingatkan kami. {{deity_pronoun:engkau|Engkau}} menyuruh kami membuat garis batas di sekeliling gunung itu dan menjaganya tetap kudus.\""
+        },
+        "zh": {
+          "L": "摩西对{{divine_name:上主|雅威}}说：“百姓不能上西奈山，因为{{deity_pronoun:你|祢}}自己警告过我们，说：‘要给这山定界限，使它成圣。’”",
+          "B": "摩西回答{{divine_name:上主|雅威}}：“百姓绝不可能上西奈山去。{{deity_pronoun:你|祢}}已经警告过我们：‘要在山的四周划出界线，把它当作圣地。’”",
+          "R": "摩西对{{divine_name:上主|雅威}}说：“百姓不会上山的。{{deity_pronoun:你|祢}}已经警告过我们了。{{deity_pronoun:你|祢}}告诉我们，要在山的四周画一条线，要保守这山的圣洁。”"
         }
       },
       "decisions": [
@@ -4789,7 +6144,7 @@
           "R": "{{divine_name:እግዚአብሔር|ያህዌ}} እንዲህ አለው፦ «ውረድ፤ ከዚያም ከአሮን ጋር ተመልሰህ ውጣ። ካህናቱ ወይም ሕዝቡ ግን ወደ {{divine_name:እግዚአብሔር|ያህዌ}} ለመውጣት መስመሩን እንዲያልፉ አትፍቀድላቸው። ይህን ቢያደርጉ ይመታቸዋል።»"
         },
         "hi": {
-          "L": "और {{divine_name:प्रभु|याहवे}} ने उससे कहा, \"जाओ, नीचे उतरो, और तुम ऊपर आना, तुम और तुम्हारे साथ हारून; परन्तु याजक और लोग {{divine_name:प्रभु|याहवे}} के पास ऊपर आने के लिए सीमा न तोड़ें, कहीं ऐसा न हो कि वे उन पर टूट पड़ें।\"",
+          "L": "और {{divine_name:प्रभु|याहवे}} ने उससे कहा, \"जाओ, नीचे उतरो, और तुम ऊपर आना, तुम और तुम्हारे साथ हारून; परंतु याजक और लोग {{divine_name:प्रभु|याहवे}} के पास ऊपर आने के लिए सीमा न तोड़ें, कहीं ऐसा न हो कि वे उन पर टूट पड़ें।\"",
           "B": "{{divine_name:प्रभु|याहवे}} ने उसे उत्तर दिया, \"नीचे जाओ, और फिर हारून को साथ लेकर लौट आना। पर याजक और लोग {{divine_name:प्रभु|याहवे}} के पास ऊपर आने के लिए सीमा लाँघकर न आएँ, नहीं तो वे उन पर टूट पड़ेंगे।\"",
           "R": "{{divine_name:प्रभु|याहवे}} ने उससे कहा, \"नीचे जाओ, और फिर हारून के साथ ऊपर लौट आओ। पर याजकों या लोगों को रेखा पार करके {{divine_name:प्रभु|याहवे}} के पास ऊपर आने मत देना। अगर वे आएँगे, तो वे उन्हें मार डालेंगे।\""
         },
@@ -4797,6 +6152,26 @@
           "L": "И сказал ему {{divine_name:ГОСПОДЬ|Яхве}}: «Иди, сойди, и потом взойдёшь, ты и Аарон с тобой; а священники и народ пусть не прорываются, чтобы взойти к {{divine_name:ГОСПОДУ|Яхве}}, чтобы {{deity_pronoun:он|Он}} не поразил их.»",
           "B": "{{divine_name:ГОСПОДЬ|Яхве}} ответил ему: «Иди спустись, а потом поднимись снова, ты и Аарон с тобой. А священники и народ не должны прорываться, чтобы подняться к {{divine_name:ГОСПОДУ|Яхве}}, иначе {{deity_pronoun:он|Он}} обрушится на них.»",
           "R": "{{divine_name:ГОСПОДЬ|Яхве}} сказал ему: «Спустись, а потом поднимись снова вместе с Аароном. Но не позволяй священникам и народу заходить за черту, чтобы подняться к {{divine_name:ГОСПОДУ|Яхве}}. Если они это сделают, {{deity_pronoun:он|Он}} поразит их.»"
+        },
+        "ja": {
+          "L": "そして{{divine_name:主|ヤハウェ}}は彼に言われた。「行きなさい、下りなさい。そして、あなたは登って来よ。あなたも、あなたと共にアロンも。しかし祭司たちと民は、{{divine_name:主|ヤハウェ}}のもとに登ろうとして押し破ってはならない。彼らに向かって打ちかかることのないためである。」",
+          "B": "{{divine_name:主|ヤハウェ}}は彼に答えられた。「下りて行きなさい。それから、あなたはアロンと共に登って来よ。しかし祭司たちと民は、{{divine_name:主|ヤハウェ}}のもとに登ろうとして境を越えて押し寄せてはならない。さもないと、彼らは突然打たれることになる。」",
+          "R": "{{divine_name:主|ヤハウェ}}はモーセに言われました。「下りて行きなさい。それから、アロンと一緒に登って来なさい。しかし、祭司たちや民が線を越えて、{{divine_name:主|ヤハウェ}}のところに登って来ることがないようにしなさい。もし来たら、彼らは打ち倒される。」"
+        },
+        "uk": {
+          "L": "І сказав йому {{divine_name:ГОСПОДЬ|Ягве}}: «Іди, зійди, і піднімешся ти, і Аарон з тобою; а священники і народ нехай не проривається, щоб піднятися до {{divine_name:ГОСПОДА|Ягве}}, щоб {{deity_pronoun:він|Він}} не вразив їх».",
+          "B": "{{divine_name:ГОСПОДЬ|Ягве}} відповів йому: «Іди вниз, а потім повернися, ти й Аарон з тобою. А священники й народ хай не прориваються, щоб піднятися до {{divine_name:ГОСПОДА|Ягве}}, бо {{deity_pronoun:він|Він}} вибухне на них гнівом».",
+          "R": "{{divine_name:ГОСПОДЬ|Ягве}} сказав йому: «Зійди вниз, а потім піднімися знову разом з Аароном. Але не дозволяй ні священникам, ні народові переходити лінію, щоб піднятися до {{divine_name:ГОСПОДА|Ягве}}. Якщо вони це зроблять, {{deity_pronoun:він|Він}} уразить їх на смерть»."
+        },
+        "id": {
+          "L": "Dan {{divine_name:TUHAN|Yahweh}} berfirman kepadanya, \"Pergilah, turunlah, lalu naiklah engkau bersama Harun; tetapi para imam dan bangsa itu janganlah menerobos untuk naik kepada {{divine_name:TUHAN|Yahweh}}, supaya {{deity_pronoun:dia|Dia}} jangan menyerang mereka.\"",
+          "B": "{{divine_name:TUHAN|Yahweh}} menjawab dia, \"Turunlah, lalu kembalilah ke sini bersama Harun. Tetapi para imam dan bangsa itu tidak boleh menerobos untuk naik kepada {{divine_name:TUHAN|Yahweh}}, supaya {{deity_pronoun:dia|Dia}} tidak menyerang mereka.\"",
+          "R": "{{divine_name:TUHAN|Yahweh}} berfirman kepadanya, \"Turunlah, lalu naiklah lagi bersama Harun. Tetapi jangan biarkan para imam atau bangsa itu melewati garis batas untuk naik kepada {{divine_name:TUHAN|Yahweh}}. Kalau mereka melakukannya, {{deity_pronoun:dia|Dia}} akan membunuh mereka.\""
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}对他说：“去吧，下去，然后你要上来，你和亚伦与你一起；但祭司和百姓，不可让他们闯过来上到{{divine_name:上主|雅威}}这里，免得{{deity_pronoun:他|祂}}突然击打他们。”",
+          "B": "{{divine_name:上主|雅威}}回答他：“你下去，然后和亚伦一起回来。至于祭司和百姓，他们不可闯过界限上到{{divine_name:上主|雅威}}这里来，免得{{deity_pronoun:他|祂}}猛然击杀他们。”",
+          "R": "{{divine_name:上主|雅威}}对他说：“你下去，然后带着亚伦一起上来。但是不要让祭司或百姓越过那条线，上到{{divine_name:上主|雅威}}这里来。要是他们这样做，{{deity_pronoun:他|祂}}就会击杀他们。”"
         }
       },
       "decisions": [
@@ -4829,6 +6204,30 @@
           "choice": "the priests and the people: neither group may pass the limit",
           "alternatives": [],
           "reason": "Even the priests, who have been told to consecrate themselves (verse 22), may not go up. Only Moses, and later Aaron, are called.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o020190240181",
+            "o020190240191",
+            "o020190240192"
+          ],
+          "choice": "No subject for 'lest he break out': left unstated (L), passive \"打たれる\" / \"打ち倒される\" (B, R)",
+          "alternatives": [
+            "\"彼が\"",
+            "\"わたしが\""
+          ],
+          "reason": "Japanese never uses \"彼\" for God, and a second divine-name span would add to the English count; the sense (God strikes them) is clear from verse 22.",
           "uncertain": false,
           "footnote": false
         }
@@ -4908,6 +6307,26 @@
           "L": "И сошёл Моисей к народу и сказал им.",
           "B": "Моисей спустился к народу и говорил с ними.",
           "R": "Моисей спустился к народу и поговорил с ними."
+        },
+        "ja": {
+          "L": "そしてモーセは民のところに下って行き、彼らに言った。",
+          "B": "モーセは民のところに下りて行き、彼らに語った。",
+          "R": "モーセは民のところに下りて行って、彼らに話しました。"
+        },
+        "uk": {
+          "L": "І зійшов Мойсей до народу, і сказав їм.",
+          "B": "Мойсей зійшов до народу й заговорив до них.",
+          "R": "Мойсей зійшов до людей і переказав їм це."
+        },
+        "id": {
+          "L": "Lalu Musa turun kepada bangsa itu dan berkata kepada mereka.",
+          "B": "Musa turun kepada bangsa itu dan berbicara kepada mereka.",
+          "R": "Musa turun kepada bangsa itu dan berbicara kepada mereka."
+        },
+        "zh": {
+          "L": "摩西就下到百姓那里，对他们说了。",
+          "B": "摩西下到百姓那里，向他们讲话。",
+          "R": "摩西下山到百姓那里，对他们讲了话。"
         }
       },
       "decisions": [

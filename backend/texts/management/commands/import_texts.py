@@ -54,6 +54,16 @@ ORIGINALS = {
                     "Scriptures Hebrew Bible (CC BY 4.0)."),
 }
 
+# Raise an edition's number when its loader changes what it loads from the
+# same pinned sources, so import_texts --missing loads it again on the next
+# deploy (a new pinned commit does that by itself). Editions not listed are
+# at 1. sblgnt 2: Romans 16:25-27 from Nestle 1904 (macula_greek.supplement_verses).
+LOADER_VERSION = {"sblgnt": 2}
+
+
+def loader_version(code):
+    return LOADER_VERSION.get(code, 1)
+
 
 class Command(BaseCommand):
     help = "Import original-language editions and public-domain reference Bibles."
@@ -80,11 +90,13 @@ class Command(BaseCommand):
     @classmethod
     def missing_codes(cls):
         """Editions that have no verses in the database, or whose verses came
-        from a different commit than the one pinned now."""
-        loaded = dict(Edition.objects.filter(verses__isnull=False).distinct()
-                      .values_list("code", "source_commit"))
+        from a different commit than the one pinned now, or from an older
+        loader (LOADER_VERSION)."""
+        loaded = {code: (commit, version) for code, commit, version in
+                  Edition.objects.filter(verses__isnull=False).distinct()
+                  .values_list("code", "source_commit", "loader_version")}
         return [code for code in cls.all_codes()
-                if loaded.get(code) != LOCK[cls.sources(code)[0]]["commit"]]
+                if loaded.get(code) != (LOCK[cls.sources(code)[0]]["commit"], loader_version(code))]
 
     def handle(self, *args, editions, missing=False, **options):
         if missing:
@@ -139,6 +151,9 @@ class Command(BaseCommand):
         for code, _ in refs.NT_BOOKS:
             for ref, v in sblgnt.load_book(code).items():
                 verses.append((ref.book, ref.chapter, ref.verse, v.text))
+        # The verses the SBLGNT does not print (Romans 16:25-27), from Nestle 1904.
+        for ref, text in macula_greek.supplement_verses().items():
+            verses.append((ref.book, ref.chapter, ref.verse, text))
         tokens = (t for toks in macula_greek._all_tokens().values() for t in toks)
         words = (dict(id=t.id, book=t.ref.book, chapter=t.ref.chapter, verse=t.ref.verse,
                       position=t.position, seq=seq, text=t.text, after=t.after,
@@ -176,6 +191,7 @@ class Command(BaseCommand):
                           source="open-bibles", source_path=filename,
                           attribution=f"{name}, from github.com/seven1m/open-bibles ({licence}).")
         fields["source_commit"] = LOCK[fields["source"]]["commit"]
+        fields["loader_version"] = loader_version(code)
         return fields
 
     @transaction.atomic

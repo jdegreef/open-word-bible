@@ -10,7 +10,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 import build_site  # noqa: E402
 from owb import refs, validate  # noqa: E402
-from tests.site_build import built_site, page_data  # noqa: E402
+from tests.site_build import built_site, page_data, sitemap_text  # noqa: E402
 
 GRACE = ("grc", "5485")
 YHWH = ("hbo", "3068")
@@ -121,9 +121,11 @@ class TermPagesTest(unittest.TestCase):
             page = self.read(f"{prefix}terms")
             for key, term in validate.KEY_TERMS.items():
                 self.assertIn(f'href="{build_site.url(lang, build_site.term_path(term))}"', page)
-                self.assertIn(f'lang="{key[0]}">{term["lemma"]}<', page)
+                # A Hebrew word in a left-to-right page is marked right to
+                # left, and a Greek one in a right-to-left page left to right.
+                self.assertRegex(page, f'lang="{key[0]}"( dir="(rtl|ltr)")?>' + re.escape(term["lemma"]) + "<")
             self.assertLess(page.index('id="grc"'), page.index('id="hbo"'))
-        sitemap = (self.out / "sitemap.xml").read_text(encoding="utf-8")
+        sitemap = sitemap_text(self.out)
         self.assertIn("/terms/grace/", sitemap)
         self.assertIn("/es/terms/grace/", sitemap)
 
@@ -159,7 +161,7 @@ class TermPagesTest(unittest.TestCase):
         self.assertNotIn('class="term-book"', main)
         self.assertIn('href="/terms/the-divine-name-yhwh/gen/">Genesis <span>', main)
         books = build_site.term_books(term)
-        sitemap = (self.out / "sitemap.xml").read_text(encoding="utf-8")
+        sitemap = sitemap_text(self.out)
         for book, uses in books.items():
             rel = f"terms/the-divine-name-yhwh/{book.lower()}"
             page = self.read(rel)
@@ -194,7 +196,10 @@ class TermPagesTest(unittest.TestCase):
         data = page_data(page)
         cards = {c["title"]: c for c in data["cards"]["list"]}
         self.assertEqual(cards["grace"]["href"], "/terms/grace/")
-        self.assertNotIn("href", next(c for c in cards.values() if c["type"] == "name"))
+        # A name's card links its own page, not a key term's.
+        for c in cards.values():
+            if c["type"] == "name" and "href" in c:
+                self.assertRegex(c["href"], r"^/(names|glossary)/[a-z0-9-]+/$")
         es = (self.out / "es" / "gen" / "2" / "index.html").read_text(encoding="utf-8")
         self.assertIn('"href":"/es/terms/the-divine-name-yhwh/"', es.replace(": ", ":"))
         reader = (self.out / "reader.js").read_text(encoding="utf-8")

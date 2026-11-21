@@ -76,6 +76,26 @@
           "L": "Содействуя же [{{deity_pronoun:ему|Ему}}], мы и призываем вас не напрасно принять благодать Божью.",
           "B": "Итак, как те, кто трудится вместе с Богом, мы и призываем вас: не допустите, чтобы полученная вами Божья благодать пропала даром.",
           "R": "Мы трудимся вместе с Богом. Поэтому мы и умоляем вас: вы получили Божью благодать, так не дайте ей пропасть зря."
+        },
+        "uk": {
+          "L": "А працюючи разом [із {{deity_pronoun:ним|Ним}}], ми й благаємо вас не приймати благодаті Божої марно.",
+          "B": "Тож як ті, хто працює разом із Богом, ми й закликаємо вас: не дайте, щоб Божа благодать, яку ви прийняли, пропала для вас марно.",
+          "R": "Ми працюємо разом із Богом. Тож ми й благаємо вас: ви отримали Божу благодать, тож не дайте їй пропасти даремно."
+        },
+        "ja": {
+          "L": "そして、[神と]共に働く者として、わたしたちはまた勧めます。あなたがたが神の恵みを無駄に受けることのないように。",
+          "B": "わたしたちは神と共に働く者として、あなたがたに勧めます。あなたがたが受けた神の恵みを、無駄にしてはいけません。",
+          "R": "わたしたちは、神といっしょに働いています。だから、みなさんにお願いします。みなさんは神の恵みを受けました。それを無駄にしないでください。"
+        },
+        "id": {
+          "L": "Dan sebagai orang-orang yang bekerja sama [dengan-{{deity_pronoun:nya|Nya}}], kami juga menasihati kalian supaya kalian tidak menerima kasih karunia Allah dengan sia-sia.",
+          "B": "Jadi, sebagai orang-orang yang bekerja sama dengan Allah, kami juga memohon kepada kalian: jangan biarkan kasih karunia Allah yang telah kalian terima menjadi sia-sia.",
+          "R": "Kami bekerja sama dengan Allah. Karena itu kami juga memohon kepada kalian: kalian sudah menerima kasih karunia Allah, jadi jangan biarkan kasih karunia itu terbuang percuma."
+        },
+        "zh": {
+          "L": "我们既[与{{deity_pronoun:他|祂}}]一同工作，也劝你们不要白白地领受{{god_term:神|上帝}}的恩典。",
+          "B": "所以，我们作为与{{god_term:神|上帝}}一同工作的人，也恳求你们：不要让你们所领受的{{god_term:神|上帝}}的恩典在你们身上白白浪费了。",
+          "R": "我们正在与{{god_term:神|上帝}}一起工作。所以我们也求你们：你们已经得到了{{god_term:神|上帝}}的恩典，不要让它白白浪费掉。"
         }
       },
       "decisions": [
@@ -311,6 +331,49 @@
           "reason": "As through the letter: Paul writes to believers as one of them (style guide, section 4).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n47006001011"
+          ],
+          "choice": "{{god_term:神|上帝}}",
+          "alternatives": [
+            "上帝 as the default",
+            "a fixed 神"
+          ],
+          "reason": "Every word naming the one God is a god_term span: \"神\" by default, \"上帝\" for readers who choose it. The two name the same God; only the wording changes.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n47006001009"
+          ],
+          "choice": "恩典",
+          "alternatives": [
+            "恩惠"
+          ],
+          "reason": "The glossary's key term for grace (charis), as in Romans; the CUV's \"恩惠\" is not used.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -398,6 +461,26 @@
           "L": "Ведь {{deity_pronoun:он|Он}} говорит: «Во время благоприятное {{deity_pronoun:я|Я}} услышал тебя и в день спасения помог тебе.» Вот, теперь время вполне благоприятное, вот, теперь день спасения.",
           "B": "Ведь {{deity_pronoun:он|Он}} говорит: «В час благоволения {{deity_pronoun:я|Я}} ответил тебе, в день спасения {{deity_pronoun:я|Я}} пришёл тебе на помощь.» Смотрите: время благоволения уже настало. Смотрите: день спасения уже настал.",
           "R": "Бог говорит в Писаниях: «В нужное время {{deity_pronoun:я|Я}} услышал тебя. Когда пришёл день, чтобы {{deity_pronoun:я|Я}} спас тебя, {{deity_pronoun:я|Я}} помог тебе.» Слушайте! Сейчас нужное время. Сейчас тот день, когда Бог спасёт вас."
+        },
+        "uk": {
+          "L": "Бо {{deity_pronoun:він|Він}} каже: «У сприятливий час {{deity_pronoun:я|Я}} вислухав тебе, і в день спасіння {{deity_pronoun:я|Я}} допоміг тобі.» Ось нині час цілком сприятливий, ось нині день спасіння.",
+          "B": "Бо {{deity_pronoun:він|Він}} каже: «У час прихильності {{deity_pronoun:я|Я}} відповів тобі, у день спасіння {{deity_pronoun:я|Я}} прийшов тобі на допомогу.» Дивіться: час прихильності настав тепер. Дивіться: день спасіння настав тепер.",
+          "R": "Бог каже в Писанні: «У слушний час {{deity_pronoun:я|Я}} вислухав тебе. Коли настав день, щоб {{deity_pronoun:я|Я}} спас тебе, {{deity_pronoun:я|Я}} допоміг тобі.» Послухайте! Тепер — слушний час. Тепер — день, коли Бог спасе вас."
+        },
+        "ja": {
+          "L": "神は[こう]言われるからです。「受け入れられる時に、わたしはあなたの願いを聞き、救いの日に、あなたを助けた。」見なさい、今こそ大いに受け入れられる時です。見なさい、今こそ救いの日です。",
+          "B": "神はこう言われます。「恵みの時に、わたしはあなたに答え、救いの日に、あなたを助けた。」見なさい、今こそ恵みの時です。見なさい、今こそ救いの日です。",
+          "R": "神は聖書の中で、こう言っておられます。「ちょうどよい時に、わたしはあなたの願いを聞いた。あなたを救う日が来たとき、わたしはあなたを助けた。」よく聞いてください。今が、そのちょうどよい時です。今が、神が救ってくださる日なのです。"
+        },
+        "id": {
+          "L": "Sebab {{deity_pronoun:dia|Dia}} berfirman, \"Pada waktu yang berkenan {{deity_pronoun:aku|Aku}} telah mendengarkan engkau, dan pada hari keselamatan {{deity_pronoun:aku|Aku}} telah menolong engkau.\" Lihatlah, sekarang [adalah] waktu yang sangat berkenan itu; lihatlah, sekarang [adalah] hari keselamatan itu.",
+          "B": "Sebab {{deity_pronoun:dia|Dia}} berfirman, \"Pada waktu {{deity_pronoun:aku|Aku}} berkenan, {{deity_pronoun:aku|Aku}} menjawab engkau; pada hari keselamatan {{deity_pronoun:aku|Aku}} datang menolong engkau.\" Lihat, waktu perkenanan itu sudah tiba sekarang. Lihat, hari keselamatan itu sudah tiba sekarang.",
+          "R": "Allah berfirman dalam Kitab Suci, \"Pada waktu yang tepat {{deity_pronoun:aku|Aku}} mendengarkan kamu. Ketika tiba harinya {{deity_pronoun:aku|Aku}} menyelamatkan kamu, {{deity_pronoun:aku|Aku}} menolong kamu.\" Dengarlah! Sekaranglah waktu yang tepat itu. Sekaranglah hari Allah menyelamatkan kalian."
+        },
+        "zh": {
+          "L": "因为{{deity_pronoun:他|祂}}说：“在悦纳的时刻，我垂听了你；在救恩的日子，我帮助了你。”看哪，现在[是]最蒙悦纳的时刻；看哪，现在[是]救恩的日子。",
+          "B": "因为{{deity_pronoun:他|祂}}说：“在施恩的时候，我回应了你；在救恩的日子，我前来帮助你。”你看，施恩的时候现在就到了；你看，救恩的日子现在就到了。",
+          "R": "{{god_term:神|上帝}}在圣经上说：“在合适的时候，我听了你的呼求。到了我要拯救你的日子，我就帮助了你。”听着！现在就是合适的时候。现在就是{{god_term:神|上帝}}要拯救你们的日子。"
         }
       },
       "decisions": [
@@ -793,6 +876,158 @@
           "reason": "Literal keeps \"вот\" for idou, as the style guide settles; Balanced and Readable use a plain word that calls for attention, as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n47006002004"
+          ],
+          "choice": "{{deity_pronoun:я|Я}} for God speaking mid-sentence",
+          "alternatives": [
+            "Я"
+          ],
+          "reason": "God is the speaker (m2). English \"I\" is always capitalised, so it has no span; Ukrainian writes God's \"я\" through the deity_pronoun setting, as the style guide asks and Romans does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n47006002001"
+          ],
+          "choice": "\"言われる\" for God's speaking; the quotation of Isaiah 49:8 in the plain style",
+          "alternatives": [
+            "\"言う\""
+          ],
+          "reason": "God's actions in a letter take the light respect form, while quoted Scripture stays plain, as elsewhere in Paul's letters.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n47006002004",
+            "n47006002016"
+          ],
+          "choice": "\"受け入れられる時\" (L); \"恵みの時\" (B); \"ちょうどよい時\" (R)",
+          "alternatives": [
+            "\"好ましい時\""
+          ],
+          "reason": "The time is the time when God welcomes and accepts (m3). Literal keeps the root of the Greek adjective and its stronger form in Paul's comment; Balanced says \"time of favor\"; Readable keeps it simple.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n47006002003",
+            "n47006002004",
+            "n47006002005",
+            "n47006002006",
+            "n47006002007",
+            "n47006002008",
+            "n47006002009",
+            "n47006002010",
+            "n47006002011",
+            "n47006002012",
+            "n47006002001"
+          ],
+          "choice": "\"{{deity_pronoun:aku|Aku}}\" for God speaking; \"engkau\" (L, B), \"kamu\" (R) for the one addressed",
+          "alternatives": [],
+          "reason": "God speaks (m2), and Indonesian \"aku\" takes the span where the English \"I\" needs none (style guide section 4). God speaks to his servant as \"engkau\" at Literal and Balanced and \"kamu\" at Readable.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n47006002003",
+            "n47006002004"
+          ],
+          "choice": "施恩的时候",
+          "alternatives": [
+            "悦纳的时候"
+          ],
+          "reason": "A time of favor: the time when God welcomes and accepts (m3). Balanced says what the favor is; Literal keeps the word of acceptance.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n47006002011"
+          ],
+          "choice": "我",
+          "alternatives": [],
+          "reason": "The English spans \"Me\"/\"My\" for God speaking; Chinese has no reverent first person, so \"我\" takes no deity_pronoun span (style guide section 4).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-3",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n47006002013",
+            "n47006002017"
+          ],
+          "choice": "看哪 (L); 你看 (B); 听着！ (R)",
+          "alternatives": [
+            "left out"
+          ],
+          "reason": "idou calls for attention; each level uses its own plain call, as the English levels do.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -977,6 +1212,26 @@
           "L": "Ни в чём не давая никакого повода к преткновению, чтобы не было опорочено служение, \\v 4 но во всём представляя себя как служители Божьи: в большой стойкости, в скорбях, в бедах, в стеснениях, \\v 5 под ударами, в темницах, в смутах, в трудах, в бессонных ночах, в постах, \\v 6 в чистоте, в знании, в долготерпении, в доброте, в Святом Духе, в нелицемерной любви, \\v 7 в слове истины, в силе Божьей; с оружием праведности в правой и левой [руке], \\v 8 в славе и бесчестии, в хуле и доброй молве; как обманщики, но правдивые, \\v 9 как неизвестные, но узнаваемые, как умирающие, и вот, мы живы, как наказываемые, но не умерщвляемые, \\v 10 как огорчаемые, но всегда радующиеся, как нищие, но многих обогащающие, как ничего не имеющие, но всем обладающие.",
           "B": "Мы никому ни в чём не даём повода споткнуться, чтобы наше служение нельзя было ни в чём упрекнуть. \\v 4 Напротив, во всём мы показываем себя такими, какими должны быть служители Божьи: в большой стойкости, в скорбях, в бедствиях, в безвыходных положениях, \\v 5 под ударами, в тюрьмах, среди беспорядков, в тяжёлом труде, в бессонных ночах, в голоде; \\v 6 чистотой, знанием, терпением, добротой, Святым Духом, искренней любовью, \\v 7 словом истины, силой Божьей; с оружием праведности в правой и в левой руке; \\v 8 в чести и в бесчестии, в хуле и в похвале. Нас считают обманщиками, а мы честны; \\v 9 безвестными, а нас хорошо знают; умирающими, а мы вот живы; наказанными, но мы не преданы смерти; \\v 10 опечаленными, а мы всегда полны радости; бедными, а мы многих обогащаем; людьми, у которых ничего нет, а у нас есть всё.",
           "R": "Мы стараемся никогда не делать ничего, что могло бы отвратить кого-то от Бога. Мы не хотим, чтобы кто-нибудь нашёл недостаток в деле, которое мы делаем для Бога. \\v 4 Наоборот, мы Божьи служители, и во всём, что мы делаем, показываем, что нам можно доверять. Мы не сдаёмся, что бы ни случилось. У нас бывают трудности, несчастья и времена, когда мы чувствуем себя в ловушке. \\v 5 Люди бьют нас и бросают в тюрьму. Разъярённые толпы нападают на нас. Мы много трудимся. Мы не спим и обходимся без еды. \\v 6 Мы показываем, что служим Богу, тем, что живём чисто, тем, что знаем, тем, что мы терпеливы и добры, Святым Духом и настоящей любовью. \\v 7 Мы говорим правду, и в нас действует Божья сила. Праведность — наше оружие: в правой руке, чтобы нападать, и в левой, чтобы защищаться. \\v 8 Одни люди уважают нас, а другие позорят. Одни говорят о нас плохое, а другие — хорошее. Люди считают нас лжецами, но мы говорим правду. \\v 9 К нам относятся так, будто никто не знает, кто мы такие, но нас хорошо знают. Кажется, что мы умираем, но посмотрите: мы всё ещё живы! Нас наказывают, но не убивают. \\v 10 Нам грустно, но у нас всегда есть радость. Мы бедны, но многих людей делаем богатыми Божьими дарами. Кажется, что у нас ничего нет, но всё принадлежит нам."
+        },
+        "uk": {
+          "L": "Ні в чому не даючи жодного приводу для спотикання, щоб служіння не зазнало догани, \\v 4 але в усьому рекомендуючи себе як Божі служителі: у великій стійкості, у скорботах, у нуждах, у тіснотах, \\v 5 у побоях, у вʼязницях, у заворушеннях, у працях, у безсонних ночах, у постах, \\v 6 у чистоті, у пізнанні, у довготерпінні, у доброті, у Святому Дусі, у нелицемірній любові, \\v 7 у слові істини, у силі Божій; через зброю праведності в правій [руці] й у лівій, \\v 8 через славу й безчестя, через лиху славу й добру славу; як обманці, і [все ж] правдиві, \\v 9 як невідомі, і [все ж] добре відомі, як ті, що вмирають, і ось ми живемо, як покарані, але не вбиті, \\v 10 як засмучені, але завжди радісні, як бідні, але багатьох збагачуємо, як ті, що нічого не мають, і [все ж] усім володіємо.",
+          "B": "Ми нікому ні в чому не даємо приводу спіткнутися, щоб ніхто не міг знайти вади в нашому служінні. \\v 4 Навпаки, у всьому ми рекомендуємо себе так, як личить Божим служителям: великою стійкістю, у труднощах, у лихах, у безвихідних становищах, \\v 5 у побоях, у вʼязницях, у заворушеннях, у тяжкій праці, у безсонні, у голоді; \\v 6 чистотою, пізнанням, терпеливістю, добротою, Святим Духом, щирою любовʼю, \\v 7 словом істини, силою Божою; зі зброєю праведності в правій руці й у лівій; \\v 8 у пошані й у ганьбі, у наклепах і в похвалі. Нас уважають обманцями, а ми чесні; \\v 9 невідомими, а нас добре знають; такими, що вмирають, — а ми, ось, живі; покараними, а нас не вбито; \\v 10 засмученими, а ми завжди сповнені радості; бідними, а ми багатьох збагачуємо; людьми, що нічого не мають, а все належить нам.",
+          "R": "Ми намагаємося ніколи не робити нічого, що могло б відвернути когось від Бога. Ми не хочемо, щоб хтось знаходив вади в праці, яку ми робимо для Бога. \\v 4 Навпаки, ми — Божі служителі, і в усьому, що ми робимо, показуємо, що нам можна довіряти. Ми не здаємося, хоч би що сталося. У нас бувають біди, нещастя і часи, коли ми почуваємося в пастці. \\v 5 Люди бʼють нас і кидають до вʼязниці. Розлючені натовпи нападають на нас. Ми тяжко працюємо. Ми обходимося без сну і без їжі. \\v 6 Ми показуємо, що служимо Богові, чистим життям, тим, що знаємо, терпеливістю і добротою, Святим Духом і щирою любовʼю. \\v 7 Ми говоримо правду, і Божа сила діє в нас. Праведність — наша зброя, у правій руці для нападу і в лівій для захисту. \\v 8 Одні люди шанують нас, а інші ганьблять. Одні кажуть про нас погане, а інші добре. Люди вважають нас брехунами, але ми говоримо правду. \\v 9 До нас ставляться так, ніби ніхто не знає, хто ми, але нас добре знають. Здається, що ми вмираємо, але дивіться, ми ще живі! Нас карають, але не вбивають. \\v 10 Нам сумно, але ми завжди маємо радість. Ми бідні, але багатьох людей робимо багатими Божими дарами. Здається, що ми нічого не маємо, але все належить нам."
+        },
+        "ja": {
+          "L": "わたしたちは、どんなことにおいても、だれにもつまずきの原因を与えません。この務めが非難されないためです。\\v 4 むしろ、あらゆることにおいて、神に仕える者として自分自身を推薦しています。多くの忍耐において、苦難において、災難において、行き詰まりにおいて、\\v 5 むち打ちにおいて、投獄において、騒乱において、労苦において、眠れない夜において、断食において、\\v 6 純潔において、知識において、寛容において、親切において、聖霊において、偽りのない愛において、\\v 7 真理の言葉において、神の力においてです。右[の手]と左[の手]の義の武器によって、\\v 8 栄光と不名誉によって、悪評と好評によって[推薦しています]。[わたしたちは]人を惑わす者のようでありながら真実であり、\\v 9 知られていない者のようでありながらよく知られており、死にかけている者のようでありながら、見なさい、生きています。懲らしめられている者のようでありながら殺されてはおらず、\\v 10 悲しんでいる者のようでありながら、いつも喜んでおり、貧しい者のようでありながら多くの人を富ませ、何も持たない者のようでありながら、すべてのものを所有しています。",
+          "B": "わたしたちは、どんなことでも、だれにもつまずきを与えないようにしています。わたしたちの務めが非難されないためです。\\v 4 むしろ、あらゆることにおいて、神に仕える者にふさわしく自分を推薦しています。大いなる忍耐をもって、苦難の中で、災難の中で、追い詰められた中で、\\v 5 むち打たれ、投獄され、暴動に巻き込まれ、労苦し、眠れない夜を過ごし、食べる物もない中で、\\v 6 純潔によって、知識によって、寛容によって、親切によって、聖霊によって、偽りのない愛によって、\\v 7 真理を語ることによって、神の力によって、右の手にも左の手にも義の武器を持って、\\v 8 誉れを受けても辱めを受けても、悪く言われてもほめられても、そうしています。わたしたちは人を欺く者と思われていますが、誠実です。\\v 9 無名の者と思われていますが、よく知られています。死にかけている者と思われていますが、このとおり生きています。懲らしめを受けている者と思われていますが、殺されてはいません。\\v 10 悲しんでいる者と思われていますが、いつも喜びに満ちています。貧しい者と思われていますが、多くの人を富ませています。何も持たない者と思われていますが、すべてのものを持っています。",
+          "R": "わたしたちは、人を神から遠ざけてしまうようなことは、何もしないように気をつけています。神のためにしているわたしたちの働きを、だれにも悪く言われたくないのです。\\v 4 むしろ、わたしたちは神に仕える者です。そして、何をするときにも、信頼できる者であることを示しています。何が起きても、がまんして続けます。つらいことにあい、災難にあい、追い詰められて逃げ場がないと感じることもあります。\\v 5 人々はわたしたちをたたき、ろうやに入れます。怒った群衆がわたしたちを襲います。わたしたちは懸命に働きます。眠らずに過ごし、食べずに過ごすこともあります。\\v 6 わたしたちは、清い生活によって、知っていることによって、がまん強さと親切によって、聖霊によって、そして本物の愛によって、神に仕えていることを示しています。\\v 7 わたしたちは本当のことを語り、神の力がわたしたちのうちで働いています。義がわたしたちの武器です。右の手には攻めるための武器を、左の手には守るための武器を持っています。\\v 8 わたしたちを尊敬する人もいれば、恥をかかせる人もいます。悪く言う人もいれば、良く言う人もいます。人々はわたしたちをうそつき扱いしますが、わたしたちは本当のことを語っています。\\v 9 だれにも知られていない者のように扱われますが、よく知られています。死にかけているように見えますが、見てください、まだ生きています。罰を受けますが、殺されはしません。\\v 10 悲しんでいますが、いつも喜んでいます。貧しいのですが、神の恵みの贈り物で多くの人を豊かにしています。何も持っていないように見えますが、すべてがわたしたちのものです。"
+        },
+        "id": {
+          "L": "Kami tidak memberikan alasan untuk tersandung dalam hal apa pun, supaya pelayanan itu tidak dicela, \\v 4 tetapi dalam segala hal kami menunjukkan diri sebagai pelayan-pelayan Allah: dalam banyak ketekunan, dalam penderitaan, dalam kesukaran, dalam kesesakan, \\v 5 dalam pukulan, dalam penjara, dalam kerusuhan, dalam jerih payah, dalam malam-malam tanpa tidur, dalam berpuasa, \\v 6 dalam kemurnian, dalam pengetahuan, dalam kesabaran, dalam kemurahan, dalam Roh Kudus, dalam kasih yang tidak pura-pura, \\v 7 dalam perkataan kebenaran, dalam kuasa Allah; dengan senjata-senjata kebenaran di tangan kanan dan [di tangan] kiri, \\v 8 dalam kemuliaan dan kehinaan, dalam fitnah dan nama baik; sebagai penipu, [namun] benar, \\v 9 sebagai orang yang tidak dikenal, [namun] terkenal, sebagai orang yang sekarat, dan lihatlah, kami hidup, sebagai orang yang dihajar, namun tidak dibunuh, \\v 10 sebagai orang yang berdukacita, namun senantiasa bersukacita, sebagai orang miskin, namun membuat banyak orang kaya, sebagai orang yang tidak memiliki apa-apa, [namun] memiliki segala sesuatu.",
+          "B": "Kami tidak memberi siapa pun alasan untuk tersandung dalam hal apa pun, supaya pelayanan kami tidak dapat dicela. \\v 4 Sebaliknya, dalam segala hal kami menunjukkan diri sebagai pelayan-pelayan Allah: dengan ketekunan yang besar, dalam kesusahan, dalam malapetaka, dalam keadaan terjepit, \\v 5 dalam pukulan, dalam penjara, dalam kerusuhan, dalam kerja keras, dalam malam-malam tanpa tidur, dalam kekurangan makan; \\v 6 dengan kemurnian, dengan pengetahuan, dengan kesabaran, dengan kemurahan hati, dengan Roh Kudus, dengan kasih yang sungguh-sungguh, \\v 7 dengan perkataan yang benar, dengan kuasa Allah; dengan senjata kebenaran di tangan kanan dan di tangan kiri; \\v 8 dalam hormat dan dalam aib, dalam fitnah dan dalam pujian. Kami dianggap penipu, namun kami jujur; \\v 9 dianggap orang yang tidak dikenal, namun kami terkenal; dianggap sedang sekarat, namun lihat, kami hidup; dianggap orang yang sedang dihajar, namun kami tidak dibunuh; \\v 10 dianggap berdukacita, namun kami selalu penuh sukacita; dianggap miskin, namun kami membuat banyak orang kaya; dianggap tidak memiliki apa-apa, namun segala sesuatu adalah milik kami.",
+          "R": "Kami berusaha untuk tidak pernah melakukan sesuatu yang dapat membuat orang menjauh dari Allah. Kami tidak mau ada orang yang mencela pekerjaan kami bagi Allah. \\v 4 Sebaliknya, kami adalah hamba-hamba Allah, dan dalam segala sesuatu yang kami lakukan, kami menunjukkan bahwa kami dapat dipercaya. Kami terus bertahan, apa pun yang terjadi. Kami mengalami kesusahan, bencana, dan saat-saat ketika kami merasa terjepit. \\v 5 Orang memukuli kami dan memasukkan kami ke dalam penjara. Orang banyak yang marah menyerang kami. Kami bekerja keras. Kami tidak tidur dan tidak makan. \\v 6 Kami menunjukkan bahwa kami melayani Allah dengan hidup yang murni, dengan apa yang kami ketahui, dengan bersikap sabar dan baik hati, dengan Roh Kudus, dan dengan kasih yang tulus. \\v 7 Kami mengatakan kebenaran, dan kuasa Allah bekerja di dalam diri kami. Kebenaran adalah senjata kami, di tangan kanan untuk menyerang dan di tangan kiri untuk bertahan. \\v 8 Ada orang yang menghormati kami, dan ada yang mempermalukan kami. Ada yang menjelek-jelekkan kami, dan ada yang memuji kami. Orang memperlakukan kami sebagai pembohong, padahal kami mengatakan kebenaran. \\v 9 Mereka memperlakukan kami seakan-akan tidak ada yang mengenal kami, padahal kami dikenal banyak orang. Kami tampaknya sedang sekarat, tetapi lihat, kami masih hidup! Kami dihukum, tetapi kami tidak dibunuh. \\v 10 Kami sedih, tetapi kami selalu bersukacita. Kami miskin, tetapi kami membuat banyak orang kaya dengan karunia-karunia Allah. Kami tampaknya tidak memiliki apa-apa, tetapi segala sesuatu adalah milik kami."
+        },
+        "zh": {
+          "L": "我们在任何事上都不给人绊脚的因由，免得这事奉被人挑剔，\\v 4 反而在一切事上表明自己是{{god_term:神|上帝}}的仆人：在许多的坚忍中、在患难中、在困苦中、在窘境中，\\v 5 在鞭打中、在监禁中、在骚乱中、在劳苦中、在不眠中、在禁食中，\\v 6 在纯洁中、在知识中、在忍耐中、在恩慈中、在圣灵中、在没有虚假的爱中，\\v 7 在真理的话中、在{{god_term:神|上帝}}的大能中；借着用于右[手]和左[手]的义的兵器，\\v 8 借着荣耀和羞辱，借着恶名和美名；像是骗子，[却]是真实的，\\v 9 像是不为人知的，[却]是人所熟知的；像是要死的，看哪，我们活着；像是受管教的，却没有被处死；\\v 10 像是忧愁的，却常常喜乐；像是贫穷的，却使许多人富足；像是什么都没有的，[却]拥有一切。",
+          "B": "我们在任何事上都不给人任何绊倒的理由，免得我们的事奉被人指责。\\v 4 相反，我们在一切事上都像{{god_term:神|上帝}}的仆人那样证明自己：以极大的坚忍，在艰难中、在灾祸中、在困境中，\\v 5 在挨打时、在坐牢时、在骚乱中、在劳碌中、在不眠的夜里、在挨饿时；\\v 6 凭着纯洁、凭着知识、凭着忍耐、凭着恩慈、凭着圣灵、凭着真诚的爱，\\v 7 凭着说真话、凭着{{god_term:神|上帝}}的大能；右手左手都拿着义的兵器；\\v 8 无论受尊荣还是受羞辱，无论被毁谤还是被称赞。人们把我们当作骗子，我们却是诚实的；\\v 9 当作无名之辈，我们却是人所熟知的；当作快要死的，可是你看，我们还活着；当作受惩戒的，我们却没有被处死；\\v 10 当作忧愁的，我们却常常满心喜乐；当作贫穷的，我们却使许多人富足；当作一无所有的，其实一切都是我们的。",
+          "R": "我们尽力不做任何会使人离开{{god_term:神|上帝}}的事。我们不希望有人挑剔我们为{{god_term:神|上帝}}做的工作。\\v 4 相反，我们是{{god_term:神|上帝}}的仆人，在所做的一切事上都表明我们是可信的。无论发生什么事，我们都坚持下去。我们遇到困难、灾祸，也有走投无路的时候。\\v 5 有人打我们，把我们关进监狱。愤怒的群众攻击我们。我们辛苦工作，常常不睡觉，也没有饭吃。\\v 6 我们表明自己是在服事{{god_term:神|上帝}}：我们生活纯洁，我们有知识，我们有耐心，待人和善，我们靠着圣灵，也有真诚的爱。\\v 7 我们说真话，{{god_term:神|上帝}}的能力在我们身上做工。义是我们的武器，右手拿着它去进攻，左手拿着它来防守。\\v 8 有人尊重我们，也有人羞辱我们。有人说我们的坏话，也有人说我们的好话。人们把我们当作骗子，但我们说的是真话。\\v 9 他们待我们好像没有人认识我们，但其实很多人都认识我们。我们好像快要死了，可是你看，我们还活着！我们受到惩罚，却没有被杀死。\\v 10 我们心里难过，但我们总是有喜乐。我们很穷，却用{{god_term:神|上帝}}的恩赐使许多人富足。我们好像什么都没有，其实一切都是我们的。"
         }
       },
       "decisions": [
@@ -1918,6 +2173,214 @@
           "reason": "Balanced keeps the rhythm of the list but changes the form where the Greek changes direction, as the English changes \"in\", \"by\" and \"with\" (r-en-1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n47006004005",
+            "n47006004006"
+          ],
+          "choice": "служителі",
+          "alternatives": [
+            "слуги"
+          ],
+          "reason": "Diakonos is \"служитель\" through the letter, keeping \"раб\" for doulos (4:5) and \"служіння\" for diakonia; \"слуга\" would blur the two, as the corinthians terms note warns for the English.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n47006004008"
+          ],
+          "choice": "\"神に仕える者\" at every level",
+          "alternatives": [
+            "\"執事\"",
+            "\"しもべ\""
+          ],
+          "reason": "The word here is Paul's general word for a servant of God, not the church office for which the letters use \"執事\"; \"しもべ\" is kept for the word for a slave.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n47006004013"
+          ],
+          "choice": "\"苦難\" (L, B); \"つらいこと\" (R)",
+          "alternatives": [
+            "\"艱難\""
+          ],
+          "reason": "The book-wide word for affliction (see 1:4); the older \"艱難\" uses kanji outside the Joyo list.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n47006004009",
+            "n47006004010",
+            "n47006004011",
+            "n47006004012",
+            "n47006004013",
+            "n47006004014",
+            "n47006004015",
+            "n47006004016",
+            "n47006004017",
+            "n47006005001",
+            "n47006005002",
+            "n47006005003",
+            "n47006005004",
+            "n47006005005",
+            "n47006005006",
+            "n47006005007",
+            "n47006005008",
+            "n47006005009",
+            "n47006005010",
+            "n47006005011",
+            "n47006005012",
+            "n47006008009",
+            "n47006008010",
+            "n47006008011",
+            "n47006008012",
+            "n47006009001",
+            "n47006009002",
+            "n47006009003",
+            "n47006009004",
+            "n47006009005",
+            "n47006009006",
+            "n47006009007",
+            "n47006009008",
+            "n47006009009",
+            "n47006009010",
+            "n47006009011",
+            "n47006009012",
+            "n47006009013",
+            "n47006009014",
+            "n47006010001",
+            "n47006010002",
+            "n47006010003",
+            "n47006010004",
+            "n47006010005",
+            "n47006010006",
+            "n47006010007",
+            "n47006010008",
+            "n47006010009",
+            "n47006010010",
+            "n47006010011",
+            "n47006010012",
+            "n47006010013",
+            "n47006010014",
+            "n47006010015",
+            "n47006010016"
+          ],
+          "choice": "one long sentence at Literal; short sentences at Readable; \"dianggap ... namun\" (B)",
+          "alternatives": [],
+          "reason": "Literal keeps Paul's chain of \"in ...\" and \"as ...\" phrases (m3, m10); Balanced says \"dianggap\" (taken for) for the \"as\", which names how people see them, as the English Balanced does; Readable breaks the chain into short sentences.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-2",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n47006007007",
+            "n47006007008",
+            "n47006007009",
+            "n47006007010",
+            "n47006007011",
+            "n47006007012",
+            "n47006007013",
+            "n47006007014",
+            "n47006007015"
+          ],
+          "choice": "\"senjata kebenaran\" at every level",
+          "alternatives": [],
+          "reason": "The key term for righteousness is kept at Readable too, since the picture is of righteousness itself as the weapon (m8).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n47006004010",
+            "n47006006006"
+          ],
+          "choice": "坚忍 (hypomonē); 忍耐 (makrothymia)",
+          "alternatives": [
+            "忍耐 for both"
+          ],
+          "reason": "Two different Greek words in one list: endurance under hardship and patience with people. Romans' forms keep them apart (5:3-4; 2:4).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n47006003010"
+          ],
+          "choice": "事奉 (L, B)",
+          "alternatives": [
+            "职事",
+            "服事者",
+            "仆役"
+          ],
+          "reason": "diakonia and diakonos as Romans has them. \"事奉\" is the ministry at Literal and Balanced (Romans 11:13), through 3:7-9, 4:1, 5:18 and 6:3, for the old covenant and the new alike; Literal keeps it for the collection (8:4; 9:1, 12-13), where Balanced names the relief \"救济\" and Readable \"帮助\". \"仆人\" is diakonos at Literal and Balanced (Romans 13:4; 15:8), God's servants and Satan's alike (3:6; 6:4; 11:15, 23), never \"执事\", the church office (Romans 16:1). Readable says \"工作\" or the verb \"服事\", as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1996,6 +2459,26 @@
           "L": "Уста наши открылись к вам, коринфяне; сердце наше расширилось.",
           "B": "Коринфяне, мы говорили с вами, ничего не утаивая, и наше сердце широко раскрылось, чтобы вместить вас.",
           "R": "Жители Коринфа, мы честно рассказали вам всё. Наши сердца широко открыты, и в них много места для вас."
+        },
+        "uk": {
+          "L": "Уста наші відкриті до вас, коринтяни, серце наше розширилося;",
+          "B": "Коринтяни, ми говорили з вами, нічого не приховуючи, і наше серце широко відкрилося, щоб вмістити вас.",
+          "R": "Люди Коринту, ми чесно сказали вам усе. Наші серця широко відкриті, і в них багато місця для вас."
+        },
+        "ja": {
+          "L": "コリントの人たち、わたしたちの口はあなたがたに向かって開かれ、わたしたちの心は広げられています。",
+          "B": "コリントの人たち、わたしたちは包み隠さず、あなたがたに語ってきました。わたしたちの心は、あなたがたを迎え入れようと大きく開かれています。",
+          "R": "コリントのみなさん、わたしたちは、何もかも正直にお話ししてきました。わたしたちの心は大きく開かれていて、みなさんのための場所が十分にあります。"
+        },
+        "id": {
+          "L": "Mulut kami telah terbuka kepada kalian, hai orang-orang Korintus; hati kami telah dilapangkan.",
+          "B": "Hai orang-orang Korintus, kami telah berbicara kepada kalian tanpa menahan apa pun, dan hati kami telah terbuka lebar untuk menerima kalian.",
+          "R": "Saudara-saudara di Korintus, kami telah mengatakan segala sesuatu kepada kalian dengan jujur. Hati kami terbuka lebar, dan ada banyak tempat di dalamnya untuk kalian."
+        },
+        "zh": {
+          "L": "我们的口已经向你们张开了，哥林多人哪；我们的心已经扩宽了。",
+          "B": "哥林多人哪，我们对你们毫无保留地说了话，我们的心也已经敞开，要把你们接纳进来。",
+          "R": "哥林多的各位，我们把一切都诚诚恳恳地告诉了你们。我们的心是完全敞开的，里面有足够的地方容纳你们。"
         }
       },
       "decisions": [
@@ -2202,6 +2685,67 @@
           "reason": "The people of Corinth are \"कुरिन्थी\", as in Acts 18:8; Readable names the city so that young readers know who is addressed.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n47006011007"
+          ],
+          "choice": "the address \"コリントの人たち\" at the start of the sentence",
+          "alternatives": [
+            "the address between the two clauses"
+          ],
+          "reason": "Japanese puts an address at the head of the sentence; in the middle it would break the paired clauses.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n47006011007"
+          ],
+          "choice": "\"hai orang-orang Korintus\" (L, B); \"Saudara-saudara di Korintus\" (R)",
+          "alternatives": [
+            "\"Orang-orang Korintus\" at Readable"
+          ],
+          "reason": "The direct address marks strong feeling (m3). \"hai\" is the address particle of standard Indonesian; Readable addresses them warmly as fellow believers, the way an Indonesian letter would.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n47006011007"
+          ],
+          "choice": "哥林多的各位",
+          "alternatives": [
+            "哥林多人哪"
+          ],
+          "reason": "Readable makes clear who is addressed, as the English does; \"各位\" is a warm, respectful address to a group.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2279,6 +2823,26 @@
           "L": "Вам не тесно в нас, но тесно в ваших [собственных] чувствах.",
           "B": "В нас для вас места сколько угодно; тесно вам в ваших собственных чувствах.",
           "R": "В наших сердцах много места для вас. Но в ваших сердцах мало места для нас."
+        },
+        "uk": {
+          "L": "Вам не тісно в нас, а тісно вам у ваших [власних] почуттях.",
+          "B": "У нас для вас досить місця; це у ваших власних почуттях вам тісно.",
+          "R": "У наших серцях багато місця для вас. Але у ваших серцях мало місця для нас."
+        },
+        "ja": {
+          "L": "あなたがたは、わたしたちの中で狭められているのではありません。あなたがた自身の心の内で狭められているのです。",
+          "B": "わたしたちの中には、あなたがたのための場所が十分にあります。窮屈になっているのは、あなたがた自身の心なのです。",
+          "R": "わたしたちの心には、みなさんのための場所がたっぷりあります。でも、みなさんの心には、わたしたちのための場所が少ししかありません。"
+        },
+        "id": {
+          "L": "Kalian tidak sempit di dalam kami, tetapi kalian sempit di dalam perasaan [kalian sendiri].",
+          "B": "Di dalam hati kami ada cukup tempat bagi kalian; di dalam perasaan kalian sendirilah tempat itu sempit.",
+          "R": "Di dalam hati kami ada banyak tempat untuk kalian. Tetapi di dalam hati kalian hanya ada sedikit tempat untuk kami."
+        },
+        "zh": {
+          "L": "你们在我们[这里]并不受局限，你们受局限，是在你们[自己]的心肠里。",
+          "B": "在我们心里，你们有足够的地方；狭窄的是你们自己的心。",
+          "R": "我们心里有很多地方可以容纳你们。但是你们心里却没有多少地方容纳我们。"
         }
       },
       "decisions": [
@@ -2441,6 +3005,25 @@
           "reason": "Amharic, like Greek, speaks of the inward parts (አንጀት) as the seat of deep feeling ('አንጀቴ ተላወሰ'), so Literal keeps the picture; Balanced says ፍቅር, 'affection, love', and Readable follows the English Readable's 'hearts'.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n47006012009"
+          ],
+          "choice": "心肠",
+          "alternatives": [
+            "内脏"
+          ],
+          "reason": "splanchna, the inner parts as the seat of affection (m2); \"心肠\" keeps the bodily picture in natural Chinese.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2518,6 +3101,26 @@
           "L": "В равное же воздаяние (говорю как детям) расширьтесь и вы.",
           "B": "Ответьте нам тем же. Я говорю с вами, как со своими детьми: пусть и ваши сердца широко раскроются для нас.",
           "R": "Теперь сделайте то же для нас. Я говорю с вами, как будто вы мои собственные дети. Широко откройте нам свои сердца, как мы открыли вам свои."
+        },
+        "uk": {
+          "L": "А в ту саму відплату — кажу як дітям — розширтеся й ви.",
+          "B": "Відповідайте нам тим самим. Кажу вам, як своїм дітям: відкрийте й ви широко свої серця для нас.",
+          "R": "Тепер зробіть те саме для нас. Я кажу вам, ніби ви мої рідні діти. Широко відкрийте для нас свої серця, як ми відкрили свої для вас."
+        },
+        "ja": {
+          "L": "そこで、同じお返しとして――わたしは子どもたちに対するように言いますが――あなたがたも[心を]広くしなさい。",
+          "B": "同じお返しをしなさい。わたしは、自分の子どもたちに話すように言っているのです。あなたがたも、わたしたちに向かって心を大きく開きなさい。",
+          "R": "今度は、みなさんが、わたしたちに同じようにしてください。わたしは、自分の子どもに話すように話しています。わたしたちがみなさんに心を開いたように、みなさんも、わたしたちに心を大きく開いてください。"
+        },
+        "id": {
+          "L": "Dan [sebagai] balasan yang sama (aku berbicara seperti kepada anak-anak), lapangkanlah [hati] kalian juga.",
+          "B": "Berikanlah kepada kami hal yang sama sebagai balasan. Aku berbicara seperti kepada anak-anakku sendiri: bukalah hati kalian lebar-lebar bagi kami juga.",
+          "R": "Sekarang lakukanlah hal yang sama untuk kami. Saya berbicara kepada kalian seakan-akan kalian anak-anak saya sendiri. Bukalah hati kalian lebar-lebar bagi kami, seperti kami telah membuka hati kami bagi kalian."
+        },
+        "zh": {
+          "L": "[作为]同样的回报（我像对孩子们说话），你们也要[把心]放宽。",
+          "B": "请你们也同样回报我们。我是像对自己的孩子那样说的：你们也要向我们敞开心。",
+          "R": "现在请你们也这样对待我们。我对你们说话，就像对自己的孩子说话一样。请你们向我们敞开心，就像我们向你们敞开了心一样。"
         }
       },
       "decisions": [
@@ -2672,6 +3275,26 @@
           "L": "Не впрягайтесь в чужое ярмо с неверующими; ведь какое участие у праведности с беззаконием, или какое общение у света с тьмой?",
           "B": "Не впрягайтесь в одно ярмо с неверующими. Могут ли праведность и беззаконие быть соучастниками? Может ли быть что-то общее у света с тьмой?",
           "R": "Не соединяйтесь с людьми, которые не верят, словно два разных животных, которых заставили тянуть под одним ярмом. Праведность и злые дела не могут быть заодно. У света и тьмы нет ничего общего."
+        },
+        "uk": {
+          "L": "Не ставайте нерівно запряженими з невіруючими; бо яке співучасництво праведності з беззаконням, або яка спільність у світла з темрявою?",
+          "B": "Не впрягайтеся в одне ярмо з невіруючими, як нерівна пара. Хіба можуть праведність і беззаконня бути спільниками? Хіба світло й темрява можуть мати щось спільне?",
+          "R": "Не зʼєднуйтеся з людьми, які не вірять, наче дві різні тварини, яких змушують тягти під одним ярмом. Праведність і чинення зла не можуть бути спільниками. Світло і темрява не мають нічого спільного."
+        },
+        "ja": {
+          "L": "不信者と、つり合わないくびきを共にする者となってはいけません。というのは、義と不法とに何の共有があるでしょうか？あるいは、光と闇とに何の交わりがあるでしょうか？",
+          "B": "信仰のない人たちと、つり合わないくびきを共にしてはいけません。義と不法が仲間になれるでしょうか？光と闇が何かを分かち合えるでしょうか？",
+          "R": "信じていない人たちと、一つに結ばれないでください。それは、種類の違う二頭の動物に、むりやり一つのくびきをかけて引かせるようなものです。正しいことと悪いことは、仲間にはなれません。光と闇には、共通するものが何もありません。"
+        },
+        "id": {
+          "L": "Janganlah kalian menjadi pasangan yang tidak seimbang dengan orang-orang yang tidak percaya; sebab persekutuan apakah [yang ada antara] kebenaran dan kedurhakaan, atau persekutuan apakah [yang dimiliki] terang dengan gelap?",
+          "B": "Janganlah kalian menjadi pasangan yang tidak seimbang dengan orang-orang yang tidak percaya. Dapatkah kebenaran dan kedurhakaan bersekutu? Dapatkah terang dan gelap berbagi sesuatu?",
+          "R": "Jangan mengikatkan diri bersama orang-orang yang tidak percaya, seperti dua jenis hewan yang berbeda dipaksa menarik beban di bawah satu kuk. Kebenaran dan perbuatan jahat tidak dapat bersekutu. Terang dan gelap tidak mempunyai kesamaan apa pun."
+        },
+        "zh": {
+          "L": "你们不要和不信的人不相称地同负一轭；因为义与不法有什么份可以同享？或者光与黑暗有什么来往？",
+          "B": "不要和不信的人不相称地同负一轭。义与不法怎能合伙？光与黑暗能有什么共同之处？",
+          "R": "不要和不信的人绑在一起，就像把两种不同的牲口硬套在同一个轭下拉东西一样。义和做坏事不能合伙。光和黑暗毫无共同之处。"
         }
       },
       "decisions": [
@@ -3027,6 +3650,97 @@
           "reason": "The style guide settles \"ярмо\" for the yoke (Matthew 11:29); Literal and Balanced keep the farming picture (m2), and Readable explains it.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n47006014003"
+          ],
+          "choice": "нерівно запряжені (L); в одне ярмо... як нерівна пара (B)",
+          "alternatives": [
+            "у чуже ярмо"
+          ],
+          "reason": "The picture is two unlike animals under one yoke (m2); \"чуже ярмо\", the familiar wording, says a foreign yoke and loses the mismatch.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n47006014003"
+          ],
+          "choice": "\"pasangan yang tidak seimbang\" (L, B); \"di bawah satu kuk\" (R)",
+          "alternatives": [
+            "\"memikul kuk yang tidak seimbang\""
+          ],
+          "reason": "The yoke picture (m2) is not a common Indonesian idiom; Literal and Balanced say \"unequal partners\", and Readable spells out the yoke, as the English Readable does.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-id-2",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n47006014005",
+            "n47006014006",
+            "n47006014007",
+            "n47006014008",
+            "n47006014009",
+            "n47006014010",
+            "n47006014011",
+            "n47006014012",
+            "n47006014013",
+            "n47006014014",
+            "n47006014015",
+            "n47006014016"
+          ],
+          "choice": "\"kebenaran\" at every level",
+          "alternatives": [],
+          "reason": "The key term for righteousness, kept at Readable since it stands against lawlessness as one of a pair.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n47006014003"
+          ],
+          "choice": "不相称地同负一轭",
+          "alternatives": [
+            "不要同负一轭"
+          ],
+          "reason": "The farming picture of a mismatched pair under one yoke (m2), kept at Literal and Balanced; Readable explains it, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3106,6 +3820,26 @@
           "L": "И какое согласие у {{christos:Христа|Мессии}} с Велиаром, или какая доля у верующего с неверующим?",
           "B": "Как может {{christos:Христос|Мессия}} быть в согласии с Велиаром? Какая общая доля может быть у верующего с неверующим?",
           "R": "Не может быть согласия между {{christos:Христом|Мессией}} и Велиаром, то есть дьяволом. У тех, кто верит, и у тех, кто не верит, нет общей доли."
+        },
+        "uk": {
+          "L": "І яка злагода в {{christos:Христа|Месії}} з Веліаром, або який спільний уділ у віруючого з невіруючим?",
+          "B": "Як може {{christos:Христос|Месія}} бути в злагоді з Веліаром? Яку спільну частку може мати віруючий із невіруючим?",
+          "R": "Не може бути жодної злагоди між {{christos:Христом|Месією}} і Веліаром, тобто дияволом. Люди, які вірять, і люди, які не вірять, не мають спільної частки."
+        },
+        "ja": {
+          "L": "また、{{christos:キリスト|メシア}}とベリアルとに何の調和があるでしょうか？あるいは、信者と不信者とに何の分け前[の共有]があるでしょうか？",
+          "B": "{{christos:キリスト|メシア}}がベリアルと調和することがあるでしょうか？信じる者が信じない者と、何を分かち合えるでしょうか？",
+          "R": "{{christos:キリスト|メシア}}と、悪魔であるベリアルとが、心を合わせることはありえません。信じる人と信じない人は、同じものを分け合うことはできません。"
+        },
+        "id": {
+          "L": "Dan kesepakatan apakah [yang ada antara] {{christos:Kristus|Mesias}} dengan Belial, atau bagian apakah [yang dimiliki] orang percaya bersama orang yang tidak percaya?",
+          "B": "Bagaimana mungkin {{christos:Kristus|Mesias}} sepakat dengan Belial? Bagian apakah yang dapat dimiliki bersama oleh orang percaya dan orang yang tidak percaya?",
+          "R": "Tidak mungkin ada kesepakatan antara {{christos:Kristus|Mesias}} dan Belial, yaitu Iblis. Orang yang percaya dan orang yang tidak percaya tidak mempunyai bagian dalam hal-hal yang sama."
+        },
+        "zh": {
+          "L": "而{{christos:基督|弥赛亚}}与彼列有什么一致之处？或者信的人与不信的人有什么共有的份？",
+          "B": "{{christos:基督|弥赛亚}}怎么可能与彼列意见相合？信徒和不信的人能有什么共同的份呢？",
+          "R": "{{christos:基督|弥赛亚}}和魔鬼彼列不可能一致。信主的人和不信的人不能共有同样的东西。"
         }
       },
       "decisions": [
@@ -3375,6 +4109,69 @@
           "reason": "Russian keeps the form Paul uses, as the English does; Readable says who Beliar is (m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n47006015006"
+          ],
+          "choice": "Веліар (L, B); Веліар, тобто диявол (R)",
+          "alternatives": [
+            "Веліал"
+          ],
+          "reason": "The text has the form Beliar (m2), so Ukrainian transcribes it with р; Readable explains the name as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n47006015006"
+          ],
+          "choice": "\"Belial\"",
+          "alternatives": [
+            "\"Beliar\""
+          ],
+          "reason": "The Greek \"Beliar\" is a form of the Hebrew name Belial (m1); Indonesian writes the familiar form, and Readable adds \"Iblis\", the glossary word for the devil. Added to the glossary.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n47006015006"
+          ],
+          "choice": "彼列 (L, B); 魔鬼彼列 (R)",
+          "alternatives": [
+            "彼列耳"
+          ],
+          "reason": "The form Chinese Bibles use for this name of Satan; Readable says who he is (m1), as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3449,6 +4246,26 @@
           "L": "И какая совместимость у храма Божьего с идолами?",
           "B": "Может ли Божий храм договориться с идолами?",
           "R": "Божий храм не может иметь ничего общего с идолами."
+        },
+        "uk": {
+          "L": "І яка угода в храму Божого з ідолами?",
+          "B": "Чи може Божий храм домовитися з ідолами?",
+          "R": "Божий храм не може мати нічого спільного з ідолами."
+        },
+        "ja": {
+          "L": "また、神の神殿と偶像とに何の一致があるでしょうか？",
+          "B": "神の神殿が偶像と手を結ぶことができるでしょうか？",
+          "R": "神の神殿は、偶像とは何の関係も持つことができません。"
+        },
+        "id": {
+          "L": "Dan kesepakatan apakah [yang ada antara] bait Allah dengan berhala-berhala?",
+          "B": "Dapatkah Bait Allah bersepakat dengan berhala-berhala?",
+          "R": "Rumah Allah tidak boleh berhubungan dengan berhala sama sekali."
+        },
+        "zh": {
+          "L": "而{{god_term:神|上帝}}的殿与偶像有什么协定？",
+          "B": "{{god_term:神|上帝}}的殿怎能与偶像妥协？",
+          "R": "{{god_term:神|上帝}}的殿和偶像不能有任何关系。"
         }
       },
       "decisions": [
@@ -3526,6 +4343,48 @@
             "Храм"
           ],
           "reason": "The capital is kept for the Temple in Jerusalem; here the temple is the church (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n47006016003",
+            "n47006016004",
+            "n47006016005",
+            "n47006016006",
+            "n47006016007"
+          ],
+          "choice": "\"Bait Allah\" (L, B); \"rumah Allah\" (R)",
+          "alternatives": [],
+          "reason": "The glossary words for the temple at their levels, for the whole letter.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n47006016004"
+          ],
+          "choice": "殿",
+          "alternatives": [
+            "圣殿"
+          ],
+          "reason": "naos, the sanctuary itself, where the distinction matters at Literal (style guide section 7).",
           "uncertain": false,
           "footnote": false
         }
@@ -3620,6 +4479,26 @@
           "L": "Ведь мы — храм Бога живого; как сказал Бог: «Поселюсь в них и буду ходить [среди них], и буду их Богом, а они будут {{deity_pronoun:моим|Моим}} народом.»",
           "B": "Ведь мы и есть храм живого Бога. Как сказал Бог: «Я сделаю их своим жилищем и буду ходить среди них; {{deity_pronoun:я|Я}} буду их Богом, а они будут {{deity_pronoun:моим|Моим}} народом.»",
           "R": "Мы — храм живого Бога. Бог сам сказал: «Я буду жить в них и ходить среди них. Я буду их Богом, а они будут {{deity_pronoun:моим|Моим}} народом.»"
+        },
+        "uk": {
+          "L": "Бо ми — храм Бога живого, як сказав Бог: «Я оселюся в них і ходитиму [серед них], і буду їхнім Богом, а вони будуть {{deity_pronoun:моїм|Моїм}} народом.»",
+          "B": "Адже ми — храм живого Бога. Як сказав Бог: «Я поселюся в них і ходитиму серед них; {{deity_pronoun:я|Я}} буду їхнім Богом, а вони будуть {{deity_pronoun:моїм|Моїм}} народом.»",
+          "R": "Ми — храм живого Бога. Сам Бог сказав: «Я житиму в них і ходитиму серед них. Я буду їхнім Богом, а вони будуть {{deity_pronoun:моїм|Моїм}} народом.»"
+        },
+        "ja": {
+          "L": "わたしたちは生きておられる神の神殿だからです。神が[こう]言われたとおりです。「わたしは彼らのうちに住み、[彼らの間を]歩む。そして、わたしは彼らの神となり、彼らはわたしの民となる。」",
+          "B": "わたしたちこそ、生きておられる神の神殿なのです。神がこう言われたとおりです。「わたしは彼らのうちに住まいを定め、彼らの間を歩む。わたしは彼らの神となり、彼らはわたしの民となる。」",
+          "R": "わたしたちは、生きておられる神の神殿です。神ご自身が、こう言われました。「わたしは彼らの中に住み、彼らの間を歩く。わたしは彼らの神となり、彼らはわたしの民となる。」"
+        },
+        "id": {
+          "L": "Sebab kita adalah bait Allah yang hidup; sama seperti Allah telah berfirman, \"Aku akan diam di dalam mereka dan berjalan di antara [mereka], dan {{deity_pronoun:aku|Aku}} akan menjadi Allah mereka, dan mereka akan menjadi umat-{{deity_pronoun:ku|Ku}}.\"",
+          "B": "Sebab kita adalah Bait Allah yang hidup. Seperti yang telah Allah firmankan, \"Aku akan tinggal di dalam mereka dan berjalan di antara mereka; {{deity_pronoun:aku|Aku}} akan menjadi Allah mereka, dan mereka akan menjadi umat-{{deity_pronoun:ku|Ku}}.\"",
+          "R": "Kita adalah rumah Allah yang hidup. Allah sendiri telah berfirman, \"Aku akan tinggal di dalam mereka dan berjalan di antara mereka. Aku akan menjadi Allah mereka, dan mereka akan menjadi umat-{{deity_pronoun:ku|Ku}}.\""
+        },
+        "zh": {
+          "L": "因为我们是永活的{{god_term:神|上帝}}的殿；正如{{god_term:神|上帝}}说过：“我要住在他们里面，并在[他们]中间行走；我要成为他们的{{god_term:神|上帝}}，他们要成为我的子民。”",
+          "B": "要知道，我们就是永活之{{god_term:神|上帝}}的殿。正如{{god_term:神|上帝}}说过：“我要在他们里面安居，在他们中间行走；我要成为他们的{{god_term:神|上帝}}，他们要成为我的子民。”",
+          "R": "我们是永活的{{god_term:神|上帝}}的殿。{{god_term:神|上帝}}{{deity_pronoun:他|祂}}自己说过：“我要住在他们里面，在他们中间行走。我要成为他们的{{god_term:神|上帝}}，他们要成为我的子民。”"
         }
       },
       "decisions": [
@@ -3788,6 +4667,49 @@
           "reason": "As in Romans, God speaks in 해라체 in quotations of Scripture.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n47006016008",
+            "n47006016009",
+            "n47006016010",
+            "n47006016011",
+            "n47006016012",
+            "n47006016013"
+          ],
+          "choice": "\"kita\", inclusive",
+          "alternatives": [],
+          "reason": "\"We\" together are the temple (m1): Paul and the church, the inclusive \"kita\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n47006016031"
+          ],
+          "choice": "我",
+          "alternatives": [],
+          "reason": "The English spans \"Me\"/\"My\" for God speaking; Chinese has no reverent first person, so \"我\" takes no deity_pronoun span (style guide section 4).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3871,6 +4793,26 @@
           "L": "Поэтому «выйдите из среды их и отделитесь», — говорит Господь, — «и к нечистому не прикасайтесь; и {{deity_pronoun:я|Я}} приму вас.»",
           "B": "Поэтому «выйдите из их среды и держитесь отдельно», — говорит Господь, — «и не прикасайтесь к нечистому; тогда {{deity_pronoun:я|Я}} приму вас.»",
           "R": "Поэтому Господь говорит: «Выйдите из их среды и держитесь отдельно. Не прикасайтесь ни к чему, что сделало бы вас нечистыми. Тогда {{deity_pronoun:я|Я}} приму вас.»"
+        },
+        "uk": {
+          "L": "Тому «вийдіть з-посеред них і відокремтеся», — каже Господь, — «і не торкайтеся [нічого] нечистого; і {{deity_pronoun:я|Я}} прийму вас.»",
+          "B": "Тож «вийдіть з-поміж них і тримайтеся окремо», — каже Господь, — «і не торкайтеся того, що нечисте; тоді {{deity_pronoun:я|Я}} прийму вас.»",
+          "R": "Тож Господь каже: «Вийдіть з-поміж них і тримайтеся окремо. Не торкайтеся нічого, що зробило б вас нечистими. Тоді {{deity_pronoun:я|Я}} прийму вас.»"
+        },
+        "ja": {
+          "L": "それゆえ、「彼らの中から出て行き、離れなさい」と主は言われる。「そして、汚れた[もの]に触れてはならない。そうすれば、わたしはあなたがたを受け入れる。」",
+          "B": "ですから、「彼らの間から出て行き、離れていなさい」と主は言われる。「汚れたものに触れてはならない。そうすれば、わたしはあなたがたを迎え入れる。」",
+          "R": "ですから、主はこう言われます。「彼らの間から出て来て、離れていなさい。あなたがたを汚すようなものには、触れてはならない。そうすれば、わたしはあなたがたを迎え入れる。」"
+        },
+        "id": {
+          "L": "Karena itu \"keluarlah dari tengah-tengah mereka dan pisahkanlah dirimu,\" firman Tuhan, \"dan janganlah menjamah [apa pun yang] najis; dan {{deity_pronoun:aku|Aku}} akan menerima kalian.\"",
+          "B": "Karena itu \"keluarlah dari antara mereka dan pisahkanlah diri kalian,\" firman Tuhan, \"dan jangan menyentuh apa yang najis, dan {{deity_pronoun:aku|Aku}} akan menerima kalian.\"",
+          "R": "Karena itu Tuhan berfirman, \"Keluarlah dari antara mereka dan pisahkanlah diri kalian. Jangan menyentuh apa pun yang dapat membuat kalian najis. Kemudian {{deity_pronoun:aku|Aku}} akan menyambut kalian.\""
+        },
+        "zh": {
+          "L": "所以，“你们要从他们中间出来，要被分别出来，”主说，“也不要摸不洁净的[东西]；我就会欢迎你们。”",
+          "B": "所以，“你们要从他们当中出来，使自己分别出来，”主说，“不要触碰不洁净的东西；这样我就会接纳你们。”",
+          "R": "所以主说：“你们要从他们当中出来，跟他们分开。不要碰任何会使你们不洁净的东西。这样我就会欢迎你们。”"
         }
       },
       "decisions": [
@@ -4165,6 +5107,80 @@
           "reason": "The Greek has kyrios, so Russian says \"Господь\", not the capitals kept for the divine name in the Old Testament.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "register",
+          "tokens": [
+            "n47006017008"
+          ],
+          "choice": "\"と主は言われる\" in the plain style (L, B)",
+          "alternatives": [
+            "\"と主は言われます\""
+          ],
+          "reason": "\"Says the Lord\" belongs to the words of Scripture that Paul strings together in 6:16-18, so Literal and Balanced keep it plain with them; Readable, which puts the formula before the quotation as Paul's own introduction, uses です・ます.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n47006017002",
+            "n47006017003",
+            "n47006017004",
+            "n47006017005",
+            "n47006017006",
+            "n47006017007",
+            "n47006017008",
+            "n47006017009",
+            "n47006017010",
+            "n47006017011",
+            "n47006017012",
+            "n47006017013",
+            "n47006017014",
+            "n47006017015",
+            "n47006017016"
+          ],
+          "choice": "\"firman Tuhan\"",
+          "alternatives": [],
+          "reason": "The Greek has kyrios, so \"Tuhan\", as the style guide sets for New Testament quotations; \"berfirman\" because God speaks.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n47006017009"
+          ],
+          "choice": "主",
+          "alternatives": [
+            "{{divine_name:上主|雅威}}"
+          ],
+          "reason": "The Greek has kyrios, so Chinese says \"主\", as in other New Testament quotations of the Old Testament (style guide section 4); m1 names the Hebrew texts behind it.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4248,6 +5264,26 @@
           "L": "«И {{deity_pronoun:я|Я}} буду вам Отцом, и вы будете {{deity_pronoun:мне|Мне}} сыновьями и дочерями», — говорит Господь Вседержитель.",
           "B": "«Я буду вашим Отцом, а вы будете {{deity_pronoun:моими|Моими}} сыновьями и дочерями», — возвещает Господь Вседержитель.",
           "R": "«Я буду вашим Отцом, а вы будете {{deity_pronoun:моими|Моими}} сыновьями и дочерями», — говорит Господь, который властвует над всем."
+        },
+        "uk": {
+          "L": "«І {{deity_pronoun:я|Я}} буду вам за батька, а ви будете {{deity_pronoun:мені|Мені}} синами й дочками», — каже Господь Вседержитель.",
+          "B": "«Я буду вашим Отцем, а ви будете {{deity_pronoun:моїми|Моїми}} синами й дочками», — говорить Господь Вседержитель.",
+          "R": "«Я буду вашим Отцем, а ви будете {{deity_pronoun:моїми|Моїми}} синами й дочками», — каже Господь, який править усім."
+        },
+        "ja": {
+          "L": "「そして、わたしはあなたがたにとって父となり、あなたがたはわたしにとって息子たち、娘たちとなる」と全能の主は言われる。",
+          "B": "「わたしはあなたがたの父となり、あなたがたはわたしの息子、娘となる」と全能の主は宣言される。",
+          "R": "「わたしはあなたがたの父となり、あなたがたはわたしの息子や娘となる」と、すべてを治めておられる主は言われます。"
+        },
+        "id": {
+          "L": "\"Dan {{deity_pronoun:aku|Aku}} akan menjadi Bapa bagi kalian, dan kalian akan menjadi anak-anak-{{deity_pronoun:ku|Ku}} laki-laki dan perempuan,\" firman Tuhan Yang Mahakuasa.",
+          "B": "\"Aku akan menjadi Bapa kalian, dan kalian akan menjadi anak-anak-{{deity_pronoun:ku|Ku}} laki-laki dan perempuan,\" demikianlah firman Tuhan Yang Mahakuasa.",
+          "R": "\"Aku akan menjadi Bapa kalian, dan kalian akan menjadi anak-anak-{{deity_pronoun:ku|Ku}}, laki-laki dan perempuan,\" firman Tuhan, yang berkuasa atas segala sesuatu."
+        },
+        "zh": {
+          "L": "“并且我要作你们的父，你们要作我的儿子和女儿，”全能的主说。",
+          "B": "“我要成为你们的父，你们要成为我的儿子和女儿，”全能的主宣告。",
+          "R": "“我要作你们的父亲，你们要作我的儿子和女儿，”统管万有的主这样说。"
         }
       },
       "decisions": [
@@ -4504,6 +5540,129 @@
             "Всемогущий"
           ],
           "reason": "\"Вседержитель\" is the living Russian word for pantokrator, the one who holds all things; Readable explains it (m2). \"Сыновья и дочери\" already names both, so no gender setting.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n47006018015",
+            "n47006018016"
+          ],
+          "choice": "Господь Вседержитель (L, B); Господь, який править усім (R)",
+          "alternatives": [
+            "Господь Всемогутній"
+          ],
+          "reason": "The shared terms note gives \"Вседержитель\" for pantokratōr, as in Revelation; Readable explains it, like the English.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n47006018016"
+          ],
+          "choice": "\"全能の主\" (L, B); \"すべてを治めておられる主\" (R)",
+          "alternatives": [
+            "\"万軍の主\""
+          ],
+          "reason": "The title means the Lord who rules over all (m2); \"万軍の主\" renders a different Hebrew title.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n47006018015",
+            "n47006018016"
+          ],
+          "choice": "\"Tuhan Yang Mahakuasa\" (L, B); \"Tuhan, yang berkuasa atas segala sesuatu\" (R)",
+          "alternatives": [],
+          "reason": "The title of the Lord who rules over all (m2), in its established Indonesian form; Readable says what it means, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n47006018011",
+            "n47006018013"
+          ],
+          "choice": "儿子和女儿",
+          "alternatives": [
+            "儿女"
+          ],
+          "reason": "The Greek names both sons and daughters, so Chinese names both too, with no gender setting.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n47006018016"
+          ],
+          "choice": "全能的主 (L, B); 统管万有的主 (R)",
+          "alternatives": [],
+          "reason": "pantokratōr, the Lord who rules over all (m2); Readable spells it out, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-3",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n47006018009"
+          ],
+          "choice": "我",
+          "alternatives": [],
+          "reason": "The English spans \"Me\"/\"My\" for God speaking; Chinese has no reverent first person, so \"我\" takes no deity_pronoun span (style guide section 4).",
           "uncertain": false,
           "footnote": false
         }

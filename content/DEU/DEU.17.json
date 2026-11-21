@@ -86,6 +86,26 @@
           "L": "Не приноси в жертву {{divine_name:ГОСПОДУ|Яхве}}, твоему Богу, вола или ягнёнка, на котором будет изъян, что-либо худое, потому что это мерзость для {{divine_name:ГОСПОДА|Яхве}}, твоего Бога.",
           "B": "Не приноси в жертву {{divine_name:ГОСПОДУ|Яхве}}, твоему Богу, быка, овцу или козу, если у животного есть изъян или что-то не так, потому что это мерзко для {{divine_name:ГОСПОДА|Яхве}}, твоего Бога.",
           "R": "Не приноси {{divine_name:ГОСПОДУ|Яхве}}, твоему Богу, быка, овцу или козу, если с ними что-то не так. {{divine_name:ГОСПОДЬ|Яхве}}, твой Бог, ненавидит это."
+        },
+        "ja": {
+          "L": "あなたは、傷のある牛や羊、すなわち何であれ悪いところのあるものを、あなたの神、{{divine_name:主|ヤハウェ}}にいけにえとしてささげてはならない。それはあなたの神、{{divine_name:主|ヤハウェ}}にとって忌むべきものだからである。",
+          "B": "欠陥や何か悪いところのある牛や羊、やぎを、あなたの神、{{divine_name:主|ヤハウェ}}にいけにえとしてささげてはならない。それはあなたの神、{{divine_name:主|ヤハウェ}}にとって忌むべきものだからである。",
+          "R": "傷があったり、どこか悪いところがあったりする牛や羊、やぎを、あなたの神、{{divine_name:主|ヤハウェ}}にささげてはいけない。それは、あなたの神、{{divine_name:主|ヤハウェ}}にとって、ひどく汚らわしいものである。"
+        },
+        "uk": {
+          "L": "Не приноси в жертву {{divine_name:ГОСПОДУ|Ягве}}, твоєму Богові, вола чи вівцю, в якій буде вада, будь-що лихе, бо це гидота для {{divine_name:ГОСПОДА|Ягве}}, твого Бога.",
+          "B": "Не приноси в жертву {{divine_name:ГОСПОДУ|Ягве}}, твоєму Богові, вола, вівцю чи козу, якщо тварина має ваду чи щось із нею не так, бо це гидке для {{divine_name:ГОСПОДА|Ягве}}, твого Бога.",
+          "R": "Не приноси {{divine_name:ГОСПОДУ|Ягве}}, твоєму Богові, бика, вівцю чи козу, з якою щось не так. {{divine_name:ГОСПОДЬ|Ягве}}, твій Бог, ненавидить це."
+        },
+        "id": {
+          "L": "Janganlah engkau mempersembahkan kepada {{divine_name:TUHAN|Yahweh}}, Allahmu, lembu atau domba yang bercacat, sesuatu yang buruk apa pun, sebab hal itu adalah kekejian bagi {{divine_name:TUHAN|Yahweh}}, Allahmu.",
+          "B": "Jangan mempersembahkan kepada {{divine_name:TUHAN|Yahweh}}, Allahmu, lembu atau domba atau kambing yang bercacat atau yang ada sesuatu yang salah padanya, sebab hal itu adalah kekejian bagi {{divine_name:TUHAN|Yahweh}}, Allahmu.",
+          "R": "Jangan mempersembahkan kepada {{divine_name:TUHAN|Yahweh}}, Allah kalian, lembu, domba, atau kambing yang ada cacatnya. {{divine_name:TUHAN|Yahweh}}, Allah kalian, membenci hal itu."
+        },
+        "zh": {
+          "L": "有残疾、有任何缺陷的牛或羊，你不可献给{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}为祭，因为那是{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}所憎恶的。",
+          "B": "牛、绵羊或山羊若有残疾或任何毛病，就不可献给{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}，因为那是{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}所厌恶的。",
+          "R": "不要把有毛病的公牛、绵羊或山羊献给{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}。{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}恨恶这样的事。"
         }
       },
       "decisions": [
@@ -387,6 +407,99 @@
           "reason": "The Hebrew word means one animal of the flock, a sheep or a goat (m3). Hindi has the ordinary pair \"भेड़-बकरी\" for the flock; Literal keeps \"भेड़\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050170010151"
+          ],
+          "choice": "\"忌むべきもの/こと\" (Literal, Balanced), \"ひどく汚らわしいもの/こと\" (Readable) for to'evah, as in 7:25-26, 12:31, 14:3",
+          "alternatives": [
+            "\"いとうべきもの\"",
+            "\"けがらわしいもの\""
+          ],
+          "reason": "The noun \"abomination\" is kept at every level, as Leviticus 18-20 and the rest of Deuteronomy. \"けがらわしいもの\" alone is kept for sheqets, as LEV.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o050170010041"
+          ],
+          "choice": "神 (default), 上帝 (reader setting)",
+          "alternatives": [
+            "上帝 as the default",
+            "a fixed 神"
+          ],
+          "reason": "The word for God is the Chinese reader setting god_term: \"神\" by default, \"上帝\" for readers who choose it. The English has no such setting.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050170010151"
+          ],
+          "choice": "所憎恶的 (L), 所厌恶的 (B)",
+          "alternatives": [
+            "可憎的事"
+          ],
+          "reason": "The to'evah (m2) is what the LORD detests and will not accept: \"憎恶\" at Literal, the everyday \"厌恶\" at Balanced, \"恨恶\" at Readable, as the English moves from \"abomination\" to \"detestable\" to \"hates\". One set through chapters 17-18.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-3",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o050170010051",
+            "o050170010061",
+            "o050170010062",
+            "o050170010071",
+            "o050170010081",
+            "o050170010091",
+            "o050170010092",
+            "o050170010101",
+            "o050170010111",
+            "o050170010121",
+            "o050170010131"
+          ],
+          "choice": "the animal first",
+          "alternatives": [
+            "the verb first"
+          ],
+          "reason": "Chinese puts the long description of the animal at the head of the sentence, as the topic, before \"你不可献\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -487,6 +600,26 @@
           "L": "Если найдётся среди тебя, в одних из твоих ворот, которые {{divine_name:ГОСПОДЬ|Яхве}}, твой Бог, даёт тебе, мужчина или женщина, который делает злое в глазах {{divine_name:ГОСПОДА|Яхве}}, твоего Бога, преступая {{deity_pronoun:его|Его}} завет,",
           "B": "Если среди вас, в одном из городов, которые {{divine_name:ГОСПОДЬ|Яхве}}, твой Бог, даёт тебе, найдётся мужчина или женщина, который делает злое в глазах {{divine_name:ГОСПОДА|Яхве}}, твоего Бога, и нарушает {{deity_pronoun:его|Его}} завет,",
           "R": "Может случиться, что кто-то, мужчина или женщина, в одном из городов, которые {{divine_name:ГОСПОДЬ|Яхве}}, твой Бог, даёт тебе, будет делать то, что {{divine_name:ГОСПОДЬ|Яхве}}, твой Бог, считает злом. Такой человек нарушает {{deity_pronoun:его|Его}} завет."
+        },
+        "ja": {
+          "L": "もし、あなたの神、{{divine_name:主|ヤハウェ}}があなたに与えてくださるあなたの門のうちの一つで、あなたのただ中に、あなたの神、{{divine_name:主|ヤハウェ}}の目に悪とされることを行い、その契約を破る男または女が見いだされ、",
+          "B": "もし、あなたの神、{{divine_name:主|ヤハウェ}}が与えてくださる町の一つで、あなたのうちに、あなたの神、{{divine_name:主|ヤハウェ}}の目に悪とされることを行い、神の契約を破る男または女がいて、",
+          "R": "あなたの神、{{divine_name:主|ヤハウェ}}が与えてくださる町のどこかに、男でも女でも、あなたの神、{{divine_name:主|ヤハウェ}}が悪とされることをする人がいるかもしれない。その人は神の契約を破っているのである。"
+        },
+        "uk": {
+          "L": "Якщо знайдеться серед тебе, в одній із твоїх брам, які {{divine_name:ГОСПОДЬ|Ягве}}, твій Бог, дає тобі, чоловік чи жінка, що робить зло в очах {{divine_name:ГОСПОДА|Ягве}}, твого Бога, порушуючи {{deity_pronoun:його|Його}} завіт,",
+          "B": "Якщо серед тебе, в одному з міст, які {{divine_name:ГОСПОДЬ|Ягве}}, твій Бог, дає тобі, знайдеться чоловік чи жінка, що робить зло в очах {{divine_name:ГОСПОДА|Ягве}}, твого Бога, і порушує {{deity_pronoun:його|Його}} завіт,",
+          "R": "Хтось, чоловік чи жінка, може жити в одному з міст, які {{divine_name:ГОСПОДЬ|Ягве}}, твій Бог, дає тобі, і робити те, що {{divine_name:ГОСПОДЬ|Ягве}}, твій Бог, називає злом. Ця людина порушує {{deity_pronoun:його|Його}} завіт."
+        },
+        "id": {
+          "L": "Apabila di tengah-tengahmu, di salah satu gerbangmu yang diberikan {{divine_name:TUHAN|Yahweh}}, Allahmu, kepadamu, didapati seorang laki-laki atau seorang perempuan yang melakukan apa yang jahat di mata {{divine_name:TUHAN|Yahweh}}, Allahmu, dengan melanggar perjanjian-{{deity_pronoun:nya|Nya}},",
+          "B": "Apabila di tengah-tengahmu, di salah satu kota yang diberikan {{divine_name:TUHAN|Yahweh}}, Allahmu, kepadamu, didapati seorang laki-laki atau perempuan yang melakukan apa yang jahat menurut pandangan {{divine_name:TUHAN|Yahweh}}, Allahmu, dan melanggar perjanjian-{{deity_pronoun:nya|Nya}},",
+          "R": "Mungkin ada seseorang, laki-laki atau perempuan, yang tinggal di salah satu kota yang diberikan {{divine_name:TUHAN|Yahweh}}, Allah kalian, kepada kalian, dan melakukan apa yang dikatakan jahat oleh {{divine_name:TUHAN|Yahweh}}, Allah kalian. Orang itu melanggar perjanjian-{{deity_pronoun:nya|Nya}}."
+        },
+        "zh": {
+          "L": "在你们中间，在{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}赐给你的任何一座城门之内，若发现有男人或女人做{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}眼中看为恶的事，违背了{{deity_pronoun:他|祂}}的约，",
+          "B": "在你们中间，在{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}赐给你的任何一座城里，若发现有男人或女人做{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}看为恶的事，违背了{{deity_pronoun:他|祂}}的约，",
+          "R": "在{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}赐给你的某一座城里，可能有人，不论男女，做了{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}说是邪恶的事。这人就是违背了{{deity_pronoun:他|祂}}的约。"
         }
       },
       "decisions": [
@@ -575,6 +708,70 @@
             "masculine \"करता हो\""
           ],
           "reason": "Hindi verbs agree with the nearer of two subjects joined by \"या\", so \"a man or a woman ... who does\" takes the feminine \"करती हो\", as ordinary Hindi does; it covers both alike. Readable then says \"वह व्यक्ति\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050170020051",
+            "o050170020052"
+          ],
+          "choice": "\"門\" (Literal), \"町\" (Balanced, Readable) for \"your gates\", used for this word through the chunk",
+          "alternatives": [
+            "\"あなたの町々の門\""
+          ],
+          "reason": "The gates stand for the towns; Literal keeps the Hebrew image, Balanced and Readable say towns, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o050170020221",
+            "o050170020222"
+          ],
+          "choice": "\"神の契約\" with no span for {{deity_pronoun:his|His}} covenant",
+          "alternatives": [
+            "\"主の契約\""
+          ],
+          "reason": "Japanese has no deity_pronoun span; the pronoun becomes \"神\", not an unspanned \"主\", as DEU-2 settled.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050170020221"
+          ],
+          "choice": "约 (L, B, R)",
+          "alternatives": [
+            "盟约"
+          ],
+          "reason": "The glossary gives \"约\" (L, B) and \"盟约\" (R); Readable keeps \"约\" here, since \"违背……的约\" is plain in a short sentence.",
           "uncertain": false,
           "footnote": false
         }
@@ -669,6 +866,26 @@
           "L": "и пошёл, и служил другим богам, и поклонялся им, или солнцу, или луне, или всему воинству небесному, чего я не повелевал,",
           "B": "кто пошёл и стал служить другим богам и поклоняться им, или солнцу, или луне, или каким-либо звёздам на небе, чего я не повелевал,",
           "R": "Этот человек идёт и служит другим богам и поклоняется им, или солнцу, или луне, или звёздам. Я никогда не повелевал этого."
+        },
+        "ja": {
+          "L": "そして行って、ほかの神々に仕え、それらにひれ伏し、あるいは太陽や月や天の万象のどれかに[ひれ伏した]なら――それはわたしが命じなかったことである――、",
+          "B": "ほかの神々のもとに行ってそれに仕え、それにひれ伏し、あるいは太陽や月や空の星のどれかにひれ伏したなら――それはわたしが命じなかったことである――、",
+          "R": "その人は、ほかの神々のところへ行って仕え、それを拝む。あるいは太陽や月や星を拝む。わたしは、そんなことを一度も命じたことはない。"
+        },
+        "uk": {
+          "L": "і пішов, і служив іншим богам, і вклонявся їм, або сонцю, або місяцю, або будь-кому з небесного війська, чого я не наказував,",
+          "B": "хто пішов і служив іншим богам і вклонявся їм, або сонцю, або місяцю, або будь-якій із зір на небі, чого я не наказував,",
+          "R": "Ця людина йде й служить іншим богам і вклоняється їм, або сонцю, місяцю чи зорям. Я ніколи такого не наказував."
+        },
+        "id": {
+          "L": "dan ia pergi dan beribadah kepada allah-allah lain dan sujud menyembah kepada mereka, atau kepada matahari atau kepada bulan atau kepada segenap tentara langit, yang tidak aku perintahkan,",
+          "B": "yang telah pergi dan beribadah kepada allah-allah lain dan sujud menyembah kepada mereka, atau kepada matahari atau bulan atau bintang mana pun di langit, hal yang tidak pernah aku perintahkan,",
+          "R": "Orang itu pergi dan beribadah kepada allah-allah lain dan sujud menyembah mereka, atau menyembah matahari, bulan, atau bintang-bintang. Aku tidak pernah memerintahkan hal itu."
+        },
+        "zh": {
+          "L": "去事奉别的神明，向它们下拜，或向太阳，或向月亮，或向天上的万象[下拜]，是我没有吩咐的，",
+          "B": "他去事奉别的神明，向它们下拜，或向太阳、月亮或天上的任何星辰下拜，这是我没有吩咐过的，",
+          "R": "这人去事奉别的神明，向它们下拜，或向太阳、月亮或星星下拜。我从来没有吩咐过这样的事。"
         }
       },
       "decisions": [
@@ -852,6 +1069,108 @@
           "reason": "As Deuteronomy 4:19 has it in Portuguese: Literal keeps the picture of the stars as an army (m1), \"o exército dos céus\"; Balanced and Readable say \"as estrelas\", as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050170030121",
+            "o050170030131",
+            "o050170030132"
+          ],
+          "choice": "\"天の万象\" for \"the host of the heavens\"",
+          "alternatives": [
+            "\"天の軍勢\""
+          ],
+          "reason": "\"万象\" says all the lights of the sky; \"軍勢\" would read as an army of angels.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050170030121"
+          ],
+          "choice": "\"небесне військо\" (L), \"зорі на небі\" (B), \"зорі\" (R)",
+          "alternatives": [
+            "\"небесні світила\""
+          ],
+          "reason": "Literal keeps the Hebrew picture of an army of the sky; the other levels name what it means.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [],
+          "choice": "\"aku\" in lowercase in \"yang tidak aku perintahkan\"",
+          "alternatives": [
+            "\"Aku\" with the deity_pronoun span"
+          ],
+          "reason": "The English leaves \"I\" here without a reader setting; Moses speaks of God's command in his own voice, so Indonesian keeps Moses' \"aku\" in lowercase, with no span.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050170030031",
+            "o050170030041"
+          ],
+          "choice": "别的神明, no god_term span",
+          "alternatives": [
+            "别神"
+          ],
+          "reason": "Other gods are not the one God, so they take no god_term span, as the style guide directs; \"别的神明\" as Exodus 20:3 in Chinese.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050170030121",
+            "o050170030131",
+            "o050170030132"
+          ],
+          "choice": "天上的万象",
+          "alternatives": [
+            "天上的万军"
+          ],
+          "reason": "\"The host of the heavens\" (m1) is \"天上的万象\" at Literal, keeping the picture of a great company in the sky; \"万军\" is kept for the title \"LORD of hosts\". Balanced and Readable say \"星辰\" and \"星星\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -941,6 +1260,26 @@
           "L": "и сообщат тебе, и ты услышишь, то расследуй хорошо; и вот — истина, верно это дело, [что] сделана эта мерзость в Израиле,",
           "B": "и тебе сообщат об этом, ты должен тщательно расследовать дело. Если это правда и обвинение подтвердится, что эта мерзость совершилась в Израиле,",
           "R": "Если кто-то расскажет тебе об этом, ты должен всё тщательно проверить. Может оказаться, что весть правдива и это ужасное дело действительно совершилось в Израиле."
+        },
+        "ja": {
+          "L": "そしてそれがあなたに告げられて、あなたが聞いたなら、あなたはよく調べなければならない。そして見ると、それが真実で、その事が確かであり、この忌むべきことがイスラエルの中で行われたのなら、",
+          "B": "あなたがそれを知らされたなら、よく調べなさい。それが事実であり、この忌むべきことがイスラエルの中で行われたことが確かであれば、",
+          "R": "だれかがそのことをあなたに知らせたら、よく調べなさい。そして、その知らせが本当で、このひどく汚らわしいことが本当にイスラエルの中で行われたとわかるかもしれない。"
+        },
+        "uk": {
+          "L": "і тобі повідомлять, і ти почуєш, то ретельно розслідуй; і ось — правда, певна та справа, вчинено цю гидоту в Ізраїлі,",
+          "B": "і тобі про це повідомлять, то ти мусиш ретельно це розслідувати. Якщо це правда і звинувачення доведене, що таку гидоту вчинено в Ізраїлі,",
+          "R": "Якщо хтось розповість тобі про це, ти мусиш уважно все перевірити. Може виявитися, що звістка правдива і що цю жахливу річ справді вчинено в Ізраїлі."
+        },
+        "id": {
+          "L": "dan hal itu diberitahukan kepadamu dan engkau mendengarnya, engkau harus menyelidikinya dengan teliti; dan lihatlah, jika benar dan pasti hal itu, bahwa kekejian ini telah dilakukan di Israel,",
+          "B": "dan hal itu diberitahukan kepadamu, engkau harus menyelidikinya dengan teliti. Jika ternyata benar dan tuduhan itu terbukti, bahwa kekejian ini telah dilakukan di Israel,",
+          "R": "Jika seseorang memberitahukan hal ini kepada kalian, kalian harus memeriksanya dengan teliti. Mungkin kalian mendapati bahwa kabar itu benar dan bahwa hal yang mengerikan itu sungguh telah dilakukan di Israel."
+        },
+        "zh": {
+          "L": "有人告诉你，你也听见了，你就要仔细查问；看哪，若这是真的，这事确实，在以色列中行了这可憎的事，",
+          "B": "有人把这事告诉了你，你就要仔细查明。如果这是真的，罪名确实成立，在以色列中真有人做了这令人厌恶的事，",
+          "R": "如果有人把这事告诉你，你必须仔细调查。你也许发现消息是真的，在以色列中真有人做了这可怕的事。"
         }
       },
       "decisions": [
@@ -1019,6 +1358,45 @@
           "choice": "[of it] ... then",
           "alternatives": [],
           "reason": "Literal supplies what \"hear\" refers to, and says \"then\" for the \"and\" that starts the main clause after the condition.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050170040061",
+            "o050170040062"
+          ],
+          "choice": "\"そして見ると\" at Literal for vehinneh in a law case",
+          "alternatives": [
+            "\"そして見よ\""
+          ],
+          "reason": "The Hebrew marks the finding with hinneh; Literal keeps it, Balanced and Readable fold it into the condition (if it turns out that).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050170040062"
+          ],
+          "choice": "看哪",
+          "alternatives": [
+            "若"
+          ],
+          "reason": "The particle \"and look\" (m3) is \"看哪\" at Literal, the style guide's form for hinneh; Balanced and Readable fold it into \"如果\" and \"也许发现\".",
           "uncertain": false,
           "footnote": false
         }
@@ -1127,6 +1505,26 @@
           "L": "то выведи того мужчину или ту женщину, которые сделали это злое дело, к твоим воротам, мужчину или женщину, и побей их камнями, и пусть они умрут.",
           "B": "тогда выведи к воротам своего города мужчину или женщину, которые совершили это злое дело, и побей этого человека камнями до смерти.",
           "R": "Тогда выведи мужчину или женщину, которые совершили это злое дело, к воротам своего города. Убей этого человека, бросая в него камни."
+        },
+        "ja": {
+          "L": "あなたは、この悪い事を行ったその男、あるいはその女を、あなたの門へ引き出し、その男あるいはその女を石で打たなければならない。そして彼らは死ぬ。",
+          "B": "あなたは、この悪い事を行ったその男または女を町の門に引き出し、石で打ち殺さなければならない。",
+          "R": "そのときは、この悪いことをした男か女を、町の門の所へ連れ出しなさい。そして、石を投げつけて殺しなさい。"
+        },
+        "uk": {
+          "L": "то виведи того чоловіка чи ту жінку, які вчинили це зле діло, до своїх брам, чоловіка чи жінку, і побий їх камінням, і вони помруть.",
+          "B": "то виведи до міської брами чоловіка чи жінку, які вчинили це зло, і побий цю людину камінням на смерть.",
+          "R": "Тоді виведи чоловіка чи жінку, що вчинили це зло, до брами свого міста. Убий цю людину, закидавши камінням."
+        },
+        "id": {
+          "L": "engkau harus membawa laki-laki itu atau perempuan itu, yang telah melakukan hal yang jahat ini, ke luar ke gerbangmu, laki-laki itu atau perempuan itu, dan engkau harus melempari mereka dengan batu sampai mati.",
+          "B": "engkau harus membawa laki-laki atau perempuan yang telah melakukan kejahatan itu ke luar, ke pintu gerbang kotamu, dan melempari orang itu dengan batu sampai mati.",
+          "R": "Kalau begitu, bawalah laki-laki atau perempuan yang melakukan kejahatan itu ke luar, ke pintu gerbang kota kalian. Bunuhlah orang itu dengan melemparinya dengan batu."
+        },
+        "zh": {
+          "L": "你就要把做了这恶事的那男人或那女人带出来，到你的城门那里，就是那男人或那女人，用石头打他们，他们就要死。",
+          "B": "你就要把做了这恶事的那个男人或女人带到你的城门那里，用石头把那人打死。",
+          "R": "那么就要把做这恶事的男人或女人带到城门外，用石头把这个人打死。"
         }
       },
       "decisions": [
@@ -1241,6 +1639,30 @@
           "reason": "Literal keeps the Hebrew \"gates\", the town gate being the place where cases were judged; Balanced and Readable say towns, or the town gate where the sentence is carried out, as the English levels do. Kept through chapters 17-22.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050170050012",
+            "o050170050151",
+            "o050170050161",
+            "o050170050162"
+          ],
+          "choice": "城门",
+          "alternatives": [
+            "广场"
+          ],
+          "reason": "The town gate is the public place of judgment (m1), so the gate is kept at every level here, as the English keeps it.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1324,6 +1746,26 @@
           "L": "Устами двух свидетелей или трёх свидетелей пусть будет предан смерти умирающий; пусть не будет предан смерти устами одного свидетеля.",
           "B": "Человека можно предать смерти, только если покажут против него двое или трое свидетелей. Слова одного свидетеля недостаточно, чтобы кого-то казнить.",
           "R": "Прежде чем кого-то казнить, двое или трое людей должны сказать, что видели это. Если говорит только один человек, этого недостаточно."
+        },
+        "ja": {
+          "L": "二人の証人、あるいは三人の証人の口によって、死ぬべき者は死刑に処せられる。一人の証人の口によって死刑に処せられてはならない。",
+          "B": "人を死刑にできるのは、二人か三人の証人の証言がある場合だけである。一人の証人の証言だけで、死刑にしてはならない。",
+          "R": "だれかを死刑にするには、それを見た人が二人か三人、そう言わなければならない。見た人が一人だけなら、それでは足りない。"
+        },
+        "uk": {
+          "L": "За словом двох свідків або трьох свідків нехай буде вбитий той, хто має померти; нехай не буде вбитий за словом одного свідка.",
+          "B": "Людину можна стратити тільки тоді, коли свідчать двоє чи троє свідків. Слова одного свідка не досить, щоб когось стратити.",
+          "R": "Двоє чи троє людей мусять засвідчити, що бачили це, перш ніж когось можна буде стратити. Якщо свідчить лише одна людина, цього не досить."
+        },
+        "id": {
+          "L": "Atas keterangan dua orang saksi atau tiga orang saksi orang yang harus mati itu dihukum mati; janganlah ia dihukum mati atas keterangan satu orang saksi.",
+          "B": "Seseorang hanya boleh dihukum mati atas keterangan dua atau tiga orang saksi. Keterangan satu orang saksi tidak cukup untuk menghukum mati siapa pun.",
+          "R": "Harus ada dua atau tiga orang yang mengatakan bahwa mereka melihatnya sebelum seseorang boleh dihukum mati. Jika hanya satu orang yang memberi kesaksian, itu tidak cukup."
+        },
+        "zh": {
+          "L": "要凭两个见证人或三个见证人的口，把那该死的人处死；不可凭一个见证人的口把他处死。",
+          "B": "只有在两三个证人作证的时候，才可以把人处死。只凭一个证人的话，不足以把人处死。",
+          "R": "必须有两三个人说他们亲眼看见，才可以把人处死。如果只有一个人作证，那是不够的。"
         }
       },
       "decisions": [
@@ -1506,6 +1948,73 @@
           "reason": "Literal keeps the Hebrew \"on the mouth of\" as \"устами\", the word Matthew 18:16 uses in this translation when it quotes the same rule from 19:15.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050170060011",
+            "o050170060021"
+          ],
+          "choice": "\"証人の口によって\" (Literal), \"証言\" (Balanced)",
+          "alternatives": [
+            "\"証人の言葉によって\""
+          ],
+          "reason": "Literal keeps the Hebrew idiom \"on the mouth of\", which reads in Japanese as \"by the word of\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050170060011"
+          ],
+          "choice": "\"за словом\"",
+          "alternatives": [
+            "\"на устах\""
+          ],
+          "reason": "The Hebrew says \"on the mouth of\"; \"за словом\" gives the sense in Ukrainian idiom even at Literal.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050170060011",
+            "o050170060021",
+            "o050170060121",
+            "o050170060131",
+            "o050170060031",
+            "o050170060041",
+            "o050170060141",
+            "o050170060151"
+          ],
+          "choice": "凭……见证人的口 (L), 证人 (B, R)",
+          "alternatives": [
+            "根据……的证词"
+          ],
+          "reason": "As Matthew 18:16 and 2 Corinthians 13:1 in Chinese: \"见证人的口\" at Literal, \"证人\" at Balanced and Readable. See 19:15.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1598,6 +2107,26 @@
           "L": "Рука свидетелей пусть будет на нём первой, чтобы умертвить его, а рука всего народа — потом. Так искорени зло из твоей среды.",
           "B": "Свидетели должны первыми поднять руки, чтобы предать этого человека смерти, а потом пусть присоединится весь народ. Так искорени зло из своей среды.",
           "R": "Свидетели должны первыми бросить камни, а потом пусть присоединятся все остальные. Так ты должен избавиться от этого зла среди вас."
+        },
+        "ja": {
+          "L": "証人たちの手が、彼を殺すために最初に彼に向けられ、その後で民全員の手が[向けられなければならない]。こうしてあなたは、あなたのただ中から悪を除き去らなければならない。",
+          "B": "その人を殺すために、まず証人たちが手を下し、続いて民全員が手を下さなければならない。こうして、あなたはあなたの中から悪を取り除く。",
+          "R": "まず、証人たちが最初に石を投げなければならない。それから、ほかのみんなも続かなければならない。こうして、あなたの中から悪を取り除かなければならない。"
+        },
+        "uk": {
+          "L": "Рука свідків нехай буде на ньому першою, щоб його вбити, а рука всього народу — потім. Так ти викорениш зло з-посеред себе.",
+          "B": "Свідки мають першими підняти руки, щоб стратити цю людину, а потім має долучитися весь народ. Так ти викорениш зло з-поміж себе.",
+          "R": "Свідки мусять кинути перші камені, а тоді мусять долучитися всі інші. Так ти мусиш позбутися зла серед себе."
+        },
+        "id": {
+          "L": "Tangan para saksi itulah yang pertama-tama harus bergerak melawan dia untuk membunuhnya, dan sesudah itu tangan seluruh bangsa; dan engkau harus menghapus yang jahat itu dari tengah-tengahmu.",
+          "B": "Para saksi itulah yang pertama harus mengangkat tangan untuk menghukum mati orang itu, dan sesudah itu seluruh bangsa. Dengan begitu engkau harus menghapus kejahatan itu dari tengah-tengahmu.",
+          "R": "Para saksi harus melemparkan batu yang pertama, lalu semua orang lain harus ikut melakukannya. Dengan cara itulah kalian harus menyingkirkan kejahatan dari tengah-tengah kalian."
+        },
+        "zh": {
+          "L": "见证人的手要先下手处死他，然后众百姓的手[才下手]。这样，你就要把那恶从你们中间除掉。",
+          "B": "证人要先动手处死那人，然后所有的百姓才一起动手。这样，你就能把那恶从你们中间除掉。",
+          "R": "证人必须先扔石头，然后其他所有的人都要跟着扔。你必须这样把邪恶从你们中间除掉。"
         }
       },
       "decisions": [
@@ -1760,6 +2289,54 @@
           "reason": "Moses' recurring formula (Hebrew \"you shall burn out the evil from your midst\": 13:5; 17:7, 12; 19:19; 21:21; 22:21, 22, 24; 24:7) is given one Amharic wording: \"ክፉውን ከመካከልህ ታስወግዳለህ\" (L, B; B adds \"በዚህ መንገድ\", in this way), \"ክፉውን ከመካከልህ ማስወገድ ያለብህ በዚህ መንገድ ነው\" (R). \"ማስወገድ\" (to remove, get rid of) fits the evil itself as well as the person who does it; the singular \"you\" follows the Hebrew address to Israel. 1 Corinthians 5:13 quotes the formula as a plural command (\"ክፉውን ከመካከላችሁ አውጡ\"), so its wording differs in form.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050170070111",
+            "o050170070112",
+            "o050170070121",
+            "o050170070122"
+          ],
+          "choice": "\"悪を除き去る\" (Literal), \"悪を取り除く\" (Balanced, Readable) for the refrain, used for it through the chunk",
+          "alternatives": [
+            "\"悪を一掃する\""
+          ],
+          "reason": "A plain verb that keeps the picture of burning away the evil without a harder word.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050170070112",
+            "o050170070122",
+            "o050170070131",
+            "o050170070132"
+          ],
+          "choice": "把那恶从你们中间除掉 (L, B), 把邪恶从你们中间除掉 (R)",
+          "alternatives": [
+            "除灭"
+          ],
+          "reason": "Deuteronomy's refrain (m2), one form per level through chapters 17-21.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1866,6 +2443,26 @@
           "L": "Если слишком трудным для тебя будет дело для суда, между кровью и кровью, между тяжбой и тяжбой и между ударом и ударом, спорные дела в твоих воротах, то встань и поднимись на место, которое изберёт {{divine_name:ГОСПОДЬ|Яхве}}, твой Бог,",
           "B": "Если тебе будет слишком трудно решить дело, касается ли оно пролития крови, судебной тяжбы или увечья, любой спор в твоих городах, тогда отправляйся и поднимись на место, которое изберёт {{divine_name:ГОСПОДЬ|Яхве}}, твой Бог,",
           "R": "Некоторые дела в твоих городах могут оказаться слишком трудными для тебя: дела об убийстве, споры о том, кто прав, или дела о том, что кто-то нанёс другому увечье. Тогда поднимись на место, которое выберет {{divine_name:ГОСПОДЬ|Яхве}}, твой Бог."
+        },
+        "ja": {
+          "L": "もし、あなたの門の内で、血と血の間、訴えと訴えの間、打撃と打撃の間の、争いの事柄で、裁くことがあなたにとって難しすぎる事があるなら、あなたは立って、あなたの神、{{divine_name:主|ヤハウェ}}が選ばれる場所に上って行かなければならない。",
+          "B": "もし、流血、法的な訴え、傷害など、あなたの町で起こる争いの中で、あなたには難しすぎて裁けない事件があるなら、あなたは立って、あなたの神、{{divine_name:主|ヤハウェ}}が選ばれる場所に上って行きなさい。",
+          "R": "あなたの町では、決めるのが難しすぎる事件が起こるかもしれない。人を殺した事件や、どちらが正しいかを争う事件、人にけがをさせた事件などである。そのようなときは、あなたの神、{{divine_name:主|ヤハウェ}}が選ばれる場所に上って行きなさい。"
+        },
+        "uk": {
+          "L": "Якщо буде для тебе надто важкою справа на суді, між кровʼю і кровʼю, між позовом і позовом, і між ударом і ударом, справи суперечок у твоїх брамах, то встань і піди до місця, яке {{divine_name:ГОСПОДЬ|Ягве}}, твій Бог, вибере,",
+          "B": "Якщо справа буде надто важкою для тебе, щоб розсудити її, чи стосується вона кровопролиття, позовів чи тілесних ушкоджень, будь-якої суперечки у твоїх містах, то вирушай і піди до місця, яке {{divine_name:ГОСПОДЬ|Ягве}}, твій Бог, вибере,",
+          "R": "Деякі справи у твоїх містах можуть бути надто важкими для тебе: справи про вбивство, суперечки про те, хто правий, або справи, коли хтось завдав шкоди іншій людині. Тоді піди до місця, яке {{divine_name:ГОСПОДЬ|Ягве}}, твій Бог, вибере."
+        },
+        "id": {
+          "L": "Apabila suatu perkara terlalu sulit bagimu untuk diputuskan, antara darah dan darah, antara hak dan hak, dan antara pukulan dan pukulan, perkara-perkara perselisihan di dalam gerbangmu, engkau harus bangkit dan pergi ke tempat yang akan dipilih {{divine_name:TUHAN|Yahweh}}, Allahmu,",
+          "B": "Apabila ada perkara yang terlalu sulit bagimu untuk diputuskan, entah tentang penumpahan darah, tuntutan hak, atau penganiayaan, perselisihan apa pun di kotamu, engkau harus berangkat dan pergi ke tempat yang akan dipilih {{divine_name:TUHAN|Yahweh}}, Allahmu,",
+          "R": "Mungkin ada perkara di kota kalian yang terlalu sulit untuk kalian putuskan: perkara pembunuhan, perkara tentang siapa yang berhak dalam suatu pertengkaran, atau perkara seseorang yang melukai orang lain. Kalau begitu, pergilah ke tempat yang akan dipilih {{divine_name:TUHAN|Yahweh}}, Allah kalian."
+        },
+        "zh": {
+          "L": "若在你的城门之内有争讼的事，在血与血之间，在诉讼与诉讼之间，在伤害与伤害之间，是你难以判断的，你就要起来，上到{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}所要选择的地方，",
+          "B": "若在你的城里有难以判断的案件，无论是流血的案子、争讼的案子还是伤人的案子，任何一种纠纷，你就要动身，上到{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}将要选择的地方，",
+          "R": "你城里的有些案件可能太难判决，比如杀人的案件、谁有理的争吵，或者有人伤害别人的案件。那么你就要上到{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}将要选择的地方。"
         }
       },
       "decisions": [
@@ -2091,6 +2688,26 @@
           "L": "и приди к священникам-левитам и к судье, который будет в те дни, и спроси, и они объявят тебе слово суда.",
           "B": "и приди к священникам-левитам и к судье, который будет служить в то время. Спроси их о деле, и они объявят тебе решение.",
           "R": "Иди к священникам из колена Левия и к судье, который будет служить в то время. Спроси их, и они скажут тебе своё решение."
+        },
+        "ja": {
+          "L": "そしてあなたは、祭司たち、レビ人のところと、その日々にいる裁き人のところに行き、尋ねなければならない。そうすれば彼らは裁きの言葉をあなたに告げる。",
+          "B": "レビ人である祭司たちと、そのときに務めについている裁き人のところに行って尋ねなさい。彼らはあなたに判決を告げる。",
+          "R": "レビ族の祭司たちと、そのときに裁判をしている裁き人のところに行って、尋ねなさい。彼らは、どう決めたかをあなたに伝える。"
+        },
+        "uk": {
+          "L": "і прийди до священників-левитів і до судді, який буде в ті дні, і розпитай, і вони сповістять тобі слово суду.",
+          "B": "і піди до священників-левитів і до судді, який буде на службі в той час. Запитай їх про справу, і вони оголосять тобі вирок.",
+          "R": "Піди до священників, що походять із племені Левія, і до судді, який служитиме тоді. Запитай їх, і вони скажуть тобі своє рішення."
+        },
+        "id": {
+          "L": "dan pergi kepada imam-imam orang Lewi dan kepada hakim yang ada pada waktu itu, dan menanyakannya, dan mereka akan memberitahukan kepadamu keputusan perkara itu.",
+          "B": "dan pergilah kepada imam-imam orang Lewi dan kepada hakim yang bertugas pada waktu itu. Tanyakanlah perkara itu kepada mereka, dan mereka akan memberitahukan keputusannya kepadamu.",
+          "R": "Pergilah kepada para imam, yang berasal dari suku Lewi, dan kepada hakim yang bertugas pada waktu itu. Bertanyalah kepada mereka, dan mereka akan memberitahukan keputusan mereka kepada kalian."
+        },
+        "zh": {
+          "L": "去见祭司，就是利未人，和那时在任的审判官，向他们求问，他们就会把判决的话告诉你。",
+          "B": "去见利未支派的祭司和当时在任的审判官，向他们求问，他们就会把判决告诉你。",
+          "R": "去见来自利未支派的祭司和当时担任法官的人。去问他们，他们会告诉你他们的决定。"
         }
       },
       "decisions": [
@@ -2291,6 +2908,89 @@
           "reason": "The priests who come from the tribe of Levi (m1). Readable says \"колено\" here as part of a name of descent; the note's \"племя\" would read oddly with Левия.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050170090032",
+            "o050170090042",
+            "o050170090062"
+          ],
+          "choice": "\"祭司たち、レビ人\" (Literal), \"レビ人である祭司たち\" (Balanced), \"レビ族の祭司たち\" (Readable); shofet \"裁き人\" at every level",
+          "alternatives": [
+            "\"レビ人の祭司\"",
+            "\"裁判官\""
+          ],
+          "reason": "The appositive priests-Levites is kept at Literal and made one phrase at Balanced; \"裁き人\" as the NUM drafts' さばき人 in kanji, kept for shofet through the chunk.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050170090032"
+          ],
+          "choice": "\"священники-левити\" (L, B), \"священники, що походять із племені Левія\" (R)",
+          "alternatives": [
+            "\"левитські священники\""
+          ],
+          "reason": "The phrase names the priests of the tribe of Levi; the hyphen keeps the two nouns side by side as in the Hebrew.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [],
+          "choice": "\"imam-imam orang Lewi\" (L, B); \"para imam, yang berasal dari suku Lewi\" (R)",
+          "alternatives": [],
+          "reason": "The Hebrew \"the priests, the Levites\" is kept as a title at Literal and Balanced; Readable explains it, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050170090032",
+            "o050170090042"
+          ],
+          "choice": "祭司，就是利未人 (L), 利未支派的祭司 (B), 来自利未支派的祭司 (R)",
+          "alternatives": [
+            "利未人祭司"
+          ],
+          "reason": "\"The priests, the Levites\" (m1) are the priests who come from Levi: Literal keeps the two nouns in apposition, Balanced and Readable say it in one phrase. One form through chapters 17-21.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2385,6 +3085,26 @@
           "L": "И поступи по слову, которое они объявят тебе с того места, которое изберёт {{divine_name:ГОСПОДЬ|Яхве}}, и старайся исполнять всё, чему они научат тебя.",
           "B": "Затем исполни решение, которое они объявят тебе там, на месте, которое изберёт {{divine_name:ГОСПОДЬ|Яхве}}. Старательно следуй всем их указаниям.",
           "R": "Потом сделай то, что они скажут тебе там, на месте, которое выберет {{divine_name:ГОСПОДЬ|Яхве}}. Старательно исполняй всё, чему они тебя научат."
+        },
+        "ja": {
+          "L": "そしてあなたは、{{divine_name:主|ヤハウェ}}が選ばれるその場所から彼らがあなたに告げる言葉の口のとおりに行い、彼らがあなたに教えるすべてのとおりに、注意して行わなければならない。",
+          "B": "{{divine_name:主|ヤハウェ}}が選ばれるその場所で彼らが告げる判決に従って行い、彼らが指示することをすべて、そのとおりに注意して行いなさい。",
+          "R": "{{divine_name:主|ヤハウェ}}が選ばれるその場所で彼らが言ったとおりにしなさい。彼らが教えることを、すべて注意して守りなさい。"
+        },
+        "uk": {
+          "L": "І вчини за словом, яке вони сповістять тобі з того місця, яке вибере {{divine_name:ГОСПОДЬ|Ягве}}, і пильнуй виконувати все, чого вони навчать тебе.",
+          "B": "Тоді виконай вирок, який вони оголосять тобі там, у місці, яке вибере {{divine_name:ГОСПОДЬ|Ягве}}. Пильнуй точно виконувати всі їхні вказівки.",
+          "R": "Тоді зроби те, що вони скажуть тобі там, у місці, яке вибере {{divine_name:ГОСПОДЬ|Ягве}}. Пильнуй виконувати все, чого вони тебе навчать."
+        },
+        "id": {
+          "L": "Dan engkau harus berbuat sesuai dengan keputusan yang diberitahukan mereka kepadamu dari tempat yang akan dipilih {{divine_name:TUHAN|Yahweh}} itu, dan engkau harus berhati-hati untuk melakukan sesuai dengan segala yang diajarkan mereka kepadamu.",
+          "B": "Laksanakanlah keputusan yang mereka beritahukan kepadamu di tempat yang akan dipilih {{divine_name:TUHAN|Yahweh}} itu. Lakukanlah dengan setia segala petunjuk mereka.",
+          "R": "Lalu lakukanlah apa yang mereka katakan kepada kalian di sana, di tempat yang akan dipilih {{divine_name:TUHAN|Yahweh}}. Lakukanlah dengan teliti semua yang mereka ajarkan kepada kalian."
+        },
+        "zh": {
+          "L": "你要照他们从{{divine_name:上主|雅威}}所要选择的那地方告诉你的话去做；凡他们所指示你的，你都要谨守遵行。",
+          "B": "要照他们在{{divine_name:上主|雅威}}将要选择的地方向你宣布的判决去做。要谨慎，完全照他们的指示去行。",
+          "R": "你要在{{divine_name:上主|雅威}}将要选择的那个地方，照他们告诉你的去做。要小心遵行他们教你做的一切。"
         }
       },
       "decisions": [
@@ -2549,6 +3269,26 @@
           "L": "По наставлению, которому они научат тебя, и по суду, который они скажут тебе, поступай; не уклоняйся от слова, которое они объявят тебе, ни направо, ни налево.",
           "B": "Поступай по наставлению, которое они тебе дадут, и по решению, которое они тебе объявят. Не отступай от их приговора ни вправо, ни влево.",
           "R": "Следуй их наставлению и делай то, что они решат. Ни в чём не отступай от того, что они тебе скажут."
+        },
+        "ja": {
+          "L": "彼らがあなたに教える教えの口のとおりに、また彼らがあなたに言う裁きのとおりに、あなたは行わなければならない。彼らがあなたに告げる言葉から、右にも左にもそれてはならない。",
+          "B": "彼らが与える教えと、彼らが告げる判決に従って行いなさい。彼らが告げる判決から、右にも左にもそれてはならない。",
+          "R": "彼らが教えることに従い、彼らが決めたとおりにしなさい。彼らの言うことから、少しもそれてはいけない。"
+        },
+        "uk": {
+          "L": "За настановою, якої вони навчать тебе, і за рішенням, яке вони скажуть тобі, вчини; не відхиляйся від слова, яке вони сповістять тобі, ні праворуч, ні ліворуч.",
+          "B": "Дій за настановою, яку вони дадуть тобі, і за рішенням, яке вони оголосять тобі. Не відхиляйся від вироку, який вони оголосять тобі, ні праворуч, ні ліворуч.",
+          "R": "Виконуй їхнє навчання й роби те, що вони вирішать. Ні в чому не відступай від того, що вони тобі скажуть."
+        },
+        "id": {
+          "L": "Sesuai dengan pengajaran yang diajarkan mereka kepadamu dan sesuai dengan keputusan yang dikatakan mereka kepadamu engkau harus berbuat; janganlah engkau menyimpang dari perkataan yang diberitahukan mereka kepadamu, ke kanan atau ke kiri.",
+          "B": "Bertindaklah menurut pengajaran yang mereka berikan kepadamu dan keputusan yang mereka nyatakan kepadamu. Jangan menyimpang dari keputusan yang mereka beritahukan kepadamu, ke kanan atau ke kiri.",
+          "R": "Ikutilah ajaran yang mereka berikan dan lakukanlah apa yang mereka putuskan. Jangan menyimpang sedikit pun dari apa yang mereka katakan kepada kalian."
+        },
+        "zh": {
+          "L": "你要照他们所教导你的训诲、照他们所告诉你的判决去做；他们向你宣告的话，你不可偏离，不可偏左也不可偏右。",
+          "B": "要照他们给你的指示和他们宣布的裁决去行。他们向你宣告的判决，你不可偏离，不偏左也不偏右。",
+          "R": "要照他们给你的教导去做，照他们的决定去行。他们告诉你的，你一点也不要违背。"
         }
       },
       "decisions": [
@@ -2635,6 +3375,28 @@
             "\"가르침\""
           ],
           "reason": "Here torah is the priests' direction on one case; the Literal keeps the usual word, the Balanced says \"direction\", as the meaning decision reads it.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050170110131",
+            "o050170110191",
+            "o050170110202"
+          ],
+          "choice": "不可偏左也不可偏右 (L), 不偏左也不偏右 (B)",
+          "alternatives": [
+            "左右偏离"
+          ],
+          "reason": "\"Not turn aside right or left\" (m3) keeps its picture at Literal and Balanced; Readable gives the sense, as the English does. The same at verse 20.",
           "uncertain": false,
           "footnote": false
         }
@@ -2742,6 +3504,26 @@
           "L": "А человек, который поступит дерзко, не слушая священника, стоящего там, чтобы служить {{divine_name:ГОСПОДУ|Яхве}}, твоему Богу, или судью, — тот человек пусть умрёт. Так искорени зло из Израиля.",
           "B": "Тот, кто дерзко откажется слушать священника, который стоит там на служении {{divine_name:ГОСПОДУ|Яхве}}, твоему Богу, или судью, должен умереть. Так искорени зло из Израиля.",
           "R": "Может случиться, что кто-то слишком горд, чтобы слушать священника, который служит там {{divine_name:ГОСПОДУ|Яхве}}, твоему Богу, или судью. Такой человек должен умереть. Так ты должен избавиться от зла в Израиле."
+        },
+        "ja": {
+          "L": "そして、思い上がって、そこであなたの神、{{divine_name:主|ヤハウェ}}に仕えるために立っている祭司にも、裁き人にも聞き従わない者があれば、その者は死ななければならない。こうしてあなたは、イスラエルから悪を除き去らなければならない。",
+          "B": "思い上がって、そこであなたの神、{{divine_name:主|ヤハウェ}}に仕えている祭司や裁き人に聞き従わない者は、死ななければならない。こうして、あなたはイスラエルから悪を取り除く。",
+          "R": "高ぶって、そこであなたの神、{{divine_name:主|ヤハウェ}}に仕えている祭司や、裁き人の言うことを聞かない人がいるかもしれない。その人は死ななければならない。こうして、イスラエルから悪を取り除かなければならない。"
+        },
+        "uk": {
+          "L": "А {{gender:та людина, яка діятиме|той чоловік, який діятиме}} зухвало, не слухаючи священника, що стоїть там, щоб служити {{divine_name:ГОСПОДУ|Ягве}}, твоєму Богові, або судді, — {{gender:та людина|той чоловік}} нехай помре. Так ти викорениш зло з Ізраїлю.",
+          "B": "Кожен, хто зухвало відмовиться слухати священника, що стоїть там, служачи {{divine_name:ГОСПОДУ|Ягве}}, твоєму Богові, або суддю, мусить померти. Так ти викорениш зло з Ізраїлю.",
+          "R": "Хтось може бути надто гордим, щоб слухати священника, який служить там {{divine_name:ГОСПОДУ|Ягве}}, твоєму Богові, або суддю. Така людина мусить померти. Так ти мусиш позбутися зла в Ізраїлі."
+        },
+        "id": {
+          "L": "Dan orang yang berlaku angkuh dengan tidak mendengarkan imam, yang berdiri di sana untuk melayani {{divine_name:TUHAN|Yahweh}}, Allahmu, atau hakim, orang itu harus mati; dan engkau harus menghapus yang jahat itu dari Israel.",
+          "B": "Siapa pun yang dengan angkuh menolak mendengarkan imam yang berdiri di sana melayani {{divine_name:TUHAN|Yahweh}}, Allahmu, atau hakim itu, harus mati. Dengan begitu engkau harus menghapus kejahatan itu dari Israel.",
+          "R": "Mungkin ada orang yang terlalu sombong untuk mendengarkan imam yang melayani {{divine_name:TUHAN|Yahweh}}, Allah kalian, di sana, atau hakim itu. Orang itu harus mati. Dengan cara itulah kalian harus menyingkirkan kejahatan dari Israel."
+        },
+        "zh": {
+          "L": "若有人擅自行事，不听从那在那里侍立、事奉{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}的祭司，或不听从审判官，那人就要死。这样，你就要把那恶从以色列中除掉。",
+          "B": "若有人狂妄自大，不肯听从在那里事奉{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}的祭司，或不听从审判官，这人就必须处死。这样，你就能把那恶从以色列中除掉。",
+          "R": "有人可能太骄傲，不肯听从在那里事奉{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}的祭司或法官。这人必须处死。你必须这样把邪恶从以色列中除掉。"
         }
       },
       "decisions": [
@@ -2942,6 +3724,67 @@
           "reason": "Ish here means anyone, man or woman (m3). Russian \"человек\" already includes both, so the English gender span at Literal has no Russian counterpart, as the style guide says.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o050170120012",
+            "o050170120013",
+            "o050170120191",
+            "o050170120192"
+          ],
+          "choice": "\"者\" with no gender span for \"the man\" (ha'ish, anyone)",
+          "alternatives": [
+            "{{gender:人|男}}"
+          ],
+          "reason": "Japanese \"者\" already covers a man or a woman, so the English span is not needed.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o050170120013"
+          ],
+          "choice": "\"{{gender:та людина, яка діятиме|той чоловік, який діятиме}}\"",
+          "alternatives": [
+            "\"людина\" with no span"
+          ],
+          "reason": "The English Literal puts \"the man\" under the gender setting; the Ukrainian does the same, with the relative pronoun inside each option so it agrees. Balanced and Readable say \"кожен\" and \"така людина\", which already include women.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o050170120013",
+            "o050170120192"
+          ],
+          "choice": "人 (no gender span)",
+          "alternatives": [
+            "男人"
+          ],
+          "reason": "The English Literal has a gender span for \"the man\", since anyone is meant (m3). Chinese \"人\" is already inclusive, so no span is needed.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3021,6 +3864,26 @@
           "L": "И весь народ услышит и убоится, и не будут больше поступать дерзко.",
           "B": "Весь народ услышит об этом и испугается, и больше никто не будет поступать дерзко.",
           "R": "Тогда весь народ узнает об этом и испугается. И никто больше не посмеет так гордиться."
+        },
+        "ja": {
+          "L": "そして民はみな聞いて恐れ、もう二度と思い上がったことはしない。",
+          "B": "民はみなこれを聞いて恐れ、二度と思い上がったふるまいをしなくなる。",
+          "R": "そうすれば、民はみなそれを聞いて恐れる。そして、二度とそんなに高ぶったことはしなくなる。"
+        },
+        "uk": {
+          "L": "І весь народ почує і злякається, і більше не будуть діяти зухвало.",
+          "B": "Увесь народ почує про це й злякається, і вони більше не діятимуть зухвало.",
+          "R": "Тоді весь народ почує про це й злякається. Вони не посміють більше бути такими гордими."
+        },
+        "id": {
+          "L": "Dan seluruh bangsa akan mendengar dan menjadi takut, dan tidak akan berlaku angkuh lagi.",
+          "B": "Seluruh bangsa akan mendengarnya dan menjadi takut, dan mereka tidak akan berlaku angkuh lagi.",
+          "R": "Lalu seluruh bangsa akan mendengar tentang hal itu dan menjadi takut. Mereka tidak akan berani bersikap sombong lagi."
+        },
+        "zh": {
+          "L": "众百姓都要听见而害怕，不再擅自行事。",
+          "B": "所有的百姓听见了就会害怕，不敢再狂妄行事。",
+          "R": "这样所有的百姓都会听说这事而害怕，再也不敢那么骄傲了。"
         }
       },
       "decisions": [
@@ -3168,6 +4031,26 @@
           "L": "Когда ты придёшь в землю, которую {{divine_name:ГОСПОДЬ|Яхве}}, твой Бог, даёт тебе, и овладеешь ею, и поселишься в ней, и скажешь: “Поставлю над собой царя, как все народы, которые вокруг меня”,",
           "B": "Когда ты войдёшь в землю, которую {{divine_name:ГОСПОДЬ|Яхве}}, твой Бог, даёт тебе, овладеешь ею и будешь жить в ней, и тогда скажешь: “Поставим над собой царя, как у всех народов вокруг нас”,",
           "R": "Ты войдёшь в землю, которую {{divine_name:ГОСПОДЬ|Яхве}}, твой Бог, даёт тебе. Ты займёшь её и будешь там жить. Потом ты можешь сказать: “Мы хотим, чтобы нами правил царь, как у всех народов вокруг нас.”"
+        },
+        "ja": {
+          "L": "あなたが、あなたの神、{{divine_name:主|ヤハウェ}}があなたに与えてくださる地に入って、それを所有し、そこに住むようになり、そして『わたしの周りのすべての国々のように、わたしの上に王を立てよう』と言うとき、",
+          "B": "あなたが、あなたの神、{{divine_name:主|ヤハウェ}}が与えてくださる地に入り、それを所有してそこに住むようになったとき、もし『周りのすべての国々のように、わたしたちの上に王を立てよう』と言うなら、",
+          "R": "あなたは、あなたの神、{{divine_name:主|ヤハウェ}}が与えてくださる土地に入り、そこを自分のものにして住むようになる。そのとき、『周りのすべての国のように、わたしたちを治める王がほしい』と言うかもしれない。"
+        },
+        "uk": {
+          "L": "Коли ти прийдеш у край, який {{divine_name:ГОСПОДЬ|Ягве}}, твій Бог, дає тобі, і заволодієш ним, і житимеш у ньому, і скажеш: “Поставлю над собою царя, як усі народи, що довкола мене,”",
+          "B": "Коли ти ввійдеш у край, який {{divine_name:ГОСПОДЬ|Ягве}}, твій Бог, дає тобі, заволодієш ним і житимеш там, і тоді скажеш: “Поставмо над собою царя, як усі народи, що довкола нас,”",
+          "R": "Ти ввійдеш у край, який {{divine_name:ГОСПОДЬ|Ягве}}, твій Бог, дає тобі. Ти заволодієш ним і житимеш там. Тоді ти можеш сказати: “Ми хочемо, щоб над нами панував цар, як у всіх народів довкола нас.”"
+        },
+        "id": {
+          "L": "Apabila engkau telah masuk ke negeri yang diberikan {{divine_name:TUHAN|Yahweh}}, Allahmu, kepadamu, dan engkau telah mendudukinya dan diam di sana, lalu engkau berkata, 'Aku mau mengangkat raja atas diriku, seperti segala bangsa yang di sekelilingku,'",
+          "B": "Setelah engkau masuk ke negeri yang diberikan {{divine_name:TUHAN|Yahweh}}, Allahmu, kepadamu, dan engkau telah mendudukinya dan tinggal di sana, lalu engkau berkata, 'Kami mau mengangkat seorang raja atas kami, seperti segala bangsa di sekeliling kami,'",
+          "R": "Kalian akan masuk ke negeri yang diberikan {{divine_name:TUHAN|Yahweh}}, Allah kalian, kepada kalian. Kalian akan merebutnya dan tinggal di sana. Lalu mungkin kalian berkata, 'Kami mau seorang raja memerintah kami, seperti semua bangsa di sekeliling kami.'"
+        },
+        "zh": {
+          "L": "你进入{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}赐给你的地，得了它为业，住在那里，你若说：‘我要像我四围的列国一样，立一个王治理我’，",
+          "B": "你进入{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}赐给你的地，占领了它，在那里住下以后，你若说：‘我们要像四周的各国一样，立一个王来治理我们’，",
+          "R": "你们将要进入{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}赐给你的土地。你们要把那地据为己有，住在那里。那时你们可能会说：‘我们要像周围的所有国家一样，有一个王来统治我们。’"
         }
       },
       "decisions": [
@@ -3323,6 +4206,69 @@
           "reason": "As in the Amharic Genesis, the nations around Israel are \"ሕዝቦች\" (peoples); \"አሕዛብ\" is kept for the Gentiles of the New Testament.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050170140141",
+            "o050170140151",
+            "o050170140152"
+          ],
+          "choice": "\"わたしたち\" for the nation's \"me\" at Balanced and Readable; \"わたし\" at Literal",
+          "alternatives": [
+            "\"わたし\" at every level"
+          ],
+          "reason": "The people speak as one person in Hebrew; Balanced and Readable say \"we\", as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050170140141"
+          ],
+          "choice": "\"Поставлю над собою царя, як усі народи, що довкола мене\"",
+          "alternatives": [
+            "\"Поставмо ... нас\""
+          ],
+          "reason": "Literal keeps the nation speaking as one person, \"я\"; Balanced and Readable say \"ми\", as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050170140141",
+            "o050170140152",
+            "o050170140202"
+          ],
+          "choice": "我们 (B, R)",
+          "alternatives": [
+            "我"
+          ],
+          "reason": "The people speak as one person, \"me\" (m2): Literal keeps \"我\"; Balanced and Readable say \"我们\", as the English says \"us\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3423,6 +4369,26 @@
           "L": "поставь, поставь над собой царя, которого изберёт {{divine_name:ГОСПОДЬ|Яхве}}, твой Бог. Из среды твоих братьев поставь над собой царя; не можешь ставить над собой человека-иноземца, который не брат тебе.",
           "B": "ты можешь поставить над собой царя, но только того, кого изберёт {{divine_name:ГОСПОДЬ|Яхве}}, твой Бог. Поставь над собой царя из своих соплеменников; нельзя ставить над собой иноземца, который не из твоего народа.",
           "R": "Ты можешь иметь царя, но это должен быть тот, кого выберет {{divine_name:ГОСПОДЬ|Яхве}}, твой Бог. Он должен быть израильтянином, одним из твоего народа. Не делай своим царём человека из другой страны."
+        },
+        "ja": {
+          "L": "あなたは、あなたの神、{{divine_name:主|ヤハウェ}}が選ばれる者を、必ずあなたの上に王として立てることができる。あなたの兄弟たちのうちから、あなたの上に王を立てなければならない。あなたの兄弟でない外国人を、あなたの上に立てることはできない。",
+          "B": "あなたは自分の上に王を立ててもよい。ただしそれは、あなたの神、{{divine_name:主|ヤハウェ}}が選ばれる者でなければならない。同胞のイスラエル人の中から王を立てなさい。あなたと同じ民でない外国人を、自分の上に立ててはならない。",
+          "R": "王を立ててもよい。けれども、それはあなたの神、{{divine_name:主|ヤハウェ}}が選ばれる人でなければならない。王は、あなたと同じイスラエル人でなければならない。よその国の人を王にしてはいけない。"
+        },
+        "uk": {
+          "L": "то конче постав над собою царя, якого вибере {{divine_name:ГОСПОДЬ|Ягве}}, твій Бог. З-посеред своїх братів постав над собою царя; не можна тобі ставити над собою чужинця, який не є твоїм братом.",
+          "B": "то можеш поставити над собою царя, але це має бути той, кого вибере {{divine_name:ГОСПОДЬ|Ягве}}, твій Бог. Постав над собою царя з-поміж своїх братів-ізраїльтян; не можна ставити над собою чужинця, когось, хто не з твого народу.",
+          "R": "Ти можеш мати царя, але він має бути тим, кого вибере {{divine_name:ГОСПОДЬ|Ягве}}, твій Бог. Він має бути ізраїльтянином, одним із твого народу. Не роби чужоземця своїм царем."
+        },
+        "id": {
+          "L": "engkau boleh benar-benar mengangkat raja atas dirimu, yang dipilih {{divine_name:TUHAN|Yahweh}}, Allahmu; dari antara saudara-saudaramu haruslah engkau mengangkat raja atas dirimu; engkau tidak boleh mengangkat atas dirimu seorang asing yang bukan saudaramu.",
+          "B": "engkau boleh mengangkat seorang raja atas dirimu, tetapi harus raja yang dipilih {{divine_name:TUHAN|Yahweh}}, Allahmu. Angkatlah atas dirimu seorang raja dari antara saudara-saudaramu sebangsa; engkau tidak boleh mengangkat atas dirimu seorang asing yang bukan saudaramu.",
+          "R": "Kalian boleh mempunyai raja, tetapi ia harus orang yang dipilih {{divine_name:TUHAN|Yahweh}}, Allah kalian. Ia harus orang Israel, salah seorang dari bangsa kalian sendiri. Jangan menjadikan orang asing raja kalian."
+        },
+        "zh": {
+          "L": "你总可以立{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}所选择的人作王治理你。你要从你的弟兄中立一个王治理你；不是你弟兄的外族人，你不可立他治理你。",
+          "B": "你可以立王来治理你，但必须是{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}所选择的人。要从你的以色列同胞中立一个王治理你；不可立外族人，就是不属于你同胞的人，来治理你。",
+          "R": "你们可以有一个王，但他必须是{{divine_name:上主|雅威}}你的{{god_term:神|上帝}}所选择的人。他必须是以色列人，是你们自己的同胞。不要让外国人作你们的王。"
         }
       },
       "decisions": [
@@ -3595,6 +4561,48 @@
           "reason": "The brothers are fellow Israelites. Literal keeps \"ወንድሞች\"; Balanced and Readable say \"ወገኖች\", as the Amharic of Acts 3:22 and 7:37 (Balanced) does when it quotes Deuteronomy 18:15.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050170150111",
+            "o050170150112"
+          ],
+          "choice": "\"同胞のイスラエル人\" (Balanced), \"同じイスラエル人\" (Readable) for \"your brothers\"; Literal \"兄弟たち\"",
+          "alternatives": [
+            "\"同胞\" alone"
+          ],
+          "reason": "The brothers are fellow Israelites; no gender span is needed, since the king is the point.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050170150011"
+          ],
+          "choice": "\"цар\"",
+          "alternatives": [
+            "\"король\""
+          ],
+          "reason": "\"Цар\" is the established word for the kings of Israel; \"король\" belongs to European history.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3694,6 +4702,26 @@
           "L": "Только пусть он не умножает себе коней и не возвращает народ в Египет, чтобы умножить коней, потому что {{divine_name:ГОСПОДЬ|Яхве}} сказал вам: “Не возвращайтесь больше этой дорогой.”",
           "B": "Но он не должен заводить себе множество коней или отправлять народ обратно в Египет, чтобы добыть больше коней, потому что {{divine_name:ГОСПОДЬ|Яхве}} сказал вам: “Никогда больше не возвращайтесь этим путём.”",
           "R": "Но царь не должен заводить себе много коней. Он не должен посылать людей обратно в Египет за конями. {{divine_name:ГОСПОДЬ|Яхве}} сказал вам: “Никогда больше не возвращайтесь туда.”"
+        },
+        "ja": {
+          "L": "ただ、彼は自分のために馬を増やしてはならない。また、馬を増やすために民をエジプトへ戻らせてはならない。{{divine_name:主|ヤハウェ}}があなたがたに『あなたがたは二度とこの道を戻ってはならない』と言われたからである。",
+          "B": "ただし、王は自分のために多くの馬を集めてはならない。馬を増やすために、民をエジプトへ送り返してもならない。{{divine_name:主|ヤハウェ}}があなたがたに『あなたがたは、二度とその道を戻ってはならない』と言われたからである。",
+          "R": "けれども、王は自分のために馬をたくさん手に入れてはいけない。もっと馬を手に入れるために、人々をエジプトへ送り返してはいけない。{{divine_name:主|ヤハウェ}}が、あなたたちに『二度とそこへ戻ってはいけない』と言われたのである。"
+        },
+        "uk": {
+          "L": "Тільки нехай він не множить собі коней і нехай не повертає народ до Єгипту, щоб множити коней, бо {{divine_name:ГОСПОДЬ|Ягве}} сказав вам: “Не повертайтеся більше цією дорогою.”",
+          "B": "Але він не повинен заводити собі багато коней чи відсилати народ назад до Єгипту, щоб роздобути ще коней, бо {{divine_name:ГОСПОДЬ|Ягве}} сказав вам: “Ніколи більше не повертайтеся тією дорогою.”",
+          "R": "Але цар не повинен заводити собі багато коней. Він не повинен відсилати людей назад до Єгипту, щоб роздобути ще коней. {{divine_name:ГОСПОДЬ|Ягве}} сказав вам: “Ніколи більше не повертайтеся туди.”"
+        },
+        "id": {
+          "L": "Hanya, janganlah ia memperbanyak kuda baginya, dan janganlah ia membuat bangsa itu kembali ke Mesir untuk memperbanyak kuda, sebab {{divine_name:TUHAN|Yahweh}} telah berfirman kepada kalian, 'Kalian tidak boleh kembali lagi melalui jalan ini.'",
+          "B": "Tetapi ia tidak boleh mengumpulkan banyak kuda bagi dirinya, atau menyuruh rakyat kembali ke Mesir untuk mendapat lebih banyak kuda, sebab {{divine_name:TUHAN|Yahweh}} telah berfirman kepada kalian, 'Jangan sekali-kali kembali lagi melalui jalan itu.'",
+          "R": "Tetapi raja itu tidak boleh mempunyai banyak kuda. Ia tidak boleh menyuruh orang kembali ke Mesir untuk mendapat lebih banyak kuda. {{divine_name:TUHAN|Yahweh}} sudah berfirman kepada kalian, 'Jangan pernah kembali ke sana lagi.'"
+        },
+        "zh": {
+          "L": "只是王不可为自己增添马匹，也不可为了增添马匹而使百姓回埃及去，因为{{divine_name:上主|雅威}}曾对你们说：‘你们不可再回那条路去。’",
+          "B": "但是王不可为自己积聚大量的马，也不可为了得到更多的马而叫百姓回埃及去，因为{{divine_name:上主|雅威}}曾告诉你们：‘你们绝不可再走回那条路。’",
+          "R": "但是王不可为自己弄来很多马。他不可为了得到更多的马，就派人回埃及去。{{divine_name:上主|雅威}}告诉过你们：‘永远不要再回那里去。’"
         }
       },
       "decisions": [
@@ -3895,6 +4923,27 @@
           "reason": "Moses addresses Israel mostly as \"you\" singular (\"አንተ\" forms), and the Amharic follows each turn to the plural, which English cannot show.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050170160161"
+          ],
+          "choice": "\"あなたがた\" (Literal, Balanced), \"あなたたち\" (Readable) for the plural \"to you\" in the quoted word",
+          "alternatives": [
+            "\"あなた\""
+          ],
+          "reason": "The Hebrew changes here to the plural; Japanese follows the number.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3982,6 +5031,26 @@
           "L": "И пусть он не умножает себе жён, чтобы не уклонилось его сердце; и серебра и золота пусть не умножает себе очень.",
           "B": "Он не должен брать себе много жён, иначе его сердце отклонится. И он не должен накапливать для себя огромное количество серебра и золота.",
           "R": "Он не должен жениться на многих женщинах, иначе его сердце отвернётся от {{divine_name:ГОСПОДА|Яхве}}. И он не должен собирать для себя огромные богатства из серебра и золота."
+        },
+        "ja": {
+          "L": "また、自分のために妻を増やしてはならない。彼の心がそれることのないためである。また、銀と金を自分のために大いに増やしてはならない。",
+          "B": "また、多くの妻をめとってはならない。心が迷わされないためである。また、自分のために銀や金を大量にため込んではならない。",
+          "R": "また、王はたくさんの妻と結婚してはいけない。そんなことをすれば、心が{{divine_name:主|ヤハウェ}}から離れてしまう。また、自分のために銀や金をたくさんためてはいけない。"
+        },
+        "uk": {
+          "L": "І нехай не множить собі жінок, щоб не відвернулося його серце; і срібла та золота нехай не множить собі надміру.",
+          "B": "Він не повинен брати собі багато дружин, бо його серце буде зведене. І він не повинен збирати собі великих скарбів срібла й золота.",
+          "R": "Він не повинен одружуватися з багатьма жінками, бо його серце відвернеться від {{divine_name:ГОСПОДА|Ягве}}. І він не повинен збирати собі величезних багатств срібла й золота."
+        },
+        "id": {
+          "L": "Juga janganlah ia memperbanyak istri baginya, supaya hatinya jangan menyimpang; dan perak dan emas janganlah ia perbanyak baginya secara berlebihan.",
+          "B": "Ia tidak boleh mengambil banyak istri bagi dirinya, supaya hatinya tidak tersesat. Ia juga tidak boleh menimbun perak dan emas yang sangat banyak bagi dirinya.",
+          "R": "Ia tidak boleh menikahi banyak istri, supaya hatinya tidak berpaling dari {{divine_name:TUHAN|Yahweh}}. Ia juga tidak boleh mengumpulkan sangat banyak perak dan emas untuk dirinya sendiri."
+        },
+        "zh": {
+          "L": "他也不可为自己增添妻子，免得他的心偏离；也不可为自己大大地增添金银。",
+          "B": "他不可为自己娶很多妻子，免得他的心被引入歧途；也不可为自己积聚大量的金银。",
+          "R": "他不可娶很多妻子，免得他的心离开{{divine_name:上主|雅威}}。他也不可为自己聚敛大量的金银。"
         }
       },
       "decisions": [
@@ -4144,6 +5213,26 @@
           "L": "И будет: когда он сядет на престол своего царства, пусть напишет себе список этого Закона в свиток, [взяв его] от священников-левитов.",
           "B": "Когда он воссядет на престол своего царства, пусть напишет для себя список этого Закона в свиток, с того свитка, который хранится у священников-левитов.",
           "R": "Когда он станет царём, он должен переписать для себя это учение в свиток. Пусть он перепишет его со свитка, который хранят священники из колена Левия."
+        },
+        "ja": {
+          "L": "そして、彼がその王国の王座に着くとき、彼は祭司たち、レビ人の前から、自分のためにこの律法の写しを巻物に書き記さなければならない。",
+          "B": "王は王国の王座に着いたら、レビ人である祭司たちが保管しているものから、この律法の写しを自分のために巻物に書き写さなければならない。",
+          "R": "王になったら、この教えを自分のために巻物に書き写さなければならない。レビ族の祭司たちが持っている巻物から、それを写すのである。"
+        },
+        "uk": {
+          "L": "І буде, коли він сяде на престолі свого царства, то нехай напише собі список цього закону в сувої з того, що перед священниками-левитами.",
+          "B": "Коли він сяде на престолі свого царства, він має переписати собі копію цього закону в сувій із того, який зберігають священники-левити.",
+          "R": "Коли він стане царем, він мусить сам переписати собі це навчання в сувій. Він має переписати його із сувою, який зберігають священники з племені Левія."
+        },
+        "id": {
+          "L": "Dan apabila ia duduk di atas takhta kerajaannya, ia harus menuliskan bagi dirinya salinan hukum Taurat ini dalam sebuah kitab, dari [kitab yang ada] di hadapan imam-imam orang Lewi.",
+          "B": "Apabila ia sudah duduk di atas takhta kerajaannya, ia harus menulis bagi dirinya salinan hukum Taurat ini dalam sebuah gulungan kitab, dari gulungan yang disimpan oleh imam-imam orang Lewi.",
+          "R": "Apabila ia menjadi raja, ia harus menulis salinan ajaran ini untuk dirinya sendiri dalam sebuah gulungan kitab. Ia harus menyalinnya dari gulungan yang disimpan oleh para imam dari suku Lewi."
+        },
+        "zh": {
+          "L": "他坐上他国中的王位以后，就要在书卷上为自己抄写一份这律法，[抄]自利未人祭司面前的[那一卷]。",
+          "B": "他登上王位以后，要照利未支派的祭司所保存的那一卷，在书卷上为自己抄写一份这律法。",
+          "R": "他作王以后，必须在书卷上为自己抄写一份这教导。他要照着来自利未支派的祭司所保存的那一卷来抄写。"
         }
       },
       "decisions": [
@@ -4377,6 +5466,69 @@
           "reason": "Mishneh ha-torah is a copy of this law (m1); the phrase gave the book its Greek name, \"second law\", which the Synodal title \"Второзаконие\" carries. Here it means a copy, and \"Закон\" is the teaching Moses is giving in this book (m3), written with a capital as through the whole book; Readable says \"учение\", as the English says \"teaching\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050170180091",
+            "o050170180101",
+            "o050170180102"
+          ],
+          "choice": "\"この律法の写し\" for mishneh hattorah, torah \"律法\" (L, B) and \"教え\" (R) as DEU-1",
+          "alternatives": [
+            "\"第二の律法\""
+          ],
+          "reason": "The word means a copy written out; the Greek title Deuteronomy comes from reading it as \"second law\", which the meaning note and footnote cover.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050170180102",
+            "o050170180112"
+          ],
+          "choice": "教导 (R)",
+          "alternatives": [
+            "律法"
+          ],
+          "reason": "Readable says \"teaching\" for torah, as the English Readable does (1:5): \"教导\", the glossary's word where torah is teaching; Literal and Balanced keep \"律法\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050170180152",
+            "o050170180161",
+            "o050170180162"
+          ],
+          "choice": "利未人祭司",
+          "alternatives": [
+            "祭司，就是利未人"
+          ],
+          "reason": "Here Literal reads more smoothly with the compact \"利未人祭司\" inside the bracketed phrase; elsewhere it keeps \"祭司，就是利未人\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4482,6 +5634,26 @@
           "L": "И пусть он будет у него, и пусть он читает в нём во все дни своей жизни, чтобы научился бояться {{divine_name:ГОСПОДА|Яхве}}, своего Бога, храня все слова этого Закона и эти установления, исполняя их,",
           "B": "Пусть этот свиток будет у него и пусть он читает его всю свою жизнь, чтобы научиться бояться {{divine_name:ГОСПОДА|Яхве}}, своего Бога, старательно соблюдая все слова этого Закона и эти установления и исполняя их,",
           "R": "Он должен держать этот свиток при себе и читать его каждый день своей жизни. Тогда он научится бояться и почитать {{divine_name:ГОСПОДА|Яхве}}, своего Бога. Он научится исполнять каждое слово этого учения и эти законы."
+        },
+        "ja": {
+          "L": "そしてそれは彼のもとにあり、彼は生涯のすべての日々、それを読まなければならない。それは、彼が自分の神、{{divine_name:主|ヤハウェ}}を恐れることを学び、この律法のすべての言葉とこれらの定めを守り、それを行うためである。",
+          "B": "王はそれを手もとに置き、生涯それを読まなければならない。それは、自分の神、{{divine_name:主|ヤハウェ}}を畏れることを学び、この律法のすべての言葉とこれらの定めを守り行うためである。",
+          "R": "王はその巻物をいつもそばに置き、生きている間、毎日それを読まなければならない。そうすれば、自分の神、{{divine_name:主|ヤハウェ}}をおそれ敬うことを学ぶ。そして、この教えのすべての言葉と、これらのきまりを守ることを学ぶのである。"
+        },
+        "uk": {
+          "L": "І нехай він буде з ним, і нехай він читає в ньому по всі дні свого життя, щоб навчився боятися {{divine_name:ГОСПОДА|Ягве}}, свого Бога, щоб пильнувати всі слова цього закону і ці постанови, щоб виконувати їх,",
+          "B": "Він має тримати його при собі й читати його все своє життя, щоб навчитися боятися {{divine_name:ГОСПОДА|Ягве}}, свого Бога, пильно дотримуючись кожного слова цього закону й цих постанов і виконуючи їх,",
+          "R": "Він мусить тримати цей сувій при собі й читати його щодня свого життя. Тоді він навчиться боятися {{divine_name:ГОСПОДА|Ягве}}, свого Бога, і глибоко шанувати {{deity_pronoun:його|Його}}. Він навчиться виконувати кожне слово цього навчання й цих законів."
+        },
+        "id": {
+          "L": "Dan kitab itu harus ada padanya dan ia harus membacanya seumur hidupnya, supaya ia belajar takut akan {{divine_name:TUHAN|Yahweh}}, Allahnya, dengan berpegang pada segala perkataan hukum Taurat ini dan ketetapan-ketetapan ini untuk melakukannya,",
+          "B": "Kitab itu harus selalu ada padanya, dan ia harus membacanya seumur hidupnya, supaya ia belajar takut akan {{divine_name:TUHAN|Yahweh}}, Allahnya, dan dengan setia berpegang pada segala perkataan hukum Taurat ini serta ketetapan-ketetapan ini dan melakukannya,",
+          "R": "Ia harus menyimpan gulungan kitab itu bersamanya dan membacanya setiap hari seumur hidupnya. Dengan begitu ia akan belajar takut akan {{divine_name:TUHAN|Yahweh}}, Allahnya, dan menghormati {{deity_pronoun:dia|Dia}}. Ia akan belajar menaati setiap kata dari ajaran ini dan hukum-hukum ini."
+        },
+        "zh": {
+          "L": "这[书卷]要在他身边，他一生的日子都要诵读，好学习敬畏{{divine_name:上主|雅威}}他的{{god_term:神|上帝}}，谨守这律法的一切话和这些律例，并遵行它们；",
+          "B": "他要把它留在身边，一生都要诵读，好学会敬畏{{divine_name:上主|雅威}}他的{{god_term:神|上帝}}，谨慎遵守这律法的每一句话和这些律例，并且遵行，",
+          "R": "他必须把这书卷留在身边，一生中每天都要读。这样他就会学会尊敬并畏惧{{divine_name:上主|雅威}}他的{{god_term:神|上帝}}。他会学会遵守这教导的每一句话和这些律例。"
         }
       },
       "decisions": [
@@ -4604,6 +5776,28 @@
           "reason": "Readable says \"ter profundo respeito por\" for \"fear\" (m1), the wording Deuteronomy 6:2 sets for Readable, which does what the English Readable's \"fear and honor\" does: it keeps \"temer\" from being read only as being afraid.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o050170190091",
+            "o050170190102"
+          ],
+          "choice": "敬畏 (L, B), 尊敬并畏惧 (R)",
+          "alternatives": [
+            "害怕"
+          ],
+          "reason": "The glossary's form for the fear of the LORD (m1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4702,6 +5896,26 @@
           "L": "чтобы не возносилось его сердце над его братьями и чтобы он не уклонялся от заповеди ни направо, ни налево, чтобы продлил [свои] дни над своим царством, он и его сыновья, среди Израиля.",
           "B": "чтобы он не превозносился над своими соплеменниками и не отступал от заповеди ни вправо, ни влево. Тогда он и его потомки долго будут царствовать над его царством в Израиле.",
           "R": "Тогда он не будет думать, что он лучше других израильтян, и ни в чём не отступит от того, что повелевает Бог. И он, и его сыновья после него будут много лет править Израилем."
+        },
+        "ja": {
+          "L": "それは、彼の心が彼の兄弟たちの上に高ぶることのないため、また彼が戒めから右にも左にもそれることのないため、そして彼とその子らが、イスラエルのただ中で、その王国の上に長く日々を保つためである。",
+          "B": "そうすれば、王は同胞のイスラエル人の上に思い上がることなく、戒めから右にも左にもそれることもない。そして、王とその子孫は、イスラエルの中で長く王国を治めることができる。",
+          "R": "そうすれば、王は自分がほかのイスラエル人よりも偉いと思うことはなく、神が命じることから少しもそれることはない。そして、王とその子どもたちは、長い間イスラエルを治めることができる。"
+        },
+        "uk": {
+          "L": "щоб не піднеслося його серце над його братами і щоб він не відхилився від заповіді праворуч чи ліворуч, щоб він продовжив дні над своїм царством, він і його сини, посеред Ізраїлю.",
+          "B": "щоб він не вважав себе вищим за своїх братів-ізраїльтян і не відхилявся від заповіді ні праворуч, ні ліворуч. Тоді він і його нащадки довго царюватимуть над його царством в Ізраїлі.",
+          "R": "Тоді він не вважатиме себе кращим за інших ізраїльтян і ні в чому не відступатиме від того, що наказує Бог. І він, і його сини після нього довгі роки правитимуть Ізраїлем."
+        },
+        "id": {
+          "L": "supaya hatinya jangan meninggi terhadap saudara-saudaranya, dan supaya ia jangan menyimpang dari perintah itu ke kanan atau ke kiri, supaya ia lanjut umur dalam kerajaannya, ia dan anak-anaknya, di tengah-tengah Israel.",
+          "B": "supaya ia tidak menganggap dirinya lebih tinggi daripada saudara-saudaranya sebangsa atau menyimpang dari perintah itu ke kanan atau ke kiri. Dengan begitu ia dan keturunannya akan lama memerintah kerajaannya di Israel.",
+          "R": "Dengan begitu ia tidak akan menganggap dirinya lebih baik daripada orang Israel yang lain, dan ia tidak akan menyimpang sedikit pun dari apa yang diperintahkan Allah. Dan ia beserta anak-anaknya sesudah dia akan memerintah Israel bertahun-tahun lamanya."
+        },
+        "zh": {
+          "L": "免得他的心高过他的弟兄，免得他偏离诫命，偏左或偏右；好使他和他的子孙在以色列中，在他的国上年日长久。",
+          "B": "免得他自以为高过他的以色列同胞，或偏离诫命，偏左或偏右。这样，他和他的后代就能在以色列中长久作王。",
+          "R": "这样他就不会以为自己比其他以色列人好，也不会违背{{god_term:神|上帝}}的命令。他和他以后的子孙就能长久统治以色列。"
         }
       },
       "decisions": [

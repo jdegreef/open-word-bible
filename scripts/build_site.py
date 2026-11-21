@@ -20,6 +20,7 @@ import re
 import shutil
 import subprocess
 import sys
+import unicodedata
 import urllib.parse
 import zipfile
 from pathlib import Path
@@ -30,7 +31,7 @@ sys.path.insert(0, str(ROOT))
 from typing import NamedTuple  # noqa: E402
 
 from owb import crossrefs, export, languages as owb_languages, markup, morph, refs, translit, validate, versification  # noqa: E402
-from owb import words_of_jesus  # noqa: E402
+from owb import furigana, notes as owb_notes, speakers, words_of_jesus  # noqa: E402
 from owb.export import record_verses  # noqa: E402
 
 # The interface languages, English first (data/languages.json; see catalog below).
@@ -54,6 +55,12 @@ GITHUB_URL = "https://github.com/jdegreef/open-word-bible"
 # The Django API (backend/), for accounts and search. OWB_API_URL points a
 # local build at a local API.
 API_URL = os.environ.get("OWB_API_URL", "https://api.openwordbible.org").rstrip("/")
+# Take Root, the memorization app that carries our text: the address its
+# "Open in Take Root" links go to, with the verse as learned in the query
+# (ref, name, text, lang, level, wording, status, source, back; see
+# takeRootUrl in web/memorize.js). Empty, the site offers no Take Root links
+# and memorizing stays on the site (practice, review, the phone handoff).
+TAKE_ROOT_URL = os.environ.get("OWB_TAKE_ROOT_URL", "").strip()
 
 # The open-book mark: the favicon, and the logo in the header and footer
 # (where style.css colours it from the current colour mode).
@@ -68,15 +75,33 @@ QUOTES = (f'<path class="quotes" d="{QUOTES_PATH}" fill="{{fill}}"/>'
           f'<path class="quotes" d="{QUOTES_PATH}" transform="rotate(180 32 31)" fill="{{fill}}"/>')
 # Sized and filled in its own attributes too, so a page whose stylesheet has
 # not loaded shows a small mark rather than a black square across the header.
+MARK_DRAWING = (f'<rect width="64" height="64" rx="14" fill="#3f3d9a"/><path d="{BOOK_PATH}" fill="#faf6ef"/>'
+                f'{QUOTES.format(fill="#3f3d9a")}')
 MARK = (f'<svg class="mark" width="32" height="32" viewBox="0 0 64 64" aria-hidden="true">'
-        f'<rect width="64" height="64" rx="14" fill="#3f3d9a"/><path d="{BOOK_PATH}" fill="#faf6ef"/>'
-        f'{QUOTES.format(fill="#3f3d9a")}</svg>')
+        f'{MARK_DRAWING}</svg>')
+
+
+def mark_use():
+    """The brand mark from the sprite, for a second mark on a page (the
+    footer's): the header's is drawn whole, so the page has its mark even
+    before the sprite loads."""
+    return f'<svg class="mark" width="32" height="32" aria-hidden="true"><use href="{sprite()[1]}#mark"/></svg>'
+
+
+ICON_STROKE = ('fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" '
+               'stroke-linejoin="round"')
 
 
 def icon(paths, size=18, cls="icon"):
-    """A line icon in the header's style (24-unit grid, drawn in currentColor)."""
-    return (f'<svg class="{cls}" width="{size}" height="{size}" viewBox="0 0 24 24" fill="none" '
-            'stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" '
+    """A line icon in the header's style (24-unit grid, drawn in currentColor).
+    One of ICONS is drawn from the site's sprite (sprite()), so a page names
+    it in a few bytes instead of repeating its paths: a page has some forty
+    icons, and the site some 30,000 pages."""
+    name = ICON_NAMES.get(paths)
+    if name:
+        return (f'<svg class="{cls}" width="{size}" height="{size}" aria-hidden="true">'
+                f'<use href="{sprite()[1]}#{name}"/></svg>')
+    return (f'<svg class="{cls}" width="{size}" height="{size}" viewBox="0 0 24 24" {ICON_STROKE} '
             f'aria-hidden="true">{paths}</svg>')
 
 
@@ -107,6 +132,27 @@ ICONS = {
     "feed": '<path d="M5 11a8 8 0 0 1 8 8"/><path d="M5 5a14 14 0 0 1 14 14"/><circle cx="6" cy="18" r="1"/>',
     "github": '<path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/>',
 }
+ICON_NAMES = {paths: name for name, paths in ICONS.items()}
+
+
+@functools.cache
+def sprite():
+    """/sprite.svg, every icon in ICONS and the brand mark as symbols that
+    pages draw with <use>, and its URL with a content hash as its version.
+    A symbol carries the icon's drawing attributes, which its paths inherit,
+    and currentColor is the colour where it is used."""
+    symbols = "".join(f'<symbol id="{name}" viewBox="0 0 24 24" {ICON_STROKE}>{paths}</symbol>'
+                      for name, paths in ICONS.items())
+    # The page's style sheet cannot reach inside a <use>, so the mark's
+    # colours (.mark rect, path and .quotes in style.css) are the colour
+    # mode's own variables here, which do reach it.
+    accent, contrast = "fill:var(--accent,#3f3d9a)", "fill:var(--accent-contrast,#faf6ef)"
+    themed = (f'<rect width="64" height="64" rx="14" style="{accent}"/><path d="{BOOK_PATH}" style="{contrast}"/>'
+              f'<path d="{QUOTES_PATH}" style="{accent}"/>'
+              f'<path d="{QUOTES_PATH}" transform="rotate(180 32 31)" style="{accent}"/>')
+    symbols += f'<symbol id="mark" viewBox="0 0 64 64">{themed}</symbol>'
+    text = f'<svg xmlns="http://www.w3.org/2000/svg">{symbols}</svg>\n'
+    return text, f"/sprite.svg?v={hashlib.sha256(text.encode()).hexdigest()[:10]}"
 
 
 # The site's interface languages. English is served at the root and every
@@ -135,6 +181,15 @@ def tn(lang, key, n):
 def url(lang, path):
     """A site path ("/read/") in a language: English has no prefix."""
     return path if lang == "en" else f"/{lang}{path}"
+
+
+# The scripts and style sheets copied from web/ into the site, each always
+# named with asset(), so render.yaml lets browsers keep them a year
+# (tests/test_headers.py). web/sw.js is not one: it is built, and checked
+# on every visit.
+WEB_FILES = ("style.css", "markup.js", "memorize.js", "reader.js", "site.js", "account.js", "search.js", "plans.js", "compare.js",
+             "word.js", "saved.js", "groups.js", "edition.js", "map.js", "journeys.js", "admin.js",
+             "admin.css")
 
 
 @functools.lru_cache(maxsize=None)
@@ -206,6 +261,86 @@ NOSCRIPT_STYLE_HASH = "sha256-" + base64.b64encode(hashlib.sha256(NOSCRIPT_STYLE
 def langs_meta(translated):
     """The tag naming the languages a page is in, for the boot script."""
     return f'<meta name="owb-langs" content="{" ".join(translated)}">'
+
+
+# Right to left (owb/languages.py; docs/adding-a-language.md). A page in a
+# language written right to left is <html dir="rtl">. While any reading
+# language is, every page names the codes written right to left in an
+# owb-rtl tag, for web/site.js (OWBDir), and isolate_directions gives each
+# element tagged with a language its own dir where that language's direction
+# differs from what surrounds it: an Arabic verse in an English page, an
+# English fallback or a Greek word in an Arabic one. With every reading
+# language left to right, pages are as they were: Hebrew carries its own
+# dir="rtl" where it is shown.
+_TAG = re.compile(r"""<(/?)([a-zA-Z][a-zA-Z0-9-]*)((?:[^>"']|"[^"]*"|'[^']*')*)>""")
+_ATTR_LANG = re.compile(r'\slang="([^"]*)"')
+_ATTR_DIR = re.compile(r'\sdir="([^"]*)"')
+_VOID = frozenset("area base br col embed hr img input link meta source track wbr".split())
+_RAW = frozenset(("script", "style"))
+
+
+def html_dir(lang):
+    """The dir attribute of a page's <html> in lang: none for left to right."""
+    return ' dir="rtl"' if owb_languages.direction(lang) == "rtl" else ""
+
+
+def rtl_meta():
+    """The tag naming the codes written right to left, for web/site.js:
+    none while every reading language is left to right."""
+    if not owb_languages.RTL_READING:
+        return ""
+    return f'\n<meta name="owb-rtl" content="{" ".join(sorted(owb_languages.RTL))}">'
+
+
+def forward(lang):
+    """The arrow after a link that leads on ("Read&nbsp;&rarr;"), pointing
+    the way lang reads. Arrows in the catalogs are their translators'."""
+    return "&larr;" if owb_languages.direction(lang) == "rtl" else "&rarr;"
+
+
+def isolate_directions(text, base, direction=None):
+    """text (a page's body) with dir="rtl" or dir="ltr" added to each element
+    whose lang is written in the other direction from its nearest ancestor
+    with a dir (base, the page's, at the top). An element with a dir of its
+    own keeps it. Script and style elements are left as they are."""
+    direction = direction or owb_languages.direction
+    out, pos, stack = [], 0, [("", base)]
+    while True:
+        m = _TAG.search(text, pos)
+        if not m:
+            break
+        closing, name, attrs = m.group(1), m.group(2).lower(), m.group(3)
+        out.append(text[pos:m.start()])
+        pos = m.end()
+        if closing:
+            out.append(m.group())
+            names = [n for n, _ in stack]
+            if name in names[1:]:
+                del stack[len(names) - 1 - names[::-1].index(name):]
+            continue
+        around = stack[-1][1]
+        own = _ATTR_DIR.search(attrs)
+        tag = m.group()
+        if own and own.group(1) in ("ltr", "rtl"):
+            here = own.group(1)
+        elif own:
+            here = around
+        else:
+            code = _ATTR_LANG.search(attrs)
+            here = direction(code.group(1)) if code and code.group(1) else around
+            if here != around:
+                at = m.start(3) - m.start() + code.end()
+                tag = f'{tag[:at]} dir="{here}"{tag[at:]}'
+        out.append(tag)
+        if name in _RAW:
+            end = text.find(f"</{name}", pos)
+            end = len(text) if end < 0 else end
+            out.append(text[pos:end])
+            pos = end
+        elif name not in _VOID and not attrs.rstrip().endswith("/"):
+            stack.append((name, here))
+    out.append(text[pos:])
+    return "".join(out)
 
 GEAR = ('<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
         'stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
@@ -318,8 +453,21 @@ def og_card_article(article):
     return f"article-{article['slug']}"
 
 
+# Open Graph names a locale as language_TERRITORY. Each language's is the
+# territory most of its readers are in (or the language's home): Portuguese
+# as in Brazil, Spanish as in Latin America's largest country, Swahili as
+# in Tanzania.
+OG_LOCALES = {"en": "en_US", "es": "es_MX", "fr": "fr_FR", "sw": "sw_TZ", "vi": "vi_VN", "ko": "ko_KR",
+              "pt": "pt_BR", "am": "am_ET", "hi": "hi_IN", "ru": "ru_RU", "uk": "uk_UA", "ja": "ja_JP",
+              "id": "id_ID", "zh": "zh_CN", "ar": "ar_AR", "tl": "tl_PH", "fa": "fa_IR"}
+
+
+def og_locale(lang):
+    return OG_LOCALES.get(lang, lang)
+
+
 def page(lang, title, body, path=None, current="", description="", card="site", card_alt=None,
-         translated=LANGUAGES, unlisted=None, head="", og_type="website", noindex=False):
+         translated=LANGUAGES, unlisted=None, head="", alternates=None, indexed=True, og=None):
     """A full HTML page in lang. path is the page's URL path without the
     language ("/read/"); pages with one get a canonical link, hreflang links
     to the page in each language in translated (the languages it exists in),
@@ -328,51 +476,65 @@ def page(lang, title, body, path=None, current="", description="", card="site", 
     site's. card_alt says what the card shows. An unlisted page (the account
     page) has no path: it is not indexed and has no preview, but unlisted
     names its path, so the language switch still leads to it. head is more
-    for the <head> (the articles page's feed link). og_type is the link
-    preview's kind ("article" for chapters and articles). A noindex page
-    (search) keeps its links but asks search engines not to list it."""
+    for the <head> (the articles page's feed link).
+
+    alternates, when given, are the languages the hreflang links name
+    instead of translated: a chapter is offered in every language (the
+    switch leads to it, and it reads in English where it has no
+    translation yet) but is the same page in another language only where
+    it is wholly translated. A page that is not indexed (a chapter not yet
+    wholly in lang) says noindex and has no canonical link, and the sitemap
+    leaves it out. og is more link-preview tags as (property, value) pairs,
+    with og:type among them for a page that is not a website's page (an
+    article)."""
     full_title = f"{title} · {SITE_NAME}" if title != SITE_NAME else SITE_NAME
     description = description or t(lang, "meta.description")
     meta = ""
     if path is not None:
         own = html.escape(SITE_URL + url(lang, path))
-        canonical = own
-        alternates = "".join(
+        same = translated if alternates is None else alternates
+        links = "".join(
             f'\n<link rel="alternate" hreflang="{code}" href="{html.escape(SITE_URL + url(code, path))}">'
-            for code in translated)
-        default = url("en" if "en" in translated else translated[0], path)
-        alternates += f'\n<link rel="alternate" hreflang="x-default" href="{html.escape(SITE_URL + default)}">'
+            for code in same)
+        if same:
+            default = url("en" if "en" in same else same[0], path)
+            links += f'\n<link rel="alternate" hreflang="x-default" href="{html.escape(SITE_URL + default)}">'
+        canonical = f'<link rel="canonical" href="{own}">' if indexed else '<meta name="robots" content="noindex, follow">'
+        extra = dict(og or ())
+        og_type = extra.pop("og:type", "website")
+        more_og = "".join(f'\n<meta property="{html.escape(k)}" content="{html.escape(v)}">' for k, v in extra.items())
         if not (OG / f"{card}.jpg").is_file():
             card, card_alt = "site", None
         card_alt = card_alt or t(lang, "meta.card_alt")
         image = html.escape(f"{SITE_URL}/og/{card}.jpg")
         meta = f"""
-<link rel="canonical" href="{canonical}">{alternates}
+{canonical}{links}
 <meta property="og:site_name" content="{SITE_NAME}">
 <meta property="og:type" content="{og_type}">
 <meta property="og:url" content="{own}">
-<meta property="og:locale" content="{lang}">
+<meta property="og:locale" content="{og_locale(lang)}">
 <meta property="og:title" content="{html.escape(full_title)}">
 <meta property="og:description" content="{html.escape(description)}">
 <meta property="og:image" content="{image}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="{html.escape(card_alt)}">
-<meta name="twitter:card" content="summary_large_image">"""
+<meta name="twitter:card" content="summary_large_image">{more_og}"""
     here = path if path is not None else unlisted
-    if unlisted is not None or noindex:
+    takeroot = f'\n<meta name="owb-takeroot" content="{html.escape(TAKE_ROOT_URL)}">' if TAKE_ROOT_URL else ""
+    if unlisted is not None:
         meta += '\n<meta name="robots" content="noindex">'
     if here is not None:
         meta += "\n" + langs_meta(translated)
-    return f"""<!doctype html>
-<html lang="{lang}">
+    text = f"""<!doctype html>
+<html lang="{lang}"{html_dir(lang)}>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{html.escape(full_title)}</title>
 <meta name="description" content="{html.escape(description)}">{meta}{head}
-<meta name="owb-api" content="{API_URL}">
-<meta name="owb-search" content="{search_source(lang)}" data-ui="{search_ui_url(lang)}">
+<meta name="owb-api" content="{API_URL}">{takeroot}
+<meta name="owb-search" content="{search_source(lang)}" data-ui="{search_ui_url(lang)}">{rtl_meta()}
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="manifest" href="/manifest.webmanifest">
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
@@ -396,6 +558,10 @@ def page(lang, title, body, path=None, current="", description="", card="site", 
 </body>
 </html>
 """
+    if not owb_languages.RTL_READING:
+        return text
+    start = text.index("<body>")
+    return text[:start] + isolate_directions(text[start:], owb_languages.direction(lang))
 
 
 def languages_label(records):
@@ -444,6 +610,7 @@ def nav_menus(lang):
                               f'<div class="dd-books">{"".join(rows)}</div></div>')
     read = (f'{resume_link(lang, "dd-resume")}<div class="dd-testaments">{"".join(testaments)}</div>'
             f'<div class="dd-alls">{all_link(url(lang, "/plans/"), t(lang, "nav.plans"))}'
+            f'{all_link(url(lang, MEMORIZE_PATH), t(lang, "nav.memorize"))}'
             f'{all_link(url(lang, "/read/"), t(lang, "nav.all_books"))}</div>')
 
     # The first few articles of each section, by their short menu titles;
@@ -529,6 +696,11 @@ def footer_links(lang):
     if start:
         learn.append((url(lang, "/articles/"), t(lang, "nav.all_articles"), None))
     learn.append((url(lang, "/terms/"), t(lang, "nav.terms"), None))
+    learn.append((url(lang, "/journeys/"), t(lang, "journeys.title"), None))
+    learn.append((url(lang, "/quotations/"), t(lang, "quotations.title"), None))
+    if lang == "en":
+        learn += [(section_path, t(lang, f"entities.{section}_title"), None)
+                  for section, section_path in ENTITY_SECTIONS.items()]
     project = [(url(lang, "/about/"), t(lang, "footer.about"), None),
                (url(lang, "/about/beliefs/"), t(lang, "nav.beliefs"), None),
                (url(lang, "/download/"), catalog(lang)["download"]["nav"], None),
@@ -631,7 +803,7 @@ def site_footer(lang, path=None, translated=LANGUAGES):
     return f"""<footer class="site"><div class="wrap">
 <div class="foot-top">
 <div class="foot-about">
-<a class="brand" href="{home}">{MARK}<span class="brand-name">Open Word <em>Bible</em></span></a>
+<a class="brand" href="{home}">{mark_use()}<span class="brand-name">Open Word <em>Bible</em></span></a>
 <p>{t(lang, "footer.tagline")}</p>
 <p class="foot-licence"><span class="pill">CC0</span> {t(lang, "footer.licence")}</p>
 </div>
@@ -704,6 +876,10 @@ def curl_record(r):
     stores straight ones; curling here, the one loader, covers the reader,
     the home page and articles alike."""
     r["links"] = alignment_links(r)
+    # Readings over kanji where written (data/furigana/), ranges like the links.
+    ruby = furigana.record_ranges(r)
+    if ruby:
+        r["ruby"] = ruby
     # Where Jesus speaks, for the reader's red letters: ranges into each
     # rendering, like the links (data/words_of_jesus/).
     if r["id"] in words_of_jesus.marked():
@@ -897,6 +1073,22 @@ def chapter_summary(book, chapter, records, lang):
     return f'<p class="chapter-summary"{lang_attr(shown, lang)}>{html.escape(summary[shown])}</p>'
 
 
+def chapter_book_link(book, lang):
+    """Under a chapter's summary: a link to its book's introduction, where
+    the book has one in lang."""
+    if lang not in book_languages(book):
+        return ""
+    return (f'<p class="chapter-book"><a href="{url(lang, book_url(book))}">'
+            f'{t(lang, "reader.about_book", book=html.escape(BOOK_NAMES[book][lang]))}&nbsp;{forward(lang)}</a></p>')
+
+
+@functools.lru_cache(maxsize=None)
+def chapter_set():
+    """chapters() as a set, read once: a page that asks whether a chapter
+    exists must not read all of content/ again, as chapters() does."""
+    return frozenset(chapters())
+
+
 def chapters():
     """Every (book, chapter) with content, in canonical order."""
     found = set()
@@ -1070,16 +1262,89 @@ def verse_range(r, chapter):
     return names[0] if names[0] == names[1] else f"{names[0]}\u2013{names[1]}"
 
 
-def note_html(d, lang):
+@functools.lru_cache(maxsize=None)
+def book_notes(book, lang):
+    """A book's decision notes translated into lang and still current
+    (data/notes/<lang>/<BOOK>.json, owb/notes.py), with curly quotes:
+    {record id: {decision id: {"choice", "alternatives", "reason"}}}. A
+    stale note, whose English changed after it was translated, is left
+    out, so the English shows until it is translated again."""
+    if lang == "en":
+        return {}
+    return {rid: {did: {"choice": smart_quotes(n["choice"]),
+                        "alternatives": [smart_quotes(a) for a in n["alternatives"]],
+                        "reason": smart_quotes(n["reason"])} for did, n in ds.items()}
+            for rid, ds in owb_notes.current_notes(lang, book).items()}
+
+
+def page_notes(records, lang):
+    """The translated notes (book_notes) of a page's records."""
+    out = {}
+    for r in records:
+        got = book_notes(r["id"].split(".")[0], lang).get(r["id"])
+        if got:
+            out[r["id"]] = got
+    return out
+
+
+@functools.lru_cache(maxsize=None)
+def article_links():
+    """data/article_links.json: (words, verses, slug) for each lemma entry,
+    words a frozenset of (Strong's number, lemma) that must all be among a
+    decision's words and verses a frozenset (or None for anywhere); and
+    {category: slug} for decisions linked by category."""
+    data = json.loads((ROOT / "data" / "article_links.json").read_text(encoding="utf-8"))
+    lemmas = [(frozenset((w["strong"], w["lemma"]) for w in e["words"]),
+               frozenset(e["verses"]) if e.get("verses") else None, e["article"]) for e in data["lemmas"]]
+    return lemmas, {c["category"]: c["article"] for c in data["categories"]}
+
+
+def decision_article(r, d, words_by_id):
+    """The slug of the article a decision's note links to, or None: the
+    first lemma entry (data/article_links.json) whose words are all among
+    the decision's words, in its verses if it names any; else the entry for
+    the decision's category."""
+    lemmas, categories = article_links()
+    mine = {(word_strong(w), w["lemma"]) for w in (words_by_id.get(t) for t in d["tokens"]) if w}
+    verses = set(r["refs"])
+    for need, where, slug in lemmas:
+        if need <= mine and (where is None or where & verses):
+            return slug
+    return categories.get(d["category"])
+
+
+def note_articles(records, words, lang):
+    """{record id: {decision id: {"url", "title", "lang"}}}: the article
+    each decision shown on a page in lang links to (decision_article), in
+    lang where it is translated."""
+    by_id = {w["id"]: w for ws in words.values() for w in ws}
+    out = {}
+    for r in records:
+        for d in r["decisions"]:
+            if d["language"] not in (None, lang):
+                continue
+            slug = decision_article(r, d, by_id)
+            link = article_link(slug, lang) if slug else None
+            if link:
+                out.setdefault(r["id"], {})[d["id"]] = link
+    return out
+
+
+def note_html(d, lang, translated=None):
     """A footnote's text as reader.js's noteText() writes it: the choice,
-    the alternatives, and whether it is uncertain. Meaning decisions are
-    written in English, so on another language's page their words say so
-    (the labels between them are in the page's language)."""
+    the alternatives, and whether it is uncertain. Decisions are written in
+    English. Given translated, the note in lang (page_notes), its words
+    replace the English; otherwise, on another language's page, the words
+    say they are English (the labels between them are in the page's
+    language)."""
     ui = catalog(lang)["reader.ui"]
+    if translated:
+        d = {**d, **translated}
 
     def words(text):
         text = html.escape(markup.render(text), quote=False)
-        return f'<span lang="en">{text}</span>' if d["layer"] == "meaning" and lang != "en" else text
+        return (f'<span lang="en">{text}</span>' if d["layer"] == "meaning" and lang != "en"
+                and not translated else text)
 
     out = words(d["choice"])
     alts = d.get("alternatives", [])
@@ -1091,7 +1356,7 @@ def note_html(d, lang):
     return out + "."
 
 
-def chapter_notes(records, chapter, lang="en"):
+def chapter_notes(records, chapter, lang="en", words=None):
     """The notes section under the chapter, with its footnotes listed as
     reader.js's drawNotes() first lists them. Written into the page so the
     footnotes are there without JavaScript (and for crawlers and AI search,
@@ -1102,13 +1367,46 @@ def chapter_notes(records, chapter, lang="en"):
     notes = [(r, d) for r in records for d in footnote_decisions(r, lang)]
     if not notes:
         return f'<section class="notes" id="notes" {label} hidden></section>'
+    translated = page_notes(records, lang)
+    linked = note_articles(records, words or {}, lang)
+
+    def more(r, d):
+        """"Read the article" after a note whose words have one."""
+        a = linked.get(r["id"], {}).get(d["id"])
+        if not a:
+            return ""
+        attr = f' lang="{a["lang"]}"' if a["lang"] != lang else ""
+        return (f' <a class="note-article" href="{esc(a["url"])}">'
+                f'{esc(catalog(lang)["reader.ui"]["note_article"], quote=False)} '
+                f'<span{attr}>{esc(a["title"], quote=False)}</span> {html.unescape(forward(lang))}</a>')
+    why_label = esc(catalog(lang)["compare.ui"]["why"], quote=False)
+
+    def why(r, d):
+        """The decision's reason, folded under the note: the reasoning the
+        site exists to show, in the page as served, so search engines and
+        AI answers read it too (the reader opens it in its panel)."""
+        own = translated.get(r["id"], {}).get(d["id"], {}).get("reason")
+        reason = own or d.get("reason")
+        if not reason:
+            return ""
+        attr = ' lang="en"' if not own and lang != "en" else ""
+        return (f'<details class="note-why"><summary>{why_label}</summary>'
+                f'<p{attr}>{esc(markup.render(reason), quote=False)}</p></details>')
     items = "".join(f'<li><span class="note"><span class="note-mark">{footnote_letter(i)}</span>'
                     f'<span class="note-ref">{esc(verse_range(r, chapter))}</span>'
-                    f'<span class="note-text">{note_html(d, lang)}</span></span></li>'
+                    f'<span class="note-text">{note_html(d, lang, translated.get(r["id"], {}).get(d["id"]))}'
+                    f'</span>{more(r, d)}</span>{why(r, d)}</li>'
                     for i, (r, d) in enumerate(notes))
     heading = esc(catalog(lang)["reader.ui"]["notes"], quote=False)
     return (f'<section class="notes" id="notes" {label}><div class="notes-head">'
             f'<h2>{heading}</h2></div><ol>{items}</ol></section>')
+
+
+def section_id(record, chapter):
+    """The id of the section a heading over record opens: "s" and the
+    verse it starts at ("s16", or "s7-53" in the chapter before)."""
+    ref = refs.parse(record["refs"][0])
+    return f"s{ref.verse}" if ref.chapter == chapter else f"s{ref.chapter}-{ref.verse}"
 
 
 def chapter_text(records, chapter, paragraphs, disputed_info, lang="en"):
@@ -1130,7 +1428,6 @@ def chapter_text(records, chapter, paragraphs, disputed_info, lang="en"):
     disputed_ids = set(disputed_info["records"]) if disputed_info else set()
     ui = catalog(lang)["reader.ui"]
     out, para, shown, in_disputed, notes = [], None, None, False, 0
-    anchored = set()
 
     def close():
         if para is not None:
@@ -1161,7 +1458,11 @@ def chapter_text(records, chapter, paragraphs, disputed_info, lang="en"):
             close()
             para = None
             cls = "section-head" + ("" if hlang == lang else " fallback")
-            out.append(f'<h2 class="{cls}"{lang_attr(hlang, lang)}>{esc(markup.render(heading[hlang]), quote=False)}</h2>')
+            # Each section has an address (#s16, from the verse it opens
+            # with), the same in every language, that search results and
+            # the book's outline link to.
+            out.append(f'<h2 class="{cls}" id="{section_id(r, chapter)}"{lang_attr(hlang, lang)}>'
+                       f'{esc(markup.render(heading[hlang]), quote=False)}</h2>')
         if para is None or heading or r["id"] in starts:
             close()
             para = ['<p class="para">']
@@ -1176,10 +1477,9 @@ def chapter_text(records, chapter, paragraphs, disputed_info, lang="en"):
         cls = "verse" if tl == lang else "verse fallback"
         for i, (v, text) in enumerate(verses):
             sup = f"<sup>{esc(v)}</sup>" if v != shown else ""
-            # The verse's first span carries its anchor (#v16), so a link
-            # can point at one verse; web/reader.js opens it.
-            anchor = f' id="v{esc(v)}"' if v not in anchored else ""
-            anchored.add(v)
+            # A verse's address (#v16), on its first sentence: the links
+            # across the site lead there, and work before reader.js runs.
+            anchor = f' id="v{esc(v)}"' if v != shown else ""
             shown = v
             fn = ""
             if marks and i == len(verses) - 1:
@@ -1203,23 +1503,93 @@ SOURCE_TEXTS = {
 CC0_URL = "https://creativecommons.org/publicdomain/zero/1.0/"
 
 
-def chapter_ld(records, book, chapter, title, lang="en"):
-    """schema.org data for a chapter page, as a script element."""
+@functools.cache
+def git_dates():
+    """{path relative to the repository: the date of the last commit that
+    changed it}, for the sitemap's lastmod and the linked data's
+    dateModified. Empty in a shallow clone, whose history would give every
+    file the date of its one commit, or where git is missing."""
+    try:
+        shallow = subprocess.run(["git", "rev-parse", "--is-shallow-repository"], cwd=ROOT,
+                                 capture_output=True, text=True, check=True).stdout.strip()
+        if shallow != "false":
+            return {}
+        log = subprocess.run(["git", "log", "--format=%x01%cs", "--name-only", "--no-renames",
+                              "--", "content", "data", "articles"],
+                             cwd=ROOT, capture_output=True, text=True, check=True).stdout
+    except (OSError, subprocess.CalledProcessError):
+        return {}
+    dates, day = {}, None
+    for line in log.splitlines():
+        if line.startswith("\x01"):
+            day = line[1:]
+        elif line:
+            # Newest first: the first date seen for a file is its last change.
+            dates.setdefault(line, day)
+    return dates
+
+
+def last_modified(paths):
+    """The latest of the last-change dates of paths (relative to the
+    repository), or None if git knows none of them."""
+    found = [git_dates()[p] for p in paths if p in git_dates()]
+    return max(found) if found else None
+
+
+@functools.cache
+def chapter_sources(book, chapter):
+    """The files a chapter page is made from that change with its text: its
+    passages' records, and the book's headings and summaries."""
+    return tuple(book_chapter_files(book).get(chapter, []) + [f"data/headings/{book}.json", f"data/summaries/{book}.json"])
+
+
+@functools.cache
+def book_chapter_files(book):
+    """{chapter: the record files of a book that have a sentence in it}."""
+    found = {}
+    for path in sorted((ROOT / "content" / book).glob("*.json")):
+        rel = path.relative_to(ROOT).as_posix()
+        for ch in sorted({refs.parse(v).chapter for r in json.loads(path.read_text(encoding="utf-8"))["records"]
+                          for v in r["refs"]}):
+            found.setdefault(ch, []).append(rel)
+    return found
+
+
+def chapter_ld(records, book, chapter, title, lang="en", summary=None):
+    """schema.org data for a chapter page, as a script element: the chapter,
+    with its summary and its sections (from the headings), as part of its
+    book of the Bible, which is part of the translation."""
     source = SOURCE_TEXTS[source_language(book)]
+    own = SITE_URL + url(lang, chapter_url(book, chapter))
+    whole = all(lang in r["renderings"] for r in records)
+    bible = {"@type": "Book", "name": SITE_NAME, "url": SITE_URL + url(lang, "/"), "license": CC0_URL}
+    book_ld = {"@type": "Book", "name": BOOK_NAMES[book][lang], "isPartOf": bible}
+    if lang in book_languages(book):
+        book_ld["url"] = SITE_URL + url(lang, book_url(book))
     data = {
         "@context": "https://schema.org",
         "@type": "Chapter",
         "name": title,
-        "url": SITE_URL + url(lang, chapter_url(book, chapter)),
+        "url": own,
         "inLanguage": lang,
-        "isPartOf": {"@type": "Book", "name": SITE_NAME, "url": SITE_URL + url(lang, "/"),
-                     "license": CC0_URL},
+        "position": chapter,
+        "isPartOf": book_ld,
         "license": CC0_URL,
         # Nothing is reviewed until a named human reviewer approves it.
         "creativeWorkStatus": "Draft" if any(r["status"] == "ai_draft" for r in records) else "Published",
         "translationOfWork": source,
         "isBasedOn": source,
     }
+    if summary:
+        data["description"] = summary
+    sections = [{"@type": "CreativeWork", "name": markup.render(headings()[r["id"]][lang]),
+                 "url": f"{own}#{section_id(r, chapter)}"}
+                for r in records if whole and headings().get(r["id"], {}).get(lang)]
+    if sections:
+        data["hasPart"] = sections
+    modified = last_modified(chapter_sources(book, chapter))
+    if modified:
+        data["dateModified"] = modified
     return ld_script(data)
 
 
@@ -1251,23 +1621,129 @@ def shared_script(name, data):
     return text, hashlib.sha256(text.encode()).hexdigest()[:10]
 
 
-def chapter_data_path(book, chapter):
-    return f"/{CHAPTER_DATA_DIR}{chapter_url(book, chapter).rstrip('/')}.js"
+def chapter_data_path(book, chapter, code=None):
+    """chapter-data/jhn/1.js, or with a language chapter-data/jhn/1.es.js."""
+    return f"/{CHAPTER_DATA_DIR}{chapter_url(book, chapter).rstrip('/')}{'.' + code if code else ''}.js"
 
 
 @functools.cache
 def chapter_shared(book, chapter):
-    """A chapter's reader data in no language: its sentence records, with
-    every language's renderings and decisions (reader.js keeps the meaning
-    decisions and the page language's own), the source words of each verse
-    and the cross-references. As a script, and its URL."""
+    """A chapter's reader data in no language: its sentence records without
+    their renderings and word links, and with only their meaning decisions
+    (each language's come in chapter_language_data), the source words of
+    each verse and the cross-references. As a script, and its URL."""
     records, words = load_chapter(book, chapter)
     source = source_language(book)
     text, digest = shared_script("OWB_CHAPTER", {
-        "records": records,
+        "records": [{**{k: v for k, v in r.items() if k not in ("renderings", "links")},
+                     "decisions": [d for d in r["decisions"] if d["language"] is None]} for r in records],
         "words": {vid: transliterated(words[vid], source) for r in records for vid in r["refs"]},
         "crossrefs": chapter_crossrefs(records)})
     return text, f"{chapter_data_path(book, chapter)}?v={digest}"
+
+
+def chapter_languages(records):
+    """Every language any of the sentences has, in the site's order: English
+    may run ahead of the others."""
+    return [code for code in LANGUAGES if any(code in r["renderings"] for r in records)]
+
+
+def passage_languages(records):
+    """The languages every sentence of a passage has: the languages its page
+    is wholly in. A page in another language reads partly in English, so it
+    is offered (the language switch leads to it) but not indexed as that
+    language's page (chapter_page)."""
+    return [code for code in LANGUAGES if all(code in r["renderings"] for r in records)]
+
+
+@functools.cache
+def chapter_indexed(book, chapter, lang):
+    """Whether a chapter's page in lang is indexed: whether every sentence
+    of it is in lang."""
+    return lang in passage_languages(load_chapter(book, chapter)[0])
+
+
+def text_width(text):
+    """How wide text is in search results, in Latin letters: a Chinese,
+    Japanese or Korean character takes about two."""
+    return sum(2 if unicodedata.east_asian_width(c) in "WF" else 1 for c in text)
+
+
+def shorten(text, limit=160):
+    """text cut to at most limit wide (text_width) for a meta description:
+    whole while it fits, else at the last sentence end, then the last word,
+    before the limit, with an ellipsis."""
+    text = " ".join(text.split())
+    if text_width(text) <= limit:
+        return text
+    cut, width = "", 0
+    for c in text:
+        width += text_width(c)
+        if width > limit - 1:
+            break
+        cut += c
+    for stop in (". ", "。", "। ", "። ", "! ", "? "):
+        at = cut.rfind(stop)
+        if at >= len(cut) // 2:
+            return cut[:at + len(stop)].rstrip()
+    at = cut.rfind(" ")
+    return (cut[:at] if at >= len(cut) // 2 else cut).rstrip(",;:、，") + "…"
+
+
+def chapter_heads(records, lang):
+    """A passage's section headings in lang, as plain text, in order."""
+    return [markup.render(headings()[r["id"]][lang]) for r in records
+            if r["id"] in headings() and headings()[r["id"]].get(lang)]
+
+
+# A page title at most this long (without " · Open Word Bible") is shown
+# whole in search results.
+TITLE_LIMIT = 60
+
+
+def chapter_page_title(records, title, lang):
+    """A chapter page's <title>: its name with the stories it tells, from
+    its section headings ("John 3: Jesus and Nicodemus, John points to
+    Jesus"), as many as fit in TITLE_LIMIT, so a search for the story finds
+    it. Only headings in lang: a page that reads in English where lang has
+    no translation yet keeps its plain name."""
+    heads = chapter_heads(records, lang) if all(lang in r["renderings"] for r in records) else []
+    best = title
+    for n in range(1, len(heads) + 1):
+        candidate = t(lang, "meta.chapter_title", title=title,
+                      headings=t(lang, "meta.list_join").join(heads[:n]))
+        if text_width(candidate) > TITLE_LIMIT:
+            break
+        best = candidate
+    return best
+
+
+@functools.cache
+def chapter_language_data(book, chapter, code):
+    """A chapter in one language: each sentence's renderings, word links
+    and rendering decisions in it, by sentence. As a script that adds them
+    to window.OWB_TEXTS, which reader.js joins to the records, and its URL.
+    A page loads its own language's (page_texts); Parallel the other's."""
+    records, _ = load_chapter(book, chapter)
+    data = {"renderings": {r["id"]: r["renderings"][code] for r in records if code in r["renderings"]},
+            "links": {r["id"]: r["links"][code] for r in records if code in r.get("links", {})},
+            # Furigana over kanji (data/furigana/), as ranges into each rendering.
+            "ruby": {r["id"]: r["ruby"][code] for r in records if code in r.get("ruby", {})},
+            "decisions": {r["id"]: mine for r in records
+                          if (mine := [d for d in r["decisions"] if d["language"] == code])}}
+    text = (f'window.OWB_TEXTS=window.OWB_TEXTS||{{}};window.OWB_TEXTS["{code}"]='
+            + json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/") + ";\n")
+    return text, f"{chapter_data_path(book, chapter, code)}?v={hashlib.sha256(text.encode()).hexdigest()[:10]}"
+
+
+def page_texts(records, lang):
+    """The languages a chapter page in lang loads with it
+    (chapter_language_data): lang, and for each sentence not yet in lang the
+    first language that has it, which reader.js shows instead (textLang)."""
+    languages = chapter_languages(records)
+    shown = {lang if lang in r["renderings"] else next(c for c in languages if c in r["renderings"])
+             for r in records}
+    return [code for code in languages if code in shown]
 
 
 @functools.cache
@@ -1277,6 +1753,12 @@ def reader_shared(lang):
     chapter number. As a script, and its URL."""
     text, digest = shared_script("OWB_LANG", {
         "ui": catalog(lang)["reader.ui"],
+        # Memorizing (web/memorize.js): its text, and the page of the
+        # reader's verses.
+        "memory": catalog(lang)["memory.ui"],
+        "memorize_url": url(lang, MEMORIZE_PATH),
+        # The levels' names, for Parallel's level of the other language.
+        "levelNames": catalog(lang)["levels"],
         "bookRefs": book_refs(lang),
         # Names before a chapter number ("Psalm 23:1"), for "Book 1:2" links.
         "books": {b: chapter_book(b, lang) for b, _ in books()}})
@@ -1287,6 +1769,9 @@ def chapter_data_files():
     """{path: text} of every chapter's and every language's shared reader
     data (chapter_shared, reader_shared)."""
     files = {chapter_data_path(b, c).lstrip("/"): chapter_shared(b, c)[0] for b, c in chapters()}
+    for b, c in chapters():
+        for code in chapter_languages(load_chapter(b, c)[0]):
+            files[chapter_data_path(b, c, code).lstrip("/")] = chapter_language_data(b, c, code)[0]
     files.update({f"reader-{lang}.js": reader_shared(lang)[0] for lang in LANGUAGES})
     return files
 
@@ -1296,19 +1781,28 @@ def chapter_page(book, chapter, lang="en"):
     title = chapter_name(records, book, chapter, lang)
     # Every language any sentence has: English may run ahead of the others,
     # and the reader shows a sentence not yet translated in English.
-    languages = [code for code in LANGUAGES
-                 if any(code in r["renderings"] for r in records)]
+    languages = chapter_languages(records)
     source = source_language(book)
-    # What is the same on other pages comes in chapter_shared and reader_shared.
+    # What is the same on other pages comes in chapter_shared,
+    # chapter_language_data and reader_shared.
     data = {"book": book, "chapter": chapter, "title": title, "lang": lang, "languages": languages,
             "source": source,
+            # Each language's text, for Parallel to load the one it sets beside.
+            "texts": {code: chapter_language_data(book, chapter, code)[1] for code in languages},
             "paragraphs": paragraph_starts(records, words),
             "disputed": disputed_block(records, lang),
             # The article on how manuscripts differ, from a manuscript-reading footnote.
             "variants": article_link(VARIANTS_ARTICLE, lang),
             "compare": comparison_verses(records, lang),
             "cards": word_cards(records, words, lang),
+            # Decision notes translated into the page's language (data/notes/),
+            # which reader.js shows instead of the English.
+            "notes": page_notes(records, lang),
+            # The article a note's words link to (data/article_links.json).
+            "noteArticles": note_articles(records, words, lang),
             "headings": {r["id"]: headings()[r["id"]] for r in records if r["id"] in headings()},
+            # Who speaks, where the voice changes (data/speakers/, a pilot: Job, Jeremiah).
+            "speakers": speakers.labels(book, [r["id"] for r in records], lang),
             # Where previews of other verses come from (verse_files), and the
             # comparison edition for verses not translated yet: the page
             # language's, then the World English Bible.
@@ -1322,6 +1816,8 @@ def chapter_page(book, chapter, lang="en"):
     data["uses"] = word_uses()[1]
     # The panel's map of the places in a sentence (web/map.js, loaded when first needed).
     data["map"] = {"script": asset("map.js"), "base": basemap_file()[1]}
+    # The journeys with a stop in this chapter: the panel's map links them.
+    data["journeys"] = chapter_journeys(book, chapter, lang)
     data["saved"] = url(lang, "/saved/")
     # The reader shows a word's grammar in the page's language only.
     data["grammar"] = {grammar_key(w): {lang: describe(w, lang)}
@@ -1330,6 +1826,8 @@ def chapter_page(book, chapter, lang="en"):
     blob = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     # Without JavaScript (and for crawlers) the page still has its text.
     text = chapter_text(records, chapter, data["paragraphs"], data["disputed"], lang)
+    own_texts = "".join(f'<script src="{chapter_language_data(book, chapter, code)[1]}"></script>\n'
+                        for code in page_texts(records, lang))
     partial = any(lang not in r["renderings"] for r in records)
 
     def seg(name, options):
@@ -1354,12 +1852,23 @@ def chapter_page(book, chapter, lang="en"):
     own = owb_languages.settings(lang)
     plural = ("\n  " + control("plural", "plural_you", list(enumerate(own["plural_you"])))
               if "plural_you" in own else "")
+    # The word for God (Chinese: 神 or 上帝) only where a passage has it.
+    has_god = "god_term" in own and any("{{god_term:" in text for r in records
+                                        for text in r["renderings"].get(lang, {}).values())
+    god = ("\n  " + control("god_term", "god_term", list(enumerate(own["god_term"]))) if has_god else "")
     # Measures (modern or original units) only where a passage has them.
     has_units = any("{{units:" in text for r in records
                     for levels_ in r["renderings"].values() for text in levels_.values())
     units = ("\n  " + control("measures", "units", [("0", t(lang, "reader.modern")),
                                                      ("1", t(lang, "reader.original"))])
              if has_units else "")
+    # Capitals for God's pronouns only where this language marks them: scripts
+    # without capitals (Hindi, Japanese, Korean, Amharic) have no spans, and
+    # a switch that changes nothing would only confuse.
+    has_pronouns = any("{{deity_pronoun:" in text for r in records
+                       for text in r["renderings"].get(lang, {}).values())
+    pronouns = (control("pronouns", "deity_pronoun", [("0", t(lang, "reader.he")), ("1", t(lang, "reader.He"))])
+                if has_pronouns else "")
     # Red letters only where a passage has words of Jesus marked.
     red_letter = ("\n  " + control("words_of_jesus", "red_letter", [("0", t(lang, "reader.black")),
                                                                      ("1", t(lang, "reader.red"))])
@@ -1386,59 +1895,99 @@ def chapter_page(book, chapter, lang="en"):
   {presets}
   {control("gender", "gender", [("0", t(lang, "reader.inclusive")), ("1", t(lang, "reader.traditional"))])}
   {title_control}
-  {control("pronouns", "deity_pronoun", [("0", t(lang, "reader.he")), ("1", t(lang, "reader.He"))])}{units}{plural}
+  {pronouns}{god}{units}{plural}
   {control("headings", "headings", [("0", t(lang, "reader.show")), ("1", t(lang, "reader.hide"))])}
   {control("crossrefs", "crossrefs", [("0", t(lang, "reader.show")), ("1", t(lang, "reader.hide"))])}{red_letter}
   </div>
   </div>
   {control("view", "view", [("0", t(lang, "reader.study")), ("1", t(lang, "reader.reading")),
-                            ("2", t(lang, "reader.parallel")), ("3", t(lang, "reader.interlinear"))], " view-control")}
+                            ("2", t(lang, "reader.parallel")), ("3", t(lang, "reader.interlinear")),
+                            ("4", t(lang, "reader.recall"))], " view-control")}
   {control("verse_numbers", "verse_numbers", [("1", t(lang, "reader.show")), ("0", t(lang, "reader.hide"))], " numbers-control")}
 </div>
-<p class="hint"><span id="hint-presets"></span> <span id="hint-level"></span> <span id="hint-gender"></span> <span id="hint-{title_setting}"></span> <span id="hint-deity_pronoun"></span> <span id="hint-units"></span> <span id="hint-plural_you"></span> <span id="hint-headings"></span> <span id="hint-crossrefs"></span> <span id="hint-red_letter"></span> <span id="hint-view"></span> <span id="hint-verse_numbers"></span></p>
+<p class="hint"><span id="hint-presets"></span> <span id="hint-level"></span> <span id="hint-gender"></span> <span id="hint-{title_setting}"></span> <span id="hint-deity_pronoun"></span> <span id="hint-units"></span> <span id="hint-plural_you"></span> <span id="hint-god_term"></span> <span id="hint-headings"></span> <span id="hint-crossrefs"></span> <span id="hint-red_letter"></span> <span id="hint-view"></span> <span id="hint-verse_numbers"></span></p>
 </div>
 <div class="reader">
   <article class="passage">
     {chapter_strip(book, chapter, lang)}
     <h1 id="title">{html.escape(title)}</h1>
     {chapter_summary(book, chapter, records, lang)}
+    {chapter_book_link(book, lang)}
     <p class="print-only print-head" id="print-head"></p>
     <p class="sub">{t(lang, "reader.sub" + suffix)}</p>
     <p class="notice" id="partial"{"" if partial else " hidden"}>{html.escape(catalog(lang)["reader.ui"]["partial"]) if partial else ""}</p>
     <noscript><p class="notice">{t(lang, "reader.noscript", level=levels["B"])}</p><style>{NOSCRIPT_STYLE}</style></noscript>
     <div class="xr-margin" id="xr-margin"></div>
     <div class="text" id="text">{text}</div>
-    {chapter_notes(records, chapter, lang)}
+    {chapter_notes(records, chapter, lang, words)}
+    {chapter_crossrefs_html(records, chapter, lang)}
     {plan_bar(book, chapter, lang)}
     {chapter_turns(book, chapter, lang)}
+    {verse_page_links(book, chapter, lang)}
     {chapter_articles_html(book, chapter, lang)}
   </article>
   <aside class="panel" id="panel" aria-live="polite" tabindex="-1"></aside>
 </div>
 {edge_turns(book, chapter, lang)}
 <script type="application/json" id="owb-data">{blob}</script>
-{chapter_ld(records, book, chapter, title, lang)}
+{chapter_ld(records, book, chapter, title, lang, None if partial else summaries().get((book, chapter), {}).get(lang))}
 {breadcrumb_ld(lang, book_crumbs(book, lang) + [(title, chapter_url(book, chapter))])}
 <script src="{reader_shared(lang)[1]}"></script>
 <script src="{chapter_shared(book, chapter)[1]}"></script>
-<script src="{asset("markup.js")}"></script>
+{own_texts}<script src="{asset("markup.js")}"></script>
+<script src="{asset("memorize.js")}"></script>
 <script src="{asset("reader.js")}"></script>
 {plans_script()}
 """
-    return page(lang, title, body, path=chapter_url(book, chapter), current="/read/",
+    # The summary says what this chapter is about; the plain description
+    # is the fallback, and stands where the summary is not in lang.
+    summary = summaries().get((book, chapter), {}).get(lang) if not partial else None
+    complete = passage_languages(records)
+    return page(lang, chapter_page_title(records, title, lang), body, path=chapter_url(book, chapter),
+                current="/read/",
                 card=og_card_chapter(book, chapter),
                 card_alt=t(lang, "meta.chapter_card_alt" + suffix, title=title,
                            verse=opening_verse(records, chapter, lang)),
-                description=chapter_description(book, chapter, title, suffix, lang), og_type="article")
+                description=shorten(summary) if summary else t(lang, "meta.chapter_description" + suffix, title=title),
+                alternates=complete, indexed=lang in complete)
 
 
-def chapter_description(book, chapter, title, suffix, lang):
-    """A chapter page's meta description: what the page is, then the
-    chapter's summary when it has one in lang, so a search result says
-    what happens in the chapter."""
-    own = t(lang, "meta.chapter_description" + suffix, title=title)
-    summary = summaries().get((book, chapter), {}).get(lang)
-    return f"{own} {summary}" if summary else own
+# How many cross-references of each verse the chapter page lists as links
+# (the reader's margin shows them all).
+STATIC_CROSSREFS = 2
+
+
+def crossref_link(target, lang):
+    """A cross-reference ("ROM.5.8" or "PSA.26.4-5") as a link to its
+    verse's address in lang."""
+    first, _, last = target.partition("-")
+    ref = refs.parse(first)
+    label = verse_name(ref.book, ref.chapter, ref.verse, lang) + (f"\u2013{last}" if last else "")
+    href = url(lang, chapter_url(ref.book, ref.chapter)) + f"#v{ref.verse}"
+    return f'<a href="{href}">{html.escape(label)}</a>'
+
+
+def chapter_crossrefs_html(records, chapter, lang):
+    """Under the notes: each verse's strongest cross-references as links,
+    folded, in the page as served. The reader draws them all in its margin
+    from its data; these are for readers without it and for crawlers, and
+    tie each chapter to the passages it is read with."""
+    have = chapter_set()
+    rows = []
+    for vid, targets in chapter_crossrefs(records).items():
+        ref = refs.parse(vid)
+        if ref.chapter != chapter:
+            continue
+        shown = [x for x in targets if (refs.parse(x.partition("-")[0]).book,
+                                        refs.parse(x.partition("-")[0]).chapter) in have][:STATIC_CROSSREFS]
+        if shown:
+            rows.append(f'<li><a href="#v{ref.verse}">{ref.verse}</a> '
+                        f'{", ".join(crossref_link(x, lang) for x in shown)}</li>')
+    if not rows:
+        return ""
+    ui = catalog(lang)["reader.ui"]
+    return (f'<details class="xr-static"><summary>{t(lang, "reader.crossrefs")}</summary>'
+            f'<ol>{"".join(rows)}</ol><p class="fine">{ui["crossrefs_credit"]}</p></details>')
 
 
 def chapter_crossrefs(records):
@@ -1486,6 +2035,13 @@ def book_url(book):
     return f"/{book.lower()}/"
 
 
+def intro_sources(book, lang):
+    """The files a book's page is made from: its introduction in lang, and
+    the book's headings and summaries, which its outline lists."""
+    path = (INTROS if lang == "en" else INTROS / lang) / f"{book}.md"
+    return (path.relative_to(ROOT).as_posix(), f"data/headings/{book}.json", f"data/summaries/{book}.json")
+
+
 @functools.lru_cache(maxsize=None)
 def book_languages(book):
     """The languages a book's page is built in: those its introduction is
@@ -1521,11 +2077,18 @@ def book_page(book, lang="en"):
     chaps = dict(books(lang))[book]
     outline = []
     for p in chaps:
-        heads = [markup.render(headings()[r["id"]][lang]) for r in p.records
-                 if r["id"] in headings() and headings()[r["id"]].get(lang)]
-        sections = f'<span class="outline-heads">{html.escape(" · ".join(heads))}</span>' if heads else ""
-        outline.append(f'<li><a href="{url(lang, chapter_url(book, p.chapter))}">'
-                       f'{html.escape(ui["chapter"].replace("{n}", str(p.chapter)))}</a>{sections}</li>')
+        href = url(lang, chapter_url(book, p.chapter))
+        # Each heading links to its section of the chapter (chapter_text).
+        heads = [f'<a href="{href}#{section_id(r, p.chapter)}">'
+                 f'{html.escape(markup.render(headings()[r["id"]][lang]))}</a>'
+                 for r in p.records if r["id"] in headings() and headings()[r["id"]].get(lang)]
+        sections = f'<span class="outline-heads">{" · ".join(heads)}</span>' if heads else ""
+        # What the chapter is about, so the outline reads as a summary of
+        # the whole book.
+        summary = summaries().get((book, p.chapter), {}).get(lang)
+        about = f'<span class="outline-summary">{html.escape(summary)}</span>' if summary else ""
+        outline.append(f'<li><a href="{href}">'
+                       f'{html.escape(ui["chapter"].replace("{n}", str(p.chapter)))}</a>{sections}{about}</li>')
     articles = [a for a in sorted(load_articles(lang), key=lambda a: a["order"])
                 if any(b == book for b, _, _ in a["passages"])]
     more = (f'<section class="more" aria-labelledby="book-articles-h"><h2 id="book-articles-h">'
@@ -1539,7 +2102,7 @@ def book_page(book, lang="en"):
 <h1>{html.escape(name)}</h1>
 <p class="dek">{display(intro["summary"])}</p>
 <p class="notice">{ui["draft"]}</p>
-<p class="actions"><a class="button" href="{url(lang, chapter_url(book, chaps[0].chapter))}">{ui["start"]}&nbsp;&rarr;</a>
+<p class="actions"><a class="button" href="{url(lang, chapter_url(book, chaps[0].chapter))}">{ui["start"]}&nbsp;{forward(lang)}</a>
 <a class="button ghost" href="{url(lang, edition_url(book))}">{catalog(lang)["edition"]["read"]}</a></p>
 </header>
 <div class="article-body">
@@ -1552,10 +2115,254 @@ def book_page(book, lang="en"):
 </article>
 </div>
 {more}
+{book_ld(book, lang, intro, chaps)}
+{intro_faq_ld(book, lang, intro)}
 {breadcrumb_ld(lang, book_crumbs(book, lang))}
 """
     return page(lang, ui["title"].replace("{book}", name), body, path=book_url(book), current="/read/",
                 description=intro["summary"], translated=book_languages(book))
+
+
+def book_ld(book, lang, intro, chaps):
+    """schema.org data for a book's page: the book of the Bible, its
+    introduction's summary, and its chapters."""
+    data = {"@context": "https://schema.org", "@type": "Book", "name": BOOK_NAMES[book][lang],
+            "url": SITE_URL + url(lang, book_url(book)), "inLanguage": lang,
+            "abstract": intro["summary"], "license": CC0_URL, "creativeWorkStatus": "Draft",
+            "isPartOf": {"@type": "Book", "name": SITE_NAME, "url": SITE_URL + url(lang, "/"), "license": CC0_URL},
+            "translationOfWork": SOURCE_TEXTS[source_language(book)],
+            "hasPart": [{"@type": "Chapter", "position": p.chapter, "name": chapter_name(p.records, book, p.chapter, lang),
+                         "url": SITE_URL + url(lang, chapter_url(book, p.chapter))} for p in chaps]}
+    modified = last_modified(intro_sources(book, lang))
+    if modified:
+        data["dateModified"] = modified
+    return ld_script(data)
+
+
+# The questions a book's introduction answers, by its English section
+# heading: each translation keeps the English sections' order.
+INTRO_QUESTIONS = {"What the book is": "q_about", "Who wrote it, and when": "q_author",
+                   "Who wrote them, and when": "q_author"}
+
+
+def intro_sections(body):
+    """An introduction's sections as (heading, text) pairs."""
+    return [(m[1].strip(), m[2]) for m in re.finditer(r"^## ([^\n]*)\n(.*?)(?=^## |\Z)", body, re.M | re.S)]
+
+
+def first_paragraph(text):
+    """A section's opening paragraph as plain text: links read as their
+    words, emphasis dropped. A quotation, list or table is not one."""
+    for block in re.split(r"\n\s*\n", text.strip()):
+        block = block.strip()
+        if block and not block.startswith((">", "-", "*", "|", "{{", "#")):
+            block = re.sub(r"\[([^\]]+)\]\([^)]*\)", r"\1", block)
+            return smart_quotes(re.sub(r"\*\*?([^*]+)\*\*?", r"\1", " ".join(block.split())))
+    return ""
+
+
+def intro_questions(book, lang, intro):
+    """The questions a book's introduction answers, each with its section's
+    opening paragraph, which states the answer before the detail."""
+    english = [h for h, _ in intro_sections(load_intro(book)["body"])]
+    sections = intro_sections(intro["body"])
+    if len(sections) != len(english):
+        return []
+    ui, name = catalog(lang)["book_page"], BOOK_NAMES[book][lang]
+    out = []
+    for heading, (_, text) in zip(english, sections):
+        answer = first_paragraph(text)
+        if heading in INTRO_QUESTIONS and answer:
+            out.append((ui[INTRO_QUESTIONS[heading]].replace("{book}", name), answer))
+    return out
+
+
+def intro_faq_ld(book, lang, intro):
+    """schema.org data for the questions a book's introduction answers."""
+    qs = intro_questions(book, lang, intro)
+    if not qs:
+        return ""
+    return ld_script({"@context": "https://schema.org", "@type": "FAQPage", "inLanguage": lang, "mainEntity": [
+        {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in qs]})
+
+
+# Verse pages: one page for each of the best-known verses (the verses of the
+# day, data/verse_of_the_day.json), at /<book>/<chapter>/<verse>/, with the
+# verse at all three levels, the original words and every decision behind
+# it with its reasoning. People search for a verse by its reference ("John
+# 3:16 meaning"), and a chapter page shows only the Balanced text, with the
+# reasoning in the reader's data.
+@functools.cache
+def verse_page_ids():
+    """The verses that have a page: the verses of the day that have
+    records, once each, in Bible order."""
+    data = json.loads((ROOT / "data" / "verse_of_the_day.json").read_text(encoding="utf-8"))
+    have = chapter_set()
+    found = {vid for vid in data["refs"] if (refs.parse(vid).book, refs.parse(vid).chapter) in have
+             and verse_records(vid)}
+    return sorted(found, key=lambda vid: refs.parse(vid).sort_key())
+
+
+def verse_page_url(vid):
+    ref = refs.parse(vid)
+    return f"/{ref.book.lower()}/{ref.chapter}/{ref.verse}/"
+
+
+def verse_records(vid):
+    """The records with a sentence in a verse."""
+    ref = refs.parse(vid)
+    return [r for r in chapter_records(ref.book, ref.chapter) if vid in r["refs"]]
+
+
+@functools.cache
+def verse_page_languages(vid):
+    """The languages every sentence of a verse is in: those its page is
+    built in."""
+    rs = verse_records(vid)
+    return tuple(code for code in LANGUAGES if all(code in r["renderings"] for r in rs))
+
+
+def verse_levels(vid, lang):
+    """{level: the verse's text at that level in lang}, at the default
+    settings, its sentences joined."""
+    out = {}
+    for r in verse_records(vid):
+        for level, text in record_verses(r).get(vid, {}).get(lang, {}).items():
+            text = plain(text)
+            out[level] = f"{out[level]} {text}" if level in out else text
+    return out
+
+
+def verse_ref_name(vid, lang):
+    """A verse's reference in lang: "John 3:16", "Psalm 23:1"."""
+    ref = refs.parse(vid)
+    return f"{chapter_book(ref.book, lang)} {ref.chapter}:{ref.verse}"
+
+
+@functools.cache
+def verse_pages_in_chapter(book, chapter):
+    """The verses of a chapter that have a page, by verse number."""
+    return [vid for vid in verse_page_ids() if refs.parse(vid).book == book and refs.parse(vid).chapter == chapter]
+
+
+def verse_page_links(book, chapter, lang):
+    """Under a chapter: links to the pages of its verses that have one."""
+    vids = [vid for vid in verse_pages_in_chapter(book, chapter) if lang in verse_page_languages(vid)]
+    if not vids:
+        return ""
+    links = " ".join(f'<a href="{url(lang, verse_page_url(vid))}">{html.escape(verse_ref_name(vid, lang))}</a>'
+                     for vid in vids)
+    return f'<p class="verse-pages">{catalog(lang)["verse_page"]["in_chapter"]} {links}</p>'
+
+
+def verse_decision_html(d, own, lang):
+    """One decision on a verse page: the choice, whether it is uncertain,
+    the alternatives and the reason. own is its translation into lang
+    (data/notes/), if any; a meaning decision not translated, and every
+    reason not translated, is marked as English."""
+    esc = html.escape
+    ui = catalog(lang)["compare.ui"]
+    english = ' lang="en"' if lang != "en" else ""
+    shown = {**d, **(own or {})}
+    choice_attr = english if d["layer"] == "meaning" and not own else ""
+    reason_attr = english if not (own and own.get("reason")) else ""
+    out = f'<li><p class="vd-choice"{choice_attr}><strong>{esc(markup.render(shown["choice"]), quote=False)}</strong>'
+    if d.get("uncertain"):
+        out += f' <span class="vd-unsure">{esc(ui["uncertain"], quote=False)}</span>'
+    out += "</p>"
+    if shown.get("alternatives"):
+        alts = "; ".join(markup.render(a) for a in shown["alternatives"])
+        out += (f'<p class="vd-alts">{esc(ui["also"], quote=False)}'
+                f'<span{choice_attr}>{esc(alts, quote=False)}</span></p>')
+    if shown.get("reason"):
+        out += f'<p class="vd-reason"{reason_attr}>{esc(markup.render(shown["reason"]), quote=False)}</p>'
+    return out + "</li>"
+
+
+def verse_page(vid, lang="en"):
+    """A verse's page in lang (see verse_page_ids)."""
+    esc = html.escape
+    ref = refs.parse(vid)
+    book, chapter = ref.book, ref.chapter
+    records, words = load_chapter(book, chapter)
+    rs = verse_records(vid)
+    ui = catalog(lang)["verse_page"]
+    cui = catalog(lang)["compare.ui"]
+    names = catalog(lang)["levels"]
+    source = source_language(book)
+    suffix = "_hbo" if source == "hbo" else ""
+    name = verse_ref_name(vid, lang)
+    levels = verse_levels(vid, lang)
+    level_rows = "".join(f'<div class="vl-row"><dt>{names[code]}</dt><dd>{esc(levels[code], quote=False)}</dd></div>'
+                         for code in "BLR" if code in levels)
+    gloss = ""
+    if lang == "en" and len(rs) == 1 and rs[0]["refs"] == [vid] and rs[0].get("literal_gloss"):
+        gloss = (f'<section class="verse-section"><h2>{ui["gloss"]}</h2>'
+                 f'<p class="verse-gloss">{esc(rs[0]["literal_gloss"], quote=False)}</p></section>')
+    # A Hebrew word's "after" is empty where a prefix joins the next word;
+    # a Greek word's may be bare punctuation, which a space follows.
+    original = "".join(w["text"] + (w.get("after", " ") if source == "hbo" or w.get("after", " ").endswith(" ")
+                                    else w["after"] + " ")
+                       for w in words.get(vid, [])).strip()
+    direction = ' dir="rtl"' if source == "hbo" else ""
+    english = [e for e in versification.to_english(ref) if e != ref]
+    numbering = (f'<p class="fine">{ui["english_number"].format(ref=esc(verse_ref_name(str(english[0]), lang)))}</p>'
+                 if english else "")
+    translated = page_notes(rs, lang)
+    in_verse = {w["id"] for w in words.get(vid, [])}
+
+    def about_verse(d):
+        return not d.get("tokens") or bool(in_verse & set(d["tokens"]))
+    meaning = "".join(verse_decision_html(d, translated.get(r["id"], {}).get(d["id"]), lang)
+                      for r in rs for d in r["decisions"] if d["layer"] == "meaning" and about_verse(d))
+    wording = "".join(verse_decision_html(d, translated.get(r["id"], {}).get(d["id"]), lang)
+                      for r in rs for d in r["decisions"]
+                      if d["layer"] != "meaning" and d.get("language") == lang and about_verse(d))
+    why = ""
+    if meaning or wording:
+        why = (f'<section class="verse-section"><h2>{cui["why"]}</h2>'
+               + (f'<h3>{cui["meaning"]}</h3><ul class="verse-decisions">{meaning}</ul>' if meaning else "")
+               + (f'<h3>{cui["wording"]}</h3><ul class="verse-decisions">{wording}</ul>' if wording else "")
+               + "</section>")
+    chapter_link = url(lang, chapter_url(book, chapter)) + f"#v{ref.verse}"
+    body = f"""
+<article class="article verse-page">
+<header class="article-head">
+<p class="eyebrow"><a href="{url(lang, chapter_url(book, chapter))}">{esc(f"{chapter_book(book, lang)} {chapter}")}</a></p>
+<h1>{esc(name)}</h1>
+<p class="notice">{ui["draft"]}</p>
+</header>
+<dl class="verse-levels">{level_rows}</dl>
+{numbering}
+<section class="verse-section"><h2>{ui["original" + suffix]}</h2>
+<p class="verse-original" lang="{source}"{direction}>{esc(original, quote=False)}</p></section>
+{gloss}
+{why}
+<p class="actions"><a class="button" href="{chapter_link}">{cui["read"]}&nbsp;{forward(lang)}</a>
+<a class="button ghost" href="{url(lang, "/compare/")}?v={vid}">{esc(cui["title"].replace("{ref}", name))}</a></p>
+</article>
+{verse_ld(vid, lang, name, levels, rs)}
+{breadcrumb_ld(lang, book_crumbs(book, lang) + [(chapter_name(records, book, chapter, lang), chapter_url(book, chapter)), (name, verse_page_url(vid))])}
+"""
+    return page(lang, ui["title"].format(ref=name), body, path=verse_page_url(vid), current="/read/",
+                description=shorten(f"{name}: {levels.get('B', '')}") if levels.get("B")
+                else ui["description" + suffix].format(ref=name),
+                translated=verse_page_languages(vid))
+
+
+def verse_ld(vid, lang, name, levels, rs):
+    """schema.org data for a verse's page: the verse as a work, its
+    Balanced text, part of its chapter, translated from the source text."""
+    ref = refs.parse(vid)
+    source = SOURCE_TEXTS[source_language(ref.book)]
+    data = {"@context": "https://schema.org", "@type": "CreativeWork", "name": name,
+            "url": SITE_URL + url(lang, verse_page_url(vid)), "inLanguage": lang,
+            "text": levels.get("B", ""), "license": CC0_URL,
+            "creativeWorkStatus": "Draft" if any(r["status"] == "ai_draft" for r in rs) else "Published",
+            "isPartOf": {"@type": "Chapter", "name": f"{chapter_book(ref.book, lang)} {ref.chapter}",
+                         "url": SITE_URL + url(lang, chapter_url(ref.book, ref.chapter))},
+            "translationOfWork": source, "isBasedOn": source}
+    return ld_script(data)
 
 
 def edition_url(book):
@@ -1716,12 +2523,398 @@ def name_cards():
     return cards
 
 
+# A page of its own for each person, place, people and glossary word the
+# reader's cards explain (data/names.json, data/glossary.json): its note,
+# the original words it translates, where a place is, and every chapter it
+# is named in. English only: the notes are written in English, and a page
+# per language would be heavy for the build. A name's senses that are one
+# referent share a page: the same person's note, the same place's point,
+# or the same people, deity or word.
+ENTITY_SECTIONS = {"names": "/names/", "glossary": "/glossary/"}
+# An entity named in a single verse has no page: its card says all there is,
+# and a page of one link is thin (and the site's size budget is tight).
+ENTITY_MIN_VERSES = 2
+
+
+def entity_section(kind):
+    return "glossary" if kind == "concept" else "names"
+
+
+def slugify(text):
+    text = unicodedata.normalize("NFKD", text).encode("ascii", "ignore").decode().lower()
+    return re.sub(r"[^a-z0-9]+", "-", text).strip("-") or "x"
+
+
+def card_sense(senses, vid):
+    """The sense of a name card for a verse: the one listing the verse, or
+    the one for every other verse."""
+    return next((s for s in senses if vid in s.get("verses", [])), None) \
+        or next((s for s in senses if "verses" not in s), None)
+
+
+@functools.lru_cache(maxsize=None)
+def entities():
+    """Every entity with a page: {path: entity} in each section's order,
+    and {(strong, lemma, sense index): path} for the cards. An entity is
+    {"name", "kind", "note", "lemmas": [(strong, lemma)], "verses": [verse
+    ids in canonical order], "where": a place's point or None}. A name used
+    by two entities gets its plain slug for the one named in more verses.
+    Senses of one name are one entity (Aaron in the Hebrew and the Greek)
+    unless they are a located place's different sites, or a word's senses
+    for different people of that name."""
+    cards = name_cards()
+    found = {}
+    for book, chapter in chapters():
+        path = words_path(book, chapter)
+        if not path.exists():
+            continue
+        for vid, ws in json.loads(path.read_text(encoding="utf-8"))["verses"].items():
+            for w in ws:
+                key = (word_strong(w), w["lemma"])
+                senses = cards.get(key)
+                if not senses or validate.key_term(w["id"], w.get("strong") or ""):
+                    continue
+                sense = card_sense(senses, vid)
+                if sense:
+                    found.setdefault((*key, senses.index(sense)), []).append(vid)
+    groups = {}
+    for (strong, lemma, i), vids in found.items():
+        sense = cards[(strong, lemma)][i]
+        where = places().get(f"{strong}|{lemma}|{sense['name']}") if sense["kind"] == "place" else None
+        if where:
+            gkey = ("place", sense["name"], tuple(where["at"]))
+        elif "verses" in sense and sum(x["name"] == sense["name"] for x in cards[(strong, lemma)]) > 1:
+            # One of several people (or places) a word names: a page of its own.
+            gkey = (sense["kind"], sense["name"], strong, lemma, i)
+        else:
+            gkey = (sense["kind"], sense["name"])
+        g = groups.setdefault(gkey, {"name": sense["name"], "kind": sense["kind"], "members": [], "verses": set(),
+                                     "where": where})
+        g["members"].append(((strong, lemma, i), sense["note"], len(vids)))
+        g["verses"].update(vids)
+        g["where"] = g["where"] or where
+    out, paths, by_slug = {}, {}, {}
+    for g in groups.values():
+        if len(g["verses"]) < ENTITY_MIN_VERSES:
+            continue
+        g["verses"] = sorted(g["verses"], key=lambda v: refs.parse(v).sort_key())
+        by_slug.setdefault((entity_section(g["kind"]), slugify(g["name"])), []).append(g)
+    for (section, slug), gs in sorted(by_slug.items()):
+        gs.sort(key=lambda g: (-len(g["verses"]), refs.parse(g["verses"][0]).sort_key()))
+        for n, g in enumerate(gs, 1):
+            path = f"{ENTITY_SECTIONS[section]}{slug}{'' if n == 1 else f'-{n}'}/"
+            members = sorted(g["members"], key=lambda m: -m[2])
+            out[path] = {"name": g["name"], "kind": g["kind"], "note": members[0][1],
+                         "lemmas": list(dict.fromkeys(m[0][:2] for m in members)), "verses": g["verses"],
+                         "where": g["where"], "same_name": len(gs) > 1}
+            paths.update({m[0]: path for m in members})
+    return out, paths
+
+
+def entity_ld(e, path):
+    kind = {"person": "Person", "place": "Place", "concept": "DefinedTerm"}.get(e["kind"], "Thing")
+    data = {"@context": "https://schema.org", "@type": kind, "name": e["name"], "description": e["note"],
+            "url": SITE_URL + path, "alternateName": [lemma for _, lemma in e["lemmas"]]}
+    if kind == "DefinedTerm":
+        data["termCode"] = e["lemmas"][0][0]
+        data["inDefinedTermSet"] = {"@type": "DefinedTermSet", "name": t("en", "entities.glossary_title"),
+                                    "url": SITE_URL + "/glossary/"}
+    if kind == "Place" and e["where"]:
+        lon, lat = e["where"]["at"]
+        data["geo"] = {"@type": "GeoCoordinates", "latitude": lat, "longitude": lon}
+    return ld_script(data)
+
+
+def entity_mentions(verses, lang="en"):
+    """Where an entity is named: by book, each chapter linked at the first
+    verse naming it there."""
+    books_ = {}
+    for vid in verses:
+        ref = refs.parse(vid)
+        books_.setdefault(ref.book, {}).setdefault(ref.chapter, ref.verse)
+    rows = []
+    for book, chaps in books_.items():
+        links = ", ".join(f'<a href="{url(lang, chapter_url(book, c))}#v{v}">{c}</a>' for c, v in chaps.items())
+        rows.append(f"<li><b>{html.escape(chapter_book(book, lang))}</b> {links}</li>")
+    return f'<ul class="ent-mentions">{"".join(rows)}</ul>'
+
+
+def entity_page(path, e):
+    lang = "en"
+    ui = catalog(lang)["entities.ui"]
+    section = entity_section(e["kind"])
+    kind = catalog(lang)["reader.ui"]["card_kind"].get(e["kind"], "")
+    original = ", ".join(
+        f'<span lang="{source_language("GEN" if strong.startswith("H") else "MAT")}">{html.escape(lemma)}</span> '
+        f'<span class="ent-strong">{html.escape(strong)}</span>' for strong, lemma in e["lemmas"])
+    where = ""
+    if e["where"]:
+        lon, lat = e["where"]["at"]
+        sure = catalog(lang)["reader.ui"]["map_sure" if e["where"]["sure"] else "map_unsure"]
+        where = (f'<dt>{ui["where"]}</dt><dd>{abs(lat):.3f}\u00b0{"N" if lat >= 0 else "S"}, '
+                 f'{abs(lon):.3f}\u00b0{"E" if lon >= 0 else "W"} ({sure})</dd>')
+    n = len(e["verses"])
+    body = f"""
+<header class="page-head ent-head">
+<p class="eyebrow"><a href="{ENTITY_SECTIONS[section]}">{t(lang, f"entities.{section}_title")}</a> · {kind}</p>
+<h1>{html.escape(e["name"])}</h1>
+<p class="dek">{html.escape(e["note"])}</p>
+</header>
+<dl class="ent-facts"><dt>{ui["original"]}</dt><dd>{original}</dd>{where}</dl>
+<h2>{ui["mentions_one"] if n == 1 else ui["mentions"].format(n=n)}</h2>
+{entity_mentions(e["verses"], lang)}
+<p class="fine">{t(lang, "entities.draft")}</p>
+{entity_ld(e, path)}
+"""
+    return page(lang, e["name"], body, path=path, current="/read/", description=shorten(e["note"]),
+                translated=("en",))
+
+
+def entity_index_page(section):
+    """/names/ or /glossary/: every entity in the section, A to Z; a name
+    shared by two entities says which is which."""
+    lang = "en"
+    items = sorted(((p, e) for p, e in entities()[0].items() if p.startswith(ENTITY_SECTIONS[section])),
+                   key=lambda pe: (slugify(pe[1]["name"]), pe[0]))
+    letters = {}
+    for p, e in items:
+        hint = f' <span class="ent-hint">{html.escape(shorten(e["note"], 70))}</span>' if e["same_name"] else ""
+        letters.setdefault(slugify(e["name"])[0].upper(), []).append(f'<li><a href="{p}">{html.escape(e["name"])}</a>{hint}</li>')
+    nav = " ".join(f'<a href="#l-{k}">{k}</a>' for k in letters)
+    lists = "\n".join(f'<h2 id="l-{k}">{k}</h2><ul class="ent-list">{"".join(v)}</ul>' for k, v in letters.items())
+    body = f"""
+<header class="page-head">
+<h1>{t(lang, f"entities.{section}_title")}</h1>
+<p class="dek">{t(lang, f"entities.{section}_dek")}</p>
+</header>
+<nav class="ent-letters">{nav}</nav>
+{lists}
+"""
+    return page(lang, t(lang, f"entities.{section}_title"), body, path=ENTITY_SECTIONS[section], current="/read/",
+                description=shorten(t(lang, f"entities.{section}_dek")), translated=("en",))
+
+
 @functools.lru_cache(maxsize=None)
 def places():
     """data/places.json: where each place in data/names.json is, by
     "strong|lemma|name" (scripts/extract_places.py)."""
     path = ROOT / "data" / "places.json"
     return json.loads(path.read_text(encoding="utf-8"))["places"] if path.exists() else {}
+
+
+@functools.lru_cache(maxsize=None)
+def places_more():
+    """data/places.json's "more": places OpenBible.info locates among the
+    words data/names.json has no card for yet, by (Strong's number, lemma):
+    (MACULA's name for it, where it is, the verses it is found in)."""
+    path = ROOT / "data" / "places.json"
+    more = json.loads(path.read_text(encoding="utf-8")).get("more", {}) if path.exists() else {}
+    out = {}
+    for key, p in more.items():
+        strong, lemma, name = key.split("|")
+        out[(strong, lemma)] = (name, {k: p[k] for k in ("at", "sure", "area")}, frozenset(p["verses"]))
+    return out
+
+
+@functools.lru_cache(maxsize=None)
+def journeys():
+    """data/journeys.json's journeys: ordered stops (a place in
+    data/places.json and the verse that takes the traveller there), with a
+    name and description per language."""
+    path = ROOT / "data" / "journeys.json"
+    return json.loads(path.read_text(encoding="utf-8"))["journeys"] if path.exists() else []
+
+
+def journey_path(jid):
+    return f"/journeys/{jid}/"
+
+
+def journeys_url(lang, jid=None):
+    """The journeys page, or one journey's own page."""
+    return url(lang, journey_path(jid) if jid else "/journeys/")
+
+
+def journey_data(j, lang):
+    """One journey as the journeys page draws it: its stops' names, points,
+    whether each site is known, and links to the verses, in lang."""
+    stops = []
+    for s in j["stops"]:
+        ref = refs.parse(s["ref"])
+        name = s["place"].split("|")[2]
+        where = places().get(s["place"]) or places_more()[tuple(s["place"].split("|")[:2])][1]
+        stops.append({"title": name, "at": where["at"], "sure": where["sure"], "area": where["area"],
+                      "ref": verse_name(ref.book, ref.chapter, ref.verse, lang),
+                      "href": f"{url(lang, chapter_url(ref.book, ref.chapter))}#v{ref.verse}"})
+    return {"id": j["id"], "testament": j["testament"], "name": j["name"].get(lang, j["name"]["en"]),
+            "description": j["description"].get(lang, j["description"]["en"]),
+            "uncertain": bool(j.get("uncertain")), "stops": stops}
+
+
+def chapter_journeys(book, chapter, lang):
+    """The journeys with a stop in this chapter, for the reader's map:
+    [{"name", "href", "verses": [verse ids of its stops here]}]."""
+    out = []
+    for j in journeys():
+        here = [s["ref"] for s in j["stops"] if s["ref"].startswith(f"{book}.{chapter}.")]
+        if here:
+            out.append({"name": j["name"].get(lang, j["name"]["en"]), "href": journeys_url(lang, j["id"]),
+                        "verses": sorted(set(here), key=here.index)})
+    return out
+
+
+def journeys_page(lang="en"):
+    """/journeys/: every journey, one at a time on a map (web/map.js
+    drawJourney) with its numbered stops and links to their verses."""
+    reader = catalog(lang)["reader.ui"]
+    data = {"ui": {**catalog(lang)["journeys.ui"], **{k: reader[k] for k in ("map_sure", "map_unsure", "map_credit")}},
+            "map": {"base": basemap_file()[1]},
+            "journeys": [journey_data(j, lang) for j in journeys()]}
+    blob = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+    ui = data["ui"]
+    groups = []
+    for testament in ("ot", "nt"):
+        items = "".join(f'<li><a href="{journeys_url(lang, j["id"])}" data-journey="{j["id"]}">'
+                        f'{html.escape(j["name"])}</a></li>'
+                        for j in data["journeys"] if j["testament"] == testament)
+        if items:
+            groups.append(f'<h2>{html.escape(ui[testament])}</h2>\n<ul class="jr-list">{items}</ul>')
+    lists = "\n".join(groups)
+    body = f"""
+<header class="page-head journeys-head">
+<p class="eyebrow">{t(lang, "journeys.title")}</p>
+<h1>{t(lang, "journeys.heading")}</h1>
+<p class="dek">{t(lang, "journeys.dek")}</p>
+</header>
+<div class="jr">
+<nav class="jr-nav" aria-label="{html.escape(ui["choose"])}">
+{lists}
+</nav>
+<section class="jr-show" id="jr-show" aria-live="polite">
+<noscript><p class="notice">{t(lang, "journeys.noscript")}</p></noscript>
+</section>
+</div>
+<script type="application/json" id="jr-data">{blob}</script>
+<script src="{asset("map.js")}"></script>
+<script src="{asset("journeys.js")}" defer></script>
+"""
+    return page(lang, t(lang, "journeys.title"), body, path="/journeys/", current="/read/",
+                description=t(lang, "journeys.dek"))
+
+
+def journey_page(j, lang="en"):
+    """/journeys/<id>/: one journey, its stops listed in the page as served
+    with links to their verses, and drawn on the map (web/journeys.js in
+    its single mode), so each journey can be found and linked on its own."""
+    reader = catalog(lang)["reader.ui"]
+    ui = {**catalog(lang)["journeys.ui"], **{k: reader[k] for k in ("map_sure", "map_unsure", "map_credit")}}
+    one = journey_data(j, lang)
+    data = {"ui": ui, "map": {"base": basemap_file()[1]}, "journeys": [one], "single": True}
+    blob = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+    stops = "".join(f'<li>{html.escape(s["title"])} <a href="{s["href"]}">{html.escape(s["ref"])}</a></li>'
+                    for s in one["stops"])
+    uncertain = f'<p class="notice">{html.escape(ui["uncertain"])}</p>' if one["uncertain"] else ""
+    others = "".join(f'<li><a href="{journeys_url(lang, o["id"])}">{html.escape(o["name"].get(lang, o["name"]["en"]))}'
+                     f'</a></li>' for o in journeys() if o["id"] != j["id"])
+    body = f"""
+<header class="page-head journeys-head">
+<p class="eyebrow"><a href="{url(lang, "/journeys/")}">{t(lang, "journeys.title")}</a> · {html.escape(ui[one["testament"]])}</p>
+<h1>{html.escape(one["name"])}</h1>
+<p class="dek">{html.escape(one["description"])}</p>
+</header>
+{uncertain}
+<section class="jr-show" id="jr-show"></section>
+<h2>{html.escape(ui["stops"])}</h2>
+<ol class="jr-stops">{stops}</ol>
+<nav class="jr-more" aria-label="{html.escape(ui["choose"])}"><h2>{html.escape(ui["choose"])}</h2>
+<ul class="jr-list">{others}</ul></nav>
+<script type="application/json" id="jr-data">{blob}</script>
+<script src="{asset("map.js")}"></script>
+<script src="{asset("journeys.js")}" defer></script>
+"""
+    return page(lang, one["name"], body, path=journey_path(j["id"]), current="/read/",
+                description=shorten(one["description"]))
+
+
+# Quotation marks trimmed from the ends of a quoted New Testament verse,
+# which often opens or closes mid-speech.
+QUOTE_MARKS = "\u201c\u201d\u2018\u2019\"'\u00ab\u00bb\u300c\u300d\u300e\u300f\u201e \u00a0"
+
+
+def quotations():
+    """data/quotations.json: the Old Testament quoted in the New, "nt" in
+    our numbering and "ot" in English numbering."""
+    return json.loads((ROOT / "data" / "quotations.json").read_text(encoding="utf-8"))["quotations"]
+
+
+def span_verses(span):
+    """A verse id or a range in one chapter ("MAT.4.15-16") as its verse ids."""
+    first, _, last = span.partition("-")
+    ref = refs.parse(first)
+    end = int(last) if last else ref.verse
+    return [f"{ref.book}.{ref.chapter}.{v}" for v in range(ref.verse, end + 1)]
+
+
+def span_label(vids, lang):
+    first, last = refs.parse(vids[0]), refs.parse(vids[-1])
+    name = verse_name(first.book, first.chapter, first.verse, lang)
+    if last == first:
+        return name
+    return name + (f"\u2013{last.verse}" if last.chapter == first.chapter else f"\u2013{last.chapter}:{last.verse}")
+
+
+def quotation_ot(span):
+    """A quotation's Old Testament side in our numbering (owb/versification.py)."""
+    out = []
+    for vid in span_verses(span):
+        out.extend(f"{r.book}.{r.chapter}.{r.verse}" for r in versification.to_source(refs.parse(vid)))
+    return list(dict.fromkeys(out))
+
+
+def quotations_page(lang="en"):
+    """/quotations/: every explicit quotation of the Old Testament in the
+    New, by New Testament book: the New Testament words as we translate
+    them, linked to both passages, and whether the Greek follows the
+    Hebrew, the Septuagint or neither closely."""
+    ui = catalog(lang)["quotations.ui"]
+    have = chapter_set()
+    groups = {}
+    for q in quotations():
+        nt, ot = span_verses(q["nt"]), quotation_ot(q["ot"])
+        first = refs.parse(nt[0])
+        if (first.book, first.chapter) not in have:
+            continue
+        texts, tl = [], lang
+        for vid in nt:
+            ref = refs.parse(vid)
+            rec = next((x for x in chapter_records(ref.book, ref.chapter) if vid in x["refs"]), None)
+            if rec:
+                texts.append(verse_text(rec, vid, lang))
+                tl = text_lang(rec, lang) if tl == lang else tl
+        nt_link = f'<a href="{url(lang, chapter_url(first.book, first.chapter))}#v{first.verse}">' \
+                  f'{html.escape(span_label(nt, lang))}</a>'
+        o = refs.parse(ot[0])
+        ot_label = html.escape(span_label(ot, lang))
+        ot_link = (f'<a href="{url(lang, chapter_url(o.book, o.chapter))}#v{o.verse}">{ot_label}</a>'
+                   if (o.book, o.chapter) in have else ot_label)
+        groups.setdefault(first.book, []).append(
+            f'<li><p class="q-text"{lang_attr(tl, lang)}>{html.escape(" ".join(texts).strip(QUOTE_MARKS))}</p>'
+            f'<p class="q-refs">{nt_link} · {ui["quotes"].format(ot=ot_link)}'
+            f' <span class="q-kind q-{q["kind"]}">{html.escape(ui[q["kind"]])}</span></p></li>')
+    sections = "\n".join(f'<section><h2>{html.escape(chapter_book(book, lang))}</h2>'
+                         f'<ol class="q-list">{"".join(items)}</ol></section>' for book, items in groups.items())
+    kinds = "".join(f'<li><span class="q-kind q-{k}">{html.escape(ui[k])}</span> {html.escape(ui[k + "_note"])}</li>'
+                    for k in ("hebrew", "septuagint", "loose"))
+    body = f"""
+<header class="page-head">
+<p class="eyebrow">{t(lang, "quotations.title")}</p>
+<h1>{t(lang, "quotations.heading")}</h1>
+<p class="dek">{t(lang, "quotations.dek")}</p>
+</header>
+<ul class="q-kinds">{kinds}</ul>
+{sections}
+"""
+    return page(lang, t(lang, "quotations.title"), body, path="/quotations/", current="/read/",
+                description=shorten(t(lang, "quotations.dek")))
 
 
 @functools.lru_cache(maxsize=None)
@@ -1759,6 +2952,31 @@ def term_card_rule(term, lang):
     return ui["card_term_levels"].format(words=parts)
 
 
+@functools.lru_cache(maxsize=None)
+def card_translation(lang, kind, key):
+    """A glossary, name or key-term card translated into lang and still
+    current (data/cards/<lang>/<kind>.json, owb/notes.py), or None: the
+    English shows instead."""
+    return None if lang == "en" else owb_notes.current_card(lang, kind, key)
+
+
+def term_translation(term, lang):
+    """A key term's sense and note in lang ({"sense", "note"}), or {}."""
+    tr = card_translation(lang, "key_terms", owb_notes.card_key("key_terms", term))
+    return {k: smart_quotes(v) for k, v in tr.items() if k != "source"} if tr else {}
+
+
+def sense_translation(strong, lemma, index, lang):
+    """One sense of a glossary or name card in lang ({"name", "note"}), or
+    {}. The glossary is read first, as name_cards lets it win."""
+    key = f"{strong}|{lemma}"
+    kind = "glossary" if key in owb_notes.english_cards("glossary") else "names"
+    tr = card_translation(lang, kind, key)
+    if not tr or index >= len(tr["senses"]):
+        return {}
+    return {k: smart_quotes(v) for k, v in tr["senses"][index].items()}
+
+
 def word_cards(records, words, lang="en"):
     """The key terms and the people, places and peoples among this page's
     words: {"list": [card, ...], "tokens": {token id: index into list}}.
@@ -1776,23 +2994,34 @@ def word_cards(records, words, lang="en"):
             term = validate.key_term(w["id"], w.get("strong") or "")
             if term:
                 key = ("term", term_key(term))
-                card = {"type": "term", "lemma": term["lemma"], "title": term["sense"],
-                        "english": term_english(term), "note": term.get("note", ""),
-                        "href": url(lang, term_path(term))}
+                tr = term_translation(term, lang)
+                card = {"type": "term", "lemma": term["lemma"], "title": tr.get("sense", term["sense"]),
+                        "english": term_english(term), "note": tr.get("note", term.get("note", "")),
+                        "lang": lang if tr else "en", "href": url(lang, term_path(term))}
                 if isinstance(term["english"], dict):
                     card["rule"] = term_card_rule(term, lang)
             senses = names.get((word_strong(w), w["lemma"]))
             if senses and not card:
-                sense = next((s for s in senses if vid in s.get("verses", [])), None) \
-                    or next((s for s in senses if "verses" not in s), None)
+                sense = card_sense(senses, vid)
                 if sense:
                     key = ("name", w["lemma"], sense["name"])
-                    card = {"type": "name", "lemma": w["lemma"], "title": sense["name"],
-                            "kind": sense["kind"], "note": sense["note"]}
+                    tr = sense_translation(word_strong(w), w["lemma"], senses.index(sense), lang)
+                    card = {"type": "name", "lemma": w["lemma"], "title": tr.get("name", sense["name"]),
+                            "kind": sense["kind"], "note": tr.get("note", sense["note"]),
+                            "lang": lang if tr else "en"}
+                    page_path = entities()[1].get((word_strong(w), w["lemma"], senses.index(sense)))
+                    if page_path and lang == "en":
+                        card["href"] = page_path
                     # A place OpenBible.info locates: where it is, for the panel's map.
                     where = places().get(f"{word_strong(w)}|{w['lemma']}|{sense['name']}")
                     if sense["kind"] == "place" and where:
-                        card.update(where)
+                        card.update({k: where[k] for k in ("at", "sure", "area")})
+            more = places_more().get((word_strong(w), w["lemma"]))
+            if not card and more and vid in more[2]:
+                # A place OpenBible.info locates that has no card of its own yet.
+                key = ("more", w["lemma"], more[0])
+                card = {"type": "name", "lemma": w["lemma"], "title": more[0], "kind": "place",
+                        "note": catalog(lang)["reader.ui"]["card_place_located"], **more[1]}
             if card:
                 if key not in index:
                     index[key] = len(cards)
@@ -1991,12 +3220,19 @@ def paragraph_verses():
 
 def verse_files():
     """{path: text} for every chapter of the Bible (see VERSES_DIR)."""
-    ours, seen = {}, set()
+    ours, seen, lined = {}, set(), {}
     for book, chapter in chapters():
         for r in chapter_records(book, chapter):
             if r["id"] in seen:
                 continue
             seen.add(r["id"])
+            # A record set in lines in a language sets every verse of it in
+            # lines there (web/reader.js poetic), so the edition can set a
+            # song inside a prose chapter as poetry and the rest as prose.
+            for lang, levels in r["renderings"].items():
+                if any(markup.is_poetry(text) for text in levels.values()):
+                    for vid in r["refs"]:
+                        lined.setdefault(vid, set()).add(lang)
             for vid, langs in record_verses(r).items():
                 into = ours.setdefault(vid, {})
                 for lang, levels in langs.items():
@@ -2013,6 +3249,17 @@ def verse_files():
     starts = paragraph_verses()
     for (book, chapter), entry in by_chapter.items():
         entry["p"] = sorted(refs.parse(vid).verse for vid in starts.get((book, chapter), ()))
+    # "q": the verses set as poetry, by language, for the edition.
+    for vid, langs in lined.items():
+        ref = refs.parse(vid)
+        if (ref.book, ref.chapter) not in by_chapter:
+            continue
+        q = by_chapter[ref.book, ref.chapter].setdefault("q", {})
+        for lang in langs:
+            q.setdefault(lang, []).append(ref.verse)
+    for entry in by_chapter.values():
+        for lang in entry.get("q", {}):
+            entry["q"][lang] = sorted(set(entry["q"][lang]))
     for code in COMPARISON_EDITIONS:
         for ref, text in comparison_ours(code).items():
             if str(ref) in ours:
@@ -2275,7 +3522,9 @@ def resume_link(lang, cls="button", names=False):
     books_attr = ""
     if names:
         names = json.dumps({b: BOOK_NAMES[b][lang] for b, _ in books()}, ensure_ascii=False)
-        books_attr = f' data-books="{html.escape(names)}"'
+        # In single quotes, so the JSON's double quotes need no escapes:
+        # 66 names, on every page.
+        books_attr = f" data-books='{html.escape(names, quote=False).replace(chr(39), '&#x27;')}'"
     return (f'<a class="{cls}" data-resume hidden data-label="{html.escape(t(lang, "resume.link"))}" '
             f'data-prefix="{url(lang, "")}"{books_attr} href="{url(lang, "/read/")}">'
             f'{icon(ICONS["book"])}<span></span></a>')
@@ -2285,9 +3534,12 @@ def save_button(book, chaps, lang):
     """A book's "Save for offline" button on the Read page: web/site.js
     stores the pages it names in the owb-books cache, which web/sw.js reads
     when there is no connection, and the chapters' shared reader data
-    (chapter_shared). Hidden where the browser cannot."""
+    (chapter_shared, and chapter_language_data for the languages each page
+    loads). Hidden where the browser cannot."""
     pages = json.dumps([url(lang, chapter_url(p.book, p.chapter)) for p in chaps])
-    data = json.dumps([chapter_shared(p.book, p.chapter)[1] for p in chaps])
+    data = json.dumps([u for p in chaps for u in [chapter_shared(p.book, p.chapter)[1]]
+                       + [chapter_language_data(p.book, p.chapter, code)[1]
+                          for code in page_texts(load_chapter(p.book, p.chapter)[0], lang)]])
     labels = "".join(f' data-{k}="{html.escape(t(lang, "offline." + k))}"'
                      for k in ("save", "saving", "saved", "failed"))
     return (f'<button type="button" class="save-book" hidden data-book="{book}" '
@@ -2316,7 +3568,7 @@ def read_page(lang="en"):
         name = BOOK_NAMES[book][lang]
         # The book's page, where it has one.
         page_link = (f'<a class="book-page-link" href="{url(lang, book_url(book))}">'
-                     f'{catalog(lang)["book_page"]["title"].replace("{book}", name)}&nbsp;&rarr;</a>'
+                     f'{catalog(lang)["book_page"]["title"].replace("{book}", name)}&nbsp;{forward(lang)}</a>'
                      if lang in book_languages(book) else "")
         testament = "old_testament" if book in refs.OT_CODES else "new_testament"
         tiles[testament].append(
@@ -2338,7 +3590,7 @@ def read_page(lang="en"):
 <header class="page-head" data-offline-files="{html.escape(json.dumps(offline_files(lang)))}">
 <p class="eyebrow">{t(lang, "read.title")}</p>
 <h1>{t(lang, "read.heading")}</h1>
-<p class="dek">{t(lang, "read.dek")}</p>
+<p class="dek">{t(lang, "read.dek", n=len(complete_languages()))}</p>
 <p class="actions">{resume_link(lang)}<a class="button ghost" href="{url(lang, "/saved/")}">{icon(ICONS["bookmark"])}{t(lang, "saved.title")}</a>
 <a class="button ghost" href="{url(lang, "/plans/")}">{icon(ICONS["calendar"])}{t(lang, "nav.plans")}</a></p>
 </header>
@@ -2411,9 +3663,17 @@ def plan_length(plan, lang="en"):
     return t(lang, "plans.length", n=len(plan.days)) + (f" &middot; {t(lang, 'plans.daily')}" if daily else "")
 
 
+# A plan that reads more books than this names only its first and last.
+PLAN_BOOKS_LISTED = 4
+
+
 def plan_books(plan, lang="en"):
-    """The books a plan reads, in its order: "Galatians · Ephesians"."""
+    """The books a plan reads, in its order: "Galatians · Ephesians"; for
+    many books, the first and the last: "Genesis – Revelation"."""
     codes = list(dict.fromkeys(b for day in plan.days for b, _ in day))
+    if len(codes) > PLAN_BOOKS_LISTED:
+        codes = [codes[0], codes[-1]]
+        return " &ndash; ".join(BOOK_NAMES[b][lang] for b in codes)
     return " &middot; ".join(BOOK_NAMES[b][lang] for b in codes)
 
 
@@ -2509,6 +3769,7 @@ def home_plans(lang="en"):
 def plans_mine_link(lang):
     return (f'<p class="plans-mine-link actions"><a class="button ghost" href="{url(lang, MY_PLANS_PATH)}">'
             f'{icon(ICONS["calendar"], 16)}{t(lang, "plans.make")}</a> '
+            f'<a class="button ghost" href="{url(lang, MEMORIZE_PATH)}#memo-plans-h">{t(lang, "memory.plans_heading")}</a> '
             f'<a class="button ghost" href="{url(lang, "/groups/")}">{t(lang, "plans.together")}</a></p>')
 
 
@@ -2880,6 +4141,35 @@ def example_html(lang="en"):
 """
 
 
+@functools.lru_cache(maxsize=None)
+def language_coverage():
+    """Each reading language's share of the Bible's sentence records, as
+    {code: (drafted, total)}, so the home, Read and About pages say where
+    the work stands without naming languages in their messages."""
+    records = all_records()
+    return {code: (sum(code in r["renderings"] for r in records), len(records)) for code in LANGUAGES}
+
+
+def complete_languages():
+    """The languages with every sentence of the Bible drafted."""
+    return [code for code, (drafted, total) in language_coverage().items() if drafted == total]
+
+
+def progress_text(lang):
+    """The home page's progress paragraph: how many languages have the whole
+    Bible, each language still under way and how far it has got, and that
+    all of it is an unreviewed AI-assisted draft."""
+    names = catalog(lang)["language_names"]
+    parts = [t(lang, "home.progress_full", n=len(complete_languages()))]
+    for code, (drafted, total) in language_coverage().items():
+        if 0 < drafted < total:
+            parts.append(t(lang, "home.progress_partial", language=html.escape(names[code]),
+                           pct=min(99, round(100 * drafted / total))))
+    parts.append(t(lang, "home.progress_review"))
+    # Japanese sentences, ending in 。, run on without a space.
+    return "".join(part + ("" if part.endswith("。") else " ") for part in parts).rstrip()
+
+
 def progress_html(lang="en"):
     """The home page's progress: sentences and decisions, in the page's
     language only (the footer maps the books). A sentence's decisions in
@@ -2894,7 +4184,7 @@ def progress_html(lang="en"):
 <div><b>{decisions}</b><span>{t(lang, "home.stat_decisions")}</span></div>
 <div><b>{len(LANGUAGES)}</b><span>{t(lang, "home.stat_languages")}</span></div>
 </div>
-<p>{t(lang, "home.progress_text")}</p>
+<p>{progress_text(lang)}</p>
 </section>
 """
 
@@ -3167,13 +4457,14 @@ def home_page(lang="en"):
 <h1>{t(lang, "home.heading")}</h1>
 <p class="hero-sub">{t(lang, "home.sub")}</p>
 {plan_today(lang)}
+{home_memory(lang)}
 <p class="actions">{resume_link(lang)}<a class="button" href="{url(lang, "/read/")}">{icon(ICONS["book"])}{t(lang, "home.start")}</a>
 <a class="button ghost hero-how" href="#example-h">{t(lang, "home.how")}</a></p>
 {hero_search(lang)}
 <ul class="trust">
 <li>{icon(ICONS["gift"], 16)}{t(lang, "home.trust_free")}</li>
 <li>{icon(ICONS["scale"], 16)}{t(lang, "home.trust_cc0")}</li>
-<li>{icon(ICONS["languages"], 16)}{t(lang, "home.trust_languages", n=len(LANGUAGES) - 1)}</li>
+<li>{icon(ICONS["languages"], 16)}{t(lang, "home.trust_languages", n=len(complete_languages()))}</li>
 </ul>
 </section>
 {verse_of_the_day(lang)}
@@ -3204,6 +4495,7 @@ def home_page(lang="en"):
 </ul>
 </section>
 {plans_script()}
+<script src="{asset("memorize.js")}" defer></script>
 """
     feed = (f'\n<link rel="alternate" type="application/atom+xml" '
             f'title="{html.escape(SITE_NAME + " · " + t(lang, "home.votd"))}" href="{votd_feed_url(lang)}">')
@@ -3240,10 +4532,11 @@ def about_page(lang="en"):
     body = f"""
 <div class="prose">
 <h1>{t(lang, "about.title")}</h1>
-<p>{t(lang, "about.intro")}</p>
+<p>{t(lang, "about.intro", n=len(complete_languages()))}</p>
 <h2>{t(lang, "about.licences")}</h2>
 <p>{t(lang, "about.licences_text")}</p>
 <p>{t(lang, "about.source")} <a href="{GITHUB_URL}">github.com/jdegreef/open-word-bible</a>.</p>
+<p>{t(lang, "about.variants", href=url(lang, "/variants/"))}</p>
 {credits}
 </div>
 {dataset_ld() if lang == "en" else ""}
@@ -3651,12 +4944,20 @@ def term_lemma(term, cls="term-lemma"):
     return f'<span class="{cls}" lang="{term_key(term)[0]}">{html.escape(term["lemma"])}</span>'
 
 
+def term_sense(term, lang):
+    """A key term's sense, in lang where it is translated (data/cards/), and
+    the language it is in."""
+    tr = term_translation(term, lang)
+    return (tr["sense"], lang) if tr else (term["sense"], "en")
+
+
 def term_row(term, lang="en"):
     """A key term in a list: its lemma, sense, settled English and uses."""
     english = ", ".join(term_english(term))
+    sense, sense_lang = term_sense(term, lang)
     return (f'<li><a class="term-row" href="{url(lang, term_path(term))}">'
             f'{term_lemma(term)}'
-            f'<span class="term-sense"{lang_attr("en", lang)}>{html.escape(term["sense"])}</span>'
+            f'<span class="term-sense"{lang_attr(sense_lang, lang)}>{html.escape(sense)}</span>'
             f'<span class="term-english"{lang_attr("en", lang)}>{html.escape(english)}</span>'
             f'<span class="term-count">{tn(lang, "terms.count", term_count(term))}</span></a></li>')
 
@@ -3706,6 +5007,62 @@ def terms_page(lang="en"):
 """
     return page(lang, t(lang, "terms.title"), body, path="/terms/", current="/about/",
                 description=t(lang, "meta.terms_description"))
+
+
+def footnoted_variants():
+    """Every text_variant decision with a footnote, as [(book, [(record,
+    decision), ...]), ...] in canonical order, each sentence once
+    (docs/text-variants.md says which variants get a footnote)."""
+    by_book, seen = {}, set()
+    for p in passages():
+        for r in p.records:
+            if r["id"] in seen:
+                continue
+            seen.add(r["id"])
+            for d in r.get("decisions") or []:
+                if d.get("category") == "text_variant" and d.get("footnote"):
+                    by_book.setdefault(p.book, []).append((r, d))
+    return list(by_book.items())
+
+
+def variants_page(lang="en"):
+    """The footnoted text variants, book by book: each verse's reference
+    (linked to the reader), the reading followed and the others."""
+    ui = catalog(lang)
+    groups, jump = [], []
+    english = False  # a note shown in English because it has no current translation
+    for book, found in footnoted_variants():
+        name = html.escape(book_name(book, lang))
+        items = []
+        notes = book_notes(book, lang)
+        for r, d in found:
+            ref = refs.parse(r["refs"][0])
+            label = html.escape(verse_name(book, ref.chapter, ref.verse, lang))
+            href = verse_link(book, ref.chapter, ref.verse, lang)
+            where = f'<a href="{href}">{label}</a>' if href else label
+            tr = notes.get(r["id"], {}).get(d["id"])
+            english = english or (lang != "en" and not tr)
+            items.append(f'<li class="variant"><span class="variant-ref">{where}</span> '
+                         f'<span class="variant-note">{note_html(d, lang, tr)}</span></li>')
+        count = t(lang, "variants.count_one") if len(found) == 1 else t(lang, "variants.count", n=len(found))
+        code = book.lower()
+        jump.append(f'<li><a href="#{code}">{name}</a></li>')
+        groups.append(f'<section class="variant-book" id="{code}" aria-labelledby="{code}-h">'
+                      f'<h2 id="{code}-h">{name} <span class="fine">{html.escape(count)}</span></h2>'
+                      f'<ul class="variant-list">{"".join(items)}</ul></section>')
+    note = f'<p class="fine">{ui["notes_in_english"]}</p>' if english else ""
+    body = f"""
+<header class="page-head">
+<p class="eyebrow">{t(lang, "variants.title")}</p>
+<h1>{t(lang, "variants.heading")}</h1>
+<p class="dek">{t(lang, "variants.dek")}</p>
+</header>
+<nav class="a-jump" aria-label="{t(lang, "variants.title")}"><ul>{"".join(jump)}</ul></nav>
+{note}
+{"".join(groups)}
+"""
+    return page(lang, t(lang, "variants.title"), body, path="/variants/", current="/about/",
+                description=t(lang, "meta.variants_description"))
 
 
 # A term with more uses than this has each book's list folded away.
@@ -3820,13 +5177,17 @@ def term_page(term, lang="en"):
                    + (f'{sentences}{exceptions}' if term_split(term) else f'{exceptions}{sentences}'))
     else:
         listing = f'<p class="notice">{t(lang, "terms.none")}</p>'
-    head = term_head(term, lang, (html.escape(term["sense"]), lang_attr("en", lang)),
+    sense, sense_lang = term_sense(term, lang)
+    tr = term_translation(term, lang)
+    head = term_head(term, lang, (html.escape(sense), lang_attr(sense_lang, lang)),
                      f'<a href="{url(lang, "/terms/")}">{t(lang, "terms.title")}</a>')
+    definition = term_definition(term, lang, sense)
     body = f"""{head}
+<p class="dek term-def">{html.escape(definition)}</p>
 <section class="term-section" aria-labelledby="settled-h">
 <h2 id="settled-h">{t(lang, "terms.settled")}</h2>
 {term_english_html(term, lang)}
-<p class="term-note"{lang_attr("en", lang)}>{html.escape(term.get("note", ""))}</p>
+<p class="term-note"{lang_attr(sense_lang if "note" in tr else "en", lang)}>{html.escape(tr.get("note", term.get("note", "")))}</p>
 {note}
 </section>
 <section class="term-section" aria-labelledby="where-h">
@@ -3834,17 +5195,40 @@ def term_page(term, lang="en"):
 {listing}
 </section>
 """
-    return page(lang, f'{term["sense"]} · {t(lang, "terms.title")}', body, path=term_path(term),
-                current="/about/",
-                description=t(lang, "meta.term_description", sense=term["sense"], lemma=term["lemma"]))
+    description = shorten(definition)
+    body += term_ld(term, lang, sense, definition)
+    return page(lang, f'{sense} · {t(lang, "terms.title")}', body, path=term_path(term),
+                current="/about/", description=description)
+
+
+def term_definition(term, lang, sense):
+    """A key term's page opens with what it is: its word, language and
+    Strong's number, its sense, and the English kept for it."""
+    return t(lang, "terms.definition", lemma=term["lemma"], language=t(lang, "terms.language_" + term_key(term)[0]),
+             strong=term_strong(term), sense=sense, english=", ".join(term_english(term)))
+
+
+def term_ld(term, lang, sense, description):
+    """schema.org data for a key term: a defined term in the translation's
+    set of key terms, named by its sense, with the original word and its
+    Strong's number as its other names. (A term's note is for translators,
+    not a definition, so the description is term_definition's sentence.)"""
+    data = {"@context": "https://schema.org", "@type": "DefinedTerm", "name": sense,
+            "alternateName": term["lemma"], "termCode": term_strong(term),
+            "url": SITE_URL + url(lang, term_path(term)), "inLanguage": lang,
+            "inDefinedTermSet": {"@type": "DefinedTermSet", "name": t(lang, "terms.title"),
+                                 "url": SITE_URL + url(lang, "/terms/")}}
+    data["description"] = description
+    return ld_script(data)
 
 
 def term_book_page(term, book, lang="en"):
     """Every sentence in one book that uses a key term with many uses."""
     us = term_books(term)[book]
     name = book_name(book, lang)
+    sense, sense_lang = term_sense(term, lang)
     eyebrow = (f'<a href="{url(lang, "/terms/")}">{t(lang, "terms.title")}</a> &middot; '
-               f'<a href="{url(lang, term_path(term))}"{lang_attr("en", lang)}>{html.escape(term["sense"])}</a>')
+               f'<a href="{url(lang, term_path(term))}"{lang_attr(sense_lang, lang)}>{html.escape(sense)}</a>')
     note = f'<p class="fine">{t(lang, "notes_in_english")}</p>' if lang != "en" else ""
     body = f"""{term_head(term, lang, (name, ""), eyebrow)}
 <section class="term-section" aria-labelledby="uses-h">
@@ -3855,9 +5239,9 @@ def term_book_page(term, book, lang="en"):
 <ol class="term-uses">{"".join(term_use_html(term, u, lang) for u in us)}</ol>
 </section>
 """
-    return page(lang, f'{term["sense"]} · {name} · {t(lang, "terms.title")}', body,
+    return page(lang, f'{sense} · {name} · {t(lang, "terms.title")}', body,
                 path=term_path(term, book), current="/about/",
-                description=t(lang, "meta.term_book_description", sense=term["sense"],
+                description=t(lang, "meta.term_book_description", sense=sense,
                               lemma=term["lemma"], book=name))
 
 
@@ -4147,6 +5531,12 @@ def article_url(article):
     return f"/articles/{article['slug']}/"
 
 
+def article_source(article, lang):
+    """An article's file in lang, relative to the repository."""
+    path = (ARTICLES if lang == "en" else ARTICLES / lang) / f"{article['slug']}.md"
+    return path.relative_to(ROOT).as_posix()
+
+
 def _date(iso, lang="en"):
     import datetime
     day = datetime.date.fromisoformat(iso)
@@ -4383,7 +5773,7 @@ def article_page(article, articles, lang="en"):
     contents = "".join(f'<li><a href="#{slug}">{label}</a></li>' for slug, label in toc)
     links = [(passage_label(b, c, vs, lang), next(filter(None, (verse_link(b, c, v, lang) for v in vs)), None))
              for b, c, vs in article["passages"]]
-    read = "".join(f'<a class="chip" href="{href}">{html.escape(label)}&nbsp;&rarr;</a>'
+    read = "".join(f'<a class="chip" href="{href}">{html.escape(label)}&nbsp;{forward(lang)}</a>'
                    for label, href in links if href)
     passage = (f'<aside class="read-card"><h2>{t(lang, "article.read_passage")}</h2>'
                f'<p>{t(lang, "article.read_passage_text")}</p><p>{read}</p></aside>'
@@ -4400,7 +5790,7 @@ def article_page(article, articles, lang="en"):
 <p class="eyebrow"><a href="{url(lang, "/articles/")}#{article["section"]}">{section}</a>{part}</p>
 <h1>{display(article["title"])}</h1>
 <p class="dek">{display(article["summary"])}</p>
-<p class="byline">{MARK}<span>Open Word Bible &middot; {_date(article["date"], lang)} &middot; {t(lang, "article.min_read", n=article["minutes"])}</span></p>
+<p class="byline">{mark_use()}<span>Open Word Bible &middot; {_date(article["date"], lang)} &middot; {t(lang, "article.min_read", n=article["minutes"])}</span></p>
 </header>
 <div class="article-body">
 {content}
@@ -4415,12 +5805,22 @@ def article_page(article, articles, lang="en"):
 <p><a href="{url(lang, "/articles/")}">{t(lang, "article.all")}</a></p></section>
 {article_ld(article, lang)}
 """
-    return page(lang, article["title"], body, path=article_url(article), current="/articles/", og_type="article",
+    return page(lang, article["title"], body, path=article_url(article), current="/articles/",
                 card=og_card_article(article),
                 card_alt=t(lang, "meta.article_card_alt", section=section,
                            title=article["title"], summary=article["summary"]),
                 description=article["summary"],
-                translated=article_languages(article))
+                translated=article_languages(article), og=article_og(article, lang))
+
+
+def article_og(article, lang):
+    """An article's own link-preview tags: that it is an article, and when it
+    was published and last changed."""
+    tags = [("og:type", "article"), ("article:published_time", article["date"])]
+    modified = last_modified((article_source(article, lang),))
+    if modified:
+        tags.append(("article:modified_time", modified))
+    return tags
 
 
 def article_ld(article, lang):
@@ -4430,8 +5830,17 @@ def article_ld(article, lang):
     data = {"@context": "https://schema.org", "@type": "Article",
             "headline": article["title"], "description": article["summary"],
             "url": SITE_URL + url(lang, article_url(article)), "inLanguage": lang,
+            "abstract": article["summary"],
             "datePublished": article["date"], "author": ORGANIZATION, "publisher": ORGANIZATION,
+            # Drafted with AI help, as every article is, and not yet
+            # reviewed by a named person.
+            "creativeWorkStatus": "Draft",
             "isPartOf": {"@type": "WebSite", "name": SITE_NAME, "url": SITE_URL + url(lang, "/")}}
+    modified = last_modified((article_source(article, lang),))
+    if modified:
+        data["dateModified"] = modified
+    if lang != "en":
+        data["translationOfWork"] = {"@type": "Article", "url": SITE_URL + article_url(article), "inLanguage": "en"}
     card = og_card_article(article)
     if (OG / f"{card}.jpg").is_file():
         data["image"] = f"{SITE_URL}/og/{card}.jpg"
@@ -4799,6 +6208,101 @@ def not_found_page():
 <script type="application/json" id="owb-lost">{data}</script>""")
 
 
+# Memorizing (web/memorize.js): the reader's verses to learn, kept in this
+# browser as owb.memory and with their account; what is due for review;
+# and memory plans, a verse or passage a week (data/memory_plans.json).
+MEMORIZE_PATH = "/memorize/"
+MEMORY_PLAN_DATA = ROOT / "data" / "memory_plans.json"
+
+
+@functools.cache
+def load_memory_plans():
+    """Every memory plan in data/memory_plans.json, in its order, each
+    {id, name, verses}."""
+    return json.loads(MEMORY_PLAN_DATA.read_text(encoding="utf-8"))["plans"]
+
+
+def memory_plan_readable(plan, drafted):
+    """Whether every verse of plan is in a chapter drafted whole."""
+    return all((refs.parse(v.split("-")[0]).book, refs.parse(v.split("-")[0]).chapter) in drafted
+               for v in plan["verses"])
+
+
+def memory_plans(lang):
+    drafted = drafted_chapters(lang)
+    return [p for p in load_memory_plans() if memory_plan_readable(p, drafted)]
+
+
+def memory_ref(vid, lang):
+    """"Galatians 5:22–23" for GAL.5.22-23."""
+    first, _, last = vid.partition("-")
+    ref = refs.parse(first)
+    return f"{chapter_book(ref.book, lang)} {ref.chapter}:{ref.verse}" + (f"\u2013{last}" if last else "")
+
+
+def memory_plan_card(plan, lang):
+    weeks = "".join(
+        f'<li class="memo-week" data-week="{html.escape(v)}"><span class="memo-week-n">{t(lang, "memory.week", n=i)}</span>'
+        f'<span class="memo-week-ref">{html.escape(memory_ref(v, lang))}</span></li>'
+        for i, v in enumerate(plan["verses"], 1))
+    return (f'<li class="memo-plan" data-memo-plan="{plan["id"]}" data-verses="{html.escape(json.dumps(plan["verses"]))}">'
+            f'<div class="memo-head"><h3>{html.escape(plan["name"][lang])}</h3>'
+            f'<span class="memo-plan-status hint" aria-live="polite"></span></div>'
+            f'<ol class="memo-weeks">{weeks}</ol>'
+            f'<p class="memo-actions"><button type="button" class="button memo-plan-start">{t(lang, "memory.ui")["plan_start"]}'
+            f'</button></p></li>')
+
+
+def memorize_page(lang="en"):
+    """The reader's verses to memorize (web/memorize.js draws them from
+    owb.memory), what is due for review, and the memory plans offered in
+    lang. A link with ?add=<verse> (the reader's QR code) adds that verse."""
+    order = [b for b, _ in books()]
+    plans = memory_plans(lang)
+    data = {"names": {b: chapter_book(b, lang) for b in order},
+            "chapters": {b: url(lang, chapter_url(b, 0)).replace("/0/", "/{c}/") for b in order},
+            "source": {b: source_language(b) for b in order},
+            "verses": f"/{VERSES_DIR}/",
+            "levels": {code: catalog(lang)["levels"][code] for code in "LBR"},
+            "plans": {p["id"]: p["name"][lang] for p in plans}}
+    plan_list = (f'<ul class="memo-plans">{"".join(memory_plan_card(p, lang) for p in plans)}</ul>' if plans else
+                 f'<p class="empty">{t(lang, "memory.plans_none")}</p>')
+    return page(lang, t(lang, "memory.title"), f"""
+<header class="page-head">
+<p class="eyebrow">{t(lang, "memory.title")}</p>
+<h1>{t(lang, "memory.heading")}</h1>
+<p class="dek">{t(lang, "memory.dek")}</p>
+</header>
+<noscript><p class="notice">{t(lang, "memory.noscript")}</p></noscript>
+<section class="memorize" id="memorize" data-memorize="{html.escape(json.dumps(data, ensure_ascii=False))}">
+<p class="notice memo-note" role="status" hidden></p>
+<div class="memo-review" id="review"></div>
+<div class="memo-list"></div>
+<section class="memo-plans-wrap" aria-labelledby="memo-plans-h">
+<h2 id="memo-plans-h">{t(lang, "memory.plans_heading")}</h2>
+<p class="hint">{t(lang, "memory.plans_dek")}</p>
+{plan_list}
+</section>
+<p class="hint memo-kept">{t(lang, "memory.kept")}</p>
+</section>
+<script type="application/json" id="memory-ui">{_ui_json(lang, "memory.ui")}</script>
+<script src="{asset("markup.js")}" defer></script>
+<script src="{asset("memorize.js")}" defer></script>""", path=MEMORIZE_PATH, current="/read/",
+                description=t(lang, "memory.dek"))
+
+
+def home_memory(lang="en"):
+    """The home page's card for verses due for review today (web/memorize.js
+    shows it only when some are)."""
+    ui = {k: catalog(lang)["memory.ui"][k] for k in ("due_count",)}
+    return (f'<section class="memo-due" data-memo-due data-ui="{html.escape(json.dumps(ui, ensure_ascii=False))}" hidden '
+            f'aria-labelledby="memo-due-h"><div class="memo-head"><h2 id="memo-due-h">{t(lang, "memory.home_heading")}</h2>'
+            f'<span class="memo-pill memo-learning memo-due-count"></span></div>'
+            f'<p class="memo-due-ref"></p><p class="memo-due-text"></p>'
+            f'<p class="actions"><a class="button" href="{url(lang, MEMORIZE_PATH)}#review">{t(lang, "memory.home_review")}</a></p>'
+            '</section>')
+
+
 def saved_page(lang="en"):
     """The reader's bookmarks, highlights, notes, collections and word list,
     from this browser (web/site.js OWBStudy keeps them; web/saved.js lists
@@ -4878,10 +6382,10 @@ def service_worker():
     """web/sw.js with the files to keep from the start (the styles, the
     scripts and each language's offline page). Its version is a hash of the
     whole, so a deploy that changes any of them installs a new worker."""
-    shell = [asset(n) for n in ("style.css", "site.js", "search.js", "markup.js", "reader.js", "plans.js")]
-    shell += ["/favicon.svg", "/manifest.webmanifest"] + [url(lang, "/offline/") for lang in LANGUAGES]
+    shell = [asset(n) for n in ("style.css", "site.js", "search.js", "markup.js", "memorize.js", "reader.js", "plans.js")]
+    shell += ["/favicon.svg", sprite()[1], "/manifest.webmanifest"] + [url(lang, "/offline/") for lang in LANGUAGES]
     offline = {("" if lang == "en" else lang): url(lang, "/offline/") for lang in LANGUAGES}
-    current = [asset(n) for n in ("style.css", "site.js", "search.js", "markup.js", "reader.js", "account.js", "plans.js",
+    current = [asset(n) for n in ("style.css", "site.js", "search.js", "markup.js", "memorize.js", "reader.js", "account.js", "plans.js",
                                   "compare.js", "word.js", "saved.js", "groups.js", "edition.js")]
     current += [word_uses()[1]] + [search_ui_url(lang) for lang in LANGUAGES]
     current += [plans_json_url(lang) for lang in LANGUAGES]
@@ -4925,13 +6429,28 @@ SEARCH_PAGES = (("nav.home", "/"), ("nav.read", "/read/"), ("nav.plans", "/plans
                 ("nav.help", "/#help"), ("tools.sign_in", "/login/"))
 
 
+# Full-width ASCII and the ideographic space, as Japanese input types them.
+_WIDE = {**{c: c - 0xFEE0 for c in range(0xFF01, 0xFF5F)}, 0x3000: 0x20}
+
+
+# Arabic-script letters written more than one way, as the backend's
+# search.ARABIC folds them (the marks go with the other combining marks).
+_ARABIC = {0x0640: None, 0x0622: 0x0627, 0x0623: 0x0627, 0x0625: 0x0627, 0x0671: 0x0627,
+           0x0624: 0x0648, 0x0626: 0x064A, 0x0649: 0x064A, 0x06CC: 0x064A, 0x06A9: 0x0643,
+           **{0x0660 + i: 0x30 + i for i in range(10)},
+           **{0x06F0 + i: 0x30 + i for i in range(10)}}
+
+
 def fold(text):
-    """Text as search compares it: lower case, without accents, Vietnamese
-    "đ" as "d". The rest is composed again, so a Korean syllable stays one
-    character (NFD splits it into its letters)."""
+    """Text as search compares it: lower case, without accents, full-width
+    letters and digits as ASCII, Vietnamese "đ" as "d". The rest is composed
+    again, so a Korean syllable stays one character (NFD splits it into its
+    letters), and the kana voicing marks are kept (ガ is not カ), as in the
+    backend's search.fold."""
     import unicodedata
     return unicodedata.normalize("NFC", "".join(
-        c for c in unicodedata.normalize("NFD", text.lower()) if not unicodedata.combining(c))).replace("\u0111", "d")
+        c for c in unicodedata.normalize("NFD", text.translate(_WIDE).lower())
+        if not unicodedata.combining(c) or c in "\u3099\u309a")).replace("\u0111", "d").translate(_ARABIC)
 
 
 def book_aliases(code, names):
@@ -5101,7 +6620,7 @@ def search_page(lang="en"):
     # Search results are not worth listing in a search engine; the page
     # keeps its links, so crawlers still follow them.
     return page(lang, t(lang, "search.title"), body, path="/search/", current="/search/",
-                description=t(lang, "meta.search_description"), noindex=True)
+                description=t(lang, "meta.search_description"), indexed=False)
 
 
 # Search engines and AI tools named in robots.txt, so it says plainly that a
@@ -5121,26 +6640,84 @@ def robots_txt():
             f"{named}Allow: /\n\nUser-agent: *\nAllow: /\n\nSitemap: {SITE_URL}/sitemap.xml\n")
 
 
-def sitemap(paths):
-    urls = "".join(f"<url><loc>{html.escape(SITE_URL + p)}</loc></url>\n" for p in paths)
-    return ('<?xml version="1.0" encoding="UTF-8"?>\n'
-            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-            f"{urls}</urlset>\n")
+class SitemapEntry(NamedTuple):
+    """An indexed page: its language, its path without the language, and the
+    files (relative to the repository) whose last change is its lastmod."""
+    lang: str
+    path: str
+    sources: tuple = ()
+
+
+def sitemap_url(lang):
+    return f"/sitemap-{lang}.xml"
+
+
+def sitemaps(entries):
+    """{file: text}: sitemap.xml, an index of one sitemap per language, and
+    those sitemaps. Each page lists the same page in the other languages it
+    is indexed in (hreflang alternates), and its last change where git
+    knows it, so a crawler can tell which of some 20,000 pages to fetch
+    again after a deploy."""
+    esc = html.escape
+    by_path = {}
+    for e in entries:
+        by_path.setdefault(e.path, []).append(e.lang)
+    files, index = {}, []
+    for lang in LANGUAGES:
+        rows = []
+        for e in (e for e in entries if e.lang == lang):
+            langs = by_path[e.path]
+            alts = ""
+            if len(langs) > 1:
+                alts = "".join(f'<xhtml:link rel="alternate" hreflang="{code}" href="{esc(SITE_URL + url(code, e.path))}"/>'
+                               for code in langs)
+                default = "en" if "en" in langs else langs[0]
+                alts += f'<xhtml:link rel="alternate" hreflang="x-default" href="{esc(SITE_URL + url(default, e.path))}"/>'
+            mod = last_modified(e.sources)
+            rows.append(f"<url><loc>{esc(SITE_URL + url(lang, e.path))}</loc>"
+                        f"{f'<lastmod>{mod}</lastmod>' if mod else ''}{alts}</url>\n")
+        if not rows:
+            continue
+        files[sitemap_url(lang).lstrip("/")] = (
+            '<?xml version="1.0" encoding="UTF-8"?>\n'
+            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
+            f"{''.join(rows)}</urlset>\n")
+        index.append(f"<sitemap><loc>{esc(SITE_URL + sitemap_url(lang))}</loc></sitemap>\n")
+    files["sitemap.xml"] = ('<?xml version="1.0" encoding="UTF-8"?>\n'
+                            '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+                            f"{''.join(index)}</sitemapindex>\n")
+    return files
 
 
 def build(out):
-    for cached in (load_intro, book_languages, status_counts, _book_records, _chapter_words, chapter_verses, _all_records, nav_menus, footer_links, passages, asset, translated_verses, catalog, book_refs, name_cards, term_uses,
+    for cached in (load_memory_plans, load_intro, book_languages, status_counts, _book_records, _chapter_words, chapter_verses, _all_records, nav_menus, footer_links, passages, asset, translated_verses, catalog, book_refs, name_cards, term_uses,
                    search_documents, word_uses, series_numbers, chapter_articles, load_plans, plans_json, plans_json_url,
-                   downloads, chapter_shared, reader_shared, article_link, places, basemap_file):
+                   downloads, chapter_shared, reader_shared, article_link, places, places_more, journeys, basemap_file,
+                   book_notes, article_links, card_translation, owb_notes.load_notes, owb_notes.load_cards,
+                   owb_notes.book_records, owb_notes.book_decisions, owb_notes.english_cards):
         cached.cache_clear()
     if out.exists():
         shutil.rmtree(out)
-    pages, indexed, feeds = {}, [], {}
+    # Each file is written as soon as it is made, not gathered first: the
+    # whole site (over 3 GB) held in memory took the build past 8 GB, more
+    # than Render's build machine has, and deploys failed (2026-11-15).
+    written = []
+
+    def write(rel, text):
+        path = out / rel
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(text, encoding="utf-8")
+        written.append(rel)
+
+    def page_file(page_url):
+        return (page_url.strip("/") + "/index.html").lstrip("/")
+
+    indexed = []
     for lang in LANGUAGES:
-        def add(path, text, index=True):
-            pages[url(lang, path)] = text
+        def add(path, text, index=True, sources=()):
+            write(page_file(url(lang, path)), text)
             if index:
-                indexed.append(url(lang, path))
+                indexed.append(SitemapEntry(lang, path, sources))
 
         add("/", home_page(lang))
         add("/read/", read_page(lang))
@@ -5152,82 +6729,94 @@ def build(out):
         add("/search/", search_page(lang), index=False)
         add("/compare/", compare_page(lang))
         add("/word/", word_page(lang))
+        add("/journeys/", journeys_page(lang))
+        for j in journeys():
+            add(journey_path(j["id"]), journey_page(j, lang))
+        add("/quotations/", quotations_page(lang))
+        if lang == "en":
+            for section in ENTITY_SECTIONS:
+                add(ENTITY_SECTIONS[section], entity_index_page(section))
+            for path, e in entities()[0].items():
+                add(path, entity_page(path, e), sources=())
         for audience in AUDIENCES:
             add(audience_url(audience), audience_page(audience, lang))
         plans = available_plans(lang)
         add("/plans/", plans_page(lang, plans), index=bool(plans))
         add("/terms/", terms_page(lang))
+        add("/variants/", variants_page(lang))
         for term in validate.KEY_TERMS.values():
             add(term_path(term), term_page(term, lang))
             if term_split(term):
                 for book in term_books(term):
                     add(term_path(term, book), term_book_page(term, book, lang))
         for book, chapter in chapters():
-            add(chapter_url(book, chapter), chapter_page(book, chapter, lang))
+            add(chapter_url(book, chapter), chapter_page(book, chapter, lang),
+                index=chapter_indexed(book, chapter, lang), sources=chapter_sources(book, chapter))
         for book, _ in books(lang):
             if lang in book_languages(book):
-                add(book_url(book), book_page(book, lang))
+                add(book_url(book), book_page(book, lang), sources=intro_sources(book, lang))
+        for vid in verse_page_ids():
+            if lang in verse_page_languages(vid):
+                ref = refs.parse(vid)
+                add(verse_page_url(vid), verse_page(vid, lang), sources=chapter_sources(ref.book, ref.chapter))
         for book, _ in books():
             add(edition_url(book), edition_page(book, lang), index=False)
         articles = load_articles(lang)
         add("/articles/", articles_page(articles, lang), index=bool(articles))
         if articles:
-            feeds[feed_url(lang).lstrip("/")] = articles_feed(articles, lang)
-        feeds[votd_feed_url(lang).lstrip("/")] = votd_feed(lang)
+            write(feed_url(lang).lstrip("/"), articles_feed(articles, lang))
+        write(votd_feed_url(lang).lstrip("/"), votd_feed(lang))
         for article in articles:
-            add(article_url(article), article_page(article, articles, lang))
+            add(article_url(article), article_page(article, articles, lang), sources=(article_source(article, lang),))
         add("/account/", account_page(lang), index=False)
         add("/login/", login_page(lang), index=False)
         add("/reset-password/", reset_page(lang), index=False)
         add("/handoff/", handoff_page(lang), index=False)
         add("/offline/", offline_page(lang), index=False)
         add("/saved/", saved_page(lang), index=False)
+        add(MEMORIZE_PATH, memorize_page(lang))
         add(MY_PLANS_PATH, my_plans_page(lang), index=False)
         add("/groups/", groups_page(lang), index=False)
     # The admin is in English only (admin_page).
-    pages["/admin/"] = admin_page()
+    write(page_file("/admin/"), admin_page())
     # A plan's page is in the languages that offer it.
     offered = {code: {p.id for p in available_plans(code)} for code in LANGUAGES}
     for plan in load_plans():
         langs = tuple(code for code in LANGUAGES if plan.id in offered[code])
         for code in langs:
             path = plan_url(plan)
-            pages[url(code, path)] = plan_page(plan, code, langs)
-            indexed.append(url(code, path))
-    files = {(p.strip("/") + "/index.html").lstrip("/"): text for p, text in pages.items()}
-    files.update(feeds)
+            write(page_file(url(code, path)), plan_page(plan, code, langs))
+            indexed.append(SitemapEntry(code, path))
+    files = {}
     files["404.html"] = not_found_page()
-    files["sitemap.xml"] = sitemap(indexed)
+    files.update(sitemaps(indexed))
     files["robots.txt"] = robots_txt()
     files["llms.txt"] = llms_txt()
     files["favicon.svg"] = FAVICON
+    files["sprite.svg"] = sprite()[0]
     files["manifest.webmanifest"] = manifest()
     files["sw.js"] = service_worker()
     files["word-uses.json"] = word_uses()[0]
     files["basemap.json"] = basemap_file()[0]
-    files.update(verse_files())
-    files.update(editions_files())
-    files.update(word_files())
-    files.update(chapter_data_files())
-    for lang in LANGUAGES:
-        files[f"search-ui-{lang}.json"] = search_ui(lang)
-        files[f"plans-{lang}.json"] = plans_json(lang)
     for rel, text in files.items():
-        path = out / rel
-        path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_text(text, encoding="utf-8")
+        write(rel, text)
+    for made in (verse_files, editions_files, word_files, chapter_data_files):
+        for rel, text in made().items():
+            write(rel, text)
+    for lang in LANGUAGES:
+        write(f"search-ui-{lang}.json", search_ui(lang))
+        write(f"plans-{lang}.json", plans_json(lang))
     blobs = {f"{DOWNLOADS_DIR}/{name}": data for name, data, _ in downloads().values()}
     for rel, data in blobs.items():
         path = out / rel
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_bytes(data)
-    for name in ("style.css", "markup.js", "reader.js", "site.js", "account.js", "search.js", "plans.js", "compare.js",
-                 "word.js", "saved.js", "groups.js", "edition.js", "map.js", "admin.js", "admin.css"):
+    for name in WEB_FILES:
         shutil.copy(ROOT / "web" / name, out / name)
     shutil.copytree(ROOT / "web" / "fonts", out / "fonts")
     shutil.copytree(ROOT / "web" / "icons", out / "icons")
     shutil.copytree(OG, out / "og", ignore=shutil.ignore_patterns("*.digest"))
-    return sorted(files) + sorted(blobs) + ["admin.css", "admin.js", "compare.js", "word.js", "markup.js", "plans.js", "reader.js",
+    return sorted(set(written)) + sorted(blobs) + ["admin.css", "admin.js", "compare.js", "word.js", "markup.js", "memorize.js", "plans.js", "reader.js",
                             "saved.js", "groups.js", "search.js", "site.js", "style.css"]
 
 

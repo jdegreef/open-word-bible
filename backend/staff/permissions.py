@@ -8,15 +8,34 @@ never the check, which is made here on every request.
 
 backend_tests/test_admin.py fails if an /api/admin/ endpoint is left without
 an area.
+
+An endpoint that fails answers JSON the admin can show, not Django's HTML
+error page: {"detail", "code", "request_id"}, 503 "timeout" when the
+database gave up on a query (statement_timeout), 500 "server_error"
+otherwise. The request id is in the log line and on the Sentry event, so a
+screenshot of the admin finds the traceback.
 """
+import logging
+import uuid
 from functools import wraps
 
+from django.core.exceptions import PermissionDenied
+from django.db import OperationalError
+from django.http import Http404
 from rest_framework import status
+from rest_framework.exceptions import APIException
 from rest_framework.decorators import api_view, parser_classes
 from rest_framework.parsers import JSONParser
 from rest_framework.response import Response
 
 from accounts.models import Role
+
+try:
+    import sentry_sdk
+except ImportError:   # pragma: no cover - it is in requirements.txt
+    sentry_sdk = None
+
+log = logging.getLogger(__name__)
 
 K = Role.Kind
 EVERY_ROLE = frozenset(K.values)
@@ -75,10 +94,45 @@ def admin_view(area, methods=("GET",)):
             if area not in request.admin_areas:
                 return Response({"detail": "Your roles don't open this part of the admin.",
                                  "code": "forbidden"}, status=status.HTTP_403_FORBIDDEN)
-            return view(request, *args, **kwargs)
+            try:
+                return view(request, *args, **kwargs)
+            except (APIException, Http404, PermissionDenied):
+                raise   # DRF answers these itself, as JSON
+            except Exception as e:
+                return failed(request, e)
 
         endpoint = api_view(list(methods))(parser_classes([JSONParser])(checked))
         endpoint.admin_area = area
         return endpoint
 
     return wrap
+
+
+def timed_out(error):
+    """Whether error is Postgres cancelling a statement (statement_timeout)."""
+    if not isinstance(error, OperationalError):
+        return False
+    cause = getattr(error, "__cause__", None)
+    return type(cause).__name__ == "QueryCanceled" or "statement timeout" in str(error)
+
+
+def failed(request, error):
+    """The JSON answer for an admin endpoint that raised error, logged (and
+    so sent to Sentry, when it is set up) with a short request id."""
+    request_id = uuid.uuid4().hex[:8]
+    if sentry_sdk is not None:
+        sentry_sdk.set_tag("request_id", request_id)
+    # The path without its query string: a query may hold a search.
+    log.error("Admin %s %s failed (request %s)", request.method, request.path, request_id, exc_info=error)
+    if timed_out(error):
+        body = {"detail": "This took longer than the database allows, so it was stopped. Try again in a "
+                          "minute; if it keeps happening, report it with the request id.",
+                "code": "timeout", "request_id": request_id}
+        code = status.HTTP_503_SERVICE_UNAVAILABLE
+    else:
+        body = {"detail": "The server hit an error answering this. Report it with the request id.",
+                "code": "server_error", "request_id": request_id}
+        code = status.HTTP_500_INTERNAL_SERVER_ERROR
+    response = Response(body, status=code)
+    response["X-Request-Id"] = request_id
+    return response

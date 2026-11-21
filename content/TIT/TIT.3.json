@@ -87,6 +87,26 @@
           "L": "Напоминай им подчиняться начальствам [и] властям, повиноваться, быть готовыми ко всякому доброму делу, \\v 2 никого не злословить, быть миролюбивыми, кроткими, проявляя всякую мягкость ко всем людям.",
           "B": "Напоминай людям, чтобы они подчинялись правителям и властям, были послушны и готовы делать всякое добро, \\v 2 ни о ком не говорили дурно, избегали ссор, были кроткими и внимательными ко всем.",
           "R": "Напоминай верующим, чтобы они слушались правителей и тех, у кого власть. Они должны быть готовы делать всякое добро. \\v 2 Они не должны говорить ни о ком плохо и не должны ссориться. Они должны быть мягкими и добрыми ко всем."
+        },
+        "ja": {
+          "L": "彼らに思い起こさせなさい。支配者たち[と]権威者たちに服従し、従順であり、どんな善い行いにも備えがあり、\\v 2 だれをもそしらず、争わず、穏やかで、すべての人に対してあらゆる柔和さを示すように[と]。",
+          "B": "人々に思い起こさせなさい。支配者や権威者に服従し、従順であって、どんな善いことでもする用意があること、\\v 2 だれのことも悪く言わず、争いを避け、穏やかで、すべての人に思いやりを示すことを。",
+          "R": "信じる人たちに、支配者や、上に立つ人たちに従うように、思い出させてください。どんな良いことでもする用意ができていなければなりません。\\v 2 だれの悪口も言ってはいけません。けんかをしてはいけません。すべての人に、優しく親切にしなければなりません。"
+        },
+        "uk": {
+          "L": "Нагадуй їм коритися правителям [і] владам, слухатися, бути готовими до всякого доброго діла, \\v 2 нікого не лихословити, бути миролюбними, лагідними, виявляючи всяку чемність до всіх людей.",
+          "B": "Нагадуй людям коритися правителям і владі, бути слухняними, бути готовими робити все добре, \\v 2 ні про кого не говорити зла, уникати сварок, бути лагідними і чемними до всіх.",
+          "R": "Нагадуй віруючим слухатися правителів і тих, хто має владу. Вони мають бути готові робити все, що добре. \\v 2 Вони не повинні говорити поганого ні про кого і не повинні сваритися. Вони мають бути лагідними й добрими до всіх."
+        },
+        "id": {
+          "L": "Ingatkanlah mereka supaya mereka tunduk kepada pemerintah [dan] penguasa, taat, siap untuk setiap perbuatan baik, \\v 2 jangan memfitnah siapa pun, jangan bertengkar, ramah, dan menunjukkan segala kelemahlembutan terhadap semua orang.",
+          "B": "Ingatkanlah orang-orang supaya mereka tunduk kepada pemerintah dan penguasa, taat, dan siap melakukan apa saja yang baik, \\v 2 tidak memfitnah siapa pun, menghindari pertengkaran, bersikap lemah lembut, dan ramah terhadap semua orang.",
+          "R": "Ingatkanlah orang-orang percaya untuk menaati pemerintah dan orang-orang yang berkuasa. Mereka harus siap melakukan apa saja yang baik. \\v 2 Mereka tidak boleh menjelek-jelekkan siapa pun, dan mereka tidak boleh berkelahi. Mereka harus lemah lembut dan baik hati kepada semua orang."
+        },
+        "zh": {
+          "L": "你要提醒他们顺服执政的[和]掌权的，要听从，随时准备行各样的善事，\\v 2 不毁谤任何人，不争吵，要温和，对所有的人显出完全的谦和。",
+          "B": "要提醒信徒顺服执政的和掌权的，要听从，随时准备去做一切善事，\\v 2 不说任何人的坏话，避免争吵，待人温和，对所有的人都体贴。",
+          "R": "要提醒信徒听从统治者和掌权的人。他们必须随时准备去做任何好事。\\v 2 他们不可说别人的坏话，也不可和人打架。他们必须对所有的人都温和、友善。"
         }
       },
       "decisions": [
@@ -357,6 +377,60 @@
           "reason": "The English Literal has a gender setting here (m3); Russian \"люди\" already means men and women. The same in verse 8.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n56003002011"
+          ],
+          "choice": "\"すべての人\" with no gender span, where the English Literal has {{gender:people|men}}",
+          "alternatives": [],
+          "reason": "Japanese \"人\" already includes men and women (style guide 7a); the same in 3:8.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n56003001001"
+          ],
+          "choice": "\"思い起こさせなさい\" first, the list after it, closed with \"[と]\" (L) and \"〜ことを\" (B)",
+          "alternatives": [],
+          "reason": "Putting the verb first keeps each verse's items after its own marker; a verb-last sentence would pull verse 1's command after verse 2.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n56003002011"
+          ],
+          "choice": "\"所有的人\", with no gender span",
+          "alternatives": [
+            "{{gender:人|男人}}"
+          ],
+          "reason": "The word means human beings in general (meaning m3); Chinese \"人\" includes men and women, so the English Literal's span has no counterpart.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -445,6 +519,26 @@
           "L": "Ведь и мы были когда-то несмысленны, непокорны, заблуждающиеся, служащие как рабы похотям и разным удовольствиям, живущие в злобе и зависти, ненавистные, ненавидящие друг друга.",
           "B": "Ведь когда-то и мы были безрассудны, непокорны и заблуждались, были рабами всевозможных желаний и удовольствий. Мы жили в злобе и зависти, нас ненавидели, и мы ненавидели друг друга.",
           "R": "Было время, когда и мы были глупыми и не слушались Бога. Другие обманывали нас, и мы были рабами всяких дурных желаний и удовольствий. Мы всё время были злыми и завистливыми. Люди ненавидели нас, а мы ненавидели друг друга."
+        },
+        "ja": {
+          "L": "実に、わたしたちも以前は、愚かで、不従順で、迷わされ、さまざまな欲望と快楽に奴隷として仕え、悪意とねたみのうちに日を過ごし、憎まれ、互いに憎み合う者でした。",
+          "B": "わたしたちも以前は、愚かで、不従順で、迷っており、さまざまな欲望と快楽のとりこになっていました。悪意とねたみの中で暮らし、人に憎まれ、互いに憎み合っていたのです。",
+          "R": "わたしたちも、以前は愚かで、神に従っていませんでした。人にだまされ、いろいろな悪い欲望や楽しみのとりこになっていました。いつも意地悪をし、ねたんでいました。人からは憎まれ、わたしたちも互いに憎み合っていたのです。"
+        },
+        "uk": {
+          "L": "Бо й ми колись були нерозумними, неслухняними, заблуканими, поневоленими різним пожадливостям і насолодам, жили в злобі й заздрості, ненависні, ненавидячи одне одного.",
+          "B": "Бо колись і ми були нерозумні, неслухняні й заблукані, раби всяких пожадливостей і насолод. Ми жили в злобі й заздрості, нас ненавиділи, і ми ненавиділи одне одного.",
+          "R": "Був час, коли й ми були нерозумні і не слухалися Бога. Інші обманювали нас, і ми були рабами всяких поганих бажань і насолод. Ми завжди були злі й заздрісні. Люди ненавиділи нас, а ми ненавиділи одне одного."
+        },
+        "id": {
+          "L": "Sebab dahulu kita sendiri juga bodoh, tidak taat, sesat, menjadi budak berbagai-bagai nafsu dan kesenangan, hidup dalam kejahatan dan iri hati, dibenci dan saling membenci.",
+          "B": "Sebab dahulu kita pun bodoh, tidak taat, dan tersesat, menjadi budak berbagai macam keinginan dan kesenangan. Kita hidup dalam kejahatan dan iri hati, dibenci orang dan saling membenci.",
+          "R": "Ada masanya kita juga bodoh, dan kita tidak menaati Allah. Kita ditipu oleh orang lain, dan kita menjadi budak segala macam keinginan dan kesenangan yang salah. Kita selalu bersikap jahat dan iri hati. Orang-orang membenci kita, dan kita saling membenci."
+        },
+        "zh": {
+          "L": "因为我们从前也是无知的、不顺服的、受迷惑的，被各样的私欲和享乐所奴役，在恶毒和嫉妒中度日，是可憎恨的，并且彼此恨恶。",
+          "B": "因为我们从前也是愚昧、不顺服、走迷了路的，作各种私欲和享乐的奴隶。我们活在恶毒和嫉妒中，被人憎恨，也彼此憎恨。",
+          "R": "我们从前也是愚蠢的，不顺服{{god_term:神|上帝}}。我们被人欺骗，作了各种坏欲望和享乐的奴隶。我们总是心怀恶意，嫉妒别人。别人恨我们，我们也彼此相恨。"
         }
       },
       "decisions": [
@@ -603,6 +697,87 @@
           "reason": "The picture of slavery is kept, as in the English (m2): they were not free.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n56003003009"
+          ],
+          "choice": "\"奴隷として仕え\" (L); \"とりこ\" (B, R)",
+          "alternatives": [],
+          "reason": "As at 2:3, the verb picture of slavery to desires is \"とりこ\" in natural Japanese; Literal keeps the slave image.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n56003003004",
+            "n56003003005"
+          ],
+          "choice": "\"kita\", inclusive",
+          "alternatives": [],
+          "reason": "Paul includes himself with Titus and the believers (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n56003003009"
+          ],
+          "choice": "\"被……所奴役\" (L); \"作……的奴隶\" (B, R)",
+          "alternatives": [
+            "服事"
+          ],
+          "reason": "The picture of slavery is kept at every level, as the English does (meaning m2): they were not free.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n56003003007"
+          ],
+          "choice": "{{god_term:神|上帝}} for every word naming God",
+          "alternatives": [
+            "上帝 as the default"
+          ],
+          "reason": "The Chinese reader setting: \"神\" by default, \"上帝\" as the alternative (style guide section 4). It changes the word, never the meaning; this note stands for the whole chapter.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -730,6 +905,26 @@
           "L": "Когда же явились благость и человеколюбие Спасителя нашего Бога, \\v 5 {{deity_pronoun:он|Он}} спас нас не по делам праведности, которые сделали мы, а по своей милости, через омовение возрождения и обновление Святым Духом, \\v 6 которого {{deity_pronoun:он|Он}} обильно излил на нас через Иисуса {{christos:Христа|Мессию}}, Спасителя нашего, \\v 7 чтобы мы, оправданные {{deity_pronoun:его|Его}} благодатью, стали наследниками по надежде вечной жизни.",
           "B": "Но когда явились доброта и любовь Бога, нашего Спасителя, \\v 5 {{deity_pronoun:он|Он}} спас нас не за праведные дела, которые мы сделали, а по своей милости. Он спас нас через омовение нового рождения и обновление Святым Духом, \\v 6 которого {{deity_pronoun:он|Он}} щедро излил на нас через Иисуса {{christos:Христа|Мессию}}, нашего Спасителя, \\v 7 чтобы мы, оправданные {{deity_pronoun:его|Его}} благодатью, стали наследниками, имеющими надежду на вечную жизнь.",
           "R": "Но Бог, наш Спаситель, показал нам, как {{deity_pronoun:он|Он}} добр и как сильно {{deity_pronoun:он|Он}} любит людей. \\v 5 Он спас нас. Это было не за какие-то праведные дела, которые мы сделали. Это было потому, что {{deity_pronoun:он|Он}} помиловал нас. Он омыл нас и дал нам новое рождение. Святой Дух сделал нас новыми. \\v 6 Бог щедро дал нам Святого Духа через Иисуса {{christos:Христа|Мессию}}, нашего Спасителя. \\v 7 По своей благодати Бог оправдал нас — сделал нас правыми перед собой. Теперь мы получим всё, что Бог обещал своим детям. У нас есть надежда на вечную жизнь."
+        },
+        "ja": {
+          "L": "しかし、わたしたちの救い主である神の慈しみと、人への愛とが現れたとき、\\v 5 [神は]わたしたちを救ってくださいました。わたしたちが行った、義のうちにある行いによってではなく、ご自分のあわれみにしたがって、再生の洗いと聖霊の更新とを通してです。\\v 6 [神は]この聖霊を、わたしたちの救い主イエス・{{christos:キリスト|メシア}}を通して、わたしたちに豊かに注いでくださいました。\\v 7 それは、わたしたちがその方の恵みによって義とされ、永遠の命の望みにしたがって、相続人となるためです。",
+          "B": "しかし、わたしたちの救い主である神の慈しみと人への愛とが現れたとき、\\v 5 神はわたしたちを救ってくださいました。それは、わたしたちが行った正しい行いによるのではなく、神のあわれみによるのです。神は、新しく生まれさせる洗いと、聖霊によって新たにされることとを通して、わたしたちを救ってくださいました。\\v 6 神は、わたしたちの救い主イエス・{{christos:キリスト|メシア}}を通して、この聖霊をわたしたちに豊かに注いでくださいました。\\v 7 それは、わたしたちがその恵みによって義とされ、永遠の命の望みを抱く相続人となるためでした。",
+          "R": "しかし、わたしたちの救い主である神は、ご自分がどんなに優しく、どんなに人々を愛しておられるかを示してくださいました。\\v 5 神はわたしたちを救ってくださいました。それは、わたしたちが何か正しいことをしたからではありません。神がわたしたちをあわれんでくださったからです。神はわたしたちを洗って清め、新しく生まれさせてくださいました。聖霊がわたしたちを新しくしてくださったのです。\\v 6 神は、わたしたちの救い主イエス・{{christos:キリスト|メシア}}を通して、聖霊を惜しみなく与えてくださいました。\\v 7 神は、その恵みによって、わたしたちをご自分の前に正しい者と認めてくださいました。今、わたしたちは、神がご自分の子どもたちに約束されたすべてのものを受け取ることになります。わたしたちには、永遠の命の希望があります。"
+        },
+        "uk": {
+          "L": "А коли зʼявилася доброта і людинолюбство нашого Спасителя Бога, \\v 5 {{deity_pronoun:він|Він}} спас нас не з діл у праведності, які зробили ми, а за {{deity_pronoun:його|Його}} милістю, через купіль відродження й оновлення Святим Духом, \\v 6 якого {{deity_pronoun:він|Він}} щедро вилив на нас через Ісуса {{christos:Христа|Месію}}, нашого Спасителя, \\v 7 щоб ми, виправдані {{deity_pronoun:його|Його}} благодаттю, стали спадкоємцями згідно з надією вічного життя.",
+          "B": "Та коли зʼявилася доброта й любов Бога, нашого Спасителя, \\v 5 {{deity_pronoun:він|Він}} спас нас не через праведні діла, які ми зробили, а через свою милість. Він спас нас через купіль нового народження і оновлення Святим Духом, \\v 6 якого {{deity_pronoun:він|Він}} щедро вилив на нас через Ісуса {{christos:Христа|Месію}}, нашого Спасителя, \\v 7 щоб ми, виправдані {{deity_pronoun:його|Його}} благодаттю, стали спадкоємцями з надією вічного життя.",
+          "R": "Але Бог, наш Спаситель, показав нам, який {{deity_pronoun:він|Він}} добрий і як сильно {{deity_pronoun:він|Він}} любить людей. \\v 5 Він спас нас. Це було не через якісь праведні справи, які ми зробили. Це було тому, що {{deity_pronoun:він|Він}} змилувався над нами. Він обмив нас і дав нам нове народження. Святий Дух зробив нас новими. \\v 6 Бог щедро дав нам Святого Духа через Ісуса {{christos:Христа|Месію}}, нашого Спасителя. \\v 7 Завдяки Божій благодаті Бог виправдав нас перед собою. Тепер ми отримаємо все, що Бог обіцяв своїм дітям. Ми маємо надію на вічне життя."
+        },
+        "id": {
+          "L": "Tetapi ketika kebaikan dan kasih Allah, Juruselamat kita, kepada manusia telah nyata, \\v 5 {{deity_pronoun:dia|Dia}} menyelamatkan kita, bukan karena perbuatan-perbuatan baik yang telah kita lakukan dalam kebenaran, melainkan karena belas kasihan-{{deity_pronoun:nya|Nya}}, melalui pemandian kelahiran kembali dan pembaruan oleh Roh Kudus, \\v 6 yang telah {{deity_pronoun:dia|Dia}} curahkan kepada kita dengan limpah melalui Yesus {{christos:Kristus|Mesias}}, Juruselamat kita, \\v 7 supaya, setelah kita dibenarkan oleh kasih karunia-{{deity_pronoun:nya|Nya}}, kita menjadi ahli waris sesuai dengan pengharapan akan hidup yang kekal.",
+          "B": "Tetapi ketika kebaikan dan kasih Allah, Juruselamat kita, nyata, \\v 5 {{deity_pronoun:dia|Dia}} menyelamatkan kita, bukan karena perbuatan-perbuatan benar yang telah kita lakukan, melainkan karena belas kasihan-{{deity_pronoun:nya|Nya}}. Dia menyelamatkan kita melalui pemandian kelahiran baru dan pembaruan oleh Roh Kudus, \\v 6 yang telah {{deity_pronoun:dia|Dia}} curahkan kepada kita dengan berlimpah melalui Yesus {{christos:Kristus|Sang Mesias}}, Juruselamat kita, \\v 7 supaya, setelah dibenarkan oleh kasih karunia-{{deity_pronoun:nya|Nya}}, kita menjadi ahli waris dengan pengharapan akan hidup kekal.",
+          "R": "Tetapi Allah, Juruselamat kita, menunjukkan kepada kita betapa baiknya {{deity_pronoun:dia|Dia}} dan betapa {{deity_pronoun:dia|Dia}} mengasihi manusia. \\v 5 Dia menyelamatkan kita. Hal itu bukan karena perbuatan benar apa pun yang telah kita lakukan. Hal itu karena {{deity_pronoun:dia|Dia}} berbelas kasihan kepada kita. Dia mencuci kita sampai bersih dan memberi kita kelahiran baru. Roh Kudus menjadikan kita baru. \\v 6 Allah memberikan Roh Kudus kepada kita dengan berlimpah melalui Yesus {{christos:Kristus|Sang Mesias}}, Juruselamat kita. \\v 7 Karena kasih karunia Allah, Allah telah menyatakan kita benar di hadapan-{{deity_pronoun:nya|Nya}}. Sekarang kita akan menerima segala sesuatu yang telah Allah janjikan kepada anak-anak-{{deity_pronoun:nya|Nya}}. Kita mempunyai harapan akan hidup kekal."
+        },
+        "zh": {
+          "L": "但{{god_term:神|上帝}}我们救主的恩慈和{{deity_pronoun:他|祂}}对人的慈爱显现的时候，\\v 5 {{deity_pronoun:他|祂}}就救了我们，不是因我们所行的义的行为，而是照着{{deity_pronoun:他|祂}}的怜悯，借着重生的洗涤，和圣灵的更新；\\v 6 圣灵是{{deity_pronoun:他|祂}}借着耶稣{{christos:基督|弥赛亚}}我们的救主，丰丰富富地浇灌在我们身上的，\\v 7 好让我们因{{deity_pronoun:他|祂}}的恩典被称义，照着永生的盼望成为后嗣。",
+          "B": "但当{{god_term:神|上帝}}我们救主的恩慈和慈爱显明出来的时候，\\v 5 {{deity_pronoun:他|祂}}就救了我们，不是因为我们做过什么义事，而是因为{{deity_pronoun:他|祂}}的怜悯。{{god_term:神|上帝}}借着新生的洗和圣灵的更新拯救了我们；\\v 6 圣灵是{{deity_pronoun:他|祂}}借着耶稣{{christos:基督|弥赛亚}}我们的救主，丰富地浇灌在我们身上的，\\v 7 好让我们因{{deity_pronoun:他|祂}}的恩典被称为义，成为后嗣，怀着永生的盼望。",
+          "R": "但{{god_term:神|上帝}}我们的救主让我们看见，{{deity_pronoun:他|祂}}是多么恩慈，多么爱世人。\\v 5 {{god_term:神|上帝}}救了我们。这不是因为我们做过什么义事，而是因为{{deity_pronoun:他|祂}}怜悯我们。{{god_term:神|上帝}}把我们洗干净，使我们重新出生。圣灵使我们成为新人。\\v 6 {{god_term:神|上帝}}借着耶稣{{christos:基督|弥赛亚}}我们的救主，把圣灵丰丰富富地赐给我们。\\v 7 因着{{god_term:神|上帝}}的恩典，{{god_term:神|上帝}}已经接纳我们，使我们在{{deity_pronoun:他|祂}}自己面前成为义人。现在，我们会得到{{god_term:神|上帝}}应许给{{deity_pronoun:他|祂}}儿女的一切。我们有永生的盼望。"
         }
       },
       "decisions": [
@@ -1343,6 +1538,191 @@
           "reason": "\"Philanthrōpia\", God's love for mankind (m1); Literal keeps the compound.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n56003005018",
+            "n56003005021"
+          ],
+          "choice": "\"再生の洗いと聖霊の更新\" (L); \"新しく生まれさせる洗いと、聖霊によって新たにされること\" (B); \"洗って清め、新しく生まれさせ……聖霊がわたしたちを新しくして\" (R)",
+          "alternatives": [],
+          "reason": "Literal keeps the two genitives so that the grammar stays as open as the Greek; Balanced and Readable follow the English reading, which the meaning decision marks uncertain.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n56003007002"
+          ],
+          "choice": "\"義とされ\" (L, B), \"ご自分の前に正しい者と認めてくださいました\" (R)",
+          "alternatives": [],
+          "reason": "Justify as settled in the style guide (sections 6 and 7a); God's action takes the light respect form.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n56003005018",
+            "n56003005019"
+          ],
+          "choice": "\"купіль відродження\" (L); \"купіль нового народження\" (B)",
+          "alternatives": [
+            "\"обмиття відродження\""
+          ],
+          "reason": "\"Купіль\" is the Ukrainian word for a washing bath, and with \"відродження\" it names the new birth; Readable says plainly \"обмив нас і дав нам нове народження\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-2",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n56003004007"
+          ],
+          "choice": "\"людинолюбство\" (L)",
+          "alternatives": [
+            "\"любов до людей\""
+          ],
+          "reason": "The Greek word is God's love for human beings; Ukrainian has a single word for it, which Literal keeps; Balanced follows the English \"love\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n56003005017",
+            "n56003005018",
+            "n56003005019",
+            "n56003005020",
+            "n56003005021",
+            "n56003005022",
+            "n56003005023"
+          ],
+          "choice": "\"pemandian kelahiran kembali\" (L), \"pemandian kelahiran baru\" (B); \"dibenarkan\"",
+          "alternatives": [],
+          "reason": "The washing of new birth (m3, m4) in the familiar terms; justify as \"membenarkan\", the glossary's form.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n56003007002"
+          ],
+          "choice": "\"被称义\" (L); \"被称为义\" (B); \"接纳……成为义人\" (R)",
+          "alternatives": [
+            "得称为义"
+          ],
+          "reason": "Romans' forms for justify (glossary). Readable keeps the English Readable's \"with himself\" in a deity_pronoun span.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n56003004007"
+          ],
+          "choice": "\"{{deity_pronoun:他|祂}}对人的慈爱\"",
+          "alternatives": [
+            "对人的慈爱 without a pronoun"
+          ],
+          "reason": "Chinese needs whose love it is; the pronoun is God's, so it stands in a deity_pronoun span, though the English Literal has none here.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-3",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n56003005015"
+          ],
+          "choice": "\"{{god_term:神|上帝}}\" (B, R) where the English starts a sentence with \"He\"",
+          "alternatives": [
+            "他"
+          ],
+          "reason": "The English Balanced and Readable start new sentences with an unspanned \"He\" for God; the Chinese names God there, so no pronoun for God stands outside a span.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-4",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n56003005018",
+            "n56003005019"
+          ],
+          "choice": "\"重生的洗涤\" (L); \"新生的洗\" (B)",
+          "alternatives": [
+            "重生的洗"
+          ],
+          "reason": "Regeneration is new birth (meaning m4); Balanced uses the plainer word, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1427,6 +1807,26 @@
           "L": "Слово [это] верное, и я хочу, чтобы ты утверждал это, чтобы уверовавшие в Бога заботились о том, чтобы прилежать к добрым делам.",
           "B": "Это слово надёжно. Я хочу, чтобы ты настаивал на этом, чтобы те, кто поверил в Бога, заботились о том, чтобы усердно делать добро.",
           "R": "То, что я сказал тебе, — правда. Я хочу, чтобы ты продолжал учить этому, чтобы люди, которые верят в Бога, старались всегда делать добро."
+        },
+        "ja": {
+          "L": "この言葉は信頼できます。そして、これらのことについて、あなたが確信をもって主張することを、わたしは望みます。神を信じるようになった者たちが、善い行いに励むことに心を配るためです。",
+          "B": "この言葉は信頼できるものです。これらのことを、あなたが強く主張するよう望みます。神を信じるようになった人々が、善い行いに励むよう心がけるためです。",
+          "R": "わたしがあなたに話したことは本当です。わたしはあなたに、これらのことを教え続けてほしいのです。そうすれば、神を信じる人たちが、いつも良いことをするように気をつけるようになります。"
+        },
+        "uk": {
+          "L": "Вірне [це] слово, і я хочу, щоб ти наполегливо стверджував це, щоб ті, хто повірив Богові, дбали про те, щоб віддаватися добрим ділам.",
+          "B": "Ось слово, на яке можна покластися. Я хочу, щоб ти наполягав на цьому, щоб ті, хто повірив у Бога, старанно віддавалися добрим ділам.",
+          "R": "Те, що я тобі сказав, правда. Я хочу, щоб ти й далі навчав цього, щоб люди, які вірять у Бога, старалися завжди робити добро."
+        },
+        "id": {
+          "L": "Perkataan ini dapat dipercaya, dan aku mau supaya engkau dengan tegas menekankan hal-hal ini, supaya mereka yang telah percaya kepada Allah sungguh-sungguh berusaha melakukan perbuatan-perbuatan baik.",
+          "B": "Perkataan ini dapat dipercaya. Aku ingin engkau menegaskan hal-hal ini, supaya mereka yang telah percaya kepada Allah berhati-hati untuk mengabdikan diri kepada perbuatan baik.",
+          "R": "Apa yang telah saya katakan kepadamu ini benar. Saya ingin engkau terus mengajarkan hal-hal ini, supaya orang-orang yang percaya kepada Allah berhati-hati untuk selalu melakukan hal-hal yang baik."
+        },
+        "zh": {
+          "L": "这话是可信的，我要你坚定地强调这些事，好使那些已经信了{{god_term:神|上帝}}的人，留心专心行善。",
+          "B": "这话是可信的。我要你坚持讲这些事，好让信了{{god_term:神|上帝}}的人留心，专心去行善。",
+          "R": "我告诉你的这些话是真实的。我要你继续教导这些事，好让信{{god_term:神|上帝}}的人留心，常常去做好事。"
         }
       },
       "decisions": [
@@ -1527,6 +1927,46 @@
           "reason": "The formula as in 1 Timothy 1:15; here it points back to verses 4-7 (m1), so Balanced and Readable say \"this saying\" plainly, as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n56003008014"
+          ],
+          "choice": "\"善い行いに励む\" (L, B) for devoting oneself to good works, here and in 3:14",
+          "alternatives": [],
+          "reason": "Follows the English reading; the meaning decision marks it uncertain (\"engage in honest occupations\" is another reading).",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n56003008001",
+            "n56003008002",
+            "n56003008003"
+          ],
+          "choice": "\"这话是可信的\" (L, B); \"……这些话是真实的\" (R)",
+          "alternatives": [
+            "这话是可靠的"
+          ],
+          "reason": "One form for the Pastoral Letters' formula \"Trustworthy is the saying\", here pointing back to verses 4-7 (meaning m1); kept the same in 2 Timothy 2:11.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1601,6 +2041,26 @@
           "L": "Это хорошо и полезно людям.",
           "B": "Это прекрасно и полезно для всех.",
           "R": "Это хорошо, и это помогает людям."
+        },
+        "ja": {
+          "L": "これらのことは良いことであり、人々に益となります。",
+          "B": "これらのことはすばらしく、すべての人に役立ちます。",
+          "R": "これらのことは良いことで、人々の助けになります。"
+        },
+        "uk": {
+          "L": "Це добре й корисне для людей.",
+          "B": "Це прекрасне й корисне для всіх.",
+          "R": "Це добре, і це допомагає людям."
+        },
+        "id": {
+          "L": "Hal-hal ini baik dan berguna bagi manusia.",
+          "B": "Hal-hal ini baik dan berguna bagi semua orang.",
+          "R": "Hal-hal ini baik, dan hal-hal ini menolong orang."
+        },
+        "zh": {
+          "L": "这些事是美好的，对人有益。",
+          "B": "这些事是美好的，对每个人都有益处。",
+          "R": "这些事都是好的，能帮助人。"
         }
       },
       "decisions": [
@@ -1634,6 +2094,25 @@
             "people"
           ],
           "reason": "The word means human beings in general (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n56003008024"
+          ],
+          "choice": "\"人\", with no gender span",
+          "alternatives": [
+            "{{gender:人|男人}}"
+          ],
+          "reason": "The word means human beings in general (meaning m1); Chinese \"人\" includes men and women, so the English Literal's span has no counterpart.",
           "uncertain": false,
           "footnote": false
         }
@@ -1719,6 +2198,26 @@
           "L": "А глупых споров, и родословий, и распрей, и препирательств о Законе избегай, ведь они бесполезны и пусты.",
           "B": "Избегай глупых споров, родословий, раздоров и ссор о Законе, потому что всё это бесполезно и пусто.",
           "R": "Держись подальше от глупых споров и от длинных списков предков, о которых спорят люди. Не вступай в споры и ссоры о Законе Моисея. Всё это никому не помогает и ничего не стоит."
+        },
+        "ja": {
+          "L": "しかし、愚かな論争や系図や争いや律法についての口論は避けなさい。それらは無益で、むなしいからです。",
+          "B": "しかし、愚かな論争、系図、争い、律法をめぐる口論を避けなさい。それらは無益で、むなしいものです。",
+          "R": "しかし、ばかげた言い争いには近づかないでください。人々が言い争う、先祖の長い名前の表にも近づかないでください。モーセの律法について、言い争ったり、けんかしたりしないでください。こうしたことは、だれの役にも立たず、むなしいものです。"
+        },
+        "uk": {
+          "L": "А нерозумних суперечок, і родоводів, і чвар, і сварок за Закон уникай, бо вони некорисні й марні.",
+          "B": "Уникай нерозумних суперечок, родоводів, чвар і сварок про Закон, бо вони некорисні й марні.",
+          "R": "Тримайся подалі від безглуздих суперечок і від довгих списків предків, про які люди сперечаються. Не вступай у суперечки й сварки про Закон Мойсея. Це нікому не допомагає і нічого не варте."
+        },
+        "id": {
+          "L": "Tetapi hindarilah perdebatan-perdebatan yang bodoh dan silsilah-silsilah dan percekcokan dan pertengkaran tentang hukum Taurat, sebab semua itu tidak berguna dan sia-sia.",
+          "B": "Tetapi jauhilah perdebatan yang bodoh, silsilah-silsilah, perselisihan, dan pertengkaran tentang hukum Taurat, karena semua itu tidak berguna dan sia-sia.",
+          "R": "Tetapi jauhilah perdebatan yang bodoh, dan daftar panjang nenek moyang yang diperdebatkan orang. Jangan terlibat dalam perdebatan dan pertengkaran tentang hukum Musa. Hal-hal itu tidak menolong siapa pun, dan hal-hal itu tidak berharga."
+        },
+        "zh": {
+          "L": "但要避开愚蠢的辩论、家谱、纷争和关于律法的争吵，因为这些都是无益的、虚空的。",
+          "B": "但要避开愚蠢的辩论、家谱、争执和关于律法的争吵，因为这些都是无益的，毫无用处。",
+          "R": "但要远离愚蠢的争论，也不要理会那些人们争论不休的长长的祖先名单。不要卷入关于摩西律法的争论和打斗。这些事对谁都没有帮助，也毫无价值。"
         }
       },
       "decisions": [
@@ -1788,6 +2287,43 @@
             "о законе"
           ],
           "reason": "The law of Moses (m2), so \"Закон\" takes its capital, as in Romans.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n56003009005",
+            "n56003009010"
+          ],
+          "choice": "\"先祖の長い名前の表\" for genealogies; \"モーセの律法\" for the law",
+          "alternatives": [],
+          "reason": "Readable explains both words, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n56003009010"
+          ],
+          "choice": "\"hukum Taurat\" (L, B), \"hukum Musa\" (R)",
+          "alternatives": [],
+          "reason": "The glossary allows \"hukum Musa\" at Readable for the Law of Moses (m2).",
           "uncertain": false,
           "footnote": false
         }
@@ -1875,6 +2411,26 @@
           "L": "Человека, вызывающего разделения, после первого и второго вразумления отвергай, \\v 11 зная, что такой развратился и грешит, будучи самоосуждён.",
           "B": "Человека, который сеет раздоры, предупреди один раз, затем второй. После этого не имей с ним ничего общего. \\v 11 Ты можешь быть уверен, что такой человек извращён и грешит, сам себя осуждая.",
           "R": "Если кто-то вызывает раздоры в церкви, предупреди его один раз, потом предупреди ещё раз. Если он не перестанет, не имей с ним больше ничего общего. \\v 11 Ты знаешь, что такой человек отвернулся от того, что правильно. Он продолжает грешить и сам показывает, что виновен."
+        },
+        "ja": {
+          "L": "分派を起こす人は、一度、また二度戒めた後は、退けなさい。\\v 11 そのような者は道を外れており、罪を犯していて、自分で自分を罪に定めていると知っているからです。",
+          "B": "分裂を引き起こす人には、一度、そして二度目の警告をしなさい。その後は、その人と関わらないようにしなさい。\\v 11 あなたも知っているとおり、そのような人はゆがんでおり、罪を犯していて、自分で自分を罪に定めているのです。",
+          "R": "もし教会の中で、仲間割れを起こす人がいたら、一度注意し、もう一度注意してください。それでもやめなければ、その人と関わるのをやめてください。\\v 11 あなたも知っているように、そのような人は、正しい道から離れてしまっています。罪を犯し続けていて、自分が悪いことを自分で示しているのです。"
+        },
+        "uk": {
+          "L": "Людини, що сіє розбрат, після першого й другого напоумлення зрікайся, \\v 11 знаючи, що такий збочив і грішить, будучи самоосудженим.",
+          "B": "Попередь людину, яка сіє розбрат, один раз, а потім удруге. Після цього не май із нею нічого спільного. \\v 11 Ти можеш бути певен, що така людина збочена і грішна і сама себе засуджує.",
+          "R": "Якщо хтось сіє розбрат у церкві, застережи його один раз, а потім ще раз. Якщо він не перестане, не май з ним більше нічого спільного. \\v 11 Ти знаєш, що така людина відвернулася від того, що правильно. Вона й далі грішить і сама показує, що вона винна."
+        },
+        "id": {
+          "L": "Orang yang memecah belah, setelah satu dua kali kaunasihati, jauhilah [dia], \\v 11 karena engkau tahu bahwa orang seperti itu sudah sesat dan berdosa, dan ia menghukum dirinya sendiri.",
+          "B": "Peringatkanlah orang yang memecah belah satu kali, lalu sekali lagi. Sesudah itu, jangan berurusan lagi dengan dia. \\v 11 Engkau boleh yakin bahwa orang seperti itu sudah bengkok dan berdosa, dan menghukum dirinya sendiri.",
+          "R": "Kalau seseorang menimbulkan perpecahan dalam jemaat, peringatkanlah dia satu kali, lalu peringatkanlah dia lagi. Kalau dia tidak berhenti, jangan berurusan lagi dengan dia. \\v 11 Engkau tahu bahwa orang seperti itu telah berpaling dari apa yang benar. Dia terus berbuat dosa, dan dia menunjukkan bahwa dia bersalah."
+        },
+        "zh": {
+          "L": "至于分门结党的人，警告过一次、两次以后，就要拒绝[他]，\\v 11 因为知道这样的人已经偏离正道，并且在犯罪，自己定了自己的罪。",
+          "B": "对制造分裂的人，要警告他一次，再警告第二次。以后就不要再和他来往。\\v 11 你可以确定，这样的人已经走了邪路，犯了罪，自己定了自己的罪。",
+          "R": "如果有人在教会里制造分裂，要警告他一次，然后再警告他一次。如果他还不停止，就不要再和他来往。\\v 11 你知道，这样的人已经离开了正路。他一直在犯罪，并且表明自己是有罪的。"
         }
       },
       "decisions": [
@@ -2075,6 +2631,68 @@
           "reason": "\"Hairetikos\" here is factious (m1); \"еретик\" now names a holder of false doctrine.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n56003010002"
+          ],
+          "choice": "\"人\", \"その人\", \"そのような人\" with no pronoun, for the English \"person ... them\"",
+          "alternatives": [],
+          "reason": "Japanese needs no singular they; the noun is inclusive as it stands (style guide 7a).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n56003010001",
+            "n56003010002"
+          ],
+          "choice": "\"людина, що сіє розбрат\"",
+          "alternatives": [
+            "\"єретик\""
+          ],
+          "reason": "The word means a divisive person, not yet a heretic in the later sense; \"людина\" is inclusive, so no gender span is needed.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n56003010002"
+          ],
+          "choice": "\"人\"; \"他\"",
+          "alternatives": [
+            "他或她"
+          ],
+          "reason": "The English uses \"them\" to keep the words general (meaning m2); Chinese \"人\" is general already, and \"他\" for an unnamed person is the usual written form for anyone.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2159,6 +2777,26 @@
           "L": "Когда я пошлю к тебе Артему или Тихика, постарайся прийти ко мне в Никополь, ведь там я решил провести зиму.",
           "B": "Когда я пошлю к тебе Артему или Тихика, постарайся прийти ко мне в Никополь, потому что я решил провести там зиму.",
           "R": "Я пошлю к тебе Артему или Тихика. Когда один из них придёт, очень постарайся прийти ко мне в Никополь. Я решил остаться там на зиму."
+        },
+        "ja": {
+          "L": "わたしがアルテマスかティキコをあなたのもとに送ったら、ニコポリスにいるわたしのところに急いで来なさい。わたしはそこで冬を過ごすことに決めたからです。",
+          "B": "わたしがアルテマスかティキコをあなたのところに送ったら、できるだけ急いで、ニコポリスにいるわたしのところに来なさい。わたしはそこで冬を過ごすことに決めています。",
+          "R": "わたしは、アルテマスかティキコを、あなたのところに送ります。どちらかが着いたら、何とかしてニコポリスのわたしのところに来てください。わたしは、冬の間そこにいることに決めました。"
+        },
+        "uk": {
+          "L": "Коли пошлю до тебе Артема або Тихика, постарайся прийти до мене в Нікополь, бо я вирішив там перезимувати.",
+          "B": "Коли я пошлю до тебе Артема або Тихика, постарайся прийти до мене в Нікополь, бо я вирішив провести там зиму.",
+          "R": "Я пошлю до тебе Артема або Тихика. Коли один із них прийде, дуже постарайся прийти до мене в Нікополь. Я вирішив залишитися там на зиму."
+        },
+        "id": {
+          "L": "Apabila aku mengutus Artemas atau Tikhikus kepadamu, berusahalah datang kepadaku di Nikopolis, sebab aku telah memutuskan untuk melewatkan musim dingin di sana.",
+          "B": "Apabila aku mengutus Artemas atau Tikhikus kepadamu, berusahalah datang kepadaku di Nikopolis, karena aku telah memutuskan untuk melewatkan musim dingin di sana.",
+          "R": "Saya akan mengutus Artemas atau Tikhikus kepadamu. Ketika salah satu dari mereka datang, berusahalah keras untuk datang kepada saya di Nikopolis. Saya sudah memutuskan untuk tinggal di sana selama musim dingin."
+        },
+        "zh": {
+          "L": "我打发亚提马或推基古到你那里去的时候，你要尽力到尼哥波立来见我，因为我已经决定在那里过冬。",
+          "B": "我打发亚提马或推基古到你那里去的时候，你要尽快到尼哥波立来见我，因为我已经决定在那里过冬。",
+          "R": "我会打发亚提马或推基古到你那里去。他们中间有一个人到了以后，你要尽力到尼哥波立来见我。我已经决定在那里过冬。"
         }
       },
       "decisions": [
@@ -2259,6 +2897,72 @@
           "reason": "The names in their usual Brazilian form, with the accents Portuguese writes for their stress.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n56003012003",
+            "n56003012007",
+            "n56003012013"
+          ],
+          "choice": "\"アルテマス\" for Artemas, \"ティキコ\" for Tychicus, \"ニコポリス\" for Nicopolis",
+          "alternatives": [
+            "\"アルテマ\""
+          ],
+          "reason": "Tychicus as in the style guide; the other two transliterated from the Greek by the guide's pattern.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n56003012003",
+            "n56003012007",
+            "n56003012013"
+          ],
+          "choice": "\"Artemas\"; \"Nikopolis\"",
+          "alternatives": [],
+          "reason": "Formed by the style guide's rules and added to the glossary; \"Tikhikus\" is the glossary form.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n56003012003",
+            "n56003012013"
+          ],
+          "choice": "\"亚提马\"; \"尼哥波立\"",
+          "alternatives": [
+            "阿尔特马; 尼科波利斯"
+          ],
+          "reason": "Names not in the glossary, in the forms Chinese Bibles use for them, made from the Greek sounds; \"推基古\" is the glossary's form.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2337,6 +3041,26 @@
           "L": "Зину законника и Аполлоса усердно снаряди в путь, чтобы у них ни в чём не было недостатка.",
           "B": "Сделай всё, что можешь, чтобы помочь законнику Зине и Аполлосу отправиться в путь, и проследи, чтобы у них было всё необходимое.",
           "R": "Законник Зина и Аполлос отправляются в путь. Сделай всё, что можешь, чтобы помочь им, чтобы у них было всё, что им нужно."
+        },
+        "ja": {
+          "L": "法律家ゼナスとアポロを、熱心に送り出しなさい。彼らに何も欠けることがないためです。",
+          "B": "法律家ゼナスとアポロが旅立てるよう、できるかぎり助けて、何一つ不足することがないようにしなさい。",
+          "R": "法律家のゼナスとアポロが旅に出ます。できるだけのことをして、二人を助けてください。必要なものが何も足りないことがないようにしてあげてください。"
+        },
+        "uk": {
+          "L": "Зину, законника, і Аполлоса старанно випровадь, щоб їм нічого не бракувало.",
+          "B": "Зроби все можливе, щоб допомогти Зині, знавцеві Закону, і Аполлосові в дорозі, і подбай, щоб вони мали все потрібне.",
+          "R": "Зина, знавець Закону, і Аполлос вирушають у дорогу. Зроби все, що можеш, щоб допомогти їм, щоб вони мали все, що їм потрібно."
+        },
+        "id": {
+          "L": "Dengan sungguh-sungguh bantulah Zenas, ahli hukum itu, dan Apolos dalam perjalanan mereka, supaya mereka tidak kekurangan apa-apa.",
+          "B": "Lakukanlah segala yang dapat kaulakukan untuk membantu Zenas, ahli hukum itu, dan Apolos dalam perjalanan mereka, dan usahakanlah supaya mereka memiliki segala yang mereka perlukan.",
+          "R": "Zenas, ahli hukum itu, dan Apolos akan melakukan perjalanan. Lakukanlah semua yang dapat engkau lakukan untuk menolong mereka, supaya mereka memiliki segala sesuatu yang mereka perlukan."
+        },
+        "zh": {
+          "L": "你要尽心为律师西纳和亚波罗送行，使他们一无所缺。",
+          "B": "你要尽力帮助律师西纳和亚波罗上路，使他们样样都不缺。",
+          "R": "律师西纳和亚波罗要出去旅行。你要尽力帮助他们，让他们有所需要的一切。"
         }
       },
       "decisions": [
@@ -2507,6 +3231,98 @@
           "reason": "Luke settles \"законник\" (L) and \"знаток Закона\" (B, R) for experts in the Jewish Law; here it is not clear whether Zenas knew the Jewish or the Roman law (m1), so every level keeps the neutral \"законник\".",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n56003013001",
+            "n56003013003",
+            "n56003013005"
+          ],
+          "choice": "\"ゼナス\" for Zenas, \"アポロ\" for Apollos; \"法律家\" for the lawyer",
+          "alternatives": [
+            "\"律法の専門家\""
+          ],
+          "reason": "\"法律家\" leaves open whether Zenas was an expert in Roman or in Jewish law; \"律法の専門家\" would choose the second.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n56003013001",
+            "n56003013003"
+          ],
+          "choice": "\"Зина\"; \"законник\" (L), \"знавець Закону\" (B, R)",
+          "alternatives": [
+            "\"Зенас\"; \"юрист\""
+          ],
+          "reason": "As in the Gospels for this word; whether he was an expert in Jewish or Roman law is left open, as in the English.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n56003013001",
+            "n56003013002",
+            "n56003013003",
+            "n56003013004",
+            "n56003013005"
+          ],
+          "choice": "\"Zenas\"; \"ahli hukum\"",
+          "alternatives": [
+            "\"ahli Taurat\""
+          ],
+          "reason": "\"Zenas\" is formed by the style guide's rules and added to the glossary; \"Apolos\" is the glossary form. \"ahli hukum\" (a lawyer) leaves open whether Jewish or Roman law is meant.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n56003013001",
+            "n56003013003"
+          ],
+          "choice": "\"律师西纳\"",
+          "alternatives": [
+            "律法师西纳"
+          ],
+          "reason": "A name not in the glossary, in the form Chinese Bibles use (from the Greek sounds); \"律师\" for nomikos, an expert in law (meaning m1). \"亚波罗\" as Acts 18:24.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2590,6 +3406,26 @@
           "L": "Пусть же и наши учатся прилежать к добрым делам для насущных нужд, чтобы не быть бесплодными.",
           "B": "И наши люди должны учиться усердно делать добро, чтобы удовлетворять насущные нужды и не быть бесплодными.",
           "R": "Наши люди должны научиться всегда делать добро, чтобы помогать другим, когда им это нужно. Тогда их жизнь будет полезной."
+        },
+        "ja": {
+          "L": "また、わたしたちの仲間たちにも、差し迫った必要のために善い行いに励むことを学ばせなさい。実を結ばない者とならないためです。",
+          "B": "わたしたちの仲間も、善い行いに励むことを学ばなければなりません。そうすれば、差し迫った必要に応えることができ、実を結ばない者とはならないでしょう。",
+          "R": "わたしたちの仲間も、いつも良いことをするように学ばなければなりません。そうすれば、困っている人を助けることができます。そして、その生き方は役に立つものになります。"
+        },
+        "uk": {
+          "L": "І нехай наші також учаться віддаватися добрим ділам для нагальних потреб, щоб не бути безплідними.",
+          "B": "Наші люди також мають навчитися віддаватися добрим ділам, щоб задовольняти нагальні потреби і не бути безплідними.",
+          "R": "Наші люди мають навчитися завжди робити добро, щоб допомагати іншим, коли їм це потрібно. Тоді їхнє життя буде корисним."
+        },
+        "id": {
+          "L": "Dan biarlah orang-orang kita juga belajar melakukan perbuatan-perbuatan baik untuk memenuhi kebutuhan yang mendesak, supaya hidup mereka tidak sia-sia.",
+          "B": "Orang-orang kita juga harus belajar mengabdikan diri kepada perbuatan baik, supaya mereka dapat memenuhi kebutuhan yang mendesak dan tidak hidup tanpa buah.",
+          "R": "Orang-orang kita harus belajar untuk selalu melakukan hal-hal yang baik, supaya mereka dapat menolong orang lain ketika mereka membutuhkannya. Dengan begitu hidup mereka akan berguna."
+        },
+        "zh": {
+          "L": "我们的人也要学习专心行善，以供应必需的需要，免得不结果子。",
+          "B": "我们的人也必须学习专心行善，好满足迫切的需要，不致不结果子。",
+          "R": "我们的人必须学习常常做好事，好在别人有需要的时候帮助他们。这样，他们的生活就会有用处。"
         }
       },
       "decisions": [
@@ -2643,6 +3479,23 @@
             "\"không kết quả\""
           ],
           "reason": "The word is \"unfruitful\"; Vietnamese \"không kết quả\" would sound like failing at a task, so Literal says \"vô ích\", a life of no use to others, as the English Readable says \"useful\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n56003014001"
+          ],
+          "choice": "\"学ばせなさい\" for the third-person imperative \"let them learn\"",
+          "alternatives": [],
+          "reason": "Japanese has no third-person command; the causative addressed to Titus keeps it a command, as \"Let our people learn\" is.",
           "uncertain": false,
           "footnote": false
         }
@@ -2718,6 +3571,26 @@
           "L": "Приветствуют тебя все, [кто] со мной.",
           "B": "Тебе передают привет все, кто со мной.",
           "R": "Все, кто здесь со мной, передают тебе привет."
+        },
+        "ja": {
+          "L": "わたしと共にいる者たちが皆、あなたにあいさつしています。",
+          "B": "わたしと一緒にいる人たちが皆、あなたによろしくと言っています。",
+          "R": "ここでわたしといっしょにいるみんなが、あなたによろしくと言っています。"
+        },
+        "uk": {
+          "L": "Вітають тебе всі, хто зі мною.",
+          "B": "Усі, хто зі мною, передають тобі вітання.",
+          "R": "Усі, хто тут зі мною, вітають тебе."
+        },
+        "id": {
+          "L": "Salam kepadamu dari semua orang yang ada bersamaku.",
+          "B": "Semua orang yang ada bersamaku menyampaikan salam kepadamu.",
+          "R": "Semua orang yang ada di sini bersama saya menyampaikan salam kepadamu."
+        },
+        "zh": {
+          "L": "跟我在一起的人都问候你。",
+          "B": "跟我在一起的人都向你问候。",
+          "R": "在这里跟我在一起的人都向你问好。"
         }
       },
       "decisions": [
@@ -2752,6 +3625,27 @@
             "dizem olá"
           ],
           "reason": "Readable uses the everyday Brazilian close of a letter for sending greetings, as the English Readable says \"says hello\"; Literal says \"saúdam\", Balanced \"mandam saudações\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n56003015001"
+          ],
+          "choice": "\"问候\" (L, B); \"向……问好\" (R)",
+          "alternatives": [
+            "请安"
+          ],
+          "reason": "The glossary's forms for greet, as Romans 16.",
           "uncertain": false,
           "footnote": false
         }
@@ -2827,6 +3721,26 @@
           "L": "Приветствуй любящих нас в вере.",
           "B": "Приветствуй тех, кто любит нас в вере.",
           "R": "Передай привет верующим там, которые любят нас и разделяют нашу веру."
+        },
+        "ja": {
+          "L": "信仰にあってわたしたちを愛している人々に、あいさつしなさい。",
+          "B": "信仰によってわたしたちを愛している人々に、よろしく伝えてください。",
+          "R": "そちらで、わたしたちを愛し、同じ信仰を持っている人たちに、よろしく伝えてください。"
+        },
+        "uk": {
+          "L": "Привітай тих, хто любить нас у вірі.",
+          "B": "Привітай тих, хто любить нас у вірі.",
+          "R": "Передай вітання віруючим, які люблять нас і мають з нами одну віру."
+        },
+        "id": {
+          "L": "Sampaikanlah salam kepada mereka yang mengasihi kami dalam iman.",
+          "B": "Sampaikanlah salam kepada mereka yang mengasihi kami dalam iman.",
+          "R": "Sampaikanlah salam kepada orang-orang percaya di sana yang mengasihi kami dan memiliki iman yang sama dengan kami."
+        },
+        "zh": {
+          "L": "你要问候那些在信心里爱我们的人。",
+          "B": "请问候那些在信心里爱我们的人。",
+          "R": "请向那里爱我们、和我们有同样信心的信徒问好。"
         }
       },
       "decisions": [
@@ -2844,6 +3758,24 @@
             "faithfully"
           ],
           "reason": "πίστει without the article may mean \"in the faith\" (as believers) or \"faithfully\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n56003015007"
+          ],
+          "choice": "\"よろしく伝えてください\" (B, R) for the command to greet",
+          "alternatives": [],
+          "reason": "A greeting is passed on politely in Japanese, as in Romans 16 and Philemon; Literal keeps \"あいさつしなさい\".",
           "uncertain": false,
           "footnote": false
         }
@@ -2918,6 +3850,26 @@
           "L": "Благодать — со всеми вами.",
           "B": "Пусть благодать будет со всеми вами.",
           "R": "Я молюсь, чтобы Бог явил благодать всем вам."
+        },
+        "ja": {
+          "L": "恵みが、あなたがたすべてと共に[ありますように]。",
+          "B": "恵みが、あなたがたすべてと共にありますように。",
+          "R": "神がみなさんすべてに恵みを示してくださるように、祈っています。"
+        },
+        "uk": {
+          "L": "Благодать з усіма вами.",
+          "B": "Благодать з усіма вами.",
+          "R": "Я молюся, щоб Бог виявив благодать усім вам."
+        },
+        "id": {
+          "L": "Kasih karunia [menyertai] kalian semua.",
+          "B": "Kasih karunia menyertai kalian semua.",
+          "R": "Saya berdoa supaya Allah menunjukkan kasih karunia-{{deity_pronoun:nya|Nya}} kepada kalian semua."
+        },
+        "zh": {
+          "L": "恩典[与]你们众人[同在]。",
+          "B": "愿恩典与你们众人同在。",
+          "R": "我祈求{{god_term:神|上帝}}向你们所有的人施恩。"
         }
       },
       "decisions": [
@@ -3052,6 +4004,64 @@
             "\"तुम्हारे साथ\""
           ],
           "reason": "The pronoun is plural, the church with Titus (meaning decision m1), after the singular \"तुम्हें\" of verse 15a; \"सब\" shows the number. The blessing keeps the form of 1 Timothy 6:21.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n56003015017"
+          ],
+          "choice": "\"あなたがた\" (L, B), \"みなさん\" (R)",
+          "alternatives": [],
+          "reason": "The only plural you in the letter: the church with Titus. Japanese marks it so the change from \"あなた\" is seen.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n56003015017"
+          ],
+          "choice": "\"kalian semua\"",
+          "alternatives": [],
+          "reason": "The closing \"you\" is plural, the church with Titus (m1), after the singular \"-mu\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n56003015016",
+            "n56003015017"
+          ],
+          "choice": "\"[与]你们众人[同在]\" (L); \"与你们众人同在\" (B); \"你们所有的人\" (R)",
+          "alternatives": [],
+          "reason": "The closing in Romans 15:33's form for \"with you all\"; \"你们\" is plural, the church with Titus (meaning m1). Readable makes it a prayer, as the English Readable does.",
           "uncertain": false,
           "footnote": false
         }

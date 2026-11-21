@@ -75,6 +75,31 @@
           "L": "Ну-ка теперь, богатые, плачьте, рыдая о ваших бедствиях, которые надвигаются.",
           "B": "Послушайте теперь вы, богатые: плачьте и рыдайте о бедствиях, которые вот-вот обрушатся на вас.",
           "R": "Вы, богатые, послушайте! Плачьте и вопите, потому что на вас надвигаются страшные беды."
+        },
+        "uk": {
+          "L": "Ану тепер, багаті, плачте, ридаючи над вашими лихами, що надходять.",
+          "B": "Послухайте тепер ви, багаті: плачте й голосіть над нещастями, що ось-ось упадуть на вас.",
+          "R": "Ви, багаті, послухайте це! Плачте й голосіть, бо на вас насуваються страшні лиха."
+        },
+        "ja": {
+          "L": "さあ今、富む者たちよ、やって来るあなたがたの悲惨さのことで、わめき叫びながら泣きなさい。",
+          "B": "富む者たちよ、よく聞きなさい。あなたがたに降りかかろうとしている悲惨さを思って、声をあげて泣き叫びなさい。",
+          "R": "お金持ちの人たち、よく聞いてください。ひどい苦しみが、もうすぐあなたたちにやって来ます。だから、大声をあげて泣き叫んでください。"
+        },
+        "id": {
+          "L": "Marilah sekarang, hai kalian orang-orang kaya, menangislah dan merataplah karena kesengsaraan yang akan menimpa kalian.",
+          "B": "Dengarlah sekarang, hai kalian orang-orang kaya! Menangislah dan merataplah karena kesengsaraan yang akan menimpa kalian.",
+          "R": "Hai kalian orang-orang kaya, dengarlah ini! Menangislah dan merataplah, karena kesusahan yang mengerikan sedang datang kepada kalian."
+        },
+        "zh": {
+          "L": "来吧，你们这些富足的人，要哭泣，为那将要临到你们的种种苦难哀号。",
+          "B": "现在听着，你们这些有钱人：要为那即将临到你们身上的苦难哭泣、哀号。",
+          "R": "你们这些有钱人，听着！要哭，要大声哀号，因为可怕的灾难正向你们临近。"
+        },
+        "ar": {
+          "L": "تعالوا الآن، أيّها الأغنياء، ابكوا وأنتم تولولون على مصائبكم الآتية.",
+          "B": "اسمعوا الآن، أيّها الأغنياء: ابكوا وولولوا حزنًا على المصائب التي ستنزل بكم.",
+          "R": "أيّها الأغنياء، اسمعوا هذا! ابكوا ونوحوا بصوت عالٍ، لأنّ مصائب رهيبة في طريقها إليكم."
         }
       },
       "decisions": [
@@ -279,6 +304,94 @@
           "reason": "\"Come now\" is a call to attention (meaning decision m1). Hindi \"आओ\" would be an invitation to come, so every level says \"सुनो\", as in 4:13.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n59005001004"
+          ],
+          "choice": "\"あなたたち\" for the rich in 5:1-6 (Readable), where the believers are \"みなさん\"",
+          "alternatives": [
+            "\"みなさん\" throughout"
+          ],
+          "reason": "The rich are not addressed as members of the community (m2). Readable keeps the friendly \"みなさん\" for the brothers and sisters and uses the plainer \"あなたたち\" for the rich; Literal and Balanced say \"あなたがた\" for both.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n59005001001",
+            "n59005001002"
+          ],
+          "choice": "\"よく聞きなさい\" (B), \"よく聞いてください\" (R) after the address",
+          "alternatives": [
+            "\"さあ\" at the start, as at Literal"
+          ],
+          "reason": "As at 4:13: \"come now\" is a call to attention (m1), and Japanese puts it after the people addressed.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59005001001",
+            "n59005001002"
+          ],
+          "choice": "\"来吧\" (L); \"现在听着\" (B); \"听着\" (R)",
+          "alternatives": [],
+          "reason": "The call to attention of 4:13 (meaning m1), in the same words at each level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-1",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "idiom",
+          "tokens": [
+            "n59005001001",
+            "n59005001002",
+            "n59005001005",
+            "n59005001006",
+            "n59005001007",
+            "n59005001008",
+            "n59005001009",
+            "n59005001010",
+            "n59005001011",
+            "n59005001012"
+          ],
+          "choice": "\"تعالوا الآن\", \"اسمعوا الآن\" as in 4:13; \"تولولون\", \"ولولوا\"",
+          "alternatives": [],
+          "reason": "The same call to attention as 4:13, in the same Arabic (m1). \"ولول\" is the loud howling lament the prophets call for before the day of the Lord (m3).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -383,6 +496,31 @@
           "L": "Богатство ваше сгнило, и одежды ваши изъедены молью, \\v 3 золото ваше и серебро разъедено, и налёт на них будет свидетельством против вас и съест вашу плоть. Как огонь — [то, что] вы накопили в последние дни.",
           "B": "Ваше богатство сгнило, а одежду съела моль. \\v 3 Ваше золото и серебро потемнели от налёта, и этот налёт будет свидетельством против вас и пожрёт вашу плоть. То, что вы накопили в последние дни, подобно огню.",
           "R": "Ваше богатство гниёт. Моль съела вашу дорогую одежду. \\v 3 Ваше золото и серебро покрылись ржавчиной. Эта ржавчина будет доказательством против вас, и она съест ваши тела. Вы накопили богатства в последние дни, и они как огонь."
+        },
+        "uk": {
+          "L": "Ваше багатство згнило, і ваш одяг став поїдений міллю; \\v 3 ваше золото і срібло вкрилися нальотом, і їхній наліт буде свідченням проти вас і пожере вашу плоть. Як вогонь — [те, що] ви назбирали в останні дні.",
+          "B": "Ваші багатства згнили, а ваш одяг поїла міль. \\v 3 Ваше золото і срібло вкрилися нальотом, і цей наліт свідчитиме проти вас і пожере ваше тіло. Те, що ви нагромадили в останні дні, — наче вогонь.",
+          "R": "Ваші багатства гниють. Міль поїла ваш гарний одяг. \\v 3 Ваше золото і срібло вкриті іржею. Ця іржа буде доказом проти вас, і вона зʼїсть ваші тіла. Ви нагромадили багатства в останні дні, і вони — наче вогонь."
+        },
+        "ja": {
+          "L": "あなたがたの富は腐り、あなたがたの衣は虫に食われてしまいました。\\v 3 あなたがたの金と銀はさび、そのさびはあなたがたに対する証拠となり、あなたがたの肉を食べるでしょう。火のようなものを、あなたがたは終わりの日々に蓄えたのです。",
+          "B": "あなたがたの富は腐り果て、衣服は虫に食われてしまいました。\\v 3 金も銀もさびつき、そのさびがあなたがたを訴える証拠となり、あなたがたの肉を食い尽くします。終わりの日々にあなたがたが積み上げたものは、火のようなものです。",
+          "R": "あなたたちの財産は腐っています。りっぱな服は虫に食われています。\\v 3 金や銀はさびだらけです。そのさびは、あなたたちを訴える証拠になり、あなたたちの体を食べてしまいます。あなたたちは、この終わりの時代に財産をため込みましたが、それは火のようなものです。"
+        },
+        "id": {
+          "L": "Kekayaan kalian telah busuk, dan pakaian kalian telah dimakan ngengat; \\v 3 emas dan perak kalian telah berkarat, dan karatnya akan menjadi kesaksian terhadap kalian dan akan memakan daging kalian. Seperti api [itulah] yang kalian timbun pada hari-hari terakhir.",
+          "B": "Kekayaan kalian sudah busuk, dan pakaian kalian sudah dimakan ngengat. \\v 3 Emas dan perak kalian sudah berkarat, dan karatnya akan menjadi kesaksian terhadap kalian dan akan memakan tubuh kalian seperti api. Kalian telah menimbun harta pada hari-hari terakhir.",
+          "R": "Kekayaan kalian sedang membusuk. Ngengat sudah memakan pakaian kalian yang bagus. \\v 3 Emas dan perak kalian sudah berkarat. Karat itu akan menjadi bukti yang memberatkan kalian, dan karat itu akan memakan tubuh kalian. Kalian sudah menimbun harta pada hari-hari terakhir, dan harta itu seperti api."
+        },
+        "zh": {
+          "L": "你们的财富已经腐烂，你们的衣服已经被蛀虫蛀坏了；\\v 3 你们的金和银已经锈蚀，它们的锈蚀将要作证指控你们，并且要吃掉你们的肉。像火一样的，[是]你们在末后的日子所积存的。",
+          "B": "你们的财富腐烂了，你们的衣服被虫蛀了。\\v 3 你们的金银生了锈，这锈要作证指控你们，又要吞噬你们的肉身。你们在末后的日子所囤积的，就像火一样。",
+          "R": "你们的财富正在腐烂，蛀虫吃了你们的好衣服。\\v 3 你们的金子和银子都生锈了。这锈要成为指控你们的证据，还会吃掉你们的身体。你们在末后的日子堆积财富，这些财富就像一团火。"
+        },
+        "ar": {
+          "L": "ثروتكم قد تعفّنت، وثيابكم قد صارت طعامًا للعثّ؛ \\v 3 ذهبكم وفضّتكم قد علاهما الصدأ، وصدؤهما سيكون شاهدًا عليكم، وسيأكل لحمكم. مثل نار ادّخرتم في الأيام الأخيرة.",
+          "B": "ثروتكم تعفّنت، والعثّ أكل ثيابكم. \\v 3 ذهبكم وفضّتكم أصابهما الصدأ، وهذا الصدأ سيشهد عليكم، وسيلتهم لحمكم. ما كدّستموه في الأيام الأخيرة مثل نار.",
+          "R": "ثروتكم تتعفّن، والعثّ أكل ثيابكم الفاخرة. \\v 3 ذهبكم وفضّتكم يغطّيهما الصدأ. وهذا الصدأ سيكون دليلًا ضدّكم، وسيأكل أجسادكم. لقد كدّستم الثروات في الأيام الأخيرة، وهي مثل نار."
         }
       },
       "decisions": [
@@ -728,6 +866,143 @@
           "reason": "Gold and silver do not rust; Literal and Balanced name the dull coating (m2), and Readable uses the everyday word, as the English Readable says \"rust\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59005003007",
+            "n59005003010"
+          ],
+          "choice": "\"вкрилися нальотом\", \"наліт\" (L, B); \"іржа\" (R)",
+          "alternatives": [
+            "\"заіржавіли\", \"іржа\" at every level"
+          ],
+          "reason": "Gold and silver do not rust; the meaning decision describes the dull coat that gathers on them, which \"наліт\" names. Readable uses the familiar \"іржа\", as the English Readable says \"rust\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n59005003021",
+            "n59005003022",
+            "n59005003023"
+          ],
+          "choice": "\"火のような\" with what they stored up, in its own sentence",
+          "alternatives": [
+            "\"火のようにあなたがたの肉を食べる\""
+          ],
+          "reason": "The SBLGNT punctuation puts \"like fire\" with \"you stored up\" (m4). Japanese, which puts the verb last, would join it to \"eat your flesh\" if it stood in the same clause, so every level gives it a sentence of its own.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59005002004",
+            "n59005002010",
+            "n59005003007"
+          ],
+          "choice": "Perfects as \"〜てしまいました\", \"腐り\", \"さび\"",
+          "alternatives": [
+            "future forms"
+          ],
+          "reason": "The verbs describe the coming judgment as already done (m1); Japanese past and completed forms keep that.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59005002009",
+            "n59005003010"
+          ],
+          "choice": "\"蛀虫\"; \"锈蚀\" (L), \"锈\" (B, R)",
+          "alternatives": [],
+          "reason": "The moth and the corrosion of Matthew 6:19-20, in the words used there, since James echoes the saying on treasures.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n59005003021",
+            "n59005003022",
+            "n59005003023"
+          ],
+          "choice": "\"like fire\" with what they stored up",
+          "alternatives": [],
+          "reason": "As the SBLGNT punctuates (meaning m4), \"like fire\" belongs to the next clause, so Chinese starts a new sentence with it and does not join it to \"eat your flesh\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-1",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "grammar",
+          "tokens": [
+            "n59005002004",
+            "n59005002010",
+            "n59005003007",
+            "n59005003021",
+            "n59005003022",
+            "n59005003023",
+            "n59005003024",
+            "n59005003025",
+            "n59005003026"
+          ],
+          "choice": "perfects with \"قد\" (Literal); \"مثل نار\" with what they stored up",
+          "alternatives": [
+            "\"وسيأكل لحمكم كنار\""
+          ],
+          "reason": "The coming judgment is told as already done (m1), which Arabic's perfect with \"قد\" says. \"Like fire\" goes with what they stored up, as the SBLGNT punctuates (m4), so it starts its own sentence at every level.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -821,6 +1096,31 @@
           "L": "Вот, плата работников, скосивших ваши поля, удержанная вами, вопиет, и вопли жнецов вошли в уши Господа Саваофа.",
           "B": "Плата, которую вы не отдали работникам, косившим ваши поля, вопиет, и крики жнецов дошли до ушей Господа Воинств.",
           "R": "Вы не заплатили работникам, которые убирали урожай на ваших полях. Их невыплаченная плата кричит, и крики этих работников дошли до ушей Господа, повелевающего небесными войсками."
+        },
+        "uk": {
+          "L": "Ось плата робітникам, що косили ваші поля, затримана вами, кричить, і крики тих, що жали, дійшли до вух Господа Саваота.",
+          "B": "Послухайте! Плата, яку ви затримали робітникам, що косили ваші поля, кричить, і зойки женців дійшли до вух Господа Сил.",
+          "R": "Подивіться! Ви не заплатили робітникам, які жали збіжжя на ваших полях. Їхня невиплачена платня кричить, і крики цих робітників дійшли до вух Господа Сил."
+        },
+        "ja": {
+          "L": "見なさい、あなたがたの畑を刈り入れた労働者たちの、あなたがたによって支払いを差し止められた賃金が、叫んでいます。そして刈り入れた者たちの叫び声は、サバオトの主の耳に達しました。",
+          "B": "見なさい。あなたがたが畑を刈り取った労働者たちに払わずにおいた賃金が、叫び声をあげています。刈り入れをした人々の叫びは、万軍の主の耳に届いたのです。",
+          "R": "見てください。あなたたちは、畑で穀物を刈り取った労働者に賃金を払いませんでした。その払われなかった賃金が叫んでいます。そして、その労働者たちの叫び声は、天の軍勢を率いる主の耳に届いています。"
+        },
+        "id": {
+          "L": "Lihatlah, upah para pekerja yang telah menuai ladang-ladang kalian, yang kalian tahan, berteriak, dan teriakan para penuai telah sampai ke telinga Tuhan Sabaot.",
+          "B": "Lihat, upah yang kalian tahan dari para pekerja yang menuai ladang-ladang kalian berteriak melawan kalian, dan teriakan para penuai itu telah sampai ke telinga Tuhan semesta alam.",
+          "R": "Lihat! Kalian tidak membayar para pekerja yang memanen gandum di ladang kalian. Upah mereka yang tidak dibayar itu berteriak, dan teriakan para pekerja itu sudah sampai ke telinga Tuhan semesta alam."
+        },
+        "zh": {
+          "L": "看哪，那些为你们收割田地的工人的工钱，被你们扣留了，正在呼喊；那些收割的人的呼声，已经进入主撒巴俄的耳中了。",
+          "B": "听啊！你们扣着不给的那些割庄稼工人的工钱，正在呼喊；收割的人的喊声已经传到万军之主的耳中了。",
+          "R": "看哪！你们没有付工钱给那些在你们田里收割庄稼的工人。他们没有拿到的工钱正在呼喊，那些工人的哭喊也已经传到统领天上万军的主耳中了。"
+        },
+        "ar": {
+          "L": "هوذا أجرة العمّال الذين حصدوا حقولكم، التي حبستموها عنهم، تصرخ، وصرخات الحصّادين قد دخلت أذني ربّ الصباؤوت؛",
+          "B": "اسمعوا! الأجرة التي حبستموها عن العمّال الذين حصدوا حقولكم تصرخ، وصرخات الحصّادين وصلت إلى أذني ربّ الجنود.",
+          "R": "انظروا! لم تدفعوا أجرة العمّال الذين حصدوا القمح في حقولكم. فأجرتهم التي لم تُدفع تصرخ، وصرخات هؤلاء العمّال وصلت إلى أذني ربّ الجنود."
         }
       },
       "decisions": [
@@ -864,7 +1164,7 @@
           ],
           "reason": "Some manuscripts, including the later Byzantine tradition, read a form of ἀποστερέω, \"rob, defraud\", in place of ἀφυστερέω, \"hold back, withhold\", which the SBLGNT reads with early manuscripts such as Sinaiticus and Vaticanus. The sense is close: the workers were not paid. This is described from general knowledge and must be checked against the apparatus.",
           "uncertain": false,
-          "footnote": true
+          "footnote": false
         },
         {
           "id": "m3",
@@ -1151,6 +1451,132 @@
           "reason": "The style guide has idou as \"вот\" at Literal and leaves it out at Balanced and Readable; the same in verses 7, 9 and 11.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59005004024",
+            "n59005004025"
+          ],
+          "choice": "\"Господа Саваота\" (L); \"Господа Сил\" (B, R)",
+          "alternatives": [
+            "\"Господа Саваота\" at every level",
+            "\"Господа Воїнств\""
+          ],
+          "reason": "Literal keeps the Hebrew title as the Greek does; Balanced and Readable give its sense with \"Господь Сил\", a current Ukrainian form of the title, as the English says \"Lord of Armies\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59005004024",
+            "n59005004025"
+          ],
+          "choice": "\"サバオトの主\" (L); \"万軍の主\" (B); \"天の軍勢を率いる主\" (R)",
+          "alternatives": [
+            "\"万軍の主\" at every level"
+          ],
+          "reason": "Literal keeps the Hebrew word as the Greek keeps it (m3). \"万軍の主\" is the established Japanese form of the title; Readable says what it means.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59005004001"
+          ],
+          "choice": "\"見なさい\" (L, B), \"見てください\" (R) for the call to look",
+          "alternatives": [
+            "\"見よ\""
+          ],
+          "reason": "\"見よ\" belongs to an older written style. The polite command fits the letter's です・ます and is used for the same word through chapter 5.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59005004024",
+            "n59005004025"
+          ],
+          "choice": "\"Tuhan Sabaot\" (L), \"Tuhan semesta alam\" (B, R)",
+          "alternatives": [],
+          "reason": "The Greek transliterates the Hebrew title; Literal keeps the transliteration, and the other levels use \"semesta alam\", the established Indonesian title of YHWH tsevaot. \"Tuhan\" is outside a divine_name span because the Greek has \"kyrios\" (style guide section 4).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59005004024",
+            "n59005004025"
+          ],
+          "choice": "\"主撒巴俄\" (L); \"万军之主\" (B); \"统领天上万军的主\" (R)",
+          "alternatives": [],
+          "reason": "The same Greek title as Romans 9:29, so each level keeps Romans' wording: Literal keeps the Hebrew word the Greek keeps, Balanced and Readable say what it means (meaning m3). Kyrios is \"主\", with no divine_name span, as the English has none.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-1",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59005004024",
+            "n59005004025"
+          ],
+          "choice": "\"ربّ الصباؤوت\" (Literal); \"ربّ الجنود\" (Balanced, Readable); no divine_name span",
+          "alternatives": [],
+          "reason": "The Greek keeps the Hebrew word for hosts in Greek letters (m3); Literal keeps it in Arabic letters, the form of the Arabic liturgy, and Balanced and Readable translate it, as the English does. The Greek has kyrios, not the divine name, so there is no divine_name span.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1231,6 +1657,31 @@
           "L": "Вы роскошествовали на земле и наслаждались, напитали ваши сердца в день заклания.",
           "B": "Вы жили на земле в роскоши и удовольствиях. Вы откормили свои сердца в день заклания.",
           "R": "Вы жили на земле легко и делали всё, что вам нравилось. Вы откармливали себя, как скот, который откармливают на убой."
+        },
+        "uk": {
+          "L": "Ви розкошували на землі й потурали собі; ви відгодували свої серця в день різанини.",
+          "B": "Ваше життя на землі було розкішним і відданим насолодам. Ви відгодували свої серця в день заколення.",
+          "R": "Ви жили на землі легким життям і робили все, що вам подобалося. Ви напихали себе, наче тварини, яких відгодовують на заріз."
+        },
+        "ja": {
+          "L": "あなたがたは地上でぜいたくに暮らし、快楽にふけりました。ほふりの日に、あなたがたは自分の心を太らせました。",
+          "B": "あなたがたは地上で、ぜいたくに、快楽にふけって暮らしてきました。ほふりの日に、自分の心を太らせてきたのです。",
+          "R": "あなたたちは、この地上で楽な暮らしをし、好きなことばかりしてきました。殺されるために太らされる家畜のように、自分のおなかを満たしてきたのです。"
+        },
+        "id": {
+          "L": "Kalian telah hidup dalam kemewahan di bumi dan bersenang-senang; kalian telah menggemukkan hati kalian pada hari penyembelihan.",
+          "B": "Kalian telah hidup dalam kemewahan di bumi dan memuaskan diri sendiri. Kalian telah menggemukkan diri pada hari penyembelihan.",
+          "R": "Kalian sudah hidup senang di bumi ini, melakukan apa saja yang kalian sukai. Kalian sudah menggemukkan diri seperti binatang yang digemukkan untuk disembelih."
+        },
+        "zh": {
+          "L": "你们在地上过着奢华的生活，放纵自己；在宰杀的日子，你们把自己的心养肥了。",
+          "B": "你们在地上的生活安逸奢华，沉溺于享乐。在宰杀的日子，你们把自己的心养得肥肥的。",
+          "R": "你们在世上过着舒服的日子，想做什么就做什么。你们把自己喂得饱饱的，就像等着被宰杀而被养肥的牲畜一样。"
+        },
+        "ar": {
+          "L": "عشتم في الترف على الأرض وانغمستم في الملذّات؛ سمّنتم قلوبكم في يوم ذبح.",
+          "B": "حياتكم على الأرض كانت حياة ترف وانغماس في الملذّات. لقد سمّنتم قلوبكم في يوم الذبح.",
+          "R": "عشتم هنا على الأرض حياة مريحة، تعملون كلّ ما يُمتعكم. لقد أشبعتم أنفسكم مثل حيوانات تُسمَّن لكي تُذبح."
         }
       },
       "decisions": [
@@ -1314,6 +1765,33 @@
           "reason": "Readable spells out the picture (m2) that Literal and Balanced leave as \"fattened your hearts in a day of slaughter\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ar-1",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "idiom",
+          "tokens": [
+            "n59005005007",
+            "n59005005008",
+            "n59005005009",
+            "n59005005010",
+            "n59005005011",
+            "n59005005012",
+            "n59005005013"
+          ],
+          "choice": "\"سمّنتم قلوبكم في يوم ذبح\" (Literal, Balanced); the fattened animals at Readable",
+          "alternatives": [
+            "\"كما في يوم الذبح\""
+          ],
+          "reason": "The Greek has no \"as\": the day of slaughter is theirs (m2). Literal and Balanced keep the picture; Readable says it, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1385,6 +1863,31 @@
           "L": "Вы осудили, вы убили праведного.",
           "B": "Вы осудили и убили праведного.",
           "R": "Вы осудили людей, которые поступали правильно, и убили их."
+        },
+        "uk": {
+          "L": "Ви засудили, ви вбили праведного.",
+          "B": "Ви засудили й убили праведника.",
+          "R": "Ви засуджували людей, які чинили правильно, і вбивали їх."
+        },
+        "ja": {
+          "L": "あなたがたは正しい者を罪に定め、殺しました。",
+          "B": "あなたがたは正しい人を罪に定め、殺したのです。",
+          "R": "あなたたちは、正しいことをしていた人たちを有罪にし、殺してしまいました。"
+        },
+        "id": {
+          "L": "Kalian telah menghukum, kalian telah membunuh orang benar.",
+          "B": "Kalian telah menghukum dan membunuh orang benar.",
+          "R": "Kalian sudah menghukum orang-orang yang melakukan apa yang benar, dan kalian sudah membunuh mereka."
+        },
+        "zh": {
+          "L": "你们定了罪，你们杀害了那义人。",
+          "B": "你们给义人定罪，又杀害了义人。",
+          "R": "你们给那些做正当事的人定罪，又杀了他们。"
+        },
+        "ar": {
+          "L": "دنتم، قتلتم البارّ.",
+          "B": "حكمتم على البارّ وقتلتموه.",
+          "R": "حكمتم على أناس يعملون الصواب، وقتلتموهم."
         }
       },
       "decisions": [
@@ -1548,6 +2051,31 @@
           "L": "Не противится ли он вам?",
           "B": "Разве он не противостоит вам?",
           "R": "Разве он не стоит против вас?"
+        },
+        "uk": {
+          "L": "Хіба він не противиться вам?",
+          "B": "Хіба він не стоїть проти вас?",
+          "R": "Хіба він не виступає проти вас?"
+        },
+        "ja": {
+          "L": "[彼は]あなたがたに敵対しないのですか？",
+          "B": "あなたがたに立ち向かっているではありませんか？",
+          "R": "その人たちは今も、あなたたちに立ち向かっているのではありませんか？"
+        },
+        "id": {
+          "L": "Bukankah ia melawan kalian?",
+          "B": "Bukankah ia melawan kalian?",
+          "R": "Bukankah dia berdiri melawan kalian?"
+        },
+        "zh": {
+          "L": "他不是在对抗你们吗？",
+          "B": "他不是在与你们对抗吗？",
+          "R": "他不是正站出来反对你们吗？"
+        },
+        "ar": {
+          "L": "أليس يصطفّ ضدّكم؟",
+          "B": "أليس يقف ضدّكم؟",
+          "R": "أليس هو واقفًا ضدّكم؟"
         }
       },
       "decisions": [
@@ -1686,6 +2214,71 @@
           "reason": "The subject may be the murdered righteous one or God (meaning decision m2). The honorific would decide for God, so every level keeps the plain form that goes with the righteous one of the sentence before, as the English keeps a plain \"he\".",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59005006006"
+          ],
+          "choice": "No subject (B); \"[彼は]\" (L); \"その人たち\" (R). \"敵対する\" (L), \"立ち向かう\" (B, R), the words used for the same verb in 4:6",
+          "alternatives": [
+            "\"神は\" as the subject"
+          ],
+          "reason": "The subject may be the righteous one or God (m2). Japanese can leave it unstated, and Balanced does. Literal brackets a plain \"彼\", which Japanese does not use for God. Readable, which needs a subject, follows the plural it gave the righteous in the sentence before; this takes one side of an open question.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59005006006"
+          ],
+          "choice": "plain \"他\", with no deity_pronoun span",
+          "alternatives": [
+            "{{deity_pronoun:他|祂}}"
+          ],
+          "reason": "The subject may be the righteous one or God (meaning m2), so every level keeps a plain \"他\", as the English keeps a plain \"he\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-1",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59005006005",
+            "n59005006006",
+            "n59005006007"
+          ],
+          "choice": "the verbs of 4:6 (\"يصطفّ ضدّ\", \"يقف ضدّ\"); a question expecting yes",
+          "alternatives": [
+            "\"لا يقاومكم\""
+          ],
+          "reason": "The verb is the one James used of God opposing the proud in 4:6, and its subject is not named (m2); the Arabic repeats the 4:6 words and leaves the subject open too. The question expects \"yes\", as the SBLGNT punctuates it (m1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1761,6 +2354,31 @@
           "L": "Итак, будьте долготерпеливы, {{gender:братья и сёстры|братья}}, до пришествия Господа.",
           "B": "Поэтому, {{gender:братья и сёстры|братья}}, терпеливо ждите, пока не придёт Господь.",
           "R": "Так что, {{gender:братья и сёстры|братья}}, будьте терпеливы, пока Господь не вернётся."
+        },
+        "uk": {
+          "L": "Тож будьте терпеливі, {{gender:брати і сестри|брати}}, до пришестя Господа.",
+          "B": "Тож, {{gender:брати і сестри|брати}}, терпляче чекайте, доки прийде Господь.",
+          "R": "Тож, {{gender:брати і сестри|брати}}, будьте терплячі, доки Господь не повернеться."
+        },
+        "ja": {
+          "L": "それゆえ、{{gender:きょうだいたち|兄弟たち}}、主の来臨まで辛抱しなさい。",
+          "B": "ですから、{{gender:きょうだいたち|兄弟たち}}、主の来臨まで、辛抱して待ちなさい。",
+          "R": "ですから、{{gender:きょうだいたち|兄弟たち}}、主がもう一度来られる時まで、辛抱して待っていてください。"
+        },
+        "id": {
+          "L": "Karena itu, bersabarlah, saudara-saudara, sampai kedatangan Tuhan.",
+          "B": "Karena itu, saudara-saudara, bersabarlah sampai kedatangan Tuhan.",
+          "R": "Jadi, saudara-saudara, bersabarlah sampai Tuhan datang kembali."
+        },
+        "zh": {
+          "L": "所以，{{gender:弟兄姐妹|弟兄}}们，要忍耐，直到主的来临。",
+          "B": "所以，{{gender:弟兄姐妹|弟兄}}们，要耐心等候，直到主来临。",
+          "R": "所以，{{gender:弟兄姐妹|弟兄}}们，要有耐心，直到主回来。"
+        },
+        "ar": {
+          "L": "فكونوا طويلي الأناة، {{gender:أيّها الإخوة والأخوات|أيّها الإخوة}}، إلى مجيء الرب.",
+          "B": "فانتظروا بأناة، {{gender:أيّها الإخوة والأخوات|أيّها الإخوة}}، إلى أن يأتي الرب.",
+          "R": "إذن، {{gender:أيّها الإخوة والأخوات|أيّها الإخوة}}، تأنّوا إلى أن يرجع الرب."
         }
       },
       "decisions": [
@@ -2167,6 +2785,115 @@
           "reason": "This is a different word from the \"стойкость\" of 1:3 and 5:11: patience under delay (m2), so it takes the \"терп-\" root.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59005007001"
+          ],
+          "choice": "\"辛抱する\" for μακροθυμέω (5:7-10); \"忍耐\" / \"耐え忍ぶ\" kept for ὑπομονή and ὑπομένω (5:11, as in 1:3-4, 12)",
+          "alternatives": [
+            "\"忍耐する\" for both",
+            "\"寛容\""
+          ],
+          "reason": "The two Greek words are kept apart (m2): \"辛抱\" is patience over a long wait, slow to give up or strike back; \"忍耐\" is holding on under trial.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59005007006"
+          ],
+          "choice": "\"主の来臨\" (L, B, as in 5:8); \"主がもう一度来られる\" (R)",
+          "alternatives": [
+            "\"主の再臨\""
+          ],
+          "reason": "\"来臨\" is the church word for a ruler's or the Lord's arrival (m3). Readable turns it into a verb and says that this is his return.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59005007001"
+          ],
+          "choice": "\"忍耐\" (L); \"耐心\" (B, R)",
+          "alternatives": [
+            "坚忍"
+          ],
+          "reason": "makrothymia, holding out under delay (meaning m2), is kept apart from the endurance (hypomonē, \"坚忍\") of 1:3-4, 12 and 5:11, as the English keeps \"patience\" and \"endurance\" apart. The same through verses 7-10.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59005007006"
+          ],
+          "choice": "\"来临\" (L, B); \"回来\" (R)",
+          "alternatives": [
+            "再来"
+          ],
+          "reason": "The parousia in the forms of 1 Thessalonians 2:19 and 4:15; Readable says \"回来\", the return of Jesus (meaning m3), as the English Readable says \"comes back\". The same in verse 8.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-1",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59005007001",
+            "n59005007006",
+            "n59005007007",
+            "n59005007008"
+          ],
+          "choice": "\"الأناة\", \"تأنّوا\" for makrothymeo; \"الصبر\" kept for hypomone (verse 11)",
+          "alternatives": [
+            "\"اصبروا\""
+          ],
+          "reason": "James has two words: patience under long delay here, and endurance under trial in verse 11 (m2). The English keeps them apart, and so does the Arabic: \"الأناة\" (long-suffering) here and in verses 8 and 10, \"الصبر\" in verse 11 and chapter 1. \"مجيء الرب\" is the coming of the Lord Jesus (m3).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2251,6 +2978,31 @@
           "L": "Вот, земледелец ждёт драгоценного плода земли, терпеливо ожидая его, пока не получит раннего и позднего [дождя].",
           "B": "Посмотрите на земледельца: он ждёт драгоценного урожая с земли и терпеливо ждёт его, пока не придут ранние и поздние дожди.",
           "R": "Подумайте о земледельцах. Они ждут, когда земля даст им ценный урожай. Они терпеливо ждут, пока не пойдёт дождь осенью и потом снова весной."
+        },
+        "uk": {
+          "L": "Ось хлібороб чекає дорогоцінного плоду землі, терпеливо чекаючи на нього, доки не одержить раннього й пізнього [дощу].",
+          "B": "Подумайте про хлібороба: він чекає, коли земля дасть свій дорогоцінний урожай, і терпляче чекає, доки не прийдуть ранні й пізні дощі.",
+          "R": "Подумайте про хліборобів. Вони чекають, коли їхня земля дасть цінний урожай. Вони терпляче чекають, доки не пройдуть дощі восени і знову навесні."
+        },
+        "ja": {
+          "L": "見なさい、農夫は、地の尊い実りが早い[雨]と遅い[雨]を受けるまで、それを辛抱しながら待ちます。",
+          "B": "農夫のことを考えなさい。農夫は大地の尊い実りを待ち望み、早い雨と遅い雨が降るまで、辛抱して見守ります。",
+          "R": "農家の人のことを考えてみてください。農家の人は、畑から大切な作物がとれるのを待っています。秋の雨が降り、春の雨がまた降るまで、辛抱して待つのです。"
+        },
+        "id": {
+          "L": "Lihatlah, petani menantikan hasil tanah yang berharga, dan ia sabar menantikannya sampai turun hujan awal dan hujan akhir.",
+          "B": "Lihat, petani menantikan hasil tanah yang berharga, dan ia sabar menantikannya sampai turun hujan musim gugur dan hujan musim semi.",
+          "R": "Pikirkanlah tentang petani. Mereka menunggu tanah mereka memberikan hasil panen yang berharga. Mereka sabar menunggu sampai hujan turun pada awal musim hujan dan lagi pada akhir musim hujan."
+        },
+        "zh": {
+          "L": "看哪，农夫等候着地里宝贵的果实，为它忍耐，直到它得着早[雨]和晚[雨]。",
+          "B": "想想农夫吧，他等待田地出产宝贵的收成，耐心地等着，直到早雨和晚雨都降下来。",
+          "R": "想一想农夫。他们等着自己的田地长出宝贵的庄稼。他们耐心等待，直到秋天和春天的雨都下了。"
+        },
+        "ar": {
+          "L": "هوذا المزارع يترقّب ثمر الأرض النفيس، وهو يتأنّى عليه حتى ينال [المطر] الباكر والمتأخّر.",
+          "B": "فكّروا في المزارع: إنّه ينتظر أن تعطي الأرض غلّتها النفيسة، ويتأنّى عليها حتى يأتي المطر الباكر والمطر المتأخّر.",
+          "R": "فكّروا في المزارعين. إنّهم ينتظرون أن تعطي أرضهم محصولها الثمين. ويتأنّون حتى ينزل المطر في الخريف، ثمّ في الربيع."
         }
       },
       "decisions": [
@@ -2450,6 +3202,69 @@
           "reason": "The early and late rains of the land of Israel come at sowing and before harvest (meaning decision m1). Ethiopia's rainy seasons fall at other times of year, so naming months or Ethiopian seasons would mislead; Readable names the rains by the farm work they serve.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59005007023",
+            "n59005007024",
+            "n59005007025"
+          ],
+          "choice": "\"hujan awal dan hujan akhir\" (L), \"hujan musim gugur dan musim semi\" (B), \"awal ... akhir musim hujan\" (R)",
+          "alternatives": [
+            "\"hujan musim gugur dan musim semi\""
+          ],
+          "reason": "Indonesian readers know a wet and a dry season, not autumn and spring; Readable describes the two rains by the rainy season, which is what the meaning decision says they are.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n59005007023",
+            "n59005007025"
+          ],
+          "choice": "\"早[雨]和晚[雨]\" (L); \"早雨和晚雨\" (B); \"秋天和春天的雨\" (R)",
+          "alternatives": [
+            "秋雨春雨"
+          ],
+          "reason": "The Greek gives only the adjectives (meaning m2); Literal brackets \"雨\". Readable names the seasons, the autumn rains at sowing and the spring rains before harvest (meaning m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-1",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "R"
+          ],
+          "category": "culture",
+          "tokens": [
+            "n59005007023",
+            "n59005007024",
+            "n59005007025"
+          ],
+          "choice": "\"المطر في الخريف، ثمّ في الربيع\" (Readable)",
+          "alternatives": [],
+          "reason": "The early and late rains are the autumn and spring rains (m1), which Readable names, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2530,6 +3345,31 @@
           "L": "Будьте долготерпеливы и вы, укрепите сердца ваши, потому что пришествие Господа приблизилось.",
           "B": "Будьте терпеливы и вы. Укрепите свои сердца, потому что пришествие Господа близко.",
           "R": "Вы тоже должны быть терпеливы. Сделайте свои сердца сильными, потому что Господь скоро придёт."
+        },
+        "uk": {
+          "L": "Будьте терпеливі й ви, зміцніть ваші серця, бо пришестя Господа наблизилося.",
+          "B": "Будьте терплячі й ви. Зміцніть свої серця, бо пришестя Господа наблизилося.",
+          "R": "Ви теж мусите бути терплячими. Зміцніть свої серця, бо Господь скоро прийде."
+        },
+        "ja": {
+          "L": "あなたがたも辛抱しなさい。あなたがたの心を堅くしなさい。主の来臨が近づいているからです。",
+          "B": "あなたがたも辛抱しなさい。心をしっかりと定めなさい。主の来臨は近づいているのです。",
+          "R": "みなさんも辛抱してください。心を強く保ってください。主はもうすぐ来られるからです。"
+        },
+        "id": {
+          "L": "Kalian juga harus bersabar; teguhkanlah hati kalian, karena kedatangan Tuhan sudah dekat.",
+          "B": "Kalian juga harus bersabar dan meneguhkan hati kalian, karena kedatangan Tuhan sudah dekat.",
+          "R": "Kalian juga harus sabar. Kuatkanlah hati kalian, karena Tuhan akan segera datang."
+        },
+        "zh": {
+          "L": "你们也要忍耐，要使你们的心坚定，因为主的来临已经近了。",
+          "B": "你们也必须有耐心，要坚定自己的心，因为主快要来临了。",
+          "R": "你们也必须有耐心。要让你们的心刚强，因为主很快就要来了。"
+        },
+        "ar": {
+          "L": "كونوا أنتم أيضًا طويلي الأناة؛ ثبّتوا قلوبكم، فإنّ مجيء الرب قد دنا.",
+          "B": "فعليكم أنتم أيضًا أن تتأنّوا. ثبّتوا قلوبكم، فمجيء الرب قد صار قريبًا.",
+          "R": "وأنتم أيضًا يجب أن تتأنّوا. قوّوا قلوبكم، لأنّ الرب سيأتي قريبًا."
         }
       },
       "decisions": [
@@ -2684,6 +3524,31 @@
           "L": "Не сетуйте, {{gender:братья и сёстры|братья}}, друг на друга, чтобы не быть вам судимыми; вот, Судья стоит у дверей.",
           "B": "Перестаньте жаловаться друг на друга, {{gender:братья и сёстры|братья}}, иначе и вас будут судить. Судья уже стоит у дверей.",
           "R": "{{gender:Братья и сёстры|Братья}}, не жалуйтесь друг на друга, иначе вас будут судить. Судья стоит прямо за дверью."
+        },
+        "uk": {
+          "L": "Не стогніть один на одного, {{gender:брати і сестри|брати}}, щоб вас не було суджено; ось Суддя стоїть перед дверима.",
+          "B": "Перестаньте нарікати один на одного, {{gender:брати і сестри|брати}}, інакше вас самих осудять. Погляньте: Суддя вже стоїть біля дверей.",
+          "R": "{{gender:Брати і сестри|Брати}}, не скаржтеся один на одного, бо вас засудять. Дивіться! Суддя стоїть під самими дверима."
+        },
+        "ja": {
+          "L": "{{gender:きょうだいたち|兄弟たち}}、互いに対してうめいてはなりません。あなたがたが裁かれないためです。見なさい、裁く方が戸の前に立っておられます。",
+          "B": "{{gender:きょうだいたち|兄弟たち}}、互いに不平を言い合うのはやめなさい。そうでないと、あなたがた自身が裁かれます。見なさい、裁く方は、もう戸口に立っておられます。",
+          "R": "{{gender:きょうだいたち|兄弟たち}}、お互いに文句を言わないでください。そうしないと、みなさんが裁かれることになります。見てください。裁く方が、もう戸のすぐ外に立っておられるのです。"
+        },
+        "id": {
+          "L": "Saudara-saudara, janganlah kalian saling bersungut-sungut, supaya kalian jangan dihakimi; lihatlah, Hakim telah berdiri di depan pintu.",
+          "B": "Saudara-saudara, janganlah kalian saling bersungut-sungut, supaya kalian tidak dihakimi. Lihat, Hakim sudah berdiri di depan pintu!",
+          "R": "Saudara-saudara, jangan saling mengeluh, supaya kalian tidak dihakimi. Lihat! Hakim sudah berdiri di depan pintu."
+        },
+        "zh": {
+          "L": "不要彼此发出怨叹，{{gender:弟兄姐妹|弟兄}}们，好使你们不受审判；看哪，那位审判者站在门口了。",
+          "B": "{{gender:弟兄姐妹|弟兄}}们，不要再彼此抱怨，否则你们自己也会受审判。看，那位审判者已经站在门口了。",
+          "R": "{{gender:弟兄姐妹|弟兄}}们，不要互相抱怨，不然你们会受审判。要知道，审判者就站在门外。"
+        },
+        "ar": {
+          "L": "لا تئنّوا بعضكم على بعض، {{gender:أيّها الإخوة والأخوات|أيّها الإخوة}}، كي لا تُدانوا؛ هوذا الديّان واقف أمام الأبواب.",
+          "B": "كفّوا عن التذمّر بعضكم على بعض، {{gender:أيّها الإخوة والأخوات|أيّها الإخوة}}، وإلّا فستُدانون أنتم. انظروا: الديّان واقف على الأبواب.",
+          "R": "{{gender:أيّها الإخوة والأخوات|أيّها الإخوة}}، لا تتذمّروا بعضكم على بعض، وإلّا فستُدانون. انظروا! الديّان واقف خارج الباب تمامًا."
         }
       },
       "decisions": [
@@ -2817,6 +3682,71 @@
           "reason": "Vietnamese puts the address at the start of the sentence more naturally than in the middle of a command; Literal does so here and in 5:10.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n59005009011",
+            "n59005009015"
+          ],
+          "choice": "\"立っておられます\": light respect for the Judge",
+          "alternatives": [
+            "plain \"立っています\""
+          ],
+          "reason": "The Judge is the Lord whose coming is near (m3), so he is spoken of with the same light respect as God in chapter 4.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59005009002"
+          ],
+          "choice": "\"怨叹\" (L); \"抱怨\" (B, R)",
+          "alternatives": [],
+          "reason": "Literal keeps the picture of groaning; Balanced and Readable say what it is, complaint against each other (meaning m1), as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-1",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59005009002",
+            "n59005009009",
+            "n59005009010",
+            "n59005009011",
+            "n59005009012",
+            "n59005009013",
+            "n59005009014",
+            "n59005009015"
+          ],
+          "choice": "\"تئنّوا\" (Literal), \"التذمّر\" (Balanced, Readable); \"الديّان\"",
+          "alternatives": [],
+          "reason": "The verb is groaning, the muttered complaint of people under pressure (m1); Balanced and Readable say complaining, as the English does. \"الديّان\" is the Judge of 4:12, now at the door (m3).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2900,6 +3830,31 @@
           "L": "Возьмите, {{gender:братья и сёстры|братья}}, в пример страдания и долготерпения пророков, которые говорили во имя Господа.",
           "B": "{{gender:Братья и сёстры|Братья}}, посмотрите на пророков, которые говорили во имя Господа, и возьмите их в пример терпения в страданиях.",
           "R": "{{gender:Братья и сёстры|Братья}}, подумайте о пророках, которые говорили от имени Господа. Они перенесли много трудного и были терпеливы. Берите с них пример."
+        },
+        "uk": {
+          "L": "Візьміть, {{gender:брати і сестри|брати}}, за приклад страждання й терпеливості пророків, які говорили в імʼя Господа.",
+          "B": "{{gender:Брати і сестри|Брати}}, погляньте на пророків, які говорили в імʼя Господа, і візьміть їх собі за приклад терпеливого перенесення страждань.",
+          "R": "{{gender:Брати і сестри|Брати}}, подумайте про пророків, які говорили від імені Господа. Вони терпіли тяжке, і вони були терплячі. Беріть із них приклад."
+        },
+        "ja": {
+          "L": "{{gender:きょうだいたち|兄弟たち}}、苦しみと辛抱の模範として、主の名によって語った預言者たちを受け取りなさい。",
+          "B": "{{gender:きょうだいたち|兄弟たち}}、主の名によって語った預言者たちに目を向け、彼らを、苦しみを辛抱して耐えた模範としなさい。",
+          "R": "{{gender:きょうだいたち|兄弟たち}}、主のために語った預言者たちのことを考えてみてください。預言者たちはつらい目にあいましたが、辛抱しました。その手本のようにしてください。"
+        },
+        "id": {
+          "L": "Saudara-saudara, ambillah sebagai teladan penderitaan dan kesabaran para nabi, yang telah berbicara dalam nama Tuhan.",
+          "B": "Saudara-saudara, ambillah para nabi yang telah berbicara dalam nama Tuhan sebagai teladan dalam menanggung penderitaan dan dalam kesabaran.",
+          "R": "Saudara-saudara, pikirkanlah para nabi yang berbicara atas nama Tuhan. Mereka mengalami banyak penderitaan, dan mereka sabar. Ikutilah teladan mereka."
+        },
+        "zh": {
+          "L": "{{gender:弟兄姐妹|弟兄}}们，要把众先知当作承受苦难和忍耐的榜样，他们是奉主的名说话的。",
+          "B": "{{gender:弟兄姐妹|弟兄}}们，看看那些奉主的名说话的先知，要以他们为榜样，学习他们忍耐地承受苦难。",
+          "R": "{{gender:弟兄姐妹|弟兄}}们，想一想那些替主说话的先知。他们受了很多苦，却仍然忍耐。要学习他们的榜样。"
+        },
+        "ar": {
+          "L": "اتّخذوا، {{gender:أيّها الإخوة والأخوات|أيّها الإخوة}}، الأنبياء الذين نطقوا باسم الرب قدوةً في تحمّل الشدائد وفي طول الأناة.",
+          "B": "{{gender:أيّها الإخوة والأخوات|أيّها الإخوة}}، انظروا إلى الأنبياء الذين تكلّموا باسم الرب، واتّخذوهم قدوة لكم في تحمّل المشقّات بأناة.",
+          "R": "{{gender:أيّها الإخوة والأخوات|أيّها الإخوة}}، فكّروا في الأنبياء الذين تكلّموا باسم الرب. لقد تألّموا كثيرًا، وتأنّوا. فاقتدوا بهم."
         }
       },
       "decisions": [
@@ -3050,6 +4005,43 @@
           "reason": "The style guide's key term for prophet: the established word at Literal and Balanced, the everyday \"नबी\" at Readable.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n59005010003"
+          ],
+          "choice": "The address first",
+          "alternatives": [
+            "the address after the command, as in the Greek"
+          ],
+          "reason": "In this sentence the Greek puts the address between the command and its objects; Japanese, which ends with the verb, can only put it first. The prophets still come after what they are an example of.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n59005010003",
+            "n59005010010"
+          ],
+          "choice": "the address first, the prophets before the relative clause",
+          "alternatives": [],
+          "reason": "Chinese puts the address at the head of the sentence and makes \"who spoke in the name of the Lord\" a clause of its own after the prophets, where the English Literal keeps the Greek order.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3137,6 +4129,31 @@
           "L": "Вот, мы называем блаженными выстоявших; вы слышали о стойкости Иова и видели конец [от] Господа, что Господь весьма милосерд и сострадателен.",
           "B": "Ведь мы называем блаженными тех, кто выстоял. Вы слышали о стойкости Иова и видели, чем завершил Господь его испытание, потому что Господь полон сострадания и милосердия.",
           "R": "Мы говорим, что люди, которые выстояли, счастливы. Вы слышали, как стойко держался Иов. И вы видели, как Господь в конце концов сделал ему добро. Господь очень любит людей и полон милосердия."
+        },
+        "uk": {
+          "L": "Ось ми називаємо блаженними тих, що витримали. Ви чули про стійкість Йова і бачили кінець [від] Господа, що Господь повний співчуття і милосердний.",
+          "B": "Справді, ми називаємо блаженними тих, хто витримав. Ви чули про стійкість Йова і бачили, яким кінцем Господь її увінчав, бо Господь багатий на співчуття і милосердя.",
+          "R": "Ми кажемо, що ті, хто вистояв, благословенні. Ви чули, як вистояв Йов. І ви бачили, як Господь зрештою зробив йому добро. Господь глибоко співчуває і сповнений милосердя."
+        },
+        "ja": {
+          "L": "見なさい、わたしたちは耐え忍んだ人たちを幸いだと言います。あなたがたはヨブの忍耐について聞き、主[がもたらされた]結末を見ました。すなわち、主は憐れみ深く、慈しみに富む方です。",
+          "B": "確かに、わたしたちは耐え忍んだ人たちを幸いな者と呼びます。あなたがたはヨブの忍耐について聞いており、主が最後にもたらされたものを見ました。主は憐れみに富み、慈しみ深い方なのです。",
+          "R": "わたしたちは、最後まで忍耐した人たちは幸せだと言います。みなさんは、ヨブがどのように忍耐したかを聞いています。そして、最後に主がヨブにどんなによくしてくださったかも見てきました。主はとても思いやりがあり、あわれみに満ちた方なのです。"
+        },
+        "id": {
+          "L": "Lihatlah, kita menyebut berbahagia mereka yang telah bertekun. Kalian telah mendengar tentang ketekunan Ayub, dan kalian telah melihat kesudahan [yang diberikan] Tuhan, sebab Tuhan itu penuh belas kasihan dan murah hati.",
+          "B": "Lihat, kita menyebut mereka yang bertekun itu berbahagia. Kalian telah mendengar tentang ketekunan Ayub, dan kalian telah melihat apa yang akhirnya dilakukan Tuhan baginya, sebab Tuhan penuh belas kasihan dan murah hati.",
+          "R": "Kita berkata bahwa orang-orang yang tetap bertahan itu berbahagia. Kalian sudah mendengar bagaimana Ayub tetap bertahan. Dan kalian sudah melihat bagaimana pada akhirnya Tuhan berbuat baik kepadanya. Tuhan sangat peduli dan penuh belas kasihan."
+        },
+        "zh": {
+          "L": "看哪，我们称那些坚忍到底的人是有福的。你们听过约伯的坚忍，也看见了主[所给]的结局，就是主是充满同情、富于怜悯的。",
+          "B": "的确，我们称那些坚忍到底的人为有福。你们听说过约伯的坚忍，也看见了主最后赐给他的结局，因为主有丰富的同情和怜悯。",
+          "R": "我们说那些坚持到底的人是有福的。你们听说过约伯怎样坚持下去，也看见主最后怎样善待他。主非常关心人，也满有怜悯。"
+        },
+        "ar": {
+          "L": "هوذا نحن نطوّب الذين صبروا. لقد سمعتم عن صبر أيّوب، وأبصرتم الخاتمة التي من الرب، أنّ الرب واسع الرأفة ورحيم.",
+          "B": "حقًّا، نحن نقول: طوبى للذين صبروا. لقد سمعتم بصبر أيّوب، ورأيتم الخاتمة التي أعطاه إيّاها الرب، لأنّ الرب غنيّ بالرأفة والرحمة.",
+          "R": "نحن نقول: ما أسعد الذين صبروا! لقد سمعتم كيف صبر أيّوب. ورأيتم كيف أحسن الرب إليه في النهاية. فالرب يهتمّ بنا كثيرًا، وهو ممتلئ رحمة."
         }
       },
       "decisions": [
@@ -3334,6 +4351,112 @@
           "reason": "The same word family as in 1:3-4 and 1:12, holding firm under pressure (m2), so the familiar \"терпение Иова\" is not used. \"Блаженными\" (L, B) and \"счастливы\" (R) as in 1:12.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59005011004",
+            "n59005011006"
+          ],
+          "choice": "\"耐え忍ぶ\" for the verb (L, B), \"忍耐\" for the noun; Readable \"忍耐する\"",
+          "alternatives": [
+            "\"忍耐する\" at every level"
+          ],
+          "reason": "The words of 1:3-4 and 1:12, holding fast under trial (m2), with the verb as in 1:12, kept apart from \"辛抱\" in verses 7-10.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59005011007"
+          ],
+          "choice": "\"ヨブ\"",
+          "alternatives": [],
+          "reason": "The conventional Japanese form of the name, used wherever Job is named.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59005011004",
+            "n59005011006"
+          ],
+          "choice": "\"坚忍\" (L, B); \"坚持下去\" (R)",
+          "alternatives": [
+            "忍耐"
+          ],
+          "reason": "hypomonē, the endurance of 1:3-4 and 1:12, in the same word, kept apart from the patience (\"忍耐\") of verses 7-10. Blessed is \"有福\", as in 1:12.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59005011007"
+          ],
+          "choice": "\"约伯\"",
+          "alternatives": [],
+          "reason": "Job in the glossary's form.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-1",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59005011002",
+            "n59005011003",
+            "n59005011004",
+            "n59005011006",
+            "n59005011010",
+            "n59005011011",
+            "n59005011012"
+          ],
+          "choice": "\"صبروا\", \"صبر أيّوب\"; \"نطوّب\", \"طوبى\", \"ما أسعد\"; \"الخاتمة التي من الرب\"",
+          "alternatives": [],
+          "reason": "The endurance of 1:3-4 and 1:12 (m2), in the word Arabic already uses for Job's (\"صبر أيّوب\"). The beatitude repeats 1:12 (m1) in the glossary's makarios forms. The outcome is what the Lord brought about for Job (m3).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3433,6 +4556,31 @@
           "L": "Прежде же всего, {{gender:братья и сёстры|братья}} мои, не клянитесь ни небом, ни землёй, ни какой-либо другой клятвой; но пусть ваше да будет да, и нет — нет, чтобы вам не подпасть под суд.",
           "B": "Прежде всего, {{gender:братья и сёстры|братья}} мои, не давайте клятв — ни небом, ни землёй, ни чем-либо другим. Если вы говорите да, пусть это будет просто да, а если нет — просто нет, чтобы вам не попасть под суд.",
           "R": "Самое важное, {{gender:братья и сёстры|братья}} мои: не давайте обещаний с клятвой. Не клянитесь ни небом, ни землёй, ни чем-то ещё. Просто говорите «Да» или «Нет» и держите своё слово. Тогда вас не осудят."
+        },
+        "uk": {
+          "L": "А передусім, мої {{gender:брати і сестри|брати}}, не кляніться ні небом, ні землею, ні якоюсь іншою клятвою; але нехай ваше Так буде так, а [ваше] Ні — ні, щоб вам не впасти під суд.",
+          "B": "Понад усе, мої {{gender:брати і сестри|брати}}, не давайте клятв — ні небом, ні землею, ні чимось іншим. Коли ви кажете так, нехай це буде просто так, а коли ні — просто ні, щоб вам не потрапити під суд.",
+          "R": "Найважливіше, мої {{gender:брати і сестри|брати}}, — не обіцяйте нічого з клятвою. Не кляніться ні небом, ні землею, ні чимось іншим. Просто кажіть «Так» або «Ні» і дотримуйтеся свого слова. Тоді вас не засудять."
+        },
+        "ja": {
+          "L": "しかし何よりもまず、わたしの{{gender:きょうだいたち|兄弟たち}}、誓ってはなりません。天にかけても、地にかけても、ほかのどんな誓いによっても[誓ってはなりません]。あなたがたのはいは、はいであり、[あなたがたの]いいえは、いいえであるようにしなさい。裁きの下に落ちないためです。",
+          "B": "わたしの{{gender:きょうだいたち|兄弟たち}}、何よりも、誓いを立ててはなりません。天にかけても、地にかけても、ほかの何にかけても誓ってはなりません。はいと言うなら、ただはいとし、いいえと言うなら、ただいいえとしなさい。裁きを受けることのないためです。",
+          "R": "わたしの{{gender:きょうだいたち|兄弟たち}}、何よりも大切なことを言います。約束をするときに、誓いを立ててはいけません。天にかけても、地にかけても、ほかの何にかけても誓わないでください。ただ「はい」か「いいえ」と言い、その言葉どおりにしてください。そうすれば、裁かれることはありません。"
+        },
+        "id": {
+          "L": "Tetapi yang terutama, saudara-saudaraku, janganlah kalian bersumpah, baik demi surga maupun demi bumi atau dengan sumpah lain apa pun; tetapi hendaklah Ya kalian adalah ya, dan Tidak kalian adalah tidak, supaya kalian tidak jatuh ke dalam penghakiman.",
+          "B": "Tetapi yang terutama, saudara-saudaraku, janganlah kalian bersumpah, baik demi surga maupun demi bumi atau demi apa pun juga. Hendaklah Ya kalian berarti ya, dan Tidak kalian berarti tidak, supaya kalian tidak dihukum.",
+          "R": "Yang paling penting, saudara-saudara, jangan berjanji dengan bersumpah. Jangan bersumpah demi surga atau demi bumi atau demi apa pun. Cukup katakan \"Ya\" atau \"Tidak,\" dan bersungguh-sungguhlah. Dengan begitu kalian tidak akan dihakimi."
+        },
+        "zh": {
+          "L": "但最要紧的是，我的{{gender:弟兄姐妹|弟兄}}们，不要发誓：既不要凭天，也不要凭地，也不要凭任何别的誓；而要让你们的是就是是，不就是不，免得你们落在审判之下。",
+          "B": "最重要的是，我的{{gender:弟兄姐妹|弟兄}}们，不要发誓，不要凭天发誓，不要凭地发誓，也不要凭别的什么发誓。你们说是，就要真是；说不，就要真不，免得你们落在审判之下。",
+          "R": "我的{{gender:弟兄姐妹|弟兄}}们，最要紧的是，不要用发誓的方式来许诺。不要凭着天发誓，不要凭着地发誓，也不要凭着别的什么发誓。只要说“是”或“不是”，并且说话算数。这样，你们就不会受审判。"
+        },
+        "ar": {
+          "L": "ولكن قبل كلّ شيء، يا {{gender:إخوتي وأخواتي|إخوتي}}، لا تُقسموا، لا بالسماء، ولا بالأرض، ولا بأيّ يمين أخرى؛ بل لتكن «نعم» عندكم نعم، و«لا» لا، حتى لا تسقطوا تحت الدينونة.",
+          "B": "وفوق كلّ شيء، يا {{gender:إخوتي وأخواتي|إخوتي}}، لا تحلفوا أيمانًا، لا بالسماء ولا بالأرض ولا بشيء آخر. إذا قلتم «نعم» فلتكن نعم صريحة، وإذا قلتم «لا» فلتكن لا صريحة، لكي لا تقعوا تحت الدينونة.",
+          "R": "وأهمّ من كلّ شيء، يا {{gender:إخوتي وأخواتي|إخوتي}}، لا تعدوا وعدًا بأن تحلفوا يمينًا. لا تحلفوا بالسماء ولا بالأرض ولا بأيّ شيء آخر. قولوا فقط «نعم» أو «لا»، واقصدوا ما تقولون. عندئذ لن تُدانوا."
         }
       },
       "decisions": [
@@ -3681,6 +4829,81 @@
           "reason": "James echoes Jesus' saying on oaths (meaning decision m1), so Literal keeps the doubled form of Matthew 5:37 in Hindi, without its quotation marks, which the English James does not have.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59005012022",
+            "n59005012023",
+            "n59005012026",
+            "n59005012027"
+          ],
+          "choice": "\"はい\" and \"いいえ\" without quotation brackets (L, B); in 「」 at Readable",
+          "alternatives": [
+            "「はい」 at every level"
+          ],
+          "reason": "Brackets mark speech for the reader, and the English Literal and Balanced quote no words here, so Japanese writes the words plainly; Readable quotes them, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59005012007",
+            "n59005012010",
+            "n59005012013",
+            "n59005012022",
+            "n59005012023",
+            "n59005012026",
+            "n59005012027"
+          ],
+          "choice": "Jesus' saying on oaths as Matthew 5:34-37: \"凭天\", \"凭地\" (L); \"不要凭天发誓\" (B); \"不要凭着天发誓\" (R); \"你们说是，就要真是；说不，就要真不\" (B)",
+          "alternatives": [],
+          "reason": "James echoes Jesus' teaching (meaning m1), so each level keeps Matthew's Chinese where the Greek says the same: the oaths by heaven and earth, and at Balanced the plain yes and no. Literal follows James's own wording \"let your yes be yes\", which differs from Matthew's \"let your word be yes, yes\"; Readable follows the English Readable with its two quotations.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-1",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "grammar",
+          "tokens": [
+            "n59005012018",
+            "n59005012019",
+            "n59005012020",
+            "n59005012021",
+            "n59005012022",
+            "n59005012023",
+            "n59005012024",
+            "n59005012025",
+            "n59005012026",
+            "n59005012027"
+          ],
+          "choice": "«نعم» and «لا» in quotation marks for the words said",
+          "alternatives": [],
+          "reason": "The Greek article marks the word said (m3): the quoted «نعم» is the word, the second \"نعم\" what it must be.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3756,6 +4979,31 @@
           "L": "Страдает ли кто среди вас? Пусть молится. Весел ли кто? Пусть поёт хвалу.",
           "B": "Терпит ли кто-то из вас беду? Пусть молится. Радостно ли у кого-то на душе? Пусть поёт хвалебные песни.",
           "R": "Вам тяжело? Тогда молитесь. Вы радуетесь? Тогда пойте Богу песни хвалы."
+        },
+        "uk": {
+          "L": "Страждає хтось між вами? Нехай молиться. Радіє хтось? Нехай співає хвалу.",
+          "B": "Чи хтось із вас переживає скруту? Нехай молиться. Чи хтось у доброму настрої? Нехай співає хвалу.",
+          "R": "Вам важко? Тоді моліться. Ви радієте? Тоді співайте хвалу Богові."
+        },
+        "ja": {
+          "L": "あなたがたの中に苦しんでいる人がいますか？その人は祈りなさい。喜んでいる人がいますか？その人は賛美の歌を歌いなさい。",
+          "B": "あなたがたの中に苦しみを受けている人がいますか？その人は祈りなさい。心の晴れやかな人がいますか？その人は賛美の歌を歌いなさい。",
+          "R": "つらいことがありますか？それなら祈ってください。うれしいことがありますか？それなら、神をたたえる歌を歌ってください。"
+        },
+        "id": {
+          "L": "Adakah seorang di antara kalian yang menderita? Baiklah ia berdoa! Adakah seorang yang bergembira? Baiklah ia menyanyikan pujian!",
+          "B": "Adakah di antara kalian yang menderita? Hendaklah ia berdoa! Adakah yang bergembira? Hendaklah ia menyanyikan pujian!",
+          "R": "Apakah ada di antara kalian yang sedang susah? Berdoalah. Apakah ada yang sedang gembira? Nyanyikanlah lagu pujian."
+        },
+        "zh": {
+          "L": "你们中间有人受苦吗？这人就该祷告。有人心情愉快吗？这人就该歌唱赞美。",
+          "B": "你们当中有人正在经历艰难吗？这人应当祷告。有人心里欢喜吗？这人应当歌唱赞美。",
+          "R": "你遇到困难了吗？那就祷告吧。你快乐吗？那就唱赞美的歌吧。"
+        },
+        "ar": {
+          "L": "هل يتألّم أحد بينكم بمشقّة؟ فليصلّ. هل أحد طيّب النفس؟ فليرنّم.",
+          "B": "هل يمرّ أحد منكم بضيق؟ فليصلّ. هل أحد منكم فرحان؟ فليرنّم تسبيحًا.",
+          "R": "هل تمرّون بوقت صعب؟ صلّوا إذن. هل أنتم فرحون؟ رنّموا إذن ترانيم التسبيح."
         }
       },
       "decisions": [
@@ -4018,6 +5266,90 @@
           "reason": "Russian needs no pronoun after \"кто\" here, so the gender spans of the English (through verse 15) have no counterpart; where a pronoun \"он\" follows, it already covers men and women.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n59005013002",
+            "n59005013007"
+          ],
+          "choice": "no gender spans in 5:13-15",
+          "alternatives": [
+            "spans like the English {{gender:that person|him}}"
+          ],
+          "reason": "Ukrainian \"нехай молиться\" needs no pronoun, and where one is needed it refers back to \"хтось\" or to \"хворий\" / \"людина\" and agrees with the word grammatically. Readable recasts with \"людина\", which already includes everyone.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n59005013005",
+            "n59005013008"
+          ],
+          "choice": "\"その人\" with no gender span, here and through 5:20",
+          "alternatives": [
+            "a gender span as in the English"
+          ],
+          "reason": "\"その人\" already means a man or a woman, so Japanese needs no setting where the English has \"that person\" and \"him\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n59005013002",
+            "n59005013007"
+          ],
+          "choice": "\"这人\" with no gender span",
+          "alternatives": [],
+          "reason": "The English spans the person James describes (that person / him); Chinese \"这人\" already means a man or a woman, so no span is needed, here and in verses 14-15 and 19-20 (\"这人\", \"病人\", \"那人\").",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-1",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n59005013001",
+            "n59005013002",
+            "n59005013003",
+            "n59005013004",
+            "n59005013005"
+          ],
+          "choice": "the third-person commands with no gender span",
+          "alternatives": [],
+          "reason": "Arabic's third-person command (\"فليصلّ\", \"فليرنّم\") is already generic, so the English spans on \"that person / he\" in verses 13-15 and 19-20 have no Arabic counterpart (style brief, section 5).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4089,6 +5421,31 @@
           "L": "Болен ли кто среди вас?",
           "B": "Болен ли кто-то из вас?",
           "R": "Кто-то из вас заболел?"
+        },
+        "uk": {
+          "L": "Хворіє хтось між вами?",
+          "B": "Чи хтось із вас нездужає?",
+          "R": "Чи хтось із вас хворий?"
+        },
+        "ja": {
+          "L": "あなたがたの中に病気の人がいますか？",
+          "B": "あなたがたの中に病気の人がいますか？",
+          "R": "みなさんの中に病気の人がいますか？"
+        },
+        "id": {
+          "L": "Adakah seorang di antara kalian yang sakit?",
+          "B": "Adakah seorang di antara kalian yang sakit?",
+          "R": "Apakah ada di antara kalian yang sakit?"
+        },
+        "zh": {
+          "L": "你们中间有人病了吗？",
+          "B": "你们当中有人患病吗？",
+          "R": "你们当中有人生病了吗？"
+        },
+        "ar": {
+          "L": "هل أحد بينكم مريض؟",
+          "B": "هل فيكم مريض؟",
+          "R": "هل أحد منكم مريض؟"
         }
       },
       "decisions": [
@@ -4208,6 +5565,31 @@
           "L": "Пусть призовёт старейшин церкви, и пусть они помолятся над ним, помазав его елеем во имя Господа.",
           "B": "Пусть он позовёт старейшин церкви, и пусть они помолятся над больным и помажут его маслом во имя Господа.",
           "R": "Пусть он попросит старейшин церкви прийти. Старейшины должны помолиться за больного и помазать его оливковым маслом во имя Господа."
+        },
+        "uk": {
+          "L": "Нехай покличе старійшин церкви, і нехай вони помоляться над ним, помазавши його олією в імʼя Господа.",
+          "B": "Нехай покличе старійшин церкви, і нехай вони помоляться над хворим і помажуть його олією в імʼя Господа.",
+          "R": "Така людина хай попросить провідників церкви прийти. Вони мають помолитися за хвору людину і помазати її оливковою олією в імʼя Господа."
+        },
+        "ja": {
+          "L": "[その人は]教会の長老たちを呼び寄せなさい。そして[長老たちは]、主の名によってその人に油を塗って、その人の上で祈りなさい。",
+          "B": "その人は教会の長老たちを呼びなさい。長老たちは、主の名によってその病人に油を塗り、その人のために祈りなさい。",
+          "R": "その人は、教会の指導者たちに来てもらってください。指導者たちは、主の名によって病人にオリーブ油を塗り、その人のために祈ってください。"
+        },
+        "id": {
+          "L": "Hendaklah ia memanggil para penatua jemaat, dan hendaklah mereka mendoakannya, sambil mengolesnya dengan minyak dalam nama Tuhan.",
+          "B": "Hendaklah ia memanggil para penatua jemaat, supaya mereka mendoakannya serta mengolesnya dengan minyak dalam nama Tuhan.",
+          "R": "Orang itu harus meminta para pemimpin jemaat untuk datang. Para pemimpin itu harus mendoakannya dan mengoleskan minyak zaitun kepadanya dalam nama Tuhan."
+        },
+        "zh": {
+          "L": "这人当请教会的长老来，长老们要奉主的名用油抹了这人，然后为这人祷告。",
+          "B": "这人应当请教会的长老来，长老们要为病人祷告，并奉主的名用油抹病人。",
+          "R": "这人应当请教会的领袖来。领袖们要为病人祷告，并且奉主的名把橄榄油抹在病人身上。"
+        },
+        "ar": {
+          "L": "فليستدعِ شيوخ الكنيسة، وليصلّوا عليه بعد أن يدهنوه بالزيت باسم الرب؛",
+          "B": "فليطلب شيوخ الكنيسة، وليصلّوا لأجل المريض، ويدهنوه بالزيت باسم الرب.",
+          "R": "فليطلب من قادة الكنيسة أن يأتوا. وعلى القادة أن يصلّوا لأجله، ويضعوا عليه زيت الزيتون باسم الرب."
         }
       },
       "decisions": [
@@ -4517,6 +5899,152 @@
           "reason": "The term settled in Acts and used in 1 Timothy, at every level; Russian \"старейшины\" names the office rather than old age, so Readable keeps it where the English Readable says \"church leaders\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59005014007",
+            "n59005014009"
+          ],
+          "choice": "\"провідники церкви\" (R)",
+          "alternatives": [
+            "\"старійшини церкви\", as in Literal and Balanced"
+          ],
+          "reason": "The brief keeps \"старійшини\" for elders; Readable says what they are, the recognised leaders of the congregation, as the English Readable \"church leaders\" does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59005014007"
+          ],
+          "choice": "\"長老たち\" (L, B); \"指導者たち\" (R)",
+          "alternatives": [
+            "\"年長者たち\""
+          ],
+          "reason": "\"長老\" is the church word for the recognized leaders (m1); Readable says \"leaders\", as the English does, because the word can suggest only old people.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59005014006",
+            "n59005014007",
+            "n59005014008",
+            "n59005014009"
+          ],
+          "choice": "\"para penatua jemaat\" (L, B), \"para pemimpin jemaat\" (R)",
+          "alternatives": [],
+          "reason": "\"penatua\" is the glossary's word for a church elder; Readable says what they were, as the English Readable says \"church leaders\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59005014007"
+          ],
+          "choice": "\"长老\" (L, B); \"教会的领袖\" (R)",
+          "alternatives": [
+            "\"教会的长老\" at Readable too"
+          ],
+          "reason": "The recognized leaders of the congregation (meaning m1): the glossary's \"长老\" at Literal and Balanced, as in Acts. Readable says \"教会的领袖\", as the English Readable says \"church leaders\" and as Titus 1:5 has it at Readable.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59005014009"
+          ],
+          "choice": "\"教会\"",
+          "alternatives": [],
+          "reason": "The glossary's word for ekklēsia, at every level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-3",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n59005014014",
+            "n59005014011"
+          ],
+          "choice": "the anointing before the prayer",
+          "alternatives": [],
+          "reason": "The anointing is a participle before the main verb (meaning m3); Literal tells the two acts in their order (\"抹了……然后……祷告\"), where Balanced and Readable join them, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-1",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59005014006",
+            "n59005014007",
+            "n59005014008",
+            "n59005014009",
+            "n59005014014",
+            "n59005014015",
+            "n59005014016"
+          ],
+          "choice": "\"شيوخ الكنيسة\" (Literal, Balanced); \"قادة الكنيسة\" (Readable); \"الكنيسة\"",
+          "alternatives": [],
+          "reason": "The elders are the congregation's recognized leaders (m1): the glossary's \"شيوخ\" at Literal and Balanced, and \"قادة\" at Readable, as the English Readable says \"church leaders\". The oil is olive oil (m2), named at Readable.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4603,6 +6131,31 @@
           "L": "И молитва веры спасёт болящего, и поднимет его Господь; и если он совершил грехи, простится ему.",
           "B": "Молитва, совершённая с верой, спасёт больного, и Господь поднимет его. А если он совершил грехи, они будут ему прощены.",
           "R": "Молитва с верой спасёт больного человека. Господь поможет ему встать. А если он грешил, ему будет прощено."
+        },
+        "uk": {
+          "L": "І молитва віри спасе недужого, і Господь підійме його; а якщо він учинив гріхи, це проститься йому.",
+          "B": "Молитва, піднесена з вірою, спасе хворого, і Господь підійме його. А якщо він учинив гріхи, вони будуть йому прощені.",
+          "R": "Молитва з вірою спасе хвору людину. Господь допоможе їй знову встати. А якщо вона згрішила, їй буде прощено."
+        },
+        "ja": {
+          "L": "そして信仰の祈りは病んでいる人を救い、主はその人を起き上がらせてくださいます。もしその人が罪を犯していたとしても、[それは]その人に赦されます。",
+          "B": "信仰による祈りは、病んでいる人を救います。主がその人を起き上がらせてくださいます。また、もし罪を犯していたとしても、その人は赦されます。",
+          "R": "信じて祈る祈りは、病気の人を救います。主がその人を、また起き上がれるようにしてくださいます。もしその人が罪を犯していても、その人はゆるされます。"
+        },
+        "id": {
+          "L": "Dan doa yang lahir dari iman akan menyelamatkan orang sakit itu, dan Tuhan akan membangunkannya; dan jika ia telah berbuat dosa, dosanya itu akan diampuni.",
+          "B": "Doa yang disertai iman akan menyelamatkan orang sakit itu, dan Tuhan akan membangunkannya. Dan jika ia telah berbuat dosa, dosanya akan diampuni.",
+          "R": "Doa yang dinaikkan dengan iman akan menyelamatkan orang yang sakit itu. Tuhan akan menolongnya bangun lagi. Dan kalau dia sudah berbuat dosa, dosanya akan diampuni."
+        },
+        "zh": {
+          "L": "而信心的祷告会救那生病的人，主会使这人起来；这人若犯了罪，也会得到赦免。",
+          "B": "凭信心所作的祷告会救那生病的人，主会使病人起来。如果病人犯过罪，也会得到赦免。",
+          "R": "带着信心的祷告会救那生病的人。主会帮助病人重新站起来。如果这人犯了罪，也会得到饶恕。"
+        },
+        "ar": {
+          "L": "وصلاة الإيمان تخلّص المريض، والرب يقيمه؛ وإن كان قد ارتكب خطايا، يُغفر له.",
+          "B": "والصلاة التي تُرفع بإيمان تخلّص المريض، والرب يُنهضه. وإن كان قد ارتكب خطايا، فسيُغفر له.",
+          "R": "والصلاة التي فيها إيمان تخلّص المريض. والرب سيساعده على النهوض من جديد. وإن كان قد أخطأ، فسيُغفر له."
         }
       },
       "decisions": [
@@ -4714,6 +6267,46 @@
           "reason": "Readable says what \"raise up\" means here (m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59005015018"
+          ],
+          "choice": "\"赦免\" (L, B); \"饶恕\" (R)",
+          "alternatives": [],
+          "reason": "Forgive in the style guide's forms (section 7); the same in verse 20.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-1",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59005015006"
+          ],
+          "choice": "\"تخلّص\"",
+          "alternatives": [
+            "\"تشفي\""
+          ],
+          "reason": "The verb is \"save\", which here holds both making well and rescue, with forgiveness in the same sentence (m2). \"تخلّص\" keeps both, where \"تشفي\" would say only the healing.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4792,6 +6385,31 @@
           "L": "Итак, исповедуйте друг другу грехи и молитесь друг за друга, чтобы вы были исцелены.",
           "B": "Поэтому возьмите за правило исповедовать друг другу свои грехи и молиться друг за друга, чтобы вы были исцелены.",
           "R": "Поэтому рассказывайте друг другу о том плохом, что вы сделали, и молитесь друг за друга. Тогда вы будете исцелены."
+        },
+        "uk": {
+          "L": "Тож визнавайте один одному гріхи і моліться один за одного, щоб ви були зцілені.",
+          "B": "Тож нехай у вас буде звичай визнавати свої гріхи один одному і молитися один за одного, щоб вам зцілитися.",
+          "R": "Тож розповідайте один одному про погане, що ви зробили, і моліться один за одного. Тоді ви будете зцілені."
+        },
+        "ja": {
+          "L": "それゆえ、互いに罪を告白し、互いのために祈りなさい。あなたがたが癒やされるためです。",
+          "B": "ですから、互いに罪を告白し合い、互いのために祈り合うことを習慣にしなさい。癒やされるためです。",
+          "R": "ですから、自分がしてしまった悪いことを互いに打ち明け、互いのために祈ってください。そうすれば、みなさんはいやされます。"
+        },
+        "id": {
+          "L": "Karena itu hendaklah kalian saling mengaku dosa kalian dan saling mendoakan, supaya kalian sembuh.",
+          "B": "Karena itu, hendaklah kalian saling mengaku dosa dan saling mendoakan, supaya kalian sembuh.",
+          "R": "Jadi ceritakanlah kepada satu sama lain kesalahan-kesalahan yang sudah kalian lakukan, dan doakanlah satu sama lain. Dengan begitu kalian akan disembuhkan."
+        },
+        "zh": {
+          "L": "所以，你们要向彼此承认[你们的]罪，并且为彼此祷告，好使你们得到医治。",
+          "B": "所以，要养成习惯，向彼此承认自己的罪，也为彼此祷告，好让你们得到医治。",
+          "R": "所以，要把自己做过的错事告诉彼此，也要为彼此祷告。这样，你们就会得到医治。"
+        },
+        "ar": {
+          "L": "إذن اعترفوا بعضكم لبعض بالخطايا، وصلّوا الواحد من أجل الآخر، حتى تُشفوا.",
+          "B": "فليكن من عادتكم أن يعترف بعضكم لبعض بخطاياه، وأن يصلّي بعضكم لأجل بعض، لكي تُشفوا.",
+          "R": "فأخبروا بعضكم بعضًا بالأخطاء التي عملتموها، وصلّوا بعضكم لأجل بعض. وعندئذ تُشفون."
         }
       },
       "decisions": [
@@ -4954,6 +6572,31 @@
           "L": "Много сильна молитва праведного, когда она действует.",
           "B": "Когда праведный человек молится, его молитва действует и может очень многое.",
           "R": "Когда молится человек, который поступает правильно, его молитва сильна. Она может сделать очень многое."
+        },
+        "uk": {
+          "L": "Молитва праведного, діючи, дуже сильна.",
+          "B": "Коли праведна людина молиться, її молитва діє, і вона може дуже багато.",
+          "R": "Коли молиться людина, яка чинить правильно, її молитва сильна. Вона може зробити дуже багато."
+        },
+        "ja": {
+          "L": "正しい人の祈りは、働いて、大いに力を発揮します。",
+          "B": "正しい人が祈るとき、その祈りは力強く働き、多くのことを成し遂げるのです。",
+          "R": "正しいことをしている人が祈るとき、その祈りには強い力があります。その祈りは、大きなことを起こすことができるのです。"
+        },
+        "id": {
+          "L": "Doa orang benar, apabila bekerja, sangat besar kuasanya.",
+          "B": "Doa orang benar, bila didoakan dengan sungguh-sungguh, sangat besar kuasanya.",
+          "R": "Kalau orang yang melakukan apa yang benar berdoa, doanya itu kuat. Doa itu dapat melakukan banyak hal."
+        },
+        "zh": {
+          "L": "义人的祈求，在发挥作用的时候，是非常有力量的。",
+          "B": "义人祷告的时候，那祷告正在运行，能成就很多事。",
+          "R": "一个做正当事的人祷告的时候，那祷告是很有力量的，能成就很多事。"
+        },
+        "ar": {
+          "L": "عظيمة هي قوّة صلاة البارّ وهي تعمل.",
+          "B": "حين يصلّي البارّ، تعمل صلاته، وتقدر أن تفعل الكثير.",
+          "R": "حين يصلّي الإنسان الذي يعمل الصواب، تكون صلاته قويّة. وهي تقدر أن تفعل الكثير."
         }
       },
       "decisions": [
@@ -5042,6 +6685,25 @@
             "Nguvu nyingi inayo dua ..."
           ],
           "reason": "Swahili cannot put \"much\" first as the Greek does (m3) without an awkward sentence, so Literal ends on \"nguvu nyingi\" (much strength), where the stress falls in Swahili.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-1",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L"
+          ],
+          "category": "grammar",
+          "tokens": [
+            "n59005016016",
+            "n59005016012",
+            "n59005016013"
+          ],
+          "choice": "\"عظيمة\" first; \"وهي تعمل\"",
+          "alternatives": [],
+          "reason": "\"Much\" stands first for emphasis (m3), and the prayer is at work as it is prayed (m1); Literal keeps both.",
           "uncertain": false,
           "footnote": false
         }
@@ -5133,6 +6795,31 @@
           "L": "Илия был человек, подобный нам по природе, и молитвой помолился, чтобы не было дождя, и не было дождя на земле три года и шесть месяцев;",
           "B": "Илия был таким же человеком, как мы. Он усердно молился, чтобы не было дождя, и дождя на земле не было три года и шесть месяцев.",
           "R": "Илия был обычным человеком, как и мы. Он горячо молился, чтобы не было дождя. И на землю не падал дождь три с половиной года."
+        },
+        "uk": {
+          "L": "Ілля був людиною, подібною до нас, і молитвою помолився, щоб не було дощу, і не було дощу на землі три роки й шість місяців.",
+          "B": "Ілля був такою самою людиною, як ми. Він ревно молився, щоб не було дощу, і дощ не падав на землю три роки й шість місяців.",
+          "R": "Ілля був такою ж людиною, як ми. Він палко молився, щоб не було дощу. І дощу не було на землі три з половиною роки."
+        },
+        "ja": {
+          "L": "エリヤはわたしたちと同じ性質の人間でした。そして、雨が降らないようにと祈りをもって祈りました。すると、三年と六か月の間、地に雨が降りませんでした。",
+          "B": "エリヤは、わたしたちと同じような人間でした。その彼が、雨が降らないようにと熱心に祈ると、三年六か月の間、その地に雨は降りませんでした。",
+          "R": "エリヤは、わたしたちと同じ、ふつうの人でした。エリヤは、雨が降らないようにと一生けんめいに祈りました。すると、三年半の間、その地に雨が降りませんでした。"
+        },
+        "id": {
+          "L": "Elia adalah manusia biasa yang sama seperti kita, dan ia berdoa dengan sungguh-sungguh supaya hujan jangan turun, dan hujan pun tidak turun di bumi selama tiga tahun enam bulan.",
+          "B": "Elia adalah manusia biasa sama seperti kita. Ia berdoa dengan sungguh-sungguh supaya hujan jangan turun, dan hujan tidak turun di negeri itu selama tiga tahun enam bulan.",
+          "R": "Elia adalah manusia biasa sama seperti kita. Dia berdoa dengan sungguh-sungguh supaya hujan tidak turun. Dan hujan tidak turun di negeri itu selama tiga setengah tahun."
+        },
+        "zh": {
+          "L": "以利亚是一个和我们有同样性情的人，他切切祷告，求不要下雨，[于是]地上三年又六个月没有下雨。",
+          "B": "以利亚是一个和我们完全一样的人。他迫切地祷告，求不要下雨，结果那地三年又六个月没有下雨。",
+          "R": "以利亚是一个跟我们一样的人。他用心地祷告，求不要下雨。结果那地有三年半没有下雨。"
+        },
+        "ar": {
+          "L": "كان إيليا إنسانًا ذا طبيعة مثل طبيعتنا، وصلّى صلاةً ألّا ينزل المطر، فلم ينزل مطر على الأرض [مدّة] ثلاث سنوات وستّة أشهر؛",
+          "B": "كان إيليا إنسانًا مثلنا تمامًا. وصلّى بحرارة ألّا ينزل المطر، فلم ينزل مطر على الأرض ثلاث سنوات وستّة أشهر.",
+          "R": "كان إيليا إنسانًا مثلنا تمامًا. وصلّى بقوّة ألّا ينزل المطر. فلم ينزل مطر على الأرض ثلاث سنوات ونصف السنة."
         }
       },
       "decisions": [
@@ -5330,6 +7017,87 @@
           "reason": "The Hebrew-style repetition means that he prayed earnestly (m2). Literal keeps the doubled word so the reader sees the idiom; Balanced and Readable say what it means.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59005017007",
+            "n59005017008"
+          ],
+          "choice": "\"祈りをもって祈りました\"",
+          "alternatives": [
+            "\"熱心に祈りました\" as at Balanced"
+          ],
+          "reason": "Literal keeps the Hebrew way of giving force by putting a verb with its own noun (m2); Balanced and Readable say what it means.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59005017007",
+            "n59005017008"
+          ],
+          "choice": "\"切切祷告\"",
+          "alternatives": [
+            "用祷告祷告"
+          ],
+          "reason": "\"With prayer he prayed\" is a doubled phrase for earnest prayer (meaning m2); Chinese cannot repeat the noun with the verb naturally, so Literal keeps a doubled form in \"切切\". Balanced and Readable say \"earnestly\" and \"hard\", as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59005017001"
+          ],
+          "choice": "\"以利亚\"",
+          "alternatives": [],
+          "reason": "Elijah in the glossary's form (1 Kings 17-18; Luke 4:25-26).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-1",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "idiom",
+          "tokens": [
+            "n59005017007",
+            "n59005017008"
+          ],
+          "choice": "\"صلّى صلاةً\" (Literal); \"صلّى بحرارة\", \"صلّى بقوّة\" (Balanced, Readable); \"إيليا\"",
+          "alternatives": [
+            "\"إلياس\""
+          ],
+          "reason": "A verb with its own noun gives it force (m2); Arabic has the same construction (the absolute object), which Literal keeps. \"إيليا\" is the church form, not the Qur'anic \"إلياس\" (style brief, section 6).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5412,6 +7180,31 @@
           "L": "И снова помолился, и небо дало дождь, и земля произрастила плод свой.",
           "B": "Потом он снова помолился, и небо дало дождь, и земля принесла урожай.",
           "R": "Потом он снова помолился. С неба пошёл дождь, и на земле снова вырос урожай."
+        },
+        "uk": {
+          "L": "І знову помолився, і небо дало дощ, і земля виростила свій плід.",
+          "B": "Потім він помолився знову, і небо дало дощ, а земля вродила свій урожай.",
+          "R": "Потім він помолився знову. З неба пішов дощ, і земля знову дала врожай."
+        },
+        "ja": {
+          "L": "そして再び祈ると、天は雨を与え、地はその実りを生み出しました。",
+          "B": "そして、彼が再び祈ると、空は雨を降らせ、地は作物を実らせました。",
+          "R": "それから、エリヤはもう一度祈りました。すると空から雨が降り、地にはまた作物が育ちました。"
+        },
+        "id": {
+          "L": "Lalu ia berdoa lagi, dan langit menurunkan hujan, dan bumi mengeluarkan buahnya.",
+          "B": "Lalu ia berdoa lagi, dan langit menurunkan hujan, dan tanah itu memberikan hasilnya.",
+          "R": "Lalu dia berdoa lagi. Hujan turun dari langit, dan tanah itu menghasilkan panen lagi."
+        },
+        "zh": {
+          "L": "他又祷告，天就给了雨，地就长出了它的果实。",
+          "B": "后来他又祷告，天空就下了雨，田地也长出了庄稼。",
+          "R": "后来他又祷告。雨从天上落下来，田地又长出了庄稼。"
+        },
+        "ar": {
+          "L": "ثمّ صلّى ثانيةً، فأعطت السماء المطر، وأطلعت الأرض ثمرها.",
+          "B": "ثمّ صلّى مرّة أخرى، فأمطرت السماء، وأعطت الأرض غلّتها.",
+          "R": "ثمّ صلّى مرّة أخرى. فنزل المطر من السماء، وأنبتت الأرض المحاصيل من جديد."
         }
       },
       "decisions": [
@@ -5516,6 +7309,27 @@
           "reason": "Spanish \"cielo\" means both heaven and sky, as the Greek word does (m2), so every level keeps it where the English changes \"heaven\" to \"sky\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ar-1",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59005018012",
+            "n59005018013",
+            "n59005018014",
+            "n59005018015"
+          ],
+          "choice": "\"ثمرها\" (Literal), \"غلّتها\" (Balanced), as in verse 7",
+          "alternatives": [],
+          "reason": "The fruit is the word of verse 7, the harvest the farmer waits for (m3), and each level repeats its own word from there.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5616,6 +7430,31 @@
           "L": "{{gender:Братья и сёстры|Братья}} мои, если кто среди вас уклонится от истины и кто-нибудь обратит его, \\v 20 пусть знает, что обративший грешника от заблуждения пути его спасёт его душу от смерти и покроет множество грехов.",
           "B": "{{gender:Братья и сёстры|Братья}} мои, если кто-то из вас уйдёт от истины, а кто-то другой вернёт его, \\v 20 пусть тот, кто это сделал, знает: кто возвращает грешника с ложного пути, тот спасёт душу этого грешника от смерти и покроет множество грехов.",
           "R": "{{gender:Братья и сёстры|Братья}} мои, может случиться, что кто-то из вас уйдёт от правды, а другой человек вернёт его. \\v 20 Если так случится, пусть тот, кто вернул его, знает: кто возвращает грешника с неправильного пути, тот спасёт этого человека от смерти и принесёт прощение многих грехов."
+        },
+        "uk": {
+          "L": "Мої {{gender:брати і сестри|брати}}, якщо хтось серед вас зблукає від істини, а хтось наверне його, \\v 20 нехай знає, що той, хто навернув грішника з блудної його дороги, спасе його душу від смерті й покриє безліч гріхів.",
+          "B": "Мої {{gender:брати і сестри|брати}}, якщо хтось із вас відійде від істини, а хтось поверне його, \\v 20 то нехай той, хто це зробить, знає: хто повертає грішника з хибної дороги, той спасе душу цього грішника від смерті й покриє безліч гріхів.",
+          "R": "Мої {{gender:брати і сестри|брати}}, може статися, що хтось серед вас відійде від правди, а інша людина поверне його назад. \\v 20 Якщо так станеться, той, хто його повернув, нехай знає: хто відверне грішника від хибної дороги, той спасе цю людину від смерті й принесе прощення багатьох гріхів."
+        },
+        "ja": {
+          "L": "わたしの{{gender:きょうだいたち|兄弟たち}}、あなたがたの中のだれかが真理から迷い出て、だれかがその人を連れ戻すなら、\\v 20 [その人は、]罪人をその道の迷いから連れ戻す者はその人の魂を死から救い、多くの罪を覆うのだと、知っておきなさい。",
+          "B": "わたしの{{gender:きょうだいたち|兄弟たち}}、あなたがたの中のだれかが真理から迷い出て、ほかのだれかがその人を連れ戻すことがあれば、\\v 20 連れ戻したその人は、このことを知っておきなさい。罪人を迷いの道から連れ戻す者は、その罪人の魂を死から救い、多くの罪を覆うのです。",
+          "R": "わたしの{{gender:きょうだいたち|兄弟たち}}、みなさんの中のだれかが、真理から離れて迷ってしまうかもしれません。そして、ほかのだれかがその人を連れ戻すかもしれません。\\v 20 そうなったら、連れ戻した人は、このことを知っておいてください。罪を犯している人をまちがった道から連れ戻す人は、その人を死から救い、多くの罪がゆるされるようにするのです。"
+        },
+        "id": {
+          "L": "Saudara-saudaraku, jika ada seorang di antara kalian yang menyimpang dari kebenaran, lalu ada orang lain yang membuatnya berbalik, \\v 20 ketahuilah, bahwa barang siapa membuat orang berdosa berbalik dari jalannya yang sesat, ia akan menyelamatkan jiwa orang itu dari maut dan akan menutupi banyak sekali dosa.",
+          "B": "Saudara-saudaraku, jika ada seorang di antara kalian yang menyimpang dari kebenaran, lalu ada orang lain yang membawanya kembali, \\v 20 hendaklah ia tahu bahwa siapa saja yang membawa orang berdosa kembali dari jalannya yang sesat, ia akan menyelamatkan jiwa orang itu dari maut dan menutupi banyak sekali dosa.",
+          "R": "Saudara-saudara, mungkin ada seorang di antara kalian yang menyimpang dari kebenaran, lalu ada orang lain yang membawanya kembali. \\v 20 Kalau itu terjadi, orang yang membawanya kembali itu harus tahu hal ini: siapa saja yang membuat orang berdosa berbalik dari jalannya yang salah, ia akan menyelamatkan orang itu dari maut, dan banyak sekali dosa akan diampuni."
+        },
+        "zh": {
+          "L": "我的{{gender:弟兄姐妹|弟兄}}们，你们中间若有人迷失离开了真理，又有人使那人回转，\\v 20 使人回转的人就该知道：那使罪人从迷失的道路上回转的，将救那人的灵魂脱离死亡，并且遮盖众多的罪。",
+          "B": "我的{{gender:弟兄姐妹|弟兄}}们，如果你们当中有人偏离真理，而有人把那人带回来，\\v 20 那么，带人回来的人要知道这一点：谁把罪人从错误的道路上带回来，就能救那罪人的灵魂脱离死亡，并且遮盖大量的罪。",
+          "R": "我的{{gender:弟兄姐妹|弟兄}}们，你们当中可能有人离开了真理，又有另一个人把那人带了回来。\\v 20 如果是这样，那带人回来的人应当知道：谁使一个罪人离开错误的道路，就能救那人脱离死亡，也能使许多罪得到饶恕。"
+        },
+        "ar": {
+          "L": "يا {{gender:إخوتي وأخواتي|إخوتي}}، إن ضلّ أحد منكم عن الحقّ وأرجعه أحد، \\v 20 فليعرف أنّ من أرجع خاطئًا من ضلالة طريقه، سيخلّص نفسه من الموت، وسيغطّي جمهورًا من الخطايا.",
+          "B": "يا {{gender:إخوتي وأخواتي|إخوتي}}، إن ضلّ واحد منكم عن الحقّ، فأعاده آخر، \\v 20 فليعرف من فعل ذلك أنّ من يُعيد خاطئًا عن الطريق الخاطئ سيخلّص نفس ذلك الخاطئ من الموت، ويستر خطايا كثيرة.",
+          "R": "يا {{gender:إخوتي وأخواتي|إخوتي}}، قد يبتعد أحد منكم عن الحقّ، فيعيده شخص آخر. \\v 20 فإن حدث ذلك، فليعرف الذي أعاده أنّ من يُرجع خاطئًا عن الطريق الخاطئ سيخلّص ذلك الإنسان من الموت، وسيجلب الغفران لخطايا كثيرة."
         }
       },
       "decisions": [
@@ -5863,6 +7702,97 @@
             "{{gender:их|его}}"
           ],
           "reason": "The pronouns point back to \"кто\" and \"грешник\", which in Russian already cover men and women; the English spans on them have no Russian counterpart. The span stays on the address \"братья и сёстры\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n59005020001"
+          ],
+          "choice": "\"知っておきなさい\" at the end of verse 20",
+          "alternatives": [
+            "the command first, with the saying after it"
+          ],
+          "reason": "Japanese puts the verb last, so the command that opens verse 20 in the Greek closes it; everything in verse 20 still stands after its marker.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59005020016",
+            "n59005020017",
+            "n59005020018"
+          ],
+          "choice": "\"遮盖众多的罪\" (L); \"遮盖大量的罪\" (B); \"使许多罪得到饶恕\" (R)",
+          "alternatives": [],
+          "reason": "Covering sins is bringing about their forgiveness (meaning m3): Literal and Balanced keep the picture, Readable says what it means, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n59005020001"
+          ],
+          "choice": "\"使人回转的人\" (L); \"带人回来的人\" (B)",
+          "alternatives": [
+            "他"
+          ],
+          "reason": "\"Let him know\" is the one who brings the wanderer back; Chinese names him, since a bare \"他\" could be read as the wanderer (the English uses \"that one\" and \"the one who does so\").",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-1",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n59005019007",
+            "n59005019008",
+            "n59005019009",
+            "n59005019010",
+            "n59005020007",
+            "n59005020010",
+            "n59005020011",
+            "n59005020012",
+            "n59005020013",
+            "n59005020014",
+            "n59005020016",
+            "n59005020017",
+            "n59005020018"
+          ],
+          "choice": "\"ضلّ\", \"ضلالة\" (the verb of 1:16); \"نفسه\" (Literal), \"نفس ذلك الخاطئ\" (Balanced); \"يغطّي\", \"يستر\"",
+          "alternatives": [],
+          "reason": "The verb and noun share a root, and the verb is the one of 1:16 (\"لا تضلّوا\") (m1). The soul is the sinner's (m2): Literal leaves \"his\" as the Greek does, Balanced and Readable say whose. Covering sins is forgiving them (m3), which Readable says.",
           "uncertain": false,
           "footnote": false
         }

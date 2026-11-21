@@ -62,6 +62,31 @@
           "L": "የዳዊት ማስኪል፤ በዋሻው በነበረ ጊዜ። ጸሎት።",
           "B": "የዳዊት ማስኪል፤ በዋሻው ውስጥ በነበረ ጊዜ። ጸሎት።",
           "R": "ዳዊት በዋሻው ውስጥ በነበረበት ጊዜ የዘመረው የማስተማሪያ መዝሙር። ጸሎት።"
+        },
+        "hi": {
+          "L": "दाऊद का मस्कील, जब वह गुफा में था। प्रार्थना।",
+          "B": "दाऊद का मस्कील, जब वह गुफा में था। प्रार्थना।",
+          "R": "दाऊद का एक गीत, जो शिक्षा और समझ देने के लिए है, उस समय का जब वह गुफा में था। प्रार्थना।"
+        },
+        "ru": {
+          "L": "Маскиль Давида, когда он был в пещере. Молитва.",
+          "B": "Маскиль Давида, когда он был в пещере. Молитва.",
+          "R": "Песня Давида, чтобы учить, написанная в то время, когда он был в пещере. Молитва."
+        },
+        "ja": {
+          "L": "ダビデのマスキル。彼が洞穴にいたとき[のもの]。祈り。",
+          "B": "ダビデのマスキル。彼が洞穴にいたときのもの。祈り。",
+          "R": "ダビデによる、教えるための歌。彼が洞穴にいたときのもの。祈り。"
+        },
+        "uk": {
+          "L": "Маскіл Давида, коли він був у печері. Молитва.",
+          "B": "Маскіл Давида, коли він був у печері. Молитва.",
+          "R": "Пісня для навчання від Давида, з того часу, коли він був у печері. Молитва."
+        },
+        "id": {
+          "L": "Maskil Daud, ketika ia berada di dalam gua. Doa.",
+          "B": "Maskil Daud, ketika ia berada di dalam gua. Doa.",
+          "R": "Nyanyian pengajaran karangan Daud, dari waktu ketika ia bersembunyi di dalam gua. Doa."
         }
       },
       "decisions": [
@@ -295,6 +320,84 @@
           "reason": "As in 32:1 and the terms list: the sense of the heading word is uncertain (meaning decision m2), so Literal and Balanced keep it as a name and Readable gives the likeliest sense, as the English Readable does.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191420010011",
+            "o191420010051"
+          ],
+          "choice": "मस्कील (L, B); \"दाऊद का एक गीत, जो शिक्षा और समझ देने के लिए है\" (R); प्रार्थना",
+          "alternatives": [],
+          "reason": "The poetry note keeps maskil as मस्कील where the English keeps the term; Readable gives its likeliest sense, as the English does, in the wording of Psalms 52, 74, 78 and 89. Tefillah is प्रार्थना.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191420010011"
+          ],
+          "choice": "Маскиль (L, B); Песня Давида, чтобы учить (R)",
+          "alternatives": [],
+          "reason": "Maskil (m2) is kept as \"маскиль\" at Literal and Balanced and explained at Readable as \"Песня ..., чтобы учить\", the form of 52:1, 74:1, 78:1 and 89:1 in this translation; \"a prayer\" is \"молитва\" (m4).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191420010011",
+            "o191420010021",
+            "o191420010041",
+            "o191420010051"
+          ],
+          "choice": "maskil ledavid \"ダビデのマスキル\" (L, B), \"ダビデによる、教えるための歌\" (R, English R 'A song to teach'); bamme'arah \"洞穴\"; tefillah \"祈り\"",
+          "alternatives": [],
+          "reason": "Psalter title forms (PSA-1, PSA-6 52:1, PSA-8 78:1); maskil is uncertain (m2); the cave as 57:1 (1 Samuel 22, 24; m3). The time clause is …とき[のもの] as PSA-6 set for titles.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191420010011"
+          ],
+          "choice": "\"Nyanyian pengajaran\"",
+          "alternatives": [],
+          "reason": "Maskil as a song of insight (m2, uncertain), as the term list gives for Readable.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -324,44 +427,69 @@
       "literal_gloss": "[With] my voice to YHWH I cry out; [with] my voice to YHWH I plead for favor.",
       "renderings": {
         "en": {
-          "L": "[With] my voice I cry out to {{divine_name:the LORD|Yahweh}}; [with] my voice I plead with {{divine_name:the LORD|Yahweh}} for mercy.",
-          "B": "I call out loud to {{divine_name:the LORD|Yahweh}}; I raise my voice to {{divine_name:the LORD|Yahweh}}, pleading for mercy.",
-          "R": "I cry out to {{divine_name:the LORD|Yahweh}} for help. I beg {{divine_name:the LORD|Yahweh}} to be kind to me."
+          "L": "[With] my voice I cry out to {{divine_name:the LORD|Yahweh}}; \\q [with] my voice I plead with {{divine_name:the LORD|Yahweh}} for mercy.",
+          "B": "I call out loud to {{divine_name:the LORD|Yahweh}}; \\q I raise my voice to {{divine_name:the LORD|Yahweh}}, pleading for mercy.",
+          "R": "I cry out to {{divine_name:the LORD|Yahweh}} for help. \\q I beg {{divine_name:the LORD|Yahweh}} to be kind to me."
         },
         "fr": {
-          "L": "[De] ma voix je crie vers {{divine_name:le SEIGNEUR|Yahvé}} ; [de] ma voix je supplie {{divine_name:le SEIGNEUR|Yahvé}} de me faire grâce.",
-          "B": "J’appelle à pleine voix {{divine_name:le SEIGNEUR|Yahvé}} ; j’élève la voix vers {{divine_name:le SEIGNEUR|Yahvé}} pour demander grâce.",
-          "R": "Je crie {{divine_name:au SEIGNEUR|à Yahvé}} pour qu’{{deity_pronoun:il|Il}} m’aide. Je supplie {{divine_name:le SEIGNEUR|Yahvé}} d’être bon pour moi."
+          "L": "[De] ma voix je crie vers {{divine_name:le SEIGNEUR|Yahvé}} ; \\q [de] ma voix je supplie {{divine_name:le SEIGNEUR|Yahvé}} de me faire grâce.",
+          "B": "J’appelle à pleine voix {{divine_name:le SEIGNEUR|Yahvé}} ; \\q j’élève la voix vers {{divine_name:le SEIGNEUR|Yahvé}} pour demander grâce.",
+          "R": "Je crie {{divine_name:au SEIGNEUR|à Yahvé}} pour qu’{{deity_pronoun:il|Il}} m’aide. \\q Je supplie {{divine_name:le SEIGNEUR|Yahvé}} d’être bon pour moi."
         },
         "sw": {
-          "L": "[Kwa] sauti yangu ninamlilia {{divine_name:BWANA|Yahwe}}; [kwa] sauti yangu ninamsihi {{divine_name:BWANA|Yahwe}} anihurumie.",
-          "B": "Ninamlilia {{divine_name:BWANA|Yahwe}} kwa sauti kubwa; ninapaza sauti yangu kwa {{divine_name:BWANA|Yahwe}}, nikiomba rehema.",
-          "R": "Ninamlilia {{divine_name:BWANA|Yahwe}} anisaidie. Ninamsihi {{divine_name:BWANA|Yahwe}} anionee wema."
+          "L": "[Kwa] sauti yangu ninamlilia {{divine_name:BWANA|Yahwe}}; \\q [kwa] sauti yangu ninamsihi {{divine_name:BWANA|Yahwe}} anihurumie.",
+          "B": "Ninamlilia {{divine_name:BWANA|Yahwe}} kwa sauti kubwa; \\q ninapaza sauti yangu kwa {{divine_name:BWANA|Yahwe}}, nikiomba rehema.",
+          "R": "Ninamlilia {{divine_name:BWANA|Yahwe}} anisaidie. \\q Ninamsihi {{divine_name:BWANA|Yahwe}} anionee wema."
         },
         "es": {
-          "L": "[Con] mi voz clamo {{divine_name:al SEÑOR|a Yahvé}}; [con] mi voz suplico {{divine_name:al SEÑOR|a Yahvé}} que tenga piedad.",
-          "B": "Clamo en voz alta {{divine_name:al SEÑOR|a Yahvé}}; alzo mi voz {{divine_name:al SEÑOR|a Yahvé}}, pidiéndole compasión.",
-          "R": "Clamo {{divine_name:al SEÑOR|a Yahvé}} pidiendo ayuda. Le ruego {{divine_name:al SEÑOR|a Yahvé}} que sea bondadoso conmigo."
+          "L": "[Con] mi voz clamo {{divine_name:al SEÑOR|a Yahvé}}; \\q [con] mi voz suplico {{divine_name:al SEÑOR|a Yahvé}} que tenga piedad.",
+          "B": "Clamo en voz alta {{divine_name:al SEÑOR|a Yahvé}}; \\q alzo mi voz {{divine_name:al SEÑOR|a Yahvé}}, pidiéndole compasión.",
+          "R": "Clamo {{divine_name:al SEÑOR|a Yahvé}} pidiendo ayuda. \\q Le ruego {{divine_name:al SEÑOR|a Yahvé}} que sea bondadoso conmigo."
         },
         "vi": {
-          "L": "[Bằng] tiếng tôi, tôi kêu la cùng {{divine_name:CHÚA|Gia-vê}}; [bằng] tiếng tôi, tôi nài xin {{divine_name:CHÚA|Gia-vê}} thương xót.",
-          "B": "Tôi cất tiếng kêu lớn cùng {{divine_name:CHÚA|Gia-vê}}; tôi cất tiếng lên cùng {{divine_name:CHÚA|Gia-vê}}, nài xin thương xót.",
-          "R": "Tôi kêu lên cùng {{divine_name:CHÚA|Gia-vê}} để xin giúp đỡ. Tôi nài xin {{divine_name:CHÚA|Gia-vê}} thương xót tôi."
+          "L": "[Bằng] tiếng tôi, tôi kêu la cùng {{divine_name:CHÚA|Gia-vê}}; \\q [bằng] tiếng tôi, tôi nài xin {{divine_name:CHÚA|Gia-vê}} thương xót.",
+          "B": "Tôi cất tiếng kêu lớn cùng {{divine_name:CHÚA|Gia-vê}}; \\q tôi cất tiếng lên cùng {{divine_name:CHÚA|Gia-vê}}, nài xin thương xót.",
+          "R": "Tôi kêu lên cùng {{divine_name:CHÚA|Gia-vê}} để xin giúp đỡ. \\q Tôi nài xin {{divine_name:CHÚA|Gia-vê}} thương xót tôi."
         },
         "ko": {
-          "L": "내 목소리로 {{divine_name:주|야훼}}께 부르짖고, 내 목소리로 {{divine_name:주|야훼}}께 자비를 구한다.",
-          "B": "나는 소리 높여 {{divine_name:주|야훼}}께 부르짖고, 목소리를 높여 {{divine_name:주|야훼}}께 자비를 간구한다.",
-          "R": "나는 {{divine_name:주|야훼}}께 도와 달라고 부르짖는다. {{divine_name:주|야훼}}께 은혜를 베풀어 달라고 간청한다."
+          "L": "내 목소리로 {{divine_name:주|야훼}}께 부르짖고, \\q 내 목소리로 {{divine_name:주|야훼}}께 자비를 구한다.",
+          "B": "나는 소리 높여 {{divine_name:주|야훼}}께 부르짖고, \\q 목소리를 높여 {{divine_name:주|야훼}}께 자비를 간구한다.",
+          "R": "나는 {{divine_name:주|야훼}}께 도와 달라고 부르짖는다. \\q {{divine_name:주|야훼}}께 은혜를 베풀어 달라고 간청한다."
         },
         "pt": {
-          "L": "[Com] a minha voz clamo {{divine_name:ao SENHOR|a Javé}}; [com] a minha voz suplico {{divine_name:ao SENHOR|a Javé}} por misericórdia.",
-          "B": "Clamo em alta voz {{divine_name:ao SENHOR|a Javé}}; levanto a minha voz {{divine_name:ao SENHOR|a Javé}}, pedindo misericórdia.",
-          "R": "Eu clamo {{divine_name:ao SENHOR|a Javé}} por socorro. Peço {{divine_name:ao SENHOR|a Javé}} que seja bondoso comigo."
+          "L": "[Com] a minha voz clamo {{divine_name:ao SENHOR|a Javé}}; \\q [com] a minha voz suplico {{divine_name:ao SENHOR|a Javé}} por misericórdia.",
+          "B": "Clamo em alta voz {{divine_name:ao SENHOR|a Javé}}; \\q levanto a minha voz {{divine_name:ao SENHOR|a Javé}}, pedindo misericórdia.",
+          "R": "Eu clamo {{divine_name:ao SENHOR|a Javé}} por socorro. \\q Peço {{divine_name:ao SENHOR|a Javé}} que seja bondoso comigo."
         },
         "am": {
-          "L": "በድምፄ ወደ {{divine_name:እግዚአብሔር|ያህዌ}} እጮኻለሁ፤ በድምፄ ወደ {{divine_name:እግዚአብሔር|ያህዌ}} ምሕረትን እለምናለሁ።",
-          "B": "ድምፄን ከፍ አድርጌ ወደ {{divine_name:እግዚአብሔር|ያህዌ}} እጮኻለሁ፤ ምሕረቱን እየለመንኩ ወደ {{divine_name:እግዚአብሔር|ያህዌ}} ድምፄን አሰማለሁ።",
-          "R": "እንዲረዳኝ ወደ {{divine_name:እግዚአብሔር|ያህዌ}} እጮኻለሁ። {{divine_name:እግዚአብሔርን|ያህዌን}} ቸር እንዲሆንልኝ እለምናለሁ።"
+          "L": "በድምፄ ወደ {{divine_name:እግዚአብሔር|ያህዌ}} እጮኻለሁ፤ \\q በድምፄ ወደ {{divine_name:እግዚአብሔር|ያህዌ}} ምሕረትን እለምናለሁ።",
+          "B": "ድምፄን ከፍ አድርጌ ወደ {{divine_name:እግዚአብሔር|ያህዌ}} እጮኻለሁ፤ \\q ምሕረቱን እየለመንኩ ወደ {{divine_name:እግዚአብሔር|ያህዌ}} ድምፄን አሰማለሁ።",
+          "R": "እንዲረዳኝ ወደ {{divine_name:እግዚአብሔር|ያህዌ}} እጮኻለሁ። \\q {{divine_name:እግዚአብሔርን|ያህዌን}} ቸር እንዲሆንልኝ እለምናለሁ።"
+        },
+        "hi": {
+          "L": "[अपनी] आवाज़ से मैं {{divine_name:प्रभु|याहवे}} की दुहाई देता हूँ; \\q [अपनी] आवाज़ से मैं {{divine_name:प्रभु|याहवे}} से दया की विनती करता हूँ।",
+          "B": "मैं ऊँची आवाज़ से {{divine_name:प्रभु|याहवे}} को पुकारता हूँ; \\q मैं {{divine_name:प्रभु|याहवे}} के सामने अपनी आवाज़ उठाकर दया के लिए गिड़गिड़ाता हूँ।",
+          "R": "मैं सहायता के लिए {{divine_name:प्रभु|याहवे}} की दुहाई देता हूँ। \\q मैं {{divine_name:प्रभु|याहवे}} से भीख माँगता हूँ कि वे मुझ पर कृपा करें।"
+        },
+        "ru": {
+          "L": "Голосом моим к {{divine_name:ГОСПОДУ|Яхве}} я взываю; \\q голосом моим {{divine_name:ГОСПОДА|Яхве}} я умоляю о милости.",
+          "B": "Я громко взываю к {{divine_name:ГОСПОДУ|Яхве}}; \\q я возвышаю голос к {{divine_name:ГОСПОДУ|Яхве}}, умоляя о милости.",
+          "R": "Я кричу к {{divine_name:ГОСПОДУ|Яхве}} о помощи. \\q Я прошу {{divine_name:ГОСПОДА|Яхве}} быть добрым ко мне."
+        },
+        "ja": {
+          "L": "わたしの声をもって、わたしは{{divine_name:主|ヤハウェ}}に叫ぶ。 \\q わたしの声をもって、{{divine_name:主|ヤハウェ}}にあわれみを請う。",
+          "B": "声を上げて、わたしは{{divine_name:主|ヤハウェ}}に叫び、 \\q 声を上げて、{{divine_name:主|ヤハウェ}}に恵みを求める。",
+          "R": "わたしは{{divine_name:主|ヤハウェ}}に、助けてくださいと叫ぶ。 \\q わたしをあわれんでくださいと、{{divine_name:主|ヤハウェ}}に願う。"
+        },
+        "uk": {
+          "L": "[Своїм] голосом я волаю до {{divine_name:ГОСПОДА|Ягве}}; \\q [своїм] голосом я благаю {{divine_name:ГОСПОДА|Ягве}} про милість.",
+          "B": "Я голосно взиваю до {{divine_name:ГОСПОДА|Ягве}}; \\q я підношу свій голос до {{divine_name:ГОСПОДА|Ягве}}, благаючи про милість.",
+          "R": "Я кличу до {{divine_name:ГОСПОДА|Ягве}} про допомогу. \\q Я благаю {{divine_name:ГОСПОДА|Ягве}} бути добрим до мене."
+        },
+        "id": {
+          "L": "[Dengan] suaraku aku berseru kepada {{divine_name:TUHAN|Yahweh}}; \\q [dengan] suaraku aku memohon belas kasihan kepada {{divine_name:TUHAN|Yahweh}}.",
+          "B": "Dengan suara nyaring aku berseru kepada {{divine_name:TUHAN|Yahweh}}; \\q aku mengangkat suaraku kepada {{divine_name:TUHAN|Yahweh}}, memohon belas kasihan.",
+          "R": "Aku berseru kepada {{divine_name:TUHAN|Yahweh}} meminta pertolongan. \\q Aku memohon kepada {{divine_name:TUHAN|Yahweh}} supaya {{deity_pronoun:dia|Dia}} berbaik hati kepadaku."
         }
       },
       "decisions": [
@@ -414,6 +542,26 @@
           "reason": "Verses 2-3 name the LORD and \"him\" in the third person; verse 4 turns to \"you\" (style guide section 7a).",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191420020041",
+            "o191420020081"
+          ],
+          "choice": "'ez'aq \"叫ぶ\"; 'etchannan \"あわれみを請う\" (L), \"恵みを求める\" (B), \"あわれんでくださいと…願う\" (R)",
+          "alternatives": [],
+          "reason": "Psalter rule: chanan is あわれむ at L and R, 恵みを示す / 恵みを求める at B (PSA-1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -445,44 +593,69 @@
       "literal_gloss": "I pour out before him my complaint; my trouble before him I declare.",
       "renderings": {
         "en": {
-          "L": "I pour out before {{deity_pronoun:him|Him}} my complaint; my trouble before {{deity_pronoun:him|Him}} I declare.",
-          "B": "I spill out my complaint in front of {{deity_pronoun:him|Him}}; I tell {{deity_pronoun:him|Him}} all about my distress.",
-          "R": "I tell {{deity_pronoun:him|Him}} everything that is bothering me. I tell {{deity_pronoun:him|Him}} all my troubles."
+          "L": "I pour out before {{deity_pronoun:him|Him}} my complaint; \\q my trouble before {{deity_pronoun:him|Him}} I declare.",
+          "B": "I spill out my complaint in front of {{deity_pronoun:him|Him}}; \\q I tell {{deity_pronoun:him|Him}} all about my distress.",
+          "R": "I tell {{deity_pronoun:him|Him}} everything that is bothering me. \\q I tell {{deity_pronoun:him|Him}} all my troubles."
         },
         "fr": {
-          "L": "Je répands devant {{deity_pronoun:lui|Lui}} ma plainte ; ma détresse, devant {{deity_pronoun:lui|Lui}} je la déclare.",
-          "B": "Je déverse ma plainte devant {{deity_pronoun:lui|Lui}} ; je {{deity_pronoun:lui|Lui}} raconte toute ma détresse.",
-          "R": "Je {{deity_pronoun:lui|Lui}} dis tout ce qui me tourmente. Je {{deity_pronoun:lui|Lui}} raconte tous mes malheurs."
+          "L": "Je répands devant {{deity_pronoun:lui|Lui}} ma plainte ; \\q ma détresse, devant {{deity_pronoun:lui|Lui}} je la déclare.",
+          "B": "Je déverse ma plainte devant {{deity_pronoun:lui|Lui}} ; \\q je {{deity_pronoun:lui|Lui}} raconte toute ma détresse.",
+          "R": "Je {{deity_pronoun:lui|Lui}} dis tout ce qui me tourmente. \\q Je {{deity_pronoun:lui|Lui}} raconte tous mes malheurs."
         },
         "sw": {
-          "L": "Ninamimina mbele {{deity_pronoun:yake|Yake}} malalamiko yangu; taabu yangu mbele {{deity_pronoun:yake|Yake}} ninaitangaza.",
-          "B": "Ninamwaga malalamiko yangu mbele {{deity_pronoun:yake|Yake}}; ninamweleza habari zote za dhiki yangu.",
-          "R": "Ninamweleza kila kitu kinachonisumbua. Ninamwambia taabu zangu zote."
+          "L": "Ninamimina mbele {{deity_pronoun:yake|Yake}} malalamiko yangu; \\q taabu yangu mbele {{deity_pronoun:yake|Yake}} ninaitangaza.",
+          "B": "Ninamwaga malalamiko yangu mbele {{deity_pronoun:yake|Yake}}; \\q ninamweleza habari zote za dhiki yangu.",
+          "R": "Ninamweleza kila kitu kinachonisumbua. \\q Ninamwambia taabu zangu zote."
         },
         "es": {
-          "L": "Derramo delante de {{deity_pronoun:él|Él}} mi queja; mi angustia delante de {{deity_pronoun:él|Él}} declaro.",
-          "B": "Vacío mi queja delante de {{deity_pronoun:él|Él}}; {{deity_pronoun:le|Le}} cuento toda mi angustia.",
-          "R": "Le cuento todo lo que me inquieta. Le cuento todos mis problemas."
+          "L": "Derramo delante de {{deity_pronoun:él|Él}} mi queja; \\q mi angustia delante de {{deity_pronoun:él|Él}} declaro.",
+          "B": "Vacío mi queja delante de {{deity_pronoun:él|Él}}; \\q {{deity_pronoun:le|Le}} cuento toda mi angustia.",
+          "R": "Le cuento todo lo que me inquieta. \\q Le cuento todos mis problemas."
         },
         "vi": {
-          "L": "Tôi dốc đổ lời than thở của tôi trước mặt {{deity_pronoun:ngài|Ngài}}; nỗi khốn khổ của tôi, tôi bày tỏ trước mặt {{deity_pronoun:ngài|Ngài}}.",
-          "B": "Tôi trút hết nỗi lòng than thở trước mặt {{deity_pronoun:ngài|Ngài}}; tôi kể cho {{deity_pronoun:ngài|Ngài}} nghe mọi điều khốn khổ của tôi.",
-          "R": "Tôi kể cho {{deity_pronoun:ngài|Ngài}} nghe mọi điều làm tôi lo lắng. Tôi kể cho {{deity_pronoun:ngài|Ngài}} nghe hết mọi nỗi khó khăn của tôi."
+          "L": "Tôi dốc đổ lời than thở của tôi trước mặt {{deity_pronoun:ngài|Ngài}}; \\q nỗi khốn khổ của tôi, tôi bày tỏ trước mặt {{deity_pronoun:ngài|Ngài}}.",
+          "B": "Tôi trút hết nỗi lòng than thở trước mặt {{deity_pronoun:ngài|Ngài}}; \\q tôi kể cho {{deity_pronoun:ngài|Ngài}} nghe mọi điều khốn khổ của tôi.",
+          "R": "Tôi kể cho {{deity_pronoun:ngài|Ngài}} nghe mọi điều làm tôi lo lắng. \\q Tôi kể cho {{deity_pronoun:ngài|Ngài}} nghe hết mọi nỗi khó khăn của tôi."
         },
         "ko": {
-          "L": "내가 그분 앞에 내 근심을 쏟아 놓고, 내 고난을 그분 앞에 아뢴다.",
-          "B": "나는 그분 앞에 내 근심을 다 쏟아 놓고, 내 괴로움을 그분께 낱낱이 아뢴다.",
-          "R": "나는 나를 괴롭히는 것을 모두 그분께 말씀드린다. 내 모든 어려움을 그분께 말씀드린다."
+          "L": "내가 그분 앞에 내 근심을 쏟아 놓고, \\q 내 고난을 그분 앞에 아뢴다.",
+          "B": "나는 그분 앞에 내 근심을 다 쏟아 놓고, \\q 내 괴로움을 그분께 낱낱이 아뢴다.",
+          "R": "나는 나를 괴롭히는 것을 모두 그분께 말씀드린다. \\q 내 모든 어려움을 그분께 말씀드린다."
         },
         "pt": {
-          "L": "Derramo diante {{deity_pronoun:dele|Dele}} a minha queixa; a minha angústia diante {{deity_pronoun:dele|Dele}} declaro.",
-          "B": "Despejo a minha queixa na presença {{deity_pronoun:dele|Dele}}; conto a {{deity_pronoun:ele|Ele}} toda a minha aflição.",
-          "R": "Eu {{deity_pronoun:lhe|Lhe}} conto tudo o que me preocupa. Eu {{deity_pronoun:lhe|Lhe}} conto todos os meus problemas."
+          "L": "Derramo diante {{deity_pronoun:dele|Dele}} a minha queixa; \\q a minha angústia diante {{deity_pronoun:dele|Dele}} declaro.",
+          "B": "Despejo a minha queixa na presença {{deity_pronoun:dele|Dele}}; \\q conto a {{deity_pronoun:ele|Ele}} toda a minha aflição.",
+          "R": "Eu {{deity_pronoun:lhe|Lhe}} conto tudo o que me preocupa. \\q Eu {{deity_pronoun:lhe|Lhe}} conto todos os meus problemas."
         },
         "am": {
-          "L": "ብሶቴን በፊቱ አፈስሳለሁ፤ ጭንቀቴን በፊቱ እናገራለሁ።",
-          "B": "ብሶቴን በፊቱ አፈስሳለሁ፤ የደረሰብኝን መከራ ሁሉ እነግረዋለሁ።",
-          "R": "የሚያስጨንቀኝን ሁሉ እነግረዋለሁ። መከራዬን ሁሉ እነግረዋለሁ።"
+          "L": "ብሶቴን በፊቱ አፈስሳለሁ፤ \\q ጭንቀቴን በፊቱ እናገራለሁ።",
+          "B": "ብሶቴን በፊቱ አፈስሳለሁ፤ \\q የደረሰብኝን መከራ ሁሉ እነግረዋለሁ።",
+          "R": "የሚያስጨንቀኝን ሁሉ እነግረዋለሁ። \\q መከራዬን ሁሉ እነግረዋለሁ።"
+        },
+        "hi": {
+          "L": "मैं उनके सामने अपनी शिकायत उँडेलता हूँ; \\q अपना संकट मैं उनके सामने बताता हूँ।",
+          "B": "मैं उनके सामने अपनी शिकायत उँडेल देता हूँ; \\q मैं उन्हें अपनी सारी परेशानी बताता हूँ।",
+          "R": "जो कुछ मुझे परेशान कर रहा है, वह सब मैं उन्हें बताता हूँ। \\q मैं उन्हें अपनी सारी मुसीबतें बताता हूँ।"
+        },
+        "ru": {
+          "L": "Изливаю перед {{deity_pronoun:ним|Ним}} мою жалобу; \\q мою беду перед {{deity_pronoun:ним|Ним}} я возвещаю.",
+          "B": "Я выплёскиваю перед {{deity_pronoun:ним|Ним}} свою жалобу; \\q я рассказываю {{deity_pronoun:ему|Ему}} обо всей моей беде.",
+          "R": "Я рассказываю {{deity_pronoun:ему|Ему}} обо всём, что меня тревожит. \\q Я рассказываю {{deity_pronoun:ему|Ему}} обо всех моих бедах."
+        },
+        "ja": {
+          "L": "わたしは、その方の前にわたしの嘆きを注ぎ出し、 \\q わたしの苦難を、その方の前に告げる。",
+          "B": "わたしはその方の前に嘆きを注ぎ出し、 \\q 苦しみのすべてを、その方に打ち明ける。",
+          "R": "わたしは、心を悩ませていることを、何もかもその方に話す。 \\q 苦しいことを、みなその方に打ち明ける。"
+        },
+        "uk": {
+          "L": "Я виливаю перед {{deity_pronoun:ним|Ним}} мою скаргу; \\q мою біду перед {{deity_pronoun:ним|Ним}} я розповідаю.",
+          "B": "Я виливаю перед {{deity_pronoun:ним|Ним}} свою скаргу; \\q я розповідаю {{deity_pronoun:йому|Йому}} про всю мою скруту.",
+          "R": "Я розповідаю {{deity_pronoun:йому|Йому}} про все, що мене гнітить. \\q Я розповідаю {{deity_pronoun:йому|Йому}} про всі мої біди."
+        },
+        "id": {
+          "L": "Aku mencurahkan keluhanku di hadapan-{{deity_pronoun:nya|Nya}}; \\q kesesakanku kuberitahukan di hadapan-{{deity_pronoun:nya|Nya}}.",
+          "B": "Aku mencurahkan keluh kesahku di hadapan-{{deity_pronoun:nya|Nya}}; \\q aku menceritakan kepada-{{deity_pronoun:nya|Nya}} segala kesesakanku.",
+          "R": "Aku menceritakan kepada-{{deity_pronoun:nya|Nya}} semua yang menyusahkan hatiku. \\q Aku memberitahukan kepada-{{deity_pronoun:nya|Nya}} segala kesulitanku."
         }
       },
       "decisions": [
@@ -572,6 +745,46 @@
           "reason": "The word is troubled thought spoken aloud (meaning decision m1); \"ብሶት\" is the Amharic for a grievance poured out, as for Job's complaint.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191420030023",
+            "o191420030053"
+          ],
+          "choice": "no deity_pronoun spans; उनके, उन्हें (honorific plural)",
+          "alternatives": [],
+          "reason": "Devanagari has no capital letters, so the deity_pronoun setting has nothing to change in Hindi. Speaking of the LORD here, the psalm uses the honorific plural; from verse 4 it speaks to him with तू.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191420030021",
+            "o191420030051"
+          ],
+          "choice": "lefanaw \"その方の前に\" (L, B), \"その方に\" (R); never 彼 for God",
+          "alternatives": [],
+          "reason": "The psalm speaks of the LORD in the third person here (m3); the Psalter uses その方 (PSA-1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -610,44 +823,69 @@
       "literal_gloss": "When it faints upon me, my spirit — and you, you know my path; in [the] way [that] I walk they have hidden a trap for me.",
       "renderings": {
         "en": {
-          "L": "When my spirit grows faint within me, [then] {{deity_pronoun:you|You}} — {{deity_pronoun:you|You}} know my path. In [the] way [where] I walk they have hidden a trap for me.",
-          "B": "When my spirit is fading within me, {{deity_pronoun:you|You}} are the one who knows my path. Along the road I travel they have hidden a trap for me.",
-          "R": "When I feel too weak to go on, {{deity_pronoun:you|You}} know the way I am going. People have hidden a trap on the road where I walk."
+          "L": "When my spirit grows faint within me, [then] {{deity_pronoun:you|You}} — \\q {{deity_pronoun:you|You}} know my path. \\q In [the] way [where] I walk they have hidden a trap for me.",
+          "B": "When my spirit is fading within me, {{deity_pronoun:you|You}} are the one who knows my path. \\q Along the road I travel they have hidden a trap for me.",
+          "R": "When I feel too weak to go on, {{deity_pronoun:you|You}} know the way I am going. \\q People have hidden a trap on the road where I walk."
         },
         "fr": {
-          "L": "Quand mon esprit défaille en moi, [alors] {{deity_pronoun:toi|Toi}} — {{deity_pronoun:tu|Tu}} connais mon sentier. Sur [le] chemin [où] je marche, ils ont caché un piège pour moi.",
-          "B": "Quand mon esprit s’épuise en moi, c’est {{deity_pronoun:toi|Toi}} qui connais mon sentier. Sur la route où je marche, ils m’ont caché un piège.",
-          "R": "Quand je me sens trop faible pour continuer, {{deity_pronoun:tu|Tu}} connais le chemin que je prends. Des gens ont caché un piège sur la route où je marche."
+          "L": "Quand mon esprit défaille en moi, [alors] {{deity_pronoun:toi|Toi}} — {{deity_pronoun:tu|Tu}} connais mon sentier. \\q Sur [le] chemin [où] je marche, \\q ils ont caché un piège pour moi.",
+          "B": "Quand mon esprit s’épuise en moi, c’est {{deity_pronoun:toi|Toi}} qui connais mon sentier. \\q Sur la route où je marche, \\q ils m’ont caché un piège.",
+          "R": "Quand je me sens trop faible pour continuer, {{deity_pronoun:tu|Tu}} connais le chemin que je prends. \\q Des gens ont caché un piège sur la route où je marche."
         },
         "sw": {
-          "L": "Roho yangu inapozimia ndani yangu, [ndipo] {{deity_pronoun:wewe|Wewe}} — {{deity_pronoun:wewe|Wewe}} unaijua njia yangu. Katika njia ninayotembea wamenifichia mtego.",
-          "B": "Roho yangu inapodhoofika ndani yangu, {{deity_pronoun:wewe|Wewe}} ndiye unayeijua njia yangu. Katika barabara ninayosafiri wamenifichia mtego.",
-          "R": "Ninapojiona dhaifu mno kuendelea, {{deity_pronoun:wewe|Wewe}} unaijua njia ninayoiendea. Watu wameficha mtego katika barabara ninayopita."
+          "L": "Roho yangu inapozimia ndani yangu, \\q [ndipo] {{deity_pronoun:wewe|Wewe}} — {{deity_pronoun:wewe|Wewe}} unaijua njia yangu. \\q Katika njia ninayotembea wamenifichia mtego.",
+          "B": "Roho yangu inapodhoofika ndani yangu, \\q {{deity_pronoun:wewe|Wewe}} ndiye unayeijua njia yangu. \\q Katika barabara ninayosafiri wamenifichia mtego.",
+          "R": "Ninapojiona dhaifu mno kuendelea, {{deity_pronoun:wewe|Wewe}} unaijua njia ninayoiendea. \\q Watu wameficha mtego katika barabara ninayopita."
         },
         "es": {
-          "L": "Cuando mi espíritu desfallece dentro de mí, [entonces] {{deity_pronoun:tú|Tú}}, {{deity_pronoun:tú|Tú}} conoces mi senda. En [el] camino [por donde] ando me han escondido una trampa.",
-          "B": "Cuando mi espíritu se apaga dentro de mí, {{deity_pronoun:tú|Tú}} eres el que conoce mi senda. En el camino por donde voy me han escondido una trampa.",
-          "R": "Cuando me siento demasiado débil para seguir, {{deity_pronoun:tú|Tú}} sabes por dónde voy. La gente ha escondido una trampa en el camino por donde ando."
+          "L": "Cuando mi espíritu desfallece dentro de mí, [entonces] {{deity_pronoun:tú|Tú}}, \\q {{deity_pronoun:tú|Tú}} conoces mi senda. \\q En [el] camino [por donde] ando me han escondido una trampa.",
+          "B": "Cuando mi espíritu se apaga dentro de mí, \\q {{deity_pronoun:tú|Tú}} eres el que conoce mi senda. \\q En el camino por donde voy me han escondido una trampa.",
+          "R": "Cuando me siento demasiado débil para seguir, {{deity_pronoun:tú|Tú}} sabes por dónde voy. \\q La gente ha escondido una trampa \\q en el camino por donde ando."
         },
         "vi": {
-          "L": "Khi tâm linh tôi mòn mỏi trong tôi, [thì] chính {{deity_pronoun:ngài|Ngài}}, {{deity_pronoun:ngài|Ngài}} biết đường lối tôi. Trên con đường tôi đi, chúng đã giấu bẫy để hại tôi.",
-          "B": "Khi tâm linh tôi rã rời trong tôi, chính {{deity_pronoun:ngài|Ngài}} là Đấng biết nẻo đường tôi đi. Dọc con đường tôi bước, chúng đã giấu bẫy để hại tôi.",
-          "R": "Khi tôi thấy mình quá yếu không bước tiếp được nữa, {{deity_pronoun:ngài|Ngài}} vẫn biết con đường tôi đang đi. Người ta đã giấu bẫy trên con đường tôi bước."
+          "L": "Khi tâm linh tôi mòn mỏi trong tôi, [thì] chính {{deity_pronoun:ngài|Ngài}}, \\q {{deity_pronoun:ngài|Ngài}} biết đường lối tôi. \\q Trên con đường tôi đi, chúng đã giấu bẫy để hại tôi.",
+          "B": "Khi tâm linh tôi rã rời trong tôi, \\q chính {{deity_pronoun:ngài|Ngài}} là Đấng biết nẻo đường tôi đi. \\q Dọc con đường tôi bước, chúng đã giấu bẫy để hại tôi.",
+          "R": "Khi tôi thấy mình quá yếu không bước tiếp được nữa, {{deity_pronoun:ngài|Ngài}} vẫn biết con đường tôi đang đi. \\q Người ta đã giấu bẫy trên con đường tôi bước."
         },
         "ko": {
-          "L": "제 영이 제 안에서 약해질 때에, 주님, 바로 주님께서 제 길을 아십니다. 제가 걷는 길에 그들이 저를 잡으려고 덫을 숨겼습니다.",
-          "B": "제 영이 속에서 꺼져 갈 때에도 제 길을 아시는 분은 주님이십니다. 제가 가는 길에 그들이 저를 잡으려고 덫을 숨겨 놓았습니다.",
-          "R": "제가 너무 지쳐서 더 갈 수 없을 때에도 주님께서는 제가 가는 길을 아십니다. 사람들이 제가 걷는 길에 덫을 숨겨 놓았습니다."
+          "L": "제 영이 제 안에서 약해질 때에, 주님, \\q 바로 주님께서 제 길을 아십니다. \\q 제가 걷는 길에 그들이 저를 잡으려고 덫을 숨겼습니다.",
+          "B": "제 영이 속에서 \\q 꺼져 갈 때에도 제 길을 아시는 분은 주님이십니다. \\q 제가 가는 길에 그들이 저를 잡으려고 덫을 숨겨 놓았습니다.",
+          "R": "제가 너무 지쳐서 더 갈 수 없을 때에도 주님께서는 제가 가는 길을 아십니다. \\q 사람들이 제가 걷는 길에 덫을 숨겨 놓았습니다."
         },
         "pt": {
-          "L": "Quando o meu espírito desfalece dentro de mim, [então] {{deity_pronoun:tu|Tu}} — {{deity_pronoun:tu|Tu}} conheces a minha vereda. No caminho [por onde] ando esconderam uma armadilha para mim.",
-          "B": "Quando o meu espírito vai se apagando dentro de mim, és {{deity_pronoun:tu|Tu}} quem conhece a minha vereda. Na estrada por onde sigo esconderam uma armadilha para mim.",
-          "R": "Quando me sinto fraco demais para continuar, {{deity_pronoun:tu|Tu}} sabes o caminho por onde vou. Há gente que escondeu uma armadilha na estrada por onde eu ando."
+          "L": "Quando o meu espírito desfalece dentro de mim, [então] {{deity_pronoun:tu|Tu}} — \\q {{deity_pronoun:tu|Tu}} conheces a minha vereda. \\q No caminho [por onde] ando esconderam uma armadilha para mim.",
+          "B": "Quando o meu espírito vai se apagando dentro de mim, és {{deity_pronoun:tu|Tu}} quem conhece a minha vereda. \\q Na estrada por onde sigo esconderam uma armadilha para mim.",
+          "R": "Quando me sinto fraco demais para continuar, {{deity_pronoun:tu|Tu}} sabes o caminho por onde vou. \\q Há gente que escondeu uma armadilha \\q na estrada por onde eu ando."
         },
         "am": {
-          "L": "መንፈሴ በውስጤ በዛለ ጊዜ፣ [ያን ጊዜ] አንተ፣ አንተ መንገዴን ታውቃለህ። በምሄድበት መንገድ ወጥመድ ሰወሩብኝ።",
-          "B": "መንፈሴ በውስጤ በደከመ ጊዜ መንገዴን የምታውቅ አንተ ነህ። በምጓዝበት ጎዳና ላይ ወጥመድ ደበቁብኝ።",
-          "R": "ከእንግዲህ መቀጠል እስከማልችል ድረስ በደከምኩ ጊዜ የምሄድበትን መንገድ ታውቃለህ። ሰዎች በምሄድበት መንገድ ላይ ወጥመድ ደብቀውብኛል።"
+          "L": "መንፈሴ በውስጤ በዛለ ጊዜ፣ [ያን ጊዜ] አንተ፣ \\q አንተ መንገዴን ታውቃለህ። \\q በምሄድበት መንገድ ወጥመድ ሰወሩብኝ።",
+          "B": "መንፈሴ በውስጤ በደከመ ጊዜ \\q መንገዴን የምታውቅ አንተ ነህ። \\q በምጓዝበት ጎዳና ላይ ወጥመድ ደበቁብኝ።",
+          "R": "ከእንግዲህ መቀጠል እስከማልችል ድረስ በደከምኩ ጊዜ የምሄድበትን መንገድ ታውቃለህ። \\q ሰዎች በምሄድበት መንገድ ላይ ወጥመድ ደብቀውብኛል።"
+        },
+        "hi": {
+          "L": "जब मेरी आत्मा मेरे भीतर मूर्छित होती है, [तब] तू, तू ही मेरा मार्ग जानता है। \\q जिस मार्ग पर मैं चलता हूँ, \\q [उसमें] उन्होंने मेरे लिए फंदा छिपा रखा है।",
+          "B": "जब मेरी आत्मा मेरे भीतर डूबती जाती है, तब तू ही है जो मेरा मार्ग जानता है। \\q जिस मार्ग पर मैं चलता हूँ, उस पर उन्होंने मेरे लिए फंदा छिपा रखा है।",
+          "R": "जब मैं इतना कमज़ोर हो जाता हूँ कि आगे नहीं बढ़ सकता, तब तू जानता है कि मैं किस रास्ते पर जा रहा हूँ। \\q लोगों ने उस रास्ते पर फंदा छिपा रखा है जिस पर मैं चलता हूँ।"
+        },
+        "ru": {
+          "L": "Когда изнемогает во мне мой дух, [тогда] {{deity_pronoun:ты|Ты}} — {{deity_pronoun:ты|Ты}} знаешь мою тропу. \\q На пути, [которым] я иду, \\q они спрятали для меня западню.",
+          "B": "Когда мой дух слабеет во мне, именно {{deity_pronoun:ты|Ты}} знаешь мою тропу. \\q На дороге, по которой я иду, они спрятали для меня западню.",
+          "R": "Когда у меня нет сил идти дальше, {{deity_pronoun:ты|Ты}} знаешь, куда я иду. \\q Люди спрятали ловушку на дороге, по которой я хожу."
+        },
+        "ja": {
+          "L": "わたしの霊が、わたしのうちで弱り果てるとき、あなたは――あなたは、わたしの道筋を知っておられる。 \\q わたしが歩むその道に、 \\q 彼らはわたしのためにわなを隠した。",
+          "B": "わたしの霊がわたしのうちで衰えていくときも、 \\q わたしの道を知っておられるのは、あなただ。 \\q わたしが歩いて行く道に、彼らはわなを隠した。",
+          "R": "わたしが弱り果てて、もう先へ進めないと思うときも、 \\q あなたはわたしの行く道を知っておられる。 \\q わたしが歩く道に、人々がわなを隠した。"
+        },
+        "uk": {
+          "L": "Коли мій дух знемагає в мені, [то] {{deity_pronoun:ти|Ти}} — {{deity_pronoun:ти|Ти}} знаєш мою стежку. \\q На дорозі, [якою] я ходжу, \\q вони сховали для мене пастку.",
+          "B": "Коли мій дух згасає в мені, {{deity_pronoun:ти|Ти}} — той, хто знає мою стежку. \\q На дорозі, якою я йду, \\q вони сховали для мене пастку.",
+          "R": "Коли я відчуваю, що не маю сили йти далі, {{deity_pronoun:ти|Ти}} знаєш, куди я йду. \\q Люди сховали пастку на дорозі, якою я ходжу."
+        },
+        "id": {
+          "L": "Ketika rohku lemah lesu di dalam aku, [saat itu] {{deity_pronoun:engkau|Engkau}} — \\q {{deity_pronoun:engkau|Engkau}} mengenal jalanku. \\q Di jalan [yang] kutempuh mereka telah menyembunyikan jerat bagiku.",
+          "B": "Ketika semangatku hampir padam di dalam aku, {{deity_pronoun:engkau|Engkau}}lah yang mengenal jalanku. \\q Di sepanjang jalan yang kulalui mereka telah menyembunyikan jerat bagiku.",
+          "R": "Ketika aku merasa terlalu lemah untuk melanjutkan, {{deity_pronoun:engkau|Engkau}} tahu jalan yang sedang kutempuh. \\q Orang-orang telah menyembunyikan perangkap di jalan yang kulalui."
         }
       },
       "decisions": [
@@ -711,6 +949,45 @@
           "reason": "Readable says who \"they\" are in plain words: the psalmist's enemies.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191420040022"
+          ],
+          "choice": "मेरी आत्मा (the human spirit, feminine)",
+          "alternatives": [
+            "मेरा मन"
+          ],
+          "reason": "The psalmist's own spirit takes the feminine agreement usual in Hindi, kept apart from God's Spirit (masculine, as 139:7 and 143:10).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o191420040041",
+            "o191420040051"
+          ],
+          "choice": "we'attah \"あなたは――あなたは\" (L), \"知っておられるのは、あなただ\" (B)",
+          "alternatives": [],
+          "reason": "The pronoun is stressed (m3); L keeps the break as the English L does, B puts the stress at the end of the clause.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -748,44 +1025,69 @@
       "literal_gloss": "Look [to the] right and see: and there is not for me one who takes notice; refuge has perished from me; there is not one who seeks for my soul.",
       "renderings": {
         "en": {
-          "L": "Look [to the] right and see: there is no one who takes notice of me; refuge has perished from me; there is no one who cares for my soul.",
-          "B": "Look to my right and see: there is no one who knows me. Every way of escape is gone; nobody looks out for me.",
-          "R": "Look beside me and see. No one there knows me or pays attention to me. I have no place to run to. No one cares what happens to me."
+          "L": "Look [to the] right and see: there is no one who takes notice of me; \\q refuge has perished from me; \\q there is no one who cares for my soul.",
+          "B": "Look to my right and see: there is no one who knows me. \\q Every way of escape is gone; \\q nobody looks out for me.",
+          "R": "Look beside me and see. No one there knows me or pays attention to me. \\q I have no place to run to. \\q No one cares what happens to me."
         },
         "fr": {
-          "L": "Regarde [à] droite et vois : il n’y a personne qui me reconnaisse ; le refuge m’a fait défaut ; il n’y a personne qui se soucie de mon âme.",
-          "B": "Regarde à ma droite et vois : personne ne me connaît. Toute issue a disparu ; personne ne veille sur moi.",
-          "R": "Regarde à côté de moi. Il n’y a là personne qui me connaisse ou qui fasse attention à moi. Je n’ai nulle part où me réfugier. Personne ne s’inquiète de ce qui m’arrive."
+          "L": "Regarde [à] droite et vois : il n’y a personne qui me reconnaisse ; \\q le refuge m’a fait défaut ; \\q il n’y a personne qui se soucie de mon âme.",
+          "B": "Regarde à ma droite et vois : personne ne me connaît. \\q Toute issue a disparu ; \\q personne ne veille sur moi.",
+          "R": "Regarde à côté de moi. Il n’y a là personne qui me connaisse ou qui fasse attention à moi. \\q Je n’ai nulle part où me réfugier. \\q Personne ne s’inquiète de ce qui m’arrive."
         },
         "sw": {
-          "L": "Tazama [upande wa] kulia uone: hakuna anayenitambua; kimbilio limenipotea; hakuna anayeijali nafsi yangu.",
-          "B": "Tazama upande wangu wa kulia uone: hakuna anayenijua. Kila njia ya kukimbilia imetoweka; hakuna anayenitazamia.",
-          "R": "Tazama kando yangu uone. Hakuna mtu pale anayenijua au kunijali. Sina mahali pa kukimbilia. Hakuna anayejali yatakayonipata."
+          "L": "Tazama [upande wa] kulia uone: hakuna anayenitambua; \\q kimbilio limenipotea; \\q hakuna anayeijali nafsi yangu.",
+          "B": "Tazama upande wangu wa kulia uone: hakuna anayenijua. \\q Kila njia ya kukimbilia imetoweka; \\q hakuna anayenitazamia.",
+          "R": "Tazama kando yangu uone. Hakuna mtu pale anayenijua au kunijali. \\q Sina mahali pa kukimbilia. \\q Hakuna anayejali yatakayonipata."
         },
         "es": {
-          "L": "Mira a [la] derecha y ve: no hay quien me reconozca; el refugio se me ha perdido; no hay quien se interese por mi alma.",
-          "B": "Mira a mi derecha y ve: no hay nadie que me conozca. Toda salida ha desaparecido; nadie se preocupa por mí.",
-          "R": "Mira a mi lado y ve. Nadie allí me conoce ni me presta atención. No tengo adónde huir. A nadie le importa lo que me pase."
+          "L": "Mira a [la] derecha y ve: no hay quien me reconozca; \\q el refugio se me ha perdido; \\q no hay quien se interese por mi alma.",
+          "B": "Mira a mi derecha y ve: no hay nadie que me conozca. \\q Toda salida ha desaparecido; \\q nadie se preocupa por mí.",
+          "R": "Mira a mi lado y ve. Nadie allí me conoce ni me presta atención. \\q No tengo adónde huir. \\q A nadie le importa lo que me pase."
         },
         "vi": {
-          "L": "Xin nhìn [sang] bên phải và xem: không có ai đoái đến tôi; nơi ẩn náu đã mất khỏi tôi; không có ai quan tâm đến linh hồn tôi.",
-          "B": "Xin nhìn sang bên phải tôi mà xem: chẳng có ai nhận biết tôi. Mọi lối thoát đều đã mất; chẳng ai lo lắng cho tôi.",
-          "R": "Xin nhìn bên cạnh tôi mà xem. Không ai ở đó biết tôi hay để ý đến tôi. Tôi không còn chỗ nào để chạy trốn. Không ai quan tâm điều gì xảy ra cho tôi."
+          "L": "Xin nhìn [sang] bên phải và xem: không có ai đoái đến tôi; \\q nơi ẩn náu đã mất khỏi tôi; \\q không có ai quan tâm đến linh hồn tôi.",
+          "B": "Xin nhìn sang bên phải tôi mà xem: chẳng có ai nhận biết tôi. \\q Mọi lối thoát đều đã mất; \\q chẳng ai lo lắng cho tôi.",
+          "R": "Xin nhìn bên cạnh tôi mà xem. Không ai ở đó biết tôi hay để ý đến tôi. \\q Tôi không còn chỗ nào để chạy trốn. \\q Không ai quan tâm điều gì xảy ra cho tôi."
         },
         "ko": {
-          "L": "오른쪽을 보시고 살펴보십시오. 저를 알아주는 이가 아무도 없습니다. 피할 곳이 제게서 사라졌고, 제 영혼을 돌보는 이가 아무도 없습니다.",
-          "B": "제 오른쪽을 보십시오. 저를 알아주는 사람이 아무도 없습니다. 피할 길이 모두 끊어졌고, 저를 돌보아 주는 사람이 아무도 없습니다.",
-          "R": "제 곁을 보십시오. 저를 알아주거나 저에게 관심을 두는 사람이 아무도 없습니다. 저는 달아날 곳이 없습니다. 제가 어떻게 되든 신경 쓰는 사람이 아무도 없습니다."
+          "L": "오른쪽을 보시고 살펴보십시오. 저를 알아주는 이가 아무도 없습니다. \\q 피할 곳이 제게서 사라졌고, \\q 제 영혼을 돌보는 이가 아무도 없습니다.",
+          "B": "제 오른쪽을 보십시오. 저를 알아주는 사람이 아무도 없습니다. \\q 피할 길이 모두 끊어졌고, \\q 저를 돌보아 주는 사람이 아무도 없습니다.",
+          "R": "제 곁을 보십시오. 저를 알아주거나 저에게 관심을 두는 사람이 아무도 없습니다. \\q 저는 달아날 곳이 없습니다. \\q 제가 어떻게 되든 신경 쓰는 사람이 아무도 없습니다."
         },
         "pt": {
-          "L": "Olha [para a] direita e vê: não há quem me reconheça; o refúgio sumiu de mim; não há quem se importe com a minha alma.",
-          "B": "Olha para a minha direita e vê: não há ninguém que me conheça. Toda saída desapareceu; ninguém cuida de mim.",
-          "R": "Olha ao meu lado e vê. Ninguém ali me conhece ou presta atenção em mim. Não tenho para onde fugir. Ninguém se importa com o que acontece comigo."
+          "L": "Olha [para a] direita e vê: não há quem me reconheça; \\q o refúgio sumiu de mim; \\q não há quem se importe com a minha alma.",
+          "B": "Olha para a minha direita e vê: não há ninguém que me conheça. \\q Toda saída desapareceu; \\q ninguém cuida de mim.",
+          "R": "Olha ao meu lado e vê. Ninguém ali me conhece ou presta atenção em mim. \\q Não tenho para onde fugir. \\q Ninguém se importa com o que acontece comigo."
         },
         "am": {
-          "L": "ወደ ቀኝ ተመልከት፤ እይም፤ የሚያውቀኝ የለም፤ መሸሸጊያ ከእኔ ጠፋ፤ ስለ ነፍሴ የሚገደው የለም።",
-          "B": "ወደ ቀኜ ተመልከትና እይ፤ የሚያውቀኝ ማንም የለም። የማመልጥበት ስፍራ ሁሉ ጠፍቷል፤ የሚጠብቀኝ ማንም የለም።",
-          "R": "ከጎኔ ተመልከትና እይ። በዚያ የሚያውቀኝ ወይም የሚያስብልኝ ማንም የለም። የምሸሽበት ስፍራ የለኝም። ምን እንደሚደርስብኝ ግድ የሚለው ማንም የለም።"
+          "L": "ወደ ቀኝ ተመልከት፤ እይም፤ የሚያውቀኝ የለም፤ \\q መሸሸጊያ ከእኔ ጠፋ፤ \\q ስለ ነፍሴ የሚገደው የለም።",
+          "B": "ወደ ቀኜ ተመልከትና እይ፤ የሚያውቀኝ ማንም የለም። \\q የማመልጥበት ስፍራ ሁሉ ጠፍቷል፤ \\q የሚጠብቀኝ ማንም የለም።",
+          "R": "ከጎኔ ተመልከትና እይ። በዚያ የሚያውቀኝ ወይም የሚያስብልኝ ማንም የለም። \\q የምሸሽበት ስፍራ የለኝም። \\q ምን እንደሚደርስብኝ ግድ የሚለው ማንም የለም።"
+        },
+        "hi": {
+          "L": "दाहिनी ओर देख और निहार: मेरी सुधि लेनेवाला कोई नहीं; \\q मेरे लिए शरण मिट गई है; \\q मेरे प्राण की चिंता करनेवाला कोई नहीं।",
+          "B": "मेरी दाहिनी ओर देख: वहाँ कोई नहीं जो मुझे पहचाने। \\q बच निकलने का हर रास्ता बंद हो गया है; \\q कोई मेरी चिंता नहीं करता।",
+          "R": "मेरे पास देख। वहाँ कोई नहीं जो मुझे जानता हो या मुझ पर ध्यान दे। \\q मेरे पास भागकर जाने के लिए कोई जगह नहीं। \\q किसी को परवाह नहीं कि मेरा क्या होता है।"
+        },
+        "ru": {
+          "L": "Посмотри направо и увидь: нет никого, кто признал бы меня; \\q убежище пропало для меня; \\q нет никого, кто заботился бы о моей душе.",
+          "B": "Посмотри по правую руку от меня: нет никого, кто бы меня знал. \\q Все пути к спасению отрезаны; \\q никто обо мне не заботится.",
+          "R": "Посмотри, кто рядом со мной. Там нет никого, кто знает меня или обращает на меня внимание. \\q Мне некуда бежать. \\q Никому нет дела до того, что со мной случится."
+        },
+        "ja": {
+          "L": "右を見て、ご覧ください。わたしに目を留める者はいない。 \\q 逃れ場はわたしから失われ、 \\q わたしの魂を尋ね求める者はいない。",
+          "B": "わたしの右を見て、確かめてください。わたしを知る者はだれもいない。 \\q 逃れ場はすべて失われ、 \\q わたしを気遣う者はひとりもいない。",
+          "R": "わたしのそばを見てください。そこには、わたしを知っている人も、わたしに気をかけてくれる人もいない。 \\q 逃げて行く所もない。 \\q わたしがどうなろうと、だれも気にしない。"
+        },
+        "uk": {
+          "L": "Подивись праворуч і побач: немає нікого, хто зважає на мене; \\q притулок зник від мене; \\q немає нікого, хто дбає про мою душу.",
+          "B": "Глянь праворуч від мене й побач: немає нікого, хто б мене знав. \\q Кожен шлях до втечі зник; \\q ніхто не пильнує мене.",
+          "R": "Подивись поруч зі мною й побач. Там немає нікого, хто знає мене чи зважає на мене. \\q Мені немає куди втекти. \\q Нікого не обходить, що зі мною буде."
+        },
+        "id": {
+          "L": "Lihatlah [ke] kanan dan perhatikanlah: tidak ada seorang pun yang mengindahkan aku; \\q tempat perlindungan telah lenyap dariku; \\q tidak ada seorang pun yang memedulikan jiwaku.",
+          "B": "Lihatlah ke sebelah kananku dan perhatikanlah: tidak ada seorang pun yang mengenal aku. \\q Setiap jalan untuk meloloskan diri telah hilang; \\q tidak ada orang yang peduli kepadaku.",
+          "R": "Lihatlah ke sampingku dan perhatikanlah. Tidak ada orang di sana yang mengenal aku atau memperhatikan aku. \\q Aku tidak punya tempat untuk melarikan diri. \\q Tidak ada orang yang peduli apa yang terjadi padaku."
         }
       },
       "decisions": [
@@ -867,6 +1169,64 @@
           "reason": "As 2 Samuel 22:3 on main; \"መጠጊያ\" is kept for machaseh (refuge), which stands in the next verse.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191420050021"
+          ],
+          "choice": "направо (L); по правую руку от меня (B)",
+          "alternatives": [],
+          "reason": "The right side is where a defender stood (m1); Literal and Balanced keep the side, Readable says \"рядом со мной\", as the English \"beside me\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191420050011",
+            "o191420050031"
+          ],
+          "choice": "habbet / re'eh as requests to God: \"見て、ご覧ください\" (L), \"見て、確かめてください\" (B), \"見てください\" (R)",
+          "alternatives": [],
+          "reason": "The two verbs are read as commands to God (m2, uncertain); the Psalter puts requests to God as 〜てください, never 見よ. manos \"逃れ場\" (PSA-1).",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191420050011",
+            "o191420050032"
+          ],
+          "choice": "\"Lihatlah ... perhatikanlah\"",
+          "alternatives": [],
+          "reason": "Commands addressed to God (m2, uncertain).",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -900,44 +1260,69 @@
       "literal_gloss": "I cry out to you, YHWH; I say, You [are] my refuge, my portion in [the] land of the living.",
       "renderings": {
         "en": {
-          "L": "I have cried out to {{deity_pronoun:you|You}}, {{divine_name:LORD|Yahweh}}; I have said, \"You [are] my refuge, my portion in the land of the living.\"",
-          "B": "I cry out to {{deity_pronoun:you|You}}, {{divine_name:LORD|Yahweh}}. I say, \"You are my shelter, all I have in the land of the living.\"",
-          "R": "{{divine_name:LORD|Yahweh}}, I cry out to {{deity_pronoun:you|You}}. I say, \"You are the place where I am safe. You are all I have while I am alive.\""
+          "L": "I have cried out to {{deity_pronoun:you|You}}, {{divine_name:LORD|Yahweh}}; \\q I have said, \"You [are] my refuge, \\q my portion in the land of the living.\"",
+          "B": "I cry out to {{deity_pronoun:you|You}}, {{divine_name:LORD|Yahweh}}. \\q I say, \"You are my shelter, \\q all I have in the land of the living.\"",
+          "R": "{{divine_name:LORD|Yahweh}}, I cry out to {{deity_pronoun:you|You}}. \\q I say, \"You are the place where I am safe. \\q You are all I have while I am alive.\""
         },
         "fr": {
-          "L": "J’ai crié vers {{deity_pronoun:toi|Toi}}, {{divine_name:SEIGNEUR|Yahvé}} ; j’ai dit : « Toi, [{{deity_pronoun:tu|Tu}} es] mon refuge, ma part sur la terre des vivants. »",
-          "B": "Je crie vers {{deity_pronoun:toi|Toi}}, {{divine_name:SEIGNEUR|Yahvé}}. Je dis : « Tu es mon abri, tout ce que j’ai sur la terre des vivants. »",
-          "R": "{{divine_name:SEIGNEUR|Yahvé}}, je crie vers {{deity_pronoun:toi|Toi}}. Je dis : « Tu es l’endroit où je suis en sécurité. Tu es tout ce que j’ai tant que je suis en vie. »"
+          "L": "J’ai crié vers {{deity_pronoun:toi|Toi}}, {{divine_name:SEIGNEUR|Yahvé}} ; \\q j’ai dit : « Toi, [{{deity_pronoun:tu|Tu}} es] mon refuge, \\q ma part sur la terre des vivants. »",
+          "B": "Je crie vers {{deity_pronoun:toi|Toi}}, {{divine_name:SEIGNEUR|Yahvé}}. \\q Je dis : « Tu es mon abri, \\q tout ce que j’ai sur la terre des vivants. »",
+          "R": "{{divine_name:SEIGNEUR|Yahvé}}, je crie vers {{deity_pronoun:toi|Toi}}. \\q Je dis : « Tu es l’endroit où je suis en sécurité. \\q Tu es tout ce que j’ai tant que je suis en vie. »"
         },
         "sw": {
-          "L": "Nimekulilia {{deity_pronoun:wewe|Wewe}}, Ee {{divine_name:BWANA|Yahwe}}; nimesema, \"Wewe [ni] kimbilio langu, fungu langu katika nchi ya walio hai.\"",
-          "B": "Ninakulilia {{deity_pronoun:wewe|Wewe}}, Ee {{divine_name:BWANA|Yahwe}}. Ninasema, \"Wewe ni kimbilio langu, kila nilicho nacho katika nchi ya walio hai.\"",
-          "R": "{{divine_name:BWANA|Yahwe}}, ninakulilia {{deity_pronoun:wewe|Wewe}}. Ninasema, \"Wewe ndiye mahali ninapokuwa salama. Wewe ndiye kila kitu nilicho nacho maadamu niko hai.\""
+          "L": "Nimekulilia {{deity_pronoun:wewe|Wewe}}, Ee {{divine_name:BWANA|Yahwe}}; \\q nimesema, \"Wewe [ni] kimbilio langu, \\q fungu langu katika nchi ya walio hai.\"",
+          "B": "Ninakulilia {{deity_pronoun:wewe|Wewe}}, Ee {{divine_name:BWANA|Yahwe}}. \\q Ninasema, \"Wewe ni kimbilio langu, \\q kila nilicho nacho katika nchi ya walio hai.\"",
+          "R": "{{divine_name:BWANA|Yahwe}}, ninakulilia {{deity_pronoun:wewe|Wewe}}. \\q Ninasema, \"Wewe ndiye mahali ninapokuwa salama. \\q Wewe ndiye kila kitu nilicho nacho maadamu niko hai.\""
         },
         "es": {
-          "L": "He clamado a {{deity_pronoun:ti|Ti}}, {{divine_name:SEÑOR|Yahvé}}; he dicho: «Tú [eres] mi refugio, mi porción en la tierra de los vivientes».",
-          "B": "Clamo a {{deity_pronoun:ti|Ti}}, {{divine_name:SEÑOR|Yahvé}}. Digo: «Tú eres mi refugio, todo lo que tengo en la tierra de los vivientes».",
-          "R": "{{divine_name:SEÑOR|Yahvé}}, clamo a {{deity_pronoun:ti|Ti}}. Digo: «Tú eres el lugar donde estoy a salvo. Tú eres todo lo que tengo mientras vivo»."
+          "L": "He clamado a {{deity_pronoun:ti|Ti}}, {{divine_name:SEÑOR|Yahvé}}; \\q he dicho: «Tú [eres] mi refugio, \\q mi porción en la tierra de los vivientes».",
+          "B": "Clamo a {{deity_pronoun:ti|Ti}}, {{divine_name:SEÑOR|Yahvé}}. \\q Digo: «Tú eres mi refugio, \\q todo lo que tengo en la tierra de los vivientes».",
+          "R": "{{divine_name:SEÑOR|Yahvé}}, clamo a {{deity_pronoun:ti|Ti}}. \\q Digo: «Tú eres el lugar donde estoy a salvo. \\q Tú eres todo lo que tengo mientras vivo»."
         },
         "vi": {
-          "L": "Lạy {{divine_name:CHÚA|Gia-vê}}, tôi đã kêu cầu {{deity_pronoun:ngài|Ngài}}; tôi đã nói: \"Ngài [là] nơi ẩn náu của tôi, phần của tôi trên đất người sống.\"",
-          "B": "Lạy {{divine_name:CHÚA|Gia-vê}}, tôi kêu cầu {{deity_pronoun:ngài|Ngài}}. Tôi thưa: \"Ngài là nơi ẩn náu của tôi, là tất cả những gì tôi có trên đất người sống.\"",
-          "R": "Lạy {{divine_name:CHÚA|Gia-vê}}, tôi kêu cầu {{deity_pronoun:ngài|Ngài}}. Tôi thưa: \"Ngài là nơi tôi được an toàn. Ngài là tất cả những gì tôi có khi tôi còn sống.\""
+          "L": "Lạy {{divine_name:CHÚA|Gia-vê}}, tôi đã kêu cầu {{deity_pronoun:ngài|Ngài}}; \\q tôi đã nói: \\q \"Ngài [là] nơi ẩn náu của tôi, phần của tôi trên đất người sống.\"",
+          "B": "Lạy {{divine_name:CHÚA|Gia-vê}}, tôi kêu cầu {{deity_pronoun:ngài|Ngài}}. \\q Tôi thưa: \"Ngài là nơi ẩn náu của tôi, \\q là tất cả những gì tôi có trên đất người sống.\"",
+          "R": "Lạy {{divine_name:CHÚA|Gia-vê}}, tôi kêu cầu {{deity_pronoun:ngài|Ngài}}. \\q Tôi thưa: \"Ngài là nơi tôi được an toàn. \\q Ngài là tất cả những gì tôi có khi tôi còn sống.\""
         },
         "ko": {
-          "L": "{{divine_name:주|야훼}}여, 제가 주님께 부르짖었습니다. 제가 말하였습니다. \"주님은 제 피난처, 살아 있는 사람들의 땅에서 제 몫이십니다.\"",
-          "B": "{{divine_name:주|야훼}}여, 제가 주님께 부르짖습니다. 제가 아룁니다. \"주님은 저의 피난처, 살아 있는 사람들의 땅에서 제가 가진 전부이십니다.\"",
-          "R": "{{divine_name:주|야훼}}여, 제가 주님께 부르짖습니다. 제가 말씀드립니다. \"주님은 제가 안전하게 있을 곳이십니다. 제가 살아 있는 동안 주님은 제가 가진 전부이십니다.\""
+          "L": "{{divine_name:주|야훼}}여, 제가 주님께 부르짖었습니다. \\q 제가 말하였습니다. \\q \"주님은 제 피난처, 살아 있는 사람들의 땅에서 제 몫이십니다.\"",
+          "B": "{{divine_name:주|야훼}}여, 제가 주님께 부르짖습니다. \\q 제가 아룁니다. \"주님은 저의 피난처, \\q 살아 있는 사람들의 땅에서 제가 가진 전부이십니다.\"",
+          "R": "{{divine_name:주|야훼}}여, 제가 주님께 부르짖습니다. \\q 제가 말씀드립니다. \"주님은 제가 안전하게 있을 곳이십니다. \\q 제가 살아 있는 동안 주님은 제가 가진 전부이십니다.\""
         },
         "pt": {
-          "L": "Clamei a {{deity_pronoun:ti|Ti}}, {{divine_name:SENHOR|Javé}}; eu disse: \"Tu [és] o meu refúgio, a minha porção na terra dos viventes.\"",
-          "B": "Clamo a {{deity_pronoun:ti|Ti}}, {{divine_name:SENHOR|Javé}}. Eu digo: \"Tu és o meu abrigo, tudo o que tenho na terra dos viventes.\"",
-          "R": "{{divine_name:SENHOR|Javé}}, eu clamo a {{deity_pronoun:ti|Ti}}. Eu digo: \"Tu és o lugar onde estou seguro. Tu és tudo o que eu tenho enquanto vivo.\""
+          "L": "Clamei a {{deity_pronoun:ti|Ti}}, {{divine_name:SENHOR|Javé}}; \\q eu disse: \"Tu [és] o meu refúgio, \\q a minha porção na terra dos viventes.\"",
+          "B": "Clamo a {{deity_pronoun:ti|Ti}}, {{divine_name:SENHOR|Javé}}. \\q Eu digo: \"Tu és o meu abrigo, \\q tudo o que tenho na terra dos viventes.\"",
+          "R": "{{divine_name:SENHOR|Javé}}, eu clamo a {{deity_pronoun:ti|Ti}}. \\q Eu digo: \"Tu és o lugar onde estou seguro. \\q Tu és tudo o que eu tenho enquanto vivo.\""
         },
         "am": {
-          "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ወደ አንተ ጮኽኩ፤ እንዲህም አልኩ፦ «አንተ መጠጊያዬ፣ በሕያዋን ምድር ዕድል ፈንታዬ [ነህ]።»",
-          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ወደ አንተ እጮኻለሁ። እንዲህም እላለሁ፦ «አንተ መጠጊያዬ ነህ፤ በሕያዋን ምድር ያለኝ ሁሉ አንተ ነህ።»",
-          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ወደ አንተ እጮኻለሁ። እንዲህም እላለሁ፦ «ደኅንነቴን የማገኝበት ስፍራ አንተ ነህ። በሕይወት እስካለሁ ድረስ ያለኝ ሁሉ አንተ ብቻ ነህ።»"
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ወደ አንተ ጮኽኩ፤ \\q እንዲህም አልኩ፦ \\q «አንተ መጠጊያዬ፣ በሕያዋን ምድር ዕድል ፈንታዬ [ነህ]።»",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ወደ አንተ እጮኻለሁ። \\q እንዲህም እላለሁ፦ \\q «አንተ መጠጊያዬ ነህ፤ በሕያዋን ምድር ያለኝ ሁሉ አንተ ነህ።»",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ወደ አንተ እጮኻለሁ። \\q እንዲህም እላለሁ፦ «ደኅንነቴን የማገኝበት ስፍራ አንተ ነህ። \\q በሕይወት እስካለሁ ድረስ ያለኝ ሁሉ አንተ ብቻ ነህ።»"
+        },
+        "hi": {
+          "L": "हे {{divine_name:प्रभु|याहवे}}, मैंने तेरी दुहाई दी है; \\q मैंने कहा है, \"तू मेरा शरणस्थान [है], \\q जीवितों के देश में मेरा भाग।\"",
+          "B": "हे {{divine_name:प्रभु|याहवे}}, मैं तेरी दुहाई देता हूँ। \\q मैं कहता हूँ, \"तू मेरा शरणस्थान है, \\q जीवितों के देश में मेरा सब कुछ।\"",
+          "R": "हे {{divine_name:प्रभु|याहवे}}, मैं तेरी दुहाई देता हूँ। \\q मैं कहता हूँ, \"तू ही वह स्थान है जहाँ मैं सुरक्षित हूँ। \\q जब तक मैं जीवित हूँ, तू ही मेरा सब कुछ है।\""
+        },
+        "ru": {
+          "L": "Я воззвал к {{deity_pronoun:тебе|Тебе}}, {{divine_name:ГОСПОДИ|Яхве}}; \\q я сказал: «Ты — моё прибежище, \\q моя доля на земле живых.»",
+          "B": "Я взываю к {{deity_pronoun:тебе|Тебе}}, {{divine_name:ГОСПОДИ|Яхве}}. \\q Я говорю: «Ты — моё укрытие, всё, \\q что у меня есть на земле живых.»",
+          "R": "{{divine_name:ГОСПОДИ|Яхве}}, я взываю к {{deity_pronoun:тебе|Тебе}}. \\q Я говорю: «Ты — место, где я в безопасности. \\q Ты — всё, что у меня есть, пока я жив.»"
+        },
+        "ja": {
+          "L": "{{divine_name:主|ヤハウェ}}よ、わたしはあなたに叫んだ。 \\q わたしは言った。「あなたはわたしの避け所、 \\q 生ける者の地での、わたしの分け前。」",
+          "B": "{{divine_name:主|ヤハウェ}}よ、わたしはあなたに叫び求める。 \\q わたしは言う。「あなたこそ、わたしの避け所。 \\q 生ける者の地での、わたしの分け前。」",
+          "R": "{{divine_name:主|ヤハウェ}}よ、わたしはあなたに叫ぶ。わたしは言う。 \\q 「あなたこそ、わたしが逃げ込む場所。 \\q 生きている間、あなたがわたしの分け前、わたしのすべてだ。」"
+        },
+        "uk": {
+          "L": "Я волав до {{deity_pronoun:тебе|Тебе}}, {{divine_name:ГОСПОДИ|Ягве}}; \\q я сказав: «Ти — мій притулок, \\q моя частка в землі живих.»",
+          "B": "Я взиваю до {{deity_pronoun:тебе|Тебе}}, {{divine_name:ГОСПОДИ|Ягве}}. \\q Я кажу: «Ти — моє сховище, \\q усе, що я маю в землі живих.»",
+          "R": "{{divine_name:ГОСПОДИ|Ягве}}, я кличу до {{deity_pronoun:тебе|Тебе}}. \\q Я кажу: «Ти — місце, де я в безпеці. \\q Ти — усе, що я маю, поки я живий.»"
+        },
+        "id": {
+          "L": "Aku telah berseru kepada-{{deity_pronoun:mu|Mu}}, ya {{divine_name:TUHAN|Yahweh}}; \\q aku telah berkata, \"Engkau[lah] tempat perlindunganku, \\q bagianku di negeri orang-orang hidup.\"",
+          "B": "Aku berseru kepada-{{deity_pronoun:mu|Mu}}, ya {{divine_name:TUHAN|Yahweh}}. \\q Aku berkata, \"Engkaulah tempat perlindunganku, \\q segala milikku di negeri orang-orang hidup.\"",
+          "R": "Ya {{divine_name:TUHAN|Yahweh}}, aku berseru kepada-{{deity_pronoun:mu|Mu}}. \\q Aku berkata, \"Engkaulah tempat aku aman. \\q Engkaulah satu-satunya milikku selama aku hidup.\""
         }
       },
       "decisions": [
@@ -1063,6 +1448,67 @@
           "reason": "As 16:5 on main: the share of the land given to a family (meaning decision m1). Balanced and Readable say \"all I have\", as the English.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191420060061",
+            "o191420060071"
+          ],
+          "choice": "शरणस्थान; भाग (L), सब कुछ (B, R)",
+          "alternatives": [
+            "हिस्सा"
+          ],
+          "reason": "Refuge is शरणस्थान, as the poetry note settles. The portion is a share of land (m1): Literal keeps भाग, Balanced and Readable say what it means, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191420060071"
+          ],
+          "choice": "моя доля",
+          "alternatives": [
+            "мой удел"
+          ],
+          "reason": "\"Portion\" is a share, all that is mine (m1); \"доля\" says it in modern Russian, Balanced and Readable say what it means.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191420060061",
+            "o191420060071"
+          ],
+          "choice": "machsi \"わたしの避け所\" (L, B), \"わたしが逃げ込む場所\" (R); chelqi \"わたしの分け前\" at every level, R adding \"わたしのすべて\"",
+          "alternatives": [],
+          "reason": "Psalter refuge word and cheleq 分け前 at every level (PSA-1, PSA-2 16:5); R adds 'all I have' as the English R does (r-en-1). The confession is plain style inside 「」.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1099,44 +1545,69 @@
       "literal_gloss": "Pay attention to my cry, for I have been brought low exceedingly; deliver me from those pursuing me, for they are stronger than I.",
       "renderings": {
         "en": {
-          "L": "Pay attention to my cry, for I have been brought very low; deliver me from those who pursue me, for they are too strong for me.",
-          "B": "Pay heed to my cry, because I am in the depths. Rescue me from those who hunt me, since they are stronger than I am.",
-          "R": "Please listen to me when I cry for help. I am in deep trouble. Save me from the people who are chasing me. They are stronger than I am."
+          "L": "Pay attention to my cry, for I have been brought very low; \\q deliver me from those who pursue me, \\q for they are too strong for me.",
+          "B": "Pay heed to my cry, because I am in the depths. \\q Rescue me from those who hunt me, \\q since they are stronger than I am.",
+          "R": "Please listen to me when I cry for help. I am in deep trouble. \\q Save me from the people who are chasing me. \\q They are stronger than I am."
         },
         "fr": {
-          "L": "Sois attentif à mon cri, car je suis tombé très bas ; délivre-moi de ceux qui me poursuivent, car ils sont plus forts que moi.",
-          "B": "Prête attention à mon cri, car je suis au plus bas. Délivre-moi de ceux qui me traquent, car ils sont plus forts que moi.",
-          "R": "Écoute-moi quand je crie au secours. Je suis dans un grand malheur. Sauve-moi des gens qui me poursuivent. Ils sont plus forts que moi."
+          "L": "Sois attentif à mon cri, car je suis tombé très bas ; \\q délivre-moi de ceux qui me poursuivent, \\q car ils sont plus forts que moi.",
+          "B": "Prête attention à mon cri, car je suis au plus bas. \\q Délivre-moi de ceux qui me traquent, \\q car ils sont plus forts que moi.",
+          "R": "Écoute-moi quand je crie au secours. Je suis dans un grand malheur. \\q Sauve-moi des gens qui me poursuivent. \\q Ils sont plus forts que moi."
         },
         "sw": {
-          "L": "Usikilize kilio changu, kwa maana nimeshushwa chini sana; uniokoe na wale wanaonifuatia, kwa maana wana nguvu kuliko mimi.",
-          "B": "Ukisikilize kilio changu, kwa sababu niko vilindini. Uniokoe na wale wanaoniwinda, kwa kuwa wana nguvu kuliko mimi.",
-          "R": "Tafadhali unisikilize ninapolilia msaada. Niko katika taabu kubwa. Uniokoe na watu wanaonifukuza. Wana nguvu kuliko mimi."
+          "L": "Usikilize kilio changu, kwa maana nimeshushwa chini sana; \\q uniokoe na wale wanaonifuatia, \\q kwa maana wana nguvu kuliko mimi.",
+          "B": "Ukisikilize kilio changu, kwa sababu niko vilindini. \\q Uniokoe na wale wanaoniwinda, \\q kwa kuwa wana nguvu kuliko mimi.",
+          "R": "Tafadhali unisikilize ninapolilia msaada. \\q Niko katika taabu kubwa. Uniokoe na watu wanaonifukuza. \\q Wana nguvu kuliko mimi."
         },
         "es": {
-          "L": "Atiende a mi clamor, porque he sido abatido en extremo; líbrame de los que me persiguen, porque son más fuertes que yo.",
-          "B": "Presta atención a mi clamor, porque estoy en lo más hondo. Rescátame de los que me acosan, porque son más fuertes que yo.",
-          "R": "Por favor, escúchame cuando clamo pidiendo ayuda. Estoy en un problema muy grande. Sálvame de la gente que me persigue. Son más fuertes que yo."
+          "L": "Atiende a mi clamor, porque he sido abatido en extremo; \\q líbrame de los que me persiguen, \\q porque son más fuertes que yo.",
+          "B": "Presta atención a mi clamor, porque estoy en lo más hondo. \\q Rescátame de los que me acosan, \\q porque son más fuertes que yo.",
+          "R": "Por favor, escúchame cuando clamo pidiendo ayuda. Estoy en un problema muy grande. \\q Sálvame de la gente que me persigue. \\q Son más fuertes que yo."
         },
         "vi": {
-          "L": "Xin lưu ý đến tiếng kêu của tôi, vì tôi đã bị hạ xuống rất thấp; xin giải cứu tôi khỏi những kẻ bắt bớ tôi, vì chúng mạnh hơn tôi.",
-          "B": "Xin lắng nghe tiếng kêu của tôi, vì tôi đang ở dưới vực sâu. Xin giải cứu tôi khỏi những kẻ săn đuổi tôi, vì chúng mạnh hơn tôi.",
-          "R": "Xin lắng nghe khi tôi kêu cứu. Tôi đang gặp hoạn nạn lớn. Xin cứu tôi khỏi những kẻ đang đuổi theo tôi. Chúng mạnh hơn tôi."
+          "L": "Xin lưu ý đến tiếng kêu của tôi, vì tôi đã bị hạ xuống rất thấp; \\q xin giải cứu tôi khỏi những kẻ bắt bớ tôi, \\q vì chúng mạnh hơn tôi.",
+          "B": "Xin lắng nghe tiếng kêu của tôi, vì tôi đang ở dưới vực sâu. \\q Xin giải cứu tôi khỏi những kẻ săn đuổi tôi, \\q vì chúng mạnh hơn tôi.",
+          "R": "Xin lắng nghe khi tôi kêu cứu. Tôi đang gặp hoạn nạn lớn. \\q Xin cứu tôi khỏi những kẻ đang đuổi theo tôi. \\q Chúng mạnh hơn tôi."
         },
         "ko": {
-          "L": "제 부르짖음에 귀를 기울여 주십시오. 제가 몹시 낮아졌습니다. 저를 쫓는 자들에게서 저를 건져 주십시오. 그들이 저보다 강합니다.",
-          "B": "제 부르짖음을 들어 주십시오. 제가 깊은 수렁에 빠졌습니다. 저를 사냥하듯 쫓는 자들에게서 저를 구해 주십시오. 그들은 저보다 강합니다.",
-          "R": "제가 도와 달라고 부르짖을 때 들어 주십시오. 저는 큰 어려움에 빠져 있습니다. 저를 쫓아오는 사람들에게서 저를 구해 주십시오. 그들은 저보다 강합니다."
+          "L": "제 부르짖음에 귀를 기울여 주십시오. 제가 몹시 낮아졌습니다. \\q 저를 쫓는 자들에게서 저를 건져 주십시오. \\q 그들이 저보다 강합니다.",
+          "B": "제 부르짖음을 들어 주십시오. 제가 깊은 수렁에 빠졌습니다. \\q 저를 사냥하듯 쫓는 자들에게서 저를 구해 주십시오. \\q 그들은 저보다 강합니다.",
+          "R": "제가 도와 달라고 부르짖을 때 들어 주십시오. 저는 큰 어려움에 빠져 있습니다. \\q 저를 쫓아오는 사람들에게서 저를 구해 주십시오. \\q 그들은 저보다 강합니다."
         },
         "pt": {
-          "L": "Presta atenção ao meu clamor, pois estou muito abatido; livra-me dos que me perseguem, pois são fortes demais para mim.",
-          "B": "Atende ao meu clamor, porque estou no fundo do poço. Livra-me dos que me caçam, porque são mais fortes do que eu.",
-          "R": "Por favor, escuta-me quando eu grito por socorro. Estou em grande aflição. Salva-me das pessoas que estão me perseguindo. Elas são mais fortes do que eu."
+          "L": "Presta atenção ao meu clamor, pois estou muito abatido; \\q livra-me dos que me perseguem, \\q pois são fortes demais para mim.",
+          "B": "Atende ao meu clamor, porque estou no fundo do poço. \\q Livra-me dos que me caçam, \\q porque são mais fortes do que eu.",
+          "R": "Por favor, escuta-me quando eu grito por socorro. Estou em grande aflição. \\q Salva-me das pessoas que estão me perseguindo. \\q Elas são mais fortes do que eu."
         },
         "am": {
-          "L": "ወደ ጩኸቴ አድምጥ፤ እጅግ ደክሜአለሁና፤ ከሚያሳድዱኝ አድነኝ፤ ከእኔ ይልቅ በርትተዋልና።",
-          "B": "ጩኸቴን አድምጥ፤ እጅግ ዝቅ ብያለሁና። ከሚያሳድዱኝ አድነኝ፤ እነርሱ ከእኔ ይልቅ ብርቱዎች ናቸውና።",
-          "R": "እባክህ ለርዳታ ስጮኽ ስማኝ። በታላቅ ችግር ውስጥ ነኝ። ከሚያሳድዱኝ ሰዎች አድነኝ። እነርሱ ከእኔ ይበረታሉ።"
+          "L": "ወደ ጩኸቴ አድምጥ፤ እጅግ ደክሜአለሁና፤ \\q ከሚያሳድዱኝ አድነኝ፤ \\q ከእኔ ይልቅ በርትተዋልና።",
+          "B": "ጩኸቴን አድምጥ፤ እጅግ ዝቅ ብያለሁና። \\q ከሚያሳድዱኝ አድነኝ፤ \\q እነርሱ ከእኔ ይልቅ ብርቱዎች ናቸውና።",
+          "R": "እባክህ ለርዳታ ስጮኽ ስማኝ። በታላቅ ችግር ውስጥ ነኝ። \\q ከሚያሳድዱኝ ሰዎች አድነኝ። \\q እነርሱ ከእኔ ይበረታሉ።"
+        },
+        "hi": {
+          "L": "मेरी पुकार पर ध्यान दे, क्योंकि मैं बहुत ही नीचे गिर गया हूँ; \\q मेरा पीछा करनेवालों से मुझे छुड़ा, \\q क्योंकि वे मुझसे अधिक बलवान हैं।",
+          "B": "मेरी पुकार पर ध्यान दे, क्योंकि मैं गहरे संकट में हूँ। \\q जो मेरे पीछे पड़े हैं, उनसे मुझे छुड़ा, \\q क्योंकि वे मुझसे अधिक बलवान हैं।",
+          "R": "जब मैं सहायता के लिए पुकारूँ, तो कृपया मेरी सुन। मैं बहुत बड़ी मुसीबत में हूँ। \\q जो लोग मेरा पीछा कर रहे हैं, उनसे मुझे बचा। \\q वे मुझसे अधिक बलवान हैं।"
+        },
+        "ru": {
+          "L": "Внемли моему воплю, ведь я очень унижен; \\q избавь меня от преследующих меня, \\q потому что они сильнее меня.",
+          "B": "Услышь мой крик, потому что я в самой бездне. \\q Избавь меня от тех, кто охотится на меня, \\q потому что они сильнее меня.",
+          "R": "Пожалуйста, услышь меня, когда я кричу о помощи. У меня большая беда. \\q Спаси меня от людей, которые гонятся за мной. \\q Они сильнее меня."
+        },
+        "ja": {
+          "L": "わたしの叫びに心を留めてください。わたしは非常に低くされたからである。 \\q わたしを追う者たちから、わたしを救い出してください。 \\q 彼らはわたしより強いからである。",
+          "B": "わたしの叫びに耳を傾けてください。わたしはどん底にいる。 \\q わたしを追い回す者たちから救い出してください。 \\q 彼らはわたしよりも強いのだから。",
+          "R": "わたしが助けを求めて叫ぶとき、どうか聞いてください。わたしは、ひどく苦しんでいる。 \\q わたしを追いかけてくる人たちから、わたしを救ってください。 \\q 彼らは、わたしよりも強い。"
+        },
+        "uk": {
+          "L": "Зважай на мій зойк, бо я дуже принижений; \\q визволи мене від тих, хто мене переслідує, \\q бо вони сильніші за мене.",
+          "B": "Прислухайся до мого зойку, бо я на самому дні. \\q Урятуй мене від тих, хто полює на мене, \\q бо вони сильніші за мене.",
+          "R": "Будь ласка, вислухай мене, коли я кличу про допомогу. Я в глибокій біді. \\q Урятуй мене від людей, які женуться за мною. \\q Вони сильніші за мене."
+        },
+        "id": {
+          "L": "Perhatikanlah seruanku, sebab aku telah menjadi sangat lemah; \\q lepaskanlah aku dari orang-orang yang mengejar aku, \\q sebab mereka terlalu kuat bagiku.",
+          "B": "Dengarkanlah seruanku, sebab aku berada di tempat yang sangat dalam. \\q Selamatkanlah aku dari orang-orang yang memburu aku, \\q karena mereka lebih kuat daripada aku.",
+          "R": "Dengarlah ketika aku berseru meminta tolong. Aku berada dalam kesusahan besar. \\q Selamatkanlah aku dari orang-orang yang mengejar aku. \\q Mereka lebih kuat daripada aku."
         }
       },
       "decisions": [
@@ -1219,6 +1690,46 @@
           "reason": "The same words as Psalm 18:18 (meaning decision m1), kept as 2 Samuel 22:18 on main, with the present tense the psalmist's situation needs.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191420070101",
+            "o191420070111"
+          ],
+          "choice": "они сильнее меня",
+          "alternatives": [],
+          "reason": "The words echo Psalm 18:18 (m1), so every level keeps that verse's \"сильнее меня\" in this translation.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191420070101",
+            "o191420070111"
+          ],
+          "choice": "'amtsu mimmenni \"彼らはわたしより強い\" (L), \"わたしよりも強い\" (B, R), as Psalm 18:18",
+          "alternatives": [],
+          "reason": "The words echo 18:18 (m1); the Japanese of 18:18 is kept, in the present tense here.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1257,44 +1768,69 @@
       "literal_gloss": "Bring out from prison my soul, to give thanks to your name; about me they will surround, [the] righteous, for you will deal fully with me.",
       "renderings": {
         "en": {
-          "L": "Bring my soul out of prison, to give thanks to {{deity_pronoun:your|Your}} name. [The] righteous will gather around me, for {{deity_pronoun:you|You}} will deal bountifully with me.",
-          "B": "Lead me out of this prison, so that I may thank {{deity_pronoun:your|Your}} name. Then the righteous will crowd around me, because {{deity_pronoun:you|You}} will treat me with goodness.",
-          "R": "Free me from this prison so I can thank {{deity_pronoun:you|You}} for who {{deity_pronoun:you|You}} are. Then good people will gather around me, because {{deity_pronoun:you|You}} will be good to me."
+          "L": "Bring my soul out of prison, to give thanks to {{deity_pronoun:your|Your}} name. \\q [The] righteous will gather around me, \\q for {{deity_pronoun:you|You}} will deal bountifully with me.",
+          "B": "Lead me out of this prison, so that I may thank {{deity_pronoun:your|Your}} name. \\q Then the righteous will crowd around me, \\q because {{deity_pronoun:you|You}} will treat me with goodness.",
+          "R": "Free me from this prison so I can thank {{deity_pronoun:you|You}} for who {{deity_pronoun:you|You}} are. \\q Then good people will gather around me, \\q because {{deity_pronoun:you|You}} will be good to me."
         },
         "fr": {
-          "L": "Fais sortir mon âme de la prison, pour rendre grâce à {{deity_pronoun:ton|Ton}} nom. [Les] justes m’entoureront, car {{deity_pronoun:tu|Tu}} me feras du bien.",
-          "B": "Fais-moi sortir de cette prison, pour que je rende grâce à {{deity_pronoun:ton|Ton}} nom. Alors les justes se presseront autour de moi, parce que {{deity_pronoun:tu|Tu}} m’auras fait du bien.",
-          "R": "Libère-moi de cette prison, pour que je puisse {{deity_pronoun:te|Te}} remercier pour ce que {{deity_pronoun:tu|Tu}} es. Alors les gens bons viendront autour de moi, parce que {{deity_pronoun:tu|Tu}} auras été bon pour moi."
+          "L": "Fais sortir mon âme de la prison, pour rendre grâce à {{deity_pronoun:ton|Ton}} nom. \\q [Les] justes m’entoureront, \\q car {{deity_pronoun:tu|Tu}} me feras du bien.",
+          "B": "Fais-moi sortir de cette prison, pour que je rende grâce à {{deity_pronoun:ton|Ton}} nom. \\q Alors les justes se presseront autour de moi, \\q parce que {{deity_pronoun:tu|Tu}} m’auras fait du bien.",
+          "R": "Libère-moi de cette prison, pour que je puisse {{deity_pronoun:te|Te}} remercier pour ce que {{deity_pronoun:tu|Tu}} es. \\q Alors les gens bons viendront autour de moi, \\q parce que {{deity_pronoun:tu|Tu}} auras été bon pour moi."
         },
         "sw": {
-          "L": "Itoe nafsi yangu gerezani, ili nilishukuru jina {{deity_pronoun:lako|Lako}}. Wenye haki watanizunguka, kwa maana utanitendea kwa ukarimu.",
-          "B": "Unitoe katika gereza hili, ili nipate kulishukuru jina {{deity_pronoun:lako|Lako}}. Ndipo wenye haki watakusanyika kunizunguka, kwa sababu utanitendea mema.",
-          "R": "Uniweke huru kutoka gereza hili ili nikushukuru kwa jinsi {{deity_pronoun:wewe|Wewe}} ulivyo. Ndipo watu wema watakusanyika kunizunguka, kwa sababu utakuwa mwema kwangu."
+          "L": "Itoe nafsi yangu gerezani, ili nilishukuru jina {{deity_pronoun:lako|Lako}}. \\q Wenye haki watanizunguka, \\q kwa maana utanitendea kwa ukarimu.",
+          "B": "Unitoe katika gereza hili, ili nipate kulishukuru jina {{deity_pronoun:lako|Lako}}. \\q Ndipo wenye haki watakusanyika kunizunguka, \\q kwa sababu utanitendea mema.",
+          "R": "Uniweke huru kutoka gereza hili ili nikushukuru kwa jinsi {{deity_pronoun:wewe|Wewe}} ulivyo. \\q Ndipo watu wema watakusanyika kunizunguka, \\q kwa sababu utakuwa mwema kwangu."
         },
         "es": {
-          "L": "Saca mi alma de la cárcel, para dar gracias a {{deity_pronoun:tu|Tu}} nombre. Me rodearán [los] justos, porque {{deity_pronoun:tú|Tú}} me tratarás con generosidad.",
-          "B": "Sácame de esta cárcel, para que dé gracias a {{deity_pronoun:tu|Tu}} nombre. Entonces los justos se reunirán a mi alrededor, porque {{deity_pronoun:tú|Tú}} me tratarás con bondad.",
-          "R": "Líbrame de esta cárcel para que pueda darte gracias por lo que {{deity_pronoun:tú|Tú}} eres. Entonces la gente buena se reunirá a mi alrededor, porque {{deity_pronoun:tú|Tú}} serás bueno conmigo."
+          "L": "Saca mi alma de la cárcel, para dar gracias a {{deity_pronoun:tu|Tu}} nombre. \\q Me rodearán [los] justos, \\q porque {{deity_pronoun:tú|Tú}} me tratarás con generosidad.",
+          "B": "Sácame de esta cárcel, para que dé gracias a {{deity_pronoun:tu|Tu}} nombre. \\q Entonces los justos se reunirán a mi alrededor, \\q porque {{deity_pronoun:tú|Tú}} me tratarás con bondad.",
+          "R": "Líbrame de esta cárcel para que pueda darte gracias por lo que {{deity_pronoun:tú|Tú}} eres. \\q Entonces la gente buena se reunirá a mi alrededor, \\q porque {{deity_pronoun:tú|Tú}} serás bueno conmigo."
         },
         "vi": {
-          "L": "Xin đem linh hồn tôi ra khỏi ngục tù, để cảm tạ danh {{deity_pronoun:ngài|Ngài}}. [Những người] công chính sẽ vây quanh tôi, vì {{deity_pronoun:ngài|Ngài}} sẽ ban ơn dư dật cho tôi.",
-          "B": "Xin dẫn tôi ra khỏi ngục tù này, để tôi cảm tạ danh {{deity_pronoun:ngài|Ngài}}. Bấy giờ những người công chính sẽ vây quanh tôi, vì {{deity_pronoun:ngài|Ngài}} sẽ đối xử tốt lành với tôi.",
-          "R": "Xin giải thoát tôi khỏi ngục tù này, để tôi cảm tạ {{deity_pronoun:ngài|Ngài}} vì bản tính của {{deity_pronoun:ngài|Ngài}}. Bấy giờ những người tốt sẽ quây quần quanh tôi, vì {{deity_pronoun:ngài|Ngài}} sẽ tốt lành với tôi."
+          "L": "Xin đem linh hồn tôi ra khỏi ngục tù, để cảm tạ danh {{deity_pronoun:ngài|Ngài}}. \\q [Những người] công chính sẽ vây quanh tôi, \\q vì {{deity_pronoun:ngài|Ngài}} sẽ ban ơn dư dật cho tôi.",
+          "B": "Xin dẫn tôi ra khỏi ngục tù này, để tôi cảm tạ danh {{deity_pronoun:ngài|Ngài}}. \\q Bấy giờ những người công chính sẽ vây quanh tôi, \\q vì {{deity_pronoun:ngài|Ngài}} sẽ đối xử tốt lành với tôi.",
+          "R": "Xin giải thoát tôi khỏi ngục tù này, để tôi cảm tạ {{deity_pronoun:ngài|Ngài}} vì bản tính của {{deity_pronoun:ngài|Ngài}}. \\q Bấy giờ những người tốt sẽ quây quần quanh tôi, \\q vì {{deity_pronoun:ngài|Ngài}} sẽ tốt lành với tôi."
         },
         "ko": {
-          "L": "제 영혼을 감옥에서 이끌어 내어 주셔서, 주님의 이름에 감사드리게 하십시오. 의인들이 저를 둘러쌀 것입니다. 주님께서 제게 후하게 베푸실 것이기 때문입니다.",
-          "B": "이 감옥에서 저를 이끌어 내 주셔서, 제가 주님의 이름에 감사드리게 해 주십시오. 그러면 의인들이 제 둘레에 모여들 것입니다. 주님께서 제게 선을 베풀어 주실 것이기 때문입니다.",
-          "R": "이 감옥에서 저를 풀어 주셔서, 주님께서 어떤 분이신지 알고 감사드리게 해 주십시오. 그러면 바르게 사는 사람들이 제 둘레에 모일 것입니다. 주님께서 제게 좋은 일을 베풀어 주실 것이기 때문입니다."
+          "L": "제 영혼을 감옥에서 이끌어 내어 주셔서, 주님의 이름에 감사드리게 하십시오. \\q 의인들이 저를 둘러쌀 것입니다. \\q 주님께서 제게 후하게 베푸실 것이기 때문입니다.",
+          "B": "이 감옥에서 저를 이끌어 내 주셔서, 제가 주님의 이름에 감사드리게 해 주십시오. \\q 그러면 의인들이 제 둘레에 모여들 것입니다. \\q 주님께서 제게 선을 베풀어 주실 것이기 때문입니다.",
+          "R": "이 감옥에서 저를 풀어 주셔서, 주님께서 어떤 분이신지 알고 감사드리게 해 주십시오. \\q 그러면 바르게 사는 사람들이 제 둘레에 모일 것입니다. \\q 주님께서 제게 좋은 일을 베풀어 주실 것이기 때문입니다."
         },
         "pt": {
-          "L": "Tira a minha alma da prisão, para render graças ao {{deity_pronoun:teu|Teu}} nome. [Os] justos se reunirão ao meu redor, pois {{deity_pronoun:tu|Tu}} me tratarás com generosidade.",
-          "B": "Tira-me desta prisão, para que eu dê graças ao {{deity_pronoun:teu|Teu}} nome. Então os justos virão para junto de mim, porque {{deity_pronoun:tu|Tu}} me tratarás com bondade.",
-          "R": "Liberta-me desta prisão para que eu possa {{deity_pronoun:te|Te}} agradecer por quem {{deity_pronoun:tu|Tu}} és. Então as pessoas boas vão se reunir ao meu redor, porque {{deity_pronoun:tu|Tu}} vais ser bom para mim."
+          "L": "Tira a minha alma da prisão, para render graças ao {{deity_pronoun:teu|Teu}} nome. \\q [Os] justos se reunirão ao meu redor, \\q pois {{deity_pronoun:tu|Tu}} me tratarás com generosidade.",
+          "B": "Tira-me desta prisão, para que eu dê graças ao {{deity_pronoun:teu|Teu}} nome. \\q Então os justos virão para junto de mim, \\q porque {{deity_pronoun:tu|Tu}} me tratarás com bondade.",
+          "R": "Liberta-me desta prisão para que eu possa {{deity_pronoun:te|Te}} agradecer por quem {{deity_pronoun:tu|Tu}} és. \\q Então as pessoas boas vão se reunir ao meu redor, \\q porque {{deity_pronoun:tu|Tu}} vais ser bom para mim."
         },
         "am": {
-          "L": "ስምህን አመሰግን ዘንድ ነፍሴን ከወህኒ ቤት አውጣ። ጻድቃን በዙሪያዬ ይሰበሰባሉ፤ መልካም ታደርግልኛለህና።",
-          "B": "ስምህን አመሰግን ዘንድ ከዚህ ወህኒ ቤት አውጣኝ። ያን ጊዜ ጻድቃን በዙሪያዬ ይሰበሰባሉ፤ በቸርነትህ ትይዘኛለህና።",
-          "R": "ከዚህ እስር ቤት ነጻ አውጣኝ፤ ስለ ማንነትህም አመሰግንሃለሁ። ያን ጊዜ መልካም ሰዎች በዙሪያዬ ይሰበሰባሉ፤ ምክንያቱም አንተ መልካም ታደርግልኛለህ።"
+          "L": "ስምህን አመሰግን ዘንድ ነፍሴን ከወህኒ ቤት አውጣ። \\q ጻድቃን በዙሪያዬ ይሰበሰባሉ፤ \\q መልካም ታደርግልኛለህና።",
+          "B": "ስምህን አመሰግን ዘንድ ከዚህ ወህኒ ቤት አውጣኝ። \\q ያን ጊዜ ጻድቃን በዙሪያዬ ይሰበሰባሉ፤ \\q በቸርነትህ ትይዘኛለህና።",
+          "R": "ከዚህ እስር ቤት ነጻ አውጣኝ፤ ስለ ማንነትህም አመሰግንሃለሁ። \\q ያን ጊዜ መልካም ሰዎች በዙሪያዬ ይሰበሰባሉ፤ \\q ምክንያቱም አንተ መልካም ታደርግልኛለህ።"
+        },
+        "hi": {
+          "L": "मेरे प्राण को बंदीगृह से निकाल, कि मैं तेरे नाम का धन्यवाद करूँ। \\q धर्मी मेरे चारों ओर इकट्ठे होंगे, \\q क्योंकि तू मेरे साथ भलाई करेगा।",
+          "B": "मुझे इस बंदीगृह से बाहर ले आ, ताकि मैं तेरे नाम का धन्यवाद करूँ। \\q तब धर्मी लोग मेरे चारों ओर जमा होंगे, \\q क्योंकि तू मेरे साथ भलाई करेगा।",
+          "R": "मुझे इस क़ैद से छुड़ा, ताकि मैं इसके लिए तेरा धन्यवाद कर सकूँ कि तू कैसा है। \\q तब भले लोग मेरे चारों ओर इकट्ठे होंगे, \\q क्योंकि तू मेरे साथ भला करेगा।"
+        },
+        "ru": {
+          "L": "Выведи из темницы мою душу, чтобы благодарить {{deity_pronoun:твоё|Твоё}} имя. \\q Праведные соберутся вокруг меня, \\q потому что {{deity_pronoun:ты|Ты}} щедро воздашь мне.",
+          "B": "Выведи меня из этой темницы, чтобы я мог благодарить {{deity_pronoun:твоё|Твоё}} имя. \\q Тогда праведные соберутся вокруг меня, \\q потому что {{deity_pronoun:ты|Ты}} поступишь со мной по-доброму.",
+          "R": "Освободи меня из этой тюрьмы, чтобы я мог благодарить {{deity_pronoun:тебя|Тебя}} за то, кто {{deity_pronoun:ты|Ты}} есть. \\q Тогда хорошие люди соберутся вокруг меня, \\q потому что {{deity_pronoun:ты|Ты}} будешь добр ко мне."
+        },
+        "ja": {
+          "L": "わたしの魂を獄から連れ出してください、あなたの名に感謝するために。 \\q 正しい者たちはわたしを取り囲む。 \\q あなたがわたしに豊かに報いてくださるからである。",
+          "B": "わたしをこの獄から連れ出し、あなたの名に感謝させてください。 \\q そのとき、正しい人たちがわたしの周りに集まる。 \\q あなたがわたしに良くしてくださるからである。",
+          "R": "わたしを、閉じ込められているこの場所から出して、あなたがどのような方かを覚えて感謝できるようにしてください。 \\q そのとき、正しい人たちがわたしの周りに集まってくる。 \\q あなたが、わたしに良くしてくださるからだ。"
+        },
+        "uk": {
+          "L": "Виведи з вʼязниці мою душу, щоб дякувати {{deity_pronoun:твоєму|Твоєму}} імені. \\q Праведні зберуться довкола мене, \\q бо {{deity_pronoun:ти|Ти}} щедро обдаруєш мене.",
+          "B": "Виведи мене з цієї вʼязниці, щоб я міг дякувати {{deity_pronoun:твоєму|Твоєму}} імені. \\q Тоді праведні обступлять мене, \\q бо {{deity_pronoun:ти|Ти}} виявиш мені доброту.",
+          "R": "Звільни мене з цієї вʼязниці, щоб я міг дякувати {{deity_pronoun:тобі|Тобі}} за те, який {{deity_pronoun:ти|Ти}} є. \\q Тоді добрі люди зберуться довкола мене, \\q бо {{deity_pronoun:ти|Ти}} будеш добрий до мене."
+        },
+        "id": {
+          "L": "Bawalah jiwaku keluar dari penjara, supaya aku bersyukur kepada nama-{{deity_pronoun:mu|Mu}}. \\q Orang-orang benar akan mengelilingi aku, \\q sebab {{deity_pronoun:engkau|Engkau}} akan berbuat baik kepadaku dengan limpahnya.",
+          "B": "Tuntunlah aku keluar dari penjara ini, supaya aku dapat bersyukur kepada nama-{{deity_pronoun:mu|Mu}}. \\q Lalu orang-orang benar akan berkerumun di sekelilingku, \\q sebab {{deity_pronoun:engkau|Engkau}} akan memperlakukan aku dengan kebaikan.",
+          "R": "Bebaskanlah aku dari penjara ini, supaya aku dapat bersyukur kepada-{{deity_pronoun:mu|Mu}} karena siapa {{deity_pronoun:engkau|Engkau}}. \\q Lalu orang-orang baik akan berkumpul di sekelilingku, \\q sebab {{deity_pronoun:engkau|Engkau}} akan berbuat baik kepadaku."
         }
       },
       "decisions": [
@@ -1400,6 +1936,45 @@
           "alternatives": [],
           "reason": "The prison words settled in Genesis: the older word at Literal and Balanced, the everyday one at Readable.",
           "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191420080081",
+            "o191420080111"
+          ],
+          "choice": "yakhtiru \"取り囲む\" (L), \"周りに集まる\" (B, R); tigmol \"豊かに報いてくださる\" (L), \"良くしてくださる\" (B, R) as 13:6",
+          "alternatives": [],
+          "reason": "Gather around (m2, uncertain); gamal as PSA-1 13:6. masger \"獄\" (L, B), R \"閉じ込められているこの場所\" (m1, the trap of his distress).",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191420080081"
+          ],
+          "choice": "\"mengelilingi\" (L), \"berkerumun di sekelilingku\" (B), \"berkumpul di sekelilingku\" (R)",
+          "alternatives": [],
+          "reason": "Will gather around me (m2, uncertain), in welcome.",
+          "uncertain": true,
           "footnote": false
         }
       ],

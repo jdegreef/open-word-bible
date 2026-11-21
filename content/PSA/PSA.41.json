@@ -58,6 +58,31 @@
           "L": "ለመዘምራን አለቃ፤ የዳዊት መዝሙር።",
           "B": "ለመዘምራን አለቃ። የዳዊት መዝሙር።",
           "R": "ለመዘምራን አለቃ። ዳዊት የዘመረው መዝሙር።"
+        },
+        "hi": {
+          "L": "संगीत-निर्देशक के लिए: दाऊद का भजन।",
+          "B": "संगीत-निर्देशक के लिए। दाऊद का भजन।",
+          "R": "गायक-मंडली के अगुवे के लिए। दाऊद का गीत।"
+        },
+        "ru": {
+          "L": "Руководителю хора: псалом Давида.",
+          "B": "Руководителю хора. Псалом Давида.",
+          "R": "Для руководителя музыкантов. Песнь Давида."
+        },
+        "ja": {
+          "L": "指揮する者のために。ダビデの賛歌。",
+          "B": "音楽を導く者のために。ダビデの賛歌。",
+          "R": "音楽を導く人のために。ダビデの歌。"
+        },
+        "uk": {
+          "L": "Для диригента: псалом Давида.",
+          "B": "Для диригента хору. Псалом Давида.",
+          "R": "Для того, хто керує співом. Пісня Давида."
+        },
+        "id": {
+          "L": "Untuk pemimpin musik: [sebuah] mazmur Daud.",
+          "B": "Untuk pemimpin musik. Mazmur Daud.",
+          "R": "Untuk pemimpin musik. Lagu pujian karangan Daud."
         }
       },
       "decisions": [
@@ -146,6 +171,25 @@
           "reason": "The heading formulas settled for all the Psalms, so that every heading of the book reads alike.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190410010021"
+          ],
+          "choice": "no deity_pronoun spans; \"तू\" to God",
+          "alternatives": [],
+          "reason": "Devanagari has no capital letters, so the Hindi has no deity_pronoun spans where the English has them. The title follows the poetry note's table, as in Psalms 36 and 38-40.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -175,44 +219,69 @@
       "literal_gloss": "How blessed [is one who] gives thought to [the] weak; in [the] day of trouble YHWH will rescue him.",
       "renderings": {
         "en": {
-          "L": "How blessed [is] the one who gives thought to the weak; in [the] day of trouble {{divine_name:the LORD|Yahweh}} will rescue {{gender:them|him}}.",
-          "B": "How blessed are those who care about the weak! When trouble comes, {{divine_name:the LORD|Yahweh}} will rescue them.",
-          "R": "Life is truly good for people who care about the poor and the weak. When trouble comes, {{divine_name:the LORD|Yahweh}} will rescue them."
+          "L": "How blessed [is] the one who gives thought to the weak; \\q in [the] day of trouble {{divine_name:the LORD|Yahweh}} will rescue {{gender:them|him}}.",
+          "B": "How blessed are those who care about the weak! \\q When trouble comes, {{divine_name:the LORD|Yahweh}} will rescue them.",
+          "R": "Life is truly good for people who care about the poor and the weak. \\q When trouble comes, {{divine_name:the LORD|Yahweh}} will rescue them."
         },
         "fr": {
-          "L": "Heureux [est] celui qui prête attention au faible ; au jour du malheur {{divine_name:le SEIGNEUR|Yahvé}} le délivrera.",
-          "B": "Heureux ceux qui se soucient du faible ! Quand vient le malheur, {{divine_name:le SEIGNEUR|Yahvé}} les délivre.",
-          "R": "Quel bonheur pour ceux qui prennent soin des pauvres et des faibles ! Quand le malheur arrive, {{divine_name:le SEIGNEUR|Yahvé}} les délivre."
+          "L": "Heureux [est] celui qui prête attention au faible ; \\q au jour du malheur {{divine_name:le SEIGNEUR|Yahvé}} le délivrera.",
+          "B": "Heureux ceux qui se soucient du faible ! \\q Quand vient le malheur, {{divine_name:le SEIGNEUR|Yahvé}} les délivre.",
+          "R": "Quel bonheur pour ceux qui prennent soin des pauvres et des faibles ! \\q Quand le malheur arrive, {{divine_name:le SEIGNEUR|Yahvé}} les délivre."
         },
         "sw": {
-          "L": "Heri yule anayemfikiria mnyonge; siku ya taabu {{divine_name:BWANA|Yahwe}} atamwokoa.",
-          "B": "Wana heri kweli wale wanaowajali wanyonge! Taabu inapokuja, {{divine_name:BWANA|Yahwe}} atawaokoa.",
-          "R": "Maisha ni mema kweli kwa watu wanaowajali maskini na wanyonge. Taabu inapokuja, {{divine_name:BWANA|Yahwe}} atawaokoa."
+          "L": "Heri yule anayemfikiria mnyonge; \\q siku ya taabu {{divine_name:BWANA|Yahwe}} atamwokoa.",
+          "B": "Wana heri kweli wale wanaowajali wanyonge! \\q Taabu inapokuja, {{divine_name:BWANA|Yahwe}} atawaokoa.",
+          "R": "Maisha ni mema kweli kwa watu wanaowajali maskini na wanyonge. \\q Taabu inapokuja, {{divine_name:BWANA|Yahwe}} atawaokoa."
         },
         "es": {
-          "L": "¡Dichoso el que piensa en el débil! En [el] día de la angustia {{divine_name:el SEÑOR|Yahvé}} lo librará.",
-          "B": "¡Qué dichosos son los que se preocupan por el débil! Cuando llegue la angustia, {{divine_name:el SEÑOR|Yahvé}} los librará.",
-          "R": "Las personas que se preocupan por los pobres y los débiles son verdaderamente felices. Cuando lleguen los problemas, {{divine_name:el SEÑOR|Yahvé}} las rescatará."
+          "L": "¡Dichoso el que piensa en el débil! \\q En [el] día de la angustia {{divine_name:el SEÑOR|Yahvé}} lo librará.",
+          "B": "¡Qué dichosos son los que se preocupan por el débil! \\q Cuando llegue la angustia, {{divine_name:el SEÑOR|Yahvé}} los librará.",
+          "R": "Las personas que se preocupan por los pobres y los débiles son verdaderamente felices. \\q Cuando lleguen los problemas, {{divine_name:el SEÑOR|Yahvé}} las rescatará."
         },
         "vi": {
-          "L": "Phước thay người quan tâm đến kẻ yếu đuối; trong ngày hoạn nạn {{divine_name:CHÚA|Gia-vê}} sẽ giải cứu người ấy.",
-          "B": "Phước hạnh thay những ai quan tâm đến người yếu thế! Khi hoạn nạn đến, {{divine_name:CHÚA|Gia-vê}} sẽ giải cứu họ.",
-          "R": "Thật hạnh phúc cho những người quan tâm đến người nghèo và người yếu đuối. Khi hoạn nạn đến, {{divine_name:CHÚA|Gia-vê}} sẽ giải cứu họ."
+          "L": "Phước thay người quan tâm đến kẻ yếu đuối; \\q trong ngày hoạn nạn {{divine_name:CHÚA|Gia-vê}} sẽ giải cứu người ấy.",
+          "B": "Phước hạnh thay những ai quan tâm đến người yếu thế! \\q Khi hoạn nạn đến, {{divine_name:CHÚA|Gia-vê}} sẽ giải cứu họ.",
+          "R": "Thật hạnh phúc cho những người quan tâm đến người nghèo và người yếu đuối. \\q Khi hoạn nạn đến, {{divine_name:CHÚA|Gia-vê}} sẽ giải cứu họ."
         },
         "ko": {
-          "L": "얼마나 복된가, 약한 자를 생각해 주는 사람은! 환난의 날에 {{divine_name:주|야훼}}께서 그를 건지실 것이다.",
-          "B": "약한 사람을 돌보는 사람들은 얼마나 복된가! 고난이 닥칠 때 {{divine_name:주|야훼}}께서 그들을 건지실 것이다.",
-          "R": "가난하고 약한 사람들을 돌보는 사람들은 참으로 행복하다. 어려움이 닥칠 때 {{divine_name:주|야훼}}께서 그들을 구해 주실 것이다."
+          "L": "얼마나 복된가, 약한 자를 생각해 주는 사람은! \\q 환난의 날에 {{divine_name:주|야훼}}께서 그를 건지실 것이다.",
+          "B": "약한 사람을 돌보는 사람들은 얼마나 복된가! \\q 고난이 닥칠 때 {{divine_name:주|야훼}}께서 그들을 건지실 것이다.",
+          "R": "가난하고 약한 사람들을 돌보는 사람들은 참으로 행복하다. \\q 어려움이 닥칠 때 {{divine_name:주|야훼}}께서 그들을 구해 주실 것이다."
         },
         "pt": {
-          "L": "Bem-aventurado [é] aquele que atenta para o fraco; no dia da angústia {{divine_name:o SENHOR|Javé}} o livrará.",
-          "B": "Como são felizes os que cuidam do fraco! Quando vier a angústia, {{divine_name:o SENHOR|Javé}} os livrará.",
-          "R": "Felizes de verdade são as pessoas que cuidam dos pobres e dos fracos. Quando vierem os problemas, {{divine_name:o SENHOR|Javé}} vai livrá-las."
+          "L": "Bem-aventurado [é] aquele que atenta para o fraco; \\q no dia da angústia {{divine_name:o SENHOR|Javé}} o livrará.",
+          "B": "Como são felizes os que cuidam do fraco! \\q Quando vier a angústia, {{divine_name:o SENHOR|Javé}} os livrará.",
+          "R": "Felizes de verdade são as pessoas que cuidam dos pobres e dos fracos. \\q Quando vierem os problemas, {{divine_name:o SENHOR|Javé}} vai livrá-las."
         },
         "am": {
-          "L": "ለደካማው የሚያስብ ምስጉን ነው፤ በመከራ ቀን {{divine_name:እግዚአብሔር|ያህዌ}} ያድነዋል።",
-          "B": "ለደካሞች የሚያስቡ የተባረኩ ናቸው! መከራ በመጣ ጊዜ {{divine_name:እግዚአብሔር|ያህዌ}} ያድናቸዋል።",
-          "R": "ለድሆችና ለደካሞች የሚያስቡ ሰዎች በእውነት ደስተኞች ናቸው። መከራ ሲመጣ {{divine_name:እግዚአብሔር|ያህዌ}} ያድናቸዋል።"
+          "L": "ለደካማው የሚያስብ ምስጉን ነው፤ \\q በመከራ ቀን {{divine_name:እግዚአብሔር|ያህዌ}} ያድነዋል።",
+          "B": "ለደካሞች የሚያስቡ የተባረኩ ናቸው! \\q መከራ በመጣ ጊዜ {{divine_name:እግዚአብሔር|ያህዌ}} ያድናቸዋል።",
+          "R": "ለድሆችና ለደካሞች የሚያስቡ ሰዎች በእውነት ደስተኞች ናቸው። \\q መከራ ሲመጣ {{divine_name:እግዚአብሔር|ያህዌ}} ያድናቸዋል።"
+        },
+        "hi": {
+          "L": "कितना धन्य है वह जो कमज़ोर का ध्यान रखता है; \\q संकट के दिन {{divine_name:प्रभु|याहवे}} उसे छुड़ाएँगे।",
+          "B": "कितने धन्य हैं वे जो कमज़ोरों की चिंता करते हैं! \\q जब संकट आएगा, तब {{divine_name:प्रभु|याहवे}} उन्हें छुड़ाएँगे।",
+          "R": "जो लोग ग़रीबों और कमज़ोरों की चिंता करते हैं, उनका जीवन सचमुच अच्छा है। \\q जब मुसीबत आएगी, तब {{divine_name:प्रभु|याहवे}} उन्हें छुड़ाएँगे।"
+        },
+        "ru": {
+          "L": "Блажен тот, кто заботится о слабом; \\q в день беды {{divine_name:ГОСПОДЬ|Яхве}} избавит его.",
+          "B": "Блаженны те, кто заботится о слабых! \\q Когда придёт беда, {{divine_name:ГОСПОДЬ|Яхве}} избавит их.",
+          "R": "Счастливы люди, которые заботятся о бедных и слабых. \\q Когда придёт беда, {{divine_name:ГОСПОДЬ|Яхве}} спасёт их."
+        },
+        "ja": {
+          "L": "幸いなことよ、弱い者に心を配る者は。 \\q 災いの日に、{{divine_name:主|ヤハウェ}}はその人を救い出される。",
+          "B": "なんと幸いなことか、弱い人を思いやる人は。 \\q 災いが来るとき、{{divine_name:主|ヤハウェ}}はその人を救い出してくださる。",
+          "R": "貧しい人や弱い人を思いやる人は、本当に幸せだ。 \\q 困ったことが起きるとき、{{divine_name:主|ヤハウェ}}はその人を助け出してくださる。"
+        },
+        "uk": {
+          "L": "{{gender:Блаженна людина, що дбає|Блаженний чоловік, що дбає}} про слабкого; \\q у день лиха {{divine_name:ГОСПОДЬ|Ягве}} визволить {{gender:її|його}}.",
+          "B": "Блаженні ті, хто піклується про слабких! \\q Коли прийде біда, {{divine_name:ГОСПОДЬ|Ягве}} визволить їх.",
+          "R": "Справді добре живеться людям, які дбають про бідних і слабких. \\q Коли прийде біда, {{divine_name:ГОСПОДЬ|Ягве}} врятує їх."
+        },
+        "id": {
+          "L": "Berbahagialah orang yang memperhatikan orang yang lemah; \\q pada hari kesusahan {{divine_name:TUHAN|Yahweh}} akan meluputkan dia.",
+          "B": "Berbahagialah orang-orang yang peduli kepada orang yang lemah! \\q Ketika kesusahan datang, {{divine_name:TUHAN|Yahweh}} akan menyelamatkan mereka.",
+          "R": "Sungguh bahagia hidup orang-orang yang peduli kepada orang-orang miskin dan lemah. \\q Ketika kesusahan datang, {{divine_name:TUHAN|Yahweh}} akan menyelamatkan mereka."
         }
       },
       "decisions": [
@@ -375,6 +444,65 @@
           "reason": "The English Literal offers \"them\" or \"him\". The Amharic singular here speaks of anyone who cares for the weak, man or woman, as ሰው does, so there is no second wording to offer and no span (docs/amharic-style.md 7b). This holds for the rest of the psalm.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190410020021",
+            "o190410020072"
+          ],
+          "choice": "\"वह जो\", \"उसे\" (L, verses 2-4) with no gender span",
+          "alternatives": [],
+          "reason": "The English sets \"them\" against \"him\" for anyone who cares for the weak. Hindi \"वह\", \"उसे\", \"उसका\" are the same for a man or a woman, and the generic masculine verb is ordinary Hindi, so the Hindi needs no span (also verse 7). Balanced and Readable use the plural, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190410020011",
+            "o190410020021",
+            "o190410020072"
+          ],
+          "choice": "\"тот ... его\", no gender span",
+          "alternatives": [
+            "a gender span on each pronoun"
+          ],
+          "reason": "The words refer to anyone who cares for the weak. Russian \"тот, кто\" includes anyone, and the masculine \"он\" that follows it is the ordinary form for a person of either sex, so the English gender spans (\"them|him\", here and in verses 3-4 and 7) need no Russian counterpart. Balanced and Readable use the plural, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190410020021",
+            "o190410020041"
+          ],
+          "choice": "No gender span: the one who cares for the weak is \"者\" / \"人\" / \"その人\" (Psalms 41)",
+          "alternatives": [],
+          "reason": "Japanese 人 and その人 already cover men and women, so the English {{gender:them|him}} spans in 41:2-4 and 41:7 need no Japanese span (PSA-1 convention). maskil 'el-dal 心を配る (L), 思いやる (B, R): considering wisely and acting (m2).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -412,44 +540,69 @@
       "literal_gloss": "YHWH will guard him and keep him alive, and he will be called blessed in the land; and do not give him to [the] desire of his enemies.",
       "renderings": {
         "en": {
-          "L": "{{divine_name:The LORD|Yahweh}} will guard {{gender:them|him}} and keep {{gender:them|him}} alive, and {{gender:they|he}} will be called blessed in the land; and do not give {{gender:them|him}} over to the desire of {{gender:their|his}} enemies!",
-          "B": "{{divine_name:The LORD|Yahweh}} will protect them and keep them alive; they will be counted blessed in the land. Do not hand them over to the will of their enemies!",
-          "R": "{{divine_name:The LORD|Yahweh}} will protect them and keep them alive. People in the land will say how good their life is. {{divine_name:LORD|Yahweh}}, do not let their enemies do what they want to them!"
+          "L": "{{divine_name:The LORD|Yahweh}} will guard {{gender:them|him}} and keep {{gender:them|him}} alive, and {{gender:they|he}} will be called blessed in the land; \\q and do not give {{gender:them|him}} over to the desire of {{gender:their|his}} enemies!",
+          "B": "{{divine_name:The LORD|Yahweh}} will protect them and keep them alive; they will be counted blessed in the land. \\q Do not hand them over to the will of their enemies!",
+          "R": "{{divine_name:The LORD|Yahweh}} will protect them and keep them alive. People in the land will say how good their life is. \\q {{divine_name:LORD|Yahweh}}, do not let their enemies do what they want to them!"
         },
         "fr": {
-          "L": "{{divine_name:Le SEIGNEUR|Yahvé}} le gardera et le fera vivre, et il sera dit heureux dans le pays ; et ne le livre pas au désir de ses ennemis !",
-          "B": "{{divine_name:Le SEIGNEUR|Yahvé}} les protégera et les gardera en vie ; on les dira heureux dans le pays. Ne les livre pas à la volonté de leurs ennemis !",
-          "R": "{{divine_name:Le SEIGNEUR|Yahvé}} les protégera et les gardera en vie. Les gens du pays diront combien leur vie est belle. {{divine_name:SEIGNEUR|Yahvé}}, ne laisse pas leurs ennemis leur faire ce qu’ils veulent !"
+          "L": "{{divine_name:Le SEIGNEUR|Yahvé}} le gardera et le fera vivre, et il sera dit heureux dans le pays ; \\q et ne le livre pas au désir de ses ennemis !",
+          "B": "{{divine_name:Le SEIGNEUR|Yahvé}} les protégera et les gardera en vie ; on les dira heureux dans le pays. \\q Ne les livre pas à la volonté de leurs ennemis !",
+          "R": "{{divine_name:Le SEIGNEUR|Yahvé}} les protégera et les gardera en vie. Les gens du pays diront combien leur vie est belle. \\q {{divine_name:SEIGNEUR|Yahvé}}, ne laisse pas leurs ennemis leur faire ce qu’ils veulent !"
         },
         "sw": {
-          "L": "{{divine_name:BWANA|Yahwe}} atamlinda na kumhifadhi hai, naye ataitwa heri katika nchi; wala usimtie katika tamaa ya adui zake!",
-          "B": "{{divine_name:BWANA|Yahwe}} atawalinda na kuwaweka hai; watahesabiwa kuwa wenye heri katika nchi. Usiwakabidhi kwa matakwa ya adui zao!",
-          "R": "{{divine_name:BWANA|Yahwe}} atawalinda na kuwaweka hai. Watu katika nchi watasema jinsi maisha yao yalivyo mema. {{divine_name:BWANA|Yahwe}}, usiwaache adui zao wawatendee wanavyotaka!"
+          "L": "{{divine_name:BWANA|Yahwe}} atamlinda na kumhifadhi hai, naye ataitwa heri katika nchi; \\q wala usimtie katika tamaa ya adui zake!",
+          "B": "{{divine_name:BWANA|Yahwe}} atawalinda na kuwaweka hai; watahesabiwa kuwa wenye heri katika nchi. \\q Usiwakabidhi kwa matakwa ya adui zao!",
+          "R": "{{divine_name:BWANA|Yahwe}} atawalinda na kuwaweka hai. Watu katika nchi watasema jinsi maisha yao yalivyo mema. \\q {{divine_name:BWANA|Yahwe}}, usiwaache adui zao wawatendee wanavyotaka!"
         },
         "es": {
-          "L": "{{divine_name:El SEÑOR|Yahvé}} lo guardará y le dará vida, y será llamado dichoso en la tierra; ¡y no lo entregues al deseo de sus enemigos!",
-          "B": "{{divine_name:El SEÑOR|Yahvé}} los protegerá y los mantendrá con vida; serán tenidos por dichosos en la tierra. ¡No los entregues a la voluntad de sus enemigos!",
-          "R": "{{divine_name:El SEÑOR|Yahvé}} las protegerá y las mantendrá con vida. La gente de la tierra dirá lo buena que es su vida. {{divine_name:SEÑOR|Yahvé}}, ¡no dejes que sus enemigos les hagan lo que quieren!"
+          "L": "{{divine_name:El SEÑOR|Yahvé}} lo guardará y le dará vida, y será llamado dichoso en la tierra; \\q ¡y no lo entregues al deseo de sus enemigos!",
+          "B": "{{divine_name:El SEÑOR|Yahvé}} los protegerá y los mantendrá con vida; serán tenidos por dichosos en la tierra. \\q ¡No los entregues a la voluntad de sus enemigos!",
+          "R": "{{divine_name:El SEÑOR|Yahvé}} las protegerá y las mantendrá con vida. La gente de la tierra dirá lo buena que es su vida. \\q {{divine_name:SEÑOR|Yahvé}}, ¡no dejes que sus enemigos les hagan lo que quieren!"
         },
         "vi": {
-          "L": "{{divine_name:CHÚA|Gia-vê}} sẽ gìn giữ người ấy và giữ người ấy sống, và người ấy sẽ được gọi là có phước trong xứ; xin đừng phó người ấy cho ý muốn của kẻ thù người ấy!",
-          "B": "{{divine_name:CHÚA|Gia-vê}} sẽ bảo vệ họ và giữ họ sống; họ sẽ được kể là có phước trong xứ. Xin đừng giao họ cho ý muốn của kẻ thù họ!",
-          "R": "{{divine_name:CHÚA|Gia-vê}} sẽ che chở họ và giữ họ sống. Người trong xứ sẽ nói đời họ thật tốt đẹp. Lạy {{divine_name:CHÚA|Gia-vê}}, xin đừng để kẻ thù muốn làm gì họ cũng được!"
+          "L": "{{divine_name:CHÚA|Gia-vê}} sẽ gìn giữ người ấy và giữ người ấy sống, và người ấy sẽ được gọi là có phước trong xứ; \\q xin đừng phó người ấy cho ý muốn của kẻ thù người ấy!",
+          "B": "{{divine_name:CHÚA|Gia-vê}} sẽ bảo vệ họ và giữ họ sống; họ sẽ được kể là có phước trong xứ. \\q Xin đừng giao họ cho ý muốn của kẻ thù họ!",
+          "R": "{{divine_name:CHÚA|Gia-vê}} sẽ che chở họ và giữ họ sống. Người trong xứ sẽ nói đời họ thật tốt đẹp. \\q Lạy {{divine_name:CHÚA|Gia-vê}}, xin đừng để kẻ thù muốn làm gì họ cũng được!"
         },
         "ko": {
-          "L": "{{divine_name:주|야훼}}께서 그를 지키시고 살리실 것이니, 그는 땅에서 복되다 일컬어질 것이다. 그를 그의 원수들의 욕심에 넘기지 마십시오!",
-          "B": "{{divine_name:주|야훼}}께서 그들을 보호하시고 살려 주실 것이니, 그들은 이 땅에서 복된 사람이라 불릴 것이다. 그들을 원수들의 뜻대로 넘기지 마십시오!",
-          "R": "{{divine_name:주|야훼}}께서 그들을 보호하시고 살려 주실 것이다. 그 땅 사람들이 그들의 삶이 참 좋다고 말할 것이다. {{divine_name:주|야훼}}여, 그들의 원수들이 그들을 마음대로 하지 못하게 해 주십시오!"
+          "L": "{{divine_name:주|야훼}}께서 그를 지키시고 살리실 것이니, 그는 땅에서 복되다 일컬어질 것이다. \\q 그를 그의 원수들의 욕심에 넘기지 마십시오!",
+          "B": "{{divine_name:주|야훼}}께서 그들을 보호하시고 살려 주실 것이니, 그들은 이 땅에서 복된 사람이라 불릴 것이다. \\q 그들을 원수들의 뜻대로 넘기지 마십시오!",
+          "R": "{{divine_name:주|야훼}}께서 그들을 보호하시고 살려 주실 것이다. 그 땅 사람들이 그들의 삶이 참 좋다고 말할 것이다. \\q {{divine_name:주|야훼}}여, 그들의 원수들이 그들을 마음대로 하지 못하게 해 주십시오!"
         },
         "pt": {
-          "L": "{{divine_name:O SENHOR|Javé}} o guardará e o manterá vivo, e ele será chamado bem-aventurado na terra; e não o entregues ao desejo dos seus inimigos!",
-          "B": "{{divine_name:O SENHOR|Javé}} os protegerá e os manterá vivos; eles serão considerados felizes na terra. Não os entregues à vontade dos seus inimigos!",
-          "R": "{{divine_name:O SENHOR|Javé}} vai protegê-las e mantê-las vivas. As pessoas da terra vão dizer como a vida delas é boa. {{divine_name:SENHOR|Javé}}, não deixes que os inimigos delas façam com elas o que querem!"
+          "L": "{{divine_name:O SENHOR|Javé}} o guardará e o manterá vivo, e ele será chamado bem-aventurado na terra; \\q e não o entregues ao desejo dos seus inimigos!",
+          "B": "{{divine_name:O SENHOR|Javé}} os protegerá e os manterá vivos; eles serão considerados felizes na terra. \\q Não os entregues à vontade dos seus inimigos!",
+          "R": "{{divine_name:O SENHOR|Javé}} vai protegê-las e mantê-las vivas. As pessoas da terra vão dizer como a vida delas é boa. \\q {{divine_name:SENHOR|Javé}}, não deixes que os inimigos delas façam com elas o que querem!"
         },
         "am": {
-          "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ይጠብቀዋል፤ በሕይወትም ያኖረዋል፤ በምድሪቱም ምስጉን ይባላል፤ ለጠላቶቹም ምኞት አሳልፈህ አትስጠው!",
-          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ይጠብቃቸዋል፤ በሕይወትም ያኖራቸዋል፤ በምድሪቱም የተባረኩ ተብለው ይቆጠራሉ። ለጠላቶቻቸው ፈቃድ አሳልፈህ አትስጣቸው!",
-          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ይጠብቃቸዋል፤ በሕይወትም ያኖራቸዋል። በምድሪቱ ያሉ ሰዎች ኑሮአቸው መልካም እንደ ሆነ ይናገራሉ። {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ጠላቶቻቸው የፈለጉትን እንዲያደርጉባቸው አትፍቀድ!"
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ይጠብቀዋል፤ በሕይወትም ያኖረዋል፤ በምድሪቱም ምስጉን ይባላል፤ \\q ለጠላቶቹም ምኞት አሳልፈህ አትስጠው!",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ይጠብቃቸዋል፤ በሕይወትም ያኖራቸዋል፤ በምድሪቱም የተባረኩ ተብለው ይቆጠራሉ። \\q ለጠላቶቻቸው ፈቃድ አሳልፈህ አትስጣቸው!",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ይጠብቃቸዋል፤ በሕይወትም ያኖራቸዋል። በምድሪቱ ያሉ ሰዎች ኑሮአቸው መልካም እንደ ሆነ ይናገራሉ። \\q {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ጠላቶቻቸው የፈለጉትን እንዲያደርጉባቸው አትፍቀድ!"
+        },
+        "hi": {
+          "L": "{{divine_name:प्रभु|याहवे}} उसकी रक्षा करेंगे और उसे जीवित रखेंगे, और वह देश में धन्य कहलाएगा; \\q और उसे उसके शत्रुओं की इच्छा पर न छोड़!",
+          "B": "{{divine_name:प्रभु|याहवे}} उनकी रक्षा करेंगे और उन्हें जीवित रखेंगे; वे देश में धन्य गिने जाएँगे। \\q उन्हें उनके शत्रुओं की इच्छा पर न छोड़!",
+          "R": "{{divine_name:प्रभु|याहवे}} उनकी रक्षा करेंगे और उन्हें जीवित रखेंगे। देश के लोग कहेंगे कि उनका जीवन कितना अच्छा है। \\q हे {{divine_name:प्रभु|याहवे}}, उनके शत्रुओं को उनके साथ मनमानी न करने दे!"
+        },
+        "ru": {
+          "L": "{{divine_name:ГОСПОДЬ|Яхве}} сохранит его и даст ему жить, и будет он назван блаженным на земле; \\q и не отдавай его на волю врагов его!",
+          "B": "{{divine_name:ГОСПОДЬ|Яхве}} защитит их и сохранит им жизнь; их назовут блаженными в стране. \\q Не отдавай их на волю их врагов!",
+          "R": "{{divine_name:ГОСПОДЬ|Яхве}} защитит их и сохранит им жизнь. Люди в стране будут говорить, как хороша их жизнь. \\q {{divine_name:ГОСПОДИ|Яхве}}, не дай их врагам сделать с ними то, что те хотят."
+        },
+        "ja": {
+          "L": "{{divine_name:主|ヤハウェ}}はその人を守り、生かされる。その人は地で幸いな者と呼ばれる。 \\q その人を、敵の望みのままに渡さないでください。",
+          "B": "{{divine_name:主|ヤハウェ}}はその人を守り、生き長らえさせてくださる。その人は、地で幸いな者とたたえられる。 \\q その人を、敵の思いのままに渡さないでください。",
+          "R": "{{divine_name:主|ヤハウェ}}はその人を守り、生かしてくださる。国じゅうの人が、その人はなんと幸せだろうと言う。 \\q {{divine_name:主|ヤハウェ}}よ、敵がその人に、したいことをするのを許さないでください。"
+        },
+        "uk": {
+          "L": "{{divine_name:ГОСПОДЬ|Ягве}} стерегтиме {{gender:її|його}} і збереже {{gender:її живою|його живим}}, і {{gender:її назвуть блаженною|його назвуть блаженним}} в краю; \\q і не віддай {{gender:її|його}} на волю {{gender:її|його}} ворогів!",
+          "B": "{{divine_name:ГОСПОДЬ|Ягве}} захистить їх і збереже їм життя; їх уважатимуть блаженними в краю. \\q Не віддай їх на волю їхніх ворогів!",
+          "R": "{{divine_name:ГОСПОДЬ|Ягве}} захистить їх і збереже їм життя. Люди в краю казатимуть, як добре їм живеться. \\q {{divine_name:ГОСПОДИ|Ягве}}, не дай їхнім ворогам зробити з ними, що ті хочуть!"
+        },
+        "id": {
+          "L": "{{divine_name:TUHAN|Yahweh}} akan menjaga dia dan memelihara hidupnya, dan ia akan disebut berbahagia di negeri itu; \\q dan janganlah menyerahkan dia kepada keinginan musuh-musuhnya!",
+          "B": "{{divine_name:TUHAN|Yahweh}} akan melindungi mereka dan memelihara hidup mereka; mereka akan disebut berbahagia di negeri itu. \\q Janganlah menyerahkan mereka kepada kehendak musuh-musuh mereka!",
+          "R": "{{divine_name:TUHAN|Yahweh}} akan melindungi mereka dan menjaga mereka tetap hidup. Orang-orang di negeri itu akan berkata betapa baik hidup mereka. \\q {{divine_name:TUHAN|Yahweh}}, janganlah biarkan musuh-musuh mereka berbuat sesuka hati terhadap mereka!"
         }
       },
       "decisions": [
@@ -513,6 +666,44 @@
           "reason": "Readable names the one addressed (m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o190410030071",
+            "o190410030082"
+          ],
+          "choice": "the turn to God: \"न छोड़\" (\"तू\")",
+          "alternatives": [],
+          "reason": "The last line turns from speaking of the LORD to speaking to him (m2); the Hindi turns from the honorific third person to the \"तू\" of prayer, and Readable names the LORD, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190410030081"
+          ],
+          "choice": "The turn to prayer \"渡さないでください\" at every level (R adds \"DNよ、\" as the English R)",
+          "alternatives": [],
+          "reason": "The Hebrew turns from statement to a request to God (m2); a request to God is 〜ないでください in the Psalter.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -545,44 +736,69 @@
       "literal_gloss": "YHWH will sustain him on a couch of illness; all his bed you have changed in his sickness.",
       "renderings": {
         "en": {
-          "L": "{{divine_name:The LORD|Yahweh}} will sustain {{gender:them|him}} on a bed of illness; all {{gender:their|his}} bed {{deity_pronoun:you|You}} have turned over in {{gender:their|his}} sickness.",
-          "B": "{{divine_name:The LORD|Yahweh}} will hold them up on their sickbed; when they are ill, {{deity_pronoun:you|You}} turn their whole bed of sickness to health.",
-          "R": "When they are sick in bed, {{divine_name:the LORD|Yahweh}} will give them strength. {{divine_name:LORD|Yahweh}}, {{deity_pronoun:you|You}} will make them well again."
+          "L": "{{divine_name:The LORD|Yahweh}} will sustain {{gender:them|him}} on a bed of illness; \\q all {{gender:their|his}} bed {{deity_pronoun:you|You}} have turned over in {{gender:their|his}} sickness.",
+          "B": "{{divine_name:The LORD|Yahweh}} will hold them up on their sickbed; \\q when they are ill, {{deity_pronoun:you|You}} turn their whole bed of sickness to health.",
+          "R": "When they are sick in bed, {{divine_name:the LORD|Yahweh}} will give them strength. \\q {{divine_name:LORD|Yahweh}}, {{deity_pronoun:you|You}} will make them well again."
         },
         "fr": {
-          "L": "{{divine_name:Le SEIGNEUR|Yahvé}} le soutiendra sur un lit de souffrance ; tout son lit, {{deity_pronoun:tu|Tu}} l’as retourné dans sa maladie.",
-          "B": "{{divine_name:Le SEIGNEUR|Yahvé}} les soutiendra sur leur lit de malade ; quand ils sont malades, {{deity_pronoun:tu|Tu}} changes tout leur lit de souffrance en guérison.",
-          "R": "Quand ils seront malades au lit, {{divine_name:le SEIGNEUR|Yahvé}} leur donnera des forces. {{divine_name:SEIGNEUR|Yahvé}}, {{deity_pronoun:tu|Tu}} les guériras."
+          "L": "{{divine_name:Le SEIGNEUR|Yahvé}} le soutiendra sur un lit de souffrance ; \\q tout son lit, {{deity_pronoun:tu|Tu}} l’as retourné dans sa maladie.",
+          "B": "{{divine_name:Le SEIGNEUR|Yahvé}} les soutiendra sur leur lit de malade ; \\q quand ils sont malades, {{deity_pronoun:tu|Tu}} changes tout leur lit de souffrance en guérison.",
+          "R": "Quand ils seront malades au lit, {{divine_name:le SEIGNEUR|Yahvé}} leur donnera des forces. \\q {{divine_name:SEIGNEUR|Yahvé}}, {{deity_pronoun:tu|Tu}} les guériras."
         },
         "sw": {
-          "L": "{{divine_name:BWANA|Yahwe}} atamtegemeza kitandani mwa ugonjwa; kitanda chake chote umekigeuza katika ugonjwa wake.",
-          "B": "{{divine_name:BWANA|Yahwe}} atawategemeza kitandani mwao wakiwa wagonjwa; wanapougua, unakigeuza kitanda chao chote cha ugonjwa kuwa afya.",
-          "R": "Wanapokuwa wagonjwa kitandani, {{divine_name:BWANA|Yahwe}} atawapa nguvu. {{divine_name:BWANA|Yahwe}}, {{deity_pronoun:wewe|Wewe}} utawaponya tena."
+          "L": "{{divine_name:BWANA|Yahwe}} atamtegemeza kitandani mwa ugonjwa; \\q kitanda chake chote umekigeuza katika ugonjwa wake.",
+          "B": "{{divine_name:BWANA|Yahwe}} atawategemeza kitandani mwao wakiwa wagonjwa; \\q wanapougua, \\q unakigeuza kitanda chao chote cha ugonjwa kuwa afya.",
+          "R": "Wanapokuwa wagonjwa kitandani, {{divine_name:BWANA|Yahwe}} atawapa nguvu. \\q {{divine_name:BWANA|Yahwe}}, {{deity_pronoun:wewe|Wewe}} utawaponya tena."
         },
         "es": {
-          "L": "{{divine_name:El SEÑOR|Yahvé}} lo sostendrá en el lecho del dolor; toda su cama {{deity_pronoun:tú|Tú}} has cambiado en su enfermedad.",
-          "B": "{{divine_name:El SEÑOR|Yahvé}} los sostendrá en su lecho de enfermos; cuando estén enfermos, {{deity_pronoun:tú|Tú}} cambiarás todo su lecho de dolor en salud.",
-          "R": "Cuando estén enfermos en cama, {{divine_name:el SEÑOR|Yahvé}} les dará fuerzas. {{divine_name:SEÑOR|Yahvé}}, {{deity_pronoun:tú|Tú}} los sanarás otra vez."
+          "L": "{{divine_name:El SEÑOR|Yahvé}} lo sostendrá en el lecho del dolor; \\q toda su cama {{deity_pronoun:tú|Tú}} has cambiado en su enfermedad.",
+          "B": "{{divine_name:El SEÑOR|Yahvé}} los sostendrá en su lecho de enfermos; \\q cuando estén enfermos, {{deity_pronoun:tú|Tú}} cambiarás todo su lecho de dolor en salud.",
+          "R": "Cuando estén enfermos en cama, {{divine_name:el SEÑOR|Yahvé}} les dará fuerzas. \\q {{divine_name:SEÑOR|Yahvé}}, {{deity_pronoun:tú|Tú}} los sanarás otra vez."
         },
         "vi": {
-          "L": "{{divine_name:CHÚA|Gia-vê}} sẽ nâng đỡ người ấy trên giường bệnh; cả giường người ấy {{deity_pronoun:ngài|Ngài}} đã lật lại trong cơn bệnh của người ấy.",
-          "B": "{{divine_name:CHÚA|Gia-vê}} sẽ nâng đỡ họ trên giường bệnh; khi họ đau ốm, {{deity_pronoun:ngài|Ngài}} biến cả giường bệnh của họ thành sự khỏe mạnh.",
-          "R": "Khi họ đau ốm nằm trên giường, {{divine_name:CHÚA|Gia-vê}} sẽ ban sức cho họ. Lạy {{divine_name:CHÚA|Gia-vê}}, {{deity_pronoun:ngài|Ngài}} sẽ làm cho họ khỏe lại."
+          "L": "{{divine_name:CHÚA|Gia-vê}} sẽ nâng đỡ người ấy trên giường bệnh; \\q cả giường người ấy {{deity_pronoun:ngài|Ngài}} đã lật lại trong cơn bệnh của người ấy.",
+          "B": "{{divine_name:CHÚA|Gia-vê}} sẽ nâng đỡ họ trên giường bệnh; \\q khi họ đau ốm, \\q {{deity_pronoun:ngài|Ngài}} biến cả giường bệnh của họ thành sự khỏe mạnh.",
+          "R": "Khi họ đau ốm nằm trên giường, {{divine_name:CHÚA|Gia-vê}} sẽ ban sức cho họ. \\q Lạy {{divine_name:CHÚA|Gia-vê}}, {{deity_pronoun:ngài|Ngài}} sẽ làm cho họ khỏe lại."
         },
         "ko": {
-          "L": "{{divine_name:주|야훼}}께서 병상에서 그를 붙드실 것이다. 그가 아플 때 주님께서 그의 잠자리를 온통 바꾸어 주셨습니다.",
-          "B": "{{divine_name:주|야훼}}께서 병상에 누운 그들을 붙들어 주실 것이다. 그들이 병들었을 때 주님께서 그들의 병상을 온통 회복의 자리로 바꾸어 주십니다.",
-          "R": "그들이 아파서 누워 있을 때 {{divine_name:주|야훼}}께서 그들에게 힘을 주실 것이다. {{divine_name:주|야훼}}여, 주님께서 그들을 다시 낫게 해 주실 것입니다."
+          "L": "{{divine_name:주|야훼}}께서 병상에서 그를 붙드실 것이다. \\q 그가 아플 때 주님께서 그의 잠자리를 온통 바꾸어 주셨습니다.",
+          "B": "{{divine_name:주|야훼}}께서 병상에 누운 그들을 붙들어 주실 것이다. \\q 그들이 병들었을 때 주님께서 \\q 그들의 병상을 온통 회복의 자리로 바꾸어 주십니다.",
+          "R": "그들이 아파서 누워 있을 때 {{divine_name:주|야훼}}께서 그들에게 힘을 주실 것이다. \\q {{divine_name:주|야훼}}여, 주님께서 그들을 다시 낫게 해 주실 것입니다."
         },
         "pt": {
-          "L": "{{divine_name:O SENHOR|Javé}} o sustentará no leito de enfermidade; toda a sua cama {{deity_pronoun:tu|Tu}} transformaste na sua doença.",
-          "B": "{{divine_name:O SENHOR|Javé}} os sustentará no leito de doença; quando estão doentes, {{deity_pronoun:tu|Tu}} transformas em saúde todo o seu leito de enfermidade.",
-          "R": "Quando elas estiverem doentes na cama, {{divine_name:o SENHOR|Javé}} vai dar forças a elas. {{divine_name:SENHOR|Javé}}, {{deity_pronoun:tu|Tu}} vais fazê-las ficar boas de novo."
+          "L": "{{divine_name:O SENHOR|Javé}} o sustentará no leito de enfermidade; \\q toda a sua cama {{deity_pronoun:tu|Tu}} transformaste na sua doença.",
+          "B": "{{divine_name:O SENHOR|Javé}} os sustentará no leito de doença; \\q quando estão doentes, {{deity_pronoun:tu|Tu}} transformas em saúde todo o seu leito de enfermidade.",
+          "R": "Quando elas estiverem doentes na cama, {{divine_name:o SENHOR|Javé}} vai dar forças a elas. \\q {{divine_name:SENHOR|Javé}}, {{deity_pronoun:tu|Tu}} vais fazê-las ficar boas de novo."
         },
         "am": {
-          "L": "{{divine_name:እግዚአብሔር|ያህዌ}} በሕመም አልጋ ላይ ይደግፈዋል፤ በበሽታው ጊዜ መኝታውን ሁሉ ገለበጥህለት።",
-          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} በሕመም አልጋቸው ላይ ደግፎ ይይዛቸዋል፤ ሲታመሙም የሕመም አልጋቸውን ሁሉ ወደ ጤንነት ትለውጥላቸዋለህ።",
-          "R": "ታመው በአልጋ ላይ ሲተኙ {{divine_name:እግዚአብሔር|ያህዌ}} ብርታት ይሰጣቸዋል። {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ እንደ ገና ትፈውሳቸዋለህ።"
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}} በሕመም አልጋ ላይ ይደግፈዋል፤ \\q በበሽታው ጊዜ መኝታውን ሁሉ ገለበጥህለት።",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} በሕመም አልጋቸው ላይ ደግፎ ይይዛቸዋል፤ \\q ሲታመሙም የሕመም አልጋቸውን ሁሉ ወደ ጤንነት ትለውጥላቸዋለህ።",
+          "R": "ታመው በአልጋ ላይ ሲተኙ {{divine_name:እግዚአብሔር|ያህዌ}} ብርታት ይሰጣቸዋል። \\q {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ እንደ ገና ትፈውሳቸዋለህ።"
+        },
+        "hi": {
+          "L": "{{divine_name:प्रभु|याहवे}} रोग की खाट पर उसे सँभालेंगे; \\q उसकी बीमारी में तू उसका सारा बिछौना उलट देता है।",
+          "B": "{{divine_name:प्रभु|याहवे}} बीमारी के बिछौने पर उन्हें सहारा देंगे; \\q जब वे बीमार होते हैं, तब तू उनकी बीमारी के पूरे बिछौने को आरोग्य में बदल देता है।",
+          "R": "जब वे बीमार होकर बिस्तर पर पड़े होंगे, तब {{divine_name:प्रभु|याहवे}} उन्हें बल देंगे। \\q हे {{divine_name:प्रभु|याहवे}}, तू उन्हें फिर से स्वस्थ कर देगा।"
+        },
+        "ru": {
+          "L": "{{divine_name:ГОСПОДЬ|Яхве}} подкрепит его на ложе болезни; \\q всю постель его {{deity_pronoun:ты|Ты}} перевернул в болезни его.",
+          "B": "{{divine_name:ГОСПОДЬ|Яхве}} поддержит их на одре болезни; \\q когда они болеют, {{deity_pronoun:ты|Ты}} обращаешь всю их постель болезни к здоровью.",
+          "R": "Когда они лежат больные, {{divine_name:ГОСПОДЬ|Яхве}} даст им силы. \\q {{divine_name:ГОСПОДИ|Яхве}}, {{deity_pronoun:ты|Ты}} снова сделаешь их здоровыми."
+        },
+        "ja": {
+          "L": "{{divine_name:主|ヤハウェ}}は、病の床の上でその人を支えられる。 \\q その人の病のとき、その寝床のすべてを、あなたは変えられた。",
+          "B": "{{divine_name:主|ヤハウェ}}は、病の床にあるその人を支えてくださる。 \\q その人が病むとき、あなたはその病の床を、すっかり健やかなものに変えてくださる。",
+          "R": "その人が病気で寝ているとき、{{divine_name:主|ヤハウェ}}は力を与えてくださる。 \\q {{divine_name:主|ヤハウェ}}よ、あなたはその人を、もう一度元気にしてくださる。"
+        },
+        "uk": {
+          "L": "{{divine_name:ГОСПОДЬ|Ягве}} підтримає {{gender:її|його}} на ложі недуги; \\q усе {{gender:її|його}} ложе {{deity_pronoun:ти|Ти}} перевернув у {{gender:її|його}} хворобі.",
+          "B": "{{divine_name:ГОСПОДЬ|Ягве}} підтримає їх на ложі хвороби; \\q коли вони нездужають, {{deity_pronoun:ти|Ти}} обертаєш усе їхнє ложе недуги на здоровʼя.",
+          "R": "Коли вони хворі лежать у ліжку, {{divine_name:ГОСПОДЬ|Ягве}} дасть їм сили. \\q {{divine_name:ГОСПОДИ|Ягве}}, {{deity_pronoun:ти|Ти}} знову зробиш їх здоровими."
+        },
+        "id": {
+          "L": "{{divine_name:TUHAN|Yahweh}} akan menopang dia di atas ranjang penyakit; \\q seluruh tempat tidurnya telah {{deity_pronoun:kau|Kau}}balikkan dalam sakitnya.",
+          "B": "{{divine_name:TUHAN|Yahweh}} akan menopang mereka di tempat tidur ketika mereka sakit; \\q ketika mereka sakit, {{deity_pronoun:engkau|Engkau}} mengubah seluruh tempat tidur penyakit mereka menjadi kesembuhan.",
+          "R": "Ketika mereka sakit di tempat tidur, {{divine_name:TUHAN|Yahweh}} akan memberi mereka kekuatan. \\q {{divine_name:TUHAN|Yahweh}}, {{deity_pronoun:engkau|Engkau}} akan membuat mereka sehat kembali."
         }
       },
       "decisions": [
@@ -655,6 +871,48 @@
           "reason": "\"người ấy\" and \"họ\" already mean a man or a woman, so the English gender spans in verses 2 to 4 have no Vietnamese counterpart.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190410040061",
+            "o190410040071",
+            "o190410040081"
+          ],
+          "choice": "\"その寝床のすべてを、あなたは変えられた\" (L), \"病の床を、すっかり健やかなものに変えてくださる\" (B), \"もう一度元気にしてくださる\" (R)",
+          "alternatives": [],
+          "reason": "The idiom is read as restoring the sick to health (m1, uncertain); Literal keeps the image, Balanced and Readable say what it means, as the English.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190410040061",
+            "o190410040071",
+            "o190410040081"
+          ],
+          "choice": "\"seluruh tempat tidurnya telah Kaubalikkan\" (L)",
+          "alternatives": [],
+          "reason": "You restore him to health (m1, uncertain); Literal keeps the Hebrew picture, Balanced and Readable say what it means.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -687,44 +945,69 @@
       "literal_gloss": "I, I said, YHWH, be gracious to me; heal my soul, for I have sinned against you.",
       "renderings": {
         "en": {
-          "L": "As for me, I said, \"{{divine_name:LORD|Yahweh}}, be gracious to me; heal my soul, for I have sinned against {{deity_pronoun:you|You}}.\"",
-          "B": "I said, \"{{divine_name:LORD|Yahweh}}, show me grace! Heal me, because it is {{deity_pronoun:you|You}} I have sinned against.\"",
-          "R": "I said, \"{{divine_name:LORD|Yahweh}}, please be kind to me. I have sinned against {{deity_pronoun:you|You}}. Please heal me.\""
+          "L": "As for me, I said, \"{{divine_name:LORD|Yahweh}}, be gracious to me; \\q heal my soul, for I have sinned against {{deity_pronoun:you|You}}.\"",
+          "B": "I said, \"{{divine_name:LORD|Yahweh}}, show me grace! \\q Heal me, because it is {{deity_pronoun:you|You}} I have sinned against.\"",
+          "R": "I said, \"{{divine_name:LORD|Yahweh}}, please be kind to me. \\q I have sinned against {{deity_pronoun:you|You}}. Please heal me.\""
         },
         "fr": {
-          "L": "Quant à moi, j’ai dit : « {{divine_name:SEIGNEUR|Yahvé}}, fais-moi grâce ; guéris mon âme, car j’ai péché contre {{deity_pronoun:toi|Toi}}. »",
-          "B": "J’ai dit : « {{divine_name:SEIGNEUR|Yahvé}}, montre-moi {{deity_pronoun:ta|Ta}} grâce ! Guéris-moi, car c’est contre {{deity_pronoun:toi|Toi}} que j’ai péché. »",
-          "R": "J’ai dit : « {{divine_name:SEIGNEUR|Yahvé}}, sois bon pour moi, je {{deity_pronoun:t’|T’}}en prie. J’ai péché contre {{deity_pronoun:toi|Toi}}. Guéris-moi, s’il {{deity_pronoun:te|Te}} plaît. »"
+          "L": "Quant à moi, j’ai dit : « {{divine_name:SEIGNEUR|Yahvé}}, fais-moi grâce ; \\q guéris mon âme, car j’ai péché contre {{deity_pronoun:toi|Toi}}. »",
+          "B": "J’ai dit : « {{divine_name:SEIGNEUR|Yahvé}}, montre-moi {{deity_pronoun:ta|Ta}} grâce ! \\q Guéris-moi, car c’est contre {{deity_pronoun:toi|Toi}} que j’ai péché. »",
+          "R": "J’ai dit : « {{divine_name:SEIGNEUR|Yahvé}}, sois bon pour moi, je {{deity_pronoun:t’|T’}}en prie. \\q J’ai péché contre {{deity_pronoun:toi|Toi}}. Guéris-moi, s’il {{deity_pronoun:te|Te}} plaît. »"
         },
         "sw": {
-          "L": "Na mimi, nilisema, \"{{divine_name:BWANA|Yahwe}}, unifanyie neema; uiponye nafsi yangu, kwa maana nimekutenda dhambi {{deity_pronoun:wewe|Wewe}}.\"",
-          "B": "Nilisema, \"{{divine_name:BWANA|Yahwe}}, unionyeshe neema! Uniponye, kwa sababu ni {{deity_pronoun:wewe|Wewe}} niliyekutenda dhambi.\"",
-          "R": "Nilisema, \"{{divine_name:BWANA|Yahwe}}, tafadhali unitendee wema. Nimekutenda dhambi {{deity_pronoun:wewe|Wewe}}. Tafadhali uniponye.\""
+          "L": "Na mimi, nilisema, \"{{divine_name:BWANA|Yahwe}}, unifanyie neema; \\q uiponye nafsi yangu, kwa maana nimekutenda dhambi {{deity_pronoun:wewe|Wewe}}.\"",
+          "B": "Nilisema, \"{{divine_name:BWANA|Yahwe}}, unionyeshe neema! \\q Uniponye, kwa sababu ni {{deity_pronoun:wewe|Wewe}} niliyekutenda dhambi.\"",
+          "R": "Nilisema, \"{{divine_name:BWANA|Yahwe}}, tafadhali unitendee wema. \\q Nimekutenda dhambi {{deity_pronoun:wewe|Wewe}}. Tafadhali uniponye.\""
         },
         "es": {
-          "L": "En cuanto a mí, dije: «{{divine_name:SEÑOR|Yahvé}}, ten piedad de mí; sana mi alma, porque he pecado contra {{deity_pronoun:ti|Ti}}».",
-          "B": "Yo dije: «{{divine_name:SEÑOR|Yahvé}}, ¡ten compasión de mí! Sáname, porque es contra {{deity_pronoun:ti|Ti}} que he pecado».",
-          "R": "Yo dije: «{{divine_name:SEÑOR|Yahvé}}, por favor, sé bueno conmigo. He pecado contra {{deity_pronoun:ti|Ti}}. Por favor, sáname»."
+          "L": "En cuanto a mí, dije: «{{divine_name:SEÑOR|Yahvé}}, ten piedad de mí; \\q sana mi alma, porque he pecado contra {{deity_pronoun:ti|Ti}}».",
+          "B": "Yo dije: «{{divine_name:SEÑOR|Yahvé}}, ¡ten compasión de mí! \\q Sáname, porque es contra {{deity_pronoun:ti|Ti}} que he pecado».",
+          "R": "Yo dije: «{{divine_name:SEÑOR|Yahvé}}, por favor, sé bueno conmigo. \\q He pecado contra {{deity_pronoun:ti|Ti}}. Por favor, sáname»."
         },
         "vi": {
-          "L": "Còn tôi, tôi đã nói: \"Lạy {{divine_name:CHÚA|Gia-vê}}, xin thương xót tôi; xin chữa lành linh hồn tôi, vì tôi đã phạm tội nghịch cùng {{deity_pronoun:ngài|Ngài}}.\"",
-          "B": "Tôi đã thưa: \"Lạy {{divine_name:CHÚA|Gia-vê}}, xin tỏ ân huệ cho tôi! Xin chữa lành tôi, vì chính {{deity_pronoun:ngài|Ngài}} là Đấng tôi đã phạm tội nghịch cùng.\"",
-          "R": "Tôi đã thưa: \"Lạy {{divine_name:CHÚA|Gia-vê}}, xin thương xót tôi. Tôi đã phạm tội với {{deity_pronoun:ngài|Ngài}}. Xin chữa lành cho tôi.\""
+          "L": "Còn tôi, tôi đã nói: \"Lạy {{divine_name:CHÚA|Gia-vê}}, xin thương xót tôi; \\q xin chữa lành linh hồn tôi, vì tôi đã phạm tội nghịch cùng {{deity_pronoun:ngài|Ngài}}.\"",
+          "B": "Tôi đã thưa: \"Lạy {{divine_name:CHÚA|Gia-vê}}, xin tỏ ân huệ cho tôi! \\q Xin chữa lành tôi, vì chính {{deity_pronoun:ngài|Ngài}} là Đấng tôi đã phạm tội nghịch cùng.\"",
+          "R": "Tôi đã thưa: \"Lạy {{divine_name:CHÚA|Gia-vê}}, xin thương xót tôi. \\q Tôi đã phạm tội với {{deity_pronoun:ngài|Ngài}}. Xin chữa lành cho tôi.\""
         },
         "ko": {
-          "L": "저로 말하자면, 제가 말하였습니다. \"{{divine_name:주|야훼}}여, 저에게 은혜를 베푸십시오. 제 영혼을 고쳐 주십시오. 제가 주님께 죄를 지었습니다.\"",
-          "B": "저는 말했습니다. \"{{divine_name:주|야훼}}여, 은혜를 베풀어 주십시오! 저를 고쳐 주십시오. 제가 죄를 지은 상대는 바로 주님이십니다.\"",
-          "R": "저는 말했습니다. \"{{divine_name:주|야훼}}여, 제발 저를 불쌍히 여겨 주십시오. 제가 주님께 죄를 지었습니다. 제발 저를 낫게 해 주십시오.\""
+          "L": "저로 말하자면, 제가 말하였습니다. \"{{divine_name:주|야훼}}여, 저에게 은혜를 베푸십시오. \\q 제 영혼을 고쳐 주십시오. 제가 주님께 죄를 지었습니다.\"",
+          "B": "저는 말했습니다. \"{{divine_name:주|야훼}}여, 은혜를 베풀어 주십시오! \\q 저를 고쳐 주십시오. 제가 죄를 지은 상대는 바로 주님이십니다.\"",
+          "R": "저는 말했습니다. \"{{divine_name:주|야훼}}여, 제발 저를 불쌍히 여겨 주십시오. \\q 제가 주님께 죄를 지었습니다. 제발 저를 낫게 해 주십시오.\""
         },
         "pt": {
-          "L": "Quanto a mim, eu disse: \"{{divine_name:SENHOR|Javé}}, sê gracioso comigo; cura a minha alma, pois pequei contra {{deity_pronoun:ti|Ti}}.\"",
-          "B": "Eu disse: \"{{divine_name:SENHOR|Javé}}, mostra-me a {{deity_pronoun:tua|Tua}} graça! Cura-me, porque foi contra {{deity_pronoun:ti|Ti}} que eu pequei.\"",
-          "R": "Eu disse: \"{{divine_name:SENHOR|Javé}}, sê bondoso comigo, por favor. Eu pequei contra {{deity_pronoun:ti|Ti}}. Por favor, cura-me.\""
+          "L": "Quanto a mim, eu disse: \"{{divine_name:SENHOR|Javé}}, sê gracioso comigo; \\q cura a minha alma, pois pequei contra {{deity_pronoun:ti|Ti}}.\"",
+          "B": "Eu disse: \"{{divine_name:SENHOR|Javé}}, mostra-me a {{deity_pronoun:tua|Tua}} graça! \\q Cura-me, porque foi contra {{deity_pronoun:ti|Ti}} que eu pequei.\"",
+          "R": "Eu disse: \"{{divine_name:SENHOR|Javé}}, sê bondoso comigo, por favor. \\q Eu pequei contra {{deity_pronoun:ti|Ti}}. Por favor, cura-me.\""
         },
         "am": {
-          "L": "እኔስ እንዲህ አልኩ፦ «{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ራራልኝ፤ በአንተ ላይ ኃጢአት ሠርቻለሁና ነፍሴን ፈውሳት።»",
-          "B": "እኔም እንዲህ አልኩ፦ «{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ራራልኝ! ኃጢአት የሠራሁት በአንተ ላይ ነውና ፈውሰኝ።»",
-          "R": "እንዲህ አልኩ፦ «{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ እባክህ ራራልኝ። በአንተ ላይ ኃጢአት ሠርቻለሁ። እባክህ ፈውሰኝ።»"
+          "L": "እኔስ እንዲህ አልኩ፦ «{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ \\q ራራልኝ፤ በአንተ ላይ ኃጢአት ሠርቻለሁና ነፍሴን ፈውሳት።»",
+          "B": "እኔም እንዲህ አልኩ፦ «{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ \\q ራራልኝ! ኃጢአት የሠራሁት በአንተ ላይ ነውና ፈውሰኝ።»",
+          "R": "እንዲህ አልኩ፦ «{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ እባክህ ራራልኝ። \\q በአንተ ላይ ኃጢአት ሠርቻለሁ። እባክህ ፈውሰኝ።»"
+        },
+        "hi": {
+          "L": "और मैंने तो कहा, \"हे {{divine_name:प्रभु|याहवे}}, मुझ पर अनुग्रह कर; \\q मेरे प्राण को चंगा कर, क्योंकि मैंने तेरे विरुद्ध पाप किया है।\"",
+          "B": "मैंने कहा, \"हे {{divine_name:प्रभु|याहवे}}, मुझ पर अनुग्रह कर! \\q मुझे चंगा कर, क्योंकि मैंने तेरे ही विरुद्ध पाप किया है।\"",
+          "R": "मैंने कहा, \"हे {{divine_name:प्रभु|याहवे}}, कृपया मुझ पर दया कर। \\q मैंने तेरे विरुद्ध पाप किया है। कृपया मुझे चंगा कर।\""
+        },
+        "ru": {
+          "L": "А я сказал: «{{divine_name:ГОСПОДИ|Яхве}}, помилуй меня; \\q исцели душу мою, потому что я согрешил против {{deity_pronoun:тебя|Тебя}}.»",
+          "B": "Я сказал: «{{divine_name:ГОСПОДИ|Яхве}}, будь милостив ко мне! \\q Исцели меня, ведь именно против {{deity_pronoun:тебя|Тебя}} я согрешил.»",
+          "R": "Я сказал: «{{divine_name:ГОСПОДИ|Яхве}}, пожалуйста, будь добр ко мне. \\q Я согрешил против {{deity_pronoun:тебя|Тебя}}. Пожалуйста, исцели меня.»"
+        },
+        "ja": {
+          "L": "わたしは、わたしは言った。「{{divine_name:主|ヤハウェ}}よ、わたしをあわれんでください。 \\q わたしの魂を癒やしてください。わたしは、あなたに罪を犯したのだから。」",
+          "B": "わたしは言った。「{{divine_name:主|ヤハウェ}}よ、わたしに恵みを示してください。 \\q わたしを癒やしてください。わたしが罪を犯したのは、ほかでもない、あなたに対してなのだから。」",
+          "R": "わたしは言った。「{{divine_name:主|ヤハウェ}}よ、どうか、わたしをあわれんでください。 \\q わたしは、あなたに罪を犯した。どうか、わたしをいやしてください。」"
+        },
+        "uk": {
+          "L": "А я сказав: «{{divine_name:ГОСПОДИ|Ягве}}, будь милостивий до мене; \\q зціли мою душу, бо я згрішив проти {{deity_pronoun:тебе|Тебе}}.»",
+          "B": "Я сказав: «{{divine_name:ГОСПОДИ|Ягве}}, вияви мені милість! \\q Зціли мене, бо саме проти {{deity_pronoun:тебе|Тебе}} я згрішив.»",
+          "R": "Я сказав: «{{divine_name:ГОСПОДИ|Ягве}}, прошу, будь добрий до мене. \\q Я згрішив проти {{deity_pronoun:тебе|Тебе}}. Прошу, зціли мене.»"
+        },
+        "id": {
+          "L": "Aku ini berkata, \"{{divine_name:TUHAN|Yahweh}}, kasihanilah aku; \\q sembuhkanlah jiwaku, sebab aku telah berdosa terhadap {{deity_pronoun:engkau|Engkau}}.\"",
+          "B": "Aku berkata, \"{{divine_name:TUHAN|Yahweh}}, kasihanilah aku! \\q Sembuhkanlah aku, sebab terhadap {{deity_pronoun:engkau|Engkau}}lah aku telah berdosa.\"",
+          "R": "Aku berkata, \"{{divine_name:TUHAN|Yahweh}}, berbaik hatilah kepadaku. \\q Aku telah berdosa terhadap {{deity_pronoun:engkau|Engkau}}. Sembuhkanlah aku.\""
         }
       },
       "decisions": [
@@ -799,6 +1082,26 @@
           "reason": "\"ማረኝ\" leans toward pardon (\"forgive me\"); the Hebrew asks for God's favour and kindness, which \"ራራልኝ\" (have pity on me, be kind to me) says. Used for this verb through Psalms 41-53 (41:11; 51:3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o190410050011",
+            "o190410050021"
+          ],
+          "choice": "\"わたしは、わたしは言った\" (L) for the emphatic 'ani-'amarti",
+          "alternatives": [
+            "わたしはと言えば、言った"
+          ],
+          "reason": "Literal keeps the doubled \"I\" that the English L gives as \"As for me\" (m1); Balanced and Readable say it once.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -830,44 +1133,69 @@
       "literal_gloss": "My enemies speak evil of me: When will he die, and his name perish?",
       "renderings": {
         "en": {
-          "L": "My enemies speak evil about me: \"When will he die, and his name perish?\"",
-          "B": "My enemies say cruel things about me: \"When will he die and be wiped from memory?\"",
-          "R": "My enemies say mean things about me. They say, \"When will he die? When will everyone forget him?\""
+          "L": "My enemies speak evil about me: \\q \"When will he die, and his name perish?\"",
+          "B": "My enemies say cruel things about me: \\q \"When will he die and be wiped from memory?\"",
+          "R": "My enemies say mean things about me. They say, \"When will he die? \\q When will everyone forget him?\""
         },
         "fr": {
-          "L": "Mes ennemis disent du mal de moi : « Quand mourra-t-il, et [quand] son nom périra-t-il ? »",
-          "B": "Mes ennemis disent des choses cruelles sur moi : « Quand va-t-il mourir et disparaître des mémoires ? »",
-          "R": "Mes ennemis disent des méchancetés sur moi. Ils disent : « Quand va-t-il mourir ? Quand tout le monde va-t-il l’oublier ? »"
+          "L": "Mes ennemis disent du mal de moi : \\q « Quand mourra-t-il, et [quand] son nom périra-t-il ? »",
+          "B": "Mes ennemis disent des choses cruelles sur moi : \\q « Quand va-t-il mourir et disparaître des mémoires ? »",
+          "R": "Mes ennemis disent des méchancetés sur moi. Ils disent : « Quand va-t-il mourir ? \\q Quand tout le monde va-t-il l’oublier ? »"
         },
         "sw": {
-          "L": "Adui zangu wanasema mabaya juu yangu: \"Atakufa lini, na jina lake litoweke?\"",
-          "B": "Adui zangu wanasema maneno ya ukatili juu yangu: \"Atakufa lini na kusahauliwa kabisa?\"",
-          "R": "Adui zangu wanasema maneno mabaya juu yangu. Wanasema, \"Atakufa lini? Kila mtu atamsahau lini?\""
+          "L": "Adui zangu wanasema mabaya juu yangu: \\q \"Atakufa lini, na jina lake litoweke?\"",
+          "B": "Adui zangu wanasema maneno ya ukatili juu yangu: \\q \"Atakufa lini na kusahauliwa kabisa?\"",
+          "R": "Adui zangu wanasema maneno mabaya juu yangu. \\q Wanasema, \"Atakufa lini? Kila mtu atamsahau lini?\""
         },
         "es": {
-          "L": "Mis enemigos hablan mal de mí: «¿Cuándo morirá, y perecerá su nombre?».",
-          "B": "Mis enemigos dicen cosas crueles de mí: «¿Cuándo se morirá y será borrado de la memoria?».",
-          "R": "Mis enemigos dicen cosas malas de mí. Dicen: «¿Cuándo se morirá? ¿Cuándo se olvidarán todos de él?»."
+          "L": "Mis enemigos hablan mal de mí: \\q «¿Cuándo morirá, y perecerá su nombre?».",
+          "B": "Mis enemigos dicen cosas crueles de mí: \\q «¿Cuándo se morirá y será borrado de la memoria?».",
+          "R": "Mis enemigos dicen cosas malas de mí. Dicen: «¿Cuándo se morirá? \\q ¿Cuándo se olvidarán todos de él?»."
         },
         "vi": {
-          "L": "Những kẻ thù của tôi nói điều ác về tôi: \"Khi nào nó chết, và danh nó tiêu mất?\"",
-          "B": "Kẻ thù tôi nói những lời độc địa về tôi: \"Bao giờ nó chết và bị xóa khỏi trí nhớ người ta?\"",
-          "R": "Kẻ thù tôi nói những lời ác độc về tôi. Chúng nói: \"Bao giờ nó chết đây? Bao giờ mọi người quên nó đi?\""
+          "L": "Những kẻ thù của tôi nói điều ác về tôi: \\q \"Khi nào nó chết, và danh nó tiêu mất?\"",
+          "B": "Kẻ thù tôi nói những lời độc địa về tôi: \\q \"Bao giờ nó chết và bị xóa khỏi trí nhớ người ta?\"",
+          "R": "Kẻ thù tôi nói những lời ác độc về tôi. Chúng nói: \\q \"Bao giờ nó chết đây? Bao giờ mọi người quên nó đi?\""
         },
         "ko": {
-          "L": "제 원수들이 저에 대해 악하게 말합니다. \"그가 언제 죽어서 그의 이름이 없어질까?\"",
-          "B": "제 원수들이 저에 대해 모진 말을 합니다. \"그가 언제 죽어서 사람들의 기억에서 지워질까?\"",
-          "R": "제 원수들은 저에 대해 못된 말을 합니다. 그들이 말합니다. \"그가 언제 죽을까? 언제쯤 모두가 그를 잊어버릴까?\""
+          "L": "제 원수들이 저에 대해 악하게 말합니다. \\q \"그가 언제 죽어서 그의 이름이 없어질까?\"",
+          "B": "제 원수들이 저에 대해 모진 말을 합니다. \\q \"그가 언제 죽어서 사람들의 기억에서 지워질까?\"",
+          "R": "제 원수들은 저에 대해 못된 말을 합니다. 그들이 말합니다. \\q \"그가 언제 죽을까? 언제쯤 모두가 그를 잊어버릴까?\""
         },
         "pt": {
-          "L": "Os meus inimigos falam mal de mim: \"Quando ele morrerá, e perecerá o seu nome?\"",
-          "B": "Os meus inimigos dizem coisas cruéis sobre mim: \"Quando é que ele vai morrer e ser apagado da memória?\"",
-          "R": "Os meus inimigos dizem maldades sobre mim. Eles dizem: \"Quando é que ele vai morrer? Quando é que todo mundo vai se esquecer dele?\""
+          "L": "Os meus inimigos falam mal de mim: \\q \"Quando ele morrerá, e perecerá o seu nome?\"",
+          "B": "Os meus inimigos dizem coisas cruéis sobre mim: \\q \"Quando é que ele vai morrer e ser apagado da memória?\"",
+          "R": "Os meus inimigos dizem maldades sobre mim. Eles dizem: \"Quando é que ele vai morrer? \\q Quando é que todo mundo vai se esquecer dele?\""
         },
         "am": {
-          "L": "ጠላቶቼ ስለ እኔ ክፉ ይናገራሉ፦ «መቼ ይሞታል? ስሙስ መቼ ይጠፋል?»",
-          "B": "ጠላቶቼ ስለ እኔ የጭካኔ ቃል ይናገራሉ፦ «መቼ ሞቶ ከትዝታ ይጠፋል?»",
-          "R": "ጠላቶቼ ስለ እኔ ክፉ ነገር ይናገራሉ። እንዲህ ይላሉ፦ «መቼ ይሞታል? ሰው ሁሉ መቼ ይረሳዋል?»"
+          "L": "ጠላቶቼ ስለ እኔ ክፉ ይናገራሉ፦ \\q «መቼ ይሞታል? ስሙስ መቼ ይጠፋል?»",
+          "B": "ጠላቶቼ ስለ እኔ የጭካኔ ቃል ይናገራሉ፦ \\q «መቼ ሞቶ ከትዝታ ይጠፋል?»",
+          "R": "ጠላቶቼ ስለ እኔ ክፉ ነገር ይናገራሉ። እንዲህ ይላሉ፦ \\q «መቼ ይሞታል? ሰው ሁሉ መቼ ይረሳዋል?»"
+        },
+        "hi": {
+          "L": "मेरे शत्रु मेरे विषय में बुरा कहते हैं: \\q \"वह कब मरेगा, और उसका नाम मिटेगा?\"",
+          "B": "मेरे शत्रु मेरे बारे में क्रूर बातें कहते हैं: \\q \"वह कब मरेगा और कब उसका नाम-निशान मिटेगा?\"",
+          "R": "मेरे शत्रु मेरे बारे में बुरी बातें कहते हैं। \\q वे कहते हैं, \"यह कब मरेगा? कब सब इसे भूल जाएँगे?\""
+        },
+        "ru": {
+          "L": "Враги мои говорят обо мне злое: \\q «Когда он умрёт и погибнет имя его?»",
+          "B": "Мои враги говорят обо мне жестокие слова: \\q «Когда же он умрёт и о нём забудут?»",
+          "R": "Мои враги говорят обо мне гадости. \\q Они говорят: «Когда он умрёт? Когда все о нём забудут?»"
+        },
+        "ja": {
+          "L": "わたしの敵は、わたしについて悪を言う。 \\q 「いつ彼は死に、その名は滅びるのか？」",
+          "B": "敵は、わたしについてひどいことを言う。 \\q 「いつになったら、あいつは死んで、人々から忘れ去られるのか？」",
+          "R": "敵は、わたしについて意地の悪いことを言う。彼らは言う。 \\q 「あいつはいつ死ぬのか？みんながあいつを忘れるのは、いつになるのか？」"
+        },
+        "uk": {
+          "L": "Мої вороги говорять про мене лихе: \\q «Коли він помре і загине його імʼя?»",
+          "B": "Мої вороги кажуть про мене жорстоке: \\q «Коли ж він помре й зітреться з памʼяті?»",
+          "R": "Мої вороги кажуть про мене погане. \\q Вони кажуть: «Коли він помре? Коли всі про нього забудуть?»"
+        },
+        "id": {
+          "L": "Musuh-musuhku mengatakan yang jahat tentang aku: \\q \"Kapan ia akan mati, dan namanya lenyap?\"",
+          "B": "Musuh-musuhku mengatakan hal-hal yang kejam tentang aku: \\q \"Kapan ia akan mati dan terhapus dari ingatan?\"",
+          "R": "Musuh-musuhku mengatakan hal-hal yang jahat tentang aku. Mereka berkata, \"Kapan ia akan mati? \\q Kapan semua orang akan melupakan dia?\""
         }
       },
       "decisions": [
@@ -897,6 +1225,25 @@
           "choice": "evil: malicious words",
           "alternatives": [],
           "reason": "The word (ra') is evil or harm: what they say wishes him harm.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o190410060072",
+            "o190410060081"
+          ],
+          "choice": "The enemies' rough \"あいつ\" (B, R); \"彼\" (L)",
+          "alternatives": [],
+          "reason": "Enemies quoted speak plainly or roughly (PSA-1); \"his name perish\" is read as being forgotten (m1).",
           "uncertain": false,
           "footnote": false
         }
@@ -935,44 +1282,69 @@
       "literal_gloss": "And if [one] comes to see, falsehood he speaks; his heart gathers trouble for itself; he goes out to the outside, he speaks.",
       "renderings": {
         "en": {
-          "L": "And if [one of them] comes to see [me], {{gender:they speak|he speaks}} empty words; {{gender:their|his}} heart gathers mischief for itself; {{gender:they go|he goes}} outside [and] {{gender:speak|speaks}} [of it].",
-          "B": "When any of them come to visit me, they say what they do not mean, while inside they gather up bad news; then they go out and spread it.",
-          "R": "When they come to see me, they pretend to be kind. But in their hearts they are looking for bad news about me. Then they go out and tell everyone."
+          "L": "And if [one of them] comes to see [me], {{gender:they speak|he speaks}} empty words; \\q {{gender:their|his}} heart gathers mischief for itself; \\q {{gender:they go|he goes}} outside [and] {{gender:speak|speaks}} [of it].",
+          "B": "When any of them come to visit me, they say what they do not mean, \\q while inside they gather up bad news; \\q then they go out and spread it.",
+          "R": "When they come to see me, they pretend to be kind. \\q But in their hearts they are looking for bad news about me. \\q Then they go out and tell everyone."
         },
         "fr": {
-          "L": "Et si [l’un d’eux] vient voir, il dit des paroles vides ; son cœur amasse le mal pour lui-même ; il sort dehors [et] parle.",
-          "B": "Quand l’un d’eux vient me rendre visite, il dit ce qu’il ne pense pas, tandis qu’au-dedans il ramasse de mauvaises nouvelles ; puis il sort et les répand.",
-          "R": "Quand ils viennent me voir, ils font semblant d’être gentils. Mais dans leur cœur, ils cherchent de mauvaises nouvelles sur moi. Puis ils sortent et le racontent à tout le monde."
+          "L": "Et si [l’un d’eux] vient voir, il dit des paroles vides ; \\q son cœur amasse le mal pour lui-même ; \\q il sort dehors [et] parle.",
+          "B": "Quand l’un d’eux vient me rendre visite, il dit ce qu’il ne pense pas, \\q tandis qu’au-dedans il ramasse de mauvaises nouvelles ; \\q puis il sort et les répand.",
+          "R": "Quand ils viennent me voir, ils font semblant d’être gentils. \\q Mais dans leur cœur, ils cherchent de mauvaises nouvelles sur moi. \\q Puis ils sortent et le racontent à tout le monde."
         },
         "sw": {
-          "L": "Na [mmoja wao] akija kuona, husema maneno matupu; moyo wake hujikusanyia uovu; hutoka nje [na] kunena [habari hizo].",
-          "B": "Mmoja wao akija kunitembelea, husema asiyoyamaanisha, huku ndani yake akikusanya habari mbaya; kisha hutoka nje na kuzieneza.",
-          "R": "Wanapokuja kuniona, hujifanya kuwa wema. Lakini mioyoni mwao wanatafuta habari mbaya juu yangu. Kisha hutoka nje na kumwambia kila mtu."
+          "L": "Na [mmoja wao] akija kuona, husema maneno matupu; \\q moyo wake hujikusanyia uovu; \\q hutoka nje [na] kunena [habari hizo].",
+          "B": "Mmoja wao akija kunitembelea, husema asiyoyamaanisha, \\q huku ndani yake akikusanya habari mbaya; \\q kisha hutoka nje na kuzieneza.",
+          "R": "Wanapokuja kuniona, hujifanya kuwa wema. \\q Lakini mioyoni mwao wanatafuta habari mbaya juu yangu. \\q Kisha hutoka nje na kumwambia kila mtu."
         },
         "es": {
-          "L": "Y si [alguno] viene a ver[me], habla palabras vanas; su corazón recoge maldad para sí; sale afuera [y lo] cuenta.",
-          "B": "Cuando alguno de ellos viene a visitarme, dice lo que no siente, mientras por dentro va juntando malas noticias; luego sale y las divulga.",
-          "R": "Cuando vienen a verme, fingen ser amables. Pero en su corazón buscan malas noticias sobre mí. Luego salen y se lo cuentan a todos."
+          "L": "Y si [alguno] viene a ver[me], habla palabras vanas; \\q su corazón recoge maldad para sí; \\q sale afuera [y lo] cuenta.",
+          "B": "Cuando alguno de ellos viene a visitarme, dice lo que no siente, \\q mientras por dentro va juntando malas noticias; \\q luego sale y las divulga.",
+          "R": "Cuando vienen a verme, fingen ser amables. \\q Pero en su corazón buscan malas noticias sobre mí. \\q Luego salen y se lo cuentan a todos."
         },
         "vi": {
-          "L": "Và nếu [một kẻ] đến thăm [tôi], nó nói những lời rỗng tuếch; lòng nó thu góp điều gian ác cho mình; nó đi ra ngoài [và] nói [ra].",
-          "B": "Khi có ai trong bọn chúng đến thăm tôi, chúng nói những lời không thật lòng, trong khi bên trong lại thu nhặt những tin xấu; rồi chúng ra ngoài loan truyền.",
-          "R": "Khi chúng đến thăm tôi, chúng giả vờ tử tế. Nhưng trong lòng chúng đang tìm tin xấu về tôi. Rồi chúng đi ra và kể cho mọi người nghe."
+          "L": "Và nếu [một kẻ] đến thăm [tôi], nó nói những lời rỗng tuếch; \\q lòng nó thu góp điều gian ác cho mình; \\q nó đi ra ngoài [và] nói [ra].",
+          "B": "Khi có ai trong bọn chúng đến thăm tôi, chúng nói những lời không thật lòng, \\q trong khi bên trong lại thu nhặt những tin xấu; \\q rồi chúng ra ngoài loan truyền.",
+          "R": "Khi chúng đến thăm tôi, chúng giả vờ tử tế. \\q Nhưng trong lòng chúng đang tìm tin xấu về tôi. \\q Rồi chúng đi ra và kể cho mọi người nghe."
         },
         "ko": {
-          "L": "[그들 가운데 하나가] 보러 오면 헛된 말을 하고, 그의 마음은 악한 것을 모아 두었다가, 밖으로 나가서 [그것을] 말합니다.",
-          "B": "그들 가운데 누가 저를 보러 오면 마음에 없는 말을 하면서 속으로는 나쁜 소식을 모아 두고, 밖으로 나가서는 그것을 퍼뜨립니다.",
-          "R": "그들은 저를 보러 와서 친절한 척합니다. 그러나 속으로는 저에 대한 나쁜 소식을 찾고 있습니다. 그리고 밖에 나가서 모든 사람에게 말합니다."
+          "L": "[그들 가운데 하나가] 보러 오면 헛된 말을 하고, \\q 그의 마음은 악한 것을 모아 두었다가, \\q 밖으로 나가서 [그것을] 말합니다.",
+          "B": "그들 가운데 누가 저를 보러 오면 마음에 없는 말을 하면서 \\q 속으로는 나쁜 소식을 모아 두고, \\q 밖으로 나가서는 그것을 퍼뜨립니다.",
+          "R": "그들은 저를 보러 와서 친절한 척합니다. \\q 그러나 속으로는 저에 대한 나쁜 소식을 찾고 있습니다. \\q 그리고 밖에 나가서 모든 사람에게 말합니다."
         },
         "pt": {
-          "L": "E, se [algum] vem ver [-me], fala palavras vazias; o seu coração ajunta maldade para si; sai para fora [e] fala [disso].",
-          "B": "Quando algum deles vem me visitar, diz o que não pensa, enquanto por dentro ajunta más notícias; depois sai e as espalha.",
-          "R": "Quando eles vêm me ver, fingem que são bondosos. Mas no coração estão procurando más notícias sobre mim. Depois saem e contam para todo mundo."
+          "L": "E, se [algum] vem ver [-me], fala palavras vazias; \\q o seu coração ajunta maldade para si; \\q sai para fora [e] fala [disso].",
+          "B": "Quando algum deles vem me visitar, diz o que não pensa, \\q enquanto por dentro ajunta más notícias; \\q depois sai e as espalha.",
+          "R": "Quando eles vêm me ver, fingem que são bondosos. \\q Mas no coração estão procurando más notícias sobre mim. \\q Depois saem e contam para todo mundo."
         },
         "am": {
-          "L": "[ከእነርሱ አንዱ] ሊያየኝ ቢመጣ ከንቱ ቃል ይናገራል፤ ልቡ ለራሱ ክፋትን ይሰበስባል፤ ወደ ውጭ ወጥቶ [ስለዚያ] ይናገራል።",
-          "B": "ከእነርሱ አንዳንዶቹ ሊጠይቁኝ ሲመጡ ከልባቸው ያልሆነ ቃል ይናገራሉ፤ በውስጣቸው ግን ክፉ ወሬ ይሰበስባሉ፤ ከዚያም ወጥተው ያወሩታል።",
-          "R": "ሊጠይቁኝ ሲመጡ ደግ መስለው ይቀርባሉ። በልባቸው ግን ስለ እኔ መጥፎ ወሬ ይፈልጋሉ። ከዚያም ወጥተው ለሰው ሁሉ ያወራሉ።"
+          "L": "[ከእነርሱ አንዱ] ሊያየኝ ቢመጣ ከንቱ ቃል ይናገራል፤ \\q ልቡ ለራሱ ክፋትን ይሰበስባል፤ \\q ወደ ውጭ ወጥቶ [ስለዚያ] ይናገራል።",
+          "B": "ከእነርሱ አንዳንዶቹ ሊጠይቁኝ ሲመጡ ከልባቸው ያልሆነ ቃል ይናገራሉ፤ \\q በውስጣቸው ግን ክፉ ወሬ ይሰበስባሉ፤ \\q ከዚያም ወጥተው ያወሩታል።",
+          "R": "ሊጠይቁኝ ሲመጡ ደግ መስለው ይቀርባሉ። \\q በልባቸው ግን ስለ እኔ መጥፎ ወሬ ይፈልጋሉ። \\q ከዚያም ወጥተው ለሰው ሁሉ ያወራሉ።"
+        },
+        "hi": {
+          "L": "और यदि [उनमें से कोई] [मुझे] देखने आता है, तो वह खोखली बातें करता है; \\q उसका मन अपने लिए बुराई बटोरता है; \\q वह बाहर जाकर [उसकी] चर्चा करता है।",
+          "B": "जब उनमें से कोई मुझसे मिलने आता है, तो वे ऐसी बातें कहते हैं जो उनके मन में नहीं होतीं, \\q और भीतर ही भीतर बुरी ख़बरें बटोरते हैं; \\q फिर बाहर जाकर उन्हें फैलाते हैं।",
+          "R": "जब वे मुझे देखने आते हैं, तो दया दिखाने का नाटक करते हैं। \\q पर अपने मन में वे मेरे बारे में बुरी ख़बर ढूँढ़ते रहते हैं। \\q फिर वे बाहर जाकर सबको बता देते हैं।"
+        },
+        "ru": {
+          "L": "И если [кто-то из них] приходит увидеть [меня], он говорит пустое; \\q сердце его собирает себе зло; \\q он выходит вон [и] говорит [об этом].",
+          "B": "Когда они приходят навестить меня, они говорят не то, \\q что думают, а в душе собирают дурные вести; \\q потом выходят и разносят их.",
+          "R": "Когда они приходят ко мне, они притворяются добрыми. \\q Но в сердце они ищут обо мне плохие новости. \\q А потом выходят и всем рассказывают."
+        },
+        "ja": {
+          "L": "そして、もし[彼らのだれかが、わたしを]見舞いに来ると、むなしいことを語る。 \\q その心は自分のために悪を集め、 \\q 外に出て行って、[それを]語る。",
+          "B": "彼らのだれかが見舞いに来ても、心にもないことを言い、 \\q 内側では悪い知らせをかき集める。 \\q そして外に出て行くと、それを言いふらす。",
+          "R": "彼らは、わたしに会いに来ると、親切なふりをする。 \\q しかし心の中では、わたしの悪い知らせを探している。 \\q そして外に出ると、みんなに言いふらす。"
+        },
+        "uk": {
+          "L": "А якщо [хтось із них] приходить побачити [мене], то говорить порожні слова; \\q серце його збирає собі лихе; \\q виходить назовні [й] розповідає [про це].",
+          "B": "Коли хтось із них приходить провідати мене, вони кажуть те, \\q чого не думають, а всередині збирають погані новини; \\q тоді виходять і розносять їх.",
+          "R": "Коли вони приходять до мене, то вдають, що добрі. \\q Але в серці шукають про мене поганих новин. \\q Тоді вони виходять і розповідають усім."
+        },
+        "id": {
+          "L": "Dan jika [seseorang dari mereka] datang menjenguk [aku], ia mengucapkan kata-kata kosong; \\q hatinya mengumpulkan kejahatan bagi dirinya; \\q ia keluar [dan] membicarakan[nya].",
+          "B": "Ketika salah seorang dari mereka datang menjenguk aku, ia mengatakan apa yang tidak dimaksudkannya, \\q sementara hatinya mengumpulkan kabar buruk; \\q lalu ia keluar dan menyebarkannya.",
+          "R": "Ketika mereka datang menjenguk aku, mereka berpura-pura baik. \\q Tetapi di dalam hati mereka mencari kabar buruk tentang aku. \\q Lalu mereka keluar dan menceritakannya kepada semua orang."
         }
       },
       "decisions": [
@@ -1084,6 +1456,28 @@
           "reason": "Amharic calls a visit to a sick person \"ሕመምተኛ መጠየቅ\", which is the scene the meaning decision describes; Literal keeps the Hebrew's \"to see\" (\"ሊያየኝ\").",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190410070021",
+            "o190410070032",
+            "o190410070041",
+            "o190410070081"
+          ],
+          "choice": "lir'ot \"見舞いに来る\" (L, B), \"会いに来る\" (R); shav' \"むなしいこと\" (L), \"心にもないこと\" (B), \"親切なふり\" (R)",
+          "alternatives": [],
+          "reason": "A visit to the sick (m1); the words are empty, the news they gather wicked (m2).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1116,44 +1510,69 @@
       "literal_gloss": "Together against me they whisper, all who hate me; against me they devise evil for me:",
       "renderings": {
         "en": {
-          "L": "Together against me they whisper, all who hate me; against me they devise harm for me, [saying,]",
-          "B": "All who hate me whisper together about me; they plot harm against me, saying,",
-          "R": "All who hate me whisper about me. They make evil plans against me and say,"
+          "L": "Together against me they whisper, all who hate me; \\q against me they devise harm for me, [saying,]",
+          "B": "All who hate me whisper together about me; \\q they plot harm against me, saying,",
+          "R": "All who hate me whisper about me. \\q They make evil plans against me and say,"
         },
         "fr": {
-          "L": "Ensemble contre moi ils chuchotent, tous ceux qui me haïssent ; contre moi ils méditent du mal pour moi, [disant] :",
-          "B": "Tous ceux qui me haïssent chuchotent ensemble à mon sujet ; ils trament du mal contre moi, en disant :",
-          "R": "Tous ceux qui me détestent chuchotent sur moi. Ils font des plans méchants contre moi et disent :"
+          "L": "Ensemble contre moi ils chuchotent, tous ceux qui me haïssent ; \\q contre moi ils méditent du mal pour moi, [disant] :",
+          "B": "Tous ceux qui me haïssent chuchotent ensemble à mon sujet ; \\q ils trament du mal contre moi, en disant :",
+          "R": "Tous ceux qui me détestent chuchotent sur moi. \\q Ils font des plans méchants contre moi et disent :"
         },
         "sw": {
-          "L": "Pamoja juu yangu wananong'ona wote wanaonichukia; juu yangu wanawaza madhara kwa ajili yangu, [wakisema,]",
-          "B": "Wote wanaonichukia wananong'ona pamoja juu yangu; wanapanga madhara dhidi yangu, wakisema,",
-          "R": "Wote wanaonichukia wananong'ona juu yangu. Wanapanga mabaya dhidi yangu na kusema,"
+          "L": "Pamoja juu yangu wananong'ona wote wanaonichukia; \\q juu yangu wanawaza madhara kwa ajili yangu, [wakisema,]",
+          "B": "Wote wanaonichukia wananong'ona pamoja juu yangu; \\q wanapanga madhara dhidi yangu, wakisema,",
+          "R": "Wote wanaonichukia wananong'ona juu yangu. \\q Wanapanga mabaya dhidi yangu na kusema,"
         },
         "es": {
-          "L": "A una contra mí murmuran todos los que me aborrecen; contra mí traman el mal para mí, [diciendo]:",
-          "B": "Todos los que me odian murmuran juntos de mí; traman hacerme daño, y dicen:",
-          "R": "Todos los que me odian murmuran de mí. Hacen planes malvados contra mí y dicen:"
+          "L": "A una contra mí murmuran todos los que me aborrecen; \\q contra mí traman el mal para mí, [diciendo]:",
+          "B": "Todos los que me odian murmuran juntos de mí; \\q traman hacerme daño, y dicen:",
+          "R": "Todos los que me odian murmuran de mí. \\q Hacen planes malvados contra mí y dicen:"
         },
         "vi": {
-          "L": "Hết thảy những kẻ ghét tôi cùng nhau thì thầm nghịch cùng tôi; chúng toan tính điều hại nghịch cùng tôi, [mà rằng]:",
-          "B": "Mọi kẻ ghét tôi cùng nhau thì thầm về tôi; chúng mưu tính điều hại chống lại tôi mà rằng:",
-          "R": "Mọi kẻ ghét tôi thì thầm về tôi. Chúng lập mưu ác chống lại tôi và nói:"
+          "L": "Hết thảy những kẻ ghét tôi cùng nhau thì thầm nghịch cùng tôi; \\q chúng toan tính điều hại nghịch cùng tôi, [mà rằng]:",
+          "B": "Mọi kẻ ghét tôi cùng nhau thì thầm về tôi; \\q chúng mưu tính điều hại chống lại tôi mà rằng:",
+          "R": "Mọi kẻ ghét tôi thì thầm về tôi. \\q Chúng lập mưu ác chống lại tôi và nói:"
         },
         "ko": {
-          "L": "저를 미워하는 자들이 모두 함께 저를 두고 수군거리며, 저를 거슬러 저에게 해로운 일을 꾸밉니다. [그들이 말합니다.]",
-          "B": "저를 미워하는 자들은 모두 모여 저에 대해 수군거리고, 저를 해칠 일을 꾸미며 말합니다.",
-          "R": "저를 미워하는 사람들은 모두 저에 대해 수군거립니다. 그들은 저를 해칠 악한 계획을 세우며 말합니다."
+          "L": "저를 미워하는 자들이 모두 함께 저를 두고 수군거리며, \\q 저를 거슬러 저에게 해로운 일을 꾸밉니다. [그들이 말합니다.]",
+          "B": "저를 미워하는 자들은 모두 모여 저에 대해 수군거리고, \\q 저를 해칠 일을 꾸미며 말합니다.",
+          "R": "저를 미워하는 사람들은 모두 저에 대해 수군거립니다. \\q 그들은 저를 해칠 악한 계획을 세우며 말합니다."
         },
         "pt": {
-          "L": "Juntos contra mim cochicham todos os que me odeiam; contra mim tramam o mal para mim, [dizendo]:",
-          "B": "Todos os que me odeiam cochicham juntos a meu respeito; tramam o mal contra mim, dizendo:",
-          "R": "Todos os que me odeiam cochicham sobre mim. Eles fazem planos maus contra mim e dizem:"
+          "L": "Juntos contra mim cochicham todos os que me odeiam; \\q contra mim tramam o mal para mim, [dizendo]:",
+          "B": "Todos os que me odeiam cochicham juntos a meu respeito; \\q tramam o mal contra mim, dizendo:",
+          "R": "Todos os que me odeiam cochicham sobre mim. \\q Eles fazem planos maus contra mim e dizem:"
         },
         "am": {
-          "L": "የሚጠሉኝ ሁሉ በአንድነት በእኔ ላይ ያንሾካሹካሉ፤ በእኔ ላይ ጉዳት ያስቡብኛል፤ [እንዲህ ይላሉ]፦",
-          "B": "የሚጠሉኝ ሁሉ ስለ እኔ በአንድነት ያንሾካሹካሉ፤ ሊጎዱኝም እያሴሩ እንዲህ ይላሉ፦",
-          "R": "የሚጠሉኝ ሁሉ ስለ እኔ ያንሾካሹካሉ። በእኔ ላይ ክፉ ዕቅድ ያወጣሉ፤ እንዲህም ይላሉ፦"
+          "L": "የሚጠሉኝ ሁሉ በአንድነት በእኔ ላይ ያንሾካሹካሉ፤ \\q በእኔ ላይ ጉዳት ያስቡብኛል፤ [እንዲህ ይላሉ]፦",
+          "B": "የሚጠሉኝ ሁሉ ስለ እኔ በአንድነት ያንሾካሹካሉ፤ \\q ሊጎዱኝም እያሴሩ እንዲህ ይላሉ፦",
+          "R": "የሚጠሉኝ ሁሉ ስለ እኔ ያንሾካሹካሉ። \\q በእኔ ላይ ክፉ ዕቅድ ያወጣሉ፤ እንዲህም ይላሉ፦"
+        },
+        "hi": {
+          "L": "मुझसे बैर रखनेवाले सब मेरे विरुद्ध आपस में कानाफूसी करते हैं; \\q मेरे विरुद्ध वे मेरी हानि की युक्ति करते हैं, [कहते हैं]",
+          "B": "मुझसे बैर रखनेवाले सब मिलकर मेरे बारे में कानाफूसी करते हैं; \\q वे मेरे विरुद्ध हानि की योजना बनाते हैं और कहते हैं,",
+          "R": "जो मुझसे बैर रखते हैं, वे सब मेरे बारे में कानाफूसी करते हैं। \\q वे मेरे विरुद्ध बुरी योजनाएँ बनाते हैं और कहते हैं,"
+        },
+        "ru": {
+          "L": "Вместе против меня шепчутся все ненавидящие меня; \\q против меня замышляют зло мне, [говоря]:",
+          "B": "Все, кто ненавидит меня, шепчутся обо мне; \\q они замышляют против меня зло и говорят:",
+          "R": "Все, кто ненавидит меня, шепчутся обо мне. \\q Они строят против меня злые планы и говорят:"
+        },
+        "ja": {
+          "L": "わたしを憎む者はみな、共にわたしについてささやき合い、 \\q わたしに対して、わたしへの災いを企む。[彼らは言う。]",
+          "B": "わたしを憎む者たちはみな、わたしのことでひそひそと話し合い、 \\q わたしに害を加えようと企んで、こう言う。",
+          "R": "わたしを憎む人たちはみな、わたしのことをひそひそと話す。 \\q わたしに悪いことをしようと計画して、こう言う。"
+        },
+        "uk": {
+          "L": "Разом проти мене шепочуться всі, хто ненавидить мене; \\q проти мене вони задумують мені лихо, [кажучи]:",
+          "B": "Усі, хто ненавидить мене, разом шепочуться про мене; \\q вони замишляють проти мене зло, кажучи:",
+          "R": "Усі, хто ненавидить мене, шепочуться про мене. \\q Вони складають проти мене лихі плани й кажуть:"
+        },
+        "id": {
+          "L": "Bersama-sama terhadap aku mereka berbisik-bisik, semua orang yang membenci aku; \\q terhadap aku mereka merancang celaka bagiku, [katanya,]",
+          "B": "Semua orang yang membenci aku berbisik-bisik bersama tentang aku; \\q mereka merencanakan celaka terhadap aku, katanya,",
+          "R": "Semua orang yang membenci aku berbisik-bisik tentang aku. \\q Mereka membuat rencana jahat terhadap aku dan berkata,"
         }
       },
       "decisions": [
@@ -1206,6 +1625,25 @@
           "reason": "The Hebrew goes straight into their words; \"saying\" introduces them.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190410080031"
+          ],
+          "choice": "yitlachashu \"ささやき合い\" (L), \"ひそひそと話し合い\" (B), \"ひそひそと話す\" (R)",
+          "alternatives": [],
+          "reason": "Low talk, perhaps spells (m1, uncertain); the Japanese keeps the plain sense of whispering.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1237,44 +1675,69 @@
       "literal_gloss": "A thing of worthlessness [is] poured out on him, and [now] that he lies down, he will not again rise.",
       "renderings": {
         "en": {
-          "L": "\"A thing of worthlessness has been poured out on him, and now that he lies down, he will not rise again.\"",
-          "B": "\"Some deadly thing has been poured into him; now that he is down, he will never get up again.\"",
-          "R": "\"Something terrible has taken hold of him. He is in bed now, and he will never get up again.\""
+          "L": "\"A thing of worthlessness has been poured out on him, \\q and now that he lies down, he will not rise again.\"",
+          "B": "\"Some deadly thing has been poured into him; \\q now that he is down, he will never get up again.\"",
+          "R": "\"Something terrible has taken hold of him. \\q He is in bed now, and he will never get up again.\""
         },
         "fr": {
-          "L": "« Une chose de néant a été versée sur lui, et maintenant qu’il est couché, il ne se relèvera plus. »",
-          "B": "« Un mal mortel s’est répandu en lui ; maintenant qu’il est à terre, il ne se relèvera jamais. »",
-          "R": "« Quelque chose de terrible l’a saisi. Il est au lit maintenant, et il ne se relèvera jamais. »"
+          "L": "« Une chose de néant a été versée sur lui, \\q et maintenant qu’il est couché, il ne se relèvera plus. »",
+          "B": "« Un mal mortel s’est répandu en lui ; \\q maintenant qu’il est à terre, il ne se relèvera jamais. »",
+          "R": "« Quelque chose de terrible l’a saisi. \\q Il est au lit maintenant, et il ne se relèvera jamais. »"
         },
         "sw": {
-          "L": "\"Jambo baya kabisa limemwagwa juu yake, na sasa kwa kuwa amelala, hatainuka tena.\"",
-          "B": "\"Kitu fulani cha kuua kimemwingia; sasa kwa kuwa ameanguka, hatainuka tena kamwe.\"",
-          "R": "\"Kitu kibaya sana kimemshika. Sasa amelala kitandani, naye hatainuka tena kamwe.\""
+          "L": "\"Jambo baya kabisa limemwagwa juu yake, \\q na sasa kwa kuwa amelala, hatainuka tena.\"",
+          "B": "\"Kitu fulani cha kuua kimemwingia; \\q sasa kwa kuwa ameanguka, hatainuka tena kamwe.\"",
+          "R": "\"Kitu kibaya sana kimemshika. \\q Sasa amelala kitandani, naye hatainuka tena kamwe.\""
         },
         "es": {
-          "L": "«Una cosa maligna ha sido derramada sobre él, y ahora que está acostado, no volverá a levantarse».",
-          "B": "«Algo mortal se le ha metido dentro; ahora que ha caído, nunca más se levantará».",
-          "R": "«Algo terrible se ha apoderado de él. Ahora está en cama, y nunca más se levantará»."
+          "L": "«Una cosa maligna ha sido derramada sobre él, \\q y ahora que está acostado, no volverá a levantarse».",
+          "B": "«Algo mortal se le ha metido dentro; \\q ahora que ha caído, nunca más se levantará».",
+          "R": "«Algo terrible se ha apoderado de él. \\q Ahora está en cama, y nunca más se levantará»."
         },
         "vi": {
-          "L": "\"Một điều vô dụng đã đổ trên nó, và bây giờ nó nằm xuống, nó sẽ không dậy nữa.\"",
-          "B": "\"Một thứ chết người đã đổ vào nó; giờ nó đã nằm xuống, nó sẽ chẳng bao giờ dậy nổi nữa.\"",
-          "R": "\"Một điều khủng khiếp đã bám lấy nó. Bây giờ nó nằm liệt giường, và sẽ không bao giờ dậy được nữa.\""
+          "L": "\"Một điều vô dụng đã đổ trên nó, \\q và bây giờ nó nằm xuống, nó sẽ không dậy nữa.\"",
+          "B": "\"Một thứ chết người đã đổ vào nó; \\q giờ nó đã nằm xuống, nó sẽ chẳng bao giờ dậy nổi nữa.\"",
+          "R": "\"Một điều khủng khiếp đã bám lấy nó. \\q Bây giờ nó nằm liệt giường, và sẽ không bao giờ dậy được nữa.\""
         },
         "ko": {
-          "L": "\"몹쓸 것이 그에게 쏟아졌으니, 그가 이제 누웠으니 다시는 일어나지 못할 것이다.\"",
-          "B": "\"무슨 몹쓸 병이 그에게 들어붙었다. 이제 그가 쓰러졌으니 다시는 일어나지 못할 것이다.\"",
-          "R": "\"무서운 병이 그를 사로잡았다. 그는 이제 자리에 누웠으니 다시는 일어나지 못할 것이다.\""
+          "L": "\"몹쓸 것이 그에게 쏟아졌으니, \\q 그가 이제 누웠으니 다시는 일어나지 못할 것이다.\"",
+          "B": "\"무슨 몹쓸 병이 그에게 들어붙었다. \\q 이제 그가 쓰러졌으니 다시는 일어나지 못할 것이다.\"",
+          "R": "\"무서운 병이 그를 사로잡았다. \\q 그는 이제 자리에 누웠으니 다시는 일어나지 못할 것이다.\""
         },
         "pt": {
-          "L": "\"Uma coisa de perdição foi derramada sobre ele, e agora que se deitou não se levantará mais.\"",
-          "B": "\"Alguma coisa mortal foi derramada nele; agora que caiu, nunca mais vai se levantar.\"",
-          "R": "\"Uma coisa terrível tomou conta dele. Agora ele está de cama e nunca mais vai se levantar.\""
+          "L": "\"Uma coisa de perdição foi derramada sobre ele, \\q e agora que se deitou não se levantará mais.\"",
+          "B": "\"Alguma coisa mortal foi derramada nele; \\q agora que caiu, nunca mais vai se levantar.\"",
+          "R": "\"Uma coisa terrível tomou conta dele. \\q Agora ele está de cama e nunca mais vai se levantar.\""
         },
         "am": {
-          "L": "«የከንቱነት ነገር በላዩ ፈሰሰበት፤ አሁን ስለ ተኛም ዳግመኛ አይነሣም።»",
-          "B": "«የሚገድል ነገር ወደ ውስጡ ፈስሷል፤ አሁን ስለ ወደቀ ከቶ ዳግመኛ አይነሣም።»",
-          "R": "«አንድ አስከፊ ነገር ይዞታል። አሁን አልጋ ላይ ወድቋል፤ ከእንግዲህ ከቶ አይነሣም።»"
+          "L": "«የከንቱነት ነገር በላዩ ፈሰሰበት፤ \\q አሁን ስለ ተኛም ዳግመኛ አይነሣም።»",
+          "B": "«የሚገድል ነገር ወደ ውስጡ ፈስሷል፤ \\q አሁን ስለ ወደቀ ከቶ ዳግመኛ አይነሣም።»",
+          "R": "«አንድ አስከፊ ነገር ይዞታል። \\q አሁን አልጋ ላይ ወድቋል፤ ከእንግዲህ ከቶ አይነሣም።»"
+        },
+        "hi": {
+          "L": "\"कोई निकम्मी [बला] उस पर उँडेली गई है, \\q और अब जो वह पड़ा है, तो फिर न उठेगा।\"",
+          "B": "\"कोई घातक रोग उसमें उँडेल दिया गया है; \\q अब जब वह पड़ गया है, तो फिर कभी नहीं उठेगा।\"",
+          "R": "\"किसी भयानक बला ने इसे जकड़ लिया है। \\q अब यह बिस्तर पर पड़ा है, और फिर कभी नहीं उठेगा।\""
+        },
+        "ru": {
+          "L": "«Нечто гибельное излито на него, \\q и теперь, когда он лёг, он больше не встанет.»",
+          "B": "«Какая-то смертельная болезнь вошла в него; \\q теперь, когда он слёг, ему уже не подняться.»",
+          "R": "«С ним случилось что-то ужасное. \\q Теперь он лежит в постели и больше никогда не встанет.»"
+        },
+        "ja": {
+          "L": "「よこしまなものが、彼に注がれた。 \\q 今や彼は横たわった。もう二度と起き上がらない。」",
+          "B": "「何か死に至るものが、あいつに注ぎ込まれた。 \\q いったん倒れたからには、もう二度と起き上がれない。」",
+          "R": "「何かひどいものが、あいつに取りついた。 \\q あいつは今、寝込んでいる。もう二度と起き上がれないだろう。」"
+        },
+        "uk": {
+          "L": "«Річ нікчемна вилита на нього, \\q і тепер, коли він ліг, він уже не встане.»",
+          "B": "«Щось смертельне влилося в нього; \\q тепер, коли він зліг, він ніколи більше не підведеться.»",
+          "R": "«Щось жахливе схопило його. \\q Він тепер лежить у ліжку й ніколи вже не встане.»"
+        },
+        "id": {
+          "L": "\"Sesuatu yang jahat telah dicurahkan ke atasnya, \\q dan sekarang ia berbaring, ia tidak akan bangkit lagi.\"",
+          "B": "\"Sesuatu yang mematikan telah dicurahkan ke dalam dirinya; \\q sekarang ia sudah terbaring, ia tidak akan pernah bangun lagi.\"",
+          "R": "\"Sesuatu yang mengerikan telah menimpa dia. \\q Sekarang ia terbaring di tempat tidur, dan ia tidak akan pernah bangun lagi.\""
         }
       },
       "decisions": [
@@ -1310,6 +1773,46 @@
           "reason": "He lies sick, and they say he will never get up.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190410090011",
+            "o190410090021"
+          ],
+          "choice": "devar-beliyya'al \"よこしまなもの\" (L), \"何か死に至るもの\" (B), \"何かひどいもの\" (R)",
+          "alternatives": [],
+          "reason": "A deadly disease or a curse (m1, uncertain); Literal keeps the vague \"worthless, wicked thing\" (beliyya'al ならず者 elsewhere is for people).",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190410090011",
+            "o190410090021"
+          ],
+          "choice": "\"sesuatu yang jahat\" (L), \"sesuatu yang mematikan\" (B)",
+          "alternatives": [],
+          "reason": "A deadly disease, or a curse (m1, uncertain); Indonesian leaves which open, as the English does.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1344,44 +1847,69 @@
       "literal_gloss": "Even a man of my peace, whom I trusted in him, who ate my bread, has made great against me [the] heel.",
       "renderings": {
         "en": {
-          "L": "Even the man of my peace, in whom I trusted, who ate my bread, has lifted up [his] heel against me.",
-          "B": "Even the friend I was at peace with, the one I trusted, who shared my bread, has turned his heel against me.",
-          "R": "Even my best friend has turned on me. I trusted him. He ate at my table."
+          "L": "Even the man of my peace, in whom I trusted, who ate my bread, \\q has lifted up [his] heel against me.",
+          "B": "Even the friend I was at peace with, the one I trusted, who shared my bread, \\q has turned his heel against me.",
+          "R": "Even my best friend has turned on me. I trusted him. \\q He ate at my table."
         },
         "fr": {
-          "L": "Même l’homme de ma paix, en qui j’avais confiance, qui mangeait mon pain, a levé [le] talon contre moi.",
-          "B": "Même l’ami avec qui j’étais en paix, celui en qui j’avais confiance, qui partageait mon pain, a levé le talon contre moi.",
-          "R": "Même mon meilleur ami s’est retourné contre moi. J’avais confiance en lui. Il mangeait à ma table."
+          "L": "Même l’homme de ma paix, en qui j’avais confiance, qui mangeait mon pain, \\q a levé [le] talon contre moi.",
+          "B": "Même l’ami avec qui j’étais en paix, celui en qui j’avais confiance, qui partageait mon pain, \\q a levé le talon contre moi.",
+          "R": "Même mon meilleur ami s’est retourné contre moi. J’avais confiance en lui. \\q Il mangeait à ma table."
         },
         "sw": {
-          "L": "Hata mtu wa amani yangu, niliyemtumaini, aliyekula mkate wangu, ameniinulia kisigino [chake].",
-          "B": "Hata rafiki niliyekuwa na amani naye, niliyemwamini, aliyeshiriki mkate wangu, amenigeuzia kisigino chake.",
-          "R": "Hata rafiki yangu wa karibu sana amenigeuka. Nilimwamini. Alikula mezani pangu."
+          "L": "Hata mtu wa amani yangu, niliyemtumaini, aliyekula mkate wangu, \\q ameniinulia kisigino [chake].",
+          "B": "Hata rafiki niliyekuwa na amani naye, niliyemwamini, aliyeshiriki mkate wangu, \\q amenigeuzia kisigino chake.",
+          "R": "Hata rafiki yangu wa karibu sana amenigeuka. Nilimwamini. \\q Alikula mezani pangu."
         },
         "es": {
-          "L": "Aun el hombre de mi paz, en quien yo confiaba, que comía mi pan, ha levantado contra mí [su] talón.",
-          "B": "Aun el amigo con quien estaba en paz, en quien confiaba, el que compartía mi pan, se ha vuelto contra mí.",
-          "R": "Hasta mi mejor amigo se ha puesto en mi contra. Yo confiaba en él. Él comía en mi mesa."
+          "L": "Aun el hombre de mi paz, en quien yo confiaba, que comía mi pan, \\q ha levantado contra mí [su] talón.",
+          "B": "Aun el amigo con quien estaba en paz, en quien confiaba, el que compartía mi pan, \\q se ha vuelto contra mí.",
+          "R": "Hasta mi mejor amigo se ha puesto en mi contra. Yo confiaba en él. \\q Él comía en mi mesa."
         },
         "vi": {
-          "L": "Ngay cả người bạn thân của tôi, người mà tôi tin cậy, người đã ăn bánh của tôi, cũng đã giơ gót lên nghịch cùng tôi.",
-          "B": "Ngay cả người bạn hòa thuận với tôi, người tôi tin cậy, người đã cùng ăn bánh với tôi, cũng đã trở gót chống lại tôi.",
-          "R": "Ngay cả người bạn thân nhất cũng đã quay lại chống tôi. Tôi đã tin cậy anh ta. Anh ta đã ăn chung bàn với tôi."
+          "L": "Ngay cả người bạn thân của tôi, người mà tôi tin cậy, người đã ăn bánh của tôi, \\q cũng đã giơ gót lên nghịch cùng tôi.",
+          "B": "Ngay cả người bạn hòa thuận với tôi, người tôi tin cậy, người đã cùng ăn bánh với tôi, \\q cũng đã trở gót chống lại tôi.",
+          "R": "Ngay cả người bạn thân nhất cũng đã quay lại chống tôi. Tôi đã tin cậy anh ta. \\q Anh ta đã ăn chung bàn với tôi."
         },
         "ko": {
-          "L": "제가 신뢰하던 제 평화의 사람, 제 빵을 먹던 자까지 저를 향해 [그의] 발꿈치를 들었습니다.",
-          "B": "제가 평화롭게 지내던 친구, 제가 믿었고 제 빵을 함께 나누던 그 사람마저 저를 향해 발꿈치를 들었습니다.",
-          "R": "가장 친한 친구마저 저에게 등을 돌렸습니다. 저는 그를 믿었습니다. 그는 제 식탁에서 함께 먹던 사람이었습니다."
+          "L": "제가 신뢰하던 제 평화의 사람, \\q 제 빵을 먹던 자까지 저를 향해 [그의] 발꿈치를 들었습니다.",
+          "B": "제가 평화롭게 지내던 친구, 제가 믿었고 제 빵을 함께 나누던 그 사람마저 \\q 저를 향해 발꿈치를 들었습니다.",
+          "R": "가장 친한 친구마저 저에게 등을 돌렸습니다. 저는 그를 믿었습니다. \\q 그는 제 식탁에서 함께 먹던 사람이었습니다."
         },
         "pt": {
-          "L": "Até o homem da minha paz, em quem eu confiava, que comia o meu pão, levantou contra mim o calcanhar.",
-          "B": "Até o amigo com quem eu vivia em paz, aquele em quem eu confiava, que comia o meu pão, levantou o calcanhar contra mim.",
-          "R": "Até o meu melhor amigo se virou contra mim. Eu confiava nele. Ele comia à minha mesa."
+          "L": "Até o homem da minha paz, em quem eu confiava, que comia o meu pão, \\q levantou contra mim o calcanhar.",
+          "B": "Até o amigo com quem eu vivia em paz, aquele em quem eu confiava, que comia o meu pão, \\q levantou o calcanhar contra mim.",
+          "R": "Até o meu melhor amigo se virou contra mim. Eu confiava nele. \\q Ele comia à minha mesa."
         },
         "am": {
-          "L": "የታመንኩበት፣ እንጀራዬን የሚበላ የሰላሜ ሰው እንኳ ተረከዙን በእኔ ላይ አነሣ።",
-          "B": "ከእኔ ጋር በሰላም የኖረው ወዳጄ፣ የታመንኩበት፣ እንጀራዬን የሚበላው እርሱ እንኳ ተረከዙን በእኔ ላይ አነሣ።",
-          "R": "የቅርብ ወዳጄ እንኳ በእኔ ላይ ተነሣ። በእርሱ ታምኜ ነበር። እንጀራዬን አብሮኝ ይበላ ነበር።"
+          "L": "የታመንኩበት፣ እንጀራዬን የሚበላ የሰላሜ ሰው እንኳ \\q ተረከዙን በእኔ ላይ አነሣ።",
+          "B": "ከእኔ ጋር በሰላም የኖረው ወዳጄ፣ የታመንኩበት፣ እንጀራዬን የሚበላው እርሱ እንኳ \\q ተረከዙን በእኔ ላይ አነሣ።",
+          "R": "የቅርብ ወዳጄ እንኳ በእኔ ላይ ተነሣ። በእርሱ ታምኜ ነበር። \\q እንጀራዬን አብሮኝ ይበላ ነበር።"
+        },
+        "hi": {
+          "L": "जिससे मेरा मेल था, वह मनुष्य भी, जिस पर मैं भरोसा रखता था, जो मेरी रोटी खाता था, \\q उसने मेरे विरुद्ध [अपनी] एड़ी उठाई है।",
+          "B": "वह मित्र भी जिससे मेरा मेल था, जिस पर मैं भरोसा करता था, जो मेरी रोटी खाता था, \\q उसने मेरे विरुद्ध अपनी एड़ी उठाई है।",
+          "R": "मेरा सबसे अच्छा मित्र भी मेरे विरुद्ध हो गया है। मैं उस पर भरोसा करता था। \\q वह मेरे साथ रोटी खाता था।"
+        },
+        "ru": {
+          "L": "Даже человек мира моего, на которого я полагался, который ел мой хлеб, \\q поднял против меня [свою] пятку.",
+          "B": "Даже друг, с которым я был в мире, тот, кому я доверял, кто ел мой хлеб, \\q поднял на меня свою пятку.",
+          "R": "Даже мой лучший друг восстал против меня. Я доверял ему. \\q Он ел за моим столом."
+        },
+        "ja": {
+          "L": "わたしの平和の人、わたしが信頼し、わたしのパンを食べた者さえ、 \\q わたしに向かってかかとを高く上げた。",
+          "B": "わたしと親しく、わたしが信頼し、わたしのパンを共に食べた友さえ、 \\q わたしに逆らってかかとを上げた。",
+          "R": "いちばん親しい友までが、わたしに背いた。わたしは彼を信頼していた。 \\q 彼は、わたしと一緒に食事をしていた。"
+        },
+        "uk": {
+          "L": "Навіть людина мого миру, на яку я покладався, що їла мій хліб, \\q підняла [свою] пʼяту проти мене.",
+          "B": "Навіть друг, з яким я жив у мирі, той, кому я довіряв, хто ділив зі мною хліб, \\q обернувся проти мене пʼятою.",
+          "R": "Навіть мій найкращий друг обернувся проти мене. Я довіряв йому. \\q Він їв за моїм столом."
+        },
+        "id": {
+          "L": "Bahkan sahabat karibku, yang kupercayai, yang makan rotiku, \\q telah mengangkat tumitnya melawan aku.",
+          "B": "Bahkan sahabat yang hidup damai denganku, yang kupercayai, yang makan roti bersamaku, \\q telah berbalik menendang aku.",
+          "R": "Bahkan sahabatku yang paling baik sudah berbalik melawan aku. Aku memercayai dia. \\q Ia makan di mejaku."
         }
       },
       "decisions": [
@@ -1469,6 +1997,25 @@
           "footnote": false
         },
         {
+          "layer": "rendering",
+          "language": "en",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190410100031"
+          ],
+          "choice": "my best friend",
+          "alternatives": [
+            "the man of my peace"
+          ],
+          "reason": "\"Man of my (your) peace\" is an idiom for a friend or ally, someone one is at peace with; the wording says \"friend\".",
+          "uncertain": false,
+          "footnote": false,
+          "id": "r-en-2"
+        },
+        {
           "id": "r-vi-1",
           "layer": "rendering",
           "language": "vi",
@@ -1532,6 +2079,92 @@
           "reason": "Jesus quotes this line of Judas (John 13:18). The Hebrew \"made great the heel\" and John's Greek \"lifted up the heel\" picture the same betrayal, so the Amharic keeps the words the Amharic New Testament already has.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190410100071",
+            "o190410100111"
+          ],
+          "choice": "\"जो मेरी रोटी खाता था, उसने मेरे विरुद्ध [अपनी] एड़ी उठाई है\" (L, B); \"मेरे विरुद्ध हो गया है\", \"मेरे साथ रोटी खाता था\" (R)",
+          "alternatives": [],
+          "reason": "Jesus quotes this line of Judas in John 13:18 (m4), in this translation \"जो मेरी रोटी खाता है, उसने मेरे विरुद्ध अपनी एड़ी उठाई है\" (L, B) and \"जो मेरे साथ रोटी खाता है, वही मेरे विरुद्ध हो गया है\" (R). The Hindi keeps John's words at each level; the Hebrew's past \"ate\" stays \"खाता था\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190410100071",
+            "o190410100081",
+            "o190410100082",
+            "o190410100091",
+            "o190410100101",
+            "o190410100102",
+            "o190410100111"
+          ],
+          "choice": "\"ел мой хлеб, поднял против меня [свою] пятку\" (L); \"поднял на меня свою пятку\" (B); \"восстал против меня\" (R)",
+          "alternatives": [],
+          "reason": "John 13:18 quotes this line (m4) (\"Едящий мой хлеб поднял против меня свою пятку\"; \"поднял на меня свою пятку\"; \"восстал против меня\"); the psalm keeps John's words at each level. In the psalm the speaker is David, so \"меня\" has no deity_pronoun span.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190410100091",
+            "o190410100111",
+            "o190410100021"
+          ],
+          "choice": "\"かかとを高く上げた\" (L), \"わたしに逆らってかかとを上げた\" (B), \"わたしに背いた\" (R)",
+          "alternatives": [],
+          "reason": "John 13:18 quotes this line (m4); Balanced and Readable follow the John Japanese at each level (B \"わたしに逆らってかかとを上げた\", R \"わたしに背いた\"), Literal keeps the Hebrew \"made great the heel\" (m2, uncertain).",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190410100091",
+            "o190410100111"
+          ],
+          "choice": "\"mengangkat tumitnya melawan aku\" (L), \"berbalik menendang aku\" (B)",
+          "alternatives": [],
+          "reason": "The friend has betrayed me (m2, uncertain); Literal keeps the Hebrew picture, which John 13:18 quotes.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1563,44 +2196,69 @@
       "literal_gloss": "And you, YHWH, be gracious to me and raise me up, and I will repay them.",
       "renderings": {
         "en": {
-          "L": "But {{deity_pronoun:you|You}}, {{divine_name:LORD|Yahweh}}, be gracious to me and raise me up, that I may repay them.",
-          "B": "But {{deity_pronoun:you|You}}, {{divine_name:LORD|Yahweh}}, show me grace and lift me up, so that I can pay them back.",
-          "R": "But {{divine_name:LORD|Yahweh}}, please be kind to me. Make me well again, so that I can pay them back."
+          "L": "But {{deity_pronoun:you|You}}, {{divine_name:LORD|Yahweh}}, be gracious to me and raise me up, \\q that I may repay them.",
+          "B": "But {{deity_pronoun:you|You}}, {{divine_name:LORD|Yahweh}}, show me grace and lift me up, \\q so that I can pay them back.",
+          "R": "But {{divine_name:LORD|Yahweh}}, please be kind to me. \\q Make me well again, so that I can pay them back."
         },
         "fr": {
-          "L": "Mais {{deity_pronoun:toi|Toi}}, {{divine_name:SEIGNEUR|Yahvé}}, fais-moi grâce et relève-moi, et je leur rendrai.",
-          "B": "Mais {{deity_pronoun:toi|Toi}}, {{divine_name:SEIGNEUR|Yahvé}}, montre-moi {{deity_pronoun:ta|Ta}} grâce et relève-moi, pour que je puisse leur rendre ce qu’ils méritent.",
-          "R": "Mais {{deity_pronoun:toi|Toi}}, {{divine_name:SEIGNEUR|Yahvé}}, sois bon pour moi, je {{deity_pronoun:t’|T’}}en prie. Guéris-moi, pour que je puisse leur rendre ce qu’ils méritent."
+          "L": "Mais {{deity_pronoun:toi|Toi}}, {{divine_name:SEIGNEUR|Yahvé}}, fais-moi grâce et relève-moi, \\q et je leur rendrai.",
+          "B": "Mais {{deity_pronoun:toi|Toi}}, {{divine_name:SEIGNEUR|Yahvé}}, montre-moi {{deity_pronoun:ta|Ta}} grâce et relève-moi, \\q pour que je puisse leur rendre ce qu’ils méritent.",
+          "R": "Mais {{deity_pronoun:toi|Toi}}, {{divine_name:SEIGNEUR|Yahvé}}, sois bon pour moi, je {{deity_pronoun:t’|T’}}en prie. \\q Guéris-moi, pour que je puisse leur rendre ce qu’ils méritent."
         },
         "sw": {
-          "L": "Lakini {{deity_pronoun:wewe|Wewe}}, {{divine_name:BWANA|Yahwe}}, unifanyie neema na uniinue, ili niwalipe.",
-          "B": "Lakini {{deity_pronoun:wewe|Wewe}}, {{divine_name:BWANA|Yahwe}}, unionyeshe neema na uniinue, ili niweze kuwalipa.",
-          "R": "Lakini {{divine_name:BWANA|Yahwe}}, tafadhali unitendee wema. Uniponye tena, ili niweze kuwalipa."
+          "L": "Lakini {{deity_pronoun:wewe|Wewe}}, {{divine_name:BWANA|Yahwe}}, unifanyie neema \\q na uniinue, ili niwalipe.",
+          "B": "Lakini {{deity_pronoun:wewe|Wewe}}, {{divine_name:BWANA|Yahwe}}, unionyeshe neema na uniinue, \\q ili niweze kuwalipa.",
+          "R": "Lakini {{divine_name:BWANA|Yahwe}}, tafadhali unitendee wema. Uniponye tena, \\q ili niweze kuwalipa."
         },
         "es": {
-          "L": "Pero {{deity_pronoun:tú|Tú}}, {{divine_name:SEÑOR|Yahvé}}, ten piedad de mí y levántame, para que yo les pague.",
-          "B": "Pero {{deity_pronoun:tú|Tú}}, {{divine_name:SEÑOR|Yahvé}}, ten compasión de mí y levántame, para que pueda darles su merecido.",
-          "R": "Pero, {{divine_name:SEÑOR|Yahvé}}, por favor, sé bueno conmigo. Devuélveme la salud, para que pueda darles su merecido."
+          "L": "Pero {{deity_pronoun:tú|Tú}}, {{divine_name:SEÑOR|Yahvé}}, ten piedad de mí y levántame, \\q para que yo les pague.",
+          "B": "Pero {{deity_pronoun:tú|Tú}}, {{divine_name:SEÑOR|Yahvé}}, ten compasión de mí y levántame, \\q para que pueda darles su merecido.",
+          "R": "Pero, {{divine_name:SEÑOR|Yahvé}}, por favor, sé bueno conmigo. \\q Devuélveme la salud, para que pueda darles su merecido."
         },
         "vi": {
-          "L": "Nhưng chính {{deity_pronoun:ngài|Ngài}}, lạy {{divine_name:CHÚA|Gia-vê}}, xin thương xót tôi và nâng tôi dậy, để tôi báo trả chúng.",
-          "B": "Nhưng {{deity_pronoun:ngài|Ngài}}, lạy {{divine_name:CHÚA|Gia-vê}}, xin tỏ ân huệ cho tôi và nâng tôi lên, để tôi có thể báo trả chúng.",
-          "R": "Nhưng lạy {{divine_name:CHÚA|Gia-vê}}, xin thương xót tôi. Xin làm cho tôi khỏe lại, để tôi có thể báo trả chúng."
+          "L": "Nhưng chính {{deity_pronoun:ngài|Ngài}}, lạy {{divine_name:CHÚA|Gia-vê}}, xin thương xót tôi và nâng tôi dậy, \\q để tôi báo trả chúng.",
+          "B": "Nhưng {{deity_pronoun:ngài|Ngài}}, lạy {{divine_name:CHÚA|Gia-vê}}, xin tỏ ân huệ cho tôi và nâng tôi lên, \\q để tôi có thể báo trả chúng.",
+          "R": "Nhưng lạy {{divine_name:CHÚA|Gia-vê}}, xin thương xót tôi. Xin làm cho tôi khỏe lại, \\q để tôi có thể báo trả chúng."
         },
         "ko": {
-          "L": "그러나 주님, {{divine_name:주|야훼}}여, 저에게 은혜를 베푸시고 저를 일으키십시오. 그러면 제가 그들에게 갚겠습니다.",
-          "B": "그러나 {{divine_name:주|야훼}}여, 주님께서 은혜를 베푸셔서 저를 일으켜 주십시오. 그러면 제가 그들에게 갚아 줄 수 있을 것입니다.",
-          "R": "그러나 {{divine_name:주|야훼}}여, 제발 저를 불쌍히 여겨 주십시오. 저를 다시 낫게 해 주십시오. 그러면 제가 그들에게 갚아 줄 수 있을 것입니다."
+          "L": "그러나 주님, {{divine_name:주|야훼}}여, 저에게 은혜를 베푸시고 저를 일으키십시오. \\q 그러면 제가 그들에게 갚겠습니다.",
+          "B": "그러나 {{divine_name:주|야훼}}여, 주님께서 은혜를 베푸셔서 저를 일으켜 주십시오. \\q 그러면 제가 그들에게 갚아 줄 수 있을 것입니다.",
+          "R": "그러나 {{divine_name:주|야훼}}여, 제발 저를 불쌍히 여겨 주십시오. 저를 다시 낫게 해 주십시오. \\q 그러면 제가 그들에게 갚아 줄 수 있을 것입니다."
         },
         "pt": {
-          "L": "Mas {{deity_pronoun:tu|Tu}}, {{divine_name:SENHOR|Javé}}, sê gracioso comigo e levanta-me, para que eu lhes retribua.",
-          "B": "Mas {{deity_pronoun:tu|Tu}}, {{divine_name:SENHOR|Javé}}, mostra-me a {{deity_pronoun:tua|Tua}} graça e levanta-me, para que eu possa retribuir a eles.",
-          "R": "Mas, {{divine_name:SENHOR|Javé}}, sê bondoso comigo, por favor. Devolve-me a saúde, para que eu possa dar a eles o que merecem."
+          "L": "Mas {{deity_pronoun:tu|Tu}}, {{divine_name:SENHOR|Javé}}, sê gracioso comigo e levanta-me, \\q para que eu lhes retribua.",
+          "B": "Mas {{deity_pronoun:tu|Tu}}, {{divine_name:SENHOR|Javé}}, mostra-me a {{deity_pronoun:tua|Tua}} graça e levanta-me, \\q para que eu possa retribuir a eles.",
+          "R": "Mas, {{divine_name:SENHOR|Javé}}, sê bondoso comigo, por favor. \\q Devolve-me a saúde, para que eu possa dar a eles o que merecem."
         },
         "am": {
-          "L": "አንተ ግን {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ራራልኝ፤ ብድራታቸውንም እመልስላቸው ዘንድ አስነሣኝ።",
-          "B": "አንተ ግን {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ራራልኝ፤ ብድራታቸውንም እንድከፍላቸው አንሣኝ።",
-          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ እባክህ ራራልኝ። ብድራታቸውን እንድከፍላቸው እንደ ገና ፈውሰኝ።"
+          "L": "አንተ ግን {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ራራልኝ፤ \\q ብድራታቸውንም እመልስላቸው ዘንድ አስነሣኝ።",
+          "B": "አንተ ግን {{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ ራራልኝ፤ \\q ብድራታቸውንም እንድከፍላቸው አንሣኝ።",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ እባክህ ራራልኝ። \\q ብድራታቸውን እንድከፍላቸው እንደ ገና ፈውሰኝ።"
+        },
+        "hi": {
+          "L": "पर हे {{divine_name:प्रभु|याहवे}}, तू मुझ पर अनुग्रह कर और मुझे उठा खड़ा कर, \\q कि मैं उनको बदला दूँ।",
+          "B": "पर हे {{divine_name:प्रभु|याहवे}}, तू मुझ पर अनुग्रह कर और मुझे ऊपर उठा, \\q कि मैं उन्हें उनका बदला दे सकूँ।",
+          "R": "पर हे {{divine_name:प्रभु|याहवे}}, कृपया मुझ पर दया कर। मुझे फिर से स्वस्थ कर दे, \\q कि मैं उन्हें उनका बदला दे सकूँ।"
+        },
+        "ru": {
+          "L": "Но {{deity_pronoun:ты|Ты}}, {{divine_name:ГОСПОДИ|Яхве}}, помилуй меня и подними меня, \\q и я воздам им.",
+          "B": "Но {{deity_pronoun:ты|Ты}}, {{divine_name:ГОСПОДИ|Яхве}}, будь милостив ко мне и подними меня, \\q чтобы я мог отплатить им.",
+          "R": "Но, {{divine_name:ГОСПОДИ|Яхве}}, пожалуйста, будь добр ко мне. \\q Сделай меня снова здоровым, чтобы я мог отплатить им."
+        },
+        "ja": {
+          "L": "しかし、あなたは、{{divine_name:主|ヤハウェ}}よ、わたしをあわれみ、わたしを立ち上がらせてください。 \\q そうすれば、わたしは彼らに報いよう。",
+          "B": "しかし、{{divine_name:主|ヤハウェ}}よ、あなたは、わたしに恵みを示し、わたしを起き上がらせてください。 \\q そうすれば、わたしは彼らに報いることができる。",
+          "R": "しかし、{{divine_name:主|ヤハウェ}}よ、どうか、わたしをあわれんでください。わたしを、もう一度元気にしてください。 \\q そうすれば、わたしは彼らに仕返しができる。"
+        },
+        "uk": {
+          "L": "А {{deity_pronoun:ти|Ти}}, {{divine_name:ГОСПОДИ|Ягве}}, будь милостивий до мене й підніми мене, \\q щоб я відплатив їм.",
+          "B": "Але {{deity_pronoun:ти|Ти}}, {{divine_name:ГОСПОДИ|Ягве}}, вияви мені милість і підведи мене, \\q щоб я міг їм відплатити.",
+          "R": "Але, {{divine_name:ГОСПОДИ|Ягве}}, прошу, будь добрий до мене. \\q Зроби мене знову здоровим, щоб я міг їм відплатити."
+        },
+        "id": {
+          "L": "Tetapi {{deity_pronoun:engkau|Engkau}}, {{divine_name:TUHAN|Yahweh}}, kasihanilah aku dan bangkitkanlah aku, \\q supaya aku dapat membalas mereka.",
+          "B": "Tetapi {{deity_pronoun:engkau|Engkau}}, {{divine_name:TUHAN|Yahweh}}, kasihanilah aku dan angkatlah aku, \\q supaya aku dapat membalas mereka.",
+          "R": "Tetapi {{divine_name:TUHAN|Yahweh}}, berbaik hatilah kepadaku. \\q Buatlah aku sehat kembali, supaya aku dapat membalas mereka."
         }
       },
       "decisions": [
@@ -1652,6 +2310,44 @@
           "reason": "Readable says what raising up means here (m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190410110052"
+          ],
+          "choice": "va'ashallemah \"報いよう\" (L), \"報いることができる\" (B), \"仕返しができる\" (R, as the English R \"pay them back\")",
+          "alternatives": [],
+          "reason": "Read as justice rather than private revenge (m2, uncertain); the Japanese follows the English level's strength.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190410110052"
+          ],
+          "choice": "\"supaya aku dapat membalas mereka\"",
+          "alternatives": [],
+          "reason": "The king's justice, not private revenge (m2, uncertain); the words are kept as the Hebrew has them.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1685,44 +2381,69 @@
       "literal_gloss": "By this I know that you delight in me: that my enemy does not shout over me.",
       "renderings": {
         "en": {
-          "L": "By this I know that {{deity_pronoun:you|You}} delight in me: that my enemy does not shout in triumph over me.",
-          "B": "This is how I know {{deity_pronoun:you|You}} are pleased with me: my enemy does not get to cheer in triumph over me.",
-          "R": "Then I will know that {{deity_pronoun:you|You}} are happy with me. My enemy will not win and cheer over me."
+          "L": "By this I know that {{deity_pronoun:you|You}} delight in me: \\q that my enemy does not shout in triumph over me.",
+          "B": "This is how I know {{deity_pronoun:you|You}} are pleased with me: \\q my enemy does not get to cheer in triumph over me.",
+          "R": "Then I will know that {{deity_pronoun:you|You}} are happy with me. \\q My enemy will not win and cheer over me."
         },
         "fr": {
-          "L": "À ceci je sais que {{deity_pronoun:tu|Tu}} prends plaisir en moi : que mon ennemi ne pousse pas de cri de triomphe sur moi.",
-          "B": "Voici comment je sais que {{deity_pronoun:tu|Tu}} es content de moi : mon ennemi ne pourra pas crier victoire sur moi.",
-          "R": "Alors je saurai que {{deity_pronoun:tu|Tu}} es content de moi. Mon ennemi ne gagnera pas et ne criera pas victoire sur moi."
+          "L": "À ceci je sais que {{deity_pronoun:tu|Tu}} prends plaisir en moi : \\q que mon ennemi ne pousse pas de cri de triomphe sur moi.",
+          "B": "Voici comment je sais que {{deity_pronoun:tu|Tu}} es content de moi : \\q mon ennemi ne pourra pas crier victoire sur moi.",
+          "R": "Alors je saurai que {{deity_pronoun:tu|Tu}} es content de moi. \\q Mon ennemi ne gagnera pas et ne criera pas victoire sur moi."
         },
         "sw": {
-          "L": "Kwa hili ninajua kwamba unapendezwa nami: kwamba adui yangu hapigi kelele za ushindi juu yangu.",
-          "B": "Hivi ndivyo ninavyojua kwamba unapendezwa nami: adui yangu hapati kushangilia ushindi juu yangu.",
-          "R": "Ndipo nitakapojua kwamba unafurahishwa nami. Adui yangu hatashinda wala kushangilia juu yangu."
+          "L": "Kwa hili ninajua kwamba unapendezwa nami: \\q kwamba adui yangu hapigi kelele za ushindi juu yangu.",
+          "B": "Hivi ndivyo ninavyojua kwamba unapendezwa nami: \\q adui yangu hapati kushangilia ushindi juu yangu.",
+          "R": "Ndipo nitakapojua kwamba unafurahishwa nami. \\q Adui yangu hatashinda wala kushangilia juu yangu."
         },
         "es": {
-          "L": "En esto sé que {{deity_pronoun:tú|Tú}} te complaces en mí: en que mi enemigo no grita triunfante sobre mí.",
-          "B": "Así sé que {{deity_pronoun:tú|Tú}} estás contento conmigo: mi enemigo no llega a celebrar su victoria sobre mí.",
-          "R": "Entonces sabré que {{deity_pronoun:tú|Tú}} estás contento conmigo. Mi enemigo no ganará ni celebrará sobre mí."
+          "L": "En esto sé que {{deity_pronoun:tú|Tú}} te complaces en mí: \\q en que mi enemigo no grita triunfante sobre mí.",
+          "B": "Así sé que {{deity_pronoun:tú|Tú}} estás contento conmigo: \\q mi enemigo no llega a celebrar su victoria sobre mí.",
+          "R": "Entonces sabré que {{deity_pronoun:tú|Tú}} estás contento conmigo. \\q Mi enemigo no ganará ni celebrará sobre mí."
         },
         "vi": {
-          "L": "Bởi điều này tôi biết rằng {{deity_pronoun:ngài|Ngài}} vui thích tôi: ấy là kẻ thù tôi không reo hò đắc thắng trên tôi.",
-          "B": "Đây là điều cho tôi biết {{deity_pronoun:ngài|Ngài}} hài lòng về tôi: kẻ thù tôi không được reo mừng đắc thắng trên tôi.",
-          "R": "Bấy giờ tôi sẽ biết {{deity_pronoun:ngài|Ngài}} vui lòng về tôi. Kẻ thù tôi sẽ không thắng và reo hò trên tôi."
+          "L": "Bởi điều này tôi biết rằng {{deity_pronoun:ngài|Ngài}} vui thích tôi: \\q ấy là kẻ thù tôi không reo hò đắc thắng trên tôi.",
+          "B": "Đây là điều cho tôi biết {{deity_pronoun:ngài|Ngài}} hài lòng về tôi: \\q kẻ thù tôi không được reo mừng đắc thắng trên tôi.",
+          "R": "Bấy giờ tôi sẽ biết {{deity_pronoun:ngài|Ngài}} vui lòng về tôi. \\q Kẻ thù tôi sẽ không thắng và reo hò trên tôi."
         },
         "ko": {
-          "L": "이것으로 주님께서 저를 기뻐하시는 줄을 제가 압니다. 제 원수가 저를 이기고 환호하지 못하는 것입니다.",
-          "B": "주님께서 저를 기뻐하시는 줄을 저는 이렇게 압니다. 제 원수가 저를 이겼다고 환호하지 못하는 것입니다.",
-          "R": "그러면 주님께서 저를 기뻐하신다는 것을 제가 알게 될 것입니다. 제 원수는 이기지 못하고, 저를 두고 환호하지 못할 것입니다."
+          "L": "이것으로 주님께서 저를 기뻐하시는 줄을 제가 압니다. \\q 제 원수가 저를 이기고 환호하지 못하는 것입니다.",
+          "B": "주님께서 저를 기뻐하시는 줄을 저는 이렇게 압니다. \\q 제 원수가 저를 이겼다고 환호하지 못하는 것입니다.",
+          "R": "그러면 주님께서 저를 기뻐하신다는 것을 제가 알게 될 것입니다. \\q 제 원수는 이기지 못하고, 저를 두고 환호하지 못할 것입니다."
         },
         "pt": {
-          "L": "Por isto sei que {{deity_pronoun:tu|Tu}} tens prazer em mim: que o meu inimigo não grita em triunfo sobre mim.",
-          "B": "É assim que eu sei que {{deity_pronoun:tu|Tu}} estás contente comigo: o meu inimigo não vai cantar vitória sobre mim.",
-          "R": "Então vou saber que {{deity_pronoun:tu|Tu}} estás feliz comigo. O meu inimigo não vai vencer nem comemorar a minha derrota."
+          "L": "Por isto sei que {{deity_pronoun:tu|Tu}} tens prazer em mim: \\q que o meu inimigo não grita em triunfo sobre mim.",
+          "B": "É assim que eu sei que {{deity_pronoun:tu|Tu}} estás contente comigo: \\q o meu inimigo não vai cantar vitória sobre mim.",
+          "R": "Então vou saber que {{deity_pronoun:tu|Tu}} estás feliz comigo. \\q O meu inimigo não vai vencer nem comemorar a minha derrota."
         },
         "am": {
-          "L": "በዚህ በእኔ ደስ እንደምትሰኝ አውቃለሁ፤ ጠላቴ በእኔ ላይ የድል ጩኸት አይጮኽምና።",
-          "B": "በእኔ ደስ እንደምትሰኝ በዚህ አውቃለሁ፤ ጠላቴ በእኔ ላይ ድል አድርጎ እልል አይልም።",
-          "R": "ያን ጊዜ በእኔ ደስ እንደምትሰኝ አውቃለሁ። ጠላቴ አያሸንፈኝም፤ በእኔም ላይ እልል አይልም።"
+          "L": "በዚህ በእኔ ደስ እንደምትሰኝ አውቃለሁ፤ \\q ጠላቴ በእኔ ላይ የድል ጩኸት አይጮኽምና።",
+          "B": "በእኔ ደስ እንደምትሰኝ በዚህ አውቃለሁ፤ \\q ጠላቴ በእኔ ላይ ድል አድርጎ እልል አይልም።",
+          "R": "ያን ጊዜ በእኔ ደስ እንደምትሰኝ አውቃለሁ። \\q ጠላቴ አያሸንፈኝም፤ በእኔም ላይ እልል አይልም።"
+        },
+        "hi": {
+          "L": "इससे मैं जानता हूँ कि तू मुझसे प्रसन्न है: \\q कि मेरा शत्रु मुझ पर जयजयकार नहीं करता।",
+          "B": "इसी से मैं जानता हूँ कि तू मुझसे प्रसन्न है: \\q मेरा शत्रु मुझ पर जीत का नारा नहीं लगाने पाता।",
+          "R": "तब मैं जानूँगा कि तू मुझसे ख़ुश है। \\q मेरा शत्रु मुझ पर जीतकर ख़ुशी नहीं मनाएगा।"
+        },
+        "ru": {
+          "L": "По этому я узнаю, что {{deity_pronoun:ты|Ты}} благоволишь ко мне: \\q что враг мой не торжествует надо мной.",
+          "B": "Вот как я узнаю, что {{deity_pronoun:ты|Ты}} доволен мной: \\q мой враг не будет с победным криком торжествовать надо мной.",
+          "R": "Тогда я буду знать, что {{deity_pronoun:ты|Ты}} доволен мной. \\q Мой враг не победит и не будет торжествовать надо мной."
+        },
+        "ja": {
+          "L": "このことによって、わたしは知る、あなたがわたしを喜んでおられることを。 \\q わたしの敵が、わたしに勝ちどきをあげないことによって。",
+          "B": "わたしにはわかる、あなたがわたしを喜んでくださっていることが。 \\q 敵が、わたしに勝ちどきをあげることはないからだ。",
+          "R": "そのとき、わたしは、あなたがわたしを喜んでおられることを知る。 \\q 敵がわたしに勝って、喜びの声をあげることはない。"
+        },
+        "uk": {
+          "L": "З цього я знаю, що {{deity_pronoun:ти|Ти}} маєш уподобання в мені: \\q що мій ворог не тріумфує наді мною.",
+          "B": "Ось як я знаю, що {{deity_pronoun:ти|Ти}} задоволений мною: \\q мій ворог не може радісно тріумфувати наді мною.",
+          "R": "Тоді я знатиму, що {{deity_pronoun:ти|Ти}} задоволений мною. \\q Мій ворог не переможе й не радітиме наді мною."
+        },
+        "id": {
+          "L": "Dengan ini aku tahu bahwa {{deity_pronoun:engkau|Engkau}} berkenan kepadaku: \\q bahwa musuhku tidak bersorak-sorai atas aku.",
+          "B": "Dengan inilah aku tahu bahwa {{deity_pronoun:engkau|Engkau}} berkenan kepadaku: \\q musuhku tidak dapat bersorak-sorai atas kemenangannya terhadap aku.",
+          "R": "Lalu aku akan tahu bahwa {{deity_pronoun:engkau|Engkau}} senang kepadaku. \\q Musuhku tidak akan menang dan bersorak atas aku."
         }
       },
       "decisions": [
@@ -1788,44 +2509,69 @@
       "literal_gloss": "And I, in my integrity you have upheld me, and you have set me before your face forever.",
       "renderings": {
         "en": {
-          "L": "And as for me, in my integrity {{deity_pronoun:you|You}} have upheld me, and {{deity_pronoun:you|You}} have set me before {{deity_pronoun:your|Your}} face forever.",
-          "B": "As for me, {{deity_pronoun:you|You}} keep hold of me in my integrity and let me stand before {{deity_pronoun:your|Your}} face for all time.",
-          "R": "You hold me up, because my heart is true to {{deity_pronoun:you|You}}. You will let me stay with {{deity_pronoun:you|You}} forever."
+          "L": "And as for me, in my integrity {{deity_pronoun:you|You}} have upheld me, \\q and {{deity_pronoun:you|You}} have set me before {{deity_pronoun:your|Your}} face forever.",
+          "B": "As for me, {{deity_pronoun:you|You}} keep hold of me in my integrity \\q and let me stand before {{deity_pronoun:your|Your}} face for all time.",
+          "R": "You hold me up, because my heart is true to {{deity_pronoun:you|You}}. \\q You will let me stay with {{deity_pronoun:you|You}} forever."
         },
         "fr": {
-          "L": "Et quant à moi, dans mon intégrité {{deity_pronoun:tu|Tu}} m’as soutenu, et {{deity_pronoun:tu|Tu}} m’as placé devant {{deity_pronoun:ta|Ta}} face pour toujours.",
-          "B": "Quant à moi, {{deity_pronoun:tu|Tu}} me tiens dans mon intégrité et {{deity_pronoun:tu|Tu}} me fais tenir devant {{deity_pronoun:ta|Ta}} face à jamais.",
-          "R": "Tu me soutiens, parce que mon cœur {{deity_pronoun:t’|T’}}est fidèle. Tu me laisseras rester avec {{deity_pronoun:toi|Toi}} pour toujours."
+          "L": "Et quant à moi, dans mon intégrité {{deity_pronoun:tu|Tu}} m’as soutenu, \\q et {{deity_pronoun:tu|Tu}} m’as placé devant {{deity_pronoun:ta|Ta}} face pour toujours.",
+          "B": "Quant à moi, {{deity_pronoun:tu|Tu}} me tiens dans mon intégrité \\q et {{deity_pronoun:tu|Tu}} me fais tenir devant {{deity_pronoun:ta|Ta}} face à jamais.",
+          "R": "Tu me soutiens, parce que mon cœur {{deity_pronoun:t’|T’}}est fidèle. \\q Tu me laisseras rester avec {{deity_pronoun:toi|Toi}} pour toujours."
         },
         "sw": {
-          "L": "Na mimi, katika uadilifu wangu umenitegemeza, na umeniweka mbele ya uso {{deity_pronoun:wako|Wako}} milele.",
-          "B": "Na mimi, unanishika katika uadilifu wangu na kuniacha nisimame mbele ya uso {{deity_pronoun:wako|Wako}} siku zote.",
-          "R": "Unanishika imara, kwa sababu moyo wangu ni mwaminifu {{deity_pronoun:kwako|Kwako}}. Utaniacha nikae pamoja {{deity_pronoun:nawe|Nawe}} milele."
+          "L": "Na mimi, katika uadilifu wangu umenitegemeza, \\q na umeniweka mbele ya uso {{deity_pronoun:wako|Wako}} milele.",
+          "B": "Na mimi, unanishika katika uadilifu wangu \\q na kuniacha nisimame mbele ya uso {{deity_pronoun:wako|Wako}} siku zote.",
+          "R": "Unanishika imara, kwa sababu moyo wangu ni mwaminifu {{deity_pronoun:kwako|Kwako}}. \\q Utaniacha nikae pamoja {{deity_pronoun:nawe|Nawe}} milele."
         },
         "es": {
-          "L": "Y en cuanto a mí, en mi integridad {{deity_pronoun:tú|Tú}} me has sostenido, y me has puesto delante de {{deity_pronoun:tu|Tu}} rostro para siempre.",
-          "B": "En cuanto a mí, {{deity_pronoun:tú|Tú}} me sostienes en mi integridad y me dejas estar delante de {{deity_pronoun:tu|Tu}} rostro por todos los tiempos.",
-          "R": "Tú me sostienes, porque mi corazón {{deity_pronoun:te|Te}} es fiel. Tú me dejarás quedarme contigo para siempre."
+          "L": "Y en cuanto a mí, en mi integridad {{deity_pronoun:tú|Tú}} me has sostenido, \\q y me has puesto delante de {{deity_pronoun:tu|Tu}} rostro para siempre.",
+          "B": "En cuanto a mí, {{deity_pronoun:tú|Tú}} me sostienes en mi integridad \\q y me dejas estar delante de {{deity_pronoun:tu|Tu}} rostro por todos los tiempos.",
+          "R": "Tú me sostienes, porque mi corazón {{deity_pronoun:te|Te}} es fiel. \\q Tú me dejarás quedarme contigo para siempre."
         },
         "vi": {
-          "L": "Còn tôi, trong sự trọn vẹn của tôi {{deity_pronoun:ngài|Ngài}} đã nâng đỡ tôi, và {{deity_pronoun:ngài|Ngài}} đã đặt tôi trước mặt {{deity_pronoun:ngài|Ngài}} đến đời đời.",
-          "B": "Còn tôi, {{deity_pronoun:ngài|Ngài}} giữ lấy tôi trong sự trọn vẹn của tôi và cho tôi đứng trước mặt {{deity_pronoun:ngài|Ngài}} mãi mãi.",
-          "R": "Ngài nâng đỡ tôi, vì lòng tôi chân thành với {{deity_pronoun:ngài|Ngài}}. Ngài sẽ cho tôi ở với {{deity_pronoun:ngài|Ngài}} đến đời đời."
+          "L": "Còn tôi, trong sự trọn vẹn của tôi {{deity_pronoun:ngài|Ngài}} đã nâng đỡ tôi, \\q và {{deity_pronoun:ngài|Ngài}} đã đặt tôi trước mặt {{deity_pronoun:ngài|Ngài}} đến đời đời.",
+          "B": "Còn tôi, {{deity_pronoun:ngài|Ngài}} giữ lấy tôi trong sự trọn vẹn của tôi \\q và cho tôi đứng trước mặt {{deity_pronoun:ngài|Ngài}} mãi mãi.",
+          "R": "Ngài nâng đỡ tôi, vì lòng tôi chân thành với {{deity_pronoun:ngài|Ngài}}. \\q Ngài sẽ cho tôi ở với {{deity_pronoun:ngài|Ngài}} đến đời đời."
         },
         "ko": {
-          "L": "저로 말하자면, 저의 온전함 가운데 주님께서 저를 붙드셨고, 저를 영원히 주님의 얼굴 앞에 세우셨습니다.",
-          "B": "주님께서는 제가 온전한 가운데 저를 붙들어 주시고, 영원토록 주님의 얼굴 앞에 서게 하십니다.",
-          "R": "제 마음이 주님께 진실하니, 주님께서 저를 붙들어 주십니다. 주님께서 저를 영원히 주님과 함께 있게 하실 것입니다."
+          "L": "저로 말하자면, 저의 온전함 가운데 주님께서 저를 붙드셨고, \\q 저를 영원히 주님의 얼굴 앞에 세우셨습니다.",
+          "B": "주님께서는 제가 온전한 가운데 저를 붙들어 주시고, \\q 영원토록 주님의 얼굴 앞에 서게 하십니다.",
+          "R": "제 마음이 주님께 진실하니, 주님께서 저를 붙들어 주십니다. \\q 주님께서 저를 영원히 주님과 함께 있게 하실 것입니다."
         },
         "pt": {
-          "L": "E, quanto a mim, na minha integridade {{deity_pronoun:tu|Tu}} me sustentaste, e {{deity_pronoun:tu|Tu}} me puseste diante da {{deity_pronoun:tua|Tua}} face para sempre.",
-          "B": "Quanto a mim, {{deity_pronoun:tu|Tu}} me seguras na minha integridade e me deixas ficar diante da {{deity_pronoun:tua|Tua}} face para sempre.",
-          "R": "Tu me sustentas, porque o meu coração é fiel a {{deity_pronoun:ti|Ti}}. Tu vais me deixar ficar {{deity_pronoun:contigo|Contigo}} para sempre."
+          "L": "E, quanto a mim, na minha integridade {{deity_pronoun:tu|Tu}} me sustentaste, \\q e {{deity_pronoun:tu|Tu}} me puseste diante da {{deity_pronoun:tua|Tua}} face para sempre.",
+          "B": "Quanto a mim, {{deity_pronoun:tu|Tu}} me seguras na minha integridade \\q e me deixas ficar diante da {{deity_pronoun:tua|Tua}} face para sempre.",
+          "R": "Tu me sustentas, porque o meu coração é fiel a {{deity_pronoun:ti|Ti}}. \\q Tu vais me deixar ficar {{deity_pronoun:contigo|Contigo}} para sempre."
         },
         "am": {
-          "L": "እኔንስ በንጹሕ አቋሜ ደገፍከኝ፤ በፊትህም ለዘላለም አቆምከኝ።",
-          "B": "እኔን ግን በንጹሕ አቋሜ አጽንተህ ትይዘኛለህ፤ በፊትህም ለዘላለም እንድቆም ታደርገኛለህ።",
-          "R": "ልቤ ለአንተ ታማኝ ስለ ሆነ ትደግፈኛለህ። ለዘላለም ከአንተ ጋር እንድኖር ትፈቅድልኛለህ።"
+          "L": "እኔንስ በንጹሕ አቋሜ ደገፍከኝ፤ \\q በፊትህም ለዘላለም አቆምከኝ።",
+          "B": "እኔን ግን በንጹሕ አቋሜ አጽንተህ ትይዘኛለህ፤ \\q በፊትህም ለዘላለም እንድቆም ታደርገኛለህ።",
+          "R": "ልቤ ለአንተ ታማኝ ስለ ሆነ ትደግፈኛለህ። \\q ለዘላለም ከአንተ ጋር እንድኖር ትፈቅድልኛለህ።"
+        },
+        "hi": {
+          "L": "और मुझे तो तूने मेरी खराई में सँभाला है, \\q और मुझे सदा के लिए अपने सम्मुख खड़ा किया है।",
+          "B": "जहाँ तक मेरी बात है, तू मेरी खराई में मुझे थामे रहता है \\q और मुझे सदा तक अपने सामने खड़ा रहने देता है।",
+          "R": "तू मुझे सँभाले रहता है, क्योंकि मेरा मन तेरे प्रति सच्चा है। \\q तू मुझे सदा अपने पास रहने देगा।"
+        },
+        "ru": {
+          "L": "А меня в непорочности моей {{deity_pronoun:ты|Ты}} поддержал \\q и поставил меня пред лицом {{deity_pronoun:твоим|Твоим}} навеки.",
+          "B": "А меня {{deity_pronoun:ты|Ты}} крепко держишь в моей непорочности \\q и даёшь мне стоять перед {{deity_pronoun:твоим|Твоим}} лицом во все времена.",
+          "R": "Ты поддерживаешь меня, потому что моё сердце верно {{deity_pronoun:тебе|Тебе}}. \\q Ты позволишь мне оставаться с {{deity_pronoun:тобой|Тобой}} навсегда."
+        },
+        "ja": {
+          "L": "そしてわたしは、わたしの潔白のうちに、あなたはわたしを支え、 \\q とこしえに、あなたの顔の前にわたしを立たせられた。",
+          "B": "わたしは潔白に歩む。あなたはそのわたしを支え、いつまでも、 \\q あなたの顔の前に立たせてくださる。",
+          "R": "わたしは心からあなたに従っている。だから、あなたはわたしを支えてくださる。 \\q あなたは、いつまでも、わたしをあなたのそばにいさせてくださる。"
+        },
+        "uk": {
+          "L": "А мене в моїй непорочності {{deity_pronoun:ти|Ти}} підтримав, \\q і {{deity_pronoun:ти|Ти}} поставив мене перед {{deity_pronoun:твоїм|Твоїм}} обличчям навіки.",
+          "B": "А мене {{deity_pronoun:ти|Ти}} тримаєш у моїй непорочності \\q й даєш мені стояти перед {{deity_pronoun:твоїм|Твоїм}} обличчям повік.",
+          "R": "Ти підтримуєш мене, бо моє серце вірне {{deity_pronoun:тобі|Тобі}}. \\q Ти дозволиш мені бути з {{deity_pronoun:тобою|Тобою}} завжди."
+        },
+        "id": {
+          "L": "Dan aku ini, dalam ketulusanku {{deity_pronoun:engkau|Engkau}} telah menopang aku, \\q dan {{deity_pronoun:engkau|Engkau}} telah menempatkan aku di hadapan wajah-{{deity_pronoun:mu|Mu}} untuk selama-lamanya.",
+          "B": "Tetapi aku, {{deity_pronoun:engkau|Engkau}} memegang aku dalam ketulusanku \\q dan membiarkan aku berdiri di hadapan wajah-{{deity_pronoun:mu|Mu}} untuk selama-lamanya.",
+          "R": "Engkau menopang aku, sebab hatiku setia kepada-{{deity_pronoun:mu|Mu}}. \\q Engkau akan membiarkan aku tinggal bersama-{{deity_pronoun:mu|Mu}} untuk selama-lamanya."
         }
       },
       "decisions": [
@@ -1898,6 +2644,27 @@
           "reason": "\"ፍጹምነት\" would suggest sinlessness, which the meaning decision rules out; \"ንጹሕ አቋም\" is the everyday word for an upright, undivided character.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190410130022",
+            "o190410130052",
+            "o190410130062"
+          ],
+          "choice": "tummi \"わたしの潔白\" (L), \"潔白に歩む\" (B), \"心からあなたに従っている\" (R); \"あなたの顔の前に\" (L, B)",
+          "alternatives": [],
+          "reason": "tom 潔白 (PSA-3: 25:21) for wholehearted loyalty (m1); Readable says the presence plainly (m2).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1931,44 +2698,69 @@
       "literal_gloss": "Blessed [be] YHWH, God of Israel, from the everlasting and until the everlasting. Amen and amen.",
       "renderings": {
         "en": {
-          "L": "Blessed [be] {{divine_name:the LORD|Yahweh}}, [the] God of Israel, from everlasting to everlasting. Amen and amen.",
-          "B": "May {{divine_name:the LORD|Yahweh}}, the God of Israel, be blessed from ages past to ages to come! Amen and amen.",
-          "R": "Praise {{divine_name:the LORD|Yahweh}}, the God of Israel! He has always been worthy of praise, and always will be. Amen! Amen!"
+          "L": "Blessed [be] {{divine_name:the LORD|Yahweh}}, [the] God of Israel, \\q from everlasting to everlasting. Amen and amen.",
+          "B": "May {{divine_name:the LORD|Yahweh}}, the God of Israel, \\q be blessed from ages past to ages to come! Amen and amen.",
+          "R": "Praise {{divine_name:the LORD|Yahweh}}, the God of Israel! \\q He has always been worthy of praise, and always will be. Amen! Amen!"
         },
         "fr": {
-          "L": "Béni [soit] {{divine_name:le SEIGNEUR|Yahvé}}, [le] Dieu d’Israël, depuis l’éternité et jusqu’à l’éternité. Amen et amen.",
-          "B": "Que {{divine_name:le SEIGNEUR|Yahvé}}, le Dieu d’Israël, soit béni depuis les âges passés jusqu’aux âges à venir ! Amen, amen !",
-          "R": "Louez {{divine_name:le SEIGNEUR|Yahvé}}, le Dieu d’Israël ! Il a toujours été digne de louange, et {{deity_pronoun:il|Il}} le sera toujours. Amen ! Amen !"
+          "L": "Béni [soit] {{divine_name:le SEIGNEUR|Yahvé}}, [le] Dieu d’Israël, \\q depuis l’éternité et jusqu’à l’éternité. Amen et amen.",
+          "B": "Que {{divine_name:le SEIGNEUR|Yahvé}}, le Dieu d’Israël, \\q soit béni depuis les âges passés jusqu’aux âges à venir ! Amen, amen !",
+          "R": "Louez {{divine_name:le SEIGNEUR|Yahvé}}, le Dieu d’Israël ! \\q Il a toujours été digne de louange, et {{deity_pronoun:il|Il}} le sera toujours. Amen ! Amen !"
         },
         "sw": {
-          "L": "Na abarikiwe {{divine_name:BWANA|Yahwe}}, Mungu wa Israeli, tangu milele hata milele. Amina na amina.",
-          "B": "{{divine_name:BWANA|Yahwe}}, Mungu wa Israeli, na abarikiwe tangu zamani za kale hata vizazi vijavyo! Amina na amina.",
-          "R": "Msifuni {{divine_name:BWANA|Yahwe}}, Mungu wa Israeli! Amestahili sifa siku zote, {{deity_pronoun:naye|Naye}} atastahili sifa daima. Amina! Amina!"
+          "L": "Na abarikiwe {{divine_name:BWANA|Yahwe}}, \\q Mungu wa Israeli, tangu milele hata milele. Amina na amina.",
+          "B": "{{divine_name:BWANA|Yahwe}}, Mungu wa Israeli, \\q na abarikiwe tangu zamani za kale hata vizazi vijavyo! Amina na amina.",
+          "R": "Msifuni {{divine_name:BWANA|Yahwe}}, Mungu wa Israeli! \\q Amestahili sifa siku zote, {{deity_pronoun:naye|Naye}} atastahili sifa daima. Amina! Amina!"
         },
         "es": {
-          "L": "Bendito [sea] {{divine_name:el SEÑOR|Yahvé}}, [el] Dios de Israel, desde la eternidad y hasta la eternidad. Amén y amén.",
-          "B": "¡Que {{divine_name:el SEÑOR|Yahvé}}, el Dios de Israel, sea bendito desde los siglos pasados hasta los siglos venideros! Amén y amén.",
-          "R": "¡Alabado sea {{divine_name:el SEÑOR|Yahvé}}, el Dios de Israel! Siempre ha sido digno de alabanza, y siempre lo será. ¡Amén! ¡Amén!"
+          "L": "Bendito [sea] {{divine_name:el SEÑOR|Yahvé}}, [el] Dios de Israel, \\q desde la eternidad y hasta la eternidad. Amén y amén.",
+          "B": "¡Que {{divine_name:el SEÑOR|Yahvé}}, el Dios de Israel, \\q sea bendito desde los siglos pasados hasta los siglos venideros! Amén y amén.",
+          "R": "¡Alabado sea {{divine_name:el SEÑOR|Yahvé}}, el Dios de Israel! \\q Siempre ha sido digno de alabanza, y siempre lo será. ¡Amén! ¡Amén!"
         },
         "vi": {
-          "L": "Chúc tụng {{divine_name:CHÚA|Gia-vê}}, Đức Chúa Trời của Y-sơ-ra-ên, từ đời đời cho đến đời đời. A-men và a-men.",
-          "B": "Nguyện {{divine_name:CHÚA|Gia-vê}}, Đức Chúa Trời của Y-sơ-ra-ên, được chúc tụng từ muôn đời trước cho đến muôn đời sau! A-men và a-men.",
-          "R": "Hãy ca ngợi {{divine_name:CHÚA|Gia-vê}}, Đức Chúa Trời của Y-sơ-ra-ên! Ngài luôn đáng được ca ngợi từ trước đến nay và mãi mãi về sau. A-men! A-men!"
+          "L": "Chúc tụng {{divine_name:CHÚA|Gia-vê}}, \\q Đức Chúa Trời của Y-sơ-ra-ên, từ đời đời cho đến đời đời. A-men và a-men.",
+          "B": "Nguyện {{divine_name:CHÚA|Gia-vê}}, Đức Chúa Trời của Y-sơ-ra-ên, \\q được chúc tụng từ muôn đời trước cho đến muôn đời sau! A-men và a-men.",
+          "R": "Hãy ca ngợi {{divine_name:CHÚA|Gia-vê}}, Đức Chúa Trời của Y-sơ-ra-ên! \\q Ngài luôn đáng được ca ngợi từ trước đến nay và mãi mãi về sau. A-men! A-men!"
         },
         "ko": {
-          "L": "{{divine_name:주|야훼}}, 이스라엘의 하나님은 송축을 받으실 분이시다, 영원부터 영원까지. 아멘, 아멘.",
-          "B": "{{divine_name:주|야훼}}, 이스라엘의 하나님께서 영원 전부터 영원까지 송축을 받으시기를! 아멘, 아멘.",
-          "R": "이스라엘의 하나님 {{divine_name:주|야훼}}를 찬양하여라! 그분은 언제나 찬양을 받으실 분이셨고, 앞으로도 영원히 그러하실 것이다. 아멘! 아멘!"
+          "L": "{{divine_name:주|야훼}}, 이스라엘의 하나님은 \\q 송축을 받으실 분이시다, 영원부터 영원까지. 아멘, 아멘.",
+          "B": "{{divine_name:주|야훼}}, 이스라엘의 하나님께서 \\q 영원 전부터 영원까지 송축을 받으시기를! 아멘, 아멘.",
+          "R": "이스라엘의 하나님 {{divine_name:주|야훼}}를 찬양하여라! \\q 그분은 언제나 찬양을 받으실 분이셨고, 앞으로도 영원히 그러하실 것이다. 아멘! 아멘!"
         },
         "pt": {
-          "L": "Bendito [seja] {{divine_name:o SENHOR|Javé}}, o Deus de Israel, desde a eternidade até a eternidade! Amém e amém.",
-          "B": "Bendito seja {{divine_name:o SENHOR|Javé}}, o Deus de Israel, desde os tempos antigos até os tempos que virão! Amém e amém.",
-          "R": "Louvado seja {{divine_name:o SENHOR|Javé}}, o Deus de Israel! Ele sempre foi digno de louvor, e sempre será. Amém! Amém!"
+          "L": "Bendito [seja] {{divine_name:o SENHOR|Javé}}, o Deus de Israel, \\q desde a eternidade até a eternidade! Amém e amém.",
+          "B": "Bendito seja {{divine_name:o SENHOR|Javé}}, o Deus de Israel, \\q desde os tempos antigos até os tempos que virão! Amém e amém.",
+          "R": "Louvado seja {{divine_name:o SENHOR|Javé}}, o Deus de Israel! \\q Ele sempre foi digno de louvor, e sempre será. Amém! Amém!"
         },
         "am": {
-          "L": "የእስራኤል አምላክ {{divine_name:እግዚአብሔር|ያህዌ}} ከዘላለም እስከ ዘላለም የተባረከ [ይሁን]። አሜን፣ አሜንም።",
-          "B": "የእስራኤል አምላክ {{divine_name:እግዚአብሔር|ያህዌ}} ከጥንት ጀምሮ እስከ ዘላለም ይባረክ! አሜን፣ አሜን።",
-          "R": "የእስራኤልን አምላክ {{divine_name:እግዚአብሔርን|ያህዌን}} አመስግኑ! ሁልጊዜ ምስጋና ይገባው ነበር፤ ለዘላለምም ይገባዋል። አሜን! አሜን!"
+          "L": "የእስራኤል አምላክ \\q {{divine_name:እግዚአብሔር|ያህዌ}} ከዘላለም እስከ ዘላለም የተባረከ [ይሁን]። አሜን፣ አሜንም።",
+          "B": "የእስራኤል አምላክ \\q {{divine_name:እግዚአብሔር|ያህዌ}} ከጥንት ጀምሮ እስከ ዘላለም ይባረክ! አሜን፣ አሜን።",
+          "R": "የእስራኤልን አምላክ {{divine_name:እግዚአብሔርን|ያህዌን}} አመስግኑ! \\q ሁልጊዜ ምስጋና ይገባው ነበር፤ ለዘላለምም ይገባዋል። አሜን! አሜን!"
+        },
+        "hi": {
+          "L": "इस्राएल के परमेश्वर {{divine_name:प्रभु|याहवे}} \\q अनादि काल से अनन्त काल तक धन्य [हों]। आमीन और आमीन।",
+          "B": "इस्राएल के परमेश्वर {{divine_name:प्रभु|याहवे}} \\q युग-युग से युग-युग तक धन्य हों! आमीन और आमीन।",
+          "R": "इस्राएल के परमेश्वर {{divine_name:प्रभु|याहवे}} की स्तुति हो! \\q वे सदा से स्तुति के योग्य रहे हैं, और सदा रहेंगे। आमीन! आमीन!"
+        },
+        "ru": {
+          "L": "Благословен {{divine_name:ГОСПОДЬ|Яхве}}, Бог Израиля, \\q от века и до века. Аминь и аминь.",
+          "B": "Да будет благословен {{divine_name:ГОСПОДЬ|Яхве}}, Бог Израиля, \\q от веков прошедших до веков грядущих! Аминь и аминь.",
+          "R": "Хвалите {{divine_name:ГОСПОДА|Яхве}}, Бога Израиля! \\q Он всегда был достоин хвалы и всегда будет. Аминь! Аминь!"
+        },
+        "ja": {
+          "L": "ほめたたえられよ、{{divine_name:主|ヤハウェ}}、イスラエルの神は、 \\q とこしえからとこしえまで。アーメン、アーメン。",
+          "B": "イスラエルの神、{{divine_name:主|ヤハウェ}}が、とこしえからとこしえまで、 \\q ほめたたえられるように。アーメン、アーメン。",
+          "R": "イスラエルの神、{{divine_name:主|ヤハウェ}}をほめたたえよう！ \\q その方は昔からずっと、そしてこれからもずっと、ほめたたえられるべき方だ。アーメン！アーメン！"
+        },
+        "uk": {
+          "L": "Благословенний {{divine_name:ГОСПОДЬ|Ягве}}, Бог Ізраїлю, \\q від віку й до віку. Амінь і амінь.",
+          "B": "Нехай буде благословенний {{divine_name:ГОСПОДЬ|Ягве}}, Бог Ізраїлю, \\q від давніх віків і до віків прийдешніх! Амінь і амінь.",
+          "R": "Хваліть {{divine_name:ГОСПОДА|Ягве}}, Бога Ізраїлю! \\q {{deity_pronoun:він|Він}} завжди був гідний хвали й завжди буде. Амінь! Амінь!"
+        },
+        "id": {
+          "L": "Terpujilah {{divine_name:TUHAN|Yahweh}}, Allah Israel, \\q dari kekal sampai kekal. Amin dan amin.",
+          "B": "Terpujilah {{divine_name:TUHAN|Yahweh}}, Allah Israel, \\q dari zaman purba sampai zaman yang akan datang! Amin dan amin.",
+          "R": "Pujilah {{divine_name:TUHAN|Yahweh}}, Allah Israel! \\q Dia selalu layak dipuji, sekarang dan selama-lamanya. Amin! Amin!"
         }
       },
       "decisions": [
@@ -2080,6 +2872,108 @@
           "choice": "the doxology in the wording of 1 Chronicles 16:36 (Literal \"… ከዘላለም እስከ ዘላለም የተባረከ [ይሁን]\", Balanced \"… ከጥንት ጀምሮ እስከ ዘላለም ይባረክ!\", Readable \"… አመስግኑ! ሁልጊዜ ምስጋና ይገባው ነበር፤ ለዘላለምም ይገባዋል\")",
           "alternatives": [],
           "reason": "The Hebrew of this blessing is the same as 1 Chronicles 16:36 and is echoed at the close of Books Two to Four (72:18-19; 89:53; 106:48), so the Amharic keeps one wording for it.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190410140011",
+            "o190410140092"
+          ],
+          "choice": "the doxology in the words of 1 Chronicles 16:36; \"आमीन और आमीन\"",
+          "alternatives": [],
+          "reason": "This blessing closes Book One of the Psalms (m1). Its first line is the same as 1 Chronicles 16:36 (and Psalm 106:48), and the Hindi keeps that verse's wording at each level; \"Amen\" (m3) is \"आमीन\", as in the New Testament.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190410140011",
+            "o190410140021",
+            "o190410140031",
+            "o190410140041",
+            "o190410140051",
+            "o190410140052",
+            "o190410140053",
+            "o190410140061",
+            "o190410140062",
+            "o190410140071",
+            "o190410140072"
+          ],
+          "choice": "the wording of 1 Chronicles 16:36 at each level",
+          "alternatives": [],
+          "reason": "The praise that closes Book One (m1) is the blessing of 1 Chronicles 16:36 (and Psalm 106:48); the Russian copies it at each level and adds \"Аминь и аминь\" (\"Аминь! Аминь!\" at Readable, as the English).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190410140011",
+            "o190410140081",
+            "o190410140092"
+          ],
+          "choice": "barukh YHWH \"ほめたたえられよ\" (L), \"ほめたたえられるように\" (B), \"ほめたたえよう\" (R); \"とこしえからとこしえまで\" (L, B) and R as 1 Chronicles 16:36 R",
+          "alternatives": [],
+          "reason": "The doxology that closes Book One (m1), worded as 1 Chronicles 16:36 (which Psalm 106:48 repeats) but in the Psalter's plain style (B ほめたたえられるように, PSA-1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190410140011",
+            "o190410140021",
+            "o190410140031",
+            "o190410140041",
+            "o190410140051",
+            "o190410140052",
+            "o190410140053",
+            "o190410140061",
+            "o190410140062",
+            "o190410140071",
+            "o190410140072",
+            "o190410140081",
+            "o190410140091",
+            "o190410140092"
+          ],
+          "choice": "\"Amin dan amin\"",
+          "alternatives": [],
+          "reason": "The glossary's \"Amin\". This doxology closes the first book of the Psalms.",
           "uncertain": false,
           "footnote": false
         }

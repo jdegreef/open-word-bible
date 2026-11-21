@@ -76,6 +76,31 @@
           "L": "«Пусть не смущается ваше сердце; верьте в Бога, и в {{deity_pronoun:меня|Меня}} верьте.",
           "B": "«Пусть ваши сердца не тревожатся. Верьте в Бога и верьте также в {{deity_pronoun:меня|Меня}}.",
           "R": "«Пусть ваши сердца не тревожатся. Верьте в Бога. Верьте и в {{deity_pronoun:меня|Меня}}."
+        },
+        "uk": {
+          "L": "«Нехай не тривожиться ваше серце; віруйте в Бога, і в {{deity_pronoun:мене|Мене}} віруйте.",
+          "B": "«Нехай не тривожаться ваші серця. Вірте в Бога, вірте і в {{deity_pronoun:мене|Мене}}.",
+          "R": "«Нехай ваші серця не тривожаться. Вірте в Бога. Вірте й у {{deity_pronoun:мене|Мене}}."
+        },
+        "ja": {
+          "L": "「あなたがたの心が動揺することがあってはならない。神を信じなさい。そして、わたしを信じなさい。",
+          "B": "「心を動揺させてはならない。神を信じ、わたしのことも信じなさい。",
+          "R": "「おびえて心を乱してはいけない。神を信じなさい。わたしのことも信じなさい。"
+        },
+        "id": {
+          "L": "\"Janganlah hati kalian gelisah; percayalah kepada Allah, dan percayalah kepada-{{deity_pronoun:ku|Ku}}.",
+          "B": "\"Jangan biarkan hati kalian gelisah. Percayalah kepada Allah, dan percayalah juga kepada-{{deity_pronoun:ku|Ku}}.",
+          "R": "\"Jangan biarkan hati kalian gelisah. Percayalah kepada Allah. Percayalah juga kepada-{{deity_pronoun:ku|Ku}}."
+        },
+        "zh": {
+          "L": "“不要让你们的心惊慌不安；要信入{{god_term:神|上帝}}，也要信入我。",
+          "B": "“你们心里不要惊慌。要信{{god_term:神|上帝}}，也要信我。",
+          "R": "“你们不要惊慌不安。要信{{god_term:神|上帝}}，也要信我。"
+        },
+        "ar": {
+          "L": "«لا يضطرب قلبكم؛ آمنوا بالله، وآمنوا بي أيضًا.",
+          "B": "«لا تدعوا قلوبكم تضطرب. آمنوا بالله، وآمنوا بي كذلك.",
+          "R": "«لا تقلقوا ولا تخافوا. آمنوا بالله. وآمنوا بي أيضًا."
         }
       },
       "alignments": [
@@ -162,6 +187,68 @@
           "language": "en",
           "level": "B",
           "target_span": "as well"
+        },
+        {
+          "tokens": [
+            "n43014001003",
+            "n43014001004",
+            "n43014001005"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "心"
+        },
+        {
+          "tokens": [
+            "n43014001001",
+            "n43014001002"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "動揺させてはならない"
+        },
+        {
+          "tokens": [
+            "n43014001008",
+            "n43014001009"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "神"
+        },
+        {
+          "tokens": [
+            "n43014001006",
+            "n43014001007"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "信じ"
+        },
+        {
+          "tokens": [
+            "n43014001011",
+            "n43014001012"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43014001010"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "も"
+        },
+        {
+          "tokens": [
+            "n43014001013"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "信じなさい"
         }
       ],
       "decisions": [
@@ -550,6 +637,157 @@
           "reason": "The familiar \"да не смущается\" uses the Slavonic \"да\" for \"let\", which the style guide (section 3) does not use; \"пусть\" says the same in modern Russian. Literal keeps the one heart of the Greek (meaning decision m2); Balanced and Readable use the plural, as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43014001006",
+            "n43014001013"
+          ],
+          "choice": "\"віруйте\" (L); \"вірте\" (B, R)",
+          "alternatives": [
+            "\"вірте\" at every level"
+          ],
+          "reason": "Both are imperatives of \"вірити\"; Literal uses the fuller form common in solemn speech, the other levels the everyday one. The verb itself is the same at every level, as the key-term rule asks.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43014001002"
+          ],
+          "choice": "\"動揺する\" (L, B); \"おびえて心を乱す\" (R)",
+          "alternatives": [
+            "\"心を騒がせる\""
+          ],
+          "reason": "The verb is the one used of Jesus himself in 13:21, rendered \"動揺され\" there, so Literal and Balanced keep the same word to let the link be seen (meaning decision m1). Readable names the fear the verb includes. Both \"believe\" are read as commands (meaning decision m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43014001006",
+            "n43014001013"
+          ],
+          "choice": "both verbs as commands: \"percayalah ... percayalah\"",
+          "alternatives": [
+            "\"kalian percaya kepada Allah, percayalah juga kepada-Ku\""
+          ],
+          "reason": "m3: both are commands. The wording was checked against the familiar Indonesian forms of this verse (Style, section 12b, step 4) and differs from them beyond the key terms.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n43014001009"
+          ],
+          "choice": "\"{{god_term:神|上帝}}\"",
+          "alternatives": [
+            "\"神\" fixed",
+            "\"上帝\" fixed"
+          ],
+          "reason": "Every word naming the one God is written in the Chinese god_term setting: \"神\" by default, \"上帝\" for readers who choose it. The meaning is the same.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n43014001012"
+          ],
+          "choice": "\"我\", no deity_pronoun span",
+          "alternatives": [],
+          "reason": "Chinese has no reverent form of the first person, so Jesus's \"I, me, my\" takes no span where the English capitalises it, here and through this passage.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-3",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43014001006"
+          ],
+          "choice": "\"信入\" (L); \"信\" (B, R)",
+          "alternatives": [
+            "\"相信\"",
+            "\"信靠\""
+          ],
+          "reason": "The verb \"believe (in)\" is a key term in John: \"信入\" at Literal, \"信\" at Balanced and Readable, as through the book (1:12); the singular \"heart\" for the group is \"你们的心\" at Literal and \"你们心里\" at Balanced.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-1",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "grammar",
+          "tokens": [
+            "n43014001003",
+            "n43014001004",
+            "n43014001005",
+            "n43014001006",
+            "n43014001013"
+          ],
+          "choice": "\"قلبكم\" (L), \"قلوبكم\" (B); both verbs as commands",
+          "alternatives": [
+            "\"أنتم تؤمنون بالله فآمنوا بي\""
+          ],
+          "reason": "The Greek has one heart for the whole group (m2), which Literal keeps; Balanced uses the plural, as the English does. Both \"believe\"s are read as commands (m3), so the Arabic does not make the first a statement.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -637,6 +875,31 @@
           "L": "В доме {{deity_pronoun:моего|Моего}} Отца много жилищ; а если бы не так, {{deity_pronoun:я|Я}} сказал бы вам, ведь {{deity_pronoun:я|Я}} иду приготовить место для вас.",
           "B": "В доме {{deity_pronoun:моего|Моего}} Отца много жилищ. Иначе {{deity_pronoun:я|Я}} сказал бы вам, ведь {{deity_pronoun:я|Я}} иду приготовить для вас место.",
           "R": "В доме {{deity_pronoun:моего|Моего}} Отца много мест, где можно жить. Если бы это было не так, {{deity_pronoun:я|Я}} сказал бы вам. Ведь {{deity_pronoun:я|Я}} иду туда, чтобы приготовить для вас место."
+        },
+        "uk": {
+          "L": "У домі {{deity_pronoun:мого|Мого}} Отця багато помешкань; а якби ні, {{deity_pronoun:я|Я}} сказав би вам, бо {{deity_pronoun:я|Я}} йду приготувати вам місце.",
+          "B": "У домі {{deity_pronoun:мого|Мого}} Отця багато помешкань. Інакше {{deity_pronoun:я|Я}} сказав би вам, бо {{deity_pronoun:я|Я}} йду приготувати вам місце.",
+          "R": "У домі {{deity_pronoun:мого|Мого}} Отця багато місця, де можна жити. Якби це було не так, {{deity_pronoun:я|Я}} сказав би вам. Адже {{deity_pronoun:я|Я}} йду туди, щоб приготувати для вас місце."
+        },
+        "ja": {
+          "L": "わたしの父の家には、とどまる所がたくさんある。もしそうでなければ、あなたがたに言ったであろう。わたしはあなたがたのために場所を用意しに行くのだから。",
+          "B": "わたしの父の家には、住まいがたくさんある。そうでなかったら、あなたがたにそう言っていただろう。わたしは、あなたがたのために場所を用意しに行くのだから。",
+          "R": "わたしの父の家には、住む所がたくさんある。もしそうでなかったら、わたしはそう言っていただろう。実際、わたしはあなたたちのために、そこに場所を用意しに行くのだ。"
+        },
+        "id": {
+          "L": "Di rumah Bapa-{{deity_pronoun:ku|Ku}} ada banyak tempat tinggal; jika tidak demikian, {{deity_pronoun:aku|Aku}} tentu sudah mengatakannya kepada kalian, sebab {{deity_pronoun:aku|Aku}} pergi untuk menyediakan tempat bagi kalian;",
+          "B": "Di rumah Bapa-{{deity_pronoun:ku|Ku}} ada banyak tempat tinggal. Kalau tidak, tentu {{deity_pronoun:aku|Aku}} sudah mengatakannya kepada kalian, sebab {{deity_pronoun:aku|Aku}} pergi untuk menyiapkan tempat bagi kalian.",
+          "R": "Di rumah Bapa-{{deity_pronoun:ku|Ku}} ada banyak tempat untuk tinggal. Kalau tidak benar begitu, {{deity_pronoun:aku|Aku}} pasti sudah memberi tahu kalian. Malah {{deity_pronoun:aku|Aku}} pergi ke sana untuk menyiapkan tempat bagi kalian."
+        },
+        "zh": {
+          "L": "我父的家中，居所有许多；若不是这样，我会告诉你们，因为我去为你们预备一个地方。",
+          "B": "我父的家里有很多可以住的地方。不然的话，我就会告诉你们了，因为我正要去为你们准备地方。",
+          "R": "我父的家里有许多住的地方。如果不是这样，我早就会告诉你们了。其实，我正要到那里去，为你们把地方准备好。"
+        },
+        "ar": {
+          "L": "في بيت أبي مساكن كثيرة؛ ولو لم يكن كذلك لقلت لكم، فإنّي ذاهب لأهيّئ لكم مكانًا.",
+          "B": "في بيت أبي أماكن كثيرة للإقامة. ولو لم يكن الأمر كذلك لأخبرتكم، فأنا ذاهب لأجهّز لكم مكانًا.",
+          "R": "في بيت أبي أماكن كثيرة للسكن. ولو لم يكن هذا صحيحًا، لأخبرتكم. والحقيقة أنّي ذاهب إلى هناك لأجهّز لكم مكانًا."
         }
       },
       "alignments": [
@@ -764,6 +1027,132 @@
           "language": "en",
           "level": "B",
           "target_span": "for you"
+        },
+        {
+          "tokens": [
+            "n43014002006"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43014002004",
+            "n43014002005"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "父"
+        },
+        {
+          "tokens": [
+            "n43014002001",
+            "n43014002002",
+            "n43014002003"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "家には"
+        },
+        {
+          "tokens": [
+            "n43014002007"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "住まい"
+        },
+        {
+          "tokens": [
+            "n43014002008"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "たくさん"
+        },
+        {
+          "tokens": [
+            "n43014002009"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ある"
+        },
+        {
+          "tokens": [
+            "n43014002010",
+            "n43014002011",
+            "n43014002012"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "そうでなかったら"
+        },
+        {
+          "tokens": [
+            "n43014002015"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなたがた"
+        },
+        {
+          "tokens": [
+            "n43014002013",
+            "n43014002014"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "言っていただろう"
+        },
+        {
+          "tokens": [
+            "n43014002017"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43014002020"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなたがたのために"
+        },
+        {
+          "tokens": [
+            "n43014002019"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "場所"
+        },
+        {
+          "tokens": [
+            "n43014002018"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "用意し"
+        },
+        {
+          "tokens": [
+            "n43014002017"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "に行く"
+        },
+        {
+          "tokens": [
+            "n43014002016"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "のだから"
         }
       ],
       "decisions": [
@@ -1096,6 +1485,123 @@
           "reason": "The Greek word means lasting places to stay and live (meaning decision m2). \"Обители\" is the familiar word but now suggests a monastery; \"жилища\" says plainly what is meant.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43014002007"
+          ],
+          "choice": "\"помешкання\" (L, B); \"місце, де можна жити\" (R)",
+          "alternatives": [
+            "\"оселі\"",
+            "\"кімнати\""
+          ],
+          "reason": "The Greek noun comes from *menō*: a place to stay and live. \"Помешкання\" is the plain modern word for a dwelling; \"оселі\" is the older Bibles' word, and \"кімнати\" narrows the picture.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43014002007"
+          ],
+          "choice": "\"とどまる所\" (L); \"住まい\" (B); \"住む所\" (R)",
+          "alternatives": [
+            "\"住居\"",
+            "\"部屋\""
+          ],
+          "reason": "The noun comes from the verb \"remain\" and means a lasting place to stay (meaning decision m2). Literal shows the link with \"とどまる\", the book's word for that verb (14:10, 17); Balanced and Readable use the plain words for a home.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43014002007"
+          ],
+          "choice": "\"tempat tinggal\"",
+          "alternatives": [
+            "\"kamar\"",
+            "\"rumah\""
+          ],
+          "reason": "m2: lasting places to stay and live. The noun is the same as \"kediaman\" in 14:23 in the Greek; \"tempat tinggal\" keeps it general, as the English \"dwelling places\" does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43014002007"
+          ],
+          "choice": "\"居所\" (L); \"可以住的地方\" (B); \"住的地方\" (R)",
+          "alternatives": [
+            "\"住处\""
+          ],
+          "reason": "Lasting places to stay and live (meaning decision m2), not grand houses; Balanced and Readable say it in everyday words.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-1",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "punctuation",
+          "tokens": [
+            "n43014002010",
+            "n43014002011",
+            "n43014002012",
+            "n43014002013",
+            "n43014002014",
+            "n43014002015",
+            "n43014002016",
+            "n43014002017",
+            "n43014002018",
+            "n43014002019",
+            "n43014002020"
+          ],
+          "choice": "a statement: \"لو لم يكن كذلك لقلت لكم، فإنّي ذاهب...\"",
+          "alternatives": [
+            "a question: \"أكنت أقول لكم إنّي ذاهب...؟\""
+          ],
+          "reason": "The sentence is read as a statement: if it were not so, I would have told you, for I am going to prepare a place (m3).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1184,6 +1690,31 @@
           "L": "И если {{deity_pronoun:я|Я}} пойду и приготовлю вам место, снова прихожу и возьму вас к себе, чтобы где {{deity_pronoun:я|Я}}, и вы были.",
           "B": "И когда {{deity_pronoun:я|Я}} уйду и приготовлю вам место, {{deity_pronoun:я|Я}} вернусь и возьму вас к себе, чтобы и вы были там, где {{deity_pronoun:я|Я}}.",
           "R": "Когда {{deity_pronoun:я|Я}} уйду и приготовлю для вас место, {{deity_pronoun:я|Я}} вернусь. Я возьму вас к себе, чтобы вы были там, где {{deity_pronoun:я|Я}}."
+        },
+        "uk": {
+          "L": "І коли піду й приготую вам місце, знову приходжу і візьму вас до себе, щоб де {{deity_pronoun:я|Я}}, там і ви були.",
+          "B": "І коли {{deity_pronoun:я|Я}} піду й приготую вам місце, то повернуся й заберу вас до себе, щоб і ви були там, де {{deity_pronoun:я|Я}}.",
+          "R": "Коли {{deity_pronoun:я|Я}} піду й приготую для вас місце, то повернуся. Я заберу вас до себе, щоб ви були там, де {{deity_pronoun:я|Я}}."
+        },
+        "ja": {
+          "L": "そして、わたしが行って、あなたがたのために場所を用意したなら、わたしは再び来る。そして、あなたがたをわたし自身のもとに迎え入れる。わたしがいる所に、あなたがたもいるためである。",
+          "B": "行ってあなたがたのために場所を用意したら、わたしは戻って来て、あなたがたをわたしのもとに迎える。わたしがいる所に、あなたがたもいるようになるためである。",
+          "R": "わたしは行って、あなたたちのために場所を用意したら、また戻って来る。そして、あなたたちをわたしのところに連れて行く。わたしがいる所に、あなたたちもいられるようにするためだ。"
+        },
+        "id": {
+          "L": "Dan jika {{deity_pronoun:aku|Aku}} pergi dan menyediakan tempat bagi kalian, {{deity_pronoun:aku|Aku}} akan datang kembali dan membawa kalian kepada-{{deity_pronoun:ku|Ku}}, supaya di tempat {{deity_pronoun:aku|Aku}} berada, kalian pun berada.",
+          "B": "Dan apabila {{deity_pronoun:aku|Aku}} sudah pergi dan menyiapkan tempat bagi kalian, {{deity_pronoun:aku|Aku}} akan datang kembali dan membawa kalian ke tempat-{{deity_pronoun:ku|Ku}}, supaya kalian juga berada di tempat {{deity_pronoun:aku|Aku}} berada.",
+          "R": "Sesudah {{deity_pronoun:aku|Aku}} pergi dan menyiapkan tempat bagi kalian, {{deity_pronoun:aku|Aku}} akan datang kembali. Aku akan membawa kalian untuk tinggal bersama-{{deity_pronoun:ku|Ku}}, supaya kalian ada di tempat {{deity_pronoun:aku|Aku}} berada."
+        },
+        "zh": {
+          "L": "并且如果我去为你们预备好地方，我还要再来，把你们接到我自己那里，好使我所在的地方，你们也在那里。",
+          "B": "我去为你们准备好地方以后，就会回来，接你们到我身边，好让你们也在我所在的地方。",
+          "R": "我去为你们把地方准备好以后，就会回来。我要接你们来和我在一起，让你们也能在我所在的地方。"
+        },
+        "ar": {
+          "L": "وإن مضيت وهيّأت لكم مكانًا، فإنّي آتي ثانية وآخذكم إليّ، حتّى حيث أكون أنا تكونون أنتم أيضًا.",
+          "B": "وبعد أن أذهب وأجهّز لكم مكانًا، سأعود وآخذكم لتكونوا معي، حتّى تكونوا أنتم أيضًا حيث أكون.",
+          "R": "وبعد أن أذهب وأجهّز لكم مكانًا، سأرجع. وسآخذكم لتكونوا معي، لكي تكونوا في المكان الذي أنا فيه."
         }
       },
       "alignments": [
@@ -1347,6 +1878,138 @@
           "language": "en",
           "level": "B",
           "target_span": "am"
+        },
+        {
+          "tokens": [
+            "n43014003002",
+            "n43014003003"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "行って"
+        },
+        {
+          "tokens": [
+            "n43014003007"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなたがたのために"
+        },
+        {
+          "tokens": [
+            "n43014003006"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "場所"
+        },
+        {
+          "tokens": [
+            "n43014003004",
+            "n43014003005"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "用意したら"
+        },
+        {
+          "tokens": [
+            "n43014003009"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43014003008",
+            "n43014003009"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "戻って来て"
+        },
+        {
+          "tokens": [
+            "n43014003012"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなたがた"
+        },
+        {
+          "tokens": [
+            "n43014003013",
+            "n43014003014"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたしのもとに"
+        },
+        {
+          "tokens": [
+            "n43014003011"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "迎える"
+        },
+        {
+          "tokens": [
+            "n43014003018"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43014003017"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "いる"
+        },
+        {
+          "tokens": [
+            "n43014003016"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "所に"
+        },
+        {
+          "tokens": [
+            "n43014003020"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなたがた"
+        },
+        {
+          "tokens": [
+            "n43014003019"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "も"
+        },
+        {
+          "tokens": [
+            "n43014003021"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "いるようになる"
+        },
+        {
+          "tokens": [
+            "n43014003015"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ためである"
         }
       ],
       "decisions": [
@@ -1589,6 +2252,31 @@
           "L": "И куда {{deity_pronoun:я|Я}} иду, вы знаете путь.»",
           "B": "И вы знаете путь туда, куда {{deity_pronoun:я|Я}} иду.»",
           "R": "Вы знаете путь туда, куда {{deity_pronoun:я|Я}} иду.»"
+        },
+        "uk": {
+          "L": "І куди {{deity_pronoun:я|Я}} йду, ви знаєте дорогу.»",
+          "B": "І ви знаєте дорогу туди, куди {{deity_pronoun:я|Я}} йду.»",
+          "R": "Ви знаєте дорогу туди, куди {{deity_pronoun:я|Я}} йду.»"
+        },
+        "ja": {
+          "L": "そして、わたしが行く所、その道をあなたがたは知っている。」",
+          "B": "わたしが行く所へ通じる道を、あなたがたは知っている。」",
+          "R": "わたしが行く所への道を、あなたたちは知っている。」"
+        },
+        "id": {
+          "L": "Dan ke tempat {{deity_pronoun:aku|Aku}} pergi, kalian tahu jalannya.\"",
+          "B": "Dan kalian tahu jalan menuju tempat {{deity_pronoun:aku|Aku}} pergi.\"",
+          "R": "Kalian tahu jalan ke tempat {{deity_pronoun:aku|Aku}} pergi.\""
+        },
+        "zh": {
+          "L": "我往哪里去，那条路你们是知道的。”",
+          "B": "你们也知道通往我要去之处的路。”",
+          "R": "到我要去的地方，你们是认得路的。”"
+        },
+        "ar": {
+          "L": "وحيث أنا ذاهب تعرفون الطريق».",
+          "B": "وأنتم تعرفون الطريق المؤدّي إلى حيث أذهب».",
+          "R": "وأنتم تعرفون الطريق إلى المكان الذي أذهب إليه»."
         }
       },
       "alignments": [
@@ -1640,6 +2328,55 @@
           "language": "en",
           "level": "B",
           "target_span": "am going"
+        },
+        {
+          "tokens": [
+            "n43014004003"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43014004004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "行く"
+        },
+        {
+          "tokens": [
+            "n43014004002"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "所へ"
+        },
+        {
+          "tokens": [
+            "n43014004006",
+            "n43014004007"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "通じる道"
+        },
+        {
+          "tokens": [
+            "n43014004005"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなたがた"
+        },
+        {
+          "tokens": [
+            "n43014004005"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "知っている"
         }
       ],
       "decisions": [
@@ -1831,6 +2568,31 @@
           "L": "Говорит {{deity_pronoun:ему|Ему}} Фома: «Господи, мы не знаем, куда {{deity_pronoun:ты|Ты}} идёшь; как мы можем знать путь?»",
           "B": "Фома сказал {{deity_pronoun:ему|Ему}}: «Господи, мы не знаем, куда {{deity_pronoun:ты|Ты}} идёшь. Как же нам знать путь?»",
           "R": "Фома сказал: «Господи, мы не знаем, куда {{deity_pronoun:ты|Ты}} идёшь. Как же нам узнать путь туда?»"
+        },
+        "uk": {
+          "L": "Хома каже {{deity_pronoun:йому|Йому}}: «Господи, ми не знаємо, куди {{deity_pronoun:ти|Ти}} йдеш; як можемо знати дорогу?»",
+          "B": "Хома сказав {{deity_pronoun:йому|Йому}}: «Господи, ми не знаємо, куди {{deity_pronoun:ти|Ти}} йдеш. Як же нам знати дорогу?»",
+          "R": "Хома сказав: «Господи, ми не знаємо, куди {{deity_pronoun:ти|Ти}} йдеш. Як же ми можемо знати дорогу туди?»"
+        },
+        "ja": {
+          "L": "トマスはイエスに言う。「主よ、わたしたちは、あなたがどこへ行かれるのか知りません。どうして、その道を知ることができるでしょうか？」",
+          "B": "トマスは言った。「主よ、どこへ行かれるのか、わたしたちには分かりません。それなら、どうしてその道を知ることができるでしょうか？」",
+          "R": "トマスは言いました。「主よ、あなたがどこへ行かれるのか、わたしたちにはわかりません。それなら、どうやってそこへ行く道がわかるでしょうか？」"
+        },
+        "id": {
+          "L": "Tomas berkata kepada-{{deity_pronoun:nya|Nya}}, \"Tuhan, kami tidak tahu ke mana {{deity_pronoun:engkau|Engkau}} pergi; bagaimana kami dapat mengetahui jalannya?\"",
+          "B": "Tomas berkata kepada-{{deity_pronoun:nya|Nya}}, \"Tuhan, kami tidak tahu ke mana {{deity_pronoun:engkau|Engkau}} pergi. Bagaimana kami dapat tahu jalannya?\"",
+          "R": "Tomas berkata, \"Tuhan, kami tidak tahu ke mana {{deity_pronoun:engkau|Engkau}} akan pergi. Jadi, bagaimana kami bisa tahu jalan ke sana?\""
+        },
+        "zh": {
+          "L": "多马对{{deity_pronoun:他|祂}}说：“主啊，我们不知道{{deity_pronoun:你|祢}}往哪里去，怎么能知道那条路呢？”",
+          "B": "多马对{{deity_pronoun:他|祂}}说：“主啊，我们不知道{{deity_pronoun:你|祢}}要到哪里去，那么我们怎能认得那条路呢？”",
+          "R": "多马说：“主啊，我们连{{deity_pronoun:你|祢}}要去哪里都不知道，又怎么能知道去那里的路呢？”"
+        },
+        "ar": {
+          "L": "يقول له توما: «يا ربّ، لسنا نعلم إلى أين تمضي؛ فكيف نقدر أن نعرف الطريق؟»",
+          "B": "فقال له توما: «يا ربّ، نحن لا نعرف إلى أين أنت ذاهب. فكيف لنا أن نعرف الطريق؟»",
+          "R": "فقال توما: «يا ربّ، نحن لا نعرف إلى أين أنت ذاهب. فكيف نعرف الطريق إلى هناك؟»"
         }
       },
       "alignments": [
@@ -1938,6 +2700,97 @@
           "language": "en",
           "level": "B",
           "target_span": "the way"
+        },
+        {
+          "tokens": [
+            "n43014005003"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "トマス"
+        },
+        {
+          "tokens": [
+            "n43014005001",
+            "n43014005002"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "言った"
+        },
+        {
+          "tokens": [
+            "n43014005004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "主よ"
+        },
+        {
+          "tokens": [
+            "n43014005007"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "どこ"
+        },
+        {
+          "tokens": [
+            "n43014005008"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "行かれる"
+        },
+        {
+          "tokens": [
+            "n43014005006"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたしたち"
+        },
+        {
+          "tokens": [
+            "n43014005005",
+            "n43014005006"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "分かりません"
+        },
+        {
+          "tokens": [
+            "n43014005009"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "どうして"
+        },
+        {
+          "tokens": [
+            "n43014005011",
+            "n43014005012"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "その道"
+        },
+        {
+          "tokens": [
+            "n43014005013"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "知る"
+        },
+        {
+          "tokens": [
+            "n43014005010"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ことができるでしょうか"
         }
       ],
       "decisions": [
@@ -2224,6 +3077,27 @@
           "reason": "A disciple's address to his master (meaning decision m1), as docs/john-terms.md settles; the same in verse 8.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n43014005004"
+          ],
+          "choice": "\"{{deity_pronoun:你|祢}}\" for Jesus addressed",
+          "alternatives": [
+            "\"您\""
+          ],
+          "reason": "The disciples speak to Jesus with \"你\", as everyone does in this translation, written in the deity_pronoun span as the English capital \"You\" is.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2314,6 +3188,31 @@
           "L": "Говорит ему Иисус: «Я — путь, и истина, и жизнь. Никто не приходит к Отцу иначе, как через {{deity_pronoun:меня|Меня}}.",
           "B": "Иисус ответил ему: «Я — путь, истина и жизнь. Только через {{deity_pronoun:меня|Меня}} человек приходит к Отцу.",
           "R": "Иисус ответил ему: «Я — путь, и {{deity_pronoun:я|Я}} — правда и жизнь. Прийти к Отцу можно только через {{deity_pronoun:меня|Меня}}."
+        },
+        "uk": {
+          "L": "Ісус каже йому: «Я є дорога, і істина, і життя. Ніхто не приходить до Отця, як тільки через {{deity_pronoun:мене|Мене}}.",
+          "B": "Ісус відповів йому: «Я — дорога, істина і життя. Лише через {{deity_pronoun:мене|Мене}} людина приходить до Отця.",
+          "R": "Ісус відповів йому: «Я — дорога, і Я — правда і життя. Єдиний шлях, яким можна прийти до Отця, — це через {{deity_pronoun:мене|Мене}}."
+        },
+        "ja": {
+          "L": "イエスは彼に言われる。「わたしは道であり、真理であり、命である。わたしによらないで、父のもとに来る者はだれもいない。",
+          "B": "イエスはお答えになった。「わたしは道であり、真理であり、命である。わたしを通してでなければ、だれも父のもとに来ない。",
+          "R": "イエスはお答えになりました。「わたしが道だ。そして、わたしが真理であり、命だ。父のところに行くことができるただ一つの道は、わたしを通ることだ。"
+        },
+        "id": {
+          "L": "Yesus berkata kepadanya, \"Akulah jalan dan kebenaran dan hidup; tidak ada seorang pun datang kepada Bapa, kecuali melalui {{deity_pronoun:aku|Aku}}.",
+          "B": "Yesus menjawab dia, \"Akulah jalan, kebenaran, dan hidup. Hanya melalui {{deity_pronoun:aku|Aku}} orang dapat datang kepada Bapa.",
+          "R": "Yesus menjawab dia, \"Akulah jalan, dan {{deity_pronoun:aku|Aku}}lah kebenaran dan hidup. Satu-satunya jalan bagi siapa pun untuk datang kepada Bapa adalah melalui {{deity_pronoun:aku|Aku}}."
+        },
+        "zh": {
+          "L": "耶稣对他说：“我是那道路，也是那真理，也是那生命；没有人来到父那里，除非是借着我。",
+          "B": "耶稣回答他：“我是道路，是真理，是生命。只有借着我，人才能到父那里去。",
+          "R": "耶稣回答他：“我是那条路。我也是真理，是生命。任何人要到父那里去，唯一的路就是通过我。"
+        },
+        "ar": {
+          "L": "يقول له يسوع: «أنا هو الطريق والحقّ والحياة. لا يأتي أحد إلى الآب إلّا بي.",
+          "B": "فأجابه يسوع: «أنا هو الطريق والحقّ والحياة. لا أحد يصل إلى الآب إلّا من خلالي.",
+          "R": "فأجابه يسوع: «أنا هو الطريق، وأنا هو الحقّ والحياة. والطريق الوحيدة التي يأتي بها أحد إلى الآب هي أنا."
         }
       },
       "alignments": [
@@ -2443,6 +3342,120 @@
           "language": "en",
           "level": "B",
           "target_span": "the Father"
+        },
+        {
+          "tokens": [
+            "n43014006003",
+            "n43014006004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "イエス"
+        },
+        {
+          "tokens": [
+            "n43014006001",
+            "n43014006002"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "お答えになった"
+        },
+        {
+          "tokens": [
+            "n43014006005"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43014006007",
+            "n43014006008"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "道"
+        },
+        {
+          "tokens": [
+            "n43014006009",
+            "n43014006010",
+            "n43014006011"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "真理"
+        },
+        {
+          "tokens": [
+            "n43014006012",
+            "n43014006013",
+            "n43014006014"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "命"
+        },
+        {
+          "tokens": [
+            "n43014006006"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "である"
+        },
+        {
+          "tokens": [
+            "n43014006022",
+            "n43014006023"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたしを通して"
+        },
+        {
+          "tokens": [
+            "n43014006020",
+            "n43014006021"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "でなければ"
+        },
+        {
+          "tokens": [
+            "n43014006015"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "だれも"
+        },
+        {
+          "tokens": [
+            "n43014006018",
+            "n43014006019"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "父"
+        },
+        {
+          "tokens": [
+            "n43014006017"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "のもとに"
+        },
+        {
+          "tokens": [
+            "n43014006016"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "来ない"
         }
       ],
       "decisions": [
@@ -2808,6 +3821,122 @@
           "reason": "The style guide's key term for truth (section 6).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43014006008",
+            "n43014006011"
+          ],
+          "choice": "\"дорога\" for *hodos*; \"істина\" (L, B), \"правда\" (R) for *alētheia*",
+          "alternatives": [
+            "\"путь\"",
+            "\"шлях\"",
+            "\"правда\" at every level"
+          ],
+          "reason": "\"Дорога\" carries on Thomas's road picture from 14:4-5; \"путь\" is Church Slavonic. Truth follows the key-term table: \"істина\" at Literal and Balanced, \"правда\" at Readable. Used so through chapters 14-15.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43014006005",
+            "n43014006006",
+            "n43014006008"
+          ],
+          "choice": "\"わたしは道であり、真理であり、命である\" (L, B); \"わたしが道だ\" (R)",
+          "alternatives": [
+            "\"わたしこそ道である\""
+          ],
+          "reason": "With a predicate \"I am\" is an ordinary saying (meaning decision m1). The plain Japanese of the Greek has only one natural form, the one readers know, so Literal and Balanced use it, as the English does. Readable uses \"が\", as the book's terms give for these sayings, and repeats \"わたしが\" as the English Readable repeats \"I am\". The second sentence is put freshly at each level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43014006015",
+            "n43014006016",
+            "n43014006017",
+            "n43014006018",
+            "n43014006019",
+            "n43014006020",
+            "n43014006021",
+            "n43014006022",
+            "n43014006023"
+          ],
+          "choice": "\"tidak ada seorang pun datang kepada Bapa, kecuali melalui Aku\" (L); \"Hanya melalui Aku orang dapat datang kepada Bapa\" (B)",
+          "alternatives": [
+            "\"tidak ada seorang pun yang datang kepada Bapa, kalau tidak melalui Aku\""
+          ],
+          "reason": "A familiar verse: Literal follows the Greek; Balanced turns the sentence round, as the English Balanced does, so it does not repeat the well-known Indonesian wording beyond the key terms. \"kebenaran\" for truth (Style, section 7).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43014006008"
+          ],
+          "choice": "\"道路\" (L, B); \"那条路\" (R)",
+          "alternatives": [
+            "\"道\""
+          ],
+          "reason": "\"道\" is kept for the Word of John 1 (logos); here the word is the road that leads to the Father, which Thomas has just asked about, so \"道路\" and \"路\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n43014006020"
+          ],
+          "choice": "没有人来到父那里，除非是借着我",
+          "alternatives": [
+            "若不借着我，没有人能到父那里去"
+          ],
+          "reason": "Literal keeps the Greek order, the exception last.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2891,6 +4020,31 @@
           "L": "Если бы вы знали {{deity_pronoun:меня|Меня}}, то знали бы и {{deity_pronoun:моего|Моего}} Отца; и отныне вы знаете {{deity_pronoun:его|Его}} и видели {{deity_pronoun:его|Его}}.»",
           "B": "Если бы вы знали {{deity_pronoun:меня|Меня}}, то знали бы и {{deity_pronoun:моего|Моего}} Отца. И отныне вы знаете {{deity_pronoun:его|Его}}: вы {{deity_pronoun:его|Его}} видели.»",
           "R": "Если бы вы по-настоящему знали {{deity_pronoun:меня|Меня}}, вы знали бы и {{deity_pronoun:моего|Моего}} Отца. Но теперь вы знаете {{deity_pronoun:его|Его}}. Вы {{deity_pronoun:его|Его}} видели.»"
+        },
+        "uk": {
+          "L": "Якби ви пізнали {{deity_pronoun:мене|Мене}}, то знали б і {{deity_pronoun:мого|Мого}} Отця; віднині ви знаєте {{deity_pronoun:його|Його}} і бачили {{deity_pronoun:його|Його}}.»",
+          "B": "Якби ви знали {{deity_pronoun:мене|Мене}}, то знали б і {{deity_pronoun:мого|Мого}} Отця. І віднині ви знаєте {{deity_pronoun:його|Його}}; ви бачили {{deity_pronoun:його|Його}}.»",
+          "R": "Якби ви справді знали {{deity_pronoun:мене|Мене}}, то знали б і {{deity_pronoun:мого|Мого}} Отця. Але віднині ви {{deity_pronoun:його|Його}} знаєте. Ви бачили {{deity_pronoun:його|Його}}.»"
+        },
+        "ja": {
+          "L": "もしあなたがたがわたしを知っていたなら、わたしの父をも知っていたであろう。今から、あなたがたは父を知っており、父を見たのである。」",
+          "B": "あなたがたがわたしを知っていたなら、わたしの父をも知っていたはずだ。そして今から、あなたがたは父を知っている。父を見たのである。」",
+          "R": "あなたたちが本当にわたしを知っていたなら、わたしの父のことも知っていたはずだ。でも、今からは父を知っている。あなたたちは父を見たのだ。」"
+        },
+        "id": {
+          "L": "Jika kalian telah mengenal {{deity_pronoun:aku|Aku}}, kalian juga akan mengenal Bapa-{{deity_pronoun:ku|Ku}}; sejak sekarang kalian mengenal {{deity_pronoun:dia|Dia}} dan telah melihat {{deity_pronoun:dia|Dia}}.\"",
+          "B": "Seandainya kalian mengenal {{deity_pronoun:aku|Aku}}, kalian juga akan mengenal Bapa-{{deity_pronoun:ku|Ku}}. Dan mulai sekarang kalian mengenal {{deity_pronoun:dia|Dia}}; kalian telah melihat {{deity_pronoun:dia|Dia}}.\"",
+          "R": "Kalau kalian benar-benar mengenal {{deity_pronoun:aku|Aku}}, kalian juga akan mengenal Bapa-{{deity_pronoun:ku|Ku}}. Tetapi mulai sekarang kalian sungguh mengenal {{deity_pronoun:dia|Dia}}. Kalian sudah melihat {{deity_pronoun:dia|Dia}}.\""
+        },
+        "zh": {
+          "L": "如果你们早已认识我，也就会认识我的父；从现在起，你们认识{{deity_pronoun:他|祂}}，并且已经看见了{{deity_pronoun:他|祂}}。”",
+          "B": "你们若认识了我，也就会认识我的父。从今以后，你们认识{{deity_pronoun:他|祂}}，也已经看见{{deity_pronoun:他|祂}}了。”",
+          "R": "你们如果真的认识我，也就会认识我的父。但从现在起，你们确实认识{{deity_pronoun:他|祂}}了。你们已经看见了{{deity_pronoun:他|祂}}。”"
+        },
+        "ar": {
+          "L": "لو كنتم عرفتموني، لعرفتم أبي أيضًا؛ ومن الآن تعرفونه وقد رأيتموه».",
+          "B": "لو كنتم قد عرفتموني، لعرفتم أبي كذلك. ومن الآن أنتم تعرفونه؛ وقد رأيتموه».",
+          "R": "لو عرفتموني حقًّا، لعرفتم أبي أيضًا. لكنّكم من الآن تعرفونه فعلًا. لقد رأيتموه»."
         }
       },
       "alignments": [
@@ -2986,6 +4140,115 @@
           "language": "en",
           "level": "B",
           "target_span": "{{deity_pronoun:him|Him}}"
+        },
+        {
+          "tokens": [
+            "n43014007002"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなたがた"
+        },
+        {
+          "tokens": [
+            "n43014007003"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43014007001",
+            "n43014007002"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "知っていたなら"
+        },
+        {
+          "tokens": [
+            "n43014007007"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43014007005",
+            "n43014007006"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "父"
+        },
+        {
+          "tokens": [
+            "n43014007004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "も"
+        },
+        {
+          "tokens": [
+            "n43014007008",
+            "n43014007009"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "知っていたはずだ"
+        },
+        {
+          "tokens": [
+            "n43014007010",
+            "n43014007011"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "今から"
+        },
+        {
+          "tokens": [
+            "n43014007012"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなたがた"
+        },
+        {
+          "tokens": [
+            "n43014007013"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "父"
+        },
+        {
+          "tokens": [
+            "n43014007012"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "知っている"
+        },
+        {
+          "tokens": [
+            "n43014007016"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "父"
+        },
+        {
+          "tokens": [
+            "n43014007014",
+            "n43014007015"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "見たのである"
         }
       ],
       "decisions": [
@@ -3119,6 +4382,28 @@
           "reason": "Vietnamese has no verb form for a condition contrary to fact; \"hẳn\" (surely would have) marks that they have not yet fully known him.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43014007013",
+            "n43014007016"
+          ],
+          "choice": "\"父を\" for \"him\"",
+          "alternatives": [
+            "\"その方を\""
+          ],
+          "reason": "The pronouns refer to the Father; Japanese names him rather than using a pronoun, which would be stiff and could not be \"彼\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3197,6 +4482,31 @@
           "L": "Говорит {{deity_pronoun:ему|Ему}} Филипп: «Господи, покажи нам Отца, и довольно нам.»",
           "B": "Филипп сказал {{deity_pronoun:ему|Ему}}: «Господи, покажи нам Отца, и больше нам ничего не нужно.»",
           "R": "Филипп сказал {{deity_pronoun:ему|Ему}}: «Господи, дай нам увидеть Отца. Больше мы ничего не просим.»"
+        },
+        "uk": {
+          "L": "Филип каже {{deity_pronoun:йому|Йому}}: «Господи, покажи нам Отця, і вистачить нам.»",
+          "B": "Филип сказав {{deity_pronoun:йому|Йому}}: «Господи, покажи нам Отця, і більше нам нічого не треба.»",
+          "R": "Филип сказав {{deity_pronoun:йому|Йому}}: «Господи, дай нам побачити Отця. Більше ми нічого не просимо.»"
+        },
+        "ja": {
+          "L": "フィリポはイエスに言う。「主よ、わたしたちに父を示してください。そうすれば、わたしたちには十分です。」",
+          "B": "フィリポが言った。「主よ、父をわたしたちに見せてください。それ以上は何も求めません。」",
+          "R": "フィリポは言いました。「主よ、わたしたちに父を見せてください。お願いはそれだけです。」"
+        },
+        "id": {
+          "L": "Filipus berkata kepada-{{deity_pronoun:nya|Nya}}, \"Tuhan, tunjukkanlah Bapa kepada kami, dan itu cukup bagi kami.\"",
+          "B": "Filipus berkata kepada-{{deity_pronoun:nya|Nya}}, \"Tuhan, tunjukkanlah Bapa kepada kami; kami tidak perlu apa-apa lagi.\"",
+          "R": "Filipus berkata kepada-{{deity_pronoun:nya|Nya}}, \"Tuhan, izinkan kami melihat Bapa. Hanya itu yang kami minta.\""
+        },
+        "zh": {
+          "L": "腓力对{{deity_pronoun:他|祂}}说：“主啊，把父指给我们看，这就够我们了。”",
+          "B": "腓力对{{deity_pronoun:他|祂}}说：“主啊，请让我们看看父，我们就别无所求了。”",
+          "R": "腓力对{{deity_pronoun:他|祂}}说：“主啊，让我们看见父吧。我们只求这一件事。”"
+        },
+        "ar": {
+          "L": "يقول له فيلبّس: «يا ربّ، أرنا الآب، ويكفينا».",
+          "B": "فقال له فيلبّس: «يا ربّ، أرنا الآب، ولن نحتاج إلى شيء آخر».",
+          "R": "فقال له فيلبّس: «يا ربّ، دعنا نرى الآب. هذا كلّ ما نطلبه»."
         }
       },
       "alignments": [
@@ -3265,6 +4575,66 @@
           "language": "en",
           "level": "B",
           "target_span": "we will need nothing more"
+        },
+        {
+          "tokens": [
+            "n43014008003"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "フィリポ"
+        },
+        {
+          "tokens": [
+            "n43014008001",
+            "n43014008002"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "言った"
+        },
+        {
+          "tokens": [
+            "n43014008004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "主よ"
+        },
+        {
+          "tokens": [
+            "n43014008007",
+            "n43014008008"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "父"
+        },
+        {
+          "tokens": [
+            "n43014008006"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたしたち"
+        },
+        {
+          "tokens": [
+            "n43014008005"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "見せてください"
+        },
+        {
+          "tokens": [
+            "n43014008009",
+            "n43014008010",
+            "n43014008011"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "それ以上は何も求めません"
         }
       ],
       "decisions": [
@@ -3467,6 +4837,31 @@
           "L": "Говорит ему Иисус: «Столько времени {{deity_pronoun:я|Я}} с вами, и ты не знаешь {{deity_pronoun:меня|Меня}}, Филипп?",
           "B": "Иисус сказал ему: «Я столько времени с вами, Филипп, и ты всё ещё не знаешь {{deity_pronoun:меня|Меня}}?",
           "R": "Иисус ответил: «Филипп, {{deity_pronoun:я|Я}} так долго был со всеми вами. Неужели ты всё ещё не знаешь, кто {{deity_pronoun:я|Я}}?"
+        },
+        "uk": {
+          "L": "Ісус каже йому: «Стільки часу {{deity_pronoun:я|Я}} з вами, і ти не пізнав {{deity_pronoun:мене|Мене}}, Филипе?",
+          "B": "Ісус сказав йому: «Я з вами вже стільки часу, Филипе, а ти й досі не знаєш {{deity_pronoun:мене|Мене}}?",
+          "R": "Ісус відповів: «Филипе, {{deity_pronoun:я|Я}} вже так довго з усіма вами. Невже ти й досі не знаєш, хто {{deity_pronoun:я|Я}}?"
+        },
+        "ja": {
+          "L": "イエスは彼に言われる。「これほど長い間、わたしはあなたがたと共にいるのに、あなたはわたしを知らないのか、フィリポ？",
+          "B": "イエスは言われた。「フィリポ、わたしはこんなに長い間あなたがたと一緒にいるのに、あなたはまだわたしを知らないのか？",
+          "R": "イエスはお答えになりました。「フィリポ、わたしはこんなに長いあいだ、あなたたちみんなと一緒にいた。それなのに、まだわたしがだれなのか、わからないのか？"
+        },
+        "id": {
+          "L": "Yesus berkata kepadanya, \"Sudah sekian lama {{deity_pronoun:aku|Aku}} bersama kalian, dan engkau tidak mengenal {{deity_pronoun:aku|Aku}}, Filipus?",
+          "B": "Yesus berkata kepadanya, \"Selama ini {{deity_pronoun:aku|Aku}} bersama kalian, Filipus, dan engkau masih belum mengenal {{deity_pronoun:aku|Aku}}?",
+          "R": "Yesus menjawab, \"Filipus, {{deity_pronoun:aku|Aku}} sudah begitu lama bersama kalian semua. Apakah kamu masih belum tahu siapa {{deity_pronoun:aku|Aku}}?"
+        },
+        "zh": {
+          "L": "耶稣对他说：“这么长的时间我都和你们在一起，你却没有认识我吗，腓力？",
+          "B": "耶稣对他说：“腓力，我一直都和你们在一起，过了这么久，你仍然不认识我吗？",
+          "R": "耶稣回答：“腓力，我和你们大家相处了这么长时间，你还不知道我是谁吗？"
+        },
+        "ar": {
+          "L": "يقول له يسوع: «أنا معكم زمانًا هذا طوله، ولم تعرفني يا فيلبّس؟",
+          "B": "فقال له يسوع: «أنا معكم كلّ هذا الوقت يا فيلبّس، وما زلت لا تعرفني؟",
+          "R": "فأجاب يسوع: «يا فيلبّس، لقد كنت معكم كلّكم وقتًا طويلًا. فهل ما زلت لا تعرف من أنا؟"
         }
       },
       "alignments": [
@@ -3568,6 +4963,99 @@
           "language": "en",
           "level": "B",
           "target_span": "{{deity_pronoun:me|Me}}"
+        },
+        {
+          "tokens": [
+            "n43014009003",
+            "n43014009004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "イエス"
+        },
+        {
+          "tokens": [
+            "n43014009001",
+            "n43014009002"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "言われた"
+        },
+        {
+          "tokens": [
+            "n43014009014"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "フィリポ"
+        },
+        {
+          "tokens": [
+            "n43014009009"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43014009005",
+            "n43014009006"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "こんなに長い間"
+        },
+        {
+          "tokens": [
+            "n43014009007",
+            "n43014009008"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなたがたと一緒に"
+        },
+        {
+          "tokens": [
+            "n43014009009"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "いる"
+        },
+        {
+          "tokens": [
+            "n43014009010"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "のに"
+        },
+        {
+          "tokens": [
+            "n43014009012"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなた"
+        },
+        {
+          "tokens": [
+            "n43014009013"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43014009011",
+            "n43014009012"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "知らないのか"
         }
       ],
       "decisions": [
@@ -3780,6 +5268,28 @@
           "reason": "The Greek says \"with you\" to all the disciples, then \"you have not known me\" to Philip alone (meaning decision m2). Hindi \"तुम\" serves for both, so the plural is marked.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43014009008",
+            "n43014009012"
+          ],
+          "choice": "\"あなたがた\" / \"あなたたちみんな\" for the plural, \"あなた\" for Philip",
+          "alternatives": [
+            "\"あなた\" throughout"
+          ],
+          "reason": "Jesus has been with all the disciples, but speaks to Philip alone (meaning decision m2). Japanese can show the change with the pronouns, as the Greek does, so no level needs to add words for it beyond Readable's \"みんな\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3860,6 +5370,31 @@
           "L": "Видевший {{deity_pronoun:меня|Меня}} видел Отца. Как ты говоришь: “Покажи нам Отца”?",
           "B": "Кто видел {{deity_pronoun:меня|Меня}}, тот видел Отца. Как же ты говоришь: “Покажи нам Отца”?",
           "R": "Если ты видел {{deity_pronoun:меня|Меня}}, ты видел Отца. Почему же ты просишь {{deity_pronoun:меня|Меня}} показать вам Отца?"
+        },
+        "uk": {
+          "L": "Хто бачив {{deity_pronoun:мене|Мене}}, бачив Отця. Як ти кажеш: “Покажи нам Отця”?",
+          "B": "Хто бачив {{deity_pronoun:мене|Мене}}, той бачив Отця. Як же ти можеш казати: “Покажи нам Отця”?",
+          "R": "Якщо ти бачив {{deity_pronoun:мене|Мене}}, ти бачив Отця. Тож чому ти просиш {{deity_pronoun:мене|Мене}} показати вам Отця?"
+        },
+        "ja": {
+          "L": "わたしを見た者は、父を見たのである。どうしてあなたは『わたしたちに父を示してください』と言うのか？",
+          "B": "わたしを見たことは、父を見たことなのだ。それなのに、どうしてあなたは『わたしたちに父を見せてください』と言うのか？",
+          "R": "わたしを見たなら、父を見たのだ。それなのに、どうして父を見せてほしいと言うのか？"
+        },
+        "id": {
+          "L": "Siapa yang telah melihat {{deity_pronoun:aku|Aku}}, ia telah melihat Bapa; bagaimana engkau berkata, 'Tunjukkanlah Bapa kepada kami'?",
+          "B": "Siapa yang telah melihat {{deity_pronoun:aku|Aku}}, telah melihat Bapa. Jadi, bagaimana mungkin engkau berkata, 'Tunjukkanlah Bapa kepada kami'?",
+          "R": "Kalau kamu sudah melihat {{deity_pronoun:aku|Aku}}, kamu sudah melihat Bapa. Jadi, mengapa kamu meminta {{deity_pronoun:aku|Aku}} menunjukkan Bapa kepada kalian?"
+        },
+        "zh": {
+          "L": "那看见了我的人，就已经看见了父。你怎么说‘把父指给我们看’呢？",
+          "B": "看见了我，就是看见了父。你怎么还说‘把父指给我们看’呢？",
+          "R": "你如果看见了我，也就看见了父。那你为什么还要我把父指给你们看呢？"
+        },
+        "ar": {
+          "L": "من رآني فقد رأى الآب. فكيف تقول أنت: أرنا الآب؟",
+          "B": "من رآني فقد رأى الآب. فكيف تقول إذًا: أرنا الآب؟",
+          "R": "إن كنت قد رأيتني، فقد رأيت الآب. فلماذا تطلب منّي أن أريك الآب؟"
         }
       },
       "alignments": [
@@ -3945,6 +5480,82 @@
           "language": "en",
           "level": "B",
           "target_span": "the Father"
+        },
+        {
+          "tokens": [
+            "n43014009015",
+            "n43014009016",
+            "n43014009017"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたしを見たこと"
+        },
+        {
+          "tokens": [
+            "n43014009019",
+            "n43014009020"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "父"
+        },
+        {
+          "tokens": [
+            "n43014009018"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "見たことなのだ"
+        },
+        {
+          "tokens": [
+            "n43014009021"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "どうして"
+        },
+        {
+          "tokens": [
+            "n43014009022"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなた"
+        },
+        {
+          "tokens": [
+            "n43014009025"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたしたち"
+        },
+        {
+          "tokens": [
+            "n43014009026",
+            "n43014009027"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "父"
+        },
+        {
+          "tokens": [
+            "n43014009024"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "見せてください"
+        },
+        {
+          "tokens": [
+            "n43014009023"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "言うのか"
         }
       ],
       "decisions": [
@@ -4130,6 +5741,31 @@
           "L": "Не веришь ли, что {{deity_pronoun:я|Я}} в Отце и Отец во {{deity_pronoun:мне|Мне}}?",
           "B": "Разве ты не веришь, что {{deity_pronoun:я|Я}} в Отце и Отец во {{deity_pronoun:мне|Мне}}?",
           "R": "Филипп, ты ведь веришь, что {{deity_pronoun:я|Я}} в Отце и Отец во {{deity_pronoun:мне|Мне}}?"
+        },
+        "uk": {
+          "L": "Хіба ти не віриш, що {{deity_pronoun:я|Я}} в Отці, а Отець у {{deity_pronoun:мені|Мені}} є?",
+          "B": "Хіба ти не віриш, що {{deity_pronoun:я|Я}} в Отці і що Отець у {{deity_pronoun:мені|Мені}}?",
+          "R": "Филипе, ти ж віриш, що {{deity_pronoun:я|Я}} в Отці, а Отець у {{deity_pronoun:мені|Мені}}?"
+        },
+        "ja": {
+          "L": "わたしが父のうちに[おり]、父がわたしのうちにおられることを、あなたは信じないのか？",
+          "B": "わたしは父のうちにいて、父はわたしのうちにおられる。あなたはそれを信じないのか？",
+          "R": "フィリポ、わたしが父のうちにいて、父がわたしのうちにおられることを、あなたは信じているだろう？"
+        },
+        "id": {
+          "L": "Tidakkah engkau percaya bahwa {{deity_pronoun:aku|Aku}} di dalam Bapa dan Bapa di dalam {{deity_pronoun:aku|Aku}}?",
+          "B": "Tidakkah engkau percaya bahwa {{deity_pronoun:aku|Aku}} ada di dalam Bapa, dan Bapa ada di dalam {{deity_pronoun:aku|Aku}}?",
+          "R": "Filipus, kamu tentu percaya bahwa {{deity_pronoun:aku|Aku}} ada di dalam Bapa dan Bapa ada di dalam {{deity_pronoun:aku|Aku}}, bukan?"
+        },
+        "zh": {
+          "L": "你不信我在父里面，父也在我里面吗？",
+          "B": "难道你不信我在父里面，父也在我里面吗？",
+          "R": "腓力，你一定相信我在父里面，父也在我里面，对吗？"
+        },
+        "ar": {
+          "L": "ألست تؤمن أنّي أنا في الآب والآب فيّ؟",
+          "B": "أما تؤمن بأنّي في الآب، وأنّ الآب فيّ؟",
+          "R": "يا فيلبّس، لا شكّ أنّك تؤمن بأنّي في الآب وأنّ الآب فيّ؟"
         }
       },
       "alignments": [
@@ -4223,6 +5859,83 @@
           "language": "en",
           "level": "B",
           "target_span": "in {{deity_pronoun:me|Me}}"
+        },
+        {
+          "tokens": [
+            "n43014010004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43014010005",
+            "n43014010006",
+            "n43014010007"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "父のうちに"
+        },
+        {
+          "tokens": [
+            "n43014010004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "いて"
+        },
+        {
+          "tokens": [
+            "n43014010009",
+            "n43014010010"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "父"
+        },
+        {
+          "tokens": [
+            "n43014010011",
+            "n43014010012"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたしのうちに"
+        },
+        {
+          "tokens": [
+            "n43014010013"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "おられる"
+        },
+        {
+          "tokens": [
+            "n43014010002"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなた"
+        },
+        {
+          "tokens": [
+            "n43014010003"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "それ"
+        },
+        {
+          "tokens": [
+            "n43014010001",
+            "n43014010002"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "信じないのか"
         }
       ],
       "decisions": [
@@ -4452,6 +6165,31 @@
           "L": "Слова, которые {{deity_pronoun:я|Я}} говорю вам, {{deity_pronoun:я|Я}} говорю не от себя, а Отец, пребывающий во {{deity_pronoun:мне|Мне}}, творит свои дела.",
           "B": "Слова, которые {{deity_pronoun:я|Я}} говорю вам, {{deity_pronoun:я|Я}} говорю не от своего имени. Это Отец, пребывающий во {{deity_pronoun:мне|Мне}}, совершает свои дела.",
           "R": "То, что {{deity_pronoun:я|Я}} говорю вам, идёт не от {{deity_pronoun:меня|Меня}} самого. Отец остаётся во {{deity_pronoun:мне|Мне}}, и это {{deity_pronoun:он|Он}} совершает свои дела."
+        },
+        "uk": {
+          "L": "Слова, які {{deity_pronoun:я|Я}} кажу вам, {{deity_pronoun:я|Я}} говорю не від себе, а Отець, що перебуває в {{deity_pronoun:мені|Мені}}, чинить свої діла.",
+          "B": "Слова, які {{deity_pronoun:я|Я}} кажу вам, {{deity_pronoun:я|Я}} говорю не від себе. Це Отець, що перебуває в {{deity_pronoun:мені|Мені}}, чинить свої діла.",
+          "R": "Те, що {{deity_pronoun:я|Я}} вам кажу, походить не від {{deity_pronoun:мене|Мене}} самого. Отець залишається в {{deity_pronoun:мені|Мені}}, і це {{deity_pronoun:він|Він}} чинить свої діла."
+        },
+        "ja": {
+          "L": "わたしがあなたがたに言う言葉は、自分から語っているのではない。わたしのうちにとどまっておられる父が、ご自分のわざを行っておられるのである。",
+          "B": "わたしがあなたがたに話す言葉は、自分の権威によって語るのではない。わたしのうちにとどまっておられる父が、ご自分のわざを行っておられるのである。",
+          "R": "わたしがあなたたちに話していることは、わたしが自分で思いついたことではない。父がわたしのうちにとどまっておられ、その父が、ご自分のわざを行っておられるのだ。"
+        },
+        "id": {
+          "L": "Perkataan-perkataan yang {{deity_pronoun:aku|Aku}} katakan kepada kalian tidak {{deity_pronoun:aku|Aku}} katakan dari diri-{{deity_pronoun:ku|Ku}} sendiri, tetapi Bapa, yang tinggal di dalam {{deity_pronoun:aku|Aku}}, melakukan pekerjaan-pekerjaan-{{deity_pronoun:nya|Nya}}.",
+          "B": "Perkataan yang {{deity_pronoun:aku|Aku}} sampaikan kepada kalian tidak {{deity_pronoun:aku|Aku}} katakan atas kehendak-{{deity_pronoun:ku|Ku}} sendiri. Bapa, yang tinggal di dalam {{deity_pronoun:aku|Aku}}, {{deity_pronoun:dia|Dia}}lah yang melakukan pekerjaan-pekerjaan-{{deity_pronoun:nya|Nya}}.",
+          "R": "Apa yang {{deity_pronoun:aku|Aku}} katakan kepada kalian tidak berasal dari diri-{{deity_pronoun:ku|Ku}} sendiri. Bapa tinggal di dalam {{deity_pronoun:aku|Aku}}, dan {{deity_pronoun:dia|Dia}}lah yang melakukan pekerjaan-pekerjaan-{{deity_pronoun:nya|Nya}}."
+        },
+        "zh": {
+          "L": "我对你们所说的话，不是凭着我自己说的，而是那留在我里面的父在做{{deity_pronoun:他|祂}}的工作。",
+          "B": "我对你们讲的话，不是凭我自己的权柄说的；而是留在我里面的父，正在做{{deity_pronoun:他|祂}}的工作。",
+          "R": "我告诉你们的事，不是出于我自己。父留在我里面，是{{deity_pronoun:他|祂}}在做{{deity_pronoun:他|祂}}的工作。"
+        },
+        "ar": {
+          "L": "الكلام الذي أقوله لكم لست أتكلّم به من نفسي، بل الآب الماكث فيّ هو يعمل أعماله.",
+          "B": "الكلام الذي أقوله لكم لا أقوله بسلطاني. بل الآب المقيم فيّ هو الذي يعمل أعماله.",
+          "R": "الأمور التي أخبركم بها لا تأتي منّي وحدي. فالآب يسكن فيّ، وهو الذي يعمل أعماله."
         }
       },
       "alignments": [
@@ -4565,6 +6303,116 @@
           "language": "en",
           "level": "B",
           "target_span": "works"
+        },
+        {
+          "tokens": [
+            "n43014010017"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43014010019"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなたがた"
+        },
+        {
+          "tokens": [
+            "n43014010016",
+            "n43014010018"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "話す"
+        },
+        {
+          "tokens": [
+            "n43014010014",
+            "n43014010015"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "言葉"
+        },
+        {
+          "tokens": [
+            "n43014010020",
+            "n43014010021"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "自分の権威によって"
+        },
+        {
+          "tokens": [
+            "n43014010023"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "語る"
+        },
+        {
+          "tokens": [
+            "n43014010022"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "のではない"
+        },
+        {
+          "tokens": [
+            "n43014010027",
+            "n43014010028"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたしのうちに"
+        },
+        {
+          "tokens": [
+            "n43014010029"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "とどまっておられる"
+        },
+        {
+          "tokens": [
+            "n43014010024",
+            "n43014010026"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "父"
+        },
+        {
+          "tokens": [
+            "n43014010033"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ご自分"
+        },
+        {
+          "tokens": [
+            "n43014010031",
+            "n43014010032"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わざ"
+        },
+        {
+          "tokens": [
+            "n43014010030"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "行っておられる"
         }
       ],
       "decisions": [
@@ -4832,6 +6680,94 @@
           "reason": "The book-wide word for John's \"remain\": \"пребывать\" at Literal and Balanced, \"оставаться\" at Readable; noted once in this passage. The reflexive \"свои\" takes no span where the English has \"His\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43014010029"
+          ],
+          "choice": "\"перебуває\" (L, B); \"залишається\" (R)",
+          "alternatives": [
+            "\"живе\""
+          ],
+          "reason": "The book-wide rendering of *menō* in its theological sense, so that the thread to 15:4-10 stays visible. Used so through chapters 14-15.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43014010029",
+            "n43014010032"
+          ],
+          "choice": "\"とどまっておられる\" at every level; \"わざ\" in kana",
+          "alternatives": [
+            "\"住んでおられる\"",
+            "\"業\""
+          ],
+          "reason": "\"Remain\" is the book's theological word, kept at every level (meaning decision m3). The works are written \"わざ\" in kana, the usual modern spelling, and kept through 14:11-12.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43014010029"
+          ],
+          "choice": "\"留在\"",
+          "alternatives": [
+            "\"住在\"",
+            "\"常在\""
+          ],
+          "reason": "John's \"remain\" (meno) in its theological sense is one word through the book, \"留在\" at every level: staying and living in someone (meaning decision m3). \"常在\" is the familiar Bible word and is not used.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43014010032"
+          ],
+          "choice": "\"工作\"",
+          "alternatives": [
+            "\"作为\"",
+            "\"事\""
+          ],
+          "reason": "The \"works\" are the Father's deeds done through Jesus; \"工作\" keeps the one word that verses 10-12 repeat.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4919,6 +6855,31 @@
           "L": "Верьте {{deity_pronoun:мне|Мне}}, что {{deity_pronoun:я|Я}} в Отце и Отец во {{deity_pronoun:мне|Мне}}; а если нет, верьте ради самих дел.",
           "B": "Верьте {{deity_pronoun:мне|Мне}}: {{deity_pronoun:я|Я}} в Отце, и Отец во {{deity_pronoun:мне|Мне}}. А если нет, то верьте хотя бы ради самих дел.",
           "R": "Верьте {{deity_pronoun:мне|Мне}}, все вы: {{deity_pronoun:я|Я}} в Отце, и Отец во {{deity_pronoun:мне|Мне}}. Если вы не можете поверить {{deity_pronoun:мне|Мне}}, то поверьте из-за самих дел, которые вы видели."
+        },
+        "uk": {
+          "L": "Вірте {{deity_pronoun:мені|Мені}}, що {{deity_pronoun:я|Я}} в Отці, а Отець у {{deity_pronoun:мені|Мені}}; а якщо ні, то вірте через самі діла.",
+          "B": "Вірте {{deity_pronoun:мені|Мені}}: {{deity_pronoun:я|Я}} в Отці, а Отець у {{deity_pronoun:мені|Мені}}. А якщо ні, то вірте бодай через самі діла.",
+          "R": "Вірте {{deity_pronoun:мені|Мені}}, усі ви: {{deity_pronoun:я|Я}} в Отці, а Отець у {{deity_pronoun:мені|Мені}}. Якщо ви не можете повірити {{deity_pronoun:мені|Мені}}, то вірте через самі діла, через те, що ви бачили, як {{deity_pronoun:я|Я}} роблю."
+        },
+        "ja": {
+          "L": "わたしが父のうちにおり、父がわたしのうちにおられると言うのを、信じなさい。もしそうでなければ、わざそのもののゆえに信じなさい。",
+          "B": "わたしを信じなさい。わたしは父のうちにいて、父はわたしのうちにおられるのだ。そうでないなら、わざそのものによって信じなさい。",
+          "R": "みんな、わたしを信じなさい。わたしは父のうちにいて、父はわたしのうちにおられる。わたしの言うことが信じられないなら、わたしがするのを見てきたわざそのものによって信じなさい。"
+        },
+        "id": {
+          "L": "Percayalah kepada-{{deity_pronoun:ku|Ku}} bahwa {{deity_pronoun:aku|Aku}} di dalam Bapa dan Bapa di dalam {{deity_pronoun:aku|Aku}}; tetapi jika tidak, percayalah karena pekerjaan-pekerjaan itu sendiri.",
+          "B": "Percayalah kepada-{{deity_pronoun:ku|Ku}}: {{deity_pronoun:aku|Aku}} ada di dalam Bapa, dan Bapa ada di dalam {{deity_pronoun:aku|Aku}}. Kalau tidak, percayalah karena pekerjaan-pekerjaan itu sendiri.",
+          "R": "Kalian semua, percayalah kepada-{{deity_pronoun:ku|Ku}}: {{deity_pronoun:aku|Aku}} ada di dalam Bapa, dan Bapa ada di dalam {{deity_pronoun:aku|Aku}}. Kalau kalian tidak bisa percaya kepada-{{deity_pronoun:ku|Ku}}, percayalah karena pekerjaan-pekerjaan itu sendiri, yaitu hal-hal yang kalian lihat {{deity_pronoun:aku|Aku}} lakukan."
+        },
+        "zh": {
+          "L": "你们要信我，我在父里面，父在我里面；若是不信，就要因着这些工作本身而信。",
+          "B": "你们要相信我：我在父里面，父也在我里面。如果不信，那就因为这些工作本身而相信吧。",
+          "R": "你们大家都要相信我：我在父里面，父也在我里面。如果你们不能相信我的话，那就因为这些工作本身而相信吧，就是你们看见我所做的那些事。"
+        },
+        "ar": {
+          "L": "صدّقوني أنّي في الآب والآب فيّ؛ وإلّا فصدّقوا بسبب الأعمال نفسها.",
+          "B": "صدّقوني: أنا في الآب، والآب فيّ. وإن لم تصدّقوا، فصدّقوا بسبب الأعمال ذاتها.",
+          "R": "يا جميعكم، صدّقوني: أنا في الآب، والآب فيّ. وإن لم تقدروا أن تصدّقوني، فصدّقوا بسبب الأعمال نفسها، أي الأمور التي رأيتموني أعملها."
         }
       },
       "alignments": [
@@ -5032,6 +6993,103 @@
           "language": "en",
           "level": "B",
           "target_span": "themselves"
+        },
+        {
+          "tokens": [
+            "n43014011002"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43014011001"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "信じなさい"
+        },
+        {
+          "tokens": [
+            "n43014011004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43014011005",
+            "n43014011006",
+            "n43014011007"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "父のうちに"
+        },
+        {
+          "tokens": [
+            "n43014011003",
+            "n43014011004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "いて"
+        },
+        {
+          "tokens": [
+            "n43014011009",
+            "n43014011010"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "父"
+        },
+        {
+          "tokens": [
+            "n43014011011",
+            "n43014011012"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたしのうちに"
+        },
+        {
+          "tokens": [
+            "n43014011013",
+            "n43014011014",
+            "n43014011015"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "そうでないなら"
+        },
+        {
+          "tokens": [
+            "n43014011017",
+            "n43014011018",
+            "n43014011019"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わざそのもの"
+        },
+        {
+          "tokens": [
+            "n43014011016"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "によって"
+        },
+        {
+          "tokens": [
+            "n43014011020"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "信じなさい"
         }
       ],
       "decisions": [
@@ -5284,6 +7342,31 @@
           "L": "Истинно, истинно говорю вам: верующий в {{deity_pronoun:меня|Меня}} — дела, которые {{deity_pronoun:я|Я}} делаю, и тот сделает, и большие этих сделает, потому что {{deity_pronoun:я|Я}} иду к Отцу.",
           "B": "Истинно, истинно говорю вам: кто верит в {{deity_pronoun:меня|Меня}}, тот тоже будет совершать дела, которые {{deity_pronoun:я|Я}} совершаю, и совершит даже большие, потому что {{deity_pronoun:я|Я}} иду к Отцу.",
           "R": "Говорю вам правду: кто верит в {{deity_pronoun:меня|Меня}}, тот будет делать те же дела, что и {{deity_pronoun:я|Я}}. И даже ещё большие дела будет делать, потому что {{deity_pronoun:я|Я}} иду к Отцу."
+        },
+        "uk": {
+          "L": "Істинно, істинно кажу вам: хто вірить у {{deity_pronoun:мене|Мене}}, діла, які {{deity_pronoun:я|Я}} чиню, і той чинитиме, і більші за ці чинитиме, бо {{deity_pronoun:я|Я}} йду до Отця.",
+          "B": "Істинно, істинно кажу вам: хто вірить у {{deity_pronoun:мене|Мене}}, той також чинитиме діла, які {{deity_pronoun:я|Я}} чиню, і чинитиме більші за ці, бо {{deity_pronoun:я|Я}} йду до Отця.",
+          "R": "Кажу вам правду: кожен, хто вірить у {{deity_pronoun:мене|Мене}}, робитиме такі самі діла, як {{deity_pronoun:я|Я}}. Ба більше, той робитиме ще більші діла, ніж ці, бо {{deity_pronoun:я|Я}} йду до Отця."
+        },
+        "ja": {
+          "L": "アーメン、アーメン、あなたがたに言う。わたしを信じる者は、わたしが行うわざを、その人も行う。そして、それよりも大きな[わざ]を行う。わたしが父のもとへ行くからである。",
+          "B": "まことに、まことに、あなたがたに言っておく。わたしを信じる者は、わたしが行っているわざを行い、また、それよりも大きなわざを行うようになる。わたしが父のもとへ行くからである。",
+          "R": "本当のことを言おう。わたしを信じる人は、わたしがしているのと同じわざをする。いや、それよりももっと大きなわざをするようになる。わたしが父のもとへ行くからだ。"
+        },
+        "id": {
+          "L": "Amin, amin, {{deity_pronoun:aku|Aku}} berkata kepada kalian, siapa yang percaya kepada-{{deity_pronoun:ku|Ku}}, ia akan melakukan juga pekerjaan-pekerjaan yang {{deity_pronoun:aku|Aku}} lakukan, dan ia akan melakukan [pekerjaan-pekerjaan] yang lebih besar daripada ini, sebab {{deity_pronoun:aku|Aku}} pergi kepada Bapa;",
+          "B": "Sesungguhnya, sesungguhnya {{deity_pronoun:aku|Aku}} berkata kepada kalian, siapa pun yang percaya kepada-{{deity_pronoun:ku|Ku}} akan melakukan juga pekerjaan-pekerjaan yang {{deity_pronoun:aku|Aku}} lakukan, bahkan pekerjaan-pekerjaan yang lebih besar daripada ini, sebab {{deity_pronoun:aku|Aku}} pergi kepada Bapa.",
+          "R": "Aku mengatakan yang sebenarnya kepada kalian: siapa pun yang percaya kepada-{{deity_pronoun:ku|Ku}} akan melakukan pekerjaan-pekerjaan yang sama dengan yang {{deity_pronoun:aku|Aku}} lakukan. Malah ia akan melakukan pekerjaan-pekerjaan yang lebih besar daripada ini, karena {{deity_pronoun:aku|Aku}} pergi kepada Bapa."
+        },
+        "zh": {
+          "L": "阿们，阿们，我告诉你们，信入我的人，我所做的工作，那人也要做；并且要做比这些更大的[工作]，因为我往父那里去。",
+          "B": "我确确实实地告诉你们，信我的人，也会做我所做的工作，并且要做比这些更大的工作，因为我要到父那里去。",
+          "R": "我把实话告诉你们，任何信我的人，都会做我所做的那些工作。其实，那人还要做比这些更大的工作，因为我要到父那里去。"
+        },
+        "ar": {
+          "L": "آمين آمين أقول لكم: المؤمن بي سيعمل هو أيضًا الأعمال التي أعملها، وسيعمل أعظم منها، لأنّي ذاهب إلى الآب.",
+          "B": "الحقّ الحقّ أقول لكم: كلّ من يؤمن بي سيعمل هو أيضًا الأعمال التي أعملها، بل سيعمل أعمالًا أعظم منها، لأنّي ذاهب إلى الآب.",
+          "R": "أقول لكم الحقّ: كلّ من يؤمن بي سيعمل الأعمال نفسها التي أعملها. بل سيعمل أعمالًا أعظم منها، لأنّي ذاهب إلى الآب."
         }
       },
       "alignments": [
@@ -5430,6 +7513,157 @@
           "language": "en",
           "level": "B",
           "target_span": "the Father"
+        },
+        {
+          "tokens": [
+            "n43014012001"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "まことに"
+        },
+        {
+          "tokens": [
+            "n43014012002"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "まことに"
+        },
+        {
+          "tokens": [
+            "n43014012004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなたがた"
+        },
+        {
+          "tokens": [
+            "n43014012003"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "言っておく"
+        },
+        {
+          "tokens": [
+            "n43014012005",
+            "n43014012006",
+            "n43014012007",
+            "n43014012008"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたしを信じる者"
+        },
+        {
+          "tokens": [
+            "n43014012012"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43014012011",
+            "n43014012013"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "行っている"
+        },
+        {
+          "tokens": [
+            "n43014012009",
+            "n43014012010"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わざ"
+        },
+        {
+          "tokens": [
+            "n43014012014",
+            "n43014012015"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "行い"
+        },
+        {
+          "tokens": [
+            "n43014012016"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "また"
+        },
+        {
+          "tokens": [
+            "n43014012018"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "それよりも"
+        },
+        {
+          "tokens": [
+            "n43014012017"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "大きなわざ"
+        },
+        {
+          "tokens": [
+            "n43014012019"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "行うようになる"
+        },
+        {
+          "tokens": [
+            "n43014012021"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43014012023",
+            "n43014012024"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "父"
+        },
+        {
+          "tokens": [
+            "n43014012022"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "のもとへ"
+        },
+        {
+          "tokens": [
+            "n43014012025"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "行く"
+        },
+        {
+          "tokens": [
+            "n43014012020"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "からである"
         }
       ],
       "decisions": [
@@ -5918,6 +8152,130 @@
           "reason": "English needs \"they/he\" for any believer, man or woman (meaning decision m2); Russian \"кто ... тот\" and the bare verb already include everyone, so no setting is needed.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n43014012005",
+            "n43014012006",
+            "n43014012014"
+          ],
+          "choice": "no gender span: \"хто вірить ... той чинитиме\"",
+          "alternatives": [
+            "a gender setting for \"he\", as in the English"
+          ],
+          "reason": "Ukrainian \"хто ... той\" with no pronoun already covers any believer, man or woman. The same holds in 14:21, 14:23 and 15:5-6.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n43014012014"
+          ],
+          "choice": "\"その人\" (L) or no pronoun, with no gender span",
+          "alternatives": [
+            "{{gender:その人|彼}}"
+          ],
+          "reason": "The English needs a gender span for the pronoun after \"the one who believes\" (meaning decision m2). Japanese \"その人\" or no pronoun is already inclusive, so no span is needed. The double amen follows the forms noted at 13:16.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n43014012014"
+          ],
+          "choice": "\"ia\" with no gender span, through John 14",
+          "alternatives": [
+            "{{gender:ia|dia laki-laki}}"
+          ],
+          "reason": "Indonesian pronouns have no gender, so the English gender spans (they|he, them|him) of this chapter have no counterpart.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43014012001",
+            "n43014012002"
+          ],
+          "choice": "\"阿们，阿们，我告诉你们\" (L); \"我确确实实地告诉你们\" (B); \"我把实话告诉你们\" (R)",
+          "alternatives": [
+            "\"我实实在在地告诉你们\""
+          ],
+          "reason": "John's doubled \"amen\" is kept doubled at Literal and shown by the doubled \"确确实实\" at Balanced, kept apart from the Synoptic single \"amen\"; Readable says it plainly. The familiar \"实实在在\" is not used.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n43014012005"
+          ],
+          "choice": "\"那人\", no gender span",
+          "alternatives": [],
+          "reason": "The English offers \"they / he\" for any believer (meaning decision m2); Chinese \"那人\" already includes man and woman, so it needs no span.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-1",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n43014012005",
+            "n43014012006",
+            "n43014012014"
+          ],
+          "choice": "\"المؤمن\", \"كلّ من\" ... \"هو\" with no gender setting",
+          "alternatives": [],
+          "reason": "The English offers \"they\"/\"he\" as a setting. The Arabic word already speaks of anyone, man or woman, so there is no wording for the setting to change.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6001,8 +8359,33 @@
         },
         "ru": {
           "L": "И что бы вы ни попросили во имя {{deity_pronoun:моё|Моё}}, то {{deity_pronoun:я|Я}} сделаю, чтобы был прославлен Отец в Сыне.",
-          "B": "И о чём бы вы ни попросили во {{deity_pronoun:моё|Моё}} имя, {{deity_pronoun:я|Я}} сделаю это, чтобы в Сыне был прославлен Отец.",
-          "R": "Я сделаю всё, о чём вы попросите во {{deity_pronoun:моё|Моё}} имя. Так в Сыне будет видна слава Отца."
+          "B": "И о чём бы вы ни попросили в {{deity_pronoun:моё|Моё}} имя, {{deity_pronoun:я|Я}} сделаю это, чтобы в Сыне был прославлен Отец.",
+          "R": "Я сделаю всё, о чём вы попросите в {{deity_pronoun:моё|Моё}} имя. Так в Сыне будет видна слава Отца."
+        },
+        "uk": {
+          "L": "І що попросите в {{deity_pronoun:моє|Моє}} імʼя, те {{deity_pronoun:я|Я}} зроблю, щоб Отець прославився в Сині.",
+          "B": "І що б ви не попросили в {{deity_pronoun:моє|Моє}} імʼя, {{deity_pronoun:я|Я}} те зроблю, щоб Отець був прославлений у Сині.",
+          "R": "Я зроблю все, що ви попросите в {{deity_pronoun:моє|Моє}} імʼя. Так у Сині буде видно славу Отця."
+        },
+        "ja": {
+          "L": "また、あなたがたがわたしの名によって求めるものは何でも、わたしはそれを行う。父が子において栄光をお受けになるためである。",
+          "B": "あなたがたがわたしの名によって求めるものは、何であれ、わたしが行う。こうして子において、父が栄光をお受けになるためである。",
+          "R": "あなたたちがわたしの名によって求めることは、何でもわたしがしよう。そうして、父の栄光が子によって現されるのだ。"
+        },
+        "id": {
+          "L": "Dan apa pun yang kalian minta dalam nama-{{deity_pronoun:ku|Ku}}, {{deity_pronoun:aku|Aku}} akan melakukannya, supaya Bapa dimuliakan di dalam Anak;",
+          "B": "Dan apa pun yang kalian minta dalam nama-{{deity_pronoun:ku|Ku}}, {{deity_pronoun:aku|Aku}} akan melakukannya, supaya di dalam Anak, Bapa dimuliakan.",
+          "R": "Aku akan melakukan apa saja yang kalian minta dalam nama-{{deity_pronoun:ku|Ku}}. Dengan begitu kemuliaan Bapa dinyatakan di dalam Anak."
+        },
+        "zh": {
+          "L": "并且你们奉我的名所求的任何事，这事我都要做，为要使父在子里面得着荣耀。",
+          "B": "你们奉我的名无论求什么，我都会为你们去做，好让父在子身上得着荣耀。",
+          "R": "你们奉我的名求的任何事，我都会做。这样，父的荣耀就会在儿子身上显明出来。"
+        },
+        "ar": {
+          "L": "ومهما سألتم باسمي فذلك أفعله، ليتمجّد الآب بالابن.",
+          "B": "وكلّ ما تطلبونه باسمي سأفعله، حتّى يتمجّد الآب في الابن.",
+          "R": "سأفعل أيّ شيء تطلبونه باسمي. وبذلك يظهر مجد الآب في الابن."
         }
       },
       "alignments": [
@@ -6114,6 +8497,119 @@
           "language": "en",
           "level": "B",
           "target_span": "may be glorified"
+        },
+        {
+          "tokens": [
+            "n43014013005"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなたがた"
+        },
+        {
+          "tokens": [
+            "n43014013009"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43014013007",
+            "n43014013008"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "名"
+        },
+        {
+          "tokens": [
+            "n43014013006"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "によって"
+        },
+        {
+          "tokens": [
+            "n43014013005"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "求める"
+        },
+        {
+          "tokens": [
+            "n43014013002",
+            "n43014013003",
+            "n43014013004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "もの"
+        },
+        {
+          "tokens": [
+            "n43014013002",
+            "n43014013003",
+            "n43014013004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "何であれ"
+        },
+        {
+          "tokens": [
+            "n43014013011"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43014013010",
+            "n43014013011"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "行う"
+        },
+        {
+          "tokens": [
+            "n43014013016",
+            "n43014013017",
+            "n43014013018"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "子において"
+        },
+        {
+          "tokens": [
+            "n43014013014",
+            "n43014013015"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "父"
+        },
+        {
+          "tokens": [
+            "n43014013013"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "栄光をお受けになる"
+        },
+        {
+          "tokens": [
+            "n43014013012"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ためである"
         }
       ],
       "decisions": [
@@ -6286,6 +8782,51 @@
           "reason": "This verb asks for something, as in prayer; \"መለመን\" says that. \"መጠየቅ\" is kept for the other verb, which mostly means asking a question (see 16:23).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43014013005",
+            "n43014013008"
+          ],
+          "choice": "\"わたしの名によって求める\"",
+          "alternatives": [
+            "\"願う\"",
+            "\"わたしの名を使って\""
+          ],
+          "reason": "\"求める\" is kept for this verb through 14:13-16, so that the asking stays one thread. \"名によって\" keeps the sense of asking as those who belong to Jesus and by his authority (meaning decision m1), rather than using his name as a formula.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43014013013",
+            "n43014013018"
+          ],
+          "choice": "\"得着荣耀\" (L, B); \"荣耀……显明出来\" (R); \"子\"",
+          "alternatives": [
+            "\"得荣耀\""
+          ],
+          "reason": "\"Glorify\" is a key term in John, \"荣耀\" at every level. \"子\" is the title beside \"父\", kept apart from a son in a household.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6361,8 +8902,33 @@
         },
         "ru": {
           "L": "Если о чём попросите {{deity_pronoun:меня|Меня}} во имя {{deity_pronoun:моё|Моё}}, {{deity_pronoun:я|Я}} сделаю.",
-          "B": "Если попросите {{deity_pronoun:меня|Меня}} о чём-нибудь во {{deity_pronoun:моё|Моё}} имя, {{deity_pronoun:я|Я}} сам это сделаю.",
-          "R": "Да, просите {{deity_pronoun:меня|Меня}} о чём угодно во {{deity_pronoun:моё|Моё}} имя, и {{deity_pronoun:я|Я}} сам это сделаю."
+          "B": "Если попросите {{deity_pronoun:меня|Меня}} о чём-нибудь в {{deity_pronoun:моё|Моё}} имя, {{deity_pronoun:я|Я}} сам это сделаю.",
+          "R": "Да, просите {{deity_pronoun:меня|Меня}} о чём угодно в {{deity_pronoun:моё|Моё}} имя, и {{deity_pronoun:я|Я}} сам это сделаю."
+        },
+        "uk": {
+          "L": "Якщо попросите {{deity_pronoun:мене|Мене}} про щось у {{deity_pronoun:моє|Моє}} імʼя, {{deity_pronoun:я|Я}} зроблю [це].",
+          "B": "Якщо попросите {{deity_pronoun:мене|Мене}} про що-небудь у {{deity_pronoun:моє|Моє}} імʼя, {{deity_pronoun:я|Я}} сам це зроблю.",
+          "R": "Так, просіть {{deity_pronoun:мене|Мене}} про будь-що в {{deity_pronoun:моє|Моє}} імʼя, і {{deity_pronoun:я|Я}} сам це зроблю."
+        },
+        "ja": {
+          "L": "あなたがたが、わたしの名によってわたしに何かを求めるなら、わたしが[それを]行う。",
+          "B": "わたしの名によって、わたしに何かを求めるなら、わたし自身がそれを行う。",
+          "R": "そうだ、わたしの名によって、どんなことでもわたしに求めなさい。わたし自身がそれをしよう。"
+        },
+        "id": {
+          "L": "Jika kalian meminta sesuatu kepada-{{deity_pronoun:ku|Ku}} dalam nama-{{deity_pronoun:ku|Ku}}, {{deity_pronoun:aku|Aku}} akan melakukannya.",
+          "B": "Jika kalian meminta sesuatu kepada-{{deity_pronoun:ku|Ku}} dalam nama-{{deity_pronoun:ku|Ku}}, {{deity_pronoun:aku|Aku}} sendiri akan melakukannya.",
+          "R": "Ya, mintalah apa saja kepada-{{deity_pronoun:ku|Ku}} dalam nama-{{deity_pronoun:ku|Ku}}, dan {{deity_pronoun:aku|Aku}} sendiri akan melakukannya."
+        },
+        "zh": {
+          "L": "你们若奉我的名向我求任何事，我都要做。",
+          "B": "你们若奉我的名向我求什么，我自己必为你们做成。",
+          "R": "是的，你们奉我的名向我求任何事，我自己都会去做。"
+        },
+        "ar": {
+          "L": "إن سألتموني شيئًا باسمي فإنّي أفعله.",
+          "B": "إن طلبتم منّي شيئًا باسمي، فأنا نفسي سأفعله.",
+          "R": "نعم، اطلبوا منّي أيّ شيء باسمي، وأنا نفسي سأفعله."
         }
       },
       "alignments": [
@@ -6438,6 +9004,79 @@
           "language": "en",
           "level": "B",
           "target_span": "will do it"
+        },
+        {
+          "tokens": [
+            "n43014014008"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43014014006",
+            "n43014014007"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "名"
+        },
+        {
+          "tokens": [
+            "n43014014005"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "によって"
+        },
+        {
+          "tokens": [
+            "n43014014004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43014014002"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "何か"
+        },
+        {
+          "tokens": [
+            "n43014014003"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "求める"
+        },
+        {
+          "tokens": [
+            "n43014014001"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "なら"
+        },
+        {
+          "tokens": [
+            "n43014014009"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし自身"
+        },
+        {
+          "tokens": [
+            "n43014014010"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "行う"
         }
       ],
       "decisions": [

@@ -58,6 +58,31 @@
           "L": "ለመዘምራን አለቃ፤ የዳዊት መዝሙር።",
           "B": "ለመዘምራን አለቃ። የዳዊት መዝሙር።",
           "R": "ለመዘምራን አለቃ። ዳዊት የዘመረው መዝሙር።"
+        },
+        "hi": {
+          "L": "संगीत-निर्देशक के लिए। दाऊद का भजन।",
+          "B": "संगीत-निर्देशक के लिए। दाऊद का भजन।",
+          "R": "गायक-मंडली के अगुवे के लिए। दाऊद का गीत।"
+        },
+        "ru": {
+          "L": "Руководителю хора. Псалом Давида.",
+          "B": "Руководителю хора. Псалом Давида.",
+          "R": "Для руководителя музыкантов. Песнь Давида."
+        },
+        "ja": {
+          "L": "指揮する者のために。ダビデの賛歌。",
+          "B": "音楽を導く者のために。ダビデの賛歌。",
+          "R": "音楽を導く人のために。ダビデの歌。"
+        },
+        "uk": {
+          "L": "Для диригента. Псалом Давида.",
+          "B": "Для диригента хору. Псалом Давида.",
+          "R": "Для того, хто керує співом. Пісня Давида."
+        },
+        "id": {
+          "L": "Untuk pemimpin musik. [Sebuah] mazmur Daud.",
+          "B": "Untuk pemimpin musik. Mazmur Daud.",
+          "R": "Untuk pemimpin musik. Lagu pujian karangan Daud."
         }
       },
       "decisions": [
@@ -127,6 +152,51 @@
           "reason": "The Ethiopic script has no capital letters, so the setting that capitalises pronouns for God has nothing to change in Amharic; pronouns for God are written plainly.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190130010012",
+            "o190130010021"
+          ],
+          "choice": "\"संगीत-निर्देशक के लिए\" (L, B), \"गायक-मंडली के अगुवे के लिए\" (R); \"भजन\" (L, B), \"गीत\" (R)",
+          "alternatives": [
+            "\"प्रधान बजानेवाले के लिए\""
+          ],
+          "reason": "The psalm titles follow the poetry terms note for the whole of Psalms: lamnatseach is the one who leads the music, and mizmor is a psalm, a song sung to music (m2, m3). Readable says it in everyday words, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190130010012",
+            "o190130010021"
+          ],
+          "choice": "\"Руководителю хора\" (L, B), \"Для руководителя музыкантов\" (R); \"псалом\" (L, B), \"песнь\" (R)",
+          "alternatives": [
+            "\"Начальнику хора\"",
+            "\"Дирижёру\""
+          ],
+          "reason": "The title words as the poetry note settles them for every psalm: lamnatseach names the one who leads the music (m2), and Readable says it in plain words; mizmor is a song sung to music (m3), \"псалом\" at Literal and Balanced, \"песнь\" at Readable, as the English Readable says \"song\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -160,44 +230,69 @@
       "literal_gloss": "Until when, YHWH, will you forget me forever? Until when will you hide your face from me?",
       "renderings": {
         "en": {
-          "L": "Until when, {{divine_name:LORD|Yahweh}}, will {{deity_pronoun:you|You}} forget me forever? Until when will {{deity_pronoun:you|You}} hide {{deity_pronoun:your|Your}} face from me?",
-          "B": "How long, {{divine_name:LORD|Yahweh}}? Will {{deity_pronoun:you|You}} go on forgetting me for good? How long will {{deity_pronoun:you|You}} turn {{deity_pronoun:your|Your}} face away from me?",
-          "R": "{{divine_name:LORD|Yahweh}}, how long will {{deity_pronoun:you|You}} keep forgetting me? Will it be forever? How long will {{deity_pronoun:you|You}} turn away and not look at me?"
+          "L": "Until when, {{divine_name:LORD|Yahweh}}, will {{deity_pronoun:you|You}} forget me forever? \\q Until when will {{deity_pronoun:you|You}} hide {{deity_pronoun:your|Your}} face from me?",
+          "B": "How long, {{divine_name:LORD|Yahweh}}? Will {{deity_pronoun:you|You}} go on forgetting me for good? \\q How long will {{deity_pronoun:you|You}} turn {{deity_pronoun:your|Your}} face away from me?",
+          "R": "{{divine_name:LORD|Yahweh}}, how long will {{deity_pronoun:you|You}} keep forgetting me? Will it be forever? \\q How long will {{deity_pronoun:you|You}} turn away and not look at me?"
         },
         "fr": {
-          "L": "Jusqu’à quand, {{divine_name:SEIGNEUR|Yahvé}}, m’oublieras-{{deity_pronoun:tu|Tu}} pour toujours ? Jusqu’à quand me cacheras-{{deity_pronoun:tu|Tu}} {{deity_pronoun:ta|Ta}} face ?",
-          "B": "Jusqu’à quand, {{divine_name:SEIGNEUR|Yahvé}} ? Vas-{{deity_pronoun:tu|Tu}} m’oublier pour de bon ? Jusqu’à quand détourneras-{{deity_pronoun:tu|Tu}} de moi {{deity_pronoun:ton|Ton}} visage ?",
-          "R": "{{divine_name:SEIGNEUR|Yahvé}}, combien de temps vas-{{deity_pronoun:tu|Tu}} encore m’oublier ? Est-ce que ce sera pour toujours ? Combien de temps vas-{{deity_pronoun:tu|Tu}} {{deity_pronoun:te|Te}} détourner sans me regarder ?"
+          "L": "Jusqu’à quand, {{divine_name:SEIGNEUR|Yahvé}}, m’oublieras-{{deity_pronoun:tu|Tu}} pour toujours ? \\q Jusqu’à quand me cacheras-{{deity_pronoun:tu|Tu}} {{deity_pronoun:ta|Ta}} face ?",
+          "B": "Jusqu’à quand, {{divine_name:SEIGNEUR|Yahvé}} ? Vas-{{deity_pronoun:tu|Tu}} m’oublier pour de bon ? \\q Jusqu’à quand détourneras-{{deity_pronoun:tu|Tu}} de moi {{deity_pronoun:ton|Ton}} visage ?",
+          "R": "{{divine_name:SEIGNEUR|Yahvé}}, combien de temps vas-{{deity_pronoun:tu|Tu}} encore m’oublier ? Est-ce que ce sera pour toujours ? \\q Combien de temps vas-{{deity_pronoun:tu|Tu}} {{deity_pronoun:te|Te}} détourner sans me regarder ?"
         },
         "sw": {
-          "L": "Hadi lini, Ee {{divine_name:BWANA|Yahwe}}, utanisahau milele? Hadi lini utauficha uso {{deity_pronoun:wako|Wako}} mbali nami?",
-          "B": "Hata lini, Ee {{divine_name:BWANA|Yahwe}}? Je, utaendelea kunisahau kabisa? Hata lini utaugeuzia mbali uso {{deity_pronoun:wako|Wako}}?",
-          "R": "{{divine_name:BWANA|Yahwe}}, utaendelea kunisahau hadi lini? Je, itakuwa milele? Hadi lini utageuka mbali na kutoniangalia?"
+          "L": "Hadi lini, Ee {{divine_name:BWANA|Yahwe}}, utanisahau milele? \\q Hadi lini utauficha uso {{deity_pronoun:wako|Wako}} mbali nami?",
+          "B": "Hata lini, Ee {{divine_name:BWANA|Yahwe}}? Je, utaendelea kunisahau kabisa? \\q Hata lini utaugeuzia mbali uso {{deity_pronoun:wako|Wako}}?",
+          "R": "{{divine_name:BWANA|Yahwe}}, utaendelea kunisahau hadi lini? Je, itakuwa milele? \\q Hadi lini utageuka mbali na kutoniangalia?"
         },
         "es": {
-          "L": "¿Hasta cuándo, {{divine_name:SEÑOR|Yahvé}}, me olvidarás para siempre? ¿Hasta cuándo ocultarás de mí {{deity_pronoun:tu|Tu}} rostro?",
-          "B": "¿Hasta cuándo, {{divine_name:SEÑOR|Yahvé}}? ¿Vas a seguir olvidándote de mí para siempre? ¿Hasta cuándo apartarás de mí {{deity_pronoun:tu|Tu}} rostro?",
-          "R": "{{divine_name:SEÑOR|Yahvé}}, ¿cuánto tiempo más vas a seguir olvidándote de mí? ¿Será para siempre? ¿Cuánto tiempo más {{deity_pronoun:te|Te}} apartarás y no me mirarás?"
+          "L": "¿Hasta cuándo, {{divine_name:SEÑOR|Yahvé}}, me olvidarás para siempre? \\q ¿Hasta cuándo ocultarás de mí {{deity_pronoun:tu|Tu}} rostro?",
+          "B": "¿Hasta cuándo, {{divine_name:SEÑOR|Yahvé}}? ¿Vas a seguir olvidándote de mí para siempre? \\q ¿Hasta cuándo apartarás de mí {{deity_pronoun:tu|Tu}} rostro?",
+          "R": "{{divine_name:SEÑOR|Yahvé}}, ¿cuánto tiempo más vas a seguir olvidándote de mí? \\q ¿Será para siempre? ¿Cuánto tiempo más {{deity_pronoun:te|Te}} apartarás y no me mirarás?"
         },
         "vi": {
-          "L": "Cho đến bao giờ, lạy {{divine_name:CHÚA|Gia-vê}}, {{deity_pronoun:ngài|Ngài}} sẽ quên tôi mãi mãi? Cho đến bao giờ {{deity_pronoun:ngài|Ngài}} sẽ ẩn mặt {{deity_pronoun:ngài|Ngài}} khỏi tôi?",
-          "B": "Lạy {{divine_name:CHÚA|Gia-vê}}, cho đến bao giờ? Có phải {{deity_pronoun:ngài|Ngài}} sẽ quên tôi mãi mãi chăng? Cho đến bao giờ {{deity_pronoun:ngài|Ngài}} còn ngoảnh mặt khỏi tôi?",
-          "R": "Lạy {{divine_name:CHÚA|Gia-vê}}, {{deity_pronoun:ngài|Ngài}} sẽ cứ quên tôi đến bao giờ? Có phải là mãi mãi không? Đến bao giờ {{deity_pronoun:ngài|Ngài}} mới thôi quay mặt đi, không nhìn đến tôi?"
+          "L": "Cho đến bao giờ, lạy {{divine_name:CHÚA|Gia-vê}}, {{deity_pronoun:ngài|Ngài}} sẽ quên tôi mãi mãi? \\q Cho đến bao giờ {{deity_pronoun:ngài|Ngài}} sẽ ẩn mặt {{deity_pronoun:ngài|Ngài}} khỏi tôi?",
+          "B": "Lạy {{divine_name:CHÚA|Gia-vê}}, cho đến bao giờ? Có phải {{deity_pronoun:ngài|Ngài}} sẽ quên tôi mãi mãi chăng? \\q Cho đến bao giờ {{deity_pronoun:ngài|Ngài}} còn ngoảnh mặt khỏi tôi?",
+          "R": "Lạy {{divine_name:CHÚA|Gia-vê}}, {{deity_pronoun:ngài|Ngài}} sẽ cứ quên tôi đến bao giờ? Có phải là mãi mãi không? \\q Đến bao giờ {{deity_pronoun:ngài|Ngài}} mới thôi quay mặt đi, không nhìn đến tôi?"
         },
         "ko": {
-          "L": "언제까지입니까, {{divine_name:주|야훼}}여? 주님께서 저를 영원히 잊으시렵니까? 언제까지 주님의 얼굴을 제게서 숨기시렵니까?",
-          "B": "{{divine_name:주|야훼}}여, 언제까지입니까? 저를 아주 잊어버리시렵니까? 언제까지 주님의 얼굴을 제게서 돌리시렵니까?",
-          "R": "{{divine_name:주|야훼}}여, 언제까지 저를 잊고 계시겠습니까? 영원히 잊으시렵니까? 언제까지 저를 외면하시고 보지 않으시겠습니까?"
+          "L": "언제까지입니까, {{divine_name:주|야훼}}여? 주님께서 저를 영원히 잊으시렵니까? \\q 언제까지 주님의 얼굴을 제게서 숨기시렵니까?",
+          "B": "{{divine_name:주|야훼}}여, 언제까지입니까? 저를 아주 잊어버리시렵니까? \\q 언제까지 주님의 얼굴을 제게서 돌리시렵니까?",
+          "R": "{{divine_name:주|야훼}}여, 언제까지 저를 잊고 계시겠습니까? 영원히 잊으시렵니까? \\q 언제까지 저를 외면하시고 보지 않으시겠습니까?"
         },
         "pt": {
-          "L": "Até quando, {{divine_name:SENHOR|Javé}}, {{deity_pronoun:tu|Tu}} me esquecerás para sempre? Até quando esconderás de mim a {{deity_pronoun:tua|Tua}} face?",
-          "B": "Até quando, {{divine_name:SENHOR|Javé}}? Tu vais me esquecer de uma vez por todas? Até quando {{deity_pronoun:tu|Tu}} vais desviar de mim o {{deity_pronoun:teu|Teu}} rosto?",
-          "R": "{{divine_name:SENHOR|Javé}}, até quando {{deity_pronoun:tu|Tu}} vais continuar me esquecendo? Vai ser para sempre? Até quando vais virar o rosto e não olhar para mim?"
+          "L": "Até quando, {{divine_name:SENHOR|Javé}}, {{deity_pronoun:tu|Tu}} me esquecerás para sempre? \\q Até quando esconderás de mim a {{deity_pronoun:tua|Tua}} face?",
+          "B": "Até quando, {{divine_name:SENHOR|Javé}}? Tu vais me esquecer de uma vez por todas? \\q Até quando {{deity_pronoun:tu|Tu}} vais desviar de mim o {{deity_pronoun:teu|Teu}} rosto?",
+          "R": "{{divine_name:SENHOR|Javé}}, até quando {{deity_pronoun:tu|Tu}} vais continuar me esquecendo? Vai ser para sempre? \\q Até quando vais virar o rosto e não olhar para mim?"
         },
         "am": {
-          "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ እስከ መቼ ለዘላለም ትረሳኛለህ? ፊትህንስ ከእኔ እስከ መቼ ትሰውራለህ?",
-          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ እስከ መቼ ነው? ፈጽመህ ትረሳኛለህን? ፊትህንስ ከእኔ እስከ መቼ ታዞራለህ?",
-          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ እስከ መቼ ትረሳኛለህ? ለዘላለም ነውን? ዘወር ብለህ ሳትመለከተኝ እስከ መቼ ትቆያለህ?"
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ እስከ መቼ ለዘላለም ትረሳኛለህ? \\q ፊትህንስ ከእኔ እስከ መቼ ትሰውራለህ?",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ እስከ መቼ ነው? ፈጽመህ ትረሳኛለህን? \\q ፊትህንስ ከእኔ እስከ መቼ ታዞራለህ?",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} ሆይ፣ እስከ መቼ ትረሳኛለህ? ለዘላለም ነውን? \\q ዘወር ብለህ ሳትመለከተኝ እስከ መቼ ትቆያለህ?"
+        },
+        "hi": {
+          "L": "कब तक, हे {{divine_name:प्रभु|याहवे}}, तू मुझे सदा भूला रहेगा? \\q कब तक तू अपना मुख मुझसे छिपाए रहेगा?",
+          "B": "हे {{divine_name:प्रभु|याहवे}}, कब तक? क्या तू मुझे सदा के लिए भूलता ही रहेगा? \\q कब तक तू अपना मुँह मुझसे फेरे रहेगा?",
+          "R": "हे {{divine_name:प्रभु|याहवे}}, तू कब तक मुझे भूला रहेगा? क्या सदा के लिए? \\q कब तक तू मुझसे मुँह फेरे रहेगा और मेरी ओर नहीं देखेगा?"
+        },
+        "ru": {
+          "L": "До каких пор, {{divine_name:ГОСПОДИ|Яхве}}, {{deity_pronoun:ты|Ты}} будешь забывать меня навеки? \\q До каких пор {{deity_pronoun:ты|Ты}} будешь скрывать от меня своё лицо?",
+          "B": "Сколько ещё, {{divine_name:ГОСПОДИ|Яхве}}? Неужели {{deity_pronoun:ты|Ты}} забудешь меня навсегда? \\q Сколько ещё {{deity_pronoun:ты|Ты}} будешь отворачивать от меня своё лицо?",
+          "R": "{{divine_name:ГОСПОДИ|Яхве}}, сколько ещё {{deity_pronoun:ты|Ты}} будешь забывать обо мне? Неужели навсегда? \\q Сколько ещё {{deity_pronoun:ты|Ты}} будешь отворачиваться и не смотреть на меня?"
+        },
+        "ja": {
+          "L": "いつまで、{{divine_name:主|ヤハウェ}}よ、あなたはわたしをとこしえに忘れておられるのか？ \\q いつまで、あなたの顔をわたしから隠されるのか？",
+          "B": "いつまでなのか、{{divine_name:主|ヤハウェ}}よ。あなたは、ずっとわたしを忘れたままでおられるのか？ \\q いつまで、あなたの顔をわたしから背けておられるのか？",
+          "R": "{{divine_name:主|ヤハウェ}}よ、いつまで、わたしを忘れたままでおられるのか？ \\q ずっとこのままなのか？いつまで、顔を背けて、わたしを見てくださらないのか？"
+        },
+        "uk": {
+          "L": "Доки, {{divine_name:ГОСПОДИ|Ягве}}, {{deity_pronoun:ти|Ти}} забуватимеш мене — навіки? \\q Доки {{deity_pronoun:ти|Ти}} ховатимеш {{deity_pronoun:твоє|Твоє}} обличчя від мене?",
+          "B": "Доки, {{divine_name:ГОСПОДИ|Ягве}}? Невже {{deity_pronoun:ти|Ти}} забудеш мене назавжди? \\q Доки {{deity_pronoun:ти|Ти}} відвертатимеш від мене {{deity_pronoun:твоє|Твоє}} обличчя?",
+          "R": "{{divine_name:ГОСПОДИ|Ягве}}, доки {{deity_pronoun:ти|Ти}} забуватимеш мене? Невже навіки? \\q Доки {{deity_pronoun:ти|Ти}} відвертатимешся й не дивитимешся на мене?"
+        },
+        "id": {
+          "L": "Sampai kapan, {{divine_name:TUHAN|Yahweh}}, {{deity_pronoun:engkau|Engkau}} melupakan aku untuk selama-lamanya? \\q Sampai kapan {{deity_pronoun:engkau|Engkau}} menyembunyikan wajah-{{deity_pronoun:mu|Mu}} dari aku?",
+          "B": "Berapa lama lagi, {{divine_name:TUHAN|Yahweh}}? Apakah {{deity_pronoun:engkau|Engkau}} akan terus melupakan aku untuk selamanya? \\q Berapa lama lagi {{deity_pronoun:engkau|Engkau}} memalingkan wajah-{{deity_pronoun:mu|Mu}} dari aku?",
+          "R": "{{divine_name:TUHAN|Yahweh}}, berapa lama lagi {{deity_pronoun:engkau|Engkau}} akan terus melupakan aku? Apakah untuk selamanya? \\q Berapa lama lagi {{deity_pronoun:engkau|Engkau}} berpaling dan tidak memandang aku?"
         }
       },
       "decisions": [
@@ -289,6 +384,151 @@
           "reason": "The repeated cry is the shape of the psalm (meaning decision m1), so each level keeps it.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190130020031"
+          ],
+          "choice": "\"{{divine_name:प्रभु|याहवे}}\" for YHWH; plain \"प्रभु\" for Adonai",
+          "alternatives": [
+            "\"यहोवा\""
+          ],
+          "reason": "Hindi प्रभु stands both for the divine name YHWH (the English \"the LORD\") and for Adonai, \"Lord\". The divine_name setting tells them apart: where the reader chooses the name, YHWH appears as \"याहवे\" and Adonai stays \"प्रभु\". The Old Version's \"यहोवा\" is not used.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190130020042"
+          ],
+          "choice": "\"तू\" to God; no deity_pronoun spans",
+          "alternatives": [],
+          "reason": "Devanagari has no capital letters, so the deity_pronoun setting has nothing to change in Hindi. The psalmist speaks to God with \"तू\", the address of Hindi prayer, and speaks of God with honorific forms (\"वे\", \"उन्होंने\").",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-3",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190130020101",
+            "o190130020102"
+          ],
+          "choice": "\"अपना मुख छिपाए रहेगा\" (L); \"मुँह फेरे रहेगा\" (B, R)",
+          "alternatives": [
+            "\"मुख छिपाना\" at every level"
+          ],
+          "reason": "Literal keeps the Hebrew picture of hiding the face; Balanced and Readable use the Hindi idiom for turning away from someone, which says what the picture means (m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190130020011",
+            "o190130020021"
+          ],
+          "choice": "\"До каких пор\" (L); \"Сколько ещё\" (B, R)",
+          "alternatives": [
+            "\"Доколе\""
+          ],
+          "reason": "The cry \"until when?\" (m1) in modern Russian; the Slavonic \"доколе\" is avoided, as the style guide asks. Literal keeps the shape of the question, Balanced and Readable say \"how long\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-2",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190130020102"
+          ],
+          "choice": "\"своё лицо\", no deity_pronoun span",
+          "alternatives": [
+            "\"{{deity_pronoun:твоё|Твоё}} лицо\""
+          ],
+          "reason": "The English has a span on \"your face\"; Russian uses the reflexive \"своё\" for the subject's own face, and reflexives take no span.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "idiom",
+          "tokens": [
+            "o190130020011",
+            "o190130020021",
+            "o190130020041",
+            "o190130020051"
+          ],
+          "choice": "'ad-anah \"いつまで\" repeated at the head of each complaint (13:2-3); Literal keeps \"とこしえに\" inside the first question",
+          "alternatives": [],
+          "reason": "m1: Until when means How long; m2 joins two complaints, so Literal keeps both and Balanced and Readable split them, as the English.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "idiom",
+          "tokens": [
+            "o190130020081",
+            "o190130020101",
+            "o190130020102"
+          ],
+          "choice": "\"あなたの顔を…隠される\" (L), \"顔を…背けて\" (B, R)",
+          "alternatives": [],
+          "reason": "m3: hiding the face is withdrawing favour and help; the Psalter writes あなたの顔 (4:7, 9:20) with no new honorific spelling.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -327,44 +567,69 @@
       "literal_gloss": "Until when will I set counsels in my soul, sorrow in my heart by day? Until when will be exalted my enemy over me?",
       "renderings": {
         "en": {
-          "L": "Until when will I set counsels in my soul, sorrow in my heart by day? Until when will my enemy be exalted over me?",
-          "B": "How long must I keep turning plans over in my mind, with grief in my heart all day long? How long will my enemy stand over me in triumph?",
-          "R": "How long must I keep worrying and trying to find a way out? How long will I feel sad every day? How long will my enemy keep winning against me?"
+          "L": "Until when will I set counsels in my soul, \\q sorrow in my heart by day? \\q Until when will my enemy be exalted over me?",
+          "B": "How long must I keep turning plans over in my mind, \\q with grief in my heart all day long? \\q How long will my enemy stand over me in triumph?",
+          "R": "How long must I keep worrying and trying to find a way out? \\q How long will I feel sad every day? \\q How long will my enemy keep winning against me?"
         },
         "fr": {
-          "L": "Jusqu’à quand mettrai-je des projets dans mon âme, du chagrin dans mon cœur le jour ? Jusqu’à quand mon ennemi s’élèvera-t-il au-dessus de moi ?",
-          "B": "Jusqu’à quand devrai-je retourner des projets dans ma tête, avec du chagrin au cœur toute la journée ? Jusqu’à quand mon ennemi triomphera-t-il de moi ?",
-          "R": "Combien de temps vais-je encore m’inquiéter et chercher une issue ? Combien de temps serai-je triste chaque jour ? Combien de temps mon ennemi va-t-il encore gagner contre moi ?"
+          "L": "Jusqu’à quand mettrai-je des projets dans mon âme, \\q du chagrin dans mon cœur le jour ? \\q Jusqu’à quand mon ennemi s’élèvera-t-il au-dessus de moi ?",
+          "B": "Jusqu’à quand devrai-je retourner des projets dans ma tête, \\q avec du chagrin au cœur toute la journée ? \\q Jusqu’à quand mon ennemi triomphera-t-il de moi ?",
+          "R": "Combien de temps vais-je encore m’inquiéter et chercher une issue ? \\q Combien de temps serai-je triste chaque jour ? \\q Combien de temps mon ennemi va-t-il encore gagner contre moi ?"
         },
         "sw": {
-          "L": "Hadi lini nitaweka mashauri katika nafsi yangu, huzuni moyoni mwangu mchana? Hadi lini adui yangu atainuka juu yangu?",
-          "B": "Hata lini nitaendelea kuwaza mipango akilini mwangu, nikiwa na huzuni moyoni mchana kutwa? Hata lini adui yangu atasimama juu yangu kwa ushindi?",
-          "R": "Hadi lini nitaendelea kuhangaika na kutafuta njia ya kutoka? Hadi lini nitakuwa na huzuni kila siku? Hadi lini adui yangu ataendelea kunishinda?"
+          "L": "Hadi lini nitaweka mashauri katika nafsi yangu, \\q huzuni moyoni mwangu mchana? \\q Hadi lini adui yangu atainuka juu yangu?",
+          "B": "Hata lini nitaendelea kuwaza mipango akilini mwangu, \\q nikiwa na huzuni moyoni mchana kutwa? \\q Hata lini adui yangu atasimama juu yangu kwa ushindi?",
+          "R": "Hadi lini nitaendelea kuhangaika na kutafuta njia ya kutoka? \\q Hadi lini nitakuwa na huzuni kila siku? \\q Hadi lini adui yangu ataendelea kunishinda?"
         },
         "es": {
-          "L": "¿Hasta cuándo pondré consejos en mi alma, tristeza en mi corazón de día? ¿Hasta cuándo será exaltado mi enemigo sobre mí?",
-          "B": "¿Hasta cuándo tendré que darle vueltas a mis planes, con dolor en el corazón todo el día? ¿Hasta cuándo mi enemigo se alzará triunfante sobre mí?",
-          "R": "¿Cuánto tiempo más tendré que seguir preocupado, buscando una salida? ¿Cuánto tiempo más estaré triste cada día? ¿Cuánto tiempo más me seguirá ganando mi enemigo?"
+          "L": "¿Hasta cuándo pondré consejos en mi alma, \\q tristeza en mi corazón de día? \\q ¿Hasta cuándo será exaltado mi enemigo sobre mí?",
+          "B": "¿Hasta cuándo tendré que darle vueltas a mis planes, \\q con dolor en el corazón todo el día? \\q ¿Hasta cuándo mi enemigo se alzará triunfante sobre mí?",
+          "R": "¿Cuánto tiempo más tendré que seguir preocupado, buscando una salida? \\q ¿Cuánto tiempo más estaré triste cada día? \\q ¿Cuánto tiempo más me seguirá ganando mi enemigo?"
         },
         "vi": {
-          "L": "Cho đến bao giờ tôi còn đặt những mưu tính trong linh hồn tôi, nỗi sầu khổ trong lòng tôi suốt ngày? Cho đến bao giờ kẻ thù tôi còn được tôn cao trên tôi?",
-          "B": "Cho đến bao giờ tôi còn phải trăn trở tính toán trong lòng, mang nỗi sầu khổ suốt ngày? Cho đến bao giờ kẻ thù tôi còn đắc thắng đứng trên tôi?",
-          "R": "Đến bao giờ tôi mới thôi lo lắng và tìm cách thoát ra? Đến bao giờ tôi mới thôi buồn bã mỗi ngày? Đến bao giờ kẻ thù tôi mới thôi thắng tôi?"
+          "L": "Cho đến bao giờ tôi còn đặt những mưu tính trong linh hồn tôi, \\q nỗi sầu khổ trong lòng tôi suốt ngày? \\q Cho đến bao giờ kẻ thù tôi còn được tôn cao trên tôi?",
+          "B": "Cho đến bao giờ tôi còn phải trăn trở tính toán trong lòng, \\q mang nỗi sầu khổ suốt ngày? \\q Cho đến bao giờ kẻ thù tôi còn đắc thắng đứng trên tôi?",
+          "R": "Đến bao giờ tôi mới thôi lo lắng và tìm cách thoát ra? \\q Đến bao giờ tôi mới thôi buồn bã mỗi ngày? \\q Đến bao giờ kẻ thù tôi mới thôi thắng tôi?"
         },
         "ko": {
-          "L": "언제까지 제가 제 영혼 속에 궁리를 품고, 낮에는 제 마음에 슬픔을 [품어야] 합니까? 언제까지 제 원수가 저를 이기고 높아지겠습니까?",
-          "B": "언제까지 제가 속으로 이 궁리 저 궁리를 하며 온종일 마음에 슬픔을 안고 지내야 합니까? 언제까지 제 원수가 저를 이긴 듯 제 위에 서 있겠습니까?",
-          "R": "언제까지 제가 걱정하며 빠져나갈 길을 찾아야 합니까? 언제까지 날마다 슬퍼해야 합니까? 언제까지 제 원수가 저를 이기겠습니까?"
+          "L": "언제까지 제가 제 영혼 속에 궁리를 품고, \\q 낮에는 제 마음에 슬픔을 [품어야] 합니까? \\q 언제까지 제 원수가 저를 이기고 높아지겠습니까?",
+          "B": "언제까지 제가 속으로 이 궁리 저 궁리를 하며 \\q 온종일 마음에 슬픔을 안고 지내야 합니까? \\q 언제까지 제 원수가 저를 이긴 듯 제 위에 서 있겠습니까?",
+          "R": "언제까지 제가 걱정하며 빠져나갈 길을 찾아야 합니까? \\q 언제까지 날마다 슬퍼해야 합니까? \\q 언제까지 제 원수가 저를 이기겠습니까?"
         },
         "pt": {
-          "L": "Até quando porei conselhos na minha alma, tristeza no meu coração de dia? Até quando o meu inimigo será exaltado sobre mim?",
-          "B": "Até quando terei de ficar revirando planos na mente, com tristeza no coração o dia inteiro? Até quando o meu inimigo vai triunfar sobre mim?",
-          "R": "Até quando vou ter de ficar preocupado, procurando uma saída? Até quando vou ficar triste todos os dias? Até quando o meu inimigo vai continuar me vencendo?"
+          "L": "Até quando porei conselhos na minha alma, \\q tristeza no meu coração de dia? \\q Até quando o meu inimigo será exaltado sobre mim?",
+          "B": "Até quando terei de ficar revirando planos na mente, \\q com tristeza no coração o dia inteiro? \\q Até quando o meu inimigo vai triunfar sobre mim?",
+          "R": "Até quando vou ter de ficar preocupado, procurando uma saída? \\q Até quando vou ficar triste todos os dias? \\q Até quando o meu inimigo vai continuar me vencendo?"
         },
         "am": {
-          "L": "በነፍሴ ምክርን፣ በልቤም ቀን ቀን ኀዘንን እስከ መቼ አኖራለሁ? ጠላቴስ በእኔ ላይ እስከ መቼ ከፍ ከፍ ይላል?",
-          "B": "እስከ መቼ በአእምሮዬ ዕቅድ ሳወጣና ሳወርድ፣ ቀኑን ሙሉ በልቤ ኀዘን ይዤ እኖራለሁ? ጠላቴስ በድል እስከ መቼ በላዬ ይቆማል?",
-          "R": "እስከ መቼ እጨነቃለሁ? መውጫ መንገድስ እስከ መቼ እፈልጋለሁ? በየቀኑ ማዘኔ እስከ መቼ ነው? ጠላቴስ እስከ መቼ ያሸንፈኛል?"
+          "L": "በነፍሴ ምክርን፣ \\q በልቤም ቀን ቀን ኀዘንን እስከ መቼ አኖራለሁ? \\q ጠላቴስ በእኔ ላይ እስከ መቼ ከፍ ከፍ ይላል?",
+          "B": "እስከ መቼ በአእምሮዬ ዕቅድ ሳወጣና ሳወርድ፣ \\q ቀኑን ሙሉ በልቤ ኀዘን ይዤ እኖራለሁ? \\q ጠላቴስ በድል እስከ መቼ በላዬ ይቆማል?",
+          "R": "እስከ መቼ እጨነቃለሁ? መውጫ መንገድስ እስከ መቼ እፈልጋለሁ? \\q በየቀኑ ማዘኔ እስከ መቼ ነው? \\q ጠላቴስ እስከ መቼ ያሸንፈኛል?"
+        },
+        "hi": {
+          "L": "कब तक मैं अपने प्राण में युक्तियाँ ठहराता रहूँ, \\q दिन भर अपने हृदय में शोक [रखूँ]? \\q कब तक मेरा शत्रु मुझ पर ऊँचा उठा रहेगा?",
+          "B": "कब तक मुझे अपने मन में उपाय सोचते रहना पड़ेगा, \\q और दिन भर हृदय में दुख सहना पड़ेगा? \\q कब तक मेरा शत्रु जीतकर मुझ पर हावी रहेगा?",
+          "R": "कब तक मुझे चिंता करते और बचने का रास्ता ढूँढ़ते रहना पड़ेगा? \\q कब तक मैं हर दिन उदास रहूँगा? \\q कब तक मेरा शत्रु मुझसे जीतता रहेगा?"
+        },
+        "ru": {
+          "L": "До каких пор мне держать замыслы в душе моей, \\q скорбь в сердце моём днём? \\q До каких пор будет возвышаться мой враг надо мной?",
+          "B": "Сколько ещё мне перебирать в уме замыслы, \\q нося скорбь в сердце весь день? \\q Сколько ещё мой враг будет торжествовать надо мной?",
+          "R": "Сколько ещё мне тревожиться и искать выход? \\q Сколько ещё мне грустить каждый день? \\q Сколько ещё мой враг будет побеждать меня?"
+        },
+        "ja": {
+          "L": "いつまで、わたしは魂のうちに計らいを置き、昼も心に悲しみを抱くのか？ \\q いつまで、わたしの敵はわたしの上に高ぶるのか？",
+          "B": "いつまで、わたしは心の中であれこれと思い巡らし、一日中、心に悲しみを抱いていなければならないのか？ \\q いつまで、敵はわたしの上に勝ち誇って立つのか？",
+          "R": "いつまで、わたしは心配し続け、逃げ道を探し続けなければならないのか？ \\q いつまで、毎日悲しい思いをするのか？いつまで、敵に負け続けるのか？"
+        },
+        "uk": {
+          "L": "Доки я складатиму задуми у своїй душі, горе в моєму серці щодня? \\q Доки мій ворог підноситиметься наді мною?",
+          "B": "Доки мені перебирати задуми в думках, із горем у серці цілий день? \\q Доки мій ворог тріумфуватиме наді мною?",
+          "R": "Доки мені тривожитися й шукати виходу? Доки мені сумувати щодня? \\q Доки мій ворог перемагатиме мене?"
+        },
+        "id": {
+          "L": "Sampai kapan aku menaruh rancangan-rancangan dalam jiwaku, \\q kedukaan dalam hatiku sepanjang hari? \\q Sampai kapan musuhku meninggikan diri atas aku?",
+          "B": "Berapa lama lagi aku harus terus memikirkan rencana dalam batinku, \\q dengan duka dalam hatiku sepanjang hari? \\q Berapa lama lagi musuhku berdiri dengan jaya atas aku?",
+          "R": "Berapa lama lagi aku harus terus khawatir dan mencari jalan keluar? \\q Berapa lama lagi aku merasa sedih setiap hari? \\q Berapa lama lagi musuhku terus menang atas aku?"
         }
       },
       "decisions": [
@@ -415,6 +680,47 @@
           "reason": "The verb means to be raised up: the enemy rises in triumph while the psalmist is brought low.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190130030052"
+          ],
+          "choice": "\"प्राण\" (L); \"मन\" (B)",
+          "alternatives": [
+            "\"आत्मा\""
+          ],
+          "reason": "As the poetry terms note settles, nefesh is \"प्राण\" at Literal and is said as the English level says it at Balanced and Readable; here it is the place where the psalmist turns his plans over, his mind.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "idiom",
+          "tokens": [
+            "o190130030031",
+            "o190130030041",
+            "o190130030052"
+          ],
+          "choice": "\"魂のうちに計らいを置き\" (L), \"心の中であれこれと思い巡らし\" (B), \"心配し続け、逃げ道を探し続け\" (R)",
+          "alternatives": [],
+          "reason": "m1: making plans inside with no way out; Literal keeps the Hebrew picture.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -449,44 +755,69 @@
       "literal_gloss": "Look, answer me, YHWH my God; give light to my eyes, lest I sleep the death,",
       "renderings": {
         "en": {
-          "L": "Look, answer me, {{divine_name:LORD|Yahweh}} my God; give light to my eyes, lest I sleep the [sleep of] death,",
-          "B": "Turn and look, {{divine_name:LORD|Yahweh}} my God, and answer me! Bring the light back to my eyes, or I will fall asleep in death,",
-          "R": "{{divine_name:LORD|Yahweh}} my God, look at me and answer me! Make me strong again, or I will die."
+          "L": "Look, answer me, {{divine_name:LORD|Yahweh}} my God; \\q give light to my eyes, lest I sleep the [sleep of] death,",
+          "B": "Turn and look, {{divine_name:LORD|Yahweh}} my God, and answer me! \\q Bring the light back to my eyes, or I will fall asleep in death,",
+          "R": "{{divine_name:LORD|Yahweh}} my God, look at me and answer me! \\q Make me strong again, or I will die."
         },
         "fr": {
-          "L": "Regarde, réponds-moi, {{divine_name:SEIGNEUR|Yahvé}} mon Dieu ; donne la lumière à mes yeux, de peur que je ne m’endorme [du sommeil de] la mort,",
-          "B": "Tourne-{{deity_pronoun:toi|Toi}} vers moi, regarde, {{divine_name:SEIGNEUR|Yahvé}} mon Dieu, et réponds-moi ! Rends la lumière à mes yeux, sinon je m’endormirai dans la mort,",
-          "R": "{{divine_name:SEIGNEUR|Yahvé}} mon Dieu, regarde-moi et réponds-moi ! Rends-moi des forces, sinon je vais mourir."
+          "L": "Regarde, réponds-moi, {{divine_name:SEIGNEUR|Yahvé}} mon Dieu ; \\q donne la lumière à mes yeux, de peur que je ne m’endorme [du sommeil de] la mort,",
+          "B": "Tourne-{{deity_pronoun:toi|Toi}} vers moi, regarde, {{divine_name:SEIGNEUR|Yahvé}} mon Dieu, et réponds-moi ! \\q Rends la lumière à mes yeux, sinon je m’endormirai dans la mort,",
+          "R": "{{divine_name:SEIGNEUR|Yahvé}} mon Dieu, regarde-moi et réponds-moi ! \\q Rends-moi des forces, sinon je vais mourir."
         },
         "sw": {
-          "L": "Tazama, unijibu, Ee {{divine_name:BWANA|Yahwe}} Mungu wangu; uyatie nuru macho yangu, nisije nikalala [usingizi wa] mauti,",
-          "B": "Geuka uangalie, Ee {{divine_name:BWANA|Yahwe}} Mungu wangu, unijibu! Uirudishe nuru machoni mwangu, la sivyo nitalala usingizi wa kifo,",
-          "R": "{{divine_name:BWANA|Yahwe}} Mungu wangu, uniangalie na unijibu! Unipe nguvu tena, la sivyo nitakufa."
+          "L": "Tazama, unijibu, Ee {{divine_name:BWANA|Yahwe}} Mungu wangu; \\q uyatie nuru macho yangu, \\q nisije nikalala [usingizi wa] mauti,",
+          "B": "Geuka uangalie, Ee {{divine_name:BWANA|Yahwe}} Mungu wangu, unijibu! \\q Uirudishe nuru machoni mwangu, \\q la sivyo nitalala usingizi wa kifo,",
+          "R": "{{divine_name:BWANA|Yahwe}} Mungu wangu, uniangalie na unijibu! \\q Unipe nguvu tena, la sivyo nitakufa."
         },
         "es": {
-          "L": "Mira, respóndeme, {{divine_name:SEÑOR|Yahvé}} Dios mío; da luz a mis ojos, no sea que duerma [el sueño de] la muerte,",
-          "B": "Vuélvete y mira, {{divine_name:SEÑOR|Yahvé}} Dios mío, ¡respóndeme! Devuelve la luz a mis ojos, o me dormiré en la muerte,",
-          "R": "{{divine_name:SEÑOR|Yahvé}} Dios mío, ¡mírame y respóndeme! Dame fuerzas otra vez, o moriré."
+          "L": "Mira, respóndeme, {{divine_name:SEÑOR|Yahvé}} Dios mío; \\q da luz a mis ojos, no sea que duerma [el sueño de] la muerte,",
+          "B": "Vuélvete y mira, {{divine_name:SEÑOR|Yahvé}} Dios mío, ¡respóndeme! \\q Devuelve la luz a mis ojos, o me dormiré en la muerte,",
+          "R": "{{divine_name:SEÑOR|Yahvé}} Dios mío, ¡mírame y respóndeme! \\q Dame fuerzas otra vez, o moriré."
         },
         "vi": {
-          "L": "Xin nhìn xem, xin đáp lời tôi, lạy {{divine_name:CHÚA|Gia-vê}}, Đức Chúa Trời của tôi; xin ban ánh sáng cho mắt tôi, kẻo tôi ngủ [giấc ngủ của] sự chết,",
-          "B": "Lạy {{divine_name:CHÚA|Gia-vê}}, Đức Chúa Trời của tôi, xin quay lại nhìn xem và đáp lời tôi! Xin làm cho mắt tôi sáng lại, kẻo tôi ngủ giấc ngàn thu,",
-          "R": "Lạy {{divine_name:CHÚA|Gia-vê}}, Đức Chúa Trời của tôi, xin nhìn tôi và trả lời tôi! Xin làm cho tôi mạnh mẽ lại, nếu không tôi sẽ chết."
+          "L": "Xin nhìn xem, xin đáp lời tôi, lạy {{divine_name:CHÚA|Gia-vê}}, Đức Chúa Trời của tôi; \\q xin ban ánh sáng cho mắt tôi, \\q kẻo tôi ngủ [giấc ngủ của] sự chết,",
+          "B": "Lạy {{divine_name:CHÚA|Gia-vê}}, Đức Chúa Trời của tôi, xin quay lại nhìn xem và đáp lời tôi! \\q Xin làm cho mắt tôi sáng lại, \\q kẻo tôi ngủ giấc ngàn thu,",
+          "R": "Lạy {{divine_name:CHÚA|Gia-vê}}, Đức Chúa Trời của tôi, xin nhìn tôi và trả lời tôi! \\q Xin làm cho tôi mạnh mẽ lại, nếu không tôi sẽ chết."
         },
         "ko": {
-          "L": "{{divine_name:주|야훼}} 저의 하나님, 보시고 제게 응답해 주십시오. 제 눈을 밝혀 주셔서 제가 죽음의 [잠을] 자지 않게 해 주십시오.",
-          "B": "{{divine_name:주|야훼}} 저의 하나님, 돌아보시고 응답해 주십시오! 제 눈에 다시 빛을 주십시오. 그렇지 않으면 제가 죽음의 잠에 빠지고 말 것입니다.",
-          "R": "{{divine_name:주|야훼}} 저의 하나님, 저를 보시고 대답해 주십시오! 저를 다시 힘 있게 해 주십시오. 그렇지 않으면 저는 죽고 말 것입니다."
+          "L": "{{divine_name:주|야훼}} 저의 하나님, 보시고 제게 응답해 주십시오. \\q 제 눈을 밝혀 주셔서 \\q 제가 죽음의 [잠을] 자지 않게 해 주십시오.",
+          "B": "{{divine_name:주|야훼}} 저의 하나님, 돌아보시고 응답해 주십시오! \\q 제 눈에 다시 빛을 주십시오. \\q 그렇지 않으면 제가 죽음의 잠에 빠지고 말 것입니다.",
+          "R": "{{divine_name:주|야훼}} 저의 하나님, 저를 보시고 대답해 주십시오! \\q 저를 다시 힘 있게 해 주십시오. 그렇지 않으면 저는 죽고 말 것입니다."
         },
         "pt": {
-          "L": "Olha, responde-me, {{divine_name:SENHOR|Javé}}, meu Deus; dá luz aos meus olhos, para que eu não durma o [sono da] morte,",
-          "B": "Volta-te e olha, {{divine_name:SENHOR|Javé}}, meu Deus, e responde-me! Devolve a luz aos meus olhos, senão eu adormecerei na morte,",
-          "R": "{{divine_name:SENHOR|Javé}}, meu Deus, olha para mim e responde! Dá-me forças de novo, senão eu vou morrer."
+          "L": "Olha, responde-me, {{divine_name:SENHOR|Javé}}, meu Deus; \\q dá luz aos meus olhos, para que eu não durma o [sono da] morte,",
+          "B": "Volta-te e olha, {{divine_name:SENHOR|Javé}}, meu Deus, e responde-me! \\q Devolve a luz aos meus olhos, senão eu adormecerei na morte,",
+          "R": "{{divine_name:SENHOR|Javé}}, meu Deus, olha para mim e responde! \\q Dá-me forças de novo, senão eu vou morrer."
         },
         "am": {
-          "L": "{{divine_name:እግዚአብሔር|ያህዌ}} አምላኬ ሆይ፣ ተመልከት፤ መልስልኝ፤ የሞትን [እንቅልፍ] እንዳላንቀላፋ ዓይኖቼን አብራ፣",
-          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} አምላኬ ሆይ፣ ዘወር ብለህ ተመልከት፤ መልስልኝም! ብርሃንን ወደ ዓይኖቼ መልስ፤ ያለዚያ በሞት አንቀላፋለሁ፤",
-          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} አምላኬ ሆይ፣ ተመልከተኝ፤ መልስልኝም! እንደ ገና አበርታኝ፤ ያለዚያ እሞታለሁ።"
+          "L": "{{divine_name:እግዚአብሔር|ያህዌ}} አምላኬ ሆይ፣ ተመልከት፤ \\q መልስልኝ፤ \\q የሞትን [እንቅልፍ] እንዳላንቀላፋ ዓይኖቼን አብራ፣",
+          "B": "{{divine_name:እግዚአብሔር|ያህዌ}} አምላኬ ሆይ፣ ዘወር ብለህ ተመልከት፤ \\q መልስልኝም! ብርሃንን ወደ ዓይኖቼ መልስ፤ \\q ያለዚያ በሞት አንቀላፋለሁ፤",
+          "R": "{{divine_name:እግዚአብሔር|ያህዌ}} አምላኬ ሆይ፣ ተመልከተኝ፤ \\q መልስልኝም! እንደ ገና አበርታኝ፤ ያለዚያ እሞታለሁ።"
+        },
+        "hi": {
+          "L": "देख, मुझे उत्तर दे, हे {{divine_name:प्रभु|याहवे}} मेरे परमेश्वर; \\q मेरी आँखों को ज्योति दे, ऐसा न हो कि मैं मृत्यु की [नींद] सो जाऊँ,",
+          "B": "हे {{divine_name:प्रभु|याहवे}} मेरे परमेश्वर, मेरी ओर देख और मुझे उत्तर दे! \\q मेरी आँखों में फिर से ज्योति ला, नहीं तो मैं मृत्यु की नींद सो जाऊँगा,",
+          "R": "हे {{divine_name:प्रभु|याहवे}} मेरे परमेश्वर, मेरी ओर देख और मुझे जवाब दे! \\q मुझे फिर से बल दे, नहीं तो मैं मर जाऊँगा।"
+        },
+        "ru": {
+          "L": "Взгляни, ответь мне, {{divine_name:ГОСПОДИ|Яхве}}, Боже мой; \\q дай свет моим глазам, чтобы мне не уснуть [сном] смерти,",
+          "B": "Обернись, взгляни, {{divine_name:ГОСПОДИ|Яхве}}, Боже мой, и ответь мне! \\q Верни свет моим глазам, иначе я усну смертным сном,",
+          "R": "{{divine_name:ГОСПОДИ|Яхве}}, Боже мой, посмотри на меня и ответь мне! \\q Дай мне снова силы, иначе я умру."
+        },
+        "ja": {
+          "L": "顧みて、わたしに答えてください、{{divine_name:主|ヤハウェ}}よ、わたしの神よ。 \\q わたしの目に光を与えてください。わたしが死の[眠りに]眠ることのないように。",
+          "B": "振り向いて、ご覧ください、{{divine_name:主|ヤハウェ}}よ、わたしの神よ。わたしに答えてください！ \\q わたしの目に、光を取り戻させてください。そうでなければ、わたしは死の眠りに落ちてしまう。",
+          "R": "{{divine_name:主|ヤハウェ}}よ、わたしの神よ、わたしを見て、答えてください！ \\q もう一度、わたしを強くしてください。そうでなければ、わたしは死んでしまう。"
+        },
+        "uk": {
+          "L": "Поглянь, відповідай мені, {{divine_name:ГОСПОДИ|Ягве}}, мій Боже; \\q дай світло моїм очам, щоб я не заснув [сном] смерті,",
+          "B": "Зглянься, {{divine_name:ГОСПОДИ|Ягве}}, мій Боже, і відповідай мені! \\q Поверни світло моїм очам, інакше я засну смертним сном,",
+          "R": "{{divine_name:ГОСПОДИ|Ягве}}, мій Боже, поглянь на мене й відповідай мені! \\q Зміцни мене знову, бо інакше я помру."
+        },
+        "id": {
+          "L": "Pandanglah, jawablah aku, {{divine_name:TUHAN|Yahweh}}, Allahku; \\q terangilah mataku, supaya jangan aku tertidur [dalam] kematian,",
+          "B": "Berpalinglah dan pandanglah, {{divine_name:TUHAN|Yahweh}}, Allahku, dan jawablah aku! \\q Kembalikanlah terang ke mataku, supaya aku tidak tertidur dalam kematian,",
+          "R": "{{divine_name:TUHAN|Yahweh}}, Allahku, pandanglah aku dan jawablah aku! \\q Buatlah aku kuat lagi, supaya aku tidak mati."
         }
       },
       "decisions": [
@@ -575,6 +906,47 @@
           "reason": "Vietnamese has its own gentle idiom for death as sleep, which says what the Hebrew says without sounding foreign; Literal keeps the Hebrew words and Readable says \"die\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o190130040092"
+          ],
+          "choice": "Verse 4 ends with a full stop; verse 5 carries its own …ないように (L) or そして / そうなれば (B, R)",
+          "alternatives": [],
+          "reason": "m3: the English sentence runs on into verse 5; Japanese finishes each verse so the \"lest\" clauses can follow.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "idiom",
+          "tokens": [
+            "o190130040081",
+            "o190130040092",
+            "o190130040051",
+            "o190130040061"
+          ],
+          "choice": "\"死の[眠りに]眠る\" (L), \"死の眠りに落ちる\" (B), \"死んでしまう\" (R); \"目に光を\" (L, B), \"強くしてください\" (R)",
+          "alternatives": [],
+          "reason": "m2: sleeping the death is dying; r-en-1 gives the sense of the light in the eyes at Readable.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -605,44 +977,69 @@
       "literal_gloss": "lest says my enemy, I have prevailed over him; my foes rejoice because I am shaken.",
       "renderings": {
         "en": {
-          "L": "lest my enemy say, \"I have prevailed over him,\" [lest] my foes rejoice because I am shaken.",
-          "B": "and my enemy will say, \"I have beaten him,\" and those against me will celebrate when I stumble.",
-          "R": "Then my enemy will say, \"I won!\" The people who are against me will be glad to see me fall."
+          "L": "lest my enemy say, \"I have prevailed over him,\" \\q [lest] my foes rejoice because I am shaken.",
+          "B": "and my enemy will say, \"I have beaten him,\" \\q and those against me will celebrate when I stumble.",
+          "R": "Then my enemy will say, \"I won!\" \\q The people who are against me will be glad to see me fall."
         },
         "fr": {
-          "L": "de peur que mon ennemi ne dise : « Je l’ai emporté sur lui », [que] mes adversaires ne se réjouissent parce que je chancelle.",
-          "B": "et mon ennemi dira : « Je l’ai battu », et ceux qui sont contre moi feront la fête en me voyant trébucher.",
-          "R": "Alors mon ennemi dira : « J’ai gagné ! » Ceux qui sont contre moi seront contents de me voir tomber."
+          "L": "de peur que mon ennemi ne dise : « Je l’ai emporté sur lui », \\q [que] mes adversaires ne se réjouissent parce que je chancelle.",
+          "B": "et mon ennemi dira : « Je l’ai battu », \\q et ceux qui sont contre moi feront la fête en me voyant trébucher.",
+          "R": "Alors mon ennemi dira : « J’ai gagné ! » \\q Ceux qui sont contre moi seront contents de me voir tomber."
         },
         "sw": {
-          "L": "adui yangu asije akasema, \"Nimemshinda,\" [na] watesi wangu wakashangilia kwa sababu nimetikisika.",
-          "B": "na adui yangu atasema, \"Nimemshinda,\" nao walio kinyume nami watasherehekea nitakapojikwaa.",
-          "R": "Ndipo adui yangu atasema, \"Nimeshinda!\" Watu walio kinyume nami watafurahi kuniona nikianguka."
+          "L": "adui yangu asije akasema, \"Nimemshinda,\" \\q [na] watesi wangu wakashangilia kwa sababu nimetikisika.",
+          "B": "na adui yangu atasema, \"Nimemshinda,\" \\q nao walio kinyume nami watasherehekea nitakapojikwaa.",
+          "R": "Ndipo adui yangu atasema, \"Nimeshinda!\" \\q Watu walio kinyume nami watafurahi kuniona nikianguka."
         },
         "es": {
-          "L": "no sea que diga mi enemigo: «Lo he vencido», [que] mis adversarios se alegren porque yo vacilo.",
-          "B": "y mi enemigo dirá: «Lo he derrotado», y los que están contra mí harán fiesta cuando yo tropiece.",
-          "R": "Entonces mi enemigo dirá: «¡Gané!». La gente que está contra mí se alegrará de verme caer."
+          "L": "no sea que diga mi enemigo: «Lo he vencido», \\q [que] mis adversarios se alegren porque yo vacilo.",
+          "B": "y mi enemigo dirá: «Lo he derrotado», \\q y los que están contra mí harán fiesta cuando yo tropiece.",
+          "R": "Entonces mi enemigo dirá: «¡Gané!». \\q La gente que está contra mí se alegrará de verme caer."
         },
         "vi": {
-          "L": "kẻo kẻ thù tôi nói: \"Ta đã thắng hắn,\" [kẻo] các kẻ chống đối tôi vui mừng vì tôi bị lay chuyển.",
-          "B": "và kẻ thù tôi sẽ nói: \"Ta đã đánh bại hắn,\" còn những kẻ chống lại tôi sẽ reo mừng khi tôi vấp ngã.",
-          "R": "Rồi kẻ thù tôi sẽ nói: \"Ta thắng rồi!\" Những kẻ chống lại tôi sẽ vui mừng khi thấy tôi ngã."
+          "L": "kẻo kẻ thù tôi nói: \"Ta đã thắng hắn,\" \\q [kẻo] các kẻ chống đối tôi vui mừng vì tôi bị lay chuyển.",
+          "B": "và kẻ thù tôi sẽ nói: \"Ta đã đánh bại hắn,\" \\q còn những kẻ chống lại tôi sẽ reo mừng khi tôi vấp ngã.",
+          "R": "Rồi kẻ thù tôi sẽ nói: \"Ta thắng rồi!\" \\q Những kẻ chống lại tôi sẽ vui mừng khi thấy tôi ngã."
         },
         "ko": {
-          "L": "제 원수가 \"내가 그를 이겼다\" 하고 말하지 않게, 제가 흔들린다고 제 대적들이 기뻐하지 않게 해 주십시오.",
-          "B": "그러면 제 원수가 \"내가 그를 이겼다\" 하고 말하고, 저를 대적하는 자들은 제가 넘어질 때 기뻐할 것입니다.",
-          "R": "그러면 제 원수가 \"내가 이겼다!\" 하고 말할 것입니다. 저를 미워하는 사람들은 제가 넘어지는 것을 보고 기뻐할 것입니다."
+          "L": "제 원수가 \"내가 그를 이겼다\" 하고 말하지 않게, \\q 제가 흔들린다고 제 대적들이 기뻐하지 않게 해 주십시오.",
+          "B": "그러면 제 원수가 \"내가 그를 이겼다\" 하고 말하고, \\q 저를 대적하는 자들은 제가 넘어질 때 기뻐할 것입니다.",
+          "R": "그러면 제 원수가 \"내가 이겼다!\" 하고 말할 것입니다. \\q 저를 미워하는 사람들은 제가 넘어지는 것을 보고 기뻐할 것입니다."
         },
         "pt": {
-          "L": "para que o meu inimigo não diga: \"Prevaleci contra ele\", [para que] os meus adversários não se alegrem porque eu vacilo.",
-          "B": "e o meu inimigo dirá: \"Eu o venci\", e os que estão contra mim vão festejar quando eu tropeçar.",
-          "R": "Então o meu inimigo vai dizer: \"Ganhei!\" As pessoas que estão contra mim vão ficar contentes ao me ver cair."
+          "L": "para que o meu inimigo não diga: \"Prevaleci contra ele\", \\q [para que] os meus adversários não se alegrem porque eu vacilo.",
+          "B": "e o meu inimigo dirá: \"Eu o venci\", \\q e os que estão contra mim vão festejar quando eu tropeçar.",
+          "R": "Então o meu inimigo vai dizer: \"Ganhei!\" \\q As pessoas que estão contra mim vão ficar contentes ao me ver cair."
         },
         "am": {
-          "L": "ጠላቴ፦ «አሸነፍኩት» እንዳይል፣ ባላጋራዎቼም ስለ ተናወጥኩ ሐሤት እንዳያደርጉ።",
-          "B": "ጠላቴም «አሸነፍኩት» ይላል፤ የሚቃወሙኝም በመሰናከሌ ይፈነጥዛሉ።",
-          "R": "ከዚያም ጠላቴ «አሸነፍኩ!» ይላል። የሚቃወሙኝ ሰዎች ስወድቅ በማየታቸው ደስ ይላቸዋል።"
+          "L": "ጠላቴ፦ «አሸነፍኩት» እንዳይል፣ \\q ባላጋራዎቼም ስለ ተናወጥኩ ሐሤት እንዳያደርጉ።",
+          "B": "ጠላቴም «አሸነፍኩት» ይላል፤ \\q የሚቃወሙኝም በመሰናከሌ ይፈነጥዛሉ።",
+          "R": "ከዚያም ጠላቴ «አሸነፍኩ!» ይላል። \\q የሚቃወሙኝ ሰዎች ስወድቅ በማየታቸው ደስ ይላቸዋል።"
+        },
+        "hi": {
+          "L": "ऐसा न हो कि मेरा शत्रु कहे, \"मैं उस पर प्रबल हुआ,\" \\q [और] मेरे विरोधी मगन हों कि मैं डगमगा गया।",
+          "B": "और मेरा शत्रु कहेगा, \"मैंने उसे हरा दिया,\" \\q और मेरे विरोधी मेरे लड़खड़ाने पर आनंद मनाएँगे।",
+          "R": "तब मेरा शत्रु कहेगा, \"मैं जीत गया!\" \\q मेरे विरोधी मुझे गिरते देखकर ख़ुश होंगे।"
+        },
+        "ru": {
+          "L": "чтобы не сказал мой враг: «Я одолел его», \\q [чтобы] не радовались мои противники, что я пошатнулся.",
+          "B": "и мой враг скажет: «Я победил его», \\q а мои противники будут ликовать, когда я споткнусь.",
+          "R": "Тогда мой враг скажет: «Я победил!» \\q Те, кто против меня, будут рады увидеть, как я падаю."
+        },
+        "ja": {
+          "L": "わたしの敵が「わたしは彼に勝った」と言うことのないように。 \\q わたしが揺るがされるとき、わたしの仇たちが喜ぶことのないように。",
+          "B": "そして敵は「あいつに勝った」と言い、わたしに逆らう者たちは、 \\q わたしがつまずくのを見て喜び祝うだろう。",
+          "R": "そうなれば、敵は「勝った！」と言うだろう。 \\q わたしに逆らう人たちは、わたしが倒れるのを見て喜ぶだろう。"
+        },
+        "uk": {
+          "L": "щоб мій ворог не сказав: «Я подолав його», \\q [щоб] мої супротивники не раділи, що я похитнувся.",
+          "B": "і мій ворог скаже: «Я його переміг», а ті, \\q хто проти мене, святкуватимуть, коли я спіткнуся.",
+          "R": "Тоді мій ворог скаже: «Я переміг!» \\q Люди, які проти мене, радітимуть, побачивши, що я впав."
+        },
+        "id": {
+          "L": "supaya jangan musuhku berkata, \"Aku telah mengalahkan dia,\" \\q [supaya jangan] lawan-lawanku bersorak-sorai karena aku goyah.",
+          "B": "supaya musuhku tidak berkata, \"Aku telah mengalahkan dia,\" \\q dan lawan-lawanku tidak bersorak-sorai ketika aku tergelincir.",
+          "R": "Kalau tidak, musuhku akan berkata, \"Aku menang!\" \\q Orang-orang yang melawan aku akan senang melihat aku jatuh."
         }
       },
       "decisions": [
@@ -713,6 +1110,25 @@
           "reason": "The Hebrew sentence runs from verse 4 into verse 5. Korean closes verse 4 and gives verse 5 its own request so that each verse keeps its own words after its number.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "grammar",
+          "tokens": [
+            "o190130050011"
+          ],
+          "choice": "\"…ことのないように\" (L) for lest; \"そして…だろう\" (B), \"そうなれば…だろう\" (R) as the English",
+          "alternatives": [],
+          "reason": "m2: the clause gives the fear behind the prayer; Balanced and Readable state it as what would follow.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -751,44 +1167,69 @@
       "literal_gloss": "But I, in your loyal love I have trusted; my heart will rejoice in your salvation; I will sing to YHWH, for he has dealt fully with me.",
       "renderings": {
         "en": {
-          "L": "But I, in {{deity_pronoun:your|Your}} loyal love I have trusted; my heart will rejoice in {{deity_pronoun:your|Your}} salvation. I will sing to {{divine_name:the LORD|Yahweh}}, for {{deity_pronoun:he|He}} has dealt fully with me.",
-          "B": "But I trust in {{deity_pronoun:your|Your}} loyal love; my heart will be glad because {{deity_pronoun:you|You}} save. I will sing to {{divine_name:the LORD|Yahweh}}, because {{deity_pronoun:he|He}} has been so generous to me.",
-          "R": "But I trust in {{deity_pronoun:your|Your}} faithful love. I will be full of joy when {{deity_pronoun:you|You}} save me. I will sing to {{divine_name:the LORD|Yahweh}}, because {{deity_pronoun:he|He}} has been so kind to me."
+          "L": "But I, in {{deity_pronoun:your|Your}} loyal love I have trusted; \\q my heart will rejoice in {{deity_pronoun:your|Your}} salvation. \\q I will sing to {{divine_name:the LORD|Yahweh}}, \\q for {{deity_pronoun:he|He}} has dealt fully with me.",
+          "B": "But I trust in {{deity_pronoun:your|Your}} loyal love; \\q my heart will be glad because {{deity_pronoun:you|You}} save. \\q I will sing to {{divine_name:the LORD|Yahweh}}, \\q because {{deity_pronoun:he|He}} has been so generous to me.",
+          "R": "But I trust in {{deity_pronoun:your|Your}} faithful love. \\q I will be full of joy when {{deity_pronoun:you|You}} save me. \\q I will sing to {{divine_name:the LORD|Yahweh}}, \\q because {{deity_pronoun:he|He}} has been so kind to me."
         },
         "fr": {
-          "L": "Mais moi, en {{deity_pronoun:ton|Ton}} amour loyal je me suis confié ; mon cœur se réjouira de {{deity_pronoun:ton|Ton}} salut. Je chanterai {{divine_name:au SEIGNEUR|à Yahvé}}, car {{deity_pronoun:il|Il}} m’a comblé.",
-          "B": "Mais moi, je compte sur {{deity_pronoun:ton|Ton}} amour fidèle ; mon cœur sera dans la joie, car {{deity_pronoun:tu|Tu}} sauves. Je chanterai pour {{divine_name:le SEIGNEUR|Yahvé}}, parce qu’{{deity_pronoun:il|Il}} a été si généreux envers moi.",
-          "R": "Mais moi, je compte sur {{deity_pronoun:ton|Ton}} amour fidèle. Je serai plein de joie quand {{deity_pronoun:tu|Tu}} me sauveras. Je chanterai pour {{divine_name:le SEIGNEUR|Yahvé}}, parce qu’{{deity_pronoun:il|Il}} a été si bon pour moi."
+          "L": "Mais moi, en {{deity_pronoun:ton|Ton}} amour loyal je me suis confié ; \\q mon cœur se réjouira de {{deity_pronoun:ton|Ton}} salut. \\q Je chanterai {{divine_name:au SEIGNEUR|à Yahvé}}, \\q car {{deity_pronoun:il|Il}} m’a comblé.",
+          "B": "Mais moi, je compte sur {{deity_pronoun:ton|Ton}} amour fidèle ; \\q mon cœur sera dans la joie, car {{deity_pronoun:tu|Tu}} sauves. \\q Je chanterai pour {{divine_name:le SEIGNEUR|Yahvé}}, \\q parce qu’{{deity_pronoun:il|Il}} a été si généreux envers moi.",
+          "R": "Mais moi, je compte sur {{deity_pronoun:ton|Ton}} amour fidèle. \\q Je serai plein de joie quand {{deity_pronoun:tu|Tu}} me sauveras. \\q Je chanterai pour {{divine_name:le SEIGNEUR|Yahvé}}, \\q parce qu’{{deity_pronoun:il|Il}} a été si bon pour moi."
         },
         "sw": {
-          "L": "Lakini mimi, katika upendo {{deity_pronoun:wako|Wako}} usiokoma nimetumaini; moyo wangu utaufurahia wokovu {{deity_pronoun:wako|Wako}}. Nitamwimbia {{divine_name:BWANA|Yahwe}}, kwa maana amenitendea mema kwa ukamilifu.",
-          "B": "Lakini mimi ninautumainia upendo {{deity_pronoun:wako|Wako}} usiokoma; moyo wangu utafurahi kwa sababu unaokoa. Nitamwimbia {{divine_name:BWANA|Yahwe}}, kwa sababu amekuwa mkarimu sana kwangu.",
-          "R": "Lakini ninautumainia upendo {{deity_pronoun:wako|Wako}} usiokoma. Nitajaa furaha utakaponiokoa. Nitamwimbia {{divine_name:BWANA|Yahwe}}, kwa sababu amenitendea wema mwingi."
+          "L": "Lakini mimi, katika upendo {{deity_pronoun:wako|Wako}} usiokoma nimetumaini; moyo wangu utaufurahia wokovu {{deity_pronoun:wako|Wako}}. \\q Nitamwimbia {{divine_name:BWANA|Yahwe}}, \\q kwa maana amenitendea mema kwa ukamilifu.",
+          "B": "Lakini mimi ninautumainia upendo {{deity_pronoun:wako|Wako}} usiokoma; moyo wangu utafurahi kwa sababu unaokoa. \\q Nitamwimbia {{divine_name:BWANA|Yahwe}}, \\q kwa sababu amekuwa mkarimu sana kwangu.",
+          "R": "Lakini ninautumainia upendo {{deity_pronoun:wako|Wako}} usiokoma. Nitajaa furaha utakaponiokoa. \\q Nitamwimbia {{divine_name:BWANA|Yahwe}}, \\q kwa sababu amenitendea wema mwingi."
         },
         "es": {
-          "L": "Pero yo, en {{deity_pronoun:tu|Tu}} amor leal he confiado; mi corazón se alegrará en {{deity_pronoun:tu|Tu}} salvación. Cantaré {{divine_name:al SEÑOR|a Yahvé}}, porque {{deity_pronoun:él|Él}} me ha tratado con generosidad.",
-          "B": "Pero yo confío en {{deity_pronoun:tu|Tu}} amor fiel; mi corazón se alegrará porque {{deity_pronoun:tú|Tú}} salvas. Cantaré {{divine_name:al SEÑOR|a Yahvé}}, porque {{deity_pronoun:él|Él}} ha sido muy generoso conmigo.",
-          "R": "Pero yo confío en {{deity_pronoun:tu|Tu}} amor fiel. Estaré lleno de alegría cuando {{deity_pronoun:tú|Tú}} me salves. Cantaré {{divine_name:al SEÑOR|a Yahvé}}, porque {{deity_pronoun:él|Él}} ha sido muy bueno conmigo."
+          "L": "Pero yo, en {{deity_pronoun:tu|Tu}} amor leal he confiado; \\q mi corazón se alegrará en {{deity_pronoun:tu|Tu}} salvación. \\q Cantaré {{divine_name:al SEÑOR|a Yahvé}}, \\q porque {{deity_pronoun:él|Él}} me ha tratado con generosidad.",
+          "B": "Pero yo confío en {{deity_pronoun:tu|Tu}} amor fiel; \\q mi corazón se alegrará porque {{deity_pronoun:tú|Tú}} salvas. \\q Cantaré {{divine_name:al SEÑOR|a Yahvé}}, \\q porque {{deity_pronoun:él|Él}} ha sido muy generoso conmigo.",
+          "R": "Pero yo confío en {{deity_pronoun:tu|Tu}} amor fiel. \\q Estaré lleno de alegría cuando {{deity_pronoun:tú|Tú}} me salves. \\q Cantaré {{divine_name:al SEÑOR|a Yahvé}}, \\q porque {{deity_pronoun:él|Él}} ha sido muy bueno conmigo."
         },
         "vi": {
-          "L": "Nhưng tôi, tôi đã tin cậy nơi tình yêu thương thành tín của {{deity_pronoun:ngài|Ngài}}; lòng tôi sẽ vui mừng trong sự cứu rỗi của {{deity_pronoun:ngài|Ngài}}. Tôi sẽ hát cho {{divine_name:CHÚA|Gia-vê}}, vì {{deity_pronoun:ngài|Ngài}} đã đối xử trọn vẹn với tôi.",
-          "B": "Nhưng tôi tin cậy nơi tình yêu thương thành tín của {{deity_pronoun:ngài|Ngài}}; lòng tôi sẽ vui mừng vì {{deity_pronoun:ngài|Ngài}} giải cứu. Tôi sẽ hát cho {{divine_name:CHÚA|Gia-vê}}, vì {{deity_pronoun:ngài|Ngài}} đã ban ơn dồi dào cho tôi.",
-          "R": "Nhưng tôi tin cậy nơi tình thương không hề thay đổi của {{deity_pronoun:ngài|Ngài}}. Tôi sẽ tràn đầy vui mừng khi {{deity_pronoun:ngài|Ngài}} cứu tôi. Tôi sẽ hát cho {{divine_name:CHÚA|Gia-vê}}, vì {{deity_pronoun:ngài|Ngài}} đã đối xử với tôi thật tốt lành."
+          "L": "Nhưng tôi, tôi đã tin cậy nơi tình yêu thương thành tín của {{deity_pronoun:ngài|Ngài}}; lòng tôi sẽ vui mừng trong sự cứu rỗi của {{deity_pronoun:ngài|Ngài}}. \\q Tôi sẽ hát cho {{divine_name:CHÚA|Gia-vê}}, \\q vì {{deity_pronoun:ngài|Ngài}} đã đối xử trọn vẹn với tôi.",
+          "B": "Nhưng tôi tin cậy nơi tình yêu thương thành tín của {{deity_pronoun:ngài|Ngài}}; lòng tôi sẽ vui mừng vì {{deity_pronoun:ngài|Ngài}} giải cứu. \\q Tôi sẽ hát cho {{divine_name:CHÚA|Gia-vê}}, \\q vì {{deity_pronoun:ngài|Ngài}} đã ban ơn dồi dào cho tôi.",
+          "R": "Nhưng tôi tin cậy nơi tình thương không hề thay đổi của {{deity_pronoun:ngài|Ngài}}. Tôi sẽ tràn đầy vui mừng khi {{deity_pronoun:ngài|Ngài}} cứu tôi. \\q Tôi sẽ hát cho {{divine_name:CHÚA|Gia-vê}}, \\q vì {{deity_pronoun:ngài|Ngài}} đã đối xử với tôi thật tốt lành."
         },
         "ko": {
-          "L": "그러나 저는 주님의 한결같은 사랑을 신뢰하였으니, 제 마음이 주님의 구원으로 기뻐할 것입니다. 제가 {{divine_name:주|야훼}}께 노래하겠습니다. 그분께서 저를 넉넉히 대해 주셨기 때문입니다.",
-          "B": "그러나 저는 주님의 한결같은 사랑을 믿습니다. 주님께서 구원해 주시니 제 마음이 기뻐할 것입니다. 제가 {{divine_name:주|야훼}}께 노래하겠습니다. 그분께서 제게 그토록 너그러우셨기 때문입니다.",
-          "R": "그러나 저는 주님의 변함없는 사랑을 믿습니다. 주님께서 저를 구원해 주실 때 저는 기쁨이 넘칠 것입니다. 저는 {{divine_name:주|야훼}}께 노래하겠습니다. 그분께서 제게 그토록 잘해 주셨기 때문입니다."
+          "L": "그러나 저는 주님의 한결같은 사랑을 신뢰하였으니, 제 마음이 주님의 구원으로 기뻐할 것입니다. \\q 제가 {{divine_name:주|야훼}}께 노래하겠습니다. \\q 그분께서 저를 넉넉히 대해 주셨기 때문입니다.",
+          "B": "그러나 저는 주님의 한결같은 사랑을 믿습니다. 주님께서 구원해 주시니 제 마음이 기뻐할 것입니다. \\q 제가 {{divine_name:주|야훼}}께 노래하겠습니다. \\q 그분께서 제게 그토록 너그러우셨기 때문입니다.",
+          "R": "그러나 저는 주님의 변함없는 사랑을 믿습니다. 주님께서 저를 구원해 주실 때 저는 기쁨이 넘칠 것입니다. \\q 저는 {{divine_name:주|야훼}}께 노래하겠습니다. \\q 그분께서 제게 그토록 잘해 주셨기 때문입니다."
         },
         "pt": {
-          "L": "Mas eu, no {{deity_pronoun:teu|Teu}} amor leal confiei; o meu coração se alegrará na {{deity_pronoun:tua|Tua}} salvação. Cantarei {{divine_name:ao SENHOR|a Javé}}, porque {{deity_pronoun:ele|Ele}} me recompensou plenamente.",
-          "B": "Mas eu confio no {{deity_pronoun:teu|Teu}} amor leal; o meu coração vai se alegrar porque {{deity_pronoun:tu|Tu}} salvas. Cantarei {{divine_name:ao SENHOR|a Javé}}, porque {{deity_pronoun:ele|Ele}} tem sido tão generoso comigo.",
-          "R": "Mas eu confio no {{deity_pronoun:teu|Teu}} amor fiel. Vou ficar cheio de alegria quando {{deity_pronoun:tu|Tu}} me salvares. Vou cantar {{divine_name:ao SENHOR|a Javé}}, porque {{deity_pronoun:ele|Ele}} tem sido muito bondoso comigo."
+          "L": "Mas eu, no {{deity_pronoun:teu|Teu}} amor leal confiei; \\q o meu coração se alegrará na {{deity_pronoun:tua|Tua}} salvação. \\q Cantarei {{divine_name:ao SENHOR|a Javé}}, \\q porque {{deity_pronoun:ele|Ele}} me recompensou plenamente.",
+          "B": "Mas eu confio no {{deity_pronoun:teu|Teu}} amor leal; \\q o meu coração vai se alegrar porque {{deity_pronoun:tu|Tu}} salvas. \\q Cantarei {{divine_name:ao SENHOR|a Javé}}, \\q porque {{deity_pronoun:ele|Ele}} tem sido tão generoso comigo.",
+          "R": "Mas eu confio no {{deity_pronoun:teu|Teu}} amor fiel. \\q Vou ficar cheio de alegria quando {{deity_pronoun:tu|Tu}} me salvares. \\q Vou cantar {{divine_name:ao SENHOR|a Javé}}, \\q porque {{deity_pronoun:ele|Ele}} tem sido muito bondoso comigo."
         },
         "am": {
-          "L": "እኔ ግን በጽኑ ፍቅርህ ታመንኩ፤ ልቤ በማዳንህ ሐሤት ያደርጋል። {{divine_name:ለእግዚአብሔር|ለያህዌ}} እዘምራለሁ፤ በእኔ ላይ በሙላት አድርጓልና።",
-          "B": "እኔ ግን በጽኑ ፍቅርህ እታመናለሁ፤ ስለምታድን ልቤ ደስ ይለዋል። {{divine_name:ለእግዚአብሔር|ለያህዌ}} እዘምራለሁ፤ እጅግ ቸር ሆኖልኛልና።",
-          "R": "እኔ ግን በጽኑ ፍቅርህ እታመናለሁ። ስታድነኝ እጅግ ደስ ይለኛል። {{divine_name:ለእግዚአብሔር|ለያህዌ}} እዘምራለሁ፤ እጅግ መልካም አድርጎልኛልና።"
+          "L": "እኔ ግን በጽኑ ፍቅርህ ታመንኩ፤ ልቤ በማዳንህ ሐሤት ያደርጋል። \\q {{divine_name:ለእግዚአብሔር|ለያህዌ}} እዘምራለሁ፤ \\q በእኔ ላይ በሙላት አድርጓልና።",
+          "B": "እኔ ግን በጽኑ ፍቅርህ እታመናለሁ፤ ስለምታድን ልቤ ደስ ይለዋል። \\q {{divine_name:ለእግዚአብሔር|ለያህዌ}} እዘምራለሁ፤ \\q እጅግ ቸር ሆኖልኛልና።",
+          "R": "እኔ ግን በጽኑ ፍቅርህ እታመናለሁ። ስታድነኝ እጅግ ደስ ይለኛል። \\q {{divine_name:ለእግዚአብሔር|ለያህዌ}} እዘምራለሁ፤ \\q እጅግ መልካም አድርጎልኛልና።"
+        },
+        "hi": {
+          "L": "पर मैंने तो तेरे अटल प्रेम पर भरोसा रखा है; \\q मेरा हृदय तेरे उद्धार से मगन होगा। \\q मैं {{divine_name:प्रभु|याहवे}} के लिए गाऊँगा, \\q क्योंकि उन्होंने मेरे साथ भरपूर भलाई की है।",
+          "B": "पर मैं तेरे अटल प्रेम पर भरोसा रखता हूँ; \\q मेरा हृदय आनंदित होगा, क्योंकि तू उद्धार करता है। \\q मैं {{divine_name:प्रभु|याहवे}} का गीत गाऊँगा, \\q क्योंकि उन्होंने मुझ पर बड़ी उदारता दिखाई है।",
+          "R": "पर मैं तेरे अटल प्रेम पर भरोसा रखता हूँ। \\q जब तू मुझे बचाएगा, तब मैं आनंद से भर जाऊँगा। \\q मैं {{divine_name:प्रभु|याहवे}} के लिए गीत गाऊँगा, \\q क्योंकि वे मुझ पर बहुत दयालु रहे हैं।"
+        },
+        "ru": {
+          "L": "А я — на {{deity_pronoun:твою|Твою}} неизменную любовь я положился; \\q возрадуется моё сердце {{deity_pronoun:твоему|Твоему}} спасению. \\q Буду петь {{divine_name:ГОСПОДУ|Яхве}}, \\q потому что {{deity_pronoun:он|Он}} щедро поступил со мной.",
+          "B": "А я верю {{deity_pronoun:твоей|Твоей}} неизменной любви; \\q моё сердце будет радоваться, потому что {{deity_pronoun:ты|Ты}} спасаешь. \\q Я буду петь {{divine_name:ГОСПОДУ|Яхве}}, \\q потому что {{deity_pronoun:он|Он}} был так щедр ко мне.",
+          "R": "А я надеюсь на {{deity_pronoun:твою|Твою}} неизменную любовь. \\q Я буду полон радости, когда {{deity_pronoun:ты|Ты}} спасёшь меня. \\q Я буду петь {{divine_name:ГОСПОДУ|Яхве}}, \\q потому что {{deity_pronoun:он|Он}} так добр ко мне."
+        },
+        "ja": {
+          "L": "しかし、わたしは、あなたの誠実に信頼した。わたしの心は、あなたの救いを喜ぶ。 \\q わたしは{{divine_name:主|ヤハウェ}}に歌おう。 \\q その方が、わたしに豊かに報いてくださったのだから。",
+          "B": "しかし、わたしはあなたの変わらぬいつくしみに信頼する。あなたが救ってくださるので、わたしの心は喜ぶ。 \\q わたしは{{divine_name:主|ヤハウェ}}に歌おう。 \\q その方は、わたしにこれほど良くしてくださったのだから。",
+          "R": "でも、わたしはあなたの変わらぬいつくしみに信頼する。あなたが救ってくださるとき、わたしは喜びでいっぱいになる。 \\q わたしは{{divine_name:主|ヤハウェ}}に歌おう。 \\q その方は、わたしにとても優しくしてくださったのだから。"
+        },
+        "uk": {
+          "L": "А я на {{deity_pronoun:твою|Твою}} незмінну любов поклався; моє серце радітиме {{deity_pronoun:твоїм|Твоїм}} спасінням. \\q Я співатиму {{divine_name:ГОСПОДУ|Ягве}}, \\q бо {{deity_pronoun:він|Він}} щедро вчинив зі мною.",
+          "B": "А я покладаюся на {{deity_pronoun:твою|Твою}} незмінну любов; моє серце радітиме, бо {{deity_pronoun:ти|Ти}} спасаєш. \\q Я співатиму {{divine_name:ГОСПОДУ|Ягве}}, \\q бо {{deity_pronoun:він|Він}} був такий щедрий до мене.",
+          "R": "Але я довіряю {{deity_pronoun:твоїй|Твоїй}} вірній любові. Я сповнюся радості, коли {{deity_pronoun:ти|Ти}} спасеш мене. \\q Я співатиму {{divine_name:ГОСПОДУ|Ягве}}, \\q бо {{deity_pronoun:він|Він}} був такий добрий до мене."
+        },
+        "id": {
+          "L": "Tetapi aku, pada kasih setia-{{deity_pronoun:mu|Mu}} aku telah percaya; \\q hatiku akan bersorak-sorai karena keselamatan dari-{{deity_pronoun:mu|Mu}}. \\q Aku akan bernyanyi bagi {{divine_name:TUHAN|Yahweh}}, \\q sebab {{deity_pronoun:dia|Dia}} telah berbuat baik kepadaku.",
+          "B": "Tetapi aku percaya kepada kasih setia-{{deity_pronoun:mu|Mu}}; \\q hatiku akan bersukacita karena {{deity_pronoun:engkau|Engkau}} menyelamatkan. \\q Aku akan bernyanyi bagi {{divine_name:TUHAN|Yahweh}}, \\q sebab {{deity_pronoun:dia|Dia}} begitu murah hati kepadaku.",
+          "R": "Tetapi aku percaya kepada kasih setia-{{deity_pronoun:mu|Mu}}. \\q Aku akan penuh sukacita ketika {{deity_pronoun:engkau|Engkau}} menyelamatkan aku. \\q Aku akan bernyanyi bagi {{divine_name:TUHAN|Yahweh}}, \\q sebab {{deity_pronoun:dia|Dia}} begitu baik kepadaku."
         }
       },
       "decisions": [
@@ -899,6 +1340,108 @@
             "bondade"
           ],
           "reason": "The book's word for chesed, as in Exodus 34:6: \"amor leal\" names love that keeps faith with a promise (m1); Readable says \"amor fiel\", as the English Readable says \"faithful love\", the wording settled for the whole book (Psalm 5:8). \"Misericórdia\", the traditional word, says pity rather than loyalty.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-1",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190130060022",
+            "o190130060023"
+          ],
+          "choice": "\"अटल प्रेम\" at every level",
+          "alternatives": [
+            "\"करुणा\"",
+            "\"दया\""
+          ],
+          "reason": "God's hesed is \"अटल प्रेम\" at every level through the Psalms, as the poetry terms note settles: love that keeps faith (m1). Readable keeps it too, so that the word can be recognised wherever it recurs.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-hi-2",
+          "layer": "rendering",
+          "language": "hi",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o190130060101"
+          ],
+          "choice": "\"उन्होंने\" (L, B), \"वे\" (R) after \"तू\"",
+          "alternatives": [],
+          "reason": "The Hebrew turns from speaking to God (\"your loyal love\") to speaking about him (\"he has dealt\"); Hindi keeps the turn, with \"तू\" to God and the honorific third person for God.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ru-1",
+          "layer": "rendering",
+          "language": "ru",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190130060022"
+          ],
+          "choice": "\"неизменная любовь\" at every level",
+          "alternatives": [
+            "\"верная любовь\" (R)",
+            "\"милость\""
+          ],
+          "reason": "God's hesed (m1) is \"неизменная любовь\" at every level in the Psalms, as the poetry note settles, where the English Readable says \"faithful love\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190130060022"
+          ],
+          "choice": "hesed \"誠実\" (L), \"変わらぬいつくしみ\" (B, R)",
+          "alternatives": [],
+          "reason": "The Psalter's hesed forms (5:8, 6:5); m1 calls it love that keeps faith.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_sense",
+          "tokens": [
+            "o190130060101"
+          ],
+          "choice": "gamal \"豊かに報いてくださった\" (L), \"これほど良くしてくださった\" (B), \"とても優しくしてくださった\" (R)",
+          "alternatives": [],
+          "reason": "m3: he has treated me generously; 報いる here is a good return, not punishment.",
           "uncertain": false,
           "footnote": false
         }

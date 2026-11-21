@@ -11,7 +11,7 @@ from typing import NamedTuple
 
 # The settings a span may name: each has a control in the reader
 # (web/markup.js SETTINGS is the same list).
-SETTINGS = ("gender", "christos", "divine_name", "deity_pronoun", "units", "plural_you")
+SETTINGS = ("gender", "christos", "divine_name", "deity_pronoun", "units", "plural_you", "god_term")
 
 # The option a setting shows until the reader picks one, where it is not the
 # first: pronouns for God are capitalised by default ("He"), though the span
@@ -116,12 +116,37 @@ def line_errors(text):
 # outermost marks are straight double quotes (English, Swahili, Vietnamese,
 # Korean) or guillemets (Spanish, French); quotations inside them use single
 # quotes, curly quotes, or straight double quotes again at the third level.
+# Japanese uses corner brackets: 「 」 outside, 『 』 inside, and
+# 「 」 again at the third level. They always open and close as they
+# look, and are never apostrophes. Chinese writes curly quotes: “ ”
+# outside, ‘ ’ inside, and “ ” again at the third level; in
+# Chinese text (Han characters, curly quotes and no straight double quote)
+# a ’ is never an apostrophe, so it can close a ‘ an earlier
+# sentence opened.
 # A straight quote opens at the start or after a space, bracket or dash,
 # when a word follows it, and closes anywhere else (as
 # build_site.smart_quotes curls it). A straight single quote can also be an
 # apostrophe; see quotations().
-_QUOTE_CHARS = re.compile("[\"'\u00ab\u00bb\u201c\u201d\u2018\u2019]")
-_PAIRS = {"\u00bb": "\u00ab", "\u201d": "\u201c", "\u2019": "\u2018"}
+_QUOTE_CHARS = re.compile("[\"'\u00ab\u00bb\u201c\u201d\u2018\u2019\u300c\u300d\u300e\u300f]")
+_PAIRS = {"\u00bb": "\u00ab", "\u201d": "\u201c", "\u2019": "\u2018", "\u300d": "\u300c", "\u300f": "\u300e"}
+
+
+# Han characters (Chinese; Japanese kanji, but Japanese quotes with corner
+# brackets, which are tested first).
+_HAN = re.compile("[\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff]")
+
+
+def _marks(text):
+    """(outer, inner, curly): the opening marks of the outermost
+    quotations in text and of those inside them, and whether text is
+    Chinese with curly quotes, where a \u2019 is never an apostrophe."""
+    if re.search("[\u300c-\u300f]", text):
+        return "\u300c", "\u300e", False
+    if re.search("[\u00ab\u00bb]", text):
+        return "\u00ab", "\u201c", False
+    if '"' not in text and _HAN.search(text) and re.search("[\u201c\u201d\u2018\u2019]", text):
+        return "\u201c", "\u2018", True
+    return '"', "'", False
 
 
 def _opens_here(text, pos):
@@ -133,8 +158,7 @@ def _quotations(text, depth, level=1):
     or 2: inside a quotation inside the outer one), as ranges of the
     quotations level deep (1, the outermost; 2, those inside them);
     raises ValueError."""
-    outer = "\u00ab" if re.search("[\u00ab\u00bb]", text) else '"'
-    inner = "\u201c" if outer == "\u00ab" else "'"
+    outer, inner, curly = _marks(text)
     stack, ranges = [outer, inner][:depth], []
     start = 0
     # A setting span holds no quotation marks (quotations() checks), only
@@ -145,7 +169,7 @@ def _quotations(text, depth, level=1):
         after = text[pos + 1:pos + 2]
         if pos in in_span:
             continue
-        if ch in "\u00ab\u201c\u2018" or (ch in "\"'" and _opens_here(text, pos)
+        if ch in "\u00ab\u201c\u2018\u300c\u300e" or (ch in "\"'" and _opens_here(text, pos)
                                          and after and not after.isspace()):
             if stack and stack[-1] == ch:
                 raise ValueError(f"quotation mark at {pos} opens inside a quotation of its own kind")
@@ -159,9 +183,10 @@ def _quotations(text, depth, level=1):
         # particle right after a closing quote), and so is one after a word
         # that closes nothing ("the disciples' feet"), unless it ends a
         # quotation open since before the sentence ('...'"). A curly one
-        # (French and Spanish apostrophes) only ever closes a \u2018 it follows.
-        if want in "'\u2018" and ((after.isalnum() and after < "\u0250") or after == "{"
-                                   or (want not in stack and (after.isspace() or ch == "\u2019"))):
+        # (French and Spanish apostrophes) only ever closes a \u2018 it follows,
+        # except in Chinese, which has no apostrophes.
+        if want in "'\u2018" and not curly and ((after.isalnum() and after < "\u0250") or after == "{"
+                                                 or (want not in stack and (after.isspace() or ch == "\u2019"))):
             continue
         if want not in stack and stack and want != stack[0]:
             # A quotation inside the outer one, open since before this
@@ -207,7 +232,7 @@ def quotations(text, inside=False, inner=False):
     quotation of the kind already innermost), or a quotation mark sits
     inside a {{setting:...}} span."""
     for s in spans(text):
-        if re.search("[\"\u00ab\u00bb\u201c\u201d]", text[s.start:s.end]):
+        if re.search("[\"\u00ab\u00bb\u201c\u201d\u300c-\u300f]", text[s.start:s.end]):
             raise ValueError(f"quotation mark inside the setting span at {s.start}")
     first = None
     if inner:
@@ -252,10 +277,24 @@ def render(text, settings=None):
     return SPAN.sub(choose, text)
 
 
+def _unspaced(ch):
+    """True for a character of a script written without spaces between
+    words (Chinese characters, hiragana, katakana): Japanese 「言は」 holds
+    the word 言, so a span may begin or end beside such a character."""
+    o = ord(ch)
+    return (0x3040 <= o <= 0x30FF or 0x3400 <= o <= 0x4DBF or 0x4E00 <= o <= 0x9FFF
+            or 0xF900 <= o <= 0xFAFF or 0xFF66 <= o <= 0xFF9F or o == 0x3005)
+
+
+def _joined(a, b):
+    """True if a and b are letters of one word."""
+    return a.isalnum() and b.isalnum() and not (_unspaced(a) or _unspaced(b))
+
+
 def _whole(text, start, end):
     """True if text[start:end] does not begin or end inside a word."""
-    inside_before = start > 0 and text[start - 1].isalnum() and text[start].isalnum()
-    inside_after = end < len(text) and text[end].isalnum() and text[end - 1].isalnum()
+    inside_before = start > 0 and _joined(text[start - 1], text[start])
+    inside_after = end < len(text) and _joined(text[end], text[end - 1])
     return not (inside_before or inside_after)
 
 

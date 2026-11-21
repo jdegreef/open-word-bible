@@ -72,6 +72,31 @@
           "L": "Тогда Пилат взял Иисуса и бичевал [{{deity_pronoun:его|Его}}].",
           "B": "Тогда Пилат взял Иисуса и приказал {{deity_pronoun:его|Его}} бичевать.",
           "R": "Тогда Пилат велел солдатам избить Иисуса плетьми."
+        },
+        "uk": {
+          "L": "Тоді Пилат узяв Ісуса і збичував [{{deity_pronoun:його|Його}}].",
+          "B": "Тоді Пилат забрав Ісуса й звелів {{deity_pronoun:його|Його}} збичувати.",
+          "R": "Тож Пилат забрав Ісуса й звелів бити {{deity_pronoun:його|Його}} батогами."
+        },
+        "ja": {
+          "L": "それでそのとき、ピラトはイエスを連れて行き、むち打った。",
+          "B": "そこでピラトは、イエスを引き取って、むち打たせた。",
+          "R": "それでピラトは、イエスを連れて行かせ、むちで打たせました。"
+        },
+        "id": {
+          "L": "Lalu Pilatus mengambil Yesus dan menyesah {{deity_pronoun:dia|Dia}}.",
+          "B": "Lalu Pilatus mengambil Yesus dan menyuruh orang menyesah {{deity_pronoun:dia|Dia}}.",
+          "R": "Jadi Pilatus mengambil Yesus dan menyuruh orang mencambuk {{deity_pronoun:dia|Dia}}."
+        },
+        "zh": {
+          "L": "那时彼拉多带走耶稣，鞭打了[{{deity_pronoun:他|祂}}]。",
+          "B": "于是彼拉多把耶稣带去，叫人鞭打{{deity_pronoun:他|祂}}。",
+          "R": "于是彼拉多叫人把耶稣带去，用鞭子打{{deity_pronoun:他|祂}}。"
+        },
+        "ar": {
+          "L": "حينئذ أخذ بيلاطس يسوع فجلده.",
+          "B": "عندئذ أخذ بيلاطس يسوع وأمر بجلده.",
+          "R": "فأخذ بيلاطس يسوع وأمر بضربه بالسياط."
         }
       },
       "alignments": [
@@ -116,6 +141,49 @@
           "language": "en",
           "level": "B",
           "target_span": "had {{deity_pronoun:him|Him}} flogged"
+        },
+        {
+          "tokens": [
+            "n43019001001",
+            "n43019001002"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "そこで"
+        },
+        {
+          "tokens": [
+            "n43019001004",
+            "n43019001005"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ピラト"
+        },
+        {
+          "tokens": [
+            "n43019001006",
+            "n43019001007"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "イエス"
+        },
+        {
+          "tokens": [
+            "n43019001003"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "引き取って"
+        },
+        {
+          "tokens": [
+            "n43019001009"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "むち打たせた"
         }
       ],
       "decisions": [
@@ -423,6 +491,66 @@
           "reason": "Pilate ordered the flogging and his soldiers carried it out (meaning decision m1); Readable says it in everyday words, as Matthew 27:26 does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43019001009"
+          ],
+          "choice": "\"むち打った\" (L); \"むち打たせた\" (B); \"むちで打たせました\" (R)",
+          "alternatives": [
+            "\"むち打った\" at every level"
+          ],
+          "reason": "Pilate gave the order and his soldiers carried it out (m1). Literal keeps the Greek's simple verb; Balanced and Readable use the causative so that no reader pictures the governor holding the whip, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-1",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "grammar",
+          "tokens": [
+            "n43019001003",
+            "n43019001008",
+            "n43019001009"
+          ],
+          "choice": "\"أمر بجلده\" (B), \"أمر بضربه بالسياط\" (R)",
+          "alternatives": [],
+          "reason": "Pilate ordered it and his soldiers carried it out (m1). Literal keeps \"flogged\" with Pilate as subject, as the Greek does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-2",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "culture",
+          "tokens": [
+            "n43019001009"
+          ],
+          "choice": "\"جلده\" (L), \"جلده\" (B), \"ضربه بالسياط\" (R)",
+          "alternatives": [],
+          "reason": "Flogging is a beating with a whip, a Roman punishment (m2).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -514,14 +642,39 @@
           "R": "ወታደሮቹ ከእሾህ ቅርንጫፍ አክሊል ጎንጉነው በራሱ ላይ ጫኑበት። ሐምራዊ ካባም አለበሱት። \\v 3 ወደ እርሱ እየቀረቡ፦ «የአይሁድ ንጉሥ ለዘላለም ይኑር!» ይሉት ነበር። ፊቱንም በጥፊ ይመቱት ነበር።"
         },
         "hi": {
-          "L": "और सैनिकों ने काँटों का मुकुट गूँथकर उनके सिर पर रखा, और उन्हें बैंजनी चोगा पहनाया, \\v 3 और वे उनके पास आ-आकर कहते रहे, \"हे यहूदियों के राजा, जय हो!\" और उन्हें थप्पड़ मारते रहे।",
-          "B": "सैनिकों ने काँटों का एक मुकुट गूँथा और उनके सिर पर रख दिया, और उन्हें बैंजनी चोगा पहना दिया। \\v 3 वे बार-बार उनके पास आते और कहते, \"हे यहूदियों के राजा, जय हो!\" और उनके मुँह पर थप्पड़ मारते।",
-          "R": "सैनिकों ने काँटेदार डालियों को मोड़कर एक मुकुट बनाया और उनके सिर पर रख दिया। उन्होंने उन्हें बैंजनी रंग का चोगा पहना दिया। \\v 3 वे बार-बार उनके पास आकर कहते, \"यहूदियों के राजा अमर रहें!\" और उनके मुँह पर थप्पड़ मारते रहे।"
+          "L": "और सैनिकों ने काँटों का मुकुट गूँथकर उनके सिर पर रखा, और उन्हें बैंजनी चोग़ा पहनाया, \\v 3 और वे उनके पास आ-आकर कहते रहे, \"हे यहूदियों के राजा, जय हो!\" और उन्हें थप्पड़ मारते रहे।",
+          "B": "सैनिकों ने काँटों का एक मुकुट गूँथा और उनके सिर पर रख दिया, और उन्हें बैंजनी चोग़ा पहना दिया। \\v 3 वे बार-बार उनके पास आते और कहते, \"हे यहूदियों के राजा, जय हो!\" और उनके मुँह पर थप्पड़ मारते।",
+          "R": "सैनिकों ने काँटेदार डालियों को मोड़कर एक मुकुट बनाया और उनके सिर पर रख दिया। उन्होंने उन्हें बैंजनी रंग का चोग़ा पहना दिया। \\v 3 वे बार-बार उनके पास आकर कहते, \"यहूदियों के राजा अमर रहें!\" और उनके मुँह पर थप्पड़ मारते रहे।"
         },
         "ru": {
           "L": "И воины, сплетя венец из терна, возложили [его] на {{deity_pronoun:его|Его}} голову, и накинули на {{deity_pronoun:него|Него}} пурпурный плащ, \\v 3 и подходили к {{deity_pronoun:нему|Нему}} и говорили: «Здравствуй, Царь Иудейский!» — и били {{deity_pronoun:его|Его}} по щекам.",
           "B": "Солдаты сплели венец из колючих веток и надели {{deity_pronoun:ему|Ему}} на голову, а самого {{deity_pronoun:его|Его}} одели в пурпурный плащ. \\v 3 Они снова и снова подходили к {{deity_pronoun:нему|Нему}} и говорили: «Здравствуй, Царь Иудейский!» — и били {{deity_pronoun:его|Его}} по лицу.",
           "R": "Солдаты сплели из колючих веток венец и надели {{deity_pronoun:ему|Ему}} на голову. Они надели на {{deity_pronoun:него|Него}} пурпурный плащ. \\v 3 Они всё подходили к {{deity_pronoun:нему|Нему}} и говорили: «Да здравствует Царь иудеев!» И всё били {{deity_pronoun:его|Его}} по лицу."
+        },
+        "uk": {
+          "L": "І воїни, сплівши вінець із терну, поклали [його] на {{deity_pronoun:його|Його}} голову, і пурпуровий плащ накинули на {{deity_pronoun:нього|Нього}}, \\v 3 і підходили до {{deity_pronoun:нього|Нього}}, і казали: «Радій, Царю юдеїв!» — і давали {{deity_pronoun:йому|Йому}} ляпаси.",
+          "B": "Воїни сплели вінець із терну й поклали {{deity_pronoun:йому|Йому}} на голову, а тоді вдягли {{deity_pronoun:його|Його}} в пурпуровий плащ. \\v 3 Вони раз у раз підходили до {{deity_pronoun:нього|Нього}} і казали: «Хай живе Цар юдейський!» — і били {{deity_pronoun:його|Його}} по обличчю.",
+          "R": "Воїни сплели з колючих гілок корону й надягли {{deity_pronoun:йому|Йому}} на голову. Вони вдягли {{deity_pronoun:його|Його}} в пурпуровий плащ. \\v 3 Вони все підходили до {{deity_pronoun:нього|Нього}} й казали: «Хай живе цар юдейського народу!» І вони били {{deity_pronoun:його|Його}} по обличчю."
+        },
+        "ja": {
+          "L": "そして兵士たちは、いばらで冠を編んで、その頭に載せ、紫の衣をまとわせた。\\v 3 そして、イエスのもとにやって来ては、「万歳、ユダヤ人の王よ」と言い、平手打ちを加え続けた。",
+          "B": "兵士たちは、いばらで冠を編んでイエスの頭に載せ、紫の衣を着せた。\\v 3 そして、代わる代わる近寄っては、「ユダヤ人の王さま、万歳」と言って、イエスの顔を平手で打った。",
+          "R": "兵士たちは、いばらの枝を編んで冠を作り、イエスの頭にかぶせました。また、紫色の衣を着せました。\\v 3 そして、何度もイエスの前に来ては、「ユダヤ人の王さま、ばんざい！」と言いました。そして、イエスの顔を何度も手でたたきました。"
+        },
+        "id": {
+          "L": "Dan para prajurit menganyam sebuah mahkota dari duri dan menaruhnya di atas kepala-{{deity_pronoun:nya|Nya}}, dan mereka mengenakan jubah ungu kepada-{{deity_pronoun:nya|Nya}}, \\v 3 dan mereka datang kepada-{{deity_pronoun:nya|Nya}} dan berkata, \"Salam, Raja orang Yahudi!\" dan mereka menampar-{{deity_pronoun:nya|Nya}}.",
+          "B": "Para prajurit menganyam sebuah mahkota dari duri dan memasangnya di kepala-{{deity_pronoun:nya|Nya}}, lalu mereka mengenakan jubah ungu kepada-{{deity_pronoun:nya|Nya}}. \\v 3 Berulang kali mereka mendekati {{deity_pronoun:dia|Dia}} dan berkata, \"Salam, Raja orang Yahudi!\" lalu menampar muka-{{deity_pronoun:nya|Nya}}.",
+          "R": "Para prajurit memintal ranting-ranting berduri menjadi sebuah mahkota dan memasangnya di kepala-{{deity_pronoun:nya|Nya}}. Mereka memakaikan jubah ungu kepada-{{deity_pronoun:nya|Nya}}. \\v 3 Mereka terus datang kepada-{{deity_pronoun:nya|Nya}} dan berkata, \"Hidup Raja orang Yahudi!\" Dan mereka terus memukul muka-{{deity_pronoun:nya|Nya}}."
+        },
+        "zh": {
+          "L": "士兵们用荆棘编了一顶冠冕，戴在{{deity_pronoun:他|祂}}的头上，又给{{deity_pronoun:他|祂}}披上一件紫色的袍子，\\v 3 并且不断地来到{{deity_pronoun:他|祂}}面前，说：“万岁，犹太人的王！”又不断地打{{deity_pronoun:他|祂}}耳光。",
+          "B": "士兵们用带刺的枝条编成冠冕，戴在{{deity_pronoun:他|祂}}头上，又给{{deity_pronoun:他|祂}}穿上一件紫色的袍子。\\v 3 他们一次又一次走到{{deity_pronoun:他|祂}}面前，说：“万岁，犹太人的王！”还打{{deity_pronoun:他|祂}}的脸。",
+          "R": "士兵们把带刺的枝条拧成一顶王冠，按在{{deity_pronoun:他|祂}}头上，又给{{deity_pronoun:他|祂}}穿上一件紫色的袍子。\\v 3 他们不停地走到{{deity_pronoun:他|祂}}面前，说：“犹太人的王万岁！”还不停地打{{deity_pronoun:他|祂}}的脸。"
+        },
+        "ar": {
+          "L": "وجدل الجنود إكليلًا من الشوك ووضعوه على رأسه، وطرحوا عليه رداءً أرجوانيًّا، \\v 3 وكانوا يتقدّمون إليه ويقولون: «سلامٌ يا ملك اليهود!» وكانوا يلطمونه.",
+          "B": "وضفر الجنود تاجًا من الشوك ووضعوه على رأسه، وألبسوه رداءً أرجوانيًّا. \\v 3 وكانوا يأتون إليه مرّة بعد مرّة ويقولون: «السلام عليك يا ملك اليهود!» ويضربونه على وجهه.",
+          "R": "ولوى الجنود أغصانًا فيها شوك وصنعوا منها تاجًا، ووضعوه على رأسه. وألبسوه ثوبًا أرجوانيًّا. \\v 3 وكانوا يأتون إليه ويقولون: «يحيا ملك اليهود!» ويضربونه على وجهه."
         }
       },
       "alignments": [
@@ -705,6 +858,174 @@
           "language": "en",
           "level": "B",
           "target_span": "in the face"
+        },
+        {
+          "tokens": [
+            "n43019002002",
+            "n43019002003"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "兵士たち"
+        },
+        {
+          "tokens": [
+            "n43019002007"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "いばら"
+        },
+        {
+          "tokens": [
+            "n43019002006"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "で"
+        },
+        {
+          "tokens": [
+            "n43019002005"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "冠"
+        },
+        {
+          "tokens": [
+            "n43019002004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "編んで"
+        },
+        {
+          "tokens": [
+            "n43019002009"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "イエス"
+        },
+        {
+          "tokens": [
+            "n43019002010",
+            "n43019002011"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "頭"
+        },
+        {
+          "tokens": [
+            "n43019002008"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "載せ"
+        },
+        {
+          "tokens": [
+            "n43019002014"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "紫"
+        },
+        {
+          "tokens": [
+            "n43019002013"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "衣"
+        },
+        {
+          "tokens": [
+            "n43019002015",
+            "n43019002016"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "着せた"
+        },
+        {
+          "tokens": [
+            "n43019003001"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "そして"
+        },
+        {
+          "tokens": [
+            "n43019003002",
+            "n43019003003",
+            "n43019003004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "代わる代わる近寄っては"
+        },
+        {
+          "tokens": [
+            "n43019003010",
+            "n43019003011"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ユダヤ人"
+        },
+        {
+          "tokens": [
+            "n43019003008",
+            "n43019003009"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "王さま"
+        },
+        {
+          "tokens": [
+            "n43019003007"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "万歳"
+        },
+        {
+          "tokens": [
+            "n43019003006"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "言って"
+        },
+        {
+          "tokens": [
+            "n43019003014"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "イエス"
+        },
+        {
+          "tokens": [
+            "n43019003015"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "顔"
+        },
+        {
+          "tokens": [
+            "n43019003013",
+            "n43019003015"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "平手で打った"
         }
       ],
       "decisions": [
@@ -1145,6 +1466,159 @@
           "reason": "John's word is purple, the colour of royalty (meaning decision m1), as in Mark 15:17 (\"пурпурный плащ\"); Matthew's word is scarlet (\"алый\"), so John's is kept apart from it.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43019003007",
+            "n43019002013",
+            "n43019002014"
+          ],
+          "choice": "\"Радій\" (L); \"Хай живе\" (B, R); \"пурпуровий плащ\" at every level",
+          "alternatives": [
+            "\"Радуйся\"",
+            "\"Вітаю\""
+          ],
+          "reason": "The passion terms settled in Matthew and Mark: the mock acclamation of a ruler is \"Хай живе\" at Balanced and Readable, while Literal keeps the Greek greeting \"rejoice\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43019003007",
+            "n43019003009"
+          ],
+          "choice": "\"万歳、ユダヤ人の王よ\" (L); \"ユダヤ人の王さま、万歳\" (B); \"ユダヤ人の王さま、ばんざい！\" (R)",
+          "alternatives": [
+            "\"ようこそ\"",
+            "\"ユダヤ人の王に栄えあれ\""
+          ],
+          "reason": "The greeting is the acclamation given to a ruler, here in mockery (m2). 万歳 is the Japanese cry of acclamation for a ruler; Literal keeps the Greek order with the vocative よ, and Balanced and Readable add a mocking さま to the title, which keeps its usual form ユダヤ人の王 as in 18:33 (m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43019003002",
+            "n43019003013",
+            "n43019003015"
+          ],
+          "choice": "\"やって来ては……加え続けた\" (L); \"代わる代わる近寄っては\" (B); \"何度も\" (R); \"平手\" (L, B)",
+          "alternatives": [],
+          "reason": "The imperfect verbs describe repeated action, the soldiers coming up one after another (m4); the blows were slaps with the open hand, the word of 18:22.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43019002014",
+            "n43019003007"
+          ],
+          "choice": "\"紫色的袍子\"; \"万岁，犹太人的王！\" (L, B), \"犹太人的王万岁！\" (R)",
+          "alternatives": [],
+          "reason": "Mark 15:17-18 has the same Greek for the purple robe and the mock greeting, and its Chinese is kept level by level (Matthew 27:28 has a different word, scarlet, \"朱红色\"). \"万岁\" is the acclamation of a ruler (meaning decision m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-1",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "culture",
+          "tokens": [
+            "n43019002004",
+            "n43019002005",
+            "n43019002006",
+            "n43019002007",
+            "n43019002013",
+            "n43019002014"
+          ],
+          "choice": "\"إكليلًا\" (L), \"تاجًا\" (B, R); \"أرجوانيًّا\"",
+          "alternatives": [],
+          "reason": "A crown of thorns and a purple robe are the dress of a mock king (m1). Balanced and Readable say \"تاج\", the plain word for a king's crown.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-2",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "culture",
+          "tokens": [
+            "n43019003007",
+            "n43019003008",
+            "n43019003009"
+          ],
+          "choice": "\"سلامٌ يا ملك اليهود!\" (L), \"السلام عليك يا ملك اليهود!\" (B), \"يحيا ملك اليهود!\" (R)",
+          "alternatives": [],
+          "reason": "\"Hail\" is the greeting with which a ruler was acclaimed, here given in mockery (m2). Readable uses the Arabic cry for acclaiming a king.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-3",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43019003013",
+            "n43019003015"
+          ],
+          "choice": "\"يلطمونه\" (L), \"يضربونه على وجهه\" (B, R)",
+          "alternatives": [],
+          "reason": "The blows are with the hand, given again and again (m4); the imperfect \"كانوا\" shows the repetition.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1234,6 +1708,31 @@
           "L": "И Пилат снова вышел наружу и говорит им: «Вот, я вывожу {{deity_pronoun:его|Его}} к вам, чтобы вы знали, что я не нахожу в {{deity_pronoun:нём|Нём}} никакой вины.»",
           "B": "Пилат снова вышел и сказал им: «Смотрите, я вывожу {{deity_pronoun:его|Его}} к вам, чтобы вы знали, что я не нахожу за {{deity_pronoun:ним|Ним}} никакой вины.»",
           "R": "Пилат снова вышел. Он сказал людям, стоявшим там: «Слушайте! Я вывожу {{deity_pronoun:его|Его}} к вам. Я хочу, чтобы вы знали: я не вижу причины осудить {{deity_pronoun:его|Его}}.»"
+        },
+        "uk": {
+          "L": "І Пилат знову вийшов назовні і каже їм: «Ось, виводжу {{deity_pronoun:його|Його}} до вас, щоб ви знали, що я не знаходжу в {{deity_pronoun:ньому|Ньому}} жодної провини.»",
+          "B": "Пилат знову вийшов і сказав їм: «Дивіться, я виводжу {{deity_pronoun:його|Його}} до вас, щоб ви знали, що я не знаходжу за {{deity_pronoun:ним|Ним}} жодної провини.»",
+          "R": "Пилат знову вийшов. Він сказав людям, що були там: «Слухайте! Я виводжу {{deity_pronoun:його|Його}} до вас. Я хочу, щоб ви знали: я не бачу причини засуджувати {{deity_pronoun:його|Його}}.»"
+        },
+        "ja": {
+          "L": "そしてピラトは再び外に出て、彼らに言う。「見ろ、わたしは彼をおまえたちのところに外へ連れて来る。わたしが彼に何の罪状も見いださないことを、おまえたちが知るためである。」",
+          "B": "ピラトはまた外に出て来て、彼らに言った。「見るがよい。あの男をおまえたちのところに引き出して来る。わたしがあの男に何の罪も見いださないことを、おまえたちにわからせるためだ。」",
+          "R": "ピラトはまた外に出て行き、そこにいた人々に言いました。「いいか。あの男をおまえたちのところに連れ出して来る。わたしは、あの男を罪に定める理由を何も見つけられない。それをおまえたちに知ってほしいのだ。」"
+        },
+        "id": {
+          "L": "Lalu Pilatus keluar lagi dan berkata kepada mereka, \"Lihatlah, aku membawa {{deity_pronoun:dia|Dia}} keluar kepada kalian, supaya kalian tahu bahwa aku tidak menemukan kesalahan apa pun pada-{{deity_pronoun:nya|Nya}}.\"",
+          "B": "Pilatus keluar lagi dan berkata kepada mereka, \"Lihat, aku membawa {{deity_pronoun:dia|Dia}} keluar kepada kalian, supaya kalian tahu bahwa aku tidak menemukan dasar untuk mendakwa {{deity_pronoun:dia|Dia}}.\"",
+          "R": "Pilatus keluar lagi. Dia berkata kepada orang-orang di situ, \"Dengar! Aku membawa {{deity_pronoun:dia|Dia}} keluar kepada kalian. Aku ingin kalian tahu bahwa aku tidak menemukan alasan untuk menghukum {{deity_pronoun:dia|Dia}}.\""
+        },
+        "zh": {
+          "L": "彼拉多又出到外面，对他们说：“看哪，我把{{deity_pronoun:他|祂}}带出来给你们，好让你们知道，我在{{deity_pronoun:他|祂}}身上找不到任何罪状。”",
+          "B": "彼拉多又出去，对他们说：“看，我把{{deity_pronoun:他|祂}}带出来见你们，好让你们知道，我查不出{{deity_pronoun:他|祂}}有什么罪。”",
+          "R": "彼拉多又走了出去。他对那里的人说：“你们听着！我把{{deity_pronoun:他|祂}}带出来给你们。我要你们知道，我找不到任何理由定{{deity_pronoun:他|祂}}的罪。”"
+        },
+        "ar": {
+          "L": "وخرج بيلاطس ثانية إلى الخارج ويقول لهم: «انظروا، إنّي أُخرجه إليكم، لتعلموا أنّي لا أجد فيه أيّ علّة».",
+          "B": "وخرج بيلاطس مرّة أخرى وقال لهم: «انظروا، أنا أُخرجه إليكم لكي تعرفوا أنّي لا أجد عليه أيّ تهمة».",
+          "R": "وخرج بيلاطس مرّة أخرى، وقال للناس الذين هناك: «اسمعوا! أنا أُحضره إليكم. أريدكم أن تعرفوا أنّي لا أجد سببًا لإدانته»."
         }
       },
       "alignments": [
@@ -1382,6 +1881,169 @@
           "language": "en",
           "level": "B",
           "target_span": "against {{deity_pronoun:him|Him}}"
+        },
+        {
+          "tokens": [
+            "n43019004005",
+            "n43019004006"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ピラト"
+        },
+        {
+          "tokens": [
+            "n43019004003"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "また"
+        },
+        {
+          "tokens": [
+            "n43019004004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "外に"
+        },
+        {
+          "tokens": [
+            "n43019004002"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "出て来て"
+        },
+        {
+          "tokens": [
+            "n43019004009"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "彼ら"
+        },
+        {
+          "tokens": [
+            "n43019004008"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "言った"
+        },
+        {
+          "tokens": [
+            "n43019004010"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "見るがよい"
+        },
+        {
+          "tokens": [
+            "n43019004013"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あの男"
+        },
+        {
+          "tokens": [
+            "n43019004012"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "おまえたち"
+        },
+        {
+          "tokens": [
+            "n43019004011",
+            "n43019004014"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "引き出して来る"
+        },
+        {
+          "tokens": [
+            "n43019004020"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43019004022"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あの男"
+        },
+        {
+          "tokens": [
+            "n43019004021"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "に"
+        },
+        {
+          "tokens": [
+            "n43019004018"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "何の"
+        },
+        {
+          "tokens": [
+            "n43019004019"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "罪"
+        },
+        {
+          "tokens": [
+            "n43019004020",
+            "n43019004018"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "見いださない"
+        },
+        {
+          "tokens": [
+            "n43019004017"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "こと"
+        },
+        {
+          "tokens": [
+            "n43019004016"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "おまえたち"
+        },
+        {
+          "tokens": [
+            "n43019004016"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わからせる"
+        },
+        {
+          "tokens": [
+            "n43019004015"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ため"
         }
       ],
       "decisions": [
@@ -1722,6 +2384,103 @@
           "reason": "The same wording as 18:38 and 19:6 at each level: the judge finds no legal ground for a charge (meaning decision m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n43019004008"
+          ],
+          "choice": "historic present kept at Literal (\"言う\"); past at Balanced and Readable",
+          "alternatives": [],
+          "reason": "John tells the trial partly in the present. Literal keeps the Greek tense; Balanced and Readable narrate in the past, as Japanese narrative does. This holds through 19:1-16.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n43019004010",
+            "n43019004019"
+          ],
+          "choice": "Pilate speaks curtly (\"見ろ\", \"見るがよい\", \"いいか\", \"おまえたち\"); \"罪状\" (L), \"罪\" (B), \"罪に定める理由\" (R) for the case",
+          "alternatives": [
+            "\"見なさい\""
+          ],
+          "reason": "As in 18:28-40, the governor addresses his subjects in the plain, curt style; the Jewish leaders answer him politely. The word for case is a legal ground for a charge (m1), worded as in 18:38.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43019004008",
+            "n43019004010"
+          ],
+          "choice": "\"说\" with no \"了\" for the present \"says\" (L), as in this whole passage; \"看哪\" (L), \"看\" (B), \"你们听着\" (R)",
+          "alternatives": [],
+          "reason": "John tells the trial in the present at several points; Literal leaves the verb bare, Balanced and Readable tell it as past. \"Look\" (ide) follows the style guide's formula, with Readable following the English Readable's \"Listen!\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-1",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43019004019"
+          ],
+          "choice": "\"علّة\" (L), \"تهمة\" (B), \"سببًا لإدانته\" (R), as in 18:38",
+          "alternatives": [],
+          "reason": "A case is grounds for a charge, a legal reason to punish (m1). Each level repeats the words it used in 18:38.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-2",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L"
+          ],
+          "category": "grammar",
+          "tokens": [
+            "n43019004009"
+          ],
+          "choice": "historic present \"ويقول\"",
+          "alternatives": [],
+          "reason": "The Greek tells this with a present verb; Literal keeps it here and in verses 5, 6, 9, 10, 14 and 15.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1794,14 +2553,39 @@
           "R": "ስለዚህ ኢየሱስ ወደ ውጭ ወጣ። የእሾህ አክሊሉንና ሐምራዊውን ካባ ለብሶ ነበር።"
         },
         "hi": {
-          "L": "तब यीशु काँटों का मुकुट और बैंजनी चोगा पहने हुए बाहर निकले।",
-          "B": "तब यीशु बाहर आए; वे अब भी काँटों का मुकुट और बैंजनी चोगा पहने हुए थे।",
-          "R": "तब यीशु बाहर आए। वे काँटों का मुकुट और बैंजनी चोगा पहने हुए थे।"
+          "L": "तब यीशु काँटों का मुकुट और बैंजनी चोग़ा पहने हुए बाहर निकले।",
+          "B": "तब यीशु बाहर आए; वे अब भी काँटों का मुकुट और बैंजनी चोग़ा पहने हुए थे।",
+          "R": "तब यीशु बाहर आए। वे काँटों का मुकुट और बैंजनी चोग़ा पहने हुए थे।"
         },
         "ru": {
           "L": "Тогда Иисус вышел наружу в терновом венце и пурпурном плаще.",
           "B": "И Иисус вышел, всё ещё в терновом венце и пурпурном плаще.",
           "R": "И Иисус вышел к ним. На {{deity_pronoun:нём|Нём}} был венец из колючек и пурпурный плащ."
+        },
+        "uk": {
+          "L": "Тож вийшов Ісус назовні, маючи на собі терновий вінець і пурпуровий плащ.",
+          "B": "Тож Ісус вийшов, усе ще в терновому вінці й пурпуровому плащі.",
+          "R": "Тож Ісус вийшов. На {{deity_pronoun:ньому|Ньому}} був вінець із терну і пурпуровий плащ."
+        },
+        "ja": {
+          "L": "それでイエスは、いばらの冠と紫の衣を身に着けて、外に出て来られた。",
+          "B": "そこでイエスは、いばらの冠をかぶり、紫の衣を着たまま、外に出て来られた。",
+          "R": "イエスは外に出て来られました。いばらの冠をかぶり、紫色の衣を着ておられました。"
+        },
+        "id": {
+          "L": "Lalu Yesus keluar, memakai mahkota duri dan jubah ungu itu.",
+          "B": "Lalu Yesus keluar, masih memakai mahkota duri dan jubah ungu itu.",
+          "R": "Lalu Yesus keluar. Dia memakai mahkota duri dan jubah ungu itu."
+        },
+        "zh": {
+          "L": "于是耶稣出来，戴着荆棘冠冕，穿着紫色袍子。",
+          "B": "于是耶稣出来了，仍然戴着荆棘冠冕，穿着紫色的袍子。",
+          "R": "于是耶稣走了出来。{{deity_pronoun:他|祂}}头上戴着荆棘做的王冠，身上穿着紫色的袍子。"
+        },
+        "ar": {
+          "L": "فخرج يسوع إلى الخارج، لابسًا إكليل الشوك والرداء الأرجوانيّ.",
+          "B": "فخرج يسوع وهو لا يزال لابسًا تاج الشوك والرداء الأرجوانيّ.",
+          "R": "فخرج يسوع. وكان يلبس تاج الشوك والثوب الأرجوانيّ."
         }
       },
       "alignments": [
@@ -1865,6 +2649,75 @@
           "language": "en",
           "level": "B",
           "target_span": "the purple robe"
+        },
+        {
+          "tokens": [
+            "n43019005002"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "そこで"
+        },
+        {
+          "tokens": [
+            "n43019005003",
+            "n43019005004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "イエス"
+        },
+        {
+          "tokens": [
+            "n43019005007",
+            "n43019005008",
+            "n43019005009"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "いばらの冠"
+        },
+        {
+          "tokens": [
+            "n43019005006"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "かぶり"
+        },
+        {
+          "tokens": [
+            "n43019005011",
+            "n43019005012",
+            "n43019005013"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "紫の衣"
+        },
+        {
+          "tokens": [
+            "n43019005006"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "着たまま"
+        },
+        {
+          "tokens": [
+            "n43019005005"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "外に"
+        },
+        {
+          "tokens": [
+            "n43019005001"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "出て来られた"
         }
       ],
       "decisions": [
@@ -2011,6 +2864,31 @@
           "L": "И говорит им: «Вот, человек!»",
           "B": "Пилат сказал им: «Смотрите, вот этот человек!»",
           "R": "Пилат сказал им: «Смотрите! Вот он, этот человек!»"
+        },
+        "uk": {
+          "L": "І каже їм: «Ось людина!»",
+          "B": "Пилат сказав їм: «Ось людина!»",
+          "R": "Пилат сказав їм: «Дивіться! Ось цей чоловік!»"
+        },
+        "ja": {
+          "L": "そして[ピラトは]彼らに言う。「見ろ、この人だ。」",
+          "B": "ピラトは彼らに、「見るがよい、この人だ」と言った。",
+          "R": "ピラトは彼らに言いました。「見ろ！この人だ！」"
+        },
+        "id": {
+          "L": "Dan ia berkata kepada mereka, \"Lihatlah, manusia itu!\"",
+          "B": "Pilatus berkata kepada mereka, \"Lihatlah, inilah manusia itu!\"",
+          "R": "Pilatus berkata kepada mereka, \"Lihat! Inilah orangnya!\""
+        },
+        "zh": {
+          "L": "他对他们说：“看哪，这个人！”",
+          "B": "彼拉多对他们说：“看，这个人！”",
+          "R": "彼拉多对他们说：“你们看！就是这个人！”"
+        },
+        "ar": {
+          "L": "ويقول لهم: «ها هو الإنسان!»",
+          "B": "فقال لهم بيلاطس: «انظروا، ها هو الإنسان!»",
+          "R": "فقال لهم بيلاطس: «انظروا! هذا هو الرجل!»"
         }
       },
       "alignments": [
@@ -2046,6 +2924,39 @@
           "language": "en",
           "level": "B",
           "target_span": "the man"
+        },
+        {
+          "tokens": [
+            "n43019005016"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "彼ら"
+        },
+        {
+          "tokens": [
+            "n43019005017"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "見るがよい"
+        },
+        {
+          "tokens": [
+            "n43019005018",
+            "n43019005019"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "この人"
+        },
+        {
+          "tokens": [
+            "n43019005015"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "言った"
         }
       ],
       "decisions": [
@@ -2314,6 +3225,108 @@
           "reason": "Literal keeps the bare Greek with \"вот\" for idou; the Slavonic \"Се\" is not used. Balanced and Readable say what Pilate does: he shows them the beaten prisoner (meaning decision m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43019005017",
+            "n43019005019"
+          ],
+          "choice": "\"Ось людина!\" (L, B); \"Дивіться! Ось цей чоловік!\" (R)",
+          "alternatives": [
+            "\"Ось Чоловік!\""
+          ],
+          "reason": "Here \"ось\" is part of Pilate's words (\"here is\"), not the narrator's \"behold\", so Balanced keeps it; \"людина\" keeps the open sense the meaning decisions note (m2, m3). Readable says plainly that he points to the beaten man.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43019005019"
+          ],
+          "choice": "\"この人\" at every level",
+          "alternatives": [
+            "\"この男\""
+          ],
+          "reason": "Pilate presents the beaten prisoner (m2), but John's reader may hear more in \"the man\" (m3). 人 keeps the general word for a human being, where 男 would narrow it to Pilate's scorn; elsewhere in Pilate's speech Jesus is \"あの男\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43019005018",
+            "n43019005019"
+          ],
+          "choice": "\"manusia itu\" (L, B); \"orangnya\" (R)",
+          "alternatives": [
+            "\"orang itu\""
+          ],
+          "reason": "m3: \"the man\" may say more than Pilate means. \"manusia\" (a human being) keeps that open; Readable says \"orangnya\", the plain \"here he is\", as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-1",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "theology",
+          "tokens": [
+            "n43019005017",
+            "n43019005018",
+            "n43019005019"
+          ],
+          "choice": "\"الإنسان\" (L, B), \"الرجل\" (R)",
+          "alternatives": [],
+          "reason": "Pilate presents the beaten prisoner as no threat, in pity or in scorn (m2); the words may say more than Pilate means (m3). \"الإنسان\" leaves room for that larger sense; Readable says plainly \"the man\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-2",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n43019005014",
+            "n43019005015"
+          ],
+          "choice": "\"بيلاطس\"",
+          "alternatives": [],
+          "reason": "Pilate is the speaker (m1); Balanced and Readable name him.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2394,6 +3407,31 @@
           "L": "Когда же увидели {{deity_pronoun:его|Его}} старшие священники и служители, закричали, говоря: «Распни, распни!»",
           "B": "Увидев {{deity_pronoun:его|Его}}, старшие священники и храмовая стража закричали: «Распни! Распни!»",
           "R": "Когда старшие священники и храмовые стражники увидели Иисуса, они закричали: «Распни {{deity_pronoun:его|Его}}! Распни {{deity_pronoun:его|Его}}!»"
+        },
+        "uk": {
+          "L": "Тож коли побачили {{deity_pronoun:його|Його}} старші священники і прислужники, закричали, кажучи: «Розіпни, розіпни!»",
+          "B": "Коли старші священники і храмові вартові побачили {{deity_pronoun:його|Його}}, вони закричали: «Розіпни! Розіпни!»",
+          "R": "Коли старші священники і храмові вартові побачили Ісуса, вони закричали: «Розіпни {{deity_pronoun:його|Його}}! Розіпни {{deity_pronoun:його|Його}}!»"
+        },
+        "ja": {
+          "L": "それで、祭司長たちと下役たちはイエスを見ると、叫んで言った。「十字架につけろ、十字架につけろ。」",
+          "B": "祭司長たちと神殿の警備兵たちはイエスを見ると、「十字架につけろ！十字架につけろ！」と叫んだ。",
+          "R": "祭司長たちと神殿の警備兵たちはイエスを見ると、「あいつを十字架につけろ！十字架につけろ！」と叫びました。"
+        },
+        "id": {
+          "L": "Ketika imam-imam kepala dan para penjaga melihat {{deity_pronoun:dia|Dia}}, mereka berteriak, katanya, \"Salibkan, salibkan!\"",
+          "B": "Ketika imam-imam kepala dan penjaga-penjaga Bait Allah melihat {{deity_pronoun:dia|Dia}}, mereka berteriak, \"Salibkan! Salibkan!\"",
+          "R": "Ketika imam-imam kepala dan penjaga-penjaga Bait Allah melihat Yesus, mereka berteriak, \"Salibkan {{deity_pronoun:dia|Dia}}! Salibkan {{deity_pronoun:dia|Dia}}!\""
+        },
+        "zh": {
+          "L": "于是祭司长和卫兵看见{{deity_pronoun:他|祂}}，就喊叫说：“钉十字架！钉十字架！”",
+          "B": "祭司长和圣殿警卫一看见{{deity_pronoun:他|祂}}，就喊道：“钉十字架！钉十字架！”",
+          "R": "祭司长和圣殿卫兵看见耶稣，就大喊：“把{{deity_pronoun:他|祂}}钉在十字架上！把{{deity_pronoun:他|祂}}钉在十字架上！”"
+        },
+        "ar": {
+          "L": "فلمّا رآه رؤساء الكهنة والخدّام، صاحوا قائلين: «اصلب، اصلب!»",
+          "B": "ولمّا رآه رؤساء الكهنة وحرّاس الهيكل، صرخوا: «اصلب! اصلب!»",
+          "R": "وعندما رأى كبار الكهنة وحرّاس الهيكل يسوع، صرخوا: «اصلبه! اصلبه!»"
         }
       },
       "alignments": [
@@ -2462,6 +3500,81 @@
           "language": "en",
           "level": "B",
           "target_span": "Crucify"
+        },
+        {
+          "tokens": [
+            "n43019006005",
+            "n43019006006"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "祭司長たち"
+        },
+        {
+          "tokens": [
+            "n43019006007"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "と"
+        },
+        {
+          "tokens": [
+            "n43019006008",
+            "n43019006009"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "神殿の警備兵たち"
+        },
+        {
+          "tokens": [
+            "n43019006004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "イエス"
+        },
+        {
+          "tokens": [
+            "n43019006003"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "見る"
+        },
+        {
+          "tokens": [
+            "n43019006001"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "と"
+        },
+        {
+          "tokens": [
+            "n43019006012"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "十字架につけろ"
+        },
+        {
+          "tokens": [
+            "n43019006013"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "十字架につけろ"
+        },
+        {
+          "tokens": [
+            "n43019006010",
+            "n43019006011"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "叫んだ"
         }
       ],
       "decisions": [
@@ -2820,6 +3933,69 @@
           "reason": "As the style guide sets, \"старшие священники\" keeps the leading priests apart from the one high priest; the officers are named as at 18:3.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43019006012",
+            "n43019006013"
+          ],
+          "choice": "\"钉十字架！钉十字架！\" (L, B), with no object",
+          "alternatives": [
+            "\"把他钉十字架！\" (as Mark 15:13)"
+          ],
+          "reason": "Here the Greek repeats the bare verb with no \"him\", unlike Mark 15:13-14, so Literal and Balanced leave the object out as the English does; Readable supplies it.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-1",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43019006005",
+            "n43019006006",
+            "n43019006007",
+            "n43019006008",
+            "n43019006009"
+          ],
+          "choice": "\"رؤساء الكهنة\" (L, B), \"كبار الكهنة\" (R); \"الخدّام\" (L), \"حرّاس الهيكل\" (B, R)",
+          "alternatives": [],
+          "reason": "The chief priests and the officers are the priestly leaders and the temple police who served them (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-2",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "grammar",
+          "tokens": [
+            "n43019006012",
+            "n43019006013"
+          ],
+          "choice": "\"اصلب\" without an object (L, B)",
+          "alternatives": [],
+          "reason": "The Greek cry has no object; Literal and Balanced keep it bare, as the English does, and Readable adds \"him\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2903,6 +4079,31 @@
           "L": "Говорит им Пилат: «Возьмите {{deity_pronoun:его|Его}} вы и распните, ведь я не нахожу в {{deity_pronoun:нём|Нём}} вины.»",
           "B": "Пилат сказал им: «Берите {{deity_pronoun:его|Его}} сами и распинайте. Я не нахожу за {{deity_pronoun:ним|Ним}} никакой вины.»",
           "R": "Пилат ответил: «Сами берите {{deity_pronoun:его|Его}} и распинайте! А я не вижу причины осудить {{deity_pronoun:его|Его}}.»"
+        },
+        "uk": {
+          "L": "Каже їм Пилат: «Візьміть {{deity_pronoun:його|Його}} ви і розіпніть, бо я не знаходжу в {{deity_pronoun:ньому|Ньому}} провини.»",
+          "B": "Пилат сказав їм: «Беріть {{deity_pronoun:його|Його}} самі й розпинайте. Я не знаходжу за {{deity_pronoun:ним|Ним}} жодної провини.»",
+          "R": "Пилат відповів: «Беріть {{deity_pronoun:його|Його}} і розпинайте самі! А я не бачу причини засуджувати {{deity_pronoun:його|Його}}.»"
+        },
+        "ja": {
+          "L": "ピラトは彼らに言う。「おまえたちが彼を引き取って、十字架につけろ。わたしは彼に罪状を見いださないのだから。」",
+          "B": "ピラトは彼らに言った。「おまえたちが自分で引き取って、十字架につけるがよい。わたしは、あの男に罪を見いださない。」",
+          "R": "ピラトは言い返しました。「おまえたちが自分で連れて行って、十字架につけたらどうだ！わたしは、あの男を罪に定める理由を見つけられないのだ。」"
+        },
+        "id": {
+          "L": "Pilatus berkata kepada mereka, \"Ambillah {{deity_pronoun:dia|Dia}} dan salibkanlah, sebab aku tidak menemukan kesalahan pada-{{deity_pronoun:nya|Nya}}.\"",
+          "B": "Pilatus berkata kepada mereka, \"Ambillah {{deity_pronoun:dia|Dia}} sendiri dan salibkanlah {{deity_pronoun:dia|Dia}}. Aku tidak menemukan dasar untuk mendakwa {{deity_pronoun:dia|Dia}}.\"",
+          "R": "Pilatus menjawab, \"Kalian saja yang membawa {{deity_pronoun:dia|Dia}} dan menyalibkan-{{deity_pronoun:nya|Nya}}! Aku sendiri tidak menemukan alasan untuk menghukum {{deity_pronoun:dia|Dia}}.\""
+        },
+        "zh": {
+          "L": "彼拉多对他们说：“你们自己把{{deity_pronoun:他|祂}}带去钉十字架吧，因为我在{{deity_pronoun:他|祂}}身上找不到罪状。”",
+          "B": "彼拉多告诉他们：“你们自己把{{deity_pronoun:他|祂}}带去钉十字架吧。我查不出{{deity_pronoun:他|祂}}有什么罪。”",
+          "R": "彼拉多回答：“你们自己把{{deity_pronoun:他|祂}}带去钉在十字架上吧！至于我，我找不到任何理由定{{deity_pronoun:他|祂}}的罪。”"
+        },
+        "ar": {
+          "L": "يقول لهم بيلاطس: «خذوه أنتم واصلبوه، فإنّي أنا لا أجد فيه علّة».",
+          "B": "فقال لهم بيلاطس: «خذوه أنتم واصلبوه. أنا لا أجد عليه أيّ تهمة».",
+          "R": "فردّ عليهم بيلاطس: «خذوه أنتم واصلبوه بأنفسكم! أمّا أنا فلا أجد سببًا لإدانته»."
         }
       },
       "alignments": [
@@ -3003,6 +4204,105 @@
           "language": "en",
           "level": "B",
           "target_span": "against {{deity_pronoun:him|Him}}"
+        },
+        {
+          "tokens": [
+            "n43019006016",
+            "n43019006017"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ピラト"
+        },
+        {
+          "tokens": [
+            "n43019006015"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "彼ら"
+        },
+        {
+          "tokens": [
+            "n43019006014"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "言った"
+        },
+        {
+          "tokens": [
+            "n43019006020"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "おまえたち"
+        },
+        {
+          "tokens": [
+            "n43019006020"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "自分で"
+        },
+        {
+          "tokens": [
+            "n43019006018",
+            "n43019006019"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "引き取って"
+        },
+        {
+          "tokens": [
+            "n43019006022"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "十字架につけるがよい"
+        },
+        {
+          "tokens": [
+            "n43019006023"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43019006028"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あの男"
+        },
+        {
+          "tokens": [
+            "n43019006027"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "に"
+        },
+        {
+          "tokens": [
+            "n43019006029"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "罪"
+        },
+        {
+          "tokens": [
+            "n43019006026",
+            "n43019006025"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "見いださない"
         }
       ],
       "decisions": [
@@ -3143,6 +4443,50 @@
           "reason": "Both pronouns are emphatic in Greek (meaning decision m2). Swahili shows the same contrast with the free pronouns \"ninyi\" and \"mimi\", which it adds only for emphasis. Here \"mimi\" is Pilate, so it carries no reader setting.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43019006018",
+            "n43019006020",
+            "n43019006022"
+          ],
+          "choice": "\"自分で引き取って、十字架につけるがよい\" (B); \"十字架につけたらどうだ！\" (R)",
+          "alternatives": [],
+          "reason": "The words are a scornful retort, not a real permission (m1), and \"you\" and \"I\" are both emphatic (m2). The ironic imperative and the challenge carry the scorn, and \"おまえたちが自分で\" against \"わたしは\" keeps the contrast.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-1",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "idiom",
+          "tokens": [
+            "n43019006018",
+            "n43019006019",
+            "n43019006020",
+            "n43019006021",
+            "n43019006022",
+            "n43019006023"
+          ],
+          "choice": "\"أنتم\" ... \"أنا\", both stressed",
+          "alternatives": [],
+          "reason": "\"Take him yourselves and crucify him\" is a scornful retort, not a real permission (m1); both pronouns are emphatic (m2).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3228,6 +4572,31 @@
           "L": "Иудеи ответили ему: «У нас есть закон, и по закону {{deity_pronoun:он|Он}} должен умереть, потому что сделал себя Сыном Божьим.»",
           "B": "Иудейские власти ответили: «У нас есть закон, и по этому закону {{deity_pronoun:он|Он}} должен умереть, потому что выдавал себя за Сына Божьего.»",
           "R": "Иудейские вожди ответили Пилату: «У нас есть закон, и по этому закону {{deity_pronoun:он|Он}} должен умереть. Ведь {{deity_pronoun:он|Он}} выдаёт себя за Сына Божьего.»"
+        },
+        "uk": {
+          "L": "Відповіли йому юдеї: «Ми маємо закон, і за законом {{deity_pronoun:він|Він}} мусить померти, бо {{deity_pronoun:він|Він}} зробив себе Сином Божим.»",
+          "B": "Представники юдейської влади відповіли: «У нас є Закон, і за цим Законом {{deity_pronoun:він|Він}} мусить померти, бо видавав себе за Сина Божого.»",
+          "R": "Юдейські провідники відповіли Пилатові: «У нас є Закон, і за цим Законом {{deity_pronoun:він|Він}} має померти. Він назвав себе Сином Божим.»"
+        },
+        "ja": {
+          "L": "ユダヤ人たちは彼に答えた。「わたしたちには律法があります。そして、その律法によれば、彼は死ななければなりません。自分を神の子としたからです。」",
+          "B": "ユダヤ人の指導者たちは答えた。「わたしたちには律法があります。その律法によれば、あの男は死ななければなりません。自分を神の子としたからです。」",
+          "R": "ユダヤ人の指導者たちはピラトに答えました。「わたしたちには律法があります。その律法によれば、あの男は死ななければなりません。自分を神の子だと言い張ったのです。」"
+        },
+        "id": {
+          "L": "Orang-orang Yahudi menjawabnya, \"Kami mempunyai hukum Taurat, dan menurut hukum Taurat itu {{deity_pronoun:dia|Dia}} harus mati, sebab {{deity_pronoun:dia|Dia}} telah menjadikan diri-{{deity_pronoun:nya|Nya}} Anak Allah.\"",
+          "B": "Para pemimpin Yahudi menjawab, \"Kami mempunyai hukum Taurat, dan menurut hukum itu {{deity_pronoun:dia|Dia}} harus mati, karena {{deity_pronoun:dia|Dia}} telah menyebut diri-{{deity_pronoun:nya|Nya}} Anak Allah.\"",
+          "R": "Para pemimpin Yahudi menjawab Pilatus, \"Kami mempunyai hukum Taurat, dan hukum itu berkata bahwa {{deity_pronoun:dia|Dia}} harus mati. Dia sudah mengaku diri-{{deity_pronoun:nya|Nya}} Anak Allah.\""
+        },
+        "zh": {
+          "L": "犹太人回答他：“我们有律法，按那律法，{{deity_pronoun:他|祂}}应该死，因为{{deity_pronoun:他|祂}}把{{deity_pronoun:他|祂}}自己当作{{god_term:神|上帝}}的儿子。”",
+          "B": "犹太领袖回答：“我们有律法，按照那律法，{{deity_pronoun:他|祂}}必须死，因为{{deity_pronoun:他|祂}}自称是{{god_term:神|上帝}}的儿子。”",
+          "R": "犹太领袖回答彼拉多：“我们有一条律法，这律法说{{deity_pronoun:他|祂}}必须死。{{deity_pronoun:他|祂}}把{{deity_pronoun:他|祂}}自己说成是{{god_term:神|上帝}}的儿子。”"
+        },
+        "ar": {
+          "L": "أجابه اليهود: «عندنا شريعة، وبحسب الشريعة يجب أن يموت، لأنّه جعل نفسه ابن الله».",
+          "B": "فأجاب قادة اليهود: «لنا شريعة، وبموجب هذه الشريعة لا بدّ أن يموت، إذ جعل من نفسه ابن الله».",
+          "R": "فأجاب قادة اليهود بيلاطس: «عندنا شريعة، وهذه الشريعة تقول إنّه يجب أن يموت. فقد ادّعى أنّه ابن الله»."
         }
       },
       "alignments": [
@@ -3344,6 +4713,114 @@
           "language": "en",
           "level": "B",
           "target_span": "of God"
+        },
+        {
+          "tokens": [
+            "n43019007003",
+            "n43019007004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ユダヤ人の指導者たち"
+        },
+        {
+          "tokens": [
+            "n43019007001"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "答えた"
+        },
+        {
+          "tokens": [
+            "n43019007005"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたしたち"
+        },
+        {
+          "tokens": [
+            "n43019007006"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "律法"
+        },
+        {
+          "tokens": [
+            "n43019007007"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あります"
+        },
+        {
+          "tokens": [
+            "n43019007010",
+            "n43019007011"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "その律法"
+        },
+        {
+          "tokens": [
+            "n43019007009"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "によれば"
+        },
+        {
+          "tokens": [
+            "n43019007012"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あの男"
+        },
+        {
+          "tokens": [
+            "n43019007013",
+            "n43019007012"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "死ななければなりません"
+        },
+        {
+          "tokens": [
+            "n43019007017"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "自分"
+        },
+        {
+          "tokens": [
+            "n43019007015",
+            "n43019007016"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "神の子"
+        },
+        {
+          "tokens": [
+            "n43019007018"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "とした"
+        },
+        {
+          "tokens": [
+            "n43019007014"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "から"
         }
       ],
       "decisions": [
@@ -3718,6 +5195,118 @@
           "reason": "Balanced and Readable show that this is a claim the speakers reject (meaning decision m3); the reflexive \"себя\" takes no deity_pronoun span, unlike the English \"himself\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n43019007016"
+          ],
+          "choice": "the god_term setting: \"神\" by default, \"上帝\" as the alternative",
+          "alternatives": [
+            "a fixed \"神\""
+          ],
+          "reason": "Every word naming the one God is written in the god_term setting (style guide section 4): readers see \"神\" by default and may choose \"上帝\"; the wording otherwise stays the same. \"Son of God\" is \"神的儿子\", never \"神子\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43019007004"
+          ],
+          "choice": "\"犹太人\" (L); \"犹太领袖\" (B, R)",
+          "alternatives": [],
+          "reason": "The chief priests and their officers who have just shouted (meaning decision m1), as at 18:12.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-1",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43019007003",
+            "n43019007004"
+          ],
+          "choice": "\"اليهود\" (L), \"قادة اليهود\" (B, R)",
+          "alternatives": [],
+          "reason": "Here \"the Jews\" are the chief priests and their officers (m1). Literal keeps the Greek word; Balanced and Readable say who is meant, as the English does, so that the word is not heard as the whole people.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-2",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "text_variant",
+          "tokens": [
+            "n43019007009",
+            "n43019007010",
+            "n43019007011"
+          ],
+          "choice": "\"بحسب الشريعة\"",
+          "alternatives": [
+            "\"بحسب شريعتنا\""
+          ],
+          "reason": "The text followed reads \"according to the law\" (m4), without \"our\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-3",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "allusion",
+          "tokens": [
+            "n43019007005",
+            "n43019007006",
+            "n43019007007",
+            "n43019007008",
+            "n43019007009",
+            "n43019007010",
+            "n43019007011",
+            "n43019007012",
+            "n43019007013"
+          ],
+          "choice": "\"شريعة\"",
+          "alternatives": [
+            "\"ناموس\""
+          ],
+          "reason": "The law they mean is the law against blasphemy, Leviticus 24:16 (m2).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3809,6 +5398,31 @@
           "L": "Когда же Пилат услышал это слово, он ещё больше испугался, \\v 9 и снова вошёл в преторий, и говорит Иисусу: «Откуда {{deity_pronoun:ты|Ты}}?»",
           "B": "Услышав это, Пилат испугался ещё больше. \\v 9 Он вернулся в резиденцию и спросил Иисуса: «Откуда {{deity_pronoun:ты|Ты}}?»",
           "R": "Когда Пилат услышал это, он испугался ещё больше. \\v 9 Он вернулся во дворец и спросил Иисуса: «Откуда {{deity_pronoun:ты|Ты}}?»"
+        },
+        "uk": {
+          "L": "Тож коли Пилат почув це слово, він ще більше злякався, \\v 9 і ввійшов знову до преторії, і каже Ісусові: «Звідки {{deity_pronoun:ти|Ти}}?»",
+          "B": "Почувши це, Пилат злякався ще більше. \\v 9 Він повернувся до резиденції й сказав Ісусові: «Звідки {{deity_pronoun:ти|Ти}}?»",
+          "R": "Коли Пилат почув це, він ще більше злякався. \\v 9 Він повернувся до палацу і запитав Ісуса: «Звідки {{deity_pronoun:ти|Ти}} родом?»"
+        },
+        "ja": {
+          "L": "それでピラトは、この言葉を聞くと、ますます恐れた。\\v 9 そして再びプラエトリウムに入り、イエスに言う。「おまえはどこから来たのか？」",
+          "B": "ピラトはこの言葉を聞くと、ますます恐れた。\\v 9 そして、もう一度官邸の中に入って、イエスに、「おまえはどこから来たのか？」と尋ねた。",
+          "R": "ピラトはこれを聞くと、もっと怖くなりました。\\v 9 そして、また官邸の中に入り、イエスに聞きました。「おまえは、どこから来たのか？」"
+        },
+        "id": {
+          "L": "Ketika Pilatus mendengar perkataan itu, ia makin takut, \\v 9 lalu ia masuk lagi ke markas gubernur dan berkata kepada Yesus, \"Dari manakah {{deity_pronoun:engkau|Engkau}}?\"",
+          "B": "Ketika Pilatus mendengar hal itu, ia makin takut. \\v 9 Dia masuk kembali ke markas gubernur dan berkata kepada Yesus, \"Dari mana asal-{{deity_pronoun:mu|Mu}}?\"",
+          "R": "Ketika Pilatus mendengar hal itu, ia makin takut. \\v 9 Dia masuk kembali ke istana dan bertanya kepada Yesus, \"Engkau berasal dari mana?\""
+        },
+        "zh": {
+          "L": "于是彼拉多听见这话，就更加害怕，\\v 9 又进了总督府，对耶稣说：“{{deity_pronoun:你|祢}}是从哪里来的？”",
+          "B": "彼拉多听了这话，就更加害怕。\\v 9 他又回到总督府里，问耶稣：“{{deity_pronoun:你|祢}}是从哪里来的？”",
+          "R": "彼拉多听见这话，心里更害怕了。\\v 9 他回到官邸里，问耶稣：“{{deity_pronoun:你|祢}}到底是从哪里来的？”"
+        },
+        "ar": {
+          "L": "فلمّا سمع بيلاطس هذه الكلمة، اشتدّ خوفه، \\v 9 ودخل ثانية إلى دار الولاية ويقول ليسوع: «من أين أنت؟»",
+          "B": "ولمّا سمع بيلاطس ذلك، زاد خوفه. \\v 9 فعاد إلى داخل المقرّ وقال ليسوع: «من أين أتيت؟»",
+          "R": "وعندما سمع بيلاطس هذا، خاف أكثر من قبل. \\v 9 فرجع إلى القصر وسأل يسوع: «من أين جئت؟»"
         }
       },
       "alignments": [
@@ -3945,6 +5559,132 @@
           "language": "en",
           "level": "B",
           "target_span": "come from"
+        },
+        {
+          "tokens": [
+            "n43019008004",
+            "n43019008005"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ピラト"
+        },
+        {
+          "tokens": [
+            "n43019008006",
+            "n43019008007",
+            "n43019008008"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "この言葉"
+        },
+        {
+          "tokens": [
+            "n43019008003",
+            "n43019008001"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "聞くと"
+        },
+        {
+          "tokens": [
+            "n43019008009"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ますます"
+        },
+        {
+          "tokens": [
+            "n43019008010"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "恐れた"
+        },
+        {
+          "tokens": [
+            "n43019009001"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "そして"
+        },
+        {
+          "tokens": [
+            "n43019009006"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "もう一度"
+        },
+        {
+          "tokens": [
+            "n43019009004",
+            "n43019009005"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "官邸"
+        },
+        {
+          "tokens": [
+            "n43019009003"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "の中に"
+        },
+        {
+          "tokens": [
+            "n43019009002"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "入って"
+        },
+        {
+          "tokens": [
+            "n43019009009",
+            "n43019009010"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "イエス"
+        },
+        {
+          "tokens": [
+            "n43019009013"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "おまえ"
+        },
+        {
+          "tokens": [
+            "n43019009011"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "どこから"
+        },
+        {
+          "tokens": [
+            "n43019009012"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "来たのか"
+        },
+        {
+          "tokens": [
+            "n43019009008"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "尋ねた"
         }
       ],
       "decisions": [
@@ -4209,6 +5949,70 @@
           "reason": "As in Matthew 27:27 and John 18:28: Literal keeps the Latin name, as the English Literal does; Balanced and Readable say what it was.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43019009011",
+            "n43019009012"
+          ],
+          "choice": "\"どこから来たのか\" at every level",
+          "alternatives": [
+            "\"どこの者か\"",
+            "\"出身はどこか\""
+          ],
+          "reason": "Pilate asks about more than a home town (m4). \"Where have you come from\" leaves room for the Gospel's question of where Jesus comes from (7:27-29; 8:14), which \"出身\" would close.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-1",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "grammar",
+          "tokens": [
+            "n43019008009",
+            "n43019008010"
+          ],
+          "choice": "\"اشتدّ خوفه\" (L), \"زاد خوفه\" (B), \"خاف أكثر من قبل\" (R)",
+          "alternatives": [],
+          "reason": "Pilate was already uneasy, and now his fear grows (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-2",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "theology",
+          "tokens": [
+            "n43019009011",
+            "n43019009012",
+            "n43019009013"
+          ],
+          "choice": "\"من أين أنت؟\" (L), \"من أين أتيت؟\" (B), \"من أين جئت؟\" (R)",
+          "alternatives": [],
+          "reason": "Pilate asks about more than a home town (m4); the plain question leaves that open.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4283,6 +6087,31 @@
           "L": "Но Иисус не дал ему ответа.",
           "B": "Но Иисус ничего ему не ответил.",
           "R": "Но Иисус не ответил ему."
+        },
+        "uk": {
+          "L": "Але Ісус не дав йому відповіді.",
+          "B": "Але Ісус нічого йому не відповів.",
+          "R": "Але Ісус не відповів йому."
+        },
+        "ja": {
+          "L": "しかしイエスは、彼に答えをお与えにならなかった。",
+          "B": "しかし、イエスは何もお答えにならなかった。",
+          "R": "しかし、イエスはピラトに何もお答えになりませんでした。"
+        },
+        "id": {
+          "L": "Tetapi Yesus tidak memberikan jawaban kepadanya.",
+          "B": "Tetapi Yesus tidak menjawabnya.",
+          "R": "Tetapi Yesus tidak menjawabnya."
+        },
+        "zh": {
+          "L": "耶稣却没有给他回答。",
+          "B": "耶稣却一言不答。",
+          "R": "但是耶稣没有回答他。"
+        },
+        "ar": {
+          "L": "أمّا يسوع فلم يردّ عليه بجواب.",
+          "B": "لكنّ يسوع لم يجبه بشيء.",
+          "R": "لكنّ يسوع لم يجبه."
         }
       },
       "alignments": [
@@ -4334,6 +6163,42 @@
           "language": "en",
           "level": "B",
           "target_span": "answer"
+        },
+        {
+          "tokens": [
+            "n43019009015"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "しかし"
+        },
+        {
+          "tokens": [
+            "n43019009014",
+            "n43019009016"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "イエス"
+        },
+        {
+          "tokens": [
+            "n43019009018"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "何も"
+        },
+        {
+          "tokens": [
+            "n43019009019",
+            "n43019009017",
+            "n43019009018",
+            "n43019009020"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "お答えにならなかった"
         }
       ],
       "decisions": [
@@ -4391,6 +6256,25 @@
             "gave him no answer"
           ],
           "reason": "Literal keeps the noun \"answer\" with \"give\", as the Greek has it; Balanced and Readable use natural forms of the same idea.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n43019009019"
+          ],
+          "choice": "\"お答えになりませんでした\" (R)",
+          "alternatives": [
+            "\"答えられませんでした\""
+          ],
+          "reason": "Readable normally uses the 〜られる form for Jesus, but \"答えられませんでした\" would also read as \"could not answer\". The お〜になる form says that Jesus chose not to answer (m2).",
           "uncertain": false,
           "footnote": false
         }
@@ -4468,6 +6352,31 @@
           "L": "Тогда говорит {{deity_pronoun:ему|Ему}} Пилат: «Мне не говоришь?»",
           "B": "Пилат сказал {{deity_pronoun:ему|Ему}}: «Ты не хочешь говорить со мной?»",
           "R": "Пилат сказал {{deity_pronoun:ему|Ему}}: «Ты даже со мной не будешь разговаривать?»"
+        },
+        "uk": {
+          "L": "Тож каже {{deity_pronoun:йому|Йому}} Пилат: «Мені не говориш?»",
+          "B": "Тоді Пилат сказав {{deity_pronoun:йому|Йому}}: «Ти не хочеш говорити зі мною?»",
+          "R": "Тоді Пилат сказав {{deity_pronoun:йому|Йому}}: «Ти навіть не хочеш говорити зі мною?»"
+        },
+        "ja": {
+          "L": "それでピラトはイエスに言う。「このわたしに話さないのか？」",
+          "B": "そこでピラトはイエスに言った。「このわたしに、口をきかないつもりか？」",
+          "R": "そこでピラトはイエスに言いました。「わたしにさえ、何も言わないのか？」"
+        },
+        "id": {
+          "L": "Lalu Pilatus berkata kepada-{{deity_pronoun:nya|Nya}}, \"Kepadaku {{deity_pronoun:engkau|Engkau}} tidak mau berbicara?",
+          "B": "Karena itu Pilatus berkata kepada-{{deity_pronoun:nya|Nya}}, \"Engkau tidak mau berbicara kepadaku?",
+          "R": "Jadi Pilatus berkata kepada-{{deity_pronoun:nya|Nya}}, \"Engkau bahkan tidak mau berbicara kepadaku?"
+        },
+        "zh": {
+          "L": "于是彼拉多对{{deity_pronoun:他|祂}}说：“{{deity_pronoun:你|祢}}不对我说话吗？”",
+          "B": "于是彼拉多对{{deity_pronoun:他|祂}}说：“{{deity_pronoun:你|祢}}不肯对我说话吗？”",
+          "R": "于是彼拉多对{{deity_pronoun:他|祂}}说：“{{deity_pronoun:你|祢}}连跟我说话都不肯吗？”"
+        },
+        "ar": {
+          "L": "فيقول له بيلاطس: «أإيّاي لا تكلّم؟",
+          "B": "فقال له بيلاطس: «أترفض أن تكلّمني؟",
+          "R": "فقال له بيلاطس: «ألن تتكلّم معي حتّى؟"
         }
       },
       "alignments": [
@@ -4535,6 +6444,56 @@
           "language": "en",
           "level": "B",
           "target_span": "to me"
+        },
+        {
+          "tokens": [
+            "n43019010002"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "そこで"
+        },
+        {
+          "tokens": [
+            "n43019010004",
+            "n43019010005"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ピラト"
+        },
+        {
+          "tokens": [
+            "n43019010003"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "イエス"
+        },
+        {
+          "tokens": [
+            "n43019010001"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "言った"
+        },
+        {
+          "tokens": [
+            "n43019010006"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "このわたし"
+        },
+        {
+          "tokens": [
+            "n43019010008",
+            "n43019010007"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "口をきかないつもりか"
         }
       ],
       "decisions": [
@@ -4622,6 +6581,44 @@
           "reason": "\"To me\" stands first for emphasis (meaning decision m1). Literal puts \"kwangu mimi\" first, as the Greek; Balanced shows the emphasis by \"refusing\", Readable by \"hata\" (not even), as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43019010006"
+          ],
+          "choice": "\"このわたしに\" (L, B); \"わたしにさえ\" (R)",
+          "alternatives": [],
+          "reason": "The pronoun stands first for emphasis: to me, the governor (m1). \"この\" and \"さえ\" give Japanese the stress the word order gives in Greek.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-1",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L"
+          ],
+          "category": "grammar",
+          "tokens": [
+            "n43019010006",
+            "n43019010007",
+            "n43019010008"
+          ],
+          "choice": "\"أإيّاي\" placed first",
+          "alternatives": [],
+          "reason": "\"To me\" is placed first for emphasis: to me, the governor (m1). Literal keeps that order.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4701,6 +6698,31 @@
           "L": "Не знаешь, что я имею власть отпустить {{deity_pronoun:тебя|Тебя}} и имею власть распять {{deity_pronoun:тебя|Тебя}}?",
           "B": "Разве {{deity_pronoun:ты|Ты}} не знаешь, что у меня есть власть освободить {{deity_pronoun:тебя|Тебя}} и власть распять {{deity_pronoun:тебя|Тебя}}?",
           "R": "Разве {{deity_pronoun:ты|Ты}} не понимаешь, что я могу отпустить {{deity_pronoun:тебя|Тебя}}? И я могу приказать распять {{deity_pronoun:тебя|Тебя}}!"
+        },
+        "uk": {
+          "L": "Хіба не знаєш, що маю владу відпустити {{deity_pronoun:тебе|Тебе}} і маю владу розіпʼясти {{deity_pronoun:тебе|Тебе}}?",
+          "B": "Хіба {{deity_pronoun:ти|Ти}} не знаєш, що я маю владу звільнити {{deity_pronoun:тебе|Тебе}} і владу розіпʼясти {{deity_pronoun:тебе|Тебе}}?",
+          "R": "Хіба {{deity_pronoun:ти|Ти}} не розумієш, що в моїй владі відпустити {{deity_pronoun:тебе|Тебе}}? А ще в моїй владі звеліти розіпʼясти {{deity_pronoun:тебе|Тебе}}!"
+        },
+        "ja": {
+          "L": "わたしにはおまえを釈放する権限があり、またおまえを十字架につける権限もあることを、知らないのか？",
+          "B": "わたしには、おまえを釈放する権限も、十字架につける権限もあることを知らないのか？",
+          "R": "わたしには、おまえを自由にしてやる力があるのが、わからないのか？おまえを十字架につけさせる力もあるのだ！"
+        },
+        "id": {
+          "L": "Tidakkah {{deity_pronoun:engkau|Engkau}} tahu bahwa aku berkuasa untuk membebaskan {{deity_pronoun:engkau|Engkau}} dan berkuasa untuk menyalibkan {{deity_pronoun:engkau|Engkau}}?",
+          "B": "Tidakkah {{deity_pronoun:engkau|Engkau}} tahu bahwa aku berkuasa untuk membebaskan {{deity_pronoun:engkau|Engkau}} dan berkuasa untuk menyalibkan {{deity_pronoun:engkau|Engkau}}?",
+          "R": "Apakah {{deity_pronoun:engkau|Engkau}} tidak mengerti bahwa aku berkuasa untuk membebaskan {{deity_pronoun:engkau|Engkau}}? Aku juga berkuasa untuk menyuruh orang menyalibkan {{deity_pronoun:engkau|Engkau}}!"
+        },
+        "zh": {
+          "L": "{{deity_pronoun:你|祢}}不知道我有权柄释放{{deity_pronoun:你|祢}}，也有权柄把{{deity_pronoun:你|祢}}钉十字架吗？",
+          "B": "难道{{deity_pronoun:你|祢}}不知道，我有权释放{{deity_pronoun:你|祢}}，也有权把{{deity_pronoun:你|祢}}钉十字架吗？",
+          "R": "{{deity_pronoun:你|祢}}难道不明白，我有权放{{deity_pronoun:你|祢}}走吗？我也有权叫人把{{deity_pronoun:你|祢}}钉在十字架上！"
+        },
+        "ar": {
+          "L": "ألا تعلم أنّ لي سلطانًا أن أُطلقك ولي سلطانًا أن أصلبك؟»",
+          "B": "ألا تعرف أنّ لي السلطة أن أُخلي سبيلك، ولي السلطة أن أصلبك؟»",
+          "R": "ألا تفهم أنّ عندي القدرة أن أتركك تذهب؟ وعندي القدرة أيضًا أن آمر بصلبك!»"
         }
       },
       "alignments": [
@@ -4799,6 +6821,81 @@
           "language": "en",
           "level": "B",
           "target_span": "{{deity_pronoun:you|You}}"
+        },
+        {
+          "tokens": [
+            "n43019010013"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43019010015"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "おまえ"
+        },
+        {
+          "tokens": [
+            "n43019010014"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "釈放する"
+        },
+        {
+          "tokens": [
+            "n43019010012"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "権限"
+        },
+        {
+          "tokens": [
+            "n43019010019",
+            "n43019010020"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "十字架につける"
+        },
+        {
+          "tokens": [
+            "n43019010017"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "権限"
+        },
+        {
+          "tokens": [
+            "n43019010013",
+            "n43019010018"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ある"
+        },
+        {
+          "tokens": [
+            "n43019010011"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "こと"
+        },
+        {
+          "tokens": [
+            "n43019010010",
+            "n43019010009"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "知らないのか"
         }
       ],
       "decisions": [
@@ -4889,6 +6986,70 @@
             "autoridad (Literal, Balanced)"
           ],
           "reason": "As in English: Readable uses the everyday word here and in verse 11, so that Jesus's reply is heard as an answer to Pilate's claim (meaning decision m1), and says \"hacer que te crucifiquen\" since his soldiers would carry it out.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43019010012",
+            "n43019010017"
+          ],
+          "choice": "\"権限\" (L, B); \"力\" (R); also 19:11",
+          "alternatives": [
+            "\"権威\""
+          ],
+          "reason": "The word is the legal right to decide, with the power that goes with it (m1). 権限 is the word for an official's legal power; 権威 would sound like moral or spiritual authority. Readable says 力, as the English Readable says power. The sentence has no quotation marks because the English continues Pilate's speech without them; the Japanese follows the English marks.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-1",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "text_variant",
+          "tokens": [
+            "n43019010014",
+            "n43019010019"
+          ],
+          "choice": "release first, then crucify",
+          "alternatives": [
+            "crucify first, then release"
+          ],
+          "reason": "The text followed puts \"release\" before \"crucify\" (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-2",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43019010012",
+            "n43019010017"
+          ],
+          "choice": "\"سلطانًا\" (L), \"السلطة\" (B), \"القدرة\" (R)",
+          "alternatives": [],
+          "reason": "Authority is the legal right and power to decide (m1).",
           "uncertain": false,
           "footnote": false
         }
@@ -4982,6 +7143,31 @@
           "L": "Иисус ответил ему: «Ты не имел бы надо {{deity_pronoun:мной|Мной}} никакой власти, если бы не было дано тебе свыше; поэтому предавший {{deity_pronoun:меня|Меня}} тебе имеет больший грех.»",
           "B": "Иисус ответил: «У тебя не было бы надо {{deity_pronoun:мной|Мной}} никакой власти, если бы она не была дана тебе свыше. Поэтому на том, кто выдал {{deity_pronoun:меня|Меня}} тебе, больший грех.»",
           "R": "Иисус ответил: «У тебя не было бы надо {{deity_pronoun:мной|Мной}} никакой власти, если бы Бог не дал её тебе. Поэтому тот человек, который отдал {{deity_pronoun:меня|Меня}} тебе в руки, виноват ещё больше, чем ты.»"
+        },
+        "uk": {
+          "L": "Відповів йому Ісус: «Ти не мав би наді {{deity_pronoun:мною|Мною}} жодної влади, якби не було дано тобі згори; тому той, хто передав {{deity_pronoun:мене|Мене}} тобі, має більший гріх.»",
+          "B": "Ісус відповів: «Ти не мав би наді {{deity_pronoun:мною|Мною}} жодної влади, якби її не дано тобі згори. Тому той, хто передав {{deity_pronoun:мене|Мене}} тобі, несе більший гріх.»",
+          "R": "Ісус відповів: «Ти не мав би наді {{deity_pronoun:мною|Мною}} ніякої влади, якби Бог не дав її тобі. Тому той, хто передав {{deity_pronoun:мене|Мене}} тобі, винен ще більше, ніж ти.»"
+        },
+        "ja": {
+          "L": "イエスは彼に答えられた。「上から与えられていなかったなら、あなたはわたしに対して何の権限も持たなかったであろう。だから、わたしをあなたに引き渡した者には、もっと大きな罪がある。」",
+          "B": "イエスはお答えになった。「上から与えられたのでなければ、あなたはわたしに対して何の権限もなかったはずだ。だから、わたしをあなたに引き渡した者の罪は、もっと重い。」",
+          "R": "イエスは答えられました。「神が与えられたのでなければ、あなたには、わたしをどうする力もなかったはずだ。だから、わたしをあなたに引き渡した者は、あなたよりもっと重い罪を犯しているのだ。」"
+        },
+        "id": {
+          "L": "Yesus menjawabnya, \"Engkau tidak mempunyai kuasa apa pun atas {{deity_pronoun:aku|Aku}}, jika kuasa itu tidak diberikan kepadamu dari atas; karena itu, dia yang menyerahkan {{deity_pronoun:aku|Aku}} kepadamu, lebih besar dosanya.\"",
+          "B": "Yesus menjawab, \"Engkau tidak akan mempunyai kuasa apa pun atas diri-{{deity_pronoun:ku|Ku}}, seandainya kuasa itu tidak diberikan kepadamu dari atas. Itulah sebabnya orang yang menyerahkan {{deity_pronoun:aku|Aku}} kepadamu lebih besar dosanya.\"",
+          "R": "Yesus menjawab, \"Kamu tidak akan mempunyai kuasa apa pun atas diri-{{deity_pronoun:ku|Ku}} kalau Allah tidak memberikannya kepadamu. Jadi orang yang menyerahkan {{deity_pronoun:aku|Aku}} kepadamu lebih bersalah daripada kamu.\""
+        },
+        "zh": {
+          "L": "耶稣回答他：“如果不是从上面赐给你的，你就没有任何对付我的权柄；因此，那把我交给你的人有更大的罪。”",
+          "B": "耶稣回答：“除非这是从上面赐给你的，否则你根本无权处置我。所以，那把我交给你的人，罪比你更大。”",
+          "R": "耶稣回答：“如果不是{{god_term:神|上帝}}给了你权力，你根本没有权力管我。所以，那个把我交给你的人，罪比你还要大。”"
+        },
+        "ar": {
+          "L": "أجابه يسوع: «ما كان لك عليّ أيّ سلطان لو لم يكن ذلك قد أُعطي لك من فوق؛ لذلك فالذي سلّمني إليك خطيئته أعظم».",
+          "B": "فأجاب يسوع: «ما كانت لك عليّ سلطة على الإطلاق لو لم تُعطَ لك من فوق. ولهذا فإنّ الذي سلّمني إليك يحمل الخطيئة الأعظم».",
+          "R": "فأجاب يسوع: «ما كانت لك عليّ أيّ قدرة لو لم يعطك الله إيّاها. ولذلك فالذي سلّمني إليك مذنب بخطيئة أكبر من خطيئتك»."
         }
       },
       "alignments": [
@@ -5141,6 +7327,149 @@
           "language": "en",
           "level": "B",
           "target_span": "sin"
+        },
+        {
+          "tokens": [
+            "n43019011003"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "イエス"
+        },
+        {
+          "tokens": [
+            "n43019011001"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "お答えになった"
+        },
+        {
+          "tokens": [
+            "n43019011015"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "上から"
+        },
+        {
+          "tokens": [
+            "n43019011013",
+            "n43019011012",
+            "n43019011014"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "与えられた"
+        },
+        {
+          "tokens": [
+            "n43019011010",
+            "n43019011011"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "のでなければ"
+        },
+        {
+          "tokens": [
+            "n43019011005"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなた"
+        },
+        {
+          "tokens": [
+            "n43019011008"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43019011007"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "に対して"
+        },
+        {
+          "tokens": [
+            "n43019011009"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "何の"
+        },
+        {
+          "tokens": [
+            "n43019011006"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "権限"
+        },
+        {
+          "tokens": [
+            "n43019011005",
+            "n43019011004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "なかったはずだ"
+        },
+        {
+          "tokens": [
+            "n43019011016",
+            "n43019011017"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "だから"
+        },
+        {
+          "tokens": [
+            "n43019011020"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43019011021"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなた"
+        },
+        {
+          "tokens": [
+            "n43019011018",
+            "n43019011019"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "引き渡した者"
+        },
+        {
+          "tokens": [
+            "n43019011023"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "罪"
+        },
+        {
+          "tokens": [
+            "n43019011022",
+            "n43019011024"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "もっと重い"
         }
       ],
       "decisions": [
@@ -5481,6 +7810,135 @@
           "reason": "Literal keeps the neuter of the Greek, which speaks of the whole matter as given, not only of the power (meaning decision m2); Balanced and Readable make \"власть\" the subject, as Russian prefers.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43019011015",
+            "n43019011019"
+          ],
+          "choice": "\"上から\" (L, B), \"神が与えられた\" (R); \"引き渡した者\" at every level",
+          "alternatives": [
+            "\"裏切った者\""
+          ],
+          "reason": "From above means from God (m1); Literal and Balanced keep \"上から\" so that the link with 3:3 and 3:31 stays, and Readable names God. The one who handed Jesus over is most likely Caiaphas (m4), not Judas, so the general \"引き渡す\" stands at every level rather than the \"裏切る\" used of Judas at Balanced and Readable.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n43019011005"
+          ],
+          "choice": "Jesus answers Pilate in the plain style and calls him \"あなた\"",
+          "alternatives": [],
+          "reason": "As in 18:34-37: Jesus does not plead before the governor; the plain style keeps his calm authority, and あなた, not おまえ, keeps it from sounding rude.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n43019011015"
+          ],
+          "choice": "\"神给了你\" (R, in the god_term span) for \"from above\"",
+          "alternatives": [
+            "\"从上面\" at every level"
+          ],
+          "reason": "\"From above\" means from God (meaning decision m1); Readable names him, as the English Readable does, and so writes the god_term span.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-1",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43019011015"
+          ],
+          "choice": "\"من فوق\" (L, B), \"الله\" (R)",
+          "alternatives": [],
+          "reason": "From above means from God (m1); Readable names him.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-2",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L"
+          ],
+          "category": "grammar",
+          "tokens": [
+            "n43019011012",
+            "n43019011013"
+          ],
+          "choice": "\"ذلك\" as the subject of \"أُعطي\"",
+          "alternatives": [
+            "\"لو لم يكن قد أُعطي لك\""
+          ],
+          "reason": "What was given is the whole matter, not only the word \"authority\" (m2); the Greek uses a neuter form. Literal says \"that\"; Balanced and Readable let the verb follow \"authority\", as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-3",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "theology",
+          "tokens": [
+            "n43019011016",
+            "n43019011017",
+            "n43019011018",
+            "n43019011019",
+            "n43019011020",
+            "n43019011021",
+            "n43019011022",
+            "n43019011023",
+            "n43019011024"
+          ],
+          "choice": "\"الذي سلّمني إليك\"",
+          "alternatives": [
+            "\"يهوذا\"",
+            "\"قيافا\""
+          ],
+          "reason": "Pilate is guilty, but the one who handed Jesus over is more guilty (m3); most likely Caiaphas is meant (m4), but John does not name him, so no level does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5576,6 +8034,31 @@
           "L": "С этого [времени] Пилат искал, как отпустить {{deity_pronoun:его|Его}}; иудеи же кричали, говоря: «Если отпустишь этого, ты не друг кесарю; всякий, делающий себя царём, противится кесарю.»",
           "B": "С тех пор Пилат старался освободить {{deity_pronoun:его|Его}}, но иудейские власти кричали: «Если отпустишь этого человека, ты не друг кесарю. Всякий, кто называет себя царём, восстаёт против кесаря.»",
           "R": "После этого Пилат всё пытался найти способ отпустить Иисуса. Но иудейские вожди кричали: «Если ты отпустишь этого человека, ты не друг кесарю! Кто называет себя царём, тот враг кесаря, римского императора!»"
+        },
+        "uk": {
+          "L": "Відтоді Пилат шукав, [як] відпустити {{deity_pronoun:його|Його}}, а юдеї закричали, кажучи: «Якщо відпустиш цього, ти не друг кесаря; кожен, хто робить себе царем, виступає проти кесаря.»",
+          "B": "Відтоді Пилат намагався звільнити {{deity_pronoun:його|Його}}, але представники юдейської влади кричали: «Якщо відпустиш цього чоловіка, ти не друг кесаря. Кожен, хто видає себе за царя, повстає проти кесаря.»",
+          "R": "Після цього Пилат усе шукав способу відпустити Ісуса. Але юдейські провідники кричали: «Якщо ти відпустиш цього чоловіка, то ти не друг кесаря! Кожен, хто називає себе царем, — ворог кесаря, імператора!»"
+        },
+        "ja": {
+          "L": "このことから、ピラトはイエスを釈放しようと努めていた。しかしユダヤ人たちは叫んで言った。「もしこの[者]を釈放するなら、あなたは皇帝の友ではありません。自分を王とする者はみな、皇帝に逆らっているのです。」",
+          "B": "そのときから、ピラトはイエスを釈放しようと努めた。しかし、ユダヤ人の指導者たちは叫んだ。「その男を釈放するなら、あなたは皇帝の友ではありません。自分を王だと言う者はだれでも、皇帝に背いているのです。」",
+          "R": "その後、ピラトは、イエスを放す方法をなんとか見つけようとしました。しかし、ユダヤ人の指導者たちは叫びました。「その男を放すなら、総督は皇帝の友ではなくなります！自分は王だと言う者はみな、ローマ皇帝の敵です！」"
+        },
+        "id": {
+          "L": "Sejak itu Pilatus berusaha membebaskan {{deity_pronoun:dia|Dia}}, tetapi orang-orang Yahudi berteriak, katanya, \"Jika engkau membebaskan orang ini, engkau bukan sahabat Kaisar; setiap orang yang menjadikan dirinya raja, ia melawan Kaisar.\"",
+          "B": "Sejak itu Pilatus berusaha membebaskan {{deity_pronoun:dia|Dia}}, tetapi para pemimpin Yahudi berteriak, \"Kalau engkau membebaskan orang ini, engkau bukan sahabat Kaisar. Siapa pun yang mengaku dirinya raja, ia melawan Kaisar.\"",
+          "R": "Sesudah itu Pilatus terus mencari jalan untuk membebaskan Yesus. Tetapi para pemimpin Yahudi berteriak, \"Kalau engkau membebaskan orang ini, engkau bukan sahabat Kaisar! Siapa saja yang mengaku dirinya raja adalah musuh Kaisar, sang kaisar Romawi!\""
+        },
+        "zh": {
+          "L": "从此彼拉多想要释放{{deity_pronoun:他|祂}}，但犹太人喊叫说：“你若释放这[人]，你就不是凯撒的朋友；所有自立为王的，都是反对凯撒的。”",
+          "B": "从那时起，彼拉多设法要释放{{deity_pronoun:他|祂}}，但犹太领袖喊着说：“如果您放了这个人，您就不是凯撒的朋友。任何自称为王的人，都是与凯撒作对。”",
+          "R": "此后，彼拉多一直想办法放耶稣走。但犹太领袖大喊：“如果您放了这个人，您就不是凯撒的朋友！任何说自己是王的人，都是皇帝凯撒的敌人！”"
+        },
+        "ar": {
+          "L": "ومن هذا الحين كان بيلاطس يسعى إلى إطلاقه، لكنّ اليهود صاحوا قائلين: «إن أطلقت هذا فلست صديقًا لقيصر؛ كلّ من يجعل نفسه ملكًا يعارض قيصر».",
+          "B": "ومنذ ذلك الحين حاول بيلاطس أن يُخلي سبيله، لكنّ قادة اليهود صرخوا: «إن أطلقت هذا الرجل، فلست صديقًا لقيصر. فكلّ من يدّعي أنّه ملك يقف ضدّ قيصر».",
+          "R": "وبعد هذا، ظلّ بيلاطس يحاول أن يجد طريقة لإطلاق يسوع. لكنّ قادة اليهود صرخوا: «إن تركت هذا الرجل يذهب، فأنت لست صديق قيصر! فكلّ من يقول إنّه ملك هو عدوّ لقيصر الإمبراطور!»"
         }
       },
       "alignments": [
@@ -5776,6 +8259,182 @@
           "language": "en",
           "level": "B",
           "target_span": "Caesar"
+        },
+        {
+          "tokens": [
+            "n43019012001",
+            "n43019012002"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "そのときから"
+        },
+        {
+          "tokens": [
+            "n43019012003",
+            "n43019012004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ピラト"
+        },
+        {
+          "tokens": [
+            "n43019012007"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "イエス"
+        },
+        {
+          "tokens": [
+            "n43019012006"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "釈放しよう"
+        },
+        {
+          "tokens": [
+            "n43019012005"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "努めた"
+        },
+        {
+          "tokens": [
+            "n43019012009"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "しかし"
+        },
+        {
+          "tokens": [
+            "n43019012008",
+            "n43019012010"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ユダヤ人の指導者たち"
+        },
+        {
+          "tokens": [
+            "n43019012011",
+            "n43019012012"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "叫んだ"
+        },
+        {
+          "tokens": [
+            "n43019012014"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "その男"
+        },
+        {
+          "tokens": [
+            "n43019012015"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "釈放する"
+        },
+        {
+          "tokens": [
+            "n43019012013"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "なら"
+        },
+        {
+          "tokens": [
+            "n43019012017"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなた"
+        },
+        {
+          "tokens": [
+            "n43019012019",
+            "n43019012020"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "皇帝"
+        },
+        {
+          "tokens": [
+            "n43019012018"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "友"
+        },
+        {
+          "tokens": [
+            "n43019012017",
+            "n43019012016"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ではありません"
+        },
+        {
+          "tokens": [
+            "n43019012024"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "自分"
+        },
+        {
+          "tokens": [
+            "n43019012023"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "王"
+        },
+        {
+          "tokens": [
+            "n43019012022",
+            "n43019012025"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "だと言う者"
+        },
+        {
+          "tokens": [
+            "n43019012021"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "だれでも"
+        },
+        {
+          "tokens": [
+            "n43019012027",
+            "n43019012028"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "皇帝"
+        },
+        {
+          "tokens": [
+            "n43019012026"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "背いている"
         }
       ],
       "decisions": [
@@ -6077,6 +8736,152 @@
           "reason": "The traditional Russian Bible word for the emperor (style guide); Readable adds who he was, as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43019012020",
+            "n43019012028"
+          ],
+          "choice": "\"皇帝\" (every level; also 19:15); \"ローマ皇帝\" once (R)",
+          "alternatives": [
+            "\"カイザル\"",
+            "\"皇帝\" at every level"
+          ],
+          "reason": "Caesar here is the Roman emperor (m4), a title rather than a personal name; \"皇帝\" says so at every level, as Acts does. Readable adds \"ローマ\" once, as the English Readable adds \"the emperor\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n43019012015",
+            "n43019012017"
+          ],
+          "choice": "the leaders keep the polite style to Pilate (\"ありません\", \"のです\"); \"あなた\" (L, B), \"総督\" (R)",
+          "alternatives": [],
+          "reason": "They threaten the governor but still address him as subjects; as in 18:30, Readable uses his title in place of あなた. Their cry for Barabbas (18:40) and their shouts at the prisoner are plain because they are not addressed to Pilate.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43019012010"
+          ],
+          "choice": "\"犹太人\" (L); \"犹太领袖\" (B, R)",
+          "alternatives": [],
+          "reason": "The chief priests and their officers, with those who stood with them (meaning decision m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n43019012015"
+          ],
+          "choice": "\"您\" to Pilate (B, R)",
+          "alternatives": [
+            "\"你\""
+          ],
+          "reason": "As at 18:30, the accusers speak to the governor with \"您\" at Balanced and Readable, even while threatening him; Literal keeps \"你\". \"凯撒\" is the glossary's form for Caesar (not the older \"该撒\").",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-1",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43019012008",
+            "n43019012010"
+          ],
+          "choice": "\"اليهود\" (L), \"قادة اليهود\" (B, R)",
+          "alternatives": [],
+          "reason": "Here \"the Jews\" are the chief priests and their officers, with those who stood with them outside the praetorium (m3). Literal keeps the Greek word; Balanced and Readable say who is meant, as the English does, so that the word is not heard as the whole people.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-2",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "culture",
+          "tokens": [
+            "n43019012017",
+            "n43019012018",
+            "n43019012019",
+            "n43019012020"
+          ],
+          "choice": "\"صديقًا لقيصر\" (L, B), \"صديق قيصر\" (R)",
+          "alternatives": [],
+          "reason": "Caesar's friend means loyal to the emperor, and was perhaps also an honoured title (m4). Readable's construct form \"صديق قيصر\" sounds like a title.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-3",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n43019012021",
+            "n43019012022",
+            "n43019012023",
+            "n43019012024",
+            "n43019012025",
+            "n43019012026"
+          ],
+          "choice": "\"قيصر الإمبراطور\"",
+          "alternatives": [],
+          "reason": "To make oneself a king is to oppose the emperor (m5); Readable says who Caesar is.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6166,6 +8971,31 @@
           "L": "Пилат же, услышав эти слова, вывел Иисуса наружу и сел на судейское место, на месте, называемом Каменный помост, а по-еврейски Гаввафа.",
           "B": "Услышав это, Пилат вывел Иисуса и сел на судейское место там, где было место, называемое Каменный помост, а по-еврейски Гаввафа.",
           "R": "Услышав это, Пилат вывел Иисуса наружу. Он сел на место судьи на площадке, которая называлась Каменный помост. По-еврейски её называли Гаввафа."
+        },
+        "uk": {
+          "L": "Тож Пилат, почувши ці слова, вивів Ісуса назовні і сів на судилищі, на місці, що зветься Камʼяний Поміст, а по-єврейськи Гаввата.",
+          "B": "Почувши ці слова, Пилат вивів Ісуса й сів на судилищі, на місці, що називається Камʼяний Поміст, а єврейською — Гаввата.",
+          "R": "Почувши це, Пилат вивів Ісуса. Він сів на суддівське місце там, де було місце під назвою Камʼяний Поміст. Єврейською мовою воно звалося Гаввата."
+        },
+        "ja": {
+          "L": "それでピラトは、これらの言葉を聞くと、イエスを外に連れ出し、石畳と呼ばれる場所、ヘブライ語ではガバタという所で、裁きの座に座った。",
+          "B": "ピラトはこれらの言葉を聞くと、イエスを外に連れ出し、石畳と呼ばれる場所で、裁きの座に着いた。そこはヘブライ語でガバタという。",
+          "R": "ピラトはこれを聞くと、イエスを外に連れ出しました。そして、石畳と呼ばれる場所で、裁判をする人の席に座りました。そこは、ヘブライ語でガバタという名前でした。"
+        },
+        "id": {
+          "L": "Ketika Pilatus mendengar perkataan-perkataan itu, ia membawa Yesus keluar, lalu duduk di kursi pengadilan, di tempat yang disebut Lantai Batu, dalam bahasa Ibrani Gabata.",
+          "B": "Ketika Pilatus mendengar perkataan itu, ia membawa Yesus keluar dan duduk di kursi pengadilan, di tempat yang bernama Lantai Batu, dalam bahasa Ibrani Gabata.",
+          "R": "Ketika Pilatus mendengar hal itu, ia membawa Yesus keluar. Dia duduk di kursi hakim di sebuah tempat yang bernama Lantai Batu. Dalam bahasa Ibrani tempat itu bernama Gabata."
+        },
+        "zh": {
+          "L": "于是彼拉多听见这些话，就把耶稣带到外面，在一个叫作铺石地的地方坐在审判座上，那地方希伯来话却叫加巴他。",
+          "B": "彼拉多听了这些话，就把耶稣带出来，在一个名叫铺石地的地方坐上审判座。这地方希伯来话叫加巴他。",
+          "R": "彼拉多听见这些话，就把耶稣带到外面。他在一个叫铺石地的地方，坐在审判官的位子上。这地方用希伯来话叫加巴他。"
+        },
+        "ar": {
+          "L": "فلمّا سمع بيلاطس هذا الكلام، أخرج يسوع إلى الخارج، وجلس على منصّة القضاء في مكان يُدعى البلاط، وبالعبريّة جبّاثا.",
+          "B": "ولمّا سمع بيلاطس ذلك، أخرج يسوع، واتّخذ مجلسه على منصّة القضاء في الموضع المعروف بالبلاط الحجريّ، وبالعبريّة جبّاثا.",
+          "R": "وعندما سمع بيلاطس هذا، أخرج يسوع. وجلس على كرسيّ القاضي في مكان يُسمّى البلاط الحجريّ. وكان اسمه بالعبريّة جبّاثا."
         }
       },
       "alignments": [
@@ -6300,6 +9130,130 @@
           "language": "en",
           "level": "B",
           "target_span": "Gabbatha"
+        },
+        {
+          "tokens": [
+            "n43019013001",
+            "n43019013003"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ピラト"
+        },
+        {
+          "tokens": [
+            "n43019013005",
+            "n43019013006",
+            "n43019013007"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "これらの言葉"
+        },
+        {
+          "tokens": [
+            "n43019013004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "聞くと"
+        },
+        {
+          "tokens": [
+            "n43019013010",
+            "n43019013011"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "イエス"
+        },
+        {
+          "tokens": [
+            "n43019013009"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "外に"
+        },
+        {
+          "tokens": [
+            "n43019013008"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "連れ出し"
+        },
+        {
+          "tokens": [
+            "n43019013019"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "石畳"
+        },
+        {
+          "tokens": [
+            "n43019013018"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "と呼ばれる"
+        },
+        {
+          "tokens": [
+            "n43019013017"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "場所"
+        },
+        {
+          "tokens": [
+            "n43019013016"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "で"
+        },
+        {
+          "tokens": [
+            "n43019013015"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "裁きの座"
+        },
+        {
+          "tokens": [
+            "n43019013014"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "に"
+        },
+        {
+          "tokens": [
+            "n43019013013"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "着いた"
+        },
+        {
+          "tokens": [
+            "n43019013020"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ヘブライ語で"
+        },
+        {
+          "tokens": [
+            "n43019013022"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ガバタ"
         }
       ],
       "decisions": [
@@ -6593,6 +9547,140 @@
           "reason": "The Greek name is translated, as the English does, and the Hebrew name keeps its traditional Russian form. \"По-еврейски\" keeps the word John used, as at 5:2; the meaning decision says which language it was.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43019013015",
+            "n43019013019"
+          ],
+          "choice": "\"судилище\" (L, B), \"суддівське місце\" (R); \"Камʼяний Поміст\" for the Greek name",
+          "alternatives": [
+            "\"Літостротон\""
+          ],
+          "reason": "\"Судилище\" is the term settled in the letters for the judgment seat; the Greek place name is translated, as John's reader understood it, beside the Semitic name Gabbatha.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43019013015",
+            "n43019013019",
+            "n43019013022"
+          ],
+          "choice": "\"裁きの座\" (L, B), \"裁判をする人の席\" (R); \"石畳\" and \"ガバタ\"",
+          "alternatives": [
+            "\"リトストロトス\"",
+            "\"敷石\""
+          ],
+          "reason": "The judgment seat is the platform from which a Roman official gave his decision (m2), and Pilate takes his seat on it (m1). The first name of the place means a stone-paved floor (m3), so Japanese translates it as 石畳 and transliterates the Hebrew (Aramaic) name, with ヘブライ語 as at 5:2.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43019013019",
+            "n43019013020",
+            "n43019013022"
+          ],
+          "choice": "\"Lantai Batu\"; \"Gabata\"",
+          "alternatives": [
+            "\"Litostrotos\""
+          ],
+          "reason": "m3: two names for the same place. John translates the Greek name, so Indonesian translates it too (\"Lantai Batu\"), and keeps the Hebrew name in the brief's spelling (Style, section 6, rule 4); added to docs/indonesian-terms.md.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43019013015",
+            "n43019013019",
+            "n43019013022"
+          ],
+          "choice": "\"审判座\" (L, B), \"审判官的位子\" (R); \"铺石地\"; \"加巴他\"",
+          "alternatives": [
+            "\"厄巴大\""
+          ],
+          "reason": "\"审判座\" is Matthew 27:19's word for the same Greek, level by level. The Stone Pavement is translated \"铺石地\"; Gabbatha, not in the glossary, is transliterated from the Greek by the style guide's rules (\"他\" for -tha as in \"各各他\"), and added to the book's list.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-1",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "culture",
+          "tokens": [
+            "n43019013015"
+          ],
+          "choice": "\"منصّة القضاء\" (L, B), \"كرسيّ القاضي\" (R)",
+          "alternatives": [
+            "\"كرسيّ الولاية\""
+          ],
+          "reason": "The judgment seat is the raised platform where a Roman official sat to give his decision (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-2",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43019013019",
+            "n43019013020",
+            "n43019013022"
+          ],
+          "choice": "\"البلاط\" (L), \"البلاط الحجريّ\" (B, R); \"بالعبريّة جبّاثا\"",
+          "alternatives": [],
+          "reason": "The Stone Pavement and Gabbatha are two names for the same place (m3); John's \"in Hebrew\" is kept at every level.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6669,6 +9757,31 @@
           "L": "Было же приготовление Пасхи; было около шестого часа.",
           "B": "Был день приготовления к Пасхе, около полудня.",
           "R": "Это был день, когда люди готовились к Пасхе. Было около полудня."
+        },
+        "uk": {
+          "L": "А було Приготування Пасхи; година була близько шостої.",
+          "B": "Був день Приготування Пасхи, близько полудня.",
+          "R": "Був день Приготування, коли люди готувалися до Пасхи. Час був близько полудня."
+        },
+        "ja": {
+          "L": "さて、[その日は]過越祭の準備の日で、時はおよそ第六の時であった。",
+          "B": "その日は過越祭の準備の日で、昼の十二時ごろであった。",
+          "R": "その日は、過越祭の準備をする日でした。時刻は、昼の十二時ごろでした。"
+        },
+        "id": {
+          "L": "Hari itu adalah hari Persiapan Paskah, kira-kira jam keenam.",
+          "B": "Hari itu adalah hari Persiapan Paskah, kira-kira pukul dua belas siang.",
+          "R": "Hari itu adalah hari Persiapan, hari ketika orang bersiap-siap untuk Paskah. Waktu itu kira-kira pukul dua belas siang."
+        },
+        "zh": {
+          "L": "那天是逾越节的预备日；约在第六时。",
+          "B": "那天是逾越节的预备日，时间约在中午十二点。",
+          "R": "那天是预备日，人们在这一天为逾越节作准备。那时大约是中午十二点。"
+        },
+        "ar": {
+          "L": "وكان ذلك يوم تهيئة الفصح، نحو الساعة السادسة.",
+          "B": "وكان يوم التهيئة للفصح، نحو الظهر.",
+          "R": "وكان ذلك يوم التهيئة، حين يستعدّ الناس للفصح. وكان الوقت نحو الظهر."
         }
       },
       "alignments": [
@@ -6714,6 +9827,49 @@
           "language": "en",
           "level": "B",
           "target_span": "noon"
+        },
+        {
+          "tokens": [
+            "n43019014004",
+            "n43019014005"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "過越祭"
+        },
+        {
+          "tokens": [
+            "n43019014003"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "準備の日"
+        },
+        {
+          "tokens": [
+            "n43019014006",
+            "n43019014009"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "昼の十二時"
+        },
+        {
+          "tokens": [
+            "n43019014008"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ごろ"
+        },
+        {
+          "tokens": [
+            "n43019014001",
+            "n43019014007"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "であった"
         }
       ],
       "decisions": [
@@ -7032,6 +10188,143 @@
           "reason": "Clock times in John: Literal keeps the Greek count, Balanced and Readable give the time as a modern reader counts it (style guide, section 5).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43019014003",
+            "n43019014006",
+            "n43019014008",
+            "n43019014009"
+          ],
+          "choice": "\"близько шостої [години]\" (L); \"близько полудня\" (B, R); \"Приготування\" (L), \"день Приготування\" (B, R)",
+          "alternatives": [
+            "\"близько шостої години\" at every level"
+          ],
+          "reason": "The clock-time and Preparation conventions settled for the Gospels: Literal keeps the Greek count of hours from sunrise; Balanced and Readable give the time as a modern reader counts it.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43019014003",
+            "n43019014009"
+          ],
+          "choice": "\"およそ第六の時\" (L); \"昼の十二時ごろ\" (B, R); \"過越祭の準備の日\"",
+          "alternatives": [],
+          "reason": "The sixth hour, counted from sunrise, is about noon (m2); Literal keeps the Greek count and Balanced and Readable give the modern time, as at 4:6. The Preparation is the day before the Passover meal (m1), said as 準備の日, and Readable explains it as the day for getting ready.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43019014003",
+            "n43019014004",
+            "n43019014005",
+            "n43019014006",
+            "n43019014007",
+            "n43019014008",
+            "n43019014009"
+          ],
+          "choice": "\"hari Persiapan\"; \"jam keenam\" (L), \"pukul dua belas siang\" (B, R)",
+          "alternatives": [
+            "\"hari raya Persiapan\""
+          ],
+          "reason": "m1: the day before the Passover. The clock follows the rule of 1:39 and 4:6.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43019014006",
+            "n43019014008",
+            "n43019014009"
+          ],
+          "choice": "\"约在第六时\" (L); \"约在中午十二点\" (B), \"大约是中午十二点\" (R)",
+          "alternatives": [
+            "\"正午\" (B, R)"
+          ],
+          "reason": "Clock time as in Matthew 27:45 and Mark 15:33: Literal keeps the source's count of hours from sunrise, Balanced and Readable give the time as a modern reader counts it (meaning decision m2). \"预备日\" is Mark 15:42's word.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-1",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "culture",
+          "tokens": [
+            "n43019014003",
+            "n43019014004",
+            "n43019014005"
+          ],
+          "choice": "\"يوم تهيئة الفصح\" (L), \"يوم التهيئة للفصح\" (B), \"يوم التهيئة، حين يستعدّ الناس للفصح\" (R)",
+          "alternatives": [],
+          "reason": "The Preparation of the Passover is the day before the Passover, when the meal was made ready (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-2",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "culture",
+          "tokens": [
+            "n43019014006",
+            "n43019014007",
+            "n43019014008",
+            "n43019014009"
+          ],
+          "choice": "\"الساعة السادسة\" (L), \"الظهر\" (B, R)",
+          "alternatives": [],
+          "reason": "About the sixth hour is about noon (m2).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -7107,6 +10400,31 @@
           "L": "И говорит иудеям: «Вот, ваш Царь!»",
           "B": "Пилат сказал иудейским властям: «Смотрите, вот ваш Царь!»",
           "R": "Пилат сказал иудейским вождям: «Смотрите! Вот ваш Царь!»"
+        },
+        "uk": {
+          "L": "І каже юдеям: «Ось ваш Цар!»",
+          "B": "Пилат сказав представникам юдейської влади: «Ось ваш Цар!»",
+          "R": "Пилат сказав юдейським провідникам: «Дивіться! Ось ваш Цар!»"
+        },
+        "ja": {
+          "L": "そしてユダヤ人たちに言う。「見ろ、おまえたちの王だ。」",
+          "B": "ピラトはユダヤ人の指導者たちに、「見るがよい、おまえたちの王だ」と言った。",
+          "R": "ピラトはユダヤ人の指導者たちに言いました。「見ろ！おまえたちの王だ！」"
+        },
+        "id": {
+          "L": "Dan ia berkata kepada orang-orang Yahudi, \"Lihatlah, rajamu!\"",
+          "B": "Pilatus berkata kepada para pemimpin Yahudi, \"Lihat, inilah raja kalian!\"",
+          "R": "Pilatus berkata kepada para pemimpin Yahudi, \"Lihat! Inilah raja kalian!\""
+        },
+        "zh": {
+          "L": "他对犹太人说：“看哪，你们的王！”",
+          "B": "彼拉多对犹太领袖说：“看，这就是你们的王！”",
+          "R": "彼拉多对犹太领袖说：“你们看！这就是你们的王！”"
+        },
+        "ar": {
+          "L": "ويقول لليهود: «ها هو ملككم!»",
+          "B": "فقال بيلاطس لقادة اليهود: «انظروا، ها هو ملككم!»",
+          "R": "فقال بيلاطس لقادة اليهود: «انظروا! هذا هو ملككم!»"
         }
       },
       "alignments": [
@@ -7151,6 +10469,48 @@
           "language": "en",
           "level": "B",
           "target_span": "King"
+        },
+        {
+          "tokens": [
+            "n43019014012",
+            "n43019014013"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ユダヤ人の指導者たち"
+        },
+        {
+          "tokens": [
+            "n43019014014"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "見るがよい"
+        },
+        {
+          "tokens": [
+            "n43019014017"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "おまえたち"
+        },
+        {
+          "tokens": [
+            "n43019014015",
+            "n43019014016"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "王"
+        },
+        {
+          "tokens": [
+            "n43019014011"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "言った"
         }
       ],
       "decisions": [
@@ -7325,6 +10685,44 @@
           "reason": "The chief priests and those with them are meant (meaning decision m1); Literal keeps \"иудеи\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43019014013"
+          ],
+          "choice": "\"犹太人\" (L); \"犹太领袖\" (B, R)",
+          "alternatives": [],
+          "reason": "The chief priests and their officers before the judgment seat (meaning decision m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-1",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43019014012",
+            "n43019014013"
+          ],
+          "choice": "\"اليهود\" (L), \"قادة اليهود\" (B, R)",
+          "alternatives": [],
+          "reason": "Here \"the Jews\" are the chief priests and their officers, with those who stood with them before the judgment seat (m1). Literal keeps the Greek word; Balanced and Readable say who is meant, as the English does, so that the word is not heard as the whole people.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -7399,6 +10797,31 @@
           "L": "Те же закричали: «Убери, убери, распни {{deity_pronoun:его|Его}}!»",
           "B": "Они закричали в ответ: «Долой! Долой! Распни {{deity_pronoun:его|Его}}!»",
           "R": "Но они кричали: «Убери {{deity_pronoun:его|Его}}! Убери {{deity_pronoun:его|Его}}! Распни {{deity_pronoun:его|Его}}!»"
+        },
+        "uk": {
+          "L": "Тож ті закричали: «Геть, геть [{{deity_pronoun:його|Його}}], розіпни {{deity_pronoun:його|Його}}!»",
+          "B": "Вони закричали у відповідь: «Геть {{deity_pronoun:його|Його}}! Геть {{deity_pronoun:його|Його}}! Розіпни {{deity_pronoun:його|Його}}!»",
+          "R": "Але вони закричали: «Забери {{deity_pronoun:його|Його}}! Забери {{deity_pronoun:його|Його}}! Розіпни {{deity_pronoun:його|Його}}!»"
+        },
+        "ja": {
+          "L": "それで、あの者たちは叫んだ。「取り除け、取り除け、彼を十字架につけろ。」",
+          "B": "彼らは叫び返した。「片づけてしまえ！片づけてしまえ！十字架につけろ！」",
+          "R": "しかし、彼らは叫びました。「あいつを連れて行け！連れて行け！十字架につけろ！」"
+        },
+        "id": {
+          "L": "Mereka berteriak, \"Enyahkan, enyahkan, salibkan {{deity_pronoun:dia|Dia}}!\"",
+          "B": "Mereka berteriak, \"Enyahkan {{deity_pronoun:dia|Dia}}! Enyahkan {{deity_pronoun:dia|Dia}}! Salibkan {{deity_pronoun:dia|Dia}}!\"",
+          "R": "Tetapi mereka berteriak, \"Bawa {{deity_pronoun:dia|Dia}} pergi! Bawa {{deity_pronoun:dia|Dia}} pergi! Salibkan {{deity_pronoun:dia|Dia}}!\""
+        },
+        "zh": {
+          "L": "那些人就喊叫：“除掉[{{deity_pronoun:他|祂}}]，除掉[{{deity_pronoun:他|祂}}]，把{{deity_pronoun:他|祂}}钉十字架！”",
+          "B": "他们喊着回答：“除掉{{deity_pronoun:他|祂}}！除掉{{deity_pronoun:他|祂}}！把{{deity_pronoun:他|祂}}钉十字架！”",
+          "R": "可是他们大喊：“把{{deity_pronoun:他|祂}}带走！把{{deity_pronoun:他|祂}}带走！把{{deity_pronoun:他|祂}}钉在十字架上！”"
+        },
+        "ar": {
+          "L": "فصاح أولئك: «خذه، خذه، اصلبه!»",
+          "B": "فصرخوا: «أبعده! أبعده! اصلبه!»",
+          "R": "لكنّهم صرخوا: «خذه بعيدًا! خذه بعيدًا! اصلبه!»"
         }
       },
       "alignments": [
@@ -7441,6 +10864,47 @@
           "language": "en",
           "level": "B",
           "target_span": "{{deity_pronoun:him|Him}}"
+        },
+        {
+          "tokens": [
+            "n43019015003"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "彼ら"
+        },
+        {
+          "tokens": [
+            "n43019015001"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "叫び返した"
+        },
+        {
+          "tokens": [
+            "n43019015004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "片づけてしまえ"
+        },
+        {
+          "tokens": [
+            "n43019015005"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "片づけてしまえ"
+        },
+        {
+          "tokens": [
+            "n43019015006",
+            "n43019015007"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "十字架につけろ"
         }
       ],
       "decisions": [
@@ -7560,6 +11024,48 @@
           "reason": "Balanced uses the Russian cry for demanding someone's removal, as the English Balanced uses \"Away with him\"; Literal and Readable keep the verb.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43019015004",
+            "n43019015005"
+          ],
+          "choice": "\"取り除け\" (L); \"片づけてしまえ\" (B); \"連れて行け\" (R)",
+          "alternatives": [
+            "\"殺せ\""
+          ],
+          "reason": "The cry demands that the prisoner be removed by death (m1). Literal keeps the verb's sense of taking away; Balanced uses the blunt 片づける, which Japanese uses of getting rid of a person; Readable keeps the English Readable's plain \"take him away\", which the next words explain.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-1",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43019015004",
+            "n43019015005"
+          ],
+          "choice": "\"خذه\" (L), \"أبعده\" (B), \"خذه بعيدًا\" (R)",
+          "alternatives": [],
+          "reason": "To take away is to remove him, that is, put him to death (m1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -7635,6 +11141,31 @@
           "L": "Говорит им Пилат: «Царя вашего распну?»",
           "B": "Пилат спросил их: «Вашего Царя мне распять?»",
           "R": "Пилат спросил их: «Вы хотите, чтобы я распял вашего Царя?»"
+        },
+        "uk": {
+          "L": "Каже їм Пилат: «Вашого Царя мені розіпʼясти?»",
+          "B": "Пилат сказав їм: «Невже мені розіпʼясти вашого Царя?»",
+          "R": "Пилат запитав їх: «Ви хочете, щоб я розіпʼяв вашого Царя?»"
+        },
+        "ja": {
+          "L": "ピラトは彼らに言う。「おまえたちの王を、わたしが十字架につけるのか？」",
+          "B": "ピラトは彼らに言った。「おまえたちの王を十字架につけろと言うのか？」",
+          "R": "ピラトは彼らに聞きました。「おまえたちは、自分たちの王を、わたしに十字架につけさせたいのか？」"
+        },
+        "id": {
+          "L": "Pilatus berkata kepada mereka, \"Rajamu akan kusalibkan?\"",
+          "B": "Pilatus berkata kepada mereka, \"Haruskah aku menyalibkan raja kalian?\"",
+          "R": "Pilatus bertanya kepada mereka, \"Apakah kalian mau aku menyalibkan raja kalian?\""
+        },
+        "zh": {
+          "L": "彼拉多对他们说：“要我把你们的王钉十字架吗？”",
+          "B": "彼拉多对他们说：“你们的王，我要钉十字架吗？”",
+          "R": "彼拉多问他们：“你们要我把你们的王钉在十字架上吗？”"
+        },
+        "ar": {
+          "L": "يقول لهم بيلاطس: «أملككم أصلب؟»",
+          "B": "فقال لهم بيلاطس: «أأصلب ملككم؟»",
+          "R": "فسألهم بيلاطس: «هل تريدونني أن أصلب ملككم؟»"
         }
       },
       "alignments": [
@@ -7687,6 +11218,56 @@
           "language": "en",
           "level": "B",
           "target_span": "King"
+        },
+        {
+          "tokens": [
+            "n43019015010",
+            "n43019015011"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ピラト"
+        },
+        {
+          "tokens": [
+            "n43019015009"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "彼ら"
+        },
+        {
+          "tokens": [
+            "n43019015008"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "言った"
+        },
+        {
+          "tokens": [
+            "n43019015014"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "おまえたち"
+        },
+        {
+          "tokens": [
+            "n43019015012",
+            "n43019015013"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "王"
+        },
+        {
+          "tokens": [
+            "n43019015015"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "十字架につけろと言うのか"
         }
       ],
       "decisions": [
@@ -7784,6 +11365,47 @@
           "reason": "The Greek puts \"your King\" first for emphasis (meaning decision m1); French can front it only with a pronoun taking it up again, bracketed at Literal. \"Faut-il que\" gives the sense of the deliberative question, \"am I to crucify\"; Balanced says it with \"Dois-je\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n43019015012",
+            "n43019015013",
+            "n43019015014"
+          ],
+          "choice": "\"おまえたちの王を\" placed first",
+          "alternatives": [],
+          "reason": "The Greek begins with \"your King\" for emphasis (m1); Japanese can put the object first too, so the stress stays on the title.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-1",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L"
+          ],
+          "category": "grammar",
+          "tokens": [
+            "n43019015012",
+            "n43019015013",
+            "n43019015014",
+            "n43019015015"
+          ],
+          "choice": "\"أملككم\" placed first",
+          "alternatives": [],
+          "reason": "\"Your King\" is placed first for emphasis (m1), pressing the taunt of verse 14 (m2). Literal keeps that order.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -7860,6 +11482,31 @@
           "L": "Старшие священники ответили: «Нет у нас царя, кроме кесаря.»",
           "B": "Старшие священники ответили: «У нас нет царя, кроме кесаря.»",
           "R": "Старшие священники ответили: «Наш единственный царь — кесарь!»"
+        },
+        "uk": {
+          "L": "Відповіли старші священники: «Не маємо царя, крім кесаря.»",
+          "B": "Старші священники відповіли: «У нас немає царя, крім кесаря.»",
+          "R": "Старші священники відповіли: «Наш єдиний цар — кесар!»"
+        },
+        "ja": {
+          "L": "祭司長たちは答えた。「皇帝のほかには、わたしたちは王を持っていません。」",
+          "B": "祭司長たちは答えた。「わたしたちの王は、皇帝のほかにはいません。」",
+          "R": "祭司長たちは答えました。「わたしたちの王は、皇帝ただ一人です！」"
+        },
+        "id": {
+          "L": "Imam-imam kepala menjawab, \"Kami tidak mempunyai raja selain Kaisar.\"",
+          "B": "Imam-imam kepala menjawab, \"Kami tidak punya raja selain Kaisar.\"",
+          "R": "Imam-imam kepala menjawab, \"Raja kami hanyalah Kaisar!\""
+        },
+        "zh": {
+          "L": "祭司长回答：“我们没有王，除了凯撒。”",
+          "B": "祭司长回答：“我们只有凯撒，没有别的王。”",
+          "R": "祭司长回答：“我们唯一的王就是凯撒！”"
+        },
+        "ar": {
+          "L": "أجاب رؤساء الكهنة: «ما لنا ملك سوى قيصر».",
+          "B": "فأجاب رؤساء الكهنة: «لا ملك لنا إلّا قيصر».",
+          "R": "فأجاب كبار الكهنة: «ملكنا الوحيد هو قيصر!»"
         }
       },
       "alignments": [
@@ -7920,6 +11567,65 @@
           "language": "en",
           "level": "B",
           "target_span": "Caesar"
+        },
+        {
+          "tokens": [
+            "n43019015017",
+            "n43019015018"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "祭司長たち"
+        },
+        {
+          "tokens": [
+            "n43019015016"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "答えた"
+        },
+        {
+          "tokens": [
+            "n43019015020"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたしたち"
+        },
+        {
+          "tokens": [
+            "n43019015021"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "王"
+        },
+        {
+          "tokens": [
+            "n43019015024"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "皇帝"
+        },
+        {
+          "tokens": [
+            "n43019015022",
+            "n43019015023"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "のほかには"
+        },
+        {
+          "tokens": [
+            "n43019015020",
+            "n43019015019"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "いません"
         }
       ],
       "decisions": [
@@ -8022,6 +11728,25 @@
           "reason": "As in English: Readable puts the exception in a plain positive form. \"Rey\" is lowercase here, since it is not the title of verses 14-15.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ar-1",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "culture",
+          "tokens": [
+            "n43019015024"
+          ],
+          "choice": "\"قيصر\"",
+          "alternatives": [],
+          "reason": "Caesar is the Roman emperor (m3); the chief priests' words carry an irony John leaves unspoken (m2).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -8096,6 +11821,31 @@
           "L": "Тогда он предал {{deity_pronoun:его|Его}} им на распятие.",
           "B": "Тогда Пилат отдал {{deity_pronoun:его|Его}} им, чтобы {{deity_pronoun:его|Его}} распяли.",
           "R": "И Пилат отдал Иисуса им, чтобы {{deity_pronoun:его|Его}} распяли."
+        },
+        "uk": {
+          "L": "Тож тоді він передав {{deity_pronoun:його|Його}} їм, щоб {{deity_pronoun:його|Його}} розіпʼяли.",
+          "B": "Тоді Пилат передав {{deity_pronoun:його|Його}} їм на розпʼяття.",
+          "R": "Тож Пилат передав Ісуса їм, щоб {{deity_pronoun:його|Його}} розіпʼяли."
+        },
+        "ja": {
+          "L": "それでそのとき、彼は、十字架につけられるようにと、イエスを彼らに引き渡した。",
+          "B": "こうしてピラトは、十字架につけさせるために、イエスを彼らに引き渡した。",
+          "R": "それでピラトは、イエスを十字架につけるために、彼らに引き渡しました。"
+        },
+        "id": {
+          "L": "Lalu ia menyerahkan {{deity_pronoun:dia|Dia}} kepada mereka untuk disalibkan.",
+          "B": "Lalu Pilatus menyerahkan {{deity_pronoun:dia|Dia}} kepada mereka untuk disalibkan.",
+          "R": "Jadi Pilatus menyerahkan Yesus kepada mereka untuk disalibkan."
+        },
+        "zh": {
+          "L": "于是他把{{deity_pronoun:他|祂}}交给他们，好钉十字架。",
+          "B": "于是彼拉多把{{deity_pronoun:他|祂}}交给他们去钉十字架。",
+          "R": "于是彼拉多把耶稣交给他们，让他们钉在十字架上。"
+        },
+        "ar": {
+          "L": "فحينئذ سلّمه إليهم ليُصلب.",
+          "B": "عندئذ سلّمه بيلاطس إليهم ليُصلب.",
+          "R": "فسلّم بيلاطس يسوع إليهم لكي يُصلب."
         }
       },
       "alignments": [
@@ -8147,6 +11897,55 @@
           "language": "en",
           "level": "B",
           "target_span": "to be crucified"
+        },
+        {
+          "tokens": [
+            "n43019016001",
+            "n43019016002"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "こうして"
+        },
+        {
+          "tokens": [
+            "n43019016007"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "十字架につけさせる"
+        },
+        {
+          "tokens": [
+            "n43019016006"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ために"
+        },
+        {
+          "tokens": [
+            "n43019016004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "イエス"
+        },
+        {
+          "tokens": [
+            "n43019016005"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "彼ら"
+        },
+        {
+          "tokens": [
+            "n43019016003"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "引き渡した"
         }
       ],
       "decisions": [
@@ -8265,6 +12064,46 @@
           "reason": "The verb of handing over that runs through the passion (meaning decision m2): Literal keeps \"предать\", as at 18:30 and 18:35.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43019016003"
+          ],
+          "choice": "\"引き渡した\" at every level",
+          "alternatives": [
+            "\"裏切った\""
+          ],
+          "reason": "The verb is the one used all through the story for handing Jesus over (m2). Here Pilate is the subject, so the general 引き渡す stands at every level; 裏切る is kept for Judas.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-1",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43019016003"
+          ],
+          "choice": "\"سلّمه\" at every level",
+          "alternatives": [],
+          "reason": "Handed over is the same verb used all through the story (m2), as in 18:30 and 18:35.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -8336,6 +12175,31 @@
           "L": "Итак, они взяли Иисуса.",
           "B": "И они приняли Иисуса под стражу.",
           "R": "И они забрали Иисуса."
+        },
+        "uk": {
+          "L": "Тож вони взяли Ісуса.",
+          "B": "Тож вони забрали Ісуса під свою варту.",
+          "R": "Тож вони забрали Ісуса."
+        },
+        "ja": {
+          "L": "それで彼らはイエスを引き取った。",
+          "B": "こうして、彼らはイエスを引き取った。",
+          "R": "こうして、彼らはイエスを引き取りました。"
+        },
+        "id": {
+          "L": "Lalu mereka mengambil Yesus.",
+          "B": "Maka mereka membawa Yesus.",
+          "R": "Jadi mereka membawa Yesus."
+        },
+        "zh": {
+          "L": "于是他们接过了耶稣。",
+          "B": "于是他们把耶稣接管过去。",
+          "R": "于是他们把耶稣带走了。"
+        },
+        "ar": {
+          "L": "فأخذوا يسوع.",
+          "B": "فتسلّموا يسوع.",
+          "R": "فأخذوا يسوع."
         }
       },
       "alignments": [
@@ -8363,6 +12227,39 @@
           "language": "en",
           "level": "B",
           "target_span": "Jesus"
+        },
+        {
+          "tokens": [
+            "n43019016009"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "こうして"
+        },
+        {
+          "tokens": [
+            "n43019016008"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "彼ら"
+        },
+        {
+          "tokens": [
+            "n43019016010",
+            "n43019016011"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "イエス"
+        },
+        {
+          "tokens": [
+            "n43019016008"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "引き取った"
         }
       ],
       "decisions": [
@@ -8452,6 +12349,30 @@
             "tomaron (Literal)"
           ],
           "reason": "As in English: Balanced shows that Jesus was received into custody (meaning decision m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-1",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "text_variant",
+          "tokens": [
+            "n43019016008",
+            "n43019016009",
+            "n43019016010",
+            "n43019016011"
+          ],
+          "choice": "\"فأخذوا يسوع\", ending here",
+          "alternatives": [
+            "adding \"ومضوا به\""
+          ],
+          "reason": "The text followed reads \"So they took Jesus\" (m3) and nothing more. In fact the soldiers carried out the crucifixion (m1).",
           "uncertain": false,
           "footnote": false
         }

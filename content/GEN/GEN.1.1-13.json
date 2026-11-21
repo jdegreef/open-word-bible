@@ -74,8 +74,93 @@
           "L": "В начале Бог сотворил небеса и землю.",
           "B": "В начале Бог сотворил небеса и землю.",
           "R": "В самом начале Бог сотворил всё: небеса и землю."
+        },
+        "uk": {
+          "L": "На початку Бог створив небеса і землю.",
+          "B": "На початку Бог створив небо і землю.",
+          "R": "На самому початку Бог створив усе: небо і землю."
+        },
+        "ja": {
+          "L": "初めに、神は天と地を創造された。",
+          "B": "初めに、神は天と地を創造された。",
+          "R": "いちばん初めに、神はすべてのもの、つまり天と地をお造りになりました。"
+        },
+        "id": {
+          "L": "Pada permulaan Allah menciptakan langit dan bumi.",
+          "B": "Pada awal mula Allah menciptakan langit dan bumi.",
+          "R": "Pada awal mula, Allah menciptakan segala sesuatu: langit dan bumi."
+        },
+        "zh": {
+          "L": "在起初，{{god_term:神|上帝}}创造了天和地。",
+          "B": "在太初，{{god_term:神|上帝}}创造了天和地。",
+          "R": "在最开始的时候，{{god_term:神|上帝}}创造了一切，就是天和地。"
+        },
+        "tl": {
+          "L": "Sa pasimula ay nilikha ng Diyos ang kalangitan at ang lupa.",
+          "B": "Sa pasimula ay nilikha ng Diyos ang kalangitan at ang lupa.",
+          "R": "Sa pasimula, nilikha ng Diyos ang lahat ng bagay: ang kalangitan at ang lupa."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010010010011"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "In"
+        },
+        {
+          "tokens": [
+            "o010010010012"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the beginning"
+        },
+        {
+          "tokens": [
+            "o010010010031"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "God"
+        },
+        {
+          "tokens": [
+            "o010010010021"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "created"
+        },
+        {
+          "tokens": [
+            "o010010010051",
+            "o010010010052"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the heavens"
+        },
+        {
+          "tokens": [
+            "o010010010061"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010010010071",
+            "o010010010072"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the earth"
+        }
+      ],
       "decisions": [
         {
           "id": "m1",
@@ -593,6 +678,187 @@
           "reason": "The Hebrew word is plural in form, and \"небеса и земля\" together say \"everything\" (m4). \"Небеса\" keeps the plural; Balanced and Readable use \"небо\" where the visible sky is meant (1:8).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o010010010031"
+          ],
+          "choice": "Elohim is \"Бог\" at every level; from 2:4 the divine name YHWH is \"ГОСПОДЬ\" with the divine_name setting showing \"Ягве\", inflected inside each option (ГОСПОДА, ГОСПОДУ, ГОСПОДОМ, ГОСПОДІ, vocative ГОСПОДИ), and Adonai is \"Господь\" in ordinary capitals",
+          "alternatives": [
+            "Єгова",
+            "Яхве as the alternative"
+          ],
+          "reason": "Book-wide choice for Genesis (docs/ukrainian-ot-terms.md). The default \"ГОСПОДЬ\" in capitals mirrors the English \"the LORD\" and keeps the name apart from Adonai, \"Господь\"; the setting shows \"Ягве\" instead, with г for the Hebrew h as Ukrainian transcribes it (Авраам, Агар). \"Єгова\" is not used. Other gods are \"бог\", \"боги\" in lower case.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-2",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [],
+          "choice": "Names follow docs/ukrainian-ot-terms.md, and names found in the New Testament keep its Ukrainian form (Енос, Каїнан, Малелеїл, Яред, Ламех, Арфаксад, Сала, Евер, Фалек, Рагав, Серух, Нахор, Тара as Luke 3; Фарес, Зара, Тамара as Matthew 1; Харан, Сихем, Еммор, халдеї as Acts 7); Метушелах follows the terms note. Other names take the usual Ukrainian Bible form, or a transcription of the Hebrew with х for heth and г for he and gimel (Гаран the man, Харан the town; Хеврон, Беер-Шева, Бет-Ел, Мамре, Герар, Гошен)",
+          "alternatives": [
+            "Ohienko's forms throughout",
+            "Greek-based forms throughout"
+          ],
+          "reason": "One form per name through every book, so that Genesis and the Gospels name the same people alike. Where the note's table and the New Testament differ (Метушелах, Luke's Матусал) the table is followed; a reviewer may harmonise.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "o010010010021"
+          ],
+          "choice": "plain narration (L, B) and です・ます narration (R), with light respect forms for what God does: \"創造された\", \"言われた\", \"ご覧になった\" (L, B); \"お造りになりました\", \"言われました\" (R)",
+          "alternatives": [
+            "plain \"創造した\", \"言った\" as for any other subject"
+          ],
+          "reason": "Japanese narration must choose a level of respect. As in the Japanese Gospels, the narrator uses the light 〜れる/〜られる and お〜になる forms for God and for no one else. This holds for the whole of Genesis.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010010021"
+          ],
+          "choice": "\"創造された\" (L, B); \"お造りになりました\" (R)",
+          "alternatives": [
+            "\"造られた\" at every level"
+          ],
+          "reason": "The verb is used only of God (m2), so Literal and Balanced keep the distinct word 創造 for it, while the everyday 造る renders the chapter's ordinary verb \"made\". Readable uses the plainer 造る for both.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010010011",
+            "o010010010012"
+          ],
+          "choice": "\"Pada permulaan\" (L); \"Pada awal mula\" (B, R); \"Allah\" for God; \"menciptakan\" for the verb used only of God",
+          "alternatives": [
+            "\"Pada mulanya\""
+          ],
+          "reason": "\"Allah\" is God at every level (style guide section 4). The opening is drafted from the Hebrew, which has no article (\"in beginning\", m1); Literal says \"permulaan\" and Balanced and Readable \"awal mula\", rather than the familiar church wording. \"menciptakan\" is kept for the Hebrew verb whose subject is always God (m2), and not used for ordinary making (\"membuat\") in this chapter.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o010010010031"
+          ],
+          "choice": "{{god_term:神|上帝}} for every word naming God",
+          "alternatives": [
+            "上帝 as the default",
+            "a fixed 神 with no setting"
+          ],
+          "reason": "The Chinese reader setting: \"神\" by default, \"上帝\" as the alternative (style guide section 4). Elohim here is the one God (meaning decision m3). The setting changes the word, never the meaning; this note stands for the whole passage.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010010052",
+            "o010010010072"
+          ],
+          "choice": "\"天和地\" (L, B); \"一切，就是天和地\" (R)",
+          "alternatives": [
+            "天地",
+            "诸天和地"
+          ],
+          "reason": "The pair names everything that exists (m4). The two words are kept apart with \"和\" rather than fused into the compound \"天地\", so that verse 8 (\"天\" for the vault) and verse 10 (\"大地\" for the land) can name each half; Readable says what the pair means, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-tl-1",
+          "layer": "rendering",
+          "language": "tl",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010010011",
+            "o010010010012",
+            "o010010010021",
+            "o010010010051",
+            "o010010010052",
+            "o010010010061",
+            "o010010010062",
+            "o010010010071",
+            "o010010010072"
+          ],
+          "choice": "\"Sa pasimula\" (in the beginning); \"nilikha\" (created); \"ang kalangitan at ang lupa\" (the heavens and the earth)",
+          "alternatives": [
+            "\"Nang pasimula\"",
+            "\"langit\""
+          ],
+          "reason": "\"pasimula\" is the beginning of all things, and Literal needs no bracket for the article, which Tagalog grammar supplies. \"likhain\" is the verb kept for God's creating (m2); \"gawin\" (make) is used where the Hebrew has its own verb for making (verse 7). \"kalangitan\" is the plural sense of the Hebrew \"heavens\"; \"langit\" alone is the vault's name in verse 8.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -680,8 +946,158 @@
           "L": "И земля была бесформенностью и пустотой, и тьма [была] над лицом бездны, и Дух Божий [был] парящим над лицом вод.",
           "B": "Земля была без формы и пуста. Над глубокими водами лежала тьма, а Дух Божий парил над водами.",
           "R": "У земли ещё не было никакого вида, и она была пустой. Над глубокой водой было темно, и Дух Божий двигался над водой."
+        },
+        "uk": {
+          "L": "А земля була безформністю і порожнечею, і темрява [була] над поверхнею безодні, і Дух Божий витав над поверхнею вод.",
+          "B": "Земля була без форми й порожня. Над безоднею лежала темрява, а Дух Божий витав понад водами.",
+          "R": "Земля ще не мала жодного вигляду і була порожня. Над глибокою водою було темно, а Дух Божий рухався над водою."
+        },
+        "ja": {
+          "L": "そして地は形がなく、空虚であった。そして闇が深淵の面の上にあり、そして神の霊が水の面の上を舞っていた。",
+          "B": "地はまだ形がなく、空っぽであった。闇が深い淵の面を覆い、神の霊が水の上を舞うように動いていた。",
+          "R": "地には、まだ形がなく、何もありませんでした。深い水の上は真っ暗で、神の霊が水の上を動いていました。"
+        },
+        "id": {
+          "L": "Dan bumi itu tanpa bentuk dan kosong, dan gelap [ada] di atas permukaan samudra, dan Roh Allah [sedang] melayang-layang di atas permukaan air.",
+          "B": "Bumi itu tidak berbentuk dan kosong. Gelap menutupi permukaan samudra, sementara Roh Allah melayang-layang di atas air.",
+          "R": "Bumi belum memiliki bentuk dan masih kosong. Di atas air yang dalam itu gelap, dan Roh Allah bergerak di atas air."
+        },
+        "zh": {
+          "L": "而地是混沌和空虚的，黑暗在深渊的面上，{{god_term:神|上帝}}的灵盘旋在众水的面上。",
+          "B": "地还没有成形，一片空虚。黑暗笼罩着深渊的表面，{{god_term:神|上帝}}的灵在水面上盘旋。",
+          "R": "那时，地还没有任何形状，也是空空的。深水上面一片黑暗，{{god_term:神|上帝}}的灵在水的上面移动。"
+        },
+        "tl": {
+          "L": "At ang lupa ay walang anyo at walang laman, at ang kadiliman ay [nasa] ibabaw ng mukha ng kalaliman, at ang Espiritu ng Diyos ay umaali-aligid sa ibabaw ng mukha ng tubig.",
+          "B": "Ang lupa ay walang anyo at walang laman. Nakalatag ang kadiliman sa ibabaw ng kalaliman, habang umaali-aligid ang Espiritu ng Diyos sa ibabaw ng tubig.",
+          "R": "Wala pang hugis ang lupa, at wala itong laman. Madilim sa ibabaw ng malalim na tubig, at gumagalaw ang Espiritu ng Diyos sa ibabaw ng tubig."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010010020012",
+            "o010010020013"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "The earth"
+        },
+        {
+          "tokens": [
+            "o010010020021"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "was"
+        },
+        {
+          "tokens": [
+            "o010010020031"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "without form"
+        },
+        {
+          "tokens": [
+            "o010010020041"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010010020042"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "empty"
+        },
+        {
+          "tokens": [
+            "o010010020052"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Darkness"
+        },
+        {
+          "tokens": [
+            "o010010020061"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "lay over"
+        },
+        {
+          "tokens": [
+            "o010010020071"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the surface"
+        },
+        {
+          "tokens": [
+            "o010010020081"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "of the deep"
+        },
+        {
+          "tokens": [
+            "o010010020091"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "while"
+        },
+        {
+          "tokens": [
+            "o010010020092"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the Spirit"
+        },
+        {
+          "tokens": [
+            "o010010020101"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "of God"
+        },
+        {
+          "tokens": [
+            "o010010020111"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "hovered"
+        },
+        {
+          "tokens": [
+            "o010010020121",
+            "o010010020131"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "above"
+        },
+        {
+          "tokens": [
+            "o010010020141",
+            "o010010020142"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the waters"
+        }
+      ],
       "decisions": [
         {
           "id": "m1",
@@ -1165,6 +1581,158 @@
           "reason": "\"Парить\" is to hover above, as a bird does over its young (m5). \"Носиться\" suggests rushing about.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010020111"
+          ],
+          "choice": "\"витав\" for hovering",
+          "alternatives": [
+            "ширяв",
+            "носився"
+          ],
+          "reason": "\"Витати\" is to hover or float above, which fits the picture of a bird over its young (meaning decision m5); \"ширяв\" is the word readers know from Ohienko, and this translation drafts the verse afresh.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-2",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010020081"
+          ],
+          "choice": "\"безодня\" (L, B) and \"глибока вода\" (R) for the deep",
+          "alternatives": [
+            "вода",
+            "глибина"
+          ],
+          "reason": "Book-wide: \"безодня\" is the deep waters of the beginning and of the flood (7:11; 8:2); Readable says plainly what it is.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010020031",
+            "o010010020042",
+            "o010010020111"
+          ],
+          "choice": "\"形がなく、空虚であった\" (L), \"まだ形がなく、空っぽであった\" (B); \"舞っていた\" / \"舞うように動いていた\" for hovering",
+          "alternatives": [
+            "\"混沌として\"",
+            "\"覆っていた\""
+          ],
+          "reason": "The two words mean not yet ordered and not yet filled (m2), which a single word like 混沌 would blur. 舞う keeps the picture of a bird above its young (m5).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010020081"
+          ],
+          "choice": "\"samudra\" (L, B), \"air yang dalam\" (R) for the deep; \"melayang-layang\" (L, B) for hovering",
+          "alternatives": [
+            "\"samudra raya\""
+          ],
+          "reason": "\"samudra\" is the deep waters that covered the earth (m3); Readable says it plainly, as the English Readable does. The reduplicated \"melayang-layang\" keeps the picture of a bird hovering over its young (m5). \"Roh Allah\" is capitalised as the English capitalises Spirit (m4).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010020111"
+          ],
+          "choice": "\"盘旋\" (L, B); \"移动\" (R)",
+          "alternatives": [
+            "运行"
+          ],
+          "reason": "The verb pictures a bird moving above its young (meaning decision m5); \"盘旋\" (to circle, to hover) keeps the picture. \"运行\" (to move, to run a course) is the familiar older word but loses the image; Readable says plainly that the Spirit moved above the water, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o010010020031",
+            "o010010020042"
+          ],
+          "choice": "\"混沌和空虚的\", in the Hebrew order",
+          "alternatives": [
+            "空虚混沌"
+          ],
+          "reason": "Literal keeps the Hebrew order of the pair, \"formless\" before \"empty\" (m2), and marks the opening as a description with \"而\" (m1): the earth as it stood, not the next event.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-tl-1",
+          "layer": "rendering",
+          "language": "tl",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010020031",
+            "o010010020041",
+            "o010010020042",
+            "o010010020081",
+            "o010010020111"
+          ],
+          "choice": "\"walang anyo at walang laman\" (without form and without content); \"kalaliman\" (the deep); \"umaali-aligid\" (hovering) at Literal and Balanced, \"gumagalaw\" (moving) at Readable; \"Espiritu ng Diyos\"",
+          "alternatives": [],
+          "reason": "The two Hebrew nouns say the earth was not yet ordered and not yet filled (m2), which \"walang anyo\" and \"walang laman\" keep as a pair. \"kalaliman\" is the deep waters (m3). \"umaali-aligid\" is the movement of a bird over a place (m5). \"Espiritu\" with a capital, as the English writes \"Spirit\" (m4).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1240,8 +1808,91 @@
           "L": "И Бог сказал: «Пусть будет свет», и был свет.",
           "B": "Бог сказал: «Пусть будет свет», и появился свет.",
           "R": "Потом Бог сказал: «Пусть будет свет!» И засиял свет."
+        },
+        "uk": {
+          "L": "І сказав Бог: «Нехай буде світло», і було світло.",
+          "B": "Бог сказав: «Нехай буде світло», і світло зʼявилося.",
+          "R": "Тоді Бог сказав: «Нехай буде світло!» І світло засяяло."
+        },
+        "ja": {
+          "L": "そして神は言われた。「光があるように。」そして光があった。",
+          "B": "神が「光があるように」と言われると、光が現れた。",
+          "R": "それから神が、「光があるように！」と言われると、光が輝き始めました。"
+        },
+        "id": {
+          "L": "Dan Allah berfirman, \"Hendaklah ada terang,\" dan terang pun ada.",
+          "B": "Allah berfirman, \"Hendaklah ada terang,\" dan terang pun jadi.",
+          "R": "Lalu Allah berfirman, \"Biarlah ada terang!\" Lalu terang mulai bersinar."
+        },
+        "zh": {
+          "L": "{{god_term:神|上帝}}说：“让光存在。”光就存在了。",
+          "B": "{{god_term:神|上帝}}说：“让光存在。”于是光就出现了。",
+          "R": "然后{{god_term:神|上帝}}说：“让光出现吧！”于是光开始照耀。"
+        },
+        "tl": {
+          "L": "At sinabi ng Diyos, \"Magkaroon ng liwanag,\" at nagkaroon ng liwanag.",
+          "B": "Sinabi ng Diyos, \"Magkaroon ng liwanag,\" at nagkaroon ng liwanag.",
+          "R": "Pagkatapos ay sinabi ng Diyos, \"Magkaroon ng liwanag!\" At nagsimulang magliwanag."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010010030021"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "God"
+        },
+        {
+          "tokens": [
+            "o010010030012"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "said"
+        },
+        {
+          "tokens": [
+            "o010010030031"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Let there be"
+        },
+        {
+          "tokens": [
+            "o010010030041"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "light"
+        },
+        {
+          "tokens": [
+            "o010010030051"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010010030061"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "light"
+        },
+        {
+          "tokens": [
+            "o010010030052"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "came into being"
+        }
+      ],
       "decisions": [
         {
           "id": "m1",
@@ -1513,6 +2164,116 @@
           "reason": "\"Да будет\" is the Church Slavonic form readers remember. \"Пусть будет\" is how Russian gives a command in the third person now, and it is used at every level; the same goes for the other commands of chapter 1 (\"пусть соберутся\", \"пусть земля произведёт\").",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o010010030012",
+            "o010010030021"
+          ],
+          "choice": "Literal keeps the Hebrew chain \"І сказав Бог... і було...\" with the verb first; Balanced puts the subject first and smooths the \"і\"; Readable starts new sentences",
+          "alternatives": [
+            "\"Бог сказав\" at every level"
+          ],
+          "reason": "Book-wide for the narrative (docs/ukrainian-ot-terms.md): the Hebrew chain of \"and he did\" verbs is \"і... і...\" at Literal, smoothed at Balanced and split into short sentences at Readable. Events take the perfective past (сказав, зробив), what kept happening the imperfective.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010030031",
+            "o010010030052"
+          ],
+          "choice": "God's commands to creation as \"〜があるように\" / \"〜するように\" throughout the chapter; Literal answers with the same verb \"光があった\"",
+          "alternatives": [
+            "the classical-sounding imperative \"光あれ\"",
+            "\"〜よ、〜せよ\""
+          ],
+          "reason": "Hebrew uses the same verb for the command and its result (m1); Literal keeps ある in both. The 〜ように form is a natural modern way to say \"let there be\" without bungo forms.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010030031",
+            "o010010030051",
+            "o010010030052"
+          ],
+          "choice": "\"berfirman\" for God speaking; \"Hendaklah ada ... dan terang pun ada\" (L)",
+          "alternatives": [
+            "\"Jadilah terang\""
+          ],
+          "reason": "God speaks with \"berfirman\" at every level (style guide section 5). Literal repeats \"ada\" in the command and in the result, as the Hebrew repeats its verb (m1); Balanced and Readable say that light came into being and shone, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010030031",
+            "o010010030052"
+          ],
+          "choice": "\"让光存在。\"光就存在了 (L); 光就出现了 (B); 让光出现吧！……光开始照耀 (R)",
+          "alternatives": [
+            "要有光……就有了光"
+          ],
+          "reason": "Literal repeats one verb for the command and for what happened (\"存在\", \"to be, to exist\"), as the Hebrew does (meaning decision m1). Balanced and Readable say what happened in a verb of their own, as the English levels do. The command form \"让……存在\" is used through the chapter for the Hebrew \"let there be\", so the creation words are drafted afresh rather than in the familiar older wording.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-tl-1",
+          "layer": "rendering",
+          "language": "tl",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010030031",
+            "o010010030051",
+            "o010010030052"
+          ],
+          "choice": "\"Magkaroon ng liwanag ... at nagkaroon ng liwanag\" at Literal and Balanced",
+          "alternatives": [],
+          "reason": "The command and its result use one verb in the Hebrew (m1); Tagalog \"magkaroon\" and \"nagkaroon\" keep the echo at both levels, so Balanced does not need the English Balanced's \"came into being\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1598,8 +2359,128 @@
           "L": "И Бог увидел свет, что [он] хорош, и Бог провёл разделение между светом и тьмой.",
           "B": "Бог увидел, что свет хорош, и Бог отделил свет от тьмы.",
           "R": "Бог увидел, что свет хороший. Он отделил свет от тьмы."
+        },
+        "uk": {
+          "L": "І побачив Бог світло, що [воно] добре, і розділив Бог між світлом і темрявою.",
+          "B": "Бог побачив, що світло добре, і Бог відділив світло від темряви.",
+          "R": "Бог побачив, що світло добре. Він відділив світло від темряви."
+        },
+        "ja": {
+          "L": "そして神は光を見られた、それが良いと。そして神は光と闇の間を分けられた。",
+          "B": "神は光が良いものであるのをご覧になり、光と闇とを分けられた。",
+          "R": "神は、光が良いものであるのをご覧になりました。そして、光と闇とを分けられました。"
+        },
+        "id": {
+          "L": "Dan Allah melihat terang itu, bahwa [itu] baik, dan Allah memisahkan antara terang dan gelap.",
+          "B": "Allah melihat bahwa terang itu baik, dan Allah memisahkan terang dari gelap.",
+          "R": "Allah melihat bahwa terang itu baik. Dia memisahkan terang dari gelap."
+        },
+        "zh": {
+          "L": "{{god_term:神|上帝}}看见那光，[看出它]是好的；{{god_term:神|上帝}}就使光与黑暗分开。",
+          "B": "{{god_term:神|上帝}}看出光是好的，于是使光与黑暗分隔。",
+          "R": "{{god_term:神|上帝}}看到光很好。{{deity_pronoun:他|祂}}把光和黑暗分开了。"
+        },
+        "tl": {
+          "L": "At nakita ng Diyos ang liwanag, na [iyon ay] mabuti, at pinaghiwalay ng Diyos ang liwanag at ang kadiliman.",
+          "B": "Nakita ng Diyos na mabuti ang liwanag, at inihiwalay ng Diyos ang liwanag sa kadiliman.",
+          "R": "Nakita ng Diyos na mabuti ang liwanag. Inihiwalay {{deity_pronoun:niya|Niya}} ang liwanag sa kadiliman."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010010040021"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "God"
+        },
+        {
+          "tokens": [
+            "o010010040012"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "saw"
+        },
+        {
+          "tokens": [
+            "o010010040051"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "that"
+        },
+        {
+          "tokens": [
+            "o010010040041",
+            "o010010040042"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the light"
+        },
+        {
+          "tokens": [
+            "o010010040061"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "was good"
+        },
+        {
+          "tokens": [
+            "o010010040071"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010010040081"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "God"
+        },
+        {
+          "tokens": [
+            "o010010040072",
+            "o010010040091"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "divided"
+        },
+        {
+          "tokens": [
+            "o010010040101",
+            "o010010040102"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the light"
+        },
+        {
+          "tokens": [
+            "o010010040111",
+            "o010010040112"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "from"
+        },
+        {
+          "tokens": [
+            "o010010040121",
+            "o010010040122"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the darkness"
+        }
+      ],
       "decisions": [
         {
           "id": "m1",
@@ -1720,6 +2601,85 @@
           "reason": "The Hebrew says \"separated between\"; Russian cannot say \"разделил между\" without an object, so Literal says \"made a separation between\" to keep the word \"between\" (m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o010010040031",
+            "o010010040051",
+            "o010010040061"
+          ],
+          "choice": "\"光を見られた、それが良いと\"",
+          "alternatives": [
+            "\"光が良いのを見られた\""
+          ],
+          "reason": "Literal keeps the Hebrew order, in which God sees the light and then the clause says what he saw in it.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010040012",
+            "o010010040061"
+          ],
+          "choice": "\"看见……是好的\" (L); \"看出……是好的\" (B); \"看到……很好\" (R)",
+          "alternatives": [
+            "看着是好的"
+          ],
+          "reason": "One wording per level for the refrain \"God saw that it was good\", kept through 1:4-31. \"好\" is the plain word for something as it should be (meaning decision m1); Balanced's \"看出\" says that God judged it so.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o010010040072"
+          ],
+          "choice": "{{deity_pronoun:他|祂}} for \"He\" at the start of the sentence",
+          "alternatives": [
+            "plain 他"
+          ],
+          "reason": "English shows the pronoun for God with a capital at the start of a sentence without a span; Chinese has no capital, so the span is written here too (style guide section 4). Pronouns for God, one treatment through Genesis (style guide section 4): every Chinese pronoun for God takes the deity_pronoun span, {{deity_pronoun:他|祂}} or {{deity_pronoun:你|祢}}, wherever the English has a span and also where the English pronoun opens a sentence and so has its capital without a span, or where Chinese needs a pronoun the English does not write; God is not named instead of the pronoun, and the divine_name span stands exactly where the English has it. God's own \"I\" is 我, with no span.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-tl-1",
+          "layer": "rendering",
+          "language": "tl",
+          "levels": [
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o010010040072"
+          ],
+          "choice": "\"Inihiwalay {{deity_pronoun:niya|Niya}}\" with a span where the English starts the sentence with a plain \"He\"",
+          "alternatives": [],
+          "reason": "English writes God's pronoun with its capital and no span at the start of a sentence. Tagalog puts the pronoun after the verb, so it is never sentence-initial and would show lowercase in the middle of a text whose default is the capital; it takes the span wherever God is meant, as in every other position. For the whole of Tagalog.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1806,8 +2766,150 @@
           "L": "И Бог назвал свет Днём, а тьму {{deity_pronoun:он|Он}} назвал Ночью. И настал вечер, и настало утро: день один.",
           "B": "Бог назвал свет Днём, а тьму {{deity_pronoun:он|Он}} назвал Ночью. Настал вечер, а потом утро: первый день.",
           "R": "Бог дал свету имя День, а тьме {{deity_pronoun:он|Он}} дал имя Ночь. Прошёл вечер, и наступило утро. Это был первый день."
+        },
+        "uk": {
+          "L": "І назвав Бог світло Днем, а темряву {{deity_pronoun:він|Він}} назвав Ніччю. І був вечір, і був ранок — день один.",
+          "B": "Бог назвав світло Днем, а темряву {{deity_pronoun:він|Він}} назвав Ніччю. Настав вечір, а потім ранок — перший день.",
+          "R": "Бог дав світлу імʼя День, а темряві {{deity_pronoun:він|Він}} дав імʼя Ніч. Минув вечір, і настав ранок. Це був перший день."
+        },
+        "ja": {
+          "L": "そして神は光を昼と呼ばれ、闇を夜と呼ばれた。そして夕べがあり、そして朝があった。第一の日。",
+          "B": "神は光を昼と名づけ、闇を夜と名づけられた。夕べが来て、それから朝が来た。一日目である。",
+          "R": "神は光に昼という名前を、闇に夜という名前をつけられました。夕方が過ぎて、朝が来ました。これが一日目でした。"
+        },
+        "id": {
+          "L": "Dan Allah menyebut terang itu Siang, dan gelap itu disebut-{{deity_pronoun:nya|Nya}} Malam. Dan ada petang dan ada pagi, hari pertama.",
+          "B": "Allah menamai terang itu Siang, dan gelap itu dinamai-{{deity_pronoun:nya|Nya}} Malam. Petang tiba, lalu pagi: hari pertama.",
+          "R": "Allah memberi terang itu nama Siang, dan gelap itu diberi-{{deity_pronoun:nya|Nya}} nama Malam. Petang berlalu, dan pagi tiba. Itulah hari pertama."
+        },
+        "zh": {
+          "L": "{{god_term:神|上帝}}叫光作白日，黑暗{{deity_pronoun:他|祂}}叫作黑夜。又有傍晚，又有清晨，是一天。",
+          "B": "{{god_term:神|上帝}}给光取名为白日，黑暗{{deity_pronoun:他|祂}}则取名为黑夜。傍晚来临，接着是清晨，这是第一天。",
+          "R": "{{god_term:神|上帝}}给光起名叫白日，{{deity_pronoun:他|祂}}给黑暗起名叫黑夜。傍晚过去了，早晨来到。那就是第一天。"
+        },
+        "tl": {
+          "L": "At tinawag ng Diyos ang liwanag na Araw, at ang kadiliman ay tinawag {{deity_pronoun:niyang|Niyang}} Gabi. At nagkaroon ng gabi at nagkaroon ng umaga, unang araw.",
+          "B": "Pinangalanan ng Diyos na Araw ang liwanag, at pinangalanan {{deity_pronoun:niyang|Niyang}} Gabi ang kadiliman. Dumating ang gabi, at saka ang umaga: ang unang araw.",
+          "R": "Ibinigay ng Diyos sa liwanag ang pangalang Araw, at ibinigay {{deity_pronoun:niya|Niya}} sa kadiliman ang pangalang Gabi. Lumipas ang gabi, at dumating ang umaga. Iyon ang unang araw."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010010050021"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "God"
+        },
+        {
+          "tokens": [
+            "o010010050012"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "named"
+        },
+        {
+          "tokens": [
+            "o010010050031",
+            "o010010050032"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the light"
+        },
+        {
+          "tokens": [
+            "o010010050041"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Day"
+        },
+        {
+          "tokens": [
+            "o010010050051"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010010050052",
+            "o010010050053"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the darkness"
+        },
+        {
+          "tokens": [
+            "o010010050061"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "{{deity_pronoun:he|He}} named"
+        },
+        {
+          "tokens": [
+            "o010010050071"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Night"
+        },
+        {
+          "tokens": [
+            "o010010050091"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Evening"
+        },
+        {
+          "tokens": [
+            "o010010050082"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "came"
+        },
+        {
+          "tokens": [
+            "o010010050101"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010010050102",
+            "o010010050111"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "then morning"
+        },
+        {
+          "tokens": [
+            "o010010050131"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the first"
+        },
+        {
+          "tokens": [
+            "o010010050121"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "day"
+        }
+      ],
       "decisions": [
         {
           "id": "m1",
@@ -2192,6 +3294,197 @@
           "reason": "Literal repeats the verb, as the Hebrew does (\"and there was ... and there was\"), with \"настать\", which says that evening and morning came.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010050121",
+            "o010010050131"
+          ],
+          "choice": "\"день один\" with the cardinal number",
+          "alternatives": [
+            "день перший"
+          ],
+          "reason": "Literal keeps the Hebrew cardinal (meaning decision m2); Balanced and Readable say \"перший день\", as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-2",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [],
+          "choice": "God's pronouns mid-sentence carry the deity_pronoun span (він/Він, його, йому, ним, я, мене, ти, тебе), as in the New Testament; a pronoun at the start of a sentence is simply capitalised, and свій, себе take none",
+          "alternatives": [
+            "no span"
+          ],
+          "reason": "Book-wide (docs/ukrainian-style.md section 7). God is addressed with ти at every level, and the Hebrew singular and plural \"you\" come through as ти and ви.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010050121",
+            "o010010050131"
+          ],
+          "choice": "\"第一の日\" (L); \"一日目\" (B, R), and so \"第二の日\" / \"二日目\" for the following days",
+          "alternatives": [
+            "\"一つの日\"",
+            "\"一日\""
+          ],
+          "reason": "The Hebrew uses a cardinal, \"day one\" (m2), but \"一つの日\" is not natural Japanese and \"一日\" can be read as the first of a month; Literal therefore uses the plain ordinal 第一.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o010010050082",
+            "o010010050091"
+          ],
+          "choice": "the capitalised pronoun for God in a deity_pronoun span, with the EYD hyphen (\"disebut-{{deity_pronoun:nya|Nya}}\")",
+          "alternatives": [],
+          "reason": "For the whole of Genesis, as the Indonesian style guide sets (section 4): every pronoun for God takes the deity_pronoun span, lowercase first. Indonesian needs more spans than English, since \"-nya\" attaches to verbs and nouns; a pronoun opening a sentence (\"Dia\") is written plainly with its capital.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-2",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010050121",
+            "o010010050131"
+          ],
+          "choice": "\"hari pertama\" at every level",
+          "alternatives": [
+            "\"hari satu\" (L)"
+          ],
+          "reason": "The Hebrew uses the cardinal \"one\" (m2), which the English Literal keeps as \"day one\"; Indonesian \"hari satu\" is not a natural way to count days, so Literal also says \"hari pertama\", the meaning the cardinal has here.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010050041",
+            "o010010050071"
+          ],
+          "choice": "\"白日\" and \"黑夜\"",
+          "alternatives": [
+            "昼和夜",
+            "白天和夜晚"
+          ],
+          "reason": "The names God gives are ordinary words in two characters each; \"昼\" alone is a written, older word. \"白日\" is the daylight (meaning decision m3), and the later \"天\" counts the whole day.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010050082",
+            "o010010050091",
+            "o010010050102",
+            "o010010050111",
+            "o010010050131"
+          ],
+          "choice": "\"又有傍晚，又有清晨，是一天\" (L); \"傍晚来临，接着是清晨，这是第一天\" (B); \"傍晚过去了，早晨来到。那就是第一天\" (R)",
+          "alternatives": [
+            "有晚上，有早晨，这是头一日"
+          ],
+          "reason": "One wording per level for the refrain, kept for all six days. Literal keeps the Hebrew \"and there was ... and there was\" with \"又……又……\" and the cardinal \"一天\" (\"day one\", meaning decision m2), then ordinals \"第二天\" and after; Balanced and Readable say \"第一天\". \"天\" is used rather than the older \"日\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-tl-1",
+          "layer": "rendering",
+          "language": "tl",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o010010050012",
+            "o010010050061"
+          ],
+          "choice": "\"{{deity_pronoun:niyang|Niyang}}\" with the linker inside the span",
+          "alternatives": [],
+          "reason": "Tagalog joins \"niya\" to what follows with the linker \"-ng\" (\"tinawag niyang Gabi\"); as with \"kaniyang\", the linker goes inside the span so both options read correctly (style guide section 4).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-tl-2",
+          "layer": "rendering",
+          "language": "tl",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010050121",
+            "o010010050131"
+          ],
+          "choice": "\"unang araw\" (the first day) at Literal for \"day one\"",
+          "alternatives": [
+            "\"araw na isa\""
+          ],
+          "reason": "The Hebrew uses the number one, not an ordinal (m2). Tagalog \"isang araw\" means \"one day, some day\", and \"araw na isa\" is not Tagalog, so Literal uses the ordinal; the meaning decision records the Hebrew.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2275,8 +3568,127 @@
           "L": "И Бог сказал: «Пусть будет свод посреди вод, и пусть он разделяет между водами и водами.»",
           "B": "Бог сказал: «Пусть посреди вод будет свод, чтобы отделить воду от воды.»",
           "R": "Потом Бог сказал: «Пусть посреди вод будет огромный купол. Пусть он держит воду внизу отдельно от воды наверху.»"
+        },
+        "uk": {
+          "L": "І сказав Бог: «Нехай буде склепіння посеред вод, і нехай воно розділяє між водами і водами.»",
+          "B": "Бог сказав: «Нехай буде склепіння посеред вод, щоб відділяти воду від води.»",
+          "R": "Тоді Бог сказав: «Нехай посеред вод буде великий купол. Нехай він тримає воду внизу окремо від води вгорі.»"
+        },
+        "ja": {
+          "L": "そして神は言われた。「水の真ん中に天蓋があるように。そしてそれは水と水の間を分けるものとなるように。」",
+          "B": "神は言われた。「水の真ん中に天蓋があって、水と水とを分けるように。」",
+          "R": "それから神は言われました。「水の真ん中に大きな丸天井があるように。それが下の水と上の水とを分けるように。」"
+        },
+        "id": {
+          "L": "Dan Allah berfirman, \"Hendaklah ada kubah di tengah-tengah air, dan hendaklah itu memisahkan antara air dan air.\"",
+          "B": "Allah berfirman, \"Hendaklah ada kubah di tengah air, untuk memisahkan air dari air.\"",
+          "R": "Lalu Allah berfirman, \"Biarlah ada kubah besar di tengah air. Biarlah kubah itu memisahkan air yang di bawah dari air yang di atas.\""
+        },
+        "zh": {
+          "L": "{{god_term:神|上帝}}又说：“让众水中间有一个穹顶，并且让它把水和水分开。”",
+          "B": "接着{{god_term:神|上帝}}说：“让众水中间有一个穹顶，把水和水分开。”",
+          "R": "然后{{god_term:神|上帝}}说：“让众水中间有一个巨大的圆顶。让它把下面的水和上面的水隔开。”"
+        },
+        "tl": {
+          "L": "At sinabi ng Diyos, \"Magkaroon ng kalawakan sa gitna ng tubig, at paghiwalayin nito ang tubig at ang tubig.\"",
+          "B": "Sinabi ng Diyos, \"Magkaroon ng kalawakan sa gitna ng tubig, upang ihiwalay ang tubig sa tubig.\"",
+          "R": "Pagkatapos ay sinabi ng Diyos, \"Magkaroon ng isang malaking simboryo sa gitna ng tubig. Paghiwalayin nito ang tubig sa ibaba at ang tubig sa itaas.\""
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010010060021"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "God"
+        },
+        {
+          "tokens": [
+            "o010010060012"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "said"
+        },
+        {
+          "tokens": [
+            "o010010060031"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Let there be"
+        },
+        {
+          "tokens": [
+            "o010010060041"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "a vault"
+        },
+        {
+          "tokens": [
+            "o010010060051"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "in"
+        },
+        {
+          "tokens": [
+            "o010010060052"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the middle"
+        },
+        {
+          "tokens": [
+            "o010010060061",
+            "o010010060062"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "of the waters"
+        },
+        {
+          "tokens": [
+            "o010010060071",
+            "o010010060072",
+            "o010010060081"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "to divide"
+        },
+        {
+          "tokens": [
+            "o010010060091",
+            "o010010060101"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "water"
+        },
+        {
+          "tokens": [
+            "o010010060111"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "from"
+        },
+        {
+          "tokens": [
+            "o010010060112"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "water"
+        }
+      ],
       "decisions": [
         {
           "id": "m1",
@@ -2540,6 +3952,137 @@
           "reason": "\"Твердь\", the traditional word, is Church Slavonic and few readers know it. \"Пространство\" loses the sense of something solid (m1). \"Свод\", an arched ceiling, keeps it; Readable says \"купол\", a dome.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010060041"
+          ],
+          "choice": "\"склепіння\" (L, B), \"великий купол\" (R)",
+          "alternatives": [
+            "твердь",
+            "простір"
+          ],
+          "reason": "The vault is a solid-looking dome over the earth (meaning decision m1); \"склепіння\" says that in today's Ukrainian, where the church word \"твердь\" is no longer understood, and Readable pictures it as a dome, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010060041"
+          ],
+          "choice": "\"天蓋\" (L, B); \"大きな丸天井\" (R)",
+          "alternatives": [
+            "\"大空\"",
+            "\"天空\""
+          ],
+          "reason": "The word means a solid-looking expanse beaten out like metal that holds back the waters above (m1). 大空 suggests only open air; 天蓋 (a canopy over the world) keeps the picture of something spread out overhead, and Readable says it plainly as a great dome.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010060041"
+          ],
+          "choice": "\"kubah\" (L, B); \"kubah besar\" (R)",
+          "alternatives": [
+            "\"cakrawala\"",
+            "\"bentangan\""
+          ],
+          "reason": "The Hebrew word names a solid-looking expanse beaten out like metal (m1). The traditional \"cakrawala\" today means the horizon, and \"bentangan\" loses the solidity; \"kubah\" (dome, vault) gives the picture at every level, as the English \"vault\" and \"dome\" do.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010060041"
+          ],
+          "choice": "\"穹顶\" (L, B); \"巨大的圆顶\" (R)",
+          "alternatives": [
+            "空气",
+            "穹苍",
+            "天空"
+          ],
+          "reason": "The Hebrew word is a solid-looking expanse that holds back the waters above (meaning decision m1). \"穹顶\" (a vaulted dome) keeps that sense as the English \"vault\" does; \"空气\" (air) and \"天空\" (sky) lose it, and \"穹苍\" is a literary word few readers use. Readable says \"a great dome\", as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010060012"
+          ],
+          "choice": "\"{{god_term:神|上帝}}又说\" (L); \"接着{{god_term:神|上帝}}说\" (B); \"然后{{god_term:神|上帝}}说\" (R)",
+          "alternatives": [
+            "{{god_term:神|上帝}}说 at every level"
+          ],
+          "reason": "The Hebrew joins each of God's commands to what went before with \"and\". Literal shows the chain with \"又\" (style guide section 11); Balanced and Readable use an ordinary connective. One form per level for \"and God said\" through chapter 1.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-tl-1",
+          "layer": "rendering",
+          "language": "tl",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010060041"
+          ],
+          "choice": "\"kalawakan\" (expanse) at Literal and Balanced; \"malaking simboryo\" (great dome) at Readable",
+          "alternatives": [
+            "\"arko\""
+          ],
+          "reason": "The Hebrew is a beaten-out expanse that holds back the waters above (m1). \"kalawakan\" is the broad expanse overhead; Readable gives the picture of a solid dome, as the English Readable does. \"tubig\" is used for the plural \"waters\", which Tagalog does not count.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2635,8 +4178,160 @@
           "L": "И Бог создал свод, и {{deity_pronoun:он|Он}} провёл разделение между водами, которые [были] под сводом, и водами, которые [были] над сводом. И было так.",
           "B": "И Бог создал свод и отделил воды под ним от вод над ним. Так и произошло.",
           "R": "Так Бог сделал купол. Он отделил воду под куполом от воды над ним. Так всё и случилось."
+        },
+        "uk": {
+          "L": "І зробив Бог склепіння, і {{deity_pronoun:він|Він}} розділив між водами, що [були] під склепінням, і водами, що [були] над склепінням. І сталося так.",
+          "B": "Тож Бог зробив склепіння й відділив води під ним від вод над ним. І так сталося.",
+          "R": "Отже, Бог зробив купол. Він відділив воду під куполом від води над ним. І так усе й сталося."
+        },
+        "ja": {
+          "L": "そして神は天蓋を造り、天蓋の下にある水と天蓋の上にある水の間を分けられた。そしてそのようになった。",
+          "B": "こうして神は天蓋を造り、その下の水と上の水とを分けられた。そして、そのとおりになった。",
+          "R": "こうして神は丸天井を造られました。そして、丸天井の下の水と上の水とを分けられました。すると、言われたとおりになりました。"
+        },
+        "id": {
+          "L": "Dan Allah membuat kubah itu, dan {{deity_pronoun:dia|Dia}} memisahkan antara air yang [ada] di bawah kubah itu dan air yang [ada] di atas kubah itu. Dan jadilah demikian.",
+          "B": "Jadi Allah membuat kubah itu dan memisahkan air yang di bawahnya dari air yang di atasnya. Dan demikianlah terjadi.",
+          "R": "Jadi Allah membuat kubah itu. Dia memisahkan air di bawah kubah dari air di atasnya. Dan itulah yang terjadi."
+        },
+        "zh": {
+          "L": "{{god_term:神|上帝}}就造了那穹顶，{{deity_pronoun:他|祂}}使穹顶以下的水和穹顶以上的水分开。就这样实现了。",
+          "B": "于是{{god_term:神|上帝}}造了穹顶，把穹顶下面的水和穹顶上面的水分开。事情就照样发生了。",
+          "R": "于是{{god_term:神|上帝}}造了那个圆顶。{{deity_pronoun:他|祂}}把圆顶下面的水和圆顶上面的水分开了。事情真的就这样发生了。"
+        },
+        "tl": {
+          "L": "At ginawa ng Diyos ang kalawakan, at pinaghiwalay {{deity_pronoun:niya|Niya}} ang tubig na [nasa] ilalim ng kalawakan at ang tubig na [nasa] ibabaw ng kalawakan. At nagkagayon.",
+          "B": "Kaya ginawa ng Diyos ang kalawakan at inihiwalay ang tubig sa ilalim nito sa tubig sa ibabaw nito. At ganoon nga ang nangyari.",
+          "R": "Kaya ginawa ng Diyos ang simboryo. Inihiwalay {{deity_pronoun:niya|Niya}} ang tubig sa ilalim ng simboryo sa tubig sa ibabaw nito. At iyon nga ang nangyari."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010010070011"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "So"
+        },
+        {
+          "tokens": [
+            "o010010070021"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "God"
+        },
+        {
+          "tokens": [
+            "o010010070012"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "made"
+        },
+        {
+          "tokens": [
+            "o010010070041",
+            "o010010070042"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the vault"
+        },
+        {
+          "tokens": [
+            "o010010070051"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010010070052",
+            "o010010070061"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "divided"
+        },
+        {
+          "tokens": [
+            "o010010070071",
+            "o010010070072"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the waters"
+        },
+        {
+          "tokens": [
+            "o010010070081",
+            "o010010070091",
+            "o010010070092",
+            "o010010070101",
+            "o010010070102"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "beneath it"
+        },
+        {
+          "tokens": [
+            "o010010070111",
+            "o010010070112"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "from"
+        },
+        {
+          "tokens": [
+            "o010010070121",
+            "o010010070122"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the waters"
+        },
+        {
+          "tokens": [
+            "o010010070131",
+            "o010010070141",
+            "o010010070142",
+            "o010010070151",
+            "o010010070152"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "above it"
+        },
+        {
+          "tokens": [
+            "o010010070161"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "And"
+        },
+        {
+          "tokens": [
+            "o010010070171"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "so"
+        },
+        {
+          "tokens": [
+            "o010010070162"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "it happened"
+        }
+      ],
       "decisions": [
         {
           "id": "m1",
@@ -2781,6 +4476,91 @@
           "reason": "Literal keeps \"И было так\", the Hebrew \"and it was so\". Balanced and Readable say in current Russian that what God commanded happened (m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010070162",
+            "o010010070171"
+          ],
+          "choice": "\"そのとおりになった\" (B); \"言われたとおりになりました\" (R) for \"and it was so\" through the chapter",
+          "alternatives": [
+            "\"そのようになった\" at every level"
+          ],
+          "reason": "The phrase says that what God commanded happened exactly as he said (m2); Balanced and Readable make that explicit, while Literal keeps \"そのようになった\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010070161",
+            "o010010070162",
+            "o010010070171"
+          ],
+          "choice": "\"Dan jadilah demikian\" (L); \"Dan demikianlah terjadi\" (B); \"Dan itulah yang terjadi\" (R)",
+          "alternatives": [],
+          "reason": "The refrain of the chapter (m2), one wording at each level wherever it recurs.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010070162",
+            "o010010070171"
+          ],
+          "choice": "\"就这样实现了\" (L); \"事情就照样发生了\" (B); \"事情真的就这样发生了\" (R)",
+          "alternatives": [
+            "事就这样成了"
+          ],
+          "reason": "One wording per level for \"and it was so\", kept through chapter 1: what God commanded happened exactly as he said (meaning decision m2). Literal's \"实现\" (came true, was carried out) is short and close; Balanced's \"照样\" says \"just as commanded\"; Readable adds \"真的\" as the English Readable says \"that is what happened\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-tl-1",
+          "layer": "rendering",
+          "language": "tl",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010070161",
+            "o010010070162",
+            "o010010070171"
+          ],
+          "choice": "\"At nagkagayon\" (L); \"At ganoon nga ang nangyari\" (B); \"At iyon nga ang nangyari\" (R) for \"and it was so\"",
+          "alternatives": [],
+          "reason": "The formula that ends each command's fulfilment (m2): Literal uses the single verb \"nagkagayon\" (it became so); Balanced and Readable say it happened, as the English does. The same forms through Genesis 1.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2862,8 +4642,117 @@
           "L": "И Бог назвал свод Небесами. И настал вечер, и настало утро: день второй.",
           "B": "Бог назвал свод Небом. Настал вечер, а потом утро: второй день.",
           "R": "Бог дал куполу имя Небо. Прошёл вечер, и наступило утро. Это был второй день."
+        },
+        "uk": {
+          "L": "І назвав Бог склепіння Небесами. І був вечір, і був ранок — день другий.",
+          "B": "Бог назвав склепіння Небом. Настав вечір, а потім ранок — другий день.",
+          "R": "Бог дав куполу імʼя Небо. Минув вечір, і настав ранок. Це був другий день."
+        },
+        "ja": {
+          "L": "そして神は天蓋を天と呼ばれた。そして夕べがあり、そして朝があった。第二の日。",
+          "B": "神は天蓋を空と名づけられた。夕べが来て、それから朝が来た。二日目である。",
+          "R": "神は丸天井に空という名前をつけられました。夕方が過ぎて、朝が来ました。これが二日目でした。"
+        },
+        "id": {
+          "L": "Dan Allah menyebut kubah itu Langit. Dan ada petang dan ada pagi, hari kedua.",
+          "B": "Allah menamai kubah itu Langit. Petang tiba, lalu pagi: hari kedua.",
+          "R": "Allah memberi kubah itu nama Langit. Petang berlalu, dan pagi tiba. Itulah hari kedua."
+        },
+        "zh": {
+          "L": "{{god_term:神|上帝}}叫那穹顶作天。又有傍晚，又有清晨，是第二天。",
+          "B": "{{god_term:神|上帝}}给穹顶取名为天空。傍晚来临，接着是清晨，这是第二天。",
+          "R": "{{god_term:神|上帝}}给圆顶起名叫天空。傍晚过去了，早晨来到。那就是第二天。"
+        },
+        "tl": {
+          "L": "At tinawag ng Diyos ang kalawakan na Langit. At nagkaroon ng gabi at nagkaroon ng umaga, ikalawang araw.",
+          "B": "Pinangalanan ng Diyos na Langit ang kalawakan. Dumating ang gabi, at saka ang umaga: ang ikalawang araw.",
+          "R": "Ibinigay ng Diyos sa simboryo ang pangalang Langit. Lumipas ang gabi, at dumating ang umaga. Iyon ang ikalawang araw."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010010080021"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "God"
+        },
+        {
+          "tokens": [
+            "o010010080012"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "named"
+        },
+        {
+          "tokens": [
+            "o010010080031",
+            "o010010080032"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the vault"
+        },
+        {
+          "tokens": [
+            "o010010080041"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Sky"
+        },
+        {
+          "tokens": [
+            "o010010080061"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Evening"
+        },
+        {
+          "tokens": [
+            "o010010080052"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "came"
+        },
+        {
+          "tokens": [
+            "o010010080071"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010010080072",
+            "o010010080081"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "then morning"
+        },
+        {
+          "tokens": [
+            "o010010080101"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the second"
+        },
+        {
+          "tokens": [
+            "o010010080091"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "day"
+        }
+      ],
       "decisions": [
         {
           "id": "m1",
@@ -3001,6 +4890,65 @@
           "reason": "Hindi \"आकाश\" is the visible sky as well as the heavens of 1:1, so the change the English Balanced and Readable make (\"Sky\") is not needed. \"स्वर्ग\" would suggest God's dwelling.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010080041"
+          ],
+          "choice": "\"Langit\" at every level",
+          "alternatives": [],
+          "reason": "Indonesian \"langit\" is both the heavens and the visible sky (m1), so one word serves where the English has Heavens (L) and Sky (B, R).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010080041"
+          ],
+          "choice": "\"天\" (L); \"天空\" (B, R)",
+          "alternatives": [
+            "天 at every level"
+          ],
+          "reason": "Literal keeps the word of verse 1, \"天\". Balanced and Readable say \"天空\", the visible sky (meaning decision m1), as the English levels say \"Sky\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-tl-1",
+          "layer": "rendering",
+          "language": "tl",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010080041"
+          ],
+          "choice": "\"Langit\" for the vault's name at every level",
+          "alternatives": [],
+          "reason": "Tagalog \"langit\" is both the visible sky and heaven, as the Hebrew word is (m1), so one word serves where the English says \"Heavens\" (L) and \"Sky\" (B, R).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3088,8 +5036,183 @@
           "L": "И Бог сказал: «Пусть воды под небесами соберутся в одно место, и пусть покажется суша.» И было так.",
           "B": "Потом Бог сказал: «Пусть воды под небом сойдутся в одно место, и пусть станет видна суша.» Так и произошло.",
           "R": "Потом Бог сказал: «Пусть вода под небом соберётся в одном месте, чтобы появилась сухая земля.» Так всё и случилось."
+        },
+        "uk": {
+          "L": "І сказав Бог: «Нехай зберуться води, що під небесами, в одне місце, і нехай зʼявиться суходіл.» І сталося так.",
+          "B": "Тоді Бог сказав: «Нехай води під небом зійдуться в одне місце, і нехай покажеться суходіл.» І так сталося.",
+          "R": "Тоді Бог сказав: «Нехай вода під небом збереться в одному місці, щоб зʼявилася суха земля.» І так усе й сталося."
+        },
+        "ja": {
+          "L": "そして神は言われた。「天の下の水は一つの場所に集められるように。そして乾いた[地]が現れるように。」そしてそのようになった。",
+          "B": "それから神は言われた。「空の下の水は一つの所に集まり、乾いた地が見えるようになるように。」そして、そのとおりになった。",
+          "R": "それから神は言われました。「空の下の水は一つの所に集まって、かわいた地が現れるように。」すると、言われたとおりになりました。"
+        },
+        "id": {
+          "L": "Dan Allah berfirman, \"Hendaklah air yang di bawah langit dikumpulkan ke satu tempat, dan hendaklah yang kering tampak.\" Dan jadilah demikian.",
+          "B": "Kemudian Allah berfirman, \"Hendaklah air yang di bawah langit berkumpul ke satu tempat, dan hendaklah daratan tampak.\" Dan demikianlah terjadi.",
+          "R": "Lalu Allah berfirman, \"Biarlah air di bawah langit berkumpul di satu tempat, supaya daratan kering kelihatan.\" Dan itulah yang terjadi."
+        },
+        "zh": {
+          "L": "{{god_term:神|上帝}}又说：“让天底下的众水聚集到一个地方，让干的[地]出现。”就这样实现了。",
+          "B": "接着{{god_term:神|上帝}}说：“让天空下面的水汇集到一个地方，让陆地显现出来。”事情就照样发生了。",
+          "R": "然后{{god_term:神|上帝}}说：“让天空下面的水流到同一个地方，好让陆地出现。”事情真的就这样发生了。"
+        },
+        "tl": {
+          "L": "At sinabi ng Diyos, \"Matipon ang tubig na nasa ilalim ng langit sa isang lugar, at lumitaw ang tuyong [lupa].\" At nagkagayon.",
+          "B": "Pagkatapos ay sinabi ng Diyos, \"Magtipon ang tubig sa ilalim ng langit sa isang lugar, at makita ang tuyong lupa.\" At ganoon nga ang nangyari.",
+          "R": "Pagkatapos ay sinabi ng Diyos, \"Magtipon sa isang lugar ang tubig sa ilalim ng langit, upang lumitaw ang tuyong lupa.\" At iyon nga ang nangyari."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010010090011"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Then"
+        },
+        {
+          "tokens": [
+            "o010010090021"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "God"
+        },
+        {
+          "tokens": [
+            "o010010090012"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "said"
+        },
+        {
+          "tokens": [
+            "o010010090031"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Let"
+        },
+        {
+          "tokens": [
+            "o010010090041",
+            "o010010090042"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the waters"
+        },
+        {
+          "tokens": [
+            "o010010090051",
+            "o010010090052"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "below"
+        },
+        {
+          "tokens": [
+            "o010010090061",
+            "o010010090062"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the sky"
+        },
+        {
+          "tokens": [
+            "o010010090031"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "come together"
+        },
+        {
+          "tokens": [
+            "o010010090071"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "into"
+        },
+        {
+          "tokens": [
+            "o010010090091"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "one"
+        },
+        {
+          "tokens": [
+            "o010010090081"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "place"
+        },
+        {
+          "tokens": [
+            "o010010090101"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010010090102"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "let"
+        },
+        {
+          "tokens": [
+            "o010010090111",
+            "o010010090112"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "dry land"
+        },
+        {
+          "tokens": [
+            "o010010090102"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "be seen"
+        },
+        {
+          "tokens": [
+            "o010010090121"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "And"
+        },
+        {
+          "tokens": [
+            "o010010090131"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "so"
+        },
+        {
+          "tokens": [
+            "o010010090122"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "it happened"
+        }
+      ],
       "decisions": [
         {
           "id": "m1",
@@ -3223,6 +5346,47 @@
           "reason": "The Hebrew says \"the dry\"; Russian has a noun of its own for dry land, so Literal needs no bracket.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o010010090111",
+            "o010010090112"
+          ],
+          "choice": "\"yang kering\" (L) with no bracket",
+          "alternatives": [
+            "\"[tanah] yang kering\""
+          ],
+          "reason": "Indonesian can use \"yang kering\" as a noun (the dry), so the English Literal's bracketed \"[land]\" is not needed.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o010010090111",
+            "o010010090112"
+          ],
+          "choice": "\"干的[地]\"",
+          "alternatives": [
+            "旱地",
+            "陆地"
+          ],
+          "reason": "The Hebrew says \"the dry\"; Literal brackets the noun Chinese needs, as the English Literal does. Balanced and Readable say \"陆地\", ground no longer under water (meaning decision m1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3308,8 +5472,150 @@
           "L": "И Бог назвал сушу Землёй, а скопление вод {{deity_pronoun:он|Он}} назвал Морями. И Бог увидел, что [это] хорошо.",
           "B": "Бог назвал сушу Землёй, а собравшиеся воды {{deity_pronoun:он|Он}} назвал Морями. И Бог увидел, что это хорошо.",
           "R": "Бог дал сухой земле имя Земля, а воде, которая собралась вместе, {{deity_pronoun:он|Он}} дал имя Моря. Бог увидел, что это хорошо."
+        },
+        "uk": {
+          "L": "І назвав Бог суходіл Землею, а зібрання вод {{deity_pronoun:він|Він}} назвав Морями. І побачив Бог, що [це] добре.",
+          "B": "Бог назвав суходіл Землею, а зібрані води {{deity_pronoun:він|Він}} назвав Морями. І побачив Бог, що це добре.",
+          "R": "Бог дав сухій землі імʼя Земля, а воді, що зібралася, {{deity_pronoun:він|Він}} дав імʼя Моря. Бог побачив, що це добре."
+        },
+        "ja": {
+          "L": "そして神は乾いた[地]を地と呼ばれ、水の集まりを海と呼ばれた。そして神は[それが]良いのを見られた。",
+          "B": "神は乾いた地を陸と名づけ、水の集まった所を海と名づけられた。神はそれを良いものとご覧になった。",
+          "R": "神は、かわいた地に陸という名前を、集まった水に海という名前をつけられました。神は、それが良いものであるのをご覧になりました。"
+        },
+        "id": {
+          "L": "Dan Allah menyebut yang kering itu Bumi, dan kumpulan air itu disebut-{{deity_pronoun:nya|Nya}} Laut. Dan Allah melihat bahwa [itu] baik.",
+          "B": "Allah menamai daratan itu Bumi, dan air yang terkumpul itu dinamai-{{deity_pronoun:nya|Nya}} Laut. Dan Allah melihat bahwa semua itu baik.",
+          "R": "Allah memberi daratan itu nama Bumi, dan air yang sudah berkumpul itu diberi-{{deity_pronoun:nya|Nya}} nama Laut. Allah melihat bahwa semua itu baik."
+        },
+        "zh": {
+          "L": "{{god_term:神|上帝}}叫干的[地]作大地，众水聚集的地方{{deity_pronoun:他|祂}}叫作海。{{god_term:神|上帝}}看见这是好的。",
+          "B": "{{god_term:神|上帝}}给陆地取名为大地，聚集的水{{deity_pronoun:他|祂}}则取名为海。{{god_term:神|上帝}}看出这是好的。",
+          "R": "{{god_term:神|上帝}}给陆地起名叫大地，{{deity_pronoun:他|祂}}给汇集在一起的水起名叫海。{{god_term:神|上帝}}看到这很好。"
+        },
+        "tl": {
+          "L": "At tinawag ng Diyos ang tuyong [lupa] na Lupa, at ang pagtitipon ng tubig ay tinawag {{deity_pronoun:niyang|Niyang}} mga Dagat. At nakita ng Diyos na [iyon ay] mabuti.",
+          "B": "Pinangalanan ng Diyos na Lupa ang tuyong lupa, at pinangalanan {{deity_pronoun:niyang|Niyang}} mga Dagat ang tubig na nagtipon. At nakita ng Diyos na iyon ay mabuti.",
+          "R": "Ibinigay ng Diyos sa tuyong lupa ang pangalang Lupa, at ibinigay {{deity_pronoun:niya|Niya}} sa tubig na nagtipon ang pangalang mga Dagat. Nakita ng Diyos na iyon ay mabuti."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010010100021"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "God"
+        },
+        {
+          "tokens": [
+            "o010010100012"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "named"
+        },
+        {
+          "tokens": [
+            "o010010100031",
+            "o010010100032"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the dry land"
+        },
+        {
+          "tokens": [
+            "o010010100041"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Earth"
+        },
+        {
+          "tokens": [
+            "o010010100051"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010010100052",
+            "o010010100053"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the gathered"
+        },
+        {
+          "tokens": [
+            "o010010100061",
+            "o010010100062"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "waters"
+        },
+        {
+          "tokens": [
+            "o010010100071"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "{{deity_pronoun:he|He}} named"
+        },
+        {
+          "tokens": [
+            "o010010100081"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Seas"
+        },
+        {
+          "tokens": [
+            "o010010100091"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "And"
+        },
+        {
+          "tokens": [
+            "o010010100101"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "God"
+        },
+        {
+          "tokens": [
+            "o010010100092"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "saw"
+        },
+        {
+          "tokens": [
+            "o010010100111"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "that"
+        },
+        {
+          "tokens": [
+            "o010010100121"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "it was good"
+        }
+      ],
       "decisions": [
         {
           "id": "m1",
@@ -3358,6 +5664,67 @@
             "\"पृथ्वी\""
           ],
           "reason": "Here the word means the land as against the seas (m1). Literal keeps \"पृथ्वी\", the word of 1:1; Balanced and Readable say \"धरती\", the everyday word for the ground and the land.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010100041"
+          ],
+          "choice": "\"陸\" (B, R) for the name given to the dry land; \"地\" (L)",
+          "alternatives": [
+            "\"地\" at every level"
+          ],
+          "reason": "Here the word means the land as against the seas (m1). Literal keeps 地, the same word as in verse 1; Balanced and Readable say 陸 so that the naming is clear.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010100041",
+            "o010010100081"
+          ],
+          "choice": "\"大地\" and \"海\"",
+          "alternatives": [
+            "地 and 海洋"
+          ],
+          "reason": "\"Earth\" here is the land as against the seas (meaning decision m1): \"大地\" keeps the name apart from the plain \"地\" of verse 2. \"海\" covers all the gathered waters, not one sea (m2); Chinese needs no plural.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-tl-1",
+          "layer": "rendering",
+          "language": "tl",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010100041"
+          ],
+          "choice": "\"Lupa\" (Earth) for the dry land's name",
+          "alternatives": [],
+          "reason": "Tagalog \"lupa\" is both the ground and the earth, as the Hebrew word is here (m1), so the name echoes \"tuyong lupa\" (dry land) as it does in the source.",
           "uncertain": false,
           "footnote": false
         }
@@ -3455,8 +5822,232 @@
           "L": "И Бог сказал: «Пусть земля произведёт зелень: растения, дающие семя, [и] плодовые деревья, приносящие плод по своему виду, в котором его семя, на земле.» И было так.",
           "B": "Потом Бог сказал: «Пусть земля даст зелёную поросль: растения, которые приносят семена, и деревья на земле, которые дают плоды с семенами внутри, каждое по своему виду.» Так и произошло.",
           "R": "Потом Бог сказал: «Пусть на земле вырастут травы, которые дают семена, и деревья с плодами, в которых есть семена, каждое своего вида.» Так всё и случилось."
+        },
+        "uk": {
+          "L": "І сказав Бог: «Нехай земля вирощує зелень: рослини, що дають насіння, [і] плодові дерева, що приносять плід за своїм видом, з його насінням у ньому, на землі.» І сталося так.",
+          "B": "Тоді Бог сказав: «Нехай земля зростить зелень: рослини, що дають насіння, і дерева на землі, що приносять плід із насінням усередині, кожне за своїм видом.» І так сталося.",
+          "R": "Тоді Бог сказав: «Нехай на землі ростуть рослини: рослини, що мають насіння, і дерева з плодами, у яких є насіння, кожне свого виду.» І так усе й сталося."
+        },
+        "ja": {
+          "L": "そして神は言われた。「地は草木を芽生えさせるように。種を生じる草、[そして]種類に従って実を結ぶ果樹、その種がその中にあるものを、地の上に。」そしてそのようになった。",
+          "B": "それから神は言われた。「地は青草を生えさせるように。種を生じる草と、中に種のある実を結ぶ木を、それぞれ種類に従って地の上に。」そして、そのとおりになった。",
+          "R": "それから神は言われました。「地に草や木が生えるように。種のできる草と、中に種のある実をつける木が、それぞれの種類ごとに。」すると、言われたとおりになりました。"
+        },
+        "id": {
+          "L": "Dan Allah berfirman, \"Hendaklah bumi menumbuhkan tumbuh-tumbuhan: tanaman yang menghasilkan biji, [dan] pohon buah-buahan yang menghasilkan buah menurut jenisnya, yang bijinya ada di dalamnya, di atas bumi.\" Dan jadilah demikian.",
+          "B": "Kemudian Allah berfirman, \"Hendaklah bumi menumbuhkan tumbuh-tumbuhan hijau: tanaman yang menghasilkan biji, dan pohon-pohon di bumi yang menghasilkan buah dengan biji di dalamnya, masing-masing menurut jenisnya.\" Dan demikianlah terjadi.",
+          "R": "Lalu Allah berfirman, \"Biarlah tanaman tumbuh di daratan: tanaman yang menghasilkan biji, dan pohon-pohon yang buahnya berbiji, masing-masing menurut jenisnya sendiri.\" Dan itulah yang terjadi."
+        },
+        "zh": {
+          "L": "{{god_term:神|上帝}}又说：“让地萌发嫩绿的植物：结种子的草本，[和]结果子的果树，各照着它的种类结果子，果子里有它的种子，在地上。”就这样实现了。",
+          "B": "接着{{god_term:神|上帝}}说：“让地长出绿色的植物：能结种子的草本植物，和地上结果子、果子里有种子的树木，各按自己的种类。”事情就照样发生了。",
+          "R": "然后{{god_term:神|上帝}}说：“让陆地长出各种植物：有结种子的植物，也有结果子的树，果子里面有种子，各有各的种类。”事情真的就这样发生了。"
+        },
+        "tl": {
+          "L": "At sinabi ng Diyos, \"Pasibulin ng lupa ang mga halaman: mga pananim na nagbibigay ng binhi, [at] mga punong namumunga ng bunga ayon sa uri nito, na ang binhi nito ay nasa loob nito, sa ibabaw ng lupa.\" At nagkagayon.",
+          "B": "Pagkatapos ay sinabi ng Diyos, \"Magsibol ang lupa ng mga luntiang halaman: mga pananim na nagbibigay ng binhi, at mga punongkahoy sa lupa na namumunga ng bungang may binhi sa loob, bawat isa ayon sa uri nito.\" At ganoon nga ang nangyari.",
+          "R": "Pagkatapos ay sinabi ng Diyos, \"Tumubo sana sa lupa ang mga halaman: mga halamang nagbibigay ng buto, at mga punongkahoy na may bungang may buto sa loob, bawat isa ayon sa sarili nitong uri.\" At iyon nga ang nangyari."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010010110011"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Then"
+        },
+        {
+          "tokens": [
+            "o010010110021"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "God"
+        },
+        {
+          "tokens": [
+            "o010010110012"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "said"
+        },
+        {
+          "tokens": [
+            "o010010110031"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Let"
+        },
+        {
+          "tokens": [
+            "o010010110041",
+            "o010010110042"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the earth"
+        },
+        {
+          "tokens": [
+            "o010010110031"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "put forth"
+        },
+        {
+          "tokens": [
+            "o010010110051"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "green growth"
+        },
+        {
+          "tokens": [
+            "o010010110061"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "plants"
+        },
+        {
+          "tokens": [
+            "o010010110071"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "that produce"
+        },
+        {
+          "tokens": [
+            "o010010110081"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "seed"
+        },
+        {
+          "tokens": [
+            "o010010110091"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "trees"
+        },
+        {
+          "tokens": [
+            "o010010110171"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "on"
+        },
+        {
+          "tokens": [
+            "o010010110181",
+            "o010010110182"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the earth"
+        },
+        {
+          "tokens": [
+            "o010010110111"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "that bear"
+        },
+        {
+          "tokens": [
+            "o010010110101",
+            "o010010110121"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "fruit"
+        },
+        {
+          "tokens": [
+            "o010010110141",
+            "o010010110152"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "with its"
+        },
+        {
+          "tokens": [
+            "o010010110151"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "seed"
+        },
+        {
+          "tokens": [
+            "o010010110161",
+            "o010010110162"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "inside"
+        },
+        {
+          "tokens": [
+            "o010010110131"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "each according to"
+        },
+        {
+          "tokens": [
+            "o010010110133"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "its"
+        },
+        {
+          "tokens": [
+            "o010010110132"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "kind"
+        },
+        {
+          "tokens": [
+            "o010010110191"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "And"
+        },
+        {
+          "tokens": [
+            "o010010110201"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "so"
+        },
+        {
+          "tokens": [
+            "o010010110192"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "it happened"
+        }
+      ],
       "decisions": [
         {
           "id": "m1",
@@ -3739,6 +6330,138 @@
           "reason": "\"Вид\" is the current word for a kind of plant or animal (m3); \"род\" in that sense is old-fashioned. The same phrase is used through chapters 1 to 7.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010110131",
+            "o010010110132",
+            "o010010110133"
+          ],
+          "choice": "\"за своїм видом\" for \"according to its kind\"",
+          "alternatives": [
+            "за родом своїм"
+          ],
+          "reason": "Book-wide through chapters 1, 6 and 7: \"вид\" is the plain modern word for a kind of plant or animal, while \"рід\" also means a family line, which Genesis needs for the generations.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010110051",
+            "o010010110061",
+            "o010010110091"
+          ],
+          "choice": "\"草木\" (L), \"青草\" (B) for the general word for green growth, then \"草\" and \"木\" / \"果樹\" for its two kinds",
+          "alternatives": [
+            "\"植物\""
+          ],
+          "reason": "The verse names green growth in general and then its two main kinds (m2); Japanese keeps a general word followed by the two kinds.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010110131",
+            "o010010110132",
+            "o010010110133"
+          ],
+          "choice": "\"menurut jenisnya\" at every level",
+          "alternatives": [],
+          "reason": "The phrase recurs through the chapter (m3) and is kept in one form; Balanced and Readable add \"masing-masing\" (each) as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010110131",
+            "o010010110132",
+            "o010010110133"
+          ],
+          "choice": "\"照着它的种类\" (L); \"各按自己的种类\" (B); \"各有各的种类\" (R)",
+          "alternatives": [
+            "各从其类"
+          ],
+          "reason": "Each kind produces more of its own kind (meaning decision m3). The four-character \"各从其类\" is classical grammar (\"其\" as a plain pronoun), which the style guide keeps out of every level; each level says it in modern Chinese, and the same wording is kept through 1:11-25.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-tl-1",
+          "layer": "rendering",
+          "language": "tl",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o010010110051",
+            "o010010110061",
+            "o010010110091",
+            "o010010110101",
+            "o010010110131",
+            "o010010110132",
+            "o010010110133"
+          ],
+          "choice": "\"binhi\" (seed) at Literal and Balanced, \"buto\" at Readable; \"ayon sa uri nito\" (according to its kind)",
+          "alternatives": [],
+          "reason": "\"binhi\" is the seed sown and kept for planting, the word of the promise of 3:15 and 12:7, so Literal and Balanced use it from the start; Readable says \"buto\", the everyday word for the seeds in fruit. \"uri\" is kind or type (m3), for the whole chapter.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-tl-2",
+          "layer": "rendering",
+          "language": "tl",
+          "levels": [
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o010010110031"
+          ],
+          "choice": "\"Tumubo sana\" (let ... grow) at Readable",
+          "alternatives": [],
+          "reason": "Tagalog's plain wish \"sana\" makes the command read as a hope; it is used here because Readable puts the plants first, as the English Readable does, and Tagalog's imperative cannot take \"the land\" as its subject. Literal and Balanced keep the earth as the one that brings forth (m1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3834,8 +6557,230 @@
           "L": "И земля произвела зелень, растения, дающие семя по своему виду, и деревья, приносящие плод, в котором его семя, по своему виду. И Бог увидел, что [это] хорошо.",
           "B": "Земля дала зелёную поросль: растения, которые приносят семена, каждое по своему виду, и деревья, которые дают плоды с семенами внутри, каждое по своему виду. И Бог увидел, что это хорошо.",
           "R": "И на земле выросли травы, которые давали семена, и деревья с плодами, в которых были семена, каждое своего вида. Бог увидел, что это хорошо."
+        },
+        "uk": {
+          "L": "І видала земля зелень, рослини, що дають насіння за своїм видом, і дерева, що приносять плід, у якому його насіння, за своїм видом. І побачив Бог, що [це] добре.",
+          "B": "Земля видала зелень: рослини, що дають насіння, кожна за своїм видом, і дерева, що приносять плід із насінням усередині, кожне за своїм видом. І побачив Бог, що це добре.",
+          "R": "І на землі виросли рослини, що мали насіння, і дерева з плодами, у яких було насіння, кожне свого виду. Бог побачив, що це добре."
+        },
+        "ja": {
+          "L": "そして地は草木を生み出した。種類に従って種を生じる草と、種類に従って、その種がその中にある実を結ぶ木を。そして神は[それが]良いのを見られた。",
+          "B": "地は青草を生み出した。それぞれ種類に従って種を生じる草と、それぞれ種類に従って、中に種のある実を結ぶ木である。神はそれを良いものとご覧になった。",
+          "R": "こうして地には、種のできる草と、中に種のある実をつける木が、それぞれの種類ごとに生えました。神は、それが良いものであるのをご覧になりました。"
+        },
+        "id": {
+          "L": "Dan bumi mengeluarkan tumbuh-tumbuhan, tanaman yang menghasilkan biji menurut jenisnya, dan pohon-pohon yang menghasilkan buah yang bijinya ada di dalamnya menurut jenisnya. Dan Allah melihat bahwa [itu] baik.",
+          "B": "Bumi mengeluarkan tumbuh-tumbuhan hijau: tanaman yang menghasilkan biji, masing-masing menurut jenisnya, dan pohon-pohon yang menghasilkan buah dengan biji di dalamnya, masing-masing menurut jenisnya. Dan Allah melihat bahwa semua itu baik.",
+          "R": "Lalu daratan menumbuhkan tanaman yang menghasilkan biji, dan pohon-pohon yang buahnya berbiji, masing-masing menurut jenisnya sendiri. Allah melihat bahwa semua itu baik."
+        },
+        "zh": {
+          "L": "于是地生出了嫩绿的植物，就是照着它的种类结种子的草本，和照着它的种类结果子、它的种子在它里面的树。{{god_term:神|上帝}}看见这是好的。",
+          "B": "地就长出了绿色的植物：能结种子的草本植物，各按自己的种类；还有结果子、果子里有种子的树木，各按自己的种类。{{god_term:神|上帝}}看出这是好的。",
+          "R": "于是陆地长出了结种子的植物，也长出了结果子的树，果子里面有种子，各有各的种类。{{god_term:神|上帝}}看到这很好。"
+        },
+        "tl": {
+          "L": "At naglabas ang lupa ng mga halaman, mga pananim na nagbibigay ng binhi ayon sa kanilang uri, at mga punong namumunga ng bunga na ang binhi nito ay nasa loob nito ayon sa kanilang uri. At nakita ng Diyos na [iyon ay] mabuti.",
+          "B": "Nagsibol ang lupa ng mga luntiang halaman: mga pananim na nagbibigay ng binhi, bawat isa ayon sa uri nito, at mga punongkahoy na namumunga ng bungang may binhi sa loob, bawat isa ayon sa uri nito. At nakita ng Diyos na iyon ay mabuti.",
+          "R": "Kaya tinubuan ang lupa ng mga halamang nagbibigay ng buto, at ng mga punongkahoy na may bungang may buto sa loob, bawat isa ayon sa sarili nitong uri. Nakita ng Diyos na iyon ay mabuti."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010010120021",
+            "o010010120022"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "The earth"
+        },
+        {
+          "tokens": [
+            "o010010120012"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "brought forth"
+        },
+        {
+          "tokens": [
+            "o010010120031"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "green growth"
+        },
+        {
+          "tokens": [
+            "o010010120041"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "plants"
+        },
+        {
+          "tokens": [
+            "o010010120051"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "that produce"
+        },
+        {
+          "tokens": [
+            "o010010120061"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "seed"
+        },
+        {
+          "tokens": [
+            "o010010120071"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "each according to"
+        },
+        {
+          "tokens": [
+            "o010010120073"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "its"
+        },
+        {
+          "tokens": [
+            "o010010120072"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "kind"
+        },
+        {
+          "tokens": [
+            "o010010120081"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010010120082"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "trees"
+        },
+        {
+          "tokens": [
+            "o010010120091"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "that bear"
+        },
+        {
+          "tokens": [
+            "o010010120101"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "fruit"
+        },
+        {
+          "tokens": [
+            "o010010120111",
+            "o010010120122"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "with its"
+        },
+        {
+          "tokens": [
+            "o010010120121"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "seed"
+        },
+        {
+          "tokens": [
+            "o010010120131",
+            "o010010120132"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "inside"
+        },
+        {
+          "tokens": [
+            "o010010120141"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "each according to"
+        },
+        {
+          "tokens": [
+            "o010010120143"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "its"
+        },
+        {
+          "tokens": [
+            "o010010120142"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "kind"
+        },
+        {
+          "tokens": [
+            "o010010120151"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "And"
+        },
+        {
+          "tokens": [
+            "o010010120161"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "God"
+        },
+        {
+          "tokens": [
+            "o010010120152"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "saw"
+        },
+        {
+          "tokens": [
+            "o010010120171"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "that"
+        },
+        {
+          "tokens": [
+            "o010010120181"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "it was good"
+        }
+      ],
       "decisions": [
         {
           "id": "m1",
@@ -3975,8 +6920,84 @@
           "L": "И настал вечер, и настало утро: день третий.",
           "B": "Настал вечер, а потом утро: третий день.",
           "R": "Прошёл вечер, и наступило утро. Это был третий день."
+        },
+        "uk": {
+          "L": "І був вечір, і був ранок — день третій.",
+          "B": "Настав вечір, а потім ранок — третій день.",
+          "R": "Минув вечір, і настав ранок. Це був третій день."
+        },
+        "ja": {
+          "L": "そして夕べがあり、そして朝があった。第三の日。",
+          "B": "夕べが来て、それから朝が来た。三日目である。",
+          "R": "夕方が過ぎて、朝が来ました。これが三日目でした。"
+        },
+        "id": {
+          "L": "Dan ada petang dan ada pagi, hari ketiga.",
+          "B": "Petang tiba, lalu pagi: hari ketiga.",
+          "R": "Petang berlalu, dan pagi tiba. Itulah hari ketiga."
+        },
+        "zh": {
+          "L": "又有傍晚，又有清晨，是第三天。",
+          "B": "傍晚来临，接着是清晨，这是第三天。",
+          "R": "傍晚过去了，早晨来到。那就是第三天。"
+        },
+        "tl": {
+          "L": "At nagkaroon ng gabi at nagkaroon ng umaga, ikatlong araw.",
+          "B": "Dumating ang gabi, at saka ang umaga: ang ikatlong araw.",
+          "R": "Lumipas ang gabi, at dumating ang umaga. Iyon ang ikatlong araw."
         }
       },
+      "alignments": [
+        {
+          "tokens": [
+            "o010010130021"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Evening"
+        },
+        {
+          "tokens": [
+            "o010010130012"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "came"
+        },
+        {
+          "tokens": [
+            "o010010130031"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "and"
+        },
+        {
+          "tokens": [
+            "o010010130032",
+            "o010010130041"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "then morning"
+        },
+        {
+          "tokens": [
+            "o010010130061"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "the third"
+        },
+        {
+          "tokens": [
+            "o010010130051"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "day"
+        }
+      ],
       "decisions": [],
       "status": "ai_draft"
     }

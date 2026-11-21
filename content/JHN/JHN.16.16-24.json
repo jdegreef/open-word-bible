@@ -74,6 +74,31 @@
           "L": "Немного — и вы уже не видите {{deity_pronoun:меня|Меня}}, и опять немного — и увидите {{deity_pronoun:меня|Меня}}.»",
           "B": "Ещё немного — и вы больше не увидите {{deity_pronoun:меня|Меня}}, а потом ещё немного — и вы увидите {{deity_pronoun:меня|Меня}}.»",
           "R": "Ещё немного — и вы больше не будете видеть {{deity_pronoun:меня|Меня}}. А потом, ещё немного спустя, вы снова увидите {{deity_pronoun:меня|Меня}}.»"
+        },
+        "uk": {
+          "L": "Трохи — і вже не бачите {{deity_pronoun:мене|Мене}}, і знову трохи — і побачите {{deity_pronoun:мене|Мене}}.»",
+          "B": "Ще трохи, і ви вже не побачите {{deity_pronoun:мене|Мене}}, а потім ще трохи — і ви {{deity_pronoun:мене|Мене}} побачите.»",
+          "R": "Незабаром ви більше не бачитимете {{deity_pronoun:мене|Мене}}. А трохи згодом ви знову {{deity_pronoun:мене|Мене}} побачите.»"
+        },
+        "ja": {
+          "L": "少しの間[がたつ]と、あなたがたはもはやわたしを見ない。そしてまた少しの間[がたつ]と、わたしを見るであろう。」",
+          "B": "しばらくすると、あなたがたはもうわたしを見なくなる。しかし、またしばらくすると、わたしを見るようになる。」",
+          "R": "もう少しすると、あなたたちはもうわたしを見なくなる。でも、それからまた少しすると、わたしを見るようになる。」"
+        },
+        "id": {
+          "L": "Tinggal sesaat lagi dan kalian tidak melihat {{deity_pronoun:aku|Aku}} lagi, dan tinggal sesaat lagi kalian akan melihat {{deity_pronoun:aku|Aku}}.\"",
+          "B": "Tinggal sebentar lagi kalian tidak akan melihat {{deity_pronoun:aku|Aku}} lagi, dan sebentar lagi sesudah itu kalian akan melihat {{deity_pronoun:aku|Aku}}.\"",
+          "R": "Tidak lama lagi kalian tidak akan melihat {{deity_pronoun:aku|Aku}} lagi. Lalu tidak lama sesudah itu, kalian akan melihat {{deity_pronoun:aku|Aku}} kembali.\""
+        },
+        "zh": {
+          "L": "再过一会儿，你们就不再看见我；又过一会儿，你们还要看见我。”",
+          "B": "再过不久，你们就看不见我了；然后再过不久，你们又会看见我。”",
+          "R": "很快你们就看不到我了。然后再过一会儿，你们又会看见我。”"
+        },
+        "ar": {
+          "L": "قليلًا ولا تعودون تشاهدونني، ثمّ قليلًا أيضًا فترونني».",
+          "B": "بعد وقت قصير لن تروني، ثمّ بعد وقت قصير آخر سترونني».",
+          "R": "بعد وقت قصير لن تروني بعد ذلك. ثمّ بعد وقت قصير آخر سترونني من جديد»."
         }
       },
       "alignments": [
@@ -149,6 +174,87 @@
           "language": "en",
           "level": "B",
           "target_span": "{{deity_pronoun:me|Me}}"
+        },
+        {
+          "tokens": [
+            "n43016016001"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "しばらく"
+        },
+        {
+          "tokens": [
+            "n43016016004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなたがた"
+        },
+        {
+          "tokens": [
+            "n43016016003"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "もう"
+        },
+        {
+          "tokens": [
+            "n43016016005"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43016016004",
+            "n43016016003"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "見なくなる"
+        },
+        {
+          "tokens": [
+            "n43016016006"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "しかし"
+        },
+        {
+          "tokens": [
+            "n43016016007"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "また"
+        },
+        {
+          "tokens": [
+            "n43016016008"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "しばらく"
+        },
+        {
+          "tokens": [
+            "n43016016011"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43016016010"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "見るようになる"
         }
       ],
       "decisions": [
@@ -517,6 +623,107 @@
           "reason": "The disciples quote this saying in verse 17 and puzzle over its \"little while\" in verse 18, and Jesus repeats it in verse 19 (meaning decisions m2-m3 there), so each level keeps one wording for it throughout.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43016016001",
+            "n43016016008"
+          ],
+          "choice": "\"少しの間\" (L); \"しばらく\" (B); \"もう少し\" (R), repeated in the quotations of 16:17-19",
+          "alternatives": [
+            "\"間もなく\""
+          ],
+          "reason": "The disciples and then Jesus quote this saying word for word, and \"a little while\" is what puzzles them (16:18). Each level keeps one form of the phrase through verses 16-19 so the reader can see the repetition. Both verbs of seeing are \"見る\" (meaning decision m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n43016016005"
+          ],
+          "choice": "\"我\", no deity_pronoun span",
+          "alternatives": [],
+          "reason": "Chinese has no reverent first person, so Jesus's \"I, me, my\" takes no span where the English capitalises it, through this passage; \"他\" for Jesus and the Father takes the span.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43016016001"
+          ],
+          "choice": "\"再过一会儿……又过一会儿\" (L); \"再过不久……然后再过不久\" (B); \"很快……然后再过一会儿\" (R)",
+          "alternatives": [],
+          "reason": "The saying is repeated by the disciples (16:17) and by Jesus (16:19); each level keeps one wording for it in all three places, with Literal's one changed word in 16:17 and 16:19.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-1",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43016016004",
+            "n43016016010"
+          ],
+          "choice": "\"تشاهدونني\" ... \"ترونني\"",
+          "alternatives": [],
+          "reason": "The Greek uses two verbs for seeing, most likely for variety (m1). Literal keeps two Arabic verbs; Balanced and Readable use one, since both mean that the disciples will see Jesus.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-2",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "text_variant",
+          "tokens": [
+            "n43016016009",
+            "n43016016010",
+            "n43016016011"
+          ],
+          "choice": "the verse ends with \"you will see me\"",
+          "alternatives": [
+            "adding \"because I am going to the Father\""
+          ],
+          "reason": "The text followed ends the verse with \"you will see me\" (m2); the words about going to the Father, which the disciples quote in verse 17, come from 16:10.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -609,6 +816,31 @@
           "L": "Итак, [некоторые] из {{deity_pronoun:его|Его}} учеников сказали друг другу: «Что это {{deity_pronoun:он|Он}} говорит нам: “Немного — и вы не видите {{deity_pronoun:меня|Меня}}, и опять немного — и увидите {{deity_pronoun:меня|Меня}}”?",
           "B": "Тогда некоторые из {{deity_pronoun:его|Его}} учеников сказали друг другу: «Что {{deity_pronoun:он|Он}} хочет сказать нам словами: “Ещё немного — и вы больше не увидите {{deity_pronoun:меня|Меня}}, а потом ещё немного — и вы увидите {{deity_pronoun:меня|Меня}}”?",
           "R": "Некоторые из {{deity_pronoun:его|Его}} учеников стали спрашивать друг друга: «Что {{deity_pronoun:он|Он}} имеет в виду, когда говорит: “Ещё немного — и вы больше не будете видеть {{deity_pronoun:меня|Меня}}. А потом, ещё немного спустя, вы снова увидите {{deity_pronoun:меня|Меня}}”?"
+        },
+        "uk": {
+          "L": "Тож [деякі] з {{deity_pronoun:його|Його}} учнів сказали один одному: «Що це таке, що {{deity_pronoun:він|Він}} каже нам: “Трохи — і не бачите {{deity_pronoun:мене|Мене}}, і знову трохи — і побачите {{deity_pronoun:мене|Мене}}”?",
+          "B": "Тоді деякі з {{deity_pronoun:його|Його}} учнів почали казати один одному: «Що {{deity_pronoun:він|Він}} хоче сказати нам цим: “Ще трохи, і ви вже не побачите {{deity_pronoun:мене|Мене}}, а потім ще трохи — і ви {{deity_pronoun:мене|Мене}} побачите”?",
+          "R": "Деякі з {{deity_pronoun:його|Його}} учнів почали питати один одного: «Що {{deity_pronoun:він|Він}} має на увазі, коли каже: “Незабаром ви більше не бачитимете {{deity_pronoun:мене|Мене}}. А трохи згодом ви знову {{deity_pronoun:мене|Мене}} побачите”?"
+        },
+        "ja": {
+          "L": "そこで、弟子たちのうちの[何人か]が互いに言った。「あの方がわたしたちに、『少しの間[がたつ]と、あなたがたはわたしを見ない。そしてまた少しの間[がたつ]と、わたしを見るであろう』と言っておられる、このことは何なのか？",
+          "B": "そこで、弟子たちのうちの何人かが互いに言った。「『しばらくすると、あなたがたはもうわたしを見なくなる。しかし、またしばらくすると、わたしを見るようになる』とあの方がわたしたちに言われるのは、どういう意味なのだろうか？",
+          "R": "弟子たちの何人かは、互いに聞き合い始めました。「『もう少しすると、あなたたちはもうわたしを見なくなる。でも、それからまた少しすると、わたしを見るようになる』とあの方が言われるのは、どういう意味だろう？"
+        },
+        "id": {
+          "L": "Lalu beberapa dari murid-murid-{{deity_pronoun:nya|Nya}} berkata seorang kepada yang lain, \"Apa maksud-{{deity_pronoun:nya|Nya}} berkata kepada kita, 'Tinggal sesaat lagi dan kalian tidak melihat {{deity_pronoun:aku|Aku}}, dan tinggal sesaat lagi kalian akan melihat {{deity_pronoun:aku|Aku}}';",
+          "B": "Lalu beberapa murid-{{deity_pronoun:nya|Nya}} berkata satu sama lain, \"Apa maksud-{{deity_pronoun:nya|Nya}} berkata kepada kita, 'Tinggal sebentar lagi kalian tidak akan melihat {{deity_pronoun:aku|Aku}} lagi, dan sebentar lagi sesudah itu kalian akan melihat {{deity_pronoun:aku|Aku}}'?",
+          "R": "Beberapa murid-{{deity_pronoun:nya|Nya}} mulai bertanya satu sama lain, \"Apa maksud-{{deity_pronoun:nya|Nya}} waktu berkata, 'Tidak lama lagi kalian tidak akan melihat {{deity_pronoun:aku|Aku}} lagi. Lalu tidak lama sesudah itu, kalian akan melihat {{deity_pronoun:aku|Aku}} kembali'?"
+        },
+        "zh": {
+          "L": "于是{{deity_pronoun:他|祂}}的门徒中[有些人]彼此说：“{{deity_pronoun:他|祂}}对我们说‘再过一会儿，你们就看不见我；又过一会儿，你们还要看见我’，这是什么意思？",
+          "B": "于是{{deity_pronoun:他|祂}}的门徒中有几个人彼此说：“{{deity_pronoun:他|祂}}告诉我们‘再过不久，你们就看不见我了；然后再过不久，你们又会看见我’，这是什么意思呢？",
+          "R": "{{deity_pronoun:他|祂}}的门徒中有些人开始互相问：“{{deity_pronoun:他|祂}}说‘很快你们就看不到我了。然后再过一会儿，你们又会看见我’，这是什么意思？"
+        },
+        "ar": {
+          "L": "فقال بعض تلاميذه فيما بينهم: «ما هذا الذي يقوله لنا: “قليلًا ولا تشاهدونني، ثمّ قليلًا أيضًا فترونني”؟",
+          "B": "فقال بعض تلاميذه بعضهم لبعض: «ماذا يقصد بقوله لنا: “بعد وقت قصير لن تروني، ثمّ بعد وقت قصير آخر سترونني”؟",
+          "R": "وأخذ بعض تلاميذه يسأل بعضهم بعضًا: «ماذا يقصد حين يقول: “بعد وقت قصير لن تروني بعد ذلك. ثمّ بعد وقت قصير آخر سترونني من جديد”؟"
         }
       },
       "alignments": [
@@ -765,6 +997,169 @@
           "language": "en",
           "level": "B",
           "target_span": "{{deity_pronoun:me|Me}}"
+        },
+        {
+          "tokens": [
+            "n43016017002"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "そこで"
+        },
+        {
+          "tokens": [
+            "n43016017004",
+            "n43016017005"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "弟子たち"
+        },
+        {
+          "tokens": [
+            "n43016017003"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "のうちの何人か"
+        },
+        {
+          "tokens": [
+            "n43016017007",
+            "n43016017008"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "互いに"
+        },
+        {
+          "tokens": [
+            "n43016017001"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "言った"
+        },
+        {
+          "tokens": [
+            "n43016017015"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "しばらく"
+        },
+        {
+          "tokens": [
+            "n43016017018"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなたがた"
+        },
+        {
+          "tokens": [
+            "n43016017017"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "もう"
+        },
+        {
+          "tokens": [
+            "n43016017019"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43016017018",
+            "n43016017017"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "見なくなる"
+        },
+        {
+          "tokens": [
+            "n43016017020"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "しかし"
+        },
+        {
+          "tokens": [
+            "n43016017021"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "また"
+        },
+        {
+          "tokens": [
+            "n43016017022"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "しばらく"
+        },
+        {
+          "tokens": [
+            "n43016017025"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43016017024"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "見るようになる"
+        },
+        {
+          "tokens": [
+            "n43016017013"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あの方"
+        },
+        {
+          "tokens": [
+            "n43016017014"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたしたち"
+        },
+        {
+          "tokens": [
+            "n43016017013"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "言われる"
+        },
+        {
+          "tokens": [
+            "n43016017009"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "どういう意味"
+        },
+        {
+          "tokens": [
+            "n43016017010"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "なのだろうか"
         }
       ],
       "decisions": [
@@ -1027,6 +1422,80 @@
           "reason": "The disciples repeat the saying with one small change of word (meaning decision m2); Literal shows it, Balanced and Readable repeat verse 16, as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n43016017013"
+          ],
+          "choice": "\"あの方\" with \"言っておられる\" / \"言われる\" for Jesus in the disciples' talk among themselves",
+          "alternatives": [
+            "\"彼が言う\""
+          ],
+          "reason": "Speaking among themselves, the disciples refer to Jesus with respect, as disciples would refer to their teacher; \"あの方\" also avoids \"彼\" for Jesus. They speak to one another in the plain style. Literal keeps \"見ない\" for the one changed word (meaning decision m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-1",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "punctuation",
+          "tokens": [
+            "n43016017015",
+            "n43016017016",
+            "n43016017017",
+            "n43016017018",
+            "n43016017019",
+            "n43016017020",
+            "n43016017021",
+            "n43016017022",
+            "n43016017023",
+            "n43016017024",
+            "n43016017025"
+          ],
+          "choice": "Jesus's saying inside “ ” within the disciples' «»",
+          "alternatives": [
+            "a colon with no inner marks"
+          ],
+          "reason": "The disciples repeat Jesus's saying of verse 16 word for word (m2), and they go on to quote a second saying. Inner marks show exactly where each quoted saying begins and ends. Each level repeats its own wording of verse 16; Literal has \"ولا تشاهدونني\" for the one small change (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-2",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "grammar",
+          "tokens": [
+            "n43016017003",
+            "n43016017004",
+            "n43016017005",
+            "n43016017006"
+          ],
+          "choice": "\"بعض تلاميذه\"",
+          "alternatives": [],
+          "reason": "Some of his disciples, not all of them (m1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1100,6 +1569,31 @@
           "L": "И: “Потому что {{deity_pronoun:я|Я}} иду к Отцу”?»",
           "B": "И что значит: “потому что {{deity_pronoun:я|Я}} иду к Отцу”?»",
           "R": "И что {{deity_pronoun:он|Он}} имеет в виду: “потому что {{deity_pronoun:я|Я}} иду к Отцу”?»"
+        },
+        "uk": {
+          "L": "І: “Бо {{deity_pronoun:я|Я}} йду до Отця”?»",
+          "B": "І що означає: “бо {{deity_pronoun:я|Я}} йду до Отця”?»",
+          "R": "І що {{deity_pronoun:він|Він}} має на увазі, кажучи: “бо {{deity_pronoun:я|Я}} йду до Отця”?»"
+        },
+        "ja": {
+          "L": "また、『わたしは父のもとへ行くからである』とは？」",
+          "B": "それに、『わたしは父のもとへ行くからだ』というのは、どういうことなのか？」",
+          "R": "それに、『わたしは父のところへ行くからだ』というのは、どういう意味なのだろう？」"
+        },
+        "id": {
+          "L": "dan, 'Karena {{deity_pronoun:aku|Aku}} pergi kepada Bapa'?\"",
+          "B": "Dan apa maksud-{{deity_pronoun:nya|Nya}} dengan 'karena {{deity_pronoun:aku|Aku}} pergi kepada Bapa'?\"",
+          "R": "Dan apa maksud-{{deity_pronoun:nya|Nya}} dengan 'karena {{deity_pronoun:aku|Aku}} pergi kepada Bapa'?\""
+        },
+        "zh": {
+          "L": "还有，‘因为我往父那里去’呢？”",
+          "B": "还有‘因为我要到父那里去’，又是什么意思呢？”",
+          "R": "{{deity_pronoun:他|祂}}说‘因为我要到父那里去’，又是什么意思？”"
+        },
+        "ar": {
+          "L": "وقوله: “لأنّي منطلق إلى الآب”؟»",
+          "B": "وما معنى قوله: “لأنّي ذاهب إلى الآب”؟»",
+          "R": "وماذا يقصد بقوله: “لأنّي ذاهب إلى الآب”؟»"
         }
       },
       "alignments": [
@@ -1143,6 +1637,55 @@
           "language": "en",
           "level": "B",
           "target_span": "the Father"
+        },
+        {
+          "tokens": [
+            "n43016017026"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "それに"
+        },
+        {
+          "tokens": [
+            "n43016017028"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43016017030",
+            "n43016017031"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "父"
+        },
+        {
+          "tokens": [
+            "n43016017029"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "のもとへ"
+        },
+        {
+          "tokens": [
+            "n43016017028"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "行く"
+        },
+        {
+          "tokens": [
+            "n43016017027"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "から"
         }
       ],
       "decisions": [
@@ -1212,6 +1755,27 @@
           "choice": "qué significa (B); qué quiere decir con (R)",
           "alternatives": [],
           "reason": "As in English: the Greek has only \"and\" before the second saying, and the question carries over from the first part. Balanced and Readable supply the words so that it is plainly a second question.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-1",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43016017027"
+          ],
+          "choice": "\"لأنّي\"",
+          "alternatives": [
+            "\"إنّي\""
+          ],
+          "reason": "The conjunction here means \"because\": the disciples quote Jesus's words of 16:10 (m1). Each level repeats the verb it used in 16:10.",
           "uncertain": false,
           "footnote": false
         }
@@ -1289,6 +1853,31 @@
           "L": "Итак, они говорили: «Что это {{deity_pronoun:он|Он}} говорит: “немного”?",
           "B": "Они всё повторяли: «Что {{deity_pronoun:он|Он}} имеет в виду под словами “ещё немного”?",
           "R": "Они всё спрашивали: «Что {{deity_pronoun:он|Он}} имеет в виду, когда говорит “ещё немного”?"
+        },
+        "uk": {
+          "L": "Тож вони казали: «Що це таке, що {{deity_pronoun:він|Він}} каже: “трохи”?",
+          "B": "І вони знову й знову повторювали: «Що {{deity_pronoun:він|Він}} хоче сказати словами “ще трохи”?",
+          "R": "Вони все питали: «Що {{deity_pronoun:він|Він}} має на увазі під словами “ще трохи”?"
+        },
+        "ja": {
+          "L": "そこで、彼らは言い続けていた。「あの方が言われる『少しの間』とは、何なのか？",
+          "B": "そこで彼らは、しきりに言い合った。「『しばらく』と言われるのは、どういう意味なのだろうか？",
+          "R": "弟子たちは、何度も聞き合いました。「『もう少し』と言われるのは、どういう意味だろう？"
+        },
+        "id": {
+          "L": "Lalu mereka berkata, \"Apa maksud-{{deity_pronoun:nya|Nya}} berkata, 'Sesaat lagi'?",
+          "B": "Jadi mereka terus berkata, \"Apa maksud-{{deity_pronoun:nya|Nya}} dengan 'sebentar lagi'?",
+          "R": "Mereka terus bertanya, \"Apa maksud-{{deity_pronoun:nya|Nya}} dengan 'tidak lama lagi'?"
+        },
+        "zh": {
+          "L": "所以他们一直在说：“{{deity_pronoun:他|祂}}说‘一会儿’，这是什么？",
+          "B": "于是他们一再地说：“{{deity_pronoun:他|祂}}说的‘再过不久’是什么意思呢？",
+          "R": "他们不停地问：“{{deity_pronoun:他|祂}}说‘一会儿’，是什么意思呢？"
+        },
+        "ar": {
+          "L": "فكانوا يقولون: «ما هذا الذي يقوله: “قليلًا”؟",
+          "B": "فظلّوا يقولون: «ماذا يعني بقوله: “وقت قصير”؟",
+          "R": "وظلّوا يسألون: «ماذا يعني بـ“وقت قصير”؟"
         }
       },
       "alignments": [
@@ -1331,6 +1920,62 @@
           "language": "en",
           "level": "B",
           "target_span": "a little while"
+        },
+        {
+          "tokens": [
+            "n43016018002"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "そこで"
+        },
+        {
+          "tokens": [
+            "n43016018001"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "彼ら"
+        },
+        {
+          "tokens": [
+            "n43016018001"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "しきりに言い合った"
+        },
+        {
+          "tokens": [
+            "n43016018008"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "しばらく"
+        },
+        {
+          "tokens": [
+            "n43016018007"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "言われる"
+        },
+        {
+          "tokens": [
+            "n43016018003"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "どういう意味"
+        },
+        {
+          "tokens": [
+            "n43016018004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "なのだろうか"
         }
       ],
       "decisions": [
@@ -1406,6 +2051,24 @@
           "reason": "As in English: the continuing tense (meaning decision m1). Readable says \"preguntarse\", since what they say is a question.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ar-1",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "grammar",
+          "tokens": [
+            "n43016018001"
+          ],
+          "choice": "\"ظلّوا يقولون\" (B), \"ظلّوا يسألون\" (R)",
+          "alternatives": [],
+          "reason": "They were saying it again and again (m1); \"ظلّ\" with the present shows the repeated talk.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1477,6 +2140,31 @@
           "L": "Не знаем, о чём {{deity_pronoun:он|Он}} говорит.»",
           "B": "Мы не понимаем, о чём {{deity_pronoun:он|Он}} говорит.»",
           "R": "Мы не понимаем, о чём {{deity_pronoun:он|Он}} говорит.»"
+        },
+        "uk": {
+          "L": "Не знаємо, що {{deity_pronoun:він|Він}} говорить.»",
+          "B": "Ми не розуміємо, про що {{deity_pronoun:він|Він}} говорить.»",
+          "R": "Ми не розуміємо, про що {{deity_pronoun:він|Він}} каже.»"
+        },
+        "ja": {
+          "L": "あの方が何を語っておられるのか、わたしたちにはわからない。」",
+          "B": "あの方が何のことを話しておられるのか、わたしたちにはわからない。」",
+          "R": "何のことを話しておられるのか、わたしたちにはわからない。」"
+        },
+        "id": {
+          "L": "Kita tidak tahu apa yang {{deity_pronoun:dia|Dia}} katakan.\"",
+          "B": "Kita tidak mengerti apa yang {{deity_pronoun:dia|Dia}} bicarakan.\"",
+          "R": "Kita tidak mengerti apa yang {{deity_pronoun:dia|Dia}} bicarakan.\""
+        },
+        "zh": {
+          "L": "我们不知道{{deity_pronoun:他|祂}}在讲什么。”",
+          "B": "我们不明白{{deity_pronoun:他|祂}}在说什么。”",
+          "R": "我们不懂{{deity_pronoun:他|祂}}在说什么。”"
+        },
+        "ar": {
+          "L": "لا نعرف عمّ يتكلّم».",
+          "B": "لا نفهم ما الذي يتحدّث عنه».",
+          "R": "نحن لا نفهم ما يتكلّم عنه»."
         }
       },
       "alignments": [
@@ -1519,6 +2207,47 @@
           "language": "en",
           "level": "B",
           "target_span": "{{deity_pronoun:he|He}} is talking about"
+        },
+        {
+          "tokens": [
+            "n43016018012"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あの方"
+        },
+        {
+          "tokens": [
+            "n43016018011"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "何のこと"
+        },
+        {
+          "tokens": [
+            "n43016018012"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "話しておられる"
+        },
+        {
+          "tokens": [
+            "n43016018010"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたしたち"
+        },
+        {
+          "tokens": [
+            "n43016018010",
+            "n43016018009"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わからない"
         }
       ],
       "decisions": [
@@ -1670,6 +2399,31 @@
           "L": "Иисус узнал, что они хотели спросить {{deity_pronoun:его|Его}}, и сказал им: «Об этом ли вы спрашиваете друг друга, что {{deity_pronoun:я|Я}} сказал: “Немного — и вы не видите {{deity_pronoun:меня|Меня}}, и опять немного — и увидите {{deity_pronoun:меня|Меня}}”?",
           "B": "Иисус понял, что они хотят спросить {{deity_pronoun:его|Его}} об этом, и сказал им: «Вы обсуждаете между собой, что {{deity_pronoun:я|Я}} имел в виду, когда сказал: “Ещё немного — и вы больше не увидите {{deity_pronoun:меня|Меня}}, а потом ещё немного — и вы увидите {{deity_pronoun:меня|Меня}}”?",
           "R": "Иисус понял, что они хотят спросить {{deity_pronoun:его|Его}} об этом. Поэтому {{deity_pronoun:он|Он}} сказал им: «Вы спрашиваете друг друга, что значат эти {{deity_pronoun:мои|Мои}} слова: “Ещё немного — и вы больше не будете видеть {{deity_pronoun:меня|Меня}}. А потом, ещё немного спустя, вы снова увидите {{deity_pronoun:меня|Меня}}”?"
+        },
+        "uk": {
+          "L": "Ісус зрозумів, що вони хотіли запитати {{deity_pronoun:його|Його}}, і сказав їм: «Чи про це допитуєтеся між собою, що {{deity_pronoun:я|Я}} сказав: “Трохи — і не бачите {{deity_pronoun:мене|Мене}}, і знову трохи — і побачите {{deity_pronoun:мене|Мене}}”?",
+          "B": "Ісус знав, що вони хочуть запитати {{deity_pronoun:його|Його}} про це, тож сказав їм: «Ви обговорюєте між собою, що {{deity_pronoun:я|Я}} мав на увазі, коли сказав: “Ще трохи, і ви вже не побачите {{deity_pronoun:мене|Мене}}, а потім ще трохи — і ви {{deity_pronoun:мене|Мене}} побачите”?",
+          "R": "Ісус знав, що вони хочуть запитати {{deity_pronoun:його|Його}} про це. Тож {{deity_pronoun:він|Він}} сказав їм: «Ви питаєте один одного, що означають {{deity_pronoun:мої|Мої}} слова: “Незабаром ви більше не бачитимете {{deity_pronoun:мене|Мене}}. А трохи згодом ви знову {{deity_pronoun:мене|Мене}} побачите”?"
+        },
+        "ja": {
+          "L": "イエスは、彼らがイエスに尋ねたがっていることを知っておられた。そして彼らに言われた。「『少しの間[がたつ]と、あなたがたはわたしを見ない。そしてまた少しの間[がたつ]と、わたしを見るであろう』とわたしが言ったことについて、あなたがたは互いに論じ合っているのか？",
+          "B": "イエスは、弟子たちがそのことを尋ねたがっているのを知って、彼らに言われた。「『しばらくすると、あなたがたはもうわたしを見なくなる。しかし、またしばらくすると、わたしを見るようになる』とわたしが言ったのはどういう意味なのかと、互いに論じ合っているのか？",
+          "R": "イエスは、弟子たちがこのことを聞きたがっているのに気づいておられました。そこで、こう言われました。「『もう少しすると、あなたたちはもうわたしを見なくなる。でも、それからまた少しすると、わたしを見るようになる』というわたしの言葉はどういう意味なのかと、互いに聞き合っているのか？"
+        },
+        "id": {
+          "L": "Yesus tahu bahwa mereka ingin bertanya kepada-{{deity_pronoun:nya|Nya}}, lalu {{deity_pronoun:dia|Dia}} berkata kepada mereka, \"Tentang inikah kalian saling bertanya, bahwa {{deity_pronoun:aku|Aku}} berkata, 'Tinggal sesaat lagi dan kalian tidak melihat {{deity_pronoun:aku|Aku}}, dan tinggal sesaat lagi kalian akan melihat {{deity_pronoun:aku|Aku}}'?\"",
+          "B": "Yesus tahu bahwa mereka ingin bertanya kepada-{{deity_pronoun:nya|Nya}} tentang hal itu, jadi {{deity_pronoun:dia|Dia}} berkata kepada mereka, \"Apakah kalian sedang membicarakan satu sama lain apa maksud-{{deity_pronoun:ku|Ku}} ketika {{deity_pronoun:aku|Aku}} berkata, 'Tinggal sebentar lagi kalian tidak akan melihat {{deity_pronoun:aku|Aku}} lagi, dan sebentar lagi sesudah itu kalian akan melihat {{deity_pronoun:aku|Aku}}'?",
+          "R": "Yesus tahu bahwa mereka ingin bertanya kepada-{{deity_pronoun:nya|Nya}} tentang hal itu. Jadi {{deity_pronoun:dia|Dia}} berkata kepada mereka, \"Apakah kalian saling bertanya apa maksud-{{deity_pronoun:ku|Ku}} dengan kata-kata ini: 'Tidak lama lagi kalian tidak akan melihat {{deity_pronoun:aku|Aku}} lagi. Lalu tidak lama sesudah itu, kalian akan melihat {{deity_pronoun:aku|Aku}} kembali'?"
+        },
+        "zh": {
+          "L": "耶稣知道他们想要问{{deity_pronoun:他|祂}}，就对他们说：“你们是在彼此探讨这件事，就是我说过‘再过一会儿，你们就看不见我；又过一会儿，你们还要看见我’吗？",
+          "B": "耶稣知道他们想问{{deity_pronoun:他|祂}}这件事，就对他们说：“我说‘再过不久，你们就看不见我了；然后再过不久，你们又会看见我’，你们是在彼此讨论这话是什么意思吗？",
+          "R": "耶稣知道他们想问{{deity_pronoun:他|祂}}这件事。于是{{deity_pronoun:他|祂}}对他们说：“我说过‘很快你们就看不到我了。然后再过一会儿，你们又会看见我’，你们是在互相问这话的意思吗？"
+        },
+        "ar": {
+          "L": "وعرف يسوع أنّهم يريدون أن يسألوه، فقال لهم: «أتتباحثون فيما بينكم في هذا، أنّي قلت: “قليلًا ولا تشاهدونني، ثمّ قليلًا أيضًا فترونني”؟",
+          "B": "وعرف يسوع أنّهم يريدون أن يسألوه عن ذلك، فقال لهم: «أتتناقشون فيما بينكم في معنى قولي: “بعد وقت قصير لن تروني، ثمّ بعد وقت قصير آخر سترونني”؟",
+          "R": "وعرف يسوع أنّهم يريدون أن يسألوه عن هذا. فقال لهم: «هل تسألون بعضكم بعضًا عن معنى كلامي هذا: “بعد وقت قصير لن تروني بعد ذلك. ثمّ بعد وقت قصير آخر سترونني من جديد”؟"
         }
       },
       "alignments": [
@@ -1866,6 +2620,185 @@
           "language": "en",
           "level": "B",
           "target_span": "{{deity_pronoun:me|Me}}"
+        },
+        {
+          "tokens": [
+            "n43016019002"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "イエス"
+        },
+        {
+          "tokens": [
+            "n43016019004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "弟子たち"
+        },
+        {
+          "tokens": [
+            "n43016019006"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "尋ね"
+        },
+        {
+          "tokens": [
+            "n43016019004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "たがっている"
+        },
+        {
+          "tokens": [
+            "n43016019001"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "知って"
+        },
+        {
+          "tokens": [
+            "n43016019009"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "彼ら"
+        },
+        {
+          "tokens": [
+            "n43016019008"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "言われた"
+        },
+        {
+          "tokens": [
+            "n43016019017"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "しばらく"
+        },
+        {
+          "tokens": [
+            "n43016019020"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなたがた"
+        },
+        {
+          "tokens": [
+            "n43016019019"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "もう"
+        },
+        {
+          "tokens": [
+            "n43016019021"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43016019020",
+            "n43016019019"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "見なくなる"
+        },
+        {
+          "tokens": [
+            "n43016019022"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "しかし"
+        },
+        {
+          "tokens": [
+            "n43016019023"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "また"
+        },
+        {
+          "tokens": [
+            "n43016019024"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "しばらく"
+        },
+        {
+          "tokens": [
+            "n43016019027"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43016019026"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "見るようになる"
+        },
+        {
+          "tokens": [
+            "n43016019016"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43016019016"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "言った"
+        },
+        {
+          "tokens": [
+            "n43016019010",
+            "n43016019011"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "どういう意味なのか"
+        },
+        {
+          "tokens": [
+            "n43016019013",
+            "n43016019014"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "互いに"
+        },
+        {
+          "tokens": [
+            "n43016019012"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "論じ合っている"
         }
       ],
       "decisions": [
@@ -1997,6 +2930,62 @@
           "reason": "Beside the honorific \"वे\" for Jesus, a plain \"वे\" for the disciples would leave the sentence unclear, so Balanced and Readable name them.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ar-1",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "grammar",
+          "tokens": [
+            "n43016019010",
+            "n43016019011",
+            "n43016019012",
+            "n43016019013",
+            "n43016019014",
+            "n43016019015",
+            "n43016019016",
+            "n43016019017",
+            "n43016019018",
+            "n43016019019",
+            "n43016019020",
+            "n43016019021",
+            "n43016019022",
+            "n43016019023",
+            "n43016019024",
+            "n43016019025",
+            "n43016019026",
+            "n43016019027"
+          ],
+          "choice": "the saying repeated in “ ” with the same wording as in verse 17",
+          "alternatives": [],
+          "reason": "Jesus repeats his saying in the same words as the disciples did (m3), so each level repeats its own wording of verse 17.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-2",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43016019006",
+            "n43016019012"
+          ],
+          "choice": "\"تتباحثون\" (L), \"تتناقشون\" (B), \"تسألون بعضكم بعضًا\" (R)",
+          "alternatives": [],
+          "reason": "Seeking with one another means discussing among themselves (m2).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2086,6 +3075,31 @@
           "L": "Истинно, истинно говорю вам: вы будете плакать и рыдать, а мир будет радоваться; вы будете опечалены, но ваша печаль обратится в радость.",
           "B": "Истинно, истинно говорю вам: вы будете плакать и громко скорбеть, а мир будет радоваться. Вы будете полны печали, но ваша печаль станет радостью.",
           "R": "Говорю вам правду: вы будете плакать и горевать, а мир будет радоваться. Вам будет очень грустно, но ваша грусть превратится в радость."
+        },
+        "uk": {
+          "L": "Істинно, істинно кажу вам, що ви заплачете і заголосите, а світ радітиме; ви засмутитеся, але ваш смуток обернеться на радість.",
+          "B": "Істинно, істинно кажу вам: ви плакатимете й голоситимете, а світ радітиме. Ви будете сповнені смутку, але ваш смуток стане радістю.",
+          "R": "Кажу вам правду: ви плакатимете й сумуватимете, а світ радітиме. Вам буде дуже сумно, але ваш сум обернеться на радість."
+        },
+        "ja": {
+          "L": "アーメン、アーメン、あなたがたに言う。あなたがたは泣き、嘆き悲しむが、世は喜ぶであろう。あなたがたは悲しまされるが、あなたがたの悲しみは喜びとなるであろう。",
+          "B": "まことに、まことに、あなたがたに言っておく。あなたがたは泣き、声をあげて嘆くが、世は喜ぶ。あなたがたは悲しみに沈むが、その悲しみは喜びに変わる。",
+          "R": "本当のことを言おう。あなたたちは泣いて悲しむが、この世は喜ぶ。あなたたちはとても悲しくなる。でも、その悲しみは喜びに変わるのだ。"
+        },
+        "id": {
+          "L": "Amin, amin, {{deity_pronoun:aku|Aku}} berkata kepada kalian, kalian akan menangis dan meratap, tetapi dunia akan bersukacita; kalian akan berdukacita, tetapi dukacita kalian akan berubah menjadi sukacita.",
+          "B": "Sesungguhnya, sesungguhnya {{deity_pronoun:aku|Aku}} berkata kepada kalian, kalian akan menangis dan meratap dengan keras, tetapi dunia akan bersukacita. Kalian akan berdukacita, tetapi dukacita kalian akan berubah menjadi sukacita.",
+          "R": "Aku mengatakan yang sebenarnya kepada kalian: kalian akan menangis dan meratap, tetapi dunia akan bergembira. Kalian akan sangat sedih, tetapi kesedihan kalian akan berubah menjadi sukacita."
+        },
+        "zh": {
+          "L": "阿们，阿们，我告诉你们，你们将要哭泣、哀号，世界却要欢喜；你们会被忧愁充满，但你们的忧愁将会转为喜乐。",
+          "B": "我确确实实地告诉你们，你们会哭泣，会放声哀哭，世界却会欢喜。你们会满心忧愁，但你们的忧愁要化为喜乐。",
+          "R": "我把实话告诉你们，你们会哭，会伤心痛哭，世界却会高兴。你们会非常难过，但你们的难过会变成喜悦。"
+        },
+        "ar": {
+          "L": "آمين آمين أقول لكم: ستبكون أنتم وتندبون، والعالم سيفرح؛ ستحزنون، لكنّ حزنكم سيصير فرحًا.",
+          "B": "الحقّ الحقّ أقول لكم: ستبكون وتنوحون بصوت عالٍ، أمّا العالم ففرحان. ستمتلئون حزنًا، لكنّ حزنكم سيتحوّل إلى فرح.",
+          "R": "أقول لكم الحقّ: ستبكون وتنوحون، أمّا العالم فسيكون مسرورًا. ستحزنون كثيرًا، لكنّ حزنكم سينقلب فرحًا."
         }
       },
       "alignments": [
@@ -2235,6 +3249,138 @@
           "language": "en",
           "level": "B",
           "target_span": "joy"
+        },
+        {
+          "tokens": [
+            "n43016020001"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "まことに"
+        },
+        {
+          "tokens": [
+            "n43016020002"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "まことに"
+        },
+        {
+          "tokens": [
+            "n43016020004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなたがた"
+        },
+        {
+          "tokens": [
+            "n43016020003"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "言っておく"
+        },
+        {
+          "tokens": [
+            "n43016020009"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなたがた"
+        },
+        {
+          "tokens": [
+            "n43016020006"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "泣き"
+        },
+        {
+          "tokens": [
+            "n43016020008"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "声をあげて嘆く"
+        },
+        {
+          "tokens": [
+            "n43016020011"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "が"
+        },
+        {
+          "tokens": [
+            "n43016020010",
+            "n43016020012"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "世"
+        },
+        {
+          "tokens": [
+            "n43016020013"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "喜ぶ"
+        },
+        {
+          "tokens": [
+            "n43016020014"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなたがた"
+        },
+        {
+          "tokens": [
+            "n43016020015"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "悲しみに沈む"
+        },
+        {
+          "tokens": [
+            "n43016020016"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "が"
+        },
+        {
+          "tokens": [
+            "n43016020017",
+            "n43016020018",
+            "n43016020019"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "その悲しみ"
+        },
+        {
+          "tokens": [
+            "n43016020021"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "喜び"
+        },
+        {
+          "tokens": [
+            "n43016020022",
+            "n43016020020"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "変わる"
         }
       ],
       "decisions": [
@@ -2706,6 +3852,140 @@
           "reason": "The same Greek noun is used for the disciples' grief and the pain of labour (verse 21); Literal and Balanced keep \"печаль\" throughout so that the link stays visible, as the English keeps \"sorrow\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43016020001",
+            "n43016020002",
+            "n43016020003",
+            "n43016020004"
+          ],
+          "choice": "\"Істинно, істинно кажу вам\" (L, B); \"Кажу вам правду\" (R), also in verse 23",
+          "alternatives": [
+            "\"Правду, правду кажу вам\""
+          ],
+          "reason": "The book-wide rendering of the double amen: Literal and Balanced keep the solemn formula; Readable says plainly that what follows is true.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43016020001",
+            "n43016020002"
+          ],
+          "choice": "\"アーメン、アーメン、あなたがたに言う\" (L); \"まことに、まことに、あなたがたに言っておく\" (B); \"本当のことを言おう\" (R)",
+          "alternatives": [
+            "\"本当のことを言おう\" (R)"
+          ],
+          "reason": "The book-wide forms for John's doubled amen, recorded once in this passage; they apply also in 16:23. \"悲しみ\" is kept for the noun through verses 20-22 at Literal and Balanced, so that the link with the woman's sorrow (16:21) stays visible.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43016020001",
+            "n43016020002"
+          ],
+          "choice": "\"阿们，阿们，我告诉你们\" (L); \"我确确实实地告诉你们\" (B); \"我把实话告诉你们\" (R)",
+          "alternatives": [
+            "\"我实实在在地告诉你们\""
+          ],
+          "reason": "John's doubled \"amen\" is kept doubled at Literal and shown by the doubled \"确确实实\" at Balanced, kept apart from the Synoptic single \"amen\"; Readable says it plainly. Also 16:23.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43016020018",
+            "n43016020021"
+          ],
+          "choice": "\"忧愁……喜乐\" (L, B); \"难过……喜悦\" (R)",
+          "alternatives": [],
+          "reason": "One noun for sorrow and one for joy through verses 20-24 at each level, so the turn from one to the other is heard; Readable uses the everyday words.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-1",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43016020006",
+            "n43016020008"
+          ],
+          "choice": "\"تبكون وتندبون\" (L), \"تبكون وتنوحون بصوت عالٍ\" (B), \"تبكون وتنوحون\" (R)",
+          "alternatives": [],
+          "reason": "Weeping and lamenting is loud mourning, the kind made for the dead (m1). \"ندب\" and \"ناح\" are the Arabic words for wailing over the dead.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-2",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "theology",
+          "tokens": [
+            "n43016020017",
+            "n43016020018",
+            "n43016020019",
+            "n43016020020",
+            "n43016020021",
+            "n43016020022"
+          ],
+          "choice": "\"سيصير فرحًا\" (L), \"سيتحوّل إلى فرح\" (B), \"سينقلب فرحًا\" (R)",
+          "alternatives": [
+            "\"يعقبه فرح\""
+          ],
+          "reason": "The same events that cause their grief will become the cause of their joy (m3): the sorrow itself turns into joy, not merely gives way to it.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2802,6 +4082,31 @@
           "L": "Женщина, когда рожает, имеет печаль, потому что пришёл её час; а когда родит ребёнка, уже не помнит мучений от радости, что родился человек в мир.",
           "B": "Когда женщина рожает, у неё печаль, потому что пришёл её час. Но когда ребёнок родился, она уже не помнит мучений от радости, что в мир родился человек.",
           "R": "Когда женщина рожает, ей больно, потому что пришло её время. Но когда ребёнок родится, она забывает всю эту боль. Она полна радости оттого, что в мир пришёл новый человек."
+        },
+        "uk": {
+          "L": "Жінка, коли народжує, має смуток, бо прийшла її година; а коли народить дитину, вже не памʼятає муки з радості, що людина народилася на світ.",
+          "B": "Жінка, коли народжує, сумує, бо настала її година. Але щойно дитина народиться, вона вже не памʼятає муки, бо радіє, що на світ народилася людина.",
+          "R": "Коли жінка народжує, їй боляче, бо настав її час. Але коли дитина народиться, вона забуває весь той біль. Вона сповнена радості, що у світ прийшла нова людина."
+        },
+        "ja": {
+          "L": "女は子を産むとき、悲しみを持つ。自分の時が来たからである。しかし、子を産んでしまうと、一人の人間が世に生まれた喜びのために、もはやその苦しみを思い出さない。",
+          "B": "女性は子どもを産むとき、悲しみを味わう。自分の時が来たからである。しかし、子どもが生まれると、一人の人間が世に生まれ出た喜びのために、もうその苦しみを思い出さない。",
+          "R": "女の人は赤ちゃんを産むとき、苦しむ。その時が来たからだ。でも、赤ちゃんが生まれると、その苦しみをすっかり忘れてしまう。新しい人がこの世に生まれた喜びで、いっぱいになるからだ。"
+        },
+        "id": {
+          "L": "Perempuan yang melahirkan berdukacita, karena saatnya telah tiba; tetapi setelah ia melahirkan anaknya, ia tidak ingat lagi akan penderitaannya, karena sukacita bahwa seorang manusia telah dilahirkan ke dunia.",
+          "B": "Seorang perempuan yang sedang melahirkan merasa sedih, karena saatnya telah tiba. Tetapi setelah anaknya lahir, ia tidak ingat lagi akan penderitaannya, karena sukacita bahwa seorang manusia telah lahir ke dunia.",
+          "R": "Seorang ibu yang sedang melahirkan merasa sakit, karena waktunya sudah tiba. Tetapi setelah bayinya lahir, ia lupa akan semua rasa sakit itu. Dia penuh sukacita karena seorang manusia baru telah lahir ke dunia."
+        },
+        "zh": {
+          "L": "那妇人分娩的时候会有忧愁，因为她的时刻来到了；但当她生下了孩子，因着有一个人出生到世界上来的喜乐，她就不再记得那痛苦了。",
+          "B": "妇女在分娩的时候会忧愁，因为她的时刻到了。可是孩子一出生，她就因为有一个人诞生到世上来而满心喜乐，不再记得那痛苦了。",
+          "R": "一个女人要生孩子的时候，会很痛苦，因为她的时候到了。可是孩子出生以后，她就忘记了所有的痛苦。她满心喜悦，因为一个新的生命来到了世上。"
+        },
+        "ar": {
+          "L": "المرأة حين تلد يصيبها الحزن، لأنّ ساعتها حانت؛ فإذا ولدت الطفل، لم تعد تذكر الضيق، من فرحها بأنّ إنسانًا وُلد في العالم.",
+          "B": "حين تلد المرأة تحزن، لأنّ ساعتها قد أتت. لكن متى وُلد طفلها، لا تعود تذكر الشدّة، من فرحتها بأنّ إنسانًا قد وُلد في العالم.",
+          "R": "عندما تلد المرأة تتألّم، لأنّ وقتها قد جاء. لكن بعد أن يولد الطفل تنسى كلّ ذلك الألم. فهي مملوءة فرحًا لأنّ إنسانًا جديدًا جاء إلى العالم."
         }
       },
       "alignments": [
@@ -3002,6 +4307,175 @@
           "language": "en",
           "level": "B",
           "target_span": "the world"
+        },
+        {
+          "tokens": [
+            "n43016021001",
+            "n43016021002"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "女性"
+        },
+        {
+          "tokens": [
+            "n43016021004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "子どもを産む"
+        },
+        {
+          "tokens": [
+            "n43016021003"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "とき"
+        },
+        {
+          "tokens": [
+            "n43016021005"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "悲しみ"
+        },
+        {
+          "tokens": [
+            "n43016021006"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "味わう"
+        },
+        {
+          "tokens": [
+            "n43016021009",
+            "n43016021010",
+            "n43016021011"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "自分の時"
+        },
+        {
+          "tokens": [
+            "n43016021008"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "来た"
+        },
+        {
+          "tokens": [
+            "n43016021007"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "から"
+        },
+        {
+          "tokens": [
+            "n43016021013"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "しかし"
+        },
+        {
+          "tokens": [
+            "n43016021015",
+            "n43016021016"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "子ども"
+        },
+        {
+          "tokens": [
+            "n43016021014"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "生まれる"
+        },
+        {
+          "tokens": [
+            "n43016021012"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "と"
+        },
+        {
+          "tokens": [
+            "n43016021026"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "一人の人間"
+        },
+        {
+          "tokens": [
+            "n43016021028",
+            "n43016021029"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "世"
+        },
+        {
+          "tokens": [
+            "n43016021025",
+            "n43016021027"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "生まれ出た"
+        },
+        {
+          "tokens": [
+            "n43016021022",
+            "n43016021023"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "喜び"
+        },
+        {
+          "tokens": [
+            "n43016021021"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "のために"
+        },
+        {
+          "tokens": [
+            "n43016021017"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "もう"
+        },
+        {
+          "tokens": [
+            "n43016021019",
+            "n43016021020"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "その苦しみ"
+        },
+        {
+          "tokens": [
+            "n43016021018",
+            "n43016021017"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "思い出さない"
         }
       ],
       "decisions": [
@@ -3312,6 +4786,86 @@
           "reason": "Here the hour is the time for a child to be born (meaning decision m2), so Readable says \"время\", as the English says \"time\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43016021005",
+            "n43016021010",
+            "n43016021026"
+          ],
+          "choice": "\"悲しみ\" (L, B), \"苦しむ\" (R); \"自分の時\" (L, B), \"その時\" (R); \"一人の人間\" (L, B), \"新しい人\" (R)",
+          "alternatives": [
+            "\"男の子\""
+          ],
+          "reason": "Literal and Balanced keep \"悲しみ\" for the same noun as in verses 20 and 22 (meaning decision m1), and \"時\" for her hour so that the echo of Jesus's hour can be heard (meaning decision m2); Readable says plainly what a young reader expects. The Greek word is the general one for a human being (meaning decision m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n43016021021"
+          ],
+          "choice": "因着……的喜乐，她就不再记得那痛苦了 (L); 就因为……而满心喜乐，不再记得那痛苦了 (B)",
+          "alternatives": [],
+          "reason": "Chinese puts the cause before what it causes, so the joy of the birth comes before her forgetting the anguish, within the verse.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-1",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43016021005"
+          ],
+          "choice": "\"الحزن\" (L), \"تحزن\" (B); \"ألم\" (R)",
+          "alternatives": [],
+          "reason": "The pain of labor is called by the same word as the disciples' sorrow (m1). Literal and Balanced keep \"حزن\" so the link to verse 20 is heard; Readable says \"pain\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-2",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43016021026"
+          ],
+          "choice": "\"إنسانًا\" (L, B), \"إنسانًا جديدًا\" (R)",
+          "alternatives": [
+            "\"رجلًا\""
+          ],
+          "reason": "The word means a human being, a new person (m3), not a male child. \"إنسان\" already speaks of anyone.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3403,6 +4957,31 @@
           "L": "Так и вы теперь имеете печаль; но {{deity_pronoun:я|Я}} снова увижу вас, и возрадуется ваше сердце, и вашу радость никто не отнимает у вас.",
           "B": "Так и с вами: сейчас у вас печаль, но {{deity_pronoun:я|Я}} снова увижу вас. Тогда ваши сердца возрадуются, и вашу радость никто у вас не отнимает.",
           "R": "Так и с вами. Сейчас вам грустно. Но {{deity_pronoun:я|Я}} снова увижу вас. Тогда ваши сердца наполнятся радостью. Никто никогда не отнимет у вас вашей радости."
+        },
+        "uk": {
+          "L": "Тож і ви тепер маєте смуток; але знову побачу вас, і зрадіє ваше серце, і вашої радості ніхто не забирає від вас.",
+          "B": "Так і з вами: тепер у вас смуток, але {{deity_pronoun:я|Я}} знову побачу вас. Тоді зрадіють ваші серця, і ніхто не відбирає у вас вашої радості.",
+          "R": "Так і з вами. Зараз вам сумно. Але {{deity_pronoun:я|Я}} знову побачу вас. Тоді ваші серця сповняться радістю. І ніхто ніколи не відбере у вас вашої радості."
+        },
+        "ja": {
+          "L": "だから、あなたがたも今は悲しみを持っている。しかし、わたしは再びあなたがたを見る。そして、あなたがたの心は喜ぶ。そして、あなたがたの喜びをあなたがたから奪い去る者はだれもいない。",
+          "B": "あなたがたも同じである。今は悲しみがある。しかし、わたしは再びあなたがたに会う。そのとき、あなたがたの心は喜ぶ。その喜びを、だれもあなたがたから奪い去ることはない。",
+          "R": "あなたたちも同じだ。今は悲しんでいる。でも、わたしはまたあなたたちに会う。そのとき、あなたたちの心は喜びでいっぱいになる。その喜びを、あなたたちから奪い取る人はだれもいない。"
+        },
+        "id": {
+          "L": "Dan kalian juga sekarang berdukacita; tetapi {{deity_pronoun:aku|Aku}} akan melihat kalian lagi, dan hati kalian akan bersukacita, dan tidak seorang pun mengambil sukacita kalian dari kalian.",
+          "B": "Demikian juga kalian: sekarang kalian berdukacita, tetapi {{deity_pronoun:aku|Aku}} akan melihat kalian lagi. Maka hati kalian akan bersukacita, dan tidak seorang pun dapat merampas sukacita kalian.",
+          "R": "Begitu juga dengan kalian. Sekarang kalian sedih. Tetapi {{deity_pronoun:aku|Aku}} akan melihat kalian lagi. Lalu hati kalian akan penuh sukacita. Tidak ada seorang pun yang akan mengambil sukacita kalian."
+        },
+        "zh": {
+          "L": "你们也是这样，现在有忧愁；但我会再看见你们，你们的心就要欢喜，你们的喜乐，没有人从你们身上夺走。",
+          "B": "你们也是如此：现在你们有忧愁，但我会再见到你们。那时你们的心要欢喜，没有人能把你们的喜乐从你们身上夺走。",
+          "R": "你们也是一样。你们现在很难过。但我会再见到你们。那时你们心里会充满喜悦。没有人能夺走你们的喜悦。"
+        },
+        "ar": {
+          "L": "فأنتم كذلك عندكم الآن حزن؛ لكنّي سأراكم ثانية، فيفرح قلبكم، وفرحكم لا ينتزعه منكم أحد.",
+          "B": "وهكذا أنتم: عندكم الآن حزن، لكنّي سأراكم مرّة أخرى. عندئذ تفرح قلوبكم، وما من أحد ينتزع فرحكم منكم.",
+          "R": "وكذلك أنتم. أنتم حزانى الآن. لكنّي سأراكم من جديد. وعندها تمتلئ قلوبكم بهجة. ولن يقدر أحد أن يأخذ فرحكم منكم أبدًا."
         }
       },
       "alignments": [
@@ -3583,6 +5162,170 @@
           "language": "en",
           "level": "B",
           "target_span": "you"
+        },
+        {
+          "tokens": [
+            "n43016022002"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなたがた"
+        },
+        {
+          "tokens": [
+            "n43016022001",
+            "n43016022003"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "も同じである"
+        },
+        {
+          "tokens": [
+            "n43016022004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "今"
+        },
+        {
+          "tokens": [
+            "n43016022006"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "悲しみ"
+        },
+        {
+          "tokens": [
+            "n43016022007"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ある"
+        },
+        {
+          "tokens": [
+            "n43016022009"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "しかし"
+        },
+        {
+          "tokens": [
+            "n43016022010"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43016022008"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "再び"
+        },
+        {
+          "tokens": [
+            "n43016022011"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなたがた"
+        },
+        {
+          "tokens": [
+            "n43016022010"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "会う"
+        },
+        {
+          "tokens": [
+            "n43016022012"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "そのとき"
+        },
+        {
+          "tokens": [
+            "n43016022014"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなたがた"
+        },
+        {
+          "tokens": [
+            "n43016022015",
+            "n43016022016"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "心"
+        },
+        {
+          "tokens": [
+            "n43016022013"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "喜ぶ"
+        },
+        {
+          "tokens": [
+            "n43016022018",
+            "n43016022019",
+            "n43016022020"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "その喜び"
+        },
+        {
+          "tokens": [
+            "n43016022021"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "だれも"
+        },
+        {
+          "tokens": [
+            "n43016022024"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなたがた"
+        },
+        {
+          "tokens": [
+            "n43016022023"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "から"
+        },
+        {
+          "tokens": [
+            "n43016022022"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "奪い去る"
+        },
+        {
+          "tokens": [
+            "n43016022021"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ことはない"
         }
       ],
       "decisions": [
@@ -3639,7 +5382,7 @@
           ],
           "reason": "Some early manuscripts have the future, \"no one will take\". The SBLGNT reads the present. The sense is nearly the same: the present states it as a settled fact. A footnote gives the other reading. A reviewer should check the evidence against the apparatus.",
           "uncertain": false,
-          "footnote": true
+          "footnote": false
         },
         {
           "id": "m4",
@@ -3699,6 +5442,66 @@
           "choice": "su corazón, singular; nadie se lo quita (B); nadie podrá nunca quitarles (R); se llenará de alegría (R)",
           "alternatives": [],
           "reason": "As in English: Balanced keeps the present, which in Spanish can state a lasting fact; Readable says \"nadie podrá nunca\" to make the lasting fact plain (meaning decision m4). Spanish keeps \"corazón\" singular, as at 16:6. Readable says \"alegría\" for the verb, keeping \"gozo\" for the noun.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43016022010"
+          ],
+          "choice": "\"会う\" (B, R); \"見る\" (L)",
+          "alternatives": [
+            "\"見る\" at every level"
+          ],
+          "reason": "\"わたしはあなたがたを見る\" sounds in Japanese like watching them; Jesus means that he will come to them risen and they will be together again (meaning decision m1), which \"会う\" says. Literal keeps \"見る\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-1",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L"
+          ],
+          "category": "grammar",
+          "tokens": [
+            "n43016022013",
+            "n43016022014",
+            "n43016022015",
+            "n43016022016"
+          ],
+          "choice": "\"يفرح قلبكم\" (L), \"قلوبكم\" (B, R)",
+          "alternatives": [],
+          "reason": "Your heart will rejoice echoes Isaiah 66:14 (m2). Literal keeps the singular \"heart\", as in 16:6; Balanced and Readable use the natural Arabic plural.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-2",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "text_variant",
+          "tokens": [
+            "n43016022022"
+          ],
+          "choice": "present \"ينتزعه\" / \"ينتزع\"",
+          "alternatives": [
+            "future \"سينتزع\""
+          ],
+          "reason": "The text followed has the present \"takes\" (m3): a joy beyond anyone's reach from then on (m4). Readable says \"no one will ever be able\", which states the same certainty.",
           "uncertain": false,
           "footnote": false
         }
@@ -3790,8 +5593,33 @@
         },
         "ru": {
           "L": "И в тот день вы {{deity_pronoun:меня|Меня}} ни о чём не спросите. Истинно, истинно говорю вам: если чего попросите у Отца, {{deity_pronoun:он|Он}} даст вам во имя {{deity_pronoun:моё|Моё}}.",
-          "B": "В тот день вы не будете ни о чём {{deity_pronoun:меня|Меня}} спрашивать. Истинно, истинно говорю вам: если вы попросите о чём-нибудь Отца, {{deity_pronoun:он|Он}} даст вам это во {{deity_pronoun:моё|Моё}} имя.",
-          "R": "Когда наступит тот день, у вас больше не будет вопросов ко {{deity_pronoun:мне|Мне}}. Говорю вам правду: если вы попросите у Отца чего-нибудь, {{deity_pronoun:он|Он}} даст вам это во {{deity_pronoun:моё|Моё}} имя."
+          "B": "В тот день вы не будете ни о чём {{deity_pronoun:меня|Меня}} спрашивать. Истинно, истинно говорю вам: если вы попросите о чём-нибудь Отца, {{deity_pronoun:он|Он}} даст вам это в {{deity_pronoun:моё|Моё}} имя.",
+          "R": "Когда наступит тот день, у вас больше не будет вопросов ко {{deity_pronoun:мне|Мне}}. Говорю вам правду: если вы попросите у Отца чего-нибудь, {{deity_pronoun:он|Он}} даст вам это в {{deity_pronoun:моё|Моё}} имя."
+        },
+        "uk": {
+          "L": "І того дня {{deity_pronoun:мене|Мене}} ні про що не питатимете. Істинно, істинно кажу вам: чого лише попросите в Отця, {{deity_pronoun:він|Він}} дасть вам у {{deity_pronoun:моє|Моє}} імʼя.",
+          "B": "Того дня ви вже не питатимете {{deity_pronoun:мене|Мене}} ні про що. Істинно, істинно кажу вам: якщо попросите чогось в Отця, {{deity_pronoun:він|Він}} дасть вам це в {{deity_pronoun:моє|Моє}} імʼя.",
+          "R": "Коли настане той день, у вас уже не буде запитань до {{deity_pronoun:мене|Мене}}. Кажу вам правду: якщо попросите чогось в Отця, {{deity_pronoun:він|Він}} дасть вам це в {{deity_pronoun:моє|Моє}} імʼя."
+        },
+        "ja": {
+          "L": "そして、その日には、あなたがたはわたしに何も尋ねないであろう。アーメン、アーメン、あなたがたに言う。もしあなたがたが父に何かを求めるなら、[父は]わたしの名によって、あなたがたに与えてくださる。",
+          "B": "その日には、あなたがたはもう、わたしに何も尋ねない。まことに、まことに、あなたがたに言っておく。あなたがたが父に何かを求めるなら、父はわたしの名によって、それをあなたがたに与えてくださる。",
+          "R": "その日が来ると、あなたたちはもう、わたしに何も聞く必要がなくなる。本当のことを言おう。あなたたちが父に何かを求めるなら、父はわたしの名によって、それをあなたたちに与えてくださる。"
+        },
+        "id": {
+          "L": "Dan pada hari itu kalian tidak akan menanyakan apa pun kepada-{{deity_pronoun:ku|Ku}}; amin, amin, {{deity_pronoun:aku|Aku}} berkata kepada kalian, jika kalian meminta sesuatu kepada Bapa, {{deity_pronoun:dia|Dia}} akan memberikannya kepada kalian dalam nama-{{deity_pronoun:ku|Ku}}.",
+          "B": "Pada hari itu kalian tidak akan menanyakan apa-apa lagi kepada-{{deity_pronoun:ku|Ku}}. Sesungguhnya, sesungguhnya {{deity_pronoun:aku|Aku}} berkata kepada kalian, jika kalian meminta sesuatu kepada Bapa, {{deity_pronoun:dia|Dia}} akan memberikannya kepada kalian dalam nama-{{deity_pronoun:ku|Ku}}.",
+          "R": "Kalau hari itu datang, kalian tidak akan bertanya apa-apa lagi kepada-{{deity_pronoun:ku|Ku}}. Aku mengatakan yang sebenarnya kepada kalian: kalau kalian meminta sesuatu kepada Bapa, {{deity_pronoun:dia|Dia}} akan memberikannya kepada kalian dalam nama-{{deity_pronoun:ku|Ku}}."
+        },
+        "zh": {
+          "L": "在那一日，你们什么也不会问我。阿们，阿们，我告诉你们，你们若向父求什么，{{deity_pronoun:他|祂}}就会因我的名把[它]赐给你们。",
+          "B": "到那一天，你们不会再问我什么问题了。我确确实实地告诉你们，你们无论向父求什么，{{deity_pronoun:他|祂}}都会因我的名赐给你们。",
+          "R": "那一天来到的时候，你们就不会再有问题要问我了。我把实话告诉你们，你们向父求任何东西，{{deity_pronoun:他|祂}}都会因我的名给你们。"
+        },
+        "ar": {
+          "L": "وفي ذلك اليوم لن تسألوني عن شيء. آمين آمين أقول لكم: إن طلبتم من الآب شيئًا، سيعطيكم إيّاه باسمي.",
+          "B": "في ذلك اليوم لن تعودوا تسألونني أيّ سؤال. الحقّ الحقّ أقول لكم: مهما طلبتم من الآب، فسيعطيكم إيّاه باسمي.",
+          "R": "عندما يأتي ذلك اليوم، لن يبقى لديكم ما تسألونني عنه. أقول لكم الحقّ: إن طلبتم من الآب أيّ شيء، فسيعطيكم إيّاه باسمي."
         }
       },
       "alignments": [
@@ -3965,6 +5793,171 @@
           "language": "en",
           "level": "B",
           "target_span": "name"
+        },
+        {
+          "tokens": [
+            "n43016023003",
+            "n43016023004",
+            "n43016023005"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "その日"
+        },
+        {
+          "tokens": [
+            "n43016023002"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "には"
+        },
+        {
+          "tokens": [
+            "n43016023008"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなたがた"
+        },
+        {
+          "tokens": [
+            "n43016023006"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43016023009"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "何も"
+        },
+        {
+          "tokens": [
+            "n43016023008",
+            "n43016023007"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "尋ねない"
+        },
+        {
+          "tokens": [
+            "n43016023010"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "まことに"
+        },
+        {
+          "tokens": [
+            "n43016023011"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "まことに"
+        },
+        {
+          "tokens": [
+            "n43016023013"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなたがた"
+        },
+        {
+          "tokens": [
+            "n43016023012"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "言っておく"
+        },
+        {
+          "tokens": [
+            "n43016023016"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなたがた"
+        },
+        {
+          "tokens": [
+            "n43016023017",
+            "n43016023018"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "父"
+        },
+        {
+          "tokens": [
+            "n43016023015"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "何か"
+        },
+        {
+          "tokens": [
+            "n43016023016"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "求める"
+        },
+        {
+          "tokens": [
+            "n43016023014"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "なら"
+        },
+        {
+          "tokens": [
+            "n43016023024"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43016023022",
+            "n43016023023"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "名"
+        },
+        {
+          "tokens": [
+            "n43016023021"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "によって"
+        },
+        {
+          "tokens": [
+            "n43016023020"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなたがた"
+        },
+        {
+          "tokens": [
+            "n43016023019"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "与えてくださる"
         }
       ],
       "decisions": [
@@ -4259,6 +6252,137 @@
           "reason": "The Greek has two verbs (meaning decision m1); Russian keeps them apart at every level with \"спрашивать\" and \"просить\", without the supplied words the English needs.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43016023008",
+            "n43016023016"
+          ],
+          "choice": "\"питати\" for the first verb, \"просити\" for the second",
+          "alternatives": [
+            "\"просити\" for both"
+          ],
+          "reason": "Ukrainian has two verbs that match the two Greek ones (meaning decision m1): \"питати\" is to ask a question, \"просити\" to ask for something, so the distinction shows without explanation.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43016023008",
+            "n43016023016"
+          ],
+          "choice": "\"尋ねる\" / \"聞く\" for asking questions; \"求める\" for asking for something",
+          "alternatives": [
+            "\"求める\" for both"
+          ],
+          "reason": "Two Greek verbs for asking stand side by side (meaning decision m1). Japanese keeps them apart: \"尋ねる\" (L, B) and \"聞く\" (R) for questions, as in 16:19, and \"求める\" for asking the Father, as in 15:7, 15:16 and 16:24.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43016023008",
+            "n43016023016"
+          ],
+          "choice": "\"问\" (ask me nothing); \"求\" (ask the Father)",
+          "alternatives": [],
+          "reason": "Two verbs for asking (meaning decision m1): asking questions of Jesus, and asking the Father for something; Chinese has a word for each.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43016023023"
+          ],
+          "choice": "\"因我的名……赐给\"",
+          "alternatives": [
+            "\"奉我的名……求\""
+          ],
+          "reason": "In the SBLGNT \"in my name\" goes with the Father's giving (meaning decision m3); \"因我的名\" says the Father gives for Jesus's sake, kept apart from \"奉我的名\" for the disciples' asking.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-1",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43016023008",
+            "n43016023016"
+          ],
+          "choice": "\"تسألوني\" for asking questions, \"طلبتم\" for asking for something",
+          "alternatives": [],
+          "reason": "The Greek has two verbs: one for asking questions, one for asking for something (m1). Arabic \"سأل عن\" and \"طلب\" keep them apart.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-2",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "text_variant",
+          "tokens": [
+            "n43016023019",
+            "n43016023020",
+            "n43016023021",
+            "n43016023022",
+            "n43016023023",
+            "n43016023024"
+          ],
+          "choice": "\"سيعطيكم إيّاه باسمي\"",
+          "alternatives": [
+            "\"ما تطلبونه من الآب باسمي\""
+          ],
+          "reason": "In the text followed, \"in my name\" goes with the giving (m3): the Father gives for Jesus's sake and through him (m4).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4342,8 +6466,33 @@
         },
         "ru": {
           "L": "До сих пор вы ничего не просили во имя {{deity_pronoun:моё|Моё}}; просите и получите, чтобы радость ваша была исполнена.",
-          "B": "До сих пор вы ни о чём не просили во {{deity_pronoun:моё|Моё}} имя. Просите и получите, чтобы ваша радость была полной.",
-          "R": "До сих пор вы никогда ничего не просили во {{deity_pronoun:моё|Моё}} имя. Просите, и вы получите, чтобы ваша радость была полной."
+          "B": "До сих пор вы ни о чём не просили в {{deity_pronoun:моё|Моё}} имя. Просите и получите, чтобы ваша радость была полной.",
+          "R": "До сих пор вы никогда ничего не просили в {{deity_pronoun:моё|Моё}} имя. Просите, и вы получите, чтобы ваша радость была полной."
+        },
+        "uk": {
+          "L": "Досі ви нічого не просили в {{deity_pronoun:моє|Моє}} імʼя; просіть — і отримаєте, щоб ваша радість була повною.",
+          "B": "Досі ви нічого не просили в {{deity_pronoun:моє|Моє}} імʼя. Просіть, і отримаєте, щоб ваша радість була досконалою.",
+          "R": "Досі ви ще ніколи нічого не просили в {{deity_pronoun:моє|Моє}} імʼя. Просіть і далі, і отримаєте, щоб ваша радість була повною."
+        },
+        "ja": {
+          "L": "今まで、あなたがたはわたしの名によって何も求めなかった。求めなさい。そうすれば受けるであろう。あなたがたの喜びが満たされるためである。",
+          "B": "これまで、あなたがたはわたしの名によって何も求めたことがない。求めなさい。そうすれば受ける。こうして、あなたがたの喜びは完全なものとなる。",
+          "R": "今まであなたたちは、わたしの名によって何も求めたことがない。求め続けなさい。そうすれば受け取る。そして、あなたたちの喜びはいっぱいに満ちる。"
+        },
+        "id": {
+          "L": "Sampai sekarang kalian belum meminta apa pun dalam nama-{{deity_pronoun:ku|Ku}}; mintalah, dan kalian akan menerima, supaya sukacita kalian menjadi penuh.",
+          "B": "Sampai sekarang kalian belum meminta apa-apa dalam nama-{{deity_pronoun:ku|Ku}}. Mintalah, dan kalian akan menerima, supaya sukacita kalian menjadi sempurna.",
+          "R": "Sampai sekarang kalian belum pernah meminta apa pun dalam nama-{{deity_pronoun:ku|Ku}}. Teruslah meminta, dan kalian akan menerima, supaya sukacita kalian menjadi penuh."
+        },
+        "zh": {
+          "L": "到现在为止，你们还没有奉我的名求过任何事；你们要求，就会得着，好使你们的喜乐被充满。",
+          "B": "直到现在，你们还没有奉我的名求过什么。求吧，你们就会得到，使你们的喜乐圆满。",
+          "R": "到现在为止，你们从来没有奉我的名求过什么。你们要不断地求，就会得到，好让你们的喜悦满满的。"
+        },
+        "ar": {
+          "L": "إلى الآن لم تطلبوا باسمي شيئًا؛ اطلبوا فتنالوا، ليكتمل فرحكم.",
+          "B": "حتّى الآن لم تطلبوا شيئًا باسمي. اطلبوا تنالوا، حتّى يصير فرحكم تامًّا.",
+          "R": "إلى هذا اليوم لم تطلبوا أيّ شيء باسمي. داوموا على الطلب، وستنالون، فيمتلئ فرحكم."
         }
       },
       "alignments": [
@@ -4455,6 +6604,123 @@
           "language": "en",
           "level": "B",
           "target_span": "will be complete"
+        },
+        {
+          "tokens": [
+            "n43016024001",
+            "n43016024002"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "これまで"
+        },
+        {
+          "tokens": [
+            "n43016024004"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなたがた"
+        },
+        {
+          "tokens": [
+            "n43016024009"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "n43016024007",
+            "n43016024008"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "名"
+        },
+        {
+          "tokens": [
+            "n43016024006"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "によって"
+        },
+        {
+          "tokens": [
+            "n43016024005"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "何も"
+        },
+        {
+          "tokens": [
+            "n43016024004",
+            "n43016024003"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "求めたことがない"
+        },
+        {
+          "tokens": [
+            "n43016024010"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "求めなさい"
+        },
+        {
+          "tokens": [
+            "n43016024011"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "そうすれば"
+        },
+        {
+          "tokens": [
+            "n43016024012"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "受ける"
+        },
+        {
+          "tokens": [
+            "n43016024013"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "こうして"
+        },
+        {
+          "tokens": [
+            "n43016024016"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなたがた"
+        },
+        {
+          "tokens": [
+            "n43016024014",
+            "n43016024015"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "喜び"
+        },
+        {
+          "tokens": [
+            "n43016024017",
+            "n43016024018"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "完全なものとなる"
         }
       ],
       "decisions": [
@@ -4618,6 +6884,48 @@
             "new wording here"
           ],
           "reason": "Jesus repeats the promise of 15:11 (meaning decision m3), so each level repeats its words from there.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-1",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "R"
+          ],
+          "category": "grammar",
+          "tokens": [
+            "n43016024010",
+            "n43016024012"
+          ],
+          "choice": "\"داوموا على الطلب\"",
+          "alternatives": [],
+          "reason": "Ask and you will receive is a standing invitation to keep asking (m2). Readable says \"keep asking\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ar-2",
+          "layer": "rendering",
+          "language": "ar",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n43016024013",
+            "n43016024014",
+            "n43016024015",
+            "n43016024016",
+            "n43016024017",
+            "n43016024018"
+          ],
+          "choice": "\"يكتمل\" (L), \"يصير تامًّا\" (B), \"يمتلئ\" (R)",
+          "alternatives": [],
+          "reason": "The same joy Jesus promised in 15:11 (m3); each level uses the wording it used there.",
           "uncertain": false,
           "footnote": false
         }

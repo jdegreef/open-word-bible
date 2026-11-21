@@ -2,7 +2,8 @@
 
 Open Word Bible translates the Bible from Hebrew and Greek into modern
 languages: English first, then Spanish, French, Swahili, Vietnamese, Korean,
-Portuguese, Amharic, Hindi and Russian.
+Portuguese, Amharic, Hindi, Russian, Ukrainian, Japanese, Indonesian,
+Chinese (Simplified), Arabic, Tagalog and Persian.
 
 Every translated sentence carries a **reasoning record**: the original words,
 a literal gloss, the translation at three levels, and each translation
@@ -43,9 +44,21 @@ brief for drafting it and `data/key_terms.json` the settled key terms.
 `docs/corinthians-terms.md` proposes the recurring choices for 1 and 2
 Corinthians. `docs/french-style.md`, `docs/swahili-style.md`,
 `docs/vietnamese-style.md`, `docs/korean-style.md`,
-`docs/portuguese-style.md`, `docs/amharic-style.md`, `docs/hindi-style.md`
-and `docs/russian-style.md` are the briefs for French, Swahili, Vietnamese,
-Korean, (Brazilian) Portuguese, Amharic, Hindi and Russian.
+`docs/portuguese-style.md`, `docs/amharic-style.md`, `docs/hindi-style.md`,
+`docs/russian-style.md`, `docs/ukrainian-style.md`, `docs/japanese-style.md`,
+`docs/indonesian-style.md`, `docs/chinese-style.md`,
+`docs/arabic-style.md` and `docs/tagalog-style.md` are the briefs for French,
+Swahili, Vietnamese, Korean, (Brazilian) Portuguese, Amharic, Hindi, Russian,
+Ukrainian, Japanese, Indonesian, Chinese (Simplified), Arabic (Modern Standard
+Arabic, read right to left) and Tagalog. `docs/hindi-terms.md`,
+`docs/russian-terms.md`, `docs/indonesian-terms.md`, `docs/chinese-terms.md`
+and `docs/tagalog-terms.md` are the Hindi, Russian, Indonesian, Chinese and
+Tagalog glossaries, Genesis to Revelation; `docs/arabic-terms.md` is the
+Arabic one, growing book by book.
+`docs/hindi-review-guide.md` and
+`docs/persian-style.md` and `docs/persian-terms.md` are the brief and
+glossary for Persian, also read right to left.
+`docs/russian-review-guide.md` tell native reviewers where to start.
 
 Adding a book needs no shared file edited: `data/books.json` already lists
 all 66 books (names in each language, chapter counts), section headings go
@@ -72,13 +85,41 @@ differently, as John 1:3 does with its last two words, says so in a
 `build_skeleton.py` starts new passages with one record per sentence.
 
 Alignments link source tokens to the words of one rendering, so the reader
-can light up a Greek word and the English it became. A rendering's
+can light up a Greek or Hebrew word and the English it became. A rendering's
 alignments are listed in the order their `target_span`s appear, and each
 span is found after the one before (so a repeated "the" is unambiguous);
 a span may not hold a verse marker or cut through a setting span
 (`markup.alignment_ranges`). A token may appear in more than one alignment
-("not yet ... come"), and words with no counterpart are left out. John 2,
-English Balanced, is aligned as a pilot.
+("not yet ... come"), and words with no counterpart are left out: a
+sentence-opening "and" the English drops, a recitative "that" before a
+quotation. The article goes in the alignment of the word it belongs to
+("the kingdom" ← article + noun; "Jesus's" ← article + name), and a setting
+span is always inside a span whole ("to {{deity_pronoun:him|Him}}"). John,
+Mark and Genesis 1–11 are aligned in English Balanced, and John and Mark in
+Japanese Balanced. In a script written without spaces (Japanese), a span may begin
+or end beside another character: 言 is a word of 言は. Because every language
+is aligned to the same source tokens, the reader's Parallel view lights a
+word's partner in the other language through them; no two languages are
+aligned to each other. `scripts/align.py` shows a passage's source words
+and drafts a language's alignments from a short spec.
+
+`data/furigana/<BOOK>.json` holds readings for the kanji of Japanese
+renderings (`owb/furigana.py`), which the reader can set over the text. They
+are a reading aid, not wording, drafted with `scripts/furigana.py`; John is
+done at the Balanced level.
+
+In the Hebrew, where MACULA gives each prefix and suffix a token of its
+own, the same rules apply morpheme by morpheme. The article prefix joins
+its noun's alignment ("the earth" ← article + "earth"). A conjunction
+prefix is aligned to the word that renders it ("and", "then", "so", "but",
+"when") and left out when the English has none, as it usually has none
+for the "and" that opens a narrative verb. A preposition prefix is aligned
+to its English preposition ("in", "to"), and a pronoun suffix to its
+pronoun ("his" in "his wife"). The object marker ʾet is never aligned, nor
+is the empty row of an article a preposition swallows (records leave it
+out). A number is one span with "years" ("130 years" ← all its number
+words and "year"), and a construct chain's "of" goes with the word that
+follows it ("of the field").
 
 Poetry is set in lines. A rendering marks each break inside a verse with
 `\q ` (`"my shepherd; \q I will not lack"`); a verse start is always a line
@@ -125,6 +166,17 @@ state the sense only (no reader settings), and are shown in the language the
 chapter's text is shown in: the page's language, or English, marked as such,
 where the chapter has no sentence in the page's language yet.
 
+## Notes and cards in every language
+
+Decisions are written in English, and so are the glossary, name and
+key-term cards. Their translations sit in `data/notes/<lang>/<BOOK>.json`
+and `data/cards/<lang>/<kind>.json`, each entry stamped with a digest of
+the English it translates, so one whose English has changed is shown in
+English again until it is brought up to date. `scripts/notes.py` exports
+what is missing, imports translations and reports coverage;
+`docs/notes-translation.md` is the workflow. A note whose words have an
+article (`data/article_links.json`) links to it.
+
 ## Cross-references
 
 Beside the text, on screens wide enough, each verse's margin lists other
@@ -156,7 +208,10 @@ capitalised "He" until a reader picks lowercase (`DEFAULTS` in
 `owb/markup.py` and `web/markup.js`).
 
 Settings: `gender`, `christos`, `divine_name`, `deity_pronoun`, `units`,
-`plural_you` (a future `spelling` setting needs a reader control first).
+`plural_you` (Spanish only) and `god_term` (Chinese only: 神 or 上帝); a
+future `spelling` setting needs a reader control first. In Chinese,
+`deity_pronoun` gives the reverent forms (`{{deity_pronoun:他|祂}}`,
+`{{deity_pronoun:你|祢}}`) where other languages capitalise.
 `owb/markup.py` and `web/markup.js` list and render the spans;
 `tests/markup_vectors.json` holds the two to the same answers.
 
@@ -250,7 +305,8 @@ book's name in it to `data/books.json`, write `i18n/<lang>.json`, add its
 words to `owb/morph.py`, and run `python backend/manage.py makemigrations
 accounts` so it can have language reviewers. The site, the validator and the
 backend all read the list from `owb/languages.py`. A drafting brief in `docs/<language>-style.md` settles
-the book-wide wording choices.
+the book-wide wording choices. `docs/adding-a-language.md` lists every file a new
+language touches.
 
 ### Book pages
 

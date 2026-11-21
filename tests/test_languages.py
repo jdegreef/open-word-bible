@@ -1,6 +1,7 @@
 """The site in each interface language: English at the root, the others
-under their codes (/es/, /fr/, /sw/, /vi/, /ko/, /pt/, /am/, /hi/, /ru/), the footer's language
-switch, and the message catalogs in i18n/."""
+under their codes (/es/, /fr/, /sw/, /vi/, /ko/, /pt/, /am/, /hi/, /ru/, /uk/, /ja/, /id/, /zh/,
+/ar/, /tl/, /fa/), the footer's language switch, and the message catalogs in i18n/."""
+import html
 import json
 import re
 import string
@@ -13,7 +14,13 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 import build_site  # noqa: E402
 from owb import languages, markup, morph  # noqa: E402
-from tests.site_build import built_site, page_data  # noqa: E402
+from tests.site_build import built_site, page_data, sitemap_text  # noqa: E402
+
+
+def html_tag(lang):
+    """The page's opening html tag: a right-to-left language's says so."""
+    rtl = ' dir="rtl"' if languages.direction(lang) == "rtl" else ""
+    return f'<html lang="{lang}"{rtl}>'
 
 OTHERS = [lang for lang in build_site.LANGUAGES if lang != "en"]
 
@@ -75,15 +82,16 @@ class LanguagesTest(unittest.TestCase):
         return (self.out / rel).read_text(encoding="utf-8")
 
     def english_pages(self):
-        """Every English page but the articles, the reading plans and the
-        books' pages, which a language has only once they are translated,
-        and the admin, which is in English only."""
+        """Every English page but the articles, the reading plans, the
+        books' pages and the verse pages, which a language has only once
+        they are translated, and the admin and the people, places and
+        glossary pages, which are in English only."""
         langs = set(OTHERS)
         books = {p.stem.lower() for p in build_site.INTROS.glob("*.md")}
         rels = (p.relative_to(self.out) for p in self.out.rglob("index.html"))
-        return [rel for rel in rels if rel.parts[0] not in langs and rel.parts[0] != "admin"
+        return [rel for rel in rels if rel.parts[0] not in langs and rel.parts[0] not in ("admin", "names", "glossary")
                 and (rel.parts[0] not in ("articles", "plans") or len(rel.parts) == 2)
-                and not (rel.parts[0] in books and len(rel.parts) == 2)]
+                and not (rel.parts[0] in books and len(rel.parts) in (2, 4))]
 
     def test_every_page_is_built_in_every_language(self):
         pages = self.english_pages()
@@ -92,7 +100,7 @@ class LanguagesTest(unittest.TestCase):
             for rel in pages:
                 self.assertTrue((self.out / lang / rel).is_file(), (lang, rel))
                 text = self.read(Path(lang) / rel)
-                self.assertIn(f'<html lang="{lang}">', text, rel)
+                self.assertIn(html_tag(lang), text, rel)
                 self.assertIn(build_site.langs_meta(build_site.LANGUAGES), text, rel)
         for rel in pages:
             self.assertIn('<html lang="en">', self.read(rel), rel)
@@ -104,7 +112,7 @@ class LanguagesTest(unittest.TestCase):
             self.assertIn(f'<link rel="alternate" hreflang="{lang}" href="{href}">', home)
         self.assertIn(f'hreflang="x-default" href="{build_site.SITE_URL}/"', home)
         self.assertIn(f'<link rel="canonical" href="{build_site.SITE_URL}/es/">', home)
-        sitemap = self.read("sitemap.xml")
+        sitemap = sitemap_text(self.out)
         for path in ("es/", "es/read/", "es/jhn/1/"):
             self.assertIn(f"<loc>{build_site.SITE_URL}/{path}</loc>", sitemap)
         # A language's articles page is listed once it has articles.
@@ -163,7 +171,7 @@ class LanguagesTest(unittest.TestCase):
                 # So may a key-term page's English sentences and notes, the
                 # share card's description, which quotes the opening verse,
                 # and the home page's verses of the day ("Filho do Homem").
-                page = re.sub(r'<p class="term-(text|note|why-text)" lang="en">.*?</p>'
+                page = re.sub(r'<p class="term-(text|note|why-text)" lang="en"[^>]*>.*?</p>'
                               r'|<meta property="og:image:alt" content="[^"]*">'
                               r'|<script type="application/json" class="votd-data">.*?</script>'
                               r'|<p class="votd-text"[^>]*>.*?</p>', "", page, flags=re.S)
@@ -197,6 +205,13 @@ class LanguagesTest(unittest.TestCase):
         self.assertIn(">Équilibrée</button>", fr)
         sw = self.read("sw/jhn/1/index.html")
         self.assertNotIn('data-setting="plural_you"', sw)
+        # The Chinese word for God (神 or 上帝) only on Chinese pages whose
+        # text has it, as measures only where a passage has units.
+        zh = self.read("zh/jhn/1/index.html")
+        has_god = any("{{god_term:" in text for r in build_site.chapter_records("JHN", 1)
+                      for text in r["renderings"].get("zh", {}).values())
+        self.assertEqual('data-setting="god_term"' in zh, has_god)
+        self.assertNotIn('data-setting="god_term"', en + es + fr + sw)
         self.assertIn(">Linganifu</button>", sw)
         for lang, balanced in (("vi", "Cân bằng"), ("ko", "균형"), ("pt", "Equilibrada"), ("am", "ሚዛናዊ")):
             page = self.read(f"{lang}/mat/1/index.html")
@@ -204,8 +219,9 @@ class LanguagesTest(unittest.TestCase):
             self.assertIn(f">{balanced}</button>", page)
 
     def test_a_chapter_page_carries_only_its_own_rendering_decisions(self):
-        # Every language's renderings (the reader sets two side by side), but
-        # only the meaning decisions and the page language's own wording ones.
+        # Its own language's renderings, with the others named for Parallel
+        # to load, and only the meaning decisions and the page language's
+        # own wording ones.
         # The languages Matthew 1 is drafted in (a language added since may
         # not have it yet).
         first = json.loads((ROOT / "content" / "MAT" / "MAT.1.json").read_text(encoding="utf-8"))["records"][0]
@@ -217,7 +233,33 @@ class LanguagesTest(unittest.TestCase):
             decisions = [d for r in data["records"] for d in r["decisions"]]
             self.assertTrue(all(d["language"] in (None, lang) for d in decisions), lang)
             self.assertTrue(any(d["language"] == lang for d in decisions), lang)
-            self.assertTrue(all({"en", "vi", "ko", "pt", "am"} <= set(r["renderings"]) for r in data["records"]), lang)
+            self.assertTrue(all(set(r["renderings"]) == {lang} for r in data["records"]), lang)
+            self.assertLessEqual(set(drafted), set(data["texts"]), lang)
+
+    def test_a_language_with_no_text_yet_has_every_page(self):
+        # A language is added before its first book is drafted (Japanese,
+        # Ukrainian, Indonesian): its pages show the English, in grey with
+        # a notice, its Read page lists no books and it offers no plan.
+        undrafted = [lang for lang in OTHERS if not build_site.passages_in(lang)]
+        if not undrafted:
+            self.skipTest("every language has text")
+        for lang in undrafted:
+            cat = build_site.catalog(lang)
+            read = self.read(f"{lang}/read/index.html")
+            self.assertIn(cat["read.heading"], read)
+            self.assertNotIn('class="book-tile"', read)
+            chapter = self.read(f"{lang}/jhn/1/index.html")
+            self.assertIn(html_tag(lang), chapter)
+            self.assertIn(html.escape(cat["reader.ui"]["partial"]), chapter)
+            text = re.search(r'<div class="text" id="text">.*?</div>', chapter, re.S)[0]
+            self.assertIn('lang="en"', text)
+            data = page_data(chapter)
+            self.assertEqual(data["lang"], lang)
+            self.assertTrue(data["records"])
+            self.assertNotIn(lang, data["texts"])
+            plans = self.read(f"{lang}/plans/index.html")
+            self.assertIn(cat["plans.none_link"], plans)
+            self.assertFalse(build_site.available_plans(lang))
 
     def test_home_page_shows_nothing_in_english_where_it_need_not(self):
         # The verse of the day and the worked examples are taken from what
@@ -288,7 +330,7 @@ class LanguagesTest(unittest.TestCase):
         # Unlisted, but the switch and the remembered choice still lead to it.
         self.assertIn('<a href="/account/" lang="en"', page)
         self.assertIn(build_site.langs_meta(build_site.LANGUAGES), page)
-        self.assertNotIn("/account/", self.read("sitemap.xml"))
+        self.assertNotIn("/account/", sitemap_text(self.out))
 
     def test_chapter_strip_and_turns_stay_in_the_language(self):
         page = self.read("es/php/2/index.html")
@@ -307,6 +349,7 @@ class LanguagesTest(unittest.TestCase):
         self.assertEqual(build_site._date("2026-10-10", "vi"), "10 tháng 10, 2026")
         self.assertEqual(build_site._date("2026-10-10", "ko"), "2026년 10월 10일")
         self.assertEqual(build_site._date("2026-10-10", "pt"), "10 de outubro de 2026")
+        self.assertEqual(build_site._date("2026-10-10", "id"), "10 Oktober 2026")
 
     def test_french_typography_has_no_breaking_space_before_its_marks(self):
         # French sets « » : ; ! ? off with no-break spaces, so a line never

@@ -53,6 +53,12 @@ def extracts():
         else:
             data = {"text_id": sblgnt.TEXT_ID, "source": "MACULA Greek (CC BY 4.0)",
                     "verses": verses}
+            other = sorted((str(r) for r in macula_greek.SUPPLEMENT if str(r) in verses),
+                           key=lambda v: refs.parse(v).sort_key())
+            if other:   # verses the SBLGNT does not print (Romans 16:25-27)
+                data["supplement"] = {"text_id": macula_greek.SUPPLEMENT_TEXT_ID,
+                                      "source": "MACULA Greek, Nestle 1904 (CC BY 4.0)",
+                                      "verses": other}
         folder = "hbo" if hebrew else "grc"
         files[f"data/{folder}/{book}.{chapter}.json"] = (
             json.dumps(data, ensure_ascii=False, indent=1) + "\n")

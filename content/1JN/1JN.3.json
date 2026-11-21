@@ -76,6 +76,26 @@
           "L": "Смотрите, какую любовь дал нам Отец, чтобы мы назывались детьми Божьими; и мы [ими] являемся.",
           "B": "Подумайте, какую любовь дал нам Отец: мы называемся детьми Божьими, и мы действительно {{deity_pronoun:его|Его}} дети.",
           "R": "Подумайте, как сильно любит нас Отец! По {{deity_pronoun:его|Его}} любви нас называют Божьими детьми, и мы действительно {{deity_pronoun:его|Его}} дети."
+        },
+        "uk": {
+          "L": "Погляньте, яку любов дав нам Отець, щоб ми називалися Божими дітьми; і ми [ними] є.",
+          "B": "Подумайте, яку любов дав нам Отець: нас називають Божими дітьми, і ми справді {{deity_pronoun:його|Його}} діти.",
+          "R": "Подумайте, як сильно любить нас Отець! Завдяки {{deity_pronoun:його|Його}} любові нас називають Божими дітьми, і ми справді {{deity_pronoun:його|Його}} діти."
+        },
+        "ja": {
+          "L": "見なさい。わたしたちが神の子どもと呼ばれるほどに、父はどれほどの愛をわたしたちに与えてくださったことでしょう。そして、わたしたちはそのとおりの者なのです。",
+          "B": "考えてみなさい。父がわたしたちに与えてくださった愛は、なんと大きいことでしょう。わたしたちは神の子どもと呼ばれています。そして、本当に神の子どもなのです。",
+          "R": "考えてみてください。父は、わたしたちをこんなにも愛してくださっています。その愛によって、わたしたちは神の子どもと呼ばれています。そして本当に、わたしたちは神の子どもなのです。"
+        },
+        "id": {
+          "L": "Lihatlah, betapa besarnya kasih yang dikaruniakan Bapa kepada kita, sehingga kita disebut anak-anak Allah; dan memang kita adalah anak-anak Allah.",
+          "B": "Lihatlah betapa besarnya kasih yang diberikan Bapa kepada kita, sehingga kita disebut anak-anak Allah, dan memang kita adalah anak-anak-{{deity_pronoun:nya|Nya}}.",
+          "R": "Pikirkanlah betapa besar kasih Bapa kepada kita! Karena kasih-{{deity_pronoun:nya|Nya}} kita disebut anak-anak Allah, dan kita memang sungguh-sungguh anak-anak-{{deity_pronoun:nya|Nya}}."
+        },
+        "zh": {
+          "L": "你们看，父已经把怎样的爱给了我们，使我们可以被称为{{god_term:神|上帝}}的儿女；而我们确实是。",
+          "B": "想想父给了我们怎样的爱：我们被称为{{god_term:神|上帝}}的儿女，而且我们真的是{{deity_pronoun:他|祂}}的儿女。",
+          "R": "想一想父多么爱我们！因着{{deity_pronoun:他|祂}}的爱，我们被称为{{god_term:神|上帝}}的儿女，而且我们真的是{{deity_pronoun:他|祂}}的儿女。"
         }
       },
       "decisions": [
@@ -317,6 +337,91 @@
           "reason": "The wording of John 1:12. \"सन्तान\" covers sons and daughters, so it needs no gender span, and it stays apart from the warm address \"बच्चो\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n62003001001"
+          ],
+          "choice": "\"見なさい\" (L); \"考えてみなさい\" (B); \"考えてみてください\" (R)",
+          "alternatives": [
+            "\"見よ\""
+          ],
+          "reason": "The command invites the readers to stop and wonder (m1). The style guide gives \"見なさい\" for a command to look, not \"見よ\"; Balanced and Readable say what the looking is, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n62003001009",
+            "n62003001010"
+          ],
+          "choice": "\"神の子ども\", as in John 1:12",
+          "alternatives": [
+            "\"神の子\""
+          ],
+          "reason": "\"神の子\" is the title of Jesus, the Son of God; \"子ども\" keeps believers, daughters and sons, apart from him. The same through the letter (3:2, 10; 5:2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n62003001010"
+          ],
+          "choice": "{{god_term:神|上帝}} for every word naming God",
+          "alternatives": [
+            "上帝 as the default"
+          ],
+          "reason": "The Chinese reader setting: \"神\" by default, \"上帝\" as the alternative (style guide section 4). It changes the word, never the meaning; this note stands for the whole chapter.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n62003001009"
+          ],
+          "choice": "\"{{god_term:神|上帝}}的儿女\" for tekna theou, with no gender span",
+          "alternatives": [
+            "{{gender:儿女|儿子}}"
+          ],
+          "reason": "Tekna is \"children\" and needs no setting, as Romans 8:16 has it in Chinese; the gender span is kept for huioi.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -395,6 +500,26 @@
           "L": "Поэтому мир не знает нас: потому что не познал {{deity_pronoun:его|Его}}.",
           "B": "Мир не знает нас потому, что не познал {{deity_pronoun:его|Его}}.",
           "R": "Мир не понимает, кто мы такие, потому что он не узнал Бога."
+        },
+        "uk": {
+          "L": "Через це світ не знає нас, бо не пізнав {{deity_pronoun:його|Його}}.",
+          "B": "Світ не знає нас тому, що не пізнав {{deity_pronoun:його|Його}}.",
+          "R": "Світ не розуміє, хто ми, бо він не пізнав Бога."
+        },
+        "ja": {
+          "L": "このために、世はわたしたちを知りません。世がその方を知らなかったからです。",
+          "B": "世がわたしたちを知らないのは、世が父を知らなかったからです。",
+          "R": "この世の人々は、わたしたちがだれなのかわかりません。この世が神を知らなかったからです。"
+        },
+        "id": {
+          "L": "Karena itu dunia tidak mengenal kita, sebab dunia tidak mengenal {{deity_pronoun:dia|Dia}}.",
+          "B": "Karena itu dunia tidak mengenal kita, sebab dunia tidak mengenal {{deity_pronoun:dia|Dia}}.",
+          "R": "Dunia tidak mengerti siapa kita, karena dunia tidak mengenal Allah."
+        },
+        "zh": {
+          "L": "因为这个缘故，世界不认识我们：因为它没有认识{{deity_pronoun:他|祂}}。",
+          "B": "世界不认识我们，原因是它没有认识{{deity_pronoun:他|祂}}。",
+          "R": "世界不明白我们是怎样的人，因为它不认识{{god_term:神|上帝}}。"
         }
       },
       "decisions": [
@@ -465,6 +590,24 @@
             "him"
           ],
           "reason": "Readable names the person the pronoun refers to, following the meaning decision on the pronoun, so a young reader does not have to look back.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n62003001024"
+          ],
+          "choice": "\"父\" (B), \"神\" (R) for \"him\"; \"その方\" (L)",
+          "alternatives": [],
+          "reason": "The pronoun is the Father, named just before (m3). Japanese does not use \"彼\" for God, so Balanced and Readable name him and Literal says \"その方\".",
           "uncertain": false,
           "footnote": false
         }
@@ -544,6 +687,26 @@
           "L": "Возлюбленные, теперь мы дети Божьи, и ещё не открылось, чем мы будем.",
           "B": "Возлюбленные, мы уже теперь дети Божьи, а чем мы будем, ещё не открылось.",
           "R": "Дорогие друзья, мы уже сейчас Божьи дети. Но кем мы станем, ещё не показано."
+        },
+        "uk": {
+          "L": "Улюблені, тепер ми Божі діти, і ще не виявилося, чим ми будемо.",
+          "B": "Дорогі друзі, ми вже тепер Божі діти, а чим ми будемо, ще не відкрито.",
+          "R": "Дорогі друзі, ми Божі діти вже тепер. Але якими ми будемо, ще не показано."
+        },
+        "ja": {
+          "L": "愛する者たちよ、今、わたしたちは神の子どもです。そして、わたしたちがどのようになるのかは、まだ現されていません。",
+          "B": "愛する者たちよ、わたしたちは今すでに神の子どもです。しかし、わたしたちがどのようになるのかは、まだ明らかにされていません。",
+          "R": "愛するみなさん、わたしたちは今、もう神の子どもです。でも、これからどのようになるのかは、まだはっきりと示されていません。"
+        },
+        "id": {
+          "L": "Saudara-saudaraku yang kekasih, sekarang kita adalah anak-anak Allah, dan belum dinyatakan apa jadinya kita kelak.",
+          "B": "Saudara-saudaraku yang kukasihi, sekarang kita adalah anak-anak Allah, tetapi belum dinyatakan apa jadinya kita kelak.",
+          "R": "Saudara-saudara yang saya kasihi, sekarang ini kita adalah anak-anak Allah. Tetapi apa jadinya kita nanti belum ditunjukkan."
+        },
+        "zh": {
+          "L": "蒙爱的人哪，我们现在是{{god_term:神|上帝}}的儿女，而我们将要成为什么，还没有被显明出来。",
+          "B": "亲爱的朋友们，我们现在就是{{god_term:神|上帝}}的儿女，至于我们将来会是什么样子，还没有显明出来。",
+          "R": "亲爱的朋友们，我们现在就是{{god_term:神|上帝}}的儿女。可是我们将来会变成什么样子，还没有显示出来。"
         }
       },
       "decisions": [
@@ -653,6 +816,27 @@
           "reason": "As at 2:7, through the letter.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n62003002001"
+          ],
+          "choice": "\"蒙爱的人哪\" (L); \"亲爱的朋友们\" (B, R)",
+          "alternatives": [
+            "亲爱的弟兄啊"
+          ],
+          "reason": "Agapētoi as in 2:7, one form through the letter.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -732,6 +916,26 @@
           "L": "Знаем, что когда {{deity_pronoun:он|Он}} явится, мы будем подобны {{deity_pronoun:ему|Ему}}, потому что увидим {{deity_pronoun:его|Его}} таким, каков {{deity_pronoun:он|Он}} есть.",
           "B": "Но мы знаем вот что: когда {{deity_pronoun:он|Он}} явится, мы будем подобны {{deity_pronoun:ему|Ему}}, потому что увидим {{deity_pronoun:его|Его}} таким, каков {{deity_pronoun:он|Он}} на самом деле.",
           "R": "Но мы точно знаем, что когда Иисус придёт, мы станем такими, как {{deity_pronoun:он|Он}}, потому что увидим {{deity_pronoun:его|Его}} таким, какой {{deity_pronoun:он|Он}} есть на самом деле."
+        },
+        "uk": {
+          "L": "Знаємо, що коли {{deity_pronoun:він|Він}} зʼявиться, ми будемо подібні до {{deity_pronoun:нього|Нього}}, бо побачимо {{deity_pronoun:його|Його}} таким, яким {{deity_pronoun:він|Він}} є.",
+          "B": "Але ми знаємо ось що: коли {{deity_pronoun:він|Він}} зʼявиться, ми будемо подібні до {{deity_pronoun:нього|Нього}}, бо побачимо {{deity_pronoun:його|Його}} таким, яким {{deity_pronoun:він|Він}} є насправді.",
+          "R": "Ми знаємо, що коли Ісус прийде, ми будемо подібні до {{deity_pronoun:нього|Нього}}, бо побачимо {{deity_pronoun:його|Його}} таким, яким {{deity_pronoun:він|Він}} є насправді."
+        },
+        "ja": {
+          "L": "わたしたちは知っています。その方が現されるとき、わたしたちはその方に似た者となります。その方をそのままの姿で見るからです。",
+          "B": "しかし、わたしたちは知っています。その方がお姿を現されるとき、わたしたちはその方に似た者となるのです。その方を、ありのままに見るからです。",
+          "R": "けれども、わたしたちは知っています。イエスがお姿を現されるとき、わたしたちはイエスのようになります。わたしたちは、イエスをありのままに見るからです。"
+        },
+        "id": {
+          "L": "Kita tahu bahwa apabila {{deity_pronoun:dia|Dia}} dinyatakan, kita akan menjadi sama seperti {{deity_pronoun:dia|Dia}}, sebab kita akan melihat {{deity_pronoun:dia|Dia}} dalam keadaan-{{deity_pronoun:nya|Nya}} yang sebenarnya.",
+          "B": "Tetapi kita tahu bahwa apabila {{christos:Kristus|Mesias}} menyatakan diri-{{deity_pronoun:nya|Nya}}, kita akan menjadi sama seperti {{deity_pronoun:dia|Dia}}, sebab kita akan melihat {{deity_pronoun:dia|Dia}} dalam keadaan-{{deity_pronoun:nya|Nya}} yang sebenarnya.",
+          "R": "Kita memang tahu bahwa ketika Yesus datang, kita akan menjadi sama seperti {{deity_pronoun:dia|Dia}}, karena kita akan melihat {{deity_pronoun:dia|Dia}} sebagaimana {{deity_pronoun:dia|Dia}} sebenarnya."
+        },
+        "zh": {
+          "L": "我们知道，当{{deity_pronoun:他|祂}}被显明的时候，我们会像{{deity_pronoun:他|祂}}，因为我们会看见{{deity_pronoun:他|祂}}，正如{{deity_pronoun:他|祂}}所是的。",
+          "B": "我们确实知道的是：{{deity_pronoun:他|祂}}显明的时候，我们会像{{deity_pronoun:他|祂}}，因为我们会看见{{deity_pronoun:他|祂}}真实的样子。",
+          "R": "我们确实知道，耶稣出现的时候，我们会像{{deity_pronoun:他|祂}}，因为我们会看见{{deity_pronoun:他|祂}}真正的样子。"
         }
       },
       "decisions": [
@@ -851,6 +1055,48 @@
           "reason": "The meaning decision reads the subject of \"is revealed\" as Christ at his coming, and footnotes the reading \"when it is revealed\", meaning what we will be. Korean must choose, and the honorific \"-시-\" follows the meaning decision.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n62003002014"
+          ],
+          "choice": "\"その方が現される\" (L); \"その方がお姿を現される\" (B); \"イエスがお姿を現される\" (R)",
+          "alternatives": [
+            "\"それが現されるとき\""
+          ],
+          "reason": "The subject is Christ at his coming (m1), as in 2:28, with the same words. Literal keeps the passive \"現される\", echoing \"まだ現されていません\" in the clause before; Readable names him, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "B"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n62003002014",
+            "n62003002016",
+            "n62003002020"
+          ],
+          "choice": "\"Kristus\" named at Balanced",
+          "alternatives": [
+            "## u"
+          ],
+          "reason": "Indonesian \"Dia\" at the start of the clause could be read as the Father of 3:1; Balanced names Christ, the subject of the meaning decision, and Readable names Jesus, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -933,6 +1179,26 @@
           "L": "И всякий, имеющий эту надежду на {{deity_pronoun:него|Него}}, очищает себя, как Тот чист.",
           "B": "Всякий, у кого такая надежда на {{deity_pronoun:него|Него}}, очищает себя, так же как {{deity_pronoun:он|Он}} чист.",
           "R": "Всякий, у кого есть такая надежда на Иисуса, хранит свою жизнь чистой, так же как Иисус чист."
+        },
+        "uk": {
+          "L": "І кожен, хто має цю надію [покладену] на {{deity_pronoun:нього|Нього}}, очищає себе, як Той чистий.",
+          "B": "Кожен, хто так покладає надію на {{deity_pronoun:нього|Нього}}, очищає себе, як і {{deity_pronoun:він|Він}} чистий.",
+          "R": "Кожен, хто має таку надію на Ісуса, береже своє життя чистим, як чистий Ісус."
+        },
+        "ja": {
+          "L": "そして、その方に[置く]この希望を持つ者は皆、あの方が清い方であるように、自分を清めます。",
+          "B": "その方にこのような希望を置いている人は皆、その方が清い方であるように、自分を清くします。",
+          "R": "イエスにこの希望を置いている人は皆、イエスが清い方であるように、自分の生活を清く保ちます。"
+        },
+        "id": {
+          "L": "Dan setiap orang yang menaruh pengharapan ini kepada-{{deity_pronoun:nya|Nya}}, menyucikan dirinya, sama seperti {{deity_pronoun:dia|Dia}} adalah suci.",
+          "B": "Setiap orang yang menaruh pengharapan ini kepada-{{deity_pronoun:nya|Nya}} menyucikan dirinya, sama seperti {{deity_pronoun:dia|Dia}} adalah suci.",
+          "R": "Setiap orang yang berharap kepada Yesus menjaga hidupnya tetap murni, sama seperti Yesus murni."
+        },
+        "zh": {
+          "L": "并且凡对{{deity_pronoun:他|祂}}有这盼望的人，都使自己纯洁，正如那一位是纯洁的。",
+          "B": "凡这样把盼望寄托在{{deity_pronoun:他|祂}}身上的人，都使自己纯洁，正如{{deity_pronoun:他|祂}}是纯洁的。",
+          "R": "凡对耶稣有这盼望的人，都会使自己的生活保持纯洁，正如耶稣是纯洁的。"
         }
       },
       "decisions": [
@@ -1128,6 +1394,47 @@
           "reason": "The English uses the gender setting for \"themselves\" and \"their\". The Russian reflexive is the same for a man and a woman, so it needs no span. Literal says \"Тот\" for \"that one\", Christ, as at 2:6.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n62003003013"
+          ],
+          "choice": "\"あの方\" (L); \"その方\" (B); \"イエス\" (R) for \"that one\"",
+          "alternatives": [],
+          "reason": "\"That one\" is the letter's way of pointing to Christ (m2). Literal keeps the pointing word as in 2:6; Readable names him.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n62003003010",
+            "n62003003014"
+          ],
+          "choice": "\"纯洁\"",
+          "alternatives": [
+            "洁净"
+          ],
+          "reason": "Hagnizō and hagnos, moral purity (meaning decision m3), are \"纯洁\", kept apart from \"洁净\" for the cleansing of 1:7, 9. \"自己\" needs no gender span (the English spans \"themselves\").",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1210,6 +1517,26 @@
           "L": "Всякий творящий грех творит и беззаконие, и грех есть беззаконие.",
           "B": "Всякий, кто продолжает грешить, творит и беззаконие; грех — это беззаконие.",
           "R": "Всякий, кто снова и снова грешит, восстаёт против Божьего Закона. Вот что такое грех: восстание против Божьего Закона."
+        },
+        "uk": {
+          "L": "Кожен, хто чинить гріх, чинить і беззаконня, і гріх — це беззаконня.",
+          "B": "Кожен, хто живе в гріху, чинить і беззаконня; гріх — це беззаконня.",
+          "R": "Кожен, хто постійно грішить, бунтує проти Божого Закону. Ось що таке гріх: бунт проти Божого Закону."
+        },
+        "ja": {
+          "L": "罪を行う者は皆、不法をも行っています。罪とは不法なのです。",
+          "B": "罪を犯し続ける人は皆、不法を行っているのです。罪とは不法のことです。",
+          "R": "罪を犯し続ける人は皆、神の律法に逆らっているのです。罪とは、そういうこと、つまり神の律法に逆らうことです。"
+        },
+        "id": {
+          "L": "Setiap orang yang berbuat dosa juga melanggar hukum, sebab dosa adalah pelanggaran hukum.",
+          "B": "Setiap orang yang terus berbuat dosa melanggar hukum Allah, sebab dosa adalah pelanggaran hukum Allah.",
+          "R": "Setiap orang yang terus-menerus berbuat dosa sedang memberontak terhadap hukum Allah. Itulah dosa: pemberontakan terhadap hukum Allah."
+        },
+        "zh": {
+          "L": "凡行罪的人，也是在行不法，并且罪就是不法。",
+          "B": "凡继续犯罪的人，也是在行不法；罪就是不法。",
+          "R": "凡一直犯罪的人，都是在反抗{{god_term:神|上帝}}的律法。罪就是这个意思：反抗{{god_term:神|上帝}}的律法。"
         }
       },
       "decisions": [
@@ -1597,6 +1924,91 @@
           "reason": "Russian has no aspect for a habit here, so Balanced and Readable put the present tense of a way of life into words (meaning decision m1), as in 3:6-9. Literal keeps the plain verb.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n62003004003",
+            "n62003004005"
+          ],
+          "choice": "\"чинить гріх\" (L); \"живе в гріху\" (B); \"постійно грішить\" (R)",
+          "alternatives": [
+            "\"грішить\" at every level"
+          ],
+          "reason": "The English Balanced and Readable bring out the ongoing sense (\"goes on sinning\"); Ukrainian says it with \"жити в гріху\" and \"постійно\", here and in 3:6, 3:8 and 3:9, while Literal keeps the Greek phrase.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n62003004008",
+            "n62003004015"
+          ],
+          "choice": "\"不法\" (L, B); \"神の律法に逆らう\" (R)",
+          "alternatives": [
+            "\"律法違反\""
+          ],
+          "reason": "The word is not simply breaking a rule but living as if God's law did not apply (m2). \"不法\" says this; \"律法違反\" would make it a single breach. Readable says it in everyday words, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n62003004003",
+            "n62003004005"
+          ],
+          "choice": "\"terus berbuat dosa\" (B), \"terus-menerus berbuat dosa\" (R) for \"does sin\"",
+          "alternatives": [],
+          "reason": "The present tense describes sin as a way of life (meaning decision m1); Balanced and Readable say so, as the English does, and keep it through 3:4–9.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n62003004003",
+            "n62003004008"
+          ],
+          "choice": "\"行罪\" (L); \"继续犯罪\" (B); \"一直犯罪\" (R); \"不法\" (L, B); \"反抗神的律法\" (R)",
+          "alternatives": [
+            "违背律法"
+          ],
+          "reason": "The same words as John 8:34 in Chinese at each level for \"doing sin\", so the present tense of a way of life shows (meaning decision m1); the same three forms through 3:6-9. Readable says what lawlessness means here, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1679,6 +2091,26 @@
           "L": "И вы знаете, что Тот явился, чтобы взять грехи, и греха в {{deity_pronoun:нём|Нём}} нет.",
           "B": "Вы знаете, что {{deity_pronoun:он|Он}} явился, чтобы взять на себя грехи, и в {{deity_pronoun:нём|Нём}} нет греха.",
           "R": "Вы знаете, что Иисус пришёл, чтобы убрать грехи. И в {{deity_pronoun:нём|Нём}} нет греха."
+        },
+        "uk": {
+          "L": "І ви знаєте, що Той зʼявився, щоб забрати гріхи, і гріха в {{deity_pronoun:ньому|Ньому}} немає.",
+          "B": "Ви знаєте, що {{deity_pronoun:він|Він}} зʼявився, щоб забрати гріхи, і в {{deity_pronoun:ньому|Ньому}} немає гріха.",
+          "R": "Ви знаєте, що Ісус прийшов, щоб забрати гріхи. І в {{deity_pronoun:ньому|Ньому}} немає гріха."
+        },
+        "ja": {
+          "L": "そして、あなたがたは知っています。あの方は罪を取り除くために現されました。そして、その方のうちに罪はありません。",
+          "B": "あなたがたが知っているとおり、その方は罪を取り除くために現れてくださいました。その方には罪がありません。",
+          "R": "みなさんも知っているように、イエスは罪を取り除くために来られました。そして、イエスには罪が一つもありません。"
+        },
+        "id": {
+          "L": "Dan kalian tahu bahwa {{deity_pronoun:dia|Dia}} telah dinyatakan untuk menghapus dosa-dosa, dan di dalam {{deity_pronoun:dia|Dia}} tidak ada dosa.",
+          "B": "Kalian tahu bahwa {{christos:Kristus|Mesias}} telah datang untuk menghapus dosa-dosa, dan di dalam {{deity_pronoun:dia|Dia}} tidak ada dosa.",
+          "R": "Kalian tahu bahwa Yesus datang untuk menghapus dosa. Dan di dalam {{deity_pronoun:dia|Dia}} tidak ada dosa."
+        },
+        "zh": {
+          "L": "并且你们知道，那一位显明出来，是为了{{deity_pronoun:他|祂}}可以除去那些罪；并且在{{deity_pronoun:他|祂}}里面没有罪。",
+          "B": "你们知道，{{deity_pronoun:他|祂}}显明出来，是为了要除去人的罪，而{{deity_pronoun:他|祂}}里面没有罪。",
+          "R": "你们知道，耶稣来是为了除去罪。在{{deity_pronoun:他|祂}}里面没有罪。"
         }
       },
       "decisions": [
@@ -1829,6 +2261,28 @@
           "reason": "The verbs of John 1:29 at each level, since the phrase echoes the Baptist's words about the Lamb of God (meaning decision m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n62003005009"
+          ],
+          "choice": "\"除去\"",
+          "alternatives": [
+            "担走",
+            "除掉"
+          ],
+          "reason": "Take away sins echoes the Lamb of God (meaning decision m2); \"除去\" is John 1:29's verb at Literal.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1912,6 +2366,26 @@
           "L": "Всякий пребывающий в {{deity_pronoun:нём|Нём}} не грешит; всякий грешащий не видел {{deity_pronoun:его|Его}} и не познал {{deity_pronoun:его|Его}}.",
           "B": "Кто пребывает в {{deity_pronoun:нём|Нём}}, тот не продолжает грешить; кто продолжает грешить, тот не видел {{deity_pronoun:его|Его}} и не познал {{deity_pronoun:его|Его}}.",
           "R": "Кто остаётся в Иисусе, тот не грешит снова и снова. А кто снова и снова грешит, тот никогда не видел {{deity_pronoun:его|Его}} и не знал {{deity_pronoun:его|Его}}."
+        },
+        "uk": {
+          "L": "Кожен, хто перебуває в {{deity_pronoun:ньому|Ньому}}, не грішить; кожен, хто грішить, не бачив {{deity_pronoun:його|Його}} і не пізнав {{deity_pronoun:його|Його}}.",
+          "B": "Хто перебуває в {{deity_pronoun:ньому|Ньому}}, той не живе в гріху; хто живе в гріху, той не бачив {{deity_pronoun:його|Його}} і не пізнав {{deity_pronoun:його|Його}}.",
+          "R": "Хто залишається в Ісусі, той не грішить постійно. Хто постійно грішить, той ніколи не бачив {{deity_pronoun:його|Його}} і не знав {{deity_pronoun:його|Його}}."
+        },
+        "ja": {
+          "L": "その方のうちにとどまる者は皆、罪を犯しません。罪を犯す者は皆、その方を見たこともなく、知ったこともありません。",
+          "B": "その方のうちにとどまる人は皆、罪を犯し続けることはありません。罪を犯し続ける人は皆、その方を見たこともなく、知るようになったこともないのです。",
+          "R": "イエスのうちにとどまっている人は、罪を犯し続けることはありません。罪を犯し続ける人は、イエスを一度も見たことがなく、知ったこともないのです。"
+        },
+        "id": {
+          "L": "Setiap orang yang tetap tinggal di dalam {{deity_pronoun:dia|Dia}}, tidak berbuat dosa; setiap orang yang berbuat dosa, tidak melihat {{deity_pronoun:dia|Dia}} dan tidak mengenal {{deity_pronoun:dia|Dia}}.",
+          "B": "Setiap orang yang tetap tinggal di dalam {{deity_pronoun:dia|Dia}} tidak terus berbuat dosa. Setiap orang yang terus berbuat dosa tidak pernah melihat {{deity_pronoun:dia|Dia}} dan tidak mengenal {{deity_pronoun:dia|Dia}}.",
+          "R": "Siapa saja yang tetap tinggal di dalam Yesus tidak terus-menerus berbuat dosa. Siapa saja yang terus-menerus berbuat dosa tidak pernah melihat {{deity_pronoun:dia|Dia}} atau mengenal {{deity_pronoun:dia|Dia}}."
+        },
+        "zh": {
+          "L": "每一个留在{{deity_pronoun:他|祂}}里面的人都不犯罪；每一个犯罪的人都没有看见过{{deity_pronoun:他|祂}}，也没有认识过{{deity_pronoun:他|祂}}。",
+          "B": "凡留在{{deity_pronoun:他|祂}}里面的人，都不会继续犯罪；凡继续犯罪的人，既没有看见过{{deity_pronoun:他|祂}}，也没有认识{{deity_pronoun:他|祂}}。",
+          "R": "凡留在耶稣里面的人，都不会一直犯罪。凡一直犯罪的人，从来没有看见过{{deity_pronoun:他|祂}}，也从来没有认识{{deity_pronoun:他|祂}}。"
         }
       },
       "decisions": [
@@ -2114,6 +2588,46 @@
           "reason": "The present describes a settled way of life (meaning decisions m1, m2): the verse does not say believers never sin. Literal keeps the bare \"पाप नहीं करता\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n62003006007",
+            "n62003006010"
+          ],
+          "choice": "\"罪を犯し続ける\" (B, R); \"罪を犯す\" (L)",
+          "alternatives": [],
+          "reason": "The present tense describes a settled way of life (m1, m2), which Balanced and Readable put into words, as in 3:4 and 3:8-9. Literal keeps the plain verb.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n62003006005"
+          ],
+          "choice": "\"留在……里面\"",
+          "alternatives": [
+            "住在"
+          ],
+          "reason": "Menō as in John's Gospel and through 1-3 John.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2195,6 +2709,26 @@
           "L": "Детки, пусть никто не вводит вас в заблуждение: творящий праведность праведен, как Тот праведен.",
           "B": "Дети, пусть никто не сбивает вас с пути: праведен тот, кто поступает праведно, так же как {{deity_pronoun:он|Он}} праведен.",
           "R": "Дети, не позволяйте никому вас обмануть. Те, кто живёт праведно, праведны, так же как Иисус праведен."
+        },
+        "uk": {
+          "L": "Дітки, нехай ніхто вас не зводить: хто чинить праведність, той праведний, як Той праведний.",
+          "B": "Дорогі діти, не дайте нікому ввести вас в оману: праведний той, хто чинить праведність, так само як {{deity_pronoun:він|Він}} праведний.",
+          "R": "Дорогі діти, не дайте нікому себе обдурити. Люди, які живуть праведно, — праведні, так само як праведний Ісус."
+        },
+        "ja": {
+          "L": "子どもたちよ、だれにも惑わされてはなりません。義を行う者は、あの方が正しい方であるように、正しい者です。",
+          "B": "子どもたちよ、だれにも惑わされないようにしなさい。義を行う人こそ、その方が正しい方であるように、正しい人なのです。",
+          "R": "子どもたちよ、だれにもだまされないでください。正しい生き方をする人は、イエスが正しい方であるように、正しい人です。"
+        },
+        "id": {
+          "L": "Anak-anakku, janganlah ada orang yang menyesatkan kalian; barang siapa melakukan kebenaran, ia adalah benar, sama seperti {{deity_pronoun:dia|Dia}} adalah benar.",
+          "B": "Anak-anakku, janganlah membiarkan seorang pun menyesatkan kalian. Siapa saja yang melakukan kebenaran adalah orang benar, sama seperti {{christos:Kristus|Mesias}} adalah benar.",
+          "R": "Anak-anakku yang terkasih, jangan biarkan siapa pun menipu kalian. Orang yang hidup benar adalah orang benar, sama seperti Yesus benar."
+        },
+        "zh": {
+          "L": "小孩子们，不要让任何人引诱你们走迷路；那行义的人是公义的，正如那一位是公义的。",
+          "B": "亲爱的孩子们，不要让任何人误导你们：只有行义的人才是公义的，正如{{deity_pronoun:他|祂}}是公义的。",
+          "R": "亲爱的孩子们，不要让任何人骗你们。过公义生活的人才是公义的，正如耶稣是公义的。"
         }
       },
       "decisions": [
@@ -2329,6 +2863,27 @@
           "reason": "As at 2:1 and 2:12: Literal keeps the diminutive, as at John 13:33.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n62003007001"
+          ],
+          "choice": "\"小孩子们\" (L); \"亲爱的孩子们\" (B, R)",
+          "alternatives": [
+            "小子们"
+          ],
+          "reason": "Teknia as in 2:1, one form through the letter.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2410,6 +2965,26 @@
           "L": "Творящий грех — от дьявола, потому что от начала дьявол грешит.",
           "B": "Кто продолжает грешить, тот принадлежит дьяволу, потому что дьявол согрешил с самого начала и не перестаёт грешить.",
           "R": "Кто снова и снова грешит, тот принадлежит дьяволу, потому что дьявол грешит с самого начала."
+        },
+        "uk": {
+          "L": "Хто чинить гріх, той від диявола, бо диявол грішить від початку.",
+          "B": "Хто живе в гріху, той належить дияволові, бо диявол грішить від початку й ніколи не переставав.",
+          "R": "Хто постійно грішить, той належить дияволові, бо диявол грішить від самого початку."
+        },
+        "ja": {
+          "L": "罪を行う者は悪魔から出た者です。悪魔は初めから罪を犯しているからです。",
+          "B": "罪を犯し続ける人は悪魔に属しています。悪魔は初めから罪を犯し、今も犯し続けているからです。",
+          "R": "罪を犯し続ける人は、悪魔のものです。悪魔は、いちばん初めからずっと罪を犯してきたからです。"
+        },
+        "id": {
+          "L": "Barang siapa berbuat dosa, ia berasal dari Iblis, sebab Iblis berbuat dosa sejak semula.",
+          "B": "Siapa saja yang terus berbuat dosa berasal dari Iblis, sebab Iblis berbuat dosa sejak semula.",
+          "R": "Siapa saja yang terus-menerus berbuat dosa adalah milik Iblis, karena Iblis sudah berbuat dosa sejak semula."
+        },
+        "zh": {
+          "L": "那行罪的人是出于魔鬼的，因为从起初，魔鬼就在犯罪。",
+          "B": "凡继续犯罪的人都属于魔鬼，因为魔鬼从一开始就犯罪，而且从来没有停止过。",
+          "R": "凡一直犯罪的人都属于魔鬼，因为魔鬼从最开始就一直在犯罪。"
         }
       },
       "decisions": [
@@ -2630,6 +3205,26 @@
           "L": "Для этого явился Сын Божий: чтобы {{deity_pronoun:он|Он}} разрушил дела дьявола.",
           "B": "Вот для чего явился Сын Божий: чтобы разрушить дела дьявола.",
           "R": "Сын Божий пришёл именно для этого: чтобы разрушить всё, что сделал дьявол."
+        },
+        "uk": {
+          "L": "Для цього зʼявився Син Божий, щоб {{deity_pronoun:він|Він}} зруйнував діла диявола.",
+          "B": "Ось чому зʼявився Син Божий: щоб зруйнувати діла диявола.",
+          "R": "Син Божий прийшов саме для того, щоб зруйнувати те, що зробив диявол."
+        },
+        "ja": {
+          "L": "このために神の子は現されました。悪魔の働きを打ち壊すためです。",
+          "B": "神の子が現れてくださったのは、悪魔の働きを打ち壊すためでした。",
+          "R": "神の子が来られたのは、まさにこのため、悪魔がしてきたことを打ち壊すためです。"
+        },
+        "id": {
+          "L": "Untuk inilah Anak Allah dinyatakan, yaitu supaya {{deity_pronoun:dia|Dia}} membinasakan perbuatan-perbuatan Iblis.",
+          "B": "Untuk inilah Anak Allah datang, yaitu untuk membinasakan perbuatan-perbuatan Iblis.",
+          "R": "Anak Allah datang untuk tujuan ini: untuk menghancurkan apa yang telah dilakukan Iblis."
+        },
+        "zh": {
+          "L": "为了这个[目的]，{{god_term:神|上帝}}的儿子显明出来：就是{{deity_pronoun:他|祂}}要拆毁魔鬼的作为。",
+          "B": "这就是{{god_term:神|上帝}}的儿子显明出来的原因：为要拆毁魔鬼的作为。",
+          "R": "{{god_term:神|上帝}}的儿子来，正是为了这个缘故：要摧毁魔鬼所做的事。"
         }
       },
       "decisions": [
@@ -2745,6 +3340,47 @@
           "reason": "The verb is to break up, dismantle and bring to nothing (m2). \"Kubomoa\" (pull down, demolish) gives that picture; Readable uses the plainer \"kuharibu\" (destroy, undo).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n62003008019",
+            "n62003008021"
+          ],
+          "choice": "\"神の子\" for the Son of God",
+          "alternatives": [],
+          "reason": "The title, as the style guide gives it; believers are \"神の子ども\" (3:1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n62003008023"
+          ],
+          "choice": "\"拆毁\" (L, B); \"摧毁\" (R)",
+          "alternatives": [
+            "除灭"
+          ],
+          "reason": "Lyō: undo, break up, bring to nothing (meaning decision m2).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2836,6 +3472,26 @@
           "L": "Всякий рождённый от Бога греха не творит, потому что семя {{deity_pronoun:его|Его}} пребывает в нём; и он не может грешить, потому что от Бога рождён.",
           "B": "Кто рождён от Бога, тот не продолжает грешить, потому что Божье семя пребывает в нём; он не может продолжать грешить, потому что рождён от Бога.",
           "R": "Те, кто рождён от Бога, не грешат снова и снова. Божья жизнь в них, как семя, и она остаётся в них. Они не могут грешить снова и снова, потому что это Бог дал им новое рождение."
+        },
+        "uk": {
+          "L": "Кожен, хто народжений від Бога, не чинить гріха, бо {{deity_pronoun:його|Його}} насіння перебуває в ньому; і він не може грішити, бо народжений від Бога.",
+          "B": "Хто народжений від Бога, той не живе в гріху, бо Боже насіння перебуває в ньому; він не може жити в гріху, бо народжений від Бога.",
+          "R": "Люди, народжені від Бога, не грішать постійно. Боже життя в них, як насіння, і воно там залишається. Вони не можуть постійно грішити, бо саме Бог дав їм нове народження."
+        },
+        "ja": {
+          "L": "神から生まれた者は皆、罪を行いません。神の種がその人のうちにとどまっているからです。そして、その人は罪を犯すことができません。神から生まれているからです。",
+          "B": "神から生まれた人は皆、罪を犯し続けることはありません。神の種がその人のうちにとどまっているからです。その人は罪を犯し続けることができません。神から生まれたのですから。",
+          "R": "神から生まれた人は、罪を犯し続けることはありません。神ご自身の命が、種のようにその人の中にあって、そこにとどまっているからです。その人は、罪を犯し続けることができません。神が新しく生まれさせてくださったからです。"
+        },
+        "id": {
+          "L": "Setiap orang yang lahir dari Allah, tidak berbuat dosa, karena benih-{{deity_pronoun:nya|Nya}} tetap ada di dalam dia; dan ia tidak dapat berbuat dosa, karena ia lahir dari Allah.",
+          "B": "Setiap orang yang lahir dari Allah tidak terus berbuat dosa, karena benih Allah tetap ada di dalam dia. Ia tidak dapat terus berbuat dosa, karena ia lahir dari Allah.",
+          "R": "Orang-orang yang lahir dari Allah tidak terus-menerus berbuat dosa. Hidup Allah sendiri ada di dalam mereka seperti benih, dan tetap tinggal di sana. Mereka tidak dapat terus-menerus berbuat dosa, karena Allahlah yang memberi mereka kelahiran baru."
+        },
+        "zh": {
+          "L": "凡由{{god_term:神|上帝}}所生的，都不行罪，因为{{deity_pronoun:他|祂}}的种子留在这人里面；并且这人不能犯罪，因为这人是由{{god_term:神|上帝}}所生的。",
+          "B": "凡由{{god_term:神|上帝}}所生的人，都不会继续犯罪，因为{{god_term:神|上帝}}的种子留在他里面；他不能继续犯罪，因为他是由{{god_term:神|上帝}}所生的。",
+          "R": "由{{god_term:神|上帝}}所生的人不会一直犯罪。{{god_term:神|上帝}}自己的生命像一颗种子在他们里面，并且一直留在那里。他们不能一直犯罪，因为是{{god_term:神|上帝}}使他们得了新生。"
         }
       },
       "decisions": [
@@ -3125,6 +3781,68 @@
           "reason": "As at 2:4: \"он\" after \"всякий\" and \"кто\" is the ordinary Russian pronoun for anyone, so the English gender spans are not needed. The span stays on \"his seed\", which is God's.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n62003009014"
+          ],
+          "choice": "\"в ньому\", with no gender span",
+          "alternatives": [
+            "\"{{gender:у такій людині|в ньому}}\""
+          ],
+          "reason": "As in 2:4: the Ukrainian generic \"він\" after \"кожен, хто\" is not marked for men, so the English setting has nothing to change.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n62003009011",
+            "n62003009012"
+          ],
+          "choice": "\"神の種\" (L, B); \"神ご自身の命が、種のように\" (R)",
+          "alternatives": [
+            "\"その方の種\""
+          ],
+          "reason": "\"His\" is God (m4), and Japanese names him. The seed is the life God plants in those he gives birth to (m3); Readable says so, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n62003009014"
+          ],
+          "choice": "\"这人\", \"他\" with no gender span",
+          "alternatives": [
+            "{{gender:这人|这男人}}"
+          ],
+          "reason": "The English spans \"them / they are / they have\" for the one born of God. Chinese \"这人\" and \"他\" are already inclusive and get no span (style guide section 8); this note stands for the person-pronouns of the chapter.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3222,6 +3940,26 @@
           "L": "По этому явны дети Божьи и дети дьявола: всякий не творящий праведности не от Бога, и [также] не любящий {{gender:своего брата или свою сестру|своего брата}}.",
           "B": "Вот как становится ясно, кто дети Божьи, а кто дети дьявола: всякий, кто не поступает праведно, не от Бога, как и тот, кто не любит {{gender:своего брата или свою сестру|своего брата}}.",
           "R": "Вот как можно узнать, кто Божьи дети, а кто дети дьявола. Всякий, кто не живёт праведно, не принадлежит Богу. И тот, кто не любит {{gender:брата или сестру по вере|брата по вере}}, тоже не принадлежит Богу."
+        },
+        "uk": {
+          "L": "З цього явні Божі діти і діти диявола: кожен, хто не чинить праведності, не від Бога, і [так само] той, хто не любить {{gender:свого брата чи сестру|свого брата}}.",
+          "B": "Ось як стає ясно, хто Божі діти, а хто діти диявола: кожен, хто не чинить праведності, не від Бога, і так само той, хто не любить {{gender:свого брата чи сестру|свого брата}}.",
+          "R": "Ось як можна побачити, хто Божі діти, а хто діти диявола. Хто не живе праведно, той не належить Богові. І хто не любить інших віруючих, той теж не належить Богові."
+        },
+        "ja": {
+          "L": "これによって、神の子どもたちと悪魔の子どもたちとが明らかになります。義を行わない者は皆、神から出た者ではありません。自分の{{gender:きょうだい|兄弟}}を愛さない者も[そうです]。",
+          "B": "こうして、だれが神の子どもで、だれが悪魔の子どもなのかがはっきりします。義を行わない人は皆、神から出た者ではありません。自分の{{gender:きょうだい|兄弟}}を愛さない人も同じです。",
+          "R": "だれが神の子どもで、だれが悪魔の子どもなのかは、こうして見分けることができます。正しい生き方をしない人は、神のものではありません。信仰の仲間を愛さない人も、神のものではありません。"
+        },
+        "id": {
+          "L": "Dengan inilah nyata anak-anak Allah dan anak-anak Iblis: setiap orang yang tidak melakukan kebenaran, tidak berasal dari Allah, [demikian juga] orang yang tidak mengasihi saudaranya.",
+          "B": "Dengan inilah nyata siapa anak-anak Allah dan siapa anak-anak Iblis: setiap orang yang tidak melakukan kebenaran tidak berasal dari Allah, demikian juga orang yang tidak mengasihi saudaranya.",
+          "R": "Beginilah caranya kalian dapat mengetahui siapa anak-anak Allah dan siapa anak-anak Iblis. Siapa saja yang tidak hidup benar bukan milik Allah. Dan siapa saja yang tidak mengasihi sesama orang percaya juga bukan milik Allah."
+        },
+        "zh": {
+          "L": "借此，{{god_term:神|上帝}}的儿女和魔鬼的儿女就显明了：凡不行义的，就不是出于{{god_term:神|上帝}}的，那不爱自己{{gender:弟兄或姐妹|弟兄}}的，[也是这样]。",
+          "B": "这样就可以清楚看出谁是{{god_term:神|上帝}}的儿女、谁是魔鬼的儿女：凡不行义的人都不是出于{{god_term:神|上帝}}，不爱自己{{gender:弟兄或姐妹|弟兄}}的人也不是。",
+          "R": "你们可以这样分辨谁是{{god_term:神|上帝}}的儿女，谁是魔鬼的儿女。凡不过公义生活的人，都不属于{{god_term:神|上帝}}。凡不爱主内弟兄姐妹的人，也不属于{{god_term:神|上帝}}。"
         }
       },
       "decisions": [
@@ -3361,6 +4099,27 @@
           "reason": "As at 2:9: Readable keeps \"brother\" with the gender setting where the English says \"a fellow believer\", since Russian has no common inclusive word.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n62003010029"
+          ],
+          "choice": "{{gender:弟兄或姐妹|弟兄}} (L, B); \"主内的弟兄姐妹\" (R), with no span",
+          "alternatives": [
+            "弟兄"
+          ],
+          "reason": "One fellow believer of either sex (meaning decision m2), as in 2:9. Readable follows the English \"a fellow believer\" with the inclusive church word, which needs no span.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3458,6 +4217,26 @@
           "L": "Ведь это весть, которую вы слышали от начала: чтобы мы любили друг друга, \\v 12 не как Каин, [который] был от лукавого и заколол своего брата. И за что заколол его?",
           "B": "Ведь весть, которую вы слышали от начала, такова: мы должны любить друг друга. \\v 12 Нам нельзя быть как Каин, который принадлежал лукавому и убил своего брата. И за что он убил его?",
           "R": "С самого начала вы слышали такую весть: мы должны любить друг друга. \\v 12 Нам нельзя быть как Каин. Он принадлежал злому, дьяволу, и убил своего родного брата. Почему он убил его?"
+        },
+        "uk": {
+          "L": "Бо це звістка, яку ви чули від початку: щоб ми любили одне одного, \\v 12 не як Каїн, [який] був від лукавого і зарізав свого брата. А за що зарізав його?",
+          "B": "Бо звістка, яку ви чули від початку, така: ми маємо любити одне одного. \\v 12 Не будьмо як Каїн, який належав лукавому і вбив свого брата. А чому він його вбив?",
+          "R": "Від самого початку ви чули цю звістку: ми повинні любити одне одного. \\v 12 Ми не повинні бути як Каїн. Він належав лукавому, дияволові, і вбив свого рідного брата. Чому він його вбив?"
+        },
+        "ja": {
+          "L": "なぜなら、わたしたちが互いに愛し合うこと、これが、あなたがたが初めから聞いている知らせだからです。\\v 12 悪い者から出て、自分の兄弟を殺したカインのようで[あっては]なりません。そして、何のために彼は兄弟を殺したのですか？",
+          "B": "あなたがたが初めから聞いている知らせとは、わたしたちが互いに愛し合うべきだということです。\\v 12 カインのようであってはなりません。カインは悪い者に属していて、自分の弟を殺しました。なぜ、彼は弟を殺したのでしょうか？",
+          "R": "みなさんは、いちばん初めから、この知らせを聞いてきました。わたしたちは互いに愛し合わなければならない、ということです。\\v 12 カインのようになってはいけません。カインは悪い者、つまり悪魔のものでした。そして、自分の弟を殺してしまいました。なぜ、弟を殺したのでしょうか？"
+        },
+        "id": {
+          "L": "Sebab inilah berita yang telah kalian dengar sejak semula, yaitu bahwa kita harus saling mengasihi, \\v 12 bukan seperti Kain, [yang] berasal dari si jahat dan membunuh adiknya. Dan mengapa ia membunuhnya?",
+          "B": "Sebab inilah berita yang telah kalian dengar sejak semula, yaitu bahwa kita harus saling mengasihi, \\v 12 bukan seperti Kain, yang berasal dari si jahat dan membunuh adiknya. Dan mengapa ia membunuhnya?",
+          "R": "Sejak semula kalian sudah mendengar berita ini: kita harus saling mengasihi. \\v 12 Kita tidak boleh seperti Kain. Dia milik si jahat, yaitu Iblis, dan dia membunuh adiknya sendiri. Mengapa dia membunuhnya?"
+        },
+        "zh": {
+          "L": "因为这就是你们从起初所听见的信息：就是我们要彼此相爱，\\v 12 不要像该隐那样，他是出于那恶者的，并且残杀了他的弟弟。他又为了什么残杀他呢？",
+          "B": "因为你们从一开始所听见的信息就是：我们应当彼此相爱。\\v 12 我们决不可像该隐那样；该隐属于那恶者，谋杀了自己的弟弟。他为什么谋杀弟弟呢？",
+          "R": "你们从最开始就听到了这个信息：我们必须彼此相爱。\\v 12 我们不可学该隐。他属于那恶者，就是魔鬼，他杀了自己的弟弟。他为什么杀他呢？"
         }
       },
       "decisions": [
@@ -3809,6 +4588,94 @@
           "reason": "Literal keeps the violence of the Greek verb; Balanced and Readable say \"убил\", which prepares for \"убийца\" in 3:15.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n62003012003",
+            "n62003012009"
+          ],
+          "choice": "\"カイン\" for Cain, \"アベル\" (3:12 R) for Abel; \"殺す\" for the violent verb at every level; \"兄弟\" (L), \"弟\" (B, R)",
+          "alternatives": [
+            "\"惨殺する\""
+          ],
+          "reason": "The conventional Japanese forms of the names. The verb stresses brutality (m5), but Japanese \"殺す\" is already stark and the stronger words sound like a newspaper. Cain's brother is one man, Abel, so no gender span; Balanced and Readable say \"弟\", which Genesis 4 makes him.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n62003012003",
+            "n62003012009",
+            "n62003012010",
+            "n62003012011",
+            "n62003012012"
+          ],
+          "choice": "\"adiknya\" for Cain's brother",
+          "alternatives": [],
+          "reason": "Indonesian distinguishes an older brother (\"kakak\") from a younger one (\"adik\"); Abel was Cain's younger brother (Genesis 4:2), so \"adiknya\" at every level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n62003012003",
+            "n62003012011"
+          ],
+          "choice": "\"该隐\"; \"弟弟\"",
+          "alternatives": [
+            "兄弟"
+          ],
+          "reason": "Cain as the glossary has him. Chinese must choose an older or younger brother; Abel was the younger (Genesis 4:2), so \"弟弟\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n62003012009"
+          ],
+          "choice": "\"残杀\" (L); \"谋杀\" (B); \"杀\" (R)",
+          "alternatives": [
+            "宰杀"
+          ],
+          "reason": "Sphazō is a violent killing (meaning decision m5). \"宰杀\" is said of animals; Literal says \"残杀\", Balanced \"谋杀\", which prepares for \"杀人凶手\" in 3:15, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3888,6 +4755,26 @@
           "L": "Потому что дела его были злые, а [дела] брата его — праведные.",
           "B": "Потому что его собственные дела были злыми, а дела его брата — праведными.",
           "R": "Потому что Каин делал злое, а его брат Авель делал то, что правильно."
+        },
+        "uk": {
+          "L": "Бо його діла були лихі, а [діла] його брата — праведні.",
+          "B": "Бо його власні діла були лихі, а діла його брата — праведні.",
+          "R": "Бо те, що робив Каїн, було зле, а те, що робив його брат Авель, було правильне."
+        },
+        "ja": {
+          "L": "自分の行いは悪く、兄弟の[行い]は正しかったからです。",
+          "B": "自分の行いが悪く、弟の行いが正しかったからです。",
+          "R": "カインのしていたことは悪く、弟のアベルのしていたことは正しかったからです。"
+        },
+        "id": {
+          "L": "Karena perbuatan-perbuatannya jahat, tetapi perbuatan-perbuatan adiknya benar.",
+          "B": "Karena perbuatan-perbuatannya jahat, sedangkan perbuatan-perbuatan adiknya benar.",
+          "R": "Karena apa yang dilakukan Kain jahat, sedangkan apa yang dilakukan Habel, adiknya, benar."
+        },
+        "zh": {
+          "L": "因为他的作为是恶的，而他弟弟的[作为]是义的。",
+          "B": "因为他自己的行为是邪恶的，而他弟弟的行为是公义的。",
+          "R": "因为该隐做的事是邪恶的，而他弟弟亚伯做的事是对的。"
         }
       },
       "decisions": [
@@ -4026,6 +4913,26 @@
           "L": "Не удивляйтесь, {{gender:братья и сёстры|братья}}, если мир ненавидит вас.",
           "B": "Не изумляйтесь, {{gender:братья и сёстры|братья}}, если мир вас ненавидит.",
           "R": "{{gender:Братья и сёстры|Братья}}, не удивляйтесь, если мир вас ненавидит."
+        },
+        "uk": {
+          "L": "Не дивуйтеся, {{gender:брати і сестри|брати}}, якщо світ вас ненавидить.",
+          "B": "Не дивуйтеся, {{gender:брати і сестри|брати}}, якщо світ вас ненавидить.",
+          "R": "{{gender:Брати і сестри|Брати}}, не дивуйтеся, якщо світ вас ненавидить."
+        },
+        "ja": {
+          "L": "{{gender:きょうだいたち|兄弟たち}}、世があなたがたを憎んでも、驚いてはなりません。",
+          "B": "{{gender:きょうだいたち|兄弟たち}}、世があなたがたを憎んでも、驚くことはありません。",
+          "R": "{{gender:きょうだいたち|兄弟たち}}、この世がみなさんを憎んでも、びっくりしないでください。"
+        },
+        "id": {
+          "L": "Janganlah kalian heran, saudara-saudara, apabila dunia membenci kalian.",
+          "B": "Saudara-saudara, janganlah kalian heran apabila dunia membenci kalian.",
+          "R": "Saudara-saudara, jangan kaget kalau dunia membenci kalian."
+        },
+        "zh": {
+          "L": "{{gender:弟兄姐妹|弟兄}}们，如果世界恨你们，不要惊奇。",
+          "B": "{{gender:弟兄姐妹|弟兄}}们，如果世界恨你们，不要感到诧异。",
+          "R": "{{gender:弟兄姐妹|弟兄}}们，如果世界恨你们，不要觉得吃惊。"
         }
       },
       "decisions": [
@@ -4237,6 +5144,44 @@
           "reason": "The gender setting for adelphoi, as settled for the letters.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n62003013003"
+          ],
+          "choice": "\"{{gender:きょうだいたち|兄弟たち}}\" as the address, with no \"わたしの\"",
+          "alternatives": [],
+          "reason": "The letters' address, with the inclusive kana spelling as the default (m1); the Greek has no \"my\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n62003013003"
+          ],
+          "choice": "address first",
+          "alternatives": [
+            "不要惊奇，弟兄姐妹们，如果世界恨你们"
+          ],
+          "reason": "Chinese puts the address at the head of the sentence; the Greek places it after the first verb. Readable English does the same.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4325,6 +5270,26 @@
           "L": "Мы знаем, что перешли из смерти в жизнь, потому что любим {{gender:братьев и сестёр|братьев}}; не любящий пребывает в смерти.",
           "B": "Мы знаем, что перешли из смерти в жизнь, потому что любим своих {{gender:братьев и сестёр|братьев}}. Кто не любит, тот пребывает в смерти.",
           "R": "Мы знаем, что оставили смерть позади и пришли в жизнь, потому что любим своих {{gender:братьев и сестёр|братьев}}. Кто не любит, тот остаётся в смерти."
+        },
+        "uk": {
+          "L": "Ми знаємо, що перейшли зі смерті в життя, бо любимо {{gender:братів і сестер|братів}}; хто не любить, той перебуває в смерті.",
+          "B": "Ми знаємо, що перейшли зі смерті в життя, бо любимо наших {{gender:братів і сестер|братів}}. Хто не любить, той перебуває в смерті.",
+          "R": "Ми знаємо, що залишили смерть позаду і прийшли в життя, бо любимо наших {{gender:братів і сестер|братів}}. Хто не любить, той залишається в смерті."
+        },
+        "ja": {
+          "L": "わたしたちは、自分が死から命へと移っていることを知っています。{{gender:きょうだいたち|兄弟たち}}を愛しているからです。愛さない者は死のうちにとどまっています。",
+          "B": "わたしたちは、自分が死から命へと移ったことを知っています。わたしたちが{{gender:きょうだいたち|兄弟たち}}を愛しているからです。愛さない人は、死のうちにとどまっているのです。",
+          "R": "わたしたちは、自分が死から抜け出して、命の中に入ったことを知っています。わたしたちが{{gender:きょうだいたち|兄弟たち}}を愛しているからです。愛さない人は、死の中にとどまったままです。"
+        },
+        "id": {
+          "L": "Kita tahu bahwa kita telah berpindah dari maut ke dalam hidup, sebab kita mengasihi saudara-saudara; barang siapa tidak mengasihi, ia tetap di dalam maut.",
+          "B": "Kita tahu bahwa kita telah berpindah dari maut ke dalam hidup, karena kita mengasihi saudara-saudara kita. Siapa saja yang tidak mengasihi tetap berada di dalam maut.",
+          "R": "Kita tahu bahwa kita sudah meninggalkan kematian dan masuk ke dalam hidup, karena kita mengasihi saudara-saudara kita. Siapa saja yang tidak mengasihi tetap berada di dalam kematian."
+        },
+        "zh": {
+          "L": "我们知道我们已经从死亡过到生命里了，因为我们爱{{gender:弟兄姐妹|弟兄}}；那不爱的人仍留在死亡中。",
+          "B": "我们知道我们已经离开死亡，进入了生命，因为我们爱我们的{{gender:弟兄姐妹|弟兄}}。不爱的人仍然留在死亡中。",
+          "R": "我们知道我们已经把死亡抛在后面，进入了生命，因为我们爱我们的{{gender:弟兄姐妹|弟兄}}。凡不爱的人仍然留在死亡里。"
         }
       },
       "decisions": [
@@ -4396,7 +5361,7 @@
           ],
           "reason": "Many later manuscripts add \"his brother\"; important early manuscripts have the shorter text, and the added words look like a natural filling out from 3:10. The meaning is the same. Reviewers must check this against the SBLGNT apparatus.",
           "uncertain": false,
-          "footnote": true
+          "footnote": false
         },
         {
           "id": "r-en-1",
@@ -4518,6 +5483,49 @@
           "reason": "The phrase echoes Jesus' own words (meaning decision m1), so each level keeps the Hindi of John 5:24.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n62003014011",
+            "n62003014012"
+          ],
+          "choice": "the reason \"……愛しているからです\" after \"知っています\"",
+          "alternatives": [
+            "\"愛しているので、……知っています\""
+          ],
+          "reason": "Love is how we know, not what moved us into life (m2). Putting the reason after the verb of knowing, as its own sentence, ties it to \"知っています\"; placed first it could seem to be the cause of the passing into life.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n62003014004"
+          ],
+          "choice": "\"从死亡过到生命里\" (L); \"离开死亡，进入了生命\" (B); \"把死亡抛在后面，进入了生命\" (R)",
+          "alternatives": [
+            "出死入生"
+          ],
+          "reason": "The same wording as John 5:24 in Chinese at each level, so the echo of Jesus's words (meaning decision m1) stays visible.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4605,6 +5613,26 @@
           "L": "Всякий ненавидящий {{gender:своего брата или свою сестру|своего брата}} — человекоубийца, и вы знаете, что никакой человекоубийца не имеет вечной жизни, пребывающей в нём.",
           "B": "Кто ненавидит {{gender:брата или сестру|брата}}, тот убийца, а вы знаете, что вечная жизнь не пребывает ни в одном убийце.",
           "R": "Кто ненавидит {{gender:брата или сестру по вере|брата по вере}}, тот в сердце убийца. А вы знаете, что ни в одном убийце не остаётся вечной жизни."
+        },
+        "uk": {
+          "L": "Кожен, хто ненавидить {{gender:свого брата чи сестру|свого брата}}, — людиновбивця, і ви знаєте, що жоден людиновбивця не має вічного життя, яке перебуває в ньому.",
+          "B": "Хто ненавидить {{gender:брата чи сестру|брата}}, той убивця, а ви знаєте, що в жодному вбивці не перебуває вічне життя.",
+          "R": "Хто ненавидить {{gender:іншого віруючого чи віруючу|іншого віруючого}}, той у своєму серці вбивця. А ви знаєте, що жоден убивця не має в собі вічного життя."
+        },
+        "ja": {
+          "L": "自分の{{gender:きょうだい|兄弟}}を憎む者は皆、人殺しです。そして、あなたがたが知っているとおり、人殺しはだれも、そのうちに永遠の命がとどまっていません。",
+          "B": "{{gender:きょうだい|兄弟}}を憎む人は皆、人殺しです。そして、あなたがたが知っているように、人殺しのうちには永遠の命がとどまっていません。",
+          "R": "信仰の仲間を憎む人は皆、心の中では人を殺しているのです。そして、みなさんが知っているように、人を殺す者の中に、永遠の命がとどまっていることはありません。"
+        },
+        "id": {
+          "L": "Setiap orang yang membenci saudaranya adalah seorang pembunuh, dan kalian tahu bahwa tidak ada pembunuh yang memiliki hidup yang kekal tetap di dalam dirinya.",
+          "B": "Setiap orang yang membenci saudaranya adalah seorang pembunuh, dan kalian tahu bahwa di dalam diri seorang pembunuh tidak ada hidup kekal.",
+          "R": "Siapa saja yang membenci sesama orang percaya pada dasarnya adalah seorang pembunuh. Dan kalian tahu bahwa di dalam diri seorang pembunuh tidak ada hidup kekal."
+        },
+        "zh": {
+          "L": "每一个恨自己{{gender:弟兄或姐妹|弟兄}}的人都是杀人凶手；而你们知道，每一个杀人凶手都没有永生留在他里面。",
+          "B": "凡恨{{gender:弟兄或姐妹|弟兄}}的人就是杀人凶手；你们也知道，永生不会留在任何杀人凶手里面。",
+          "R": "凡恨主内弟兄姐妹的人，心里就是杀人凶手。你们知道，没有一个杀人凶手有永生留在他里面。"
         }
       },
       "decisions": [
@@ -4749,6 +5777,44 @@
           "reason": "Literal shows the compound Greek word, \"killer of a person\", the word of John 8:44; Balanced and Readable use the everyday \"убийца\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n62003015007"
+          ],
+          "choice": "\"心の中では人を殺している\" (R)",
+          "alternatives": [],
+          "reason": "As the English Readable says \"at heart\" (m1), so that a young reader does not take hatred to be the same crime as murder.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n62003015007"
+          ],
+          "choice": "\"杀人凶手\"",
+          "alternatives": [
+            "杀人的"
+          ],
+          "reason": "As John 8:44 has it for the devil. Readable adds \"心里\" (at heart), as the English Readable adds \"at heart\" (meaning decision m1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4838,6 +5904,26 @@
           "L": "По этому мы познали любовь: что Тот за нас положил свою жизнь; и мы должны полагать [наши] жизни за {{gender:братьев и сестёр|братьев}}.",
           "B": "Вот как мы узнали, что такое любовь: {{deity_pronoun:он|Он}} отдал за нас свою жизнь. И мы в ответ должны отдавать свои жизни за {{gender:братьев и сестёр|братьев}}.",
           "R": "Вот как мы узнали, что такое любовь: Иисус отдал за нас свою жизнь. Значит, и мы должны отдавать свои жизни за {{gender:братьев и сестёр|братьев}}."
+        },
+        "uk": {
+          "L": "З цього ми пізнали любов, що Той поклав за нас своє життя; і ми повинні покладати [наші] життя за {{gender:братів і сестер|братів}}.",
+          "B": "Ось як ми пізнали, що таке любов: {{deity_pronoun:він|Він}} поклав за нас своє життя. І ми, у свою чергу, повинні покладати своє життя за наших {{gender:братів і сестер|братів}}.",
+          "R": "Ось як ми знаємо, що таке любов: Ісус віддав за нас своє життя. Тож і ми повинні віддавати своє життя за наших {{gender:братів і сестер|братів}}."
+        },
+        "ja": {
+          "L": "これによって、わたしたちは愛を知るようになりました。あの方がわたしたちのためにご自分の命を捨ててくださったことです。そして、わたしたちも{{gender:きょうだいたち|兄弟たち}}のために[自分の]命を捨てるべきです。",
+          "B": "わたしたちが愛とは何かを知ったのは、こうしてです。その方が、わたしたちのためにご自分の命を捨ててくださったのです。ですから、わたしたちも、{{gender:きょうだいたち|兄弟たち}}のために自分の命を捨てる務めがあります。",
+          "R": "愛とは何かを、わたしたちはこうして知りました。イエスが、わたしたちのためにご自分の命を捨ててくださったのです。だから、わたしたちも、{{gender:きょうだいたち|兄弟たち}}のために自分の命を捨てなければなりません。"
+        },
+        "id": {
+          "L": "Dengan inilah kita telah mengenal kasih, yaitu bahwa {{deity_pronoun:dia|Dia}} telah menyerahkan nyawa-{{deity_pronoun:nya|Nya}} untuk kita; dan kita pun wajib menyerahkan nyawa kita untuk saudara-saudara kita.",
+          "B": "Dengan inilah kita mengenal kasih: {{christos:Kristus|Mesias}} telah menyerahkan nyawa-{{deity_pronoun:nya|Nya}} untuk kita. Jadi kita pun wajib menyerahkan nyawa kita untuk saudara-saudara kita.",
+          "R": "Beginilah kita tahu apa itu kasih: Yesus menyerahkan nyawa-{{deity_pronoun:nya|Nya}} untuk kita. Jadi kita juga harus menyerahkan nyawa kita untuk saudara-saudara kita."
+        },
+        "zh": {
+          "L": "借此我们已经认识了爱：那一位为我们舍弃了{{deity_pronoun:他|祂}}的生命；我们也应当为{{gender:弟兄姐妹|弟兄}}舍弃[我们的]生命。",
+          "B": "我们就是这样认识了爱是什么：{{deity_pronoun:他|祂}}为我们舍弃了{{deity_pronoun:他|祂}}的生命。所以我们也欠我们的{{gender:弟兄姐妹|弟兄}}一份债，应当为他们舍弃我们的生命。",
+          "R": "我们就是这样知道什么是爱：耶稣为我们献出了{{deity_pronoun:他|祂}}的生命。所以，我们也必须为我们的{{gender:弟兄姐妹|弟兄}}献出我们的生命。"
         }
       },
       "decisions": [
@@ -5110,6 +6196,92 @@
           "reason": "The English \"his life\" has the pronoun setting; Russian uses the reflexive \"свою\", which takes none.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n62003016011",
+            "n62003016013"
+          ],
+          "choice": "\"命を捨てる\" at every level",
+          "alternatives": [
+            "\"命をささげる\""
+          ],
+          "reason": "The phrase is Jesus' own in John 10:11-18 and 15:13 (m1), where Japanese John says \"命を捨てる\"; the same words keep the link.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n62003016016"
+          ],
+          "choice": "\"務めがあります\" (B); \"べきです\" (L); \"なければなりません\" (R)",
+          "alternatives": [],
+          "reason": "Balanced keeps the sense of a debt that follows from what Christ did (m3), as the English Balanced says \"owe it to\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n62003016010",
+            "n62003016011",
+            "n62003016012",
+            "n62003016013",
+            "n62003016020",
+            "n62003016021",
+            "n62003016022"
+          ],
+          "choice": "\"nyawa\" for the life laid down",
+          "alternatives": [],
+          "reason": "The glossary's word for the life that can be lost; \"hidup\" is kept for the life God gives (3:14–15).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n62003016011",
+            "n62003016013"
+          ],
+          "choice": "\"舍弃……生命\" (L, B); \"献出……生命\" (R)",
+          "alternatives": [
+            "舍命"
+          ],
+          "reason": "As John 10:11 has the Good Shepherd's words at each level. Balanced keeps the sense of a debt in \"欠……一份债\" (meaning decision m3), as the English says \"owe it to\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5207,6 +6379,26 @@
           "L": "А кто имеет достаток мира и видит {{gender:своего брата или свою сестру|своего брата}} в нужде и затворяет от него своё сердце, как пребывает в нём любовь Божья?",
           "B": "Допустим, у кого-то достаточно земных благ, и он видит {{gender:брата или сестру|брата}} в нужде, но закрывает от него своё сердце. Как может пребывать в таком человеке любовь Божья?",
           "R": "Допустим, у кого-то есть деньги и имущество в этом мире, и он видит {{gender:брата или сестру по вере|брата по вере}} в нужде, но не хочет пожалеть его. Как может Божья любовь оставаться в этом человеке?"
+        },
+        "uk": {
+          "L": "А хто має світські статки і бачить {{gender:свого брата чи сестру|свого брата}} в нужді, і замикає перед ним своє серце, як Божа любов перебуває в ньому?",
+          "B": "Припустімо, хтось має достатньо статків цього світу і бачить {{gender:брата чи сестру|брата}} в нужді, але замикає перед ним своє серце. Як може Божа любов перебувати в такій людині?",
+          "R": "Припустімо, хтось має гроші й майно в цьому світі і бачить {{gender:іншого віруючого чи віруючу|іншого віруючого}} в нужді, але не хоче виявити ані крихти жалю. Як може Божа любов залишатися в такій людині?"
+        },
+        "ja": {
+          "L": "しかし、世の財産を持っていながら、自分の{{gender:きょうだい|兄弟}}が困っているのを見て、その人に対して心を閉ざす者がいれば、どうして神の愛がその人のうちにとどまるでしょうか？",
+          "B": "世の財産を十分に持っている人が、{{gender:きょうだい|兄弟}}が困っているのを見ながら、その人に心を閉ざすとします。どうして神の愛が、そのような人のうちにとどまっているでしょうか？",
+          "R": "この世でお金や持ち物を持っている人が、信仰の仲間が困っているのを見ても、少しもあわれみを示そうとしないとします。どうして神の愛が、そのような人の中にとどまっていられるでしょうか？"
+        },
+        "id": {
+          "L": "Tetapi barang siapa mempunyai harta duniawi dan melihat saudaranya berkekurangan, tetapi menutup pintu hatinya terhadap saudaranya itu, bagaimanakah kasih Allah dapat tetap di dalam dirinya?",
+          "B": "Tetapi jika seseorang mempunyai harta duniawi dan melihat saudaranya berkekurangan, tetapi menutup hatinya terhadap saudaranya itu, bagaimanakah kasih Allah dapat tinggal di dalam dirinya?",
+          "R": "Misalnya ada orang yang mempunyai uang dan harta di dunia ini, dan ia melihat seorang saudara seiman yang berkekurangan, tetapi ia tidak mau menolongnya. Bagaimana mungkin kasih Allah ada di dalam diri orang itu?"
+        },
+        "zh": {
+          "L": "但凡拥有世上财物的人，看见自己的{{gender:弟兄或姐妹|弟兄}}有需要，却向他关闭自己的心，{{god_term:神|上帝}}的爱怎能留在这人里面呢？",
+          "B": "假如有人拥有足够的世上财物，看见{{gender:弟兄或姐妹|弟兄}}有需要，却对他硬起心肠，{{god_term:神|上帝}}的爱怎能留在这样的人里面呢？",
+          "R": "假如有人在这世上有钱有财物，看见主内的弟兄姐妹有需要，却不肯对他们表示一点怜悯，{{god_term:神|上帝}}的爱怎能留在这人里面呢？"
         }
       },
       "decisions": [
@@ -5482,6 +6674,49 @@
           "reason": "After the span on \"brother or sister\", the masculine pronoun follows \"брата\" grammatically under either option, so it takes no span of its own.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n62003017006",
+            "n62003017019"
+          ],
+          "choice": "\"世の財産\" (L, B), \"お金や持ち物\" (R); \"心を閉ざす\" (L, B), \"あわれみを示そうとしない\" (R)",
+          "alternatives": [
+            "\"はらわたを閉ざす\""
+          ],
+          "reason": "βίος is the means of living (m1). The inner parts are the seat of pity, as \"心\" is in Japanese (m2), so even Literal says \"心\", as the English Literal says heart.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n62003017019"
+          ],
+          "choice": "\"心\" (L); \"硬起心肠\" (B)",
+          "alternatives": [
+            "心肠",
+            "怜恤的心"
+          ],
+          "reason": "Even Literal says \"heart\" for the inward parts, as the English does (meaning decision m2).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5561,6 +6796,26 @@
           "L": "Детки, будем любить не словом и не языком, но делом и истиной.",
           "B": "Дети, будем любить не словами и не языком, а делом и в истине.",
           "R": "Дети, давайте не просто говорить, что мы любим других. Давайте по-настоящему любить их делами и в правде."
+        },
+        "uk": {
+          "L": "Дітки, любімо не словом і не язиком, а ділом і істиною.",
+          "B": "Дорогі діти, любімо не словами чи язиком, а ділами й по правді.",
+          "R": "Дорогі діти, не будемо лише казати, що любимо інших. Любімо їх по-справжньому тим, що робимо, і в правді."
+        },
+        "ja": {
+          "L": "子どもたちよ、わたしたちは言葉や舌で愛するのではなく、行いと真理によって愛そうではありませんか。",
+          "B": "子どもたちよ、口先や言葉だけで愛するのではなく、行いと真実をもって愛し合いましょう。",
+          "R": "子どもたちよ、ただ口で愛していると言うだけではいけません。することによって、本当に愛し合いましょう。"
+        },
+        "id": {
+          "L": "Anak-anakku, marilah kita mengasihi bukan dengan perkataan atau dengan lidah, tetapi dengan perbuatan dan dalam kebenaran.",
+          "B": "Anak-anakku, marilah kita mengasihi bukan dengan perkataan atau dengan lidah saja, tetapi dengan perbuatan dan dengan sungguh-sungguh.",
+          "R": "Anak-anakku yang terkasih, marilah kita tidak hanya berkata bahwa kita mengasihi orang lain. Marilah kita sungguh-sungguh mengasihi mereka dengan perbuatan kita, dan dengan tulus."
+        },
+        "zh": {
+          "L": "小孩子们，我们爱[人]，不要用言语，也不要用舌头，而要在行为和真理中。",
+          "B": "亲爱的孩子们，我们爱人，不要只凭嘴上说说、只用舌头，而要凭着行动，并且合乎真理。",
+          "R": "亲爱的孩子们，我们不要只是嘴上说爱别人。我们要用行动，真心实意地去爱他们。"
         }
       },
       "decisions": [
@@ -5681,6 +6936,43 @@
           "reason": "Here logos is mere talk set against deeds (meaning decision m1); \"वचन\" is kept for God's word and would sound solemn.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n62003018003"
+          ],
+          "choice": "\"愛そうではありませんか\" (L); \"愛し合いましょう\" (B, R)",
+          "alternatives": [],
+          "reason": "The first-person plural exhortation takes the inviting form of a letter. Balanced and Readable say \"愛し合う\", since the ones to be loved are the fellow believers of 3:16-17, as the English Readable supplies.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n62003018012"
+          ],
+          "choice": "\"真実をもって\" (B); \"本当に\" (R); \"真理\" (L)",
+          "alternatives": [],
+          "reason": "Truth here is love that is real rather than pretended, in keeping with God's truth (m2). Literal keeps the key word \"真理\"; Balanced and Readable say what it means here.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5781,6 +7073,26 @@
           "L": "По этому узнаем, что мы от истины, и перед {{deity_pronoun:ним|Ним}} убедим наше сердце, \\v 20 что если сердце [нас] осуждает, то Бог больше нашего сердца и знает всё.",
           "B": "Так мы узнаем, что принадлежим истине, и так успокоим своё сердце перед {{deity_pronoun:ним|Ним}}, \\v 20 когда сердце осуждает нас: ведь Бог больше нашего сердца, и {{deity_pronoun:он|Он}} знает всё.",
           "R": "Так мы узнаем, что принадлежим правде. И когда мы стоим перед Богом, мы можем успокоить своё сердце, \\v 20 даже если оно обвиняет нас. Ведь Бог больше нашего сердца, и {{deity_pronoun:он|Он}} знает всё."
+        },
+        "uk": {
+          "L": "З цього пізнаємо, що ми від істини, і перед {{deity_pronoun:ним|Ним}} заспокоїмо наше серце, \\v 20 що, якщо серце осуджує [нас], то Бог більший від нашого серця і знає все.",
+          "B": "Ось як ми пізнаємо, що належимо істині, і як заспокоїмо свої серця перед {{deity_pronoun:ним|Ним}}, \\v 20 коли наші серця нас осуджують: Бог більший за наші серця, і {{deity_pronoun:він|Він}} знає все.",
+          "R": "Ось як ми знатимемо, що належимо правді. І коли ми стоїмо перед Богом, ми можемо заспокоїти свої серця, \\v 20 навіть коли вони нас звинувачують. Бо Бог більший за наші серця, і {{deity_pronoun:він|Він}} знає все."
+        },
+        "ja": {
+          "L": "これによって、わたしたちは、自分が真理から出た者であることを知り、また、神の前で自分の心を納得させるでしょう。\\v 20 たとえ心がわたしたちを責めるとしても、神はわたしたちの心よりも大きく、すべてのことをご存じである、と。",
+          "B": "こうして、わたしたちは、自分が真理に属していることを知ります。そして、神の前で自分の心を安らかにすることができます。\\v 20 たとえ心がわたしたちを責めることがあっても、神はわたしたちの心よりも大きな方で、すべてをご存じだからです。",
+          "R": "こうして、わたしたちは、自分が真理に属していることがわかります。そして、神の前に立つとき、自分の心を落ち着かせることができます。\\v 20 心がわたしたちを責めるときにも、そうできるのです。神はわたしたちの心よりも大きな方で、すべてのことを知っておられるからです。"
+        },
+        "id": {
+          "L": "Dengan inilah kita akan tahu bahwa kita berasal dari kebenaran, dan di hadapan-{{deity_pronoun:nya|Nya}} kita akan menenangkan hati kita, \\v 20 bahwa sekalipun hati kita menuduh [kita], Allah lebih besar daripada hati kita dan mengetahui segala sesuatu.",
+          "B": "Dengan inilah kita tahu bahwa kita berasal dari kebenaran, dan kita dapat menenangkan hati kita di hadapan Allah \\v 20 setiap kali hati kita menuduh kita, sebab Allah lebih besar daripada hati kita dan {{deity_pronoun:dia|Dia}} mengetahui segala sesuatu.",
+          "R": "Dengan cara itulah kita tahu bahwa kita milik kebenaran. Dan ketika kita berdiri di hadapan Allah, kita dapat menenangkan hati kita \\v 20 sekalipun hati kita menuduh kita. Sebab Allah lebih besar daripada hati kita, dan {{deity_pronoun:dia|Dia}} mengetahui segala sesuatu."
+        },
+        "zh": {
+          "L": "借此我们会知道我们是出于真理的，并且在{{deity_pronoun:他|祂}}面前要说服我们的心，\\v 20 就是：我们的心若定[我们的]罪，{{god_term:神|上帝}}比我们的心更大，并且知道一切。",
+          "B": "这样，我们就会知道我们是属于真理的，在{{deity_pronoun:他|祂}}面前也能使我们的心安稳下来，\\v 20 即使我们的心定我们的罪：因为{{god_term:神|上帝}}比我们的心更大，{{deity_pronoun:他|祂}}知道一切。",
+          "R": "这样，我们就会知道我们属于真理。当我们站在{{god_term:神|上帝}}面前的时候，我们可以使自己的心平静下来，\\v 20 即使我们的心在指控我们。因为{{god_term:神|上帝}}比我们的心更大，{{deity_pronoun:他|祂}}知道一切。"
         }
       },
       "decisions": [
@@ -6073,6 +7385,50 @@
           "reason": "The verb means to reassure, set at rest (meaning decision m2). Russian keeps the singular \"сердце\" at every level, which reads naturally for each person's conscience.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n62003019010",
+            "n62003019011",
+            "n62003019012"
+          ],
+          "choice": "\"神の前で\" for \"before him\"; \"納得させる\" (L), \"安らかにする\" (B), \"落ち着かせる\" (R)",
+          "alternatives": [],
+          "reason": "The pronoun is God (m4), named here as the next clause does. With the heart as its object the verb means to reassure, to set at rest (m2); Literal keeps \"persuade\" as \"納得させる\" (rather than \"説き伏せる\", which sounds like overcoming an opponent), and the clause after the verse marker gives what the heart is persuaded of.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n62003019012",
+            "n62003020003"
+          ],
+          "choice": "\"说服\" (L); \"使……安稳下来\" (B); \"平静下来\" (R); \"定……罪\" (L, B), \"指控\" (R)",
+          "alternatives": [
+            "安慰",
+            "责备"
+          ],
+          "reason": "Peithō here is to reassure (meaning decision m2), and the heart is the conscience (m5). Literal keeps the root verb; the other levels say what it means, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6171,6 +7527,26 @@
           "L": "Возлюбленные, если сердце [наше] не осуждает нас, мы имеем дерзновение к Богу, \\v 22 и чего ни попросим, получаем от {{deity_pronoun:него|Него}}, потому что соблюдаем {{deity_pronoun:его|Его}} заповеди и делаем угодное перед {{deity_pronoun:ним|Ним}}.",
           "B": "Возлюбленные, если сердце не осуждает нас, мы можем смело приходить к Богу \\v 22 и получаем от {{deity_pronoun:него|Него}} всё, о чём просим, потому что соблюдаем {{deity_pronoun:его|Его}} заповеди и делаем то, что угодно {{deity_pronoun:ему|Ему}}.",
           "R": "Дорогие друзья, если сердце нас не обвиняет, мы можем приходить к Богу без страха. \\v 22 Мы получаем от {{deity_pronoun:него|Него}} всё, о чём просим, потому что исполняем {{deity_pronoun:его|Его}} заповеди и делаем то, что {{deity_pronoun:ему|Ему}} нравится."
+        },
+        "uk": {
+          "L": "Улюблені, якщо [наше] серце не осуджує нас, маємо відвагу перед Богом, \\v 22 і чого тільки просимо, отримуємо від {{deity_pronoun:нього|Нього}}, бо виконуємо {{deity_pronoun:його|Його}} заповіді і робимо те, що {{deity_pronoun:йому|Йому}} миле.",
+          "B": "Дорогі друзі, якщо наші серця нас не осуджують, ми можемо сміливо приходити до Бога, \\v 22 і отримуємо від {{deity_pronoun:нього|Нього}} все, чого просимо, бо виконуємо {{deity_pronoun:його|Його}} заповіді і робимо те, що {{deity_pronoun:йому|Йому}} до вподоби.",
+          "R": "Дорогі друзі, якщо наші серця нас не звинувачують, ми можемо приходити до Бога без страху. \\v 22 Ми отримуємо від {{deity_pronoun:нього|Нього}} все, чого просимо, бо слухаємося {{deity_pronoun:його|Його}} заповідей і робимо те, що {{deity_pronoun:йому|Йому}} подобається."
+        },
+        "ja": {
+          "L": "愛する者たちよ、もし心がわたしたちを責めないなら、わたしたちは神に対して確信を持っています。\\v 22 そして、願うものは何でも、神からいただきます。わたしたちが神の命令を守り、神の前で喜ばれることを行っているからです。",
+          "B": "愛する者たちよ、心がわたしたちを責めないなら、わたしたちは確信をもって神に近づくことができます。\\v 22 そして、願うものは何でも神からいただけます。わたしたちが神の命令を守り、神に喜ばれることを行っているからです。",
+          "R": "愛するみなさん、もし心がわたしたちを責めないなら、わたしたちは恐れずに神のところに行くことができます。\\v 22 わたしたちが願うものは何でも、神からいただけます。わたしたちが神の命令に従い、神に喜ばれることをしているからです。"
+        },
+        "id": {
+          "L": "Saudara-saudaraku yang kekasih, jika hati kita tidak menuduh kita, kita mempunyai keberanian untuk mendekati Allah, \\v 22 dan apa saja yang kita minta, kita menerimanya dari-{{deity_pronoun:nya|Nya}}, karena kita menuruti perintah-perintah-{{deity_pronoun:nya|Nya}} dan melakukan apa yang berkenan kepada-{{deity_pronoun:nya|Nya}}.",
+          "B": "Saudara-saudaraku yang kukasihi, jika hati kita tidak menuduh kita, kita dapat menghampiri Allah dengan berani, \\v 22 dan apa saja yang kita minta, kita terima dari-{{deity_pronoun:nya|Nya}}, karena kita menuruti perintah-perintah-{{deity_pronoun:nya|Nya}} dan melakukan apa yang berkenan kepada-{{deity_pronoun:nya|Nya}}.",
+          "R": "Saudara-saudara yang saya kasihi, kalau hati kita tidak menuduh kita, kita dapat datang kepada Allah tanpa rasa takut. \\v 22 Kita menerima dari-{{deity_pronoun:nya|Nya}} apa saja yang kita minta, karena kita menaati perintah-perintah-{{deity_pronoun:nya|Nya}} dan melakukan apa yang menyenangkan hati-{{deity_pronoun:nya|Nya}}."
+        },
+        "zh": {
+          "L": "蒙爱的人哪，[我们的]心若不定我们的罪，我们对{{god_term:神|上帝}}就有胆量，\\v 22 并且我们无论求什么，都从{{deity_pronoun:他|祂}}那里得着，因为我们持守{{deity_pronoun:他|祂}}的命令，并且做在{{deity_pronoun:他|祂}}面前蒙喜悦的事。",
+          "B": "亲爱的朋友们，如果我们的心不定我们的罪，我们就可以放胆来到{{god_term:神|上帝}}面前，\\v 22 并且我们无论求什么，都会从{{deity_pronoun:他|祂}}那里得到，因为我们正在遵守{{deity_pronoun:他|祂}}的命令，做{{deity_pronoun:他|祂}}看为喜悦的事。",
+          "R": "亲爱的朋友们，如果我们的心不指控我们，我们就可以来到{{god_term:神|上帝}}面前，不必害怕。\\v 22 我们无论求什么，都会从{{deity_pronoun:他|祂}}那里得到，因为我们听从{{deity_pronoun:他|祂}}的命令，做{{deity_pronoun:他|祂}}喜欢的事。"
         }
       },
       "decisions": [
@@ -6353,6 +7729,69 @@
           "reason": "As at 2:28: the freedom to come to God and speak openly (meaning decision m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n62003021008",
+            "n62003022005"
+          ],
+          "choice": "\"確信\" (L, B), \"恐れずに\" (R); \"いただく\" for receiving from God",
+          "alternatives": [],
+          "reason": "As at 2:28, the confidence is the freedom of God's children before him (m1). Receiving from God takes the humble \"いただく\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n62003021008"
+          ],
+          "choice": "\"胆量\" (L); \"放胆来到神面前\" (B); \"来到神面前，不必害怕\" (R)",
+          "alternatives": [
+            "坦然无惧"
+          ],
+          "reason": "Parrēsia as in 2:28: the freedom to come to God and speak openly (meaning decision m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n62003022010",
+            "n62003022012"
+          ],
+          "choice": "\"命令\"; \"持守\" (L), \"遵守\" (B), \"听从\" (R)",
+          "alternatives": [
+            "诫命"
+          ],
+          "reason": "The forms set at 2:3, one through the letter.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6442,6 +7881,26 @@
           "L": "И это {{deity_pronoun:его|Его}} заповедь: чтобы мы верили имени Сына {{deity_pronoun:его|Его}} Иисуса {{christos:Христа|Мессии}} и любили друг друга, как {{deity_pronoun:он|Он}} дал нам заповедь.",
           "B": "Вот что заповедует Бог: чтобы мы верили в имя {{deity_pronoun:его|Его}} Сына Иисуса {{christos:Христа|Мессии}} и любили друг друга, по заповеди, которую {{deity_pronoun:он|Он}} нам дал.",
           "R": "И вот что Бог заповедует нам: верить в {{deity_pronoun:его|Его}} Сына Иисуса {{christos:Христа|Мессию}} и любить друг друга, как {{deity_pronoun:он|Он}} заповедал нам."
+        },
+        "uk": {
+          "L": "І це {{deity_pronoun:його|Його}} заповідь: щоб ми вірили в імʼя {{deity_pronoun:його|Його}} Сина Ісуса {{christos:Христа|Месії}} і любили одне одного, як {{deity_pronoun:він|Він}} дав нам заповідь.",
+          "B": "Ось що заповідає Бог: щоб ми вірили в імʼя {{deity_pronoun:його|Його}} Сина Ісуса {{christos:Христа|Месії}} і любили одне одного, як {{deity_pronoun:він|Він}} нам заповів.",
+          "R": "І ось що Бог заповідає нам робити: вірити в {{deity_pronoun:його|Його}} Сина Ісуса {{christos:Христа|Месію}} і любити одне одного, як {{deity_pronoun:він|Він}} нам заповів."
+        },
+        "ja": {
+          "L": "そして、その方の命令とはこれです。わたしたちがその方の御子イエス・{{christos:キリスト|メシア}}の名を信じ、その方がわたしたちに命令を与えられたとおりに、互いに愛し合うことです。",
+          "B": "神の命令とは、わたしたちが御子イエス・{{christos:キリスト|メシア}}の名を信じ、神が命じられたとおりに、互いに愛し合うことです。",
+          "R": "神がわたしたちに命じておられるのは、こういうことです。神の子イエス・{{christos:キリスト|メシア}}を信じること、そして、神が命じられたとおりに、互いに愛し合うことです。"
+        },
+        "id": {
+          "L": "Dan inilah perintah-{{deity_pronoun:nya|Nya}}, yaitu supaya kita percaya akan nama Anak-{{deity_pronoun:nya|Nya}}, Yesus {{christos:Kristus|Mesias}}, dan supaya kita saling mengasihi, sama seperti {{deity_pronoun:dia|Dia}} telah memberikan perintah itu kepada kita.",
+          "B": "Dan inilah perintah-{{deity_pronoun:nya|Nya}}: supaya kita percaya kepada nama Anak-{{deity_pronoun:nya|Nya}}, Yesus {{christos:Kristus|Sang Mesias}}, dan supaya kita saling mengasihi, sesuai dengan perintah yang telah Allah berikan kepada kita.",
+          "R": "Dan inilah yang Allah perintahkan kepada kita: percaya kepada Anak-{{deity_pronoun:nya|Nya}}, Yesus {{christos:Kristus|Sang Mesias}}, dan saling mengasihi, seperti yang telah {{deity_pronoun:dia|Dia}} perintahkan kepada kita."
+        },
+        "zh": {
+          "L": "并且这就是{{deity_pronoun:他|祂}}的命令：就是我们要信{{deity_pronoun:他|祂}}的儿子耶稣{{christos:基督|弥赛亚}}的名，并且要彼此相爱，正如{{deity_pronoun:他|祂}}给了我们[这]命令。",
+          "B": "{{god_term:神|上帝}}所命令的就是：要我们信{{deity_pronoun:他|祂}}的儿子耶稣{{christos:基督|弥赛亚}}的名，并且彼此相爱，遵照{{deity_pronoun:他|祂}}给我们的命令。",
+          "R": "{{god_term:神|上帝}}命令我们做的就是：信{{deity_pronoun:他|祂}}的儿子耶稣{{christos:基督|弥赛亚}}，并且彼此相爱，正如{{deity_pronoun:他|祂}}所吩咐我们的。"
         }
       },
       "decisions": [
@@ -6739,6 +8198,67 @@
           "reason": "The key verb \"верить\" at every level, as settled in John and Romans. Readable says \"верить в Сына\", since the name stands for the person.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n62003023006",
+            "n62003023020"
+          ],
+          "choice": "\"その方\" (L); \"神\" (B, R)",
+          "alternatives": [],
+          "reason": "The command and the Son are God's (m3); Balanced and Readable name him, as the English does. Literal keeps the pronoun as \"その方\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n62003023008",
+            "n62003023010"
+          ],
+          "choice": "\"名を信じる\" (L, B); \"……を信じる\" (R)",
+          "alternatives": [],
+          "reason": "To believe the name is to accept what his name says he is (m1). Readable leaves out \"name\", as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n62003023008",
+            "n62003023010"
+          ],
+          "choice": "\"信……的名\" (L, B); \"信……\" (R)",
+          "alternatives": [
+            "信入……的名"
+          ],
+          "reason": "The Greek has believe with a plain dative here, not believe into (5:10, 13), so Literal has \"信\", not \"信入\". Readable says \"信祂的儿子\", since the name stands for the person (meaning decision m1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6833,6 +8353,26 @@
           "L": "И соблюдающий {{deity_pronoun:его|Его}} заповеди пребывает в {{deity_pronoun:нём|Нём}}, и {{deity_pronoun:он|Он}} в нём; и по этому мы знаем, что {{deity_pronoun:он|Он}} пребывает в нас: по Духу, которого {{deity_pronoun:он|Он}} дал нам.",
           "B": "Те, кто соблюдает {{deity_pronoun:его|Его}} заповеди, пребывают в Боге, и Бог пребывает в них. Мы можем быть уверены, что {{deity_pronoun:он|Он}} пребывает в нас, благодаря Духу, которого {{deity_pronoun:он|Он}} нам дал.",
           "R": "Те, кто исполняет Божьи заповеди, остаются в Боге, и Бог остаётся в них. А то, что Бог остаётся в нас, мы знаем по Духу, которого Бог дал нам."
+        },
+        "uk": {
+          "L": "І хто виконує {{deity_pronoun:його|Його}} заповіді, той перебуває в {{deity_pronoun:ньому|Ньому}}, і {{deity_pronoun:він|Він}} у ньому; і з цього ми знаємо, що {{deity_pronoun:він|Він}} перебуває в нас: з Духа, якого {{deity_pronoun:він|Він}} нам дав.",
+          "B": "Ті, хто виконує {{deity_pronoun:його|Його}} заповіді, перебувають у Бозі, і Бог перебуває в них. Ми можемо бути певні, що {{deity_pronoun:він|Він}} перебуває в нас, завдяки Духові, якого {{deity_pronoun:він|Він}} нам дав.",
+          "R": "Ті, хто слухається Божих заповідей, залишаються в Бозі, і Бог залишається в них. Ми знаємо, що Бог залишається в нас, завдяки Духові, якого Бог нам дав."
+        },
+        "ja": {
+          "L": "そして、その方の命令を守る者は、その方のうちにとどまり、その方もその人のうちに[とどまられます]。そして、その方がわたしたちのうちにとどまっておられることを、わたしたちはこれによって、すなわち、その方がわたしたちに与えてくださった霊によって知ります。",
+          "B": "神の命令を守る人は神のうちにとどまり、神もその人のうちにとどまってくださいます。神がわたしたちのうちにとどまっておられることは、神が与えてくださった霊によってわかるのです。",
+          "R": "神の命令に従う人は神のうちにとどまり、神もその人のうちにとどまってくださいます。神がわたしたちのうちにとどまっておられることは、神がわたしたちに与えてくださった聖霊によってわかります。"
+        },
+        "id": {
+          "L": "Dan barang siapa menuruti perintah-perintah-{{deity_pronoun:nya|Nya}}, ia tetap tinggal di dalam {{deity_pronoun:dia|Dia}}, dan {{deity_pronoun:dia|Dia}} di dalam orang itu; dan dengan inilah kita tahu bahwa {{deity_pronoun:dia|Dia}} tinggal di dalam kita, yaitu oleh Roh yang telah {{deity_pronoun:dia|Dia}} berikan kepada kita.",
+          "B": "Siapa saja yang menuruti perintah-perintah-{{deity_pronoun:nya|Nya}} tetap tinggal di dalam Allah, dan Allah di dalam dia. Dan inilah tandanya bahwa Allah tinggal di dalam kita, yaitu Roh yang telah {{deity_pronoun:dia|Dia}} berikan kepada kita.",
+          "R": "Orang-orang yang menaati perintah-perintah Allah tetap tinggal di dalam Allah, dan Allah tinggal di dalam mereka. Roh yang telah Allah berikan kepada kita menunjukkan bahwa Allah tinggal di dalam kita."
+        },
+        "zh": {
+          "L": "并且那持守{{deity_pronoun:他|祂}}命令的人留在{{deity_pronoun:他|祂}}里面，{{deity_pronoun:他|祂}}也[留]在这人里面；并且借此我们知道{{deity_pronoun:他|祂}}留在我们里面：就是借着{{deity_pronoun:他|祂}}所赐给我们的圣灵。",
+          "B": "遵守{{deity_pronoun:他|祂}}命令的人留在{{god_term:神|上帝}}里面，{{god_term:神|上帝}}也留在他们里面。我们可以确定{{deity_pronoun:他|祂}}留在我们里面，是因为{{deity_pronoun:他|祂}}所赐给我们的圣灵。",
+          "R": "听从{{god_term:神|上帝}}命令的人留在{{god_term:神|上帝}}里面，{{god_term:神|上帝}}也留在他们里面。{{god_term:神|上帝}}所赐给我们的圣灵，使我们知道{{god_term:神|上帝}}留在我们里面。"
         }
       },
       "decisions": [
@@ -7019,6 +8559,44 @@
           "choice": "\"आत्मा\", with masculine agreement (\"दिया\")",
           "alternatives": [],
           "reason": "The Holy Spirit (meaning decision m2), named \"आत्मा\" at every level, with masculine agreement as the style guide sets for the Spirit as a person.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n62003024024"
+          ],
+          "choice": "\"霊\" (L, B); \"聖霊\" (R), through the letter",
+          "alternatives": [],
+          "reason": "As the letters' terms set it: the Holy Spirit, first named in the letter here (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n62003024011"
+          ],
+          "choice": "\"とどまられる\" / \"とどまってくださる\" / \"とどまっておられる\" for God's remaining",
+          "alternatives": [],
+          "reason": "God's remaining in the believer takes a light respect form, as God's actions do in the letters.",
           "uncertain": false,
           "footnote": false
         }

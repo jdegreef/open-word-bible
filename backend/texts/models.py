@@ -23,6 +23,8 @@ class Edition(models.Model):
     attribution = models.TextField(blank=True)
     imported_at = models.DateTimeField(auto_now=True)
     verse_count = models.PositiveIntegerField(default=0, help_text="Verses loaded, kept by import_texts")
+    loader_version = models.PositiveIntegerField(
+        default=1, help_text="import_texts.LOADER_VERSION when it was loaded; a newer one reloads it")
 
     class Meta:
         ordering = ["kind", "language", "code"]
@@ -69,7 +71,9 @@ class Word(models.Model):
     lang = models.CharField(max_length=3, blank=True, help_text="grc, H (Hebrew) or A (Aramaic)")
 
     class Meta:
-        indexes = [models.Index(fields=["book", "chapter", "verse"])]
+        # strong: the admin's key terms and consistency look words up by it.
+        indexes = [models.Index(fields=["book", "chapter", "verse"]),
+                   models.Index(fields=["strong"], name="word_strong")]
         ordering = ["seq"]
 
     def __str__(self):

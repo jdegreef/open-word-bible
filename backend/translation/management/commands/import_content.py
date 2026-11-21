@@ -1,7 +1,7 @@
 """Load the sentence records in content/ into the database.
 
     python manage.py import_content
-    python manage.py import_content --if-texts-loaded --budget 900   # every deploy
+    python manage.py import_content --if-texts-loaded --budget 900 --deadline $END   # every deploy
     python manage.py import_content --all               # every file, all of search
 
 Every record is checked first with owb.validate against the words already in
@@ -24,6 +24,14 @@ are left for the next run, so a deploy after a big change (or the first one,
 with no digests yet) still finishes, and the next deploys catch up.
 --search-budget SECONDS does the same for the search update below: no
 language is started once that long has passed since the command began.
+--deadline EPOCH_SECONDS is a hard end for the whole command, whatever a
+merge changed: no file is started after it, and a search language's update
+writes no batch of entries that would end after it (search.rebuild). Render
+stops a pre-deploy command after 30 minutes, counted from before migrate,
+and a language started just inside --search-budget could still need longer
+than what was left (Indonesian, the newest and last, after its first fifty
+books: deploys failed at Render's limit). What is left waits for the next
+deploy, and languages left behind go first then (search.order).
 With --separate-processes each language is updated by a process of its own
 (update_search), which a deploy needs to stay within the API's 512 MB.
 
@@ -31,7 +39,10 @@ Each run is recorded (ImportRun), so the admin's health page can show
 when content/ last reached the database and what failed. So is each
 rendering it changed, added or removed in a sentence already drafted in that
 language (SentenceChange, the admin's Changes page); sentences drafted in a
-language for the first time are only counted (ImportRun.drafted).
+language for the first time are counted (ImportRun.drafted) and listed
+(RecordChange), as is each decision it added, changed or removed in a
+sentence already drafted (the admin's release notes, staff/history.py).
+Neither touches a sentence's review status.
 
 Afterwards the search tables are brought up to date (translation/search.py)
 from all of content/ and articles/, whichever files were imported: only the
@@ -40,6 +51,7 @@ entries whose documents changed are rewritten, or all of them with --all.
 import hashlib
 import json
 import time
+from collections import Counter
 from pathlib import Path
 
 from django.conf import settings
@@ -48,13 +60,17 @@ from django.db import transaction
 
 from owb import refs, validate
 from texts.models import Edition, Word
-from translation import search
-from translation.models import ContentFile, Decision, ImportRun, Rendering, Sentence, SentenceChange
+from translation import counts, search
+from translation.models import ContentFile, Decision, ImportRun, RecordChange, Rendering, Sentence, SentenceChange
 
-TEXT_ID_EDITION = {"SBLGNT@v1.2": "sblgnt", "WLC@macula-hebrew": "wlc"}
+# Romans 16:25-27 come from Nestle 1904 (owb/sources/macula_greek.py); import_texts
+# loads their verses and words into the sblgnt edition with the rest of the Greek.
+TEXT_ID_EDITION = {"SBLGNT@v1.2": "sblgnt", "Nestle1904@macula-greek": "sblgnt", "WLC@macula-hebrew": "wlc"}
 # Raise when save() or validate_records() changes what they do with a file,
 # so the next deploy imports every file again.
 IMPORT_VERSION = 1
+# What a change to a decision is noted by (RecordChange), as staff/snapshot.py keeps them.
+DECISION_FIELDS = ("category", "levels", "tokens", "choice", "alternatives", "reason", "uncertain", "footnote")
 
 
 class Command(BaseCommand):
@@ -71,21 +87,26 @@ class Command(BaseCommand):
         parser.add_argument("--search-budget", type=float, metavar="SECONDS",
                             help="Start updating no search language after this long (from the start); "
                                  "the rest wait for the next run")
+        parser.add_argument("--deadline", type=float, metavar="EPOCH_SECONDS",
+                            help="Start no file, and write no search entries, after this time "
+                                 "(seconds since 1970, as date +%%s gives); the rest wait for the next run")
         parser.add_argument("--separate-processes", action="store_true",
                             help="Update each search language in a process of its own (update_search)")
 
     def handle(self, *args, paths, if_texts_loaded=False, everything=False, budget=None, search_budget=None,
-               separate_processes=False, **options):
-        started = time.monotonic()
+               deadline=None, separate_processes=False, **options):
+        started = time.time()
         if if_texts_loaded and not Word.objects.exists():
             self.stdout.write("No source texts in the database yet; run import_texts, "
                               "then import_content. Nothing imported.")
             return
         self.run = ImportRun.objects.create(everything=everything)
         try:
-            self.import_files(paths, if_texts_loaded, everything, budget, started)
+            files_until = min(t for t in (None if budget is None else started + budget, deadline, float("inf"))
+                              if t is not None)
+            self.import_files(paths, if_texts_loaded, everything, files_until)
             self.update_search(everything, None if search_budget is None else started + search_budget,
-                               separate_processes)
+                               deadline, separate_processes)
         except CommandError as e:
             self.run.finish(error=str(e))
             raise
@@ -94,7 +115,7 @@ class Command(BaseCommand):
             raise
         self.run.finish()
 
-    def import_files(self, paths, if_texts_loaded, everything, budget, started):
+    def import_files(self, paths, if_texts_loaded, everything, until):
         files = paths or sorted(str(p) for p in (settings.REPO_ROOT / "content").glob("*/*.json"))
         if not files:
             raise CommandError("No content files found")
@@ -111,7 +132,7 @@ class Command(BaseCommand):
             if not everything and imported.get(name) == digest:
                 unchanged += 1
                 continue
-            if budget is not None and time.monotonic() - started > budget:
+            if time.time() > until:
                 left = files[i:]
                 break
             records = json.loads(data.decode("utf-8"))["records"]
@@ -139,17 +160,23 @@ class Command(BaseCommand):
         self.run.unchanged = unchanged
         self.stdout.write(f"{total} records imported" + (f"; {unchanged} files unchanged" if unchanged else ""))
         if left:
-            message = (f"Budget of {budget:.0f} s used up: {len(left)} file(s) left for the next "
+            message = (f"Time budget used up: {len(left)} file(s) left for the next "
                        f"run, from {left[0]}")
             self.stdout.write(message)
             self.run.skipped.append(message)
         self.stdout.flush()
 
-    def update_search(self, everything, until, separate):
+    def update_search(self, everything, until, stop, separate):
         self.stdout.flush()   # before the subprocesses write theirs
-        changes = search.rebuild(full=everything, until=until, separate=separate)
+        changes = search.rebuild(full=everything, until=until, separate=separate, stop=stop)
         self.stdout.write("search: " + ", ".join(
-            f"{lang} {c.entries} (+{c.added} -{c.removed})" for lang, c in changes.items()))
+            f"{lang} {c.entries} (+{c.added} -{c.removed}" + (f", {c.left} left" if c.left else "") + ")"
+            for lang, c in changes.items()))
+        part = [f"{lang} ({c.left} entries)" for lang, c in changes.items() if c.left]
+        if part:
+            message = f"Search deadline reached part way: {', '.join(part)} left for the next run"
+            self.stdout.write(message)
+            self.run.skipped.append(message)
         left = [lang for lang in search.site_build().LANGUAGES if lang not in changes]
         if left:
             message = f"Search budget used up: {', '.join(left)} left for the next run"
@@ -190,13 +217,15 @@ class Command(BaseCommand):
 
     def record_changes(self, records):
         """Note what this file changes in the renderings already in the
-        database, in one query, before save() replaces them."""
+        database, in one query, before save() replaces them. Returns those
+        renderings, {record id: {language: {level: text}}}."""
         before = {}
         for rid, lang, level, text in (Rendering.objects.filter(sentence__record_id__in=[r["id"] for r in records])
                                        .values_list("sentence__record_id", "language", "level", "text")):
             before.setdefault(rid, {}).setdefault(lang, {})[level] = text
         Kind = SentenceChange.Kind
         changes = []
+        others = self.decision_changes(records, before)
         for record in records:
             first = refs.parse(record["refs"][0])
             was = before.get(record["id"], {})
@@ -205,6 +234,10 @@ class Command(BaseCommand):
                 if not was.get(lang):
                     drafted = self.run.drafted.setdefault(first.book, {})
                     drafted[lang] = drafted.get(lang, 0) + 1
+                    others.append(RecordChange(run=self.run, record_id=record["id"],
+                                               verse=f"{first.book}.{first.chapter}.{first.verse}",
+                                               book=first.book, chapter=first.chapter, language=lang,
+                                               kind=RecordChange.Kind.DRAFTED))
                     continue
                 for level, text in levels.items():
                     if level not in was[lang]:
@@ -221,11 +254,54 @@ class Command(BaseCommand):
                                        before=old, after=new)
                         for lang, level, kind, old, new in found]
         SentenceChange.objects.bulk_create(changes, batch_size=2000)
+        RecordChange.objects.bulk_create(others, batch_size=2000)
+        return before
+
+    def decision_changes(self, records, renderings):
+        """The decisions this file adds, changes or removes in sentences
+        already in the database: meaning decisions in any such sentence, and
+        rendering decisions in a language it was already drafted in
+        (renderings: {record id: {language: {level: text}}} before the
+        import). A sentence new to a language is listed as drafted instead."""
+        ids = [r["id"] for r in records]
+        before = {}
+        for row in Decision.objects.filter(sentence__record_id__in=ids).values("sentence__record_id", "key",
+                                                                                "language", *DECISION_FIELDS):
+            before.setdefault(row["sentence__record_id"], {})[row["key"]] = (
+                row["language"], {f: row[f] for f in DECISION_FIELDS})
+        existing = set(Sentence.objects.filter(record_id__in=ids).values_list("record_id", flat=True))
+        Kind = RecordChange.Kind
+        out = []
+        for record in records:
+            if record["id"] not in existing:
+                continue
+            first = refs.parse(record["refs"][0])
+            drafted = renderings.get(record["id"], {})
+            was = before.get(record["id"], {})
+            now = {d["id"]: (d["language"] or "" if d["layer"] == "rendering" else "",
+                             {**{f: d.get(f) for f in DECISION_FIELDS}, "levels": d.get("levels", [])})
+                   for d in record["decisions"]}
+            for key in sorted(was.keys() | now.keys()):
+                lang, old = was.get(key, (None, {}))
+                lang_now, new = now.get(key, (lang, {}))
+                lang = lang_now if lang is None else lang
+                if old == new or (lang and not drafted.get(lang)):
+                    continue
+                kind = Kind.DECISION_CHANGED if old and new else Kind.DECISION_ADDED if new else Kind.DECISION_REMOVED
+                out.append(RecordChange(run=self.run, record_id=record["id"],
+                                        verse=f"{first.book}.{first.chapter}.{first.verse}", book=first.book,
+                                        chapter=first.chapter, language=lang, kind=kind, key=key,
+                                        before=old, after=new))
+        return out
 
     def save(self, records, editions):
         """Save one file's records, a handful of queries for the whole file."""
         records = list({r["id"]: r for r in records}.values())
-        self.record_changes(records)
+        was = self.record_changes(records)
+        # The drafted counts (DraftedCount) change by what this file adds or
+        # drops; what was there comes from record_changes' one query.
+        before = Counter((refs.parse(record["refs"][0]).book, lang) for record in records
+                         for lang, levels in was.get(record["id"], {}).items() if levels)
         sentences = []
         for record in records:
             first = refs.parse(record["refs"][0])
@@ -260,3 +336,6 @@ class Command(BaseCommand):
                       uncertain=d["uncertain"], footnote=d["footnote"])
              for sentence, record in zip(sentences, records) for i, d in enumerate(record["decisions"])),
             batch_size=2000)
+        after = Counter((sentence.book, lang) for sentence, record in zip(sentences, records)
+                        for lang, levels in record["renderings"].items() if levels)
+        counts.apply({key: after[key] - before[key] for key in after.keys() | before.keys()})

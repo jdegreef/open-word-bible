@@ -10,8 +10,6 @@ Kinh Thánh có một danh riêng cho Đức Chúa Trời, bốn chữ cái thư
 
 Mỗi danh hiệu nói lên một điều khác nhau, và mỗi danh hiệu đặt ra cho người dịch một vấn đề riêng. Có danh hiệu nghĩa rất rõ. Có danh hiệu không ai chắc nghĩa là gì. Có những danh hiệu trông giống nhau trong bản dịch nhưng lại là những từ khác nhau trong tiếng Hê-bơ-rơ. Bài này lần lượt điểm qua những danh hiệu chính. Bản thân danh riêng của Đức Chúa Trời, và việc chọn giữa “CHÚA”, “Gia-vê” hay những cách dịch khác, có một bài viết riêng: xem [Danh của Đức Chúa Trời trong bản dịch](/articles/the-divine-name-in-translation/).
 
-Phần lớn các đoạn Cựu Ước dưới đây chưa được dịch sang tiếng Việt, nên khi bài này nói đến lời văn của các cấp độ, đó là lời văn của bản tiếng Anh, kèm nghĩa tiếng Việt.
-
 ## Elohim: một từ số nhiều cho một Đức Chúa Trời
 
 Câu đầu tiên của Kinh Thánh gọi Đức Chúa Trời bằng từ {{HEBREW:GEN.1.1:3}} (*ʾĕlōhîm*). Đó là từ thông thường trong tiếng Hê-bơ-rơ để chỉ Đức Chúa Trời, được dùng hàng nghìn lần. Về hình thức, nó cũng là một từ số nhiều.
@@ -33,9 +31,9 @@ Từ ngắn hơn *ʾēl* là từ thông thường chỉ “thần” trong ti�
 
 **El Shaddai, “Đức Chúa Trời Toàn Năng”.** Khi Đức Chúa Trời hiện ra với Áp-ram lúc ông chín mươi chín tuổi, Ngài phán: “Ta là {{HEBREW:GEN.17.1:15-16}}” (*ʾēl šadday*, Sáng Thế Ký 17:1). Đây là danh hiệu gắn với những lời hứa cho Áp-ra-ham, Y-sác và Gia-cốp (28:3; 35:11; 48:3). Trong Xuất Ai Cập Ký 6:3, Đức Chúa Trời phán với Môi-se rằng Ngài đã hiện ra với các tổ phụ “như Đức Chúa Trời Toàn Năng”. Chữ *Shaddai* đứng một mình xuất hiện nhiều lần trong sách Gióp và trong thi ca, như trong Thi Thiên 91:1: “dưới bóng của Đấng Toàn Năng”.
 
-Nghĩa của *Shaddai* là một trong những câu hỏi còn bỏ ngỏ của ngành nghiên cứu tiếng Hê-bơ-rơ. Chữ “Toàn Năng” bắt nguồn từ các bản dịch cổ bằng tiếng Hy Lạp và tiếng La-tinh. Một số học giả liên hệ từ này với một từ chỉ “núi”, và như vậy nó sẽ là “Đức Chúa Trời của núi”. Truyền thống Do Thái giải thích nó là “Đấng tự đầy đủ”. Những người khác đề xuất các gốc từ khác. Không cách giải thích nào là chắc chắn. Open Word Bible theo cách dịch truyền thống “Đức Chúa Trời Toàn Năng” (bản tiếng Anh: “God Almighty”) ở mọi cấp độ, nhưng các quyết định về nghĩa cho Sáng Thế Ký 17:1 và Xuất Ai Cập Ký 6:3 đều được đánh dấu là chưa chắc chắn, và các chú thích đưa ra những đề xuất khác. Bản ghi của Xuất Ai Cập Ký 6:3 nói thêm rằng đây là “một danh hiệu, không phải danh riêng của Đức Chúa Trời”.
+Nghĩa của *Shaddai* là một trong những câu hỏi còn bỏ ngỏ của ngành nghiên cứu tiếng Hê-bơ-rơ. Chữ “Toàn Năng” bắt nguồn từ các bản dịch cổ bằng tiếng Hy Lạp và tiếng La-tinh. Một số học giả liên hệ từ này với một từ chỉ “núi”, và như vậy nó sẽ là “Đức Chúa Trời của núi”. Truyền thống Do Thái giải thích nó là “Đấng tự đầy đủ”. Những người khác đề xuất các gốc từ khác. Không cách giải thích nào là chắc chắn. Open Word Bible theo cách dịch truyền thống “Đức Chúa Trời Toàn Năng” ở mọi cấp độ, nhưng các quyết định về nghĩa cho Sáng Thế Ký 17:1 và Xuất Ai Cập Ký 6:3 đều được đánh dấu là chưa chắc chắn, và các chú thích đưa ra những đề xuất khác. Bản ghi của Xuất Ai Cập Ký 6:3 nói thêm rằng đây là “một danh hiệu, không phải danh riêng của Đức Chúa Trời”.
 
-**El Olam, “Đức Chúa Trời Đời Đời”.** Tại Bê-e-Sê-ba, Áp-ra-ham “kêu cầu danh CHÚA, {{HEBREW:GEN.21.33:9-10}}” (*ʾēl ʿôlām*, Sáng Thế Ký 21:33). *Olam* có nghĩa là một thời gian không có giới hạn. Bản tiếng Anh ở cấp độ Cân bằng nói “God Everlasting” (“Đức Chúa Trời Đời Đời”), và ở cấp độ Dễ đọc “the God who lives forever” (“Đức Chúa Trời hằng sống đời đời”).
+**El Olam, “Đức Chúa Trời Đời Đời”.** Tại Bê-e-Sê-ba, Áp-ra-ham “kêu cầu danh CHÚA, {{HEBREW:GEN.21.33:9-10}}” (*ʾēl ʿôlām*, Sáng Thế Ký 21:33). *Olam* có nghĩa là một thời gian không có giới hạn. Cấp độ Cân bằng nói “Đức Chúa Trời Đời Đời”, và cấp độ Dễ đọc “Đức Chúa Trời hằng sống đời đời”.
 
 **El Roi, “Đức Chúa Trời thấy”.** A-ga, một mình trong hoang mạc, là người duy nhất trong Kinh Thánh đặt tên cho Đức Chúa Trời. Bà gọi Ngài là “một Đức Chúa Trời thấy” (Sáng Thế Ký 16:13). Bản ghi lưu ý rằng câu này có thể có nghĩa là “Đức Chúa Trời thấy tôi” hoặc “Đức Chúa Trời mà tôi đã thấy”, và dòng tiếp theo khó đến nỗi một chú thích đưa ra hai cách đọc khác.
 
@@ -51,11 +49,11 @@ Trong khải tượng của Ê-sai, “Tôi thấy Chúa ngồi trên ngai” (�
 
 ## “Chúa tôi” trong Thi Thiên 110
 
-Sự khác biệt giữa *Adonai* và từ thông thường chỉ người chủ quan trọng nhất ở Thi Thiên 110:1, câu Cựu Ước được Tân Ước trích dẫn nhiều nhất. Cấp độ Cân bằng của chúng tôi, trong bản tiếng Anh, là:
+Sự khác biệt giữa *Adonai* và từ thông thường chỉ người chủ quan trọng nhất ở Thi Thiên 110:1, câu Cựu Ước được Tân Ước trích dẫn nhiều nhất. Cấp độ Cân bằng của chúng tôi là:
 
 > {{OWB:PSA.110.1.s1:B}}
 
-Bản ghi giải thích rằng chữ “lord” thứ hai không phải là *Adonai* mà là *ʾădōnî*, cách thông thường để thưa với một người bề trên, nhất là một vị vua. Bản Hê-bơ-rơ ghi dấu nguyên âm cho từ này khác với danh hiệu dùng cho Đức Chúa Trời ở câu 5. Vì vậy, bản tiếng Anh viết “my lord” bằng chữ thường, và cấp độ Dễ đọc nói “my lord the king” (“chúa tôi là vua”), để không ai hiểu nhầm là Đức Chúa Trời.
+Bản ghi giải thích rằng chữ “chúa” thứ hai không phải là *Adonai* mà là *ʾădōnî*, cách thông thường để thưa với một người bề trên, nhất là một vị vua. Bản Hê-bơ-rơ ghi dấu nguyên âm cho từ này khác với danh hiệu dùng cho Đức Chúa Trời ở câu 5. Vì vậy, các bản nháp viết “chúa tôi” bằng chữ thường, và cấp độ Dễ đọc nói “vua là chúa tôi”, để không ai hiểu nhầm là Đức Chúa Trời.
 
 Tuy nhiên, trong tiếng Hy Lạp, cả hai từ đều trở thành *kyrios*, “Chúa”. Khi Đức Giê-xu trích dẫn thi thiên này, Ngài hỏi tại sao Đa-vít lại có thể gọi con cháu của chính mình là “Chúa” (Ma-thi-ơ 22:41–45). Ở đây các bản nháp viết “Chúa phán với Chúa của tôi”, cả hai đều viết hoa, vì sách Phúc Âm đọc thi thiên này như nói về Đấng Mê-si-a. Một quyết định về nghĩa cho Ma-thi-ơ 22:44 giải thích: chữ “Chúa” thứ nhất thay cho danh riêng của Đức Chúa Trời, “Chúa của tôi” thay cho một từ Hê-bơ-rơ khác dùng cho một người chủ hay một vị vua, và “trong tiếng Hy Lạp, cả hai đều là ‘Chúa’”. Cấp độ Dễ đọc tiếng Việt phân biệt hai Đấng bằng cách nói “Chúa là Đức Chúa Trời phán với Chúa của tôi”. Cùng một câu được dịch theo hai cách ở hai chỗ, và các bản ghi nói rõ lý do.
 
@@ -65,7 +63,7 @@ Danh hiệu {{LEMMA:1SA.1.3:9.2}} {{HEBREW:1SA.1.3:10}} (*YHWH ṣəbāʾôt*) x
 
 Quyết định về nghĩa cho 1 Sa-mu-ên 1:3 giải thích từ này. *Ṣəbāʾôt* là số nhiều của một từ chỉ đạo quân, một đoàn đông đảo dàn thành hàng ngũ. Từ này được dùng cho các đạo quân của Y-sơ-ra-ên, cho mặt trời, mặt trăng và các ngôi sao, và cho các thiên binh quanh ngai Đức Chúa Trời. Khi ghép với danh của Đức Chúa Trời, nó trình bày CHÚA là Vua chỉ huy mọi quyền lực trên trời và dưới đất. Bản ghi liên hệ danh hiệu này trong sách Sa-mu-ên với hòm giao ước, “ngự trên các chê-ru-bim”, và với Đa-vít, người ra đối đầu với Gô-li-át nhân danh CHÚA vạn quân, Đức Chúa Trời của các đạo quân Y-sơ-ra-ên (17:45).
 
-Các lựa chọn chính trong tiếng Anh được điểm qua trong bài [Danh của Đức Chúa Trời trong bản dịch](/articles/the-divine-name-in-translation/). Bản tiếng Anh của Open Word Bible ở cấp độ Sát nghĩa giữ cách nói truyền thống “the LORD of hosts”. Cấp độ Cân bằng và Dễ đọc nói “the LORD of Armies” (“CHÚA của các đạo quân”). Quyết định về cách diễn đạt nêu lý do: ngày nay chữ “hosts” trong tiếng Anh thường có nghĩa là người tiếp đón khách, còn “Armies” nói rõ ý nghĩa mà vẫn giữ hình ảnh một vị chỉ huy. Chữ “Almighty” (“Toàn Năng”) đã được cân nhắc rồi bỏ qua, vì nó biến hình ảnh ấy thành một phẩm chất trừu tượng. Khải tượng của Ê-sai, ở cấp độ Cân bằng tiếng Anh, là:
+Các lựa chọn chính trong tiếng Anh được điểm qua trong bài [Danh của Đức Chúa Trời trong bản dịch](/articles/the-divine-name-in-translation/). Bản tiếng Anh của Open Word Bible ở cấp độ Sát nghĩa giữ cách nói truyền thống “the LORD of hosts”. Cấp độ Cân bằng và Dễ đọc nói “the LORD of Armies” (“CHÚA của các đạo quân”). Quyết định về cách diễn đạt nêu lý do: ngày nay chữ “hosts” trong tiếng Anh thường có nghĩa là người tiếp đón khách, còn “Armies” nói rõ ý nghĩa mà vẫn giữ hình ảnh một vị chỉ huy. Chữ “Almighty” (“Toàn Năng”) đã được cân nhắc rồi bỏ qua, vì nó biến hình ảnh ấy thành một phẩm chất trừu tượng. Khải tượng của Ê-sai, ở cấp độ Cân bằng, là:
 
 > {{OWB:ISA.6.3.s1:B}}
 

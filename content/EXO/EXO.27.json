@@ -86,6 +86,26 @@
           "L": "И сделай жертвенник из дерева акации: пять локтей длина и пять локтей ширина; квадратным пусть будет жертвенник, и три локтя высота его.",
           "B": "Сделай жертвенник из дерева акации. Он должен быть квадратным, {{units:около 2,25 метра|пять локтей}} с каждой стороны и {{units:около 1,35 метра|три локтя}} высотой.",
           "R": "Построй жертвенник для всесожжений из дерева акации. Сделай его квадратным, {{units:около 2,25 метра|пять локтей}} с каждой стороны и {{units:около 1,35 метра|три локтя}} высотой."
+        },
+        "ja": {
+          "L": "そしてアカシア材で祭壇を作りなさい。長さ五キュビト、幅五キュビト。祭壇は正方形で、その高さは三キュビトである。",
+          "B": "アカシア材で祭壇を作りなさい。祭壇は正方形とし、一辺{{units:約2.2メートル|五キュビト}}、高さ{{units:約1.3メートル|三キュビト}}としなさい。",
+          "R": "アカシアの木で、焼いてささげるいけにえのための祭壇を作りなさい。正方形にして、一辺を{{units:約2.2メートル|五キュビト}}、高さを{{units:約1.3メートル|三キュビト}}にしなさい。"
+        },
+        "uk": {
+          "L": "І зробиш жертовник з дерева акації, пʼять ліктів довжина і пʼять ліктів ширина; квадратним буде жертовник, і три лікті висота його.",
+          "B": "Зроби жертовник з дерева акації. Він має бути квадратним, {{units:близько 2,3 метра|пʼять ліктів}} з кожного боку й {{units:близько 1,4 метра|три лікті}} заввишки.",
+          "R": "Збудуй жертовник для всепалень з дерева акації. Зроби його квадратним, {{units:близько 2,3 метра|пʼять ліктів}} з кожного боку й {{units:близько 1,4 метра|три лікті}} заввишки."
+        },
+        "id": {
+          "L": "Dan engkau harus membuat mezbah dari kayu akasia, lima hasta panjangnya dan lima hasta lebarnya; mezbah itu harus persegi empat, dan tiga hasta tingginya.",
+          "B": "Buatlah mezbah dari kayu akasia. Mezbah itu harus persegi empat, {{units:sekitar 2,25 meter|lima hasta}} setiap sisinya dan {{units:sekitar 1,35 meter|tiga hasta}} tingginya.",
+          "R": "Buatlah mezbah untuk korban bakaran dari kayu akasia. Buatlah persegi empat, {{units:sekitar 2,25 meter|lima hasta}} setiap sisinya dan {{units:sekitar 1,35 meter|tiga hasta}} tingginya."
+        },
+        "zh": {
+          "L": "你要用金合欢木做坛，长五肘，宽五肘；坛要四四方方的，高三肘。",
+          "B": "要用金合欢木做祭坛。坛要四四方方的，每边长{{units:约2.2米|五肘}}，高{{units:约1.3米|三肘}}。",
+          "R": "要用金合欢木造一座祭坛，用来献全烧的祭。坛要做成四方形，每边长{{units:约2.2米|五肘}}，高{{units:约1.3米|三肘}}。"
         }
       },
       "decisions": [
@@ -278,6 +298,86 @@
           "reason": "The Pentateuch note fixes \"жертвенник\" for the altar; \"алтарь\" now names the sanctuary of a church building.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o020270010071",
+            "o020270010101",
+            "o020270010161"
+          ],
+          "choice": "Cubits in a units span, metric by default (about 45 centimeters to the cubit); Literal keeps \"キュビト\"",
+          "alternatives": [
+            "US units as in the English"
+          ],
+          "reason": "The Japanese units setting gives metric measures (style guide section 7).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o020270010031",
+            "o020270010032"
+          ],
+          "choice": "\"mezbah untuk korban bakaran\" (R)",
+          "alternatives": [],
+          "reason": "The bronze altar of burnt offering in the courtyard (m1); Readable names it, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o020270010071",
+            "o020270010101",
+            "o020270010161"
+          ],
+          "choice": "约2.2米; 约1.3米",
+          "alternatives": [],
+          "reason": "Metric measures by default, taking a cubit as about 45 centimetres, with the cubits in the units setting (Chinese numerals); the English gives feet. Literal keeps the cubits.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020270010031",
+            "o020270010032"
+          ],
+          "choice": "坛 (L), 祭坛 (B, R); 全烧的祭 (R)",
+          "alternatives": [],
+          "reason": "The bronze altar of burnt offering (m1). Literal says \"坛\" for the Hebrew's \"the altar\"; Balanced and Readable say \"祭坛\", the glossary's word, and Readable adds what it is for, with the glossary's Readable word for the burnt offering, \"全烧的祭\" (燔祭 at L and B).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -363,6 +463,26 @@
           "L": "И сделай рога его на четырёх углах его; из него пусть будут рога его; и обложи его медью.",
           "B": "На четырёх его углах сделай рога, составляющие одно целое с жертвенником, и обложи его медью.",
           "R": "На каждом из четырёх углов сделай выступ в форме рога, торчащий вверх. Эти рога должны быть частью самого жертвенника, а не отдельными кусками. Весь жертвенник покрой медью."
+        },
+        "ja": {
+          "L": "そしてその四隅にその角を作りなさい。その角はそれから[出ている]。そしてそれに青銅をかぶせなさい。",
+          "B": "祭壇の四隅には角を作り、角は祭壇と一体のものとしなさい。祭壇全体に青銅をかぶせなさい。",
+          "R": "祭壇の四つの隅に、上に突き出た角の形のものを作りなさい。この角は、別に作って付けるのではなく、祭壇そのものの一部にしなさい。祭壇全体に青銅をはりなさい。"
+        },
+        "uk": {
+          "L": "І зробиш роги його на чотирьох кутах його; з нього будуть роги його, і обкладеш його міддю.",
+          "B": "Зроби роги на чотирьох його кутах, щоб вони становили одне ціле з жертовником, і обклади його міддю.",
+          "R": "Зроби на кожному з чотирьох кутів виступ у формі рога. Ці роги мусять бути частиною самого жертовника, а не окремими частинами. Покрий увесь жертовник міддю."
+        },
+        "id": {
+          "L": "Dan engkau harus membuat tanduk-tanduknya pada keempat penjurunya; tanduk-tanduknya harus seiras dengan dia, dan engkau harus menyalutnya dengan tembaga.",
+          "B": "Buatlah tanduk-tanduk pada keempat sudutnya, yang menjadi satu dengan mezbah itu, dan salutlah seluruhnya dengan tembaga.",
+          "R": "Buatlah sebuah tonjolan berbentuk tanduk yang mencuat di setiap sudutnya. Tanduk-tanduk itu harus menjadi bagian dari mezbah itu sendiri, bukan potongan yang terpisah. Lapisilah seluruh mezbah itu dengan tembaga."
+        },
+        "zh": {
+          "L": "你要在坛的四个角上做它的角；角要与坛连在一块；你要用铜把坛包上。",
+          "B": "要在坛的四个角上做出角来，与坛连成一体，再用铜把整座坛包上。",
+          "R": "要在坛的四个角上各做一个向上突起的尖角。这些角必须是坛本身的一部分，不是另外安上去的。整座坛要用铜包起来。"
         }
       },
       "decisions": [
@@ -493,6 +613,72 @@
           "reason": "For the whole book: \"chifres\" keeps the Hebrew image of the horns at the corners (m1), which later passages name as the place for the blood and for refuge; \"pontas\" would lose it. Readable describes them, as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020270020021",
+            "o020270020022",
+            "o020270020061",
+            "o020270020062",
+            "o020270020071"
+          ],
+          "choice": "horns: \"角\" (L, B); \"上に突き出た角の形のもの\" (R)",
+          "alternatives": [],
+          "reason": "Points rising at the corners, of one piece with the altar (meaning decisions m1, m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020270020021",
+            "o020270020022",
+            "o020270020061",
+            "o020270020062",
+            "o020270020071"
+          ],
+          "choice": "\"tanduk-tanduk\" for the horns of the altar",
+          "alternatives": [],
+          "reason": "Points shaped like horns (m1), of one piece with the altar (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020270020021",
+            "o020270020022"
+          ],
+          "choice": "角 (L, B); 向上突起的尖角 (R)",
+          "alternatives": [],
+          "reason": "The horns of the altar keep their name \"角\" at Literal and Balanced; Readable describes them, as the English Readable does, and 29:12 and 30:2 follow.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -585,6 +771,26 @@
           "L": "И сделай горшки его для выноса пепла его с туком, и лопатки его, и чаши его, и вилки его, и угольницы его; все принадлежности его сделай из меди.",
           "B": "Сделай для него горшки, чтобы выносить пропитанный жиром пепел, а также лопатки, чаши, вилки и угольницы. Все его принадлежности сделай из меди.",
           "R": "Сделай горшки, чтобы выносить жирный пепел. Сделай также лопатки, чаши, вилки и совки, чтобы переносить горячие угли. Все эти принадлежности сделай из меди."
+        },
+        "ja": {
+          "L": "そしてその脂肪の灰を取り除くための壺と、そのシャベルと、その鉢と、そのフォークと、その火皿とを作りなさい。そのすべての器具を青銅で作りなさい。",
+          "B": "脂のしみ込んだ灰を取り除くための壺、またシャベル、鉢、フォーク、火皿を作りなさい。祭壇の器具は、すべて青銅で作りなさい。",
+          "R": "脂でよごれた灰を運び出すための壺を作りなさい。また、シャベル、鉢、肉をさすフォーク、燃える炭を運ぶ皿も作りなさい。これらの道具は全部、青銅で作りなさい。"
+        },
+        "uk": {
+          "L": "І зробиш його горщики для вигрібання попелу з лоєм, і його лопатки, і його чаші, і його вила, і його вуглярки; усе його приладдя зробиш з міді.",
+          "B": "Зроби для нього горщики, щоб вибирати попіл, просяклий лоєм, а також лопатки, чаші, вила й вуглярки. Усе його приладдя має бути з міді.",
+          "R": "Зроби горщики, щоб виносити жирний попіл. Зроби також лопатки, чаші, вила й совки для гарячого вугілля. Зроби все це приладдя з міді."
+        },
+        "id": {
+          "L": "Dan engkau harus membuat kuali-kualinya untuk membuang abunya yang berlemak, dan sekop-sekopnya, bokor-bokor penyiramannya, garpu-garpunya, dan perbaraannya; segala perkakasnya harus kaubuat dari tembaga.",
+          "B": "Buatlah kuali-kualinya untuk membuang abu yang berlemak, juga sekop-sekop, bokor-bokor, garpu-garpu, dan perbaraannya. Semua perkakasnya harus dibuat dari tembaga.",
+          "R": "Buatlah kuali-kuali untuk membuang abu yang berminyak. Buatlah juga sekop, mangkuk, garpu, dan wadah untuk membawa bara api. Buatlah semua perkakas itu dari tembaga."
+        },
+        "zh": {
+          "L": "你要做坛的锅，用来盛去带油的灰，又做它的铲子、盆子、叉子和火盆；坛一切的器具都要用铜做。",
+          "B": "要做清除浸着油脂的灰用的锅，还有铲子、盆子、叉子和火盆。坛的一切器具都要用铜做。",
+          "R": "要做几个锅，用来运走油腻的灰。还要做铲子、碗、叉子和运送火炭用的盘子。这些用具都要用铜做。"
         }
       },
       "decisions": [
@@ -736,6 +942,69 @@
           "reason": "\"ጎድጓዳ ሳሕኖች\" is kept for the bowls of the table (25:29), a different Hebrew word; these basins catch and sprinkle the blood.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020270030052",
+            "o020270030062",
+            "o020270030072"
+          ],
+          "choice": "\"壺\", \"シャベル\", \"鉢\", \"フォーク\" (R \"肉をさすフォーク\"), machtot \"火皿\" (L, B, as in 25:38)",
+          "alternatives": [
+            "\"肉刺し\""
+          ],
+          "reason": "Plain names for the tools (meaning decisions m2, m3); \"肉刺し\" is avoided because it is read as \"まめ\" (a blister).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020270030062",
+            "o020270030072"
+          ],
+          "choice": "\"perbaraan\" for the firepans",
+          "alternatives": [],
+          "reason": "Pans for carrying burning coals (m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020270030052",
+            "o020270030062",
+            "o020270030072"
+          ],
+          "choice": "盆子 (L, B), 碗 (R); 叉子; 火盆 (L, B), 运送火炭用的盘子 (R)",
+          "alternatives": [],
+          "reason": "The altar's tools (m2, m3): basins for the blood, forks for the meat, and pans for carrying burning coals. Readable says what the firepans were for, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -823,6 +1092,26 @@
           "L": "И сделай для него решётку, сетчатую работу из меди, и сделай на сетке четыре медных кольца на четырёх концах её.",
           "B": "Сделай для него медную решётку в виде сетки и прикрепи к сетке четыре медных кольца на четырёх её углах.",
           "R": "Сделай для жертвенника медную решётку, похожую на сетку. На четырёх её углах прикрепи четыре медных кольца."
+        },
+        "ja": {
+          "L": "そしてそれのために青銅の網細工の格子を作り、網の上、その四つの端に、青銅の環を四つ作りなさい。",
+          "B": "祭壇のために網細工の青銅の格子を作り、その網の四隅に青銅の環を四つ付けなさい。",
+          "R": "網のような形をした青銅の格子を、祭壇のために作りなさい。その四つの隅に、青銅の輪を四つ付けなさい。"
+        },
+        "uk": {
+          "L": "І зробиш для нього решітку, плетену роботу з міді, і зробиш на плетиві чотири мідні кільця на чотирьох його кінцях.",
+          "B": "Зроби для нього мідну решітку у вигляді сітки й прикріпи до сітки чотири мідні кільця на її чотирьох кутах.",
+          "R": "Зроби для жертовника мідну решітку, схожу на сітку. Прикріпи на її чотирьох кутах чотири мідні кільця."
+        },
+        "id": {
+          "L": "Dan engkau harus membuat baginya kisi-kisi, buatan jaring dari tembaga, dan engkau harus membuat pada jaring itu empat gelang tembaga pada keempat ujungnya.",
+          "B": "Buatlah kisi-kisi tembaga berbentuk jaring untuk mezbah itu, dan pasanglah empat gelang tembaga pada keempat sudut jaring itu.",
+          "R": "Buatlah kisi-kisi tembaga yang berbentuk seperti jaring untuk mezbah itu. Pasanglah empat gelang tembaga pada keempat sudutnya."
+        },
+        "zh": {
+          "L": "你要为坛做一个网格，是铜网的工；在网上的四个角，要做四个铜环。",
+          "B": "要为坛做一个铜网格，做成网状，在网的四个角上安四个铜环。",
+          "R": "要为坛做一个像网一样的铜格子，在格子的四个角上各装一个铜环。"
         }
       },
       "decisions": [
@@ -992,6 +1281,29 @@
           "reason": "\"ፍርግርግ\" is a lattice of crossed bars, the plain word for what the meaning decision describes.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020270040031",
+            "o020270040041",
+            "o020270040051"
+          ],
+          "choice": "网格 (L, B); 像网一样的铜格子 (R)",
+          "alternatives": [
+            "铜网"
+          ],
+          "reason": "The bronze lattice of m1, one form through 35:16 and 38:4-5.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1078,6 +1390,26 @@
           "L": "И помести её под выступом жертвенника снизу, и будет сетка до середины жертвенника.",
           "B": "Помести решётку под выступом жертвенника, внизу, так чтобы сетка доходила до середины жертвенника.",
           "R": "Установи решётку под выступом, который идёт вокруг жертвенника, так чтобы она доходила до середины жертвенника."
+        },
+        "ja": {
+          "L": "そしてそれを祭壇の張り出しの下、下の方に置きなさい。網は祭壇の中ほどまで[届く]。",
+          "B": "その格子を祭壇の張り出しの下の方に取り付け、網が祭壇の高さの半分まで届くようにしなさい。",
+          "R": "祭壇の周りを囲む出っ張りの下に、格子をはめ込みなさい。格子が祭壇の半分の高さまで来るようにしなさい。"
+        },
+        "uk": {
+          "L": "І покладеш її під обвід жертовника, знизу, і буде сітка до половини жертовника.",
+          "B": "Постав решітку під виступом жертовника, внизу, щоб сітка сягала до половини жертовника.",
+          "R": "Встав решітку під виступ, що йде навколо жертовника, щоб вона сягала до половини його висоти."
+        },
+        "id": {
+          "L": "Dan engkau harus memasangnya di bawah birai mezbah dari bawah, dan jaring itu harus sampai ke tengah-tengah mezbah.",
+          "B": "Pasanglah kisi-kisi itu di bawah birai mezbah, di bagian bawah, sehingga jaring itu mencapai pertengahan tinggi mezbah.",
+          "R": "Pasanglah kisi-kisi itu di bawah birai yang mengelilingi mezbah, sehingga kisi-kisi itu sampai ke pertengahan tinggi mezbah."
+        },
+        "zh": {
+          "L": "你要把网格安在坛四围的边沿底下，在下面，使网达到坛的半腰。",
+          "B": "要把网格安在坛的边沿下面，往下，使网达到坛高的一半。",
+          "R": "要把格子装在绕着祭坛的边沿下面，让它达到坛一半高的地方。"
         }
       },
       "decisions": [
@@ -1216,6 +1548,68 @@
           "reason": "The word is rare and its sense uncertain (m1); \"rebordo\" is a ledge or projecting edge, and Readable says \"a beirada que contorna o altar\", as the English Readable describes it.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020270050041"
+          ],
+          "choice": "karkov: \"張り出し\" (L, B), \"祭壇の周りを囲む出っ張り\" (R)",
+          "alternatives": [
+            "\"棚\"",
+            "\"縁\""
+          ],
+          "reason": "A rim or border around the altar, halfway up; the word is not certainly understood (meaning decision m1).",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020270050041"
+          ],
+          "choice": "\"birai\" for the ledge",
+          "alternatives": [],
+          "reason": "A rim or border halfway up the altar (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020270050041"
+          ],
+          "choice": "边沿",
+          "alternatives": [
+            "围台"
+          ],
+          "reason": "The ledge (karkov) is an uncertain word (m1); \"边沿\", a rim or border, follows the likely sense, and Readable says it goes around the altar, as the English Readable does.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1296,6 +1690,26 @@
           "L": "И сделай шесты для жертвенника, шесты из дерева акации, и обложи их медью.",
           "B": "Сделай для жертвенника и шесты: из дерева акации, обложенные медью.",
           "R": "Сделай шесты из дерева акации, чтобы носить жертвенник, и покрой их медью."
+        },
+        "ja": {
+          "L": "そして祭壇のために担ぎ棒を、アカシア材の担ぎ棒を作り、それに青銅をかぶせなさい。",
+          "B": "祭壇のための担ぎ棒をアカシア材で作り、青銅をかぶせなさい。",
+          "R": "祭壇を運ぶための担ぎ棒を、アカシアの木で作り、青銅をはりなさい。"
+        },
+        "uk": {
+          "L": "І зробиш жердини для жертовника, жердини з дерева акації, і обкладеш їх міддю.",
+          "B": "Жертовник також повинен мати жердини: зроби їх з дерева акації й обклади міддю.",
+          "R": "Зроби з дерева акації жердини, щоб носити жертовник, і покрий їх міддю."
+        },
+        "id": {
+          "L": "Dan engkau harus membuat kayu-kayu pengusung untuk mezbah itu, kayu-kayu pengusung dari kayu akasia, dan menyalutnya dengan tembaga.",
+          "B": "Mezbah itu juga harus mempunyai kayu-kayu pengusung; buatlah dari kayu akasia dan salutlah dengan tembaga.",
+          "R": "Buatlah tongkat-tongkat pengusung dari kayu akasia untuk mengusung mezbah itu, dan lapisilah dengan tembaga."
+        },
+        "zh": {
+          "L": "你要为坛做杠，就是金合欢木的杠，用铜包上。",
+          "B": "坛也要有杠，要用金合欢木做杠，用铜包上。",
+          "R": "要用金合欢木做杠子，用来抬祭坛，再用铜把杠子包起来。"
         }
       },
       "decisions": [
@@ -1417,6 +1831,26 @@
           "L": "И вставят шесты его в кольца, и будут шесты по двум сторонам жертвенника при ношении его.",
           "B": "Шесты нужно вдеть в кольца, чтобы, когда жертвенник переносят, они были по обеим его сторонам.",
           "R": "Продень шесты через кольца. Шесты будут по обеим сторонам жертвенника, чтобы его можно было нести."
+        },
+        "ja": {
+          "L": "そしてその担ぎ棒は環に入れられ、それを担ぐときには、担ぎ棒は祭壇の両側にある。",
+          "B": "担ぎ棒は環に通し、祭壇を担ぐときには、担ぎ棒が祭壇の両側に来るようにしなさい。",
+          "R": "担ぎ棒を輪に通しなさい。担ぎ棒が祭壇の両側に来るので、人々は祭壇を運ぶことができる。"
+        },
+        "uk": {
+          "L": "І вставлять його жердини в кільця, і будуть жердини на двох боках жертовника, коли носитимуть його.",
+          "B": "Жердини треба просунути в кільця, щоб вони були з обох боків жертовника, коли його носять.",
+          "R": "Просунь жердини крізь кільця. Жердини будуть з обох боків жертовника, щоб люди могли його носити."
+        },
+        "id": {
+          "L": "Dan kayu-kayu pengusungnya harus dimasukkan ke dalam gelang-gelang itu, dan kayu-kayu pengusung itu harus ada pada kedua sisi mezbah apabila mezbah itu diusung.",
+          "B": "Kayu-kayu pengusung itu harus dimasukkan ke dalam gelang-gelang, sehingga berada pada kedua sisi mezbah setiap kali mezbah itu diusung.",
+          "R": "Masukkanlah tongkat-tongkat itu ke dalam gelang-gelang. Tongkat-tongkat itu akan berada di kedua sisi mezbah, sehingga orang dapat mengusungnya."
+        },
+        "zh": {
+          "L": "杠要穿在环内；抬坛的时候，杠要在坛的两旁。",
+          "B": "杠要穿过环，每逢抬坛的时候，杠就在坛的两旁。",
+          "R": "要把杠子穿过环。杠子在坛的两边，人就可以抬坛。"
         }
       },
       "decisions": [
@@ -1530,6 +1964,26 @@
           "L": "Полым, [из] досок сделай его; как {{deity_pronoun:он|Он}} показал тебе на горе, так пусть сделают.",
           "B": "Жертвенник должен быть полым ящиком из досок. Пусть его сделают так, как тебе было показано на горе.",
           "R": "Сделай жертвенник в виде полого ящика из досок. Мастера должны построить его точно так, как тебе было показано на горе."
+        },
+        "ja": {
+          "L": "板で、中を空洞にしてそれを作りなさい。山であなたに示されたとおりに、そのように彼らは作らなければならない。",
+          "B": "祭壇は板で作り、中を空洞にしなさい。山であなたに示されたとおりに作らせなさい。",
+          "R": "祭壇は、板で、中が空になった箱のように作りなさい。職人たちは、山であなたが見せられたとおりに、それを作らなければならない。"
+        },
+        "uk": {
+          "L": "Порожнистим, з дощок зробиш його; як {{deity_pronoun:він|Він}} показав тобі на горі, так зроблять.",
+          "B": "Жертовник має бути порожнистою скринею з дощок. Хай зроблять його за тим, що тобі показано на горі.",
+          "R": "Зроби жертовник, як порожнисту скриню з дощок. Майстри мусять збудувати його точно так, як тобі показано на горі."
+        },
+        "id": {
+          "L": "Berongga dan dari papan engkau harus membuatnya; seperti yang ditunjukkan-{{deity_pronoun:nya|Nya}} kepadamu di gunung itu, demikianlah harus mereka membuatnya.",
+          "B": "Mezbah itu harus berupa peti berongga yang dibuat dari papan. Hendaklah mereka membuatnya menurut apa yang ditunjukkan kepadamu di gunung itu.",
+          "R": "Buatlah mezbah itu seperti peti berongga dari papan-papan. Para pekerja harus membuatnya tepat seperti yang ditunjukkan kepadamu di gunung itu."
+        },
+        "zh": {
+          "L": "你要用板做坛，是空心的；{{deity_pronoun:他|祂}}在山上怎样指示你，他们就要怎样做。",
+          "B": "坛要用木板做成一个空心的箱子。你在山上看见的是什么样子，他们就要照着做。",
+          "R": "要用木板把坛做成一个空心的箱子。工人必须完全照着你在山上看见的样子去造。"
         }
       },
       "decisions": [
@@ -1689,6 +2143,65 @@
           "reason": "Devanagari has no capital letters, so Hindi has no deity_pronoun spans in this chapter; at Literal, God speaking of himself in the third person takes the honorific plural \"उन्होंने\", as God does throughout. Balanced and Readable use the passive, as the English does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o020270080061",
+            "o020270080071",
+            "o020270080072"
+          ],
+          "choice": "as he showed you: passive \"あなたに示された\" at every level",
+          "alternatives": [
+            "\"[神が]あなたに示された\""
+          ],
+          "reason": "God is the one who showed (meaning decision m2); in God's own speech the passive avoids a third-person reference to himself, as the English Balanced and Readable do.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o020270080061",
+            "o020270080071",
+            "o020270080072"
+          ],
+          "choice": "\"ditunjukkan-{{deity_pronoun:nya|Nya}}\" (L)",
+          "alternatives": [],
+          "reason": "The Hebrew \"he showed you\" means God (m2), so the pronoun takes the span; Balanced and Readable use the passive, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o020270080061"
+          ],
+          "choice": "{{deity_pronoun:他|祂}}",
+          "alternatives": [],
+          "reason": "Literal keeps the Hebrew's \"he showed you\" and writes the pronoun for God in the deity_pronoun span, where the English Literal has one. Balanced and Readable turn it round, as the English does (\"you were shown\").",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1780,6 +2293,26 @@
           "L": "И сделай двор скинии: для южной стороны, к югу, завесы для двора из тонкого кручёного льна, сто локтей длина для одной стороны.",
           "B": "Сделай также двор скинии. С южной стороны у двора должны быть завесы из тонкого кручёного льна длиной {{units:около 45 метров|сто локтей}} на всю эту сторону.",
           "R": "Сделай двор вокруг священного шатра. С южной стороны повесь завесы из тонкого кручёного льна. Эта сторона должна быть длиной {{units:около 45 метров|сто локтей}}."
+        },
+        "ja": {
+          "L": "そして幕屋の庭を作りなさい。南の側、南の方には、撚り糸の亜麻布の庭の掛け幕を、一方の側に長さ百キュビト[張りなさい]。",
+          "B": "幕屋の庭を作りなさい。南側には、撚り糸で織った上等の亜麻布の掛け幕を張り、その側の長さを{{units:約45メートル|百キュビト}}としなさい。",
+          "R": "幕屋の周りに庭を作りなさい。南側には、上等の亜麻布で作った幕を張りなさい。その側の長さは{{units:約45メートル|百キュビト}}である。"
+        },
+        "uk": {
+          "L": "І зробиш подвірʼя скинії. Для південного боку, на південь, — запони для подвірʼя з сученого тонкого льону, сто ліктів довжина для одного боку.",
+          "B": "Зроби також подвірʼя скинії. З південного боку подвірʼя має мати запони з сученого тонкого льону, завдовжки {{units:близько 45 метрів|сто ліктів}} на тому боці.",
+          "R": "Зроби подвірʼя навколо скинії. Уздовж південного боку повісь запони із сученого тонкого льону. Цей бік має бути завдовжки {{units:близько 45 метрів|сто ліктів}}."
+        },
+        "id": {
+          "L": "Dan engkau harus membuat pelataran Kemah Suci; pada sisi selatan, ke arah selatan, harus ada layar-layar untuk pelataran itu dari lenan halus yang dipintal, seratus hasta panjangnya pada sisi yang satu.",
+          "B": "Buatlah juga pelataran Kemah Suci. Pada sisi selatan pelataran itu harus ada layar-layar dari lenan halus yang dipintal, {{units:sekitar 45 meter|seratus hasta}} panjangnya pada sisi itu.",
+          "R": "Buatlah sebuah pelataran di sekeliling Kemah Suci. Di sepanjang sisi selatan, pasanglah layar-layar dari lenan halus yang dipintal. Sisi itu harus {{units:sekitar 45 meter|seratus hasta}} panjangnya."
+        },
+        "zh": {
+          "L": "你要做帐幕的院子。南边，就是朝南的那一面，院子要有用捻成的细麻做的帷幔，那一面长一百肘。",
+          "B": "你还要做帐幕的院子。院子的南面要有用捻成的细麻布做的帷幔，那一面长{{units:约45米|一百肘}}。",
+          "R": "要在帐幕的四周做一个院子。院子的南面要挂上用捻好的细麻布做的帷幔。这一面要长{{units:约45米|一百肘}}。"
         }
       },
       "decisions": [
@@ -2066,6 +2599,106 @@
           "reason": "The hangings are lengths of linen hung from pillars as a wall. Russian uses \"завесы\" in the plural; the single veil before the ark is \"завеса\" and the entrance hangings \"занавес\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020270090081"
+          ],
+          "choice": "courtyard \"庭\"; hangings (qela'im) \"掛け幕\" (L, B), \"幕\" (R)",
+          "alternatives": [],
+          "reason": "Lengths of cloth hung from pillars to make the courtyard wall (meaning decision m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [],
+          "choice": "подвірʼя; запони",
+          "alternatives": [
+            "двір",
+            "заслони"
+          ],
+          "reason": "The courtyard hangings are long linen screens; запона is used for every such hanging, завіса only for the veil.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020270090081"
+          ],
+          "choice": "\"pelataran\"; \"layar\" for the hangings",
+          "alternatives": [],
+          "reason": "\"pelataran\" is the glossary word for the court; the hangings are lengths of cloth on pillars (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o020270090121",
+            "o020270090132"
+          ],
+          "choice": "约45米",
+          "alternatives": [],
+          "reason": "Metric measures by default, taking a cubit as about 45 centimetres, with the cubits in the units setting (Chinese numerals); the English gives feet. Literal keeps the cubits.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020270090031",
+            "o020270090081"
+          ],
+          "choice": "院子; 帷幔",
+          "alternatives": [
+            "帷子",
+            "帷幕"
+          ],
+          "reason": "The courtyard is \"院子\" and its cloth walls (qelaim) are \"帷幔\" at every level through 27, 35, 38 and 39, kept apart from the tabernacle's \"幕\" and the inner \"帘幕\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2149,6 +2782,26 @@
           "L": "И столбов его двадцать, и подножий их двадцать, из меди; крючки столбов и связи их из серебра.",
           "B": "Двадцать его столбов должны стоять на двадцати медных подножиях, а крючки и связи на столбах должны быть серебряные.",
           "R": "Повесь завесы на двадцать столбов, которые стоят на двадцати медных подножиях. Сделай на столбах серебряные крючки и серебряные обручи."
+        },
+        "ja": {
+          "L": "そしてその柱は二十、その台座は二十で、青銅である。柱の鉤とその帯輪は銀である。",
+          "B": "掛け幕を張る柱は二十本、その台座は青銅で二十とし、柱の鉤と帯輪は銀としなさい。",
+          "R": "幕は、二十本の柱に掛けなさい。柱は、二十の青銅の台座に立てなさい。柱には、銀のかぎと銀の帯を付けなさい。"
+        },
+        "uk": {
+          "L": "І стовпів його двадцять, і підстав їхніх двадцять, з міді; гачки стовпів і їхні обручі — зі срібла.",
+          "B": "Його двадцять стовпів мають стояти на двадцяти мідних підставах, а гачки й обручі на стовпах мають бути срібні.",
+          "R": "Повісь запони на двадцяти стовпах, що стоять на двадцяти мідних підставах. Зроби на стовпах срібні гачки й срібні обручі."
+        },
+        "id": {
+          "L": "Dan tiang-tiangnya dua puluh dan alas-alasnya dua puluh dari tembaga; kait-kait tiang-tiang itu dan simpai-simpainya dari perak.",
+          "B": "Kedua puluh tiangnya harus berdiri di atas dua puluh alas tembaga, dan kait-kait serta simpai-simpai pada tiang-tiang itu harus dari perak.",
+          "R": "Gantungkanlah layar-layar itu pada dua puluh tiang yang berdiri di atas dua puluh alas tembaga. Pasanglah kait-kait perak dan simpai-simpai perak pada tiang-tiang itu."
+        },
+        "zh": {
+          "L": "帷幔的柱子要二十根，它们的底座二十个，要用铜做；柱子上的钩子和箍要用银子做。",
+          "B": "院子南面的二十根柱子要立在二十个铜底座上；柱子上的钩子和箍要用银子做。",
+          "R": "帷幔要挂在二十根柱子上，柱子立在二十个铜底座上。柱子上要装银钩子和银箍。"
         }
       },
       "decisions": [
@@ -2330,6 +2983,71 @@
           "reason": "The meaning decision leaves open whether they ran around or between the pillars; \"ማሰሪያ\" (a band that binds) fits both, and \"ቀለበቶች\" is kept for the rings.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020270100061",
+            "o020270100082"
+          ],
+          "choice": "chashuqim: \"帯輪\" (L, B), \"帯\" (R)",
+          "alternatives": [
+            "\"桁\"",
+            "\"つなぎ棒\""
+          ],
+          "reason": "Bands around or between the pillars; the exact sense is uncertain (meaning decision m2).",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020270100061",
+            "o020270100082"
+          ],
+          "choice": "\"simpai\" for the bands",
+          "alternatives": [],
+          "reason": "Bands around or between the pillars (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020270100061",
+            "o020270100082"
+          ],
+          "choice": "钩子; 箍",
+          "alternatives": [
+            "杆子"
+          ],
+          "reason": "The hooks for hanging the hangings and the silver bands on the pillars (m2): \"钩子\" and \"箍\", every level. The bands may also have joined the pillars, which \"箍\" leaves open.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2423,6 +3141,26 @@
           "L": "И так же для северной стороны в длину — завесы длиной сто [локтей], и столбов его двадцать, и подножий их двадцать, из меди; крючки столбов и связи их из серебра.",
           "B": "Так же и с северной стороны: завесы длиной {{units:около 45 метров|сто локтей}}, двадцать столбов на двадцати медных подножиях, а на столбах серебряные крючки и связи.",
           "R": "Так же сделай и с северной стороны. Повесь завесы длиной {{units:около 45 метров|сто локтей}} на двадцать столбов, которые стоят на двадцати медных подножиях. Сделай на столбах серебряные крючки и обручи."
+        },
+        "ja": {
+          "L": "そして同じように北の側にも、長さにおいて、長さ百[キュビト]の掛け幕と、その柱二十とその台座二十を青銅で、柱の鉤とその帯輪を銀で[作りなさい]。",
+          "B": "北側も同じようにしなさい。長さ{{units:約45メートル|百キュビト}}の掛け幕を張り、柱二十本と青銅の台座二十を置き、柱の鉤と帯輪は銀としなさい。",
+          "R": "北側も同じようにしなさい。長さ{{units:約45メートル|百キュビト}}の幕を、二十の青銅の台座に立てた二十本の柱に掛けなさい。柱には、銀のかぎと帯を付けなさい。"
+        },
+        "uk": {
+          "L": "І так само для північного боку, в довжину, запони на сто [ліктів] довжиною, і стовпів його двадцять, і підстав їхніх двадцять, з міді; гачки стовпів і їхні обручі — зі срібла.",
+          "B": "Північний бік має бути такий самий: запони завдовжки {{units:близько 45 метрів|сто ліктів}}, двадцять стовпів на двадцяти мідних підставах і срібні гачки та обручі на стовпах.",
+          "R": "Зроби так само на північному боці. Повісь запони завдовжки {{units:близько 45 метрів|сто ліктів}} на двадцяти стовпах, що стоять на двадцяти мідних підставах. Зроби на стовпах срібні гачки й обручі."
+        },
+        "id": {
+          "L": "Dan demikian juga untuk sisi utara pada panjangnya, layar-layar seratus hasta panjangnya, dan tiang-tiangnya dua puluh dan alas-alasnya dua puluh dari tembaga; kait-kait tiang-tiang itu dan simpai-simpainya dari perak.",
+          "B": "Sisi utara harus sama: layar-layar {{units:sekitar 45 meter|seratus hasta}} panjangnya, dengan dua puluh tiang di atas dua puluh alas tembaga, dan kait-kait serta simpai-simpai perak pada tiang-tiang itu.",
+          "R": "Lakukan hal yang sama di sisi utara. Pasanglah layar-layar {{units:sekitar 45 meter|seratus hasta}} panjangnya pada dua puluh tiang yang berdiri di atas dua puluh alas tembaga. Pasanglah kait-kait dan simpai-simpai perak pada tiang-tiang itu."
+        },
+        "zh": {
+          "L": "北边也是这样，在长度上，帷幔要长一百[肘]，它的柱子二十根，它们的底座二十个，要用铜做；柱子上的钩子和箍要用银子做。",
+          "B": "北面也要一样：帷幔长{{units:约45米|一百肘}}，有二十根柱子立在二十个铜底座上，柱子上的钩子和箍要用银子做。",
+          "R": "北面也要这样做。要把长{{units:约45米|一百肘}}的帷幔挂在二十根柱子上，柱子立在二十个铜底座上。柱子上要装银钩子和银箍。"
         }
       },
       "decisions": [
@@ -2457,6 +3195,24 @@
           "choice": "modern measure first, cubits as the alternative",
           "alternatives": [],
           "reason": "Balanced and Readable give the length of the side in feet by default, with the cubits of the Hebrew as the units alternative (a cubit is about 18 inches; see the note at verse 1). Literal keeps cubits.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o020270110061"
+          ],
+          "choice": "约45米",
+          "alternatives": [],
+          "reason": "Metric measures by default, taking a cubit as about 45 centimetres, with the cubits in the units setting (Chinese numerals); the English gives feet. Literal keeps the cubits.",
           "uncertain": false,
           "footnote": false
         }
@@ -2543,6 +3299,26 @@
           "L": "А ширина двора на западной стороне — завесы в пятьдесят локтей; столбов их десять и подножий их десять.",
           "B": "Поперёк двора, с западной стороны, должны быть завесы длиной {{units:около 22,5 метра|пятьдесят локтей}}, с десятью столбами и десятью подножиями.",
           "R": "Западная сторона двора должна быть шириной {{units:около 22,5 метра|пятьдесят локтей}}. Повесь там завесы на десять столбов, которые стоят на десяти подножиях."
+        },
+        "ja": {
+          "L": "そして海の側の庭の幅には、五十キュビトの掛け幕[を張りなさい]。その柱は十、その台座は十。",
+          "B": "庭の西側の幅は{{units:約22メートル|五十キュビト}}とし、そこに掛け幕を張り、柱十本と台座十を置きなさい。",
+          "R": "庭の西の端は、幅を{{units:約22メートル|五十キュビト}}にしなさい。そこにも幕を張り、十の台座に立てた十本の柱に掛けなさい。"
+        },
+        "uk": {
+          "L": "А ширина подвірʼя з західного боку — запони на пʼятдесят ліктів; стовпів їхніх десять і підстав їхніх десять.",
+          "B": "Уздовж ширини подвірʼя, з західного боку, мають бути запони завдовжки {{units:близько 22,5 метра|пʼятдесят ліктів}}, з десятьма стовпами й десятьма підставами.",
+          "R": "Західний бік подвірʼя має бути завширшки {{units:близько 22,5 метра|пʼятдесят ліктів}}. Повісь там запони на десяти стовпах, що стоять на десяти підставах."
+        },
+        "id": {
+          "L": "Dan lebar pelataran itu pada sisi barat, layar-layar lima puluh hasta; tiang-tiangnya sepuluh dan alas-alasnya sepuluh.",
+          "B": "Di sepanjang lebar pelataran itu, pada sisi barat, harus ada layar-layar {{units:sekitar 22,5 meter|lima puluh hasta}} panjangnya, dengan sepuluh tiang dan sepuluh alas.",
+          "R": "Ujung barat pelataran itu harus {{units:sekitar 22,5 meter|lima puluh hasta}} lebarnya. Pasanglah layar-layar di sana pada sepuluh tiang yang berdiri di atas sepuluh alas."
+        },
+        "zh": {
+          "L": "院子的宽，在西边要有五十肘的帷幔；它的柱子十根，它们的底座十个。",
+          "B": "院子的宽度，在西面要有{{units:约22米|五十肘}}长的帷幔，有十根柱子和十个底座。",
+          "R": "院子的西面要宽{{units:约22米|五十肘}}。那里要把帷幔挂在十根柱子上，柱子立在十个底座上。"
         }
       },
       "decisions": [
@@ -2591,6 +3367,63 @@
           "choice": "modern measure first, cubits as the alternative",
           "alternatives": [],
           "reason": "Balanced and Readable give the width of the courtyard in feet by default, with the cubits of the Hebrew as the units alternative (a cubit is about 18 inches; see the note at verse 1). Literal keeps cubits.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020270120032",
+            "o020270120041"
+          ],
+          "choice": "\"海の側\" (L), \"西側\" (B), \"西の端\" (R), as in 26:22",
+          "alternatives": [],
+          "reason": "The west side is literally the side of the sea (meaning decision m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o020270120061",
+            "o020270120071"
+          ],
+          "choice": "约22米",
+          "alternatives": [],
+          "reason": "Metric measures by default, taking a cubit as about 45 centimetres, with the cubits in the units setting (Chinese numerals); the English gives feet. Literal keeps the cubits.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020270120032",
+            "o020270120041"
+          ],
+          "choice": "西边",
+          "alternatives": [],
+          "reason": "\"The side of the sea\" means the west side (m1); every level says west, as in 26:22.",
           "uncertain": false,
           "footnote": false
         }
@@ -2672,6 +3505,26 @@
           "L": "А ширина двора на восточной стороне, к восходу, — пятьдесят локтей.",
           "B": "Ширина двора с восточной стороны, к восходу солнца, тоже должна быть {{units:около 22,5 метра|пятьдесят локтей}}.",
           "R": "Восточная сторона, обращённая к восходу солнца, тоже должна быть шириной {{units:около 22,5 метра|пятьдесят локтей}}."
+        },
+        "ja": {
+          "L": "そして東の側、日の出の方の庭の幅は、五十キュビトである。",
+          "B": "東側、日の昇る方の庭の幅も、{{units:約22メートル|五十キュビト}}としなさい。",
+          "R": "日の昇る東の端も、幅を{{units:約22メートル|五十キュビト}}にしなさい。"
+        },
+        "uk": {
+          "L": "А ширина подвірʼя зі східного боку, на схід сонця, — пʼятдесят ліктів.",
+          "B": "Ширина подвірʼя зі східного боку, звідки сходить сонце, теж має бути {{units:близько 22,5 метра|пʼятдесят ліктів}}.",
+          "R": "Східний бік, звернений до сходу сонця, теж має бути завширшки {{units:близько 22,5 метра|пʼятдесят ліктів}}."
+        },
+        "id": {
+          "L": "Dan lebar pelataran itu pada sisi timur, ke arah matahari terbit, lima puluh hasta.",
+          "B": "Lebar pelataran itu pada sisi timur, ke arah matahari terbit, juga {{units:sekitar 22,5 meter|lima puluh hasta}}.",
+          "R": "Ujung timur, yang menghadap ke matahari terbit, juga harus {{units:sekitar 22,5 meter|lima puluh hasta}} lebarnya."
+        },
+        "zh": {
+          "L": "院子的宽，在东边，就是向日出的那一面，要五十肘。",
+          "B": "院子在东面，就是日出的那一面，宽度也要{{units:约22米|五十肘}}。",
+          "R": "东面，就是太阳升起的那一面，也要宽{{units:约22米|五十肘}}。"
         }
       },
       "decisions": [
@@ -2707,6 +3560,25 @@
           "choice": "modern measure first, cubits as the alternative",
           "alternatives": [],
           "reason": "Balanced and Readable give the width of the courtyard in feet by default, with the cubits of the Hebrew as the units alternative (a cubit is about 18 inches; see the note at verse 1). Literal keeps cubits.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o020270130061",
+            "o020270130071"
+          ],
+          "choice": "约22米",
+          "alternatives": [],
+          "reason": "Metric measures by default, taking a cubit as about 45 centimetres, with the cubits in the units setting (Chinese numerals); the English gives feet. Literal keeps the cubits.",
           "uncertain": false,
           "footnote": false
         }
@@ -2790,6 +3662,26 @@
           "L": "И пятнадцать локтей завес для [одной] стороны; столбов их три и подножий их три.",
           "B": "С одной стороны от входа должны быть завесы длиной {{units:около 6,75 метра|пятнадцать локтей}}, с тремя столбами и тремя подножиями.",
           "R": "С одной стороны от ворот повесь завесы длиной {{units:около 6,75 метра|пятнадцать локтей}} на три столба, которые стоят на трёх подножиях."
+        },
+        "ja": {
+          "L": "そして一方の脇には、十五キュビトの掛け幕、その柱は三つ、その台座は三つ。",
+          "B": "入り口の一方の脇には、長さ{{units:約6.7メートル|十五キュビト}}の掛け幕を張り、柱三本と台座三つを置きなさい。",
+          "R": "門の片側には、長さ{{units:約6.7メートル|十五キュビト}}の幕を、三つの台座に立てた三本の柱に掛けなさい。"
+        },
+        "uk": {
+          "L": "І пʼятнадцять ліктів запон для [одного] крила; стовпів їхніх три і підстав їхніх три.",
+          "B": "З одного боку від входу мають бути запони завдовжки {{units:близько 6,8 метра|пʼятнадцять ліктів}}, з трьома стовпами й трьома підставами.",
+          "R": "З одного боку від брами повісь запони завдовжки {{units:близько 6,8 метра|пʼятнадцять ліктів}} на трьох стовпах, що стоять на трьох підставах."
+        },
+        "id": {
+          "L": "Dan lima belas hasta layar-layar untuk sisi yang satu; tiang-tiangnya tiga dan alas-alasnya tiga.",
+          "B": "Pada sisi pintu gerbang yang satu harus ada layar-layar {{units:sekitar 6,75 meter|lima belas hasta}} panjangnya, dengan tiga tiang dan tiga alas.",
+          "R": "Di satu sisi pintu gerbang, pasanglah layar-layar {{units:sekitar 6,75 meter|lima belas hasta}} panjangnya pada tiga tiang yang berdiri di atas tiga alas."
+        },
+        "zh": {
+          "L": "这一旁要有十五肘的帷幔；它的柱子三根，它们的底座三个。",
+          "B": "院门的一旁要有{{units:约6.7米|十五肘}}长的帷幔，有三根柱子和三个底座。",
+          "R": "院门的一边要把{{units:约6.7米|十五肘}}长的帷幔挂在三根柱子上，柱子立在三个底座上。"
         }
       },
       "decisions": [
@@ -2842,6 +3734,65 @@
           "choice": "of the entrance / of the gate",
           "alternatives": [],
           "reason": "Balanced and Readable say which side is meant: one side of the gateway in the east wall.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020270140052"
+          ],
+          "choice": "katef (\"shoulder\"): \"脇\" (L, B), \"片側\" (R)",
+          "alternatives": [
+            "\"肩\""
+          ],
+          "reason": "The part of the east wall on either side of the gate (meaning decision m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o020270140012",
+            "o020270140021",
+            "o020270140031"
+          ],
+          "choice": "约6.7米",
+          "alternatives": [],
+          "reason": "Metric measures by default, taking a cubit as about 45 centimetres, with the cubits in the units setting (Chinese numerals); the English gives feet. Literal keeps the cubits.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o020270140052"
+          ],
+          "choice": "院门的一旁",
+          "alternatives": [],
+          "reason": "The Hebrew says \"the shoulder\", one side of the east wall beside the gate (m1); Balanced and Readable say which side, as the English does. Literal says \"这一旁\".",
           "uncertain": false,
           "footnote": false
         }
@@ -2926,6 +3877,26 @@
           "L": "И для второй стороны пятнадцать [локтей] завес; столбов их три и подножий их три.",
           "B": "С другой стороны должны быть завесы длиной {{units:около 6,75 метра|пятнадцать локтей}}, с тремя столбами и тремя подножиями.",
           "R": "Так же сделай и с другой стороны ворот: завесы длиной {{units:около 6,75 метра|пятнадцать локтей}} на трёх столбах, которые стоят на трёх подножиях."
+        },
+        "ja": {
+          "L": "そしてもう一方の脇にも、十五[キュビト]の掛け幕、その柱は三つ、その台座は三つ。",
+          "B": "もう一方の脇にも、長さ{{units:約6.7メートル|十五キュビト}}の掛け幕を張り、柱三本と台座三つを置きなさい。",
+          "R": "門の反対側も、同じようにしなさい。長さ{{units:約6.7メートル|十五キュビト}}の幕を、三つの台座に立てた三本の柱に掛けるのである。"
+        },
+        "uk": {
+          "L": "І для другого крила пʼятнадцять [ліктів] запон; стовпів їхніх три і підстав їхніх три.",
+          "B": "З другого боку мають бути запони завдовжки {{units:близько 6,8 метра|пʼятнадцять ліктів}}, з трьома стовпами й трьома підставами.",
+          "R": "Зроби так само з другого боку брами: запони завдовжки {{units:близько 6,8 метра|пʼятнадцять ліктів}} на трьох стовпах, що стоять на трьох підставах."
+        },
+        "id": {
+          "L": "Dan untuk sisi yang kedua lima belas hasta layar-layar; tiang-tiangnya tiga dan alas-alasnya tiga.",
+          "B": "Pada sisi yang lain harus ada layar-layar {{units:sekitar 6,75 meter|lima belas hasta}} panjangnya, dengan tiga tiang dan tiga alas.",
+          "R": "Lakukan hal yang sama di sisi lain pintu gerbang itu: layar-layar {{units:sekitar 6,75 meter|lima belas hasta}} panjangnya pada tiga tiang yang berdiri di atas tiga alas."
+        },
+        "zh": {
+          "L": "另一旁也要有十五[肘]的帷幔；它的柱子三根，它们的底座三个。",
+          "B": "另一旁也要有{{units:约6.7米|十五肘}}长的帷幔，有三根柱子和三个底座。",
+          "R": "院门的另一边也要这样：把{{units:约6.7米|十五肘}}长的帷幔挂在三根柱子上，柱子立在三个底座上。"
         }
       },
       "decisions": [
@@ -2960,6 +3931,25 @@
           "choice": "modern measure first, cubits as the alternative",
           "alternatives": [],
           "reason": "Balanced and Readable give the length of the hangings in feet by default, with the cubits of the Hebrew as the units alternative (a cubit is about 18 inches; see the note at verse 1). Literal keeps cubits.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o020270150031",
+            "o020270150041"
+          ],
+          "choice": "约6.7米",
+          "alternatives": [],
+          "reason": "Metric measures by default, taking a cubit as about 45 centimetres, with the cubits in the units setting (Chinese numerals); the English gives feet. Literal keeps the cubits.",
           "uncertain": false,
           "footnote": false
         }
@@ -3055,6 +4045,26 @@
           "L": "А для ворот двора — занавес в двадцать локтей из голубой, и пурпурной, и червлёной пряжи и тонкого кручёного льна, работы вышивальщика; столбов их четыре и подножий их четыре.",
           "B": "Для ворот двора нужен занавес шириной {{units:около 9 метров|двадцать локтей}} из голубой, пурпурной и червлёной пряжи и тонкого кручёного льна, расшитый узорами, на четырёх столбах с четырьмя подножиями.",
           "R": "Для ворот двора сделай занавес шириной {{units:около 9 метров|двадцать локтей}}. Пусть искусный мастер украсит его цветными узорами из голубой, пурпурной и красной пряжи и тонкого кручёного льна. Повесь его на четыре столба, которые стоят на четырёх подножиях."
+        },
+        "ja": {
+          "L": "そして庭の門には、二十キュビトの幕、青色、紫色、緋色[の糸]と撚り糸の亜麻布の、刺繍をする者の細工[の幕を張りなさい]。その柱は四つ、その台座は四つ。",
+          "B": "庭の門には、青、紫、緋色の糸と、撚り糸で織った上等の亜麻布で作り、刺繍をする者が色模様を施した、幅{{units:約9メートル|二十キュビト}}の幕を掛けなさい。柱は四本、台座は四つである。",
+          "R": "庭の門には、幅{{units:約9メートル|二十キュビト}}の幕を作りなさい。腕のいい職人に、青や紫や赤の糸と上等の亜麻布を使って、色とりどりの模様に仕上げさせなさい。その幕は、四つの台座に立てた四本の柱に掛けなさい。"
+        },
+        "uk": {
+          "L": "А для брами подвірʼя — запона на двадцять ліктів, з блакиті, і пурпуру, і кармазину, і сученого тонкого льону, робота гаптувальника; стовпів їхніх чотири і підстав їхніх чотири.",
+          "B": "Брама подвірʼя має мати запону завширшки {{units:близько 9 метрів|двадцять ліктів}} із блакитної, пурпурової й кармазинової пряжі та сученого тонкого льону, вигаптувану гаптувальником і повішену на чотирьох стовпах на чотирьох підставах.",
+          "R": "Для брами подвірʼя зроби запону завширшки {{units:близько 9 метрів|двадцять ліктів}}. Хай вправний майстер зробить на ній барвисті візерунки з блакитної, пурпурової й кармазинової пряжі та сученого тонкого льону. Повісь її на чотирьох стовпах, що стоять на чотирьох підставах."
+        },
+        "id": {
+          "L": "Dan untuk pintu gerbang pelataran itu tirai penutup dua puluh hasta, dari kain ungu kebiruan, kain ungu, kain kirmizi, dan lenan halus yang dipintal, buatan tukang sulam; tiang-tiangnya empat dan alas-alasnya empat.",
+          "B": "Pintu gerbang pelataran itu harus mempunyai tirai penutup {{units:sekitar 9 meter|dua puluh hasta}} lebarnya, dari benang biru, ungu, dan merah tua dan lenan halus yang dipintal, hasil sulaman seorang penyulam, tergantung pada empat tiang yang berdiri di atas empat alas.",
+          "R": "Untuk pintu gerbang pelataran itu, buatlah tirai penutup {{units:sekitar 9 meter|dua puluh hasta}} lebarnya. Suruhlah seorang penyulam membuatnya dengan pola berwarna-warni, dari benang biru, ungu, dan merah tua dan lenan halus yang dipintal. Gantungkanlah tirai itu pada empat tiang yang berdiri di atas empat alas."
+        },
+        "zh": {
+          "L": "院子的门要有一道二十肘的门帘，用蓝色、紫色、朱红色[的线]和捻成的细麻做成，是刺绣的人的手工；它的柱子四根，它们的底座四个。",
+          "B": "院子的门口要有一道门帘，宽{{units:约9米|二十肘}}，用蓝色、紫色、朱红色的线和捻成的细麻布做成，由刺绣的工匠绣上彩色花纹，挂在四根柱子上，柱子立在四个底座上。",
+          "R": "院子的门要做一道门帘，宽{{units:约9米|二十肘}}。要请手艺好的工匠用蓝色、紫色、朱红色的线和捻好的细麻布，做出彩色的花样。门帘要挂在四根柱子上，柱子立在四个底座上。"
         }
       },
       "decisions": [
@@ -3163,6 +4173,42 @@
           "reason": "The screen is \"anteparo\", the word set for the screen of the tent at 26:36 (m1). Readable says \"portão\", as the English says \"gate\" for the courtyard's gateway; Balanced \"entrada\", and Literal \"porta\", the Hebrew word for a gate.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o020270160041",
+            "o020270160051"
+          ],
+          "choice": "约9米",
+          "alternatives": [],
+          "reason": "Metric measures by default, taking a cubit as about 45 centimetres, with the cubits in the units setting (Chinese numerals); the English gives feet. Literal keeps the cubits.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020270160131"
+          ],
+          "choice": "手艺好的工匠……做出彩色的花样",
+          "alternatives": [],
+          "reason": "Readable describes the work without deciding between needlework and weaving, as the English Readable does; Literal and Balanced keep the embroiderer of 26:36.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3244,6 +4290,26 @@
           "L": "Все столбы двора вокруг [пусть будут] связаны серебром; крючки их из серебра, а подножия их из меди.",
           "B": "Все столбы вокруг двора должны быть соединены серебряными связями; крючки на них серебряные, а подножия медные.",
           "R": "Вокруг всего двора у каждого столба должны быть серебряные обручи и крючки и медное подножие."
+        },
+        "ja": {
+          "L": "庭の周りのすべての柱には銀の帯輪が付けられ、その鉤は銀、その台座は青銅である。",
+          "B": "庭の周りの柱は、すべて銀の帯輪で結び、鉤は銀、台座は青銅としなさい。",
+          "R": "庭の周りの柱には、どれも銀の帯とかぎを付け、青銅の台座に立てなさい。"
+        },
+        "uk": {
+          "L": "Усі стовпи подвірʼя довкола — з обручами зі срібла; їхні гачки — зі срібла, а підстави їхні — з міді.",
+          "B": "Кожен стовп навколо подвірʼя має мати срібні обручі; гачки на них мають бути срібні, а підстави — мідні.",
+          "R": "Кожен стовп навколо подвірʼя має мати срібні обручі й гачки та мідну підставу."
+        },
+        "id": {
+          "L": "Semua tiang pelataran di sekelilingnya bersimpai perak; kait-kaitnya dari perak dan alas-alasnya dari tembaga.",
+          "B": "Setiap tiang di sekeliling pelataran itu harus bersimpai perak; kait-kaitnya dari perak dan alas-alasnya dari tembaga.",
+          "R": "Di sekeliling pelataran itu, setiap tiang harus mempunyai simpai dan kait dari perak dan alas dari tembaga."
+        },
+        "zh": {
+          "L": "院子四围所有的柱子都要用银箍箍上；它们的钩子要用银子做，它们的底座要用铜做。",
+          "B": "院子四围的每一根柱子都要套上银箍；钩子要用银子做，底座要用铜做。",
+          "R": "院子四周的每一根柱子，都要有银箍和银钩子，还要有铜底座。"
         }
       },
       "decisions": [
@@ -3363,6 +4429,26 @@
           "L": "Длина двора сто локтей, и ширина пятьдесят на пятьдесят, и высота пять локтей, из тонкого кручёного льна, а подножия их из меди.",
           "B": "Всего двор будет длиной {{units:около 45 метров|сто локтей}} и шириной {{units:около 22,5 метра|пятьдесят локтей}} с каждого конца. Его стены из тонкого кручёного льна будут высотой {{units:около 2,25 метра|пять локтей}}, а подножия медные.",
           "R": "Значит, весь двор будет длиной {{units:около 45 метров|сто локтей}} и шириной {{units:около 22,5 метра|пятьдесят локтей}}. Его льняные стены будут высотой {{units:около 2,25 метра|пять локтей}} и будут стоять на медных подножиях."
+        },
+        "ja": {
+          "L": "庭の長さは百キュビト、幅は五十と五十、高さは五キュビト、撚り糸の亜麻布で、その台座は青銅である。",
+          "B": "こうして庭は、長さ{{units:約45メートル|百キュビト}}、幅は両端とも{{units:約22メートル|五十キュビト}}となる。撚り糸で織った上等の亜麻布の囲いの高さは{{units:約2.2メートル|五キュビト}}で、台座は青銅である。",
+          "R": "こうして、庭全体の長さは{{units:約45メートル|百キュビト}}、幅は{{units:約22メートル|五十キュビト}}になる。亜麻布の囲いの高さは{{units:約2.2メートル|五キュビト}}で、青銅の台座の上に立つ。"
+        },
+        "uk": {
+          "L": "Довжина подвірʼя — сто ліктів, а ширина — пʼятдесят на пʼятдесят, а висота — пʼять ліктів, із сученого тонкого льону, а підстави їхні — з міді.",
+          "B": "Отже, подвірʼя має завдовжки {{units:близько 45 метрів|сто ліктів}} і завширшки {{units:близько 22,5 метра|пʼятдесят ліктів}} з кожного кінця. Його стіни із сученого тонкого льону заввишки {{units:близько 2,3 метра|пʼять ліктів}}, а підстави мідні.",
+          "R": "Отже, усе подвірʼя буде завдовжки {{units:близько 45 метрів|сто ліктів}} і завширшки {{units:близько 22,5 метра|пʼятдесят ліктів}}. Його лляні стіни будуть заввишки {{units:близько 2,3 метра|пʼять ліктів}} і стоятимуть на мідних підставах."
+        },
+        "id": {
+          "L": "Panjang pelataran itu seratus hasta, dan lebarnya lima puluh pada kedua ujung, dan tingginya lima hasta, dari lenan halus yang dipintal, dan alas-alasnya dari tembaga.",
+          "B": "Seluruhnya, pelataran itu {{units:sekitar 45 meter|seratus hasta}} panjangnya dan {{units:sekitar 22,5 meter|lima puluh hasta}} lebarnya pada setiap ujung. Dindingnya dari lenan halus yang dipintal, {{units:sekitar 2,25 meter|lima hasta}} tingginya, dan alas-alasnya dari tembaga.",
+          "R": "Jadi seluruh pelataran itu akan {{units:sekitar 45 meter|seratus hasta}} panjangnya dan {{units:sekitar 22,5 meter|lima puluh hasta}} lebarnya. Dinding-dindingnya dari lenan akan {{units:sekitar 2,25 meter|lima hasta}} tingginya, berdiri di atas alas-alas tembaga."
+        },
+        "zh": {
+          "L": "院子要长一百肘，宽每边五十[肘]，高五肘，[帷幔要用]捻成的细麻，它们的底座要用铜做。",
+          "B": "院子总共长{{units:约45米|一百肘}}，两端各宽{{units:约22米|五十肘}}。用捻成的细麻布做的围墙高{{units:约2.2米|五肘}}，底座都是铜的。",
+          "R": "所以整个院子要长{{units:约45米|一百肘}}，宽{{units:约22米|五十肘}}。用细麻布做的围墙要高{{units:约2.2米|五肘}}，立在铜底座上。"
         }
       },
       "decisions": [
@@ -3436,6 +4522,65 @@
           "choice": "walls of fine twisted linen / linen walls",
           "alternatives": [],
           "reason": "The Hebrew says only \"fine twisted linen\", meaning the hangings. Balanced and Readable call them walls, which is what they formed.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020270180061",
+            "o020270180071",
+            "o020270180072"
+          ],
+          "choice": "50 by 50: \"五十と五十\" (L), \"両端とも\" (B)",
+          "alternatives": [],
+          "reason": "Fifty cubits at each end (meaning decision m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o020270180031",
+            "o020270180042",
+            "o020270180061"
+          ],
+          "choice": "约45米; 约22米; 约2.2米",
+          "alternatives": [],
+          "reason": "Metric measures by default, taking a cubit as about 45 centimetres, with the cubits in the units setting (Chinese numerals); the English gives feet. Literal keeps the cubits.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020270180111"
+          ],
+          "choice": "围墙",
+          "alternatives": [],
+          "reason": "The Hebrew says only \"fine twisted linen\", meaning the hangings; Balanced and Readable call them \"围墙\", walls, as the English does.",
           "uncertain": false,
           "footnote": false
         }
@@ -3524,6 +4669,26 @@
           "L": "Все принадлежности скинии для всякого служения её, и все колья её, и все колья двора — из меди.",
           "B": "Все принадлежности, нужные для любой работы в скинии, и все её колья, и колья двора должны быть сделаны из меди.",
           "R": "Все принадлежности для работы в священном шатре должны быть сделаны из меди. Так же и все колья для священного шатра и для двора."
+        },
+        "ja": {
+          "L": "幕屋のすべての器具は、そのすべての奉仕において、またそのすべての杭も、庭のすべての杭も、青銅である。",
+          "B": "幕屋のあらゆる務めに用いる器具も、幕屋の杭も、庭の杭も、すべて青銅で作りなさい。",
+          "R": "幕屋の仕事に使う道具は、全部青銅で作りなさい。幕屋と庭の杭も、全部そうしなさい。"
+        },
+        "uk": {
+          "L": "Усе приладдя скинії для всієї служби її, і всі кілки її, і всі кілки подвірʼя — з міді.",
+          "B": "Усе приладдя для кожної роботи в скинії, усі її кілки й кілки подвірʼя мають бути з міді.",
+          "R": "Усе приладдя для роботи в скинії мусить бути з міді. Так само всі кілки для скинії й для подвірʼя."
+        },
+        "id": {
+          "L": "Segala perkakas Kemah Suci untuk segala pekerjaannya, dan semua patoknya dan semua patok pelataran itu, dari tembaga.",
+          "B": "Semua perkakas yang dipakai untuk setiap pekerjaan di Kemah Suci, dan semua patok kemah serta patok pelataran, harus dibuat dari tembaga.",
+          "R": "Semua perkakas yang dipakai untuk pekerjaan Kemah Suci harus dibuat dari tembaga. Demikian juga semua patok kemah untuk Kemah Suci dan untuk pelataran."
+        },
+        "zh": {
+          "L": "帐幕各样用于一切事奉的器具，它所有的橛子和院子所有的橛子，都要用铜做。",
+          "B": "帐幕里各种事奉所用的一切器具，以及帐幕所有的橛子和院子的橛子，都要用铜做。",
+          "R": "帐幕各种工作所用的工具都必须用铜做。帐幕和院子所用的一切桩子，也都必须用铜做。"
         }
       },
       "decisions": [
@@ -3598,6 +4763,26 @@
             "\"ችንካሮች\""
           ],
           "reason": "\"ካስማ\" is the peg driven into the ground to hold a tent's cords.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020270190071",
+            "o020270190091"
+          ],
+          "choice": "橛子 (L, B); 桩子 (R)",
+          "alternatives": [],
+          "reason": "The tent pegs driven into the ground to hold the cords (m2): \"橛子\" at Literal and Balanced, the everyday \"桩子\" at Readable.",
           "uncertain": false,
           "footnote": false
         }
@@ -3687,6 +4872,26 @@
           "L": "А ты повели {{gender:детям Израиля|сынам Израиля}}, чтобы приносили тебе масло оливковое чистое, выбитое, для света, чтобы зажигать лампаду постоянно.",
           "B": "Дай израильтянам повеление: пусть приносят тебе чистое оливковое масло из выбитых маслин для света, чтобы лампада горела постоянно.",
           "R": "Скажи израильтянам, чтобы они приносили тебе чистое оливковое масло, выжатое из истолчённых маслин, для света. Тогда лампада сможет гореть всё время."
+        },
+        "ja": {
+          "L": "そしてあなたは、イスラエルの子らに命じなさい。彼らが、ともし火のために、搾った純粋なオリーブ油をあなたのもとに持って来て、ともし火を絶えず燃え上がらせるように。",
+          "B": "あなたはイスラエルの人々に命じて、ともし火のために、オリーブを砕いて取った純粋な油を持って来させ、ともし火を絶えずともせるようにしなさい。",
+          "R": "イスラエルの人々に、ともし火のために、オリーブの実をつぶしてとった純粋な油を持って来るように言いなさい。そうすれば、ともし火をいつもともしておくことができる。"
+        },
+        "uk": {
+          "L": "А ти накажеш {{gender:нащадкам|синам}} Ізраїля, щоб вони приносили тобі чисту оливкову олію, вибиту, для світла, щоб лампа горіла повсякчас.",
+          "B": "Дай ізраїльтянам такий наказ: вони мають приносити тобі чисту олію з товчених оливок для світла, щоб лампа горіла повсякчас.",
+          "R": "Скажи ізраїльтянам приносити тобі чисту оливкову олію, вичавлену з товчених оливок, для світла. Тоді лампа зможе горіти весь час."
+        },
+        "id": {
+          "L": "Dan engkau, engkau harus memerintahkan bani Israel supaya mereka membawa kepadamu minyak zaitun yang murni dan tumbukan untuk penerangan, supaya pelita tetap menyala senantiasa.",
+          "B": "Perintahkanlah kepada orang Israel supaya mereka membawa kepadamu minyak zaitun tumbukan yang murni untuk penerangan, supaya pelita dapat menyala terus-menerus.",
+          "R": "Suruhlah orang Israel membawa kepadamu minyak zaitun murni yang dibuat dari buah zaitun yang ditumbuk, untuk penerangan. Dengan begitu sebuah pelita dapat terus menyala."
+        },
+        "zh": {
+          "L": "你要吩咐{{gender:以色列的子孙|以色列的儿子}}，叫他们把捣出来的纯橄榄油拿来给你，为点灯用，使灯常常点着。",
+          "B": "你要吩咐以色列人：他们必须把捣出来的纯橄榄油拿来给你，用来点灯，使灯常常点着。",
+          "R": "你要告诉以色列人，把纯橄榄油带来给你，就是把橄榄捣碎做成的油，用来点灯。这样，灯就可以一直点着。"
         }
       },
       "decisions": [
@@ -3840,6 +5045,88 @@
           "reason": "As the Pentateuch note settles, Balanced and Readable say \"इस्राएली\", which already includes everyone; only Literal has the gender span. This holds for verse 21 too.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020270200132",
+            "o020270200141"
+          ],
+          "choice": "to make a lamp go up: \"燃え上がらせる\" (L), \"ともす\" (B, R)",
+          "alternatives": [],
+          "reason": "The idiom means to make a lamp burn (meaning decision m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020270200091",
+            "o020270200101",
+            "o020270200111"
+          ],
+          "choice": "\"minyak zaitun tumbukan yang murni\"",
+          "alternatives": [],
+          "reason": "The finest oil, from olives crushed by hand (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020270200111",
+            "o020270200132",
+            "o020270200141"
+          ],
+          "choice": "捣出来的 (L, B); 把橄榄捣碎做成的 (R); 使灯常常点着",
+          "alternatives": [],
+          "reason": "\"Beaten\" oil is oil from olives crushed by hand (m1); Readable says how it is made. The Hebrew \"to make a lamp go up\" (m2) is \"使灯点着\" at every level; \"常常\" says it is kept burning every night (m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o020270200041",
+            "o020270200051"
+          ],
+          "choice": "以色列的子孙 (L, span); 以色列人 (B, R, no span)",
+          "alternatives": [],
+          "reason": "Literal writes \"sons of Israel\" in the gender setting, \"以色列的子孙\" by default with \"以色列的儿子\" as the alternative; Balanced and Readable say \"以色列人\", the people, which needs no span, where the English spans Israelites / sons of Israel.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3941,6 +5228,26 @@
           "L": "В шатре встречи, вне завесы, которая перед свидетельством, пусть устраивает её Аарон и сыновья его от вечера до утра пред {{divine_name:ГОСПОДОМ|Яхве}}; [это] вечное установление в роды их от {{gender:детей Израиля|сынов Израиля}}.",
           "B": "Аарон и его сыновья должны заботиться о ней в шатре встречи, перед завесой, закрывающей свидетельство, от вечера до утра пред {{divine_name:ГОСПОДОМ|Яхве}}. Это вечное установление для израильтян из поколения в поколение.",
           "R": "Аарон и его сыновья должны следить за лампадой в шатре встречи, перед завесой, за которой стоит ковчег с каменными досками завета. Пусть он горит пред {{divine_name:ГОСПОДОМ|Яхве}} от вечера до утра. Это правило израильтяне должны соблюдать всегда, во всех поколениях."
+        },
+        "ja": {
+          "L": "会見の天幕の中で、証しの上にある垂れ幕の外で、アロンとその子らは、夕方から朝まで{{divine_name:主|ヤハウェ}}の前にそれを整えなければならない。[これは]イスラエルの子らにとって、代々にわたる永遠の定めである。",
+          "B": "アロンとその子らは、会見の天幕の中、証しの前にある垂れ幕の外で、夕方から朝まで{{divine_name:主|ヤハウェ}}の前でともし火を整えなさい。これは、イスラエルの人々が代々守るべき永遠の定めである。",
+          "R": "アロンとその息子たちは、神と会うテントの中で、ともし火の世話をしなければならない。それは、契約の板を納めた箱の前の垂れ幕の外である。夕方から朝まで、{{divine_name:主|ヤハウェ}}の前でともし火を燃やし続けなければならない。これは、イスラエルの人々が、いつの時代にもずっと守るべききまりである。"
+        },
+        "uk": {
+          "L": "У наметі зустрічі, поза завісою, що над свідченням, Аарон і сини його впорядковуватимуть її від вечора до ранку перед {{divine_name:ГОСПОДОМ|Ягве}}; [це] вічна постанова в їхніх поколіннях від {{gender:нащадків|синів}} Ізраїля.",
+          "B": "Аарон і його сини мають доглядати її в наметі зустрічі, перед завісою, що закриває свідчення, від вечора до ранку перед {{divine_name:ГОСПОДОМ|Ягве}}. Це вічна постанова для ізраїльтян з покоління в покоління.",
+          "R": "Аарон і його сини мусять доглядати лампу в наметі зустрічі, перед завісою, за якою стоїть ковчег із таблицями завіту. Вони мусять підтримувати її вогонь перед {{divine_name:ГОСПОДОМ|Ягве}} від вечора до ранку. Це правило ізраїльтяни мусять дотримуватися завжди, у кожному поколінні."
+        },
+        "id": {
+          "L": "Di dalam Kemah Pertemuan, di luar tirai yang ada di depan loh hukum, Harun dan anak-anaknya harus mengaturnya dari petang sampai pagi di hadapan {{divine_name:TUHAN|Yahweh}}; itulah ketetapan untuk selama-lamanya bagi keturunan mereka dari pihak bani Israel.",
+          "B": "Harun dan anak-anaknya harus merawatnya di dalam Kemah Pertemuan, di luar tirai yang ada di depan loh hukum, dari petang sampai pagi di hadapan {{divine_name:TUHAN|Yahweh}}. Itulah ketetapan untuk selama-lamanya bagi orang Israel, turun-temurun.",
+          "R": "Harun dan anak-anaknya harus merawat pelita itu di dalam Kemah Pertemuan, di luar tirai yang ada di depan tabut tempat loh-loh perjanjian. Mereka harus menjaganya tetap menyala di hadapan {{divine_name:TUHAN|Yahweh}} dari petang sampai pagi. Inilah peraturan yang harus ditaati orang Israel untuk selama-lamanya, turun-temurun."
+        },
+        "zh": {
+          "L": "在会幕中，在见证版前的帘幕外，亚伦和他的儿子们要从晚上到早晨，在{{divine_name:上主|雅威}}面前整理这灯；这要作{{gender:以色列的子孙|以色列的儿子}}世世代代永远的定例。",
+          "B": "在会幕里，在遮着见证版的帘幕外，亚伦和他的儿子们要从晚上到早晨在{{divine_name:上主|雅威}}面前照料这灯。这是以色列人世世代代永远的定例。",
+          "R": "亚伦和他的儿子们必须在会幕里照管这灯。灯要放在帘幕外面，帘幕后面是存放刻着诫命的两块石版的约柜。他们必须使灯在{{divine_name:上主|雅威}}面前从晚上点到早晨。这是以色列人世世代代必须永远遵守的规定。"
         }
       },
       "decisions": [
@@ -4184,6 +5491,130 @@
             "\"устав вечный\""
           ],
           "reason": "The Pentateuch note fixes \"вечное установление\" for a lasting statute; Readable says \"правило\", as the English Readable says \"rule\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020270210012",
+            "o020270210021"
+          ],
+          "choice": "ohel mo'ed: \"会見の天幕\" (L, B), \"神と会うテント\" (R)",
+          "alternatives": [
+            "\"臨在の幕屋\""
+          ],
+          "reason": "The tent where God meets with his people (meaning decision m1); \"天幕\" keeps it apart from mishkan \"幕屋\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020270210171",
+            "o020270210181",
+            "o020270210201",
+            "o020270210202",
+            "o020270210211"
+          ],
+          "choice": "statute forever: \"永遠の定め\" (L, B), \"いつの時代にもずっと守るべききまり\" (R); chuqqah \"定め\" / \"きまり\" as in Exodus 13:10",
+          "alternatives": [],
+          "reason": "A lasting duty laid on Israel (meaning decision m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [],
+          "choice": "намет зустрічі",
+          "alternatives": [
+            "скинія зборів"
+          ],
+          "reason": "The shared terms note: the tent where God meets Moses, named for the meeting.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020270210012",
+            "o020270210021"
+          ],
+          "choice": "\"Kemah Pertemuan\"",
+          "alternatives": [],
+          "reason": "The glossary name for the tent of meeting (m1), kept through the book.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020270210012",
+            "o020270210021"
+          ],
+          "choice": "会幕",
+          "alternatives": [],
+          "reason": "The glossary's word for the tent of meeting, every level, through Exodus to Numbers; it is the same tent as the tabernacle, \"帐幕\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020270210171",
+            "o020270210181"
+          ],
+          "choice": "永远的定例 (L, B), 必须永远遵守的规定 (R)",
+          "alternatives": [],
+          "reason": "The lasting statute, one form per level through Exodus (12:14, 17, 24; 27-30): \"永远的定例\" at Literal and Balanced; Readable \"必须永远遵守的规定\" for \"a rule ... for all time\".",
           "uncertain": false,
           "footnote": false
         }

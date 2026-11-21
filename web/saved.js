@@ -229,6 +229,39 @@
     });
     wordsBox.appendChild(ul);
 
+    // Word pairs kept from Parallel: the source word, then what each of
+    // the two languages made of it, linked to the verse.
+    var pairs = S.pairs ? S.pairs() : [];
+    wordsBox.appendChild(el("h2", "saved-book", T.pairs_saved));
+    if (!pairs.length) wordsBox.appendChild(el("p", "saved-empty", T.pairs_saved_empty));
+    var pl = el("ul", "saved-items saved-pairs");
+    pairs.forEach(function (x) {
+      var li = el("li", "saved-item");
+      var head = el("p", "saved-head");
+      var src = el("span", "saved-pair-source", x.s || x.w);
+      src.lang = x.l === "grc" ? "grc" : "hbo";
+      head.appendChild(src);
+      if (x.g) head.appendChild(el("span", "saved-gloss", "\u201c" + x.g + "\u201d"));
+      var del = el("button", "saved-remove", T.word_remove);
+      del.type = "button";
+      del.addEventListener("click", function () { S.setPair(x, false); draw(); });
+      head.appendChild(del);
+      li.appendChild(head);
+      var line = el("a", "saved-pair");
+      line.href = x.u;
+      [x.a, x.b].forEach(function (side, i) {
+        if (i) line.appendChild(document.createTextNode(" \u00b7 "));
+        var w = el("span", null, side[1] || "\u2014");
+        w.lang = side[0];
+        line.appendChild(w);
+      });
+      var ref = x.v.split(".");
+      line.appendChild(el("span", "saved-pair-ref", " " + (data.names[ref[0]] || ref[0]) + " " + ref.slice(1).join(":")));
+      li.appendChild(line);
+      pl.appendChild(li);
+    });
+    wordsBox.appendChild(pl);
+
     var recent = S.lookups();
     var h = el("h2", "saved-book", T.words_recent);
     wordsBox.appendChild(h);

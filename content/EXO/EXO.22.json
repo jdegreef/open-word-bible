@@ -77,6 +77,26 @@
           "L": "Если вор будет застигнут при подкопе и его ударят, и он умрёт, нет на нём [вины за] кровь.",
           "B": "Допустим, вора застали, когда он вламывался в дом, и кто-то ударил его так, что он умер. Тогда за его смерть нет вины в пролитии крови.",
           "R": "Кто-то может поймать вора, который ночью вламывается в дом, и ударить его так сильно, что тот умрёт. Если так случится, тот, кто ударил, не виновен в пролитии крови."
+        },
+        "ja": {
+          "L": "もし盗人が押し入るところを見つけられ、打たれて死んだなら、彼のための血[の罪]はない。",
+          "B": "盗人が家に押し入ろうとしているところを見つかり、打たれて死んだとしよう。その場合、彼の死について、血を流した罪は問われない。",
+          "R": "夜、家に押し入ろうとしている盗人を見つけて、強く打ったので、その盗人が死んでしまうこともあるだろう。その場合、打った人は、人の血を流した罪には問われない。"
+        },
+        "uk": {
+          "L": "Якщо злодія знайдуть під час підкопу, і його вдарять, і він помре, — немає за нього [вини] крові.",
+          "B": "Припустімо, злодія впіймали, коли він вдирався, і хтось ударив його, і він помер. Тоді за його смерть немає вини крові.",
+          "R": "Хтось може впіймати злодія, коли той уночі вдирається до хати, і вдарити його так, що той помре. Якщо таке станеться, той, хто вдарив, не несе вини за пролиту кров."
+        },
+        "id": {
+          "L": "Jika seorang pencuri didapati sedang membongkar, lalu ia dipukul sampai mati, tidak ada utang darah karenanya.",
+          "B": "Misalkan seorang pencuri tertangkap basah sedang membongkar rumah, lalu seseorang memukulnya sampai mati. Dalam hal itu tidak ada utang darah atas kematiannya.",
+          "R": "Seseorang mungkin memergoki pencuri yang sedang membongkar rumah pada malam hari, lalu memukulnya begitu keras sampai pencuri itu mati. Kalau hal itu terjadi, orang yang memukulnya tidak menanggung kesalahan karena menumpahkan darah."
+        },
+        "zh": {
+          "L": "贼若在破墙闯入时被抓到，被人打死了，就不算有为他流血的罪。",
+          "B": "假设一个贼在破门闯入时被当场抓住，有人打了他，他就死了，那么他的死不算流血的罪。",
+          "R": "有人也许在夜里抓到一个正在闯进屋里的贼，把他打死了。如果是这样，打死他的人没有流人血的罪。"
         }
       },
       "decisions": [
@@ -310,6 +330,70 @@
           "reason": "The Hebrew word is \"digging through\", forcing a way through a house wall of mud brick (m2); Literal keeps the picture, Balanced and Readable say \"вламывался в дом\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020220010071",
+            "o020220010081",
+            "o020220010082",
+            "o020220010091"
+          ],
+          "choice": "'no blood for him': \"彼のための血[の罪]はない\" (L), \"血を流した罪は問われない\" (B, R)",
+          "alternatives": [
+            "\"血の報復はない\""
+          ],
+          "reason": "The meaning decision reads no guilt for shedding his blood; Literal keeps \"血\" with the supplied word in brackets.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [],
+          "choice": "вина крові",
+          "alternatives": [
+            "кровна провина"
+          ],
+          "reason": "The guilt of shedding blood; L marks the supplied noun in brackets as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020220010071",
+            "o020220010081",
+            "o020220010082",
+            "o020220010091"
+          ],
+          "choice": "\"utang darah\" (L, B)",
+          "alternatives": [],
+          "reason": "No guilt for shedding his blood (m3); \"utang darah\" names the bloodguilt, and Readable says it in full.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -397,6 +481,26 @@
           "L": "Если взошло над ним солнце, [есть вина за] кровь. Он непременно должен возместить; если у него нет [ничего], пусть будет продан за свою кражу.",
           "B": "Но если это случилось, когда солнце уже взошло, за убийство есть вина в пролитии крови. Вор должен возместить всё полностью; если у него ничего нет, пусть его продадут, чтобы покрыть украденное.",
           "R": "Но если солнце уже взошло, тот, кто убил вора, виновен в пролитии крови. Вор должен вернуть то, что взял. Если у него ничего нет, его продадут в рабство, и вырученные деньги покроют украденное."
+        },
+        "ja": {
+          "L": "もし太陽が彼の上に昇っていたなら、彼のための血[の罪]がある。[盗人は]必ず償わなければならない。もし彼に何もないなら、彼は自分の盗みのために売られる。",
+          "B": "しかし、それが日が昇ってからのことであれば、殺した者に血を流した罪がある。盗人は十分に償わなければならない。何も持っていないなら、盗んだ物の代わりに、その身が売られる。",
+          "R": "しかし、日が昇っていたなら、盗人を殺した人には、血を流した罪がある。盗人は、盗んだ物を償わなければならない。何も持っていないなら、その盗人は奴隷として売られ、その代金で盗んだ物を償う。"
+        },
+        "uk": {
+          "L": "Якщо зійшло над ним сонце, — є за нього [вина] крові. Він неодмінно відшкодує; якщо в нього нічого немає, то його продадуть за його крадіжку.",
+          "B": "Але якщо це сталося, коли вже зійшло сонце, убивство тягне за собою вину крові. Злодій мусить відшкодувати все сповна; якщо в нього нічого немає, його продадуть, щоб покрити вкрадене.",
+          "R": "Але якщо вже зійшло сонце, той, хто вбʼє злодія, винен у пролитті крові. Злодій мусить повернути те, що взяв. Якщо в нього нічого немає, його продадуть у рабство, і ціна покриє вкрадене."
+        },
+        "id": {
+          "L": "Jika matahari telah terbit atasnya, ada utang darah karenanya. Ia harus membayar ganti rugi; jika ia tidak mempunyai apa-apa, ia harus dijual karena pencuriannya.",
+          "B": "Tetapi jika hal itu terjadi setelah matahari terbit, pembunuhan itu menimbulkan utang darah. Pencuri itu harus membayar ganti rugi sepenuhnya; jika ia tidak mempunyai apa-apa, ia harus dijual untuk mengganti apa yang dicurinya.",
+          "R": "Tetapi kalau matahari sudah terbit, orang yang membunuh pencuri itu bersalah karena menumpahkan darah. Seorang pencuri harus mengganti apa yang dicurinya. Kalau ia tidak mempunyai apa-apa, ia akan dijual sebagai budak, dan uang penjualannya dipakai untuk mengganti apa yang dicurinya."
+        },
+        "zh": {
+          "L": "若太阳已经升起照着他，就有为他流血的罪。他必定要偿还；若他什么都没有，就要因他的偷窃被卖。",
+          "B": "但如果事情发生时太阳已经升起，杀死他就算流血的罪。贼必须全部赔偿；他若一无所有，就要被卖掉，来抵偿他偷走的东西。",
+          "R": "但如果太阳已经出来了，打死贼的人就有流人血的罪。贼必须赔偿他偷走的东西。他若什么都没有，就要被卖去作奴隶，卖得的钱用来抵偿他偷的东西。"
         }
       },
       "decisions": [
@@ -634,6 +738,26 @@
           "L": "Если украденное действительно найдено в его руке, бык ли, осёл ли, овца ли, живым, пусть возместит вдвое.",
           "B": "Если украденное им животное, бык, осёл или овца, будет найдено у него живым, он должен возместить вдвое.",
           "R": "Если у вора всё ещё есть украденный бык, осёл или овца и животное живо, он должен отдать хозяину по два животных за каждое, которое взял."
+        },
+        "ja": {
+          "L": "もし盗まれたものが、牛であれろばであれ羊であれ、生きたまま確かに彼の手の中に見つかるなら、彼は二倍を償わなければならない。",
+          "B": "盗んだ牛やろばや羊が、まだ生きたまま彼の手もとで見つかったなら、彼は二倍にして償わなければならない。",
+          "R": "盗人が、盗んだ牛やろばや羊を、生きたまま持っていたなら、盗んだ一頭につき二頭を持ち主に返さなければならない。"
+        },
+        "uk": {
+          "L": "Якщо вкрадене справді знайдуть у його руці, чи то віл, чи осел, чи вівця, живим, він відшкодує вдвоє.",
+          "B": "Якщо вкрадену тварину, чи то вола, чи осла, чи вівцю, знайдуть у нього ще живою, він мусить відшкодувати вдвоє.",
+          "R": "Якщо в злодія ще є вкрадений віл, осел чи вівця, і тварина жива, він мусить дати власникові дві тварини за кожну, яку взяв."
+        },
+        "id": {
+          "L": "Jika barang curian itu memang didapati di tangannya dalam keadaan hidup, baik lembu, keledai, maupun domba, ia harus membayar ganti dua kali lipat.",
+          "B": "Jika binatang yang dicurinya, entah lembu, keledai, atau domba, didapati masih hidup padanya, ia harus membayar ganti dua kali lipat.",
+          "R": "Kalau pencuri itu masih mempunyai lembu, keledai, atau domba yang dicurinya, dan binatang itu masih hidup, ia harus memberikan kepada pemiliknya dua ekor untuk setiap ekor yang dicurinya."
+        },
+        "zh": {
+          "L": "他所偷的[牲畜]若确实在他手中被找到，无论是牛、是驴、是羊，还活着，他就要加倍赔偿。",
+          "B": "他偷的牲畜，无论是牛、驴或羊，被找到时若还活着、还在他手里，他就必须加倍赔偿。",
+          "R": "如果贼偷的牛、驴或羊还在他那里，而且还活着，他就必须每偷一只，赔给主人两只。"
         }
       },
       "decisions": [
@@ -775,6 +899,26 @@
           "L": "Если кто потравит поле или виноградник и пустит свой скот, и он будет пастись на поле другого, лучшим со своего поля и лучшим со своего виноградника пусть возместит.",
           "B": "Допустим, кто-то выпустил скот пастись на поле или в винограднике и не уследил за ним, так что скот пасётся на чужом поле. Тогда ущерб нужно возместить лучшим, что дают его собственное поле и виноградник.",
           "R": "Кто-то может пустить своих животных пастись в поле или винограднике, а животные могут забрести на чужое поле и пастись там. Тогда хозяин животных должен возместить ущерб лучшим урожаем со своего поля или виноградника."
+        },
+        "ja": {
+          "L": "もし人が畑かぶどう畑を[家畜に]食べさせ、自分の家畜を放して、それがほかの人の畑で食べたなら、自分の畑の最も良いものと、自分のぶどう畑の最も良いもので償わなければならない。",
+          "B": "ある人が家畜を放して畑やぶどう畑で草を食べさせ、家畜がほかの人の畑に入って食べてしまったとしよう。その場合、自分の畑とぶどう畑でとれる最も良いもので、その損害を償わなければならない。",
+          "R": "だれかが自分の家畜に畑やぶどう畑で草を食べさせていて、家畜がほかの人の畑に入り込んで食べてしまうこともあるだろう。その場合、家畜の持ち主は、自分の畑やぶどう畑でとれたいちばん良い作物で、その損害を償わなければならない。"
+        },
+        "uk": {
+          "L": "Якщо хтось випасатиме поле чи виноградник і пустить свою худобу, і вона пастиметься на чужому полі, то з найкращого свого поля і з найкращого свого виноградника він відшкодує.",
+          "B": "Припустімо, хтось виганяє худобу пастися на поле чи у виноградник і пускає її так, що вона пасеться на полі іншої людини. Тоді найкращим урожаєм зі свого поля й виноградника він мусить покрити втрату.",
+          "R": "Хтось може пустити свою худобу пастися на полі чи у винограднику, а тварини можуть зайти на поле іншої людини й там пастися. Тоді власник худоби мусить заплатити за шкоду найкращим урожаєм зі свого поля чи виноградника."
+        },
+        "id": {
+          "L": "Apabila seseorang menggembalakan ternaknya di ladang atau di kebun anggur, dan ia melepaskan ternaknya sehingga makan di ladang orang lain, ia harus membayar ganti rugi dengan hasil terbaik dari ladangnya sendiri dan hasil terbaik dari kebun anggurnya.",
+          "B": "Misalkan seseorang menggembalakan ternaknya di ladang atau kebun anggur, lalu melepaskannya sehingga ternak itu makan di ladang orang lain. Ia harus mengganti kerugian itu dengan hasil terbaik dari ladang dan kebun anggurnya sendiri.",
+          "R": "Seseorang mungkin membiarkan ternaknya makan rumput di ladang atau kebun anggur, lalu ternak itu masuk ke ladang orang lain dan makan di sana. Pemilik ternak itu harus membayar kerugian itu dengan hasil terbaik dari ladang atau kebun anggurnya sendiri."
+        },
+        "zh": {
+          "L": "人若让[牲畜]在田间或葡萄园里吃草，放开他的牲畜，它在别人的田里吃了，他就要拿自己田里最好的和自己葡萄园里最好的来赔偿。",
+          "B": "假设有人放牲畜在田里或葡萄园里吃草，却让它们跑到别人的田里去吃，那么他就必须用自己田里和葡萄园里最好的出产来赔偿。",
+          "R": "有人也许让自己的牲畜在田里或葡萄园里吃草，牲畜却跑到别人的田里去吃东西。那么牲畜的主人必须用自己田里或葡萄园里最好的出产来赔偿损失。"
         }
       },
       "decisions": [
@@ -985,6 +1129,27 @@
           "reason": "Where the English has gender spans for \"someone\" or \"a man\" meaning anyone, and for \"his\", \"him\" and \"he\" referring back to it, Russian \"кто\", \"кто-то\" and the reflexive \"свой\" already take in men and women, as the style guide says, so they need no span. A span is kept in 22:30, where Russian has two real wordings.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o020220040031"
+          ],
+          "choice": "\"人\", \"有人\", \"自己\" with no gender span",
+          "alternatives": [
+            "{{gender:人|男人}}"
+          ],
+          "reason": "The English spans \"someone|a man\" and its pronouns through these laws; Chinese \"人\", \"有人\", \"谁\" and \"自己\" already cover men and women, so the Chinese has no gender spans in this chapter.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1074,6 +1239,26 @@
           "L": "Если выйдет огонь и охватит терновник, и сгорит копна, или хлеб на корню, или поле, непременно пусть возместит тот, кто разжёг пожар.",
           "B": "Допустим, кто-то развёл огонь, а он перекинулся на колючки и пошёл дальше, и сгорели снопы, хлеб на корню или целое поле. Тот, кто развёл огонь, должен полностью возместить ущерб.",
           "R": "Кто-то может развести огонь, а огонь перейдёт на колючие кусты и сожжёт зерно другого человека, сложенное в снопы или ещё растущее в поле. Тот, кто развёл огонь, должен возместить весь ущерб."
+        },
+        "ja": {
+          "L": "もし火が出て、いばらに燃え移り、積み上げた束か、立ち穂か、畑が焼き尽くされたなら、火をつけた者は必ず償わなければならない。",
+          "B": "火がつけられて、いばらに燃え移って広がり、積み上げた束や、刈り取る前の穀物や、畑全体が焼けてしまったとしよう。火をつけた者は、その損害を十分に償わなければならない。",
+          "R": "だれかがつけた火が、いばらのしげみに燃え広がり、ほかの人の穀物を焼いてしまうこともあるだろう。積み上げてあった穀物でも、畑にまだ生えている穀物でも同じである。火をつけた人は、その損害をすべて償わなければならない。"
+        },
+        "uk": {
+          "L": "Якщо вийде вогонь і перекинеться на тернину, і згорить копа снопів, чи збіжжя на пні, чи поле, то той, хто розпалив вогонь, неодмінно відшкодує.",
+          "B": "Припустімо, хтось розпалив вогонь, і він перекинувся на тернину й поширився, і згоріли складені снопи, чи ще не скошене збіжжя, чи ціле поле. Той, хто розпалив вогонь, мусить сповна заплатити за втрату.",
+          "R": "Хтось може розпалити вогонь, а він перекинеться на терен і спалить чуже збіжжя, складене в снопи чи ще не скошене в полі. Той, хто розпалив вогонь, мусить відшкодувати всю втрату."
+        },
+        "id": {
+          "L": "Apabila api menjalar dan merambat ke semak duri, sehingga habis terbakar tumpukan berkas gandum atau gandum yang belum dituai atau ladang itu, orang yang menyalakan api itu harus membayar ganti rugi sepenuhnya.",
+          "B": "Misalkan seseorang menyalakan api, lalu api itu merambat ke semak duri dan menjalar, sehingga tumpukan gandum, gandum yang masih berdiri, atau seluruh ladang terbakar habis. Orang yang menyalakan api itu harus membayar seluruh kerugian.",
+          "R": "Seseorang mungkin menyalakan api yang menjalar ke semak-semak berduri dan membakar habis gandum milik orang lain, entah gandum yang sudah ditumpuk atau yang masih tumbuh di ladang. Orang yang menyalakan api itu harus mengganti seluruh kerugian."
+        },
+        "zh": {
+          "L": "若有火发出，烧着荆棘，以致禾捆、站着的庄稼或田地被烧尽，那生火的人必定要赔偿。",
+          "B": "假设有人点了火，火烧着了荆棘并且蔓延开来，把堆好的禾捆、还没收割的庄稼或整片田地都烧掉了，那生火的人必须全数赔偿损失。",
+          "R": "有人也许点了火，火蔓延到荆棘丛里，把别人的庄稼烧掉了，无论是已经堆起来的，还是仍长在田里的。那生火的人必须赔偿全部损失。"
         }
       },
       "decisions": [
@@ -1229,6 +1414,26 @@
           "L": "Если кто даст своему ближнему серебро или вещи на хранение, и это украдут из дома того человека, — если вор найдётся, пусть возместит вдвое.",
           "B": "Допустим, кто-то отдал соседу деньги или другие вещи на хранение, а вор украл их из его дома. Если вор найдётся, он должен возместить вдвое.",
           "R": "Человек может оставить у соседа деньги или ценные вещи, чтобы тот их сберёг, а вор может забраться в дом соседа и украсть их. Если вора найдут, он должен вернуть вдвое больше."
+        },
+        "ja": {
+          "L": "もし人がその隣人に銀か品物を預けて、それがその人の家から盗まれたなら、もし盗人が見つかれば、[盗人は]二倍を償わなければならない。",
+          "B": "ある人が隣人に金や品物を預けて保管してもらい、それが隣人の家から盗まれたとしよう。盗人が見つかったなら、盗人はその二倍を償わなければならない。",
+          "R": "だれかが隣人にお金や大切な物を預けて、守ってもらうこともあるだろう。そして、どろぼうがその隣人の家に入って、それを盗むかもしれない。盗人が見つかったなら、盗人は二倍にして返さなければならない。"
+        },
+        "uk": {
+          "L": "Якщо хтось дасть своєму ближньому гроші чи речі на зберігання, і їх украдуть з дому того чоловіка, то, якщо знайдуть злодія, він відшкодує вдвоє.",
+          "B": "Припустімо, хтось віддав ближньому гроші чи інші речі на зберігання, і злодій забрав їх із того дому. Якщо злодія знайдуть, він мусить відшкодувати вдвоє.",
+          "R": "Хтось може залишити гроші чи цінні речі в сусіда на зберігання, а потім злодій уломиться до сусіда в дім і забере їх. Якщо злодія знайдуть, він мусить повернути вдвічі більше."
+        },
+        "id": {
+          "L": "Apabila seseorang menitipkan kepada sesamanya uang atau barang-barang untuk disimpan, lalu barang itu dicuri dari rumah orang itu, jika pencurinya didapati, ia harus membayar ganti dua kali lipat.",
+          "B": "Misalkan seseorang menitipkan uang atau barang-barang lain kepada sesamanya untuk dijaga, lalu seorang pencuri mengambilnya dari rumah itu. Jika pencurinya ditemukan, ia harus membayar dua kali lipat.",
+          "R": "Seseorang mungkin menitipkan uang atau barang berharga kepada tetangganya supaya disimpan dengan aman, lalu seorang pencuri masuk ke rumah tetangga itu dan mengambilnya. Kalau pencurinya tertangkap, ia harus membayar dua kali lipat."
+        },
+        "zh": {
+          "L": "人若把银钱或物品交给邻舍保管，[东西]从那人的家里被偷了，贼若被找到，他就要加倍赔偿。",
+          "B": "假设有人把银钱或别的东西交给邻舍照管，却有贼从那家里把东西偷走了。贼若被找到，就必须赔偿两倍的价值。",
+          "R": "有人也许把钱或贵重的东西留给邻舍保管，后来有贼闯进邻舍家里把东西偷走了。如果找到了这贼，他必须赔偿两倍。"
         }
       },
       "decisions": [
@@ -1370,6 +1575,26 @@
           "L": "Если вор не найдётся, пусть хозяин дома приблизится к Богу, [чтобы поклясться], что не простёр он своей руки на имущество своего ближнего.",
           "B": "Если вора не найдут, хозяин дома должен предстать перед Богом и заявить, что он не тронул вещей своего ближнего.",
           "R": "Если вора не поймают, хозяин дома должен встать перед Богом. Там он должен поклясться, что сам не брал вещей своего соседа."
+        },
+        "ja": {
+          "L": "もし盗人が見つからないなら、その家の主人は神のもとに連れて来られ、自分の隣人の財産に手を伸ばしていないことを[誓わなければならない]。",
+          "B": "盗人が見つからない場合は、その家の主人が神の前に出て、自分は隣人の物に手を出していないと誓わなければならない。",
+          "R": "盗人がつかまらないなら、その家の主人は神の前に立たなければならない。そして、自分が隣人の物を取ったのではないと誓わなければならない。"
+        },
+        "uk": {
+          "L": "Якщо злодія не знайдуть, то господаря дому приведуть до Бога, [щоб поклявся,] що він не простягнув руки своєї на майно свого ближнього.",
+          "B": "Якщо злодія не знайдуть, господар дому має стати перед Богом і заявити, що він не простягав руки на добро свого ближнього.",
+          "R": "Якщо злодія не впіймають, господар дому мусить стати перед Богом. Там він мусить поклястися, що сам не брав речей свого ближнього."
+        },
+        "id": {
+          "L": "Jika pencurinya tidak didapati, pemilik rumah itu harus dibawa menghadap Allah, untuk menyatakan bahwa ia tidak mengulurkan tangannya kepada barang milik sesamanya.",
+          "B": "Jika pencurinya tidak ditemukan, pemilik rumah itu harus menghadap Allah dan menyatakan bahwa ia tidak menjamah barang milik sesamanya.",
+          "R": "Kalau pencurinya tidak tertangkap, pemilik rumah itu harus berdiri di hadapan Allah. Di sana ia harus bersumpah bahwa ia sendiri tidak mengambil barang-barang tetangganya."
+        },
+        "zh": {
+          "L": "贼若没有被找到，那家的主人就要被带到{{god_term:神|上帝}}面前，[起誓]他没有伸手拿邻舍的财物。",
+          "B": "贼若找不到，那家的主人就要到{{god_term:神|上帝}}面前，宣誓他没有动过邻舍的财物。",
+          "R": "如果没有抓到这贼，那家的主人就必须站在{{god_term:神|上帝}}面前。他必须在那里起誓，说他自己没有拿邻舍的东西。"
         }
       },
       "decisions": [
@@ -1459,6 +1684,50 @@
             "os juízes"
           ],
           "reason": "As in 21:6, Portuguese says \"Deus\" at every level with the English; the meaning note (m1) gives the reading \"the judges\", who heard cases at the sanctuary in God's name. The same holds in verse 8 (\"a Deus\", \"aquele a quem Deus condenar\").",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020220070091",
+            "o020220070092"
+          ],
+          "choice": "ha-elohim \"神\" at every level (22:7-8), as the English",
+          "alternatives": [
+            "\"裁き人\""
+          ],
+          "reason": "The meaning decision reads God himself, before whom the case is brought (uncertain; some read 'the judges'). Respect forms are not used because God is the speaker.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o020220070092"
+          ],
+          "choice": "{{god_term:神|上帝}}",
+          "alternatives": [
+            "上帝 as the default",
+            "审判官"
+          ],
+          "reason": "Every word naming the one God is a god_term span: \"神\" by default, \"上帝\" for readers who choose it. Here and in 22:8 the case comes before God himself, as the English and the meaning decision read it, not \"the judges\".",
           "uncertain": false,
           "footnote": false
         }
@@ -1558,12 +1827,32 @@
         "hi": {
           "L": "अपराध के हर मामले में, चाहे बैल हो, गधा हो, भेड़ हो, वस्त्र हो, या कोई भी खोई हुई वस्तु हो जिसके विषय में कोई कहे, 'यही है,' उन दोनों का मामला परमेश्वर के पास आए; जिसे परमेश्वर दोषी ठहराएँ, वह अपने पड़ोसी को दुगना भर दे।",
           "B": "जब कभी बैल, गधे, भेड़, वस्त्र या किसी खोई हुई वस्तु के विषय में गड़बड़ी का आरोप हो, और कोई कहे, 'यही वह है,' तो वे दोनों अपना मामला परमेश्वर के सामने ले जाएँ। जिसे परमेश्वर दोषी ठहराएँ, वह अपने पड़ोसी को दुगना भर दे।",
-          "R": "हो सकता है कि दो लोग किसी बैल, गधे, भेड़, कपड़े या किसी खोई हुई चीज़ को लेकर झगड़ें, और उनमें से एक कहे, 'यह मेरी है।' तब उन्हें अपना झगड़ा परमेश्वर के सामने ले जाना होगा, और परमेश्वर जिसे गलत ठहराएँ, उसे दूसरे व्यक्ति को उस चीज़ का दुगना देना होगा।"
+          "R": "हो सकता है कि दो लोग किसी बैल, गधे, भेड़, कपड़े या किसी खोई हुई चीज़ को लेकर झगड़ें, और उनमें से एक कहे, 'यह मेरी है।' तब उन्हें अपना झगड़ा परमेश्वर के सामने ले जाना होगा, और परमेश्वर जिसे ग़लत ठहराएँ, उसे दूसरे व्यक्ति को उस चीज़ का दुगना देना होगा।"
         },
         "ru": {
           "L": "По всякому делу о преступлении — о быке, об осле, об овце, об одежде, о всякой пропаже, о которой кто скажет: ‘Вот это она’, — дело обоих пусть дойдёт до Бога; кого Бог обвинит, тот возместит своему ближнему вдвое.",
           "B": "Когда кого-то обвиняют в присвоении быка, осла, овцы, плаща или чего-либо пропавшего и кто-то говорит: ‘Это моё’, пусть оба принесут своё дело к Богу. Тот, кого Бог обвинит, должен возместить своему ближнему вдвое.",
           "R": "Двое людей могут поспорить из-за быка, осла, овцы, одежды или какой-то пропавшей вещи, и один из них говорит: ‘Это моё.’ Они должны принести свой спор к Богу, и тот, кого Бог признает виновным, должен отдать другому вдвое больше, чем стоит эта вещь."
+        },
+        "ja": {
+          "L": "あらゆる背きの事柄について、牛、ろば、羊、衣服、あるいはだれかが「これがそれだ」と言う、あらゆる失われた物について、その二人の訴えは神のもとに持ち出されなければならない。神が罪ありとする者は、その隣人に二倍を償わなければならない。",
+          "B": "牛、ろば、羊、上着、そのほかなくなった物をめぐって、不正に取ったという訴えがあり、ある人が「これがそうだ」と言い張る場合はいつでも、その二人は訴えを神のもとに持ち出さなければならない。神が罪ありとした者は、隣人に二倍を償わなければならない。",
+          "R": "二人の人が、牛やろばや羊、服、なくした物のことで争い、一人が「これはわたしの物だ」と言うこともあるだろう。その場合、二人はその争いを神のもとに持って行かなければならない。神が悪いと判断した者は、相手にその二倍を返さなければならない。"
+        },
+        "uk": {
+          "L": "У кожній справі про провину — за вола, за осла, за вівцю, за одяг, за будь-яку загублену річ, про яку хтось скаже: “Це вона”, — справа обох їх прийде до Бога; кого Бог визнає винним, той відшкодує своєму ближньому вдвоє.",
+          "B": "Щоразу, коли когось звинувачують у кривді через вола, осла, вівцю, плащ чи будь-яку загублену річ і хтось твердить: “Це вона”, обидва мають принести свою справу до Бога. Той, кого Бог засудить, мусить відшкодувати своєму ближньому вдвоє.",
+          "R": "Двоє людей можуть сперечатися за вола, осла, вівцю, одяг чи якусь загублену річ, і один з них каже: “Це моє”. Вони мусять принести суперечку до Бога, і той, кого Бог визнає неправим, мусить дати другому вдвічі більше, ніж вона варта."
+        },
+        "id": {
+          "L": "Dalam setiap perkara pelanggaran, mengenai lembu, keledai, domba, pakaian, atau barang apa pun yang hilang, yang dikatakan orang, 'Inilah dia,' perkara kedua orang itu harus dibawa menghadap Allah; siapa yang dinyatakan bersalah oleh Allah harus membayar ganti dua kali lipat kepada sesamanya.",
+          "B": "Setiap kali ada tuduhan pelanggaran mengenai lembu, keledai, domba, jubah, atau barang apa pun yang hilang, dan seseorang berkata, 'Inilah barangku,' kedua orang itu harus membawa perkaranya menghadap Allah. Orang yang dinyatakan bersalah oleh Allah harus membayar dua kali lipat kepada sesamanya.",
+          "R": "Dua orang mungkin bertengkar tentang seekor lembu, keledai, domba, sepotong pakaian, atau barang yang hilang, dan salah seorang berkata, 'Ini milikku.' Mereka harus membawa pertengkaran itu kepada Allah, dan siapa pun yang dinyatakan Allah bersalah harus memberikan kepada yang lain dua kali harga barang itu."
+        },
+        "zh": {
+          "L": "一切有过犯的事，无论是为牛、为驴、为羊、为衣服，或为任何失去的东西，有人说：‘就是这个’，两人的案件就要来到{{god_term:神|上帝}}面前；{{god_term:神|上帝}}定谁有罪，谁就要加倍赔偿他的邻舍。",
+          "B": "无论是为了牛、驴、羊、外衣，还是任何失物，凡有被控不法的事，有人声称：‘就是这个’，两个人就要把案件带到{{god_term:神|上帝}}面前。{{god_term:神|上帝}}定谁有罪，谁就必须加倍赔偿他的邻舍。",
+          "R": "两个人可能为了一头牛、一头驴、一只羊、一件衣服或某样失物而争吵，其中一个人说：‘这是我的。’他们必须把这争执带到{{god_term:神|上帝}}面前。{{god_term:神|上帝}}判定谁错了，谁就必须赔给对方两倍的价值。"
         }
       },
       "decisions": [
@@ -1679,6 +1968,29 @@
           "reason": "The Hebrew ha-elohim is read here as God himself (m3), before whom the case is brought; some translations say \"judges\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020220080222",
+            "o020220080261",
+            "o020220080271",
+            "o020220080272",
+            "o020220080281"
+          ],
+          "choice": "\"menghadap Allah\"",
+          "alternatives": [],
+          "reason": "The case is brought before God himself (m3), so \"Allah\", not \"para hakim\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1770,6 +2082,26 @@
           "L": "Если кто даст своему ближнему осла, или быка, или овцу, или всякое животное на хранение, и оно умрёт, или будет покалечено, или угнано, [и] никто не видел,",
           "B": "Допустим, кто-то доверил соседу осла, быка, овцу или другое животное, и оно умерло, покалечилось или было угнано, когда никто этого не видел.",
           "R": "Человек может попросить соседа присмотреть за ослом, быком, овцой или другим животным. А животное может умереть, покалечиться или быть угнанным разбойниками, когда никто не видит."
+        },
+        "ja": {
+          "L": "もし人がその隣人に、ろばか牛か羊か、どんな家畜でも預けて、それが死ぬか、傷つくか、奪い去られるかして、だれも見ていなかったなら、",
+          "B": "ある人が隣人に、ろば、牛、羊、そのほかの家畜を預けて世話を頼み、だれも見ていない間に、それが死んだり、けがをしたり、奪い去られたりしたとしよう。",
+          "R": "だれかが隣人に、ろばや牛や羊などの家畜の世話を頼むこともあるだろう。そして、だれも見ていない間に、その家畜が死んだり、けがをしたり、略奪する者たちに奪われたりするかもしれない。"
+        },
+        "uk": {
+          "L": "Якщо хтось дасть своєму ближньому осла, чи вола, чи вівцю, чи будь-яку худобу на зберігання, і вона здохне, чи покалічиться, чи її заберуть, і ніхто не бачить,",
+          "B": "Припустімо, хтось довірив ближньому осла, вола, вівцю чи іншу тварину, і вона здохла, покалічилася чи її забрали, коли ніхто не бачив.",
+          "R": "Хтось може попросити сусіда доглянути осла, вола, вівцю чи іншу тварину. Потім тварина може здохнути, покалічитися чи її можуть забрати грабіжники, коли ніхто не бачить."
+        },
+        "id": {
+          "L": "Apabila seseorang menitipkan kepada sesamanya seekor keledai atau seekor lembu atau seekor domba atau binatang apa pun untuk dijaga, lalu binatang itu mati atau cedera atau dirampas, tanpa ada orang yang melihatnya,",
+          "B": "Misalkan seseorang menitipkan keledai, lembu, domba, atau binatang lain kepada sesamanya untuk dijaga, lalu binatang itu mati, cedera, atau dirampas ketika tidak ada orang yang melihat.",
+          "R": "Seseorang mungkin meminta tetangganya menjaga keledai, lembu, domba, atau binatang lain. Lalu binatang itu mungkin mati, cedera, atau dirampas oleh perampok ketika tidak ada orang yang melihat."
+        },
+        "zh": {
+          "L": "人若把驴、牛、羊或任何牲畜交给邻舍看管，它死了，或受了伤，或被掳去，没有人看见，",
+          "B": "假设有人把一头驴、一头牛、一只羊或任何别的牲畜托付邻舍照顾，这牲畜在没有人看见的时候死了、受伤了，或被人抢走了。",
+          "R": "有人也许请邻舍照顾一头驴、一头牛、一只羊或别的牲畜。后来这牲畜在没有人看着的时候死了、受了伤，或者被强盗抢走了。"
         }
       },
       "decisions": [
@@ -1921,6 +2253,26 @@
           "L": "клятва {{divine_name:ГОСПОДА|Яхве}} пусть будет между ними обоими, [что] он не простёр своей руки на имущество своего ближнего; и пусть примет [это] его хозяин, и он не будет возмещать.",
           "B": "Тогда пусть они оба решат дело клятвой {{divine_name:ГОСПОДОМ|Яхве}}: тот, кто стерёг животное, клянётся, что не присвоил ничего из имущества ближнего. Хозяин должен принять клятву, и ничего возмещать не нужно.",
           "R": "В таком случае сосед должен поклясться {{divine_name:ГОСПОДОМ|Яхве}} перед хозяином, что он сам не брал животного. Хозяин должен принять эту клятву. Соседу не нужно ничего возвращать."
+        },
+        "ja": {
+          "L": "{{divine_name:主|ヤハウェ}}の誓いが二人の間になされなければならない。[預かった者が]自分の隣人の財産に手を伸ばさなかった[という誓いである]。その持ち主は[それを]受け入れ、[預かった者は]償わなくてよい。",
+          "B": "その場合、二人は{{divine_name:主|ヤハウェ}}にかけた誓いで決着をつけなければならない。預かった者は、隣人の物を何も取っていないと誓う。持ち主はその誓いを受け入れなければならず、何も償う必要はない。",
+          "R": "その場合、預かった隣人は、持ち主の前で、自分が家畜を取ったのではないと、{{divine_name:主|ヤハウェ}}にかけて誓わなければならない。持ち主はこの誓いを受け入れなければならない。預かった隣人は、何も償わなくてよい。"
+        },
+        "uk": {
+          "L": "то клятва {{divine_name:ГОСПОДНЯ|Ягве}} буде між обома ними, що він не простягнув руки своєї на майно свого ближнього; і власник її прийме [це], і він не відшкодовуватиме.",
+          "B": "Тоді обидва мають розвʼязати справу клятвою {{divine_name:ГОСПОДНЬОЮ|Ягве}}: той, хто доглядав тварину, присягає, що не взяв нічого з майна ближнього. Власник мусить прийняти клятву, і нічого не треба відшкодовувати.",
+          "R": "У такому разі сусід мусить поклястися {{divine_name:ГОСПОДОМ|Ягве}} перед власником, що не брав тварини. Власник мусить прийняти цю клятву. Сусід нічого не мусить платити."
+        },
+        "id": {
+          "L": "sumpah demi {{divine_name:TUHAN|Yahweh}} harus ada di antara kedua orang itu, bahwa ia tidak mengulurkan tangannya kepada milik sesamanya; dan pemiliknya harus menerimanya, dan ia tidak usah membayar ganti rugi.",
+          "B": "Kedua orang itu harus menyelesaikannya dengan sumpah demi {{divine_name:TUHAN|Yahweh}}: orang yang menjaga binatang itu bersumpah bahwa ia tidak mengambil milik sesamanya. Pemiliknya harus menerima sumpah itu, dan tidak ada ganti rugi yang harus dibayar.",
+          "R": "Dalam hal itu, tetangga itu harus bersumpah demi {{divine_name:TUHAN|Yahweh}} di depan pemiliknya bahwa bukan dia yang mengambil binatang itu. Pemiliknya harus menerima sumpah itu. Tetangga itu tidak perlu mengganti apa pun."
+        },
+        "zh": {
+          "L": "两人之间要有凭{{divine_name:上主|雅威}}起的誓，[证明]看管的人没有伸手拿邻舍的财物；物主要接受[这誓]，看管的人就不必赔偿。",
+          "B": "那么两人就要凭{{divine_name:上主|雅威}}起誓来解决这事：看管牲畜的人要起誓，他没有拿邻舍的任何财物。物主必须接受这誓言，看管的人不用赔偿。",
+          "R": "在这种情况下，邻舍必须当着物主的面，指着{{divine_name:上主|雅威}}起誓，说牲畜不是他拿的。物主必须接受这个誓言。邻舍不需要赔偿什么。"
         }
       },
       "decisions": [
@@ -1971,6 +2323,24 @@
           "reason": "The verb means to take. Most likely the owner takes the oath as the end of the dispute. It may instead mean that the owner takes what is left of the animal.",
           "uncertain": true,
           "footnote": true
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [],
+          "choice": "клятва {{divine_name:ГОСПОДНЯ|Ягве}}",
+          "alternatives": [
+            "клятва перед ГОСПОДОМ"
+          ],
+          "reason": "The oath by the divine name; the adjective form keeps the name in the span, with Ягве as its alternative.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2041,7 +2411,7 @@
           "R": "ነገር ግን ባልንጀራው እየጠበቀው ሳለ ሌባ እንስሳውን ቢሰርቀው፣ ባልንጀራው ለባለቤቱ መክፈል አለበት።"
         },
         "hi": {
-          "L": "परन्तु यदि वह सचमुच उसके पास से चुराया गया हो, तो वह उसके स्वामी को भरपाई करे।",
+          "L": "परंतु यदि वह सचमुच उसके पास से चुराया गया हो, तो वह उसके स्वामी को भरपाई करे।",
           "B": "पर यदि पशु सचमुच रखनेवाले के पास से चुराया गया हो, तो वह व्यक्ति उसके स्वामी को भरपाई करे।",
           "R": "पर अगर पड़ोसी की देखभाल के समय किसी चोर ने पशु चुरा लिया हो, तो पड़ोसी को मालिक को उसका दाम चुकाना होगा।"
         },
@@ -2049,6 +2419,26 @@
           "L": "А если оно действительно украдено у него, пусть возместит его хозяину.",
           "B": "Но если животное действительно украли у того, кто его стерёг, он должен возместить хозяину.",
           "R": "Но если вор украл животное, когда сосед присматривал за ним, сосед должен заплатить за него хозяину."
+        },
+        "ja": {
+          "L": "しかし、もしそれが本当に彼のもとから盗まれたのなら、彼はその持ち主に償わなければならない。",
+          "B": "しかし、家畜が預かっている人のもとから実際に盗まれたのなら、その人は持ち主に償わなければならない。",
+          "R": "しかし、隣人が世話をしている間に、どろぼうが家畜を盗んだのなら、隣人は持ち主に償わなければならない。"
+        },
+        "uk": {
+          "L": "Але якщо її справді вкрадуть у нього, він відшкодує її власникові.",
+          "B": "Але якщо тварину справді вкрали в того, хто її доглядав, він мусить заплатити власникові.",
+          "R": "Але якщо злодій украв тварину, коли сусід доглядав її, сусід мусить заплатити за неї власникові."
+        },
+        "id": {
+          "L": "Tetapi jika binatang itu memang dicuri dari padanya, ia harus membayar ganti rugi kepada pemiliknya.",
+          "B": "Tetapi jika binatang itu memang dicuri dari orang yang menjaganya, orang itu harus menggantinya kepada pemiliknya.",
+          "R": "Tetapi kalau seorang pencuri mencuri binatang itu ketika tetangga itu sedang menjaganya, tetangga itu harus membayar binatang itu kepada pemiliknya."
+        },
+        "zh": {
+          "L": "但[牲畜]若确实是从他那里被偷去的，他就要赔偿给物主。",
+          "B": "但牲畜若真是从看管的人那里被偷走的，那人就必须赔偿物主。",
+          "R": "但如果牲畜是在邻舍照顾的时候被贼偷走的，邻舍就必须赔偿物主。"
         }
       },
       "decisions": [
@@ -2162,6 +2552,26 @@
           "L": "Если оно действительно растерзано, пусть принесёт его [как] свидетельство; за растерзанное он не будет возмещать.",
           "B": "Если его растерзали звери, сторож должен принести то, что осталось, как доказательство, и за растерзанное животное он ничего не должен.",
           "R": "Если животное убил дикий зверь, сосед должен принести то, что осталось от туши, чтобы показать, что случилось. Тогда соседу не нужно за него платить."
+        },
+        "ja": {
+          "L": "もしそれが本当に裂き殺されたのなら、彼はそれを証拠として持って来なければならない。裂き殺されたものについては、償わなくてよい。",
+          "B": "野獣に裂き殺されたのなら、預かった者は残ったものを証拠として持って来ればよく、裂き殺された家畜については償う必要はない。",
+          "R": "野の獣に殺されたのなら、隣人は、何が起こったかを示すために、残った体を持って来なければならない。そうすれば、償わなくてよい。"
+        },
+        "uk": {
+          "L": "Якщо її справді розшматують, він принесе її як доказ; за розшматоване він не відшкодовуватиме.",
+          "B": "Якщо звірі розшматували її, той, хто доглядав, має принести рештки як доказ і нічого не винен за розшматовану тварину.",
+          "R": "Якщо тварину вбив дикий звір, сусід мусить принести рештки тіла, щоб показати, що сталося. Тоді сусід не мусить за неї платити."
+        },
+        "id": {
+          "L": "Jika binatang itu diterkam binatang buas, ia harus membawanya sebagai bukti; untuk binatang yang diterkam itu ia tidak usah membayar ganti rugi.",
+          "B": "Jika binatang itu dicabik-cabik binatang buas, penjaganya harus membawa sisanya sebagai bukti, dan ia tidak perlu mengganti binatang yang diterkam itu.",
+          "R": "Kalau binatang buas membunuhnya, tetangga itu harus membawa sisa bangkainya untuk menunjukkan apa yang terjadi. Dengan begitu ia tidak perlu membayarnya."
+        },
+        "zh": {
+          "L": "[牲畜]若确实被撕碎了，他要把它带来作证据；被撕碎的，他不必赔偿。",
+          "B": "若是被野兽撕碎了，看管的人要把剩下的带来作证据，被撕碎的牲畜他不必赔偿。",
+          "R": "如果是被野兽咬死了，邻舍必须把剩下的尸体带来，证明发生了什么事。这样，邻舍就不用赔偿。"
         }
       },
       "decisions": [
@@ -2299,6 +2709,26 @@
           "L": "И если кто попросит [животное] у своего ближнего, и оно будет покалечено или умрёт, а хозяина его не было с ним, непременно пусть возместит.",
           "B": "Кто берёт у соседа животное на время, должен полностью возместить его, если оно покалечится или умрёт в отсутствие хозяина.",
           "R": "Человек может взять у соседа животное на время, а оно покалечится или умрёт, когда хозяина не будет рядом. Тогда тот, кто взял, должен заплатить хозяину за него."
+        },
+        "ja": {
+          "L": "また、もし人がその隣人から[家畜を]借りて、それが傷つくか死ぬかし、その持ち主がそれと共にいなかったなら、彼は必ず償わなければならない。",
+          "B": "隣人の家畜を借りた者は、持ち主がいない間にそれがけがをしたり死んだりしたなら、十分に償わなければならない。",
+          "R": "だれかが隣人の家畜を借りて、持ち主がそばにいない間に、その家畜がけがをしたり死んだりすることもあるだろう。その場合、借りた人は、持ち主に償わなければならない。"
+        },
+        "uk": {
+          "L": "І якщо хтось позичить [тварину] у свого ближнього, і вона покалічиться чи здохне, коли власника її не було з нею, він неодмінно відшкодує.",
+          "B": "Хто позичить тварину в ближнього, мусить сповна відшкодувати, якщо вона покалічиться чи здохне без власника.",
+          "R": "Хтось може позичити тварину в сусіда, і вона покалічиться чи здохне, коли власника з нею не було. Тоді той, хто позичив, мусить заплатити власникові за неї."
+        },
+        "id": {
+          "L": "Dan apabila seseorang meminjam binatang dari sesamanya, lalu binatang itu cedera atau mati, sedangkan pemiliknya tidak ada bersamanya, ia harus membayar ganti rugi sepenuhnya.",
+          "B": "Siapa pun yang meminjam binatang dari sesamanya harus menggantinya sepenuhnya jika binatang itu cedera atau mati ketika pemiliknya tidak ada.",
+          "R": "Seseorang mungkin meminjam binatang tetangganya, lalu binatang itu cedera atau mati ketika pemiliknya tidak bersamanya. Peminjam itu harus membayarnya kepada pemiliknya."
+        },
+        "zh": {
+          "L": "人若向邻舍借[牲畜]，它受了伤或死了，物主没有和它在一起，借的人必定要赔偿。",
+          "B": "谁向邻舍借了牲畜，若物主不在场时牲畜受伤或死了，就必须全数赔偿。",
+          "R": "有人也许向邻舍借了牲畜，物主不在的时候，牲畜受了伤或死了。那么借的人必须赔偿物主。"
         }
       },
       "decisions": [
@@ -2431,6 +2861,26 @@
           "L": "Если хозяин его [был] с ним, пусть не возмещает; если оно наёмное, оно пришло за свою плату.",
           "B": "Но если хозяин был рядом, возмещать не нужно. Если животное было взято внаём, потеря хозяина покрывается платой.",
           "R": "Но если хозяин был рядом, тому, кто взял, не нужно ничего платить. Если животное взяли внаём за деньги, хозяин получает только эту плату."
+        },
+        "ja": {
+          "L": "もしその持ち主がそれと共にいたなら、彼は償わなくてよい。もしそれが雇われたものなら、それはその賃料のために来たのである。",
+          "B": "しかし、持ち主がその場にいたなら、償う必要はない。家畜が賃貸しされていたのなら、持ち主の損失は賃料で埋め合わされる。",
+          "R": "しかし、持ち主がそこにいたなら、借りた人は何も払わなくてよい。家畜がお金を払って借りたものだったなら、持ち主が受け取るのは、その借り賃だけである。"
+        },
+        "uk": {
+          "L": "Якщо власник її був з нею, він не відшкодовуватиме; якщо вона була найнята, то вона прийшла за свою плату.",
+          "B": "Але якщо власник був поруч, відшкодовувати не треба. Якщо тварину взяли за плату, втрату власника покриває плата.",
+          "R": "Але якщо власник був там, той, хто позичив, нічого не мусить платити. Якщо тварину взяли в найм за гроші, то гроші, заплачені за неї, — це все, що отримує власник."
+        },
+        "id": {
+          "L": "Jika pemiliknya ada bersamanya, ia tidak usah membayar ganti rugi; jika binatang itu disewa, kerugian itu tertutup oleh uang sewanya.",
+          "B": "Tetapi jika pemiliknya ada di situ, tidak ada ganti rugi. Jika binatang itu disewa, kerugian pemiliknya sudah tertutup oleh uang sewanya.",
+          "R": "Tetapi kalau pemiliknya ada di situ, peminjam itu tidak perlu membayar apa-apa. Kalau binatang itu disewa, uang sewa yang sudah dibayar itulah yang menjadi bagian pemiliknya."
+        },
+        "zh": {
+          "L": "物主若和它在一起，借的人就不必赔偿；它若是租来的，[损失]就由它的租金抵了。",
+          "B": "但物主若在场，就不必赔偿。若牲畜是租来的，物主的损失就由租金抵偿。",
+          "R": "但如果物主当时在场，借的人就不需要赔偿什么。如果牲畜是用钱租来的，物主得到的就只有租金。"
         }
       },
       "decisions": [
@@ -2554,6 +3004,26 @@
           "L": "И если обольстит мужчина девушку, которая не обручена, и ляжет с ней, пусть непременно уплатит за неё мохар [и возьмёт её] себе в жёны.",
           "B": "Если мужчина уговорит девушку, которая не обручена, лечь с ним, он должен уплатить выкуп за невесту и взять её в жёны.",
           "R": "Допустим, мужчина уговорил молодую женщину лечь с ним. Если она девственница и не обручена, он должен заплатить её отцу выкуп за невесту и жениться на ней."
+        },
+        "ja": {
+          "L": "また、もし男が婚約していない処女を誘惑して、彼女と寝たなら、彼は必ず花嫁料を払って、彼女を自分の妻としなければならない。",
+          "B": "男が、婚約していない処女を言いくるめて床を共にしたなら、その男は花嫁料を払って、彼女を妻にしなければならない。",
+          "R": "ある男が、若い女の人をうまく誘って寝たとしよう。その女の人が処女で、まだ婚約していなかったなら、男はその父親に結婚のためのお金を払って、彼女と結婚しなければならない。"
+        },
+        "uk": {
+          "L": "І якщо чоловік спокусить дівчину, яка не заручена, і ляже з нею, він неодмінно дасть за неї віно, [щоб узяти її] собі за жінку.",
+          "B": "Якщо чоловік умовить незаручену дівчину лягти з ним, він мусить заплатити викуп за наречену й узяти її за жінку.",
+          "R": "Припустімо, чоловік умовив молоду жінку спати з ним. Якщо вона незаймана й не заручена, він мусить заплатити її батькові викуп за наречену й одружитися з нею."
+        },
+        "id": {
+          "L": "Dan apabila seorang laki-laki membujuk seorang perawan yang belum bertunangan, lalu tidur dengan dia, ia harus membayar mas kawin untuk perempuan itu dan mengambilnya menjadi istrinya.",
+          "B": "Jika seorang laki-laki membujuk seorang perawan yang belum bertunangan untuk tidur dengan dia, ia harus membayar mas kawin dan mengambil perempuan itu menjadi istrinya.",
+          "R": "Misalkan seorang laki-laki membujuk seorang gadis untuk tidur dengan dia. Kalau gadis itu masih perawan dan belum bertunangan, laki-laki itu harus membayar mas kawin kepada ayahnya dan menikahinya."
+        },
+        "zh": {
+          "L": "若有男人诱惑一个尚未许配的处女，和她同睡，他就必定要为她付聘礼，[使她]成为自己的妻子。",
+          "B": "若有男人哄骗一个还没有许配给人的处女与他同睡，他就必须付出娶新娘的聘礼，娶她为妻。",
+          "R": "假设一个男人哄一个年轻女子和他同睡。如果她是处女，又还没有订婚，他就必须付给她父亲娶新娘的聘礼，并且娶她为妻。"
         }
       },
       "decisions": [
@@ -2803,6 +3273,91 @@
           "reason": "Literal keeps the Hebrew term, as the English Literal does; Balanced and Readable say what it was, the payment a bridegroom gave the bride's family (m2). The old Russian \"вено\" is no longer understood.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020220150101",
+            "o020220150111",
+            "o020220150112"
+          ],
+          "choice": "mohar: \"花嫁料\" (L, B), \"結婚のためのお金\" (R)",
+          "alternatives": [
+            "\"結納金\""
+          ],
+          "reason": "As the Genesis notes (34:12); \"結納金\" would bring in a Japanese custom.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020220150021"
+          ],
+          "choice": "віно",
+          "alternatives": [
+            "викуп за наречену",
+            "могар"
+          ],
+          "reason": "Ukrainian has its own old word for the bride price paid to the family; B and R explain it.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020220150101",
+            "o020220150111",
+            "o020220150112",
+            "o020220150071"
+          ],
+          "choice": "\"mas kawin\" for the bride-price; \"bertunangan\" for betrothed",
+          "alternatives": [],
+          "reason": "The payment a bridegroom gave the bride's family (m2); \"mas kawin\" is the ordinary Indonesian word for it.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020220150101",
+            "o020220150111"
+          ],
+          "choice": "\"聘礼\"",
+          "alternatives": [
+            "a transliteration of mohar"
+          ],
+          "reason": "The English Literal keeps the Hebrew name \"mohar\". Chinese has its own word for exactly this payment from the bridegroom to the bride's family, \"聘礼\", so Literal uses it; Balanced and Readable add \"娶新娘的\" as the English says what it is.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2886,6 +3441,26 @@
           "L": "Если её отец решительно откажется дать её ему, пусть отвесит серебра по мохару девиц.",
           "B": "Если её отец наотрез откажется выдать её за него, мужчина всё равно должен отвесить столько серебра, сколько платят за невесту-девственницу.",
           "R": "Её отец может не разрешить этому мужчине жениться на ней. Даже тогда мужчина должен заплатить отцу столько серебра, сколько дают за невесту-девственницу."
+        },
+        "ja": {
+          "L": "もし彼女の父が彼女を彼に与えることを断固として拒むなら、彼は処女の花嫁料に従って銀を量って払わなければならない。",
+          "B": "もし彼女の父親が、娘をその男に嫁がせることをきっぱりと拒んだなら、その男はそれでも、処女の花嫁料に相当する銀を量って払わなければならない。",
+          "R": "父親は、その男が娘と結婚するのを許さないかもしれない。それでも男は、処女の花嫁のために払われるのと同じだけの銀を、父親に払わなければならない。"
+        },
+        "uk": {
+          "L": "Якщо батько її рішуче відмовиться дати її йому, він відважить срібла за віном дівчат.",
+          "B": "Якщо батько рішуче відмовиться віддати її за нього, чоловік однаково мусить відважити стільки срібла, скільки платять за наречену-дівчину.",
+          "R": "Батько може не дозволити чоловікові одружитися з нею. Навіть тоді чоловік мусить заплатити батькові стільки срібла, скільки дають за наречену, яка незаймана."
+        },
+        "id": {
+          "L": "Jika ayahnya sama sekali menolak memberikan perempuan itu kepadanya, ia harus membayar perak sebanyak mas kawin untuk perawan.",
+          "B": "Jika ayahnya sama sekali tidak mau memberikan anaknya kepadanya, laki-laki itu tetap harus membayar perak sebesar mas kawin bagi seorang perawan.",
+          "R": "Ayah gadis itu boleh menolak membiarkan laki-laki itu menikahi anaknya. Walaupun begitu, laki-laki itu harus membayar kepada ayahnya perak sebanyak mas kawin untuk seorang perawan."
+        },
+        "zh": {
+          "L": "她父亲若断然不肯把她给他，他就要照处女的聘礼称出银子来。",
+          "B": "她父亲若坚决不让他娶她，那男人仍然必须称出银子，数目和娶处女的聘礼相等。",
+          "R": "她父亲也许不准那男人娶她。即使这样，那男人也必须付给她父亲银子，数目和娶处女新娘的聘礼一样多。"
         }
       },
       "decisions": [
@@ -3007,6 +3582,26 @@
           "L": "Колдунью не оставляй в живых.",
           "B": "Не оставляй колдунью в живых.",
           "R": "Женщину, которая занимается колдовством, нужно предать смерти."
+        },
+        "ja": {
+          "L": "女呪術師を生かしておいてはならない。",
+          "B": "女呪術師を生かしておいてはならない。",
+          "R": "まじないをする女は、死刑にされなければならない。"
+        },
+        "uk": {
+          "L": "Чарівниці не залишай живою.",
+          "B": "Не залишай живою чарівниці.",
+          "R": "Жінку, яка вдається до чарів, треба скарати на смерть."
+        },
+        "id": {
+          "L": "Seorang perempuan tukang sihir janganlah engkau biarkan hidup.",
+          "B": "Jangan biarkan seorang perempuan tukang sihir hidup.",
+          "R": "Perempuan yang memakai ilmu sihir harus dihukum mati."
+        },
+        "zh": {
+          "L": "女巫，你不可让她活着。",
+          "B": "不可让女巫存活。",
+          "R": "施行巫术的女人必须被处死。"
         }
       },
       "decisions": [
@@ -3096,6 +3691,46 @@
           "reason": "\"Колдунья\" is the plain Russian word for a woman who practises magic (m1); \"ведьма\" carries folk-tale overtones, and the Synodal \"ворожея\" is archaic.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020220170011"
+          ],
+          "choice": "mekhashefah: \"女呪術師\" (L, B), \"まじないをする女\" (R)",
+          "alternatives": [
+            "\"魔女\""
+          ],
+          "reason": "As the EXO 7 notes for sorcerers (\"呪術師\" L, B; \"まじない師\" R); \"魔女\" brings in a European picture.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020220170011"
+          ],
+          "choice": "\"perempuan tukang sihir\"",
+          "alternatives": [],
+          "reason": "A woman who practices magic (m1), with the word set at 7:11.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3169,6 +3804,26 @@
           "L": "Всякий, кто ляжет со скотом, непременно будет предан смерти.",
           "B": "Всякий, кто ложится с животным, должен быть предан смерти.",
           "R": "Если человек вступает в половую связь с животным, его нужно предать смерти."
+        },
+        "ja": {
+          "L": "動物と寝る者はだれでも、必ず死刑に処されなければならない。",
+          "B": "動物と寝る者はだれでも、死刑に処される。",
+          "R": "動物と関係を持つ者は、死刑にされなければならない。"
+        },
+        "uk": {
+          "L": "Кожен, хто лягає з худобою, неодмінно буде скараний на смерть.",
+          "B": "Смерть — кара для кожного, хто лягає з твариною.",
+          "R": "Якщо хтось має статеві стосунки з твариною, його треба скарати на смерть."
+        },
+        "id": {
+          "L": "Setiap orang yang tidur dengan binatang pasti dihukum mati.",
+          "B": "Siapa pun yang bersetubuh dengan binatang harus dihukum mati.",
+          "R": "Kalau seseorang bersetubuh dengan binatang, orang itu harus dihukum mati."
+        },
+        "zh": {
+          "L": "与牲畜同寝的人，必定要被处死。",
+          "B": "谁与牲畜交合，就必须被处死。",
+          "R": "如果有人和动物发生性关系，这人必须被处死。"
         }
       },
       "decisions": [
@@ -3278,6 +3933,26 @@
           "L": "Приносящий жертвы богам будет предан заклятию, кроме [приносящего] одному {{divine_name:ГОСПОДУ|Яхве}}.",
           "B": "Всякий, кто приносит жертвы другим богам, а не одному {{divine_name:ГОСПОДУ|Яхве}}, должен быть предан заклятию.",
           "R": "Приносите жертвы только {{divine_name:ГОСПОДУ|Яхве}}. Того, кто приносит жертвы другим богам, нужно полностью уничтожить."
+        },
+        "ja": {
+          "L": "神々にいけにえをささげる者は、ただ{{divine_name:主|ヤハウェ}}だけにでないなら、滅ぼし尽くされるべきものとされる。",
+          "B": "{{divine_name:主|ヤハウェ}}ただひとりでなく、ほかの神々にいけにえをささげる者は、滅ぼし尽くされなければならない。",
+          "R": "いけにえは{{divine_name:主|ヤハウェ}}だけにささげなさい。ほかの神々にいけにえをささげる者は、必ず滅ぼされなければならない。"
+        },
+        "uk": {
+          "L": "Хто приносить жертви богам, крім самого {{divine_name:ГОСПОДА|Ягве}}, буде приречений на знищення.",
+          "B": "Кожен, хто приносить жертви іншим богам, а не самому {{divine_name:ГОСПОДУ|Ягве}}, має бути приречений на знищення.",
+          "R": "Приносьте жертви тільки {{divine_name:ГОСПОДУ|Ягве}}. Кожного, хто приносить жертви іншим богам, треба цілком знищити."
+        },
+        "id": {
+          "L": "Siapa yang mempersembahkan korban kepada allah-allah, selain kepada {{divine_name:TUHAN|Yahweh}} saja, harus ditumpas.",
+          "B": "Siapa pun yang mempersembahkan korban kepada allah lain, dan bukan kepada {{divine_name:TUHAN|Yahweh}} saja, harus dikhususkan untuk dibinasakan.",
+          "R": "Persembahkanlah korban hanya kepada {{divine_name:TUHAN|Yahweh}}. Siapa pun yang mempersembahkan korban kepada allah lain harus dibinasakan sama sekali."
+        },
+        "zh": {
+          "L": "向众神献祭的，要被彻底毁灭，单单献给{{divine_name:上主|雅威}}的除外。",
+          "B": "谁向别的神明献祭，而不是单单献给{{divine_name:上主|雅威}}，就要被彻底毁灭。",
+          "R": "只可以向{{divine_name:上主|雅威}}献祭。谁向别的神明献祭，就必须被彻底消灭。"
         }
       },
       "decisions": [
@@ -3493,6 +4168,88 @@
           "reason": "The Hebrew ḥerem is to be given over wholly to God by being destroyed (m1); \"предать заклятию\" is the Russian term for it, and Readable says \"полностью уничтожить\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020220190031"
+          ],
+          "choice": "cherem (hophal): \"滅ぼし尽くされるべきものとされる\" (L), \"滅ぼし尽くされなければならない\" (B), \"必ず滅ぼされなければならない\" (R)",
+          "alternatives": [
+            "\"聖絶される\""
+          ],
+          "reason": "The meaning decision: given over wholly to God by being destroyed; \"聖絶\" is a coined church word few readers know.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [],
+          "choice": "приречений на знищення",
+          "alternatives": [
+            "підлягає закляттю",
+            "буде знищений"
+          ],
+          "reason": "The word for something given over to God by destruction; the phrase keeps the idea of a sentence passed.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020220190031"
+          ],
+          "choice": "\"ditumpas\" (L); \"dikhususkan untuk dibinasakan\" (B); \"dibinasakan sama sekali\" (R)",
+          "alternatives": [],
+          "reason": "Given over wholly to God by being destroyed (m1); Balanced keeps both the giving over and the destruction.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020220190022",
+            "o020220190031"
+          ],
+          "choice": "\"众神\" / \"别的神明\", no god_term span; \"要被彻底毁灭\"",
+          "alternatives": [
+            "灭绝",
+            "毁灭归神"
+          ],
+          "reason": "The gods here are not the God of Israel, so no god_term span. Devoted to destruction (herem) is given over wholly by being destroyed; \"彻底毁灭\" says that without a rare word.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3574,6 +4331,26 @@
           "L": "И пришельца не притесняй и не угнетай его, потому что вы были пришельцами в земле Египта.",
           "B": "Не обижай пришельца, живущего у вас, и не угнетай его, потому что вы сами были пришельцами в земле Египта.",
           "R": "Никогда не обижай чужеземца, который живёт среди вас, и не поступай с ним несправедливо. Ведь вы сами когда-то были чужеземцами в земле Египта."
+        },
+        "ja": {
+          "L": "また、あなたは寄留者を虐げてはならず、彼を苦しめてはならない。あなたがたもエジプトの地で寄留者だったからである。",
+          "B": "あなたの中に住む寄留者を不当に扱ってはならない。そのような人を苦しめてはならない。あなたがた自身も、エジプトの地で寄留者だったからである。",
+          "R": "あなたたちの中で暮らしている外国から来た人に、意地悪をしたり、不公平なことをしたりしては決していけない。あなたたちも、かつてはエジプトの地で、外国から来た者だったではないか。"
+        },
+        "uk": {
+          "L": "І приходька не кривдь і не гноби його, бо ви були приходьками в землі єгипетській.",
+          "B": "Не кривдь приходька, що живе серед вас, і не гноби такої людини, бо ви самі були приходьками в єгипетській землі.",
+          "R": "Ніколи не будь жорстоким чи несправедливим до чужинця, що живе серед вас. Адже ви самі колись були чужинцями в Єгипті."
+        },
+        "id": {
+          "L": "Dan seorang pendatang janganlah kalian tindas dan janganlah kalian tekan, sebab kalian dahulu pendatang di tanah Mesir.",
+          "B": "Janganlah kalian berbuat jahat kepada pendatang yang tinggal di antara kalian, dan janganlah menindasnya, sebab kalian sendiri dahulu adalah pendatang di tanah Mesir.",
+          "R": "Jangan pernah berlaku kejam atau tidak adil kepada orang asing yang tinggal di antara kalian. Ingatlah bahwa kalian dahulu juga orang asing di tanah Mesir."
+        },
+        "zh": {
+          "L": "对寄居的人，你不可冤枉他，也不可压迫他，因为你们曾在埃及地寄居。",
+          "B": "不可亏待住在你们中间的寄居者，也不可压迫这样的人，因为你们自己在埃及地也曾是寄居的人。",
+          "R": "绝不要苛待或不公平对待住在你们中间的外来的人。要记得，你们从前在埃及地也是外来的人。"
         }
       },
       "decisions": [
@@ -3773,6 +4550,46 @@
           "reason": "The Hebrew word is a foreigner who has settled among Israel, as Israel had settled in Egypt. \"መጻተኛ\" says one who has come to live in a land not his own; Readable uses the everyday \"ስደተኛ\". The command speaks to Israel in the singular and the reason in the plural, as the Hebrew does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020220200071",
+            "o020220200081"
+          ],
+          "choice": "\"あなたたち\" throughout the verse at Readable, though the commands are singular in Hebrew",
+          "alternatives": [
+            "\"あなた\" ... \"あなたたち\""
+          ],
+          "reason": "Readable keeps one form within a sentence where the Hebrew switches number; Literal and Balanced follow the switch.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020220200012",
+            "o020220200071"
+          ],
+          "choice": "\"寄居的人\" (L, B); \"外来的人\" (R)",
+          "alternatives": [],
+          "reason": "The ger, a foreigner living among Israel, in the glossary's words, as in 20:10.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3847,6 +4664,26 @@
           "L": "Никакую вдову и сироту не притесняйте.",
           "B": "Не обижайте ни вдову, ни сироту.",
           "R": "Никогда не будьте жестоки к вдове или к ребёнку, у которого умер отец."
+        },
+        "ja": {
+          "L": "あなたがたは、どんなやもめも、みなしごも苦しめてはならない。",
+          "B": "あなたがたは、やもめや父のいない子を、だれであれ苦しめてはならない。",
+          "R": "やもめや、父親を亡くした子どもに、決してひどいことをしてはいけない。"
+        },
+        "uk": {
+          "L": "Жодної вдови чи сироти не утискайте.",
+          "B": "Не утискайте жодної вдови чи сироти.",
+          "R": "Ніколи не будьте жорстокими до вдови чи до дитини, в якої помер батько."
+        },
+        "id": {
+          "L": "Setiap janda dan anak yatim janganlah kalian tindas.",
+          "B": "Janganlah kalian menindas janda atau anak yatim mana pun.",
+          "R": "Jangan pernah berlaku kejam kepada janda atau kepada anak yang ayahnya sudah meninggal."
+        },
+        "zh": {
+          "L": "任何寡妇或孤儿，你都不可欺凌。",
+          "B": "不可欺凌任何寡妇或孤儿。",
+          "R": "绝不要残忍对待寡妇或失去父亲的孩子。"
         }
       },
       "decisions": [
@@ -3876,6 +4713,48 @@
           "choice": "afflict: mistreat, humble",
           "alternatives": [],
           "reason": "This is the verb used of the Egyptians who afflicted Israel with forced labor (1:11-12).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020220210021",
+            "o020220210031",
+            "o020220210032"
+          ],
+          "choice": "'almanah, yatom: \"やもめ\", \"みなしご\" (L), \"父のいない子\" (B), \"父親を亡くした子ども\" (R)",
+          "alternatives": [
+            "\"孤児\""
+          ],
+          "reason": "The fatherless child, who may still have a mother (meaning decision); \"孤児\" suggests no parents at all.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020220210021",
+            "o020220210032"
+          ],
+          "choice": "\"janda dan anak yatim\"",
+          "alternatives": [],
+          "reason": "The glossary words for widow and orphan; Readable explains \"yatim\", as the English Readable does.",
           "uncertain": false,
           "footnote": false
         }
@@ -3960,6 +4839,26 @@
           "L": "Если ты действительно будешь притеснять его, то, если он действительно воззовёт ко {{deity_pronoun:мне|Мне}}, {{deity_pronoun:я|Я}} непременно услышу его вопль,",
           "B": "Если вы будете их обижать, знайте: когда они воззовут ко {{deity_pronoun:мне|Мне}}, {{deity_pronoun:я|Я}} услышу их вопль,",
           "R": "Если вы будете плохо с ними обращаться, они позовут {{deity_pronoun:меня|Меня}} на помощь, и {{deity_pronoun:я|Я}} обязательно их услышу."
+        },
+        "ja": {
+          "L": "もしあなたが本当に彼を苦しめ、彼が本当にわたしに叫ぶなら、わたしは必ず彼の叫びを聞き、",
+          "B": "もしあなたがたが彼らを苦しめ、彼らがわたしに叫ぶなら、わたしは必ずその叫びを聞き、",
+          "R": "もしあなたたちが彼らをいじめるなら、彼らはわたしに助けを求めて叫ぶ。わたしは必ずその声を聞く。"
+        },
+        "uk": {
+          "L": "Якщо ти справді утискатимеш його, то, коли він справді закличе до {{deity_pronoun:мене|Мене}}, Я неодмінно почую його зойк,",
+          "B": "Якщо ви утискатимете їх, то знайте: коли вони закличуть до {{deity_pronoun:мене|Мене}}, Я почую їхній зойк,",
+          "R": "Якщо ви кривдитимете їх, вони кликатимуть {{deity_pronoun:мене|Мене}} на допомогу, і Я неодмінно почую їх."
+        },
+        "id": {
+          "L": "Jika engkau sungguh-sungguh menindasnya, dan ia sungguh-sungguh berseru kepada-{{deity_pronoun:ku|Ku}}, {{divine_name:ALLAH|Yahweh}}ku pasti akan mendengar seruannya,",
+          "B": "Jika kalian menindas mereka, pastilah {{divine_name:ALLAH|Yahweh}}ku akan mendengar seruan mereka apabila mereka berseru kepada-{{deity_pronoun:ku|Ku}},",
+          "R": "Kalau kalian memperlakukan mereka dengan buruk, mereka akan berseru kepada-{{deity_pronoun:ku|Ku}} minta tolong, dan {{divine_name:ALLAH|Yahweh}}ku pasti akan mendengar mereka."
+        },
+        "zh": {
+          "L": "你若真的欺凌他，他若向我呼求，我必定听他的呼声，",
+          "B": "你若欺凌他们，可以确定，当他们向我呼求的时候，我一定会听他们的呼声，",
+          "R": "你若虐待他们，他们就会向我呼求帮助，我一定会听见他们。"
         }
       },
       "decisions": [
@@ -4104,6 +5003,26 @@
           "L": "и воспылает {{deity_pronoun:мой|Мой}} гнев, и {{deity_pronoun:я|Я}} убью вас мечом, и будут ваши жёны вдовами, и ваши дети сиротами.",
           "B": "и {{deity_pronoun:мой|Мой}} гнев разгорится, и {{deity_pronoun:я|Я}} предам вас смерти от меча; тогда ваши собственные жёны станут вдовами, а дети останутся без отцов.",
           "R": "Тогда {{deity_pronoun:я|Я}} очень разгневаюсь. Я убью вас на войне, и ваши жёны станут вдовами, а ваши дети останутся без отцов."
+        },
+        "ja": {
+          "L": "わたしの怒りは燃え上がり、わたしは剣であなたがたを殺す。あなたがたの妻たちはやもめとなり、あなたがたの子どもたちはみなしごとなる。",
+          "B": "わたしの怒りは燃え上がり、わたしは剣であなたがたを殺す。そのとき、あなたがた自身の妻はやもめとなり、子どもたちは父のいない子となる。",
+          "R": "そして、わたしはひどく怒る。わたしは戦いであなたたちを殺す。あなたたちの妻はやもめになり、子どもたちは父親を失う。"
+        },
+        "uk": {
+          "L": "і запалає {{deity_pronoun:мій|Мій}} гнів, і Я повбиваю вас мечем, і стануть ваші жінки вдовами, а діти ваші сиротами.",
+          "B": "і {{deity_pronoun:мій|Мій}} гнів запалає, і Я побʼю вас мечем; тоді ваші власні жінки стануть удовами, а ваші діти — сиротами.",
+          "R": "Тоді Я дуже розгніваюся. Я побʼю вас на війні, і ваші жінки стануть удовами, а ваші діти втратять батьків."
+        },
+        "id": {
+          "L": "dan murka-{{deity_pronoun:ku|Ku}} akan menyala, dan {{divine_name:ALLAH|Yahweh}}ku akan membunuh kalian dengan pedang, sehingga istri-istri kalian menjadi janda dan anak-anak kalian menjadi yatim.",
+          "B": "dan murka-{{deity_pronoun:ku|Ku}} akan menyala, dan {{divine_name:ALLAH|Yahweh}}ku akan membunuh kalian dengan pedang. Istri-istri kalian akan menjadi janda, dan anak-anak kalian tidak akan mempunyai ayah lagi.",
+          "R": "Lalu {{divine_name:ALLAH|Yahweh}}ku akan sangat murka. {{divine_name:ALLAH|Yahweh}}ku akan membunuh kalian dalam perang, sehingga istri-istri kalian menjadi janda, dan anak-anak kalian kehilangan ayah mereka."
+        },
+        "zh": {
+          "L": "我的怒气就要发作，我要用刀杀你们，你们的妻子就要成为寡妇，你们的儿女就要成为孤儿。",
+          "B": "我的怒火就要燃起，我要用刀剑处死你们；你们的妻子就要成为寡妇，你们的儿女就要没有父亲。",
+          "R": "那时我会非常愤怒。我要让你们死在战争中，你们的妻子会成为寡妇，你们的孩子会失去父亲。"
         }
       },
       "decisions": [
@@ -4246,6 +5165,26 @@
           "L": "Если дашь взаймы серебро {{deity_pronoun:моему|Моему}} народу, бедному у тебя, не будь ему как заимодавец; не налагай на него процента.",
           "B": "Если ты даёшь деньги взаймы {{deity_pronoun:моему|Моему}} народу, бедному человеку, который живёт рядом с тобой, не поступай с ним, как поступает заимодавец, и не бери с него процентов.",
           "R": "Допустим, ты даёшь деньги взаймы бедному человеку из {{deity_pronoun:моего|Моего}} народа. Не будь жестоким заимодавцем, который требует долг, и давай взаймы без процентов."
+        },
+        "ja": {
+          "L": "もしあなたがわたしの民に、あなたと共にいる貧しい者に銀を貸すなら、彼に対して金貸しのようであってはならない。あなたがたは彼に利子を課してはならない。",
+          "B": "わたしの民に、あなたのそばにいる貧しい者に金を貸すときは、取り立てる金貸しのように、その人を扱ってはならない。その人に利子を払わせてはならない。",
+          "R": "あなたが、わたしの民の中の貧しい人にお金を貸すとしよう。そのとき、返せと厳しく迫る金貸しのようになってはいけない。利子を取らずに貸しなさい。"
+        },
+        "uk": {
+          "L": "Якщо позичиш гроші {{deity_pronoun:моєму|Моєму}} народові, убогому, що з тобою, не будь для нього як лихвар; не накладай на нього відсотків.",
+          "B": "Коли позичаєш гроші {{deity_pronoun:моєму|Моєму}} народові, убогому, що живе поруч з тобою, не поводься з ним як позикодавець і не бери з нього відсотків.",
+          "R": "Припустімо, ти позичаєш гроші убогому з {{deity_pronoun:мого|Мого}} народу. Не будь суворим позикодавцем, що вимагає сплати, і позичай без відсотків."
+        },
+        "id": {
+          "L": "Jika engkau meminjamkan uang kepada umat-{{deity_pronoun:ku|Ku}}, kepada orang miskin di antaramu, janganlah engkau berlaku sebagai penagih utang terhadapnya; janganlah kalian membebankan bunga kepadanya.",
+          "B": "Jika engkau meminjamkan uang kepada umat-{{deity_pronoun:ku|Ku}}, kepada orang miskin yang tinggal di dekatmu, janganlah memperlakukannya seperti penagih utang, dan jangan memungut bunga darinya.",
+          "R": "Misalkan kamu meminjamkan uang kepada orang miskin di antara umat-{{deity_pronoun:ku|Ku}}. Jangan menjadi pemberi pinjaman yang kejam dan terus menagih, dan pinjamkanlah tanpa bunga."
+        },
+        "zh": {
+          "L": "你若借钱给我的子民，就是你那里的穷人，你不可像放债的人那样对待他；你不可向他取利息。",
+          "B": "你借钱给我的子民，就是住在你附近的穷人，不可像债主那样对待他，也不可向他收利息。",
+          "R": "假设你借钱给我百姓中的一个穷人。不要作一个逼人还钱的债主，借钱给他也不要收利息。"
         }
       },
       "decisions": [
@@ -4291,6 +5230,44 @@
           "choice": "my people, the poor with you",
           "alternatives": [],
           "reason": "The second phrase explains the first: the borrower is one of God's own people who is poor and lives among you.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020220240161"
+          ],
+          "choice": "\"bunga\" for interest",
+          "alternatives": [],
+          "reason": "The ordinary banking word; \"riba\", the Islamic legal term, is not used (style guide section 9).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020220240051"
+          ],
+          "choice": "\"我的子民\" (L, B); \"我百姓\" (R)",
+          "alternatives": [],
+          "reason": "\"My people\" in the glossary's words.",
           "uncertain": false,
           "footnote": false
         }
@@ -4374,6 +5351,26 @@
           "L": "Если ты действительно возьмёшь в залог плащ твоего ближнего, до захода солнца верни его ему,",
           "B": "Если ты взял плащ своего ближнего в залог за долг, верни его хозяину до захода солнца,",
           "R": "Твой ближний может отдать тебе свой плащ в залог того, что он вернёт долг. Тогда ты должен вернуть ему плащ к вечеру."
+        },
+        "ja": {
+          "L": "もしあなたが本当にあなたの隣人の上着を質に取るなら、日が沈むまでに、それを彼に返さなければならない。",
+          "B": "隣人の上着を借金の質として取ったなら、日が沈む前に、それを持ち主に返さなければならない。",
+          "R": "隣人が、借りたお金を返す約束のしるしとして、上着をあなたに預けることもあるだろう。その場合、あなたは夕方までに、それを返さなければならない。"
+        },
+        "uk": {
+          "L": "Якщо ти справді візьмеш у заставу плащ свого ближнього, до заходу сонця поверни його йому,",
+          "B": "Якщо тримаєш плащ свого ближнього в заставі за борг, мусиш віддати його власникові до заходу сонця,",
+          "R": "Твій ближній може дати тобі свій плащ у заставу, що поверне позику. Тоді ти мусиш повернути його до вечора."
+        },
+        "id": {
+          "L": "Jika engkau sungguh-sungguh mengambil jubah sesamamu sebagai gadai, engkau harus mengembalikannya kepadanya sebelum matahari terbenam,",
+          "B": "Jika engkau menahan jubah sesamamu sebagai gadai untuk utangnya, engkau harus mengembalikannya sebelum matahari terbenam,",
+          "R": "Tetanggamu mungkin memberikan jubahnya kepadamu sebagai jaminan bahwa ia akan membayar utangnya. Kalau begitu, kamu harus mengembalikannya sebelum malam."
+        },
+        "zh": {
+          "L": "你若真的拿了邻舍的外衣作抵押，太阳下山的时候你就要把它还给他，",
+          "B": "你若拿邻舍的外衣作借债的抵押，就必须在日落前把它还给物主，",
+          "R": "你的邻舍也许把一件外衣交给你，作为一定还钱的保证。如果是这样，你必须在傍晚以前把它还给他。"
         }
       },
       "decisions": [
@@ -4501,6 +5498,26 @@
           "L": "потому что это единственное его покрывало, это его одежда для его тела. В чём он ляжет? И будет: если он воззовёт ко {{deity_pronoun:мне|Мне}}, {{deity_pronoun:я|Я}} услышу, потому что {{deity_pronoun:я|Я}} милостив.",
           "B": "потому что это единственное его покрывало, плащ, которым он укрывает своё тело. В чём он ляжет спать? Когда этот ближний воззовёт ко {{deity_pronoun:мне|Мне}}, {{deity_pronoun:я|Я}} услышу, потому что {{deity_pronoun:я|Я}} милостив.",
           "R": "Этот плащ — всё, чем твой ближний может согреться. Чем он укроется ночью без него? Если твой ближний позовёт {{deity_pronoun:меня|Меня}} на помощь, {{deity_pronoun:я|Я}} услышу, потому что {{deity_pronoun:я|Я}} добр и полон милосердия."
+        },
+        "ja": {
+          "L": "それは彼のただ一つの覆い、彼の肌のための上着だからである。彼は何にくるまって寝るのか？そして、彼がわたしに叫ぶなら、わたしは聞く。わたしは恵み深いからである。",
+          "B": "それはその人のただ一つの覆いであり、体を包む上着だからである。その人は何をかけて寝ればよいのか？その隣人がわたしに叫ぶとき、わたしは聞く。わたしは恵み深いからである。",
+          "R": "その上着は、隣人が体を温めるための、ただ一つの物である。それがなければ、隣人は何をかけて寝たらよいのか？隣人がわたしに助けを求めて叫ぶなら、わたしは聞く。わたしは優しく、あわれみ深いからである。"
+        },
+        "uk": {
+          "L": "бо це його єдине покриття; це його плащ для його тіла. У чому він ляже? І буде: коли він закличе до {{deity_pronoun:мене|Мене}}, Я почую, бо Я милостивий.",
+          "B": "бо це єдине його вкриття, плащ, у який він загортає своє тіло. У чому він ляже спати? Коли твій ближній закличе до {{deity_pronoun:мене|Мене}}, Я почую, бо Я милостивий.",
+          "R": "Цей плащ — усе, чим твій ближній може зігрітися. Під чим же він спатиме без нього? Якщо твій ближній покличе {{deity_pronoun:мене|Мене}} на допомогу, Я почую, бо Я добрий і милосердний."
+        },
+        "id": {
+          "L": "sebab hanya itulah penutup tubuhnya, itulah jubah untuk kulitnya. Dengan apa ia akan tidur? Dan terjadilah, apabila ia berseru kepada-{{deity_pronoun:ku|Ku}}, {{divine_name:ALLAH|Yahweh}}ku akan mendengar, sebab {{divine_name:ALLAH|Yahweh}}ku ini pengasih.",
+          "B": "sebab hanya itulah selimutnya, jubah yang membungkus tubuhnya. Dengan apa lagi ia akan tidur? Apabila ia berseru kepada-{{deity_pronoun:ku|Ku}}, {{divine_name:ALLAH|Yahweh}}ku akan mendengar, sebab {{divine_name:ALLAH|Yahweh}}ku pengasih.",
+          "R": "Jubah itu satu-satunya yang dimiliki tetanggamu untuk menghangatkan tubuhnya. Tanpa jubah itu, dengan apa ia akan tidur? Kalau tetanggamu berseru kepada-{{deity_pronoun:ku|Ku}} minta tolong, {{divine_name:ALLAH|Yahweh}}ku akan mendengarkan, sebab {{divine_name:ALLAH|Yahweh}}ku baik hati dan penuh belas kasihan."
+        },
+        "zh": {
+          "L": "因为那是他唯一的遮盖，是他贴身的外衣。他要盖什么躺下呢？他若向我呼求，我就要听，因为我有恩慈。",
+          "B": "因为那是他唯一的盖被，是裹住他身体的外衣。他还能盖什么睡觉呢？那邻舍向我呼求的时候，我必垂听，因为我是满有恩慈的。",
+          "R": "那件外衣是你邻舍唯一能用来保暖的东西。没有它，你的邻舍要盖什么睡觉呢？你的邻舍若向我呼求帮助，我会听，因为我是仁慈的，满有怜悯。"
         }
       },
       "decisions": [
@@ -4648,6 +5665,46 @@
           "reason": "God's graciousness is his free favour, so Literal and Balanced use the word family of अनुग्रह; Readable says it in plain words, as the English Readable does.",
           "uncertain": true,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020220260171"
+          ],
+          "choice": "channun: \"恵み深い\" (L, B), \"優しく、あわれみ深い\" (R)",
+          "alternatives": [
+            "\"情け深い\""
+          ],
+          "reason": "God's own character (meaning decision); \"恵み\" ties to the key term for grace, and Readable follows the English 'kind and full of mercy'.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020220260171",
+            "o020220260181"
+          ],
+          "choice": "\"pengasih\" for gracious",
+          "alternatives": [],
+          "reason": "The glossary's word in \"penyayang dan pengasih\" (34:6), used here for the same Hebrew word.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4725,6 +5782,26 @@
           "L": "Бога не хули, и начальника в твоём народе не проклинай.",
           "B": "Не говори с презрением о Боге и не призывай проклятия на правителя твоего народа.",
           "R": "Не говори о Боге без уважения и не желай зла тому, кто руководит твоим народом."
+        },
+        "ja": {
+          "L": "神をののしってはならない。あなたの民の中の首長を呪ってはならない。",
+          "B": "神を軽んじて悪く言ってはならない。あなたの民の首長を呪ってはならない。",
+          "R": "神をばかにして悪口を言ってはいけない。あなたの民の指導者に、悪いことが起こるようにと願ってはいけない。"
+        },
+        "uk": {
+          "L": "Бога не зневажай, і провідника в народі твоєму не проклинай.",
+          "B": "Не говори зневажливо про Бога й не накликай прокляття на провідника свого народу.",
+          "R": "Не говори про Бога зневажливо й не бажай лиха провідникові свого народу."
+        },
+        "id": {
+          "L": "Allah janganlah engkau hujat, dan seorang pemimpin di antara bangsamu janganlah engkau kutuk.",
+          "B": "Janganlah menghina Allah, dan janganlah mengutuk seorang pemimpin bangsamu.",
+          "R": "Jangan berbicara dengan tidak hormat tentang Allah, dan jangan meminta supaya celaka menimpa seorang pemimpin bangsamu."
+        },
+        "zh": {
+          "L": "你不可轻慢{{god_term:神|上帝}}，也不可诅咒你百姓中的首领。",
+          "B": "不可轻蔑地议论{{god_term:神|上帝}}，也不可诅咒你百姓的首领。",
+          "R": "不要不尊敬地说{{god_term:神|上帝}}的坏话，也不要求坏事临到你百姓的领袖身上。"
         }
       },
       "decisions": [
@@ -4831,6 +5908,51 @@
           "reason": "Acts 23:5 quotes this law in this translation (\"Начальника народа твоего не злословь\", \"Не говори дурного о правителе твоего народа\", \"Не говори плохо о том, кто руководит твоим народом\"), and its words for the leader are kept. The verb follows the Hebrew \"curse\" (ʾarar), where Acts follows the Greek \"speak evil\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020220270041",
+            "o020220270042"
+          ],
+          "choice": "nasi: \"首長\" (L, B), \"指導者\" (R)",
+          "alternatives": [
+            "\"治める者\""
+          ],
+          "reason": "As the Genesis notes for nesi'im; Acts 23:5 quotes this verse in Greek with a different noun.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020220270042",
+            "o020220270052",
+            "o020220270071"
+          ],
+          "choice": "\"不可诅咒你百姓中的首领\" (L)",
+          "alternatives": [
+            "你不可说你百姓首领的坏话 (Acts 23:5, L)"
+          ],
+          "reason": "Acts 23:5 quotes the second line from the Greek Old Testament, \"you shall not speak evil of\" (\"说……的坏话\"). The Hebrew verb is \"curse\", so the line is drafted from the Hebrew; \"首领\" for the leader keeps Acts' word at Literal and Balanced.",
+          "uncertain": false,
+          "footnote": true
         }
       ],
       "status": "ai_draft"
@@ -4911,6 +6033,26 @@
           "L": "Полноты твоей и сока твоего не задерживай. Первенца из твоих сыновей отдавай {{deity_pronoun:мне|Мне}}.",
           "B": "Не медли отдавать от изобилия твоего урожая и от того, что течёт из твоих давилен. Своих сыновей-первенцев отдавай {{deity_pronoun:мне|Мне}}.",
           "R": "Не откладывай, приноси {{deity_pronoun:мне|Мне}} первую часть твоего зерна, вина и оливкового масла. Отдавай {{deity_pronoun:мне|Мне}} своих старших сыновей."
+        },
+        "ja": {
+          "L": "あなたの満ちたものと、あなたのしたたるものを遅らせてはならない。あなたの息子たちの初子を、わたしに与えなければならない。",
+          "B": "あなたの豊かな収穫や、搾り場から流れ出るものをささげるのを遅らせてはならない。あなたの息子たちのうち、初子をわたしに与えなさい。",
+          "R": "穀物や、ぶどう酒や、オリーブ油の初めの分を、わたしのところに持って来るのをためらってはいけない。長男をわたしにささげなさい。"
+        },
+        "uk": {
+          "L": "Повноти своєї і свого стоку не затримуй. Первістка з синів своїх даси {{deity_pronoun:мені|Мені}}.",
+          "B": "Не зволікай давати з повноти свого врожаю й з того, що стікає з твоїх давилень. Своїх первістків-синів даси {{deity_pronoun:мені|Мені}}.",
+          "R": "Не зволікай приносити {{deity_pronoun:мені|Мені}} першу частину свого збіжжя, вина й оливкової олії. Віддавай {{deity_pronoun:мені|Мені}} своїх старших синів."
+        },
+        "id": {
+          "L": "Hasil kelimpahanmu dan hasil perasanmu janganlah engkau tahan-tahan. Anak sulungmu laki-laki harus kauberikan kepada-{{deity_pronoun:ku|Ku}}.",
+          "B": "Janganlah lambat mempersembahkan sebagian dari hasil panenmu yang melimpah dan dari hasil tempat pemerasanmu. Anak-anakmu laki-laki yang sulung harus kauberikan kepada-{{deity_pronoun:ku|Ku}}.",
+          "R": "Jangan menunda membawa kepada-{{deity_pronoun:ku|Ku}} bagian pertama dari gandummu, anggurmu, dan minyak zaitunmu. Berikanlah kepada-{{deity_pronoun:ku|Ku}} anak-anakmu laki-laki yang sulung."
+        },
+        "zh": {
+          "L": "你丰满的[出产]和你流出的[汁液]，你不可迟延[献上]。你要把你儿子中的长子给我。",
+          "B": "你从丰盛的收成和压榨流出的汁液中献上的，不可迟延。你要把你的长子献给我。",
+          "R": "不要拖延，要把你的谷物、葡萄酒和橄榄油最先的部分带来给我。要把你的长子献给我。"
         }
       },
       "decisions": [
@@ -5023,6 +6165,50 @@
           "reason": "The term sheet's word for the firstborn, used through the Pentateuch; Readable says \"con trai đầu lòng\" where the English Readable says \"oldest sons\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020220280011",
+            "o020220280012",
+            "o020220280021",
+            "o020220280022",
+            "o020220280023"
+          ],
+          "choice": "\"あなたの満ちたものと、あなたのしたたるもの\" (L)",
+          "alternatives": [
+            "\"収穫と搾り汁\" (L)"
+          ],
+          "reason": "Literal keeps the two obscure nouns as they stand; Balanced and Readable give the meaning decision's reading (the harvest and the juice of the presses, uncertain).",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o020220280051"
+          ],
+          "choice": "\"长子\"",
+          "alternatives": [
+            "头生的儿子"
+          ],
+          "reason": "The glossary's word for a firstborn son; \"头生的\" is kept for animals (22:29).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5112,6 +6298,26 @@
           "L": "Так поступай с твоим быком [и] с твоей овцой: семь дней пусть будет с матерью своей; в восьмой день отдавай его {{deity_pronoun:мне|Мне}}.",
           "B": "Так же поступай со своим крупным скотом и с овцами: семь дней первенец остаётся с матерью, а в восьмой день отдавай его {{deity_pronoun:мне|Мне}}.",
           "R": "Так же поступай с первенцами своего скота и овец. Каждый должен пробыть неделю со своей матерью, а в восьмой день ты должен отдать его {{deity_pronoun:мне|Мне}}."
+        },
+        "ja": {
+          "L": "あなたの牛とあなたの羊も、同じようにしなければならない。七日の間、それは母親と共にいて、八日目に、あなたはそれをわたしに与えなければならない。",
+          "B": "牛や羊についても同じようにしなさい。初子は七日の間、母親のもとに置き、八日目にわたしに与えなければならない。",
+          "R": "牛や羊の初めに生まれた子も、同じようにしなさい。それぞれ七日の間は母親のそばに置き、八日目にわたしにささげなければならない。"
+        },
+        "uk": {
+          "L": "Так зробиш і з волом своїм, і з вівцею своєю: сім днів буде воно з матірʼю своєю; восьмого дня даси його {{deity_pronoun:мені|Мені}}.",
+          "B": "Так само роби зі своїми волами й вівцями: сім днів первісток залишається з матірʼю, а восьмого дня даси його {{deity_pronoun:мені|Мені}}.",
+          "R": "Так само роби і з первістками своєї худоби та овець. Кожне має пробути з матірʼю тиждень, а восьмого дня ти мусиш віддати його {{deity_pronoun:мені|Мені}}."
+        },
+        "id": {
+          "L": "Demikian juga harus kaulakukan dengan lembumu dan dombamu: tujuh hari lamanya anak itu bersama induknya; pada hari kedelapan engkau harus memberikannya kepada-{{deity_pronoun:ku|Ku}}.",
+          "B": "Lakukanlah hal yang sama dengan lembu dan dombamu: selama tujuh hari anak sulung itu tinggal bersama induknya, dan pada hari kedelapan engkau harus memberikannya kepada-{{deity_pronoun:ku|Ku}}.",
+          "R": "Lakukanlah hal yang sama dengan anak sulung sapi dan dombamu. Setiap anak binatang itu harus tinggal bersama induknya selama satu minggu, dan pada hari kedelapan kamu harus memberikannya kepada-{{deity_pronoun:ku|Ku}}."
+        },
+        "zh": {
+          "L": "你的牛、你的羊，也要这样办：七天要和它的母亲在一起；第八天你要把它给我。",
+          "B": "你的牛羊也要照样处理：头生的要和母亲在一起七天，到第八天你就要把它献给我。",
+          "R": "你的牛羊头一胎生的也要这样做。每一只都要和它的母亲在一起七天，到第八天你必须把它献给我。"
         }
       },
       "decisions": [
@@ -5264,6 +6470,26 @@
           "L": "И {{gender:людьми|мужами}} святыми будьте {{deity_pronoun:мне|Мне}}; и мяса, растерзанного [зверем] в поле, не ешьте; псам бросайте его.",
           "B": "Вы будете у {{deity_pronoun:меня|Меня}} святыми {{gender:людьми|мужами}}. Мясо животного, растерзанного зверем в поле, вам есть нельзя: бросайте его собакам.",
           "R": "Вы принадлежите {{deity_pronoun:мне|Мне}}, и вы должны быть святыми. Если животное растерзал дикий зверь в поле, его мясо не для вас. Отдайте его собакам."
+        },
+        "ja": {
+          "L": "あなたがたは、わたしにとって聖なる人々とならなければならない。野で裂き殺された肉を食べてはならない。それは犬に投げ与えなさい。",
+          "B": "あなたがたは、わたしのものである聖なる民とならなければならない。野で獣に裂き殺された肉を食べてはならない。それは犬に投げ与えなさい。",
+          "R": "あなたたちはわたしのものであり、聖なる者でなければならない。野原で獣に殺された動物の肉は、あなたたちが食べるものではない。犬にやりなさい。"
+        },
+        "uk": {
+          "L": "І людьми святими будете {{deity_pronoun:мені|Мені}}; і мʼяса, розшарпаного в полі, не їжте; собакам киньте його.",
+          "B": "Ви будете {{deity_pronoun:мені|Мені}} святими людьми. Мʼяса, розшарпаного звірами в полі, не їжте: його треба кинути собакам.",
+          "R": "Ви належите {{deity_pronoun:мені|Мені}}, і ви мусите бути святими. Якщо тварину вбили дикі звірі в полі, її мʼясо не для вас. Віддайте його собакам."
+        },
+        "id": {
+          "L": "Dan kalian harus menjadi orang-orang kudus bagi-{{deity_pronoun:ku|Ku}}; dan daging yang diterkam binatang buas di padang janganlah kalian makan; kepada anjing kalian harus melemparkannya.",
+          "B": "Kalian harus menjadi umat yang kudus bagi-{{deity_pronoun:ku|Ku}}. Daging binatang yang diterkam binatang buas di padang tidak boleh kalian makan; lemparkanlah kepada anjing.",
+          "R": "Kalian adalah milik-{{deity_pronoun:ku|Ku}}, dan kalian harus kudus. Kalau seekor binatang dibunuh binatang buas di padang, dagingnya tidak boleh kalian makan. Berikanlah kepada anjing."
+        },
+        "zh": {
+          "L": "你们要作属我的圣洁的人；田野中被[野兽]撕碎的肉，你们不可吃；你们要把它扔给狗。",
+          "B": "你们要作归我的圣洁之民。在野外被野兽撕碎的肉，你们不可吃，要扔给狗。",
+          "R": "你们是属于我的，你们必须圣洁。如果有牲畜在野外被野兽咬死，它的肉不是给你们吃的，要扔给狗。"
         }
       },
       "decisions": [

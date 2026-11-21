@@ -83,6 +83,26 @@
           "L": "И некоторые, пришедшие из Иудеи, учили {{gender:братьев и сестёр|братьев}}: «Если не обрежетесь по обычаю Моисея, не можете спастись.»",
           "B": "Некоторые люди пришли из Иудеи и стали учить {{gender:братьев и сестёр|братьев}}: «Если вы не обрежетесь, как требует обычай Моисея, вам никак не спастись.»",
           "R": "Из Иудеи в Антиохию пришли какие-то люди. Они стали учить верующих: «Божий Закон, данный через Моисея, говорит, что мужчины должны быть обрезаны. Если вы не обрежетесь, Бог вас не спасёт.»"
+        },
+        "uk": {
+          "L": "І деякі, прийшовши з Юдеї, навчали {{gender:братів і сестер|братів}}: «Якщо не обріжетеся за звичаєм Мойсеєвим, не можете спастися.»",
+          "B": "Деякі люди прийшли з Юдеї й почали навчати {{gender:братів і сестер|братів}}: «Якщо ви не обріжетеся, як велить звичай Мойсея, вам ніяк не спастися.»",
+          "R": "Деякі люди прийшли до Антіохії з Юдеї. Вони почали навчати тамтешніх віруючих: «Божий Закон, даний через Мойсея, каже, що чоловіки мають бути обрізані. Якщо ви не обріжетеся, Бог вас не врятує.»"
+        },
+        "ja": {
+          "L": "そして、ユダヤから下って来たある人々が、{{gender:きょうだいたち|兄弟たち}}に、「モーセの慣習に従って割礼を受けなければ、あなたがたは救われることができない」と教えていた。",
+          "B": "ある人々がユダヤから下って来て、{{gender:きょうだいたち|兄弟たち}}に、「モーセの慣習が求めるとおりに割礼を受けなければ、あなたがたが救われる道はない」と教え始めた。",
+          "R": "ユダヤから、何人かの人々がアンティオキアにやって来ました。そして、そこで信じた人々にこう教え始めました。「モーセを通して与えられた神の律法によれば、男の人は割礼を受けなければなりません。割礼を受けなければ、神はみなさんを救ってくださいません。」"
+        },
+        "id": {
+          "L": "Dan beberapa orang yang datang dari Yudea mengajar saudara-saudara itu, \"Jika kalian tidak disunat menurut adat Musa, kalian tidak dapat diselamatkan.\"",
+          "B": "Beberapa orang datang dari Yudea dan mulai mengajar saudara-saudara di sana, \"Jika kalian tidak disunat seperti yang dituntut adat Musa, kalian sama sekali tidak dapat diselamatkan.\"",
+          "R": "Beberapa orang datang ke Antiokhia dari Yudea. Mereka mulai mengajar orang-orang percaya di sana, \"Hukum Allah yang diberikan melalui Musa berkata bahwa laki-laki harus disunat. Jika kalian tidak disunat, Allah tidak akan menyelamatkan kalian.\""
+        },
+        "zh": {
+          "L": "有些从犹太下来的人教导{{gender:弟兄姐妹|弟兄}}们说：“如果你们不照摩西的习俗受割礼，你们就不能得救。”",
+          "B": "有些人从犹太下来，开始教导{{gender:弟兄姐妹|弟兄}}们：“除非你们照着摩西的习俗所要求的受割礼，否则你们绝不可能得救。”",
+          "R": "有些人从犹太来到安提阿。他们开始教导那里的信徒说：“{{god_term:神|上帝}}借着摩西所颁布的律法说，男人必须受割礼。如果你们不受割礼，{{god_term:神|上帝}}就不会拯救你们。”"
         }
       },
       "decisions": [
@@ -522,6 +542,51 @@
           "reason": "The verb is the usual Russian term for the rite; Readable adds that it applied to men, as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n44015001014",
+            "n44015001015",
+            "n44015001016",
+            "n44015001017"
+          ],
+          "choice": "\"{{god_term:神|上帝}}\" wherever the one God is named",
+          "alternatives": [
+            "\"神\" with no setting",
+            "\"上帝\" with no setting"
+          ],
+          "reason": "Every word for the one God is written as a god_term span: \"神\" by default, \"上帝\" as the reader's alternative (style guide section 4). Here the first is at Readable, which names God as the giver of the law.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n44015001009"
+          ],
+          "choice": "\"{{gender:弟兄姐妹|弟兄}}们\" (L, B); \"信徒\" (R)",
+          "alternatives": [
+            "\"弟兄们\" with no span"
+          ],
+          "reason": "The believers, men and women, as the English: inclusive by default with the traditional \"弟兄\" as the alternative (style guide section 5). Readable says \"信徒\" where the English Readable says \"believers\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -624,6 +689,26 @@
           "L": "Когда же произошли немалый раздор и спор у Павла и Варнавы с ними, постановили, чтобы Павел и Варнава и некоторые другие из них пошли к апостолам и старейшинам в Иерусалим по этому вопросу.",
           "B": "Из-за этого между ними и Павлом с Варнавой начались жаркие разногласия и споры. Поэтому было решено, что Павел, Варнава и ещё несколько человек из них пойдут в Иерусалим и зададут этот вопрос апостолам и старейшинам.",
           "R": "Павел и Варнава были совсем не согласны с этими людьми и долго с ними спорили. Тогда верующие выбрали Павла, Варнаву и ещё нескольких человек и решили отправить их в Иерусалим. Они должны были спросить об этом апостолов и старейшин."
+        },
+        "uk": {
+          "L": "Коли ж виникли немалий розбрат і суперечка в Павла і Варнави з ними, постановили, щоб Павло і Варнава та деякі інші з них пішли до апостолів і старійшин у Єрусалим щодо цього питання.",
+          "B": "Через це між ними та Павлом і Варнавою спалахнули запекла суперечка й незгода. Тож вирішили, щоб Павло і Варнава та ще дехто з них пішли до Єрусалима й винесли це питання на розгляд апостолів і старійшин.",
+          "R": "Павло і Варнава рішуче не погоджувалися з цими людьми й довго з ними сперечалися. Тож віруючі вибрали Павла, Варнаву і ще кількох людей, щоб вони пішли до Єрусалима. Вони мали запитати апостолів і старійшин про це питання."
+        },
+        "ja": {
+          "L": "そして、パウロとバルナバと彼らとの間に、少なからぬ対立と論争が起こったので、[人々は]パウロとバルナバ、そして彼らのうちの他の何人かが、この問題について、エルサレムにいる使徒たちと長老たちのところへ上ることに決めた。",
+          "B": "そのため、パウロとバルナバと、その人々との間に、激しい対立と論争が起こった。そこで、パウロとバルナバ、またそのほかの何人かが、エルサレムに上って、この問題について使徒たちと長老たちに尋ねることに決まった。",
+          "R": "パウロとバルナバは、この人たちに強く反対して、長い間言い争いました。そこで、信じた人々は、パウロとバルナバとほかの何人かを選んで、エルサレムへ行かせることにしました。この問題について、使徒たちと長老たちに尋ねるためです。"
+        },
+        "id": {
+          "L": "Dan ketika terjadi pertentangan dan perdebatan yang tidak sedikit antara Paulus dan Barnabas dengan mereka, ditetapkanlah bahwa Paulus dan Barnabas dan beberapa orang lain dari antara mereka pergi kepada rasul-rasul dan penatua-penatua di Yerusalem mengenai persoalan ini.",
+          "B": "Hal ini menimbulkan pertentangan dan perdebatan yang hebat antara mereka dengan Paulus dan Barnabas. Jadi diputuskan bahwa Paulus dan Barnabas serta beberapa orang lain dari antara mereka harus pergi ke Yerusalem dan menanyakan persoalan ini kepada para rasul dan penatua.",
+          "R": "Paulus dan Barnabas sangat tidak setuju dengan orang-orang itu, dan mereka berdebat dengan mereka cukup lama. Jadi orang-orang percaya memilih Paulus dan Barnabas dan beberapa orang lain untuk pergi ke Yerusalem. Mereka harus menanyakan persoalan ini kepada para rasul dan penatua."
+        },
+        "zh": {
+          "L": "保罗、巴拿巴和他们起了不小的争执和辩论以后，他们就指派保罗、巴拿巴和他们当中另外几个人，为这个问题上耶路撒冷去见使徒和长老。",
+          "B": "这引起了保罗、巴拿巴与他们之间激烈的争执和辩论。于是大家安排保罗、巴拿巴和他们当中的另外几个人上耶路撒冷去，把这个问题提交给使徒和长老。",
+          "R": "保罗和巴拿巴强烈反对这些人的说法，和他们争论了很久。于是信徒们选派保罗、巴拿巴和另外几个人到耶路撒冷去。他们要就这个问题请教使徒和长老。"
         }
       },
       "decisions": [
@@ -920,6 +1005,28 @@
           "reason": "The Greek says \"go up\", because Jerusalem lies high in the hills; Russian \"пошли в Иерусалим\" is the natural verb, and the picture of going up is left out at every level.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n44015002026",
+            "n44015002029"
+          ],
+          "choice": "\"使徒\"; \"长老\"",
+          "alternatives": [
+            "\"长老们\""
+          ],
+          "reason": "Acts' terms for the leaders of the Jerusalem church (meaning decision m4): \"长老\" is the same word as the Jewish elders in the Gospels, at every level.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1012,6 +1119,26 @@
           "L": "Итак они, будучи провожены церковью, проходили Финикию и Самарию, подробно рассказывая об обращении язычников, и производили великую радость у всех {{gender:братьев и сестёр|братьев}}.",
           "B": "Церковь проводила их, и, проходя через Финикию и Самарию, они подробно рассказывали, как язычники обращаются к Богу. Эта весть принесла великую радость всем {{gender:братьям и сёстрам|братьям}}.",
           "R": "Церковь в Антиохии помогла им отправиться в путь. Они прошли через Финикию и Самарию и рассказывали верующим там, как язычники обращаются к Богу. Эта новость очень обрадовала всех верующих."
+        },
+        "uk": {
+          "L": "Отже, вони, випроваджені церквою, проходили через Фінікію і Самарію, докладно розповідаючи про навернення язичників, і робили велику радість усім {{gender:братам і сестрам|братам}}.",
+          "B": "Церква провела їх у дорогу, і, проходячи через Фінікію та Самарію, вони докладно розповідали, як язичники навертаються до Бога. Ця звістка принесла велику радість усім {{gender:братам і сестрам|братам}}.",
+          "R": "Церква в Антіохії допомогла їм вирушити в дорогу. Вони пройшли через Фінікію і Самарію й розповідали тамтешнім віруючим про те, як язичники навертаються до Бога. Ця новина сповнила радістю всіх віруючих."
+        },
+        "ja": {
+          "L": "さて、彼らは教会から送り出されて、フェニキアとサマリアを通り、異邦人の回心を詳しく語って、すべての{{gender:きょうだいたち|兄弟たち}}に大きな喜びをもたらした。",
+          "B": "一行は教会に送り出され、フェニキアとサマリアを通って行く間に、異邦人が神に立ち返っていることを詳しく伝えた。その知らせは、すべての{{gender:きょうだいたち|兄弟たち}}に大きな喜びをもたらした。",
+          "R": "アンティオキアの教会は、一行が旅に出るのを助けました。一行はフェニキアとサマリアを通って行き、そこの信じた人々に、ユダヤ人でない人々が神に立ち返っている様子をくわしく話しました。この知らせを聞いて、信じた人々はみな大喜びしました。"
+        },
+        "id": {
+          "L": "Jadi mereka, setelah diantar oleh jemaat, berjalan melintasi Fenisia dan Samaria, sambil menceritakan dengan terperinci tentang pertobatan bangsa-bangsa lain, dan mereka mendatangkan sukacita besar bagi semua saudara.",
+          "B": "Jemaat melepas mereka, dan ketika mereka melintasi Fenisia dan Samaria, mereka menceritakan dengan lengkap bagaimana bangsa-bangsa lain berbalik kepada Allah. Kabar itu mendatangkan sukacita besar bagi semua saudara.",
+          "R": "Jemaat di Antiokhia membantu mereka memulai perjalanan. Mereka melewati Fenisia dan Samaria dan menceritakan kepada orang-orang percaya di sana bagaimana orang-orang bukan Yahudi berbalik kepada Allah. Kabar ini membuat semua orang percaya itu sangat bersukacita."
+        },
+        "zh": {
+          "L": "于是他们由教会送行，经过腓尼基和撒玛利亚，详细述说外邦人归信的事，使所有的{{gender:弟兄姐妹|弟兄}}们都非常欢喜。",
+          "B": "教会为他们送行。他们经过腓尼基和撒玛利亚的时候，详细讲述外邦人怎样归向{{god_term:神|上帝}}。这消息使所有的{{gender:弟兄姐妹|弟兄}}们都大大欢喜。",
+          "R": "安提阿的教会帮助他们上路。他们经过腓尼基和撒玛利亚，把非犹太人归向{{god_term:神|上帝}}的经过详细告诉那里的信徒。这个消息使所有信徒都充满了喜乐。"
         }
       },
       "decisions": [
@@ -1233,6 +1360,68 @@
           "reason": "\"धर्म-परिवर्तन\" now means changing one's religious community, a loaded word in India. The Greek speaks of turning from idols to God (meaning decision m2), which Balanced and Readable say in so many words.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n44015003011"
+          ],
+          "choice": "\"フェニキア\"",
+          "alternatives": [
+            "\"フェニケ\""
+          ],
+          "reason": "The region is given its usual modern Japanese name, which also follows the Greek sound. It is used the same way throughout Acts.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n44015003016"
+          ],
+          "choice": "\"回心\" (L); \"神に立ち返る\" (B, R)",
+          "alternatives": [
+            "\"改宗\""
+          ],
+          "reason": "Literal keeps a noun for the Greek noun; \"回心\" is the turning of the heart to God, while \"改宗\" would suggest changing from one religion's membership to another's. Balanced and Readable say what the turning was, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n44015003007",
+            "n44015003018"
+          ],
+          "choice": "\"教会\"; \"外邦人\" (L, B), \"非犹太人\" (R)",
+          "alternatives": [
+            "\"会众\" for the church"
+          ],
+          "reason": "The glossary's words: \"教会\" for the church at every level, and the Gentiles as \"外邦人\", with \"非犹太人\" at Readable (style guide section 7).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1322,6 +1511,26 @@
           "L": "Прибыв же в Иерусалим, они были приняты церковью, и апостолами, и старейшинами, и рассказали всё, что сделал Бог с ними.",
           "B": "Придя в Иерусалим, они были приняты церковью, апостолами и старейшинами и рассказали им обо всём, что Бог сделал, действуя вместе с ними.",
           "R": "Когда они пришли в Иерусалим, церковь, апостолы и старейшины встретили их с радостью. Павел и Варнава рассказали им обо всём, что Бог сделал, когда они работали вместе с {{deity_pronoun:ним|Ним}}."
+        },
+        "uk": {
+          "L": "А прибувши до Єрусалима, вони були прийняті церквою, і апостолами, і старійшинами, і сповістили все, що Бог учинив із ними.",
+          "B": "Прибувши до Єрусалима, вони були прийняті церквою, апостолами та старійшинами й розповіли їм усе, що Бог зробив разом із ними.",
+          "R": "Коли вони прийшли до Єрусалима, церква, апостоли і старійшини привітно їх прийняли. Павло і Варнава розповіли їм про все, що Бог зробив, коли вони працювали разом із {{deity_pronoun:ним|Ним}}."
+        },
+        "ja": {
+          "L": "そして、エルサレムに着くと、彼らは教会と使徒たちと長老たちに迎えられ、神が彼らと共になさったすべてのことを報告した。",
+          "B": "エルサレムに着くと、一行は教会と使徒たちと長老たちに迎え入れられた。そして、神が自分たちと共に働いてなさったすべてのことを話した。",
+          "R": "エルサレムに着くと、教会の人々と使徒たちと長老たちが、一行を迎えてくれました。パウロとバルナバは、自分たちが神と一緒に働いたときに、神がなさったすべてのことを話しました。"
+        },
+        "id": {
+          "L": "Dan setibanya di Yerusalem, mereka disambut oleh jemaat dan rasul-rasul dan penatua-penatua, dan mereka menceritakan segala sesuatu yang telah dilakukan Allah bersama mereka.",
+          "B": "Setibanya di Yerusalem mereka disambut oleh jemaat, para rasul dan para penatua, dan mereka menceritakan kepada mereka segala sesuatu yang telah dilakukan Allah bersama mereka.",
+          "R": "Ketika mereka tiba di Yerusalem, jemaat, para rasul dan para penatua menyambut mereka. Paulus dan Barnabas menceritakan kepada mereka semua hal yang telah dilakukan Allah ketika mereka bekerja bersama-{{deity_pronoun:nya|Nya}}."
+        },
+        "zh": {
+          "L": "他们到了耶路撒冷，受到教会、使徒和长老的接待，就报告了{{god_term:神|上帝}}与他们一同做的一切事。",
+          "B": "他们到了耶路撒冷，受到教会、使徒和长老的欢迎。他们把{{god_term:神|上帝}}与他们同工所做的一切都告诉了大家。",
+          "R": "他们到了耶路撒冷，教会、使徒和长老都欢迎他们。保罗和巴拿巴告诉他们，{{god_term:神|上帝}}在他们与{{deity_pronoun:他|祂}}一起工作的时候做了哪些事。"
         }
       },
       "decisions": [
@@ -1507,6 +1716,26 @@
           "L": "Но восстали некоторые из партии фарисеев, уверовавшие, говоря: «Надлежит обрезать их и повелевать [им] соблюдать Закон Моисея.»",
           "B": "Тогда встали некоторые уверовавшие из партии фарисеев и заявили: «Этих язычников нужно обрезать и велеть им соблюдать Закон Моисея.»",
           "R": "Но некоторые верующие раньше были фарисеями и всё ещё принадлежали к этой группе. Они встали и сказали: «Язычники, которые поверили, должны быть обрезаны. И им нужно велеть соблюдать весь Закон, который Бог дал через Моисея.»"
+        },
+        "uk": {
+          "L": "Але встали деякі з партії фарисеїв, що увірували, кажучи: «Треба обрізати їх і наказати [їм] дотримуватися Закону Мойсеєвого.»",
+          "B": "Тоді підвелися деякі віруючі з партії фарисеїв і заявили: «Цих язичників треба обрізати й наказати їм дотримуватися Закону Мойсея.»",
+          "R": "Але деякі віруючі раніше були фарисеями й досі належали до цієї групи. Вони підвелися й сказали: «Віруючі з язичників мусять обрізатися. І їм треба звеліти виконувати весь Закон, який Бог дав через Мойсея.»"
+        },
+        "ja": {
+          "L": "しかし、ファリサイ派という党派から信じた者たちのうちの何人かが立ち上がって、「彼らに割礼を施し、モーセの律法を守るように命じなければならない」と言った。",
+          "B": "すると、ファリサイ派という党派から信じた者たちの何人かが立ち上がって、「あの異邦人たちには割礼を受けさせ、モーセの律法を守るように命じなければならない」と主張した。",
+          "R": "しかし、信じた人々の中には、ファリサイ派の人々もいて、今もその党派に属していました。その人たちが立ち上がって言いました。「ユダヤ人でない信じた人々も、割礼を受けなければなりません。そして、神がモーセを通して与えられた律法を、すべて守るように命じられなければなりません。」"
+        },
+        "id": {
+          "L": "Tetapi beberapa orang dari golongan Farisi yang telah menjadi percaya bangkit dan berkata, \"Mereka harus disunat dan diperintahkan untuk menaati hukum Musa.\"",
+          "B": "Lalu beberapa orang dari golongan Farisi yang telah menjadi percaya berdiri dan bersikeras, \"Orang-orang bukan Yahudi itu harus disunat, dan mereka harus diperintahkan untuk menaati hukum Musa.\"",
+          "R": "Tetapi beberapa orang percaya dahulu adalah orang Farisi, dan mereka masih termasuk golongan itu. Mereka berdiri dan berkata, \"Orang-orang percaya yang bukan Yahudi harus disunat. Dan mereka harus disuruh menaati seluruh hukum yang diberikan Allah melalui Musa.\""
+        },
+        "zh": {
+          "L": "但有些法利赛派中已经信了的人起来说：“必须给他们行割礼，并且吩咐[他们]遵守摩西的律法。”",
+          "B": "这时，法利赛派中一些已经信主的人站起来坚持说：“这些外邦人必须受割礼，也必须命令他们遵守摩西的律法。”",
+          "R": "可是有些信徒原来是法利赛人，现在仍然属于那一派。他们站起来说：“非犹太信徒必须受割礼。还要告诉他们遵守{{god_term:神|上帝}}借着摩西所颁布的全部律法。”"
         }
       },
       "decisions": [
@@ -1800,6 +2029,51 @@
           "reason": "The Greek word names a school or party within Judaism. \"Ересь\", the Synodal word, now means false teaching, and \"секта\" sounds hostile; \"партия\" is neutral.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n44015005007"
+          ],
+          "choice": "\"партія фарисеїв\" for *hairesis*",
+          "alternatives": [
+            "\"секта фарисеїв\"",
+            "\"єресь\""
+          ],
+          "reason": "The brief's Acts term: \"секта\" and \"єресь\" now carry a judgement the Greek word does not have here.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n44015005007",
+            "n44015005008",
+            "n44015005009"
+          ],
+          "choice": "\"法利赛派\"",
+          "alternatives": [
+            "\"法利赛教派\"",
+            "\"法利赛党\""
+          ],
+          "reason": "The Greek hairesis is a party or school within Judaism (meaning decision m1), not a sect in the modern sense: \"派\" says that.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1879,6 +2153,26 @@
           "L": "Собрались же апостолы и старейшины, чтобы рассмотреть это дело.",
           "B": "Апостолы и старейшины собрались, чтобы обсудить это дело.",
           "R": "Тогда апостолы и старейшины встретились, чтобы поговорить об этом вопросе."
+        },
+        "uk": {
+          "L": "І зібралися апостоли і старійшини розглянути цю справу.",
+          "B": "Апостоли і старійшини зібралися, щоб розглянути цю справу.",
+          "R": "Тож апостоли і старійшини зустрілися, щоб обговорити це питання."
+        },
+        "ja": {
+          "L": "そこで、使徒たちと長老たちは、この事柄について検討するために集まった。",
+          "B": "使徒たちと長老たちは、この問題を検討するために集まった。",
+          "R": "そこで、使徒たちと長老たちは、この問題について話し合うために集まりました。"
+        },
+        "id": {
+          "L": "Dan rasul-rasul dan penatua-penatua berkumpul untuk membicarakan perkara ini.",
+          "B": "Para rasul dan penatua berkumpul untuk membahas perkara ini.",
+          "R": "Jadi para rasul dan penatua bertemu untuk membicarakan persoalan ini."
+        },
+        "zh": {
+          "L": "使徒和长老就聚集起来，要察看这件事。",
+          "B": "使徒和长老聚在一起商议这件事。",
+          "R": "于是使徒和长老开会讨论这个问题。"
         }
       },
       "decisions": [
@@ -2051,6 +2345,26 @@
           "L": "После же многого спора, встав, Пётр сказал им: «Мужи братья, вы знаете, что с давних дней Бог избрал среди вас, чтобы через мои уста язычники услышали слово Евангелия и уверовали. \\v 8 И Сердцеведец Бог засвидетельствовал им, дав [им] Святого Духа, как и нам, \\v 9 и ничем не различил между нами и ими, верой очистив их сердца.",
           "B": "После долгого спора Пётр встал и сказал им: «Братья, вы знаете, что ещё в первые дни Бог сделал среди вас выбор: через мои уста язычники должны были услышать весть Евангелия и уверовать. \\v 8 И Бог, который знает сердца, засвидетельствовал о них, дав им Святого Духа, как {{deity_pronoun:он|Он}} дал и нам. \\v 9 Он не сделал никакого различия между нами и ими, потому что {{deity_pronoun:он|Он}} очистил их сердца верой.",
           "R": "Руководители долго говорили об этом. Потом Пётр встал и сказал: «Братья, вы помните, что случилось некоторое время назад. Бог выбрал меня среди вас, чтобы я рассказал Радостную весть людям, которые не иудеи. Бог хотел, чтобы они услышали эту весть и поверили. \\v 8 Бог знает, что в сердце у каждого человека. Он показал, что {{deity_pronoun:он|Он}} принял этих язычников: {{deity_pronoun:он|Он}} дал им Святого Духа, так же как дал Духа и нам. \\v 9 Бог не стал делать различия между нами и ими. Он очистил их сердца, потому что они поверили в Иисуса."
+        },
+        "uk": {
+          "L": "Коли ж відбулася велика суперечка, Петро, вставши, сказав їм: «Мужі брати, ви знаєте, що від днів давніх Бог вибрав серед вас, щоб через мої уста язичники почули слово Євангелія й увірували. \\v 8 І Бог, Серцезнавець, засвідчив їм, давши Духа Святого, як і нам, \\v 9 і нічим не розрізнив між нами і ними, вірою очистивши їхні серця.",
+          "B": "Після довгої суперечки підвівся Петро й сказав їм: «Брати, ви знаєте, що ще в перші дні Бог зробив вибір серед вас: через мої уста язичники мали почути слово Євангелія й увірувати. \\v 8 І Бог, який знає кожне серце, засвідчив їм, давши їм Святого Духа, як {{deity_pronoun:він|Він}} дав і нам. \\v 9 Він не зробив жодної різниці між нами і ними, бо очистив їхні серця вірою.",
+          "R": "Провідники довго говорили про це. Потім підвівся Петро й сказав: «Брати, ви памʼятаєте, що сталося якийсь час тому. Бог вибрав мене з-поміж вас, щоб я розповів Добру звістку людям, які не є юдеями. Він хотів, щоб вони почули звістку й повірили. \\v 8 Бог знає, що в серці в кожної людини. Він показав, що прийняв цих язичників, коли дав їм Святого Духа, так само як {{deity_pronoun:він|Він}} дав Духа нам. \\v 9 Бог не поставився до нас і до них по-різному. Він очистив їхні серця, бо вони повірили в Ісуса."
+        },
+        "ja": {
+          "L": "そして、多くの論争があった後、ペトロが立ち上がって彼らに言った。「兄弟である皆さん、あなたがたが知っているとおり、初めのころから、神はあなたがたの中で選んで、わたしの口を通して異邦人が福音の言葉を聞いて信じるようにされました。\\v 8 そして、心を知っておられる神は、わたしたちにもそうされたように、彼らにも聖霊を与えて、彼らのために証しをされました。\\v 9 そして、わたしたちと彼らとの間に何の区別もなさらず、信仰によって彼らの心を清められたのです。",
+          "B": "激しい論争が長く続いた後、ペトロが立ち上がって彼らに言った。「兄弟の皆さん、ご存じのとおり、初めのころ、神はあなたがたの中から選んでくださいました。わたしの口を通して異邦人が福音の言葉を聞き、信じるようになるためです。\\v 8 人の心を知っておられる神は、わたしたちに与えてくださったのと同じように、彼らにも聖霊を与えることで、彼らについて証しをされました。\\v 9 神は、わたしたちと彼らとの間に何の差別もなさいませんでした。信仰によって彼らの心を清めてくださったのです。",
+          "R": "指導者たちは長い間話し合いました。それからペトロが立ち上がって言いました。「兄弟のみなさん、少し前に起こったことを覚えておられるでしょう。神は、みなさんの中からわたしを選んで、ユダヤ人でない人々に良い知らせを伝えさせられました。神は、その人たちがこの知らせを聞いて信じることを望まれたのです。\\v 8 神は、一人一人の心の中にあるものを知っておられます。神は、わたしたちに聖霊を与えてくださったのと同じように、その人たちにも聖霊を与えて、彼らを受け入れたことを示されました。\\v 9 神は、わたしたちと彼らを分け隔てなさいませんでした。彼らがイエスを信じたので、神は彼らの心を清くしてくださったのです。"
+        },
+        "id": {
+          "L": "Dan setelah terjadi banyak perdebatan, Petrus berdiri dan berkata kepada mereka, \"Hai saudara-saudara, kalian tahu bahwa sejak hari-hari permulaan Allah telah memilih di antara kalian, supaya melalui mulutku bangsa-bangsa lain mendengar firman Injil dan menjadi percaya. \\v 8 Dan Allah, yang mengenal hati, telah memberi kesaksian kepada mereka, dengan memberikan Roh Kudus sama seperti kepada kita juga, \\v 9 dan {{deity_pronoun:dia|Dia}} sama sekali tidak membedakan antara kita dan mereka, sesudah menyucikan hati mereka oleh iman.",
+          "B": "Setelah lama berdebat, Petrus berdiri dan berkata kepada mereka, \"Saudara-saudara, kalian tahu bahwa sejak semula Allah telah menentukan pilihan-{{deity_pronoun:nya|Nya}} di antara kalian: melalui mulutku bangsa-bangsa lain akan mendengar berita Injil dan menjadi percaya. \\v 8 Allah, yang mengenal setiap hati, telah memberi kesaksian kepada mereka dengan memberikan Roh Kudus kepada mereka, sama seperti yang {{deity_pronoun:dia|Dia}} lakukan bagi kita. \\v 9 Dia sama sekali tidak membedakan antara kita dan mereka, sebab {{deity_pronoun:dia|Dia}} telah menyucikan hati mereka oleh iman.",
+          "R": "Para pemimpin itu membicarakannya untuk waktu yang lama. Lalu Petrus berdiri dan berkata, \"Saudara-saudara, kalian ingat apa yang terjadi beberapa waktu yang lalu. Allah memilih aku dari antara kalian untuk memberitakan kabar baik kepada orang-orang yang bukan Yahudi. Dia ingin mereka mendengar berita itu dan percaya. \\v 8 Allah tahu isi hati setiap orang. Dia menunjukkan bahwa {{deity_pronoun:dia|Dia}} menerima orang-orang bukan Yahudi ini dengan memberikan Roh Kudus kepada mereka, sama seperti {{deity_pronoun:dia|Dia}} memberikan Roh itu kepada kita. \\v 9 Allah tidak memperlakukan kita dan mereka secara berbeda. Dia menyucikan hati mereka karena mereka beriman kepada Yesus."
+        },
+        "zh": {
+          "L": "争论了很久以后，彼得站起来，对他们说：“诸位，弟兄们，你们知道，早些日子{{god_term:神|上帝}}在你们中间作了拣选，要外邦人借着我的口听到福音的道，并且相信。\\v 8 知道人心的{{god_term:神|上帝}}也为他们作了见证，把圣灵赐给[他们]，正如也赐给了我们；\\v 9 {{deity_pronoun:他|祂}}在我们和他们之间没有作任何区分，借着信洁净了他们的心。",
+          "B": "经过长时间的辩论，彼得起来对他们说：“弟兄们，你们知道，早些时候{{god_term:神|上帝}}在你们当中作了拣选：要借着我的口，让外邦人听到福音的道，并且信。\\v 8 洞察人心的{{god_term:神|上帝}}为他们作了见证，把圣灵赐给他们，就像{{deity_pronoun:他|祂}}也赐给我们一样。\\v 9 {{deity_pronoun:他|祂}}没有把我们和他们分别对待，因为{{deity_pronoun:他|祂}}借着信洁净了他们的心。",
+          "R": "领袖们讨论了很久。后来彼得站起来说：“弟兄们，你们记得前些时候发生的事。{{god_term:神|上帝}}从你们当中拣选了我，去把好消息告诉不是犹太人的人。{{deity_pronoun:他|祂}}要他们听到这个信息并且相信。\\v 8 {{god_term:神|上帝}}知道每个人心里所想的。{{deity_pronoun:他|祂}}把圣灵赐给这些非犹太人，就像{{deity_pronoun:他|祂}}把圣灵赐给我们一样，这表明{{deity_pronoun:他|祂}}接纳了他们。\\v 9 {{god_term:神|上帝}}没有对我们和他们区别对待。他们信了耶稣，{{deity_pronoun:他|祂}}就使他们的心洁净了。"
         }
       },
       "decisions": [
@@ -2506,6 +2820,171 @@
           "reason": "Literal keeps the Greek's single compound word with an existing Russian compound; Balanced and Readable say it with a clause.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n44015008003"
+          ],
+          "choice": "\"Серцезнавець\" for *kardiognōstēs*",
+          "alternatives": [
+            "\"який знає серця\""
+          ],
+          "reason": "Literal keeps the Greek's single compound word as a single Ukrainian word; Balanced and Readable unfold it.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n44015007010",
+            "n44015007011"
+          ],
+          "choice": "\"兄弟である皆さん\" (L); \"兄弟の皆さん\" (B); \"兄弟のみなさん\" (R), with no gender span",
+          "alternatives": [
+            "\"{{gender:きょうだいたち|兄弟たち}}、\", the usual Japanese Acts form for this address"
+          ],
+          "reason": "As the English decides here, the address is taken as spoken to the apostles and elders, who were men (meaning decision m1), so the word is not widened, as at 23:1. \"皆さん\" carries the first Greek word; the same address is used in 2:37, 13:15, 15:13, 23:1, 23:6 and 28:17. If reviewers take the whole church to be addressed, the usual gender span would return.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n44015007007"
+          ],
+          "choice": "Peter's speech in です・ます, with light respect forms for God (\"選ばれ\", \"証しをされ\", \"清めてくださった\")",
+          "alternatives": [
+            "plain style"
+          ],
+          "reason": "An apostle speaking to the apostles and elders in council speaks politely in Japanese Acts, and speaks of God's actions with respect.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n44015007001",
+            "n44015007002",
+            "n44015007003",
+            "n44015007004",
+            "n44015007005",
+            "n44015007006",
+            "n44015007007",
+            "n44015007008",
+            "n44015007009",
+            "n44015007010",
+            "n44015007011",
+            "n44015007012",
+            "n44015007013",
+            "n44015007014",
+            "n44015007015",
+            "n44015007016",
+            "n44015007017",
+            "n44015007018",
+            "n44015007019",
+            "n44015007020",
+            "n44015007021",
+            "n44015007022",
+            "n44015007023",
+            "n44015007024",
+            "n44015007025",
+            "n44015007026",
+            "n44015007027",
+            "n44015007028",
+            "n44015007029",
+            "n44015007030",
+            "n44015007031",
+            "n44015007032",
+            "n44015007033",
+            "n44015007034",
+            "n44015007035",
+            "n44015008001",
+            "n44015008002",
+            "n44015008003",
+            "n44015008004",
+            "n44015008005",
+            "n44015008006",
+            "n44015008007",
+            "n44015008008",
+            "n44015008009",
+            "n44015008010",
+            "n44015008011",
+            "n44015008012",
+            "n44015008013",
+            "n44015008014",
+            "n44015009001",
+            "n44015009002",
+            "n44015009003",
+            "n44015009004",
+            "n44015009005",
+            "n44015009006",
+            "n44015009007",
+            "n44015009008",
+            "n44015009009",
+            "n44015009010",
+            "n44015009011",
+            "n44015009012",
+            "n44015009013",
+            "n44015009014"
+          ],
+          "choice": "\"kita\" in Peter's and James's speeches to the council; \"kami\" in the council's letter (15:23-29)",
+          "alternatives": [],
+          "reason": "Peter and James speak to fellow Jewish believers about what they share, so \"we\" includes the hearers; the letter's \"we\" are its writers, the apostles and elders, speaking to the Gentile believers.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n44015007010",
+            "n44015007011"
+          ],
+          "choice": "\"诸位，弟兄们\" (L); \"弟兄们\" (B, R), with no gender span",
+          "alternatives": [
+            "\"{{gender:弟兄姐妹|弟兄}}们\""
+          ],
+          "reason": "A formal address to the apostles and elders (meaning decision m1), so, as the English, the word is not widened. Literal keeps both Greek words, \"men\" as the polite \"诸位\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2595,6 +3074,26 @@
           "L": "Итак, теперь что вы искушаете Бога, возлагая на шею учеников ярмо, которого ни отцы наши, ни мы не были в силах понести?",
           "B": "Зачем же вы теперь испытываете Бога? Вы хотите возложить на шею учеников ярмо, которое ни наши {{gender:предки|отцы}}, ни мы сами не смогли понести.",
           "R": "Зачем же вы теперь испытываете Бога? Вы хотите заставить этих учеников Иисуса соблюдать весь Закон. Это всё равно что надеть им на шею тяжёлое деревянное ярмо. Наши {{gender:предки|отцы}} не смогли нести такой груз, и мы тоже не можем."
+        },
+        "uk": {
+          "L": "Тож нині навіщо ви випробовуєте Бога, накладаючи на шию учнів ярмо, якого ні батьки наші, ні ми не змогли понести?",
+          "B": "То чому ж тепер ви випробовуєте Бога? Ви хочете покласти на шиї учнів ярмо, якого не мали сили нести ні наші {{gender:предки|батьки}}, ні ми самі.",
+          "R": "То чому ж тепер ви випробовуєте Бога? Ви хочете змусити цих послідовників Ісуса виконувати весь Закон. Це те саме, що покласти їм на шию важке деревʼяне ярмо. Наші {{gender:предки|батьки}} не змогли нести такого тягаря, і ми не можемо."
+        },
+        "ja": {
+          "L": "それなのに今、なぜあなたがたは神を試みて、わたしたちの父祖たちもわたしたちも負うことのできなかったくびきを、弟子たちの首に掛けようとするのですか？",
+          "B": "それなのに、なぜ今、あなたがたは神を試みるのですか？わたしたちの先祖もわたしたち自身も負いきれなかったくびきを、弟子たちの首に掛けようとしているのです。",
+          "R": "それなのに、どうして今、みなさんは神を試すようなことをするのですか？みなさんは、イエスの弟子となったこの人たちに、律法をすべて守らせようとしています。それは、重い木のくびきを彼らの首に掛けるようなものです。わたしたちの先祖も、その重さに耐えられませんでした。わたしたちも同じです。"
+        },
+        "id": {
+          "L": "Jadi sekarang, mengapa kalian mencobai Allah dengan meletakkan pada tengkuk murid-murid itu suatu kuk yang tidak dapat dipikul, baik oleh nenek moyang kita maupun oleh kita sendiri?",
+          "B": "Jadi, mengapa sekarang kalian mencobai Allah? Kalian hendak meletakkan pada tengkuk murid-murid itu suatu kuk yang tidak sanggup dipikul, baik oleh nenek moyang kita maupun oleh kita sendiri.",
+          "R": "Jadi mengapa sekarang kalian menguji Allah? Kalian ingin membuat para pengikut Yesus ini menaati seluruh hukum Taurat. Itu sama seperti meletakkan kuk kayu yang berat pada tengkuk mereka. Nenek moyang kita tidak sanggup memikul beban itu, dan kita pun tidak."
+        },
+        "zh": {
+          "L": "那么现在，你们为什么要试探{{god_term:神|上帝}}，把一个连我们的列祖和我们自己都担不起的轭，加在门徒的脖子上呢？",
+          "B": "那么，你们现在为什么要试探{{god_term:神|上帝}}呢？你们想把一副轭套在门徒的脖子上，可是这副轭，无论是我们的{{gender:祖先|列祖}}还是我们自己，都没有力量承担。",
+          "R": "那么，你们现在为什么要试探{{god_term:神|上帝}}呢？你们要这些跟从耶稣的人遵守全部律法。这就好像把一副沉重的木轭套在他们的脖子上。我们的{{gender:祖先|列祖}}背不动这个重担，我们也背不动。"
         }
       },
       "decisions": [
@@ -2899,6 +3398,67 @@
           "reason": "\"Ярмо\" is the current word for a yoke, as settled in Matthew; \"иго\" is Slavonic.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n44015010017"
+          ],
+          "choice": "\"父祖たち\" (L); \"先祖\" (B, R), with no gender span",
+          "alternatives": [
+            "\"{{gender:先祖|父祖たち}}\""
+          ],
+          "reason": "The English Balanced and Readable need a span for \"ancestors/fathers\"; the Japanese \"先祖\" already means forebears in general, so no setting is needed. Literal keeps the Greek word \"fathers\" in \"父祖たち\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n44015010017"
+          ],
+          "choice": "\"{{gender:祖先|列祖}}\"",
+          "alternatives": [
+            "\"列祖\" with no span"
+          ],
+          "reason": "As the English: Balanced and Readable give \"祖先\" (forebears) by default and the church word \"列祖\" as the alternative; Literal keeps \"列祖\" with no span.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n44015010013"
+          ],
+          "choice": "\"门徒\" (L, B); \"跟从耶稣的人\" (R)",
+          "alternatives": [
+            "\"信徒\""
+          ],
+          "reason": "Acts calls the believers \"the disciples\": \"门徒\", the Gospels' word, at Literal and Balanced; Readable says who they are, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2979,6 +3539,26 @@
           "L": "Но мы верим, [что] благодатью Господа Иисуса спасаемся так же, как и они.»",
           "B": "Нет, мы верим, что мы спасены благодатью Господа Иисуса, и они спасены точно так же.»",
           "R": "Нет! Мы верим, что Господь Иисус спасает нас по своей благодати — по доброте, которой мы не заслужили. И {{deity_pronoun:он|Он}} точно так же спасает их.»"
+        },
+        "uk": {
+          "L": "Але ми віримо, що благодаттю Господа Ісуса спасемося так само, як і вони.»",
+          "B": "Ні, ми віримо, що спасаємося благодаттю Господа Ісуса, і вони спасаються точнісінько так само.»",
+          "R": "Ні! Ми віримо, що Господь Ісус спасає нас завдяки своїй благодаті, доброті, якої ми не заслуговуємо. І {{deity_pronoun:він|Він}} спасає їх точно так само.»"
+        },
+        "ja": {
+          "L": "むしろ、わたしたちは、主イエスの恵みによって救われると信じているのです。彼らも同じ仕方で[救われるのです]。」",
+          "B": "そうではなく、わたしたちは、主イエスの恵みによって救われると信じています。彼らもまったく同じように救われるのです。」",
+          "R": "そうではありません！わたしたちは、主イエスが恵みによって、わたしたちを救ってくださると信じています。恵みとは、受ける資格のないわたしたちに示される、主の優しさです。主は、あの人たちも、まったく同じように救ってくださるのです。」"
+        },
+        "id": {
+          "L": "Tetapi kita percaya [bahwa kita] diselamatkan oleh kasih karunia Tuhan Yesus, sama seperti mereka juga.\"",
+          "B": "Sebaliknya, kita percaya bahwa kita diselamatkan oleh kasih karunia Tuhan Yesus, dan mereka pun diselamatkan dengan cara yang sama.\"",
+          "R": "Tidak! Kita percaya bahwa Tuhan Yesus menyelamatkan kita karena kasih karunia-{{deity_pronoun:nya|Nya}}, yaitu kebaikan-{{deity_pronoun:nya|Nya}} yang tidak layak kita terima. Dan {{deity_pronoun:dia|Dia}} menyelamatkan mereka dengan cara yang sama persis.\""
+        },
+        "zh": {
+          "L": "但我们信，我们是借着主耶稣的恩典得救的，和他们也是一样。”",
+          "B": "不，我们相信，我们是借着主耶稣的恩典得救的，他们也完全是这样得救的。”",
+          "R": "不！我们相信，主耶稣拯救我们，是出于{{deity_pronoun:他|祂}}的恩典，就是我们不配得的仁慈。{{deity_pronoun:他|祂}}也用完全一样的方式拯救他们。”"
         }
       },
       "decisions": [
@@ -3127,6 +3707,27 @@
           "reason": "Russian says \"свой\" for the subject's own, and reflexive pronouns take no deity_pronoun span (style guide, section 7), where the English marks \"his\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n44015011004"
+          ],
+          "choice": "\"恩典\"",
+          "alternatives": [
+            "\"恩惠\""
+          ],
+          "reason": "The glossary's key term for grace at every level; Readable keeps it and explains it as \"我们不配得的仁慈\", as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3217,6 +3818,26 @@
           "L": "Замолчало же всё множество, и слушали Варнаву и Павла, рассказывавших, какие знамения и чудеса сотворил Бог среди язычников через них.",
           "B": "Всё собрание затихло. Все слушали Варнаву и Павла, которые рассказывали, какие знамения и чудеса Бог совершил через них среди язычников.",
           "R": "Все замолчали. Они слушали, как Варнава и Павел рассказывали о знамениях и чудесах, которые Бог совершил через них среди язычников. Они показывали Божью силу."
+        },
+        "uk": {
+          "L": "І замовкла вся безліч, і слухали Варнаву і Павла, які розповідали, які знаки й чудеса вчинив Бог через них серед язичників.",
+          "B": "Усе зібрання затихло. Усі слухали Варнаву і Павла, які розповідали про знаки й чудеса, що їх Бог учинив через них серед язичників.",
+          "R": "Усі там замовкли. Вони слухали, як Варнава і Павло розповідали їм про знаки й чудеса, які Бог учинив через них серед язичників. Ці знаки показували Божу силу."
+        },
+        "ja": {
+          "L": "すると、群衆全体が静まり、バルナバとパウロが、神が彼らを通して異邦人の間で行われたしるしと不思議な業を、ことごとく説明するのに聞き入った。",
+          "B": "集まった人々は皆、静かになった。そして、神が二人を通して異邦人の間で行われたしるしと不思議な業について、バルナバとパウロが語るのに耳を傾けた。",
+          "R": "そこにいたみんなが静かになりました。そして、バルナバとパウロの話を聞きました。二人は、神が自分たちを通して、ユダヤ人でない人々の間で行われたしるしや不思議なことを話しました。それは神の力を示すものでした。"
+        },
+        "id": {
+          "L": "Dan seluruh orang banyak itu diam, dan mereka mendengarkan Barnabas dan Paulus menceritakan tanda-tanda dan mukjizat-mukjizat yang telah dilakukan Allah di antara bangsa-bangsa lain melalui mereka.",
+          "B": "Seluruh sidang menjadi diam. Semua orang mendengarkan Barnabas dan Paulus menceritakan tanda-tanda dan mukjizat-mukjizat yang telah diadakan Allah melalui mereka di antara bangsa-bangsa lain.",
+          "R": "Semua orang di sana menjadi diam. Mereka mendengarkan Barnabas dan Paulus menceritakan tanda-tanda dan mukjizat-mukjizat yang telah dilakukan Allah melalui mereka di antara orang-orang bukan Yahudi. Semua itu menunjukkan kuasa Allah."
+        },
+        "zh": {
+          "L": "全体群众都静默无声，听巴拿巴和保罗述说{{god_term:神|上帝}}借着他们在外邦人中所行的神迹和奇事。",
+          "B": "整个会众都安静下来。大家听巴拿巴和保罗讲述{{god_term:神|上帝}}借着他们在外邦人中间所行的神迹奇事。",
+          "R": "在场的人都安静下来。他们听巴拿巴和保罗讲述{{god_term:神|上帝}}借着他们在非犹太人中间所做的神迹和奇事。这些事显明了{{god_term:神|上帝}}的大能。"
         }
       },
       "decisions": [
@@ -3417,6 +4038,26 @@
           "L": "После же того, как они замолчали, Иаков ответил, говоря: «Мужи братья, послушайте меня.",
           "B": "Когда они закончили, Иаков ответил: «Братья, выслушайте, что я скажу.",
           "R": "Когда они закончили говорить, Иаков ответил: «Братья, послушайте меня."
+        },
+        "uk": {
+          "L": "А після того як вони замовкли, озвався Яків, кажучи: «Мужі брати, послухайте мене.",
+          "B": "Коли вони закінчили, озвався Яків: «Брати, послухайте, що я скажу.",
+          "R": "Коли вони закінчили говорити, Яків відповів: «Брати, послухайте мене."
+        },
+        "ja": {
+          "L": "彼らが静まった後、ヤコブが答えて言った。「兄弟である皆さん、わたしの言うことを聞いてください。",
+          "B": "二人が話し終えると、ヤコブが答えた。「兄弟の皆さん、わたしの言うことを聞いてください。",
+          "R": "二人が話し終えると、ヤコブが答えました。「兄弟のみなさん、わたしの話を聞いてください。"
+        },
+        "id": {
+          "L": "Dan setelah mereka diam, Yakobus menjawab, katanya, \"Hai saudara-saudara, dengarkanlah aku.",
+          "B": "Setelah mereka selesai, Yakobus menanggapi, \"Saudara-saudara, dengarkanlah apa yang hendak kukatakan.",
+          "R": "Ketika mereka selesai berbicara, Yakobus menjawab, \"Saudara-saudara, dengarkanlah aku."
+        },
+        "zh": {
+          "L": "他们静默以后，雅各回答说：“诸位，弟兄们，请听我说。",
+          "B": "他们说完以后，雅各回应说：“弟兄们，请听听我要说的话。",
+          "R": "他们说完了，雅各回答说：“弟兄们，请听我说。"
         }
       },
       "decisions": [
@@ -3515,6 +4156,28 @@
           "reason": "The established Hindi Bible form, as for the apostle James in the Gospels. This is James the brother of the Lord (meaning decision m1). The address is treated as at 15:7.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n44015013009",
+            "n44015013010"
+          ],
+          "choice": "\"兄弟である皆さん\" (L); \"兄弟の皆さん\" (B); \"兄弟のみなさん\" (R), with no gender span",
+          "alternatives": [
+            "\"{{gender:きょうだいたち|兄弟たち}}、\""
+          ],
+          "reason": "As at 15:7: the English takes the address as spoken to the apostles and elders, and the Japanese follows it.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3596,6 +4259,26 @@
           "L": "Симеон рассказал, как Бог впервые посетил [язычников], чтобы взять из язычников народ для своего имени.",
           "B": "Симеон объяснил, как Бог впервые обратил свой взор на язычников, чтобы взять из них народ, который будет носить {{deity_pronoun:его|Его}} имя.",
           "R": "Симон Пётр рассказал нам, как Бог впервые показал свою заботу о язычниках. Бог выбрал некоторых из них, чтобы они стали {{deity_pronoun:его|Его}} народом."
+        },
+        "uk": {
+          "L": "Симеон розповів, як Бог уперше відвідав [язичників], щоб узяти з язичників народ для свого імені.",
+          "B": "Симеон пояснив, як Бог уперше зглянувся на язичників, щоб узяти з-поміж них народ, який носитиме {{deity_pronoun:його|Його}} імʼя.",
+          "R": "Симон Петро розповів нам, як Бог уперше виявив свою турботу про язичників. Бог вибрав декого з них, щоб вони стали {{deity_pronoun:його|Його}} власним народом."
+        },
+        "ja": {
+          "L": "シメオンが、神が最初に[異邦人を]顧みて、異邦人の中からご自分の名のための民を取られた次第を説明しました。",
+          "B": "シメオンは、神が初めに異邦人を顧みて、その中からご自分の名を担う民を選び出された次第を説明してくれました。",
+          "R": "シモン・ペトロは、神が初めてユダヤ人でない人々を心にかけてくださったことを話してくれました。神は、その人々の中から何人かを選んで、ご自分の民とされたのです。"
+        },
+        "id": {
+          "L": "Simeon telah menceritakan bagaimana Allah pertama kali memperhatikan [bangsa-bangsa lain] untuk mengambil dari antara bangsa-bangsa itu suatu umat bagi nama-{{deity_pronoun:nya|Nya}}.",
+          "B": "Simeon telah menjelaskan bagaimana Allah pertama kali berkenan kepada bangsa-bangsa lain, untuk mengambil dari antara mereka suatu umat yang menyandang nama-{{deity_pronoun:nya|Nya}}.",
+          "R": "Simon Petrus telah menceritakan kepada kita bagaimana Allah pertama kali menunjukkan kepedulian-{{deity_pronoun:nya|Nya}} kepada orang-orang bukan Yahudi. Allah memilih sebagian dari mereka untuk menjadi umat-{{deity_pronoun:nya|Nya}} sendiri."
+        },
+        "zh": {
+          "L": "西面已经述说了{{god_term:神|上帝}}起初怎样眷顾[外邦人]，要从外邦人中取出一个民族归于{{deity_pronoun:他|祂}}的名下。",
+          "B": "西面已经讲明了{{god_term:神|上帝}}起初怎样施恩眷顾外邦人，要从他们中间选取一群子民，归在{{deity_pronoun:他|祂}}的名下。",
+          "R": "西门彼得已经告诉我们，{{god_term:神|上帝}}起初怎样关怀非犹太人。{{god_term:神|上帝}}从他们中间拣选了一些人，作{{deity_pronoun:他|祂}}自己的子民。"
         }
       },
       "decisions": [
@@ -3880,6 +4563,78 @@
           "reason": "Literal and Balanced keep the Hebrew form of Peter's name that James uses; Readable says \"Симон Пётр\", as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n44015014001"
+          ],
+          "choice": "\"シメオン\" (L, B); \"シモン・ペトロ\" (R)",
+          "alternatives": [
+            "\"シモン\" at every level"
+          ],
+          "reason": "James uses the Hebrew form of Peter's name (meaning decision m1), which Literal and Balanced keep; Readable uses the name readers know, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n44015014001",
+            "n44015014002",
+            "n44015014003",
+            "n44015014004",
+            "n44015014005",
+            "n44015014006",
+            "n44015014007",
+            "n44015014008",
+            "n44015014009",
+            "n44015014010",
+            "n44015014011",
+            "n44015014012",
+            "n44015014013",
+            "n44015014014"
+          ],
+          "choice": "\"Simeon\" for Peter (L, B), \"Simon Petrus\" (R)",
+          "alternatives": [],
+          "reason": "James uses the Hebrew form of Peter's name; Literal and Balanced keep it, as the English does, and Readable names him plainly.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n44015014001"
+          ],
+          "choice": "\"西面\" (L, B); \"西门彼得\" (R)",
+          "alternatives": [
+            "\"西门\""
+          ],
+          "reason": "Simeon is the Hebrew form of Simon, Peter's name (meaning decision m1). Literal and Balanced keep the form James uses, written as Simeon in Luke 2:25; Readable names Simon Peter, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3956,6 +4711,26 @@
           "L": "И с этим согласны слова пророков, как написано:",
           "B": "С этим согласуется сказанное пророками, как написано:",
           "R": "Именно об этом давно говорили Божьи пророки. В Писании сказано:"
+        },
+        "uk": {
+          "L": "І з цим погоджуються слова пророків, як написано:",
+          "B": "З цим узгоджується сказане пророками, як і написано:",
+          "R": "Саме це давно сказали Божі пророки. У Писанні сказано:"
+        },
+        "ja": {
+          "L": "そして、これに預言者たちの言葉も一致しています。次のように書かれているとおりです。",
+          "B": "預言者たちの言葉も、これと一致しています。こう書かれているとおりです。",
+          "R": "これは、神の預言者たちが昔言ったことと、ぴったり合っています。聖書にこう書いてあります。"
+        },
+        "id": {
+          "L": "Dan dengan hal ini perkataan para nabi sesuai, seperti ada tertulis,",
+          "B": "Apa yang dikatakan para nabi sesuai dengan hal ini, seperti ada tertulis:",
+          "R": "Inilah yang dikatakan nabi-nabi Allah sejak dahulu. Kitab Suci berkata,"
+        },
+        "zh": {
+          "L": "众先知的话也与这事相合，正如经上写着：",
+          "B": "先知们所说的话与这事正相符合，就如经上写着：",
+          "R": "这正是{{god_term:神|上帝}}的先知们很久以前所说的。圣经上说："
         }
       },
       "decisions": [
@@ -4028,6 +4803,28 @@
             "\"भविष्यद्वक्ता\" at every level"
           ],
           "reason": "The style guide's word for prophet (section 6), with the everyday \"नबी\" at Readable.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n44015015008",
+            "n44015015009"
+          ],
+          "choice": "\"经上写着\" (L, B); \"圣经上说\" (R)",
+          "alternatives": [
+            "\"如经上所记\""
+          ],
+          "reason": "The glossary's formula for \"it is written\", as in the Gospels.",
           "uncertain": false,
           "footnote": false
         }
@@ -4145,6 +4942,26 @@
           "L": "“После этого {{deity_pronoun:я|Я}} возвращусь и воссоздам скинию Давида, упавшую, и разрушенное её воссоздам, и восстановлю её, \\v 17 чтобы взыскали остальные люди Господа, и все народы, над которыми наречено имя {{deity_pronoun:моё|Моё}}, говорит Господь, творящий это, \\v 18 известное от века.”",
           "B": "“После этого {{deity_pronoun:я|Я}} вернусь и снова построю упавший шатёр Давида. Я снова построю его развалины и опять поставлю его, \\v 17 чтобы остальные люди искали Господа, и все народы, которые называются {{deity_pronoun:моим|Моим}} именем, — говорит Господь, совершающий это, \\v 18 то, что известно издавна.”",
           "R": "“Потом {{deity_pronoun:я|Я}} вернусь. Род Давида похож на упавший шатёр, но {{deity_pronoun:я|Я}} снова его построю. Я восстановлю то, что было разрушено, и снова поставлю его. \\v 17 Тогда и все другие люди будут искать Господа. Все народы, которые {{deity_pronoun:я|Я}} назвал своими, будут искать {{deity_pronoun:его|Его}}. Так говорит Господь, и {{deity_pronoun:он|Он}} сделает это. \\v 18 Он давно открыл это людям.”"
+        },
+        "uk": {
+          "L": "“Після цього я повернуся і відбудую намет Давидів, що впав, і руїни його відбудую, і поставлю його знову, \\v 17 щоб решта людей шукала Господа, і всі народи, над якими прикликане {{deity_pronoun:моє|Моє}} імʼя, каже Господь, що чинить це, \\v 18 відоме від віку.”",
+          "B": "“Після цього я повернуся й знову збудую занепалий намет Давида. Я знову збудую його руїни й підніму його знову, \\v 17 щоб решта людства шукала Господа, усі народи, що звуться {{deity_pronoun:моїм|Моїм}} імʼям, — каже Господь, який чинить це, \\v 18 відоме здавна.”",
+          "R": "“Згодом я повернуся. Рід Давида — як намет, що впав, але я збудую його знову. Я відбудую те, що зруйноване, і знову поставлю його. \\v 17 Тоді всі інші люди шукатимуть Господа. Усі народи, які я назвав своїми, шукатимуть {{deity_pronoun:його|Його}}. Так каже Господь, і {{deity_pronoun:він|Він}} це зробить. \\v 18 Він обʼявив це давно.”"
+        },
+        "ja": {
+          "L": "『これらのことの後、わたしは帰って来て、倒れたダビデの幕屋を建て直す。その廃墟を建て直し、それを再び起こす。\\v 17 それは、人々の残りの者が主を求めるため、またわたしの名がその上に呼ばれているすべての国の民が[主を求める]ためである。これらのことを行う主が言う。\\v 18 [これらは]昔から知られていることである。』",
+          "B": "『この後、わたしは帰って来て、倒れたダビデの幕屋を再び建てる。その廃墟を建て直し、もう一度立て起こす。\\v 17 それは、残りの人々が主を求めるようになるためであり、わたしの名で呼ばれるすべての国の民が主を求めるようになるためである。これらのことを行う主がこう言う。\\v 18 これらは昔から知らされていたことである。』",
+          "R": "『後になって、わたしは帰って来る。ダビデの家は、倒れてしまったテントのようだが、わたしはそれをもう一度建てる。壊れたところを建て直し、再び立たせる。\\v 17 そうすれば、ほかのすべての人々も主を求めるようになる。わたしが自分のものと呼んだすべての国の民も、主を求めるようになる。主がこう言う。主はこれらのことを行う。\\v 18 主は昔から、これらのことを知らせていた。』"
+        },
+        "id": {
+          "L": "'Sesudah itu {{deity_pronoun:aku|Aku}} akan kembali, dan {{deity_pronoun:aku|Aku}} akan membangun kembali kemah Daud yang telah roboh, dan reruntuhannya akan {{deity_pronoun:ku|Ku}}bangun kembali, dan {{deity_pronoun:aku|Aku}} akan menegakkannya lagi, \\v 17 supaya sisa umat manusia mencari Tuhan, dan semua bangsa yang atasnya nama-{{deity_pronoun:ku|Ku}} telah diserukan, firman Tuhan, yang melakukan hal-hal ini, \\v 18 yang telah diketahui sejak dahulu kala.'",
+          "B": "'Sesudah itu {{deity_pronoun:aku|Aku}} akan kembali, dan {{deity_pronoun:aku|Aku}} akan membangun kembali kemah Daud yang telah roboh. Aku akan membangun kembali reruntuhannya dan menegakkannya lagi, \\v 17 supaya sisa umat manusia mencari Tuhan, yaitu semua bangsa yang disebut dengan nama-{{deity_pronoun:ku|Ku}}, firman Tuhan, yang melakukan hal-hal ini, \\v 18 hal-hal yang telah diberitahukan sejak dahulu kala.'",
+          "R": "'Kemudian {{deity_pronoun:aku|Aku}} akan kembali. Keluarga Daud seperti kemah yang telah roboh, tetapi {{deity_pronoun:aku|Aku}} akan membangunnya kembali. Aku akan membangun kembali apa yang telah hancur dan menegakkannya lagi. \\v 17 Sesudah itu semua orang lain akan mencari Tuhan. Semua bangsa yang telah {{deity_pronoun:ku|Ku}}panggil menjadi milik-{{deity_pronoun:ku|Ku}} akan mencari {{deity_pronoun:dia|Dia}}. Tuhan berfirman demikian, dan {{deity_pronoun:dia|Dia}} akan melakukan hal-hal ini. \\v 18 Dia telah memberitahukannya sejak dahulu kala.'"
+        },
+        "zh": {
+          "L": "‘这些事以后，我要回来，重新建造大卫那已经倒塌的帐幕；它的废墟，我要重新建造，我要把它重新立起来，\\v 17 好让其余的人寻求主，还有所有被冠以我名的列国，这是行这些事的主说的，\\v 18 [这些事]自古以来就为人所知。’",
+          "B": "‘此后我要回来，重建大卫那倒塌了的帐幕。我要重修它的废墟，使它再次立起来，\\v 17 好让其余的人类都寻求主，就是所有归在我名下的列国。这是行这些事的主说的，\\v 18 这些事自古就已显明。’",
+          "R": "‘以后我要回来。大卫的家族就像一座倒塌了的帐篷，可是我要把它重新建立起来。我要修复被毁坏的地方，使它重新站立起来。\\v 17 那时，其他所有的人都会寻求主。我称为属我的万国，都会寻求{{deity_pronoun:他|祂}}。这是主说的，{{deity_pronoun:他|祂}}要成就这些事。\\v 18 {{deity_pronoun:他|祂}}很久以前就让人知道了这些事。’"
         }
       },
       "decisions": [
@@ -4709,6 +5526,131 @@
           "reason": "Literal keeps the traditional word for David's tent; Balanced and Readable say \"шатёр\", the plain word for a tent.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n44015017007"
+          ],
+          "choice": "\"решта людей\" with no gender setting",
+          "alternatives": [
+            "{{gender:решта людей|решта мужів}}"
+          ],
+          "reason": "The English Literal has a gender setting; Ukrainian \"люди\" already means humankind, as the meaning decision reads it.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n44015016003"
+          ],
+          "choice": "the quotation of Amos in 『』 and in the plain style, with God speaking as \"わたし\" and no respect forms for \"主\" inside it",
+          "alternatives": [
+            "です・ます inside the quotation"
+          ],
+          "reason": "Quoted Scripture keeps the plain style in Japanese Open Word Bible, and a quotation inside James's speech takes 『』. God speaks of himself in the third person (\"says the Lord\"), so the Japanese does not honor the speaker in his own words.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n44015016007"
+          ],
+          "choice": "\"幕屋\" (L, B); \"テント\" (R)",
+          "alternatives": [
+            "\"仮小屋\"",
+            "\"天幕\""
+          ],
+          "reason": "\"幕屋\" is the usual word for a tent in Japanese Bibles and keeps the picture of Amos's fallen shelter; Readable uses the everyday word and explains the picture, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-3",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n44015017007"
+          ],
+          "choice": "\"人々\" with no gender span (L)",
+          "alternatives": [
+            "a span with \"男たち\""
+          ],
+          "reason": "The Japanese \"人々\" already means people in general, the sense of meaning decision m5, so the English Literal's span is not needed.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n44015017009",
+            "n44015017023"
+          ],
+          "choice": "\"主\", with no divine_name span",
+          "alternatives": [
+            "\"{{divine_name:上主|雅威}}\""
+          ],
+          "reason": "The Greek has kyrios, so the Chinese has \"主\", as the English has \"the Lord\" (style guide section 4); in Amos 9:11-12 the Hebrew has the divine name (meaning decision m3). The quotation follows the Greek Old Testament, as Acts does, and is drafted fresh: no Gospel quotes this passage.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n44015017007",
+            "n44015017019"
+          ],
+          "choice": "\"其余的人\" (L), \"其余的人类\" (B), \"其他所有的人\" (R), with no gender span; \"我名\" with no deity_pronoun span",
+          "alternatives": [
+            "\"{{gender:人|男人}}\""
+          ],
+          "reason": "Chinese \"人\" is already inclusive, so the English gender span on \"men\" has no Chinese counterpart (style guide section 8). Chinese has no reverent first person, so God's \"my\" is \"我\" with no span, though the English spans \"My\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -4808,6 +5750,26 @@
           "L": "Поэтому я сужу: не затруднять тех из язычников, кто обращается к Богу, \\v 20 но написать им, чтобы они воздерживались от осквернённого идолами, и от блуда, и от удавленного, и от крови.",
           "B": "Поэтому я считаю, что не надо создавать трудностей язычникам, которые обращаются к Богу. \\v 20 Вместо этого нужно написать им, чтобы они держались подальше от того, что осквернено идолами, от блуда, от удавленного и от крови.",
           "R": "Поэтому я думаю, что не нужно усложнять жизнь язычникам, которые обращаются к Богу. \\v 20 Лучше напишем им письмо. Скажем им, чтобы они не ели пищу, принесённую в жертву идолам, потому что она нечиста. Пусть они не вступают в связи вне брака. Пусть не едят мясо удавленных животных, в котором осталась кровь. И пусть не едят кровь."
+        },
+        "uk": {
+          "L": "Тому я вважаю, що не слід обтяжувати тих із язичників, хто навертається до Бога, \\v 20 але написати їм, щоб утримувалися від осквернень ідолами, і від розпусти, і від задушенини, і від крові.",
+          "B": "Тож я вважаю, що не треба ускладнювати життя язичникам, які навертаються до Бога. \\v 20 Натомість треба написати їм, щоб вони утримувалися від того, що осквернене ідолами, від розпусти, від задушеного і від крові.",
+          "R": "Тож я думаю, що нам не слід ускладнювати життя язичникам, які навертаються до Бога. \\v 20 Натомість напишімо їм листа. Скажімо їм не їсти їжі, яку принесли в жертву ідолам, бо вона нечиста. Вони не повинні брати участі в статевих гріхах. Вони не повинні їсти мʼяса тварин, яких задушили і кров яких лишилася в них. І вони не повинні їсти крові."
+        },
+        "ja": {
+          "L": "それゆえ、わたしは判断します。異邦人の中から神に立ち返る人々を悩ませるべきではなく、\\v 20 偶像の汚れと、淫らな行いと、絞め殺されたものと、血とを避けるように、彼らに書き送るべきです。",
+          "B": "ですから、わたしの判断はこうです。異邦人の中から神に立ち返ろうとしている人々を、困らせてはなりません。\\v 20 むしろ、偶像によって汚されたもの、淫らな行い、絞め殺されたもの、血を避けるように、手紙で伝えるべきです。",
+          "R": "ですから、わたしはこう考えます。神に立ち返ろうとしているユダヤ人でない人々に、むずかしいことを求めるべきではありません。\\v 20 その代わりに、彼らに手紙を書いて、次のことを伝えましょう。偶像にささげられて汚れた食べ物を食べないこと。性的な罪を犯さないこと。絞め殺された動物の肉を、血が残ったまま食べないこと。そして、血を食べないことです。"
+        },
+        "id": {
+          "L": "Karena itu aku berpendapat bahwa kita tidak boleh menyusahkan mereka dari bangsa-bangsa lain yang berbalik kepada Allah, \\v 20 tetapi kita harus menulis surat kepada mereka supaya menjauhkan diri dari kenajisan berhala-berhala dan dari percabulan dan dari [daging binatang] yang mati dicekik dan dari darah.",
+          "B": "Jadi menurut pendapatku, kita tidak boleh mempersulit orang-orang bukan Yahudi yang berbalik kepada Allah. \\v 20 Sebaliknya, kita harus menulis kepada mereka supaya mereka menjauhkan diri dari hal-hal yang telah dinajiskan berhala, dari percabulan, dari daging binatang yang mati dicekik, dan dari darah.",
+          "R": "Jadi menurutku, kita tidak boleh mempersulit orang-orang bukan Yahudi yang berbalik kepada Allah. \\v 20 Sebaliknya, kita harus menulis surat kepada mereka. Kita harus memberi tahu mereka supaya tidak makan makanan yang telah dipersembahkan kepada berhala, yang membuatnya najis. Mereka tidak boleh terlibat dalam dosa seksual. Mereka tidak boleh makan daging binatang yang mati dicekik, yang darahnya masih ada di dalamnya. Dan mereka tidak boleh makan darah."
+        },
+        "zh": {
+          "L": "所以我断定，不要搅扰那些从外邦人中转向{{god_term:神|上帝}}的人，\\v 20 而要写信给他们，叫他们远避偶像的玷污、淫乱、勒死的东西和血。",
+          "B": "所以我的判断是：我们不要为难那些归向{{god_term:神|上帝}}的外邦人，\\v 20 而要写信给他们，叫他们远离被偶像玷污的东西，远离淫乱，远离勒死的牲畜，也远离血。",
+          "R": "所以我认为，我们不要为难那些归向{{god_term:神|上帝}}的非犹太人。\\v 20 我们应该写一封信给他们，告诉他们不要吃祭过偶像的食物，因为那样的食物是不洁净的。他们不可犯性方面的罪。他们不可吃被勒死、血还留在里面的动物的肉。他们也不可吃血。"
         }
       },
       "decisions": [
@@ -5245,6 +6207,69 @@
           "reason": "\"Блуд\" covers sexual relations outside marriage and the unions the law forbids, as the meaning decision explains; Readable says \"связи вне брака\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n44015020012"
+          ],
+          "choice": "\"розпуста\" for *porneia*",
+          "alternatives": [
+            "\"блуд\""
+          ],
+          "reason": "\"розпуста\" is the current word for sexual immorality in general, which fits the meaning decision's open reading; \"блуд\" is churchly and narrower.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n44015020012"
+          ],
+          "choice": "\"淫らな行い\" (L, B); \"性的な罪\" (R)",
+          "alternatives": [
+            "\"不品行\"",
+            "\"姦淫\""
+          ],
+          "reason": "The Greek word covers every kind of sexual sin (meaning decision m4). \"淫らな行い\" is wide in the same way; \"姦淫\" would narrow it to adultery, and \"不品行\" is an older church word. Readable says it in plain words. The same words are used in 15:29.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n44015020012"
+          ],
+          "choice": "\"淫乱\" (L, B); \"性方面的罪\" (R)",
+          "alternatives": [
+            "\"奸淫\""
+          ],
+          "reason": "Porneia is any sexual relation outside marriage or forbidden by the law (meaning decision m4): \"淫乱\" is the general word; \"奸淫\" is adultery. Readable says it plainly, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5330,6 +6355,26 @@
           "L": "Ведь Моисей от древних поколений по городам имеет проповедующих его, читаемый в синагогах каждую субботу.»",
           "B": "Ведь Моисея с древних поколений проповедуют в каждом городе, и его читают вслух в синагогах каждую субботу.»",
           "R": "Ведь уже очень давно Закон Моисея преподают в каждом городе. Каждую субботу его читают вслух в синагогах.»"
+        },
+        "uk": {
+          "L": "Бо Мойсей від давніх поколінь має в кожному місті тих, хто його проповідує, бо його читають у синагогах щосуботи.»",
+          "B": "Бо Мойсея з давніх-давен проповідують у кожному місті й читають уголос у синагогах щосуботи.»",
+          "R": "Бо вже дуже давно Закон Мойсея навчають у кожному місті. Щосуботи люди читають його вголос у синагогах.»"
+        },
+        "ja": {
+          "L": "なぜなら、モーセは昔の世代から町ごとに、彼を宣べ伝える者たちを持っており、安息日ごとに会堂で読まれているからです。」",
+          "B": "昔から、モーセはどの町でも宣べ伝えられ、安息日ごとに会堂で読み上げられているからです。」",
+          "R": "ずっと昔から、モーセの律法は、どの町でも宣べ伝えられてきました。安息日ごとに、人々は会堂でそれを読み上げているのです。」"
+        },
+        "id": {
+          "L": "Sebab sejak zaman dahulu Musa mempunyai di setiap kota orang-orang yang memberitakannya, karena kitabnya dibacakan di sinagoge-sinagoge setiap hari Sabat.\"",
+          "B": "Sebab sejak zaman dahulu hukum Musa diberitakan di setiap kota, dan dibacakan di sinagoge-sinagoge setiap hari Sabat.\"",
+          "R": "Sudah sejak lama hukum Musa diajarkan di setiap kota. Setiap hari Sabat orang membacakannya di rumah-rumah ibadat orang Yahudi.\""
+        },
+        "zh": {
+          "L": "因为从古时的世代以来，摩西在各城都有宣讲他的人，每个安息日在会堂里被诵读。”",
+          "B": "因为从久远的世代以来，各城都有人宣讲摩西，每个安息日都在会堂里诵读他的书。”",
+          "R": "因为很久以来，摩西的律法就在每一座城里被人教导。每个安息日，人们都在会堂里大声诵读这律法。”"
         }
       },
       "decisions": [
@@ -5572,6 +6617,26 @@
           "L": "Тогда показалось хорошим апостолам и старейшинам со всей церковью, избрав из своей среды мужей, послать [их] в Антиохию с Павлом и Варнавой: Иуду, называемого Варсаввой, и Силу, мужей, ведущих среди {{gender:братьев и сестёр|братьев}}, \\v 23 написав через их руки: «Апостолы и старейшины, братья, — {{gender:братьям и сёстрам|братьям}} из язычников в Антиохии, Сирии и Киликии: привет.",
           "B": "Тогда апостолы и старейшины вместе со всей церковью решили выбрать людей из своей среды и послать их в Антиохию с Павлом и Варнавой. Они выбрали Иуду, называемого Варсаввой, и Силу — людей, которые были руководителями среди {{gender:братьев и сестёр|братьев}}. \\v 23 С ними они отправили такое письмо: «От апостолов и старейшин, ваших братьев, — {{gender:братьям и сёстрам|братьям}} из язычников в Антиохии, Сирии и Киликии: приветствуем вас.",
           "R": "Тогда апостолы, старейшины и вся церковь решили выбрать нескольких человек из своих и послать их в Антиохию с Павлом и Варнавой. Они выбрали Иуду, которого ещё называли Варсаввой, и Силу. Эти двое были руководителями среди верующих. \\v 23 Им дали с собой письмо. В нём было написано: «Мы, апостолы и старейшины, — ваши братья. Мы пишем вам, нашим братьям по вере, которые не иудеи, в Антиохии, Сирии и Киликии. Шлём вам привет."
+        },
+        "uk": {
+          "L": "Тоді вирішили апостоли і старійшини з усією церквою вибрати з-поміж себе мужів і послати [їх] до Антіохії з Павлом і Варнавою: Юду, якого називали Барсавою, і Силу, провідних мужів серед {{gender:братів і сестер|братів}}, \\v 23 написавши їхньою рукою: «Апостоли і старійшини, брати, — {{gender:братам і сестрам|братам}} з язичників, що в Антіохії, і Сирії, і Кілікії: вітання.",
+          "B": "Тоді апостоли і старійшини разом з усією церквою вирішили вибрати з-поміж себе людей і послати їх до Антіохії з Павлом і Варнавою. Вони вибрали Юду, на прізвисько Барсава, і Силу, які посідали провідне місце серед {{gender:братів і сестер|братів}}. \\v 23 Із ними вони передали такого листа: «Від апостолів і старійшин, ваших братів, — {{gender:братам і сестрам|братам}} з язичників в Антіохії, Сирії та Кілікії: вітаємо вас.",
+          "R": "Тоді апостоли, старійшини і вся церква вирішили вибрати кількох людей зі свого гурту. Вони мали послати їх до Антіохії разом із Павлом і Варнавою. Вони вибрали Юду, якого ще називали Барсавою, і Силу. Ці двоє були провідниками серед віруючих. \\v 23 Їм дали листа, щоб вони його віднесли. У ньому було написано: «Ми, апостоли і старійшини, — ваші брати. Ми пишемо вам, нашим братам у вірі, які не є юдеями, в Антіохії, Сирії та Кілікії. Ми щиро вітаємо вас."
+        },
+        "ja": {
+          "L": "そこで、使徒たちと長老たちは、教会全体と共に、彼らの中から人々を選んで、パウロとバルナバと一緒にアンティオキアへ送ることがよいと考えた。[選ばれたのは]バルサバと呼ばれるユダとシラスで、{{gender:きょうだいたち|兄弟たち}}の中で指導的な人々であった。\\v 23 彼らの手に[託して]次のように書き送った。「兄弟である使徒たちと長老たちから、アンティオキアとシリア州とキリキア州にいる、異邦人出身の{{gender:きょうだいたち|兄弟たち}}へ。挨拶[を送ります]。",
+          "B": "そこで、使徒たちと長老たちは、教会全体と共に、自分たちの中から人を選んで、パウロとバルナバと一緒にアンティオキアに送ることに決めた。選ばれたのは、バルサバと呼ばれるユダとシラスで、二人とも{{gender:きょうだいたち|兄弟たち}}の中で指導的な立場にある人であった。\\v 23 彼らは二人に次の手紙を託した。「あなたがたの兄弟である使徒たちと長老たちから、アンティオキアとシリア州とキリキア州にいる、異邦人出身の{{gender:きょうだいたち|兄弟たち}}へ。ごあいさつ申し上げます。",
+          "R": "そこで、使徒たちと長老たちと教会のみんなは、自分たちの中から何人かを選ぶことに決めました。その人たちを、パウロとバルナバと一緒にアンティオキアへ送るためです。選ばれたのは、バルサバと呼ばれるユダと、シラスでした。この二人は、信じた人々の中で指導者となっている人たちでした。\\v 23 彼らは、二人に手紙を持たせました。その手紙にはこう書いてありました。「わたしたち使徒と長老は、みなさんの兄弟です。アンティオキアとシリア州とキリキア州にいる、ユダヤ人でない信仰の仲間のみなさんに、この手紙を書いています。心からごあいさつします。"
+        },
+        "id": {
+          "L": "Lalu rasul-rasul dan penatua-penatua bersama seluruh jemaat memutuskan untuk memilih beberapa orang dari antara mereka dan mengutus [mereka] ke Antiokhia bersama Paulus dan Barnabas, yaitu Yudas yang disebut Barsabas, dan Silas, orang-orang terkemuka di antara saudara-saudara, \\v 23 dengan menulis melalui tangan mereka: \"Dari rasul-rasul dan penatua-penatua, saudara-saudara kalian, kepada saudara-saudara dari bangsa-bangsa lain di Antiokhia dan Siria dan Kilikia, salam.",
+          "B": "Lalu para rasul dan penatua, bersama seluruh jemaat, memutuskan untuk memilih beberapa orang dari antara mereka dan mengutus mereka ke Antiokhia bersama Paulus dan Barnabas. Mereka memilih Yudas yang disebut Barsabas, dan Silas, orang-orang yang terpandang di antara saudara-saudara. \\v 23 Mereka mengirimkan surat ini bersama mereka: \"Dari para rasul dan penatua, saudara-saudara kalian, kepada saudara-saudara yang bukan Yahudi di Antiokhia, Siria dan Kilikia: salam.",
+          "R": "Lalu para rasul dan penatua dan seluruh jemaat memutuskan untuk memilih beberapa orang dari kelompok mereka. Orang-orang itu akan diutus ke Antiokhia bersama Paulus dan Barnabas. Mereka memilih Yudas, yang juga disebut Barsabas, dan Silas. Kedua orang ini adalah pemimpin di antara orang-orang percaya. \\v 23 Mereka memberikan sepucuk surat untuk dibawa. Isinya: \"Kami, para rasul dan penatua, adalah saudara-saudara kalian. Kami menulis kepada kalian, saudara-saudara seiman yang bukan Yahudi, di Antiokhia, Siria dan Kilikia. Kami mengirim salam kepada kalian."
+        },
+        "zh": {
+          "L": "那时，使徒和长老同全教会决定，从他们中间选出几个人，差[他们]和保罗、巴拿巴一同到安提阿去，就是称为巴撒巴的犹大和西拉，这两人在{{gender:弟兄姐妹|弟兄}}们中间是领头的。\\v 23 并且借他们的手[送去一封信，信上]写着：“使徒和长老，[你们的]弟兄，致安提阿、叙利亚和基利家那些出自外邦人的{{gender:弟兄姐妹|弟兄}}们：愿你们安好。",
+          "B": "于是，使徒和长老同全教会商定，从他们当中挑选几个人，派他们和保罗、巴拿巴一起到安提阿去。他们选了别号巴撒巴的犹大和西拉，这两个人在{{gender:弟兄姐妹|弟兄}}们中间担任领导。\\v 23 他们让这两人带去这封信：“你们的弟兄，使徒和长老，写信给安提阿、叙利亚和基利家外邦出身的{{gender:弟兄姐妹|弟兄}}们：愿你们安好。",
+          "R": "于是使徒、长老和全教会决定从他们当中挑选几个人，派他们和保罗、巴拿巴一起去安提阿。他们选了犹大，他又叫巴撒巴，还有西拉。这两个人是信徒中的领袖。\\v 23 他们交给这两人一封信，让他们带去。信上说：“我们是使徒和长老，是你们的弟兄。我们写信给你们这些在安提阿、叙利亚和基利家的非犹太信徒，你们是我们主内的同伴。我们向你们问安。"
         }
       },
       "decisions": [
@@ -6116,6 +7181,113 @@
           "reason": "The traditional Russian form of the name.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n44015022024",
+            "n44015022027"
+          ],
+          "choice": "\"バルサバと呼ばれるユダ\"",
+          "alternatives": [
+            "\"ユダ・バルサバ\""
+          ],
+          "reason": "The Greek says \"Judas called Barsabbas\", and the Japanese keeps that form at every level. The name is written as for Joseph Barsabbas in 1:23.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n44015023023"
+          ],
+          "choice": "the letter opens with the plain letter greeting: \"挨拶[を送ります]\" (L), \"ごあいさつ申し上げます\" (B), \"心からごあいさつします\" (R), and is written in です・ます throughout",
+          "alternatives": [
+            "\"喜びあれ\", a literal rendering of the Greek word",
+            "\"拝啓\""
+          ],
+          "reason": "The Greek uses the ordinary greeting that began Greek letters (meaning decision m5). Japanese gives it the same forms as James 1:1, the other letter that opens this way. \"拝啓\" belongs to Japanese business letters and is not used. A letter is a writer speaking to readers, so it takes です・ます at every level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-3",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n44015023010"
+          ],
+          "choice": "\"兄弟\" for the senders with no span; \"{{gender:きょうだいたち|兄弟たち}}\" (L, B) for the readers",
+          "alternatives": [
+            "a span on both"
+          ],
+          "reason": "As the English decides: the senders are the apostles and elders, men; the readers are believers, men and women. Readable says \"信仰の仲間\", which is already inclusive.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n44015023010"
+          ],
+          "choice": "\"弟兄\" for the senders, with no gender span",
+          "alternatives": [
+            "\"{{gender:弟兄姐妹|弟兄}}\""
+          ],
+          "reason": "As the English: the senders are the apostles and elders, men, so the word is not widened; the readers, the believers of Gentile birth, keep the span.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n44015023023"
+          ],
+          "choice": "\"愿你们安好\" (L, B); \"我们向你们问安\" (R)",
+          "alternatives": [
+            "\"问安\""
+          ],
+          "reason": "The usual opening greeting of a Greek letter (chairein), in the words a Chinese letter uses.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6231,6 +7403,26 @@
           "L": "Так как мы услышали, что некоторые, вышедшие от нас, смутили вас словами, расстроив ваши души, — им мы не давали поручения, — \\v 25 показалось хорошим нам, собравшимся единодушно, избрав мужей, послать [их] к вам с возлюбленными нашими Варнавой и Павлом, \\v 26 людьми, предавшими души свои за имя Господа нашего Иисуса {{christos:Христа|Мессии}}.",
           "B": "Мы услышали, что некоторые люди, вышедшие от нас, смутили вас своими словами и привели вас в смятение, хотя мы не давали им такого поручения. \\v 25 Поэтому мы единодушно решили выбрать людей и послать их к вам вместе с нашими любимыми Варнавой и Павлом, \\v 26 людьми, которые посвятили свою жизнь имени нашего Господа Иисуса {{christos:Христа|Мессии}}.",
           "R": "Мы узнали, что к вам приходили какие-то люди из нашей церкви. Мы их не посылали, но то, что они говорили, смутило и встревожило вас. \\v 25 Поэтому мы все вместе решили выбрать нескольких человек и послать их к вам. Они идут вместе с нашими дорогими друзьями Варнавой и Павлом. \\v 26 Варнава и Павел рисковали жизнью, чтобы служить нашему Господу Иисусу {{christos:Христу|Мессии}}."
+        },
+        "uk": {
+          "L": "Оскільки ми почули, що деякі, вийшовши від нас, збентежили вас словами, сколихнувши ваші душі, — яким ми не давали доручення, — \\v 25 то вирішили ми, зібравшись однодушно, вибрати мужів і послати [їх] до вас з нашими улюбленими Варнавою і Павлом, \\v 26 людьми, які віддали свої душі за імʼя нашого Господа Ісуса {{christos:Христа|Месії}}.",
+          "B": "Ми почули, що деякі люди, які вийшли від нас, стривожили вас своїми словами й захитали ваші душі, хоча ми їм нічого такого не доручали. \\v 25 Тож ми, дійшовши однієї думки, вирішили вибрати людей і послати їх до вас разом із нашими дорогими Варнавою і Павлом, \\v 26 людьми, які віддали своє життя за імʼя нашого Господа Ісуса {{christos:Христа|Месії}}.",
+          "R": "Ми почули, що деякі люди з нашої церкви прийшли до вас. Ми їх не посилали, але те, що вони казали, засмутило і стривожило вас. \\v 25 Тож ми всі погодилися вибрати кількох людей і послати їх до вас. Вони йдуть разом із нашими дорогими друзями Варнавою і Павлом. \\v 26 Варнава і Павло ризикували своїм життям, служачи нашому Господові Ісусу {{christos:Христу|Месії}}."
+        },
+        "ja": {
+          "L": "わたしたちの中から出て行ったある者たちが、わたしたちが指示を与えていないのに、言葉であなたがたを動揺させ、あなたがたの心を乱したと聞いたので、\\v 25 わたしたちは心を一つにして、人々を選び、わたしたちの愛するバルナバとパウロと一緒に、あなたがたのところへ送ることがよいと考えました。\\v 26 [この二人は]わたしたちの主イエス・{{christos:キリスト|メシア}}の名のために、自分たちの命を差し出してきた人々です。",
+          "B": "わたしたちの中から出て行ったある人々が、その言葉によってあなたがたを動揺させ、あなたがたの心をかき乱したと聞きました。わたしたちは、そのような指示を彼らに与えてはいません。\\v 25 そこで、わたしたちは心を一つにして、人々を選び、わたしたちの愛するバルナバとパウロと一緒に、あなたがたのところに送ることに決めました。\\v 26 この二人は、わたしたちの主イエス・{{christos:キリスト|メシア}}の名のために、命をささげてきた人たちです。",
+          "R": "わたしたちの教会の何人かが、みなさんのところへ行ったと聞きました。わたしたちが送ったのではありません。ところが、その人たちの話を聞いて、みなさんは心を乱され、不安になってしまいました。\\v 25 そこで、わたしたちはみんなで相談して、何人かを選び、みなさんのところへ送ることにしました。その人たちは、わたしたちの親しい友であるバルナバとパウロと一緒に行きます。\\v 26 バルナバとパウロは、わたしたちの主イエス・{{christos:キリスト|メシア}}に仕えるために、命の危険をおかしてきた人たちです。"
+        },
+        "id": {
+          "L": "Karena kami telah mendengar bahwa beberapa orang yang keluar dari antara kami telah menggelisahkan kalian dengan perkataan-perkataan, sehingga mengacaukan pikiran kalian, padahal kami tidak memberi perintah apa pun kepada mereka, \\v 25 kami, setelah sepakat, memutuskan untuk memilih beberapa orang dan mengutus [mereka] kepada kalian bersama Barnabas dan Paulus yang kami kasihi, \\v 26 orang-orang yang telah menyerahkan nyawa mereka demi nama Tuhan kita Yesus {{christos:Kristus|Mesias}}.",
+          "B": "Kami telah mendengar bahwa beberapa orang dari antara kami telah menggelisahkan kalian dengan perkataan mereka dan membuat kalian bimbang, padahal kami tidak memberi mereka perintah seperti itu. \\v 25 Jadi kami telah sepakat dan memutuskan untuk memilih beberapa orang dan mengutus mereka kepada kalian bersama Barnabas dan Paulus yang kami kasihi, \\v 26 orang-orang yang telah mempertaruhkan nyawa mereka demi nama Tuhan kita Yesus {{christos:Kristus|Sang Mesias}}.",
+          "R": "Kami telah mendengar bahwa beberapa orang dari jemaat kami datang kepada kalian. Kami tidak mengutus mereka, tetapi apa yang mereka katakan telah menggelisahkan kalian dan membuat kalian khawatir. \\v 25 Jadi kami semua sepakat untuk memilih beberapa orang dan mengutus mereka kepada kalian. Mereka datang bersama sahabat-sahabat kami yang terkasih, Barnabas dan Paulus. \\v 26 Barnabas dan Paulus telah mempertaruhkan nyawa mereka untuk melayani Tuhan kita Yesus {{christos:Kristus|Sang Mesias}}."
+        },
+        "zh": {
+          "L": "我们听说，有几个从我们这里出去的人，用言语搅扰你们，使你们心里惶惶不安，其实我们并没有吩咐他们；\\v 25 所以我们达成了一致，决定选出几个人，打发[他们]跟我们所爱的巴拿巴和保罗一道到你们那里去。\\v 26 他们都是为我们主耶稣{{christos:基督|弥赛亚}}的名舍出性命的人。",
+          "B": "我们听说，有些从我们这里出去的人，用他们的言论搅扰了你们，使你们心里不安，但我们并没有给过他们这样的指示。\\v 25 所以我们一致同意，决定挑选几个人，派他们和我们所爱的巴拿巴、保罗一起到你们那里去。\\v 26 这两个人为了我们主耶稣{{christos:基督|弥赛亚}}的名，已经把生命献了出来。",
+          "R": "我们听说，有些人从我们教会出去，到了你们那里。我们并没有派他们去，可是他们的话使你们不安，让你们忧虑。\\v 25 所以我们大家都同意挑选几个人，派他们到你们那里去。他们会和我们亲爱的朋友巴拿巴和保罗一起来。\\v 26 巴拿巴和保罗为了服事我们的主耶稣{{christos:基督|弥赛亚}}，曾经冒着生命危险。"
         }
       },
       "decisions": [
@@ -6567,6 +7759,48 @@
           "reason": "As the English does, Readable uses the everyday words for the church word \"beloved\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n44015024015",
+            "n44015024017"
+          ],
+          "choice": "\"わたしたちが指示を与えていないのに\" placed before the verbs of 15:24",
+          "alternatives": [
+            "a relative clause after \"ある者たち\", as in the Greek"
+          ],
+          "reason": "Japanese cannot put a relative clause after the clause it belongs to; placed inside the \"since\" clause it stays in 15:24 and keeps the sense that the church did not send them.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n44015026012",
+            "n44015026013"
+          ],
+          "choice": "\"耶稣{{christos:基督|弥赛亚}}\"",
+          "alternatives": [
+            "\"耶稣基督\" with no span"
+          ],
+          "reason": "The christos setting as the English: \"基督\" by default, \"弥赛亚\" as the alternative (style guide section 8).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6646,6 +7880,26 @@
           "L": "Итак, мы послали Иуду и Силу, и они сами словом сообщат то же самое.",
           "B": "Итак, мы посылаем Иуду и Силу, которые лично расскажут вам то же самое.",
           "R": "Поэтому мы посылаем к вам Иуду и Силу. Они сами расскажут вам то, что мы написали в этом письме."
+        },
+        "uk": {
+          "L": "Отже, ми послали Юду і Силу, і вони самі усно сповістять те саме.",
+          "B": "Тож ми посилаємо Юду і Силу, які особисто розкажуть вам те саме.",
+          "R": "Тож ми посилаємо до вас Юду і Силу. Вони самі розкажуть вам те, що ми написали в цьому листі."
+        },
+        "ja": {
+          "L": "それで、わたしたちはユダとシラスを遣わしました。彼ら自身も、口頭で同じことを伝えるでしょう。",
+          "B": "そこで、ユダとシラスを送ります。この二人も、同じことを口頭で伝えるでしょう。",
+          "R": "そこで、ユダとシラスをみなさんのところへ送ります。この二人が、この手紙に書いたことを、自分たちの口からも伝えてくれるでしょう。"
+        },
+        "id": {
+          "L": "Jadi kami telah mengutus Yudas dan Silas, dan mereka sendiri akan menyampaikan hal-hal yang sama dengan lisan.",
+          "B": "Jadi kami mengutus Yudas dan Silas, yang akan menyampaikan hal-hal yang sama kepada kalian secara langsung.",
+          "R": "Jadi kami mengutus Yudas dan Silas kepada kalian. Mereka sendiri akan memberi tahu kalian apa yang telah kami tulis dalam surat ini."
+        },
+        "zh": {
+          "L": "所以我们差派了犹大和西拉，他们也要亲口述说同样的事。",
+          "B": "所以我们派犹大和西拉去，他们会当面告诉你们同样的事。",
+          "R": "所以我们派犹大和西拉到你们那里去。他们会亲自告诉你们这封信里所写的事。"
         }
       },
       "decisions": [
@@ -6821,6 +8075,26 @@
           "L": "Ведь угодно Святому Духу и нам не возлагать на вас никакого бремени более, чем это необходимое: \\v 29 воздерживаться от идоложертвенного, и крови, и удавленного, и блуда. Остерегаясь этого, вы поступите хорошо.",
           "B": "Святой Дух и мы решили не возлагать на вас никакого бремени, кроме самого необходимого: \\v 29 не ешьте пищу, принесённую в жертву идолам, кровь и удавленное и держитесь подальше от блуда. Если вы будете остерегаться этого, то поступите правильно.",
           "R": "Святой Дух показал нам, что делать, и мы с этим согласны. Мы не хотим взваливать на вас тяжёлый груз. Вам нужно соблюдать только несколько правил: \\v 29 Не ешьте пищу, принесённую в жертву идолам. Не ешьте кровь и мясо удавленных животных. И не вступайте в связи вне брака. Если вы будете держаться подальше от этого, вы будете поступать правильно."
+        },
+        "uk": {
+          "L": "Бо вирішили Святий Дух і ми не накладати на вас жодного більшого тягаря, крім цього необхідного: \\v 29 утримуватися від ідольських жертв, і від крові, і від задушенини, і від розпусти. Остерігаючись цього, ви добре зробите.",
+          "B": "Святий Дух і ми вирішили не покладати на вас жодного тягаря, крім цього найнеобхіднішого: \\v 29 утримуйтеся від жертвованого ідолам, від крові, від задушеного і від розпусти. Якщо ви стерегтиметеся цього, то чинитимете правильно.",
+          "R": "Святий Дух показав нам, що робити, і ми з цим згодні. Ми не хочемо класти на вас важкого тягаря. Вам треба виконувати лише кілька речей: \\v 29 Не їжте їжі, яку принесли в жертву ідолам. Не їжте крові чи мʼяса задушених тварин. І не беріть участі в статевих гріхах. Якщо ви будете триматися подалі від цього, то чинитимете правильно."
+        },
+        "ja": {
+          "L": "なぜなら、聖霊とわたしたちは、次の必要なこと以外には、どんな重荷もあなたがたに負わせないことがよいと考えたからです。\\v 29 [すなわち、]偶像に献げられたものと、血と、絞め殺されたものと、淫らな行いとを避けることです。これらから自分を守っていれば、あなたがたはよく行うことになるでしょう。",
+          "B": "聖霊とわたしたちは、次の必要なこと以外には、どんな重荷もあなたがたに負わせないことに決めました。\\v 29 すなわち、偶像に献げられた食物と、血と、絞め殺されたものと、淫らな行いとを避けることです。これらのことから身を守っていれば、あなたがたは正しいことを行っていることになります。",
+          "R": "聖霊がわたしたちにすべきことを示してくださり、わたしたちもそれに同意しました。みなさんに重い荷物を負わせたくはありません。みなさんがしなければならないのは、次のわずかなことだけです。\\v 29 偶像にささげられた食べ物を食べないこと。血や、絞め殺された動物の肉を食べないこと。そして、性的な罪を犯さないことです。これらのことを避けていれば、みなさんは正しいことをしていることになります。"
+        },
+        "id": {
+          "L": "Sebab Roh Kudus dan kami telah memutuskan untuk tidak meletakkan kepada kalian beban yang lebih besar daripada hal-hal yang perlu ini: \\v 29 supaya kalian menjauhkan diri dari makanan yang dipersembahkan kepada berhala dan dari darah dan dari [daging binatang] yang mati dicekik dan dari percabulan. Jika kalian memelihara diri dari hal-hal ini, kalian berbuat baik.",
+          "B": "Roh Kudus dan kami sendiri telah memutuskan untuk tidak meletakkan kepada kalian beban apa pun selain hal-hal yang perlu ini: \\v 29 jauhkanlah diri kalian dari makanan yang dipersembahkan kepada berhala, dari darah, dari daging binatang yang mati dicekik, dan dari percabulan. Jika kalian menjaga diri dari hal-hal ini, kalian berbuat baik.",
+          "R": "Roh Kudus telah menunjukkan kepada kami apa yang harus dilakukan, dan kami setuju. Kami tidak mau memberi kalian beban yang berat untuk dipikul. Kalian hanya perlu melakukan beberapa hal ini: \\v 29 Jangan makan makanan yang telah dipersembahkan kepada berhala. Jangan makan darah, atau daging binatang yang mati dicekik. Dan jangan terlibat dalam dosa seksual. Jika kalian menjauhi hal-hal ini, kalian berbuat baik."
+        },
+        "zh": {
+          "L": "因为圣灵和我们都看为好，不再把更多的担子加给你们，只有这几件必要的事：\\v 29 远避祭过偶像的物、血、勒死的东西和淫乱。你们若谨守自己避开这些事，就是做得好了。",
+          "B": "圣灵和我们自己都决定，除了以下这几件必不可少的事，不再给你们增加任何负担：\\v 29 远离祭过偶像的食物，远离血，远离勒死的牲畜，也远离淫乱。你们若谨慎避开这些事，就是行得正了。",
+          "R": "圣灵已经指示我们该怎么做，我们也都同意。我们不想给你们重担。你们只需要做到这几件事：\\v 29 不要吃祭过偶像的食物。不要吃血，也不要吃被勒死的动物的肉。不要犯性方面的罪。你们若远离这些事，就是做得对了。"
         }
       },
       "decisions": [
@@ -7152,6 +8426,26 @@
           "L": "Будьте здоровы.»",
           "B": "Будьте здоровы.»",
           "R": "Желаем вам всего доброго. До свидания.»"
+        },
+        "uk": {
+          "L": "Прощавайте.»",
+          "B": "Будьте здорові.»",
+          "R": "Бажаємо вам усього доброго. До побачення.»"
+        },
+        "ja": {
+          "L": "お元気で[いてください]。」",
+          "B": "お元気で。」",
+          "R": "みなさんが元気でいられますように。さようなら。」"
+        },
+        "id": {
+          "L": "Salam sejahtera.\"",
+          "B": "Salam sejahtera.\"",
+          "R": "Kami berharap kalian baik-baik saja. Salam.\""
+        },
+        "zh": {
+          "L": "愿你们安康。”",
+          "B": "祝你们安康。”",
+          "R": "我们祝你们一切顺利。再见。”"
         }
       },
       "decisions": [
@@ -7338,6 +8632,49 @@
           "reason": "The Greek letter closes with the usual wish for good health; \"Будьте здоровы\" says it in Russian.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n44015029015"
+          ],
+          "choice": "\"お元気で\" (L, B); \"みなさんが元気でいられますように。さようなら\" (R)",
+          "alternatives": [
+            "\"さらば\"",
+            "\"健やかであれ\""
+          ],
+          "reason": "The Greek word is the usual close of a letter, \"stay well\" (meaning decision m1). \"お元気で\" is the ordinary Japanese way to close a letter or a parting; \"さらば\" and \"健やかであれ\" are archaic.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n44015029015"
+          ],
+          "choice": "\"愿你们安康\" (L); \"祝你们安康\" (B); \"我们祝你们一切顺利。再见\" (R)",
+          "alternatives": [
+            "\"再会\""
+          ],
+          "reason": "The usual close of a Greek letter (meaning decision m1), in the words a Chinese letter uses.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -7419,6 +8756,26 @@
           "L": "Итак они, будучи отпущены, пришли в Антиохию и, собрав множество, вручили письмо.",
           "B": "Итак, этих людей проводили в путь, и они пришли в Антиохию. Там они собрали всю общину и вручили письмо.",
           "R": "Эти люди ушли из Иерусалима и пришли в Антиохию. Они собрали всех верующих и отдали им письмо."
+        },
+        "uk": {
+          "L": "Отже, вони, будучи відпущені, зійшли до Антіохії і, зібравши безліч, передали листа.",
+          "B": "Тож посланців провели в дорогу, і вони прибули до Антіохії. Там вони зібрали всю громаду й передали листа.",
+          "R": "Тож ці люди покинули Єрусалим і пішли до Антіохії. Вони зібрали всіх віруючих і віддали їм листа."
+        },
+        "ja": {
+          "L": "さて、彼らは送り出されて、アンティオキアに下り、群衆を集めて、手紙を手渡した。",
+          "B": "こうして一行は送り出されて、アンティオキアに下った。そして、そこで信じる人々全体を集めて、手紙を手渡した。",
+          "R": "こうして一行はエルサレムを出発して、アンティオキアへ行きました。そして、信じた人々を全員集めて、手紙を渡しました。"
+        },
+        "id": {
+          "L": "Jadi mereka, setelah dilepas pergi, tiba di Antiokhia, dan setelah mengumpulkan jemaat, mereka menyerahkan surat itu.",
+          "B": "Jadi orang-orang itu dilepas pergi dan berangkat ke Antiokhia. Di sana mereka mengumpulkan seluruh jemaat dan menyerahkan surat itu.",
+          "R": "Jadi orang-orang itu meninggalkan Yerusalem dan pergi ke Antiokhia. Mereka mengumpulkan semua orang percaya dan memberikan surat itu kepada mereka."
+        },
+        "zh": {
+          "L": "于是他们被送走，下到安提阿，聚集了群众，就把信交给他们。",
+          "B": "于是这几个人被送走，下到安提阿。他们在那里召集了全体信众，把信交给了他们。",
+          "R": "于是这几个人离开耶路撒冷，到了安提阿。他们把所有的信徒召集在一起，把信交给了他们。"
         }
       },
       "decisions": [
@@ -7566,6 +8923,26 @@
           "L": "Прочитав же, они обрадовались ободрению.",
           "B": "Прочитав письмо, они обрадовались ободрению, которое оно им принесло.",
           "R": "Когда верующие прочитали письмо, они очень обрадовались, потому что оно их ободрило."
+        },
+        "uk": {
+          "L": "Прочитавши ж [його], вони зраділи з розради.",
+          "B": "Прочитавши його, вони зраділи, бо лист підбадьорив їх.",
+          "R": "Коли віруючі прочитали листа, вони дуже зраділи, бо він їх підбадьорив."
+        },
+        "ja": {
+          "L": "そして、[彼らは]読んで、その励ましを喜んだ。",
+          "B": "人々はそれを読んで、手紙がもたらした励ましを喜んだ。",
+          "R": "信じた人々はその手紙を読んで、とても喜びました。手紙が彼らを励ましてくれたからです。"
+        },
+        "id": {
+          "L": "Dan setelah membaca[nya], mereka bersukacita atas penghiburan itu.",
+          "B": "Setelah membacanya, mereka bersukacita karena surat itu menguatkan hati mereka.",
+          "R": "Ketika orang-orang percaya membaca surat itu, mereka sangat senang karena surat itu menguatkan hati mereka."
+        },
+        "zh": {
+          "L": "他们读了[信]，就为这劝勉欢喜。",
+          "B": "他们读了信，都为信中带来的鼓励而高兴。",
+          "R": "信徒们读了这封信，都非常高兴，因为信使他们得到鼓励。"
         }
       },
       "decisions": [
@@ -7707,6 +9084,26 @@
           "L": "И Иуда и Сила, будучи и сами пророками, многим словом ободрили {{gender:братьев и сестёр|братьев}} и укрепили.",
           "B": "Иуда и Сила, которые и сами были пророками, долго говорили с {{gender:братьями и сёстрами|братьями}}, ободряя и укрепляя их.",
           "R": "Иуда и Сила тоже были пророками. Они долго разговаривали с верующими, ободряли их и укрепляли их веру."
+        },
+        "uk": {
+          "L": "І Юда і Сила, бувши й самі пророками, багатьма словами підбадьорили {{gender:братів і сестер|братів}} і зміцнили [їх].",
+          "B": "Юда і Сила, які й самі були пророками, довго говорили, щоб підбадьорити {{gender:братів і сестер|братів}} і зміцнити їх.",
+          "R": "Юда і Сила теж були пророками. Вони довго розмовляли з віруючими, додали їм відваги й зміцнили їхню віру."
+        },
+        "ja": {
+          "L": "そして、ユダとシラスは、彼ら自身も預言者であったので、多くの言葉で{{gender:きょうだいたち|兄弟たち}}を励まし、力づけた。",
+          "B": "ユダとシラスも預言者だったので、言葉を尽くして{{gender:きょうだいたち|兄弟たち}}を励まし、力づけた。",
+          "R": "ユダとシラスも預言者でした。二人は信じた人々と長い時間話をして、彼らを励まし、その信仰を強くしました。"
+        },
+        "id": {
+          "L": "Dan Yudas dan Silas, yang juga nabi, menasihati saudara-saudara dengan banyak perkataan dan menguatkan [mereka].",
+          "B": "Yudas dan Silas, yang juga nabi, berbicara panjang lebar untuk menghibur saudara-saudara dan menguatkan mereka.",
+          "R": "Yudas dan Silas juga nabi. Mereka berbicara dengan orang-orang percaya untuk waktu yang lama dan memberi mereka semangat dan membuat iman mereka lebih kuat."
+        },
+        "zh": {
+          "L": "犹大和西拉本身也是先知，他们用很多的话勉励{{gender:弟兄姐妹|弟兄}}们，使[他们]坚强。",
+          "B": "犹大和西拉也是先知，他们向{{gender:弟兄姐妹|弟兄}}们讲了很长时间的话，鼓励他们，使他们刚强。",
+          "R": "犹大和西拉也是先知。他们和信徒们谈了很久，给他们勇气，使他们的信心更坚定。"
         }
       },
       "decisions": [
@@ -7857,6 +9254,26 @@
           "L": "Проведя же [там некоторое] время, они были отпущены с миром {{gender:братьями и сёстрами|братьями}} к пославшим их.",
           "B": "Пробыв там некоторое время, они были с миром отпущены {{gender:братьями и сёстрами|братьями}} назад к тем, кто их послал.",
           "R": "Иуда и Сила пробыли там какое-то время. Потом верующие отпустили их обратно в церковь в Иерусалиме, пожелав им мира."
+        },
+        "uk": {
+          "L": "А пробувши [там] якийсь час, вони були відпущені {{gender:братами і сестрами|братами}} з миром до тих, що їх послали.",
+          "B": "Пробувши там якийсь час, вони були відпущені {{gender:братами і сестрами|братами}} з миром назад до тих, хто їх послав.",
+          "R": "Юда і Сила пробули там якийсь час. Потім віруючі відіслали їх назад до церкви в Єрусалимі, побажавши їм миру."
+        },
+        "ja": {
+          "L": "そして、[しばらく]時を過ごした後、彼らは{{gender:きょうだいたち|兄弟たち}}から平安のうちに、自分たちを遣わした人々のもとへ送り出された。",
+          "B": "しばらくそこに滞在した後、二人は{{gender:きょうだいたち|兄弟たち}}から平安のあいさつを受けて送り出され、自分たちを遣わした人々のもとへ帰って行った。",
+          "R": "ユダとシラスは、しばらくそこにいました。それから、信じた人々は二人の平安を祈って、エルサレムの教会へ送り返しました。"
+        },
+        "id": {
+          "L": "Dan setelah tinggal beberapa waktu [di sana], mereka dilepas pergi oleh saudara-saudara dengan damai sejahtera kepada orang-orang yang telah mengutus mereka.",
+          "B": "Setelah mereka tinggal di sana beberapa waktu, saudara-saudara melepas mereka pergi dengan damai sejahtera, kembali kepada orang-orang yang telah mengutus mereka.",
+          "R": "Yudas dan Silas tinggal di sana beberapa waktu. Lalu orang-orang percaya melepas mereka kembali ke jemaat di Yerusalem dengan berkat damai."
+        },
+        "zh": {
+          "L": "他们在那里住了一段时间，就由{{gender:弟兄姐妹|弟兄}}们送他们平安地回到差他们来的人那里。",
+          "B": "他们在那里住了一些时候，{{gender:弟兄姐妹|弟兄}}们就送他们平安地回去，回到差派他们的人那里。",
+          "R": "犹大和西拉在那里住了一段时间。后来信徒们为他们祝福，愿他们平安，送他们回耶路撒冷的教会去。"
         }
       },
       "decisions": [
@@ -7949,6 +9366,27 @@
           "reason": "The key term for peace (style guide section 6), here in the blessing of farewell (meaning decision m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n44015033006"
+          ],
+          "choice": "\"平安\"",
+          "alternatives": [
+            "\"平和\""
+          ],
+          "reason": "Peace here is the parting blessing (meaning decision m1), which Japanese Open Word Bible renders \"平安\"; \"平和\" is kept for peace between people and with God.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -8034,6 +9472,26 @@
           "L": "Павел же и Варнава оставались в Антиохии, уча и благовествуя вместе и со многими другими слово Господа.",
           "B": "А Павел и Варнава остались в Антиохии. Вместе со многими другими они учили слову Господа и возвещали его как Радостную весть.",
           "R": "А Павел и Варнава остались в Антиохии. Они и многие другие верующие учили людей вести о Господе Иисусе и рассказывали им Радостную весть."
+        },
+        "uk": {
+          "L": "А Павло і Варнава перебували в Антіохії, навчаючи й благовістячи разом із багатьма іншими слово Господнє.",
+          "B": "Павло ж і Варнава залишилися в Антіохії. Разом з багатьма іншими вони навчали слова Господнього й звіщали його як Добру звістку.",
+          "R": "А Павло і Варнава залишилися в Антіохії. Вони та багато інших віруючих навчали людей звістки про Господа Ісуса й розповідали їм Добру звістку."
+        },
+        "ja": {
+          "L": "しかし、パウロとバルナバはアンティオキアにとどまり、ほかの多くの人々と共に、主の言葉を教え、また福音として告げ知らせていた。",
+          "B": "一方、パウロとバルナバはアンティオキアにとどまった。そして、ほかの多くの人々と一緒に、主の言葉を教え、その福音を告げ知らせた。",
+          "R": "パウロとバルナバは、アンティオキアに残りました。二人は、ほかのたくさんの信じた人々と一緒に、主イエスについての言葉を教え、良い知らせを伝えました。"
+        },
+        "id": {
+          "L": "Tetapi Paulus dan Barnabas tinggal di Antiokhia, sambil mengajar dan memberitakan Injil, bersama banyak orang lain juga, yaitu firman Tuhan.",
+          "B": "Tetapi Paulus dan Barnabas tetap tinggal di Antiokhia. Bersama banyak orang lain, mereka mengajarkan firman Tuhan dan memberitakannya sebagai kabar baik.",
+          "R": "Tetapi Paulus dan Barnabas tetap tinggal di Antiokhia. Mereka dan banyak orang percaya lainnya mengajarkan firman tentang Tuhan Yesus dan memberitakan kabar baik kepada orang-orang."
+        },
+        "zh": {
+          "L": "但保罗和巴拿巴住在安提阿，和许多其他的人一起教导并传扬主的道。",
+          "B": "不过保罗和巴拿巴继续留在安提阿。他们和许多别的人一起教导主的道，把它当作福音传扬。",
+          "R": "保罗和巴拿巴却留在安提阿。他们和许多别的信徒一起把主耶稣的信息教导人，把好消息告诉他们。"
         }
       },
       "decisions": [
@@ -8159,6 +9617,29 @@
           "reason": "The Greek says \"the word of the Lord\", the message about the Lord Jesus (meaning decision). Amharic keeps \"ጌታ\" and Readable spells out the sense, as the English Readable does.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n44015035015",
+            "n44015035016",
+            "n44015035017",
+            "n44015035018"
+          ],
+          "choice": "\"主的道\" (L, B); \"主耶稣的信息\" (R)",
+          "alternatives": [
+            "\"主的话\""
+          ],
+          "reason": "The word of the Lord as the message about the Lord Jesus (meaning decision m1): \"道\", the word for the message preached, as in Luke 8:11; Readable says whose message it is, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -8251,6 +9732,26 @@
           "L": "Через же несколько дней Павел сказал Варнаве: «Вернувшись же, посетим {{gender:братьев и сестёр|братьев}} во всяком городе, в которых мы возвестили слово Господа, [посмотрим,] как они.»",
           "B": "Через несколько дней Павел сказал Варнаве: «Давай вернёмся и навестим {{gender:братьев и сестёр|братьев}} во всех городах, где мы возвещали слово Господа, и узнаем, как у них дела.»",
           "R": "Через некоторое время Павел сказал Варнаве: «Давай вернёмся и навестим верующих во всех городах, где мы рассказывали людям весть о Господе. Посмотрим, как у них дела.»"
+        },
+        "uk": {
+          "L": "А через кілька днів Павло сказав Варнаві: «Вернімося ж і відвідаймо {{gender:братів і сестер|братів}} у кожному місті, в якому ми проповідували слово Господнє, [подивімося], як вони.»",
+          "B": "Через кілька днів Павло сказав Варнаві: «Ходімо, вернімося й навідаймо {{gender:братів і сестер|братів}} у кожному місті, де ми звіщали слово Господнє, і дізнаймося, як у них справи.»",
+          "R": "Через якийсь час Павло сказав Варнаві: «Нам треба повернутися й відвідати віруючих у всіх містах, де ми розповідали людям звістку про Господа. Подивімося, як у них справи.»"
+        },
+        "ja": {
+          "L": "何日か後、パウロはバルナバに言った。「さあ、戻って、わたしたちが主の言葉を告げ伝えたすべての町で、{{gender:きょうだいたち|兄弟たち}}を訪ね、[彼らが]どうしているか[見よう]。」",
+          "B": "数日後、パウロはバルナバに言った。「さあ、もう一度出かけて、主の言葉を告げ伝えたすべての町の{{gender:きょうだいたち|兄弟たち}}を訪ね、どうしているか見て来よう。」",
+          "R": "しばらくして、パウロはバルナバに言いました。「前に主の言葉を伝えたすべての町へ、もう一度行って、信じた人々を訪ねよう。みんながどうしているか、見に行こう。」"
+        },
+        "id": {
+          "L": "Dan setelah beberapa hari Paulus berkata kepada Barnabas, \"Marilah kita kembali dan mengunjungi saudara-saudara di setiap kota tempat kita telah memberitakan firman Tuhan, [untuk melihat] bagaimana keadaan mereka.\"",
+          "B": "Beberapa hari kemudian Paulus berkata kepada Barnabas, \"Mari kita kembali dan menengok saudara-saudara di setiap kota tempat kita telah memberitakan firman Tuhan, dan melihat bagaimana keadaan mereka.\"",
+          "R": "Beberapa waktu kemudian Paulus berkata kepada Barnabas, \"Kita perlu kembali dan mengunjungi orang-orang percaya di semua kota tempat kita telah memberitakan firman Tuhan. Mari kita lihat bagaimana keadaan mereka.\""
+        },
+        "zh": {
+          "L": "过了些日子，保罗对巴拿巴说：“我们现在回去，在我们传过主的道的每一座城里探望{{gender:弟兄姐妹|弟兄}}们，[看]他们怎么样。”",
+          "B": "几天以后，保罗对巴拿巴说：“来吧，我们回去探访我们传讲过主的道的各个城镇，看看那里的{{gender:弟兄姐妹|弟兄}}们，了解他们的近况。”",
+          "R": "过了一段时间，保罗对巴拿巴说：“我们应该回去，看望那些我们传过主的信息的城镇里的信徒。我们去看看他们过得怎么样。”"
         }
       },
       "decisions": [
@@ -8374,6 +9875,27 @@
           "reason": "They are fellow workers of long standing, and Paul's \"let us\" is a proposal to an equal; the polite form fits two leaders of the church better than the plain style.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "register",
+          "tokens": [
+            "n44015036011"
+          ],
+          "choice": "Paul speaks to Barnabas in the plain style (\"訪ねよう\")",
+          "alternatives": [
+            "です・ます (\"訪ねましょう\")"
+          ],
+          "reason": "Two co-workers speaking to each other use the plain style in Japanese; the polite style is kept for speeches to crowds and councils.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -8451,6 +9973,26 @@
           "L": "Варнава же хотел взять с собой и Иоанна, называемого Марком.",
           "B": "Варнава хотел взять с собой и Иоанна, которого называли Марком.",
           "R": "Варнава хотел снова взять с собой Иоанна Марка."
+        },
+        "uk": {
+          "L": "Варнава ж хотів узяти з собою й Івана, якого називали Марком.",
+          "B": "Варнава хотів узяти з собою й Івана, якого ще звали Марком.",
+          "R": "Варнава хотів знову взяти з собою Івана Марка."
+        },
+        "ja": {
+          "L": "バルナバは、マルコと呼ばれるヨハネも一緒に連れて行きたいと思っていた。",
+          "B": "バルナバは、マルコとも呼ばれるヨハネも連れて行きたいと思った。",
+          "R": "バルナバは、マルコと呼ばれるヨハネを、今度も一緒に連れて行きたいと思いました。"
+        },
+        "id": {
+          "L": "Dan Barnabas ingin membawa serta juga Yohanes yang disebut Markus.",
+          "B": "Barnabas ingin membawa serta Yohanes, yang juga disebut Markus.",
+          "R": "Barnabas ingin membawa Yohanes Markus bersama mereka lagi."
+        },
+        "zh": {
+          "L": "巴拿巴想要把称为马可的约翰也带去。",
+          "B": "巴拿巴也想带上又叫马可的约翰。",
+          "R": "巴拿巴想再带约翰马可一起去。"
         }
       },
       "decisions": [
@@ -8637,6 +10179,26 @@
           "L": "Павел же считал правильным не брать с собой того, кто отстал от них в Памфилии и не пошёл с ними на дело.",
           "B": "Но Павел считал, что не стоит брать с собой человека, который оставил их в Памфилии и не пошёл с ними дальше на дело.",
           "R": "Но Павел считал, что брать его не нужно. В их первом путешествии Марк оставил их в Памфилии. Он не остался с ними, чтобы закончить работу."
+        },
+        "uk": {
+          "L": "Павло ж вважав за належне не брати з собою того, хто відступив від них із Памфілії й не пішов із ними на працю.",
+          "B": "Але Павло вважав, що не слід брати з собою людину, яка покинула їх у Памфілії й не пішла з ними далі на працю.",
+          "R": "Але Павло вважав, що його не варто брати. Під час їхньої першої подорожі Марко покинув їх у Памфілії. Він не залишився з ними, щоб довести працю до кінця."
+        },
+        "ja": {
+          "L": "しかしパウロは、パンフィリア州から彼らを離れて、働きに一緒に行かなかったその者を連れて行くべきではない、と考えた。",
+          "B": "しかしパウロは、パンフィリア州で自分たちから離れ、働きに同行しなかった者を連れて行くのはよくないと考えた。",
+          "R": "しかしパウロは、マルコを連れて行くべきではないと考えました。最初の旅のとき、マルコはパンフィリア州で二人から離れてしまったからです。マルコは、最後まで一緒に働きませんでした。"
+        },
+        "id": {
+          "L": "Tetapi Paulus berpendapat tidak pantas membawa serta orang ini, yang telah meninggalkan mereka di Pamfilia dan tidak ikut bersama mereka dalam pekerjaan itu.",
+          "B": "Tetapi Paulus berpendapat tidak pantas membawa serta orang yang telah meninggalkan mereka di Pamfilia dan tidak ikut melanjutkan pekerjaan bersama mereka.",
+          "R": "Tetapi Paulus berpendapat mereka tidak boleh membawa dia. Pada perjalanan mereka yang pertama, Markus telah meninggalkan mereka di Pamfilia. Dia tidak tinggal bersama mereka untuk menyelesaikan pekerjaan itu."
+        },
+        "zh": {
+          "L": "但保罗认为不该带这个人，因为他曾在旁非利亚离开他们，没有和他们一同去做工。",
+          "B": "但保罗认为不该带上一个曾在旁非利亚离开他们、没有继续和他们一起工作的人。",
+          "R": "可是保罗认为不应该带他去。在他们第一次旅行的时候，马可在旁非利亚离开了他们。他没有留下来和他们一起完成工作。"
         }
       },
       "decisions": [
@@ -8842,6 +10404,26 @@
           "L": "И произошло раздражение, так что они разлучились друг с другом, и Варнава, взяв Марка, отплыл на Кипр. \\v 40 Павел же, избрав Силу, вышел, будучи поручен {{gender:братьями и сёстрами|братьями}} благодати Господа. \\v 41 И он проходил Сирию и Киликию, укрепляя церкви.",
           "B": "Спор стал таким острым, что они расстались. Варнава взял Марка и отплыл на Кипр, \\v 40 а Павел выбрал Силу и отправился в путь, после того как {{gender:братья и сёстры|братья}} поручили его благодати Господа. \\v 41 Он прошёл через Сирию и Киликию, укрепляя церкви.",
           "R": "Павел и Варнава так сильно разошлись во мнениях, что расстались. Варнава взял с собой Марка и уплыл на остров Кипр. \\v 40 Павел выбрал Силу, чтобы тот пошёл с ним. Верующие помолились, чтобы Господь благословил их своей благодатью, и тогда Павел и Сила отправились в путь. \\v 41 Они прошли через Сирию и Киликию и помогали церквям там укрепиться в вере."
+        },
+        "uk": {
+          "L": "І постала гостра незгода, так що вони розлучилися один з одним, і Варнава, взявши Марка, відплив на Кіпр. \\v 40 Павло ж, вибравши Силу, вирушив, доручений {{gender:братами і сестрами|братами}} благодаті Господній. \\v 41 І він проходив Сирію і Кілікію, зміцнюючи церкви.",
+          "B": "Суперечка стала така гостра, що вони розійшлися. Варнава взяв Марка й відплив на Кіпр, \\v 40 а Павло вибрав Силу й вирушив у дорогу, після того як {{gender:брати і сестри|брати}} доручили його благодаті Господа. \\v 41 Він проходив Сирією і Кілікією, зміцнюючи церкви.",
+          "R": "Павло і Варнава так сильно не погодилися, що розійшлися. Варнава взяв із собою Марка й поплив на острів Кіпр. \\v 40 Павло вибрав Силу, щоб той ішов із ним. Віруючі помолилися, щоб Господь благословив їх своєю благодаттю, і тоді Павло і Сила вирушили. \\v 41 Вони пройшли через Сирію і Кілікію й допомогли тамтешнім церквам зміцніти у вірі."
+        },
+        "ja": {
+          "L": "そして激しい意見の衝突が起こり、その結果、彼らは互いに別れ、バルナバはマルコを連れて船でキプロスへ向かった。\\v 40 一方パウロはシラスを選び、{{gender:きょうだいたち|兄弟たち}}によって主の恵みにゆだねられて出発した。\\v 41 そして、シリア州とキリキア州を通って行き、諸教会を力づけた。",
+          "B": "二人の意見は激しくぶつかり、ついに別々に行動することになった。バルナバはマルコを連れて、船でキプロスへ渡った。\\v 40 一方パウロはシラスを選び、{{gender:きょうだいたち|兄弟たち}}から主の恵みにゆだねられて出発した。\\v 41 そして、シリア州とキリキア州を巡り、諸教会を力づけた。",
+          "R": "パウロとバルナバは激しく言い争い、別れることになりました。バルナバはマルコを連れて、船でキプロス島へ行きました。\\v 40 パウロは、シラスを選んで一緒に行くことにしました。信じた人々は、主が恵みによって二人を守ってくださるように祈りました。それからパウロとシラスは出発しました。\\v 41 二人はシリア州とキリキア州を巡り、そこの教会の人々の信仰を強くしました。"
+        },
+        "id": {
+          "L": "Dan terjadilah perselisihan yang tajam, sehingga mereka berpisah satu dari yang lain, dan Barnabas membawa Markus dan berlayar ke Siprus. \\v 40 Tetapi Paulus memilih Silas lalu berangkat, setelah diserahkan oleh saudara-saudara kepada kasih karunia Tuhan. \\v 41 Dan ia berjalan melintasi Siria dan Kilikia, sambil menguatkan jemaat-jemaat.",
+          "B": "Perselisihan itu begitu tajam sehingga mereka berpisah. Barnabas membawa Markus dan berlayar ke Siprus, \\v 40 sedangkan Paulus memilih Silas dan berangkat, setelah saudara-saudara menyerahkan dia kepada kasih karunia Tuhan. \\v 41 Ia berjalan melintasi Siria dan Kilikia sambil menguatkan jemaat-jemaat.",
+          "R": "Paulus dan Barnabas begitu tidak sepakat sehingga mereka berpisah. Barnabas membawa Markus bersamanya dan berlayar ke pulau Siprus. \\v 40 Paulus memilih Silas untuk pergi bersamanya. Orang-orang percaya berdoa supaya Tuhan memberkati mereka dengan kasih karunia-{{deity_pronoun:nya|Nya}}, lalu Paulus dan Silas berangkat. \\v 41 Mereka melintasi Siria dan Kilikia dan menolong jemaat-jemaat di sana bertumbuh kuat di dalam iman mereka."
+        },
+        "zh": {
+          "L": "于是发生了尖锐的争执，以致他们彼此分手了。巴拿巴领了马可，乘船去了塞浦路斯；\\v 40 保罗选了西拉，就出发了，{{gender:弟兄姐妹|弟兄}}们把他托付给主的恩典。\\v 41 他经过叙利亚和基利家，一路使各教会刚强。",
+          "B": "争执变得非常激烈，两人只好分道扬镳。巴拿巴带上马可，乘船到塞浦路斯去了；\\v 40 保罗则挑选了西拉，在{{gender:弟兄姐妹|弟兄}}们把他交托给主的恩典之后，就动身了。\\v 41 他走过叙利亚和基利家，使各地教会得以坚强。",
+          "R": "保罗和巴拿巴的意见非常不同，结果两个人分开了。巴拿巴带着马可，坐船去了塞浦路斯岛。\\v 40 保罗选了西拉和他同去。信徒们为他们祷告，求主用{{deity_pronoun:他|祂}}的恩典赐福给他们，然后保罗和西拉就出发了。\\v 41 他们经过叙利亚和基利家，帮助那里的教会在信心上更加坚强。"
         }
       },
       "decisions": [

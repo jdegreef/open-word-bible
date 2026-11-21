@@ -85,6 +85,26 @@
           "L": "Все, кто под ярмом рабы, пусть считают своих господ достойными всякой чести, чтобы не хулились имя Божье и учение.",
           "B": "Все, кто находится под ярмом рабства, должны считать своих господ достойными полного уважения, чтобы о Божьем имени и о нашем учении не говорили дурно.",
           "R": "Рабы должны оказывать своим хозяевам полное уважение. Тогда никто не будет говорить плохо о Божьем имени и о том, чему мы учим."
+        },
+        "uk": {
+          "L": "Усі, хто під ярмом як раби, нехай вважають своїх панів гідними всякої честі, щоб не зневажалося імʼя Боже і вчення.",
+          "B": "Усі, хто перебуває під ярмом рабства, мають вважати своїх панів гідними цілковитої пошани, щоб ніхто не зневажав Божого імені і нашого вчення.",
+          "R": "Раби повинні виявляти своїм панам повну пошану. Тоді ніхто не говоритиме поганого про Боже імʼя чи про те, чого ми навчаємо."
+        },
+        "ja": {
+          "L": "くびきの下にある奴隷である者は皆、自分の主人をあらゆる尊敬に値する者と見なすべきです。神の名と教えとが冒瀆されないためです。",
+          "B": "奴隷のくびきの下にある人は皆、自分の主人を十分に敬うべき人と考えなさい。神の名とわたしたちの教えがそしられないためです。",
+          "R": "奴隷である人たちは、自分の主人を心から敬ってください。そうすれば、神の名や、わたしたちが教えていることを、だれも悪く言わなくなります。"
+        },
+        "id": {
+          "L": "Hendaklah semua orang yang berada di bawah kuk sebagai budak menganggap tuan mereka sendiri layak mendapat segala hormat, supaya nama Allah dan ajaran itu jangan dihujat.",
+          "B": "Semua orang yang berada di bawah kuk perbudakan harus menganggap tuan mereka layak menerima hormat sepenuhnya, supaya nama Allah dan ajaran kita tidak dihujat.",
+          "R": "Budak-budak harus memberikan hormat sepenuhnya kepada tuan-tuan mereka. Dengan begitu tidak seorang pun akan menjelek-jelekkan nama Allah atau apa yang kita ajarkan."
+        },
+        "zh": {
+          "L": "所有在轭下的奴隶，都要把自己的主人看为配受完全的尊敬，免得{{god_term:神|上帝}}的名和那教导被亵渎。",
+          "B": "所有在奴隶之轭下的人，都应当把自己的主人看为配得完全的尊重，免得{{god_term:神|上帝}}的名和我们的教导受到侮辱。",
+          "R": "奴隶应当完全尊重他们的主人。这样，就没有人会说{{god_term:神|上帝}}的名的坏话，也没有人会说我们所教导的东西的坏话。"
         }
       },
       "decisions": [
@@ -419,6 +439,92 @@
           "reason": "The style guide's word for the yoke, as in Matthew.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n54006001005",
+            "n54006001008"
+          ],
+          "choice": "\"раби\"; \"пани\"",
+          "alternatives": [
+            "\"слуги\"; \"господарі\""
+          ],
+          "reason": "\"Раб\" at every level, as the style guide sets for this word; the master of a slave is \"пан\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n54006001005",
+            "n54006001008"
+          ],
+          "choice": "\"奴隷\" at every level, \"主人\" for the masters",
+          "alternatives": [
+            "\"しもべ\" (B, R)"
+          ],
+          "reason": "Slavery itself is the subject here (m1), so the brief keeps 奴隷 at every level, as Colossians 3:22 and Philemon 16 do; しもべ would soften the social fact.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n54006001018"
+          ],
+          "choice": "{{god_term:神|上帝}}",
+          "alternatives": [
+            "神 fixed"
+          ],
+          "reason": "Every word naming the one God is written with the Chinese god_term setting: \"神\" by default, \"上帝\" as the reader's alternative.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n54006001005"
+          ],
+          "choice": "奴隶",
+          "alternatives": [
+            "仆人"
+          ],
+          "reason": "As the English, \"slave\" at every level: Paul speaks to people actually owned, beside their masters, where slavery itself is the point (style guide section 7). The echo of Isaiah 52:5 (m2) takes Romans 2:24's words at each level (被亵渎, 受到侮辱, 说……的坏话).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -508,6 +614,26 @@
           "L": "А имеющие верующих господ пусть не пренебрегают [ими] оттого, что они {{gender:братья и сёстры|братья}}, но тем более пусть служат, потому что принимающие [их] доброе служение — верные и возлюбленные.",
           "B": "Те, у кого господа верующие, не должны относиться к ним с пренебрежением из-за того, что они {{gender:братья и сёстры|братья}}. Наоборот, пусть служат им ещё усерднее, потому что те, кто получает пользу от их доброго служения, — верующие и дорогие им люди.",
           "R": "Если у рабов хозяева верующие, рабы не должны уважать их меньше оттого, что они тоже верующие. Наоборот, пусть служат им ещё лучше, потому что хозяева, которым помогает их труд, — верующие, которых они любят."
+        },
+        "uk": {
+          "L": "А ті, що мають віруючих панів, нехай не зневажають [їх] через те, що вони {{gender:брати і сестри|брати}}, а тим більше нехай служать, бо ті, хто користується [їхнім] добрим служінням, — вірні й улюблені.",
+          "B": "Ті, чиї пани віруючі, не повинні ставитися до них зневажливо через те, що вони {{gender:брати і сестри|брати}}. Навпаки, вони мають служити їм ще краще, бо ті, хто має користь з їхньої доброї праці, — їхні брати по вірі і дорогі їм люди.",
+          "R": "Якщо раби мають панів, які вірять, вони не повинні шанувати їх менше через те, що ті теж віруючі. Навпаки, вони мають служити їм ще краще, бо пани, яким допомагає їхня праця, — віруючі, яких вони люблять."
+        },
+        "ja": {
+          "L": "信者である主人を持つ者たちは、[主人が]{{gender:きょうだいたち|兄弟たち}}であるからといって、軽んじてはなりません。むしろ、いっそうよく仕えるべきです。その良い奉仕を受けている者たちは、信者であり、愛されている者だからです。",
+          "B": "主人が信者である人は、主人が{{gender:きょうだいたち|兄弟たち}}だからといって、軽く見てはなりません。むしろ、なおさらよく仕えなさい。その良い働きの益を受けている人たちは、信仰を同じくする、愛する人たちだからです。",
+          "R": "主人が信者である奴隷は、主人が同じ信仰の仲間だからといって、敬う気持ちを少なくしてはいけません。むしろ、もっとよく仕えてください。その働きによって助けられている主人たちは、信者であり、その奴隷たちが愛している人たちだからです。"
+        },
+        "id": {
+          "L": "Dan mereka yang mempunyai tuan yang percaya janganlah meremehkan mereka karena mereka adalah saudara; sebaliknya, hendaklah mereka melayani [mereka] dengan lebih baik lagi, karena mereka yang mendapat manfaat dari pelayanan [mereka] yang baik adalah orang-orang percaya dan yang kekasih.",
+          "B": "Mereka yang tuannya orang percaya tidak boleh meremehkan tuan mereka karena mereka adalah saudara. Sebaliknya, mereka harus melayani tuan mereka dengan lebih baik lagi, karena yang mendapat manfaat dari pelayanan mereka yang baik adalah sesama orang percaya yang mereka kasihi.",
+          "R": "Kalau budak-budak mempunyai tuan yang percaya, mereka tidak boleh kurang menghormati tuan-tuan itu karena mereka sesama orang percaya. Sebaliknya, mereka harus melayani dengan lebih baik lagi, karena tuan-tuan yang terbantu oleh pekerjaan mereka adalah orang-orang percaya yang mereka kasihi."
+        },
+        "zh": {
+          "L": "那些有信主主人的，不可因为他们是{{gender:弟兄姐妹|弟兄}}就轻看他们，反而更要服事[他们]，因为那些得到[他们]美好服事的人是信徒，又是蒙爱的。",
+          "B": "主人是信徒的奴隶，不可因为主人是{{gender:弟兄姐妹|弟兄}}就看不起他们；反而应当更加尽心服事他们，因为从他们美好的服事中得益的，是同作信徒、也是他们所爱的人。",
+          "R": "如果奴隶的主人是信徒，奴隶不应该因为主人是信徒，就不那么尊重他们。反而应当更好地服事他们，因为得到他们帮助的主人，是他们所爱的信徒。"
         }
       },
       "decisions": [
@@ -708,6 +834,45 @@
           "reason": "Fellow believers, men or women, as in the English; Readable says \"верующие\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n54006002013"
+          ],
+          "choice": "\"仕える\" for the slaves' service (L, B, R)",
+          "alternatives": [
+            "\"奴隷として仕える\""
+          ],
+          "reason": "The verb means to serve as a slave (m3); since 奴隷 is already named in 6:1, the plain verb 仕える carries the sense without repeating 奴隷として.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n54006002009"
+          ],
+          "choice": "\"saudara\" with no gender span",
+          "alternatives": [],
+          "reason": "As set for the whole letter (1:1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -779,6 +944,26 @@
           "L": "Этому учи и увещевай.",
           "B": "Учи этому и призывай людей это исполнять.",
           "R": "Учи этому и ободряй людей так поступать."
+        },
+        "uk": {
+          "L": "Цього навчай і до цього закликай.",
+          "B": "Навчай цього і закликай людей це виконувати.",
+          "R": "Навчай цього і підбадьорюй людей так жити."
+        },
+        "ja": {
+          "L": "これらのことを教え、また勧めなさい。",
+          "B": "これらのことを教え、人々に勧めなさい。",
+          "R": "これらのことを教え、人々がそれを行うように励ましてください。"
+        },
+        "id": {
+          "L": "Ajarkanlah dan nasihatkanlah hal-hal ini.",
+          "B": "Ajarkanlah hal-hal ini dan desaklah orang-orang untuk melakukannya.",
+          "R": "Ajarkanlah hal-hal ini, dan doronglah orang-orang untuk melakukannya."
+        },
+        "zh": {
+          "L": "你要教导并劝勉这些事。",
+          "B": "你要教导这些事，并劝勉人遵行。",
+          "R": "你要教导这些事，并且鼓励人去做。"
         }
       },
       "decisions": [
@@ -914,6 +1099,26 @@
           "L": "Если кто учит иначе и не следует здравым словам Господа нашего Иисуса {{christos:Христа|Мессии}} и учению, согласному с благочестием, \\v 4 тот надмен, ничего не знает, но болеет страстью к спорам и словопрениям, от которых происходят зависть, раздоры, клеветы, злые подозрения, \\v 5 постоянные столкновения людей, повреждённых умом и лишённых истины, считающих, что благочестие — [средство] наживы.",
           "B": "Кто учит иному и не согласен со здравыми словами нашего Господа Иисуса {{christos:Христа|Мессии}} и с учением, которое ведёт к благочестию, \\v 4 тот надут гордостью и ничего не понимает. Такие люди болезненно тянутся к спорам и препирательствам о словах. От них происходят зависть, ссоры, клевета, злые подозрения \\v 5 и постоянные столкновения между людьми с испорченным умом, которые потеряли истину. Они думают, что благочестие — способ разбогатеть.",
           "R": "Некоторые люди учат тому, что неправда. Они не согласны с правдивыми словами нашего Господа Иисуса {{christos:Христа|Мессии}} и с учением, которое помогает людям жить для Бога. \\v 4 Они гордятся, но ничего не понимают. Они любят спорить о словах. А их споры вызывают у людей зависть друг к другу. Из-за них начинаются ссоры, оскорбления и подозрения. \\v 5 Люди, у которых испорчен ум и которые отвернулись от правды, постоянно ссорятся. Они думают, что служение Богу — это способ разбогатеть."
+        },
+        "uk": {
+          "L": "Якщо хтось навчає іншого вчення і не пристає до здорових слів нашого Господа Ісуса {{christos:Христа|Месії}} і до вчення, що згідне з благочестям, \\v 4 той загордився, нічого не розуміючи, але хворіє на суперечки і словесні сварки, з яких бувають заздрість, чвари, лихослівʼя, лихі підозри, \\v 5 постійні тертя між людьми, зіпсованими розумом і позбавленими істини, які думають, що благочестя — це засіб наживи.",
+          "B": "Хто навчає чогось іншого і не погоджується зі здоровими словами нашого Господа Ісуса {{christos:Христа|Месії}} і з ученням, що веде до благочестя, \\v 4 той надувся від гордощів і нічого не розуміє. Такі люди мають нездорову пристрасть до суперечок і сварок за слова. Від цього бувають заздрість, чвари, наклепи й лихі підозри, \\v 5 а також постійні тертя між людьми, чий розум зіпсований і хто втратив істину. Вони думають, що благочестя — це спосіб заробити гроші.",
+          "R": "Деякі люди навчають того, що неправда. Вони не погоджуються з правдивими словами нашого Господа Ісуса {{christos:Христа|Месії}} і з ученням, яке допомагає людям жити для Бога. \\v 4 Вони горді, але нічого не розуміють. Вони люблять сперечатися про слова. А їхні суперечки викликають у людей заздрість одне до одного. Через них бувають сварки, образи й підозри. \\v 5 Люди, чий розум зіпсований і хто відвернувся від правди, постійно сваряться. Вони думають, що служити Богові — це спосіб розбагатіти."
+        },
+        "ja": {
+          "L": "もしだれかが異なる教えを説き、わたしたちの主イエス・{{christos:キリスト|メシア}}の健全な言葉と、敬虔にかなう教えとに同意しないなら、\\v 4 その人は高慢になっていて、何も理解しておらず、議論や言葉の争いに病的に熱中しています。そこから、ねたみ、争い、ののしり、邪推が生じ、\\v 5 また、知性が腐り、真理を奪われ、敬虔を利得の手段と考える人々の間に、絶え間ない摩擦が[生じるのです]。",
+          "B": "異なることを教え、わたしたちの主イエス・{{christos:キリスト|メシア}}の健全な言葉と、神を敬う生き方へ導く教えとに同意しない人がいれば、\\v 4 その人は高慢で、何もわかっていません。そういう人は議論や言葉の争いに病的なほど熱中しています。そこから、ねたみ、争い、中傷、悪い疑いが生まれ、\\v 5 心が腐って真理を失った人々の間に、絶え間ないいさかいが起こります。彼らは、神を敬うことを金もうけの手段だと考えているのです。",
+          "R": "正しくないことを教えている人たちがいます。その人たちは、わたしたちの主イエス・{{christos:キリスト|メシア}}の本当の言葉にも、神のために生きるように教える教えにも、同意しません。\\v 4 その人たちは高慢ですが、何もわかっていません。言葉について言い争うのが大好きです。そして、その言い争いのせいで、人々は互いにねたみ合います。けんかや悪口や疑いが起こります。\\v 5 心がだめになり、真理から離れてしまった人たちは、いつまでも言い争っています。その人たちは、神に仕えることが金持ちになる方法だと思っているのです。"
+        },
+        "id": {
+          "L": "Jika seseorang mengajarkan ajaran yang lain dan tidak setuju dengan perkataan-perkataan yang sehat dari Tuhan kita Yesus {{christos:Kristus|Mesias}} dan dengan ajaran yang sesuai dengan kesalehan, \\v 4 ia adalah orang yang sombong, tidak mengerti apa-apa, tetapi berpenyakit dengan perdebatan-perdebatan dan pertengkaran tentang kata-kata, yang menimbulkan iri hati, perselisihan, fitnah, prasangka jahat, \\v 5 dan percekcokan terus-menerus di antara orang-orang yang pikirannya rusak dan yang kehilangan kebenaran, yang mengira bahwa kesalehan itu adalah sumber keuntungan.",
+          "B": "Siapa pun yang mengajarkan sesuatu yang lain dan tidak setuju dengan perkataan yang sehat dari Tuhan kita Yesus {{christos:Kristus|Sang Mesias}} dan dengan ajaran yang membawa kepada kesalehan, \\v 4 adalah orang yang sombong dan tidak mengerti apa-apa. Orang-orang seperti itu mempunyai nafsu yang tidak sehat akan perdebatan dan pertengkaran tentang kata-kata. Semua itu menimbulkan iri hati, pertengkaran, fitnah, dan prasangka jahat, \\v 5 serta pergesekan terus-menerus di antara orang-orang yang pikirannya rusak dan yang telah kehilangan pegangan pada kebenaran. Mereka mengira kesalehan adalah cara untuk mencari uang.",
+          "R": "Ada orang-orang yang mengajarkan hal-hal yang tidak benar. Mereka tidak setuju dengan perkataan Tuhan kita Yesus {{christos:Kristus|Sang Mesias}} yang benar, ataupun dengan ajaran yang menolong orang hidup bagi Allah. \\v 4 Mereka sombong, tetapi mereka tidak mengerti apa-apa. Mereka senang berdebat tentang kata-kata. Dan perdebatan mereka membuat orang saling iri hati. Perdebatan itu menimbulkan perkelahian, hinaan, dan kecurigaan. \\v 5 Orang-orang yang pikirannya sudah rusak dan yang telah berpaling dari kebenaran terus bertengkar. Mereka mengira bahwa melayani Allah adalah cara untuk menjadi kaya."
+        },
+        "zh": {
+          "L": "如果有人教导不同的教义，不认同纯正的话语，就是我们主耶稣{{christos:基督|弥赛亚}}的[话语]，也不认同与敬虔相符的教导，\\v 4 他就是自高自大，一点也不明白，反而对争论和咬文嚼字有病态的嗜好；从这些产生出嫉妒、争吵、毁谤、恶毒的猜疑，\\v 5 以及心思败坏、被夺去真理的人之间不停的摩擦；他们以为敬虔是一种获利的手段。",
+          "B": "谁若教导别的东西，不认同我们主耶稣{{christos:基督|弥赛亚}}纯正的话语，也不认同引人敬虔的教导，\\v 4 就是骄傲自大，什么都不明白。这样的人对争论和字眼上的争辩有一种不健康的嗜好。这些争论带来嫉妒、争吵、毁谤和恶意的猜疑，\\v 5 也使那些心思败坏、失去真理的人之间摩擦不断。他们以为敬虔是赚钱的途径。",
+          "R": "有些人教导不真实的东西。他们不认同我们主耶稣{{christos:基督|弥赛亚}}正确的话，也不认同那帮助人为{{god_term:神|上帝}}而活的教导。\\v 4 他们很骄傲，却什么都不明白。他们喜欢为字眼争论。他们的争论使人彼此嫉妒，又引起争吵、侮辱和猜疑。\\v 5 那些心思败坏、离开了真理的人不停地争吵。他们以为服事{{god_term:神|上帝}}是发财的方法。"
         }
       },
       "decisions": [
@@ -1315,6 +1520,126 @@
           "reason": "Keeps the picture of sickness opposite the \"здравые\" words of verse 3 (m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n54006003007",
+            "n54006004005"
+          ],
+          "choice": "\"здорових слів ... хворіє на суперечки\" (L); \"здоровими словами ... нездорову пристрасть\" (B)",
+          "alternatives": [
+            "\"правдивими словами\""
+          ],
+          "reason": "The meaning decision notes the play on health and sickness; Literal and Balanced keep it, and Readable says plainly \"правдивими\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n54006003007",
+            "n54006004005"
+          ],
+          "choice": "\"健全な\" and \"病的に\" (L, B), keeping the health and sickness pair",
+          "alternatives": [
+            "\"正しい言葉\" and \"異常に\""
+          ],
+          "reason": "Sound words and an unhealthy craving set health against sickness (m1); 健全 and 病的 keep the contrast. No gender span for \"people\" (5): 人々 already includes women and men.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n54006003007",
+            "n54006003008",
+            "n54006004005"
+          ],
+          "choice": "\"sehat\" and \"berpenyakit\"",
+          "alternatives": [],
+          "reason": "Paul's contrast of health and sickness (m1) is kept with \"sehat\" and \"berpenyakit\" (L), \"tidak sehat\" (B).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-2",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n54006005003"
+          ],
+          "choice": "\"orang-orang\" with no gender span",
+          "alternatives": [],
+          "reason": "\"orang\" already includes women and men, here and in verse 9.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n54006003007",
+            "n54006004005"
+          ],
+          "choice": "纯正的话语 (L, B); 正确的话 (R)",
+          "alternatives": [
+            "健全的话语"
+          ],
+          "reason": "\"Sound\" words take the form of \"sound teaching\" in these letters (1:10; Titus 1:9; 2 Timothy 4:3); the sick craving of verse 4 is still \"病态的\" (L) / \"不健康的\" (B) (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "n54006005003"
+          ],
+          "choice": "人, no gender span",
+          "alternatives": [],
+          "reason": "The English Literal writes {{gender:people|men}}; Chinese \"人\" is already inclusive, so no span. The same in 6:9.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1390,6 +1715,26 @@
           "L": "Великое же приобретение — благочестие с довольством.",
           "B": "Благочестие действительно приносит большую прибыль, если с ним приходит довольство.",
           "R": "Правда, служение Богу приносит большое богатство, если мы довольны тем, что имеем."
+        },
+        "uk": {
+          "L": "А благочестя із задоволенням [тим, що є], — велика нажива.",
+          "B": "Благочестя справді велике багатство, коли воно поєднане із задоволенням тим, що маєш.",
+          "R": "Це правда, що служіння Богові приносить велике багатство, якщо ми задоволені тим, що маємо."
+        },
+        "ja": {
+          "L": "しかし、満ち足りる心を伴う敬虔こそ、大きな利得です。",
+          "B": "確かに、神を敬う生き方は、満ち足りる心を伴うとき、大きな利得となります。",
+          "R": "確かに、神に仕えて生きることは、大きな富をもたらします。わたしたちが、持っているもので満足するならです。"
+        },
+        "id": {
+          "L": "Tetapi kesalehan dengan rasa cukup adalah keuntungan yang besar.",
+          "B": "Kesalehan memang mendatangkan keuntungan yang besar, apabila disertai rasa cukup.",
+          "R": "Memang benar bahwa melayani Allah membawa kekayaan yang besar, kalau kita merasa puas dengan apa yang kita miliki."
+        },
+        "zh": {
+          "L": "其实，敬虔连同知足，是很大的收益。",
+          "B": "敬虔若与知足同行，的确是极大的收益。",
+          "R": "服事{{god_term:神|上帝}}的确会带来很大的财富，只要我们对自己所有的感到满足。"
         }
       },
       "decisions": [
@@ -1541,6 +1886,26 @@
           "L": "Ведь мы ничего не принесли в мир, потому [и] вынести ничего не можем.",
           "B": "Ведь мы ничего не принесли в мир и ничего не можем из него унести.",
           "R": "Мы ничего не принесли в мир, когда родились, и ничего не сможем унести из мира, когда умрём."
+        },
+        "uk": {
+          "L": "Бо ми нічого не принесли у світ, тож і винести нічого не можемо.",
+          "B": "Бо ми нічого не принесли у світ і нічого не можемо з нього винести.",
+          "R": "Ми нічого не принесли у світ, коли народилися, і нічого не зможемо забрати зі світу, коли помремо."
+        },
+        "ja": {
+          "L": "実に、わたしたちは何も世に持って来なかったので、何かを持って出ることもできません。",
+          "B": "わたしたちは何も持たずにこの世に来たのであり、何一つ持って行くこともできません。",
+          "R": "わたしたちは、生まれたとき、何も持たずにこの世に来ました。死ぬときにも、この世から何も持って行くことはできません。"
+        },
+        "id": {
+          "L": "Sebab kita tidak membawa apa-apa ke dalam dunia, dan karena itu kita tidak dapat membawa apa-apa ke luar.",
+          "B": "Sebab kita tidak membawa apa-apa ke dalam dunia, dan kita tidak dapat membawa apa-apa ke luar dari dunia.",
+          "R": "Kita tidak membawa apa-apa ke dalam dunia ketika kita lahir, dan kita tidak dapat membawa apa pun keluar dari dunia ketika kita mati."
+        },
+        "zh": {
+          "L": "因为我们什么也没有带进世界，所以我们也不能把任何东西带出去。",
+          "B": "我们来到世界的时候一无所有，离开的时候也什么都带不走。",
+          "R": "我们出生的时候，没有带任何东西到世上来；我们死的时候，也不能从世上带走任何东西。"
         }
       },
       "decisions": [
@@ -1678,6 +2043,26 @@
           "L": "Имея же пропитание и покров, этим будем довольны.",
           "B": "Если у нас есть пища и одежда, будем этим довольны.",
           "R": "Если у нас есть еда и одежда, мы должны быть этим довольны."
+        },
+        "uk": {
+          "L": "А маючи поживу й одяг, ми цим задовольнимося.",
+          "B": "Якщо маємо їжу й одяг, будьмо задоволені цим.",
+          "R": "Якщо ми маємо що їсти й що вдягти, ми повинні бути цим задоволені."
+        },
+        "ja": {
+          "L": "しかし、食べる物と覆うものがあれば、わたしたちはそれで満足します。",
+          "B": "食べる物と着る物があれば、わたしたちはそれで満足します。",
+          "R": "食べる物と着る物があれば、それで満足すべきです。"
+        },
+        "id": {
+          "L": "Tetapi jika kita mempunyai makanan dan pakaian, hendaklah kita merasa cukup dengan itu.",
+          "B": "Jika kita mempunyai makanan dan pakaian, kita akan merasa cukup dengan itu.",
+          "R": "Kalau kita mempunyai makanan untuk dimakan dan pakaian untuk dipakai, kita harus merasa puas dengan itu."
+        },
+        "zh": {
+          "L": "但我们若有食物和遮盖的东西，就会以这些为满足。",
+          "B": "我们若有食物和衣服，就会对此感到满足。",
+          "R": "如果我们有食物吃、有衣服穿，就应该满足了。"
         }
       },
       "decisions": [
@@ -1784,6 +2169,26 @@
           "L": "А желающие обогащаться впадают в искушение, и в сеть, и во многие безрассудные и вредные желания, которые погружают людей в гибель и пагубу.",
           "B": "А кто хочет разбогатеть, тот впадает в искушение и в ловушку, во многие безрассудные и вредные желания, которые тянут людей вниз, к разорению и гибели.",
           "R": "Люди, которые хотят разбогатеть, поддаются искушению поступать плохо. Они попадают в ловушку. Им хочется многого глупого, что вредит им. Всё это тянет людей вниз, пока они не погибнут."
+        },
+        "uk": {
+          "L": "А ті, що хочуть багатіти, впадають у спокусу, і в пастку, і в багато безглуздих і шкідливих бажань, які занурюють людей у загибель і погибель.",
+          "B": "Ті, хто хоче розбагатіти, потрапляють у спокусу й пастку, у багато безглуздих і шкідливих бажань, які тягнуть людей на дно, до руїни й загибелі.",
+          "R": "Людей, які хочуть бути багатими, спокушає робити погане. Вони потрапляють у пастку. Вони хочуть багато безглуздих речей, які шкодять їм. Ці речі тягнуть людей донизу, аж поки ті не загинуть."
+        },
+        "ja": {
+          "L": "しかし、金持ちになりたいと思う者たちは、誘惑とわなと、人々を破滅と滅びに沈める多くの愚かで有害な欲望とに陥ります。",
+          "B": "金持ちになりたいと願う人々は、誘惑とわなに陥り、また多くの愚かで有害な欲望に陥ります。その欲望は人を破滅と滅びに沈めます。",
+          "R": "お金持ちになりたいと思う人たちは、悪いことをしたくなる誘惑を受けます。そして、わなにかかってしまいます。多くのばかげた、自分を傷つけるものを欲しがるようになります。そういうものは、人を引きずり下ろし、ついには滅ぼしてしまいます。"
+        },
+        "id": {
+          "L": "Tetapi mereka yang ingin menjadi kaya jatuh ke dalam pencobaan dan jerat dan banyak keinginan yang bodoh dan yang mencelakakan, yang menenggelamkan manusia ke dalam kehancuran dan kebinasaan.",
+          "B": "Mereka yang ingin menjadi kaya jatuh ke dalam pencobaan dan perangkap, dan ke dalam banyak keinginan yang bodoh dan berbahaya, yang menyeret manusia ke dalam kehancuran dan kebinasaan.",
+          "R": "Orang-orang yang ingin menjadi kaya tergoda untuk berbuat salah. Mereka terjebak dalam perangkap. Mereka menginginkan banyak hal bodoh yang mencelakakan mereka. Hal-hal itu menyeret orang ke bawah sampai mereka binasa."
+        },
+        "zh": {
+          "L": "但是那些想要富有的人，会掉进试探和陷阱，掉进许多愚蠢而有害的欲望里，这些欲望把人淹没在毁灭和沦亡之中。",
+          "B": "想要发财的人会陷入试探和陷阱，陷入许多愚蠢而有害的欲望，这些欲望把人拖下去，使人败坏、灭亡。",
+          "R": "想要变得富有的人会受到引诱去做错事。他们掉进了陷阱。他们想要很多愚蠢的东西，这些东西会伤害他们。这些东西把人往下拉，直到他们被毁灭。"
         }
       },
       "decisions": [
@@ -1972,6 +2377,26 @@
           "L": "Ведь корень всех зол — сребролюбие, к которому некоторые стремясь, отклонились от веры и сами себя пронзили многими страданиями.",
           "B": "Ведь любовь к деньгам — корень всякого зла. Некоторые, стремясь к деньгам, отклонились от веры и пронзили себя многими страданиями.",
           "R": "Любовь к деньгам ведёт ко всякому злу. Некоторые люди так хотели денег, что отвернулись от веры. Они причинили себе много боли и горя."
+        },
+        "uk": {
+          "L": "Бо корінь усякого зла — грошолюбство, якого деякі прагнучи, збилися з віри і самі себе прошили багатьма муками.",
+          "B": "Бо грошолюбство — корінь усякого зла. Деякі люди, прагнучи грошей, відбилися від віри і завдали собі багато болю.",
+          "R": "Любов до грошей веде до всякого зла. Деякі люди так хотіли грошей, що відвернулися від віри. Вони завдали собі багато болю й смутку."
+        },
+        "ja": {
+          "L": "実に、金銭を愛することは、あらゆる種類の悪の根です。ある人々は、それを追い求めて信仰から迷い出、多くの苦痛で自分自身を突き刺しました。",
+          "B": "お金を愛することは、あらゆる種類の悪の根です。お金を追い求めたある人々は、信仰から迷い出て、多くの苦しみで自分の身を刺し貫きました。",
+          "R": "お金を愛することは、あらゆる悪につながります。お金をとても欲しがったために、信仰から離れてしまった人たちもいます。その人たちは、自分で自分に多くの痛みと悲しみをもたらしました。"
+        },
+        "id": {
+          "L": "Sebab cinta uang adalah akar segala macam kejahatan; beberapa orang, karena memburunya, telah menyimpang dari iman dan menyiksa diri mereka dengan berbagai-bagai duka.",
+          "B": "Sebab cinta uang adalah akar segala macam kejahatan. Beberapa orang, karena mengejar uang, telah menyimpang dari iman dan menikam diri mereka dengan banyak dukacita.",
+          "R": "Mencintai uang membawa kepada segala macam kejahatan. Ada orang-orang yang begitu menginginkan uang sehingga mereka berpaling dari iman. Mereka telah mendatangkan banyak rasa sakit dan kesedihan bagi diri mereka sendiri."
+        },
+        "zh": {
+          "L": "因为贪爱钱财是各样恶事的一个根源；有些人追求它，就从信仰中迷失了，又用许多痛苦刺伤了自己。",
+          "B": "因为贪爱钱财是各种恶事的根源。有些人一心想要钱，就偏离了信仰，使自己被许多忧伤刺透。",
+          "R": "贪爱钱财会带来各种各样的恶事。有些人太想要钱了，结果离开了信仰。他们给自己带来了许多痛苦和悲伤。"
         }
       },
       "decisions": [
@@ -2068,6 +2493,50 @@
           "reason": "The meaning decision reads the phrase as a root of all kinds of evil (m1). Balanced says \"mọi thứ\" so the reader does not hear that every evil comes from money alone.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n54006010001",
+            "n54006010003",
+            "n54006010005"
+          ],
+          "choice": "\"あらゆる種類の悪の根\" (L, B)",
+          "alternatives": [
+            "\"すべての悪の根\""
+          ],
+          "reason": "The Greek says \"a root\" of all evils (m1, footnoted); Japanese has no article, so \"あらゆる種類の\" keeps the English reading that money is a root of every kind of evil, not the only root of all evil.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n54006010001",
+            "n54006010003",
+            "n54006010005"
+          ],
+          "choice": "各样恶事的一个根源 (L); 各种恶事的根源 (B)",
+          "alternatives": [
+            "万恶之根"
+          ],
+          "reason": "As the English, \"a root of all kinds of evil\" (m1): not every evil comes from the love of money.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2150,6 +2619,26 @@
           "L": "Ты же, о человек Божий, беги от этого, а стремись к праведности, благочестию, вере, любви, стойкости, кротости.",
           "B": "Но ты, человек Божий, беги от всего этого и стремись к праведности, благочестию, вере, любви, стойкости и кротости.",
           "R": "Но ты принадлежишь Богу. Поэтому беги от всего этого. Старайся жить праведно, почитать Бога, иметь веру и любовь, не сдаваться и быть кротким."
+        },
+        "uk": {
+          "L": "А ти, о людино Божа, утікай від цього; женися ж за праведністю, благочестям, вірою, любовʼю, стійкістю, лагідністю.",
+          "B": "А ти, Божа людино, тікай від усього цього і прагни праведності, благочестя, віри, любові, стійкості й лагідності.",
+          "R": "Але ти належиш Богові. Тож тікай від усього цього. Старайся жити праведно, шанувати Бога, мати віру й любов, не здаватися і бути лагідним."
+        },
+        "ja": {
+          "L": "しかし、神の人よ、あなたはこれらのことから逃れなさい。そして、義と敬虔と信仰と愛と忍耐と柔和を追い求めなさい。",
+          "B": "しかし、神の人であるあなたは、これらのことを避けなさい。そして、義、神を敬う心、信仰、愛、忍耐、柔和を追い求めなさい。",
+          "R": "けれども、あなたは神のものです。ですから、これらのことから逃げてください。そして、正しい生き方をし、神を敬い、信仰と愛を持ち、最後まで耐え、優しい人であるように努めてください。"
+        },
+        "id": {
+          "L": "Tetapi engkau, hai manusia Allah, jauhilah semuanya itu; kejarlah kebenaran, kesalehan, iman, kasih, ketekunan, kelemahlembutan.",
+          "B": "Tetapi engkau, hai abdi Allah, larilah dari semua itu, dan kejarlah keadilan, kesalehan, iman, kasih, ketekunan, dan kelemahlembutan.",
+          "R": "Tetapi engkau milik Allah. Jadi larilah dari semua hal itu. Berusahalah dengan sungguh-sungguh untuk hidup benar, menghormati Allah, beriman dan mengasihi, tetap bertahan, dan bersikap lemah lembut."
+        },
+        "zh": {
+          "L": "但是你，{{god_term:神|上帝}}的人哪，要逃离这些事；要追求义、敬虔、信心、爱、坚忍、柔和。",
+          "B": "但你这{{god_term:神|上帝}}的人，要远离这一切，追求义、敬虔、信心、爱、坚忍和柔和。",
+          "R": "但你是属于{{god_term:神|上帝}}的人。所以，要远远避开这一切。要努力过正直的生活，尊敬{{god_term:神|上帝}}，有信心和爱心，坚持下去，并且待人温和。"
         }
       },
       "decisions": [
@@ -2290,6 +2779,135 @@
           "reason": "The key term \"righteousness\", as in Romans; here it is conduct, so Readable turns it into a verb.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n54006011003",
+            "n54006011004",
+            "n54006011005"
+          ],
+          "choice": "\"людино Божа\" (L); \"Божа людино\" (B), in the vocative",
+          "alternatives": [
+            "\"чоловіче Божий\""
+          ],
+          "reason": "\"Людина Божа\" is the Ukrainian form of the prophets' title; the vocative case marks the address without \"о\" at Balanced.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-2",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n54006011014"
+          ],
+          "choice": "\"стійкість\"",
+          "alternatives": [
+            "\"терпеливість\""
+          ],
+          "reason": "As in James, \"стійкість\" for the endurance that keeps going under pressure.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n54006011004",
+            "n54006011005",
+            "n54006011014"
+          ],
+          "choice": "\"神の人\" (L, B), \"あなたは神のものです\" (R); \"忍耐\" for endurance",
+          "alternatives": [
+            "\"神に仕える人\""
+          ],
+          "reason": "Man of God is a title of Israel's prophets and leaders (m1); the phrase speaks of Timothy's calling, not his sex, so no gender span is needed, and Readable says what it means, as the English Readable does. 忍耐 is kept for endurance, as the brief settles.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n54006011003",
+            "n54006011004",
+            "n54006011005"
+          ],
+          "choice": "\"manusia Allah\" (L); \"abdi Allah\" (B)",
+          "alternatives": [
+            "\"hamba Allah\""
+          ],
+          "reason": "Man of God is a title of Israel's prophets and leaders (m1); Balanced uses \"abdi Allah\", a servant devoted to God, which carries the honor of the title.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-id-2",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n54006011003",
+            "n54006011004",
+            "n54006011005"
+          ],
+          "choice": "\"kebenaran\" (L), \"keadilan\" (B) for righteousness",
+          "alternatives": [],
+          "reason": "In a list of virtues next to faith and godliness, Balanced says \"keadilan\" so it is not read as truth.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n54006011004",
+            "n54006011005"
+          ],
+          "choice": "{{god_term:神|上帝}}的人",
+          "alternatives": [
+            "神人",
+            "属神的人"
+          ],
+          "reason": "The title of the prophets (m1). \"神人\" would read \"上帝人\" with the setting, so \"的\" is written; Readable says \"属于{{god_term:神|上帝}}的人\" with the English Readable.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2378,6 +2996,26 @@
           "L": "Подвизайся добрым подвигом веры, ухватись за вечную жизнь, к которой ты призван и [о которой] исповедал доброе исповедание перед многими свидетелями.",
           "B": "Состязайся в добром состязании веры. Держись за вечную жизнь, к которой ты был призван, когда дал доброе исповедание перед многими свидетелями.",
           "R": "Продолжай упорно бороться за веру, как спортсмен на состязании. Держись за вечную жизнь, к которой Бог призвал тебя. Ты сказал многим людям, что веришь в Иисуса."
+        },
+        "uk": {
+          "L": "Змагайся в доброму змаганні віри, вхопися за вічне життя, до якого ти був покликаний і [про яке] ти визнав добре визнання перед багатьма свідками.",
+          "B": "Добре змагайся в доброму змаганні віри. Тримайся вічного життя, до якого тебе покликано, коли ти склав своє добре визнання перед багатьма свідками.",
+          "R": "Щосили борися за віру, як атлет на змаганнях. Тримайся вічного життя, до якого покликав тебе Бог. Ти сказав багатьом людям, що віриш в Ісуса."
+        },
+        "ja": {
+          "L": "信仰の立派な戦いを戦い、永遠の命をつかみなさい。あなたはそのために召され、多くの証人の前で立派な告白をしたのです。",
+          "B": "信仰の立派な競技を戦い抜き、永遠の命をしっかりとつかみなさい。あなたは、多くの証人の前で立派な信仰の告白をしたとき、この命へと召されたのです。",
+          "R": "競走する選手のように、信仰のために全力で戦い続けてください。神があなたを招いてくださった永遠の命を、しっかりとつかんでいてください。あなたは、多くの人の前で、イエスを信じていると言い表しました。"
+        },
+        "id": {
+          "L": "Bertandinglah dalam pertandingan iman yang benar; rebutlah hidup yang kekal, yang untuknya engkau telah dipanggil dan [tentangnya] engkau telah mengikrarkan ikrar yang benar di depan banyak saksi.",
+          "B": "Bertandinglah dengan baik dalam pertandingan iman yang baik. Rebutlah hidup kekal, yang untuknya engkau telah dipanggil ketika engkau mengucapkan pengakuan yang baik di depan banyak saksi.",
+          "R": "Teruslah berjuang dengan sungguh-sungguh untuk iman, seperti seorang atlet dalam perlombaan. Peganglah hidup kekal yang untuknya Allah telah memanggil engkau. Engkau telah memberi tahu banyak orang bahwa engkau percaya kepada Yesus."
+        },
+        "zh": {
+          "L": "要在信仰的美好竞赛中奋力竞争，持定永生；你是为此蒙召的，并且在许多见证人面前作了那美好的宣认。",
+          "B": "要在信仰这场美好的比赛中全力以赴。要持定永生；你蒙召得着永生，正是你在许多见证人面前作出美好宣认的时候。",
+          "R": "要像赛跑的运动员那样，为信仰全力奋斗。要紧紧抓住{{god_term:神|上帝}}呼召你去得的永生。你曾经告诉许多人，你相信耶稣。"
         }
       },
       "decisions": [
@@ -2663,6 +3301,116 @@
           "reason": "The picture is an athletic contest (m1), not the soldier's campaign of 1:18. Literal keeps the church phrase built on \"подвиг\", the struggle of an athlete; Balanced says it in modern words.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n54006012001",
+            "n54006012004"
+          ],
+          "choice": "\"змагайся в доброму змаганні\"",
+          "alternatives": [
+            "\"воюй добрий бій\""
+          ],
+          "reason": "The words are from athletic contests; 1:18 used a soldier's words, and Ukrainian keeps the two pictures apart.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n54006012001",
+            "n54006012004"
+          ],
+          "choice": "\"戦いを戦い\" (L), \"競技を戦い抜き\" (B), \"競走する選手のように\" (R)",
+          "alternatives": [
+            "\"戦い\" at every level"
+          ],
+          "reason": "The words here are from athletic contests (m1), not the soldier's campaign of 1:18. Literal keeps the familiar repeated phrase; Balanced and Readable bring out the games, as the English Balanced and Readable do.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n54006012001",
+            "n54006012002",
+            "n54006012003",
+            "n54006012004",
+            "n54006012005",
+            "n54006012006"
+          ],
+          "choice": "\"bertandinglah dalam pertandingan\"",
+          "alternatives": [],
+          "reason": "The contest is athletic (m1), so Indonesian speaks of a match, not of war, at Literal and Balanced.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n54006012001",
+            "n54006012004"
+          ],
+          "choice": "竞赛 (L); 比赛 (B); 像赛跑的运动员 (R)",
+          "alternatives": [
+            "打那美好的仗"
+          ],
+          "reason": "The athlete's contest (m1), kept apart from the soldier's campaign of 1:18, which has different Greek words.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n54006012018"
+          ],
+          "choice": "宣认",
+          "alternatives": [
+            "见证",
+            "认信"
+          ],
+          "reason": "homologia is a public confession of faith (m2); the same word for Jesus' confession before Pilate in verse 13.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2804,6 +3552,26 @@
           "L": "Повелеваю тебе перед Богом, оживляющим всё, и {{christos:Христом|Мессией}} Иисусом, засвидетельствовавшим перед Понтием Пилатом доброе исповедание, \\v 14 соблюсти заповедь незапятнанной [и] безупречной до явления Господа нашего Иисуса {{christos:Христа|Мессии}}, \\v 15 которое [Бог] в свои времена покажет, блаженный и единственный Властитель, Царь царствующих и Господь господствующих, \\v 16 единственный имеющий бессмертие, обитающий в неприступном свете, которого никто из людей не видел и видеть не может. Ему честь и вечная держава. Аминь.",
           "B": "Перед Богом, который даёт жизнь всему, и перед {{christos:Христом|Мессией}} Иисусом, который дал доброе исповедание, когда свидетельствовал перед Понтием Пилатом, я повелеваю тебе \\v 14 исполнять эту заповедь без пятна и упрёка, пока не явится наш Господь Иисус {{christos:Христос|Мессия}}. \\v 15 Бог совершит это в должное время — блаженный и единственный Владыка, Царь царей и Господь господ, \\v 16 единственный, кто бессмертен, кто живёт в свете, к которому никто не может приблизиться, кого никто не видел и не может увидеть. Ему честь и вечная власть. Аминь.",
           "R": "Бог даёт жизнь всему. {{christos:Христос|Мессия}} Иисус сказал правду о том, кто {{deity_pronoun:он|Он}}, когда стоял перед Понтием Пилатом. Перед Богом и {{christos:Христом|Мессией}} Иисусом я даю тебе такое повеление: \\v 14 исполняй всё, чему тебя учили, чтобы никто не мог найти в тебе вины, пока наш Господь Иисус {{christos:Христос|Мессия}} не придёт снова. \\v 15 Бог сделает это в то время, которое {{deity_pronoun:он|Он}} выберет. Бог благословен, и {{deity_pronoun:он|Он}} единственный правитель, Царь над всеми царями и Господь над всеми господами. \\v 16 Только Бог никогда не умрёт. Бог живёт в таком ярком свете, что никто не может к нему приблизиться. Никто никогда не видел {{deity_pronoun:его|Его}}, и никто не может {{deity_pronoun:его|Его}} увидеть. Пусть честь и вечная власть принадлежат {{deity_pronoun:ему|Ему}}. Аминь."
+        },
+        "uk": {
+          "L": "Наказую тобі перед Богом, який оживляє все, і {{christos:Христом|Месією}} Ісусом, який засвідчив добре визнання перед Понтієм Пилатом, \\v 14 щоб ти зберіг заповідь незаплямованою, бездоганною до появи нашого Господа Ісуса {{christos:Христа|Месії}}, \\v 15 яку [Бог] покаже у свій час, блаженний і єдиний Володар, Цар царів і Господь панів, \\v 16 єдиний, хто має безсмертя, хто живе в неприступному світлі, якого ніхто з людей не бачив і бачити не може. Йому [нехай буде] честь і вічна влада. Амінь.",
+          "B": "Перед Богом, який дає життя всьому, і перед {{christos:Христом|Месією}} Ісусом, який склав добре визнання, коли свідчив перед Понтієм Пилатом, я наказую тобі \\v 14 виконувати цю заповідь без вади й докору, аж поки не зʼявиться наш Господь Ісус {{christos:Христос|Месія}}. \\v 15 Бог здійснить це в належний час — блаженний і єдиний Володар, Цар царів і Господь панів, \\v 16 єдиний, хто безсмертний, хто живе у світлі, до якого ніхто не може наблизитися, якого ніхто не бачив і не може побачити. Йому честь і вічна сила. Амінь.",
+          "R": "Бог дає життя всьому. {{christos:Христос|Месія}} Ісус сказав правду про те, хто {{deity_pronoun:він|Він}}, коли стояв перед Понтієм Пилатом. Перед Богом і перед {{christos:Христом|Месією}} Ісусом я даю тобі цей наказ: \\v 14 виконуй усе, чого тебе навчили, щоб ніхто не міг тобі дорікнути, аж поки наш Господь Ісус {{christos:Христос|Месія}} не прийде знову. \\v 15 Бог зробить це в той час, який {{deity_pronoun:він|Він}} вибере. Бог благословенний, і {{deity_pronoun:він|Він}} єдиний правитель, Цар над усіма царями і Господь над усіма панами. \\v 16 Тільки Бог ніколи не може померти. Бог живе у світлі, такому яскравому, що ніхто не може до нього наблизитися. Ніхто ніколи не бачив {{deity_pronoun:його|Його}}, і ніхто не може {{deity_pronoun:його|Його}} побачити. Нехай честь і вічна сила належать {{deity_pronoun:йому|Йому}}. Амінь."
+        },
+        "ja": {
+          "L": "万物に命を与えておられる神と、ポンティオ・ピラトの前で立派な告白をもって証しをされた{{christos:キリスト|メシア}}・イエスとの前で、わたしはあなたに命じます。\\v 14 わたしたちの主イエス・{{christos:キリスト|メシア}}の現れの時まで、この戒めを汚れなく、非難されるところなく守りなさい。\\v 15 その現れを、[神は]ご自分の時に示してくださいます。[神は]祝福に満ちた唯一の主権者、王たちの王、主たちの主、\\v 16 ただひとり不死を持ち、近づくことのできない光の中に住み、人間のだれ一人見たことがなく、見ることもできない方です。この方に、誉れと永遠の支配が[ありますように]。アーメン。",
+          "B": "すべてのものに命を与えておられる神の前で、またポンティオ・ピラトの前で証しをし、立派な告白をされた{{christos:キリスト|メシア}}・イエスの前で、わたしはあなたに命じます。\\v 14 わたしたちの主イエス・{{christos:キリスト|メシア}}が現れられる時まで、この戒めを、汚れも非難されるところもなく守りなさい。\\v 15 神は、定められた時に、それを実現してくださいます。神は、祝福に満ちた唯一の支配者、王の王、主の主であり、\\v 16 ただひとり死ぬことのない方、だれも近づくことのできない光の中に住んでおられる方です。人はだれ一人、神を見たことがなく、見ることもできません。この方に、誉れと永遠の力がありますように。アーメン。",
+          "R": "神は、すべてのものに命を与えておられます。{{christos:キリスト|メシア}}・イエスは、ポンティオ・ピラトの前に立たれたとき、ご自分がだれであるかについて、本当のことを言われました。その神と{{christos:キリスト|メシア}}・イエスの前で、わたしはあなたに命じます。\\v 14 わたしたちの主イエス・{{christos:キリスト|メシア}}がもう一度来られる時まで、あなたが教えられたことをすべて守り、だれからも責められることのないようにしてください。\\v 15 神は、ご自分が決めておられる時に、そのことを実現してくださいます。神は祝福に満ちた方で、ただひとりの支配者、すべての王の上に立つ王、すべての主の上に立つ主です。\\v 16 神だけが、決して死ぬことのない方です。神は、だれも近づくことができないほど明るい光の中に住んでおられます。神を見た人はだれもいませんし、見ることのできる人もいません。どうか、誉れと永遠の力が神にありますように。アーメン。"
+        },
+        "id": {
+          "L": "Di hadapan Allah, yang memberikan hidup kepada segala sesuatu, dan di hadapan {{christos:Kristus|Mesias}} Yesus, yang telah mengikrarkan ikrar yang benar dalam kesaksian-{{deity_pronoun:nya|Nya}} di hadapan Pontius Pilatus, kuserukan kepadamu \\v 14 supaya engkau menuruti perintah ini dengan tidak bercacat dan tidak bercela sampai kedatangan Tuhan kita Yesus {{christos:Kristus|Mesias}}, \\v 15 yang akan ditunjukkan [Allah] pada waktu yang ditentukan-{{deity_pronoun:nya|Nya}}, {{deity_pronoun:dia|Dia}} yang terpuji dan satu-satunya Penguasa, Raja di atas segala raja dan Tuan di atas segala tuan, \\v 16 satu-satunya yang tidak takluk kepada maut, yang bersemayam dalam terang yang tak terhampiri, yang tidak pernah dilihat oleh seorang manusia pun dan memang manusia tidak dapat melihat-{{deity_pronoun:nya|Nya}}. Bagi-{{deity_pronoun:nya|Nya}} hormat dan kuasa yang kekal. Amin.",
+          "B": "Di hadapan Allah, yang memberikan hidup kepada segala sesuatu, dan di hadapan {{christos:Kristus|Mesias}} Yesus, yang mengucapkan pengakuan yang baik ketika {{deity_pronoun:dia|Dia}} bersaksi di depan Pontius Pilatus, aku berpesan kepadamu \\v 14 supaya engkau menjalankan perintah ini tanpa cacat atau cela sampai Tuhan kita Yesus {{christos:Kristus|Sang Mesias}} menyatakan diri. \\v 15 Allah akan mewujudkannya pada waktu yang tepat: Dia, Penguasa yang terpuji dan satu-satunya, Raja segala raja dan Tuan segala tuan, \\v 16 satu-satunya yang kekal tak berkematian, yang tinggal dalam terang yang tidak dapat dihampiri, yang tidak pernah dilihat dan tidak dapat dilihat oleh siapa pun. Bagi-{{deity_pronoun:nya|Nya}} hormat dan kuasa yang kekal. Amin.",
+          "R": "Allah memberikan hidup kepada segala sesuatu. {{christos:Kristus|Mesias}} Yesus mengatakan kebenaran tentang siapa diri-{{deity_pronoun:nya|Nya}} ketika {{deity_pronoun:dia|Dia}} berdiri di hadapan Pontius Pilatus. Di hadapan Allah dan {{christos:Kristus|Mesias}} Yesus, saya memberikan perintah ini kepadamu: \\v 14 taatilah semua yang telah diajarkan kepadamu, sehingga tidak seorang pun dapat mencela engkau, sampai Tuhan kita Yesus {{christos:Kristus|Sang Mesias}} datang kembali. \\v 15 Allah akan membuat hal ini terjadi pada waktu yang {{deity_pronoun:dia|Dia}} pilih. Allah patut dipuji, dan {{deity_pronoun:dia|Dia}}lah satu-satunya penguasa, Raja atas semua raja dan Tuhan atas semua tuan. \\v 16 Hanya Allah yang tidak dapat mati. Allah tinggal di dalam terang yang begitu terang sehingga tidak seorang pun dapat mendekatinya. Tidak seorang pun pernah melihat-{{deity_pronoun:nya|Nya}}, dan tidak seorang pun dapat melihat-{{deity_pronoun:nya|Nya}}. Biarlah hormat dan kuasa yang kekal menjadi milik-{{deity_pronoun:nya|Nya}}. Amin."
+        },
+        "zh": {
+          "L": "我在使万物有生命的{{god_term:神|上帝}}面前，并在{{christos:基督|弥赛亚}}耶稣面前嘱咐你——{{deity_pronoun:他|祂}}在本丢彼拉多面前作见证时，作了那美好的宣认——\\v 14 要遵守这命令，毫无玷污，无可指摘，直到我们主耶稣{{christos:基督|弥赛亚}}显现；\\v 15 这显现，[{{god_term:神|上帝}}]要在[{{deity_pronoun:他|祂}}]自己所定的时候使它实现；{{deity_pronoun:他|祂}}是那当受称颂、独一的掌权者，是万王之王、万主之主，\\v 16 是唯一拥有不朽生命的，住在无人能接近的光中，是没有人曾见过、也没有人能见的。愿尊贵和永恒的权能都属于{{deity_pronoun:他|祂}}。阿们。",
+          "B": "我在使万物有生命的{{god_term:神|上帝}}面前，又在{{christos:基督|弥赛亚}}耶稣面前——{{deity_pronoun:他|祂}}在本丢彼拉多面前作见证时，作了美好的宣认——嘱咐你：\\v 14 要遵守这命令，没有瑕疵，无可责备，直到我们的主耶稣{{christos:基督|弥赛亚}}显现。\\v 15 {{god_term:神|上帝}}要在适当的时候使这事实现。{{deity_pronoun:他|祂}}是当受称颂、独一的统治者，是万王之王、万主之主，\\v 16 唯有{{deity_pronoun:他|祂}}是不死的，{{deity_pronoun:他|祂}}住在无人能接近的光中，没有人见过{{deity_pronoun:他|祂}}，也没有人能见{{deity_pronoun:他|祂}}。愿尊贵和永恒的权能归给{{deity_pronoun:他|祂}}。阿们。",
+          "R": "{{god_term:神|上帝}}使万物有生命。{{christos:基督|弥赛亚}}耶稣站在本丢彼拉多面前的时候，说出了关于{{deity_pronoun:他|祂}}自己是谁的真相。我在{{god_term:神|上帝}}和{{christos:基督|弥赛亚}}耶稣面前给你这个命令：\\v 14 要遵守你所受的一切教导，使没有人能挑你的错，直到我们的主耶稣{{christos:基督|弥赛亚}}再来。\\v 15 {{god_term:神|上帝}}会在{{deity_pronoun:他|祂}}所选定的时候使这事发生。{{god_term:神|上帝}}是当受称颂的，{{deity_pronoun:他|祂}}是唯一的统治者，是统管众王的王，统管众主的主。\\v 16 只有{{god_term:神|上帝}}永远不会死。{{god_term:神|上帝}}住在极其明亮的光中，没有人能靠近那光。从来没有人见过{{deity_pronoun:他|祂}}，也没有人能见{{deity_pronoun:他|祂}}。愿尊贵和永远的权能都属于{{deity_pronoun:他|祂}}。阿们。"
         }
       },
       "decisions": [
@@ -3321,6 +4089,177 @@
           "reason": "\"Epiphaneia\", Christ's appearing (m3), is kept apart from \"parousia\", which the style guide renders \"пришествие\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n54006015015",
+            "n54006015016",
+            "n54006015017"
+          ],
+          "choice": "\"Господь панів\" (L, B); \"Господь над усіма панами\" (R)",
+          "alternatives": [
+            "\"Господь господарів\""
+          ],
+          "reason": "Ukrainian keeps \"Господь\" for the Lord and \"пан\" for human lords, so the title reads \"Цар царів і Господь панів\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n54006013016",
+            "n54006013017",
+            "n54006014009"
+          ],
+          "choice": "\"ポンティオ・ピラト\" for Pontius Pilate; \"現れ\" (L), \"現れられる\" (B), \"もう一度来られる\" (R) for the appearing",
+          "alternatives": [
+            "\"ポンテオ・ピラト\"",
+            "\"顕現\""
+          ],
+          "reason": "ピラト is the brief's form, and ポンティオ follows the same pattern as the conventional Japanese form of the name. The appearing is Christ's coming (m3); Readable says so plainly, as the English Readable does and as 1 Thessalonians says 来られる.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-2",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "n54006015004",
+            "n54006015009"
+          ],
+          "choice": "\"[神は]\" bracketed twice at Literal; the doxology \"誉れと永遠の支配が[ありますように]\"",
+          "alternatives": [
+            "\"[彼は]\""
+          ],
+          "reason": "The Greek moves from Christ's appearing to God who shows it without naming God (m5); Japanese needs the subject stated, and Literal brackets it, as the English Literal does. The titles are \"王たちの王、主たちの主\" at Literal to keep the Greek plurals.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n54006015006",
+            "n54006015007",
+            "n54006015008",
+            "n54006015009",
+            "n54006015010",
+            "n54006015011",
+            "n54006015012",
+            "n54006015013",
+            "n54006015014",
+            "n54006015015",
+            "n54006015016",
+            "n54006015017",
+            "n54006016001",
+            "n54006016002",
+            "n54006016003",
+            "n54006016004",
+            "n54006016005",
+            "n54006016006",
+            "n54006016007",
+            "n54006016008",
+            "n54006016009",
+            "n54006016010",
+            "n54006016011",
+            "n54006016012",
+            "n54006016013",
+            "n54006016014"
+          ],
+          "choice": "\"Raja segala raja dan Tuan segala tuan\" (B); \"Tuhan atas semua tuan\" (R)",
+          "alternatives": [
+            "\"Tuhan di atas segala tuhan\""
+          ],
+          "reason": "The title of God (m4): the Greek has \"lord of those who rule as lords\", so Literal and Balanced say \"Tuan\" over human \"tuan\"; Readable uses \"Tuhan\", the word for God's lordship.",
+          "uncertain": true,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n54006014009"
+          ],
+          "choice": "显现 (L, B); 再来 (R)",
+          "alternatives": [
+            "来临"
+          ],
+          "reason": "epiphaneia is \"显现\", as 2 Thessalonians 2:8, kept apart from parousia (来临); Readable says \"comes again\" with the English Readable (m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n54006015006"
+          ],
+          "choice": "当受称颂的",
+          "alternatives": [
+            "有福的"
+          ],
+          "reason": "makarios of God, as 1:11.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-3",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "n54006013014"
+          ],
+          "choice": "——……——",
+          "alternatives": [],
+          "reason": "Chinese puts the clause about Jesus' confession before Pilate between dashes so that \"嘱咐你\" can follow its objects; it stays in verse 13.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3434,6 +4373,26 @@
           "L": "Богатым в нынешнем веке повелевай не высокомудрствовать и не надеяться на неверность богатства, но на Бога, дающего нам всё обильно для наслаждения, \\v 18 делать добро, богатеть добрыми делами, быть щедрыми, общительными, \\v 19 собирая себе сокровище — доброе основание для будущего, чтобы ухватиться за истинную жизнь.",
           "B": "Тем, кто богат в нынешнем мире, повелевай не гордиться и не надеяться на богатство, которое так ненадёжно, а надеяться на Бога, который щедро даёт нам всё для радости. \\v 18 Вели им делать добро, быть богатыми добрыми делами, щедро давать и делиться с другими. \\v 19 Так они соберут себе сокровище — прочное основание для будущего века, чтобы ухватиться за жизнь, которая есть настоящая жизнь.",
           "R": "У некоторых людей в этом мире много денег. Скажи им, чтобы они не гордились и не надеялись на деньги, потому что деньги не вечны. Пусть они надеются на Бога. Бог даёт нам всё, что нужно, и даже больше, чтобы мы этому радовались. \\v 18 Скажи им, чтобы они делали добро. Пусть они будут богаты добрыми делами и с радостью дают и делятся. \\v 19 Это будет как сокровище, которое они откладывают на будущее. Тогда у них будет жизнь, которая и есть настоящая жизнь."
+        },
+        "uk": {
+          "L": "Багатим у теперішньому віці наказуй не гордувати і не покладати надії на непевність багатства, а на Бога, який щедро дає нам усе для втіхи, \\v 18 робити добро, багатіти добрими ділами, бути щедрими, готовими ділитися, \\v 19 збираючи собі добру основу на майбутнє, щоб ухопитися за справжнє життя.",
+          "B": "Тим, хто багатий у цьому теперішньому світі, накажи не гордитися і не покладати надії на багатство, таке непевне, а на Бога, який щедро дає нам усе, щоб ми втішалися. \\v 18 Накажи їм робити добро, багатіти добрими ділами, щедро давати і ділитися. \\v 19 Так вони збиратимуть собі скарб як міцну основу для майбутнього віку, щоб ухопитися за життя, яке є справжнім життям.",
+          "R": "Деякі люди мають у цьому світі багато грошей. Скажи їм не бути гордими і не покладатися на гроші, бо гроші не тривають довго. Вони повинні покладатися на Бога. Бог дає нам усе, що нам потрібно, і навіть більше, щоб ми могли цим тішитися. \\v 18 Скажи їм робити добро. Вони мають бути багатими на добрі справи і радо давати та ділитися. \\v 19 Це буде наче збирати скарб на майбутнє. Тоді в них буде життя, яке є справжнім життям."
+        },
+        "ja": {
+          "L": "今の世で富んでいる人々に命じなさい。高ぶらないように、また、不確かな富に望みを置かないように、むしろ、わたしたちにすべてのものを豊かに与えて楽しませてくださる神に[望みを置くように]。\\v 18 [また、]善を行い、善い行いに富み、惜しみなく与え、分け合うように[命じなさい]。\\v 19 [こうして]将来のために自分自身のための良い土台を蓄え、本当の命をつかむためです。",
+          "B": "この世で富んでいる人々に命じなさい。高ぶらず、不確かな富に望みを置かず、わたしたちにすべてのものを豊かに与えて楽しませてくださる神に、望みを置くようにと。\\v 18 善を行い、善い行いに富み、惜しみなく与え、喜んで分け合うように命じなさい。\\v 19 そうすれば、彼らは来るべき世のために、確かな土台となる宝を自分のために蓄え、まことの命をつかむことができます。",
+          "R": "この世でたくさんのお金を持っている人たちがいます。その人たちに、高慢にならないように、お金に頼らないように言ってください。お金はいつまでも続くものではないからです。その人たちは神に頼るべきです。神は、わたしたちに必要なものを、あり余るほど与えてくださり、それを楽しめるようにしてくださいます。\\v 18 良いことをするように言ってください。良い行いに富み、喜んで人に与え、分け合う人になるべきです。\\v 19 それは、将来のために宝をためておくようなものです。そうすれば、本当の命を自分のものにすることができます。"
+        },
+        "id": {
+          "L": "Perintahkanlah kepada orang-orang yang kaya di dunia sekarang ini supaya mereka jangan tinggi hati dan jangan berharap pada kekayaan yang tidak tentu, melainkan pada Allah, yang dengan limpah memberikan kepada kita segala sesuatu untuk dinikmati, \\v 18 supaya mereka berbuat baik, menjadi kaya dalam perbuatan-perbuatan baik, suka memberi dan membagi, \\v 19 dan dengan demikian mengumpulkan bagi diri mereka suatu dasar yang baik bagi masa yang akan datang, supaya mereka mencapai hidup yang sebenarnya.",
+          "B": "Katakanlah kepada orang-orang yang kaya di dunia sekarang ini supaya mereka tidak sombong dan tidak menaruh pengharapan pada kekayaan, yang begitu tidak pasti, tetapi pada Allah, yang dengan limpah memberikan kepada kita segala sesuatu untuk dinikmati. \\v 18 Katakanlah kepada mereka supaya mereka berbuat baik, menjadi kaya dalam perbuatan baik, memberi dengan murah hati, dan suka berbagi. \\v 19 Dengan cara ini mereka akan mengumpulkan harta bagi diri mereka sebagai dasar yang kokoh bagi zaman yang akan datang, sehingga mereka dapat meraih hidup yang benar-benar hidup.",
+          "R": "Ada orang-orang yang mempunyai banyak uang di dunia ini. Katakanlah kepada mereka supaya mereka tidak sombong, dan tidak mengandalkan uang, karena uang tidak bertahan lama. Mereka harus mengandalkan Allah. Allah memberi kita semua yang kita perlukan, bahkan lebih, supaya kita dapat menikmatinya. \\v 18 Katakanlah kepada mereka supaya mereka melakukan hal-hal yang baik. Mereka harus kaya dalam berbuat baik, dan mereka harus senang memberi dan berbagi. \\v 19 Hal ini seperti menyimpan harta untuk masa depan. Dengan begitu mereka akan memiliki hidup yang sejati."
+        },
+        "zh": {
+          "L": "你要命令那些在现今这个时代富有的人，不要心高气傲，也不要把盼望寄托在靠不住的财富上，而要寄托在{{god_term:神|上帝}}身上；{{deity_pronoun:他|祂}}丰丰富富地供应我们一切，让我们享受；\\v 18 [命令他们]要做好事，要在美好的行为上富有，要慷慨施与，乐于与人分享，\\v 19 这样为自己积存一个良好的根基，留给将来，好让他们抓住那真实的生命。",
+          "B": "你要告诉那些在今世富有的人，不要骄傲，不要把盼望放在那么靠不住的钱财上，而要放在{{god_term:神|上帝}}身上；{{deity_pronoun:他|祂}}丰丰富富地把一切赐给我们享用。\\v 18 你要告诉他们要做好事，在善行上富足，慷慨施与，乐于分享。\\v 19 这样，他们就为自己积存财宝，作为将来那个时代稳固的根基，好让他们抓住那称得上是真正生命的生命。",
+          "R": "有些人在这世上有很多钱。你要告诉他们不要骄傲，也不要信靠钱财，因为钱财不会长久。他们应当信靠{{god_term:神|上帝}}。{{god_term:神|上帝}}把我们需要的一切都赐给我们，而且给得更多，让我们可以享受。\\v 18 你要告诉他们去做好事。他们应当在做好事上富足，并且乐意施舍、与人分享。\\v 19 这就好像为将来储存财宝一样。这样，他们就会得到那真正算得上是生命的生命。"
         }
       },
       "decisions": [
@@ -3616,6 +4575,27 @@
           "reason": "As in the English: the word is \"age\"; Literal keeps \"век\", Balanced and Readable say \"мир\" as Russian speaks of \"этот мир\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n54006017006"
+          ],
+          "choice": "时代 (L); 今世 (B); 这世上 (R)",
+          "alternatives": [
+            "世界"
+          ],
+          "reason": "aiōn is \"时代\" at Literal, as Matthew; Balanced and Readable say \"this world\" with the English levels, not the key term \"world\" (世界, kosmos).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3705,6 +4685,26 @@
           "L": "О Тимофей, храни вверенное, уклоняясь от нечестивого пустословия и противоречий лжеименного знания, \\v 21 которому некоторые предавшись, отклонились от веры.",
           "B": "Тимофей, храни то, что тебе доверено. Уклоняйся от нечестивой пустой болтовни и от противоречий того, что ложно называют знанием. \\v 21 Некоторые увлеклись им и так сбились с пути веры.",
           "R": "Тимофей, береги правду, которую Бог дал тебе. Держись подальше от глупых разговоров, которые не имеют ничего общего с Богом. Держись подальше от людей, которые спорят с правдой и говорят, что у них есть особое знание. Их знание ложное. \\v 21 Некоторые люди поверили в него и отвернулись от веры."
+        },
+        "uk": {
+          "L": "О Тимофію, бережи довірене, уникаючи мирського пустословʼя і суперечностей фальшиво названого знання, \\v 21 яке деякі визнаючи, схибили щодо віри.",
+          "B": "Тимофію, бережи те, що тобі довірено. Уникай безбожних і пустих балачок і суперечностей того, що хибно називають знанням. \\v 21 Деякі вже присвоїли собі його і через це збилися з віри.",
+          "R": "Тимофію, бережи правду, яку дав тобі Бог. Тримайся подалі від безглуздих розмов, які не мають нічого спільного з Богом. Тримайся подалі від людей, які сперечаються з правдою і кажуть, що мають особливе знання. Їхнє знання хибне. \\v 21 Деякі люди повірили в нього і відвернулися від віри."
+        },
+        "ja": {
+          "L": "テモテよ、委ねられたものを守りなさい。俗悪で空しいおしゃべりと、偽って知識と呼ばれているものの反論とを避けなさい。\\v 21 ある人々はそれを公言して、信仰について的を外してしまいました。",
+          "B": "テモテよ、あなたに委ねられたものを守りなさい。神を敬わない空しいおしゃべりや、偽って知識と呼ばれているものの反論を避けなさい。\\v 21 ある人々はその知識を誇って、信仰からそれてしまいました。",
+          "R": "テモテ、神があなたに任せてくださった真理を守ってください。神と関係のない、ばかげた話に近づいてはいけません。真理に反対して、自分たちには特別な知識があると言う人たちにも、近づいてはいけません。その人たちの知識はにせものです。\\v 21 ある人たちはそれを信じて、信仰から離れてしまいました。"
+        },
+        "id": {
+          "L": "Hai Timotius, peliharalah apa yang telah dipercayakan kepadamu, dan hindarilah omongan yang kosong dan yang tidak suci, dan pertentangan-pertentangan dari apa yang secara palsu disebut pengetahuan, \\v 21 yang diakui oleh beberapa orang, sehingga mereka telah menyimpang dari iman.",
+          "B": "Timotius, jagalah apa yang telah dipercayakan kepadamu. Jauhilah omongan kosong yang tidak beribadah dan pertentangan-pertentangan dari apa yang secara keliru disebut pengetahuan. \\v 21 Beberapa orang telah mengakuinya, dan dengan begitu mereka telah menyimpang dari iman.",
+          "R": "Timotius, jagalah kebenaran yang telah Allah berikan kepadamu. Jauhilah omongan bodoh yang tidak ada hubungannya dengan Allah. Jauhilah orang-orang yang membantah kebenaran dan berkata bahwa mereka mempunyai pengetahuan khusus. Pengetahuan mereka palsu. \\v 21 Beberapa orang telah mempercayainya, dan mereka telah berpaling dari iman."
+        },
+        "zh": {
+          "L": "提摩太啊，要守护所托付的，避开那亵渎的空谈和那虚假地被称为知识的种种对立论点，\\v 21 有些人宣称有这[知识]，就在信仰上偏离了目标。",
+          "B": "提摩太，要守住交托给你的，远离那不敬虔的空谈，和那些被错称为知识的矛盾说法。\\v 21 有些人自称拥有这种知识，结果偏离了信仰。",
+          "R": "提摩太，要保护{{god_term:神|上帝}}交给你的真理。要远离那些和{{god_term:神|上帝}}毫无关系的愚蠢谈话。要远离那些反对真理、又说自己有特别知识的人。他们的知识是假的。\\v 21 有些人相信了这种知识，结果离开了信仰。"
         }
       },
       "decisions": [
@@ -3860,6 +4860,45 @@
           "reason": "\"Tri thức\" is the word the Vietnamese Colossians keeps for gnosis (2:3), apart from \"sự hiểu biết\" (epignosis); Readable says \"special knowledge\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n54006020004"
+          ],
+          "choice": "\"委ねられたもの\" (L, B), \"神があなたに任せてくださった真理\" (R) for the deposit (also 2 Timothy 1:12, 14)",
+          "alternatives": [
+            "\"預かったもの\""
+          ],
+          "reason": "The deposit is what has been entrusted to Timothy (m1), the gospel; Literal and Balanced keep the trust picture, and Readable names it, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n54006020004"
+          ],
+          "choice": "所托付的 (L); 交托给你的 (B)",
+          "alternatives": [],
+          "reason": "The deposit, what has been entrusted (m1), with the verb of 1:11 and 1:18 (托付, 交托).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3931,6 +4970,26 @@
           "L": "Благодать — с вами.",
           "B": "Пусть благодать будет со всеми вами.",
           "R": "Пусть Божья благодать будет со всеми вами."
+        },
+        "uk": {
+          "L": "Благодать з вами.",
+          "B": "Благодать з усіма вами.",
+          "R": "Нехай Божа благодать буде з усіма вами."
+        },
+        "ja": {
+          "L": "恵みが、あなたがたと共に[ありますように]。",
+          "B": "恵みが、あなたがた一同と共にありますように。",
+          "R": "神の恵みが、みなさん全員と共にありますように。"
+        },
+        "id": {
+          "L": "Kasih karunia [menyertai] kalian semua.",
+          "B": "Kasih karunia menyertai kalian semua.",
+          "R": "Semoga kasih karunia Allah menyertai kalian semua."
+        },
+        "zh": {
+          "L": "恩典[与]你们众人[同在]。",
+          "B": "愿恩典与你们众人同在。",
+          "R": "愿{{god_term:神|上帝}}的恩典与你们所有的人同在。"
         }
       },
       "decisions": [
@@ -4169,6 +5228,88 @@
             "со всеми вами"
           ],
           "reason": "Russian \"вы\" already shows the plural (m1), so Literal needs no \"all\"; Balanced and Readable say \"со всеми вами\", the closing form of Romans 16:24.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-uk-1",
+          "layer": "rendering",
+          "language": "uk",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n54006021011"
+          ],
+          "choice": "\"з вами\" (L); \"з усіма вами\" (B, R)",
+          "alternatives": [
+            "\"з тобою\""
+          ],
+          "reason": "Ukrainian \"вами\" is plural like the Greek; Literal needs no \"усіма\" to show it, and Balanced and Readable follow the English \"you all\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-ja-1",
+          "layer": "rendering",
+          "language": "ja",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n54006021011"
+          ],
+          "choice": "\"あなたがた\" (L, B), \"みなさん\" (R) for the plural you",
+          "alternatives": [
+            "\"あなた\""
+          ],
+          "reason": "The letter speaks to Timothy as あなた throughout; the closing blessing is plural, for the whole church (m1), so it takes the brief's plural forms.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-id-1",
+          "layer": "rendering",
+          "language": "id",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n54006021011"
+          ],
+          "choice": "\"kalian semua\"",
+          "alternatives": [],
+          "reason": "The closing \"you\" is plural, the whole church (m1), so \"kalian\" after a letter addressed to Timothy as \"engkau\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "n54006021011"
+          ],
+          "choice": "你们众人 (L, B); 你们所有的人 (R)",
+          "alternatives": [
+            "你"
+          ],
+          "reason": "The Greek \"you\" is plural (m1): the letter ends with the whole church, in the \"with you all\" forms of Romans 15:33 and 2 Thessalonians 3:18.",
           "uncertain": false,
           "footnote": false
         }

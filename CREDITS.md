@@ -28,6 +28,10 @@ MACULA Greek includes:
   (`ln`, `domain`), used with permission. Open Word Bible does not use or
   redistribute these fields.
 
+Romans 16:25-27, which the pinned SBLGNT does not print, are read from MACULA
+Greek's Nestle 1904 data (`Nestle1904/tsv`, same licence): the Nestle 1904
+Greek text is in the public domain, and MACULA's annotations of it are CC BY 4.0.
+
 The word extracts in `data/grc/` are derived from MACULA Greek and carry its
 CC BY 4.0 licence. They hold, per word: id, text, following punctuation,
 lemma, morphology, the Berean and Cherith glosses, and Strong's number.
@@ -117,9 +121,12 @@ The reading text and Greek are set in Gentium Book Plus, Copyright (c)
 2003–2022 SIL International, Hebrew in Noto Serif Hebrew, Copyright 2022
 The Noto Project Authors, Amharic in Noto Serif Ethiopic and Noto Sans
 Ethiopic, Copyright 2022 The Noto Project Authors, and Hindi in Noto Serif
-Devanagari and Noto Sans Devanagari, Copyright 2022 The Noto Project Authors. Headings are set in Fraunces, Copyright 2020 The
+Devanagari and Noto Sans Devanagari, Copyright 2022 The Noto Project Authors,
+and Arabic and Persian in Noto Naskh Arabic and Noto Sans Arabic, Copyright
+2022 The Noto Project Authors. Headings are set in Fraunces, Copyright 2020 The
 Fraunces Project Authors, and the interface in Hanken Grotesk, Copyright 2021
-The Hanken Grotesk Project Authors. Readers can choose Atkinson Hyperlegible
+The Hanken Grotesk Project Authors, with Cyrillic in Noto Sans, Copyright 2022
+The Noto Project Authors. Readers can choose Atkinson Hyperlegible
 for the reading text, Copyright 2020 Braille Institute of America, Inc. All
-seven are licensed under the SIL Open Font License 1.1; the licences are in
+of them are licensed under the SIL Open Font License 1.1; the licences are in
 `web/fonts/`.

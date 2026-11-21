@@ -6,7 +6,7 @@ order: 92
 section: passage
 source: c27aa9dda0a4
 ---
-Isaya aliishi katika karne ya nane kabla ya Kristo. Hata hivyo katika mojawapo ya unabii wake unaojulikana zaidi anasema (Isaya bado haijatafsiriwa kwa Kiswahili, kwa hiyo hapa na mahali pengine katika makala hii manukuu ya Open Word Bible yanatoka katika tafsiri yake ya Kiingereza):
+Isaya aliishi katika karne ya nane kabla ya Kristo. Hata hivyo katika mojawapo ya unabii wake unaojulikana zaidi anasema:
 
 > {{OWB:ISA.9.5.s1:B}}
 
@@ -68,7 +68,7 @@ Imperfect inaweza pia kujumuisha wakati uliopo na ujao pamoja. Zaburi 23 inaanza
 
 > {{OWB:PSA.23.1.s1:B}}
 
-Kitenzi "kupungukiwa" ni {{HEBREW:PSA.23.1:6}} (*ʾeḥsār*), imperfect. Rekodi inasema umbo lake linajumuisha wakati uliopo na ujao: ninacho, na nitakuwa nacho, kila ninachohitaji. Katika tafsiri ya Kiingereza, Halisi inasema "I will not lack [anything]" (sitapungukiwa [na kitu]), Linganifu "I will never be in need" (sitahitaji kitu kamwe), na Rahisi "I have everything I need" (nina kila kitu ninachohitaji). Viwango vitatu vinaegemea pande zinazotofautiana kidogo, lakini havichagui maana tofauti. Vyote vitatu vimo ndani ya kile ambacho uamuzi wa maana unasema.
+Kitenzi "kupungukiwa" ni {{HEBREW:PSA.23.1:6}} (*ʾeḥsār*), imperfect. Rekodi inasema umbo lake linajumuisha wakati uliopo na ujao: ninacho, na nitakuwa nacho, kila ninachohitaji. Halisi inasema "sitakosa [kitu]", Linganifu "sitapata kuhitaji kitu kamwe", na Rahisi "Nina kila kitu ninachohitaji". Viwango vitatu vinaegemea pande zinazotofautiana kidogo, lakini havichagui maana tofauti. Vyote vitatu vimo ndani ya kile ambacho uamuzi wa maana unasema.
 
 ## Manabii wanaosema juu ya wakati ujao kama uliopita
 
@@ -95,9 +95,9 @@ Open Word Bible inajibu mstari kwa mstari, na viwango vitatu havijibu sawa kila 
 
 > {{OWB:ISA.5.13.s1:B}}
 
-Halisi ya Kiingereza inabaki na umbo: "my people have gone into exile" (watu wangu wamekwenda uhamishoni). Linganifu inasema maana ya mstari: "my people will be carried off into exile" (watu wangu watachukuliwa uhamishoni). Uamuzi wa maana ulio nyuma ya vyote viwili umewekewa alama ya kutokuwa na uhakika. Unakisoma kitenzi kama tukio la wakati ujao linalozungumziwa kama tayari limefanyika, kwa kuwa uhamisho wa Yuda ulikuwa bado unakuja, na unaongeza kwamba huenda mstari badala yake unawahusu makabila ya kaskazini ambayo tayari yalikuwa yamechukuliwa na Ashuru. Tofauti kati ya viwango ni tofauti ya maneno, si ya maana: viwango vyote viwili vinafuata uamuzi uleule, kimoja kwa kuonyesha umbo la Kiebrania na kingine kwa kueleza maana yake.
+Halisi inabaki na umbo: "watu wangu wamekwenda uhamishoni". Linganifu inasema maana ya mstari: "watu wangu watachukuliwa uhamishoni". Uamuzi wa maana ulio nyuma ya vyote viwili umewekewa alama ya kutokuwa na uhakika. Unakisoma kitenzi kama tukio la wakati ujao linalozungumziwa kama tayari limefanyika, kwa kuwa uhamisho wa Yuda ulikuwa bado unakuja, na unaongeza kwamba huenda mstari badala yake unawahusu makabila ya kaskazini ambayo tayari yalikuwa yamechukuliwa na Ashuru. Tofauti kati ya viwango ni tofauti ya maneno, si ya maana: viwango vyote viwili vinafuata uamuzi uleule, kimoja kwa kuonyesha umbo la Kiebrania na kingine kwa kueleza maana yake.
 
-Yoshua 6:2 inaonyesha njia nyingine. Viwango vyote vitatu vya Kiingereza vinabaki na "I have given" (nimeutoa), lakini Rahisi inaongeza sentensi fupi yake yenyewe, "It is as good as yours" (ni kama tayari ni wako), na uamuzi wa maneno unaeleza kwa nini: ili kubeba maana ya kitenzi kilichokamilika, kwamba mji huo hakika utakuwa wa Israeli.
+Yoshua 6:2 inaonyesha njia nyingine. Viwango vyote vitatu vinabaki na kitenzi kilichokamilika ("nimeutia", "nimekukabidhi", "nimekupa"), lakini Rahisi inaongeza sentensi fupi yake yenyewe, "Ni kana kwamba tayari ni mali yako", na uamuzi wa maneno unaeleza kwa nini: ili kubeba maana ya kitenzi kilichokamilika, kwamba mji huo hakika utakuwa wa Israeli.
 
 ## Isaya 9:5: kuzaliwa kulikokwisha kutangazwa
 
@@ -105,13 +105,13 @@ Isaya 9:5 ni ngumu zaidi, na rekodi inaishughulikia kwa uangalifu. Uamuzi wake w
 
 Wasomaji wamechukua mitazamo yote miwili. Wengine wanaona kuzaliwa katika wakati wa Isaya mwenyewe, labda mrithi wa kifalme, kunakosherehekewa kwa lugha inayofika mbali zaidi ya mfalme yeyote wa kawaida. Wasomaji wengi Wakristo wanaona unabii kuhusu Kristo, uliosemwa kwa uhakika wa perfect ya kinabii. Mitazamo hiyo miwili haipingani kila mara: wengine wanausoma mstari kama unaosema juu ya mfalme katika siku za Isaya ambaye vyeo vyake vilitimia kikamilifu tu katika mwana wa Daudi wa baadaye. Rekodi inaelekeza kwenye vifungu vinavyouzunguka: 7:14 iliahidi mwana atakayeitwa Imanueli, na 11:1–5 inaeleza mfalme kutoka ukoo wa Yese.
 
-Hapa Open Word Bible inabaki na umbo la wakati uliopita katika kila kiwango: "a child has been born for us, a son has been given to us" (mtoto amezaliwa kwa ajili yetu, mwana tumepewa). Ni umbo ambalo Isaya alitumia, linafaa masomo yote mawili, na Kiingereza kinaweza kulibeba bila kumpotosha msomaji. Wakati ujao ungemwamulia msomaji swali hilo.
+Hapa Open Word Bible inabaki na umbo la wakati uliopita katika kila kiwango: "mtoto amezaliwa kwa ajili yetu, mtoto wa kiume tumepewa". Ni umbo ambalo Isaya alitumia, linafaa masomo yote mawili, na Kiingereza kinaweza kulibeba bila kumpotosha msomaji. Wakati ujao ungemwamulia msomaji swali hilo.
 
 ## Isaya 53: kumtazama mtumishi kwa kurudi nyuma
 
 Wimbo wa mtumishi anayeteseka unaanzia Isaya 52:13 hadi mwisho wa sura ya 53, na vitenzi vyake vinasogea katika wakati kwa namna ambayo wasomaji mara nyingi huiona.
 
-Unaanza katika wakati ujao. Rekodi ya 52:13 inatoa "mtumishi wangu atatenda kwa hekima", "atainuliwa na kutukuzwa sana". Kisha, katika sura ya 53, kundi la wasemaji linatazama nyuma kile kilichompata mtumishi, na vitenzi vinageukia wakati uliopita:
+Unaanza katika wakati ujao. Rekodi ya 52:13 inatoa "mtumishi wangu atatenda kwa hekima", "atakuwa juu na kuinuliwa". Kisha, katika sura ya 53, kundi la wasemaji linatazama nyuma kile kilichompata mtumishi, na vitenzi vinageukia wakati uliopita:
 
 > {{OWB:ISA.53.4.s1:B}}
 

@@ -4,7 +4,8 @@
 // card has "at": [longitude, latitude], "sure" and "area"); land, lakes and
 // rivers from /basemap.json (data/basemap.json, Natural Earth), fetched once.
 // A known site is a dot, a site OpenBible.info is unsure of a dashed ring,
-// and a region, river or sea a label.
+// and a region, river or sea a label. drawJourney draws a journey (data/
+// journeys.json) on the journeys page (web/journeys.js).
 var OWBMap = (function () {
   "use strict";
   var NS = "http://www.w3.org/2000/svg";
@@ -79,6 +80,82 @@ var OWBMap = (function () {
     return t;
   }
 
+  // The sea, then (once fetched) the land, lakes and rivers under what is drawn.
+  function drawBase(svg, f, url) {
+    node("rect", { width: W, height: H, "class": "pmap-sea" }, svg);
+    load(url, function (data) {
+      if (!data) return;
+      var under = svg.firstChild.nextSibling;
+      data.land.forEach(function (s) {
+        if (overlaps(s.box, f)) svg.insertBefore(node("path", { d: path(s.pts, f, true), "class": "pmap-land" }), under);
+      });
+      data.lakes.forEach(function (s) {
+        if (overlaps(s.box, f)) svg.insertBefore(node("path", { d: path(s.pts, f, true), "class": "pmap-lake" }), under);
+      });
+      data.rivers.forEach(function (s) {
+        if (overlaps(s.box, f)) svg.insertBefore(node("path", { d: path(s.pts, f, false), "class": "pmap-river" }), under);
+      });
+    });
+  }
+
+  function key(box, t, sure, unsure) {
+    var p = document.createElement("p");
+    p.className = "pmap-key";
+    if (sure) {
+      var a = document.createElement("span");
+      a.className = "pmap-key-sure";
+      a.textContent = t("map_sure");
+      p.appendChild(a);
+    }
+    if (unsure) {
+      var b = document.createElement("span");
+      b.className = "pmap-key-unsure";
+      b.textContent = t("map_unsure");
+      p.appendChild(b);
+    }
+    var credit = document.createElement("span");
+    credit.className = "pmap-credit";
+    credit.textContent = t("map_credit");
+    p.appendChild(credit);
+    box.appendChild(p);
+  }
+
+  // A journey (data/journeys.json, through the journeys page): its stops
+  // joined in order by a line and numbered. A place visited twice has one
+  // mark, numbered for its first visit, with the later numbers by its name.
+  // A site OpenBible.info is unsure of is a dashed ring; a dashed line is a
+  // route that is itself uncertain (the exodus).
+  function drawJourney(box, journey, opts) {
+    var t = opts.t;
+    box.textContent = "";
+    var stops = journey.stops;
+    var f = frame(stops.map(function (s) { return { at: s.at }; }));
+    var svg = node("svg", { viewBox: "0 0 " + W + " " + H, role: "img", "class": "pmap-svg jmap-svg",
+                            "aria-label": t("map_label").replace("{name}", journey.name) });
+    box.appendChild(svg);
+    drawBase(svg, f, opts.base);
+    var d = "";
+    stops.forEach(function (s, i) {
+      var c = xy(s, f);
+      d += (i ? "L" : "M") + c[0].toFixed(1) + "," + c[1].toFixed(1);
+    });
+    node("path", { d: d, "class": "jmap-route" + (journey.uncertain ? " jmap-route-unsure" : "") }, svg);
+    var marks = {}, order = [];
+    stops.forEach(function (s, i) {
+      var k = s.at.join(",");
+      if (!marks[k]) { marks[k] = { stop: s, n: [] }; order.push(k); }
+      marks[k].n.push(i + 1);
+    });
+    order.forEach(function (k) {
+      var m = marks[k], c = xy(m.stop, f);
+      node("circle", { cx: c[0], cy: c[1], r: 8, "class": "jmap-stop" + (m.stop.sure ? "" : " jmap-stop-unsure") }, svg);
+      node("text", { x: c[0], y: c[1] + 3.5, "class": "jmap-num" }, svg).textContent = String(m.n[0]);
+      var name = m.stop.title + (m.n.length > 1 ? " (" + m.n.slice(1).join(", ") + ")" : "");
+      label(svg, c[0], c[1] + 4, name, "pmap-name jmap-name", 11);
+    });
+    key(box, t, stops.some(function (s) { return s.sure; }), stops.some(function (s) { return !s.sure; }));
+  }
+
   // Draw into box: places (the sentence's), others (the rest of the page's,
   // shown faintly for context), opts {base, t} (t: the reader's messages).
   function draw(box, places, others, opts) {
@@ -92,21 +169,7 @@ var OWBMap = (function () {
     var svg = node("svg", { viewBox: "0 0 " + W + " " + H, role: "img", "class": "pmap-svg",
                             "aria-label": t("map_label").replace("{places}", names) });
     box.appendChild(svg);
-    node("rect", { width: W, height: H, "class": "pmap-sea" }, svg);
-    load(opts.base, function (data) {
-      if (data) {
-        var under = svg.firstChild.nextSibling;
-        data.land.forEach(function (s) {
-          if (overlaps(s.box, f)) svg.insertBefore(node("path", { d: path(s.pts, f, true), "class": "pmap-land" }), under);
-        });
-        data.lakes.forEach(function (s) {
-          if (overlaps(s.box, f)) svg.insertBefore(node("path", { d: path(s.pts, f, true), "class": "pmap-lake" }), under);
-        });
-        data.rivers.forEach(function (s) {
-          if (overlaps(s.box, f)) svg.insertBefore(node("path", { d: path(s.pts, f, false), "class": "pmap-river" }), under);
-        });
-      }
-    });
+    drawBase(svg, f, opts.base);
     var mine = {};
     places.forEach(function (p) { mine[p.title] = true; });
     var shown = {};
@@ -128,21 +191,8 @@ var OWBMap = (function () {
       }
       label(svg, c[0], c[1] + 4, p.title, "pmap-name", p.sure ? 9 : 14);
     });
-    var key = document.createElement("p");
-    key.className = "pmap-key";
-    [["pmap-key-sure", t("map_sure")], ["pmap-key-unsure", t("map_unsure")]].forEach(function (k) {
-      if (k[0] === "pmap-key-unsure" && places.every(function (p) { return p.sure || p.area; })) return;
-      var s = document.createElement("span");
-      s.className = k[0];
-      s.textContent = k[1];
-      key.appendChild(s);
-    });
-    var credit = document.createElement("span");
-    credit.className = "pmap-credit";
-    credit.textContent = t("map_credit");
-    key.appendChild(credit);
-    box.appendChild(key);
+    key(box, t, true, !places.every(function (p) { return p.sure || p.area; }));
   }
 
-  return { draw: draw };
+  return { draw: draw, drawJourney: drawJourney };
 })();
