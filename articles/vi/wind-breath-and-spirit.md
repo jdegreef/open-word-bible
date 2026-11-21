@@ -28,7 +28,7 @@ Câu chuyện nước lụt nhặt lại từ này. Sau khi nước đã bao ph�
 
 > {{OWB:GEN.8.1.s1:B}}
 
-Ở đây, từ {{HEBREW:GEN.8.1:16}} rõ ràng là gió. Nó thổi và nước rút xuống. Mọi cấp độ trong bản tiếng Anh đều nói “wind”, gió. Nhưng bản ghi của chúng tôi ghi nhận tiếng vọng: đây là từ của Sáng Thế Ký 1:2, và như lúc ban đầu, *rûaḥ* của Đức Chúa Trời chuyển động trên mặt nước và đất khô sắp hiện ra. Một cuộc sáng tạo mới bắt đầu. Người đọc bản dịch thấy hai từ khác nhau, Thần và gió, và có thể không nhận ra rằng tiếng Hê-bơ-rơ đang lặp lại chính nó. Bản ghi có mặt để chỉ ra điều đó.
+Ở đây, từ {{HEBREW:GEN.8.1:16}} rõ ràng là gió. Nó thổi và nước rút xuống. Mọi cấp độ đều nói “gió”. Nhưng bản ghi của chúng tôi ghi nhận tiếng vọng: đây là từ của Sáng Thế Ký 1:2, và như lúc ban đầu, *rûaḥ* của Đức Chúa Trời chuyển động trên mặt nước và đất khô sắp hiện ra. Một cuộc sáng tạo mới bắt đầu. Người đọc bản dịch thấy hai từ khác nhau, Thần và gió, và có thể không nhận ra rằng tiếng Hê-bơ-rơ đang lặp lại chính nó. Bản ghi có mặt để chỉ ra điều đó.
 
 ## Sáng Thế Ký 2:7: một từ khác cho hơi thở
 
@@ -46,7 +46,7 @@ Thi Thiên 104 biến ý tưởng ấy thành một bài ca. Nó ca ngợi Đứ
 
 > {{OWB:PSA.104.30.s1:B}}
 
-Cùng một từ ấy là “hơi thở của chúng” ở câu 29 và “thần của Ngài” ở câu 30. Bản ghi của chúng tôi giữ mối liên kết: Đức Chúa Trời lấy lại hơi thở Ngài đã ban, và lại sai nó ra để tạo nên những loài thọ tạo mới. Quyết định cho câu 30 được đánh dấu là chưa chắc chắn. Nó chọn “hơi thở ban sự sống của Ngài” làm nghĩa, và ghi nhận rằng nhiều người đọc cũng thấy ở đây Thần của Đức Chúa Trời đang hành động trong cuộc sáng tạo, như trong Sáng Thế Ký 1:2. Vì thế, trong bản tiếng Anh, Sát nghĩa và Cân bằng viết “spirit” bằng chữ thường, để ngỏ cả hai cách hiểu, còn Dễ đọc nói “your breath of life” (hơi thở sự sống của Ngài), giữ mối liên kết với câu 29.
+Cùng một từ ấy là “hơi thở của chúng” ở câu 29 và “thần linh của ngài” ở câu 30. Bản ghi của chúng tôi giữ mối liên kết: Đức Chúa Trời lấy lại hơi thở Ngài đã ban, và lại sai nó ra để tạo nên những loài thọ tạo mới. Quyết định cho câu 30 được đánh dấu là chưa chắc chắn. Nó chọn “hơi thở ban sự sống của Ngài” làm nghĩa, và ghi nhận rằng nhiều người đọc cũng thấy ở đây Thần của Đức Chúa Trời đang hành động trong cuộc sáng tạo, như trong Sáng Thế Ký 1:2. Vì thế, trong bản tiếng Anh, Sát nghĩa và Cân bằng viết “spirit” bằng chữ thường, để ngỏ cả hai cách hiểu, còn Dễ đọc nói “your breath of life” (hơi thở sự sống của Ngài), giữ mối liên kết với câu 29.
 
 Chữ thường ấy tự nó là một quyết định. Các bản chép tay Hê-bơ-rơ và Hy Lạp không có chữ hoa. Viết “thần” hay “Thần”, “spirit” hay “Spirit”, luôn là sự phán đoán của người dịch, và các bản ghi của chúng tôi nêu rõ điều đó ở những chỗ nó quan trọng.
 
@@ -62,7 +62,7 @@ Chỉ trong câu này, tiếng Hê-bơ-rơ đã có từ ấy bốn lần: {{HEB
 
 Hơi thở đã làm cho các thân thể sống lại giờ đây được gọi tên là chính Thần của CHÚA. Dân Y-sơ-ra-ên đã chết, bị cắt lìa trong cảnh lưu đày, sẽ sống lại nhờ Thần của Đức Chúa Trời ở trong họ.
 
-Bản dịch không thể giữ một từ duy nhất xuyên suốt tất cả những điều này. Trong bản tiếng Anh, các quyết định về cách diễn đạt của chúng tôi chọn “Spirit” (Thần) ở câu 1, “breath” (hơi thở) ở các câu 5–10, “winds” (gió) cho bốn phương và lại “Spirit” ở câu 14, giống nhau ở mọi cấp độ. Để bù lại sự mất mát ấy, bản ghi cho câu 5 có một chú thích: “hơi thở” ở đó là *rûaḥ*, một từ duy nhất cho hơi thở, gió và Thần, và đằng sau mỗi cách dịch này là cùng một từ Hê-bơ-rơ. Bản ghi cũng ghi nhận tiếng vọng của Sáng Thế Ký 2:7. Như Đức Chúa Trời đã nắn nên người đầu tiên rồi hà hơi vào người, thì ở đây Ngài trước hết dựng lại các thân thể rồi ban hơi thở cho chúng. Sự phục hồi của Y-sơ-ra-ên là một cuộc sáng tạo mới.
+Bản dịch không thể giữ một từ duy nhất xuyên suốt tất cả những điều này. Các quyết định về cách diễn đạt của chúng tôi chọn “Thần Linh” ở câu 1, “hơi thở” ở các câu 5–10, “gió” cho bốn phương và lại “Thần Linh” ở câu 14, giống nhau ở mọi cấp độ. Để bù lại sự mất mát ấy, bản ghi cho câu 5 có một chú thích: “hơi thở” ở đó là *rûaḥ*, một từ duy nhất cho hơi thở, gió và Thần, và đằng sau mỗi cách dịch này là cùng một từ Hê-bơ-rơ. Bản ghi cũng ghi nhận tiếng vọng của Sáng Thế Ký 2:7. Như Đức Chúa Trời đã nắn nên người đầu tiên rồi hà hơi vào người, thì ở đây Ngài trước hết dựng lại các thân thể rồi ban hơi thở cho chúng. Sự phục hồi của Y-sơ-ra-ên là một cuộc sáng tạo mới.
 
 ## Giăng 3: sinh ra bởi Thánh Linh
 

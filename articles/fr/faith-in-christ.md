@@ -8,8 +8,6 @@ source: 2e6dcc9e8146
 ---
 Galates 2:16 est au cœur de l'argumentation de Paul dans l'épître aux Galates. Le verset contient une expression qui divise depuis une génération des lecteurs attentifs : Paul parle-t-il de notre foi en Christ, ou de la fidélité du Christ lui-même ? Cet article parcourt le verset, la grammaire, l'histoire du débat, et ce qu'Open Word Bible a choisi à chaque niveau.
 
-L'épître aux Galates n'est pas encore traduite en français dans Open Word Bible. Les citations de cet article sont donc tirées de sa version anglaise ; ce qui suit porte sur le sens du texte grec, que la traduction française suivra.
-
 ## Antioche
 
 Le verset vient à la fin d'un récit. À Antioche, les croyants juifs et non juifs mangeaient ensemble, et Pierre, que Paul appelle Céphas, mangeait avec eux. Puis des visiteurs vinrent de Jérusalem :
@@ -77,7 +75,7 @@ Le dossier fait encore une remarque qu'on pourrait manquer. Les deux lectures s'
 
 ## Ce que fait la traduction
 
-Open Word Bible suit la première lecture à tous les niveaux, marque la décision *incertaine*, et donne "through the faithfulness of Jesus Christ" ("par la fidélité de Jésus-Christ") dans une note. Le niveau Littérale dit lui aussi "faith in". Le grec n'a pas de préposition, si bien que même la traduction la plus littérale doit choisir une lecture. L'anglais ne peut pas laisser la question ouverte ici comme "grâce pour grâce" le peut en Jean 1:16 ; "faith of" passerait pour une faute aux yeux de la plupart des lecteurs, ou pencherait discrètement vers la foi propre du Christ.
+Open Word Bible suit la première lecture à tous les niveaux, marque la décision *incertaine*, et donne "through the faithfulness of Jesus Christ" ("par la fidélité de Jésus-Christ") dans une note. Le niveau Littérale dit lui aussi "la foi en". Le grec n'a pas de préposition, si bien que même la traduction la plus littérale doit choisir une lecture. L'anglais ne peut pas laisser la question ouverte ici comme "grâce pour grâce" le peut en Jean 1:16 ; "faith of" passerait pour une faute aux yeux de la plupart des lecteurs, ou pencherait discrètement vers la foi propre du Christ.
 
 > {{OWB:GAL.2.15.s1:L}}
 
@@ -90,9 +88,9 @@ La même question revient à d'autres endroits, et les dossiers y répondent de 
 Le reste de la phrase porte plusieurs décisions communes à toutes les langues :
 
 - **Pécheurs d'entre les non-Juifs** : c'est ainsi que les Juifs parlaient des non-Juifs, qui vivaient sans la loi de Dieu. Paul reprend l'expression pour la retourner : même les Juifs doivent être justifiés par la foi. Le niveau Simple montre clairement qu'il s'agit d'une étiquette, et non du jugement de Paul.
-- **Justifié** est un mot de tribunal : Dieu déclare une personne dans son droit, acquittée et acceptée. La Littérale et l'Équilibrée gardent "justifier", le mot qui relie ce verset à l'épître aux Romains ; la Simple dit "remis en règle avec Dieu".
+- **Justifié** est un mot de tribunal : Dieu déclare une personne dans son droit, acquittée et acceptée. La Littérale et l'Équilibrée gardent "justifier", le mot qui relie ce verset à l'épître aux Romains ; la Simple dit "être déclaré juste par Dieu".
 - **Les œuvres de la loi**, c'est faire ce que la loi de Moïse exige, comme fondement pour être accepté par Dieu. Les lois alimentaires et la circoncision étaient en jeu à Antioche et en Galatie, mais l'argumentation de Paul s'étend ensuite à toute la loi (3:10–12 ; 5:3).
-- **Sinon par la foi** pourrait laisser croire que les œuvres et la foi justifient ensemble. Le reste du verset les oppose trois fois, si bien que l'Équilibrée énonce le côté positif dans une proposition à part : "a person is justified only through faith" ("on est justifié uniquement par la foi").
+- **Sinon par la foi** pourrait laisser croire que les œuvres et la foi justifient ensemble. Le reste du verset les oppose trois fois, si bien que l'Équilibrée énonce le côté positif dans une proposition à part : "on n'est justifié que par la foi".
 - **Nulle chair** fait écho au Psaume 143:2 ; c'est une manière hébraïque de dire "aucun être humain". L'Équilibrée et la Simple donnent le sens, puisque "chair" ferait penser au corps.
 
 [Ouvrez Galates 2](/gal/2/) et touchez le verset 16 pour voir le dossier complet.

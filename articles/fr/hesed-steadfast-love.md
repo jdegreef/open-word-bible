@@ -4,11 +4,9 @@ summary: Un seul mot hébreu décrit l'amour de Dieu pour son peuple et l'amour 
 date: 2026-10-17
 order: 82
 section: passage
-source: 5b091cd4eaf7
+source: 135fe5e68913
 ---
 Certains mots portent tant de choses que chacune de leurs traductions laisse fuir quelque chose. Le mot hébreu {{LEMMA:RUT.1.8:14}}, qu'on écrit d'ordinaire *ḥesed* ou *chesed*, est de ceux-là. Il apparaît environ 250 fois dans l'Ancien Testament, dont à peu près la moitié dans les Psaumes. Il est au centre de la façon dont Israël décrivait Dieu, et de la façon dont les Israélites devaient se traiter les uns les autres. Les Bibles anglaises ont essayé "mercy" ("miséricorde"), "kindness" ("bonté"), "lovingkindness", "steadfast love" ("amour constant"), "loyalty" ("loyauté"), "faithful love" ("amour fidèle"), et d'autres encore. Chacun dit quelque chose de vrai, et chacun laisse quelque chose de côté.
-
-Plusieurs des livres cités ici (Ruth, les Psaumes, les Lamentations, Osée) ne sont pas encore traduits en français dans Open Word Bible. Leurs versets paraissent donc ci-dessous dans l'édition anglaise ; ce que l'article en dit porte sur le sens du texte hébreu.
 
 ## Ce que contient le mot
 
@@ -54,7 +52,7 @@ Lamentations 3:22 montre la différence. Le verset place côte à côte le *ḥe
 
 > {{OWB:LAM.3.22.s1:B}}
 
-La première ligne a {{HEBREW:LAM.3.22:1}}, le pluriel de *ḥesed* : les nombreux actes d'amour loyal du Seigneur. La seconde ligne a *raḥămîm*, un mot apparenté au mot qui désigne le ventre maternel, le sentiment tendre d'un parent pour son enfant. Le dossier les garde distincts : "loyal love" ("amour loyal") pour le premier et "mercies" ("compassions", "miséricordes") pour le second, à tous les niveaux. Si les deux étaient "miséricorde", le verset dirait deux fois la même chose.
+La première ligne a {{HEBREW:LAM.3.22:1}}, le pluriel de *ḥesed* : les nombreux actes d'amour loyal du Seigneur. La seconde ligne a *raḥămîm*, un mot apparenté au mot qui désigne le ventre maternel, le sentiment tendre d'un parent pour son enfant. Le dossier les garde distincts à tous les niveaux : "amour loyal" ou "amour fidèle" pour le premier, et "compassions" ou "tendresse" pour le second. Si les deux étaient "miséricorde", le verset dirait deux fois la même chose.
 
 **"Lovingkindness".** Ce mot, qui unit "love" ("amour") et "kindness" ("bonté"), a été forgé pour la Bible. On l'attribue d'ordinaire à Miles Coverdale, dont la Bible anglaise de 1535 l'employait dans les Psaumes, et la version King James l'a gardé en bien des endroits. C'est une bonne tentative : il réunit l'amour et la bonté en un seul mot. Mais ce n'est plus de l'anglais courant, et il manque la loyauté, l'idée que cette bonté est due à l'intérieur d'un lien et qu'elle se maintient dans le temps.
 
@@ -72,18 +70,18 @@ Les dossiers emploient un petit ensemble de traductions, choisies pour que chacu
 
 Dans l'édition anglaise, pour la Loi, les livres historiques et Ruth, le niveau Littérale dit "steadfast love" et les niveaux Équilibrée et Simple disent "faithful love". Ainsi, en Exode 34:6, Dieu est "great in steadfast love" au niveau Littérale et "rich in faithful love" à l'Équilibrée. Josué 2:12, où Rahab demande aux espions de montrer à sa famille le *ḥesed* qu'elle leur a montré, et 2 Samuel 9:1, où David cherche quelqu'un de la maison de Saül à qui montrer du *ḥesed* par égard pour Jonathan, suivent le même modèle.
 
-Dans les Psaumes et les prophètes, les niveaux Littérale et Équilibrée de l'édition anglaise disent "loyal love" et la Simple dit "faithful love". C'est ce qu'on voit plus haut dans le Psaume 136 et en Lamentations 3:22.
+Dans les Psaumes, les autres livres poétiques (Job, Proverbes, Ecclésiaste, Cantique des cantiques), les Lamentations et les prophètes, les niveaux Littérale et Équilibrée de l'édition anglaise disent "loyal love" et la Simple dit "faithful love". Là où un livre historique chante un psaume, il garde la formulation des Psaumes : le refrain du temple "his loyal love is forever" en 1 et 2 Chroniques et en Esdras 3:11, et le cantique de David en 2 Samuel 22, qui est le Psaume 18. Sur l'ensemble de l'Ancien Testament, l'Équilibrée anglaise dit "loyal love" environ trois fois plus souvent que "faithful love", simplement parce que la plupart des emplois du mot se trouvent dans les Psaumes.
 
 En français, là où la traduction existe déjà, le mot est "amour fidèle" aux trois niveaux : en Exode 34:6, Dieu est "grand en amour fidèle" au niveau Littérale et "riche en amour fidèle" à l'Équilibrée, et la Simple dit "Son amour fidèle est grand". Une décision de formulation en Exode 15:13 en donne la raison : "fidélité" seule perd l'amour que porte le mot, et "bonté" en perd la loyauté.
 
-La différence ne porte que sur la formulation. Les décisions de sens décrivent le même sens dans chacun de ces passages : un amour qui reste fidèle à l'intérieur d'un lien. Les deux formulations anglaises ont été fixées dans les tableaux de termes pour des groupes de livres différents, et les notes du projet signalent un endroit où elles se rencontrent mal : quand Joël et Jonas citent Exode 34:6, ils ne s'accordent pas encore entre eux. C'est une question ouverte pour la relecture, et une seule formulation doit être choisie pour ces citations.
+La différence ne porte que sur la formulation. Les décisions de sens décrivent le même sens dans chacun de ces passages : un amour qui reste fidèle à l'intérieur d'un lien. Les deux formulations anglaises ont été fixées dans les tableaux de termes pour des groupes de livres différents, et la règle est désormais consignée avec les autres termes clés. Quand un livre plus tardif cite Exode 34:6, la citation suit son propre livre : Nombres 14:18 et Néhémie 9:17 disent "steadfast love" et "faithful love", comme l'Exode, et Joël 2:13 et Jonas 4:2 disent tous deux "loyal love".
 
 Certains versets s'écartent du modèle, chacun avec une raison consignée.
 
 - **Genèse 24:27.** Le serviteur d'Abraham loue Dieu de ne pas avoir retiré "sa fidélité et sa vérité" à son maître. L'Équilibrée transforme la paire en une phrase, en français : "Il n'a pas cessé d'être bon et fidèle envers mon maître", et la Simple dit que Dieu "a tenu ses promesses d'amour".
-- **Esther 2:9.** Esther "won kindness" ("gagna la bonté") auprès du responsable des femmes. Une décision de sens explique qu'ici, de la part d'un supérieur qui la montre, le mot signifie la bienveillance, et une décision de formulation dit que l'habituel "faithful love" induirait en erreur. L'Équilibrée de l'édition anglaise dit "won his favor" ("gagna sa faveur").
-- **Michée 6:8.** Le résumé que fait le prophète de ce que Dieu demande est "pratiquer la justice, aimer le *ḥesed*, et marcher humblement avec ton Dieu". L'hébreu place le verbe "aimer" devant le nom, et "to love loyal love" ("aimer l'amour loyal") est un anglais difficile. Selon la règle fixée par le fondateur, la Littérale le garde, l'Équilibrée dit "to love loyalty" ("aimer la loyauté") et la Simple "to love being kind and loyal" ("aimer être bon et loyal"). La décision de formulation note que l'écart ne porte que sur la formulation.
-- **Ésaïe 40:6.** "Toute chair est de l'herbe, et tout son *ḥesed* est comme la fleur des champs." Dit des humains, le mot désigne leur fidélité, qui ne dure pas. Les dossiers disent "loyalty" ("loyauté") à la Littérale et à l'Équilibrée et "faithfulness" ("fidélité") à la Simple, et une note signale que la Septante lit ici "gloire", la forme que cite 1 Pierre 1:24.
+- **Esther 2:9.** Esther "obtint de la bonté" auprès du responsable des femmes. Une décision de sens explique qu'ici, de la part d'un supérieur qui la montre, le mot signifie la bienveillance, et une décision de formulation dit que l'habituel "faithful love" induirait en erreur. L'Équilibrée dit "gagna sa faveur".
+- **Michée 6:8.** Le résumé que fait le prophète de ce que Dieu demande est "pratiquer la justice, aimer le *ḥesed*, et marcher humblement avec ton Dieu". L'hébreu place le verbe "aimer" devant le nom, et "to love loyal love" ("aimer l'amour loyal") est un anglais difficile. Selon la règle fixée par le fondateur, la Littérale le garde ("aimer l'amour loyal"), l'Équilibrée dit "d'aimer la loyauté" et la Simple "d'aimer la bonté et la loyauté". La décision de formulation note que l'écart ne porte que sur la formulation.
+- **Ésaïe 40:6.** "Toute chair est de l'herbe, et tout son *ḥesed* est comme la fleur des champs." Dit des humains, le mot désigne leur fidélité, qui ne dure pas. Les dossiers disent "loyauté" à la Littérale et à l'Équilibrée et "fidélité" à la Simple, et une note signale que la Septante lit ici "gloire", la forme que cite 1 Pierre 1:24.
 
 ## Quand le grec dit "miséricorde"
 
@@ -91,10 +89,10 @@ Un cas montre pourquoi le projet traduit chaque texte à partir de sa propre lan
 
 > {{OWB:HOS.6.6.s1:B}}
 
-Dans l'édition anglaise : "Car je veux l'amour loyal, non le sacrifice". Beaucoup de Bibles anglaises disent ici "I desire mercy, and not sacrifice" ("je veux la miséricorde, et non le sacrifice"), parce que c'est ainsi que la ligne se lit en grec, et Jésus la cite deux fois dans Matthieu (9:13 ; 12:7). Une note explique le choix. Matthieu donne les mots en grec, où le mot est "miséricorde", et Matthieu est traduit comme Matthieu. Osée est traduit à partir de l'hébreu, et le mot d'Osée est plus large : un amour loyal envers Dieu et envers les autres. Quand Jésus applique cette parole au fait de montrer de la miséricorde aux collecteurs d'impôts et à des disciples affamés, il en reprend une partie de ce que le mot veut dire.
+Beaucoup de Bibles anglaises disent ici "I desire mercy, and not sacrifice" ("je veux la miséricorde, et non le sacrifice"), parce que c'est ainsi que la ligne se lit en grec, et Jésus la cite deux fois dans Matthieu (9:13 ; 12:7). Une note explique le choix. Matthieu donne les mots en grec, où le mot est "miséricorde", et Matthieu est traduit comme Matthieu. Osée est traduit à partir de l'hébreu, et le mot d'Osée est plus large : un amour loyal envers Dieu et envers les autres. Quand Jésus applique cette parole au fait de montrer de la miséricorde aux collecteurs d'impôts et à des disciples affamés, il en reprend une partie de ce que le mot veut dire.
 
 ## Un mot à lire lentement
 
-Puisqu'aucun mot ne suffit à lui seul, il est utile de savoir ce qu'il y a dessous. Quand vous lisez "steadfast love", "faithful love" ou "loyal love" dans l'édition anglaise d'Open Word Bible, ou "amour fidèle" dans l'édition française, le mot qui se trouve derrière est le même, et il désigne l'amour de quelqu'un qui s'est lié à vous et qui ne vous lâchera pas. Ruth l'a montré à Naomi. Jonathan l'a demandé à David, et David l'a gardé. Et c'est le mot que Dieu a choisi, sur la montagne, pour dire qui il est.
+Puisqu'aucun mot ne suffit à lui seul, il est utile de savoir ce qu'il y a dessous. Quand vous lisez "steadfast love", "faithful love" ou "loyal love" dans l'édition anglaise d'Open Word Bible, ou "amour loyal" et "amour fidèle" dans l'édition française, le mot qui se trouve derrière est le même, et il désigne l'amour de quelqu'un qui s'est lié à vous et qui ne vous lâchera pas. Ruth l'a montré à Naomi. Jonathan l'a demandé à David, et David l'a gardé. Et c'est le mot que Dieu a choisi, sur la montagne, pour dire qui il est.
 
 Les dossiers se trouvent dans le lecteur : [Ouvrez Ruth 1](/rut/1/), [Ouvrez Exode 34](/exo/34/), [Ouvrez le Psaume 136](/psa/136/) et [Ouvrez Osée 6](/hos/6/). Pour une question voisine, la façon dont une traduction rend le nom de Dieu en Exode 34:6, voir [Le nom divin dans les traductions](/articles/the-divine-name-in-translation/).

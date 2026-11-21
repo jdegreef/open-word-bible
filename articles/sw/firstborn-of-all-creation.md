@@ -28,11 +28,11 @@ Israeli halikuwa taifa la kwanza katika historia. Uamuzi wa maana unayasoma mane
 
 **Efraimu.** Yusufu alikuwa na wana wawili, na Manase alikuwa mkubwa. Hata hivyo Yakobo alipowabariki, aliipishanisha mikono yake na kuweka mkono wake wa kuume juu ya mdogo, Efraimu (Mwanzo 48:14). Karne nyingi baadaye Mungu anasema kupitia Yeremia, "Efraimu ni mzaliwa wangu wa kwanza" (Yeremia 31:9). Rekodi ya huko inaeleza kwamba Efraimu alipokea baraka ya mzaliwa wa kwanza ingawa alikuwa mwana mdogo. "Mzaliwa wa kwanza" ni nafasi ya heshima, si tarehe ya kuzaliwa.
 
-**Mfalme wa Daudi.** Zaburi 89 ni ahadi ya Mungu kwa Daudi na uzao wake. Zaburi bado haijatafsiriwa kwa Kiswahili, kwa hiyo mstari unaonyeshwa kwa Kiingereza:
+**Mfalme wa Daudi.** Zaburi 89 ni ahadi ya Mungu kwa Daudi na uzao wake:
 
 > {{OWB:PSA.89.28.s1:L}}
 
-(Biblia za Kiingereza zinauhesabu mstari huu kuwa 89:27.) Mfalme hakuzaliwa kwanza. Anafanywa *kuwa* mzaliwa wa kwanza, na mstari wa pili unasema hilo linamaanisha nini: "aliye juu kuliko wafalme wa dunia". Uamuzi wa maana unaeleza kwamba mwana mzaliwa wa kwanza alishika cheo cha kwanza na urithi, na kwamba hapa mfalme anapokea cheo hicho. Kiwango cha Linganifu cha Kiingereza kinasema "I will give him the rank of firstborn" (nitampa cheo cha mzaliwa wa kwanza).
+(Biblia za Kiingereza zinauhesabu mstari huu kuwa 89:27.) Mfalme hakuzaliwa kwanza. Anafanywa *kuwa* mzaliwa wa kwanza, na mstari wa pili unasema hilo linamaanisha nini: "aliye juu kuliko wafalme wa dunia". Uamuzi wa maana unaeleza kwamba mwana mzaliwa wa kwanza alishika cheo cha kwanza na urithi, na kwamba hapa mfalme anapokea cheo hicho. Kiwango cha Linganifu kinasema "Nitampa cheo cha mzaliwa wa kwanza".
 
 ## Mstari unaofuata
 

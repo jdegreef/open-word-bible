@@ -6,7 +6,7 @@ order: 112
 nav_title: Jeremiah's two editions
 section: passage
 ---
-Every book of the Bible has places where the manuscripts disagree. In most books they are few and small. Jeremiah is different. In Open Word Bible's records it has 176 text-variant decisions, more than any other book: more than John (139), the Psalms (134) or Isaiah (122). Ninety-six of them have a footnote, and fifty are marked uncertain.
+Every book of the Bible has places where the manuscripts disagree. In most books they are few and small. Jeremiah is different. In Open Word Bible's records it has 178 text-variant decisions, more than any other book: more than John (139), the Psalms (134) or Luke (125). Ninety-three of them have a footnote, and fifty are marked uncertain.
 
 The main reason is that Jeremiah has come down to us in two editions. This article explains what they are, why scholars think the book exists in two forms, and what the translation does.
 
@@ -65,7 +65,7 @@ Many of these notes say something unusual: "This description of the Greek is fro
 
 ## The other half: what the scribes wrote and what they read
 
-About 84 of Jeremiah's 176 decisions concern the Greek. Nearly as many, about 78, concern something else: places where the Hebrew manuscripts themselves give two forms of a word.
+About 84 of Jeremiah's 178 decisions concern the Greek. Nearly as many, about 78, concern something else: places where the Hebrew manuscripts themselves give two forms of a word.
 
 The Masoretes, the scribes who copied and vocalized the Hebrew text in the early Middle Ages, would not change the letters they had received. Where they thought a word should be read differently, they left the written consonants alone and noted in the margin the form to be read aloud. The written form is called the *ketiv* ("what is written"), and the form read aloud the *qere* ("what is read"). Jeremiah has an unusually large number of them. See [The Masoretes: guardians of the Hebrew text](/articles/the-masoretes/).
 
@@ -79,7 +79,7 @@ The remaining fourteen or so decisions concern places where some Hebrew manuscri
 
 ## Why so many notes?
 
-Put together, the count is not a sign that Jeremiah's text is unreliable. Most of the 176 decisions record either a difference in spelling that the Hebrew scribes themselves marked, or a place where the Greek edition is shorter. The first kind affects almost nothing. The second is real, but it is well understood and well documented: two editions of one prophet's book, both ancient, both copied by faithful communities.
+Put together, the count is not a sign that Jeremiah's text is unreliable. Most of the 178 decisions record either a difference in spelling that the Hebrew scribes themselves marked, or a place where the Greek edition is shorter. The first kind affects almost nothing. The second is real, but it is well understood and well documented: two editions of one prophet's book, both ancient, both copied by faithful communities.
 
 A reader of Open Word Bible can see both, without being made to choose. The text is the Hebrew edition that the church and synagogue have read. The footnotes show where the other edition differs, and the decisions explain why, and how sure the translation is.
 

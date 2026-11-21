@@ -4,7 +4,7 @@ summary: Phần lớn các bản dịch hiện đại đều có bản quyền, 
 date: 2026-10-10
 order: 1
 section: method
-source: 9fd8dc41ba74
+source: 367fdc3441f9
 ---
 Đã có rất nhiều bản Kinh Thánh tiếng Anh tốt. Vậy tại sao lại bắt đầu thêm một bản nữa?
 
@@ -48,4 +48,4 @@ Bản ghi bên cạnh câu Kinh Thánh nói lý do. Giăng dùng cùng động t
 
 ## Chúng tôi đang ở đâu
 
-Dự án còn non trẻ. Toàn bộ Kinh Thánh đã được soạn thảo bằng tiếng Anh, tiếng Tây Ban Nha, tiếng Pháp, tiếng Swahili, tiếng Việt, tiếng Hàn, tiếng Bồ Đào Nha và tiếng Amhara, và công việc bằng tiếng Hindi và tiếng Nga đã bắt đầu, mỗi ngôn ngữ đều được dịch từ tiếng Hy Lạp và tiếng Hê-bơ-rơ. Mỗi câu văn đều kèm theo đầy đủ lý lẽ của nó, và trang [Đọc](/read/) cho thấy những gì đã được dịch cho đến nay. Bản dịch có mặt ở đó để trình bày phương pháp và để được phê bình. Nếu bạn đọc được tiếng Hy Lạp hay tiếng Hê-bơ-rơ, hoặc chỉ đơn giản là nhận thấy một chỗ đọc không suôn, [dự án trên GitHub](https://github.com/jdegreef/open-word-bible) là nơi để lên tiếng.
+Dự án còn non trẻ. Toàn bộ Kinh Thánh đã được soạn thảo bằng tiếng Anh, tiếng Tây Ban Nha, tiếng Pháp, tiếng Swahili, tiếng Việt, tiếng Hàn, tiếng Bồ Đào Nha, tiếng Amhara, tiếng Hindi, tiếng Nga, tiếng Ukraina, tiếng Nhật và tiếng Indonesia, và còn nhiều ngôn ngữ khác đang được thực hiện, mỗi ngôn ngữ đều được dịch từ tiếng Hy Lạp và tiếng Hê-bơ-rơ. Mỗi câu văn đều kèm theo đầy đủ lý lẽ của nó, và trang [Đọc](/read/) cho thấy những gì đã được dịch cho đến nay. Bản dịch có mặt ở đó để trình bày phương pháp và để được phê bình. Nếu bạn đọc được tiếng Hy Lạp hay tiếng Hê-bơ-rơ, hoặc chỉ đơn giản là nhận thấy một chỗ đọc không suôn, [dự án trên GitHub](https://github.com/jdegreef/open-word-bible) là nơi để lên tiếng.

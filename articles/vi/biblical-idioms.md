@@ -12,8 +12,6 @@ Kinh Thánh đầy những thành ngữ. Người đọc đầu tiên hiểu ch�
 
 Thành ngữ là một trong những loại mà dự án dùng cho các quyết định về nghĩa. Các bản ghi chứa hàng nghìn quyết định như vậy. Một quyết định về nghĩa thuộc loại này nói thành ngữ có nghĩa là gì, bằng những lời mà ngôn ngữ nào cũng có thể đặt vào hình thức riêng của mình. Rồi mỗi cấp độ quyết định diễn đạt nó ra sao. Bản hướng dẫn văn phong đặt quy tắc chung cho Dễ đọc: nó giải thích thành ngữ thay vì tái hiện chúng. Sát nghĩa và Cân bằng quyết định tùy từng trường hợp.
 
-(Câu trích nào chưa có bản tiếng Việt sẽ hiện ra theo bản tiếng Anh của Open Word Bible.)
-
 ## Thắt lưng
 
 Người ở vùng Cận Đông cổ đại mặc áo dài. Để làm việc, chạy hay đi đường, một người đàn ông túm phần dưới của áo lên và giắt vào thắt lưng ở ngang hông. Đó là ý nghĩa của "thắt lưng" (gird up the loins). Nó là hình ảnh của sự sẵn sàng hành động.
@@ -24,9 +22,9 @@ Trong Lễ Vượt Qua đầu tiên, Y-sơ-ra-ên được dặn ăn lễ trong 
 
 > {{OWB:EXO.12.11.s1:B}}
 
-Trong bản tiếng Anh, Sát nghĩa giữ "your loins girded" (lưng các ngươi thắt lại). Cân bằng nói điều đó trông như thế nào: "robes tucked into your belts" (áo dài giắt vào thắt lưng). Dễ đọc nói "Tie up your robes" (Hãy buộc áo dài lên). Quyết định về cách diễn đạt rất ngắn: Cân bằng và Dễ đọc giải thích thành ngữ, còn Sát nghĩa giữ nó.
+Sát nghĩa giữ "lưng thắt lại". Cân bằng nói điều đó trông như thế nào: "áo vén lên giắt vào thắt lưng". Dễ đọc nói "Hãy buộc áo lên". Cân bằng và Dễ đọc giải thích thành ngữ, còn Sát nghĩa giữ nó.
 
-Cũng hình ảnh ấy được dùng theo nghĩa đen trong 1 Các Vua 18:46, khi Ê-li, được CHÚA ban sức, giắt áo lên và chạy trước xe của vua A-háp suốt đến Gít-rê-ên. Bản Dễ đọc tiếng Anh thêm lý do: "He tied up his long robe so he could run" (Ông buộc chiếc áo dài lên để có thể chạy).
+Cũng hình ảnh ấy được dùng theo nghĩa đen trong 1 Các Vua 18:46, khi Ê-li, được CHÚA ban sức, giắt áo lên và chạy trước xe của vua A-háp suốt đến Gít-rê-ên. Bản Dễ đọc thêm lý do: "Ông buộc gọn áo choàng dài để chạy".
 
 Đức Giê-xu dùng nó như một mệnh lệnh trong Lu-ca 12:35: "Hãy thắt lưng các con lại và để đèn các con cháy sáng", như bản Sát nghĩa tiếng Việt nói. Bản Cân bằng tiếng Việt nói "Hãy luôn sẵn sàng làm việc, lưng thắt gọn gàng", và quyết định về cách diễn đạt của bản tiếng Anh giải thích rằng "gird" là một từ cổ.
 
@@ -68,7 +66,7 @@ Open Word Bible giữ các động từ tách biệt ở chỗ có thể. Trong 
 
 > {{OWB:EXO.8.11.s1:L}}
 
-Trong bản tiếng Anh, Sát nghĩa nói "made his heart heavy" (làm cho lòng mình nặng nề) để cho thấy động từ Hê-bơ-rơ. Cân bằng nói "hardened his heart" (làm cứng lòng mình), thành ngữ quen thuộc của tiếng Anh. Dễ đọc nói "he made himself stubborn" (ông tự làm cho mình ương ngạnh), và trong 7:3 là "I will make Pharaoh stubborn" (Ta sẽ làm cho Pha-ra-ôn ương ngạnh): nó nói rõ một tấm lòng cứng cỏi là gì.
+Sát nghĩa nói "làm cho lòng mình nặng nề" để cho thấy động từ Hê-bơ-rơ. Cân bằng nói "cứng lòng", một thành ngữ quen thuộc. Dễ đọc nói "tự làm cho mình cứng lòng", và trong 7:3 là "ta sẽ làm cho Pha-ra-ôn cứng lòng".
 
 Đây là một trường hợp thành ngữ mang theo thần học. Người đọc từ lâu đã tranh luận việc Đức Chúa Trời làm cứng lòng Pha-ra-ôn có nghĩa là gì. Nhiệm vụ của bản dịch không phải là giải quyết cuộc tranh luận ấy, mà là để người đọc thấy bản văn nói gì, kể cả ai là chủ ngữ của mỗi động từ. Đó là lý do Sát nghĩa giữ ba động từ ở chỗ phần lớn các bản Kinh Thánh tiếng Anh chỉ có một.
 
@@ -78,9 +76,9 @@ Lời chúc phước của thầy tế lễ trong Dân Số Ký 6 kết thúc b�
 
 > {{OWB:NUM.6.26.s1:B}}
 
-Bản Cân bằng tiếng Anh giữ hình ảnh và thêm "to look on you" (để nhìn đến con), làm nổi bật điều gương mặt được ngẩng lên làm. Dễ đọc nói "turn toward you and care for you" (quay về phía con và chăm sóc con).
+Bản Cân bằng giữ hình ảnh và thêm "nhìn đến", làm nổi bật điều gương mặt được ngẩng lên làm. Dễ đọc nói "quay lại chăm sóc anh em".
 
-Cùng một thành ngữ có thể chỉ về hướng ngược lại. Trong Lê-vi Ký 19:15, các quan xét được dặn không được "nâng mặt kẻ nghèo" hay "tôn trọng mặt người quyền thế". Quyết định về nghĩa nói rằng nâng mặt một người là tỏ ân huệ với người ấy, ở đây là trong tòa án, và một quan xét không được thiên vị ai vì người ấy là ai. Bản Cân bằng tiếng Anh nói "take the side of the poor because they are poor" (đứng về phía người nghèo vì họ nghèo) và "give special honor to the powerful" (tôn trọng đặc biệt người có quyền thế).
+Cùng một thành ngữ có thể chỉ về hướng ngược lại. Trong Lê-vi Ký 19:15, các quan xét được dặn không được "nâng mặt kẻ nghèo" hay "tôn trọng mặt người quyền thế". Quyết định về nghĩa nói rằng nâng mặt một người là tỏ ân huệ với người ấy, ở đây là trong tòa án, và một quan xét không được thiên vị ai vì người ấy là ai. Bản Cân bằng nói "Đừng thiên vị người nghèo vì họ nghèo" và "đừng nể nang người quyền thế".
 
 Như vậy, cùng những chữ Hê-bơ-rơ có thể mô tả phước lành của Đức Chúa Trời ở chỗ này và một quan xét bất chính ở chỗ khác. Ân huệ từ Đức Chúa Trời là một món quà. Ân huệ từ một quan xét, dành cho một con người thay vì cho sự thật, là bất công. Không thể dịch một thành ngữ theo công thức. Mỗi văn mạch có quyết định riêng của nó.
 
@@ -88,7 +86,7 @@ Như vậy, cùng những chữ Hê-bơ-rơ có thể mô tả phước lành c�
 
 Trong 1 Sa-mu-ên 9:15, một ngày trước khi Sau-lơ đến, CHÚA "đã mở tai Sa-mu-ên". Cụm từ ấy là {{HEBREW:1SA.9.15:2-5}}. Quyết định về nghĩa giải thích: mở tai một người là nói riêng với người ấy một điều gì, một bí mật hay một kế hoạch, và khi Đức Chúa Trời là người nói thì đó là sự mặc khải.
 
-Tiếng Anh không có cụm từ như vậy, và "uncovered his ear" (mở tai ông) sẽ nghe lạ lùng. Sát nghĩa giữ nó. Bản Cân bằng tiếng Anh nói "the LORD had revealed this to Samuel" (CHÚA đã bày tỏ điều này cho Sa-mu-ên). Dễ đọc nói "the LORD had told Samuel a secret" (CHÚA đã cho Sa-mu-ên biết một điều bí mật), giữ được phần nào cảm giác riêng tư, thì thầm ấy.
+Tiếng Anh không có cụm từ như vậy, và "uncovered his ear" (mở tai ông) sẽ nghe lạ lùng. Sát nghĩa giữ nó. Cân bằng nói "CHÚA đã tỏ cho Sa-mu-ên biết". Dễ đọc nói "CHÚA đã cho Sa-mu-ên biết một điều kín nhiệm", giữ được phần nào cảm giác riêng tư, thì thầm ấy.
 
 ## Ruột gan thương xót
 
@@ -100,19 +98,19 @@ Từ Hy Lạp là {{LEMMA:PHP.1.8:11}} (*splanchna*). Quyết định về nghĩ
 
 Bản tiếng Việt không giữ chữ “ruột” ở cấp độ nào: Sát nghĩa nói “lòng thương yêu tha thiết của Đấng Christ Giê-xu”, Cân bằng nói “tình yêu sâu xa”, và Dễ đọc nói “tình yêu dịu dàng”. Quyết định về cách diễn đạt nêu lý do: tiếng Việt nói về cảm xúc ở “lòng” chứ không ở ruột, và “ruột gan” sẽ nghe buồn cười.
 
-Tiếng Hê-bơ-rơ cũng có cùng một cách nói. Khi Giô-sép thấy em mình là Bên-gia-min trong Sáng Thế Ký 43:30, bản Sát nghĩa tiếng Anh nói "his compassion grew warm toward his brother" (lòng thương xót của ông nóng lên đối với em mình). Quyết định về nghĩa giải thích rằng từ Hê-bơ-rơ chỉ lòng thương xót nói về các bộ phận bên trong, được cảm nhận như nơi của tình thương dịu dàng, và theo nghĩa đen là chúng "nóng lên". Cân bằng nói "his heart was so stirred for his brother" (lòng ông xúc động mạnh vì em mình), đổi một thành ngữ về bộ phận cơ thể lấy một thành ngữ khác mà người đọc tiếng Anh hiểu được.
+Tiếng Hê-bơ-rơ cũng có cùng một cách nói. Khi Giô-sép thấy em mình là Bên-gia-min trong Sáng Thế Ký 43:30, bản Sát nghĩa nói "lòng thương em mình trào dâng". Quyết định về nghĩa giải thích rằng từ Hê-bơ-rơ chỉ lòng thương xót nói về các bộ phận bên trong, được cảm nhận như nơi của tình thương dịu dàng, và theo nghĩa đen là chúng "nóng lên". Cân bằng nói "lòng ông xúc động thương em", đổi một thành ngữ về bộ phận cơ thể lấy một thành ngữ khác mà người đọc tiếng Việt hiểu được.
 
-Đôi khi cách dịch tốt nhất cho một thành ngữ là một thành ngữ trong ngôn ngữ dịch mang cùng ý nghĩa: "lòng" thay cho "ruột", hay "sweat of your brow" (mồ hôi trán) thay cho "sweat of your face" (mồ hôi mặt) (Sáng Thế Ký 3:19). Mỗi sự đổi chác như vậy là một quyết định về cách diễn đạt được ghi lại.
+Đôi khi cách dịch tốt nhất cho một thành ngữ là một thành ngữ trong ngôn ngữ dịch mang cùng ý nghĩa: "lòng" thay cho "ruột", hay "mồ hôi trán" thay cho "mồ hôi trên mặt" (Sáng Thế Ký 3:19). Mỗi sự đổi chác như vậy là một quyết định về cách diễn đạt được ghi lại.
 
 ## Vì sao các cấp độ khác nhau
 
-Qua những ví dụ này, một khuôn mẫu hiện ra. (Các cụm từ trích dưới đây là của bản tiếng Anh.)
+Qua những ví dụ này, một khuôn mẫu hiện ra.
 
-**Sát nghĩa** giữ thành ngữ, để người đọc có thể thấy hình ảnh của nguyên văn: "your loins girded" (lưng thắt lại), "uncovered the ear" (mở tai), "made his heart heavy" (làm lòng nặng nề). Đó là cấp độ cho người đọc muốn biết bản văn thật sự nói gì, từng chữ một.
+**Sát nghĩa** giữ thành ngữ, để người đọc có thể thấy hình ảnh của nguyên văn: "lưng thắt lại", "mở tai", "làm cho lòng mình nặng nề". Đó là cấp độ cho người đọc muốn biết bản văn thật sự nói gì, từng chữ một.
 
-**Cân bằng** quyết định tùy từng trường hợp. Khi một thành ngữ được biết rõ và ý nghĩa của nó rõ ràng, nó thường giữ lại: "heaping burning coals" (chất than lửa đỏ), "lift up his face" (ngẩng mặt lên). Khi nó sẽ gây bối rối hay hiểu lầm, nó đưa ra ý nghĩa: "robes tucked into your belts" (áo dài giắt vào thắt lưng), "revealed this to Samuel" (bày tỏ điều này cho Sa-mu-ên).
+**Cân bằng** quyết định tùy từng trường hợp. Khi một thành ngữ được biết rõ và ý nghĩa của nó rõ ràng, nó thường giữ lại: "chất than hồng", "ngẩng mặt". Khi nó sẽ gây bối rối hay hiểu lầm, nó đưa ra ý nghĩa: "áo vén lên giắt vào thắt lưng", "tỏ cho Sa-mu-ên biết".
 
-**Dễ đọc** giải thích. Nó được viết cho những người đọc có thể không biết nền văn hóa đằng sau hình ảnh, và nó nói thành ngữ có nghĩa là gì: "Tie up your robes" (Hãy buộc áo dài lên), "told Samuel a secret" (cho Sa-mu-ên biết một điều bí mật), "made himself stubborn" (tự làm cho mình ương ngạnh).
+**Dễ đọc** giải thích. Nó được viết cho những người đọc có thể không biết nền văn hóa đằng sau hình ảnh, và nó nói thành ngữ có nghĩa là gì: "Hãy buộc áo lên", "cho Sa-mu-ên biết một điều kín nhiệm".
 
 Đằng sau cả ba là một quyết định về nghĩa duy nhất, giống nhau cho mọi ngôn ngữ. Một bản dịch tiếng Việt, tiếng Tây Ban Nha hay tiếng Swahili có thể tìm thành ngữ riêng của mình cho cùng một ý nghĩa, hoặc giải thích nó, nhưng không thay đổi điều thành ngữ ấy có nghĩa. Đó là nguyên tắc được giải thích trong [Sát nghĩa, Cân bằng, Dễ đọc: ba cấp độ, một ý nghĩa](/articles/three-levels-one-meaning/).
 

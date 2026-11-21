@@ -10,8 +10,6 @@ source: 65601781c86e
 
 Open Word Bible dịch cụm từ này khác nhau ở những chỗ khác nhau, vì ở mỗi chỗ nó làm một việc khác nhau. Bài viết này theo dấu cụm từ ấy qua Cựu Ước rồi vào các sách Phúc Âm, và trình bày những quyết định đằng sau mỗi lựa chọn.
 
-Một lưu ý trước khi đọc: phần Cựu Ước của Open Word Bible chưa được dịch sang tiếng Việt, nên những câu trích từ Thi Thiên, Ê-xê-chi-ên và Đa-ni-ên dưới đây hiện ra bằng bản tiếng Anh, và những gì bài viết nói về lời văn của các câu ấy là nói về bản tiếng Anh. Các câu trích từ Mác và Giăng thì đã có bản tiếng Việt.
-
 ## Một cụm từ bình thường
 
 Tiếng Hê-bơ-rơ thường nói “con của” ở chỗ tiếng Việt nói “người” hay “một thành viên của”. “Con của sức mạnh” là một người mạnh mẽ; “các con của các nhà tiên tri” là những nhà tiên tri họp thành một nhóm. Vì vậy, “con của người”, {{HEBREW:EZK.2.1:3-4}} (*ben ʾādām*), đơn giản có nghĩa là một thành viên của loài người. Chữ thứ hai cũng là chữ dùng cho A-đam và cho cả loài người nói chung.
@@ -20,11 +18,11 @@ Thi Thiên 8 cho thấy cụm từ này được dùng thế nào. Tác giả ng
 
 > {{OWB:PSA.8.5.s1:L}}
 
-Đó là cấp độ Sát nghĩa của bản tiếng Anh, với các cài đặt đọc của người đọc giữ nguyên. Hai vế của câu nói cùng một điều hai lần, như thơ Hê-bơ-rơ thường làm: “người” và “con của người” là hai từ song song chỉ một con người, nhỏ bé và hay chết dưới bầu trời bao la. Quyết định về nghĩa của câu này nói đúng như vậy. (Các bản Kinh Thánh tiếng Anh và tiếng Việt quen thuộc đánh số câu này là 8:4; Open Word Bible theo cách đánh số của bản Hê-bơ-rơ, vốn tính phần tiêu đề là câu 1.)
+Đó là cấp độ Sát nghĩa, với các cài đặt đọc của người đọc giữ nguyên. Hai vế của câu nói cùng một điều hai lần, như thơ Hê-bơ-rơ thường làm: “loài người” và “con của loài người” là hai từ song song chỉ một con người, nhỏ bé và hay chết dưới bầu trời bao la. Quyết định về nghĩa của câu này nói đúng như vậy. (Các bản Kinh Thánh tiếng Anh và tiếng Việt quen thuộc đánh số câu này là 8:4; Open Word Bible theo cách đánh số của bản Hê-bơ-rơ, vốn tính phần tiêu đề là câu 1.)
 
-Vì cụm từ này chỉ bất kỳ con người nào, nam hay nữ, nên trong thi thiên này nó chịu ảnh hưởng của cài đặt giới tính. Theo mặc định, cấp độ Sát nghĩa trong tiếng Anh nói “a mortal” (một người phàm), và người đọc nào ưa cách nói truyền thống có thể đổi cài đặt để thấy “the son of man” (con của người). Cài đặt thay đổi cách diễn đạt, không thay đổi ý nghĩa: cả hai đều nói “một con người”. Cách nói truyền thống được giữ làm phương án thay thế vì một lý do mà bản ghi nêu ra. Hê-bơ-rơ 2:6–8 trích thi thiên này và hiểu nó là nói về Đức Giê-xu, con người duy nhất đã được “đội mão vinh quang và tôn trọng”. Người đọc so sánh hai đoạn ấy nên có thể thấy cùng những chữ ở cả hai nơi. (Trong bản tiếng Việt của Hê-bơ-rơ 2:6, cấp độ Sát nghĩa nói “con của loài người”, viết thường, và không có cài đặt giới tính, vì “con người” và “loài người” trong tiếng Việt vốn đã bao gồm cả nam lẫn nữ.)
+Cụm từ này chỉ bất kỳ con người nào, nam hay nữ. Trong tiếng Việt, “loài người” và “con của loài người” vốn đã bao gồm cả nam lẫn nữ, nên ở đây không có cài đặt giới tính. Cấp độ Sát nghĩa giữ “con của loài người” vì một lý do mà bản ghi nêu ra. Hê-bơ-rơ 2:6–8 trích thi thiên này và hiểu nó là nói về Đức Giê-xu, con người duy nhất đã được “đội mão vinh quang và tôn trọng”. Người đọc so sánh hai đoạn ấy nên có thể thấy cùng những chữ ở cả hai nơi. (Cấp độ Sát nghĩa của Hê-bơ-rơ 2:6 cũng nói “con của loài người”, viết thường.)
 
-Dân Số Ký 23:19 dùng cụm từ này theo cùng cách: Đức Chúa Trời không phải là con người để nói dối, cũng không phải là “con của loài người” để đổi ý. Ở đây điều được đối chiếu là sự đáng tin cậy của Đức Chúa Trời và sự hay thay đổi của con người, và cấp độ Cân bằng tiếng Anh nói đơn giản là “a mortal” (một người phàm).
+Dân Số Ký 23:19 dùng cụm từ này theo cùng cách: Đức Chúa Trời không phải là con người để nói dối, cũng không phải là “con của loài người” để đổi ý. Ở đây điều được đối chiếu là sự đáng tin cậy của Đức Chúa Trời và sự hay thay đổi của con người, và cấp độ Cân bằng nói đơn giản là “người phàm”.
 
 ## Ê-xê-chi-ên: “Hỡi con người, hãy đứng dậy”
 
@@ -34,11 +32,11 @@ Cụm từ này xuất hiện trong sách Ê-xê-chi-ên nhiều hơn bất cứ
 
 Đức Chúa Trời không bao giờ gọi Ê-xê-chi-ên bằng tên. Ngài gọi ông là “con người”, khoảng chín mươi ba lần trong cả sách. Quyết định về nghĩa nói cụm từ này làm gì ở đây. Đặt cạnh vinh quang rực rỡ của chương 1, nó nhắc Ê-xê-chi-ên rằng ông là một tạo vật hay chết đang đứng trước mặt Đức Chúa Trời. Nó cũng nói lên một điều về Đức Chúa Trời: Ngài đã chọn phán với một con người và sai người ấy đi.
 
-Nhiều bản Kinh Thánh tiếng Anh hiện đại dịch cụm từ này theo nghĩa của nó. Chẳng hạn, bản New Revised Standard Version nói “O mortal” (hỡi người phàm). Open Word Bible thì không. Một quyết định về cách diễn đạt ghi lại phán quyết của người sáng lập rằng “son of man” được giữ ở mọi cấp độ, kể cả Dễ đọc, để người đọc gặp lại cùng những chữ ấy mỗi lần Đức Chúa Trời gọi nhà tiên tri. Cụm từ được viết thường, vì nó không phải là một danh hiệu, và không chịu cài đặt giới tính, vì ở đây nó chỉ một người đàn ông cụ thể.
+Nhiều bản Kinh Thánh tiếng Anh hiện đại dịch cụm từ này theo nghĩa của nó. Chẳng hạn, bản New Revised Standard Version nói “O mortal” (hỡi người phàm). Open Word Bible thì không. Một quyết định về cách diễn đạt tiếng Anh ghi lại phán quyết của người sáng lập rằng “son of man” được giữ ở mọi cấp độ, kể cả Dễ đọc, để người đọc gặp lại cùng những chữ ấy mỗi lần Đức Chúa Trời gọi nhà tiên tri. Cụm từ được viết thường, vì nó không phải là một danh hiệu, và không chịu cài đặt giới tính, vì ở đây nó chỉ một người đàn ông cụ thể. Bản tiếng Việt nói “Hỡi con người”, viết thường, ở mọi cấp độ.
 
 Cũng chú thích ấy nêu thêm một điểm. Lời gọi Ê-xê-chi-ên không phải là danh hiệu “Con Người” mà Đức Giê-xu dùng. Danh hiệu ấy đến từ một nơi khác: từ một khải tượng trong sách Đa-ni-ên.
 
-## Đa-ni-ên 7: “một đấng giống như con người”
+## Đa-ni-ên 7: “một vị giống như con người”
 
 Đa-ni-ên 7 được viết bằng tiếng A-ram, ngôn ngữ của phần lớn Đa-ni-ên 2–7, và hình thức A-ram của cụm từ này là {{HEBREW:DAN.7.13:9-10}} (*kĕbar ʾĕnāsh*), “giống như con của người”. Nó xuất hiện ở cao điểm của một giấc chiêm bao.
 
@@ -70,7 +68,7 @@ Một số nhà giải kinh chỉ ra rằng những cách hiểu này không nh�
 
 Bản ghi không chọn giữa những cách hiểu này. Nó giữ lời mô tả của chính khải tượng và để ngỏ câu hỏi.
 
-Điều này thể hiện trong lời văn. Ở mọi cấp độ của bản tiếng Anh, nhân vật ấy là “one like a son of man” (một đấng giống như con người), viết thường, và các đại từ chỉ người (“he”, “him”) không chịu cài đặt đại từ chỉ Đức Chúa Trời, là cài đặt sẽ viết hoa chúng cho người đọc nào ưa như vậy. Đại từ chỉ Đấng Thượng Cổ trong cùng câu thì có chịu cài đặt ấy. Một quyết định về cách diễn đạt giải thích lý do: khải tượng mô tả nhân vật ấy, và lời văn không quyết định người là ai. Cấp độ Dễ đọc đưa ra nghĩa đơn giản của câu A-ram: “someone who looked like a human being” (một người trông giống như con người).
+Điều này thể hiện trong lời văn. Ở cấp độ Sát nghĩa và Cân bằng, nhân vật ấy là “một vị giống như con người”, với “con người” viết thường ở mọi cấp độ, và đại từ chỉ người (“vị ấy”) không chịu cài đặt đại từ chỉ Đức Chúa Trời, là cài đặt sẽ viết hoa chúng cho người đọc nào ưa như vậy. Đại từ chỉ Đấng Thượng Cổ trong cùng câu thì có chịu cài đặt ấy. Một quyết định về cách diễn đạt giải thích lý do: khải tượng mô tả nhân vật ấy, và lời văn không quyết định người là ai. Cấp độ Dễ đọc đưa ra nghĩa đơn giản của câu A-ram: “một vị trông giống như một con người”.
 
 Đa-ni-ên 7 không phải là nơi cuối cùng hình ảnh này xuất hiện trong văn chương Do Thái. Một phần của sách 1 Hê-nóc gọi là Các Ẩn Dụ, hay Các Dụ Ngôn (chương 37–71), nói về một nhân vật trên trời được gọi là “Con Người ấy”, Đấng Được Chọn, ngồi trên ngai vinh quang và xét xử. Niên đại của phần này còn được tranh luận: đó là phần duy nhất của 1 Hê-nóc không có trong các Cuộn sách Biển Chết, và các học giả xếp nó vào bất cứ thời điểm nào từ thế kỷ thứ nhất trước Công nguyên đến cuối thế kỷ thứ nhất sau Công nguyên. Một sách khải thị khác, 4 E-xơ-ra, viết vào khoảng cuối thế kỷ thứ nhất sau Công nguyên, thấy “một cái gì đó giống như hình dạng một người” từ biển lên và bay cùng những đám mây trên trời (chương 13). Cả hai cho thấy người Do Thái thời ấy hiểu nhân vật của Đa-ni-ên là một cá nhân và là một tác nhân trên trời của Đức Chúa Trời.
 
@@ -116,7 +114,7 @@ Các bản ghi không tìm cách giải quyết vấn đề lịch sử. Chúng 
 
 Như vậy, cụm từ này xuất hiện dưới hai hình thức trong Open Word Bible, và sự khác biệt là có chủ ý.
 
-Ở đâu nó là một lời mô tả, nó được viết thường: “son of man” trong Ê-xê-chi-ên và trong Đa-ni-ên 8:17, nơi Gáp-ri-ên gọi Đa-ni-ên cũng bằng cách ấy; “one like a son of man” trong Đa-ni-ên 7:13 (bản tiếng Anh) và “một Đấng giống như con người” trong Khải Huyền 1:13, với “con người” viết thường. Hình thức trong Khải Huyền không có mạo từ trong tiếng Hy Lạp, và bản ghi ở đó lưu ý rằng nó lặp lại lời mô tả của Đa-ni-ên chứ không phải danh hiệu trong các sách Phúc Âm, dù câu 17–18 cho thấy nhân vật ấy là Đức Giê-xu. Quyết định về cách diễn đạt tiếng Việt ở đó giữ “con người” viết thường để không biến cụm từ thành danh hiệu “Con Người”, và dùng chữ “Đấng” để cho thấy đó là Đấng Christ phục sinh.
+Ở đâu nó là một lời mô tả, nó được viết thường: “con người” trong Ê-xê-chi-ên và trong Đa-ni-ên 8:17, nơi Gáp-ri-ên gọi Đa-ni-ên cũng bằng cách ấy; “một vị giống như con người” trong Đa-ni-ên 7:13 và “một Đấng giống như con người” trong Khải Huyền 1:13, với “con người” viết thường. Hình thức trong Khải Huyền không có mạo từ trong tiếng Hy Lạp, và bản ghi ở đó lưu ý rằng nó lặp lại lời mô tả của Đa-ni-ên chứ không phải danh hiệu trong các sách Phúc Âm, dù câu 17–18 cho thấy nhân vật ấy là Đức Giê-xu. Quyết định về cách diễn đạt tiếng Việt ở đó giữ “con người” viết thường để không biến cụm từ thành danh hiệu “Con Người”, và dùng chữ “Đấng” để cho thấy đó là Đấng Christ phục sinh.
 
 Ở đâu nó là danh hiệu Đức Giê-xu dùng, nó được viết hoa, ở mọi cấp độ: “the Son of Man” trong tiếng Anh, “Con Người” trong tiếng Việt. Các quyết định về cách diễn đạt tại Mác 2:10 và Giăng 1:51 ghi rằng danh hiệu này không bao giờ chịu cài đặt giới tính. Trong tiếng Anh, chúng liệt kê những phương án không được chọn: “the Human One” (Người Nhân Loại), như bản Common English Bible dùng, và “the Son of the Human”. Những cách dịch này làm nổi bật một điều có thật, vì cụm từ này quả có nghĩa là một con người. Nhưng trong các sách Phúc Âm nó đã trở thành một danh xưng, và một danh xưng giữ hình thức quen thuộc của nó để người đọc có thể theo nó từ Đa-ni-ên đến phiên xét xử trước thầy tế lễ thượng phẩm. Trong tiếng Việt, quyết định tại Giăng 1:51 cũng chọn “Con Người” viết hoa, chứ không phải “con người” viết thường.
 

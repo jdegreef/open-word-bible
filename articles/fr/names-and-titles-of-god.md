@@ -49,11 +49,11 @@ Dans la vision d'Ésaïe, "je vis le Seigneur assis sur un trône" (Ésaïe 6:1)
 
 ## "Mon seigneur" au Psaume 110
 
-La différence entre *Adonaï* et le mot ordinaire pour un maître compte surtout en Psaume 110:1, le verset de l'Ancien Testament que le Nouveau cite le plus souvent. Les Psaumes ne sont pas encore traduits en français ; voici notre niveau Équilibrée en anglais :
+La différence entre *Adonaï* et le mot ordinaire pour un maître compte surtout en Psaume 110:1, le verset de l'Ancien Testament que le Nouveau cite le plus souvent. Voici notre niveau Équilibrée :
 
 > {{OWB:PSA.110.1.s1:B}}
 
-Le dossier explique que le second "seigneur" n'est pas *Adonaï* mais *ʾădōnî*, la façon courante de s'adresser à un supérieur, avant tout à un roi. Le texte hébreu le vocalise autrement que le titre employé pour Dieu au verset 5. Les brouillons écrivent donc "my lord" ("mon seigneur") en minuscules, et la Simple dit "my lord the king" ("mon seigneur le roi"), pour qu'on ne le prenne pas pour Dieu.
+Le dossier explique que le second "seigneur" n'est pas *Adonaï* mais *ʾădōnî*, la façon courante de s'adresser à un supérieur, avant tout à un roi. Le texte hébreu le vocalise autrement que le titre employé pour Dieu au verset 5. Les brouillons écrivent donc "mon seigneur" en minuscules, et la Simple dit "mon seigneur le roi", pour qu'on ne le prenne pas pour Dieu.
 
 En grec, pourtant, les deux mots sont devenus *kyrios*, "Seigneur". Quand Jésus cite le psaume, il demande comment David pouvait appeler son propre descendant "Seigneur" (Matthieu 22:41–45). Là, les brouillons écrivent "Le Seigneur a dit à mon Seigneur", avec deux majuscules, parce que l'Évangile lit le psaume comme parlant du Messie. Une décision de sens de Matthieu 22:44 l'explique : le premier "Seigneur" tient la place du nom de Dieu, "mon Seigneur" celle d'un autre mot hébreu employé pour un maître ou un roi, et "en grec, les deux sont 'Seigneur'". Le même verset est rendu de deux façons à deux endroits, et les dossiers disent pourquoi.
 
@@ -63,7 +63,7 @@ Le titre {{LEMMA:1SA.1.3:9.2}} {{HEBREW:1SA.1.3:10}} (*YHWH ṣəbāʾôt*) appa
 
 La décision de sens de 1 Samuel 1:3 explique le mot. *Ṣəbāʾôt* est le pluriel d'un mot qui désigne une armée, une grande troupe rangée en ordre. Il s'emploie pour les armées d'Israël, pour le soleil, la lune et les étoiles, et pour les êtres célestes qui entourent le trône de Dieu. Joint au nom de Dieu, il présente le SEIGNEUR comme le Roi qui commande à toutes les puissances du ciel et de la terre. Le dossier rattache le titre, dans Samuel, à l'arche, "qui siège sur les chérubins", et à David, qui marche contre Goliath au nom du SEIGNEUR des armées, le Dieu des troupes d'Israël (17:45).
 
-Les principaux choix anglais sont présentés dans [Le nom divin dans les traductions](/articles/the-divine-name-in-translation/). L'anglais a ici un problème que le français n'a guère, puisque les Bibles françaises disent depuis longtemps "des armées" (Louis Segond : "l'Éternel des armées"). Le niveau Littérale anglais d'Open Word Bible garde le traditionnel "the LORD of hosts" ; l'Équilibrée et la Simple disent "the LORD of Armies" ("le SEIGNEUR des Armées"). La décision de formulation en donne la raison : "hosts" désigne aujourd'hui le plus souvent quelqu'un qui reçoit des invités, et "Armies" dit le sens clairement tout en gardant l'image d'un chef. "Almighty" ("Tout-Puissant") a été envisagé puis écarté, parce qu'il change l'image en une qualité abstraite. Samuel et Ésaïe ne sont encore traduits qu'en anglais ; voici la vision d'Ésaïe au niveau Équilibrée :
+Les principaux choix anglais sont présentés dans [Le nom divin dans les traductions](/articles/the-divine-name-in-translation/). L'anglais a ici un problème que le français n'a guère, puisque les Bibles françaises disent depuis longtemps "des armées" (Louis Segond : "l'Éternel des armées"). Le niveau Littérale anglais d'Open Word Bible garde le traditionnel "the LORD of hosts" ; l'Équilibrée et la Simple disent "the LORD of Armies" ("le SEIGNEUR des Armées"). La décision de formulation en donne la raison : "hosts" désigne aujourd'hui le plus souvent quelqu'un qui reçoit des invités, et "Armies" dit le sens clairement tout en gardant l'image d'un chef. "Almighty" ("Tout-Puissant") a été envisagé puis écarté, parce qu'il change l'image en une qualité abstraite. En français, les trois niveaux disent "le SEIGNEUR des armées". Voici la vision d'Ésaïe au niveau Équilibrée :
 
 > {{OWB:ISA.6.3.s1:B}}
 
