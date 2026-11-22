@@ -32,7 +32,9 @@ var OWBAdminCore = (function () {
         body && body.action === "flag" ? "review/" : "review/" + m[1] + "/",
         "overview/", "coverage/", "books/", "languages/", "health/", "verses/"], next: decodeURIComponent(m[1]) };
     }],
-    [/^inbox\//, ["inbox/", "overview/", "books/", "activity/", "engagement/"]],
+    // A message also shows in the verse inspector (its card), Languages
+    // (new messages by language) and the reader's account page.
+    [/^inbox\//, ["inbox/", "overview/", "books/", "activity/", "engagement/", "verses/", "languages/", "users/"]],
     [/^fixes\//, ["fixes/", "overview/", "activity/", "verses/", "inbox/", "work/"]],
     [/^articles\//, ["articles/", "overview/", "activity/", "work/"]],
     [/^jobs\//, ["jobs/", "overview/", "activity/", "work/"]],
