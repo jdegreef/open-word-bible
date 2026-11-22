@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 import build_site  # noqa: E402
-from tests.site_build import built_site, sitemap_text  # noqa: E402
+from tests.site_build import built_site, nav_menus_in, sitemap_text  # noqa: E402
 
 
 class PlanDataTest(unittest.TestCase):
@@ -155,7 +155,8 @@ class PlanSiteTest(unittest.TestCase):
         for lang in build_site.LANGUAGES:
             plans = build_site.url(lang, "/plans/")
             page = self.read(build_site.url(lang, "/about/"))
-            header = re.search(r'<header class="site">(.*?)</header>', page, re.S)[1]
+            # The header's Read menu comes from nav-<lang>.js.
+            header = nav_menus_in(self.out, lang)
             footer = re.search(r'<footer class="site">(.*?)</footer>', page, re.S)[1]
             self.assertIn(f'href="{plans}"', header)
             self.assertIn(f'href="{plans}"', footer)
