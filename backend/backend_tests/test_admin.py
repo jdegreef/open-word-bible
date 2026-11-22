@@ -269,6 +269,28 @@ class TeamTest(AdminTestCase):
         data = self.admin.get("/api/admin/activity/").json()
         self.assertEqual(data["actions"][0]["action"], "role.revoke")
 
+    def test_the_activity_log_pages_in_its_own_order_and_filters(self):
+        # Ids that don't follow the times (an import of old actions, a clock
+        # change), and some actions at the same moment.
+        start = timezone.now()
+        for i in range(120):
+            a = AdminAction.objects.create(actor_email="ed@example.org" if i % 3 else "boss@example.org",
+                                           action="message.reply" if i % 2 else "role.grant", target=str(i))
+            AdminAction.objects.filter(id=a.id).update(created_at=start - timedelta(minutes=(i * 7) % 120 // 2))
+        expected = list(AdminAction.objects.order_by("-created_at", "-id").values_list("id", flat=True))
+        seen, before = [], ""
+        while True:
+            d = self.admin.get("/api/admin/activity/" + (f"?before={before}" if before else "")).json()
+            seen += [a["id"] for a in d["actions"]]
+            if not d["more"]:
+                break
+            before = d["actions"][-1]["id"]
+        self.assertEqual(seen, expected)
+        d = self.admin.get("/api/admin/activity/?by=ED@example.org&kind=message").json()
+        self.assertTrue(d["actions"])
+        self.assertTrue(all(a["actor"] == "ed@example.org" and a["action"] == "message.reply" for a in d["actions"]))
+        self.assertEqual((d["people"], d["kinds"]), (["boss@example.org", "ed@example.org"], ["message", "role"]))
+
     def test_team_lists_members_and_grantable_roles(self):
         account("ed@example.org", (K.EDITOR,), (K.LANGUAGE_REVIEWER, "en"))
         data = self.admin.get("/api/admin/team/").json()
@@ -580,6 +602,13 @@ class FixTest(AdminTestCase):
         # The inspector lists it.
         fixes = editor.get("/api/admin/verses/JHN.1.1/").json()["fixes"]
         self.assertEqual(fixes[0]["number"], 9)
+        # Who filed it: the address for its filer and super admins, a name for anyone else.
+        self.assertEqual(fixes[0]["by"], "ed@example.org")
+        self.assertEqual(self.admin.get("/api/admin/verses/JHN.1.1/").json()["fixes"][0]["by"], "ed@example.org")
+        reporter = client_for(account("rep@example.org", (K.REPORTING,)))
+        self.assertEqual(reporter.get("/api/admin/verses/JHN.1.1/").json()["fixes"][0]["by"], "A team member")
+        User.objects.filter(username="ed@example.org").update(first_name="Ed")
+        self.assertEqual(reporter.get("/api/admin/verses/JHN.1.1/").json()["fixes"][0]["by"], "Ed")
 
     @override_settings(OWB_GITHUB_TOKEN="t")
     def test_input_that_is_not_what_was_asked_for_is_a_400(self):
