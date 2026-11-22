@@ -1945,3 +1945,81 @@ names the book where the form was first used.
 | Ezra 4:10 | Beyond the River (the province) | L *Kabila ng Ilog*; B *lalawigan sa Kabila ng Ilog*; R *lalawigan sa kanluran ng Ilog Eufrates* |  |
 | Ezra 2:43 | Nethinim; temple servants | L *Netineo*; B, R *lingkod sa templo* |  |
 | Ezra 8:36 | satraps | L, B *mga satrapa*; R *mga gobernador ng mga rehiyon ng hari* |  |
+| Nehemiah 1:1 | Hacaliah; Kislev | Hacalias; Kislev |  |
+| Nehemiah 2:1 | Nisan | Nisan |  |
+| Nehemiah 2:10 | Horon | Horon |  |
+| Nehemiah 2:19 | Geshem | Geshem |  |
+| Nehemiah 3:1 | Hananel | Hananel |  |
+| Nehemiah 3:3 | Hassenaah | Hassenaah |  |
+| Nehemiah 3:4 | Berekiah; Meshezabel | Berekias; Meshezabel |  |
+| Nehemiah 3:6 | Besodeiah; Joiada | Besodeias; Joiada |  |
+| Nehemiah 3:7 | Jadon; Melatiah; Meronoth | Jadon; Melatias; Meronot |  |
+| Nehemiah 3:8 | Harhaiah | Harhaias |  |
+| Nehemiah 3:10 | Harumaph; Hashabneiah | Harumaf; Hashabneias |  |
+| Nehemiah 3:12 | Hallohesh | Hallohesh |  |
+| Nehemiah 3:14 | Beth-haccherem | Bet-hackerem |  |
+| Nehemiah 3:15 | Col-hozeh; Shallun | Col-hozeh; Shallun |  |
+| Nehemiah 3:16 | Azbuk | Azbuk |  |
+| Nehemiah 3:18 | Bavvai | Bavvai |  |
+| Nehemiah 3:23 | Ananiah | Ananias |  |
+| Nehemiah 3:25 | Palal; Uzai | Palal; Uzai |  |
+| Nehemiah 3:30 | Zalaph | Zalaf |  |
+| Nehemiah 6:2 | Kephirim | Kefirim |  |
+| Nehemiah 6:6 | Gashmu | Gashmu |  |
+| Nehemiah 6:15 | Elul | Elul |  |
+| Nehemiah 7:7 | Mispereth; Nahamani; Nehum; Raamiah | Misperet; Nahamani; Nehum; Raamias |  |
+| Nehemiah 7:24 | Hariph | Harif |  |
+| Nehemiah 7:28 | Beth-azmaveth | Bet-azmavet |  |
+| Nehemiah 7:29 | Kephirah | Kefirah |  |
+| Nehemiah 7:43 | Hodevah | Hodevah |  |
+| Nehemiah 7:47 | Sia | Sia |  |
+| Nehemiah 7:52 | Nephishesim | Nefishesim |  |
+| Nehemiah 7:54 | Bazlith | Bazlit |  |
+| Nehemiah 7:57 | Perida; Sophereth | Perida; Soferet |  |
+| Nehemiah 7:59 | Pokereth-hazzebaim | Pokeret-hazzebaim |  |
+| Nehemiah 7:61 | Addon; Kerub | Addon; Kerub |  |
+| Nehemiah 8:4 | Anaiah; Hashbaddanah | Anaias; Hashbaddanah |  |
+| Nehemiah 9:4 | Bunni; Kenani | Bunni; Kenani |  |
+| Nehemiah 10:7 | Ginnethon | Ginneton |  |
+| Nehemiah 10:9 | Bilgai | Bilgai |  |
+| Nehemiah 10:10 | Azaniah | Azanias |  |
+| Nehemiah 10:14 | Beninu | Beninu |  |
+| Nehemiah 10:18 | Azzur | Azzur |  |
+| Nehemiah 10:20 | Nebai | Nebai |  |
+| Nehemiah 10:21 | Magpiash | Magpiash |  |
+| Nehemiah 10:22 | Jaddua | Jaddua |  |
+| Nehemiah 10:25 | Pilha; Shobek | Pilha; Shobek |  |
+| Nehemiah 10:26 | Hashabnah | Hashabnah |  |
+| Nehemiah 10:27 | Ahiah; Anan | Ahias; Anan |  |
+| Nehemiah 11:4 | Athaiah | Ataias |  |
+| Nehemiah 11:5 | Hazaiah | Hazaias |  |
+| Nehemiah 11:7 | Ithiel; Joed; Kolaiah | Itiel; Joed; Kolaias |  |
+| Nehemiah 11:8 | Gabbai; Sallai | Gabbai; Sallai |  |
+| Nehemiah 11:12 | Pelaliah | Pelalias |  |
+| Nehemiah 11:13 | Ahzai; Amashsai | Ahzai; Amashsai |  |
+| Nehemiah 11:14 | Haggedolim | Haggedolim |  |
+| Nehemiah 11:17 | Bakbukiah | Bakbukias |  |
+| Nehemiah 11:21 | Gishpa | Gishpa |  |
+| Nehemiah 11:25 | Jekabzeel | Jekabzeel |  |
+| Nehemiah 11:28 | Meconah | Meconah |  |
+| Nehemiah 11:29 | En-rimmon | En-rimmon |  |
+| Nehemiah 11:31 | Aija; Micmash | Aija; Micmash |  |
+| Nehemiah 11:34 | Neballat | Neballat |  |
+| Nehemiah 12:4 | Ginnethoi | Ginnetoi |  |
+| Nehemiah 12:5 | Moadiah | Moadias |  |
+| Nehemiah 12:7 | Amok | Amok |  |
+| Nehemiah 12:10 | Joiakim | Joiakim |  |
+| Nehemiah 12:12 | Meraiah | Meraias |  |
+| Nehemiah 12:14 | Mellichu | Melliku |  |
+| Nehemiah 12:15 | Helkai | Helkai |  |
+| Nehemiah 12:17 | Piltai | Piltai |  |
+| Nehemiah 12:20 | Kallai | Kallai |  |
+| Nehemiah 12:29 | Beth-gilgal | Bet-gilgal |  |
+| Nehemiah 12:32 | Hoshaiah | Hoshaias |  |
+| Nehemiah 12:36 | Gilalai; Maai; Milalai | Gilalai; Maai; Milalai |  |
+| Nehemiah 2:10 | Horonite; Arab | Horonita (R *taga-Horon*); *Arabe* |  |
+| Nehemiah 2:13 | Valley Gate; Dragon Spring; Dung Gate; Fountain Gate; King's Pool | *Pintuan ng Libis*; *Bukal ng Dragon*; *Pintuan ng Basura*; *Pintuan ng Bukal*; *Lawa ng Hari* |  |
+| Nehemiah 3:1 | Sheep Gate; Tower of the Hundred; Tower of Hananel | *Pintuan ng mga Tupa*; *Tore ng Sandaan*; *Tore ni Hananel* |  |
+| Nehemiah 3:3 | Fish Gate; Jeshanah Gate; Broad Wall; Tower of the Ovens | *Pintuan ng mga Isda*; *Pintuan ng Jeshanah*; *Malapad na Pader*; *Tore ng mga Pugon* |  |
+| Nehemiah 3:7 | Gibeonite; Meronothite | Gibeonita; Meronotita (R *taga-Gibeon*, *taga-Meronot*) |  |
+| Nehemiah 3:26 | Water Gate; Horse Gate; East Gate; Inspection (Muster) Gate | *Pintuan ng Tubig*; *Pintuan ng mga Kabayo*; *Pintuang Silangan*; *Pintuan ng Pagsisiyasat* |  |

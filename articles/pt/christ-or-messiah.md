@@ -5,7 +5,7 @@ date: 2026-11-14
 order: 107
 nav_title: Cristo ou Messias
 section: passage
-source: a8da5637121a
+source: 92b071060a02
 ---
 Muitos leitores conhecem a palavra "Cristo" muito antes de saber o que ela significa. Ela soa como um sobrenome: Jesus Cristo, como quem diz João da Silva. Na verdade é um título, e os autores do Novo Testamento sabiam exatamente o que ele significava. O grego {{LEMMA:JHN.1.41:18}} (*christos*) significa "ungido", e traduz o hebraico *mashiach*, que chegou ao português como "Messias". As duas palavras dizem a mesma coisa, em duas línguas.
 
@@ -74,7 +74,7 @@ Três tipos de palavra nunca levam a configuração.
 
 **"Cristãos".** O nome que os discípulos receberam em Antioquia é outra palavra grega, formada a partir de *christos*. É o nome de um grupo, e continua "cristãos". A decisão de formulação acrescenta que o português não tem uma forma consagrada desse nome feita a partir de "Messias".
 
-**"Ungido" no Antigo Testamento.** O hebraico *mashiach* é traduzido "ungido" em todos os níveis, como em 1 Samuel 24:7 e no Salmo 2:2 acima; a Equilibrada e a Acessível às vezes acrescentam "rei" ("o seu rei ungido", "o rei que ele ungiu"). Não há configuração, porque na maioria desses versículos a palavra descreve um rei ou sacerdote específico, e "o Messias" afirmaria mais do que o versículo diz. Em vez disso, as decisões de sentido apontam para a frente. No Salmo 18:51 o registro diz que a palavra "é a que está por trás de 'Messias' e 'Cristo', e a promessa foi mais tarde entendida como apontando para o Messias". Em Daniel 9:25-26, onde "um ungido" será eliminado, a decisão está marcada como incerta e enumera os modos como os leitores a entenderam, do sumo sacerdote Onias III a Jesus, o Messias. Essa é uma questão de sentido, e o sentido nunca é uma configuração.
+**"Ungido" no Antigo Testamento.** O hebraico *mashiach* é traduzido "ungido" em todos os níveis, como em 1 Samuel 24:6 e no Salmo 2:2 acima; a Equilibrada e a Acessível às vezes acrescentam "rei" ("o seu rei ungido", "o rei que ele ungiu"). Não há configuração, porque na maioria desses versículos a palavra descreve um rei ou sacerdote específico, e "o Messias" afirmaria mais do que o versículo diz. Em vez disso, as decisões de sentido apontam para a frente. No Salmo 18:50 o registro diz que a palavra "é a que está por trás de 'Messias' e 'Cristo', e a promessa foi mais tarde entendida como apontando para o Messias". Em Daniel 9:25-26, onde "um ungido" será eliminado, a decisão está marcada como incerta e enumera os modos como os leitores a entenderam, do sumo sacerdote Onias III a Jesus, o Messias. Essa é uma questão de sentido, e o sentido nunca é uma configuração.
 
 ## Uma configuração, não uma segunda tradução
 

@@ -4,7 +4,7 @@ summary: La poésie hébraïque n'a ni rime ni mètre fixe. Elle fonctionne par 
 date: 2026-10-17
 order: 91
 section: passage
-source: 5156c545083f
+source: 33a2ce8c8dd9
 ---
 Ouvrez presque n'importe quel psaume, et vous remarquerez qu'il semble dire les choses deux fois. Le Psaume 19 commence ainsi :
 
@@ -26,7 +26,7 @@ C'est un cadeau pour les traducteurs. La rime et le mètre se perdent quand un p
 
 ## Des lignes qui se font écho
 
-La première sorte de Lowth est le parallélisme *synonymique*, où la seconde ligne redit la première. Le Psaume 19:2 en est un exemple. La plainte d'Ésaïe, au début de son livre, en est un autre :
+La première sorte de Lowth est le parallélisme *synonymique*, où la seconde ligne redit la première. Le Psaume 19:1 en est un exemple. La plainte d'Ésaïe, au début de son livre, en est un autre :
 
 > {{OWB:ISA.1.3.s1:B}}
 
@@ -58,7 +58,7 @@ L'un des plus frappants est l'"escalier", où une ligne commence, s'interrompt, 
 
 > {{OWB:PSA.93.3.s1:B}}
 
-Le dossier y voit une ligne répétée qui grandit à chaque reprise, comme des vagues qui montent. Le Psaume 92:10 fait la même chose avec les ennemis du SEIGNEUR ("Regarde tes ennemis, SEIGNEUR ! Oui, tes ennemis vont à leur perte"), et le dossier de ce verset le désigne comme un procédé de la poésie hébraïque.
+Le dossier y voit une ligne répétée qui grandit à chaque reprise, comme des vagues qui montent. Le Psaume 92:9 fait la même chose avec les ennemis du SEIGNEUR ("Regarde tes ennemis, SEIGNEUR ! Oui, tes ennemis vont à leur perte"), et le dossier de ce verset le désigne comme un procédé de la poésie hébraïque.
 
 Une autre façon de construire est le mouvement à l'intérieur du Psaume 1:1 :
 
@@ -117,9 +117,9 @@ Le travail n'est pas terminé. Beaucoup de livres sont déjà disposés en ligne
 
 ## Un mot sur la numérotation des versets
 
-Les lecteurs qui comparent Open Word Bible avec d'autres Bibles remarqueront que certains versets des psaumes ont un numéro de plus. Beaucoup de psaumes ont un titre, comme "Au chef de chœur. Psaume de David." La Bible hébraïque compte ce titre comme le verset 1, ou comme une partie de celui-ci. La plupart des Bibles anglaises impriment le titre sans numéro et commencent à compter avec le poème.
+Les lecteurs qui comparent Open Word Bible avec une Bible hébraïque remarqueront que beaucoup de versets des psaumes ont ici un numéro de moins. Beaucoup de psaumes ont un titre, comme "Au chef de chœur. Psaume de David." La Bible hébraïque compte ce titre comme le verset 1, ou comme une partie de celui-ci. La plupart des Bibles anglaises impriment le titre sans numéro et commencent à compter avec le poème.
 
-Open Word Bible suit la numérotation hébraïque. C'est pourquoi le Psaume 19:2 est ici le verset que la plupart des Bibles anglaises numérotent 19:1. Là où un titre court partage son verset avec la première ligne, comme aux Psaumes 23 et 24, les numéros sont les mêmes dans les deux systèmes, et les dossiers le signalent.
+Open Word Bible numérote les versets comme la NIV, sans numéro pour le titre. C'est pourquoi le Psaume 19:1 d'ici est le 19:2 dans une Bible hébraïque. Là où un titre court partage son verset avec la première ligne, comme aux Psaumes 23 et 24, les numéros sont les mêmes dans les deux systèmes, et les dossiers le signalent.
 
 Pour en savoir plus sur la façon dont une même phrase peut être donnée à trois niveaux sans changer ce qu'elle veut dire, voir [Littérale, Équilibrée, Simple : trois niveaux, un seul sens](/articles/three-levels-one-meaning/). Deux articles voisins examinent d'autres traits de l'hébreu difficiles à faire passer dans une autre langue : [Des temps qui n'en sont pas](/articles/hebrew-verbs-and-time/) et [Des jeux de mots intraduisibles](/articles/wordplay-that-cannot-be-translated/). Les titres placés en tête de nombreux psaumes ont leur propre article, [Sélah et les titres des psaumes](/articles/selah-and-the-psalm-headings/).
 

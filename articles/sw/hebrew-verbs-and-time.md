@@ -4,13 +4,13 @@ summary: Kiebrania cha Biblia hakionyeshi wakati uliopita, uliopo na ujao kama K
 date: 2026-10-17
 order: 92
 section: passage
-source: c27aa9dda0a4
+source: 25cb01415999
 ---
 Isaya aliishi katika karne ya nane kabla ya Kristo. Hata hivyo katika mojawapo ya unabii wake unaojulikana zaidi anasema:
 
 > {{OWB:ISA.9.5.s1:B}}
 
-"Amezaliwa." "Tumepewa." Mtoto anazungumziwa kana kwamba tayari yupo. Biblia nyingi za Kiingereza zinauita mstari huu 9:6; Open Word Bible inafuata namba za Kiebrania, ambamo ni 9:5. Wakristo kwa muda mrefu wameusoma kama ahadi ya Kristo, karne saba baadaye. Basi kwa nini nabii anatumia wakati uliopita?
+"Amezaliwa." "Tumepewa." Mtoto anazungumziwa kana kwamba tayari yupo. Katika Biblia za Kiebrania mstari huu ni 9:5; Open Word Bible, kama Biblia nyingi za Kiingereza, inauita 9:6. Wakristo kwa muda mrefu wameusoma kama ahadi ya Kristo, karne saba baadaye. Basi kwa nini nabii anatumia wakati uliopita?
 
 Jibu fupi ni kwamba Kiebrania cha Biblia hakina njeo kwa maana ya Kiingereza. Vitenzi vyake vinasema jambo kuhusu *jinsi* tendo linavyotazamwa zaidi kuliko *lini* linatokea, na mtafsiri lazima aamue wakati kutokana na muktadha. Makala hii inaeleza jinsi hilo linavyofanya kazi, na kile ambacho Open Word Bible inafanya nalo.
 
@@ -52,7 +52,7 @@ La pili ni kwa kile kilicho kweli siku zote. Zaburi 1 inafunguliwa kwa picha ya 
 
 Vitenzi vitatu (kutembea, kusimama, kuketi) vyote viko katika perfect. Uamuzi wa sarufi wa rekodi unasema hivyo moja kwa moja: vitenzi viko katika umbo la Kiebrania la wakati uliopita, linalotumika kwa kile kilicho kweli siku zote, kwa hiyo vinatafsiriwa kwa wakati uliopo. "Ambaye hakutembea" ingekuwa njia ya ajabu ya kueleza mtindo wa maisha. Zaburi haiangalii nyuma. Inaeleza aina fulani ya mtu.
 
-Wakati mwingine uchaguzi hauko wazi sana. Katika Zaburi 3:6 Daudi anasema alilala na kupata usingizi na kuamka tena, kwa sababu BWANA alimtegemeza. Vitenzi ni perfect. Rekodi inavisoma kama usiku uliopita, usiku halisi katikati ya hatari, na inatoa usomaji mwingine kama mbadala wake: wengine wanaviona kama kile anachofanya siku zote. Rekodi inaongeza kwamba kwa njia yoyote ile, kulala katikati ya hatari kunaonyesha imani yake. Umbo la kitenzi peke yake haliwezi kuamua kati ya hayo mawili.
+Wakati mwingine uchaguzi hauko wazi sana. Katika Zaburi 3:5 Daudi anasema alilala na kupata usingizi na kuamka tena, kwa sababu BWANA alimtegemeza. Vitenzi ni perfect. Rekodi inavisoma kama usiku uliopita, usiku halisi katikati ya hatari, na inatoa usomaji mwingine kama mbadala wake: wengine wanaviona kama kile anachofanya siku zote. Rekodi inaongeza kwamba kwa njia yoyote ile, kulala katikati ya hatari kunaonyesha imani yake. Umbo la kitenzi peke yake haliwezi kuamua kati ya hayo mawili.
 
 ## Imperfect iliyo ya wakati uliopita
 
@@ -81,7 +81,7 @@ Katika Biblia ya Kiebrania jambo lililoamuliwa kwa kawaida ni uamuzi wa Mungu mw
 - **Yoshua 6:2.** Kabla kuta za Yeriko hazijaanguka, BWANA anasema, "Nimeutia Yeriko mkononi mwako." Rekodi inasema ushindi unazungumziwa kama tayari umefanyika, kwa sababu Mungu anasema juu ya kile alichokiamua kama jambo lililokwisha kuthibitika.
 - **Amosi 5:2.** Amosi anaimba wimbo wa maziko juu ya Israeli: "Ameanguka, hatainuka tena, Bikira Israeli." Rekodi inaeleza kwamba Israeli ilikuwa bado imesimama na kufanikiwa Amosi aliposema. Maombolezo hayo yanasema juu ya anguko lake kama jambo ambalo tayari ni hakika, kana kwamba maziko yalikuwa yameanza.
 - **Yeremia 50:2.** Watangazaji wanaambiwa watangaze "Babeli umetekwa" wakati Babeli bado unatawala ulimwengu. Rekodi inasema wanatangaza anguko lake kama ukweli, kwa sababu Mungu ameliamua.
-- **Isaya 9:1.** "Watu wanaotembea gizani wameona nuru kuu." Rekodi inasema nuru inayokuja inaelezwa kama tayari ipo, na kwamba Mathayo ananukuu mistari hii juu ya Yesu kuanza kazi yake Galilaya.
+- **Isaya 9:2.** "Watu wanaotembea gizani wameona nuru kuu." Rekodi inasema nuru inayokuja inaelezwa kama tayari ipo, na kwamba Mathayo ananukuu mistari hii juu ya Yesu kuanza kazi yake Galilaya.
 
 Mazoea hayohayo yanafika hadi Agano Jipya, ingawa vitenzi vya Kigiriki vinafanya kazi tofauti. Katika Warumi 8:30 Paulo anaandika kwamba wale ambao Mungu aliwahesabia haki, "aliwatukuza" pia. Rekodi ya mstari huo inaeleza kwamba utukufu bado unangoja kufunuliwa, na kwamba Paulo anatumia wakati uliopita kwa sababu, katika kusudi la Mungu, ni hakika kama vile kuitwa na kuhesabiwa haki ambako tayari kumetokea.
 
@@ -99,9 +99,9 @@ Halisi inabaki na umbo: "watu wangu wamekwenda uhamishoni". Linganifu inasema ma
 
 Yoshua 6:2 inaonyesha njia nyingine. Viwango vyote vitatu vinabaki na kitenzi kilichokamilika ("nimeutia", "nimekukabidhi", "nimekupa"), lakini Rahisi inaongeza sentensi fupi yake yenyewe, "Ni kana kwamba tayari ni mali yako", na uamuzi wa maneno unaeleza kwa nini: ili kubeba maana ya kitenzi kilichokamilika, kwamba mji huo hakika utakuwa wa Israeli.
 
-## Isaya 9:5: kuzaliwa kulikokwisha kutangazwa
+## Isaya 9:6: kuzaliwa kulikokwisha kutangazwa
 
-Isaya 9:5 ni ngumu zaidi, na rekodi inaishughulikia kwa uangalifu. Uamuzi wake wa maana umewekewa alama ya kutokuwa na uhakika. Unaeleza kwamba mistari ya 3, 4 na 5 kila mmoja unaanza kwa "kwa maana" na kutoa sababu za furaha ya mstari wa 2: mdhalimu amevunjwa, zana za vita zimeteketezwa, na sasa mtoto wa kifalme. Vitenzi viko katika umbo la tendo lililokamilika. Kisha unatoa uwezekano miwili bila kulazimisha uchaguzi. Nabii anaweza kusema juu ya kile ambacho Mungu hakika atakifanya kama tayari kimefanyika, au kutangaza kuzaliwa kulikotokea hivi punde. Kifungu hakimtaji mtoto huyo kwa jina.
+Isaya 9:6 ni ngumu zaidi, na rekodi inaishughulikia kwa uangalifu. Uamuzi wake wa maana umewekewa alama ya kutokuwa na uhakika. Unaeleza kwamba mistari ya 3, 4 na 5 kila mmoja unaanza kwa "kwa maana" na kutoa sababu za furaha ya mstari wa 2: mdhalimu amevunjwa, zana za vita zimeteketezwa, na sasa mtoto wa kifalme. Vitenzi viko katika umbo la tendo lililokamilika. Kisha unatoa uwezekano miwili bila kulazimisha uchaguzi. Nabii anaweza kusema juu ya kile ambacho Mungu hakika atakifanya kama tayari kimefanyika, au kutangaza kuzaliwa kulikotokea hivi punde. Kifungu hakimtaji mtoto huyo kwa jina.
 
 Wasomaji wamechukua mitazamo yote miwili. Wengine wanaona kuzaliwa katika wakati wa Isaya mwenyewe, labda mrithi wa kifalme, kunakosherehekewa kwa lugha inayofika mbali zaidi ya mfalme yeyote wa kawaida. Wasomaji wengi Wakristo wanaona unabii kuhusu Kristo, uliosemwa kwa uhakika wa perfect ya kinabii. Mitazamo hiyo miwili haipingani kila mara: wengine wanausoma mstari kama unaosema juu ya mfalme katika siku za Isaya ambaye vyeo vyake vilitimia kikamilifu tu katika mwana wa Daudi wa baadaye. Rekodi inaelekeza kwenye vifungu vinavyouzunguka: 7:14 iliahidi mwana atakayeitwa Imanueli, na 11:1–5 inaeleza mfalme kutoka ukoo wa Yese.
 
@@ -121,7 +121,7 @@ Kama nyakati zilizopita za sura ya 53 ni perfect za kinabii, zinazoeleza mateso 
 
 ## Jinsi uamuzi unavyofanywa
 
-Kwa kitenzi cha Kiebrania, njeo ya tafsiri hainakiliwi tu kamwe. Ni uamuzi wa maana: kitenzi hiki kinaeleza wakati gani, na tendo la aina gani, katika muktadha wake? Vidokezo ni muktadha, vitenzi vinavyozunguka, aina ya kitenzi (hali au tukio), na aina ya maandishi (hadithi, sheria, zaburi au unabii). Pale vidokezo vinapoelekeza upande mmoja, uamuzi unasema hivyo na kutoa sababu. Pale visipoelekeza hivyo, uamuzi unawekewa alama ya kutokuwa na uhakika na mbadala unatajwa, kama katika Zaburi 3:6, Isaya 5:13 na Isaya 9:5.
+Kwa kitenzi cha Kiebrania, njeo ya tafsiri hainakiliwi tu kamwe. Ni uamuzi wa maana: kitenzi hiki kinaeleza wakati gani, na tendo la aina gani, katika muktadha wake? Vidokezo ni muktadha, vitenzi vinavyozunguka, aina ya kitenzi (hali au tukio), na aina ya maandishi (hadithi, sheria, zaburi au unabii). Pale vidokezo vinapoelekeza upande mmoja, uamuzi unasema hivyo na kutoa sababu. Pale visipoelekeza hivyo, uamuzi unawekewa alama ya kutokuwa na uhakika na mbadala unatajwa, kama katika Zaburi 3:5, Isaya 5:13 na Isaya 9:6.
 
 Kisha viwango vinauweka uamuzi huo katika maneno. Halisi inaonyesha umbo la Kiebrania pale lugha inapoweza kulibeba. Linganifu inachagua njeo ambayo msomaji anaihitaji ili aelewe maana. Rahisi inaweza kuongeza neno au sentensi fupi ili kuufanya wakati uwe wazi. Hakuna hata kimoja kinachobadilisha kile ambacho uamuzi wa maana unasema.
 

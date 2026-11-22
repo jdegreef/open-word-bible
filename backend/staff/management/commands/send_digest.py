@@ -23,6 +23,7 @@ from django.core.management.base import BaseCommand
 from django.utils import timezone
 
 from accounts.models import Role
+from accounts.system import people
 from feedback.models import ReaderMessage
 from staff import articles, fixes, jobs
 from staff.models import AdminAction, record
@@ -83,7 +84,7 @@ class Command(BaseCommand):
             lines.append(f"Content import: the last run left {plural(len(last.skipped), 'file')} for later. "
                          f"{admin}#health")
 
-        accounts = User.objects.filter(date_joined__gte=since).count()
+        accounts = people().filter(date_joined__gte=since).count()   # no system accounts
         actions = AdminAction.objects.filter(created_at__gte=since).exclude(action="digest.send").count()
         changed = Sentence.objects.filter(updated_at__gte=since).count()
         lines.append(f"This period: {plural(accounts, 'new account')}, {plural(changed, 'sentence')} imported "

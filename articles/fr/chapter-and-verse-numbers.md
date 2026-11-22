@@ -4,7 +4,7 @@ summary: Les auteurs de la Bible n'ont écrit ni chapitres ni versets. Voici d'o
 date: 2026-10-17
 order: 100
 section: translation
-source: ddaa7f257d1b
+source: a025429ed75e
 ---
 "Jean 3:16" est si familier qu'on oublie facilement que Jean n'a jamais écrit ni "3" ni "16". Aucun des auteurs bibliques n'a divisé ses livres en chapitres et en versets. Les numéros sont un système de références, ajouté bien des siècles plus tard par des savants et des imprimeurs, et comme tout système de références, ils sont utiles, imparfaits et là pour rester.
 
@@ -56,13 +56,17 @@ Il existe ailleurs des différences plus petites, comme à la fin de Genèse 31,
 
 ## Comment Open Word Bible gère les numéros
 
-Open Word Bible numérote chaque verset comme le fait son texte source. Pour l'Ancien Testament, c'est le Codex de Leningrad de Westminster : Malachie a donc trois chapitres, Joël quatre, et le titre d'un psaume est son premier verset. Là où cela compte, le premier verset concerné porte une note. Celle de Malachie 3:19 explique que ses six versets sont numérotés 4:1-6 dans beaucoup d'autres Bibles, et qu'Open Word Bible suit la numérotation du texte hébreu qu'elle traduit. Joël 3:1 a le même genre de note, de même que le titre du Psaume 3 :
+Open Word Bible traduit le texte hébreu, le Codex de Leningrad de Westminster, mais numérote les chapitres et les versets comme la NIV et la plupart des Bibles anglaises. Malachie a donc quatre chapitres, Joël trois, et le titre d'un psaume n'a pas de numéro. Le lecteur peut ainsi chercher un verset par le numéro qu'il connaît déjà, et le comparer avec la Bible qu'il lit déjà.
+
+Là où les numéros hébreux diffèrent, le premier verset concerné porte une note. Celle de Malachie 4:1 explique que ses six versets sont 3:19-24 dans le texte hébreu, qui les garde au chapitre 3. Joël 2:28 a le même genre de note, de même que le titre du Psaume 3 :
 
 > {{OWB:PSA.3.1.s1:B}}
 
-Son dossier dit qu'à partir du Psaume 3, les numéros de versets sont ici supérieurs d'une unité à ceux des Bibles qui impriment le titre sans numéro.
+Son dossier dit qu'à partir du Psaume 3, les Bibles hébraïques numérotent les versets avec une unité de plus qu'ici. Chaque page de verset donne aussi le numéro hébreu là où il diffère.
 
-En coulisse, une table des données du projet, `data/versification.json`, établit la correspondance entre les deux systèmes, verset par verset. Elle est construite à partir de la table des versets de l'Open Scriptures Hebrew Bible, et elle énumère chaque verset hébreu dont le numéro anglais est différent : un peu plus de deux mille, dont environ la moitié dans les Psaumes. Le site s'en sert partout où notre numérotation rencontre celle d'un autre. Quand le lecteur affiche une autre Bible pour comparaison, comme la World English Bible, ses versets sont replacés dans notre numérotation, si bien que le Psaume 3:1 anglais se trouve à côté de notre Psaume 3:2. Les renvois venant d'autres sources sont convertis de la même manière. Et le service de texte du projet peut fournir une Bible de comparaison soit dans notre numérotation, soit dans celle de l'édition elle-même.
+Les deux systèmes ne découpent pas toujours le texte aux mêmes endroits. En cinq endroits, un verset hébreu contient deux versets anglais : Psaume 13:5-6, 1 Rois 18:33-34, 20:2-3, 22:21-22 et Ésaïe 64:1, dont la première ligne clôt Ésaïe 63 dans l'hébreu. En trois autres, deux versets hébreux forment un seul verset anglais, comme en Nombres 26:1. Les dossiers d'Open Word Bible suivent les phrases de l'hébreu, si bien qu'un numéro de verset peut tomber au milieu d'une phrase, comme c'est de toute façon le cas en bien des endroits.
+
+En coulisse, une table des données du projet, `data/versification.json`, établit la correspondance entre les deux systèmes, verset par verset. Elle est construite à partir de la table des versets de l'Open Scriptures Hebrew Bible, et elle énumère chaque verset hébreu dont le numéro anglais est différent : un peu plus de deux mille, dont environ la moitié dans les Psaumes. Les dossiers eux-mêmes gardent les numéros hébreux, pour que la traduction puisse toujours être vérifiée sur le texte hébreu ; le site les convertit dans les numéros que voit le lecteur. Et le service de texte du projet peut fournir un passage soit dans la numérotation de la NIV, soit dans celle du texte hébreu lui-même.
 
 Dans le Nouveau Testament, Open Word Bible garde les numéros d'Estienne même là où le texte grec de la SBL n'a aucun verset à leur faire correspondre. Matthieu 17 passe du verset 20 au verset 22, avec une note qui explique pourquoi. Voir [Les versets absents des Bibles modernes](/articles/verses-missing-from-modern-bibles/).
 
@@ -70,7 +74,7 @@ Dans le Nouveau Testament, Open Word Bible garde les numéros d'Estienne même l
 
 Rien de tout cela n'est une raison de se méfier des chapitres et des versets. Ils permettent à des millions de personnes de retrouver la même phrase dans différentes langues et éditions, et ils rendent possibles les renvois et les concordances. Mais ils sont une carte posée sur le texte, pas une partie du texte. Lire par-dessus une coupure de chapitre, ou ignorer un numéro de verset au milieu d'une phrase, est souvent la meilleure façon d'entendre ce qu'un auteur a vraiment écrit.
 
-[Ouvrir 1 Corinthiens 13](/1co/13/), [Ésaïe 52](/isa/52/) ou [Malachie 3](/mal/3/) pour voir les numéros à l'œuvre.
+[Ouvrir 1 Corinthiens 13](/1co/13/), [Ésaïe 52](/isa/52/) ou [Malachie 4](/mal/4/) pour voir les numéros à l'œuvre.
 
 ## Sources
 

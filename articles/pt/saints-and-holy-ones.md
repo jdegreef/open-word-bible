@@ -5,7 +5,7 @@ date: 2026-11-14
 order: 110
 nav_title: Os santos
 section: passage
-source: 446f538f4b8d
+source: c8698cc2a5aa
 ---
 A carta de Paulo aos Filipenses começa com uma saudação que a King James traz como "to all the saints in Christ Jesus which are at Philippi", "a todos os santos em Cristo Jesus que estão em Filipos". Um leitor de hoje pode imaginar um pequeno grupo de cristãos excepcionais, daqueles cujos nomes são dados a igrejas e cujos rostos aparecem nos vitrais. Paulo se referia a todos os crentes da cidade, inclusive às duas mulheres do capítulo 4 a quem ele pede que parem de brigar.
 
@@ -69,7 +69,7 @@ Na Bíblia hebraica, o plural de *qadosh*, "santo", faz algo diferente. Na maior
 
 > {{OWB:JOB.5.1.s1:B}}
 
-A decisão de sentido explica que "'santos' é um nome para os seres que estão em volta de Deus no céu (Jó 15:15; Salmo 89:6, 8; Zacarias 14:5)". Por isso a Equilibrada diz aqui "seres santos", e a Acessível, "seres celestiais", porque "santos" sozinho "poderia ser entendido como pessoas santas na terra". No Salmo 89:6, a Literal e a Equilibrada dizem "a assembleia dos santos" e "a reunião dos santos", e a Acessível diz "os anjos no céu".
+A decisão de sentido explica que "'santos' é um nome para os seres que estão em volta de Deus no céu (Jó 15:15; Salmo 89:5, 7; Zacarias 14:5)". Por isso a Equilibrada diz aqui "seres santos", e a Acessível, "seres celestiais", porque "santos" sozinho "poderia ser entendido como pessoas santas na terra". No Salmo 89:5, a Literal e a Equilibrada dizem "a assembleia dos santos" e "a reunião dos santos", e a Acessível diz "os anjos no céu".
 
 Mas às vezes os santos são o povo de Deus na terra, como no Salmo 34:
 

@@ -4,7 +4,7 @@ summary: Thơ Hê-bơ-rơ không có vần và không có nhịp cố định. N
 date: 2026-10-17
 order: 91
 section: passage
-source: 5156c545083f
+source: 33a2ce8c8dd9
 ---
 Mở gần như bất kỳ thi thiên nào, bạn sẽ nhận ra dường như nó nói mọi điều hai lần. Thi Thiên 19 bắt đầu như sau:
 
@@ -26,7 +26,7 @@ Thuật ngữ này bắt nguồn từ Robert Lowth, giáo sư ở Oxford và sau
 
 ## Những dòng vọng lại
 
-Loại thứ nhất của Lowth là song hành *đồng nghĩa*, khi dòng thứ hai nói lại dòng thứ nhất. Thi Thiên 19:2 là một ví dụ. Lời than của Ê-sai ở đầu sách của ông cũng vậy:
+Loại thứ nhất của Lowth là song hành *đồng nghĩa*, khi dòng thứ hai nói lại dòng thứ nhất. Thi Thiên 19:1 là một ví dụ. Lời than của Ê-sai ở đầu sách của ông cũng vậy:
 
 > {{OWB:ISA.1.3.s1:B}}
 
@@ -58,7 +58,7 @@ Một trong những mẫu nổi bật nhất là kiểu "bậc thang": một dò
 
 > {{OWB:PSA.93.3.s1:B}}
 
-Bản ghi gọi đó là một dòng được lặp lại và lớn dần mỗi lần, như những con sóng dâng cao. Thi Thiên 92:10 làm cùng điều ấy với kẻ thù của CHÚA ("Lạy CHÚA, hãy xem các kẻ thù của ngài! Kìa, các kẻ thù của ngài sẽ bị tiêu diệt"), và bản ghi ở đó gọi tên nó là một mẫu của thơ Hê-bơ-rơ.
+Bản ghi gọi đó là một dòng được lặp lại và lớn dần mỗi lần, như những con sóng dâng cao. Thi Thiên 92:9 làm cùng điều ấy với kẻ thù của CHÚA ("Lạy CHÚA, hãy xem các kẻ thù của ngài! Kìa, các kẻ thù của ngài sẽ bị tiêu diệt"), và bản ghi ở đó gọi tên nó là một mẫu của thơ Hê-bơ-rơ.
 
 Một kiểu phát triển khác là sự chuyển động bên trong Thi Thiên 1:1:
 
@@ -117,9 +117,9 @@ Công việc chưa xong. Nhiều sách đã được trình bày thành dòng, t
 
 ## Đôi lời về số câu
 
-Người đọc so sánh Open Word Bible với các bản Kinh Thánh khác sẽ thấy một số câu thi thiên được đánh số cao hơn một. Nhiều thi thiên có một tiêu đề, chẳng hạn "Cho nhạc trưởng. Thi thiên của Đa-vít." Kinh Thánh Hê-bơ-rơ tính tiêu đề ấy là câu 1, hoặc là một phần của câu 1. Phần lớn các bản Kinh Thánh tiếng Anh, và cả các bản tiếng Việt quen thuộc, in tiêu đề mà không đánh số và bắt đầu đếm từ bài thơ.
+Người đọc so sánh Open Word Bible với một bản Kinh Thánh Hê-bơ-rơ sẽ thấy nhiều câu thi thiên ở đây được đánh số thấp hơn một. Nhiều thi thiên có một tiêu đề, chẳng hạn "Cho nhạc trưởng. Thi thiên của Đa-vít." Kinh Thánh Hê-bơ-rơ tính tiêu đề ấy là câu 1, hoặc là một phần của câu 1. Phần lớn các bản Kinh Thánh tiếng Anh, và cả các bản tiếng Việt quen thuộc, in tiêu đề mà không đánh số và bắt đầu đếm từ bài thơ.
 
-Open Word Bible theo cách đánh số của tiếng Hê-bơ-rơ. Vì thế Thi Thiên 19:2 ở đây là câu mà phần lớn các bản Kinh Thánh khác đánh số là 19:1. Ở chỗ một tiêu đề ngắn nằm chung câu với dòng đầu tiên, như trong Thi Thiên 23 và 24, số câu theo cách nào cũng giống nhau, và các bản ghi có nói điều đó.
+Open Word Bible đánh số câu như bản NIV, không đánh số tiêu đề. Vì thế Thi Thiên 19:1 ở đây là 19:2 trong một bản Kinh Thánh Hê-bơ-rơ. Ở chỗ một tiêu đề ngắn nằm chung câu với dòng đầu tiên, như trong Thi Thiên 23 và 24, số câu theo cách nào cũng giống nhau, và các bản ghi có nói điều đó.
 
 Để biết thêm về cách một câu có thể được trình bày ở ba cấp độ mà không thay đổi ý nghĩa, xem [Sát nghĩa, Cân bằng, Dễ đọc: ba cấp độ, một ý nghĩa](/articles/three-levels-one-meaning/). Hai bài viết liên quan bàn về những đặc điểm khác của tiếng Hê-bơ-rơ khó chuyển sang ngôn ngữ khác: [Những thì không phải là thì](/articles/hebrew-verbs-and-time/) và [Những lối chơi chữ không thể dịch](/articles/wordplay-that-cannot-be-translated/). Các tiêu đề ở đầu nhiều thi thiên có một bài viết riêng: [Selah và các tiêu đề thi thiên](/articles/selah-and-the-psalm-headings/).
 

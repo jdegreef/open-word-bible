@@ -224,8 +224,8 @@ def me(request):
             return error("Accounts with review history are kept with the record. "
                          "Ask an editor to close yours.", "has_reviews", status.HTTP_409_CONFLICT)
         return Response(status=status.HTTP_204_NO_CONTENT)
-    if request.method == "PATCH":
-        name = str(_field(request, "display_name")).strip()
+    if request.method == "PATCH" and isinstance(request.data, dict) and "display_name" in request.data:
+        name = " ".join(str(request.data["display_name"] or "").split())
         if len(name) > 80:
             raise ValidationError({"display_name": "Keep it under 80 characters."})
         user.first_name = name

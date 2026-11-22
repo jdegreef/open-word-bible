@@ -459,8 +459,8 @@ notes it once.
 
 | Source (English) | Literal | Balanced | Readable |
 |---|---|---|---|
-| Thus says the LORD | *{{divine_name:ਪ੍ਰਭੂ\|ਯਾਹਵੇ}} ਇਹ ਆਖਦਾ ਹੈ* | as L | *{{divine_name:ਪ੍ਰਭੂ\|ਯਾਹਵੇ}} ਦਾ ਇਹ ਕਹਿਣਾ ਹੈ* |
-| declares the LORD | *{{divine_name:ਪ੍ਰਭੂ\|ਯਾਹਵੇ}} ਦਾ ਵਾਕ ਹੈ* | as L | *{{divine_name:ਪ੍ਰਭੂ\|ਯਾਹਵੇ}} ਆਖਦਾ ਹੈ* |
+| Thus says the LORD | *{{divine_name:ਪ੍ਰਭੂ\|ਯਾਹਵੇ}} ਇਉਂ ਆਖਦੇ ਹਨ* | as L | *{{divine_name:ਪ੍ਰਭੂ\|ਯਾਹਵੇ}} ਦਾ ਇਹ ਕਹਿਣਾ ਹੈ* |
+| declares the LORD | *{{divine_name:ਪ੍ਰਭੂ\|ਯਾਹਵੇ}} ਦਾ ਵਾਕ ਹੈ* | as L | *{{divine_name:ਪ੍ਰਭੂ\|ਯਾਹਵੇ}} ਆਖਦੇ ਹਨ* |
 | The word of the LORD came to ... | *{{divine_name:ਪ੍ਰਭੂ\|ਯਾਹਵੇ}} ਦਾ ਬਚਨ ... ਕੋਲ ਆਇਆ* | as L | *{{divine_name:ਪ੍ਰਭੂ\|ਯਾਹਵੇ}} ਨੇ ... ਨਾਲ ਗੱਲ ਕੀਤੀ* |
 | I am the LORD | *ਮੈਂ {{divine_name:ਪ੍ਰਭੂ\|ਯਾਹਵੇ}} ਹਾਂ* | as L | as L |
 | behold (*hinneh*, *idou*) | *ਵੇਖੋ* (ਵੇਖ to one person) | left out where it only marks attention | left out |
@@ -472,7 +472,7 @@ notes it once.
 | Woe to you | *ਤੁਹਾਡੇ ਉੱਤੇ ਹਾਇ* | as L | *ਹਾਇ ਤੁਹਾਡੇ ਲਈ* |
 | grace and peace to you | *ਤੁਹਾਨੂੰ ਕਿਰਪਾ ਅਤੇ ਸ਼ਾਂਤੀ* | *ਤੁਹਾਨੂੰ ਕਿਰਪਾ ਅਤੇ ਸ਼ਾਂਤੀ ਮਿਲੇ* | as B |
 | As the LORD lives | *{{divine_name:ਪ੍ਰਭੂ\|ਯਾਹਵੇ}} ਦੇ ਜੀਵਨ ਦੀ ਸਹੁੰ* | as L | *ਮੈਂ ਜਿਉਂਦੇ {{divine_name:ਪ੍ਰਭੂ\|ਯਾਹਵੇ}} ਦੀ ਸਹੁੰ ਖਾਂਦਾ ਹਾਂ* |
-| May the LORD do so to me and more | *{{divine_name:ਪ੍ਰਭੂ\|ਯਾਹਵੇ}} ਮੇਰੇ ਨਾਲ ਅਜਿਹਾ ਹੀ ਕਰੇ, ਸਗੋਂ ਇਸ ਤੋਂ ਵੀ ਵੱਧ* | as L | *{{divine_name:ਪ੍ਰਭੂ\|ਯਾਹਵੇ}} ਮੈਨੂੰ ਸਖ਼ਤ ਸਜ਼ਾ ਦੇਵੇ* |
+| May the LORD do so to me and more | *{{divine_name:ਪ੍ਰਭੂ\|ਯਾਹਵੇ}} ਮੇਰੇ ਨਾਲ ਇਸੇ ਤਰ੍ਹਾਂ ਕਰਨ, ਅਤੇ ਇਸ ਤੋਂ ਵੀ ਵੱਧ ਕਰਨ* | *{{divine_name:ਪ੍ਰਭੂ\|ਯਾਹਵੇ}} ਮੈਨੂੰ ਕਰੜੀ ਤੋਂ ਕਰੜੀ ਸਜ਼ਾ ਦੇਣ* | *{{divine_name:ਪ੍ਰਭੂ\|ਯਾਹਵੇ}} ਮੈਨੂੰ ਕਰੜੀ ਸਜ਼ਾ ਦੇਣ* (honorific plural, as everywhere God is the subject) |
 
 ## 13. Search
 

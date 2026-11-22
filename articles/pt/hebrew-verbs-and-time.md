@@ -4,13 +4,13 @@ summary: O hebraico bíblico não marca passado, presente e futuro como o portug
 date: 2026-10-17
 order: 92
 section: passage
-source: c27aa9dda0a4
+source: 25cb01415999
 ---
 Isaías viveu no século VIII antes de Cristo. Mesmo assim, numa das suas profecias mais conhecidas, ele diz:
 
 > {{OWB:ISA.9.5.s1:B}}
 
-"Nasceu." "Foi dado." Fala-se da criança como se ela já estivesse aqui. A maioria das Bíblias numera este versículo como 9:6; a Open Word Bible segue a numeração hebraica, em que ele é o 9:5. Os cristãos há muito tempo o leem como uma promessa de Cristo, sete séculos depois. Então por que o profeta usa um tempo passado?
+"Nasceu." "Foi dado." Fala-se da criança como se ela já estivesse aqui. Nas Bíblias hebraicas, este versículo é o 9:5; a Open Word Bible, como a maioria das Bíblias, o numera como 9:6. Os cristãos há muito tempo o leem como uma promessa de Cristo, sete séculos depois. Então por que o profeta usa um tempo passado?
 
 A resposta curta é que o hebraico bíblico não tem tempos verbais no sentido em que o português os tem. Os seus verbos dizem algo sobre *como* uma ação é vista, mais do que sobre *quando* ela acontece, e o tradutor precisa decidir o tempo pelo contexto. Este artigo explica como isso funciona e o que a Open Word Bible faz com isso.
 
@@ -52,7 +52,7 @@ O segundo é para o que é sempre verdade. O Salmo 1 começa com o retrato da pe
 
 Os três verbos (andar, parar, sentar-se) estão todos no perfeito. A decisão gramatical do registro diz isso diretamente: os verbos estão na forma hebraica de passado, usada para o que é sempre verdade, por isso são traduzidos no presente. "Que não andou" seria um jeito estranho de descrever um modo de vida. O salmo não está olhando para trás. Está descrevendo um tipo de pessoa.
 
-Às vezes a escolha é menos clara. No Salmo 3:6, Davi diz que se deitou, dormiu e acordou de novo, porque o SENHOR o sustentou. Os verbos são perfeitos. O registro os lê como a noite anterior, uma noite real no meio do perigo, e dá a outra leitura como alternativa: alguns os entendem como o que ele sempre faz. O registro acrescenta que, de um jeito ou de outro, dormir no meio do perigo mostra a sua confiança. A forma verbal sozinha não consegue decidir entre as duas.
+Às vezes a escolha é menos clara. No Salmo 3:5, Davi diz que se deitou, dormiu e acordou de novo, porque o SENHOR o sustentou. Os verbos são perfeitos. O registro os lê como a noite anterior, uma noite real no meio do perigo, e dá a outra leitura como alternativa: alguns os entendem como o que ele sempre faz. O registro acrescenta que, de um jeito ou de outro, dormir no meio do perigo mostra a sua confiança. A forma verbal sozinha não consegue decidir entre as duas.
 
 ## O imperfeito que é passado
 
@@ -81,7 +81,7 @@ Na Bíblia hebraica, o que está decidido costuma ser a decisão do próprio Deu
 - **Josué 6:2.** Antes que as muralhas de Jericó caiam, o SENHOR diz: "Entreguei Jericó em tuas mãos." O registro diz que a vitória é apresentada como já realizada, porque Deus fala do que decidiu como coisa já estabelecida.
 - **Amós 5:2.** Amós canta um canto fúnebre sobre Israel: "Caiu para nunca mais se levantar a virgem Israel." O registro observa que Israel ainda estava de pé e próspero quando Amós falou. O lamento fala da sua queda como já certa, como se o funeral tivesse começado.
 - **Jeremias 50:2.** Mensageiros recebem ordem de anunciar "A Babilônia foi tomada" enquanto a Babilônia ainda domina o mundo. O registro diz que eles proclamam a sua queda como um fato, porque Deus a decidiu.
-- **Isaías 9:1.** "O povo que caminha na escuridão viu uma grande luz." O registro diz que a luz que virá é descrita como já presente, e que Mateus cita estes versículos sobre Jesus quando começa o seu trabalho na Galileia.
+- **Isaías 9:2.** "O povo que caminha na escuridão viu uma grande luz." O registro diz que a luz que virá é descrita como já presente, e que Mateus cita estes versículos sobre Jesus quando começa o seu trabalho na Galileia.
 
 O mesmo hábito chega ao Novo Testamento, embora os verbos gregos funcionem de outro modo. Em Romanos 8:30, Paulo escreve que aqueles que Deus declarou justos, "também glorificou". O registro desse versículo observa que a glória ainda vai ser revelada, e que Paulo usa o passado porque, no propósito de Deus, ela é tão certa quanto o chamado e a justificação que já aconteceram.
 
@@ -99,9 +99,9 @@ A Literal mantém a forma: "o meu povo foi para o exílio". A Equilibrada diz o 
 
 Josué 6:2 mostra outro caminho. Os três níveis mantêm o passado ("entreguei", "eu te dei"), mas a Acessível acrescenta uma frase curta por conta própria, "É como se a cidade já fosse tua", e a decisão de formulação explica por quê: para transmitir o sentido do verbo concluído, de que a cidade com certeza será de Israel.
 
-## Isaías 9:5: um nascimento já anunciado
+## Isaías 9:6: um nascimento já anunciado
 
-Isaías 9:5 é mais difícil, e o registro o trata com cuidado. A sua decisão de sentido está marcada como incerta. Ela observa que os versículos 3, 4 e 5 começam cada um com "pois" e dão razões para a alegria do versículo 2: o opressor quebrado, o equipamento de guerra queimado e, agora, uma criança real. Os verbos estão na forma de ação concluída. Depois, a decisão dá duas possibilidades sem forçar uma escolha. Um profeta pode falar do que Deus certamente fará como já feito, ou anunciar um nascimento que acabou de acontecer. A passagem não dá o nome da criança.
+Isaías 9:6 é mais difícil, e o registro o trata com cuidado. A sua decisão de sentido está marcada como incerta. Ela observa que os versículos 3, 4 e 5 começam cada um com "pois" e dão razões para a alegria do versículo 2: o opressor quebrado, o equipamento de guerra queimado e, agora, uma criança real. Os verbos estão na forma de ação concluída. Depois, a decisão dá duas possibilidades sem forçar uma escolha. Um profeta pode falar do que Deus certamente fará como já feito, ou anunciar um nascimento que acabou de acontecer. A passagem não dá o nome da criança.
 
 Os leitores adotaram as duas posições. Alguns veem um nascimento na época do próprio Isaías, talvez um herdeiro real, celebrado numa linguagem que vai além de qualquer rei comum. Muitos leitores cristãos veem uma profecia de Cristo, dita com a certeza do perfeito profético. As duas nem sempre se excluem: alguns leem o versículo como falando de um rei do tempo de Isaías cujos títulos só se cumpriram plenamente num filho de Davi posterior. O registro aponta para as passagens ao redor: 7:14 prometeu um filho chamado Emanuel, e 11:1–5 descreve um rei da linhagem de Jessé.
 
@@ -121,7 +121,7 @@ Se os passados do capítulo 53 são perfeitos proféticos, que descrevem um sofr
 
 ## Como a decisão é tomada
 
-No caso de um verbo hebraico, o tempo verbal da tradução nunca é simplesmente copiado. É uma decisão de sentido: que tempo, e que tipo de ação, este verbo descreve no seu contexto? As pistas são o contexto, os verbos ao redor, o tipo de verbo (um estado ou um acontecimento) e o tipo de texto (narrativa, lei, salmo ou profecia). Quando as pistas apontam para um lado, a decisão diz isso e dá a razão. Quando não apontam, a decisão é marcada como incerta e a alternativa é indicada, como no Salmo 3:6, em Isaías 5:13 e em Isaías 9:5.
+No caso de um verbo hebraico, o tempo verbal da tradução nunca é simplesmente copiado. É uma decisão de sentido: que tempo, e que tipo de ação, este verbo descreve no seu contexto? As pistas são o contexto, os verbos ao redor, o tipo de verbo (um estado ou um acontecimento) e o tipo de texto (narrativa, lei, salmo ou profecia). Quando as pistas apontam para um lado, a decisão diz isso e dá a razão. Quando não apontam, a decisão é marcada como incerta e a alternativa é indicada, como no Salmo 3:5, em Isaías 5:13 e em Isaías 9:6.
 
 Depois, os níveis põem essa decisão em palavras. A Literal mostra a forma hebraica onde a língua consegue suportá-la. A Equilibrada escolhe o tempo de que o leitor precisa para entender o sentido. A Acessível pode acrescentar uma palavra ou uma frase curta para deixar o tempo claro. Nenhum deles muda o que a decisão de sentido diz.
 

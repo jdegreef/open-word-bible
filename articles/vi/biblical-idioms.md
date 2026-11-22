@@ -4,7 +4,7 @@ summary: Kinh Thánh nói bằng những thành ngữ mà người đọc đầu
 date: 2026-10-17
 order: 95
 section: passage
-source: dae5ff099ec1
+source: db273db486c2
 ---
 Ngôn ngữ nào cũng có thành ngữ: những cụm từ mà ý nghĩa không phải là tổng của các chữ trong đó. Người nói tiếng Anh mà "kicks the bucket" (nghĩa đen: đá cái xô) thì chẳng đá gì cả, mà là đã chết; còn người "under the weather" (nghĩa đen: ở dưới thời tiết) không phải đang đứng ngoài mưa, mà chỉ thấy trong người không khỏe. Người dịch dịch thành ngữ từng chữ một sẽ tạo ra những câu vô nghĩa, hoặc tệ hơn, những câu nghe có vẻ có nghĩa nhưng lại mang nghĩa sai.
 
@@ -42,7 +42,7 @@ Câu ấy có nghĩa là gì? Hình ảnh là một sự đau rát như bị đ�
 
 - Thường nhất, nó được hiểu là nỗi xấu hổ nóng bừng mà lòng tốt không xứng đáng nhận được đem lại, điều có thể khiến kẻ thù thay đổi.
 - Một số người chỉ đến một văn bản Ai Cập mô tả người ăn năn đội một chậu than trên đầu, như dấu hiệu của sự ăn năn.
-- Những người khác hiểu nó là sự phán xét, vì ở chỗ khác, than lửa là hình ảnh của sự trừng phạt (Thi Thiên 140:11). Theo cách hiểu này, lòng tốt chất chồng thêm tội lỗi của kẻ thù nếu nó vẫn giữ lòng thù nghịch.
+- Những người khác hiểu nó là sự phán xét, vì ở chỗ khác, than lửa là hình ảnh của sự trừng phạt (Thi Thiên 140:10). Theo cách hiểu này, lòng tốt chất chồng thêm tội lỗi của kẻ thù nếu nó vẫn giữ lòng thù nghịch.
 
 Bản ghi theo cách hiểu thứ nhất, và lưu ý rằng trong Rô-ma 12:20–21, câu châm ngôn phục vụ lời kêu gọi lấy điều thiện thắng điều ác, điều nghiêng về cách hiểu ấy. Bản ghi của Rô-ma 12:20 cũng đi đến cùng quyết định, và nói thêm rằng cách hiểu theo nghĩa phán xét không hợp với những mệnh lệnh của Phao-lô trong các câu 14 và 17–19, là chúc phước cho kẻ bắt bớ mình và không bao giờ lấy ác trả ác.
 
@@ -62,7 +62,7 @@ Trong sách Xuất Ai Cập Ký, lòng Pha-ra-ôn bị "làm cho cứng cỏi". 
 
 Bản ghi của Xuất Ai Cập Ký 7:3 thêm một điều mà người đọc bản dịch không thể thấy. Xuất Ai Cập Ký dùng ba động từ khác nhau cho điều xảy ra với lòng Pha-ra-ôn: "làm cho cứng", "làm cho mạnh" và "làm cho nặng". Cả ba mô tả một ý chí kiên quyết chống lại mệnh lệnh của Đức Chúa Trời. Đôi khi Đức Chúa Trời là chủ ngữ, đôi khi chính Pha-ra-ôn, và đôi khi tấm lòng chỉ đơn giản "là" cứng hay nặng. Chú thích nói rằng bản văn giữ những điều này bên nhau mà không giải thích bằng cách nào.
 
-Open Word Bible giữ các động từ tách biệt ở chỗ có thể. Trong Xuất Ai Cập Ký 8:11 (8:15 trong phần lớn các bản Kinh Thánh tiếng Anh), chính Pha-ra-ôn là chủ ngữ, và động từ là động từ đến từ gốc "nặng":
+Open Word Bible giữ các động từ tách biệt ở chỗ có thể. Trong Xuất Ai Cập Ký 8:15 (8:11 trong các bản Kinh Thánh Hê-bơ-rơ), chính Pha-ra-ôn là chủ ngữ, và động từ là động từ đến từ gốc "nặng":
 
 > {{OWB:EXO.8.11.s1:L}}
 

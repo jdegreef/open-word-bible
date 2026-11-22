@@ -4,7 +4,7 @@ summary: "Biblia za zamani za Kiingereza zinatumia neno moja, \"hell\", kwa mane
 date: 2026-10-17
 order: 86
 section: passage
-source: 0b21a4e82def
+source: 5f3691f4c4e6
 ---
 Fungua King James Version ya Kiingereza katika Zaburi 16:10 na utasoma, "For thou wilt not leave my soul in hell" (kwa maana hutaiacha nafsi yangu katika "hell"). Geuka Luka 16:23 na yule tajiri naye yuko "in hell". Katika Mathayo 5:22 yule anayemwita ndugu yake mpumbavu yuko "in danger of hell fire", hatarini mwa moto wa "hell". Katika 2 Petro 2:4 Mungu aliwatupa malaika waliotenda dhambi "down to hell". Na katika Ufunuo 20:14, "death and hell were cast into the lake of fire", yaani kifo na "hell" vilitupwa ndani ya ziwa la moto.
 
@@ -44,7 +44,7 @@ Rekodi zetu zinatoa maana moja kwa Sheoli kila mahali: mahali au ulimwengu wa wa
 - **Linganifu** inabaki na "Sheol" katika Zaburi, Isaya, Mhubiri na Yona. Katika Mwanzo 37:35 inasema "the grave" (kaburi), kwa sababu, kama uamuzi wa maneno wa pale unavyosema, hiyo ndiyo maana ya wazi ya maneno ya Yakobo.
 - **Rahisi** inasema Sheoli ni nini: "the place of the dead" (mahali pa wafu) katika Zaburi, "the grave" katika Isaya, Mhubiri na Yona.
 
-Hakuna kiwango chetu kinachosema "hell" kwa Sheoli mahali popote. Maombi ya Yona, katika hesabu ya Kiebrania 2:3, yanaonyesha utaratibu huo:
+Hakuna kiwango chetu kinachosema "hell" kwa Sheoli mahali popote. Maombi ya Yona, katika 2:2 (2:3 katika Biblia za Kiebrania), yanaonyesha utaratibu huo:
 
 > {{OWB:JON.2.3.s1:B}}
 

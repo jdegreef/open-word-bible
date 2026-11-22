@@ -4,13 +4,13 @@ summary: El hebreo bíblico no marca el pasado, el presente y el futuro como lo 
 date: 2026-10-17
 order: 92
 section: passage
-source: c27aa9dda0a4
+source: 25cb01415999
 ---
 Isaías vivió en el siglo VIII antes de Cristo. Sin embargo, en una de sus profecías más conocidas dice:
 
 > {{OWB:ISA.9.5.s1:B}}
 
-«Ha nacido». «Se nos ha dado». Se habla del niño como si ya estuviera aquí. La mayoría de las Biblias numeran este versículo como 9:6; Open Word Bible sigue la numeración hebrea, en la que es el 9:5. Los cristianos lo han leído desde hace mucho como una promesa de Cristo, siete siglos más tarde. Entonces, ¿por qué usa el profeta un tiempo pasado?
+«Ha nacido». «Se nos ha dado». Se habla del niño como si ya estuviera aquí. En las Biblias hebreas este versículo es el 9:5; Open Word Bible, como la mayoría de las Biblias, lo numera 9:6. Los cristianos lo han leído desde hace mucho como una promesa de Cristo, siete siglos más tarde. Entonces, ¿por qué usa el profeta un tiempo pasado?
 
 La respuesta breve es que el hebreo bíblico no tiene tiempos verbales en el sentido en que los tiene el español. Sus verbos dicen algo sobre *cómo* se ve una acción más que sobre *cuándo* ocurre, y el traductor tiene que decidir el tiempo a partir del contexto. Este artículo explica cómo funciona eso y qué hace con ello Open Word Bible.
 
@@ -52,7 +52,7 @@ El segundo es para lo que siempre es verdad. El Salmo 1 empieza con el retrato d
 
 Los tres verbos (andar, detenerse, sentarse) están en perfecto. La decisión gramatical del registro lo dice directamente: los verbos están en la forma hebrea de pasado, usada para lo que siempre es verdad, así que se traducen en presente. «Que no ha andado» sería una manera extraña de describir un modo de vida. El salmo no mira hacia atrás. Describe una clase de persona.
 
-A veces la elección es menos clara. En el Salmo 3:6 David dice que se acostó, durmió y volvió a despertar, porque el SEÑOR lo sostenía. Los verbos son perfectos. El registro los lee como la noche anterior, una noche real en medio del peligro, y da la otra lectura como alternativa: algunos los entienden como lo que él hace siempre. El registro añade que, de una forma u otra, dormir en medio del peligro muestra su confianza. La forma verbal por sí sola no puede decidir entre las dos.
+A veces la elección es menos clara. En el Salmo 3:5 David dice que se acostó, durmió y volvió a despertar, porque el SEÑOR lo sostenía. Los verbos son perfectos. El registro los lee como la noche anterior, una noche real en medio del peligro, y da la otra lectura como alternativa: algunos los entienden como lo que él hace siempre. El registro añade que, de una forma u otra, dormir en medio del peligro muestra su confianza. La forma verbal por sí sola no puede decidir entre las dos.
 
 ## El imperfecto que es pasado
 
@@ -81,7 +81,7 @@ En la Biblia hebrea, lo decidido suele ser la propia decisión de Dios. Los regi
 - **Josué 6:2.** Antes de que caigan los muros de Jericó, el SEÑOR dice: «He entregado Jericó en tu mano». El registro dice que se habla de la victoria como ya hecha, porque Dios habla de lo que ha decidido como algo ya asentado.
 - **Amós 5:2.** Amós entona un canto fúnebre sobre Israel: «Ha caído para no levantarse más la virgen Israel». El registro señala que Israel seguía en pie y próspero cuando Amós habló. El lamento habla de su caída como ya segura, como si el funeral hubiera empezado.
 - **Jeremías 50:2.** Se ordena a los heraldos anunciar «Babilonia ha sido tomada» mientras Babilonia todavía domina el mundo. El registro dice que proclaman su caída como un hecho, porque Dios lo ha decidido.
-- **Isaías 9:1.** «El pueblo que andaba en tinieblas ha visto una gran luz». El registro dice que la luz que vendrá se describe como si ya estuviera aquí, y que Mateo cita estos versículos al hablar de Jesús cuando comienza su obra en Galilea.
+- **Isaías 9:2.** «El pueblo que andaba en tinieblas ha visto una gran luz». El registro dice que la luz que vendrá se describe como si ya estuviera aquí, y que Mateo cita estos versículos al hablar de Jesús cuando comienza su obra en Galilea.
 
 El mismo hábito llega hasta el Nuevo Testamento, aunque los verbos griegos funcionan de otra manera. En Romanos 8:30 Pablo escribe que a quienes Dios justificó, «también los glorificó». El registro de ese versículo señala que la gloria aún está por revelarse, y que Pablo usa el pasado porque, en el propósito de Dios, es tan segura como el llamamiento y la justificación que ya han ocurrido.
 
@@ -99,9 +99,9 @@ Literal conserva la forma: «mi pueblo ha ido al destierro». Equilibrada dice l
 
 Josué 6:2 muestra otra manera. Los tres niveles conservan el perfecto («he entregado», «te he dado»), pero Sencilla añade una breve frase propia, «Es como si ya fuera tuya», y la decisión de redacción explica por qué: para transmitir el sentido del verbo acabado, que la ciudad será de Israel con toda seguridad.
 
-## Isaías 9:5: un nacimiento ya anunciado
+## Isaías 9:6: un nacimiento ya anunciado
 
-Isaías 9:5 es más difícil, y el registro lo trata con cuidado. Su decisión de significado está marcada como incierta. Señala que los versículos 3, 4 y 5 empiezan cada uno con «porque» y dan razones para la alegría del versículo 2: el opresor quebrantado, el equipo de guerra quemado y, ahora, un niño real. Los verbos están en la forma de la acción completada. Luego ofrece dos posibilidades sin imponer una elección. Un profeta puede hablar de lo que Dios hará con toda seguridad como si ya estuviera hecho, o anunciar un nacimiento que acaba de ocurrir. El pasaje no nombra al niño.
+Isaías 9:6 es más difícil, y el registro lo trata con cuidado. Su decisión de significado está marcada como incierta. Señala que los versículos 3, 4 y 5 empiezan cada uno con «porque» y dan razones para la alegría del versículo 2: el opresor quebrantado, el equipo de guerra quemado y, ahora, un niño real. Los verbos están en la forma de la acción completada. Luego ofrece dos posibilidades sin imponer una elección. Un profeta puede hablar de lo que Dios hará con toda seguridad como si ya estuviera hecho, o anunciar un nacimiento que acaba de ocurrir. El pasaje no nombra al niño.
 
 Los lectores han sostenido ambas opiniones. Algunos ven un nacimiento en tiempos del propio Isaías, quizá un heredero real, celebrado con un lenguaje que va más allá de cualquier rey ordinario. Muchos lectores cristianos ven una profecía de Cristo, pronunciada con la certeza del perfecto profético. Las dos no siempre se excluyen: algunos leen el versículo como referido a un rey de los días de Isaías cuyos títulos solo se cumplieron plenamente en un hijo posterior de David. El registro remite a los pasajes que lo rodean: 7:14 prometió un hijo llamado Emanuel, y 11:1–5 describe a un rey del linaje de Isaí.
 
@@ -121,7 +121,7 @@ Si los pasados del capítulo 53 son perfectos proféticos, que describen un sufr
 
 ## Cómo se toma la decisión
 
-En un verbo hebreo, el tiempo verbal de la traducción nunca se copia sin más. Es una decisión de significado: ¿qué tiempo, y qué clase de acción, describe este verbo en su contexto? Las pistas son el contexto, los verbos que lo rodean, la clase de verbo (un estado o un suceso) y la clase de texto (relato, ley, salmo o profecía). Donde las pistas apuntan en una dirección, la decisión lo dice y da la razón. Donde no, la decisión se marca como incierta y se nombra la alternativa, como en el Salmo 3:6, Isaías 5:13 e Isaías 9:5.
+En un verbo hebreo, el tiempo verbal de la traducción nunca se copia sin más. Es una decisión de significado: ¿qué tiempo, y qué clase de acción, describe este verbo en su contexto? Las pistas son el contexto, los verbos que lo rodean, la clase de verbo (un estado o un suceso) y la clase de texto (relato, ley, salmo o profecía). Donde las pistas apuntan en una dirección, la decisión lo dice y da la razón. Donde no, la decisión se marca como incierta y se nombra la alternativa, como en el Salmo 3:5, Isaías 5:13 e Isaías 9:6.
 
 Después, los niveles ponen esa decisión en palabras. Literal muestra la forma hebrea donde la lengua de la traducción puede soportarla. Equilibrada elige el tiempo que el lector necesita para entender el sentido. Sencilla puede añadir una palabra o una frase breve para dejar claro el tiempo. Ninguno de ellos cambia lo que dice la decisión de significado.
 
