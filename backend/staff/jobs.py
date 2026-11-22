@@ -26,6 +26,7 @@ import urllib.error
 import urllib.request
 
 from django.conf import settings
+from django.core.cache import cache
 from rest_framework import status
 from rest_framework.exceptions import ValidationError
 from rest_framework.response import Response
@@ -59,10 +60,14 @@ def _github(path, method="GET", body=None):
                                  data=data, method=method, headers=headers)
     try:
         with urllib.request.urlopen(req, timeout=10) as r:
-            return json.load(r)
+            answer = json.load(r)
     except (urllib.error.URLError, TimeoutError, ValueError) as e:
         log.warning("GitHub %s %s failed: %s", method, path, e)
         raise GitHubError from e
+    if method != "GET":
+        # An issue filed or changed: the rail's counts (staff/attention.py) ask again.
+        cache.delete("staff.attention.github")
+    return answer
 
 
 def _parse_job(issue):
