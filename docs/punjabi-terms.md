@@ -1506,3 +1506,69 @@ People and places: ਪੌਲੁਸ, ਤੁਖਿਕੁਸ; ਅਫ਼ਸੁਸ, �
   ਨਾਸਰੀ, ਪਿਲਾਤੁਸ, ਬਰੱਬਾ, ਕੁਰੇਨੀ ਸ਼ਮਊਨ (city ਕੁਰੇਨੇ), ਸਿਕੰਦਰ, ਰੂਫ਼ੁਸ, ਗਲਗਥਾ,
   ਮਰਿਯਮ ਮਗਦਲੀਨੀ (R ਮਗਦਲਾ ਦੀ ਮਰਿਯਮ), ਛੋਟਾ ਯਾਕੂਬ, ਯੋਸੇਸ, ਸਲੋਮੀ, ਅਰਿਮਥੀਆ ਦਾ
   ਯੂਸੁਫ਼.
+
+### 2 Kings
+
+- God takes the honorific plural (ਉਨ੍ਹਾਂ ਨੇ, ਆਖਦੇ ਹਨ) with no deity_pronoun
+  spans; prayers to God use ਤੂੰ (6:17, 19:15-19), and God says ਤੂੰ to
+  Hezekiah and to Sennacherib (19-20).
+- Address: Elisha says ਤੁਸੀਂ to Elijah and to kings, ਤੂੰ to Gehazi and the
+  officer of 7:2; the king of Israel calls him ਹੇ ਮੇਰੇ ਪਿਤਾ (R ਪਿਤਾ ਜੀ).
+  Kings say ਤੂੰ to each other in challenge (14:8-10); Jehu and Jezebel use
+  ਤੂੰ in contempt (9). The Assyrians say ਤੂੰ to Hezekiah and ਤੁਸੀਂ to his
+  officers and people; Hezekiah says ਤੁਸੀਂ to Isaiah and to the king of
+  Assyria.
+- Regnal formulas, kept steady through the book:
+  - Judah, accession: ਜਦੋਂ X ਰਾਜ ਕਰਨ ਲੱਗਾ, ਉਹ N ਸਾਲਾਂ ਦਾ ਸੀ (L); ਰਾਜਾ ਬਣਨ
+    ਵੇਲੇ X ਦੀ ਉਮਰ N ਸਾਲ ਸੀ (B); N ਸਾਲ ਦੀ ਉਮਰ ਵਿੱਚ X ਰਾਜਾ ਬਣਿਆ (R). The
+    mother line at L is ਉਸ ਦੀ ਮਾਂ ਦਾ ਨਾਮ X [ਸੀ], Y ਵਾਲੇ Z ਦੀ ਧੀ from
+    chapter 23 on.
+  - Israel, accession: ਯਹੂਦਾਹ ਦੇ ਰਾਜਾ X ਦੇ Nਵੇਂ ਸਾਲ ਵਿੱਚ ... ਇਸਰਾਏਲ ਉੱਤੇ
+    ਸਾਮਰਿਯਾ ਵਿੱਚ ਰਾਜਾ ਹੋਇਆ (L).
+  - Verdicts: ਉਸ ਨੇ ਉਹ ਕੀਤਾ ਜੋ {DN} ਦੀ ਨਿਗਾਹ ਵਿੱਚ ਬੁਰਾ / ਠੀਕ ਸੀ (L, B);
+    ਉਹ ਕੰਮ ਕੀਤੇ ਜਿਨ੍ਹਾਂ ਨੂੰ {DN} ਬੁਰਾ / ਠੀਕ ਆਖਦੇ ਹਨ (R). Jeroboam's sin:
+    ਨਬਾਟ ਦੇ ਪੁੱਤਰ ਯਾਰਾਬੁਆਮ ... ਜਿਨ੍ਹਾਂ ਨਾਲ ਉਸ ਨੇ ਇਸਰਾਏਲ ਤੋਂ ਪਾਪ ਕਰਵਾਇਆ.
+  - Sources: ਕੀ ਉਹ ... ਦੇ ਰਾਜਿਆਂ ਦੇ ਦਿਨਾਂ ਦੀਆਂ ਗੱਲਾਂ ਦੀ ਪੁਸਤਕ ਵਿੱਚ ਲਿਖੀਆਂ
+    ਹੋਈਆਂ ਨਹੀਂ ਹਨ? (L); ... ਦੀ ਇਤਿਹਾਸ-ਪੁਸਤਕ ਵਿੱਚ ਦਰਜ ਹੈ (B); ... ਦੇ ਇਤਿਹਾਸ
+    ਵਿੱਚ ਲਿਖਿਆ ਹੋਇਆ ਹੈ (R).
+  - Death: ਆਪਣੇ ਪਿਉ-ਦਾਦਿਆਂ ਨਾਲ ਸੌਂ ਗਿਆ (L), ਆਪਣੇ ਪੁਰਖਿਆਂ ਨਾਲ ਸੌਂ ਗਿਆ (B),
+    ਮਰ ਗਿਆ (R).
+  - 1 Kings and 2 Chronicles should use the same formulas.
+- Worship: house of the LORD ਦਾ ਭਵਨ (L, B), ਦਾ ਮੰਦਰ (R); high places ਉੱਚੀਆਂ
+  ਥਾਵਾਂ (L, B), ਪਹਾੜੀਆਂ ਉੱਤੇ ਬਣੇ ਪੂਜਾ-ਸਥਾਨ (R); Asherah pole ਅਸ਼ੇਰਾਹ ਥੰਮ੍ਹ;
+  host of heaven ਅਕਾਸ਼ ਦੀ ਸਾਰੀ ਸੈਨਾ (R the stars); kemarim ਮੂਰਤੀ-ਪੂਜਕ
+  ਪੁਜਾਰੀ; qedeshim ਦੇਵਦਾਸ (L); teraphim ਘਰੇਲੂ ਦੇਵਤੇ; divination ਫਾਲ ਪਾਉਣਾ,
+  omens ਸ਼ਗਨ ਵਿਚਾਰਨਾ, mediums ਓਝੇ, spiritists ਭੂਤ ਸਾਧਣ ਵਾਲੇ (Deuteronomy
+  18:10-11 should match); pass through the fire ਅੱਗ ਵਿੱਚੋਂ ਲੰਘਾਉਣਾ (L, B);
+  testimonies ਸਾਖੀਆਂ (L), ਚਿਤਾਵਨੀਆਂ (B); book of the law ਬਿਵਸਥਾ ਦੀ ਪੋਥੀ
+  (L, B), {DN} ਦੀ ਸਿੱਖਿਆ ਦੀ ਪੋਥੀ (R); Passover ਪਸਾਹ.
+- Temple furnishings: stands ਚੌਕੀਆਂ, basin ਹੌਦੀ, the Sea ਸਮੁੰਦਰ (R ਪਿੱਤਲ
+  ਦਾ ਵੱਡਾ ਹੌਜ਼), capital ਮੁਕਟ, network ਜਾਲੀ, pomegranates ਅਨਾਰ; pots ਦੇਗਾਂ,
+  shovels ਬੇਲਚੇ, snuffers ਗੁਲਤਰਾਸ਼, dishes ਕੜਛੇ, firepans ਅੰਗੀਠੀਆਂ; bronze
+  ਪਿੱਤਲ. 1 Kings 7 should match.
+- Prophets: man of God ਪਰਮੇਸ਼ੁਰ ਦਾ ਬੰਦਾ (L, B); sons of the prophets ਨਬੀਆਂ
+  ਦੇ ਪੁੱਤਰ (L), ਨਬੀਆਂ ਦੀ ਟੋਲੀ (B), ਨਬੀਆਂ ਦਾ ਦਲ (R); messenger formula ਇਉਂ
+  ਆਖਦੇ ਹਨ (L), ਇਹ ਆਖਦੇ ਹਨ (B, R); neum ਦਾ ਵਾਕ ਹੈ; 2:12 and 13:14 ਇਸਰਾਏਲ ਦੇ
+  ਰਥ ਅਤੇ ਉਸ ਦੇ ਘੋੜਸਵਾਰ; Huldah ਹੁਲਦਾਹ ਨਬੀਆ.
+- Court and war: scribe ਲਿਖਾਰੀ (L), ਸਕੱਤਰ (B, R); recorder ਇਤਿਹਾਸ-ਲੇਖਕ;
+  eunuch ਖੋਜਾ (L), ਅਧਿਕਾਰੀ or ਦਰਬਾਰੀ (B, R); queen mother ਰਾਜ-ਮਾਤਾ; chief
+  of the guard ਅੰਗ-ਰੱਖਿਅਕਾਂ ਦਾ ਪ੍ਰਧਾਨ (L, B), ਸ਼ਾਹੀ ਅੰਗ-ਰੱਖਿਅਕਾਂ ਦਾ ਸੈਨਾਪਤੀ
+  (R); the Assyrian titles ਤਰਤਾਨ, ਰਬਸਾਰੀਸ, ਰਬਸ਼ਾਕੇਹ at L only; exile ਦੇਸ
+  ਨਿਕਾਲਾ (L, B), ਬੰਦੀ ਬਣਾ ਕੇ ਲੈ ਜਾਣਾ (R); Chaldeans ਕਸਦੀ (L, B), ਬਾਬਲੀ
+  (R); vassal ਦਾਸ (L), ਅਧੀਨ ਰਾਜਾ (B); skin disease ਚਮੜੀ ਦਾ ਭੈੜਾ ਰੋਗ.
+- Units: talents and shekels carry units spans at B and R (talent about 34
+  kg, shekel about 11.5 g, cubit about 45 cm).
+- Names follow the Hebrew form: Joram ਯੋਰਾਮ and Jehoram ਯਹੋਰਾਮ, Joash
+  ਯੋਆਸ਼ and Jehoash ਯਹੋਆਸ਼, Azariah ਅਜ਼ਰਯਾਹ and Uzziah ਉੱਜ਼ੀਯਾਹ as the
+  verse has them. Others: ਏਲੀਯਾਹ, ਅਲੀਸ਼ਾ, ਅਹਜ਼ਯਾਹ, ਬਆਲ-ਜ਼ਬੂਬ, ਗੇਹਾਜ਼ੀ, ਸ਼ੂਨੇਮੀ,
+  ਨਅਮਾਨ, ਬਨ-ਹਦਦ, ਹਜ਼ਾਏਲ, ਯੇਹੂ, ਈਜ਼ਬਲ, ਅਥਲਯਾਹ, ਯਹੋਯਾਦਾ, ਅਮਸਯਾਹ, ਯਾਰਾਬੁਆਮ,
+  ਜ਼ਕਰਯਾਹ, ਸ਼ੱਲੂਮ, ਮਨਹੇਮ, ਪਕਹਯਾਹ, ਪਕਹ, ਯੋਥਾਮ, ਆਹਾਜ਼, ਤਿਗਲਥ-ਪਿਲਆਸਰ,
+  ਹੋਸ਼ੇਆ, ਸ਼ਲਮਨਸਰ, ਹਿਜ਼ਕੀਯਾਹ, ਨਹੁਸ਼ਤਾਨ, ਸਨਹੇਰੀਬ, ਯਸਾਯਾਹ, ਬਰੋਦਕ-ਬਲਦਾਨ,
+  ਮਨੱਸ਼ਹ, ਆਮੋਨ, ਯੋਸ਼ੀਯਾਹ, ਹਿਲਕੀਯਾਹ, ਸ਼ਾਫ਼ਾਨ, ਫ਼ਿਰਊਨ ਨਕੋ, ਯਹੋਆਹਾਜ਼,
+  ਯਹੋਯਾਕੀਮ, ਨਬੂਕਦਨੱਸਰ, ਯਹੋਯਾਕੀਨ, ਮੱਤਨਯਾਹ, ਸਿਦਕੀਯਾਹ, ਨਬੂਜ਼ਰਦਾਨ, ਗਦਲਯਾਹ,
+  ਮਿਸਪਾਹ, ਇਸਮਾਏਲ, ਅਵੀਲ-ਮਰੋਦਕ.
+- Wording other books must match:
+  - 18:13-20:19 sets the wording for Isaiah 36-39.
+  - 24:18-25:30 sets the wording for Jeremiah 52.
+  - 14:6 quotes Deuteronomy 24:16, with gender spans for parents and
+    children.
