@@ -1,7 +1,7 @@
 from django.urls import path
 
-from . import (articles, changes, checks, consistency, emails, export, fixes, history, inbox, jobs, overlap, progress,
-               review, search, team, text, users, verses, work)
+from . import (articles, assignments, bulk, changes, checks, consistency, emails, export, fixes, history, inbox, jobs,
+               overlap, progress, review, search, team, text, users, verses, work, workspace)
 
 urlpatterns = [
     path("overview/", progress.overview),
@@ -19,6 +19,10 @@ urlpatterns = [
     path("changes/", changes.changes),
     path("review/", review.queue),
     path("review/flags/", review.flags),
+    path("review/bulk/", bulk.bulk),
+    path("review/workspace/", workspace.workspace),
+    path("assignments/", assignments.assignments),
+    path("assignments/<int:assignment_id>/", assignments.assignment),
     path("review/<str:record_id>/", review.sentence),
     path("verses/", verses.find),
     path("verses/<str:vid>/", verses.verse),

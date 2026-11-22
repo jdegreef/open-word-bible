@@ -1,11 +1,14 @@
 """Reader suggestions and questions, for editors.
 
-GET   /api/admin/inbox/?status=new&kind=&lang=&book=&assigned=&offset=
+GET   /api/admin/inbox/?status=new&kind=&lang=&book=&assigned=&q=&offset=
                                     messages with counts by status, the
                                     editors they can be assigned to and the
                                     saved replies; new messages oldest
                                     waiting first, the rest newest first.
-                                    assigned is me, none or a user id
+                                    assigned is me, none or a user id; q
+                                    finds words across every message
+                                    (search_messages), and the counts are
+                                    then of the messages it finds
 PATCH /api/admin/inbox/<id>/  {status, reply, note, assigned_to}
                                     answer (the reply is emailed to the reader),
                                     mark done or declined, keep a note, or
@@ -15,13 +18,14 @@ PATCH /api/admin/inbox/<id>/  {status, reply, note, assigned_to}
 A reply is sent once: a message that has been answered keeps its reply.
 """
 import logging
+import re
 from datetime import timedelta
 
 from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.core.mail import send_mail
 from django.db import transaction
-from django.db.models import Count
+from django.db.models import Count, Q
 from django.utils import timezone
 from rest_framework import status
 from rest_framework.exceptions import ValidationError
@@ -110,11 +114,34 @@ def message_json(m):
             "replies": [] if m.reply else saved_replies(m)}
 
 
+def search_messages(messages, q):
+    """The messages q finds, in every status: each word of q in the text,
+    the verse id, the sender's address or name, the reply or the editors'
+    note, any case; or, if q is a reference ("John 3:16", "JHN.3.16"), the
+    messages on that verse as well."""
+    found = Q()
+    for word in q.split()[:10]:
+        found &= (Q(text__icontains=word) | Q(verse__icontains=word) | Q(user__username__icontains=word)
+                  | Q(user__first_name__icontains=word) | Q(reply__icontains=word) | Q(note__icontains=word))
+    if re.search(r"\d", q):
+        from .verses import verse_id   # verses imports this module
+        try:
+            vid = verse_id(q)
+        except Exception:
+            vid = None
+        if vid:
+            found |= Q(verse=vid)
+    return messages.filter(found)
+
+
 @admin_view("inbox")
 def inbox(request):
     params = request.query_params
     messages = ReaderMessage.objects.select_related("user", "replied_by", "assigned_to")
-    counts = dict(messages.values("status").annotate(n=Count("id")).values_list("status", "n"))
+    q = " ".join(params.get("q", "").split())[:200]
+    if q:
+        messages = search_messages(messages, q)
+    counts = dict(messages.order_by().values("status").annotate(n=Count("id")).values_list("status", "n"))
     state = params.get("status", "new")
     if state in S.values:
         messages = messages.filter(status=state)
