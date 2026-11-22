@@ -53,15 +53,18 @@ class LicensingTest(unittest.TestCase):
         cls.site = built_site()
         cls.extracts = {p: json.loads(p.read_text(encoding="utf-8"))
                         for p in sorted((ROOT / "data").rglob("*.json"))}
-        # Every text file the site serves, and each file in the downloads'
-        # zips; fonts, share images and icons are binary.
-        cls.pages = {}
-        for p in sorted(cls.site.rglob("*")):
+
+    def pages(self):
+        """Every text file the site serves, and each file in the downloads'
+        zips, one at a time (the site is gigabytes; held at once it fills
+        a CI runner's memory); fonts, share images and icons are binary."""
+        for p in sorted(self.site.rglob("*")):
             if p.suffix == ".zip":
                 with zipfile.ZipFile(p) as z:
-                    cls.pages.update({f"{p}/{name}": z.read(name).decode("utf-8") for name in z.namelist()})
+                    for name in z.namelist():
+                        yield f"{p}/{name}", z.read(name).decode("utf-8")
             elif p.is_file() and p.suffix not in (".woff2", ".jpg", ".png"):
-                cls.pages[p] = p.read_text(encoding="utf-8")
+                yield p, p.read_text(encoding="utf-8")
 
     def test_extracts_have_no_restricted_fields(self):
         self.assertTrue(self.extracts)
@@ -89,7 +92,7 @@ class LicensingTest(unittest.TestCase):
         values = restricted_values()
         field = re.compile(r'"(%s)"\s*:' % "|".join(RESTRICTED))
         checked = 0
-        for path, text in self.pages.items():
+        for path, text in self.pages():
             self.assertIsNone(field.search(text), path)
             # A language's text (chapter-data/<book>/<n>.<lang>.js) has no words.
             if "/chapter-data/" not in str(path) or text.startswith("window.OWB_TEXTS="):

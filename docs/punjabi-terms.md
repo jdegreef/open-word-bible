@@ -1444,3 +1444,65 @@ People and places: ਪੌਲੁਸ, ਤੁਖਿਕੁਸ; ਅਫ਼ਸੁਸ, �
   ਅਦਰੀਏਲ, ਯਿਸ਼ਬੀ-ਬਨੋਬ, ਅਲਹਾਨਾਨ, ਗੋਲਿਅਥ, ਯੋਸ਼ੇਬ-ਬੱਸ਼ਬਥ, ਅਲਆਜ਼ਾਰ, ਸ਼ੰਮਾਹ,
   ਯਹੋਯਾਦਾ ਦਾ ਪੁੱਤਰ ਬਨਾਯਾਹ, ਅਰੋਏਰ, ਯਾਜ਼ੇਰ, ਤਹਤੀਮ-ਹਾਦਸ਼ੀ, ਦਾਨ-ਯਾਨ, ਸੈਦਾ, ਸੂਰ,
   ਯਬੂਸੀ ਅਰਵਨਾਹ.
+
+### Mark
+
+- Forms of address: the narrator and the disciples use honorific plural forms
+  for Jesus, and disciples and others who come to him say ਤੁਸੀਂ. Opponents
+  (the high priest, the mockers in 14:65, Pilate, the soldiers, the
+  passers-by and the leaders at the cross, the questioners in 11:28) say ਤੂੰ
+  to Jesus and speak of him in the plain singular. The Hindi draft uses आप
+  in these places; the Punjabi draft does not follow it, which reviewers may
+  want to weigh. Jesus says ਤੂੰ to one person and ਤੁਸੀਂ to many. The Son of
+  Man, the Messiah of 12:35-37 and the Son of 13:32 take plain forms; God
+  takes the honorific plural, and prayer to the Father uses ਤੂੰ (14:36
+  ਅੱਬਾ, ਹੇ ਪਿਤਾ; 15:34).
+- Style: euthys ਤੁਰੰਤ at L every time, varied at B and R; the historical
+  present is kept at L only; "truly I say to you" ਮੈਂ ਤੁਹਾਨੂੰ ਸੱਚ ਆਖਦਾ ਹਾਂ at
+  every level.
+- Groups: chief priests ਮੁੱਖ ਜਾਜਕ (R ਵੱਡੇ ਜਾਜਕ); scribes ਸ਼ਾਸਤਰੀ (L),
+  ਬਿਵਸਥਾ ਦੇ ਸਿੱਖਿਅਕ (B, R); elders ਬਜ਼ੁਰਗ (L), ਬਜ਼ੁਰਗ ਆਗੂ (B), ਲੋਕਾਂ ਦੇ ਆਗੂ
+  (R); high priest ਮਹਾਂ ਜਾਜਕ; Council ਮਹਾਂਸਭਾ; Sadducees ਸਦੂਕੀ; Herodians
+  ਹੇਰੋਦੇਸੀ; tax collectors ਮਸੂਲੀਏ.
+- Terms: Christ ਮਸੀਹ (no christos span); prophet ਨਬੀ; Rabbi ਰੱਬੀ (R ਗੁਰੂ
+  ਜੀ); doulos ਦਾਸ; gospel ਖ਼ੁਸ਼ਖ਼ਬਰੀ at every level; parable ਦ੍ਰਿਸ਼ਟਾਂਤ;
+  demons ਭੂਤ, unclean spirit ਅਸ਼ੁੱਧ ਆਤਮਾ; Gehenna ਗਹੇਨਾ (L), ਨਰਕ; psyche
+  ਜਾਨ (L, B), ਜ਼ਿੰਦਗੀ (R); sign ਨਿਸ਼ਾਨ; generation ਪੀੜ੍ਹੀ; cross ਸਲੀਬ;
+  Passover ਪਸਾਹ; Unleavened Bread ਪਤੀਰੀ ਰੋਟੀ (L, B), ਬਿਨਾਂ ਖ਼ਮੀਰ ਦੀ ਰੋਟੀ
+  (R); body ਦੇਹ and covenant ਨੇਮ as 1 Corinthians 11; Blessed ਪਰਮ ਧੰਨ;
+  Power ਸਮਰੱਥਾ (L, B), ਸਰਬ-ਸ਼ਕਤੀਮਾਨ ਪਰਮੇਸ਼ੁਰ (R); blasphemy ਕੁਫ਼ਰ; deny
+  ਇਨਕਾਰ ਕਰਨਾ (L), ਮੁੱਕਰ ਜਾਣਾ (B); tribulation ਕਸ਼ਟ (L), ਸੰਕਟ (B), ਭਿਆਨਕ
+  ਮੁਸੀਬਤ (R) as Daniel 12:1; take heed ਚੌਕਸ/ਸਾਵਧਾਨ/ਖ਼ਬਰਦਾਰ, keep watch
+  ਜਾਗਦੇ ਰਹੋ; Hosanna ਹੋਸ਼ੰਨਾ; colt ਬਛੇਰਾ (L, B), ਗਧੀ ਦਾ ਬੱਚਾ (R); money
+  changers ਸਰਾਫ਼; treasury ਖ਼ਜ਼ਾਨਾ (L), ਦਾਨ-ਪੇਟੀਆਂ (B, R); nard ਜਟਾਮਾਸੀ;
+  alabaster ਸੰਗਮਰਮਰ; myrrh ਗੰਧਰਸ; purple ਬੈਂਗਣੀ; praetorium ਪ੍ਰਾਏਤੋਰਿਯੁਮ
+  (L); cohort ਟੁਕੜੀ; centurion ਸੂਬੇਦਾਰ (R ਰੋਮੀ ਫ਼ੌਜ ਦਾ ਅਫ਼ਸਰ); lots ਗੁਣੇ
+  (L, B), dice ਪਾਸੇ (R); corpse ਲੋਥ (L), ਦੇਹ (B, R); linen ਸਣ ਦੀ ਚਾਦਰ;
+  tongues ਨਵੀਆਂ ਭਾਸ਼ਾਵਾਂ; little dogs ਕਤੂਰੇ.
+- Hours: L keeps the count from sunrise (ਤੀਜਾ, ਛੇਵਾਂ, ਨੌਵਾਂ ਘੰਟਾ); B and R
+  give clock time. Coins (denarii, lepta, quadrans) carry a units span at B
+  and R only.
+- Aramaic kept in Gurmukhi: ਤਲੀਥਾ ਕੂਮ, ਇੱਫ਼ਥਾ, ਕੁਰਬਾਨ, ਅੱਬਾ, ਏਲੋਈ, ਏਲੋਈ,
+  ਲਮਾ ਸਬਕਤਨੀ.
+- Endings: the short ending (16:8 s2-s4) and the longer ending (16:9-20) are
+  in square brackets, as in Hindi; 16:8 ends on ਕਿਉਂਕਿ ਉਹ ਡਰਦੀਆਂ ਸਨ (L).
+- Wording other books must match:
+  - First Punjabi wording of Isaiah 29:13 (7:6-7), Isaiah 66:24 (9:48),
+    Psalm 118:26 (11:9), Isaiah 56:7 and Jeremiah 7:11 ਡਾਕੂਆਂ ਦਾ ਅੱਡਾ
+    (11:17), Deuteronomy 6:4-5 (12:29-30), Exodus 3:6 (12:26), Isaiah 13:10
+    and 34:4 (13:24-25), Psalm 22:18 (15:24) and Psalm 22:1 (15:34). Isaiah,
+    the Psalms, the Torah, Jeremiah and Matthew should match these.
+  - Mark follows wording set earlier: Exodus 20:12 as Ephesians 6:2 (7:10);
+    the Father's voice as 2 Peter 1:17 (1:11, 9:7); Psalm 118:22 as 1 Peter
+    2:7; Psalm 110:1 as Hebrews 1:13; Leviticus 19:18 as James 2:8; the
+    abomination of desolation as Daniel 9:27, 11:31, 12:11 (masculine
+    ਖੜ੍ਹਾ); Daniel 7:13 at 14:62 (ਅਕਾਸ਼ ਦੇ ਬੱਦਲਾਂ ਨਾਲ); Zechariah 13:7 in
+    Mark's form with Zechariah's words (ਆਜੜੀ, ਤਿੱਤਰ-ਬਿੱਤਰ); Malachi 3:1
+    recognizable at 1:2.
+- Names: ਯਾਈਰ, ਲਸ਼ਕਰ, ਗਿਰਸੇਨੀ, ਦਿਕਾਪੁਲਿਸ, ਗੰਨੇਸਰਤ, ਹੇਰੋਦਿਯਾਸ, ਫ਼ਿਲਿੱਪੁਸ,
+  ਸੁਰੂਫ਼ਿਨੀਕੀ (L), ਸੀਰੀਆ ਦੇ ਫ਼ੈਨੀਕੇ ਦੀ (B, R),
+  ਦਲਮਨੂਥਾ, ਬੈਤਸੈਦਾ, ਕੈਸਰਿਯਾ ਫ਼ਿਲਿੱਪੀ, ਬਰਤਿਮਾਈ, ਬੈਤਫ਼ਗਾ, ਬੈਤਅਨੀਆ, ਜ਼ੈਤੂਨ ਦਾ
+  ਪਹਾੜ, ਕੈਸਰ, ਅੰਦ੍ਰਿਯਾਸ, ਬਆਲਜ਼ਬੂਲ, ਸ਼ਮਊਨ ਕੋੜ੍ਹੀ, ਯਹੂਦਾ ਇਸਕਰਿਯੋਤੀ, ਗਥਸਮਨੀ,
+  ਨਾਸਰੀ, ਪਿਲਾਤੁਸ, ਬਰੱਬਾ, ਕੁਰੇਨੀ ਸ਼ਮਊਨ (city ਕੁਰੇਨੇ), ਸਿਕੰਦਰ, ਰੂਫ਼ੁਸ, ਗਲਗਥਾ,
+  ਮਰਿਯਮ ਮਗਦਲੀਨੀ (R ਮਗਦਲਾ ਦੀ ਮਰਿਯਮ), ਛੋਟਾ ਯਾਕੂਬ, ਯੋਸੇਸ, ਸਲੋਮੀ, ਅਰਿਮਥੀਆ ਦਾ
+  ਯੂਸੁਫ਼.
