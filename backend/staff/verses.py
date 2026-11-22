@@ -28,7 +28,7 @@ from texts.models import Word
 from translation import search
 from translation.models import ContentFile, SearchLanguage, Sentence
 
-from .inbox import message_json, verse_label, verse_url
+from .inbox import inbox_team, message_json, person, verse_label, verse_url
 from .models import AdminAction
 from .permissions import admin_view
 from .progress import _BOOKS, CHAPTERS, book_name
@@ -150,5 +150,7 @@ def verse(request, vid):
     }
     if "inbox" in request.admin_areas:
         answer["messages"] = [message_json(m) for m in ReaderMessage.objects.filter(verse=vid)
-                              .select_related("user", "replied_by")[:20]]
+                              .select_related("user", "replied_by", "assigned_to")[:20]]
+        # Whom a message can be assigned to, as the inbox gives it.
+        answer["team"] = [person(u) for u in inbox_team()] if answer["messages"] else []
     return Response(answer)

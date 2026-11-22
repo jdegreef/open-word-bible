@@ -7,6 +7,7 @@ import subprocess
 import sys
 import tempfile
 from pathlib import Path
+from datetime import timedelta
 from unittest import mock
 
 from django.apps import apps
@@ -14,6 +15,7 @@ from django.conf import settings
 from django.db import connection
 from django.test import SimpleTestCase
 from django.test.utils import CaptureQueriesContext
+from django.utils import timezone
 
 from backend_tests.test_admin import K, AdminTestCase, account, client_for, sentence
 from backend_tests.test_backend import CONTENT, import_content, load_extract_words
@@ -42,6 +44,43 @@ class ReviewTest(AdminTestCase):
     def act(self, client, record, layer, action="approve", note=""):
         return client.post(f"/api/admin/review/{record}/", {"layer": layer, "action": action, "note": note},
                            format="json")
+
+    def undo(self, client, record, layer, event):
+        return client.post(f"/api/admin/review/{record}/", {"layer": layer, "action": "undo", "event": event},
+                           format="json")
+
+    def test_taking_back_a_meaning_approval(self):
+        event = self.act(self.scholar, "JHN.1.1.s1", "grc").json()["event"]["id"]
+        self.assertEqual(Sentence.objects.get(record_id="JHN.1.1.s1").status, "meaning_reviewed")
+        r = self.undo(self.scholar, "JHN.1.1.s1", "grc", event)
+        self.assertEqual(r.status_code, 200)
+        self.assertEqual(r.json()["state"], "not_reviewed")
+        self.assertEqual(Sentence.objects.get(record_id="JHN.1.1.s1").status, "ai_draft")
+        self.assertFalse(ReviewEvent.objects.exists())
+        self.assertFalse(ReviewState.objects.exists())
+        self.assertEqual(self.admin.get("/api/admin/activity/").json()["actions"][0]["action"], "review.undo")
+
+    def test_an_earlier_approval_still_stands_after_taking_back_a_flag(self):
+        self.act(self.scholar, "JHN.1.1.s1", "grc")
+        flag = self.act(self.scholar, "JHN.1.1.s1", "grc", "flag", "Wrong tense").json()["event"]["id"]
+        self.assertEqual(self.undo(self.scholar, "JHN.1.1.s1", "grc", flag).json()["state"], "approved")
+        self.assertEqual(Sentence.objects.get(record_id="JHN.1.1.s1").status, "meaning_reviewed")
+
+    def test_only_your_own_latest_recent_step(self):
+        mine = self.act(self.scholar, "JHN.1.1.s1", "grc").json()["event"]["id"]
+        # Someone else can't take it back.
+        r = self.undo(self.admin, "JHN.1.1.s1", "grc", mine)
+        self.assertEqual((r.status_code, r.json()["code"]), (403, "forbidden"))
+        # Not once someone has acted on the sentence since.
+        self.act(self.admin, "JHN.1.1.s1", "grc", "comment", "Looks right")
+        r = self.undo(self.scholar, "JHN.1.1.s1", "grc", mine)
+        self.assertEqual((r.status_code, r.json()["code"]), (400, "not_latest"))
+        # Nor after ten minutes.
+        late = self.act(self.scholar, "JHN.1.2.s1", "grc").json()["event"]["id"]
+        ReviewEvent.objects.filter(id=late).update(created_at=timezone.now() - timedelta(minutes=11))
+        r = self.undo(self.scholar, "JHN.1.2.s1", "grc", late)
+        self.assertEqual((r.status_code, r.json()["code"]), (400, "too_late"))
+        self.assertEqual(ReviewEvent.objects.count(), 3)
 
     def test_reviewers_open_review_and_editors_do_not(self):
         self.assertEqual(self.french.get("/api/me").json()["admin"], ["overview", "export", "review"])

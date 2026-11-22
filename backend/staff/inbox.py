@@ -8,7 +8,9 @@ GET   /api/admin/inbox/?status=new&kind=&lang=&book=&assigned=&q=&offset=
                                     assigned is me, none or a user id; q
                                     finds words across every message
                                     (search_messages), and the counts are
-                                    then of the messages it finds
+                                    then of the messages it finds;
+                                    languages and books list those with
+                                    messages in the tab
 PATCH /api/admin/inbox/<id>/  {status, reply, note, assigned_to}
                                     answer (the reply is emailed to the reader),
                                     mark done or declined, keep a note, or
@@ -26,6 +28,7 @@ from django.contrib.auth import get_user_model
 from django.core.mail import send_mail
 from django.db import transaction
 from django.db.models import Count, Q
+from django.db.models.functions import Substr
 from django.utils import timezone
 from rest_framework import status
 from rest_framework.exceptions import ValidationError
@@ -34,7 +37,7 @@ from rest_framework.response import Response
 from accounts import controls
 from accounts.auth import site_url
 from feedback.models import ReaderMessage
-from owb import refs
+from owb import languages, refs
 
 from .models import record
 from .permissions import AREAS, admin_view
@@ -145,6 +148,11 @@ def inbox(request):
     state = params.get("status", "new")
     if state in S.values:
         messages = messages.filter(status=state)
+    # What the filters can offer, from the messages in this tab.
+    in_tab = messages.order_by()
+    by_lang = dict(in_tab.values("language").annotate(n=Count("id")).values_list("language", "n"))
+    by_book = dict(in_tab.annotate(book=Substr("verse", 1, 3)).values("book").annotate(n=Count("id"))
+                   .values_list("book", "n"))
     if params.get("kind") in ReaderMessage.Kind.values:
         messages = messages.filter(kind=params["kind"])
     if params.get("lang"):
@@ -168,6 +176,10 @@ def inbox(request):
     return Response({"messages": [message_json(m) for m in messages[offset:offset + PAGE]],
                      "total": total, "offset": offset, "page": PAGE,
                      "counts": {s: counts.get(s, 0) for s in S.values},
+                     "languages": [{"code": c, "name": lang["name"], "count": by_lang[c]}
+                                   for c, lang in languages.READING.items() if by_lang.get(c)],
+                     "books": [{"code": c, "name": refs.BOOK_NAMES.get(c, c), "count": by_book[c]}
+                               for c in refs.BOOK_CODES if by_book.get(c)],
                      "team": [person(u) for u in inbox_team()]})
 
 

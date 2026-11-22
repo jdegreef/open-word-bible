@@ -432,6 +432,33 @@ class JobsTest(AdminTestCase):
         self.assertIn('<!-- drafting-job {"book": "PHM", "languages": ["es", "fr"]} -->', body["body"])
         self.assertEqual(AdminAction.objects.get(action="job.file").target, "#7 PHM")
 
+    @override_settings(OWB_GITHUB_TOKEN="t")
+    def test_the_same_job_sent_twice_is_filed_once(self):
+        cache.clear()
+        sentence("PHM.1.1.s1", ("en",))
+        filed = []
+
+        def github(path, method="GET", body=None, stop=None):
+            if method == "POST":
+                filed.append(body["title"])
+                return {"number": 7, "html_url": "https://github.com/x/y/issues/7"}
+            return []
+        job = {"book": "PHM", "languages": ["fr"]}
+        with mock.patch.object(staff_jobs, "_github", side_effect=github):
+            first = self.admin.post("/api/admin/jobs/", job, format="json", HTTP_IDEMPOTENCY_KEY="k1")
+            again = self.admin.post("/api/admin/jobs/", job, format="json", HTTP_IDEMPOTENCY_KEY="k1")
+            # A refused change frees its key: fixed and sent again, it goes through.
+            bad = self.admin.post("/api/admin/jobs/", {"book": "PHM"}, format="json", HTTP_IDEMPOTENCY_KEY="k2")
+            retry = self.admin.post("/api/admin/jobs/", {"book": "PHM"}, format="json", HTTP_IDEMPOTENCY_KEY="k2")
+            # Another account's key is its own.
+            other = client_for(account("boss2@example.org", (K.SUPER_ADMIN,)))
+            theirs = other.post("/api/admin/jobs/", job, format="json", HTTP_IDEMPOTENCY_KEY="k1")
+        self.assertEqual(first.status_code, 201)
+        self.assertEqual((again.status_code, again.json()["code"]), (409, "duplicate"))
+        self.assertEqual((bad.status_code, retry.status_code), (400, 400))
+        self.assertEqual(theirs.status_code, 201)
+        self.assertEqual(len(filed), 2)
+
 
 class EmailTest(AdminTestCase):
     def test_test_then_send_to_a_role(self):
@@ -492,6 +519,8 @@ class VerseTest(AdminTestCase):
         self.assertEqual(data["files"], {"JHN.1.1.s1": "content/JHN/JHN.1.1-18.json"})
         self.assertEqual(data["neighbours"], [None, "JHN.1.2"])
         self.assertEqual(len(data["messages"]), 1)
+        # Whom its messages can be assigned to, as the inbox lists them.
+        self.assertEqual([u["email"] for u in data["team"]], ["boss@example.org"])
         # Reporting sees the text, not who wrote in.
         reporter = client_for(account("rep@example.org", (K.REPORTING,)))
         self.assertNotIn("messages", reporter.get("/api/admin/verses/JHN.1.1/").json())
@@ -551,6 +580,33 @@ class FixTest(AdminTestCase):
         # The inspector lists it.
         fixes = editor.get("/api/admin/verses/JHN.1.1/").json()["fixes"]
         self.assertEqual(fixes[0]["number"], 9)
+
+    @override_settings(OWB_GITHUB_TOKEN="t")
+    def test_input_that_is_not_what_was_asked_for_is_a_400(self):
+        editor = client_for(account("ed@example.org", (K.EDITOR,)))
+        with mock.patch.object(staff_jobs, "_github", side_effect=AssertionError("nothing filed")):
+            r = editor.post("/api/admin/fixes/", {**self.body, "message": "abc"}, format="json")
+            self.assertEqual((r.status_code, r.json()["code"]), (400, "invalid"))
+            for body in ({"book": "PHM", "languages": "fr"}, {"book": "PHM", "languages": [{"x": 1}]}):
+                r = self.admin.post("/api/admin/jobs/", body, format="json")
+                self.assertEqual((r.status_code, r.json()["code"]), (400, "invalid"), body)
+            r = self.admin.post("/api/admin/jobs/bulk/", {"languages": ["fr"], "books": 5, "dry_run": True},
+                                format="json")
+            self.assertEqual((r.status_code, r.json()["code"]), (400, "invalid"))
+            r = self.admin.post("/api/admin/articles/", {"language": "fr", "slugs": [["x"]]}, format="json")
+            self.assertEqual((r.status_code, r.json()["code"]), (400, "invalid"))
+
+    def test_a_marker_is_read_only_when_it_is_an_object_and_never_replaces_the_issue(self):
+        def issue(marker):
+            return {"number": 5, "title": "Draft", "html_url": "https://github.com/x/y/issues/5",
+                    "created_at": "2026-11-01T00:00:00Z", "body": f"text\n<!-- drafting-job {marker} -->"}
+        self.assertEqual(staff_jobs.marker(issue('{"book": "JHN"}'), "drafting-job"), {"book": "JHN"})
+        for junk in ("[1, 2]", '"JHN"', "not json", "null"):
+            self.assertEqual(staff_jobs.marker(issue(junk), "drafting-job"), {}, junk)
+        hijack = issue('{"book": "JHN", "url": "https://elsewhere.example", "number": 1}')
+        with mock.patch.object(staff_jobs, "_github", return_value=[hijack]):
+            job = staff_jobs.open_jobs()[0]
+        self.assertEqual((job["book"], job["url"], job["number"]), ("JHN", "https://github.com/x/y/issues/5", 5))
 
     @override_settings(OWB_GITHUB_TOKEN="t")
     def test_file_word_links(self):

@@ -23,6 +23,7 @@ class BudgetsTest(unittest.TestCase):
         self.write("read/index.html", os.urandom(9000))       # not a chapter page
         self.write("reader.js", b"var a = 1;\n" * 100)
         self.write("style.css", os.urandom(2000))
+        self.write("admin.js", os.urandom(3000))   # staff only: not a reader's asset
 
     def write(self, rel, data):
         path = self.site / rel
@@ -39,6 +40,7 @@ class BudgetsTest(unittest.TestCase):
         found = check_budgets.measure(self.site)
         self.assertEqual(found["chapter_page_gz"][1], self.site / "es/jhn/1/index.html")
         self.assertEqual(found["js_css_asset_gz"][1], self.site / "style.css")
+        self.assertEqual(found["admin_asset_gz"][1], self.site / "admin.js")
         total = sum(p.stat().st_size for p in self.site.rglob("*") if p.is_file())
         self.assertEqual(found["site_total"], (total, None))
 
