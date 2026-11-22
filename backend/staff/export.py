@@ -29,8 +29,8 @@ from owb import export, languages, markup, refs
 from texts.models import Edition, Verse
 from translation.models import ImportRun, Rendering
 
-from .models import AdminAction, record
-from .permissions import admin_view
+from .models import AdminAction, record, shown_actor
+from .permissions import admin_view, is_super_admin
 from .inbox import verse_label
 from .progress import book_name
 
@@ -91,7 +91,8 @@ def options(request):
     for row in Rendering.objects.values("language", "level").annotate(n=Count("id")):
         counts.setdefault(row["language"], {})[row["level"]] = row["n"]
     run = ImportRun.objects.exclude(finished_at=None).first()
-    recent = AdminAction.objects.filter(action="export.download")[:10]
+    recent = AdminAction.objects.filter(action="export.download").select_related("actor")[:10]
+    boss = is_super_admin(request.user)
     return Response({
         "languages": [{"code": c, "name": lang["name"], "sentences": counts.get(c, {}),
                        "settings": [{"name": n, "options": o, "default": markup.DEFAULTS.get(n, 0)}
@@ -102,7 +103,8 @@ def options(request):
         "books": [{"code": c, "name": book_name(c)} for c in refs.BOOK_CODES],
         "imported_at": run.finished_at if run else None,
         "licence": export.LICENCE,
-        "recent": [{"by": a.actor_email, "target": a.target, "detail": a.detail, "at": a.created_at} for a in recent],
+        "recent": [{"by": shown_actor(a, request.user, boss), "target": a.target, "detail": a.detail,
+                    "at": a.created_at} for a in recent],
     })
 
 

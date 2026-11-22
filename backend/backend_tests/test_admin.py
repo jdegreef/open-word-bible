@@ -580,6 +580,13 @@ class FixTest(AdminTestCase):
         # The inspector lists it.
         fixes = editor.get("/api/admin/verses/JHN.1.1/").json()["fixes"]
         self.assertEqual(fixes[0]["number"], 9)
+        # Who filed it: the address for its filer and super admins, a name for anyone else.
+        self.assertEqual(fixes[0]["by"], "ed@example.org")
+        self.assertEqual(self.admin.get("/api/admin/verses/JHN.1.1/").json()["fixes"][0]["by"], "ed@example.org")
+        reporter = client_for(account("rep@example.org", (K.REPORTING,)))
+        self.assertEqual(reporter.get("/api/admin/verses/JHN.1.1/").json()["fixes"][0]["by"], "A team member")
+        User.objects.filter(username="ed@example.org").update(first_name="Ed")
+        self.assertEqual(reporter.get("/api/admin/verses/JHN.1.1/").json()["fixes"][0]["by"], "Ed")
 
     @override_settings(OWB_GITHUB_TOKEN="t")
     def test_input_that_is_not_what_was_asked_for_is_a_400(self):
