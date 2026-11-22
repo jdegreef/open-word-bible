@@ -4,7 +4,7 @@ summary: Các tác giả Kinh Thánh không viết chương nào hay câu nào. 
 date: 2026-10-17
 order: 100
 section: translation
-source: ddaa7f257d1b
+source: a025429ed75e
 ---
 “Giăng 3:16” quen thuộc đến mức người ta dễ quên rằng Giăng chưa bao giờ viết một con số “3” hay “16”. Không tác giả Kinh Thánh nào chia sách của mình thành chương và câu. Các con số ấy là một hệ thống tham chiếu, được các học giả và thợ in thêm vào nhiều thế kỷ sau, và như mọi hệ thống tham chiếu, chúng hữu ích, không hoàn hảo và sẽ còn ở lại.
 
@@ -56,13 +56,17 @@ Còn có những khác biệt nhỏ hơn ở những chỗ khác, như ở cuố
 
 ## Open Word Bible xử lý các con số thế nào
 
-Open Word Bible đánh số mọi câu theo đúng bản văn nguồn của mình. Với Cựu Ước, đó là Bản chép tay Leningrad theo ấn bản Westminster (Westminster Leningrad Codex), nên Ma-la-chi có ba chương, Giô-ên có bốn, và tiêu đề của một thi thiên là câu đầu tiên của nó. Ở những chỗ điều này quan trọng, câu đầu tiên bị ảnh hưởng mang một chú thích. Chú thích ở Ma-la-chi 3:19 giải thích rằng sáu câu của nó được đánh số 4:1–6 trong nhiều bản Kinh Thánh khác, và Open Word Bible theo cách đánh số của bản văn tiếng Hê-bơ-rơ mà nó dịch. Giô-ên 3:1 có cùng loại ghi chú, và tiêu đề của Thi Thiên 3 cũng vậy:
+Open Word Bible dịch từ bản văn tiếng Hê-bơ-rơ, tức Bản chép tay Leningrad theo ấn bản Westminster (Westminster Leningrad Codex), nhưng đánh số chương và câu như bản NIV và phần lớn các bản Kinh Thánh tiếng Anh. Vì thế Ma-la-chi có bốn chương, Giô-ên có ba, và tiêu đề của một thi thiên không được đánh số. Nhờ vậy người đọc có thể tra một câu theo con số mình đã biết, và so sánh nó với bản Kinh Thánh mình vẫn đọc.
+
+Ở những chỗ số câu tiếng Hê-bơ-rơ khác đi, câu đầu tiên bị ảnh hưởng mang một chú thích. Chú thích ở Ma-la-chi 4:1 giải thích rằng sáu câu của nó là 3:19–24 trong bản văn tiếng Hê-bơ-rơ, vốn giữ chúng trong chương 3. Giô-ên 2:28 có cùng loại ghi chú, và tiêu đề của Thi Thiên 3 cũng vậy:
 
 > {{OWB:PSA.3.1.s1:B}}
 
-Bản ghi của câu này nói rằng từ Thi Thiên 3 trở đi, số câu ở đây cao hơn một đơn vị so với những bản Kinh Thánh in tiêu đề mà không đánh số.
+Bản ghi của câu này nói rằng từ Thi Thiên 3 trở đi, các bản Kinh Thánh Hê-bơ-rơ đánh số câu cao hơn ở đây một đơn vị. Trang của mỗi câu cũng cho biết số câu tiếng Hê-bơ-rơ ở những chỗ nó khác đi.
 
-Ở hậu trường, một bảng trong dữ liệu của dự án, `data/versification.json`, đối chiếu hai hệ thống từng câu một. Bảng này được xây dựng từ bản đối chiếu câu của Open Scriptures Hebrew Bible, và nó liệt kê mọi câu tiếng Hê-bơ-rơ có số câu tiếng Anh khác đi: hơn hai nghìn câu một chút, khoảng một nửa trong sách Thi Thiên. Trang web dùng nó ở bất cứ chỗ nào cách đánh số của chúng tôi gặp cách đánh số của người khác. Khi trang đọc hiển thị một bản Kinh Thánh khác để so sánh, chẳng hạn bản World English Bible, các câu của bản ấy được chuyển sang cách đánh số của chúng tôi, để Thi Thiên 3:1 tiếng Anh nằm cạnh Thi Thiên 3:2 của chúng tôi. Các câu tham chiếu chéo lấy từ những nguồn khác cũng được chuyển đổi theo cùng một cách. Và dịch vụ văn bản của dự án có thể cung cấp một bản Kinh Thánh đối chiếu theo cách đánh số của chúng tôi hoặc theo cách đánh số riêng của ấn bản ấy.
+Hai hệ thống không phải lúc nào cũng chia bản văn ở cùng những chỗ. Ở năm chỗ, một câu tiếng Hê-bơ-rơ chứa hai câu tiếng Anh: Thi Thiên 13:5–6, 1 Các Vua 18:33–34, 20:2–3, 22:21–22 và Ê-sai 64:1, câu mà dòng đầu tiên khép lại Ê-sai 63 trong tiếng Hê-bơ-rơ. Ở ba chỗ khác, hai câu tiếng Hê-bơ-rơ hợp thành một câu tiếng Anh, như ở Dân Số Ký 26:1. Các bản ghi của Open Word Bible theo các câu văn của tiếng Hê-bơ-rơ, nên một số câu có thể rơi vào giữa một câu văn, như vẫn thường xảy ra ở nhiều chỗ.
+
+Ở hậu trường, một bảng trong dữ liệu của dự án, `data/versification.json`, đối chiếu hai hệ thống từng câu một. Bảng này được xây dựng từ bản đối chiếu câu của Open Scriptures Hebrew Bible, và nó liệt kê mọi câu tiếng Hê-bơ-rơ có số câu tiếng Anh khác đi: hơn hai nghìn câu một chút, khoảng một nửa trong sách Thi Thiên. Bản thân các bản ghi vẫn giữ số câu tiếng Hê-bơ-rơ, để bản dịch luôn có thể được kiểm tra đối chiếu với bản văn tiếng Hê-bơ-rơ; trang web chuyển chúng thành những con số người đọc nhìn thấy. Và dịch vụ văn bản của dự án có thể cung cấp một đoạn Kinh Thánh theo cách đánh số của bản NIV hoặc theo cách đánh số riêng của bản văn tiếng Hê-bơ-rơ.
 
 Trong Tân Ước, Open Word Bible giữ các con số của Estienne ngay cả ở những chỗ bản văn Hy Lạp SBL không có câu nào để đặt dưới chúng. Ma-thi-ơ 17 đi từ câu 20 sang câu 22, kèm một chú thích giải thích lý do. Xin xem [Những câu Kinh Thánh vắng mặt trong các bản hiện đại](/articles/verses-missing-from-modern-bibles/).
 
@@ -70,7 +74,7 @@ Trong Tân Ước, Open Word Bible giữ các con số của Estienne ngay cả 
 
 Không điều nào trong số này là lý do để nghi ngờ chương và câu. Chúng giúp hàng triệu người tìm được cùng một câu văn trong nhiều ngôn ngữ và ấn bản khác nhau, và chúng làm cho các câu tham chiếu chéo và các sách tra cứu từ ngữ trở nên khả thi. Nhưng chúng là một tấm bản đồ đặt lên trên bản văn, chứ không phải một phần của bản văn. Đọc vượt qua một chỗ ngắt chương, hay bỏ qua một số câu nằm giữa một câu văn, thường là cách tốt nhất để nghe được điều tác giả thật sự đã viết.
 
-[Mở 1 Cô-rinh-tô 13](/1co/13/), [Ê-sai 52](/isa/52/) hoặc [Ma-la-chi 3](/mal/3/) để xem các con số hoạt động thế nào.
+[Mở 1 Cô-rinh-tô 13](/1co/13/), [Ê-sai 52](/isa/52/) hoặc [Ma-la-chi 4](/mal/4/) để xem các con số hoạt động thế nào.
 
 ## Nguồn tham khảo
 

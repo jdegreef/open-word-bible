@@ -4,13 +4,13 @@ summary: Tiếng Hê-bơ-rơ Kinh Thánh không đánh dấu quá khứ, hiện 
 date: 2026-10-17
 order: 92
 section: passage
-source: c27aa9dda0a4
+source: 25cb01415999
 ---
 Ê-sai sống vào thế kỷ thứ tám trước Chúa. Thế nhưng trong một trong những lời tiên tri nổi tiếng nhất của mình, ông nói:
 
 > {{OWB:ISA.9.5.s1:B}}
 
-"Đã sinh ra". "Đã được ban cho". Đứa trẻ được nói đến như thể đã có mặt. Phần lớn các bản Kinh Thánh tiếng Anh đánh số câu này là 9:6; Open Word Bible theo cách đánh số của tiếng Hê-bơ-rơ, trong đó nó là 9:5. Từ lâu, Cơ Đốc nhân đã đọc câu này như một lời hứa về Đấng Christ, bảy thế kỷ sau. Vậy tại sao nhà tiên tri lại dùng thì quá khứ?
+"Đã sinh ra". "Đã được ban cho". Đứa trẻ được nói đến như thể đã có mặt. Trong các bản Kinh Thánh Hê-bơ-rơ, câu này là 9:5; Open Word Bible, giống như phần lớn các bản Kinh Thánh tiếng Anh, đánh số nó là 9:6. Từ lâu, Cơ Đốc nhân đã đọc câu này như một lời hứa về Đấng Christ, bảy thế kỷ sau. Vậy tại sao nhà tiên tri lại dùng thì quá khứ?
 
 Câu trả lời ngắn gọn là tiếng Hê-bơ-rơ Kinh Thánh không có thì theo nghĩa của tiếng Anh. Động từ của nó cho biết hành động được nhìn *như thế nào* nhiều hơn là xảy ra *khi nào*, và người dịch phải xác định thời gian từ văn mạch. Bài này giải thích điều đó vận hành ra sao, và Open Word Bible làm gì với nó.
 
@@ -52,7 +52,7 @@ Cách thứ hai là cho điều luôn luôn đúng. Thi Thiên 1 mở đầu b�
 
 Ba động từ (bước đi, đứng, ngồi) đều ở thể hoàn thành. Quyết định ngữ pháp của bản ghi nói thẳng điều đó: các động từ ở dạng quá khứ của tiếng Hê-bơ-rơ, được dùng cho điều luôn luôn đúng, nên được dịch ở thì hiện tại. "Người đã không bước đi" sẽ là một cách lạ lùng để mô tả một lối sống. Thi thiên không nhìn lại quá khứ. Nó đang mô tả một kiểu người.
 
-Đôi khi sự lựa chọn kém rõ ràng hơn. Trong Thi Thiên 3:6, Đa-vít nói rằng ông nằm xuống, ngủ và thức dậy, vì CHÚA nâng đỡ ông. Các động từ ở thể hoàn thành. Bản ghi hiểu chúng là đêm qua, một đêm có thật giữa lúc nguy hiểm, và đưa ra cách hiểu kia như phương án khác: một số người cho rằng đó là điều ông vẫn luôn làm. Bản ghi nói thêm rằng dù hiểu cách nào, giấc ngủ giữa nguy hiểm cho thấy lòng tin cậy của ông. Riêng dạng động từ không thể quyết định giữa hai cách hiểu.
+Đôi khi sự lựa chọn kém rõ ràng hơn. Trong Thi Thiên 3:5, Đa-vít nói rằng ông nằm xuống, ngủ và thức dậy, vì CHÚA nâng đỡ ông. Các động từ ở thể hoàn thành. Bản ghi hiểu chúng là đêm qua, một đêm có thật giữa lúc nguy hiểm, và đưa ra cách hiểu kia như phương án khác: một số người cho rằng đó là điều ông vẫn luôn làm. Bản ghi nói thêm rằng dù hiểu cách nào, giấc ngủ giữa nguy hiểm cho thấy lòng tin cậy của ông. Riêng dạng động từ không thể quyết định giữa hai cách hiểu.
 
 ## Thể chưa hoàn thành mang nghĩa quá khứ
 
@@ -81,7 +81,7 @@ Trong Kinh Thánh Hê-bơ-rơ, điều đã được định thường là chín
 - **Giô-suê 6:2.** Trước khi tường thành Giê-ri-cô sụp đổ, CHÚA phán: "Ta đã phó Giê-ri-cô vào tay con." Bản ghi nói rằng chiến thắng được nói đến như đã xong, vì Đức Chúa Trời nói về điều Ngài đã quyết định như một điều đã được định.
 - **A-mốt 5:2.** A-mốt hát một bài ai ca trên Y-sơ-ra-ên: "Đã ngã rồi, không bao giờ đứng dậy nữa, trinh nữ Y-sơ-ra-ên." Bản ghi lưu ý rằng Y-sơ-ra-ên vẫn còn đứng vững và thịnh vượng khi A-mốt nói lời ấy. Bài ai ca nói về sự sụp đổ của nó như điều đã chắc chắn, như thể tang lễ đã bắt đầu.
 - **Giê-rê-mi 50:2.** Những người truyền tin được bảo loan báo "Ba-by-lôn bị chiếm rồi" trong khi Ba-by-lôn vẫn còn cai trị thế giới. Bản ghi nói rằng họ công bố sự sụp đổ của nó như một sự thật, vì Đức Chúa Trời đã quyết định điều đó.
-- **Ê-sai 9:1.** "Dân đi trong tối tăm đã thấy ánh sáng lớn." Bản ghi nói rằng ánh sáng sắp đến được mô tả như đã có mặt, và Ma-thi-ơ trích những câu này về việc Đức Giê-xu bắt đầu công việc của Ngài tại Ga-li-lê.
+- **Ê-sai 9:2.** "Dân đi trong tối tăm đã thấy ánh sáng lớn." Bản ghi nói rằng ánh sáng sắp đến được mô tả như đã có mặt, và Ma-thi-ơ trích những câu này về việc Đức Giê-xu bắt đầu công việc của Ngài tại Ga-li-lê.
 
 Thói quen ấy còn vươn vào Tân Ước, dù động từ Hy Lạp vận hành khác. Trong Rô-ma 8:30, Phao-lô viết rằng những người Đức Chúa Trời đã xưng công chính thì "Ngài cũng đã làm cho vinh hiển". Bản ghi của câu ấy lưu ý rằng vinh quang vẫn còn chờ được bày tỏ, và Phao-lô dùng thì quá khứ vì, trong ý định của Đức Chúa Trời, điều đó cũng chắc chắn như sự kêu gọi và sự xưng công chính đã xảy ra.
 
@@ -99,9 +99,9 @@ Sát nghĩa giữ dạng ấy: "dân ta bị lưu đày". Cân bằng nói đi�
 
 Giô-suê 6:2 cho thấy một cách khác. Cả ba cấp độ đều giữ dạng đã xong ("ta đã phó", "ta đã giao", "ta đã ban cho"), nhưng Dễ đọc thêm một câu ngắn của riêng mình, "Thành ấy coi như đã thuộc về con rồi", và quyết định về cách diễn đạt giải thích lý do: để chuyển tải ý nghĩa của động từ đã hoàn thành, rằng thành ấy chắc chắn sẽ thuộc về Y-sơ-ra-ên.
 
-## Ê-sai 9:5: một sự ra đời đã được loan báo
+## Ê-sai 9:6: một sự ra đời đã được loan báo
 
-Ê-sai 9:5 khó hơn, và bản ghi xử lý nó cẩn thận. Quyết định về nghĩa của câu này được đánh dấu chưa chắc chắn. Nó lưu ý rằng các câu 3, 4 và 5 đều bắt đầu bằng "vì" và nêu lý do cho niềm vui của câu 2: kẻ áp bức bị bẻ gãy, binh giáp bị thiêu đốt, và giờ là một hoàng tử. Các động từ ở dạng dành cho hành động đã hoàn tất. Rồi nó đưa ra hai khả năng mà không ép phải chọn. Một nhà tiên tri có thể nói về điều Đức Chúa Trời chắc chắn sẽ làm như thể đã làm xong, hoặc loan báo một sự ra đời vừa mới xảy ra. Phân đoạn này không nêu tên đứa trẻ.
+Ê-sai 9:6 khó hơn, và bản ghi xử lý nó cẩn thận. Quyết định về nghĩa của câu này được đánh dấu chưa chắc chắn. Nó lưu ý rằng các câu 3, 4 và 5 đều bắt đầu bằng "vì" và nêu lý do cho niềm vui của câu 2: kẻ áp bức bị bẻ gãy, binh giáp bị thiêu đốt, và giờ là một hoàng tử. Các động từ ở dạng dành cho hành động đã hoàn tất. Rồi nó đưa ra hai khả năng mà không ép phải chọn. Một nhà tiên tri có thể nói về điều Đức Chúa Trời chắc chắn sẽ làm như thể đã làm xong, hoặc loan báo một sự ra đời vừa mới xảy ra. Phân đoạn này không nêu tên đứa trẻ.
 
 Người đọc đã theo cả hai quan điểm. Một số người thấy ở đây một sự ra đời vào thời Ê-sai, có lẽ là một người thừa kế ngai vàng, được mừng bằng những lời vượt xa bất kỳ vị vua bình thường nào. Nhiều người đọc Cơ Đốc thấy đây là lời tiên tri về Đấng Christ, được nói ra với sự chắc chắn của thể hoàn thành tiên tri. Hai cách hiểu không phải lúc nào cũng loại trừ nhau: một số người đọc câu này như nói về một vị vua thời Ê-sai mà các danh hiệu chỉ được thành tựu trọn vẹn nơi một hậu duệ về sau của Đa-vít. Bản ghi chỉ đến các phân đoạn chung quanh: 7:14 đã hứa một con trai tên là Em-ma-nu-ên, và 11:1–5 mô tả một vị vua từ dòng dõi Gie-sê.
 
@@ -121,7 +121,7 @@ Các thì quá khứ trong chương 53 là thể hoàn thành tiên tri, mô t�
 
 ## Quyết định được đưa ra như thế nào
 
-Với một động từ Hê-bơ-rơ, thì trong bản dịch không bao giờ được chép lại một cách đơn giản. Đó là một quyết định về nghĩa: trong văn mạch của nó, động từ này mô tả thời gian nào, và loại hành động nào? Các manh mối là văn mạch, các động từ chung quanh, loại động từ (trạng thái hay sự việc), và loại văn bản (câu chuyện, luật pháp, thi thiên hay lời tiên tri). Khi các manh mối chỉ về một hướng, quyết định nói rõ như vậy và đưa ra lý do. Khi chúng không chỉ về một hướng, quyết định được đánh dấu chưa chắc chắn và phương án kia được nêu ra, như trong Thi Thiên 3:6, Ê-sai 5:13 và Ê-sai 9:5.
+Với một động từ Hê-bơ-rơ, thì trong bản dịch không bao giờ được chép lại một cách đơn giản. Đó là một quyết định về nghĩa: trong văn mạch của nó, động từ này mô tả thời gian nào, và loại hành động nào? Các manh mối là văn mạch, các động từ chung quanh, loại động từ (trạng thái hay sự việc), và loại văn bản (câu chuyện, luật pháp, thi thiên hay lời tiên tri). Khi các manh mối chỉ về một hướng, quyết định nói rõ như vậy và đưa ra lý do. Khi chúng không chỉ về một hướng, quyết định được đánh dấu chưa chắc chắn và phương án kia được nêu ra, như trong Thi Thiên 3:5, Ê-sai 5:13 và Ê-sai 9:6.
 
 Rồi các cấp độ đặt quyết định ấy thành lời. Sát nghĩa cho thấy dạng Hê-bơ-rơ ở chỗ ngôn ngữ dịch có thể chịu được. Cân bằng chọn thì mà người đọc cần để hiểu ý nghĩa. Dễ đọc có thể thêm một từ hay một câu ngắn để làm rõ thời gian. Không cấp độ nào thay đổi điều quyết định về nghĩa đã nói.
 
