@@ -2246,3 +2246,31 @@ names the book where the form was first used.
 | Ezekiel 47:16 | Berothah; Sibraim; Hazer-hatticon; Hauran | Berota; Sibraim; Hazer-hatikon; Hauran |  |
 | Ezekiel 47:19 | Meribath-kadesh | Meribat-kades |  |
 | Ezekiel 48:35 | The LORD Is There | *Naroon ang PANGINOON* | the name of the city |
+| Daniel 1:3 | Ashpenaz; chief of the eunuchs | Ashpenaz; *pinuno ng mga eunuko* (L), *punong opisyal ng korte* (B), *punong opisyal ng palasyo* (R) |  |
+| Daniel 1:7 | Belteshazzar | Beltesasar | Daniel's court name |
+| Daniel 1:20 | magicians; enchanters | *mga salamangkero*; *mga engkantador* |  |
+| Daniel 2:2 | sorcerers; Chaldeans (the experts) | *mga manggagaway*; *mga Caldeo* (L, B), *mga astrologo* (R) | the people as a whole stay *mga Caldeo* (R *mga taga-Babilonia*) |
+| Daniel 2:4 | O king, live forever | *O hari, mabuhay ka magpakailanman* (L, B); *Mahal na Hari, mabuhay po kayo magpakailanman* (R) | R speaks to kings with *po* and *kayo* |
+| Daniel 2:12 | wise men | *mga pantas* |  |
+| Daniel 2:27 | diviners | *mga manghuhula* |  |
+| Daniel 3:1 | Dura; cubit | Dura; *siko* (L), units span *mga 27 metro* for 60 cubits (B, R) | a 45 cm cubit |
+| Daniel 3:2 | satraps; prefects | *mga satrapa* (L, B), *mga gobernador ng mga rehiyon* (R); *mga prepekto* |  |
+| Daniel 3:5 | horn; pipe; lyre; trigon; harp; bagpipe | *tambuli*; *plauta*; *lira*; *trigon* (R *sitara*); *alpa*; *gaita* |  |
+| Daniel 3:6 | blazing furnace | *hurno ng nagliliyab na apoy* (L); *nagliliyab na hurno* (B); *napakainit na hurno* (R) |  |
+| Daniel 3:26 | the Most High God; the Most High | *ang Kataas-taasang Diyos*; *ang Kataas-taasan* (R *ang Kataas-taasang Diyos*) |  |
+| Daniel 4:10 | watcher | *bantay* (L, B); *sugo mula sa langit* (R) | a heavenly being |
+| Daniel 5:25 | MENE, MENE, TEKEL, PARSIN; PERES | MENE, MENE, TEKEL at PARSIN; PERES | kept as written |
+| Daniel 5:28 | Medes and Persians | *mga Medo at mga Persiano* |  |
+| Daniel 6:8 | den of lions | *yungib ng mga leon* (L, B); *hukay ng mga leon* (R) |  |
+| Daniel 7:9 | Ancient of Days | *Matanda sa mga Araw* (L, B); *ang Sinauna* (R) |  |
+| Daniel 7:13 | one like a son of man | *isang gaya ng anak ng tao* (L, B); *isang mukhang tao* (R) |  |
+| Daniel 7:18 | holy ones of the Most High | *mga banal ng Kataas-taasan* (L, B); *banal na bayan ng Diyos* (R) |  |
+| Daniel 8:2 | Susa; Ulai | Susa; *Kanal ng Ulai* |  |
+| Daniel 8:11 | Prince of the host | *Prinsipe ng hukbo* (L, B); *Prinsipe ng hukbo ng langit* (R) | God; deity pronouns follow |
+| Daniel 8:16 | Gabriel | Gabriel |  |
+| Daniel 8:21 | Greece | Gresya | the Hebrew is Javan |
+| Daniel 9:24 | seventy sevens | *pitumpung pito* (L, B); *pitumpung pangkat ng pito* (R) |  |
+| Daniel 9:27 | abomination that makes desolate | *kasuklam-suklam na nagdudulot ng pagkawasak* (L, B); *kasuklam-suklam na bagay na nagdudulot ng pagkawasak* (R) | as Leviticus 11:10 *kasuklam-suklam* |
+| Daniel 10:13 | prince of Persia; Michael | *prinsipe ng kaharian ng Persia* (L, B), *naghaharing anghel* (R); Mikael | heavenly powers |
+| Daniel 11:5 | king of the south; king of the north | *hari ng timog*; *hari ng hilaga* |  |
+| Daniel 11:43 | Libyans; Cushites | *mga Libyo* (L, B), Libya (R); *mga Cusita* (L, B), Etiopia (R) |  |
