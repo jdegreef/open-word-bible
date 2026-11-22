@@ -2293,7 +2293,7 @@ names the book where the form was first used.
 | Hosea 8:5 | calf of Samaria | *guya ng Samaria* |  |
 | Hosea 10:5 | idol-priests | *mga pari ng diyus-diyosan* |  |
 | Hosea 10:14 | Shalman; Beth-arbel | Salman; Bet-arbel |  |
-| Hosea 12:6 | God of hosts | *Diyos ng mga hukbo* (L); *Diyos ng mga Hukbo* (B, R) |  |
+| Hosea 12:6 | God of hosts | *Diyos ng mga hukbo* | as Isaiah and Jeremiah |
 | Hosea 13:14 | Sheol; O death, where are your plagues? | Sheol (L, B), *libingan* (R); *Nasaan ang iyong mga salot, O kamatayan?* | 1 Corinthians 15:55 |
 | Joel 1:1 | Joel son of Pethuel | Joel na anak ni Petuel |  |
 | Joel 1:4 | cutting locust; swarming locust; hopping locust; stripping locust | *balang na pamutol*; *kawan ng balang*; *balang na lumulukso*; *balang na naninimot* (L, B) | R speaks of swarm after swarm |
@@ -2311,7 +2311,7 @@ names the book where the form was first used.
 | Amos 1:3 | for three transgressions ... and for four | *Dahil sa tatlong paglabag ... at dahil sa apat* (L); *krimen* (B); R *Paulit-ulit na nagkasala* | refrain in 1:3-2:6 |
 | Amos 2:11 | Nazirites | *mga Nazareo* |  |
 | Amos 4:1 | cows of Bashan | *mga baka ng Basan* |  |
-| Amos 4:13 | the LORD, the God of hosts | *ang PANGINOON na Diyos ng mga Hukbo* |  |
+| Amos 4:13 | the LORD, the God of hosts | *ang PANGINOON na Diyos ng mga hukbo* |  |
 | Amos 5:8 | Pleiades; Orion | *Pleyades*; *Orion* |  |
 | Amos 5:26 | Sakkuth; Kaiwan | *Sikut*; *Kiyun* | following the vowels of the Hebrew |
 | Amos 6:4 | beds of ivory | *mga higaang garing* |  |
