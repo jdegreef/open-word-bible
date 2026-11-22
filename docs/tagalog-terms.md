@@ -2274,3 +2274,24 @@ names the book where the form was first used.
 | Daniel 10:13 | prince of Persia; Michael | *prinsipe ng kaharian ng Persia* (L, B), *naghaharing anghel* (R); Mikael | heavenly powers |
 | Daniel 11:5 | king of the south; king of the north | *hari ng timog*; *hari ng hilaga* |  |
 | Daniel 11:43 | Libyans; Cushites | *mga Libyo* (L, B), Libya (R); *mga Cusita* (L, B), Etiopia (R) |  |
+| Hosea 1:1 | Uzziah; Hezekiah; Joash | Uzias; Hezekias; Joas | as in Kings and Isaiah |
+| Hosea 1:2 | wife of prostitution; prostitute (*zanah*) | *babaing mapagpatutot*; *magpatutot* (L, B), *hindi naging tapat* (R) | as Ezekiel 16:15 |
+| Hosea 1:3 | Gomer daughter of Diblaim | Gomer na anak ni Diblaim |  |
+| Hosea 1:6 | Lo-ruhamah | Lo-ruhama (L); *Hindi Kinahabagan* (B, R) | B and R translate the name |
+| Hosea 1:9 | Lo-ammi | Lo-ammi (L); *Hindi Ko Bayan* (B, R) | B and R translate the name |
+| Hosea 2:3 | Ammi; Ruhamah | Ammi; Ruhama (L); *Aking Bayan*; *Kinahabagan* (B, R) |  |
+| Hosea 2:4 | declares the LORD | *ang pahayag ng PANGINOON* (L, B); *sabi ng PANGINOON* (R) | plain YHWH, not Adonai YHWH |
+| Hosea 2:7 | lovers | *mga mangingibig* | the Baals |
+| Hosea 2:18 | My husband; My Baal | *Aking asawa*; *Aking Baal* | R adds *Aking panginoon* |
+| Hosea 2:21 | betroth | *itatalaga kita sa akin bilang asawa* (L, B); *gagawin kitang aking nobya* (R) |  |
+| Hosea 3:2 | fifteen shekels of silver; homer and a lethech of barley | *labinlimang siklong pilak*; *isang homer at isang letek na sebada* (L); units span *mga 170 gramong pilak*, *mga 300 litrong sebada* (B, R) |  |
+| Hosea 3:4 | sacred pillar; teraphim | *banal na haligi*; *mga diyos ng sambahayan* |  |
+| Hosea 4:1 | knowledge of God; loyal love (*hesed*) | *pagkakilala sa Diyos*; *tapat na pag-ibig* |  |
+| Hosea 4:13 | oak; poplar; terebinth | *ensina*; *alamo*; *roble* |  |
+| Hosea 5:12 | moth | *tanga* |  |
+| Hosea 7:8 | cake not turned | *tinapay na hindi binaligtad* |  |
+| Hosea 8:5 | calf of Samaria | *guya ng Samaria* |  |
+| Hosea 10:5 | idol-priests | *mga pari ng diyus-diyosan* |  |
+| Hosea 10:14 | Shalman; Beth-arbel | Salman; Bet-arbel |  |
+| Hosea 12:6 | God of hosts | *Diyos ng mga hukbo* | as Isaiah and Jeremiah |
+| Hosea 13:14 | Sheol; O death, where are your plagues? | Sheol (L, B), *libingan* (R); *Nasaan ang iyong mga salot, O kamatayan?* | 1 Corinthians 15:55 |
