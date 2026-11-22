@@ -1272,7 +1272,7 @@ var OWBAdminNav = (function () {
           h("span", { class: "admin-sub" }, num(first) + "\u2013" + num(last) + " of " + num(d.total)), newer, older);
       }
       return [head("Readers", "Reader inbox", "Suggestions and questions readers send from a verse. New messages come oldest first; assign one to say you're dealing with it. A reply is emailed to the reader once; mark a message done when it's dealt with."),
-        h("div", { class: "admin-toolbar" }, tabs, whose, kind, lang, book), form,
+        h("div", { class: "admin-toolbar" }, tabs, whose), h("div", { class: "admin-toolbar admin-filters" }, kind, lang, book), form,
         cards.length ? h("div", { class: "admin-messages" }, cards) : empty(filtered ? "No messages match these filters." : "No messages here."),
         filtered && !cards.length ? (function () {
           var clear = h("button", { type: "button", class: "admin-btn" }, "Clear filters");
@@ -1321,18 +1321,52 @@ var OWBAdminNav = (function () {
         saved.setAttribute("aria-label", "Saved replies");
         saved.addEventListener("change", function () {
           var r = m.replies.filter(function (x) { return x.key === saved.value; })[0];
-          if (r) { text.value = draft = r.text; text.focus(); }
+          if (r) {
+            // Into an empty box it is the reply; into one already written,
+            // it goes in at the cursor, so nothing written is lost.
+            if (!text.value.trim()) text.value = r.text;
+            else {
+              var at = text.selectionStart != null ? text.selectionStart : text.value.length;
+              var before = text.value.slice(0, at).replace(/\s*$/, ""), after = text.value.slice(at).replace(/^\s*/, "");
+              text.value = before + "\n\n" + r.text + (after ? "\n\n" + after : "");
+            }
+            draft = text.value;
+            text.focus();
+          }
           saved.value = "";
         });
         var send = h("button", { type: "button", class: "admin-btn primary" }, "Send reply");
+        // Sending emails the reader at once and can't be taken back, so the
+        // reply is shown as it will go, to whom, before it goes.
+        var preview = h("div", { class: "admin-reply-preview", hidden: true });
         send.addEventListener("click", function () {
           if (!text.value.trim()) { note(status, "Write a reply first.", true); return; }
-          busy(send, true);
-          update({ reply: text.value }).catch(function (e) { busy(send, false); note(status, e, true); });
+          var to = m.from.name ? m.from.name + " <" + m.from.email + ">" : m.from.email;
+          var go = h("button", { type: "button", class: "admin-btn primary" }, "Send now");
+          var back = h("button", { type: "button", class: "admin-btn" }, "Keep editing");
+          preview.textContent = "";
+          add(preview, [h("p", null, h("strong", null, "This goes to " + to + ","), " about " + m.verse_label + ", and can't be taken back:"),
+            h("blockquote", null, text.value.trim()), h("div", { class: "admin-actions" }, go, back)]);
+          preview.hidden = false;
+          text.hidden = send.hidden = saved.hidden = true;
+          go.focus();
+          back.addEventListener("click", function () {
+            preview.hidden = true;
+            text.hidden = send.hidden = saved.hidden = false;
+            text.focus();
+          });
+          go.addEventListener("click", function () {
+            busy(go, true); busy(back, true);
+            update({ reply: text.value }).catch(function (e) {
+              busy(go, false); busy(back, false);
+              note(status, e, true);
+            });
+          });
         });
         card.appendChild(h("label", { class: "admin-label", for: "reply-" + m.id }, "Reply"));
         card.appendChild(saved);
         card.appendChild(text);
+        card.appendChild(preview);
         card.appendChild(h("div", { class: "admin-actions" }, send, statusButtons()));
       } else {
         card.appendChild(h("div", { class: "admin-actions" }, statusButtons()));
