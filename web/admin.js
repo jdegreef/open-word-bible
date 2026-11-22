@@ -835,7 +835,7 @@ var OWBAdminCore = (function () {
   VIEWS.inbox = function (arg) {
     if (arg === "mine") INBOX.assigned = "me";
     var q = "?status=" + INBOX.status + (INBOX.kind ? "&kind=" + INBOX.kind : "") + (INBOX.lang ? "&lang=" + INBOX.lang : "") +
-      (INBOX.assigned ? "&assigned=" + INBOX.assigned : "");
+      (INBOX.assigned ? "&assigned=" + INBOX.assigned : "") + (INBOX.q ? "&q=" + encodeURIComponent(INBOX.q) : "");
     return api("/api/admin/inbox/" + q).then(function (d) {
       INBOX_TEAM = d.team;
       var tabs = seg([["new", "New (" + d.counts.new + ")"], ["answered", "Answered (" + d.counts.answered + ")"],
@@ -848,33 +848,17 @@ var OWBAdminCore = (function () {
       var whose = seg([["me", "Mine"], ["none", "Unassigned"], ["", "All"]], INBOX.assigned, function (v) {
         INBOX.assigned = v; location.hash === "#inbox" ? route() : (location.hash = "#inbox");
       });
-      // Words to find in the messages listed (the API's inbox takes no
-      // words, so this filters the page drawn), as you type.
-      var cards = d.messages.map(function (m) {
-        return [messageCard(m), [m.text, m.verse_label, m.verse, m.language, m.from.name, m.from.email, m.reply, m.note,
-          m.assigned_to ? m.assigned_to.name + " " + m.assigned_to.email : ""].join(" \n").toLowerCase()];
-      });
-      var nothing = empty("No messages here have those words.");
-      var search = h("input", { type: "search", id: "inbox-q", value: INBOX.q, placeholder: "Words in these messages", "aria-label": "Find in these messages" });
-      var found = h("span", { class: "admin-sub", role: "status" });
-      function find(v) {
-        INBOX.q = v;
-        var words = v.toLowerCase().split(/\s+/).filter(Boolean), shown = 0;
-        cards.forEach(function (c) {
-          var on = words.every(function (w) { return c[1].indexOf(w) >= 0; });
-          c[0].hidden = !on;
-          if (on) shown++;
-        });
-        nothing.hidden = !cards.length || shown > 0;
-        found.textContent = words.length && cards.length ? shown + " of " + cards.length + " shown" : "";
-      }
+      // Words to find in every message, not only the page drawn: the API
+      // searches (q=), as you type. The tabs' counts are then of what it found.
+      var search = h("input", { type: "search", id: "inbox-q", value: INBOX.q, placeholder: "Words, a verse or a reader", "aria-label": "Find in the reader inbox" });
+      var found = h("span", { class: "admin-sub", role: "status" }, INBOX.q ? plural(d.total, "message") + " found" : "");
       var form = h("form", { class: "admin-toolbar", role: "search" }, search, h("button", { type: "submit", class: "admin-btn" }, "Find"), found);
+      function find(v) { if (v !== INBOX.q) { INBOX.q = v; route(); } }
       form.addEventListener("submit", function (e) { e.preventDefault(); stopLive(); find(search.value.trim()); });
       live(search, find);
-      find(INBOX.q);
       return [head("Readers", "Reader inbox", "Suggestions and questions readers send from a verse. New messages come oldest first; assign one to say you're dealing with it. A reply is emailed to the reader once; mark a message done when it's dealt with."),
         h("div", { class: "admin-toolbar" }, tabs, whose, kind), form,
-        d.messages.length ? h("div", { class: "admin-messages" }, cards.map(function (c) { return c[0]; }), nothing) : empty("No messages here."),
+        d.messages.length ? h("div", { class: "admin-messages" }, d.messages.map(messageCard)) : empty(INBOX.q ? "No messages here have those words." : "No messages here."),
         d.total > d.messages.length ? h("p", { class: "admin-sub" }, "Showing " + (INBOX.status === "new" ? "the longest waiting " : "the newest ") + d.messages.length + " of " + num(d.total) + ".") : null];
     });
   };
@@ -1621,27 +1605,34 @@ var OWBAdminCore = (function () {
   };
 
   // Users.
-  var USERS = { q: "", role: "", offset: 0 };
+  // System accounts (made by a deploy or a script, not a person) are left
+  // out unless "Show system accounts" is ticked.
+  var USERS = { q: "", role: "", offset: 0, system: false };
   VIEWS.users = function () {
-    var q = "?offset=" + USERS.offset + (USERS.q ? "&q=" + encodeURIComponent(USERS.q) : "") + (USERS.role ? "&role=" + USERS.role : "");
+    var q = "?offset=" + USERS.offset + (USERS.q ? "&q=" + encodeURIComponent(USERS.q) : "") + (USERS.role ? "&role=" + USERS.role : "") +
+      (USERS.system ? "&system=1" : "");
     return api("/api/admin/users/" + q).then(function (d) {
       var search = h("input", { type: "search", id: "user-search", value: USERS.q, placeholder: "Search by email or name", "aria-label": "Search accounts" });
       var role = select("user-role", [["", "Everyone"], ["any", "The team (any role)"]].concat(d.roles.map(function (r) { return [r.kind, r.label]; })), USERS.role);
       role.setAttribute("aria-label", "Role");
-      var form = h("form", { class: "admin-toolbar", role: "search" }, search, role, h("button", { type: "submit", class: "admin-btn" }, "Search"));
+      var system = h("input", { type: "checkbox", id: "user-system", checked: USERS.system });
+      var form = h("form", { class: "admin-toolbar", role: "search" }, search, role,
+        h("label", { for: "user-system" }, system, " Show system accounts"), h("button", { type: "submit", class: "admin-btn" }, "Search"));
       form.addEventListener("submit", function (e) { e.preventDefault(); stopLive(); USERS.q = search.value.trim(); USERS.role = role.value; USERS.offset = 0; route(); });
       live(search, function (v) { if (v !== USERS.q) { USERS.q = v; USERS.offset = 0; route(); } });
       role.addEventListener("change", function () { USERS.role = role.value; USERS.offset = 0; route(); });
+      system.addEventListener("change", function () { USERS.system = system.checked; USERS.offset = 0; route(); });
       var rows = d.users.map(function (u) {
         return h("tr", null, h("td", null, h("a", { href: "#user/" + u.id }, u.email), u.active ? null : pill("inactive", "warn")),
-          h("td", null, u.name || "—"), h("td", null, u.roles.join(", ") || "Reader"),
+          h("td", null, userName(u)), h("td", null, u.roles.join(", ") || (u.system ? "System" : "Reader")),
           h("td", null, date(u.joined)), h("td", null, when(u.signed_in)),
           h("td", { class: "admin-num" }, num(u.marks)), h("td", { class: "admin-num" }, num(u.devices)));
       });
       var pager = h("div", { class: "admin-actions" });
       if (d.offset > 0) pager.appendChild(h("button", { type: "button", class: "admin-btn", onclick: function () { USERS.offset = Math.max(0, d.offset - d.page); route(); } }, "‹ Newer"));
       if (d.offset + d.page < d.total) pager.appendChild(h("button", { type: "button", class: "admin-btn", onclick: function () { USERS.offset = d.offset + d.page; route(); } }, "Older ›"));
-      return [head("Readers", "Users", num(d.total) + (d.total === 1 ? " account" : " accounts") + (USERS.q || USERS.role ? " match" : "") + ". Saved verses are counted, never listed: they are the reader's own."),
+      return [head("Readers", "Users", num(d.total) + (d.total === 1 ? " account" : " accounts") + (USERS.q || USERS.role ? " match" : "") +
+        (d.system_hidden ? " (" + plural(d.system_hidden, "system account") + " hidden)" : "") + ". Saved verses are counted, never listed: they are the reader's own."),
         form, d.users.length ? table(["Email", "Name", "Roles", "Joined", "Last sign-in", ["Saved", { class: "admin-num" }], ["Devices", { class: "admin-num" }]], rows) : empty("No accounts match."),
         pager];
     });
@@ -1665,7 +1656,8 @@ var OWBAdminCore = (function () {
         h("p", { class: "admin-back" }, h("a", { href: "#users" }, "‹ Users")),
         head("Account", u.name || u.email, u.name ? u.email : null),
         h("dl", { class: "admin-facts" },
-          fact("Roles", u.roles.length ? u.roles.join(", ") : "Reader"),
+          fact("Roles", u.roles.length ? u.roles.join(", ") : (u.system ? "System" : "Reader")),
+          fact("Name", userName(u)),
           fact("Joined", date(u.joined)),
           fact("Last sign-in", when(u.signed_in)),
           fact("Signs in with", u.ways_in.length ? u.ways_in.join(", ") : "has never signed in"),
@@ -1678,10 +1670,41 @@ var OWBAdminCore = (function () {
         u.messages.length ? h("section", { class: "admin-block" }, h("h2", null, "Messages"),
           h("ul", null, u.messages.map(function (m) { return h("li", null, m.kind + " on " + m.verse + " · " + m.status + " · " + date(m.created_at)); }))) : null,
         ME.admin.indexOf("team") >= 0 ? h("p", null, h("a", { href: "#team" }, "Change roles in Team & access")) : null,
-        actions, status];
+        userChanges(u), actions, status];
     });
   };
   function fact(label, value) { return h("div", null, h("dt", null, label), h("dd", null, value)); }
+
+  // An account's name as Users shows it: its display name, or (muted) one
+  // made from its address when it has none.
+  function userName(u) {
+    if (u.name) return u.name;
+    if (!u.display_name) return "—";
+    return h("span", { class: "admin-sub", title: "No name set: this is from the email address" }, u.display_name);
+  }
+
+  // An admin's changes to an account: its display name (which the reader
+  // also sets on their account page), and whether it is a system account
+  // (a deploy's or a script's, not a person's).
+  function userChanges(u) {
+    var status = h("p", { class: "admin-note", role: "status" });
+    function send(body, button) {
+      busy(button, true);
+      api("/api/admin/users/" + u.id + "/", { method: "PATCH", body: body }).then(function () { route(); },
+        function (e) { busy(button, false); note(status, e, true); });
+    }
+    var name = h("input", { id: "user-name", value: u.name || "", maxlength: 80, placeholder: u.display_name || "" });
+    var save = h("button", { type: "submit", class: "admin-btn" }, "Save name");
+    var form = h("form", { class: "admin-toolbar" }, h("label", { class: "admin-field", for: "user-name" }, "Display name", name), save);
+    form.addEventListener("submit", function (e) { e.preventDefault(); send({ name: name.value.trim() }, save); });
+    var mark = h("button", { type: "button", class: "admin-btn" }, u.system ? "Mark as a person" : "Mark as a system account");
+    mark.addEventListener("click", function () { send({ system: !u.system }, mark); });
+    return h("section", { class: "admin-block" }, h("h2", null, "Name and kind"),
+      h("p", { class: "admin-sub" }, "Readers set their name on their account page; set it here if one asks. " +
+        "A system account is one a deploy or a script made: Users and the reader counts leave it out." +
+        (u.system_reason ? " Marked: " + u.system_reason + "." : "")),
+      form, h("div", { class: "admin-actions" }, mark), status);
+  }
 
   // Team & access.
   VIEWS.team = function () {

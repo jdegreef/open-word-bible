@@ -1,6 +1,7 @@
 """Suggestions and questions readers send about a verse. Editors answer
 them in the admin (staff/inbox.py); an answer is emailed to the reader."""
 from django.conf import settings
+from django.contrib.postgres.indexes import GinIndex
 from django.db import models
 
 
@@ -41,6 +42,8 @@ class ReaderMessage(models.Model):
             models.Index(fields=["status", "created_at"], name="reader_message_status"),
             # verse__startswith="JHN.": a book's messages (the admin's book page).
             models.Index(fields=["verse"], opclasses=["varchar_pattern_ops"], name="message_verse"),
+            # text__icontains: the inbox's search (staff/inbox.py q=).
+            GinIndex(fields=["text"], opclasses=["gin_trgm_ops"], name="message_text_trgm"),
         ]
         ordering = ["-created_at"]
 
