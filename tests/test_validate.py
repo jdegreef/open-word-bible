@@ -361,6 +361,9 @@ class ValidateTest(unittest.TestCase):
         record = self._content_record("PSA/PSA.46.json", "PSA.46.5.s1")
         self.assertEqual(validate.validate_record(record), [])
         record["renderings"]["en"]["B"] = record["renderings"]["en"]["B"].replace("holy", "sacred")
+        # The word links on the old wording no longer fit; this is about the term.
+        record["alignments"] = [a for a in record.get("alignments", [])
+                                if (a["language"], a["level"]) != ("en", "B")]
         self.assertTrue(any("key term 'holy (qadosh)'" in e for e in validate.validate_record(record)))
         term.setdefault("pending", []).append("PSA.46.5.s1")
         try:

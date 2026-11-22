@@ -9,11 +9,14 @@ GET    /api/admin/users/?q=&role=&system=&offset=
                                             system=1 (or system=only)
 GET    /api/admin/users/<id>/               one account: roles, devices,
                                             saved verses, messages
-PATCH  /api/admin/users/<id>/ {name, system}
+PATCH  /api/admin/users/<id>/ {name, system, active}
                                             set the display name (as the
                                             reader can on their account
                                             page), or mark the account a
-                                            system account or a person
+                                            system account or a person;
+                                            active false deactivates it
+                                            (super admin): no sign-in, devices
+                                            signed out, everything kept
 POST   /api/admin/users/<id>/sign-out/      sign every device out (a team
                                             member's: super admin only)
 DELETE /api/admin/users/<id>/               delete the account (super admin)
@@ -25,7 +28,7 @@ made from its address when it has none (display_name_is_fallback).
 from django.contrib.auth import get_user_model
 from django.db.models import Count, Q
 from rest_framework import status
-from rest_framework.exceptions import ValidationError
+from rest_framework.exceptions import PermissionDenied, ValidationError
 from rest_framework.response import Response
 
 from accounts import auth
@@ -125,6 +128,8 @@ def user_detail(request, user_id):
                       "created_at": m.created_at} for m in messages[:20]],
         "role_details": [r.as_json() for r in user.roles.all()],
         "can_delete": is_super_admin(request.user) and user != request.user,
+        "can_deactivate": (is_super_admin(request.user) and user != request.user
+                           and not user.roles.filter(kind=Role.Kind.SUPER_ADMIN).exists()),
         "can_sign_out": _may_sign_out(request.user, user),
         "system_reason": user.system_account.reason if _is_system(user) else "",
     })
@@ -163,6 +168,32 @@ def _change(request, user):
         elif not data["system"] and _is_system(user):
             SystemAccount.objects.filter(user=user).delete()
             record(request.user, "user.person", user.username)
+    if "active" in data:
+        _activate(request, user, data["active"])
+
+
+def _activate(request, user, active):
+    """Deactivate an account (a super admin's call): it can't sign in by any
+    way and its devices are signed out, but it is kept, with its reviews
+    and messages, as deleting can't when it has review history; or let it
+    sign in again."""
+    if not isinstance(active, bool):
+        raise ValidationError({"active": "Send true or false."})
+    if not is_super_admin(request.user):
+        raise PermissionDenied("Only a super admin can deactivate or reactivate an account.")
+    if active == user.is_active:
+        return
+    if not active:
+        if user == request.user:
+            raise ValidationError({"active": "You can't deactivate your own account here.", "code": "self"})
+        if user.roles.filter(kind=Role.Kind.SUPER_ADMIN).exists():
+            raise ValidationError({"active": "A super admin's account can't be deactivated here.",
+                                   "code": "super_admin"})
+    user.is_active = active
+    user.save(update_fields=["is_active"])
+    if not active:
+        user.api_tokens.all().delete()
+    record(request.user, "user.activate" if active else "user.deactivate", user.username)
 
 
 def _delete(request, user):

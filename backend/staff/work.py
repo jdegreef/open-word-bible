@@ -8,12 +8,16 @@ GET /api/admin/work/      every job filed in the last 30 days, open or done,
 A pull request belongs to a job when its title or body says "Fixes #N",
 "Closes #N", "Resolves #N" or "Part of #N" (as the worker skills write
 them). A job open for more than STALE_HOURS with no pull request has
-stalled. Answers are cached for two minutes.
+stalled. GitHub is asked at most every FRESH seconds: a page in between
+uses the copy kept, saying when it was read, while a thread asks again.
 """
 import re
-from datetime import timedelta
+import threading
+import time
+from datetime import UTC, datetime, timedelta
 
 from django.core.cache import cache
+from django.db import connections
 from django.utils import timezone
 from django.utils.dateparse import parse_datetime
 from rest_framework.response import Response
@@ -70,14 +74,51 @@ def fetch_work(days=DAYS):
     return out
 
 
+# Work is listed from GitHub, about twenty requests for 30 days of issues
+# and pull requests (12 s when measured). A copy younger than FRESH is used
+# as it is; an older one (kept up to KEEP) is used at once while a thread
+# asks GitHub again, so only the first page after a deploy waits.
+FRESH = 120
+KEEP = 86400
+KEY = "staff.work.v2"
+
+
 def cached_work():
-    """fetch_work without the bodies, cached two minutes. Raises
-    jobs.GitHubError when GitHub can't be reached."""
-    cached = cache.get("staff.work")
-    if cached is None:
-        cached = [{k: v for k, v in item.items() if k != "body"} for item in fetch_work()]
-        cache.set("staff.work", cached, 120)
-    return cached
+    """fetch_work without the bodies. Raises jobs.GitHubError when GitHub
+    can't be reached and no copy is kept."""
+    return _kept()["items"]
+
+
+def fetched_at():
+    """When the copy cached_work gives was read from GitHub (epoch seconds)."""
+    kept = cache.get(KEY)
+    return kept["at"] if kept else None
+
+
+
+def _kept():
+    kept = cache.get(KEY)
+    if kept is None:
+        return _refresh()
+    if time.time() - kept["at"] > FRESH and cache.add(KEY + ".refreshing", 1, 300):
+        threading.Thread(target=_refresh_quietly, daemon=True).start()
+    return kept
+
+
+def _refresh():
+    kept = {"at": time.time(), "items": [{k: v for k, v in item.items() if k != "body"} for item in fetch_work()]}
+    cache.set(KEY, kept, KEEP)
+    return kept
+
+
+def _refresh_quietly():
+    try:
+        _refresh()
+    except jobs.GitHubError:
+        pass   # the kept copy stays; the next page asks again
+    finally:
+        cache.delete(KEY + ".refreshing")
+        connections.close_all()   # this thread's own database connection
 
 
 @admin_view("overview")
@@ -92,4 +133,6 @@ def work(request):
               "in_review": sum(1 for w in cached if w["state"] == "open"
                                and any(p["state"] in ("open", "draft") for p in w["prs"])),
               "done": sum(1 for w in cached if w["state"] == "closed")}
-    return Response({"items": cached, "counts": counts, "days": DAYS, "stale_hours": STALE_HOURS})
+    at = fetched_at()
+    return Response({"items": cached, "counts": counts, "days": DAYS, "stale_hours": STALE_HOURS,
+                     "fetched_at": datetime.fromtimestamp(at, UTC) if at else None})
