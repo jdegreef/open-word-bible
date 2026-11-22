@@ -966,6 +966,18 @@ var OWBAdminNav = (function () {
         tile(num(t.chapters_drafted) + " / " + num(t.chapters), "chapters drafted"),
         tile(num(reviewed.meaning), "sentences with their meaning approved by a person"),
         tile(num(reviewed.wording), "sentences with their wording approved in at least one language")));
+      // How old the totals are: they are kept until the content changes or a review is made.
+      if (d.counted_at) {
+        var recount = h("button", { type: "button", class: "admin-link" }, "Count again");
+        recount.addEventListener("click", function () {
+          busy(recount, true);
+          request("/api/admin/overview/?fresh=1", {}).then(function () {
+            delete reads["/api/admin/overview/"];
+            route();
+          }, function (e) { busy(recount, false); toast(e.message, null, 8); });
+        });
+        out.push(h("p", { class: "admin-sub admin-counted" }, "Counted " + when(d.counted_at) + " \u00b7 ", recount));
+      }
       out.push(h("section", { class: "admin-block" }, h("h2", null, "Sentences by language"),
         h("div", { class: "admin-bars" }, d.languages.map(function (l) {
           return h("a", { class: "admin-bar-row", href: "#languages" }, h("span", null, l.name), bar(l.sentences, t.sentences),
