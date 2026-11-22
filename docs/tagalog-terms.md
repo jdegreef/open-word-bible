@@ -2371,3 +2371,8 @@ names the book where the form was first used.
 | Zephaniah 1:11 | Maktesh | Lusong | the name means "mortar" |
 | Zephaniah 2:14 | desert owl; hedgehog | *kuwago sa disyerto*; *porkoespino* | as Isaiah 34:11 |
 | Zephaniah 3:17 | warrior who saves | *mandirigmang nagliligtas* |  |
+| Haggai 1:4 | paneled houses | *mga bahay na may tabla* |  |
+| Haggai 1:5 | set your heart on your ways | *Ilagak ninyo ang inyong puso sa inyong mga lakad* (L); B, R *Pag-isipan ninyong mabuti* | also 1:7, 2:15, 2:18 |
+| Haggai 1:13 | messenger of the LORD | *sugo ng PANGINOON* |  |
+| Haggai 2:17 | blight; mildew; hail | *pagkalanta*; *amag*; *yelo* | as Amos 4:9 and Exodus 9 |
+| Haggai 2:23 | signet ring | *singsing na pantatak* | as Jeremiah 22:24 |
