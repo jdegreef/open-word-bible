@@ -2116,3 +2116,82 @@ names the book where the form was first used.
 | Isaiah 65:11 | Gad; Meni (gods of fortune) | Gad; Meni |  |
 | Isaiah 65:16 | God of Amen | *Diyos ng Amen* (L, B); R "Diyos na tapat at totoo" |  |
 | Isaiah 66:19 | Pul; Lud; Tubal; Javan | Pul; Lud; Tubal; Javan (L, B), *Gresya* (R) |  |
+| Jeremiah 2:10 | Kittim; Kedar; Cyprus | Kittim; Kedar (L, B); R *Chipre* |  |
+| Jeremiah 2:16 | Memphis; Tahpanhes | Memfis; Tafnes |  |
+| Jeremiah 2:18 | Shihor | Sihor (L, B); R *Ilog Nilo* |  |
+| Jeremiah 3:6 | faithless Israel; treacherous Judah | *di-tapat na Israel*; *taksil na Juda* |  |
+| Jeremiah 6:1 | Beth-haccherem | Bet-hackerem | as at Nehemiah 3:14 |
+| Jeremiah 6:25 | terror on every side | *kakilabutan sa bawat panig* (L, B); R *sindak sa paligid* | also 20:10, 46:5, 49:29 |
+| Jeremiah 7:18 | queen of heaven | *reyna ng langit* |  |
+| Jeremiah 7:32 | Valley of Slaughter | *Libis ng Patayan* |  |
+| Jeremiah 8:7 | stork; turtledove; swift; crane | *tagak*; *batu-bato*; *langay-langayan*; *kandangaok* |  |
+| Jeremiah 8:22 | balm in Gilead | *balsamo sa Gilead* |  |
+| Jeremiah 9:14 | wormwood | *ahenho* |  |
+| Jeremiah 10:9 | Uphaz | Ufaz |  |
+| Jeremiah 17:19 | People's Gate | Pintuan ng Bayan |  |
+| Jeremiah 17:26 | Shephelah | Shefelah (L); B *mga kaburulan sa kanluran*; R *mga paanan ng burol sa kanluran* |  |
+| Jeremiah 19:2 | Potsherd Gate | *Pintuan ng mga Bibinga* (L, B); *Pintuan ng mga Basag na Palayok* (R) |  |
+| Jeremiah 20:1 | Pashhur son of Immer | Pashhur na anak ni Immer |  |
+| Jeremiah 20:2 | stocks; Upper Gate of Benjamin | *pangawan*; Itaas na Pintuan ng Benjamin |  |
+| Jeremiah 20:3 | Magor-missabib | Magor-missabib (L); *Kakilabutan sa Bawat Panig* (B); *Sindak sa Paligid* (R) |  |
+| Jeremiah 21:1 | Pashhur son of Malchiah; Zephaniah son of Maaseiah | Pashhur na anak ni Malkias; Zefanias na anak ni Maaseias |  |
+| Jeremiah 21:2 | Nebuchadrezzar | Nabucodonosor | one Tagalog form for both English spellings |
+| Jeremiah 22:11 | Shallum | Salum |  |
+| Jeremiah 22:24 | Coniah | Conias |  |
+| Jeremiah 22:14 | vermilion | *bermelyon* |  |
+| Jeremiah 23:6 | The LORD Our Righteousness | *ang PANGINOON ang Aming Katuwiran* |  |
+| Jeremiah 23:33 | burden (*massa*) | *pasanin* | the wordplay of 23:33-40 |
+| Jeremiah 25:15 | cup of the wine of wrath | *saro ng alak ng poot* |  |
+| Jeremiah 25:26 | Sheshach | Sesac | R adds *na siyang Babilonia* |
+| Jeremiah 26:10 | New Gate | Bagong Pintuan |  |
+| Jeremiah 26:18 | Micah of Moresheth | Mikas na taga-Moreset |  |
+| Jeremiah 26:20 | Uriah son of Shemaiah | Urias na anak ni Semaias |  |
+| Jeremiah 28:1 | Hananiah son of Azzur | Hananias na anak ni Azzur |  |
+| Jeremiah 29:3 | Elasah; Gemariah | Elasa; Gemarias |  |
+| Jeremiah 29:21 | Ahab son of Kolaiah | Ahab na anak ni Kolaias |  |
+| Jeremiah 29:24 | Shemaiah the Nehelamite | Semaias na Nehelamita |  |
+| Jeremiah 32:7 | Hanamel | Hanameel |  |
+| Jeremiah 32:9 | seventeen shekels of silver | *labimpitong siklong pilak* (L); B, R *mga 200 gramong pilak* |  |
+| Jeremiah 32:12 | Baruch son of Neriah son of Mahseiah | Baruc na anak ni Nerias na anak ni Maaseias |  |
+| Jeremiah 35:3 | Jaazaniah; Habazziniah | Jaazanias; Habazinias |  |
+| Jeremiah 35:4 | Igdaliah | Igdalias |  |
+| Jeremiah 35:6 | Rechabites; Jonadab son of Rechab | mga Recabita; Jonadab na anak ni Recab |  |
+| Jeremiah 36:10 | Gemariah son of Shaphan; Micaiah | Gemarias na anak ni Safan; Micaias |  |
+| Jeremiah 36:12 | Delaiah; Elishama the secretary | Delaias; Elisama na kalihim |  |
+| Jeremiah 36:14 | Jehudi son of Nethaniah son of Shelemiah son of Cushi | Jehudi na anak ni Netanias na anak ni Selemias na anak ni Cusi |  |
+| Jeremiah 36:22 | winter house; brazier | *bahay na pantaglamig*; *kalan* |  |
+| Jeremiah 36:26 | Jerahmeel; Seraiah son of Azriel; Shelemiah son of Abdeel | Jerameel; Seraias na anak ni Azriel; Selemias na anak ni Abdeel |  |
+| Jeremiah 37:3 | Jehucal son of Shelemiah | Jehucal na anak ni Selemias |  |
+| Jeremiah 37:13 | Irijah son of Shelemiah; Gate of Benjamin | Irias na anak ni Selemias; Pintuan ng Benjamin |  |
+| Jeremiah 37:16 | cistern house | *bahay ng balon* |  |
+| Jeremiah 38:1 | Shephatiah son of Mattan; Gedaliah son of Pashhur; Jucal | Sefatias na anak ni Matan; Gedalias na anak ni Pashhur; Jucal |  |
+| Jeremiah 38:7 | Ebed-melech the Cushite | Ebed-melec na Cushita (L, B); R *taga-Etiopia* |  |
+| Jeremiah 39:3 | Middle Gate; Nergal-sharezer; Samgar-nebo; Sarsechim | Gitnang Pintuan; Nergal-sarezer; Samgar-nebo; Sarsekim |  |
+| Jeremiah 39:3 | Rab-saris; Rab-mag | Rabsaris; Rabmag (L); B *pinuno ng mga opisyal ng palasyo* |  |
+| Jeremiah 39:13 | Nebushazban | Nebusazban |  |
+| Jeremiah 40:8 | Ephai the Netophathite; Jezaniah | Efai na Netofatita; Jezanias |  |
+| Jeremiah 40:14 | Baalis | Baalis |  |
+| Jeremiah 41:5 | Shiloh | Shilo |  |
+| Jeremiah 41:17 | Geruth Chimham | Geruth Kimham |  |
+| Jeremiah 43:13 | Beth-shemesh (in Egypt) | Bet-shemesh (L, B); R *Heliopolis* |  |
+| Jeremiah 44:1 | Migdol; Pathros | Migdol; Patros |  |
+| Jeremiah 44:30 | Pharaoh Hophra | Faraon Hofra |  |
+| Jeremiah 46:9 | Lydians | mga Ludita (L, B); R *Lud* |  |
+| Jeremiah 46:25 | Amon of No | Amon ng No (L); B, R *Tebas* |  |
+| Jeremiah 47:4 | Caphtor | Caftor (L, B); R *Creta* |  |
+| Jeremiah 48:2 | Madmen | Madmen |  |
+| Jeremiah 48:3 | Horonaim | Horonaim |  |
+| Jeremiah 48:5 | Luhith | Luhit |  |
+| Jeremiah 48:21 | Holon; Jahzah; Mephaath | Holon; Jahaz; Mefaat |  |
+| Jeremiah 48:22 | Beth-diblathaim | Bet-diblataim |  |
+| Jeremiah 48:23 | Beth-gamul; Beth-meon | Bet-gamul; Bet-meon |  |
+| Jeremiah 48:24 | Kerioth | Keriot |  |
+| Jeremiah 48:31 | Kir-heres | Kir-heres |  |
+| Jeremiah 48:34 | Elealeh; Eglath-shelishiyah; Nimrim | Eleale; Eglat-shelishiya; Nimrim |  |
+| Jeremiah 49:3 | Ai (of Ammon) | Ai |  |
+| Jeremiah 50:2 | Bel; Merodach | Bel; Merodac (L); B, R *Marduk* |  |
+| Jeremiah 50:21 | Merathaim; Pekod | Meratayim; Pekod | R gives the wordplay |
+| Jeremiah 50:39 | hyenas; ostriches | *hayena*; *avestruz* |  |
+| Jeremiah 51:1 | Leb-qamai | Leb-kamai | R adds *samakatuwid ay ang mga taga-Babilonia* |
+| Jeremiah 51:27 | Ararat; Minni; Ashkenaz | Ararat; Mini; Ashkenaz |  |
+| Jeremiah 51:59 | Seraiah son of Neriah; quartermaster | Seraias na anak ni Nerias; *pinuno ng pahingahan* (L) |  |
