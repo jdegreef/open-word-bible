@@ -6,6 +6,9 @@
 .admin-rail a { display: block; padding: 6px 10px; border-radius: 8px; color: var(--text); text-decoration: none; }
 .admin-rail a:hover { color: var(--accent); }
 .admin-rail a[aria-current="page"] { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+.admin-rail a[data-section] { display: flex; align-items: center; gap: 8px; }
+.admin-badge { margin-inline-start: auto; min-width: 20px; padding: 0 6px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-size: 12px; font-weight: 700; line-height: 20px; text-align: center; font-variant-numeric: tabular-nums; }
+.admin-rail a[aria-current="page"] .admin-badge { background: var(--surface); }
 .admin-search { position: relative; margin: 0 0 12px; }
 .admin .admin-search input { width: 100%; font-size: 14.5px; }
 .admin-search-list { position: absolute; z-index: 20; top: calc(100% + 4px); inset-inline-start: 0; width: min(380px, calc(100vw - 32px));
@@ -236,3 +239,5 @@ form.admin-toolbar { justify-content: flex-start; }
 .admin-error p { margin: 0; }
 .admin-error .admin-actions { margin: 0; }
 .admin-error-details { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 13px; color: var(--muted); overflow-wrap: anywhere; user-select: all; }
+.admin-renderings .admin-fix-this { display: block; margin-top: 4px; font-family: var(--sans); font-size: 12.5px; opacity: .6; }
+.admin-renderings td:hover .admin-fix-this, .admin-renderings .admin-fix-this:focus-visible { opacity: 1; }
