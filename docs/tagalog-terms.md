@@ -2195,3 +2195,6 @@ names the book where the form was first used.
 | Jeremiah 51:1 | Leb-qamai | Leb-kamai | R adds *samakatuwid ay ang mga taga-Babilonia* |
 | Jeremiah 51:27 | Ararat; Minni; Ashkenaz | Ararat; Mini; Ashkenaz |  |
 | Jeremiah 51:59 | Seraiah son of Neriah; quartermaster | Seraias na anak ni Nerias; *pinuno ng pahingahan* (L) |  |
+| Lamentations 1:1 | How ...! (*ekah*) | *Paanong ...!* | the opening cry at 1:1, 2:1 and 4:1 |
+| Lamentations 2:1 | Daughter Zion | *anak na babae ng Zion* (L); *Anak na Zion* (B); *bayan ng Zion* (R) |  |
+| Lamentations 2:11 | the daughter of my people | *anak na babae ng aking bayan* (L); *aking minamahal na bayan* (B); *aking bayan* (R) |  |
