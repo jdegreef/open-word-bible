@@ -555,6 +555,33 @@ class FixTest(AdminTestCase):
         self.assertEqual(fixes[0]["number"], 9)
 
     @override_settings(OWB_GITHUB_TOKEN="t")
+    def test_input_that_is_not_what_was_asked_for_is_a_400(self):
+        editor = client_for(account("ed@example.org", (K.EDITOR,)))
+        with mock.patch.object(staff_jobs, "_github", side_effect=AssertionError("nothing filed")):
+            r = editor.post("/api/admin/fixes/", {**self.body, "message": "abc"}, format="json")
+            self.assertEqual((r.status_code, r.json()["code"]), (400, "invalid"))
+            for body in ({"book": "PHM", "languages": "fr"}, {"book": "PHM", "languages": [{"x": 1}]}):
+                r = self.admin.post("/api/admin/jobs/", body, format="json")
+                self.assertEqual((r.status_code, r.json()["code"]), (400, "invalid"), body)
+            r = self.admin.post("/api/admin/jobs/bulk/", {"languages": ["fr"], "books": 5, "dry_run": True},
+                                format="json")
+            self.assertEqual((r.status_code, r.json()["code"]), (400, "invalid"))
+            r = self.admin.post("/api/admin/articles/", {"language": "fr", "slugs": [["x"]]}, format="json")
+            self.assertEqual((r.status_code, r.json()["code"]), (400, "invalid"))
+
+    def test_a_marker_is_read_only_when_it_is_an_object_and_never_replaces_the_issue(self):
+        def issue(marker):
+            return {"number": 5, "title": "Draft", "html_url": "https://github.com/x/y/issues/5",
+                    "created_at": "2026-11-01T00:00:00Z", "body": f"text\n<!-- drafting-job {marker} -->"}
+        self.assertEqual(staff_jobs.marker(issue('{"book": "JHN"}'), "drafting-job"), {"book": "JHN"})
+        for junk in ("[1, 2]", '"JHN"', "not json", "null"):
+            self.assertEqual(staff_jobs.marker(issue(junk), "drafting-job"), {}, junk)
+        hijack = issue('{"book": "JHN", "url": "https://elsewhere.example", "number": 1}')
+        with mock.patch.object(staff_jobs, "_github", return_value=[hijack]):
+            job = staff_jobs.open_jobs()[0]
+        self.assertEqual((job["book"], job["url"], job["number"]), ("JHN", "https://github.com/x/y/issues/5", 5))
+
+    @override_settings(OWB_GITHUB_TOKEN="t")
     def test_file_word_links(self):
         calls = []
 

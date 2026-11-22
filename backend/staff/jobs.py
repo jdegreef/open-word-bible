@@ -98,22 +98,40 @@ def _request(url, method, body):
     return answer, link[1] if link else None
 
 
-def _parse_job(issue):
-    """The book and languages a drafting-job issue asks for, from the
-    machine-readable line the admin writes into its body."""
+def marker(issue, name):
+    """The machine-readable line the admin writes into an issue it files
+    ("<!-- drafting-job {...} -->"), as a dict; {} when there is none, or
+    when it isn't a JSON object (an issue body anyone can edit must not
+    break the admin's lists)."""
+    start = f"<!-- {name} "
     for line in (issue.get("body") or "").splitlines():
-        if line.startswith("<!-- drafting-job "):
+        if line.startswith(start) and line.endswith(" -->"):
             try:
-                return json.loads(line[len("<!-- drafting-job "):-len(" -->")])
+                data = json.loads(line[len(start):-len(" -->")])
             except ValueError:
                 return {}
+            return data if isinstance(data, dict) else {}
     return {}
+
+
+def _parse_job(issue):
+    """The book and languages a drafting-job issue asks for."""
+    return marker(issue, "drafting-job")
+
+
+def listed(data, name):
+    """data[name] as a list of strings (codes, slugs), or a 400."""
+    value = data.get(name) or []
+    if not isinstance(value, list) or not all(isinstance(v, str) for v in value):
+        raise ValidationError({name: "Send a list.", "code": "invalid"})
+    return value
 
 
 def open_jobs():
     issues = _github(f"issues?labels={LABEL}&state=open&per_page=100")
-    return [{"number": i["number"], "title": i["title"], "url": i["html_url"], "created_at": i["created_at"],
-             "assignees": [a["login"] for a in i.get("assignees", [])], **_parse_job(i)}
+    # The issue's own fields last, so the marker can't stand in for them.
+    return [{**_parse_job(i), "number": i["number"], "title": i["title"], "url": i["html_url"],
+             "created_at": i["created_at"], "assignees": [a["login"] for a in i.get("assignees", [])]}
             for i in issues if "pull_request" not in i]
 
 
@@ -169,7 +187,7 @@ def _file(request):
     book = str(data.get("book", "")).upper()
     if book not in CHAPTERS:
         raise ValidationError({"book": "Choose a book.", "code": "invalid_book"})
-    wanted = [c for c in languages.CODES if c in (data.get("languages") or [])]
+    wanted = [c for c in languages.CODES if c in listed(data, "languages")]
     if not wanted:
         raise ValidationError({"languages": "Choose at least one language.", "code": "invalid_language"})
     note = str(data.get("note", "") or "").strip()[:2000]
@@ -255,11 +273,11 @@ def bulk(request):
     if not dry_run and not settings.OWB_GITHUB_TOKEN:
         return Response({"detail": "Set OWB_GITHUB_TOKEN on the API service to file jobs from here.",
                          "code": "not_configured"}, status=status.HTTP_503_SERVICE_UNAVAILABLE)
-    wanted = [c for c in languages.CODES if c in (data.get("languages") or [])]
+    wanted = [c for c in languages.CODES if c in listed(data, "languages")]
     if not wanted:
         raise ValidationError({"languages": "Choose at least one language.", "code": "invalid_language"})
     if data.get("books"):
-        asked = {str(b).upper() for b in data["books"]}
+        asked = {b.upper() for b in listed(data, "books")}
         if asked - set(CHAPTERS):
             raise ValidationError({"books": f"Unknown book {sorted(asked - set(CHAPTERS))[0]!r}.",
                                    "code": "invalid_book"})
