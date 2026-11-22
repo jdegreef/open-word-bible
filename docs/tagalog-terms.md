@@ -2295,3 +2295,15 @@ names the book where the form was first used.
 | Hosea 10:14 | Shalman; Beth-arbel | Salman; Bet-arbel |  |
 | Hosea 12:6 | God of hosts | *Diyos ng mga hukbo* (L); *Diyos ng mga Hukbo* (B, R) |  |
 | Hosea 13:14 | Sheol; O death, where are your plagues? | Sheol (L, B), *libingan* (R); *Nasaan ang iyong mga salot, O kamatayan?* | 1 Corinthians 15:55 |
+| Joel 1:1 | Joel son of Pethuel | Joel na anak ni Petuel |  |
+| Joel 1:4 | cutting locust; swarming locust; hopping locust; stripping locust | *balang na pamutol*; *kawan ng balang*; *balang na lumulukso*; *balang na naninimot* (L, B) | R speaks of swarm after swarm |
+| Joel 1:8 | sackcloth | *telang sako* | as Isaiah |
+| Joel 1:14 | solemn assembly | *banal na kapulungan* (L, B); *natatanging pagtitipon* (R) |  |
+| Joel 1:15 | the Almighty (*Shaddai*) | *ang Makapangyarihan sa Lahat* (R *ang Diyos na Makapangyarihan sa Lahat*) |  |
+| Joel 2:20 | the northerner; eastern sea; western sea | *ang taga-hilaga* (L), *hukbo mula sa hilaga* (B, R); *dagat sa silangan*; *dagat sa kanluran* (R *Dagat na Patay*, *Dagat Mediteraneo*) |  |
+| Joel 2:23 | early rain; late rain | *unang ulan*; *huling ulan* (L); *ulan sa taglagas*; *ulan sa tagsibol* (B, R) |  |
+| Joel 3:1 | I will pour out my Spirit on all flesh | *ibubuhos ko ang aking Espiritu sa lahat ng laman* (L); *sa lahat ng tao* (B, R) | Acts 2:17 |
+| Joel 4:2 | valley of Jehoshaphat | *lambak ni Josafat* |  |
+| Joel 4:6 | the Greeks | *mga Griyego* |  |
+| Joel 4:10 | plowshares; pruning knives | *mga talim ng araro*; *mga karit na pamputol* (L), *mga panggupit ng sanga* (B, R) | as Isaiah 2:4 |
+| Joel 4:14 | valley of decision | *lambak ng pagpapasya* |  |
