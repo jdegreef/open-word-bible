@@ -1572,3 +1572,53 @@ People and places: ਪੌਲੁਸ, ਤੁਖਿਕੁਸ; ਅਫ਼ਸੁਸ, �
   - 24:18-25:30 sets the wording for Jeremiah 52.
   - 14:6 quotes Deuteronomy 24:16, with gender spans for parents and
     children.
+
+### 1 Samuel
+
+- God takes the honorific plural (ਉਨ੍ਹਾਂ ਨੇ, ਸੱਦਦੇ ਹਨ) with no deity_pronoun
+  spans; prayers and songs to God use ਤੂੰ (2:1-10, 3:10, 23:10-12). Oath
+  formula ਜੀਉਂਦੇ {DN} ਦੀ ਸਹੁੰ throughout, also in Achish's mouth (29:6); the
+  self-curse oath ਪਰਮੇਸ਼ੁਰ ... ਇਸੇ ਤਰ੍ਹਾਂ ਕਰਨ, ਅਤੇ ਇਸ ਤੋਂ ਵੀ ਵੱਧ ਕਰਨ (L,
+  3:17, 14:44, 20:13, 25:22).
+- Address: Samuel says ਤੂੰ to Saul (also from the grave, 28:15), and Saul
+  ਤੁਸੀਂ to Samuel; Saul says ਤੂੰ to David, David ਤੁਸੀਂ and ਮੇਰੇ ਸੁਆਮੀ ਰਾਜਾ
+  to Saul, with honorific third person ਮੇਰੇ ਸੁਆਮੀ ... ਆਪਣੇ ਦਾਸ (24, 26).
+  Jonathan and David say ਤੂੰ to each other. Abigail and Abishai say ਤੁਸੀਂ to
+  David; David says ਤੂੰ to Abigail, Abishai and Abner (and Abner back).
+  David says ਤੁਸੀਂ to Achish, Achish ਤੂੰ to David. Saul says ਤੂੰ to the
+  medium, she ਤੁਸੀਂ to him.
+- Terms: ark ਸੰਦੂਕ; ephod ਏਫ਼ੋਦ (linen ephod ਮਲਮਲ ਦਾ ਏਫ਼ੋਦ); Urim ਊਰੀਮ;
+  prophet ਨਬੀ, seer ਦਰਸ਼ੀ, prophesy ਨਬੁੱਵਤ ਕਰਨਾ, company of prophets ਮੰਡਲੀ
+  (L), ਟੋਲੀ (B), ਜਥਾ (R); the Spirit rushes ਬਲ ਨਾਲ ... ਆਇਆ (tsalach) but
+  19:20-23 ਉੱਤੇ ਆਇਆ (hayah); evil spirit ਬੁਰੀ ਆਤਮਾ; lyre ਵੀਣਾ; sling ਗੋਪੀਆ;
+  armor-bearer ਸ਼ਸਤਰ ਚੁੱਕਣ ਵਾਲਾ; uncircumcised ਅਸੁੰਨਤੀ / ਬੇਸੁੰਨਤੇ (R
+  explains); herem ਨਾਸ ਲਈ ਅਰਪਣ (L, B); guilt offering ਦੋਸ਼ ਦੀ ਭੇਟ
+  (Leviticus should match); tumors ਗਿਲ੍ਹਟੀਆਂ; Philistine seranim ਸਰਦਾਰ,
+  sarim ਸੈਨਾਪਤੀ; mediums and spiritists ਓਝੇ ਅਤੇ ਭੂਤ ਸਾਧਣ ਵਾਲੇ (as 2 Kings),
+  the woman ਭੂਤ ਦੀ ਮਾਲਕਣ (L), ਓਝਾ (B); new moon ਨਵਾਂ ਚੰਨ (L), ਨਵੇਂ ਚੰਨ ਦਾ
+  ਤਿਉਹਾਰ (B, R); covenant ਨੇਮ; nachalah ਵਿਰਾਸਤ (26:19, as Joshua); seah
+  `{{units:ਲਗਭਗ 35 ਲੀਟਰ|ਪੰਜ ਸਆਹ}}` (B, R).
+- Hesed: covenant loyalty ਅਟੱਲ ਪਿਆਰ at every level (20:8, 14-15), matching
+  2 Samuel 9; kindness outside a covenant ਦਇਆ at B, R (15:6). The prophets
+  (Hosea, Lamentations, Zechariah) use ਅਟੱਲ ਪ੍ਰੇਮ; worth unifying in review.
+- The LORD's anointed: {DN} ਦਾ ਮਸਹ ਕੀਤਾ ਹੋਇਆ (L, B), ਉਹ ਰਾਜਾ ਜਿਸ ਨੂੰ {DN}
+  ਨੇ ਮਸਹ ਕੀਤਾ ਹੈ (R), in 24, 26 and 2 Samuel 1.
+- Gender spans: sons of Israel at L only; fathers `{{gender:ਵੱਡ-ਵਡੇਰਿਆਂ|ਪਿਉ-ਦਾਦਿਆਂ}}`
+  (12, B and R); 30:22 `{{gender:ਬੱਚਿਆਂ|ਪੁੱਤਰਾਂ}}`.
+- Wording other books must match:
+  - The women's song (18:7), repeated in 21:11 and 29:5: ਸ਼ਾਊਲ ਨੇ ਆਪਣੇ ਹਜ਼ਾਰ
+    ਮਾਰੇ, ਅਤੇ ਦਾਊਦ ਨੇ ਆਪਣੇ ਦਸ ਹਜ਼ਾਰ (L); ਸ਼ਾਊਲ ਨੇ ਹਜ਼ਾਰਾਂ ਨੂੰ ਮਾਰ ਮੁਕਾਇਆ, ਪਰ
+    ਦਾਊਦ ਨੇ ਦਸਾਂ ਹਜ਼ਾਰਾਂ ਨੂੰ (B; R ਮਾਰ ਸੁੱਟਿਆ).
+  - 13:14 (a man after his own heart) for Acts 13:22; 2:1-10 for the echoes
+    in Luke 1:46-55; 15:22 (to obey is better than sacrifice) for Hosea 6:6
+    and Proverbs 21:3 to be checked against.
+  - Bread of the Presence ਹਜ਼ੂਰੀ ਦੀ ਰੋਟੀ (21:6) for Exodus 25:30 and
+    Matthew 12:4; Abiathar ਅਬਯਾਥਾਰ, Ahimelech ਅਹੀਮਲਕ for Mark 2:26.
+  - Chapter 31 sets the wording for 1 Chronicles 10.
+- Names: ਅਲਕਾਨਾਹ, ਹੰਨਾਹ, ਪਨਿੰਨਾਹ, ਏਲੀ, ਹਾਫ਼ਨੀ, ਫ਼ੀਨਹਾਸ, ਸ਼ੀਲੋਹ, ਰਾਮਾਹ,
+  ਈਕਾਬੋਦ, ਦਾਗੋਨ, ਅਸ਼ਦੋਦ, ਅਕਰੋਨ, ਬੈਤ-ਸ਼ਮਸ਼, ਕਿਰਯਥ-ਯਾਰੀਮ, ਅਬੀਨਾਦਾਬ, ਮਿਸਪਾਹ
+  (≠ ਮਿਸਪੇਹ in Moab, 22:3), ਅਬਨ-ਅਜ਼ਰ, ਕੀਸ਼, ਯਾਬੇਸ਼-ਗਿਲਆਦ, ਨਾਹਾਸ਼, ਮਿਕਮਾਸ਼,
+  ਗਬਾ (≠ ਗਿਬਆਹ), ਮਲਕੀ-ਸ਼ੂਆ, ਮੇਰਬ, ਅਗਾਗ, ਯੱਸੀ, ਅਲੀਆਬ, ਗੋਲਿਅਥ, ਏਲਾਹ ਦੀ ਵਾਦੀ,
+  ਨਾਯੋਥ, ਨੋਬ, ਦੋਏਗ ਅਦੋਮੀ, ਆਕੀਸ਼, ਗਥ, ਅਦੁੱਲਾਮ, ਕਈਲਾਹ, ਜ਼ੀਫ਼ੀ, ਹਕੀਲਾਹ,
+  ਯਸ਼ੀਮੋਨ, ਏਨ-ਗਦੀ, ਨਾਬਾਲ, ਅਬੀਗੈਲ, ਅਹੀਨੋਅਮ, ਪਲਟੀ (as 2 Samuel 3:15),
+  ਅਬੀਸ਼ਈ, ਸਿਕਲਗ, ਏਨ-ਦੋਰ, ਸ਼ੂਨੇਮ, ਗਿਲਬੋਆ, ਬਸੋਰ ਨਾਲਾ, ਕਰੇਤੀ, ਬੈਤ-ਸ਼ਾਨ.
