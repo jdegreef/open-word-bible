@@ -32,7 +32,7 @@ def issue(number, hours, kind="drafting-job"):
 
 
 def github(issues):
-    def fake(path, method="GET", body=None):
+    def fake(path, method="GET", body=None, stop=None):
         return [] if path.startswith("pulls") else issues
     return fake
 

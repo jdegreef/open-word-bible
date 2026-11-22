@@ -25,7 +25,7 @@ class GitHub:
     def __init__(self, fail_after=None):
         self.filed, self.fail_after = [], fail_after
 
-    def __call__(self, path, method="GET", body=None):
+    def __call__(self, path, method="GET", body=None, stop=None):
         if method == "POST":
             if self.fail_after is not None and len(self.filed) >= self.fail_after:
                 raise staff_jobs.GitHubError

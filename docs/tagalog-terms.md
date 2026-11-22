@@ -2042,3 +2042,7 @@ names the book where the form was first used.
 | Esther 9:8 | Adalia; Aridatha; Poratha | Adalia; Aridata; Porata |  |
 | Esther 9:9 | Aridai; Arisai; Vaizatha; Parmashta | Aridai; Arisai; Vaizata; Parmasta |  |
 | Esther 9:26 | Purim | Purim |  |
+| Job 3:8 | Leviathan | Leviatan |  |
+| Job 39:13 | ostrich; stork | *avestruz*; *tagak* |  |
+| Job 40:15 | Behemoth | Behemot |  |
+| Job 42:14 | Jemimah; Keziah; Keren-happuch | Jemima; Kesia; Keren-hapuc |  |
