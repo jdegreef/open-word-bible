@@ -113,8 +113,8 @@ and drafts a language's alignments from a short spec.
 
 `data/furigana/<BOOK>.json` holds readings for the kanji of Japanese
 renderings (`owb/furigana.py`), which the reader can set over the text. They
-are a reading aid, not wording, drafted with `scripts/furigana.py`; John is
-done at the Balanced level.
+are a reading aid, not wording, drafted with `scripts/furigana.py`; every
+book has them at all three levels.
 
 In the Hebrew, where MACULA gives each prefix and suffix a token of its
 own, the same rules apply morpheme by morpheme. The article prefix joins
