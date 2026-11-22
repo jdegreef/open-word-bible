@@ -20,6 +20,7 @@ from datetime import timedelta
 from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.core.mail import send_mail
+from django.db import transaction
 from django.db.models import Count
 from django.utils import timezone
 from rest_framework import status
@@ -145,51 +146,67 @@ def inbox(request):
 
 @admin_view("inbox", methods=("PATCH",))
 def message(request, message_id):
-    m = ReaderMessage.objects.select_related("user", "replied_by", "assigned_to").filter(id=message_id).first()
-    if m is None:
-        return Response({"detail": "No such message.", "code": "not_found"}, status=status.HTTP_404_NOT_FOUND)
     data = request.data if isinstance(request.data, dict) else {}
     reply = str(data.get("reply", "") or "").strip()
-    if "note" in data:
-        m.note = str(data["note"] or "")[:4000]
-    if "assigned_to" in data:
-        _assign(m, data["assigned_to"], request.user)
-    if reply:
-        if m.reply:
-            raise ValidationError({"reply": "This message has already been answered.", "code": "answered"})
-        if len(reply) > 4000:
-            raise ValidationError({"reply": "Keep the reply under 4,000 characters."})
-        if not _send_reply(m, reply, request.user):
-            return Response({"detail": "The reply could not be emailed; it was not saved.",
-                             "code": "email_unavailable"}, status=status.HTTP_503_SERVICE_UNAVAILABLE)
-        m.reply, m.replied_by, m.replied_at, m.status = reply, request.user, timezone.now(), S.ANSWERED
-        record(request.user, "message.reply", f"{m.get_kind_display()} on {m.verse}", message=m.id)
     new_status = data.get("status")
-    if new_status:
-        if new_status not in S.values or (new_status == S.ANSWERED and not m.reply):
+    # Everything is checked before anything is done: a reply is emailed only
+    # when the whole change will be saved.
+    if len(reply) > 4000:
+        raise ValidationError({"reply": "Keep the reply under 4,000 characters."})
+    if new_status and new_status not in S.values:
+        raise ValidationError({"status": "Choose new, done or declined (answering takes a reply)."})
+    assign = "assigned_to" in data
+    assignee = _assignee(data["assigned_to"], request.user) if assign else None
+    with transaction.atomic():
+        # Locked until saved, so two editors replying at once can't both
+        # email the reader: the second waits, then finds it answered.
+        m = (ReaderMessage.objects.select_for_update(of=("self",))
+             .select_related("user", "replied_by", "assigned_to").filter(id=message_id).first())
+        if m is None:
+            return Response({"detail": "No such message.", "code": "not_found"}, status=status.HTTP_404_NOT_FOUND)
+        if reply and m.reply:
+            raise ValidationError({"reply": "This message has already been answered.", "code": "answered"})
+        if new_status == S.ANSWERED and not (m.reply or reply):
             raise ValidationError({"status": "Choose new, done or declined (answering takes a reply)."})
-        if new_status != m.status:
-            record(request.user, f"message.{new_status}", f"{m.get_kind_display()} on {m.verse}", message=m.id)
-        m.status = new_status
-    m.save()
+        if "note" in data:
+            m.note = str(data["note"] or "")[:4000]
+        if assign:
+            _assign(m, assignee, request.user)
+        if reply:
+            if not _send_reply(m, reply, request.user):
+                transaction.set_rollback(True)
+                return Response({"detail": "The reply could not be emailed; nothing was saved.",
+                                 "code": "email_unavailable"}, status=status.HTTP_503_SERVICE_UNAVAILABLE)
+            m.reply, m.replied_by, m.replied_at, m.status = reply, request.user, timezone.now(), S.ANSWERED
+            record(request.user, "message.reply", f"{m.get_kind_display()} on {m.verse}", message=m.id)
+        if new_status:
+            if new_status != m.status:
+                record(request.user, f"message.{new_status}", f"{m.get_kind_display()} on {m.verse}",
+                       message=m.id)
+            m.status = new_status
+        m.save()
     return Response(message_json(m))
 
 
-def _assign(m, who, editor):
-    """Assign m to who: "me", an editor's id or email, or nobody (null or
-    ""). Only accounts with the inbox area may be assigned."""
+def _assignee(who, editor):
+    """The account who names: "me", an editor's id or email, or nobody (None
+    for null or ""). Only accounts with the inbox area may be assigned."""
     if who in (None, ""):
-        user = None
+        return None
+    team = inbox_team()
+    if who == "me":
+        user = team.filter(id=editor.id).first()
+    elif isinstance(who, int) or str(who).isdigit():
+        user = team.filter(id=int(who)).first()
     else:
-        team = inbox_team()
-        if who == "me":
-            user = team.filter(id=editor.id).first()
-        elif isinstance(who, int) or str(who).isdigit():
-            user = team.filter(id=int(who)).first()
-        else:
-            user = team.filter(username__iexact=str(who).strip()).first()
-        if user is None:
-            raise ValidationError({"assigned_to": "Assign it to someone who can open the reader inbox."})
+        user = team.filter(username__iexact=str(who).strip()).first()
+    if user is None:
+        raise ValidationError({"assigned_to": "Assign it to someone who can open the reader inbox."})
+    return user
+
+
+def _assign(m, user, editor):
+    """Assign m to user (None for nobody), noted in the activity log."""
     if user == m.assigned_to:
         return
     m.assigned_to, m.assigned_at = user, timezone.now() if user else None
