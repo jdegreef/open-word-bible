@@ -435,3 +435,77 @@ The units setting: {{units:مزد هشت ماه|دویست دینار}} (6:37), 
 the wage of a year (14:5), a denarius as a day's wage (12:15), and دو لپتا
 که یک کودرانت می‌شود (12:42). جهنم stays at every level (9:43-47), and
 برده at every level in 10:43-44.
+
+### John
+
+People: یحیی for John the Baptist (یوحنا only for Simon Peter's father,
+1:42 and 21:15-17), کیفا, نتنائیل, نیقودیموس, ایلعازر, مارتا, مریم, توما
+(دیدیموس; Balanced adds یعنی توأم, Readable says توأم), قیافا, حنا, مالخوس,
+کلوپاس, یوسف رامه‌ای, یهودای اسخریوطی.
+
+Places: بیت‌عنیا (both the one across the Jordan, 1:28, and Lazarus's
+village), قانای جلیل, سوخار, بیت‌حسدا, سیلوحا, افرایم, رواق سلیمان, قدرون
+(Literal نهر فصلی قدرون, the others درهٔ قدرون), سنگفرش and جباتا (19:13),
+جای جمجمه and جلجتا, دریای طبریه (Literal) / دریاچهٔ طبریه.
+
+Feasts: عید پسح, عید خیمه‌ها, عید تقدیس (Readable adds حنوکا); روز تهیه;
+شبات.
+
+Terms:
+
+| Term | L | B | R |
+|---|---|---|---|
+| the Word (1:1) | کلمه | کلمه | کلمه |
+| Advocate (*parakletos*) | مدافع | مدافع | مدافع |
+| Spirit of truth | روح حقیقت | روح حقیقت | روح حقیقت |
+| the world (*kosmos*) | جهان | جهان | جهان |
+| eternal life | حیات جاودان | حیات جاودان | زندگی جاودان |
+| sign | آیت | آیت | نشانه |
+| the hour (of Jesus) | ساعت | ساعت | ساعت (12:23-13:1, 17:1); زمان where the English says time |
+| Truly, truly | آمین، آمین | براستی، براستی | حقیقت را به شما/تو می‌گویم |
+| I am (8:24, 28, 58; 13:19) | من هستم | من هستم | من هستم |
+| I am he (18:5-8) | من [همان] هستم | من همان هستم | من همان هستم |
+| the Jews, where the English says leaders | یهودیان | سران یهود | سران یهود |
+| remain, abide (*meno*) | ماندن | ماندن | ماندن |
+| hand over / betray (Judas) | تسلیم کردن | خیانت کردن | خیانت کردن |
+| flesh (6:51-56) | جسم | جسم / بدن | بدن |
+| vine; vinedresser (15:1) | تاک; باغبان | تاک; باغبان | درخت انگور; باغبان |
+| peace (14:27, 16:33) | آرامش | آرامش | آرامش |
+| Peace to you (20:19-26) | سلام بر شما | سلام بر شما | سلام بر شما |
+| love (both Greek verbs, 21:15-17) | دوست داشتن | دوست داشتن | دوست داشتن |
+| Righteous Father (17:25) | ای پدر عادل | ای پدر عادل | پدر عادل |
+| Holy Father (17:11) | ای پدر قدوس | ای پدر قدوس | پدر قدوس |
+| Woman (2:4, 19:26, 20:13) | ای زن | ای زن | مادر; خانم (20:13-15) |
+| praetorium | پرایتوریوم | مقر والی | کاخ والی رومی |
+
+Address: the disciples say تو to Jesus; questioners and strangers say تو at
+Literal and شما at Balanced and Readable; his brothers, hostile opponents
+(8:48-57, 10:33, 18:22, 18:30) and Pilate say تو; Jesus says تو to
+individuals, Pilate and the high priest included; prayer to the Father is
+تو throughout chapter 17.
+
+Units: {{units:بیش از مزد شش ماه|دویست دینار}} (6:7), {{units:مزد یک
+سال|سیصد دینار}} (12:5), {{units:حدود ۳۳۰ گرم|یک رطل}} (12:3),
+{{units:حدود ۳۳ کیلوگرم|حدود صد رطل رومی}} (19:39), {{units:۹۰ متر|دویست
+ذراع}} (21:8); Literal keeps the ancient measure. Clock time: Literal keeps
+the Jewish hour count (1:39, 4:6, 4:52, 19:14).
+
+Gender setting: John uses it only for the believers as brothers and sisters
+(20:17, 21:23); elsewhere Persian words for people (کسی, هر که, او, انسان,
+فرزندان) are already inclusive.
+
+For reviewers:
+
+- جهان for *kosmos* throughout John. The brief's default is دنیا; John's
+  "world" is a theological term (1:10, 3:16, 17:14-16), and one word lets
+  readers follow it. Is جهان right, or should Readable say دنیا?
+- 6:7 gives 200 denarii as "more than half a year's wages", while Mark 6:37
+  says "eight months' wages" for the same sum. One should match the other.
+- جسم (Literal) and بدن (Readable) for "flesh" in 6:51-56.
+- Address choices that could go either way: Nathanael says تو at every level
+  (1:48-49); Martha and Mary say تو (11:3, 11:21-32); the opponents in 8:48
+  say تو.
+- 17:25 says ای پدر عادل; the brief's key word for righteous is پارسا, which
+  sounds like human uprightness when said of God.
+- مدافع for the Advocate. The Old Version's تسلی‌دهنده is well known; a
+  reviewer may prefer it or یاور.
