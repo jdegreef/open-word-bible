@@ -1333,3 +1333,61 @@ People and places: ਪੌਲੁਸ, ਤੁਖਿਕੁਸ; ਅਫ਼ਸੁਸ, �
   ਲਗਭਗ 22 ਲੀਟਰ.
 - For the reviewer: 13:15 and 15:1 use ਮੇਮਣਾ for a young goat (ਬੱਕਰੀ ਦਾ
   ਮੇਮਣਾ); ਛੇਲਾ may be better.
+
+### Joshua
+
+- God takes the honorific plural throughout (ਉਹ ... ਹਨ, ਉਨ੍ਹਾਂ ਨੇ); Joshua
+  and the people say ਤੂੰ to God. Chapters 1-14 were drafted first and may still
+  have a few singular forms (e.g. 4:24); worth a sweep in review.
+- Charge of 1:6-9 and 10:25, one wording per level: ਤਕੜਾ ਹੋ ਅਤੇ ਦਲੇਰ ਬਣ (L),
+  ਤਕੜਾ ਹੋ ਅਤੇ ਹੌਸਲਾ ਰੱਖ (B), ਤਕੜਾ ਹੋ ਅਤੇ ਹਿੰਮਤ ਰੱਖ (R), in the plural to the
+  people. Law ਬਿਵਸਥਾ (L, B), ਸਿੱਖਿਆ (R); book of the law ਬਿਵਸਥਾ ਦੀ ਪੋਥੀ.
+- Moses ਦਾਸ at every level; Joshua ਸੇਵਕ (L), ਸਹਾਇਕ (B, R) in 1:1, ਦਾਸ in
+  24:29. Joshua says ਤੂੰ to the people's individuals and ਤੁਸੀਂ to groups; the
+  people and Rahab say ਤੁਸੀਂ to him and to the spies; the spies say ਤੂੰ to
+  Rahab; the commander of the LORD's army is ਮੇਰੇ ਸੁਆਮੀ and says ਤੂੰ.
+- Seas and land: Great Sea ਵੱਡਾ ਸਮੁੰਦਰ (L, B), ਭੂ-ਮੱਧ ਸਾਗਰ (R); Salt Sea
+  ਖਾਰਾ ਸਮੁੰਦਰ (L), ਮ੍ਰਿਤ ਸਾਗਰ (B, R); Sea of Reeds ਕਾਨਿਆਂ ਦਾ ਸਮੁੰਦਰ (L),
+  ਲਾਲ ਸਮੁੰਦਰ (B, R); Chinneroth ਕਿੰਨਰੋਥ (L, B), ਗਲੀਲ ਦੀ ਝੀਲ (R); Shephelah
+  ਸ਼ਫ਼ੇਲਾਹ (L), ਪੱਛਮ ਦੀਆਂ ਨੀਵੀਆਂ ਪਹਾੜੀਆਂ (B, R); Negev ਨੇਗੇਵ; Arabah
+  ਅਰਾਬਾਹ (R ਯਰਦਨ ਦੀ ਵਾਦੀ); wadi ਨਾਲਾ (L); the River ਦਰਿਆ (L, B), ਫ਼ਰਾਤ ਦਰਿਆ
+  (R); mound ਥੇਹ.
+- Ark of the covenant ਨੇਮ ਦਾ ਸੰਦੂਕ; ark of the testimony ਸਾਖੀ ਦਾ ਸੰਦੂਕ (L, B);
+  horn ਨਰਸਿੰਗਾ; shout ਜੈਕਾਰਾ; devoted ਨਾਸ ਲਈ ਅਰਪਣ (L, B; R explains it as the
+  LORD's); broke faith ਬੇਵਫ਼ਾਈ (L, R), ਵਿਸ਼ਵਾਸਘਾਤ (B); trouble (Achor)
+  ਬਿਪਤਾ; covenant with God ਨੇਮ, a treaty between peoples ਨੇਮ (L), ਸੰਧੀ (B,
+  R); Hill of the Foreskins ਖੱਲੜੀਆਂ ਦੀ ਪਹਾੜੀ; unleavened bread ਪਤੀਰੀ ਰੋਟੀ;
+  manna ਮੰਨ.
+- Allotment chapters (13-21): lot ਗੁਣਾ; inheritance (nachalah) ਵਿਰਾਸਤ;
+  possession (achuzzah, yerushah) ਮਿਲਖ; border ਹੱਦ, feminine, with ਨਿੱਕਲਦੀ /
+  ਲੰਘਦੀ / ਚੜ੍ਹਦੀ / ਉਤਰਦੀ / ਮੁੜਦੀ ਹੈ (L, B) and past tense (R); "is drawn"
+  ਖਿੱਚੀ ਜਾਂਦੀ ਹੈ (L); daughter-villages ਧੀਆਂ (L); town lists end "N ਸ਼ਹਿਰ, ਨਾਲੇ
+  ਉਨ੍ਹਾਂ ਦੇ ਪਿੰਡ" (L), "ਕੁੱਲ N ਨਗਰ, ਆਪਣੇ ਪਿੰਡਾਂ ਸਮੇਤ" (B), "ਕੁੱਲ ਮਿਲਾ ਕੇ N
+  ਨਗਰ ਸਨ, ਨਾਲ ਉਨ੍ਹਾਂ ਦੇ ਪਿੰਡ" (R); pasturelands ਚਰਾਂਦਾਂ.
+- Sons of a tribe: `{{gender:X ਦੀ ਸੰਤਾਨ|X ਦੇ ਪੁੱਤਰਾਂ}}` at L, plain at B and
+  R (ਅੰਸ where the English says descendants); the eastern tribes ਰਊਬੇਨੀ, ਗਾਦੀ
+  ਅਤੇ ਅੱਧੇ ਮਨੱਸ਼ਹ ਗੋਤ ਦੇ ਲੋਕ (B) in chapter 22, worded to avoid the
+  comparison Bibles' formula.
+- Places of worship and law: tent of meeting ਮੁਲਾਕਾਤ ਦਾ ਤੰਬੂ; tabernacle ਡੇਰਾ
+  (L), ਪਵਿੱਤਰ ਤੰਬੂ (B, R); cities of refuge ਪਨਾਹ ਦੇ ਸ਼ਹਿਰ / ਨਗਰ (L, B),
+  ਸੁਰੱਖਿਆ ਦੇ ਨਗਰ (R); avenger of blood ਖ਼ੂਨ ਦਾ ਬਦਲਾ ਲੈਣ ਵਾਲਾ (L, B); high
+  priest ਮਹਾਂ ਜਾਜਕ; elders ਬਜ਼ੁਰਗ (L), ਬਜ਼ੁਰਗ ਆਗੂ (B), ਆਗੂ (R); officials
+  ਅਧਿਕਾਰੀ; heads ਮੁਖੀ; judges ਨਿਆਈ; congregation ਮੰਡਲੀ (L, B), ਭਾਈਚਾਰਾ (R);
+  plague ਬਵਾ; burnt offering ਹੋਮ ਬਲੀ; grain offering ਅੰਨ ਦੀ ਭੇਟ; peace
+  offering ਸੁੱਖ-ਸਾਂਦ ਦੀ ਬਲੀ; the altar of chapter 22 is named ਗਵਾਹ; Mighty One
+  ਸ਼ਕਤੀਮਾਨ; jealous God ਅਣਖੀ ਪਰਮੇਸ਼ੁਰ; hornet ਭਰਿੰਡ; oak ਬਲੂਤ; qesitah
+  ਕਸੀਟਾ (L), ਚਾਂਦੀ ਦੇ ਸਿੱਕੇ (B, R).
+- The seven peoples: ਕਨਾਨੀ, ਹਿੱਤੀ, ਹਿੱਵੀ, ਫ਼ਰਿੱਜ਼ੀ, ਗਿਰਗਾਸ਼ੀ, ਅਮੋਰੀ, ਯਬੂਸੀ;
+  Anakim ਅਨਾਕੀ; Rephaim ਰਫ਼ਾਈ.
+- Names: ਰਾਹਾਬ, ਆਕਾਨ son of ਕਰਮੀ, ਜ਼ਬਦੀ, ਜ਼ਰਹ, ਅਈ, ਬੈਤਏਲ, ਬੈਤ-ਆਵਨ, ਆਕੋਰ,
+  ਗਿਲਗਾਲ, ਏਬਾਲ, ਗਰਿੱਜ਼ੀਮ, ਗਿਬਓਨ / ਗਿਬਓਨੀ, ਅਦੋਨੀ-ਸਦਕ, ਮੱਕੇਦਾਹ, ਹਾਸੋਰ,
+  ਯਾਬੀਨ, ਮੇਰੋਮ, ਕਾਲੇਬ, ਹਬਰੋਨ, ਆਥਨੀਏਲ, ਦਬੀਰ, ਅਕਸਾਹ, ਸਲਾਫ਼ਹਾਦ, ਸ਼ੀਲੋਹ,
+  ਤਿਮਨਥ-ਸਰਹ, ਗਾਸ਼, ਫ਼ੀਨਹਾਸ son of ਅਲਆਜ਼ਾਰ, ਗਿਬਆਹ, ਸ਼ਕਮ, ਹਮੋਰ, ਤਾਰਹ,
+  ਨਾਹੋਰ, ਬਾਲਾਕ son of ਸਿੱਪੋਰ, ਬਿਲਆਮ son of ਬਓਰ; Levite clans ਕਹਾਥੀ,
+  ਗੇਰਸ਼ੋਨ, ਮਰਾਰੀ; tribes ਸ਼ਿਮਓਨ, ਜ਼ਬੂਲੁਨ, ਯਿੱਸਾਕਾਰ, ਆਸ਼ੇਰ, ਨਫ਼ਥਾਲੀ, ਦਾਨ.
+- Matching wording for later books: 24:2-13 retells Genesis-Numbers (Terah,
+  Esau and Seir, the plagues, the Red Sea, Balaam) and 24:32 Gen 33:19 / 50:25;
+  1:5 "ਨਾ ਛੱਡਾਂਗਾ ਅਤੇ ਨਾ ਤਿਆਗਾਂਗਾ" uses the same verbs as Hebrews 13:5.
+- For the reviewer: ਵਿਰਾਸਤ and ਮਿਲਖ were mixed in early chapters; nachalah
+  is now ਵਿਰਾਸਤ in 19-24, but chapters 1, 12 and 21 use ਮਿਲਖ where the Hebrew
+  is "possession", which is intended.
