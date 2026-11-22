@@ -11,6 +11,10 @@ GET   /api/admin/inbox/?status=new&kind=&lang=&book=&assigned=&q=&offset=
                                     then of the messages it finds;
                                     languages and books list those with
                                     messages in the tab
+PATCH /api/admin/inbox/      {ids, status, assigned_to}
+                                    the same status or assignee for several
+                                    messages at once (at most BULK), all or
+                                    none; a reply is never sent in bulk
 PATCH /api/admin/inbox/<id>/  {status, reply, note, assigned_to}
                                     answer (the reply is emailed to the reader),
                                     mark done or declined, keep a note, or
@@ -137,8 +141,14 @@ def search_messages(messages, q):
     return messages.filter(found)
 
 
-@admin_view("inbox")
+# How many messages one bulk change may touch.
+BULK = 100
+
+
+@admin_view("inbox", methods=("GET", "PATCH"))
 def inbox(request):
+    if request.method == "PATCH":
+        return _bulk(request)
     params = request.query_params
     messages = ReaderMessage.objects.select_related("user", "replied_by", "assigned_to")
     q = " ".join(params.get("q", "").split())[:200]
@@ -225,6 +235,41 @@ def message(request, message_id):
             m.status = new_status
         m.save()
     return Response(message_json(m))
+
+
+def _bulk(request):
+    """Mark several messages done, declined or new, or assign them, in one
+    transaction: every message must exist and the change must be valid,
+    or nothing is changed. Each change is logged as one message's is."""
+    data = request.data if isinstance(request.data, dict) else {}
+    ids = data.get("ids")
+    if not isinstance(ids, list) or not ids or not all(isinstance(i, int) for i in ids):
+        raise ValidationError({"ids": "Send the messages' ids, as a list of numbers.", "code": "invalid"})
+    if len(ids) > BULK:
+        raise ValidationError({"ids": f"Change at most {BULK} messages at once.", "code": "too_many"})
+    if "reply" in data:
+        raise ValidationError({"reply": "A reply is written to one reader at a time.", "code": "invalid"})
+    new_status = data.get("status")
+    if new_status is not None and new_status not in (S.NEW, S.DONE, S.DECLINED):
+        raise ValidationError({"status": "Choose new, done or declined.", "code": "invalid"})
+    assign = "assigned_to" in data
+    if new_status is None and not assign:
+        raise ValidationError({"detail": "Say what to change: a status or who it is assigned to.", "code": "invalid"})
+    assignee = _assignee(data["assigned_to"], request.user) if assign else None
+    with transaction.atomic():
+        found = {m.id: m for m in ReaderMessage.objects.select_for_update(of=("self",))
+                 .select_related("user", "assigned_to").filter(id__in=ids)}
+        missing = sorted(set(ids) - set(found))
+        if missing:
+            raise ValidationError({"ids": f"No message {missing[0]}.", "code": "not_found"})
+        for m in found.values():
+            if assign:
+                _assign(m, assignee, request.user)
+            if new_status and new_status != m.status:
+                record(request.user, f"message.{new_status}", f"{m.get_kind_display()} on {m.verse}", message=m.id)
+                m.status = new_status
+            m.save()
+    return Response({"messages": [message_json(found[i]) for i in dict.fromkeys(ids)]})
 
 
 def _assignee(who, editor):

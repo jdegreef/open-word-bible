@@ -2046,3 +2046,31 @@ names the book where the form was first used.
 | Job 39:13 | ostrich; stork | *avestruz*; *tagak* |  |
 | Job 40:15 | Behemoth | Behemot |  |
 | Job 42:14 | Jemimah; Keziah; Keren-happuch | Jemima; Kesia; Keren-hapuc |  |
+| Psalms 6:1 | sheminith; stringed instruments | *sheminit*; *mga instrumentong may kuwerdas* | musical terms in the titles kept as transliterations |
+| Psalms 7:1 | Benjaminite | Benjaminita | people name in -ita |
+| Psalms 8:1 | gittith | *gitit* |  |
+| Psalms 9:1 | Muth-labben | *Mut-laben* |  |
+| Psalms 22:1 | Ayyeleth-hashshahar | *Ayelet-hashahar* |  |
+| Psalms 42:7 | the Hermons; Mount Mizar | *mga Hermon*; Bundok Mizar |  |
+| Psalms 45:1 | shoshannim | *shoshanim* |  |
+| Psalms 46:1 | alamoth | *alamot* |  |
+| Psalms 53:1 | mahalath | *mahalat* (Psalm 88: *mahalat leanot*) |  |
+| Psalms 56:1 | yonath elem rechokim | *yonat elem rekokim* |  |
+| Psalms 57:1 | "Do not destroy" (tune) | *"Huwag mong wasakin"* |  |
+| Psalms 60:1 | shushan eduth | *shushan edut* |  |
+| Psalms 60:2 | Aram-zobah | Aram-zoba |  |
+| Psalms 78:51 | the tents of Ham | *mga tolda ni Ham* | Ham stands for Egypt, home of his descendants |
+| Psalms 80:12 | the Mediterranean Sea (R) | *Dagat Mediteraneo* |  |
+| Psalms 84:7 | Valley of Baca | *lambak ng Baca* |  |
+| Psalms 119:1 | instruction (*torah*); testimonies; precepts; statutes; commands; judgments | *kautusan* (R *aral*); *mga patotoo* (R *ang ipinahayag mo*); *mga alituntunin* (R *mga tagubilin*); *mga tuntunin* (R *mga batas*); *mga utos*; *mga hatol* (R *mga pasya*) | the word for each stays fixed across the 176 verses |
+| Psalms 119:11 | saying (*imrah*) | *pangungusap* (L); *pangako* (B, R) |  |
+| Psalms 120:1 | song of ascents | *awit ng pag-akyat* (R *awit para sa paglalakbay paakyat sa Jerusalem*) | Psalms 120–134 |
+| Psalms 132:6 | Jaar | Jaar |  |
+| Proverbs 1:2 | wisdom; knowledge; understanding; discipline | *karunungan*; *kaalaman*; *pang-unawa*; *disiplina* (B, R *pagtutuwid*) | fixed across the book |
+| Proverbs 1:4 | the simple; fools; mockers | *mga walang muwang* (R *mga taong madaling malinlang*); *mga mangmang* (R also *hangal*); *mga manunuya* |  |
+| Proverbs 1:7 | the fear of the LORD | *ang takot sa PANGINOON* (R *paggalang sa PANGINOON nang may pagkamangha*) |  |
+| Proverbs 2:16 | the strange woman | *babaing di-kilala* (L); *babaing hindi sa iyo* (B); *babaing may asawang iba* (R) |  |
+| Proverbs 8:1 | Wisdom; Folly (personified) | *Karunungan*; *Kahangalan* | capitalized; *siya*, never a deity span |
+| Proverbs 30:1 | Jakeh; Ucal | Jakeh; Ucal | Ithiel is *Itiel*, as in Nehemiah 11:7 |
+| Proverbs 30:15 | leech | *linta* |  |
+| Proverbs 30:26 | rock badger | *hyrax* |  |

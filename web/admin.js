@@ -298,6 +298,16 @@ var OWBAdminNav = (function () {
   var API = document.querySelector('meta[name="owb-api"]').content;
   var SITE = root.getAttribute("data-site");
   var GITHUB = root.getAttribute("data-github");
+  // Names for the codes the API gives (written by build_site.py).
+  var NAMES = { languages: {}, books: {} };
+  try { NAMES = JSON.parse(root.getAttribute("data-names") || "") || NAMES; } catch (e) { /* codes, then */ }
+  function langName(code) { return NAMES.languages[code] || code; }
+  // "JHN.3.16" -> "John 3:16"; "JHN.3" -> "John 3"; anything else as it is.
+  function verseName(vid) {
+    var m = /^([1-3A-Z]{3})\.(\d+)(?:\.(\d+))?$/.exec(vid || "");
+    if (!m || !NAMES.books[m[1]]) return vid;
+    return NAMES.books[m[1]] + " " + m[2] + (m[3] ? ":" + m[3] : "");
+  }
   var rail = document.getElementById("admin-rail");
   var main = document.getElementById("admin-main");
   var KEY = "owb.account";
@@ -623,6 +633,7 @@ var OWBAdminNav = (function () {
     { id: "coverage", label: "Coverage", area: "overview", group: "Progress" },
     { id: "languages", label: "Languages", area: "overview", group: "Progress" },
     { id: "health", label: "Content health", area: "overview", group: "Progress" },
+    { id: "pace", label: "Review pace", area: "overview", group: "Progress" },
     { id: "articles", label: "Articles", area: "overview", group: "Publish" },
     { id: "export", label: "Export", area: "export", group: "Publish" },
     { id: "releases", label: "Release notes", area: "export", group: "Publish" },
@@ -702,6 +713,20 @@ var OWBAdminNav = (function () {
     try { if (was.at) n.setSelectionRange(was.at[0], was.at[1]); } catch (e) { /* not a text field */ }
   }
 
+  function notHere(name, section, why) {
+    if (why === "closed") {
+      return [head("Admin", section.label, "Your roles don't open this part of the admin. A super admin can grant one in Team & access."),
+        h("p", null, h("a", { href: "#dashboard" }, "Go to the dashboard"))];
+    }
+    // The section whose id or name is closest to what was asked for.
+    var want = name.toLowerCase(), guess = SECTIONS.filter(opens).filter(function (s) {
+      return s.id.indexOf(want) === 0 || want.indexOf(s.id) === 0 || s.label.toLowerCase().indexOf(want) >= 0;
+    })[0];
+    return [head("Admin", "Not found", "There's no section called \u201c" + name + "\u201d. Search the admin (Ctrl K) or pick one from the list."),
+      h("p", null, guess ? [h("a", { href: "#" + guess.id }, guess.label), " might be what you were after. "] : null,
+        h("a", { href: "#dashboard" }, "Go to the dashboard"))];
+  }
+
   // The section on the page stays, dimmed, until the next one is ready; a
   // loading line replaces it only if that takes a while.
   function route() {
@@ -712,7 +737,14 @@ var OWBAdminNav = (function () {
     var at = N.parse(hash);
     var name = at.name, arg = at.arg;
     var section = SECTIONS.filter(function (s) { return s.id === (PARENT[name] || name); })[0];
-    if (!section || !opens(section)) { name = "dashboard"; section = SECTIONS[0]; }
+    var draw = VIEWS[name];
+    // An address that names no section, or one the account's roles don't
+    // open, says so (it used to show the dashboard without a word).
+    var missing = !section || !draw ? "unknown" : !opens(section) ? "closed" : "";
+    if (missing) {
+      draw = function () { return notHere(name, section, missing); };
+      section = section || { id: name, label: "Not found", group: "" };
+    }
     // A filter changed on the same page isn't a move: the field being
     // typed in keeps its place. Following an address (Back, a link) is.
     var moved = followed || at.path !== (shown || "").split("?")[0];
@@ -748,7 +780,6 @@ var OWBAdminNav = (function () {
         if (heading) { heading.setAttribute("tabindex", "-1"); heading.focus({ preventScroll: true }); }
       }
     }
-    var draw = VIEWS[name];
     Promise.resolve().then(function () { return draw(arg); }).then(function (nodes) {
       if (mine !== drawing) return;
       show(nodes);
@@ -966,6 +997,18 @@ var OWBAdminNav = (function () {
         tile(num(t.chapters_drafted) + " / " + num(t.chapters), "chapters drafted"),
         tile(num(reviewed.meaning), "sentences with their meaning approved by a person"),
         tile(num(reviewed.wording), "sentences with their wording approved in at least one language")));
+      // How old the totals are: they are kept until the content changes or a review is made.
+      if (d.counted_at) {
+        var recount = h("button", { type: "button", class: "admin-link" }, "Count again");
+        recount.addEventListener("click", function () {
+          busy(recount, true);
+          request("/api/admin/overview/?fresh=1", {}).then(function () {
+            delete reads["/api/admin/overview/"];
+            route();
+          }, function (e) { busy(recount, false); toast(e.message, null, 8); });
+        });
+        out.push(h("p", { class: "admin-sub admin-counted" }, "Counted " + when(d.counted_at) + " \u00b7 ", recount));
+      }
       out.push(h("section", { class: "admin-block" }, h("h2", null, "Sentences by language"),
         h("div", { class: "admin-bars" }, d.languages.map(function (l) {
           return h("a", { class: "admin-bar-row", href: "#languages" }, h("span", null, l.name), bar(l.sentences, t.sentences),
@@ -1002,10 +1045,13 @@ var OWBAdminNav = (function () {
       var langs = d.languages;
       var tab = COVERAGE.testament;
       var body = h("div");
+      // A book every language has finished needs nothing; hiding them leaves the work.
+      var finished = function (b) { return langs.every(function (l) { return b.languages[l.code].state === "drafted"; }); };
       function draw(which) {
         body.textContent = "";
         var books = d.books.filter(function (b) { return b.testament === which; });
-        var rows = books.map(function (b) {
+        var shown = COVERAGE.hide ? books.filter(function (b) { return !finished(b); }) : books;
+        var rows = shown.map(function (b) {
           return h("tr", null,
             h("th", { scope: "row" }, h("a", { href: "#book/" + b.code }, b.name)),
             h("td", { class: "admin-num" }, b.chapters_drafted + " / " + b.chapters),
@@ -1014,24 +1060,31 @@ var OWBAdminNav = (function () {
               var c = b.languages[l.code];
               var said = l.name + ": " + STATE_LABEL[c.state] + " (" + num(c.sentences) + " of " + num(b.sentences) + " sentences)";
               // The colour and mark for the eye; the same words as the tooltip for a screen reader.
-              return h("td", { class: "admin-cell" }, h("span", { class: "admin-state " + c.state, title: said },
+              // A cell opens the book, chapter by chapter, in every language.
+              return h("td", { class: "admin-cell" }, h("a", { class: "admin-state " + c.state, title: said, href: "#book/" + b.code },
                 h("span", { "aria-hidden": "true" }, c.state === "none" ? "" : c.state === "drafted" ? "✓" : pct(c.sentences, b.sentences) + "%"),
                 h("span", { class: "sr-only" }, said)));
             }));
         });
+        if (!rows.length) rows.push(h("tr", null, h("td", { colspan: 3 + langs.length }, "Every book here is drafted in every language.")));
         var done = function (code) {
           return books.filter(function (b) { return b.languages[code].state === "drafted"; }).length;
         };
         rows.push(h("tr", { class: "admin-total" }, h("th", { scope: "row" }, "Books drafted"), h("td"), h("td"),
           langs.map(function (l) { return h("td", { class: "admin-num" }, done(l.code) + " / " + books.length); })));
-        body.appendChild(table(["Book", ["Chapters", { class: "admin-num" }], ["Sentences", { class: "admin-num" }]]
-          .concat(langs.map(function (l) { return [l.code, { title: l.name, class: "admin-cell" }]; })), rows, "admin-coverage"));
+        var grid = table(["Book", ["Chapters", { class: "admin-num" }], ["Sentences", { class: "admin-num" }]]
+          .concat(langs.map(function (l) { return [l.code, { title: l.name, class: "admin-cell" }]; })), rows, "admin-coverage");
+        // Its own scroll box, so the language row and the book column stay in view.
+        grid.classList.add("admin-coverage-box");
+        body.appendChild(grid);
       }
       draw(tab);
+      var hide = h("input", { type: "checkbox", id: "coverage-hide", checked: !!COVERAGE.hide });
+      hide.addEventListener("change", function () { COVERAGE.hide = hide.checked ? "1" : ""; keepAddress(true); draw(COVERAGE.testament); });
       return [head("Progress", "Coverage", "Every book in every language. A tick is a book drafted whole; a percentage is the share of its drafted sentences in that language. Open a book for its chapters."),
         h("div", { class: "admin-toolbar" }, seg([["ot", "Old Testament"], ["nt", "New Testament"]], tab, function (v) {
           COVERAGE.testament = v; rememberTab("coverage", v); keepAddress(true); draw(v);
-        }), legend()),
+        }), h("label", { class: "admin-check", for: "coverage-hide" }, hide, " Hide books every language has finished"), legend()),
         ME.admin.indexOf("jobs") >= 0 ? h("p", null, h("a", { href: "#jobs" }, "Queue missing books"), " on the drafting jobs board.") : null, body];
     });
   };
@@ -1059,6 +1112,42 @@ var OWBAdminNav = (function () {
     try { sessionStorage.setItem("owb.admin." + name, value); } catch (e) { /* none */ }
   }
 
+  // How fast people are approving, layer by layer, and at that pace how
+  // long the rest will take (staff/pace.py).
+  VIEWS.pace = function () {
+    return api("/api/admin/pace/").then(function (d) {
+      var most = Math.max.apply(null, [1].concat(d.layers.map(function (l) { return Math.max.apply(null, l.per_week); })));
+      function spark(counts) {
+        return h("span", { class: "admin-spark", role: "img", "aria-label": "Approvals each week, oldest first: " + counts.join(", ") },
+          counts.map(function (n, i) {
+            return h("i", { style: "height:" + (n ? Math.max(8, 100 * n / most) : 0) + "%", title: "Week of " + date(d.weeks[i], true) + ": " + n });
+          }));
+      }
+      function left(l) {
+        if (l.weeks_left === 0) return "all approved";
+        if (l.weeks_left === null) return "no pace yet";
+        if (l.weeks_left > 520) return "over ten years";
+        return l.weeks_left > 104 ? "about " + plural(Math.round(l.weeks_left / 52), "year") : "about " + plural(l.weeks_left, "week");
+      }
+      var rows = d.layers.map(function (l) {
+        return h("tr", null, h("th", { scope: "row" }, h("a", { href: "#review/" + l.code }, l.name)),
+          h("td", null, bar(l.approved, l.size, "good"), h("span", { class: "admin-sub" }, num(l.approved) + " of " + num(l.size))),
+          h("td", null, spark(l.per_week)),
+          h("td", { class: "admin-num" }, num(l.recent)),
+          h("td", null, left(l)));
+      });
+      var people = d.reviewers.map(function (r) {
+        return h("tr", null, h("th", { scope: "row" }, r.name), h("td", null, r.layer_name), h("td", { class: "admin-num" }, num(r.approvals)));
+      });
+      return [head("Progress", "Review pace", "Approvals by people in each review layer, week by week for the last " + d.weeks.length +
+          " weeks, and at the pace of the last " + d.recent_weeks + " how long the rest of each layer would take. An approval made again after a sentence changed counts again."),
+        d.layers.length ? table(["Layer", "Approved", "Each week", ["Per week lately", { class: "admin-num" }], "At this pace"], rows, "admin-pace")
+          : empty("Nothing has been drafted to review yet."),
+        h("section", { class: "admin-block" }, h("h2", null, "Reviewers, last " + d.weeks.length + " weeks"),
+          people.length ? table(["Reviewer", "Layer", ["Approvals", { class: "admin-num" }]], people) : empty("No approvals in these weeks."))];
+    });
+  };
+
   // One book, chapter by chapter.
   VIEWS.book = function (code) {
     return api("/api/admin/books/" + encodeURIComponent(code) + "/").then(function (b) {
@@ -1077,7 +1166,7 @@ var OWBAdminNav = (function () {
           }));
       });
       var uncertain = Object.keys(b.uncertain).map(function (k) {
-        return h("li", null, (k === "meaning" ? "Meaning" : k) + ": " + num(b.uncertain[k]));
+        return h("li", null, (k === "meaning" ? "Meaning" : langName(k)) + ": " + num(b.uncertain[k]));
       });
       return [
         h("p", { class: "admin-back" }, h("a", { href: "#coverage" }, "‹ Coverage")),
@@ -1259,7 +1348,50 @@ var OWBAdminNav = (function () {
       function find(v) { if (v !== f.q) { f.q = v; refilter(); } }
       form.addEventListener("submit", function (e) { e.preventDefault(); stopLive(); find(search.value.trim()); });
       live(search, find);
-      var cards = d.messages.map(function (m) { return messageCard(m, d.team, { listed: f.status, moved: moved }); });
+      // Several messages at once: a box beside each card, and a bar for what
+      // to do with those ticked (a status or an assignee; never a reply).
+      var picked = {};
+      var bar = h("div", { class: "admin-bulk", hidden: true, role: "region", "aria-label": "Selected messages" });
+      var bulkNote = h("span", { class: "admin-note", role: "status" });
+      function ids() { return Object.keys(picked).filter(function (k) { return picked[k]; }).map(Number); }
+      function bulk(body, button) {
+        busy(button, true);
+        api("/api/admin/inbox/", { method: "PATCH", body: Object.assign({ ids: ids() }, body) }).then(function (r) {
+          FLASH = plural(r.messages.length, "message") + " changed.";
+          route();
+        }, function (e) { busy(button, false); note(bulkNote, e, true); });
+      }
+      function drawBar() {
+        var n = ids().length;
+        bar.hidden = !n;
+        bar.textContent = "";
+        if (!n) return;
+        var who = select("inbox-bulk-assign", [["", "Assign to\u2026"], ["none", "Nobody"]].concat((d.team || []).map(function (u) {
+          return [String(u.id), u.name || u.email];
+        })), "");
+        who.setAttribute("aria-label", "Assign the selected messages to");
+        who.addEventListener("change", function () {
+          if (who.value) bulk({ assigned_to: who.value === "none" ? null : Number(who.value) }, who);
+        });
+        var done = h("button", { type: "button", class: "admin-btn" }, "Mark done");
+        done.addEventListener("click", function () { bulk({ status: "done" }, done); });
+        var decline = h("button", { type: "button", class: "admin-btn" }, "Decline");
+        decline.addEventListener("click", function () { bulk({ status: "declined" }, decline); });
+        var clear = h("button", { type: "button", class: "admin-link" }, "Clear");
+        clear.addEventListener("click", function () {
+          picked = {};
+          list.querySelectorAll("input.admin-pick-message").forEach(function (b) { b.checked = false; });
+          drawBar();
+        });
+        add(bar, [h("strong", null, plural(n, "message") + " selected"), who,
+          f.status !== "done" ? done : null, f.status !== "declined" ? decline : null, clear, bulkNote]);
+      }
+      var cards = d.messages.map(function (m) {
+        var box = h("input", { type: "checkbox", class: "admin-pick-message", "aria-label": "Select the message on " + m.verse_label + " from " + (m.from.name || m.from.email) });
+        box.addEventListener("change", function () { picked[m.id] = box.checked; drawBar(); });
+        return h("div", { class: "admin-message-row" }, box, messageCard(m, d.team, { listed: f.status, moved: moved }));
+      });
+      var list = h("div", { class: "admin-messages" }, cards);
       var filtered = f.kind || f.lang || f.book || f.assigned || f.q;
       var pager = null;
       if (d.total > d.page || d.offset) {
@@ -1272,8 +1404,9 @@ var OWBAdminNav = (function () {
           h("span", { class: "admin-sub" }, num(first) + "\u2013" + num(last) + " of " + num(d.total)), newer, older);
       }
       return [head("Readers", "Reader inbox", "Suggestions and questions readers send from a verse. New messages come oldest first; assign one to say you're dealing with it. A reply is emailed to the reader once; mark a message done when it's dealt with."),
-        h("div", { class: "admin-toolbar" }, tabs, whose, kind, lang, book), form,
-        cards.length ? h("div", { class: "admin-messages" }, cards) : empty(filtered ? "No messages match these filters." : "No messages here."),
+        h("div", { class: "admin-toolbar" }, tabs, whose), h("div", { class: "admin-toolbar admin-filters" }, kind, lang, book), form,
+        bar,
+        cards.length ? list : empty(filtered ? "No messages match these filters." : "No messages here."),
         filtered && !cards.length ? (function () {
           var clear = h("button", { type: "button", class: "admin-btn" }, "Clear filters");
           clear.addEventListener("click", function () { f.kind = f.lang = f.book = f.assigned = f.q = ""; refilter(); });
@@ -1295,7 +1428,7 @@ var OWBAdminNav = (function () {
       card.textContent = "";
       add(card, [
         h("header", null, pill(m.kind === "question" ? "Question" : "Suggestion", m.kind === "question" ? "info" : ""),
-          " ", h("a", { href: m.url, rel: "noopener" }, m.verse_label), " · ", m.language + (m.level ? " " + m.level : ""),
+          " ", h("a", { href: m.url, rel: "noopener" }, m.verse_label), " · ", langName(m.language) + (m.level ? ", " + (LEVEL_NAMES[m.level] || m.level) : ""),
           h("span", { class: "admin-sub" }, " from " + (m.from.name ? m.from.name + " <" + m.from.email + ">" : m.from.email) + ", " + when(m.created_at)),
           m.status === "new" ? [" ", pill(m.age_days ? plural(m.age_days, "day") + " waiting" : "today", m.waiting ? "warn" : "")] : null),
         h("blockquote", null, m.text),
@@ -1321,18 +1454,52 @@ var OWBAdminNav = (function () {
         saved.setAttribute("aria-label", "Saved replies");
         saved.addEventListener("change", function () {
           var r = m.replies.filter(function (x) { return x.key === saved.value; })[0];
-          if (r) { text.value = draft = r.text; text.focus(); }
+          if (r) {
+            // Into an empty box it is the reply; into one already written,
+            // it goes in at the cursor, so nothing written is lost.
+            if (!text.value.trim()) text.value = r.text;
+            else {
+              var at = text.selectionStart != null ? text.selectionStart : text.value.length;
+              var before = text.value.slice(0, at).replace(/\s*$/, ""), after = text.value.slice(at).replace(/^\s*/, "");
+              text.value = before + "\n\n" + r.text + (after ? "\n\n" + after : "");
+            }
+            draft = text.value;
+            text.focus();
+          }
           saved.value = "";
         });
         var send = h("button", { type: "button", class: "admin-btn primary" }, "Send reply");
+        // Sending emails the reader at once and can't be taken back, so the
+        // reply is shown as it will go, to whom, before it goes.
+        var preview = h("div", { class: "admin-reply-preview", hidden: true });
         send.addEventListener("click", function () {
           if (!text.value.trim()) { note(status, "Write a reply first.", true); return; }
-          busy(send, true);
-          update({ reply: text.value }).catch(function (e) { busy(send, false); note(status, e, true); });
+          var to = m.from.name ? m.from.name + " <" + m.from.email + ">" : m.from.email;
+          var go = h("button", { type: "button", class: "admin-btn primary" }, "Send now");
+          var back = h("button", { type: "button", class: "admin-btn" }, "Keep editing");
+          preview.textContent = "";
+          add(preview, [h("p", null, h("strong", null, "This goes to " + to + ","), " about " + m.verse_label + ", and can't be taken back:"),
+            h("blockquote", null, text.value.trim()), h("div", { class: "admin-actions" }, go, back)]);
+          preview.hidden = false;
+          text.hidden = send.hidden = saved.hidden = true;
+          go.focus();
+          back.addEventListener("click", function () {
+            preview.hidden = true;
+            text.hidden = send.hidden = saved.hidden = false;
+            text.focus();
+          });
+          go.addEventListener("click", function () {
+            busy(go, true); busy(back, true);
+            update({ reply: text.value }).catch(function (e) {
+              busy(go, false); busy(back, false);
+              note(status, e, true);
+            });
+          });
         });
         card.appendChild(h("label", { class: "admin-label", for: "reply-" + m.id }, "Reply"));
         card.appendChild(saved);
         card.appendChild(text);
+        card.appendChild(preview);
         card.appendChild(h("div", { class: "admin-actions" }, send, statusButtons()));
       } else {
         card.appendChild(h("div", { class: "admin-actions" }, statusButtons()));
@@ -1452,8 +1619,8 @@ var OWBAdminNav = (function () {
       var from = FIX_FROM && FIX_FROM.verse === d.verse ? FIX_FROM : null;
       FIX_FROM = null;
       var nav = h("div", { class: "admin-actions" },
-        d.neighbours[0] ? h("a", { href: "#verse/" + d.neighbours[0] }, "\u2039 " + d.neighbours[0]) : null,
-        d.neighbours[1] ? h("a", { href: "#verse/" + d.neighbours[1] }, d.neighbours[1] + " \u203a") : null,
+        d.neighbours[0] ? h("a", { href: "#verse/" + d.neighbours[0] }, "\u2039 " + verseName(d.neighbours[0])) : null,
+        d.neighbours[1] ? h("a", { href: "#verse/" + d.neighbours[1] }, verseName(d.neighbours[1]) + " \u203a") : null,
         h("a", { href: d.url, rel: "noopener" }, "Read it on the site"));
       var out = [head("Verse inspector", d.label, d.records.length ? plural(d.records.length, "sentence") + " hold this verse" +
         (d.updated ? "; last changed " + when(d.updated) : "") + "." : "No sentence holds this verse yet."), verseSearch(d.label), nav];
@@ -1741,7 +1908,7 @@ var OWBAdminNav = (function () {
         d.fixes.length ? table(["Issue", "Sentence", "Language", "Filed", "Taken by"], d.fixes.map(function (f) {
           return h("tr", null, h("td", null, h("a", { href: f.url, rel: "noopener" }, "#" + f.number)),
             h("td", null, f.verse ? h("a", { href: "#verse/" + f.verse }, f.record || f.verse) : f.title),
-            h("td", null, f.language || "\u2014"), h("td", null, when(f.created_at)), h("td", null, f.assignees.join(", ") || "\u2014"));
+            h("td", null, f.language ? langName(f.language) : "\u2014"), h("td", null, when(f.created_at)), h("td", null, f.assignees.join(", ") || "\u2014"));
         })) : empty("No open fix requests.")));
       return out;
     });
@@ -1904,6 +2071,8 @@ var OWBAdminNav = (function () {
       });
       return [head("Progress", "Work in progress", "Drafting jobs, fix requests and article jobs from the last " + d.days + " days, with the pull requests that name them. A job open for more than " + d.stale_hours + " hours with no pull request has stalled."),
         d.error ? h("p", { class: "notice" }, d.error) : null,
+        // Kept from GitHub for a couple of minutes, and refreshed behind the page after that.
+        d.fetched_at ? h("p", { class: "admin-sub" }, "Read from GitHub " + when(d.fetched_at) + ".") : null,
         d.counts ? h("div", { class: "admin-tiles" }, tile(num(d.counts.open), "open"), tile(num(d.counts.in_review), "with a pull request open"),
           tile(num(d.counts.stale), "stalled", d.counts.stale ? "bad" : ""), tile(num(d.counts.done), "closed in " + d.days + " days")) : null,
         h("div", { class: "admin-toolbar" }, seg([["open", "Open"], ["stale", "Stalled"], ["closed", "Closed"], ["all", "All"]], WORK.state, function (v) { WORK.state = v; route(); }), kind),
@@ -2129,6 +2298,17 @@ var OWBAdminNav = (function () {
           api("/api/admin/users/" + u.id + "/sign-out/", { method: "POST" }).then(function () { route(); }, function (e) { busy(b, false); note(status, e, true); });
         }));
       }
+      // Deactivating keeps the account (and its reviews and messages) but
+      // stops it signing in; deleting can't when it has review history.
+      if (u.can_deactivate) {
+        actions.appendChild(u.active
+          ? confirmButton("Deactivate account", "Stop " + u.email + " signing in?", function (b) {
+            api("/api/admin/users/" + u.id + "/", { method: "PATCH", body: { active: false } }).then(function () { route(); }, function (e) { busy(b, false); note(status, e, true); });
+          })
+          : confirmButton("Reactivate account", "Let " + u.email + " sign in again?", function (b) {
+            api("/api/admin/users/" + u.id + "/", { method: "PATCH", body: { active: true } }).then(function () { route(); }, function (e) { busy(b, false); note(status, e, true); });
+          }));
+      }
       if (u.can_delete) {
         actions.appendChild(confirmButton("Delete account", "Delete " + u.email + " for good?", function (b) {
           api("/api/admin/users/" + u.id + "/", { method: "DELETE" }).then(function () { location.hash = "#users"; }, function (e) { busy(b, false); note(status, e, true); });
@@ -2150,7 +2330,10 @@ var OWBAdminNav = (function () {
             return h("tr", null, h("td", { class: "admin-wrap" }, t.label || "Unknown browser"), h("td", null, date(t.created_at)), h("td", null, when(t.last_used_at)));
           })) : empty("None.")),
         u.messages.length ? h("section", { class: "admin-block" }, h("h2", null, "Messages"),
-          h("ul", null, u.messages.map(function (m) { return h("li", null, m.kind + " on " + m.verse + " · " + m.status + " · " + date(m.created_at)); }))) : null,
+          h("ul", null, u.messages.map(function (m) {
+            return h("li", null, (m.kind === "question" ? "Question" : "Suggestion") + " on ", h("a", { href: "#verse/" + m.verse }, verseName(m.verse)),
+              " · " + m.status + " · " + date(m.created_at));
+          }))) : null,
         ME.admin.indexOf("team") >= 0 ? h("p", null, h("a", { href: "#team" }, "Change roles in Team & access")) : null,
         userChanges(u), actions, status];
     });
@@ -2258,7 +2441,7 @@ var OWBAdminNav = (function () {
   // Activity log.
   var ACTION_LABEL = {
     "role.grant": "granted a role to", "role.revoke": "removed a role from", "role.invite": "invited",
-    "user.delete": "deleted the account", "user.sign_out": "signed out the devices of",
+    "user.delete": "deleted the account", "user.deactivate": "deactivated the account", "user.activate": "reactivated the account", "user.sign_out": "signed out the devices of",
     "message.reply": "answered", "message.done": "marked done", "message.declined": "declined", "message.new": "reopened",
     "job.file": "filed drafting job", "article.job": "filed article job", "digest.send": "sent the weekly digest to", "message.fixed": "told the reader their message led to a change:", "email.send": "emailed the team:", "fix.request": "requested fix",
     "export.download": "downloaded", "review.assign": "assigned review to", "review.unassign": "took back a review assignment from",
@@ -2271,22 +2454,38 @@ var OWBAdminNav = (function () {
         h("span", null, h("strong", null, a.actor || "The admin"), " " + (ACTION_LABEL[a.action] || a.action) + " " + a.target + extra));
     }));
   }
+  // The activity log, narrowed by who did it and what kind of thing.
+  var ACTIVITY = { by: "", kind: "" };
+  var KIND_LABEL = { role: "Roles", user: "Accounts", message: "Reader messages", job: "Drafting jobs", article: "Article jobs",
+    fix: "Fix requests", email: "Team email", digest: "Digests", export: "Downloads", review: "Review steps taken back" };
   VIEWS.activity = function () {
+    var f = ACTIVITY;
     var list = h("div");
     var more = h("button", { type: "button", class: "admin-btn", hidden: true }, "Older");
-    var last = null;
+    var last = null, first = null;
     function load() {
       busy(more, true);
-      return api("/api/admin/activity/" + (last ? "?before=" + last : "")).then(function (d) {
+      var q = [last ? "before=" + last : "", f.by ? "by=" + encodeURIComponent(f.by) : "", f.kind ? "kind=" + f.kind : ""].filter(Boolean).join("&");
+      return api("/api/admin/activity/" + (q ? "?" + q : "")).then(function (d) {
+        first = first || d;
         if (d.actions.length) last = d.actions[d.actions.length - 1].id;
-        list.appendChild(d.actions.length || last ? activityList(d.actions) : empty("Nothing done in the admin yet."));
+        list.appendChild(d.actions.length || last ? activityList(d.actions)
+          : empty(f.by || f.kind ? "Nothing like that in the log." : "Nothing done in the admin yet."));
         more.hidden = !d.more;
         busy(more, false);
       });
     }
     more.addEventListener("click", function () { later(more, load()); });
     return load().then(function () {
-      return [head("Team", "Activity log", "What was done in the admin, newest first: roles, accounts, replies, jobs and emails. Reviews keep their own record."), list, more, approvalLog()];
+      var by = select("activity-by", [["", "Everyone"]].concat(first.people.map(function (p) { return [p, p]; })), f.by);
+      by.setAttribute("aria-label", "Who");
+      var kind = select("activity-kind", [["", "Everything"]].concat(first.kinds.map(function (k) { return [k, KIND_LABEL[k] || k]; })), f.kind);
+      kind.setAttribute("aria-label", "What");
+      [by, kind].forEach(function (sel) {
+        sel.addEventListener("change", function () { f.by = by.value; f.kind = kind.value; route(); });
+      });
+      return [head("Team", "Activity log", "What was done in the admin, newest first: roles, accounts, replies, jobs and emails. Reviews keep their own record."),
+        h("div", { class: "admin-toolbar admin-filters" }, by, kind), list, more, approvalLog()];
     });
   };
 
@@ -2388,7 +2587,7 @@ var OWBAdminNav = (function () {
       return { languages: Array.prototype.map.call(boxes.querySelectorAll("input:checked"), function (x) { return x.value; }),
         testament: testament.value, note: text.value, dry_run: dry };
     }
-    function line(j) { return h("li", null, bookName(d, j.book) + ": " + j.languages.join(", ")); }
+    function line(j) { return h("li", null, bookName(d, j.book) + ": " + j.languages.map(langName).join(", ")); }
     var form = h("form", { class: "admin-form stacked" }, boxes,
       h("label", { class: "admin-field", for: "bulk-testament" }, "Books", testament),
       h("label", { class: "admin-field", for: "bulk-note" }, "Note", text), preview, status, result);
@@ -2916,6 +3115,7 @@ var OWBAdminNav = (function () {
       }
       if (!offset) QUEUE = { layer: page.layer.code, rows: [], more: false };
       QUEUE.more = page.more;
+      QUEUE.matching = page.matching;   // how many the filters give, for "12 of 340"
       page.sentences.forEach(function (s) {
         QUEUE.rows.push({ record: s.record, state: s.state });
         add(rows, pick.chapterRow(s));
@@ -2982,7 +3182,7 @@ var OWBAdminNav = (function () {
       }), "admin-renderings");
       var meaning = r.decisions.filter(function (x) { return x.layer === "meaning"; });
       var mine = r.decisions.filter(function (x) { return x.layer !== "meaning" && x.language === layer; });
-      var noteBox = h("textarea", { id: "review-note", rows: 3, maxlength: 4000,
+      var noteBox = h("textarea", { id: "review-note", rows: 2, maxlength: 4000,
         placeholder: "A note: what is wrong (needed to flag), or anything the next reviewer should know" });
       var status = h("p", { class: "admin-note", role: "status" });
       // Next and previous in the queue as listed (j, k); after approving
@@ -3076,6 +3276,14 @@ var OWBAdminNav = (function () {
           if (rec && all.indexOf(rec) === i) api(sentencePath(rec), { quiet: true }).catch(function () { /* drawn with its error if opened */ });
         });
       }, 200);
+      // Where this sentence is in the queue it was opened from.
+      var progress = null;
+      if (listed && QUEUE.matching) {
+        var place = rows.map(function (x) { return x.record; }).indexOf(record) + 1;
+        progress = h("span", { class: "admin-review-progress" },
+          h("span", null, "Sentence " + num(place) + " of " + num(QUEUE.matching) + " in the queue"),
+          h("i", { "aria-hidden": "true" }, h("b", { style: "width:" + Math.min(100, 100 * place / QUEUE.matching) + "%" })));
+      }
       var trail = d.trail.length ? h("ul", { class: "admin-feed" }, d.trail.map(function (e) {
         return h("li", null, h("time", { datetime: e.at, title: new Date(e.at).toLocaleString("en-GB") }, when(e.at)),
           h("span", null, h("strong", null, e.by), " " + e.label.toLowerCase() + " (" + (e.language ? names[e.language] || e.language : "meaning") + ")",
@@ -3091,7 +3299,12 @@ var OWBAdminNav = (function () {
           words, h("p", { class: "admin-gloss" }, "Literal gloss: " + r.literal_gloss), renderings,
           meaning.length ? [h("h3", { class: "admin-h3" }, "Meaning decisions"), h("div", { class: "admin-decisions" }, meaning.map(decision))] : null,
           mine.length ? [h("h3", { class: "admin-h3" }, (names[layer] || layer) + " decisions"), h("div", { class: "admin-decisions" }, mine.map(decision))] : null),
-        h("section", { class: "admin-block" }, h("h2", null, "Your review"), h("label", { class: "admin-field" }, "Note", noteBox), buttons, status, hint, help),
+        // Kept at the foot of the window while the sentence above is read,
+        // so approving never means scrolling past every language.
+        h("section", { class: "admin-block admin-review-bar", "aria-label": "Your review" },
+          h("div", { class: "admin-review-bar-head" }, h("h2", null, "Your review"), progress),
+          h("label", { class: "admin-field" }, "Note", noteBox), buttons, status),
+        h("div", { class: "admin-review-keys" }, hint, help),
         h("section", { class: "admin-block" }, h("h2", null, "Review trail"), trail)];
     });
   }
@@ -3559,8 +3772,8 @@ var OWBAdminNav = (function () {
 
   // ---- Filters kept in the address -------------------------------------
 
-  var COVERAGE = { testament: sessionTab("coverage", "nt") };
-  filtered("coverage", COVERAGE, { testament: "nt" });
+  var COVERAGE = { testament: sessionTab("coverage", "nt"), hide: "" };
+  filtered("coverage", COVERAGE, { testament: "nt", hide: "" });
   filtered("review", REVIEW, { layer: "", book: "", state: "todo" }, function (arg, f) {
     if (arg.indexOf("/") >= 0) return arg;   // a sentence: #review/grc/JHN.1.1.s1
     f.layer = arg;
@@ -3583,6 +3796,7 @@ var OWBAdminNav = (function () {
   });
   filtered("export", EXPORT, { lang: "en", level: "B", type: "usfm", numbering: "english", books: "" });
   filtered("releases", RELEASES);
+  filtered("activity", ACTIVITY);
 
   // ---- Start ---------------------------------------------------------
 

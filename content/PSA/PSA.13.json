@@ -83,6 +83,11 @@
           "L": "Untuk pemimpin musik. [Sebuah] mazmur Daud.",
           "B": "Untuk pemimpin musik. Mazmur Daud.",
           "R": "Untuk pemimpin musik. Lagu pujian karangan Daud."
+        },
+        "tl": {
+          "L": "Para sa punong mang-aawit. Awit ni David.",
+          "B": "Para sa punong mang-aawit. Awit ni David.",
+          "R": "Para sa tagapanguna ng musika. Isang awit na isinulat ni David."
         }
       },
       "decisions": [
@@ -197,9 +202,131 @@
           "reason": "The title words as the poetry note settles them for every psalm: lamnatseach names the one who leads the music (m2), and Readable says it in plain words; mizmor is a song sung to music (m3), \"псалом\" at Literal and Balanced, \"песнь\" at Readable, as the English Readable says \"song\".",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-tl-1",
+          "layer": "rendering",
+          "language": "tl",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "grammar",
+          "tokens": [
+            "o190130010011",
+            "o190130010012",
+            "o190130010021",
+            "o190130010031",
+            "o190130010032"
+          ],
+          "choice": "\"Para sa punong mang-aawit\"",
+          "alternatives": [],
+          "reason": "The title has no verse number in many English Bibles (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-tl-2",
+          "layer": "rendering",
+          "language": "tl",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_sense",
+          "tokens": [
+            "o190130010012"
+          ],
+          "choice": "\"punong mang-aawit\"",
+          "alternatives": [],
+          "reason": "The one who leads the music (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-tl-3",
+          "layer": "rendering",
+          "language": "tl",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_sense",
+          "tokens": [
+            "o190130010021"
+          ],
+          "choice": "\"Awit\"",
+          "alternatives": [],
+          "reason": "A song sung to music (m3).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
-      "status": "ai_draft"
+      "status": "ai_draft",
+      "alignments": [
+        {
+          "tokens": [
+            "o190130010011",
+            "o190130010012"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "For the music director"
+        },
+        {
+          "tokens": [
+            "o190130010021"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "A psalm"
+        },
+        {
+          "tokens": [
+            "o190130010031"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "of"
+        },
+        {
+          "tokens": [
+            "o190130010032"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "David"
+        },
+        {
+          "tokens": [
+            "o190130010011",
+            "o190130010012"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "音楽を導く者のために"
+        },
+        {
+          "tokens": [
+            "o190130010031",
+            "o190130010032"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ダビデ"
+        },
+        {
+          "tokens": [
+            "o190130010021"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "賛歌"
+        }
+      ]
     },
     {
       "id": "PSA.13.2.s1",
@@ -293,6 +420,11 @@
           "L": "Sampai kapan, {{divine_name:TUHAN|Yahweh}}, {{deity_pronoun:engkau|Engkau}} melupakan aku untuk selama-lamanya? \\q Sampai kapan {{deity_pronoun:engkau|Engkau}} menyembunyikan wajah-{{deity_pronoun:mu|Mu}} dari aku?",
           "B": "Berapa lama lagi, {{divine_name:TUHAN|Yahweh}}? Apakah {{deity_pronoun:engkau|Engkau}} akan terus melupakan aku untuk selamanya? \\q Berapa lama lagi {{deity_pronoun:engkau|Engkau}} memalingkan wajah-{{deity_pronoun:mu|Mu}} dari aku?",
           "R": "{{divine_name:TUHAN|Yahweh}}, berapa lama lagi {{deity_pronoun:engkau|Engkau}} akan terus melupakan aku? Apakah untuk selamanya? \\q Berapa lama lagi {{deity_pronoun:engkau|Engkau}} berpaling dan tidak memandang aku?"
+        },
+        "tl": {
+          "L": "Hanggang kailan, {{divine_name:PANGINOON|Yahweh}}, ako kalilimutan {{deity_pronoun:mo|Mo}} magpakailanman? \\q Hanggang kailan {{deity_pronoun:mo|Mo}} itatago ang {{deity_pronoun:iyong|Iyong}} mukha sa akin?",
+          "B": "Hanggang kailan, {{divine_name:PANGINOON|Yahweh}}? Patuloy {{deity_pronoun:mo|Mo}} ba akong kalilimutan magpakailanman? \\q Hanggang kailan {{deity_pronoun:mo|Mo}} iiwas ang {{deity_pronoun:iyong|Iyong}} mukha sa akin?",
+          "R": "{{divine_name:PANGINOON|Yahweh}}, hanggang kailan {{deity_pronoun:mo|Mo}} ako patuloy na kalilimutan? Magpakailanman ba? \\q Hanggang kailan {{deity_pronoun:ka|Ka}} tatalikod at hindi titingin sa akin?"
         }
       },
       "decisions": [
@@ -529,9 +661,218 @@
           "reason": "m3: hiding the face is withdrawing favour and help; the Psalter writes あなたの顔 (4:7, 9:20) with no new honorific spelling.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-tl-1",
+          "layer": "rendering",
+          "language": "tl",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "idiom",
+          "tokens": [
+            "o190130020011",
+            "o190130020021"
+          ],
+          "choice": "\"Hanggang kailan\"",
+          "alternatives": [],
+          "reason": "How long (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-tl-2",
+          "layer": "rendering",
+          "language": "tl",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "grammar",
+          "tokens": [
+            "o190130020041",
+            "o190130020051"
+          ],
+          "choice": "\"ako kalilimutan {{deity_pronoun:mo|Mo}} magpakailanman?\"",
+          "alternatives": [],
+          "reason": "Two complaints in one (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-tl-3",
+          "layer": "rendering",
+          "language": "tl",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "idiom",
+          "tokens": [
+            "o190130020081",
+            "o190130020101",
+            "o190130020102"
+          ],
+          "choice": "\"itatago ang {{deity_pronoun:iyong|Iyong}} mukha\"",
+          "alternatives": [],
+          "reason": "Withdraw favor and help (m3).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
-      "status": "ai_draft"
+      "status": "ai_draft",
+      "alignments": [
+        {
+          "tokens": [
+            "o190130020011",
+            "o190130020021"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "How long"
+        },
+        {
+          "tokens": [
+            "o190130020031"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "{{divine_name:LORD|Yahweh}}"
+        },
+        {
+          "tokens": [
+            "o190130020041",
+            "o190130020042"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Will {{deity_pronoun:you|You}} go on forgetting me"
+        },
+        {
+          "tokens": [
+            "o190130020051"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "for good"
+        },
+        {
+          "tokens": [
+            "o190130020061",
+            "o190130020071"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "How long"
+        },
+        {
+          "tokens": [
+            "o190130020081"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "will {{deity_pronoun:you|You}} turn"
+        },
+        {
+          "tokens": [
+            "o190130020101",
+            "o190130020102"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "{{deity_pronoun:your|Your}} face"
+        },
+        {
+          "tokens": [
+            "o190130020081"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "away"
+        },
+        {
+          "tokens": [
+            "o190130020111",
+            "o190130020112"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "from me"
+        },
+        {
+          "tokens": [
+            "o190130020011",
+            "o190130020021"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "いつまで"
+        },
+        {
+          "tokens": [
+            "o190130020031"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "{{divine_name:主|ヤハウェ}}"
+        },
+        {
+          "tokens": [
+            "o190130020051"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "ずっと"
+        },
+        {
+          "tokens": [
+            "o190130020041",
+            "o190130020042"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたしを忘れたままでおられる"
+        },
+        {
+          "tokens": [
+            "o190130020061",
+            "o190130020071"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "いつまで"
+        },
+        {
+          "tokens": [
+            "o190130020101",
+            "o190130020102"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなたの顔"
+        },
+        {
+          "tokens": [
+            "o190130020111",
+            "o190130020112"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたしから"
+        },
+        {
+          "tokens": [
+            "o190130020081"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "背けておられる"
+        }
+      ]
     },
     {
       "id": "PSA.13.3.s1",
@@ -630,6 +971,11 @@
           "L": "Sampai kapan aku menaruh rancangan-rancangan dalam jiwaku, \\q kedukaan dalam hatiku sepanjang hari? \\q Sampai kapan musuhku meninggikan diri atas aku?",
           "B": "Berapa lama lagi aku harus terus memikirkan rencana dalam batinku, \\q dengan duka dalam hatiku sepanjang hari? \\q Berapa lama lagi musuhku berdiri dengan jaya atas aku?",
           "R": "Berapa lama lagi aku harus terus khawatir dan mencari jalan keluar? \\q Berapa lama lagi aku merasa sedih setiap hari? \\q Berapa lama lagi musuhku terus menang atas aku?"
+        },
+        "tl": {
+          "L": "Hanggang kailan ako maglalagay ng mga balak sa aking kaluluwa, \\q ng lungkot sa aking puso sa araw? \\q Hanggang kailan matataas ang aking kaaway sa akin?",
+          "B": "Hanggang kailan ko dapat paulit-ulit na pag-isipan ang mga plano, \\q na may dalamhati sa aking puso buong araw? \\q Hanggang kailan tatayo sa ibabaw ko ang aking kaaway sa tagumpay?",
+          "R": "Hanggang kailan ako mag-aalala at maghahanap ng paraan upang makalabas? \\q Hanggang kailan ako malulungkot araw-araw? \\q Hanggang kailan ako patuloy na matatalo ng aking kaaway?"
         }
       },
       "decisions": [
@@ -721,9 +1067,263 @@
           "reason": "m1: making plans inside with no way out; Literal keeps the Hebrew picture.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-tl-1",
+          "layer": "rendering",
+          "language": "tl",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "idiom",
+          "tokens": [
+            "o190130030031",
+            "o190130030041",
+            "o190130030052"
+          ],
+          "choice": "\"maglalagay ng mga balak sa aking kaluluwa\"",
+          "alternatives": [],
+          "reason": "Keep making plans inside, with no way out (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-tl-2",
+          "layer": "rendering",
+          "language": "tl",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "idiom",
+          "tokens": [
+            "o190130030081"
+          ],
+          "choice": "\"sa araw\"",
+          "alternatives": [],
+          "reason": "All day long (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-tl-3",
+          "layer": "rendering",
+          "language": "tl",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "idiom",
+          "tokens": [
+            "o190130030111"
+          ],
+          "choice": "\"matataas ang aking kaaway sa akin\"",
+          "alternatives": [],
+          "reason": "Stand over me as the winner (m3).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
-      "status": "ai_draft"
+      "status": "ai_draft",
+      "alignments": [
+        {
+          "tokens": [
+            "o190130030011",
+            "o190130030021"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "How long"
+        },
+        {
+          "tokens": [
+            "o190130030031"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "must I keep turning"
+        },
+        {
+          "tokens": [
+            "o190130030041"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "plans"
+        },
+        {
+          "tokens": [
+            "o190130030051",
+            "o190130030052",
+            "o190130030053"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "over in my mind"
+        },
+        {
+          "tokens": [
+            "o190130030061"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "with grief"
+        },
+        {
+          "tokens": [
+            "o190130030071",
+            "o190130030072",
+            "o190130030073"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "in my heart"
+        },
+        {
+          "tokens": [
+            "o190130030081"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "all day long"
+        },
+        {
+          "tokens": [
+            "o190130030091",
+            "o190130030101"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "How long"
+        },
+        {
+          "tokens": [
+            "o190130030121",
+            "o190130030122"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "my enemy"
+        },
+        {
+          "tokens": [
+            "o190130030111"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "stand"
+        },
+        {
+          "tokens": [
+            "o190130030131",
+            "o190130030132"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "over me"
+        },
+        {
+          "tokens": [
+            "o190130030111"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "in triumph"
+        },
+        {
+          "tokens": [
+            "o190130030011",
+            "o190130030021"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "いつまで"
+        },
+        {
+          "tokens": [
+            "o190130030051",
+            "o190130030052",
+            "o190130030053"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "心の中で"
+        },
+        {
+          "tokens": [
+            "o190130030031",
+            "o190130030041"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あれこれと思い巡らし"
+        },
+        {
+          "tokens": [
+            "o190130030081"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "一日中"
+        },
+        {
+          "tokens": [
+            "o190130030071",
+            "o190130030072",
+            "o190130030073"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "心に"
+        },
+        {
+          "tokens": [
+            "o190130030061"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "悲しみ"
+        },
+        {
+          "tokens": [
+            "o190130030091",
+            "o190130030101"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "いつまで"
+        },
+        {
+          "tokens": [
+            "o190130030121",
+            "o190130030122"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "敵"
+        },
+        {
+          "tokens": [
+            "o190130030131",
+            "o190130030132"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたしの上に"
+        },
+        {
+          "tokens": [
+            "o190130030111"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "勝ち誇って立つ"
+        }
+      ]
     },
     {
       "id": "PSA.13.4.s1",
@@ -818,6 +1418,11 @@
           "L": "Pandanglah, jawablah aku, {{divine_name:TUHAN|Yahweh}}, Allahku; \\q terangilah mataku, supaya jangan aku tertidur [dalam] kematian,",
           "B": "Berpalinglah dan pandanglah, {{divine_name:TUHAN|Yahweh}}, Allahku, dan jawablah aku! \\q Kembalikanlah terang ke mataku, supaya aku tidak tertidur dalam kematian,",
           "R": "{{divine_name:TUHAN|Yahweh}}, Allahku, pandanglah aku dan jawablah aku! \\q Buatlah aku kuat lagi, supaya aku tidak mati."
+        },
+        "tl": {
+          "L": "Tumingin {{deity_pronoun:ka|Ka}}, sagutin {{deity_pronoun:mo|Mo}} ako, {{divine_name:PANGINOON|Yahweh}} kong Diyos; \\q bigyan {{deity_pronoun:mo|Mo}} ng liwanag ang aking mga mata, baka ako matulog [sa pagkakatulog ng] kamatayan,",
+          "B": "Lumingon {{deity_pronoun:ka|Ka}} at tumingin, {{divine_name:PANGINOON|Yahweh}} kong Diyos, at sagutin {{deity_pronoun:mo|Mo}} ako! \\q Ibalik {{deity_pronoun:mo|Mo}} ang liwanag sa aking mga mata, kung hindi ay makatutulog ako sa kamatayan,",
+          "R": "{{divine_name:PANGINOON|Yahweh}} kong Diyos, tingnan {{deity_pronoun:mo|Mo}} ako at sagutin! \\q Palakasin {{deity_pronoun:mo|Mo}} akong muli, kung hindi ay mamamatay ako."
         }
       },
       "decisions": [
@@ -947,9 +1552,219 @@
           "reason": "m2: sleeping the death is dying; r-en-1 gives the sense of the light in the eyes at Readable.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-tl-1",
+          "layer": "rendering",
+          "language": "tl",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "idiom",
+          "tokens": [
+            "o190130040051",
+            "o190130040061"
+          ],
+          "choice": "\"bigyan {{deity_pronoun:mo|Mo}} ng liwanag ang aking mga mata\"",
+          "alternatives": [],
+          "reason": "Give me new life (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-tl-2",
+          "layer": "rendering",
+          "language": "tl",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "idiom",
+          "tokens": [
+            "o190130040081",
+            "o190130040092"
+          ],
+          "choice": "\"matulog [sa pagkakatulog ng] kamatayan\"",
+          "alternatives": [],
+          "reason": "Die (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-tl-3",
+          "layer": "rendering",
+          "language": "tl",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "grammar",
+          "tokens": [
+            "o190130040092"
+          ],
+          "choice": "\"ng] kamatayan,\"",
+          "alternatives": [],
+          "reason": "A sentence that runs on (m3).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
-      "status": "ai_draft"
+      "status": "ai_draft",
+      "alignments": [
+        {
+          "tokens": [
+            "o190130040011",
+            "o190130040012"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Turn and look"
+        },
+        {
+          "tokens": [
+            "o190130040031"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "{{divine_name:LORD|Yahweh}}"
+        },
+        {
+          "tokens": [
+            "o190130040041",
+            "o190130040042"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "my God"
+        },
+        {
+          "tokens": [
+            "o190130040021",
+            "o190130040022"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "answer me"
+        },
+        {
+          "tokens": [
+            "o190130040051",
+            "o190130040052"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "Bring the light back"
+        },
+        {
+          "tokens": [
+            "o190130040061",
+            "o190130040062"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "to my eyes"
+        },
+        {
+          "tokens": [
+            "o190130040071"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "or"
+        },
+        {
+          "tokens": [
+            "o190130040081"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "I will fall asleep"
+        },
+        {
+          "tokens": [
+            "o190130040091",
+            "o190130040092"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "in death"
+        },
+        {
+          "tokens": [
+            "o190130040011",
+            "o190130040012"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "振り向いて、ご覧ください"
+        },
+        {
+          "tokens": [
+            "o190130040031"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "{{divine_name:主|ヤハウェ}}"
+        },
+        {
+          "tokens": [
+            "o190130040041",
+            "o190130040042"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたしの神"
+        },
+        {
+          "tokens": [
+            "o190130040021",
+            "o190130040022"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたしに答えてください"
+        },
+        {
+          "tokens": [
+            "o190130040061",
+            "o190130040062"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたしの目に"
+        },
+        {
+          "tokens": [
+            "o190130040051",
+            "o190130040052"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "光を取り戻させてください"
+        },
+        {
+          "tokens": [
+            "o190130040071"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "そうでなければ"
+        },
+        {
+          "tokens": [
+            "o190130040081",
+            "o190130040091",
+            "o190130040092"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "死の眠りに落ちてしまう"
+        }
+      ]
     },
     {
       "id": "PSA.13.5.s1",
@@ -1040,6 +1855,11 @@
           "L": "supaya jangan musuhku berkata, \"Aku telah mengalahkan dia,\" \\q [supaya jangan] lawan-lawanku bersorak-sorai karena aku goyah.",
           "B": "supaya musuhku tidak berkata, \"Aku telah mengalahkan dia,\" \\q dan lawan-lawanku tidak bersorak-sorai ketika aku tergelincir.",
           "R": "Kalau tidak, musuhku akan berkata, \"Aku menang!\" \\q Orang-orang yang melawan aku akan senang melihat aku jatuh."
+        },
+        "tl": {
+          "L": "baka sabihin ng aking kaaway, \"Nadaig ko siya,\" \\q [baka] magalak ang aking mga kalaban dahil ako ay natitinag.",
+          "B": "at sasabihin ng aking kaaway, \"Tinalo ko siya,\" \\q at magdiriwang ang mga laban sa akin kapag ako ay natisod.",
+          "R": "Pagkatapos ay sasabihin ng aking kaaway, \"Nanalo ako!\" \\q Matutuwa ang mga taong laban sa akin na makita akong bumagsak."
         }
       },
       "decisions": [
@@ -1129,9 +1949,160 @@
           "reason": "m2: the clause gives the fear behind the prayer; Balanced and Readable state it as what would follow.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-tl-1",
+          "layer": "rendering",
+          "language": "tl",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_sense",
+          "tokens": [
+            "o190130050081"
+          ],
+          "choice": "\"natitinag\"",
+          "alternatives": [],
+          "reason": "I totter and fall (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-tl-2",
+          "layer": "rendering",
+          "language": "tl",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "grammar",
+          "tokens": [
+            "o190130050011"
+          ],
+          "choice": "\"baka\"",
+          "alternatives": [],
+          "reason": "The fear behind the prayer (m2).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
-      "status": "ai_draft"
+      "status": "ai_draft",
+      "alignments": [
+        {
+          "tokens": [
+            "o190130050031",
+            "o190130050032"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "my enemy"
+        },
+        {
+          "tokens": [
+            "o190130050021"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "will say"
+        },
+        {
+          "tokens": [
+            "o190130050041",
+            "o190130050042"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "I have beaten him"
+        },
+        {
+          "tokens": [
+            "o190130050051",
+            "o190130050052"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "those against me"
+        },
+        {
+          "tokens": [
+            "o190130050061"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "will celebrate"
+        },
+        {
+          "tokens": [
+            "o190130050071"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "when"
+        },
+        {
+          "tokens": [
+            "o190130050081"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "I stumble"
+        },
+        {
+          "tokens": [
+            "o190130050031",
+            "o190130050032"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "敵"
+        },
+        {
+          "tokens": [
+            "o190130050041",
+            "o190130050042"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あいつに勝った"
+        },
+        {
+          "tokens": [
+            "o190130050021"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "言い"
+        },
+        {
+          "tokens": [
+            "o190130050051",
+            "o190130050052"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたしに逆らう者たち"
+        },
+        {
+          "tokens": [
+            "o190130050071",
+            "o190130050081"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたしがつまずく"
+        },
+        {
+          "tokens": [
+            "o190130050061"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "喜び祝う"
+        }
+      ]
     },
     {
       "id": "PSA.13.6.s1",
@@ -1230,6 +2201,11 @@
           "L": "Tetapi aku, pada kasih setia-{{deity_pronoun:mu|Mu}} aku telah percaya; \\q hatiku akan bersorak-sorai karena keselamatan dari-{{deity_pronoun:mu|Mu}}. \\q Aku akan bernyanyi bagi {{divine_name:TUHAN|Yahweh}}, \\q sebab {{deity_pronoun:dia|Dia}} telah berbuat baik kepadaku.",
           "B": "Tetapi aku percaya kepada kasih setia-{{deity_pronoun:mu|Mu}}; \\q hatiku akan bersukacita karena {{deity_pronoun:engkau|Engkau}} menyelamatkan. \\q Aku akan bernyanyi bagi {{divine_name:TUHAN|Yahweh}}, \\q sebab {{deity_pronoun:dia|Dia}} begitu murah hati kepadaku.",
           "R": "Tetapi aku percaya kepada kasih setia-{{deity_pronoun:mu|Mu}}. \\q Aku akan penuh sukacita ketika {{deity_pronoun:engkau|Engkau}} menyelamatkan aku. \\q Aku akan bernyanyi bagi {{divine_name:TUHAN|Yahweh}}, \\q sebab {{deity_pronoun:dia|Dia}} begitu baik kepadaku."
+        },
+        "tl": {
+          "L": "Ngunit ako, sa {{deity_pronoun:iyong|Iyong}} tapat na pag-ibig ay nagtiwala ako; \\q magagalak ang aking puso sa {{deity_pronoun:iyong|Iyong}} pagliligtas. \\q Aawit ako {{divine_name:sa PANGINOON|kay Yahweh}}, \\q sapagkat {{deity_pronoun:siya|Siya}} ay naging lubhang mabuti sa akin.",
+          "B": "Ngunit nagtitiwala ako sa {{deity_pronoun:iyong|Iyong}} tapat na pag-ibig; \\q magagalak ang aking puso sapagkat {{deity_pronoun:ikaw|Ikaw}} ay nagliligtas. \\q Aawit ako {{divine_name:sa PANGINOON|kay Yahweh}}, \\q sapagkat napakabukas-palad {{deity_pronoun:niya|Niya}} sa akin.",
+          "R": "Ngunit nagtitiwala ako sa {{deity_pronoun:iyong|Iyong}} tapat na pag-ibig. \\q Mapupuno ako ng galak kapag iniligtas {{deity_pronoun:mo|Mo}} ako. \\q Aawit ako {{divine_name:sa PANGINOON|kay Yahweh}}, \\q sapagkat napakabuti {{deity_pronoun:niya|Niya}} sa akin."
         }
       },
       "decisions": [
@@ -1444,9 +2420,269 @@
           "reason": "m3: he has treated me generously; 報いる here is a good return, not punishment.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-tl-1",
+          "layer": "rendering",
+          "language": "tl",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190130060022"
+          ],
+          "choice": "\"tapat na pag-ibig\"",
+          "alternatives": [],
+          "reason": "Love that keeps faith (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-tl-2",
+          "layer": "rendering",
+          "language": "tl",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "grammar",
+          "tokens": [
+            "o190130060011",
+            "o190130060012",
+            "o190130060031"
+          ],
+          "choice": "\"Ngunit ako\"",
+          "alternatives": [],
+          "reason": "The turn of the psalm (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-tl-3",
+          "layer": "rendering",
+          "language": "tl",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "idiom",
+          "tokens": [
+            "o190130060101"
+          ],
+          "choice": "\"naging lubhang mabuti sa akin\"",
+          "alternatives": [],
+          "reason": "Treated me generously (m3).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
-      "status": "ai_draft"
+      "status": "ai_draft",
+      "alignments": [
+        {
+          "tokens": [
+            "o190130060011"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "But"
+        },
+        {
+          "tokens": [
+            "o190130060012",
+            "o190130060031"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "I trust"
+        },
+        {
+          "tokens": [
+            "o190130060021",
+            "o190130060022",
+            "o190130060023"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "in {{deity_pronoun:your|Your}} loyal love"
+        },
+        {
+          "tokens": [
+            "o190130060051",
+            "o190130060052"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "my heart"
+        },
+        {
+          "tokens": [
+            "o190130060041"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "will be glad"
+        },
+        {
+          "tokens": [
+            "o190130060061",
+            "o190130060062",
+            "o190130060063"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "because {{deity_pronoun:you|You}} save"
+        },
+        {
+          "tokens": [
+            "o190130060071"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "I will sing"
+        },
+        {
+          "tokens": [
+            "o190130060081",
+            "o190130060082"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "to {{divine_name:the LORD|Yahweh}}"
+        },
+        {
+          "tokens": [
+            "o190130060091"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "because"
+        },
+        {
+          "tokens": [
+            "o190130060101"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "{{deity_pronoun:he|He}} has been so generous"
+        },
+        {
+          "tokens": [
+            "o190130060111",
+            "o190130060112"
+          ],
+          "language": "en",
+          "level": "B",
+          "target_span": "to me"
+        },
+        {
+          "tokens": [
+            "o190130060011"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "しかし"
+        },
+        {
+          "tokens": [
+            "o190130060012"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたし"
+        },
+        {
+          "tokens": [
+            "o190130060021",
+            "o190130060022",
+            "o190130060023"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなたの変わらぬいつくしみに"
+        },
+        {
+          "tokens": [
+            "o190130060031"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "信頼する"
+        },
+        {
+          "tokens": [
+            "o190130060061",
+            "o190130060062",
+            "o190130060063"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "あなたが救ってくださる"
+        },
+        {
+          "tokens": [
+            "o190130060051",
+            "o190130060052"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたしの心"
+        },
+        {
+          "tokens": [
+            "o190130060041"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "喜ぶ"
+        },
+        {
+          "tokens": [
+            "o190130060081",
+            "o190130060082"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "{{divine_name:主|ヤハウェ}}に"
+        },
+        {
+          "tokens": [
+            "o190130060071"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "歌おう"
+        },
+        {
+          "tokens": [
+            "o190130060111",
+            "o190130060112"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "わたしに"
+        },
+        {
+          "tokens": [
+            "o190130060101"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "これほど良くしてくださった"
+        },
+        {
+          "tokens": [
+            "o190130060091"
+          ],
+          "language": "ja",
+          "level": "B",
+          "target_span": "のだから"
+        }
+      ]
     }
   ]
 }
