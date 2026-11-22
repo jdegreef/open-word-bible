@@ -2,7 +2,8 @@
 database (which import_content keeps in step with content/ on main).
 
 GET /api/admin/overview/        the dashboard: totals, what needs attention,
-                                recent activity
+                                recent activity, and when the totals were
+                                counted (?fresh=1 counts again)
 GET /api/admin/coverage/        every book: chapters and sentences drafted,
                                 and sentences in each language
 GET /api/admin/languages/       each reading language's progress and team
@@ -50,7 +51,7 @@ LANGS = languages.CODES
 OT = set(refs.OT_CODES)
 # The review layers for the meaning, shared by every language.
 MEANING_LAYERS = ("grc", "hbo")
-SUMMARY_SHAPE = 2
+SUMMARY_SHAPE = 3
 
 
 def book_name(code):
@@ -278,7 +279,7 @@ def engagement(request):
     })
 
 
-def _summary():
+def _summary(fresh=False):
     """The dashboard's numbers that are the same for every account, cached
     until the content changes or a review is made: the totals, each
     language's sentences, books not started or partly drafted, and the
@@ -287,7 +288,7 @@ def _summary():
     # SUMMARY_SHAPE: raise when what is kept here changes, so an entry kept
     # by the code before a deploy isn't read as the new shape.
     key = f"staff.overview.{SUMMARY_SHAPE}.{stamps[1]}"
-    out = cache.get(key)
+    out = None if fresh else cache.get(key)
     if out is not None:
         return out
     books = _coverage()
@@ -311,6 +312,7 @@ def _summary():
         "partial": sum(1 for b in books if b["sentences"] and b["chapters_drafted"] < b["chapters"]),
         "flags": open_flag_count(),
         "reviewed": _reviewed(),
+        "counted_at": timezone.now(),
     }
     cache.set(key, out, 7 * 86400)
     return out
@@ -337,7 +339,7 @@ def overview(request):
     inbox, the team and the last import are read as they are (each a
     query on an index)."""
     mine = request.admin_areas
-    summary = _summary()
+    summary = _summary(fresh=request.query_params.get("fresh") == "1")
     attention = []
     if "inbox" in mine:
         waiting = ReaderMessage.objects.filter(status=ReaderMessage.Status.NEW).aggregate(
@@ -388,6 +390,7 @@ def overview(request):
     return Response({
         "totals": summary["totals"],
         "reviewed": summary["reviewed"],
+        "counted_at": summary["counted_at"],
         "languages": summary["languages"],
         "attention": attention,
         "activity": activity,

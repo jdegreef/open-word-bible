@@ -29,8 +29,8 @@ from translation import search
 from translation.models import ContentFile, SearchLanguage, Sentence
 
 from .inbox import inbox_team, message_json, person, verse_label, verse_url
-from .models import AdminAction
-from .permissions import admin_view
+from .models import AdminAction, shown_actor
+from .permissions import admin_view, is_super_admin
 from .progress import _BOOKS, CHAPTERS, book_name
 
 # content/JHN/JHN.3.json (a chapter), JHN.1.1-18.json (verses), JHN.7.53-8.11.json
@@ -128,6 +128,7 @@ def verse(request, vid):
     except ValueError:
         raise NotFound(f"Not a verse: {vid!r}")
     vid = f"{ref.book}.{ref.chapter}.{ref.verse}"
+    boss = is_super_admin(request.user)
     # A sentence is filed under its first verse, which may be in the chapter
     # before (book, chapter is indexed; refs is not).
     sentences = list(Sentence.objects.filter(book=ref.book, chapter__in=[ref.chapter - 1, ref.chapter],
@@ -145,8 +146,9 @@ def verse(request, vid):
         "words": words, "files": files,
         "updated": Sentence.objects.filter(id__in=[s.id for s in sentences]).aggregate(t=Max("updated_at"))["t"],
         "neighbours": _neighbours(ref.book, ref.chapter, ref.verse),
-        "fixes": [{"at": a.created_at, "by": a.actor_email, "target": a.target, **a.detail}
-                  for a in AdminAction.objects.filter(action="fix.request", detail__verse=vid)[:20]],
+        "fixes": [{**a.detail, "at": a.created_at, "by": shown_actor(a, request.user, boss), "target": a.target}
+                  for a in AdminAction.objects.filter(action="fix.request", detail__verse=vid)
+                  .select_related("actor")[:20]],
     }
     if "inbox" in request.admin_areas:
         answer["messages"] = [message_json(m) for m in ReaderMessage.objects.filter(verse=vid)

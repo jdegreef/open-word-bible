@@ -9,7 +9,8 @@ POST   /api/admin/team/       {email, kind, language}
                                             never signed in
 DELETE /api/admin/team/roles/<id>/          take a role away
 POST   /api/admin/team/invite/ {email}      send the invitation again
-GET    /api/admin/activity/?before=<id>     what was done in the admin
+GET    /api/admin/activity/?before=<id>&by=&kind=
+                                            what was done in the admin
 
 Super admin is not granted here: the addresses in OWB_SUPER_ADMIN_EMAILS
 are made super admins when they sign in (accounts.auth.sync_super_admin),
@@ -25,6 +26,7 @@ from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.core.mail import send_mail
 from django.db import IntegrityError, transaction
+from django.db.models import Q
 from rest_framework import status
 from rest_framework.exceptions import ValidationError
 from rest_framework.response import Response
@@ -166,12 +168,32 @@ def resend(request):
     return Response({"invited": True})
 
 
+ACTIVITY_PAGE = 50
+
+
 @admin_view("team")
 def activity(request):
-    actions = AdminAction.objects.all()
-    before = request.query_params.get("before")
-    if before and before.isdigit():
-        actions = actions.filter(id__lt=int(before))
-    page = list(actions[:50])
-    return Response({"actions": [_action_json(a) for a in page],
-                     "more": len(page) == 50})
+    """The activity log, newest first, ACTIVITY_PAGE at a time: before is
+    the id of the last action shown, and the next page continues after it
+    in the same order (time, then id), so none is skipped or repeated.
+    by (an address) and kind (the part of an action before its dot:
+    "message", "role", ...) narrow it; the answer lists both to choose
+    from."""
+    params = request.query_params
+    everything = AdminAction.objects.order_by("-created_at", "-id")
+    actions = everything
+    if params.get("by"):
+        actions = actions.filter(actor_email__iexact=params["by"])
+    if params.get("kind"):
+        actions = actions.filter(action__startswith=params["kind"] + ".")
+    before = params.get("before", "")
+    last = AdminAction.objects.filter(id=int(before)).first() if before.isdigit() else None
+    if last:
+        actions = actions.filter(Q(created_at__lt=last.created_at) | Q(created_at=last.created_at, id__lt=last.id))
+    page = list(actions[:ACTIVITY_PAGE + 1])
+    return Response({"actions": [_action_json(a) for a in page[:ACTIVITY_PAGE]],
+                     "more": len(page) > ACTIVITY_PAGE,
+                     "people": sorted(set(everything.exclude(actor_email="").values_list("actor_email", flat=True)
+                                          .distinct().order_by())),
+                     "kinds": sorted({a.split(".", 1)[0] for a in everything.values_list("action", flat=True)
+                                      .distinct().order_by()})})
