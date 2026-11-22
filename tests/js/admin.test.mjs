@@ -46,6 +46,28 @@ test("a flag forgets every sentence (it can put one back in the queue)", () => {
   assert.ok(left.includes(A + "users/?offset=0"));
 });
 
+test("bulk review forgets every review read and the counts; its dry run forgets nothing", () => {
+  const reads = [...READS, A + "review/workspace/?layer=fr", A + "assignments/"];
+  const left = kept(A + "review/bulk/", reads, {}, { action: "approve", records: ["JHN.1.1.s1"] });
+  assert.ok(!left.some((k) => k.startsWith(A + "review/")));
+  for (const gone of [A + "overview/", A + "coverage/", A + "assignments/"]) assert.ok(!left.includes(gone), gone);
+  assert.ok(left.includes(A + "users/?offset=0"));
+  assert.equal(C.drops(A + "review/bulk/", {}).next, null);
+  assert.deepEqual(kept(A + "review/bulk/", reads, {}, { action: "approve", chapter: "JHN.1", dry_run: true }), reads);
+});
+
+test("a single review action forgets the workspace and assignments too", () => {
+  const left = kept(A + "review/JHN.1.1.s1/", [A + "review/workspace/?layer=grc", A + "assignments/", A + "team/"]);
+  assert.deepEqual(left, [A + "team/"]);
+});
+
+test("an assignment change forgets assignments, the workspace and the dashboard, not the queue", () => {
+  const reads = [...READS, A + "review/workspace/?layer=fr", A + "assignments/?closed=1"];
+  const left = kept(A + "assignments/4/", reads);
+  for (const gone of [A + "assignments/?closed=1", A + "review/workspace/?layer=fr", A + "overview/"]) assert.ok(!left.includes(gone), gone);
+  assert.ok(left.includes(A + "review/?layer=grc&book=&state=todo&offset=0"));
+});
+
 test("an inbox reply forgets the inbox and the overview, not the review", () => {
   const left = kept(A + "inbox/12/", READS);
   for (const gone of [A + "inbox/?status=new", A + "overview/", A + "books/JHN/", A + "activity/"]) assert.ok(!left.includes(gone), gone);

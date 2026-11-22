@@ -36,7 +36,7 @@ from texts.models import Edition
 from translation import counts
 from translation.models import ContentFile, Decision, DraftedCount, ImportRun, Rendering, ReviewEvent, Sentence
 
-from . import inbox
+from . import assignments, inbox
 from .models import AdminAction
 from .permissions import admin_view
 from .review import open_flag_count
@@ -337,6 +337,14 @@ def overview(request):
         if summary["flags"]:
             attention.append({"key": "flags", "count": summary["flags"], "tone": "hot",
                               "label": "sentences flagged by reviewers", "href": "#flags"})
+    if "review" in mine:
+        assigned, overdue = assignments.attention(request.user)
+        if overdue:
+            attention.append({"key": "assigned_overdue", "count": overdue, "tone": "hot",
+                              "label": "review assignments past their date", "href": "#workspace"})
+        if assigned:
+            attention.append({"key": "assigned", "count": assigned, "tone": "warn",
+                              "label": "review assignments assigned to you", "href": "#workspace"})
     if "team" in mine:
         pending = (get_user_model().objects.filter(last_login__isnull=True, roles__isnull=False)
                    .distinct().count())

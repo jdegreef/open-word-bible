@@ -349,10 +349,20 @@ def _act(request, s, layer, data):
         raise ValidationError({"note": "Say what you noticed.", "code": "empty"})
     if len(note) > 4000:
         raise ValidationError({"note": "Keep it under 4,000 characters.", "code": "too_long"})
+    event = apply(request.user, s, layer, action, note)
+    return Response({"event": _event_json(event), "state": state_of(layer, s.id),
+                     "next": _next(layer, s)}, status=status.HTTP_201_CREATED)
+
+
+def apply(user, s, layer, action, note):
+    """Record user's action ("approve", "flag" or "comment", already
+    checked) on s in layer, which user may review and s is in: one
+    ReviewEvent, with the digest and snapshot of what an approval approves.
+    staff/bulk.py applies it a sentence at a time."""
     kind = {"approve": _approve(layer), "flag": A.FLAGGED, "comment": A.COMMENT}[action]
     with transaction.atomic():
         # Saving the event brings the sentence's ReviewState up to date.
-        event = ReviewEvent.objects.create(sentence=s, user=request.user, action=kind, note=note,
+        event = ReviewEvent.objects.create(sentence=s, user=user, action=kind, note=note,
                                            language="" if _meaning(layer) else layer,
                                            digest=digest(s, layer) if action == "approve" else "",
                                            snapshot=snapshot(s, layer) if action == "approve" else {})
@@ -362,8 +372,7 @@ def _act(request, s, layer, data):
         if kind == A.MEANING_REVIEWED:
             # update(), not save(): updated_at says when the text last changed.
             Sentence.objects.filter(pk=s.pk, status=Status.AI_DRAFT).update(status=Status.MEANING_REVIEWED)
-    return Response({"event": _event_json(event), "state": state_of(layer, s.id),
-                     "next": _next(layer, s)}, status=status.HTTP_201_CREATED)
+    return event
 
 
 def open_flags():
