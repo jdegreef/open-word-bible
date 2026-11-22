@@ -1,7 +1,9 @@
 """The admin (staff/) and reader messages (feedback/): who may open what,
 the progress numbers, the team, accounts, the inbox, jobs and team email."""
+import http.client
 import io
 import json
+import re
 import zipfile
 import shutil
 import tempfile
@@ -15,7 +17,7 @@ from django.core import mail
 from django.core.cache import cache
 from django.core.management import CommandError, call_command
 from django.db import OperationalError, connection
-from django.test import TestCase, override_settings
+from django.test import SimpleTestCase, TestCase, override_settings
 from django.test.utils import CaptureQueriesContext
 from django.urls import get_resolver
 from django.utils import timezone
@@ -23,8 +25,10 @@ from rest_framework.test import APIClient
 
 from accounts.models import ApiToken, Mark, Role, new_secret
 from feedback.models import ReaderMessage
+from owb import languages
 from staff import articles as staff_articles
 from staff import jobs as staff_jobs
+from staff import overlap as staff_overlap
 from staff.models import AdminAction, Broadcast
 from staff.permissions import AREAS
 from staff.verses import covers
@@ -315,6 +319,23 @@ class UsersTest(AdminTestCase):
         self.assertEqual(r.json(), {"signed_out": 2})
         self.assertFalse(ApiToken.objects.filter(user=reader).exists())
 
+    def test_the_users_role_signs_out_readers_but_not_the_team(self):
+        users = client_for(account("users@example.org", (K.USERS,)))
+        reader = account("reader@example.org")
+        client_for(reader)
+        self.assertTrue(users.get(f"/api/admin/users/{reader.id}/").json()["can_sign_out"])
+        self.assertEqual(users.post(f"/api/admin/users/{reader.id}/sign-out/").json(), {"signed_out": 1})
+        # A super admin (or any member of the team) stays signed in.
+        self.assertFalse(users.get(f"/api/admin/users/{self.boss.id}/").json()["can_sign_out"])
+        r = users.post(f"/api/admin/users/{self.boss.id}/sign-out/")
+        self.assertEqual((r.status_code, r.json()["code"]), (403, "forbidden"))
+        self.assertTrue(ApiToken.objects.filter(user=self.boss).exists())
+        editor = account("ed@example.org", (K.EDITOR,))
+        client_for(editor)
+        self.assertEqual(users.post(f"/api/admin/users/{editor.id}/sign-out/").status_code, 403)
+        # A super admin may.
+        self.assertEqual(self.admin.post(f"/api/admin/users/{editor.id}/sign-out/").json(), {"signed_out": 1})
+
 
 class MessagesTest(AdminTestCase):
     def setUp(self):
@@ -388,7 +409,7 @@ class JobsTest(AdminTestCase):
         sentence("PHM.1.1.s1", ("en",))
         calls = []
 
-        def github(path, method="GET", body=None):
+        def github(path, method="GET", body=None, stop=None):
             calls.append((path, method, body))
             if method == "POST":
                 return {"number": 7, "html_url": "https://github.com/x/y/issues/7"}
@@ -501,7 +522,7 @@ class FixTest(AdminTestCase):
                                                text="La Parole, s'il vous plaît")
         calls = []
 
-        def github(path, method="GET", body=None):
+        def github(path, method="GET", body=None, stop=None):
             calls.append((path, method, body))
             if method == "POST":
                 return {"number": 9, "html_url": "https://github.com/x/y/issues/9"}
@@ -535,7 +556,7 @@ class FixTest(AdminTestCase):
     def test_file_word_links(self):
         calls = []
 
-        def github(path, method="GET", body=None):
+        def github(path, method="GET", body=None, stop=None):
             calls.append((path, method, body))
             return {"number": 10, "html_url": "https://github.com/x/y/issues/10"}
         editor = client_for(account("ed@example.org", (K.EDITOR,)))
@@ -634,7 +655,7 @@ class ArticlesTest(AdminTestCase):
     def test_file_a_job_for_what_needs_work(self):
         calls = []
 
-        def github(path, method="GET", body=None):
+        def github(path, method="GET", body=None, stop=None):
             calls.append((path, method, body))
             if method == "POST":
                 return {"number": 11, "html_url": "https://github.com/x/y/issues/11"}
@@ -716,7 +737,7 @@ class WorkTest(AdminTestCase):
                                                     language="fr", text="La Parole ?")
         issues = json.loads(json.dumps(ISSUES).replace("MSG", str(self.message.id)))
 
-        def github(path, method="GET", body=None):
+        def github(path, method="GET", body=None, stop=None):
             return PULLS if path.startswith("pulls") else issues
         patcher = mock.patch.object(staff_jobs, "_github", side_effect=github)
         patcher.start()
@@ -732,6 +753,13 @@ class WorkTest(AdminTestCase):
         self.assertFalse(items[21]["stale"])   # it has a pull request
         self.assertTrue(items[22]["stale"])    # a day old with none
         self.assertEqual(data["counts"], {"open": 2, "stale": 1, "in_review": 1, "done": 1})
+
+    def test_github_out_of_reach_still_says_the_window(self):
+        # The page's heading reads days and stale_hours ("the last undefined days" before).
+        with mock.patch.object(staff_jobs, "_github", side_effect=staff_jobs.GitHubError):
+            data = self.admin.get("/api/admin/work/").json()
+        self.assertEqual((data["items"], data["days"], data["stale_hours"]), ([], 30, 24))
+        self.assertIn("could not be reached", data["error"])
 
     @override_settings(OWB_GITHUB_TOKEN="t")
     def test_a_reader_is_told_once_when_their_fix_merges(self):
@@ -774,6 +802,15 @@ class OverlapTest(AdminTestCase):
         self.assertEqual(data["longest_runs"][0]["verse"], "JHN.1.1")
         self.assertEqual(self.admin.get("/api/admin/overlap/jhn/?lang=sw").json()["editions"], [])
         self.assertEqual(self.admin.get("/api/admin/overlap/xyz/").status_code, 404)
+        # Every reading language is offered, saying which have a Bible to compare with.
+        offered = {lang["code"]: lang["references"] for lang in data["languages"]}
+        self.assertEqual(set(offered), set(languages.CODES))
+        self.assertEqual((offered["en"], offered["sw"]), (1, 0))
+
+    def test_every_reading_language_names_its_reference_bibles(self):
+        # A language added to data/languages.json needs its Edition.language
+        # in staff/overlap.py, or Similarity refuses it.
+        self.assertEqual(set(staff_overlap.EDITION_LANGUAGE), set(languages.CODES))
 
 
 class ExportTest(AdminTestCase):
@@ -843,3 +880,47 @@ class ExportTest(AdminTestCase):
         reporter = client_for(account("rep@example.org", (K.REPORTING,)))
         self.assertEqual(reporter.get("/api/admin/export/").status_code, 200)
         self.assertEqual(client_for(account("r@example.org")).get("/api/admin/export/file/").status_code, 403)
+
+
+class GitHubPagesTest(SimpleTestCase):
+    """staff.jobs._github reads every page of a list (more than 100 open
+    jobs), stops where asked, and turns a dropped connection into
+    GitHubError rather than a 500."""
+
+    def pages(self, *pages):
+        """A stand-in for urlopen answering pages[i] for page i+1, each with
+        a Link to the next."""
+        requested = []
+
+        def urlopen(req, timeout):
+            requested.append(req.full_url)
+            page = re.search(r"[?&]page=(\d+)", req.full_url)
+            n = int(page[1]) if page else 1
+            more = n < len(pages)
+            answer = mock.MagicMock()
+            answer.__enter__.return_value = answer
+            answer.headers = {"Link": f'<https://api.github.com/x?page={n + 1}>; rel="next"'} if more else {}
+            answer.read.return_value = json.dumps(pages[n - 1]).encode()
+            return answer
+        return urlopen, requested
+
+    def test_every_page_is_read(self):
+        jobs = [{"number": n, "title": f"Draft {n}", "html_url": "u", "created_at": "2026-11-01T00:00:00Z",
+                 "body": ""} for n in range(150)]
+        urlopen, requested = self.pages(jobs[:100], jobs[100:])
+        with mock.patch("urllib.request.urlopen", urlopen):
+            self.assertEqual(len(staff_jobs.open_jobs()), 150)
+        self.assertEqual(len(requested), 2)
+
+    def test_stop_ends_the_pages_early(self):
+        urlopen, requested = self.pages([{"n": 1}], [{"n": 2}], [{"n": 3}])
+        with mock.patch("urllib.request.urlopen", urlopen):
+            got = staff_jobs._github("pulls", stop=lambda page: page[-1]["n"] >= 2)
+        self.assertEqual(got, [{"n": 1}, {"n": 2}])
+        self.assertEqual(len(requested), 2)
+
+    def test_a_dropped_connection_is_a_github_error(self):
+        for error in (http.client.IncompleteRead(b""), ConnectionResetError(), http.client.RemoteDisconnected()):
+            with mock.patch("urllib.request.urlopen", side_effect=error), self.assertLogs("staff.jobs", "WARNING"):
+                with self.assertRaises(staff_jobs.GitHubError):
+                    staff_jobs._github("issues")

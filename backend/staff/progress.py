@@ -34,7 +34,8 @@ from feedback.models import ReaderMessage
 from owb import languages, refs
 from texts.models import Edition
 from translation import counts
-from translation.models import ContentFile, Decision, DraftedCount, ImportRun, Rendering, ReviewEvent, Sentence
+from translation.models import (ContentFile, Decision, DraftedCount, ImportRun, Rendering, ReviewEvent, ReviewState,
+                                Sentence)
 
 from . import assignments, inbox
 from .models import AdminAction
@@ -47,6 +48,9 @@ _BOOKS = json.loads((settings.REPO_ROOT / "data" / "books.json").read_text(encod
 CHAPTERS = {code: _BOOKS[code]["chapters"] for code in refs.BOOK_CODES}
 LANGS = languages.CODES
 OT = set(refs.OT_CODES)
+# The review layers for the meaning, shared by every language.
+MEANING_LAYERS = ("grc", "hbo")
+SUMMARY_SHAPE = 2
 
 
 def book_name(code):
@@ -280,7 +284,9 @@ def _summary():
     language's sentences, books not started or partly drafted, and the
     open flags."""
     stamps = _stamps()
-    key = f"staff.overview.{stamps[1]}"
+    # SUMMARY_SHAPE: raise when what is kept here changes, so an entry kept
+    # by the code before a deploy isn't read as the new shape.
+    key = f"staff.overview.{SUMMARY_SHAPE}.{stamps[1]}"
     out = cache.get(key)
     if out is not None:
         return out
@@ -304,9 +310,23 @@ def _summary():
         "not_started": sum(1 for b in books if not b["sentences"]),
         "partial": sum(1 for b in books if b["sentences"] and b["chapters_drafted"] < b["chapters"]),
         "flags": open_flag_count(),
+        "reviewed": _reviewed(),
     }
     cache.set(key, out, 7 * 86400)
     return out
+
+
+def _reviewed():
+    """How many sentences people have approved, as they stand now (an
+    approval the sentence has changed since doesn't count): the meaning
+    (the grc and hbo layers), and the wording in at least one reading
+    language. Approving wording changes no Sentence.status, so the statuses
+    can't tell this."""
+    approved = ReviewState.objects.filter(state=ReviewState.State.APPROVED)
+    return {
+        "meaning": approved.filter(layer__in=MEANING_LAYERS).values("sentence").distinct().count(),
+        "wording": approved.filter(layer__in=languages.CODES).values("sentence").distinct().count(),
+    }
 
 
 @admin_view("overview")
@@ -324,13 +344,11 @@ def overview(request):
             new=Count("id"),
             late=Count("id", filter=Q(created_at__lt=timezone.now() - timedelta(days=inbox.WAITING_DAYS))),
             mine=Count("id", filter=Q(assigned_to=request.user)))
-        if waiting["late"]:
-            attention.append({"key": "inbox_late", "count": waiting["late"], "tone": "hot",
-                              "label": f"reader messages waiting more than {inbox.WAITING_DAYS} days",
-                              "href": "#inbox"})
         if waiting["new"]:
-            attention.append({"key": "inbox", "count": waiting["new"], "tone": "hot",
-                              "label": "reader messages waiting for an answer", "href": "#inbox"})
+            # One chip: the late ones are among those waiting, not more.
+            late = (f", {waiting['late']} for more than {inbox.WAITING_DAYS} days" if waiting["late"] else "")
+            attention.append({"key": "inbox", "count": waiting["new"], "late": waiting["late"], "tone": "hot",
+                              "label": f"reader messages waiting for an answer{late}", "href": "#inbox"})
         if waiting["mine"]:
             attention.append({"key": "inbox_mine", "count": waiting["mine"], "tone": "warn",
                               "label": "reader messages assigned to you", "href": "#inbox/mine"})
@@ -369,6 +387,7 @@ def overview(request):
         activity = [_action_json(a) for a in AdminAction.objects.all()[:8]]
     return Response({
         "totals": summary["totals"],
+        "reviewed": summary["reviewed"],
         "languages": summary["languages"],
         "attention": attention,
         "activity": activity,

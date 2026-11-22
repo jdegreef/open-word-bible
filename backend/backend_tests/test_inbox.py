@@ -1,7 +1,9 @@
 """Reader-inbox triage (staff/inbox.py): assigning messages, the filters
 and order, saved replies, and the dashboard's inbox chips."""
 from datetime import timedelta
+from unittest import mock
 
+from django.core import mail
 from django.utils import timezone
 
 from feedback.models import ReaderMessage
@@ -85,10 +87,57 @@ class InboxTriageTest(AdminTestCase):
     def test_dashboard_chips(self):
         ReaderMessage.objects.filter(id=self.recent.id).update(assigned_to=self.boss)
         keys = {a["key"]: a for a in self.admin.get("/api/admin/overview/").json()["attention"]}
-        self.assertEqual(keys["inbox_late"]["count"], 1)
-        self.assertEqual(keys["inbox_late"]["tone"], "hot")
-        self.assertEqual(keys["inbox"]["count"], 2)
+        # One chip for the messages waiting, saying how many are late.
+        self.assertNotIn("inbox_late", keys)
+        self.assertEqual((keys["inbox"]["count"], keys["inbox"]["late"], keys["inbox"]["tone"]), (2, 1, "hot"))
+        self.assertIn("1 for more than", keys["inbox"]["label"])
         self.assertEqual(keys["inbox_mine"]["count"], 1)
         self.assertEqual(keys["inbox_mine"]["href"], "#inbox/mine")
         keys = {a["key"] for a in client_for(self.editor).get("/api/admin/overview/").json()["attention"]}
         self.assertNotIn("inbox_mine", keys)
+
+
+class ReplyOnceTest(AdminTestCase):
+    """A reply is emailed only when the whole change is saved, and once."""
+
+    def setUp(self):
+        super().setUp()
+        reader = account("reader@example.org")
+        self.editor = account("ed@example.org", (K.EDITOR,))
+        self.old = ReaderMessage.objects.create(user=reader, kind="suggestion", verse="JHN.3.16", language="en",
+                                                text="A thought.")
+
+    def patch(self, client, m, body):
+        return client.patch(f"/api/admin/inbox/{m.id}/", body, format="json")
+
+    def test_a_bad_field_sends_nothing(self):
+        r = self.patch(self.editor_client(), self.old, {"reply": "Thanks!", "status": "bogus"})
+        self.assertEqual(r.status_code, 400)
+        r = self.patch(self.editor_client(), self.old, {"reply": "Thanks!", "assigned_to": 99999})
+        self.assertEqual(r.status_code, 400)
+        self.assertEqual(mail.outbox, [])
+        self.old.refresh_from_db()
+        self.assertEqual((self.old.reply, self.old.status), ("", "new"))
+        self.assertFalse(AdminAction.objects.filter(action="message.reply").exists())
+
+    def test_a_second_reply_is_refused_and_not_sent(self):
+        editor = self.editor_client()
+        self.assertEqual(self.patch(editor, self.old, {"reply": "Thanks!"}).status_code, 200)
+        r = self.patch(editor, self.old, {"reply": "Thanks again!"})
+        self.assertEqual((r.status_code, r.json()["code"]), (400, "answered"))
+        self.assertEqual(len(mail.outbox), 1)
+
+    def test_a_reply_that_cannot_be_emailed_saves_nothing(self):
+        with mock.patch("staff.inbox.send_mail", side_effect=OSError("no mail server")), \
+                self.assertLogs("staff.inbox", "ERROR"):
+            r = self.patch(self.editor_client(), self.old,
+                           {"reply": "Thanks!", "note": "kept?", "assigned_to": "me"})
+        self.assertEqual((r.status_code, r.json()["code"]), (503, "email_unavailable"))
+        self.old.refresh_from_db()
+        self.assertEqual((self.old.reply, self.old.note, self.old.assigned_to), ("", "", None))
+        self.assertFalse(AdminAction.objects.exists())
+
+    def editor_client(self):
+        if not hasattr(self, "_editor_client"):
+            self._editor_client = client_for(self.editor)
+        return self._editor_client
