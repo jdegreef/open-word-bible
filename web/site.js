@@ -724,6 +724,136 @@ window.OWBStudy = (function () {
   });
 })();
 
+// Verses saved before the site used NIV numbers (2026-11-21) were kept by
+// our own verse ids, which in the Old Testament follow the Hebrew Bible
+// (Psalm 3's title was PSA.3.1, Malachi 4:1 was MAL.3.19). Once per
+// browser, OWBRenumber.ready moves them to the NIV's (owb/renumber.py,
+// whose table the build writes as /renumber.json): owb.marks, owb.notes,
+// owb.memory, owb.place and owb.pairs, only what was saved before the
+// switch. Two of ours that the NIV makes one verse meet there: the later
+// wins, the notes are joined. The sync below waits for this, says so
+// ("numbering": "niv"), and moves a copy from an account that has not
+// moved its own yet (OWBRenumber.copy); the account moves a copy sent
+// without it.
+window.OWBRenumber = (function () {
+  "use strict";
+  var DONE = "owb.numbering", STORES = { marks: "owb.marks", notes: "owb.notes", memory: "owb.memory" };
+  var table = null;
+  function get(key) {
+    try { return JSON.parse(localStorage.getItem(key) || "null"); } catch (e) { return null; }
+  }
+  function put(key, value) {
+    try { localStorage.setItem(key, JSON.stringify(value)); } catch (e) { /* full or blocked */ }
+  }
+  function load() {
+    if (!table) {
+      table = fetch("/renumber.json").then(function (r) {
+        if (!r.ok) throw new Error(String(r.status));
+        return r.json();
+      }).catch(function (e) { table = null; throw e; });
+    }
+    return table;
+  }
+  // The moving itself, given the table: a copy {marks, notes, memory,
+  // place, pairs} with what was saved before the switch moved.
+  function mover(t) {
+    var verses = t.verses;
+    function old(at) { return typeof at === "number" && at >= 0 && at < t.switched; }
+    function verse(id) { return verses[id] ? verses[id][0] : id; }
+    function parse(id) { var p = id.split("."); return { book: p[0], chapter: +p[1], verse: +p[2] }; }
+    function passage(key) {
+      var m = /^([1-4A-Z]{3})\.(\d+)\.(\d+)-(\d+)$/.exec(key);
+      if (!m) return verse(key);
+      var ids = [];
+      for (var v = +m[3]; v <= +m[4]; v++) ids.push(m[1] + "." + m[2] + "." + v);
+      if (!ids.some(function (id) { return verses[id]; })) return key;
+      var a = parse(verse(ids[0])), last = a.verse;
+      ids.forEach(function (id) {
+        (verses[id] || [id]).forEach(function (x) {
+          var r = parse(x);
+          if (r.book === a.book && r.chapter === a.chapter && r.verse > last) last = r.verse;
+        });
+      });
+      var start = a.book + "." + a.chapter + "." + a.verse;
+      return last > a.verse ? start + "-" + last : start;
+    }
+    function merge(x, y) {
+      var first = (x.at || 0) <= (y.at || 0) ? x : y, later = first === x ? y : x, out = {};
+      Object.keys(first).forEach(function (k) { out[k] = first[k]; });
+      Object.keys(later).forEach(function (k) { out[k] = later[k]; });
+      var notes = [first.n, later.n].filter(function (n, i, all) { return n && all.indexOf(n) === i; });
+      if (notes.length) out.n = notes.join("\n\n");
+      var tags = (first.t || []).concat(later.t || []).filter(function (n, i, all) { return all.indexOf(n) === i; });
+      if (tags.length) out.t = tags.slice(0, 20);
+      return out;
+    }
+    function store(all) {
+      if (!all || typeof all !== "object") return all;
+      var out = {};
+      Object.keys(all).forEach(function (id) {
+        var entry = all[id], to = entry && old(entry.at) ? passage(id) : id;
+        out[to] = out[to] && entry ? merge(out[to], entry) : entry;
+      });
+      return out;
+    }
+    function place(p) {
+      if (!p || !p.book || !old(p.at)) return p;
+      var pv = String(p.verse), ch = p.chapter;
+      if (pv.indexOf(":") > 0) { ch = +pv.split(":")[0]; pv = pv.split(":")[1]; }
+      var ours = p.book + "." + ch + "." + (+pv);
+      if (!verses[ours]) return p;
+      var to = parse(verse(ours)), out = {};
+      Object.keys(p).forEach(function (k) { out[k] = p[k]; });
+      out.chapter = to.chapter;
+      out.verse = String(to.verse);
+      return out;
+    }
+    function pairs(list) {
+      if (!Array.isArray(list)) return list;
+      return list.map(function (x) {
+        if (!x || !x.v || !old(x.at) || !verses[x.v]) return x;
+        var out = {};
+        Object.keys(x).forEach(function (k) { out[k] = x[k]; });
+        out.v = verse(x.v);
+        if (out.u) out.u = out.u.replace(/#v\d+$/, "#v" + parse(out.v).verse);
+        return out;
+      });
+    }
+    return function (copy) {
+      var out = {};
+      Object.keys(copy).forEach(function (k) { out[k] = copy[k]; });
+      Object.keys(STORES).forEach(function (k) { if (k in copy) out[k] = store(copy[k]); });
+      if ("place" in copy) out.place = place(copy.place);
+      if ("pairs" in copy) out.pairs = pairs(copy.pairs);
+      return out;
+    };
+  }
+  function copy(merged) {
+    return load().then(function (t) { return mover(t)(merged); });
+  }
+  var ready = (function () {
+    try { if (localStorage.getItem(DONE) === "niv") return Promise.resolve(false); } catch (e) { return Promise.resolve(false); }
+    function done() { try { localStorage.setItem(DONE, "niv"); } catch (e) { /* blocked */ } }
+    var mine = { place: get("owb.place"), pairs: get("owb.pairs") };
+    Object.keys(STORES).forEach(function (k) { mine[k] = get(STORES[k]); });
+    var any = Object.keys(STORES).some(function (k) { return mine[k] && Object.keys(mine[k]).length; }) ||
+      (mine.place && mine.place.book) || (Array.isArray(mine.pairs) && mine.pairs.length);
+    if (!any || !window.fetch) { done(); return Promise.resolve(false); }
+    return copy(mine).then(function (moved) {
+      var changed = false;
+      Object.keys(moved).forEach(function (k) {
+        if (JSON.stringify(moved[k]) === JSON.stringify(mine[k])) return;
+        put(STORES[k] || "owb." + k, moved[k]);
+        changed = true;
+      });
+      done();
+      if (changed) document.dispatchEvent(new Event("owb:synced"));
+      return changed;
+    }).catch(function () { return false; /* offline: try again on the next page */ });
+  })();
+  return { ready: ready, copy: copy };
+})();
+
 // Sync for a signed-in reader (backend accounts/reading.py): bookmarks,
 // highlights, notes and collections (owb.marks), passage notes (owb.notes),
 // the word list (owb.words), the reading place (owb.place), reading-plan
@@ -762,11 +892,14 @@ window.OWBStudy = (function () {
     Object.keys(all).forEach(function (k) { if (k !== "at" && k !== "lang") v[k] = all[k]; });
     return { v: v, at: all.at };
   }
+  function moved() { try { return localStorage.getItem("owb.numbering") === "niv"; } catch (e) { return false; } }
   function body() {
     return JSON.stringify({ marks: read("owb.marks", {}), place: read("owb.place", null),
                             plans: read("owb.plans", null), settings: settings(),
                             notes: read("owb.notes", {}), words: read("owb.words", {}),
-                            myplans: read("owb.myplans", {}), memory: read("owb.memory", {}) });
+                            myplans: read("owb.myplans", {}), memory: read("owb.memory", {}),
+                            // Moved to NIV numbers (OWBRenumber above), or not yet.
+                            numbering: moved() ? "niv" : undefined });
   }
   function hash(text) {
     for (var h = 5381, i = 0; i < text.length; i++) h = (h * 33 + text.charCodeAt(i)) | 0;
@@ -814,9 +947,11 @@ window.OWBStudy = (function () {
     if (changed) document.dispatchEvent(new Event("owb:synced"));
   }
 
+  var ready = false;
   function sync(leaving) {
     var key = token();
     if (!key || stopped) return;
+    if (!ready) { again = true; return; }
     var data = body();
     if (leaving && hash(data) === session(SENT)) return;
     if (running) { again = true; return; }
@@ -836,6 +971,10 @@ window.OWBStudy = (function () {
       if (!r.ok) throw new Error(String(r.status));
       return r.json();
     }).then(function (merged) {
+      // An account not yet moved to NIV numbers (accounts/migrations/0024):
+      // move its copy as this browser moved its own.
+      return merged.numbering === "niv" ? merged : window.OWBRenumber.copy(merged);
+    }).then(function (merged) {
       try { sessionStorage.setItem(SENT, hash(data)); } catch (e) { /* ignore */ }
       take(merged);
     }).catch(function () { /* offline or signed out: try again later */ })
@@ -852,7 +991,13 @@ window.OWBStudy = (function () {
   document.addEventListener("owb:account", function () { stopped = false; sync(); });
   document.addEventListener("visibilitychange", function () { if (document.visibilityState === "hidden") sync(true); });
   window.addEventListener("online", soon);
-  if (hash(body()) !== session(SENT) || Date.now() - (Number(session(SINCE)) || 0) > 120000) sync();
+  window.OWBRenumber.ready.then(function () {
+    ready = true;
+    if (again || hash(body()) !== session(SENT) || Date.now() - (Number(session(SINCE)) || 0) > 120000) {
+      again = false;
+      sync();
+    }
+  });
 })();
 
 // The home page's verse of the day (verse_of_the_day in

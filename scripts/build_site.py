@@ -31,7 +31,7 @@ sys.path.insert(0, str(ROOT))
 from typing import NamedTuple  # noqa: E402
 
 from owb import crossrefs, export, languages as owb_languages, markup, morph, refs, translit, validate, versification  # noqa: E402
-from owb import furigana, notes as owb_notes, speakers, words_of_jesus  # noqa: E402
+from owb import furigana, notes as owb_notes, renumber, speakers, words_of_jesus  # noqa: E402
 from owb.export import record_verses  # noqa: E402
 
 sys.path.insert(0, str(ROOT / "scripts"))
@@ -7286,6 +7286,11 @@ def build(out):
 
     def page_file(page_url):
         return (page_url.strip("/") + "/index.html").lstrip("/")
+
+    # Our verse ids whose number changed, for moving a reader's verses saved
+    # before the site used NIV numbers (web/site.js, owb/renumber.py).
+    write("renumber.json", json.dumps({"switched": renumber.SWITCHED_MS, "verses": renumber.table()},
+                                      separators=(",", ":")))
 
     indexed, fingerprints = [], {}
     for lang in LANGUAGES:
