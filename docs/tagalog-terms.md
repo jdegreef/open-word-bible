@@ -2293,5 +2293,5 @@ names the book where the form was first used.
 | Hosea 8:5 | calf of Samaria | *guya ng Samaria* |  |
 | Hosea 10:5 | idol-priests | *mga pari ng diyus-diyosan* |  |
 | Hosea 10:14 | Shalman; Beth-arbel | Salman; Bet-arbel |  |
-| Hosea 12:6 | God of hosts | *Diyos ng mga hukbo* (L); *Diyos ng mga Hukbo* (B, R) |  |
+| Hosea 12:6 | God of hosts | *Diyos ng mga hukbo* | as Isaiah and Jeremiah |
 | Hosea 13:14 | Sheol; O death, where are your plagues? | Sheol (L, B), *libingan* (R); *Nasaan ang iyong mga salot, O kamatayan?* | 1 Corinthians 15:55 |
