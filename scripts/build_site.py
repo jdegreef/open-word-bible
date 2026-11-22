@@ -31,7 +31,7 @@ sys.path.insert(0, str(ROOT))
 from typing import NamedTuple  # noqa: E402
 
 from owb import crossrefs, export, languages as owb_languages, markup, morph, refs, translit, validate, versification  # noqa: E402
-from owb import furigana, notes as owb_notes, speakers, words_of_jesus  # noqa: E402
+from owb import furigana, notes as owb_notes, renumber, speakers, words_of_jesus  # noqa: E402
 from owb.export import record_verses  # noqa: E402
 
 sys.path.insert(0, str(ROOT / "scripts"))
@@ -447,9 +447,10 @@ def colour_menu(lang, path=None, translated=LANGUAGES):
     rows = [group(pref, t(lang, "prefs." + pref), default,
                   [(v, sample(pref, v), t(lang, f"{pref}.{v}")) for v in values])
             for pref, default, values in DISPLAY_PREFS]
-    check = '<span class="check" aria-hidden="true">&#10003;</span>'
+    # The same links as the header's language menu (language_menu), which
+    # nav_script copies in, so a page carries the list once.
     languages = (f'<p class="prefs-label" id="prefs-lang">{t(lang, "footer.languages")}</p>'
-                 f'<ul class="prefs-langs" aria-labelledby="prefs-lang">{language_items(lang, path, translated, check)}</ul>')
+                 f'<ul class="prefs-langs" aria-labelledby="prefs-lang" data-copy="lang-pop"></ul>')
     return (
         '<div class="prefs">'
         '<button type="button" class="tool-btn prefs-btn" aria-expanded="false" aria-controls="colour-menu" '
@@ -561,6 +562,7 @@ def page(lang, title, body, path=None, current="", description="", card="site", 
 <link rel="preload" href="/fonts/hanken-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/gentium-book-plus-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="{asset("style.css")}">
+<script src="{nav_script(lang)[1]}" defer></script>
 <script src="{asset("site.js")}" defer></script>
 <script src="{asset("search.js")}" defer></script>
 </head>
@@ -672,22 +674,14 @@ def site_header(lang, current, path=None, lang_path=None, translated=LANGUAGES):
     home = url(lang, "/")
     items = [f'<li><a class="nav-link" href="{home}"{" aria-current=page" if home_on else ""}>'
              f'{icon(ICONS["home"])}<span>{t(lang, "nav.home")}</span></a></li>']
-    for key, label, ico, href, panel, cls in nav_menus(lang):
+    for key, label, ico, href, _panel, cls in nav_menus(lang):
         on = current == href
-        if path:
-            here = url(lang, path)
-            panel = panel.replace(f'class="dd-item" href="{here}"', f'class="dd-item" href="{here}" aria-current="page"')
-            panel = panel.replace(f'class="dd-all" href="{here}"', f'class="dd-all" href="{here}" aria-current="page"')
-            # On a chapter page, its book in the Read menu is the current one.
-            book = re.match(r"/([a-z0-9]{3})/\d+/", path)
-            if book:
-                panel = panel.replace(f'data-book="{book[1]}"', f'data-book="{book[1]}" aria-current="true"')
         items.append(
             f'<li class="nav-item">'
             f'<button type="button" class="nav-link nav-trigger{" active" if on else ""}" '
             f'aria-expanded="false" aria-controls="dd-{key}">'
             f'{icon(ICONS[ico])}<span>{label}</span>{icon(ICONS["chevron"], 15, "icon caret")}</button>'
-            f'<div class="dropdown {cls}" id="dd-{key}" hidden>{panel}</div></li>')
+            f'<div class="dropdown {cls}" id="dd-{key}" hidden></div></li>')
     return f"""<header class="site"><div class="wrap bar">
 <a class="brand" href="{home}"{" aria-current=page" if home_on else ""}>{MARK}<span class="brand-name">Open Word <em>Bible</em></span></a>
 <nav class="primary" id="site-nav" aria-label="{t(lang, "nav.main")}"><ul class="nav-list">{"".join(items)}</ul></nav>
@@ -699,6 +693,52 @@ def site_header(lang, current, path=None, lang_path=None, translated=LANGUAGES):
 <button type="button" class="tool-btn menu-btn" aria-expanded="false" aria-controls="site-nav" aria-label="{t(lang, "nav.menu")}">{icon(ICONS["menu"], 22)}{icon(ICONS["close"], 22)}</button>
 </div>
 </div></header>"""
+
+
+# The header's dropdowns are the same on every page in a language, and were
+# about a third of each page (the Read menu names every book). They come
+# instead from one script per language, nav-<lang>.js, which every page
+# loads (cached once, and by web/sw.js for offline reading) before
+# web/site.js. Without scripts the dropdowns could not open anyway.
+NAV_SCRIPT = r"""(function () {
+  "use strict";
+  var menus = window.OWB_NAV;
+  var here = location.pathname.replace(/index\.html$/, "");
+  var book = /\/([a-z0-9]{3})\/\d+\/$/.exec(here);
+  function esc(s) { return s.replace(/["\\]/g, "\\$&"); }
+  Object.keys(menus).forEach(function (key) {
+    var panel = document.getElementById("dd-" + key);
+    if (!panel || panel.firstChild) return;
+    panel.innerHTML = menus[key];
+    // The dropdown link to this page tells a screen reader; on a chapter
+    // page, its book in the Read menu is the current one.
+    panel.querySelectorAll('a.dd-item[href="' + esc(here) + '"], a.dd-all[href="' + esc(here) + '"]')
+      .forEach(function (a) { a.setAttribute("aria-current", "page"); });
+    if (book) panel.querySelectorAll('[data-book="' + book[1] + '"]')
+      .forEach(function (a) { a.setAttribute("aria-current", "true"); });
+  });
+  // The gear menu's language links are the header language menu's.
+  document.querySelectorAll("ul[data-copy]").forEach(function (ul) {
+    var from = document.getElementById(ul.getAttribute("data-copy"));
+    var list = from && from.querySelector("ul");
+    if (!list || ul.firstChild) return;
+    ul.innerHTML = list.innerHTML;
+    ul.querySelectorAll("[data-offer]").forEach(function (a) {
+      a.removeAttribute("data-offer");
+      a.removeAttribute("data-offer-no");
+    });
+  });
+})();
+"""
+
+
+@functools.cache
+def nav_script(lang):
+    """The header's dropdown panels in lang (nav_menus), as a script that
+    fills them in (NAV_SCRIPT), and its URL."""
+    text, _ = shared_script("OWB_NAV", {key: panel for key, _l, _i, _h, panel, _c in nav_menus(lang)})
+    text += NAV_SCRIPT
+    return text, f"/nav-{lang}.js?v={hashlib.sha256(text.encode()).hexdigest()[:10]}"
 
 
 @functools.lru_cache(maxsize=None)
@@ -2086,12 +2126,13 @@ def reader_shared(lang):
 
 def chapter_data_files():
     """{path: text} of every chapter's and every language's shared reader
-    data (chapter_shared, reader_shared)."""
+    data (chapter_shared, reader_shared) and header menus (nav_script)."""
     files = {chapter_data_path(b, c).lstrip("/"): chapter_shared(b, c)[0] for b, c in chapters()}
     for b, c in chapters():
         for code in chapter_languages(load_chapter(b, c)[0]):
             files[chapter_data_path(b, c, code).lstrip("/")] = chapter_language_data(b, c, code)[0]
     files.update({f"reader-{lang}.js": reader_shared(lang)[0] for lang in LANGUAGES})
+    files.update({f"nav-{lang}.js": nav_script(lang)[0] for lang in LANGUAGES})
     return files
 
 
@@ -6960,6 +7001,7 @@ def service_worker():
     current += [word_uses()[1]] + [search_ui_url(lang) for lang in LANGUAGES]
     current += [plans_json_url(lang) for lang in LANGUAGES]
     current += [reader_shared(lang)[1] for lang in LANGUAGES]
+    current += [nav_script(lang)[1] for lang in LANGUAGES]
     # The static search indexes the site no longer builds: copies kept
     # before are dropped.
     dropped = [f"/search-{lang}.json" for lang in LANGUAGES]
@@ -7291,6 +7333,11 @@ def build(out):
 
     def page_file(page_url):
         return (page_url.strip("/") + "/index.html").lstrip("/")
+
+    # Our verse ids whose number changed, for moving a reader's verses saved
+    # before the site used NIV numbers (web/site.js, owb/renumber.py).
+    write("renumber.json", json.dumps({"switched": renumber.SWITCHED_MS, "verses": renumber.table()},
+                                      separators=(",", ":")))
 
     indexed, fingerprints = [], {}
     for lang in LANGUAGES:

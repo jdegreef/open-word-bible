@@ -1293,3 +1293,154 @@ People and places: ਪੌਲੁਸ, ਤੁਖਿਕੁਸ; ਅਫ਼ਸੁਸ, �
   64:4 (2:9), 28:11-12 (14:21), 22:13 (15:32), 25:8 (15:54); Job 5:13
   (3:19); Psalms 94:11 (3:20), 24:1 (10:26); Deuteronomy 17:7 (5:13);
   Exodus 32:6 (10:7); Genesis 2:7 (15:45).
+
+### Judges
+
+- Sons of Israel: at L a gender span, `{{gender:ਇਸਰਾਏਲ ਦੀ ਸੰਤਾਨ|ਇਸਰਾਏਲ ਦੇ
+  ਪੁੱਤਰ(ਾਂ)}}` (and ਸਾਰੀ ਸੰਤਾਨ / ਸਾਰੇ ਪੁੱਤਰਾਂ for "all the sons"); B and R
+  ਇਸਰਾਏਲੀ, no span. Same pattern for sons of Ammon (ਅੰਮੋਨ ਦੇ ਪੁੱਤਰ), sons of
+  the east (ਪੂਰਬ ਦੀ ਸੰਤਾਨ|ਪੂਰਬ ਦੇ ਪੁੱਤਰ), sons of Dan (ਦਾਨ ਦੀ ਸੰਤਾਨ|ਦਾਨ ਦੇ
+  ਪੁੱਤਰ); fathers ਵੱਡ-ਵਡੇਰਿਆਂ|ਪਿਉ-ਦਾਦਿਆਂ. Sons of Benjamin ਬਿਨਯਾਮੀਨ ਦੇ
+  ਪੁੱਤਰ (L), ਬਿਨਯਾਮੀਨੀ (B), ਬਿਨਯਾਮੀਨ ਦੇ ਬੰਦੇ (R).
+- One wording for the "did evil in the eyes of the LORD" refrain in each
+  level; Baals ਬਆਲ ਦੇਵਤੇ; judge ਨਿਆਂਕਾਰ; elders ਬਜ਼ੁਰਗ (L), ਬਜ਼ੁਰਗ ਆਗੂ (B),
+  ਆਗੂ (R); the angel of the LORD takes plain singular verbs; Adonai YHWH ਹੇ
+  ਪ੍ਰਭੂ {{divine_name:ਪਰਮੇਸ਼ੁਰ|ਯਾਹਵੇ}}.
+- No-king refrain (17:6, 18:1, 19:1, 21:25), one wording per level: L ਉਨ੍ਹਾਂ
+  ਦਿਨਾਂ ਵਿੱਚ ਇਸਰਾਏਲ ਵਿੱਚ ਕੋਈ ਰਾਜਾ ਨਾ ਸੀ (17:6, 21:25 add ਹਰੇਕ ਉਹੀ ਕਰਦਾ ਸੀ
+  ਜੋ ਉਸ ਦੀਆਂ ਆਪਣੀਆਂ ਅੱਖਾਂ ਵਿੱਚ ਠੀਕ ਸੀ); B ਉਨ੍ਹੀਂ ਦਿਨੀਂ ਇਸਰਾਏਲ ਦਾ ਕੋਈ
+  ਰਾਜਾ ਨਹੀਂ ਸੀ; R ਉਸ ਵੇਲੇ ਇਸਰਾਏਲ ਦਾ ਕੋਈ ਰਾਜਾ ਨਹੀਂ ਸੀ।
+- Names: ਆਥਨੀਏਲ, ਕੂਸ਼ਨ-ਰਿਸ਼ਆਥੈਮ, ਏਹੂਦ, ਸ਼ਮਗਰ, ਦਬੋਰਾਹ, ਬਾਰਾਕ, ਸੀਸਰਾ,
+  ਯਾਏਲ, ਹਰੋਸ਼ਥ-ਹੱਗੋਯਿਮ, ਮਿਦਯਾਨੀ, ਅਮਾਲੇਕੀ, ਗਿਦਾਊਨ / ਯਰੁੱਬਆਲ, ਜ਼ਬਹ ਅਤੇ
+  ਸਲਮੁੰਨਾ, ਅਬੀਮਲਕ, ਗਆਲ, ਜ਼ਬੂਲ, ਯਿਫ਼ਤਾਹ, ਇਫ਼ਰਾਈਮੀ, ਮਾਨੋਆਹ, ਸਮਸੂਨ, ਦਲੀਲਾ,
+  ਸੋਰੇਕ, ਗਾਜ਼ਾ, ਹਬਰੋਨ, ਦਾਗੋਨ (ਦੇਵਤਾ), ਮੀਕਾਹ, ਦਾਨੀ, ਲਾਇਸ਼, ਸੈਦਾ / ਸੈਦੋਨੀ,
+  ਕਿਰਯਥ-ਯਾਰੀਮ, ਮਹਨੇਹ-ਦਾਨ, ਬੈਤ-ਰਹੋਬ, ਯੋਨਾਥਾਨ son of ਗੇਰਸ਼ੋਮ son of ਮਨੱਸ਼ਹ
+  (18:30 as written), ਸ਼ੀਲੋ, ਯਬੂਸ / ਯਬੂਸੀ, ਗਿਬਆਹ, ਰਾਮਾਹ, ਫ਼ੀਨਹਾਸ son of
+  ਅਲਆਜ਼ਾਰ, ਬਆਲ-ਤਾਮਾਰ, ਗਬਾ, ਰਿੰਮੋਨ, ਗਿਦੋਮ, ਯਾਬੇਸ਼-ਗਿਲਆਦ, ਲਬੋਨਾਹ, ਸ਼ਕਮ.
+- Philistine rulers ਸਰਦਾਰ; Delilah's cry "ਹੇ ਸਮਸੂਨ, ਫ਼ਲਿਸਤੀ ਤੇਰੇ ਉੱਤੇ ...!"
+  worded the same in 16:9, 12, 14, 20 in each level; Samson and Delilah say
+  ਤੂੰ to each other; Dagon's temple ਘਰ (L), ਮੰਦਰ (B, R).
+- Micah's shrine: carved image ਘੜੀ ਹੋਈ ਮੂਰਤੀ, cast idol ਢਾਲੀ ਹੋਈ ਮੂਰਤੀ,
+  ephod ਏਫ਼ੋਦ, teraphim ਘਰੇਲੂ ਦੇਵਤੇ, house of gods ਦੇਵ-ਘਰ (L), ਪੂਜਾ-ਸਥਾਨ (B,
+  R); ordain ਹੱਥ ਭਰਿਆ (L), ਜਾਜਕ ਥਾਪਿਆ (B, R). Micah says ਤੁਸੀਂ to his
+  mother, ਤੂੰ to the Levite; the servant says ਤੁਸੀਂ to his master in 19.
+- Concubine ਰਖੇਲ; sons of belial ਨਿਕੰਮੇਪਣ ਦੇ ਪੁੱਤਰ (L), ਨਿਕੰਮੇ (B), ਦੁਸ਼ਟ
+  (R); battle line ਪਾਲਾਂ ਬੰਨ੍ਹੀਆਂ (L), ਮੋਰਚਾ ਬੰਨ੍ਹਿਆ (B), ਮੋਰਚੇ ਸਾਂਭੇ (R);
+  left-handed (L) ਜਿਨ੍ਹਾਂ ਦਾ ਸੱਜਾ ਹੱਥ ਬੰਨ੍ਹਿਆ ਹੋਇਆ ਸੀ; peace offering
+  ਸੁੱਖ-ਸਾਂਦ ਦੀ ਬਲੀ; cherem ਨਾਸ ਲਈ ਅਰਪਣ; festival ਪਰਬ.
+- Units in `{{units:}}` spans with Indian grouping: 1,700 shekels ਲਗਭਗ 19.5
+  ਕਿਲੋਗ੍ਰਾਮ, 1,100 ਲਗਭਗ 12.5, 200 ਲਗਭਗ 2.3 ਕਿਲੋਗ੍ਰਾਮ, 10 ਲਗਭਗ 114 ਗ੍ਰਾਮ; ephah
+  ਲਗਭਗ 22 ਲੀਟਰ.
+- For the reviewer: 13:15 and 15:1 use ਮੇਮਣਾ for a young goat (ਬੱਕਰੀ ਦਾ
+  ਮੇਮਣਾ); ਛੇਲਾ may be better.
+
+### Joshua
+
+- God takes the honorific plural throughout (ਉਹ ... ਹਨ, ਉਨ੍ਹਾਂ ਨੇ); Joshua
+  and the people say ਤੂੰ to God. Chapters 1-14 were drafted first and may still
+  have a few singular forms (e.g. 4:24); worth a sweep in review.
+- Charge of 1:6-9 and 10:25, one wording per level: ਤਕੜਾ ਹੋ ਅਤੇ ਦਲੇਰ ਬਣ (L),
+  ਤਕੜਾ ਹੋ ਅਤੇ ਹੌਸਲਾ ਰੱਖ (B), ਤਕੜਾ ਹੋ ਅਤੇ ਹਿੰਮਤ ਰੱਖ (R), in the plural to the
+  people. Law ਬਿਵਸਥਾ (L, B), ਸਿੱਖਿਆ (R); book of the law ਬਿਵਸਥਾ ਦੀ ਪੋਥੀ.
+- Moses ਦਾਸ at every level; Joshua ਸੇਵਕ (L), ਸਹਾਇਕ (B, R) in 1:1, ਦਾਸ in
+  24:29. Joshua says ਤੂੰ to the people's individuals and ਤੁਸੀਂ to groups; the
+  people and Rahab say ਤੁਸੀਂ to him and to the spies; the spies say ਤੂੰ to
+  Rahab; the commander of the LORD's army is ਮੇਰੇ ਸੁਆਮੀ and says ਤੂੰ.
+- Seas and land: Great Sea ਵੱਡਾ ਸਮੁੰਦਰ (L, B), ਭੂ-ਮੱਧ ਸਾਗਰ (R); Salt Sea
+  ਖਾਰਾ ਸਮੁੰਦਰ (L), ਮ੍ਰਿਤ ਸਾਗਰ (B, R); Sea of Reeds ਕਾਨਿਆਂ ਦਾ ਸਮੁੰਦਰ (L),
+  ਲਾਲ ਸਮੁੰਦਰ (B, R); Chinneroth ਕਿੰਨਰੋਥ (L, B), ਗਲੀਲ ਦੀ ਝੀਲ (R); Shephelah
+  ਸ਼ਫ਼ੇਲਾਹ (L), ਪੱਛਮ ਦੀਆਂ ਨੀਵੀਆਂ ਪਹਾੜੀਆਂ (B, R); Negev ਨੇਗੇਵ; Arabah
+  ਅਰਾਬਾਹ (R ਯਰਦਨ ਦੀ ਵਾਦੀ); wadi ਨਾਲਾ (L); the River ਦਰਿਆ (L, B), ਫ਼ਰਾਤ ਦਰਿਆ
+  (R); mound ਥੇਹ.
+- Ark of the covenant ਨੇਮ ਦਾ ਸੰਦੂਕ; ark of the testimony ਸਾਖੀ ਦਾ ਸੰਦੂਕ (L, B);
+  horn ਨਰਸਿੰਗਾ; shout ਜੈਕਾਰਾ; devoted ਨਾਸ ਲਈ ਅਰਪਣ (L, B; R explains it as the
+  LORD's); broke faith ਬੇਵਫ਼ਾਈ (L, R), ਵਿਸ਼ਵਾਸਘਾਤ (B); trouble (Achor)
+  ਬਿਪਤਾ; covenant with God ਨੇਮ, a treaty between peoples ਨੇਮ (L), ਸੰਧੀ (B,
+  R); Hill of the Foreskins ਖੱਲੜੀਆਂ ਦੀ ਪਹਾੜੀ; unleavened bread ਪਤੀਰੀ ਰੋਟੀ;
+  manna ਮੰਨ.
+- Allotment chapters (13-21): lot ਗੁਣਾ; inheritance (nachalah) ਵਿਰਾਸਤ;
+  possession (achuzzah, yerushah) ਮਿਲਖ; border ਹੱਦ, feminine, with ਨਿੱਕਲਦੀ /
+  ਲੰਘਦੀ / ਚੜ੍ਹਦੀ / ਉਤਰਦੀ / ਮੁੜਦੀ ਹੈ (L, B) and past tense (R); "is drawn"
+  ਖਿੱਚੀ ਜਾਂਦੀ ਹੈ (L); daughter-villages ਧੀਆਂ (L); town lists end "N ਸ਼ਹਿਰ, ਨਾਲੇ
+  ਉਨ੍ਹਾਂ ਦੇ ਪਿੰਡ" (L), "ਕੁੱਲ N ਨਗਰ, ਆਪਣੇ ਪਿੰਡਾਂ ਸਮੇਤ" (B), "ਕੁੱਲ ਮਿਲਾ ਕੇ N
+  ਨਗਰ ਸਨ, ਨਾਲ ਉਨ੍ਹਾਂ ਦੇ ਪਿੰਡ" (R); pasturelands ਚਰਾਂਦਾਂ.
+- Sons of a tribe: `{{gender:X ਦੀ ਸੰਤਾਨ|X ਦੇ ਪੁੱਤਰਾਂ}}` at L, plain at B and
+  R (ਅੰਸ where the English says descendants); the eastern tribes ਰਊਬੇਨੀ, ਗਾਦੀ
+  ਅਤੇ ਅੱਧੇ ਮਨੱਸ਼ਹ ਗੋਤ ਦੇ ਲੋਕ (B) in chapter 22, worded to avoid the
+  comparison Bibles' formula.
+- Places of worship and law: tent of meeting ਮੁਲਾਕਾਤ ਦਾ ਤੰਬੂ; tabernacle ਡੇਰਾ
+  (L), ਪਵਿੱਤਰ ਤੰਬੂ (B, R); cities of refuge ਪਨਾਹ ਦੇ ਸ਼ਹਿਰ / ਨਗਰ (L, B),
+  ਸੁਰੱਖਿਆ ਦੇ ਨਗਰ (R); avenger of blood ਖ਼ੂਨ ਦਾ ਬਦਲਾ ਲੈਣ ਵਾਲਾ (L, B); high
+  priest ਮਹਾਂ ਜਾਜਕ; elders ਬਜ਼ੁਰਗ (L), ਬਜ਼ੁਰਗ ਆਗੂ (B), ਆਗੂ (R); officials
+  ਅਧਿਕਾਰੀ; heads ਮੁਖੀ; judges ਨਿਆਈ; congregation ਮੰਡਲੀ (L, B), ਭਾਈਚਾਰਾ (R);
+  plague ਬਵਾ; burnt offering ਹੋਮ ਬਲੀ; grain offering ਅੰਨ ਦੀ ਭੇਟ; peace
+  offering ਸੁੱਖ-ਸਾਂਦ ਦੀ ਬਲੀ; the altar of chapter 22 is named ਗਵਾਹ; Mighty One
+  ਸ਼ਕਤੀਮਾਨ; jealous God ਅਣਖੀ ਪਰਮੇਸ਼ੁਰ; hornet ਭਰਿੰਡ; oak ਬਲੂਤ; qesitah
+  ਕਸੀਟਾ (L), ਚਾਂਦੀ ਦੇ ਸਿੱਕੇ (B, R).
+- The seven peoples: ਕਨਾਨੀ, ਹਿੱਤੀ, ਹਿੱਵੀ, ਫ਼ਰਿੱਜ਼ੀ, ਗਿਰਗਾਸ਼ੀ, ਅਮੋਰੀ, ਯਬੂਸੀ;
+  Anakim ਅਨਾਕੀ; Rephaim ਰਫ਼ਾਈ.
+- Names: ਰਾਹਾਬ, ਆਕਾਨ son of ਕਰਮੀ, ਜ਼ਬਦੀ, ਜ਼ਰਹ, ਅਈ, ਬੈਤਏਲ, ਬੈਤ-ਆਵਨ, ਆਕੋਰ,
+  ਗਿਲਗਾਲ, ਏਬਾਲ, ਗਰਿੱਜ਼ੀਮ, ਗਿਬਓਨ / ਗਿਬਓਨੀ, ਅਦੋਨੀ-ਸਦਕ, ਮੱਕੇਦਾਹ, ਹਾਸੋਰ,
+  ਯਾਬੀਨ, ਮੇਰੋਮ, ਕਾਲੇਬ, ਹਬਰੋਨ, ਆਥਨੀਏਲ, ਦਬੀਰ, ਅਕਸਾਹ, ਸਲਾਫ਼ਹਾਦ, ਸ਼ੀਲੋਹ,
+  ਤਿਮਨਥ-ਸਰਹ, ਗਾਸ਼, ਫ਼ੀਨਹਾਸ son of ਅਲਆਜ਼ਾਰ, ਗਿਬਆਹ, ਸ਼ਕਮ, ਹਮੋਰ, ਤਾਰਹ,
+  ਨਾਹੋਰ, ਬਾਲਾਕ son of ਸਿੱਪੋਰ, ਬਿਲਆਮ son of ਬਓਰ; Levite clans ਕਹਾਥੀ,
+  ਗੇਰਸ਼ੋਨ, ਮਰਾਰੀ; tribes ਸ਼ਿਮਓਨ, ਜ਼ਬੂਲੁਨ, ਯਿੱਸਾਕਾਰ, ਆਸ਼ੇਰ, ਨਫ਼ਥਾਲੀ, ਦਾਨ.
+- Matching wording for later books: 24:2-13 retells Genesis-Numbers (Terah,
+  Esau and Seir, the plagues, the Red Sea, Balaam) and 24:32 Gen 33:19 / 50:25;
+  1:5 "ਨਾ ਛੱਡਾਂਗਾ ਅਤੇ ਨਾ ਤਿਆਗਾਂਗਾ" uses the same verbs as Hebrews 13:5.
+- For the reviewer: ਵਿਰਾਸਤ and ਮਿਲਖ were mixed in early chapters; nachalah
+  is now ਵਿਰਾਸਤ in 19-24, but chapters 1, 12 and 21 use ਮਿਲਖ where the Hebrew
+  is "possession", which is intended.
+
+### 2 Samuel
+
+- God takes the honorific plural (ਉਨ੍ਹਾਂ ਨੇ, ਬਿਰਾਜਮਾਨ ਹਨ) with no
+  deity_pronoun spans; David and the song of chapter 22 say ਤੂੰ to God. God's
+  words to David use ਤੂੰ (7, 12:7-12, 24:12), while Nathan and Gad say ਤੁਸੀਂ to
+  the king around them.
+- Address: kings get ਤੁਸੀਂ; court titles ਮੇਰੇ ਸੁਆਮੀ ਰਾਜਾ (L), ਮੇਰੇ ਸੁਆਮੀ
+  ਮਹਾਰਾਜ (B), ਮਹਾਰਾਜ (R), with honorific verbs (ਆਏ ਹਨ, ਚਾਹੁੰਦੇ ਹਨ). David says
+  ਤੂੰ to Jonathan, messengers, Shimei, Mephibosheth, Abishai, Amasa and
+  Araunah, and ਤੁਸੀਂ to Barzillai. Joab says ਤੂੰ to soldiers, Ahimaaz and
+  Amasa, ਤੁਸੀਂ to David; Absalom says ਤੂੰ to Hushai, who says ਤੁਸੀਂ back.
+- Refrain of 1:19, 25, 27: ਸੂਰਮੇ ਕਿਵੇਂ ਡਿੱਗ ਪਏ! (L), ਹਾਏ, ਸੂਰਮੇ ਕਿਵੇਂ ਡਿੱਗ
+  ਪਏ! (B), ਹਾਏ, ਬਹਾਦਰ ਜੋਧੇ ਕਿਵੇਂ ਮਾਰੇ ਗਏ! (R).
+- Chapter 7 (the promise): house ਘਰ (L), ਘਰਾਣਾ (B), ਰਾਜਿਆਂ ਦਾ ਵੰਸ explained
+  (R); offspring ਅੰਸ (L, B); 7:14 ਮੈਂ ਉਸ ਦੇ ਲਈ ਪਿਤਾ ਹੋਵਾਂਗਾ, ਅਤੇ ਉਹ ਮੇਰੇ ਲਈ
+  ਪੁੱਤਰ ਹੋਵੇਗਾ (L), which Hebrews 1:5 and 2 Corinthians 6:18 should be checked
+  against. Hesed: God's ਅਟੱਲ ਪਿਆਰ at every level; between people ਅਟੱਲ ਪਿਆਰ
+  (L), ਕਿਰਪਾ or ਵਫ਼ਾਦਾਰੀ (B, R).
+- Court (8:16-18, 20:23-26): recorder ਇਤਿਹਾਸਕਾਰ, secretary ਲਿਖਾਰੀ, forced
+  labor ਬੇਗਾਰ, Cherethites and Pelethites ਕਰੇਤੀ, ਪਲੇਤੀ.
+- Worship: LORD of hosts ਸੈਨਾਂ ਦੇ ਪ੍ਰਭੂ; enthroned on the cherubim
+  ਕਰੂਬੀਆਂ ਉੱਤੇ ਬਿਰਾਜਮਾਨ; ark ਸੰਦੂਕ; burnt offering ਹੋਮ ਬਲੀ; peace offering
+  ਸੁੱਖ-ਸਾਂਦ ਦੀ ਬਲੀ; altar ਜਗਵੇਦੀ; threshing floor ਪਿੜ; temple ਹੈਕਲ; Most
+  High ਅੱਤ ਮਹਾਨ; sackcloth ਤੱਪੜ; atonement ਪ੍ਰਾਸਚਿਤ; Sheol ਪਤਾਲ (L, B),
+  ਕਬਰ (R); rock: sela ਉੱਚੀ ਚਟਾਨ, tsur ਚਟਾਨ.
+- Chapter 24: pestilence (dever) ਮਰੀ (L), ਮਹਾਂਮਾਰੀ (B, R); plague
+  (maggefah) ਮਹਾਂਮਾਰੀ (L, R), ਬਵਾ (B). Joshua 22:17 used ਬਵਾ for plague;
+  worth unifying in review. Araunah ਅਰਵਨਾਹ (1 Chronicles 21 has Ornan); Gad
+  ਨਬੀ and ਦਰਸ਼ੀ; 50 shekels `{{units:ਲਗਭਗ 575 ਗ੍ਰਾਮ ਚਾਂਦੀ|ਚਾਂਦੀ ਦੇ ਪੰਜਾਹ
+  ਸ਼ੇਕੇਲ}}` (B, R); large numbers in Indian grouping (8,00,000).
+- Other terms: terebinth ਬਲੂਤ (L, B), ਵੱਡਾ ਰੁੱਖ (R); mule ਖੱਚਰ; trumpet
+  ਨਰਸਿੰਗਾ; watchman ਪਹਿਰੇਦਾਰ; gatekeeper ਦਰਬਾਨ; siege ramp ਦਮਦਮਾ; rampart
+  ਫ਼ਸੀਲ; impale ਟੰਗ ਦੇਣਾ (L, B), R explains the poles; Rapha ਰਾਫ਼ਾ (R ਦੈਂਤ).
+- Gender spans at L only: `{{gender:ਇਸਰਾਏਲ ਦੀ ਸੰਤਾਨ|ਇਸਰਾਏਲ ਦੇ ਪੁੱਤਰਾਂ}}`,
+  22:26 `{{gender:ਸੂਰਮੇ|ਸੂਰਮੇ ਪੁਰਖ}}`, 23:7 `{{gender:ਜੋ ਕੋਈ|ਜਿਹੜਾ ਮਨੁੱਖ}}`,
+  24:15 `{{gender:ਲੋਕ|ਮਨੁੱਖ}}`.
+- Wording other books must match:
+  - Chapter 22 sets the wording for Psalm 18; 22:50 L/B follow Romans 15:9
+    (ਤੇਰੀ ਉਸਤਤ ਕਰਾਂਗਾ ... ਤੇਰੇ ਨਾਮ ਦੇ ਭਜਨ ਗਾਵਾਂਗਾ).
+  - 20:1 (ਦਾਊਦ ਵਿੱਚ ਸਾਡਾ ਕੋਈ ਹਿੱਸਾ ਨਹੀਂ ...) sets 1 Kings 12:16 and
+    2 Chronicles 10:16.
+  - 23:8-39 sets the spellings of David's mighty men for 1 Chronicles 11.
+  - Chapters 5-8, 10, 23 and 24 set names and wording for 1 Chronicles 11-21.
+- Names: ਈਸ਼-ਬੋਸ਼ਥ, ਅਬਨੇਰ, ਅਸਾਹੇਲ, ਯੋਆਬ, ਅਬੀਸ਼ਈ, ਸਰੂਯਾਹ, ਮਫ਼ੀਬੋਸ਼ਥ, ਸੀਬਾ,
+  ਮੀਕਲ, ਉੱਜ਼ਾਹ, ਓਬੇਦ-ਅਦੋਮ, ਬਆਲ-ਪਰਾਸੀਮ, ਬਥ-ਸ਼ਬਾ, ਹਿੱਤੀ ਊਰੀਯਾਹ, ਅਲੀਆਮ, ਨਾਥਾਨ,
+  ਯਦੀਦਯਾਹ, ਰੱਬਾ, ਅਮਨੋਨ, ਤਾਮਾਰ, ਯੋਨਾਦਾਬ, ਅਬਸ਼ਾਲੋਮ, ਤਕੋਆ, ਗੀਲੋਨੀ ਅਹੀਥੋਫ਼ਲ,
+  ਅਰਕੀ ਹੂਸ਼ਈ, ਸਾਦੋਕ, ਅਬਯਾਥਾਰ, ਅਹੀਮਅਸ, ਇੱਤਈ, ਸ਼ਿਮਈ, ਮਹਨਇਮ, ਬਰਜ਼ਿੱਲਈ, ਕਿਮਹਾਮ,
+  ਅਮਾਸਾ, ਕੂਸ਼ੀ, ਬਿਕਰੀ ਦਾ ਪੁੱਤਰ ਸ਼ਬਾ (B/R ਸ਼ਬਾ after the first mention),
+  ਆਬੇਲ-ਬੈਤ-ਮਾਕਾਹ, ਅਦੋਰਾਮ, ਸ਼ਵਾ, ਯਾਈਰੀ ਈਰਾ, ਗਿਬਓਨੀ, ਅੱਯਾਹ ਦੀ ਧੀ ਰਿਸਪਾਹ,
+  ਅਦਰੀਏਲ, ਯਿਸ਼ਬੀ-ਬਨੋਬ, ਅਲਹਾਨਾਨ, ਗੋਲਿਅਥ, ਯੋਸ਼ੇਬ-ਬੱਸ਼ਬਥ, ਅਲਆਜ਼ਾਰ, ਸ਼ੰਮਾਹ,
+  ਯਹੋਯਾਦਾ ਦਾ ਪੁੱਤਰ ਬਨਾਯਾਹ, ਅਰੋਏਰ, ਯਾਜ਼ੇਰ, ਤਹਤੀਮ-ਹਾਦਸ਼ੀ, ਦਾਨ-ਯਾਨ, ਸੈਦਾ, ਸੂਰ,
+  ਯਬੂਸੀ ਅਰਵਨਾਹ.

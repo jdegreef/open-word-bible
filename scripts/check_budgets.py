@@ -78,7 +78,9 @@ BUDGETS = {
     # a page for each word found five times or more, about 380 MB, and a
     # verse page for each verse with a footnoted meaning decision, about
     # 400 MB (build_site WORD_PAGE_MIN and verse_page_ids); 4,944 MB on
-    # 2026-11-22 with forty Punjabi books and Tagalog Numbers to Nehemiah].
+    # 2026-11-22 with forty Punjabi books and Tagalog Numbers to Nehemiah;
+    # about 1,000 MB less once the header's dropdowns came from one
+    # nav-<lang>.js instead of every page (build_site nav_script)].
     # Grows with each book translated and each language added. Languages
     # added at the same time each add their own increment.
     "site_total": 5150 * MB,
