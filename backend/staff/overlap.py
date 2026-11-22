@@ -5,8 +5,9 @@ Bible.
 
 GET /api/admin/overlap/<BOOK>/?lang=en&min=6
         for each reference Bible in the language: the share of the drafts'
-        words that sit in such runs, at each level, and the longest run; and
-        the sentences with the longest runs, to read in the verse inspector
+        words that sit in such runs, at each level, and the longest run; the
+        sentences with the longest runs, to read in the verse inspector; and
+        every reading language, with how many reference Bibles it has loaded
 
 Shared runs with the public-domain Bibles are often the common heritage of
 the language's Bible wording; a high share, or long runs, are where to
@@ -19,11 +20,12 @@ import importlib.util
 
 from django.conf import settings
 from django.core.cache import cache
-from django.db.models import Max
+from django.db.models import Count, Max
 from rest_framework.exceptions import NotFound, ValidationError
 from rest_framework.response import Response
 
 from api.views import record_json
+from owb import languages
 from texts.models import Edition, Verse
 from translation.models import Sentence
 
@@ -35,6 +37,7 @@ ngram = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(ngram)
 
 # A reading language's code and the Edition.language of its reference Bibles.
+# Every reading language needs one (backend_tests/test_admin.py checks).
 EDITION_LANGUAGE = {"en": "eng", "es": "spa", "fr": "fra", "sw": "swh", "vi": "vie", "ko": "kor", "pt": "por",
                     "am": "amh", "hi": "hin", "ru": "rus", "uk": "ukr", "ja": "jpn",
                     "id": "ind", "zh": "zho", "ar": "arb", "tl": "tgl", "fa": "pes", "pa": "pan"}
@@ -97,4 +100,13 @@ def overlap(request, code):
     if answer is None:
         answer = measure(book, lang, n)
         cache.set(key, answer, 3600)
-    return Response(answer)
+    return Response({**answer, "languages": _languages()})
+
+
+def _languages():
+    """Every reading language, for the page to choose from, with how many
+    public-domain Bibles in it are loaded to compare against."""
+    loaded = dict(Edition.objects.filter(kind=Edition.Kind.REFERENCE).values_list("language")
+                  .annotate(n=Count("id")).values_list("language", "n"))
+    return [{"code": code, "name": lang["name"], "references": loaded.get(EDITION_LANGUAGE[code], 0)}
+            for code, lang in languages.READING.items()]

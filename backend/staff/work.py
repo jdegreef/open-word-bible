@@ -38,7 +38,10 @@ def fetch_work(days=DAYS):
     requests. Raises jobs.GitHubError when GitHub can't be reached."""
     since = (timezone.now() - timedelta(days=days)).strftime("%Y-%m-%dT%H:%M:%SZ")
     issues = jobs._github(f"issues?state=all&since={since}&per_page=100")
-    pulls = jobs._github("pulls?state=all&sort=updated&direction=desc&per_page=100")
+    # Newest updated first: the pages stop at the first that reaches back
+    # past `since`, since a job's pull request has been updated since then.
+    pulls = jobs._github("pulls?state=all&sort=updated&direction=desc&per_page=100",
+                         stop=lambda page: bool(page) and (page[-1].get("updated_at") or "") < since)
     by_issue = {}
     for pr in pulls:
         for number in {int(n) for n in REFERENCE.findall(f"{pr.get('title', '')}\n{pr.get('body') or ''}")}:
@@ -82,7 +85,8 @@ def work(request):
     try:
         cached = cached_work()
     except jobs.GitHubError:
-        return Response({"items": [], "error": "GitHub could not be reached, so the work isn't listed."})
+        return Response({"items": [], "error": "GitHub could not be reached, so the work isn't listed.",
+                         "days": DAYS, "stale_hours": STALE_HOURS})
     counts = {"open": sum(1 for w in cached if w["state"] == "open"),
               "stale": sum(1 for w in cached if w["stale"]),
               "in_review": sum(1 for w in cached if w["state"] == "open"
