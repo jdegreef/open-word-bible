@@ -1311,7 +1311,50 @@ var OWBAdminNav = (function () {
       function find(v) { if (v !== f.q) { f.q = v; refilter(); } }
       form.addEventListener("submit", function (e) { e.preventDefault(); stopLive(); find(search.value.trim()); });
       live(search, find);
-      var cards = d.messages.map(function (m) { return messageCard(m, d.team, { listed: f.status, moved: moved }); });
+      // Several messages at once: a box beside each card, and a bar for what
+      // to do with those ticked (a status or an assignee; never a reply).
+      var picked = {};
+      var bar = h("div", { class: "admin-bulk", hidden: true, role: "region", "aria-label": "Selected messages" });
+      var bulkNote = h("span", { class: "admin-note", role: "status" });
+      function ids() { return Object.keys(picked).filter(function (k) { return picked[k]; }).map(Number); }
+      function bulk(body, button) {
+        busy(button, true);
+        api("/api/admin/inbox/", { method: "PATCH", body: Object.assign({ ids: ids() }, body) }).then(function (r) {
+          FLASH = plural(r.messages.length, "message") + " changed.";
+          route();
+        }, function (e) { busy(button, false); note(bulkNote, e, true); });
+      }
+      function drawBar() {
+        var n = ids().length;
+        bar.hidden = !n;
+        bar.textContent = "";
+        if (!n) return;
+        var who = select("inbox-bulk-assign", [["", "Assign to\u2026"], ["none", "Nobody"]].concat((d.team || []).map(function (u) {
+          return [String(u.id), u.name || u.email];
+        })), "");
+        who.setAttribute("aria-label", "Assign the selected messages to");
+        who.addEventListener("change", function () {
+          if (who.value) bulk({ assigned_to: who.value === "none" ? null : Number(who.value) }, who);
+        });
+        var done = h("button", { type: "button", class: "admin-btn" }, "Mark done");
+        done.addEventListener("click", function () { bulk({ status: "done" }, done); });
+        var decline = h("button", { type: "button", class: "admin-btn" }, "Decline");
+        decline.addEventListener("click", function () { bulk({ status: "declined" }, decline); });
+        var clear = h("button", { type: "button", class: "admin-link" }, "Clear");
+        clear.addEventListener("click", function () {
+          picked = {};
+          list.querySelectorAll("input.admin-pick-message").forEach(function (b) { b.checked = false; });
+          drawBar();
+        });
+        add(bar, [h("strong", null, plural(n, "message") + " selected"), who,
+          f.status !== "done" ? done : null, f.status !== "declined" ? decline : null, clear, bulkNote]);
+      }
+      var cards = d.messages.map(function (m) {
+        var box = h("input", { type: "checkbox", class: "admin-pick-message", "aria-label": "Select the message on " + m.verse_label + " from " + (m.from.name || m.from.email) });
+        box.addEventListener("change", function () { picked[m.id] = box.checked; drawBar(); });
+        return h("div", { class: "admin-message-row" }, box, messageCard(m, d.team, { listed: f.status, moved: moved }));
+      });
+      var list = h("div", { class: "admin-messages" }, cards);
       var filtered = f.kind || f.lang || f.book || f.assigned || f.q;
       var pager = null;
       if (d.total > d.page || d.offset) {
@@ -1325,7 +1368,8 @@ var OWBAdminNav = (function () {
       }
       return [head("Readers", "Reader inbox", "Suggestions and questions readers send from a verse. New messages come oldest first; assign one to say you're dealing with it. A reply is emailed to the reader once; mark a message done when it's dealt with."),
         h("div", { class: "admin-toolbar" }, tabs, whose), h("div", { class: "admin-toolbar admin-filters" }, kind, lang, book), form,
-        cards.length ? h("div", { class: "admin-messages" }, cards) : empty(filtered ? "No messages match these filters." : "No messages here."),
+        bar,
+        cards.length ? list : empty(filtered ? "No messages match these filters." : "No messages here."),
         filtered && !cards.length ? (function () {
           var clear = h("button", { type: "button", class: "admin-btn" }, "Clear filters");
           clear.addEventListener("click", function () { f.kind = f.lang = f.book = f.assigned = f.q = ""; refilter(); });
