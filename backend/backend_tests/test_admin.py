@@ -870,6 +870,22 @@ class WorkTest(AdminTestCase):
         self.assertTrue(items[22]["stale"])    # a day old with none
         self.assertEqual(data["counts"], {"open": 2, "stale": 1, "in_review": 1, "done": 1})
 
+    def test_an_old_copy_is_served_at_once_while_github_is_asked_again(self):
+        from staff import work as staff_work
+        with mock.patch("staff.work.timezone.now", return_value=datetime(2026, 10, 17, 12, tzinfo=UTC)):
+            first = self.admin.get("/api/admin/work/").json()
+        self.assertTrue(first["fetched_at"])
+        kept = cache.get(staff_work.KEY)
+        cache.set(staff_work.KEY, {**kept, "at": kept["at"] - staff_work.FRESH - 1}, staff_work.KEEP)
+        started = []
+        with mock.patch.object(staff_jobs, "_github", side_effect=AssertionError("not in the request")), \
+                mock.patch("staff.work.threading.Thread") as thread:
+            thread.return_value.start.side_effect = lambda: started.append(True)
+            again = self.admin.get("/api/admin/work/").json()
+            self.assertEqual(len(again["items"]), len(first["items"]))
+            self.admin.get("/api/admin/work/")   # a second page doesn't start a second refresh
+        self.assertEqual(started, [True])
+
     def test_github_out_of_reach_still_says_the_window(self):
         # The page's heading reads days and stale_hours ("the last undefined days" before).
         with mock.patch.object(staff_jobs, "_github", side_effect=staff_jobs.GitHubError):

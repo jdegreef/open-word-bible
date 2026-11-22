@@ -2034,6 +2034,8 @@ var OWBAdminNav = (function () {
       });
       return [head("Progress", "Work in progress", "Drafting jobs, fix requests and article jobs from the last " + d.days + " days, with the pull requests that name them. A job open for more than " + d.stale_hours + " hours with no pull request has stalled."),
         d.error ? h("p", { class: "notice" }, d.error) : null,
+        // Kept from GitHub for a couple of minutes, and refreshed behind the page after that.
+        d.fetched_at ? h("p", { class: "admin-sub" }, "Read from GitHub " + when(d.fetched_at) + ".") : null,
         d.counts ? h("div", { class: "admin-tiles" }, tile(num(d.counts.open), "open"), tile(num(d.counts.in_review), "with a pull request open"),
           tile(num(d.counts.stale), "stalled", d.counts.stale ? "bad" : ""), tile(num(d.counts.done), "closed in " + d.days + " days")) : null,
         h("div", { class: "admin-toolbar" }, seg([["open", "Open"], ["stale", "Stalled"], ["closed", "Closed"], ["all", "All"]], WORK.state, function (v) { WORK.state = v; route(); }), kind),
