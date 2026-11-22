@@ -65,5 +65,5 @@ def forwards(apps, schema_editor):
 
 
 class Migration(migrations.Migration):
-    dependencies = [("accounts", "0023_punjabi_language_reviewers")]
+    dependencies = [("accounts", "0024_system_accounts")]
     operations = [migrations.RunPython(forwards, migrations.RunPython.noop)]

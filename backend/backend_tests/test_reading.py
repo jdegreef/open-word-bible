@@ -349,7 +349,7 @@ class NivNumberingTest(TestCase):
         PassageNote.objects.create(user=self.user, passage="PSA.3.1-9", note="Morning", updated_at=self.OLD)
         ReaderState.objects.create(user=self.user, memory={"MAL.3.23": {"t": "Elijah", "at": self.OLD}})
         ReadingPlace.objects.create(user=self.user, book="JOL", chapter=3, verse="1", updated_at=self.OLD)
-        importlib.import_module("accounts.migrations.0024_niv_numbering").forwards(apps, None)
+        importlib.import_module("accounts.migrations.0025_niv_numbering").forwards(apps, None)
         marks = {m.verse: m for m in Mark.objects.filter(user=self.user)}
         self.assertEqual(set(marks), {"NUM.26.1", "PSA.4.2"})
         self.assertEqual((marks["NUM.26.1"].highlight, marks["NUM.26.1"].bookmark, marks["NUM.26.1"].note),
@@ -372,6 +372,6 @@ class NivNumberingTest(TestCase):
                                              text="And here?")
         ReaderMessage.objects.filter(pk=before.pk).update(
             created_at=datetime.datetime(2026, 11, 20, tzinfo=datetime.timezone.utc))
-        importlib.import_module("feedback.migrations.0006_niv_numbering").forwards(apps, None)
+        importlib.import_module("feedback.migrations.0007_niv_numbering").forwards(apps, None)
         self.assertEqual(ReaderMessage.objects.get(pk=before.pk).verse, "MAL.4.5")
         self.assertEqual(ReaderMessage.objects.get(pk=after.pk).verse, "MAL.4.5")

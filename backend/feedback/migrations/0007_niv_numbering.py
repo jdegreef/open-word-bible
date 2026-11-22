@@ -18,5 +18,5 @@ def forwards(apps, schema_editor):
 
 
 class Migration(migrations.Migration):
-    dependencies = [("feedback", "0005_reader_message_status_index")]
+    dependencies = [("feedback", "0006_message_text_trigram")]
     operations = [migrations.RunPython(forwards, migrations.RunPython.noop)]
