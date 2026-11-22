@@ -143,3 +143,8 @@ test("answering a message forgets every read that shows it: the verse inspector,
   const reads = [A + "inbox/?status=new", A + "verses/JHN.3.16/", A + "languages/", A + "users/7/", A + "coverage/", A + "review/JHN.1.1.s1/?layer=grc"];
   assert.deepEqual(kept(A + "inbox/12/", reads, {}, { reply: "Thanks" }), [A + "coverage/", A + "review/JHN.1.1.s1/?layer=grc"]);
 });
+
+test("taking a review step back forgets every sentence, as a flag does", () => {
+  const left = kept(A + "review/JHN.1.1.s1/", READS, {}, { action: "undo", event: 4 });
+  assert.ok(!left.some((k) => k.startsWith(A + "review/")));
+});

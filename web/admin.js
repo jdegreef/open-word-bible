@@ -26,10 +26,11 @@ var OWBAdminCore = (function () {
     // the counts that include review states, and the verse inspector's
     // statuses. Another sentence's reads stay, unless its "next" was this one.
     // A flag can put an approved sentence back in the queue, becoming the
-    // "next" of any sentence before it, so a flag forgets every sentence.
+    // "next" of any sentence before it, so a flag forgets every sentence;
+    // so can taking a step back (undo).
     [/^review\/([^/?]+)\/$/, function (m, body) {
       return { paths: ["review/?", "review/flags/", "review/workspace/", "assignments/",
-        body && body.action === "flag" ? "review/" : "review/" + m[1] + "/",
+        body && (body.action === "flag" || body.action === "undo") ? "review/" : "review/" + m[1] + "/",
         "overview/", "coverage/", "books/", "languages/", "health/", "verses/"], next: decodeURIComponent(m[1]) };
     }],
     // A message also shows in the verse inspector (its card), Languages
@@ -493,6 +494,33 @@ var OWBAdminNav = (function () {
       }
       shown.textContent = e.message;
     });
+  }
+
+  // A note at the foot of the window that outlives the section it was made
+  // in (approving opens the next sentence): text, and an action such as
+  // Undo, for `seconds`. One at a time.
+  var TOAST = null;
+  function toast(text, action, seconds) {
+    if (TOAST) TOAST.close();
+    var box = h("div", { class: "admin-toast", role: "status" }, h("span", null, text));
+    var timer = null;
+    var me = { close: function () { clearTimeout(timer); box.remove(); if (TOAST === me) TOAST = null; } };
+    if (action) {
+      var b = h("button", { type: "button", class: "admin-toast-action" }, action.label);
+      b.addEventListener("click", function () { busy(b, true); action.run(me, b); });
+      box.appendChild(b);
+    }
+    var x = h("button", { type: "button", class: "admin-toast-close", "aria-label": "Dismiss" }, "\u00d7");
+    x.addEventListener("click", me.close);
+    box.appendChild(x);
+    document.body.appendChild(box);
+    timer = setTimeout(me.close, (seconds || 8) * 1000);
+    // Kept while the pointer or focus is on it, so Undo isn't taken away mid-reach.
+    box.addEventListener("mouseenter", function () { clearTimeout(timer); });
+    box.addEventListener("focusin", function () { clearTimeout(timer); });
+    box.addEventListener("mouseleave", function () { timer = setTimeout(me.close, 4000); });
+    TOAST = me;
+    return me;
   }
 
   // Search as you type: run(the trimmed value) a quarter second after the
@@ -2208,7 +2236,7 @@ var OWBAdminNav = (function () {
     "message.reply": "answered", "message.done": "marked done", "message.declined": "declined", "message.new": "reopened",
     "job.file": "filed drafting job", "article.job": "filed article job", "digest.send": "sent the weekly digest to", "message.fixed": "told the reader their message led to a change:", "email.send": "emailed the team:", "fix.request": "requested fix",
     "export.download": "downloaded", "review.assign": "assigned review to", "review.unassign": "took back a review assignment from",
-    "review.assignment": "changed a review assignment of"
+    "review.assignment": "changed a review assignment of", "review.undo": "took back"
   };
   function activityList(actions) {
     return h("ul", { class: "admin-feed" }, actions.map(function (a) {
@@ -2950,10 +2978,23 @@ var OWBAdminNav = (function () {
         busy(button, true);
         api("/api/admin/review/" + encodeURIComponent(record) + "/", { method: "POST", body: { layer: layer, action: action, note: noteBox.value } })
           .then(function (res) {
-            if (listed && action !== "comment") rows.filter(function (x) { return x.record === record; })[0].state = res.state;
+            var row = listed ? rows.filter(function (x) { return x.record === record; })[0] : null;
+            if (row && action !== "comment") row.state = res.state;
             var next = ahead(res.next);
-            FLASH = { approve: "Approved ", flag: "Flagged ", comment: "Comment added to " }[action] + d.label + "." +
-              (action !== "comment" && !next ? " That's the end of the queue." : "");
+            var done = { approve: "Approved ", flag: "Flagged ", comment: "Comment added to " }[action] + d.label + ".";
+            FLASH = action !== "comment" && !next ? "That's the end of the queue." : "";
+            // A slip of the a key is put right here, for a while: the step is
+            // taken back (the API allows it for ten minutes) and the sentence opened again.
+            toast(done, { label: "Undo", run: function (t, b) {
+              api("/api/admin/review/" + encodeURIComponent(record) + "/", { method: "POST", body: { layer: layer, action: "undo", event: res.event.id } })
+                .then(function (back) {
+                  if (row) row.state = back.state;
+                  t.close();
+                  toast("Taken back: " + d.label + ".", null, 5);
+                  var here = "#review/" + layer + "/" + record;
+                  if (location.hash === here) route(); else location.hash = here;
+                }, function (e) { busy(b, false); t.close(); toast(e.message, null, 8); });
+            } }, 12);
             if (action === "comment") route();
             else location.hash = next ? "#review/" + layer + "/" + next : "#review/" + layer;
           }, function (e) { busyNow = false; busy(button, false); note(status, e, true); });
