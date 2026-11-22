@@ -26,13 +26,16 @@ var OWBAdminCore = (function () {
     // the counts that include review states, and the verse inspector's
     // statuses. Another sentence's reads stay, unless its "next" was this one.
     // A flag can put an approved sentence back in the queue, becoming the
-    // "next" of any sentence before it, so a flag forgets every sentence.
+    // "next" of any sentence before it, so a flag forgets every sentence;
+    // so can taking a step back (undo).
     [/^review\/([^/?]+)\/$/, function (m, body) {
       return { paths: ["review/?", "review/flags/", "review/workspace/", "assignments/",
-        body && body.action === "flag" ? "review/" : "review/" + m[1] + "/",
+        body && (body.action === "flag" || body.action === "undo") ? "review/" : "review/" + m[1] + "/",
         "overview/", "coverage/", "books/", "languages/", "health/", "verses/"], next: decodeURIComponent(m[1]) };
     }],
-    [/^inbox\//, ["inbox/", "overview/", "books/", "activity/", "engagement/"]],
+    // A message also shows in the verse inspector (its card), Languages
+    // (new messages by language) and the reader's account page.
+    [/^inbox\//, ["inbox/", "overview/", "books/", "activity/", "engagement/", "verses/", "languages/", "users/"]],
     [/^fixes\//, ["fixes/", "overview/", "activity/", "verses/", "inbox/", "work/"]],
     [/^articles\//, ["articles/", "overview/", "activity/", "work/"]],
     [/^jobs\//, ["jobs/", "overview/", "activity/", "work/"]],
@@ -145,8 +148,23 @@ var OWBAdminCore = (function () {
     return { title: title, text: e.message, details: details, retry: status !== 403 && status !== 404 };
   }
 
+  // The Idempotency-Key for a change: the same change (method, path and
+  // body) gets the same key, so a double click or a resend of something
+  // already filed or emailed is refused by the API (staff/permissions.py
+  // once). "" for a read, and for a preview or a test that sends nothing
+  // for good (dry_run, test).
+  function onceKey(method, path, body) {
+    if (!method || method === "GET" || (body && (body.dry_run || body.test))) return "";
+    var text = method + " " + path + " " + JSON.stringify(body === undefined ? null : body), hash = 2166136261;
+    for (var i = 0; i < text.length; i++) {
+      hash ^= text.charCodeAt(i);
+      hash = Math.imul(hash, 16777619) >>> 0;
+    }
+    return "owb-" + hash.toString(36) + "-" + text.length.toString(36);
+  }
+
   return { drops: drops, stale: stale, pack: pack, unpack: unpack, tag: tag, step: step, todo: todo,
-    failed: failed, failure: failure };
+    failed: failed, failure: failure, onceKey: onceKey };
 })();
 
 // Addresses and the command palette, also page-free (tests/js/admin-nav.test.mjs).
@@ -428,6 +446,8 @@ var OWBAdminNav = (function () {
     var method = options.method || "GET";
     var headers = { "Content-Type": "application/json" };
     if (account && account.token) headers.Authorization = "Bearer " + account.token;
+    var once = path.indexOf("/api/admin/") === 0 ? C.onceKey(method, path, options.body) : "";
+    if (once) headers["Idempotency-Key"] = once;
     var abort = typeof AbortController === "function" ? new AbortController() : null;
     var timer = abort ? setTimeout(function () { abort.abort(); }, REQUEST_MS) : null;
     function fail(message, extra) {
@@ -491,6 +511,33 @@ var OWBAdminNav = (function () {
       }
       shown.textContent = e.message;
     });
+  }
+
+  // A note at the foot of the window that outlives the section it was made
+  // in (approving opens the next sentence): text, and an action such as
+  // Undo, for `seconds`. One at a time.
+  var TOAST = null;
+  function toast(text, action, seconds) {
+    if (TOAST) TOAST.close();
+    var box = h("div", { class: "admin-toast", role: "status" }, h("span", null, text));
+    var timer = null;
+    var me = { close: function () { clearTimeout(timer); box.remove(); if (TOAST === me) TOAST = null; } };
+    if (action) {
+      var b = h("button", { type: "button", class: "admin-toast-action" }, action.label);
+      b.addEventListener("click", function () { busy(b, true); action.run(me, b); });
+      box.appendChild(b);
+    }
+    var x = h("button", { type: "button", class: "admin-toast-close", "aria-label": "Dismiss" }, "\u00d7");
+    x.addEventListener("click", me.close);
+    box.appendChild(x);
+    document.body.appendChild(box);
+    timer = setTimeout(me.close, (seconds || 8) * 1000);
+    // Kept while the pointer or focus is on it, so Undo isn't taken away mid-reach.
+    box.addEventListener("mouseenter", function () { clearTimeout(timer); });
+    box.addEventListener("focusin", function () { clearTimeout(timer); });
+    box.addEventListener("mouseleave", function () { timer = setTimeout(me.close, 4000); });
+    TOAST = me;
+    return me;
   }
 
   // Search as you type: run(the trimmed value) a quarter second after the
@@ -693,6 +740,13 @@ var OWBAdminNav = (function () {
       touched = false;
       if (was) carry(was);
       if (moved && main.getBoundingClientRect().top < 0) window.scrollTo(0, 0);
+      // A new section: its heading takes focus, so a screen reader says
+      // where you are and the keyboard starts there (not on a redraw of the
+      // same section, such as a search as you type).
+      if (moved && !was) {
+        var heading = main.querySelector("h1");
+        if (heading) { heading.setAttribute("tabindex", "-1"); heading.focus({ preventScroll: true }); }
+      }
     }
     var draw = VIEWS[name];
     Promise.resolve().then(function () { return draw(arg); }).then(function (nodes) {
@@ -958,10 +1012,11 @@ var OWBAdminNav = (function () {
             h("td", { class: "admin-num" }, num(b.sentences)),
             langs.map(function (l) {
               var c = b.languages[l.code];
-              return h("td", { class: "admin-cell" }, h("span", {
-                class: "admin-state " + c.state,
-                title: l.name + ": " + STATE_LABEL[c.state] + " (" + num(c.sentences) + " of " + num(b.sentences) + " sentences)"
-              }, c.state === "none" ? "" : c.state === "drafted" ? "✓" : pct(c.sentences, b.sentences) + "%"));
+              var said = l.name + ": " + STATE_LABEL[c.state] + " (" + num(c.sentences) + " of " + num(b.sentences) + " sentences)";
+              // The colour and mark for the eye; the same words as the tooltip for a screen reader.
+              return h("td", { class: "admin-cell" }, h("span", { class: "admin-state " + c.state, title: said },
+                h("span", { "aria-hidden": "true" }, c.state === "none" ? "" : c.state === "drafted" ? "✓" : pct(c.sentences, b.sentences) + "%"),
+                h("span", { class: "sr-only" }, said)));
             }));
         });
         var done = function (code) {
@@ -1016,8 +1071,9 @@ var OWBAdminNav = (function () {
           langs.map(function (l) {
             var n = c.languages[l.code];
             var state = !n ? "none" : n >= c.sentences ? "drafted" : "partial";
-            return h("td", { class: "admin-cell" }, h("span", { class: "admin-state " + state, title: l.name + ": " + num(n) + " of " + num(c.sentences) },
-              state === "drafted" ? "✓" : n ? num(n) : ""));
+            var said = l.name + ": " + num(n) + " of " + num(c.sentences);
+            return h("td", { class: "admin-cell" }, h("span", { class: "admin-state " + state, title: said },
+              h("span", { "aria-hidden": "true" }, state === "drafted" ? "✓" : n ? num(n) : ""), h("span", { class: "sr-only" }, said)));
           }));
       });
       var uncertain = Object.keys(b.uncertain).map(function (k) {
@@ -1150,39 +1206,89 @@ var OWBAdminNav = (function () {
 
   // Reader inbox.
   // #inbox/mine opens the messages assigned to you (the dashboard links it).
-  var INBOX = { status: "new", kind: "", lang: "", assigned: "", q: "" };
-  var INBOX_TEAM = [];
+  var INBOX = { status: "new", kind: "", lang: "", book: "", assigned: "", q: "", offset: 0 };
   VIEWS.inbox = function (arg) {
     if (arg === "mine") INBOX.assigned = "me";
-    var q = "?status=" + INBOX.status + (INBOX.kind ? "&kind=" + INBOX.kind : "") + (INBOX.lang ? "&lang=" + INBOX.lang : "") +
-      (INBOX.assigned ? "&assigned=" + INBOX.assigned : "") + (INBOX.q ? "&q=" + encodeURIComponent(INBOX.q) : "");
+    var f = INBOX;
+    f.offset = Math.max(0, parseInt(f.offset, 10) || 0);
+    var q = "?status=" + f.status + (f.kind ? "&kind=" + f.kind : "") + (f.lang ? "&lang=" + f.lang : "") +
+      (f.book ? "&book=" + f.book : "") + (f.assigned ? "&assigned=" + f.assigned : "") +
+      (f.q ? "&q=" + encodeURIComponent(f.q) : "") + (f.offset ? "&offset=" + f.offset : "");
+    // A filter changed: back to the first page (route() writes the address).
+    function refilter() { f.offset = 0; route(); }
     return api("/api/admin/inbox/" + q).then(function (d) {
-      INBOX_TEAM = d.team;
-      var tabs = seg([["new", "New (" + d.counts.new + ")"], ["answered", "Answered (" + d.counts.answered + ")"],
-        ["done", "Done (" + d.counts.done + ")"], ["declined", "Declined (" + d.counts.declined + ")"]], INBOX.status, function (v) {
-        INBOX.status = v; route();
-      });
-      var kind = select("inbox-kind", [["", "Suggestions and questions"], ["suggestion", "Suggestions"], ["question", "Questions"]], INBOX.kind);
-      kind.addEventListener("change", function () { INBOX.kind = kind.value; route(); });
+      var counts = d.counts;
+      var tabs = h("span");
+      function drawTabs() {
+        tabs.textContent = "";
+        tabs.appendChild(seg([["new", "New (" + counts.new + ")"], ["answered", "Answered (" + counts.answered + ")"],
+          ["done", "Done (" + counts.done + ")"], ["declined", "Declined (" + counts.declined + ")"]], f.status, function (v) {
+          f.status = v; refilter();
+        }));
+      }
+      drawTabs();
+      // A card that leaves this tab (done, declined, answered) moves the counts at once.
+      function moved(from, to) {
+        if (from in counts) counts[from] = Math.max(0, counts[from] - 1);
+        if (to in counts) counts[to] += 1;
+        drawTabs();
+      }
+      var kind = select("inbox-kind", [["", "Suggestions and questions"], ["suggestion", "Suggestions"], ["question", "Questions"]], f.kind);
+      kind.addEventListener("change", function () { f.kind = kind.value; refilter(); });
       kind.setAttribute("aria-label", "Kind");
-      var whose = seg([["me", "Mine"], ["none", "Unassigned"], ["", "All"]], INBOX.assigned, function (v) {
-        INBOX.assigned = v; location.hash === "#inbox" ? route() : (location.hash = "#inbox");
+      // The languages and books with messages in this tab (and the one chosen, even if none are left).
+      var langs = (d.languages || []).slice();
+      if (f.lang && !langs.some(function (l) { return l.code === f.lang; })) langs.push({ code: f.lang, name: f.lang, count: 0 });
+      var lang = select("inbox-lang", [["", "Every language"]].concat(langs.map(function (l) { return [l.code, l.name + " (" + l.count + ")"]; })), f.lang);
+      lang.setAttribute("aria-label", "Language");
+      lang.addEventListener("change", function () { f.lang = lang.value; refilter(); });
+      var books = (d.books || []).slice();
+      if (f.book && !books.some(function (b) { return b.code === f.book; })) books.push({ code: f.book, name: f.book, count: 0 });
+      var book = select("inbox-book", [["", "Every book"]].concat(books.map(function (b) { return [b.code, b.name + " (" + b.count + ")"]; })), f.book);
+      book.setAttribute("aria-label", "Book");
+      book.addEventListener("change", function () { f.book = book.value; refilter(); });
+      var whose = seg([["me", "Mine"], ["none", "Unassigned"], ["", "All"]], f.assigned, function (v) {
+        f.assigned = v; f.offset = 0;
+        location.hash === "#inbox" ? route() : (location.hash = "#inbox");
       });
       // Words to find in every message, not only the page drawn: the API
       // searches (q=), as you type. The tabs' counts are then of what it found.
-      var search = h("input", { type: "search", id: "inbox-q", value: INBOX.q, placeholder: "Words, a verse or a reader", "aria-label": "Find in the reader inbox" });
-      var found = h("span", { class: "admin-sub", role: "status" }, INBOX.q ? plural(d.total, "message") + " found" : "");
+      var search = h("input", { type: "search", id: "inbox-q", value: f.q, placeholder: "Words, a verse or a reader", "aria-label": "Find in the reader inbox" });
+      var found = h("span", { class: "admin-sub", role: "status" }, f.q ? plural(d.total, "message") + " found" : "");
       var form = h("form", { class: "admin-toolbar", role: "search" }, search, h("button", { type: "submit", class: "admin-btn" }, "Find"), found);
-      function find(v) { if (v !== INBOX.q) { INBOX.q = v; route(); } }
+      function find(v) { if (v !== f.q) { f.q = v; refilter(); } }
       form.addEventListener("submit", function (e) { e.preventDefault(); stopLive(); find(search.value.trim()); });
       live(search, find);
+      var cards = d.messages.map(function (m) { return messageCard(m, d.team, { listed: f.status, moved: moved }); });
+      var filtered = f.kind || f.lang || f.book || f.assigned || f.q;
+      var pager = null;
+      if (d.total > d.page || d.offset) {
+        var first = d.offset + 1, last = d.offset + d.messages.length;
+        var newer = h("button", { type: "button", class: "admin-btn", disabled: !d.offset }, f.status === "new" ? "\u2039 Earlier" : "\u2039 Newer");
+        var older = h("button", { type: "button", class: "admin-btn", disabled: last >= d.total }, f.status === "new" ? "Later \u203a" : "Older \u203a");
+        newer.addEventListener("click", function () { f.offset = Math.max(0, d.offset - d.page); route(); });
+        older.addEventListener("click", function () { f.offset = d.offset + d.page; route(); });
+        pager = h("nav", { class: "admin-pager", "aria-label": "Pages of messages" },
+          h("span", { class: "admin-sub" }, num(first) + "\u2013" + num(last) + " of " + num(d.total)), newer, older);
+      }
       return [head("Readers", "Reader inbox", "Suggestions and questions readers send from a verse. New messages come oldest first; assign one to say you're dealing with it. A reply is emailed to the reader once; mark a message done when it's dealt with."),
-        h("div", { class: "admin-toolbar" }, tabs, whose, kind), form,
-        d.messages.length ? h("div", { class: "admin-messages" }, d.messages.map(messageCard)) : empty(INBOX.q ? "No messages here have those words." : "No messages here."),
-        d.total > d.messages.length ? h("p", { class: "admin-sub" }, "Showing " + (INBOX.status === "new" ? "the longest waiting " : "the newest ") + d.messages.length + " of " + num(d.total) + ".") : null];
+        h("div", { class: "admin-toolbar" }, tabs, whose, kind, lang, book), form,
+        cards.length ? h("div", { class: "admin-messages" }, cards) : empty(filtered ? "No messages match these filters." : "No messages here."),
+        filtered && !cards.length ? (function () {
+          var clear = h("button", { type: "button", class: "admin-btn" }, "Clear filters");
+          clear.addEventListener("click", function () { f.kind = f.lang = f.book = f.assigned = f.q = ""; refilter(); });
+          return h("p", null, clear);
+        })() : null,
+        pager];
     });
   };
-  function messageCard(m) {
+  // team: whom the message can be assigned to, from the answer that listed
+  // it (the inbox's or the verse inspector's).
+  // opts.listed: the inbox tab the card is shown in; a change that moves it
+  // out (done, declined, answered) folds it to one line, with Undo for a
+  // status, and opts.moved(from, to) updates the tab counts.
+  function messageCard(m, team, opts) {
+    opts = opts || {};
     var card = h("article", { class: "admin-message" });
     var draft = "";   // the reply being written, kept when the card is drawn again
     function draw() {
@@ -1239,11 +1345,14 @@ var OWBAdminNav = (function () {
       card.appendChild(noteField);
       card.appendChild(status);
       function assignee(status) {
-        var pick = select("assign-" + m.id, [["", "Nobody"]].concat(INBOX_TEAM.map(function (u) {
+        var pick = select("assign-" + m.id, [["", "Nobody"]].concat((team || []).map(function (u) {
           return [String(u.id), (u.name ? u.name + " (" + u.email + ")" : u.email) + (u.email === ME.email ? " — you" : "")];
         })), m.assigned_to ? String(m.assigned_to.id) : "");
         pick.addEventListener("change", function () {
-          update({ assigned_to: pick.value ? Number(pick.value) : null }).catch(function (e) { note(status, e, true); });
+          update({ assigned_to: pick.value ? Number(pick.value) : null }).catch(function (e) {
+            pick.value = m.assigned_to ? String(m.assigned_to.id) : "";   // still assigned as before
+            note(status, e, true);
+          });
         });
         return h("p", { class: "admin-actions" }, h("label", { for: "assign-" + m.id }, "Assigned to "), pick,
           m.assigned_to && m.assigned_at ? h("span", { class: "admin-sub" }, " since " + when(m.assigned_at)) : null);
@@ -1258,7 +1367,38 @@ var OWBAdminNav = (function () {
       }
     }
     function update(body) {
-      return api("/api/admin/inbox/" + m.id + "/", { method: "PATCH", body: body }).then(function (fresh) { m = fresh; draw(); });
+      var was = m.status;
+      return api("/api/admin/inbox/" + m.id + "/", { method: "PATCH", body: body }).then(function (fresh) {
+        m = fresh;
+        if (opts.listed && was === opts.listed && m.status !== was) folded(was, !!body.reply);
+        else draw();
+      });
+    }
+    var DONE_LABEL = { done: "Marked done", declined: "Declined", answered: "Answered", "new": "Back to new" };
+    // The card once it has left the tab: what happened, and Undo (not for
+    // a reply, which has been emailed).
+    function folded(was, replied) {
+      if (opts.moved) opts.moved(was, m.status);
+      card.textContent = "";
+      card.classList.add("admin-message-folded");
+      var what = (DONE_LABEL[m.status] || m.status) + ": " + m.verse_label + ", from " + (m.from.name || m.from.email) +
+        (replied ? ". The reply was emailed." : ".");
+      var line = h("p", { role: "status" }, what);
+      if (!replied) {
+        var undo = h("button", { type: "button", class: "admin-link" }, "Undo");
+        undo.addEventListener("click", function () {
+          busy(undo, true);
+          var now = m.status;
+          api("/api/admin/inbox/" + m.id + "/", { method: "PATCH", body: { status: was } }).then(function (fresh) {
+            m = fresh;
+            if (opts.moved) opts.moved(now, m.status);
+            card.classList.remove("admin-message-folded");
+            draw();
+          }, function (e) { busy(undo, false); line.appendChild(h("span", { class: "admin-note bad" }, " " + e.message)); });
+        });
+        add(line, [" ", undo]);
+      }
+      card.appendChild(line);
     }
     draw();
     return card;
@@ -1325,7 +1465,7 @@ var OWBAdminNav = (function () {
       if (d.records.length) out.push(approvalHistory(d.verse));
       if (d.messages && d.messages.length) {
         out.push(h("section", { class: "admin-block" }, h("h2", null, "Reader messages"),
-          h("div", { class: "admin-messages" }, d.messages.map(messageCard))));
+          h("div", { class: "admin-messages" }, d.messages.map(function (m) { return messageCard(m, d.team); }))));
       }
       if (d.fixes.length) {
         out.push(h("section", { class: "admin-block" }, h("h2", null, "Fix requests"), h("ul", { class: "admin-feed" }, d.fixes.map(function (f) {
@@ -2122,7 +2262,7 @@ var OWBAdminNav = (function () {
     "message.reply": "answered", "message.done": "marked done", "message.declined": "declined", "message.new": "reopened",
     "job.file": "filed drafting job", "article.job": "filed article job", "digest.send": "sent the weekly digest to", "message.fixed": "told the reader their message led to a change:", "email.send": "emailed the team:", "fix.request": "requested fix",
     "export.download": "downloaded", "review.assign": "assigned review to", "review.unassign": "took back a review assignment from",
-    "review.assignment": "changed a review assignment of"
+    "review.assignment": "changed a review assignment of", "review.undo": "took back"
   };
   function activityList(actions) {
     return h("ul", { class: "admin-feed" }, actions.map(function (a) {
@@ -2864,10 +3004,23 @@ var OWBAdminNav = (function () {
         busy(button, true);
         api("/api/admin/review/" + encodeURIComponent(record) + "/", { method: "POST", body: { layer: layer, action: action, note: noteBox.value } })
           .then(function (res) {
-            if (listed && action !== "comment") rows.filter(function (x) { return x.record === record; })[0].state = res.state;
+            var row = listed ? rows.filter(function (x) { return x.record === record; })[0] : null;
+            if (row && action !== "comment") row.state = res.state;
             var next = ahead(res.next);
-            FLASH = { approve: "Approved ", flag: "Flagged ", comment: "Comment added to " }[action] + d.label + "." +
-              (action !== "comment" && !next ? " That's the end of the queue." : "");
+            var done = { approve: "Approved ", flag: "Flagged ", comment: "Comment added to " }[action] + d.label + ".";
+            FLASH = action !== "comment" && !next ? "That's the end of the queue." : "";
+            // A slip of the a key is put right here, for a while: the step is
+            // taken back (the API allows it for ten minutes) and the sentence opened again.
+            toast(done, { label: "Undo", run: function (t, b) {
+              api("/api/admin/review/" + encodeURIComponent(record) + "/", { method: "POST", body: { layer: layer, action: "undo", event: res.event.id } })
+                .then(function (back) {
+                  if (row) row.state = back.state;
+                  t.close();
+                  toast("Taken back: " + d.label + ".", null, 5);
+                  var here = "#review/" + layer + "/" + record;
+                  if (location.hash === here) route(); else location.hash = here;
+                }, function (e) { busy(b, false); t.close(); toast(e.message, null, 8); });
+            } }, 12);
             if (action === "comment") route();
             else location.hash = next ? "#review/" + layer + "/" + next : "#review/" + layer;
           }, function (e) { busyNow = false; busy(button, false); note(status, e, true); });

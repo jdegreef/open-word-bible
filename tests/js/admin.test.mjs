@@ -71,7 +71,7 @@ test("an assignment change forgets assignments, the workspace and the dashboard,
 test("an inbox reply forgets the inbox and the overview, not the review", () => {
   const left = kept(A + "inbox/12/", READS);
   for (const gone of [A + "inbox/?status=new", A + "overview/", A + "books/JHN/", A + "activity/"]) assert.ok(!left.includes(gone), gone);
-  for (const stays of [A + "review/?layer=grc&book=&state=todo&offset=0", A + "coverage/", A + "users/?offset=0"]) assert.ok(left.includes(stays), stays);
+  for (const stays of [A + "review/?layer=grc&book=&state=todo&offset=0", A + "coverage/", A + "team/"]) assert.ok(left.includes(stays), stays);
 });
 
 test("other changes forget what they touch", () => {
@@ -137,4 +137,24 @@ test("a failed section says what happened, offers Try again, and gives details w
   assert.equal(C.failure(Object.assign(new Error("x"), { code: "offline", path: "/api/admin/" })).title, "Can't reach the server");
   assert.equal(C.failure(Object.assign(new Error("x"), { status: 403 })).retry, false);
   assert.equal(C.failure(new Error("A view's own error")).details, "");
+});
+
+test("answering a message forgets every read that shows it: the verse inspector, Languages and the reader's page", () => {
+  const reads = [A + "inbox/?status=new", A + "verses/JHN.3.16/", A + "languages/", A + "users/7/", A + "coverage/", A + "review/JHN.1.1.s1/?layer=grc"];
+  assert.deepEqual(kept(A + "inbox/12/", reads, {}, { reply: "Thanks" }), [A + "coverage/", A + "review/JHN.1.1.s1/?layer=grc"]);
+});
+
+test("taking a review step back forgets every sentence, as a flag does", () => {
+  const left = kept(A + "review/JHN.1.1.s1/", READS, {}, { action: "undo", event: 4 });
+  assert.ok(!left.some((k) => k.startsWith(A + "review/")));
+});
+
+test("the same change gets the same Idempotency-Key; a different one, a read or a preview doesn't", () => {
+  const job = { book: "EZK", languages: ["en"] };
+  assert.equal(C.onceKey("POST", A + "jobs/", job), C.onceKey("POST", A + "jobs/", { book: "EZK", languages: ["en"] }));
+  assert.notEqual(C.onceKey("POST", A + "jobs/", job), C.onceKey("POST", A + "jobs/", { book: "DAN", languages: ["en"] }));
+  assert.match(C.onceKey("POST", A + "jobs/", job), /^owb-[0-9a-z]+-[0-9a-z]+$/);
+  assert.equal(C.onceKey("GET", A + "jobs/"), "");
+  assert.equal(C.onceKey("POST", A + "jobs/bulk/", { testament: "nt", dry_run: true }), "");
+  assert.equal(C.onceKey("POST", A + "emails/", { subject: "Hi", test: true }), "");
 });

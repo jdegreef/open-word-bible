@@ -39,7 +39,7 @@ def recipients(audience):
     return sorted(set(users.values_list("username", flat=True)))
 
 
-@admin_view("email", methods=("GET", "POST"))
+@admin_view("email", methods=("GET", "POST"), once=True)
 def emails(request):
     if request.method == "POST":
         return _send(request)

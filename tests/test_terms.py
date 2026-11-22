@@ -10,7 +10,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 import build_site  # noqa: E402
 from owb import refs, validate  # noqa: E402
-from tests.site_build import built_site, page_data, sitemap_text  # noqa: E402
+from tests.site_build import built_site, nav_menus_in, page_data, sitemap_text  # noqa: E402
 
 GRACE = ("grc", "5485")
 YHWH = ("hbo", "3068")
@@ -186,7 +186,7 @@ class TermPagesTest(unittest.TestCase):
             prefix = "" if lang == "en" else f"{lang}/"
             page = self.read(f"{prefix}about")
             href = build_site.url(lang, "/terms/")
-            header = re.search(r'<header class="site">.*?</header>', page, re.S)[0]
+            header = nav_menus_in(self.out, lang)  # the header's menus (nav-<lang>.js)
             footer = re.search(r'<footer class="site">.*?</footer>', page, re.S)[0]
             self.assertIn(f'href="{href}"', header)
             self.assertIn(f'href="{href}"', footer)
