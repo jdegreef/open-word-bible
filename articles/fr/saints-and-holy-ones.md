@@ -69,7 +69,7 @@ Dans la Bible hébraïque, le pluriel de *qadosh*, "saint", fait autre chose. Le
 
 > {{OWB:JOB.5.1.s1:B}}
 
-La décision de sens explique que "'les saints' est un nom pour les êtres qui se tiennent autour de Dieu au ciel (Job 15:15 ; Psaume 89:5, 7 ; Zacharie 14:5)". C'est pourquoi l'Équilibrée française dit ici "les êtres saints", et la Simple "les êtres célestes", parce que "les saints" tout seul "pourrait être pris pour des personnes saintes sur la terre". Au Psaume 89:6, la Littérale et l'Équilibrée disent "l'assemblée des saints" et "le rassemblement des saints", et la Simple dit "les anges du ciel".
+La décision de sens explique que "'les saints' est un nom pour les êtres qui se tiennent autour de Dieu au ciel (Job 15:15 ; Psaume 89:5, 7 ; Zacharie 14:5)". C'est pourquoi l'Équilibrée française dit ici "les êtres saints", et la Simple "les êtres célestes", parce que "les saints" tout seul "pourrait être pris pour des personnes saintes sur la terre". Au Psaume 89:5, la Littérale et l'Équilibrée disent "l'assemblée des saints" et "le rassemblement des saints", et la Simple dit "les anges du ciel".
 
 Mais parfois, les saints sont le peuple de Dieu sur la terre, comme au Psaume 34 :
 

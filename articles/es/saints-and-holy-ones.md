@@ -69,7 +69,7 @@ En la Biblia hebrea, el plural de *qadosh*, «santo», hace algo distinto. Lo m�
 
 > {{OWB:JOB.5.1.s1:B}}
 
-La decisión de significado explica que «"santos" es un nombre para los seres que están alrededor de Dios en el cielo (Job 15:15; Salmo 89:5, 7; Zacarías 14:5)». Por eso la Equilibrada española dice aquí «los seres santos», y la Sencilla, «los seres celestiales», porque «santos» por sí solo podría entenderse como personas santas en la tierra. En el Salmo 89:6, la Literal y la Equilibrada dicen «la asamblea de los santos» y la Sencilla dice «los ángeles del cielo».
+La decisión de significado explica que «"santos" es un nombre para los seres que están alrededor de Dios en el cielo (Job 15:15; Salmo 89:5, 7; Zacarías 14:5)». Por eso la Equilibrada española dice aquí «los seres santos», y la Sencilla, «los seres celestiales», porque «santos» por sí solo podría entenderse como personas santas en la tierra. En el Salmo 89:5, la Literal y la Equilibrada dicen «la asamblea de los santos» y la Sencilla dice «los ángeles del cielo».
 
 Pero a veces los santos son el pueblo de Dios en la tierra, como en el Salmo 34:
 
