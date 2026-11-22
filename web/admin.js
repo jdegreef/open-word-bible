@@ -3647,6 +3647,7 @@ var OWBAdminNav = (function () {
   });
   filtered("export", EXPORT, { lang: "en", level: "B", type: "usfm", numbering: "english", books: "" });
   filtered("releases", RELEASES);
+  filtered("activity", ACTIVITY);
 
   // ---- Start ---------------------------------------------------------
 
