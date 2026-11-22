@@ -6705,8 +6705,13 @@ def admin_page():
     showing only the parts the signed-in account's roles open. In English
     only, as Ochorus's admin is. Not in the sitemap, and not indexed."""
     lang = "en"
+    # Language and book names, so the admin can name what the API gives as
+    # codes ("fr", "JHN.3.16") wherever it draws them.
+    names = json.dumps({"languages": {c: owb_languages.READING[c]["name"] for c in owb_languages.READING},
+                        "books": {c: BOOK_NAMES[c]["en"] for c in refs.BOOK_CODES}},
+                       ensure_ascii=False, separators=(",", ":"))
     body = f"""
-<div class="admin" id="admin" data-site="{html.escape(SITE_URL)}" data-github="{html.escape(GITHUB_URL)}">
+<div class="admin" id="admin" data-site="{html.escape(SITE_URL)}" data-github="{html.escape(GITHUB_URL)}" data-names="{html.escape(names)}">
 <nav class="admin-rail" id="admin-rail" aria-label="Admin sections" hidden></nav>
 <section class="admin-main" id="admin-main">
 <header class="page-head compact">

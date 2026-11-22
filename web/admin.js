@@ -298,6 +298,16 @@ var OWBAdminNav = (function () {
   var API = document.querySelector('meta[name="owb-api"]').content;
   var SITE = root.getAttribute("data-site");
   var GITHUB = root.getAttribute("data-github");
+  // Names for the codes the API gives (written by build_site.py).
+  var NAMES = { languages: {}, books: {} };
+  try { NAMES = JSON.parse(root.getAttribute("data-names") || "") || NAMES; } catch (e) { /* codes, then */ }
+  function langName(code) { return NAMES.languages[code] || code; }
+  // "JHN.3.16" -> "John 3:16"; "JHN.3" -> "John 3"; anything else as it is.
+  function verseName(vid) {
+    var m = /^([1-3A-Z]{3})\.(\d+)(?:\.(\d+))?$/.exec(vid || "");
+    if (!m || !NAMES.books[m[1]]) return vid;
+    return NAMES.books[m[1]] + " " + m[2] + (m[3] ? ":" + m[3] : "");
+  }
   var rail = document.getElementById("admin-rail");
   var main = document.getElementById("admin-main");
   var KEY = "owb.account";
@@ -1089,7 +1099,7 @@ var OWBAdminNav = (function () {
           }));
       });
       var uncertain = Object.keys(b.uncertain).map(function (k) {
-        return h("li", null, (k === "meaning" ? "Meaning" : k) + ": " + num(b.uncertain[k]));
+        return h("li", null, (k === "meaning" ? "Meaning" : langName(k)) + ": " + num(b.uncertain[k]));
       });
       return [
         h("p", { class: "admin-back" }, h("a", { href: "#coverage" }, "‹ Coverage")),
@@ -1307,7 +1317,7 @@ var OWBAdminNav = (function () {
       card.textContent = "";
       add(card, [
         h("header", null, pill(m.kind === "question" ? "Question" : "Suggestion", m.kind === "question" ? "info" : ""),
-          " ", h("a", { href: m.url, rel: "noopener" }, m.verse_label), " · ", m.language + (m.level ? " " + m.level : ""),
+          " ", h("a", { href: m.url, rel: "noopener" }, m.verse_label), " · ", langName(m.language) + (m.level ? ", " + (LEVEL_NAMES[m.level] || m.level) : ""),
           h("span", { class: "admin-sub" }, " from " + (m.from.name ? m.from.name + " <" + m.from.email + ">" : m.from.email) + ", " + when(m.created_at)),
           m.status === "new" ? [" ", pill(m.age_days ? plural(m.age_days, "day") + " waiting" : "today", m.waiting ? "warn" : "")] : null),
         h("blockquote", null, m.text),
@@ -1498,8 +1508,8 @@ var OWBAdminNav = (function () {
       var from = FIX_FROM && FIX_FROM.verse === d.verse ? FIX_FROM : null;
       FIX_FROM = null;
       var nav = h("div", { class: "admin-actions" },
-        d.neighbours[0] ? h("a", { href: "#verse/" + d.neighbours[0] }, "\u2039 " + d.neighbours[0]) : null,
-        d.neighbours[1] ? h("a", { href: "#verse/" + d.neighbours[1] }, d.neighbours[1] + " \u203a") : null,
+        d.neighbours[0] ? h("a", { href: "#verse/" + d.neighbours[0] }, "\u2039 " + verseName(d.neighbours[0])) : null,
+        d.neighbours[1] ? h("a", { href: "#verse/" + d.neighbours[1] }, verseName(d.neighbours[1]) + " \u203a") : null,
         h("a", { href: d.url, rel: "noopener" }, "Read it on the site"));
       var out = [head("Verse inspector", d.label, d.records.length ? plural(d.records.length, "sentence") + " hold this verse" +
         (d.updated ? "; last changed " + when(d.updated) : "") + "." : "No sentence holds this verse yet."), verseSearch(d.label), nav];
@@ -1787,7 +1797,7 @@ var OWBAdminNav = (function () {
         d.fixes.length ? table(["Issue", "Sentence", "Language", "Filed", "Taken by"], d.fixes.map(function (f) {
           return h("tr", null, h("td", null, h("a", { href: f.url, rel: "noopener" }, "#" + f.number)),
             h("td", null, f.verse ? h("a", { href: "#verse/" + f.verse }, f.record || f.verse) : f.title),
-            h("td", null, f.language || "\u2014"), h("td", null, when(f.created_at)), h("td", null, f.assignees.join(", ") || "\u2014"));
+            h("td", null, f.language ? langName(f.language) : "\u2014"), h("td", null, when(f.created_at)), h("td", null, f.assignees.join(", ") || "\u2014"));
         })) : empty("No open fix requests.")));
       return out;
     });
@@ -2196,7 +2206,10 @@ var OWBAdminNav = (function () {
             return h("tr", null, h("td", { class: "admin-wrap" }, t.label || "Unknown browser"), h("td", null, date(t.created_at)), h("td", null, when(t.last_used_at)));
           })) : empty("None.")),
         u.messages.length ? h("section", { class: "admin-block" }, h("h2", null, "Messages"),
-          h("ul", null, u.messages.map(function (m) { return h("li", null, m.kind + " on " + m.verse + " · " + m.status + " · " + date(m.created_at)); }))) : null,
+          h("ul", null, u.messages.map(function (m) {
+            return h("li", null, (m.kind === "question" ? "Question" : "Suggestion") + " on ", h("a", { href: "#verse/" + m.verse }, verseName(m.verse)),
+              " · " + m.status + " · " + date(m.created_at));
+          }))) : null,
         ME.admin.indexOf("team") >= 0 ? h("p", null, h("a", { href: "#team" }, "Change roles in Team & access")) : null,
         userChanges(u), actions, status];
     });
@@ -2450,7 +2463,7 @@ var OWBAdminNav = (function () {
       return { languages: Array.prototype.map.call(boxes.querySelectorAll("input:checked"), function (x) { return x.value; }),
         testament: testament.value, note: text.value, dry_run: dry };
     }
-    function line(j) { return h("li", null, bookName(d, j.book) + ": " + j.languages.join(", ")); }
+    function line(j) { return h("li", null, bookName(d, j.book) + ": " + j.languages.map(langName).join(", ")); }
     var form = h("form", { class: "admin-form stacked" }, boxes,
       h("label", { class: "admin-field", for: "bulk-testament" }, "Books", testament),
       h("label", { class: "admin-field", for: "bulk-note" }, "Note", text), preview, status, result);
