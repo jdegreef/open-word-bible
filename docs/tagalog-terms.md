@@ -2307,3 +2307,19 @@ names the book where the form was first used.
 | Joel 4:6 | the Greeks | *mga Griyego* |  |
 | Joel 4:10 | plowshares; pruning knives | *mga talim ng araro*; *mga karit na pamputol* (L), *mga panggupit ng sanga* (B, R) | as Isaiah 2:4 |
 | Joel 4:14 | valley of decision | *lambak ng pagpapasya* |  |
+| Amos 1:1 | shepherds of Tekoa; the earthquake | mga pastol ng Tekoa; ang lindol |  |
+| Amos 1:3 | for three transgressions ... and for four | *Dahil sa tatlong paglabag ... at dahil sa apat* (L); *krimen* (B); R *Paulit-ulit na nagkasala* | refrain in 1:3-2:6 |
+| Amos 2:11 | Nazirites | *mga Nazareo* |  |
+| Amos 4:1 | cows of Bashan | *mga baka ng Basan* |  |
+| Amos 4:13 | the LORD, the God of hosts | *ang PANGINOON na Diyos ng mga Hukbo* |  |
+| Amos 5:8 | Pleiades; Orion | *Pleyades*; *Orion* |  |
+| Amos 5:26 | Sakkuth; Kaiwan | *Sikut*; *Kiyun* | following the vowels of the Hebrew |
+| Amos 6:4 | beds of ivory | *mga higaang garing* |  |
+| Amos 6:14 | Lebo-hamat; brook of the Arabah | *Lebo-hamat*; *batis ng Araba* (L), *Wadi ng Araba* (B, R) |  |
+| Amos 7:7 | plumb line | *hulog* |  |
+| Amos 7:10 | Amaziah the priest of Bethel | *Amasias na pari ng Betel* |  |
+| Amos 7:14 | sycamore figs | *sikomoro* (L, B); *igos* (R) |  |
+| Amos 8:2 | summer fruit | *bunga ng tag-araw* | wordplay on *end*; R explains it |
+| Amos 8:14 | guilt of Samaria | *pagkakasala ng Samaria* (L); R *makasalanang diyus-diyosan ng Samaria* |  |
+| Amos 9:5 | Lord GOD of hosts | *Panginoong DIYOS ng mga hukbo* | as Isaiah |
+| Amos 9:11 | the fallen booth of David | *ang nabuwal na kubol ni David* | Acts 15:16 |
