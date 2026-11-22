@@ -751,6 +751,13 @@ class WorkTest(AdminTestCase):
         self.assertTrue(items[22]["stale"])    # a day old with none
         self.assertEqual(data["counts"], {"open": 2, "stale": 1, "in_review": 1, "done": 1})
 
+    def test_github_out_of_reach_still_says_the_window(self):
+        # The page's heading reads days and stale_hours ("the last undefined days" before).
+        with mock.patch.object(staff_jobs, "_github", side_effect=staff_jobs.GitHubError):
+            data = self.admin.get("/api/admin/work/").json()
+        self.assertEqual((data["items"], data["days"], data["stale_hours"]), ([], 30, 24))
+        self.assertIn("could not be reached", data["error"])
+
     @override_settings(OWB_GITHUB_TOKEN="t")
     def test_a_reader_is_told_once_when_their_fix_merges(self):
         call_command("sync_fixes", stdout=io.StringIO())

@@ -321,6 +321,9 @@ var OWBAdminCore = (function () {
       return r.json().catch(function () { return {}; }).then(function (data) {
         if (r.ok) return data;
         var f = C.failed(r.status, data);
+        // A sign-in that ended while the admin was open (a long review):
+        // every later request would fail too, so ask for a new one now.
+        if (r.status === 401 && account && account.token) signedOut();
         throw fail(f.message, { status: f.status, code: f.code, id: f.id });
       });
     });
@@ -333,6 +336,29 @@ var OWBAdminCore = (function () {
   function busy(button, on) {
     button.disabled = on;
     button.setAttribute("aria-busy", on ? "true" : "false");
+  }
+
+  // A load after the section is drawn (More, Older, a filter): if it fails,
+  // the error goes in a line beside button, which is turned back on, rather
+  // than nowhere with the button left busy. The line goes once a load works.
+  function later(button, promise) {
+    function line() {
+      var next = button.nextElementSibling;
+      return next && next.classList.contains("admin-load-error") ? next : null;
+    }
+    return promise.then(function (value) {
+      var old = line();
+      if (old) old.remove();
+      return value;
+    }, function (e) {
+      busy(button, false);
+      var shown = line();
+      if (!shown) {
+        shown = h("p", { class: "admin-note bad admin-load-error", role: "alert" });
+        button.after(shown);
+      }
+      shown.textContent = e.message;
+    });
   }
 
   // Search as you type: run(the trimmed value) a quarter second after the
@@ -1784,7 +1810,7 @@ var OWBAdminCore = (function () {
         busy(more, false);
       });
     }
-    more.addEventListener("click", load);
+    more.addEventListener("click", function () { later(more, load()); });
     return load().then(function () {
       return [head("Team", "Activity log", "What was done in the admin, newest first: roles, accounts, replies, jobs and emails. Reviews keep their own record."), list, more, approvalLog()];
     });
@@ -2288,9 +2314,12 @@ var OWBAdminCore = (function () {
       busy(more, true);
       return api(query()).then(function (page) { d = d || page; layer = page.layer.code; draw(page); busy(more, false); return page; });
     }
-    more.addEventListener("click", function () { offset += 50; load(); });
+    more.addEventListener("click", function () {
+      offset += 50;
+      later(more, load().catch(function (e) { offset -= 50; throw e; }));   // so trying again asks for the same page
+    });
     var status = h("p", { class: "admin-note", role: "status" });
-    function refilter() { offset = 0; rememberTab("review.book", filters.book); rememberTab("review.state", filters.state); load(); }
+    function refilter() { offset = 0; rememberTab("review.book", filters.book); rememberTab("review.state", filters.state); later(more, load()); }
     // A layer remembered from before may no longer be the account's.
     return load().catch(function (e) {
       if (e.status !== 403 || !layer) throw e;
@@ -2515,11 +2544,14 @@ var OWBAdminCore = (function () {
         var q = "?run=" + run.id + "&lang=" + filters.lang + "&book=" + filters.book + "&offset=" + offset;
         return api("/api/admin/changes/" + q).then(function (page) { draw(page.changes); more.hidden = !page.more; busy(more, false); });
       }
-      more.addEventListener("click", function () { offset += 100; load(); });
+      more.addEventListener("click", function () {
+      offset += 100;
+      later(more, load().catch(function (e) { offset -= 100; throw e; }));   // so trying again asks for the same page
+    });
       var langSel = select("changes-lang", [["", "Every language"]].concat(d.languages.map(function (l) { return [l.code, l.name]; })), "");
       var bookSel = select("changes-book", [["", "Every book"]].concat(run.books.map(function (b) { return [b.code, b.name + " (" + b.changes + ")"]; })), "");
       [langSel, bookSel].forEach(function (sel) {
-        sel.addEventListener("change", function () { filters.lang = langSel.value; filters.book = bookSel.value; offset = 0; list.textContent = ""; load(); });
+        sel.addEventListener("change", function () { filters.lang = langSel.value; filters.book = bookSel.value; offset = 0; list.textContent = ""; later(more, load()); });
       });
       draw(d.changes);
       out.push(h("section", { class: "admin-block" }, h("h2", null, "Import of " + date(run.started_at) + ": " + plural(run.changed, "changed rendering")),
@@ -2669,6 +2701,12 @@ var OWBAdminCore = (function () {
 
   // ---- Start ---------------------------------------------------------
 
+  function signedOut() {
+    try { localStorage.removeItem(KEY); } catch (x) { /* none */ }
+    forgetAll();
+    stop("Sign in again", "Your sign-in on this device has ended.", ["/login/?redirect=/admin/", "Sign in"]);
+  }
+
   function stop(title, text, link) {
     drawing++;
     KEYS = null;
@@ -2713,9 +2751,7 @@ var OWBAdminCore = (function () {
     if (!started || changed) start();
   }, function (e) {
     if (e.status === 401) {
-      try { localStorage.removeItem(KEY); } catch (x) { /* none */ }
-      forgetAll();
-      stop("Sign in again", "Your sign-in on this device has ended.", ["/login/?redirect=/admin/", "Sign in"]);
+      /* request() has asked for a new sign-in */
     } else if (!started) {
       stop("The admin couldn't load", e.message);
     }

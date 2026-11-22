@@ -85,7 +85,8 @@ def work(request):
     try:
         cached = cached_work()
     except jobs.GitHubError:
-        return Response({"items": [], "error": "GitHub could not be reached, so the work isn't listed."})
+        return Response({"items": [], "error": "GitHub could not be reached, so the work isn't listed.",
+                         "days": DAYS, "stale_hours": STALE_HOURS})
     counts = {"open": sum(1 for w in cached if w["state"] == "open"),
               "stale": sum(1 for w in cached if w["stale"]),
               "in_review": sum(1 for w in cached if w["state"] == "open"
