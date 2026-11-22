@@ -370,7 +370,8 @@ section for the book, here.
 - **Recurring verbs kept at L and B**: فرود آمدن (Jonah goes down), افکندن
   (hurl), مقرر کردن (God appoints), دل سوزاندن (pity, 4:10-11).
 - **Relent** (*nacham*, of God): پشیمان شدن (L), منصرف شدن (B), تصمیم خود را
-  تغییر دادن (R); توبه کردن is kept for people.
+  تغییر دادن (R); توبه کردن is kept for people. Confirmed by the founder
+  on 2026-11-22 for every book.
 - **Exodus 34:6** as Jonah quotes it (4:2): خدایی پرفیض و رحیم، دیرخشم و سرشار
   از محبت وفادارانه (L); to be matched when Exodus is drafted.
 
