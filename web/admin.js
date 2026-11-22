@@ -633,6 +633,7 @@ var OWBAdminNav = (function () {
     { id: "coverage", label: "Coverage", area: "overview", group: "Progress" },
     { id: "languages", label: "Languages", area: "overview", group: "Progress" },
     { id: "health", label: "Content health", area: "overview", group: "Progress" },
+    { id: "pace", label: "Review pace", area: "overview", group: "Progress" },
     { id: "articles", label: "Articles", area: "overview", group: "Publish" },
     { id: "export", label: "Export", area: "export", group: "Publish" },
     { id: "releases", label: "Release notes", area: "export", group: "Publish" },
@@ -1110,6 +1111,42 @@ var OWBAdminNav = (function () {
   function rememberTab(name, value) {
     try { sessionStorage.setItem("owb.admin." + name, value); } catch (e) { /* none */ }
   }
+
+  // How fast people are approving, layer by layer, and at that pace how
+  // long the rest will take (staff/pace.py).
+  VIEWS.pace = function () {
+    return api("/api/admin/pace/").then(function (d) {
+      var most = Math.max.apply(null, [1].concat(d.layers.map(function (l) { return Math.max.apply(null, l.per_week); })));
+      function spark(counts) {
+        return h("span", { class: "admin-spark", role: "img", "aria-label": "Approvals each week, oldest first: " + counts.join(", ") },
+          counts.map(function (n, i) {
+            return h("i", { style: "height:" + (n ? Math.max(8, 100 * n / most) : 0) + "%", title: "Week of " + date(d.weeks[i], true) + ": " + n });
+          }));
+      }
+      function left(l) {
+        if (l.weeks_left === 0) return "all approved";
+        if (l.weeks_left === null) return "no pace yet";
+        if (l.weeks_left > 520) return "over ten years";
+        return l.weeks_left > 104 ? "about " + plural(Math.round(l.weeks_left / 52), "year") : "about " + plural(l.weeks_left, "week");
+      }
+      var rows = d.layers.map(function (l) {
+        return h("tr", null, h("th", { scope: "row" }, h("a", { href: "#review/" + l.code }, l.name)),
+          h("td", null, bar(l.approved, l.size, "good"), h("span", { class: "admin-sub" }, num(l.approved) + " of " + num(l.size))),
+          h("td", null, spark(l.per_week)),
+          h("td", { class: "admin-num" }, num(l.recent)),
+          h("td", null, left(l)));
+      });
+      var people = d.reviewers.map(function (r) {
+        return h("tr", null, h("th", { scope: "row" }, r.name), h("td", null, r.layer_name), h("td", { class: "admin-num" }, num(r.approvals)));
+      });
+      return [head("Progress", "Review pace", "Approvals by people in each review layer, week by week for the last " + d.weeks.length +
+          " weeks, and at the pace of the last " + d.recent_weeks + " how long the rest of each layer would take. An approval made again after a sentence changed counts again."),
+        d.layers.length ? table(["Layer", "Approved", "Each week", ["Per week lately", { class: "admin-num" }], "At this pace"], rows, "admin-pace")
+          : empty("Nothing has been drafted to review yet."),
+        h("section", { class: "admin-block" }, h("h2", null, "Reviewers, last " + d.weeks.length + " weeks"),
+          people.length ? table(["Reviewer", "Layer", ["Approvals", { class: "admin-num" }]], people) : empty("No approvals in these weeks."))];
+    });
+  };
 
   // One book, chapter by chapter.
   VIEWS.book = function (code) {

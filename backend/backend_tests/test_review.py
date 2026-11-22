@@ -88,6 +88,26 @@ class ReviewTest(AdminTestCase):
         # Counted again on asking.
         self.assertNotEqual(self.admin.get("/api/admin/overview/?fresh=1").json()["counted_at"], first)
 
+    def test_review_pace(self):
+        self.act(self.scholar, "JHN.1.1.s1", "grc")
+        self.act(self.scholar, "JHN.1.2.s1", "grc")
+        self.act(self.french, "JHN.1.1.s1", "fr")
+        self.act(self.french, "JHN.1.1.s1", "fr", "comment", "Not an approval")
+        d = self.admin.get("/api/admin/pace/").json()
+        self.assertEqual(len(d["weeks"]), 12)
+        layers = {lay["code"]: lay for lay in d["layers"]}
+        self.assertEqual((layers["grc"]["per_week"][-1], layers["grc"]["approved"], layers["grc"]["size"]), (2, 2, 2))
+        self.assertEqual(layers["grc"]["weeks_left"], 0)
+        self.assertEqual((layers["fr"]["name"], layers["fr"]["per_week"][-1]), ("French wording", 1))
+        self.assertEqual(layers["fr"]["weeks_left"], 0)   # its one drafted sentence is approved
+        # Two English sentences, none approved: no pace, so no estimate.
+        self.assertEqual((layers["en"]["approved"], layers["en"]["weeks_left"]), (0, None))
+        by = {(r["name"], r["layer"]): r["approvals"] for r in d["reviewers"]}
+        self.assertEqual(by[("grc@example.org", "grc")], 2)
+        # Other roles see names, not addresses.
+        names = {r["display"] for r in self.editor.get("/api/admin/pace/").json()["reviewers"]}
+        self.assertFalse(any("@" in n for n in names))
+
     def test_reviewers_open_review_and_editors_do_not(self):
         self.assertEqual(self.french.get("/api/me").json()["admin"], ["overview", "export", "review"])
         self.assertEqual(self.editor.get("/api/admin/review/").status_code, 403)
