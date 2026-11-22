@@ -421,52 +421,104 @@ var OWBAdminCore = (function () {
   // A message for the next drawing of a section ("Role granted."), shown in
   // its first status line.
   var FLASH = "";
+  // Grouped by what people come to do: the queues that wait on someone
+  // first, then checking the text, progress, publishing and people. A
+  // section's group is also the eyebrow over its heading.
   var SECTIONS = [
     { id: "dashboard", label: "Dashboard", area: "overview", group: "" },
+    { id: "review", label: "Review", area: "review", group: "Queues" },
+    { id: "inbox", label: "Reader inbox", area: "inbox", group: "Queues" },
+    { id: "flags", label: "Reviewer flags", area: "inbox", group: "Queues" },
+    { id: "fixes", label: "Fix requests", area: "inbox", group: "Queues" },
+    { id: "jobs", label: "Drafting jobs", area: "jobs", group: "Queues" },
+    { id: "work", label: "Work in progress", area: "overview", group: "Queues" },
+    { id: "verse", label: "Verse inspector", area: "overview", group: "Quality" },
+    { id: "decisions", label: "Uncertain decisions", area: "overview", group: "Quality" },
+    { id: "terms", label: "Key terms", area: "overview", group: "Quality" },
+    { id: "consistency", label: "Consistency", area: "overview", group: "Quality" },
+    { id: "checks", label: "Checks", area: "overview", group: "Quality" },
+    { id: "overlap", label: "Similarity", area: "overview", group: "Quality" },
+    { id: "changes", label: "Changes", area: "overview", group: "Quality" },
     { id: "coverage", label: "Coverage", area: "overview", group: "Progress" },
     { id: "languages", label: "Languages", area: "overview", group: "Progress" },
     { id: "health", label: "Content health", area: "overview", group: "Progress" },
-    { id: "changes", label: "Changes", area: "overview", group: "Progress" },
-    { id: "jobs", label: "Drafting jobs", area: "jobs", group: "Progress" },
-    { id: "work", label: "Work in progress", area: "overview", group: "Progress" },
-    { id: "review", label: "Review", area: "review", group: "Text" },
-    { id: "verse", label: "Verse inspector", area: "overview", group: "Text" },
-    { id: "decisions", label: "Uncertain decisions", area: "overview", group: "Text" },
-    { id: "terms", label: "Key terms", area: "overview", group: "Text" },
-    { id: "consistency", label: "Consistency", area: "overview", group: "Text" },
-    { id: "checks", label: "Checks", area: "overview", group: "Text" },
-    { id: "fixes", label: "Fix requests", area: "inbox", group: "Text" },
-    { id: "flags", label: "Reviewer flags", area: "inbox", group: "Text" },
-    { id: "articles", label: "Articles", area: "overview", group: "Text" },
-    { id: "export", label: "Export", area: "export", group: "Text" },
-    { id: "releases", label: "Release notes", area: "export", group: "Text" },
-    { id: "overlap", label: "Similarity", area: "overview", group: "Text" },
-    { id: "inbox", label: "Reader inbox", area: "inbox", group: "Readers" },
-    { id: "users", label: "Users", area: "users", group: "Readers" },
-    { id: "engagement", label: "Engagement", area: "overview", group: "Readers" },
-    { id: "emails", label: "Team email", area: "email", group: "Team" },
-    { id: "team", label: "Team & access", area: "team", group: "Team" },
-    { id: "activity", label: "Activity log", area: "team", group: "Team" },
-    { id: "help", label: "Help & roles", area: "", group: "Team" }
+    { id: "articles", label: "Articles", area: "overview", group: "Publish" },
+    { id: "export", label: "Export", area: "export", group: "Publish" },
+    { id: "releases", label: "Release notes", area: "export", group: "Publish" },
+    { id: "users", label: "Users", area: "users", group: "People" },
+    { id: "engagement", label: "Engagement", area: "overview", group: "People" },
+    { id: "team", label: "Team & access", area: "team", group: "People" },
+    { id: "emails", label: "Team email", area: "email", group: "People" },
+    { id: "activity", label: "Activity log", area: "team", group: "People" },
+    { id: "help", label: "Help & roles", area: "", group: "People" }
   ];
   // Drill-downs reached from a section, highlighted under it.
   var PARENT = { book: "coverage", user: "users" };
 
   function opens(section) { return !section.area || ME.admin.indexOf(section.area) >= 0; }
 
-  function drawRail(current) {
+  // Counts beside sections, from the dashboard's "needs attention" list
+  // (the account only gets the items its areas open): attention key ->
+  // [section, what the count is of].
+  var BADGE_FOR = {
+    inbox: ["inbox", "waiting"], flags: ["flags", "flagged"], invites: ["team", "not signed in yet"],
+    "import": ["health", "to look at"]
+  };
+  var BADGES = {};   // section id -> {count, tone, what}
+  function badgesFrom(overview) {
+    var out = {};
+    (overview.attention || []).forEach(function (a) {
+      var to = BADGE_FOR[a.key];
+      if (to && a.count) out[to[0]] = { count: a.count, tone: a.tone, what: to[1] };
+    });
+    return out;
+  }
+  // Fetched ahead (quietly, from the kept read when there is one) after the
+  // rail is drawn; the rail is drawn again only if the counts differ.
+  function refreshBadges(current) {
+    if (!opens(SECTIONS[0])) return;
+    api("/api/admin/overview/", { quiet: true }).then(function (d) {
+      var next = badgesFrom(d);
+      if (JSON.stringify(next) === JSON.stringify(BADGES)) return;
+      BADGES = next;
+      drawRail(current, true);
+    }, function () { /* the counts wait for the next section */ });
+  }
+
+  function drawRail(current, keepBadges) {
+    var open = rail.classList.contains("open") && keepBadges;
     rail.textContent = "";
     rail.appendChild(searchBox());
+    var here = SECTIONS.filter(function (s) { return s.id === current || PARENT[current] === s.id; })[0];
+    // On a phone the sections fold into one button that shows where you are.
+    var waiting = Object.keys(BADGES).reduce(function (n, k) { return n + (BADGES[k].tone === "hot" ? 1 : 0); }, 0);
+    var toggle = h("button", { type: "button", class: "admin-rail-toggle", "aria-expanded": open ? "true" : "false",
+      "aria-controls": "admin-rail-sections" },
+      h("span", null, "Sections"), h("b", null, here ? here.label : ""),
+      waiting ? h("span", { class: "admin-badge hot", "aria-label": waiting + " need attention" }, String(waiting)) : null);
+    toggle.addEventListener("click", function () {
+      var now = !rail.classList.contains("open");
+      rail.classList.toggle("open", now);
+      toggle.setAttribute("aria-expanded", now ? "true" : "false");
+    });
+    rail.appendChild(toggle);
+    var sections = h("div", { class: "admin-rail-sections", id: "admin-rail-sections" });
+    rail.appendChild(sections);
+    rail.classList.toggle("open", open);
     var group = null, list = null;
     SECTIONS.filter(opens).forEach(function (s) {
       if (s.group !== group || !list) {
         group = s.group;
-        if (group) rail.appendChild(h("p", { class: "admin-rail-group" }, group));
+        if (group) sections.appendChild(h("p", { class: "admin-rail-group" }, group));
         list = h("ul");
-        rail.appendChild(list);
+        sections.appendChild(list);
       }
       var on = s.id === current || PARENT[current] === s.id;
-      list.appendChild(h("li", null, h("a", { href: "#" + s.id, "aria-current": on ? "page" : null }, s.label)));
+      var badge = BADGES[s.id];
+      list.appendChild(h("li", null, h("a", { href: "#" + s.id, "aria-current": on ? "page" : null },
+        h("span", null, s.label),
+        badge ? h("span", { class: "admin-badge " + badge.tone, title: num(badge.count) + " " + badge.what }, num(badge.count),
+          h("span", { class: "sr-only" }, " " + badge.what)) : null)));
     });
     rail.hidden = false;
   }
@@ -512,6 +564,7 @@ var OWBAdminCore = (function () {
     if (!section || !opens(section)) { name = "dashboard"; section = SECTIONS[0]; }
     var moved = hash !== shown;
     drawRail(name);
+    refreshBadges(name);
     KEYS = null;
     main.setAttribute("aria-busy", "true");
     main.classList.add("admin-stale");
@@ -526,6 +579,9 @@ var OWBAdminCore = (function () {
       var was = moved ? null : typingIn();
       main.textContent = "";
       add(main, nodes);
+      // The eyebrow over the heading names the section's group in the rail.
+      var eyebrow = section.group && main.querySelector(".admin-head .eyebrow");
+      if (eyebrow) eyebrow.textContent = section.group;
       drawn = mine;
       shown = hash;
       touched = false;

@@ -3,7 +3,7 @@
 .admin { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 36px; align-items: start; padding: 32px 0 0; }
 .admin-rail { position: sticky; top: calc(var(--header-h) + 16px); font-size: 14.5px; }
 .admin-rail ul { list-style: none; margin: 0; padding: 0; }
-.admin-rail a { display: block; padding: 6px 10px; border-radius: 8px; color: var(--text); text-decoration: none; }
+.admin-rail a { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 6px 10px; border-radius: 8px; color: var(--text); text-decoration: none; }
 .admin-rail a:hover { color: var(--accent); }
 .admin-rail a[aria-current="page"] { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
 .admin-search { position: relative; margin: 0 0 12px; }
@@ -18,6 +18,12 @@
 .admin-search-list a > span { display: block; }
 .admin-rail .admin-search-list a[aria-selected="true"] { background: var(--accent-soft); color: var(--accent); }
 .admin-rail-group { margin: 16px 0 4px; padding: 0 10px; font-size: 11.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+/* A count beside a section: what is waiting there (admin.js BADGE_FOR). */
+.admin-badge { flex: none; min-width: 22px; padding: 1px 7px; border-radius: 999px; font-size: 12px; font-weight: 700; line-height: 18px; text-align: center; font-variant-numeric: tabular-nums; background: var(--line); color: var(--text); }
+.admin-badge.hot { background: var(--admin-danger); color: var(--surface); }
+.admin-badge.warn { background: var(--warn-bg); color: var(--warn); }
+/* The phone's one button for the sections; hidden beside the rail. */
+.admin-rail-toggle { display: none; }
 .admin-main { min-width: 0; font-size: 15px; }
 /* The section on the page while the next one loads: dimmed after a moment
    (a quick answer never flickers) and not clickable; typing goes on. */
@@ -52,8 +58,10 @@ td .admin-sub, th .admin-sub { display: block; }
 .admin-chip.warn b { color: var(--warn); }
 .admin-chip.info b { color: var(--accent); }
 
-.admin-tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 1px; margin: 0 0 24px; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; background: var(--line); }
-.admin-tile { display: grid; gap: 4px; padding: 16px 18px; background: var(--surface); }
+/* A wrapping row rather than a grid: tiles on a short last row grow to fill it, so an odd
+   number leaves no empty cell. */
+.admin-tiles { display: flex; flex-wrap: wrap; gap: 1px; margin: 0 0 24px; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; background: var(--line); }
+.admin-tile { flex: 1 1 170px; display: grid; align-content: start; gap: 4px; padding: 16px 18px; background: var(--surface); }
 .admin-tile b { font-family: var(--display); font-size: 26px; font-weight: 600; line-height: 1.1; font-variant-numeric: tabular-nums; }
 .admin-tile span { font-size: 13.5px; color: var(--muted); }
 
@@ -158,11 +166,18 @@ form.admin-toolbar { justify-content: flex-start; }
 
 @media (max-width: 860px) {
   .admin { grid-template-columns: minmax(0, 1fr); gap: 16px; padding-top: 16px; }
-  .admin-rail { position: static; display: flex; flex-wrap: wrap; gap: 4px; }
-  .admin-rail ul { display: contents; }
-  .admin-rail-group { display: none; }
-  .admin-search { flex: 1 0 100%; margin-bottom: 6px; }
-  .admin-rail a { border: 1px solid var(--line); background: var(--surface); }
+  /* One "Sections" button opening the grouped list, not every section as
+     a pill above the content. */
+  .admin-rail { position: static; }
+  .admin-search { margin-bottom: 8px; }
+  .admin-rail-toggle { display: flex; align-items: center; gap: 8px; width: 100%; padding: 10px 14px; border: 1px solid var(--line-strong); border-radius: 10px; background: var(--surface); color: var(--text); font: inherit; font-size: 15px; cursor: pointer; text-align: start; }
+  .admin-rail-toggle > span:first-child { color: var(--muted); }
+  .admin-rail-toggle > b { flex: 1; font-weight: 600; }
+  .admin-rail-toggle::after { content: ""; width: 8px; height: 8px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg) translateY(-2px); }
+  .admin-rail.open .admin-rail-toggle::after { transform: rotate(-135deg) translateY(-2px); }
+  .admin-rail-sections { display: none; margin-top: 6px; padding: 4px 6px 8px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
+  .admin-rail.open .admin-rail-sections { display: block; }
+  .admin-rail-group { margin-top: 12px; }
   .admin-bar-row { grid-template-columns: minmax(70px, 110px) minmax(0, 1fr) auto; }
 }
 @media (prefers-reduced-motion: reduce) {
