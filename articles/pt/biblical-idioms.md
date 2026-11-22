@@ -4,7 +4,7 @@ summary: A Bíblia fala com expressões idiomáticas que os seus primeiros leito
 date: 2026-10-17
 order: 95
 section: passage
-source: dae5ff099ec1
+source: db273db486c2
 ---
 Toda língua tem expressões idiomáticas: frases cujo sentido não é a soma das suas palavras. Quem "bateu as botas" não bateu em nada, e quem "pagou o pato" não comprou ave nenhuma. Um tradutor que traduz expressões idiomáticas palavra por palavra produz um disparate ou, pior, algo que parece fazer sentido e significa a coisa errada.
 
@@ -42,7 +42,7 @@ O que isso significa? A imagem é de uma dor ardente, mas os estudiosos discorda
 
 - O mais comum é entendê-la como a vergonha ardente que uma bondade não merecida provoca, e que pode levar o inimigo a mudar.
 - Alguns apontam para um texto egípcio que descreve um penitente levando na cabeça uma vasilha com brasas, como sinal de arrependimento.
-- Outros a entendem como juízo, já que as brasas são em outros lugares uma imagem de castigo (Salmo 140:11). Nessa leitura, a bondade aumenta a culpa do inimigo se ele continuar hostil.
+- Outros a entendem como juízo, já que as brasas são em outros lugares uma imagem de castigo (Salmo 140:10). Nessa leitura, a bondade aumenta a culpa do inimigo se ele continuar hostil.
 
 O registro segue a primeira leitura e observa que, em Romanos 12:20–21, o dito serve ao chamado para vencer o mal com o bem, o que a favorece. O registro de Romanos 12:20 chega à mesma decisão e acrescenta que a leitura do juízo combina mal com as ordens de Paulo nos versículos 14 e 17–19, de abençoar os perseguidores e nunca pagar o mal com o mal.
 
@@ -62,7 +62,7 @@ Em Êxodo, o coração de Faraó é "endurecido". Em português, isso soa como u
 
 O registro de Êxodo 7:3 acrescenta algo que um leitor de tradução não consegue ver. Êxodo usa três verbos diferentes para o que acontece com o coração de Faraó: "tornar duro", "tornar forte" e "tornar pesado". Os três descrevem uma vontade firmemente oposta à ordem de Deus. Às vezes Deus é o sujeito, às vezes o próprio Faraó, e às vezes o coração simplesmente "está" duro ou pesado. A nota de rodapé diz que o texto mantém essas coisas juntas sem explicar como.
 
-A Open Word Bible mantém os verbos separados onde pode. Em Êxodo 8:11 (8:15 na maioria das Bíblias), o próprio Faraó é o sujeito, e o verbo é o da raiz "pesado":
+A Open Word Bible mantém os verbos separados onde pode. Em Êxodo 8:15 (8:11 nas Bíblias hebraicas), o próprio Faraó é o sujeito, e o verbo é o da raiz "pesado":
 
 > {{OWB:EXO.8.11.s1:L}}
 

@@ -5,7 +5,7 @@ date: 2026-11-14
 order: 111
 nav_title: O propiciatório
 section: passage
-source: 11837394ba09
+source: 1c83b4d3d4c8
 ---
 No compartimento mais santo do santuário de Israel havia um único móvel: a arca, uma caixa de madeira revestida de ouro, que guardava as tábuas da aliança. Sobre ela ficava uma placa de ouro puro com dois querubins de ouro, de asas abertas por cima dela. As Bíblias em português chamam essa placa de "o propiciatório"; as inglesas a chamam há quase quinhentos anos de "the mercy seat", "o assento da misericórdia". Outras a chamam de "tampa da expiação" ou simplesmente "a tampa". A escolha importa mais do que parece, porque a mesma família de palavras vai da tampa da arca até o centro do ensino do Novo Testamento sobre a cruz.
 
@@ -53,7 +53,7 @@ O verbo por trás de *kapporet* é *kipper*, que o inglês costuma traduzir por 
 
 A palavra inglesa "atonement" tem uma história curiosa: foi formada a partir de "at one", "em um", pôr as duas partes em um, reconciliá-las. Tyndale fez muito para trazê-la à Bíblia inglesa. O português "expiação" vem do latim *expiare*, purificar, apagar uma culpa. Mas o que o verbo hebraico significa? Os estudiosos propuseram três imagens principais, e os registros mantêm as três à vista.
 
-**Cobrir.** Jacó, com medo de encontrar Esaú, manda presentes à frente para "cobrir o seu rosto", isto é, para aplacá-lo, de modo que ele não veja mais a ofensa (Gênesis 32:21). A decisão de sentido observa ali que o verbo "é o que depois se usa para a expiação, cobrir ou apagar uma ofensa". Alguns salmos falam de Deus "cobrindo" o pecado: "tu cobres as nossas rebeldias" (Salmo 65:4, na Equilibrada).
+**Cobrir.** Jacó, com medo de encontrar Esaú, manda presentes à frente para "cobrir o seu rosto", isto é, para aplacá-lo, de modo que ele não veja mais a ofensa (Gênesis 32:20). A decisão de sentido observa ali que o verbo "é o que depois se usa para a expiação, cobrir ou apagar uma ofensa". Alguns salmos falam de Deus "cobrindo" o pecado: "tu cobres as nossas rebeldias" (Salmo 65:3, na Equilibrada).
 
 **Limpar.** Levítico usa o verbo para a purificação do próprio santuário da impureza do povo (16:16), e declara o propósito com clareza:
 

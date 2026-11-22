@@ -27,6 +27,7 @@ import re
 import urllib.request
 
 from django.conf import settings
+from django.core.cache import cache
 from rest_framework import status
 from rest_framework.exceptions import ValidationError
 from rest_framework.response import Response
@@ -85,12 +86,16 @@ def _request(url, method, body):
     try:
         with urllib.request.urlopen(req, timeout=10) as r:
             link = NEXT.search(r.headers.get("Link") or "")
-            return json.load(r), link[1] if link else None
+            answer = json.load(r)
     # OSError covers URLError, timeouts and a dropped connection mid-read;
     # HTTPException a truncated answer (IncompleteRead, RemoteDisconnected).
     except (OSError, http.client.HTTPException, ValueError) as e:
         log.warning("GitHub %s %s failed: %s", method, url.split("?")[0], e)
         raise GitHubError from e
+    if method != "GET":
+        # An issue filed or changed: the rail's counts (staff/attention.py) ask again.
+        cache.delete("staff.attention.github")
+    return answer, link[1] if link else None
 
 
 def _parse_job(issue):

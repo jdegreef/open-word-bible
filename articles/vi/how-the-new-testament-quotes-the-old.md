@@ -4,7 +4,7 @@ summary: Khi trích dẫn Cựu Ước, các sứ đồ thường dùng bản B�
 date: 2026-10-17
 order: 105
 section: passage
-source: 56441c83d73d
+source: 872c01310e33
 ---
 Người đọc tra một câu trích dẫn Cựu Ước trong Kinh Thánh của mình đôi khi sẽ ngạc nhiên. Hê-bơ-rơ 10:5 trích Thi Thiên 40 với lời “Ngài đã chuẩn bị cho Con một thân thể”. Mở thi thiên ấy ra, ta sẽ thấy một câu đại loại như “Ngài đã mở tai tôi”. Ma-thi-ơ trích Ê-sai rằng “trinh nữ sẽ mang thai”. Nhiều bản Kinh Thánh hiện đại ghi “người thiếu nữ” trong sách Ê-sai. Gia-cơ, tại hội nghị ở Giê-ru-sa-lem, trích A-mốt nói về “những người còn lại của loài người” tìm kiếm Chúa. Còn A-mốt, trong bản Hê-bơ-rơ, lại nói về việc Y-sơ-ra-ên chiếm lấy “phần còn sót lại của Ê-đôm”.
 
@@ -40,15 +40,15 @@ Trong sách Ma-thi-ơ, quyết định về nghĩa đi theo hướng ngược l�
 
 Còn một khác biệt thứ hai, nhỏ hơn. Trong bản Hê-bơ-rơ, “nàng sẽ gọi” con trẻ là Em-ma-nu-ên; trong bản Bảy Mươi, “ngươi sẽ gọi”; trong Ma-thi-ơ, “người ta sẽ gọi”. Bản ghi của chúng tôi cho Ma-thi-ơ 1:23 ghi nhận cả ba và hiểu chữ “người ta” của Ma-thi-ơ là mọi người nói chung.
 
-Câu này đã bị tranh cãi qua nhiều thế kỷ, thường rất gay gắt. Các bản ghi không cố giải quyết cuộc tranh cãi bằng cách dịch bản văn này cho khớp với bản văn kia. Các bản ghi dịch mỗi bản văn đúng như nó vốn có và nói rõ vì sao chúng khác nhau. Bản ghi của sách Ê-sai cũng ghi nhận điều mà cả hai bản văn cùng có: dấu lạ ấy thuộc về thời vua A-cha, và lời hứa của Ê-sai vươn xa hơn, đến một con trẻ sẽ trị vì trên ngai Đa-vít (9:5–6).
+Câu này đã bị tranh cãi qua nhiều thế kỷ, thường rất gay gắt. Các bản ghi không cố giải quyết cuộc tranh cãi bằng cách dịch bản văn này cho khớp với bản văn kia. Các bản ghi dịch mỗi bản văn đúng như nó vốn có và nói rõ vì sao chúng khác nhau. Bản ghi của sách Ê-sai cũng ghi nhận điều mà cả hai bản văn cùng có: dấu lạ ấy thuộc về thời vua A-cha, và lời hứa của Ê-sai vươn xa hơn, đến một con trẻ sẽ trị vì trên ngai Đa-vít (9:6–7).
 
-## 2. “Ngài đã chuẩn bị cho Con một thân thể” (Hê-bơ-rơ 10:5; Thi Thiên 40:7)
+## 2. “Ngài đã chuẩn bị cho Con một thân thể” (Hê-bơ-rơ 10:5; Thi Thiên 40:6)
 
 Sách Hê-bơ-rơ đặt những lời của Thi Thiên 40 vào miệng Đấng Christ khi Ngài đến trong thế gian. Cấp độ Cân bằng của chúng tôi:
 
 > {{OWB:HEB.10.5.s1:B}}
 
-Chữ then chốt là {{GREEK:HEB.10.5:12}} (*sōma*), “thân thể”. Nhưng bản Hê-bơ-rơ của thi thiên này (40:7 theo cách đánh số Hê-bơ-rơ, 40:6 trong phần lớn các bản Kinh Thánh) có {{HEBREW:PSA.40.7:5-6}}, “Ngài đã đào tai cho tôi”. Cấp độ Sát nghĩa của thi thiên giữ hình ảnh ấy (“đôi tai ngài đã đào cho tôi”):
+Chữ then chốt là {{GREEK:HEB.10.5:12}} (*sōma*), “thân thể”. Nhưng bản Hê-bơ-rơ của thi thiên này (40:6 ở đây và trong phần lớn các bản Kinh Thánh, 40:7 trong các bản Kinh Thánh Hê-bơ-rơ) có {{HEBREW:PSA.40.7:5-6}}, “Ngài đã đào tai cho tôi”. Cấp độ Sát nghĩa của thi thiên giữ hình ảnh ấy (“đôi tai ngài đã đào cho tôi”):
 
 > {{OWB:PSA.40.7.s1:L}}
 
@@ -81,10 +81,10 @@ Gia-cơ cũng thay đổi phần mở đầu. A-mốt nói “Trong ngày ấy T
 Trong Rô-ma 3, Phao-lô chứng minh rằng “mọi người, người Do Thái cũng như người Hy Lạp, đều ở dưới quyền lực của tội lỗi” bằng một chuỗi trích dẫn, câu này nối tiếp câu kia, không có chỗ ngắt. Các bản ghi của chúng tôi nêu tên từng nguồn:
 
 - các câu 10–12 từ Thi Thiên 14:1–3 (và Thi Thiên 53), với chữ “công chính” của chính Phao-lô thay cho chữ “làm điều lành” của thi thiên;
-- câu 13 từ Thi Thiên 5:10 và Thi Thiên 140:4 (theo cách đánh số Hê-bơ-rơ);
+- câu 13 từ Thi Thiên 5:9 và Thi Thiên 140:3;
 - câu 14 từ Thi Thiên 10:7;
 - các câu 15–17 từ Ê-sai 59:7–8, được rút gọn, với âm vang của Châm Ngôn 1:16;
-- câu 18 từ Thi Thiên 36:2.
+- câu 18 từ Thi Thiên 36:1.
 
 Phao-lô theo bản Bảy Mươi trong phần lớn những dòng này, và ông dệt chúng thành một bản cáo trạng duy nhất. Lối ghép các bản văn theo một chủ đề chung, như xâu những hạt ngọc trên một sợi dây, là điều quen thuộc trong cách dạy dỗ của người Do Thái. Người đọc ngày nay có thể mong thấy dấu ngoặc kép quanh từng đoạn. Phao-lô chỉ dùng một công thức, “như có lời chép”, và để cả chuỗi đứng đó như phán quyết của Kinh Thánh.
 
@@ -108,9 +108,9 @@ Tân Ước không phải lúc nào cũng theo bản Bảy Mươi. Hai câu trí
 
 **“Ta đã gọi con Ta ra khỏi Ai Cập”** (Ma-thi-ơ 2:15; Ô-sê 11:1). Ma-thi-ơ trích lời Ô-sê về cuộc xuất hành của Y-sơ-ra-ên và áp dụng cho Đức Giê-xu. Ở đây Ma-thi-ơ khớp với bản Hê-bơ-rơ, “con Ta”. Bản Bảy Mươi của sách Ô-sê ghi “con cái nó”. Bản ghi của chúng tôi cho Ô-sê 11:1 ghi nhận điều này, và thành thật nói rằng phần mô tả bản Hy Lạp của nó được “viết dựa trên hiểu biết chung”, để người duyệt kiểm tra. Dù thế nào đi nữa, Ma-thi-ơ đã không lấy dòng ấy từ bản Bảy Mươi như chúng ta có. Bản ghi của Ma-thi-ơ 2:15 giải thích cách Ma-thi-ơ đọc câu ấy: “Trong sách Ô-sê, người con là Y-sơ-ra-ên.” Ma-thi-ơ thấy Đức Giê-xu, Con Đức Chúa Trời, sống lại câu chuyện của Y-sơ-ra-ên, đi vào Ai Cập rồi ra khỏi đó. Bản tiếng Việt viết chữ “con” ở đây bằng chữ thường, để giữ được cả hai nghĩa ấy.
 
-**“Ngài ban các món quà cho loài người”** (Ê-phê-sô 4:8; Thi Thiên 68:19). Phao-lô trích Thi Thiên 68, một bài ca chiến thắng trong đó Đức Chúa Trời lên núi thánh của Ngài, dẫn theo những kẻ bị bắt. Nhưng ở chỗ cả bản Hê-bơ-rơ lẫn bản Hy Lạp của thi thiên đều nói Đức Chúa Trời “đã nhận lễ vật” từ loài người, Phao-lô lại nói Ngài “ban các món quà”. Các bản ghi của chúng tôi ở cả hai phía đều có chú thích về sự khác biệt này. Chúng ghi nhận rằng một bản diễn ý cổ bằng tiếng A-ram của sách Thi Thiên, và bản dịch Sy-ri, cũng đọc là “đã ban”, nên có thể Phao-lô đang theo một cách hiểu đã có về câu này. Bản ghi của Thi Thiên 68:19 gợi ý cách hai bản văn ăn khớp với nhau: “vị chiến thắng nhận cống vật cũng là người phân phát nó cho dân mình”. Bản ghi của Ê-phê-sô đánh dấu điểm này là chưa chắc chắn và nói rõ mục đích của Phao-lô: Đấng Christ sống lại ban các ân tứ cho Hội Thánh Ngài, những ân tứ mà các câu 11–16 tiếp tục liệt kê.
+**“Ngài ban các món quà cho loài người”** (Ê-phê-sô 4:8; Thi Thiên 68:18). Phao-lô trích Thi Thiên 68, một bài ca chiến thắng trong đó Đức Chúa Trời lên núi thánh của Ngài, dẫn theo những kẻ bị bắt. Nhưng ở chỗ cả bản Hê-bơ-rơ lẫn bản Hy Lạp của thi thiên đều nói Đức Chúa Trời “đã nhận lễ vật” từ loài người, Phao-lô lại nói Ngài “ban các món quà”. Các bản ghi của chúng tôi ở cả hai phía đều có chú thích về sự khác biệt này. Chúng ghi nhận rằng một bản diễn ý cổ bằng tiếng A-ram của sách Thi Thiên, và bản dịch Sy-ri, cũng đọc là “đã ban”, nên có thể Phao-lô đang theo một cách hiểu đã có về câu này. Bản ghi của Thi Thiên 68:18 gợi ý cách hai bản văn ăn khớp với nhau: “vị chiến thắng nhận cống vật cũng là người phân phát nó cho dân mình”. Bản ghi của Ê-phê-sô đánh dấu điểm này là chưa chắc chắn và nói rõ mục đích của Phao-lô: Đấng Christ sống lại ban các ân tứ cho Hội Thánh Ngài, những ân tứ mà các câu 11–16 tiếp tục liệt kê.
 
-Một ví dụ nhỏ hơn là **Rô-ma 10:18**, nơi Phao-lô trích Thi Thiên 19:5 (19:4 trong các bản Kinh Thánh thông dụng): “tiếng của họ đã vang ra khắp đất”. Bản Bảy Mươi, mà Phao-lô trích từng chữ, ghi “tiếng của họ” hay “âm thanh của họ”. Bản Hê-bơ-rơ có một từ chỉ sợi dây đo. Cấp độ Sát nghĩa của thi thiên giữ “dây đo của chúng”, và một chú thích, được đánh dấu là chưa chắc chắn, giải thích bản Hy Lạp.
+Một ví dụ nhỏ hơn là **Rô-ma 10:18**, nơi Phao-lô trích Thi Thiên 19:4: “tiếng của họ đã vang ra khắp đất”. Bản Bảy Mươi, mà Phao-lô trích từng chữ, ghi “tiếng của họ” hay “âm thanh của họ”. Bản Hê-bơ-rơ có một từ chỉ sợi dây đo. Cấp độ Sát nghĩa của thi thiên giữ “dây đo của chúng”, và một chú thích, được đánh dấu là chưa chắc chắn, giải thích bản Hy Lạp.
 
 ## Các sứ đồ đã làm gì
 

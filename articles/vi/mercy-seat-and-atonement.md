@@ -5,7 +5,7 @@ date: 2026-11-14
 order: 111
 nav_title: Nắp thi ân
 section: passage
-source: 11837394ba09
+source: 1c83b4d3d4c8
 ---
 Trong căn phòng thánh nhất của nơi thánh Y-sơ-ra-ên chỉ có một món đồ: chiếc hòm giao ước, một cái rương gỗ bọc vàng, đựng các bảng đá giao ước. Đặt trên hòm là một tấm vàng ròng có hai chê-ru-bim bằng vàng, cánh xòe ra phía trên. Các bản Kinh Thánh tiếng Anh đã gọi tấm ấy là “the mercy seat”, “ngai thương xót”, gần năm trăm năm nay; tiếng Việt gọi là “nắp thi ân”. Có những bản khác gọi là “nắp chuộc tội” hay chỉ đơn giản là “cái nắp”. Lựa chọn này quan trọng hơn vẻ bề ngoài, vì cùng một họ từ chạy từ chiếc nắp hòm đến trọng tâm lời dạy của Tân Ước về thập tự giá.
 
@@ -53,7 +53,7 @@ Sau đó cấp độ Dễ đọc nói “nắp hòm”, và nhắc lại lời g
 
 Chữ tiếng Anh “atonement” có một lịch sử thú vị. Nó được ghép từ “at one”: làm cho hai bên “nên một”, hòa giải họ. Tyndale đã góp phần lớn đưa nó vào Kinh Thánh tiếng Anh. Chữ tiếng Việt “chuộc tội” lại vẽ một hình ảnh khác: “chuộc” là trả giá để lấy lại, như chuộc một món đồ hay chuộc một người. Vậy động từ Hê-bơ-rơ có nghĩa gì? Các học giả đã đề xuất ba hình ảnh chính, và các bản ghi giữ cả ba trong tầm nhìn.
 
-**Che phủ.** Gia-cốp, sợ gặp Ê-sau, gửi quà đi trước để “che mặt anh ấy”, tức là làm anh nguôi giận, để anh không còn thấy điều sai trái (Sáng Thế Ký 32:21). Quyết định về nghĩa ở đó lưu ý rằng động từ này “chính là từ về sau được dùng cho sự chuộc tội, che phủ hay xóa bỏ một lỗi lầm”. Một số Thi Thiên nói Đức Chúa Trời “che phủ” tội lỗi: “Ngài che phủ những sự phản nghịch của chúng tôi” (Thi Thiên 65:4, cấp độ Cân bằng).
+**Che phủ.** Gia-cốp, sợ gặp Ê-sau, gửi quà đi trước để “che mặt anh ấy”, tức là làm anh nguôi giận, để anh không còn thấy điều sai trái (Sáng Thế Ký 32:20). Quyết định về nghĩa ở đó lưu ý rằng động từ này “chính là từ về sau được dùng cho sự chuộc tội, che phủ hay xóa bỏ một lỗi lầm”. Một số Thi Thiên nói Đức Chúa Trời “che phủ” tội lỗi: “Ngài che phủ những sự phản nghịch của chúng tôi” (Thi Thiên 65:3, cấp độ Cân bằng).
 
 **Tẩy sạch.** Lê-vi Ký dùng động từ này cho việc tẩy sạch chính nơi thánh khỏi sự ô uế của dân (16:16), và nói rõ mục đích:
 

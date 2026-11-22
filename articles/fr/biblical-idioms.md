@@ -4,7 +4,7 @@ summary: La Bible parle par des expressions que ses premiers lecteurs comprenaie
 date: 2026-10-17
 order: 95
 section: passage
-source: dae5ff099ec1
+source: db273db486c2
 ---
 Toute langue a ses expressions idiomatiques : des tournures dont le sens n'est pas la somme de leurs mots. Un francophone qui "casse sa pipe" n'a rien cassé, et celui qui "n'est pas dans son assiette" n'est assis dans aucune assiette. Un traducteur qui rend les expressions idiomatiques mot à mot produit des absurdités, ou pire, quelque chose qui a l'air sensé et veut dire autre chose.
 
@@ -42,7 +42,7 @@ Que veut-il dire ? L'image est celle d'une douleur brûlante, mais les spéciali
 
 - Le plus souvent, on y voit la honte brûlante que suscite une bonté imméritée, et qui peut amener l'ennemi à changer.
 - Certains renvoient à un texte égyptien qui décrit un pénitent portant sur la tête un bassin de charbons, en signe de repentir.
-- D'autres y voient un jugement, puisque les charbons sont ailleurs une image du châtiment (Psaume 140:11). Selon cette lecture, la bonté accumule la culpabilité de l'ennemi s'il reste hostile.
+- D'autres y voient un jugement, puisque les charbons sont ailleurs une image du châtiment (Psaume 140:10). Selon cette lecture, la bonté accumule la culpabilité de l'ennemi s'il reste hostile.
 
 Le dossier suit la première lecture, et note qu'en Romains 12:20–21, le proverbe sert l'appel à vaincre le mal par le bien, ce qui la favorise. Le dossier de Romains 12:20 arrive à la même décision, et ajoute que la lecture du jugement s'accorde mal avec les commandements de Paul aux versets 14 et 17–19 : bénir ceux qui persécutent et ne jamais rendre le mal pour le mal.
 
@@ -62,7 +62,7 @@ Dans l'Exode, le cœur de Pharaon est "endurci". Pour un lecteur d'aujourd'hui, 
 
 Le dossier d'Exode 7:3 ajoute quelque chose qu'un lecteur de traduction ne peut pas voir. L'Exode emploie trois verbes différents pour ce qui arrive au cœur de Pharaon : "rendre dur", "rendre fort" et "rendre lourd". Tous trois décrivent une volonté fermement dressée contre l'ordre de Dieu. Parfois Dieu est le sujet, parfois Pharaon lui-même, et parfois le cœur "est" simplement dur ou lourd. La note dit que le texte tient ces affirmations ensemble sans expliquer comment.
 
-Open Word Bible garde les verbes distincts là où elle le peut. En Exode 8:11 (8:15 dans la plupart des Bibles anglaises), Pharaon lui-même est le sujet, et le verbe est celui de la racine "lourd" :
+Open Word Bible garde les verbes distincts là où elle le peut. En Exode 8:15 (8:11 dans les Bibles hébraïques), Pharaon lui-même est le sujet, et le verbe est celui de la racine "lourd" :
 
 > {{OWB:EXO.8.11.s1:L}}
 

@@ -4,7 +4,7 @@ summary: Waandishi wa Biblia hawakuandika sura wala mistari. Hapa ni mahali namb
 date: 2026-10-17
 order: 100
 section: translation
-source: ddaa7f257d1b
+source: a025429ed75e
 ---
 "Yohana 3:16" inajulikana sana kiasi kwamba ni rahisi kusahau kwamba Yohana hakuandika kamwe "3" wala "16". Hakuna mwandishi yeyote wa Biblia aliyegawa vitabu vyake katika sura na mistari. Namba hizo ni mfumo wa marejeo, ulioongezwa karne nyingi baadaye na wataalamu na wapiga chapa, na kama mfumo wowote wa marejeo zina manufaa, hazina ukamilifu, na zimekuja kukaa.
 
@@ -56,13 +56,17 @@ Kuna tofauti ndogo zaidi mahali pengine, kama mwishoni mwa Mwanzo 31, ambapo Kie
 
 ## Jinsi Open Word Bible inavyoshughulikia namba
 
-Open Word Bible inaipa kila mstari namba kama maandishi yake ya chanzo yanavyofanya. Kwa Agano la Kale hayo ni Kodeksi ya Leningrad ya Westminster, kwa hiyo Malaki ina sura tatu, Yoeli nne, na kichwa cha zaburi ni mstari wake wa kwanza. Pale jambo hili lina maana, mstari wa kwanza unaohusika una maelezo ya chini. Yale ya Malaki 3:19 yanaeleza kwamba mistari yake sita imepewa namba 4:1–6 katika Biblia nyingine nyingi, na kwamba Open Word Bible inafuata namba za maandishi ya Kiebrania inayoyatafsiri. Yoeli 3:1 ina maelezo ya aina hiyohiyo, na vivyo hivyo kichwa cha Zaburi 3:
+Open Word Bible inatafsiri maandishi ya Kiebrania, Kodeksi ya Leningrad ya Westminster, lakini inazipa sura na mistari namba kama NIV na Biblia nyingi za Kiingereza zinavyofanya. Kwa hiyo Malaki ina sura nne, Yoeli tatu, na kichwa cha zaburi hakina namba. Hivyo msomaji anaweza kutafuta mstari kwa namba anayoijua tayari, na kuulinganisha na Biblia anayoisoma tayari.
+
+Pale ambapo namba za Kiebrania ni tofauti, mstari wa kwanza unaohusika una maelezo ya chini. Yale ya Malaki 4:1 yanaeleza kwamba mistari yake sita ni 3:19–24 katika maandishi ya Kiebrania, ambayo yanaiweka katika sura ya 3. Yoeli 2:28 ina maelezo ya aina hiyohiyo, na vivyo hivyo kichwa cha Zaburi 3:
 
 > {{OWB:PSA.3.1.s1:B}}
 
-Rekodi yake inasema kwamba kuanzia Zaburi 3 namba za mistari hapa ziko juu kwa moja kuliko katika Biblia zinazochapisha kichwa bila namba.
+Rekodi yake inasema kwamba kuanzia Zaburi 3, Biblia za Kiebrania zinaipa mistari namba iliyo juu kwa moja kuliko hapa. Kila ukurasa wa mstari unatoa pia namba ya Kiebrania pale inapotofautiana.
 
-Nyuma ya pazia, jedwali katika data ya mradi, `data/versification.json`, linaoanisha mifumo hiyo miwili mstari kwa mstari. Limejengwa kutoka ramani ya mistari ya Open Scriptures Hebrew Bible, na linaorodhesha kila mstari wa Kiebrania ambao namba yake ya Kiingereza ni tofauti: zaidi kidogo ya elfu mbili, karibu nusu yake katika Zaburi. Tovuti inalitumia popote namba zetu zinapokutana na za mtu mwingine. Msomaji anapoonyesha Biblia nyingine kwa ajili ya kulinganisha, kama World English Bible, mistari yake inahamishiwa katika namba zetu, ili Zaburi 3:1 ya Kiingereza ikae kando ya Zaburi 3:2 yetu. Marejeo mtambuka kutoka vyanzo vingine yanabadilishwa kwa namna ileile. Na huduma ya maandishi ya mradi inaweza kutoa Biblia ya kulinganisha ama kwa namba zetu ama kwa namba za toleo lenyewe.
+Mifumo hiyo miwili haiigawi maandishi mahali palepale kila mara. Mahali patano mstari mmoja wa Kiebrania una mistari miwili ya Kiingereza: Zaburi 13:5–6, 1 Wafalme 18:33–34, 20:2–3, 22:21–22 na Isaya 64:1, ambao mstari wake wa kwanza unafunga Isaya 63 katika Kiebrania. Mahali pengine patatu mistari miwili ya Kiebrania inafanya mstari mmoja wa Kiingereza, kama katika Hesabu 26:1. Rekodi za Open Word Bible zinafuata sentensi za Kiebrania, kwa hiyo namba ya mstari inaweza kuangukia katikati ya sentensi, kama inavyotokea mahali pengi hata hivyo.
+
+Nyuma ya pazia, jedwali katika data ya mradi, `data/versification.json`, linaoanisha mifumo hiyo miwili mstari kwa mstari. Limejengwa kutoka ramani ya mistari ya Open Scriptures Hebrew Bible, na linaorodhesha kila mstari wa Kiebrania ambao namba yake ya Kiingereza ni tofauti: zaidi kidogo ya elfu mbili, karibu nusu yake katika Zaburi. Rekodi zenyewe zinabakiza namba za Kiebrania, ili tafsiri iweze kulinganishwa na maandishi ya Kiebrania kila wakati; tovuti inazigeuza kuwa namba ambazo msomaji anaziona. Na huduma ya maandishi ya mradi inaweza kutoa kifungu ama kwa namba za NIV ama kwa namba za maandishi ya Kiebrania yenyewe.
 
 Katika Agano Jipya, Open Word Bible inabaki na namba za Estienne hata pale ambapo maandishi ya Kigiriki ya SBL hayana mstari wa kuweka chini yake. Mathayo 17 inatoka mstari wa 20 hadi wa 22, pamoja na maelezo ya chini yanayoeleza kwa nini. Ona [Mistari isiyopatikana katika Biblia za kisasa](/articles/verses-missing-from-modern-bibles/).
 
@@ -70,7 +74,7 @@ Katika Agano Jipya, Open Word Bible inabaki na namba za Estienne hata pale ambap
 
 Hakuna kati ya haya kilicho sababu ya kutoamini sura na mistari. Zinawawezesha mamilioni ya watu kupata sentensi ileile katika lugha na matoleo tofauti, na zinafanya marejeo mtambuka na konkodansi ziwezekane. Lakini ni ramani iliyowekwa juu ya maandishi, si sehemu yake. Kusoma kuvuka mgawanyo wa sura, au kupuuza namba ya mstari katikati ya sentensi, mara nyingi ndiyo njia bora ya kusikia kile ambacho mwandishi aliandika hasa.
 
-[Fungua 1 Wakorintho 13](/1co/13/), [Isaya 52](/isa/52/) au [Malaki 3](/mal/3/) kuona namba hizo zikifanya kazi.
+[Fungua 1 Wakorintho 13](/1co/13/), [Isaya 52](/isa/52/) au [Malaki 4](/mal/4/) kuona namba hizo zikifanya kazi.
 
 ## Vyanzo
 

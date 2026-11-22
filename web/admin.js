@@ -149,6 +149,130 @@ var OWBAdminCore = (function () {
     failed: failed, failure: failure };
 })();
 
+// Addresses and the command palette, also page-free (tests/js/admin-nav.test.mjs).
+// A section's filters live in its address as query parameters,
+// "#review?layer=grc&book=ISA", so a view can be bookmarked and shared; a
+// parameter at its default is left out. The palette (Ctrl K or Cmd K)
+// ranks the sections, recent items and what a query names directly.
+var OWBAdminNav = (function () {
+  "use strict";
+
+  function decode(s, plus) {
+    try { return decodeURIComponent(plus ? s.replace(/\+/g, " ") : s); } catch (e) { return s; }
+  }
+
+  // "#review/en?book=ISA" -> {path: "review/en", name: "review", arg: "en",
+  // params: {book: "ISA"}, query: true}; query says whether there was a "?".
+  function parse(hash) {
+    hash = String(hash || "").replace(/^#/, "");
+    var at = hash.indexOf("?");
+    var path = at < 0 ? hash : hash.slice(0, at), query = at < 0 ? null : hash.slice(at + 1);
+    var parts = path.split("/"), params = {};
+    (query || "").split("&").forEach(function (pair) {
+      if (!pair) return;
+      var eq = pair.indexOf("=");
+      params[decode(eq < 0 ? pair : pair.slice(0, eq), true)] = eq < 0 ? "" : decode(pair.slice(eq + 1), true);
+    });
+    return { path: path, name: parts[0], arg: decode(parts.slice(1).join("/")), params: params, query: query !== null };
+  }
+
+  // A section's filters from an address's params: each key of defaults, of
+  // its default's type (numbers and true/false), the default when absent.
+  function read(params, defaults) {
+    var out = {};
+    for (var k in defaults) {
+      var d = defaults[k], v = params && Object.prototype.hasOwnProperty.call(params, k) ? params[k] : undefined;
+      if (v === undefined) out[k] = d;
+      else if (typeof d === "number") out[k] = v !== "" && isFinite(+v) ? +v : d;
+      else if (typeof d === "boolean") out[k] = v === "1" || v === "true";
+      else out[k] = v;
+    }
+    return out;
+  }
+
+  // The address of path with state's filters: each key of defaults whose
+  // value differs from its default, in defaults' order.
+  function build(path, state, defaults) {
+    var q = [];
+    for (var k in defaults) {
+      var v = state[k];
+      if (v === undefined || v === null || v === defaults[k]) continue;
+      if (typeof defaults[k] === "number" && +v === defaults[k]) continue;
+      q.push(k + "=" + (typeof v === "boolean" ? (v ? "1" : "0") : encodeURIComponent(String(v))));
+    }
+    return "#" + path + (q.length ? "?" + q.join("&") : "");
+  }
+
+  function fold(s) {
+    return String(s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+  }
+  function boundary(t, i) { return i === 0 || !/[a-z0-9]/.test(t.charAt(i - 1)); }
+
+  // How well query fits text, higher is better, -1 for not at all: the
+  // start of the text, then the start of a word, then the words' first
+  // letters, then anywhere, then its letters in order (word starts and
+  // runs count more).
+  function score(query, text) {
+    var q = fold(query).trim(), t = fold(text);
+    if (!q) return 0;
+    var i = t.indexOf(q);
+    if (i === 0) return 100 - Math.min(t.length, 50) / 100;
+    if (i > 0 && boundary(t, i)) return 80 - Math.min(i, 50) / 100;
+    // The words' first letters ("vi" for Verse inspector).
+    if (t.split(/[^a-z0-9]+/).map(function (w) { return w.charAt(0); }).join("").indexOf(q.replace(/\s+/g, "")) === 0) return 70;
+    if (i > 0) return 60 - Math.min(i, 50) / 100;
+    var s = 30, at = -1, prev = -2;
+    for (var j = 0; j < q.length; j++) {
+      var c = q.charAt(j);
+      if (c === " ") continue;
+      at = t.indexOf(c, at + 1);
+      if (at < 0) return -1;
+      s += (at === prev + 1 ? 2 : -1) + (boundary(t, at) ? 3 : 0);
+      prev = at;
+    }
+    return Math.max(1, Math.min(s, 59));
+  }
+
+  // items ([{title, words}]) that fit query, best first (in their own order
+  // for an empty query), at most limit.
+  function rank(query, items, limit) {
+    var scored = [];
+    items.forEach(function (item, i) {
+      var s = Math.max(score(query, item.title), item.words ? score(query, item.words) - 5 : -1);
+      if (s >= 0) scored.push([s, i, item]);
+    });
+    scored.sort(function (a, b) { return b[0] - a[0] || a[1] - b[1]; });
+    return scored.slice(0, limit || scored.length).map(function (x) { return x[2]; });
+  }
+
+  // What a query names outright: a GitHub issue or pull request ("#123",
+  // "pr 45", "issue 9", "123"), or an account by email ("ruth@").
+  // github is the repository's address; users whether accounts may be shown.
+  function direct(query, github, users) {
+    var q = String(query || "").trim(), out = [];
+    var m = /^(?:#\s*|(pr|pull|issue|job)\s*#?\s*)?(\d{1,7})$/i.exec(q);
+    if (m && github) {
+      var pr = !!m[1] && /^p/i.test(m[1]);
+      out.push({ title: (pr ? "Pull request #" : "Issue or pull request #") + m[2] + " on GitHub",
+        href: github + (pr ? "/pull/" : "/issues/") + m[2], external: true, kind: "github" });
+    }
+    if (users && q.length > 1 && /^[^\s@]*@[^\s@]*$/.test(q)) {
+      out.push({ title: "Accounts matching " + q, href: "#users?q=" + encodeURIComponent(q), kind: "user" });
+    }
+    return out;
+  }
+
+  // The recent list with item first; one entry per page (its address
+  // without the query), at most max.
+  function remember(list, item, max) {
+    var base = item.href.split("?")[0];
+    return [item].concat((list || []).filter(function (x) { return x && x.href && x.href.split("?")[0] !== base; }))
+      .slice(0, max);
+  }
+
+  return { parse: parse, read: read, build: build, score: score, rank: rank, direct: direct, remember: remember };
+})();
+
 (function () {
   "use strict";
   var root = document.getElementById("admin");
@@ -262,7 +386,7 @@ var OWBAdminCore = (function () {
       // Forgotten before (a read started meanwhile would be old) and after.
       var drop = C.drops(path, options.body);
       forget(drop);
-      return request(path, options).then(function (data) { forget(drop); return data; },
+      return request(path, options).then(function (data) { forget(drop); attention(true); return data; },
         function (e) { forget(drop); throw e; });
     }
     if (path.indexOf("/api/admin/") !== 0) return request(path, options);
@@ -375,7 +499,7 @@ var OWBAdminCore = (function () {
   function live(input, run) {
     input.addEventListener("input", function () {
       clearTimeout(LIVE);
-      LIVE = setTimeout(function () { run(input.value.trim()); }, 250);
+      LIVE = setTimeout(function () { typed(function () { run(input.value.trim()); }); }, 250);
     });
   }
   function stopLive() { clearTimeout(LIVE); }
@@ -467,45 +591,16 @@ var OWBAdminCore = (function () {
 
   function opens(section) { return !section.area || ME.admin.indexOf(section.area) >= 0; }
 
-  // Counts beside sections, from the dashboard's "needs attention" list
-  // (the account only gets the items its areas open): attention key ->
-  // [section, what the count is of].
-  var BADGE_FOR = {
-    inbox: ["inbox", "waiting"], flags: ["flags", "flagged"], invites: ["team", "not signed in yet"],
-    "import": ["health", "to look at"]
-  };
-  var BADGES = {};   // section id -> {count, tone, what}
-  function badgesFrom(overview) {
-    var out = {};
-    (overview.attention || []).forEach(function (a) {
-      var to = BADGE_FOR[a.key];
-      if (to && a.count) out[to[0]] = { count: a.count, tone: a.tone, what: to[1] };
-    });
-    return out;
-  }
-  // Fetched ahead (quietly, from the kept read when there is one) after the
-  // rail is drawn; the rail is drawn again only if the counts differ.
-  function refreshBadges(current) {
-    if (!opens(SECTIONS[0])) return;
-    api("/api/admin/overview/", { quiet: true }).then(function (d) {
-      var next = badgesFrom(d);
-      if (JSON.stringify(next) === JSON.stringify(BADGES)) return;
-      BADGES = next;
-      drawRail(current, true);
-    }, function () { /* the counts wait for the next section */ });
-  }
-
-  function drawRail(current, keepBadges) {
-    var open = rail.classList.contains("open") && keepBadges;
+  function drawRail(current) {
+    var open = false;   // a new section closes the phone's list
     rail.textContent = "";
     rail.appendChild(searchBox());
     var here = SECTIONS.filter(function (s) { return s.id === current || PARENT[current] === s.id; })[0];
-    // On a phone the sections fold into one button that shows where you are.
-    var waiting = Object.keys(BADGES).reduce(function (n, k) { return n + (BADGES[k].tone === "hot" ? 1 : 0); }, 0);
+    // On a phone the sections fold into one button that shows where you are
+    // (and, from paintBadges, how many places have something waiting).
     var toggle = h("button", { type: "button", class: "admin-rail-toggle", "aria-expanded": open ? "true" : "false",
       "aria-controls": "admin-rail-sections" },
-      h("span", null, "Sections"), h("b", null, here ? here.label : ""),
-      waiting ? h("span", { class: "admin-badge hot", "aria-label": waiting + " need attention" }, String(waiting)) : null);
+      h("span", null, "Sections"), h("b", null, here ? here.label : ""));
     toggle.addEventListener("click", function () {
       var now = !rail.classList.contains("open");
       rail.classList.toggle("open", now);
@@ -524,13 +619,10 @@ var OWBAdminCore = (function () {
         sections.appendChild(list);
       }
       var on = s.id === current || PARENT[current] === s.id;
-      var badge = BADGES[s.id];
-      list.appendChild(h("li", null, h("a", { href: "#" + s.id, "aria-current": on ? "page" : null },
-        h("span", null, s.label),
-        badge ? h("span", { class: "admin-badge " + badge.tone, title: num(badge.count) + " " + badge.what }, num(badge.count),
-          h("span", { class: "sr-only" }, " " + badge.what)) : null)));
+      list.appendChild(h("li", null, h("a", { href: "#" + s.id, "aria-current": on ? "page" : null, "data-section": s.id }, s.label)));
     });
     rail.hidden = false;
+    paintBadges();
   }
 
   // Each drawing gets a number, so a slow answer for a section that has
@@ -567,14 +659,18 @@ var OWBAdminCore = (function () {
   // loading line replaces it only if that takes a while.
   function route() {
     var mine = ++drawing;
-    var hash = location.hash.replace(/^#/, "") || "dashboard";
-    var parts = hash.split("/");
-    var name = parts[0], arg = decodeURIComponent(parts.slice(1).join("/"));
+    var followed = NAVIGATED;
+    var hash = address() || "dashboard";
+    routed = location.hash;
+    var at = N.parse(hash);
+    var name = at.name, arg = at.arg;
     var section = SECTIONS.filter(function (s) { return s.id === (PARENT[name] || name); })[0];
     if (!section || !opens(section)) { name = "dashboard"; section = SECTIONS[0]; }
-    var moved = hash !== shown;
+    // A filter changed on the same page isn't a move: the field being
+    // typed in keeps its place. Following an address (Back, a link) is.
+    var moved = followed || at.path !== (shown || "").split("?")[0];
     drawRail(name);
-    refreshBadges(name);
+    attention(false);
     KEYS = null;
     main.setAttribute("aria-busy", "true");
     main.classList.add("admin-stale");
@@ -614,7 +710,132 @@ var OWBAdminCore = (function () {
       main.classList.remove("admin-stale");
       main.removeAttribute("aria-busy");
       document.title = section.label + " · Admin · Open Word Bible";
+      visited(name, section, hash);
     });
+  }
+
+  // ---- Addresses -------------------------------------------------------
+
+  // Sections whose filters are kept in the address (OWBAdminNav): name:
+  // {state (the section's own filter object), defaults, legacy}. legacy(arg,
+  // state) takes an older address's path argument ("#inbox/mine",
+  // "#review/grc", "#overlap/JHN") into state and returns what is left of
+  // it; anything left means the address isn't the filtered list (a review
+  // sentence) and is left alone. Registered at the end, once every view's
+  // filter object exists.
+  var N = OWBAdminNav;
+  var FILTERS = {};
+  function filtered(name, state, defaults, legacy) {
+    FILTERS[name] = { state: state, defaults: defaults || copy(state), legacy: legacy || null };
+  }
+  // Whether the next route() follows the address (a link, back or forward,
+  // the first drawing) rather than a view's own change to its filters; and
+  // whether that change was typed (search as you type), which replaces the
+  // history entry rather than adding one.
+  var NAVIGATED = true, TYPING = false;
+  function typed(run) {
+    var before = drawing;
+    TYPING = true;
+    try { run(); } finally { TYPING = false; }
+    // Filtered on the page without drawing it again (the inbox's words).
+    if (drawing === before) keepAddress(false);
+  }
+  // The address to draw, made to match the section's filters. Following an
+  // address, its parameters are the filters; a bare address ("#users", as
+  // the rail links) keeps the filters last used, and the entry is marked
+  // as ours, so coming back to it with Back means the defaults. After a
+  // view's own change, the filters make the address: a new history entry,
+  // or the same one when typed.
+  function address() {
+    var raw = location.hash.replace(/^#/, "");
+    var nav = NAVIGATED, push = !NAVIGATED && !TYPING;
+    NAVIGATED = false;
+    var at = N.parse(raw), f = FILTERS[at.name];
+    if (!f) return raw;
+    var ours = !!(history.state && history.state.owb);
+    if (nav && (at.query || ours)) assign(f.state, N.read(at.params, f.defaults));
+    if (at.arg && (!f.legacy || f.legacy(at.arg, f.state))) return raw;
+    var canon = N.build(at.name, f.state, f.defaults).slice(1);
+    if (canon !== raw || !ours) {
+      try { history[push && canon !== raw ? "pushState" : "replaceState"]({ owb: 1 }, "", "#" + canon); } catch (e) { /* none */ }
+    }
+    return canon;
+  }
+  // The address made to match the filters without drawing the page again,
+  // for a view that redraws part of itself (push: a new history entry).
+  function keepAddress(push) {
+    var raw = location.hash.replace(/^#/, "");
+    var at = N.parse(raw), f = FILTERS[at.name];
+    if (!f || at.arg) return;
+    var canon = N.build(at.name, f.state, f.defaults).slice(1);
+    if (canon === raw) return;
+    try { history[push ? "pushState" : "replaceState"]({ owb: 1 }, "", "#" + canon); } catch (e) { /* none */ }
+    shown = canon;
+    routed = location.hash;
+  }
+  function assign(target, from) { for (var k in from) target[k] = from[k]; }
+  // A link, Back or Forward. Both popstate and hashchange come for most
+  // moves; the second finds the address already drawn.
+  var routed = null;
+  function navigated() {
+    if (location.hash === routed) return;
+    NAVIGATED = true;
+    route();
+  }
+
+  // ---- Attention counts on the rail (GET /api/admin/attention/) --------
+
+  // Asked on each move (at most every 20 seconds) and after every change;
+  // never waited on: the badges are painted when the answer comes.
+  var ATTENTION = null, attentionAt = 0, attentionAsking = false, attentionAgain = false;
+  function attention(force) {
+    if (attentionAsking) { attentionAgain = attentionAgain || force; return; }
+    if (!force && Date.now() - attentionAt < 20000) return;
+    attentionAsking = true;
+    attentionAt = Date.now();
+    request("/api/admin/attention/", {}).then(function (d) {
+      ATTENTION = d.sections || {};
+      paintBadges();
+    }, function () { /* the rail just shows no counts */ }).then(function () {
+      attentionAsking = false;
+      if (attentionAgain) { attentionAgain = false; attention(true); }
+    });
+  }
+  function paintBadges() {
+    if (!ATTENTION) return;
+    rail.querySelectorAll("a[data-section]").forEach(function (a) {
+      var old = a.querySelector(".admin-badge");
+      if (old) old.remove();
+      var c = ATTENTION[a.getAttribute("data-section")];
+      a.removeAttribute("title");
+      if (!c || !c.count) return;
+      a.title = c.title;
+      a.appendChild(h("span", { class: "admin-badge", "aria-label": c.title }, c.count > 999 ? "999+" : num(c.count)));
+    });
+    // The phone's Sections button: how many places have something waiting.
+    var toggle = rail.querySelector(".admin-rail-toggle"), places = rail.querySelectorAll("a[data-section] .admin-badge").length;
+    if (toggle) {
+      var old = toggle.querySelector(".admin-badge");
+      if (old) old.remove();
+      if (places) toggle.appendChild(h("span", { class: "admin-badge", "aria-label": plural(places, "place") + " with something waiting" }, num(places)));
+    }
+  }
+
+  // ---- Recent pages, for the palette -------------------------------------
+
+  var RECENT_KEY = "owb.admin.recent";
+  function recent() {
+    try {
+      var d = JSON.parse(localStorage.getItem(RECENT_KEY) || "null");
+      return d && d.who === WHO && Array.isArray(d.items) ? d.items : [];
+    } catch (e) { return []; }
+  }
+  function visited(name, section, hash) {
+    if (name === "dashboard") return;
+    var h1 = main.querySelector("h1");
+    var title = h1 ? h1.textContent.trim() : section.label;
+    var item = { href: "#" + hash, title: title, detail: title === section.label ? "" : section.label };
+    try { localStorage.setItem(RECENT_KEY, JSON.stringify({ who: WHO, items: N.remember(recent(), item, 8) })); } catch (e) { /* none */ }
   }
 
   // A section that couldn't be drawn: what happened in plain words, Try
@@ -725,7 +946,7 @@ var OWBAdminCore = (function () {
   VIEWS.coverage = function () {
     return api("/api/admin/coverage/").then(function (d) {
       var langs = d.languages;
-      var tab = sessionTab("coverage", "nt");
+      var tab = COVERAGE.testament;
       var body = h("div");
       function draw(which) {
         body.textContent = "";
@@ -754,7 +975,7 @@ var OWBAdminCore = (function () {
       draw(tab);
       return [head("Progress", "Coverage", "Every book in every language. A tick is a book drafted whole; a percentage is the share of its drafted sentences in that language. Open a book for its chapters."),
         h("div", { class: "admin-toolbar" }, seg([["ot", "Old Testament"], ["nt", "New Testament"]], tab, function (v) {
-          rememberTab("coverage", v); draw(v);
+          COVERAGE.testament = v; rememberTab("coverage", v); keepAddress(true); draw(v);
         }), legend()),
         ME.admin.indexOf("jobs") >= 0 ? h("p", null, h("a", { href: "#jobs" }, "Queue missing books"), " on the drafting jobs board.") : null, body];
     });
@@ -1122,10 +1343,16 @@ var OWBAdminCore = (function () {
       source.map(function (w) { return [h("span", { title: [w.lemma, w.gloss, w.morph].filter(Boolean).join(" \u00b7 ") }, w.text), " "]; }))
       : h("p", { class: "admin-source", lang: r.source.language, dir: r.source.language === "hbo" ? "rtl" : null }, r.source.text);
     var langs = Object.keys(r.renderings);
+    // Each rendering's "Request a fix" opens the record's fix request form
+    // with its language and level chosen.
+    var fix = ME.admin.indexOf("inbox") >= 0 ? fixForm(r, langs, names, from, d.verse) : null;
     var rows = langs.map(function (code) {
       return h("tr", null, h("th", { scope: "row" }, names[code] || code), ["L", "B", "R"].map(function (lv) {
         var t = r.renderings[code][lv];
-        return h("td", { class: "admin-wrap", lang: code }, t ? rendering(t) : "\u2014");
+        return h("td", { class: "admin-wrap", lang: code }, t ? rendering(t) : "\u2014",
+          t && fix ? h("button", { type: "button", class: "admin-link admin-fix-this", lang: "en",
+            "aria-label": "Request a fix to the " + (names[code] || code) + " " + LEVEL_NAMES[lv] + " in " + r.id,
+            onclick: function () { fix.prefill(code, lv); } }, "Request a fix") : null);
       }));
     });
     var meaning = r.decisions.filter(function (x) { return x.layer === "meaning"; });
@@ -1141,8 +1368,8 @@ var OWBAdminCore = (function () {
       langs.filter(function (c) { return byLang[c]; }).map(function (c) {
         return [h("h3", { class: "admin-h3" }, (names[c] || c) + " decisions"), h("div", { class: "admin-decisions" }, byLang[c].map(decision))];
       }));
-    if (ME.admin.indexOf("inbox") >= 0) {
-      card.appendChild(fixForm(r, langs, names, from));
+    if (fix) {
+      card.appendChild(fix);
       card.appendChild(linksEditor(r, d, names));
     }
     return card;
@@ -1317,7 +1544,7 @@ var OWBAdminCore = (function () {
       h("p", { class: "admin-sub" }, x.reason));
   }
 
-  function fixForm(r, langs, names, from) {
+  function fixForm(r, langs, names, from, verse) {
     var open = !!from;
     var box = h("div", { class: "admin-fix", hidden: !open });
     var toggle = h("button", { type: "button", class: "admin-btn" }, "Request a fix");
@@ -1341,7 +1568,7 @@ var OWBAdminCore = (function () {
       e.preventDefault();
       var picked = Array.prototype.map.call(levels.querySelectorAll("input:checked"), function (x) { return x.value; });
       busy(send, true);
-      api("/api/admin/fixes/", { method: "POST", body: { record: r.id, verse: location.hash.split("/")[1], language: lang.value,
+      api("/api/admin/fixes/", { method: "POST", body: { record: r.id, verse: verse || location.hash.split("/")[1], language: lang.value,
         levels: picked, change: change.value, reason: reason.value, message: from ? from.id : null } }).then(function (res) {
         status.textContent = "";
         add(status, ["Filed as ", h("a", { href: res.url, rel: "noopener" }, "#" + res.number), "."]);
@@ -1351,7 +1578,17 @@ var OWBAdminCore = (function () {
       }, function (err) { busy(send, false); note(status, err, true); });
     });
     box.appendChild(form);
-    return h("div", { class: "admin-fix-wrap" }, toggle, box);
+    var wrap = h("div", { class: "admin-fix-wrap" }, toggle, box);
+    // Open with one rendering chosen: its language, only its level.
+    wrap.prefill = function (code, level) {
+      if (langs.indexOf(code) >= 0) lang.value = code;
+      levels.querySelectorAll("input").forEach(function (x) { x.checked = x.value === level; });
+      box.hidden = false;
+      note(status, "");
+      wrap.scrollIntoView({ block: "nearest", behavior: "smooth" });
+      change.focus({ preventScroll: true });
+    };
+    return wrap;
   }
 
   VIEWS.fixes = function () {
@@ -1640,6 +1877,7 @@ var OWBAdminCore = (function () {
       function changed() {
         f.lang = langSel.value; f.level = levelSel.value; f.type = typeSel.value;
         f.numbering = numberingSel.value; f.books = bookSel.value;
+        keepAddress(true);
         var keep = {};
         language().settings.forEach(function (s) { if (s.name in f.settings) keep[s.name] = f.settings[s.name]; });
         f.settings = keep;
@@ -2258,19 +2496,24 @@ var OWBAdminCore = (function () {
 
   // ---- Search --------------------------------------------------------
 
-  // The box at the top of the rail (GET /api/admin/search/): verses,
-  // sentences, terms, articles, decisions, and accounts and reader messages
-  // for the roles that open them. "/" focuses it; arrows, Enter and Escape
-  // work the list. Made once and kept across drawings of the rail.
+  // The box at the top of the rail, which is also the admin's command
+  // palette. Ctrl K or Cmd K (or "/") opens it on the recent pages and
+  // every section the account opens; typing ranks those (OWBAdminNav.rank),
+  // offers what the query names outright (a GitHub issue or pull request
+  // number, an account by email) and asks GET /api/admin/search/ for
+  // verses (by reference in any language the site reads), sentences,
+  // terms, articles, decisions, and accounts and reader messages for the
+  // roles that open them. Arrows, Enter and Escape work the list. Made once
+  // and kept across drawings of the rail.
   var SEARCH = null;
   function searchBox() {
     if (SEARCH) return SEARCH.wrap;
-    var input = h("input", { type: "search", id: "admin-search", placeholder: "Search the admin", autocomplete: "off",
+    var input = h("input", { type: "search", id: "admin-search", placeholder: "Search or jump to…", autocomplete: "off",
       spellcheck: "false", role: "combobox", "aria-expanded": "false", "aria-controls": "admin-search-list",
-      "aria-autocomplete": "list", "aria-label": "Search the admin (press /)" });
+      "aria-autocomplete": "list", "aria-label": "Search or jump to (Ctrl K or /)" });
     var list = h("div", { class: "admin-search-list", id: "admin-search-list", role: "listbox", hidden: true });
     var wrap = h("div", { class: "admin-search", role: "search" }, input, list);
-    var timer = null, asked = 0, active = -1, options = [];
+    var timer = null, asked = 0, active = -1, options = [], served = null;
 
     function close() {
       list.hidden = true;
@@ -2285,77 +2528,116 @@ var OWBAdminCore = (function () {
       input.setAttribute("aria-activedescendant", options[active].id);
       options[active].scrollIntoView({ block: "nearest" });
     }
-    function go(href) {
+    function go(o) {
+      var href = o.getAttribute("href");
       close();
       input.value = "";
       input.blur();
-      if (location.hash === href) route(); else location.hash = href;
+      if (o.getAttribute("target")) window.open(href, "_blank", "noopener");
+      else if (location.hash === href) route();
+      else location.hash = href;
     }
-    function show(d) {
+    // The palette's own groups for q: what it names, the sections and the
+    // recent pages.
+    function local(q) {
+      var sections = SECTIONS.filter(opens).map(function (s) {
+        return { title: s.label, detail: s.group || "Section", href: "#" + s.id, words: s.id + " " + s.group };
+      });
+      var here = "#" + (shown || "");
+      var mine = recent().filter(function (r) { return r.href !== here; });
+      if (!q) {
+        return [{ label: "Recent", results: mine.slice(0, 5) }, { label: "Sections", results: sections }];
+      }
+      return [{ label: "Go to", results: N.direct(q, GITHUB, ME.admin.indexOf("users") >= 0) },
+        { label: "Sections", results: N.rank(q, sections, 5) },
+        { label: "Recent", results: N.rank(q, mine, 3) }];
+    }
+    function show(q, groups, waiting) {
+      var was = active >= 0 && options[active] ? options[active].getAttribute("href") : null;
       list.textContent = "";
       options = [];
-      if (!d.groups.length) {
-        list.appendChild(h("p", { class: "admin-empty" }, "Nothing found for “" + d.q + "”."));
+      groups = groups.filter(function (g) { return g.results.length; });
+      if (!groups.length) {
+        list.appendChild(h("p", { class: "admin-empty" }, waiting ? "Searching…" : "Nothing found for “" + q + "”."));
       }
-      d.groups.forEach(function (g) {
+      groups.forEach(function (g) {
         list.appendChild(h("p", { class: "admin-search-group", role: "presentation" }, g.label));
         g.results.forEach(function (r) {
           var o = h("a", { href: r.href, role: "option", id: "admin-search-" + options.length, "aria-selected": "false",
-            tabindex: "-1" }, h("span", null, r.title), r.detail ? h("span", { class: "admin-sub" }, r.detail) : null);
+            tabindex: "-1", target: r.external ? "_blank" : null, rel: r.external ? "noopener" : null },
+          h("span", null, r.title), r.detail ? h("span", { class: "admin-sub" }, r.detail) : null);
           o.addEventListener("mousedown", function (e) { e.preventDefault(); });
-          o.addEventListener("click", function (e) { e.preventDefault(); go(r.href); });
+          o.addEventListener("click", function (e) { e.preventDefault(); go(o); });
           options.push(o);
           list.appendChild(o);
         });
       });
       list.hidden = false;
       input.setAttribute("aria-expanded", "true");
-      if (options.length) mark(0);
+      var keep = options.map(function (o) { return o.getAttribute("href"); }).indexOf(was);
+      if (options.length) mark(keep > 0 ? keep : 0);
     }
+    // The local groups at once, and the API's under them when they come.
     function ask() {
       var q = input.value.trim();
       var mine = ++asked;
-      if (q.length < 2) { close(); return; }
+      var groups = local(q);
+      var server = q.length >= 2;
+      show(q, served && served.q === q ? groups.slice(0, 1).concat(served.groups, groups.slice(1)) : groups, server);
+      if (!server || (served && served.q === q)) return;
       api("/api/admin/search/?q=" + encodeURIComponent(q)).then(function (d) {
-        if (mine === asked) show(d);
+        if (mine !== asked) return;
+        served = { q: q, groups: d.groups };
+        // What the query names first, then the API's (a verse by reference
+        // ranks above a section whose letters it happens to contain).
+        show(q, groups.slice(0, 1).concat(d.groups, groups.slice(1)), false);
       }, function (e) {
         if (mine !== asked) return;
-        list.textContent = "";
-        options = [];
+        show(q, groups, false);
         list.appendChild(h("p", { class: "admin-empty" }, e.message));
-        list.hidden = false;
-        input.setAttribute("aria-expanded", "true");
       });
+    }
+    function open() {
+      input.focus();
+      input.select();
+      clearTimeout(timer);
+      ask();
     }
     input.addEventListener("input", function () {
       clearTimeout(timer);
-      timer = setTimeout(ask, 200);
+      timer = setTimeout(ask, 120);
     });
     input.addEventListener("keydown", function (e) {
       if (e.key === "ArrowDown" || e.key === "ArrowUp") {
-        if (list.hidden) { ask(); return; }
         e.preventDefault();
+        if (list.hidden) { ask(); return; }
         mark(active + (e.key === "ArrowDown" ? 1 : -1));
       } else if (e.key === "Enter") {
         e.preventDefault();
         clearTimeout(timer);
-        if (!list.hidden && active >= 0) go(options[active].getAttribute("href"));
+        if (!list.hidden && active >= 0) go(options[active]);
         else ask();
       } else if (e.key === "Escape") {
         if (!list.hidden) close(); else { input.value = ""; input.blur(); }
       }
     });
     input.addEventListener("blur", close);
-    input.addEventListener("focus", function () { if (input.value.trim().length >= 2) ask(); });
+    input.addEventListener("focus", function () { ask(); });
     // On the window, before the site's search palette (search.js) takes "/"
-    // on the document; Ctrl K or Cmd K still opens the palette.
+    // and Ctrl K or Cmd K on the document: in the admin both open this box.
     window.addEventListener("keydown", function (e) {
-      if (e.key !== "/" || e.ctrlKey || e.metaKey || e.altKey || rail.hidden || !wrap.isConnected) return;
-      var t = e.target;
-      if (t && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName))) return;
+      if (rail.hidden || !wrap.isConnected) return;
+      var k = (e.key || "").toLowerCase();
+      var palette = k === "k" && (e.ctrlKey || e.metaKey) && !e.altKey && !e.shiftKey;
+      if (!palette) {
+        if (k !== "/" || e.ctrlKey || e.metaKey || e.altKey) return;
+        var t = e.target;
+        if (t && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName))) return;
+      }
       e.preventDefault();
       e.stopPropagation();
-      input.focus();
+      if (palette && document.activeElement === input && !list.hidden) { close(); input.blur(); return; }
+      open();
     }, true);
     SEARCH = { wrap: wrap, input: input };
     return wrap;
@@ -2370,9 +2652,11 @@ var OWBAdminCore = (function () {
   // state}], more}. Kept here, not in the read cache, so it outlives an
   // approval (which forgets the queue's reads) and keeps its order.
   var QUEUE = null;
+  // The queue's filters, kept in the address (#review?layer=grc&book=ISA).
+  var REVIEW = { layer: sessionTab("review.layer", ""), book: sessionTab("review.book", ""), state: sessionTab("review.state", "todo") };
   VIEWS.review = function (arg) {
     var parts = arg ? arg.split("/") : [];
-    return parts[1] ? reviewSentence(parts[0], parts[1]) : reviewQueue(parts[0] || sessionTab("review.layer", ""));
+    return parts[1] ? reviewSentence(parts[0], parts[1]) : reviewQueue(parts[0] || REVIEW.layer);
   };
   // Bulk review in the queue (POST /api/admin/review/bulk/): tick sentences
   // (shift-click ticks the range from the last one ticked) to approve or
@@ -2470,7 +2754,7 @@ var OWBAdminCore = (function () {
     };
   }
   function reviewQueue(layer) {
-    var filters = { book: sessionTab("review.book", ""), state: sessionTab("review.state", "todo") };
+    var filters = REVIEW;
     var body = h("div");
     var more = h("button", { type: "button", class: "admin-btn", hidden: true }, "More");
     var offset = 0, d = null, rows = null;
@@ -2513,7 +2797,7 @@ var OWBAdminCore = (function () {
     });
     var status = h("p", { class: "admin-note", role: "status" });
     var pick = queuePicker(function () { return layer; }, status);
-    function refilter() { offset = 0; rememberTab("review.book", filters.book); rememberTab("review.state", filters.state); later(more, load()); }
+    function refilter() { offset = 0; rememberTab("review.book", filters.book); rememberTab("review.state", filters.state); keepAddress(true); later(more, load()); }
     // A layer remembered from before may no longer be the account's.
     return load().catch(function (e) {
       if (e.status !== 403 || !layer) throw e;
@@ -2521,6 +2805,8 @@ var OWBAdminCore = (function () {
       return load();
     }).then(function () {
       rememberTab("review.layer", layer);
+      REVIEW.layer = layer;
+      keepAddress(false);
       var layerSel = d.layers.length > 1 ? select("review-layer", d.layers.map(function (l) { return [l.code, l.name]; }), layer) : null;
       if (layerSel) layerSel.addEventListener("change", function () { location.hash = "#review/" + layerSel.value; });
       var bookSel = select("review-book", [["", "Every book"]].concat(d.books.map(function (b) { return [b.code, b.name]; })), filters.book);
@@ -3094,13 +3380,19 @@ var OWBAdminCore = (function () {
         h("label", { class: "admin-field", for: "releases-since" }, "Since", since),
         h("label", { class: "admin-field", for: "releases-until" }, "Until (optional, inclusive)", until),
         h("div", { class: "admin-actions" }, show, download), status);
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
+      function showNotes() {
         busy(show, true);
         note(status, "Reading the imports…");
         api("/api/admin/history/release-notes/" + query()).then(function (d) { note(status, ""); drawNotes(d); },
           function (err) { note(status, err, true); }).then(function () { busy(show, false); });
+      }
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        showNotes();
+        keepAddress(true);
       });
+      // A shared address (#releases?lang=fr&since=...) shows its notes at once.
+      if (N.parse(location.hash).query) showNotes();
       download.addEventListener("click", function () {
         busy(download, true);
         saveFile("/api/admin/history/release-notes/" + query() + "&file=md").then(function (name) { note(status, "Saved " + name + "."); },
@@ -3111,6 +3403,33 @@ var OWBAdminCore = (function () {
         form, result];
     });
   };
+
+  // ---- Filters kept in the address -------------------------------------
+
+  var COVERAGE = { testament: sessionTab("coverage", "nt") };
+  filtered("coverage", COVERAGE, { testament: "nt" });
+  filtered("review", REVIEW, { layer: "", book: "", state: "todo" }, function (arg, f) {
+    if (arg.indexOf("/") >= 0) return arg;   // a sentence: #review/grc/JHN.1.1.s1
+    f.layer = arg;
+    return "";
+  });
+  filtered("inbox", INBOX, null, function (arg, f) {
+    if (arg !== "mine") return arg;
+    f.assigned = "me";
+    return "";
+  });
+  filtered("users", USERS);
+  filtered("decisions", DECISIONS);
+  filtered("checks", CHECKS);
+  filtered("consistency", CONSISTENCY);
+  filtered("articles", ARTICLES);
+  filtered("work", WORK);
+  filtered("overlap", OVERLAP, null, function (arg, f) {
+    f.book = arg.toUpperCase();
+    return "";
+  });
+  filtered("export", EXPORT, { lang: "en", level: "B", type: "usfm", numbering: "english", books: "" });
+  filtered("releases", RELEASES);
 
   // ---- Start ---------------------------------------------------------
 
@@ -3123,7 +3442,8 @@ var OWBAdminCore = (function () {
   function stop(title, text, link) {
     drawing++;
     KEYS = null;
-    window.removeEventListener("hashchange", route);
+    window.removeEventListener("hashchange", navigated);
+    window.removeEventListener("popstate", navigated);
     main.classList.remove("admin-stale");
     rail.hidden = true;
     main.removeAttribute("aria-busy");
@@ -3143,7 +3463,10 @@ var OWBAdminCore = (function () {
   // have changed since, the admin is drawn again.
   var started = false;
   function start() {
-    if (!started) window.addEventListener("hashchange", route);
+    if (!started) {
+      window.addEventListener("hashchange", navigated);
+      window.addEventListener("popstate", navigated);
+    }
     started = true;
     route();
   }

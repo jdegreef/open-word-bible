@@ -5,7 +5,7 @@ date: 2026-10-11
 order: 40
 section: history
 part: today
-source: 38f9ddefc748
+source: b3a3c2719637
 ---
 Esta serie ha seguido a la Biblia desde su primera escritura, a través de generaciones de escribas, hasta los manuscritos y las ediciones impresas que están detrás de las traducciones modernas. Este último artículo plantea la pregunta que subyace a todas las demás: ¿con cuánta confianza podemos decir que la Biblia que leemos hoy dice lo que escribieron sus autores?
 
@@ -88,7 +88,7 @@ Tres lugares de Open Word Bible muestran cómo se ve esto.
 
 - **Génesis 4:8.** El hebreo dice «Y habló Caín a su hermano Abel», y luego no da ninguna palabra. El Pentateuco samaritano, la Septuaginta, la versión siríaca y la latina añaden «Salgamos al campo». Open Word Bible sigue el hebreo, con una nota al pie.
 - **Isaías 53:11.** El hebreo dice que el siervo «verá». El Gran Rollo de Isaías, otro rollo de Isaías de la misma cueva y la Septuaginta dicen que «verá la luz». Open Word Bible traduce el hebreo y da «la luz» en una nota al pie; el sentido es parecido en los dos casos.
-- **Salmo 22:17** (22:16 en la mayoría de las Biblias en español). El hebreo tal como se ha transmitido dice «como el león» mis manos y mis pies, lo que deja la línea sin verbo. Un rollo de Nahal Hever, en el desierto de Judea, tiene una forma ligeramente distinta que parece un verbo. La Septuaginta dice «cavaron» u «horadaron», la lectura de la versión King James. Open Word Bible sigue el hebreo, explica las alternativas en una nota al pie y marca la decisión como incierta.
+- **Salmo 22:16** (22:17 en las Biblias hebreas). El hebreo tal como se ha transmitido dice «como el león» mis manos y mis pies, lo que deja la línea sin verbo. Un rollo de Nahal Hever, en el desierto de Judea, tiene una forma ligeramente distinta que parece un verbo. La Septuaginta dice «cavaron» u «horadaron», la lectura de la versión King James. Open Word Bible sigue el hebreo, explica las alternativas en una nota al pie y marca la decisión como incierta.
 
 Así que los traductores del Antiguo Testamento se enfrentan más a menudo que los del Nuevo a decisiones textuales difíciles. Los borradores lo muestran: las frases del Antiguo Testamento tienen aproximadamente el doble de probabilidades que las del Nuevo de llevar una decisión textual marcada como incierta. Pero también aquí la inmensa mayoría del texto no está en duda, y las alternativas en los lugares que sí lo están pueden nombrarse y sopesarse.
 

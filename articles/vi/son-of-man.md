@@ -4,7 +4,7 @@ summary: Cùng một cụm từ có nghĩa là “một con người” trong Ê
 date: 2026-10-17
 order: 81
 section: passage
-source: 65601781c86e
+source: adf413cc3972
 ---
 Ít có cụm từ nào trong Kinh Thánh vừa quen thuộc vừa dễ bị hiểu lầm như “Con Người”. Nhiều người đọc cho rằng nó là vế đối của “Con Đức Chúa Trời”: một danh hiệu chỉ nhân tính của Đức Giê-xu, danh hiệu kia chỉ thần tính của Ngài. Thật ra cụm từ này cổ xưa hơn và lạ lùng hơn thế. Trong tiếng Hê-bơ-rơ và tiếng A-ram, đó là một cách nói bình thường để chỉ “một con người”. Trong một khải tượng ở sách Đa-ni-ên, nó mô tả một nhân vật trông giống con người và đến cùng những đám mây trên trời. Trong các sách Phúc Âm, nó trở thành danh xưng mà Đức Giê-xu dùng cho chính mình nhiều hơn bất kỳ danh xưng nào khác.
 
@@ -18,7 +18,7 @@ Thi Thiên 8 cho thấy cụm từ này được dùng thế nào. Tác giả ng
 
 > {{OWB:PSA.8.5.s1:L}}
 
-Đó là cấp độ Sát nghĩa, với các cài đặt đọc của người đọc giữ nguyên. Hai vế của câu nói cùng một điều hai lần, như thơ Hê-bơ-rơ thường làm: “loài người” và “con của loài người” là hai từ song song chỉ một con người, nhỏ bé và hay chết dưới bầu trời bao la. Quyết định về nghĩa của câu này nói đúng như vậy. (Các bản Kinh Thánh tiếng Anh và tiếng Việt quen thuộc đánh số câu này là 8:4; Open Word Bible theo cách đánh số của bản Hê-bơ-rơ, vốn tính phần tiêu đề là câu 1.)
+Đó là cấp độ Sát nghĩa, với các cài đặt đọc của người đọc giữ nguyên. Hai vế của câu nói cùng một điều hai lần, như thơ Hê-bơ-rơ thường làm: “loài người” và “con của loài người” là hai từ song song chỉ một con người, nhỏ bé và hay chết dưới bầu trời bao la. Quyết định về nghĩa của câu này nói đúng như vậy. (Đây là câu 8:4, như trong các bản Kinh Thánh tiếng Anh và tiếng Việt quen thuộc; các bản Kinh Thánh Hê-bơ-rơ tính phần tiêu đề là câu 1 và đánh số câu này là 8:5.)
 
 Cụm từ này chỉ bất kỳ con người nào, nam hay nữ. Trong tiếng Việt, “loài người” và “con của loài người” vốn đã bao gồm cả nam lẫn nữ, nên ở đây không có cài đặt giới tính. Cấp độ Sát nghĩa giữ “con của loài người” vì một lý do mà bản ghi nêu ra. Hê-bơ-rơ 2:6–8 trích thi thiên này và hiểu nó là nói về Đức Giê-xu, con người duy nhất đã được “đội mão vinh quang và tôn trọng”. Người đọc so sánh hai đoạn ấy nên có thể thấy cùng những chữ ở cả hai nơi. (Cấp độ Sát nghĩa của Hê-bơ-rơ 2:6 cũng nói “con của loài người”, viết thường.)
 

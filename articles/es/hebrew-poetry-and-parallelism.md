@@ -4,7 +4,7 @@ summary: La poesía hebrea no tiene rima ni métrica fija. Funciona emparejando 
 date: 2026-10-17
 order: 91
 section: passage
-source: 5156c545083f
+source: 33a2ce8c8dd9
 ---
 Abre casi cualquier salmo y notarás que parece decir las cosas dos veces. El Salmo 19 comienza así:
 
@@ -26,7 +26,7 @@ Esto es un regalo para los traductores. La rima y la métrica se pierden cuando 
 
 ## Versos que hacen eco
 
-El primer tipo de Lowth es el paralelismo *sinonímico*, en el que el segundo verso reformula el primero. El Salmo 19:2 es un ejemplo. También lo es la queja de Isaías al comienzo de su libro:
+El primer tipo de Lowth es el paralelismo *sinonímico*, en el que el segundo verso reformula el primero. El Salmo 19:1 es un ejemplo. También lo es la queja de Isaías al comienzo de su libro:
 
 > {{OWB:ISA.1.3.s1:B}}
 
@@ -58,7 +58,7 @@ Uno de los más llamativos es la «escalera», en la que un verso empieza, se in
 
 > {{OWB:PSA.93.3.s1:B}}
 
-El registro lo describe como un verso repetido que crece cada vez, como olas que se levantan. El Salmo 92:10 hace lo mismo con los enemigos del SEÑOR («¡Mira a tus enemigos, SEÑOR! Mira, tus enemigos están perdidos»), y el registro de ese versículo lo identifica como un patrón de la poesía hebrea.
+El registro lo describe como un verso repetido que crece cada vez, como olas que se levantan. El Salmo 92:9 hace lo mismo con los enemigos del SEÑOR («¡Mira a tus enemigos, SEÑOR! Mira, tus enemigos están perdidos»), y el registro de ese versículo lo identifica como un patrón de la poesía hebrea.
 
 Otra forma de avanzar es el movimiento interno del Salmo 1:1:
 
@@ -117,9 +117,9 @@ El trabajo no está terminado. Muchos libros ya están dispuestos en versos, ent
 
 ## Una nota sobre la numeración de los versículos
 
-Quien compare Open Word Bible con otras Biblias notará que algunos versículos de los salmos tienen un número más. Muchos salmos tienen un título, como «Al director del coro. Salmo de David». La Biblia hebrea cuenta ese título como versículo 1, o como parte de él. La mayoría de las Biblias inglesas imprimen el título sin número y empiezan a contar con el poema.
+Quien compare Open Word Bible con una Biblia hebrea notará que aquí muchos versículos de los salmos tienen un número menos. Muchos salmos tienen un título, como «Al director del coro. Salmo de David». La Biblia hebrea cuenta ese título como versículo 1, o como parte de él. La mayoría de las Biblias inglesas imprimen el título sin número y empiezan a contar con el poema.
 
-Open Word Bible sigue la numeración hebrea. Por eso el Salmo 19:2 de aquí es el versículo que la mayoría de las Biblias inglesas numeran 19:1. Donde un título breve comparte versículo con el primer verso, como en los Salmos 23 y 24, los números coinciden de una u otra manera, y los registros lo dicen.
+Open Word Bible numera los versículos como la NIV, con el título sin número. Por eso el Salmo 19:1 de aquí es el 19:2 en una Biblia hebrea. Donde un título breve comparte versículo con el primer verso, como en los Salmos 23 y 24, los números coinciden de una u otra manera, y los registros lo dicen.
 
 Para saber más sobre cómo una misma frase puede darse en tres niveles sin cambiar lo que significa, véase [Literal, Equilibrada, Sencilla: tres niveles, un solo significado](/articles/three-levels-one-meaning/). Dos artículos relacionados tratan otros rasgos del hebreo difíciles de trasladar: [Tiempos verbales que no son tiempos](/articles/hebrew-verbs-and-time/) y [Juegos de palabras que no se pueden traducir](/articles/wordplay-that-cannot-be-translated/). Los encabezamientos de muchos salmos tienen su propio artículo, [Selah y los encabezamientos de los salmos](/articles/selah-and-the-psalm-headings/).
 
