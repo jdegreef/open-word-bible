@@ -2337,3 +2337,18 @@ names the book where the form was first used.
 | Jonah 4:2 | gracious and compassionate, slow to anger, abounding in loyal love | *mapagpala at mahabagin, mabagal sa pagkagalit at sagana sa tapat na pag-ibig* | as Joel 2:13, Exodus 34:6 |
 | Jonah 4:6 | plant (*qiqayon*) | *halaman* (L); *madahong halaman* (B, R) | kind not known |
 | Jonah 4:6 | appointed | *nagtalaga* (L, B); R *nagpadala* | the LORD appoints fish, plant, worm and wind |
+| Micah 1:1 | Micah the Morashtite | Mikas na Morastita (L); *taga-Moreset* (B, R) |  |
+| Micah 1:10 | Beth-leaphrah | Bet-leafra | R adds *ang Bahay ng Alabok* |
+| Micah 1:11 | Shaphir; Zaanan; Beth-ezel | Safir; Zaanan; Bet-ezel | R gives the meaning of the names |
+| Micah 1:12 | Maroth | Marot |  |
+| Micah 1:14 | Moresheth-gath | Moreset-gat |  |
+| Micah 1:16 | vulture | *buwitre* |  |
+| Micah 2:6 | preach (literally "drip") | *mangaral* |  |
+| Micah 4:8 | tower of the flock | *tore ng kawan* (L); *bantayang tore ng kawan* (B, R) |  |
+| Micah 5:1 | Bethlehem Ephrathah | Betlehem Efrata | 5:2 in English Bibles |
+| Micah 5:5 | land of Nimrod | *lupain ng Nimrod* |  |
+| Micah 5:11 | sorceries; soothsayers | *mga pangkukulam*; *mga manghuhula* |  |
+| Micah 6:8 | do justice, love loyal love, walk humbly | *gumawa ng katarungan at ibigin ang tapat na pag-ibig, at lumakad nang may kababaang-loob* |  |
+| Micah 6:16 | statutes of Omri | *mga tuntunin ni Omri* |  |
+| Micah 7:12 | the River | *ang Ilog* (L); *Eufrates* (B, R) |  |
+| Micah 7:14 | Carmel (the mountain range) | *Carmelo* | as Kings and Isaiah; the town of Carmel in Judah stays *Carmel* |
