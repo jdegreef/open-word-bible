@@ -1044,10 +1044,13 @@ var OWBAdminNav = (function () {
       var langs = d.languages;
       var tab = COVERAGE.testament;
       var body = h("div");
+      // A book every language has finished needs nothing; hiding them leaves the work.
+      var finished = function (b) { return langs.every(function (l) { return b.languages[l.code].state === "drafted"; }); };
       function draw(which) {
         body.textContent = "";
         var books = d.books.filter(function (b) { return b.testament === which; });
-        var rows = books.map(function (b) {
+        var shown = COVERAGE.hide ? books.filter(function (b) { return !finished(b); }) : books;
+        var rows = shown.map(function (b) {
           return h("tr", null,
             h("th", { scope: "row" }, h("a", { href: "#book/" + b.code }, b.name)),
             h("td", { class: "admin-num" }, b.chapters_drafted + " / " + b.chapters),
@@ -1056,24 +1059,31 @@ var OWBAdminNav = (function () {
               var c = b.languages[l.code];
               var said = l.name + ": " + STATE_LABEL[c.state] + " (" + num(c.sentences) + " of " + num(b.sentences) + " sentences)";
               // The colour and mark for the eye; the same words as the tooltip for a screen reader.
-              return h("td", { class: "admin-cell" }, h("span", { class: "admin-state " + c.state, title: said },
+              // A cell opens the book, chapter by chapter, in every language.
+              return h("td", { class: "admin-cell" }, h("a", { class: "admin-state " + c.state, title: said, href: "#book/" + b.code },
                 h("span", { "aria-hidden": "true" }, c.state === "none" ? "" : c.state === "drafted" ? "✓" : pct(c.sentences, b.sentences) + "%"),
                 h("span", { class: "sr-only" }, said)));
             }));
         });
+        if (!rows.length) rows.push(h("tr", null, h("td", { colspan: 3 + langs.length }, "Every book here is drafted in every language.")));
         var done = function (code) {
           return books.filter(function (b) { return b.languages[code].state === "drafted"; }).length;
         };
         rows.push(h("tr", { class: "admin-total" }, h("th", { scope: "row" }, "Books drafted"), h("td"), h("td"),
           langs.map(function (l) { return h("td", { class: "admin-num" }, done(l.code) + " / " + books.length); })));
-        body.appendChild(table(["Book", ["Chapters", { class: "admin-num" }], ["Sentences", { class: "admin-num" }]]
-          .concat(langs.map(function (l) { return [l.code, { title: l.name, class: "admin-cell" }]; })), rows, "admin-coverage"));
+        var grid = table(["Book", ["Chapters", { class: "admin-num" }], ["Sentences", { class: "admin-num" }]]
+          .concat(langs.map(function (l) { return [l.code, { title: l.name, class: "admin-cell" }]; })), rows, "admin-coverage");
+        // Its own scroll box, so the language row and the book column stay in view.
+        grid.classList.add("admin-coverage-box");
+        body.appendChild(grid);
       }
       draw(tab);
+      var hide = h("input", { type: "checkbox", id: "coverage-hide", checked: !!COVERAGE.hide });
+      hide.addEventListener("change", function () { COVERAGE.hide = hide.checked ? "1" : ""; keepAddress(true); draw(COVERAGE.testament); });
       return [head("Progress", "Coverage", "Every book in every language. A tick is a book drafted whole; a percentage is the share of its drafted sentences in that language. Open a book for its chapters."),
         h("div", { class: "admin-toolbar" }, seg([["ot", "Old Testament"], ["nt", "New Testament"]], tab, function (v) {
           COVERAGE.testament = v; rememberTab("coverage", v); keepAddress(true); draw(v);
-        }), legend()),
+        }), h("label", { class: "admin-check", for: "coverage-hide" }, hide, " Hide books every language has finished"), legend()),
         ME.admin.indexOf("jobs") >= 0 ? h("p", null, h("a", { href: "#jobs" }, "Queue missing books"), " on the drafting jobs board.") : null, body];
     });
   };
@@ -3668,8 +3678,8 @@ var OWBAdminNav = (function () {
 
   // ---- Filters kept in the address -------------------------------------
 
-  var COVERAGE = { testament: sessionTab("coverage", "nt") };
-  filtered("coverage", COVERAGE, { testament: "nt" });
+  var COVERAGE = { testament: sessionTab("coverage", "nt"), hide: "" };
+  filtered("coverage", COVERAGE, { testament: "nt", hide: "" });
   filtered("review", REVIEW, { layer: "", book: "", state: "todo" }, function (arg, f) {
     if (arg.indexOf("/") >= 0) return arg;   // a sentence: #review/grc/JHN.1.1.s1
     f.layer = arg;
