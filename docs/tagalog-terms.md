@@ -2365,3 +2365,9 @@ names the book where the form was first used.
 | Habakkuk 3:1 | shigionoth | *shigionot* | as *Shigaion* in Psalm 7 |
 | Habakkuk 3:7 | Cushan | Cushan |  |
 | Habakkuk 3:19 | GOD my Lord | *ang DIYOS na aking Panginoon* (L); *Panginoong DIYOS* (B, R) |  |
+| Zephaniah 1:4 | remnant of Baal; idolatrous priests | *ang nalabi ni Baal*; *mga saserdote ng diyus-diyosan* |  |
+| Zephaniah 1:5 | host of heaven | *hukbo ng langit* | as Jeremiah |
+| Zephaniah 1:10 | Fish Gate; Second Quarter | *Pintuan ng mga Isda*; *Ikalawang Distrito* | as Nehemiah and 2 Kings 22:14 |
+| Zephaniah 1:11 | Maktesh | Lusong | the name means "mortar" |
+| Zephaniah 2:14 | desert owl; hedgehog | *kuwago sa disyerto*; *porkoespino* | as Isaiah 34:11 |
+| Zephaniah 3:17 | warrior who saves | *mandirigmang nagliligtas* |  |
