@@ -2259,6 +2259,17 @@ var OWBAdminNav = (function () {
           api("/api/admin/users/" + u.id + "/sign-out/", { method: "POST" }).then(function () { route(); }, function (e) { busy(b, false); note(status, e, true); });
         }));
       }
+      // Deactivating keeps the account (and its reviews and messages) but
+      // stops it signing in; deleting can't when it has review history.
+      if (u.can_deactivate) {
+        actions.appendChild(u.active
+          ? confirmButton("Deactivate account", "Stop " + u.email + " signing in?", function (b) {
+            api("/api/admin/users/" + u.id + "/", { method: "PATCH", body: { active: false } }).then(function () { route(); }, function (e) { busy(b, false); note(status, e, true); });
+          })
+          : confirmButton("Reactivate account", "Let " + u.email + " sign in again?", function (b) {
+            api("/api/admin/users/" + u.id + "/", { method: "PATCH", body: { active: true } }).then(function () { route(); }, function (e) { busy(b, false); note(status, e, true); });
+          }));
+      }
       if (u.can_delete) {
         actions.appendChild(confirmButton("Delete account", "Delete " + u.email + " for good?", function (b) {
           api("/api/admin/users/" + u.id + "/", { method: "DELETE" }).then(function () { location.hash = "#users"; }, function (e) { busy(b, false); note(status, e, true); });
@@ -2391,7 +2402,7 @@ var OWBAdminNav = (function () {
   // Activity log.
   var ACTION_LABEL = {
     "role.grant": "granted a role to", "role.revoke": "removed a role from", "role.invite": "invited",
-    "user.delete": "deleted the account", "user.sign_out": "signed out the devices of",
+    "user.delete": "deleted the account", "user.deactivate": "deactivated the account", "user.activate": "reactivated the account", "user.sign_out": "signed out the devices of",
     "message.reply": "answered", "message.done": "marked done", "message.declined": "declined", "message.new": "reopened",
     "job.file": "filed drafting job", "article.job": "filed article job", "digest.send": "sent the weekly digest to", "message.fixed": "told the reader their message led to a change:", "email.send": "emailed the team:", "fix.request": "requested fix",
     "export.download": "downloaded", "review.assign": "assigned review to", "review.unassign": "took back a review assignment from",
