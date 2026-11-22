@@ -269,6 +269,28 @@ class TeamTest(AdminTestCase):
         data = self.admin.get("/api/admin/activity/").json()
         self.assertEqual(data["actions"][0]["action"], "role.revoke")
 
+    def test_the_activity_log_pages_in_its_own_order_and_filters(self):
+        # Ids that don't follow the times (an import of old actions, a clock
+        # change), and some actions at the same moment.
+        start = timezone.now()
+        for i in range(120):
+            a = AdminAction.objects.create(actor_email="ed@example.org" if i % 3 else "boss@example.org",
+                                           action="message.reply" if i % 2 else "role.grant", target=str(i))
+            AdminAction.objects.filter(id=a.id).update(created_at=start - timedelta(minutes=(i * 7) % 120 // 2))
+        expected = list(AdminAction.objects.order_by("-created_at", "-id").values_list("id", flat=True))
+        seen, before = [], ""
+        while True:
+            d = self.admin.get("/api/admin/activity/" + (f"?before={before}" if before else "")).json()
+            seen += [a["id"] for a in d["actions"]]
+            if not d["more"]:
+                break
+            before = d["actions"][-1]["id"]
+        self.assertEqual(seen, expected)
+        d = self.admin.get("/api/admin/activity/?by=ED@example.org&kind=message").json()
+        self.assertTrue(d["actions"])
+        self.assertTrue(all(a["actor"] == "ed@example.org" and a["action"] == "message.reply" for a in d["actions"]))
+        self.assertEqual((d["people"], d["kinds"]), (["boss@example.org", "ed@example.org"], ["message", "role"]))
+
     def test_team_lists_members_and_grantable_roles(self):
         account("ed@example.org", (K.EDITOR,), (K.LANGUAGE_REVIEWER, "en"))
         data = self.admin.get("/api/admin/team/").json()
@@ -318,6 +340,37 @@ class UsersTest(AdminTestCase):
         r = self.admin.post(f"/api/admin/users/{reader.id}/sign-out/")
         self.assertEqual(r.json(), {"signed_out": 2})
         self.assertFalse(ApiToken.objects.filter(user=reader).exists())
+
+    def test_deactivate_and_reactivate(self):
+        reader = account("reader@example.org")
+        device = client_for(reader)
+        self.assertTrue(self.admin.get(f"/api/admin/users/{reader.id}/").json()["can_deactivate"])
+        r = self.admin.patch(f"/api/admin/users/{reader.id}/", {"active": False}, format="json")
+        self.assertEqual(r.status_code, 200)
+        reader.refresh_from_db()
+        self.assertFalse(reader.is_active)
+        self.assertFalse(ApiToken.objects.filter(user=reader).exists())   # signed out everywhere
+        self.assertEqual(device.get("/api/me").status_code, 401)
+        self.assertTrue(User.objects.filter(id=reader.id).exists())        # kept, unlike delete
+        self.assertEqual(AdminAction.objects.get(action="user.deactivate").target, "reader@example.org")
+        self.admin.patch(f"/api/admin/users/{reader.id}/", {"active": True}, format="json")
+        reader.refresh_from_db()
+        self.assertTrue(reader.is_active)
+
+    def test_who_may_deactivate_whom(self):
+        other_boss = account("boss2@example.org", (K.SUPER_ADMIN,))
+        r = self.admin.patch(f"/api/admin/users/{other_boss.id}/", {"active": False}, format="json")
+        self.assertEqual((r.status_code, r.json()["code"]), (400, "super_admin"))
+        r = self.admin.patch(f"/api/admin/users/{self.boss.id}/", {"active": False}, format="json")
+        self.assertEqual(r.status_code, 400)
+        reader = account("reader@example.org")
+        users = client_for(account("users@example.org", (K.USERS,)))
+        self.assertFalse(users.get(f"/api/admin/users/{reader.id}/").json()["can_deactivate"])
+        path = f"/api/admin/users/{reader.id}/"
+        self.assertEqual(users.patch(path, {"active": False}, format="json").status_code, 403)
+        self.assertEqual(self.admin.patch(path, {"active": "no"}, format="json").status_code, 400)
+        reader.refresh_from_db()
+        self.assertTrue(reader.is_active)
 
     def test_the_users_role_signs_out_readers_but_not_the_team(self):
         users = client_for(account("users@example.org", (K.USERS,)))
@@ -580,6 +633,13 @@ class FixTest(AdminTestCase):
         # The inspector lists it.
         fixes = editor.get("/api/admin/verses/JHN.1.1/").json()["fixes"]
         self.assertEqual(fixes[0]["number"], 9)
+        # Who filed it: the address for its filer and super admins, a name for anyone else.
+        self.assertEqual(fixes[0]["by"], "ed@example.org")
+        self.assertEqual(self.admin.get("/api/admin/verses/JHN.1.1/").json()["fixes"][0]["by"], "ed@example.org")
+        reporter = client_for(account("rep@example.org", (K.REPORTING,)))
+        self.assertEqual(reporter.get("/api/admin/verses/JHN.1.1/").json()["fixes"][0]["by"], "A team member")
+        User.objects.filter(username="ed@example.org").update(first_name="Ed")
+        self.assertEqual(reporter.get("/api/admin/verses/JHN.1.1/").json()["fixes"][0]["by"], "Ed")
 
     @override_settings(OWB_GITHUB_TOKEN="t")
     def test_input_that_is_not_what_was_asked_for_is_a_400(self):
@@ -809,6 +869,22 @@ class WorkTest(AdminTestCase):
         self.assertFalse(items[21]["stale"])   # it has a pull request
         self.assertTrue(items[22]["stale"])    # a day old with none
         self.assertEqual(data["counts"], {"open": 2, "stale": 1, "in_review": 1, "done": 1})
+
+    def test_an_old_copy_is_served_at_once_while_github_is_asked_again(self):
+        from staff import work as staff_work
+        with mock.patch("staff.work.timezone.now", return_value=datetime(2026, 10, 17, 12, tzinfo=UTC)):
+            first = self.admin.get("/api/admin/work/").json()
+        self.assertTrue(first["fetched_at"])
+        kept = cache.get(staff_work.KEY)
+        cache.set(staff_work.KEY, {**kept, "at": kept["at"] - staff_work.FRESH - 1}, staff_work.KEEP)
+        started = []
+        with mock.patch.object(staff_jobs, "_github", side_effect=AssertionError("not in the request")), \
+                mock.patch("staff.work.threading.Thread") as thread:
+            thread.return_value.start.side_effect = lambda: started.append(True)
+            again = self.admin.get("/api/admin/work/").json()
+            self.assertEqual(len(again["items"]), len(first["items"]))
+            self.admin.get("/api/admin/work/")   # a second page doesn't start a second refresh
+        self.assertEqual(started, [True])
 
     def test_github_out_of_reach_still_says_the_window(self):
         # The page's heading reads days and stale_hours ("the last undefined days" before).

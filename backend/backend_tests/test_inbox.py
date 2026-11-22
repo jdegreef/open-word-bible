@@ -156,3 +156,41 @@ class ReplyOnceTest(AdminTestCase):
         if not hasattr(self, "_editor_client"):
             self._editor_client = client_for(self.editor)
         return self._editor_client
+
+
+class InboxBulkTest(AdminTestCase):
+    """Several messages marked or assigned at once, all or none."""
+
+    def setUp(self):
+        super().setUp()
+        reader = account("reader@example.org")
+        self.editor = account("ed@example.org", (K.EDITOR,))
+        self.messages = [ReaderMessage.objects.create(user=reader, kind="suggestion", verse=f"JHN.3.{v}",
+                                                      language="en", text="A thought.") for v in (16, 17, 18)]
+
+    def bulk(self, body):
+        return self.admin.patch("/api/admin/inbox/", body, format="json")
+
+    def test_mark_and_assign_several(self):
+        ids = [m.id for m in self.messages[:2]]
+        r = self.bulk({"ids": ids, "status": "done"})
+        self.assertEqual(r.status_code, 200)
+        self.assertEqual([m["status"] for m in r.json()["messages"]], ["done", "done"])
+        self.assertEqual(ReaderMessage.objects.filter(status="new").count(), 1)
+        self.assertEqual(AdminAction.objects.filter(action="message.done").count(), 2)
+        r = self.bulk({"ids": ids, "assigned_to": self.editor.id})
+        self.assertEqual({m["assigned_to"]["email"] for m in r.json()["messages"]}, {"ed@example.org"})
+
+    def test_all_or_none(self):
+        r = self.bulk({"ids": [self.messages[0].id, 999999], "status": "done"})
+        self.assertEqual((r.status_code, r.json()["code"]), (400, "not_found"))
+        self.assertFalse(ReaderMessage.objects.filter(status="done").exists())
+        for body in ({"ids": "1,2", "status": "done"}, {"ids": [self.messages[0].id], "status": "answered"},
+                     {"ids": [self.messages[0].id], "reply": "Thanks"}, {"ids": [self.messages[0].id]},
+                     {"ids": list(range(1, 102)), "status": "done"}):
+            self.assertEqual(self.bulk(body).status_code, 400, body)
+        self.assertEqual(len(mail.outbox), 0)
+        # Readers' messages are the editors': other roles can't change them.
+        reporter = client_for(account("rep@example.org", (K.REPORTING,)))
+        r = reporter.patch("/api/admin/inbox/", {"ids": [self.messages[0].id], "status": "done"}, format="json")
+        self.assertEqual(r.status_code, 403)

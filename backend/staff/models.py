@@ -70,3 +70,12 @@ class ReviewAssignment(models.Model):
 
     def __str__(self):
         return f"{self.layer} {self.book} {self.chapter_from or ''}-{self.chapter_to or ''} {self.assignee_id}"
+
+
+def shown_actor(action, viewer, super_admin):
+    """Who did action, as viewer may see it: the address for a super admin
+    (who manages the team) or for viewer's own actions; otherwise the
+    person's first name, so team addresses aren't handed to every role."""
+    if super_admin or (action.actor_id and action.actor_id == viewer.id):
+        return action.actor_email
+    return (action.actor.first_name if action.actor else "") or "A team member"
