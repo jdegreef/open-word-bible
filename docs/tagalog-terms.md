@@ -2376,3 +2376,23 @@ names the book where the form was first used.
 | Haggai 1:13 | messenger of the LORD | *sugo ng PANGINOON* |  |
 | Haggai 2:17 | blight; mildew; hail | *pagkalanta*; *amag*; *yelo* | as Amos 4:9 and Exodus 9 |
 | Haggai 2:23 | signet ring | *singsing na pantatak* | as Jeremiah 22:24 |
+| Zechariah 1:7 | Shebat | Sebat | sh > s |
+| Zechariah 1:8 | myrtle; sorrel | *mirto*; *kayumanggi* | as Isaiah 55:13 |
+| Zechariah 1:9 | the angel who talked with me | *ang anghel na nakikipag-usap sa akin* | fixed through the visions |
+| Zechariah 2:1 | horns; craftsmen | *mga sungay*; *mga panday* (R *bihasang manggagawa*) |  |
+| Zechariah 3:1 | the satan, the Accuser | *si Satanas* (L, B); *ang Tagapagparatang* (R) | as Job 1-2 |
+| Zechariah 3:5 | turban | *turbante* | as Exodus 28 |
+| Zechariah 3:8 | the Branch | *ang Sanga* | as Jeremiah 23:5; also 6:12 |
+| Zechariah 4:10 | tin stone (plumb stone) | *batong lata* (L); *batong panghulog* (B, R) |  |
+| Zechariah 4:14 | sons of fresh oil | *mga anak ng sariwang langis* (L); *pinahiran ng langis* (B, R) |  |
+| Zechariah 5:1 | scroll | *balumbon* |  |
+| Zechariah 5:8 | Wickedness | *Kasamaan* | the woman in the basket |
+| Zechariah 7:2 | Regem-melech | Regem-melec | as Adramelec |
+| Zechariah 9:1 | Hadrach | Hadrac |  |
+| Zechariah 11:7 | Favor; Union | *Lingap*; *Pagkakaisa* | names of the two staffs |
+| Zechariah 11:13 | potter | *magpapalayok* |  |
+| Zechariah 12:11 | Hadad-rimmon | Hadad-rimon |  |
+| Zechariah 14:5 | Azal | Azal |  |
+| Zechariah 14:10 | First Gate; Corner Gate | *Unang Pintuan*; *Pintuan sa Sulok* | as Jeremiah 31:38 |
+| Zechariah 14:15 | mule | *mola* |  |
+| Zechariah 14:20 | Holiness to the LORD | *Kabanalan sa PANGINOON* (L); *Banal sa PANGINOON* (B, R) | as on the high priest's plate |
