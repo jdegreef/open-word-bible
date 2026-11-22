@@ -5,7 +5,7 @@ date: 2026-10-11
 order: 40
 section: history
 part: today
-source: 38f9ddefc748
+source: b3a3c2719637
 ---
 Loạt bài này đã theo dấu Kinh Thánh từ lúc được viết ra lần đầu, qua nhiều thế hệ người chép tay, đến các bản chép tay và các ấn bản in đứng sau những bản dịch hiện đại. Bài cuối cùng này đặt ra câu hỏi nằm đằng sau mọi câu hỏi khác: chúng ta có thể tin chắc đến mức nào rằng bản Kinh Thánh chúng ta đọc hôm nay nói đúng điều các tác giả của nó đã viết?
 
@@ -88,7 +88,7 @@ Ba chỗ trong Open Word Bible cho thấy điều đó trông như thế nào.
 
 - **Sáng Thế Ký 4:8.** Bản Hê-bơ-rơ nói “Ca-in nói với A-bên, em mình”, rồi không đưa ra lời nào. Ngũ Kinh Sa-ma-ri, bản Bảy Mươi, bản tiếng Sy-ri và bản tiếng La-tinh thêm vào câu “Chúng ta hãy ra ngoài đồng”. Open Word Bible theo bản Hê-bơ-rơ, kèm một chú thích.
 - **Ê-sai 53:11.** Bản Hê-bơ-rơ nói người đầy tớ “sẽ thấy”. Cuộn sách Ê-sai lớn, một cuộn sách Ê-sai khác từ cùng hang động ấy và bản Bảy Mươi nói người “sẽ thấy ánh sáng”. Open Word Bible dịch theo bản Hê-bơ-rơ và đưa ra chữ “ánh sáng” trong một chú thích; dù theo cách nào thì ý nghĩa cũng gần nhau.
-- **Thi Thiên 22:17** (22:16 trong phần lớn các bản Kinh Thánh). Bản Hê-bơ-rơ như được truyền lại đọc là “như sư tử” nơi tay và chân tôi, khiến dòng thơ không có động từ. Một cuộn sách từ Nahal Hever trong hoang mạc Giu-đê có một dạng hơi khác, trông giống một động từ. Bản Bảy Mươi có “chúng đã đào” hay “đâm thủng”, là cách đọc trong bản King James. Open Word Bible theo bản Hê-bơ-rơ, giải thích các phương án trong một chú thích, và đánh dấu quyết định là chưa chắc chắn.
+- **Thi Thiên 22:16** (22:17 trong các bản Kinh Thánh Hê-bơ-rơ). Bản Hê-bơ-rơ như được truyền lại đọc là “như sư tử” nơi tay và chân tôi, khiến dòng thơ không có động từ. Một cuộn sách từ Nahal Hever trong hoang mạc Giu-đê có một dạng hơi khác, trông giống một động từ. Bản Bảy Mươi có “chúng đã đào” hay “đâm thủng”, là cách đọc trong bản King James. Open Word Bible theo bản Hê-bơ-rơ, giải thích các phương án trong một chú thích, và đánh dấu quyết định là chưa chắc chắn.
 
 Vì vậy, các dịch giả Cựu Ước phải đối diện với những quyết định khó về văn bản thường xuyên hơn các dịch giả Tân Ước. Các bản nháp cho thấy điều đó: các câu văn Cựu Ước có khả năng mang một quyết định về văn bản được đánh dấu là chưa chắc chắn cao gấp khoảng hai lần so với các câu văn Tân Ước. Nhưng ở đây cũng vậy, phần lớn bản văn không có gì đáng ngờ, và những phương án nào còn đáng ngờ thì có thể được gọi tên và cân nhắc.
 

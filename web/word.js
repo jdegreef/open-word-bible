@@ -182,16 +182,24 @@ if (typeof document !== "undefined") (function () {
     status.textContent = text;
   }
 
-  var lemma = new URLSearchParams(location.search).get("w");
+  // A word's own page (word_static_page in scripts/build_site.py) names its
+  // word and is drawn as served; this adds the word list to it. The ?w=
+  // page reads the word from its address, and in English goes on to the
+  // word's own page ("p").
+  var own = DATA.lemma;
+  var lemma = own || new URLSearchParams(location.search).get("w");
   if (!lemma) { box.appendChild(el("p", "word-note", UI.how)); return; }
   lemma = lemma.normalize("NFC");
-  status.textContent = UI.loading;
+  if (!own) status.textContent = UI.loading;
   fetch(DATA.wordsUrl + shard(lemma) + ".json").then(function (r) {
     if (!r.ok) throw new Error(r.status);
     return r.json();
   }).then(function (words) {
     status.textContent = "";
-    if (!words[lemma]) { fail(UI.missing); return; }
-    show(lemma, words[lemma]);
-  }).catch(function () { fail(UI.failed); });
+    var e = words[lemma];
+    if (!e) { if (!own) fail(UI.missing); return; }
+    if (!own && DATA.lang === "en" && e.p) { location.replace(e.p); return; }
+    if (own) { box.appendChild(studyBox(lemma, e)); return; }
+    show(lemma, e);
+  }).catch(function () { if (!own) fail(UI.failed); });
 })();

@@ -4,7 +4,7 @@ summary: Các bản Kinh Thánh tiếng Anh xưa dùng một chữ, “hell”, 
 date: 2026-10-17
 order: 86
 section: passage
-source: 0b21a4e82def
+source: 5f3691f4c4e6
 ---
 Mở bản King James (KJV) ở Thi Thiên 16:10, bạn sẽ đọc: “For thou wilt not leave my soul in hell” (“Vì Chúa sẽ không bỏ linh hồn tôi trong *hell*”). Lật sang Lu-ca 16:23, người giàu cũng ở “in hell”. Trong Ma-thi-ơ 5:22, ai gọi anh em mình là đồ ngu thì “in danger of hell fire”, có nguy cơ vào lửa *hell*. Trong 2 Phi-e-rơ 2:4, Đức Chúa Trời quăng các thiên sứ phạm tội “down to hell”. Và trong Khải Huyền 20:14: “death and hell were cast into the lake of fire”, sự chết và *hell* bị quăng xuống hồ lửa.
 
@@ -48,7 +48,7 @@ Các bản ghi của chúng tôi cho Sheol một nghĩa duy nhất ở mọi nơ
 
 Không cấp độ nào của chúng tôi dịch Sheol là “hell” ở bất cứ đâu. Bản tiếng Việt chọn khác bản tiếng Anh: cả Sát nghĩa lẫn Cân bằng đều nói “Âm Phủ”, viết hoa như một danh xưng, kể cả ở Sáng Thế Ký 37:35, vì quyết định về cách diễn đạt ở Thi Thiên 139:8 cho rằng một cách phiên âm như “Sê-ôn” sẽ chẳng có nghĩa gì với phần lớn người đọc; Dễ đọc nói “nơi của người chết”. Không cấp độ nào nói “địa ngục”.
 
-Lời cầu nguyện của Giô-na, theo cách đánh số Hê-bơ-rơ là câu 2:3, cho thấy cách làm ấy:
+Lời cầu nguyện của Giô-na, ở câu 2:2 (2:3 trong các bản Kinh Thánh Hê-bơ-rơ), cho thấy cách làm ấy:
 
 > {{OWB:JON.2.3.s1:B}}
 

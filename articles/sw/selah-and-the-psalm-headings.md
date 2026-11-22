@@ -4,7 +4,7 @@ summary: "Hakuna anayejua kwa hakika \"Selah\" inamaanisha nini, wala \"miktam\"
 date: 2026-10-17
 order: 90
 section: passage
-source: d672c9c825da
+source: a6132f9af099
 ---
 Maneno mengi magumu ya Biblia ni magumu kwa sababu wasomi hawakubaliani juu yake. Machache ni magumu kwa sababu rahisi zaidi: hakuna anayejua yanamaanisha nini. Zaburi zina mengi ya aina hii kuliko kitabu kingine chochote. Yamekaa katika vichwa vilivyo juu ya zaburi nyingi, na katika neno moja dogo linalotokea mwishoni mwa mistari katika kitabu chote: "Selah".
 
@@ -12,7 +12,7 @@ Makala hii inaangalia kinachojulikana kuyahusu, kinachokisiwa, na jinsi tafsiri 
 
 ## Selah
 
-Zaburi 3 ni maombi ya Daudi anapomkimbia mwanawe Absalomu. Mstari wa 3 katika hesabu yetu (mstari wa 2 katika Biblia nyingi za Kiingereza, kwa sababu itakayoelezwa hapa chini) unaripoti kile ambacho adui zake wanasema:
+Zaburi 3 ni maombi ya Daudi anapomkimbia mwanawe Absalomu. Mstari wa 2 (mstari wa 3 katika Biblia za Kiebrania, kwa sababu itakayoelezwa hapa chini) unaripoti kile ambacho adui zake wanasema:
 
 > {{OWB:PSA.3.3.s1:L}}
 
@@ -38,7 +38,7 @@ Uamuzi wa maneno unafuata kutoka hapo. Kila kiwango, Halisi, Linganifu na Rahisi
 
 Huo ni uchaguzi wa makusudi, na tafsiri nyingine zimefanya machaguo mengine. King James Version inabaki na "Selah". Baadhi ya matoleo ya kisasa yanaweka kisio mahali pake; New Living Translation, kwa mfano, inachapisha "Interlude" (kipindi cha muziki). Mengine kwa nyakati fulani yamelihamishia pembezoni au katika maelezo ya chini. Kuchapisha kisio kunayafanya maandiko yaonekane wazi kuliko ujuzi wetu ulivyo. Kuliacha nje kunaficha kitu kilichomo katika maandishi ya Kiebrania. Kulibakiza, pamoja na uamuzi unaosema waziwazi tunachojua na tusichojua, ndiyo njia ya uaminifu, na kunamgharimu msomaji kituo cha muda mfupi tu, jambo ambalo huenda ndilo neno lenyewe lilikuwa likiomba tangu mwanzo.
 
-Marekebisho moja madogo yanafanywa. Katika mistari michache Kiebrania kinaweka Selah katikati ya mstari, baada ya mstari wake wa kwanza wa shairi, kama katika Zaburi 57:4 na Habakuki 3:3. Uamuzi wetu wa maneno kwa mistari hiyo unaihamishia mwishoni, ili mstari usomeke kwa ukamilifu, na unasema hivyo.
+Marekebisho moja madogo yanafanywa. Katika mistari michache Kiebrania kinaweka Selah katikati ya mstari, baada ya mstari wake wa kwanza wa shairi, kama katika Zaburi 57:3 na Habakuki 3:3. Uamuzi wetu wa maneno kwa mistari hiyo unaihamishia mwishoni, ili mstari usomeke kwa ukamilifu, na unasema hivyo.
 
 Zaburi 46 inaonyesha jinsi Selah inavyoweza kuipa zaburi umbo lake. Inatokea mara tatu humo, baada ya mstari wa 4 na baada ya kiitikio katika mistari ya 8 na 12, kinachosikika mara mbili:
 
@@ -56,22 +56,22 @@ Kiebrania kinaanza {{HEBREW:PSA.4.1:1}}, "kwa kiongozi wa uimbaji", usemi unaoon
 
 ### Kwa nini namba za mistari zinatofautiana
 
-Kichwa kinaleta kwanza jambo la kivitendo. Katika maandishi ya Kiebrania, kichwa cha zaburi ni sehemu ya zaburi na kinahesabiwa kuwa mstari wake wa kwanza. Biblia nyingi za Kiingereza zinachapisha kichwa bila namba na kuanza mstari wa 1 na mstari wa kwanza wa shairi. Kwa hiyo kuanzia Zaburi 3, namba nyingi za mistari katika Open Word Bible ziko juu kwa moja kuliko katika Biblia nyingine za Kiingereza. Rekodi ya Zaburi 3:1 inaeleza hili, na rekodi ya kila kichwa inalirudia. Open Word Bible inafuata hesabu ya maandishi ya Kiebrania inayoyatafsiri. (Ona [Namba za sura na mistari](/articles/chapter-and-verse-numbers/) kuhusu jinsi hesabu hiyo ilivyotokea.)
+Kichwa kinaleta kwanza jambo la kivitendo. Katika maandishi ya Kiebrania, kichwa cha zaburi ni sehemu ya zaburi na kinahesabiwa kuwa mstari wake wa kwanza. Biblia nyingi za Kiingereza zinachapisha kichwa bila namba na kuanza mstari wa 1 na mstari wa kwanza wa shairi. Kwa hiyo kuanzia Zaburi 3, namba nyingi za mistari katika Biblia ya Kiebrania ziko juu kwa moja kuliko katika Biblia za Kiingereza. Open Word Bible inaipa mistari namba kama NIV inavyofanya: kichwa hakina namba, na rekodi ya kichwa cha Zaburi 3 inatoa namba ya Kiebrania, kama rekodi ya kila kichwa inavyofanya. (Ona [Namba za sura na mistari](/articles/chapter-and-verse-numbers/) kuhusu jinsi hesabu hiyo ilivyotokea.)
 
 Pale ambapo kichwa ni kifupi sana, Kiebrania kinakihesabu pamoja na mstari wa kwanza wa shairi, na namba zinakuwa sawa. Zaburi 32 ni mfano: "Ya Daudi. Maskil" ni sehemu ya mstari wa 1, pamoja na "Ana heri kweli mtu ambaye uasi wake umesamehewa".
 
 ### Maneno ya vichwa yanamaanisha nini
 
-Baadhi ya maneno katika vichwa yako wazi. {{LEMMA:PSA.4.1:3}}, *mizmôr*, ni "zaburi", wimbo unaoimbwa pamoja na muziki. "Ya Daudi" inaiunganisha zaburi na Daudi, ingawa rekodi ya Zaburi 3:1 inaeleza kwamba kiambishi hicho kidogo kinaweza kumaanisha iliyoandikwa na, iliyo mali ya, kwa ajili ya au kuhusu. Maelezo kama "alipomkimbia mwanawe Absalomu" yanaiunganisha zaburi na habari iliyo mahali pengine katika Biblia, na rekodi zetu zinatoa kifungu hicho (2 Samweli 15–17 kwa Zaburi 3).
+Baadhi ya maneno katika vichwa yako wazi. {{LEMMA:PSA.4.1:3}}, *mizmôr*, ni "zaburi", wimbo unaoimbwa pamoja na muziki. "Ya Daudi" inaiunganisha zaburi na Daudi, ingawa rekodi ya kichwa cha Zaburi 3 inaeleza kwamba kiambishi hicho kidogo kinaweza kumaanisha iliyoandikwa na, iliyo mali ya, kwa ajili ya au kuhusu. Maelezo kama "alipomkimbia mwanawe Absalomu" yanaiunganisha zaburi na habari iliyo mahali pengine katika Biblia, na rekodi zetu zinatoa kifungu hicho (2 Samweli 15–17 kwa Zaburi 3).
 
-Mengine yako wazi kwa sehemu. "Kwa kiongozi wa uimbaji" ni umbo la kitenzi chenye maana ya kuongoza au kusimamia, na rekodi ya Zaburi 4:1 inaeleza kwamba 1 Mambo ya Nyakati 15:21 inakitumia kitenzi hicho kwa Walawi walioongoza uimbaji. Huenda kinaonyesha kwamba zaburi ilikuwa kwa ajili ya kiongozi wa muziki wa hekaluni. Lakini watafsiri wa Kigiriki walisoma herufi zilezile kwa namna nyingine, "kwa ajili ya mwisho", jambo linaloonyesha jinsi maana ilivyokuwa na shaka mapema. Uamuzi umewekewa alama ya kutokuwa na uhakika.
+Mengine yako wazi kwa sehemu. "Kwa kiongozi wa uimbaji" ni umbo la kitenzi chenye maana ya kuongoza au kusimamia, na rekodi ya kichwa cha Zaburi 4 inaeleza kwamba 1 Mambo ya Nyakati 15:21 inakitumia kitenzi hicho kwa Walawi walioongoza uimbaji. Huenda kinaonyesha kwamba zaburi ilikuwa kwa ajili ya kiongozi wa muziki wa hekaluni. Lakini watafsiri wa Kigiriki walisoma herufi zilezile kwa namna nyingine, "kwa ajili ya mwisho", jambo linaloonyesha jinsi maana ilivyokuwa na shaka mapema. Uamuzi umewekewa alama ya kutokuwa na uhakika.
 
 Na mengine yamepotea karibu kabisa. Hivi ndivyo rekodi zetu zinavyoshughulikia baadhi yake.
 
 - **Miktam** inaongoza Zaburi 16 na 56–60. Rekodi inaiita "aina ya zaburi ambayo maana yake haijulikani". Tafsiri ya Kigiriki iliichukua kuwa maandishi yaliyochongwa juu ya jiwe; wengine wanaihusisha na neno la dhahabu.
 - **Maskil** inaongoza zaburi kumi na tatu. Linatoka katika kitenzi chenye maana ya kuwa na ufahamu au kutenda kwa hekima, kwa hiyo huenda linaonyesha wimbo unaofundisha, au uliotungwa kwa ustadi. Maana yake kamili haijulikani.
 - **On alamoth** (Zaburi 46) ni wingi wa neno la msichana. Kwa kuwa 1 Mambo ya Nyakati 15:20 ina Walawi wakipiga vinubi "on alamoth", ni istilahi ya muziki, labda kwa sauti za juu au ala zenye sauti nyembamba.
-- **Higgaion**, linalosimama kando ya Selah katika Zaburi 9:17, linatoka katika kitenzi cha kunong'ona. Rekodi inalichukua kuwa huenda ni maelekezo ya muziki na inalibakiza katika kila kiwango.
+- **Higgaion**, linalosimama kando ya Selah katika Zaburi 9:16, linatoka katika kitenzi cha kunong'ona. Rekodi inalichukua kuwa huenda ni maelekezo ya muziki na inalibakiza katika kila kiwango.
 - **Shigionoth**, katika kichwa cha maombi ya Habakuki, ni wingi wa istilahi iliyo katika kichwa cha Zaburi 7. Wengine wanalihusisha na kitenzi cha kutangatanga au kuyumbayumba, wengine na neno la maombolezo.
 
 Kisha kuna misemo ambayo huenda ni majina ya nyimbo. Zaburi 22 ni "on Ayyeleth-hashshahar", maana yake "kulungu jike wa alfajiri". Zaburi 57 ina kichwa {{HEBREW:PSA.57.1:2-3}}, "Usiharibu", kinachoongoza pia Zaburi 58, 59 na 75. Zaburi 56 ina maneno yenye maana kama "njiwa aliye kimya wa mahali pa mbali". Haya yanaonekana kuwa majina ya sauti za nyimbo ambazo zaburi ziliimbwa kwazo, kama kitabu cha nyimbo kinavyochapisha jina la sauti juu ya wimbo. Sauti zenyewe zimepotea zamani.

@@ -1,23 +1,35 @@
 """Readers' accounts, for the users area.
 
-GET    /api/admin/users/?q=&role=&offset=   accounts, newest first: search
+GET    /api/admin/users/?q=&role=&system=&offset=
+                                            accounts, newest first: search
                                             by address or name; role=any for
-                                            the team, or a role's kind
+                                            the team, or a role's kind.
+                                            System accounts (accounts/
+                                            system.py) are left out unless
+                                            system=1 (or system=only)
 GET    /api/admin/users/<id>/               one account: roles, devices,
                                             saved verses, messages
+PATCH  /api/admin/users/<id>/ {name, system}
+                                            set the display name (as the
+                                            reader can on their account
+                                            page), or mark the account a
+                                            system account or a person
 POST   /api/admin/users/<id>/sign-out/      sign every device out
 DELETE /api/admin/users/<id>/               delete the account (super admin)
 
 An account's highlights and bookmarks are counted, never listed: they are
-the reader's own.
+the reader's own. Each account comes with display_name: its name, or one
+made from its address when it has none (display_name_is_fallback).
 """
 from django.contrib.auth import get_user_model
 from django.db.models import Count, Q
 from rest_framework import status
+from rest_framework.exceptions import ValidationError
 from rest_framework.response import Response
 
 from accounts import auth
-from accounts.models import Role, SignInLink
+from accounts.models import Role, SignInLink, SystemAccount
+from accounts.system import name_from_email, people
 from feedback.models import ReaderMessage
 
 from .models import record
@@ -37,8 +49,17 @@ def _ways_in(user):
     return sorted(ways)
 
 
+def _is_system(user):
+    try:
+        return user.system_account is not None
+    except SystemAccount.DoesNotExist:
+        return False
+
+
 def _row(user):
     return {"id": user.id, "email": user.username, "name": user.first_name,
+            "display_name": user.first_name or name_from_email(user.username),
+            "display_name_is_fallback": not user.first_name, "system": _is_system(user),
             "joined": user.date_joined, "signed_in": user.last_login, "active": user.is_active,
             "roles": [r.as_json()["label"] for r in user.roles.all()],
             "marks": getattr(user, "n_marks", None), "devices": getattr(user, "n_devices", None)}
@@ -47,8 +68,15 @@ def _row(user):
 @admin_view("users")
 def user_list(request):
     params = request.query_params
-    users = get_user_model().objects.prefetch_related("roles").annotate(
+    users = get_user_model().objects.select_related("system_account").prefetch_related("roles").annotate(
         n_marks=Count("marks", distinct=True), n_devices=Count("api_tokens", distinct=True))
+    shown = params.get("system", "")
+    hidden = 0
+    if shown == "only":
+        users = users.filter(system_account__isnull=False)
+    elif shown not in ("1", "true", "all"):
+        hidden = SystemAccount.objects.count()
+        users = people(users)
     q = params.get("q", "").strip()
     if q:
         users = users.filter(Q(username__icontains=q) | Q(first_name__icontains=q))
@@ -64,16 +92,22 @@ def user_list(request):
     total = users.count()
     page = users.order_by("-date_joined")[offset:offset + PAGE]
     return Response({"users": [_row(u) for u in page], "total": total, "offset": offset, "page": PAGE,
+                     "system_hidden": hidden,
                      "roles": [{"kind": k, "label": label} for k, label in Role.Kind.choices]})
 
 
-@admin_view("users", methods=("GET", "DELETE"))
+@admin_view("users", methods=("GET", "PATCH", "DELETE"))
 def user_detail(request, user_id):
-    user = get_user_model().objects.filter(id=user_id).prefetch_related("roles", "api_tokens").first()
+    user = (get_user_model().objects.filter(id=user_id).select_related("system_account")
+            .prefetch_related("roles", "api_tokens").first())
     if user is None:
         return Response({"detail": "No such account.", "code": "not_found"}, status=status.HTTP_404_NOT_FOUND)
     if request.method == "DELETE":
         return _delete(request, user)
+    if request.method == "PATCH":
+        _change(request, user)
+        user = (get_user_model().objects.filter(id=user.id).select_related("system_account")
+                .prefetch_related("roles", "api_tokens").first())
     marks = user.marks.aggregate(bookmarks=Count("id", filter=Q(bookmark=True)),
                                  highlights=Count("id", filter=~Q(highlight="")))
     place = getattr(user, "reading_place", None)
@@ -90,7 +124,36 @@ def user_detail(request, user_id):
                       "created_at": m.created_at} for m in messages[:20]],
         "role_details": [r.as_json() for r in user.roles.all()],
         "can_delete": is_super_admin(request.user) and user != request.user,
+        "system_reason": user.system_account.reason if _is_system(user) else "",
     })
+
+
+def _change(request, user):
+    """PATCH: the display name (under 80 characters, as on the account
+    page), and whether the account is a system account."""
+    data = request.data if isinstance(request.data, dict) else {}
+    if "name" in data:
+        name = " ".join(str(data["name"] or "").split())
+        if len(name) > 80:
+            raise ValidationError({"name": "Keep it under 80 characters."})
+        if name != user.first_name:
+            user.first_name = name
+            user.save(update_fields=["first_name"])
+            record(request.user, "user.name", user.username, name=name)
+    if "system" in data:
+        if not isinstance(data["system"], bool):
+            raise ValidationError({"system": "Send true or false."})
+        if data["system"] and not _is_system(user):
+            if user == request.user:
+                raise ValidationError({"system": "Your own account is a person's.", "code": "self"})
+            if user.roles.exists():
+                raise ValidationError({"system": "Take this account's roles away first: a system account "
+                                       "holds none.", "code": "has_roles"})
+            SystemAccount.objects.create(user=user, reason=f"Marked by {request.user.username}")
+            record(request.user, "user.system", user.username)
+        elif not data["system"] and _is_system(user):
+            SystemAccount.objects.filter(user=user).delete()
+            record(request.user, "user.person", user.username)
 
 
 def _delete(request, user):

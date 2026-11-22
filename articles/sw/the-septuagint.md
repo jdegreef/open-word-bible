@@ -5,7 +5,7 @@ date: 2026-10-11
 order: 29
 section: history
 part: ot
-source: 397bccee3ec5
+source: 4a87bb1931bd
 ---
 Tafsiri ya kwanza ya Biblia haikufanywa na Wakristo, wala haikufanywa kwa Kilatini au Kiingereza. Ilifanywa na Wayahudi, huko Misri, kwa Kigiriki, kuanzia karne ya tatu K.K. Inaitwa **Septuaginta**, kutoka neno la Kilatini la "sabini," nayo ni mojawapo ya vitabu muhimu zaidi katika historia ya Biblia.
 
@@ -37,7 +37,7 @@ Kanisa la mwanzo kwa sehemu kubwa lilizungumza Kigiriki, na Biblia yake ilikuwa 
 - **Waebrania 10:5** inanukuu Zaburi 40:6 kama "uliniandalia mwili," ikifuata Septuaginta, ambapo Kiebrania kinasomeka "masikio umenichimbia."
 - **Matendo 15:16–17** inamwonyesha Yakobo akinukuu Amosi 9:11–12 kwa umbo linalokaribiana na Septuaginta, linalosema juu ya "wanadamu wengine" wakimtafuta Bwana, ambapo maandiko ya Kimasoreti yanasema juu ya kumiliki "mabaki ya Edomu." Maneno ya Kiebrania ya "Edomu" na "wanadamu" yanatofautiana kwa herufi moja ya irabu.
 
-Rekodi za Open Word Bible zinaonyesha tofauti ya aina hii pande zote mbili. Katika Zaburi 40 (mstari wa 7 kwa hesabu ya Kiebrania, mstari wa 6 katika Biblia nyingi za Kiswahili na Kiingereza), Agano la Kale linatafsiriwa kutoka Kiebrania:
+Rekodi za Open Word Bible zinaonyesha tofauti ya aina hii pande zote mbili. Katika Zaburi 40 (mstari wa 6 katika Biblia nyingi za Kiswahili na Kiingereza, mstari wa 7 katika Biblia za Kiebrania), Agano la Kale linatafsiriwa kutoka Kiebrania:
 
 > {{OWB:PSA.40.7.s1:L}}
 

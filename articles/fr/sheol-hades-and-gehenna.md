@@ -4,7 +4,7 @@ summary: "Les anciennes Bibles anglaises emploient un seul mot, \"hell\" (l'enfe
 date: 2026-10-17
 order: 86
 section: passage
-source: 0b21a4e82def
+source: 5f3691f4c4e6
 ---
 Ouvrez la version King James au Psaume 16:10 et vous lisez : "For thou wilt not leave my soul in hell" ("Car tu ne laisseras pas mon âme en enfer"). Passez à Luc 16:23 : le riche lui aussi est "in hell", "en enfer". En Matthieu 5:22, celui qui traite son frère de fou est "in danger of hell fire", "passible du feu de l'enfer". En 2 Pierre 2:4, Dieu a précipité les anges qui avaient péché "down to hell", "en enfer". Et en Apocalypse 20:14, "death and hell were cast into the lake of fire", "la mort et l'enfer furent jetés dans le lac de feu".
 
@@ -46,7 +46,7 @@ Nos dossiers donnent partout un seul sens au Shéol : le lieu ou le domaine des 
 
 En français, la Littérale dit "le Shéol", et l'Équilibrée et la Simple "le séjour des morts", y compris en Genèse 37:35. La décision de formulation française écarte "la tombe", qui désigne une sépulture particulière, au profit de l'expression établie pour le domaine de tous les morts.
 
-Aucun de nos niveaux ne dit "hell" ni "l'enfer" pour le Shéol. La prière de Jonas, au verset 3 selon la numérotation hébraïque, montre le modèle :
+Aucun de nos niveaux ne dit "hell" ni "l'enfer" pour le Shéol. La prière de Jonas, en 2:2 (2:3 dans les Bibles hébraïques), montre le modèle :
 
 > {{OWB:JON.2.3.s1:B}}
 

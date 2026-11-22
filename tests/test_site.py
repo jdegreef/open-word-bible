@@ -535,6 +535,106 @@ class SiteTest(unittest.TestCase):
         self.assertIn(f"Sitemap: {build_site.SITE_URL}/sitemap.xml", robots)
         self.assertTrue((self.out / "favicon.svg").is_file())
 
+    def test_search_engines_and_ai_tools_may_read_everything(self):
+        robots = (self.out / "robots.txt").read_text(encoding="utf-8")
+        self.assertNotIn("Disallow", robots)
+        for bot in ("GPTBot", "OAI-SearchBot", "ClaudeBot", "PerplexityBot", "Google-Extended"):
+            self.assertIn(f"User-agent: {bot}\n", robots)
+        self.assertIn("User-agent: *\nAllow: /\n", robots)
+
+    def test_search_pages_are_not_listed(self):
+        page = (self.out / "search" / "index.html").read_text(encoding="utf-8")
+        self.assertRegex(page, r'<meta name="robots" content="noindex[^"]*">')
+        self.assertNotIn("/search/</loc>", sitemap_text(self.out))
+
+    def test_home_page_names_the_site_and_its_search(self):
+        home = (self.out / "index.html").read_text(encoding="utf-8")
+        self.assertIn('<meta property="og:type" content="website">', home)
+        site = json.loads(re.search(r'<script type="application/ld\+json">(\{"@context":"https://schema.org",'
+                                    r'"@type":"WebSite".*?)</script>', home)[1])
+        self.assertEqual(site["potentialAction"]["target"]["urlTemplate"],
+                         f"{build_site.SITE_URL}/search/?q={{search_term_string}}")
+
+    def test_each_verse_has_an_anchor(self):
+        chapter = (self.out / "jhn" / "3" / "index.html").read_text(encoding="utf-8")
+        text = chapter[chapter.index('id="text"'):]
+        ids = re.findall(r'<span class="verse[^"]*" id="(v[^"]+)"', text)
+        self.assertIn("v16", ids)
+        self.assertEqual(len(ids), len(set(ids)))
+
+    def test_words_have_pages_of_their_own_in_english(self):
+        entries = build_site.word_entries()
+        lemma = next(lm for lm, e in entries.items() if e["lang"] == "grc" and e["s"].lstrip("0") == "26")
+        path = build_site.word_path(lemma)
+        self.assertEqual(path, "/word/g26-agape/")
+        page = (self.out / path.strip("/") / "index.html").read_text(encoding="utf-8")
+        self.assertIn(f'<h1 id="word-title" lang="grc">{lemma}</h1>', page)
+        self.assertIn("G26", page)
+        self.assertIn('<a class="use" href="/', page)
+        self.assertIn(f'<link rel="canonical" href="{build_site.SITE_URL}{path}">', page)
+        self.assertIn('"@type":"DefinedTerm"', page)
+        # web/word.js adds the word list to it, and the ?w= page leads to it.
+        data = json.loads(re.search(r'id="word-data">(.*?)</script>', page)[1])
+        self.assertEqual(data["lemma"], lemma)
+        shard = json.loads((self.out / "words" / f"{build_site.word_shard(lemma)}.json").read_text(encoding="utf-8"))
+        self.assertEqual(shard[lemma]["p"], path)
+        self.assertFalse((self.out / "es" / path.strip("/") / "index.html").exists())
+        sitemap = sitemap_text(self.out)
+        self.assertIn(f"<loc>{build_site.SITE_URL}{path}</loc>", sitemap)
+        # A rare word has no page; its list links its ?w= page.
+        rare = next(lm for lm, e in entries.items() if not build_site.word_has_page(e))
+        self.assertNotIn("p", json.loads((self.out / "words" / f"{build_site.word_shard(rare)}.json")
+                                         .read_text(encoding="utf-8"))[rare])
+
+    def test_every_word_is_in_its_languages_list(self):
+        entries = build_site.word_entries()
+        for language, name in build_site.WORD_INDEX_NAMES.items():
+            listed, n = "", 1
+            while (index := self.out / "word" / name / ("" if n == 1 else str(n)) / "index.html").exists():
+                listed += index.read_text(encoding="utf-8")
+                n += 1
+            words = [lm for lm, e in entries.items() if e["lang"] == language]
+            self.assertTrue(words)
+            for lm in words:
+                self.assertIn(f">{html.escape(lm)}</span>", listed, lm)
+        word = (self.out / "word" / "index.html").read_text(encoding="utf-8")
+        self.assertIn('href="/word/greek/"', word)
+
+    def test_verses_with_a_footnoted_question_have_a_page_in_english(self):
+        votd = build_site.verse_of_the_day_ids()
+        vid = next(v for v in build_site.verse_page_ids() if v not in votd)
+        path = build_site.verse_page_url(vid).strip("/")
+        self.assertTrue((self.out / path / "index.html").is_file(), vid)
+        self.assertFalse((self.out / "fr" / path / "index.html").exists(), vid)
+        page = (self.out / path / "index.html").read_text(encoding="utf-8")
+        self.assertIn('class="verse-decisions"', page)
+
+    def test_indexnow_key_and_page_fingerprints(self):
+        from indexnow import KEY, MANIFEST
+        self.assertEqual((self.out / f"{KEY}.txt").read_text(encoding="utf-8"), KEY)
+        marks = json.loads((self.out / MANIFEST).read_text(encoding="utf-8"))
+        self.assertIn("/jhn/3/", marks)
+        self.assertIn("/word/g26-agape/", marks)
+        self.assertNotIn("/search/", marks)
+        # Every page the sitemaps list, and nothing else.
+        listed = set(re.findall(r"<loc>https://openwordbible\.org([^<]*)</loc>", sitemap_text(self.out)))
+        self.assertEqual(set(marks), listed)
+
+    def test_a_page_fingerprint_ignores_asset_versions(self):
+        a = "<head>x</head><main><p>Text</p><script src=\"/r.js?v=0123456789\"></script></main>"
+        b = a.replace("0123456789", "abcdef0123").replace("<head>x", "<head>y")
+        self.assertEqual(build_site.page_fingerprint(a), build_site.page_fingerprint(b))
+        self.assertNotEqual(build_site.page_fingerprint(a), build_site.page_fingerprint(a.replace("Text", "Other")))
+
+    def test_404_page_knows_the_books_for_verse_addresses(self):
+        lost = (self.out / "404.html").read_text(encoding="utf-8")
+        data = json.loads(re.search(r'<script type="application/json" id="owb-lost">(.*?)</script>', lost)[1])
+        self.assertEqual(data["books"]["john"], "jhn")
+        self.assertEqual(data["books"]["1john"], "1jn")
+        self.assertEqual(data["books"]["juan"], "jhn")
+        self.assertIn("es", data["langs"])
+        self.assertNotIn("en", data["langs"])
+
     def test_home_page_example_comes_from_the_content(self):
         home = (self.out / "index.html").read_text(encoding="utf-8")
         example = home[home.index('class="example"'):home.index('class="points-wrap"')]
@@ -945,25 +1045,28 @@ class SiteTest(unittest.TestCase):
                          ["GEN.1.1.s1", "GEN.1.6.s1", "GEN.1.9.s1", "GEN.1.14.s1", "GEN.1.20.s1", "GEN.1.24.s1"])
 
     def test_headings_stand_above_paragraphs(self):
-        ids = {r["id"] for b, c in build_site.chapters() for r in build_site.load_chapter(b, c)[0]}
+        # A record is on the page of its NIV chapter: Hebrew 1 Chr 5:27 is 6:1.
+        pages = {r["id"]: (b, c) for b, c in build_site.chapters() for r in build_site.load_chapter(b, c)[0]}
         for rid, heading in build_site.headings().items():
-            self.assertIn(rid, ids, rid)
+            self.assertIn(rid, pages, rid)
             self.assertIn("en", heading, rid)
-            book, chapter = rid.split(".")[:2]
+            book, chapter = pages[rid]
             data = self.chapter_data(f"{book.lower()}/{chapter}")
             self.assertIn(rid, data["paragraphs"], rid)
             self.assertEqual(data["headings"][rid], heading)
 
     def test_chapter_pages_carry_their_cross_references(self):
-        # Every verse on the page with references has them, and only those:
-        # Psalm 3:1 is the title, so the first references are verse 2's.
+        # Every verse on the page with references has them, and only those,
+        # in reader numbering: Psalm 3's title is verse 0 and has none.
         for path, book in (("jhn/3", "JHN"), ("psa/3", "PSA"), ("es/jhn/3", "JHN")):
             data = self.chapter_data(path)
             vids = {vid for r in data["records"] for vid in r["refs"]}
-            table = crossrefs.load(book)
+            table = crossrefs.load_reader(book)
             self.assertEqual(data["crossrefs"], {v: table[v] for v in vids if v in table}, path)
         self.assertEqual(self.chapter_data("jhn/3")["crossrefs"]["JHN.3.16"][0], "ROM.5.8")
-        self.assertNotIn("PSA.3.1", self.chapter_data("psa/3")["crossrefs"])
+        self.assertNotIn("PSA.3.0", self.chapter_data("psa/3")["crossrefs"])
+        self.assertEqual(self.chapter_data("psa/3")["crossrefs"]["PSA.3.1"],
+                         [crossrefs.reader_target(t) for t in crossrefs.load("PSA")["PSA.3.2"]])
         page = (self.out / "jhn" / "3" / "index.html").read_text(encoding="utf-8")
         self.assertIn('data-setting="crossrefs"', page)
         self.assertIn('id="xr-margin"', page)
@@ -1021,10 +1124,10 @@ class SiteTest(unittest.TestCase):
         john = json.loads((self.out / "editions" / "JHN" / "3.json").read_text(encoding="utf-8"))
         self.assertEqual(set(john), {code for code, _, _ in build_site.EDITIONS})
         self.assertIn("loved the world", john["bsb"]["16"])
-        # English Psalm 3:1 is our 3:2; our 3:1 is the title, which they lack.
+        # Numbered as the NIV: the title is verse 0, which they lack.
         psalm = json.loads((self.out / "editions" / "PSA" / "3.json").read_text(encoding="utf-8"))
-        self.assertNotIn("1", psalm["bsb"])
-        self.assertTrue(psalm["bsb"]["2"].startswith("O LORD"))
+        self.assertNotIn("0", psalm["bsb"])
+        self.assertTrue(psalm["bsb"]["1"].startswith("O LORD"))
         # The reader's panel links each verse here.
         self.assertEqual(self.chapter_data("jhn/3")["compare_url"], "/compare/")
         self.assertEqual(self.chapter_data("es/jhn/3")["compare_url"], "/es/compare/")
@@ -1067,15 +1170,44 @@ class SiteTest(unittest.TestCase):
         self.assertEqual(data["verses"]["compare"][0][0], "rv1909")
 
     def test_preview_files_number_untranslated_verses_as_we_do(self):
-        # A chapter with comparison text has it under our verse numbers:
-        # English Psalm 3:1 is our Psalm 3:2, after the title.
+        # A chapter with comparison text has it under the site's verse
+        # numbers, which are the English Bibles' (reader numbering).
         for path in sorted((self.out / build_site.VERSES_DIR).glob("*/*.json")):
             data = json.loads(path.read_text(encoding="utf-8"))
             for code, verses in data.get("c", {}).items():
                 self.assertIn(code, build_site.COMPARISON_EDITIONS)
                 self.assertFalse(set(verses) & set(data.get("v", {})), path)
-        moved = build_site.versification.to_source(build_site.refs.parse("PSA.3.1"))
-        self.assertEqual([str(r) for r in moved], ["PSA.3.2"])
+        web = build_site.comparison_ours("web")
+        self.assertEqual(web[build_site.refs.parse("PSA.3.1")], build_site.comparison_text("web")["PSA.3.1"])
+
+    def test_pages_number_verses_as_the_niv(self):
+        # Malachi has four chapters and Joel three, as in the NIV.
+        self.assertTrue((self.out / "mal" / "4" / "index.html").exists())
+        self.assertFalse((self.out / "jol" / "4" / "index.html").exists())
+        mal4 = self.chapter_data("mal/4")
+        self.assertEqual([r["refs"] for r in mal4["records"]][0], ["MAL.4.1"])
+        self.assertEqual(mal4["records"][0]["id"], "MAL.3.19.s1")
+        self.assertEqual(mal4["records"][0]["source_refs"], ["MAL.3.19"])
+        joel2 = {v for r in self.chapter_data("jol/2")["records"] for v in r["refs"]}
+        self.assertIn("JOL.2.32", joel2)
+        # A psalm's title is verse 0, drawn without a number.
+        psa3 = self.chapter_data("psa/3")
+        self.assertEqual(psa3["records"][0]["refs"], ["PSA.3.0"])
+        self.assertEqual(psa3["records"][1]["refs"], ["PSA.3.1"])
+        page = (self.out / "psa" / "3" / "index.html").read_text(encoding="utf-8")
+        self.assertRegex(page, r'<span class="verse psalm-title" id="v0"[^>]*data-record="PSA\.3\.1\.s1">[^<]')
+        self.assertIn('<sup>1</sup>', page)
+        self.assertNotIn('<sup>0</sup>', page)
+        # Two of our verses that are one NIV verse, and a sentence the NIV
+        # numbers as a verse of its own.
+        num26 = self.chapter_data("num/26")["records"]
+        self.assertEqual([r["refs"] for r in num26[:2]], [["NUM.26.1"], ["NUM.26.1"]])
+        # One of our verses that is two NIV verses (data/reader_verses.json).
+        page = (self.out / "psa" / "13" / "index.html").read_text(encoding="utf-8")
+        self.assertIn("<sup>6</sup>I will sing", page)
+        self.assertIn("ISA.64.1", {v for r in self.chapter_data("isa/64")["records"] for v in r["refs"]})
+        acts = {r["id"]: r["refs"] for r in self.chapter_data("act/19")["records"]}
+        self.assertEqual(acts["ACT.19.40.s2"], ["ACT.19.41"])
 
     def test_summary_stands_under_the_title(self):
         page = (self.out / "1ti" / "5" / "index.html").read_text(encoding="utf-8")
@@ -1698,9 +1830,10 @@ class SearchMetadataTest(unittest.TestCase):
 
 class VersePageTest(unittest.TestCase):
     def test_every_verse_of_the_day_with_records_has_a_page(self):
-        data = json.loads((ROOT / "data" / "verse_of_the_day.json").read_text(encoding="utf-8"))
         ids = build_site.verse_page_ids()
-        self.assertEqual(set(ids), {v for v in data["refs"] if build_site.verse_records(v)})
+        votd = {v for v in build_site.VERSES_OF_THE_DAY if build_site.verse_records(v)}
+        self.assertEqual(set(build_site.verse_of_the_day_ids()), votd)
+        self.assertLessEqual(votd, set(ids))
         self.assertIn("JHN.3.16", ids)
         self.assertEqual(build_site.verse_page_url("JHN.3.16"), "/jhn/3/16/")
 
@@ -1818,9 +1951,9 @@ class LinkedPagesTest(unittest.TestCase):
     def test_quotations_page(self):
         page = self.page("quotations")
         self.assertIn("<h1>The Old Testament in the New</h1>", page)
-        # Matthew 2:6 quotes Micah 5:2, which is 5:1 in the Hebrew numbering.
+        # Matthew 2:6 quotes Micah 5:2 (5:1 in Hebrew Bibles), linked as the NIV.
         row = re.search(r'<li><p class="q-text">[^<]*</p><p class="q-refs"><a href="/mat/2/#v6">.*?</li>', page)[0]
-        self.assertIn('href="/mic/5/#v1"', row)
+        self.assertIn('href="/mic/5/#v2"', row)
         self.assertIn("Bethlehem", row)
         self.assertEqual(page.count('<p class="q-text"'), len(build_site.quotations()))
         for lang in build_site.LANGUAGES:

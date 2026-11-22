@@ -5,7 +5,7 @@ date: 2026-11-14
 order: 110
 nav_title: Watakatifu
 section: passage
-source: 446f538f4b8d
+source: c8698cc2a5aa
 ---
 Barua ya Paulo kwa Wafilipi inaanza na salamu ambayo King James Version inaieleza hivi: "to all the saints in Christ Jesus which are at Philippi", "kwa watakatifu wote katika Kristo Yesu walioko Filipi". Msomaji wa leo anaweza kufikiria kikundi kidogo cha Wakristo wa pekee, wale ambao majina yao yanapewa makanisa na sura zao zinaonekana katika madirisha ya vioo vya rangi. Paulo aliwamaanisha waamini wote wa mji ule, pamoja na wale wanawake wawili wa sura ya 4 anaowasihi waache kugombana.
 
@@ -69,7 +69,7 @@ Katika Biblia ya Kiebrania, wingi wa *qadosh*, "takatifu", unafanya kitu tofauti
 
 > {{OWB:JOB.5.1.s1:B}}
 
-Uamuzi wa maana unaeleza kwamba "'watakatifu' ni jina la viumbe wanaosimama kumzunguka Mungu mbinguni (Ayubu 15:15; Zaburi 89:6, 8; Zekaria 14:5)". Kwa hiyo Rahisi inasema hapa "viumbe wa mbinguni", kwa sababu "watakatifu" peke yake "lingeweza kueleweka kuwa watu watakatifu duniani". Katika Zaburi 89:6 Halisi na Linganifu zinasema "watakatifu", na Rahisi inasema "malaika walio mbinguni".
+Uamuzi wa maana unaeleza kwamba "'watakatifu' ni jina la viumbe wanaosimama kumzunguka Mungu mbinguni (Ayubu 15:15; Zaburi 89:5, 7; Zekaria 14:5)". Kwa hiyo Rahisi inasema hapa "viumbe wa mbinguni", kwa sababu "watakatifu" peke yake "lingeweza kueleweka kuwa watu watakatifu duniani". Katika Zaburi 89:5 Halisi na Linganifu zinasema "watakatifu", na Rahisi inasema "malaika walio mbinguni".
 
 Lakini wakati mwingine watakatifu ni watu wa Mungu duniani, kama katika Zaburi 34:
 

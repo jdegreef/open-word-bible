@@ -55,13 +55,17 @@ There are smaller differences elsewhere, as at the end of Genesis 31, where the 
 
 ## How Open Word Bible handles the numbers
 
-Open Word Bible numbers every verse as its source text does. For the Old Testament that is the Westminster Leningrad Codex, so Malachi has three chapters, Joel four, and a psalm's title is its first verse. Where this matters, the first verse affected carries a footnote. The one at Malachi 3:19 explains that its six verses are numbered 4:1–6 in many other Bibles, and that Open Word Bible follows the numbering of the Hebrew text it translates. Joel 3:1 has the same kind of note, and so does the title of Psalm 3:
+Open Word Bible translates the Hebrew text, the Westminster Leningrad Codex, but it numbers chapters and verses as the NIV and most English Bibles do. So Malachi has four chapters, Joel three, and a psalm's title has no number. Readers can then look up a verse by the number they already know, and compare it with the Bible they already read.
+
+Where the Hebrew numbers differ, the first verse affected carries a footnote. The one at Malachi 4:1 explains that its six verses are 3:19–24 in the Hebrew text, which keeps them in chapter 3. Joel 2:28 has the same kind of note, and so does the title of Psalm 3:
 
 > {{OWB:PSA.3.1.s1:B}}
 
-Its record says that from Psalm 3 on the verse numbers here are one higher than in Bibles that print the title without a number.
+Its record says that from Psalm 3 on, Hebrew Bibles number the verses one higher than here. Each verse page also gives the Hebrew number where it differs.
 
-Behind the scenes, a table in the project's data, `data/versification.json`, maps the two systems verse by verse. It is built from the verse map of the Open Scriptures Hebrew Bible, and it lists every Hebrew verse whose English number is different: a little over two thousand of them, about half in the Psalms. The site uses it wherever our numbering meets someone else's. When the reader shows another Bible for comparison, such as the World English Bible, its verses are moved into our numbering, so that the English Psalm 3:1 sits beside our Psalm 3:2. Cross-references from other sources are converted the same way. And the project's text service can give a comparison Bible either in our numbering or in the edition's own.
+The two systems do not always divide the text at the same points. In five places one Hebrew verse holds two English ones: Psalm 13:5–6, 1 Kings 18:33–34, 20:2–3, 22:21–22 and Isaiah 64:1, whose first line closes Isaiah 63 in the Hebrew. In three others two Hebrew verses make one English verse, as at Numbers 26:1. Open Word Bible's records follow the sentences of the Hebrew, so a verse number can fall in the middle of a sentence, as it does in many places anyway.
+
+Behind the scenes, a table in the project's data, `data/versification.json`, maps the two systems verse by verse. It is built from the verse map of the Open Scriptures Hebrew Bible, and it lists every Hebrew verse whose English number is different: a little over two thousand of them, about half in the Psalms. The records themselves keep the Hebrew numbers, so the translation can always be checked against the Hebrew text; the site turns them into the numbers readers see. And the project's text service can give a passage either in the NIV's numbering or in the Hebrew text's own.
 
 In the New Testament, Open Word Bible keeps Estienne's numbers even where the SBL Greek text has no verse to put under them. Matthew 17 goes from verse 20 to verse 22, with a footnote explaining why. See [Verses missing from modern Bibles](/articles/verses-missing-from-modern-bibles/).
 
@@ -69,7 +73,7 @@ In the New Testament, Open Word Bible keeps Estienne's numbers even where the SB
 
 None of this is a reason to distrust chapters and verses. They let millions of people find the same sentence in different languages and editions, and they make cross-references and concordances possible. But they are a map laid over the text, not part of it. Reading across a chapter break, or ignoring a verse number in the middle of a sentence, is often the best way to hear what an author actually wrote.
 
-[Open 1 Corinthians 13](/1co/13/), [Isaiah 52](/isa/52/) or [Malachi 3](/mal/3/) to see the numbers at work.
+[Open 1 Corinthians 13](/1co/13/), [Isaiah 52](/isa/52/) or [Malachi 4](/mal/4/) to see the numbers at work.
 
 ## Sources
 

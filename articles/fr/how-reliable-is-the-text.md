@@ -5,7 +5,7 @@ date: 2026-10-11
 order: 40
 section: history
 part: today
-source: 38f9ddefc748
+source: b3a3c2719637
 ---
 Cette série a suivi la Bible depuis sa première rédaction, à travers des générations de scribes, jusqu'aux manuscrits et aux éditions imprimées qui sous-tendent les traductions modernes. Ce dernier article pose la question qui se cache derrière toutes les autres : avec quelle assurance pouvons-nous dire que la Bible que nous lisons aujourd'hui dit ce que ses auteurs ont écrit ?
 
@@ -88,7 +88,7 @@ Trois endroits d'Open Word Bible montrent à quoi cela ressemble.
 
 - **Genèse 4:8.** L'hébreu dit "Caïn dit à Abel, son frère", puis ne rapporte aucune parole. Le Pentateuque samaritain, la Septante, la version syriaque et la version latine ajoutent "Sortons dans les champs". Open Word Bible suit l'hébreu, avec une note.
 - **Isaïe 53:11.** L'hébreu dit que le serviteur "verra". Le grand rouleau d'Isaïe, un autre rouleau d'Isaïe de la même grotte et la Septante disent qu'il "verra la lumière". Open Word Bible traduit l'hébreu et donne "la lumière" en note ; le sens est proche dans les deux cas.
-- **Psaume 22:17** (22:16 dans la plupart des Bibles anglaises). L'hébreu tel qu'il a été transmis lit "comme le lion" à mes mains et à mes pieds, ce qui laisse la ligne sans verbe. Un rouleau du Nahal Hever, dans le désert de Judée, a une forme légèrement différente qui ressemble à un verbe. La Septante a "ils ont creusé" ou "percé", la leçon de la version King James. Open Word Bible suit l'hébreu, explique les autres possibilités dans une note et marque la décision incertaine.
+- **Psaume 22:16** (22:17 dans les Bibles hébraïques). L'hébreu tel qu'il a été transmis lit "comme le lion" à mes mains et à mes pieds, ce qui laisse la ligne sans verbe. Un rouleau du Nahal Hever, dans le désert de Judée, a une forme légèrement différente qui ressemble à un verbe. La Septante a "ils ont creusé" ou "percé", la leçon de la version King James. Open Word Bible suit l'hébreu, explique les autres possibilités dans une note et marque la décision incertaine.
 
 Les traducteurs de l'Ancien Testament se trouvent donc plus souvent devant des décisions textuelles difficiles que ceux du Nouveau. Les brouillons le montrent : les phrases de l'Ancien Testament ont à peu près deux fois plus de chances que celles du Nouveau de porter une décision textuelle marquée incertaine. Mais là aussi, l'immense majorité du texte n'est pas douteuse, et les variantes qui le sont peuvent être nommées et pesées.
 

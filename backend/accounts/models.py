@@ -299,3 +299,21 @@ class ReaderState(models.Model):
 
     def __str__(self):
         return f"Reading state ({self.user})"
+
+
+class SystemAccount(models.Model):
+    """Marks an account that is not a person: one a deploy, a health check or
+    a script made (Render's "render", say). It stays an account, and is never
+    deleted for this; the admin leaves it out of Users unless asked, out of
+    the reader counts and engagement, and labels it "System".
+
+    Migration 0024 marked the accounts that were already there by one rule
+    (SYSTEM_RULE, accounts/system.py); an admin marks or unmarks any other
+    from its page in Users."""
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, primary_key=True,
+                                related_name="system_account")
+    reason = models.CharField(max_length=200, blank=True, help_text="Why it was marked, and by whom")
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"System account ({self.user})"

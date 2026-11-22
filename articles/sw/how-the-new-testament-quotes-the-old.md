@@ -4,7 +4,7 @@ summary: Mitume wanaponukuu Agano la Kale, mara nyingi wanatumia Septuaginta ya 
 date: 2026-10-17
 order: 105
 section: passage
-source: 56441c83d73d
+source: 872c01310e33
 ---
 Wasomaji wanaotafuta nukuu ya Agano la Kale katika Biblia yao wenyewe wakati mwingine wanashangaa. Waebrania 10:5 inanukuu Zaburi 40 ikisema "umeandaa mwili kwa ajili yangu." Ukifungua zaburi hiyo, inasema kitu kama "umenifungua masikio." Mathayo anamnukuu Isaya akisema "bikira atapata mimba." Biblia nyingi za kisasa zina "msichana" au "mwanamke kijana" katika Isaya. Yakobo, katika baraza la Yerusalemu, anamnukuu Amosi kuhusu "wanadamu wengine wote" wanaomtafuta Bwana. Amosi, katika Kiebrania, anazungumza kuhusu Israeli kumiliki "mabaki ya Edomu."
 
@@ -40,15 +40,15 @@ Katika Mathayo, uamuzi wa maana unaenda upande mwingine, kwa sababu neno la Math
 
 Kuna tofauti ya pili, ndogo zaidi. Katika Kiebrania, "yeye [mwanamke] atamwita" Imanueli; katika Septuaginta, "wewe utamwita"; katika Mathayo, "wao watamwita." Rekodi yetu ya Mathayo 1:23 inataja yote matatu na inaelewa "wao" wa Mathayo kumaanisha watu kwa ujumla.
 
-Mstari huu umebishaniwa kwa karne nyingi, mara nyingi kwa uchungu. Rekodi hazijaribu kumaliza mabishano hayo kwa kutafsiri maandishi moja ili yalingane na mengine. Zinatafsiri kila maandishi kama yalivyo na kueleza kwa nini yanatofautiana. Rekodi ya Isaya inaeleza pia kile ambacho maandishi yote mawili yanashiriki: ishara hiyo ilikuwa ya wakati wa Mfalme Ahazi, na ahadi ya Isaya inafika mbali zaidi, kwa mtoto atakayetawala katika kiti cha enzi cha Daudi (9:5–6).
+Mstari huu umebishaniwa kwa karne nyingi, mara nyingi kwa uchungu. Rekodi hazijaribu kumaliza mabishano hayo kwa kutafsiri maandishi moja ili yalingane na mengine. Zinatafsiri kila maandishi kama yalivyo na kueleza kwa nini yanatofautiana. Rekodi ya Isaya inaeleza pia kile ambacho maandishi yote mawili yanashiriki: ishara hiyo ilikuwa ya wakati wa Mfalme Ahazi, na ahadi ya Isaya inafika mbali zaidi, kwa mtoto atakayetawala katika kiti cha enzi cha Daudi (9:6–7).
 
-## 2. "Umeandaa mwili kwa ajili yangu" (Waebrania 10:5; Zaburi 40:7)
+## 2. "Umeandaa mwili kwa ajili yangu" (Waebrania 10:5; Zaburi 40:6)
 
 Waebrania inaweka maneno ya Zaburi 40 kinywani mwa Kristo anapokuja ulimwenguni. Kiwango chetu cha Linganifu:
 
 > {{OWB:HEB.10.5.s1:B}}
 
-Neno muhimu ni {{GREEK:HEB.10.5:12}} (*sōma*), "mwili." Lakini Kiebrania cha zaburi hiyo (40:7 kwa hesabu ya Kiebrania, 40:6 katika Biblia nyingi za Kiingereza) kina {{HEBREW:PSA.40.7:5-6}}, "masikio umenichimbia." Kiwango chetu cha Halisi cha zaburi hiyo kinabakiza picha hiyo:
+Neno muhimu ni {{GREEK:HEB.10.5:12}} (*sōma*), "mwili." Lakini Kiebrania cha zaburi hiyo (40:6 hapa na katika Biblia nyingi za Kiingereza, 40:7 katika Biblia za Kiebrania) kina {{HEBREW:PSA.40.7:5-6}}, "masikio umenichimbia." Kiwango chetu cha Halisi cha zaburi hiyo kinabakiza picha hiyo:
 
 > {{OWB:PSA.40.7.s1:L}}
 
@@ -81,10 +81,10 @@ Yakobo pia anabadilisha mwanzo. Amosi anasema "Siku hiyo nitainua"; Yakobo anase
 Katika Warumi 3, Paulo anathibitisha kwamba "wote, Wayahudi na Wagiriki vilevile, wako chini ya nguvu ya dhambi" kwa mfululizo wa nukuu, moja baada ya nyingine, bila kituo kati yake. Rekodi zetu zinataja chanzo cha kila moja:
 
 - mistari ya 10–12 kutoka Zaburi 14:1–3 (na Zaburi 53), pamoja na neno la Paulo mwenyewe "mwenye haki" badala ya "atendaye mema" wa zaburi;
-- mstari wa 13 kutoka Zaburi 5:10 na Zaburi 140:4 (hesabu ya Kiebrania);
+- mstari wa 13 kutoka Zaburi 5:9 na Zaburi 140:3;
 - mstari wa 14 kutoka Zaburi 10:7;
 - mistari ya 15–17 kutoka Isaya 59:7–8, kwa ufupi, pamoja na mwangwi wa Mithali 1:16;
-- mstari wa 18 kutoka Zaburi 36:2.
+- mstari wa 18 kutoka Zaburi 36:1.
 
 Paulo anafuata Septuaginta kwa mistari mingi kati ya hii, na anaiunganisha kuwa shtaka moja. Njia hii ya kuunganisha maandiko yenye mada moja, kama shanga kwenye uzi, ilijulikana katika mafundisho ya Kiyahudi. Msomaji wa leo angetarajia alama za kunukuu kuzunguka kila kipande. Paulo anatoa kanuni moja, "kama ilivyoandikwa," na kuuacha mnyororo wote usimame kama hukumu ya Maandiko.
 
@@ -108,9 +108,9 @@ Agano Jipya halifuati Septuaginta kila mara. Nukuu mbili zinaonyesha upana wa ja
 
 **"Nilimwita mwana wangu kutoka Misri"** (Mathayo 2:15; Hosea 11:1). Mathayo ananukuu maneno ya Hosea kuhusu kutoka Misri kwa Israeli na kuyatumia kwa Yesu. Hapa Mathayo anakubaliana na Kiebrania, "mwana wangu." Septuaginta ya Hosea inasoma "watoto wake." Rekodi yetu ya Hosea 11:1 inaeleza hili, na inasema kwa uaminifu kwamba maelezo yake ya Kigiriki "yameandikwa kutokana na ujuzi wa jumla," ili wakaguzi wayahakiki. Kwa vyovyote vile, Mathayo hakuuchukua mstari huo kutoka Septuaginta kama tuliyo nayo. Rekodi ya Mathayo 2:15 inaeleza jinsi Mathayo anavyousoma: "Katika Hosea mwana ni Israeli." Mathayo anamwona Yesu, Mwana wa Mungu, akipitia tena kisa cha Israeli, akiingia Misri na kutoka humo.
 
-**"Aliwapa wanadamu zawadi"** (Waefeso 4:8; Zaburi 68:19). Paulo ananukuu Zaburi 68, wimbo wa ushindi ambamo Mungu anapanda kwenda mlima wake mtakatifu, akiongoza mateka. Lakini pale ambapo zaburi ya Kiebrania na ya Kigiriki zote zinasema Mungu "alipokea zawadi" kutoka kwa wanadamu, Paulo anasema "aliwapa zawadi." Rekodi zetu za pande zote mbili zinaieleza tofauti hiyo katika maelezo ya chini. Zinaeleza kwamba tafsiri fafanuzi ya zamani ya Kiaramu ya Zaburi, na tafsiri ya Kisiria, pia zinasoma "aliwapa," kwa hiyo huenda Paulo anafuata ufafanuzi uliojulikana wa mstari huo. Rekodi ya Zaburi 68:19 inapendekeza jinsi mawili hayo yanavyopatana: "mshindi anayepokea kodi ndiye anayeigawa kwa watu wake." Rekodi ya Waefeso inaweka alama ya kutokuwa na uhakika kwenye jambo hili na inataja kusudi la Paulo waziwazi: Kristo aliyefufuka analipa kanisa lake zawadi, ambazo mistari ya 11–16 inaendelea kuziorodhesha.
+**"Aliwapa wanadamu zawadi"** (Waefeso 4:8; Zaburi 68:18). Paulo ananukuu Zaburi 68, wimbo wa ushindi ambamo Mungu anapanda kwenda mlima wake mtakatifu, akiongoza mateka. Lakini pale ambapo zaburi ya Kiebrania na ya Kigiriki zote zinasema Mungu "alipokea zawadi" kutoka kwa wanadamu, Paulo anasema "aliwapa zawadi." Rekodi zetu za pande zote mbili zinaieleza tofauti hiyo katika maelezo ya chini. Zinaeleza kwamba tafsiri fafanuzi ya zamani ya Kiaramu ya Zaburi, na tafsiri ya Kisiria, pia zinasoma "aliwapa," kwa hiyo huenda Paulo anafuata ufafanuzi uliojulikana wa mstari huo. Rekodi ya Zaburi 68:18 inapendekeza jinsi mawili hayo yanavyopatana: "mshindi anayepokea kodi ndiye anayeigawa kwa watu wake." Rekodi ya Waefeso inaweka alama ya kutokuwa na uhakika kwenye jambo hili na inataja kusudi la Paulo waziwazi: Kristo aliyefufuka analipa kanisa lake zawadi, ambazo mistari ya 11–16 inaendelea kuziorodhesha.
 
-Mfano mdogo zaidi ni **Warumi 10:18**, ambapo Paulo ananukuu Zaburi 19:5 (19:4 katika Biblia za Kiingereza): "Sauti yao ilitoka kwenda dunia yote." Septuaginta, ambayo Paulo anainukuu neno kwa neno, ina "sauti yao" au "mlio wao." Kiebrania kina neno linalomaanisha kamba ya kupimia. Kiwango chetu cha Halisi cha zaburi hiyo kinabakiza "kamba yao", na maelezo ya chini, yaliyowekewa alama ya kutokuwa na uhakika, yanaeleza Kigiriki.
+Mfano mdogo zaidi ni **Warumi 10:18**, ambapo Paulo ananukuu Zaburi 19:4: "Sauti yao ilitoka kwenda dunia yote." Septuaginta, ambayo Paulo anainukuu neno kwa neno, ina "sauti yao" au "mlio wao." Kiebrania kina neno linalomaanisha kamba ya kupimia. Kiwango chetu cha Halisi cha zaburi hiyo kinabakiza "kamba yao", na maelezo ya chini, yaliyowekewa alama ya kutokuwa na uhakika, yanaeleza Kigiriki.
 
 ## Mitume walikuwa wakifanya nini
 

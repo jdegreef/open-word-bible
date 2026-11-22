@@ -5,7 +5,7 @@ date: 2026-11-14
 order: 111
 nav_title: Kiti cha rehema
 section: passage
-source: 11837394ba09
+source: 1c83b4d3d4c8
 ---
 Katika chumba kitakatifu kabisa cha hema la Israeli kulikuwa na samani moja tu: sanduku la agano, kasha la mbao lililofunikwa kwa dhahabu, lililokuwa na mabamba ya agano. Juu yake kulikuwa na bamba la dhahabu safi lenye makerubi wawili wa dhahabu, mabawa yao yakiwa yamenyooshwa juu yake. Biblia za Kiingereza zimeliita bamba hilo "the mercy seat" kwa karibu miaka mia tano, na Biblia za Kiswahili zinaliita "kiti cha rehema". Nyingine zinaliita "kifuniko cha upatanisho" au "kifuniko" tu. Uchaguzi huu una uzito kuliko unavyoonekana, kwa sababu jamii ileile ya maneno inaanzia kwenye kifuniko cha sanduku na kufika kwenye kiini cha mafundisho ya Agano Jipya kuhusu msalaba.
 
@@ -53,7 +53,7 @@ Kitenzi kilicho nyuma ya *kapporet* ni *kipper*, ambacho kwa kawaida hutafsiriwa
 
 Neno la Kiingereza "atonement" lina historia ya kuvutia. Liliundwa kutokana na "at one", yaani "kuwa kitu kimoja": kuzifanya pande mbili kuwa kitu kimoja, kuzipatanisha. Tyndale alichangia sana kulileta katika Biblia ya Kiingereza. Neno la Kiswahili "upatanisho" lina picha inayofanana: linatokana na "kupatana", kuelewana, na hivyo linamaanisha kuwaleta pamoja walioachana. Lakini kitenzi cha Kiebrania kinamaanisha nini? Wataalamu wamependekeza picha tatu kuu, na rekodi zinazibakiza zote tatu.
 
-**Kufunika.** Yakobo, akiogopa kukutana na Esau, anatuma zawadi mbele yake ili "kufunika uso wake", yaani kumtuliza, ili asilione tena kosa (Mwanzo 32:21). Uamuzi wa maana pale unaeleza kwamba kitenzi hiki "ndicho kinachotumika baadaye kwa upatanisho, kufunika au kufuta kosa". Baadhi ya Zaburi zinasema Mungu "anazifunika" dhambi: "wewe unazifunika dhambi zetu za uasi" (Zaburi 65:4, Linganifu). Halisi ya Kiswahili inaibakiza picha hii hata katika Isaya 6:7: "dhambi yako imefunikwa".
+**Kufunika.** Yakobo, akiogopa kukutana na Esau, anatuma zawadi mbele yake ili "kufunika uso wake", yaani kumtuliza, ili asilione tena kosa (Mwanzo 32:20). Uamuzi wa maana pale unaeleza kwamba kitenzi hiki "ndicho kinachotumika baadaye kwa upatanisho, kufunika au kufuta kosa". Baadhi ya Zaburi zinasema Mungu "anazifunika" dhambi: "wewe unazifunika dhambi zetu za uasi" (Zaburi 65:3, Linganifu). Halisi ya Kiswahili inaibakiza picha hii hata katika Isaya 6:7: "dhambi yako imefunikwa".
 
 **Kusafisha.** Mambo ya Walawi linatumia kitenzi hiki kwa kulisafisha hema lenyewe kutokana na unajisi wa watu (16:16), na linaeleza kusudi waziwazi:
 

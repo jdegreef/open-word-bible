@@ -5,7 +5,7 @@ date: 2026-11-14
 order: 107
 nav_title: Christ ou Messie
 section: passage
-source: a8da5637121a
+source: 92b071060a02
 ---
 Beaucoup de lecteurs rencontrent le mot "Christ" bien avant de savoir ce qu'il veut dire. Il sonne comme un nom de famille : Jésus-Christ, comme on dirait Jean Dupont. En réalité, c'est un titre, et les auteurs du Nouveau Testament savaient exactement ce qu'il voulait dire. Le grec {{LEMMA:JHN.1.41:18}} (*christos*) signifie "oint", et il traduit l'hébreu *mashiach*, devenu en français "Messie". Les deux mots disent la même chose, dans deux langues.
 
@@ -75,7 +75,7 @@ Trois sortes de mots ne prennent jamais le réglage.
 
 **"Chrétiens".** Le nom donné aux disciples à Antioche est un autre mot grec, formé sur *christos*. C'est le nom d'un groupe, et il reste "chrétiens", avec une minuscule, comme le français écrit le nom des fidèles d'une religion.
 
-**"Oint" dans l'Ancien Testament.** L'hébreu *mashiach* est traduit "oint" à chaque niveau, comme en 1 Samuel 24:7 et au Psaume 2:2 ci-dessus ; là où "oint" n'est pas un mot courant, l'Équilibrée et la Simple disent "le roi qu'il a oint". Il n'y a pas de réglage, parce que dans la plupart de ces versets le mot décrit un roi ou un prêtre précis, et "le Messie" affirmerait plus que le verset ne dit. Les décisions de sens regardent plutôt vers l'avenir. Au Psaume 18:51, le dossier dit que le mot "est celui qui se trouve derrière 'Messie' et 'Christ', et que la promesse a plus tard été comprise comme annonçant le Messie". En Daniel 9:25–26, où "un oint" sera retranché, la décision est marquée comme incertaine et énumère les manières dont les lecteurs l'ont compris, du grand prêtre Onias III à Jésus le Messie. C'est une question de sens, et le sens n'est jamais un réglage.
+**"Oint" dans l'Ancien Testament.** L'hébreu *mashiach* est traduit "oint" à chaque niveau, comme en 1 Samuel 24:6 et au Psaume 2:2 ci-dessus ; là où "oint" n'est pas un mot courant, l'Équilibrée et la Simple disent "le roi qu'il a oint". Il n'y a pas de réglage, parce que dans la plupart de ces versets le mot décrit un roi ou un prêtre précis, et "le Messie" affirmerait plus que le verset ne dit. Les décisions de sens regardent plutôt vers l'avenir. Au Psaume 18:50, le dossier dit que le mot "est celui qui se trouve derrière 'Messie' et 'Christ', et que la promesse a plus tard été comprise comme annonçant le Messie". En Daniel 9:25–26, où "un oint" sera retranché, la décision est marquée comme incertaine et énumère les manières dont les lecteurs l'ont compris, du grand prêtre Onias III à Jésus le Messie. C'est une question de sens, et le sens n'est jamais un réglage.
 
 ## Un réglage, non une seconde traduction
 
