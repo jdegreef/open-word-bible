@@ -43,7 +43,8 @@ class ReadingSyncTest(TestCase):
                         place={"book": "JHN", "chapter": 3, "verse": "16", "at": 100})
         expected = {"marks": {"JHN.3.16": {"b": True, "h": "yellow", "text": "For God", "lang": "en", "at": 100}},
                     "place": {"book": "JHN", "chapter": 3, "verse": "16", "at": 100},
-                    "plans": None, "settings": None, "notes": {}, "words": {}, "myplans": {}, "memory": {}}
+                    "plans": None, "settings": None, "notes": {}, "words": {}, "myplans": {}, "memory": {},
+                    "numbering": "niv"}
         self.assertEqual(out, expected)
         self.assertEqual(self.client.get("/api/reading").json(), expected)
 
@@ -118,7 +119,7 @@ class ReadingSyncTest(TestCase):
         _, other = signed_in("other@example.org")
         self.assertEqual(other.get("/api/reading").json(),
                          {"marks": {}, "place": None, "plans": None, "settings": None,
-                          "notes": {}, "words": {}, "myplans": {}, "memory": {}})
+                          "notes": {}, "words": {}, "myplans": {}, "memory": {}, "numbering": "niv"})
 
 
 def plans(active=None, at=0, **each):

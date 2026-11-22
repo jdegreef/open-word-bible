@@ -1,4 +1,4 @@
-// web/site.js's OWBRenumbered: a browser's verses saved before the site
+// web/site.js's OWBRenumber: a browser's verses saved before the site
 // used NIV numbers move as owb/renumber.py moves them (tests/test_renumber.py).
 // Run: node --test tests/js/
 import { test } from "node:test";
@@ -8,8 +8,8 @@ import vm from "node:vm";
 
 const ROOT = new URL("../../", import.meta.url).pathname;
 const SITE = readFileSync(ROOT + "web/site.js", "utf8");
-const START = SITE.indexOf("window.OWBRenumbered = (function");
-const CODE = SITE.slice(START, SITE.indexOf("})();", START) + 5);
+const START = SITE.indexOf("window.OWBRenumber = (function");
+const CODE = SITE.slice(START, SITE.indexOf("\n// Sync for a signed-in reader", START));
 const SWITCHED = 1795268400000, OLD = 100, NEW = SWITCHED + 100;
 // A few rows of /renumber.json (owb/renumber.py table()).
 const TABLE = { switched: SWITCHED, verses: {
@@ -18,7 +18,7 @@ const TABLE = { switched: SWITCHED, verses: {
 
 async function moved(saved) {
   const store = {};
-  for (const [k, v] of Object.entries(saved)) store[k] = JSON.stringify(v);
+  for (const [k, v] of Object.entries(saved)) store[k] = typeof v === "string" ? v : JSON.stringify(v);
   let events = 0;
   const window = { fetch: true };
   vm.runInNewContext(CODE, {
@@ -27,10 +27,10 @@ async function moved(saved) {
     document: { dispatchEvent: () => { events++; } }, Event: function () {},
     fetch: () => Promise.resolve({ ok: true, json: () => TABLE }),
   });
-  await window.OWBRenumbered;
+  await window.OWBRenumber.ready;
   const out = {};
   for (const k of Object.keys(store)) out[k] = k === "owb.numbering" ? store[k] : JSON.parse(store[k]);
-  return { out, events };
+  return { out, events, window };
 }
 
 test("what was saved before the switch moves, and only once", async () => {
@@ -55,4 +55,12 @@ test("a key with no renumbered verse is left as it is", async () => {
                                 "owb.place": { book: "JHN", chapter: 8, verse: "7:53", at: OLD } });
   assert.deepEqual(Object.keys(out["owb.notes"]), ["GAL.6.16-14"]);
   assert.equal(out["owb.place"].verse, "7:53");
+});
+
+test("a copy from an account not yet moved is moved the same way", async () => {
+  const { window } = await moved({ "owb.numbering": "niv" });
+  const copy = await window.OWBRenumber.copy({ marks: { "PSA.3.2": { h: "blue", at: OLD }, "PSA.3.3": { h: "pink", at: NEW } },
+                                               place: null, plans: null });
+  assert.deepEqual(JSON.parse(JSON.stringify(copy.marks)), { "PSA.3.1": { h: "blue", at: OLD }, "PSA.3.3": { h: "pink", at: NEW } });
+  assert.equal(copy.place, null);
 });

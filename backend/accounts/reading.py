@@ -352,6 +352,9 @@ def state(user):
         "words": {w.lemma: word_json(w) for w in SavedWord.objects.filter(user=user)},
         "myplans": reader.custom_plans if reader and reader.custom_plans else {},
         "memory": reader.memory if reader and reader.memory else {},
+        # Its verses are in NIV numbers (accounts/migrations/0024): a browser
+        # takes a copy without this as one still to move (web/site.js).
+        "numbering": "niv",
     }
 
 
