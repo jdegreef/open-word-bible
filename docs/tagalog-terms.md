@@ -2079,3 +2079,12 @@ names the book where the form was first used.
 | Ecclesiastes 1:3 | under the sun; toil | *sa ilalim ng araw* (L, B; R *dito sa lupa*, *sa mundong ito*); *pagpapagal* (B, R *pagsisikap*) |  |
 | Ecclesiastes 1:14 | chasing of wind | *paghahabol sa hangin* (L, B); R "pagsisikap na hulihin ang hangin" |  |
 | Ecclesiastes 12:13 | fear God | *matakot sa Diyos* (L, B); R "igalang ang Diyos nang may pagkamangha" |  |
+| Song of Songs 1:13 | beloved (her word, *dod*); darling (his word, *ra'yah*) | *aking sinta*; *aking irog* |  |
+| Song of Songs 2:17 | Bether | Beter |  |
+| Song of Songs 4:8 | bride; my sister (endearment) | *nobya*; *aking kapatid* (R "na mahal ko na parang kapatid") |  |
+| Song of Songs 2:7 | daughters of Jerusalem | *mga anak na babae ng Jerusalem* (L); *mga babae ng Jerusalem* (B, R) |  |
+| Song of Songs 6:4 | Tirzah | Tirza | as at Numbers 26:33 |
+| Song of Songs 6:12 | Ammi-nadib | Amminadib |  |
+| Song of Songs 7:1 | Shulammite; Mahanaim | Sulamita; Mahanaim |  |
+| Song of Songs 7:5 | Bath-rabbim | Bat-rabim |  |
+| Song of Songs 8:11 | Baal-hamon | Baal-hamon |  |
