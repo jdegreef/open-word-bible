@@ -2323,3 +2323,9 @@ names the book where the form was first used.
 | Amos 8:14 | guilt of Samaria | *pagkakasala ng Samaria* (L); R *makasalanang diyus-diyosan ng Samaria* |  |
 | Amos 9:5 | Lord GOD of hosts | *Panginoong DIYOS ng mga hukbo* | as Isaiah |
 | Amos 9:11 | the fallen booth of David | *ang nabuwal na kubol ni David* | Acts 15:16 |
+| Obadiah 1:1 | the vision of Obadiah | *ang pangitain ni Obadias* |  |
+| Obadiah 1:3 | clefts of the rock | *mga bitak ng bato* |  |
+| Obadiah 1:12 | make your mouth big | *palakihin ang iyong bibig* (L); *nagyabang* (B, R) | boast |
+| Obadiah 1:14 | crossroads | *sangandaan* |  |
+| Obadiah 1:20 | Sepharad | *Sefarad* | place not known for certain |
+| Obadiah 1:21 | deliverers | *mga tagapagligtas* | like the judges |
