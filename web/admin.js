@@ -2305,22 +2305,38 @@ var OWBAdminNav = (function () {
         h("span", null, h("strong", null, a.actor || "The admin"), " " + (ACTION_LABEL[a.action] || a.action) + " " + a.target + extra));
     }));
   }
+  // The activity log, narrowed by who did it and what kind of thing.
+  var ACTIVITY = { by: "", kind: "" };
+  var KIND_LABEL = { role: "Roles", user: "Accounts", message: "Reader messages", job: "Drafting jobs", article: "Article jobs",
+    fix: "Fix requests", email: "Team email", digest: "Digests", export: "Downloads", review: "Review steps taken back" };
   VIEWS.activity = function () {
+    var f = ACTIVITY;
     var list = h("div");
     var more = h("button", { type: "button", class: "admin-btn", hidden: true }, "Older");
-    var last = null;
+    var last = null, first = null;
     function load() {
       busy(more, true);
-      return api("/api/admin/activity/" + (last ? "?before=" + last : "")).then(function (d) {
+      var q = [last ? "before=" + last : "", f.by ? "by=" + encodeURIComponent(f.by) : "", f.kind ? "kind=" + f.kind : ""].filter(Boolean).join("&");
+      return api("/api/admin/activity/" + (q ? "?" + q : "")).then(function (d) {
+        first = first || d;
         if (d.actions.length) last = d.actions[d.actions.length - 1].id;
-        list.appendChild(d.actions.length || last ? activityList(d.actions) : empty("Nothing done in the admin yet."));
+        list.appendChild(d.actions.length || last ? activityList(d.actions)
+          : empty(f.by || f.kind ? "Nothing like that in the log." : "Nothing done in the admin yet."));
         more.hidden = !d.more;
         busy(more, false);
       });
     }
     more.addEventListener("click", function () { later(more, load()); });
     return load().then(function () {
-      return [head("Team", "Activity log", "What was done in the admin, newest first: roles, accounts, replies, jobs and emails. Reviews keep their own record."), list, more, approvalLog()];
+      var by = select("activity-by", [["", "Everyone"]].concat(first.people.map(function (p) { return [p, p]; })), f.by);
+      by.setAttribute("aria-label", "Who");
+      var kind = select("activity-kind", [["", "Everything"]].concat(first.kinds.map(function (k) { return [k, KIND_LABEL[k] || k]; })), f.kind);
+      kind.setAttribute("aria-label", "What");
+      [by, kind].forEach(function (sel) {
+        sel.addEventListener("change", function () { f.by = by.value; f.kind = kind.value; route(); });
+      });
+      return [head("Team", "Activity log", "What was done in the admin, newest first: roles, accounts, replies, jobs and emails. Reviews keep their own record."),
+        h("div", { class: "admin-toolbar admin-filters" }, by, kind), list, more, approvalLog()];
     });
   };
 
