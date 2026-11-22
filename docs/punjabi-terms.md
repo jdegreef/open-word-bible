@@ -1391,3 +1391,56 @@ People and places: ਪੌਲੁਸ, ਤੁਖਿਕੁਸ; ਅਫ਼ਸੁਸ, �
 - For the reviewer: ਵਿਰਾਸਤ and ਮਿਲਖ were mixed in early chapters; nachalah
   is now ਵਿਰਾਸਤ in 19-24, but chapters 1, 12 and 21 use ਮਿਲਖ where the Hebrew
   is "possession", which is intended.
+
+### 2 Samuel
+
+- God takes the honorific plural (ਉਨ੍ਹਾਂ ਨੇ, ਬਿਰਾਜਮਾਨ ਹਨ) with no
+  deity_pronoun spans; David and the song of chapter 22 say ਤੂੰ to God. God's
+  words to David use ਤੂੰ (7, 12:7-12, 24:12), while Nathan and Gad say ਤੁਸੀਂ to
+  the king around them.
+- Address: kings get ਤੁਸੀਂ; court titles ਮੇਰੇ ਸੁਆਮੀ ਰਾਜਾ (L), ਮੇਰੇ ਸੁਆਮੀ
+  ਮਹਾਰਾਜ (B), ਮਹਾਰਾਜ (R), with honorific verbs (ਆਏ ਹਨ, ਚਾਹੁੰਦੇ ਹਨ). David says
+  ਤੂੰ to Jonathan, messengers, Shimei, Mephibosheth, Abishai, Amasa and
+  Araunah, and ਤੁਸੀਂ to Barzillai. Joab says ਤੂੰ to soldiers, Ahimaaz and
+  Amasa, ਤੁਸੀਂ to David; Absalom says ਤੂੰ to Hushai, who says ਤੁਸੀਂ back.
+- Refrain of 1:19, 25, 27: ਸੂਰਮੇ ਕਿਵੇਂ ਡਿੱਗ ਪਏ! (L), ਹਾਏ, ਸੂਰਮੇ ਕਿਵੇਂ ਡਿੱਗ
+  ਪਏ! (B), ਹਾਏ, ਬਹਾਦਰ ਜੋਧੇ ਕਿਵੇਂ ਮਾਰੇ ਗਏ! (R).
+- Chapter 7 (the promise): house ਘਰ (L), ਘਰਾਣਾ (B), ਰਾਜਿਆਂ ਦਾ ਵੰਸ explained
+  (R); offspring ਅੰਸ (L, B); 7:14 ਮੈਂ ਉਸ ਦੇ ਲਈ ਪਿਤਾ ਹੋਵਾਂਗਾ, ਅਤੇ ਉਹ ਮੇਰੇ ਲਈ
+  ਪੁੱਤਰ ਹੋਵੇਗਾ (L), which Hebrews 1:5 and 2 Corinthians 6:18 should be checked
+  against. Hesed: God's ਅਟੱਲ ਪਿਆਰ at every level; between people ਅਟੱਲ ਪਿਆਰ
+  (L), ਕਿਰਪਾ or ਵਫ਼ਾਦਾਰੀ (B, R).
+- Court (8:16-18, 20:23-26): recorder ਇਤਿਹਾਸਕਾਰ, secretary ਲਿਖਾਰੀ, forced
+  labor ਬੇਗਾਰ, Cherethites and Pelethites ਕਰੇਤੀ, ਪਲੇਤੀ.
+- Worship: LORD of hosts ਸੈਨਾਂ ਦੇ ਪ੍ਰਭੂ; enthroned on the cherubim
+  ਕਰੂਬੀਆਂ ਉੱਤੇ ਬਿਰਾਜਮਾਨ; ark ਸੰਦੂਕ; burnt offering ਹੋਮ ਬਲੀ; peace offering
+  ਸੁੱਖ-ਸਾਂਦ ਦੀ ਬਲੀ; altar ਜਗਵੇਦੀ; threshing floor ਪਿੜ; temple ਹੈਕਲ; Most
+  High ਅੱਤ ਮਹਾਨ; sackcloth ਤੱਪੜ; atonement ਪ੍ਰਾਸਚਿਤ; Sheol ਪਤਾਲ (L, B),
+  ਕਬਰ (R); rock: sela ਉੱਚੀ ਚਟਾਨ, tsur ਚਟਾਨ.
+- Chapter 24: pestilence (dever) ਮਰੀ (L), ਮਹਾਂਮਾਰੀ (B, R); plague
+  (maggefah) ਮਹਾਂਮਾਰੀ (L, R), ਬਵਾ (B). Joshua 22:17 used ਬਵਾ for plague;
+  worth unifying in review. Araunah ਅਰਵਨਾਹ (1 Chronicles 21 has Ornan); Gad
+  ਨਬੀ and ਦਰਸ਼ੀ; 50 shekels `{{units:ਲਗਭਗ 575 ਗ੍ਰਾਮ ਚਾਂਦੀ|ਚਾਂਦੀ ਦੇ ਪੰਜਾਹ
+  ਸ਼ੇਕੇਲ}}` (B, R); large numbers in Indian grouping (8,00,000).
+- Other terms: terebinth ਬਲੂਤ (L, B), ਵੱਡਾ ਰੁੱਖ (R); mule ਖੱਚਰ; trumpet
+  ਨਰਸਿੰਗਾ; watchman ਪਹਿਰੇਦਾਰ; gatekeeper ਦਰਬਾਨ; siege ramp ਦਮਦਮਾ; rampart
+  ਫ਼ਸੀਲ; impale ਟੰਗ ਦੇਣਾ (L, B), R explains the poles; Rapha ਰਾਫ਼ਾ (R ਦੈਂਤ).
+- Gender spans at L only: `{{gender:ਇਸਰਾਏਲ ਦੀ ਸੰਤਾਨ|ਇਸਰਾਏਲ ਦੇ ਪੁੱਤਰਾਂ}}`,
+  22:26 `{{gender:ਸੂਰਮੇ|ਸੂਰਮੇ ਪੁਰਖ}}`, 23:7 `{{gender:ਜੋ ਕੋਈ|ਜਿਹੜਾ ਮਨੁੱਖ}}`,
+  24:15 `{{gender:ਲੋਕ|ਮਨੁੱਖ}}`.
+- Wording other books must match:
+  - Chapter 22 sets the wording for Psalm 18; 22:50 L/B follow Romans 15:9
+    (ਤੇਰੀ ਉਸਤਤ ਕਰਾਂਗਾ ... ਤੇਰੇ ਨਾਮ ਦੇ ਭਜਨ ਗਾਵਾਂਗਾ).
+  - 20:1 (ਦਾਊਦ ਵਿੱਚ ਸਾਡਾ ਕੋਈ ਹਿੱਸਾ ਨਹੀਂ ...) sets 1 Kings 12:16 and
+    2 Chronicles 10:16.
+  - 23:8-39 sets the spellings of David's mighty men for 1 Chronicles 11.
+  - Chapters 5-8, 10, 23 and 24 set names and wording for 1 Chronicles 11-21.
+- Names: ਈਸ਼-ਬੋਸ਼ਥ, ਅਬਨੇਰ, ਅਸਾਹੇਲ, ਯੋਆਬ, ਅਬੀਸ਼ਈ, ਸਰੂਯਾਹ, ਮਫ਼ੀਬੋਸ਼ਥ, ਸੀਬਾ,
+  ਮੀਕਲ, ਉੱਜ਼ਾਹ, ਓਬੇਦ-ਅਦੋਮ, ਬਆਲ-ਪਰਾਸੀਮ, ਬਥ-ਸ਼ਬਾ, ਹਿੱਤੀ ਊਰੀਯਾਹ, ਅਲੀਆਮ, ਨਾਥਾਨ,
+  ਯਦੀਦਯਾਹ, ਰੱਬਾ, ਅਮਨੋਨ, ਤਾਮਾਰ, ਯੋਨਾਦਾਬ, ਅਬਸ਼ਾਲੋਮ, ਤਕੋਆ, ਗੀਲੋਨੀ ਅਹੀਥੋਫ਼ਲ,
+  ਅਰਕੀ ਹੂਸ਼ਈ, ਸਾਦੋਕ, ਅਬਯਾਥਾਰ, ਅਹੀਮਅਸ, ਇੱਤਈ, ਸ਼ਿਮਈ, ਮਹਨਇਮ, ਬਰਜ਼ਿੱਲਈ, ਕਿਮਹਾਮ,
+  ਅਮਾਸਾ, ਕੂਸ਼ੀ, ਬਿਕਰੀ ਦਾ ਪੁੱਤਰ ਸ਼ਬਾ (B/R ਸ਼ਬਾ after the first mention),
+  ਆਬੇਲ-ਬੈਤ-ਮਾਕਾਹ, ਅਦੋਰਾਮ, ਸ਼ਵਾ, ਯਾਈਰੀ ਈਰਾ, ਗਿਬਓਨੀ, ਅੱਯਾਹ ਦੀ ਧੀ ਰਿਸਪਾਹ,
+  ਅਦਰੀਏਲ, ਯਿਸ਼ਬੀ-ਬਨੋਬ, ਅਲਹਾਨਾਨ, ਗੋਲਿਅਥ, ਯੋਸ਼ੇਬ-ਬੱਸ਼ਬਥ, ਅਲਆਜ਼ਾਰ, ਸ਼ੰਮਾਹ,
+  ਯਹੋਯਾਦਾ ਦਾ ਪੁੱਤਰ ਬਨਾਯਾਹ, ਅਰੋਏਰ, ਯਾਜ਼ੇਰ, ਤਹਤੀਮ-ਹਾਦਸ਼ੀ, ਦਾਨ-ਯਾਨ, ਸੈਦਾ, ਸੂਰ,
+  ਯਬੂਸੀ ਅਰਵਨਾਹ.
