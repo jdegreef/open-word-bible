@@ -2198,3 +2198,100 @@ names the book where the form was first used.
 | Lamentations 1:1 | How ...! (*ekah*) | *Paanong ...!* | the opening cry at 1:1, 2:1 and 4:1 |
 | Lamentations 2:1 | Daughter Zion | *anak na babae ng Zion* (L); *Anak na Zion* (B); *bayan ng Zion* (R) |  |
 | Lamentations 2:11 | the daughter of my people | *anak na babae ng aking bayan* (L); *aking minamahal na bayan* (B); *aking bayan* (R) |  |
+| Ezekiel 1:1 | river Kebar; Kebar Canal | *ilog Kebar* (L); *Kanal ng Kebar* (B, R) |  |
+| Ezekiel 2:1 | son of man | *anak ng tao* | how God addresses Ezekiel; lowercase, not a title |
+| Ezekiel 2:3 | rebellious house | *sambahayan ng paghihimagsik* (L); *mapaghimagsik na sambahayan* (B); *mga taong ayaw sumunod* (R) |  |
+| Ezekiel 2:4 | Thus says the Lord GOD | *Ganito ang sabi ng Panginoong DIYOS* (L); *Ito ang sinasabi ng Panginoong DIYOS* (B, R) | *Panginoong DIYOS* as in Isaiah and Jeremiah |
+| Ezekiel 3:15 | Tel-abib | Tel-abib |  |
+| Ezekiel 3:17 | watchman | *bantay* |  |
+| Ezekiel 6:7 | you will know that I am the LORD | *malalaman ninyo na ako ang PANGINOON* (L); B and R open with *Kung magkagayon ay* | the book's refrain |
+| Ezekiel 8:14 | Tammuz | Tammuz |  |
+| Ezekiel 10:1 | cherubim | *kerubin* |  |
+| Ezekiel 16:15 | prostitution (*zanah*) | *pagpapatutot* (L, B); *hindi naging tapat* (R) | R keeps the picture with *gaya ng babaing maraming mangingibig* |
+| Ezekiel 20:5 | I lifted my hand | *itinaas ko ang aking kamay* (L); *sumumpa ako* (B); *nangako ako nang may sumpa* (R) | an oath |
+| Ezekiel 23:4 | Oholah; Oholibah | Ohola; Oholiba |  |
+| Ezekiel 23:23 | Pekod; Shoa; Koa | Pekod; Soa; Koa |  |
+| Ezekiel 27:8 | Arvad | Arvad |  |
+| Ezekiel 27:9 | Gebal | Gebal |  |
+| Ezekiel 27:11 | Helech; Gammadim | Helek; *mga Gamadeo* |  |
+| Ezekiel 27:14 | Beth-togarmah | Bet-togarma |  |
+| Ezekiel 27:18 | Helbon; Zahar | Helbon; Zahar |  |
+| Ezekiel 27:19 | Vedan; Uzal | Vedan; Uzal |  |
+| Ezekiel 27:23 | Haran; Canneh; Eden; Asshur; Chilmad | Haran; Kane; Eden; Ashur; Kilmad |  |
+| Ezekiel 29:10 | Migdol; Syene | Migdol; Siene (L, B), *Aswan* (R) |  |
+| Ezekiel 30:5 | Cub | Kub |  |
+| Ezekiel 30:14 | Pathros; Zoan; Thebes | Patros; Zoan; Tebas |  |
+| Ezekiel 30:15 | Sin | Sin (L, B); *Pelusio* (R) |  |
+| Ezekiel 30:17 | Aven; Pi-beseth | Aven (L, B), *On* (R); Pi-beset |  |
+| Ezekiel 31:15 | Sheol | Sheol (L, B); *libingan* (R) | R as in Isaiah |
+| Ezekiel 32:18 | the pit; those who go down to the pit | *hukay*; *mga bumababa sa hukay* |  |
+| Ezekiel 34:24 | prince (*nasi') | *prinsipe* (L, B; R where the English has prince); *pinuno* (R, chapters 44-48) |  |
+| Ezekiel 34:25 | covenant of peace | *tipan ng kapayapaan* |  |
+| Ezekiel 38:2 | Gog; Magog; chief prince (*rosh*) | Gog; Magog; *pangunahing prinsipe* |  |
+| Ezekiel 38:6 | Gomer | Gomer |  |
+| Ezekiel 39:11 | valley of the Travelers; Hamon-gog | *libis ng mga Manlalakbay*; Hamon-gog |  |
+| Ezekiel 39:16 | Hamonah | Hamona |  |
+| Ezekiel 40:3 | measuring reed | *panukat na tambo*; as a unit *tambo*, under `units` at B and R: *mga 3.2 metro* | six long cubits |
+| Ezekiel 40:5 | long cubit | *siko*; under `units` at B and R at about 53 cm (*mga 5.3 metro* for ten cubits) | a cubit and a handbreadth |
+| Ezekiel 40:7 | alcove; jamb; porch; threshold | *silid-bantay*; *haligi*; *portiko*; *bungad* | the gate plan of chapter 40 |
+| Ezekiel 40:17 | outer court; pavement | *panlabas na looban*; *latag na bato* |  |
+| Ezekiel 41:1 | hall (*heykal*) | *bulwagan* (L); *malaking bulwagan* (B); *pangunahing silid* (R) |  |
+| Ezekiel 41:4 | holy of holies | *Kabanal-banalang Dako* (L); *Dakong Kabanal-banalan* (B, R) |  |
+| Ezekiel 41:5 | side chamber | *silid sa gilid* |  |
+| Ezekiel 41:12 | separate area | *hiwalay na pook* |  |
+| Ezekiel 43:13 | gutter; ledge; altar hearth | *kanal*; *pasamano*; *apuyan ng dambana* |  |
+| Ezekiel 47:8 | the sea (Dead Sea) | *Dagat na Alat* (B); *Dagat na Patay* (R) |  |
+| Ezekiel 47:10 | En-eglaim; the Great Sea | En-eglaim; *Dakilang Dagat* (L, B), *Dagat Mediteraneo* (R) |  |
+| Ezekiel 47:15 | Hethlon | Hetlon |  |
+| Ezekiel 47:16 | Berothah; Sibraim; Hazer-hatticon; Hauran | Berota; Sibraim; Hazer-hatikon; Hauran |  |
+| Ezekiel 47:19 | Meribath-kadesh | Meribat-kades |  |
+| Ezekiel 48:35 | The LORD Is There | *Naroon ang PANGINOON* | the name of the city |
+| Daniel 1:3 | Ashpenaz; chief of the eunuchs | Ashpenaz; *pinuno ng mga eunuko* (L), *punong opisyal ng korte* (B), *punong opisyal ng palasyo* (R) |  |
+| Daniel 1:7 | Belteshazzar | Beltesasar | Daniel's court name |
+| Daniel 1:20 | magicians; enchanters | *mga salamangkero*; *mga engkantador* |  |
+| Daniel 2:2 | sorcerers; Chaldeans (the experts) | *mga manggagaway*; *mga Caldeo* (L, B), *mga astrologo* (R) | the people as a whole stay *mga Caldeo* (R *mga taga-Babilonia*) |
+| Daniel 2:4 | O king, live forever | *O hari, mabuhay ka magpakailanman* (L, B); *Mahal na Hari, mabuhay po kayo magpakailanman* (R) | R speaks to kings with *po* and *kayo* |
+| Daniel 2:12 | wise men | *mga pantas* |  |
+| Daniel 2:27 | diviners | *mga manghuhula* |  |
+| Daniel 3:1 | Dura; cubit | Dura; *siko* (L), units span *mga 27 metro* for 60 cubits (B, R) | a 45 cm cubit |
+| Daniel 3:2 | satraps; prefects | *mga satrapa* (L, B), *mga gobernador ng mga rehiyon* (R); *mga prepekto* |  |
+| Daniel 3:5 | horn; pipe; lyre; trigon; harp; bagpipe | *tambuli*; *plauta*; *lira*; *trigon* (R *sitara*); *alpa*; *gaita* |  |
+| Daniel 3:6 | blazing furnace | *hurno ng nagliliyab na apoy* (L); *nagliliyab na hurno* (B); *napakainit na hurno* (R) |  |
+| Daniel 3:26 | the Most High God; the Most High | *ang Kataas-taasang Diyos*; *ang Kataas-taasan* (R *ang Kataas-taasang Diyos*) |  |
+| Daniel 4:10 | watcher | *bantay* (L, B); *sugo mula sa langit* (R) | a heavenly being |
+| Daniel 5:25 | MENE, MENE, TEKEL, PARSIN; PERES | MENE, MENE, TEKEL at PARSIN; PERES | kept as written |
+| Daniel 5:28 | Medes and Persians | *mga Medo at mga Persiano* |  |
+| Daniel 6:8 | den of lions | *yungib ng mga leon* (L, B); *hukay ng mga leon* (R) |  |
+| Daniel 7:9 | Ancient of Days | *Matanda sa mga Araw* (L, B); *ang Sinauna* (R) |  |
+| Daniel 7:13 | one like a son of man | *isang gaya ng anak ng tao* (L, B); *isang mukhang tao* (R) |  |
+| Daniel 7:18 | holy ones of the Most High | *mga banal ng Kataas-taasan* (L, B); *banal na bayan ng Diyos* (R) |  |
+| Daniel 8:2 | Susa; Ulai | Susa; *Kanal ng Ulai* |  |
+| Daniel 8:11 | Prince of the host | *Prinsipe ng hukbo* (L, B); *Prinsipe ng hukbo ng langit* (R) | God; deity pronouns follow |
+| Daniel 8:16 | Gabriel | Gabriel |  |
+| Daniel 8:21 | Greece | Gresya | the Hebrew is Javan |
+| Daniel 9:24 | seventy sevens | *pitumpung pito* (L, B); *pitumpung pangkat ng pito* (R) |  |
+| Daniel 9:27 | abomination that makes desolate | *kasuklam-suklam na nagdudulot ng pagkawasak* (L, B); *kasuklam-suklam na bagay na nagdudulot ng pagkawasak* (R) | as Leviticus 11:10 *kasuklam-suklam* |
+| Daniel 10:13 | prince of Persia; Michael | *prinsipe ng kaharian ng Persia* (L, B), *naghaharing anghel* (R); Mikael | heavenly powers |
+| Daniel 11:5 | king of the south; king of the north | *hari ng timog*; *hari ng hilaga* |  |
+| Daniel 11:43 | Libyans; Cushites | *mga Libyo* (L, B), Libya (R); *mga Cusita* (L, B), Etiopia (R) |  |
+| Hosea 1:1 | Uzziah; Hezekiah; Joash | Uzias; Hezekias; Joas | as in Kings and Isaiah |
+| Hosea 1:2 | wife of prostitution; prostitute (*zanah*) | *babaing mapagpatutot*; *magpatutot* (L, B), *hindi naging tapat* (R) | as Ezekiel 16:15 |
+| Hosea 1:3 | Gomer daughter of Diblaim | Gomer na anak ni Diblaim |  |
+| Hosea 1:6 | Lo-ruhamah | Lo-ruhama (L); *Hindi Kinahabagan* (B, R) | B and R translate the name |
+| Hosea 1:9 | Lo-ammi | Lo-ammi (L); *Hindi Ko Bayan* (B, R) | B and R translate the name |
+| Hosea 2:3 | Ammi; Ruhamah | Ammi; Ruhama (L); *Aking Bayan*; *Kinahabagan* (B, R) |  |
+| Hosea 2:4 | declares the LORD | *ang pahayag ng PANGINOON* (L, B); *sabi ng PANGINOON* (R) | plain YHWH, not Adonai YHWH |
+| Hosea 2:7 | lovers | *mga mangingibig* | the Baals |
+| Hosea 2:18 | My husband; My Baal | *Aking asawa*; *Aking Baal* | R adds *Aking panginoon* |
+| Hosea 2:21 | betroth | *itatalaga kita sa akin bilang asawa* (L, B); *gagawin kitang aking nobya* (R) |  |
+| Hosea 3:2 | fifteen shekels of silver; homer and a lethech of barley | *labinlimang siklong pilak*; *isang homer at isang letek na sebada* (L); units span *mga 170 gramong pilak*, *mga 300 litrong sebada* (B, R) |  |
+| Hosea 3:4 | sacred pillar; teraphim | *banal na haligi*; *mga diyos ng sambahayan* |  |
+| Hosea 4:1 | knowledge of God; loyal love (*hesed*) | *pagkakilala sa Diyos*; *tapat na pag-ibig* |  |
+| Hosea 4:13 | oak; poplar; terebinth | *ensina*; *alamo*; *roble* |  |
+| Hosea 5:12 | moth | *tanga* |  |
+| Hosea 7:8 | cake not turned | *tinapay na hindi binaligtad* |  |
+| Hosea 8:5 | calf of Samaria | *guya ng Samaria* |  |
+| Hosea 10:5 | idol-priests | *mga pari ng diyus-diyosan* |  |
+| Hosea 10:14 | Shalman; Beth-arbel | Salman; Bet-arbel |  |
+| Hosea 12:6 | God of hosts | *Diyos ng mga hukbo* | as Isaiah and Jeremiah |
+| Hosea 13:14 | Sheol; O death, where are your plagues? | Sheol (L, B), *libingan* (R); *Nasaan ang iyong mga salot, O kamatayan?* | 1 Corinthians 15:55 |
