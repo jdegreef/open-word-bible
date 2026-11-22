@@ -70,7 +70,7 @@ def open_article_jobs():
     return out
 
 
-@admin_view("overview", methods=("GET", "POST"))
+@admin_view("overview", methods=("GET", "POST"), once=True)
 def articles(request):
     if request.method == "POST":
         if "jobs" not in request.admin_areas:

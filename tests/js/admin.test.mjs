@@ -148,3 +148,13 @@ test("taking a review step back forgets every sentence, as a flag does", () => {
   const left = kept(A + "review/JHN.1.1.s1/", READS, {}, { action: "undo", event: 4 });
   assert.ok(!left.some((k) => k.startsWith(A + "review/")));
 });
+
+test("the same change gets the same Idempotency-Key; a different one, a read or a preview doesn't", () => {
+  const job = { book: "EZK", languages: ["en"] };
+  assert.equal(C.onceKey("POST", A + "jobs/", job), C.onceKey("POST", A + "jobs/", { book: "EZK", languages: ["en"] }));
+  assert.notEqual(C.onceKey("POST", A + "jobs/", job), C.onceKey("POST", A + "jobs/", { book: "DAN", languages: ["en"] }));
+  assert.match(C.onceKey("POST", A + "jobs/", job), /^owb-[0-9a-z]+-[0-9a-z]+$/);
+  assert.equal(C.onceKey("GET", A + "jobs/"), "");
+  assert.equal(C.onceKey("POST", A + "jobs/bulk/", { testament: "nt", dry_run: true }), "");
+  assert.equal(C.onceKey("POST", A + "emails/", { subject: "Hi", test: true }), "");
+});

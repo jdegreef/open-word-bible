@@ -51,7 +51,7 @@ def open_fixes():
     return out
 
 
-@admin_view("inbox", methods=("GET", "POST"))
+@admin_view("inbox", methods=("GET", "POST"), once=True)
 def fixes(request):
     if request.method == "POST":
         return _file(request)

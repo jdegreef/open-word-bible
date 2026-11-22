@@ -135,7 +135,7 @@ def open_jobs():
             for i in issues if "pull_request" not in i]
 
 
-@admin_view("jobs", methods=("GET", "POST"))
+@admin_view("jobs", methods=("GET", "POST"), once=True)
 def jobs(request):
     if request.method == "POST":
         return _file(request)
@@ -266,7 +266,7 @@ def _plan(books, wanted, coverage, open_):
     return plan, skipped
 
 
-@admin_view("jobs", methods=("POST",))
+@admin_view("jobs", methods=("POST",), once=True)
 def bulk(request):
     data = request.data if isinstance(request.data, dict) else {}
     dry_run = bool(data.get("dry_run"))

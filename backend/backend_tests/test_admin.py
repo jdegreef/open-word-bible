@@ -432,6 +432,33 @@ class JobsTest(AdminTestCase):
         self.assertIn('<!-- drafting-job {"book": "PHM", "languages": ["es", "fr"]} -->', body["body"])
         self.assertEqual(AdminAction.objects.get(action="job.file").target, "#7 PHM")
 
+    @override_settings(OWB_GITHUB_TOKEN="t")
+    def test_the_same_job_sent_twice_is_filed_once(self):
+        cache.clear()
+        sentence("PHM.1.1.s1", ("en",))
+        filed = []
+
+        def github(path, method="GET", body=None, stop=None):
+            if method == "POST":
+                filed.append(body["title"])
+                return {"number": 7, "html_url": "https://github.com/x/y/issues/7"}
+            return []
+        job = {"book": "PHM", "languages": ["fr"]}
+        with mock.patch.object(staff_jobs, "_github", side_effect=github):
+            first = self.admin.post("/api/admin/jobs/", job, format="json", HTTP_IDEMPOTENCY_KEY="k1")
+            again = self.admin.post("/api/admin/jobs/", job, format="json", HTTP_IDEMPOTENCY_KEY="k1")
+            # A refused change frees its key: fixed and sent again, it goes through.
+            bad = self.admin.post("/api/admin/jobs/", {"book": "PHM"}, format="json", HTTP_IDEMPOTENCY_KEY="k2")
+            retry = self.admin.post("/api/admin/jobs/", {"book": "PHM"}, format="json", HTTP_IDEMPOTENCY_KEY="k2")
+            # Another account's key is its own.
+            other = client_for(account("boss2@example.org", (K.SUPER_ADMIN,)))
+            theirs = other.post("/api/admin/jobs/", job, format="json", HTTP_IDEMPOTENCY_KEY="k1")
+        self.assertEqual(first.status_code, 201)
+        self.assertEqual((again.status_code, again.json()["code"]), (409, "duplicate"))
+        self.assertEqual((bad.status_code, retry.status_code), (400, 400))
+        self.assertEqual(theirs.status_code, 201)
+        self.assertEqual(len(filed), 2)
+
 
 class EmailTest(AdminTestCase):
     def test_test_then_send_to_a_role(self):

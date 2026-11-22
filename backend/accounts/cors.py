@@ -17,7 +17,8 @@ class ApiCorsMiddleware:
         if allowed and request.method == "OPTIONS" and "Access-Control-Request-Method" in request.headers:
             response = HttpResponse(status=204)
             response["Access-Control-Allow-Methods"] = "GET, POST, PATCH, PUT, DELETE, OPTIONS"
-            response["Access-Control-Allow-Headers"] = "Authorization, Content-Type"
+            # Idempotency-Key: the admin's guard against sending twice (staff/permissions.py).
+            response["Access-Control-Allow-Headers"] = "Authorization, Content-Type, Idempotency-Key"
             response["Access-Control-Max-Age"] = "86400"
         else:
             response = self.get_response(request)

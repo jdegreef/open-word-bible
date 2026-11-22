@@ -148,8 +148,23 @@ var OWBAdminCore = (function () {
     return { title: title, text: e.message, details: details, retry: status !== 403 && status !== 404 };
   }
 
+  // The Idempotency-Key for a change: the same change (method, path and
+  // body) gets the same key, so a double click or a resend of something
+  // already filed or emailed is refused by the API (staff/permissions.py
+  // once). "" for a read, and for a preview or a test that sends nothing
+  // for good (dry_run, test).
+  function onceKey(method, path, body) {
+    if (!method || method === "GET" || (body && (body.dry_run || body.test))) return "";
+    var text = method + " " + path + " " + JSON.stringify(body === undefined ? null : body), hash = 2166136261;
+    for (var i = 0; i < text.length; i++) {
+      hash ^= text.charCodeAt(i);
+      hash = Math.imul(hash, 16777619) >>> 0;
+    }
+    return "owb-" + hash.toString(36) + "-" + text.length.toString(36);
+  }
+
   return { drops: drops, stale: stale, pack: pack, unpack: unpack, tag: tag, step: step, todo: todo,
-    failed: failed, failure: failure };
+    failed: failed, failure: failure, onceKey: onceKey };
 })();
 
 // Addresses and the command palette, also page-free (tests/js/admin-nav.test.mjs).
@@ -431,6 +446,8 @@ var OWBAdminNav = (function () {
     var method = options.method || "GET";
     var headers = { "Content-Type": "application/json" };
     if (account && account.token) headers.Authorization = "Bearer " + account.token;
+    var once = path.indexOf("/api/admin/") === 0 ? C.onceKey(method, path, options.body) : "";
+    if (once) headers["Idempotency-Key"] = once;
     var abort = typeof AbortController === "function" ? new AbortController() : null;
     var timer = abort ? setTimeout(function () { abort.abort(); }, REQUEST_MS) : null;
     function fail(message, extra) {
