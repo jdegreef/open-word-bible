@@ -44,3 +44,29 @@ class Broadcast(models.Model):
 
     def __str__(self):
         return self.subject
+
+
+class ReviewAssignment(models.Model):
+    """A book, or a range of its chapters, in one review layer that an
+    editor has asked a reviewer to review, by a date or not
+    (staff/assignments.py). Whether it is done is worked out from the
+    layer's review states; closing it is the editor's."""
+    layer = models.CharField(max_length=3, help_text="grc or hbo for the meaning, a reading language for wording")
+    book = models.CharField(max_length=3)
+    chapter_from = models.PositiveSmallIntegerField(null=True, blank=True, help_text="Empty for the whole book")
+    chapter_to = models.PositiveSmallIntegerField(null=True, blank=True)
+    assignee = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,
+                                 related_name="review_assignments")
+    assigned_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True,
+                                    blank=True, related_name="+")
+    due = models.DateField(null=True, blank=True)
+    note = models.TextField(blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    closed_at = models.DateTimeField(null=True, blank=True)
+
+    class Meta:
+        ordering = ["created_at", "id"]
+        indexes = [models.Index(fields=["assignee", "closed_at"], name="review_assignment_open")]
+
+    def __str__(self):
+        return f"{self.layer} {self.book} {self.chapter_from or ''}-{self.chapter_to or ''} {self.assignee_id}"
