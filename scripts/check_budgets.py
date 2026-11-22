@@ -72,10 +72,11 @@ BUDGETS = {
     # +550 MB on 2026-11-21 for search pages in English (CI measured 4,868 MB):
     # a page for each word found five times or more, about 380 MB, and a
     # verse page for each verse with a footnoted meaning decision, about
-    # 400 MB (build_site WORD_PAGE_MIN and verse_page_ids)].
+    # 400 MB (build_site WORD_PAGE_MIN and verse_page_ids); 4,944 MB on
+    # 2026-11-22 with forty Punjabi books and Tagalog Numbers to Nehemiah].
     # Grows with each book translated and each language added. Languages
     # added at the same time each add their own increment.
-    "site_total": 4930 * MB,
+    "site_total": 5150 * MB,
 }
 
 
