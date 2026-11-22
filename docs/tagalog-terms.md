@@ -2023,3 +2023,7 @@ names the book where the form was first used.
 | Nehemiah 3:3 | Fish Gate; Jeshanah Gate; Broad Wall; Tower of the Ovens | *Pintuan ng mga Isda*; *Pintuan ng Jeshanah*; *Malapad na Pader*; *Tore ng mga Pugon* |  |
 | Nehemiah 3:7 | Gibeonite; Meronothite | Gibeonita; Meronotita (R *taga-Gibeon*, *taga-Meronot*) |  |
 | Nehemiah 3:26 | Water Gate; Horse Gate; East Gate; Inspection (Muster) Gate | *Pintuan ng Tubig*; *Pintuan ng mga Kabayo*; *Pintuang Silangan*; *Pintuan ng Pagsisiyasat* |  |
+| Job 3:8 | Leviathan | Leviatan |  |
+| Job 39:13 | ostrich; stork | *avestruz*; *tagak* |  |
+| Job 40:15 | Behemoth | Behemot |  |
+| Job 42:14 | Jemimah; Keziah; Keren-happuch | Jemima; Kesia; Keren-hapuc |  |
