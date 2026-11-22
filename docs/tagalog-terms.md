@@ -2074,3 +2074,8 @@ names the book where the form was first used.
 | Proverbs 30:1 | Jakeh; Ucal | Jakeh; Ucal | Ithiel is *Itiel*, as in Nehemiah 11:7 |
 | Proverbs 30:15 | leech | *linta* |  |
 | Proverbs 30:26 | rock badger | *hyrax* |  |
+| Ecclesiastes 1:1 | Qoheleth; the Teacher | *Kohelet* (L); *ang Guro* (B, R) |  |
+| Ecclesiastes 1:2 | breath (*hebel*) | *hininga* (L); *hininga lamang* (B); *parang hininga*, *Walang nananatili!* (R) | overrides row "vanity" above for this book: the meaning decision reads *hebel* as fleeting, not worthless |
+| Ecclesiastes 1:3 | under the sun; toil | *sa ilalim ng araw* (L, B; R *dito sa lupa*, *sa mundong ito*); *pagpapagal* (B, R *pagsisikap*) |  |
+| Ecclesiastes 1:14 | chasing of wind | *paghahabol sa hangin* (L, B); R "pagsisikap na hulihin ang hangin" |  |
+| Ecclesiastes 12:13 | fear God | *matakot sa Diyos* (L, B); R "igalang ang Diyos nang may pagkamangha" |  |
