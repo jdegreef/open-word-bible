@@ -2323,3 +2323,87 @@ names the book where the form was first used.
 | Amos 8:14 | guilt of Samaria | *pagkakasala ng Samaria* (L); R *makasalanang diyus-diyosan ng Samaria* |  |
 | Amos 9:5 | Lord GOD of hosts | *Panginoong DIYOS ng mga hukbo* | as Isaiah |
 | Amos 9:11 | the fallen booth of David | *ang nabuwal na kubol ni David* | Acts 15:16 |
+| Obadiah 1:1 | the vision of Obadiah | *ang pangitain ni Obadias* |  |
+| Obadiah 1:3 | clefts of the rock | *mga bitak ng bato* |  |
+| Obadiah 1:12 | make your mouth big | *palakihin ang iyong bibig* (L); *nagyabang* (B, R) | boast |
+| Obadiah 1:14 | crossroads | *sangandaan* |  |
+| Obadiah 1:20 | Sepharad | *Sefarad* | place not known for certain |
+| Obadiah 1:21 | deliverers | *mga tagapagligtas* | like the judges |
+| Jonah 1:4 | hurled | *ipinukol* (L, B); R *naghagis*, *itinapon* | the verb repeated through the storm |
+| Jonah 1:7 | cast lots | *magsapalaran* (L); *magpalabunutan* (B, R) |  |
+| Jonah 1:9 | a Hebrew | *isang Hebreo* |  |
+| Jonah 1:17 | a great fish | *isang malaking isda* | 2:1 in the Hebrew numbering |
+| Jonah 2:3 | belly of Sheol | *tiyan ng Sheol* (L); *kailaliman ng Sheol* (B); R *kailaliman ng libingan* |  |
+| Jonah 4:2 | gracious and compassionate, slow to anger, abounding in loyal love | *mapagpala at mahabagin, mabagal sa pagkagalit at sagana sa tapat na pag-ibig* | as Joel 2:13, Exodus 34:6 |
+| Jonah 4:6 | plant (*qiqayon*) | *halaman* (L); *madahong halaman* (B, R) | kind not known |
+| Jonah 4:6 | appointed | *nagtalaga* (L, B); R *nagpadala* | the LORD appoints fish, plant, worm and wind |
+| Micah 1:1 | Micah the Morashtite | Mikas na Morastita (L); *taga-Moreset* (B, R) |  |
+| Micah 1:10 | Beth-leaphrah | Bet-leafra | R adds *ang Bahay ng Alabok* |
+| Micah 1:11 | Shaphir; Zaanan; Beth-ezel | Safir; Zaanan; Bet-ezel | R gives the meaning of the names |
+| Micah 1:12 | Maroth | Marot |  |
+| Micah 1:14 | Moresheth-gath | Moreset-gat |  |
+| Micah 1:16 | vulture | *buwitre* |  |
+| Micah 2:6 | preach (literally "drip") | *mangaral* |  |
+| Micah 4:8 | tower of the flock | *tore ng kawan* (L); *bantayang tore ng kawan* (B, R) |  |
+| Micah 5:1 | Bethlehem Ephrathah | Betlehem Efrata | 5:2 in English Bibles |
+| Micah 5:5 | land of Nimrod | *lupain ng Nimrod* |  |
+| Micah 5:11 | sorceries; soothsayers | *mga pangkukulam*; *mga manghuhula* |  |
+| Micah 6:8 | do justice, love loyal love, walk humbly | *gumawa ng katarungan at ibigin ang tapat na pag-ibig, at lumakad nang may kababaang-loob* |  |
+| Micah 6:16 | statutes of Omri | *mga tuntunin ni Omri* |  |
+| Micah 7:12 | the River | *ang Ilog* (L); *Eufrates* (B, R) |  |
+| Micah 7:14 | Carmel (the mountain range) | *Carmelo* | as Kings and Isaiah; the town of Carmel in Judah stays *Carmel* |
+| Nahum 1:1 | Nahum the Elkoshite | Nahum na Elkosita (L); *taga-Elkos* (B, R) |  |
+| Nahum 1:1 | oracle | *pahayag* | as Isaiah 13:1 |
+| Nahum 1:2 | a jealous and avenging God | *Diyos na mapanibughuin at naghihiganti* |  |
+| Nahum 1:3 | slow to anger and great in power | *mabagal sa pagkagalit at dakila sa kapangyarihan* | Exodus 34:6 with "power" for "loyal love" |
+| Nahum 2:1 | the feet of one who brings good news | *ang mga paa ng nagdadala ng mabuting balita* | 1:15 in English Bibles; Isaiah 52:7 |
+| Nahum 3:8 | No-amon | No-amon (L, B); R *Tebas* | Thebes |
+| Nahum 3:14 | mortar; brick mold | *argamasa*; *hulmahan ng laryo* |  |
+| Habakkuk 2:2 | tablets | *mga tapyas* |  |
+| Habakkuk 2:4 | the righteous will live by his faithfulness | *ang matuwid ay mabubuhay sa pamamagitan ng kaniyang katapatan* | Romans 1:17 has *faith* |
+| Habakkuk 2:6 | Woe | *Kahabag-habag* (L, B); R *Nakakaawa ang sasapitin* | five woes in 2:6-19 |
+| Habakkuk 3:1 | shigionoth | *shigionot* | as *Shigaion* in Psalm 7 |
+| Habakkuk 3:7 | Cushan | Cushan |  |
+| Habakkuk 3:19 | GOD my Lord | *ang DIYOS na aking Panginoon* (L); *Panginoong DIYOS* (B, R) |  |
+| Zephaniah 1:4 | remnant of Baal | *ang nalabi ni Baal* | idol-priests *mga pari ng diyus-diyosan*, as Hosea 10:5 |
+| Zephaniah 1:5 | host of heaven | *hukbo ng langit* | as Jeremiah |
+| Zephaniah 1:10 | Fish Gate; Second Quarter | *Pintuan ng mga Isda*; *Ikalawang Distrito* | as Nehemiah and 2 Kings 22:14 |
+| Zephaniah 1:11 | Maktesh | Lusong | the name means "mortar" |
+| Zephaniah 2:14 | desert owl; hedgehog | *kuwago sa disyerto*; *porkoespino* | as Isaiah 34:11 |
+| Zephaniah 3:17 | warrior who saves | *mandirigmang nagliligtas* |  |
+| Haggai 1:4 | paneled houses | *mga bahay na may tabla* |  |
+| Haggai 1:5 | set your heart on your ways | *Ilagak ninyo ang inyong puso sa inyong mga lakad* (L); B, R *Pag-isipan ninyong mabuti* | also 1:7, 2:15, 2:18 |
+| Haggai 1:13 | messenger of the LORD | *sugo ng PANGINOON* |  |
+| Haggai 2:17 | blight; mildew; hail | *pagkalanta*; *amag*; *yelo* | as Amos 4:9 and Exodus 9 |
+| Haggai 2:23 | signet ring | *singsing na pantatak* | as Jeremiah 22:24 |
+| Zechariah 1:7 | Shebat | Sebat | sh > s |
+| Zechariah 1:8 | myrtle; sorrel | *mirto*; *kayumanggi* | as Isaiah 55:13 |
+| Zechariah 1:9 | the angel who talked with me | *ang anghel na nakikipag-usap sa akin* | fixed through the visions |
+| Zechariah 2:1 | horns; craftsmen | *mga sungay*; *mga panday* (R *bihasang manggagawa*) |  |
+| Zechariah 3:1 | the satan, the Accuser | *si Satanas* (L, B); *ang Tagapagparatang* (R) | as Job 1-2 |
+| Zechariah 3:5 | turban | *turbante* | as Exodus 28 |
+| Zechariah 3:8 | the Branch | *ang Sanga* | as Jeremiah 23:5; also 6:12 |
+| Zechariah 4:10 | tin stone (plumb stone) | *batong lata* (L); *batong panghulog* (B, R) |  |
+| Zechariah 4:14 | sons of fresh oil | *mga anak ng sariwang langis* (L); *pinahiran ng langis* (B, R) |  |
+| Zechariah 5:1 | scroll | *balumbon* |  |
+| Zechariah 5:8 | Wickedness | *Kasamaan* | the woman in the basket |
+| Zechariah 7:2 | Regem-melech | Regem-melec | as Adramelec |
+| Zechariah 9:1 | Hadrach | Hadrac |  |
+| Zechariah 11:7 | Favor; Union | *Lingap*; *Pagkakaisa* | names of the two staffs |
+| Zechariah 11:13 | potter | *magpapalayok* |  |
+| Zechariah 12:11 | Hadad-rimmon | Hadad-rimon |  |
+| Zechariah 14:5 | Azal | Azal |  |
+| Zechariah 14:10 | First Gate; Corner Gate | *Unang Pintuan*; *Pintuan sa Sulok* | as Jeremiah 31:38 |
+| Zechariah 14:15 | mule | *mola* |  |
+| Zechariah 14:20 | Holiness to the LORD | *Kabanalan sa PANGINOON* (L); *Banal sa PANGINOON* (B, R) | as on the high priest's plate |
+| Malachi 1:3 | jackals | *mga asong-gubat* | as Jeremiah |
+| Malachi 1:13 | sniff at it | *sinisinghalan ito* (R *inismiran*) | contempt |
+| Malachi 2:7 | messenger | *sugo* | same word as the name Malakias; also 3:1 |
+| Malachi 2:16 | divorce | *paghihiwalay* |  |
+| Malachi 3:2 | refiner; launderers' soap | *tagapagdalisay*; *sabon ng mga tagapaglaba* |  |
+| Malachi 3:10 | storehouse; windows of heaven | *bahay-imbakan* (B *kamalig*); *mga bintana ng langit* |  |
+| Malachi 3:11 | devourer | *manlalamon* (R *mga peste*) |  |
+| Malachi 3:16 | book of remembrance | *aklat ng alaala* |  |
+| Malachi 3:19 | oven; stubble | *hurno*; *dayami* | Hebrew numbering: 3:19-24 = English 4:1-6 |
+| Malachi 3:20 | sun of righteousness; calves of the stall | *araw ng katuwiran*; *mga guya sa kulungan* |  |
+| Malachi 3:23 | Elijah the prophet | *si Elias na propeta* |  |
