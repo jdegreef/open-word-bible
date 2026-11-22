@@ -1293,3 +1293,43 @@ People and places: ਪੌਲੁਸ, ਤੁਖਿਕੁਸ; ਅਫ਼ਸੁਸ, �
   64:4 (2:9), 28:11-12 (14:21), 22:13 (15:32), 25:8 (15:54); Job 5:13
   (3:19); Psalms 94:11 (3:20), 24:1 (10:26); Deuteronomy 17:7 (5:13);
   Exodus 32:6 (10:7); Genesis 2:7 (15:45).
+
+### Judges
+
+- Sons of Israel: at L a gender span, `{{gender:ਇਸਰਾਏਲ ਦੀ ਸੰਤਾਨ|ਇਸਰਾਏਲ ਦੇ
+  ਪੁੱਤਰ(ਾਂ)}}` (and ਸਾਰੀ ਸੰਤਾਨ / ਸਾਰੇ ਪੁੱਤਰਾਂ for "all the sons"); B and R
+  ਇਸਰਾਏਲੀ, no span. Same pattern for sons of Ammon (ਅੰਮੋਨ ਦੇ ਪੁੱਤਰ), sons of
+  the east (ਪੂਰਬ ਦੀ ਸੰਤਾਨ|ਪੂਰਬ ਦੇ ਪੁੱਤਰ), sons of Dan (ਦਾਨ ਦੀ ਸੰਤਾਨ|ਦਾਨ ਦੇ
+  ਪੁੱਤਰ); fathers ਵੱਡ-ਵਡੇਰਿਆਂ|ਪਿਉ-ਦਾਦਿਆਂ. Sons of Benjamin ਬਿਨਯਾਮੀਨ ਦੇ
+  ਪੁੱਤਰ (L), ਬਿਨਯਾਮੀਨੀ (B), ਬਿਨਯਾਮੀਨ ਦੇ ਬੰਦੇ (R).
+- One wording for the "did evil in the eyes of the LORD" refrain in each
+  level; Baals ਬਆਲ ਦੇਵਤੇ; judge ਨਿਆਂਕਾਰ; elders ਬਜ਼ੁਰਗ (L), ਬਜ਼ੁਰਗ ਆਗੂ (B),
+  ਆਗੂ (R); the angel of the LORD takes plain singular verbs; Adonai YHWH ਹੇ
+  ਪ੍ਰਭੂ {{divine_name:ਪਰਮੇਸ਼ੁਰ|ਯਾਹਵੇ}}.
+- No-king refrain (17:6, 18:1, 19:1, 21:25), one wording per level: L ਉਨ੍ਹਾਂ
+  ਦਿਨਾਂ ਵਿੱਚ ਇਸਰਾਏਲ ਵਿੱਚ ਕੋਈ ਰਾਜਾ ਨਾ ਸੀ (17:6, 21:25 add ਹਰੇਕ ਉਹੀ ਕਰਦਾ ਸੀ
+  ਜੋ ਉਸ ਦੀਆਂ ਆਪਣੀਆਂ ਅੱਖਾਂ ਵਿੱਚ ਠੀਕ ਸੀ); B ਉਨ੍ਹੀਂ ਦਿਨੀਂ ਇਸਰਾਏਲ ਦਾ ਕੋਈ
+  ਰਾਜਾ ਨਹੀਂ ਸੀ; R ਉਸ ਵੇਲੇ ਇਸਰਾਏਲ ਦਾ ਕੋਈ ਰਾਜਾ ਨਹੀਂ ਸੀ।
+- Names: ਆਥਨੀਏਲ, ਕੂਸ਼ਨ-ਰਿਸ਼ਆਥੈਮ, ਏਹੂਦ, ਸ਼ਮਗਰ, ਦਬੋਰਾਹ, ਬਾਰਾਕ, ਸੀਸਰਾ,
+  ਯਾਏਲ, ਹਰੋਸ਼ਥ-ਹੱਗੋਯਿਮ, ਮਿਦਯਾਨੀ, ਅਮਾਲੇਕੀ, ਗਿਦਾਊਨ / ਯਰੁੱਬਆਲ, ਜ਼ਬਹ ਅਤੇ
+  ਸਲਮੁੰਨਾ, ਅਬੀਮਲਕ, ਗਆਲ, ਜ਼ਬੂਲ, ਯਿਫ਼ਤਾਹ, ਇਫ਼ਰਾਈਮੀ, ਮਾਨੋਆਹ, ਸਮਸੂਨ, ਦਲੀਲਾ,
+  ਸੋਰੇਕ, ਗਾਜ਼ਾ, ਹਬਰੋਨ, ਦਾਗੋਨ (ਦੇਵਤਾ), ਮੀਕਾਹ, ਦਾਨੀ, ਲਾਇਸ਼, ਸੈਦਾ / ਸੈਦੋਨੀ,
+  ਕਿਰਯਥ-ਯਾਰੀਮ, ਮਹਨੇਹ-ਦਾਨ, ਬੈਤ-ਰਹੋਬ, ਯੋਨਾਥਾਨ son of ਗੇਰਸ਼ੋਮ son of ਮਨੱਸ਼ਹ
+  (18:30 as written), ਸ਼ੀਲੋ, ਯਬੂਸ / ਯਬੂਸੀ, ਗਿਬਆਹ, ਰਾਮਾਹ, ਫ਼ੀਨਹਾਸ son of
+  ਅਲਆਜ਼ਾਰ, ਬਆਲ-ਤਾਮਾਰ, ਗਬਾ, ਰਿੰਮੋਨ, ਗਿਦੋਮ, ਯਾਬੇਸ਼-ਗਿਲਆਦ, ਲਬੋਨਾਹ, ਸ਼ਕਮ.
+- Philistine rulers ਸਰਦਾਰ; Delilah's cry "ਹੇ ਸਮਸੂਨ, ਫ਼ਲਿਸਤੀ ਤੇਰੇ ਉੱਤੇ ...!"
+  worded the same in 16:9, 12, 14, 20 in each level; Samson and Delilah say
+  ਤੂੰ to each other; Dagon's temple ਘਰ (L), ਮੰਦਰ (B, R).
+- Micah's shrine: carved image ਘੜੀ ਹੋਈ ਮੂਰਤੀ, cast idol ਢਾਲੀ ਹੋਈ ਮੂਰਤੀ,
+  ephod ਏਫ਼ੋਦ, teraphim ਘਰੇਲੂ ਦੇਵਤੇ, house of gods ਦੇਵ-ਘਰ (L), ਪੂਜਾ-ਸਥਾਨ (B,
+  R); ordain ਹੱਥ ਭਰਿਆ (L), ਜਾਜਕ ਥਾਪਿਆ (B, R). Micah says ਤੁਸੀਂ to his
+  mother, ਤੂੰ to the Levite; the servant says ਤੁਸੀਂ to his master in 19.
+- Concubine ਰਖੇਲ; sons of belial ਨਿਕੰਮੇਪਣ ਦੇ ਪੁੱਤਰ (L), ਨਿਕੰਮੇ (B), ਦੁਸ਼ਟ
+  (R); battle line ਪਾਲਾਂ ਬੰਨ੍ਹੀਆਂ (L), ਮੋਰਚਾ ਬੰਨ੍ਹਿਆ (B), ਮੋਰਚੇ ਸਾਂਭੇ (R);
+  left-handed (L) ਜਿਨ੍ਹਾਂ ਦਾ ਸੱਜਾ ਹੱਥ ਬੰਨ੍ਹਿਆ ਹੋਇਆ ਸੀ; peace offering
+  ਸੁੱਖ-ਸਾਂਦ ਦੀ ਬਲੀ; cherem ਨਾਸ ਲਈ ਅਰਪਣ; festival ਪਰਬ.
+- Units in `{{units:}}` spans with Indian grouping: 1,700 shekels ਲਗਭਗ 19.5
+  ਕਿਲੋਗ੍ਰਾਮ, 1,100 ਲਗਭਗ 12.5, 200 ਲਗਭਗ 2.3 ਕਿਲੋਗ੍ਰਾਮ, 10 ਲਗਭਗ 114 ਗ੍ਰਾਮ; ephah
+  ਲਗਭਗ 22 ਲੀਟਰ.
+- For the reviewer: 13:15 and 15:1 use ਮੇਮਣਾ for a young goat (ਬੱਕਰੀ ਦਾ
+  ਮੇਮਣਾ); ਛੇਲਾ may be better.
