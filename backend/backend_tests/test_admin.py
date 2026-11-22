@@ -1,7 +1,9 @@
 """The admin (staff/) and reader messages (feedback/): who may open what,
 the progress numbers, the team, accounts, the inbox, jobs and team email."""
+import http.client
 import io
 import json
+import re
 import zipfile
 import shutil
 import tempfile
@@ -15,7 +17,7 @@ from django.core import mail
 from django.core.cache import cache
 from django.core.management import CommandError, call_command
 from django.db import OperationalError, connection
-from django.test import TestCase, override_settings
+from django.test import SimpleTestCase, TestCase, override_settings
 from django.test.utils import CaptureQueriesContext
 from django.urls import get_resolver
 from django.utils import timezone
@@ -404,7 +406,7 @@ class JobsTest(AdminTestCase):
         sentence("PHM.1.1.s1", ("en",))
         calls = []
 
-        def github(path, method="GET", body=None):
+        def github(path, method="GET", body=None, stop=None):
             calls.append((path, method, body))
             if method == "POST":
                 return {"number": 7, "html_url": "https://github.com/x/y/issues/7"}
@@ -517,7 +519,7 @@ class FixTest(AdminTestCase):
                                                text="La Parole, s'il vous plaît")
         calls = []
 
-        def github(path, method="GET", body=None):
+        def github(path, method="GET", body=None, stop=None):
             calls.append((path, method, body))
             if method == "POST":
                 return {"number": 9, "html_url": "https://github.com/x/y/issues/9"}
@@ -551,7 +553,7 @@ class FixTest(AdminTestCase):
     def test_file_word_links(self):
         calls = []
 
-        def github(path, method="GET", body=None):
+        def github(path, method="GET", body=None, stop=None):
             calls.append((path, method, body))
             return {"number": 10, "html_url": "https://github.com/x/y/issues/10"}
         editor = client_for(account("ed@example.org", (K.EDITOR,)))
@@ -650,7 +652,7 @@ class ArticlesTest(AdminTestCase):
     def test_file_a_job_for_what_needs_work(self):
         calls = []
 
-        def github(path, method="GET", body=None):
+        def github(path, method="GET", body=None, stop=None):
             calls.append((path, method, body))
             if method == "POST":
                 return {"number": 11, "html_url": "https://github.com/x/y/issues/11"}
@@ -732,7 +734,7 @@ class WorkTest(AdminTestCase):
                                                     language="fr", text="La Parole ?")
         issues = json.loads(json.dumps(ISSUES).replace("MSG", str(self.message.id)))
 
-        def github(path, method="GET", body=None):
+        def github(path, method="GET", body=None, stop=None):
             return PULLS if path.startswith("pulls") else issues
         patcher = mock.patch.object(staff_jobs, "_github", side_effect=github)
         patcher.start()
@@ -859,3 +861,47 @@ class ExportTest(AdminTestCase):
         reporter = client_for(account("rep@example.org", (K.REPORTING,)))
         self.assertEqual(reporter.get("/api/admin/export/").status_code, 200)
         self.assertEqual(client_for(account("r@example.org")).get("/api/admin/export/file/").status_code, 403)
+
+
+class GitHubPagesTest(SimpleTestCase):
+    """staff.jobs._github reads every page of a list (more than 100 open
+    jobs), stops where asked, and turns a dropped connection into
+    GitHubError rather than a 500."""
+
+    def pages(self, *pages):
+        """A stand-in for urlopen answering pages[i] for page i+1, each with
+        a Link to the next."""
+        requested = []
+
+        def urlopen(req, timeout):
+            requested.append(req.full_url)
+            page = re.search(r"[?&]page=(\d+)", req.full_url)
+            n = int(page[1]) if page else 1
+            more = n < len(pages)
+            answer = mock.MagicMock()
+            answer.__enter__.return_value = answer
+            answer.headers = {"Link": f'<https://api.github.com/x?page={n + 1}>; rel="next"'} if more else {}
+            answer.read.return_value = json.dumps(pages[n - 1]).encode()
+            return answer
+        return urlopen, requested
+
+    def test_every_page_is_read(self):
+        jobs = [{"number": n, "title": f"Draft {n}", "html_url": "u", "created_at": "2026-11-01T00:00:00Z",
+                 "body": ""} for n in range(150)]
+        urlopen, requested = self.pages(jobs[:100], jobs[100:])
+        with mock.patch("urllib.request.urlopen", urlopen):
+            self.assertEqual(len(staff_jobs.open_jobs()), 150)
+        self.assertEqual(len(requested), 2)
+
+    def test_stop_ends_the_pages_early(self):
+        urlopen, requested = self.pages([{"n": 1}], [{"n": 2}], [{"n": 3}])
+        with mock.patch("urllib.request.urlopen", urlopen):
+            got = staff_jobs._github("pulls", stop=lambda page: page[-1]["n"] >= 2)
+        self.assertEqual(got, [{"n": 1}, {"n": 2}])
+        self.assertEqual(len(requested), 2)
+
+    def test_a_dropped_connection_is_a_github_error(self):
+        for error in (http.client.IncompleteRead(b""), ConnectionResetError(), http.client.RemoteDisconnected()):
+            with mock.patch("urllib.request.urlopen", side_effect=error), self.assertLogs("staff.jobs", "WARNING"):
+                with self.assertRaises(staff_jobs.GitHubError):
+                    staff_jobs._github("issues")
