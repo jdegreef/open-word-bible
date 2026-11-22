@@ -2329,3 +2329,11 @@ names the book where the form was first used.
 | Obadiah 1:14 | crossroads | *sangandaan* |  |
 | Obadiah 1:20 | Sepharad | *Sefarad* | place not known for certain |
 | Obadiah 1:21 | deliverers | *mga tagapagligtas* | like the judges |
+| Jonah 1:4 | hurled | *ipinukol* (L, B); R *naghagis*, *itinapon* | the verb repeated through the storm |
+| Jonah 1:7 | cast lots | *magsapalaran* (L); *magpalabunutan* (B, R) |  |
+| Jonah 1:9 | a Hebrew | *isang Hebreo* |  |
+| Jonah 1:17 | a great fish | *isang malaking isda* | 2:1 in the Hebrew numbering |
+| Jonah 2:3 | belly of Sheol | *tiyan ng Sheol* (L); *kailaliman ng Sheol* (B); R *kailaliman ng libingan* |  |
+| Jonah 4:2 | gracious and compassionate, slow to anger, abounding in loyal love | *mapagpala at mahabagin, mabagal sa pagkagalit at sagana sa tapat na pag-ibig* | as Joel 2:13, Exodus 34:6 |
+| Jonah 4:6 | plant (*qiqayon*) | *halaman* (L); *madahong halaman* (B, R) | kind not known |
+| Jonah 4:6 | appointed | *nagtalaga* (L, B); R *nagpadala* | the LORD appoints fish, plant, worm and wind |
