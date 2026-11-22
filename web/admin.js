@@ -712,6 +712,20 @@ var OWBAdminNav = (function () {
     try { if (was.at) n.setSelectionRange(was.at[0], was.at[1]); } catch (e) { /* not a text field */ }
   }
 
+  function notHere(name, section, why) {
+    if (why === "closed") {
+      return [head("Admin", section.label, "Your roles don't open this part of the admin. A super admin can grant one in Team & access."),
+        h("p", null, h("a", { href: "#dashboard" }, "Go to the dashboard"))];
+    }
+    // The section whose id or name is closest to what was asked for.
+    var want = name.toLowerCase(), guess = SECTIONS.filter(opens).filter(function (s) {
+      return s.id.indexOf(want) === 0 || want.indexOf(s.id) === 0 || s.label.toLowerCase().indexOf(want) >= 0;
+    })[0];
+    return [head("Admin", "Not found", "There's no section called \u201c" + name + "\u201d. Search the admin (Ctrl K) or pick one from the list."),
+      h("p", null, guess ? [h("a", { href: "#" + guess.id }, guess.label), " might be what you were after. "] : null,
+        h("a", { href: "#dashboard" }, "Go to the dashboard"))];
+  }
+
   // The section on the page stays, dimmed, until the next one is ready; a
   // loading line replaces it only if that takes a while.
   function route() {
@@ -722,7 +736,14 @@ var OWBAdminNav = (function () {
     var at = N.parse(hash);
     var name = at.name, arg = at.arg;
     var section = SECTIONS.filter(function (s) { return s.id === (PARENT[name] || name); })[0];
-    if (!section || !opens(section)) { name = "dashboard"; section = SECTIONS[0]; }
+    var draw = VIEWS[name];
+    // An address that names no section, or one the account's roles don't
+    // open, says so (it used to show the dashboard without a word).
+    var missing = !section || !draw ? "unknown" : !opens(section) ? "closed" : "";
+    if (missing) {
+      draw = function () { return notHere(name, section, missing); };
+      section = section || { id: name, label: "Not found", group: "" };
+    }
     // A filter changed on the same page isn't a move: the field being
     // typed in keeps its place. Following an address (Back, a link) is.
     var moved = followed || at.path !== (shown || "").split("?")[0];
@@ -758,7 +779,6 @@ var OWBAdminNav = (function () {
         if (heading) { heading.setAttribute("tabindex", "-1"); heading.focus({ preventScroll: true }); }
       }
     }
-    var draw = VIEWS[name];
     Promise.resolve().then(function () { return draw(arg); }).then(function (nodes) {
       if (mine !== drawing) return;
       show(nodes);
