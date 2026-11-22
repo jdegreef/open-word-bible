@@ -10,13 +10,26 @@ otherwise. `docs/persian-terms.md` is the glossary, Genesis to Revelation.
 Where this file and the founder's Translation Charter disagree, the Charter
 wins; fix this file.
 
-**Status: proposed, awaiting native Persian reviewers.** Nothing in Persian
-is drafted yet. Every Persian record will be `ai_draft`. The level names,
-the grammar words in `owb/morph.py`, the register and address rules, the
-name forms and the key terms below are first proposals, written before
-drafting so that books drafted in parallel agree, and a reviewer is expected
-to change some of them. Section 15 lists the defaults the founder should
-confirm first.
+**Status: drafting.** Ruth, Jonah, Mark and John are drafted. Every
+Persian record is `ai_draft`. The level names, the grammar words in
+`owb/morph.py`, the register and address rules, the name forms and the key
+terms below were written before drafting so that books drafted in parallel
+agree, and a native reviewer is expected to change some of them.
+
+### Settled
+
+The founder confirmed every default in section 15 on 2026-11-22:
+YHWH as `{{divine_name:خداوند|یهوه}}`; *ʾAdonai* YHWH as
+`خداوند {{divine_name:خدا|یهوه}}`; مسیح with no christos span; تو to God,
+تو to Jesus from disciples and شما from strangers and officials at B and R;
+فرمود for God's speech at L and B and گفت for Jesus; کوروش, داریوش,
+خشایارشا, اردشیر; ملکوت خدا at L and B and پادشاهی خدا at R; پارسایی for
+righteousness; verse and chapter numbers shown in Persian digits on the site
+(records keep ASCII; the display step is still to be built); the level names
+تحت‌اللفظی, متعادل, روان; and Iranian standard written Persian as the
+audience. In Jonah, God relenting (*nacham*) is پشیمان شدن (L), منصرف شدن
+(B), تصمیم خود را تغییر دادن (R), and توبه کردن stays for people; the same
+wording applies wherever *nacham* is said of God.
 
 Reviewers: start with
 [`docs/review-notes/fa-review-checklist.md`](review-notes/fa-review-checklist.md).
@@ -464,9 +477,9 @@ is marked reviewed by an AI.
 
 ## 15. Defaults for the founder to confirm
 
-Each decides the wording of thousands of verses. Confirm or change each
-once, before drafting goes far; the outcome is recorded under a "Settled"
-heading at the top of this file.
+Each decides the wording of thousands of verses. All eleven were confirmed
+on 2026-11-22; the outcome is recorded under "Settled" at the top of this
+file.
 
 1. **YHWH**: `{{divine_name:خداوند|یهوه}}`. Alternative: یهوه by default.
 2. ***ʾAdonai* YHWH**: `خداوند {{divine_name:خدا|یهوه}}`. Alternative:
