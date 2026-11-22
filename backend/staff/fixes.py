@@ -45,19 +45,13 @@ def open_fixes():
     for i in issues:
         if "pull_request" in i:
             continue
-        data = {}
-        for line in (i.get("body") or "").splitlines():
-            if line.startswith("<!-- fix-request "):
-                try:
-                    data = json.loads(line[len("<!-- fix-request "):-len(" -->")])
-                except ValueError:
-                    pass
-        out.append({"number": i["number"], "title": i["title"], "url": i["html_url"], "created_at": i["created_at"],
-                    "assignees": [a["login"] for a in i.get("assignees", [])], **data})
+        out.append({**jobs.marker(i, "fix-request"), "number": i["number"], "title": i["title"],
+                    "url": i["html_url"], "created_at": i["created_at"],
+                    "assignees": [a["login"] for a in i.get("assignees", [])]})
     return out
 
 
-@admin_view("inbox", methods=("GET", "POST"))
+@admin_view("inbox", methods=("GET", "POST"), once=True)
 def fixes(request):
     if request.method == "POST":
         return _file(request)
@@ -107,7 +101,9 @@ def _file(request):
     reason = _text(data, "reason", 4000, required=False)
     message = None
     if data.get("message"):
-        message = ReaderMessage.objects.select_related("user").filter(id=data["message"]).first()
+        if not str(data["message"]).isdigit():
+            raise ValidationError({"message": "That isn't a reader message's number.", "code": "invalid"})
+        message = ReaderMessage.objects.select_related("user").filter(id=int(data["message"])).first()
     label = verse_label(vid)
     path = content_file(sentence.book, sentence.chapter, sentence.verse)
     name = languages.READING[lang]["name"]

@@ -8,6 +8,11 @@ GET  /api/admin/review/<record_id>/?layer=
         trail, its state in the layer and the next sentence to review
 POST /api/admin/review/<record_id>/  {layer, action, note}
         approve, flag (a note saying what is wrong) or comment
+POST /api/admin/review/<record_id>/  {layer, action: "undo", event}
+        take back your own step (event's id) within UNDO_MINUTES, while
+        it is still the latest in the sentence's trail: a slip of the
+        a key, say. The step goes from the trail and the activity log
+        says it was taken back
 GET  /api/admin/review/flags/
         open flags in every layer, for editors to act on
 
@@ -57,6 +62,7 @@ from texts.models import Word
 from translation.models import Decision, Rendering, ReviewEvent, ReviewState, Sentence, Status
 
 from .inbox import verse_label
+from .models import record
 from .permissions import admin_view, is_super_admin
 from .snapshot import snapshot
 
@@ -342,6 +348,8 @@ def sentence(request, record_id):
 
 def _act(request, s, layer, data):
     action = data.get("action")
+    if action == "undo":
+        return _undo(request, s, layer, data.get("event"))
     if action not in ("approve", "flag", "comment"):
         raise ValidationError({"action": "Choose approve, flag or comment.", "code": "invalid_action"})
     note = str(data.get("note") or "").strip()
@@ -373,6 +381,36 @@ def apply(user, s, layer, action, note):
             # update(), not save(): updated_at says when the text last changed.
             Sentence.objects.filter(pk=s.pk, status=Status.AI_DRAFT).update(status=Status.MEANING_REVIEWED)
     return event
+
+
+UNDO_MINUTES = 10
+
+
+def _undo(request, s, layer, event_id):
+    """Take back request.user's own latest step in s's trail, made in the
+    last UNDO_MINUTES. Deleting the event brings the sentence's ReviewState
+    back to what the trail now says; a meaning approval taken back returns
+    the sentence to ai_draft unless another meaning approval stands."""
+    with transaction.atomic():
+        latest = (ReviewEvent.objects.select_for_update().filter(sentence=s)
+                  .order_by("-created_at", "-id").first())
+        if latest is None or str(latest.id) != str(event_id):
+            raise ValidationError({"event": "Only the latest step on a sentence can be taken back; someone has "
+                                            "acted on it since.", "code": "not_latest"})
+        if latest.user_id != request.user.id:
+            return _forbidden("You can take back only your own steps.")
+        if latest.created_at < timezone.now() - timedelta(minutes=UNDO_MINUTES):
+            raise ValidationError({"event": f"A step can be taken back for {UNDO_MINUTES} minutes; this one is "
+                                            "older. Add a new one instead.", "code": "too_late"})
+        if (latest.language or s.source_edition.language) != layer:
+            raise ValidationError({"event": "That step is in another review layer.", "code": "not_in_layer"})
+        label = latest.get_action_display()
+        latest.delete()
+        if (latest.action == A.MEANING_REVIEWED
+                and not s.review_events.filter(action=A.MEANING_REVIEWED, language="").exists()):
+            Sentence.objects.filter(pk=s.pk, status=Status.MEANING_REVIEWED).update(status=Status.AI_DRAFT)
+        record(request.user, "review.undo", f"{label} on {s.record_id}", layer=layer)
+    return Response({"state": state_of(layer, s.id), "next": _next(layer, s)})
 
 
 def open_flags():

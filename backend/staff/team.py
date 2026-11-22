@@ -150,7 +150,7 @@ def revoke(request, role_id):
     return Response(status=status.HTTP_204_NO_CONTENT)
 
 
-@admin_view("team", methods=("POST",))
+@admin_view("team", methods=("POST",), once=True)
 def resend(request):
     data = request.data if isinstance(request.data, dict) else {}
     email = normalise_email(data.get("email"))

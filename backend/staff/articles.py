@@ -65,19 +65,12 @@ def open_article_jobs():
     for i in issues:
         if "pull_request" in i:
             continue
-        data = {}
-        for line in (i.get("body") or "").splitlines():
-            if line.startswith("<!-- article-job "):
-                try:
-                    data = json.loads(line[len("<!-- article-job "):-len(" -->")])
-                except ValueError:
-                    pass
-        out.append({"number": i["number"], "title": i["title"], "url": i["html_url"],
-                    "created_at": i["created_at"], **data})
+        out.append({**jobs.marker(i, "article-job"), "number": i["number"], "title": i["title"],
+                    "url": i["html_url"], "created_at": i["created_at"]})
     return out
 
 
-@admin_view("overview", methods=("GET", "POST"))
+@admin_view("overview", methods=("GET", "POST"), once=True)
 def articles(request):
     if request.method == "POST":
         if "jobs" not in request.admin_areas:
@@ -107,7 +100,7 @@ def _file(request):
     english, _ = _articles()
     states = {a["slug"]: a["languages"][lang] for a in english}
     titles = {a["slug"]: a["title"] for a in english}
-    slugs = [s for s in dict.fromkeys(data.get("slugs") or []) if s in states and states[s] != "current"]
+    slugs = [s for s in dict.fromkeys(jobs.listed(data, "slugs")) if s in states and states[s] != "current"]
     if not slugs:
         raise ValidationError({"slugs": "Choose articles that are missing or out of date in that language.",
                                "code": "nothing_to_do"})

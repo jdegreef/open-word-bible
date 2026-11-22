@@ -2023,3 +2023,26 @@ names the book where the form was first used.
 | Nehemiah 3:3 | Fish Gate; Jeshanah Gate; Broad Wall; Tower of the Ovens | *Pintuan ng mga Isda*; *Pintuan ng Jeshanah*; *Malapad na Pader*; *Tore ng mga Pugon* |  |
 | Nehemiah 3:7 | Gibeonite; Meronothite | Gibeonita; Meronotita (R *taga-Gibeon*, *taga-Meronot*) |  |
 | Nehemiah 3:26 | Water Gate; Horse Gate; East Gate; Inspection (Muster) Gate | *Pintuan ng Tubig*; *Pintuan ng mga Kabayo*; *Pintuang Silangan*; *Pintuan ng Pagsisiyasat* |  |
+| Esther 1:1 | India | India |  |
+| Esther 1:10 | Abagtha; Bigtha; Biztha; Carcas; Harbona; Mehuman | Abagta; Bigta; Bizta; Carcas; Harbona; Mehuman |  |
+| Esther 1:10 | Zethar | Zetar |  |
+| Esther 1:14 | Admatha; Carshena; Marsena; Memucan; Meres; Shethar | Admata; Carshena; Marsena; Memucan; Meres; Shetar |  |
+| Esther 2:3 | Hegai | Hegai |  |
+| Esther 2:7 | Hadassah | Hadasa |  |
+| Esther 2:14 | Shaashgaz | Saasgaz |  |
+| Esther 2:16 | Tebeth | Tebet |  |
+| Esther 2:21 | Bigthan; Teresh | Bigtan; Teres |  |
+| Esther 3:1 | Hammedatha | Hamedata |  |
+| Esther 3:7 | Pur | Pur |  |
+| Esther 4:5 | Hathach | Hatac |  |
+| Esther 5:10 | Zeresh | Zeres |  |
+| Esther 6:2 | Bigthana | Bigtana |  |
+| Esther 8:9 | Sivan | Sivan |  |
+| Esther 9:7 | Aspatha; Dalphon; Parshandatha | Aspata; Dalfon; Parsandata |  |
+| Esther 9:8 | Adalia; Aridatha; Poratha | Adalia; Aridata; Porata |  |
+| Esther 9:9 | Aridai; Arisai; Vaizatha; Parmashta | Aridai; Arisai; Vaizata; Parmasta |  |
+| Esther 9:26 | Purim | Purim |  |
+| Job 3:8 | Leviathan | Leviatan |  |
+| Job 39:13 | ostrich; stork | *avestruz*; *tagak* |  |
+| Job 40:15 | Behemoth | Behemot |  |
+| Job 42:14 | Jemimah; Keziah; Keren-happuch | Jemima; Kesia; Keren-hapuc |  |

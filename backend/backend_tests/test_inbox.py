@@ -84,6 +84,21 @@ class InboxTriageTest(AdminTestCase):
         r = self.patch(self.admin, answered, {"reply": "Again"})
         self.assertEqual(r.status_code, 400)
 
+    def test_search_every_message_and_the_filters_offered(self):
+        ReaderMessage.objects.create(user=self.reader, kind="question", verse="ROM.3.23", language="fr",
+                                     text="Why say grace here?")
+        def found(query):
+            return [m["verse"] for m in self.admin.get("/api/admin/inbox/" + query).json()["messages"]]
+        self.assertEqual(found("?q=GRACE"), ["ROM.3.23"])             # in the text, any case
+        self.assertEqual(found("?q=rom.3"), ["ROM.3.23"])             # in the verse
+        self.assertEqual(len(found("?q=ann")), 3)                     # the reader's name
+        self.assertEqual(found("?q=grace thought"), [])               # every word must match
+        self.assertEqual(found("?book=jhn"), ["JHN.3.16", "JHN.3.17"])
+        d = self.admin.get("/api/admin/inbox/").json()
+        self.assertEqual([(lang["code"], lang["count"]) for lang in d["languages"]], [("en", 2), ("fr", 1)])
+        self.assertEqual([(b["code"], b["count"]) for b in d["books"]], [("JHN", 2), ("ROM", 1)])
+        self.assertEqual(d["books"][1]["name"], "Romans")
+
     def test_dashboard_chips(self):
         ReaderMessage.objects.filter(id=self.recent.id).update(assigned_to=self.boss)
         keys = {a["key"]: a for a in self.admin.get("/api/admin/overview/").json()["attention"]}

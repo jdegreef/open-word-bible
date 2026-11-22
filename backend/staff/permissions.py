@@ -15,10 +15,12 @@ database gave up on a query (statement_timeout), 500 "server_error"
 otherwise. The request id is in the log line and on the Sentry event, so a
 screenshot of the admin finds the traceback.
 """
+import hashlib
 import logging
 import uuid
 from functools import wraps
 
+from django.core.cache import cache
 from django.core.exceptions import PermissionDenied
 from django.db import OperationalError
 from django.http import Http404
@@ -77,10 +79,20 @@ def is_super_admin(user):
     return user.is_authenticated and user.roles.filter(kind=K.SUPER_ADMIN).exists()
 
 
-def admin_view(area, methods=("GET",)):
+# How long a change sent with an Idempotency-Key is remembered.
+ONCE_SECONDS = 600
+
+
+def admin_view(area, methods=("GET",), once=False):
     """An /api/admin/ endpoint in area: an API view taking JSON that answers
     401 to anyone signed out and 403 to an account whose roles don't open
-    area. The view gets the account's areas as request.admin_areas."""
+    area. The view gets the account's areas as request.admin_areas.
+
+    once: the endpoint files or sends something (a GitHub issue, emails).
+    A change sent with an Idempotency-Key header that this account already
+    sent in the last ONCE_SECONDS, or is still sending, answers 409
+    "duplicate" instead of doing it again (a double click, a retry of a
+    request that worked). A change that fails frees its key."""
     if area not in AREAS:
         raise ValueError(f"unknown admin area {area!r}")
 
@@ -94,12 +106,21 @@ def admin_view(area, methods=("GET",)):
             if area not in request.admin_areas:
                 return Response({"detail": "Your roles don't open this part of the admin.",
                                  "code": "forbidden"}, status=status.HTTP_403_FORBIDDEN)
+            slot = _once_slot(request) if once else None
+            if slot and not cache.add(slot, "sending", ONCE_SECONDS):
+                return Response({"detail": "This was sent a moment ago, so it wasn't sent again. Reload to see it.",
+                                 "code": "duplicate"}, status=status.HTTP_409_CONFLICT)
             try:
-                return view(request, *args, **kwargs)
+                response = view(request, *args, **kwargs)
             except (APIException, Http404, PermissionDenied):
+                if slot:
+                    cache.delete(slot)
                 raise   # DRF answers these itself, as JSON
             except Exception as e:
-                return failed(request, e)
+                response = failed(request, e)
+            if slot and response.status_code >= 400:
+                cache.delete(slot)   # nothing was done: trying again may
+            return response
 
         endpoint = api_view(list(methods))(parser_classes([JSONParser])(checked))
         endpoint.admin_area = area
@@ -136,3 +157,13 @@ def failed(request, error):
     response = Response(body, status=code)
     response["X-Request-Id"] = request_id
     return response
+
+
+def _once_slot(request):
+    """The cache key for a change's Idempotency-Key, per account; None for a
+    read or a change sent without one."""
+    key = request.headers.get("Idempotency-Key", "")
+    if request.method in ("GET", "HEAD", "OPTIONS") or not key:
+        return None
+    digest = hashlib.sha256(f"{request.path}\n{key}".encode()).hexdigest()[:32]
+    return f"staff.once.{request.user.id}.{digest}"
