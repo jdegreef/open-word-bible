@@ -173,8 +173,9 @@ form.admin-toolbar { justify-content: flex-start; }
   .admin-rail-toggle { display: flex; align-items: center; gap: 8px; width: 100%; padding: 10px 14px; border: 1px solid var(--line-strong); border-radius: 10px; background: var(--surface); color: var(--text); font: inherit; font-size: 15px; cursor: pointer; text-align: start; }
   .admin-rail-toggle > span:first-child { color: var(--muted); }
   .admin-rail-toggle > b { flex: 1; font-weight: 600; }
-  .admin-rail-toggle::after { content: ""; width: 8px; height: 8px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg) translateY(-2px); }
-  .admin-rail.open .admin-rail-toggle::after { transform: rotate(-135deg) translateY(-2px); }
+  /* A glyph, not a corner drawn with borders: it needs no left or right. */
+  .admin-rail-toggle::after { content: "\25BE"; font-size: 14px; line-height: 1; }
+  .admin-rail.open .admin-rail-toggle::after { transform: rotate(180deg); }
   .admin-rail-sections { display: none; margin-top: 6px; padding: 4px 6px 8px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
   .admin-rail.open .admin-rail-sections { display: block; }
   .admin-rail-group { margin-top: 12px; }
