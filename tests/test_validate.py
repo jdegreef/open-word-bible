@@ -448,6 +448,7 @@ class ValidateTest(unittest.TestCase):
         self.assertTrue(any(e.startswith("renderings.fa.R: the Arabic") for e in errors), errors)
         # Another language may write them (an Arabic word quoted in English).
         del record["renderings"]["fa"]
+        record["decisions"] = [d for d in record["decisions"] if d.get("language") != "fa"]
         record["renderings"]["en"]["B"] += " \u064a"
         self.assertEqual(validate.validate_record(record), [])
 
