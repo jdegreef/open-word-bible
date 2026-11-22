@@ -45,7 +45,12 @@ BUDGETS = {
     # in the reader, links from notes to articles and speaker labels; 53.3 KB
     # on 2026-11-17 with Parallel's language pair tools, word links across
     # languages and their word card, furigana and the spoken word lit].
+    # Not admin.js or admin.css, which only signed-in staff load.
     "js_css_asset_gz": 58 * KB,
+    # The admin's script or style sheet (/admin/, staff only) [58 KB,
+    # admin.js, on 2026-11-22 with the review workspace, inbox paging and
+    # undo; it was counted with the readers' scripts until then].
+    "admin_asset_gz": 80 * KB,
     # Every file in the site [703 MB; 909 MB on 2026-10-14 with Numbers to
     # Ruth; 1,150 MB later that day with 1 Samuel to 2 Chronicles; 1,810 MB
     # with Vietnamese and Korean as site languages, each about 250 MB, since
@@ -98,6 +103,11 @@ def is_reader_data(rel):
     return rel.parts[0] == "chapter-data" or (len(rel.parts) == 1 and rel.name.startswith("reader-"))
 
 
+def is_admin(rel):
+    """The admin's own script or style sheet, which only staff load."""
+    return len(rel.parts) == 1 and rel.stem == "admin"
+
+
 CHAPTER_DATA = re.compile(rb'<script src="/(chapter-data/[^"?]+\.js)\?v=[0-9a-f]+"></script>')
 
 
@@ -128,7 +138,11 @@ def measure(site):
             (p for p in files if is_chapter_page(p.relative_to(site))), lambda p: chapter_page_gz(site, p))
     if "js_css_asset_gz" in BUDGETS:
         found["js_css_asset_gz"] = largest(
-            (p for p in files if p.suffix in (".js", ".css") and not is_reader_data(p.relative_to(site))), gzipped)
+            (p for p in files if p.suffix in (".js", ".css") and not is_reader_data(p.relative_to(site))
+             and not is_admin(p.relative_to(site))), gzipped)
+    if "admin_asset_gz" in BUDGETS:
+        found["admin_asset_gz"] = largest(
+            (p for p in files if p.suffix in (".js", ".css") and is_admin(p.relative_to(site))), gzipped)
     if "site_total" in BUDGETS:
         found["site_total"] = (sum(p.stat().st_size for p in files), None)
     return found
