@@ -2359,3 +2359,9 @@ names the book where the form was first used.
 | Nahum 2:1 | the feet of one who brings good news | *ang mga paa ng nagdadala ng mabuting balita* | 1:15 in English Bibles; Isaiah 52:7 |
 | Nahum 3:8 | No-amon | No-amon (L, B); R *Tebas* | Thebes |
 | Nahum 3:14 | mortar; brick mold | *argamasa*; *hulmahan ng laryo* |  |
+| Habakkuk 2:2 | tablets | *mga tapyas* |  |
+| Habakkuk 2:4 | the righteous will live by his faithfulness | *ang matuwid ay mabubuhay sa pamamagitan ng kaniyang katapatan* | Romans 1:17 has *faith* |
+| Habakkuk 2:6 | Woe | *Kahabag-habag* (L, B); R *Nakakaawa ang sasapitin* | five woes in 2:6-19 |
+| Habakkuk 3:1 | shigionoth | *shigionot* | as *Shigaion* in Psalm 7 |
+| Habakkuk 3:7 | Cushan | Cushan |  |
+| Habakkuk 3:19 | GOD my Lord | *ang DIYOS na aking Panginoon* (L); *Panginoong DIYOS* (B, R) |  |
