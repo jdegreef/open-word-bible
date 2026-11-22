@@ -1056,3 +1056,64 @@ People and places: ਪੌਲੁਸ, ਤੁਖਿਕੁਸ; ਅਫ਼ਸੁਸ, �
   ਆਸਨੱਪਰ; leaders ਜ਼ਰੁੱਬਾਬਲ, ਯੇਸ਼ੂਆ (the high priest, ਯਹੋਸ਼ੁਆ in Haggai),
   ਯੋਸਾਦਾਕ, ਸ਼ਅਲਤੀਏਲ; prophets ਹੱਜਈ, ਜ਼ਕਰਯਾਹ, ਇੱਦੋ; Ezra ਅਜ਼ਰਾ; Ezra's
   priestly line (7:1-5) should be spelled as in 1 Chronicles 6.
+
+### Daniel
+
+- Names: ਦਾਨੀਏਲ (ਬੇਲਟਸ਼ੱਸਰ), ਹਨਨਯਾਹ, ਮੀਸ਼ਾਏਲ, ਅਜ਼ਰਯਾਹ and their Babylonian
+  names ਸ਼ਦਰਕ, ਮੇਸ਼ਕ, ਅਬੇਦਨਗੋ; ਯਹੋਯਾਕੀਮ, ਨਬੂਕਦਨੱਸਰ, ਬੇਲਸ਼ੱਸਰ (the king,
+  kept apart from ਬੇਲਟਸ਼ੱਸਰ), ਮਾਦੀ ਦਾਰਾ, ਅਹਸ਼ਵੇਰੋਸ਼, ਕੋਰਸ਼; officials
+  ਅਸ਼ਪਨਜ਼, ਅਰਯੋਕ; angels ਜਬਰਾਈਲ, ਮੀਕਾਏਲ (Luke 1, Jude 9 and Revelation 12
+  should match); places ਬਾਬਲ, ਸ਼ਿਨਾਰ, ਦੂਰਾ, ਸ਼ੂਸ਼ਨ ਗੜ੍ਹ, ਏਲਾਮ, ਊਲਈ ਨਹਿਰ,
+  ਦਜਲਾ, ਊਫ਼ਾਜ਼, ਕਿੱਤੀਮ; peoples ਮਾਦੀ ਅਤੇ ਫ਼ਾਰਸੀ, ਯੂਨਾਨ, ਅਦੋਮ, ਮੋਆਬ,
+  ਅੰਮੋਨੀ, ਲੂਬੀ, ਕੂਸ਼ੀ.
+- Court experts: wise men ਬੁੱਧਵਾਨ (not ਗਿਆਨੀ); magicians ਜਾਦੂਗਰ;
+  enchanters ਮੰਤਰ ਪੜ੍ਹਨ ਵਾਲੇ; sorcerers ਟੂਣੇਹਾਰੇ; diviners ਭਵਿੱਖ ਦੱਸਣ
+  ਵਾਲੇ; Chaldeans ਕਸਦੀ (L, B), ਜੋਤਸ਼ੀ (R) in the expert lists and ਬਾਬਲ ਦੇ
+  ਲੋਕ (R) as a people. Chief official ਖੋਜਿਆਂ ਦਾ ਸਰਦਾਰ (L), ਦਰਬਾਰੀਆਂ ਦਾ
+  ਸਰਦਾਰ (B), ਮਹਿਲ ਦੇ ਅਧਿਕਾਰੀਆਂ ਦਾ ਸਰਦਾਰ (R).
+- Officials (3:2, 6:7): ਸੂਬੇਦਾਰ (L, B) / ਇਲਾਕਾਈ ਹਾਕਮ (R), ਉਪ-ਹਾਕਮ,
+  ਰਾਜਪਾਲ, ਸਲਾਹਕਾਰ, ਖ਼ਜ਼ਾਨਚੀ, ਨਿਆਂਕਾਰ, ਦੰਡ-ਅਧਿਕਾਰੀ; the three overseers
+  ਨਿਗਰਾਨ (L), ਵੱਡੇ ਨਿਗਰਾਨ (B), ਮੁੱਖ ਅਧਿਕਾਰੀ (R).
+- Chapter 3: the furnace ਭੜਕਦੀ ਅੱਗ ਦੀ ਭੱਠੀ (L), ਭਖਦੀ ਭੱਠੀ (B), ਬਹੁਤ ਗਰਮ
+  ਭੱਠੀ (R); instruments ਨਰਸਿੰਗਾ, ਬੰਸਰੀ, ਵੀਣਾ, ਤਿਕੋਣੀ ਵੀਣਾ (ਸਿਤਾਰ at R),
+  ਸਾਰੰਗੀ, ਮਸ਼ਕਬੀਨ; worship ਮੱਥਾ ਟੇਕਣਾ (L), ਉਪਾਸਨਾ (B), ਪੂਜਾ (R); image
+  ਮੂਰਤ; units `{{units:ਲਗਭਗ 27 ਮੀਟਰ|ਸੱਠ ਹੱਥ}}`.
+- Key words: interpretation ਅਰਥ; secret ਭੇਤ (L, B), ਰਾਜ਼ (R); God of heaven
+  ਅਕਾਸ਼ ਦੇ ਪਰਮੇਸ਼ੁਰ; Most High ਅੱਤ ਮਹਾਨ; watcher ਰਾਖਾ (L, B), ਸਵਰਗੀ
+  ਸੰਦੇਸ਼ਵਾਹਕ (R); seven times ਸੱਤ ਸਮੇਂ; the writing ਮਨੇ, ਮਨੇ, ਤਕੇਲ ਅਤੇ
+  ਪਰਸੀਨ (ਪਰੇਸ in 5:28); lions' den ਸ਼ੇਰਾਂ ਦੀ ਗੁਫ਼ਾ (L, B), ਸ਼ੇਰਾਂ ਦਾ ਟੋਆ
+  (R); the law of the Medes and Persians as Esther 1:19.
+- Chapter 7: beasts ਪਸ਼ੂ (L, B), ਜਾਨਵਰ (R); dominion ਪ੍ਰਭੁਤਾ (L), ਅਧਿਕਾਰ
+  (B), ਰਾਜ ਕਰਨ ਦਾ ਅਧਿਕਾਰ / ਤਾਕਤ (R); Ancient of Days ਅੱਤ ਪ੍ਰਾਚੀਨ (L, B),
+  ਉਹ, ਜੋ ਯੁੱਗਾਂ ਤੋਂ ਹਨ (R); one like a son of man ਮਨੁੱਖ ਦੇ ਪੁੱਤਰ ਵਰਗਾ
+  ਕੋਈ (L, B), never under the gender setting, ਇੱਕ ਮਨੁੱਖ ਵਰਗਾ (R); holy ones
+  of the Most High ਅੱਤ ਮਹਾਨ ਦੇ ਪਵਿੱਤਰ ਜਨ (L), ... ਪਵਿੱਤਰ ਲੋਕ (B),
+  ਪਰਮੇਸ਼ੁਰ ਦੇ ਪਵਿੱਤਰ ਲੋਕ (R); court ਅਦਾਲਤ; a time, times and half a time
+  ਇੱਕ ਸਮੇਂ, ਸਮਿਆਂ ਅਤੇ ਅੱਧੇ ਸਮੇਂ (L), ਇੱਕ ਸਮਾਂ, ਦੋ ਸਮੇਂ ਅਤੇ ਅੱਧਾ ਸਮਾਂ
+  (B), ਸਾਢੇ ਤਿੰਨ ਸਮੇਂ (R), again in 12:7; Revelation 12:14 should match.
+  7:13 "with the clouds of heaven" is the wording Matthew 26:64 and Mark
+  14:62 should match.
+- Chapters 8-12: ram ਮੇਢਾ, goat ਬੱਕਰਾ; the regular offering (*tamid*)
+  ਨਿੱਤ ਦੀ [ਬਲੀ] (L), ਨਿੱਤ ਦੀ ਬਲੀ (B), ਰੋਜ਼ ਦੇ ਬਲੀਦਾਨ (R); the abomination
+  of desolation ਉਜਾੜਨ ਵਾਲੀ ਘਿਣਾਉਣੀ ਚੀਜ਼ (L), ਤਬਾਹੀ ਲਿਆਉਣ ਵਾਲੀ ਘਿਣਾਉਣੀ
+  ਚੀਜ਼ (B), ... ਭਿਆਨਕ ਚੀਜ਼ (R) in 9:27, 11:31 and 12:11, for Matthew 24:15
+  and Mark 13:14 to match; *pesha* ਅਪਰਾਧ (L), ਬਗਾਵਤ (B), ਪਾਪ (R); sanctuary
+  ਪਵਿੱਤਰ ਸਥਾਨ (L, B), ਹੈਕਲ (R); time of the end ਅੰਤ ਦਾ ਸਮਾਂ; the
+  beautiful land ਸੋਹਣਾ ਦੇਸ਼ (ਇਸਰਾਏਲ ਦਾ at R); seventy sevens ਸੱਤਰ ਸਤੱਕੇ
+  (L, B), ਸੱਤ-ਸੱਤ ਦੇ ਸੱਤਰ ਗੇੜ (R); anointed one ਮਸਹ ਕੀਤਾ ਹੋਇਆ; the
+  princes of Persia and Greece ਪ੍ਰਧਾਨ (L, B), ਰਾਜ ਕਰਨ ਵਾਲਾ ਦੂਤ (R); the
+  wise (*maskilim*) ਸੂਝ ਰੱਖਣ ਵਾਲੇ (L), ਬੁੱਧਵਾਨ (B), ਬੁੱਧਵਾਨ ਆਗੂ (R); king
+  of the south / north ਦੱਖਣ ਦਾ ਰਾਜਾ / ਉੱਤਰ ਦਾ ਰਾਜਾ at every level; eternal
+  life (12:2) ਸਦੀਪਕ ਜੀਵਨ (L, B), ਸਦਾ ਦਾ ਜੀਵਨ (R).
+- The prayer of 9:4-19: God addressed with ਤੂੰ and spoken of with the
+  honorific plural; YHWH `{{divine_name:ਪ੍ਰਭੂ|ਯਾਹਵੇ}}`, Adonai plain
+  ਪ੍ਰਭੂ, Adonai ha-Elohim (9:3) ਪ੍ਰਭੂ ਪਰਮੇਸ਼ੁਰ; 9:4 "ਮਹਾਨ ਅਤੇ ਭੈ ਯੋਗ
+  ਪਰਮੇਸ਼ੁਰ ... ਨੇਮ ਅਤੇ ਅਟੱਲ ਪਿਆਰ" is the wording Nehemiah 1:5 and 9:32
+  should match.
+- Address: courtiers and Daniel say ਤੁਸੀਂ to kings, with ਹੇ ਰਾਜਾ (L), ਹੇ
+  ਮਹਾਰਾਜ (B), ਮਹਾਰਾਜ (R), and the greeting ਤੁਸੀਂ ਸਦਾ ਜੀਉਂਦੇ ਰਹੋ!; kings
+  say ਤੂੰ to Daniel; the heavenly messengers say ਤੂੰ to Daniel, and he says
+  ਤੁਸੀਂ to them with ਹੇ ਮੇਰੇ ਸੁਆਮੀ (L, B), ਸ੍ਰੀਮਾਨ ਜੀ (R). The angel's
+  "son of man" (8:17) is ਹੇ ਆਦਮੀ ਦੇ ਪੁੱਤਰ (L, B), ਹੇ ਮਨੁੱਖ (R), as in
+  Ezekiel. 3:33 and 4:31 echo Psalm 145:13; 6:23 is echoed in Hebrews
+  11:33.
