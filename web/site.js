@@ -724,6 +724,103 @@ window.OWBStudy = (function () {
   });
 })();
 
+// Verses saved before the site used NIV numbers (2026-11-21) were kept by
+// our own verse ids, which in the Old Testament follow the Hebrew Bible
+// (Psalm 3's title was PSA.3.1, Malachi 4:1 was MAL.3.19). Once per
+// browser, move them to the NIV's (owb/renumber.py, whose table the build
+// writes as /renumber.json): owb.marks, owb.notes, owb.memory, owb.place
+// and owb.pairs, only what was saved before the switch. Two of ours that
+// the NIV makes one verse meet there: the later wins, the notes are joined.
+// The sync below waits for this; a copy sent without "numbering" is moved
+// by the account as well.
+window.OWBRenumbered = (function () {
+  "use strict";
+  var DONE = "owb.numbering";
+  function get(key) {
+    try { return JSON.parse(localStorage.getItem(key) || "null"); } catch (e) { return null; }
+  }
+  function put(key, value) {
+    try { localStorage.setItem(key, JSON.stringify(value)); } catch (e) { /* full or blocked */ }
+  }
+  function done() { try { localStorage.setItem(DONE, "niv"); } catch (e) { /* blocked */ } }
+  try { if (localStorage.getItem(DONE) === "niv") return Promise.resolve(false); } catch (e) { return Promise.resolve(false); }
+  var stores = ["owb.marks", "owb.notes", "owb.memory"];
+  var place = get("owb.place"), pairs = get("owb.pairs");
+  var any = stores.some(function (k) { var v = get(k); return v && Object.keys(v).length; }) ||
+    (place && place.book) || (Array.isArray(pairs) && pairs.length);
+  if (!any || !window.fetch) { done(); return Promise.resolve(false); }
+  return fetch("/renumber.json").then(function (r) {
+    if (!r.ok) throw new Error(String(r.status));
+    return r.json();
+  }).then(function (t) {
+    var table = t.verses;
+    function old(at) { return typeof at === "number" && at >= 0 && at < t.switched; }
+    function verse(id) { return table[id] ? table[id][0] : id; }
+    function parse(id) { var p = id.split("."); return { book: p[0], chapter: +p[1], verse: +p[2] }; }
+    function passage(key) {
+      var m = /^([1-4A-Z]{3})\.(\d+)\.(\d+)-(\d+)$/.exec(key);
+      if (!m) return verse(key);
+      var ids = [];
+      for (var v = +m[3]; v <= +m[4]; v++) ids.push(m[1] + "." + m[2] + "." + v);
+      if (!ids.some(function (id) { return table[id]; })) return key;
+      var a = parse(verse(ids[0])), last = a.verse;
+      ids.forEach(function (id) {
+        (table[id] || [id]).forEach(function (x) {
+          var r = parse(x);
+          if (r.book === a.book && r.chapter === a.chapter && r.verse > last) last = r.verse;
+        });
+      });
+      var start = a.book + "." + a.chapter + "." + a.verse;
+      return last > a.verse ? start + "-" + last : start;
+    }
+    function merge(x, y) {
+      var first = (x.at || 0) <= (y.at || 0) ? x : y, later = first === x ? y : x, out = {};
+      Object.keys(first).forEach(function (k) { out[k] = first[k]; });
+      Object.keys(later).forEach(function (k) { out[k] = later[k]; });
+      var notes = [first.n, later.n].filter(function (n, i, all) { return n && all.indexOf(n) === i; });
+      if (notes.length) out.n = notes.join("\n\n");
+      var tags = (first.t || []).concat(later.t || []).filter(function (n, i, all) { return all.indexOf(n) === i; });
+      if (tags.length) out.t = tags.slice(0, 20);
+      return out;
+    }
+    var changed = false;
+    stores.forEach(function (k) {
+      var all = get(k);
+      if (!all || typeof all !== "object") return;
+      var out = {}, moved = false;
+      Object.keys(all).forEach(function (id) {
+        var entry = all[id], to = entry && old(entry.at) ? passage(id) : id;
+        if (to !== id) moved = true;
+        out[to] = out[to] && entry ? merge(out[to], entry) : entry;
+      });
+      if (moved) { put(k, out); changed = true; }
+    });
+    if (place && place.book && old(place.at)) {
+      var pv = String(place.verse), ch = place.chapter;
+      if (pv.indexOf(":") > 0) { ch = +pv.split(":")[0]; pv = pv.split(":")[1]; }
+      var ours = place.book + "." + ch + "." + (+pv), p = parse(verse(ours));
+      if (table[ours]) {
+        place.chapter = p.chapter; place.verse = String(p.verse);
+        put("owb.place", place);
+        changed = true;
+      }
+    }
+    if (Array.isArray(pairs)) {
+      var movedPairs = false;
+      pairs.forEach(function (x) {
+        if (!x || !x.v || !old(x.at) || !table[x.v]) return;
+        x.v = verse(x.v);
+        if (x.u) x.u = x.u.replace(/#v\d+$/, "#v" + parse(x.v).verse);
+        movedPairs = true;
+      });
+      if (movedPairs) { put("owb.pairs", pairs); changed = true; }
+    }
+    done();
+    if (changed) document.dispatchEvent(new Event("owb:synced"));
+    return changed;
+  }).catch(function () { return false; /* offline: try again on the next page */ });
+})();
+
 // Sync for a signed-in reader (backend accounts/reading.py): bookmarks,
 // highlights, notes and collections (owb.marks), passage notes (owb.notes),
 // the word list (owb.words), the reading place (owb.place), reading-plan
@@ -762,11 +859,14 @@ window.OWBStudy = (function () {
     Object.keys(all).forEach(function (k) { if (k !== "at" && k !== "lang") v[k] = all[k]; });
     return { v: v, at: all.at };
   }
+  function moved() { try { return localStorage.getItem("owb.numbering") === "niv"; } catch (e) { return false; } }
   function body() {
     return JSON.stringify({ marks: read("owb.marks", {}), place: read("owb.place", null),
                             plans: read("owb.plans", null), settings: settings(),
                             notes: read("owb.notes", {}), words: read("owb.words", {}),
-                            myplans: read("owb.myplans", {}), memory: read("owb.memory", {}) });
+                            myplans: read("owb.myplans", {}), memory: read("owb.memory", {}),
+                            // Moved to NIV numbers (OWBRenumbered above), or not yet.
+                            numbering: moved() ? "niv" : undefined });
   }
   function hash(text) {
     for (var h = 5381, i = 0; i < text.length; i++) h = (h * 33 + text.charCodeAt(i)) | 0;
@@ -814,9 +914,11 @@ window.OWBStudy = (function () {
     if (changed) document.dispatchEvent(new Event("owb:synced"));
   }
 
+  var ready = false;
   function sync(leaving) {
     var key = token();
     if (!key || stopped) return;
+    if (!ready) { again = true; return; }
     var data = body();
     if (leaving && hash(data) === session(SENT)) return;
     if (running) { again = true; return; }
@@ -852,7 +954,13 @@ window.OWBStudy = (function () {
   document.addEventListener("owb:account", function () { stopped = false; sync(); });
   document.addEventListener("visibilitychange", function () { if (document.visibilityState === "hidden") sync(true); });
   window.addEventListener("online", soon);
-  if (hash(body()) !== session(SENT) || Date.now() - (Number(session(SINCE)) || 0) > 120000) sync();
+  window.OWBRenumbered.then(function () {
+    ready = true;
+    if (again || hash(body()) !== session(SENT) || Date.now() - (Number(session(SINCE)) || 0) > 120000) {
+      again = false;
+      sync();
+    }
+  });
 })();
 
 // The home page's verse of the day (verse_of_the_day in

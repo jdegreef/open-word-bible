@@ -311,3 +311,66 @@ class StudySyncTest(TestCase):
             r = self.client.post("/api/reading", {"myplans": plans_}, format="json")
             self.assertEqual(r.status_code, 400, plans_)
         self.assertFalse(ReaderState.objects.exists())
+
+
+class NivNumberingTest(TestCase):
+    """Verses saved before the site used NIV numbers (owb/renumber.py)."""
+    OLD = 1000
+    NEW = 1795268400000 + 1000
+
+    def setUp(self):
+        self.user, self.client = signed_in()
+
+    def sync(self, **body):
+        r = self.client.post("/api/reading", body, format="json")
+        self.assertEqual(r.status_code, 200, r.content)
+        return r.json()
+
+    def test_a_browser_that_has_not_moved_its_verses_is_moved(self):
+        out = self.sync(marks={"PSA.3.2": {"h": "blue", "at": self.OLD}, "PSA.4.2": {"b": True, "at": self.NEW}},
+                        notes={"MAL.3.19-24": {"n": "The day", "at": self.OLD}},
+                        place={"book": "MAL", "chapter": 3, "verse": "20", "at": self.OLD})
+        self.assertEqual(set(out["marks"]), {"PSA.3.1", "PSA.4.2"})
+        self.assertEqual(set(out["notes"]), {"MAL.4.1-6"})
+        self.assertEqual((out["place"]["chapter"], out["place"]["verse"]), (4, "2"))
+
+    def test_a_browser_that_has_moved_them_is_taken_as_it_is(self):
+        out = self.sync(numbering="niv", marks={"PSA.3.2": {"h": "blue", "at": self.OLD}})
+        self.assertEqual(set(out["marks"]), {"PSA.3.2"})
+
+    def test_the_migration_moves_what_was_saved_before(self):
+        import importlib
+
+        from django.apps import apps
+        Mark.objects.create(user=self.user, verse="NUM.25.19", highlight="yellow", note="first", updated_at=self.OLD)
+        Mark.objects.create(user=self.user, verse="NUM.26.1", bookmark=True, note="second", updated_at=self.OLD + 5)
+        Mark.objects.create(user=self.user, verse="PSA.4.2", highlight="pink", updated_at=self.NEW)
+        PassageNote.objects.create(user=self.user, passage="PSA.3.1-9", note="Morning", updated_at=self.OLD)
+        ReaderState.objects.create(user=self.user, memory={"MAL.3.23": {"t": "Elijah", "at": self.OLD}})
+        ReadingPlace.objects.create(user=self.user, book="JOL", chapter=3, verse="1", updated_at=self.OLD)
+        importlib.import_module("accounts.migrations.0024_niv_numbering").forwards(apps, None)
+        marks = {m.verse: m for m in Mark.objects.filter(user=self.user)}
+        self.assertEqual(set(marks), {"NUM.26.1", "PSA.4.2"})
+        self.assertEqual((marks["NUM.26.1"].highlight, marks["NUM.26.1"].bookmark, marks["NUM.26.1"].note),
+                         ("yellow", True, "first\n\nsecond"))
+        self.assertEqual(PassageNote.objects.get().passage, "PSA.3.0-8")
+        self.assertEqual(set(ReaderState.objects.get().memory), {"MAL.4.5"})
+        place = ReadingPlace.objects.get()
+        self.assertEqual((place.chapter, place.verse), (2, "28"))
+
+    def test_messages_sent_before_name_the_verse_readers_now_see(self):
+        import datetime
+        import importlib
+
+        from django.apps import apps
+
+        from feedback.models import ReaderMessage
+        before = ReaderMessage.objects.create(user=self.user, kind="question", verse="MAL.3.23", language="en",
+                                              text="Who is Elijah?")
+        after = ReaderMessage.objects.create(user=self.user, kind="question", verse="MAL.4.5", language="en",
+                                             text="And here?")
+        ReaderMessage.objects.filter(pk=before.pk).update(
+            created_at=datetime.datetime(2026, 11, 20, tzinfo=datetime.timezone.utc))
+        importlib.import_module("feedback.migrations.0006_niv_numbering").forwards(apps, None)
+        self.assertEqual(ReaderMessage.objects.get(pk=before.pk).verse, "MAL.4.5")
+        self.assertEqual(ReaderMessage.objects.get(pk=after.pk).verse, "MAL.4.5")

@@ -40,6 +40,10 @@ it knows and ignores the rest.
 
 n is the reader's own note on the verse. A mark with none of b, h and n is a
 cleared one, kept so the clearing reaches the other devices.
+
+Verses are in reader (NIV) numbering. A copy without "numbering": "niv" comes
+from a browser that has not moved what it saved before the site switched to
+NIV numbers, and merge() moves it first (owb/renumber.py).
 """
 import re
 import time
@@ -47,7 +51,7 @@ import time
 from django.contrib.auth import get_user_model
 from django.db import transaction
 
-from owb import languages
+from owb import languages, renumber
 
 from .models import Mark, PassageNote, ReaderState, ReadingPlace, SavedWord
 
@@ -362,11 +366,25 @@ def _merge_plans(have, theirs):
     return {"active": active if active in plans else None, "at": at, "plans": plans}
 
 
+def _renumbered(data):
+    """A copy from a browser that has not moved its verses to NIV numbers
+    (web/site.js OWBRenumbered, owb/renumber.py), moved as it would."""
+    data = dict(data)
+    for key, by in (("marks", renumber.verse), ("notes", renumber.passage), ("memory", renumber.passage)):
+        if isinstance(data.get(key), dict):
+            data[key] = renumber.store(data[key], by)
+    if isinstance(data.get("place"), dict):
+        data["place"] = renumber.place(data["place"])
+    return data
+
+
 def merge(user, data):
     """Take in a device's copy; raises Invalid for one the browser would not
     send, without saving any of it."""
     if not isinstance(data, dict):
         raise Invalid("Send {marks, place, plans, settings, notes, words, myplans, memory}.")
+    if data.get("numbering") != "niv":
+        data = _renumbered(data)
     marks = data.get("marks") or {}
     if not isinstance(marks, dict) or len(marks) > MAX_MARKS:
         raise Invalid(f"Send up to {MAX_MARKS} marks.")
