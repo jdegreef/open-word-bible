@@ -2311,7 +2311,7 @@ names the book where the form was first used.
 | Amos 1:3 | for three transgressions ... and for four | *Dahil sa tatlong paglabag ... at dahil sa apat* (L); *krimen* (B); R *Paulit-ulit na nagkasala* | refrain in 1:3-2:6 |
 | Amos 2:11 | Nazirites | *mga Nazareo* |  |
 | Amos 4:1 | cows of Bashan | *mga baka ng Basan* |  |
-| Amos 4:13 | the LORD, the God of hosts | *ang PANGINOON na Diyos ng mga Hukbo* |  |
+| Amos 4:13 | the LORD, the God of hosts | *ang PANGINOON na Diyos ng mga hukbo* |  |
 | Amos 5:8 | Pleiades; Orion | *Pleyades*; *Orion* |  |
 | Amos 5:26 | Sakkuth; Kaiwan | *Sikut*; *Kiyun* | following the vowels of the Hebrew |
 | Amos 6:4 | beds of ivory | *mga higaang garing* |  |
