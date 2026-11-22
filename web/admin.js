@@ -633,6 +633,7 @@ var OWBAdminNav = (function () {
     { id: "coverage", label: "Coverage", area: "overview", group: "Progress" },
     { id: "languages", label: "Languages", area: "overview", group: "Progress" },
     { id: "health", label: "Content health", area: "overview", group: "Progress" },
+    { id: "pace", label: "Review pace", area: "overview", group: "Progress" },
     { id: "articles", label: "Articles", area: "overview", group: "Publish" },
     { id: "export", label: "Export", area: "export", group: "Publish" },
     { id: "releases", label: "Release notes", area: "export", group: "Publish" },
@@ -1044,10 +1045,13 @@ var OWBAdminNav = (function () {
       var langs = d.languages;
       var tab = COVERAGE.testament;
       var body = h("div");
+      // A book every language has finished needs nothing; hiding them leaves the work.
+      var finished = function (b) { return langs.every(function (l) { return b.languages[l.code].state === "drafted"; }); };
       function draw(which) {
         body.textContent = "";
         var books = d.books.filter(function (b) { return b.testament === which; });
-        var rows = books.map(function (b) {
+        var shown = COVERAGE.hide ? books.filter(function (b) { return !finished(b); }) : books;
+        var rows = shown.map(function (b) {
           return h("tr", null,
             h("th", { scope: "row" }, h("a", { href: "#book/" + b.code }, b.name)),
             h("td", { class: "admin-num" }, b.chapters_drafted + " / " + b.chapters),
@@ -1056,24 +1060,31 @@ var OWBAdminNav = (function () {
               var c = b.languages[l.code];
               var said = l.name + ": " + STATE_LABEL[c.state] + " (" + num(c.sentences) + " of " + num(b.sentences) + " sentences)";
               // The colour and mark for the eye; the same words as the tooltip for a screen reader.
-              return h("td", { class: "admin-cell" }, h("span", { class: "admin-state " + c.state, title: said },
+              // A cell opens the book, chapter by chapter, in every language.
+              return h("td", { class: "admin-cell" }, h("a", { class: "admin-state " + c.state, title: said, href: "#book/" + b.code },
                 h("span", { "aria-hidden": "true" }, c.state === "none" ? "" : c.state === "drafted" ? "✓" : pct(c.sentences, b.sentences) + "%"),
                 h("span", { class: "sr-only" }, said)));
             }));
         });
+        if (!rows.length) rows.push(h("tr", null, h("td", { colspan: 3 + langs.length }, "Every book here is drafted in every language.")));
         var done = function (code) {
           return books.filter(function (b) { return b.languages[code].state === "drafted"; }).length;
         };
         rows.push(h("tr", { class: "admin-total" }, h("th", { scope: "row" }, "Books drafted"), h("td"), h("td"),
           langs.map(function (l) { return h("td", { class: "admin-num" }, done(l.code) + " / " + books.length); })));
-        body.appendChild(table(["Book", ["Chapters", { class: "admin-num" }], ["Sentences", { class: "admin-num" }]]
-          .concat(langs.map(function (l) { return [l.code, { title: l.name, class: "admin-cell" }]; })), rows, "admin-coverage"));
+        var grid = table(["Book", ["Chapters", { class: "admin-num" }], ["Sentences", { class: "admin-num" }]]
+          .concat(langs.map(function (l) { return [l.code, { title: l.name, class: "admin-cell" }]; })), rows, "admin-coverage");
+        // Its own scroll box, so the language row and the book column stay in view.
+        grid.classList.add("admin-coverage-box");
+        body.appendChild(grid);
       }
       draw(tab);
+      var hide = h("input", { type: "checkbox", id: "coverage-hide", checked: !!COVERAGE.hide });
+      hide.addEventListener("change", function () { COVERAGE.hide = hide.checked ? "1" : ""; keepAddress(true); draw(COVERAGE.testament); });
       return [head("Progress", "Coverage", "Every book in every language. A tick is a book drafted whole; a percentage is the share of its drafted sentences in that language. Open a book for its chapters."),
         h("div", { class: "admin-toolbar" }, seg([["ot", "Old Testament"], ["nt", "New Testament"]], tab, function (v) {
           COVERAGE.testament = v; rememberTab("coverage", v); keepAddress(true); draw(v);
-        }), legend()),
+        }), h("label", { class: "admin-check", for: "coverage-hide" }, hide, " Hide books every language has finished"), legend()),
         ME.admin.indexOf("jobs") >= 0 ? h("p", null, h("a", { href: "#jobs" }, "Queue missing books"), " on the drafting jobs board.") : null, body];
     });
   };
@@ -1100,6 +1111,42 @@ var OWBAdminNav = (function () {
   function rememberTab(name, value) {
     try { sessionStorage.setItem("owb.admin." + name, value); } catch (e) { /* none */ }
   }
+
+  // How fast people are approving, layer by layer, and at that pace how
+  // long the rest will take (staff/pace.py).
+  VIEWS.pace = function () {
+    return api("/api/admin/pace/").then(function (d) {
+      var most = Math.max.apply(null, [1].concat(d.layers.map(function (l) { return Math.max.apply(null, l.per_week); })));
+      function spark(counts) {
+        return h("span", { class: "admin-spark", role: "img", "aria-label": "Approvals each week, oldest first: " + counts.join(", ") },
+          counts.map(function (n, i) {
+            return h("i", { style: "height:" + (n ? Math.max(8, 100 * n / most) : 0) + "%", title: "Week of " + date(d.weeks[i], true) + ": " + n });
+          }));
+      }
+      function left(l) {
+        if (l.weeks_left === 0) return "all approved";
+        if (l.weeks_left === null) return "no pace yet";
+        if (l.weeks_left > 520) return "over ten years";
+        return l.weeks_left > 104 ? "about " + plural(Math.round(l.weeks_left / 52), "year") : "about " + plural(l.weeks_left, "week");
+      }
+      var rows = d.layers.map(function (l) {
+        return h("tr", null, h("th", { scope: "row" }, h("a", { href: "#review/" + l.code }, l.name)),
+          h("td", null, bar(l.approved, l.size, "good"), h("span", { class: "admin-sub" }, num(l.approved) + " of " + num(l.size))),
+          h("td", null, spark(l.per_week)),
+          h("td", { class: "admin-num" }, num(l.recent)),
+          h("td", null, left(l)));
+      });
+      var people = d.reviewers.map(function (r) {
+        return h("tr", null, h("th", { scope: "row" }, r.name), h("td", null, r.layer_name), h("td", { class: "admin-num" }, num(r.approvals)));
+      });
+      return [head("Progress", "Review pace", "Approvals by people in each review layer, week by week for the last " + d.weeks.length +
+          " weeks, and at the pace of the last " + d.recent_weeks + " how long the rest of each layer would take. An approval made again after a sentence changed counts again."),
+        d.layers.length ? table(["Layer", "Approved", "Each week", ["Per week lately", { class: "admin-num" }], "At this pace"], rows, "admin-pace")
+          : empty("Nothing has been drafted to review yet."),
+        h("section", { class: "admin-block" }, h("h2", null, "Reviewers, last " + d.weeks.length + " weeks"),
+          people.length ? table(["Reviewer", "Layer", ["Approvals", { class: "admin-num" }]], people) : empty("No approvals in these weeks."))];
+    });
+  };
 
   // One book, chapter by chapter.
   VIEWS.book = function (code) {
@@ -1301,7 +1348,50 @@ var OWBAdminNav = (function () {
       function find(v) { if (v !== f.q) { f.q = v; refilter(); } }
       form.addEventListener("submit", function (e) { e.preventDefault(); stopLive(); find(search.value.trim()); });
       live(search, find);
-      var cards = d.messages.map(function (m) { return messageCard(m, d.team, { listed: f.status, moved: moved }); });
+      // Several messages at once: a box beside each card, and a bar for what
+      // to do with those ticked (a status or an assignee; never a reply).
+      var picked = {};
+      var bar = h("div", { class: "admin-bulk", hidden: true, role: "region", "aria-label": "Selected messages" });
+      var bulkNote = h("span", { class: "admin-note", role: "status" });
+      function ids() { return Object.keys(picked).filter(function (k) { return picked[k]; }).map(Number); }
+      function bulk(body, button) {
+        busy(button, true);
+        api("/api/admin/inbox/", { method: "PATCH", body: Object.assign({ ids: ids() }, body) }).then(function (r) {
+          FLASH = plural(r.messages.length, "message") + " changed.";
+          route();
+        }, function (e) { busy(button, false); note(bulkNote, e, true); });
+      }
+      function drawBar() {
+        var n = ids().length;
+        bar.hidden = !n;
+        bar.textContent = "";
+        if (!n) return;
+        var who = select("inbox-bulk-assign", [["", "Assign to\u2026"], ["none", "Nobody"]].concat((d.team || []).map(function (u) {
+          return [String(u.id), u.name || u.email];
+        })), "");
+        who.setAttribute("aria-label", "Assign the selected messages to");
+        who.addEventListener("change", function () {
+          if (who.value) bulk({ assigned_to: who.value === "none" ? null : Number(who.value) }, who);
+        });
+        var done = h("button", { type: "button", class: "admin-btn" }, "Mark done");
+        done.addEventListener("click", function () { bulk({ status: "done" }, done); });
+        var decline = h("button", { type: "button", class: "admin-btn" }, "Decline");
+        decline.addEventListener("click", function () { bulk({ status: "declined" }, decline); });
+        var clear = h("button", { type: "button", class: "admin-link" }, "Clear");
+        clear.addEventListener("click", function () {
+          picked = {};
+          list.querySelectorAll("input.admin-pick-message").forEach(function (b) { b.checked = false; });
+          drawBar();
+        });
+        add(bar, [h("strong", null, plural(n, "message") + " selected"), who,
+          f.status !== "done" ? done : null, f.status !== "declined" ? decline : null, clear, bulkNote]);
+      }
+      var cards = d.messages.map(function (m) {
+        var box = h("input", { type: "checkbox", class: "admin-pick-message", "aria-label": "Select the message on " + m.verse_label + " from " + (m.from.name || m.from.email) });
+        box.addEventListener("change", function () { picked[m.id] = box.checked; drawBar(); });
+        return h("div", { class: "admin-message-row" }, box, messageCard(m, d.team, { listed: f.status, moved: moved }));
+      });
+      var list = h("div", { class: "admin-messages" }, cards);
       var filtered = f.kind || f.lang || f.book || f.assigned || f.q;
       var pager = null;
       if (d.total > d.page || d.offset) {
@@ -1315,7 +1405,8 @@ var OWBAdminNav = (function () {
       }
       return [head("Readers", "Reader inbox", "Suggestions and questions readers send from a verse. New messages come oldest first; assign one to say you're dealing with it. A reply is emailed to the reader once; mark a message done when it's dealt with."),
         h("div", { class: "admin-toolbar" }, tabs, whose), h("div", { class: "admin-toolbar admin-filters" }, kind, lang, book), form,
-        cards.length ? h("div", { class: "admin-messages" }, cards) : empty(filtered ? "No messages match these filters." : "No messages here."),
+        bar,
+        cards.length ? list : empty(filtered ? "No messages match these filters." : "No messages here."),
         filtered && !cards.length ? (function () {
           var clear = h("button", { type: "button", class: "admin-btn" }, "Clear filters");
           clear.addEventListener("click", function () { f.kind = f.lang = f.book = f.assigned = f.q = ""; refilter(); });
@@ -1980,6 +2071,8 @@ var OWBAdminNav = (function () {
       });
       return [head("Progress", "Work in progress", "Drafting jobs, fix requests and article jobs from the last " + d.days + " days, with the pull requests that name them. A job open for more than " + d.stale_hours + " hours with no pull request has stalled."),
         d.error ? h("p", { class: "notice" }, d.error) : null,
+        // Kept from GitHub for a couple of minutes, and refreshed behind the page after that.
+        d.fetched_at ? h("p", { class: "admin-sub" }, "Read from GitHub " + when(d.fetched_at) + ".") : null,
         d.counts ? h("div", { class: "admin-tiles" }, tile(num(d.counts.open), "open"), tile(num(d.counts.in_review), "with a pull request open"),
           tile(num(d.counts.stale), "stalled", d.counts.stale ? "bad" : ""), tile(num(d.counts.done), "closed in " + d.days + " days")) : null,
         h("div", { class: "admin-toolbar" }, seg([["open", "Open"], ["stale", "Stalled"], ["closed", "Closed"], ["all", "All"]], WORK.state, function (v) { WORK.state = v; route(); }), kind),
@@ -2205,6 +2298,17 @@ var OWBAdminNav = (function () {
           api("/api/admin/users/" + u.id + "/sign-out/", { method: "POST" }).then(function () { route(); }, function (e) { busy(b, false); note(status, e, true); });
         }));
       }
+      // Deactivating keeps the account (and its reviews and messages) but
+      // stops it signing in; deleting can't when it has review history.
+      if (u.can_deactivate) {
+        actions.appendChild(u.active
+          ? confirmButton("Deactivate account", "Stop " + u.email + " signing in?", function (b) {
+            api("/api/admin/users/" + u.id + "/", { method: "PATCH", body: { active: false } }).then(function () { route(); }, function (e) { busy(b, false); note(status, e, true); });
+          })
+          : confirmButton("Reactivate account", "Let " + u.email + " sign in again?", function (b) {
+            api("/api/admin/users/" + u.id + "/", { method: "PATCH", body: { active: true } }).then(function () { route(); }, function (e) { busy(b, false); note(status, e, true); });
+          }));
+      }
       if (u.can_delete) {
         actions.appendChild(confirmButton("Delete account", "Delete " + u.email + " for good?", function (b) {
           api("/api/admin/users/" + u.id + "/", { method: "DELETE" }).then(function () { location.hash = "#users"; }, function (e) { busy(b, false); note(status, e, true); });
@@ -2337,7 +2441,7 @@ var OWBAdminNav = (function () {
   // Activity log.
   var ACTION_LABEL = {
     "role.grant": "granted a role to", "role.revoke": "removed a role from", "role.invite": "invited",
-    "user.delete": "deleted the account", "user.sign_out": "signed out the devices of",
+    "user.delete": "deleted the account", "user.deactivate": "deactivated the account", "user.activate": "reactivated the account", "user.sign_out": "signed out the devices of",
     "message.reply": "answered", "message.done": "marked done", "message.declined": "declined", "message.new": "reopened",
     "job.file": "filed drafting job", "article.job": "filed article job", "digest.send": "sent the weekly digest to", "message.fixed": "told the reader their message led to a change:", "email.send": "emailed the team:", "fix.request": "requested fix",
     "export.download": "downloaded", "review.assign": "assigned review to", "review.unassign": "took back a review assignment from",
@@ -3668,8 +3772,8 @@ var OWBAdminNav = (function () {
 
   // ---- Filters kept in the address -------------------------------------
 
-  var COVERAGE = { testament: sessionTab("coverage", "nt") };
-  filtered("coverage", COVERAGE, { testament: "nt" });
+  var COVERAGE = { testament: sessionTab("coverage", "nt"), hide: "" };
+  filtered("coverage", COVERAGE, { testament: "nt", hide: "" });
   filtered("review", REVIEW, { layer: "", book: "", state: "todo" }, function (arg, f) {
     if (arg.indexOf("/") >= 0) return arg;   // a sentence: #review/grc/JHN.1.1.s1
     f.layer = arg;
