@@ -2066,3 +2066,11 @@ names the book where the form was first used.
 | Psalms 119:11 | saying (*imrah*) | *pangungusap* (L); *pangako* (B, R) |  |
 | Psalms 120:1 | song of ascents | *awit ng pag-akyat* (R *awit para sa paglalakbay paakyat sa Jerusalem*) | Psalms 120–134 |
 | Psalms 132:6 | Jaar | Jaar |  |
+| Proverbs 1:2 | wisdom; knowledge; understanding; discipline | *karunungan*; *kaalaman*; *pang-unawa*; *disiplina* (B, R *pagtutuwid*) | fixed across the book |
+| Proverbs 1:4 | the simple; fools; mockers | *mga walang muwang* (R *mga taong madaling malinlang*); *mga mangmang* (R also *hangal*); *mga manunuya* |  |
+| Proverbs 1:7 | the fear of the LORD | *ang takot sa PANGINOON* (R *paggalang sa PANGINOON nang may pagkamangha*) |  |
+| Proverbs 2:16 | the strange woman | *babaing di-kilala* (L); *babaing hindi sa iyo* (B); *babaing may asawang iba* (R) |  |
+| Proverbs 8:1 | Wisdom; Folly (personified) | *Karunungan*; *Kahangalan* | capitalized; *siya*, never a deity span |
+| Proverbs 30:1 | Jakeh; Ucal | Jakeh; Ucal | Ithiel is *Itiel*, as in Nehemiah 11:7 |
+| Proverbs 30:15 | leech | *linta* |  |
+| Proverbs 30:26 | rock badger | *hyrax* |  |
