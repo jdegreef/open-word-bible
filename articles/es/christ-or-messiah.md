@@ -5,7 +5,7 @@ date: 2026-11-14
 order: 107
 nav_title: Cristo o Mesías
 section: passage
-source: a8da5637121a
+source: 92b071060a02
 ---
 Muchos lectores conocen la palabra «Cristo» mucho antes de saber qué significa. Suena a apellido: Jesucristo, como quien dice Juan Pérez. En realidad es un título, y los autores del Nuevo Testamento sabían muy bien lo que significaba. El griego {{LEMMA:JHN.1.41:18}} (*christos*) significa «ungido», y traduce el hebreo *mashiach*, que llegó al español como «Mesías». Las dos palabras dicen lo mismo, en dos idiomas.
 
@@ -71,7 +71,7 @@ Hay tres clases de palabras que nunca llevan el ajuste.
 
 **«Cristianos».** El nombre que recibieron los discípulos en Antioquía es otra palabra griega, formada a partir de *christos*. Es el nombre de un grupo, y se queda en «cristianos».
 
-**«Ungido» en el Antiguo Testamento.** El hebreo *mashiach* se traduce «ungido» en todos los niveles, como en 1 Samuel 24:7 y en el Salmo 2:2 de más arriba; la Equilibrada y la Sencilla añaden a veces «rey» («su rey ungido»). No hay ajuste, porque en la mayoría de estos versículos la palabra describe a un rey o a un sacerdote concreto, y «el Mesías» afirmaría más de lo que dice el versículo. En cambio, las decisiones de significado señalan hacia adelante. En el Salmo 18:51 el registro dice que la palabra «es la que está detrás de "Mesías" y "Cristo", y que la promesa se entendió después como un anuncio del Mesías». En Daniel 9:25-26, donde «un ungido» será quitado de en medio, la decisión está marcada como incierta y enumera las maneras en que los lectores la han entendido, desde el sumo sacerdote Onías III hasta Jesús el Mesías. Esa es una cuestión de significado, y el significado nunca es un ajuste.
+**«Ungido» en el Antiguo Testamento.** El hebreo *mashiach* se traduce «ungido» en todos los niveles, como en 1 Samuel 24:6 y en el Salmo 2:2 de más arriba; la Equilibrada y la Sencilla añaden a veces «rey» («su rey ungido»). No hay ajuste, porque en la mayoría de estos versículos la palabra describe a un rey o a un sacerdote concreto, y «el Mesías» afirmaría más de lo que dice el versículo. En cambio, las decisiones de significado señalan hacia adelante. En el Salmo 18:50 el registro dice que la palabra «es la que está detrás de "Mesías" y "Cristo", y que la promesa se entendió después como un anuncio del Mesías». En Daniel 9:25-26, donde «un ungido» será quitado de en medio, la decisión está marcada como incierta y enumera las maneras en que los lectores la han entendido, desde el sumo sacerdote Onías III hasta Jesús el Mesías. Esa es una cuestión de significado, y el significado nunca es un ajuste.
 
 ## Un ajuste, no una segunda traducción
 

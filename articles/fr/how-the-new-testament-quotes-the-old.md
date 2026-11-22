@@ -4,7 +4,7 @@ summary: Quand les apôtres citent l'Ancien Testament, ils emploient souvent la 
 date: 2026-10-17
 order: 105
 section: passage
-source: 56441c83d73d
+source: 872c01310e33
 ---
 Les lecteurs qui vont chercher dans leur Bible une citation de l'Ancien Testament ont parfois une surprise. Hébreux 10:5 cite le Psaume 40 comme disant "tu m'as préparé un corps". Si l'on se reporte au psaume, il dit quelque chose comme "tu m'as ouvert les oreilles". Matthieu cite Ésaïe comme disant "la vierge deviendra enceinte". Beaucoup de Bibles modernes ont "la jeune femme" dans Ésaïe. Jacques, à l'assemblée de Jérusalem, cite Amos à propos du "reste de l'humanité" qui cherche le Seigneur. Amos, en hébreu, parle d'Israël qui prend possession du "reste d'Édom".
 
@@ -40,15 +40,15 @@ Dans Matthieu, la décision de sens va dans l'autre sens, parce que le mot propr
 
 Il y a une seconde différence, plus petite. En hébreu, "elle l'appellera" Emmanuel ; dans la Septante, "tu l'appelleras" ; dans Matthieu, "ils l'appelleront". Notre dossier de Matthieu 1:23 relève les trois et comprend le "ils" de Matthieu comme désignant les gens en général, d'où le "on" de notre texte français.
 
-Ce verset est débattu depuis des siècles, souvent avec âpreté. Les dossiers ne cherchent pas à trancher le débat en traduisant un texte pour qu'il s'accorde avec l'autre. Ils traduisent chaque texte tel qu'il est et disent pourquoi ils diffèrent. Le dossier d'Ésaïe relève aussi ce que les deux textes ont en commun : le signe appartenait à l'époque du roi Achaz, et la promesse d'Ésaïe va plus loin, jusqu'à un enfant qui régnera sur le trône de David (9:5–6).
+Ce verset est débattu depuis des siècles, souvent avec âpreté. Les dossiers ne cherchent pas à trancher le débat en traduisant un texte pour qu'il s'accorde avec l'autre. Ils traduisent chaque texte tel qu'il est et disent pourquoi ils diffèrent. Le dossier d'Ésaïe relève aussi ce que les deux textes ont en commun : le signe appartenait à l'époque du roi Achaz, et la promesse d'Ésaïe va plus loin, jusqu'à un enfant qui régnera sur le trône de David (9:6–7).
 
-## 2. "Tu m'as préparé un corps" (Hébreux 10:5 ; Psaume 40:7)
+## 2. "Tu m'as préparé un corps" (Hébreux 10:5 ; Psaume 40:6)
 
 L'épître aux Hébreux place les paroles du Psaume 40 dans la bouche du Christ, au moment où il entre dans le monde. Notre niveau Équilibrée :
 
 > {{OWB:HEB.10.5.s1:B}}
 
-Le mot clé est {{GREEK:HEB.10.5:12}} (*sōma*), "corps". Mais l'hébreu du psaume (40:7 dans la numérotation hébraïque, 40:6 dans la plupart des Bibles anglaises) a {{HEBREW:PSA.40.7:5-6}}, "des oreilles tu m'as creusées". Notre niveau Littérale du psaume garde l'image :
+Le mot clé est {{GREEK:HEB.10.5:12}} (*sōma*), "corps". Mais l'hébreu du psaume (40:6 ici et dans la plupart des Bibles anglaises, 40:7 dans les Bibles hébraïques) a {{HEBREW:PSA.40.7:5-6}}, "des oreilles tu m'as creusées". Notre niveau Littérale du psaume garde l'image :
 
 > {{OWB:PSA.40.7.s1:L}}
 
@@ -81,10 +81,10 @@ Jacques change aussi le début. Amos dit "En ce jour-là, je relèverai" ; Jacqu
 En Romains 3, Paul démontre que "tous, Juifs comme Grecs, sont sous la domination du péché" par une suite de citations, l'une après l'autre, sans interruption. Nos dossiers nomment chaque source :
 
 - les versets 10–12 viennent du Psaume 14:1–3 (et du Psaume 53), avec le mot propre de Paul, "juste", là où le psaume dit "qui fasse le bien" ;
-- le verset 13, du Psaume 5:10 et du Psaume 140:4 (numérotation hébraïque) ;
+- le verset 13, du Psaume 5:9 et du Psaume 140:3 ;
 - le verset 14, du Psaume 10:7 ;
 - les versets 15–17, d'Ésaïe 59:7–8, abrégé, avec un écho de Proverbes 1:16 ;
-- le verset 18, du Psaume 36:2.
+- le verset 18, du Psaume 36:1.
 
 Paul suit la Septante pour la plupart de ces lignes, et il les tisse en un seul acte d'accusation. Cette façon de relier des textes autour d'un thème commun, comme des perles sur un fil, était familière dans l'enseignement juif. Un lecteur moderne s'attendrait à des guillemets autour de chaque morceau. Paul donne une seule formule, "comme il est écrit", et laisse toute la chaîne valoir comme le verdict de l'Écriture.
 
@@ -108,9 +108,9 @@ Le Nouveau Testament ne suit pas toujours la Septante. Deux citations montrent l
 
 **"D'Égypte, j'ai appelé mon fils"** (Matthieu 2:15 ; Osée 11:1). Matthieu cite les paroles d'Osée sur l'exode d'Israël et les applique à Jésus. Ici, Matthieu s'accorde avec l'hébreu, "mon fils". La Septante d'Osée dit "ses enfants". Notre dossier d'Osée 11:1 le relève, et dit honnêtement que sa description du grec est "écrite à partir de connaissances générales", à vérifier par les relecteurs. Quoi qu'il en soit, Matthieu n'a pas tiré cette ligne de la Septante telle que nous l'avons. Le dossier de Matthieu 2:15 explique comment Matthieu la lit : "Chez Osée, le fils est Israël." Matthieu voit Jésus, le Fils de Dieu, revivre l'histoire d'Israël, en entrant en Égypte et en en sortant.
 
-**"Il a fait des dons aux humains"** (Éphésiens 4:8 ; Psaume 68:19). Paul cite le Psaume 68, un hymne de victoire où Dieu monte vers sa montagne sainte, emmenant des captifs. Mais là où le psaume hébreu et le psaume grec disent tous deux que Dieu "a reçu des dons" des humains, Paul dit qu'il "a fait des dons". Nos dossiers des deux côtés signalent la différence en note. Ils relèvent qu'une ancienne paraphrase araméenne des Psaumes, ainsi que la traduction syriaque, lisent aussi "a fait des dons", si bien que Paul suit peut-être une interprétation connue du verset. Le dossier du Psaume 68:19 suggère comment les deux s'accordent : "le vainqueur qui reçoit le tribut est celui qui le distribue à son peuple". Le dossier d'Éphésiens marque le point comme incertain et dit clairement le but de Paul : le Christ ressuscité fait des dons à son Église, que les versets 11–16 énumèrent ensuite.
+**"Il a fait des dons aux humains"** (Éphésiens 4:8 ; Psaume 68:18). Paul cite le Psaume 68, un hymne de victoire où Dieu monte vers sa montagne sainte, emmenant des captifs. Mais là où le psaume hébreu et le psaume grec disent tous deux que Dieu "a reçu des dons" des humains, Paul dit qu'il "a fait des dons". Nos dossiers des deux côtés signalent la différence en note. Ils relèvent qu'une ancienne paraphrase araméenne des Psaumes, ainsi que la traduction syriaque, lisent aussi "a fait des dons", si bien que Paul suit peut-être une interprétation connue du verset. Le dossier du Psaume 68:18 suggère comment les deux s'accordent : "le vainqueur qui reçoit le tribut est celui qui le distribue à son peuple". Le dossier d'Éphésiens marque le point comme incertain et dit clairement le but de Paul : le Christ ressuscité fait des dons à son Église, que les versets 11–16 énumèrent ensuite.
 
-Un exemple plus petit est **Romains 10:18**, où Paul cite le Psaume 19:5 (19:4 dans les Bibles anglaises) : "leur voix s'est répandue sur toute la terre". La Septante, que Paul cite mot pour mot, a "leur voix" ou "leur son". L'hébreu a un mot qui désigne un cordeau à mesurer. Notre niveau Littérale du psaume garde "leur cordeau", et une note de bas de page, marquée incertaine, explique le grec.
+Un exemple plus petit est **Romains 10:18**, où Paul cite le Psaume 19:4 : "leur voix s'est répandue sur toute la terre". La Septante, que Paul cite mot pour mot, a "leur voix" ou "leur son". L'hébreu a un mot qui désigne un cordeau à mesurer. Notre niveau Littérale du psaume garde "leur cordeau", et une note de bas de page, marquée incertaine, explique le grec.
 
 ## Ce que faisaient les apôtres
 

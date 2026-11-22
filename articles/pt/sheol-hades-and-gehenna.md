@@ -4,7 +4,7 @@ summary: As Bíblias inglesas antigas usam uma única palavra, "hell" ("inferno"
 date: 2026-10-17
 order: 86
 section: passage
-source: 0b21a4e82def
+source: 5f3691f4c4e6
 ---
 Abra a King James Version no Salmo 16:10 e você lerá: "For thou wilt not leave my soul in hell" ("Pois não deixarás a minha alma no inferno"). Vá a Lucas 16:23, e o homem rico também está "in hell" ("no inferno"). Em Mateus 5:22, quem chama o seu irmão de tolo está "in danger of hell fire" ("em perigo do fogo do inferno"). Em 2 Pedro 2:4, Deus lançou os anjos que pecaram "down to hell" ("no inferno"). E em Apocalipse 20:14, "death and hell were cast into the lake of fire" ("a morte e o inferno foram lançados no lago de fogo").
 
@@ -43,7 +43,7 @@ Os nossos registros dão ao Sheol um único sentido em toda parte: o lugar ou re
 - A **Literal** sempre mantém "Sheol", para que o leitor possa ver o nome.
 - A **Equilibrada** e a **Acessível** dizem o que o Sheol é: "o mundo dos mortos", quase sempre com essas mesmas palavras. Em português, essa expressão serve tanto ao registro cuidado da Equilibrada quanto à linguagem simples da Acessível.
 
-O texto inglês divide as coisas de outro modo: a sua Balanced mantém "Sheol" nos Salmos, em Isaías, em Eclesiastes e em Jonas, e diz "the grave" em Gênesis 37:35, enquanto a sua Readable diz "the place of the dead" ("o lugar dos mortos") ou "the grave". Mas nenhum dos nossos níveis, em nenhuma língua, diz "inferno" para o Sheol em lugar nenhum. A oração de Jonas, na numeração hebraica 2:3, mostra o padrão:
+O texto inglês divide as coisas de outro modo: a sua Balanced mantém "Sheol" nos Salmos, em Isaías, em Eclesiastes e em Jonas, e diz "the grave" em Gênesis 37:35, enquanto a sua Readable diz "the place of the dead" ("o lugar dos mortos") ou "the grave". Mas nenhum dos nossos níveis, em nenhuma língua, diz "inferno" para o Sheol em lugar nenhum. A oração de Jonas, em 2:2 (2:3 nas Bíblias hebraicas), mostra o padrão:
 
 > {{OWB:JON.2.3.s1:B}}
 

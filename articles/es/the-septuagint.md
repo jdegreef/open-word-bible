@@ -5,7 +5,7 @@ date: 2026-10-11
 order: 29
 section: history
 part: ot
-source: 397bccee3ec5
+source: 4a87bb1931bd
 ---
 La primera traducción de la Biblia no la hicieron cristianos, ni se hizo al latín ni al inglés. La hicieron judíos, en Egipto, al griego, a partir del siglo III a. C. Se llama **Septuaginta**, de la palabra latina que significa «setenta», y es uno de los libros más importantes de la historia de la Biblia.
 
@@ -37,7 +37,7 @@ La Iglesia primitiva hablaba sobre todo griego, y su Biblia era el Antiguo Testa
 - **Hebreos 10:5** cita el Salmo 40:6 como «me apropiaste cuerpo», siguiendo la Septuaginta, mientras que el hebreo dice «oídos me cavaste».
 - **Hechos 15:16-17** presenta a Santiago citando Amós 9:11-12 en una forma cercana a la Septuaginta, que habla de que «el resto de los hombres busque al Señor», donde el texto masorético habla de que posean «el resto de Idumea», es decir, de Edom. Las palabras hebreas para «Edom» y «humanidad» se diferencian en una letra vocálica.
 
-Los registros de Open Word Bible muestran este tipo de diferencia en las dos direcciones. En el Salmo 40 (versículo 7 en la numeración hebrea, versículo 6 en la mayoría de las Biblias), el Antiguo Testamento se traduce del hebreo:
+Los registros de Open Word Bible muestran este tipo de diferencia en las dos direcciones. En el Salmo 40 (versículo 6, versículo 7 en las Biblias hebreas), el Antiguo Testamento se traduce del hebreo:
 
 > {{OWB:PSA.40.7.s1:L}}
 

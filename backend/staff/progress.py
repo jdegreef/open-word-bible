@@ -36,7 +36,7 @@ from texts.models import Edition
 from translation import counts
 from translation.models import ContentFile, Decision, DraftedCount, ImportRun, Rendering, ReviewEvent, Sentence
 
-from . import inbox
+from . import assignments, inbox
 from .models import AdminAction
 from .permissions import admin_view
 from .review import open_flag_count
@@ -242,11 +242,13 @@ def health(request):
 def engagement(request):
     """Totals over what accounts already keep (bookmarks, highlights,
     reading places, devices). The site itself records nothing about reading
-    (see the privacy page), so readers without an account are not counted."""
-    User = get_user_model()
+    (see the privacy page), so readers without an account are not counted,
+    and nor are system accounts (accounts/system.py)."""
+    from accounts.system import people
+    readers = people()
     now = timezone.now()
     since = now - timedelta(weeks=12)
-    signups = (User.objects.filter(date_joined__gte=since).annotate(week=TruncWeek("date_joined"))
+    signups = (readers.filter(date_joined__gte=since).annotate(week=TruncWeek("date_joined"))
                .values("week").annotate(n=Count("id")).order_by("week"))
     marks = Mark.objects.aggregate(bookmarks=Count("id", filter=Q(bookmark=True)),
                                    highlights=Count("id", filter=~Q(highlight="")),
@@ -257,9 +259,9 @@ def engagement(request):
         by_book[code] = by_book.get(code, 0) + row["n"]
     places = ReadingPlace.objects.values("book").annotate(n=Count("id")).order_by("-n")[:12]
     return Response({
-        "accounts": User.objects.count(),
-        "active_30": User.objects.filter(last_login__gte=now - timedelta(days=30)).count(),
-        "active_7": User.objects.filter(last_login__gte=now - timedelta(days=7)).count(),
+        "accounts": readers.count(),
+        "active_30": readers.filter(last_login__gte=now - timedelta(days=30)).count(),
+        "active_7": readers.filter(last_login__gte=now - timedelta(days=7)).count(),
         "devices_30": ApiToken.objects.filter(last_used_at__gte=now - timedelta(days=30)).count(),
         "signups": [{"week": row["week"].date().isoformat(), "accounts": row["n"]} for row in signups],
         "marks": marks,
@@ -335,6 +337,14 @@ def overview(request):
         if summary["flags"]:
             attention.append({"key": "flags", "count": summary["flags"], "tone": "hot",
                               "label": "sentences flagged by reviewers", "href": "#flags"})
+    if "review" in mine:
+        assigned, overdue = assignments.attention(request.user)
+        if overdue:
+            attention.append({"key": "assigned_overdue", "count": overdue, "tone": "hot",
+                              "label": "review assignments past their date", "href": "#workspace"})
+        if assigned:
+            attention.append({"key": "assigned", "count": assigned, "tone": "warn",
+                              "label": "review assignments assigned to you", "href": "#workspace"})
     if "team" in mine:
         pending = (get_user_model().objects.filter(last_login__isnull=True, roles__isnull=False)
                    .distinct().count())

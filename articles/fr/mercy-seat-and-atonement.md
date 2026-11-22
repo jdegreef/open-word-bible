@@ -5,7 +5,7 @@ date: 2026-11-14
 order: 111
 nav_title: Le propitiatoire
 section: passage
-source: 11837394ba09
+source: 1c83b4d3d4c8
 ---
 Dans la pièce la plus sainte du sanctuaire d'Israël se trouvait un seul meuble : l'arche, un coffre de bois couvert d'or, qui contenait les tables de l'alliance. Par-dessus reposait une plaque d'or pur portant deux chérubins d'or, les ailes déployées au-dessus d'elle. Les Bibles françaises appellent cette plaque "le propitiatoire" ; les anglaises l'appellent depuis près de cinq cents ans "the mercy seat", "le siège de la miséricorde". D'autres disent "le couvercle de l'expiation" ou simplement "le couvercle". Le choix compte plus qu'il n'y paraît, parce que la même famille de mots va du couvercle de l'arche jusqu'au cœur de l'enseignement du Nouveau Testament sur la croix.
 
@@ -53,7 +53,7 @@ Le verbe qui se trouve derrière *kapporet* est *kipper*, que l'anglais traduit 
 
 Le mot anglais "atonement" a une histoire curieuse : il a été formé à partir de "at one", "un", mettre deux parties d'accord, les réconcilier. Tyndale a beaucoup fait pour l'introduire dans la Bible anglaise. Le français "expiation" vient du latin *expiare*, purifier, effacer une faute. Mais que veut dire le verbe hébreu ? Les spécialistes ont proposé trois images principales, et les dossiers les gardent toutes les trois en vue.
 
-**Couvrir.** Jacob, qui a peur de rencontrer Ésaü, envoie des présents devant lui pour "couvrir son visage", c'est-à-dire l'apaiser, pour qu'il ne voie plus l'offense (Genèse 32:21). La décision de sens y note que le verbe "est celui qui sera plus tard employé pour l'expiation, couvrir ou effacer une offense". Certains psaumes parlent de Dieu qui "couvre" le péché : "tu couvres nos révoltes" (Psaume 65:4, dans l'Équilibrée).
+**Couvrir.** Jacob, qui a peur de rencontrer Ésaü, envoie des présents devant lui pour "couvrir son visage", c'est-à-dire l'apaiser, pour qu'il ne voie plus l'offense (Genèse 32:20). La décision de sens y note que le verbe "est celui qui sera plus tard employé pour l'expiation, couvrir ou effacer une offense". Certains psaumes parlent de Dieu qui "couvre" le péché : "tu couvres nos révoltes" (Psaume 65:3, dans l'Équilibrée).
 
 **Purifier.** Le Lévitique emploie le verbe pour la purification du sanctuaire lui-même, souillé par l'impureté du peuple (16:16), et il dit clairement le but :
 

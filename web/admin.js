@@ -15,13 +15,21 @@ var OWBAdminCore = (function () {
   // /api/admin/) that start so. The first rule that fits the path is used;
   // a change to anything else forgets every kept read.
   var RULES = [
+    // Bulk review (staff/bulk.py): every review read and the counts; a dry
+    // run (what "approve the rest of the chapter" would do) changes nothing.
+    [/^review\/bulk\/$/, function (m, body) {
+      return { paths: body && body.dry_run ? [] : ["review/", "overview/", "coverage/", "books/", "languages/", "health/", "verses/",
+        "assignments/"] };
+    }],
+    [/^assignments\//, ["assignments/", "review/workspace/", "overview/", "activity/"]],
     // A review action on one sentence: its own reads, the queues and flags,
     // the counts that include review states, and the verse inspector's
     // statuses. Another sentence's reads stay, unless its "next" was this one.
     // A flag can put an approved sentence back in the queue, becoming the
     // "next" of any sentence before it, so a flag forgets every sentence.
     [/^review\/([^/?]+)\/$/, function (m, body) {
-      return { paths: ["review/?", "review/flags/", body && body.action === "flag" ? "review/" : "review/" + m[1] + "/",
+      return { paths: ["review/?", "review/flags/", "review/workspace/", "assignments/",
+        body && body.action === "flag" ? "review/" : "review/" + m[1] + "/",
         "overview/", "coverage/", "books/", "languages/", "health/", "verses/"], next: decodeURIComponent(m[1]) };
     }],
     [/^inbox\//, ["inbox/", "overview/", "books/", "activity/", "engagement/"]],
@@ -399,6 +407,7 @@ var OWBAdminCore = (function () {
     { id: "changes", label: "Changes", area: "overview", group: "Progress" },
     { id: "jobs", label: "Drafting jobs", area: "jobs", group: "Progress" },
     { id: "work", label: "Work in progress", area: "overview", group: "Progress" },
+    { id: "workspace", label: "My review", area: "review", group: "Text" },
     { id: "review", label: "Review", area: "review", group: "Text" },
     { id: "verse", label: "Verse inspector", area: "overview", group: "Text" },
     { id: "decisions", label: "Uncertain decisions", area: "overview", group: "Text" },
@@ -407,6 +416,7 @@ var OWBAdminCore = (function () {
     { id: "checks", label: "Checks", area: "overview", group: "Text" },
     { id: "fixes", label: "Fix requests", area: "inbox", group: "Text" },
     { id: "flags", label: "Reviewer flags", area: "inbox", group: "Text" },
+    { id: "assignments", label: "Review assignments", area: "inbox", group: "Text" },
     { id: "articles", label: "Articles", area: "overview", group: "Text" },
     { id: "export", label: "Export", area: "export", group: "Text" },
     { id: "releases", label: "Release notes", area: "export", group: "Text" },
@@ -835,7 +845,7 @@ var OWBAdminCore = (function () {
   VIEWS.inbox = function (arg) {
     if (arg === "mine") INBOX.assigned = "me";
     var q = "?status=" + INBOX.status + (INBOX.kind ? "&kind=" + INBOX.kind : "") + (INBOX.lang ? "&lang=" + INBOX.lang : "") +
-      (INBOX.assigned ? "&assigned=" + INBOX.assigned : "");
+      (INBOX.assigned ? "&assigned=" + INBOX.assigned : "") + (INBOX.q ? "&q=" + encodeURIComponent(INBOX.q) : "");
     return api("/api/admin/inbox/" + q).then(function (d) {
       INBOX_TEAM = d.team;
       var tabs = seg([["new", "New (" + d.counts.new + ")"], ["answered", "Answered (" + d.counts.answered + ")"],
@@ -848,33 +858,17 @@ var OWBAdminCore = (function () {
       var whose = seg([["me", "Mine"], ["none", "Unassigned"], ["", "All"]], INBOX.assigned, function (v) {
         INBOX.assigned = v; location.hash === "#inbox" ? route() : (location.hash = "#inbox");
       });
-      // Words to find in the messages listed (the API's inbox takes no
-      // words, so this filters the page drawn), as you type.
-      var cards = d.messages.map(function (m) {
-        return [messageCard(m), [m.text, m.verse_label, m.verse, m.language, m.from.name, m.from.email, m.reply, m.note,
-          m.assigned_to ? m.assigned_to.name + " " + m.assigned_to.email : ""].join(" \n").toLowerCase()];
-      });
-      var nothing = empty("No messages here have those words.");
-      var search = h("input", { type: "search", id: "inbox-q", value: INBOX.q, placeholder: "Words in these messages", "aria-label": "Find in these messages" });
-      var found = h("span", { class: "admin-sub", role: "status" });
-      function find(v) {
-        INBOX.q = v;
-        var words = v.toLowerCase().split(/\s+/).filter(Boolean), shown = 0;
-        cards.forEach(function (c) {
-          var on = words.every(function (w) { return c[1].indexOf(w) >= 0; });
-          c[0].hidden = !on;
-          if (on) shown++;
-        });
-        nothing.hidden = !cards.length || shown > 0;
-        found.textContent = words.length && cards.length ? shown + " of " + cards.length + " shown" : "";
-      }
+      // Words to find in every message, not only the page drawn: the API
+      // searches (q=), as you type. The tabs' counts are then of what it found.
+      var search = h("input", { type: "search", id: "inbox-q", value: INBOX.q, placeholder: "Words, a verse or a reader", "aria-label": "Find in the reader inbox" });
+      var found = h("span", { class: "admin-sub", role: "status" }, INBOX.q ? plural(d.total, "message") + " found" : "");
       var form = h("form", { class: "admin-toolbar", role: "search" }, search, h("button", { type: "submit", class: "admin-btn" }, "Find"), found);
+      function find(v) { if (v !== INBOX.q) { INBOX.q = v; route(); } }
       form.addEventListener("submit", function (e) { e.preventDefault(); stopLive(); find(search.value.trim()); });
       live(search, find);
-      find(INBOX.q);
       return [head("Readers", "Reader inbox", "Suggestions and questions readers send from a verse. New messages come oldest first; assign one to say you're dealing with it. A reply is emailed to the reader once; mark a message done when it's dealt with."),
         h("div", { class: "admin-toolbar" }, tabs, whose, kind), form,
-        d.messages.length ? h("div", { class: "admin-messages" }, cards.map(function (c) { return c[0]; }), nothing) : empty("No messages here."),
+        d.messages.length ? h("div", { class: "admin-messages" }, d.messages.map(messageCard)) : empty(INBOX.q ? "No messages here have those words." : "No messages here."),
         d.total > d.messages.length ? h("p", { class: "admin-sub" }, "Showing " + (INBOX.status === "new" ? "the longest waiting " : "the newest ") + d.messages.length + " of " + num(d.total) + ".") : null];
     });
   };
@@ -1621,27 +1615,34 @@ var OWBAdminCore = (function () {
   };
 
   // Users.
-  var USERS = { q: "", role: "", offset: 0 };
+  // System accounts (made by a deploy or a script, not a person) are left
+  // out unless "Show system accounts" is ticked.
+  var USERS = { q: "", role: "", offset: 0, system: false };
   VIEWS.users = function () {
-    var q = "?offset=" + USERS.offset + (USERS.q ? "&q=" + encodeURIComponent(USERS.q) : "") + (USERS.role ? "&role=" + USERS.role : "");
+    var q = "?offset=" + USERS.offset + (USERS.q ? "&q=" + encodeURIComponent(USERS.q) : "") + (USERS.role ? "&role=" + USERS.role : "") +
+      (USERS.system ? "&system=1" : "");
     return api("/api/admin/users/" + q).then(function (d) {
       var search = h("input", { type: "search", id: "user-search", value: USERS.q, placeholder: "Search by email or name", "aria-label": "Search accounts" });
       var role = select("user-role", [["", "Everyone"], ["any", "The team (any role)"]].concat(d.roles.map(function (r) { return [r.kind, r.label]; })), USERS.role);
       role.setAttribute("aria-label", "Role");
-      var form = h("form", { class: "admin-toolbar", role: "search" }, search, role, h("button", { type: "submit", class: "admin-btn" }, "Search"));
+      var system = h("input", { type: "checkbox", id: "user-system", checked: USERS.system });
+      var form = h("form", { class: "admin-toolbar", role: "search" }, search, role,
+        h("label", { for: "user-system" }, system, " Show system accounts"), h("button", { type: "submit", class: "admin-btn" }, "Search"));
       form.addEventListener("submit", function (e) { e.preventDefault(); stopLive(); USERS.q = search.value.trim(); USERS.role = role.value; USERS.offset = 0; route(); });
       live(search, function (v) { if (v !== USERS.q) { USERS.q = v; USERS.offset = 0; route(); } });
       role.addEventListener("change", function () { USERS.role = role.value; USERS.offset = 0; route(); });
+      system.addEventListener("change", function () { USERS.system = system.checked; USERS.offset = 0; route(); });
       var rows = d.users.map(function (u) {
         return h("tr", null, h("td", null, h("a", { href: "#user/" + u.id }, u.email), u.active ? null : pill("inactive", "warn")),
-          h("td", null, u.name || "—"), h("td", null, u.roles.join(", ") || "Reader"),
+          h("td", null, userName(u)), h("td", null, u.roles.join(", ") || (u.system ? "System" : "Reader")),
           h("td", null, date(u.joined)), h("td", null, when(u.signed_in)),
           h("td", { class: "admin-num" }, num(u.marks)), h("td", { class: "admin-num" }, num(u.devices)));
       });
       var pager = h("div", { class: "admin-actions" });
       if (d.offset > 0) pager.appendChild(h("button", { type: "button", class: "admin-btn", onclick: function () { USERS.offset = Math.max(0, d.offset - d.page); route(); } }, "‹ Newer"));
       if (d.offset + d.page < d.total) pager.appendChild(h("button", { type: "button", class: "admin-btn", onclick: function () { USERS.offset = d.offset + d.page; route(); } }, "Older ›"));
-      return [head("Readers", "Users", num(d.total) + (d.total === 1 ? " account" : " accounts") + (USERS.q || USERS.role ? " match" : "") + ". Saved verses are counted, never listed: they are the reader's own."),
+      return [head("Readers", "Users", num(d.total) + (d.total === 1 ? " account" : " accounts") + (USERS.q || USERS.role ? " match" : "") +
+        (d.system_hidden ? " (" + plural(d.system_hidden, "system account") + " hidden)" : "") + ". Saved verses are counted, never listed: they are the reader's own."),
         form, d.users.length ? table(["Email", "Name", "Roles", "Joined", "Last sign-in", ["Saved", { class: "admin-num" }], ["Devices", { class: "admin-num" }]], rows) : empty("No accounts match."),
         pager];
     });
@@ -1665,7 +1666,8 @@ var OWBAdminCore = (function () {
         h("p", { class: "admin-back" }, h("a", { href: "#users" }, "‹ Users")),
         head("Account", u.name || u.email, u.name ? u.email : null),
         h("dl", { class: "admin-facts" },
-          fact("Roles", u.roles.length ? u.roles.join(", ") : "Reader"),
+          fact("Roles", u.roles.length ? u.roles.join(", ") : (u.system ? "System" : "Reader")),
+          fact("Name", userName(u)),
           fact("Joined", date(u.joined)),
           fact("Last sign-in", when(u.signed_in)),
           fact("Signs in with", u.ways_in.length ? u.ways_in.join(", ") : "has never signed in"),
@@ -1678,10 +1680,41 @@ var OWBAdminCore = (function () {
         u.messages.length ? h("section", { class: "admin-block" }, h("h2", null, "Messages"),
           h("ul", null, u.messages.map(function (m) { return h("li", null, m.kind + " on " + m.verse + " · " + m.status + " · " + date(m.created_at)); }))) : null,
         ME.admin.indexOf("team") >= 0 ? h("p", null, h("a", { href: "#team" }, "Change roles in Team & access")) : null,
-        actions, status];
+        userChanges(u), actions, status];
     });
   };
   function fact(label, value) { return h("div", null, h("dt", null, label), h("dd", null, value)); }
+
+  // An account's name as Users shows it: its display name, or (muted) one
+  // made from its address when it has none.
+  function userName(u) {
+    if (u.name) return u.name;
+    if (!u.display_name) return "—";
+    return h("span", { class: "admin-sub", title: "No name set: this is from the email address" }, u.display_name);
+  }
+
+  // An admin's changes to an account: its display name (which the reader
+  // also sets on their account page), and whether it is a system account
+  // (a deploy's or a script's, not a person's).
+  function userChanges(u) {
+    var status = h("p", { class: "admin-note", role: "status" });
+    function send(body, button) {
+      busy(button, true);
+      api("/api/admin/users/" + u.id + "/", { method: "PATCH", body: body }).then(function () { route(); },
+        function (e) { busy(button, false); note(status, e, true); });
+    }
+    var name = h("input", { id: "user-name", value: u.name || "", maxlength: 80, placeholder: u.display_name || "" });
+    var save = h("button", { type: "submit", class: "admin-btn" }, "Save name");
+    var form = h("form", { class: "admin-toolbar" }, h("label", { class: "admin-field", for: "user-name" }, "Display name", name), save);
+    form.addEventListener("submit", function (e) { e.preventDefault(); send({ name: name.value.trim() }, save); });
+    var mark = h("button", { type: "button", class: "admin-btn" }, u.system ? "Mark as a person" : "Mark as a system account");
+    mark.addEventListener("click", function () { send({ system: !u.system }, mark); });
+    return h("section", { class: "admin-block" }, h("h2", null, "Name and kind"),
+      h("p", { class: "admin-sub" }, "Readers set their name on their account page; set it here if one asks. " +
+        "A system account is one a deploy or a script made: Users and the reader counts leave it out." +
+        (u.system_reason ? " Marked: " + u.system_reason + "." : "")),
+      form, h("div", { class: "admin-actions" }, mark), status);
+  }
 
   // Team & access.
   VIEWS.team = function () {
@@ -1744,6 +1777,7 @@ var OWBAdminCore = (function () {
         h("section", { class: "admin-block" }, h("h2", null, "Grant a role"), form, about, status),
         h("section", { class: "admin-block" }, h("h2", null, "The team"),
           table(["Person", "Roles", "Last sign-in"], rows)),
+        teamAssignments(),
         h("p", { class: "admin-sub" }, "Super admins aren't granted here: they're the addresses in " + d.super_admins_from +
           " on the API service in Render, made super admins when they sign in.")];
     });
@@ -1755,11 +1789,12 @@ var OWBAdminCore = (function () {
     "user.delete": "deleted the account", "user.sign_out": "signed out the devices of",
     "message.reply": "answered", "message.done": "marked done", "message.declined": "declined", "message.new": "reopened",
     "job.file": "filed drafting job", "article.job": "filed article job", "digest.send": "sent the weekly digest to", "message.fixed": "told the reader their message led to a change:", "email.send": "emailed the team:", "fix.request": "requested fix",
-    "export.download": "downloaded"
+    "export.download": "downloaded", "review.assign": "assigned review to", "review.unassign": "took back a review assignment from",
+    "review.assignment": "changed a review assignment of"
   };
   function activityList(actions) {
     return h("ul", { class: "admin-feed" }, actions.map(function (a) {
-      var extra = a.detail.role ? " (" + a.detail.role + ")" : a.detail.recipients !== undefined ? " (" + plural(a.detail.recipients, "person", "people") + ")" : "";
+      var extra = a.detail.role ? " (" + a.detail.role + ")" : a.detail.range ? " (" + a.detail.range + ", " + a.detail.layer + ")" : a.detail.recipients !== undefined ? " (" + plural(a.detail.recipients, "person", "people") + ")" : "";
       return h("li", null, h("time", { datetime: a.at, title: new Date(a.at).toLocaleString("en-GB") }, when(a.at)),
         h("span", null, h("strong", null, a.actor || "The admin"), " " + (ACTION_LABEL[a.action] || a.action) + " " + a.target + extra));
     }));
@@ -1961,7 +1996,7 @@ var OWBAdminCore = (function () {
   // Help & roles.
   var ROLES = [
     ["Super admin", "Everything, including the team, jobs and deleting accounts. Set by OWB_SUPER_ADMIN_EMAILS on the server."],
-    ["Editor", "The progress pages, the reader inbox, fix requests and reviewers' flags."],
+    ["Editor", "The progress pages, the reader inbox, fix requests, reviewers' flags and review assignments."],
     ["Reporting", "The progress pages only: dashboard, coverage, languages, content health, engagement."],
     ["User records", "The progress pages and readers' accounts (sign devices out; only a super admin deletes)."],
     ["Email", "The progress pages and team email."],
@@ -2245,6 +2280,101 @@ var OWBAdminCore = (function () {
     var parts = arg ? arg.split("/") : [];
     return parts[1] ? reviewSentence(parts[0], parts[1]) : reviewQueue(parts[0] || sessionTab("review.layer", ""));
   };
+  // Bulk review in the queue (POST /api/admin/review/bulk/): tick sentences
+  // (shift-click ticks the range from the last one ticked) to approve or
+  // flag them together, or approve the rest of a chapter after a confirm
+  // step that says how many that is. layerOf() is the queue's layer.
+  function queuePicker(layerOf, status) {
+    var boxes = [], last = -1, chapter = null;
+    var count = h("strong");
+    var noteBox = h("input", { type: "text", id: "bulk-note", maxlength: 4000, placeholder: "What is wrong (needed to flag)" });
+    var approveBtn = h("button", { type: "button", class: "admin-btn primary" }, "Approve selected");
+    var flagBtn = h("button", { type: "button", class: "admin-btn" }, "Flag selected");
+    var clearBtn = h("button", { type: "button", class: "admin-link" }, "Clear");
+    var bar = h("div", { class: "admin-bulk", hidden: true, role: "region", "aria-label": "Selected sentences" },
+      count, approveBtn, h("label", { class: "admin-bulk-note" }, "Note ", noteBox), flagBtn, clearBtn);
+    var all = h("input", { type: "checkbox", "aria-label": "Select every sentence listed" });
+    function picked() { return boxes.filter(function (b) { return b.checked; }).map(function (b) { return b.value; }); }
+    function update() {
+      var n = picked().length;
+      bar.hidden = !n;
+      count.textContent = plural(n, "sentence") + " selected";
+      all.checked = n > 0 && n === boxes.length;
+      all.indeterminate = n > 0 && n < boxes.length;
+    }
+    function tickAll(on) { boxes.forEach(function (b) { b.checked = on; }); update(); }
+    all.addEventListener("change", function () { tickAll(all.checked); });
+    clearBtn.addEventListener("click", function () { tickAll(false); });
+    function finished(verb) {
+      return function (r) {
+        FLASH = verb + " " + plural(r.applied, "sentence") + "." +
+          (r.skipped ? " " + num(r.skipped) + " already approved, left as they were." : "");
+        route();
+      };
+    }
+    function send(body, button, done) {
+      busy(button, true);
+      body.layer = layerOf();
+      return api("/api/admin/review/bulk/", { method: "POST", body: body }).then(done, function (e) {
+        busy(button, false);
+        note(status, e, true);
+      });
+    }
+    approveBtn.addEventListener("click", function () { send({ action: "approve", records: picked() }, approveBtn, finished("Approved")); });
+    flagBtn.addEventListener("click", function () {
+      if (!noteBox.value.trim()) { note(status, "Say what is wrong in the note, then flag.", true); noteBox.focus(); return; }
+      send({ action: "flag", note: noteBox.value, records: picked() }, flagBtn, finished("Flagged"));
+    });
+    function box(s) {
+      var b = h("input", { type: "checkbox", value: s.record, "aria-label": "Select " + s.label });
+      var i = boxes.length;
+      boxes.push(b);
+      b.addEventListener("click", function (e) {
+        if (e.shiftKey && last >= 0 && last !== i) {
+          for (var j = Math.min(last, i); j <= Math.max(last, i); j++) boxes[j].checked = b.checked;
+        }
+        last = i;
+        update();
+      });
+      return h("td", { class: "admin-pick" }, b);
+    }
+    function rest(id, name) {
+      var first = h("button", { type: "button", class: "admin-link" }, "Approve the rest of " + name + "…");
+      var ask = h("span", { class: "admin-confirm-ask", hidden: true });
+      first.addEventListener("click", function () {
+        busy(first, true);
+        // A dry run first: how many it would approve, saving nothing.
+        api("/api/admin/review/bulk/", { method: "POST", body: { layer: layerOf(), action: "approve", chapter: id, dry_run: true } }).then(function (r) {
+          busy(first, false);
+          var n = r.results.filter(function (x) { return x.result === "would_apply"; }).length;
+          if (!n) { note(status, "Nothing left to approve in " + name + ". Flagged sentences are left to review one by one."); return; }
+          var yes = h("button", { type: "button", class: "admin-btn primary" }, "Approve " + plural(n, "sentence"));
+          var no = h("button", { type: "button", class: "admin-btn" }, "Cancel");
+          yes.addEventListener("click", function () { send({ action: "approve", chapter: id }, yes, finished("Approved")); });
+          no.addEventListener("click", function () { ask.hidden = true; first.hidden = false; first.focus(); });
+          ask.textContent = "";
+          add(ask, [h("span", { class: "admin-sub" }, "Approve every sentence in " + name + " that isn't approved yet? Flagged ones are left."), yes, no]);
+          first.hidden = true;
+          ask.hidden = false;
+          no.focus();
+        }, function (e) { busy(first, false); note(status, e, true); });
+      });
+      return h("span", { class: "admin-confirm" }, first, ask);
+    }
+    // A heading row where the chapter changes, with its "approve the rest".
+    function chapterRow(s) {
+      var id = s.verse.split(".").slice(0, 2).join(".");
+      if (id === chapter) return null;
+      chapter = id;
+      var name = s.label.replace(/:[^:]*$/, "");
+      return h("tr", { class: "admin-group" }, h("th", { colspan: 5, scope: "rowgroup" }, h("span", null, name), " ", rest(id, name)));
+    }
+    return {
+      bar: bar, box: box, chapterRow: chapterRow,
+      head: function () { return h("th", { class: "admin-pick" }, all); },
+      reset: function () { boxes = []; last = -1; chapter = null; update(); }
+    };
+  }
   function reviewQueue(layer) {
     var filters = { book: sessionTab("review.book", ""), state: sessionTab("review.state", "todo") };
     var body = h("div");
@@ -2257,23 +2387,25 @@ var OWBAdminCore = (function () {
       if (!offset) {
         body.textContent = "";
         rows = h("tbody");
+        pick.reset();
         var c = page.counts;
         body.appendChild(h("div", { class: "admin-tiles" },
           tile(num(c.not_reviewed), "not reviewed"), tile(num(c.approved), "approved", "good"),
           tile(num(c.changed), "changed since approval", c.changed ? "warn" : ""), tile(num(c.flagged), "flagged", c.flagged ? "bad" : "")));
         body.appendChild(page.sentences.length ? h("div", { class: "admin-scroll" }, h("table", { class: "admin-table" },
-          h("thead", null, h("tr", null, h("th", null, "Sentence"), h("th", null, page.layer.kind === "meaning" ? "Literal gloss" : "Balanced"),
+          h("thead", null, h("tr", null, pick.head(), h("th", null, "Sentence"), h("th", null, page.layer.kind === "meaning" ? "Literal gloss" : "Balanced"),
             h("th", null, "State"), h("th", null, "Last"))), rows)) : empty("Nothing here with these filters."));
       }
       if (!offset) QUEUE = { layer: page.layer.code, rows: [], more: false };
       QUEUE.more = page.more;
       page.sentences.forEach(function (s) {
         QUEUE.rows.push({ record: s.record, state: s.state });
-        rows.appendChild(h("tr", null,
+        add(rows, pick.chapterRow(s));
+        rows.appendChild(h("tr", null, pick.box(s),
           h("th", { scope: "row" }, h("a", { href: "#review/" + layer + "/" + s.record }, s.label), h("div", { class: "admin-sub" }, s.record)),
           h("td", { class: "admin-wrap", lang: page.layer.kind === "meaning" ? "en" : layer }, rendering(s.preview)),
           h("td", null, reviewPill(s.state)),
-          h("td", { class: "admin-sub" }, s.last ? s.last.label + ", " + s.last.by + ", " + when(s.last.at) : "—")));
+          h("td", null, h("span", { class: "admin-sub" }, s.last ? s.last.label + ", " + s.last.by + ", " + when(s.last.at) : "—"))));
       });
       more.hidden = !page.more;
     }
@@ -2283,6 +2415,7 @@ var OWBAdminCore = (function () {
     }
     more.addEventListener("click", function () { offset += 50; load(); });
     var status = h("p", { class: "admin-note", role: "status" });
+    var pick = queuePicker(function () { return layer; }, status);
     function refilter() { offset = 0; rememberTab("review.book", filters.book); rememberTab("review.state", filters.state); load(); }
     // A layer remembered from before may no longer be the account's.
     return load().catch(function (e) {
@@ -2303,7 +2436,7 @@ var OWBAdminCore = (function () {
         : "Check how " + d.layer.name.replace(/ wording$/, "") + " says it, at every level, against the meaning. Each approval names you and holds until the wording changes."),
         h("div", { class: "admin-toolbar" }, layerSel ? h("label", null, "Layer ", layerSel) : null,
           h("label", null, "Book ", bookSel), h("label", null, "Show ", stateSel)),
-        status, body, more];
+        status, pick.bar, body, more];
     });
   }
   function reviewSentence(layer, record) {
@@ -2425,6 +2558,225 @@ var OWBAdminCore = (function () {
         h("section", { class: "admin-block" }, h("h2", null, "Your review"), h("label", { class: "admin-field" }, "Note", noteBox), buttons, status, hint, help),
         h("section", { class: "admin-block" }, h("h2", null, "Review trail"), trail)];
     });
+  }
+
+  // My review: a reviewer's workspace for one layer (GET
+  // /api/admin/review/workspace/). Each item links to the view that deals
+  // with it: the queue (a book's sentences to review), the sentence, the
+  // verse inspector, Checks.
+  var STANDING = { overdue: ["Overdue", "bad"], open: ["Open", "info"], done: ["Done", "good"], closed: ["Closed", ""] };
+  function standingPill(a) { return pill(STANDING[a.standing][0], STANDING[a.standing][1]); }
+  function dueText(a) {
+    if (!a.due) return "No date";
+    var d = "Due " + date(a.due + "T12:00:00");
+    if (a.standing === "closed" || a.standing === "done") return d;
+    return d + (a.days_left < 0 ? " (" + plural(-a.days_left, "day") + " late)" : a.days_left === 0 ? " (today)" : " (" + plural(a.days_left, "day") + " left)");
+  }
+  function progressText(p) { return num(p.approved) + " of " + num(p.total) + " approved"; }
+  // A link to the layer's review queue, showing one book (or every book)
+  // and one state.
+  function queueLink(layer, book, state, text) {
+    return h("a", { href: "#review/" + layer, onclick: function () { rememberTab("review.book", book); rememberTab("review.state", state); } }, text);
+  }
+  VIEWS.workspace = function (arg) {
+    var layer = arg || sessionTab("review.layer", "");
+    function load() { return api("/api/admin/review/workspace/?layer=" + encodeURIComponent(layer)); }
+    // A layer remembered from before may no longer be the account's.
+    return load().catch(function (e) {
+      if (e.status !== 403 || !layer) throw e;
+      layer = "";
+      return load();
+    }).then(function (d) {
+      layer = d.layer.code;
+      rememberTab("review.layer", layer);
+      var c = d.counts, ch = d.changes;
+      var names = {};
+      d.books.forEach(function (b) { names[b.code] = b.name; });
+      var layerSel = d.layers.length > 1 ? select("workspace-layer", d.layers.map(function (l) { return [l.code, l.name]; }), layer) : null;
+      if (layerSel) layerSel.addEventListener("change", function () { location.hash = "#workspace/" + layerSel.value; });
+      var out = [head("Text", "My review: " + d.layer.name, "Where your layer stands, what is assigned to you, your open flags, what has changed since you approved it, and what the checks found in the books in progress."),
+        h("div", { class: "admin-toolbar" }, layerSel ? h("label", null, "Layer ", layerSel) : h("span"),
+          queueLink(layer, "", "todo", "Open the queue ›")),
+        h("div", { class: "admin-tiles" }, tile(num(c.not_reviewed), "not reviewed"), tile(num(c.approved), "approved", "good"),
+          tile(num(c.changed), "changed since approval", c.changed ? "warn" : ""), tile(num(c.flagged), "flagged", c.flagged ? "bad" : ""))];
+
+      out.push(h("section", { class: "admin-block" }, h("h2", null, "Assigned to you"),
+        d.assignments.length ? table(["Range", "Progress", "Due", "Standing"], d.assignments.map(function (a) {
+          return h("tr", null,
+            h("th", { scope: "row" }, queueLink(layer, a.book, "todo", a.label), a.note ? h("div", { class: "admin-sub" }, a.note) : null,
+              a.assigned_by ? h("div", { class: "admin-sub" }, "From " + a.assigned_by.name + ", " + date(a.created_at)) : null),
+            h("td", null, bar(a.progress.approved, a.progress.total), h("div", { class: "admin-sub" }, progressText(a.progress))),
+            h("td", null, dueText(a)),
+            h("td", null, standingPill(a)));
+        })) : empty("Nothing is assigned to you in this layer.")));
+
+      out.push(h("section", { class: "admin-block" }, h("h2", null, "Your open flags"),
+        d.flags.length ? h("ul", { class: "admin-feed" }, d.flags.map(function (f) {
+          return h("li", null, h("time", { datetime: f.at, title: new Date(f.at).toLocaleString("en-GB") }, when(f.at)), h("span", null,
+            h("a", { href: "#review/" + layer + "/" + f.record }, f.label), " ", h("span", { class: "admin-sub" }, f.record), " · ",
+            h("a", { href: "#verse/" + f.verse }, "Verse inspector"), h("br"), f.note));
+        })) : h("p", { class: "admin-ok" }, "You have no open flags in this layer.")));
+
+      out.push(h("section", { class: "admin-block" }, h("h2", null, "Changed since you approved"),
+        h("p", { class: "admin-sub" }, ch.last_approval ? "Your last approval in this layer was " + when(ch.last_approval) + "." : "You haven't approved anything in this layer yet."),
+        ch.items.length ? ch.items.map(function (a) {
+          return [sinceApproval(a, true), h("p", null, h("a", { href: "#review/" + layer + "/" + a.record }, "Review " + a.label + " again ›"))];
+        }) : h("p", { class: "admin-ok" }, "Nothing you approved has changed since."),
+        ch.total > ch.items.length ? h("p", null, "The latest " + ch.items.length + " of " + num(ch.total) + ". ",
+          queueLink(layer, "", "changed", "All of them in the queue")) : null));
+
+      if (d.checks) out.push(workspaceChecks(d.checks, d.in_progress, names));
+
+      out.push(h("section", { class: "admin-block" }, h("h2", null, "Book by book"),
+        d.books.length ? table(["Book", "Approved", ["Not reviewed", { class: "admin-num" }], ["Changed", { class: "admin-num" }], ["Flagged", { class: "admin-num" }]],
+          d.books.map(function (b) {
+            var k = b.counts;
+            return h("tr", null,
+              h("th", { scope: "row" }, queueLink(layer, b.code, "todo", b.name), d.in_progress.indexOf(b.code) >= 0 ? [" ", pill("in progress", "info")] : null),
+              h("td", null, bar(k.approved, k.total), h("span", { class: "admin-sub" }, " " + num(k.approved) + " / " + num(k.total))),
+              h("td", { class: "admin-num" }, num(k.not_reviewed)), h("td", { class: "admin-num" }, num(k.changed)), h("td", { class: "admin-num" }, num(k.flagged)));
+          })) : empty("Nothing in this layer has been drafted yet.")));
+      return out;
+    });
+  };
+  // The language's Checks hits (GET /api/admin/checks/, kept as Checks keeps
+  // it) in the books in progress, fetched once the workspace is drawn.
+  function workspaceChecks(lang, books, names) {
+    var title = "Checks in the books in progress";
+    var box = h("section", { class: "admin-block" }, h("h2", null, title), h("p", { class: "admin-sub" }, "Loading the checks…"));
+    function toChecks() { CHECKS.lang = lang; CHECKS.kind = "all"; }
+    function list(heading, hits, describe) {
+      if (!hits.length) return null;
+      return [h("h3", { class: "admin-h3" }, heading + " (" + num(hits.length) + ")"), h("ul", { class: "admin-feed" }, hits.slice(0, 25).map(function (x) {
+        return h("li", null, h("span", null, h("a", { href: "#verse/" + x.verse }, x.label), " ", h("span", { class: "admin-sub" }, x.record), " · ", describe(x)));
+      })), hits.length > 25 ? h("p", { class: "admin-sub" }, "And " + num(hits.length - 25) + " more in Checks.") : null];
+    }
+    api("/api/admin/checks/?lang=" + encodeURIComponent(lang)).then(function (c) {
+      function inBooks(x) { return books.indexOf(x.verse.split(".")[0]) >= 0; }
+      var notes = c.notes.hits.filter(inBooks), verses = c.glossary.verses.hits.filter(inBooks);
+      box.textContent = "";
+      add(box, [h("h2", null, title),
+        h("p", { class: "admin-sub" }, books.length ? "In " + books.map(function (b) { return names[b] || b; }).join(", ") + ". " : "No book is in progress in this layer yet. ",
+          h("a", { href: "#checks", onclick: toChecks }, "Every check in this language ›")),
+        list("Footnotes and verses at odds", notes, function (x) {
+          return [CHECK_KINDS[x.kind] || x.kind, ": ", h("span", { lang: lang }, x.choice)];
+        }),
+        list("Verses at odds with the terms glossary", verses, function (x) {
+          return [x.kind === "avoided" ? "Ruled out" : "Alternative only", ": ", h("b", { lang: lang }, x.form), " for “" + x.term + "”"];
+        }),
+        c.glossary.rows.length ? h("p", null, plural(c.glossary.rows.length, "glossary entry", "glossary entries") + " conflict with another. ",
+          h("a", { href: "#checks", onclick: toChecks }, "See them in Checks")) : null,
+        books.length && !notes.length && !verses.length ? h("p", { class: "admin-ok" }, "No footnote or glossary mismatches in these books.") : null]);
+    }, function (e) { box.textContent = ""; add(box, [h("h2", null, title), h("p", { class: "notice" }, e.message)]); });
+    return box;
+  }
+
+  // Review assignments (staff/assignments.py): an editor or super admin
+  // gives a reviewer a book, or some of its chapters, in a layer they
+  // review, by a date or not. On their own page and in Team & access.
+  function assignmentsManager(d, status) {
+    var people = d.reviewers || [];
+    var reviewerSel = select("assign-reviewer", people.map(function (p) {
+      return [String(p.id), p.name === p.email ? p.email : p.name + " (" + p.email + ")"];
+    }), people.length ? String(people[0].id) : "");
+    var layerSel = h("select", { id: "assign-layer" });
+    var bookSel = h("select", { id: "assign-book" });
+    var from = h("input", { type: "number", id: "assign-from", min: 1, placeholder: "Whole book" });
+    var to = h("input", { type: "number", id: "assign-to", min: 1, placeholder: "To the end" });
+    var due = h("input", { type: "date", id: "assign-due" });
+    var noteBox = h("input", { type: "text", id: "assign-note", maxlength: 2000, placeholder: "Anything the reviewer should know" });
+    function person() { return people.filter(function (p) { return String(p.id) === reviewerSel.value; })[0]; }
+    function books() {
+      var was = bookSel.value, code = layerSel.value;
+      bookSel.textContent = "";
+      d.books.filter(function (b) { return code === "grc" ? b.testament === "nt" : code === "hbo" ? b.testament === "ot" : true; }).forEach(function (b) {
+        bookSel.appendChild(h("option", { value: b.code, selected: b.code === was }, b.name));
+      });
+    }
+    function layers() {
+      var p = person(), was = layerSel.value;
+      layerSel.textContent = "";
+      d.layers.filter(function (l) { return p && (p.layers === "any" || p.layers.indexOf(l.code) >= 0); }).forEach(function (l) {
+        layerSel.appendChild(h("option", { value: l.code, selected: l.code === was }, l.name));
+      });
+      books();
+    }
+    reviewerSel.addEventListener("change", layers);
+    layerSel.addEventListener("change", books);
+    layers();
+    var submit = h("button", { type: "submit", class: "admin-btn primary", disabled: !people.length }, "Assign");
+    var form = h("form", { class: "admin-form" },
+      h("label", { class: "admin-field", for: "assign-reviewer" }, "Reviewer", reviewerSel),
+      h("label", { class: "admin-field", for: "assign-layer" }, "Layer", layerSel),
+      h("label", { class: "admin-field", for: "assign-book" }, "Book", bookSel),
+      h("label", { class: "admin-field", for: "assign-from" }, "From chapter", from),
+      h("label", { class: "admin-field", for: "assign-to" }, "To chapter", to),
+      h("label", { class: "admin-field", for: "assign-due" }, "Due (optional)", due),
+      h("label", { class: "admin-field", for: "assign-note" }, "Note", noteBox), submit);
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      busy(submit, true);
+      api("/api/admin/assignments/", { method: "POST", body: { assignee: Number(reviewerSel.value), layer: layerSel.value, book: bookSel.value,
+        chapter_from: from.value, chapter_to: to.value, due: due.value, note: noteBox.value } }).then(function (r) {
+        var a = r.assignment;
+        FLASH = "Assigned " + a.label + " (" + a.layer.name + ") to " + a.assignee.name + ".";
+        route();
+      }, function (err) { busy(submit, false); note(status, err, true); });
+    });
+    function patch(a, body, button) {
+      return api("/api/admin/assignments/" + a.id + "/", { method: "PATCH", body: body }).then(route, function (e) {
+        if (button) busy(button, false);
+        note(status, e, true);
+      });
+    }
+    function row(a) {
+      var dueIn = h("input", { type: "date", value: a.due || "", "aria-label": "Due date for " + a.label });
+      dueIn.addEventListener("change", function () { patch(a, { due: dueIn.value }); });
+      var close = h("button", { type: "button", class: "admin-link" }, a.closed_at ? "Reopen" : "Close");
+      close.addEventListener("click", function () { busy(close, true); patch(a, { closed: !a.closed_at }, close); });
+      return h("tr", null,
+        h("td", null, a.assignee.name, a.assignee.name !== a.assignee.email ? h("div", { class: "admin-sub" }, a.assignee.email) : null),
+        h("td", null, a.layer.name),
+        h("td", null, a.label, a.note ? h("div", { class: "admin-sub" }, a.note) : null),
+        h("td", null, bar(a.progress.approved, a.progress.total), h("div", { class: "admin-sub" }, progressText(a.progress))),
+        h("td", null, dueIn, a.due && a.standing !== "closed" && a.standing !== "done" ? h("div", { class: "admin-sub" }, dueText(a)) : null),
+        h("td", null, standingPill(a)),
+        h("td", null, close, " ", confirmButton("Remove", "Remove this assignment?", function (b) {
+          api("/api/admin/assignments/" + a.id + "/", { method: "DELETE" }).then(route, function (e) { busy(b, false); note(status, e, true); });
+        }, "admin-link")));
+    }
+    return {
+      form: people.length ? form : empty("No one reviews yet: grant a scholar or language reviewer role in Team & access first."),
+      list: d.assignments.length ? table(["Reviewer", "Layer", "Range", "Progress", "Due", "Standing", ""], d.assignments.map(row))
+        : empty("No review assignments.")
+    };
+  }
+  VIEWS.assignments = function () {
+    var closed = sessionTab("assignments.closed", "") === "1";
+    return api("/api/admin/assignments/" + (closed ? "?closed=1" : "")).then(function (d) {
+      var status = h("p", { class: "admin-note", role: "status" });
+      var m = assignmentsManager(d, status);
+      var toggle = h("label", null, h("input", { type: "checkbox", checked: closed, onchange: function () {
+        rememberTab("assignments.closed", this.checked ? "1" : "");
+        route();
+      } }), " Show closed ones");
+      return [head("Text", "Review assignments", "Give a reviewer a book, or some of its chapters, in the layer they review, by a date if there is one. An assignment is done when every sentence in it is approved, and overdue when its date passes first. Reviewers see theirs in My review and on the dashboard."),
+        h("section", { class: "admin-block" }, h("h2", null, "Assign"), m.form, status),
+        h("section", { class: "admin-block" }, h("header", { class: "admin-toolbar" }, h("h2", null, "Assignments"), toggle), m.list)];
+    });
+  };
+  // The open assignments in Team & access, fetched once it is drawn.
+  function teamAssignments() {
+    var box = h("section", { class: "admin-block" }, h("h2", null, "Review assignments"), h("p", { class: "admin-sub" }, "Loading the assignments…"));
+    api("/api/admin/assignments/").then(function (d) {
+      var status = h("p", { class: "admin-note", role: "status" });
+      var m = assignmentsManager(d, status);
+      box.textContent = "";
+      add(box, [h("h2", null, "Review assignments"),
+        h("p", { class: "admin-sub" }, "Open assignments, overdue first. ", h("a", { href: "#assignments" }, "Closed ones are in Review assignments.")),
+        m.list, h("details", null, h("summary", null, "Assign review"), m.form), status]);
+    }, function (e) { box.textContent = ""; add(box, [h("h2", null, "Review assignments"), h("p", { class: "notice" }, e.message)]); });
+    return box;
   }
 
   // Reviewer flags: problems reviewers have raised, open until the layer is

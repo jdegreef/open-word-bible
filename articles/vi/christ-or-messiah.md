@@ -5,7 +5,7 @@ date: 2026-11-14
 order: 107
 nav_title: Christ hay Mê-si-a
 section: passage
-source: a8da5637121a
+source: 92b071060a02
 ---
 Nhiều người đọc gặp chữ “Christ” rất lâu trước khi biết nó có nghĩa gì. Nghe nó giống như một cái họ: Giê-xu Christ, như người ta nói Nguyễn Văn An. Thật ra đó là một danh hiệu, và các tác giả Tân Ước biết rất rõ nó có nghĩa gì. Từ Hy Lạp {{LEMMA:JHN.1.41:18}} (*christos*) có nghĩa là “được xức dầu”, và nó dịch từ Hê-bơ-rơ *mashiach*, từ đó mà có “Mê-si-a”. Hai từ nói cùng một điều, bằng hai ngôn ngữ.
 
@@ -71,7 +71,7 @@ Có ba loại từ không bao giờ mang cài đặt này.
 
 **“Cơ Đốc nhân”.** Tên gọi mà các môn đồ nhận ở An-ti-ốt là một từ Hy Lạp khác, được tạo từ *christos*. Đó là tên của một nhóm người, và nó vẫn là “Cơ Đốc nhân”. Quyết định về cách diễn đạt ghi chú rằng “Cơ Đốc” là cách dịch xưa của tiếng Việt cho “Christ”, và “Cơ Đốc nhân” là từ trong bản tiếng Việt của 1 Phi-e-rơ 4:16.
 
-**“Người được xức dầu” trong Cựu Ước.** Từ Hê-bơ-rơ *mashiach* được dịch theo nghĩa “được xức dầu” ở mọi cấp độ: cấp độ Sát nghĩa nói “người được xức dầu”, còn cấp độ Cân bằng và Dễ đọc thêm rằng đó là vua, “vị vua được xức dầu”, như ở 1 Sa-mu-ên 24:7 và Thi Thiên 2:2 ở trên. Không có cài đặt, vì trong phần lớn những câu này từ ấy mô tả một vị vua hay thầy tế lễ cụ thể, và “Đấng Mê-si-a” sẽ khẳng định nhiều hơn điều câu ấy nói. Quyết định về cách diễn đạt ở Thi Thiên 2:2 nói rằng “Đấng Mê-si-a” sẽ biến từ này thành một danh hiệu mà thi thiên chưa dùng. Thay vào đó, các quyết định về nghĩa hướng về phía trước. Ở Thi Thiên 18:51, bản ghi nói từ này “là từ đứng sau ‘Mê-si-a’ và ‘Christ’, và lời hứa về sau được hiểu là chỉ về Đấng Mê-si-a”. Ở Đa-ni-ên 9:25-26, nơi “một người được xức dầu” sẽ bị trừ đi, quyết định được đánh dấu là chưa chắc chắn và liệt kê những cách người đọc đã hiểu, từ thầy tế lễ thượng phẩm Ô-nia Đệ Tam cho đến Đức Giê-xu là Đấng Mê-si-a. Đó là một câu hỏi về ý nghĩa, và ý nghĩa không bao giờ là một cài đặt.
+**“Người được xức dầu” trong Cựu Ước.** Từ Hê-bơ-rơ *mashiach* được dịch theo nghĩa “được xức dầu” ở mọi cấp độ: cấp độ Sát nghĩa nói “người được xức dầu”, còn cấp độ Cân bằng và Dễ đọc thêm rằng đó là vua, “vị vua được xức dầu”, như ở 1 Sa-mu-ên 24:6 và Thi Thiên 2:2 ở trên. Không có cài đặt, vì trong phần lớn những câu này từ ấy mô tả một vị vua hay thầy tế lễ cụ thể, và “Đấng Mê-si-a” sẽ khẳng định nhiều hơn điều câu ấy nói. Quyết định về cách diễn đạt ở Thi Thiên 2:2 nói rằng “Đấng Mê-si-a” sẽ biến từ này thành một danh hiệu mà thi thiên chưa dùng. Thay vào đó, các quyết định về nghĩa hướng về phía trước. Ở Thi Thiên 18:50, bản ghi nói từ này “là từ đứng sau ‘Mê-si-a’ và ‘Christ’, và lời hứa về sau được hiểu là chỉ về Đấng Mê-si-a”. Ở Đa-ni-ên 9:25-26, nơi “một người được xức dầu” sẽ bị trừ đi, quyết định được đánh dấu là chưa chắc chắn và liệt kê những cách người đọc đã hiểu, từ thầy tế lễ thượng phẩm Ô-nia Đệ Tam cho đến Đức Giê-xu là Đấng Mê-si-a. Đó là một câu hỏi về ý nghĩa, và ý nghĩa không bao giờ là một cài đặt.
 
 ## Một cài đặt, không phải một bản dịch thứ hai
 

@@ -4,7 +4,7 @@ summary: La misma expresión significa «un ser humano» en Ezequiel y en los Sa
 date: 2026-10-17
 order: 81
 section: passage
-source: 65601781c86e
+source: adf413cc3972
 ---
 Pocas expresiones de la Biblia son tan conocidas, o se malinterpretan con tanta facilidad, como «el Hijo del Hombre». Muchos lectores dan por hecho que es lo contrario de «Hijo de Dios»: un título para la naturaleza humana de Jesús y el otro para su naturaleza divina. La expresión es más antigua y más extraña que eso. En hebreo y en arameo era una manera corriente de decir «un ser humano». En una visión de Daniel describe una figura de aspecto humano que viene con las nubes del cielo. En los Evangelios se convierte en el nombre que Jesús usa para sí mismo más que ningún otro.
 
@@ -18,7 +18,7 @@ El Salmo 8 muestra la expresión en acción. El salmista levanta la vista al cie
 
 > {{OWB:PSA.8.5.s1:L}}
 
-Ese es el nivel Literal, con los ajustes del lector tal como vienen. Las dos mitades del versículo dicen lo mismo dos veces, como hace a menudo la poesía hebrea: «hombre» e «hijo de hombre» son palabras paralelas para un ser humano, pequeño y mortal bajo un cielo inmenso. La decisión de significado del versículo dice justamente eso. (Las Biblias en español e inglés numeran este versículo 8:4; Open Word Bible sigue la numeración hebrea, que cuenta el título como versículo 1).
+Ese es el nivel Literal, con los ajustes del lector tal como vienen. Las dos mitades del versículo dicen lo mismo dos veces, como hace a menudo la poesía hebrea: «hombre» e «hijo de hombre» son palabras paralelas para un ser humano, pequeño y mortal bajo un cielo inmenso. La decisión de significado del versículo dice justamente eso. (Es el 8:4, como en las Biblias en español e inglés; las Biblias hebreas cuentan el título como versículo 1 y lo numeran 8:5).
 
 Como la expresión significa cualquier ser humano, hombre o mujer, en este salmo queda bajo el ajuste de género del lector. De forma predeterminada, el nivel Literal dice «el mortal», y quien prefiera la redacción tradicional puede cambiar el ajuste para ver «el hijo del hombre». El ajuste cambia la redacción, no el significado: las dos dicen «un ser humano». La redacción tradicional se conserva como alternativa por una razón que da el registro. Hebreos 2:6–8 cita este salmo y lo lee referido a Jesús, el único ser humano ya «coronado de gloria y de honra». Quien compare los dos pasajes debe poder ver las mismas palabras en ambos.
 

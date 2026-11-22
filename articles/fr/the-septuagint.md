@@ -5,7 +5,7 @@ date: 2026-10-11
 order: 29
 section: history
 part: ot
-source: 397bccee3ec5
+source: 4a87bb1931bd
 ---
 La première traduction de la Bible n'a pas été faite par des chrétiens, et elle n'a été faite ni en latin ni en anglais. Elle a été faite par des Juifs, en Égypte, en grec, à partir du IIIe siècle av. J.-C. On l'appelle la **Septante**, du latin signifiant "soixante-dix", et c'est l'un des livres les plus importants de l'histoire de la Bible.
 
@@ -37,7 +37,7 @@ L'Église primitive parlait surtout grec, et sa Bible était l'Ancien Testament 
 - **Hébreux 10:5** cite le Psaume 40:6 sous la forme "tu m'as préparé un corps", en suivant la Septante, là où l'hébreu dit "tu m'as creusé des oreilles".
 - Dans **Actes 15:16–17**, Jacques cite Amos 9:11–12 sous une forme proche de la Septante, qui parle du "reste des hommes" cherchant le Seigneur, là où le texte massorétique parle de posséder "le reste d'Édom". Les mots hébreux pour "Édom" et pour "humanité" ne diffèrent que d'une lettre-voyelle.
 
-Les dossiers d'Open Word Bible montrent ce genre de différence dans les deux sens. Au Psaume 40 (verset 7 dans la numérotation hébraïque, verset 6 dans la plupart des Bibles anglaises), l'Ancien Testament est traduit de l'hébreu :
+Les dossiers d'Open Word Bible montrent ce genre de différence dans les deux sens. Au Psaume 40 (verset 6, verset 7 dans les Bibles hébraïques), l'Ancien Testament est traduit de l'hébreu :
 
 > {{OWB:PSA.40.7.s1:L}}
 

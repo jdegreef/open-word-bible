@@ -4,7 +4,7 @@ summary: Maneno yaleyale yanamaanisha "mwanadamu" katika Ezekieli na Zaburi, yan
 date: 2026-10-17
 order: 81
 section: passage
-source: 65601781c86e
+source: adf413cc3972
 ---
 Ni maneno machache katika Biblia yanayojulikana sana, au yanayoeleweka vibaya kwa urahisi, kama "Mwana wa Adamu". Wasomaji wengi hudhani kwamba ni kinyume cha "Mwana wa Mungu": cheo kimoja kwa ajili ya ubinadamu wa Yesu, na kingine kwa ajili ya uungu wake. Maneno haya ni ya zamani zaidi, na ya ajabu zaidi, kuliko hivyo. Katika Kiebrania na Kiaramu yalikuwa njia ya kawaida ya kusema "mwanadamu". Katika maono mamoja ya Danieli yanaeleza umbo linaloonekana kama mwanadamu na linalokuja pamoja na mawingu ya mbinguni. Katika Injili yanakuwa jina ambalo Yesu anajiita mara nyingi kuliko jina lingine lolote.
 
@@ -20,7 +20,7 @@ Zaburi 8 inaonyesha maneno haya yakifanya kazi. Mtunga zaburi anatazama juu anga
 
 > {{OWB:PSA.8.5.s1:L}}
 
-Hicho ni kiwango cha Halisi, mipangilio ya msomaji ikiwa kama ilivyo. Nusu mbili za mstari zinasema jambo lilelile mara mbili, kama mashairi ya Kiebrania yanavyofanya mara nyingi: "binadamu" na "mwana wa Adamu" ni maneno sambamba yanayomaanisha mwanadamu, mdogo na mwenye kufa chini ya anga kubwa. Uamuzi wa maana wa mstari huu unasema hivyo hasa. (Biblia za Kiingereza zinauhesabu mstari huu kuwa 8:4; Open Word Bible inafuata hesabu ya Kiebrania, inayohesabu kichwa cha zaburi kuwa mstari wa 1.)
+Hicho ni kiwango cha Halisi, mipangilio ya msomaji ikiwa kama ilivyo. Nusu mbili za mstari zinasema jambo lilelile mara mbili, kama mashairi ya Kiebrania yanavyofanya mara nyingi: "binadamu" na "mwana wa Adamu" ni maneno sambamba yanayomaanisha mwanadamu, mdogo na mwenye kufa chini ya anga kubwa. Uamuzi wa maana wa mstari huu unasema hivyo hasa. (Huu ni 8:4, kama katika Biblia za Kiingereza; Biblia za Kiebrania zinahesabu kichwa cha zaburi kuwa mstari wa 1 na kuuita 8:5.)
 
 Kwa sababu maneno haya yanamaanisha mwanadamu yeyote, mwanamume au mwanamke, katika zaburi hii yako chini ya mpangilio wa jinsia wa msomaji. Katika toleo la Kiingereza, kwa chaguo la msingi kiwango cha Halisi kinasema "a mortal" (mwenye kufa), na msomaji anayependa maneno ya kimapokeo anaweza kubadilisha mpangilio aone "the son of man" (mwana wa mtu). Mpangilio unabadilisha maneno, si maana: yote mawili yanasema "mwanadamu". Maneno ya kimapokeo yamebaki kama chaguo jingine kwa sababu ambayo rekodi inaitoa. Waebrania 2:6–8 inanukuu zaburi hii na kuisoma kuhusu Yesu, yule mwanadamu mmoja ambaye kwake maneno haya tayari yametimia: "kwa utukufu na heshima ulimvika taji". Msomaji anayelinganisha vifungu hivyo viwili anapaswa kuweza kuona maneno yaleyale katika vyote viwili.
 

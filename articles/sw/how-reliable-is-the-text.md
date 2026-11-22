@@ -5,7 +5,7 @@ date: 2026-10-11
 order: 40
 section: history
 part: today
-source: 38f9ddefc748
+source: b3a3c2719637
 ---
 Mfululizo huu umeifuata Biblia kuanzia ilipoandikwa kwa mara ya kwanza, kupitia vizazi vya wanakili, hadi miswada na matoleo yaliyochapishwa yaliyo nyuma ya tafsiri za kisasa. Makala hii ya mwisho inauliza swali lililo nyuma ya mengine yote: tunaweza kuwa na uhakika kiasi gani kwamba Biblia tunayoisoma leo inasema kile ambacho waandishi wake waliandika?
 
@@ -88,7 +88,7 @@ Mahali patatu katika Open Word Bible panaonyesha jinsi hili linavyoonekana.
 
 - **Mwanzo 4:8.** Kiebrania kinasema "Kaini akamwambia Habili ndugu yake," na kisha hakitoi maneno yoyote. Torati ya Wasamaria, Septuaginta, Kisiria na Kilatini vinaongeza "Twende shambani." Open Word Bible inafuata Kiebrania, pamoja na maelezo ya chini.
 - **Isaya 53:11.** Kiebrania kinasema mtumishi "ataona." Hati-kunjo Kuu ya Isaya, hati-kunjo nyingine ya Isaya kutoka pango hilohilo na Septuaginta zinasema "ataona nuru." Open Word Bible inatafsiri Kiebrania na inatoa "nuru" katika maelezo ya chini; maana inakaribiana kwa njia zote mbili.
-- **Zaburi 22:17** (22:16 katika Biblia nyingi za Kiingereza). Kiebrania kama kilivyopokezwa kinasoma "kama simba" mikono yangu na miguu yangu, jambo linaloucha mstari bila kitenzi. Hati-kunjo kutoka Nahal Hever katika jangwa la Yudea ina umbo tofauti kidogo linalofanana na kitenzi. Septuaginta ina "walichimba" au "walitoboa," usomaji ulio katika King James Version. Open Word Bible inafuata Kiebrania, inaeleza mbadala katika maelezo ya chini, na inauwekea uamuzi alama ya kutokuwa na uhakika.
+- **Zaburi 22:16** (22:17 katika Biblia za Kiebrania). Kiebrania kama kilivyopokezwa kinasoma "kama simba" mikono yangu na miguu yangu, jambo linaloucha mstari bila kitenzi. Hati-kunjo kutoka Nahal Hever katika jangwa la Yudea ina umbo tofauti kidogo linalofanana na kitenzi. Septuaginta ina "walichimba" au "walitoboa," usomaji ulio katika King James Version. Open Word Bible inafuata Kiebrania, inaeleza mbadala katika maelezo ya chini, na inauwekea uamuzi alama ya kutokuwa na uhakika.
 
 Kwa hiyo watafsiri wa Agano la Kale wanakabiliwa na maamuzi magumu ya maandishi mara nyingi zaidi kuliko watafsiri wa Agano Jipya. Rasimu zinaonyesha hivyo: sentensi za Agano la Kale zina uwezekano karibu mara mbili zaidi ya zile za Agano Jipya wa kuwa na uamuzi wa maandishi uliowekewa alama ya kutokuwa na uhakika. Lakini hapa pia, sehemu kubwa kabisa ya maandishi haina shaka, na mbadala zilizopo pale penye shaka zinaweza kutajwa na kupimwa.
 
