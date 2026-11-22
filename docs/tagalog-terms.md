@@ -2088,3 +2088,31 @@ names the book where the form was first used.
 | Song of Songs 7:1 | Shulammite; Mahanaim | Sulamita; Mahanaim |  |
 | Song of Songs 7:5 | Bath-rabbim | Bat-rabim |  |
 | Song of Songs 8:11 | Baal-hamon | Baal-hamon |  |
+| Isaiah 3:16 | daughter of Zion | *anak na babae ng Zion* (L); *Anak na Zion* (B); *mga mamamayan ng Zion* (R) |  |
+| Isaiah 5:8 | woe | *Sa aba* (L, B); R "Kakila-kilabot ang mangyayari sa" |  |
+| Isaiah 6:2 | seraphim | *mga serafin* |  |
+| Isaiah 7:14 | Immanuel | Emmanuel |  |
+| Isaiah 8:1 | Maher-shalal-hash-baz | Maher-shalal-hash-baz |  |
+| Isaiah 11:11 | coastlands | *mga baybayin* (L, B); *malalayong lupain* (R) |  |
+| Isaiah 14:12 | shining one, son of Dawn | *nagniningning, anak ng bukang-liwayway* (L, B); R "maliwanag na bituin sa umaga" |  |
+| Isaiah 19:13 | Memphis; Zoan | Memfis; Zoan |  |
+| Isaiah 20:1 | Sargon | Sargon |  |
+| Isaiah 27:1 | Leviathan | Leviatan | as at Job 3:8 |
+| Isaiah 28:10 | tsav, qav (sound-play) | *tsav latsav*, *qav laqav*, kept as sounds | the mockers' baby talk |
+| Isaiah 29:1 | Ariel (Jerusalem) | Ariel |  |
+| Isaiah 30:33 | Topheth | Tofet |  |
+| Isaiah 34:14 | night creature | *nilalang ng gabi* |  |
+| Isaiah 36:2 | Rabshakeh | Rabsaces (L); *punong opisyal* (B); *kumander* (R) |  |
+| Isaiah 39:1 | Merodach-baladan | Merodac-baladan |  |
+| Isaiah 44:2 | Jeshurun | Jesurun |  |
+| Isaiah 45:14 | Sabeans | *mga Sabeo* |  |
+| Isaiah 46:1 | Bel; Nebo (gods) | Bel; Nebo |  |
+| Isaiah 49:12 | Sinim | Sinim |  |
+| Isaiah 51:9 | Rahab (sea monster) | Rahab |  |
+| Isaiah 59:20 | Redeemer | *Tagapagtubos* |  |
+| Isaiah 62:4 | Hephzibah; Beulah | Hefziba; Beula (L); B and R translate the names |  |
+| Isaiah 63:1 | Bozrah | Bozra |  |
+| Isaiah 65:10 | Valley of Achor | *Libis ng Acor* |  |
+| Isaiah 65:11 | Gad; Meni (gods of fortune) | Gad; Meni |  |
+| Isaiah 65:16 | God of Amen | *Diyos ng Amen* (L, B); R "Diyos na tapat at totoo" |  |
+| Isaiah 66:19 | Pul; Lud; Tubal; Javan | Pul; Lud; Tubal; Javan (L, B), *Gresya* (R) |  |
