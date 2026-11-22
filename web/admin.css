@@ -158,6 +158,11 @@ form.admin-toolbar { justify-content: flex-start; }
 
 .admin-messages { display: grid; gap: 14px; }
 .admin-message { padding: 16px 18px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); }
+/* A message that has left the tab it was listed in: one line, with Undo. */
+.admin-message-folded { padding: 10px 18px; background: transparent; border-style: dashed; color: var(--muted); }
+.admin-message-folded p { margin: 0; }
+.admin-pager { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 16px 0 0; }
+.admin-pager > span { margin-inline-end: auto; }
 .admin-message header { font-size: 14.5px; }
 .admin-message blockquote { margin: 10px 0; padding: 8px 14px; border-inline-start: 3px solid var(--line-strong); font-family: var(--serif); font-size: 17px; white-space: pre-wrap; }
 .admin-reply { margin: 10px 0 0; padding: 10px 14px; border-radius: 10px; background: var(--surface-2); white-space: pre-wrap; }

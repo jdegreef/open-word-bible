@@ -1152,39 +1152,89 @@ var OWBAdminNav = (function () {
 
   // Reader inbox.
   // #inbox/mine opens the messages assigned to you (the dashboard links it).
-  var INBOX = { status: "new", kind: "", lang: "", assigned: "", q: "" };
+  var INBOX = { status: "new", kind: "", lang: "", book: "", assigned: "", q: "", offset: 0 };
   VIEWS.inbox = function (arg) {
     if (arg === "mine") INBOX.assigned = "me";
-    var q = "?status=" + INBOX.status + (INBOX.kind ? "&kind=" + INBOX.kind : "") + (INBOX.lang ? "&lang=" + INBOX.lang : "") +
-      (INBOX.assigned ? "&assigned=" + INBOX.assigned : "") + (INBOX.q ? "&q=" + encodeURIComponent(INBOX.q) : "");
+    var f = INBOX;
+    f.offset = Math.max(0, parseInt(f.offset, 10) || 0);
+    var q = "?status=" + f.status + (f.kind ? "&kind=" + f.kind : "") + (f.lang ? "&lang=" + f.lang : "") +
+      (f.book ? "&book=" + f.book : "") + (f.assigned ? "&assigned=" + f.assigned : "") +
+      (f.q ? "&q=" + encodeURIComponent(f.q) : "") + (f.offset ? "&offset=" + f.offset : "");
+    // A filter changed: back to the first page (route() writes the address).
+    function refilter() { f.offset = 0; route(); }
     return api("/api/admin/inbox/" + q).then(function (d) {
-      var tabs = seg([["new", "New (" + d.counts.new + ")"], ["answered", "Answered (" + d.counts.answered + ")"],
-        ["done", "Done (" + d.counts.done + ")"], ["declined", "Declined (" + d.counts.declined + ")"]], INBOX.status, function (v) {
-        INBOX.status = v; route();
-      });
-      var kind = select("inbox-kind", [["", "Suggestions and questions"], ["suggestion", "Suggestions"], ["question", "Questions"]], INBOX.kind);
-      kind.addEventListener("change", function () { INBOX.kind = kind.value; route(); });
+      var counts = d.counts;
+      var tabs = h("span");
+      function drawTabs() {
+        tabs.textContent = "";
+        tabs.appendChild(seg([["new", "New (" + counts.new + ")"], ["answered", "Answered (" + counts.answered + ")"],
+          ["done", "Done (" + counts.done + ")"], ["declined", "Declined (" + counts.declined + ")"]], f.status, function (v) {
+          f.status = v; refilter();
+        }));
+      }
+      drawTabs();
+      // A card that leaves this tab (done, declined, answered) moves the counts at once.
+      function moved(from, to) {
+        if (from in counts) counts[from] = Math.max(0, counts[from] - 1);
+        if (to in counts) counts[to] += 1;
+        drawTabs();
+      }
+      var kind = select("inbox-kind", [["", "Suggestions and questions"], ["suggestion", "Suggestions"], ["question", "Questions"]], f.kind);
+      kind.addEventListener("change", function () { f.kind = kind.value; refilter(); });
       kind.setAttribute("aria-label", "Kind");
-      var whose = seg([["me", "Mine"], ["none", "Unassigned"], ["", "All"]], INBOX.assigned, function (v) {
-        INBOX.assigned = v; location.hash === "#inbox" ? route() : (location.hash = "#inbox");
+      // The languages and books with messages in this tab (and the one chosen, even if none are left).
+      var langs = (d.languages || []).slice();
+      if (f.lang && !langs.some(function (l) { return l.code === f.lang; })) langs.push({ code: f.lang, name: f.lang, count: 0 });
+      var lang = select("inbox-lang", [["", "Every language"]].concat(langs.map(function (l) { return [l.code, l.name + " (" + l.count + ")"]; })), f.lang);
+      lang.setAttribute("aria-label", "Language");
+      lang.addEventListener("change", function () { f.lang = lang.value; refilter(); });
+      var books = (d.books || []).slice();
+      if (f.book && !books.some(function (b) { return b.code === f.book; })) books.push({ code: f.book, name: f.book, count: 0 });
+      var book = select("inbox-book", [["", "Every book"]].concat(books.map(function (b) { return [b.code, b.name + " (" + b.count + ")"]; })), f.book);
+      book.setAttribute("aria-label", "Book");
+      book.addEventListener("change", function () { f.book = book.value; refilter(); });
+      var whose = seg([["me", "Mine"], ["none", "Unassigned"], ["", "All"]], f.assigned, function (v) {
+        f.assigned = v; f.offset = 0;
+        location.hash === "#inbox" ? route() : (location.hash = "#inbox");
       });
       // Words to find in every message, not only the page drawn: the API
       // searches (q=), as you type. The tabs' counts are then of what it found.
-      var search = h("input", { type: "search", id: "inbox-q", value: INBOX.q, placeholder: "Words, a verse or a reader", "aria-label": "Find in the reader inbox" });
-      var found = h("span", { class: "admin-sub", role: "status" }, INBOX.q ? plural(d.total, "message") + " found" : "");
+      var search = h("input", { type: "search", id: "inbox-q", value: f.q, placeholder: "Words, a verse or a reader", "aria-label": "Find in the reader inbox" });
+      var found = h("span", { class: "admin-sub", role: "status" }, f.q ? plural(d.total, "message") + " found" : "");
       var form = h("form", { class: "admin-toolbar", role: "search" }, search, h("button", { type: "submit", class: "admin-btn" }, "Find"), found);
-      function find(v) { if (v !== INBOX.q) { INBOX.q = v; route(); } }
+      function find(v) { if (v !== f.q) { f.q = v; refilter(); } }
       form.addEventListener("submit", function (e) { e.preventDefault(); stopLive(); find(search.value.trim()); });
       live(search, find);
+      var cards = d.messages.map(function (m) { return messageCard(m, d.team, { listed: f.status, moved: moved }); });
+      var filtered = f.kind || f.lang || f.book || f.assigned || f.q;
+      var pager = null;
+      if (d.total > d.page || d.offset) {
+        var first = d.offset + 1, last = d.offset + d.messages.length;
+        var newer = h("button", { type: "button", class: "admin-btn", disabled: !d.offset }, f.status === "new" ? "\u2039 Earlier" : "\u2039 Newer");
+        var older = h("button", { type: "button", class: "admin-btn", disabled: last >= d.total }, f.status === "new" ? "Later \u203a" : "Older \u203a");
+        newer.addEventListener("click", function () { f.offset = Math.max(0, d.offset - d.page); route(); });
+        older.addEventListener("click", function () { f.offset = d.offset + d.page; route(); });
+        pager = h("nav", { class: "admin-pager", "aria-label": "Pages of messages" },
+          h("span", { class: "admin-sub" }, num(first) + "\u2013" + num(last) + " of " + num(d.total)), newer, older);
+      }
       return [head("Readers", "Reader inbox", "Suggestions and questions readers send from a verse. New messages come oldest first; assign one to say you're dealing with it. A reply is emailed to the reader once; mark a message done when it's dealt with."),
-        h("div", { class: "admin-toolbar" }, tabs, whose, kind), form,
-        d.messages.length ? h("div", { class: "admin-messages" }, d.messages.map(function (m) { return messageCard(m, d.team); })) : empty(INBOX.q ? "No messages here have those words." : "No messages here."),
-        d.total > d.messages.length ? h("p", { class: "admin-sub" }, "Showing " + (INBOX.status === "new" ? "the longest waiting " : "the newest ") + d.messages.length + " of " + num(d.total) + ".") : null];
+        h("div", { class: "admin-toolbar" }, tabs, whose, kind, lang, book), form,
+        cards.length ? h("div", { class: "admin-messages" }, cards) : empty(filtered ? "No messages match these filters." : "No messages here."),
+        filtered && !cards.length ? (function () {
+          var clear = h("button", { type: "button", class: "admin-btn" }, "Clear filters");
+          clear.addEventListener("click", function () { f.kind = f.lang = f.book = f.assigned = f.q = ""; refilter(); });
+          return h("p", null, clear);
+        })() : null,
+        pager];
     });
   };
   // team: whom the message can be assigned to, from the answer that listed
   // it (the inbox's or the verse inspector's).
-  function messageCard(m, team) {
+  // opts.listed: the inbox tab the card is shown in; a change that moves it
+  // out (done, declined, answered) folds it to one line, with Undo for a
+  // status, and opts.moved(from, to) updates the tab counts.
+  function messageCard(m, team, opts) {
+    opts = opts || {};
     var card = h("article", { class: "admin-message" });
     var draft = "";   // the reply being written, kept when the card is drawn again
     function draw() {
@@ -1263,7 +1313,38 @@ var OWBAdminNav = (function () {
       }
     }
     function update(body) {
-      return api("/api/admin/inbox/" + m.id + "/", { method: "PATCH", body: body }).then(function (fresh) { m = fresh; draw(); });
+      var was = m.status;
+      return api("/api/admin/inbox/" + m.id + "/", { method: "PATCH", body: body }).then(function (fresh) {
+        m = fresh;
+        if (opts.listed && was === opts.listed && m.status !== was) folded(was, !!body.reply);
+        else draw();
+      });
+    }
+    var DONE_LABEL = { done: "Marked done", declined: "Declined", answered: "Answered", "new": "Back to new" };
+    // The card once it has left the tab: what happened, and Undo (not for
+    // a reply, which has been emailed).
+    function folded(was, replied) {
+      if (opts.moved) opts.moved(was, m.status);
+      card.textContent = "";
+      card.classList.add("admin-message-folded");
+      var what = (DONE_LABEL[m.status] || m.status) + ": " + m.verse_label + ", from " + (m.from.name || m.from.email) +
+        (replied ? ". The reply was emailed." : ".");
+      var line = h("p", { role: "status" }, what);
+      if (!replied) {
+        var undo = h("button", { type: "button", class: "admin-link" }, "Undo");
+        undo.addEventListener("click", function () {
+          busy(undo, true);
+          var now = m.status;
+          api("/api/admin/inbox/" + m.id + "/", { method: "PATCH", body: { status: was } }).then(function (fresh) {
+            m = fresh;
+            if (opts.moved) opts.moved(now, m.status);
+            card.classList.remove("admin-message-folded");
+            draw();
+          }, function (e) { busy(undo, false); line.appendChild(h("span", { class: "admin-note bad" }, " " + e.message)); });
+        });
+        add(line, [" ", undo]);
+      }
+      card.appendChild(line);
     }
     draw();
     return card;
