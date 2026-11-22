@@ -4,13 +4,13 @@ summary: L'hébreu biblique ne marque pas le passé, le présent et le futur com
 date: 2026-10-17
 order: 92
 section: passage
-source: c27aa9dda0a4
+source: 25cb01415999
 ---
 Ésaïe vécut au VIIIe siècle avant Jésus-Christ. Pourtant, dans l'une de ses prophéties les plus connues, il dit :
 
 > {{OWB:ISA.9.5.s1:B}}
 
-"Est né". "A été donné". On parle de l'enfant comme s'il était déjà là. La plupart des Bibles anglaises numérotent ce verset 9:6 ; Open Word Bible suit la numérotation hébraïque, où il est le 9:5. Les chrétiens y lisent depuis longtemps une promesse du Christ, sept siècles plus tard. Alors pourquoi le prophète emploie-t-il un temps du passé ?
+"Est né". "A été donné". On parle de l'enfant comme s'il était déjà là. Dans les Bibles hébraïques, ce verset est le 9:5 ; Open Word Bible, comme la plupart des Bibles anglaises, le numérote 9:6. Les chrétiens y lisent depuis longtemps une promesse du Christ, sept siècles plus tard. Alors pourquoi le prophète emploie-t-il un temps du passé ?
 
 La réponse courte est que l'hébreu biblique n'a pas de temps au sens où l'entendent l'anglais ou le français. Ses verbes disent quelque chose de la *manière* dont une action est vue plus que du *moment* où elle a lieu, et c'est au traducteur de déterminer le moment d'après le contexte. Cet article explique comment cela fonctionne, et ce qu'en fait Open Word Bible.
 
@@ -52,7 +52,7 @@ Le second sert pour ce qui est toujours vrai. Le Psaume 1 s'ouvre sur le portrai
 
 Les trois verbes (marcher, se tenir, s'asseoir) sont tous au parfait. La décision grammaticale du dossier le dit directement : les verbes sont à la forme hébraïque du passé, employée pour ce qui est toujours vrai, et ils sont donc rendus au présent. "Qui n'a pas marché" serait une étrange façon de décrire une manière de vivre. Le psaume ne regarde pas en arrière. Il décrit un type de personne.
 
-Parfois le choix est moins clair. Au Psaume 3:6, David dit qu'il s'est couché, qu'il s'est endormi et qu'il s'est réveillé, parce que le SEIGNEUR le soutenait. Les verbes sont des parfaits. Le dossier y lit la nuit passée, une vraie nuit au milieu du danger, et donne l'autre lecture comme alternative : certains y voient ce qu'il fait toujours. Le dossier ajoute que dans un cas comme dans l'autre, dormir au milieu du danger montre sa confiance. La forme du verbe ne peut pas, à elle seule, trancher entre les deux.
+Parfois le choix est moins clair. Au Psaume 3:5, David dit qu'il s'est couché, qu'il s'est endormi et qu'il s'est réveillé, parce que le SEIGNEUR le soutenait. Les verbes sont des parfaits. Le dossier y lit la nuit passée, une vraie nuit au milieu du danger, et donne l'autre lecture comme alternative : certains y voient ce qu'il fait toujours. Le dossier ajoute que dans un cas comme dans l'autre, dormir au milieu du danger montre sa confiance. La forme du verbe ne peut pas, à elle seule, trancher entre les deux.
 
 ## L'imparfait qui est un passé
 
@@ -81,7 +81,7 @@ Dans la Bible hébraïque, ce qui est acquis est généralement la décision de 
 - **Josué 6:2.** Avant que les murailles de Jéricho ne tombent, le SEIGNEUR dit : "J'ai livré Jéricho entre tes mains." Le dossier dit que la victoire est présentée comme déjà acquise, parce que Dieu parle de ce qu'il a décidé comme d'une chose déjà réglée.
 - **Amos 5:2.** Amos chante un chant funèbre sur Israël : "Elle est tombée, elle ne se relèvera plus, la vierge d'Israël." Le dossier note qu'Israël était encore debout et prospère quand Amos parlait. La complainte parle de sa chute comme déjà certaine, comme si les funérailles avaient commencé.
 - **Jérémie 50:2.** Des hérauts reçoivent l'ordre d'annoncer "Babylone est prise" alors que Babylone domine encore le monde. Le dossier dit qu'ils proclament sa chute comme un fait, parce que Dieu l'a décidée.
-- **Ésaïe 9:1.** "Le peuple qui marchait dans les ténèbres a vu une grande lumière." Le dossier dit que la lumière à venir est décrite comme déjà là, et que Matthieu cite ces versets à propos de Jésus qui commence son œuvre en Galilée.
+- **Ésaïe 9:2.** "Le peuple qui marchait dans les ténèbres a vu une grande lumière." Le dossier dit que la lumière à venir est décrite comme déjà là, et que Matthieu cite ces versets à propos de Jésus qui commence son œuvre en Galilée.
 
 La même habitude se retrouve dans le Nouveau Testament, même si les verbes grecs fonctionnent autrement. En Romains 8:30, Paul écrit que ceux que Dieu a justifiés, "il les a aussi glorifiés". Le dossier de ce verset note que la gloire doit encore être révélée, et que Paul emploie le passé parce que, dans le dessein de Dieu, elle est aussi certaine que l'appel et la justification, qui ont déjà eu lieu.
 
@@ -99,9 +99,9 @@ La Littérale garde la forme : "mon peuple est parti en exil". L'Équilibrée di
 
 Josué 6:2 montre une autre façon de faire. Les trois niveaux gardent le parfait ("j'ai livré", "je t'ai livré", "je t'ai donné"), mais la Simple ajoute une courte phrase de son cru, "C'est comme si elle était déjà à toi", et la décision de formulation anglaise explique pourquoi : pour faire passer le sens du verbe accompli, à savoir que la ville appartiendra sûrement à Israël.
 
-## Ésaïe 9:5 : une naissance déjà annoncée
+## Ésaïe 9:6 : une naissance déjà annoncée
 
-Ésaïe 9:5 est plus difficile, et le dossier le traite avec soin. Sa décision de sens est marquée incertaine. Elle note que les versets 3, 4 et 5 commencent chacun par "car" et donnent les raisons de la joie du verset 2 : l'oppresseur brisé, l'équipement de guerre brûlé, et maintenant un enfant royal. Les verbes sont à la forme de l'action accomplie. La décision donne ensuite deux possibilités, sans imposer de choix. Un prophète peut parler de ce que Dieu fera sûrement comme d'une chose déjà faite, ou bien annoncer une naissance qui vient d'avoir lieu. Le passage ne nomme pas l'enfant.
+Ésaïe 9:6 est plus difficile, et le dossier le traite avec soin. Sa décision de sens est marquée incertaine. Elle note que les versets 3, 4 et 5 commencent chacun par "car" et donnent les raisons de la joie du verset 2 : l'oppresseur brisé, l'équipement de guerre brûlé, et maintenant un enfant royal. Les verbes sont à la forme de l'action accomplie. La décision donne ensuite deux possibilités, sans imposer de choix. Un prophète peut parler de ce que Dieu fera sûrement comme d'une chose déjà faite, ou bien annoncer une naissance qui vient d'avoir lieu. Le passage ne nomme pas l'enfant.
 
 Les lecteurs ont adopté l'un et l'autre point de vue. Certains voient une naissance du temps même d'Ésaïe, peut-être un héritier royal, célébrée dans un langage qui dépasse tout roi ordinaire. Beaucoup de lecteurs chrétiens voient une prophétie du Christ, prononcée avec la certitude du parfait prophétique. Les deux ne s'excluent pas toujours : certains lisent le verset comme parlant d'un roi du temps d'Ésaïe dont les titres ne se sont pleinement réalisés que dans un fils de David plus tardif. Le dossier renvoie aux passages qui l'entourent : 7:14 promettait un fils appelé Emmanuel, et 11:1–5 décrit un roi issu de la lignée de Jessé.
 
@@ -121,7 +121,7 @@ Les passés du chapitre 53 sont-ils des parfaits prophétiques, qui décrivent u
 
 ## Comment la décision est prise
 
-Pour un verbe hébreu, le temps de la traduction n'est jamais simplement recopié. C'est une décision de sens : quel moment, et quel genre d'action, ce verbe décrit-il dans son contexte ? Les indices sont le contexte, les verbes qui l'entourent, le genre de verbe (un état ou un événement) et le genre de texte (récit, loi, psaume ou prophétie). Là où les indices vont dans un même sens, la décision le dit et en donne la raison. Là où ils ne le font pas, la décision est marquée incertaine et l'alternative est nommée, comme au Psaume 3:6, en Ésaïe 5:13 et en Ésaïe 9:5.
+Pour un verbe hébreu, le temps de la traduction n'est jamais simplement recopié. C'est une décision de sens : quel moment, et quel genre d'action, ce verbe décrit-il dans son contexte ? Les indices sont le contexte, les verbes qui l'entourent, le genre de verbe (un état ou un événement) et le genre de texte (récit, loi, psaume ou prophétie). Là où les indices vont dans un même sens, la décision le dit et en donne la raison. Là où ils ne le font pas, la décision est marquée incertaine et l'alternative est nommée, comme au Psaume 3:5, en Ésaïe 5:13 et en Ésaïe 9:6.
 
 Les niveaux mettent ensuite cette décision en mots. La Littérale montre la forme hébraïque là où la langue peut la supporter. L'Équilibrée choisit le temps dont un lecteur a besoin pour comprendre le sens. La Simple peut ajouter un mot ou une courte phrase pour rendre le moment évident. Aucun d'eux ne change ce que dit la décision de sens.
 
