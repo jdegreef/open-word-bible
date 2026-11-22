@@ -14,7 +14,8 @@ PATCH  /api/admin/users/<id>/ {name, system}
                                             reader can on their account
                                             page), or mark the account a
                                             system account or a person
-POST   /api/admin/users/<id>/sign-out/      sign every device out
+POST   /api/admin/users/<id>/sign-out/      sign every device out (a team
+                                            member's: super admin only)
 DELETE /api/admin/users/<id>/               delete the account (super admin)
 
 An account's highlights and bookmarks are counted, never listed: they are
@@ -124,8 +125,16 @@ def user_detail(request, user_id):
                       "created_at": m.created_at} for m in messages[:20]],
         "role_details": [r.as_json() for r in user.roles.all()],
         "can_delete": is_super_admin(request.user) and user != request.user,
+        "can_sign_out": _may_sign_out(request.user, user),
         "system_reason": user.system_account.reason if _is_system(user) else "",
     })
+
+
+def _may_sign_out(actor, user):
+    """Whether actor may sign user's devices out: anyone with the users area
+    for a reader, only a super admin for a member of the team (someone with
+    a role), so the users role can't lock the team out."""
+    return is_super_admin(actor) or not user.roles.exists()
 
 
 def _change(request, user):
@@ -179,6 +188,9 @@ def sign_out(request, user_id):
     user = get_user_model().objects.filter(id=user_id).first()
     if user is None:
         return Response({"detail": "No such account.", "code": "not_found"}, status=status.HTTP_404_NOT_FOUND)
+    if not _may_sign_out(request.user, user):
+        return Response({"detail": "Only a super admin can sign out a member of the team.", "code": "forbidden"},
+                        status=status.HTTP_403_FORBIDDEN)
     n, _ = user.api_tokens.all().delete()
     record(request.user, "user.sign_out", user.username, devices=n)
     return Response({"signed_out": n})

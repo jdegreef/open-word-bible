@@ -78,6 +78,8 @@ class ReviewTest(AdminTestCase):
         # The dashboard's status counts see it at once.
         statuses = self.admin.get("/api/admin/overview/").json()["totals"]["statuses"]
         self.assertEqual(statuses["meaning_reviewed"], 1)
+        # And counts it as approved by a person; no wording is approved yet.
+        self.assertEqual(self.admin.get("/api/admin/overview/").json()["reviewed"], {"meaning": 1, "wording": 0})
         todo = self.scholar.get("/api/admin/review/?state=todo").json()["sentences"]
         self.assertEqual([s["record"] for s in todo], ["JHN.1.2.s1"])
 
@@ -85,6 +87,8 @@ class ReviewTest(AdminTestCase):
         self.assertEqual(self.act(self.french, "JHN.1.1.s1", "fr").status_code, 201)
         self.assertEqual(self.act(self.admin, "JHN.1.1.s1", "en").status_code, 201)
         self.assertEqual(Sentence.objects.get(record_id="JHN.1.1.s1").status, "ai_draft")
+        # The dashboard counts the sentence once, though two languages approved it.
+        self.assertEqual(self.admin.get("/api/admin/overview/").json()["reviewed"], {"meaning": 0, "wording": 1})
 
         def state(client, layer):
             return client.get(f"/api/admin/review/JHN.1.1.s1/?layer={layer}").json()["state"]

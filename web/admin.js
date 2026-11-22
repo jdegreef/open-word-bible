@@ -312,10 +312,14 @@ var OWBAdminNav = (function () {
   }
   function num(n) { return (n || 0).toLocaleString("en"); }
   function pct(a, b) { return b ? Math.round((a / b) * 1000) / 10 : 0; }
-  function date(iso) {
+  // A bare date ("2026-11-09") is that day wherever the reader is: Date
+  // reads it as UTC midnight, which is the day before west of UTC.
+  function date(iso, noYear) {
     if (!iso) return "—";
-    var d = new Date(iso);
-    return d.toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
+    var opts = { day: "numeric", month: "short" };
+    if (!noYear) opts.year = "numeric";
+    if (/^\d{4}-\d{2}-\d{2}$/.test(iso)) opts.timeZone = "UTC";
+    return new Date(iso).toLocaleDateString("en-GB", opts);
   }
   function when(iso) {
     if (!iso) return "never";
@@ -449,6 +453,9 @@ var OWBAdminNav = (function () {
       return r.json().catch(function () { return {}; }).then(function (data) {
         if (r.ok) return data;
         var f = C.failed(r.status, data);
+        // A sign-in that ended while the admin was open (a long review):
+        // every later request would fail too, so ask for a new one now.
+        if (r.status === 401 && account && account.token) signedOut();
         throw fail(f.message, { status: f.status, code: f.code, id: f.id });
       });
     });
@@ -461,6 +468,29 @@ var OWBAdminNav = (function () {
   function busy(button, on) {
     button.disabled = on;
     button.setAttribute("aria-busy", on ? "true" : "false");
+  }
+
+  // A load after the section is drawn (More, Older, a filter): if it fails,
+  // the error goes in a line beside button, which is turned back on, rather
+  // than nowhere with the button left busy. The line goes once a load works.
+  function later(button, promise) {
+    function line() {
+      var next = button.nextElementSibling;
+      return next && next.classList.contains("admin-load-error") ? next : null;
+    }
+    return promise.then(function (value) {
+      var old = line();
+      if (old) old.remove();
+      return value;
+    }, function (e) {
+      busy(button, false);
+      var shown = line();
+      if (!shown) {
+        shown = h("p", { class: "admin-note bad admin-load-error", role: "alert" });
+        button.after(shown);
+      }
+      shown.textContent = e.message;
+    });
   }
 
   // Search as you type: run(the trimmed value) a quarter second after the
@@ -523,35 +553,38 @@ var OWBAdminNav = (function () {
   // A message for the next drawing of a section ("Role granted."), shown in
   // its first status line.
   var FLASH = "";
+  // Grouped by what people come to do: the queues that wait on someone
+  // first, then checking the text, progress, publishing and people. A
+  // section's group is also the eyebrow over its heading.
   var SECTIONS = [
     { id: "dashboard", label: "Dashboard", area: "overview", group: "" },
+    { id: "workspace", label: "My review", area: "review", group: "Queues" },
+    { id: "review", label: "Review", area: "review", group: "Queues" },
+    { id: "inbox", label: "Reader inbox", area: "inbox", group: "Queues" },
+    { id: "flags", label: "Reviewer flags", area: "inbox", group: "Queues" },
+    { id: "assignments", label: "Review assignments", area: "inbox", group: "Queues" },
+    { id: "fixes", label: "Fix requests", area: "inbox", group: "Queues" },
+    { id: "jobs", label: "Drafting jobs", area: "jobs", group: "Queues" },
+    { id: "work", label: "Work in progress", area: "overview", group: "Queues" },
+    { id: "verse", label: "Verse inspector", area: "overview", group: "Quality" },
+    { id: "decisions", label: "Uncertain decisions", area: "overview", group: "Quality" },
+    { id: "terms", label: "Key terms", area: "overview", group: "Quality" },
+    { id: "consistency", label: "Consistency", area: "overview", group: "Quality" },
+    { id: "checks", label: "Checks", area: "overview", group: "Quality" },
+    { id: "overlap", label: "Similarity", area: "overview", group: "Quality" },
+    { id: "changes", label: "Changes", area: "overview", group: "Quality" },
     { id: "coverage", label: "Coverage", area: "overview", group: "Progress" },
     { id: "languages", label: "Languages", area: "overview", group: "Progress" },
     { id: "health", label: "Content health", area: "overview", group: "Progress" },
-    { id: "changes", label: "Changes", area: "overview", group: "Progress" },
-    { id: "jobs", label: "Drafting jobs", area: "jobs", group: "Progress" },
-    { id: "work", label: "Work in progress", area: "overview", group: "Progress" },
-    { id: "workspace", label: "My review", area: "review", group: "Text" },
-    { id: "review", label: "Review", area: "review", group: "Text" },
-    { id: "verse", label: "Verse inspector", area: "overview", group: "Text" },
-    { id: "decisions", label: "Uncertain decisions", area: "overview", group: "Text" },
-    { id: "terms", label: "Key terms", area: "overview", group: "Text" },
-    { id: "consistency", label: "Consistency", area: "overview", group: "Text" },
-    { id: "checks", label: "Checks", area: "overview", group: "Text" },
-    { id: "fixes", label: "Fix requests", area: "inbox", group: "Text" },
-    { id: "flags", label: "Reviewer flags", area: "inbox", group: "Text" },
-    { id: "assignments", label: "Review assignments", area: "inbox", group: "Text" },
-    { id: "articles", label: "Articles", area: "overview", group: "Text" },
-    { id: "export", label: "Export", area: "export", group: "Text" },
-    { id: "releases", label: "Release notes", area: "export", group: "Text" },
-    { id: "overlap", label: "Similarity", area: "overview", group: "Text" },
-    { id: "inbox", label: "Reader inbox", area: "inbox", group: "Readers" },
-    { id: "users", label: "Users", area: "users", group: "Readers" },
-    { id: "engagement", label: "Engagement", area: "overview", group: "Readers" },
-    { id: "emails", label: "Team email", area: "email", group: "Team" },
-    { id: "team", label: "Team & access", area: "team", group: "Team" },
-    { id: "activity", label: "Activity log", area: "team", group: "Team" },
-    { id: "help", label: "Help & roles", area: "", group: "Team" }
+    { id: "articles", label: "Articles", area: "overview", group: "Publish" },
+    { id: "export", label: "Export", area: "export", group: "Publish" },
+    { id: "releases", label: "Release notes", area: "export", group: "Publish" },
+    { id: "users", label: "Users", area: "users", group: "People" },
+    { id: "engagement", label: "Engagement", area: "overview", group: "People" },
+    { id: "team", label: "Team & access", area: "team", group: "People" },
+    { id: "emails", label: "Team email", area: "email", group: "People" },
+    { id: "activity", label: "Activity log", area: "team", group: "People" },
+    { id: "help", label: "Help & roles", area: "", group: "People" }
   ];
   // Drill-downs reached from a section, highlighted under it.
   var PARENT = { book: "coverage", user: "users" };
@@ -559,15 +592,31 @@ var OWBAdminNav = (function () {
   function opens(section) { return !section.area || ME.admin.indexOf(section.area) >= 0; }
 
   function drawRail(current) {
+    var open = false;   // a new section closes the phone's list
     rail.textContent = "";
     rail.appendChild(searchBox());
+    var here = SECTIONS.filter(function (s) { return s.id === current || PARENT[current] === s.id; })[0];
+    // On a phone the sections fold into one button that shows where you are
+    // (and, from paintBadges, how many places have something waiting).
+    var toggle = h("button", { type: "button", class: "admin-rail-toggle", "aria-expanded": open ? "true" : "false",
+      "aria-controls": "admin-rail-sections" },
+      h("span", null, "Sections"), h("b", null, here ? here.label : ""));
+    toggle.addEventListener("click", function () {
+      var now = !rail.classList.contains("open");
+      rail.classList.toggle("open", now);
+      toggle.setAttribute("aria-expanded", now ? "true" : "false");
+    });
+    rail.appendChild(toggle);
+    var sections = h("div", { class: "admin-rail-sections", id: "admin-rail-sections" });
+    rail.appendChild(sections);
+    rail.classList.toggle("open", open);
     var group = null, list = null;
     SECTIONS.filter(opens).forEach(function (s) {
       if (s.group !== group || !list) {
         group = s.group;
-        if (group) rail.appendChild(h("p", { class: "admin-rail-group" }, group));
+        if (group) sections.appendChild(h("p", { class: "admin-rail-group" }, group));
         list = h("ul");
-        rail.appendChild(list);
+        sections.appendChild(list);
       }
       var on = s.id === current || PARENT[current] === s.id;
       list.appendChild(h("li", null, h("a", { href: "#" + s.id, "aria-current": on ? "page" : null, "data-section": s.id }, s.label)));
@@ -636,6 +685,9 @@ var OWBAdminNav = (function () {
       var was = moved ? null : typingIn();
       main.textContent = "";
       add(main, nodes);
+      // The eyebrow over the heading names the section's group in the rail.
+      var eyebrow = section.group && main.querySelector(".admin-head .eyebrow");
+      if (eyebrow) eyebrow.textContent = section.group;
       drawn = mine;
       shown = hash;
       touched = false;
@@ -760,6 +812,13 @@ var OWBAdminNav = (function () {
       a.title = c.title;
       a.appendChild(h("span", { class: "admin-badge", "aria-label": c.title }, c.count > 999 ? "999+" : num(c.count)));
     });
+    // The phone's Sections button: how many places have something waiting.
+    var toggle = rail.querySelector(".admin-rail-toggle"), places = rail.querySelectorAll("a[data-section] .admin-badge").length;
+    if (toggle) {
+      var old = toggle.querySelector(".admin-badge");
+      if (old) old.remove();
+      if (places) toggle.appendChild(h("span", { class: "admin-badge", "aria-label": plural(places, "place") + " with something waiting" }, num(places)));
+    }
   }
 
   // ---- Recent pages, for the palette -------------------------------------
@@ -844,12 +903,15 @@ var OWBAdminNav = (function () {
       } else {
         out.push(h("p", { class: "admin-ok" }, "Nothing needs attention."));
       }
-      var reviewed = (t.statuses.reviewed || 0) + (t.statuses.revised || 0);
+      // People's approvals as they stand: approving wording changes no
+      // sentence status, so these come from the review states, not t.statuses.
+      var reviewed = d.reviewed || { meaning: 0, wording: 0 };
       out.push(h("div", { class: "admin-tiles" },
         tile(num(t.sentences), "sentences drafted"),
         tile(num(t.books_started) + " / " + t.books, "books started in English (" + t.books_drafted + " complete)"),
         tile(num(t.chapters_drafted) + " / " + num(t.chapters), "chapters drafted"),
-        tile(num(reviewed), "sentences reviewed by a person")));
+        tile(num(reviewed.meaning), "sentences with their meaning approved by a person"),
+        tile(num(reviewed.wording), "sentences with their wording approved in at least one language")));
       out.push(h("section", { class: "admin-block" }, h("h2", null, "Sentences by language"),
         h("div", { class: "admin-bars" }, d.languages.map(function (l) {
           return h("a", { class: "admin-bar-row", href: "#languages" }, h("span", null, l.name), bar(l.sentences, t.sentences),
@@ -1077,7 +1139,7 @@ var OWBAdminNav = (function () {
               return h("div", { class: "admin-column", title: "Week of " + date(w.week) + ": " + w.accounts },
                 h("span", { class: "admin-num" }, num(w.accounts)),
                 h("i", { style: "height:" + Math.max(2, (w.accounts / most) * 100) + "%" }),
-                h("span", { class: "admin-sub" }, new Date(w.week).toLocaleDateString("en-GB", { day: "numeric", month: "short" })));
+                h("span", { class: "admin-sub" }, date(w.week, true)));
             })) : empty("No new accounts in the last 12 weeks.")),
         h("div", { class: "admin-cols" },
           h("section", { class: "admin-block" }, h("h2", null, "Saved verses by book"), ranked(d.marks_by_book, "name", "marks")),
@@ -1716,14 +1778,19 @@ var OWBAdminNav = (function () {
     var f = OVERLAP;
     return api("/api/admin/overlap/" + f.book + "/?lang=" + f.lang + "&min=" + f.min).then(function (d) {
       var book = h("input", { id: "overlap-book", value: f.book, size: 6, "aria-label": "Book code", placeholder: "JHN" });
-      var lang = select("overlap-lang", [["en", "English"], ["es", "Spanish"]], f.lang);
+      // Every reading language, from the API; one with no reference Bible loaded says so.
+      var lang = select("overlap-lang", (d.languages || [{ code: f.lang, name: f.lang, references: 1 }]).map(function (l) {
+        return [l.code, l.references ? l.name : l.name + " (no reference Bible loaded)"];
+      }), f.lang);
       lang.setAttribute("aria-label", "Language");
       var min = select("overlap-min", [["5", "5+ words"], ["6", "6+ words"], ["8", "8+ words"], ["10", "10+ words"]], String(f.min));
       min.setAttribute("aria-label", "Shortest run");
       var form = h("form", { class: "admin-toolbar" }, book, lang, min, h("button", { type: "submit", class: "admin-btn" }, "Compare"));
       form.addEventListener("submit", function (e) {
         e.preventDefault(); f.book = book.value.trim().toUpperCase() || "JHN"; f.lang = lang.value; f.min = +min.value;
-        location.hash = "#overlap/" + f.book; route();
+        // A new address draws through hashchange; the same one needs route().
+        if (location.hash === "#overlap/" + f.book) route();
+        else location.hash = "#overlap/" + f.book;
       });
       var rows = d.editions.map(function (e) {
         return h("tr", null, h("th", { scope: "row" }, e.name, h("span", { class: "admin-sub" }, e.code)),
@@ -1732,7 +1799,7 @@ var OWBAdminNav = (function () {
             return h("td", { class: "admin-num" + (v >= 50 ? " admin-high" : "") }, v === null ? "\u2014" : v + "%");
           }), h("td", { class: "admin-num" }, num(e.longest) + " words"));
       });
-      return [head("Text", "Similarity to reference Bibles", "The share of " + d.name + "'s drafted words that sit in runs of " + d.min + " or more words also found in the same verses of a public-domain Bible. Shared phrasing is often the common heritage of Bible English; a high share or long runs is where to check a draft wasn't built on a reference Bible."),
+      return [head("Text", "Similarity to reference Bibles", "The share of " + d.name + "'s drafted words that sit in runs of " + d.min + " or more words also found in the same verses of a public-domain Bible. Shared phrasing is often the common heritage of the language's Bible wording; a high share or long runs is where to check a draft wasn't built on a reference Bible."),
         form,
         d.editions.length ? table(["Bible", ["Literal", { class: "admin-num" }], ["Balanced", { class: "admin-num" }], ["Readable", { class: "admin-num" }], ["Longest run", { class: "admin-num" }]], rows)
           : empty("No reference Bibles in this language are loaded, so there's nothing to compare against."),
@@ -1917,7 +1984,7 @@ var OWBAdminNav = (function () {
     return api("/api/admin/users/" + encodeURIComponent(id) + "/").then(function (u) {
       var status = h("p", { class: "admin-note", role: "status" });
       var actions = h("div", { class: "admin-actions" });
-      if (u.devices.length) {
+      if (u.devices.length && u.can_sign_out) {
         actions.appendChild(confirmButton("Sign out every device", "Sign out " + plural(u.devices.length, "device") + "?", function (b) {
           api("/api/admin/users/" + u.id + "/sign-out/", { method: "POST" }).then(function () { route(); }, function (e) { busy(b, false); note(status, e, true); });
         }));
@@ -2077,7 +2144,7 @@ var OWBAdminNav = (function () {
         busy(more, false);
       });
     }
-    more.addEventListener("click", load);
+    more.addEventListener("click", function () { later(more, load()); });
     return load().then(function () {
       return [head("Team", "Activity log", "What was done in the admin, newest first: roles, accounts, replies, jobs and emails. Reviews keep their own record."), list, more, approvalLog()];
     });
@@ -2724,10 +2791,13 @@ var OWBAdminNav = (function () {
       busy(more, true);
       return api(query()).then(function (page) { d = d || page; layer = page.layer.code; draw(page); busy(more, false); return page; });
     }
-    more.addEventListener("click", function () { offset += 50; load(); });
+    more.addEventListener("click", function () {
+      offset += 50;
+      later(more, load().catch(function (e) { offset -= 50; throw e; }));   // so trying again asks for the same page
+    });
     var status = h("p", { class: "admin-note", role: "status" });
     var pick = queuePicker(function () { return layer; }, status);
-    function refilter() { offset = 0; rememberTab("review.book", filters.book); rememberTab("review.state", filters.state); keepAddress(true); load(); }
+    function refilter() { offset = 0; rememberTab("review.book", filters.book); rememberTab("review.state", filters.state); keepAddress(true); later(more, load()); }
     // A layer remembered from before may no longer be the account's.
     return load().catch(function (e) {
       if (e.status !== 403 || !layer) throw e;
@@ -3173,11 +3243,14 @@ var OWBAdminNav = (function () {
         var q = "?run=" + run.id + "&lang=" + filters.lang + "&book=" + filters.book + "&offset=" + offset;
         return api("/api/admin/changes/" + q).then(function (page) { draw(page.changes); more.hidden = !page.more; busy(more, false); });
       }
-      more.addEventListener("click", function () { offset += 100; load(); });
+      more.addEventListener("click", function () {
+      offset += 100;
+      later(more, load().catch(function (e) { offset -= 100; throw e; }));   // so trying again asks for the same page
+    });
       var langSel = select("changes-lang", [["", "Every language"]].concat(d.languages.map(function (l) { return [l.code, l.name]; })), "");
       var bookSel = select("changes-book", [["", "Every book"]].concat(run.books.map(function (b) { return [b.code, b.name + " (" + b.changes + ")"]; })), "");
       [langSel, bookSel].forEach(function (sel) {
-        sel.addEventListener("change", function () { filters.lang = langSel.value; filters.book = bookSel.value; offset = 0; list.textContent = ""; load(); });
+        sel.addEventListener("change", function () { filters.lang = langSel.value; filters.book = bookSel.value; offset = 0; list.textContent = ""; later(more, load()); });
       });
       draw(d.changes);
       out.push(h("section", { class: "admin-block" }, h("h2", null, "Import of " + date(run.started_at) + ": " + plural(run.changed, "changed rendering")),
@@ -3360,6 +3433,12 @@ var OWBAdminNav = (function () {
 
   // ---- Start ---------------------------------------------------------
 
+  function signedOut() {
+    try { localStorage.removeItem(KEY); } catch (x) { /* none */ }
+    forgetAll();
+    stop("Sign in again", "Your sign-in on this device has ended.", ["/login/?redirect=/admin/", "Sign in"]);
+  }
+
   function stop(title, text, link) {
     drawing++;
     KEYS = null;
@@ -3408,9 +3487,7 @@ var OWBAdminNav = (function () {
     if (!started || changed) start();
   }, function (e) {
     if (e.status === 401) {
-      try { localStorage.removeItem(KEY); } catch (x) { /* none */ }
-      forgetAll();
-      stop("Sign in again", "Your sign-in on this device has ended.", ["/login/?redirect=/admin/", "Sign in"]);
+      /* request() has asked for a new sign-in */
     } else if (!started) {
       stop("The admin couldn't load", e.message);
     }
