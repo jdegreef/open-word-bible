@@ -4,7 +4,7 @@ summary: Cuando los apóstoles citan el Antiguo Testamento, a menudo usan la Sep
 date: 2026-10-17
 order: 105
 section: passage
-source: 56441c83d73d
+source: 872c01310e33
 ---
 Los lectores que buscan en su propia Biblia una cita del Antiguo Testamento a veces se llevan una sorpresa. Hebreos 10:5 cita el Salmo 40 diciendo «me preparaste un cuerpo». Si uno va al salmo, dice algo como «me has abierto los oídos». Mateo cita a Isaías diciendo «la virgen concebirá». Muchas Biblias modernas tienen en Isaías «la joven». Santiago, en el concilio de Jerusalén, cita a Amós sobre «el resto de la humanidad» que busca al Señor. Amós, en hebreo, habla de que Israel tomará posesión del «resto de Edom».
 
@@ -40,15 +40,15 @@ En Mateo, la decisión de significado va en el otro sentido, porque la palabra d
 
 Hay una segunda diferencia, más pequeña. En el hebreo, «ella lo llamará» Emanuel; en la Septuaginta, «tú lo llamarás»; en Mateo, «lo llamarán». Nuestro registro de Mateo 1:23 anota las tres y entiende el «llamarán» de Mateo como referido a la gente en general.
 
-Este versículo se ha discutido durante siglos, a menudo con amargura. Los registros no intentan zanjar la discusión traduciendo un texto para que coincida con el otro. Traducen cada texto tal como está y dicen por qué difieren. El registro de Isaías señala también lo que ambos textos comparten: la señal pertenecía a los días del rey Acaz, y la promesa de Isaías llega más lejos, hasta un niño que reinará en el trono de David (9:5-6).
+Este versículo se ha discutido durante siglos, a menudo con amargura. Los registros no intentan zanjar la discusión traduciendo un texto para que coincida con el otro. Traducen cada texto tal como está y dicen por qué difieren. El registro de Isaías señala también lo que ambos textos comparten: la señal pertenecía a los días del rey Acaz, y la promesa de Isaías llega más lejos, hasta un niño que reinará en el trono de David (9:6-7).
 
-## 2. «Me preparaste un cuerpo» (Hebreos 10:5; Salmo 40:7)
+## 2. «Me preparaste un cuerpo» (Hebreos 10:5; Salmo 40:6)
 
 Hebreos pone las palabras del Salmo 40 en boca de Cristo cuando entra en el mundo. Nuestra Equilibrada:
 
 > {{OWB:HEB.10.5.s1:B}}
 
-La palabra clave es {{GREEK:HEB.10.5:12}} (*sōma*), «cuerpo». Pero el hebreo del salmo (40:7 en la numeración hebrea, 40:6 en muchas Biblias) tiene {{HEBREW:PSA.40.7:5-6}}, «oídos me has cavado». Nuestra Literal del salmo conserva la imagen:
+La palabra clave es {{GREEK:HEB.10.5:12}} (*sōma*), «cuerpo». Pero el hebreo del salmo (40:6 aquí y en muchas Biblias, 40:7 en las Biblias hebreas) tiene {{HEBREW:PSA.40.7:5-6}}, «oídos me has cavado». Nuestra Literal del salmo conserva la imagen:
 
 > {{OWB:PSA.40.7.s1:L}}
 
@@ -81,10 +81,10 @@ Santiago cambia también el comienzo. Amós dice «En aquel día levantaré»; S
 En Romanos 3, Pablo demuestra que «todos, judíos y griegos por igual, están bajo el poder del pecado» con una serie de citas, una tras otra, sin pausa entre ellas. Nuestros registros nombran la fuente de cada una:
 
 - los versículos 10-12, del Salmo 14:1-3 (y del Salmo 53), con la palabra propia de Pablo, «justo», en lugar del «que haga el bien» del salmo;
-- el versículo 13, del Salmo 5:10 y del Salmo 140:4 (numeración hebrea);
+- el versículo 13, del Salmo 5:9 y del Salmo 140:3;
 - el versículo 14, del Salmo 10:7;
 - los versículos 15-17, de Isaías 59:7-8, abreviado, con un eco de Proverbios 1:16;
-- el versículo 18, del Salmo 36:2.
+- el versículo 18, del Salmo 36:1.
 
 Pablo sigue la Septuaginta en la mayoría de estas líneas, y las entreteje en una sola acusación. Esta manera de unir textos sobre un tema común, como perlas en un hilo, era conocida en la enseñanza judía. Un lector moderno esperaría comillas alrededor de cada fragmento. Pablo da una sola fórmula, «como está escrito», y deja que toda la cadena se sostenga como el veredicto de la Escritura.
 
@@ -108,9 +108,9 @@ El Nuevo Testamento no siempre sigue la Septuaginta. Dos citas muestran la varie
 
 **«De Egipto llamé a mi hijo»** (Mateo 2:15; Oseas 11:1). Mateo cita las palabras de Oseas sobre el éxodo de Israel y las aplica a Jesús. Aquí Mateo coincide con el hebreo, «mi hijo». La Septuaginta de Oseas dice «sus hijos». Nuestro registro de Oseas 11:1 lo anota, y dice con honradez que su descripción del griego está «escrita a partir de conocimientos generales», para que los revisores la comprueben. En cualquier caso, Mateo no tomó la línea de la Septuaginta tal como la conocemos. El registro de Mateo 2:15 explica cómo la lee Mateo: «En Oseas, el hijo es Israel». Mateo ve a Jesús, el Hijo de Dios, recorriendo de nuevo la historia de Israel, hacia Egipto y fuera de él.
 
-**«Dio dones a los hombres»** (Efesios 4:8; Salmo 68:19). Pablo cita el Salmo 68, un himno de victoria en el que Dios sube a su monte santo llevando cautivos. Pero donde tanto el salmo hebreo como el griego dicen que Dios «recibió dones» de los hombres, Pablo dice que «dio dones». Nuestros registros de ambos lados ponen una nota al pie sobre la diferencia. Señalan que una antigua paráfrasis aramea de los Salmos, y la traducción siríaca, también dicen «dio», así que Pablo puede estar siguiendo una interpretación conocida del versículo. El registro del Salmo 68:19 sugiere cómo encajan las dos: «el vencedor que recibe tributo es el que lo reparte entre su pueblo». El registro de Efesios marca el punto como incierto y expone con claridad el propósito de Pablo: Cristo resucitado da dones a su iglesia, que los versículos 11-16 enumeran a continuación.
+**«Dio dones a los hombres»** (Efesios 4:8; Salmo 68:18). Pablo cita el Salmo 68, un himno de victoria en el que Dios sube a su monte santo llevando cautivos. Pero donde tanto el salmo hebreo como el griego dicen que Dios «recibió dones» de los hombres, Pablo dice que «dio dones». Nuestros registros de ambos lados ponen una nota al pie sobre la diferencia. Señalan que una antigua paráfrasis aramea de los Salmos, y la traducción siríaca, también dicen «dio», así que Pablo puede estar siguiendo una interpretación conocida del versículo. El registro del Salmo 68:18 sugiere cómo encajan las dos: «el vencedor que recibe tributo es el que lo reparte entre su pueblo». El registro de Efesios marca el punto como incierto y expone con claridad el propósito de Pablo: Cristo resucitado da dones a su iglesia, que los versículos 11-16 enumeran a continuación.
 
-Un ejemplo menor es **Romanos 10:18**, donde Pablo cita el Salmo 19:5 (19:4 en muchas Biblias): «su voz salió a toda la tierra». La Septuaginta, que Pablo cita palabra por palabra, dice «su voz» o «su sonido». El hebreo tiene una palabra que significa un cordel de medir. Nuestra Literal del salmo conserva «su cordel», y una nota al pie, marcada como incierta, explica el griego.
+Un ejemplo menor es **Romanos 10:18**, donde Pablo cita el Salmo 19:4: «su voz salió a toda la tierra». La Septuaginta, que Pablo cita palabra por palabra, dice «su voz» o «su sonido». El hebreo tiene una palabra que significa un cordel de medir. Nuestra Literal del salmo conserva «su cordel», y una nota al pie, marcada como incierta, explica el griego.
 
 ## Lo que hacían los apóstoles
 

@@ -4,7 +4,7 @@ summary: Không ai biết chắc “Selah” có nghĩa gì, hay “miktam”, �
 date: 2026-10-17
 order: 90
 section: passage
-source: d672c9c825da
+source: a6132f9af099
 ---
 Phần lớn những từ khó trong Kinh Thánh khó vì các học giả không đồng ý với nhau về chúng. Một vài từ khó vì một lý do đơn giản hơn: không ai biết chúng có nghĩa gì. Sách Thi Thiên có nhiều từ như vậy hơn bất kỳ sách nào khác. Chúng nằm trong các tiêu đề ở đầu nhiều thi thiên, và trong một từ nhỏ xuất hiện ở cuối các dòng thơ khắp sách: “Selah”, mà người đọc Kinh Thánh tiếng Việt quen gọi là “Sê-la”.
 
@@ -12,7 +12,7 @@ Bài này xem xét những gì đã biết về chúng, những gì chỉ là ph
 
 ## Selah
 
-Thi Thiên 3 là lời cầu nguyện của Đa-vít khi ông chạy trốn con trai mình là Áp-sa-lôm. Câu 3 theo cách đánh số của chúng tôi (câu 2 trong phần lớn các bản Kinh Thánh, vì một lý do được giải thích bên dưới) thuật lại điều kẻ thù của ông đang nói:
+Thi Thiên 3 là lời cầu nguyện của Đa-vít khi ông chạy trốn con trai mình là Áp-sa-lôm. Câu 2 (câu 3 trong các bản Kinh Thánh Hê-bơ-rơ, vì một lý do được giải thích bên dưới) thuật lại điều kẻ thù của ông đang nói:
 
 > {{OWB:PSA.3.3.s1:L}}
 
@@ -38,7 +38,7 @@ Quyết định về cách diễn đạt theo sau từ đó. Mọi cấp độ, 
 
 Đó là một lựa chọn có chủ ý, và các bản dịch khác đã chọn khác. Bản King James giữ “Selah”, và Bản Truyền Thống 1926 trong tiếng Việt giữ “Sê-la”. Một số bản hiện đại đặt một phỏng đoán vào chỗ của nó; chẳng hạn bản New Living Translation in “Interlude”, khúc dạo. Những bản khác đôi khi chuyển nó ra lề hoặc vào chú thích. In một phỏng đoán khiến bản văn trông rõ ràng hơn mức hiểu biết của chúng ta. Bỏ từ ấy đi là che giấu một điều có trong bản văn Hê-bơ-rơ. Giữ nó lại, với một quyết định nói thẳng điều chúng ta biết và không biết, là cách làm trung thực, và nó chỉ khiến người đọc phải dừng lại một chút, mà có lẽ đó chính là điều từ ấy yêu cầu ngay từ đầu.
 
-Có một điều chỉnh nhỏ. Ở vài câu, tiếng Hê-bơ-rơ đặt Selah ở giữa câu, sau dòng thứ nhất, như trong Thi Thiên 57:4 và Ha-ba-cúc 3:3. Quyết định về cách diễn đạt cho những câu ấy chuyển nó xuống cuối, để câu được đọc trọn vẹn, và nói rõ như vậy.
+Có một điều chỉnh nhỏ. Ở vài câu, tiếng Hê-bơ-rơ đặt Selah ở giữa câu, sau dòng thứ nhất, như trong Thi Thiên 57:3 và Ha-ba-cúc 3:3. Quyết định về cách diễn đạt cho những câu ấy chuyển nó xuống cuối, để câu được đọc trọn vẹn, và nói rõ như vậy.
 
 Thi Thiên 46 cho thấy Selah có thể định hình một thi thiên ra sao. Nó xuất hiện ba lần ở đó, sau câu 4 và sau điệp khúc ở các câu 8 và 12, điệp khúc vang lên hai lần:
 
@@ -56,22 +56,22 @@ Tiếng Hê-bơ-rơ bắt đầu bằng {{HEBREW:PSA.4.1:1}}, “cho người đ
 
 ### Vì sao số câu khác nhau
 
-Tiêu đề trước hết đặt ra một vấn đề thực tế. Trong bản văn Hê-bơ-rơ, tiêu đề của một thi thiên là một phần của thi thiên và được tính là câu thứ nhất. Phần lớn các bản Kinh Thánh tiếng Anh in tiêu đề mà không đánh số, và bắt đầu câu 1 bằng dòng đầu tiên của bài thơ; các bản tiếng Việt quen thuộc cũng vậy. Vì thế, từ Thi Thiên 3 trở đi, nhiều số câu trong Open Word Bible cao hơn một so với các bản Kinh Thánh khác. Bản ghi cho Thi Thiên 3:1 giải thích điều này, và bản ghi của mỗi tiêu đề đều nhắc lại. Open Word Bible theo cách đánh số của bản văn Hê-bơ-rơ mà nó dịch. (Xem [Số chương và số câu](/articles/chapter-and-verse-numbers/) về cách việc đánh số ra đời.)
+Tiêu đề trước hết đặt ra một vấn đề thực tế. Trong bản văn Hê-bơ-rơ, tiêu đề của một thi thiên là một phần của thi thiên và được tính là câu thứ nhất. Phần lớn các bản Kinh Thánh tiếng Anh in tiêu đề mà không đánh số, và bắt đầu câu 1 bằng dòng đầu tiên của bài thơ; các bản tiếng Việt quen thuộc cũng vậy. Vì thế, từ Thi Thiên 3 trở đi, nhiều số câu trong một bản Kinh Thánh Hê-bơ-rơ cao hơn một so với các bản tiếng Anh. Open Word Bible đánh số câu như bản NIV: tiêu đề không được đánh số, và bản ghi cho tiêu đề của Thi Thiên 3 cho biết số câu tiếng Hê-bơ-rơ, như bản ghi của mỗi tiêu đề đều làm. (Xem [Số chương và số câu](/articles/chapter-and-verse-numbers/) về cách việc đánh số ra đời.)
 
 Ở những chỗ tiêu đề rất ngắn, tiếng Hê-bơ-rơ tính nó chung với dòng thơ đầu tiên, và số câu không khác nhau. Thi Thiên 32 là một ví dụ: “Của Đa-vít. Một maskil” là một phần của câu 1, cùng với “Phước cho người được tha sự phản nghịch”.
 
 ### Các từ trong tiêu đề có nghĩa gì
 
-Một số từ trong tiêu đề thì rõ nghĩa. {{LEMMA:PSA.4.1:3}}, *mizmôr*, là “một thi thiên”, một bài ca được hát theo nhạc. “Của Đa-vít” gắn một thi thiên với Đa-vít, dù bản ghi cho Thi Thiên 3:1 ghi nhận rằng chữ nhỏ “của” có thể có nghĩa là do ông viết, thuộc về ông, dành cho ông hay nói về ông. Những ghi chú như “khi ông chạy trốn con trai mình là Áp-sa-lôm” nối một thi thiên với một câu chuyện ở chỗ khác trong Kinh Thánh, và các bản ghi của chúng tôi cho biết đoạn ấy (2 Sa-mu-ên 15–17 cho Thi Thiên 3).
+Một số từ trong tiêu đề thì rõ nghĩa. {{LEMMA:PSA.4.1:3}}, *mizmôr*, là “một thi thiên”, một bài ca được hát theo nhạc. “Của Đa-vít” gắn một thi thiên với Đa-vít, dù bản ghi cho tiêu đề của Thi Thiên 3 ghi nhận rằng chữ nhỏ “của” có thể có nghĩa là do ông viết, thuộc về ông, dành cho ông hay nói về ông. Những ghi chú như “khi ông chạy trốn con trai mình là Áp-sa-lôm” nối một thi thiên với một câu chuyện ở chỗ khác trong Kinh Thánh, và các bản ghi của chúng tôi cho biết đoạn ấy (2 Sa-mu-ên 15–17 cho Thi Thiên 3).
 
-Một số khác chỉ rõ nghĩa một phần. “Cho người điều khiển” là một dạng của động từ có nghĩa là dẫn dắt hay giám sát, và bản ghi cho Thi Thiên 4:1 ghi nhận rằng 1 Sử Ký 15:21 dùng động từ này cho những người Lê-vi dẫn dắt việc ca hát. Có lẽ nó đánh dấu thi thiên dành cho người chỉ huy âm nhạc trong đền thờ. Nhưng các dịch giả Hy Lạp đọc cùng những chữ cái ấy theo cách khác, là “cho đến cuối cùng”, điều cho thấy nghĩa của nó đã bị nghi ngờ từ rất sớm. Quyết định này được đánh dấu là chưa chắc chắn.
+Một số khác chỉ rõ nghĩa một phần. “Cho người điều khiển” là một dạng của động từ có nghĩa là dẫn dắt hay giám sát, và bản ghi cho tiêu đề của Thi Thiên 4 ghi nhận rằng 1 Sử Ký 15:21 dùng động từ này cho những người Lê-vi dẫn dắt việc ca hát. Có lẽ nó đánh dấu thi thiên dành cho người chỉ huy âm nhạc trong đền thờ. Nhưng các dịch giả Hy Lạp đọc cùng những chữ cái ấy theo cách khác, là “cho đến cuối cùng”, điều cho thấy nghĩa của nó đã bị nghi ngờ từ rất sớm. Quyết định này được đánh dấu là chưa chắc chắn.
 
 Và một số gần như đã mất hẳn. Dưới đây là cách các bản ghi của chúng tôi xử lý vài từ trong số đó.
 
 - **Miktam** đứng đầu Thi Thiên 16 và 56–60. Bản ghi gọi nó là “một loại thi thiên mà nghĩa không được biết”. Bản dịch Hy Lạp hiểu nó là một dòng chữ khắc trên đá; những người khác liên kết nó với một từ chỉ vàng.
 - **Maskil** đứng đầu mười ba thi thiên. Nó đến từ một động từ có nghĩa là thấu hiểu hay hành động khôn ngoan, nên có thể nó đánh dấu một bài ca để dạy dỗ, hoặc một bài được soạn công phu. Nghĩa chính xác của nó không được biết.
 - **On alamoth** (Thi Thiên 46) là số nhiều của từ chỉ một thiếu nữ. Vì 1 Sử Ký 15:20 có những người Lê-vi gảy đàn hạc “theo alamoth”, đây là một thuật ngữ âm nhạc, có lẽ chỉ giọng cao hay nhạc cụ có âm vực cao.
-- **Higgaion**, đứng cạnh Selah trong Thi Thiên 9:17, đến từ một động từ chỉ tiếng rì rầm. Bản ghi xem nó có lẽ là một chỉ dẫn âm nhạc và giữ nó ở mọi cấp độ.
+- **Higgaion**, đứng cạnh Selah trong Thi Thiên 9:16, đến từ một động từ chỉ tiếng rì rầm. Bản ghi xem nó có lẽ là một chỉ dẫn âm nhạc và giữ nó ở mọi cấp độ.
 - **Shigionoth**, trong tiêu đề lời cầu nguyện của Ha-ba-cúc, là số nhiều của thuật ngữ trong tiêu đề Thi Thiên 7. Một số người liên kết nó với một động từ chỉ sự lang thang hay lảo đảo, những người khác với một từ chỉ lời than khóc.
 
 Rồi có những cụm từ có lẽ là tên các giai điệu. Thi Thiên 22 là “theo Ayyeleth-hashshahar”, nghĩa là “con nai cái lúc bình minh”. Thi Thiên 57 có tiêu đề {{HEBREW:PSA.57.1:2-3}}, “Đừng hủy diệt”, cụm từ cũng đứng đầu Thi Thiên 58, 59 và 75. Thi Thiên 56 có những chữ mang nghĩa đại loại như “con chim bồ câu im lặng nơi những miền xa xôi”. Những cụm này trông giống tên các giai điệu mà thi thiên được hát theo, cũng như một cuốn thánh ca in tên giai điệu phía trên một bài hát. Bản thân các giai điệu ấy đã mất từ lâu.

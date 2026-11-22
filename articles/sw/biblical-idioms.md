@@ -4,7 +4,7 @@ summary: Biblia inasema kwa nahau ambazo wasomaji wake wa kwanza walizielewa mar
 date: 2026-10-17
 order: 95
 section: passage
-source: dae5ff099ec1
+source: db273db486c2
 ---
 Kila lugha ina nahau: misemo ambayo maana yake si jumla ya maneno yake. Mzungumzaji wa Kiswahili anayesema mtu "ameaga dunia" hamaanishi kwamba alisema kwaheri kwa sayari, na mtu "mwenye mkono mrefu" hana mkono mrefu kuliko wengine. Mtafsiri anayetafsiri nahau neno kwa neno anazaa upuuzi, au mbaya zaidi, kitu kinachosikika kuwa na maana lakini kinamaanisha jambo lisilo sahihi.
 
@@ -42,7 +42,7 @@ Unamaanisha nini? Picha ni ya maumivu ya kuungua, lakini wataalamu hawakubaliani
 
 - Mara nyingi zaidi inaeleweka kama aibu inayounguza ambayo wema usiostahiliwa huleta, inayoweza kumwongoza adui abadilike.
 - Wengine wanaelekeza kwenye maandishi ya Kimisri yanayoeleza mtu anayetubu akibeba bakuli la makaa kichwani, kama ishara ya toba.
-- Wengine wanaichukua kama hukumu, kwa kuwa makaa mahali pengine ni picha ya adhabu (Zaburi 140:11). Kwa usomaji huo, wema unarundika hatia ya adui akiendelea kuwa na uadui.
+- Wengine wanaichukua kama hukumu, kwa kuwa makaa mahali pengine ni picha ya adhabu (Zaburi 140:10). Kwa usomaji huo, wema unarundika hatia ya adui akiendelea kuwa na uadui.
 
 Rekodi inafuata usomaji wa kwanza, na inaeleza kwamba katika Warumi 12:20–21 msemo huo unatumikia mwito wa kuushinda ubaya kwa wema, jambo linalouunga mkono. Rekodi ya Warumi 12:20 inafikia uamuzi uleule, ikiongeza kwamba usomaji wa hukumu haupatani vizuri na amri za Paulo katika mistari ya 14 na 17–19 za kuwabariki watesi na kamwe kutolipa ovu kwa ovu.
 
@@ -62,7 +62,7 @@ Katika Kutoka, moyo wa Farao "unafanywa mgumu". Kwa Kiingereza hilo linasikika k
 
 Rekodi ya Kutoka 7:3 inaongeza jambo ambalo msomaji wa tafsiri hawezi kuliona. Kutoka inatumia vitenzi vitatu tofauti kwa kile kinachoupata moyo wa Farao: "kufanya mgumu", "kufanya imara" na "kufanya mzito". Vyote vitatu vinaeleza nia iliyowekwa kwa uthabiti dhidi ya amri ya Mungu. Wakati mwingine Mungu ndiye mtendaji, wakati mwingine Farao mwenyewe, na wakati mwingine moyo tu "ni" mgumu au mzito. Maelezo ya chini yanasema kwamba maandishi yanayashikilia mambo haya pamoja bila kueleza jinsi.
 
-Open Word Bible inavitenganisha vitenzi hivyo pale inapoweza. Katika Kutoka 8:11 (8:15 katika Biblia nyingi za Kiingereza) Farao mwenyewe ndiye mtendaji, na kitenzi ni kile cha mzizi wa "uzito":
+Open Word Bible inavitenganisha vitenzi hivyo pale inapoweza. Katika Kutoka 8:15 (8:11 katika Biblia za Kiebrania) Farao mwenyewe ndiye mtendaji, na kitenzi ni kile cha mzizi wa "uzito":
 
 > {{OWB:EXO.8.11.s1:L}}
 

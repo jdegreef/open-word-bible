@@ -4,7 +4,7 @@ summary: Ninguém sabe ao certo o que "Selá" significa, nem o que "mictão", "s
 date: 2026-10-17
 order: 90
 section: passage
-source: d672c9c825da
+source: a6132f9af099
 ---
 A maioria das palavras difíceis da Bíblia é difícil porque os estudiosos discordam sobre elas. Algumas são difíceis por um motivo mais simples: ninguém sabe o que significam. Os Salmos têm mais delas do que qualquer outro livro. Elas aparecem nos títulos, no alto de muitos salmos, e numa palavrinha que surge no fim de linhas ao longo de todo o livro: "Selá".
 
@@ -12,7 +12,7 @@ Este artigo mostra o que se sabe sobre elas, o que se supõe e como uma traduç�
 
 ## Selá
 
-O Salmo 3 é uma oração de Davi quando ele foge do seu filho Absalão. O versículo 3 na nossa numeração (versículo 2 na maioria das Bíblias inglesas, por um motivo explicado mais adiante) relata o que os seus inimigos estão dizendo:
+O Salmo 3 é uma oração de Davi quando ele foge do seu filho Absalão. O versículo 2 (versículo 3 nas Bíblias hebraicas, por um motivo explicado mais adiante) relata o que os seus inimigos estão dizendo:
 
 > {{OWB:PSA.3.3.s1:L}}
 
@@ -38,7 +38,7 @@ A decisão de formulação decorre disso. Todos os níveis, Literal, Equilibrada
 
 É uma escolha deliberada, e outras traduções fizeram escolhas diferentes. A King James Version mantém "Selah". Algumas versões modernas põem um palpite no seu lugar; a New Living Translation, por exemplo, imprime "Interlude" ("Interlúdio"). Outras às vezes a passaram para a margem ou para uma nota de rodapé. Imprimir um palpite faz o texto parecer mais claro do que o nosso conhecimento. Omitir a palavra esconde algo que está no texto hebraico. Mantê-la, com uma decisão que diz claramente o que sabemos e o que não sabemos, é o caminho honesto, e custa ao leitor apenas um instante de pausa, que talvez seja exatamente o que a palavra pedia.
 
-Um pequeno ajuste é feito. Em alguns versículos, o hebraico põe Selá no meio do versículo, depois da primeira linha, como em Salmo 57:4 e Habacuque 3:3. A nossa decisão de formulação para esses versículos a passa para o fim, para que o versículo seja lido como um todo, e diz isso.
+Um pequeno ajuste é feito. Em alguns versículos, o hebraico põe Selá no meio do versículo, depois da primeira linha, como em Salmo 57:3 e Habacuque 3:3. A nossa decisão de formulação para esses versículos a passa para o fim, para que o versículo seja lido como um todo, e diz isso.
 
 O Salmo 46 mostra como Selá pode dar forma a um salmo. Ela aparece ali três vezes, depois do versículo 4 e depois do refrão dos versículos 8 e 12, que soa duas vezes:
 
@@ -56,22 +56,22 @@ O hebraico começa com {{HEBREW:PSA.4.1:1}}, "para o regente", uma expressão qu
 
 ### Por que os números dos versículos são diferentes
 
-O título levanta primeiro uma questão prática. No texto hebraico, o título de um salmo faz parte do salmo e é contado como o seu primeiro versículo. A maioria das Bíblias inglesas imprime o título sem número e começa o versículo 1 com a primeira linha do poema. Por isso, a partir do Salmo 3, muitos números de versículo na Open Word Bible são um a mais do que em outras Bíblias inglesas. O registro do Salmo 3:1 explica isso, e o registro de cada título o repete. A Open Word Bible segue a numeração do texto hebraico que traduz. (Veja [Os números de capítulos e versículos](/articles/chapter-and-verse-numbers/) para saber como a numeração surgiu.)
+O título levanta primeiro uma questão prática. No texto hebraico, o título de um salmo faz parte do salmo e é contado como o seu primeiro versículo. A maioria das Bíblias inglesas imprime o título sem número e começa o versículo 1 com a primeira linha do poema. Por isso, a partir do Salmo 3, muitos números de versículo de uma Bíblia hebraica são um a mais do que nas Bíblias inglesas. A Open Word Bible numera os versículos como a NIV: o título não tem número, e o registro do título do Salmo 3 dá o número hebraico, como faz o registro de cada título. (Veja [Os números de capítulos e versículos](/articles/chapter-and-verse-numbers/) para saber como a numeração surgiu.)
 
 Quando o título é muito curto, o hebraico o conta junto com a primeira linha, e os números são os mesmos. O Salmo 32 é um exemplo: "De Davi. Masquil" faz parte do versículo 1, com "Como é feliz aquele que tem a sua rebeldia perdoada".
 
 ### O que as palavras dos títulos significam
 
-Algumas palavras dos títulos são claras. {{LEMMA:PSA.4.1:3}}, *mizmôr*, é "salmo", um cântico cantado com música. "De Davi" liga um salmo a Davi, embora o registro do Salmo 3:1 observe que a pequena palavra "de" pode significar escrito por, pertencente a, para ou a respeito de. Notas como "quando fugiu do seu filho Absalão" ligam um salmo a uma história contada em outra parte da Bíblia, e os nossos registros indicam a passagem (2 Samuel 15–17, para o Salmo 3).
+Algumas palavras dos títulos são claras. {{LEMMA:PSA.4.1:3}}, *mizmôr*, é "salmo", um cântico cantado com música. "De Davi" liga um salmo a Davi, embora o registro do título do Salmo 3 observe que a pequena palavra "de" pode significar escrito por, pertencente a, para ou a respeito de. Notas como "quando fugiu do seu filho Absalão" ligam um salmo a uma história contada em outra parte da Bíblia, e os nossos registros indicam a passagem (2 Samuel 15–17, para o Salmo 3).
 
-Outras são parcialmente claras. "Para o regente" é uma forma de um verbo que significa conduzir ou supervisionar, e o registro do Salmo 4:1 observa que 1 Crônicas 15:21 usa o verbo para os levitas que conduziam o canto. Provavelmente ela destina o salmo a quem dirigia a música do templo. Mas os tradutores gregos leram as mesmas letras de outra maneira, como "para o fim", o que mostra quão cedo o sentido ficou em dúvida. A decisão está marcada como incerta.
+Outras são parcialmente claras. "Para o regente" é uma forma de um verbo que significa conduzir ou supervisionar, e o registro do título do Salmo 4 observa que 1 Crônicas 15:21 usa o verbo para os levitas que conduziam o canto. Provavelmente ela destina o salmo a quem dirigia a música do templo. Mas os tradutores gregos leram as mesmas letras de outra maneira, como "para o fim", o que mostra quão cedo o sentido ficou em dúvida. A decisão está marcada como incerta.
 
 E algumas se perderam quase por completo. Eis como os nossos registros tratam algumas delas.
 
 - **Mictão** encabeça os Salmos 16 e 56–60. O registro o chama de "um tipo de salmo cujo significado é desconhecido". A tradução grega o entendeu como uma inscrição em pedra; outros o ligam a uma palavra para ouro.
 - **Masquil** encabeça treze salmos. Vem de um verbo que significa ter discernimento ou agir com sabedoria, por isso pode marcar um cântico que ensina, ou um composto com habilidade. O seu sentido exato é desconhecido.
 - **Sobre alamote** (Salmo 46) é o plural da palavra para moça. Como 1 Crônicas 15:20 mostra levitas tocando harpas "sobre alamote", é um termo musical, talvez para vozes agudas ou instrumentos de som agudo.
-- **Higaiom**, que aparece ao lado de Selá no Salmo 9:17, vem de um verbo que significa murmurar. O registro o entende como provavelmente uma indicação musical e o mantém em todos os níveis.
+- **Higaiom**, que aparece ao lado de Selá no Salmo 9:16, vem de um verbo que significa murmurar. O registro o entende como provavelmente uma indicação musical e o mantém em todos os níveis.
 - **Sigionote**, no título da oração de Habacuque, é o plural do termo que está no título do Salmo 7 (*Sigaiom*). Alguns o ligam a um verbo que significa vaguear ou cambalear, outros a uma palavra para lamento.
 
 Há também expressões que provavelmente são nomes de melodias. O Salmo 22 é "sobre Aielete-Hassaar", que significa "a corça da aurora". O Salmo 57 tem o título {{HEBREW:PSA.57.1:2-3}}, "Não destruas", que também encabeça os Salmos 58, 59 e 75. O Salmo 56 tem palavras que significam algo como "uma pomba calada de lugares distantes". Parecem nomes das melodias com que os salmos eram cantados, assim como um hinário imprime o nome de uma melodia acima de um hino. As próprias melodias se perderam há muito tempo.

@@ -4,7 +4,7 @@ summary: Os autores da Bíblia não escreveram capítulos nem versículos. Eis d
 date: 2026-10-17
 order: 100
 section: translation
-source: ddaa7f257d1b
+source: a025429ed75e
 ---
 "João 3:16" é tão conhecido que é fácil esquecer que João nunca escreveu um "3" nem um "16". Nenhum dos autores bíblicos dividiu os seus livros em capítulos e versículos. Os números são um sistema de referência, acrescentado muitos séculos depois por estudiosos e impressores, e, como todo sistema de referência, são úteis, imperfeitos e vieram para ficar.
 
@@ -56,13 +56,17 @@ Há diferenças menores em outros lugares, como no fim de Gênesis 31, onde o he
 
 ## Como a Open Word Bible lida com os números
 
-A Open Word Bible numera cada versículo como o seu texto-fonte o faz. No Antigo Testamento, esse texto é o Códice de Leningrado de Westminster, por isso Malaquias tem três capítulos, Joel tem quatro, e o título de um salmo é o seu primeiro versículo. Onde isso faz diferença, o primeiro versículo afetado leva uma nota de rodapé. A de Malaquias 3:19 explica que os seus seis versículos são numerados 4:1–6 em muitas outras Bíblias, e que a Open Word Bible segue a numeração do texto hebraico que traduz. Joel 3:1 tem o mesmo tipo de nota, assim como o título do Salmo 3:
+A Open Word Bible traduz o texto hebraico, o Códice de Leningrado de Westminster, mas numera os capítulos e versículos como a NIV e a maioria das Bíblias inglesas. Por isso Malaquias tem quatro capítulos, Joel tem três, e o título de um salmo não tem número. Assim o leitor pode procurar um versículo pelo número que já conhece e compará-lo com a Bíblia que já lê.
+
+Onde os números hebraicos são diferentes, o primeiro versículo afetado leva uma nota de rodapé. A de Malaquias 4:1 explica que os seus seis versículos são 3:19–24 no texto hebraico, que os mantém no capítulo 3. Joel 2:28 tem o mesmo tipo de nota, assim como o título do Salmo 3:
 
 > {{OWB:PSA.3.1.s1:B}}
 
-O seu registro diz que, a partir do Salmo 3, os números de versículo aqui são um a mais que nas Bíblias que imprimem o título sem número.
+O seu registro diz que, a partir do Salmo 3, as Bíblias hebraicas numeram os versículos com um a mais do que aqui. Cada página de versículo também dá o número hebraico onde ele é diferente.
 
-Nos bastidores, uma tabela nos dados do projeto, `data/versification.json`, faz a correspondência entre os dois sistemas versículo por versículo. Ela é construída a partir do mapa de versículos da Open Scriptures Hebrew Bible e lista todo versículo hebraico cujo número em inglês é diferente: pouco mais de dois mil, cerca de metade deles nos Salmos. O site a usa sempre que a nossa numeração encontra a de outra Bíblia. Quando o leitor mostra outra Bíblia para comparação, como a World English Bible, os versículos dela são trazidos para a nossa numeração, de modo que o Salmo 3:1 inglês fica ao lado do nosso Salmo 3:2. As referências cruzadas de outras fontes são convertidas da mesma maneira. E o serviço de texto do projeto pode fornecer uma Bíblia de comparação tanto na nossa numeração quanto na da própria edição.
+Os dois sistemas nem sempre dividem o texto nos mesmos pontos. Em cinco lugares, um versículo hebraico contém dois versículos ingleses: Salmo 13:5–6, 1 Reis 18:33–34, 20:2–3, 22:21–22 e Isaías 64:1, cuja primeira linha fecha Isaías 63 no hebraico. Em outros três, dois versículos hebraicos formam um só versículo inglês, como em Números 26:1. Os registros da Open Word Bible seguem as frases do hebraico, de modo que um número de versículo pode cair no meio de uma frase, como de todo modo acontece em muitos lugares.
+
+Nos bastidores, uma tabela nos dados do projeto, `data/versification.json`, faz a correspondência entre os dois sistemas versículo por versículo. Ela é construída a partir do mapa de versículos da Open Scriptures Hebrew Bible e lista todo versículo hebraico cujo número em inglês é diferente: pouco mais de dois mil, cerca de metade deles nos Salmos. Os próprios registros mantêm os números hebraicos, para que a tradução sempre possa ser conferida com o texto hebraico; o site os converte nos números que o leitor vê. E o serviço de texto do projeto pode fornecer uma passagem tanto na numeração da NIV quanto na do próprio texto hebraico.
 
 No Novo Testamento, a Open Word Bible mantém os números de Estienne mesmo onde o texto grego da SBL não tem versículo para colocar debaixo deles. Mateus 17 passa do versículo 20 para o versículo 22, com uma nota de rodapé explicando por quê. Veja [Versículos que faltam nas Bíblias modernas](/articles/verses-missing-from-modern-bibles/).
 
@@ -70,7 +74,7 @@ No Novo Testamento, a Open Word Bible mantém os números de Estienne mesmo onde
 
 Nada disso é motivo para desconfiar dos capítulos e versículos. Eles permitem que milhões de pessoas encontrem a mesma frase em línguas e edições diferentes, e tornam possíveis as referências cruzadas e as concordâncias. Mas são um mapa colocado sobre o texto, não parte dele. Ler por cima de uma quebra de capítulo, ou ignorar um número de versículo no meio de uma frase, muitas vezes é o melhor jeito de ouvir o que um autor realmente escreveu.
 
-[Abra 1 Coríntios 13](/1co/13/), [Isaías 52](/isa/52/) ou [Malaquias 3](/mal/3/) para ver os números em ação.
+[Abra 1 Coríntios 13](/1co/13/), [Isaías 52](/isa/52/) ou [Malaquias 4](/mal/4/) para ver os números em ação.
 
 ## Fontes
 

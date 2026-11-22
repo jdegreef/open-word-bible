@@ -4,7 +4,7 @@ summary: "La même expression veut dire \"un être humain\" dans Ézéchiel et l
 date: 2026-10-17
 order: 81
 section: passage
-source: 65601781c86e
+source: adf413cc3972
 ---
 Peu d'expressions de la Bible sont aussi familières, ou aussi facilement mal comprises, que "le Fils de l'homme". Beaucoup de lecteurs supposent qu'elle est le contraire de "Fils de Dieu" : un titre pour la nature humaine de Jésus, l'autre pour sa nature divine. L'expression est plus ancienne et plus étrange que cela. En hébreu et en araméen, c'était une façon ordinaire de dire "un être humain". Dans une vision de Daniel, elle décrit une figure qui a l'apparence humaine et qui vient avec les nuées du ciel. Dans les Évangiles, elle devient le nom que Jésus emploie pour lui-même plus que tout autre.
 
@@ -18,7 +18,7 @@ Le Psaume 8 montre l'expression à l'œuvre. Le psalmiste lève les yeux vers le
 
 > {{OWB:PSA.8.5.s1:L}}
 
-C'est le niveau Littérale, avec les réglages de lecture laissés tels quels. Les deux moitiés du verset disent deux fois la même chose, comme le fait souvent la poésie hébraïque : "homme" et "fils d'homme" sont des mots parallèles pour un être humain, petit et mortel sous un ciel immense. La décision de sens sur ce verset dit exactement cela. (La plupart des Bibles anglaises numérotent ce verset 8:4 ; Open Word Bible suit la numérotation hébraïque, qui compte le titre comme verset 1.)
+C'est le niveau Littérale, avec les réglages de lecture laissés tels quels. Les deux moitiés du verset disent deux fois la même chose, comme le fait souvent la poésie hébraïque : "homme" et "fils d'homme" sont des mots parallèles pour un être humain, petit et mortel sous un ciel immense. La décision de sens sur ce verset dit exactement cela. (C'est le 8:4, comme dans les Bibles anglaises ; les Bibles hébraïques comptent le titre comme verset 1 et le numérotent 8:5.)
 
 Comme l'expression désigne tout être humain, homme ou femme, elle relève dans ce psaume du réglage de genre. Par défaut, le niveau Littérale dit "un mortel", et le lecteur qui préfère la formulation traditionnelle peut changer le réglage pour voir "le fils de l'homme". Le réglage change la formulation, non le sens : les deux disent "un être humain". La formulation traditionnelle est gardée comme alternative pour une raison que le dossier donne. Hébreux 2:6–8 cite ce psaume et le lit à propos de Jésus, le seul être humain déjà "couronné de gloire et d'honneur". Le lecteur qui compare les deux passages doit pouvoir retrouver les mêmes mots dans l'un et l'autre.
 

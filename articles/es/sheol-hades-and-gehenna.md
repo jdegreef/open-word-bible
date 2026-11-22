@@ -4,7 +4,7 @@ summary: Las Biblias inglesas antiguas usan una sola palabra, «hell» («infier
 date: 2026-10-17
 order: 86
 section: passage
-source: 0b21a4e82def
+source: 5f3691f4c4e6
 ---
 Abre la versión King James en el Salmo 16:10 y leerás: «For thou wilt not leave my soul in hell» («Porque no dejarás mi alma en el infierno»). Ve a Lucas 16:23 y el rico también está «in hell», «en el infierno». En Mateo 5:22, quien llama necio a su hermano está «in danger of hell fire», «en peligro del fuego del infierno». En 2 Pedro 2:4 Dios arrojó a los ángeles que pecaron «down to hell», «al infierno». Y en Apocalipsis 20:14, «death and hell were cast into the lake of fire»: «la muerte y el infierno fueron arrojados al lago de fuego».
 
@@ -48,7 +48,7 @@ La edición inglesa reparte las palabras así:
 - La **Equilibrada** conserva «Sheol» en los Salmos, Isaías, el Eclesiastés y Jonás. En Génesis 37:35 dice «the grave», «la tumba», porque, como explica allí la decisión de redacción inglesa, ese es el sentido llano de las palabras de Jacob.
 - La **Sencilla** dice lo que es el Seol: «the place of the dead», «el lugar de los muertos», en los Salmos, y «the grave», «la tumba», en Isaías, el Eclesiastés y Jonás.
 
-Ninguno de nuestros niveles, en ninguno de los dos idiomas, dice «infierno» para el Seol. La oración de Jonás, en la numeración hebrea 2:3, muestra el patrón:
+Ninguno de nuestros niveles, en ninguno de los dos idiomas, dice «infierno» para el Seol. La oración de Jonás, en 2:2 (2:3 en las Biblias hebreas), muestra el patrón:
 
 > {{OWB:JON.2.3.s1:B}}
 
