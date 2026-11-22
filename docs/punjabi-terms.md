@@ -1622,3 +1622,69 @@ People and places: ਪੌਲੁਸ, ਤੁਖਿਕੁਸ; ਅਫ਼ਸੁਸ, �
   ਨਾਯੋਥ, ਨੋਬ, ਦੋਏਗ ਅਦੋਮੀ, ਆਕੀਸ਼, ਗਥ, ਅਦੁੱਲਾਮ, ਕਈਲਾਹ, ਜ਼ੀਫ਼ੀ, ਹਕੀਲਾਹ,
   ਯਸ਼ੀਮੋਨ, ਏਨ-ਗਦੀ, ਨਾਬਾਲ, ਅਬੀਗੈਲ, ਅਹੀਨੋਅਮ, ਪਲਟੀ (as 2 Samuel 3:15),
   ਅਬੀਸ਼ਈ, ਸਿਕਲਗ, ਏਨ-ਦੋਰ, ਸ਼ੂਨੇਮ, ਗਿਲਬੋਆ, ਬਸੋਰ ਨਾਲਾ, ਕਰੇਤੀ, ਬੈਤ-ਸ਼ਾਨ.
+
+### 1 Kings
+
+- Forms of address: God takes the honorific plural (ਉਨ੍ਹਾਂ ਨੇ, ਫ਼ਰਮਾਉਂਦੇ
+  ਹਨ) and says ਤੂੰ to people, also inside a prophet's message to a king
+  (20:13, 28, 42; 21:19). Prophets pray to God with ਤੂੰ. Kings say ਤੁਸੀਂ to
+  each other (Asa and Ben-hadad, Ahab and Jehoshaphat); Ben-hadad says ਤੂੰ to
+  Ahab while besieging him (20:3) and ਤੁਸੀਂ as a suppliant (20:34). Elijah and
+  Micaiah say ਤੁਸੀਂ to Ahab, and Elijah keeps ਤੁਸੀਂ in 21:20-24 even where the
+  LORD speaks in the first person; Ahab says ਤੂੰ to both. Obadiah, the widow,
+  Elisha and the messenger say ਤੁਸੀਂ to the prophets; the prophets say ਤੂੰ
+  back. Jezebel says ਤੁਸੀਂ to Ahab and ਤੂੰ to Elijah; Ahab says ਤੂੰ to Naboth,
+  Naboth ਤੁਸੀਂ to him. Zedekiah and Micaiah say ਤੂੰ to each other.
+- Formulas (used for every reign):
+  - Messenger formula ਇਉਂ ਫ਼ਰਮਾਉਂਦੇ ਹਨ (L) / ਇਹ ਆਖਦੇ ਹਨ (B) / ਇਹ ਕਹਿੰਦੇ ਹਨ (R).
+  - Oath: ਜੀਉਂਦੇ {DN} ਦੀ ਸਹੁੰ; R ... ਦੇ ਜੀਵਨ ਦੀ ਸਹੁੰ. Self-curse (19:2,
+    20:10): ਦੇਵਤੇ ਇਉਂ ਹੀ ਕਰਨ, ਅਤੇ ਇਸ ਤੋਂ ਵੀ ਵੱਧ ਕਰਨ (L), ਕਰੜੇ ਤੋਂ ਕਰੜਾ ਸਲੂਕ
+    (B), ਭਾਰੀ ਸਜ਼ਾ ਦੇਣ (R).
+  - Verdict: ਉਹ ਕੀਤਾ ਜੋ {DN} ਦੀਆਂ ਅੱਖਾਂ ਵਿੱਚ ਬੁਰਾ/ਠੀਕ ਸੀ (L), ਦੀ ਨਿਗਾਹ
+    ਵਿੱਚ (B), ਉਹ ਕੰਮ ਕੀਤੇ ਜਿਨ੍ਹਾਂ ਨੂੰ {DN} ਨੇ ਬੁਰਾ ਕਿਹਾ ਸੀ (R).
+  - Sources: ਕੀ ਉਹ ... ਦੇ ਰਾਜਿਆਂ ਦੇ ਦਿਨਾਂ ਦੀਆਂ ਗੱਲਾਂ ਦੀ ਪੁਸਤਕ ਵਿੱਚ ਲਿਖੀਆਂ
+    ਹੋਈਆਂ ਨਹੀਂ ਹਨ? (L); ... ਇਤਿਹਾਸ ਦੀ ਪੁਸਤਕ ਵਿੱਚ ਦਰਜ ਹਨ (B); ... ਨੇ ਜੋ ਕੁਝ
+    ਹੋਰ ਕੀਤਾ, ਉਹ ... ਦੇ ਇਤਿਹਾਸ ਵਿੱਚ ਲਿਖਿਆ ਹੋਇਆ ਹੈ (R).
+  - Death: ਪਿਉ-ਦਾਦਿਆਂ ਨਾਲ ਸੌਂ ਗਿਆ (L), ਪੁਰਖਿਆਂ ਨਾਲ ਸੌਂ ਗਿਆ (B), ਮਰ ਗਿਆ
+    (R). Successor: ਉਸ ਦੇ ਥਾਂ ... ਰਾਜਾ ਹੋਇਆ (L), ਉਸ ਦੀ ਥਾਂ ... ਰਾਜਾ ਬਣਿਆ
+    (B), ਉਸ ਤੋਂ ਬਾਅਦ ... ਰਾਜਾ ਬਣਿਆ (R).
+  - Synchronism in R: ਜਦ X ਨੂੰ ... ਉੱਤੇ ਰਾਜ ਕਰਦਿਆਂ N ਸਾਲ ਹੋਏ, ਤਦ ... .
+    Reign length in L as a bare phrase (ਰਾਜਾ ਹੋਇਆ, ਚੌਵੀ ਸਾਲ), since bracketed
+    supplied words tripped the overlap check.
+  - Jeroboam refrain: ਜਿਸ ਨੇ ਇਸਰਾਏਲ ਤੋਂ ਪਾਪ ਕਰਵਾਇਆ (L, B), ਇਸਰਾਏਲ ਨੂੰ ਪਾਪ
+    ਵਿੱਚ ਪਾਇਆ (R).
+  - Every male: ਕੰਧ ਉੱਤੇ ਮੂਤਰਨ ਵਾਲਾ (L), ਹਰ ਪੁਰਖ (B), ਹਰ ਆਦਮੀ ਅਤੇ ਮੁੰਡਾ
+    (R); bond and free ਕੀ ਬੰਧੂਆ ਕੀ ਅਜ਼ਾਦ (L).
+- Terms: house of the LORD ਭਵਨ (L, B) / ਮੰਦਰ (R), and the headings use ਭਵਨ;
+  the house of Baal ਘਰ (L) / ਮੰਦਰ (B, R); a king's throne ਗੱਦੀ, but
+  ਸਿੰਘਾਸਣ in 22:10 and 22:19 where the two thrones answer each other;
+  LORD of hosts ਸੈਨਾਂ ਦੇ {DN} at every level, God of hosts ਸੈਨਾਂ ਦੇ ਪਰਮੇਸ਼ੁਰ;
+  prophet ਨਬੀ at every level, prophesy ਅਗੰਮ ਵਾਕ ਬੋਲਣਾ; sons of the prophets
+  ਨਬੀਆਂ ਦੇ ਪੁੱਤਰ (L), ਨਬੀਆਂ ਦੀ ਟੋਲੀ (B), ਨਬੀਆਂ ਦਾ ਦਲ (R); Asherah
+  ਅਸ਼ੇਰਾਹ ਥੰਮ੍ਹ (L, B); male cult prostitutes ਦੇਵਦਾਸ (L); high places ਉੱਚੀਆਂ
+  ਥਾਵਾਂ; treaty ਸੰਧੀ (ਨੇਮ is kept for God's covenant), R ਸਮਝੌਤਾ; queen
+  mother ਰਾਜ-ਮਾਤਾ; bribe ਵੱਢੀ; famine ਕਾਲ, disaster ਬਿਪਤਾ; cloak ਚੋਗਾ; broom
+  tree ਝਾਊ; sackcloth ਤੱਪੜ; the ban (20:42) ਨਾਸ ਲਈ ਅਰਪਿਤ; inheritance
+  ਮਿਰਾਸ (L), ਵਿਰਾਸਤ (B); vineyard ਅੰਗੂਰੀ ਬਾਗ਼ (L, B); scale armor ਸੰਜੋਅ,
+  breastplate ਸੀਨਾਬੰਦ; a lying spirit ਝੂਠਾ ਆਤਮਾ, masculine as the Hebrew,
+  although 1 Samuel's evil spirit is ਬੁਰੀ ਆਤਮਾ.
+- Units (B, R): talent `{{units:ਲਗਭਗ 34 ਕਿੱਲੋ ਚਾਂਦੀ|ਇੱਕ ਤੋੜਾ ਚਾਂਦੀ}}`; seah
+  about 7 litres. Large numbers use Indian grouping (1,00,000) in B and R and
+  words (ਇੱਕ ਲੱਖ) in L.
+- Gender spans: sons of Israel at L only; fathers `{{gender:ਵੱਡ-ਵਡੇਰਿਆਂ|ਪਿਉ-ਦਾਦਿਆਂ}}`
+  (19:4, B and R); sons `{{gender:ਬੱਚੇ|ਪੁੱਤਰ}}` (20:3-7).
+- Wording other books must match:
+  - 19:10 and 19:14 are worded alike at each level; Romans 11:3-4 quotes
+    19:10, 18.
+  - 19:12 the sound of thin silence: ਪਤਲੀ ਚੁੱਪ ਦੀ ਇੱਕ ਅਵਾਜ਼ (L).
+  - 17-18 (the widow of Zarephath, the drought) for Luke 4:25-26 and James
+    5:17-18; chapter 22 sets the wording for 2 Chronicles 18.
+- Names: ਅਦੋਨੀਯਾਹ, ਅਬਯਾਥਾਰ, ਬਥ-ਸ਼ਬਾ, ਗੀਹੋਨ, ਗਿਬਓਨ, ਹੀਰਾਮ, ਸ਼ਬਾ, ਰਹਬੁਆਮ,
+  ਯਾਰਾਬੁਆਮ, ਨਬਾਟ, ਅਹੀਯਾਹ, ਸ਼ੀਲੋਹ, ਤਿਰਸਾਹ, ਨਾਦਾਬ, ਨਾਮਾਹ ਅੰਮੋਨਣ, ਅਬੀਯਾਮ,
+  ਸ਼ੀਸ਼ਕ, ਮਾਕਾਹ, ਅਬੀਸ਼ਾਲੋਮ, ਆਸਾ, ਬਆਸ਼ਾ, ਬਨ-ਹਦਦ, ਤਬਰਿੰਮੋਨ, ਹਜ਼ਯੋਨ,
+  ਆਬੇਲ-ਬੈਤ-ਮਾਕਾਹ, ਕਿੰਨਰੋਥ, ਯਹੋਸ਼ਾਫ਼ਾਤ (ਯਹੋਸ਼ਾਫ਼ਾਟ in 2 Samuel, worth
+  unifying), ਗਿੱਬਥੋਨ, ਯੇਹੂ, ਹਨਾਨੀ, ਏਲਾਹ, ਜ਼ਿਮਰੀ, ਆਮਰੀ, ਤਿਬਨੀ, ਸਾਮਰਿਯਾ,
+  ਅਹਾਬ, ਈਜ਼ਬਲ, ਅਥਬਆਲ, ਹੀਏਲ, ਏਲੀਯਾਹ ਤਿਸ਼ਬੀ, ਕਰੀਥ, ਸਾਰਫ਼ਥ, ਓਬਦਯਾਹ, ਕਰਮਲ,
+  ਕੀਸ਼ੋਨ, ਯਿਜ਼ਰਏਲ, ਬਏਰਸ਼ਬਾ, ਹੋਰੇਬ, ਹਜ਼ਾਏਲ, ਨਿਮਸ਼ੀ, ਅਲੀਸ਼ਾ, ਸ਼ਾਫ਼ਾਟ,
+  ਆਬੇਲ-ਮਹੋਲਾਹ, ਅਫ਼ੇਕ, ਨਾਬੋਥ ਯਿਜ਼ਰਏਲੀ, ਰਾਮੋਥ-ਗਿਲਆਦ, ਮੀਕਾਯਾਹ, ਯਿਮਲਾ,
+  ਸਿਦਕੀਯਾਹ, ਕਨਾਨਾਹ, ਅਹਜ਼ਯਾਹ, ਅਜ਼ੂਬਾਹ, ਸ਼ਿਲਹੀ, ਓਫ਼ੀਰ, ਅਸਯੋਨ-ਗਬਰ, ਯਹੋਰਾਮ.
