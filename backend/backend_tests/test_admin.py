@@ -314,6 +314,23 @@ class UsersTest(AdminTestCase):
         self.assertEqual(r.json(), {"signed_out": 2})
         self.assertFalse(ApiToken.objects.filter(user=reader).exists())
 
+    def test_the_users_role_signs_out_readers_but_not_the_team(self):
+        users = client_for(account("users@example.org", (K.USERS,)))
+        reader = account("reader@example.org")
+        client_for(reader)
+        self.assertTrue(users.get(f"/api/admin/users/{reader.id}/").json()["can_sign_out"])
+        self.assertEqual(users.post(f"/api/admin/users/{reader.id}/sign-out/").json(), {"signed_out": 1})
+        # A super admin (or any member of the team) stays signed in.
+        self.assertFalse(users.get(f"/api/admin/users/{self.boss.id}/").json()["can_sign_out"])
+        r = users.post(f"/api/admin/users/{self.boss.id}/sign-out/")
+        self.assertEqual((r.status_code, r.json()["code"]), (403, "forbidden"))
+        self.assertTrue(ApiToken.objects.filter(user=self.boss).exists())
+        editor = account("ed@example.org", (K.EDITOR,))
+        client_for(editor)
+        self.assertEqual(users.post(f"/api/admin/users/{editor.id}/sign-out/").status_code, 403)
+        # A super admin may.
+        self.assertEqual(self.admin.post(f"/api/admin/users/{editor.id}/sign-out/").json(), {"signed_out": 1})
+
 
 class MessagesTest(AdminTestCase):
     def setUp(self):

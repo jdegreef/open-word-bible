@@ -1651,7 +1651,7 @@ var OWBAdminCore = (function () {
     return api("/api/admin/users/" + encodeURIComponent(id) + "/").then(function (u) {
       var status = h("p", { class: "admin-note", role: "status" });
       var actions = h("div", { class: "admin-actions" });
-      if (u.devices.length) {
+      if (u.devices.length && u.can_sign_out) {
         actions.appendChild(confirmButton("Sign out every device", "Sign out " + plural(u.devices.length, "device") + "?", function (b) {
           api("/api/admin/users/" + u.id + "/sign-out/", { method: "POST" }).then(function () { route(); }, function (e) { busy(b, false); note(status, e, true); });
         }));
