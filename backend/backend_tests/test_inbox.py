@@ -87,9 +87,10 @@ class InboxTriageTest(AdminTestCase):
     def test_dashboard_chips(self):
         ReaderMessage.objects.filter(id=self.recent.id).update(assigned_to=self.boss)
         keys = {a["key"]: a for a in self.admin.get("/api/admin/overview/").json()["attention"]}
-        self.assertEqual(keys["inbox_late"]["count"], 1)
-        self.assertEqual(keys["inbox_late"]["tone"], "hot")
-        self.assertEqual(keys["inbox"]["count"], 2)
+        # One chip for the messages waiting, saying how many are late.
+        self.assertNotIn("inbox_late", keys)
+        self.assertEqual((keys["inbox"]["count"], keys["inbox"]["late"], keys["inbox"]["tone"]), (2, 1, "hot"))
+        self.assertIn("1 for more than", keys["inbox"]["label"])
         self.assertEqual(keys["inbox_mine"]["count"], 1)
         self.assertEqual(keys["inbox_mine"]["href"], "#inbox/mine")
         keys = {a["key"] for a in client_for(self.editor).get("/api/admin/overview/").json()["attention"]}

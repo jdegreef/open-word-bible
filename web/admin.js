@@ -180,10 +180,14 @@ var OWBAdminCore = (function () {
   }
   function num(n) { return (n || 0).toLocaleString("en"); }
   function pct(a, b) { return b ? Math.round((a / b) * 1000) / 10 : 0; }
-  function date(iso) {
+  // A bare date ("2026-11-09") is that day wherever the reader is: Date
+  // reads it as UTC midnight, which is the day before west of UTC.
+  function date(iso, noYear) {
     if (!iso) return "—";
-    var d = new Date(iso);
-    return d.toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
+    var opts = { day: "numeric", month: "short" };
+    if (!noYear) opts.year = "numeric";
+    if (/^\d{4}-\d{2}-\d{2}$/.test(iso)) opts.timeZone = "UTC";
+    return new Date(iso).toLocaleDateString("en-GB", opts);
   }
   function when(iso) {
     if (!iso) return "never";
@@ -586,12 +590,15 @@ var OWBAdminCore = (function () {
       } else {
         out.push(h("p", { class: "admin-ok" }, "Nothing needs attention."));
       }
-      var reviewed = (t.statuses.reviewed || 0) + (t.statuses.revised || 0);
+      // People's approvals as they stand: approving wording changes no
+      // sentence status, so these come from the review states, not t.statuses.
+      var reviewed = d.reviewed || { meaning: 0, wording: 0 };
       out.push(h("div", { class: "admin-tiles" },
         tile(num(t.sentences), "sentences drafted"),
         tile(num(t.books_started) + " / " + t.books, "books started in English (" + t.books_drafted + " complete)"),
         tile(num(t.chapters_drafted) + " / " + num(t.chapters), "chapters drafted"),
-        tile(num(reviewed), "sentences reviewed by a person")));
+        tile(num(reviewed.meaning), "sentences with their meaning approved by a person"),
+        tile(num(reviewed.wording), "sentences with their wording approved in at least one language")));
       out.push(h("section", { class: "admin-block" }, h("h2", null, "Sentences by language"),
         h("div", { class: "admin-bars" }, d.languages.map(function (l) {
           return h("a", { class: "admin-bar-row", href: "#languages" }, h("span", null, l.name), bar(l.sentences, t.sentences),
@@ -819,7 +826,7 @@ var OWBAdminCore = (function () {
               return h("div", { class: "admin-column", title: "Week of " + date(w.week) + ": " + w.accounts },
                 h("span", { class: "admin-num" }, num(w.accounts)),
                 h("i", { style: "height:" + Math.max(2, (w.accounts / most) * 100) + "%" }),
-                h("span", { class: "admin-sub" }, new Date(w.week).toLocaleDateString("en-GB", { day: "numeric", month: "short" })));
+                h("span", { class: "admin-sub" }, date(w.week, true)));
             })) : empty("No new accounts in the last 12 weeks.")),
         h("div", { class: "admin-cols" },
           h("section", { class: "admin-block" }, h("h2", null, "Saved verses by book"), ranked(d.marks_by_book, "name", "marks")),
