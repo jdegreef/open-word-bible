@@ -73,6 +73,8 @@ summary.admin-bar-row::-webkit-details-marker { display: none; }
 .admin-bar { display: block; height: 10px; min-width: 60px; border-radius: 999px; background: var(--surface-2); box-shadow: inset 0 0 0 1px var(--line); overflow: hidden; }
 .admin-bar i { display: block; height: 100%; background: var(--accent); border-radius: 999px; }
 .admin-bar i.warn { background: var(--gold); }
+.admin-bar i.good { background: var(--admin-good); }
+.admin-counted { margin: -12px 0 24px; }
 td .admin-bar { margin: 4px 0; }
 
 .admin-columns { display: flex; gap: 6px; align-items: flex-end; height: 160px; padding-top: 18px; }
@@ -104,9 +106,10 @@ a > .admin-state { text-decoration: none; }
 .admin-legend .admin-state { min-width: 18px; }
 
 .admin-toolbar { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; justify-content: space-between; margin: 0 0 16px; }
-form.admin-toolbar { justify-content: flex-start; }
+form.admin-toolbar, .admin-toolbar.admin-filters { justify-content: flex-start; }
+.admin-toolbar input[type="search"] { flex: 1 1 260px; max-width: 460px; }
 .admin-pill { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 12px; font-weight: 600; background: var(--surface-2); color: var(--muted); border: 1px solid var(--line); white-space: nowrap; }
-.admin-pill.good { background: color-mix(in srgb, #2f7a45 12%, var(--surface)); color: #2f7a45; border-color: color-mix(in srgb, #2f7a45 35%, transparent); }
+.admin-pill.good { background: color-mix(in srgb, var(--admin-good) 12%, var(--surface)); color: var(--admin-good); border-color: color-mix(in srgb, var(--admin-good) 35%, transparent); }
 .admin-pill.bad { background: color-mix(in srgb, var(--admin-danger) 12%, var(--surface)); color: var(--admin-danger); border-color: color-mix(in srgb, var(--admin-danger) 35%, transparent); }
 .admin-pill.warn { background: var(--warn-bg); color: var(--warn); border-color: var(--gold); }
 .admin-pill.info { background: var(--accent-soft); color: var(--accent); border-color: var(--accent-soft-border); }
@@ -158,6 +161,10 @@ form.admin-toolbar { justify-content: flex-start; }
 
 .admin-messages { display: grid; gap: 14px; }
 .admin-message { padding: 16px 18px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); }
+/* A reply as it will be emailed, before it is (admin.js messageCard). */
+.admin-reply-preview { margin: 10px 0 0; padding: 12px 14px; border: 1px solid var(--accent-soft-border); border-radius: 10px; background: var(--accent-soft); }
+.admin-reply-preview p { margin: 0; }
+.admin-reply-preview blockquote { margin: 8px 0; white-space: pre-wrap; }
 /* A message that has left the tab it was listed in: one line, with Undo. */
 .admin-message-folded { padding: 10px 18px; background: transparent; border-style: dashed; color: var(--muted); }
 .admin-message-folded p { margin: 0; }
@@ -240,7 +247,7 @@ form.admin-toolbar { justify-content: flex-start; }
 .admin-high { color: var(--admin-danger); font-weight: 700; }
 
 /* Changes: a rendering before and after, word by word. */
-.admin-diff ins { text-decoration: none; background: color-mix(in srgb, #2f7a45 16%, transparent); border-radius: 3px; }
+.admin-diff ins { text-decoration: none; background: color-mix(in srgb, var(--admin-good) 16%, transparent); border-radius: 3px; }
 .admin-diff del, .admin-wrap > del { color: var(--admin-danger); background: color-mix(in srgb, var(--admin-danger) 12%, transparent); border-radius: 3px; }
 :root[data-theme="dark"] .admin-diff del, :root[data-theme="night"] .admin-diff del,
 :root[data-theme="dark"] .admin-wrap > del, :root[data-theme="night"] .admin-wrap > del { color: #f0a093; }
@@ -248,9 +255,9 @@ form.admin-toolbar { justify-content: flex-start; }
 .admin-btn.small { padding: 2px 8px; font-size: 13px; min-height: 0; }
 
 /* A section that couldn't be drawn (admin.js errorPanel). */
-:root { --admin-danger: #a63a29; }
-:root[data-theme="dark"], :root[data-theme="night"] { --admin-danger: #f0a093; }
-@media (prefers-color-scheme: dark) { :root[data-theme="auto"] { --admin-danger: #f0a093; } }
+:root { --admin-danger: #a63a29; --admin-good: #2f7a45; }
+:root[data-theme="dark"], :root[data-theme="night"] { --admin-danger: #f0a093; --admin-good: #8fd19e; }
+@media (prefers-color-scheme: dark) { :root[data-theme="auto"] { --admin-danger: #f0a093; --admin-good: #8fd19e; } }
 .admin-error { border: 1px solid var(--admin-danger); background: color-mix(in srgb, var(--admin-danger) 8%, var(--surface)); border-radius: var(--radius); padding: 16px 18px; display: grid; gap: 10px; max-width: 70ch; }
 .admin-error h2 { margin: 0; font-size: 18px; color: var(--admin-danger); }
 .admin-error p { margin: 0; }
@@ -279,3 +286,15 @@ form.admin-toolbar { justify-content: flex-start; }
 .admin-toast button:focus-visible { outline: 2px solid var(--bg); outline-offset: 2px; border-radius: 4px; }
 /* The heading focused on arriving at a section (admin.js route) is a place, not a control. */
 .admin-main h1:focus { outline: none; }
+
+/* The review buttons, kept at the foot of the window while the sentence
+   above is read (admin.js reviewSentence). */
+.admin-review-bar { position: sticky; bottom: max(0px, env(safe-area-inset-bottom, 0px)); z-index: 4; padding-block: 12px; box-shadow: 0 -8px 24px rgba(0, 0, 0, .08); }
+.admin-review-bar .admin-field textarea { min-height: 2.6em; }
+.admin-review-bar .admin-actions { margin-top: 8px; }
+.admin-review-bar-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 16px; }
+.admin-review-bar-head h2 { margin: 0; }
+.admin-review-progress { display: flex; align-items: center; gap: 10px; font-size: 13.5px; color: var(--muted); }
+.admin-review-progress i { display: block; width: 120px; height: 6px; border-radius: 99px; background: var(--line); overflow: hidden; }
+.admin-review-progress b { display: block; height: 100%; background: var(--accent); }
+.admin-review-keys { margin: 0 0 24px; }

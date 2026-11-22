@@ -82,6 +82,12 @@ class ReviewTest(AdminTestCase):
         self.assertEqual((r.status_code, r.json()["code"]), (400, "too_late"))
         self.assertEqual(ReviewEvent.objects.count(), 3)
 
+    def test_the_dashboard_says_when_its_totals_were_counted(self):
+        first = self.admin.get("/api/admin/overview/").json()["counted_at"]
+        self.assertEqual(self.admin.get("/api/admin/overview/").json()["counted_at"], first)
+        # Counted again on asking.
+        self.assertNotEqual(self.admin.get("/api/admin/overview/?fresh=1").json()["counted_at"], first)
+
     def test_reviewers_open_review_and_editors_do_not(self):
         self.assertEqual(self.french.get("/api/me").json()["admin"], ["overview", "export", "review"])
         self.assertEqual(self.editor.get("/api/admin/review/").status_code, 403)
