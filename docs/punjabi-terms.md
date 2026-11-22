@@ -59,7 +59,8 @@ used at every level unless a level is named.
 |---|---|
 | grace | ਕਿਰਪਾ |
 | mercy; compassion | ਦਯਾ; ਤਰਸ |
-| steadfast love (*hesed*) | ਅਟੱਲ ਪਿਆਰ |
+| steadfast love (*hesed*) | ਅਟੱਲ ਪਿਆਰ (every book; not ਅਟੱਲ ਪ੍ਰੇਮ) |
+| land, country | ਦੇਸ਼ (not ਦੇਸ) |
 | faithfulness | ਵਫ਼ਾਦਾਰੀ |
 | truth | ਸਚਾਈ (L, B); ਸੱਚ (R) |
 | glory | ਮਹਿਮਾ |
@@ -446,7 +447,7 @@ People and places: ਨਹੂਮ, ਅਲਕੋਸ਼ੀ (of Elkosh); ਨੀਨਵ
 
 ### Joel
 
-People and places: ਯੋਏਲ, ਪਥੂਏਲ; ਸੀਯੋਨ, ਯਰੂਸ਼ਲਮ, ਯਹੂਦਾਹ; ਯਹੋਸ਼ਾਫ਼ਾਟ ਦੀ ਵਾਦੀ,
+People and places: ਯੋਏਲ, ਪਥੂਏਲ; ਸੀਯੋਨ, ਯਰੂਸ਼ਲਮ, ਯਹੂਦਾਹ; ਯਹੋਸ਼ਾਫ਼ਾਤ ਦੀ ਵਾਦੀ,
 ਫ਼ੈਸਲੇ ਦੀ ਵਾਦੀ, ਸ਼ਿੱਟੀਮ ਦੀ ਵਾਦੀ; ਸੂਰ, ਸੈਦਾ, ਫ਼ਲਿਸਤ; ਯੂਨਾਨੀ, ਸਬਾਈ; ਮਿਸਰ,
 ਅਦੋਮ. Joel follows the Hebrew chapters (English 2:28-32 is 3:1-5, English 3 is 4).
 
@@ -790,7 +791,7 @@ People and places: ਪੌਲੁਸ, ਤੁਖਿਕੁਸ; ਅਫ਼ਸੁਸ, �
   and 2 Zion speaks as a woman (feminine verbs) and says ਤੂੰ to God; in
   chapter 3 the speaker is a man (geber ਪੁਰਖ at L and B, masculine verbs);
   chapter 5 is the people's prayer with ਤੂੰ.
-- Chesed ਅਟੱਲ ਪ੍ਰੇਮ and rachamim ਦਇਆ (3:22, 32); emunah ਸਚਿਆਈ (L),
+- Chesed ਅਟੱਲ ਪਿਆਰ and rachamim ਦਇਆ (3:22, 32); emunah ਸਚਿਆਈ (L),
   ਵਫ਼ਾਦਾਰੀ (B, R); chelqi ਮੇਰਾ ਹਿੱਸਾ (3:24). 3:6 has the words of Psalm
   143:3 (ਚਿਰਾਂ ਦੇ ਮੁਰਦਿਆਂ ਵਾਂਗ), which the Psalms should match.
 - The comforter refrain of chapter 1 is ਦਿਲਾਸਾ ਦੇਣ ਵਾਲਾ; wormwood
@@ -846,7 +847,7 @@ People and places: ਪੌਲੁਸ, ਤੁਖਿਕੁਸ; ਅਫ਼ਸੁਸ, �
 - Zenunim ਵੇਸਵਾਪੁਣਾ (L, B), ਬੇਵਫ਼ਾਈ / ਬੇਵਫ਼ਾ ਹੋਣਾ (R); 1:2 ਵੇਸਵਾਪੁਣੇ ਦੀ
   ਪਤਨੀ (L), ਬਦਚਲਣ ਤੀਵੀਂ (B). Lovers ਯਾਰ; adultery ਵਿਭਚਾਰ. Betroth ਆਪਣੇ
   ਨਾਲ ਮੰਗ ਲਵਾਂਗਾ (L), ਮੰਗਣੀ ਕਰਾਂਗਾ (B), ਲਾੜੀ ਬਣਾਵਾਂਗਾ (R).
-- Hesed ਅਟੱਲ ਪ੍ਰੇਮ; human hesed (6:4, 6:6, 10:12, 12:7) is ਸੱਚਾ ਪ੍ਰੇਮ at
+- Hesed ਅਟੱਲ ਪਿਆਰ; human hesed (6:4, 6:6, 10:12, 12:7) is ਸੱਚਾ ਪ੍ਰੇਮ at
   R. Rahamim ਦਇਆ, and 14:4 keeps ਦਇਆ to echo Lo-ruhamah; nihumim (11:8) ਦਇਆ
   (L, B), ਕੋਮਲ ਪ੍ਰੇਮ (R). Daʿat elohim ਪਰਮੇਸ਼ੁਰ ਦਾ ਗਿਆਨ (L, B), ਪਰਮੇਸ਼ੁਰ
   ਨੂੰ ਜਾਣਨਾ (R). Torah ਸਿੱਖਿਆ; covenant ਨੇਮ.
@@ -863,7 +864,7 @@ People and places: ਪੌਲੁਸ, ਤੁਖਿਕੁਸ; ਅਫ਼ਸੁਸ, �
   (11:10); 11:9 and 14:10 have none, as in Hindi. 3:2 has two units spans
   (silver and barley) at B and R.
 - Lines other books must match: 2:1 and 2:25 (Romans 9:25-26); 6:6, "ਮੈਂ
-  ਅਟੱਲ ਪ੍ਰੇਮ ਚਾਹੁੰਦਾ ਹਾਂ, ਬਲੀ ਨਹੀਂ" (Matthew 9:13, 12:7); 8:13 and 9:9
+  ਅਟੱਲ ਪਿਆਰ ਚਾਹੁੰਦਾ ਹਾਂ, ਬਲੀ ਨਹੀਂ" (Matthew 9:13, 12:7); 8:13 and 9:9
   (Jeremiah 14:10); 10:8, "ਸਾਨੂੰ ਢਕ ਲਓ ... ਸਾਡੇ ਉੱਤੇ ਡਿੱਗ ਪਓ" (Luke 23:30);
   10:12, the fallow ground (Jeremiah 4:3); 11:1, "ਮਿਸਰ ਵਿੱਚੋਂ ਮੈਂ ਆਪਣੇ ਪੁੱਤਰ
   ਨੂੰ ਸੱਦ ਲਿਆ" (Matthew 2:15); 13:14, "ਹੇ ਮੌਤ ... ਕਿੱਥੇ ਹੈ ਤੇਰਾ ਡੰਗ?"
@@ -1553,7 +1554,7 @@ People and places: ਪੌਲੁਸ, ਤੁਖਿਕੁਸ; ਅਫ਼ਸੁਸ, �
 - Court and war: scribe ਲਿਖਾਰੀ (L), ਸਕੱਤਰ (B, R); recorder ਇਤਿਹਾਸ-ਲੇਖਕ;
   eunuch ਖੋਜਾ (L), ਅਧਿਕਾਰੀ or ਦਰਬਾਰੀ (B, R); queen mother ਰਾਜ-ਮਾਤਾ; chief
   of the guard ਅੰਗ-ਰੱਖਿਅਕਾਂ ਦਾ ਪ੍ਰਧਾਨ (L, B), ਸ਼ਾਹੀ ਅੰਗ-ਰੱਖਿਅਕਾਂ ਦਾ ਸੈਨਾਪਤੀ
-  (R); the Assyrian titles ਤਰਤਾਨ, ਰਬਸਾਰੀਸ, ਰਬਸ਼ਾਕੇਹ at L only; exile ਦੇਸ
+  (R); the Assyrian titles ਤਰਤਾਨ, ਰਬਸਾਰੀਸ, ਰਬਸ਼ਾਕੇਹ at L only; exile ਦੇਸ਼
   ਨਿਕਾਲਾ (L, B), ਬੰਦੀ ਬਣਾ ਕੇ ਲੈ ਜਾਣਾ (R); Chaldeans ਕਸਦੀ (L, B), ਬਾਬਲੀ
   (R); vassal ਦਾਸ (L), ਅਧੀਨ ਰਾਜਾ (B); skin disease ਚਮੜੀ ਦਾ ਭੈੜਾ ਰੋਗ.
 - Units: talents and shekels carry units spans at B and R (talent about 34
@@ -1600,7 +1601,7 @@ People and places: ਪੌਲੁਸ, ਤੁਖਿਕੁਸ; ਅਫ਼ਸੁਸ, �
   `{{units:ਲਗਭਗ 35 ਲੀਟਰ|ਪੰਜ ਸਆਹ}}` (B, R).
 - Hesed: covenant loyalty ਅਟੱਲ ਪਿਆਰ at every level (20:8, 14-15), matching
   2 Samuel 9; kindness outside a covenant ਦਇਆ at B, R (15:6). The prophets
-  (Hosea, Lamentations, Zechariah) use ਅਟੱਲ ਪ੍ਰੇਮ; worth unifying in review.
+  (Hosea, Lamentations, Zechariah) now use ਅਟੱਲ ਪਿਆਰ too.
 - The LORD's anointed: {DN} ਦਾ ਮਸਹ ਕੀਤਾ ਹੋਇਆ (L, B), ਉਹ ਰਾਜਾ ਜਿਸ ਨੂੰ {DN}
   ਨੇ ਮਸਹ ਕੀਤਾ ਹੈ (R), in 24, 26 and 2 Samuel 1.
 - Gender spans: sons of Israel at L only; fathers `{{gender:ਵੱਡ-ਵਡੇਰਿਆਂ|ਪਿਉ-ਦਾਦਿਆਂ}}`
@@ -1682,8 +1683,8 @@ People and places: ਪੌਲੁਸ, ਤੁਖਿਕੁਸ; ਅਫ਼ਸੁਸ, �
 - Names: ਅਦੋਨੀਯਾਹ, ਅਬਯਾਥਾਰ, ਬਥ-ਸ਼ਬਾ, ਗੀਹੋਨ, ਗਿਬਓਨ, ਹੀਰਾਮ, ਸ਼ਬਾ, ਰਹਬੁਆਮ,
   ਯਾਰਾਬੁਆਮ, ਨਬਾਟ, ਅਹੀਯਾਹ, ਸ਼ੀਲੋਹ, ਤਿਰਸਾਹ, ਨਾਦਾਬ, ਨਾਮਾਹ ਅੰਮੋਨਣ, ਅਬੀਯਾਮ,
   ਸ਼ੀਸ਼ਕ, ਮਾਕਾਹ, ਅਬੀਸ਼ਾਲੋਮ, ਆਸਾ, ਬਆਸ਼ਾ, ਬਨ-ਹਦਦ, ਤਬਰਿੰਮੋਨ, ਹਜ਼ਯੋਨ,
-  ਆਬੇਲ-ਬੈਤ-ਮਾਕਾਹ, ਕਿੰਨਰੋਥ, ਯਹੋਸ਼ਾਫ਼ਾਤ (ਯਹੋਸ਼ਾਫ਼ਾਟ in 2 Samuel, worth
-  unifying), ਗਿੱਬਥੋਨ, ਯੇਹੂ, ਹਨਾਨੀ, ਏਲਾਹ, ਜ਼ਿਮਰੀ, ਆਮਰੀ, ਤਿਬਨੀ, ਸਾਮਰਿਯਾ,
+  ਆਬੇਲ-ਬੈਤ-ਮਾਕਾਹ, ਕਿੰਨਰੋਥ, ਯਹੋਸ਼ਾਫ਼ਾਤ (now the
+  spelling in every book), ਗਿੱਬਥੋਨ, ਯੇਹੂ, ਹਨਾਨੀ, ਏਲਾਹ, ਜ਼ਿਮਰੀ, ਆਮਰੀ, ਤਿਬਨੀ, ਸਾਮਰਿਯਾ,
   ਅਹਾਬ, ਈਜ਼ਬਲ, ਅਥਬਆਲ, ਹੀਏਲ, ਏਲੀਯਾਹ ਤਿਸ਼ਬੀ, ਕਰੀਥ, ਸਾਰਫ਼ਥ, ਓਬਦਯਾਹ, ਕਰਮਲ,
   ਕੀਸ਼ੋਨ, ਯਿਜ਼ਰਏਲ, ਬਏਰਸ਼ਬਾ, ਹੋਰੇਬ, ਹਜ਼ਾਏਲ, ਨਿਮਸ਼ੀ, ਅਲੀਸ਼ਾ, ਸ਼ਾਫ਼ਾਟ,
   ਆਬੇਲ-ਮਹੋਲਾਹ, ਅਫ਼ੇਕ, ਨਾਬੋਥ ਯਿਜ਼ਰਏਲੀ, ਰਾਮੋਥ-ਗਿਲਆਦ, ਮੀਕਾਯਾਹ, ਯਿਮਲਾ,
@@ -1722,17 +1723,17 @@ People and places: ਪੌਲੁਸ, ਤੁਖਿਕੁਸ; ਅਫ਼ਸੁਸ, �
   R; cors {{units:ਲਗਭਗ 22 ਲੱਖ ਲੀਟਰ|10,000 ਕੋਰ}}. Numbers use Indian
   grouping (1,20,000).
 - Places: Kidron ਕਿਦਰੋਨ ਨਾਲਾ (L), ਕਿਦਰੋਨ ਵਾਦੀ (B, R); Valley of
-  Ben-hinnom ਬਨ-ਹਿੰਨੋਮ ਦੀ ਵਾਦੀ; Upper Gate ਉੱਪਰਲਾ ਫਾਟਕ (2 Kings has ਉਤਲਾ;
-  a reviewer should pick one); Fish Gate ਮੱਛੀ ਫਾਟਕ; Carchemish ਕਰਕਮੀਸ਼;
+  Ben-hinnom ਬਨ-ਹਿੰਨੋਮ ਦੀ ਵਾਦੀ; Upper Gate ਉੱਪਰਲਾ ਫਾਟਕ (2 Kings 15 now
+  matches); Fish Gate ਮੱਛੀ ਫਾਟਕ; Carchemish ਕਰਕਮੀਸ਼;
   Euphrates ਫ਼ਰਾਤ; Megiddo ਮਗਿੱਦੋ; Persia ਫ਼ਾਰਸ.
 - Names: Huram ਹੂਰਾਮ, Huram-abi ਹੂਰਾਮ-ਅਬੀ; Abijah ਅਬੀਯਾਹ; Jehoshaphat
-  ਯਹੋਸ਼ਾਫ਼ਾਤ (2 Samuel and Joel spell ਯਹੋਸ਼ਾਫ਼ਾਟ); Joash ਯੋਆਸ਼ (2 Kings 14
+  ਯਹੋਸ਼ਾਫ਼ਾਤ (every book now spells it so); Joash ਯੋਆਸ਼ (2 Kings 14
   has ਯਹੋਆਸ਼ for the king of Israel); Uzziah ਉੱਜ਼ੀਯਾਹ; Hezekiah ਹਿਜ਼ਕੀਯਾਹ;
   Isaiah's father Amoz ਆਮੋਸ; Tiglath-pileser ਤਿਲਗਥ-ਪਿਲਨਸਰ (L),
   ਤਿਗਲਥ-ਪਿਲਆਸਰ (B, R); Neco ਨਕੋ; Huldah ਹੁਲਦਾਹ, with Tokhath ਤੋਖਤ and
   Hasrah ਹਸਰਾਹ (2 Kings 22 has Tikvah and Harhas); Abdon son of Micah
   ਅਬਦੋਨ, ਮੀਕਾਹ; Jehoahaz ਯਹੋਆਹਾਜ਼ (also for the short form Joahaz, 36:2);
   Cyrus ਕੋਰਸ਼, as in Ezra 1.
-- Reviewer questions: ਦੇਸ and ਦੇਸ਼ are mixed across the historical books
-  (2 Chronicles writes ਦੇਸ); 36:22-23 repeats Ezra 1:1-3 and its L and B
+- Reviewer questions: ਦੇਸ਼ and ਦੇਸ਼ are mixed across the historical books
+  (2 Chronicles writes ਦੇਸ਼); 36:22-23 repeats Ezra 1:1-3 and its L and B
   wording follows Ezra's Punjabi.
