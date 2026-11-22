@@ -740,6 +740,13 @@ var OWBAdminNav = (function () {
       touched = false;
       if (was) carry(was);
       if (moved && main.getBoundingClientRect().top < 0) window.scrollTo(0, 0);
+      // A new section: its heading takes focus, so a screen reader says
+      // where you are and the keyboard starts there (not on a redraw of the
+      // same section, such as a search as you type).
+      if (moved && !was) {
+        var heading = main.querySelector("h1");
+        if (heading) { heading.setAttribute("tabindex", "-1"); heading.focus({ preventScroll: true }); }
+      }
     }
     var draw = VIEWS[name];
     Promise.resolve().then(function () { return draw(arg); }).then(function (nodes) {
@@ -1005,10 +1012,11 @@ var OWBAdminNav = (function () {
             h("td", { class: "admin-num" }, num(b.sentences)),
             langs.map(function (l) {
               var c = b.languages[l.code];
-              return h("td", { class: "admin-cell" }, h("span", {
-                class: "admin-state " + c.state,
-                title: l.name + ": " + STATE_LABEL[c.state] + " (" + num(c.sentences) + " of " + num(b.sentences) + " sentences)"
-              }, c.state === "none" ? "" : c.state === "drafted" ? "✓" : pct(c.sentences, b.sentences) + "%"));
+              var said = l.name + ": " + STATE_LABEL[c.state] + " (" + num(c.sentences) + " of " + num(b.sentences) + " sentences)";
+              // The colour and mark for the eye; the same words as the tooltip for a screen reader.
+              return h("td", { class: "admin-cell" }, h("span", { class: "admin-state " + c.state, title: said },
+                h("span", { "aria-hidden": "true" }, c.state === "none" ? "" : c.state === "drafted" ? "✓" : pct(c.sentences, b.sentences) + "%"),
+                h("span", { class: "sr-only" }, said)));
             }));
         });
         var done = function (code) {
@@ -1063,8 +1071,9 @@ var OWBAdminNav = (function () {
           langs.map(function (l) {
             var n = c.languages[l.code];
             var state = !n ? "none" : n >= c.sentences ? "drafted" : "partial";
-            return h("td", { class: "admin-cell" }, h("span", { class: "admin-state " + state, title: l.name + ": " + num(n) + " of " + num(c.sentences) },
-              state === "drafted" ? "✓" : n ? num(n) : ""));
+            var said = l.name + ": " + num(n) + " of " + num(c.sentences);
+            return h("td", { class: "admin-cell" }, h("span", { class: "admin-state " + state, title: said },
+              h("span", { "aria-hidden": "true" }, state === "drafted" ? "✓" : n ? num(n) : ""), h("span", { class: "sr-only" }, said)));
           }));
       });
       var uncertain = Object.keys(b.uncertain).map(function (k) {

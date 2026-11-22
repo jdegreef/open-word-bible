@@ -6708,7 +6708,7 @@ def admin_page():
     body = f"""
 <div class="admin" id="admin" data-site="{html.escape(SITE_URL)}" data-github="{html.escape(GITHUB_URL)}">
 <nav class="admin-rail" id="admin-rail" aria-label="Admin sections" hidden></nav>
-<section class="admin-main" id="admin-main" aria-live="polite">
+<section class="admin-main" id="admin-main">
 <header class="page-head compact">
 <p class="eyebrow">Admin</p>
 <h1>Open Word Bible admin</h1>
