@@ -262,16 +262,21 @@ class ColourModesTest(unittest.TestCase):
                 self.assertIn(var, line)
 
     def test_gear_menu_links_this_page_in_every_language(self):
-        menu = build_site.colour_menu("es", "/jhn/3/")
+        # The gear menu shows the header language menu's links (nav_script
+        # copies them in), so a page carries them once.
+        self.assertIn('<ul class="prefs-langs" aria-labelledby="prefs-lang" data-copy="lang-pop"></ul>',
+                      build_site.colour_menu("es", "/jhn/3/"))
+        menu = build_site.language_menu("es", "/jhn/3/")
+        self.assertIn('id="lang-pop"', menu)
         self.assertIn('<span lang="es" aria-current="true">Español', menu)
         for code in build_site.LANGUAGES:
             if code != "es":
                 self.assertIn(f'href="{build_site.url(code, "/jhn/3/")}" lang="{code}" hreflang="{code}" '
                               f'data-lang="{code}"', menu)
         # Without a path (the 404 page), each language's home page.
-        self.assertIn('href="/fr/" lang="fr"', build_site.colour_menu("en"))
+        self.assertIn('href="/fr/" lang="fr"', build_site.language_menu("en"))
         # From an article not in a language, that language's articles page.
-        menu = build_site.colour_menu("en", "/articles/x/", ("en", "es"))
+        menu = build_site.language_menu("en", "/articles/x/", ("en", "es"))
         self.assertIn('href="/es/articles/x/" lang="es"', menu)
         self.assertIn('href="/fr/articles/" lang="fr"', menu)
 

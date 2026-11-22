@@ -16,6 +16,14 @@ from owb import crossrefs  # noqa: E402
 from tests.site_build import built_site, page_data, sitemap_text  # noqa: E402
 
 
+
+def nav_menus_in(out, lang, whole=True):
+    """The header's dropdown panels in lang, from the built nav-<lang>.js
+    (build_site.nav_script): {key: html}, or with whole all of them as one."""
+    script = (out / f"nav-{lang}.js").read_text(encoding="utf-8")
+    menus = json.loads(script[len("window.OWB_NAV="):script.index(";\n")])
+    return "".join(menus.values()) if whole else menus
+
 class SiteTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -702,8 +710,9 @@ class SiteTest(unittest.TestCase):
         for heading in ("Our vision", "Our mission", "What guides the work"):
             self.assertIn(f"<h2>{heading}</h2>", page)
         self.assertEqual(page.count("<li><strong>"), 5)
-        # The About menu and the footer both link to it.
-        self.assertGreaterEqual(page.count('href="/about/beliefs/"'), 2)
+        # The About menu (nav-en.js) and the footer both link to it.
+        self.assertIn('href="/about/beliefs/"', nav_menus_in(self.out, "en"))
+        self.assertIn('href="/about/beliefs/"', re.search(r"<footer.*?</footer>", page, re.S)[0])
 
     def test_privacy_and_terms_of_use_pages(self):
         privacy = (self.out / "about" / "privacy" / "index.html").read_text(encoding="utf-8")
@@ -914,41 +923,51 @@ class SiteTest(unittest.TestCase):
         header = re.search(r'<header class="site">(.*?)</header>', home, re.S)[1]
         for key in ("read", "articles", "about"):
             self.assertIn(f'aria-controls="dd-{key}"', header)
-            self.assertIn('<div class="dropdown', header)
+            # The panels are empty in the page: nav-<lang>.js fills them.
+            self.assertIn(f'id="dd-{key}" hidden></div>', header)
+        script_url = build_site.nav_script("en")[1]
+        self.assertIn(f'<script src="{script_url}" defer></script>\n<script src="{build_site.asset("site.js")}"', home)
+        script = (self.out / "nav-en.js").read_text(encoding="utf-8")
+        menus = nav_menus_in(self.out, "en", whole=False)
+        self.assertEqual(list(menus), ["read", "articles", "about"])
         # A line per book, linking to its chapters on the Read page.
-        self.assertIn('href="/read/#jhn"', header)
-        self.assertIn('href="/read/#php"', header)
-        self.assertNotIn('class="chap', header)
+        read, about = menus["read"], menus["about"]
+        self.assertIn('href="/read/#jhn"', read)
+        self.assertIn('href="/read/#php"', read)
+        self.assertNotIn('class="chap', read)
         # Continue reading heads the Read menu, hidden until web/site.js
         # finds a place; GitHub is under About, not a header button.
-        read_panel = header[header.index('id="dd-read"'):header.index('id="dd-articles"')]
-        self.assertIn('<a class="dd-resume" data-resume hidden', read_panel)
+        self.assertIn('<a class="dd-resume" data-resume hidden', read)
         self.assertNotIn(f'class="tool-btn" href="{build_site.GITHUB_URL}"', header)
-        about_panel = header[header.index('id="dd-about"'):]
-        self.assertIn(f'href="{build_site.GITHUB_URL}"', about_panel)
+        self.assertIn(f'href="{build_site.GITHUB_URL}"', about)
         # ...grouped by testament, Old before New.
-        read = header[header.index('id="dd-read"'):header.index('id="dd-articles"')]
         self.assertLess(read.index(">Old Testament<"), read.index('href="/read/#gen"'))
         self.assertLess(read.index('href="/read/#gen"'), read.index(">New Testament<"))
         self.assertLess(read.index(">New Testament<"), read.index('href="/read/#jhn"'))
         # The first few articles of each section, and a link to the rest.
+        arts = menus["articles"]
         articles_ = sorted(build_site.load_articles(), key=lambda a: a["order"])
         for key in build_site.SECTIONS:
             section = [a for a in articles_ if a["section"] == key]
             for i, a in enumerate(section):
-                linked = f'href="{build_site.article_url(a)}"' in header
+                linked = f'href="{build_site.article_url(a)}"' in arts
                 self.assertEqual(linked, i < build_site.MENU_ARTICLES, a["slug"])
             if len(section) > build_site.MENU_ARTICLES:
-                self.assertIn(f'href="/articles/#{key}"', header)
-        self.assertNotIn("min read", header)
+                self.assertIn(f'href="/articles/#{key}"', arts)
+        self.assertNotIn("min read", arts)
         # The current section's trigger is marked on its pages.
         articles = (self.out / "articles" / "index.html").read_text(encoding="utf-8")
         self.assertRegex(articles, r'class="nav-link nav-trigger active"[^>]*aria-controls="dd-articles"')
-        # ...and the dropdown link to the page itself tells a screen reader.
-        chapter = (self.out / "jhn" / "1" / "index.html").read_text(encoding="utf-8")
-        chapter_header = re.search(r'<header class="site">(.*?)</header>', chapter, re.S)[1]
-        self.assertIn('data-book="jhn" aria-current="true"', chapter_header)
-        self.assertNotIn('data-book="php" aria-current', chapter_header)
+        # ...and the script marks the dropdown link to the page itself, and
+        # a chapter's book, for a screen reader (data-book).
+        self.assertIn('data-book="jhn"', read)
+        self.assertIn('aria-current", "true"', script)
+        self.assertIn('aria-current", "page"', script)
+        # Every language has its own, kept for offline reading.
+        sw = (self.out / "sw.js").read_text(encoding="utf-8")
+        for lang in build_site.LANGUAGES:
+            self.assertTrue((self.out / f"nav-{lang}.js").is_file(), lang)
+            self.assertIn(build_site.nav_script(lang)[1], sw)
 
     def test_interface_fonts_are_self_hosted_with_their_licences(self):
         css = (self.out / "style.css").read_text(encoding="utf-8")
@@ -1003,7 +1022,7 @@ class SiteTest(unittest.TestCase):
             shown = {(p.book, p.chapter) for p in build_site.passages_in(lang)}
             books = {b for b, _ in shown}
             read = (self.out / build_site.url(lang, "/read/").lstrip("/") / "index.html").read_text(encoding="utf-8")
-            header = re.search(r"<header.*?</header>", read, re.S)[0]
+            header = nav_menus_in(self.out, lang)  # the header's dropdowns
             footer = re.search(r"<footer.*?</footer>", read, re.S)[0]
             for p in build_site.passages():
                 self.assertEqual(f'id="{p.book.lower()}"' in read, p.book in books, (lang, p.book))
