@@ -5,7 +5,7 @@ date: 2026-11-14
 order: 110
 nav_title: Santos
 section: passage
-source: 446f538f4b8d
+source: c8698cc2a5aa
 ---
 La carta de Pablo a los Filipenses empieza con un saludo que la Reina-Valera da como «á todos los santos en Cristo Jesús que están en Filipos», y la versión King James, «to all the saints in Christ Jesus which are at Philippi». Un lector de hoy puede imaginar un pequeño grupo de cristianos excepcionales, de esos cuyos nombres llevan las iglesias y cuyos rostros aparecen en las vidrieras. Pablo se refería a todos los creyentes de la ciudad, incluidas las dos mujeres del capítulo 4 a las que ruega que dejen de pelearse.
 
@@ -69,7 +69,7 @@ En la Biblia hebrea, el plural de *qadosh*, «santo», hace algo distinto. Lo m�
 
 > {{OWB:JOB.5.1.s1:B}}
 
-La decisión de significado explica que «"santos" es un nombre para los seres que están alrededor de Dios en el cielo (Job 15:15; Salmo 89:6, 8; Zacarías 14:5)». Por eso la Equilibrada española dice aquí «los seres santos», y la Sencilla, «los seres celestiales», porque «santos» por sí solo podría entenderse como personas santas en la tierra. En el Salmo 89:6, la Literal y la Equilibrada dicen «la asamblea de los santos» y la Sencilla dice «los ángeles del cielo».
+La decisión de significado explica que «"santos" es un nombre para los seres que están alrededor de Dios en el cielo (Job 15:15; Salmo 89:5, 7; Zacarías 14:5)». Por eso la Equilibrada española dice aquí «los seres santos», y la Sencilla, «los seres celestiales», porque «santos» por sí solo podría entenderse como personas santas en la tierra. En el Salmo 89:6, la Literal y la Equilibrada dicen «la asamblea de los santos» y la Sencilla dice «los ángeles del cielo».
 
 Pero a veces los santos son el pueblo de Dios en la tierra, como en el Salmo 34:
 
