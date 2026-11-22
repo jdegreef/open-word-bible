@@ -23,7 +23,7 @@ from datetime import timedelta
 from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.core.cache import cache
-from django.db.models import Count, Max, Q
+from django.db.models import Count, Max, Q, Sum
 from django.db.models.functions import TruncWeek
 from django.utils import timezone
 from rest_framework.exceptions import NotFound
@@ -34,12 +34,12 @@ from feedback.models import ReaderMessage
 from owb import languages, refs
 from texts.models import Edition
 from translation import counts
-from translation.models import ContentFile, Decision, ImportRun, Rendering, Sentence
+from translation.models import ContentFile, Decision, DraftedCount, ImportRun, Rendering, ReviewEvent, Sentence
 
-from . import inbox
+from . import assignments, inbox
 from .models import AdminAction
 from .permissions import admin_view
-from .review import open_flags
+from .review import open_flag_count
 
 log = logging.getLogger(__name__)
 
@@ -56,6 +56,18 @@ def book_name(code):
 def _languages():
     return [{"code": code, "name": lang["name"], "native": lang["native"]}
             for code, lang in languages.READING.items()]
+
+
+def _stamps():
+    """(content, review): strings that change when a sentence is added or
+    saved again (import_content saves a sentence, bumping its updated_at,
+    whenever its renderings change), when the drafted counts change
+    (import_content, `manage.py recount_drafted`), and when a review is
+    made. Cache keys for what is counted from them."""
+    stamp = Sentence.objects.aggregate(n=Count("id"), t=Max("updated_at"))
+    drafted = DraftedCount.objects.aggregate(n=Sum("sentences"))["n"] or 0
+    content = "{}.{}.{}".format(stamp["n"], stamp["t"].timestamp() if stamp["t"] else 0, drafted)
+    return content, f"{content}.{ReviewEvent.objects.aggregate(i=Max('id'))['i'] or 0}"
 
 
 def _by_book():
@@ -230,11 +242,13 @@ def health(request):
 def engagement(request):
     """Totals over what accounts already keep (bookmarks, highlights,
     reading places, devices). The site itself records nothing about reading
-    (see the privacy page), so readers without an account are not counted."""
-    User = get_user_model()
+    (see the privacy page), so readers without an account are not counted,
+    and nor are system accounts (accounts/system.py)."""
+    from accounts.system import people
+    readers = people()
     now = timezone.now()
     since = now - timedelta(weeks=12)
-    signups = (User.objects.filter(date_joined__gte=since).annotate(week=TruncWeek("date_joined"))
+    signups = (readers.filter(date_joined__gte=since).annotate(week=TruncWeek("date_joined"))
                .values("week").annotate(n=Count("id")).order_by("week"))
     marks = Mark.objects.aggregate(bookmarks=Count("id", filter=Q(bookmark=True)),
                                    highlights=Count("id", filter=~Q(highlight="")),
@@ -245,9 +259,9 @@ def engagement(request):
         by_book[code] = by_book.get(code, 0) + row["n"]
     places = ReadingPlace.objects.values("book").annotate(n=Count("id")).order_by("-n")[:12]
     return Response({
-        "accounts": User.objects.count(),
-        "active_30": User.objects.filter(last_login__gte=now - timedelta(days=30)).count(),
-        "active_7": User.objects.filter(last_login__gte=now - timedelta(days=7)).count(),
+        "accounts": readers.count(),
+        "active_30": readers.filter(last_login__gte=now - timedelta(days=30)).count(),
+        "active_7": readers.filter(last_login__gte=now - timedelta(days=7)).count(),
         "devices_30": ApiToken.objects.filter(last_used_at__gte=now - timedelta(days=30)).count(),
         "signups": [{"week": row["week"].date().isoformat(), "accounts": row["n"]} for row in signups],
         "marks": marks,
@@ -260,14 +274,50 @@ def engagement(request):
     })
 
 
+def _summary():
+    """The dashboard's numbers that are the same for every account, cached
+    until the content changes or a review is made: the totals, each
+    language's sentences, books not started or partly drafted, and the
+    open flags."""
+    stamps = _stamps()
+    key = f"staff.overview.{stamps[1]}"
+    out = cache.get(key)
+    if out is not None:
+        return out
+    books = _coverage()
+    statuses = {}
+    for b in books:
+        for status, n in b["statuses"].items():
+            statuses[status] = statuses.get(status, 0) + n
+    out = {
+        "totals": {
+            "sentences": sum(b["sentences"] for b in books),
+            "books_started": sum(1 for b in books if b["sentences"]),
+            "books_drafted": sum(1 for b in books if b["languages"]["en"]["state"] == "drafted"),
+            "books": len(books),
+            "chapters_drafted": sum(b["chapters_drafted"] for b in books),
+            "chapters": sum(CHAPTERS.values()),
+            "statuses": statuses,
+        },
+        "languages": [{**lang, "sentences": sum(b["languages"][lang["code"]]["sentences"] for b in books)}
+                      for lang in _languages()],
+        "not_started": sum(1 for b in books if not b["sentences"]),
+        "partial": sum(1 for b in books if b["sentences"] and b["chapters_drafted"] < b["chapters"]),
+        "flags": open_flag_count(),
+    }
+    cache.set(key, out, 7 * 86400)
+    return out
+
+
 @admin_view("overview")
 def overview(request):
     """The dashboard. What needs attention comes first, each item linking to
     the admin page that deals with it; areas the account can't open are
-    left out."""
+    left out. The numbers about the translation come from _summary; the
+    inbox, the team and the last import are read as they are (each a
+    query on an index)."""
     mine = request.admin_areas
-    books = _coverage()
-    sentences = sum(b["sentences"] for b in books)
+    summary = _summary()
     attention = []
     if "inbox" in mine:
         waiting = ReaderMessage.objects.filter(status=ReaderMessage.Status.NEW).aggregate(
@@ -284,11 +334,17 @@ def overview(request):
         if waiting["mine"]:
             attention.append({"key": "inbox_mine", "count": waiting["mine"], "tone": "warn",
                               "label": "reader messages assigned to you", "href": "#inbox/mine"})
-    if "inbox" in mine:
-        flagged = len(open_flags())
-        if flagged:
-            attention.append({"key": "flags", "count": flagged, "tone": "hot",
+        if summary["flags"]:
+            attention.append({"key": "flags", "count": summary["flags"], "tone": "hot",
                               "label": "sentences flagged by reviewers", "href": "#flags"})
+    if "review" in mine:
+        assigned, overdue = assignments.attention(request.user)
+        if overdue:
+            attention.append({"key": "assigned_overdue", "count": overdue, "tone": "hot",
+                              "label": "review assignments past their date", "href": "#workspace"})
+        if assigned:
+            attention.append({"key": "assigned", "count": assigned, "tone": "warn",
+                              "label": "review assignments assigned to you", "href": "#workspace"})
     if "team" in mine:
         pending = (get_user_model().objects.filter(last_login__isnull=True, roles__isnull=False)
                    .distinct().count())
@@ -302,33 +358,18 @@ def overview(request):
     elif last and last.skipped:
         attention.append({"key": "import", "count": len(last.skipped), "tone": "warn",
                           "label": "content files skipped for a missing source text", "href": "#health"})
-    not_started = sum(1 for b in books if not b["sentences"])
-    if not_started:
-        attention.append({"key": "books", "count": not_started, "tone": "info",
+    if summary["not_started"]:
+        attention.append({"key": "books", "count": summary["not_started"], "tone": "info",
                           "label": "books not started in English", "href": "#coverage"})
-    partial = sum(1 for b in books if b["sentences"] and b["chapters_drafted"] < b["chapters"])
-    if partial:
-        attention.append({"key": "partial", "count": partial, "tone": "info",
+    if summary["partial"]:
+        attention.append({"key": "partial", "count": summary["partial"], "tone": "info",
                           "label": "books partly drafted", "href": "#coverage"})
     activity = []
     if "team" in mine:
         activity = [_action_json(a) for a in AdminAction.objects.all()[:8]]
-    statuses = {}
-    for b in books:
-        for status, n in b["statuses"].items():
-            statuses[status] = statuses.get(status, 0) + n
     return Response({
-        "totals": {
-            "sentences": sentences,
-            "books_started": sum(1 for b in books if b["sentences"]),
-            "books_drafted": sum(1 for b in books if b["languages"]["en"]["state"] == "drafted"),
-            "books": len(books),
-            "chapters_drafted": sum(b["chapters_drafted"] for b in books),
-            "chapters": sum(CHAPTERS.values()),
-            "statuses": statuses,
-        },
-        "languages": [{**lang, "sentences": sum(b["languages"][lang["code"]]["sentences"] for b in books)}
-                      for lang in _languages()],
+        "totals": summary["totals"],
+        "languages": summary["languages"],
         "attention": attention,
         "activity": activity,
         "last_import": _run_json(last) if last else None,

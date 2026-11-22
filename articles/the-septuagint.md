@@ -36,7 +36,7 @@ The early church was mostly Greek-speaking, and its Bible was the Greek Old Test
 - **Hebrews 10:5** quotes Psalm 40:6 as "you prepared a body for me," following the Septuagint, where the Hebrew reads "ears you have dug for me."
 - **Acts 15:16–17** has James quote Amos 9:11–12 in a form close to the Septuagint, which speaks of "the rest of men" seeking the Lord, where the Masoretic text speaks of possessing "the remnant of Edom." The Hebrew words for "Edom" and "mankind" differ by one vowel letter.
 
-Open Word Bible's records show this kind of difference in both directions. In Psalm 40 (verse 7 in the Hebrew numbering, verse 6 in most English Bibles), the Old Testament is translated from the Hebrew:
+Open Word Bible's records show this kind of difference in both directions. In Psalm 40 (verse 6, verse 7 in Hebrew Bibles), the Old Testament is translated from the Hebrew:
 
 > {{OWB:PSA.40.7.s1:L}}
 

@@ -5,7 +5,7 @@ date: 2026-11-14
 order: 107
 nav_title: Kristo au Masihi
 section: passage
-source: a8da5637121a
+source: 92b071060a02
 ---
 Wasomaji wengi hukutana na neno "Kristo" muda mrefu kabla ya kujua maana yake. Linasikika kama jina la ukoo: Yesu Kristo, kama mtu angesema Yohana Mwangi. Kwa kweli ni cheo, na waandishi wa Agano Jipya walijua vizuri kabisa maana yake. Neno la Kigiriki {{LEMMA:JHN.1.41:18}} (*christos*) linamaanisha "aliyetiwa mafuta", nalo linatafsiri neno la Kiebrania *mashiach*, lililoingia katika Kiswahili kama "Masihi". Maneno haya mawili yanasema kitu kimoja, katika lugha mbili.
 
@@ -71,7 +71,7 @@ Aina tatu za maneno hazichukui mpangilio kamwe.
 
 **"Wakristo".** Jina walilopewa wanafunzi huko Antiokia ni neno jingine la Kigiriki, lililoundwa kutokana na *christos*. Ni jina la kundi, nalo linabaki "Wakristo".
 
-**"Aliyetiwa mafuta" katika Agano la Kale.** Hapa toleo la Kiswahili linatofautiana kidogo na lile la Kiingereza. Kiingereza kinasema "anointed" katika kila kiwango. Halisi ya Kiswahili inabakiza neno la Kiebrania lenyewe, kwa herufi ndogo: "masihi wa BWANA" (1 Samweli 24:7), "masihi wake" (Zaburi 2:2). Uamuzi wa maneno unaeleza kwamba herufi ndogo zinaonyesha kwamba neno linataja kupakwa mafuta kwa mfalme huyo, si bado cheo. Linganifu na Rahisi zinasema yeye ni nani: "mfalme wa BWANA aliyempaka mafuta", "mfalme wake aliyempaka mafuta", ili wasomaji wasilichukue "Masihi" kama cheo cha baadaye cha Kristo. Hakuna mpangilio, kwa sababu katika mistari hii mingi neno linaeleza mfalme au kuhani fulani, na "Masihi" kama cheo lingedai zaidi ya kile mstari unachosema. Badala yake maamuzi ya maana yanaelekeza mbele. Katika Zaburi 18:51 rekodi inasema neno hili "ndilo lililo nyuma ya 'Masihi' na 'Kristo', na ahadi hiyo baadaye ilieleweka kumwelekea Masihi". Katika Danieli 9:25–26, ambapo "mtiwa mafuta" atakatiliwa mbali, uamuzi umewekewa alama ya kutokuwa na uhakika na unaorodhesha jinsi wasomaji walivyouelewa, kuanzia kuhani mkuu Onia wa Tatu hadi Yesu Masihi. Hilo ni swali la maana, na maana kamwe si mpangilio.
+**"Aliyetiwa mafuta" katika Agano la Kale.** Hapa toleo la Kiswahili linatofautiana kidogo na lile la Kiingereza. Kiingereza kinasema "anointed" katika kila kiwango. Halisi ya Kiswahili inabakiza neno la Kiebrania lenyewe, kwa herufi ndogo: "masihi wa BWANA" (1 Samweli 24:6), "masihi wake" (Zaburi 2:2). Uamuzi wa maneno unaeleza kwamba herufi ndogo zinaonyesha kwamba neno linataja kupakwa mafuta kwa mfalme huyo, si bado cheo. Linganifu na Rahisi zinasema yeye ni nani: "mfalme wa BWANA aliyempaka mafuta", "mfalme wake aliyempaka mafuta", ili wasomaji wasilichukue "Masihi" kama cheo cha baadaye cha Kristo. Hakuna mpangilio, kwa sababu katika mistari hii mingi neno linaeleza mfalme au kuhani fulani, na "Masihi" kama cheo lingedai zaidi ya kile mstari unachosema. Badala yake maamuzi ya maana yanaelekeza mbele. Katika Zaburi 18:50 rekodi inasema neno hili "ndilo lililo nyuma ya 'Masihi' na 'Kristo', na ahadi hiyo baadaye ilieleweka kumwelekea Masihi". Katika Danieli 9:25–26, ambapo "mtiwa mafuta" atakatiliwa mbali, uamuzi umewekewa alama ya kutokuwa na uhakika na unaorodhesha jinsi wasomaji walivyouelewa, kuanzia kuhani mkuu Onia wa Tatu hadi Yesu Masihi. Hilo ni swali la maana, na maana kamwe si mpangilio.
 
 ## Mpangilio, si tafsiri ya pili
 

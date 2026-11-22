@@ -4,7 +4,7 @@ summary: Ushairi wa Kiebrania hauna vina wala mizani maalum. Unafanya kazi kwa k
 date: 2026-10-17
 order: 91
 section: passage
-source: 5156c545083f
+source: 33a2ce8c8dd9
 ---
 Fungua karibu zaburi yoyote nawe utaona kwamba inaonekana kusema mambo mara mbili. Zaburi 19 inaanza hivi:
 
@@ -26,7 +26,7 @@ Hii ni zawadi kwa watafsiri. Vina na mizani hupotea shairi linapotoka katika lug
 
 ## Mistari inayorudia
 
-Aina ya kwanza ya Lowth ni usambamba *wa visawe* (*synonymous*), ambapo mstari wa pili unarudia wa kwanza. Zaburi 19:2 ni mfano. Ndivyo ilivyo malalamiko ya Isaya mwanzoni mwa kitabu chake:
+Aina ya kwanza ya Lowth ni usambamba *wa visawe* (*synonymous*), ambapo mstari wa pili unarudia wa kwanza. Zaburi 19:1 ni mfano. Ndivyo ilivyo malalamiko ya Isaya mwanzoni mwa kitabu chake:
 
 > {{OWB:ISA.1.3.s1:B}}
 
@@ -58,7 +58,7 @@ Mmojawapo unaovutia zaidi ni "ngazi", ambapo kipande kinaanza, kinakatika, na ku
 
 > {{OWB:PSA.93.3.s1:B}}
 
-Rekodi inauita mstari unaorudiwa na kukua kila mara, kama mawimbi yanayoinuka. Zaburi 92:10 inafanya vivyo hivyo na adui za BWANA ("Tazama adui zako, Ee BWANA! Tazama, adui zako wataangamia"), na rekodi huko inautaja kuwa mtindo wa ushairi wa Kiebrania.
+Rekodi inauita mstari unaorudiwa na kukua kila mara, kama mawimbi yanayoinuka. Zaburi 92:9 inafanya vivyo hivyo na adui za BWANA ("Tazama adui zako, Ee BWANA! Tazama, adui zako wataangamia"), na rekodi huko inautaja kuwa mtindo wa ushairi wa Kiebrania.
 
 Aina nyingine ya kujenga ni msogeo ndani ya Zaburi 1:1:
 
@@ -117,9 +117,9 @@ Kazi haijakamilika. Vitabu vingi tayari vimepangwa kwa mistari, vikiwemo Mithali
 
 ## Neno kuhusu namba za mistari
 
-Wasomaji wanaolinganisha Open Word Bible na Biblia nyingine wataona kwamba baadhi ya mistari ya zaburi ina namba iliyo juu kwa moja. Zaburi nyingi zina kichwa, kama "Kwa kiongozi wa waimbaji. Zaburi ya Daudi." Biblia ya Kiebrania inakihesabu kichwa hicho kama mstari wa 1, au kama sehemu yake. Biblia nyingi za Kiingereza huchapisha kichwa bila namba na kuanza kuhesabu na shairi.
+Wasomaji wanaolinganisha Open Word Bible na Biblia ya Kiebrania wataona kwamba mistari mingi ya zaburi ina namba iliyo chini kwa moja hapa. Zaburi nyingi zina kichwa, kama "Kwa kiongozi wa waimbaji. Zaburi ya Daudi." Biblia ya Kiebrania inakihesabu kichwa hicho kama mstari wa 1, au kama sehemu yake. Biblia nyingi za Kiingereza huchapisha kichwa bila namba na kuanza kuhesabu na shairi.
 
-Open Word Bible inafuata namba za Kiebrania. Ndiyo sababu Zaburi 19:2 hapa ni mstari ambao Biblia nyingi za Kiingereza zinauita 19:1. Pale kichwa kifupi kinaposhiriki mstari wake na kipande cha kwanza, kama katika Zaburi 23 na 24, namba zinatoka sawa kwa njia zote mbili, na rekodi zinasema hivyo.
+Open Word Bible inaipa mistari namba kama NIV inavyofanya, na kichwa bila namba. Ndiyo sababu Zaburi 19:1 hapa ni 19:2 katika Biblia ya Kiebrania. Pale kichwa kifupi kinaposhiriki mstari wake na kipande cha kwanza, kama katika Zaburi 23 na 24, namba zinatoka sawa kwa njia zote mbili, na rekodi zinasema hivyo.
 
 Kwa zaidi kuhusu jinsi sentensi moja inavyoweza kutolewa katika viwango vitatu bila kubadilisha maana yake, ona [Halisi, Linganifu, Rahisi: viwango vitatu, maana moja](/articles/three-levels-one-meaning/). Makala mbili zinazohusiana zinaangalia sifa nyingine za Kiebrania ambazo ni ngumu kuzihamishia katika lugha nyingine: [Njeo za vitenzi zisizo njeo](/articles/hebrew-verbs-and-time/) na [Michezo ya maneno isiyoweza kutafsiriwa](/articles/wordplay-that-cannot-be-translated/). Vichwa vilivyo juu ya zaburi nyingi vina makala yao wenyewe, [Sela na vichwa vya zaburi](/articles/selah-and-the-psalm-headings/).
 

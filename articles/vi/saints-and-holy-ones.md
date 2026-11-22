@@ -5,7 +5,7 @@ date: 2026-11-14
 order: 110
 nav_title: Thánh đồ và các đấng thánh
 section: passage
-source: 446f538f4b8d
+source: c8698cc2a5aa
 ---
 Thư Phao-lô gửi người Phi-líp mở đầu bằng một lời chào mà bản King James ghi là “to all the saints in Christ Jesus which are at Philippi”, “gửi tất cả các thánh đồ trong Đấng Christ Giê-xu ở Phi-líp”. Với chữ “saints”, một người đọc tiếng Anh ngày nay có thể hình dung một nhóm nhỏ Cơ Đốc nhân xuất chúng, những người có tên được đặt cho nhà thờ và có hình trên cửa kính màu. Phao-lô muốn nói đến mọi tín hữu trong thành, kể cả hai người phụ nữ ở chương 4 mà ông nài xin đừng cãi nhau nữa.
 
@@ -69,7 +69,7 @@ Trong Kinh Thánh Hê-bơ-rơ, số nhiều của *qadosh*, “thánh”, làm m
 
 > {{OWB:JOB.5.1.s1:B}}
 
-Quyết định về nghĩa giải thích rằng “‘các đấng thánh’ là tên gọi những hữu thể đứng chung quanh Đức Chúa Trời trên trời (Gióp 15:15; Thi Thiên 89:6, 8; Xa-cha-ri 14:5)”. Tiếng Việt có sẵn một từ cho điều này: cấp độ Sát nghĩa và Cân bằng nói “các đấng thánh”, khác với “thánh đồ” của Tân Ước. Cấp độ Dễ đọc nói “đấng nào ở trên trời”, vì chỉ nói “các đấng thánh” “có thể bị hiểu là những người thánh trên đất”. Ở Thi Thiên 89:6, cấp độ Sát nghĩa và Cân bằng nói “hội các đấng thánh”, và cấp độ Dễ đọc nói “các thiên sứ trên trời”.
+Quyết định về nghĩa giải thích rằng “‘các đấng thánh’ là tên gọi những hữu thể đứng chung quanh Đức Chúa Trời trên trời (Gióp 15:15; Thi Thiên 89:5, 7; Xa-cha-ri 14:5)”. Tiếng Việt có sẵn một từ cho điều này: cấp độ Sát nghĩa và Cân bằng nói “các đấng thánh”, khác với “thánh đồ” của Tân Ước. Cấp độ Dễ đọc nói “đấng nào ở trên trời”, vì chỉ nói “các đấng thánh” “có thể bị hiểu là những người thánh trên đất”. Ở Thi Thiên 89:5, cấp độ Sát nghĩa và Cân bằng nói “hội các đấng thánh”, và cấp độ Dễ đọc nói “các thiên sứ trên trời”.
 
 Nhưng đôi khi các đấng thánh lại là dân của Đức Chúa Trời trên đất, như trong Thi Thiên 34:
 

@@ -5,7 +5,7 @@ date: 2026-11-14
 order: 111
 nav_title: El propiciatorio
 section: passage
-source: 11837394ba09
+source: 1c83b4d3d4c8
 ---
 En la estancia más santa del santuario de Israel había un solo mueble: el arca, un cofre de madera recubierto de oro que guardaba las tablas del pacto. Encima tenía una plancha de oro puro con dos querubines de oro, con las alas extendidas sobre ella. Las Biblias españolas llaman a esa plancha «el propiciatorio»; las inglesas la llaman desde hace casi quinientos años «the mercy seat», «el asiento de la misericordia». Otras la llaman «la cubierta», «la tapa de la expiación» o simplemente «la tapa». La elección importa más de lo que parece, porque la misma familia de palabras va desde la tapa del arca hasta el centro de lo que el Nuevo Testamento enseña sobre la cruz.
 
@@ -53,7 +53,7 @@ El verbo que está detrás de *kapporet* es *kipper*, que el inglés suele tradu
 
 La palabra inglesa «atonement» tiene una historia curiosa: se formó a partir de «at one», «en uno», hacer que dos partes estén en uno, reconciliarlas. Tyndale hizo mucho por introducirla en la Biblia inglesa. La española «expiación» viene del latín *expiare*, purificar, borrar una culpa. Pero ¿qué significa el verbo hebreo? Los especialistas han propuesto tres imágenes principales, y los registros mantienen las tres a la vista.
 
-**Cubrir.** Jacob, con miedo de encontrarse con Esaú, envía regalos por delante para «cubrir su rostro», es decir, para aplacarlo, de modo que ya no vea la ofensa (Génesis 32:21). La decisión de significado señala allí que el verbo «es el que más tarde se usa para la expiación, cubrir o borrar una ofensa». Algunos salmos hablan de que Dios «cubre» el pecado: «tú cubres nuestras rebeliones» (Salmo 65:4, en la Equilibrada).
+**Cubrir.** Jacob, con miedo de encontrarse con Esaú, envía regalos por delante para «cubrir su rostro», es decir, para aplacarlo, de modo que ya no vea la ofensa (Génesis 32:20). La decisión de significado señala allí que el verbo «es el que más tarde se usa para la expiación, cubrir o borrar una ofensa». Algunos salmos hablan de que Dios «cubre» el pecado: «tú cubres nuestras rebeliones» (Salmo 65:3, en la Equilibrada).
 
 **Limpiar.** Levítico usa el verbo para la purificación del santuario mismo de la impureza del pueblo (16:16), y dice el propósito con claridad:
 

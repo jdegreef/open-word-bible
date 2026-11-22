@@ -1375,6 +1375,9 @@ body.plain .chapter-book { display: none; }
 .verse:hover { background: var(--accent-soft); }
 .verse[aria-current="true"] { background: var(--mark); }
 .verse.fallback { color: var(--muted); }
+/* A psalm's title (verse 0, unnumbered as in the NIV): a line of its own,
+   set off in italics above verse 1. */
+.verse.psalm-title { display: block; font-style: italic; margin-bottom: .35em; }
 /* Poetry (a rendering with \q line markers): each verse is a block of lines.
    A verse's first line starts at the margin, its later lines one step in;
    a line too long for the measure wraps two steps in, so a wrap never looks

@@ -5,7 +5,7 @@ date: 2026-10-11
 order: 29
 section: history
 part: ot
-source: 397bccee3ec5
+source: 4a87bb1931bd
 ---
 Bản dịch Kinh Thánh đầu tiên không do Cơ Đốc nhân thực hiện, và cũng không phải sang tiếng La-tinh hay tiếng Anh. Nó do người Do Thái thực hiện, ở Ai Cập, sang tiếng Hy Lạp, bắt đầu từ thế kỷ thứ ba TCN. Bản dịch ấy được gọi là **Septuagint**, tức **bản Bảy Mươi**, theo chữ La-tinh có nghĩa là “bảy mươi”, và nó là một trong những quyển sách quan trọng nhất trong lịch sử Kinh Thánh.
 
@@ -37,7 +37,7 @@ Hội thánh đầu tiên phần lớn nói tiếng Hy Lạp, và Kinh Thánh c�
 - **Hê-bơ-rơ 10:5** trích Thi Thiên 40:6 là “Ngài đã chuẩn bị một thân thể cho tôi”, theo bản Bảy Mươi, trong khi bản Hê-bơ-rơ đọc là “Ngài đã đào đôi tai cho tôi”.
 - **Công Vụ 15:16–17** ghi lại việc Gia-cơ trích A-mốt 9:11–12 dưới một hình thức gần với bản Bảy Mươi, nói về việc “những người còn lại trong loài người” tìm kiếm Chúa, trong khi văn bản Masorete nói về việc chiếm hữu “phần sót lại của Ê-đôm”. Các chữ Hê-bơ-rơ chỉ “Ê-đôm” và “loài người” chỉ khác nhau một chữ cái nguyên âm.
 
-Các bản ghi của Open Word Bible cho thấy loại khác biệt này theo cả hai chiều. Trong Thi Thiên 40 (câu 7 theo cách đánh số Hê-bơ-rơ, câu 6 trong phần lớn các bản Kinh Thánh tiếng Việt và tiếng Anh), Cựu Ước được dịch từ tiếng Hê-bơ-rơ:
+Các bản ghi của Open Word Bible cho thấy loại khác biệt này theo cả hai chiều. Trong Thi Thiên 40 (câu 6, câu 7 trong các bản Kinh Thánh Hê-bơ-rơ), Cựu Ước được dịch từ tiếng Hê-bơ-rơ:
 
 > {{OWB:PSA.40.7.s1:L}}
 

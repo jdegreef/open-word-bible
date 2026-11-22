@@ -17,7 +17,7 @@ Psalm 8 shows the phrase at work. The psalmist looks up at the night sky and won
 
 > {{OWB:PSA.8.5.s1:L}}
 
-That is the Literal level, with the reader's settings left as they are. The two halves of the verse say the same thing twice, as Hebrew poetry often does: "man" and "son of man" are parallel words for a human being, small and mortal under a vast sky. The meaning decision for the verse says just that. (English Bibles number this verse 8:4; Open Word Bible follows the Hebrew numbering, which counts the heading as verse 1.)
+That is the Literal level, with the reader's settings left as they are. The two halves of the verse say the same thing twice, as Hebrew poetry often does: "man" and "son of man" are parallel words for a human being, small and mortal under a vast sky. The meaning decision for the verse says just that. (This is 8:4, as in English Bibles; Hebrew Bibles count the heading as verse 1 and number it 8:5.)
 
 Because the phrase means any human being, man or woman, it falls under the reader's gender setting in this psalm. By default the Literal level says "a mortal", and a reader who prefers the traditional wording can switch the setting to see "the son of man". The setting changes the wording, not the meaning: both say "a human being". The traditional wording is kept as the alternative for a reason the record gives. Hebrews 2:6–8 quotes this psalm and reads it of Jesus, the one human being already "crowned with glory and honour". A reader comparing the two passages should be able to see the same words in both.
 

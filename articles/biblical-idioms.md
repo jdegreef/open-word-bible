@@ -41,7 +41,7 @@ What does it mean? The picture is of burning pain, but scholars disagree about w
 
 - Most often it is taken as the burning shame that undeserved kindness brings, which can lead the enemy to change.
 - Some point to an Egyptian text that describes a penitent carrying a basin of coals on the head, as a sign of repentance.
-- Others take it as judgment, since coals are elsewhere a picture of punishment (Psalm 140:11). On that reading, kindness heaps up the enemy's guilt if he stays hostile.
+- Others take it as judgment, since coals are elsewhere a picture of punishment (Psalm 140:10). On that reading, kindness heaps up the enemy's guilt if he stays hostile.
 
 The record follows the first reading, and notes that in Romans 12:20–21 the saying serves the call to overcome evil with good, which favors it. The record for Romans 12:20 reaches the same decision, adding that the judgment reading sits poorly with Paul's commands in verses 14 and 17–19 to bless persecutors and never repay evil for evil.
 
@@ -61,7 +61,7 @@ In Exodus, Pharaoh's heart is "hardened". In English this sounds like an emotion
 
 The record for Exodus 7:3 adds something an English reader cannot see. Exodus uses three different verbs for what happens to Pharaoh's heart: "make hard", "make strong" and "make heavy". All three describe a will set firmly against God's command. Sometimes God is the subject, sometimes Pharaoh himself, and sometimes the heart simply "is" hard or heavy. The footnote says that the text holds these together without explaining how.
 
-Open Word Bible keeps the verbs apart where it can. In Exodus 8:11 (8:15 in most English Bibles) Pharaoh himself is the subject, and the verb is the one from the root "heavy":
+Open Word Bible keeps the verbs apart where it can. In Exodus 8:15 (8:11 in Hebrew Bibles) Pharaoh himself is the subject, and the verb is the one from the root "heavy":
 
 > {{OWB:EXO.8.11.s1:L}}
 

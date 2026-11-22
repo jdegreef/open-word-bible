@@ -4,7 +4,7 @@ summary: Quando os apóstolos citam o Antigo Testamento, muitas vezes usam a Sep
 date: 2026-10-17
 order: 105
 section: passage
-source: 56441c83d73d
+source: 872c01310e33
 ---
 Os leitores que procuram uma citação do Antigo Testamento na sua própria Bíblia às vezes têm uma surpresa. Hebreus 10:5 cita o Salmo 40 dizendo "um corpo me preparaste". Abra o salmo, e ele diz algo como "abriste os meus ouvidos". Mateus cita Isaías dizendo "a virgem ficará grávida". Muitas Bíblias modernas têm "a jovem" em Isaías. Tiago, no concílio de Jerusalém, cita Amós sobre "o restante da humanidade" buscando o Senhor. Amós, no hebraico, fala de Israel tomando posse "do que restar de Edom".
 
@@ -40,15 +40,15 @@ Em Mateus, a decisão de sentido vai para o outro lado, porque a palavra do pró
 
 Há uma segunda diferença, menor. No hebraico, "ela chamará" o menino de Emanuel; na Septuaginta, "tu chamarás"; em Mateus, "chamarão". O nosso registro de Mateus 1:23 anota as três e entende o "chamarão" de Mateus como as pessoas em geral.
 
-Esse versículo é discutido há séculos, muitas vezes com amargura. Os registros não tentam resolver a discussão traduzindo um texto para combinar com o outro. Traduzem cada texto como está e dizem por que diferem. O registro de Isaías também observa o que os dois textos têm em comum: o sinal pertencia ao tempo do rei Acaz, e a promessa de Isaías vai mais longe, até um menino que reinará no trono de Davi (9:5–6).
+Esse versículo é discutido há séculos, muitas vezes com amargura. Os registros não tentam resolver a discussão traduzindo um texto para combinar com o outro. Traduzem cada texto como está e dizem por que diferem. O registro de Isaías também observa o que os dois textos têm em comum: o sinal pertencia ao tempo do rei Acaz, e a promessa de Isaías vai mais longe, até um menino que reinará no trono de Davi (9:6–7).
 
-## 2. "Um corpo me preparaste" (Hebreus 10:5; Salmo 40:7)
+## 2. "Um corpo me preparaste" (Hebreus 10:5; Salmo 40:6)
 
 Hebreus põe as palavras do Salmo 40 na boca de Cristo ao entrar no mundo. A nossa Equilibrada:
 
 > {{OWB:HEB.10.5.s1:B}}
 
-A palavra-chave é {{GREEK:HEB.10.5:12}} (*sōma*), "corpo". Mas o hebraico do salmo (40:7 na numeração hebraica, 40:6 na maioria das Bíblias) tem {{HEBREW:PSA.40.7:5-6}}, "ouvidos tu cavaste para mim". A nossa Literal do salmo mantém a imagem:
+A palavra-chave é {{GREEK:HEB.10.5:12}} (*sōma*), "corpo". Mas o hebraico do salmo (40:6 aqui e na maioria das Bíblias, 40:7 nas Bíblias hebraicas) tem {{HEBREW:PSA.40.7:5-6}}, "ouvidos tu cavaste para mim". A nossa Literal do salmo mantém a imagem:
 
 > {{OWB:PSA.40.7.s1:L}}
 
@@ -81,10 +81,10 @@ Tiago também muda o início. Amós diz "Naquele dia levantarei"; Tiago diz "Dep
 Em Romanos 3, Paulo prova que "todos, judeus e gregos, estão debaixo do poder do pecado" com uma série de citações, uma depois da outra, sem pausa entre elas. Os nossos registros nomeiam cada fonte:
 
 - os versículos 10–12, do Salmo 14:1–3 (e do Salmo 53), com a palavra do próprio Paulo, "justo", no lugar do "que faça o bem" do salmo;
-- o versículo 13, do Salmo 5:10 e do Salmo 140:4 (numeração hebraica);
+- o versículo 13, do Salmo 5:9 e do Salmo 140:3;
 - o versículo 14, do Salmo 10:7;
 - os versículos 15–17, de Isaías 59:7–8, encurtado, com um eco de Provérbios 1:16;
-- o versículo 18, do Salmo 36:2.
+- o versículo 18, do Salmo 36:1.
 
 Paulo segue a Septuaginta na maior parte dessas linhas e as tece numa única acusação. Esse modo de juntar textos sobre um tema comum, como pérolas num fio, era conhecido no ensino judaico. Um leitor moderno poderia esperar aspas em volta de cada pedaço. Paulo dá uma única fórmula, "como está escrito", e deixa a corrente inteira valer como o veredito das Escrituras.
 
@@ -108,9 +108,9 @@ O Novo Testamento nem sempre segue a Septuaginta. Duas citações mostram a vari
 
 **"Do Egito chamei o meu filho"** (Mateus 2:15; Oseias 11:1). Mateus cita as palavras de Oseias sobre o êxodo de Israel e as aplica a Jesus. Aqui Mateus concorda com o hebraico, "o meu filho". A Septuaginta de Oseias diz "os seus filhos". O nosso registro de Oseias 11:1 anota isso e diz com honestidade que a sua descrição do grego foi "escrita a partir de conhecimento geral", para os revisores conferirem. De qualquer modo, Mateus não tirou a linha da Septuaginta como a temos. O registro de Mateus 2:15 explica como Mateus a lê: "Em Oseias, o filho é Israel." Mateus vê Jesus, o Filho de Deus, vivendo de novo a história de Israel, indo para o Egito e saindo dele.
 
-**"Deu dons às pessoas"** (Efésios 4:8; Salmo 68:19). Paulo cita o Salmo 68, um hino de vitória em que Deus sobe ao seu monte santo, levando cativos. Mas, onde o salmo hebraico e o grego dizem que Deus "recebeu dons" das pessoas, Paulo diz que ele "deu dons". Os nossos registros dos dois lados explicam a diferença em notas de rodapé. Eles observam que uma antiga paráfrase aramaica dos Salmos, e a tradução siríaca, também dizem "deu", por isso Paulo talvez siga uma interpretação conhecida do versículo. O registro do Salmo 68:19 sugere como as duas coisas se encaixam: "o vencedor que recebe tributo é aquele que o distribui ao seu povo". O registro de Efésios marca o ponto como incerto e dá com clareza a intenção de Paulo: o Cristo ressuscitado dá dons à sua Igreja, que os versículos 11–16 passam a enumerar.
+**"Deu dons às pessoas"** (Efésios 4:8; Salmo 68:18). Paulo cita o Salmo 68, um hino de vitória em que Deus sobe ao seu monte santo, levando cativos. Mas, onde o salmo hebraico e o grego dizem que Deus "recebeu dons" das pessoas, Paulo diz que ele "deu dons". Os nossos registros dos dois lados explicam a diferença em notas de rodapé. Eles observam que uma antiga paráfrase aramaica dos Salmos, e a tradução siríaca, também dizem "deu", por isso Paulo talvez siga uma interpretação conhecida do versículo. O registro do Salmo 68:18 sugere como as duas coisas se encaixam: "o vencedor que recebe tributo é aquele que o distribui ao seu povo". O registro de Efésios marca o ponto como incerto e dá com clareza a intenção de Paulo: o Cristo ressuscitado dá dons à sua Igreja, que os versículos 11–16 passam a enumerar.
 
-Um exemplo menor é **Romanos 10:18**, onde Paulo cita o Salmo 19:5 (19:4 na maioria das Bíblias): "a voz deles saiu por toda a terra". A Septuaginta, que Paulo cita palavra por palavra, tem "a voz deles" ou "o som deles". O hebraico tem uma palavra que significa um cordel de medir. A nossa Literal do salmo mantém "a linha deles", e uma nota de rodapé, marcada como incerta, explica o grego.
+Um exemplo menor é **Romanos 10:18**, onde Paulo cita o Salmo 19:4: "a voz deles saiu por toda a terra". A Septuaginta, que Paulo cita palavra por palavra, tem "a voz deles" ou "o som deles". O hebraico tem uma palavra que significa um cordel de medir. A nossa Literal do salmo mantém "a linha deles", e uma nota de rodapé, marcada como incerta, explica o grego.
 
 ## O que os apóstolos estavam fazendo
 

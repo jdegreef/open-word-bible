@@ -72,6 +72,7 @@ DOCUMENTED = {
     ("am", "gender"): "docs/amharic-style.md: Amharic nouns for people are often already inclusive",
     ("ja", "gender"): "docs/japanese-style.md: Japanese words for people are already inclusive",
     ("hi", "gender"): "docs/hindi-style.md section 7: Hindi nouns for people are often already inclusive",
+    ("tl", "gender"): "docs/tagalog-style.md section 8: Tagalog words for people are mostly inclusive",
     ("id", "gender"): "docs/indonesian-style.md section 8: Indonesian words for people are already inclusive",
     ("ar", "deity_pronoun"): "docs/arabic-style.md section 8: Arabic has no capitals and no reverent pronoun",
     ("pa", "christos"): "docs/punjabi-style.md section 8: ਮਸੀਹ is both the name and the word Messiah",
@@ -80,6 +81,7 @@ DOCUMENTED = {
     ("ar", "christos"): "docs/arabic-style.md section 8: المسيح is both the title Christ and the word Messiah",
     ("fa", "christos"): "docs/persian-style.md section 9: مسیح is both the name and the word Messiah",
     ("fa", "deity_pronoun"): "docs/persian-style.md section 4: Persian has no capitals and one third-person pronoun",
+    ("fa", "gender"): "docs/persian-style.md section 5: Persian words for people are already inclusive",
 }
 
 

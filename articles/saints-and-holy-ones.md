@@ -68,7 +68,7 @@ In the Hebrew Bible the plural of *qadosh*, "holy", does something different. Mo
 
 > {{OWB:JOB.5.1.s1:B}}
 
-The meaning decision explains that "'Holy ones' is a name for the beings who stand around God in heaven (Job 15:15; Psalm 89:6, 8; Zechariah 14:5)." So Readable says "the heavenly beings" here, because "holy ones" alone "could be taken for holy people on earth". In Psalm 89:6 Readable says "the angels in heaven".
+The meaning decision explains that "'Holy ones' is a name for the beings who stand around God in heaven (Job 15:15; Psalm 89:5, 7; Zechariah 14:5)." So Readable says "the heavenly beings" here, because "holy ones" alone "could be taken for holy people on earth". In Psalm 89:5 Readable says "the angels in heaven".
 
 But sometimes the holy ones are God's people on earth, as in Psalm 34:
 

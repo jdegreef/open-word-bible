@@ -27,6 +27,14 @@ def verse_ids(doc):
 
 
 class SearchTest(TestCase):
+    def _should_check_constraints(self, connection):
+        # Django re-checks every deferred foreign key at the end of each
+        # test. Here that means every row setUpTestData imported (the whole
+        # Bible in every language): 8 s a test locally and minutes on a CI
+        # runner once the review-state indexes made the tables bigger. The
+        # import is the same for every test and each test is rolled back.
+        return False
+
     @classmethod
     def setUpTestData(cls):
         load_extract_words()

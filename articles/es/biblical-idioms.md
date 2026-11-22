@@ -4,7 +4,7 @@ summary: La Biblia habla con modismos que sus primeros lectores entendían al in
 date: 2026-10-17
 order: 95
 section: passage
-source: dae5ff099ec1
+source: db273db486c2
 ---
 Toda lengua tiene modismos: expresiones cuyo significado no es la suma de sus palabras. Quien «estira la pata» no ha estirado nada, y quien «está en las nubes» no está en el cielo. Un traductor que traduce los modismos palabra por palabra produce disparates o, peor aún, algo que parece tener sentido y significa otra cosa.
 
@@ -42,7 +42,7 @@ Proverbios 25:21–22 da un consejo sorprendente. Si tu enemigo tiene hambre, da
 
 - Lo más frecuente es entenderla como la vergüenza ardiente que trae una bondad no merecida, que puede llevar al enemigo a cambiar.
 - Algunos señalan un texto egipcio que describe a un penitente que lleva sobre la cabeza un recipiente con brasas, como señal de arrepentimiento.
-- Otros la entienden como juicio, puesto que en otros lugares los carbones son una imagen del castigo (Salmo 140:11). Según esa lectura, la bondad aumenta la culpa del enemigo si sigue siendo hostil.
+- Otros la entienden como juicio, puesto que en otros lugares los carbones son una imagen del castigo (Salmo 140:10). Según esa lectura, la bondad aumenta la culpa del enemigo si sigue siendo hostil.
 
 El registro sigue la primera lectura, y señala que en Romanos 12:20–21 el dicho sirve a la llamada a vencer el mal con el bien, lo que la favorece. El registro de Romanos 12:20 llega a la misma decisión, y añade que la lectura del juicio encaja mal con los mandatos de Pablo en los versículos 14 y 17–19 de bendecir a los perseguidores y no devolver nunca mal por mal.
 
@@ -62,7 +62,7 @@ En Éxodo, el corazón del faraón se «endurece». En español esto suena a una
 
 El registro de Éxodo 7:3 añade algo que el lector de una traducción no puede ver. Éxodo usa tres verbos distintos para lo que le ocurre al corazón del faraón: «hacer duro», «hacer fuerte» y «hacer pesado». Los tres describen una voluntad firmemente opuesta al mandato de Dios. A veces el sujeto es Dios, a veces el propio faraón, y a veces el corazón simplemente «está» duro o pesado. La nota al pie dice que el texto mantiene juntas estas cosas sin explicar cómo.
 
-Open Word Bible mantiene separados los verbos donde puede. En Éxodo 8:11 (8:15 en la mayoría de las Biblias) el sujeto es el propio faraón, y el verbo es el de la raíz «pesado»:
+Open Word Bible mantiene separados los verbos donde puede. En Éxodo 8:15 (8:11 en las Biblias hebreas) el sujeto es el propio faraón, y el verbo es el de la raíz «pesado»:
 
 > {{OWB:EXO.8.11.s1:L}}
 

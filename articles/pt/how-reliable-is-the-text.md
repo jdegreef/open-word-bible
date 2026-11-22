@@ -5,7 +5,7 @@ date: 2026-10-11
 order: 40
 section: history
 part: today
-source: 38f9ddefc748
+source: b3a3c2719637
 ---
 Esta série acompanhou a Bíblia desde a sua primeira escrita, passando por gerações de escribas, até os manuscritos e as edições impressas por trás das traduções modernas. Este último artigo faz a pergunta que está por trás de todas as outras: até que ponto podemos ter confiança de que a Bíblia que lemos hoje diz o que os seus autores escreveram?
 
@@ -88,7 +88,7 @@ Três lugares da Open Word Bible mostram como isso é.
 
 - **Gênesis 4:8.** O hebraico diz "Caim disse a Abel, seu irmão", e depois não dá nenhuma fala. O Pentateuco Samaritano, a Septuaginta, a versão siríaca e a latina acrescentam "Vamos sair ao campo". A Open Word Bible segue o hebraico, com uma nota de rodapé.
 - **Isaías 53:11.** O hebraico diz que o servo "verá". O Grande Rolo de Isaías, outro rolo de Isaías da mesma caverna e a Septuaginta dizem que ele "verá a luz". A Open Word Bible traduz o hebraico e dá "luz" numa nota de rodapé; o sentido é próximo de qualquer forma.
-- **Salmo 22:17** (22:16 na maioria das Bíblias inglesas). O hebraico tal como foi transmitido diz "como o leão" as minhas mãos e os meus pés, o que deixa a linha sem verbo. Um rolo de Nahal Hever, no deserto da Judeia, tem uma forma um pouco diferente que parece um verbo. A Septuaginta tem "cavaram" ou "traspassaram", a leitura da King James Version. A Open Word Bible segue o hebraico, explica as alternativas numa nota de rodapé e marca a decisão como incerta.
+- **Salmo 22:16** (22:17 nas Bíblias hebraicas). O hebraico tal como foi transmitido diz "como o leão" as minhas mãos e os meus pés, o que deixa a linha sem verbo. Um rolo de Nahal Hever, no deserto da Judeia, tem uma forma um pouco diferente que parece um verbo. A Septuaginta tem "cavaram" ou "traspassaram", a leitura da King James Version. A Open Word Bible segue o hebraico, explica as alternativas numa nota de rodapé e marca a decisão como incerta.
 
 Assim, os tradutores do Antigo Testamento enfrentam decisões textuais difíceis com mais frequência do que os do Novo. Os rascunhos mostram isso: as frases do Antigo Testamento têm cerca de duas vezes mais probabilidade do que as do Novo de trazer uma decisão textual marcada como incerta. Mas aqui também a grande maioria do texto não está em dúvida, e as alternativas que existem podem ser nomeadas e avaliadas.
 
