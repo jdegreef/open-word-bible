@@ -1151,13 +1151,11 @@ var OWBAdminNav = (function () {
   // Reader inbox.
   // #inbox/mine opens the messages assigned to you (the dashboard links it).
   var INBOX = { status: "new", kind: "", lang: "", assigned: "", q: "" };
-  var INBOX_TEAM = [];
   VIEWS.inbox = function (arg) {
     if (arg === "mine") INBOX.assigned = "me";
     var q = "?status=" + INBOX.status + (INBOX.kind ? "&kind=" + INBOX.kind : "") + (INBOX.lang ? "&lang=" + INBOX.lang : "") +
       (INBOX.assigned ? "&assigned=" + INBOX.assigned : "") + (INBOX.q ? "&q=" + encodeURIComponent(INBOX.q) : "");
     return api("/api/admin/inbox/" + q).then(function (d) {
-      INBOX_TEAM = d.team;
       var tabs = seg([["new", "New (" + d.counts.new + ")"], ["answered", "Answered (" + d.counts.answered + ")"],
         ["done", "Done (" + d.counts.done + ")"], ["declined", "Declined (" + d.counts.declined + ")"]], INBOX.status, function (v) {
         INBOX.status = v; route();
@@ -1178,11 +1176,13 @@ var OWBAdminNav = (function () {
       live(search, find);
       return [head("Readers", "Reader inbox", "Suggestions and questions readers send from a verse. New messages come oldest first; assign one to say you're dealing with it. A reply is emailed to the reader once; mark a message done when it's dealt with."),
         h("div", { class: "admin-toolbar" }, tabs, whose, kind), form,
-        d.messages.length ? h("div", { class: "admin-messages" }, d.messages.map(messageCard)) : empty(INBOX.q ? "No messages here have those words." : "No messages here."),
+        d.messages.length ? h("div", { class: "admin-messages" }, d.messages.map(function (m) { return messageCard(m, d.team); })) : empty(INBOX.q ? "No messages here have those words." : "No messages here."),
         d.total > d.messages.length ? h("p", { class: "admin-sub" }, "Showing " + (INBOX.status === "new" ? "the longest waiting " : "the newest ") + d.messages.length + " of " + num(d.total) + ".") : null];
     });
   };
-  function messageCard(m) {
+  // team: whom the message can be assigned to, from the answer that listed
+  // it (the inbox's or the verse inspector's).
+  function messageCard(m, team) {
     var card = h("article", { class: "admin-message" });
     var draft = "";   // the reply being written, kept when the card is drawn again
     function draw() {
@@ -1239,11 +1239,14 @@ var OWBAdminNav = (function () {
       card.appendChild(noteField);
       card.appendChild(status);
       function assignee(status) {
-        var pick = select("assign-" + m.id, [["", "Nobody"]].concat(INBOX_TEAM.map(function (u) {
+        var pick = select("assign-" + m.id, [["", "Nobody"]].concat((team || []).map(function (u) {
           return [String(u.id), (u.name ? u.name + " (" + u.email + ")" : u.email) + (u.email === ME.email ? " — you" : "")];
         })), m.assigned_to ? String(m.assigned_to.id) : "");
         pick.addEventListener("change", function () {
-          update({ assigned_to: pick.value ? Number(pick.value) : null }).catch(function (e) { note(status, e, true); });
+          update({ assigned_to: pick.value ? Number(pick.value) : null }).catch(function (e) {
+            pick.value = m.assigned_to ? String(m.assigned_to.id) : "";   // still assigned as before
+            note(status, e, true);
+          });
         });
         return h("p", { class: "admin-actions" }, h("label", { for: "assign-" + m.id }, "Assigned to "), pick,
           m.assigned_to && m.assigned_at ? h("span", { class: "admin-sub" }, " since " + when(m.assigned_at)) : null);
@@ -1325,7 +1328,7 @@ var OWBAdminNav = (function () {
       if (d.records.length) out.push(approvalHistory(d.verse));
       if (d.messages && d.messages.length) {
         out.push(h("section", { class: "admin-block" }, h("h2", null, "Reader messages"),
-          h("div", { class: "admin-messages" }, d.messages.map(messageCard))));
+          h("div", { class: "admin-messages" }, d.messages.map(function (m) { return messageCard(m, d.team); }))));
       }
       if (d.fixes.length) {
         out.push(h("section", { class: "admin-block" }, h("h2", null, "Fix requests"), h("ul", { class: "admin-feed" }, d.fixes.map(function (f) {

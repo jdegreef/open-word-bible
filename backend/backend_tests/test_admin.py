@@ -492,6 +492,8 @@ class VerseTest(AdminTestCase):
         self.assertEqual(data["files"], {"JHN.1.1.s1": "content/JHN/JHN.1.1-18.json"})
         self.assertEqual(data["neighbours"], [None, "JHN.1.2"])
         self.assertEqual(len(data["messages"]), 1)
+        # Whom its messages can be assigned to, as the inbox lists them.
+        self.assertEqual([u["email"] for u in data["team"]], ["boss@example.org"])
         # Reporting sees the text, not who wrote in.
         reporter = client_for(account("rep@example.org", (K.REPORTING,)))
         self.assertNotIn("messages", reporter.get("/api/admin/verses/JHN.1.1/").json())
