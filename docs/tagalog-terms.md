@@ -2396,3 +2396,14 @@ names the book where the form was first used.
 | Zechariah 14:10 | First Gate; Corner Gate | *Unang Pintuan*; *Pintuan sa Sulok* | as Jeremiah 31:38 |
 | Zechariah 14:15 | mule | *mola* |  |
 | Zechariah 14:20 | Holiness to the LORD | *Kabanalan sa PANGINOON* (L); *Banal sa PANGINOON* (B, R) | as on the high priest's plate |
+| Malachi 1:3 | jackals | *mga asong-gubat* | as Jeremiah |
+| Malachi 1:13 | sniff at it | *sinisinghalan ito* (R *inismiran*) | contempt |
+| Malachi 2:7 | messenger | *sugo* | same word as the name Malakias; also 3:1 |
+| Malachi 2:16 | divorce | *paghihiwalay* |  |
+| Malachi 3:2 | refiner; launderers' soap | *tagapagdalisay*; *sabon ng mga tagapaglaba* |  |
+| Malachi 3:10 | storehouse; windows of heaven | *bahay-imbakan* (B *kamalig*); *mga bintana ng langit* |  |
+| Malachi 3:11 | devourer | *manlalamon* (R *mga peste*) |  |
+| Malachi 3:16 | book of remembrance | *aklat ng alaala* |  |
+| Malachi 3:19 | oven; stubble | *hurno*; *dayami* | Hebrew numbering: 3:19-24 = English 4:1-6 |
+| Malachi 3:20 | sun of righteousness; calves of the stall | *araw ng katuwiran*; *mga guya sa kulungan* |  |
+| Malachi 3:23 | Elijah the prophet | *si Elias na propeta* |  |
