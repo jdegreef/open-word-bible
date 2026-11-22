@@ -25,8 +25,10 @@ from rest_framework.test import APIClient
 
 from accounts.models import ApiToken, Mark, Role, new_secret
 from feedback.models import ReaderMessage
+from owb import languages
 from staff import articles as staff_articles
 from staff import jobs as staff_jobs
+from staff import overlap as staff_overlap
 from staff.models import AdminAction, Broadcast
 from staff.permissions import AREAS
 from staff.verses import covers
@@ -799,6 +801,15 @@ class OverlapTest(AdminTestCase):
         self.assertEqual(data["longest_runs"][0]["verse"], "JHN.1.1")
         self.assertEqual(self.admin.get("/api/admin/overlap/jhn/?lang=sw").json()["editions"], [])
         self.assertEqual(self.admin.get("/api/admin/overlap/xyz/").status_code, 404)
+        # Every reading language is offered, saying which have a Bible to compare with.
+        offered = {lang["code"]: lang["references"] for lang in data["languages"]}
+        self.assertEqual(set(offered), set(languages.CODES))
+        self.assertEqual((offered["en"], offered["sw"]), (1, 0))
+
+    def test_every_reading_language_names_its_reference_bibles(self):
+        # A language added to data/languages.json needs its Edition.language
+        # in staff/overlap.py, or Similarity refuses it.
+        self.assertEqual(set(staff_overlap.EDITION_LANGUAGE), set(languages.CODES))
 
 
 class ExportTest(AdminTestCase):

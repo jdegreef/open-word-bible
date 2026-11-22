@@ -1491,14 +1491,19 @@ var OWBAdminCore = (function () {
     var f = OVERLAP;
     return api("/api/admin/overlap/" + f.book + "/?lang=" + f.lang + "&min=" + f.min).then(function (d) {
       var book = h("input", { id: "overlap-book", value: f.book, size: 6, "aria-label": "Book code", placeholder: "JHN" });
-      var lang = select("overlap-lang", [["en", "English"], ["es", "Spanish"]], f.lang);
+      // Every reading language, from the API; one with no reference Bible loaded says so.
+      var lang = select("overlap-lang", (d.languages || [{ code: f.lang, name: f.lang, references: 1 }]).map(function (l) {
+        return [l.code, l.references ? l.name : l.name + " (no reference Bible loaded)"];
+      }), f.lang);
       lang.setAttribute("aria-label", "Language");
       var min = select("overlap-min", [["5", "5+ words"], ["6", "6+ words"], ["8", "8+ words"], ["10", "10+ words"]], String(f.min));
       min.setAttribute("aria-label", "Shortest run");
       var form = h("form", { class: "admin-toolbar" }, book, lang, min, h("button", { type: "submit", class: "admin-btn" }, "Compare"));
       form.addEventListener("submit", function (e) {
         e.preventDefault(); f.book = book.value.trim().toUpperCase() || "JHN"; f.lang = lang.value; f.min = +min.value;
-        location.hash = "#overlap/" + f.book; route();
+        // A new address draws through hashchange; the same one needs route().
+        if (location.hash === "#overlap/" + f.book) route();
+        else location.hash = "#overlap/" + f.book;
       });
       var rows = d.editions.map(function (e) {
         return h("tr", null, h("th", { scope: "row" }, e.name, h("span", { class: "admin-sub" }, e.code)),
@@ -1507,7 +1512,7 @@ var OWBAdminCore = (function () {
             return h("td", { class: "admin-num" + (v >= 50 ? " admin-high" : "") }, v === null ? "\u2014" : v + "%");
           }), h("td", { class: "admin-num" }, num(e.longest) + " words"));
       });
-      return [head("Text", "Similarity to reference Bibles", "The share of " + d.name + "'s drafted words that sit in runs of " + d.min + " or more words also found in the same verses of a public-domain Bible. Shared phrasing is often the common heritage of Bible English; a high share or long runs is where to check a draft wasn't built on a reference Bible."),
+      return [head("Text", "Similarity to reference Bibles", "The share of " + d.name + "'s drafted words that sit in runs of " + d.min + " or more words also found in the same verses of a public-domain Bible. Shared phrasing is often the common heritage of the language's Bible wording; a high share or long runs is where to check a draft wasn't built on a reference Bible."),
         form,
         d.editions.length ? table(["Bible", ["Literal", { class: "admin-num" }], ["Balanced", { class: "admin-num" }], ["Readable", { class: "admin-num" }], ["Longest run", { class: "admin-num" }]], rows)
           : empty("No reference Bibles in this language are loaded, so there's nothing to compare against."),
