@@ -284,3 +284,15 @@ form.admin-toolbar, .admin-toolbar.admin-filters { justify-content: flex-start; 
 .admin-toast button:focus-visible { outline: 2px solid var(--bg); outline-offset: 2px; border-radius: 4px; }
 /* The heading focused on arriving at a section (admin.js route) is a place, not a control. */
 .admin-main h1:focus { outline: none; }
+
+/* The review buttons, kept at the foot of the window while the sentence
+   above is read (admin.js reviewSentence). */
+.admin-review-bar { position: sticky; bottom: max(0px, env(safe-area-inset-bottom, 0px)); z-index: 4; padding-block: 12px; box-shadow: 0 -8px 24px rgba(0, 0, 0, .08); }
+.admin-review-bar .admin-field textarea { min-height: 2.6em; }
+.admin-review-bar .admin-actions { margin-top: 8px; }
+.admin-review-bar-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 16px; }
+.admin-review-bar-head h2 { margin: 0; }
+.admin-review-progress { display: flex; align-items: center; gap: 10px; font-size: 13.5px; color: var(--muted); }
+.admin-review-progress i { display: block; width: 120px; height: 6px; border-radius: 99px; background: var(--line); overflow: hidden; }
+.admin-review-progress b { display: block; height: 100%; background: var(--accent); }
+.admin-review-keys { margin: 0 0 24px; }

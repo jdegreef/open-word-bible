@@ -2966,6 +2966,7 @@ var OWBAdminNav = (function () {
       }
       if (!offset) QUEUE = { layer: page.layer.code, rows: [], more: false };
       QUEUE.more = page.more;
+      QUEUE.matching = page.matching;   // how many the filters give, for "12 of 340"
       page.sentences.forEach(function (s) {
         QUEUE.rows.push({ record: s.record, state: s.state });
         add(rows, pick.chapterRow(s));
@@ -3032,7 +3033,7 @@ var OWBAdminNav = (function () {
       }), "admin-renderings");
       var meaning = r.decisions.filter(function (x) { return x.layer === "meaning"; });
       var mine = r.decisions.filter(function (x) { return x.layer !== "meaning" && x.language === layer; });
-      var noteBox = h("textarea", { id: "review-note", rows: 3, maxlength: 4000,
+      var noteBox = h("textarea", { id: "review-note", rows: 2, maxlength: 4000,
         placeholder: "A note: what is wrong (needed to flag), or anything the next reviewer should know" });
       var status = h("p", { class: "admin-note", role: "status" });
       // Next and previous in the queue as listed (j, k); after approving
@@ -3126,6 +3127,14 @@ var OWBAdminNav = (function () {
           if (rec && all.indexOf(rec) === i) api(sentencePath(rec), { quiet: true }).catch(function () { /* drawn with its error if opened */ });
         });
       }, 200);
+      // Where this sentence is in the queue it was opened from.
+      var progress = null;
+      if (listed && QUEUE.matching) {
+        var place = rows.map(function (x) { return x.record; }).indexOf(record) + 1;
+        progress = h("span", { class: "admin-review-progress" },
+          h("span", null, "Sentence " + num(place) + " of " + num(QUEUE.matching) + " in the queue"),
+          h("i", { "aria-hidden": "true" }, h("b", { style: "width:" + Math.min(100, 100 * place / QUEUE.matching) + "%" })));
+      }
       var trail = d.trail.length ? h("ul", { class: "admin-feed" }, d.trail.map(function (e) {
         return h("li", null, h("time", { datetime: e.at, title: new Date(e.at).toLocaleString("en-GB") }, when(e.at)),
           h("span", null, h("strong", null, e.by), " " + e.label.toLowerCase() + " (" + (e.language ? names[e.language] || e.language : "meaning") + ")",
@@ -3141,7 +3150,12 @@ var OWBAdminNav = (function () {
           words, h("p", { class: "admin-gloss" }, "Literal gloss: " + r.literal_gloss), renderings,
           meaning.length ? [h("h3", { class: "admin-h3" }, "Meaning decisions"), h("div", { class: "admin-decisions" }, meaning.map(decision))] : null,
           mine.length ? [h("h3", { class: "admin-h3" }, (names[layer] || layer) + " decisions"), h("div", { class: "admin-decisions" }, mine.map(decision))] : null),
-        h("section", { class: "admin-block" }, h("h2", null, "Your review"), h("label", { class: "admin-field" }, "Note", noteBox), buttons, status, hint, help),
+        // Kept at the foot of the window while the sentence above is read,
+        // so approving never means scrolling past every language.
+        h("section", { class: "admin-block admin-review-bar", "aria-label": "Your review" },
+          h("div", { class: "admin-review-bar-head" }, h("h2", null, "Your review"), progress),
+          h("label", { class: "admin-field" }, "Note", noteBox), buttons, status),
+        h("div", { class: "admin-review-keys" }, hint, help),
         h("section", { class: "admin-block" }, h("h2", null, "Review trail"), trail)];
     });
   }
