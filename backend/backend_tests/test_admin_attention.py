@@ -7,7 +7,7 @@ from django.test import override_settings
 
 from accounts.models import Role
 from feedback.models import ReaderMessage
-from staff import jobs as staff_jobs
+from staff import github as staff_github
 
 from .test_admin import AdminTestCase, account, client_for, sentence
 
@@ -86,7 +86,7 @@ class AttentionTest(AdminTestCase):
                 return [issue(5, "Fix"), issue(6, "PR", pull_request={})]
             return [issue(7, "Draft")]
 
-        with mock.patch.object(staff_jobs, "_github", side_effect=github):
+        with mock.patch("staff.github.call", side_effect=github):
             found = self.sections(self.admin)
             self.assertEqual(found["fixes"], {"count": 1, "title": "1 open fix request"})
             self.assertEqual(found["jobs"], {"count": 1, "title": "1 open drafting job"})
@@ -99,12 +99,12 @@ class AttentionTest(AdminTestCase):
 
     @override_settings(OWB_GITHUB_TOKEN="token")
     def test_github_down_leaves_its_numbers_out(self):
-        with mock.patch.object(staff_jobs, "_github", side_effect=staff_jobs.GitHubError):
+        with mock.patch("staff.github.call", side_effect=staff_github.GitHubError):
             ReaderMessage.objects.create(user=self.reader, kind="question", verse="JHN.3.16", language="en", text="x")
             found = self.sections(self.admin)
         self.assertNotIn("fixes", found)
         self.assertEqual(found["inbox"]["count"], 1)
 
     def test_no_token_asks_nothing_of_github(self):
-        with mock.patch.object(staff_jobs, "_github", side_effect=AssertionError("asked GitHub")):
+        with mock.patch("staff.github.call", side_effect=AssertionError("asked GitHub")):
             self.assertEqual(self.sections(self.admin), {})

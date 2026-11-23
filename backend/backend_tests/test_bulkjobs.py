@@ -5,6 +5,7 @@ from unittest import mock
 from django.core.cache import cache
 from django.test import override_settings
 
+from staff import github as staff_github
 from staff import jobs as staff_jobs
 from staff.models import AdminAction
 
@@ -19,7 +20,7 @@ PULL = {"number": 9, "title": "Draft Ezekiel in Spanish", "body": "Part of #5", 
 
 
 class GitHub:
-    """A stand-in for jobs._github: the open job above, and new issues
+    """A stand-in for github.call: the open job above, and new issues
     numbered from 100, refusing from the fail_after'th on."""
 
     def __init__(self, fail_after=None):
@@ -28,7 +29,7 @@ class GitHub:
     def __call__(self, path, method="GET", body=None, stop=None):
         if method == "POST":
             if self.fail_after is not None and len(self.filed) >= self.fail_after:
-                raise staff_jobs.GitHubError
+                raise staff_github.GitHubError
             self.filed.append(body)
             n = 99 + len(self.filed)
             return {"number": n, "html_url": f"https://github.com/x/y/issues/{n}"}
@@ -51,9 +52,13 @@ class BulkJobsTest(AdminTestCase):
         sentence("EXO.1.1.s1", ("en",))
         sentence("EZK.1.1.s1", ("en",))
         self.github = GitHub()
-        patcher = mock.patch.object(staff_jobs, "_github", side_effect=self.github)
+        patcher = mock.patch("staff.github.call", side_effect=self.github)
         patcher.start()
         self.addCleanup(patcher.stop)
+        # The filing thread, run in the request so it sees the test's data.
+        inline = mock.patch.object(staff_jobs, "_start", side_effect=lambda target, *args: target(*args))
+        inline.start()
+        self.addCleanup(inline.stop)
 
     def post(self, **body):
         return self.admin.post("/api/admin/jobs/bulk/", body, format="json")
@@ -73,8 +78,12 @@ class BulkJobsTest(AdminTestCase):
 
     def test_files_and_logs_each_job(self):
         r = self.post(languages=["es"], books=["GEN", "EXO", "EZK"], note="Pentateuch first")
-        self.assertEqual(r.status_code, 201, r.content)
+        self.assertEqual(r.status_code, 202, r.content)
         data = r.json()
+        self.assertEqual(data["state"], "done")
+        # The progress can be read again, from any worker, by its id.
+        again = self.admin.get(f"/api/admin/jobs/bulk/{data['id']}/").json()
+        self.assertEqual(again["filed"], data["filed"])
         self.assertEqual([(j["book"], j["number"]) for j in data["filed"]], [("GEN", 100), ("EXO", 101)])
         self.assertEqual(data["skipped"], [{"book": "EZK", "reason": "already asked for in #5"}])
         self.assertEqual(self.github.filed[0]["title"], "Draft Genesis in Spanish")
@@ -98,13 +107,21 @@ class BulkJobsTest(AdminTestCase):
         self.github.fail_after = 1
         r = self.post(languages=["es"], books=["GEN", "EXO"])
         data = r.json()
-        self.assertEqual(r.status_code, 201)
+        self.assertEqual(r.status_code, 202)
+        self.assertEqual(data["state"], "stopped")
         self.assertEqual([j["book"] for j in data["filed"]], ["GEN"])
         self.assertEqual(data["not_filed"], [{"book": "EXO", "languages": ["es"]}])
         self.assertIn("1 filed, 1 not", data["error"])
-        self.github.fail_after = 0
-        r = self.post(languages=["fr"], books=["EXO"])
-        self.assertEqual((r.status_code, r.json()["code"]), (503, "github"))
+
+    def test_an_error_in_the_thread_still_ends_the_run(self):
+        with mock.patch.object(staff_jobs, "_file_issue", side_effect=KeyError("x")), \
+                self.assertLogs("staff.jobs", "ERROR"):
+            data = self.post(languages=["es"], books=["GEN"]).json()
+        self.assertEqual((data["state"], data["filed"]), ("stopped", []))
+        self.assertIn("Filing stopped", data["error"])
+
+    def test_an_unknown_run_is_404(self):
+        self.assertEqual(self.admin.get("/api/admin/jobs/bulk/nope/").status_code, 404)
 
     def test_checks_the_request(self):
         self.assertEqual(self.post(languages=[], testament="ot").status_code, 400)

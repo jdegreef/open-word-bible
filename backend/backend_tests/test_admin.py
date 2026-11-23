@@ -27,6 +27,7 @@ from accounts.models import ApiToken, Mark, Role, new_secret
 from feedback.models import ReaderMessage
 from owb import languages
 from staff import articles as staff_articles
+from staff import github as staff_github
 from staff import jobs as staff_jobs
 from staff import overlap as staff_overlap
 from staff.models import AdminAction, Broadcast
@@ -468,7 +469,7 @@ class JobsTest(AdminTestCase):
                 return {"number": 7, "html_url": "https://github.com/x/y/issues/7"}
             return [{"number": 5, "title": "t", "html_url": "u", "created_at": "2026-10-15T00:00:00Z",
                      "body": 'x\n<!-- drafting-job {"book": "EZK", "languages": ["en"]} -->'}]
-        with mock.patch.object(staff_jobs, "_github", side_effect=github):
+        with mock.patch("staff.github.call", side_effect=github):
             self.assertEqual(self.admin.get("/api/admin/jobs/").json()["jobs"][0]["book"], "EZK")
             dup = self.admin.post("/api/admin/jobs/", {"book": "EZK", "languages": ["en"]}, format="json")
             self.assertEqual(dup.json()["code"], "duplicate")
@@ -497,7 +498,7 @@ class JobsTest(AdminTestCase):
                 return {"number": 7, "html_url": "https://github.com/x/y/issues/7"}
             return []
         job = {"book": "PHM", "languages": ["fr"]}
-        with mock.patch.object(staff_jobs, "_github", side_effect=github):
+        with mock.patch("staff.github.call", side_effect=github):
             first = self.admin.post("/api/admin/jobs/", job, format="json", HTTP_IDEMPOTENCY_KEY="k1")
             again = self.admin.post("/api/admin/jobs/", job, format="json", HTTP_IDEMPOTENCY_KEY="k1")
             # A refused change frees its key: fixed and sent again, it goes through.
@@ -611,7 +612,7 @@ class FixTest(AdminTestCase):
             return [{"number": 9, "title": "t", "html_url": "u", "created_at": "2026-10-16T00:00:00Z",
                      "body": 'x\n<!-- fix-request {"record": "JHN.1.1.s1", "verse": "JHN.1.1", "language": "fr"} -->'}]
         editor = client_for(account("ed@example.org", (K.EDITOR,)))
-        with mock.patch.object(staff_jobs, "_github", side_effect=github):
+        with mock.patch("staff.github.call", side_effect=github):
             bad = editor.post("/api/admin/fixes/", {**self.body, "language": "es"}, format="json")
             self.assertEqual(bad.json()["code"], "not_drafted")
             r = editor.post("/api/admin/fixes/", {**self.body, "message": message.id}, format="json")
@@ -644,7 +645,7 @@ class FixTest(AdminTestCase):
     @override_settings(OWB_GITHUB_TOKEN="t")
     def test_input_that_is_not_what_was_asked_for_is_a_400(self):
         editor = client_for(account("ed@example.org", (K.EDITOR,)))
-        with mock.patch.object(staff_jobs, "_github", side_effect=AssertionError("nothing filed")):
+        with mock.patch("staff.github.call", side_effect=AssertionError("nothing filed")):
             r = editor.post("/api/admin/fixes/", {**self.body, "message": "abc"}, format="json")
             self.assertEqual((r.status_code, r.json()["code"]), (400, "invalid"))
             for body in ({"book": "PHM", "languages": "fr"}, {"book": "PHM", "languages": [{"x": 1}]}):
@@ -664,7 +665,7 @@ class FixTest(AdminTestCase):
         for junk in ("[1, 2]", '"JHN"', "not json", "null"):
             self.assertEqual(staff_jobs.marker(issue(junk), "drafting-job"), {}, junk)
         hijack = issue('{"book": "JHN", "url": "https://elsewhere.example", "number": 1}')
-        with mock.patch.object(staff_jobs, "_github", return_value=[hijack]):
+        with mock.patch("staff.github.call", return_value=[hijack]):
             job = staff_jobs.open_jobs()[0]
         self.assertEqual((job["book"], job["url"], job["number"]), ("JHN", "https://github.com/x/y/issues/5", 5))
 
@@ -678,7 +679,7 @@ class FixTest(AdminTestCase):
         editor = client_for(account("ed@example.org", (K.EDITOR,)))
         links = {"record": "JHN.1.1.s1", "verse": "JHN.1.1", "language": "fr", "levels": ["B"],
                  "links": "JHN.1.1.s1: Au commencement=1,2 | Verbe=4,5", "reason": "Missing links"}
-        with mock.patch.object(staff_jobs, "_github", side_effect=github):
+        with mock.patch("staff.github.call", side_effect=github):
             two = editor.post("/api/admin/fixes/", {**links, "levels": ["B", "R"]}, format="json")
             self.assertEqual(two.json()["code"], "one_level")
             other = editor.post("/api/admin/fixes/", {**links, "links": "JHN.1.2.s1: x=1"}, format="json")
@@ -777,7 +778,7 @@ class ArticlesTest(AdminTestCase):
                 return {"number": 11, "html_url": "https://github.com/x/y/issues/11"}
             return [{"number": 10, "title": "t", "html_url": "u", "created_at": "2026-10-16T00:00:00Z",
                      "body": 'x\n<!-- article-job {"language": "sw", "slugs": ["two"]} -->'}]
-        with mock.patch.object(staff_jobs, "_github", side_effect=github):
+        with mock.patch("staff.github.call", side_effect=github):
             current = self.admin.post("/api/admin/articles/", {"language": "es", "slugs": ["one"]}, format="json")
             self.assertEqual(current.json()["code"], "nothing_to_do")
             dup = self.admin.post("/api/admin/articles/", {"language": "sw", "slugs": ["two"]}, format="json")
@@ -855,7 +856,7 @@ class WorkTest(AdminTestCase):
 
         def github(path, method="GET", body=None, stop=None):
             return PULLS if path.startswith("pulls") else issues
-        patcher = mock.patch.object(staff_jobs, "_github", side_effect=github)
+        patcher = mock.patch("staff.github.call", side_effect=github)
         patcher.start()
         self.addCleanup(patcher.stop)
 
@@ -878,7 +879,7 @@ class WorkTest(AdminTestCase):
         kept = cache.get(staff_work.KEY)
         cache.set(staff_work.KEY, {**kept, "at": kept["at"] - staff_work.FRESH - 1}, staff_work.KEEP)
         started = []
-        with mock.patch.object(staff_jobs, "_github", side_effect=AssertionError("not in the request")), \
+        with mock.patch("staff.github.call", side_effect=AssertionError("not in the request")), \
                 mock.patch("staff.work.threading.Thread") as thread:
             thread.return_value.start.side_effect = lambda: started.append(True)
             again = self.admin.get("/api/admin/work/").json()
@@ -888,7 +889,7 @@ class WorkTest(AdminTestCase):
 
     def test_github_out_of_reach_still_says_the_window(self):
         # The page's heading reads days and stale_hours ("the last undefined days" before).
-        with mock.patch.object(staff_jobs, "_github", side_effect=staff_jobs.GitHubError):
+        with mock.patch("staff.github.call", side_effect=staff_github.GitHubError):
             data = self.admin.get("/api/admin/work/").json()
         self.assertEqual((data["items"], data["days"], data["stale_hours"]), ([], 30, 24))
         self.assertIn("could not be reached", data["error"])
@@ -1015,7 +1016,7 @@ class ExportTest(AdminTestCase):
 
 
 class GitHubPagesTest(SimpleTestCase):
-    """staff.jobs._github reads every page of a list (more than 100 open
+    """staff.github.call reads every page of a list (more than 100 open
     jobs), stops where asked, and turns a dropped connection into
     GitHubError rather than a 500."""
 
@@ -1047,12 +1048,12 @@ class GitHubPagesTest(SimpleTestCase):
     def test_stop_ends_the_pages_early(self):
         urlopen, requested = self.pages([{"n": 1}], [{"n": 2}], [{"n": 3}])
         with mock.patch("urllib.request.urlopen", urlopen):
-            got = staff_jobs._github("pulls", stop=lambda page: page[-1]["n"] >= 2)
+            got = staff_github.call("pulls", stop=lambda page: page[-1]["n"] >= 2)
         self.assertEqual(got, [{"n": 1}, {"n": 2}])
         self.assertEqual(len(requested), 2)
 
     def test_a_dropped_connection_is_a_github_error(self):
         for error in (http.client.IncompleteRead(b""), ConnectionResetError(), http.client.RemoteDisconnected()):
-            with mock.patch("urllib.request.urlopen", side_effect=error), self.assertLogs("staff.jobs", "WARNING"):
-                with self.assertRaises(staff_jobs.GitHubError):
-                    staff_jobs._github("issues")
+            with mock.patch("urllib.request.urlopen", side_effect=error), self.assertLogs("staff.github", "WARNING"):
+                with self.assertRaises(staff_github.GitHubError):
+                    staff_github.call("issues")

@@ -11,7 +11,7 @@ from django.utils import timezone
 
 from backend_tests.test_admin import SITE, AdminTestCase, account
 from feedback.models import ReaderMessage
-from staff import jobs
+from staff.github import GitHubError
 from staff.models import AdminAction
 from translation.models import ImportRun
 
@@ -42,7 +42,7 @@ class AlertsTest(AdminTestCase):
     def run_alerts(self, ci_status=GREEN, issues=()):
         out = io.StringIO()
         with mock.patch("staff.progress._ci_status", return_value=ci_status), \
-                mock.patch("staff.jobs._github", side_effect=github(list(issues))):
+                mock.patch("staff.github.call", side_effect=github(list(issues))):
             call_command("send_alerts", stdout=out, stderr=out)
         return out.getvalue()
 
@@ -102,7 +102,7 @@ class AlertsTest(AdminTestCase):
         self.sent()
         out = io.StringIO()
         with mock.patch("staff.progress._ci_status", return_value=None), \
-                mock.patch("staff.jobs._github", side_effect=jobs.GitHubError("down")):
+                mock.patch("staff.github.call", side_effect=GitHubError("down")):
             call_command("send_alerts", stdout=out)
         self.assertEqual(self.sent(), [])
         self.assertIn("0 alert(s) sent", out.getvalue())

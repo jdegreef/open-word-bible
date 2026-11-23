@@ -25,10 +25,10 @@ from accounts.models import Role
 from feedback.models import ReaderMessage
 from translation.models import ReviewState
 
-from . import jobs
+from . import github, jobs
 from .permissions import admin_view
 
-# jobs._github forgets it when it files or changes an issue.
+# github.call forgets it when it files or changes an issue.
 GITHUB_KEY = "staff.attention.github"
 GITHUB_SECONDS = 300
 
@@ -43,7 +43,7 @@ def _github():
         try:
             found = {"fixes": len(open_fixes()), "jobs": len(jobs.open_jobs())}
             cache.set(GITHUB_KEY, found, GITHUB_SECONDS)
-        except jobs.GitHubError:
+        except github.GitHubError:
             found = {}
             cache.set(GITHUB_KEY, found, 60)
     return found

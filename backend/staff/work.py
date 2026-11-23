@@ -22,7 +22,7 @@ from django.utils import timezone
 from django.utils.dateparse import parse_datetime
 from rest_framework.response import Response
 
-from . import jobs
+from . import github
 from .permissions import admin_view
 
 KINDS = {"drafting-job": "Drafting job", "fix-request": "Fix request", "article-job": "Article job"}
@@ -39,12 +39,12 @@ def _pr_state(pr):
 
 def fetch_work(days=DAYS):
     """The jobs filed in the last `days`, newest first, each with its pull
-    requests. Raises jobs.GitHubError when GitHub can't be reached."""
+    requests. Raises github.GitHubError when GitHub can't be reached."""
     since = (timezone.now() - timedelta(days=days)).strftime("%Y-%m-%dT%H:%M:%SZ")
-    issues = jobs._github(f"issues?state=all&since={since}&per_page=100")
+    issues = github.call(f"issues?state=all&since={since}&per_page=100")
     # Newest updated first: the pages stop at the first that reaches back
     # past `since`, since a job's pull request has been updated since then.
-    pulls = jobs._github("pulls?state=all&sort=updated&direction=desc&per_page=100",
+    pulls = github.call("pulls?state=all&sort=updated&direction=desc&per_page=100",
                          stop=lambda page: bool(page) and (page[-1].get("updated_at") or "") < since)
     by_issue = {}
     for pr in pulls:
@@ -84,7 +84,7 @@ KEY = "staff.work.v2"
 
 
 def cached_work():
-    """fetch_work without the bodies. Raises jobs.GitHubError when GitHub
+    """fetch_work without the bodies. Raises github.GitHubError when GitHub
     can't be reached and no copy is kept."""
     return _kept()["items"]
 
@@ -114,7 +114,7 @@ def _refresh():
 def _refresh_quietly():
     try:
         _refresh()
-    except jobs.GitHubError:
+    except github.GitHubError:
         pass   # the kept copy stays; the next page asks again
     finally:
         cache.delete(KEY + ".refreshing")
@@ -125,7 +125,7 @@ def _refresh_quietly():
 def work(request):
     try:
         cached = cached_work()
-    except jobs.GitHubError:
+    except github.GitHubError:
         return Response({"items": [], "error": "GitHub could not be reached, so the work isn't listed.",
                          "days": DAYS, "stale_hours": STALE_HOURS})
     counts = {"open": sum(1 for w in cached if w["state"] == "open"),

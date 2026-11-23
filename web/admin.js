@@ -2607,9 +2607,8 @@ var OWBAdminNav = (function () {
           r.skipped.length ? h("details", null, h("summary", null, plural(r.skipped.length, "book") + " left out"),
             h("ul", null, r.skipped.map(function (s) { return h("li", null, bookName(d, s.book) + ": " + s.reason); }))) : null,
           confirmButton("File " + plural(r.plan.length, "job"), "File them?", function (b) {
-            api("/api/admin/jobs/bulk/", { method: "POST", body: asked }).then(function (f) {
-              FLASH = "Filed " + plural(f.filed.length, "job") + (f.error ? ". " + f.error : f.remaining ? "; " + f.remaining + " more to queue." : ".");
-              route();
+            api("/api/admin/jobs/bulk/", { method: "POST", body: asked }).then(function (run) {
+              watchFiling(run, result);
             }, function (err) { busy(b, false); note(status, err, true); });
           }, "admin-btn primary")]);
       }, function (err) { note(status, err, true); }).then(function () { busy(preview, false); });
@@ -2663,6 +2662,36 @@ var OWBAdminNav = (function () {
           })) : empty("Nothing sent yet."))];
     });
   };
+  // The server files a bulk request's jobs one by one in the background
+  // (GitHub takes up to 10 s a job); this shows how far it has got, asking
+  // again every POLL_MS, until it is done or has stopped.
+  var POLL_MS = 2000;
+  function watchFiling(run, where) {
+    var line = h("p", { role: "status" });
+    var meter = h("div");
+    where.textContent = "";
+    add(where, [line, meter]);
+    function finish(r) {
+      FLASH = "Filed " + plural(r.filed.length, "job") + (r.error ? ". " + r.error
+        : r.remaining ? "; " + r.remaining + " more to queue." : ".");
+      forget(C.drops("/api/admin/jobs/bulk/"));   // the jobs filed since the request
+      route();
+    }
+    function show(r) {
+      if (!document.body.contains(where)) return;   // left the page: the jobs list will show them
+      if (r.state !== "filing") { finish(r); return; }
+      line.textContent = "Filing " + (r.filed.length + 1) + " of " + r.plan.length + "… You can leave this page; filing goes on.";
+      meter.textContent = "";
+      meter.appendChild(bar(r.filed.length, r.plan.length));
+      setTimeout(function () {
+        request("/api/admin/jobs/bulk/" + encodeURIComponent(r.id) + "/", {}).then(show, function (e) {
+          line.textContent = "";
+          note(line, e, true);
+        });
+      }, POLL_MS);
+    }
+    show(run);
+  }
 
   // Help & roles.
   var ROLES = [

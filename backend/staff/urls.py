@@ -42,6 +42,7 @@ urlpatterns = [
     path("emails/", emails.emails),
     path("jobs/", jobs.jobs),
     path("jobs/bulk/", jobs.bulk),
+    path("jobs/bulk/<str:run_id>/", jobs.bulk_run),
     path("team/", team.team),
     path("team/roles/<int:role_id>/", team.revoke),
     path("team/invite/", team.resend),
