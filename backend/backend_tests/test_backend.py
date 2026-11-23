@@ -12,7 +12,7 @@ from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.core.management import CommandError, call_command
 from django.db import connection
-from django.test import TestCase
+from django.test import TestCase, override_settings
 
 from texts.models import Edition, Verse, Word
 from translation import counts
@@ -226,7 +226,12 @@ class FreshDatabaseTest(TestCase):
             import_content(*genesis)
 
 
+@override_settings(OWB_API_KEYS=["test-key"])
 class ApiTest(TestCase):
+    def setUp(self):
+        # These endpoints are for our own servers (config/access.py).
+        self.client.defaults["HTTP_X_OWB_KEY"] = "test-key"
+
     @classmethod
     def setUpTestData(cls):
         edition = load_extract_words(books=("JHN", "GEN"))

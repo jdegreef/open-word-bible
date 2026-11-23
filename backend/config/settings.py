@@ -10,7 +10,14 @@ Configuration comes from the environment:
                         its host is also the relying party passkeys are made for
   OWB_API_URL           this API, for links in emails (default https://api.openwordbible.org)
   CORS_ALLOWED_ORIGINS  sites that may call the API (default: OWB_SITE_URL; the
-                        partner sites below are added to it)
+                        partner sites below are added to it). Other origins,
+                        and requests with no Origin, are refused
+                        (config/access.py)
+  OWB_API_KEYS          comma-separated keys for our own servers and scripts,
+                        sent as X-OWB-Key; the only way into /api/editions/,
+                        /api/text/ and /api/passages/
+  OWB_API_REQUIRE_ORIGIN  "0" lets requests without an allowed Origin in
+                        (default "1", or "0" with DJANGO_DEBUG=1)
   LOGIA_SITE_URL        Logia, which shares these accounts (default https://logia.faith)
   OWB_SUPER_ADMIN_EMAILS  comma-separated emails that are super admins (set
                         in the Render dashboard, so they are not published)
@@ -85,6 +92,8 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "accounts.cors.ApiCorsMiddleware",
+    # Inside CORS, so the site can read a refusal (config/access.py).
+    "config.access.ApiAccessMiddleware",
     # Inside CORS, which adds its Vary after gzip's Accept-Encoding; around
     # everything else, so Server-Timing counts the whole request.
     "config.middleware.ApiGzipMiddleware",
@@ -194,6 +203,11 @@ REST_FRAMEWORK = {
     "DEFAULT_RENDERER_CLASSES": ["rest_framework.renderers.JSONRenderer"],
     # Search (api/views.py): as Ochorus allows.
     "DEFAULT_THROTTLE_RATES": {"search": "120/min"},
+    # Render appends the client's address to X-Forwarded-For, so the
+    # throttles count by the last entry (as accounts.views.client_ip does).
+    # Without this DRF keyed on the whole header, and a client could get a
+    # fresh allowance by sending a made-up one.
+    "NUM_PROXIES": 1,
 }
 
 # Accounts (backend/accounts/).
@@ -205,6 +219,10 @@ CORS_ALLOWED_ORIGINS = env_list("CORS_ALLOWED_ORIGINS", OWB_SITE_URL) + (
 # not the sign-in endpoints (accounts.views.foreign).
 PARTNER_SITES = {"logia": os.environ.get("LOGIA_SITE_URL", "https://logia.faith").rstrip("/")}
 CORS_ALLOWED_ORIGINS += list(PARTNER_SITES.values()) + (["http://localhost:8001"] if DEBUG else [])
+# Who may use the API (config/access.py): our own servers by key, our sites'
+# pages by Origin.
+OWB_API_KEYS = env_list("OWB_API_KEYS")
+OWB_API_REQUIRE_ORIGIN = os.environ.get("OWB_API_REQUIRE_ORIGIN", "0" if DEBUG else "1") == "1"
 OWB_SUPER_ADMIN_EMAILS = [e.lower() for e in env_list("OWB_SUPER_ADMIN_EMAILS")]
 SIGN_IN_LINK_MINUTES = 20
 OWB_API_URL = os.environ.get("OWB_API_URL", "https://api.openwordbible.org").rstrip("/")
