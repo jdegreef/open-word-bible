@@ -1002,3 +1002,36 @@ For reviewers:
   expect غلام here?
 - قانع for autarkēs (4:11): does it carry contentment that does not depend
   on circumstances?
+
+### Colossians
+
+- Paul says شما to the Colossians, and تو in his word to Archippus (4:17).
+- 1:15-20 keeps the English poetry breaks. Eikōn is صورت, prōtotokos
+  نخست‌زاده at every level, plērōma پری. Thrones, lordships, rulers and
+  authorities (1:16): تخت‌ها، سروری‌ها، ریاست‌ها، قدرت‌ها (Literal).
+- Reconcile (1:20-22): آشتی دادن (Literal, Balanced) / نزد خود بازگرداندن
+  (Readable), as in 2 Corinthians and Ephesians.
+- Stoicheia (2:8, 2:20): عناصر جهان (Literal) / نیروهای بنیادین جهان
+  (Balanced) / نیروها و قاعده‌هایی که این جهان را می‌گردانند (Readable).
+- Sarx: bodily presence (2:1, 2:5) and Christ's body (1:22) are جسم; the
+  sinful self (2:11 Balanced, 2:18, 2:23) is نفس; 2:13 uncircumcision of
+  the flesh keeps جسم.
+- Cheirographon (2:14): سند دست‌نوشته (Literal) / سند بدهی (Balanced).
+  Shadow and body (2:17): سایه ... بدن (Literal) / حقیقت (Balanced).
+- Old and new self (3:9-10): انسان کهنه / انسان تازه, as in Ephesians 4.
+  Barbarian and Scythian (3:11): بربر, سکایی.
+- Household (3:18-4:1) follows Ephesians 5:22-6:9: تسلیم, برده, ارباب
+  for owners and the Master in heaven, خداوند for Christ.
+- Syndoulos (1:7, 4:7): هم‌بنده (Literal) / هم‌خدمت (Balanced, Readable in
+  1:7).
+
+Names: کولسی, تیموتائوس, اپافراس, لائودیکیه, هیراپولیس, تیخیکوس,
+اونیسیموس, آریستارخوس, مرقس, برنابا, یوستوس, لوقا, دیماس, نیمفا, آرخیپوس.
+
+For reviewers:
+
+- نخست‌زادهٔ همهٔ آفرینش (1:15) at Literal: does it suggest the Son was
+  created? Balanced adds بالاتر از همهٔ آفرینش to show rank.
+- پری for plērōma (1:19, 2:9): is کمال or تمامی more natural?
+- 2:21 «دست مزن، مچش، لمس مکن» at Literal and Balanced: do the old
+  imperatives read well, or should Balanced say «دست نزن، نچش، لمس نکن»?
