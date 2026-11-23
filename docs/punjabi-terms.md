@@ -1939,3 +1939,51 @@ People and places: ਪੌਲੁਸ, ਤੁਖਿਕੁਸ; ਅਫ਼ਸੁਸ, �
   Israel" (the Dead Sea Scrolls and Septuagint read "sons of God"); 32:43
   follows the Hebrew, which is shorter than the Septuagint quoted in
   Hebrews 1:6.
+
+### John
+
+- Core words: Word ਸ਼ਬਦ; glory ਵਡਿਆਈ; world ਸੰਸਾਰ (L, B), ਦੁਨੀਆਂ (R); light
+  ਚਾਨਣ; truth ਸੱਚਾਈ (L, B), ਸੱਚ (R); eternal life ਸਦੀਪਕ ਜੀਵਨ (L, B), ਸਦਾ ਦਾ
+  ਜੀਵਨ (R); hour ਘੜੀ (L, B), ਸਮਾਂ (R); signs ਚਿੰਨ੍ਹ; believe ਵਿਸ਼ਵਾਸ ਕਰਨਾ;
+  remain ਬਣੇ ਰਹਿਣਾ (L, B), ਜੁੜੇ/ਟਿਕੇ ਰਹਿਣਾ (R); affliction ਕਲੇਸ਼ (L, B),
+  ਮੁਸੀਬਤਾਂ (R); figures of speech ਦ੍ਰਿਸ਼ਟਾਂਤ (L, B), ਮਿਸਾਲਾਂ (R); hate ਵੈਰ
+  (L, B), ਨਫ਼ਰਤ (R). "Truly, truly" is ਮੈਂ ਤੁਹਾਨੂੰ ਸੱਚ-ਸੱਚ ਆਖਦਾ ਹਾਂ, with
+  ਤੈਨੂੰ to one person (3:3, 13:38, 21:18).
+- The Spirit: Advocate ਸਹਾਇਕ; Spirit of truth ਸੱਚਾਈ ਦਾ ਆਤਮਾ (L, B), ਸੱਚ ਦਾ
+  ਆਤਮਾ (R); the Spirit takes plain masculine singular forms. Ruler of this
+  world ਸਰਦਾਰ (L), ਹਾਕਮ (B, R); R names Satan ਸ਼ੈਤਾਨ.
+- The vine (15): ਅੰਗੂਰੀ ਵੇਲ; vinedresser ਕਿਸਾਨ (L, B), ਮਾਲੀ (R); branch
+  ਟਹਿਣੀ; slave ਦਾਸ; master ਸੁਆਮੀ (L), ਮਾਲਕ (B, R); friends ਮਿੱਤਰ (L, B),
+  ਦੋਸਤ (R).
+- Passion: cohort ਪਲਟਨ (L), ਸਿਪਾਹੀਆਂ ਦੀ ਟੁਕੜੀ (B), ਰੋਮੀ ਸਿਪਾਹੀਆਂ ਦਾ ਦਲ
+  (R); tribune ਪਲਟਨ ਦਾ ਸਰਦਾਰ (L, B), ਫ਼ੌਜੀ ਸਰਦਾਰ (R); officers ਸਿਪਾਹੀ (L),
+  ਹੈਕਲ ਦੇ ਪਹਿਰੇਦਾਰ (B, R); "I am he" ਮੈਂ [ਉਹੀ] ਹਾਂ (L), ਮੈਂ ਉਹੀ ਹਾਂ (B,
+  R); Nazorean ਨਾਸਰੀ (L), ਨਾਸਰਤ ਦਾ (B), ਨਾਸਰਤ ਵਾਲਾ (R); praetorium
+  ਪ੍ਰਾਏਤੋਰਿਯੁਮ (L), ਰਾਜਪਾਲ ਦਾ ਸਦਰ ਮੁਕਾਮ (B), ਰੋਮੀ ਰਾਜਪਾਲ ਦਾ ਮਹਿਲ (R), as
+  in Mark 15; Stone Pavement ਪੱਥਰ ਦਾ ਫ਼ਰਸ਼, Gabbatha ਗੱਬਥਾ; notice
+  ਦੋਸ਼-ਪੱਤਰ (L, B), ਫੱਟੀ (R); Golgotha ਗਲਗਥਾ; sour wine ਖੱਟੀ ਮੈ; hyssop
+  ਜ਼ੂਫ਼ਾ; casting lots ਗੁਣੇ ਪਾਉਣਾ; charcoal fire ਕੋਲਿਆਂ ਦੀ ਅੱਗ (18:18 and
+  21:9); bandit ਡਾਕੂ; Caesar ਕੈਸਰ.
+- Names: Kidron ਕਿਦਰੋਨ ਨਾਲਾ (L), ਕਿਦਰੋਨ ਵਾਦੀ (B, R); Annas ਹੰਨਾ; Caiaphas
+  ਕਯਾਫ਼ਾ; Malchus ਮਲਖੁਸ; Pilate ਪਿਲਾਤੁਸ; Barabbas ਬਰੱਬਾ; Clopas ਕਲੋਪਾਸ;
+  Mary Magdalene ਮਰਿਯਮ ਮਗਦਲੀਨੀ; Joseph of Arimathea ਅਰਿਮਥੀਆ ਦਾ ਯੂਸੁਫ਼;
+  Nicodemus ਨਿਕੋਦੇਮੁਸ; Thomas ਥੋਮਾ, Didymus ਦਿਦੁਮੁਸ; Rabbi ਰੱਬੀ, Rabbouni
+  ਰੱਬੂਨੀ, glossed ਗੁਰੂ (R ਗੁਰੂ ਜੀ); Sea of Tiberias ਤਿਬਿਰਿਯਾਸ ਦਾ ਸਮੁੰਦਰ
+  (L), ਤਿਬਿਰਿਯਾਸ ਦੀ ਝੀਲ (B, R).
+- Units: `{{units:ਲਗਭਗ 330 ਗ੍ਰਾਮ|ਇੱਕ ਰੋਮੀ ਪਾਉਂਡ}}` (12:3),
+  `{{units:ਲਗਭਗ 33 ਕਿੱਲੋ|ਲਗਭਗ ਸੌ ਰੋਮੀ ਪਾਉਂਡ}}` (19:39),
+  `{{units:ਲਗਭਗ 90 ਮੀਟਰ|ਲਗਭਗ ਦੋ ਸੌ ਹੱਥ}}` (21:8) at B and R; L keeps the
+  ancient unit. Christ is plain ਮਸੀਹ with no christos setting.
+- Address: the narrator, the disciples and believing crowds speak of Jesus
+  with honorific plural forms and say ਤੁਸੀਂ to him; Jesus says ਤੂੰ to one
+  person (Peter, Philip, Mary, Thomas, his mother, Pilate, the high priest)
+  and ਤੁਸੀਂ to a group, and prays to the Father with ਤੂੰ. The council, the
+  arresting party, the high priest's men, Pilate and the soldiers say ਤੂੰ to
+  Jesus and speak of him plainly; the Hindi draft uses आप for Pilate and the
+  high priest's men, and reviewers may want to weigh that. Mary says ਤੁਸੀਂ
+  to the man she takes for the gardener (20:15). Jesus's mother takes plain
+  forms in the narrative (2:3-5, 19:27), as in Hindi 2:3-5 but not Hindi
+  19:27. In 21:15-17 both Greek verbs for love are ਪਿਆਰ; B and R vary the
+  question as ਕੀ ਤੈਨੂੰ ਮੇਰੇ ਨਾਲ ਪਿਆਰ ਹੈ? for wording, not meaning.
+- Gender spans follow the English: `{{gender:ਚਾਨਣ ਦੀ ਸੰਤਾਨ|ਚਾਨਣ ਦੇ ਪੁੱਤਰ}}`
+  (12:36), `{{gender:ਭਰਾਵਾਂ ਅਤੇ ਭੈਣਾਂ|ਭਰਾਵਾਂ}}` (20:17, 21:23).
