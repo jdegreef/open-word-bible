@@ -1890,3 +1890,52 @@ People and places: ਪੌਲੁਸ, ਤੁਖਿਕੁਸ; ਅਫ਼ਸੁਸ, �
   following the written Hebrew and the English; the 1 Chronicles
   numbers often differ from Samuel and Kings and are kept as Chronicles has
   them.
+
+### Deuteronomy
+
+- Book name ਬਿਵਸਥਾ ਸਾਰ. God takes the honorific plural with no deity_pronoun
+  spans; prayers to God use ਤੂੰ (3:24-25, 9:26-29, 21:8, 26:5-10, 33:7-11).
+  Moses' "you" follows the Hebrew: L marks each clause, B and R keep the
+  main number of the passage. Speeches to all Israel in 29 and 31:5-6 and
+  to the Levites in 31:26-29 use ਤੁਸੀਂ; elsewhere ਤੂੰ. Numbers are digits
+  (120), as in Chronicles.
+- Cross-references to keep: Exodus 20 must match the Ten Words of 5:6-21;
+  Matthew 4 and Luke 4 must match 6:13, 6:16 and 8:3; Matthew 5:38 must
+  match 19:21; Romans 10:6-8 is matched in 30:12-14, Romans 10:19 in 32:21,
+  Romans 12:19 and Hebrews 10:30 in 32:35-36, Romans 15:10 in 32:43,
+  Galatians 3:10 in 27:26, Galatians 3:13 in 21:23, Joshua 1:6 in 31:6-7,
+  23, Hebrews 13:5 in 31:6, 8. The clean and unclean birds of 14:11-18
+  reuse Leviticus 11.
+- Law and covenant: statutes and judgments ਬਿਧੀਆਂ ਅਤੇ ਨਿਆਂ; covenant ਨੇਮ
+  (ਨੇਮ ਬੰਨ੍ਹਣਾ), ark of the covenant ਨੇਮ ਦਾ ਸੰਦੂਕ; treasured possession ਖ਼ਾਸ
+  ਨਿੱਜੀ ਧਨ (L, B), ਅਨਮੋਲ ਖ਼ਜ਼ਾਨਾ (R); tithe ਦਸਵੰਧ; year of release
+  ਛੁਟਕਾਰੇ ਦਾ ਸਾਲ; Festival of Booths ਡੇਰਿਆਂ ਦਾ ਪਰਬ (L), ਤਿਉਹਾਰ (B, R);
+  burnt offering ਹੋਮ ਬਲੀ, peace offerings ਸੁੱਖ-ਸਾਂਦ ਦੀਆਂ ਬਲੀਆਂ, whole
+  offering ਪੂਰੀ ਬਲੀ (L), ਪੂਰੀ ਹੋਮ ਬਲੀ (B, R); tent of meeting ਮੁਲਾਕਾਤ ਦਾ
+  ਤੰਬੂ; pillar of cloud ਬੱਦਲ ਦਾ ਥੰਮ੍ਹ; assembly ਸਭਾ; foreigner (nokri)
+  ਵਿਦੇਸ਼ੀ; jealous ਅਣਖ; circumcise the heart ਦਿਲ ਦੀ ਸੁੰਨਤ; the strong hand
+  and outstretched arm ਤਕੜਾ ਹੱਥ ਅਤੇ ਪਸਾਰੀ ਹੋਈ ਬਾਂਹ (L), ਬਲਵੰਤ ਹੱਥ ਅਤੇ
+  ਪਸਾਰੀ ਬਾਂਹ (B); milk and honey ਦੁੱਧ ਅਤੇ ਸ਼ਹਿਦ ਵਗਦਾ (L), ਦੀਆਂ ਨਦੀਆਂ
+  ਵਗਦੀਆਂ (B).
+- Blessings and curses: blessed ਧੰਨ, cursed ਸਰਾਪੀ; the curses of 27 L
+  "ਸਰਾਪੀ [ਹੈ] ਉਹ ਜਿਹੜਾ", B "ਸਰਾਪ ਹੈ ਹਰੇਕ ਉੱਤੇ ਜਿਹੜਾ", R "ਸਰਾਪ ਹੇਠ ਹੈ ਹਰ
+  ਉਹ", each answered ਆਮੀਨ; head and tail ਸਿਰ / ਪੂਛ (R ਆਗੂ / ਪਿੱਛਲੱਗ); hide
+  the face ਮੂੰਹ ਲੁਕਾਉਣਾ (R ਮੂੰਹ ਫੇਰਨਾ); wormwood ਨਾਗਦੌਣਾ; choose life ਜੀਵਨ
+  ਨੂੰ ਚੁਣ ਲੈ.
+- The Song (32) and the Blessing (33) are set in lines with \q, each one
+  quotation. The Rock ਚੱਟਾਨ (their rock / our Rock told apart by the
+  possessive); the Most High ਅੱਤ ਮਹਾਨ; Jeshurun ਯਸ਼ੁਰੂਨ (L, B), ਇਸਰਾਏਲ (R);
+  Sheol ਪਤਾਲ (L, B), ਮੁਰਦਿਆਂ ਦਾ ਲੋਕ (R); demons ਭੂਤ; the pupil of the eye
+  ਅੱਖ ਦੀ ਪੁਤਲੀ; eagle ਉਕਾਬ; wild ox ਜੰਗਲੀ ਸਾਨ੍ਹ; atonement ਪ੍ਰਾਸਚਿਤ;
+  Thummim and Urim ਥੁੰਮੀਮ ਅਤੇ ਊਰੀਮ; the man of God ਪਰਮੇਸ਼ੁਰ ਦਾ ਜਨ; prophet
+  ਨਬੀ; wine ਮੈ.
+- Names: Joshua son of Nun ਯਹੋਸ਼ੁਆ, ਨੂਨ ਦਾ ਪੁੱਤਰ (Hoshea ਹੋਸ਼ੇਆ in 32:44 L);
+  Horeb ਹੋਰੇਬ; Pharaoh ਫ਼ਿਰਊਨ; Sihon, Heshbon, Og, Bashan ਸੀਹੋਨ, ਹਸ਼ਬੋਨ,
+  ਓਗ, ਬਾਸ਼ਾਨ; Sodom, Gomorrah, Admah, Zeboiim ਸਦੂਮ, ਅਮੂਰਾਹ, ਅਦਮਾਹ, ਸਬੋਈਮ;
+  Ebal, Gerizim ਏਬਾਲ, ਗਰਿੱਜ਼ੀਮ; Massah ਮੱਸਾ; Meribah ਮਰੀਬਾਹ; Zin ਸੀਨ;
+  Abarim, Nebo, Pisgah ਅਬਾਰੀਮ, ਨਬੋ, ਪਿਸਗਾਹ; Beth-peor ਬੈਤ-ਪਓਰ; Zoar ਸੋਆਰ;
+  Mount Hor ਹੋਰ ਪਹਾੜ; the western sea ਪੱਛਮੀ ਸਮੁੰਦਰ (R ਭੂ-ਮੱਧ ਸਾਗਰ).
+- For the reviewer: 32:8 follows the Hebrew "the number of the sons of
+  Israel" (the Dead Sea Scrolls and Septuagint read "sons of God"); 32:43
+  follows the Hebrew, which is shorter than the Septuagint quoted in
+  Hebrews 1:6.
