@@ -1,4 +1,5 @@
-"""Read-only API for the reader and other consumers.
+"""Read-only API for the reader site and our own servers (config/access.py
+says who may call which: editions, text and passages need a key).
 
 GET /api/editions/                       every imported edition
 GET /api/text/<BOOK>/<chapter>/?editions=bsb,web

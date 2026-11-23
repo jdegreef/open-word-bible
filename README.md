@@ -454,7 +454,11 @@ against Postgres (`render.yaml`). It holds:
   trail. `content/` is still the master copy and is loaded with
   `import_content`.
 - **api**: read-only JSON at `/api/editions/`, `/api/text/<BOOK>/<ch>/`,
-  `/api/passages/<BOOK>/<ch>/` and `/api/search/?q=…&lang=…`. The Django
+  `/api/passages/<BOOK>/<ch>/` and `/api/search/?q=…&lang=…`. The API is for
+  Open Word Bible's own use (`backend/config/access.py`): only our sites'
+  pages (by Origin) and our own servers (by an `OWB_API_KEYS` key in the
+  `X-OWB-Key` header) may call it, and editions, text and passages need the
+  key. Builders get the data from the CC0 download instead. The Django
   admin at `/admin/` is the first review tool.
 - **export** (in staff): the site admin's Export section downloads one
   language at one level as a zip of USFM books or as JSON, for Bible
