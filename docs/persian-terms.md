@@ -723,3 +723,54 @@ For reviewers:
 - قربان for "Sir" to Pilate (27:63) may read as too everyday for Balanced.
 - The third-person singular honorific Hindi uses for the Father (24:36) has
   no Persian match; both Son and Father take plain verbs.
+
+### Romans
+
+Terms:
+
+- Righteousness and justification: پارسایی and پارسا شمرده شدن (Literal),
+  پارسا اعلام شدن (Balanced), در نظر خدا پارسا به حساب آمدن (Readable).
+- The flesh as a power is نفس (Literal, Balanced) and طبیعت گناه‌آلود
+  (Readable). جسم is kept for descent (1:3, 9:3-5) and the Son's body (8:3),
+  and بدن for sōma.
+- God's law is شریعت. Nomos as a principle (3:27, 7:21-25, 8:2) is قانون at
+  Balanced and Readable.
+- "May it not be!" is حاشا! (Literal, Balanced) and به هیچ وجه! (Readable).
+- Slaves in chapter 6 are برده at every level.
+- Gentiles: قوم‌ها (Literal), غیریهودیان (Balanced, Readable); Readable keeps
+  قوم‌ها inside the psalm quotations (15:9-12).
+- Saints: مقدسین (Literal, Balanced), قوم خدا (Readable).
+- Phoebe is خادمه (Literal, Balanced) and "خدمت می‌کند" (Readable), and
+  حامی for prostatis (16:1-2). Kinsfolk are خویشان (Literal), هم‌قومان
+  یهودی (Balanced), مانند من یهودی (Readable) (16:7, 11, 21).
+- Vowel signs: only «اَبّا» (8:15) and «پُری» (11:12) at their first
+  Literal use in the book.
+
+Names: الیاس, بعل, بنیامین, یسا, ربکا, عیسو, سارا, هوشع, سدوم, عموره,
+صهیون, خداوند لشکرها, اسپانیا, ایلیریکوم; in chapter 16 فیبی, کنخریه,
+پریسکا (Paul's form; Acts has پریسکیلا), آکیلا, اپینتوس, آندرونیکوس,
+یونیا, امپلیاتوس, اوربانوس, استاخیس, اپلس, اریستوبولس, هیرودیون, نرکیسوس,
+تریفینا, تریفوسا, پرسیس, روفس, اسینکریتوس, فلیگون, هرمیس, پاتروباس,
+هرماس, فیلولوگس, یولیا, نیریاس, اولمپاس, سوسیپاتر, ترتیوس, اراستوس,
+کوارتوس.
+
+Address:
+
+- Paul says شما to the church. The imagined debating partner (2:1-5,
+  9:19-20) and the Gentile believer of 11:17-24 get تو, and so does God
+  speaking to one person. Prayer to God is تو.
+- ای {{gender:برادران و خواهران|برادران}} at Literal and Balanced;
+  {{gender:برادران و خواهران عزیز|برادران عزیز}} at Readable. A single
+  believer is {{gender:برادر یا خواهرت|برادرت}}, and Readable says
+  ایمانداری دیگر (chapter 14).
+- {{gender:فرزندان خدا|پسران خدا}} (8:14-19). No spans on انسان, مردم or
+  pronouns.
+
+For reviewers:
+
+- نفس for sarx may suggest "the soul" or "self" to some readers. Is it
+  clear enough at Literal and Balanced, or should جسم be used throughout?
+- پارسا for "righteous" follows the earlier books; the Old Version has
+  عادل and عدالت. Which do Persian churches expect in Romans 3-5?
+- خادمه for Phoebe (16:1): does it read as an office (deacon) or only as
+  service? The meaning decision leaves this open.
