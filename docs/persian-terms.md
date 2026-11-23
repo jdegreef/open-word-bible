@@ -589,3 +589,63 @@ For reviewers:
 - The bath and cor converted to liters (16:6-7). Is metric volume natural
   for oil and wheat, or should Readable say "کیسه"?
 - ولی‌نعمت for *euergetai* (22:25); نیکوکاران is the literal alternative.
+
+### Acts
+
+Terms: روح‌القدس, رسولان, شاگردان, کلیسا, طریقت (the Way), مشایخ
+(Literal) / مشایخ کلیسا (Balanced) / رهبران کلیسا (Readable) for church
+elders, ناظران for overseers, شورا for the Sanhedrin, یوزباشی for the
+centurion, هنگ for the cohort (هنگ امپراتوری, 27:1), فرمانده هنگ /
+فرمانده for the tribune, سربازخانه (Readable دژ) for the barracks,
+دادرسان and چوبداران in Philippi (16:35-38), زندانبان, تماشاخانه,
+ناپاک یا نجس for "common or unclean" (10:14), حالت بی‌خودی for the trance,
+مسیحی (11:26, 26:28), ملکوت خدا (Readable پادشاهی خدا), خدای متعال
+(16:17), به قیصر رجوع می‌کنم (25:11), قیصر (Readable امپراتور), اعلیحضرت
+(Literal) for the Augustus (25:21, 25), فرقه (Readable گروه) for the sect.
+عید فطیر, پسح and پنتیکاست keep their Gospel forms; روزه (Readable روز
+کفاره) for the Fast (27:9).
+
+Names: پولس, برنابا, سیلاس, تیموتائوس, کرنلیوس, آگابوس, کلودیوس, هیرودیس,
+یعقوب, رودا, بلاستوس, باریشوع, علیما, لیدیه, آکیلا, پریسکیلا, گالیون,
+آپولس, ترتلس, دروسیلا, پورکیوس فستوس, آگریپاس, برنیکی, یولیوس, ارسترخس,
+پوبلیوس; زئوس, هرمس, آرتمیس, برادران دوقلو; فینیقیه, قیروان, قونیه,
+لستره, دربه, فیلیپی, تسالونیکی, بیریه, آتن, آریوپاگوس, قرنتس, اخائیه,
+افسس, صیدون, قبرس, قیلیقیه, پمفلیه, میرا, لیکیه, قنیدس, کرت, سلمونی,
+بنادر نیکو, لسائیه, فینیکس, کائودا, سیرتیس, دریای ادریا, مالت, سیراکوس,
+ریغیون, پوتئولی, بازار اپیوس, سه مسافرخانه; the wind اوراکیلون.
+
+Address:
+
+- Paul says شما to plural audiences, and to Felix, Festus and Agrippa at
+  every level.
+- A prisoner or a stranger speaking to an officer says تو at Literal and
+  شما at Balanced and Readable. Officers, kings speaking to prisoners, the
+  Lord, angels and rebukes use تو.
+- Festus and Agrippa say شما to each other. Paul speaks of Agrippa in his
+  presence with ایشان and plural verbs at Balanced and Readable (26:26).
+- "Men, brothers": ای مردان، ای برادران at Literal; at Balanced and
+  Readable ای برادران with no span when the hearers are men only (the
+  council, synagogue and Jewish leaders), and {{gender:ای برادران و
+  خواهران|ای برادران}} for mixed audiences. "Men" to the ship's company is
+  دوستان at Balanced and Readable (27:10-25).
+- Ancestors: پدران at Literal, نیاکان at Balanced and Readable, with no
+  span. "Men of X" at Balanced: {{gender:ای مردم X|ای مردان X}}.
+
+Units: {{units:حدود یک کیلومتر|به اندازهٔ راه یک روز شبات}} (1:12), the
+fathom as قامت with metres by default (27:28). Numbers are written in words.
+
+Quotations: Isaiah 6:9-10 in 28:26-27 follows the Persian of Luke 8:10 and
+John 12:40, since Matthew 13 is not yet in Persian. The third quotation
+level (28:26) uses « » again inside “ ”.
+
+For reviewers:
+
+- والی is used for both the proconsul (13:7, 18:12) and the governor
+  (Felix, Festus) at Literal and Balanced; Readable has فرماندار for the
+  governor. Should the proconsul be distinguished?
+- یوزباشی for the centurion is the Old Version's word and may read as
+  dated; Readable explains it in 27:1.
+- The Jewish leaders in Rome say شما to Paul (28:21); Hindi has the
+  familiar form. Which reads better to Persian ears?
+- اوراکیلون and کائودا follow the critical text's names (the Old Version
+  has اوروکلیدون and کلودی).
