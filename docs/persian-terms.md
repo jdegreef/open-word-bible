@@ -718,8 +718,8 @@ For reviewers:
   as in Mark 13:28. Is درس right there?
 - جعبه‌های آیات for phylacteries (23:5), instead of the loanword تفیلین or
   the Old Version's تعویذ.
-- خدمتکاران for the diakonoi of 22:13 and 23:11 (خادم at Literal in
-  23:11) beside خادم for doulos. Is the difference clear enough?
+- خدمتکاران for the diakonoi of 22:13 beside خادم for doulos in 22:3-10.
+  Is the difference clear enough at Balanced and Readable?
 - قربان for "Sir" to Pilate (27:63) may read as too everyday for Balanced.
 - The third-person singular honorific Hindi uses for the Father (24:36) has
   no Persian match; both Son and Father take plain verbs.
