@@ -184,7 +184,7 @@ the tribe; ਯਹੂਦਾ is Judas in the New Testament), ਯੂਸੁਫ਼, �
 ਯਿਸੂ, ਮਰਿਯਮ, ਯੂਸੁਫ਼, ਇਲੀਸਬਤ, ਜ਼ਕਰਯਾਹ, ਯੂਹੰਨਾ (ਯੂਹੰਨਾ ਬਪਤਿਸਮਾ ਦੇਣ ਵਾਲਾ),
 ਸ਼ਮਊਨ ਪਤਰਸ, ਅੰਦਰਿਯਾਸ, ਯਾਕੂਬ, ਜ਼ਬਦੀ, ਫ਼ਿਲਿਪੁੱਸ, ਬਰਥੁਲਮਈ, ਥੋਮਾ, ਮੱਤੀ, ਯਹੂਦਾ
 ਇਸਕਰਿਯੋਤੀ, ਮਰਿਯਮ ਮਗਦਲੀਨੀ, ਮਾਰਥਾ, ਲਾਜ਼ਰ, ਨਿਕੋਦਿਮੁਸ, ਹੇਰੋਦੇਸ, ਪਿਲਾਤੁਸ,
-ਕਯਾਫ਼ਾ, ਬਰੱਬਾ, ਇਸਤੀਫ਼ਾਨ, ਪੌਲੁਸ (ਸੌਲੁਸ before Acts 13:9), ਬਰਨਬਾਸ, ਸੀਲਾਸ,
+ਕਯਾਫ਼ਾ, ਬਰੱਬਾ, ਸਤਿਫ਼ਨੁਸ, ਪੌਲੁਸ (ਸੌਲੁਸ before Acts 13:9), ਬਰਨਬਾਸ, ਸੀਲਾਸ,
 ਤਿਮੋਥਿਉਸ, ਤੀਤੁਸ, ਅਪੁੱਲੋਸ, ਪ੍ਰਿਸਕਿੱਲਾ, ਅਕੂਲਾ, ਲੂਕਾ, ਮਰਕੁਸ, ਕੁਰਨੇਲਿਯੁਸ,
 ਕੈਸਰ.
 
@@ -1764,3 +1764,43 @@ People and places: ਪੌਲੁਸ, ਤੁਖਿਕੁਸ; ਅਫ਼ਸੁਸ, �
   and R; devoted thing (*ḥerem*) ਅਰਪਣ ਕੀਤੀ ਹੋਈ ਚੀਜ਼ (L), ਪੂਰੀ ਤਰ੍ਹਾਂ ਅਰਪਣ
   (B), ਹਮੇਸ਼ਾ ਲਈ ਦਿੱਤੀ ਗਈ (R), and for a person (27:29) ਨਾਸ ਲਈ ਅਰਪਣ;
   tithe ਦਸਵੰਧ (L, B), ਦਸਵਾਂ ਹਿੱਸਾ (R).
+
+### Acts
+
+- People: ਮੱਥਿਆਸ, ਹਨਾਨਿਯਾਹ, ਸਫ਼ੀਰਾ, ਗਮਲੀਏਲ, ਸਤਿਫ਼ਨੁਸ, ਸ਼ਮਊਨ (the magician),
+  ਐਨੀਆਸ, ਤਬਿਥਾ (ਦੋਰਕਾਸ), ਕੁਰਨੇਲਿਯੁਸ, ਆਗਬੁਸ, ਰੋਦੇ, ਲੁਦਿਯਾ, ਗੱਲੀਓ, ਤੁਰੰਨੁਸ,
+  ਸਕੇਵਾ, ਅਰਤਿਮਿਸ, ਯੂਤਖੁਸ, ਤਰਤੁੱਲੁਸ, ਫ਼ੇਲਿਕਸ, ਦਰੂਸਿੱਲਾ, ਪੋਰਕਿਯੁਸ ਫ਼ੇਸਤੁਸ,
+  ਅਗ੍ਰਿੱਪਾ, ਬਰਨੀਕੇ, ਯੂਲਿਯੁਸ, ਪੁਬਲਿਯੁਸ.
+- Places: ਪੰਤੇਕੁਸਤ (the day), ਸੁਲੇਮਾਨ ਦਾ ਬਰਾਂਡਾ, ਸਾਮਰਿਯਾ, ਦੰਮਿਸ਼ਕ, ਲੁੱਦਾ,
+  ਯਾਫ਼ਾ, ਕੈਸਰਿਯਾ, ਅੰਤਾਕਿਯਾ, ਕੁਪਰੁਸ, ਇਕੁਨਿਯੁਮ, ਲੁਸਤ੍ਰਾ, ਮਕਦੂਨਿਯਾ (ਮਕਦੂਨੀ),
+  ਫ਼ਿਲਿੱਪੈ, ਥੱਸਲੁਨੀਕਾ, ਬਰਿਯਾ, ਅਥੇਨੇ, ਅਰਿਯੁਪਗੁਸ, ਕੁਰਿੰਥੁਸ, ਅਫ਼ਸੁਸ (ਅਫ਼ਸੀ),
+  ਤ੍ਰੋਆਸ, ਮਿਲੇਤੁਸ, ਸੂਰ, ਸੈਦਾ, ਯਹੂਦਿਯਾ, ਕਿਲਿਕਿਯਾ, ਪਮਫ਼ੁਲਿਯਾ, ਆਸਿਯਾ, ਇਤਾਲਿਯਾ,
+  ਕਰੇਤ, ਸੁੰਦਰ ਬੰਦਰਗਾਹ (Fair Havens), ਫ਼ੈਨਿਕਸ, ਕੌਦਾ, ਸੁਰਤਿਸ, ਅਦਰਿਯਾ, ਮਾਲਟਾ,
+  ਸੁਰਕੂਸਾ, ਰੇਗਿਯੁਮ, ਪੁਤਿਯੁਲੀ, ਅੱਪਿਯੁਸ ਦਾ ਚੌਂਕ, ਤਿੰਨ ਸਰਾਵਾਂ, ਰੋਮ. Asia is
+  ਆਸਿਯਾ as in the letters; Revelation 1 on main still has ਏਸ਼ੀਆ.
+- Offices: centurion ਸੂਬੇਦਾਰ; tribune ਪਲਟਨ ਦਾ ਸਰਦਾਰ (L, B), ਫ਼ੌਜੀ ਸਰਦਾਰ
+  (R); governor ਰਾਜਪਾਲ; proconsul ਹਾਕਮ; council (Sanhedrin) ਮਹਾਂਸਭਾ; the
+  governor's council ਸਲਾਹਕਾਰ ਸਭਾ (L), ਸਲਾਹਕਾਰ (B, R); orator ਵਕਤਾ (L), ਵਕੀਲ
+  (B, R); Sebastos ਮਹਾਂ ਪ੍ਰਤਾਪੀ (L), ਸਮਰਾਟ (B, R); kyrios for the emperor
+  ਸੁਆਮੀ; "most excellent" ਮਹਾਂ ਮਾਣਯੋਗ; "O king" ਹੇ ਰਾਜਾ (L), ਮਹਾਰਾਜ (B, R);
+  judgment seat ਨਿਆਂ ਦੀ ਗੱਦੀ (L, B), ਅਦਾਲਤ (R); appeal to Caesar ਕੈਸਰ ਦੀ
+  ਦੁਹਾਈ ਦੇਣੀ.
+- Church words: the Way ਮਾਰਗ; sect ਪੰਥ (L, B), ਟੋਲੀ (R); saints ਪਵਿੱਤਰ ਜਨ
+  (L), ਪਰਮੇਸ਼ੁਰ ਦੇ ਪਵਿੱਤਰ ਲੋਕ (B), ਪਰਮੇਸ਼ੁਰ ਦੇ ਲੋਕ (R); Gentiles ਪਰਾਈਆਂ
+  ਕੌਮਾਂ (L), ਗ਼ੈਰ-ਯਹੂਦੀ (B, R); Christian ਮਸੀਹੀ; repentance ਤੋਬਾ;
+  synagogue ਸਭਾ-ਘਰ; temple ਹੈਕਲ; vision ਦਰਸ਼ਣ; trance ਬੇਸੁਰਤ ਹੋਣਾ;
+  conscience ਜ਼ਮੀਰ; righteousness ਧਾਰਮਿਕਤਾ; alms ਦਾਨ (L), ਖ਼ੈਰਾਤ (B);
+  blaspheme ਕੁਫ਼ਰ ਬਕਣਾ; kingdom of God ਪਰਮੇਸ਼ੁਰ ਦਾ ਰਾਜ; salvation ਮੁਕਤੀ.
+  Ancestors are ਪੁਰਖੇ at B and R with no gender span (L ਪਿਉ-ਦਾਦੇ).
+- The voyage (27-28): ship's boat ਡੋਂਗੀ; Euraquilo ਯੂਰਕੁਲੋਨ; the Fast ਵਰਤ
+  (L, B), ਪ੍ਰਾਸਚਿਤ ਦਾ ਦਿਨ (R); fathom ਪੁਰਸਾ in L and
+  `{{units:ਲਗਭਗ 37 ਮੀਟਰ|ਵੀਹ ਪੁਰਸੇ}}` at B and R (marked uncertain); "Men"
+  ਹੇ ਮਨੁੱਖੋ (L), ਸਾਥੀਓ (B, R); Justice ਨਿਆਂ ਦੀ ਦੇਵੀ; Twin Brothers ਜੌੜੇ ਭਰਾ.
+- Address: God, Jesus, the Lord and the Holy Spirit as before (honorific
+  plural for God and Jesus, masculine singular for the Spirit). Jesus and the
+  angel say ਤੂੰ to Saul and Paul; Saul says ਤੁਸੀਂ to the Lord. Officials,
+  kings and the Jewish leaders say ਤੂੰ to Paul; Paul says ਤੁਸੀਂ to Felix,
+  Festus, Agrippa, centurions and groups, and speaks of the king with
+  honorific forms.
+- Quotations: 2:17-21 follows Joel 3:1-5 (NIV 2:28-32), and 7:42-43 and
+  15:16-17 keep the words set in Amos 5:25-27 and 9:11-12.
