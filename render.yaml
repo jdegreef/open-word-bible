@@ -398,6 +398,11 @@ services:
         value: https://openwordbible.org
       - key: CORS_ALLOWED_ORIGINS
         value: https://openwordbible.org,https://www.openwordbible.org
+      # Nobody else may use the API: /api/ refuses other origins and calls
+      # with no Origin (backend/accounts/cors.py, OWB_API_ORIGIN_GATE, on
+      # unless DJANGO_DEBUG). Logia (LOGIA_SITE_URL) is let in as a partner.
+      # A server or app of our own that calls without a browser sends one of
+      # OWB_API_KEYS (dashboard only) in X-API-Key.
       # Set these in the dashboard; they are not published here.
       # OWB_SUPER_ADMIN_EMAILS: comma-separated super admin emails.
       # EMAIL_*: SMTP for sign-in emails (e.g. Resend: smtp.resend.com, 587,

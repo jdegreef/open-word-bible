@@ -27,7 +27,8 @@ from django.db import transaction
 from django.db.models import Count
 from django.utils import timezone
 from rest_framework import status
-from rest_framework.decorators import api_view, authentication_classes, parser_classes, permission_classes
+from rest_framework.decorators import (api_view, authentication_classes, parser_classes, permission_classes,
+                                       throttle_classes)
 from rest_framework.parsers import JSONParser
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
@@ -35,6 +36,7 @@ from rest_framework.response import Response
 from accounts import auth
 from accounts.models import hash_secret, new_secret
 from accounts.views import FOREIGN, error, foreign
+from config.throttles import ReadThrottle
 
 from .models import Handoff, Like, Saved
 
@@ -149,6 +151,7 @@ def saved(request, key):
 
 @api_view(["GET"])
 @authentication_classes([])
+@throttle_classes([ReadThrottle])
 def like_counts(request):
     chapter = request.query_params.get("chapter", "")
     if not CHAPTER.match(chapter):

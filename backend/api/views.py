@@ -1,4 +1,5 @@
-"""Read-only API for the reader and other consumers.
+"""Read-only API for our own sites (openwordbible.org and Logia; nobody else:
+accounts/cors.py ApiOriginGate).
 
 GET /api/editions/                       every imported edition
 GET /api/text/<BOOK>/<chapter>/?editions=bsb,web
@@ -22,8 +23,8 @@ from django.http import JsonResponse
 from rest_framework.decorators import api_view, throttle_classes
 from rest_framework.exceptions import NotFound, ValidationError
 from rest_framework.response import Response
-from rest_framework.throttling import UserRateThrottle
 
+from config.throttles import ApiThrottle, ReadThrottle
 from owb import refs, versification
 from texts.models import Edition, Verse, Word
 from translation import search as site_search
@@ -38,6 +39,7 @@ def _book(code):
 
 
 @api_view(["GET"])
+@throttle_classes([ReadThrottle])
 def editions(request):
     return Response([
         {"code": e.code, "name": e.name, "language": e.language, "kind": e.kind,
@@ -46,6 +48,7 @@ def editions(request):
 
 
 @api_view(["GET"])
+@throttle_classes([ReadThrottle])
 def chapter_text(request, book, chapter):
     """Each edition's text of a chapter. With numbering=source (the default)
     the verses are our source text's: a reference Bible's English-numbered
@@ -114,6 +117,7 @@ def record_json(sentence):
 
 
 @api_view(["GET"])
+@throttle_classes([ReadThrottle])
 def passages(request, book, chapter):
     book = _book(book)
     sentences = list(Sentence.objects.filter(book=book, chapter=chapter)
@@ -134,7 +138,7 @@ def passages(request, book, chapter):
                      "records": [record_json(s) for s in sentences], "words": words})
 
 
-class SearchThrottle(UserRateThrottle):
+class SearchThrottle(ApiThrottle):
     """Searches per visitor (or account) a minute: settings REST_FRAMEWORK."""
     scope = "search"
 

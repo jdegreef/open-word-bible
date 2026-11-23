@@ -4971,11 +4971,10 @@ def votd_feed(lang="en", today=None):
 
 def data_html(lang="en"):
     """The download page's offer to builders: the whole translation and
-    its reasoning records, the API, and the data model, all CC0."""
-    api = f"{API_URL}/api/passages/JHN/1/"
+    its reasoning records, and the data model, all CC0. The API is for
+    our own sites only (backend/accounts/cors.py), so it is not offered."""
     cards = (
         ("download", f"{GITHUB_URL}/archive/refs/heads/main.zip", "home.data_zip", t(lang, "home.data_zip_text")),
-        ("code", api, "home.data_api", f'{t(lang, "home.data_api_text")} <code>{html.escape(api.split("//", 1)[1])}</code>'),
         ("info", f"{GITHUB_URL}/blob/main/schema/sentence-record.schema.json", "home.data_schema",
          t(lang, "home.data_schema_text")))
     items = "".join(f'<li><a class="data-card" href="{href}"><span class="tile sm">{icon(ICONS[ico])}</span>'

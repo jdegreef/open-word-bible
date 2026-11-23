@@ -12,6 +12,10 @@ Configuration comes from the environment:
   CORS_ALLOWED_ORIGINS  sites that may call the API (default: OWB_SITE_URL; the
                         partner sites below are added to it)
   LOGIA_SITE_URL        Logia, which shares these accounts (default https://logia.faith)
+  OWB_API_ORIGIN_GATE   "1" refuses /api/ calls from anyone but these sites
+                        (accounts/cors.py); default on, off with DJANGO_DEBUG
+  OWB_API_KEYS          comma-separated keys our own servers and apps send in
+                        X-API-Key when they call the API with no Origin
   OWB_SUPER_ADMIN_EMAILS  comma-separated emails that are super admins (set
                         in the Render dashboard, so they are not published)
   EMAIL_HOST, EMAIL_PORT, EMAIL_HOST_USER, EMAIL_HOST_PASSWORD, DEFAULT_FROM_EMAIL
@@ -85,6 +89,8 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "accounts.cors.ApiCorsMiddleware",
+    # Refuses /api/ calls from anyone but our sites (API_ORIGIN_GATE).
+    "accounts.cors.ApiOriginGate",
     # Inside CORS, which adds its Vary after gzip's Accept-Encoding; around
     # everything else, so Server-Timing counts the whole request.
     "config.middleware.ApiGzipMiddleware",
@@ -192,8 +198,10 @@ REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": ["accounts.auth.TokenAuthentication"],
     "DEFAULT_PERMISSION_CLASSES": ["rest_framework.permissions.AllowAny"],
     "DEFAULT_RENDERER_CLASSES": ["rest_framework.renderers.JSONRenderer"],
-    # Search (api/views.py): as Ochorus allows.
-    "DEFAULT_THROTTLE_RATES": {"search": "120/min"},
+    # Search (api/views.py): as Ochorus allows. Reads (the Bible text,
+    # sentence records, like counts): far more than a reader turning pages
+    # needs, far less than a program copying the API (config/throttles.py).
+    "DEFAULT_THROTTLE_RATES": {"search": "120/min", "read": "300/min"},
 }
 
 # Accounts (backend/accounts/).
@@ -205,6 +213,12 @@ CORS_ALLOWED_ORIGINS = env_list("CORS_ALLOWED_ORIGINS", OWB_SITE_URL) + (
 # not the sign-in endpoints (accounts.views.foreign).
 PARTNER_SITES = {"logia": os.environ.get("LOGIA_SITE_URL", "https://logia.faith").rstrip("/")}
 CORS_ALLOWED_ORIGINS += list(PARTNER_SITES.values()) + (["http://localhost:8001"] if DEBUG else [])
+# Only these sites may use the API (accounts.cors.ApiOriginGate): on in
+# production, off in development and the tests unless OWB_API_ORIGIN_GATE=1.
+API_ORIGIN_GATE = os.environ.get("OWB_API_ORIGIN_GATE", "0" if DEBUG else "1") == "1"
+# Keys (X-API-Key) for our own servers and apps that call the API without a
+# browser's Origin; set in the Render dashboard, never in a web page.
+API_KEYS = env_list("OWB_API_KEYS")
 OWB_SUPER_ADMIN_EMAILS = [e.lower() for e in env_list("OWB_SUPER_ADMIN_EMAILS")]
 SIGN_IN_LINK_MINUTES = 20
 OWB_API_URL = os.environ.get("OWB_API_URL", "https://api.openwordbible.org").rstrip("/")
