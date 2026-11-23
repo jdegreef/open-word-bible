@@ -1521,14 +1521,21 @@ def chapter_set():
 
 
 def chapters():
-    """Every (book, chapter) with content, in canonical order."""
+    """Every (book, chapter) with content, in canonical order. Read once per
+    build (_chapters): it parses all of content/ (about 4 s), and a build
+    asked for it 25 times or more."""
+    return list(_chapters())
+
+
+@functools.cache
+def _chapters():
     found = set()
     for path in (ROOT / "content").glob("*/*.json"):
         for r in json.loads(path.read_text(encoding="utf-8"))["records"]:
             for v in versification.reader_ids_of(r["refs"]):
                 ref = refs.parse(v)
                 found.add((ref.book, ref.chapter))
-    return sorted(found, key=lambda bc: refs.Ref(bc[0], bc[1], 1).sort_key())
+    return tuple(sorted(found, key=lambda bc: refs.Ref(bc[0], bc[1], 1).sort_key()))
 
 
 class Passage(NamedTuple):
@@ -7384,7 +7391,7 @@ def sitemaps(entries):
 
 
 def build(out):
-    for cached in (load_memory_plans, load_intro, book_languages, status_counts, _book_records, reader_verse_starts, _chapter_words, _reader_book_words, chapter_verses, versification_chapter_verses, book_reader_verses, _all_records, nav_menus, footer_links, passages, asset, translated_verses, catalog, book_refs, name_cards, term_uses,
+    for cached in (_chapters, load_memory_plans, load_intro, book_languages, status_counts, _book_records, reader_verse_starts, _chapter_words, _reader_book_words, chapter_verses, versification_chapter_verses, book_reader_verses, _all_records, nav_menus, footer_links, passages, asset, translated_verses, catalog, book_refs, name_cards, term_uses,
                    search_documents, word_uses, series_numbers, chapter_articles, load_plans, plans_json, plans_json_url,
                    downloads, chapter_shared, reader_shared, article_link, places, places_more, journeys, basemap_file,
                    book_notes, article_links, card_translation, owb_notes.load_notes, owb_notes.load_cards,
