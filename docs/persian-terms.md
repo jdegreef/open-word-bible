@@ -649,3 +649,77 @@ For reviewers:
   familiar form. Which reads better to Persian ears?
 - اوراکیلون and کائودا follow the critical text's names (the Old Version
   has اوروکلیدون and کلودی).
+
+### Matthew
+
+Terms: ملکوت آسمان‌ها (Literal) / ملکوت آسمان (Balanced) / پادشاهی آسمان
+(Readable), and ملکوت خدا (Readable پادشاهی خدا) where Matthew has it
+(12:28, 19:24, 21:31, 21:43). Amen sayings: آمین، به شما می‌گویم /
+براستی به شما می‌گویم / حقیقت را به شما می‌گویم, with به تو to one person
+(26:34). توبه (Readable از گناهان دست کشیدن و به سوی خدا بازگشتن).
+کاتبان / علمای دین / علمای شریعت خدا for scribes; مشایخ / بزرگان قوم /
+رهبران قوم for elders; سران کاهنان at every level; کاهن اعظم, قیافا;
+فقیه / کارشناس شریعت for the lawyer (22:35). نبی (Literal, Balanced) /
+پیامبر (Readable). برده (Literal) / خادم (Balanced, Readable) for doulos,
+with برده at every level in 20:27; خدمتکاران for the diakonoi of 22:13;
+ارباب for the master in the parables; صاحب‌خانه for the householder.
+جهنم for Gehenna everywhere, with {{gender:فرزند جهنم|پسر جهنم}} at Literal
+(23:15); عالم مردگان (Readable جای مردگان) for Hades. آیت (Readable
+نشانه) for a sign. مثل without vowel signs, داستان at Readable in 21:33
+and 22:1. کلیسا (16:18, 18:17), هوشیعانا, خمیرمایه, کرکاس (Balanced and
+Readable علف هرز), قنطار, خواجه, والی (Readable والی رومی), یوزباشی
+(Readable افسر رومی), پرایتوریوم / مقر والی / کاخ والی, گروهان. Woe: وای
+(Literal, Balanced) / چه بد خواهد شد حال (Readable). Porneia: بی‌عفتی
+(Literal) / بی‌وفایی جنسی (Balanced, Readable). Hypocrites: ریاکاران, with
+Readable saying what the word means where English does (22:18, 23:13-29).
+
+Names: the genealogy follows Luke 3 (یسا, العازار, آخیم); بریونا (Literal)
+/ پسر یونا, شمعون قانوی (Readable غیور), هیرودیا, باراباس and عیسی
+باراباس (27:16-17), پیلاتس, یوسف رامه‌ای, مریم مجدلیه, شمعون قیروانی,
+جلجتا, جتسیمانی, بیت‌فاجی, ارمیا (27:9), هابیل, زکریا پسر برخیا. The cry
+of 27:46 is written in Persian letters as ایلی، ایلی، لما سبقتنی, keeping
+Matthew's Eli rather than Mark's Eloi.
+
+Address:
+
+- Jesus says تو to individuals and شما to groups; prayer to God is تو.
+- The disciples and Peter say تو to Jesus. Strangers, the Pharisees, the
+  Sadducees and the leaders say تو at Literal and شما at Balanced and
+  Readable, and so do the high priest (26:62-63) and Pilate (27:11-14).
+- Mockers (26:68, 27:40) say تو at every level.
+- Servants say شما and ارباب to a master or king; masters say تو to
+  servants. Subjects say خداوندا with شما to the King in 25:37-44, and the
+  bridesmaids say ای سرور with polite plurals to the bridegroom (25:11).
+- The leaders say ای سرور (Literal) / قربان with شما to Pilate (27:63).
+
+Units: {{units:مزد یک روز|یک دینار}}, {{units:مزد حدود صد روز|صد دینار}},
+{{units:سکه‌ای نقره که مزد یک روز است|دیناری}} (22:19),
+{{units:پنج کیسهٔ نقره|پنج قنطار}} and the other bags of 25:14-28, with
+Readable saying a bag was about twenty years' pay;
+{{units:مبلغی که هیچ کارگری در صد هزار سال نمی‌توانست به دست آورد|ده هزار
+قنطار}} (18:24); assarion, stater, the temple tax, three measures and
+stadia as listed in the drafting notes of each chapter.
+
+Gender: {{gender:برادر یا خواهرت|برادرت}} (5:22-24, 18:15-35),
+{{gender:برادران و خواهران|برادران}} (23:8) and
+{{gender:برادران و خواهرانم|برادرانم}} (25:40), {{gender:فرزندان|پسران}}
+(13:38), {{gender:مردم|مردان}} at Literal (12:41, 14:35). No spans on
+مردم, او or خود, which are not marked for gender.
+
+Quotations: Psalm 118 (21:42) and Psalm 110 (22:44) follow Mark 12; the
+Jerusalem lament (23:37-39) follows Luke 13:34-35. Acts 28:26-27 can now be
+aligned with Matthew 13:14-15 in a later pass.
+
+For reviewers:
+
+- Pilate and the high priest say شما to Jesus at Balanced and Readable,
+  where Mark 14-15 has تو at every level. Should Matthew match Mark?
+- مثل at Literal and درس at Balanced and Readable for the fig tree (24:32),
+  as in Mark 13:28. Is درس right there?
+- جعبه‌های آیات for phylacteries (23:5), instead of the loanword تفیلین or
+  the Old Version's تعویذ.
+- خدمتکاران for the diakonoi of 22:13 beside خادم for doulos in 22:3-10.
+  Is the difference clear enough at Balanced and Readable?
+- قربان for "Sir" to Pilate (27:63) may read as too everyday for Balanced.
+- The third-person singular honorific Hindi uses for the Father (24:36) has
+  no Persian match; both Son and Father take plain verbs.
