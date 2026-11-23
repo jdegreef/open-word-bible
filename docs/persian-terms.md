@@ -1067,3 +1067,29 @@ For reviewers:
 - 4:4: ظرف at Literal is close to the Greek but opaque; is همسر (wife) a
   reading that should be footnoted rather than chosen?
 - 5:3: does «همه چیز آرام و امن است» read as a slogan people repeat?
+
+### 2 Thessalonians
+
+- Follows 1 Thessalonians: شما for the church,
+  {{gender:برادران و خواهران|برادران}}, سیلوانس, تسالونیکیان.
+- The man of lawlessness (2:3): مرد بی‌دینی, son of destruction پسر هلاکت
+  (Literal); the lawless one (2:8) آن بی‌دین. Mystery of lawlessness (2:7):
+  راز بی‌دینی. The restrainer (2:6-7): آنچه باز می‌دارد / آن که باز
+  می‌دارد.
+- Apostasia (2:3): آن شورش (Literal) / آن شورش بزرگ (Balanced) / شورشی
+  بزرگ بر ضد خدا (Readable).
+- Eternal destruction (1:9): هلاکت جاودانی. Firstfruits (2:13): نوبر.
+- Paradoseis (2:15, 3:6): سنت (Literal, Balanced) / تعلیم (Readable).
+- Ataktōs (3:6, 3:11): بی‌نظم (Literal) / بی‌انضباط (Balanced); Readable
+  names the problem, refusing to work. 3:10: «اگر کسی نمی‌خواهد کار کند،
+  نخورد نیز.»
+- 3:11 wordplay: «هیچ کار نمی‌کنند بلکه در کار دیگران دخالت می‌کنند»
+  (Literal) / «به کار خود مشغول نیستند، بلکه به کار همه کس مشغول‌اند»
+  (Balanced).
+
+For reviewers:
+
+- 2:3 مرد بی‌دینی: is بی‌دینی (godlessness) right for anomia, or should it
+  be بی‌قانونی / شرارت?
+- 2:7: does «آن که باز می‌دارد» read naturally for the restrainer?
+- 3:10: is «نخورد نیز» natural at Literal, or should it say «نباید بخورد»?
