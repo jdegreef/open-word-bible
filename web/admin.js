@@ -597,7 +597,27 @@ var OWBAdminNav = (function () {
         h("tbody", null, rows)));
   }
   function pill(text, cls) { return h("span", { class: "admin-pill " + (cls || "") }, text); }
-  function empty(text) { return h("p", { class: "admin-empty" }, text); }
+  // An empty list, saying why and what to do next: then is a list of
+  // [label, "#address"] links or [label, function] buttons.
+  function empty(text, then) {
+    var p = h("p", { class: "admin-empty" }, text);
+    (then || []).forEach(function (t) {
+      p.appendChild(document.createTextNode(" "));
+      p.appendChild(typeof t[1] === "function"
+        ? h("button", { type: "button", class: "admin-link", onclick: t[1] }, t[0])
+        : h("a", { href: t[1] }, t[0]));
+    });
+    return p;
+  }
+  // [label, button] that puts section name's filters back to their defaults
+  // (but those in keep), for empty().
+  function clearing(name, keep, label) {
+    return [label || "Clear the filters", function () {
+      var f = FILTERS[name];
+      for (var k in f.defaults) if (!keep || keep.indexOf(k) < 0) f.state[k] = f.defaults[k];
+      route();
+    }];
+  }
   function select(id, options, value) {
     return h("select", { id: id }, options.map(function (o) {
       return h("option", { value: o[0], selected: o[0] === value }, o[1]);
@@ -1142,9 +1162,10 @@ var OWBAdminNav = (function () {
       return [head("Progress", "Review pace", "Approvals by people in each review layer, week by week for the last " + d.weeks.length +
           " weeks, and at the pace of the last " + d.recent_weeks + " how long the rest of each layer would take. An approval made again after a sentence changed counts again."),
         d.layers.length ? table(["Layer", "Approved", "Each week", ["Per week lately", { class: "admin-num" }], "At this pace"], rows, "admin-pace")
-          : empty("Nothing has been drafted to review yet."),
+          : empty("Nothing has been drafted to review yet, so there's no pace to measure.", [["File a drafting job", "#jobs"]]),
         h("section", { class: "admin-block" }, h("h2", null, "Reviewers, last " + d.weeks.length + " weeks"),
-          people.length ? table(["Reviewer", "Layer", ["Approvals", { class: "admin-num" }]], people) : empty("No approvals in these weeks."))];
+          people.length ? table(["Reviewer", "Layer", ["Approvals", { class: "admin-num" }]], people)
+            : empty("No one has approved a sentence in these weeks.", [["Open the review queue", "#review"], ["Assign reviewers", "#assignments"]]))];
     });
   };
 
@@ -1234,6 +1255,7 @@ var OWBAdminNav = (function () {
           return h("li", null, h("a", { href: a.href }, a.title), " · ",
             a.emailed_at ? "emailed " + when(a.emailed_at) : pill("not emailed yet", "warn"));
         })) : h("p", { class: "admin-ok" }, "Nothing has broken.")));
+      out.push(speedBlock(d));
       out.push(h("div", { class: "admin-tiles" },
         tile(num(d.sentences), "sentences in the database"),
         tile(num(d.content_files), "content files imported"),
@@ -1255,9 +1277,27 @@ var OWBAdminNav = (function () {
             h("td", null, date(e.imported_at)));
         }))));
       return out;
-      out.push(speedBlock(d));
     });
   };
+
+  // The admin's slowest pages on the live database, from the times the
+  // server keeps (staff/speed.py), so one creeping towards the 15-second
+  // limit is seen before it fails.
+  function speedBlock(d) {
+    var rows = d.speed || [];
+    function secs(ms) { return ms >= 1000 ? (ms / 1000).toFixed(1) + " s" : ms + " ms"; }
+    return h("section", { class: "admin-block" }, h("h2", null, "Slowest admin pages"),
+      h("p", { class: "admin-sub" }, "Each page's reads in the last " + d.speed_hours + " hours, slowest first. A read over 15 seconds fails; over "
+        + d.speed_slow + " is worth a look."),
+      rows.length ? table(["Address", ["Reads", { class: "admin-num" }], ["Average", { class: "admin-num" }], ["Slowest", { class: "admin-num" }],
+        ["Over " + d.speed_slow + " s", { class: "admin-num" }], ["Failed", { class: "admin-num" }]], rows.map(function (r) {
+        var tone = r.errors || r.max_ms > 15000 ? "bad" : r.slow ? "warn" : "";
+        return h("tr", null, h("td", null, h("code", null, r.route)), h("td", { class: "admin-num" }, num(r.requests)),
+          h("td", { class: "admin-num" }, secs(r.average_ms)),
+          h("td", { class: "admin-num" }, tone ? pill(secs(r.max_ms), tone) : secs(r.max_ms)),
+          h("td", { class: "admin-num" }, num(r.slow)), h("td", { class: "admin-num" }, r.errors ? pill(num(r.errors), "bad") : "0"));
+      })) : empty("No admin pages read in the last " + d.speed_hours + " hours, so there's nothing to time yet. They're timed as people use the admin."));
+  }
 
   // Engagement: what accounts keep, in totals.
   VIEWS.engagement = function () {
@@ -1280,25 +1320,6 @@ var OWBAdminNav = (function () {
           tile(num(d.marks.highlights), "highlights"),
           tile(num(d.messages), "reader messages")),
         h("section", { class: "admin-block" }, h("h2", null, "New accounts by week"),
-  // The admin's slowest pages on the live database, from the times the
-  // server keeps (staff/speed.py), so one creeping towards the 15-second
-  // limit is seen before it fails.
-  function speedBlock(d) {
-    var rows = d.speed || [];
-    function secs(ms) { return ms >= 1000 ? (ms / 1000).toFixed(1) + " s" : ms + " ms"; }
-    return h("section", { class: "admin-block" }, h("h2", null, "Slowest admin pages"),
-      h("p", { class: "admin-sub" }, "Each page's reads in the last " + d.speed_hours + " hours, slowest first. A read over 15 seconds fails; over "
-        + d.speed_slow + " is worth a look."),
-      rows.length ? table(["Address", ["Reads", { class: "admin-num" }], ["Average", { class: "admin-num" }], ["Slowest", { class: "admin-num" }],
-        ["Over " + d.speed_slow + " s", { class: "admin-num" }], ["Failed", { class: "admin-num" }]], rows.map(function (r) {
-        var tone = r.errors || r.max_ms > 15000 ? "bad" : r.slow ? "warn" : "";
-        return h("tr", null, h("td", null, h("code", null, r.route)), h("td", { class: "admin-num" }, num(r.requests)),
-          h("td", { class: "admin-num" }, secs(r.average_ms)),
-          h("td", { class: "admin-num" }, tone ? pill(secs(r.max_ms), tone) : secs(r.max_ms)),
-          h("td", { class: "admin-num" }, num(r.slow)), h("td", { class: "admin-num" }, r.errors ? pill(num(r.errors), "bad") : "0"));
-      })) : empty("No admin pages read in the last " + d.speed_hours + " hours, so there's nothing to time yet. They're timed as people use the admin."));
-  }
-
           d.signups.length ? h("div", { class: "admin-columns", role: "img", "aria-label": "New accounts per week for 12 weeks" },
             d.signups.map(function (w) {
               return h("div", { class: "admin-column", title: "Week of " + date(w.week) + ": " + w.accounts },
@@ -1929,7 +1950,7 @@ var OWBAdminNav = (function () {
           return h("tr", null, h("td", null, h("a", { href: f.url, rel: "noopener" }, "#" + f.number)),
             h("td", null, f.verse ? h("a", { href: "#verse/" + f.verse }, f.record || f.verse) : f.title),
             h("td", null, f.language ? langName(f.language) : "\u2014"), h("td", null, when(f.created_at)), h("td", null, f.assignees.join(", ") || "\u2014"));
-        })) : empty("No open fix requests.")));
+        })) : empty("No open fix requests. They're filed from a verse: open one in the verse inspector and choose Request a fix on a rendering.", [["Open the verse inspector", "#verse"]])));
       return out;
     });
   };
@@ -1975,7 +1996,7 @@ var OWBAdminNav = (function () {
                 (x.levels.length ? " \u00b7 " + x.levels.join("") : "")), x.footnote ? [" ", pill("footnote", "info")] : null),
             h("p", null, h("strong", null, x.choice), x.alternatives.length ? h("span", { class: "admin-sub" }, " not: " + x.alternatives.join("; ")) : null),
             h("p", { class: "admin-sub" }, x.reason));
-        })) : empty("No decisions match."),
+        })) : empty("No decisions match these filters.", [clearing("decisions")]),
         h("p", { class: "admin-sub" }, d.total ? "Showing " + num(d.offset + 1) + "\u2013" + num(d.offset + d.decisions.length) + " of " + num(d.total) + "." : ""),
         pager];
     });
@@ -2059,7 +2080,7 @@ var OWBAdminNav = (function () {
           d.jobs && d.jobs.length ? table(["Issue", "Language", "Articles", "Filed"], d.jobs.map(function (j) {
             return h("tr", null, h("td", null, h("a", { href: j.url, rel: "noopener" }, "#" + j.number)), h("td", null, j.language || "\u2014"),
               h("td", { class: "admin-wrap" }, (j.slugs || []).join(", ")), h("td", null, when(j.created_at)));
-          })) : empty("No open article jobs.")));
+          })) : empty("No open article jobs. Choose a language and articles above to ask for translations.")));
       }
       return out;
     });
@@ -2096,7 +2117,11 @@ var OWBAdminNav = (function () {
         d.counts ? h("div", { class: "admin-tiles" }, tile(num(d.counts.open), "open"), tile(num(d.counts.in_review), "with a pull request open"),
           tile(num(d.counts.stale), "stalled", d.counts.stale ? "bad" : ""), tile(num(d.counts.done), "closed in " + d.days + " days")) : null,
         h("div", { class: "admin-toolbar" }, seg([["open", "Open"], ["stale", "Stalled"], ["closed", "Closed"], ["all", "All"]], WORK.state, function (v) { WORK.state = v; route(); }), kind),
-        items.length ? table(["Issue", "What", "State", "Pull requests", "Filed"], rows) : empty("Nothing here.")];
+        items.length ? table(["Issue", "What", "State", "Pull requests", "Filed"], rows)
+          : empty(WORK.state === "stale" ? "Nothing has stalled: every open job has a pull request, or was filed in the last " + d.stale_hours + " hours."
+            : "No " + (WORK.state === "all" ? "" : WORK.state + " ") + "jobs " + (WORK.kind ? "of this kind " : "") + "filed in the last " + d.days + " days.",
+            WORK.state !== "all" || WORK.kind ? [["Show all the work", function () { WORK.state = "all"; WORK.kind = ""; route(); }]]
+              : [["File a drafting job", "#jobs"]])];
     });
   };
 
@@ -2304,7 +2329,8 @@ var OWBAdminNav = (function () {
       if (d.offset + d.page < d.total) pager.appendChild(h("button", { type: "button", class: "admin-btn", onclick: function () { USERS.offset = d.offset + d.page; route(); } }, "Older ›"));
       return [head("Readers", "Users", num(d.total) + (d.total === 1 ? " account" : " accounts") + (USERS.q || USERS.role ? " match" : "") +
         (d.system_hidden ? " (" + plural(d.system_hidden, "system account") + " hidden)" : "") + ". Saved verses are counted, never listed: they are the reader's own."),
-        form, d.users.length ? table(["Email", "Name", "Roles", "Joined", "Last sign-in", ["Saved", { class: "admin-num" }], ["Devices", { class: "admin-num" }]], rows) : empty("No accounts match."),
+        form, d.users.length ? table(["Email", "Name", "Roles", "Joined", "Last sign-in", ["Saved", { class: "admin-num" }], ["Devices", { class: "admin-num" }]], rows)
+          : empty("No accounts match" + (USERS.q ? " “" + USERS.q + "”" : "") + (USERS.role ? " with that role" : "") + ".", USERS.q || USERS.role ? [clearing("users")] : null),
         pager];
     });
   };
@@ -2348,7 +2374,7 @@ var OWBAdminNav = (function () {
         h("section", { class: "admin-block" }, h("h2", null, "Signed-in devices"),
           u.devices.length ? table(["Device", "Signed in", "Last used"], u.devices.map(function (t) {
             return h("tr", null, h("td", { class: "admin-wrap" }, t.label || "Unknown browser"), h("td", null, date(t.created_at)), h("td", null, when(t.last_used_at)));
-          })) : empty("None.")),
+          })) : empty("Not signed in on any device.")),
         u.messages.length ? h("section", { class: "admin-block" }, h("h2", null, "Messages"),
           h("ul", null, u.messages.map(function (m) {
             return h("li", null, (m.kind === "question" ? "Question" : "Suggestion") + " on ", h("a", { href: "#verse/" + m.verse }, verseName(m.verse)),
@@ -2554,7 +2580,7 @@ var OWBAdminNav = (function () {
           return h("tr", null, h("td", null, h("a", { href: j.url, rel: "noopener" }, "#" + j.number)),
             h("td", null, j.title), h("td", null, (j.languages || []).join(", ")), h("td", null, when(j.created_at)),
             h("td", null, j.assignees.join(", ") || "—"));
-        })) : empty("No open drafting jobs.")));
+        })) : empty("No open drafting jobs. File one below, or queue every missing book at once.")));
       return out;
     });
   };
@@ -2636,6 +2662,36 @@ var OWBAdminNav = (function () {
     return h("section", { class: "admin-block" }, h("h2", null, "Queue missing books"),
       h("p", null, "Files one job per book that still lacks any of the languages, in Bible order, skipping languages an open job already asks for."), form);
   }
+  // The server files a bulk request's jobs one by one in the background
+  // (GitHub takes up to 10 s a job); this shows how far it has got, asking
+  // again every POLL_MS, until it is done or has stopped.
+  var POLL_MS = 2000;
+  function watchFiling(run, where) {
+    var line = h("p", { role: "status" });
+    var meter = h("div");
+    where.textContent = "";
+    add(where, [line, meter]);
+    function finish(r) {
+      FLASH = "Filed " + plural(r.filed.length, "job") + (r.error ? ". " + r.error
+        : r.remaining ? "; " + r.remaining + " more to queue." : ".");
+      forget(C.drops("/api/admin/jobs/bulk/"));   // the jobs filed since the request
+      route();
+    }
+    function show(r) {
+      if (!document.body.contains(where)) return;   // left the page: the jobs list will show them
+      if (r.state !== "filing") { finish(r); return; }
+      line.textContent = "Filing " + (r.filed.length + 1) + " of " + r.plan.length + "… You can leave this page; filing goes on.";
+      meter.textContent = "";
+      meter.appendChild(bar(r.filed.length, r.plan.length));
+      setTimeout(function () {
+        request("/api/admin/jobs/bulk/" + encodeURIComponent(r.id) + "/", {}).then(show, function (e) {
+          line.textContent = "";
+          note(line, e, true);
+        });
+      }, POLL_MS);
+    }
+    show(run);
+  }
   function bookName(d, code) {
     var b = d.books.filter(function (x) { return x.code === code; })[0];
     return b ? b.name : code;
@@ -2682,36 +2738,6 @@ var OWBAdminNav = (function () {
           })) : empty("Nothing sent yet."))];
     });
   };
-  // The server files a bulk request's jobs one by one in the background
-  // (GitHub takes up to 10 s a job); this shows how far it has got, asking
-  // again every POLL_MS, until it is done or has stopped.
-  var POLL_MS = 2000;
-  function watchFiling(run, where) {
-    var line = h("p", { role: "status" });
-    var meter = h("div");
-    where.textContent = "";
-    add(where, [line, meter]);
-    function finish(r) {
-      FLASH = "Filed " + plural(r.filed.length, "job") + (r.error ? ". " + r.error
-        : r.remaining ? "; " + r.remaining + " more to queue." : ".");
-      forget(C.drops("/api/admin/jobs/bulk/"));   // the jobs filed since the request
-      route();
-    }
-    function show(r) {
-      if (!document.body.contains(where)) return;   // left the page: the jobs list will show them
-      if (r.state !== "filing") { finish(r); return; }
-      line.textContent = "Filing " + (r.filed.length + 1) + " of " + r.plan.length + "… You can leave this page; filing goes on.";
-      meter.textContent = "";
-      meter.appendChild(bar(r.filed.length, r.plan.length));
-      setTimeout(function () {
-        request("/api/admin/jobs/bulk/" + encodeURIComponent(r.id) + "/", {}).then(show, function (e) {
-          line.textContent = "";
-          note(line, e, true);
-        });
-      }, POLL_MS);
-    }
-    show(run);
-  }
 
   // Help & roles.
   var ROLES = [
@@ -3160,7 +3186,9 @@ var OWBAdminNav = (function () {
           tile(num(c.changed), "changed since approval", c.changed ? "warn" : ""), tile(num(c.flagged), "flagged", c.flagged ? "bad" : "")));
         body.appendChild(page.sentences.length ? h("div", { class: "admin-scroll" }, h("table", { class: "admin-table" },
           h("thead", null, h("tr", null, pick.head(), h("th", null, "Sentence"), h("th", null, page.layer.kind === "meaning" ? "Literal gloss" : "Balanced"),
-            h("th", null, "State"), h("th", null, "Last"))), rows)) : empty("Nothing here with these filters."));
+            h("th", null, "State"), h("th", null, "Last"))), rows))
+          : empty(REVIEW.state === "todo" ? "Nothing left to review here: every sentence is approved." : "No sentences match these filters.",
+            REVIEW.book || REVIEW.state !== "todo" ? [clearing("review", ["layer"], "Show this layer's whole queue")] : null));
       }
       if (!offset) QUEUE = { layer: page.layer.code, rows: [], more: false };
       QUEUE.more = page.more;
@@ -3406,7 +3434,7 @@ var OWBAdminNav = (function () {
             h("td", null, bar(a.progress.approved, a.progress.total), h("div", { class: "admin-sub" }, progressText(a.progress))),
             h("td", null, dueText(a)),
             h("td", null, standingPill(a)));
-        })) : empty("Nothing is assigned to you in this layer.")));
+        })) : empty("Nothing is assigned to you in this layer. Pick any book below to review, or ask a super admin for an assignment.")));
 
       out.push(h("section", { class: "admin-block" }, h("h2", null, "Your open flags"),
         d.flags.length ? h("ul", { class: "admin-feed" }, d.flags.map(function (f) {
@@ -3433,7 +3461,7 @@ var OWBAdminNav = (function () {
               h("th", { scope: "row" }, queueLink(layer, b.code, "todo", b.name), d.in_progress.indexOf(b.code) >= 0 ? [" ", pill("in progress", "info")] : null),
               h("td", null, bar(k.approved, k.total), h("span", { class: "admin-sub" }, " " + num(k.approved) + " / " + num(k.total))),
               h("td", { class: "admin-num" }, num(k.not_reviewed)), h("td", { class: "admin-num" }, num(k.changed)), h("td", { class: "admin-num" }, num(k.flagged)));
-          })) : empty("Nothing in this layer has been drafted yet.")));
+          })) : empty("Nothing in this layer has been drafted yet, so there's nothing to review.", [["See what's drafted", "#coverage"]])));
       return out;
     });
   };
@@ -3546,7 +3574,7 @@ var OWBAdminNav = (function () {
     return {
       form: people.length ? form : empty("No one reviews yet: grant a scholar or language reviewer role in Team & access first."),
       list: d.assignments.length ? table(["Reviewer", "Layer", "Range", "Progress", "Due", "Standing", ""], d.assignments.map(row))
-        : empty("No review assignments.")
+        : empty("No review assignments. Choose a reviewer, a layer and books above to give someone a share of the work.")
     };
   }
   VIEWS.assignments = function () {
@@ -3651,7 +3679,7 @@ var OWBAdminNav = (function () {
                   c.kind === "changed" ? wordDiff(c.before, c.after) : c.kind === "added" ? c.after : h("del", null, c.before)));
             }))));
         });
-        if (!changes.length && !offset) list.appendChild(empty("No changes with these filters."));
+        if (!changes.length && !offset) list.appendChild(empty("This import changed nothing in these languages. Choose another import or language above."));
       }
       function load() {
         busy(more, true);
