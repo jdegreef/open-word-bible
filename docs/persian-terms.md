@@ -931,3 +931,39 @@ For reviewers:
   better?
 - 5:12 اخته at Balanced and Readable: too blunt for public reading?
 - 4:3, 9 stoicheia: عناصر جهان or نیروهای بنیادین, which do churches expect?
+
+### Ephesians
+
+- Paul says شما to the Ephesians. Hagioi: مقدسان (Literal) / قوم مقدس خدا
+  (Balanced, Readable).
+- Adoption (1:5) is فرزندخواندگی with no gender span, as in Romans 8:15.
+- En tois epouraniois (1:3, 1:20, 2:6, 3:10, 6:12): جای‌های آسمانی
+  (Literal, Balanced) / عالم آسمانی or عالم روحانی (Readable).
+- Mystērion (1:9, 3:3-9, 5:32, 6:19) is راز; Readable adds that it was a
+  plan once hidden and now made known.
+- The down payment (1:14) is بیعانه, as in 2 Corinthians; the seal (1:13,
+  4:30) is مهر.
+- Sarx as the sinful self (2:3): نفس (Literal, Balanced) / طبیعت
+  گناه‌آلود (Readable). Christ's flesh (2:14) and one's own flesh (5:29) are
+  جسم; sōma is بدن.
+- {{gender:فرزندان|پسران}} نافرمانی (2:2, 5:6) at Literal.
+- The old and new self (4:22-24): انسان کهنه / انسان تازه (Literal,
+  Balanced), خود کهنه / خود تازه (Readable). The one new humanity (2:15):
+  یک انسان تازه / انسانیت تازه / قوم تازه.
+- Apostles, prophets, evangelists, shepherds and teachers (4:11): رسولان،
+  انبیا، مبشران، شبانان و معلمان.
+- Submission (5:21-24) is تسلیم; 5:33 phobeomai is حرمت نهادن.
+- Slaves and masters (6:5-9): برده at every level, ارباب for both earthly
+  owners and the Master in heaven, خداوند for Christ.
+- The armor (6:11-17): زره کامل, کمربند, جوشن, کفش, سپر, کلاهخود, شمشیر.
+- 5:31 follows Matthew 19:5, 6:2 follows Matthew 15:4.
+
+Names: افسس, تیخیکوس (as in Acts 20:4).
+
+For reviewers:
+
+- ارباب for the Master in heaven (6:9) keeps Paul's wordplay with the
+  earthly masters. Would خداوند read better there?
+- 6:12 کشتی (Literal) for palē: is wrestling clear, or should Literal also
+  say نبرد?
+- 4:8 «اسیری را به اسیری برد» at Literal: is the phrase still understood?
