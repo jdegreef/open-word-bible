@@ -1737,3 +1737,30 @@ People and places: ਪੌਲੁਸ, ਤੁਖਿਕੁਸ; ਅਫ਼ਸੁਸ, �
 - Reviewer questions: ਦੇਸ਼ and ਦੇਸ਼ are mixed across the historical books
   (2 Chronicles writes ਦੇਸ਼); 36:22-23 repeats Ezra 1:1-3 and its L and B
   wording follows Ezra's Punjabi.
+
+### Leviticus
+
+- Offerings: burnt offering ਹੋਮ ਬਲੀ; grain offering ਅੰਨ ਦੀ ਭੇਟ; peace
+  offering ਸੁੱਖ-ਸਾਂਦ ਦੀ ਬਲੀ; sin offering ਪਾਪ ਬਲੀ; guilt offering ਦੋਸ਼
+  ਬਲੀ; atonement ਪ੍ਰਾਸਚਿਤ; ordination ਥਾਪਣਾ; frankincense ਲੋਬਾਨ (chapters
+  2, 5 and 6 first had ਲੁਬਾਨ and now match; Nehemiah 13 on main still has
+  ਲੁਬਾਨ); incense altar ਧੂਪ-ਵੇਦੀ.
+- Purity: clean and unclean ਸ਼ੁੱਧ, ਅਸ਼ੁੱਧ; serious skin disease ਚਮੜੀ ਦਾ
+  ਗੰਭੀਰ ਰੋਗ; mold ਉੱਲੀ; discharge ਵਹਾ; carcass ਲੋਥ.
+- Festivals: Passover ਪਸਾਹ; Festival of Unleavened Bread ਪਤੀਰੀ ਰੋਟੀ ਦਾ
+  ਤਿਉਹਾਰ; Festival of Booths ਡੇਰਿਆਂ ਦਾ ਤਿਉਹਾਰ; Day of Atonement ਪ੍ਰਾਸਚਿਤ
+  ਦਾ ਦਿਨ; ram's horn ਨਰਸਿੰਗਾ; Jubilee ਜੁਬਲੀ (L, B), ਜੁਬਲੀ ਦਾ ਸਾਲ (R).
+- Land and people (chapter 25): settler ਪਰਵਾਸੀ; sojourner ਪਰਦੇਸੀ;
+  possession ਮਿਲਖ (L); liberty ਛੁਟਕਾਰਾ (L), ਸੁਤੰਤਰਤਾ (B), ਅਜ਼ਾਦੀ (R);
+  interest ਵਿਆਜ; silver ਚਾਂਦੀ (L), ਪੈਸਾ (B, R); redeem ਛੁਡਾਉਣਾ (L, B),
+  ਵਾਪਸ ਖ਼ਰੀਦਣਾ (R).
+- Chapter 26: idols ਨਿਕੰਮੀਆਂ ਮੂਰਤੀਆਂ; high places ਉੱਚੇ ਥਾਂ (L),
+  ਪਹਾੜੀ ਪੂਜਾ-ਥਾਂ (B); iniquity ਕੁਧਰਮ (L), ਦੋਸ਼ (B), ਪਾਪ (R); uncircumcised
+  heart ਅਸੁੰਨਤੀ ਦਿਲ; pestilence ਮਹਾਂਮਾਰੀ; staff of bread ਰੋਟੀ ਦੀ ਲਾਠੀ;
+  torot (26:46) ਬਿਵਸਥਾਵਾਂ (L), ਹਦਾਇਤਾਂ (B), ਸਿੱਖਿਆਵਾਂ (R); Sinai ਸੀਨਈ ਪਹਾੜ.
+- Chapter 27: vow ਸੁੱਖਣਾ; valuation ਤੇਰਾ ਠਹਿਰਾਇਆ ਹੋਇਆ ਮੁੱਲ (L), ਮੁੱਲ (B),
+  ਤੈਅ ਕੀਮਤ (R); shekel ਸ਼ੇਕੇਲ with no units span (chapter 5 first had ਸ਼ੈਕਲ
+  and now matches); gerah ਗੇਰਾ; homer {{units:ਲਗਭਗ 220 ਲੀਟਰ|ਇੱਕ ਹੋਮਰ}} at B
+  and R; devoted thing (*ḥerem*) ਅਰਪਣ ਕੀਤੀ ਹੋਈ ਚੀਜ਼ (L), ਪੂਰੀ ਤਰ੍ਹਾਂ ਅਰਪਣ
+  (B), ਹਮੇਸ਼ਾ ਲਈ ਦਿੱਤੀ ਗਈ (R), and for a person (27:29) ਨਾਸ ਲਈ ਅਰਪਣ;
+  tithe ਦਸਵੰਧ (L, B), ਦਸਵਾਂ ਹਿੱਸਾ (R).
