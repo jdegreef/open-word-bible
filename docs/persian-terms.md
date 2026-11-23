@@ -634,8 +634,9 @@ Address:
 Units: {{units:حدود یک کیلومتر|به اندازهٔ راه یک روز شبات}} (1:12), the
 fathom as قامت with metres by default (27:28). Numbers are written in words.
 
-Quotations: Isaiah 6:9-10 in 28:26-27 follows the Persian of Luke 8:10 and
-John 12:40, since Matthew 13 is not yet in Persian. The third quotation
+Quotations: Isaiah 6:9 in 28:26 has the Persian of Matthew 13:14 at every
+level; 28:27 follows the English of Acts, which differs from Matthew 13:15
+("grown dull", "with difficulty"). The third quotation
 level (28:26) uses « » again inside “ ”.
 
 For reviewers:
