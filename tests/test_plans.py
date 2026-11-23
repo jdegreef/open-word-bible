@@ -88,8 +88,10 @@ class PlanSiteTest(unittest.TestCase):
             self.assertEqual(listed, [p.id for p in offered], lang)
             for plan in offered:
                 self.assertIn(f'href="{build_site.url(lang, build_site.plan_url(plan))}"', page)
-                self.assertIn(html.escape(plan.name[lang]), page)
-                self.assertIn(build_site.t(lang, "plans.length", n=len(plan.days)), page)
+                # Numbers show in the page language's own digits (Persian ۰-۹).
+                self.assertIn(build_site.localize_digits(html.escape(plan.name[lang]), lang), page)
+                length = build_site.t(lang, "plans.length", n=len(plan.days))
+                self.assertIn(build_site.localize_digits(length, lang), page)
             self.assertEqual(f"<loc>{build_site.SITE_URL}{build_site.url(lang, '/plans/')}</loc>" in sitemap,
                              bool(offered), lang)
             self.assertIn("data-plan-today", page)
