@@ -229,7 +229,7 @@ class ColourModesTest(unittest.TestCase):
 
     def test_paper_is_the_default(self):
         css = (ROOT / "web" / "style.css").read_text(encoding="utf-8")
-        self.assertIn('data-pref="theme" data-default="light"', build_site.colour_menu("en"))
+        self.assertIn('data-pref="theme" data-default="light"', build_site.colour_prefs("en"))
         # With no choice saved, nothing follows the device's dark setting.
         self.assertNotIn(":root:not([data-theme])", css)
 
@@ -245,7 +245,7 @@ class ColourModesTest(unittest.TestCase):
 
     def test_display_settings_are_styled_and_applied_before_paint(self):
         css = (ROOT / "web" / "style.css").read_text(encoding="utf-8")
-        menu = build_site.colour_menu("en")
+        menu = build_site.colour_prefs("en")
         for name, default, values in build_site.DISPLAY_PREFS:
             others = [v for v in values if v != default]
             self.assertIn(default, values)
@@ -279,6 +279,16 @@ class ColourModesTest(unittest.TestCase):
         menu = build_site.language_menu("en", "/articles/x/", ("en", "es"))
         self.assertIn('href="/es/articles/x/" hreflang="es"', menu)
         self.assertIn('href="/fr/articles/" hreflang="fr"', menu)
+
+    def test_the_settings_come_from_the_nav_script(self):
+        # The same in every page of a language: in nav-<lang>.js once, not
+        # in each page.
+        for lang in ("en", "ar"):
+            self.assertNotIn("data-pref=", build_site.colour_menu(lang))
+            script = build_site.nav_script(lang)[0]
+            self.assertIn("window.OWB_PREFS=", script)
+            self.assertIn('data-pref=\\"theme\\"', script)
+            self.assertIn('getElementById("colour-menu")', script)
 
     def test_every_page_has_the_gear_menu(self):
         out = built_site()
