@@ -892,3 +892,42 @@ For reviewers:
   حارث?
 - 13:13: شراکت (Literal) and رفاقت (Balanced, Readable) for koinōnia. Do
   churches use مشارکت in this blessing instead?
+
+### Galatians
+
+- Paul says شما to the Galatians; Readable adds برادران عزیز. 1:1 has
+  {{gender:برادران و خواهرانی|برادرانی}} at every level.
+- Justification follows Romans: پارسا شمرده شدن (Literal), پارسا اعلام
+  شدن (Balanced), در نظر خدا پارسا به حساب آمدن (Readable). Works of the
+  law: اعمال شریعت (Literal, Balanced) / آنچه شریعت فرمان می‌دهد
+  (Readable).
+- Sarx against the Spirit: نفس (Literal, Balanced) / طبیعت گناه‌آلود
+  (Readable); 3:3 Readable is کوشش انسانی. Natural birth (4:23, 29) and the
+  circumcised body (6:12-13) are جسم. 2:16 "no flesh" is هیچ بشری.
+- Curse (1:8-9): ملعون باد (Literal) / زیر لعنت خدا باد (Balanced) / لعنت
+  خدا بر او باد (Readable).
+- Doulos is برده at Literal, خادم at Balanced and Readable where the
+  English says servant.
+- Seed (3:16-29): نسل / نسل‌ها (Literal), نواده / نوادگان (Balanced,
+  Readable). The guardian (3:24-25) is لله. Stoicheia (4:3, 9): عناصر جهان
+  (Literal) / نیروهای بنیادین (Balanced).
+- 4:6 «اَبّا، پدر!» at Literal keeps the vowel sign as in Romans 8:15.
+- Huiothesia is {{gender:فرزندخواندگی|پسرخواندگی}} at Literal; "sons of" is
+  {{gender:فرزندان|پسران}}.
+- "May it not be!" is حاشا! (Literal, Balanced) / به هیچ وجه! (Readable).
+- 3:11 follows Romans 1:17 and 10:5; 5:14 follows Romans 13:9.
+- Singular you (2:14, 3:8, 4:7, 4:27, 6:1) is تو.
+- Leaven is خمیرمایه; porneia بی‌عفتی (Literal, Balanced) / گناهان جنسی
+  (Readable).
+
+Names: کیفا (Literal, Balanced) / پطرس (Readable), یعقوب, برنابا, تیطس,
+انطاکیه, عربستان, سوریه, کیلیکیه, هاجر, سینا, اسحاق.
+
+For reviewers:
+
+- نفس for sarx opposed to the Spirit, جسم for the body (4:23, 6:12-13):
+  does the split read naturally?
+- لله for paidagōgos (3:24): is it understood today, or would سرپرست read
+  better?
+- 5:12 اخته at Balanced and Readable: too blunt for public reading?
+- 4:3, 9 stoicheia: عناصر جهان or نیروهای بنیادین, which do churches expect?
