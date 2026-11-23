@@ -16,6 +16,11 @@ services:
     name: open-word-bible
     runtime: static
     buildCommand: python3 scripts/build_site.py
+    # The ready-made downloads are the "downloads" release's
+    # (.github/workflows/downloads.yml), not made in every build.
+    envVars:
+      - key: OWB_DOWNLOADS_RELEASE
+        value: https://github.com/jdegreef/open-word-bible/releases/download/downloads
     staticPublishPath: site
     # Pipeline minutes are most of the Render bill, and a full site build
     # takes about 29 minutes. Previews used to build for every pull request

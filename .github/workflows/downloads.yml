@@ -1,0 +1,45 @@
+# The ready-made downloads (/download/): 96 zips, about 130 MB, published
+# as the assets of the GitHub release tagged "downloads" rather than built
+# into every deploy of the site (about 5 minutes of each build). The site
+# reads the release's downloads.json for the download page and links the
+# files there (scripts/build_site.py DOWNLOADS_RELEASE).
+#
+# Weekly, and by hand (Actions > Downloads > Run workflow) after a change
+# readers should get at once.
+name: Downloads
+
+on:
+  schedule:
+    - cron: "17 9 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: downloads
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    name: Build and publish the downloads
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+      - run: python3 scripts/build_downloads.py out
+      - name: Publish to the "downloads" release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          if ! gh release view downloads >/dev/null 2>&1; then
+            gh release create downloads --target "$GITHUB_SHA" --latest=false \
+              --title "Ready-made downloads" \
+              --notes "The files on https://openwordbible.org/download/, rebuilt weekly from main by .github/workflows/downloads.yml. CC0. AI-assisted drafts, not yet reviewed."
+          fi
+          gh release upload downloads out/* --clobber
+          echo "Published $(ls out | wc -l) files from $GITHUB_SHA"
