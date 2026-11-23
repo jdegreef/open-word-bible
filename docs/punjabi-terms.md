@@ -2071,3 +2071,47 @@ People and places: ਪੌਲੁਸ, ਤੁਖਿਕੁਸ; ਅਫ਼ਸੁਸ, �
   either setting: {{units:ਚਾਂਦੀ ਦੇ ਪੰਜ ਥੈਲੇ|ਪੰਜ ਤੋੜੇ}}, {{units:ਚਾਂਦੀ ਦਾ ਇੱਕ
   ਥੈਲਾ|ਇੱਕ ਤੋੜਾ}}, {{units:ਥੈਲਾ|ਤੋੜਾ}}, {{units:ਦਸ ਥੈਲੇ|ਦਸ ਤੋੜੇ}}.
 - To unify: John (4 files) still has ਪਵਿੱਤਰ ਗ੍ਰੰਥ for Scripture.
+
+### Luke
+
+- Address: as in Matthew, Jesus, God and the Father take honorific plural
+  forms with no deity_pronoun spans, and prayer to the Father uses ਤੂੰ
+  (10:21, 11:2-4, 22:42, 23:34, 23:46). Disciples say ਤੁਸੀਂ and "ਹੇ ਪ੍ਰਭੂ";
+  epistata is "ਸੁਆਮੀ ਜੀ". Hostile speakers say ਤੂੰ to Jesus, following Mark
+  14-15: the council (22:67-70), the guards (22:64), Pilate (23:3),
+  the rulers, soldiers and one criminal (23:35-39). In Luke 20 the leaders and
+  the spies say ਤੁਸੀਂ and "ਗੁਰੂ ਜੀ". Cleopas says ਤੁਸੀਂ to the stranger
+  (24:18). The Son of Man and the Messiah in 20:41-44 and 24:26, 46 take
+  plain forms. Wisdom of God in 11:49 is feminine (ਭੇਜਾਂਗੀ).
+- Formulas: truly I tell you ਮੈਂ ਤੁਹਾਨੂੰ ਸੱਚ ਆਖਦਾ ਹਾਂ (ਤੈਨੂੰ to one person,
+  23:43); woman (gynai) "ਹੇ ਇਸਤਰੀ" (L), "ਬੀਬੀ" (B, R); man (anthrōpe) "ਹੇ
+  ਮਨੁੱਖ" (L), "ਭਾਈ" (B); 20:37 "ਅਬਰਾਹਾਮ ਦਾ ਪਰਮੇਸ਼ੁਰ, ਇਸਹਾਕ ਦਾ ਪਰਮੇਸ਼ੁਰ ਅਤੇ
+  ਯਾਕੂਬ ਦਾ ਪਰਮੇਸ਼ੁਰ" (L), "ਅਬਰਾਹਾਮ, ਇਸਹਾਕ ਅਤੇ ਯਾਕੂਬ ਦਾ ਪਰਮੇਸ਼ੁਰ" (B, R).
+- People and groups: scribes ਸ਼ਾਸਤਰੀ (L), ਬਿਵਸਥਾ ਦੇ ਸਿੱਖਿਅਕ (B, R); nomikos
+  ਬਿਵਸਥਾ ਦਾ ਮਾਹਰ; elders ਬਜ਼ੁਰਗ (L), ਬਜ਼ੁਰਗ ਆਗੂ (B, R); council ਮਹਾਂ-ਸਭਾ
+  (Matthew writes ਮਹਾਂਸਭਾ: unify later); governor ਰਾਜਪਾਲ; centurion ਸੂਬੇਦਾਰ;
+  slave ਗ਼ੁਲਾਮ, servant girl ਦਾਸੀ; tax collector ਮਸੂਲੀਆ; Gentiles ਪਰਾਈਆਂ
+  ਕੌਮਾਂ (L, B), ਗ਼ੈਰ-ਯਹੂਦੀ (R); nations ਕੌਮਾਂ (24:47).
+- Names: Theophilus ਥਿਉਫ਼ਿਲੁਸ, Gabriel ਜਬਰਾਈਲ, Zechariah ਜ਼ਕਰਯਾਹ, Elizabeth
+  ਇਲੀਸਬਤ, Anna ਹੰਨਾਹ, Jairus ਯਾਈਰ, Zacchaeus ਜ਼ੱਕੀ, Joanna ਯੋਆਨਾ, Mary
+  Magdalene ਮਰਿਯਮ ਮਗਦਲੀਨੀ (R ਮਗਦਲਾ ਨਗਰ ਦੀ ਮਰਿਯਮ), Lazarus ਲਾਜ਼ਰ, Beelzebul
+  ਬਆਲਜ਼ਬੂਲ, Nain ਨਾਇਨ, Emmaus ਇੰਮਾਊਸ, Cleopas ਕਲਿਉਪਾਸ, Bethany ਬੈਤਅਨੀਆ,
+  Barabbas ਬਰੱਬਾ, Arimathea ਅਰਿਮਥੀਆ.
+- Teaching and faith: parable ਦ੍ਰਿਸ਼ਟਾਂਤ; faith ਵਿਸ਼ਵਾਸ (Matthew has ਨਿਹਚਾ:
+  possible unify), kept at every level (24:11, 24:25); repentance ਤੋਬਾ (L, B),
+  "ਪਾਪਾਂ ਤੋਂ ਮੁੜਨਾ" (R); resurrection ਪੁਨਰ-ਉਥਾਨ (L, B); raised (egerthē)
+  ਜਿਵਾਏ ਗਏ ਹਨ (L, B), ਜੀ ਉੱਠੇ ਹਨ or "ਪਰਮੇਸ਼ੁਰ ਨੇ ... ਜਿਉਂਦਾ ਕਰ ਦਿੱਤਾ" (R);
+  Scripture ਧਰਮ-ਗ੍ਰੰਥ; the Law of Moses, the Prophets and the Psalms ਮੂਸਾ ਦੀ
+  ਬਿਵਸਥਾ, ਨਬੀਆਂ, ਜ਼ਬੂਰਾਂ (24:44); mammon ਮਾਮੋਨ; Hades ਪਤਾਲ; paradise
+  ਫ਼ਿਰਦੌਸ (L, B), ਸਵਰਗ ਲੋਕ (R); spirit/ghost (24:37-39) ਆਤਮਾ (L, B), ਭੂਤ (R).
+- Worship and feasts: temple ਹੈਕਲ; Passover ਪਸਾਹ; unleavened bread ਪਤੀਰੀ
+  ਰੋਟੀ (L, B), ਬਿਨਾਂ ਖ਼ਮੀਰ ਦੀ ਰੋਟੀ (R); cup ਪਿਆਲਾ; new covenant ਨਵਾਂ ਨੇਮ;
+  wine ਮੈ, sour wine ਖੱਟੀ ਮੈ; bless (eulogeō, over bread) ਬਰਕਤ ਮੰਗਣੀ (L, B),
+  ਪਰਮੇਸ਼ੁਰ ਦਾ ਧੰਨਵਾਦ ਕਰਨਾ (R); bless God ਪਰਮੇਸ਼ੁਰ ਨੂੰ ਧੰਨ ਆਖਣਾ (L, B);
+  worship (24:52) ਮੱਥਾ ਟੇਕਣਾ (L), ਅਰਾਧਨਾ ਕਰਨੀ (B, R).
+- Units and money: mina ਮੀਨਾ; denarius ਦੀਨਾਰ; sixty stadia (24:13)
+  {{units:ਲਗਭਗ ਗਿਆਰਾਂ ਕਿਲੋਮੀਟਰ|ਸੱਠ ਸਟੇਡੀਆ}} (B, R), ਸੱਠ ਸਟੇਡੀਆ (L); the
+  first day of the week ਹਫ਼ਤੇ ਦਾ ਪਹਿਲਾ ਦਿਨ (L, B), ਐਤਵਾਰ (R).
+- Overlap rewordings worth a reviewer's eye: 23:36-37 "ਤੂੰ ਜੇ ਯਹੂਦੀਆਂ ਦਾ
+  ਰਾਜਾ ਹੈਂ" (B, R) and "ਤਾਂ ਖ਼ੁਦ ਨੂੰ ਬਚਾ" (L); 23:46 "ਤੇਰੇ ਹੱਥਾਂ ਵਿੱਚ ਮੈਂ
+  ਆਪਣਾ ਆਤਮਾ ਸੌਂਪਦਾ ਹਾਂ" (L, Greek order), "ਤੇਰੇ ਹੱਥੀਂ ..." (B).
