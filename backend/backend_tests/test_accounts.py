@@ -77,9 +77,10 @@ class SignInTest(TestCase):
         self.assertEqual(self.client.post("/api/auth/sign-out").status_code, 204)
         self.assertEqual(self.client.get("/api/me").status_code, 401)
 
+    @override_settings(OWB_API_KEYS=["test-key"])
     def test_a_wrong_token_reads_as_anonymous_but_cannot_see_an_account(self):
         self.client.credentials(HTTP_AUTHORIZATION="Bearer nonsense")
-        self.assertEqual(self.client.get("/api/editions/").status_code, 200)
+        self.assertEqual(self.client.get("/api/editions/", HTTP_X_OWB_KEY="test-key").status_code, 200)
         self.assertEqual(self.client.get("/api/me").status_code, 401)
         # ...and does not get in the way of signing in again.
         self.assertEqual(self.ask().status_code, 202)
