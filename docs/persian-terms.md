@@ -1093,3 +1093,35 @@ For reviewers:
   be بی‌قانونی / شرارت?
 - 2:7: does «آن که باز می‌دارد» read naturally for the restrainer?
 - 3:10: is «نخورد نیز» natural at Literal, or should it say «نباید بخورد»?
+
+### 1 Timothy
+
+- Paul addresses Timothy as تو; teknon is فرزند (Literal) / پسر (Balanced)
+  / همچون پسری (Readable). Names: تیموتائوس, افسس, مقدونیه, هیمینائوس,
+  اسکندر, پنطیوس پیلاتس.
+- Episkopos (3:1-2): ناظر (Literal, Balanced) / رهبر کلیسا (Readable).
+  Diakonoi (3:8, 3:12): شماسان (Literal) / خادمان کلیسا (Balanced,
+  Readable). Presbyteroi (5:17-19): مشایخ (Literal, Balanced) / رهبران
+  کلیسا (Readable); presbyterion (4:14) شورای مشایخ (Literal). An older
+  man (5:1) is مرد پیر / مرد سالخورده, not an elder.
+- Pistos ho logos (1:15, 3:1, 4:9): این سخن امین است (Literal) / سخنی است
+  قابل اعتماد (Balanced) / سخنی راست (Readable).
+- Eusebeia: دینداری (Literal, Balanced) / خدا را حرمت نهادن, برای خشنودی
+  خدا زندگی کردن (Readable). Sound teaching: تعلیم سالم / تعلیم راستین
+  (Readable). Syneidēsis: وجدان at every level.
+- 1:10 arsenokoitai: مردانی که با مردان همبستر می‌شوند, as the English.
+- Ransom (2:6): فدیه (Literal, Balanced). One mediator: یک واسطه.
+- 2:9-15 keeps the English sense: در آرامی, اطاعت, بر مرد مسلط شود
+  (Literal) / اقتدار داشته باشد (Balanced, Readable), زاییدن فرزند.
+- 3:16 keeps the English poetry breaks.
+- Slaves and masters (6:1-2): برده, ارباب, as in Ephesians and Colossians.
+- Agōn (6:12): جنگ (Literal) / مسابقه (Balanced); 1:18 keeps جنگ نیکو.
+- Parathēkē (6:20): امانت (Literal) / آنچه به تو سپرده شده (Balanced).
+
+For reviewers:
+
+- 3:2 and 3:12 «شوهر یک زن» at Literal and «به همسر یگانهٔ خود وفادار»
+  at Balanced: does Balanced narrow the meaning too much?
+- 3:8: is شماس familiar to Persian readers, or should Literal also say
+  خادم?
+- 1:10: is the wording for arsenokoitai clear without being crude?
