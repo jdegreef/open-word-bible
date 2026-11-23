@@ -2014,3 +2014,60 @@ People and places: ਪੌਲੁਸ, ਤੁਖਿਕੁਸ; ਅਫ਼ਸੁਸ, �
 - Gender spans: anashim {{gender:ਲੋਕਾਂ|ਪੁਰਖਾਂ}}; gever and ish
   {{gender:ਮਨੁੱਖ|ਪੁਰਖ}}; plain ਮਨੁੱਖ for adam takes no span.
 - 38:3 and 40:7 are the same Hebrew line and share one wording at each level.
+
+### Matthew
+
+- Address: Jesus, God and the Father take honorific plural forms in
+  narration, with no deity_pronoun spans. Prayer to the Father uses ਤੂੰ
+  (6:9-13, 11:25-26, 26:39-42, 27:46). Jesus says ਤੂੰ to individuals and
+  ਤੁਸੀਂ to groups; the Greek singular you in the Sermon on the Mount is ਤੂੰ.
+  Disciples and suppliants say ਤੁਸੀਂ and "ਹੇ ਪ੍ਰਭੂ". Opponents say ਤੂੰ to Jesus
+  or speak of him with plain forms: the devil (4), the high priest (26:62-63),
+  the mockers (26:68, 27:40-43), Pilate (27:11-14), the priests' story
+  (27:63-64, 28:13). Exceptions with ਤੁਸੀਂ and "ਗੁਰੂ ਜੀ": the Pharisees in
+  public (12:2, 12:38, 15:2), the flatterers in 22:16, the Sadducees in 22:24.
+  The leaders say "ਸ੍ਰੀਮਾਨ ਜੀ" (L), "ਹਜ਼ੂਰ" (B, R) to Pilate. Son of Man, the
+  king in parables and "your Lord" in Jesus' speech take plain singular forms.
+  Slaves say "ਮਾਲਕ ਜੀ" and ਤੁਸੀਂ to their master. Jerusalem in 23:37 is ਤੂੰ
+  with feminine verbs.
+- Formulas: truly I tell you ਮੈਂ ਤੁਹਾਨੂੰ ਸੱਚ ਆਖਦਾ ਹਾਂ (to Peter ਤੈਨੂੰ); woe
+  ਹਾਏ, with "ਹਾਏ ਤੁਹਾਡੇ ਉੱਤੇ, ਹੇ ਸ਼ਾਸਤਰੀਓ ਅਤੇ ਫ਼ਰੀਸੀਓ, ਪਖੰਡੀਓ!" (L),
+  "ਬਿਵਸਥਾ ਦੇ ਸਿੱਖਿਅਕੋ ... ਹੇ ਪਖੰਡੀਓ!" (B), "...ਤੁਹਾਡਾ ਕਿੰਨਾ ਬੁਰਾ ਹਾਲ
+  ਹੋਵੇਗਾ! ਤੁਸੀਂ ਪਖੰਡੀ ਹੋ!" (R); weeping and gnashing "ਰੋਣਾ ਅਤੇ ਦੰਦ ਪੀਹਣਾ"
+  (L), "ਲੋਕ ਰੋਣਗੇ ਅਤੇ ਦੰਦ ਪੀਹਣਗੇ" (B, R); Judas's greeting "ਸਲਾਮ, ਰੱਬੀ" (L,
+  B), "ਨਮਸਕਾਰ, ਗੁਰੂ ਜੀ" (R); friend ਮਿੱਤਰ (L, B), ਦੋਸਤ (R); the risen Jesus'
+  greeting (28:9) "ਨਮਸਕਾਰ" (L, B), "ਸੁਖੀ ਰਹੋ" (R); the mock royal greeting
+  (27:29) "ਤੇਰੀ ਜੈ ਹੋਵੇ" (L, B), "ਜੁੱਗ ਜੁੱਗ ਜੀਵੇ" (R).
+- People and groups: Christ ਮਸੀਹ (no span); prophet ਨਬੀ; scribes ਸ਼ਾਸਤਰੀ (L),
+  ਬਿਵਸਥਾ ਦੇ ਸਿੱਖਿਅਕ (B, R); elders ਬਜ਼ੁਰਗ (L), ਬਜ਼ੁਰਗ ਆਗੂ (B, R); chief
+  priests ਮੁੱਖ ਜਾਜਕ, high priest ਮਹਾਂ ਜਾਜਕ; council ਮਹਾਂਸਭਾ; governor
+  ਰਾਜਪਾਲ; centurion ਸੂਬੇਦਾਰ; slave ਗ਼ੁਲਾਮ, master ਮਾਲਕ; virgins ਕੁਆਰੀਆਂ (L),
+  ਮੁਟਿਆਰਾਂ (B, R).
+- Names: Caiaphas ਕਯਾਫ਼ਾ, Gethsemane ਗਥਸਮਨੀ, Zebedee ਜ਼ਬਦੀ, Simon the leper
+  ਸ਼ਮਊਨ ਕੋੜ੍ਹੀ, Barabbas ਬਰੱਬਾ, Simon of Cyrene ਕੁਰੇਨੇ ਦਾ ਸ਼ਮਊਨ, Golgotha
+  ਗਲਗਥਾ, Joseph of Arimathea ਅਰਿਮਥੀਆ ਦਾ ਯੂਸੁਫ਼, Mary Magdalene ਮਰਿਯਮ
+  ਮਗਦਲੀਨੀ, Abel ਹਾਬਲ, Zechariah son of Barachiah ਬਰਕਯਾਹ ਦਾ ਪੁੱਤਰ ਜ਼ਕਰਯਾਹ,
+  Jeremiah ਯਿਰਮਿਯਾਹ, Daniel ਦਾਨੀਏਲ; praetorium ਪ੍ਰਾਏਤੋਰਿਯੁਮ (L), ਰਾਜਪਾਲ ਦਾ
+  ਸਦਰ ਮੁਕਾਮ (B), ਰਾਜਪਾਲ ਦਾ ਮਹਿਲ (R), as in Mark; 27:46 "ਏਲੀ, ਏਲੀ, ਲਮਾ
+  ਸਬਕਤਨੀ" (Mark 15:34 has ਏਲੋਈ).
+- Kingdom and teaching: kingdom of heaven ਸਵਰਗ ਦਾ ਰਾਜ; Scripture ਧਰਮ-ਗ੍ਰੰਥ;
+  parable ਦ੍ਰਿਸ਼ਟਾਂਤ (L), ਸਬਕ (B, R in 24:32); gospel ਖ਼ੁਸ਼ਖ਼ਬਰੀ; Gehenna ਗਹੇਨਾ
+  (L), ਨਰਕ (B, R); tribulation ਬਿਪਤਾ (L), ਸੰਕਟ (B), ਭਿਆਨਕ ਮੁਸੀਬਤ (R); nation
+  ਕੌਮ (L; B and R ਦੇਸ਼ in 24:7, ਕੌਮਾਂ in 28:19); end of the age ਜੁੱਗ ਦਾ ਅੰਤ;
+  oath ਸਹੁੰ ਖਾਣਾ; tithe ਦਸਵੰਧ (L, B).
+- Temple and worship: temple ਹੈਕਲ, with hieron at B and R ਹੈਕਲ ਦੇ ਵਿਹੜੇ;
+  altar ਜਗਵੇਦੀ; synagogue ਪ੍ਰਾਰਥਨਾ ਘਰ; phylacteries ਧਰਮ-ਗ੍ਰੰਥ ਵਾਲੀਆਂ ਡੱਬੀਆਂ;
+  Passover ਪਸਾਹ, unleavened bread ਪਤੀਰੀ ਰੋਟੀ; covenant ਨੇਮ; body ਦੇਹ; wine
+  ਮੈ, sour wine ਖੱਟੀ ਮੈ, gall ਪਿੱਤ; crucify ਸਲੀਬ ਦੇਣਾ; the Trinitarian
+  formula in 28:19 "ਪਿਤਾ ਦੇ ਅਤੇ ਪੁੱਤਰ ਦੇ ਅਤੇ ਪਵਿੱਤਰ ਆਤਮਾ ਦੇ ਨਾਮ ਵਿੱਚ" (L),
+  "ਪਿਤਾ ਦੇ, ਪੁੱਤਰ ਦੇ ਅਤੇ ਪਵਿੱਤਰ ਆਤਮਾ ਦੇ ਨਾਮ ਵਿੱਚ" (B, R), after the
+  verb, to keep clear of pb1945 and IRV.
+- Things: wilderness ਉਜਾੜ (L, B), ਸੁੰਨਸਾਨ ਥਾਂ (R); ark ਕਿਸ਼ਤੀ; lamps ਦੀਵੇ;
+  vultures ਗਿਰਝਾਂ; sky in ch24 ਅਕਾਸ਼ (swearing by heaven ਅਕਾਸ਼ ਦੀ ਸਹੁੰ);
+  legions ਪਲਟਣਾਂ (L, B), ਫ਼ੌਜਾਂ (R); thirty pieces of silver ਚਾਂਦੀ ਦੇ ਤੀਹ
+  ਟੁਕੜੇ (L), ਸਿੱਕੇ (B, R); Potter's Field ਘੁਮਿਆਰ ਦਾ ਖੇਤ, Field of Blood ਲਹੂ
+  ਦਾ ਖੇਤ.
+- Units: talent spans at B and R use masculine ਥੈਲਾ so verbs agree in
+  either setting: {{units:ਚਾਂਦੀ ਦੇ ਪੰਜ ਥੈਲੇ|ਪੰਜ ਤੋੜੇ}}, {{units:ਚਾਂਦੀ ਦਾ ਇੱਕ
+  ਥੈਲਾ|ਇੱਕ ਤੋੜਾ}}, {{units:ਥੈਲਾ|ਤੋੜਾ}}, {{units:ਦਸ ਥੈਲੇ|ਦਸ ਤੋੜੇ}}.
+- To unify: John (4 files) still has ਪਵਿੱਤਰ ਗ੍ਰੰਥ for Scripture.
