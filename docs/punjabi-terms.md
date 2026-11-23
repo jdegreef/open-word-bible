@@ -1804,3 +1804,31 @@ People and places: ਪੌਲੁਸ, ਤੁਖਿਕੁਸ; ਅਫ਼ਸੁਸ, �
   honorific forms.
 - Quotations: 2:17-21 follows Joel 3:1-5 (NIV 2:28-32), and 7:42-43 and
   15:16-17 keep the words set in Amos 5:25-27 and 9:11-12.
+
+### Proverbs
+
+- Book name ਕਹਾਉਤਾਂ; a proverb ਕਹਾਉਤ (not ਕਹਾਵਤ). People: ਸੁਲੇਮਾਨ,
+  ਹਿਜ਼ਕੀਯਾਹ, ਆਗੂਰ son of ਯਾਕੇਹ, ਈਥੀਏਲ, ਉਕਾਲ, ਲਮੂਏਲ. Massa' in 30:1 and
+  31:1 is ਭਾਰੀ ਵਾਕ (an oracle), marked uncertain.
+- Wisdom words: wisdom ਬੁੱਧ (ਸਿਆਣਪ in R); understanding ਸਮਝ; knowledge
+  ਗਿਆਨ; discipline ਸਿੱਖਿਆ/ਤਾੜਨਾ; the fear of the LORD `{{divine_name:ਪ੍ਰਭੂ|ਯਾਹਵੇ}}
+  ਦਾ ਭੈ`; torah ਬਿਵਸਥਾ (L, B), ਸਿੱਖਿਆ (R) where it is God's instruction;
+  integrity ਖਰਿਆਈ; chesed ਅਟੱਲ ਪਿਆਰ (L), ਦਇਆ ਅਤੇ ਵਫ਼ਾਦਾਰੀ (B).
+- The kinds of people: the wise ਬੁੱਧਵਾਨ; the fool (kesil) ਮੂਰਖ; nabal
+  ਮੂੜ੍ਹ (L); the simple ਭੋਲਾ; the mocker ਠੱਠਾ ਕਰਨ ਵਾਲਾ; the sluggard ਆਲਸੀ;
+  the righteous ਧਰਮੀ; the wicked ਦੁਸ਼ਟ; the "strange woman" ਪਰਾਈ ਇਸਤਰੀ / ਓਪਰੀ
+  ਇਸਤਰੀ (L), "ਜਿਹੜੀ ਇਸਤਰੀ ਤੇਰੀ ਨਹੀਂ" (B); the adulteress of 30:20 ਵਿਭਚਾਰਨ; the quarrelsome wife ਲੜਾਕੀ ਪਤਨੀ; the gossip
+  ਚੁਗ਼ਲਖ਼ੋਰ (L), ਚੁਗ਼ਲੀ (B, R); evil eye / good eye ਬੁਰੀ ਅੱਖ ਵਾਲਾ / ਭਲੀ ਅੱਖ
+  ਵਾਲਾ; the capable wife (31:10) ਗੁਣਵੰਤੀ ਪਤਨੀ.
+- Sheol ਪਤਾਲ (L, B), ਕਬਰ (R); Abaddon ਅਬੱਦੋਨ (L), ਵਿਨਾਸ਼ ਦਾ ਥਾਂ (B).
+  'Ashre ਕਿੰਨਾ ਧੰਨ (L, B), "... ਦਾ ਜੀਵਨ ਸੱਚ-ਮੁੱਚ ਚੰਗਾ ਹੈ" (R).
+- Address: "my son" ਹੇ ਮੇਰੇ ਪੁੱਤਰ (L), ਮੇਰੇ ਪੁੱਤਰ (B), ਪੁੱਤਰ (R), always
+  with ਤੂੰ; Lemuel's mother and the husband in 31:29 also say ਤੂੰ; Agur's
+  prayer (30:7-9) says ਤੂੰ to God, while God in the third person takes
+  honorific plural verbs.
+- Repeated sayings reuse one wording: 24:33-34 = 6:10-11; 25:24 = 21:9;
+  26:22 = 18:8; 27:12 = 22:3; 27:13 = 20:16; 28:28 line 1 = 28:12; 29:20
+  line 2 = 26:12; 30:5 follows 2 Samuel 22:31. NT quotations follow the
+  Punjabi NT: 3:11-12 (Hebrews 12), 3:34 (James 4, 1 Peter 5), 11:31
+  (1 Peter 4), 24:12 (Romans 2:6), 25:21-22 (Romans 12:20), 26:11
+  (2 Peter 2:22).
