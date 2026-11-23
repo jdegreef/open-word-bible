@@ -510,3 +510,82 @@ For reviewers:
   sounds like human uprightness when said of God.
 - مدافع for the Advocate. The Old Version's تسلی‌دهنده is well known; a
   reviewer may prefer it or یاور.
+
+### Luke
+
+People: تئوفیلوس, زکریا, ابیا, الیزابت, جبرئیل, قیصر آگوستوس, کورینیوس,
+شمعون (Simeon, 2:25), حنا (Anna, and the high priest Annas), تیبریوس,
+لیسانیوس, خوزا, سوسن, یونا (Joanna), مارتا, ایلعازر (the poor man, 16:20),
+زکی (Zacchaeus), کلئوپاس (24:18; John's کلوپاس is another man), شمعون
+قیروانی, یوسف رامه‌ای, باراباس, لوط, نوح.
+
+Places: نائین, بیت‌صیدا, سیلوحا (the tower, 13:4), اریحا, عمائوس, بیت‌عنیا,
+جمجمه (23:33; Luke gives the meaning, not the name جلجتا), سامری.
+
+Terms:
+
+| Term | L | B | R |
+|---|---|---|---|
+| Master (*epistata*) | ای استاد | استاد | استاد |
+| slave | برده | خادم | خادم |
+| household servant (15:26) | خدمتکار | خدمتکار | خدمتکار |
+| disciple | شاگرد | شاگرد | پیرو |
+| scribes | کاتبان | علمای دین | علمای شریعت خدا |
+| lawyers (*nomikoi*) | فقیهان | کارشناسان شریعت | کارشناسان شریعت خدا |
+| elders | مشایخ | مشایخ | بزرگان قوم |
+| hypocrites | ای ریاکاران | ای ریاکاران | شما تظاهر می‌کنید |
+| Hades | عالم مردگان | عالم مردگان | جای مردگان |
+| Gehenna | جهنم | جهنم | جهنم |
+| repent | توبه | توبه | از گناه دست برداشتن و به سوی خدا بازگشتن |
+| kingdom | ملکوت | ملکوت | پادشاهی |
+| leprosy | جذام | بیماری پوستی سخت | بیماری پوستی بد |
+| synagogue leader | رئیس کنیسه | رئیس کنیسه | سرپرست کنیسه |
+| temple officers | سرداران | فرماندهان نگهبانان معبد | افسران نگهبانان معبد |
+| mammon | مامونا | ثروت | پول |
+| manager (16:1-8) | مباشر | مباشر | مباشر |
+| mina (19:13-25) | مینا | مینا | مینا, explained once |
+| benefactor (22:25) | ولی‌نعمت | ولی‌نعمت | ولی‌نعمت |
+| handing over (Judas) | تسلیم کردن | خیانت کردن | خیانت کردن |
+| Woman | ای زن | خانم | خانم |
+| paradise (23:43) | فردوس | فردوس | فردوس |
+| leaven | خمیرمایه | خمیرمایه | خمیرمایه |
+
+Address: the disciples, Peter and the apostles say تو to Jesus. Strangers
+say تو at Literal and شما at Balanced and Readable: the Pharisees, the
+lepers, the ruler, the blind man, Cleopas (24:18), and in the parables the
+widow to the judge and guests to a host. Servants speak to their master,
+and sons to their father, the same way, the servant starting ای سرور
+(Literal) or سرورم; the rich man speaks so to Abraham. Masters, fathers,
+Abraham and Jesus say تو to one person. Hostile speakers (the devil, the
+council, the mockers, Herod's and Pilate's soldiers) and Pilate say تو at
+every level. Prayer to God is تو.
+
+Units: {{units:دو سکهٔ ناچیز|دو آساریون}} (12:6), {{units:تا آخرین
+پشیز|تا آخرین لپتون}} (12:59), {{units:حدود ۱۸ کیلوگرم|سه پیمانه}}
+(13:21), the bath and cor in liters with the ٬ separator (16:6-7),
+{{units:دو سکهٔ کوچک مسی|دو لپتا}} (21:2), {{units:حدود ۱۱ کیلومتر|شصت
+ستادیون}} (24:13). Literal keeps the ancient unit.
+
+Gender setting: brothers and sisters (14:12, 17:3, 21:16); فرزندان for
+"sons" of this age, of light, of God and of the resurrection (16:8,
+20:34-36); {{gender:مردم|مردان}} گناهکار (24:7). Words such as مردم and
+خود are already inclusive and take no span.
+
+Parallels: where Luke follows Mark (Mark 10-15), Mark's Persian wording is
+reused; passages shared only with Matthew were drafted fresh, since Matthew
+is not yet in Persian.
+
+For reviewers:
+
+- استاد for *epistata* at every level. It is also the glossary's word for
+  "teacher" (*didaskale*), so Persian cannot show the difference.
+- عالم مردگان for Hades at Literal and Balanced. هاویه is the Old Version's
+  word; a reviewer may prefer it at Literal.
+- The span {{gender:مردم|مردان}} in 24:7: the Greek is *anthrōpōn*, so
+  مردم is the default; is a span needed at all?
+- Sons speaking to a father (15:12-21) say تو at Literal and شما at
+  Balanced and Readable. Some families would say تو at every level.
+- پشیز for the last lepton (12:59), and مینا left as a loan word.
+- The bath and cor converted to liters (16:6-7). Is metric volume natural
+  for oil and wheat, or should Readable say "کیسه"?
+- ولی‌نعمت for *euergetai* (22:25); نیکوکاران is the literal alternative.
