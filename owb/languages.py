@@ -61,3 +61,19 @@ def direction(code):
     """"rtl" for a language written right to left, else "ltr". A tag with a
     region or script ("ar-EG") counts as its language."""
     return "rtl" if code.split("-")[0] in RTL else "ltr"
+
+
+# The digits a reading language shows numbers in, zero to nine, where they
+# are not ASCII: {"fa": "۰۱۲۳۴۵۶۷۸۹"}. The records keep ASCII digits; the
+# site shows these in their place (build_site.localize_digits, and
+# web/site.js OWBDigits for text the scripts add).
+DIGITS = {code: lang["digits"] for code, lang in READING.items() if lang.get("digits")}
+for _code, _digits in DIGITS.items():
+    if len(_digits) != 10:
+        raise ValueError(f"data/languages.json: {_code}: digits must be ten characters, zero to nine")
+
+
+def digits(code):
+    """The digits code shows numbers in, zero to nine, or None for ASCII. A
+    tag with a region or script ("fa-AF") counts as its language."""
+    return DIGITS.get(code.split("-")[0]) if code else None

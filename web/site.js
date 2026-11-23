@@ -69,6 +69,69 @@
   if (document.body) dirs.sweep(document.body);
 })();
 
+// Digits (owb/languages.py DIGITS). A language with digits of its own,
+// Persian's, is named in the owb-digits tag ("fa:۰۱۲۳۴۵۶۷۸۹"); numbers in
+// text in that language show in its digits, as build_site.py's
+// localize_digits does for the page as served: here for the text the
+// scripts add (verse numbers, references, counts). Text in another
+// language, script, style, code, form fields and editable text keep their
+// digits, as do digits joined to Latin letters (G2316). Without the tag
+// nothing is watched. window.OWBDigits: of(code), the digits or null, and
+// sweep(node) (tests/js/digits.test.mjs).
+(function () {
+  "use strict";
+  var meta = document.querySelector('meta[name="owb-digits"]');
+  var table = {};
+  if (meta) meta.getAttribute("content").split(" ").forEach(function (pair) {
+    var at = pair.indexOf(":");
+    if (at > 0 && Array.from(pair.slice(at + 1)).length === 10) table[pair.slice(0, at)] = Array.from(pair.slice(at + 1));
+  });
+  var root = document.documentElement;
+  var SKIP = { SCRIPT: 1, STYLE: 1, CODE: 1, PRE: 1, TEXTAREA: 1, INPUT: 1 };
+  var NUMBER = /(^|[^A-Za-z0-9])([0-9]+)(?![A-Za-z])/g;
+
+  function of(code) { return code ? table[String(code).split("-")[0]] || null : null; }
+
+  function digitsAt(node) {
+    for (var p = node.nodeType === 1 ? node : node.parentElement; p; p = p.parentElement) {
+      if (SKIP[p.nodeName] || p.isContentEditable) return null;
+      var code = p.getAttribute("lang");
+      if (code) return of(code);
+    }
+    return null;
+  }
+
+  function swap(text, d) {
+    return text.replace(NUMBER, function (_, before, n) {
+      return before + n.replace(/[0-9]/g, function (c) { return d[+c]; });
+    });
+  }
+
+  function sweep(node) {
+    if (!node) return;
+    if (node.nodeType === 3) {
+      var d = /[0-9]/.test(node.nodeValue) && digitsAt(node);
+      if (d) {
+        var v = swap(node.nodeValue, d);
+        if (v !== node.nodeValue) node.nodeValue = v;
+      }
+      return;
+    }
+    if (node.nodeType !== 1 || SKIP[node.nodeName]) return;
+    for (var c = node.firstChild; c; c = c.nextSibling) sweep(c);
+  }
+
+  window.OWBDigits = { of: of, sweep: sweep };
+  if (!meta || typeof MutationObserver !== "function") return;
+  new MutationObserver(function (changes) {
+    changes.forEach(function (c) {
+      if (c.type === "characterData") sweep(c.target);
+      else Array.prototype.forEach.call(c.addedNodes, sweep);
+    });
+  }).observe(root, { subtree: true, childList: true, characterData: true });
+  if (document.body) sweep(document.body);
+})();
+
 // The display menu behind the gear in the header (see colour_menu in
 // scripts/build_site.py): the colour mode, then the reading text's size,
 // typeface and line spacing. Each radiogroup is one setting (data-pref); a
