@@ -967,3 +967,38 @@ For reviewers:
 - 6:12 کشتی (Literal) for palē: is wrestling clear, or should Literal also
   say نبرد?
 - 4:8 «اسیری را به اسیری برد» at Literal: is the phrase still understood?
+
+### Philippians
+
+- Paul says شما to the Philippians, and تو to the one co-worker in 4:3.
+  Address: ای {{gender:برادران و خواهران|برادران}}; in 4:1 Balanced and
+  Readable add عزیز.
+- Doulos: برده (Literal) / خادم (Balanced, Readable), in 1:1 and 2:7 (صورت
+  برده / صورت خادم). Overseers and deacons (1:1): ناظران و شماسان.
+- Sarx: bodily life (1:22-24) is جسم / بدن; outward credentials (3:3-4) are
+  جسم (Literal) / امتیازهای انسانی (Balanced) / آنچه هستیم یا کرده‌ایم
+  (Readable). نفس is kept for sarx against the Spirit.
+- Politeuomai and politeuma (1:27, 3:20): چون شهروندان زندگی کنید,
+  شهروندی.
+- 2:6-11 keeps the English poetry breaks. Harpagmos: چیزی برای بهره‌جویی.
+  Kenoō: خود را خالی ساخت.
+- Katatomē (3:2): قطع‌کنندگان (Literal), set against ختنه‌شدگان in 3:3.
+  Skybala (3:8): فضله.
+- Katalambanō (3:12-13): به چنگ آوردن at every level, keeping the play on
+  words. Teleios: کامل (Literal) / بالغ (Balanced).
+- The drink offering (2:17) is هدیهٔ ریختنی. Apechō (4:18): به‌تمامی
+  پرداخت شده / رسید.
+- Kaisar (4:22): قیصر (Literal) / امپراتور (Balanced, Readable); the
+  praetorium (1:13) is گارد امپراتوری.
+
+Names: فیلیپی, فیلیپیان, تیموتائوس, اپافرودیتوس, افودیه, سنتیخی,
+کلیمنتس, بنیامین, مقدونیه, تسالونیکی.
+
+For reviewers:
+
+- فضله for skybala (3:8): is it too coarse for public reading, or is that
+  Paul's point?
+- 2:7 صورت برده at Literal beside صورت خادم at Balanced: do churches
+  expect غلام here?
+- قانع for autarkēs (4:11): does it carry contentment that does not depend
+  on circumstances?
