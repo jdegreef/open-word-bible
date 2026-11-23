@@ -359,6 +359,71 @@ def isolate_directions(text, base, direction=None):
     out.append(text[pos:])
     return "".join(out)
 
+# Digits (owb/languages.py DIGITS). Numbers in a language with digits of
+# its own, Persian's ۰-۹, are shown in them: verse and chapter numbers,
+# references, counts. The records and the addresses keep ASCII. Text in
+# another language (an English fallback, a Greek word) keeps its digits, as
+# do script, style and code, character references (&#8212;), and digits
+# joined to Latin letters (G2316, H430, CC0). web/site.js (OWBDigits) does
+# the same for text the scripts add.
+_NUMBER = re.compile(r"&#?[0-9A-Za-z]+;|(?<![A-Za-z0-9])[0-9]+(?![A-Za-z])")
+_KEEP = frozenset(("script", "style", "code", "pre", "textarea"))
+
+
+def localize_digits(text, base, digits=None):
+    """text (a page's body, in language base) with ASCII digits shown in the
+    digits of the language each piece of text is in. digits(code) gives a
+    language's digits or None (owb_languages.digits)."""
+    digits = digits or owb_languages.digits
+
+    def swap(segment, table):
+        return _NUMBER.sub(lambda m: m.group().translate(table) if m.group()[0] != "&" else m.group(),
+                           segment)
+
+    tables = {}
+
+    def table_of(code):
+        if code not in tables:
+            d = digits(code)
+            tables[code] = str.maketrans("0123456789", d) if d else None
+        return tables[code]
+
+    out, pos, stack = [], 0, [("", base)]
+    while True:
+        m = _TAG.search(text, pos)
+        here = table_of(stack[-1][1])
+        segment = text[pos:m.start()] if m else text[pos:]
+        out.append(swap(segment, here) if here and any(c.isdigit() for c in segment) else segment)
+        if not m:
+            break
+        closing, name, attrs = m.group(1), m.group(2).lower(), m.group(3)
+        pos = m.end()
+        out.append(m.group())
+        if closing:
+            names = [n for n, _ in stack]
+            if name in names[1:]:
+                del stack[len(names) - 1 - names[::-1].index(name):]
+            continue
+        if name in _RAW or name in _KEEP:
+            end = text.find(f"</{name}", pos)
+            end = len(text) if end < 0 else end
+            out.append(text[pos:end])
+            pos = end
+        elif name not in _VOID and not attrs.rstrip().endswith("/"):
+            code = _ATTR_LANG.search(attrs)
+            stack.append((name, code.group(1) if code and code.group(1) else stack[-1][1]))
+    return "".join(out)
+
+
+def digits_meta():
+    """The tag naming each language's own digits, for web/site.js: none while
+    every reading language shows ASCII digits."""
+    if not owb_languages.DIGITS:
+        return ""
+    pairs = " ".join(f"{code}:{d}" for code, d in sorted(owb_languages.DIGITS.items()))
+    return f'\n<meta name="owb-digits" content="{pairs}">'
+
+
 GEAR = ('<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
         'stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
         '<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83'
@@ -552,7 +617,7 @@ def page(lang, title, body, path=None, current="", description="", card="site", 
 <title>{html.escape(full_title)}</title>
 <meta name="description" content="{html.escape(description)}">{meta}{head}
 <meta name="owb-api" content="{API_URL}">{takeroot}
-<meta name="owb-search" content="{search_source(lang)}" data-ui="{search_ui_url(lang)}">{rtl_meta()}
+<meta name="owb-search" content="{search_source(lang)}" data-ui="{search_ui_url(lang)}">{rtl_meta()}{digits_meta()}
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="manifest" href="/manifest.webmanifest">
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
@@ -577,10 +642,16 @@ def page(lang, title, body, path=None, current="", description="", card="site", 
 </body>
 </html>
 """
-    if not owb_languages.RTL_READING:
+    if not owb_languages.RTL_READING and not owb_languages.DIGITS:
         return text
     start = text.index("<body>")
-    return text[:start] + isolate_directions(text[start:], owb_languages.direction(lang))
+    head, body = text[:start], text[start:]
+    if owb_languages.RTL_READING:
+        body = isolate_directions(body, owb_languages.direction(lang))
+    # Most pages have no text in a language with digits of its own.
+    if owb_languages.digits(lang) or any(f'lang="{code}' in body for code in owb_languages.DIGITS):
+        body = localize_digits(body, lang)
+    return head + body
 
 
 def languages_label(records):

@@ -111,6 +111,7 @@ class ReleaseNotesTest(AdminTestCase):
         first = data["records"][0]
         del first["renderings"]["en"]
         first["decisions"] = [d for d in first["decisions"] if d["language"] != "en"]
+        first["alignments"] = [a for a in first.get("alignments", []) if a["language"] != "en"]
         with tempfile.TemporaryDirectory() as tmp:
             edited = Path(tmp) / "PHM.1.json"
             edited.write_text(json.dumps(data))
