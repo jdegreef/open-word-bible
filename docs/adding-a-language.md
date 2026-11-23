@@ -67,6 +67,11 @@ not use, since it also names the Persians of Ezra, Esther and Daniel
   Spanish has `plural_you`).
   A language written right to left also gets `"dir": "rtl"`; see section
   11 before registering one.
+  A language whose readers expect numbers in digits of their own gets
+  `"digits"`, its ten digits from zero to nine (Persian:
+  `"۰۱۲۳۴۵۶۷۸۹"`). The records keep ASCII digits; the site shows these in
+  their place, in verse and chapter numbers, references and counts
+  (`build_site.localize_digits`, and `OWBDigits` in `web/site.js`).
 - **`README.md`**: the language in the opening list and its brief in the
   list of briefs.
 - **Tests** that name every language in a docstring or list:

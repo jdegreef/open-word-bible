@@ -1005,8 +1005,9 @@ class SiteTest(unittest.TestCase):
             progress = home[home.index('class="progress"'):home.index('class="involve"')]
             records = [r for r in every if lang in r["renderings"]]
             decisions = sum(d["language"] in (None, lang) for r in records for d in r["decisions"])
-            self.assertIn(f"<b>{len(records)}</b>", progress)
-            self.assertIn(f"<b>{decisions}</b>", progress)
+            # Counts show in the page language's own digits (Persian ۰-۹).
+            self.assertIn(build_site.localize_digits(f"<b>{len(records)}</b>", lang), progress)
+            self.assertIn(build_site.localize_digits(f"<b>{decisions}</b>", lang), progress)
             for p in passages:
                 self.assertNotIn(f'href="{build_site.url(lang, p.url)}"', progress, (lang, p.url))
 
