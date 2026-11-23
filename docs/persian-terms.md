@@ -775,3 +775,58 @@ For reviewers:
   عادل and عدالت. Which do Persian churches expect in Romans 3-5?
 - خادمه for Phoebe (16:1): does it read as an office (deacon) or only as
   service? The meaning decision leaves this open.
+
+### 1 Corinthians
+
+Terms:
+
+- Wisdom is حکمت, حکیم and حکیمانه; foolishness is حماقت and احمقانه.
+  Phronimos is خردمند.
+- psychikos is طبیعی (انسان طبیعی 2:14, بدن طبیعی 15:44); sarkinos and
+  sarkikos are نفسانی (3:1-3, as in Romans 7:14); pneumatikos is روحانی.
+- Porneia: بی‌عفتی (Literal, Balanced), گناه جنسی (Readable).
+- Leaven is خمیرمایه, Passover پسح, unleavened bread فطیر (5:6-8).
+- Idol food: [خوراک] قربانی‌شده برای بت‌ها (Literal), خوراک تقدیم‌شده به
+  بت‌ها (Balanced, Readable). Conscience is وجدان, a right حق, demons دیوها.
+- The cup is جام (10:16-21, 11:25-27, as in Luke 22). The Lord's Supper is
+  شام خداوند and the new covenant عهد جدید.
+- Tongues are زبان‌ها and interpretation ترجمه. Prophets are نبی/انبیا
+  (Literal, Balanced) and پیامبر (Readable); prophesying is نبوت کردن.
+- Love is محبت (chapter 13). Stewards are مباشران (Literal) and ناظران
+  (Balanced) (4:1-2). Slaves are برده at every level (7:21-23).
+- Firstfruits: نوبر (Literal), نخستین بخش محصول (Balanced, Readable);
+  16:15 Readable says نخستین ایمانداران. Resurrection is رستاخیز.
+- One flesh is یک تن (Literal, Balanced) and یک بدن (Readable) (6:16).
+  Ancestors are پدران (Literal) and نیاکان (Balanced, Readable) (10:1).
+- Marana tha (16:22) is ماراناتا at Literal; Balanced and Readable
+  translate it, and Readable names the Lord Jesus.
+- Righteousness, justification and حاشا! follow Romans. Numbers are written
+  in words (10:8, 15:6).
+
+Names: کیفا (Literal, Balanced) and پطرس (Readable) for Kephas, آپولس,
+خلوئه, استیفاناس, سوستنیس, قرنتس, کرسپس, گایوس, تیموتائوس, غلاطیه,
+مقدونیه, افسس, پنتیکاست, اخائیه, آکیلا, پریسکا, آسیا, فرتوناتوس,
+اخائیکوس.
+
+Address:
+
+- Paul says شما to the church. The single reader Paul turns to gets تو
+  (4:7, 7:16, 7:21, 7:27-28, 8:10-11, 14:16-17, 15:36-37), as do the
+  hand in 12:21 and death in 15:55.
+- ای {{gender:برادران و خواهران|برادران}} at Literal and Balanced;
+  {{gender:برادران و خواهران عزیز|برادران عزیز}} at Readable. A single
+  believer is {{gender:برادر یا خواهر|برادر}}. Named companions (16:11-12)
+  are برادران with no span. "Act like men" (16:13) is
+  {{gender:دلیر باشید|مردانه رفتار کنید}} at Literal.
+
+For reviewers:
+
+- طبیعی (psychikos) and نفسانی (sarkikos): is the difference clear in 2:14
+  and 3:1-3, and does نفسانی read well next to نفس for sarx in Romans?
+- جام for the cup follows Luke 22; the Old Version has پیاله. Which do
+  churches use at the Lord's Supper?
+- 11:3-16 keeps سر for kephalē at every level, and 14:34-35 is translated
+  as it stands. Do these read as the Greek does, without adding to it?
+- 6:9: malakoi is [مردان] نرم at Literal and spelled out at Balanced and
+  Readable; arsenokoitai is مردانی که با مردان همبستر می‌شوند. Is this
+  accurate and suitably restrained for public reading?
