@@ -36,6 +36,7 @@ from owb.export import record_verses  # noqa: E402
 
 sys.path.insert(0, str(ROOT / "scripts"))
 import indexnow  # noqa: E402  (scripts/indexnow.py)
+import minify  # noqa: E402  (scripts/minify.py)
 
 # The interface languages, English first (data/languages.json; see catalog below).
 LANGUAGES = owb_languages.CODES
@@ -7522,7 +7523,10 @@ def build(out):
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_bytes(data)
     for name in WEB_FILES:
-        shutil.copy(ROOT / "web" / name, out / name)
+        # Without comments or indentation (scripts/minify.py): a quarter
+        # fewer bytes, gzipped, for every reader.
+        (out / name).write_text(minify.minify(name, (ROOT / "web" / name).read_text(encoding="utf-8")),
+                                encoding="utf-8")
     shutil.copytree(ROOT / "web" / "fonts", out / "fonts")
     shutil.copytree(ROOT / "web" / "icons", out / "icons")
     shutil.copytree(OG, out / "og", ignore=shutil.ignore_patterns("*.digest"))
