@@ -370,7 +370,8 @@ section for the book, here.
 - **Recurring verbs kept at L and B**: فرود آمدن (Jonah goes down), افکندن
   (hurl), مقرر کردن (God appoints), دل سوزاندن (pity, 4:10-11).
 - **Relent** (*nacham*, of God): پشیمان شدن (L), منصرف شدن (B), تصمیم خود را
-  تغییر دادن (R); توبه کردن is kept for people.
+  تغییر دادن (R); توبه کردن is kept for people. Confirmed by the founder
+  on 2026-11-22 for every book.
 - **Exodus 34:6** as Jonah quotes it (4:2): خدایی پرفیض و رحیم، دیرخشم و سرشار
   از محبت وفادارانه (L); to be matched when Exodus is drafted.
 
@@ -435,3 +436,156 @@ The units setting: {{units:مزد هشت ماه|دویست دینار}} (6:37), 
 the wage of a year (14:5), a denarius as a day's wage (12:15), and دو لپتا
 که یک کودرانت می‌شود (12:42). جهنم stays at every level (9:43-47), and
 برده at every level in 10:43-44.
+
+### John
+
+People: یحیی for John the Baptist (یوحنا only for Simon Peter's father,
+1:42 and 21:15-17), کیفا, نتنائیل, نیقودیموس, ایلعازر, مارتا, مریم, توما
+(دیدیموس; Balanced adds یعنی توأم, Readable says توأم), قیافا, حنا, مالخوس,
+کلوپاس, یوسف رامه‌ای, یهودای اسخریوطی.
+
+Places: بیت‌عنیا (both the one across the Jordan, 1:28, and Lazarus's
+village), قانای جلیل, سوخار, بیت‌حسدا, سیلوحا, افرایم, رواق سلیمان, قدرون
+(Literal نهر فصلی قدرون, the others درهٔ قدرون), سنگفرش and جباتا (19:13),
+جای جمجمه and جلجتا, دریای طبریه (Literal) / دریاچهٔ طبریه.
+
+Feasts: عید پسح, عید خیمه‌ها, عید تقدیس (Readable adds حنوکا); روز تهیه;
+شبات.
+
+Terms:
+
+| Term | L | B | R |
+|---|---|---|---|
+| the Word (1:1) | کلمه | کلمه | کلمه |
+| Advocate (*parakletos*) | مدافع | مدافع | مدافع |
+| Spirit of truth | روح حقیقت | روح حقیقت | روح حقیقت |
+| the world (*kosmos*) | جهان | جهان | جهان |
+| eternal life | حیات جاودان | حیات جاودان | زندگی جاودان |
+| sign | آیت | آیت | نشانه |
+| the hour (of Jesus) | ساعت | ساعت | ساعت (12:23-13:1, 17:1); زمان where the English says time |
+| Truly, truly | آمین، آمین | براستی، براستی | حقیقت را به شما/تو می‌گویم |
+| I am (8:24, 28, 58; 13:19) | من هستم | من هستم | من هستم |
+| I am he (18:5-8) | من [همان] هستم | من همان هستم | من همان هستم |
+| the Jews, where the English says leaders | یهودیان | سران یهود | سران یهود |
+| remain, abide (*meno*) | ماندن | ماندن | ماندن |
+| hand over / betray (Judas) | تسلیم کردن | خیانت کردن | خیانت کردن |
+| flesh (6:51-56) | جسم | جسم / بدن | بدن |
+| vine; vinedresser (15:1) | تاک; باغبان | تاک; باغبان | درخت انگور; باغبان |
+| peace (14:27, 16:33) | آرامش | آرامش | آرامش |
+| Peace to you (20:19-26) | سلام بر شما | سلام بر شما | سلام بر شما |
+| love (both Greek verbs, 21:15-17) | دوست داشتن | دوست داشتن | دوست داشتن |
+| Righteous Father (17:25) | ای پدر عادل | ای پدر عادل | پدر عادل |
+| Holy Father (17:11) | ای پدر قدوس | ای پدر قدوس | پدر قدوس |
+| Woman (2:4, 19:26, 20:13) | ای زن | ای زن | مادر; خانم (20:13-15) |
+| praetorium | پرایتوریوم | مقر والی | کاخ والی رومی |
+
+Address: the disciples say تو to Jesus; questioners and strangers say تو at
+Literal and شما at Balanced and Readable; his brothers, hostile opponents
+(8:48-57, 10:33, 18:22, 18:30) and Pilate say تو; Jesus says تو to
+individuals, Pilate and the high priest included; prayer to the Father is
+تو throughout chapter 17.
+
+Units: {{units:بیش از مزد شش ماه|دویست دینار}} (6:7), {{units:مزد یک
+سال|سیصد دینار}} (12:5), {{units:حدود ۳۳۰ گرم|یک رطل}} (12:3),
+{{units:حدود ۳۳ کیلوگرم|حدود صد رطل رومی}} (19:39), {{units:۹۰ متر|دویست
+ذراع}} (21:8); Literal keeps the ancient measure. Clock time: Literal keeps
+the Jewish hour count (1:39, 4:6, 4:52, 19:14).
+
+Gender setting: John uses it only for the believers as brothers and sisters
+(20:17, 21:23); elsewhere Persian words for people (کسی, هر که, او, انسان,
+فرزندان) are already inclusive.
+
+For reviewers:
+
+- جهان for *kosmos* throughout John. The brief's default is دنیا; John's
+  "world" is a theological term (1:10, 3:16, 17:14-16), and one word lets
+  readers follow it. Is جهان right, or should Readable say دنیا?
+- 6:7 gives 200 denarii as "more than half a year's wages", while Mark 6:37
+  says "eight months' wages" for the same sum. One should match the other.
+- جسم (Literal) and بدن (Readable) for "flesh" in 6:51-56.
+- Address choices that could go either way: Nathanael says تو at every level
+  (1:48-49); Martha and Mary say تو (11:3, 11:21-32); the opponents in 8:48
+  say تو.
+- 17:25 says ای پدر عادل; the brief's key word for righteous is پارسا, which
+  sounds like human uprightness when said of God.
+- مدافع for the Advocate. The Old Version's تسلی‌دهنده is well known; a
+  reviewer may prefer it or یاور.
+
+### Luke
+
+People: تئوفیلوس, زکریا, ابیا, الیزابت, جبرئیل, قیصر آگوستوس, کورینیوس,
+شمعون (Simeon, 2:25), حنا (Anna, and the high priest Annas), تیبریوس,
+لیسانیوس, خوزا, سوسن, یونا (Joanna), مارتا, ایلعازر (the poor man, 16:20),
+زکی (Zacchaeus), کلئوپاس (24:18; John's کلوپاس is another man), شمعون
+قیروانی, یوسف رامه‌ای, باراباس, لوط, نوح.
+
+Places: نائین, بیت‌صیدا, سیلوحا (the tower, 13:4), اریحا, عمائوس, بیت‌عنیا,
+جمجمه (23:33; Luke gives the meaning, not the name جلجتا), سامری.
+
+Terms:
+
+| Term | L | B | R |
+|---|---|---|---|
+| Master (*epistata*) | ای استاد | استاد | استاد |
+| slave | برده | خادم | خادم |
+| household servant (15:26) | خدمتکار | خدمتکار | خدمتکار |
+| disciple | شاگرد | شاگرد | پیرو |
+| scribes | کاتبان | علمای دین | علمای شریعت خدا |
+| lawyers (*nomikoi*) | فقیهان | کارشناسان شریعت | کارشناسان شریعت خدا |
+| elders | مشایخ | مشایخ | بزرگان قوم |
+| hypocrites | ای ریاکاران | ای ریاکاران | شما تظاهر می‌کنید |
+| Hades | عالم مردگان | عالم مردگان | جای مردگان |
+| Gehenna | جهنم | جهنم | جهنم |
+| repent | توبه | توبه | از گناه دست برداشتن و به سوی خدا بازگشتن |
+| kingdom | ملکوت | ملکوت | پادشاهی |
+| leprosy | جذام | بیماری پوستی سخت | بیماری پوستی بد |
+| synagogue leader | رئیس کنیسه | رئیس کنیسه | سرپرست کنیسه |
+| temple officers | سرداران | فرماندهان نگهبانان معبد | افسران نگهبانان معبد |
+| mammon | مامونا | ثروت | پول |
+| manager (16:1-8) | مباشر | مباشر | مباشر |
+| mina (19:13-25) | مینا | مینا | مینا, explained once |
+| benefactor (22:25) | ولی‌نعمت | ولی‌نعمت | ولی‌نعمت |
+| handing over (Judas) | تسلیم کردن | خیانت کردن | خیانت کردن |
+| Woman | ای زن | خانم | خانم |
+| paradise (23:43) | فردوس | فردوس | فردوس |
+| leaven | خمیرمایه | خمیرمایه | خمیرمایه |
+
+Address: the disciples, Peter and the apostles say تو to Jesus. Strangers
+say تو at Literal and شما at Balanced and Readable: the Pharisees, the
+lepers, the ruler, the blind man, Cleopas (24:18), and in the parables the
+widow to the judge and guests to a host. Servants speak to their master,
+and sons to their father, the same way, the servant starting ای سرور
+(Literal) or سرورم; the rich man speaks so to Abraham. Masters, fathers,
+Abraham and Jesus say تو to one person. Hostile speakers (the devil, the
+council, the mockers, Herod's and Pilate's soldiers) and Pilate say تو at
+every level. Prayer to God is تو.
+
+Units: {{units:دو سکهٔ ناچیز|دو آساریون}} (12:6), {{units:تا آخرین
+پشیز|تا آخرین لپتون}} (12:59), {{units:حدود ۱۸ کیلوگرم|سه پیمانه}}
+(13:21), the bath and cor in liters with the ٬ separator (16:6-7),
+{{units:دو سکهٔ کوچک مسی|دو لپتا}} (21:2), {{units:حدود ۱۱ کیلومتر|شصت
+ستادیون}} (24:13). Literal keeps the ancient unit.
+
+Gender setting: brothers and sisters (14:12, 17:3, 21:16); فرزندان for
+"sons" of this age, of light, of God and of the resurrection (16:8,
+20:34-36); {{gender:مردم|مردان}} گناهکار (24:7). Words such as مردم and
+خود are already inclusive and take no span.
+
+Parallels: where Luke follows Mark (Mark 10-15), Mark's Persian wording is
+reused; passages shared only with Matthew were drafted fresh, since Matthew
+is not yet in Persian.
+
+For reviewers:
+
+- استاد for *epistata* at every level. It is also the glossary's word for
+  "teacher" (*didaskale*), so Persian cannot show the difference.
+- عالم مردگان for Hades at Literal and Balanced. هاویه is the Old Version's
+  word; a reviewer may prefer it at Literal.
+- The span {{gender:مردم|مردان}} in 24:7: the Greek is *anthrōpōn*, so
+  مردم is the default; is a span needed at all?
+- Sons speaking to a father (15:12-21) say تو at Literal and شما at
+  Balanced and Readable. Some families would say تو at every level.
+- پشیز for the last lepton (12:59), and مینا left as a loan word.
+- The bath and cor converted to liters (16:6-7). Is metric volume natural
+  for oil and wheat, or should Readable say "کیسه"?
+- ولی‌نعمت for *euergetai* (22:25); نیکوکاران is the literal alternative.
