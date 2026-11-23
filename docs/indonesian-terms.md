@@ -76,7 +76,7 @@ rest.
 | grace | *kasih karunia* | Key term. |
 | glory; glorify | *kemuliaan*; *memuliakan* | Key terms. |
 | truth | *kebenaran* | Key term. |
-| righteousness | *kebenaran* | Key term; *keadilan* where a meaning decision says "justice". |
+| righteousness (*tsedeq*, *tsedaqah*, *dikaiosynē*) | *kebenaran* | Key term, at every level, the same word as for truth. *keadilan* is kept for justice (*mishpat*) and judges' verbs, and for righteousness only where a meaning decision says court justice or just rule (Deuteronomy 16:20; Isaiah 10:22; 59:4; Proverbs 12:17; Acts 17:31; Hebrews 11:33; 2 Peter 1:1). Where truth stands beside it, a book may say *keadilan* for one of the two with a decision (Isaiah 48:1; Ephesians 5:9; 6:14). Readable may say *hidup benar*. |
 | justice (*mishpat*) | *keadilan* | |
 | righteous; the righteous | *benar*; *orang benar* | |
 | justify | *membenarkan* (L, B); *menyatakan benar* (R) | |
@@ -196,7 +196,7 @@ rest.
 | basin | *bejana pembasuhan* | |
 | holy place; Most Holy Place | *Ruang Kudus*; *Ruang Mahakudus* | |
 | sanctuary | *tempat kudus* | |
-| temple | *Bait Allah* (L, B); *rumah Allah* (R) | "house of the LORD": *bait {{divine_name:TUHAN\|Yahweh}}*. |
+| temple; house of the LORD | *Bait Allah* (L, B), *rumah Allah* (R); *bait {{divine_name:TUHAN\|Yahweh}}* (L, B), *rumah {{divine_name:TUHAN\|Yahweh}}* (R) | "house of God" (*beit ha'elohim*, Ezra, Nehemiah, Chronicles): *rumah Allah*. The sanctuary before the temple (Exodus to 2 Samuel; 1 Chronicles 6:16–17; 9:23) and the land and people (Hosea 8:1) keep *rumah {{divine_name:TUHAN\|Yahweh}}* at every level. Haggai and Zechariah keep *rumah* for *bayit* and *bait* for *hekhal* at every level, by their decisions (Haggai 1:2; Zechariah 6:12). |
 | courts | *pelataran* | |
 | ephod | *efod* | |
 | breastpiece | *tutup dada* | |
@@ -205,7 +205,7 @@ rest.
 | chief priests | *imam-imam kepala* | |
 | Levites | *orang Lewi* | |
 | anoint; anointed one | *mengurapi*; *orang yang diurapi* | |
-| high places | *bukit-bukit pemujaan* | |
+| high places (*bamot*) | *bukit-bukit pemujaan*; one: *bukit pemujaan* (L, B) | Not *bukit pengorbanan*. Readable describes them (*tempat ibadah di atas bukit*; for idols *tempat pemujaan berhala di atas bukit*). Deuteronomy 33:29, where the meaning decision reads "heights": *tempat-tempat tinggi*. |
 | Asherah | *tiang Asyera* (the pole); *dewi Asyera* (the goddess) | |
 | Baal; the Baals | *Baal*; *para Baal* | |
 | Molech | *Molokh* | |
@@ -222,7 +222,7 @@ rest.
 | Purim | *Purim* | |
 | synagogue | *sinagoge* (L, B); *rumah ibadat orang Yahudi* (R) | |
 | church (*ekklēsia*) | *jemaat*; *gereja* (the whole body, B, R) | |
-| congregation (*edah*); assembly (*qahal*) | *umat*; *perhimpunan* | Not *jemaah*. |
+| congregation (*edah*); assembly (*qahal*) | *umat*; *perhimpunan* | Not *jemaah*, the Islamic word for a congregation at prayer, at any level; Readable may say *pertemuan*, *perkumpulan* or describe the gathering. Israel's assembly in Acts 7:38 is *perhimpunan* too; the church (*ekklēsia*) is *jemaat* (above). |
 | pray; prayer | *berdoa*; *doa* | Never *salat*, *sembahyang*. |
 | worship | *menyembah*; *beribadah* | |
 | praise | *memuji*; *pujian* | |
@@ -248,7 +248,7 @@ rest.
 | lyre (*kinnor*) | *kecapi* | |
 | harp (*nevel*) | *harpa* | |
 | trumpet (*shofar*; *hatsotsrah*) | *sangkakala*; *nafiri* | |
-| cymbals; tambourine; flute | *simbal*; *rebana*; *suling* | |
+| cymbals; tambourine; flute | *simbal*; *rebana*; *suling* | Every level; not *ceracap*. |
 
 ## 5. Officials, family and society
 
@@ -258,7 +258,8 @@ rest.
 | queen mother | *ibu suri* | |
 | prince, leader (*nasi*) | *pemimpin* | Ezekiel's *nasi*: *raja* where the meaning decision says so. |
 | official, servant of the king | *pegawai* | |
-| governor | *gubernur* | |
+| governor (*pechah*: Assyrian, Babylonian, Persian) | *bupati* | Every level (1 Kings 10:15; Ezra; Nehemiah; Esther; Daniel; Haggai; Malachi 1:8); the Persian title *Tirshatha*: *Tirsyata* (L), *bupati* (B, R). |
+| governor (*hēgemōn*, Roman) | *gubernur* | Matthew's Literal: *wali negeri* (27:2). |
 | satrap | *wakil raja* | |
 | commander | *panglima* | |
 | officer; captain of fifty | *perwira*; *kepala pasukan lima puluh* | |
@@ -445,7 +446,7 @@ style guide, section 12a. The regnal formulas of Kings and Chronicles:
 | Habakkuk | Habakuk | Zephaniah | Zefanya |
 | Haggai | Hagai | Zechariah | Zakharia |
 | Malachi | Maleakhi | Gog | Gog |
-| the satan (Job 1–2; Zechariah 3) | Iblis (L, B, as a title: *si Iblis*); *si Penuduh* (R) | Isaiah 14:12 (*helel*) | not a name: *bintang timur* |
+| the satan (Job 1–2; Zechariah 3) | *si Penuduh* (every level: a title, the accuser, not a name; never *si Iblis*, kept for *diabolos*) | Isaiah 14:12 (*helel*) | not a name: *bintang timur* |
 
 ## 9. Places of the Old Testament
 
@@ -576,7 +577,7 @@ Kreti dan orang Pleti*.
 | the four living creatures | *keempat makhluk hidup* | |
 | the twenty-four elders | *kedua puluh empat tua-tua* | |
 | the throne | *takhta* | |
-| the seven seals; trumpets; bowls | *ketujuh meterai*; *sangkakala*; *cawan* | |
+| the seven seals; trumpets (*salpinx*); bowls | *ketujuh meterai*; *sangkakala*; *cawan* | |
 | the beast; the dragon | *binatang buas*; *naga* | |
 | the false prophet | *nabi palsu* | |
 | the mark of the beast | *tanda binatang itu* | |
@@ -642,7 +643,6 @@ records it. Empty until the first book is drafted.
 | 1 Samuel | Kish; Abiel; Zeror; Becorath; Aphiah | Kisy (uncertain; alternative *Kish*); Abiel; Zeror; Bekorat; Afiah | 9:1 |
 | 1 Samuel | Shalishah; Shaalim | Syalisya; Syaalim | 9:4 |
 | 1 Samuel | inquire of God | *meminta petunjuk Allah* | 9:9 |
-| 1 Samuel | high place (for the LORD's worship) | *bukit pemujaan* (L, B); *tempat ibadah di atas bukit* (R) | 9:12 |
 | 1 Samuel | ruler (*nagid*, Saul's and David's title) | *pemimpin* | 9:16 |
 | 1 Samuel | Zelzah; oak of Tabor | Zelzah; pohon tarbantin di Tabor | 10:2–3 |
 | 1 Samuel | Gibeah of God; Gibeah of Saul; band of prophets | Gibea-Allah; Gibea-Saul; *rombongan nabi* | 10:5; 11:4 |
@@ -737,7 +737,6 @@ records it. Empty until the first book is drafted.
 | 1 Kings | Gihon; mule | Gihon; *bagal betina* (L, B), *bagal* (R) | 1:33 |
 | 1 Kings | Jether; Barzillai; Anathoth; Maacah | Yeter; Barzilai; Anatot; Maakha | 2:5–39 |
 | 1 Kings | "Thus says the king" | *Beginilah titah raja*; *bertitah* (kept apart from *firman*) | 2:30 |
-| 1 Kings | high places | *bukit-bukit pemujaan* (L, B); *tempat-tempat ibadah di atas bukit* (R), for idols *tempat pemujaan berhala di atas bukit* (R); alternative *bukit pengorbanan* | 3:2 |
 | 1 Kings | prostitute | *perempuan sundal* (L); *pelacur* (B, R) | 3:16 |
 | 1 Kings | officials (*sarim*); district governors | *para pembesar*; *kepala daerah* (L, B), *gubernur daerah* (R) | 4:2, 5 |
 | 1 Kings | Elihoreph; Shisha; Ahilud; Zabud; Ahishar; Adoniram; Abda | Elihoref; Syisya; Ahilud; Zabud; Ahisyar; Adoniram; Abda | 4:3–6 |
@@ -761,7 +760,7 @@ records it. Empty until the first book is drafted.
 | 1 Kings | talent | *talenta* (L); `{{units:sekitar 34 kg\|satu talenta}}` (B, R) | 9:14 |
 | 1 Kings | Ezion-geber; Eloth; Ophir | Ezion-Geber; Elot; Ofir | 9:26–28 |
 | 1 Kings | riddles; almug wood | *teka-teki* (L, B), *pertanyaan yang sulit* (R); *kayu almug* (alternative *kayu cendana*) | 10:1, 11 |
-| 1 Kings | governors (*pachot*); mina | *bupati*; *mina* (L), `{{units:sekitar 0,57 kg\|satu mina}}` (B, R) | 10:15, 17 |
+| 1 Kings | mina | *mina* (L), `{{units:sekitar 0,57 kg\|satu mina}}` (B, R) | 10:17 |
 | 1 Kings | ships of Tarshish; Kue; sycamore fig | *kapal-kapal Tarsis* (L, B), *kapal dagang yang besar* (R); Kue; *pohon ara hutan* | 10:22–28 |
 | 1 Kings | Ashtoreth; Milcom; Chemosh; Molech | Asytoret (*dewi*); Milkom; Kamos; Molokh (*dewa*) | 11:5–7 |
 | 1 Kings | detestable thing (*shiqquts*, a foreign god) | *dewa kejijikan* (L, B); *dewa ... yang menjijikkan* (R) | 11:5 |
@@ -1056,7 +1055,7 @@ records it. Empty until the first book is drafted.
 | Exodus | bride-price (*mohar*) | *mas kawin* | 22:15 |
 | Exodus | interest (*neshekh*) | *bunga* (not *riba*) | 22:24 |
 | Exodus | Feast of Harvest; Feast of Ingathering | *Hari Raya Panen*; *Hari Raya Pengumpulan Hasil* | 23:16 |
-| Exodus | hornet (*tsir*a) | *tawon* (uncertain) | 23:28 |
+| Exodus | hornet (*tsir'ah*) | *tabuhan* (uncertain; alternative *tawon*) | 23:28; Deuteronomy 7:20; Joshua 24:12 |
 | Exodus | sapphire | *batu nilam* | 24:10 |
 | Exodus | Joshua as servant (*mesharet*) | *abdi* (L, B); *pembantu* (R) | 24:13 |
 | Exodus | contribution (*terumah*) | *persembahan khusus* | 25:2 |
@@ -1073,7 +1072,7 @@ records it. Empty until the first book is drafted.
 | Exodus | cubit in metric (B, R) | `{{units:sekitar 45 sentimeter\|satu hasta}}`, rounded | 25:10 |
 | Exodus | curtains of the dwelling (*yeriot*) | *kain tenda* | 26:1 |
 | Exodus | loops; clasps | *tali sangkutan*; *kait* | 26:4; 26:6 |
-| Exodus | frames (*qerashim*) | *papan* (uncertain) | 26:15 |
+| Exodus | frames (*qerashim*) | *rangka*, every level, as the meaning decision's open frames (uncertain; alternative *papan*) | 26:15; Numbers 3:36 |
 | Exodus | tenons; bases; bars | *purus* (L, B), *pasak* (R); *alas*; *kayu lintang* | 26:17–26 |
 | Exodus | screen (*masakh*) | *tirai penutup* | 26:36 |
 | Exodus | embroiderer | *tukang sulam* (L); *penyulam* (B, R) | 26:36 |
@@ -1132,7 +1131,7 @@ records it. Empty until the first book is drafted.
 | Numbers | ephah (units setting) | about 22 litres: `{{units:sekitar dua liter\|sepersepuluh efa}}` (B, R) | 5:15 |
 | Numbers | turtledoves; young pigeons | *burung tekukur*; *anak burung merpati* | 6:10 |
 | Numbers | dedication of the altar | *pentahbisan mezbah* | 7:10 |
-| Numbers | trumpet (*chatsotsrah*); alarm (*teru'ah*) | *nafiri*; *tanda semboyan* (L, B) | 10:2; 10:5 |
+| Numbers | trumpet (*hatsotsrah*); alarm (*teru'ah*) | *nafiri*; *tanda semboyan* (L, B) | 10:2; 10:5 |
 | Numbers | Hobab; Reuel | Hobab; Rehuel | 10:29 |
 | Numbers | Taberah | Tabera | 11:3 |
 | Numbers | the rabble (*hasafsuf*) | *orang-orang bajingan* (L); *orang-orang campuran* (B); *orang-orang asing* (R) | 11:4 |
@@ -1217,7 +1216,7 @@ records it. Empty until the first book is drafted.
 | Leviticus | Mishael; Elzaphan; Uzziel | Misael; Elsafan; Uziel | 10:4 |
 | Leviticus | Ithamar | Itamar | 10:6 |
 | Leviticus | detestable (*sheqets*) | *menjijikkan* (kept apart from *kekejian*) | 11:10 |
-| Leviticus | rock badger (hyrax); hare | *marmot batu*; *terwelu* (L, B), *kelinci hutan* (R) | 11:5 |
+| Leviticus | rock badger (hyrax); hare | *marmot batu*; *terwelu* (L, B), *kelinci hutan* (R) | 11:5; Deuteronomy 14:7; Psalm 104:18; Proverbs 30:26 |
 | Leviticus | scale disease (*tsaraat*) | *penyakit kulit bersisik* (L); *penyakit kulit yang berat* (B, R); never *kusta* | 13:2 |
 | Leviticus | the mark (*nega'*) of the disease | *tanda* (L); *luka* (B, R); in cloth and houses *bercak* (B, R) | 13:2 |
 | Leviticus | mold in cloth, leather and houses | *tanda penyakit bersisik* (L); *jamur* (B, R) | 13:47 |
@@ -1277,7 +1276,6 @@ records it. Empty until the first book is drafted.
 | Deuteronomy | Mount Siyon (Hermon) | gunung Siyon | 4:48 |
 | Deuteronomy | Massah | Masa | 6:16 |
 | Deuteronomy | treasured possession (*segullah*) | *umat kesayangan* (L); *harta kesayangan* (B, R) | 7:6 |
-| Deuteronomy | the hornet | *tabuhan* | 7:20 |
 | Deuteronomy | stiff-necked | *tegar tengkuk* (L, B); *keras kepala* (R) | 9:6 |
 | Deuteronomy | Taberah; Kibroth-hattaavah | Tabera; Kibrot-Taawa | 9:22 |
 | Deuteronomy | Beeroth Bene-jaakan; Moserah | Beerot-Bene-Yaakan (L, B), sumur-sumur Bene-Yaakan (R); Mosera | 10:6 |
@@ -1339,7 +1337,6 @@ records it. Empty until the first book is drafted.
 | Joshua | ambush | *penghadangan*, *para penghadang* (L, B); described at R | 8:2 |
 | Joshua | javelin (*kidon*) | *lembing* (L, B); *tombak* (R) | 8:18 |
 | Joshua | Mount Ebal; Mount Gerizim | gunung Ebal; gunung Gerizim | 8:30, 33 |
-| Joshua | assembly (*qahal*) | *jemaah* (L, B); *perkumpulan* (R) | 8:35 |
 | Joshua | Shephelah | Dataran Rendah (L, B); *perbukitan rendah di sebelah barat* (R) | 9:1 |
 | Joshua | wineskin | *kirbat* | 9:4 |
 | Joshua | Heshbon; Ashtaroth | Hesybon; Asytarot | 9:10 |
@@ -1419,7 +1416,6 @@ records it. Empty until the first book is drafted.
 | Joshua | the altar named Witness | Saksi | 22:34 |
 | Joshua | the River (Euphrates) | *Sungai* (L, B); *sungai Efrat* (R) | 24:2 |
 | Joshua | Terah; Nahor; Zippor | Terah; Nahor; Zipor | 24:2, 9 |
-| Joshua | hornet | *tabuhan* | 24:12 |
 | Joshua | jealous God | *Allah yang cemburu* | 24:19 |
 | Joshua | oak at Shechem | *pohon tarbantin* | 24:26 |
 | Joshua | Hamor; qesitah; Mount Gaash | Hemor; *kesita* (L), *keping perak* (B, R); gunung Gaas | 24:30–32 |
@@ -1621,7 +1617,7 @@ records it. Empty until the first book is drafted.
 | Ezekiel | you will know that I am the LORD | *kalian akan mengetahui bahwa Akulah TUHAN* (L, B); *kalian akan tahu bahwa Aku ini TUHAN* (R) | 6:7 |
 | Ezekiel | Diblah | Dibla (uncertain; alternative *Ribla*) | 6:14 |
 | Ezekiel | image of jealousy | *patung cemburuan* (L, B); *patung berhala yang membuat Allah cemburu* (R) | 8:3 |
-| Ezekiel | Jaazaniah son of Shaphan; censer | Yaazanya anak Safan; *pedupaan* | 8:11 |
+| Ezekiel | Jaazaniah son of Shaphan; censer (*miqteret*) | Yaazanya anak Safan; *pedupaan* | 8:11 |
 | Ezekiel | Tammuz | Tamus (*dewa Tamus*, R) | 8:14 |
 | Ezekiel | the temple of the LORD (*hekhal*) | *ruang besar TUHAN* (L), *Bait Suci TUHAN* (B), *gedung rumah TUHAN* (R); uncertain | 8:16 |
 | Ezekiel | whirling wheels (*galgal*) | *roda-roda yang berpusing* (L, B); *roda-roda yang berputar* (R) | 10:2 |
@@ -1690,7 +1686,7 @@ records it. Empty until the first book is drafted.
 | Jeremiah | sword, famine and pestilence | *pedang, kelaparan dan penyakit sampar* (L, B); *perang, kelaparan dan penyakit* (R) | 14:12 |
 | Jeremiah | a horror, a hissing (*shereqah*), a curse | *kengerian, tempat orang bersuit, kutuk* (L); *kengerian, bahan ejekan, kutuk* (B); *sesuatu yang mengerikan, sesuatu yang diejek orang, kutuk* (R) | 18:16; 25:18 |
 | Jeremiah | jackal | *anjing hutan* | 9:10 |
-| Jeremiah | wormwood | *apsintus* (L, B); *tumbuhan pahit* (R) | 9:14 |
+| Jeremiah | wormwood (*la'anah*) | *apsintus* (L, B); described at R (*tumbuhan pahit*, *pahit*) | 9:14; Deuteronomy 29:17; Proverbs 5:4; Lamentations 3:15, 19; Amos 5:7 |
 | Jeremiah | Uphaz | Ufas | 10:9 |
 | Jeremiah | loincloth; Perath | *cawat*; Perat (L, B), *sungai Efrat* (R) | 13:1–4 |
 | Jeremiah | the Hope of Israel | *Pengharapan Israel* (L, B) | 14:8 |
@@ -1744,7 +1740,7 @@ records it. Empty until the first book is drafted.
 | Judges | Zebah; Zalmunna; Penuel; Karkor; Nobah; Jogbehah; Jether | Zebah; Salmuna; Penuel; Karkor; Nobah; Yogbeha; Yeter | 8:5–20 |
 | Judges | princes (sarim) of a town | *para pemuka* (L, B); *para pemimpin* (R) | 8:6 |
 | Judges | Abimelech; Baal-berith; El-berith | Abimelekh; Baal-Berit; El-Berit | 8:31–33; 9:46 |
-| Judges | lords (baalei) of Shechem, of Gibeah | *warga kota* (L, B); *pemimpin* (R) | 9:2; 20:5 |
+| Judges | lords (*baalei*) of Shechem; of Gibeah | *penguasa kota* (L, B), *pemimpin* (R), the landholders who governed (9:2); *warga kota* (L, B), *pemimpin* (R), the citizens (20:5) | 9:2; 20:5 |
 | Judges | house of a god; Beth-millo; Jotham | *kuil*; Bet-Milo; Yotam | 9:4–6 |
 | Judges | bramble | *semak duri* | 9:14 |
 | Judges | Gaal son of Ebed; Zebul; Arumah; Thebez; Mount Zalmon | Gaal anak Ebed; Zebul; Aruma; Tebes; gunung Zalmon | 9:26–50 |
@@ -1811,7 +1807,7 @@ records it. Empty until the first book is drafted.
 | 2 Samuel | Abel Beth-maacah; Berites | Abel-Bet-Maakha; orang Beri | 20:14 |
 | 2 Samuel | Adoram; Sheva; Ira the Jairite | Adoram; Sewa; Ira, orang Yair | 20:24–26 |
 | 2 Samuel | Armoni; Adriel; Meholathite | Armoni; Adriel; orang Mehola | 21:8 |
-| 2 Samuel | impale (*yaqa*) | *memancangkan* (L); *menggantung pada tiang* (B); described at R | 21:6 |
+| 2 Samuel | impale (*yaqa*) | *menyula*, *disula* (L, B); described at R | 21:6; Numbers 25:4 |
 | 2 Samuel | Ishbi-benob; the Rapha | Yisbi-Benob; Rafa | 21:16 |
 | 2 Samuel | Gob; Sibbecai the Hushathite; Saph | Gob; Sibkhai, orang Husa; Saf | 21:18 |
 | 2 Samuel | Elhanan son of Jaare-oregim | Elhanan anak Yaare-Oregim | 21:19 |
@@ -2032,7 +2028,6 @@ records it. Empty until the first book is drafted.
 | 1 Chronicles | Adnah | Adna | 12:21 |
 | 1 Chronicles | rulers of the Philistines (*seren*) | *raja-raja kota* (L, B); *para penguasa* (R) | 12:20 |
 | 1 Chronicles | Shihor; Lebo-hamath; Baalah; Chidon | Syihor; Lebo-Hamat; Baala; Kidon | 13:5–9 |
-| 1 Chronicles | assembly (*qahal*) | *jemaah* | 13:2 |
 | 1 Chronicles | Elishua; Elpelet; Beeliada | Elisua; Elpelet; Beelyada | 14:5–7 |
 | 1 Chronicles | Kushaiah; Ben; Jaaziel; Shemiramoth; Jehiel; Unni | Kusyaya; Ben; Yaaziel; Syemiramot; Yehiel; Uni | 15:17–18 |
 | 1 Chronicles | Maaseiah; Eliphelehu; Mikneiah; Aziel; Azaziah | Maaseya; Elifelehu; Mikneya; Aziel; Azazia | 15:18–21 |
@@ -2047,7 +2042,6 @@ records it. Empty until the first book is drafted.
 | 1 Chronicles | Satan (no article) | Satan | 21:1 |
 | 1 Chronicles | Ornan | Ornan | 21:15 |
 | 1 Chronicles | Sidonians; Tyrians | orang Sidon; orang Tirus | 22:4 |
-| 1 Chronicles | the house of the LORD (the temple, from ch. 22) | *bait {{divine_name:TUHAN\|Yahweh}}* (L, B); *rumah {{divine_name:TUHAN\|Yahweh}}* (R) | 22:1 |
 | 1 Chronicles | Zetham; Shelomoth; Haziel; Zina; Zizah | Zetam; Syelomot; Haziel; Zina; Ziza | 23:8–11 |
 | 1 Chronicles | Shebuel; Rehabiah; Jeriah; Jekameam | Syebuel; Rehabya; Yeria; Yekameam | 23:16–19 |
 | 1 Chronicles | divisions (of priests, Levites, army) | *rombongan* (L, B); *kelompok* (R) | 23:6 |
@@ -2123,7 +2117,6 @@ records it. Empty until the first book is drafted.
 | 2 Chronicles | Neco; Carchemish; the Laments | Nekho; Karkemis; *kumpulan Ratapan* | 35:20, 25 |
 | 2 Chronicles | Eliakim; the God of heaven (Cyrus' decree) | Elyakim; *Allah semesta langit* | 36:4, 23 |
 | Ezra | God of heaven | *Allah langit* (L); *Allah semesta langit* (B); *Allah yang di surga* (R) | 1:2 |
-| Ezra | house of God (*beit ha'elohim*, *beit 'elaha'*) | *rumah Allah* (every level); "house of the LORD" keeps *bait {{divine_name:TUHAN\|Yahweh}}* (L, B) | 1:4 |
 | Ezra | Mithredath; Sheshbazzar | Mitredat; Syesybazar | 1:8 |
 | Ezra | the exiles (*haggolah*) | *orang-orang buangan* (L, B); *orang-orang yang dahulu dibuang* (R) | 1:11 |
 | Ezra | Jeshua (high priest, Levites) | Yesua (the high priest is *Yosua* in Haggai and Zechariah) | 2:2 |
@@ -2139,12 +2132,10 @@ records it. Empty until the first book is drafted.
 | Ezra | Solomon's servants | *budak-budak Salomo* (L); *hamba-hamba Salomo* (B, R) | 2:55 |
 | Ezra | Sotai; Hassophereth; Peruda; Jaala; Darkon; Hattil; Pochereth-hazzebaim; Ami | Sotai; Hasoferet; Peruda; Yaala; Darkon; Hatil; Pokheret-Hazebaim; Ami | 2:55–57 |
 | Ezra | Tel-melah; Tel-harsha; Cherub; Addan; Delaiah; Hobaiah; Hakkoz; Barzillai | Tel-Melah; Tel-Harsya; Kerub; Adan; Delaya; Hobaya; Hakos; Barzilai | 2:59–61 |
-| Ezra | Tirshatha; governor (*pechah*) | *Tirsyata* (L), *bupati* (B, R); *bupati* (as 1 Kings 10:15) | 2:63 |
 | Ezra | daric; mina | *darik* (every level); `{{units:sekitar tiga ton\|5.000 mina}}` (B, R) | 2:69 |
 | Ezra | Jozadak; Shealtiel | Yozadak; Sealtiel | 3:2 |
 | Ezra | the peoples of the lands | *bangsa-bangsa negeri-negeri itu* (L); *bangsa-bangsa di negeri-negeri sekitar* (B); *orang-orang yang tinggal di negeri itu* (R) | 3:3 |
 | Ezra | Joppa (Old Testament) | Yafo | 3:7 |
-| Ezra | cymbals (temple music) | *ceracap* (uncertain; *simbal* the glossary alternative) | 3:10 |
 | Ezra | Henadad | Henadad | 3:9 |
 | Ezra | Esarhaddon | Esarhadon | 4:2 |
 | Ezra | Bishlam; Tabeel; Shimshai | Bisylam; Tabeel; Syimsyai | 4:7–8 |
@@ -2155,7 +2146,6 @@ records it. Empty until the first book is drafted.
 | Ezra | Iddo | Ido | 5:1 |
 | Ezra | Tattenai; Shethar-bozenai | Tatnai; Syetar-Boznai | 5:3 |
 | Ezra | Ecbatana | Ekbatana | 6:2 |
-| Ezra | impale | *menyula*, *disulakan* (L, B); described (R) | 6:11 |
 | Ezra | Hilkiah; Amariah; Meraioth; Zerahiah; Uzzi; Bukki; Abishua | Hilkia; Amarya; Merayot; Zerahya; Uzi; Buki; Abisyua | 7:1–5 |
 | Ezra | scribe (Ezra's title) | *ahli kitab* (L, B); *guru hukum Taurat* (R) | 7:6 |
 | Ezra | talent; kor; bath | `{{units:sekitar 3,4 ton perak\|100 talenta perak}}`; `{{units:sekitar 21.000 liter gandum\|100 kor gandum}}`; `{{units:sekitar 2.200 liter anggur\|100 bat anggur}}` (B, R) | 7:22 |
@@ -2260,8 +2250,6 @@ records it. Empty until the first book is drafted.
 | Proverbs | torah as God's instruction (chs. 28–29) | *hukum* (L); *ajaran Allah* (B, R) | 28:4 |
 | Proverbs | Abaddon | Abadon (L); *Kebinasaan* (B) | 15:11 |
 | Proverbs | Jakeh; Ithiel; Ucal | Yake; Itiel; Ukal | 30:1 |
-| Proverbs | rock badger (hyrax) | *hiraks* | 30:26 |
-| Proverbs | wormwood | *apsintus* | 5:4 |
 | Ecclesiastes | Qoheleth (the Teacher) | Kohelet (L); *sang Pengajar* (B, R) | 1:1 |
 | Ecclesiastes | breath (*hevel*) | *napas*; *Napas dari segala napas* (L), *Hanya napas, napas belaka* (B), *Tidak ada yang bertahan!* (R) | 1:2 |
 | Ecclesiastes | a chasing of wind | *pengejaran angin* (L); *usaha mengejar angin* (B); *seperti mencoba menangkap angin* (R) | 1:14 |
@@ -2286,7 +2274,6 @@ records it. Empty until the first book is drafted.
 | Lamentations | How ...! (*ekhah*) | *Betapa ...!* | 1:1 |
 | Lamentations | forced labor | *pekerja rodi*; *bekerja rodi* | 1:1 |
 | Lamentations | daughter Zion; daughter Edom | *putri Sion* (L), *Putri Sion* (B), *penduduk Sion* (R); likewise Edom | 1:6; 4:21 |
-| Lamentations | wormwood | *ipuh* | 3:15 |
 | Lamentations | jackals | *serigala* | 4:3 |
 | Lamentations | Uz | Us | 4:21 |
 | Daniel | Ashpenaz; chief of the eunuchs | Aspenas; *kepala sida-sida* (L), *kepala pegawai istana* (B, R) | 1:3 |
@@ -2297,7 +2284,7 @@ records it. Empty until the first book is drafted.
 | Daniel | Arioch | Ariokh | 2:14 |
 | Daniel | O king, live forever | *Ya raja, hiduplah untuk selamanya* (L); *Ya Tuanku Raja, kiranya Tuanku hidup untuk selamanya* (B); *Baginda Raja, panjang umur Baginda* (R) | 2:4 |
 | Daniel | Dura | Dura | 3:1 |
-| Daniel | satraps; prefects; governors; counselors; treasurers; judges; magistrates | *wakil raja*; *penguasa*; *bupati*; *penasihat*; *bendahara*; *hakim*; *pejabat hukum* | 3:2 |
+| Daniel | satraps; prefects; governors (*pechah*); counselors; treasurers; judges; magistrates | *wakil raja*; *penguasa*; *bupati*; *penasihat*; *bendahara*; *hakim*; *pejabat hukum* | 3:2 |
 | Daniel | peoples, nations and languages | *bangsa-bangsa, suku-suku bangsa dan bahasa-bahasa* (L); *... dan orang-orang dari segala bahasa* (B) | 3:4 |
 | Daniel | the blazing furnace | *perapian yang menyala-nyala* (L, B); *perapian yang sangat panas* (R) | 3:6 |
 | Daniel | the Most High (God) | *Yang Mahatinggi*; *Allah Yang Mahatinggi* | 3:26 |
@@ -2336,7 +2323,7 @@ records it. Empty until the first book is drafted.
 | Hosea | shrine prostitutes | *pelacur kuil* (L, B) | 4:14 |
 | Hosea | oak, poplar, terebinth | *pohon ek, pohon hawar, pohon tarbantin* (uncertain) | 4:13 |
 | Hosea | Mizpah; Tabor | Mizpa; Tabor | 5:1 |
-| Hosea | ram's horn; trumpet | *sangkakala tanduk*; *nafiri* | 5:8 |
+| Hosea | ram's horn (*shofar*); trumpet (*hatsotsrah*) | *sangkakala tanduk*; *nafiri* | 5:8 |
 | Hosea | Memphis | Memfis | 9:6 |
 | Hosea | Baal of Peor | Baal-Peor | 9:10 |
 | Hosea | idol-priests (*kemarim*) | *imam-imam berhala* | 10:5 |
@@ -2349,7 +2336,6 @@ records it. Empty until the first book is drafted.
 | Zephaniah | Fish Gate; Second Quarter; the Mortar | Gerbang Ikan; Bagian Kedua; Lesung | 1:10–11 |
 | Zephaniah | Cherethites | orang Kreti | 2:5 |
 | Haggai | Jehozadak | Yehozadak (Ezra 3:2 has *Yozadak* for the shorter Hebrew form) | 1:1 |
-| Haggai | governor (*pechah*) | *bupati*, as Ezra and Nehemiah | 1:1 |
 | Haggai | signet ring | *cincin meterai* | 2:23 |
 | Joel | Pethuel | Petuel | 1:1 |
 | Joel | cutting, swarming, hopping, stripping locust | *belalang pemotong*, *belalang pindahan*, *belalang pelompat*, *belalang pelahap* (L, B); *kawanan belalang* (R) (uncertain) | 1:4 |
@@ -2363,7 +2349,6 @@ records it. Empty until the first book is drafted.
 | Amos | Lord GOD (*Adonai YHWH*); Lord GOD of hosts | *Tuhan ALLAH*; *Tuhan ALLAH semesta alam* | 1:8; 9:5 |
 | Amos | Teman; Bozrah; Rabbah; Kerioth | Teman; Bozra; Raba; Keriot | 1:12–2:2 |
 | Amos | Nazirites | *orang nazir* | 2:11 |
-| Amos | wormwood | *apsintus* (L, B) | 5:7 |
 | Amos | Pleiades; Orion | *bintang Kartika*; *bintang Belantik* | 5:8 |
 | Amos | Sikkuth; Kiyyun | Sikut; Kiyun (uncertain) | 5:26 |
 | Amos | Calneh; Lo-debar; Karnaim | Kalne; Lodebar; Karnaim | 6:2; 6:13 |
@@ -2378,7 +2363,6 @@ records it. Empty until the first book is drafted.
 | Micah | Beth-leaphrah; Shaphir; Zaanan; Beth-ezel; Maroth | Bet-Leafra; Syafir; Zaanan; Bet-Ezel; Marot; Readable adds the meanings (*Rumah Debu*, *Kota Indah*, *Kota Keluar*, *Kota Pahit*, *Kota Dusta* for Akhzib) | 1:10–14 |
 | Micah | Mareshah | Maresa, as 2 Chronicles 11:8 (Joshua 15:44 has Maresya: one of the two should change) | 1:15 |
 | Micah | preach (*nataf*, "drip") | *bernubuat* (L, B); *berkhotbah*, *pengkhotbah* (R) | 2:6, 11 |
-| Micah | assembly of the LORD | *jemaah TUHAN* | 2:5 |
 | Micah | seers; diviners; divination | *pelihat*; *tukang tenung*; *tenung* | 3:6–7 |
 | Micah | tower of the flock (*migdal-'eder*) | *menara kawanan ternak* (L), *menara jaga kawanan ternak* (B), translated, not the place name Migdal-Eder | 4:8 |
 | Micah | love of *hesed* | *mencintai kasih setia* (L); *mencintai kesetiaan* (B); *suka berbuat baik serta setia* (R), the founder's ruling for this verse | 6:8 |
@@ -2424,7 +2408,7 @@ records it. Empty until the first book is drafted.
 | Jeremiah | Mizpah; Johanan son of Kareah; Ishmael son of Nethaniah | Mizpa; Yohanan anak Kareah; Ismael anak Netanya (as 2 Kings 25:23) | 40:6–8 |
 | Jeremiah | Jezaniah (son of the Maacathite; son of Hoshaiah); Ephai the Netophathite; Tanhumeth | Yezanya (2 Kings 25:23 has Yaazanya); Hosaya; Efai, orang Netofa; Tanhumet | 40:8; 42:1 |
 | Jeremiah | Baalis | Baalis | 40:14 |
-| Jeremiah | governor (Gedaliah, "appointed over the land") | *kepala daerah* (B), *pemimpin* (R) | 41:2 |
+| Jeremiah | governor (Gedaliah, *hifqid*, "appointed over the land") | *kepala daerah* (B), *pemimpin* (R) | 41:2 |
 | Jeremiah | Baasha; Geruth Chimham | Baesa; Gerut-Kimham | 41:9, 17 |
 | Jeremiah | an execration (*'alah*) in the curse lists | *sumpah kutuk* (L); *nama yang dipakai orang untuk mengutuk* (B); *orang akan memakai nama kalian kalau mengutuk* (R) | 42:18 |
 | Jeremiah | Azariah son of Hoshaiah | Azarya anak Hosaya | 43:2 |
