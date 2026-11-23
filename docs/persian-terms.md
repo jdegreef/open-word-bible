@@ -830,3 +830,65 @@ For reviewers:
 - 6:9: malakoi is [مردان] نرم at Literal and spelled out at Balanced and
   Readable; arsenokoitai is مردانی که با مردان همبستر می‌شوند. Is this
   accurate and suitably restrained for public reading?
+
+### 2 Corinthians
+
+Terms:
+
+- Comfort (paraklēsis) is تسلی / تسلی دادن (Literal, Balanced) and دلداری /
+  دلداری دادن (Readable). Affliction (thlipsis) is سختی (Literal, Balanced)
+  and گرفتاری (Readable), as in Romans 5:3.
+- Grief (lypē, chapters 2 and 7) is اندوه / اندوهگین (Literal, Balanced) and
+  غم / غمگین (Readable). Repentance is توبه (Literal, Balanced); Readable
+  says از آنچه نادرست بود روی برگرداندن.
+- Boasting is فخر at every level; Readable also has افتخار, and لاف زدن for
+  the rivals (5:12). Commending oneself is سفارش کردن (Literal, Balanced)
+  and تعریف کردن (Readable).
+- Kata sarka is بر حسب نفس (Literal), با معیارهای صرفا انسانی (Balanced),
+  and plain wording at Readable (1:17, 5:16, 10:2-3, 11:18). Bodily life,
+  the body and the thorn in the flesh are جسم (7:1 Literal, 7:5, 10:3,
+  12:7); sōma is بدن.
+- The Spirit as down payment is بیعانه (Literal, Balanced) and پیش‌پرداخت
+  (Readable) (1:22, 5:5).
+- Covenant is عهد; the letter of the law is حرف (Literal), حرف نوشته
+  (Balanced), قوانین نوشته (Readable). The veil is نقاب, glory جلال,
+  ministry خدمت, servants خادمان. Doulos in 4:5 is برده at Literal and
+  خادم at Balanced and Readable, following the English.
+- Reconciliation is آشتی / آشتی دادن (Literal, Balanced) and نزد خود
+  بازگرداندن (Readable). The judgment seat is مسند داوری, ambassadors
+  سفیران, a new creation خلقتی تازه.
+- The collection (chapters 8-9): charis is فیض (Literal), with امتیاز or
+  عطای فیض (Balanced) and هدیهٔ سخاوتمندانه (Readable); eulogia is برکت
+  (Literal). The relief is خدمت (Literal), کمک‌رسانی (Balanced), کمک
+  (Readable). Manna is منّا, as in John 6.
+- Fragrance: euōdia is رایحهٔ خوش and osmē عطر (2:14-16). The victory
+  procession is موکب پیروزی.
+- The fool's speech (11:1-12:11): نادانی / نادان. The super-apostles are
+  رسولان برتر, and Readable adds به اصطلاح.
+- Testing (13:5-7): بیازمایید, and adokimos is در آزمون مردود.
+- God speaking to one person in a quotation (6:2) and the Lord to Paul
+  (12:9) say تو.
+
+Names: تیموتائوس, سیلوانس, تیطس, تروآس, مقدونیه, اخائیه, آسیا, یهودیه,
+موسی, اسرائیلیان, حوا, بلیعال, عبرانیان, ابراهیم, دمشق, اریتاس.
+
+Address:
+
+- Paul says شما to the church. ای {{gender:برادران و خواهران|برادران}}
+  at Literal and Balanced; {{gender:برادران و خواهران عزیز|برادران عزیز}}
+  at Readable. Beloved is ای عزیزان (Literal) and دوستان عزیز (Balanced,
+  Readable). Named envoys (8:23, 9:3, 12:18) are برادران with no span.
+- {{gender:فرزندان|پسران}} اسرائیل at Literal (3:7, 3:13), as in Romans 9:27.
+
+For reviewers:
+
+- بر حسب نفس for kata sarka, with جسم kept for bodily life: in 10:3 Paul
+  plays on one word (walking in the flesh, not warring according to the
+  flesh, weapons not fleshly). Does the split between جسم and نفس read
+  well, or should one word carry the whole verse?
+- 5:21 keeps «او را ... گناه ساخت» at Literal and Balanced. Is this clear,
+  or does it need a footnote on sin offering?
+- اریتاس for Aretas (11:32) follows the Greek; would readers expect
+  حارث?
+- 13:13: شراکت (Literal) and رفاقت (Balanced, Readable) for koinōnia. Do
+  churches use مشارکت in this blessing instead?
