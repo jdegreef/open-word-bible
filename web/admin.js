@@ -1255,6 +1255,7 @@ var OWBAdminNav = (function () {
             h("td", null, date(e.imported_at)));
         }))));
       return out;
+      out.push(speedBlock(d));
     });
   };
 
@@ -1279,6 +1280,25 @@ var OWBAdminNav = (function () {
           tile(num(d.marks.highlights), "highlights"),
           tile(num(d.messages), "reader messages")),
         h("section", { class: "admin-block" }, h("h2", null, "New accounts by week"),
+  // The admin's slowest pages on the live database, from the times the
+  // server keeps (staff/speed.py), so one creeping towards the 15-second
+  // limit is seen before it fails.
+  function speedBlock(d) {
+    var rows = d.speed || [];
+    function secs(ms) { return ms >= 1000 ? (ms / 1000).toFixed(1) + " s" : ms + " ms"; }
+    return h("section", { class: "admin-block" }, h("h2", null, "Slowest admin pages"),
+      h("p", { class: "admin-sub" }, "Each page's reads in the last " + d.speed_hours + " hours, slowest first. A read over 15 seconds fails; over "
+        + d.speed_slow + " is worth a look."),
+      rows.length ? table(["Address", ["Reads", { class: "admin-num" }], ["Average", { class: "admin-num" }], ["Slowest", { class: "admin-num" }],
+        ["Over " + d.speed_slow + " s", { class: "admin-num" }], ["Failed", { class: "admin-num" }]], rows.map(function (r) {
+        var tone = r.errors || r.max_ms > 15000 ? "bad" : r.slow ? "warn" : "";
+        return h("tr", null, h("td", null, h("code", null, r.route)), h("td", { class: "admin-num" }, num(r.requests)),
+          h("td", { class: "admin-num" }, secs(r.average_ms)),
+          h("td", { class: "admin-num" }, tone ? pill(secs(r.max_ms), tone) : secs(r.max_ms)),
+          h("td", { class: "admin-num" }, num(r.slow)), h("td", { class: "admin-num" }, r.errors ? pill(num(r.errors), "bad") : "0"));
+      })) : empty("No admin pages read in the last " + d.speed_hours + " hours, so there's nothing to time yet. They're timed as people use the admin."));
+  }
+
           d.signups.length ? h("div", { class: "admin-columns", role: "img", "aria-label": "New accounts per week for 12 weeks" },
             d.signups.map(function (w) {
               return h("div", { class: "admin-column", title: "Week of " + date(w.week) + ": " + w.accounts },

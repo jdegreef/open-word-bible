@@ -1,10 +1,13 @@
 """Middleware for the API's speed: compressing answers, and saying where a
-request's time went."""
+request's time went (and, for the admin, keeping it: staff/speed.py)."""
+import logging
 import time
 
 from django.conf import settings
 from django.db import connection
 from django.middleware.gzip import GZipMiddleware
+
+log = logging.getLogger(__name__)
 
 
 class ApiGzipMiddleware(GZipMiddleware):
@@ -50,6 +53,8 @@ class ServerTimingMiddleware:
         with connection.execute_wrapper(timed):
             response = self.get_response(request)
         total = time.perf_counter() - start
+        if request.method == "GET" and request.path.startswith("/api/admin/"):
+            _note_admin(request, total, response.status_code)
         response["Server-Timing"] = (f'db;dur={db["time"] * 1000:.1f};desc="{db["queries"]} queries", '
                                      f"app;dur={total * 1000:.1f}")
         # The site calls from another origin; without this its pages can't
@@ -58,3 +63,16 @@ class ServerTimingMiddleware:
         if origin and origin in settings.CORS_ALLOWED_ORIGINS:
             response["Timing-Allow-Origin"] = origin
         return response
+
+
+def _note_admin(request, seconds, status):
+    """Keep the admin page's time for Health (staff/speed.py); never let
+    that fail the answer."""
+    match = getattr(request, "resolver_match", None)
+    if not match:
+        return
+    try:
+        from staff import speed
+        speed.note(match.route, seconds, status)
+    except Exception:   # noqa: BLE001
+        log.warning("Couldn't keep the time of %s", request.path, exc_info=True)

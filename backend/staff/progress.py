@@ -229,7 +229,7 @@ def run_json(run):
 
 @admin_view("overview")
 def health(request):
-    from . import alerts   # alerts reads jobs, which reads this module
+    from . import alerts, speed   # alerts reads jobs, which reads this module
     return Response({
         "imports": [run_json(r) for r in ImportRun.objects.all()[:15]],
         "content_files": ContentFile.objects.count(),
@@ -241,6 +241,7 @@ def health(request):
                      for e in Edition.objects.order_by("kind", "code")],
         "ci": _ci_status(),
         "alerts": alerts.current(),
+        "speed": speed.slowest(), "speed_hours": speed.HOURS, "speed_slow": speed.SLOW,
     })
 
 
