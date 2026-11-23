@@ -1035,3 +1035,35 @@ For reviewers:
 - پری for plērōma (1:19, 2:9): is کمال or تمامی more natural?
 - 2:21 «دست مزن، مچش، لمس مکن» at Literal and Balanced: do the old
   imperatives read well, or should Balanced say «دست نزن، نچش، لمس نکن»?
+
+### 1 Thessalonians
+
+- Paul, Silvanus and Timothy say ما and address the church as شما.
+  Adelphoi is {{gender:برادران و خواهران|برادران}}; Readable says
+  ایمانداران where the English says believers.
+- Ioudaioi (2:14-16): یهودیان (Literal) / یهودیان یهودیه (Balanced) / آن
+  یهودیانی در یهودیه که با ایمانداران مخالف بودند (Readable), so the verse
+  is not read as being about all Jews.
+- 2:7 nursing mother: مادری شیرده. 2:17 aporphanisthentes: یتیم شدیم
+  (Literal).
+- Skeuos (4:4): ظرف (Literal) / بدن (Balanced, Readable).
+- Sleep for death (4:13-15, 5:10): خوابیده‌اند (Literal) / به خواب رفته‌اند
+  (Balanced) / ایماندارانی که مرده‌اند (Readable).
+- 4:16: رئیس فرشتگان, شیپور خدا. 5:3 slogan: «صلح و امنیت» (Literal) /
+  «همه چیز آرام و امن است» (Balanced, Readable).
+- Sons of light (5:5): {{gender:فرزندان|پسران}} نور (Literal, Balanced).
+  5:8: جوشن ایمان و محبت, کلاهخود امید. 5:23: روح و جان و بدن.
+  5:26: بوسهٔ مقدس.
+- Hagioi in 3:13 is مقدسانش at every level, which keeps both angels and
+  believers open.
+
+Names: سیلوانس, تیموتائوس, تسالونیکی/تسالونیکیان, مقدونیه, اخائیه, آتن,
+فیلیپی.
+
+For reviewers:
+
+- 2:14-16: does the Balanced «یهودیان یهودیه» make clear enough that Paul
+  means those in Judea who opposed the church?
+- 4:4: ظرف at Literal is close to the Greek but opaque; is همسر (wife) a
+  reading that should be footnoted rather than chosen?
+- 5:3: does «همه چیز آرام و امن است» read as a slogan people repeat?
