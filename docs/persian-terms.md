@@ -775,3 +775,353 @@ For reviewers:
   عادل and عدالت. Which do Persian churches expect in Romans 3-5?
 - خادمه for Phoebe (16:1): does it read as an office (deacon) or only as
   service? The meaning decision leaves this open.
+
+### 1 Corinthians
+
+Terms:
+
+- Wisdom is حکمت, حکیم and حکیمانه; foolishness is حماقت and احمقانه.
+  Phronimos is خردمند.
+- psychikos is طبیعی (انسان طبیعی 2:14, بدن طبیعی 15:44); sarkinos and
+  sarkikos are نفسانی (3:1-3, as in Romans 7:14); pneumatikos is روحانی.
+- Porneia: بی‌عفتی (Literal, Balanced), گناه جنسی (Readable).
+- Leaven is خمیرمایه, Passover پسح, unleavened bread فطیر (5:6-8).
+- Idol food: [خوراک] قربانی‌شده برای بت‌ها (Literal), خوراک تقدیم‌شده به
+  بت‌ها (Balanced, Readable). Conscience is وجدان, a right حق, demons دیوها.
+- The cup is جام (10:16-21, 11:25-27, as in Luke 22). The Lord's Supper is
+  شام خداوند and the new covenant عهد جدید.
+- Tongues are زبان‌ها and interpretation ترجمه. Prophets are نبی/انبیا
+  (Literal, Balanced) and پیامبر (Readable); prophesying is نبوت کردن.
+- Love is محبت (chapter 13). Stewards are مباشران (Literal) and ناظران
+  (Balanced) (4:1-2). Slaves are برده at every level (7:21-23).
+- Firstfruits: نوبر (Literal), نخستین بخش محصول (Balanced, Readable);
+  16:15 Readable says نخستین ایمانداران. Resurrection is رستاخیز.
+- One flesh is یک تن (Literal, Balanced) and یک بدن (Readable) (6:16).
+  Ancestors are پدران (Literal) and نیاکان (Balanced, Readable) (10:1).
+- Marana tha (16:22) is ماراناتا at Literal; Balanced and Readable
+  translate it, and Readable names the Lord Jesus.
+- Righteousness, justification and حاشا! follow Romans. Numbers are written
+  in words (10:8, 15:6).
+
+Names: کیفا (Literal, Balanced) and پطرس (Readable) for Kephas, آپولس,
+خلوئه, استیفاناس, سوستنیس, قرنتس, کرسپس, گایوس, تیموتائوس, غلاطیه,
+مقدونیه, افسس, پنتیکاست, اخائیه, آکیلا, پریسکا, آسیا, فرتوناتوس,
+اخائیکوس.
+
+Address:
+
+- Paul says شما to the church. The single reader Paul turns to gets تو
+  (4:7, 7:16, 7:21, 7:27-28, 8:10-11, 14:16-17, 15:36-37), as do the
+  hand in 12:21 and death in 15:55.
+- ای {{gender:برادران و خواهران|برادران}} at Literal and Balanced;
+  {{gender:برادران و خواهران عزیز|برادران عزیز}} at Readable. A single
+  believer is {{gender:برادر یا خواهر|برادر}}. Named companions (16:11-12)
+  are برادران with no span. "Act like men" (16:13) is
+  {{gender:دلیر باشید|مردانه رفتار کنید}} at Literal.
+
+For reviewers:
+
+- طبیعی (psychikos) and نفسانی (sarkikos): is the difference clear in 2:14
+  and 3:1-3, and does نفسانی read well next to نفس for sarx in Romans?
+- جام for the cup follows Luke 22; the Old Version has پیاله. Which do
+  churches use at the Lord's Supper?
+- 11:3-16 keeps سر for kephalē at every level, and 14:34-35 is translated
+  as it stands. Do these read as the Greek does, without adding to it?
+- 6:9: malakoi is [مردان] نرم at Literal and spelled out at Balanced and
+  Readable; arsenokoitai is مردانی که با مردان همبستر می‌شوند. Is this
+  accurate and suitably restrained for public reading?
+
+### 2 Corinthians
+
+Terms:
+
+- Comfort (paraklēsis) is تسلی / تسلی دادن (Literal, Balanced) and دلداری /
+  دلداری دادن (Readable). Affliction (thlipsis) is سختی (Literal, Balanced)
+  and گرفتاری (Readable), as in Romans 5:3.
+- Grief (lypē, chapters 2 and 7) is اندوه / اندوهگین (Literal, Balanced) and
+  غم / غمگین (Readable). Repentance is توبه (Literal, Balanced); Readable
+  says از آنچه نادرست بود روی برگرداندن.
+- Boasting is فخر at every level; Readable also has افتخار, and لاف زدن for
+  the rivals (5:12). Commending oneself is سفارش کردن (Literal, Balanced)
+  and تعریف کردن (Readable).
+- Kata sarka is بر حسب نفس (Literal), با معیارهای صرفا انسانی (Balanced),
+  and plain wording at Readable (1:17, 5:16, 10:2-3, 11:18). Bodily life,
+  the body and the thorn in the flesh are جسم (7:1 Literal, 7:5, 10:3,
+  12:7); sōma is بدن.
+- The Spirit as down payment is بیعانه (Literal, Balanced) and پیش‌پرداخت
+  (Readable) (1:22, 5:5).
+- Covenant is عهد; the letter of the law is حرف (Literal), حرف نوشته
+  (Balanced), قوانین نوشته (Readable). The veil is نقاب, glory جلال,
+  ministry خدمت, servants خادمان. Doulos in 4:5 is برده at Literal and
+  خادم at Balanced and Readable, following the English.
+- Reconciliation is آشتی / آشتی دادن (Literal, Balanced) and نزد خود
+  بازگرداندن (Readable). The judgment seat is مسند داوری, ambassadors
+  سفیران, a new creation خلقتی تازه.
+- The collection (chapters 8-9): charis is فیض (Literal), with امتیاز or
+  عطای فیض (Balanced) and هدیهٔ سخاوتمندانه (Readable); eulogia is برکت
+  (Literal). The relief is خدمت (Literal), کمک‌رسانی (Balanced), کمک
+  (Readable). Manna is منّا, as in John 6.
+- Fragrance: euōdia is رایحهٔ خوش and osmē عطر (2:14-16). The victory
+  procession is موکب پیروزی.
+- The fool's speech (11:1-12:11): نادانی / نادان. The super-apostles are
+  رسولان برتر, and Readable adds به اصطلاح.
+- Testing (13:5-7): بیازمایید, and adokimos is در آزمون مردود.
+- God speaking to one person in a quotation (6:2) and the Lord to Paul
+  (12:9) say تو.
+
+Names: تیموتائوس, سیلوانس, تیطس, تروآس, مقدونیه, اخائیه, آسیا, یهودیه,
+موسی, اسرائیلیان, حوا, بلیعال, عبرانیان, ابراهیم, دمشق, اریتاس.
+
+Address:
+
+- Paul says شما to the church. ای {{gender:برادران و خواهران|برادران}}
+  at Literal and Balanced; {{gender:برادران و خواهران عزیز|برادران عزیز}}
+  at Readable. Beloved is ای عزیزان (Literal) and دوستان عزیز (Balanced,
+  Readable). Named envoys (8:23, 9:3, 12:18) are برادران with no span.
+- {{gender:فرزندان|پسران}} اسرائیل at Literal (3:7, 3:13), as in Romans 9:27.
+
+For reviewers:
+
+- بر حسب نفس for kata sarka, with جسم kept for bodily life: in 10:3 Paul
+  plays on one word (walking in the flesh, not warring according to the
+  flesh, weapons not fleshly). Does the split between جسم and نفس read
+  well, or should one word carry the whole verse?
+- 5:21 keeps «او را ... گناه ساخت» at Literal and Balanced. Is this clear,
+  or does it need a footnote on sin offering?
+- اریتاس for Aretas (11:32) follows the Greek; would readers expect
+  حارث?
+- 13:13: شراکت (Literal) and رفاقت (Balanced, Readable) for koinōnia. Do
+  churches use مشارکت in this blessing instead?
+
+### Galatians
+
+- Paul says شما to the Galatians; Readable adds برادران عزیز. 1:1 has
+  {{gender:برادران و خواهرانی|برادرانی}} at every level.
+- Justification follows Romans: پارسا شمرده شدن (Literal), پارسا اعلام
+  شدن (Balanced), در نظر خدا پارسا به حساب آمدن (Readable). Works of the
+  law: اعمال شریعت (Literal, Balanced) / آنچه شریعت فرمان می‌دهد
+  (Readable).
+- Sarx against the Spirit: نفس (Literal, Balanced) / طبیعت گناه‌آلود
+  (Readable); 3:3 Readable is کوشش انسانی. Natural birth (4:23, 29) and the
+  circumcised body (6:12-13) are جسم. 2:16 "no flesh" is هیچ بشری.
+- Curse (1:8-9): ملعون باد (Literal) / زیر لعنت خدا باد (Balanced) / لعنت
+  خدا بر او باد (Readable).
+- Doulos is برده at Literal, خادم at Balanced and Readable where the
+  English says servant.
+- Seed (3:16-29): نسل / نسل‌ها (Literal), نواده / نوادگان (Balanced,
+  Readable). The guardian (3:24-25) is لله. Stoicheia (4:3, 9): عناصر جهان
+  (Literal) / نیروهای بنیادین (Balanced).
+- 4:6 «اَبّا، پدر!» at Literal keeps the vowel sign as in Romans 8:15.
+- Huiothesia is {{gender:فرزندخواندگی|پسرخواندگی}} at Literal; "sons of" is
+  {{gender:فرزندان|پسران}}.
+- "May it not be!" is حاشا! (Literal, Balanced) / به هیچ وجه! (Readable).
+- 3:11 follows Romans 1:17 and 10:5; 5:14 follows Romans 13:9.
+- Singular you (2:14, 3:8, 4:7, 4:27, 6:1) is تو.
+- Leaven is خمیرمایه; porneia بی‌عفتی (Literal, Balanced) / گناهان جنسی
+  (Readable).
+
+Names: کیفا (Literal, Balanced) / پطرس (Readable), یعقوب, برنابا, تیطس,
+انطاکیه, عربستان, سوریه, کیلیکیه, هاجر, سینا, اسحاق.
+
+For reviewers:
+
+- نفس for sarx opposed to the Spirit, جسم for the body (4:23, 6:12-13):
+  does the split read naturally?
+- لله for paidagōgos (3:24): is it understood today, or would سرپرست read
+  better?
+- 5:12 اخته at Balanced and Readable: too blunt for public reading?
+- 4:3, 9 stoicheia: عناصر جهان or نیروهای بنیادین, which do churches expect?
+
+### Ephesians
+
+- Paul says شما to the Ephesians. Hagioi: مقدسان (Literal) / قوم مقدس خدا
+  (Balanced, Readable).
+- Adoption (1:5) is فرزندخواندگی with no gender span, as in Romans 8:15.
+- En tois epouraniois (1:3, 1:20, 2:6, 3:10, 6:12): جای‌های آسمانی
+  (Literal, Balanced) / عالم آسمانی or عالم روحانی (Readable).
+- Mystērion (1:9, 3:3-9, 5:32, 6:19) is راز; Readable adds that it was a
+  plan once hidden and now made known.
+- The down payment (1:14) is بیعانه, as in 2 Corinthians; the seal (1:13,
+  4:30) is مهر.
+- Sarx as the sinful self (2:3): نفس (Literal, Balanced) / طبیعت
+  گناه‌آلود (Readable). Christ's flesh (2:14) and one's own flesh (5:29) are
+  جسم; sōma is بدن.
+- {{gender:فرزندان|پسران}} نافرمانی (2:2, 5:6) at Literal.
+- The old and new self (4:22-24): انسان کهنه / انسان تازه (Literal,
+  Balanced), خود کهنه / خود تازه (Readable). The one new humanity (2:15):
+  یک انسان تازه / انسانیت تازه / قوم تازه.
+- Apostles, prophets, evangelists, shepherds and teachers (4:11): رسولان،
+  انبیا، مبشران، شبانان و معلمان.
+- Submission (5:21-24) is تسلیم; 5:33 phobeomai is حرمت نهادن.
+- Slaves and masters (6:5-9): برده at every level, ارباب for both earthly
+  owners and the Master in heaven, خداوند for Christ.
+- The armor (6:11-17): زره کامل, کمربند, جوشن, کفش, سپر, کلاهخود, شمشیر.
+- 5:31 follows Matthew 19:5, 6:2 follows Matthew 15:4.
+
+Names: افسس, تیخیکوس (as in Acts 20:4).
+
+For reviewers:
+
+- ارباب for the Master in heaven (6:9) keeps Paul's wordplay with the
+  earthly masters. Would خداوند read better there?
+- 6:12 کشتی (Literal) for palē: is wrestling clear, or should Literal also
+  say نبرد?
+- 4:8 «اسیری را به اسیری برد» at Literal: is the phrase still understood?
+
+### Philippians
+
+- Paul says شما to the Philippians, and تو to the one co-worker in 4:3.
+  Address: ای {{gender:برادران و خواهران|برادران}}; in 4:1 Balanced and
+  Readable add عزیز.
+- Doulos: برده (Literal) / خادم (Balanced, Readable), in 1:1 and 2:7 (صورت
+  برده / صورت خادم). Overseers and deacons (1:1): ناظران و شماسان.
+- Sarx: bodily life (1:22-24) is جسم / بدن; outward credentials (3:3-4) are
+  جسم (Literal) / امتیازهای انسانی (Balanced) / آنچه هستیم یا کرده‌ایم
+  (Readable). نفس is kept for sarx against the Spirit.
+- Politeuomai and politeuma (1:27, 3:20): چون شهروندان زندگی کنید,
+  شهروندی.
+- 2:6-11 keeps the English poetry breaks. Harpagmos: چیزی برای بهره‌جویی.
+  Kenoō: خود را خالی ساخت.
+- Katatomē (3:2): قطع‌کنندگان (Literal), set against ختنه‌شدگان in 3:3.
+  Skybala (3:8): فضله.
+- Katalambanō (3:12-13): به چنگ آوردن at every level, keeping the play on
+  words. Teleios: کامل (Literal) / بالغ (Balanced).
+- The drink offering (2:17) is هدیهٔ ریختنی. Apechō (4:18): به‌تمامی
+  پرداخت شده / رسید.
+- Kaisar (4:22): قیصر (Literal) / امپراتور (Balanced, Readable); the
+  praetorium (1:13) is گارد امپراتوری.
+
+Names: فیلیپی, فیلیپیان, تیموتائوس, اپافرودیتوس, افودیه, سنتیخی,
+کلیمنتس, بنیامین, مقدونیه, تسالونیکی.
+
+For reviewers:
+
+- فضله for skybala (3:8): is it too coarse for public reading, or is that
+  Paul's point?
+- 2:7 صورت برده at Literal beside صورت خادم at Balanced: do churches
+  expect غلام here?
+- قانع for autarkēs (4:11): does it carry contentment that does not depend
+  on circumstances?
+
+### Colossians
+
+- Paul says شما to the Colossians, and تو in his word to Archippus (4:17).
+- 1:15-20 keeps the English poetry breaks. Eikōn is صورت, prōtotokos
+  نخست‌زاده at every level, plērōma پری. Thrones, lordships, rulers and
+  authorities (1:16): تخت‌ها، سروری‌ها، ریاست‌ها، قدرت‌ها (Literal).
+- Reconcile (1:20-22): آشتی دادن (Literal, Balanced) / نزد خود بازگرداندن
+  (Readable), as in 2 Corinthians and Ephesians.
+- Stoicheia (2:8, 2:20): عناصر جهان (Literal) / نیروهای بنیادین جهان
+  (Balanced) / نیروها و قاعده‌هایی که این جهان را می‌گردانند (Readable).
+- Sarx: bodily presence (2:1, 2:5) and Christ's body (1:22) are جسم; the
+  sinful self (2:11 Balanced, 2:18, 2:23) is نفس; 2:13 uncircumcision of
+  the flesh keeps جسم.
+- Cheirographon (2:14): سند دست‌نوشته (Literal) / سند بدهی (Balanced).
+  Shadow and body (2:17): سایه ... بدن (Literal) / حقیقت (Balanced).
+- Old and new self (3:9-10): انسان کهنه / انسان تازه, as in Ephesians 4.
+  Barbarian and Scythian (3:11): بربر, سکایی.
+- Household (3:18-4:1) follows Ephesians 5:22-6:9: تسلیم, برده, ارباب
+  for owners and the Master in heaven, خداوند for Christ.
+- Syndoulos (1:7, 4:7): هم‌بنده (Literal) / هم‌خدمت (Balanced, Readable in
+  1:7).
+
+Names: کولسی, تیموتائوس, اپافراس, لائودیکیه, هیراپولیس, تیخیکوس,
+اونیسیموس, آریستارخوس, مرقس, برنابا, یوستوس, لوقا, دیماس, نیمفا, آرخیپوس.
+
+For reviewers:
+
+- نخست‌زادهٔ همهٔ آفرینش (1:15) at Literal: does it suggest the Son was
+  created? Balanced adds بالاتر از همهٔ آفرینش to show rank.
+- پری for plērōma (1:19, 2:9): is کمال or تمامی more natural?
+- 2:21 «دست مزن، مچش، لمس مکن» at Literal and Balanced: do the old
+  imperatives read well, or should Balanced say «دست نزن، نچش، لمس نکن»?
+
+### 1 Thessalonians
+
+- Paul, Silvanus and Timothy say ما and address the church as شما.
+  Adelphoi is {{gender:برادران و خواهران|برادران}}; Readable says
+  ایمانداران where the English says believers.
+- Ioudaioi (2:14-16): یهودیان (Literal) / یهودیان یهودیه (Balanced) / آن
+  یهودیانی در یهودیه که با ایمانداران مخالف بودند (Readable), so the verse
+  is not read as being about all Jews.
+- 2:7 nursing mother: مادری شیرده. 2:17 aporphanisthentes: یتیم شدیم
+  (Literal).
+- Skeuos (4:4): ظرف (Literal) / بدن (Balanced, Readable).
+- Sleep for death (4:13-15, 5:10): خوابیده‌اند (Literal) / به خواب رفته‌اند
+  (Balanced) / ایماندارانی که مرده‌اند (Readable).
+- 4:16: رئیس فرشتگان, شیپور خدا. 5:3 slogan: «صلح و امنیت» (Literal) /
+  «همه چیز آرام و امن است» (Balanced, Readable).
+- Sons of light (5:5): {{gender:فرزندان|پسران}} نور (Literal, Balanced).
+  5:8: جوشن ایمان و محبت, کلاهخود امید. 5:23: روح و جان و بدن.
+  5:26: بوسهٔ مقدس.
+- Hagioi in 3:13 is مقدسانش at every level, which keeps both angels and
+  believers open.
+
+Names: سیلوانس, تیموتائوس, تسالونیکی/تسالونیکیان, مقدونیه, اخائیه, آتن,
+فیلیپی.
+
+For reviewers:
+
+- 2:14-16: does the Balanced «یهودیان یهودیه» make clear enough that Paul
+  means those in Judea who opposed the church?
+- 4:4: ظرف at Literal is close to the Greek but opaque; is همسر (wife) a
+  reading that should be footnoted rather than chosen?
+- 5:3: does «همه چیز آرام و امن است» read as a slogan people repeat?
+
+### 2 Thessalonians
+
+- Follows 1 Thessalonians: شما for the church,
+  {{gender:برادران و خواهران|برادران}}, سیلوانس, تسالونیکیان.
+- The man of lawlessness (2:3): مرد بی‌دینی, son of destruction پسر هلاکت
+  (Literal); the lawless one (2:8) آن بی‌دین. Mystery of lawlessness (2:7):
+  راز بی‌دینی. The restrainer (2:6-7): آنچه باز می‌دارد / آن که باز
+  می‌دارد.
+- Apostasia (2:3): آن شورش (Literal) / آن شورش بزرگ (Balanced) / شورشی
+  بزرگ بر ضد خدا (Readable).
+- Eternal destruction (1:9): هلاکت جاودانی. Firstfruits (2:13): نوبر.
+- Paradoseis (2:15, 3:6): سنت (Literal, Balanced) / تعلیم (Readable).
+- Ataktōs (3:6, 3:11): بی‌نظم (Literal) / بی‌انضباط (Balanced); Readable
+  names the problem, refusing to work. 3:10: «اگر کسی نمی‌خواهد کار کند،
+  نخورد نیز.»
+- 3:11 wordplay: «هیچ کار نمی‌کنند بلکه در کار دیگران دخالت می‌کنند»
+  (Literal) / «به کار خود مشغول نیستند، بلکه به کار همه کس مشغول‌اند»
+  (Balanced).
+
+For reviewers:
+
+- 2:3 مرد بی‌دینی: is بی‌دینی (godlessness) right for anomia, or should it
+  be بی‌قانونی / شرارت?
+- 2:7: does «آن که باز می‌دارد» read naturally for the restrainer?
+- 3:10: is «نخورد نیز» natural at Literal, or should it say «نباید بخورد»?
+
+### 1 Timothy
+
+- Paul addresses Timothy as تو; teknon is فرزند (Literal) / پسر (Balanced)
+  / همچون پسری (Readable). Names: تیموتائوس, افسس, مقدونیه, هیمینائوس,
+  اسکندر, پنطیوس پیلاتس.
+- Episkopos (3:1-2): ناظر (Literal, Balanced) / رهبر کلیسا (Readable).
+  Diakonoi (3:8, 3:12): شماسان (Literal) / خادمان کلیسا (Balanced,
+  Readable). Presbyteroi (5:17-19): مشایخ (Literal, Balanced) / رهبران
+  کلیسا (Readable); presbyterion (4:14) شورای مشایخ (Literal). An older
+  man (5:1) is مرد پیر / مرد سالخورده, not an elder.
+- Pistos ho logos (1:15, 3:1, 4:9): این سخن امین است (Literal) / سخنی است
+  قابل اعتماد (Balanced) / سخنی راست (Readable).
+- Eusebeia: دینداری (Literal, Balanced) / خدا را حرمت نهادن, برای خشنودی
+  خدا زندگی کردن (Readable). Sound teaching: تعلیم سالم / تعلیم راستین
+  (Readable). Syneidēsis: وجدان at every level.
+- 1:10 arsenokoitai: مردانی که با مردان همبستر می‌شوند, as the English.
+- Ransom (2:6): فدیه (Literal, Balanced). One mediator: یک واسطه.
+- 2:9-15 keeps the English sense: در آرامی, اطاعت, بر مرد مسلط شود
+  (Literal) / اقتدار داشته باشد (Balanced, Readable), زاییدن فرزند.
+- 3:16 keeps the English poetry breaks.
+- Slaves and masters (6:1-2): برده, ارباب, as in Ephesians and Colossians.
+- Agōn (6:12): جنگ (Literal) / مسابقه (Balanced); 1:18 keeps جنگ نیکو.
+- Parathēkē (6:20): امانت (Literal) / آنچه به تو سپرده شده (Balanced).
+
+For reviewers:
+
+- 3:2 and 3:12 «شوهر یک زن» at Literal and «به همسر یگانهٔ خود وفادار»
+  at Balanced: does Balanced narrow the meaning too much?
+- 3:8: is شماس familiar to Persian readers, or should Literal also say
+  خادم?
+- 1:10: is the wording for arsenokoitai clear without being crude?
