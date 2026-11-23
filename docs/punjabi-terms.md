@@ -1987,3 +1987,30 @@ People and places: ਪੌਲੁਸ, ਤੁਖਿਕੁਸ; ਅਫ਼ਸੁਸ, �
   question as ਕੀ ਤੈਨੂੰ ਮੇਰੇ ਨਾਲ ਪਿਆਰ ਹੈ? for wording, not meaning.
 - Gender spans follow the English: `{{gender:ਚਾਨਣ ਦੀ ਸੰਤਾਨ|ਚਾਨਣ ਦੇ ਪੁੱਤਰ}}`
   (12:36), `{{gender:ਭਰਾਵਾਂ ਅਤੇ ਭੈਣਾਂ|ਭਰਾਵਾਂ}}` (20:17, 21:23).
+
+### Job
+
+- Address: the friends and Elihu say ਤੂੰ to Job, and Elihu says ਤੁਸੀਂ to the
+  friends as a group. God speaks to Job with ਤੂੰ, and Job's prayers and
+  answers to God use ਤੂੰ. In 42:7-8 God says ਤੇਰੇ to Eliphaz and ਤੁਸੀਂ to the
+  three friends. Narration and summaries give God honorific plural forms.
+- Names: Uz ਊਸ; Eliphaz the Temanite ਅਲੀਫ਼ਜ਼ ਤੇਮਾਨੀ, Bildad the Shuhite
+  ਬਿਲਦਦ ਸ਼ੂਹੀ, Zophar the Naamathite ਸੋਫ਼ਰ ਨਅਮਾਥੀ; Elihu son of Barachel the
+  Buzite ਬੂਜ਼ੀ ਬਰਕਏਲ ਦਾ ਪੁੱਤਰ ਅਲੀਹੂ, of the family of Ram ਰਾਮ; Job's
+  daughters ਯਮੀਮਾਹ, ਕਸੀਆਹ, ਕਰਨ-ਹੱਪੂਕ; the satan ਸ਼ੈਤਾਨ; Behemoth ਬਹੇਮੋਥ,
+  Leviathan ਲਿਵਯਾਥਾਨ; Jordan ਯਰਦਨ.
+- Titles: Shaddai ਸਰਬ ਸ਼ਕਤੀਮਾਨ (R ਸਰਬ ਸ਼ਕਤੀਮਾਨ ਪਰਮੇਸ਼ੁਰ); sons of God
+  ਪਰਮੇਸ਼ੁਰ ਦੇ ਪੁੱਤਰ (R ਸਵਰਗੀ ਜੀਵ); Redeemer (19:25) ਛੁਟਕਾਰਾ ਦੇਣ ਵਾਲਾ;
+  28:28 Adonai is plain ਪ੍ਰਭੂ, not the divine-name span.
+- Stars (9:9, 38:31-32): Pleiades ਕਿਰਤੀਆਂ, Orion ਜਬਾਰ, the Bear ਸਪਤਰਿਸ਼ੀ;
+  Mazzaroth ਮਜ਼ਾਰੋਥ (L), ਤਾਰਾ-ਮੰਡਲ (B), ਤਾਰਿਆਂ ਦੇ ਝੁਰਮਟ (R).
+- Animals (39): mountain goats ਪਹਾੜੀ ਬੱਕਰੀਆਂ, wild donkey ਜੰਗਲੀ ਗਧਾ, wild ox
+  ਜੰਗਲੀ ਬਲਦ, ostrich ਸ਼ੁਤਰਮੁਰਗ (female ਸ਼ੁਤਰਮੁਰਗੀ), hawk ਬਾਜ਼; harp (30:31)
+  ਬਰਬਤ.
+- Other words: hesed ਅਟੱਲ ਪਿਆਰ (L, B), ਵਫ਼ਾਦਾਰ ਪਿਆਰ (R); pit ਟੋਆ (L), ਕਬਰ
+  (B, R); shofar ਨਰਸਿੰਗਾ (L, B), ਤੁਰ੍ਹੀ (R); covenant ਨੇਮ; servant ਦਾਸ; wine
+  ਮੈ, wineskins ਮਸ਼ਕਾਂ; qesitah (42:11) {{units:ਇੱਕ ਸਿੱਕਾ|ਇੱਕ ਕਸੀਟਾ}} in B
+  and R; burnt offering ਹੋਮ-ਬਲੀ / ਹੋਮ ਦੀ ਬਲੀ.
+- Gender spans: anashim {{gender:ਲੋਕਾਂ|ਪੁਰਖਾਂ}}; gever and ish
+  {{gender:ਮਨੁੱਖ|ਪੁਰਖ}}; plain ਮਨੁੱਖ for adam takes no span.
+- 38:3 and 40:7 are the same Hebrew line and share one wording at each level.
