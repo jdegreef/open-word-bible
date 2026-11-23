@@ -34,6 +34,7 @@ services:
         - tests/**
         - .github/**
         - .claude/**
+        - cloudflare/**
     # Deploy main only once its CI checks (.github/workflows/ci.yml) pass, so
     # a red main never goes live. Render skips the deploy if a check fails or
     # none are reported; the next green commit deploys.
@@ -347,6 +348,7 @@ services:
         - tests/**
         - .github/**
         - .claude/**
+        - cloudflare/**
     buildCommand: pip install -r backend/requirements.txt && python backend/manage.py collectstatic --noinput
     # Migrate, make the cache table (settings.py CACHES), load any missing
     # source texts, then import what changed in content/ so the API matches
