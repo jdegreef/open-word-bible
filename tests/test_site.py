@@ -745,7 +745,8 @@ class SiteTest(unittest.TestCase):
         page = (self.out / "download" / "index.html").read_text(encoding="utf-8")
         data = page[page.index('class="data"'):]
         self.assertIn(f'href="{build_site.GITHUB_URL}/archive/refs/heads/main.zip"', data)
-        self.assertIn(f'href="{build_site.API_URL}/api/passages/JHN/1/"', data)
+        # The API is for our own sites only (backend/accounts/cors.py).
+        self.assertNotIn(build_site.API_URL, data)
         self.assertIn("schema/sentence-record.schema.json", data)
 
     def test_home_page_shows_key_terms(self):
