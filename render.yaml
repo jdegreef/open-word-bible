@@ -365,9 +365,12 @@ services:
     # requests give up on a query after DB_STATEMENT_TIMEOUT_MS (15 s).
     # Then send_alerts emails the super admins if the import failed (it
     # runs whatever the import's outcome, and the deploy still fails if the
-    # import did). Last, sync_fixes emails readers whose suggestion led to a
-    # merged fix. Neither fails the deploy.
-    preDeployCommand: END=$(( $(date +%s) + 1500 )) && python backend/manage.py migrate --noinput && python backend/manage.py createcachetable && python backend/manage.py import_texts --missing && (python backend/manage.py import_content --if-texts-loaded --budget 900 --search-budget 1320 --deadline "$END" --separate-processes; s=$?; python backend/manage.py send_alerts; exit $s) && (python backend/manage.py sync_fixes || true)
+    # import did). Then warm_admin opens the admin's slow pages once
+    # (coverage, key terms, consistency, the review queues), so the first
+    # person in after the import doesn't wait for every count. Last,
+    # sync_fixes emails readers whose suggestion led to a merged fix. None of
+    # these three fails the deploy.
+    preDeployCommand: END=$(( $(date +%s) + 1500 )) && python backend/manage.py migrate --noinput && python backend/manage.py createcachetable && python backend/manage.py import_texts --missing && (python backend/manage.py import_content --if-texts-loaded --budget 900 --search-budget 1320 --deadline "$END" --separate-processes; s=$?; python backend/manage.py send_alerts; python backend/manage.py warm_admin --deadline "$END" || true; exit $s) && (python backend/manage.py sync_fixes || true)
     # Threads, so a slow request (such as sending a sign-in email) does not
     # hold up reading.
     startCommand: gunicorn --chdir backend config.wsgi --workers 2 --threads 4 --worker-class gthread --timeout 60

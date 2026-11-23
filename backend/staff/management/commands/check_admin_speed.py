@@ -15,6 +15,7 @@ exist, are left out. A temporary super admin account makes the calls and
 is deleted afterwards.
 """
 import time
+from contextlib import contextmanager
 
 from django.contrib.auth import get_user_model
 from django.core.cache import cache
@@ -51,6 +52,23 @@ def addresses():
     return out + EXTRA
 
 
+@contextmanager
+def super_admin_client(username):
+    """A test client signed in as a temporary super admin, username, who is
+    deleted afterwards (warm_admin uses it too)."""
+    User = get_user_model()
+    User.objects.filter(username=username).delete()
+    user = User.objects.create(username=username, email=username)
+    Role.objects.create(user=user, kind=Role.Kind.SUPER_ADMIN)
+    secret, key_hash = new_secret()
+    ApiToken.objects.create(user=user, key_hash=key_hash, label=username.split("@")[0])
+    try:
+        with override_settings(ALLOWED_HOSTS=["*"]):
+            yield Client(HTTP_AUTHORIZATION=f"Bearer {secret}")
+    finally:
+        user.delete()
+
+
 class Command(BaseCommand):
     help = "Time every admin GET endpoint under the web server's statement limit."
 
@@ -67,27 +85,17 @@ class Command(BaseCommand):
             cursor.execute("SET statement_timeout = 15000")
         if cold:
             cache.clear()
-        User = get_user_model()
-        User.objects.filter(username=USERNAME).delete()
-        user = User.objects.create(username=USERNAME, email=USERNAME)
-        Role.objects.create(user=user, kind=Role.Kind.SUPER_ADMIN)
-        secret, key_hash = new_secret()
-        ApiToken.objects.create(user=user, key_hash=key_hash, label="check_admin_speed")
-        client = Client(HTTP_AUTHORIZATION=f"Bearer {secret}")
         problems = []
-        try:
-            with override_settings(ALLOWED_HOSTS=["*"]):
-                for path in addresses():
-                    url = "/api/admin/" + path
-                    start = time.perf_counter()
-                    status = client.get(url).status_code
-                    took = time.perf_counter() - start
-                    bad = status >= 500 or took > limit
-                    self.stdout.write(f"{'FAIL' if bad else 'ok':>4} {status} {took * 1000:8.0f} ms  {url}")
-                    if bad:
-                        problems.append(f"{url}: {status} in {took:.1f} s")
-        finally:
-            user.delete()
+        with super_admin_client(USERNAME) as client:
+            for path in addresses():
+                url = "/api/admin/" + path
+                start = time.perf_counter()
+                status = client.get(url).status_code
+                took = time.perf_counter() - start
+                bad = status >= 500 or took > limit
+                self.stdout.write(f"{'FAIL' if bad else 'ok':>4} {status} {took * 1000:8.0f} ms  {url}")
+                if bad:
+                    problems.append(f"{url}: {status} in {took:.1f} s")
         if problems:
             raise CommandError(f"{len(problems)} admin endpoint(s) failed or took over {limit:g} s:\n  "
                                + "\n  ".join(problems))
