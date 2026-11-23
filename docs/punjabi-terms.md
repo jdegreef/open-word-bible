@@ -1713,8 +1713,10 @@ People and places: ਪੌਲੁਸ, ਤੁਖਿਕੁਸ; ਅਫ਼ਸੁਸ, �
   ਥੰਮ੍ਹ, R ਅਸ਼ੇਰਾਹ ਦੇਵੀ ਦੀ ਪੂਜਾ ਵਾਲੇ ਥੰਮ੍ਹ; carved and cast images ਉੱਕਰੀਆਂ
   ਮੂਰਤਾਂ, ਢਾਲੀਆਂ ਹੋਈਆਂ ਮੂਰਤਾਂ; porch ਦਲਾਨ; seer ਦਰਸ਼ੀ; holy ark ਪਵਿੱਤਰ
   ਸੰਦੂਕ.
-- Music: cymbals ਝਾਂਜਾਂ, harps ਸਾਰੰਗੀਆਂ, lyres ਬਰਬਤਾਂ, trumpets ਤੁਰ੍ਹੀਆਂ;
-  singers ਗਵੱਈਏ; laments ਵੈਣ, and the Laments of 35:25 ਵੈਣਾਂ ਦੀ ਪੋਥੀ (a
+- Music: cymbals ਛੈਣੇ, harps (nevel) ਸਾਰੰਗੀਆਂ, lyres (kinnor) ਵੀਣਾਂ,
+  trumpets ਤੁਰ੍ਹੀਆਂ; singers ਗਾਇਕ (changed from ਝਾਂਜਾਂ, ਬਰਬਤਾਂ and ਗਵੱਈਏ
+  with 1 Chronicles, to match Samuel, Ezra, Nehemiah and Daniel; 1 Kings 10:12
+  too); laments ਵੈਣ, and the Laments of 35:25 ਵੈਣਾਂ ਦੀ ਪੋਥੀ (a
   collection, not Lamentations).
 - Officials: scribe ਲਿਖਾਰੀ (L), ਸਕੱਤਰ (B, R); recorder ਇਤਿਹਾਸਕਾਰ (L, B);
   shoterim ਅਧਿਕਾਰੀ; keepers of the threshold ਡਿਉੜੀ ਦੇ ਰਾਖੇ (L), ਦਰਬਾਨ (B);
@@ -1832,3 +1834,59 @@ People and places: ਪੌਲੁਸ, ਤੁਖਿਕੁਸ; ਅਫ਼ਸੁਸ, �
   Punjabi NT: 3:11-12 (Hebrews 12), 3:34 (James 4, 1 Peter 5), 11:31
   (1 Peter 4), 24:12 (Romans 2:6), 25:21-22 (Romans 12:20), 26:11
   (2 Peter 2:22).
+
+### 1 Chronicles
+
+- Book name 1 ਇਤਿਹਾਸ. God takes the honorific plural with no
+  deity_pronoun spans; prayers to God use ਤੂੰ (17:16-27, 29:10-19). David
+  says ਤੂੰ to Solomon and to Ornan, Ornan says ਤੁਸੀਂ to David, and David says
+  ਤੁਸੀਂ to the officials and the assembly (22:18-19, 28:2-8).
+- Chapters with a parallel in Samuel or Kings (10-21, 29:26-27) reuse that
+  book's Punjabi and are reworded only where Chronicles differs or where a
+  run matched a reference Bible. 28:20 repeats the charge of Joshua 1:9 and
+  22:13 at each level.
+- The psalm of 16:8-36 sets the Punjabi of Psalm 105:1-15, 96 and
+  106:1, 47-48; Psalms must reuse it when it is drafted.
+- Genealogies: "the sons of X" ਦੇ ਪੁੱਤਰ, "and X fathered Y" ਅਤੇ X ਤੋਂ Y
+  ਜੰਮਿਆ (L); "father of" a town ਪਿਤਾ (L), ਵਸਾਉਣ ਵਾਲਾ or "X ਨੇ ... ਵਸਾਇਆ" (R). Runs of 7+ words
+  that the overlap check found in the name lists and made only of names and
+  list words (ਦਾ, ਦੇ, ਪੁੱਤਰ, ਅਤੇ, ਸੀ, ਸਨ, ਧੀ, ਭਰਾ, ਪਹਿਲੌਠਾ) were kept: the
+  Hebrew lists allow no other wording.
+- Offices: princes (sarim) ਸਰਦਾਰ (L), ਅਧਿਕਾਰੀ (B), ਆਗੂ (R); heads ਮੁਖੀ;
+  rosh ਮੁਖੀ (L), ਪ੍ਰਧਾਨ (B), ਆਗੂ (R); nagid ਪ੍ਰਧਾਨ (L, B), ਆਗੂ (R);
+  fathers' houses ਪਿਉ-ਦਾਦਿਆਂ ਦੇ ਘਰਾਣੇ (L), ਜੱਦੀ ਘਰਾਣੇ (B), ਪਰਿਵਾਰ (R);
+  elders ਬਜ਼ੁਰਗ (L), ਬਜ਼ੁਰਗ ਆਗੂ (B); commanders of thousands and hundreds
+  ਹਜ਼ਾਰਾਂ ਅਤੇ ਸੈਂਕੜਿਆਂ ਦੇ ਸਰਦਾਰ (L), ਹਜ਼ਾਰ-ਹਜ਼ਾਰ ਅਤੇ ਸੌ-ਸੌ ਦੀਆਂ ਟੁਕੜੀਆਂ
+  ਦੇ ਸਰਦਾਰ (B); gatekeepers ਦਰਬਾਨ; divisions ਦਲ; scribe ਲਿਖਾਰੀ; uncle
+  ਚਾਚਾ; eunuchs ਖੋਜੇ (L), ਦਰਬਾਰੀ ਅਧਿਕਾਰੀ (B), ਮਹਿਲ ਦੇ ਅਧਿਕਾਰੀ (R).
+- Warriors: gibbor chayil ਸੂਰਬੀਰ ਬਲਵਾਨ ਜੋਧੇ (L), ਸੂਰਬੀਰ ਜੋਧੇ (B), ਬਹਾਦਰ
+  ਜੋਧੇ (R); ben chayil ਬਲਵਾਨ ਮਨੁੱਖ (L), ਕਾਬਲ ਆਦਮੀ (B, R); the Thirty
+  ਤੀਹਾਂ; Satan ਸ਼ੈਤਾਨ (21:1).
+- Worship: lots ਗੁਣੇ ਪਾ ਕੇ, "the first lot fell to X" ਪਹਿਲਾ ਗੁਣਾ X ਦੇ ਨਾਂ
+  ਨਿੱਕਲਿਆ; music: cymbals ਛੈਣੇ, harps ਸਾਰੰਗੀਆਂ, lyres ਵੀਣਾਂ, singers ਗਾਇਕ
+  (2 Chronicles changed to match); tent of meeting ਮੁਲਾਕਾਤ ਦਾ ਤੰਬੂ; bread of
+  the rows ਕਤਾਰ ਦੀ ਰੋਟੀ (L), ਕਤਾਰਾਂ ਵਿੱਚ ਰੱਖੀ ਜਾਣ ਵਾਲੀ ਰੋਟੀ (B), ਪਵਿੱਤਰ
+  ਰੋਟੀ (R); Sabbaths, new moons and appointed feasts ਸਬਤ, ਨਵੇਂ ਚੰਨ, ਠਹਿਰਾਏ
+  ਹੋਏ ਪਰਬ; mercy seat ਪ੍ਰਾਸਚਿਤ ਦਾ ਢੱਕਣ; lampstand ਸ਼ਮਾਦਾਨ; cherubim ਕਰੂਬੀ;
+  the pattern of 28:11-19 ਨਮੂਨਾ (L), ਨਕਸ਼ਾ (B, R); the temple ਭਵਨ (L, B),
+  ਮੰਦਰ or ਭਵਨ (R); the palace (birah, 29:1, 19) ਮਹਿਲ.
+- Treasuries ਖ਼ਜ਼ਾਨੇ (R ਖ਼ਜ਼ਾਨੇ ਵਾਲੇ ਕਮਰੇ), country stores ਭੰਡਾਰ; dedicated
+  things ਪਵਿੱਤਰ ਕੀਤੀਆਂ ਚੀਜ਼ਾਂ (L), ਅਰਪਣ ਕੀਤੀਆਂ ਚੀਜ਼ਾਂ (B), ਪਰਮੇਸ਼ੁਰ ਨੂੰ
+  ਦਿੱਤੀਆਂ ਭੇਟਾਂ (R); freewill giving ਖ਼ੁਸ਼ੀ ਨਾਲ ਭੇਟ (L), ਆਪਣੀ ਮਰਜ਼ੀ ਨਾਲ
+  ਦਾਨ (B); sojourners and settlers (29:15) ਪਰਦੇਸੀ ਅਤੇ ਟਿਕੇ ਹੋਏ ਮੁਸਾਫ਼ਰ (L);
+  God's law ਹੁਕਮ, ਸਾਖੀਆਂ, ਬਿਧੀਆਂ (L, B).
+- Units: a talent about 34 kg, so {{units:ਲਗਭਗ 3,400 ਟਨ|1,00,000 ਤੋੜੇ}} and
+  {{units:ਲਗਭਗ 100 ਟਨ|3,000 ਤੋੜੇ}}; the daric ਦਾਰਕ (about 8.4 g); 600
+  shekels of gold {{units:ਲਗਭਗ 7 ਕਿੱਲੋ ਸੋਨਾ|ਸੋਨੇ ਦੇ 600 ਸ਼ੇਕੇਲ}}. Numbers use
+  Indian grouping (11,00,000).
+- Land: Shephelah ਸ਼ਫ਼ੇਲਾਹ (L), ਪੱਛਮੀ ਤਰਾਈ (B), ਪੱਛਮ ਦੀਆਂ ਨੀਵੀਆਂ ਪਹਾੜੀਆਂ
+  (R); sycamore ਗੁੱਲਰ; vineyards ਅੰਗੂਰੀ ਬਾਗ਼; wine ਮੈ; threshing floor ਪਿੜ.
+- Names: Ornan ਆਰਨਾਨ (Araunah in Samuel); Jabez ਯਅਬੇਸ; Keturah ਕਤੂਰਾਹ;
+  Ziklag ਸਿਕਲਗ; Rapha ਰਾਫ਼ਾ; Gershon ਗੇਰਸ਼ੋਨ but Gershom ਗੇਰਸ਼ੋਮ; Shebuel
+  ਸ਼ਬੂਏਲ but Shubael ਸ਼ੂਬਾਏਲ; Jeshaiah ਯਸ਼ਾਯਾਹ; Jashobeam ਯਾਸ਼ੋਬਆਮ; Zebulun
+  ਜ਼ਬੂਲੁਨ (1 Chronicles 2, 6, 27 and Judges 12 changed to match).
+- For the reviewer: 25:3 says "six" but names five (the Septuagint adds
+  Shimei, as in 25:17); 26:25-26 spell the man ਸ਼ਲੋਮੋਥ and 26:28 ਸ਼ਲੋਮੀਥ,
+  following the written Hebrew and the English; the 1 Chronicles
+  numbers often differ from Samuel and Kings and are kept as Chronicles has
+  them.
