@@ -133,8 +133,8 @@ class PageTest(unittest.TestCase):
         self.assertIn(rtl_meta("es"), text)
         # The footer's languages in their own names: each left-to-right one
         # is isolated, its gloss in the page's language is not.
-        self.assertIn('<a href="/about/" lang="en" dir="ltr" hreflang="en" data-lang="en">English '
-                      '<span class="lang-gloss" lang="es" dir="rtl">(inglés)</span></a>', text)
+        self.assertIn('<a href="/about/" hreflang="en" data-lang="en"><span lang="en" dir="ltr">English</span> '
+                      '<span class="lang-gloss" lang="es">(inglés)</span></a>', text)
         self.assertIn('<span lang="es" aria-current="true">Español', text)
         self.assertIn('<span lang="hbo" dir="rtl">x</span>', text)
         # Nothing in the page's own direction is given a dir.
@@ -145,8 +145,8 @@ class PageTest(unittest.TestCase):
             text = self.page("en")
         self.assertIn('<html lang="en">', text)
         self.assertIn(rtl_meta("es"), text)
-        self.assertIn('<a href="/es/about/" lang="es" dir="rtl" hreflang="es" data-lang="es">Español '
-                      '<span class="lang-gloss" lang="en" dir="ltr">(Spanish)</span></a>', text)
+        self.assertIn('<a href="/es/about/" hreflang="es" data-lang="es"><span lang="es" dir="rtl">Español</span> '
+                      '<span class="lang-gloss" lang="en">(Spanish)</span></a>', text)
         self.assertNotIn('lang="fr" dir=', text)
 
 
@@ -155,11 +155,13 @@ class PageTest(unittest.TestCase):
         self.assertEqual(build_site.forward("ar"), "&larr;")
         self.assertIn('<html lang="ar" dir="rtl">', text)
         self.assertIn(rtl_meta(), text)
-        self.assertRegex(text, r'<a href="/about/" lang="en" dir="ltr" hreflang="en" data-lang="en">English '
-                               r'<span class="lang-gloss" lang="ar" dir="rtl">\(')
+        self.assertRegex(text, r'<a href="/about/" hreflang="en" data-lang="en">'
+                               r'<span lang="en" dir="ltr">English</span> <span class="lang-gloss" lang="ar">\(')
         self.assertIn('<span lang="ar" aria-current="true">العربية', text)
-        # An English page names Arabic in its footer, isolated.
-        self.assertIn('<a href="/ar/about/" lang="ar" dir="rtl" hreflang="ar" data-lang="ar">العربية', self.page("en"))
+        # An English page names Arabic in its footer: its own name isolated,
+        # then the gloss after it in the page's direction.
+        self.assertIn('<a href="/ar/about/" hreflang="ar" data-lang="ar"><span lang="ar" dir="rtl">العربية</span> '
+                      '<span class="lang-gloss" lang="en">(Arabic)</span></a>', self.page("en"))
 
 
 class StyleTest(unittest.TestCase):

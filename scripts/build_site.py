@@ -893,7 +893,9 @@ def language_items(lang, path, translated=LANGUAGES, mark=""):
     language: the home page from a page without a path, the plans or
     articles page from a plan or article not in that language, and the Read
     page from a book's page not in that language. web/site.js remembers
-    the choice."""
+    the choice. The lang (and so the dir, isolate_directions) goes on the
+    own name, not the link, so that a name written in the other direction
+    is isolated and its gloss still follows it in the page's direction."""
     def target(code):
         if path is None:
             return "/"
@@ -910,8 +912,8 @@ def language_items(lang, path, translated=LANGUAGES, mark=""):
 
     return "".join(
         f'<li><span lang="{code}" aria-current="true">{owb_languages.native(code)}{mark}</span></li>' if code == lang
-        else f'<li><a href="{url(code, target(code))}" lang="{code}" hreflang="{code}" data-lang="{code}">'
-             f'{owb_languages.native(code)}{gloss(code)}</a></li>'
+        else f'<li><a href="{url(code, target(code))}" hreflang="{code}" data-lang="{code}">'
+             f'<span lang="{code}">{owb_languages.native(code)}</span>{gloss(code)}</a></li>'
         for code in LANGUAGES)
 
 

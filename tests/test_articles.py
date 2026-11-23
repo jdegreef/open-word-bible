@@ -271,14 +271,14 @@ class ColourModesTest(unittest.TestCase):
         self.assertIn('<span lang="es" aria-current="true">Español', menu)
         for code in build_site.LANGUAGES:
             if code != "es":
-                self.assertIn(f'href="{build_site.url(code, "/jhn/3/")}" lang="{code}" hreflang="{code}" '
+                self.assertIn(f'href="{build_site.url(code, "/jhn/3/")}" hreflang="{code}" '
                               f'data-lang="{code}"', menu)
         # Without a path (the 404 page), each language's home page.
-        self.assertIn('href="/fr/" lang="fr"', build_site.language_menu("en"))
+        self.assertIn('href="/fr/" hreflang="fr"', build_site.language_menu("en"))
         # From an article not in a language, that language's articles page.
         menu = build_site.language_menu("en", "/articles/x/", ("en", "es"))
-        self.assertIn('href="/es/articles/x/" lang="es"', menu)
-        self.assertIn('href="/fr/articles/" lang="fr"', menu)
+        self.assertIn('href="/es/articles/x/" hreflang="es"', menu)
+        self.assertIn('href="/fr/articles/" hreflang="fr"', menu)
 
     def test_every_page_has_the_gear_menu(self):
         out = built_site()
