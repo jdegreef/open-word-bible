@@ -1369,3 +1369,34 @@ For reviewers:
 - 9 «فرشتهٔ اعظم» for archangel: the usual term, or «رئیس فرشتگان»?
 - 12 «صخره‌های [پنهان]» for spilades: clear, or would «لکه‌ها» (another
   sense of the word) be better at Literal?
+
+### Revelation
+
+- Kept the same through the book: وحش (thērion), اژدها, برّه, طومار,
+  موجود زنده, چراغدان, مجمر, جام (phialē), بلا, نشان (charagma), تمثال
+  (L/B) / مجسمه (R), نبی دروغین, دریاچهٔ آتش, مرگ دوم, دفتر حیات.
+- هاویه (L/B) / چاه بی‌انتها (R) for abyssos; عالم مردگان (L/B) / جای
+  مردگان (R) for Hades.
+- قادر مطلق for pantokratōr; الف و یا for Alpha and Omega (1:8, 21:6,
+  22:13); هللویاه (19:1-6); خوشا به حال for the seven blessings.
+- Elders: شیخ / مشایخ, as 1 Peter 5 and 2-3 John.
+- Seven cities: افسس, اسمیرنا, پرگاموم, طیاتیرا, سارد, فیلادلفیه,
+  لائودیکیه. Names: نیکولائیان, ایزابل, بالاق, آنتیپاس, ابدّون / اپولیون,
+  فرات, میکائیل, هارمجدون, جوج و ماجوج.
+- The refrain: «آن که گوش دارد، بشنود که روح به کلیساها چه می‌گوید.»
+- Numbers in words (صد و چهل و چهار هزار, هزار و دویست و شصت روز,
+  ششصد و شصت و شش). Units spans at B/R: خوینیکس and دینار (6:6),
+  ستادیون (14:20, 21:16), قنطار (16:21), ذراع (21:17).
+- doulos: برده (L) / خادم (B/R); syndoulos: هم‌برده / هم‌خدمت.
+
+For reviewers:
+
+- 1:8 «الف و یا»: clear to readers, or keep «آلفا و امگا» with a footnote?
+- 4:4 and throughout «مشایخ» for the twenty-four elders: right register,
+  or «پیران»?
+- 7:14 at Literal John says «سرورم، تو می‌دانی», while Balanced and
+  Readable use «آقا» with «شما»: should Literal also use «شما»?
+- 21:19-20 the twelve stones use traditional Persian gem names (یشم, یاقوت
+  کبود, عقیق سفید, زمرد, جزع, عقیق سرخ, زبرجد, یاقوت سبز, یاقوت زرد, عقیق
+  سبز, یاقوت آسمانی, جمست). Several ancient stones are uncertain; would a
+  reviewer prefer other names?
