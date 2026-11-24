@@ -1151,3 +1151,25 @@ For reviewers:
 - 2:17 «خوره» for gangrene: is it understood, or should it be «قانقاریا»?
 - 2:24: does «بردهٔ خداوند» at Literal sound harsh next to the common
   «بندهٔ خداوند»?
+
+### Titus
+
+- Follows 1-2 Timothy: Paul says تو to Titus; مشایخ (1:5) and ناظر (1:7)
+  at Literal and Balanced, رهبر کلیسا at Readable; تعلیم سالم; این سخن
+  امین است (3:8).
+- Doulos theou (1:1): بردهٔ خدا (Literal) / خادم خدا (Balanced, Readable).
+  Slaves and masters (2:9): برده, ارباب.
+- 2:13 keeps one phrase for "our great God and Savior Jesus Christ":
+  خدای بزرگ و نجات‌دهندهٔ ما عیسی مسیح.
+- 3:5: شست‌وشوی تولد تازه و نو شدن به روح‌القدس. Philanthrōpia (3:4):
+  انسان‌دوستی (Literal).
+- Nomikos (3:13): فقیه.
+
+Names: تیتوس, کریت / کریتیان, آرتیماس, تیخیکوس, نیکوپولیس, زیناس, اپلس.
+
+For reviewers:
+
+- 2:13: does the Persian read as one person (Jesus is God and Savior), as
+  the English does?
+- 2:5 «کدبانو» at Literal: natural, or too old-fashioned?
+- 1:12: is «شکم‌پرستان تنبل» right for the Cretan proverb?
