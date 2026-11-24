@@ -486,12 +486,12 @@ def language_menu(lang, path=None, translated=LANGUAGES):
             f'<ul class="prefs-langs">{items}</ul></div></div>')
 
 
-def colour_menu(lang, path=None, translated=LANGUAGES):
-    """The gear menu: the colour mode, the display settings (DISPLAY_PREFS),
-    then the languages (language_items, as in the footer). web/site.js
-    runs it."""
-    label = t(lang, "tools.display")
-
+@functools.cache
+def colour_prefs(lang):
+    """The gear menu's settings: the colour mode and the display settings
+    (DISPLAY_PREFS). The same on every page in a language, and about 6.5 KB,
+    so they come from nav-<lang>.js (nav_script, NAV_SCRIPT puts them at the
+    top of the menu, before web/site.js runs it), not from every page."""
     def option(value, default, face, name):
         on = value == default
         return (f'<button type="button" role="radio" aria-checked="{"true" if on else "false"}" '
@@ -515,6 +515,14 @@ def colour_menu(lang, path=None, translated=LANGUAGES):
     rows = [group(pref, t(lang, "prefs." + pref), default,
                   [(v, sample(pref, v), t(lang, f"{pref}.{v}")) for v in values])
             for pref, default, values in DISPLAY_PREFS]
+    return theme + "".join(rows)
+
+
+def colour_menu(lang, path=None, translated=LANGUAGES):
+    """The gear menu: the colour mode and the display settings
+    (colour_prefs, filled in from nav-<lang>.js), then the languages
+    (language_items, as in the footer). web/site.js runs it."""
+    label = t(lang, "tools.display")
     # The same links as the header's language menu (language_menu), which
     # nav_script copies in, so a page carries the list once.
     languages = (f'<p class="prefs-label" id="prefs-lang">{t(lang, "footer.languages")}</p>'
@@ -524,7 +532,7 @@ def colour_menu(lang, path=None, translated=LANGUAGES):
         '<button type="button" class="tool-btn prefs-btn" aria-expanded="false" aria-controls="colour-menu" '
         f'aria-label="{label}" title="{label}">{GEAR}</button>'
         f'<div id="colour-menu" class="prefs-menu" role="group" aria-label="{label}" hidden>'
-        + theme + "".join(rows) + languages + '</div></div>')
+        + languages + '</div></div>')
 
 
 OG = ROOT / "web" / "og"
@@ -792,6 +800,12 @@ NAV_SCRIPT = r"""(function () {
     if (book) panel.querySelectorAll('[data-book="' + book[1] + '"]')
       .forEach(function (a) { a.setAttribute("aria-current", "true"); });
   });
+  // The gear menu's settings (build_site.colour_prefs), before its
+  // languages; web/site.js, which runs after this, wires them up.
+  var prefs = document.getElementById("colour-menu");
+  if (prefs && window.OWB_PREFS && !prefs.querySelector("[data-pref]")) {
+    prefs.insertAdjacentHTML("afterbegin", window.OWB_PREFS);
+  }
   // The gear menu's language links are the header language menu's.
   document.querySelectorAll("ul[data-copy]").forEach(function (ul) {
     var from = document.getElementById(ul.getAttribute("data-copy"));
@@ -818,11 +832,12 @@ NAV_SCRIPT = r"""(function () {
 
 @functools.cache
 def nav_script(lang):
-    """The header's dropdown panels in lang (nav_menus), as a script that
-    fills them in (NAV_SCRIPT), and its URL. It carries the footer's book
-    chips and the book names too (footer_data), which were the largest
-    part of every page's footer."""
+    """The header's dropdown panels in lang (nav_menus) and the gear menu's
+    settings (colour_prefs), as a script that fills them in (NAV_SCRIPT),
+    and its URL. It carries the footer's book chips and the book names too
+    (footer_data), which were the largest part of every page's footer."""
     text, _ = shared_script("OWB_NAV", {key: panel for key, _l, _i, _h, panel, _c in nav_menus(lang)})
+    text += shared_script("OWB_PREFS", colour_prefs(lang))[0]
     text += shared_script("OWB_FOOT", footer_data(lang))[0]
     text += NAV_SCRIPT
     return text, f"/nav-{lang}.js?v={hashlib.sha256(text.encode()).hexdigest()[:10]}"
