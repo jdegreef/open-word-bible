@@ -14,7 +14,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 import build_site  # noqa: E402
 from owb import crossrefs  # noqa: E402
-from tests.site_build import built_site, nav_menus_in, page_data, sitemap_text  # noqa: E402
+from tests.site_build import built_site, foot_data_in, nav_menus_in, page_data, sitemap_text  # noqa: E402
 
 
 
@@ -234,8 +234,10 @@ class SiteTest(unittest.TestCase):
         self.assertEqual(json.loads(script[script.index(">") + 1:-len("</script>")])["name"], title)
 
     def test_footer_counts_the_books_not_started(self):
+        # The chips come from nav-en.js (footer_data); the page has a list for each testament.
         page = (self.out / "1ti" / "5" / "index.html").read_text(encoding="utf-8")
-        index = re.search(r'<nav class="foot-books".*?</nav>', page, re.S)[0]
+        self.assertIn('<ul class="book-chips" data-foot-chips="old_testament"></ul>', page)
+        index = foot_data_in(self.out, "en")["chips"]["old_testament"]
         ot = build_site.refs.OT_CODES
         have = {b for b, _ in build_site.books("en")}
         missing = [code for code in ot if code not in have]
@@ -1026,12 +1028,14 @@ class SiteTest(unittest.TestCase):
             books = {b for b, _ in shown}
             read = (self.out / build_site.url(lang, "/read/").lstrip("/") / "index.html").read_text(encoding="utf-8")
             header = nav_menus_in(self.out, lang)  # the header's dropdowns
-            footer = re.search(r"<footer.*?</footer>", read, re.S)[0]
+            footer = "".join(foot_data_in(self.out, lang)["chips"].values())  # the footer's book chips
             for p in build_site.passages():
                 self.assertEqual(f'id="{p.book.lower()}"' in read, p.book in books, (lang, p.book))
                 book_link = f'href="{build_site.url(lang, f"/read/#{p.book.lower()}")}"'
                 self.assertEqual(book_link in header, p.book in books, (lang, p.book))
-                self.assertEqual(book_link in footer, p.book in books, (lang, p.book))
+                # A chip leads to the book's own page where it has one in lang.
+                chip = f'href="{build_site.book_href(p.book, lang)}"'
+                self.assertEqual(chip in footer, p.book in books, (lang, p.book))
 
     def test_reader_navigation_lists_only_the_page_language(self):
         for lang in build_site.LANGUAGES:
@@ -1903,9 +1907,17 @@ class SpriteTest(unittest.TestCase):
         self.assertIn(json.dumps(href), build_site.service_worker())
 
     def test_footer_book_names_parse(self):
-        link = build_site.resume_link("fr", names=True)
-        names = json.loads(html.unescape(re.search(r"data-books='([^']*)'", link)[1]))
+        # nav-<lang>.js carries the book names that "Continue reading" and
+        # the recently read links show, not every page.
+        self.assertNotIn("data-books", build_site.resume_link("fr"))
+        names = json.loads(build_site.nav_script("fr")[0].split("window.OWB_FOOT=", 1)[1].split(";\n", 1)[0])["books"]
         self.assertEqual(names["JHN"], build_site.BOOK_NAMES["JHN"]["fr"])
+
+    def test_language_names_never_nest_brackets(self):
+        self.assertEqual(build_site.unbracket("Chinese (Simplified)"), "Chinese, Simplified")
+        self.assertEqual(build_site.unbracket("中国語（簡体字）", "ja"), "中国語、簡体字")
+        self.assertEqual(build_site.unbracket("چینی (ساده‌شده)", "fa"), "چینی، ساده‌شده")
+        self.assertEqual(build_site.unbracket("Spanish"), "Spanish")
 
 
 class NoteReasonsTest(unittest.TestCase):
