@@ -23,7 +23,7 @@ from django.utils import timezone
 
 from accounts import controls
 from feedback.models import ReaderMessage
-from staff import jobs
+from staff import github
 from staff.inbox import verse_label, verse_url
 from staff.models import record
 from staff.work import fetch_work
@@ -71,7 +71,7 @@ class Command(BaseCommand):
             return
         try:
             work = fetch_work()
-        except jobs.GitHubError:
+        except github.GitHubError:
             self.stdout.write("GitHub could not be reached; no fixes checked.")
             return
         told = 0

@@ -11,7 +11,12 @@ POST /api/admin/jobs/bulk/  {languages, testament or books, note, dry_run}
                                               file one job per book still missing
                                               any of the languages, in Bible order,
                                               at most BULK_LIMIT at a time; dry_run
-                                              answers with the plan only
+                                              answers with the plan only. Filing
+                                              goes on in the background (202, with
+                                              the run's id)
+GET  /api/admin/jobs/bulk/<id>/               that filing's progress: state
+                                              ("filing", "done", "stopped"), filed,
+                                              not_filed, error
 
 Filing needs OWB_GITHUB_TOKEN (a token that may create issues in
 OWB_GITHUB_REPO); without it the page says so. Before filing, the request
@@ -20,20 +25,23 @@ book is refused) and against the open jobs (the same book and language
 asked for twice is refused), as the check-book-before-translating skill
 does for a session.
 """
-import http.client
 import json
 import logging
-import re
-import urllib.request
+import threading
+import uuid
 
 from django.conf import settings
 from django.core.cache import cache
+from django.db import connections
+from django.utils import timezone
 from rest_framework import status
-from rest_framework.exceptions import ValidationError
+from rest_framework.exceptions import NotFound, ValidationError
 from rest_framework.response import Response
 
 from owb import languages, refs
 
+from . import github
+from .github import GitHubError
 from .models import record
 from .permissions import admin_view
 from .progress import CHAPTERS, _coverage, book_name
@@ -43,59 +51,6 @@ LABEL = "drafting-job"
 BULK_LIMIT = 40     # jobs one bulk request files; the rest wait for the next
 TESTAMENTS = {"ot": refs.OT_CODES, "nt": [c for c in refs.BOOK_CODES if c not in refs.OT_CODES],
               "all": refs.BOOK_CODES}
-
-
-class GitHubError(Exception):
-    pass
-
-
-# A list read follows GitHub's pages (100 to a page) up to this many, so
-# more than 100 open jobs are all seen (the duplicate check and "stalled"
-# depend on it) without a runaway list holding up a request.
-MAX_PAGES = 10
-NEXT = re.compile(r'<([^>]+)>;\s*rel="next"')
-
-
-def _github(path, method="GET", body=None, stop=None):
-    """GitHub's answer for path under the repository. A list is read page
-    by page while there is a next page, up to MAX_PAGES, and until
-    stop(page) is true for a page. Raises GitHubError when GitHub can't be
-    reached or answers with an error."""
-    url = f"https://api.github.com/repos/{settings.OWB_GITHUB_REPO}/{path}"
-    data, url = _request(url, method, body)
-    if not isinstance(data, list):
-        return data
-    pages = 1
-    while url and pages < MAX_PAGES and not (stop and stop(data)):
-        more, url = _request(url, "GET", None)
-        data += more
-        pages += 1
-    return data
-
-
-def _request(url, method, body):
-    """(the JSON answer, the next page's URL or None)."""
-    headers = {"Accept": "application/vnd.github+json", "User-Agent": "open-word-bible-admin",
-               "X-GitHub-Api-Version": "2022-11-28"}
-    if settings.OWB_GITHUB_TOKEN:
-        headers["Authorization"] = f"Bearer {settings.OWB_GITHUB_TOKEN}"
-    data = json.dumps(body).encode() if body is not None else None
-    if data:
-        headers["Content-Type"] = "application/json"
-    req = urllib.request.Request(url, data=data, method=method, headers=headers)
-    try:
-        with urllib.request.urlopen(req, timeout=10) as r:
-            link = NEXT.search(r.headers.get("Link") or "")
-            answer = json.load(r)
-    # OSError covers URLError, timeouts and a dropped connection mid-read;
-    # HTTPException a truncated answer (IncompleteRead, RemoteDisconnected).
-    except (OSError, http.client.HTTPException, ValueError) as e:
-        log.warning("GitHub %s %s failed: %s", method, url.split("?")[0], e)
-        raise GitHubError from e
-    if method != "GET":
-        # An issue filed or changed: the rail's counts (staff/attention.py) ask again.
-        cache.delete("staff.attention.github")
-    return answer, link[1] if link else None
 
 
 def marker(issue, name):
@@ -128,7 +83,7 @@ def listed(data, name):
 
 
 def open_jobs():
-    issues = _github(f"issues?labels={LABEL}&state=open&per_page=100")
+    issues = github.call(f"issues?labels={LABEL}&state=open&per_page=100")
     # The issue's own fields last, so the marker can't stand in for them.
     return [{**_parse_job(i), "number": i["number"], "title": i["title"], "url": i["html_url"],
              "created_at": i["created_at"], "assignees": [a["login"] for a in i.get("assignees", [])]}
@@ -231,7 +186,7 @@ def _file_issue(user, book, wanted, coverage, note, bulk=False):
         lines += ["", "**Note from the admin:**", "", note]
     lines += ["", f"Filed from the admin by {user.username}.", "",
               "<!-- drafting-job " + json.dumps({"book": book, "languages": wanted}) + " -->"]
-    issue = _github("issues", "POST", {"title": f"Draft {book_name(book)} in {names}",
+    issue = github.call("issues", "POST", {"title": f"Draft {book_name(book)} in {names}",
                                        "body": "\n".join(lines), "labels": [LABEL]})
     record(user, "job.file", f"#{issue['number']} {book}", languages=wanted, **({"bulk": True} if bulk else {}))
     return issue
@@ -298,20 +253,58 @@ def bulk(request):
     now, later = plan[:BULK_LIMIT], plan[BULK_LIMIT:]
     answer = {"dry_run": dry_run, "plan": now, "skipped": skipped, "remaining": len(later),
               "limit": BULK_LIMIT, "filed": []}
-    if dry_run:
+    if dry_run or not now:
         return Response(answer)
-    for i, job in enumerate(now):
-        try:
-            issue = _file_issue(request.user, job["book"], job["languages"], coverage[job["book"]], note,
-                                bulk=True)
-        except GitHubError:
-            # Stop at the first refusal; the rest are reported as not filed.
-            answer["not_filed"] = now[i:]
-            answer["error"] = (f"GitHub refused the job for {book_name(job['book'])}: "
-                               f"{len(answer['filed'])} filed, {len(now) - i} not.")
-            break
-        answer["filed"].append({**job, "number": issue["number"], "url": issue["html_url"]})
-    if answer.get("error") and not answer["filed"]:
-        return Response({**answer, "detail": answer["error"], "code": "github"},
-                        status=status.HTTP_503_SERVICE_UNAVAILABLE)
-    return Response(answer, status=status.HTTP_201_CREATED if answer["filed"] else status.HTTP_200_OK)
+    # Filing is one GitHub request a job, up to 10 s each: 40 of them would
+    # outlast the web server's 60 s. A thread files them and keeps its
+    # progress where GET jobs/bulk/<id>/ reads it, on any worker.
+    run = {**answer, "id": uuid.uuid4().hex[:12], "state": "filing", "not_filed": [], "error": "",
+           "by": request.user.username, "started_at": timezone.now().isoformat()}
+    cache.set(_run_key(run["id"]), run, RUN_KEEP)
+    _start(_file_all, request.user, run, {b: coverage[b] for b in {j["book"] for j in now}}, note)
+    return Response(cache.get(_run_key(run["id"])) or run, status=status.HTTP_202_ACCEPTED)
+
+
+RUN_KEEP = 86400   # how long a bulk filing's progress can be read
+
+
+def _run_key(run_id):
+    return f"staff.jobs.bulk.{run_id}"
+
+
+def _start(target, *args):
+    threading.Thread(target=target, args=args, daemon=True).start()
+
+
+def _file_all(user, run, coverage, note):
+    """File run's plan one job at a time, saving the progress after each;
+    stop at the first refusal and report the rest as not filed."""
+    try:
+        for i, job in enumerate(run["plan"]):
+            try:
+                issue = _file_issue(user, job["book"], job["languages"], coverage[job["book"]], note, bulk=True)
+            except GitHubError:
+                run["not_filed"] = run["plan"][i:]
+                run["error"] = (f"GitHub refused the job for {book_name(job['book'])}: "
+                                f"{len(run['filed'])} filed, {len(run['plan']) - i} not.")
+                break
+            run["filed"].append({**job, "number": issue["number"], "url": issue["html_url"]})
+            cache.set(_run_key(run["id"]), run, RUN_KEEP)
+    except Exception as e:   # noqa: BLE001 -- the page must hear that filing stopped
+        log.exception("Bulk filing %s stopped", run["id"])
+        run["not_filed"] = run["plan"][len(run["filed"]):]
+        run["error"] = f"Filing stopped: {e.__class__.__name__}. {len(run['filed'])} filed."
+    finally:
+        run["state"] = "stopped" if run["error"] else "done"
+        run["finished_at"] = timezone.now().isoformat()
+        cache.set(_run_key(run["id"]), run, RUN_KEEP)
+        if threading.current_thread() is not threading.main_thread():
+            connections.close_all()   # this thread's own database connection
+
+
+@admin_view("jobs")
+def bulk_run(request, run_id):
+    run = cache.get(_run_key(run_id))
+    if run is None:
+        raise NotFound("That bulk filing isn't known here any more; the open jobs above show what was filed.")
+    return Response(run)

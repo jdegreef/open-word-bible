@@ -219,18 +219,19 @@ def _ci_status():
     return status
 
 
-def _run_json(run):
-    return {"started_at": run.started_at, "finished_at": run.finished_at, "everything": run.everything,
-            "files": run.files, "records": run.records, "unchanged": run.unchanged,
-            "skipped": run.skipped, "error": run.error,
+def run_json(run):
+    """An import run as the admin shows it (Health, the dashboard, Changes)."""
+    return {"id": run.id, "started_at": run.started_at, "finished_at": run.finished_at,
+            "everything": run.everything, "files": run.files, "records": run.records,
+            "unchanged": run.unchanged, "skipped": run.skipped, "error": run.error,
             "ok": bool(run.finished_at) and not run.error}
 
 
 @admin_view("overview")
 def health(request):
-    from . import alerts   # alerts reads jobs, which reads this module
+    from . import alerts, speed   # alerts reads jobs, which reads this module
     return Response({
-        "imports": [_run_json(r) for r in ImportRun.objects.all()[:15]],
+        "imports": [run_json(r) for r in ImportRun.objects.all()[:15]],
         "content_files": ContentFile.objects.count(),
         "sentences": Sentence.objects.count(),
         "last_sentence_update": Sentence.objects.aggregate(t=Max("updated_at"))["t"],
@@ -240,6 +241,7 @@ def health(request):
                      for e in Edition.objects.order_by("kind", "code")],
         "ci": _ci_status(),
         "alerts": alerts.current(),
+        "speed": speed.slowest(), "speed_hours": speed.HOURS, "speed_slow": speed.SLOW,
     })
 
 
@@ -394,7 +396,7 @@ def overview(request):
         "languages": summary["languages"],
         "attention": attention,
         "activity": activity,
-        "last_import": _run_json(last) if last else None,
+        "last_import": run_json(last) if last else None,
     })
 
 

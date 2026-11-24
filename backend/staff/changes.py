@@ -19,6 +19,7 @@ from translation.models import ImportRun
 
 from .inbox import verse_label
 from .permissions import admin_view
+from .progress import run_json
 
 PAGE = 100
 RUNS = 20
@@ -29,9 +30,7 @@ def _run_json(run):
     for counts in run.drafted.values():
         for lang, n in counts.items():
             drafted[lang] = drafted.get(lang, 0) + n
-    return {"id": run.id, "started_at": run.started_at, "finished_at": run.finished_at,
-            "files": run.files, "records": run.records, "error": run.error,
-            "changed": run.n_changes, "drafted": drafted}
+    return {**run_json(run), "changed": run.n_changes, "drafted": drafted}
 
 
 @admin_view("overview")

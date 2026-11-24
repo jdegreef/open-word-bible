@@ -25,7 +25,7 @@ from django.utils import timezone
 from accounts.models import Role
 from accounts.system import people
 from feedback.models import ReaderMessage
-from staff import articles, fixes, jobs
+from staff import articles, fixes, github, jobs
 from staff.models import AdminAction, record
 from translation.models import ImportRun, Sentence
 
@@ -67,7 +67,7 @@ class Command(BaseCommand):
                                        ("Article jobs", articles.open_article_jobs, "articles")):
                 try:
                     found = fetch()
-                except jobs.GitHubError:
+                except github.GitHubError:
                     lines.append(f"{label}: GitHub could not be reached.")
                     continue
                 if found:

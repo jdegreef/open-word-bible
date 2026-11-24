@@ -22,6 +22,7 @@ from feedback.models import ReaderMessage
 from translation import search
 from translation.models import Decision, Sentence
 
+from . import consistency
 from .articles import check_translations
 from .inbox import verse_label
 from .permissions import admin_view
@@ -61,9 +62,8 @@ def _record(q):
 
 def _terms(q):
     key = search.fold(q)
-    terms = json.loads((settings.REPO_ROOT / "data" / "key_terms.json").read_text(encoding="utf-8"))["terms"]
     out = []
-    for t in terms:
+    for t in consistency.TERMS:   # read once, when consistency was imported
         english = t["english"] if isinstance(t["english"], list) else [w for ws in t["english"].values() for w in ws]
         names = [t["slug"], t["sense"], t["lemma"], t["strong"], *english]
         if any(key in search.fold(n) for n in names):

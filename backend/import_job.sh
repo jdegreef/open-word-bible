@@ -6,7 +6,8 @@
 #
 # Load any missing source texts, import the content/ files that changed and
 # update the search entries that changed, then email the super admins if the
-# import failed or left work (send_alerts). import_content stops starting
+# import failed or left work (send_alerts), and fill the admin's counts
+# (warm_admin). import_content stops starting
 # files after BUDGET, search languages after SEARCH_BUDGET and writes nothing
 # after the deadline; what is left waits for the next run, which starts
 # where this one stopped. The deadline stays under the hourly schedule.
@@ -29,4 +30,8 @@ python backend/manage.py import_content --if-texts-loaded --budget "$BUDGET" \
   --search-budget "$SEARCH_BUDGET" --deadline "$END" --separate-processes
 status=$?
 python backend/manage.py send_alerts
+# The admin's slow pages (coverage, key terms, consistency, the review
+# queues) opened once, so the first person in after an import doesn't wait
+# for every count; quick when nothing changed. Never fails the job.
+python backend/manage.py warm_admin --deadline "$END" || true
 exit $status

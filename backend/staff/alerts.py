@@ -35,7 +35,7 @@ from accounts.models import Role
 from feedback.models import ReaderMessage
 from translation.models import ImportRun
 
-from . import jobs, progress, work
+from . import github, progress, work
 from .models import AdminAction, record
 
 log = logging.getLogger(__name__)
@@ -92,7 +92,7 @@ def _stalled_problem():
         return False
     try:
         items = work.fetch_work()
-    except jobs.GitHubError:
+    except github.GitHubError:
         return False
     stalled = sorted((w for w in items if w["stale"]), key=lambda w: w["number"])
     if not stalled:

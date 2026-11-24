@@ -29,7 +29,7 @@ from feedback.models import ReaderMessage
 from owb import languages
 from translation.models import Sentence
 
-from . import jobs
+from . import github, jobs
 from .inbox import verse_label, verse_url
 from .models import record
 from .permissions import admin_view
@@ -40,7 +40,7 @@ LEVELS = {"L": "Literal", "B": "Balanced", "R": "Readable"}
 
 
 def open_fixes():
-    issues = jobs._github(f"issues?labels={LABEL}&state=open&per_page=100")
+    issues = github.call(f"issues?labels={LABEL}&state=open&per_page=100")
     out = []
     for i in issues:
         if "pull_request" in i:
@@ -58,7 +58,7 @@ def fixes(request):
     answer = {"configured": bool(settings.OWB_GITHUB_TOKEN), "repo": settings.OWB_GITHUB_REPO}
     try:
         answer["fixes"] = open_fixes()
-    except jobs.GitHubError:
+    except github.GitHubError:
         answer["fixes"], answer["error"] = [], "GitHub could not be reached, so open fix requests aren't listed."
     return Response(answer)
 
@@ -128,9 +128,9 @@ def _file(request):
                                                "levels": levels, "message": message.id if message else None})
               + " -->"]
     try:
-        issue = jobs._github("issues", "POST", {"title": f"Fix {label} ({name}): {change[:60]}",
+        issue = github.call("issues", "POST", {"title": f"Fix {label} ({name}): {change[:60]}",
                                                 "body": "\n".join(lines), "labels": [LABEL]})
-    except jobs.GitHubError:
+    except github.GitHubError:
         return Response({"detail": "GitHub refused the request. Check OWB_GITHUB_TOKEN can create issues.",
                          "code": "github"}, status=status.HTTP_503_SERVICE_UNAVAILABLE)
     record(request.user, "fix.request", f"#{issue['number']} {sentence.record_id}", verse=vid, language=lang,
@@ -164,9 +164,9 @@ def _file_links(request, sentence, vid, lang, level, links, reason):
               "<!-- fix-request " + json.dumps({"record": sentence.record_id, "verse": vid, "language": lang,
                                                "levels": [level], "kind": "links", "message": None}) + " -->"]
     try:
-        issue = jobs._github("issues", "POST", {"title": f"Word links {label} ({name}, {LEVELS[level]})",
+        issue = github.call("issues", "POST", {"title": f"Word links {label} ({name}, {LEVELS[level]})",
                                                 "body": "\n".join(lines), "labels": [LABEL]})
-    except jobs.GitHubError:
+    except github.GitHubError:
         return Response({"detail": "GitHub refused the request. Check OWB_GITHUB_TOKEN can create issues.",
                          "code": "github"}, status=status.HTTP_503_SERVICE_UNAVAILABLE)
     record(request.user, "fix.request", f"#{issue['number']} {sentence.record_id}", verse=vid, language=lang,

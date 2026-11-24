@@ -24,7 +24,7 @@ from rest_framework.response import Response
 
 from owb import languages
 
-from . import jobs
+from . import github, jobs
 from .models import record
 from .permissions import admin_view
 
@@ -60,7 +60,7 @@ def _articles(root=None):
 
 
 def open_article_jobs():
-    issues = jobs._github(f"issues?labels={LABEL}&state=open&per_page=100")
+    issues = github.call(f"issues?labels={LABEL}&state=open&per_page=100")
     out = []
     for i in issues:
         if "pull_request" in i:
@@ -84,7 +84,7 @@ def articles(request):
     if answer["can_file"]:
         try:
             answer["jobs"] = open_article_jobs()
-        except jobs.GitHubError:
+        except github.GitHubError:
             answer["jobs"], answer["error"] = [], "GitHub could not be reached, so open article jobs aren't listed."
     return Response(answer)
 
@@ -106,7 +106,7 @@ def _file(request):
                                "code": "nothing_to_do"})
     try:
         taken = {s for j in open_article_jobs() if j.get("language") == lang for s in j.get("slugs", [])}
-    except jobs.GitHubError:
+    except github.GitHubError:
         return Response({"detail": "GitHub could not be reached. Try again in a minute.", "code": "github"},
                         status=status.HTTP_503_SERVICE_UNAVAILABLE)
     clash = sorted(set(slugs) & taken)
@@ -127,8 +127,8 @@ def _file(request):
     title = f"Articles in {name}: {len(slugs)} to translate or update" if len(slugs) > 1 else \
         f"Article in {name}: {titles[slugs[0]]}"
     try:
-        issue = jobs._github("issues", "POST", {"title": title, "body": "\n".join(lines), "labels": [LABEL]})
-    except jobs.GitHubError:
+        issue = github.call("issues", "POST", {"title": title, "body": "\n".join(lines), "labels": [LABEL]})
+    except github.GitHubError:
         return Response({"detail": "GitHub refused the job. Check OWB_GITHUB_TOKEN can create issues.",
                          "code": "github"}, status=status.HTTP_503_SERVICE_UNAVAILABLE)
     record(request.user, "article.job", f"#{issue['number']} {lang}", language=lang, slugs=slugs)

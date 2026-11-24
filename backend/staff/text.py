@@ -77,7 +77,10 @@ def decisions(request):
 
 @admin_view("overview")
 def terms(request):
-    cached = cache.get("staff.terms")
+    # Kept until the content or the key terms change (warm_admin fills it
+    # after a deploy).
+    key = f"staff.terms.{consistency.TERMS_DIGEST}.{consistency._stamp()}"
+    cached = cache.get(key)
     if cached is None:
         # The sentences come from consistency's lookup: two queries for every
         # term, in Bible order. The languages each is drafted in, one more.
@@ -96,6 +99,6 @@ def terms(request):
                            "by_language": by_lang,
                            "first": [{"verse": r["refs"][0], "label": verse_label(r["refs"][0])}
                                      for r in rows[:8] if r["refs"]]})
-        cache.set("staff.terms", cached, 600)
+        cache.set(key, cached, 7 * 86400)
     return Response({"terms": cached,
                      "languages": [{"code": c, "name": lang["name"]} for c, lang in languages.READING.items()]})
