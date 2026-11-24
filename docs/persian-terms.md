@@ -1258,3 +1258,27 @@ For reviewers:
   should Literal follow Balanced?
 - 5:7 «باران‌های اول و آخر» (Literal): clear to Iranian readers, whose rains
   fall in the same seasons?
+
+### 1 Peter
+
+- Place names follow Acts 2:9 (پونتوس, غلاطیه, کاپادوکیه, آسیا, بیطینیا);
+  سیلوانس as 2 Corinthians 1:19; مرقس; بابل.
+- Parepidēmoi / paroikoi (1:1, 2:11): غریبان. Peirasmoi (1:6): آزمایش‌ها.
+- Philadelphia (1:22, 3:8): {{gender:برادران و خواهران|برادران}};
+  adelphotēs (2:17, 5:9): {{gender:جماعت برادران و خواهران|برادری}} or
+  {{gender:خانوادهٔ برادران و خواهران|جماعت برادران}} at Literal.
+- Oiketai (2:18): بردگان خانه at every level; theou douloi (2:16): بردگان خدا.
+- Xylon (2:24): دار (Literal) / صلیب. Episkopos (2:25): ناظر (Literal),
+  as in 1 Timothy 3. Presbyteroi (5:1, 5:5): مشایخ / رهبران کلیسا (Readable).
+- Quotations reuse earlier Persian: Isaiah 28:16 and 8:14 as Romans 9:33,
+  Psalm 118:22 as Matthew 21:42, Proverbs 3:34 (5:5) as James 4:6.
+- مسیحی (4:16) as Acts 11:26. Kyrios said of Abraham (3:6): سرور.
+
+For reviewers:
+
+- 2:24 «دار» at Literal for the tree: clear, or does it read only as a
+  gallows?
+- 3:6 Sarah calling Abraham «سرورم»: natural, or would «آقای من» be more
+  usual?
+- 5:13 «آن [زن] که در بابل است» (Literal), «آن که در بابل است» (Balanced),
+  «کلیسا» only at Readable: should Balanced name the church?
