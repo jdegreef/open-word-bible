@@ -47,6 +47,8 @@ from django.conf import settings
 from django.db import connection, transaction
 from django.utils import timezone
 
+from owb import refs
+
 from translation.models import SearchEntry, SearchLanguage, SearchWord
 
 # The document kinds, by the names the API uses and the site's one-letter codes.
@@ -67,6 +69,11 @@ CJK_RUN = re.compile("[\u3005-\u3007\u3041-\u3096\u309d\u309e\u30a1-\u30fa\u30fc
 # The shortest query searched: two characters, or one kanji or kana (a word
 # in Japanese, where one Latin letter is not).
 MIN_QUERY = 2
+# The entries every site language shares (build_site.shared_search_documents:
+# the notes that read the same on every language's pages), kept once under
+# this code rather than once for each language. A search in lang matches
+# lang's entries and these; their addresses are given in lang (_result).
+SHARED = "*"
 SPAN = re.compile(r"\{\{([a-z_]+):([^{}]*)\}\}")
 VERSE_MARK = re.compile(r"\\v \d+ ?")
 # Between fields and alternatives, so a phrase never runs from one into the next.
@@ -144,6 +151,18 @@ def fold(text):
 
 
 # ---- Building the tables ----------------------------------------------------
+
+def documents(site, lang):
+    """The documents lang's entries are made from: lang's own, without the
+    shared notes; or for SHARED, those notes."""
+    return site.shared_search_documents() if lang == SHARED else site.search_documents(lang, shared_notes=False)
+
+
+def build_language(lang):
+    """The language site_build keeps the renderings of, for lang's entries:
+    the shared notes need none, so English, the smallest set."""
+    return "en" if lang == SHARED else lang
+
 
 def site_build(lang=None):
     """scripts/build_site.py, with its caches cleared, so it reads content/ afresh,
@@ -354,19 +373,20 @@ def rebuild(full=False, until=None, separate=False, stop=None):
     next. Returns {language: Change} for the languages it worked on; a
     Change with left > 0 was stopped part way."""
     site = site_build()
+    codes = (*site.LANGUAGES, SHARED)
     with transaction.atomic():
-        SearchLanguage.objects.exclude(code__in=site.LANGUAGES).delete()
-        SearchEntry.objects.exclude(language__in=site.LANGUAGES).delete()
-        SearchWord.objects.exclude(language__in=site.LANGUAGES).delete()
+        SearchLanguage.objects.exclude(code__in=codes).delete()
+        SearchEntry.objects.exclude(language__in=codes).delete()
+        SearchWord.objects.exclude(language__in=codes).delete()
     if stop is not None:
         until = stop if until is None else min(until, stop)
     changes = {}
     try:
-        for lang in order(site.LANGUAGES):
+        for lang in order(codes):
             if until is not None and time.time() > until:
                 break
             changes[lang] = (_rebuild_separately(lang, full, stop) if separate
-                             else _rebuild_language(site_build(lang), lang, full, stop))
+                             else _rebuild_language(site_build(build_language(lang)), lang, full, stop))
         return changes
     finally:
         # Records that hold one language's renderings must not outlive the
@@ -396,14 +416,15 @@ def _rebuild_language(site, lang, full, stop=None, out=None):
     out (a function taking a line), says how long each step took: the
     deploy log once showed nothing for 25 minutes before Render stopped it."""
     began = time.time()
-    data = site.search_documents(lang)
+    data = documents(site, lang)
     # The documents are all that's needed now: the records go (every cache
     # cleared), so the memory they held serves the work below.
     site_build(site.SEARCH_LANG)
     docs = [(doc, config(doc.get("l", lang))) for doc in data["docs"]]
     entries, words = _table(), SearchWord._meta.db_table
     with transaction.atomic(), connection.cursor() as cursor:
-        SearchLanguage.objects.update_or_create(code=lang, defaults=dict(books=data["books"], pages=data["pages"]))
+        SearchLanguage.objects.update_or_create(code=lang, defaults=dict(books=data.get("books", []),
+                                                                        pages=data.get("pages", [])))
         # A full rebuild, or the first, matches nothing, so needs no keys.
         cursor.execute(f"SELECT id, position, sub, {'NULL' if full else KEY_SQL} FROM {entries} "
                        "WHERE language = %s ORDER BY position, sub", [lang])
@@ -601,11 +622,18 @@ def _headline(query, e="e"):
             "MaxFragments=1, FragmentDelimiter=\" … \"') END")
 
 
-def _result(doc, headline):
+def _result(doc, headline, lang, entry_lang):
     # Django has psycopg return jsonb as text, for JSONField to parse; raw
     # queries parse it themselves.
     if isinstance(doc, str):
         doc = json.loads(doc)
+    if entry_lang == SHARED:
+        # A shared note holds its English page's address; the reader is
+        # sent to the page in their own language, which says it in English
+        # as search_documents(lang) did ("l" only when it isn't lang).
+        doc = {**doc, "u": doc["u"] if lang == "en" else f"/{lang}{doc['u']}"}
+        if doc.get("l") == lang:
+            del doc["l"]
     # An article's whole text ("x", kilobytes each) stays out of answers:
     # the headline shows the part that matched.
     if doc["k"] == "a":
@@ -615,10 +643,14 @@ def _result(doc, headline):
     return doc
 
 
+# Which entries a search in lang reads: its own and the shared ones.
+LANGUAGE_MATCH = "e.language IN (%s, '" + SHARED + "')"
+
+
 def counts(lang, query):
     rows = _rows(f"""WITH q AS ({query.sql})
         SELECT e.kind, count(*) FROM {_table()} e, q
-        WHERE e.language = %s AND {query.match} GROUP BY e.kind""", [*query.params, lang])
+        WHERE {LANGUAGE_MATCH} AND {query.match} GROUP BY e.kind""", [*query.params, lang])
     return {NAMES[kind]: n for kind, n in rows}
 
 
@@ -627,22 +659,31 @@ def best_of_each(lang, query, per):
     # One pass over the matches, with no join back to the table: a join
     # lets the planner rank every match again for each row it joins.
     rows = _rows(f"""WITH q AS ({query.sql})
-        SELECT h.doc, {_headline(query, "h")} FROM (
-          SELECT e.doc, e.kind, e.config, e.body, row_number() OVER (
+        SELECT h.doc, {_headline(query, "h")}, h.language FROM (
+          SELECT e.doc, e.kind, e.config, e.body, e.language, row_number() OVER (
             PARTITION BY e.kind ORDER BY ts_rank_cd(e.vector, {query.own()}) DESC, e.position, e.sub) AS n
-          FROM {_table()} e, q WHERE e.language = %s AND {query.match}) h, q
+          FROM {_table()} e, q WHERE {LANGUAGE_MATCH} AND {query.match}) h, q
         WHERE h.n <= %s ORDER BY h.kind = 'c' DESC, h.kind = 'v' DESC, h.kind = 'n' DESC, h.n""",
                  [*query.params, lang, per])
-    return [_result(doc, hl) for doc, hl in rows]
+    return [_result(doc, hl, lang, entry_lang) for doc, hl, entry_lang in rows]
+
+
+# Notes in Bible order, where a language's own and the shared ones are
+# mixed and their positions count separately: by book, chapter and verse,
+# then each list's own order. Other kinds are all a language's own, in
+# position order.
+NOTE_ORDER = ("array_position(ARRAY[" + ", ".join(f"'{b}'" for b in refs.BOOK_CODES) + "], e.doc->>'bk'), "
+              "(e.doc->>'c')::int, (e.doc->>'v')::int, e.language = '" + SHARED + "', e.position, e.sub")
 
 
 def page(lang, query, kind, offset, limit, sort):
-    order = "e.position, e.sub" if sort == "order" else f"ts_rank_cd(e.vector, {query.own()}) DESC, e.position, e.sub"
+    bible = NOTE_ORDER if kind == "note" else "e.position, e.sub"
+    order = bible if sort == "order" else f"ts_rank_cd(e.vector, {query.own()}) DESC, e.position, e.sub"
     rows = _rows(f"""WITH q AS ({query.sql})
-        SELECT e.doc, {_headline(query)} FROM {_table()} e, q
-        WHERE e.language = %s AND e.kind = %s AND {query.match}
+        SELECT e.doc, {_headline(query)}, e.language FROM {_table()} e, q
+        WHERE {LANGUAGE_MATCH} AND e.kind = %s AND {query.match}
         ORDER BY {order} LIMIT %s OFFSET %s""", [*query.params, lang, KINDS[kind], limit, offset])
-    return [_result(doc, hl) for doc, hl in rows]
+    return [_result(doc, hl, lang, entry_lang) for doc, hl, entry_lang in rows]
 
 
 # ---- References ("John 3:16") -------------------------------------------
@@ -707,7 +748,7 @@ def suggest(lang, query_terms):
             words.append(text)
             continue
         found = _rows(f"""SELECT word FROM {SearchWord._meta.db_table}
-            WHERE language = %s AND word %% %s AND word <> %s
+            WHERE language IN (%s, '{SHARED}') AND word %% %s AND word <> %s
             ORDER BY similarity(word, %s) DESC, count DESC LIMIT 1""", [lang, text, text, text])
         if found:
             words.append(found[0][0])

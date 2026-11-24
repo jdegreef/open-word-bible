@@ -2671,3 +2671,659 @@ Ruth keeps the forms of Genesis to Judges for every name and term above (士师 
 | Perez, Hezron, Ram, Amminadab, Nahshon, Salmon, Boaz, Obed, Jesse, David (4:18-22) | 法勒斯, 希斯仑, 兰, 亚米拿达, 拿顺, 撒门, 波阿斯, 俄备得, 耶西, 大卫 (Matthew 1:3-6); Salmah (4:20) 撒玛 at L only (uncertain), 撒门 at B and R; Rachel, Leah 拉结, 利亚; Tamar, Judah 他玛, 犹大 |
 
 Address: Naomi and her daughters-in-law say 你 to each other at every level (uncertain: 您 from the daughters-in-law is possible at B and R); Boaz says 你 and 女儿 to Ruth; Ruth says 您 to Boaz at B and R, with 我主 (L), 大人 (B), 先生 (R) for "my lord"; the harvesters say 您 to Boaz at B and R.
+
+### 1 Samuel
+
+1 Samuel keeps the glossary's forms for every name and term above, and the
+forms of Joshua, Judges and Ruth for places, refrains and oaths ("judged
+Israel" 4:18; 7:6, 15 as Judges; "as the LORD lives" as Ruth 3:13 and Judges
+8:19; the self-curse as Ruth 1:17; "the Spirit rushed upon" as Judges 14:6).
+The women's song of 18:7 is quoted at 21:12 (English 21:11) and 29:5 in the
+same words at each level. Hannah's song (2:1-10) and the familiar lines of
+7:12, 8:7, 12:3, 12:23, 15:22, 16:7 and 17:45-47 are drafted fresh, with any
+clause that came close to the Union Version reworded. 13:14 keeps the wording
+of Acts 13:22 for "a man according to his heart" at each level, turned to the
+third person (*dn* = `{{divine_name:上主|雅威}}`, *gt* = `{{god_term:神|上帝}}`,
+*he* = `{{deity_pronoun:他|祂}}`):
+
+| English | Literal | Balanced | Readable |
+|---|---|---|---|
+| Saul has struck down his thousands, and David his ten thousands (18:7; 21:12; 29:5) | 扫罗击杀了他的数千[人]， \q 大卫击杀了他的数万[人] | 扫罗击杀成千， \q 大卫击杀上万 | 扫罗杀了几千人， \q 大卫杀了几万人 |
+| the LORD's anointed (12:3, 5; 24:7, 11; 26:9-23) | *dn*所膏立的 | *dn*所膏立的 | *dn*所立的王 |
+| as the LORD lives (14:39, 45; 19:6; 20:3, 21; 25:26; 26:10, 16; 28:10; 29:6) | [我指着]永活的*dn*[起誓] | 我指着永活的*dn*起誓 | 我指着永活的*dn*发誓 |
+| God do so to me, and more (3:17; 14:44; 20:13; 25:22) | 愿*gt*这样对待[我]，并且加倍对待[我] | 愿*gt*严厉地惩罚我，而且罚得更重 | 愿*gt*严厉地惩罚我 |
+| a man according to his heart (13:14) | 一个按着*he*心的人 | 一个和*he*心意相通的人 | 这人想要的，正是*he*想要的 (Acts 13:22) |
+| judged Israel (4:18; 7:6, 15; 8:1) | 作以色列的士师 | 作以色列的士师 | 领导以色列; deciding cases (7:16-17) 审判 / 审理案件 / 断案 |
+| the Spirit of the LORD / of God rushed upon (10:6, 10; 11:6; 16:13) | *dn* / *gt*的灵猛然降在……身上 (every level) | | |
+| Is Saul also among the prophets? (10:11-12; 19:24) | 扫罗也在众先知当中吗？ | 扫罗也是先知中的一员吗？ | 扫罗也成了先知吗？ |
+
+Terms settled in 1 Samuel:
+
+| English | Chinese |
+|---|---|
+| the ark | 柜 / *gt*的柜 / *dn*的柜 (L) where the Hebrew does not say "covenant", 约柜 where it does (4:3-5); 约柜 (B, R), as Joshua. The bare "the ark" (6:13; 7:2) 那柜 (L) |
+| ruler (*nagid*; 9:16; 10:1; 13:14; 25:30) | 君 (L, B), kept apart from 王; 领袖 (R), as 2 Samuel 6:21; 7:8 |
+| evil spirit (16:14-23; 18:10; 19:9) | 恶灵 (as Judges 9:23), with the Hebrew's verb: 使……惊恐 (L) / 折磨 (B); 猛然降在 (18:10, L, B); 临到 (19:9). "From God" 从*gt*那里来的 (B, R), *gt*[差来]的 (L) |
+| prophesy (10:5-13; 18:10; 19:20-24) | 说预言 at every level (18:10 B, R: raving, as the English level) |
+| seer; prophet; the man of God (9) | 先见; 先知; *gt*的人 |
+| lyre (*kinnor*); harp (*nebel*) | 琴 at every level (竖琴 is not used: it names a harp); 瑟 (10:5) |
+| mediums and spirits (28:3, 9) | 招魂的人和交鬼的人 (L, B), as Leviticus 19:31 and Deuteronomy 18:11; 说自己能跟死人或鬼魂说话的人 (R). The woman of Endor: 能操纵亡灵的妇人 (L), 招魂的妇人 (B), 能召唤死人灵魂的女人 (R) |
+| teraphim (15:23; 19:13, 16) | 家中的神像 (L, B); 家中的小神像 (R, 15:23) |
+| devote to destruction (herem; 15) | 彻底毁灭 (L, B); 完全毁灭，当作献给*dn*的 (R); the devoted things 当彻底毁灭的东西 |
+| the bread of the Presence (21:7) | 陈设饼 (L, B); 摆在*gt*面前的特别的饼 (R), as Matthew 12:4, Mark 2:26 |
+| weaver's beam (17:7) | 织工的横梁 (L); 织布机上的横梁 (B, R), as 2 Samuel 21:19 |
+| stronghold (22:4-5; 23:14-29; 24:1, 22) | 堡垒 |
+| shofar (13:3) | 羊角号 |
+| commanders of thousands / hundreds / fifties (8:12; 17:18; 18:13; 22:7) | 千人的首领 (L); 千人的官长 (B); R explains (统领一千名士兵的军官). 千夫长 and 百夫长 are kept for the Roman officers of the New Testament |
+| your thousands (clans; 10:19; 23:23) | 千人[宗族] (L); 宗族 (B, R) |
+| the lords of the Philistines (*seranim*) | 首领 (五个首领), as Judges |
+| fell on his face | 脸伏于地 (L); 俯伏在地 (B); 跪下，脸贴着地 (R) |
+| Fear not | 不要怕 (L, B); 不要害怕 (R) |
+| uncle (*dod*; 10:14-16; 14:50) | 叔叔 at every level (the Hebrew does not say older or younger) |
+| Ebenezer (4:1; 5:1; 7:12) | 以便以谢; R adds its meaning “帮助之石” at 7:12 |
+| Ichabod (4:21; 14:3) | 以迦博; the cry 荣耀从以色列被掳去了 (L, B), 以色列的荣耀被掳走了 (R) |
+| the capital "He" for God where the English Readable has no span (12:6, 11; 24:16; 25:32; 28:6, 18; 30:23) | *he*, not a repeated divine name, so the divine_name spans match the English |
+
+Address: Saul says 您 to Samuel at B and R (9:21; 13:11; 15; 28:15) and
+Samuel says 你 to Saul at every level (15:1); Saul's servant says 您 to him
+(9:6-8), as the armor-bearer and soldiers to Jonathan (14:7, 28); subjects
+say 您 and 陛下 to the king at B and R (14:36; 16:15-16; 17:32-58; 19:4;
+22:12-15; 23:20; 24:9-16; 26:17-24), with 我主我王 (L, B) for "my lord the
+king"; David, the commanders and the people of Jabesh say 您 to a foreign
+king (11:1; 22:3; 27-29); Abigail says 您 to David at B and R, with 我主 (L)
+and 大人 (B, R) for "my lord" (25:24-31, 41), and David says 你 to her;
+Hannah says 您 to Eli with 我主 (L), 大人 (B), 先生 (R); Samuel says 您 to
+Eli (3:5-8), the people and elders to Samuel (7:8; 8:5; 12:4; 16:4); the
+woman of Endor says 你 to the stranger and 您 to Saul once she knows him
+(28:21-22). Ahimelech and David say 你 to each other (21:2-10), one man of
+standing to another; Saul's officials say 你 to David, speaking for the king
+(18:22). Jonathan and David say 你 to each other.
+
+Names not in the tables above, as the text has them:
+
+| English (first verse) | Chinese |
+|---|---|
+| Ramathaim-zophim; Elkanah, Jeroham, Elihu, Tohu, Zuph (1:1) | 拉玛琐非; 以利加拿, 耶罗罕, 以利户, 托户, 苏弗 |
+| Hannah; Peninnah (1:2) | 哈拿; 毗尼拿 |
+| Eli; Hophni, Phinehas (1:3) | 以利; 何弗尼, 非尼哈 |
+| Ramah (1:19) | 拉玛, as Joshua 18:25 |
+| Ebenezer; Aphek (4:1) | 以便以谢; 亚弗, as Joshua 12:18 |
+| Ichabod (4:21) | 以迦博 |
+| Ashdod, Gath, Ekron; Dagon (5) | 亚实突, 迦特, 以革伦; 大衮 |
+| Abinadab; Eleazar (7:1); Abinadab son of Jesse (16:8), son of Saul (31:2) | 亚比拿达; 以利亚撒 |
+| Beth-car; Shen (7:11-12) | 伯甲; 善 |
+| Joel, Abijah (8:2) | 约珥, 亚比亚 |
+| Kish, Abiel, Zeror, Becorath, Aphiah (9:1) | 基士 (as Acts 13:21), 亚别, 洗罗, 比歌拉, 亚斐亚 |
+| Shalishah, Shaalim (9:4) | 沙利沙, 沙琳 |
+| Rachel's tomb; Zelzah (10:2) | 拉结的坟墓; 泄撒 |
+| Matri (10:21) | 玛特利 |
+| Nahash; Jabesh-gilead (11:1) | 拿辖; 基列雅比 |
+| Bedan (12:11) | 比但 |
+| Michmash; Geba (13:2-3) | 密抹; 迦巴 |
+| Ophrah, Shual; the Valley of Zeboim (13:17-18) | 俄弗拉, 书亚; 洗波音谷 |
+| Migron; Ahijah, Ahitub (14:2-3) | 米矶仑; 亚希亚, 亚希突 |
+| Bozez, Seneh (14:4) | 播薛, 西尼 |
+| Zobah (14:47) | 琐巴 |
+| Ishvi, Malchishua; Merab, Michal (14:49) | 亦施韦, 麦基舒亚; 米拉, 米甲 |
+| Ahinoam, Ahimaaz; Abner, Ner (14:50) | 亚希暖, 亚希玛斯; 押尼珥, 尼珥 |
+| Telaim; Agag; Havilah, Shur (15:4-8) | 提拉因; 亚甲; 哈腓拉, 书珥 |
+| Jesse; Eliab, Shammah (16:1-9) | 耶西; 以利押 (as Deuteronomy 11:6), 沙玛 (as Genesis 36:13) |
+| Socoh, Azekah, Ephes-dammim; the Valley of Elah; Goliath (17:1-4) | 梭哥, 亚西加, 以弗大悯; 以拉谷; 歌利亚 |
+| Adriel the Meholathite (18:19) | 亚得列, 米何拉人 |
+| Naioth; Secu (19:18-22) | 拿约 (拉玛的拿约); 西沽 |
+| the stone Ezel (20:19) | 以色石 |
+| Nob; Ahimelech; Doeg the Edomite; Achish (21:1-11) | 挪伯; 亚希米勒 (also the Hittite of 26:6); 多益, 以东人; 亚吉 |
+| Adullam; Mizpeh of Moab; Gad; the forest of Hereth (22:1-5) | 亚杜兰; 米斯巴; 先知迦得; 哈列的树林 |
+| Abiathar (22:20) | 亚比亚他 |
+| Keilah; Ziph; Horesh; Hachilah; Jeshimon; Maon (23) | 基伊拉; 西弗; 何列斯; 哈基拉山; 耶示门 (as Numbers 21:20); 玛云 |
+| Sela-hammahlekoth (23:28) | 西拉哈玛希罗结; R adds ‘分离的磐石’ |
+| En-gedi (24:1) | 隐基底 |
+| Nabal; Abigail; Carmel; the Calebites (25:2-3) | 拿八; 亚比该; 迦密; 迦勒族的人 (L) |
+| Palti son of Laish; Gallim (25:44) | 帕提, 拉亿; 迦琳. 2 Samuel 3:15 has the longer Paltiel, 帕铁 |
+| Abishai, Zeruiah, Joab (26:6) | 亚比筛, 洗鲁雅, 约押 |
+| Maoch; Ziklag (27:2-6) | 玛俄; 洗革拉 |
+| Geshurites, Girzites; the Jerahmeelites, the Kenites; the Negeb (27:8-10) | 基述人, 基色人; 耶拉篾人, 基尼人; 内盖夫 (L, B) |
+| Shunem; Gilboa; Endor (28:4-7) | 书念 (as Joshua 19:18); 基利波 (R 基利波山); 隐多珥 |
+| Jezreel (29:1) | 耶斯列 |
+| the brook Besor (30:9) | 比梭溪 (L, B); 比梭谷 (R) |
+| Aroer, Siphmoth, Eshtemoa; Racal; Hormah, Bor-ashan, Athach (30:28-30) | 亚罗珥, 实末, 以实提莫; 拉哈勒; 何珥玛, 波亚珊, 亚挞 |
+| Beth-shan (31:10, 12) | 伯珊, in 1 and 2 Samuel (2 Samuel 21:12), kept apart from Judges 1:27's Beth-shean 伯善 as the Hebrew spells them |
+
+### 2 Samuel
+
+2 Samuel keeps the forms of Genesis to Ruth and the glossary's tables for every
+name and term above, and 1 Samuel's forms for the people and places the two
+books share (Saul's house, David's wives, Abner, Abiathar, Ahimelech, Ahitub,
+Gath, Ziklag, Jabesh-gilead, Gilboa, Beth-shan). Chapter 22 is drafted to be
+copied into Psalm 18 wherever the Hebrew is the same (22:50 keeps Romans
+15:9's wording); 7:14 keeps Hebrews 1:5's. The lament of 1:19-27, the dirge of
+3:33-34, the song of 22 and the last words of 23:1-7 keep the English lines at
+each level. David's cry for Absalom (19:1, 5) and the song of 22 are drafted
+afresh, and every clause that came out in the Union Version's words was
+redrafted. One wording per level for the book's formulas (*dn* =
+`{{divine_name:上主|雅威}}`, *gt* = `{{god_term:神|上帝}}`):
+
+| English | Literal | Balanced | Readable |
+|---|---|---|---|
+| How the mighty have fallen! (1:19, 25, 27) | 勇士们怎么竟倒下了 | 勇士们竟然倒下了 | 勇敢的战士们竟然倒下了 |
+| as the LORD lives (2:27; 4:9; 12:5; 14:11; 15:21) | [我指着]永活的*dn*[起誓] | 我指着永活的*dn*起誓 | 我指着永活的*dn*发誓 (as Judges 8:19, Ruth 3:13) |
+| Thus may God do to me, and more (3:9, 35; 19:14) | 愿*gt*这样对待我，并且愿{{deity_pronoun:他\|祂}}加倍对待我 | 愿*gt*严厉地惩罚我，而且罚得更重 | 愿*gt*严厉地惩罚我 (as Ruth 1:17) |
+| God was entreated for the land (21:14; 24:25) | 就为这地应允了祈求 | 应允了人们为这地所献的祷告 | 应允了人们为这地所作的祷告 |
+| My son Absalom! (19:1, 5) | 我的儿子押沙龙！我的儿子，我的儿子押沙龙！ (every level; not the Union Version's 我儿……啊) | | |
+
+Terms settled in 2 Samuel:
+
+| English | Chinese |
+|---|---|
+| nagid (ruler, leader; 5:2; 6:21; 7:8) | 君 (L, B), kept apart from 王; 领袖 (R). 1 Samuel (9:16; 10:1; 13:14; 25:30) has 领袖 at every level, for a reviewer to bring into line |
+| the king's servants as soldiers (2:12-31; 11:11-24; 18:7-9; 19:6-8; 21:22) | 臣仆 (L); 部下 (B); 士兵 (R). The king's servants as courtiers: 臣仆 (L); 臣子 (B); 官员 (R) |
+| "David's men" (anashim) | 部下 / 人, as the sentence needs |
+| the people as an army | 百姓 (L); 军队 / 全军 / 军兵 (B); 士兵 / 军队 (R) |
+| commander of the army (2:8; 10:16; 17:25; 19:14; 24:2) | 军队统帅; "over the army" (8:16; 20:23) 统领军队 / 统领以色列全军 (L) |
+| commanders of thousands and of hundreds (18:1) | 千夫长和百夫长 (L, B); R explains |
+| recorder (8:16; 20:24) | 史官 (every level; R adds 负责记录王室的大事) |
+| secretary (8:17; 20:25) | 书记 (L, B); 王室书记 (R) |
+| Cherethites and Pelethites | 基利提人和比利提人 |
+| Ziba's title (naʿar; 9:9; 16:1; 19:18) | 侍从 at every level, kept apart from his own 奴隶 (L) / 仆人 (B, R) |
+| the ark of God / of the LORD (6; 7:2; 11:11; 15:24-29) | *gt*的柜 / *dn*的柜 / 柜 (L); *gt*的约柜 / *dn*的约柜 / 约柜 (B, R); 约柜 at L only where the Hebrew says covenant (15:24) |
+| the LORD of hosts | 万军之*dn* (L, B); 统领万军的*dn* (R) |
+| hesed between people (2:5; 3:8; 9:1, 7; 10:2; 16:17) | 慈爱 (L); 恩情 / 恩待 / 善待 (B, R). God's hesed (2:6; 7:15; 22:51) 慈爱 (L, B), 始终不变的爱 (R) |
+| stronghold (metsudah; 5:7, 9, 17; 22:2; 23:14) | 堡垒 at every level (23:14 R explains a hiding place in the hills) |
+| shofar (2:28; 6:15; 15:10; 18:16; 20:1, 22) | 羊角号 at every level |
+| hill (Gibeah, the hill of Ammah; the heights of 1:19, 25) | 山冈 (one form; 高冈 at B in 1:19, 25) |
+| lyres and harps (6:5) | 琴 (kinnor), 瑟 (nevel), as 1 Samuel 10:5; tambourines 手鼓; cymbals 钹 |
+| weaver's beam (21:19) | 织布工的机梁 (L); 织布机的横梁一样粗 (B); 织布机上那根又粗又重的横梁 (R), as 1 Samuel 17:7 |
+| the Rapha (21:16-22) | 拉法 (L, B; L follows the Hebrew: 拉法的后代 / 拉法所生的); 称为拉法的巨人的后代 (R) |
+| the Three; the Thirty (23) | 那三个勇士; 那三十个勇士 |
+| siblings | 兄弟 / 姐妹 where nothing shows who was older (Abishai and Joab; Abigail and Zeruiah); 哥哥 for David's brother Shimeah (David the youngest); Amnon the firstborn is Tamar's and Absalom's 哥哥; Asahel is Joab's 弟弟 at B and R (2:22, uncertain); Tamar is Absalom's 妹妹 (a guess, 13:1) |
+| silver by weight (14:26; 18:11-12; 21:16; 24:24) | units spans at B and R at 11.5 grams the shekel, only the measure in the span: `{{units:约575克\|五十舍客勒}}银子`; a talent `约34公斤` |
+| concubine | 妾; R explains it once per chapter: 妾（地位较低的妻子） |
+| address | 您 to the king at B and R from Joab, Abner's messengers, the woman of Tekoa, Ziba, Mephibosheth, Hushai (to David and to Absalom), Ittai, Barzillai, the Cushite, Ahimaaz and Araunah; 王啊 / 我主我王 (L, B), 陛下 (R); Shimei says 你 to David in his curse (16:7-8, contempt) and 您 when he begs pardon (19:20-21); Nathan says 你 in his rebuke (12:7) and 您 in 7:3; the wise woman of Abel says 您 to Joab (20:17-19); Abner and Ish-bosheth say 你 to each other (3:7-11) |
+
+Names not in the tables above, as the text has them:
+
+| English (first verse) | Chinese |
+|---|---|
+| Ish-bosheth (2:8); Jerubbesheth (11:21) | 伊施波设; 耶路比设 (Gideon's name with *boshet*, apart from 耶路巴力) |
+| Ahinoam the Jezreelite; Abigail the Carmelite (2:2) | 亚希暖, 耶斯列人; 亚比该, 迦密人 (as 1 Samuel) |
+| the Ashurites (2:9) | 亚书利 (L), 亚书利人 (B, R) |
+| Zeruiah; Joab, Abishai, Asahel (2:13, 18) | 洗鲁雅; 约押, 亚比筛, 亚撒黑 |
+| Helkath-hazzurim (2:16) | 希利甲哈素林 (R explains: 利刃之田) |
+| the hill of Ammah; Giah (2:24) | 亚玛山冈; 基亚 |
+| Bithron (2:29) | 毕伦 |
+| Chileab; Maacah; Talmai; Geshur (3:3) | 基利押; 玛迦; 挞买 (as Numbers 13:22 and 13:37 below; not 达买); 基述 |
+| Haggith, Adonijah; Abital, Shephatiah; Eglah, Ithream (3:4-5) | 哈及, 亚多尼雅; 亚比他, 示法提雅; 以格拉, 以特念 |
+| Rizpah daughter of Aiah (3:7; 21:8-11) | 利斯巴; 亚雅 (as Genesis 36:24; not 爱雅) |
+| Paltiel son of Laish (3:15) | 帕铁 (as Numbers 34:26), the Palti 帕提 of 1 Samuel 25:44; 拉亿 |
+| Bahurim (3:16) | 巴户琳 |
+| the cistern of Sirah (3:26) | 西拉井 |
+| Baanah, Rechab, Rimmon the Beerothite; Gittaim (4:2-3) | 巴拿, 利甲, 临门, 比录人; 基他音 |
+| Mephibosheth (4:4); Mica (9:12) | 米非波设; 米迦 |
+| the Millo (5:9) | 米罗 (R explains) |
+| Hiram (5:11) | 希兰 |
+| Shammua, Shobab, Nathan, Solomon, Ibhar, Elishua, Nepheg, Japhia, Elishama, Eliada, Eliphelet (5:14-16) | 沙母亚, 朔罢, 拿单, 所罗门, 益辖, 以利书亚, 尼斐, 雅非亚, 以利沙玛, 以利雅大, 以利法列 |
+| the Valley of Rephaim; Baal-perazim (5:18, 20) | 利乏音谷; 巴力毗拉心 (R explains: 冲破之主) |
+| Baale-judah; Abinadab, Uzzah, Ahio; Nacon; Perez-uzzah (6:2-8) | 巴拉犹大; 亚比拿达, 乌撒, 亚希约; 拿艮; 毗列斯乌撒 |
+| Obed-edom the Gittite (6:10) | 迦特人俄别以东 |
+| Metheg-ammah (8:1) | 美特亚玛 |
+| Hadadezer son of Rehob, king of Zobah (8:3) | 哈大底谢, 利合, 琐巴 |
+| Betah, Berothai (8:8) | 比他, 比罗他 |
+| Toi king of Hamath; Joram (8:9-10) | 陀以, 哈马; 约兰 |
+| Ahitub, Ahimelech, Seraiah (8:17) | 亚希突, 亚希米勒, 西莱雅 |
+| Jehoiada; Benaiah (8:18) | 耶何耶大; 比拿雅 |
+| Ziba (9:2) | 洗巴 |
+| Machir son of Ammiel; Lo-debar (9:4) | 玛吉, 亚米利; 罗底巴 |
+| Hanun son of Nahash (10:1-2) | 哈嫩, 拿辖 |
+| Beth-rehob, Maacah, Tob (10:6) | 伯利合, 玛迦, 陀伯 |
+| Helam; Shobach (10:16) | 赫兰 (kept apart from Hiram 希兰); 朔法 |
+| Eliam (11:3; 23:34) | 以连 |
+| Rabbah (11:1) | 拉巴 |
+| Jedidiah (12:25) | 耶底底亚 |
+| Jonadab son of Shimeah (13:3) | 约拿达, 示米亚 (David's brother, 1 Samuel's Shammah 沙玛 in another spelling) |
+| Baal-hazor (13:23) | 巴力夏琐 |
+| Ammihud (13:37) | 亚米忽 (as Numbers 1:10) |
+| Tekoa (14:2) | 提哥亚 |
+| Ittai the Gittite (15:19; 23:29) | 迦特人以太 (Ittai son of Ribai 以太, the same Hebrew name) |
+| Ahimaaz son of Zadok; Jonathan son of Abiathar (15:27) | 亚希玛斯; 约拿单 |
+| Hushai the Archite (15:32) | 亚基人户筛 |
+| Ahithophel the Gilonite; Giloh (15:12) | 基罗人亚希多弗; 基罗 (Joshua 15:51) |
+| Shimei son of Gera (16:5) | 示每, 基拉 (as Judges 3:15) |
+| En-rogel (17:17) | 隐罗结 |
+| Amasa son of Ithra; Abigail daughter of Nahash (17:25) | 亚玛撒, 以特拉; 亚比该, 拿辖 |
+| Shobi; Barzillai the Gileadite of Rogelim (17:27) | 朔比; 巴西莱, 罗基琳 |
+| the forest of Ephraim (18:6) | 以法莲树林 |
+| the Cushite (18:21) | 古实人 |
+| Chimham (19:38) | 金罕 |
+| Sheba son of Bichri (20:1) | 示巴, 比基利 (the land of the queen of Sheba is also 示巴, a different Hebrew name) |
+| Abel of Beth-maacah; the Berites (20:14) | 伯玛迦的亚比拉, 亚比拉; 比利人 |
+| Adoram (20:24); Sheva (20:25); Ira the Jairite (20:26) | 亚多兰; 示法 (kept apart from 示巴); 以拉, 睚珥人 |
+| Armoni, Mephibosheth; Merab/Michal; Adriel son of Barzillai the Meholathite (21:8) | 亚摩尼, 米非波设; 米甲 (as the Hebrew has it); 亚得列, 巴西莱, 米何拉人 |
+| Beth-shan (21:12) | 伯珊 (as 1 Samuel 31:10, for this spelling; Beth-shean 伯善 in Joshua and Judges) |
+| Zela; Kish (21:14) | 洗拉; 基士 |
+| Ishbi-benob; Gob; Sibbecai the Hushathite; Saph (21:16-18) | 以实比诺; 歌伯; 户沙人西比该; 撒弗 |
+| Elhanan son of Jaare-oregim (21:19); Elhanan son of Dodo (23:24) | 伊勒哈难, 雅雷俄珥金; 朵多 (as Judges 10:1) |
+| Josheb-basshebeth the Tahchemonite; Adino the Eznite (23:8) | 约设巴设, 他革扪人; 亚底挪, 伊斯尼人 |
+| Eleazar son of Dodo the Ahohite (23:9) | 以利亚撒 (as Aaron's son), 朵多, 亚合人 |
+| Shammah son of Agee the Hararite (23:11, 25, 33) | 沙玛 (as Genesis 36:13 and 1 Samuel 16:9), 亚基, 哈拉人; the Harodite 哈律人 |
+| Kabzeel (23:20) | 甲薛 (as Joshua 15:21) |
+| Elika; Helez the Paltite; Ira son of Ikkesh the Tekoite (23:25-26) | 以利加; 希利斯, 帕勒提人; 以拉, 益吉, 提哥亚人 |
+| Abiezer the Anathothite; Mebunnai the Hushathite (23:27) | 亚比以谢, 亚拿突人; 米本乃, 户沙人 |
+| Zalmon the Ahohite; Maharai the Netophathite (23:28) | 撒们; 玛哈莱, 尼陀法人 |
+| Heleb son of Baanah; Ittai son of Ribai (23:29) | 希立, 巴拿; 以太, 利拜 |
+| Benaiah the Pirathonite; Hiddai of the wadis of Gaash (23:30) | 比拉顿人比拿雅 (Judges 12:13); 希太, 迦实 |
+| Abi-albon the Arbathite; Azmaveth the Barhumite (23:31) | 亚比亚本, 亚拉巴人; 押斯玛弗, 巴鲁米人 |
+| Eliahba the Shaalbonite; Jashen (23:32) | 以利雅哈巴, 沙本人; 雅善 |
+| Ahiam son of Sharar (23:33) | 亚希暗, 沙拉 |
+| Eliphelet son of Ahasbai the Maacathite (23:34) | 以利法列, 亚哈拜, 玛迦人 |
+| Hezro the Carmelite; Paarai the Arbite (23:35) | 希斯莱; 帕莱, 亚巴人 |
+| Igal son of Nathan of Zobah; Bani the Gadite (23:36) | 以甲, 琐巴; 巴尼 |
+| Zelek the Ammonite; Naharai the Beerothite (23:37) | 洗勒; 拿哈莱, 比录人 |
+| Ira and Gareb the Ithrites (23:38) | 以拉, 迦立, 以帖人 |
+| Aroer; Jazer (24:5) | 亚罗珥; 雅谢 |
+| Tahtim-hodshi; Dan-jaan (24:6) | 他停合示; 但雅安 |
+| Gad the seer (24:11) | 迦得, 先见 |
+| Araunah the Jebusite (24:16) | 耶布斯人亚劳拿 |
+
+Talmai 挞买 and Aiah 亚雅 follow one Hebrew name, one Chinese form, against
+the forms some Bibles use in Samuel (达买, 爱雅); Paltiel 帕铁 and Palti 帕提,
+Beth-shan 伯珊 and Beth-shean 伯善 follow the two spellings of the Hebrew.
+
+### 1 Kings
+
+1 Kings keeps the glossary's forms for every name and term above, the forms of
+Genesis to Ruth for places, refrains and oaths, and 1 and 2 Samuel's forms for
+David's house, his officials and offices (史官, 书记, 军队统帅) and address. The
+regnal formulas (accession, age and mother, verdict, "walked in the way of",
+the sins of Jeroboam, the high places, the source, death and burial,
+succession, provoking the LORD to anger, the word of the LORD by his servant
+the prophet) are worded exactly as in the 2 Kings section below, at every
+level, and every record with the source formula carries the same decision
+(the question kept at Balanced; 14:19 has the "behold" form). 11:41 cites
+《所罗门事迹录》, the Book of the Acts of Solomon. 2 Chronicles 1-9 and 10-36
+retell 1 Kings 3-11 and 12-22: where the Hebrew is the same, they copy this
+Chinese (*dn* = `{{divine_name:上主|雅威}}`, *gt* = `{{god_term:神|上帝}}`,
+*he* = `{{deity_pronoun:他|祂}}`).
+
+Terms settled in 1 Kings:
+
+| English | Chinese |
+|---|---|
+| ruler (*nagid*; 1:35; 14:7; 16:2) | 君 (L, B), kept apart from 王; 领袖 (R), as 1 and 2 Samuel |
+| Long live King X (1:25, 34, 39); may my lord King David live forever (1:31) | 愿……王万岁 (L, B); 祝……王万岁 (R), as 1 Samuel 10:24 and 2 Kings 11:12; 1:31 愿我主大卫王万岁 (L, B), 祝我主大卫王万岁 (R) |
+| as the LORD lives (1:29; 2:24; 17:1, 12; 18:10, 15; 22:14) | [我指着]永活的*dn*[起誓] (L); 我指着永活的*dn*起誓 (B); 我指着永活的*dn*发誓 (R); where Readable says "as he lives", 我指着永活的*he*发誓 |
+| God do so to me, and more (2:23); the gods (19:2; 20:10) | 愿*gt*这样对待我，并且愿*he*加倍对待我 (L); 愿*gt*严厉地惩罚我，而且罚得更重 (B); 愿*gt*严厉地惩罚我 (R); 众神, no span, for Jezebel's and Ben-hadad's gods |
+| the king's servants; the officials (4:2) | 臣仆 (L), 臣子 (B), 官员 (R); 官长 (L), 高级官员 (B), 朝廷的领袖 (R) |
+| secretary; recorder; over the house (4:3-6; 16:9; 18:3) | 书记 (L, B), 王室书记 (R); 史官; 家宰 (L), 王宫总管 (B, R) |
+| district governors (4:5-19) | 长官 (L); 各区长官 (B, R) |
+| the house of the LORD; the king's house | 殿 at every level (圣殿 where the English Readable says temple and Chinese needs it); 宫殿 (L), 王宫 (B, R) |
+| the hall (hekhal); the inner room (devir); the Most Holy Place (6-8) | 大殿; 内室 (L, R), 内殿 (B), as the English levels say "inner room" and "inner sanctuary" (the inner house 里面的殿 at L, 6:27; 7:50); 至圣所 |
+| the porch (ʾulam; 6:3; 7:6-21) | 前廊, the temple's and the palace's; the palace halls 柱廊, 王座廊, 审判廊 |
+| side structure; side chambers (6:5-10) | 侧屋 (L), 侧楼 (B); 侧房 |
+| the House of the Forest of Lebanon (7:2) | 黎巴嫩森林宫 |
+| capitals; the Sea; the stands; basins (7:16-40) | 柱顶; 海 (L), 铜海 (B, R); 盆座; 盆 |
+| Jachin and Boaz (7:21) | 雅斤, 波阿斯 |
+| the ark (8) | 柜 (L) where the Hebrew has no "covenant", 约柜 (L) where it has; 约柜 (B, R) |
+| hear in heaven ... and forgive (8:30-49) | 求*you*在天上倾听 (L, B), 求*you*从天上倾听 (R); with "your dwelling place" 求*you*在天上，就是*you*居住的地方，倾听 (L), 求*you*在天上，在*you*的居所倾听 (B), 求*you*从*you*居住的天上倾听 (R); 并且赦免 (L, B), 并且饶恕 (R); the same in every petition (*you* = `{{deity_pronoun:你|祢}}`) |
+| the foreigner (nokri; 8:41) | 外族人 (L, B); 外国人 (R) |
+| the Lord GOD (2:26; 8:53) | 主宰*dn* |
+| Ashtoreth; Milcom; Chemosh; Molech (11:5-7) | 亚斯他录; 米勒公; 基抹; 摩洛 |
+| adversary (satan, a human opponent; 11:14, 23, 25) | 敌对者 (L); 对头 (B); 敌人 (R) |
+| a treaty between kings (5:26; 15:19; 20:34) | 约 (L); 条约 / 盟约 (B); 协议 (R) |
+| the runners; the commanders of the guard (14:27-28) | 侍卫 (L, B), 卫兵 (R); 侍卫长 |
+| queen mother (15:13) | 太后 |
+| the sons of the prophets (20:35) | 先知的子弟 (L); 先知团 (B); 一群先知 (R), as 2 Kings |
+| the man of God | *gt*的人, every level |
+| stretched himself out over the boy (17:21) | 伸直身子伏在孩子身上, as 2 Kings 4:34-35 (B, R) |
+| a sound of thin silence (19:12) | 细微寂静的声音 (L); 一个微弱的声音，轻得像寂静一样 (B); 一个非常轻的声音，轻得几乎像一片寂静 (R), drafted fresh |
+| 19:10, 14, 18 (Romans 11:3-4) | the Hebrew's order and clauses, with Romans' words where they agree (挖倒了 / 杀害了 / 寻求我的性命 at L); 19:14 repeats 19:10 word for word |
+| Jehoshaphat's answer (22:4) | as 2 Kings 3:7 at each level |
+| the host of heaven (22:19) | 天上的万军 (L, B); 天上的大军 (R), the LORD's court, kept apart from the stars (2 Kings 17:16: 天上的万象) |
+| units | cubit 约45厘米, handbreadth 约7.5厘米, bath 约22升, cor 约220升, seah 约7升; talent 约34公斤 (666 talents 约22600公斤 at B, 约23吨 at R), mina 50 shekels; only the measure in the span |
+
+Address: subjects say 您 to the king at B and R with 我主我王 (L, B), 陛下 (R)
+(Bathsheba, Nathan, the two mothers, Shimei, the assembly to Rehoboam, Ahab's
+officials, the disguised prophet, Naboth); Bathsheba and Solomon say 你 as
+mother and son (2:13-22); kings say 你 to each other (Hiram, the queen of
+Sheba, Asa and Ben-hadad, Ahab and Jehoshaphat), except Ahab to his overlord
+Ben-hadad (20:4, 9) and Ben-hadad's envoys suing for terms (20:32-34), who say
+您; the widow of Zarephath, Obadiah and Elisha say 您 to Elijah; Elijah,
+Micaiah and the man of God say 你 to the king when they bring the LORD's
+word (13:6; 18:17-18; 21:20; 22:16-28), and the king to them.
+
+Names not in the tables above, as the text has them:
+
+| English (first verse) | Chinese |
+|---|---|
+| Abishag the Shunammite (1:3) | 书念人亚比煞 |
+| Rei; Zoheleth; En-rogel (1:8-9) | 利以; 琐希列石; 隐罗结 |
+| Elihoreph, Shisha; Ahijah (4:3) | 以利何烈, 示沙; 亚希亚 |
+| Zabud; Ahishar; Adoniram; Abda (4:5-6) | 撒布得; 亚希煞; 亚多尼兰 (kept apart from Adoram 亚多兰); 亚布达 |
+| Ben-hur, Ben-deker, Ben-hesed, Ben-abinadab, Ben-geber (4:8-19) | 便户珥, 便底甲, 便希悉, 便亚比拿达, 便基别 |
+| Makaz; Elon-beth-hanan; Arubboth; Taphath; Baana; Jokmeam; Ahinadab; Iddo; Paruah; Ela; Geber (4:9-19) | 玛迦斯; 以伦伯哈南; 亚鲁伯; 他法; 巴拿; 约念; 亚希拿达; 易多; 帕鲁亚; 以拉 (as King Elah); 基别 |
+| Tiphsah (5:4) | 提弗萨 |
+| Ethan the Ezrahite; Heman, Calcol, Darda; Mahol (5:11) | 以斯拉人以探; 希幔, 甲各, 达大; 玛曷 |
+| Ziv; Bul; Ethanim (6:1, 38; 8:2) | 西弗月; 布勒月; 以他念月 |
+| Hiram the craftsman (7:13) | 希兰, as Hiram king of Tyre |
+| Baalath; Tamar (9:18) | 巴拉特 (Joshua 19:44); 他玛 |
+| Eloth (9:26) | 以禄 |
+| almug wood; Kue (10:11, 28) | 阿勒慕木; 古厄 |
+| Hadad; Tahpenes; Genubath (11:14-20) | 哈达; 答比匿; 基努拔 |
+| Rezon son of Eliada (11:23) | 利逊, 以利雅大 |
+| Jeroboam son of Nebat; Zeredah; Zeruah (11:26) | 耶罗波安, 尼八; 洗利达; 洗鲁阿 (kept apart from Zeruiah 洗鲁雅) |
+| Ahijah the Shilonite (11:29; 14:2) | 示罗人亚希亚, the form of 1 Samuel 14:3 for the same Hebrew name; also Baasha's father (15:27) |
+| Shemaiah (12:22) | 示玛雅 |
+| Abijah son of Jeroboam (14:1) | 亚比雅 (Matthew 1:7's form for the same name) |
+| Naamah the Ammonite (14:21) | 亚扪人拿玛 |
+| Shishak (14:25) | 示撒 |
+| Abijam (14:31; 15:1-8) | 亚比央, as the English keeps Abijam; Matthew 1:7 and 2 Chronicles 13 call him Abijah (亚比雅) |
+| Maacah daughter of Abishalom (15:2, 10) | 玛迦, 亚比沙龙 (kept apart from Absalom 押沙龙) |
+| Asa (15:8) | 亚撒 (Matthew 1:7-8's 亚萨 renders the Greek Asaph) |
+| Tabrimmon, Hezion (15:18) | 他伯利门, 希旬 |
+| Ijon; Abel-beth-maacah; Chinneroth (15:20) | 以云; 亚比拉伯玛迦 (L), 伯玛迦的亚比拉 (B, R); 基尼烈 |
+| Nadab; Baasha; Gibbethon (15:25-27) | 拿答 (Exodus 6:23); 巴沙; 基比顿 |
+| Jehu son of Hanani (16:1) | 哈拿尼的儿子耶户 |
+| Elah; Zimri; Arza (16:6-9) | 以拉; 心利 (Numbers 25:14); 亚杂 |
+| Omri; Tibni son of Ginath (16:16-21) | 暗利; 提比尼, 基纳 |
+| Shemer (16:24) | 沙麦, kept apart from Salma / Salmah (撒玛, Ruth 4:20) |
+| Ethbaal; Jezebel (16:31) | 谒巴力; 耶洗别 (Revelation 2:20) |
+| Hiel the Bethelite; Abiram, Segub (16:34) | 伯特利人希伊勒; 亚比兰, 西割 |
+| Elijah the Tishbite; the Wadi Cherith (17:1-3) | 提斯比人以利亚 (Luke 4:25); 基立溪 |
+| Zarephath of Sidon (17:9) | 西顿的撒勒法 (Luke 4:26) |
+| Obadiah, Ahab's steward (18:3) | 俄巴底亚, the prophet's form: one Hebrew name in two spellings, one form |
+| Carmel; the Kishon (18:19, 40) | 迦密山; 基顺溪 (L), 基顺河 (B, R) |
+| the broom tree; Horeb (19:4, 8) | 罗腾树; 何烈山 |
+| Hazael; Jehu son of Nimshi; Elisha son of Shaphat of Abel-meholah (19:15-16) | 哈薛; 宁示的儿子耶户 (2 Kings 9:2 gives his father Jehoshaphat); 沙法的儿子以利沙 (Luke 4:27), 亚伯米何拉 (Judges 7:22) |
+| Ben-hadad; Aphek (20:1, 26) | 便哈达, every Ben-hadad; 亚弗 |
+| Naboth the Jezreelite (21:1) | 耶斯列人拿伯 |
+| Ramoth-gilead (22:3) | 基列的拉末 (Deuteronomy 4:43; 1 Kings 4:13) |
+| Micaiah son of Imlah (22:8) | 米该亚, 音拉 (kept apart from Micah 弥迦) |
+| Zedekiah son of Chenaanah (22:11) | 基拿拿的儿子西底家 |
+| Amon the governor of the city; Joash the king's son (22:26) | 亚们; 约阿施 |
+| Azubah daughter of Shilhi (22:42) | 阿苏巴, 示利希 |
+| ships of Tarshish; Ophir; Ezion-geber (22:49) | 他施船 (L, B), 大型商船 (R); 俄斐; 以旬迦别 |
+| Jehoram son of Jehoshaphat; Ahaziah son of Ahab (22:51-52) | 约兰 (Matthew 1:8); 亚哈谢 |
+
+### 2 Kings
+
+2 Kings keeps the glossary's forms for every name and term above, the forms of
+Genesis to Ruth for places, refrains and oaths, and 1 and 2 Samuel's forms for
+offices (史官, 书记, 军队统帅) and address. The regnal formulas below are the
+book's one wording per level and are binding for 1 Kings and for 1-2
+Chronicles, which copy Kings where the Hebrew is the same. 18:13-20:19 is
+drafted for Isaiah 36-39 to copy, and 24:18-25:30 for Jeremiah 52 (and 39:1-10),
+wherever the Hebrew is the same; 19:21-28 keeps the English lines at each level.
+Hezekiah's prayer (19:15-19; 20:3) is drafted afresh, and every clause that came
+out in the Union Version's words was redrafted (*dn* =
+`{{divine_name:上主|雅威}}`, *gt* = `{{god_term:神|上帝}}`, *he* =
+`{{deity_pronoun:他|祂}}`):
+
+| English | Literal | Balanced | Readable |
+|---|---|---|---|
+| In year N of X king of Judah, Y son of Z became king over Israel in Samaria, N years (3:1; 13:1, 10; 15:8-27; 17:1) | 犹大王X第N年，Z的儿子Y在撒玛利亚登基，作以色列的王，共作王N年 | 犹大王X在位第N年，Z的儿子Y在撒玛利亚登基，作以色列的王，作王N年 | X作犹大王的第N年，Z的儿子Y在撒玛利亚当了以色列的王，统治了N年 |
+| In year N of X king of Israel, Y son of Z king of Judah began to reign (8:16, 25; 14:1; 15:1, 32; 16:1; 18:1) | 以色列王X第N年，犹大王Z的儿子Y登基作王 | 以色列王X在位第N年，犹大王Z的儿子Y登基作王 | Z的儿子Y当了犹大王，那是X作以色列王的第N年 |
+| He was N years old when he began to reign, and he reigned N years in Jerusalem; his mother's name was M daughter of W of P (8:17, 26; 14:2; 15:2, 33; 18:2; 21:1, 19; 22:1; 23:31, 36; 24:8, 18) | 他登基的时候N岁，在耶路撒冷作王N年。他的母亲名叫M，是P人W的女儿 | as L | 他当王的时候N岁，在耶路撒冷统治了N年。他的母亲是P人W的女儿M |
+| He did what was evil / right in the eyes of the LORD | 他做了在*dn*眼中为恶 / 为正的事 | 他做了*dn*看为恶 / 看为正的事 | 他做了*dn*不喜悦 / 喜悦的事 |
+| as his father / his fathers had done | 像他父亲X所做的一样; 像他的列祖所做的一样 | 和他父亲X所做的一样; 和他的祖先所做的一样 | 就像他父亲X一样; 就像他的祖先一样 |
+| walked in the way of X (8:18, 27; 16:3; 21:21-22; 22:2) | 行X的道路 | 走X的道路 | 像X那样生活 |
+| He did not turn aside from the sins of Jeroboam son of Nebat, which he made Israel sin (3:3; 10:29, 31; 13:2, 6, 11; 14:24; 15:9, 18, 24, 28) | 没有偏离尼八的儿子耶罗波安使以色列犯罪的那些罪 | 没有离开尼八的儿子耶罗波安使以色列人犯罪的那些罪 | 没有离开尼八的儿子耶罗波安的罪，就是耶罗波安带领以色列人去犯的那些罪 |
+| But the high places were not taken away; the people still sacrificed and made offerings on the high places (12:4; 14:4; 15:4, 35) | 只是丘坛没有废去，百姓仍在丘坛献祭烧香 | 然而丘坛还没有废除，百姓仍旧在丘坛献祭烧香 | 但是山上的祭坛没有被拆除，百姓仍然在山上的祭坛献祭烧香 |
+| The rest of the acts of X and all that he did, are they not written in the Book of the Chronicles of the Kings of Judah / Israel? | X其余的事和他所做的一切，不都写在《犹大诸王的史记》上吗？ | as L | X所做的其他事，都记在《犹大诸王的史记》里 |
+| … behold, they are written in … (hinnam; 15:11, 15, 26, 31) | ……看哪，都写在《以色列诸王的史记》上 | ……都写在《以色列诸王的史记》上 | ……都记在《以色列诸王的史记》里 |
+| X slept with his fathers and was buried with his fathers in the city of David (his father) | X与他的列祖同睡，与他的列祖一同葬在大卫城 (他父亲大卫的城里) | X与他的祖先同睡，和他的祖先一同葬在大卫城 (他祖先大卫的城里) | X去世了，和他的祖先一同葬在大卫城 |
+| Y his son reigned in his place | 他的儿子Y接续他作王 | as L | 他的儿子Y接替他当王 |
+| provoked the LORD to anger (17:11, 17; 21:6, 15; 22:17; 23:19, 26) | 惹*dn*发怒 | as L | 惹*dn*生气 |
+| according to the word of the LORD that he spoke by (the hand of) his servant N the prophet (9:36; 10:10; 14:25; 17:23; 24:2) | 正如*dn*的话，就是*he*借着*he*的仆人先知N的手所说的 | 正如*dn*借着*he*的仆人先知N所说的 | 这正如*dn*借着*he*的仆人先知N所说的 |
+| As the LORD lives (2:2-6; 3:14; 4:30; 5:16, 20) | [我指着]永活的*dn*[起誓] | 我指着永活的*dn*起誓 | 我指着永活的*dn*发誓 |
+| God do so to me, and more (6:31) | 愿*gt*这样对待我，并且愿*he*加倍对待我 | 愿*gt*严厉地惩罚我，而且罚得更重 | 愿*gt*严厉地惩罚我 |
+| My father, my father! The chariots of Israel and its horsemen! (2:12; 13:14) | 我父啊，我父啊！以色列的战车和它的骑兵啊！ | 我父啊，我父啊！以色列的战车和骑兵啊！ | as B |
+| Is it peace? (9:17-22, 31) | 是平安吗？ | 是平安吗？ | 你们是为和平而来的吗？ (你 for one) |
+
+The source formula is a question at Balanced too, as the glossary has it, though
+the English Balanced states it: the Hebrew asks a question expecting "yes", and
+Chinese hears 不都……吗？ as a firm statement. Every record with the formula
+carries the same decision. No 这些事 before 不都: the subject is already named.
+The death formula has no `gender` span where the English has none (列祖 at L,
+祖先 at B). 借着 (never 藉着) for "by, through" at every level.
+
+Terms settled in 2 Kings:
+
+| English | Chinese |
+|---|---|
+| the sons of the prophets (2; 4:1, 38; 5:22; 6:1; 9:1) | 先知的子弟 (L); 先知团 / 先知团的人 (B); 一群先知 / 那群先知 (R) |
+| skin disease (5; 7:3-8; 15:5) | 严重的皮肤病; 患严重皮肤病的人, every level, as Leviticus 13-14 and Luke 4:27, with 麻风 named in a decision |
+| Baal-zebub (1:2-16) | 巴力西卜, kept apart from the Gospels' 别西卜 (Beelzebul), with a decision |
+| high places; Asherah pole; standing stones; host of heaven | 丘坛 (L, B), 山上的祭坛 (R); 亚舍拉木柱 (L, B), 用来敬拜亚舍拉的木柱 (R); 立石 (L, B), (敬拜用的)石柱 (R); 天上的万象 (L, B), 太阳、月亮和星星 (R) |
+| the chest for the money (12:9-10) | 箱子 |
+| commanders of hundreds (11:4-19) | 百人的首领 (L); 百人的官长 (B); 军官 (R), as 1 Samuel's 千人的首领 / 千人的官长; 百夫长 is kept for the New Testament's centurions (2 Samuel 18:1 has 百夫长, for a reviewer to bring into line) |
+| the Carites; the runners (11:4, 19) | 迦利人; 侍卫 |
+| chief of the guard (rav-tabbachim; 25:8-20) | 护卫长 (L, B); 卫队长 (R) |
+| over the house (10:5; 18:18, 37; 19:2) | 管理王宫的 (L); 王宫总管 (B, R) |
+| secretary; recorder (18:18; 22:3) | 书记 (L, B), 王室书记 (R); 史官 |
+| the Tartan, the Rab-saris, the Rabshakeh (18:17) | 他珥探, 拉伯撒利, 拉伯沙基 (L); 大元帅, 宦官长, 首席长官 (B); 军队统帅, 王宫官员的首领, 亚述指挥官 (R); the Rabshakeh through 18-19: 拉伯沙基 / 首席长官 / 亚述指挥官 |
+| the Fuller's Field (18:17) | 漂布田 (L, B); 洗布场 (R) |
+| the head priest; the second priest (25:18) | 首席祭司 (L, B), 大祭司 (R); 次席祭司 (L), 副祭司 (B) |
+| silver and gold by weight | units spans at B and R, only the measure in the span: shekel 11.5克 (`{{units:约575克\|五十舍客勒}}银子`); talent 约34公斤 (`{{units:约10吨\|三百他连得}}银子`); the money is weighed, so no wages |
+| seah; kab (6:25; 7:1-18) | 细亚 (`{{units:约7升\|一细亚}}`); 卡布, a new transliteration (`{{units:约0.3升\|四分之一卡布}}`) |
+| cubits (14:13; 25:13-17) | 肘 (`{{units:约180米\|四百肘}}`) |
+| dates (25:1-27) | 第十个月初十 (L), 十月初十 (B, R); days after the tenth 二十七日 |
+| the Holy One of Israel (19:22) | 以色列的圣者 |
+
+Address: 您 to kings at B and R with 王啊 / 我主我王 (L, B), 陛下 (R); 您 to
+Elijah and Elisha from Elisha, the Shunammite, the widow, Naaman, Gehazi
+(5:25), Hazael (8:12-13) and the sons of the prophets, and the prophets say 你;
+Isaiah says 你 to Hezekiah (20:1, 14-18) as the LORD's messenger; the king of
+Assyria and the Rabshakeh say 你 / 你们 to Hezekiah and his men in contempt
+(18:19-35; 19:10-13), and Hezekiah's officials say 您 to the Rabshakeh (18:26).
+
+Names not in the tables above, as the text has them:
+
+| English (first verse) | Chinese |
+|---|---|
+| Joram / Jehoram (1:17; 3:1; 8:16; 9:14) | 约兰 for both spellings and both kings (Matthew 1:8); the kings are told apart by 以色列王 / 犹大王 |
+| Joash / Jehoash (11:2; 12:1; 13:10; 14:8) | 约阿施 for both spellings and both kings, as Judges 6:11 |
+| Jehoahaz / Joahaz (10:35; 13:1; 23:31) | 约哈斯 |
+| Hoshea son of Elah (15:30; 17:1) | 何西阿, 以拉 (the Hebrew name of Numbers 13:8; Chinese Bibles 何细亚) |
+| Athaliah (8:26; 11) | 亚她利雅 |
+| Ramoth-gilead (8:28; 9:1-14) | 基列的拉末 (Deuteronomy 4:43; Joshua 20:8) |
+| Baal-zebub; Ekron (1:2) | 巴力西卜; 以革伦 |
+| Elijah the Tishbite (1:3; 9:36) | 提斯比人以利亚 |
+| Gehazi; Naaman; Abana, Pharpar; Rimmon (5) | 基哈西; 乃缦 (Luke 4:27); 亚罢拿, 法珥法; 临门 |
+| Shunem (4:8); Dothan (6:13) | 书念; 多坍 |
+| Ben-hadad; Hazael (6:24; 8:7) | 便哈达; 哈薛 |
+| Zair (8:21) | 撒益 |
+| Omri (8:26) | 暗利 |
+| Jehu son of Jehoshaphat son of Nimshi; Bidkar (9:2, 25) | 耶户, 约沙法, 宁示; 毕甲 |
+| Jezebel; Zimri (9:7, 31) | 耶洗别 (Revelation 2:20); 心利 |
+| Beth-haggan; the ascent of Gur; Ibleam (9:27) | 伯哈干; 姑珥坡; 以伯莲 |
+| Beth-eked of the Shepherds (10:12) | 牧人的伯艾克 |
+| Jehonadab son of Rechab (10:15) | 利甲的儿子约拿达 (one form for both spellings) |
+| Jehosheba; Jehoiada; Mattan (11:2, 4, 18) | 约示巴; 耶何耶大; 玛坦 |
+| Zibiah of Beersheba (12:2) | 西比亚, 别是巴人 |
+| Jozabad son of Shimeath, Jehozabad son of Shomer (12:22) | 约撒拔, 示米押; 耶何萨拔, 朔默 |
+| Amaziah; Jehoaddin (14:1-2) | 亚玛谢; 约耶丁 |
+| Azariah / Uzziah; Jecoliah (14:21; 15:1-2, 13) | 亚撒利雅 / 乌西雅, as the Hebrew has them; 耶可利雅 |
+| Jeroboam son of Joash; Jonah son of Amittai of Gath-hepher; Lebo-hamath; the Sea of the Arabah (14:23-25) | 耶罗波安; 迦特希弗人亚米太的儿子约拿; 利波哈马; 亚拉巴海 |
+| Zechariah; Shallum son of Jabesh; Menahem son of Gadi; Tirzah (15:8-14) | 撒迦利亚; 雅比的儿子沙龙; 迦底的儿子米拿现; 得撒 |
+| Pekahiah; Pekah son of Remaliah; Argob, Arieh (15:23-25) | 比加辖; 利玛利的儿子比加; 亚珥歌伯, 亚利耶 |
+| Jotham; Jerusha daughter of Zadok (15:32-33) | 约坦 (Matthew 1:9); 耶路沙 |
+| Ahaz; Rezin; Tiglath-pileser; Kir; Uriah the priest (16) | 亚哈斯; 利汛; 提革拉毗列色; 吉珥; 乌利亚 |
+| Shalmaneser; Halah, Habor, Gozan (17:3, 6) | 撒缦以色; 哈腊, 哈博, 歌散 |
+| Cuthah, Avva, Hamath, Sepharvaim (17:24) | 古他, 亚瓦, 哈马, 西法瓦音 |
+| Succoth-benoth, Nergal, Ashima, Nibhaz, Tartak, Adrammelech, Anammelech (17:30-31) | 疏割比讷, 匿甲, 亚示玛, 匿哈, 他珥他, 亚得米勒, 亚拿米勒 |
+| Hezekiah; Abi daughter of Zechariah; Nehushtan (18:1-4) | 希西家; 亚比; 尼胡施坦 |
+| Sennacherib; Lachish (18:13-14) | 西拿基立; 拉吉 |
+| Eliakim son of Hilkiah; Shebna; Joah son of Asaph (18:18) | 以利亚敬, 希勒家; 舍伯那 (one form for both spellings); 约亚, 亚萨 |
+| Arpad, Hena, Ivvah (18:34) | 亚珥拔, 希拿, 以瓦 |
+| Libnah; Tirhakah king of Cush (19:8-9) | 立拿; 古实王特哈加 |
+| Nisroch; Adrammelech, Sharezer; Ararat; Esarhaddon (19:37) | 尼斯洛; 亚得米勒, 沙利色; 亚拉腊; 以撒哈顿 |
+| Isaiah son of Amoz (19:2) | 亚摩斯的儿子以赛亚 |
+| Berodach-baladan son of Baladan (20:12) | 比罗达巴拉但, 巴拉但 (Isaiah 39:1 spells it 米罗达巴拉但) |
+| Manasseh; Hephzibah; the garden of Uzza (21:1, 18) | 玛拿西; 协西巴; 乌撒的园子 |
+| Amon; Meshullemeth daughter of Haruz of Jotbah (21:19) | 亚们; 米舒利密, 约提巴人哈鲁斯 |
+| Josiah; Jedidah daughter of Adaiah of Bozkath (22:1) | 约西亚; 耶底大, 波斯加人亚大雅 |
+| Shaphan son of Azaliah son of Meshullam; Hilkiah (22:3-4) | 沙番, 亚萨利雅, 米书兰; 希勒家 |
+| Huldah (22:14) | 户勒大, 女先知 |
+| the Kidron (23:4) | 汲沦谷 |
+| Pharaoh Neco; Megiddo (23:29) | 法老尼哥; 米吉多 |
+| Hamutal daughter of Jeremiah of Libnah (23:31) | 哈慕她, 立拿人耶利米 |
+| Eliakim / Jehoiakim; Zebidah daughter of Pedaiah of Rumah (23:34-36) | 以利亚敬 / 约雅敬; 西布大, 路玛人毗大雅 |
+| Jehoiachin; Nehushta daughter of Elnathan (24:8) | 约雅斤; 尼合士他, 以利拿单 |
+| Mattaniah / Zedekiah (24:17) | 玛探雅 / 西底家 |
+| Nebuchadnezzar; Nebuzaradan (24:1; 25:8) | 尼布甲尼撒; 尼布撒拉旦 |
+| Seraiah, Zephaniah (25:18) | 西莱雅 (2 Samuel 8:17), 西番雅 |
+| Gedaliah son of Ahikam son of Shaphan; Mizpah (25:22-23) | 基大利, 亚希甘, 沙番; 米斯巴 |
+| Evil-merodach (25:27) | 以未米罗达 |
+
+### 1 Chronicles
+
+1 Chronicles keeps the glossary's forms for every name and term above, the
+forms of Genesis to Ruth for the patriarchs, tribes, clans and towns (1:1-54 as
+Genesis 5, 10, 11, 25 and 36; the high priests of 5:29-41 and 6:35-38 as
+Exodus, Numbers and Samuel), and the Kings and Chronicles formulas (Book notes)
+in 29:26-30. The retellings of Samuel (10 = 1 Samuel 31; 11:1-9 = 2 Samuel
+5:1-10; 11:10-41 = 2 Samuel 23:8-39; 13-14 = 2 Samuel 6:1-11 and 5:11-25;
+15:25-16:3 = 2 Samuel 6:12-19; 17 = 2 Samuel 7; 18-20 = 2 Samuel 8, 10, 11:1,
+12:26-31, 21:18-22; 21 = 2 Samuel 24) copy the harmonised Samuel Chinese at
+each level wherever the Hebrew is the same, and differ, with a decision naming
+the difference, where it is not (21:1 撒但 for 2 Samuel 24:1's *dn*; 13-16
+*gt* where Samuel has *dn*; 17:14 "my house and my kingdom"; 18:12 Abishai and
+Edom; 20:5 Lahmi). 29:27 copies 1 Kings 2:11. The minor names of the
+genealogies are conventional forms, recorded in the decisions where they first
+appear.
+
+| English | Literal | Balanced | Readable |
+|---|---|---|---|
+| the sons of X: A, B and C (1-9) | X的儿子是A、B和C (X的儿子： before a "his son" chain or ordinals) | X的儿子是A、B和C | X的儿子是A、B和C |
+| X begot Y | X生Y | X是Y的父亲 | X是Y的父亲 |
+| "A his son, B his son" chains (3:10-14; 4:25-26; 5:4-5; 6:5-15, 35-38; 7:20-27; 8:37; 9:43) | 他的儿子A，他的儿子B | A的儿子B，B的儿子C | A的儿子B，B的儿子C |
+| father of [a town] (2:24-52; 4:3-21; 8:29; 9:35) | X的父亲 | X的父亲 | 建立X的人 |
+| mighty men of valor (gibbore chayil) | 大能的勇士 | 英勇的战士 | 勇敢的战士 |
+| heads of fathers' houses | 父家的首领 | 家族的首领 | 家族的领袖 |
+| commanders of thousands / hundreds | 千人的首领 / 百人的首领 | 千人的官长 / 百人的官长 | 统领一千人和一百人的军官 |
+| officials (sarim of Israel) | 官长 | 官员 | 领袖 |
+| nagid (the ruler God designates) | 君 | 君 | 领袖 |
+| gatekeepers | 守门人 | 守门人 | 守门人 |
+| divisions (of priests, Levites, gatekeepers, army) | 班 / 班次 | 班 / 班次 | 班 / 分班 |
+| the bread of the arrangement (9:32; 23:29; 28:16) | 陈设饼 (28:16 成排[饼]) | 陈设饼 | 摆在*gt*面前的饼 |
+| temple servants (9:2) | 圣殿仆役 | 圣殿仆役 | 在圣殿里做杂役的仆人 |
+| secretary (18:16; 24:6); scribes (2:55; 27:32) | 书记; 文士 | 书记; 文士 | 王室书记 / 书记; 文士 |
+| "for his steadfast love endures forever" (16:34, 41) | *dp*的慈爱永不止息 (他是美善的) | as L | *dp*的爱永远不变 (他真好) |
+| lyre; harp; cymbals; trumpets; ram's horn | 琴; 瑟; 钹; 号; 角 / 羊角号 | as L | as L |
+| be strong and courageous (22:13; 28:20) | 要刚强，要勇敢 | 要刚强勇敢 | 要坚强勇敢 |
+| talent; daric; shekel | 他连得; 达利克; 舍客勒 | `{{units:约34公斤\|一他连得}}`; 10,000 darics `约84公斤`; 600 shekels `约6.9公斤` | as B |
+
+Names settled in 1 Chronicles (one form per person through the book; same
+Hebrew name, same Chinese, unless the English spells the names apart):
+
+| English (first verse) | Chinese |
+|---|---|
+| Abijah (2:24; 3:10; 6:13; 7:8; 24:10) | 亚比雅, every bearer (Luke 1:5, Matthew 1:7, 1 Kings 14:1); 1 Samuel 8:2 still has 亚比亚 |
+| Obadiah (3:21; 7:3; 8:38; 9:16, 44; 12:10; 27:19) | 俄巴底亚, as 1 Kings |
+| Ahijah (2:25; 8:7; 11:36; 26:20) | 亚希亚, as 1 Samuel 14:3 and 1 Kings |
+| Shemer (6:31; 7:34) | 沙麦, as 1 Kings 16:24; Salma (2:11, 51, 54) 撒玛 |
+| Ira (11:28, 40; 27:9) | 以喇, kept apart from Elah 以拉 (1:52; 4:15; 9:8) |
+| Ezrah (4:17) | 以斯喇, kept apart from Ezra 以斯拉 |
+| Joshaphat (11:43; 15:24) | 约撒法, kept apart from Jehoshaphat 约沙法 |
+| Jehezkel (24:16) | 以西结, the same Hebrew name as Ezekiel |
+| Gershom (6:1-56; 15:7; 23:15-16; 26:24); Gershon, Gershonites (5:27; 23:6-7; 26:21; 29:8) | 革舜; 革顺, 革顺人, as the English |
+| Esh-baal (8:33; 9:39); Merib-baal (8:34; 9:40); Meri-baal (9:40 L) | 伊施巴力; 米力巴力; 米里巴力 (footnoted: Ish-bosheth 伊施波设, Mephibosheth 米非波设) |
+| Jeiel (5:7; 9:35; 11:44; 15:18, 21; 16:5) | 耶利 |
+| Eliel (5:24; 6:19; 8:20, 22; 11:46-47; 12:12; 15:9, 11) | 以利业 |
+| Asaiah (4:36; 6:15; 9:5; 15:6, 11) | 亚撒雅, as 2 Kings 22:12 |
+| Isshiah (7:3; 12:7; 23:20; 24:21, 25) | 耶西雅 |
+| Micah (5:5; 8:34-35; 9:40-41; 23:20; 24:24-25) | 米迦 (the prophet 弥迦) |
+| Azriel (5:24; 27:19); Asriel (7:14) | 押斯列; 亚斯列 (Numbers 26:31) |
+| Jeremoth, Jerimoth (7:7-8; 8:14; 12:6; 23:23; 24:30; 25:4, 22; 27:19) | 耶利摩 for both spellings |
+| Alemeth (6:45; 7:8; 8:36; 9:42) | 亚拉篾 |
+| Heber (4:18; 7:31-32; 8:17) | 希别, as Genesis 46:17 (Judges' Kenite 希百) |
+| Athaliah, a man (8:26) | 亚他利雅 (the queen 亚她利雅) |
+| Shelomoth (23:9; 24:22; 26:25-26); Shelomith (3:19; 23:18; 26:28) | 示罗摩; 示罗密 |
+| Hagrites (5:10-20; 27:31) | 夏甲人 |
+| Shallum (2:40-41; 3:15; 4:25; 5:38-39; 7:13; 9:17-31) | 沙龙 |
+| Ornan (21:15-28) | 阿珥楠 |
+| Chidon (13:9) | 基顿 |
+
+### 2 Chronicles
+
+2 Chronicles keeps the glossary's forms for every name and term above, the
+forms of Genesis to Ruth for places, tribes and refrains, 1 Chronicles' forms
+for the Levites, singers, gatekeepers and divisions, and the regnal formulas of
+the 2 Kings section (accession, age and mother, verdict, "walked in the way
+of", high places, death and burial, succession): one wording per level, with
+2 Kings' decision texts. Wherever the book retells Kings (1:14-17 = 1 Kings
+10:26-29; 2-7 = 1 Kings 5-8; 8-9 = 1 Kings 9-10; 10-11 = 1 Kings 12; 18 = 1 Kings
+22; 22:10-23:21 = 2 Kings 11; 24 = 2 Kings 12; 25 = 2 Kings 14; 26-28 = 2 Kings
+15-16; 29-32 = 2 Kings 18-20; 33 = 2 Kings 21; 34-35 = 2 Kings 22-23; 36 = 2 Kings
+23-25) it copies the Kings Chinese at each level where the Hebrew is the same,
+and differs, with a decision naming the difference, where it is not (4:2 "他"
+for Hiram; 5:4 the Levites; 6:5-6 "Jerusalem" and "a ruler"; 7:19 "forsake";
+18:5 *gt* for "the Lord"; 33:7 "the idol" and *gt*; 34:20 Abdon son of Micah).
+6:41-42 (Psalm 132:8-10) keeps the English \q lines at each level, drafted for
+the Psalm to copy. 36:22-23 is drafted for Ezra 1:1-3 to copy (*dn* =
+`{{divine_name:上主|雅威}}`, *gt* = `{{god_term:神|上帝}}`, *he* =
+`{{deity_pronoun:他|祂}}`):
+
+| English | Literal | Balanced | Readable |
+|---|---|---|---|
+| the book of the kings of Judah and Israel / of Israel and Judah (16:11; 25:26; 27:7; 28:26; 32:32; 35:27; 36:8) | 《犹大和以色列诸王记》 / 《以色列和犹大诸王记》 | as L | as L |
+| the book of the kings of Israel (20:34); the matters of the kings of Israel (33:18) | 《以色列诸王记》; 《以色列诸王实录》 | as L | as L |
+| the rest of the matters of X … are they not written (9:29; 12:15; 25:26) | X其余的事……不都写在……上吗？ | as L | X所做的其他事……都记在……里 |
+| … look, they are written in … (16:11; 20:34; 27:7; 28:26; 32:32; 33:18; 35:27; 36:8) | 看哪，都写在《……》上 | 都写在《……》上 (其余的事, never 事迹) | 都记在《……》里 |
+| the words of N the prophet / the seer (9:29; 12:15; 20:34; 33:19), a prophet's writing as a source | 先知N的言语中, no book-title marks | 先知N的记录里 | 记在先知N的记录里 |
+| the midrash of the prophet Iddo (13:22); the midrash of the book of the kings (24:27) | 先知易多的米德拉什中; 《诸王记》的米德拉什中 | 先知易多的注释里; 《诸王记》的注释里 | as B |
+| for he is good, for his steadfast love endures forever (5:13; 7:3, 6; 20:21) | *he*是美善的，*he*的慈爱永不止息 (as 1 Chronicles 16:34) | as L (；between the clauses) | *he*真好！*he*的爱永远不变 |
+| hear from heaven (min-hashamayim, 6:21-39; 7:14) | 从天上倾听 (6:27 在天上, where the Hebrew has no "from"); Kings' "in heaven" 在天上 | as L | as L |
+| humble oneself (7:14; 12:6-12; 30:11; 32:26; 33:12-23; 34:27; 36:12) | 谦卑自己 | 谦卑下来 | 谦卑下来 |
+| forsake (ʿazav: 7:19, 22; 12:1, 5; 13:10-11; 15:2; 21:10; 24:18-24; 28:6; 34:25) | 离弃 | 离弃 | 离弃 |
+| be strong and courageous (32:7) | 要刚强，要勇敢 | 要刚强勇敢 | 要坚强勇敢 |
+| the people of the land (23:13-21; 26:21; 33:25; 36:1) | 国中的百姓 (33:25; 36:1); 23:13-21 那地所有的百姓, as 2 Kings 11 | 国中(所有)的百姓 | 国中 / 国内(所有)的百姓 |
+
+Terms settled in 2 Chronicles:
+
+| English | Chinese |
+|---|---|
+| chief priest (kohen harosh; 19:11; 24:6, 11; 26:20; 31:10) | 首席祭司 at every level (24:6 L 为首的, as the Hebrew "the head"; 31:10 L 首席[祭司]); 大祭司 only for the high priest (kohen gadol, 34:9); 祭司长 is kept for the New Testament |
+| princes, officials (sarim) | 首领 (L); 官员 (B); 领袖 (R), Levite chiefs (35:9) included |
+| prophets addressing the king (15:2; 16:7; 19:2; 25:7, 15-16) | 你 at every level; "O king" 王啊, at Readable too (25:7), 陛下 being kept for courtiers with 您 |
+| seer (9:29; 12:15; 16:7; 19:2; 33:18) | 先见; Readable explains it once in brackets where its English does |
+| burnt offering; peace offering; thanksgiving offering; sin offering (lev_formulas) | 燔祭 (L, B), 全烧的祭 (R); 平安祭; 感谢祭; 赎罪祭; the contribution (terumah) 举祭 (L, B), 礼物 (R) |
+| Passover; Feast of Unleavened Bread; Booths; Weeks (8:13; 30; 35) | 逾越节; 除酵节; 住棚节; 七七节 |
+| lyre; harp; cymbals; trumpets; rams' horns (5:12-13; 15:14; 20:28; 29:25-28) | 琴; 瑟; 钹; 号; 羊角号, every level (as 1 Chronicles 15:28) |
+| talent; shekel; cubit; handbreadth; bath; cor | Literal keeps the unit; B and R `units` spans with only the measure inside: `{{units:约34公斤\|一他连得}}`, 100 talents `约3400公斤`, 450 `约15300公斤`, 600 `约20吨`, 666 `约22600公斤` (B) / `约23吨` (R) as 1 Kings 10:14; shekel 11.5克 (600 `约6.9公斤`, 50 `约575克`); cubit 45厘米 (`约9米\|二十肘`); handbreadth `约7.5厘米`; bath 22升 (3,000 `约66000升`; 20,000 `约44万升`); cor 220升 (20,000 `约440万升`) |
+| algum (2:7; 9:10-11); almug (1 Kings 10:11-12) | 阿勒古木; 阿勒慕木: the Hebrew spells the two apart, and so does the English |
+| Libyans (12:3; 16:8) | 利比亚人 (Acts 2:10), not 路比人 |
+| midrash (13:22; 24:27) | 米德拉什 (L); 注释 (B, R) |
+| the Spirit of God clothed (24:20) | as Judges 6:34: 以……为衣 (L); 像衣服一样披在……身上 (B); 降在……身上，掌管了他 (R) |
+
+Names (one Chinese form per person, whichever spelling the Hebrew has, as
+2 Kings set it; different persons follow the English):
+
+| English (first verse) | Chinese |
+|---|---|
+| Huram king of Tyre (2:2, 10-11; 8:2, 18; 9:10, 21) | 希兰, as Hiram in 1 Kings 5; 9-10 and 1 Chronicles 14:1 (户兰 is kept for the Huram of 1 Chronicles 8:5) |
+| Huram-abi the craftsman (2:12; 4:16); Huram (4:11) | 希兰亚比, written as one name; 希兰, as 1 Kings 7:13-45 |
+| Abijah king of Judah (11:20-13:23); Abijah mother of Hezekiah (29:1) | 亚比雅 (Matthew 1:7; 1 Chronicles 3:10), with a decision naming 1 Kings 15's Abijam 亚比央 |
+| Micaiah daughter of Uriel (13:2); Micaiah son of Imlah (18) | 米该亚 (as 1 Kings 22) |
+| Jehoram / Joram (21-22); Joash / Jehoash (22-25) | 约兰; 约阿施, as 2 Kings |
+| Jehoshabeath (22:11) | 约示巴, 2 Kings 11:2's Jehosheba |
+| Athaliah (22:2-24:7) | 亚她利雅 |
+| Uzziah (26-27) | 乌西雅, with a decision linking 2 Kings 15's Azariah 亚撒利雅 |
+| Jehozabad (17:18; 24:26); Jozabad (31:13; 35:9); Zabad son of Shimeath; Shimrith (24:26) | 耶何萨拔, as 2 Kings 12:22; 约撒拔; 撒拔, 示米押; 申利 |
+| Jehonathan the Levite (17:8) | 耶何拿单, kept apart from Jonathan 约拿单 as the English spells him |
+| Zechariah (17:7; 20:14; 21:2; 24:20; 26:5; 29:1, 13; 34:12; 35:8) | 撒迦利亚, every bearer |
+| Eden son of Joah, the Levite (29:12; 31:15) | 伊甸, the garden's form for the same Hebrew name, with a decision |
+| Abdon son of Micah (34:20) | 押顿, 米迦 (the prophet is 弥迦); 2 Kings 22:12 has Achbor son of Micaiah 亚革波, 米该雅 |
+| Hozai (33:19) | 何赛 |
+| Zerah the Cushite; Mareshah; Zephathah (14:8-9) | 古实人谢拉; 玛利沙; 洗法他 |
+| Mount Zemaraim (13:4) | 洗玛脸山 |
+| Sukkiim (12:3) | 苏基人 |
+| Meunites (20:1; 26:7) | 米乌尼人 |
+| Oded (15:1; 28:9) | 俄德 |
+| Hanani the seer; Jehu son of Hanani (16:7; 19:2; 20:34) | 哈拿尼; 哈拿尼的儿子耶户 |
+| Cyrus king of Persia (36:22-23) | 波斯王古列 |
+
+Units, regnal formulas and offices not listed here are those of the 2 Kings
+section above. Readers of 1 Kings 9:9 (背弃 B, 离开 R), 2 Kings 22:17 (离开 R),
+2 Kings 23:30 (这地的百姓 L) and 2 Kings 25:18 (大祭司 R for the chief priest)
+will find this book's forms differ; those verses are for a reviewer to bring
+into line.

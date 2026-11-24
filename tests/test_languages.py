@@ -134,7 +134,7 @@ class LanguagesTest(unittest.TestCase):
         def link(href, code, native, page, name):
             """A link to another language: its own name, then its name in
             the page's language in brackets."""
-            return (f'<a href="{href}" lang="{code}" hreflang="{code}" data-lang="{code}">{native} '
+            return (f'<a href="{href}" hreflang="{code}" data-lang="{code}"><span lang="{code}">{native}</span> '
                     f'<span class="lang-gloss" lang="{page}">({name})</span></a>')
 
         self.assertIn('<span lang="en" aria-current="true">English</span>', en)
@@ -151,7 +151,7 @@ class LanguagesTest(unittest.TestCase):
         self.assertIn(link("/jhn/1/", "en", "English", "es", "inglés"), es)
         self.assertIn('<h2 id="foot-langs">Idiomas</h2>', es)
         # The 404 page, which has no path, offers each language's home page.
-        self.assertIn('href="/es/" lang="es"', self.read("404.html"))
+        self.assertIn('href="/es/" hreflang="es"', self.read("404.html"))
         self.assertNotIn('name="owb-langs"', self.read("404.html"))
 
     def test_other_language_pages_have_their_own_interface_text(self):
@@ -310,7 +310,7 @@ class LanguagesTest(unittest.TestCase):
         page = self.read(build_site.article_url(article).strip("/") + "/index.html")
         for lang in OTHERS:
             if lang not in build_site.article_languages(article):
-                self.assertIn(f'<a href="/{lang}/articles/" lang="{lang}"', page)
+                self.assertIn(f'<a href="/{lang}/articles/" hreflang="{lang}"', page)
                 self.assertNotIn(f'hreflang="{lang}" href=', page)
 
     def test_links_inside_other_language_pages_resolve(self):
@@ -330,7 +330,7 @@ class LanguagesTest(unittest.TestCase):
         self.assertIn('<meta name="robots" content="noindex">', page)
         self.assertNotIn('rel="canonical"', page)
         # Unlisted, but the switch and the remembered choice still lead to it.
-        self.assertIn('<a href="/account/" lang="en"', page)
+        self.assertIn('<a href="/account/" hreflang="en"', page)
         self.assertIn(build_site.langs_meta(build_site.LANGUAGES), page)
         self.assertNotIn("/account/", sitemap_text(self.out))
 
