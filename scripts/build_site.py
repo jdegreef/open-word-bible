@@ -39,6 +39,7 @@ from owb.export import record_verses  # noqa: E402
 
 sys.path.insert(0, str(ROOT / "scripts"))
 import indexnow  # noqa: E402  (scripts/indexnow.py)
+import minify  # noqa: E402  (scripts/minify.py)
 
 # The interface languages, English first (data/languages.json; see catalog below).
 LANGUAGES = owb_languages.CODES
@@ -217,8 +218,16 @@ def asset(name):
     """The URL of a file from web/, with its content hash as a version.
     Browsers keep style.css and the scripts for hours; a new version is a
     new URL, so a deploy can never pair new pages with old styles."""
-    digest = hashlib.sha256((ROOT / "web" / name).read_bytes()).hexdigest()[:10]
-    return f"/{name}?v={digest}"
+    data = served_web_file(name).encode("utf-8") if name in WEB_FILES else (ROOT / "web" / name).read_bytes()
+    return f"/{name}?v={hashlib.sha256(data).hexdigest()[:10]}"
+
+
+@functools.cache
+def served_web_file(name):
+    """web/<name> as the site serves it: without comments or indentation
+    (scripts/minify.py), a quarter fewer bytes, gzipped, for every reader.
+    asset() versions this copy, not the source."""
+    return minify.minify(name, (ROOT / "web" / name).read_text(encoding="utf-8"))
 
 
 # Colour modes (see web/style.css and web/site.js): value, and the
@@ -486,12 +495,12 @@ def language_menu(lang, path=None, translated=LANGUAGES):
             f'<ul class="prefs-langs">{items}</ul></div></div>')
 
 
-def colour_menu(lang, path=None, translated=LANGUAGES):
-    """The gear menu: the colour mode, the display settings (DISPLAY_PREFS),
-    then the languages (language_items, as in the footer). web/site.js
-    runs it."""
-    label = t(lang, "tools.display")
-
+@functools.cache
+def colour_prefs(lang):
+    """The gear menu's settings: the colour mode and the display settings
+    (DISPLAY_PREFS). The same on every page in a language, and about 6.5 KB,
+    so they come from nav-<lang>.js (nav_script, NAV_SCRIPT puts them at the
+    top of the menu, before web/site.js runs it), not from every page."""
     def option(value, default, face, name):
         on = value == default
         return (f'<button type="button" role="radio" aria-checked="{"true" if on else "false"}" '
@@ -515,6 +524,14 @@ def colour_menu(lang, path=None, translated=LANGUAGES):
     rows = [group(pref, t(lang, "prefs." + pref), default,
                   [(v, sample(pref, v), t(lang, f"{pref}.{v}")) for v in values])
             for pref, default, values in DISPLAY_PREFS]
+    return theme + "".join(rows)
+
+
+def colour_menu(lang, path=None, translated=LANGUAGES):
+    """The gear menu: the colour mode and the display settings
+    (colour_prefs, filled in from nav-<lang>.js), then the languages
+    (language_items, as in the footer). web/site.js runs it."""
+    label = t(lang, "tools.display")
     # The same links as the header's language menu (language_menu), which
     # nav_script copies in, so a page carries the list once.
     languages = (f'<p class="prefs-label" id="prefs-lang">{t(lang, "footer.languages")}</p>'
@@ -524,7 +541,7 @@ def colour_menu(lang, path=None, translated=LANGUAGES):
         '<button type="button" class="tool-btn prefs-btn" aria-expanded="false" aria-controls="colour-menu" '
         f'aria-label="{label}" title="{label}">{GEAR}</button>'
         f'<div id="colour-menu" class="prefs-menu" role="group" aria-label="{label}" hidden>'
-        + theme + "".join(rows) + languages + '</div></div>')
+        + languages + '</div></div>')
 
 
 OG = ROOT / "web" / "og"
@@ -792,6 +809,12 @@ NAV_SCRIPT = r"""(function () {
     if (book) panel.querySelectorAll('[data-book="' + book[1] + '"]')
       .forEach(function (a) { a.setAttribute("aria-current", "true"); });
   });
+  // The gear menu's settings (build_site.colour_prefs), before its
+  // languages; web/site.js, which runs after this, wires them up.
+  var prefs = document.getElementById("colour-menu");
+  if (prefs && window.OWB_PREFS && !prefs.querySelector("[data-pref]")) {
+    prefs.insertAdjacentHTML("afterbegin", window.OWB_PREFS);
+  }
   // The gear menu's language links are the header language menu's.
   document.querySelectorAll("ul[data-copy]").forEach(function (ul) {
     var from = document.getElementById(ul.getAttribute("data-copy"));
@@ -818,11 +841,12 @@ NAV_SCRIPT = r"""(function () {
 
 @functools.cache
 def nav_script(lang):
-    """The header's dropdown panels in lang (nav_menus), as a script that
-    fills them in (NAV_SCRIPT), and its URL. It carries the footer's book
-    chips and the book names too (footer_data), which were the largest
-    part of every page's footer."""
+    """The header's dropdown panels in lang (nav_menus) and the gear menu's
+    settings (colour_prefs), as a script that fills them in (NAV_SCRIPT),
+    and its URL. It carries the footer's book chips and the book names too
+    (footer_data), which were the largest part of every page's footer."""
     text, _ = shared_script("OWB_NAV", {key: panel for key, _l, _i, _h, panel, _c in nav_menus(lang)})
+    text += shared_script("OWB_PREFS", colour_prefs(lang))[0]
     text += shared_script("OWB_FOOT", footer_data(lang))[0]
     text += NAV_SCRIPT
     return text, f"/nav-{lang}.js?v={hashlib.sha256(text.encode()).hexdigest()[:10]}"
@@ -7641,7 +7665,7 @@ class Stages:
 
 
 def build(out):
-    for cached in (_chapters, chapter_has, load_memory_plans, load_intro, book_languages, status_counts, _book_records, reader_verse_starts, _chapter_words, _reader_book_words, chapter_verses, versification_chapter_verses, book_reader_verses, _all_records, nav_menus, footer_links, passages, asset, translated_verses, catalog, book_refs, name_cards, term_uses,
+    for cached in (_chapters, chapter_has, load_memory_plans, load_intro, book_languages, status_counts, _book_records, reader_verse_starts, _chapter_words, _reader_book_words, chapter_verses, versification_chapter_verses, book_reader_verses, _all_records, nav_menus, footer_links, passages, asset, served_web_file, translated_verses, catalog, book_refs, name_cards, term_uses,
                    search_documents, word_uses, series_numbers, chapter_articles, load_plans, plans_json, plans_json_url,
                    downloads, chapter_shared, reader_shared, article_link, places, places_more, journeys, basemap_file,
                    book_notes, article_links, card_translation, owb_notes.load_notes, owb_notes.load_cards,
@@ -7793,7 +7817,7 @@ def build(out):
             path.write_bytes(data)
     with stage("web files"):
         for name in WEB_FILES:
-            shutil.copy(ROOT / "web" / name, out / name)
+            (out / name).write_text(served_web_file(name), encoding="utf-8")
         shutil.copytree(ROOT / "web" / "fonts", out / "fonts")
         shutil.copytree(ROOT / "web" / "icons", out / "icons")
         shutil.copytree(OG, out / "og", ignore=shutil.ignore_patterns("*.digest"))
