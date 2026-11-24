@@ -1125,3 +1125,29 @@ For reviewers:
 - 3:8: is شماس familiar to Persian readers, or should Literal also say
   خادم?
 - 1:10: is the wording for arsenokoitai clear without being crude?
+
+### 2 Timothy
+
+- Follows 1 Timothy: Paul says تو to Timothy; فرزند / پسر for teknon; سخنان
+  سالم / تعلیم سالم / تعلیم راستین; این سخن امین است (2:11); وجدان.
+- Doulos kyriou (2:24): بردهٔ خداوند (Literal) / خادم خداوند (Balanced,
+  Readable).
+- 2:11-13 keeps the English poetry breaks.
+- Theopneustos (3:16): از نفس خدا صادر شده (Literal, Balanced) / از نفس
+  خدا آمده است (Readable).
+- 4:6 spendomai: همچون هدیهٔ ریختنی ریخته می‌شوم. 4:7: جنگ نیکو (Literal)
+  / مسابقهٔ نیکو (Balanced), as in 1 Timothy 6:12.
+- Vessels (2:20-21): ظرف, کاربرد آبرومند / پست (Literal).
+
+Names: لوئیس, اونیکی, فیجلوس, هرموجنس, اونیسیفوروس, هیمینائوس, فیلیتوس,
+ینیس, یمبریس, انطاکیه, قونیه, لستره, دیماس, کریسکیس, غلاطیه, تیتوس,
+دلماطیه, لوقا, مرقس, تیخیکوس, تروآس, کارپس, اسکندر, پریسکا, آکیلا,
+اراستوس, تروفیموس, میلیتوس, یوبولوس, پودنس, لینوس, کلودیا.
+
+For reviewers:
+
+- 3:16 «از نفس خدا صادر شده»: is this clear, or is the familiar «الهام
+  خدا» better at Balanced?
+- 2:17 «خوره» for gangrene: is it understood, or should it be «قانقاریا»?
+- 2:24: does «بردهٔ خداوند» at Literal sound harsh next to the common
+  «بندهٔ خداوند»?
