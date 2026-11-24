@@ -51,7 +51,7 @@ conflict. A conflict it reports is a real one: both sides changed one value.
 changed books). `scripts/git-hooks/pre-commit` lints and validates what is
 staged (`git config core.hooksPath scripts/git-hooks`).
 
-    OWB_VENDOR=<sources dir> python3 -m unittest discover -s tests -t .
+    OWB_VENDOR=<sources dir> python3 scripts/run_tests.py   # tests/, 4 modules at a time
     OWB_VENDOR=<sources dir> python3 -m owb.validate content/*/*.json
     python3 scripts/extract_tokens.py --check   # after adding verses
     python3 scripts/build_site.py               # the site must still build

@@ -85,15 +85,31 @@ jobs:
         run: python3 scripts/extract_comparison.py --check
       - name: Place and map extracts are up to date
         run: python3 scripts/extract_places.py --check
+      # The tests that don't read a built site (most modules, by count) run
+      # while the site builds, two at a time so they leave the build its
+      # memory; "Unit tests" below waits for them and prints what they say.
+      - name: Start the unit tests that don't need the site
+        run: |
+          (python3 scripts/run_tests.py --no-site -j 2 > no-site-tests.log 2>&1
+           echo $? > no-site-tests.status) &
       - name: Build the site
         run: python3 scripts/build_site.py
       - name: Site size budgets
         run: python3 scripts/check_budgets.py site
       # The tests read the build above rather than building the site again.
+      # scripts/run_tests.py runs each module in a process of its own, four
+      # at a time, and lists how long each took.
       - name: Unit tests
         env:
           OWB_BUILT_SITE: site
-        run: python3 -m unittest discover -s tests -t .
+        run: |
+          status=0
+          python3 scripts/run_tests.py --site -j 4 || status=1
+          while [ ! -f no-site-tests.status ]; do sleep 5; done
+          echo "--- the tests that ran during the build"
+          cat no-site-tests.log
+          [ "$(cat no-site-tests.status)" = 0 ] || status=1
+          exit $status
       # A report, never a failure: footnotes whose verse words the
       # alternative, and verses and entries at odds with a terms glossary
       # (the admin's Checks page shows the same lists).
