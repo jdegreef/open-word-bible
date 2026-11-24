@@ -401,10 +401,9 @@
     var place = null;
     try { place = JSON.parse(localStorage.getItem("owb.place") || "null"); } catch (e) { /* none */ }
     if (!place || !place.book || !place.chapter || !place.verse) return;
-    // The book names in the page's language, carried once, by the footer's link.
-    var carrier = document.querySelector("a[data-resume][data-books]");
-    if (!carrier) return;
-    var names = JSON.parse(carrier.getAttribute("data-books"));
+    // The book names in the page's language, from nav-<lang>.js (footer_data).
+    var names = (window.OWB_FOOT || {}).books;
+    if (!names) return;
     document.querySelectorAll("a[data-resume]").forEach(function (a) {
       var name = names[place.book];
       if (!name) return;
@@ -552,10 +551,65 @@
 // opens a GitHub issue that already names the page it was reported from.
 (function () {
   "use strict";
+  // Each kind of problem (a typo, a translation choice, ...) is named in the
+  // issue's title, and a verse open in the reader (#v12) in its body.
   document.querySelectorAll("a[data-report]").forEach(function (a) {
     var title = document.title.replace(/\s*[·|–-]\s*Open Word Bible$/, "");
-    a.href += "?title=" + encodeURIComponent(title + ": ") +
-      "&body=" + encodeURIComponent("Page: " + location.origin + location.pathname + "\n\nWhat's wrong:\n");
+    var kind = a.getAttribute("data-kind");
+    a.addEventListener("click", function () {
+      var verse = /^#v(\d+)$/.exec(location.hash);
+      a.href = a.href.split("?")[0] + "?title=" + encodeURIComponent((kind ? kind + ": " : "") + title + ": ") +
+        "&body=" + encodeURIComponent("Page: " + location.origin + location.pathname +
+          (verse ? "\nVerse: " + verse[1] : "") + (kind ? "\nKind: " + kind : "") + "\n\nWhat's wrong:\n");
+    });
+  });
+})();
+
+// The footer (site_footer in scripts/build_site.py): its columns fold on a
+// phone, so the page ends in a few lines rather than three screens; the
+// chapters read lately, kept as owb.recent, are a link each under the box
+// to go to a passage; its display button opens the gear menu; and the line
+// printed under a page has the day it was printed.
+(function () {
+  "use strict";
+  if (window.matchMedia && window.matchMedia("(max-width: 560px)").matches) {
+    document.querySelectorAll("footer.site details.foot-sec[open]").forEach(function (d) { d.open = false; });
+  }
+  var here = /^(\/[a-z]{2})?\/([a-z0-9]{3})\/(\d+)\/$/.exec(location.pathname.replace(/index\.html$/, ""));
+  var recent = [];
+  try { recent = JSON.parse(localStorage.getItem("owb.recent") || "[]") || []; } catch (e) { /* none */ }
+  if (!Array.isArray(recent)) recent = [];
+  var names = (window.OWB_FOOT || {}).books || {};
+  var box = document.querySelector(".foot-recent");
+  if (box) {
+    var prefix = (document.querySelector("a[data-resume]") || { getAttribute: function () { return ""; } })
+      .getAttribute("data-prefix") || "";
+    recent.filter(function (r) {
+      return r && names[r.book] && !(here && here[2].toUpperCase() === r.book && +here[3] === r.chapter);
+    }).slice(0, 3).forEach(function (r) {
+      var a = document.createElement("a");
+      a.className = "book-chip";
+      a.href = prefix + "/" + r.book.toLowerCase() + "/" + r.chapter + "/";
+      a.textContent = names[r.book] + " " + r.chapter;
+      box.appendChild(a);
+      box.hidden = false;
+    });
+  }
+  if (here && names[here[2].toUpperCase()]) {
+    var book = here[2].toUpperCase(), chapter = +here[3];
+    recent = [{ book: book, chapter: chapter }].concat(recent.filter(function (r) {
+      return r && !(r.book === book && r.chapter === chapter);
+    })).slice(0, 6);
+    try { localStorage.setItem("owb.recent", JSON.stringify(recent)); } catch (e) { /* this page only */ }
+  }
+  var display = document.querySelector(".foot-display");
+  var gear = document.querySelector(".prefs-btn");
+  if (display && gear) display.addEventListener("click", function (e) { e.stopPropagation(); gear.click(); gear.focus(); });
+  else if (display) display.hidden = true;
+  window.addEventListener("beforeprint", function () {
+    var day = new Date().toLocaleDateString(document.documentElement.lang || undefined,
+      { year: "numeric", month: "long", day: "numeric" });
+    document.querySelectorAll("[data-print-date]").forEach(function (s) { s.textContent = day; });
   });
 })();
 

@@ -71,7 +71,7 @@ python3 scripts/check_budgets.py site
 
 # The tests read the build above (OWB_BUILT_SITE) rather than building again.
 step "Unit tests"
-OWB_BUILT_SITE=site python3 -m unittest discover -s tests -t .
+OWB_BUILT_SITE=site python3 scripts/run_tests.py
 
 translations
 

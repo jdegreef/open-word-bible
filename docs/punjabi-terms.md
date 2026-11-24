@@ -2071,3 +2071,291 @@ People and places: ਪੌਲੁਸ, ਤੁਖਿਕੁਸ; ਅਫ਼ਸੁਸ, �
   either setting: {{units:ਚਾਂਦੀ ਦੇ ਪੰਜ ਥੈਲੇ|ਪੰਜ ਤੋੜੇ}}, {{units:ਚਾਂਦੀ ਦਾ ਇੱਕ
   ਥੈਲਾ|ਇੱਕ ਤੋੜਾ}}, {{units:ਥੈਲਾ|ਤੋੜਾ}}, {{units:ਦਸ ਥੈਲੇ|ਦਸ ਤੋੜੇ}}.
 - To unify: John (4 files) still has ਪਵਿੱਤਰ ਗ੍ਰੰਥ for Scripture.
+
+### Luke
+
+- Address: as in Matthew, Jesus, God and the Father take honorific plural
+  forms with no deity_pronoun spans, and prayer to the Father uses ਤੂੰ
+  (10:21, 11:2-4, 22:42, 23:34, 23:46). Disciples say ਤੁਸੀਂ and "ਹੇ ਪ੍ਰਭੂ";
+  epistata is "ਸੁਆਮੀ ਜੀ". Hostile speakers say ਤੂੰ to Jesus, following Mark
+  14-15: the council (22:67-70), the guards (22:64), Pilate (23:3),
+  the rulers, soldiers and one criminal (23:35-39). In Luke 20 the leaders and
+  the spies say ਤੁਸੀਂ and "ਗੁਰੂ ਜੀ". Cleopas says ਤੁਸੀਂ to the stranger
+  (24:18). The Son of Man and the Messiah in 20:41-44 and 24:26, 46 take
+  plain forms. Wisdom of God in 11:49 is feminine (ਭੇਜਾਂਗੀ).
+- Formulas: truly I tell you ਮੈਂ ਤੁਹਾਨੂੰ ਸੱਚ ਆਖਦਾ ਹਾਂ (ਤੈਨੂੰ to one person,
+  23:43); woman (gynai) "ਹੇ ਇਸਤਰੀ" (L), "ਬੀਬੀ" (B, R); man (anthrōpe) "ਹੇ
+  ਮਨੁੱਖ" (L), "ਭਾਈ" (B); 20:37 "ਅਬਰਾਹਾਮ ਦਾ ਪਰਮੇਸ਼ੁਰ, ਇਸਹਾਕ ਦਾ ਪਰਮੇਸ਼ੁਰ ਅਤੇ
+  ਯਾਕੂਬ ਦਾ ਪਰਮੇਸ਼ੁਰ" (L), "ਅਬਰਾਹਾਮ, ਇਸਹਾਕ ਅਤੇ ਯਾਕੂਬ ਦਾ ਪਰਮੇਸ਼ੁਰ" (B, R).
+- People and groups: scribes ਸ਼ਾਸਤਰੀ (L), ਬਿਵਸਥਾ ਦੇ ਸਿੱਖਿਅਕ (B, R); nomikos
+  ਬਿਵਸਥਾ ਦਾ ਮਾਹਰ; elders ਬਜ਼ੁਰਗ (L), ਬਜ਼ੁਰਗ ਆਗੂ (B, R); council ਮਹਾਂ-ਸਭਾ
+  (Matthew writes ਮਹਾਂਸਭਾ: unify later); governor ਰਾਜਪਾਲ; centurion ਸੂਬੇਦਾਰ;
+  slave ਗ਼ੁਲਾਮ, servant girl ਦਾਸੀ; tax collector ਮਸੂਲੀਆ; Gentiles ਪਰਾਈਆਂ
+  ਕੌਮਾਂ (L, B), ਗ਼ੈਰ-ਯਹੂਦੀ (R); nations ਕੌਮਾਂ (24:47).
+- Names: Theophilus ਥਿਉਫ਼ਿਲੁਸ, Gabriel ਜਬਰਾਈਲ, Zechariah ਜ਼ਕਰਯਾਹ, Elizabeth
+  ਇਲੀਸਬਤ, Anna ਹੰਨਾਹ, Jairus ਯਾਈਰ, Zacchaeus ਜ਼ੱਕੀ, Joanna ਯੋਆਨਾ, Mary
+  Magdalene ਮਰਿਯਮ ਮਗਦਲੀਨੀ (R ਮਗਦਲਾ ਨਗਰ ਦੀ ਮਰਿਯਮ), Lazarus ਲਾਜ਼ਰ, Beelzebul
+  ਬਆਲਜ਼ਬੂਲ, Nain ਨਾਇਨ, Emmaus ਇੰਮਾਊਸ, Cleopas ਕਲਿਉਪਾਸ, Bethany ਬੈਤਅਨੀਆ,
+  Barabbas ਬਰੱਬਾ, Arimathea ਅਰਿਮਥੀਆ.
+- Teaching and faith: parable ਦ੍ਰਿਸ਼ਟਾਂਤ; faith ਵਿਸ਼ਵਾਸ (Matthew has ਨਿਹਚਾ:
+  possible unify), kept at every level (24:11, 24:25); repentance ਤੋਬਾ (L, B),
+  "ਪਾਪਾਂ ਤੋਂ ਮੁੜਨਾ" (R); resurrection ਪੁਨਰ-ਉਥਾਨ (L, B); raised (egerthē)
+  ਜਿਵਾਏ ਗਏ ਹਨ (L, B), ਜੀ ਉੱਠੇ ਹਨ or "ਪਰਮੇਸ਼ੁਰ ਨੇ ... ਜਿਉਂਦਾ ਕਰ ਦਿੱਤਾ" (R);
+  Scripture ਧਰਮ-ਗ੍ਰੰਥ; the Law of Moses, the Prophets and the Psalms ਮੂਸਾ ਦੀ
+  ਬਿਵਸਥਾ, ਨਬੀਆਂ, ਜ਼ਬੂਰਾਂ (24:44); mammon ਮਾਮੋਨ; Hades ਪਤਾਲ; paradise
+  ਫ਼ਿਰਦੌਸ (L, B), ਸਵਰਗ ਲੋਕ (R); spirit/ghost (24:37-39) ਆਤਮਾ (L, B), ਭੂਤ (R).
+- Worship and feasts: temple ਹੈਕਲ; Passover ਪਸਾਹ; unleavened bread ਪਤੀਰੀ
+  ਰੋਟੀ (L, B), ਬਿਨਾਂ ਖ਼ਮੀਰ ਦੀ ਰੋਟੀ (R); cup ਪਿਆਲਾ; new covenant ਨਵਾਂ ਨੇਮ;
+  wine ਮੈ, sour wine ਖੱਟੀ ਮੈ; bless (eulogeō, over bread) ਬਰਕਤ ਮੰਗਣੀ (L, B),
+  ਪਰਮੇਸ਼ੁਰ ਦਾ ਧੰਨਵਾਦ ਕਰਨਾ (R); bless God ਪਰਮੇਸ਼ੁਰ ਨੂੰ ਧੰਨ ਆਖਣਾ (L, B);
+  worship (24:52) ਮੱਥਾ ਟੇਕਣਾ (L), ਅਰਾਧਨਾ ਕਰਨੀ (B, R).
+- Units and money: mina ਮੀਨਾ; denarius ਦੀਨਾਰ; sixty stadia (24:13)
+  {{units:ਲਗਭਗ ਗਿਆਰਾਂ ਕਿਲੋਮੀਟਰ|ਸੱਠ ਸਟੇਡੀਆ}} (B, R), ਸੱਠ ਸਟੇਡੀਆ (L); the
+  first day of the week ਹਫ਼ਤੇ ਦਾ ਪਹਿਲਾ ਦਿਨ (L, B), ਐਤਵਾਰ (R).
+- Overlap rewordings worth a reviewer's eye: 23:36-37 "ਤੂੰ ਜੇ ਯਹੂਦੀਆਂ ਦਾ
+  ਰਾਜਾ ਹੈਂ" (B, R) and "ਤਾਂ ਖ਼ੁਦ ਨੂੰ ਬਚਾ" (L); 23:46 "ਤੇਰੇ ਹੱਥਾਂ ਵਿੱਚ ਮੈਂ
+  ਆਪਣਾ ਆਤਮਾ ਸੌਂਪਦਾ ਹਾਂ" (L, Greek order), "ਤੇਰੇ ਹੱਥੀਂ ..." (B).
+
+### Exodus
+
+- Divine name and address: DN as everywhere; "I AM WHO I AM" (3:14) ਮੈਂ ਜੋ
+  ਹਾਂ, ਸੋ ਹਾਂ, "I AM" ਮੈਂ ਹਾਂ; El Shaddai (6:3) ਸਰਬ ਸ਼ਕਤੀਮਾਨ ਪਰਮੇਸ਼ੁਰ;
+  Adonai in address ਹੇ (ਮੇਰੇ) ਪ੍ਰਭੂ, no span; Lord YHWH (23:17, 34:23) ਪ੍ਰਭੂ
+  {{divine_name:ਪਰਮੇਸ਼ੁਰ|ਯਾਹਵੇ}}. God says ਤੂੰ to Moses and Moses says ਤੂੰ to
+  God; God's verbs in headings and summaries are honorific plural.
+- People: SIL ({{gender:ਇਸਰਾਏਲ ਦੀ ਸੰਤਾਨ|ਇਸਰਾਏਲ ਦੇ ਪੁੱਤਰਾਂ}}) in L, SIB
+  ({{gender:ਇਸਰਾਏਲੀਆਂ|ਇਸਰਾਏਲ ਦੇ ਪੁੱਤਰਾਂ}}) in B, R; 40:36 needs the direct
+  case ({{gender:ਇਸਰਾਏਲੀ|ਇਸਰਾਏਲ ਦੇ ਪੁੱਤਰ}}). The twelve named sons (39:6-14)
+  ਇਸਰਾਏਲ ਦੇ ਪੁੱਤਰ (L, B), ਯਾਕੂਬ ਦੇ ਪੁੱਤਰ (R), no span. Community ਮੰਡਲੀ (L,
+  B), ਭਾਈਚਾਰਾ (R); elders ਬਜ਼ੁਰਗ; Hebrew ਇਬਰਾਨੀ; slave ਦਾਸ.
+- Names: Pharaoh ਫ਼ਿਰਊਨ, Midian ਮਿਦਯਾਨ, Jethro ਯਿਥਰੋ, Miriam ਮਿਰਯਮ, Marah
+  ਮਾਰਾਹ, Rephidim ਰਫ਼ੀਦੀਮ, Amalek ਅਮਾਲੇਕ, Sinai ਸੀਨਈ, Bezalel ਬਸਲਏਲ,
+  Oholiab ਆਹਾਲੀਆਬ, the Nile ਨੀਲ.
+- Plagues: blood ਲਹੂ, frogs ਡੱਡੂ, gnats ਮੱਛਰ, flies ਮੱਖੀਆਂ, livestock
+  disease ਬਵਾ, boils ਫੋੜੇ, hail ਗੜੇ, locusts ਟਿੱਡੀਆਂ; plague ਬਿਪਤਾ; harden
+  the heart ਦਿਲ ਕਠੋਰ ਕਰਨਾ; staff ਲਾਠੀ; firstborn ਪਹਿਲੌਠਾ.
+- Feasts and worship: Passover ਪਸਾਹ; unleavened bread ਪਤੀਰੀ ਰੋਟੀ; Abib
+  ਅਬੀਬ; Weeks ਹਫ਼ਤਿਆਂ ਦਾ ਤਿਉਹਾਰ; Ingathering ਸਾਂਭਣ ਦਾ ਤਿਉਹਾਰ; manna ਮੰਨ;
+  quail ਬਟੇਰੇ; Ten Words ਦਸ ਬਚਨ (R ਦਸ ਹੁਕਮ); tablets ਫੱਟੀਆਂ; testimony
+  ਸਾਖੀ (R ਨੇਮ ਦੀਆਂ ਫੱਟੀਆਂ); glory of the LORD DN ਦਾ ਪਰਤਾਪ; face ਮੁੱਖ (L),
+  ਹਜ਼ੂਰੀ (B), "ਮੈਂ ਆਪ" (R); hesed ਅਟੱਲ ਪਿਆਰ; jealous ਅਣਖੀ; Asherah ਅਸ਼ੇਰਾਹ
+  ਥੰਮ੍ਹ; veil over Moses' face ਪੜਦਾ (R ਕੱਪੜਾ).
+- Tabernacle (25-31, built again in 35-40 with the same words): tabernacle
+  ਡੇਰਾ (L), ਪਵਿੱਤਰ ਤੰਬੂ (B, R); tent of meeting ਮੁਲਾਕਾਤ ਦਾ ਤੰਬੂ; ark ਸੰਦੂਕ;
+  acacia ਕਿੱਕਰ; mercy seat ਪ੍ਰਾਸਚਿਤ ਦਾ ਢੱਕਣ (R "ਸੰਦੂਕ ਦਾ ਢੱਕਣ, ਜਿੱਥੇ ਪਾਪ
+  ਢਕੇ ਜਾਂਦੇ ਹਨ"); cherubim ਕਰੂਬੀ; lampstand ਸ਼ਮਾਦਾਨ; poles ਚੋਬਾਂ (R
+  ਡੰਡੇ); bread of the Presence ਸਨਮੁੱਖ ਦੀ ਰੋਟੀ (L), ਹਜ਼ੂਰੀ ਦੀ ਰੋਟੀ (B, R);
+  frames ਤਖ਼ਤੇ, bases ਚੌਂਕੀਆਂ, bars ਕੜੀਆਂ (R ਆਡੀਆਂ), pillars ਥੰਮ੍ਹ;
+  inner curtain ਪਰਦਾ (R ਅੰਦਰਲਾ ਪਰਦਾ), screen ਓਟ ਦਾ ਪਰਦਾ (R ਪਰਦਾ);
+  covering ਓਛਾੜ; courtyard ਵਿਹੜਾ, hangings ਕਨਾਤਾਂ, gate ਫਾਟਕ; basin ਹੌਦੀ,
+  stand ਪਾਵਾ; overlay ਮੜ੍ਹਨਾ; pure (gold) ਖ਼ਾਲਸ (R ਸ਼ੁੱਧ); mirrors ਸ਼ੀਸ਼ੇ.
+- Priests: priest ਜਾਜਕ, priesthood ਜਾਜਕਾਈ; consecrate ਪਵਿੱਤਰ ਕਰਨਾ (L, B),
+  ਪਰਮੇਸ਼ੁਰ ਲਈ ਵੱਖਰਾ ਕਰਨਾ (R); most holy ਅੱਤ ਪਵਿੱਤਰ; ephod ਏਫ਼ੋਦ, band
+  ਪਟਕਾ (R ਪੇਟੀ), breastpiece ਸੀਨਾਬੰਦ, robe ਚੋਗਾ, tunic ਕੁੜਤਾ, gold plate
+  ਪੱਤਰੀ; burnt offering ਹੋਮ ਬਲੀ, sin offering ਪਾਪ ਬਲੀ, grain offering ਮੈਦੇ
+  ਦੀ ਭੇਟ; anointing oil ਮਸਹ ਕਰਨ ਦਾ ਤੇਲ; incense ਧੂਪ.
+- The refrain of 39-40 "ਜਿਵੇਂ DN ਨੇ ਮੂਸਾ ਨੂੰ ਹੁਕਮ ਦਿੱਤਾ ਸੀ" is the same at
+  every level.
+- Units: span {{units:ਲਗਭਗ 23 ਸੈਂਟੀਮੀਟਰ|ਇੱਕ ਗਿੱਠ}}; cubits and shekels as
+  {{units:metric|original}} spans in B and R; the metals of 38:24-29 in kilos
+  (gold ≈1,000, silver ≈3,440, bronze ≈2,420); beka ≈5.7 ਗ੍ਰਾਮ; large numbers
+  in Indian grouping (6,03,550).
+- Overlap rewordings worth a reviewer's eye: the formula phrases of 35-40
+  ("ਸੋਨੇ ਦੇ ਦੋ ਕੜੇ", "ਮਸਹ ਕਰਨ ਦਾ ਪਵਿੱਤਰ ਤੇਲ") were reordered in places to
+  avoid pb1945 and IRV, so a few read "ਦੋ ਕੜੇ ਸੋਨੇ ਦੇ" (39:16, 39:19 L).
+
+### Ezekiel
+
+- Address: God takes honorific plural forms ("ਉਹ ਮੈਨੂੰ ... ਲੈ ਗਏ", "ਉਨ੍ਹਾਂ
+  ਨੇ ਮੈਨੂੰ ਆਖਿਆ") with no deity_pronoun spans, and says ਤੂੰ to Ezekiel, to
+  Gog and to the nations addressed one by one. The guide of chapters 40-48 is
+  singular ("ਉਹ ਮੈਨੂੰ ... ਲੈ ਆਇਆ"), "ਉਹ" at L and "ਉਹ ਮਨੁੱਖ" at B and R; he
+  says ਤੂੰ to Ezekiel (40:4).
+- Formulas: ben-adam "ਹੇ ਮਨੁੱਖ ਦੀ ਸੰਤਾਨ" at every level (the IRV's "ਹੇ ਮਨੁੱਖ
+  ਦੇ ਪੁੱਤਰ" trips the overlap rule on every use: a reviewer may prefer it);
+  Lord YHWH "ਪ੍ਰਭੂ {{divine_name:ਪਰਮੇਸ਼ੁਰ|ਯਾਹਵੇ}}"; thus says "... ਇਉਂ ਆਖਦੇ
+  ਹਨ" (L), "... ਇਹ ਆਖਦੇ ਹਨ" (B, R); declares "... ਦਾ ਵਾਕ ਹੈ" (L, B), "...
+  ਆਖਦੇ ਹਨ" (R); the word came "ਪ੍ਰਭੂ ਦਾ ਬਚਨ ਮੇਰੇ ਕੋਲ ਆਇਆ" (L, B), "ਪ੍ਰਭੂ ਨੇ ਮੈਨੂੰ
+  ਇਹ ਸੰਦੇਸ਼ ਦਿੱਤਾ" (R); glory ਪਰਤਾਪ.
+- People and places: Kebar ਕਬਾਰ ਨਦੀ (L), ਨਹਿਰ (B, R); exiles ਗ਼ੁਲਾਮੀ ਵਿੱਚ ਆਏ
+  ਲੋਕ (R ਬੰਦੀ ਬਣਾ ਕੇ ਲਿਆਂਦੇ ਲੋਕ); rebellious house ਬਗ਼ਾਵਤ ਦਾ ਘਰਾਣਾ (L),
+  ਬਾਗ਼ੀ ਘਰਾਣਾ (B), ਹੁਕਮ ਨਾ ਮੰਨਣ ਵਾਲੇ ਲੋਕ (R); Nebuchadrezzar ਨਬੂਕਦਰੱਸਰ;
+  Tyre ਸੂਰ, Sidon ਸੈਦਾ; Oholah ਓਹੋਲਾ, Oholibah ਓਹੋਲੀਬਾ; Tammuz ਤੰਮੂਜ਼;
+  Sheol ਪਤਾਲ; the Nile monster ਦੈਂਤ; Mount Seir ਸੇਈਰ ਪਹਾੜ; watchman
+  ਪਹਿਰੇਦਾਰ.
+- Chapters 38-39: Gog ਗੋਗ, Magog ਮਾਗੋਗ, Meshech ਮੇਸ਼ਕ, Tubal ਤੂਬਲ, chief
+  prince ਮੁੱਖ ਪ੍ਰਧਾਨ, Persia ਫ਼ਾਰਸ, Cush ਕੂਸ਼, Put ਪੂਟ, Gomer ਗੋਮਰ,
+  Beth-togarmah ਬੈਤ-ਤੋਗਰਮਾਹ, Sheba ਸ਼ਬਾ, Dedan ਦਦਾਨ, Tarshish ਤਰਸ਼ੀਸ਼,
+  Hamon-gog ਹਮੋਨ-ਗੋਗ, Hamonah ਹਮੋਨਾਹ, valley of the Travelers ਮੁਸਾਫ਼ਰਾਂ ਦੀ
+  ਵਾਦੀ; earthquake ਕਾਂਬਾ (L), ਭੁਚਾਲ (B, R); sulfur ਗੰਧਕ; coastlands ਟਾਪੂ;
+  restore fortunes ਦਸ਼ਾ ਮੋੜਨੀ; Holy One in Israel ਇਸਰਾਏਲ ਵਿੱਚ ਪਵਿੱਤਰ ਪੁਰਖ.
+- Temple (40-46): gate ਫਾਟਕ, gate passage ਫਾਟਕ ਦਾ ਲਾਂਘਾ, alcove ਕੋਠੜੀ,
+  porch ਡਿਉਢੀ, jambs and doorposts ਬਾਹੀਆਂ, threshold ਸਰਦਲ (L, B), ਬੂਹਾ (R);
+  court ਵਿਹੜਾ (ਬਾਹਰਲਾ / ਅੰਦਰਲਾ); house ਭਵਨ (L), ਹੈਕਲ (B, R); hall ਵੱਡਾ
+  ਕਮਰਾ (L, R), ਮੁੱਖ ਕਮਰਾ (B); most holy place ਅੱਤ ਪਵਿੱਤਰ ਸਥਾਨ; side
+  chambers ਪਾਸੇ ਦੀਆਂ ਕੋਠੜੀਆਂ (L), ਪਾਸੇ ਦੇ ਕਮਰੇ (B, R); measuring reed ਮਿਣਨ
+  ਦਾ ਕਾਨਾ (L, B), ਮਿਣਨ ਵਾਲੀ ਛੜੀ (R); cherubim ਕਰੂਬੀ; palm trees ਖਜੂਰ ਦੇ
+  ਰੁੱਖ. Altar: gutter ਨਾਲੀ, rim ਕਿਨਾਰੀ, ledge ਕਗਾਰ, hearth ਅਗਨ-ਕੁੰਡ, horns
+  ਸਿੰਙ.
+- Offerings and priests: burnt ਹੋਮ ਬਲੀ, sin ਪਾਪ ਬਲੀ, guilt ਦੋਸ਼ ਬਲੀ, grain
+  ਅੰਨ ਦੀ ਭੇਟ, peace ਸੁੱਖ-ਸਾਂਦ ਦੀਆਂ ਬਲੀਆਂ, freewill ਖ਼ੁਸ਼ੀ ਦੀ ਭੇਟ;
+  contribution (terumah) ਚੁੱਕਣ ਦੀ ਭੇਟ (L), ਖ਼ਾਸ ਭੇਟ / ਖ਼ਾਸ ਹਿੱਸਾ (B), ਖ਼ਾਸ
+  ਇਲਾਕਾ (R) for land; atonement ਪ੍ਰਾਸਚਿਤ; without blemish ਬੇਐਬ; sons of Zadok
+  ਸਾਦੋਕ ਦੇ ਪੁੱਤਰ (L), ਸਾਦੋਕ ਦੀ ਵੰਸ਼ (B, R); statutes ਬਿਧੀਆਂ; torot
+  ਬਿਵਸਥਾਵਾਂ (L, B), ਸਿੱਖਿਆਵਾਂ (R); prince (nasi') ਪ੍ਰਧਾਨ (L, B), ਹਾਕਮ (R);
+  inheritance ਮਿਲਖ; holding ਜਾਇਦਾਦ; new moon ਨਵਾਂ ਚੰਨ (L, B), ਹਰ ਮਹੀਨੇ ਦਾ
+  ਪਹਿਲਾ ਦਿਨ (R); year of liberty ਛੁਟਕਾਰੇ ਦਾ ਸਾਲ (L), ਅਜ਼ਾਦੀ ਦਾ ਸਾਲ (B, R).
+- Land (47-48): Arabah ਅਰਾਬਾਹ (L, B), ਯਰਦਨ ਦੀ ਵਾਦੀ (R); Dead Sea ਮ੍ਰਿਤ
+  ਸਾਗਰ; Great Sea ਵੱਡਾ ਸਮੁੰਦਰ (L, B), ਭੂਮੱਧ ਸਾਗਰ (R); En-gedi ਏਨ-ਗਦੀ,
+  En-eglaim ਏਨ-ਇਗਲਇਮ, Hethlon ਹਥਲੋਨ, Lebo-hamath ਲਬੋ-ਹਮਾਥ, Zedad ਸਦਾਦ,
+  Berothah ਬੇਰੋਥਾਹ, Sibraim ਸਿਬਰਇਮ, Hazer-hattikon ਹਸੇਰ-ਹੱਤੀਕੋਨ, Hauran
+  ਹੌਰਾਨ, Hazar-enan ਹਸਰ-ਏਨਾਨ, Tamar ਤਾਮਾਰ, Meribath-kadesh ਮਰੀਬਥ-ਕਾਦੇਸ਼,
+  Wadi of Egypt ਮਿਸਰ ਦਾ ਨਾਲਾ; sojourner ਪਰਦੇਸੀ; Naphtali ਨਫ਼ਥਾਲੀ (some
+  books have ਨਫ਼ਤਾਲੀ: unify later); YHWH Shammah "ਪ੍ਰਭੂ ਉੱਥੇ ਹਨ" (48:35).
+- Units at B and R only, in `{{units:}}` spans; L keeps bare units. The long
+  cubit is about 53 cm (1 ਹੱਥ 53 ਸੈਂਟੀਮੀਟਰ, 6 ਹੱਥ 3.2 ਮੀਟਰ, 25,000 ਹੱਥ 13.3
+  ਕਿਲੋਮੀਟਰ); reed ਕਾਨਾ 3.2 ਮੀਟਰ; handbreadth ਚਾਰ ਉਂਗਲ 7.5 ਸੈਂਟੀਮੀਟਰ;
+  ephah ਏਫ਼ਾਹ 22 ਲੀਟਰ, hin ਹੀਨ 3.7 ਲੀਟਰ, homer ਹੋਮਰ and kor ਕੋਰ 220 ਲੀਟਰ,
+  bath ਬਥ; shekel ਸ਼ੇਕੇਲ about 11.5 g, gerah ਗੇਰਾ, mina ਮਾਨੇਹ.
+- Quotation marks: the speech that opens at 44:5 closes at 46:18, as in the
+  English. 46:13 follows the English "you" (ਤੁਸੀਂ) where the Hebrew has "he".
+
+### Numbers
+
+- Address: God takes the honorific plural (ਉਨ੍ਹਾਂ ਨੇ) with no deity_pronoun
+  span, and says ਤੂੰ to Moses and ਤੁਸੀਂ to the people. People say ਤੁਸੀਂ to
+  Moses: "your servants" ਤੁਹਾਡੇ ਦਾਸ (L), ਤੁਹਾਡੇ ਸੇਵਕ (B, R); "my lord"
+  ਮੇਰਾ ਸੁਆਮੀ (L), ਸਾਡੇ ਸੁਆਮੀ (B), ਸਾਡੇ ਮਾਲਕ (R). Zelophehad's daughters
+  speak of their father as ਪਿਤਾ ਜੀ (B, R).
+- People: SIL / SIB as in Exodus, with SIS and SIN for the direct case. The
+  tribes "sons of Reuben", "sons of Gad" ਰਊਬੇਨ ਦੇ ਪੁੱਤਰ (L), ਰਊਬੇਨੀ (B),
+  ਰਊਬੇਨ ਦਾ ਗੋਤ (R). Clan ਕੁਲ; the census formula "X ਤੋਂ, Xੀਆਂ ਦਾ ਕੁਲ" (L),
+  the same without the comma (B), "X ਦਾ ਕੁਲ, Xੀ" (R). Large numbers use
+  Indian grouping (6,03,550; 6,01,730). Census ਮਰਦਮਸ਼ੁਮਾਰੀ; leader (*nasi*)
+  ਪ੍ਰਧਾਨ; commanders of thousands and hundreds ਹਜ਼ਾਰਾਂ / ਸੈਂਕੜਿਆਂ ਦੇ ਸਰਦਾਰ
+  (L), ਹਜ਼ਾਰ-ਹਜ਼ਾਰ / ਸੌ-ਸੌ ਦੇ ਸਰਦਾਰ (B), "ਹਜ਼ਾਰ-ਹਜ਼ਾਰ ਅਤੇ ਸੌ-ਸੌ ਸਿਪਾਹੀਆਂ
+  ਦੇ ਅਫ਼ਸਰ" (R).
+- Tabernacle and camp: tent of meeting ਮੁਲਾਕਾਤ ਦਾ ਤੰਬੂ; tabernacle ਡੇਰਾ (L),
+  ਪਵਿੱਤਰ ਤੰਬੂ (B, R); camp ਛਾਉਣੀ; set out ਕੂਚ ਕਰਨਾ; trumpets ਤੁਰ੍ਹੀਆਂ;
+  Nazirite ਨਾਜ਼ੀਰ; tassels ਫੁੰਮਣ; censers ਧੂਪਦਾਨ; red heifer ਲਾਲ ਵੱਛੀ;
+  bronze snake ਪਿੱਤਲ ਦਾ ਸੱਪ.
+- Offerings (28-29): food offering ਅੱਗ ਦੁਆਰਾ ਚੜ੍ਹਾਈ ਭੇਟ; soothing aroma
+  ਸੁਖਦਾਇਕ ਸੁਗੰਧ (R "ਸੁਗੰਧ DN ਨੂੰ ਭਾਉਂਦੀ ਹੈ"); continual burnt offering ਸਦਾ
+  ਦੀ ਹੋਮ ਬਲੀ (L), ਨਿੱਤ ਦੀ (B), ਰੋਜ਼ਾਨਾ (R); without blemish ਬੇਦਾਗ਼; strong
+  drink ਤੇਜ਼ ਸ਼ਰਾਬ; wine ਮੈ. Measures: L names the ephah and hin; B and R use
+  units spans (e1 ਲਗਭਗ 2.2 ਲੀਟਰ, hin quarter ਲਗਭਗ 1 ਲੀਟਰ, half 1.8, third
+  1.2; 1,000 and 2,000 cubits ਲਗਭਗ 450 / 900 ਮੀਟਰ).
+- Festivals: festival (*chag*) ਤਿਉਹਾਰ; holy convocation ਪਵਿੱਤਰ ਸਭਾ (R
+  "ਭਗਤੀ ਲਈ ਪਵਿੱਤਰ ਇਕੱਠ"); work of labor ਮਿਹਨਤ ਦਾ ਕੋਈ ਵੀ ਕੰਮ (L), ਆਮ ਕੰਮ
+  (B), ਰੋਜ਼ ਦਾ ਕੰਮ (R); solemn assembly ਖ਼ਾਸ ਸਭਾ; Passover ਪਸਾਹ; Jubilee
+  ਜੁਬਲੀ (L, B), ਜੁਬਲੀ ਦਾ ਸਾਲ (R).
+- Vows (30): vow ਸੁੱਖਣਾ; bond ਬੰਧਨ (L), ਪ੍ਰਣ (B), ਵਾਇਦਾ (R); annul ਵਿਅਰਥ
+  ਠਹਿਰਾਉਣਾ (L), ਰੱਦ ਕਰਨਾ (B, R).
+- Land: inheritance ਮਿਲਖ (R ਜ਼ਮੀਨ); possession ਜੱਦੀ ਹਿੱਸਾ (L); lot ਗੁਣਾ;
+  tribute ਕਰ (R "DN ਦਾ ਹਿੱਸਾ"); contribution ਚੁੱਕਣ ਦੀ ਭੇਟ (R ਖ਼ਾਸ ਤੋਹਫ਼ਾ);
+  pasturelands ਚਰਾਂਦਾਂ (R "ਆਲੇ-ਦੁਆਲੇ ਦੇ ਖੇਤ").
+- Cities of refuge (35): ਪਨਾਹ ਦੇ ਸ਼ਹਿਰ (L), ਪਨਾਹ ਦੇ ਨਗਰ (B), ਸੁਰੱਖਿਆ ਦੇ
+  ਨਗਰ (R), as in Joshua 20; killer ਖ਼ੂਨੀ (L), ਮਾਰਨ ਵਾਲਾ (B, R), murderer
+  ਕਾਤਲ (B, R) from 35:16; avenger of blood ਖ਼ੂਨ ਦਾ ਬਦਲਾ ਲੈਣ ਵਾਲਾ (L, B),
+  ਮੌਤ ਦਾ ਬਦਲਾ ਲੈਣ ਵਾਲਾ ਰਿਸ਼ਤੇਦਾਰ (R); ransom ਪ੍ਰਾਸਚਿਤ ਦਾ ਮੁੱਲ (L),
+  ਛੁਟਕਾਰੇ ਦਾ ਮੁੱਲ (B), ਪੈਸੇ (R); high priest ਮਹਾਂ ਜਾਜਕ.
+- Other words: plague ਬਵਾ (R ਮਾਰੂ ਬਿਮਾਰੀ); zeal ਅਣਖ (L), ਜੋਸ਼ (B, R); Sea
+  of Reeds ਕਾਨਿਆਂ ਦਾ ਸਮੁੰਦਰ (L), ਲਾਲ ਸਮੁੰਦਰ (B, R); Salt Sea ਖਾਰਾ ਸਮੁੰਦਰ
+  (L), ਮ੍ਰਿਤ ਸਾਗਰ (B, R); Great Sea ਵੱਡਾ ਸਮੁੰਦਰ (L, B), ਭੂ-ਮੱਧ ਸਾਗਰ (R);
+  Brook of Egypt ਮਿਸਰ ਦਾ ਨਾਲਾ; Ascent of Akrabbim ਅਕਰੱਬੀਮ ਦੀ ਚੜ੍ਹਾਈ (R
+  ਬਿੱਛੂ ਦੱਰਾ); high places ਉੱਚੇ ਥਾਂ (R "ਪਹਾੜੀਆਂ ਉੱਤੇ ਬਣੇ ਪੂਜਾ-ਸਥਾਨ").
+- Names: Phinehas ਫ਼ੀਨਹਾਸ, Eleazar ਅਲਆਜ਼ਾਰ, Balak ਬਾਲਾਕ, Balaam ਬਿਲਆਮ,
+  Korah ਕੋਰਹ, Dathan ਦਾਥਾਨ, Abiram ਅਬੀਰਾਮ, Hobab ਹੋਬਾਬ, Zimri ਜ਼ਿਮਰੀ, Cozbi
+  ਕਾਜ਼ਬੀ, Zelophehad ਸਲਾਫ਼ਹਾਦ and his daughters ਮਹਲਾਹ, ਨੋਆਹ, ਹਾਗਲਾਹ,
+  ਮਿਲਕਾਹ, ਤਿਰਸਾਹ; Elizaphan ਅਲਸਾਫ਼ਾਨ, Ammihud ਅੰਮੀਹੂਦ. Places: Taberah
+  ਤਬਏਰਾਹ, Kibroth-hattaavah ਕਿਬਰੋਥ-ਹੱਤਾਵਾਹ, Hazeroth ਹਸੇਰੋਥ, Zin ਸਿਨ (Sin
+  ਸੀਨ), Kadesh(-barnea) ਕਾਦੇਸ਼(-ਬਰਨੇਆ), Meribah ਮਰੀਬਾਹ, Mount Hor ਹੋਰ ਪਹਾੜ,
+  Hormah ਹਾਰਮਾਹ, Peor ਪਓਰ, Abarim ਅਬਾਰੀਮ, Shittim ਸ਼ਿੱਟੀਮ, Abel-shittim
+  ਆਬੇਲ-ਸ਼ਿੱਟੀਮ, Lebo-hamath ਲਬੋ-ਹਮਾਥ, Chinnereth ਕਿੰਨਰਥ. The itinerary of
+  chapter 33 keeps the forms of Exodus, Numbers 11-21 and Deuteronomy 10; the
+  new stations are transcribed from the Hebrew (ਦਾਫ਼ਕਾਹ, ਆਲੂਸ਼, ਰਿਥਮਾਹ,
+  ਰਿੰਮੋਨ-ਪਰਸ, ਸ਼ਾਫ਼ਰ ਪਹਾੜ, ਹੋਰ-ਹੱਗਿਦਗਾਦ, ਅਬਰੋਨਾਹ, ਸਲਮੋਨਾਹ, ਪੂਨੋਨ,
+  ਦੀਬੋਨ-ਗਾਦ, ਅਲਮੋਨ-ਦਿਬਲਾਥੈਮ, ਬੈਤ-ਯਸ਼ੀਮੋਥ). Reviewer question: 33:23-24
+  ਸ਼ਾਫ਼ਰ for Shepher, and Zin ਸਿਨ here against ਸੀਨ in Joshua 15:3.
+
+### Isaiah
+
+- Address: no deity_pronoun spans. God takes the honorific plural in the
+  third person (DN ਆਖਦੇ ਹਨ, ਤੁਹਾਡੇ ਪਰਮੇਸ਼ੁਰ ਆਖਦੇ ਹਨ) and speaks in the
+  first person as masculine singular; prayer to God uses ਤੂੰ (63-64). Israel
+  or Jacob addressed in the singular is ਤੂੰ at L and B, ਤੁਸੀਂ at R; where the
+  Hebrew is plural (1, 55, 65:7-15, 66) it is ਤੁਸੀਂ at every level. Zion and
+  Jerusalem addressed as a woman are feminine ਤੂੰ; in 54, 60, 62 and 66:9
+  this holds at R too.
+- Formulas: *ne'um* YHWH ਦਾ ਵਾਕ ਹੈ (L, B), ਆਖਦੇ ਹਨ (R); "thus says"
+  ਇਉਂ ਆਖਦੇ ਹਨ (L), ਇਹ ਆਖਦੇ ਹਨ (B, R); *amar* YHWH inside a speech
+  DN ਆਖਦੇ ਹਨ. Lord GOD (*adonai* YHWH) ਪ੍ਰਭੂ {{divine_name:ਪਰਮੇਸ਼ੁਰ|ਯਾਹਵੇ}};
+  *ha'adon* "the Lord" ਪ੍ਰਭੂ alone. LORD of Armies ਸੈਨਾਂ ਦੇ DN. Holy One of
+  Israel ਇਸਰਾਏਲ ਦਾ ਪਵਿੱਤਰ ਪੁਰਖ. Oracle (*massa*) ਸੰਦੇਸ਼; woe ਹਾਇ.
+- Terms: *hesed* ਅਟੱਲ ਪਿਆਰ (L, B), ਵਫ਼ਾਦਾਰ ਪਿਆਰ (R); covenant ਨੇਮ;
+  Sheol ਪਤਾਲ (L, B), ਕਬਰ (R); remnant ਬਕੀਆ; drink offering ਪੀਣ ਦੀ ਭੇਟ;
+  grain offering ਮੈਦੇ ਦੀ ਭੇਟ; ram's horn ਨਰਸਿੰਗਾ; frankincense ਲੋਬਾਨ
+  (R ਸੁਗੰਧ ਵਾਲੀ ਧੂਪ); winepress ਚੁਬੱਚਾ; eunuch ਖੋਜਾ; wine ਮੈ; vineyard
+  ਅੰਗੂਰੀ ਬਾਗ਼ (L, B), ਅੰਗੂਰਾਂ ਦਾ ਬਾਗ਼ (R); temple ਹੈਕਲ, house of DN ਭਵਨ.
+  30:20 "your Teacher" ਤੁਹਾਡੇ ਗੁਰੂ with honorific verbs, a reviewer question.
+- Trees: ਸਰੂ (cypress; 2 Kings 19:23 has ਸਨੋਵਰ, to unify), ਚਨਾਰ, ਸ਼ਮਸ਼ਾਦ,
+  ਮਹਿੰਦੀ.
+- The servant: God's servant is ਦਾਸ throughout (Matthew 12:18 has ਸੇਵਕ for
+  42:1, a reviewer question). The servant's own speech and the servant songs
+  keep plain forms (ਉਹ, ਉਸ ਨੇ), with no honorific. Savior ਬਚਾਉਣ ਵਾਲਾ,
+  Redeemer ਛੁਡਾਉਣ ਵਾਲਾ; Cyrus ਕੋਰਸ਼.
+- Chapters 36-39 reuse the wording of 2 Kings 18-20 where the Hebrew agrees,
+  with Isaiah's own differences kept.
+- Verses aligned with the Punjabi New Testament where the Hebrew agrees:
+  40:4 (Luke 3:5), 40:13 (Romans 11:34), 42:3 (Matthew 12:20), 53:1, 53:4
+  and 53:5 (53:8 follows the Hebrew, not Acts 8:33), 54:1 (Galatians 4:27), 54:13 (John
+  6:45), 56:7 (Mark 11:17), 59:7-8 (Romans 3:15-17), 59:17 (Ephesians 6:17),
+  59:20-21 (Romans 11:26-27), 61:1-2 (Luke 4:18-19), 62:11 (Matthew 21:5),
+  63:10 (Ephesians 4:30), 64:3 (1 Corinthians 2:9), 65:1-2 (Romans
+  10:20-21), 65:17 and 66:22 (2 Peter 3:13, Revelation 21:1), 66:1-2 (Acts
+  7:49-50), 66:24 (Mark 9:48).
+- Names: ਆਹਾਜ਼, ਹਿਜ਼ਕੀਯਾਹ, ਸਨਹੇਰੀਬ, ਸ਼ਬਨਾ, ਅਲਯਾਕੀਮ, ਮਹੇਰ-ਸ਼ਾਲਾਲ-ਹਾਸ਼-ਬਜ਼,
+  ਬਾਬਲ, ਅੱਸ਼ੂਰ, ਸੂਰ, ਫ਼ਲਿਸਤ, ਦੰਮਿਸ਼ਕ, ਕੂਸ਼, ਅਰੀਏਲ, ਲਿਵਯਾਥਾਨ, ਮਿਦਯਾਨ,
+  ਏਫ਼ਾਹ, ਸ਼ਬਾ, ਕੇਦਾਰ, ਨਬਾਯੋਥ, ਤਰਸ਼ੀਸ਼, ਅਦੋਮ, ਬਾਸਰਾ, ਸ਼ਾਰੋਨ, ਆਕੋਰ ਦੀ
+  ਵਾਦੀ; the gods Gad and Meni ਗਾਦ, ਮੇਨੀ (R adds what they are); 62:4
+  ਹਫ਼ਸੀਬਾ, ਬਊਲਾਹ; 66:19 ਪੂਲ, ਲੂਦ, ਤੂਬਲ, ਯਾਵਾਨ (R ਯੂਨਾਨ).
+- Spelling: ਅਨੰਦ and ਖ਼ੁਸ਼ throughout the book (29, 30, 32 and 35 had
+  ਆਨੰਦ / ਖੁਸ਼ and were unified).
+
+### Jeremiah
+
+People and places: ਯਿਰਮਿਯਾਹ, ਬਾਰੂਕ, ਨੇਰੀਯਾਹ, ਸਰਾਯਾਹ, ਮਹਸੇਯਾਹ; kings ਯੋਸੀਯਾਹ,
+ਯਹੋਯਾਕੀਮ, ਯਹੋਯਾਕੀਨ (ਕਾਨਯਾਹ in 22:24, 28), ਸ਼ੱਲੂਮ, ਸਿਦਕੀਯਾਹ; ਹਨਨਯਾਹ,
+ਪਸ਼ਹੂਰ, ਸ਼ਮਅਯਾਹ, ਗਦਲਯਾਹ, ਇਸਮਾਏਲ, ਯੋਹਾਨਾਨ, ਅਬਦ-ਮਲਕ; ਅਨਾਥੋਥ, ਮਿਸਪਾਹ,
+ਰਾਮਾਹ, ਤਹਪਨਹੇਸ, ਕਰਕਮੀਸ਼, ਫ਼ਰਾਤ; ਲੇਬ-ਕਾਮਈ and ਸ਼ੇਸ਼ਕ (code names for
+Babylon, which R explains).
+
+- Nebuchadnezzar follows the Hebrew spelling: ਨਬੂਕਦਰੱਸਰ in most of the book,
+  ਨਬੂਕਦਨੱਸਰ in chapters 27-29, where the Hebrew has the *n* form. Reviewer
+  question: keep the two spellings, or use one throughout?
+- Torah is ਸਿੱਖਿਆ throughout, as in Habakkuk 1:4, including 31:33 (Hebrews
+  8:10 has ਬਿਵਸਥਾਵਾਂ for the Greek plural). Reviewer question: ਸਿੱਖਿਆ or
+  ਬਿਵਸਥਾ for the law written on the heart.
+- The chief of the guard ਅੰਗ-ਰੱਖਿਅਕਾਂ ਦਾ ਪ੍ਰਧਾਨ (L, B), ਸ਼ਾਹੀ ਅੰਗ-ਰੱਖਿਅਕਾਂ
+  ਦਾ ਸੈਨਾਪਤੀ (R); the house of the LORD `DN ਦਾ ਭਵਨ` (L, B), `DN ਦੀ ਹੈਕਲ` (R);
+  "Behold, days are coming" ਵੇਖੋ, ਦਿਨ ਆਉਂਦੇ ਹਨ (L), ਦਿਨ ਆ ਰਹੇ ਹਨ (B), ਵੇਲਾ
+  ਆ ਰਿਹਾ ਹੈ (R); hissing (scorn) ਸੀਟੀ ਮਾਰਨਾ (L), ਮਖ਼ੌਲ (B), explained in R;
+  balm of Gilead ਮਲ੍ਹਮ (8:22, 46:11, 51:8).
+- Forms of address: Jeremiah uses ਤੂੰ to Hananiah (28) as a rebuke, ਤੁਸੀਂ to
+  kings and royal officers (Zedekiah, Seraiah in 51:61); God's words to kings
+  also use ਤੁਸੀਂ. Prayers to God use ਤੂੰ. Reviewer question: should God
+  address the kings with ਤੂੰ?
+- The oblique of ਰਾਜਾ is ਰਾਜੇ throughout (ਰਾਜੇ ਨੇ, ਬਾਬਲ ਦੇ ਰਾਜੇ ਨੂੰ), as in
+  the other books; vocatives (ਹੇ ਯਹੂਦਾਹ ਦੇ ਰਾਜਾ) and the title of God (ਕੌਮਾਂ
+  ਦੇ ਰਾਜਾ, 10:7) keep ਰਾਜਾ. Babylon the city is feminine (50:23, 51).
+- ਯਹੂਦੀ renders *Yehudim* "Judeans"; 36:14, 21, 23 has
+  ਯਹੂਦੀ as a man's name. Jonadab is ਯਹੋਨਾਦਾਬ or ਯੋਨਾਦਾਬ (35), following the
+  Hebrew's two forms; Jaazaniah/Jezaniah ਯਜ਼ਨਯਾਹ. Marduk is ਮਰੋਦਕ (50:2,
+  Merodach) with ਮਰਦੂਕ in R's explanation.
+- Woman: ਔਰਤ and ਤੀਵੀਂ are both used; a reviewer may want
+  one. ਦੇਸ਼ is spelled with the nukta throughout.
+- 10:12-16 and 51:15-19 are the same Hebrew and share the wording (51:19
+  without ਇਸਰਾਏਲ, as the Hebrew). 49:18 matches 50:40; 50:23 is 51:41b.
+- Chapter 52 follows 2 Kings 24:18-25:30; 2 Kings should share its wording
+  when it is drafted. Measurements use the units setting
+  (`{{units:ਲਗਭਗ 8.1 ਮੀਟਰ|ਅਠਾਰਾਂ ਹੱਥ}}`).

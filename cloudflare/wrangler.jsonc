@@ -1,0 +1,21 @@
+// openwordbible.org on Cloudflare Workers static assets: the site CI builds
+// (scripts/build_site.py -> site/) served as it is, with no Worker code.
+// CI deploys it from main (.github/workflows/ci.yml, "Deploy to
+// Cloudflare"); docs/cloudflare.md has the setup and the switch from Render.
+//
+// A Workers Paid plan is needed: the site has over 50,000 files, and the
+// free plan allows 20,000 per version (paid: 100,000; 25 MiB a file).
+// Requests for static assets are not billed, on either plan.
+{
+  "name": "open-word-bible",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "../site",
+    // /jhn/3 and /jhn/3/ both serve jhn/3/index.html, as on Render.
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  },
+  // Until the domains move (docs/cloudflare.md), the site answers at
+  // open-word-bible.<account>.workers.dev only.
+  "workers_dev": true
+}

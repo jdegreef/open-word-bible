@@ -1,4 +1,5 @@
-"""Read-only API for the reader and other consumers.
+"""Read-only API for the reader site and our own servers (config/access.py
+says who may call which: editions, text and passages need a key).
 
 GET /api/editions/                       every imported edition
 GET /api/text/<BOOK>/<chapter>/?editions=bsb,web
@@ -152,7 +153,7 @@ def _number(params, name, default, low, high):
 def search(request):
     params = request.query_params
     lang = params.get("lang", "en")
-    if not SearchLanguage.objects.filter(code=lang).exists():
+    if lang == site_search.SHARED or not SearchLanguage.objects.filter(code=lang).exists():
         if not SearchLanguage.objects.exists():
             return Response({"detail": "Search is not ready: run import_content."}, status=503)
         raise ValidationError({"lang": f"unknown site language {lang!r}"})
