@@ -2163,3 +2163,61 @@ People and places: ਪੌਲੁਸ, ਤੁਖਿਕੁਸ; ਅਫ਼ਸੁਸ, �
 - Overlap rewordings worth a reviewer's eye: the formula phrases of 35-40
   ("ਸੋਨੇ ਦੇ ਦੋ ਕੜੇ", "ਮਸਹ ਕਰਨ ਦਾ ਪਵਿੱਤਰ ਤੇਲ") were reordered in places to
   avoid pb1945 and IRV, so a few read "ਦੋ ਕੜੇ ਸੋਨੇ ਦੇ" (39:16, 39:19 L).
+
+### Numbers
+
+- Address: God takes the honorific plural (ਉਨ੍ਹਾਂ ਨੇ) with no deity_pronoun
+  span, and says ਤੂੰ to Moses and ਤੁਸੀਂ to the people. People say ਤੁਸੀਂ to
+  Moses: "your servants" ਤੁਹਾਡੇ ਦਾਸ (L), ਤੁਹਾਡੇ ਸੇਵਕ (B, R); "my lord"
+  ਮੇਰਾ ਸੁਆਮੀ (L), ਸਾਡੇ ਸੁਆਮੀ (B), ਸਾਡੇ ਮਾਲਕ (R). Zelophehad's daughters
+  speak of their father as ਪਿਤਾ ਜੀ (B, R).
+- People: SIL / SIB as in Exodus, with SIS and SIN for the direct case. The
+  tribes "sons of Reuben", "sons of Gad" ਰਊਬੇਨ ਦੇ ਪੁੱਤਰ (L), ਰਊਬੇਨੀ (B),
+  ਰਊਬੇਨ ਦਾ ਗੋਤ (R). Clan ਕੁਲ; the census formula "X ਤੋਂ, Xੀਆਂ ਦਾ ਕੁਲ" (L),
+  the same without the comma (B), "X ਦਾ ਕੁਲ, Xੀ" (R). Large numbers use
+  Indian grouping (6,03,550; 6,01,730). Census ਮਰਦਮਸ਼ੁਮਾਰੀ; leader (*nasi*)
+  ਪ੍ਰਧਾਨ; commanders of thousands and hundreds ਹਜ਼ਾਰਾਂ / ਸੈਂਕੜਿਆਂ ਦੇ ਸਰਦਾਰ
+  (L), ਹਜ਼ਾਰ-ਹਜ਼ਾਰ / ਸੌ-ਸੌ ਦੇ ਸਰਦਾਰ (B), "ਹਜ਼ਾਰ-ਹਜ਼ਾਰ ਅਤੇ ਸੌ-ਸੌ ਸਿਪਾਹੀਆਂ
+  ਦੇ ਅਫ਼ਸਰ" (R).
+- Tabernacle and camp: tent of meeting ਮੁਲਾਕਾਤ ਦਾ ਤੰਬੂ; tabernacle ਡੇਰਾ (L),
+  ਪਵਿੱਤਰ ਤੰਬੂ (B, R); camp ਛਾਉਣੀ; set out ਕੂਚ ਕਰਨਾ; trumpets ਤੁਰ੍ਹੀਆਂ;
+  Nazirite ਨਾਜ਼ੀਰ; tassels ਫੁੰਮਣ; censers ਧੂਪਦਾਨ; red heifer ਲਾਲ ਵੱਛੀ;
+  bronze snake ਪਿੱਤਲ ਦਾ ਸੱਪ.
+- Offerings (28-29): food offering ਅੱਗ ਦੁਆਰਾ ਚੜ੍ਹਾਈ ਭੇਟ; soothing aroma
+  ਸੁਖਦਾਇਕ ਸੁਗੰਧ (R "ਸੁਗੰਧ DN ਨੂੰ ਭਾਉਂਦੀ ਹੈ"); continual burnt offering ਸਦਾ
+  ਦੀ ਹੋਮ ਬਲੀ (L), ਨਿੱਤ ਦੀ (B), ਰੋਜ਼ਾਨਾ (R); without blemish ਬੇਦਾਗ਼; strong
+  drink ਤੇਜ਼ ਸ਼ਰਾਬ; wine ਮੈ. Measures: L names the ephah and hin; B and R use
+  units spans (e1 ਲਗਭਗ 2.2 ਲੀਟਰ, hin quarter ਲਗਭਗ 1 ਲੀਟਰ, half 1.8, third
+  1.2; 1,000 and 2,000 cubits ਲਗਭਗ 450 / 900 ਮੀਟਰ).
+- Festivals: festival (*chag*) ਤਿਉਹਾਰ; holy convocation ਪਵਿੱਤਰ ਸਭਾ (R
+  "ਭਗਤੀ ਲਈ ਪਵਿੱਤਰ ਇਕੱਠ"); work of labor ਮਿਹਨਤ ਦਾ ਕੋਈ ਵੀ ਕੰਮ (L), ਆਮ ਕੰਮ
+  (B), ਰੋਜ਼ ਦਾ ਕੰਮ (R); solemn assembly ਖ਼ਾਸ ਸਭਾ; Passover ਪਸਾਹ; Jubilee
+  ਜੁਬਲੀ (L, B), ਜੁਬਲੀ ਦਾ ਸਾਲ (R).
+- Vows (30): vow ਸੁੱਖਣਾ; bond ਬੰਧਨ (L), ਪ੍ਰਣ (B), ਵਾਇਦਾ (R); annul ਵਿਅਰਥ
+  ਠਹਿਰਾਉਣਾ (L), ਰੱਦ ਕਰਨਾ (B, R).
+- Land: inheritance ਮਿਲਖ (R ਜ਼ਮੀਨ); possession ਜੱਦੀ ਹਿੱਸਾ (L); lot ਗੁਣਾ;
+  tribute ਕਰ (R "DN ਦਾ ਹਿੱਸਾ"); contribution ਚੁੱਕਣ ਦੀ ਭੇਟ (R ਖ਼ਾਸ ਤੋਹਫ਼ਾ);
+  pasturelands ਚਰਾਂਦਾਂ (R "ਆਲੇ-ਦੁਆਲੇ ਦੇ ਖੇਤ").
+- Cities of refuge (35): ਪਨਾਹ ਦੇ ਸ਼ਹਿਰ (L), ਪਨਾਹ ਦੇ ਨਗਰ (B), ਸੁਰੱਖਿਆ ਦੇ
+  ਨਗਰ (R), as in Joshua 20; killer ਖ਼ੂਨੀ (L), ਮਾਰਨ ਵਾਲਾ (B, R), murderer
+  ਕਾਤਲ (B, R) from 35:16; avenger of blood ਖ਼ੂਨ ਦਾ ਬਦਲਾ ਲੈਣ ਵਾਲਾ (L, B),
+  ਮੌਤ ਦਾ ਬਦਲਾ ਲੈਣ ਵਾਲਾ ਰਿਸ਼ਤੇਦਾਰ (R); ransom ਪ੍ਰਾਸਚਿਤ ਦਾ ਮੁੱਲ (L),
+  ਛੁਟਕਾਰੇ ਦਾ ਮੁੱਲ (B), ਪੈਸੇ (R); high priest ਮਹਾਂ ਜਾਜਕ.
+- Other words: plague ਬਵਾ (R ਮਾਰੂ ਬਿਮਾਰੀ); zeal ਅਣਖ (L), ਜੋਸ਼ (B, R); Sea
+  of Reeds ਕਾਨਿਆਂ ਦਾ ਸਮੁੰਦਰ (L), ਲਾਲ ਸਮੁੰਦਰ (B, R); Salt Sea ਖਾਰਾ ਸਮੁੰਦਰ
+  (L), ਮ੍ਰਿਤ ਸਾਗਰ (B, R); Great Sea ਵੱਡਾ ਸਮੁੰਦਰ (L, B), ਭੂ-ਮੱਧ ਸਾਗਰ (R);
+  Brook of Egypt ਮਿਸਰ ਦਾ ਨਾਲਾ; Ascent of Akrabbim ਅਕਰੱਬੀਮ ਦੀ ਚੜ੍ਹਾਈ (R
+  ਬਿੱਛੂ ਦੱਰਾ); high places ਉੱਚੇ ਥਾਂ (R "ਪਹਾੜੀਆਂ ਉੱਤੇ ਬਣੇ ਪੂਜਾ-ਸਥਾਨ").
+- Names: Phinehas ਫ਼ੀਨਹਾਸ, Eleazar ਅਲਆਜ਼ਾਰ, Balak ਬਾਲਾਕ, Balaam ਬਿਲਆਮ,
+  Korah ਕੋਰਹ, Dathan ਦਾਥਾਨ, Abiram ਅਬੀਰਾਮ, Hobab ਹੋਬਾਬ, Zimri ਜ਼ਿਮਰੀ, Cozbi
+  ਕਾਜ਼ਬੀ, Zelophehad ਸਲਾਫ਼ਹਾਦ and his daughters ਮਹਲਾਹ, ਨੋਆਹ, ਹਾਗਲਾਹ,
+  ਮਿਲਕਾਹ, ਤਿਰਸਾਹ; Elizaphan ਅਲਸਾਫ਼ਾਨ, Ammihud ਅੰਮੀਹੂਦ. Places: Taberah
+  ਤਬਏਰਾਹ, Kibroth-hattaavah ਕਿਬਰੋਥ-ਹੱਤਾਵਾਹ, Hazeroth ਹਸੇਰੋਥ, Zin ਸਿਨ (Sin
+  ਸੀਨ), Kadesh(-barnea) ਕਾਦੇਸ਼(-ਬਰਨੇਆ), Meribah ਮਰੀਬਾਹ, Mount Hor ਹੋਰ ਪਹਾੜ,
+  Hormah ਹਾਰਮਾਹ, Peor ਪਓਰ, Abarim ਅਬਾਰੀਮ, Shittim ਸ਼ਿੱਟੀਮ, Abel-shittim
+  ਆਬੇਲ-ਸ਼ਿੱਟੀਮ, Lebo-hamath ਲਬੋ-ਹਮਾਥ, Chinnereth ਕਿੰਨਰਥ. The itinerary of
+  chapter 33 keeps the forms of Exodus, Numbers 11-21 and Deuteronomy 10; the
+  new stations are transcribed from the Hebrew (ਦਾਫ਼ਕਾਹ, ਆਲੂਸ਼, ਰਿਥਮਾਹ,
+  ਰਿੰਮੋਨ-ਪਰਸ, ਸ਼ਾਫ਼ਰ ਪਹਾੜ, ਹੋਰ-ਹੱਗਿਦਗਾਦ, ਅਬਰੋਨਾਹ, ਸਲਮੋਨਾਹ, ਪੂਨੋਨ,
+  ਦੀਬੋਨ-ਗਾਦ, ਅਲਮੋਨ-ਦਿਬਲਾਥੈਮ, ਬੈਤ-ਯਸ਼ੀਮੋਥ). Reviewer question: 33:23-24
+  ਸ਼ਾਫ਼ਰ for Shepher, and Zin ਸਿਨ here against ਸੀਨ in Joshua 15:3.
