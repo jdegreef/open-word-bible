@@ -1191,3 +1191,42 @@ For reviewers:
 - 11: does the بی‌فایده / سودمند pair carry the pun for readers who do not
   know Greek, without the Readable note?
 - 19: is «جان خود را به من مدیونی» natural for "you owe me your very self"?
+
+### Hebrews
+
+- The author says شما to the hearers and ما for the author with them.
+  Adelphoi: {{gender:برادران و خواهران|برادران}}.
+- Old Testament quotations follow the Persian of Acts, Romans and the
+  Gospels: Psalm 2:7 (1:5, 5:5), Psalm 110:1 (1:13, 10:13), Psalm 110:4
+  «تو تا ابد کاهنی هستی، به رتبهٔ ملکیصدق» (5:6, 7:17, 7:21), Deuteronomy
+  32:35 as Romans 12:19 (10:30), Habakkuk 2:4 as Romans 1:17 (10:38),
+  Genesis 21:12 as Romans 9:7 (11:18). Jeremiah 31 (8:8-12) is reused in
+  10:16-17.
+- Quoted speech inside a quotation takes “ ” inside «», as in Acts 28.
+- Kept the same through the book: کاهن اعظم, عهد / عهدی تازه, واسطه
+  (mesitēs), ضامن (engyos 7:22), پیشوا (archēgos 2:10, 12:2), کامل ساختن
+  (teleioō), آرامی (katapausis, chapters 3-4), آرامی سبت (4:9), امروز.
+- Tabernacle terms: خیمه, قدس (outer room), قدس‌الاقداس (inner room),
+  پرده, چراغدان, نان تقدمه, مذبح زرین بخور, صندوق عهد, کروبیان, کرسی رحمت
+  (hilastērion), منّ, زوفا, پسح (11:28, as in the Gospels).
+- Diathēkē as a will (9:16-17): وصیت‌نامه, so the wordplay with عهد is lost.
+- Pistei (chapter 11): «به ایمان» at Literal and Balanced; «چون ... ایمان
+  داشت» at Readable.
+- Huioi as God's children (2:10, 12:5-8): {{gender:فرزندان|پسران}}.
+- Moses is خادم (therapōn, 3:5), not برده.
+
+Names: ملکیصدق, سالیم, هارون, لاوی, یهودا, یوشع (4:8), هابیل, قائن, خنوخ,
+نوح, ابراهیم, سارا, اسحاق, یعقوب, عیسو, یوسف, فرعون, راحاب, اریحا, جدعون,
+باراق, شمشون, یفتاح, سموئیل, تیموتائوس, ایتالیا.
+
+For reviewers:
+
+- 2:9: «جدا از خدا» follows SBLGNT (chōris theou), as the English does.
+  Readers of the Old Persian Version know «به فیض خدا»; does the verse
+  need a footnote on the other reading?
+- 7:4 «پاتریارخ» at Literal: understood, or is «پدر قوم» better at every
+  level?
+- 9:4 «منّ» with a shadda: Persian John 6:31 writes «من» without it. Which
+  should both use?
+- 9:5 «کرسی رحمت» for the mercy seat: familiar, or would «تخت رحمت» or
+  «کفاره‌گاه» read better?
