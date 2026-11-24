@@ -1324,3 +1324,19 @@ For reviewers:
 - 3:12 «سر برید» (Literal) for esphaxen: too strong, or right for the Greek?
 - 5:16 «گناهی نه به سوی مرگ» (Literal): understandable, or should Literal
   also say «که به مرگ نمی‌انجامد»?
+
+### 2 John
+
+- Ho presbyteros: «شیخ» (Literal, Balanced), «شیخ کلیسا» (Readable),
+  matching مشایخ in 1 Peter 5:1. Eklektē kyria: «بانوی برگزیده».
+- The Greek moves between singular and plural: تو where John speaks to the
+  lady (4-5, 13), شما for her and her children.
+- Planoi (7): فریبکاران; ضدمسیح as 1 John. Chairein (10-11): سلام.
+- 3 follows 1 Timothy 1:2 («فیض، رحمت و سلامتی»).
+
+For reviewers:
+
+- 1 «شیخ» for the elder: does it read as an Islamic title, and would «پیر»
+  or «رهبر کلیسا» be better here and in 1 Peter 5?
+- 1 «بانوی برگزیده»: clear that this may be a church, or should Readable
+  say so, as 1 Peter 5:13 does?
