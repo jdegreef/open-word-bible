@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 import build_site  # noqa: E402
-from tests.site_build import built_site, sitemap_text  # noqa: E402
+from tests.site_build import built_site, foot_data_in, sitemap_text  # noqa: E402
 from owb import validate  # noqa: E402
 
 
@@ -210,12 +210,12 @@ class SiteChromeTest(unittest.TestCase):
             self.assertIn('class="tool-btn menu-btn"', text, path)
             self.assertIn('aria-controls="site-nav"', text, path)
             self.assertIn('<footer class="site">', text, path)
-            # Links stay in the page's language: /es/ pages link to /es/.
-            # (The menu lists the books translated into it: Matthew, in
-            # every language that has it.)
-            lang = re.search(r'<html lang="([a-z]+)"[ >]', text)[1]
-            if lang in matthew:
-                self.assertIn(f'href="{build_site.url(lang, "/read/#mat")}"', text, path)
+        # Links stay in the page's language: /es/ pages link to /es/. The
+        # footer's book chips, from nav-<lang>.js, list the books translated
+        # into it: Matthew, in every language that has it.
+        for lang in matthew:
+            chips = "".join(foot_data_in(out, lang)["chips"].values())
+            self.assertIn(f'href="{build_site.book_href("MAT", lang)}"', chips, lang)
         about = (out / "about" / "index.html").read_text(encoding="utf-8")
         self.assertIn('<h2 id="credits">', about)
         self.assertIn('id="help"', (out / "index.html").read_text(encoding="utf-8"))
