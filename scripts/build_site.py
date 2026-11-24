@@ -34,7 +34,7 @@ sys.path.insert(0, str(ROOT))
 from typing import NamedTuple  # noqa: E402
 
 from owb import crossrefs, export, languages as owb_languages, markup, morph, refs, translit, validate, versification  # noqa: E402
-from owb import furigana, notes as owb_notes, renumber, speakers, words_of_jesus  # noqa: E402
+from owb import furigana, notes as owb_notes, renumber, speakers, subset, words_of_jesus  # noqa: E402
 from owb.export import record_verses  # noqa: E402
 
 sys.path.insert(0, str(ROOT / "scripts"))
@@ -1671,7 +1671,8 @@ def chapters():
 @functools.cache
 def _chapters():
     found = set()
-    for path in (ROOT / "content").glob("*/*.json"):
+    # Every book, or for the backend's tests a few (owb/subset.py).
+    for path in subset.content_files(ROOT / "content"):
         for r in json.loads(path.read_text(encoding="utf-8"))["records"]:
             for v in versification.reader_ids_of(r["refs"]):
                 ref = refs.parse(v)
