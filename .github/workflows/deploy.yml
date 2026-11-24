@@ -64,7 +64,7 @@ jobs:
           API_HOOK: ${{ secrets.RENDER_API_DEPLOY_HOOK }}
           IMPORT_HOOK: ${{ secrets.RENDER_IMPORT_DEPLOY_HOOK }}
           # render.yaml's buildFilter ignoredPaths, as regular expressions.
-          SITE_IGNORED: '^(backend/|docs/|tests/|\.github/|\.claude/)'
+          SITE_IGNORED: '^(backend/|docs/|tests/|\.github/|\.claude/|cloudflare/)'
           API_IGNORED: '^(web/|tests/|\.github/|\.claude/)'
         run: |
           set -euo pipefail

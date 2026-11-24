@@ -34,6 +34,7 @@ services:
         - tests/**
         - .github/**
         - .claude/**
+        - cloudflare/**
     # Not deployed on every merge: .github/workflows/deploy.yml deploys the
     # newest main whose CI passed, four times a day, through this service's
     # deploy hook (each build is about 29 pipeline minutes, and main had 5 to
@@ -350,6 +351,7 @@ services:
         - tests/**
         - .github/**
         - .claude/**
+        - cloudflare/**
     buildCommand: pip install -r backend/requirements.txt && python backend/manage.py collectstatic --noinput
     # Migrate and make the cache table (settings.py CACHES), then sync_fixes
     # emails readers whose suggestion led to a merged fix (it never fails
