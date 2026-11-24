@@ -153,7 +153,7 @@ def _number(params, name, default, low, high):
 def search(request):
     params = request.query_params
     lang = params.get("lang", "en")
-    if not SearchLanguage.objects.filter(code=lang).exists():
+    if lang == site_search.SHARED or not SearchLanguage.objects.filter(code=lang).exists():
         if not SearchLanguage.objects.exists():
             return Response({"detail": "Search is not ready: run import_content."}, status=503)
         raise ValidationError({"lang": f"unknown site language {lang!r}"})

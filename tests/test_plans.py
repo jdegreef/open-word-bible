@@ -117,7 +117,7 @@ class PlanSiteTest(unittest.TestCase):
             href = build_site.SITE_URL + build_site.url(lang, "/plans/mark/")
             self.assertEqual(f'hreflang="{lang}" href="{href}"' in page, lang in langs, lang)
         if "es" not in langs:
-            self.assertIn('<a href="/es/plans/" lang="es"', page)
+            self.assertIn('<a href="/es/plans/" hreflang="es"', page)
 
     def test_plans_files_hold_each_offered_plan(self):
         for lang in build_site.LANGUAGES:

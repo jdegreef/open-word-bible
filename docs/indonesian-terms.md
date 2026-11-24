@@ -1014,7 +1014,7 @@ in different books. They are now one form each, by these rules:
 | Genesis | cupbearer; baker | *juru minuman*; *juru roti* | 40:1 |
 | Genesis | interpretation (of a dream); interpret | *arti*; *mengartikan* | 40:5 |
 | Genesis | magicians (*chartummim*) | *ahli sihir* | 41:8 |
-| Genesis | Abrek | *Abrekh* (L); *Berlututlah!* (B, R) | 41:43 |
+| Genesis | Abrek | *Abrekh* (L); *Bersujudlah!* (B, R) | 41:43 |
 | Genesis | Zaphenath-paneah; Asenath; Potiphera; On | Zafnat-Paaneah; Asnat; Potifera; On | 41:45 |
 | Genesis | interpreter | *juru bahasa* (L, B); *penerjemah* (R) | 42:23 |
 | Genesis | steward (the one over his house) | *orang yang mengurus rumahnya* (L); *kepala rumah tangga* (B); *hamba yang mengurus rumahnya* (R) | 43:16 |
