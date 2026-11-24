@@ -1340,3 +1340,16 @@ For reviewers:
   or «رهبر کلیسا» be better here and in 1 Peter 5?
 - 1 «بانوی برگزیده»: clear that this may be a church, or should Readable
   say so, as 1 Peter 5:13 does?
+
+### 3 John
+
+- شیخ as 2 John. Gaius is تو throughout (one reader, a friend).
+- Names: گایوس (as Romans 16:23), دیوتروفیس, دیمیتریوس (as Acts 19:24).
+- Adelphoi (3, 5, 10): {{gender:برادران و خواهران|برادران}}; «ایمانداران
+  مسافر» at Readable where they are the travelling teachers.
+- 7 «آن نام» at Literal and Balanced, «نام عیسی» at Readable.
+
+For reviewers:
+
+- 2 «کامیاب باشی ... چنان‌که جانت کامیاب است» (Literal): natural, or is
+  «خوب باشی» (Balanced) better at every level?
