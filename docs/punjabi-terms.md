@@ -2127,7 +2127,7 @@ People and places: ਪੌਲੁਸ, ਤੁਖਿਕੁਸ; ਅਫ਼ਸੁਸ, �
   ਦੇ ਪੁੱਤਰ" trips the overlap rule on every use: a reviewer may prefer it);
   Lord YHWH "ਪ੍ਰਭੂ {{divine_name:ਪਰਮੇਸ਼ੁਰ|ਯਾਹਵੇ}}"; thus says "... ਇਉਂ ਆਖਦੇ
   ਹਨ" (L), "... ਇਹ ਆਖਦੇ ਹਨ" (B, R); declares "... ਦਾ ਵਾਕ ਹੈ" (L, B), "...
-  ਆਖਦੇ ਹਨ" (R); the word came "DN ਦਾ ਬਚਨ ਮੇਰੇ ਕੋਲ ਆਇਆ" (L, B), "DN ਨੇ ਮੈਨੂੰ
+  ਆਖਦੇ ਹਨ" (R); the word came "ਪ੍ਰਭੂ ਦਾ ਬਚਨ ਮੇਰੇ ਕੋਲ ਆਇਆ" (L, B), "ਪ੍ਰਭੂ ਨੇ ਮੈਨੂੰ
   ਇਹ ਸੰਦੇਸ਼ ਦਿੱਤਾ" (R); glory ਪਰਤਾਪ.
 - People and places: Kebar ਕਬਾਰ ਨਦੀ (L), ਨਹਿਰ (B, R); exiles ਗ਼ੁਲਾਮੀ ਵਿੱਚ ਆਏ
   ਲੋਕ (R ਬੰਦੀ ਬਣਾ ਕੇ ਲਿਆਂਦੇ ਲੋਕ); rebellious house ਬਗ਼ਾਵਤ ਦਾ ਘਰਾਣਾ (L),
@@ -2163,7 +2163,7 @@ People and places: ਪੌਲੁਸ, ਤੁਖਿਕੁਸ; ਅਫ਼ਸੁਸ, �
   Berothah ਬੇਰੋਥਾਹ, Sibraim ਸਿਬਰਇਮ, Hazer-hattikon ਹਸੇਰ-ਹੱਤੀਕੋਨ, Hauran
   ਹੌਰਾਨ, Hazar-enan ਹਸਰ-ਏਨਾਨ, Tamar ਤਾਮਾਰ, Meribath-kadesh ਮਰੀਬਥ-ਕਾਦੇਸ਼,
   Wadi of Egypt ਮਿਸਰ ਦਾ ਨਾਲਾ; sojourner ਪਰਦੇਸੀ; Naphtali ਨਫ਼ਥਾਲੀ (some
-  books have ਨਫ਼ਤਾਲੀ: unify later); YHWH Shammah "DN ਉੱਥੇ ਹਨ" (48:35).
+  books have ਨਫ਼ਤਾਲੀ: unify later); YHWH Shammah "ਪ੍ਰਭੂ ਉੱਥੇ ਹਨ" (48:35).
 - Units at B and R only, in `{{units:}}` spans; L keeps bare units. The long
   cubit is about 53 cm (1 ਹੱਥ 53 ਸੈਂਟੀਮੀਟਰ, 6 ਹੱਥ 3.2 ਮੀਟਰ, 25,000 ਹੱਥ 13.3
   ਕਿਲੋਮੀਟਰ); reed ਕਾਨਾ 3.2 ਮੀਟਰ; handbreadth ਚਾਰ ਉਂਗਲ 7.5 ਸੈਂਟੀਮੀਟਰ;
