@@ -1353,3 +1353,19 @@ For reviewers:
 
 - 2 «کامیاب باشی ... چنان‌که جانت کامیاب است» (Literal): natural, or is
   «خوب باشی» (Balanced) better at every level?
+
+### Jude
+
+- یهودا, brother of یعقوب; doulos: برده (Literal) / خادم, as James 1:1.
+- Shared with 2 Peter: هرزگی (4), جلال‌یافتگان / موجودات پرجلال (8),
+  داوری بدگویانه (9), تیرگی ظلمت (13), ریشخندکنندگان (18), سدوم و عموره.
+- 5 «عیسی» saved the people out of Egypt, following the source text.
+- Names: میکائیل فرشتهٔ اعظم, موسی, قائن, بلعام, قورح, خنوخ, آدم.
+- Agapai (12): ضیافت‌های محبت. Psychikoi (19): نفسانی (Literal) / دنیوی.
+
+For reviewers:
+
+- 5 «عیسی» where many readers know «خداوند»: keep, or add a footnote?
+- 9 «فرشتهٔ اعظم» for archangel: the usual term, or «رئیس فرشتگان»?
+- 12 «صخره‌های [پنهان]» for spilades: clear, or would «لکه‌ها» (another
+  sense of the word) be better at Literal?
