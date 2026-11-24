@@ -14,6 +14,7 @@ from django.core.management import CommandError, call_command
 from django.db import connection
 from django.test import TestCase, override_settings
 
+from owb import subset
 from texts.models import Edition, Verse, Word
 from translation import counts
 from translation.management.commands.import_content import Command as ImportContent
@@ -45,8 +46,9 @@ def load_extract_words(languages=("grc", "hbo"), books=None):
         for folder, edition in editions.items():
             if folder not in languages:
                 continue
+            keep = books if books is not None else subset.only_books()
             for path in sorted((settings.REPO_ROOT / "data" / folder).glob("*.json")):
-                if books is not None and path.name.split(".")[0] not in books:
+                if keep is not None and path.name.split(".")[0] not in keep:
                     continue
                 for vid, verse_words in json.loads(path.read_text(encoding="utf-8"))["verses"].items():
                     book, chapter, verse = vid.split(".")
@@ -83,7 +85,7 @@ class ImportContentTest(TestCase):
 
     def test_imports_every_record(self):
         import_content()
-        files = sorted(CONTENT.glob("*/*.json"))
+        files = subset.content_files(CONTENT)
         expected = sum(len(json.loads(p.read_text())["records"]) for p in files)
         self.assertEqual(Sentence.objects.count(), expected)
         s = Sentence.objects.get(record_id="JHN.1.12.s1")

@@ -16,6 +16,7 @@ from django.utils import timezone
 from api import views
 from backend_tests.test_backend import import_content, load_extract_words
 from translation import search
+from owb.refs import BOOK_CODES
 from translation.models import SearchEntry, SearchLanguage
 
 sys.path.insert(0, str(settings.REPO_ROOT / "scripts"))
@@ -62,9 +63,9 @@ class SearchTest(TestCase):
 
     def test_import_builds_every_site_languages_documents(self):
         self.assertEqual(sorted(SearchLanguage.objects.values_list("code", flat=True)),
-                         sorted(build_site.LANGUAGES))
-        for lang in build_site.LANGUAGES:
-            docs = build_site.search_documents(lang)["docs"]
+                         sorted([*build_site.LANGUAGES, search.SHARED]))
+        for lang in [*build_site.LANGUAGES, search.SHARED]:
+            docs = search.documents(build_site, lang)["docs"]
             entries = SearchEntry.objects.filter(language=lang).order_by("position", "sub")
             self.assertEqual(entries.count(), len(docs), lang)
             self.assertEqual(entries.first().doc, docs[0])
@@ -92,7 +93,7 @@ class SearchTest(TestCase):
         self.assertEqual((change.added, change.removed), (1, 1))
         self.assertFalse(SearchEntry.objects.filter(id=first.id).exists())
         self.assertTrue(SearchEntry.objects.filter(id=second.id).exists())
-        docs = build_site.search_documents("en")["docs"]
+        docs = build_site.search_documents("en", shared_notes=False)["docs"]
         entries = SearchEntry.objects.filter(language="en").order_by("position", "sub")
         self.assertEqual([e.doc for e in entries], docs)
         self.assertFalse(entries.filter(vector__isnull=True).exists())
@@ -110,7 +111,7 @@ class SearchTest(TestCase):
         # Render stops a pre-deploy at 30 minutes; a language whose update
         # would run past --deadline writes what it can in committed batches
         # and leaves the rest for the next run.
-        docs = build_site.search_documents("sw")["docs"]
+        docs = build_site.search_documents("sw", shared_notes=False)["docs"]
         self.addCleanup(search.site_build)   # one language's records must not outlive the test
         clock = [0.0]
         write = search._write
@@ -163,6 +164,31 @@ class SearchTest(TestCase):
         finally:
             search.site_build()
         self.assertEqual(one, build_site.search_documents("pt"))
+
+    def test_shared_notes_are_kept_once(self):
+        # Every language's pages show the same meaning notes: one entry
+        # each, under SHARED, and none in a language's own entries.
+        shared = build_site.shared_search_documents()["docs"]
+        self.assertTrue(shared)
+        self.assertEqual(SearchEntry.objects.filter(language=search.SHARED).count(), len(shared))
+        self.assertFalse(SearchEntry.objects.filter(language__in=build_site.LANGUAGES, kind="n")
+                         .exclude(doc__y="rendering").exists())
+        # With a language's own entries they are what its pages show.
+        for lang in ("en", "es"):
+            own = build_site.search_documents(lang, shared_notes=False)["docs"]
+            self.assertEqual(len(own) + len(shared), len(build_site.search_documents(lang)["docs"]), lang)
+
+    def test_shared_notes_lead_to_the_readers_language(self):
+        for lang, prefix in (("en", "/"), ("es", "/es/")):
+            notes = self.every("grace", "note", lang=lang)
+            meaning = [d for d in notes if d["y"] != "rendering"]
+            self.assertTrue(meaning, lang)
+            self.assertTrue(all(d["u"].startswith(prefix) for d in notes), lang)
+            if lang == "en":
+                self.assertFalse([d for d in meaning if "l" in d])
+            else:
+                self.assertTrue(all(d["l"] == "en" for d in meaning))
+        self.get(status=400, q="grace", lang=search.SHARED)
 
     def test_jsonb_text_matches_postgres(self):
         # plan() matches stored entries by this key, worked out here for new
@@ -252,8 +278,9 @@ class SearchTest(TestCase):
         in_order = plain(self.every("grace", "note", sort="order"))
         self.assertEqual(len(in_order), self.get(q="grace", lang="en")["totals"]["note"])
         self.assertCountEqual([str(d) for d in in_order], [str(d) for d in by_relevance])
-        positions = {str(e.doc): (e.position, e.sub) for e in SearchEntry.objects.filter(language="en", kind="n")}
-        order = [positions[str(d)] for d in in_order]
+        # Bible order, though a language's own notes and the shared ones
+        # each have positions of their own.
+        order = [(BOOK_CODES.index(d["bk"]), d["c"], d["v"]) for d in in_order]
         self.assertEqual(order, sorted(order))
         # A page carries every kind's count too, as the site's filters show them.
         self.assertEqual(self.get(q="grace", lang="en", type="note", limit=2)["totals"],
