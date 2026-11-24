@@ -5503,13 +5503,30 @@ Built {m["generated_at"] or "from a working copy"}{f" from commit {m['commit']}"
 """
 
 
+def _download_records():
+    """Every record as content/ has it (our numbering), its texts curled as
+    the site shows them, for the downloads (downloads())."""
+    seen = {}
+    for book in sorted({b for b, _ in chapters()}, key=refs.BOOK_CODES.index):
+        for path in sorted((ROOT / "content" / book).glob("*.json")):
+            for r in json.loads(path.read_text(encoding="utf-8"))["records"]:
+                seen.setdefault(r["id"], r)
+    return tuple(curl_record(r) for r in seen.values())
+
+
 @functools.lru_cache(maxsize=None)
 def downloads():
     """{(lang, level, fmt): (filename, zip bytes, manifest)} for every reading
     language with text, at every level, in every format."""
-    records = _all_records()
-    expected = [v for book, chapter in chapters() for v in chapter_verses(book, chapter)]
-    paragraphs = frozenset().union(*paragraph_verses().values())
+    # export.build() takes our numbering and moves each verse to its English
+    # number itself, so the records go in as content/ numbers them: the
+    # site's records (_all_records) are already in reader numbering, and
+    # renumbering those again put Exodus 8:25-28 at 8:29-32 twice.
+    records = _download_records()
+    expected = [v for book, chapter in chapters() for v in source_chapter_verses(book, chapter)]
+    reader_paragraphs = frozenset().union(*paragraph_verses().values())
+    paragraphs = frozenset(r["source_refs"][0] for r in _all_records()
+                           if r["refs"] and r["refs"][0] in reader_paragraphs)
     commit, date = build_commit()
     licence = (ROOT / "LICENSE").read_text(encoding="utf-8")
     have = status_counts()["languages"]

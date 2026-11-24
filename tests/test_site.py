@@ -368,6 +368,17 @@ class SiteTest(unittest.TestCase):
             self.assertEqual((self.out / "downloads" / name).read_bytes(), data)
         z = zipfile.ZipFile(io.BytesIO(data))
         self.assertIn("43-JHN.usfm", z.namelist())
+        # English numbering, applied once: no verse number twice in a
+        # chapter (renumbering the site's reader-numbered records again put
+        # Exodus 8:25-28 at 8:29-32 twice, and import_usfm refused the file).
+        for book in [n for n in z.namelist() if n.endswith(".usfm")]:
+            seen, chapter = set(), 0
+            for line in z.read(book).decode().splitlines():
+                if line.startswith("\\c "):
+                    chapter = int(line.split()[1])
+                for number in re.findall(r"\\v (\d+)", line):
+                    self.assertNotIn((chapter, number), seen, (book, chapter, number))
+                    seen.add((chapter, number))
         self.assertIn("CC0", z.read("LICENSE").decode())
         self.assertIn("AI-assisted", z.read("README.txt").decode())
         self.assertEqual(json.loads(z.read("manifest.json")), manifest)
