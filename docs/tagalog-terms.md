@@ -893,7 +893,7 @@ names the book where the form was first used.
 | Leviticus 25:36 | interest | *patubo* |  |
 | Leviticus 27:2 | valuation | *pagtataya* (L), *halaga* (B), *takdang halaga* (R) |  |
 | Leviticus 27:3 | sanctuary shekel; gerah | *siklo ng santuwaryo*; *gera* | R: *opisyal na siklong ginagamit sa Toldang Sambahan*. |
-| Leviticus 27:16 | homer | *homer* | Under `units` at B and R: *mga 200 litro*. |
+| Leviticus 27:16 | homer | *homer* | Under `units` at B and R: *mga 220 litro*. |
 | Leviticus 27:28 | devoted thing (*kherem*) | *itinalagang bagay* (L), *lubos na itinalaga* (B, R) | Of a person under judgment: *itinalaga sa pagkawasak*. |
 | Numbers 6:2 | Nazirite; Nazirite vow | *Nazareo*; *panata ng Nazareo* |  |
 | Numbers 1:5 | Elizur | Elizur |  |
