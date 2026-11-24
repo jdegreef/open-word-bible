@@ -1302,3 +1302,25 @@ For reviewers:
 - 2:13 «عیش [در] روز را لذت می‌شمارند» (Literal): clear enough?
 - 3:10 «آشکار خواهند شد» for heurethēsetai: right, or should a footnote give
   the readings «سوخته خواهند شد» found in some manuscripts?
+
+### 1 John
+
+- John says شما to the readers. Teknia: «ای فرزندان کوچک» (Literal) /
+  «ای فرزندان عزیز»; agapētoi: «ای عزیزان» / «ای دوستان عزیز».
+- Words shared with John's Gospel kept the same: کلمه, حیات, حیات جاودان,
+  نور, تاریکی, پسر یگانه (4:9), مدافع for paraklētos (2:1, as John 14:16).
+- Koinōnia: مشارکت (Literal, Balanced). Hilasmos (2:2, 4:10): کفاره, as
+  Romans 3:25. Antichristos: ضدمسیح. Chrisma (2:20, 2:27): مسح.
+- Ton adelphon autou: {{gender:برادر یا خواهر خود|برادر خود}} at Literal and
+  Balanced, «هم‌ایمان» at Readable.
+- Present-tense sin (3:6-9, 5:18): «گناه نمی‌کند» at Literal, «به گناه کردن
+  ادامه نمی‌دهد» at Balanced and Readable.
+- قائن and هابیل (3:12) as Hebrews 11:4.
+
+For reviewers:
+
+- 1:3 «مشارکت» for koinōnia: does it carry the sense of shared life, or
+  should Balanced follow Readable («زندگی مشترک»)?
+- 3:12 «سر برید» (Literal) for esphaxen: too strong, or right for the Greek?
+- 5:16 «گناهی نه به سوی مرگ» (Literal): understandable, or should Literal
+  also say «که به مرگ نمی‌انجامد»?
