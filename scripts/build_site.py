@@ -215,8 +215,16 @@ def asset(name):
     """The URL of a file from web/, with its content hash as a version.
     Browsers keep style.css and the scripts for hours; a new version is a
     new URL, so a deploy can never pair new pages with old styles."""
-    digest = hashlib.sha256((ROOT / "web" / name).read_bytes()).hexdigest()[:10]
-    return f"/{name}?v={digest}"
+    data = served_web_file(name).encode("utf-8") if name in WEB_FILES else (ROOT / "web" / name).read_bytes()
+    return f"/{name}?v={hashlib.sha256(data).hexdigest()[:10]}"
+
+
+@functools.cache
+def served_web_file(name):
+    """web/<name> as the site serves it: without comments or indentation
+    (scripts/minify.py), a quarter fewer bytes, gzipped, for every reader.
+    asset() versions this copy, not the source."""
+    return minify.minify(name, (ROOT / "web" / name).read_text(encoding="utf-8"))
 
 
 # Colour modes (see web/style.css and web/site.js): value, and the
@@ -7385,7 +7393,7 @@ def sitemaps(entries):
 
 
 def build(out):
-    for cached in (load_memory_plans, load_intro, book_languages, status_counts, _book_records, reader_verse_starts, _chapter_words, _reader_book_words, chapter_verses, versification_chapter_verses, book_reader_verses, _all_records, nav_menus, footer_links, passages, asset, translated_verses, catalog, book_refs, name_cards, term_uses,
+    for cached in (load_memory_plans, load_intro, book_languages, status_counts, _book_records, reader_verse_starts, _chapter_words, _reader_book_words, chapter_verses, versification_chapter_verses, book_reader_verses, _all_records, nav_menus, footer_links, passages, asset, served_web_file, translated_verses, catalog, book_refs, name_cards, term_uses,
                    search_documents, word_uses, series_numbers, chapter_articles, load_plans, plans_json, plans_json_url,
                    downloads, chapter_shared, reader_shared, article_link, places, places_more, journeys, basemap_file,
                    book_notes, article_links, card_translation, owb_notes.load_notes, owb_notes.load_cards,
@@ -7523,10 +7531,7 @@ def build(out):
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_bytes(data)
     for name in WEB_FILES:
-        # Without comments or indentation (scripts/minify.py): a quarter
-        # fewer bytes, gzipped, for every reader.
-        (out / name).write_text(minify.minify(name, (ROOT / "web" / name).read_text(encoding="utf-8")),
-                                encoding="utf-8")
+        (out / name).write_text(served_web_file(name), encoding="utf-8")
     shutil.copytree(ROOT / "web" / "fonts", out / "fonts")
     shutil.copytree(ROOT / "web" / "icons", out / "icons")
     shutil.copytree(OG, out / "og", ignore=shutil.ignore_patterns("*.digest"))
