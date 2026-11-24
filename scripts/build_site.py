@@ -39,6 +39,7 @@ from owb.export import record_verses  # noqa: E402
 
 sys.path.insert(0, str(ROOT / "scripts"))
 import indexnow  # noqa: E402  (scripts/indexnow.py)
+import minify  # noqa: E402  (scripts/minify.py)
 
 # The interface languages, English first (data/languages.json; see catalog below).
 LANGUAGES = owb_languages.CODES
@@ -217,8 +218,16 @@ def asset(name):
     """The URL of a file from web/, with its content hash as a version.
     Browsers keep style.css and the scripts for hours; a new version is a
     new URL, so a deploy can never pair new pages with old styles."""
-    digest = hashlib.sha256((ROOT / "web" / name).read_bytes()).hexdigest()[:10]
-    return f"/{name}?v={digest}"
+    data = served_web_file(name).encode("utf-8") if name in WEB_FILES else (ROOT / "web" / name).read_bytes()
+    return f"/{name}?v={hashlib.sha256(data).hexdigest()[:10]}"
+
+
+@functools.cache
+def served_web_file(name):
+    """web/<name> as the site serves it: without comments or indentation
+    (scripts/minify.py), a quarter fewer bytes, gzipped, for every reader.
+    asset() versions this copy, not the source."""
+    return minify.minify(name, (ROOT / "web" / name).read_text(encoding="utf-8"))
 
 
 # Colour modes (see web/style.css and web/site.js): value, and the
@@ -486,12 +495,12 @@ def language_menu(lang, path=None, translated=LANGUAGES):
             f'<ul class="prefs-langs">{items}</ul></div></div>')
 
 
-def colour_menu(lang, path=None, translated=LANGUAGES):
-    """The gear menu: the colour mode, the display settings (DISPLAY_PREFS),
-    then the languages (language_items, as in the footer). web/site.js
-    runs it."""
-    label = t(lang, "tools.display")
-
+@functools.cache
+def colour_prefs(lang):
+    """The gear menu's settings: the colour mode and the display settings
+    (DISPLAY_PREFS). The same on every page in a language, and about 6.5 KB,
+    so they come from nav-<lang>.js (nav_script, NAV_SCRIPT puts them at the
+    top of the menu, before web/site.js runs it), not from every page."""
     def option(value, default, face, name):
         on = value == default
         return (f'<button type="button" role="radio" aria-checked="{"true" if on else "false"}" '
@@ -515,6 +524,14 @@ def colour_menu(lang, path=None, translated=LANGUAGES):
     rows = [group(pref, t(lang, "prefs." + pref), default,
                   [(v, sample(pref, v), t(lang, f"{pref}.{v}")) for v in values])
             for pref, default, values in DISPLAY_PREFS]
+    return theme + "".join(rows)
+
+
+def colour_menu(lang, path=None, translated=LANGUAGES):
+    """The gear menu: the colour mode and the display settings
+    (colour_prefs, filled in from nav-<lang>.js), then the languages
+    (language_items, as in the footer). web/site.js runs it."""
+    label = t(lang, "tools.display")
     # The same links as the header's language menu (language_menu), which
     # nav_script copies in, so a page carries the list once.
     languages = (f'<p class="prefs-label" id="prefs-lang">{t(lang, "footer.languages")}</p>'
@@ -524,7 +541,7 @@ def colour_menu(lang, path=None, translated=LANGUAGES):
         '<button type="button" class="tool-btn prefs-btn" aria-expanded="false" aria-controls="colour-menu" '
         f'aria-label="{label}" title="{label}">{GEAR}</button>'
         f'<div id="colour-menu" class="prefs-menu" role="group" aria-label="{label}" hidden>'
-        + theme + "".join(rows) + languages + '</div></div>')
+        + languages + '</div></div>')
 
 
 OG = ROOT / "web" / "og"
@@ -792,6 +809,12 @@ NAV_SCRIPT = r"""(function () {
     if (book) panel.querySelectorAll('[data-book="' + book[1] + '"]')
       .forEach(function (a) { a.setAttribute("aria-current", "true"); });
   });
+  // The gear menu's settings (build_site.colour_prefs), before its
+  // languages; web/site.js, which runs after this, wires them up.
+  var prefs = document.getElementById("colour-menu");
+  if (prefs && window.OWB_PREFS && !prefs.querySelector("[data-pref]")) {
+    prefs.insertAdjacentHTML("afterbegin", window.OWB_PREFS);
+  }
   // The gear menu's language links are the header language menu's.
   document.querySelectorAll("ul[data-copy]").forEach(function (ul) {
     var from = document.getElementById(ul.getAttribute("data-copy"));
@@ -818,11 +841,12 @@ NAV_SCRIPT = r"""(function () {
 
 @functools.cache
 def nav_script(lang):
-    """The header's dropdown panels in lang (nav_menus), as a script that
-    fills them in (NAV_SCRIPT), and its URL. It carries the footer's book
-    chips and the book names too (footer_data), which were the largest
-    part of every page's footer."""
+    """The header's dropdown panels in lang (nav_menus) and the gear menu's
+    settings (colour_prefs), as a script that fills them in (NAV_SCRIPT),
+    and its URL. It carries the footer's book chips and the book names too
+    (footer_data), which were the largest part of every page's footer."""
     text, _ = shared_script("OWB_NAV", {key: panel for key, _l, _i, _h, panel, _c in nav_menus(lang)})
+    text += shared_script("OWB_PREFS", colour_prefs(lang))[0]
     text += shared_script("OWB_FOOT", footer_data(lang))[0]
     text += NAV_SCRIPT
     return text, f"/nav-{lang}.js?v={hashlib.sha256(text.encode()).hexdigest()[:10]}"
@@ -2356,6 +2380,32 @@ def chapter_data_files():
     files.update({f"reader-{lang}.js": reader_shared(lang)[0] for lang in LANGUAGES})
     files.update({f"nav-{lang}.js": nav_script(lang)[0] for lang in LANGUAGES})
     return files
+
+
+def chapter_stub(book, chapter, lang):
+    """A chapter's page in a language that has none of its sentences yet: a
+    short page that says so and leads to the English one, where the full
+    page would have been English text under lang's interface (about
+    95 MB of a new language's folder, before any of its text). Not indexed,
+    as such pages never were; the reader's language switch, next and
+    previous links and saved places still find a page here."""
+    records, _ = load_chapter(book, chapter)
+    esc = html.escape
+    title = chapter_name(records, book, chapter, lang)
+    english = chapter_url(book, chapter)
+    label = (f'<span lang="en">{esc(chapter_name(records, book, chapter, "en"))}</span> · '
+             f'{esc(catalog(lang)["language_names"]["en"])}')
+    body = (f'<div class="prose chapter-stub"><h1>{esc(title)}</h1>'
+            f'<p>{esc(catalog(lang)["reader.ui"]["not_in_language"])}</p>'
+            f'<p><a class="button" href="{english}" hreflang="en">{label} {forward(lang)}</a></p></div>')
+    return page(lang, title, body, path=english, current="/read/", card=og_card_chapter(book, chapter),
+                alternates=passage_languages(records), indexed=False)
+
+
+@functools.cache
+def chapter_has(book, chapter, lang):
+    """Whether any sentence of a chapter is in lang (else chapter_stub)."""
+    return lang in chapter_languages(load_chapter(book, chapter)[0])
 
 
 def chapter_page(book, chapter, lang="en"):
@@ -5408,6 +5458,16 @@ def number(n, lang):
 # so a link to one keeps working; the service worker leaves them alone.
 DOWNLOADS_DIR = "downloads"
 DOWNLOAD_FORMATS = ("usfm", "json")
+# Where the downloads are published instead, when set: the GitHub release
+# .github/workflows/downloads.yml uploads them to, with downloads.json
+# (scripts/build_downloads.py) listing them. Making the 96 zips (131 MB)
+# took about 5 minutes of every site build, and every deploy carried them,
+# though the text changes them only now and then. The site build then
+# reads downloads.json for the download page and links each file there; if
+# it can't be read (no release yet, no network), the files are made here
+# as before.
+DOWNLOADS_RELEASE = os.environ.get("OWB_DOWNLOADS_RELEASE", "").rstrip("/")
+DOWNLOADS_INDEX = "downloads.json"
 
 
 def build_commit():
@@ -5482,6 +5542,41 @@ def downloads():
     return out
 
 
+def downloads_index(files):
+    """downloads.json for files (downloads()): each file's name and size and
+    what the download page says of its edition, without the zips."""
+    commit, date = build_commit()
+    return {"commit": commit, "generated_at": date, "files": [
+        {"lang": lang, "level": level, "fmt": fmt, "name": name, "size": len(data),
+         "manifest": {"verses": m["verses"], "missing": {"count": m["missing"]["count"]},
+                      "generated_at": m["generated_at"]}}
+        for (lang, level, fmt), (name, data, m) in files.items()]}
+
+
+def _released_downloads():
+    """downloads.json from DOWNLOADS_RELEASE, or None if it can't be read."""
+    import urllib.request
+    try:
+        with urllib.request.urlopen(f"{DOWNLOADS_RELEASE}/{DOWNLOADS_INDEX}", timeout=60) as answer:
+            return json.loads(answer.read().decode("utf-8"))
+    except (OSError, ValueError) as e:
+        print(f"downloads: {DOWNLOADS_RELEASE}/{DOWNLOADS_INDEX} could not be read ({e}); "
+              "making the files here", file=sys.stderr)
+        return None
+
+
+@functools.cache
+def download_listing():
+    """{(lang, level, fmt): (filename, size, url, manifest)} for the download
+    page, and whether the files are published elsewhere (DOWNLOADS_RELEASE):
+    then the site build doesn't make them."""
+    index = _released_downloads() if DOWNLOADS_RELEASE else None
+    if index:
+        return {(f["lang"], f["level"], f["fmt"]): (f["name"], f["size"], f"{DOWNLOADS_RELEASE}/{f['name']}",
+                                                     f["manifest"]) for f in index["files"]}, True
+    return {key: (name, len(data), download_url(name), m) for key, (name, data, m) in downloads().items()}, False
+
+
 def download_url(name):
     return f"/{DOWNLOADS_DIR}/{name}"
 
@@ -5498,7 +5593,7 @@ def download_page(lang="en"):
     """/download/: the ready-made files, the page's language first."""
     d = catalog(lang)["download"]
     levels = catalog(lang)["levels"]
-    files = downloads()
+    files, _ = download_listing()
     langs = sorted({code for code, _, _ in files}, key=lambda code: code != lang)
     sections = []
     for code in langs:
@@ -5506,18 +5601,18 @@ def download_page(lang="en"):
         for level in export.LEVELS:
             cells = []
             for fmt in DOWNLOAD_FORMATS:
-                name, data, _ = files[code, level, fmt]
-                cells.append(f'<td><a href="{download_url(name)}" download>{d[fmt]}</a> '
-                             f'<span class="fine">{file_size(len(data), lang)}</span></td>')
+                name, size, href, _ = files[code, level, fmt]
+                cells.append(f'<td><a href="{href}" download>{d[fmt]}</a> '
+                             f'<span class="fine">{file_size(size, lang)}</span></td>')
             rows.append(f'<tr><th scope="row">{html.escape(levels[level])}</th>{"".join(cells)}</tr>')
-        m = files[code, "B", "usfm"][2]
+        m = files[code, "B", "usfm"][3]
         counts = d["counts"].format(verses=number(m["verses"], lang), missing=number(m["missing"]["count"], lang))
         sections.append(f'<h2 id="dl-{code}"><span lang="{code}">{owb_languages.native(code)}</span></h2>\n'
                         f'<p>{counts}</p>\n'
                         f'<table class="status-table" aria-labelledby="dl-{code}"><thead><tr>'
                         f'<th scope="col">{d["level"]}</th><th scope="col">{d["usfm"]}</th>'
                         f'<th scope="col">{d["json"]}</th></tr></thead><tbody>{"".join(rows)}</tbody></table>')
-    m = next(iter(files.values()))[2]
+    m = next(iter(files.values()))[3]
     built = d["built"].format(date=m["generated_at"][:10]) if m["generated_at"] else ""
     body = f"""
 <div class="prose status">
@@ -7615,9 +7710,9 @@ class Stages:
 
 
 def build(out):
-    for cached in (_chapters, load_memory_plans, load_intro, book_languages, status_counts, _book_records, reader_verse_starts, _chapter_words, _reader_book_words, chapter_verses, versification_chapter_verses, book_reader_verses, _all_records, nav_menus, footer_links, passages, asset, translated_verses, catalog, book_refs, name_cards, term_uses,
+    for cached in (_chapters, chapter_has, load_memory_plans, load_intro, book_languages, status_counts, _book_records, reader_verse_starts, _chapter_words, _reader_book_words, chapter_verses, versification_chapter_verses, book_reader_verses, _all_records, nav_menus, footer_links, passages, asset, served_web_file, translated_verses, catalog, book_refs, name_cards, term_uses,
                    search_documents, word_uses, series_numbers, chapter_articles, load_plans, plans_json, plans_json_url,
-                   downloads, chapter_shared, reader_shared, article_link, places, places_more, journeys, basemap_file,
+                   downloads, download_listing, chapter_shared, reader_shared, article_link, places, places_more, journeys, basemap_file,
                    book_notes, article_links, card_translation, owb_notes.load_notes, owb_notes.load_cards,
                    owb_notes.book_records, owb_notes.book_decisions, owb_notes.english_cards, word_entries, word_slugs):
         cached.cache_clear()
@@ -7690,6 +7785,9 @@ def build(out):
                 for book in term_books(term):
                     add(term_path(term, book), term_book_page(term, book, lang))
         for book, chapter in chapters():
+            if not chapter_has(book, chapter, lang):
+                add(chapter_url(book, chapter), chapter_stub(book, chapter, lang), index=False)
+                continue
             add(chapter_url(book, chapter), chapter_page(book, chapter, lang),
                 index=chapter_indexed(book, chapter, lang), sources=chapter_sources(book, chapter))
         for book, _ in books(lang):
@@ -7757,14 +7855,16 @@ def build(out):
             write(f"search-ui-{lang}.json", search_ui(lang))
             write(f"plans-{lang}.json", plans_json(lang))
     with stage("downloads"):
-        blobs = {f"{DOWNLOADS_DIR}/{name}": data for name, data, _ in downloads().values()}
+        # Unless they are published as a release (download_listing).
+        blobs = {} if download_listing()[1] else {
+            f"{DOWNLOADS_DIR}/{name}": data for name, data, _ in downloads().values()}
         for rel, data in blobs.items():
             path = out / rel
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_bytes(data)
     with stage("web files"):
         for name in WEB_FILES:
-            shutil.copy(ROOT / "web" / name, out / name)
+            (out / name).write_text(served_web_file(name), encoding="utf-8")
         shutil.copytree(ROOT / "web" / "fonts", out / "fonts")
         shutil.copytree(ROOT / "web" / "icons", out / "icons")
         shutil.copytree(OG, out / "og", ignore=shutil.ignore_patterns("*.digest"))

@@ -14,7 +14,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 import build_site  # noqa: E402
 from owb import languages, markup, morph  # noqa: E402
-from tests.site_build import built_site, page_data, sitemap_text  # noqa: E402
+from tests.site_build import built_site, page_data, reader_chapter, sitemap_text  # noqa: E402
 
 
 def html_tag(lang):
@@ -162,6 +162,10 @@ class LanguagesTest(unittest.TestCase):
             if build_site.load_articles(lang):
                 keys += ("nav.all_articles",)
             cat = build_site.catalog(lang)
+            # The header's menus and the gear menu's settings ("Theme",
+            # "Night") come from the language's nav script, which every
+            # page loads, so they count as the page's own.
+            nav = self.read(f"nav-{lang}.js")
             for rel in self.english_pages():
                 # The passage data and the text written into the page may
                 # hold the same words as Bible text (Genesis 1:5 names the
@@ -176,7 +180,7 @@ class LanguagesTest(unittest.TestCase):
                 page = re.sub(r'<p class="term-(text|note|why-text)" lang="en"[^>]*>.*?</p>'
                               r'|<meta property="og:image:alt" content="[^"]*">'
                               r'|<script type="application/json" class="votd-data">.*?</script>'
-                              r'|<p class="votd-text"[^>]*>.*?</p>', "", page, flags=re.S)
+                              r'|<p class="votd-text"[^>]*>.*?</p>', "", page, flags=re.S) + nav
                 for key in keys:
                     # A whole word: English "Home" is inside Portuguese "Homem".
                     self.assertNotRegex(page, r"(?<!\w)" + re.escape(en[key]) + r"(?!\w)", (lang, rel, key))
@@ -191,10 +195,11 @@ class LanguagesTest(unittest.TestCase):
             return page_data(self.read(rel))
 
         for lang in build_site.LANGUAGES:
-            d = data(build_site.url(lang, "/jhn/1/").lstrip("/") + "index.html")
+            rel, book = reader_chapter(lang)
+            d = data(rel.lstrip("/") + "index.html")
             self.assertEqual(d["lang"], lang)
             self.assertEqual(d["ui"], build_site.catalog(lang)["reader.ui"])
-            self.assertTrue(d["title"].startswith(build_site.BOOK_NAMES["JHN"][lang]))
+            self.assertTrue(d["title"].startswith(build_site.BOOK_NAMES[book][lang]))
         # The language is the page's: no language control in the settings,
         # and the Spanish-only plural setting only on Spanish pages.
         en, es = self.read("jhn/1/index.html"), self.read("es/jhn/1/index.html")
