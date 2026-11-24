@@ -4,6 +4,7 @@ articles/ (translation/search.py; import_content does every language).
     python manage.py update_search pt          # only the entries that changed
     python manage.py update_search pt --all    # every entry
     python manage.py update_search pt --stop 1790000000   # stop writing by then
+    python manage.py update_search '*'         # the notes every language shares
 
 import_content --separate-processes runs this once per language: one
 language's documents fit the API's 512 MB, but every language's in turn in
@@ -28,9 +29,9 @@ class Command(BaseCommand):
                                  "(search._rebuild_language); the rest wait for the next run")
 
     def handle(self, *args, language, everything=False, stop=None, **options):
-        site = search.site_build(language)
-        if language not in site.LANGUAGES:
-            raise CommandError(f"{language} is not a site language")
+        site = search.site_build(search.build_language(language))
+        if language not in (*site.LANGUAGES, search.SHARED):
+            raise CommandError(f"{language} is not a site language (or {search.SHARED}, the shared notes)")
         try:
             change = search._rebuild_language(site, language, everything, stop,
                                                 out=lambda line: (self.stderr.write(line), self.stderr.flush()))
