@@ -1,4 +1,4 @@
-// web/admin.js's OWBAdminNav: section filters kept in the address, and the
+// web/admin-core.js's OWBAdminNav: section filters kept in the address, and the
 // command palette's matching.
 // Run: node --test tests/js/
 import { test } from "node:test";
@@ -9,7 +9,7 @@ import vm from "node:vm";
 
 const ROOT = new URL("../../", import.meta.url).pathname;
 const context = vm.createContext({ document: { getElementById: () => null } });
-vm.runInContext(readFileSync(join(ROOT, "web/admin.js"), "utf-8"), context, { filename: "web/admin.js" });
+vm.runInContext(readFileSync(join(ROOT, "web/admin-core.js"), "utf-8"), context, { filename: "web/admin-core.js" });
 const N = context.OWBAdminNav;
 const plain = (x) => JSON.parse(JSON.stringify(x));
 

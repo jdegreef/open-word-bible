@@ -99,6 +99,12 @@ class SiteTest(unittest.TestCase):
         self.assertIn('id="admin"', page)
         self.assertIn(build_site.asset("admin.js"), page)
         self.assertIn(build_site.asset("admin.css"), page)
+        # admin-core.js before admin.js, which needs it; the sections loaded
+        # when first opened by their versioned URLs, and built.
+        self.assertLess(page.index(build_site.asset("admin-core.js")), page.index(build_site.asset("admin.js")))
+        for module in build_site.ADMIN_MODULES:
+            self.assertIn(html.escape(build_site.asset(f"admin-{module}.js")), page)
+            self.assertTrue((self.out / f"admin-{module}.js").is_file())
         self.assertTrue((self.out / "admin.js").is_file())
         self.assertFalse((self.out / "es" / "admin").exists())
         self.assertNotIn(f"<loc>{build_site.SITE_URL}/admin/", sitemap_text(self.out))

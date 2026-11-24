@@ -209,8 +209,10 @@ def url(lang, path):
 # (tests/test_headers.py). web/sw.js is not one: it is built, and checked
 # on every visit.
 WEB_FILES = ("style.css", "markup.js", "memorize.js", "reader.js", "site.js", "account.js", "search.js", "plans.js", "compare.js",
-             "word.js", "saved.js", "groups.js", "edition.js", "map.js", "journeys.js", "admin.js",
-             "admin.css")
+             "word.js", "saved.js", "groups.js", "edition.js", "map.js", "journeys.js", "admin-core.js", "admin.js",
+             "admin-review.js", "admin-quality.js", "admin-publish.js", "admin.css")
+# The admin's sections loaded when first opened (web/admin.js MODULE_OF).
+ADMIN_MODULES = ("review", "quality", "publish")
 
 
 @functools.lru_cache(maxsize=None)
@@ -7068,18 +7070,23 @@ def account_page(lang="en"):
 
 
 def admin_page():
-    """The admin (web/admin.js), after Ochorus's: one page whose sections
-    (#coverage, #team, ...) the script draws from the API (backend/staff/),
-    showing only the parts the signed-in account's roles open. In English
-    only, as Ochorus's admin is. Not in the sitemap, and not indexed."""
+    """The admin, after Ochorus's: one page whose sections (#coverage,
+    #team, ...) the scripts draw from the API (backend/staff/), showing only
+    the parts the signed-in account's roles open. web/admin-core.js and
+    web/admin.js load with the page; admin.js loads the other sections'
+    admin-<module>.js when first opened, from the URLs in data-modules. In
+    English only, as Ochorus's admin is. Not in the sitemap, and not
+    indexed."""
     lang = "en"
     # Language and book names, so the admin can name what the API gives as
     # codes ("fr", "JHN.3.16") wherever it draws them.
     names = json.dumps({"languages": {c: owb_languages.READING[c]["name"] for c in owb_languages.READING},
                         "books": {c: BOOK_NAMES[c]["en"] for c in refs.BOOK_CODES}},
                        ensure_ascii=False, separators=(",", ":"))
+    modules = json.dumps({m: asset(f"admin-{m}.js") for m in ADMIN_MODULES}, separators=(",", ":"))
     body = f"""
-<div class="admin" id="admin" data-site="{html.escape(SITE_URL)}" data-github="{html.escape(GITHUB_URL)}" data-names="{html.escape(names)}">
+<div class="admin" id="admin" data-site="{html.escape(SITE_URL)}" data-github="{html.escape(GITHUB_URL)}" data-names="{html.escape(names)}"
+ data-modules="{html.escape(modules)}">
 <nav class="admin-rail" id="admin-rail" aria-label="Admin sections" hidden></nav>
 <section class="admin-main" id="admin-main">
 <header class="page-head compact">
@@ -7090,6 +7097,7 @@ def admin_page():
 <noscript><p class="notice">The admin needs JavaScript.</p></noscript>
 </section>
 </div>
+<script src="{asset("admin-core.js")}" defer></script>
 <script src="{asset("admin.js")}" defer></script>
 """
     head = f'\n<link rel="stylesheet" href="{asset("admin.css")}">'
