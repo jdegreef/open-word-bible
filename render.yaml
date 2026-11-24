@@ -25,7 +25,7 @@ services:
     previews:
       generation: manual
     # Changes that cannot alter the site don't rebuild it (each build is
-    # about 29 minutes). scripts/build_site.py reads content/, data/,
+    # about 29 minutes; deploy.yml SITE_IGNORED repeats this list). scripts/build_site.py reads content/, data/,
     # articles/, i18n/, web/, owb/ and scripts/, never these.
     buildFilter:
       ignoredPaths:
@@ -34,10 +34,11 @@ services:
         - tests/**
         - .github/**
         - .claude/**
-    # Deploy main only once its CI checks (.github/workflows/ci.yml) pass, so
-    # a red main never goes live. Render skips the deploy if a check fails or
-    # none are reported; the next green commit deploys.
-    autoDeployTrigger: checksPass
+    # Not deployed on every merge: .github/workflows/deploy.yml deploys the
+    # newest main whose CI passed, four times a day, through this service's
+    # deploy hook (each build is about 29 pipeline minutes, and main had 5 to
+    # 9 green commits a day). Run that workflow by hand to deploy at once.
+    autoDeployTrigger: "off"
     domains:
       - openwordbible.org
       - www.openwordbible.org
@@ -336,8 +337,9 @@ services:
     # Standard (2 GB): the pre-deploy's search update peaked at about 460 MB,
     # too close to the starter plan's 512 MB.
     plan: standard
-    # As for the site: deploy main only once its CI checks pass.
-    autoDeployTrigger: checksPass
+    # As for the site: deployed by .github/workflows/deploy.yml a few times
+    # a day, not on every merge.
+    autoDeployTrigger: "off"
     # A deploy runs the pre-deploy below (up to 25 minutes, billed as
     # pipeline minutes), so changes the API never reads don't deploy it.
     # web/ is the reader site's own code; backend/ names it only in comments.
@@ -398,6 +400,13 @@ services:
         value: https://openwordbible.org
       - key: CORS_ALLOWED_ORIGINS
         value: https://openwordbible.org,https://www.openwordbible.org
+      # The cache (settings.py CACHES): review states, dashboard counts,
+      # checks, GitHub lookups. Without it the cache is a Postgres table.
+      - key: REDIS_URL
+        fromService:
+          type: keyvalue
+          name: owb-cache
+          property: connectionString
       # The API is for our own use (backend/config/access.py): pages from
       # the origins above (and the partner sites in settings.py) may call
       # it, nothing else may. /api/editions/, /api/text/ and /api/passages/
@@ -496,3 +505,13 @@ services:
         sync: false
       - key: DEFAULT_FROM_EMAIL
         sync: false
+
+  # The API's cache (REDIS_URL above), so cache reads and writes stop
+  # competing with real queries in Postgres. Free plan: losing it on a
+  # restart only means the next requests recompute what they need. Reached
+  # only from Render's private network (no allow-list entries).
+  - type: keyvalue
+    name: owb-cache
+    plan: free
+    maxmemoryPolicy: allkeys-lru
+    ipAllowList: []

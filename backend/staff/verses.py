@@ -63,7 +63,7 @@ def verse_id(value):
         return f"{ref.book}.{ref.chapter}.{ref.verse}"
     except ValueError:
         pass
-    for language in SearchLanguage.objects.order_by("code"):
+    for language in SearchLanguage.objects.exclude(code=search.SHARED).order_by("code"):
         found = search.reference(value, language.books, language.code)
         if found:
             return f"{found['book']}.{found['chapter']}.{found['verse'] or 1}"
