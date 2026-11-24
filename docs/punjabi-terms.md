@@ -2277,3 +2277,47 @@ People and places: ਪੌਲੁਸ, ਤੁਖਿਕੁਸ; ਅਫ਼ਸੁਸ, �
   ਰਿੰਮੋਨ-ਪਰਸ, ਸ਼ਾਫ਼ਰ ਪਹਾੜ, ਹੋਰ-ਹੱਗਿਦਗਾਦ, ਅਬਰੋਨਾਹ, ਸਲਮੋਨਾਹ, ਪੂਨੋਨ,
   ਦੀਬੋਨ-ਗਾਦ, ਅਲਮੋਨ-ਦਿਬਲਾਥੈਮ, ਬੈਤ-ਯਸ਼ੀਮੋਥ). Reviewer question: 33:23-24
   ਸ਼ਾਫ਼ਰ for Shepher, and Zin ਸਿਨ here against ਸੀਨ in Joshua 15:3.
+
+### Isaiah
+
+- Address: no deity_pronoun spans. God takes the honorific plural in the
+  third person (DN ਆਖਦੇ ਹਨ, ਤੁਹਾਡੇ ਪਰਮੇਸ਼ੁਰ ਆਖਦੇ ਹਨ) and speaks in the
+  first person as masculine singular; prayer to God uses ਤੂੰ (63-64). Israel
+  or Jacob addressed in the singular is ਤੂੰ at L and B, ਤੁਸੀਂ at R; where the
+  Hebrew is plural (1, 55, 65:7-15, 66) it is ਤੁਸੀਂ at every level. Zion and
+  Jerusalem addressed as a woman are feminine ਤੂੰ; in 54, 60, 62 and 66:9
+  this holds at R too.
+- Formulas: *ne'um* YHWH ਦਾ ਵਾਕ ਹੈ (L, B), ਆਖਦੇ ਹਨ (R); "thus says"
+  ਇਉਂ ਆਖਦੇ ਹਨ (L), ਇਹ ਆਖਦੇ ਹਨ (B, R); *amar* YHWH inside a speech
+  DN ਆਖਦੇ ਹਨ. Lord GOD (*adonai* YHWH) ਪ੍ਰਭੂ {{divine_name:ਪਰਮੇਸ਼ੁਰ|ਯਾਹਵੇ}};
+  *ha'adon* "the Lord" ਪ੍ਰਭੂ alone. LORD of Armies ਸੈਨਾਂ ਦੇ DN. Holy One of
+  Israel ਇਸਰਾਏਲ ਦਾ ਪਵਿੱਤਰ ਪੁਰਖ. Oracle (*massa*) ਸੰਦੇਸ਼; woe ਹਾਇ.
+- Terms: *hesed* ਅਟੱਲ ਪਿਆਰ (L, B), ਵਫ਼ਾਦਾਰ ਪਿਆਰ (R); covenant ਨੇਮ;
+  Sheol ਪਤਾਲ (L, B), ਕਬਰ (R); remnant ਬਕੀਆ; drink offering ਪੀਣ ਦੀ ਭੇਟ;
+  grain offering ਮੈਦੇ ਦੀ ਭੇਟ; ram's horn ਨਰਸਿੰਗਾ; frankincense ਲੋਬਾਨ
+  (R ਸੁਗੰਧ ਵਾਲੀ ਧੂਪ); winepress ਚੁਬੱਚਾ; eunuch ਖੋਜਾ; wine ਮੈ; vineyard
+  ਅੰਗੂਰੀ ਬਾਗ਼ (L, B), ਅੰਗੂਰਾਂ ਦਾ ਬਾਗ਼ (R); temple ਹੈਕਲ, house of DN ਭਵਨ.
+  30:20 "your Teacher" ਤੇਰਾ ਗੁਰੂ, a reviewer question.
+- Trees: ਸਰੂ (cypress; 2 Kings 19:23 has ਸਨੋਵਰ, to unify), ਚਨਾਰ, ਸ਼ਮਸ਼ਾਦ,
+  ਮਹਿੰਦੀ.
+- The servant: God's servant is ਦਾਸ throughout (Matthew 12:18 has ਸੇਵਕ for
+  42:1, a reviewer question). The servant's own speech and the servant songs
+  keep plain forms (ਉਹ, ਉਸ ਨੇ), with no honorific. Savior ਬਚਾਉਣ ਵਾਲਾ,
+  Redeemer ਛੁਡਾਉਣ ਵਾਲਾ; Cyrus ਕੋਰਸ਼.
+- Chapters 36-39 reuse the wording of 2 Kings 18-20 where the Hebrew agrees,
+  with Isaiah's own differences kept.
+- Verses aligned with the Punjabi New Testament where the Hebrew agrees:
+  6:9-10 (Matthew 13), 7:14, 9:1-2 (Matthew 4), 40:3-5 (Luke 3), 42:1-4
+  (Matthew 12), 53 (Acts 8, 1 Peter 2), 54:1 (Galatians 4:27), 54:13 (John
+  6:45), 56:7 (Mark 11:17), 59:7-8 (Romans 3:15-17), 59:17 (Ephesians 6:17),
+  59:20-21 (Romans 11:26-27), 61:1-2 (Luke 4:18-19), 62:11 (Matthew 21:5),
+  63:10 (Ephesians 4:30), 64:3 (1 Corinthians 2:9), 65:1-2 (Romans
+  10:20-21), 65:17 and 66:22 (2 Peter 3:13, Revelation 21:1), 66:1-2 (Acts
+  7:49-50), 66:24 (Mark 9:48).
+- Names: ਆਹਾਜ਼, ਹਿਜ਼ਕੀਯਾਹ, ਸਨਹੇਰੀਬ, ਸ਼ਬਨਾ, ਅਲਯਾਕੀਮ, ਮਹੇਰ-ਸ਼ਾਲਾਲ-ਹਾਸ਼-ਬਜ਼,
+  ਬਾਬਲ, ਅੱਸ਼ੂਰ, ਸੂਰ, ਫ਼ਲਿਸਤ, ਦੰਮਿਸ਼ਕ, ਕੂਸ਼, ਅਰੀਏਲ, ਲਿਵਯਾਥਾਨ, ਮਿਦਯਾਨ,
+  ਏਫ਼ਾਹ, ਸ਼ਬਾ, ਕੇਦਾਰ, ਨਬਾਯੋਥ, ਤਰਸ਼ੀਸ਼, ਅਦੋਮ, ਬਾਸਰਾ, ਸ਼ਾਰੋਨ, ਆਕੋਰ ਦੀ
+  ਵਾਦੀ; the gods Gad and Meni ਗਾਦ, ਮੇਨੀ (R adds what they are); 62:4
+  ਹਫ਼ਸੀਬਾ, ਬਊਲਾਹ; 66:19 ਪੂਲ, ਲੂਦ, ਤੂਬਲ, ਯਾਵਾਨ (R ਯੂਨਾਨ).
+- Spelling: ਅਨੰਦ and ਖ਼ੁਸ਼ throughout the book (29, 30, 32 and 35 had
+  ਆਨੰਦ / ਖੁਸ਼ and were unified).
