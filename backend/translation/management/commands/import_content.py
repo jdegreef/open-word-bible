@@ -58,7 +58,7 @@ from django.conf import settings
 from django.core.management.base import BaseCommand, CommandError
 from django.db import transaction
 
-from owb import refs, validate
+from owb import refs, subset, validate
 from texts.models import Edition, Word
 from translation import counts, search
 from translation.models import ContentFile, Decision, ImportRun, RecordChange, Rendering, Sentence, SentenceChange
@@ -116,7 +116,7 @@ class Command(BaseCommand):
         self.run.finish()
 
     def import_files(self, paths, if_texts_loaded, everything, until):
-        files = paths or sorted(str(p) for p in (settings.REPO_ROOT / "content").glob("*/*.json"))
+        files = paths or [str(p) for p in subset.content_files(settings.REPO_ROOT / "content")]
         if not files:
             raise CommandError("No content files found")
         total = unchanged = 0
