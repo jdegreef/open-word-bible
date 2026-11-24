@@ -1173,3 +1173,21 @@ For reviewers:
   the English does?
 - 2:5 «کدبانو» at Literal: natural, or too old-fashioned?
 - 1:12: is «شکم‌پرستان تنبل» right for the Cretan proverb?
+
+### Philemon
+
+- Paul says تو to Philemon and شما where the Greek is plural (verses 3, 22,
+  25: the church in his house).
+- Doulos (16): برده at every level, since Paul sets slave against brother.
+- The wordplay on Onesimus (11, 20): بی‌فایده / سودمند; Readable explains
+  that the name means «سودمند».
+- 12 splanchna: پارهٔ دل من.
+
+Names: فیلیمون, اپفیه, آرخیپوس, اونیسیموس, اپافراس, مرقس, آریستارخوس,
+دیماس, لوقا.
+
+For reviewers:
+
+- 11: does the بی‌فایده / سودمند pair carry the pun for readers who do not
+  know Greek, without the Readable note?
+- 19: is «جان خود را به من مدیونی» natural for "you owe me your very self"?
