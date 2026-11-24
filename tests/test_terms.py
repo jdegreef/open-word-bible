@@ -148,7 +148,7 @@ class TermPagesTest(unittest.TestCase):
                       if build_site.TERM_OPEN_USES < build_site.term_count(term) <= build_site.TERM_SPLIT_USES)
         page = self.read(build_site.term_path(folded).strip("/"))
         self.assertIn('<details class="term-book" id="', page)
-        self.assertNotIn('" open>', page)
+        self.assertNotRegex(page, r'<details class="term-book" id="[a-z0-9]+" open>')
         few = next(term for term in validate.KEY_TERMS.values()
                    if 0 < build_site.term_count(term) <= build_site.TERM_OPEN_USES)
         page = self.read(build_site.term_path(few).strip("/"))

@@ -2116,6 +2116,54 @@ People and places: ਪੌਲੁਸ, ਤੁਖਿਕੁਸ; ਅਫ਼ਸੁਸ, �
   ਰਾਜਾ ਹੈਂ" (B, R) and "ਤਾਂ ਖ਼ੁਦ ਨੂੰ ਬਚਾ" (L); 23:46 "ਤੇਰੇ ਹੱਥਾਂ ਵਿੱਚ ਮੈਂ
   ਆਪਣਾ ਆਤਮਾ ਸੌਂਪਦਾ ਹਾਂ" (L, Greek order), "ਤੇਰੇ ਹੱਥੀਂ ..." (B).
 
+### Exodus
+
+- Divine name and address: DN as everywhere; "I AM WHO I AM" (3:14) ਮੈਂ ਜੋ
+  ਹਾਂ, ਸੋ ਹਾਂ, "I AM" ਮੈਂ ਹਾਂ; El Shaddai (6:3) ਸਰਬ ਸ਼ਕਤੀਮਾਨ ਪਰਮੇਸ਼ੁਰ;
+  Adonai in address ਹੇ (ਮੇਰੇ) ਪ੍ਰਭੂ, no span; Lord YHWH (23:17, 34:23) ਪ੍ਰਭੂ
+  {{divine_name:ਪਰਮੇਸ਼ੁਰ|ਯਾਹਵੇ}}. God says ਤੂੰ to Moses and Moses says ਤੂੰ to
+  God; God's verbs in headings and summaries are honorific plural.
+- People: SIL ({{gender:ਇਸਰਾਏਲ ਦੀ ਸੰਤਾਨ|ਇਸਰਾਏਲ ਦੇ ਪੁੱਤਰਾਂ}}) in L, SIB
+  ({{gender:ਇਸਰਾਏਲੀਆਂ|ਇਸਰਾਏਲ ਦੇ ਪੁੱਤਰਾਂ}}) in B, R; 40:36 needs the direct
+  case ({{gender:ਇਸਰਾਏਲੀ|ਇਸਰਾਏਲ ਦੇ ਪੁੱਤਰ}}). The twelve named sons (39:6-14)
+  ਇਸਰਾਏਲ ਦੇ ਪੁੱਤਰ (L, B), ਯਾਕੂਬ ਦੇ ਪੁੱਤਰ (R), no span. Community ਮੰਡਲੀ (L,
+  B), ਭਾਈਚਾਰਾ (R); elders ਬਜ਼ੁਰਗ; Hebrew ਇਬਰਾਨੀ; slave ਦਾਸ.
+- Names: Pharaoh ਫ਼ਿਰਊਨ, Midian ਮਿਦਯਾਨ, Jethro ਯਿਥਰੋ, Miriam ਮਿਰਯਮ, Marah
+  ਮਾਰਾਹ, Rephidim ਰਫ਼ੀਦੀਮ, Amalek ਅਮਾਲੇਕ, Sinai ਸੀਨਈ, Bezalel ਬਸਲਏਲ,
+  Oholiab ਆਹਾਲੀਆਬ, the Nile ਨੀਲ.
+- Plagues: blood ਲਹੂ, frogs ਡੱਡੂ, gnats ਮੱਛਰ, flies ਮੱਖੀਆਂ, livestock
+  disease ਬਵਾ, boils ਫੋੜੇ, hail ਗੜੇ, locusts ਟਿੱਡੀਆਂ; plague ਬਿਪਤਾ; harden
+  the heart ਦਿਲ ਕਠੋਰ ਕਰਨਾ; staff ਲਾਠੀ; firstborn ਪਹਿਲੌਠਾ.
+- Feasts and worship: Passover ਪਸਾਹ; unleavened bread ਪਤੀਰੀ ਰੋਟੀ; Abib
+  ਅਬੀਬ; Weeks ਹਫ਼ਤਿਆਂ ਦਾ ਤਿਉਹਾਰ; Ingathering ਸਾਂਭਣ ਦਾ ਤਿਉਹਾਰ; manna ਮੰਨ;
+  quail ਬਟੇਰੇ; Ten Words ਦਸ ਬਚਨ (R ਦਸ ਹੁਕਮ); tablets ਫੱਟੀਆਂ; testimony
+  ਸਾਖੀ (R ਨੇਮ ਦੀਆਂ ਫੱਟੀਆਂ); glory of the LORD DN ਦਾ ਪਰਤਾਪ; face ਮੁੱਖ (L),
+  ਹਜ਼ੂਰੀ (B), "ਮੈਂ ਆਪ" (R); hesed ਅਟੱਲ ਪਿਆਰ; jealous ਅਣਖੀ; Asherah ਅਸ਼ੇਰਾਹ
+  ਥੰਮ੍ਹ; veil over Moses' face ਪੜਦਾ (R ਕੱਪੜਾ).
+- Tabernacle (25-31, built again in 35-40 with the same words): tabernacle
+  ਡੇਰਾ (L), ਪਵਿੱਤਰ ਤੰਬੂ (B, R); tent of meeting ਮੁਲਾਕਾਤ ਦਾ ਤੰਬੂ; ark ਸੰਦੂਕ;
+  acacia ਕਿੱਕਰ; mercy seat ਪ੍ਰਾਸਚਿਤ ਦਾ ਢੱਕਣ (R "ਸੰਦੂਕ ਦਾ ਢੱਕਣ, ਜਿੱਥੇ ਪਾਪ
+  ਢਕੇ ਜਾਂਦੇ ਹਨ"); cherubim ਕਰੂਬੀ; lampstand ਸ਼ਮਾਦਾਨ; poles ਚੋਬਾਂ (R
+  ਡੰਡੇ); bread of the Presence ਸਨਮੁੱਖ ਦੀ ਰੋਟੀ (L), ਹਜ਼ੂਰੀ ਦੀ ਰੋਟੀ (B, R);
+  frames ਤਖ਼ਤੇ, bases ਚੌਂਕੀਆਂ, bars ਕੜੀਆਂ (R ਆਡੀਆਂ), pillars ਥੰਮ੍ਹ;
+  inner curtain ਪਰਦਾ (R ਅੰਦਰਲਾ ਪਰਦਾ), screen ਓਟ ਦਾ ਪਰਦਾ (R ਪਰਦਾ);
+  covering ਓਛਾੜ; courtyard ਵਿਹੜਾ, hangings ਕਨਾਤਾਂ, gate ਫਾਟਕ; basin ਹੌਦੀ,
+  stand ਪਾਵਾ; overlay ਮੜ੍ਹਨਾ; pure (gold) ਖ਼ਾਲਸ (R ਸ਼ੁੱਧ); mirrors ਸ਼ੀਸ਼ੇ.
+- Priests: priest ਜਾਜਕ, priesthood ਜਾਜਕਾਈ; consecrate ਪਵਿੱਤਰ ਕਰਨਾ (L, B),
+  ਪਰਮੇਸ਼ੁਰ ਲਈ ਵੱਖਰਾ ਕਰਨਾ (R); most holy ਅੱਤ ਪਵਿੱਤਰ; ephod ਏਫ਼ੋਦ, band
+  ਪਟਕਾ (R ਪੇਟੀ), breastpiece ਸੀਨਾਬੰਦ, robe ਚੋਗਾ, tunic ਕੁੜਤਾ, gold plate
+  ਪੱਤਰੀ; burnt offering ਹੋਮ ਬਲੀ, sin offering ਪਾਪ ਬਲੀ, grain offering ਮੈਦੇ
+  ਦੀ ਭੇਟ; anointing oil ਮਸਹ ਕਰਨ ਦਾ ਤੇਲ; incense ਧੂਪ.
+- The refrain of 39-40 "ਜਿਵੇਂ DN ਨੇ ਮੂਸਾ ਨੂੰ ਹੁਕਮ ਦਿੱਤਾ ਸੀ" is the same at
+  every level.
+- Units: span {{units:ਲਗਭਗ 23 ਸੈਂਟੀਮੀਟਰ|ਇੱਕ ਗਿੱਠ}}; cubits and shekels as
+  {{units:metric|original}} spans in B and R; the metals of 38:24-29 in kilos
+  (gold ≈1,000, silver ≈3,440, bronze ≈2,420); beka ≈5.7 ਗ੍ਰਾਮ; large numbers
+  in Indian grouping (6,03,550).
+- Overlap rewordings worth a reviewer's eye: the formula phrases of 35-40
+  ("ਸੋਨੇ ਦੇ ਦੋ ਕੜੇ", "ਮਸਹ ਕਰਨ ਦਾ ਪਵਿੱਤਰ ਤੇਲ") were reordered in places to
+  avoid pb1945 and IRV, so a few read "ਦੋ ਕੜੇ ਸੋਨੇ ਦੇ" (39:16, 39:19 L).
+
 ### Ezekiel
 
 - Address: God takes honorific plural forms ("ਉਹ ਮੈਨੂੰ ... ਲੈ ਗਏ", "ਉਨ੍ਹਾਂ
