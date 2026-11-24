@@ -7296,15 +7296,53 @@ def article_text(body, lang="en"):
     return smart_quotes(re.sub(r"\s+", " ", text).strip())
 
 
+def shared_note(d):
+    """Whether a decision's note is the same on every language's pages:
+    every note but a rendering note (which is about one language's
+    wording) is shown whatever the page's language."""
+    return d["layer"] != "rendering"
+
+
+def note_document(p, verse, d, page_url):
+    """A note's search document (search_documents)."""
+    return {"k": "n", "bk": p.book, "c": p.chapter,
+            "v": verse, "u": page_url, "y": d["layer"], "g": d["category"],
+            "t": d["choice"], "al": d["alternatives"], "s": d["reason"],
+            # Notes are written in English for now, whatever
+            # language a wording note is about.
+            "l": "en"}
+
+
+def shared_search_documents():
+    """The notes that search_documents(lang) gives every language alike
+    (shared_note), once, in the same order, each with its English page's
+    address: the API's search keeps these once rather than once for each
+    site language (75,000 notes, 94% of all the entries it held, in
+    November 2026), and gives each the address in the reader's language."""
+    docs = []
+    for p in passages():
+        for r in p.records:
+            if refs.parse(r["refs"][0]).chapter != p.chapter:
+                continue
+            verse = refs.parse(r["refs"][0]).verse
+            docs += [note_document(p, verse, d, p.url) for d in r["decisions"] if shared_note(d)]
+    return {"docs": docs}
+
+
 @functools.lru_cache(maxsize=None)
-def search_documents(lang):
+def search_documents(lang, shared_notes=True):
     """Everything search can find on pages in lang: interface text, the
     books, page shortcuts, and the documents. Kinds: "c" a passage, "v" a
     sentence (its text at each level, with the settings spans left in for
     the browser to render), "n" a note (a decision), "a" an article. The
     API (backend/translation/search.py) indexes these same documents, so
     the site and the API find the same things. Callers must not change
-    the result: it is cached."""
+    the result: it is cached.
+
+    With shared_notes=False, the notes that are the same on every
+    language's pages (shared_note, all but rendering notes) are left out:
+    the API keeps those once (shared_search_documents), not once for each
+    language."""
     ui = dict(catalog(lang)["search.ui"])
     ui["levels"] = catalog(lang)["levels"]
     ui["category"] = catalog(lang)["reader.ui"]["category"]
@@ -7344,12 +7382,9 @@ def search_documents(lang):
             for d in r["decisions"]:
                 if d["layer"] == "rendering" and d["language"] != shown:
                     continue
-                docs.append({"k": "n", "bk": p.book, "c": p.chapter,
-                             "v": verse, "u": url(lang, p.url), "y": d["layer"], "g": d["category"],
-                             "t": d["choice"], "al": d["alternatives"], "s": d["reason"],
-                             # Notes are written in English for now, whatever
-                             # language a wording note is about.
-                             "l": "en"})
+                if shared_note(d) and not shared_notes:
+                    continue
+                docs.append(note_document(p, verse, d, url(lang, p.url)))
     for a in sorted(load_articles(lang), key=lambda a: (a["section"] != "method", a["order"])):
         docs.append({"k": "a", "t": a["title"], "s": a["summary"], "x": article_text(a["body"], a["lang"]),
                      "u": url(lang, article_url(a)), "sec": catalog(lang)["sections"][a["section"]],
