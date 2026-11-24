@@ -9,6 +9,7 @@ the root, the others under their codes (/es/, /fr/, /sw/, /vi/, /ko/, /am/).
 """
 import argparse
 import base64
+import contextlib
 import datetime
 import functools
 import hashlib
@@ -17,9 +18,11 @@ import io
 import json
 import os
 import re
+import resource
 import shutil
 import subprocess
 import sys
+import time
 import unicodedata
 import urllib.parse
 import zipfile
@@ -7522,6 +7525,59 @@ def sitemaps(entries):
     return files
 
 
+# Render's build machine: the build is cancelled past these (2026-11).
+RENDER_BUILD_MINUTES = 120
+RENDER_BUILD_MEMORY_MB = 8 * 1024
+# A stage line or the summary warns when the build gets this close to them.
+BUILD_WARN_SHARE = 0.75
+
+
+def peak_memory_mb():
+    """The most memory the build has used so far (Linux reports KB)."""
+    return resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1024
+
+
+class Stages:
+    """How long each part of build() took and the peak memory by its end,
+    written to stderr as each part ends (the "built" lines on stdout only
+    come once everything is done), with a summary and a warning when the
+    build nears Render's time or memory limit. Nobody could tell where the
+    29 minutes went, or how close a new language took the build to 8 GB
+    (it passed it on 2026-11-15)."""
+
+    def __init__(self, out=sys.stderr):
+        self.out, self.began, self.times, self.current = out, time.time(), [], None
+
+    def start(self, name):
+        self.current = (name, time.time())
+
+    def end(self):
+        name, start = self.current
+        took = time.time() - start
+        self.times.append((name, took))
+        print(f"stage {name}: {took:.1f} s, peak memory {peak_memory_mb():.0f} MB", file=self.out, flush=True)
+
+    @contextlib.contextmanager
+    def __call__(self, name):
+        self.start(name)
+        yield
+        self.end()
+
+    def summary(self):
+        total, peak = time.time() - self.began, peak_memory_mb()
+        print(f"build: {total / 60:.1f} min, peak memory {peak:.0f} MB; slowest stages: "
+              + ", ".join(f"{n} {t:.0f} s" for n, t in sorted(self.times, key=lambda x: -x[1])[:5]),
+              file=self.out, flush=True)
+        warnings = []
+        if total / 60 > BUILD_WARN_SHARE * RENDER_BUILD_MINUTES:
+            warnings.append(f"the build took {total / 60:.0f} min of Render's {RENDER_BUILD_MINUTES}")
+        if peak > BUILD_WARN_SHARE * RENDER_BUILD_MEMORY_MB:
+            warnings.append(f"the build peaked at {peak:.0f} MB of Render's {RENDER_BUILD_MEMORY_MB}")
+        for w in warnings:
+            print(f"WARNING: {w}", file=self.out, flush=True)
+        return warnings
+
+
 def build(out):
     for cached in (_chapters, load_memory_plans, load_intro, book_languages, status_counts, _book_records, reader_verse_starts, _chapter_words, _reader_book_words, chapter_verses, versification_chapter_verses, book_reader_verses, _all_records, nav_menus, footer_links, passages, asset, translated_verses, catalog, book_refs, name_cards, term_uses,
                    search_documents, word_uses, series_numbers, chapter_articles, load_plans, plans_json, plans_json_url,
@@ -7529,6 +7585,7 @@ def build(out):
                    book_notes, article_links, card_translation, owb_notes.load_notes, owb_notes.load_cards,
                    owb_notes.book_records, owb_notes.book_decisions, owb_notes.english_cards, word_entries, word_slugs):
         cached.cache_clear()
+    stage = Stages()
     if out.exists():
         shutil.rmtree(out)
     # Each file is written as soon as it is made, not gathered first: the
@@ -7552,6 +7609,8 @@ def build(out):
 
     indexed, fingerprints = [], {}
     for lang in LANGUAGES:
+        stage.start(f"pages {lang}")
+
         def add(path, text, index=True, sources=()):
             write(page_file(url(lang, path)), text)
             if index:
@@ -7622,10 +7681,12 @@ def build(out):
         add(MEMORIZE_PATH, memorize_page(lang))
         add(MY_PLANS_PATH, my_plans_page(lang), index=False)
         add("/groups/", groups_page(lang), index=False)
+        stage.end()
     # The admin is in English only (admin_page).
     write(page_file("/admin/"), admin_page())
     # A plan's page is in the languages that offer it.
     offered = {code: {p.id for p in available_plans(code)} for code in LANGUAGES}
+    stage.start("plan pages")
     for plan in load_plans():
         langs = tuple(code for code in LANGUAGES if plan.id in offered[code])
         for code in langs:
@@ -7634,6 +7695,7 @@ def build(out):
             write(page_file(url(code, path)), text)
             indexed.append(SitemapEntry(code, path))
             fingerprints[url(code, path)] = page_fingerprint(text)
+    stage.end()
     files = {}
     files["404.html"] = not_found_page()
     files.update(sitemaps(indexed))
@@ -7647,24 +7709,30 @@ def build(out):
     files["sw.js"] = service_worker()
     files["word-uses.json"] = word_uses()[0]
     files["basemap.json"] = basemap_file()[0]
-    for rel, text in files.items():
-        write(rel, text)
-    for made in (verse_files, editions_files, word_files, chapter_data_files):
-        for rel, text in made().items():
+    with stage("site files"):
+        for rel, text in files.items():
             write(rel, text)
-    for lang in LANGUAGES:
-        write(f"search-ui-{lang}.json", search_ui(lang))
-        write(f"plans-{lang}.json", plans_json(lang))
-    blobs = {f"{DOWNLOADS_DIR}/{name}": data for name, data, _ in downloads().values()}
-    for rel, data in blobs.items():
-        path = out / rel
-        path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_bytes(data)
-    for name in WEB_FILES:
-        shutil.copy(ROOT / "web" / name, out / name)
-    shutil.copytree(ROOT / "web" / "fonts", out / "fonts")
-    shutil.copytree(ROOT / "web" / "icons", out / "icons")
-    shutil.copytree(OG, out / "og", ignore=shutil.ignore_patterns("*.digest"))
+    for made in (verse_files, editions_files, word_files, chapter_data_files):
+        with stage(made.__name__.replace("_", " ")):
+            for rel, text in made().items():
+                write(rel, text)
+    with stage("search and plan data"):
+        for lang in LANGUAGES:
+            write(f"search-ui-{lang}.json", search_ui(lang))
+            write(f"plans-{lang}.json", plans_json(lang))
+    with stage("downloads"):
+        blobs = {f"{DOWNLOADS_DIR}/{name}": data for name, data, _ in downloads().values()}
+        for rel, data in blobs.items():
+            path = out / rel
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_bytes(data)
+    with stage("web files"):
+        for name in WEB_FILES:
+            shutil.copy(ROOT / "web" / name, out / name)
+        shutil.copytree(ROOT / "web" / "fonts", out / "fonts")
+        shutil.copytree(ROOT / "web" / "icons", out / "icons")
+        shutil.copytree(OG, out / "og", ignore=shutil.ignore_patterns("*.digest"))
+    stage.summary()
     return sorted(set(written)) + sorted(blobs) + ["admin.css", "admin.js", "compare.js", "word.js", "markup.js", "memorize.js", "plans.js", "reader.js",
                             "saved.js", "groups.js", "search.js", "site.js", "style.css"]
 
