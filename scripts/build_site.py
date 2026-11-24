@@ -2209,6 +2209,32 @@ def chapter_data_files():
     return files
 
 
+def chapter_stub(book, chapter, lang):
+    """A chapter's page in a language that has none of its sentences yet: a
+    short page that says so and leads to the English one, where the full
+    page would have been English text under lang's interface (about
+    95 MB of a new language's folder, before any of its text). Not indexed,
+    as such pages never were; the reader's language switch, next and
+    previous links and saved places still find a page here."""
+    records, _ = load_chapter(book, chapter)
+    esc = html.escape
+    title = chapter_name(records, book, chapter, lang)
+    english = chapter_url(book, chapter)
+    label = (f'<span lang="en">{esc(chapter_name(records, book, chapter, "en"))}</span> · '
+             f'{esc(catalog(lang)["language_names"]["en"])}')
+    body = (f'<div class="prose chapter-stub"><h1>{esc(title)}</h1>'
+            f'<p>{esc(catalog(lang)["reader.ui"]["not_in_language"])}</p>'
+            f'<p><a class="button" href="{english}" hreflang="en">{label} {forward(lang)}</a></p></div>')
+    return page(lang, title, body, path=english, current="/read/", card=og_card_chapter(book, chapter),
+                alternates=passage_languages(records), indexed=False)
+
+
+@functools.cache
+def chapter_has(book, chapter, lang):
+    """Whether any sentence of a chapter is in lang (else chapter_stub)."""
+    return lang in chapter_languages(load_chapter(book, chapter)[0])
+
+
 def chapter_page(book, chapter, lang="en"):
     records, words = load_chapter(book, chapter)
     title = chapter_name(records, book, chapter, lang)
@@ -7384,7 +7410,7 @@ def sitemaps(entries):
 
 
 def build(out):
-    for cached in (load_memory_plans, load_intro, book_languages, status_counts, _book_records, reader_verse_starts, _chapter_words, _reader_book_words, chapter_verses, versification_chapter_verses, book_reader_verses, _all_records, nav_menus, footer_links, passages, asset, translated_verses, catalog, book_refs, name_cards, term_uses,
+    for cached in (chapter_has, load_memory_plans, load_intro, book_languages, status_counts, _book_records, reader_verse_starts, _chapter_words, _reader_book_words, chapter_verses, versification_chapter_verses, book_reader_verses, _all_records, nav_menus, footer_links, passages, asset, translated_verses, catalog, book_refs, name_cards, term_uses,
                    search_documents, word_uses, series_numbers, chapter_articles, load_plans, plans_json, plans_json_url,
                    downloads, chapter_shared, reader_shared, article_link, places, places_more, journeys, basemap_file,
                    book_notes, article_links, card_translation, owb_notes.load_notes, owb_notes.load_cards,
@@ -7456,6 +7482,9 @@ def build(out):
                 for book in term_books(term):
                     add(term_path(term, book), term_book_page(term, book, lang))
         for book, chapter in chapters():
+            if not chapter_has(book, chapter, lang):
+                add(chapter_url(book, chapter), chapter_stub(book, chapter, lang), index=False)
+                continue
             add(chapter_url(book, chapter), chapter_page(book, chapter, lang),
                 index=chapter_indexed(book, chapter, lang), sources=chapter_sources(book, chapter))
         for book, _ in books(lang):
