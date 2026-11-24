@@ -2321,3 +2321,41 @@ People and places: ਪੌਲੁਸ, ਤੁਖਿਕੁਸ; ਅਫ਼ਸੁਸ, �
   ਹਫ਼ਸੀਬਾ, ਬਊਲਾਹ; 66:19 ਪੂਲ, ਲੂਦ, ਤੂਬਲ, ਯਾਵਾਨ (R ਯੂਨਾਨ).
 - Spelling: ਅਨੰਦ and ਖ਼ੁਸ਼ throughout the book (29, 30, 32 and 35 had
   ਆਨੰਦ / ਖੁਸ਼ and were unified).
+
+### Jeremiah
+
+People and places: ਯਿਰਮਿਯਾਹ, ਬਾਰੂਕ, ਨੇਰੀਯਾਹ, ਸਰਾਯਾਹ, ਮਹਸੇਯਾਹ; kings ਯੋਸੀਯਾਹ,
+ਯਹੋਯਾਕੀਮ, ਯਹੋਯਾਕੀਨ (ਕਾਨਯਾਹ in 22:24, 28), ਸ਼ੱਲੂਮ, ਸਿਦਕੀਯਾਹ; ਹਨਨਯਾਹ,
+ਪਸ਼ਹੂਰ, ਸ਼ਮਅਯਾਹ, ਗਦਲਯਾਹ, ਇਸਮਾਏਲ, ਯੋਹਾਨਾਨ, ਅਬਦ-ਮਲਕ; ਅਨਾਥੋਥ, ਮਿਸਪਾਹ,
+ਰਾਮਾਹ, ਤਹਪਨਹੇਸ, ਕਰਕਮੀਸ਼, ਫ਼ਰਾਤ; ਲੇਬ-ਕਾਮਈ and ਸ਼ੇਸ਼ਕ (code names for
+Babylon, which R explains).
+
+- Nebuchadnezzar follows the Hebrew spelling: ਨਬੂਕਦਰੱਸਰ in most of the book,
+  ਨਬੂਕਦਨੱਸਰ in chapters 27-29, where the Hebrew has the *n* form. Reviewer
+  question: keep the two spellings, or use one throughout?
+- Torah is ਸਿੱਖਿਆ throughout, as in Habakkuk 1:4, including 31:33 (Hebrews
+  8:10 has ਬਿਵਸਥਾਵਾਂ for the Greek plural). Reviewer question: ਸਿੱਖਿਆ or
+  ਬਿਵਸਥਾ for the law written on the heart.
+- The chief of the guard ਅੰਗ-ਰੱਖਿਅਕਾਂ ਦਾ ਪ੍ਰਧਾਨ (L, B), ਸ਼ਾਹੀ ਅੰਗ-ਰੱਖਿਅਕਾਂ
+  ਦਾ ਸੈਨਾਪਤੀ (R); the house of the LORD `DN ਦਾ ਭਵਨ` (L, B), `DN ਦੀ ਹੈਕਲ` (R);
+  "Behold, days are coming" ਵੇਖੋ, ਦਿਨ ਆਉਂਦੇ ਹਨ (L), ਦਿਨ ਆ ਰਹੇ ਹਨ (B), ਵੇਲਾ
+  ਆ ਰਿਹਾ ਹੈ (R); hissing (scorn) ਸੀਟੀ ਮਾਰਨਾ (L), ਮਖ਼ੌਲ (B), explained in R;
+  balm of Gilead ਮਲ੍ਹਮ (8:22, 46:11, 51:8).
+- Forms of address: Jeremiah uses ਤੂੰ to Hananiah (28) as a rebuke, ਤੁਸੀਂ to
+  kings and royal officers (Zedekiah, Seraiah in 51:61); God's words to kings
+  also use ਤੁਸੀਂ. Prayers to God use ਤੂੰ. Reviewer question: should God
+  address the kings with ਤੂੰ?
+- The oblique of ਰਾਜਾ is ਰਾਜੇ throughout (ਰਾਜੇ ਨੇ, ਬਾਬਲ ਦੇ ਰਾਜੇ ਨੂੰ), as in
+  the other books; vocatives (ਹੇ ਯਹੂਦਾਹ ਦੇ ਰਾਜਾ) and the title of God (ਕੌਮਾਂ
+  ਦੇ ਰਾਜਾ, 10:7) keep ਰਾਜਾ. Babylon the city is feminine (50:23, 51).
+- ਯਹੂਦੀ renders *Yehudim* "Judeans"; 36:14, 21, 23 has
+  ਯਹੂਦੀ as a man's name. Jonadab is ਯਹੋਨਾਦਾਬ or ਯੋਨਾਦਾਬ (35), following the
+  Hebrew's two forms; Jaazaniah/Jezaniah ਯਜ਼ਨਯਾਹ. Marduk is ਮਰੋਦਕ (50:2,
+  Merodach) with ਮਰਦੂਕ in R's explanation.
+- Woman: ਔਰਤ and ਤੀਵੀਂ are both used; a reviewer may want
+  one. ਦੇਸ਼ is spelled with the nukta throughout.
+- 10:12-16 and 51:15-19 are the same Hebrew and share the wording (51:19
+  without ਇਸਰਾਏਲ, as the Hebrew). 49:18 matches 50:40; 50:23 is 51:41b.
+- Chapter 52 follows 2 Kings 24:18-25:30; 2 Kings should share its wording
+  when it is drafted. Measurements use the units setting
+  (`{{units:ਲਗਭਗ 8.1 ਮੀਟਰ|ਅਠਾਰਾਂ ਹੱਥ}}`).
