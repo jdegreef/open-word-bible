@@ -1,5 +1,6 @@
 import hashlib
 import html
+import io
 import json
 import re
 import sys
@@ -13,7 +14,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 import build_site  # noqa: E402
 from owb import crossrefs  # noqa: E402
-from tests.site_build import built_site, nav_menus_in, page_data, sitemap_text  # noqa: E402
+from tests.site_build import built_site, foot_data_in, nav_menus_in, page_data, reader_chapter, sitemap_text  # noqa: E402
 
 
 
@@ -172,7 +173,8 @@ class SiteTest(unittest.TestCase):
         for lang in build_site.LANGUAGES:
             for p in build_site.passages():
                 missing = [r for r in p.records if lang not in r["renderings"]]
-                if not missing:
+                # A chapter with no sentence in lang is a stub page instead.
+                if not missing or len(missing) == len(p.records):
                     continue
                 page, text = self.chapter_text(build_site.url(lang, p.url).strip("/"))
                 self.assertRegex(text, r'class="verse fallback" id="v\d+" lang="en" data-v=')
@@ -233,8 +235,10 @@ class SiteTest(unittest.TestCase):
         self.assertEqual(json.loads(script[script.index(">") + 1:-len("</script>")])["name"], title)
 
     def test_footer_counts_the_books_not_started(self):
+        # The chips come from nav-en.js (footer_data); the page has a list for each testament.
         page = (self.out / "1ti" / "5" / "index.html").read_text(encoding="utf-8")
-        index = re.search(r'<nav class="foot-books".*?</nav>', page, re.S)[0]
+        self.assertIn('<ul class="book-chips" data-foot-chips="old_testament"></ul>', page)
+        index = foot_data_in(self.out, "en")["chips"]["old_testament"]
         ot = build_site.refs.OT_CODES
         have = {b for b, _ in build_site.books("en")}
         missing = [code for code in ot if code not in have]
@@ -359,15 +363,28 @@ class SiteTest(unittest.TestCase):
         # Each zip holds its text, the manifest, a README and the licence.
         name, data, manifest = built["en", "B", "usfm"]
         self.assertEqual(name, "owb-en-b-usfm.zip")
-        self.assertEqual((self.out / "downloads" / name).read_bytes(), data)
-        z = zipfile.ZipFile(self.out / "downloads" / name)
+        listing, released = build_site.download_listing()
+        if not released:
+            self.assertEqual((self.out / "downloads" / name).read_bytes(), data)
+        z = zipfile.ZipFile(io.BytesIO(data))
         self.assertIn("43-JHN.usfm", z.namelist())
+        # English numbering, applied once: no verse number twice in a
+        # chapter (renumbering the site's reader-numbered records again put
+        # Exodus 8:25-28 at 8:29-32 twice, and import_usfm refused the file).
+        for book in [n for n in z.namelist() if n.endswith(".usfm")]:
+            seen, chapter = set(), 0
+            for line in z.read(book).decode().splitlines():
+                if line.startswith("\\c "):
+                    chapter = int(line.split()[1])
+                for number in re.findall(r"\\v (\d+)", line):
+                    self.assertNotIn((chapter, number), seen, (book, chapter, number))
+                    seen.add((chapter, number))
         self.assertIn("CC0", z.read("LICENSE").decode())
         self.assertIn("AI-assisted", z.read("README.txt").decode())
         self.assertEqual(json.loads(z.read("manifest.json")), manifest)
-        name, _, manifest = built["fr", "R", "json"]
+        name, data, manifest = built["fr", "R", "json"]
         self.assertEqual(name, "owb-fr-r-json.zip")
-        z = zipfile.ZipFile(self.out / "downloads" / name)
+        z = zipfile.ZipFile(io.BytesIO(data))
         self.assertEqual(sorted(z.namelist()), ["LICENSE", "README.txt", "manifest.json", "owb-fr-r.json"])
         self.assertEqual(json.loads(z.read("owb-fr-r.json"))["manifest"], manifest)
         # The manifest counts statuses and lists what isn't translated yet.
@@ -381,12 +398,17 @@ class SiteTest(unittest.TestCase):
             self.assertEqual(sum(m["missing"]["by_book"].values()), m["missing"]["count"])
             self.assertEqual(m["missing"]["count"], len(m["missing"]["verses"]))
         self.assertEqual(built["en", "L", "json"][2]["missing"]["count"], 0)
-        # The page lists every file, in every site language, and the footer links it.
+        # The page lists every file, in every site language, and the footer
+        # links it. Published as a release (build_site.DOWNLOADS_RELEASE),
+        # the files are linked there and not built into the site.
+        if released:
+            self.assertFalse((self.out / "downloads").exists())
         for lang in build_site.LANGUAGES:
             path = build_site.url(lang, "/download/")
             page = (self.out / path.strip("/") / "index.html").read_text(encoding="utf-8")
-            for name, _, _ in built.values():
-                self.assertIn(f'href="/downloads/{name}" download', page)
+            for name, _, href, _ in listing.values():
+                self.assertEqual(href, f"{build_site.DOWNLOADS_RELEASE}/{name}" if released else f"/downloads/{name}")
+                self.assertIn(f'href="{href}" download', page)
             self.assertIn(f'href="{path}"', (self.out / build_site.url(lang, "/").strip("/") / "index.html")
                           .read_text(encoding="utf-8"))
         # The service worker never keeps them.
@@ -1018,17 +1040,21 @@ class SiteTest(unittest.TestCase):
             books = {b for b, _ in shown}
             read = (self.out / build_site.url(lang, "/read/").lstrip("/") / "index.html").read_text(encoding="utf-8")
             header = nav_menus_in(self.out, lang)  # the header's dropdowns
-            footer = re.search(r"<footer.*?</footer>", read, re.S)[0]
+            footer = "".join(foot_data_in(self.out, lang)["chips"].values())  # the footer's book chips
             for p in build_site.passages():
                 self.assertEqual(f'id="{p.book.lower()}"' in read, p.book in books, (lang, p.book))
                 book_link = f'href="{build_site.url(lang, f"/read/#{p.book.lower()}")}"'
                 self.assertEqual(book_link in header, p.book in books, (lang, p.book))
-                self.assertEqual(book_link in footer, p.book in books, (lang, p.book))
+                # A chip leads to the book's own page where it has one in lang.
+                chip = f'href="{build_site.book_href(p.book, lang)}"'
+                self.assertEqual(chip in footer, p.book in books, (lang, p.book))
 
     def test_reader_navigation_lists_only_the_page_language(self):
         for lang in build_site.LANGUAGES:
             shown = {(p.book, p.chapter) for p in build_site.passages_in(lang)}
             for p in build_site.passages():
+                if not build_site.chapter_has(p.book, p.chapter, lang):
+                    continue  # a stub page (chapter_stub): no reader
                 page = (self.out / build_site.url(lang, p.url).lstrip("/") / "index.html").read_text(encoding="utf-8")
                 strip = re.search(r'<nav class="chapstrip".*?</nav>', page, re.S)[0]
                 turns = re.search(r'<nav class="turns".*?</nav>', page, re.S)[0]
@@ -1465,11 +1491,12 @@ class SiteTest(unittest.TestCase):
 
     def test_reader_can_read_aloud(self):
         for code in build_site.LANGUAGES:
-            page = (self.out / build_site.url(code, "/jhn/2/").lstrip("/") / "index.html").read_text(encoding="utf-8")
+            rel = reader_chapter(code, "JHN", 2)[0].strip("/")
+            page = (self.out / rel / "index.html").read_text(encoding="utf-8")
             strip = re.search(r'<nav class="chapstrip"(.*?)</nav>', page, re.S)[1]
             # Hidden until reader.js finds the browser can speak.
             self.assertIn('id="listen-start" hidden', strip)
-            ui = self.chapter_data(build_site.url(code, "/jhn/2").lstrip("/"))["ui"]
+            ui = self.chapter_data(rel)["ui"]
             for key in ("listen_bar", "listen_play", "listen_pause", "listen_prev", "listen_next",
                         "listen_speed", "listen_voice", "listen_stop", "listen_no_voice"):
                 self.assertTrue(ui.get(key), (code, key))
@@ -1486,7 +1513,7 @@ class SiteTest(unittest.TestCase):
             # Each book's chapter address is the reader's, in the page language.
             self.assertEqual(data["chapters"]["JHN"].replace("{c}", "3"), build_site.url(code, "/jhn/3/"))
             self.assertTrue((self.out / build_site.url(code, "/jhn/3/").lstrip("/") / "index.html").is_file())
-            chapter = self.chapter_data(build_site.url(code, "/jhn/2").lstrip("/"))
+            chapter = self.chapter_data(reader_chapter(code, "JHN", 2)[0].strip("/"))
             self.assertEqual(chapter["saved"], build_site.url(code, "/saved/"))
             for key in ("bookmark", "bookmarked", "highlight", "hl_yellow", "hl_green", "hl_blue",
                         "hl_pink", "saved_all"):
@@ -1895,9 +1922,17 @@ class SpriteTest(unittest.TestCase):
         self.assertIn(json.dumps(href), build_site.service_worker())
 
     def test_footer_book_names_parse(self):
-        link = build_site.resume_link("fr", names=True)
-        names = json.loads(html.unescape(re.search(r"data-books='([^']*)'", link)[1]))
+        # nav-<lang>.js carries the book names that "Continue reading" and
+        # the recently read links show, not every page.
+        self.assertNotIn("data-books", build_site.resume_link("fr"))
+        names = json.loads(build_site.nav_script("fr")[0].split("window.OWB_FOOT=", 1)[1].split(";\n", 1)[0])["books"]
         self.assertEqual(names["JHN"], build_site.BOOK_NAMES["JHN"]["fr"])
+
+    def test_language_names_never_nest_brackets(self):
+        self.assertEqual(build_site.unbracket("Chinese (Simplified)"), "Chinese, Simplified")
+        self.assertEqual(build_site.unbracket("中国語（簡体字）", "ja"), "中国語、簡体字")
+        self.assertEqual(build_site.unbracket("چینی (ساده‌شده)", "fa"), "چینی، ساده‌شده")
+        self.assertEqual(build_site.unbracket("Spanish"), "Spanish")
 
 
 class NoteReasonsTest(unittest.TestCase):

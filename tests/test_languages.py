@@ -14,7 +14,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 import build_site  # noqa: E402
 from owb import languages, markup, morph  # noqa: E402
-from tests.site_build import built_site, page_data, sitemap_text  # noqa: E402
+from tests.site_build import built_site, page_data, reader_chapter, sitemap_text  # noqa: E402
 
 
 def html_tag(lang):
@@ -134,7 +134,7 @@ class LanguagesTest(unittest.TestCase):
         def link(href, code, native, page, name):
             """A link to another language: its own name, then its name in
             the page's language in brackets."""
-            return (f'<a href="{href}" lang="{code}" hreflang="{code}" data-lang="{code}">{native} '
+            return (f'<a href="{href}" hreflang="{code}" data-lang="{code}"><span lang="{code}">{native}</span> '
                     f'<span class="lang-gloss" lang="{page}">({name})</span></a>')
 
         self.assertIn('<span lang="en" aria-current="true">English</span>', en)
@@ -151,7 +151,7 @@ class LanguagesTest(unittest.TestCase):
         self.assertIn(link("/jhn/1/", "en", "English", "es", "inglés"), es)
         self.assertIn('<h2 id="foot-langs">Idiomas</h2>', es)
         # The 404 page, which has no path, offers each language's home page.
-        self.assertIn('href="/es/" lang="es"', self.read("404.html"))
+        self.assertIn('href="/es/" hreflang="es"', self.read("404.html"))
         self.assertNotIn('name="owb-langs"', self.read("404.html"))
 
     def test_other_language_pages_have_their_own_interface_text(self):
@@ -162,6 +162,10 @@ class LanguagesTest(unittest.TestCase):
             if build_site.load_articles(lang):
                 keys += ("nav.all_articles",)
             cat = build_site.catalog(lang)
+            # The header's menus and the gear menu's settings ("Theme",
+            # "Night") come from the language's nav script, which every
+            # page loads, so they count as the page's own.
+            nav = self.read(f"nav-{lang}.js")
             for rel in self.english_pages():
                 # The passage data and the text written into the page may
                 # hold the same words as Bible text (Genesis 1:5 names the
@@ -176,7 +180,7 @@ class LanguagesTest(unittest.TestCase):
                 page = re.sub(r'<p class="term-(text|note|why-text)" lang="en"[^>]*>.*?</p>'
                               r'|<meta property="og:image:alt" content="[^"]*">'
                               r'|<script type="application/json" class="votd-data">.*?</script>'
-                              r'|<p class="votd-text"[^>]*>.*?</p>', "", page, flags=re.S)
+                              r'|<p class="votd-text"[^>]*>.*?</p>', "", page, flags=re.S) + nav
                 for key in keys:
                     # A whole word: English "Home" is inside Portuguese "Homem".
                     self.assertNotRegex(page, r"(?<!\w)" + re.escape(en[key]) + r"(?!\w)", (lang, rel, key))
@@ -191,10 +195,11 @@ class LanguagesTest(unittest.TestCase):
             return page_data(self.read(rel))
 
         for lang in build_site.LANGUAGES:
-            d = data(build_site.url(lang, "/jhn/1/").lstrip("/") + "index.html")
+            rel, book = reader_chapter(lang)
+            d = data(rel.lstrip("/") + "index.html")
             self.assertEqual(d["lang"], lang)
             self.assertEqual(d["ui"], build_site.catalog(lang)["reader.ui"])
-            self.assertTrue(d["title"].startswith(build_site.BOOK_NAMES["JHN"][lang]))
+            self.assertTrue(d["title"].startswith(build_site.BOOK_NAMES[book][lang]))
         # The language is the page's: no language control in the settings,
         # and the Spanish-only plural setting only on Spanish pages.
         en, es = self.read("jhn/1/index.html"), self.read("es/jhn/1/index.html")
@@ -310,7 +315,7 @@ class LanguagesTest(unittest.TestCase):
         page = self.read(build_site.article_url(article).strip("/") + "/index.html")
         for lang in OTHERS:
             if lang not in build_site.article_languages(article):
-                self.assertIn(f'<a href="/{lang}/articles/" lang="{lang}"', page)
+                self.assertIn(f'<a href="/{lang}/articles/" hreflang="{lang}"', page)
                 self.assertNotIn(f'hreflang="{lang}" href=', page)
 
     def test_links_inside_other_language_pages_resolve(self):
@@ -330,7 +335,7 @@ class LanguagesTest(unittest.TestCase):
         self.assertIn('<meta name="robots" content="noindex">', page)
         self.assertNotIn('rel="canonical"', page)
         # Unlisted, but the switch and the remembered choice still lead to it.
-        self.assertIn('<a href="/account/" lang="en"', page)
+        self.assertIn('<a href="/account/" hreflang="en"', page)
         self.assertIn(build_site.langs_meta(build_site.LANGUAGES), page)
         self.assertNotIn("/account/", sitemap_text(self.out))
 

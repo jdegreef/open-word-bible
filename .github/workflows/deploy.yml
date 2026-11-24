@@ -1,0 +1,115 @@
+# Deploy openwordbible.org and the API a few times a day, not on every merge.
+#
+# Each Render deploy is billed in pipeline minutes: the site build takes
+# about 29 minutes and the API's pre-deploy up to 25, and main had 5 to 9
+# green commits a day in November 2026, each deployed by itself. Now
+# render.yaml has autoDeployTrigger: off for both, and this workflow, four
+# times a day, deploys the newest commit on main whose CI passed, if it is
+# newer than the last one deployed. Run it by hand (Actions > Deploy > Run
+# workflow) to deploy at once.
+#
+# Needs two repository secrets, each a service's Deploy Hook URL (Render
+# dashboard > the service > Settings > Deploy Hook):
+#   RENDER_SITE_DEPLOY_HOOK  the open-word-bible static site
+#   RENDER_API_DEPLOY_HOOK   owb-api
+#   RENDER_IMPORT_DEPLOY_HOOK  the owb-import cron job, deployed after
+#                              owb-api so it imports the main the API serves
+# A service whose secret is unset is skipped with a warning.
+#
+# Like the buildFilter it replaces for these deploys, a service is deployed
+# only when a file it reads changed since its last deploy (SITE_IGNORED,
+# API_IGNORED below; keep them in step with render.yaml).
+name: Deploy
+
+on:
+  schedule:
+    # 01:23, 07:23, 13:23 and 19:23 UTC: 5:23 PM, 11:23 PM, 5:23 AM and
+    # 11:23 AM in Vancouver (an hour later in summer).
+    - cron: "23 1,7,13,19 * * *"
+  workflow_dispatch:
+    inputs:
+      force:
+        description: Deploy both services even if nothing they read changed
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Deploy the newest green main
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      # What the last run deployed, per service. A cache entry can't be
+      # overwritten, so each run saves its own and the next restores the
+      # newest (as indexnow.yml does).
+      - uses: actions/cache/restore@v6
+        with:
+          path: deployed
+          key: deployed-${{ github.run_id }}
+          restore-keys: deployed-
+      - name: Deploy
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          FORCE: ${{ inputs.force || 'false' }}
+          SITE_HOOK: ${{ secrets.RENDER_SITE_DEPLOY_HOOK }}
+          API_HOOK: ${{ secrets.RENDER_API_DEPLOY_HOOK }}
+          IMPORT_HOOK: ${{ secrets.RENDER_IMPORT_DEPLOY_HOOK }}
+          # render.yaml's buildFilter ignoredPaths, as regular expressions.
+          SITE_IGNORED: '^(backend/|docs/|tests/|\.github/|\.claude/|cloudflare/)'
+          API_IGNORED: '^(web/|tests/|\.github/|\.claude/)'
+        run: |
+          set -euo pipefail
+          mkdir -p deployed
+          # The newest push to main whose CI run passed.
+          sha=$(gh api "repos/$REPO/actions/workflows/ci.yml/runs?branch=main&event=push&status=success&per_page=1" \
+                --jq '.workflow_runs[0].head_sha // empty')
+          if [ -z "$sha" ]; then echo "No green CI run on main yet"; exit 0; fi
+          echo "Newest green main: $sha"
+
+          # changed <since> <ignored>: whether a file outside <ignored>
+          # changed between <since> and $sha. Unknown history or a compare
+          # GitHub cuts short (300 files at most) counts as changed.
+          changed() {
+            [ -n "$1" ] || return 0
+            [ "$1" != "$sha" ] || return 1
+            out=$(gh api "repos/$REPO/compare/$1...$sha" \
+                  --jq '[.status, (.files | length), (.files[].filename)] | .[]' 2>/dev/null) || return 0
+            status=$(sed -n 1p <<<"$out"); count=$(sed -n 2p <<<"$out")
+            [ "$status" = ahead ] || return 0
+            [ "$count" -lt 300 ] || return 0
+            tail -n +3 <<<"$out" | grep -qvE "$2"
+          }
+
+          deploy() {  # deploy <name> <hook> <ignored>
+            name=$1 hook=$2 ignored=$3
+            if [ -z "$hook" ]; then
+              echo "::warning::$name: no deploy hook secret set, so it was not deployed"; return
+            fi
+            last=$(cat "deployed/$name" 2>/dev/null || true)
+            if [ "$FORCE" != true ] && ! changed "$last" "$ignored"; then
+              echo "$name: nothing it reads changed since ${last:-?}"; return
+            fi
+            # ref= deploys that commit rather than whatever main is now,
+            # which may not have passed CI yet.
+            curl -fsS -X POST "$hook&ref=$sha" -o /dev/null
+            echo "$sha" > "deployed/$name"
+            echo "$name: deploy of $sha started (last ${last:-none})"
+          }
+
+          deploy site "$SITE_HOOK" "$SITE_IGNORED"
+          deploy api "$API_HOOK" "$API_IGNORED"
+          deploy import "$IMPORT_HOOK" "$API_IGNORED"
+      - uses: actions/cache/save@v6
+        if: always()
+        with:
+          path: deployed
+          key: deployed-${{ github.run_id }}

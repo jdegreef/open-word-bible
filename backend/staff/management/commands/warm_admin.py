@@ -1,10 +1,10 @@
 """Fill the admin's kept answers after an import, before anyone opens it.
 
 Coverage, the dashboard, key terms, consistency and the review queues are
-counted when first asked for and then kept until the content changes. A
-deploy that imports content changes it, so the first person into the admin
-afterwards waited for every count, which is when they most want to see
-what changed. render.yaml's pre-deploy step runs this after import_content.
+counted when first asked for and then kept until the content changes. An
+import changes it, so the first person into the admin afterwards waited
+for every count, which is when they most want to see what changed. The
+owb-import job (backend/import_job.sh) runs this after import_content.
 
     python manage.py warm_admin [--deadline EPOCH]
 

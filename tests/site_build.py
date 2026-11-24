@@ -29,6 +29,16 @@ def built_site():
     return out
 
 
+def reader_chapter(lang, book="JHN", chapter=1):
+    """The address of a chapter that lang's reader shows: book chapter, or,
+    where lang has no sentence of it yet (a stub page, build_site.chapter_stub),
+    the first chapter it has."""
+    if not build_site.chapter_has(book, chapter, lang):
+        book, chapter = next((p.book, p.chapter) for p in build_site.passages()
+                             if build_site.chapter_has(p.book, p.chapter, lang))
+    return build_site.url(lang, f"/{book.lower()}/{chapter}/"), book
+
+
 def sitemap_text(out):
     """Every page the sitemaps list: the language sitemaps that sitemap.xml
     indexes (build_site.sitemaps), read together."""
@@ -90,3 +100,10 @@ def nav_menus_in(out, lang, whole=True):
     script = (out / f"nav-{lang}.js").read_text(encoding="utf-8")
     menus = json.loads(script[len("window.OWB_NAV="):script.index(";\n")])
     return "".join(menus.values()) if whole else menus
+
+
+def foot_data_in(out, lang):
+    """What the built nav-<lang>.js gives the footer (build_site.footer_data):
+    {"books": {code: name}, "chips": {testament: html}}."""
+    script = (out / f"nav-{lang}.js").read_text(encoding="utf-8")
+    return json.loads(script.split("window.OWB_FOOT=", 1)[1].split(";\n", 1)[0])
