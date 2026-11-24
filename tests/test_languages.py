@@ -14,7 +14,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 import build_site  # noqa: E402
 from owb import languages, markup, morph  # noqa: E402
-from tests.site_build import built_site, page_data, sitemap_text  # noqa: E402
+from tests.site_build import built_site, page_data, reader_chapter, sitemap_text  # noqa: E402
 
 
 def html_tag(lang):
@@ -195,10 +195,11 @@ class LanguagesTest(unittest.TestCase):
             return page_data(self.read(rel))
 
         for lang in build_site.LANGUAGES:
-            d = data(build_site.url(lang, "/jhn/1/").lstrip("/") + "index.html")
+            rel, book = reader_chapter(lang)
+            d = data(rel.lstrip("/") + "index.html")
             self.assertEqual(d["lang"], lang)
             self.assertEqual(d["ui"], build_site.catalog(lang)["reader.ui"])
-            self.assertTrue(d["title"].startswith(build_site.BOOK_NAMES["JHN"][lang]))
+            self.assertTrue(d["title"].startswith(build_site.BOOK_NAMES[book][lang]))
         # The language is the page's: no language control in the settings,
         # and the Spanish-only plural setting only on Spanish pages.
         en, es = self.read("jhn/1/index.html"), self.read("es/jhn/1/index.html")
