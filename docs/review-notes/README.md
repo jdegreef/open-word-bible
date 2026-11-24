@@ -28,7 +28,7 @@ Each language has two files:
 | Amharic | [amharic-review-guide.md](../amharic-review-guide.md) | [am-review-priorities.md](am-review-priorities.md), section 1 |
 | Hindi | [hindi-review-guide.md](../hindi-review-guide.md) | [hi-uncertain.md](hi-uncertain.md) |
 | Russian | [russian-review-guide.md](../russian-review-guide.md) | [ru-uncertain.md](ru-uncertain.md) |
-| Indonesian | [id-review-checklist.md](id-review-checklist.md) (an outline written before drafting) | `id-uncertain.md`, once books are drafted |
+| Indonesian | [id-review-checklist.md](id-review-checklist.md) (an outline written before drafting); [id-review-plan.md](id-review-plan.md), the brief for the first reviewers | `id-uncertain.md`, once books are drafted |
 | Chinese (Simplified) | [zh-review-checklist.md](zh-review-checklist.md) (an outline written before drafting and before registration) | `zh-uncertain.md`, once books are drafted |
 | Arabic | [ar-review-checklist.md](ar-review-checklist.md) (an outline written before drafting) | `ar-uncertain.md`, once books are drafted |
 | Tagalog | [tl-review-checklist.md](tl-review-checklist.md) (an outline written before drafting and before registration) | `tl-uncertain.md`, once books are drafted |
