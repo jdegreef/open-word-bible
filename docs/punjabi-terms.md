@@ -2115,3 +2115,59 @@ People and places: ਪੌਲੁਸ, ਤੁਖਿਕੁਸ; ਅਫ਼ਸੁਸ, �
 - Overlap rewordings worth a reviewer's eye: 23:36-37 "ਤੂੰ ਜੇ ਯਹੂਦੀਆਂ ਦਾ
   ਰਾਜਾ ਹੈਂ" (B, R) and "ਤਾਂ ਖ਼ੁਦ ਨੂੰ ਬਚਾ" (L); 23:46 "ਤੇਰੇ ਹੱਥਾਂ ਵਿੱਚ ਮੈਂ
   ਆਪਣਾ ਆਤਮਾ ਸੌਂਪਦਾ ਹਾਂ" (L, Greek order), "ਤੇਰੇ ਹੱਥੀਂ ..." (B).
+
+### Ezekiel
+
+- Address: God takes honorific plural forms ("ਉਹ ਮੈਨੂੰ ... ਲੈ ਗਏ", "ਉਨ੍ਹਾਂ
+  ਨੇ ਮੈਨੂੰ ਆਖਿਆ") with no deity_pronoun spans, and says ਤੂੰ to Ezekiel, to
+  Gog and to the nations addressed one by one. The guide of chapters 40-48 is
+  singular ("ਉਹ ਮੈਨੂੰ ... ਲੈ ਆਇਆ"), "ਉਹ" at L and "ਉਹ ਮਨੁੱਖ" at B and R; he
+  says ਤੂੰ to Ezekiel (40:4).
+- Formulas: ben-adam "ਹੇ ਮਨੁੱਖ ਦੀ ਸੰਤਾਨ" at every level (the IRV's "ਹੇ ਮਨੁੱਖ
+  ਦੇ ਪੁੱਤਰ" trips the overlap rule on every use: a reviewer may prefer it);
+  Lord YHWH "ਪ੍ਰਭੂ {{divine_name:ਪਰਮੇਸ਼ੁਰ|ਯਾਹਵੇ}}"; thus says "... ਇਉਂ ਆਖਦੇ
+  ਹਨ" (L), "... ਇਹ ਆਖਦੇ ਹਨ" (B, R); declares "... ਦਾ ਵਾਕ ਹੈ" (L, B), "...
+  ਆਖਦੇ ਹਨ" (R); the word came "DN ਦਾ ਬਚਨ ਮੇਰੇ ਕੋਲ ਆਇਆ" (L, B), "DN ਨੇ ਮੈਨੂੰ
+  ਇਹ ਸੰਦੇਸ਼ ਦਿੱਤਾ" (R); glory ਪਰਤਾਪ.
+- People and places: Kebar ਕਬਾਰ ਨਦੀ (L), ਨਹਿਰ (B, R); exiles ਗ਼ੁਲਾਮੀ ਵਿੱਚ ਆਏ
+  ਲੋਕ (R ਬੰਦੀ ਬਣਾ ਕੇ ਲਿਆਂਦੇ ਲੋਕ); rebellious house ਬਗ਼ਾਵਤ ਦਾ ਘਰਾਣਾ (L),
+  ਬਾਗ਼ੀ ਘਰਾਣਾ (B), ਹੁਕਮ ਨਾ ਮੰਨਣ ਵਾਲੇ ਲੋਕ (R); Nebuchadrezzar ਨਬੂਕਦਰੱਸਰ;
+  Tyre ਸੂਰ, Sidon ਸੈਦਾ; Oholah ਓਹੋਲਾ, Oholibah ਓਹੋਲੀਬਾ; Tammuz ਤੰਮੂਜ਼;
+  Sheol ਪਤਾਲ; the Nile monster ਦੈਂਤ; Mount Seir ਸੇਈਰ ਪਹਾੜ; watchman
+  ਪਹਿਰੇਦਾਰ.
+- Chapters 38-39: Gog ਗੋਗ, Magog ਮਾਗੋਗ, Meshech ਮੇਸ਼ਕ, Tubal ਤੂਬਲ, chief
+  prince ਮੁੱਖ ਪ੍ਰਧਾਨ, Persia ਫ਼ਾਰਸ, Cush ਕੂਸ਼, Put ਪੂਟ, Gomer ਗੋਮਰ,
+  Beth-togarmah ਬੈਤ-ਤੋਗਰਮਾਹ, Sheba ਸ਼ਬਾ, Dedan ਦਦਾਨ, Tarshish ਤਰਸ਼ੀਸ਼,
+  Hamon-gog ਹਮੋਨ-ਗੋਗ, Hamonah ਹਮੋਨਾਹ, valley of the Travelers ਮੁਸਾਫ਼ਰਾਂ ਦੀ
+  ਵਾਦੀ; earthquake ਕਾਂਬਾ (L), ਭੁਚਾਲ (B, R); sulfur ਗੰਧਕ; coastlands ਟਾਪੂ;
+  restore fortunes ਦਸ਼ਾ ਮੋੜਨੀ; Holy One in Israel ਇਸਰਾਏਲ ਵਿੱਚ ਪਵਿੱਤਰ ਪੁਰਖ.
+- Temple (40-46): gate ਫਾਟਕ, gate passage ਫਾਟਕ ਦਾ ਲਾਂਘਾ, alcove ਕੋਠੜੀ,
+  porch ਡਿਉਢੀ, jambs and doorposts ਬਾਹੀਆਂ, threshold ਸਰਦਲ (L, B), ਬੂਹਾ (R);
+  court ਵਿਹੜਾ (ਬਾਹਰਲਾ / ਅੰਦਰਲਾ); house ਭਵਨ (L), ਹੈਕਲ (B, R); hall ਵੱਡਾ
+  ਕਮਰਾ (L, R), ਮੁੱਖ ਕਮਰਾ (B); most holy place ਅੱਤ ਪਵਿੱਤਰ ਸਥਾਨ; side
+  chambers ਪਾਸੇ ਦੀਆਂ ਕੋਠੜੀਆਂ (L), ਪਾਸੇ ਦੇ ਕਮਰੇ (B, R); measuring reed ਮਿਣਨ
+  ਦਾ ਕਾਨਾ (L, B), ਮਿਣਨ ਵਾਲੀ ਛੜੀ (R); cherubim ਕਰੂਬੀ; palm trees ਖਜੂਰ ਦੇ
+  ਰੁੱਖ. Altar: gutter ਨਾਲੀ, rim ਕਿਨਾਰੀ, ledge ਕਗਾਰ, hearth ਅਗਨ-ਕੁੰਡ, horns
+  ਸਿੰਙ.
+- Offerings and priests: burnt ਹੋਮ ਬਲੀ, sin ਪਾਪ ਬਲੀ, guilt ਦੋਸ਼ ਬਲੀ, grain
+  ਅੰਨ ਦੀ ਭੇਟ, peace ਸੁੱਖ-ਸਾਂਦ ਦੀਆਂ ਬਲੀਆਂ, freewill ਖ਼ੁਸ਼ੀ ਦੀ ਭੇਟ;
+  contribution (terumah) ਚੁੱਕਣ ਦੀ ਭੇਟ (L), ਖ਼ਾਸ ਭੇਟ / ਖ਼ਾਸ ਹਿੱਸਾ (B), ਖ਼ਾਸ
+  ਇਲਾਕਾ (R) for land; atonement ਪ੍ਰਾਸਚਿਤ; without blemish ਬੇਐਬ; sons of Zadok
+  ਸਾਦੋਕ ਦੇ ਪੁੱਤਰ (L), ਸਾਦੋਕ ਦੀ ਵੰਸ਼ (B, R); statutes ਬਿਧੀਆਂ; torot
+  ਬਿਵਸਥਾਵਾਂ (L, B), ਸਿੱਖਿਆਵਾਂ (R); prince (nasi') ਪ੍ਰਧਾਨ (L, B), ਹਾਕਮ (R);
+  inheritance ਮਿਲਖ; holding ਜਾਇਦਾਦ; new moon ਨਵਾਂ ਚੰਨ (L, B), ਹਰ ਮਹੀਨੇ ਦਾ
+  ਪਹਿਲਾ ਦਿਨ (R); year of liberty ਛੁਟਕਾਰੇ ਦਾ ਸਾਲ (L), ਅਜ਼ਾਦੀ ਦਾ ਸਾਲ (B, R).
+- Land (47-48): Arabah ਅਰਾਬਾਹ (L, B), ਯਰਦਨ ਦੀ ਵਾਦੀ (R); Dead Sea ਮ੍ਰਿਤ
+  ਸਾਗਰ; Great Sea ਵੱਡਾ ਸਮੁੰਦਰ (L, B), ਭੂਮੱਧ ਸਾਗਰ (R); En-gedi ਏਨ-ਗਦੀ,
+  En-eglaim ਏਨ-ਇਗਲਇਮ, Hethlon ਹਥਲੋਨ, Lebo-hamath ਲਬੋ-ਹਮਾਥ, Zedad ਸਦਾਦ,
+  Berothah ਬੇਰੋਥਾਹ, Sibraim ਸਿਬਰਇਮ, Hazer-hattikon ਹਸੇਰ-ਹੱਤੀਕੋਨ, Hauran
+  ਹੌਰਾਨ, Hazar-enan ਹਸਰ-ਏਨਾਨ, Tamar ਤਾਮਾਰ, Meribath-kadesh ਮਰੀਬਥ-ਕਾਦੇਸ਼,
+  Wadi of Egypt ਮਿਸਰ ਦਾ ਨਾਲਾ; sojourner ਪਰਦੇਸੀ; Naphtali ਨਫ਼ਥਾਲੀ (some
+  books have ਨਫ਼ਤਾਲੀ: unify later); YHWH Shammah "DN ਉੱਥੇ ਹਨ" (48:35).
+- Units at B and R only, in `{{units:}}` spans; L keeps bare units. The long
+  cubit is about 53 cm (1 ਹੱਥ 53 ਸੈਂਟੀਮੀਟਰ, 6 ਹੱਥ 3.2 ਮੀਟਰ, 25,000 ਹੱਥ 13.3
+  ਕਿਲੋਮੀਟਰ); reed ਕਾਨਾ 3.2 ਮੀਟਰ; handbreadth ਚਾਰ ਉਂਗਲ 7.5 ਸੈਂਟੀਮੀਟਰ;
+  ephah ਏਫ਼ਾਹ 22 ਲੀਟਰ, hin ਹੀਨ 3.7 ਲੀਟਰ, homer ਹੋਮਰ and kor ਕੋਰ 220 ਲੀਟਰ,
+  bath ਬਥ; shekel ਸ਼ੇਕੇਲ about 11.5 g, gerah ਗੇਰਾ, mina ਮਾਨੇਹ.
+- Quotation marks: the speech that opens at 44:5 closes at 46:18, as in the
+  English. 46:13 follows the English "you" (ਤੁਸੀਂ) where the Hebrew has "he".
