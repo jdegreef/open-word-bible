@@ -1282,3 +1282,23 @@ For reviewers:
   usual?
 - 5:13 «آن [زن] که در بابل است» (Literal), «آن که در بابل است» (Balanced),
   «کلیسا» only at Readable: should Balanced name the church?
+
+### 2 Peter
+
+- شمعون پطرس (1:1) as Acts 15:14; the greeting (1:2) as 1 Peter 1:2; the
+  voice at the transfiguration (1:17) as Matthew 17:5.
+- Eusebeia: دینداری; philadelphia (1:7):
+  {{gender:محبت برادرانه و خواهرانه|محبت برادرانه}} at Literal.
+- Despotēs (2:1): ارباب, the owner who bought them.
+- Tartarus (2:4): تارتاروس at every level, with «ژرف‌ترین زندان» added at
+  Readable. Asebēs: بی‌دین; athesmos and anomos: بی‌قانون; adikos: ناپارسا.
+- Names: نوح, لوط, سدوم و عموره (as Romans 9:29), بلعام پسر بوسور, پولس.
+- 2:17 «تیرگی ظلمت» (Literal): Jude 13 should use the same words.
+- Metanoia (3:9): توبه.
+
+For reviewers:
+
+- 2:4 «تارتاروس»: keep the Greek name, or use «هاویه» or «ژرف‌ترین دوزخ»?
+- 2:13 «عیش [در] روز را لذت می‌شمارند» (Literal): clear enough?
+- 3:10 «آشکار خواهند شد» for heurethēsetai: right, or should a footnote give
+  the readings «سوخته خواهند شد» found in some manuscripts?
