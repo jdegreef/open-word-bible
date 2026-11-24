@@ -601,8 +601,12 @@ header.site .tools { display: flex; align-items: center; gap: 8px; flex: none; }
 }
 .prefs-menu button[aria-checked="true"] .check { visibility: visible; }
 
-/* Footer: an indigo-to-gold hairline, then three tiers: the project and a
-   box to go to a passage; an index of all 66 books; the link columns. */
+/* Footer: an indigo-to-gold hairline, then: on a chapter page the chapter
+   in other languages; the project and a box to go to a passage; the books
+   by testament (their chips come from nav-<lang>.js); the link columns;
+   the review status and licences. Each column is a <details> that
+   web/site.js folds on a phone; elsewhere it stays open and its heading
+   is only a heading. */
 footer.site {
   position: relative; background: var(--surface-2); margin-top: 96px; padding: 52px 0 28px; font-size: 15px;
 }
@@ -612,64 +616,130 @@ footer.site::before {
 }
 footer.site h2 { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 0 0 14px; }
 footer.site ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 9px; }
-footer.site nav a { color: var(--text); text-decoration: none; }
-footer.site nav a:hover { color: var(--accent); text-decoration: underline; }
+footer.site .foot-sec a, .foot-chapter a, .foot-often a { color: var(--text); text-decoration: none; }
+footer.site .foot-sec a:hover, .foot-chapter a:hover, .foot-often a:hover { color: var(--accent); text-decoration: underline; }
+.foot-sec > summary { list-style: none; display: block; }
+.foot-sec > summary::-webkit-details-marker { display: none; }
+@media (min-width: 561px) {
+  .foot-sec > summary { pointer-events: none; }
+}
+/* A chapter in the page's other languages. */
+.foot-chapter { margin-bottom: 36px; padding-bottom: 28px; border-bottom: 1px solid var(--line); }
+.foot-chapter-langs { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; }
+.foot-chapter-langs a {
+  display: inline-flex; align-items: center; min-height: 36px; padding: 4px 14px; border-radius: 999px;
+  border: 1px solid var(--line-strong); background: var(--surface); font-weight: 600; font-size: 14px;
+}
+.foot-chapter-langs a:hover { border-color: var(--accent); background: var(--accent-soft); }
 .foot-top { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 32px 48px; align-items: start; }
-.foot-about p { color: var(--muted); max-width: 40ch; margin: 14px 0 0; }
+.foot-about > p { color: var(--muted); max-width: 40ch; margin: 14px 0 0; }
 .pill { display: inline-block; font-size: 11.5px; font-weight: 700; letter-spacing: .04em; border: 1px solid var(--gold); color: var(--gold); border-radius: 999px; padding: 0 8px; margin-inline-end: 4px; }
+/* What CC0 allows, a tap away. */
+.foot-licence { margin-top: 14px; color: var(--muted); max-width: 44ch; }
+.foot-licence summary { cursor: pointer; list-style: none; }
+.foot-licence summary::-webkit-details-marker { display: none; }
+.foot-licence summary::after { content: " +"; color: var(--gold); font-weight: 700; }
+.foot-licence[open] summary::after { content: " −"; }
+.foot-licence p { margin: 8px 0 0; font-size: 14px; }
+.foot-licence a { color: var(--accent); font-weight: 600; }
 .foot-find h2 { margin-top: 6px; }
 .foot-search { display: flex; gap: 8px; }
+.foot-q { flex: 1; min-width: 0; display: flex; position: relative; }
 .foot-search input {
   flex: 1; min-width: 0; font: inherit; font-family: var(--serif); font-size: 16px; padding: 10px 14px;
+  padding-inline-end: 40px;
   border: 1px solid var(--line-strong); border-radius: 999px; background: var(--surface); color: var(--text);
 }
 .foot-search input:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: var(--accent); }
 .foot-search .button { padding: 10px 20px; font-size: 15px; }
+/* The key that opens the search palette (web/search.js), where there is a keyboard. */
+.foot-kbd {
+  position: absolute; top: 50%; transform: translateY(-50%); inset-inline-end: 12px;
+  font: 600 12px/1 var(--sans); color: var(--muted); border: 1px solid var(--line-strong); border-bottom-width: 2px;
+  border-radius: 5px; padding: 3px 6px; background: var(--surface-2); pointer-events: none;
+}
+.foot-search input:focus ~ .foot-kbd, .foot-search input:not(:placeholder-shown) ~ .foot-kbd { visibility: hidden; }
+@media (pointer: coarse) { .foot-kbd { display: none; } .foot-search input { padding-inline-end: 14px; } }
+.foot-recent { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 12px 0 0; font-size: 13px; color: var(--muted); }
+.foot-recent > span { margin-inline-end: 2px; }
+footer.site .foot-recent a.book-chip { color: var(--text); font-weight: 600; text-decoration: none; }
+footer.site .foot-recent a.book-chip:hover { border-color: var(--accent); color: var(--accent); }
 .foot-resume {
   display: inline-flex; align-items: center; gap: 8px; margin-top: 12px; padding: 8px 14px; border-radius: 999px;
   background: var(--accent-soft); border: 1px solid var(--accent-soft-border); color: var(--accent);
   font-size: 14px; font-weight: 600; text-decoration: none;
 }
 .foot-resume:hover { text-decoration: underline; }
-/* The index of the books: a chip per book started, in canon order, then one
-   greyed-out chip counting the books not started yet. A book with some
-   chapters missing is dashed, as the chapter pills are. */
+/* The books: per testament, how many chapters are translated (a count and
+   a bar), then a chip per book started, in canon order, and one greyed-out
+   chip counting the books not started yet. A book with some chapters
+   missing is dashed, as the chapter pills are. */
 .foot-books { border-top: 1px solid var(--line); margin-top: 40px; padding-top: 28px; }
 .testaments { display: grid; grid-template-columns: minmax(0, 39fr) minmax(0, 27fr); gap: 24px 40px; }
-.testament-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 12px; margin-bottom: 12px; }
+.testament-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 12px; margin-bottom: 8px; }
 .testament-head h3 { font: 600 17px/1.2 var(--display); margin: 0; }
-.testament-head span { font-size: 13px; color: var(--muted); }
+.testament-head span { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.foot-bar { display: block; height: 6px; border-radius: 99px; background: var(--line); overflow: hidden; margin-bottom: 14px; }
+.foot-bar i { display: block; height: 100%; min-width: 2px; border-radius: 99px; background: var(--accent); }
 footer.site .book-chips { display: flex; flex-wrap: wrap; gap: 6px; }
 .book-chip {
   display: inline-block; padding: 3px 10px; border-radius: 999px; border: 1px solid var(--line-strong);
   background: var(--surface); font-size: 13.5px; line-height: 1.5; white-space: nowrap;
 }
-footer.site a.book-chip { color: var(--text); font-weight: 600; }
+footer.site a.book-chip { color: var(--text); font-weight: 600; text-decoration: none; }
 footer.site a.book-chip:hover { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); text-decoration: none; }
+footer.site a.book-chip[aria-current] { border-color: var(--accent); color: var(--accent); }
 .book-chip.part { border-style: dashed; }
 .book-chip.none { border-color: transparent; background: none; color: var(--muted); opacity: .6; padding-inline: 6px; }
 footer.site a.book-chip.none { border: 1px dotted var(--line-strong); opacity: 1; padding-inline: 10px; font-weight: 500; }
 footer.site a.book-chip.none:not(:hover) { color: var(--muted); }
+/* The chapters most often read, in a line. */
+.foot-often { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px; margin: 20px 0 0; font-size: 14px; }
+.foot-often > span { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+footer.site .foot-often a { font-weight: 600; }
 .foot-key { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; margin: 18px 0 0; font-size: 13px; color: var(--muted); }
 .foot-key > span { display: inline-flex; align-items: center; gap: 7px; }
 .foot-key .book-chip { width: 22px; height: 14px; padding: 0; }
 .foot-key .book-chip.none { border: 1px dotted var(--line-strong); }
 .foot-key a { display: inline-flex; align-items: center; gap: 6px; margin-inline-start: auto; font-weight: 600; }
 .foot-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; border-top: 1px solid var(--line); margin-top: 28px; padding-top: 28px; }
+/* Report a problem: what kind, a tap away (web/site.js names the page). */
+.foot-report summary { cursor: pointer; color: var(--text); list-style: none; }
+.foot-report summary::-webkit-details-marker { display: none; }
+.foot-report summary::after { content: " +"; color: var(--muted); }
+.foot-report[open] summary::after { content: " −"; }
+footer.site .foot-report ul { margin: 8px 0 2px; padding-inline-start: 12px; border-inline-start: 2px solid var(--line); gap: 7px; font-size: 14px; }
 /* The language switch, as on Ochorus: each language in its own name; the
-   current one is plain text. */
+   current one is plain text; a page not in a language says so. */
 .foot-langs [aria-current] { font-weight: 700; color: var(--text); }
+.lang-where { display: inline-block; font-size: 11.5px; color: var(--muted); border: 1px dotted var(--line-strong); border-radius: 999px; padding: 0 7px; margin-inline-start: 4px; }
 /* Each other language's name in the page's language, in brackets after
    its own; on a menu tile, on a line of its own. */
 .lang-gloss { color: var(--muted); font-weight: 400; }
 .prefs-langs .lang-gloss { display: block; margin-top: 2px; font-size: 11px; }
 .foot-base {
-  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px;
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 12px 24px;
   border-top: 1px solid var(--line); margin-top: 28px; padding-top: 20px; color: var(--muted); font-size: 13px;
 }
 .foot-base p { margin: 0; }
-.foot-review { display: flex; gap: 8px; align-items: baseline; max-width: 70ch; }
-.foot-review::before { content: ""; flex: none; width: 8px; height: 8px; border-radius: 50%; background: var(--gold); transform: translateY(-1px); }
+/* The review status: the share a named reviewer has approved, and a way to help. */
+.foot-review { display: grid; gap: 8px; max-width: 70ch; flex: 1 1 360px; }
+.foot-review > p:first-child { display: flex; gap: 8px; align-items: baseline; }
+.foot-review > p:first-child::before { content: ""; flex: none; width: 8px; height: 8px; border-radius: 50%; background: var(--gold); transform: translateY(-1px); }
+.foot-meter { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.foot-meter .foot-bar { width: 140px; margin: 0; }
+.foot-meter .foot-bar i { background: var(--gold); }
+.foot-reviewer { display: inline-flex; align-items: center; gap: 6px; color: var(--accent); font-weight: 600; text-decoration: none; }
+.foot-reviewer:hover { text-decoration: underline; }
+.foot-tools { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; width: 100%; }
+.foot-display {
+  font: inherit; font-weight: 600; color: var(--text); background: var(--surface); cursor: pointer;
+  border: 1px solid var(--line-strong); border-radius: 999px; padding: 6px 14px;
+}
+.foot-display:hover { border-color: var(--accent); color: var(--accent); }
+.foot-up { color: var(--text); font-weight: 600; text-decoration: none; margin-inline-start: auto; }
+.foot-up::before { content: "↑ "; }
+.foot-up:hover { color: var(--accent); text-decoration: underline; }
 
 /* Buttons: one solid call, one outline. */
 .button {
@@ -2317,6 +2387,7 @@ mark.q-hit { box-shadow: inset 0 -2px 0 var(--gold); border-radius: 2px; }
   .text-tool, .unsure-bar, .echo-tags, .xr-margin, .keys-dialog, .sel-bar, .fn-pop, .notes-tabs, .topic-chips, #partial, .passage .sub, .palette, #palette,
   .listen-bar, #listen-start { display: none !important; }
   .print-only { display: block; }
+  .print-colophon { font-family: var(--sans); font-size: 8.5pt; color: #444; border-top: .5pt solid #999; padding-top: 4pt; margin: 18pt 0 0; }
   .print-head { font-family: var(--sans); font-size: 9pt; color: #444; border-bottom: .5pt solid #999; padding-bottom: 4pt; margin: 0 0 10pt; }
   .reader { display: block; }
   .passage { max-width: none; }
@@ -2582,9 +2653,29 @@ mark.term-hit { background: var(--mark); color: inherit; padding: 0 2px; border-
   .foot-grid .foot-langs { grid-column: 1 / -1; }
   .foot-grid .foot-langs ul { display: flex; flex-wrap: wrap; gap: 8px 20px; }
 }
+/* On a phone the columns fold (web/site.js): each heading is a row to tap,
+   with a sign that says whether it is open. */
 @media (max-width: 560px) {
   .foot-key > span:last-of-type { display: none; }
   .foot-key a { margin-inline-start: 0; }
+  .foot-grid { display: block; gap: 0; }
+  .foot-books, .foot-grid { margin-top: 24px; padding-top: 0; }
+  .foot-sec { border-bottom: 1px solid var(--line); }
+  .foot-sec > summary { cursor: pointer; padding: 14px 0; }
+  .foot-sec > summary h2 { margin: 0; display: flex; justify-content: space-between; align-items: center; }
+  .foot-sec > summary h2::after { content: "+"; font-size: 18px; font-weight: 500; letter-spacing: 0; }
+  .foot-sec[open] > summary h2::after { content: "−"; }
+  .foot-sec[open] { padding-bottom: 16px; }
+  .foot-books { border-top: 1px solid var(--line); }
+}
+/* Footer links big enough to tap (WCAG 2.2 target size). */
+@media (pointer: coarse) {
+  footer.site .foot-sec ul { gap: 0; }
+  footer.site .foot-sec li > a, .foot-report summary { display: block; padding-block: 9px; }
+  footer.site .foot-grid .foot-langs ul { gap: 0 20px; }
+  footer.site .book-chips { gap: 8px; }
+  footer.site a.book-chip, .foot-recent a.book-chip { padding-block: 6px; }
+  .foot-often a { padding-block: 6px; }
 }
 /* Listen (web/reader.js): the sentence being read, and the bar at the foot
    of the window. It sits under the notes sheet on phones. */
