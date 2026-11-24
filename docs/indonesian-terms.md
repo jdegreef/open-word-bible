@@ -76,7 +76,7 @@ rest.
 | grace | *kasih karunia* | Key term. |
 | glory; glorify | *kemuliaan*; *memuliakan* | Key terms. |
 | truth | *kebenaran* | Key term. |
-| righteousness (*tsedeq*, *tsedaqah*, *dikaiosynē*) | *kebenaran* | Key term, at every level, the same word as for truth. *keadilan* is kept for justice (*mishpat*) and judges' verbs, and for righteousness only where a meaning decision says court justice or just rule (Deuteronomy 16:20; Isaiah 10:22; 59:4; Proverbs 12:17; Acts 17:31; Hebrews 11:33; 2 Peter 1:1). Where truth stands beside it, a book may say *keadilan* for one of the two with a decision (Isaiah 48:1; Ephesians 5:9; 6:14). Readable may say *hidup benar*. |
+| righteousness (*tsedeq*, *tsedaqah*, *dikaiosynē*) | *kebenaran* | Key term, at every level, the same word as for truth. *keadilan* is kept for justice (*mishpat*) and judges' verbs, and for righteousness only where a meaning decision says court justice or just rule (Deuteronomy 16:20; Isaiah 10:22; 59:4; Proverbs 12:17; Acts 17:31; Hebrews 11:33; 2 Peter 1:1). Where truth and righteousness stand together, truth is *kejujuran* (Psalm 45:5; Isaiah 48:1; Ephesians 5:9; 6:14). Readable may say *hidup benar*. |
 | justice (*mishpat*) | *keadilan* | |
 | righteous; the righteous | *benar*; *orang benar* | |
 | justify | *membenarkan* (L, B); *menyatakan benar* (R) | |
@@ -196,7 +196,7 @@ rest.
 | basin | *bejana pembasuhan* | |
 | holy place; Most Holy Place | *Ruang Kudus*; *Ruang Mahakudus* | |
 | sanctuary | *tempat kudus* | |
-| temple; house of the LORD | *Bait Allah* (L, B), *rumah Allah* (R); *bait {{divine_name:TUHAN\|Yahweh}}* (L, B), *rumah {{divine_name:TUHAN\|Yahweh}}* (R) | "house of God" (*beit ha'elohim*, Ezra, Nehemiah, Chronicles): *rumah Allah*. The sanctuary before the temple (Exodus to 2 Samuel; 1 Chronicles 6:16–17; 9:23) and the land and people (Hosea 8:1) keep *rumah {{divine_name:TUHAN\|Yahweh}}* at every level. Haggai and Zechariah keep *rumah* for *bayit* and *bait* for *hekhal* at every level, by their decisions (Haggai 1:2; Zechariah 6:12). |
+| temple; house of the LORD | *Bait Allah* (L, B), *rumah Allah* (R); *bait {{divine_name:TUHAN\|Yahweh}}* (L, B), *rumah {{divine_name:TUHAN\|Yahweh}}* (R) | Readable may keep *Bait Allah* where it names the Jerusalem temple as a place (*halaman Bait Allah*, *di Bait Allah*; Matthew, John). "house of God" (*beit ha'elohim*, Ezra, Nehemiah, Chronicles), a description, is *rumah Allah*. The sanctuary before the temple (Exodus to 2 Samuel; 1 Chronicles 6:16–17; 9:23) and the land and people (Hosea 8:1) keep *rumah {{divine_name:TUHAN\|Yahweh}}* at every level. Haggai and Zechariah keep *rumah* for *bayit* and *bait* for *hekhal* at every level, by their decisions (Haggai 1:2; Zechariah 6:12). |
 | courts | *pelataran* | |
 | ephod | *efod* | |
 | breastpiece | *tutup dada* | |
@@ -775,7 +775,7 @@ in different books. They are now one form each, by these rules:
 | 1 Kings | prostitute | *perempuan sundal* (L); *pelacur* (B, R) | 3:16 |
 | 1 Kings | officials (*sarim*); district governors | *para pembesar*; *kepala daerah* (L, B), *gubernur daerah* (R) | 4:2, 5 |
 | 1 Kings | Elihoreph; Shisha; Ahilud; Zabud; Ahishar; Adoniram; Abda | Elihoref; Syisya; Ahilud; Zabud; Ahisyar; Adoniram; Abda | 4:3–6 |
-| 1 Kings | recorder; forced labor | *pencatat sejarah*; *kerja paksa* | 4:3, 6 |
+| 1 Kings | recorder; forced labor | *pencatat sejarah*; *kerja paksa* | 4:3, 6; recorder also 2 Samuel 8:16; 20:24; 1 Chronicles 18:15 |
 | 1 Kings | Ben-hur; Ben-deker; Makaz; Elon-beth-hanan; Ben-hesed; Arubboth | Ben-Hur; Ben-Deker; Makas; Elon-Bet-Hanan; Ben-Hesed; Arubot | 4:8–10 |
 | 1 Kings | Ben-abinadab; Taphath; Baana; Jokmeam; Ben-geber; Ramoth-gilead | Ben-Abinadab; Tafat; Baana; Yokmeam; Ben-Geber; Ramot-Gilead | 4:11–13 |
 | 1 Kings | Ahinadab; Iddo; Basemath; Bealoth; Paruah; Ela; Geber; Uri | Ahinadab; Ido; Basmat; Bealot; Paruah; Ela; Geber; Uri | 4:14–19 |
@@ -811,7 +811,6 @@ in different books. They are now one form each, by these rules:
 | 1 Kings | by the word of the LORD | *atas firman {{divine_name:TUHAN\|Yahweh}}* (L, B); *atas perintah {{divine_name:TUHAN\|Yahweh}}* (R) | 13:1 |
 | 1 Kings | terebinth | *pohon tarbantin* (L, B), as 1 Samuel; *pohon besar* (R) | 13:14 |
 | 1 Kings | rebelled against the mouth of the LORD | *memberontak terhadap titah {{divine_name:TUHAN\|Yahweh}}* (L); *melawan titah* (B); *menolak menaati* (R) | 13:21 |
-| 1 Kings | filled his hand (ordained) | *mengisi tangannya* (L); *mentahbiskan* (B, R) | 13:33 |
 | 1 Kings | Abijah (son of Jeroboam); Tirzah; Nadab; Naamah; Abijam | Abia; Tirza; Nadab; Naama; Abiam | 14:1–31 |
 | 1 Kings | one who urinates against a wall; bond and free | *orang yang kencing ke dinding* (L), *setiap laki-laki* (B, R); *yang terkurung maupun yang bebas* (L), *budak maupun orang merdeka* (B, R) | 14:10 |
 | 1 Kings | the book of the chronicles of the kings of Israel / Judah | *Kitab Sejarah Raja-raja Israel* / *Yehuda* | 14:19, 29 |
@@ -1062,7 +1061,6 @@ in different books. They are now one form each, by these rules:
 | Exodus | the swarm (*arov*) | *kawanan lalat* | 8:17 |
 | Exodus | boils; blisters | *bisul*; *lepuh* | 9:9 |
 | Exodus | flax | *rami* | 9:31 |
-| Exodus | spelt | *gandum spelt* (uncertain) | 9:32 |
 | Exodus | holy convocation | *pertemuan kudus* | 12:16 |
 | Exodus | hyssop | *hisop* | 12:22 |
 | Exodus | the destroyer | *pemusnah* | 12:23 |
@@ -1121,7 +1119,7 @@ in different books. They are now one form each, by these rules:
 | Exodus | the twelve stones | *sardis, topas, beril; pirus, nilam, zamrud; yakut, akik, kecubung; krisolit, oniks, yaspis* (uncertain) | 28:17–20 |
 | Exodus | bells; pomegranates | *giring-giring*; *buah delima* | 28:33 |
 | Exodus | gold plate (*tsits*) | *lempeng emas* | 28:36 |
-| Exodus | fill the hand (ordain) | *mengisi tangan* (L); *menahbiskan* (B, R) | 28:41 |
+| Exodus | fill the hand (ordain) | *mengisi tangan* (L); *menahbiskan* (B, R); never *mentahbiskan* | 28:41; 1 Kings 13:33 |
 | Exodus | between the evenings | *di antara kedua senja* (L); *menjelang malam* (B); *ketika matahari terbenam* (R) | 29:39 |
 | Exodus | ransom (*kopher*); census | *tebusan*; *cacah jiwa* (B) | 30:12 |
 | Exodus | myrrh; cinnamon; fragrant cane; cassia | *mur tetesan*; *kayu manis*; *tebu harum*; *kayu teja* | 30:23–24 |
@@ -1407,7 +1405,6 @@ in different books. They are now one form each, by these rules:
 | Joshua | Bamoth-baal; Beth-baal-meon; Jahaz; Kedemoth; Mephaath | Bamot-Baal; Bet-Baal-Meon; Yahas; Kedemot; Mefaat | 13:17–18 |
 | Joshua | Kiriathaim; Sibmah; Zereth-shahar; Beth-peor | Kiryataim; Sibma; Zeret-Syahar; Bet-Peor | 13:19–20 |
 | Joshua | Evi; Rekem; Zur; Hur; Reba; Beor | Ewi; Rekem; Zur; Hur; Reba; Beor | 13:21–22 |
-| Joshua | diviner | *juru tenung* | 13:22 |
 | Joshua | Jazer; Rabbah; Ramath-mizpeh; Betonim; Mahanaim | Yaezer; Raba; Ramat-Mizpe; Betonim; Mahanaim | 13:25–26 |
 | Joshua | Beth-haram; Beth-nimrah; Succoth; Zaphon; Sea of Chinnereth | Bet-Haram; Bet-Nimra; Sukot; Zafon; danau Kineret | 13:27 |
 | Joshua | offerings by fire (*isheh*) | *korban api-apian* (L); *korban makanan* (B, R) | 13:14 |
@@ -1699,7 +1696,7 @@ in different books. They are now one form each, by these rules:
 | Isaiah | Leviathan; sea monster (*tannin*) | Lewiatan; *naga* | 27:1 |
 | Isaiah | Wadi of Egypt | Sungai Mesir | 27:12 |
 | Isaiah | tsav latsav, qav laqav | *tsav latsav, qav laqav* (kept as sounds) | 28:10 |
-| Isaiah | spelt | *sekoi* | 28:25 |
+| Isaiah | spelt | *sekoi* (uncertain; alternative *gandum spelt*) | 28:25; Exodus 9:32; Ezekiel 4:9 |
 | Isaiah | Ariel | Ariel | 29:1 |
 | Isaiah | Hanes; Rahab (Egypt) | Hanes; Rahab | 30:4, 7 |
 | Isaiah | Topheth | Tofet | 30:33 |
@@ -1788,7 +1785,7 @@ in different books. They are now one form each, by these rules:
 | Judges | strong drink | *minuman keras* | 13:4 |
 | Judges | Etam; Lehi; Ramath-lehi; En-hakkore | Etam; Lehi; Ramat-Lehi; En-Hakore | 15:8–19 |
 | Judges | Valley of Sorek; Dagon | lembah Sorek; Dagon | 16:4, 23 |
-| Judges | household gods (teraphim); fill the hand (ordain) | *terafim* (L, B), *patung berhala kecil* (R); *mentahbiskan* | 17:5 |
+| Judges | household gods (teraphim); fill the hand (ordain) | *terafim* (L, B), *patung berhala kecil* (R); *mengisi tangan* (L), *menahbiskan* (B) | 17:5, 12 |
 | Judges | Laish; Beth-rehob; Gershom | Lais; Bet-Rehob; Gersom | 18:7–30 |
 | Judges | Jebus; sons of worthlessness | Yebus; *orang-orang dursila* (L, B), *orang-orang jahat* (R) | 19:10, 22 |
 | Judges | outrage (nevalah) | *perbuatan noda* (L), *perbuatan keji* (B), *perbuatan yang memalukan* (R) | 19:23 |
@@ -1820,7 +1817,7 @@ in different books. They are now one form each, by these rules:
 | 2 Samuel | rattles; cypress wood | *kerincingan*; *kayu sanobar* | 6:5 |
 | 2 Samuel | Metheg-ammah; Hadadezer; Rehob; Betah; Berothai; Toi; Hamath | Meteg-Ama; Hadadezer; Rehob; Betah; Berotai; Toi; Hamat | 8:1–9 |
 | 2 Samuel | Valley of Salt | Lembah Asin | 8:13 |
-| 2 Samuel | recorder; secretary | *juru catat*; *juru tulis* | 8:16–17 |
+| 2 Samuel | secretary | *juru tulis* | 8:17 |
 | 2 Samuel | Ahilud; Ahimelech; Seraiah; Jehoiada | Ahilud; Ahimelekh; Seraya; Yoyada | 8:16–18 |
 | 2 Samuel | Ziba; Machir; Ammiel; Lo-debar; Mica | Ziba; Makhir; Amiel; Lo-Debar; Mikha | 9:2–12 |
 | 2 Samuel | your servant (self-reference to the king) | *hambamu (ini)* (L); *saya*, with *Tuanku* (B) and *Baginda* (R) | 9:2 |
@@ -2314,7 +2311,7 @@ in different books. They are now one form each, by these rules:
 | Daniel | Ashpenaz; chief of the eunuchs | Aspenas; *kepala sida-sida* (L), *kepala pegawai istana* (B, R) | 1:3 |
 | Daniel | Shinar | *tanah Sinear* (L, B); *negeri Babel* (R) | 1:2 |
 | Daniel | Belteshazzar (Daniel's name) | Beltsazar (kept apart from Belsyazar, the king) | 1:7 |
-| Daniel | magicians; enchanters; sorcerers; diviners | *ahli sihir*; *ahli jampi*; *tukang tenung*; *ahli nujum* | 1:20; 2:2; 2:27 |
+| Daniel | magicians; enchanters; sorcerers; diviners (*gazrin*) | *ahli sihir*; *ahli jampi*; *tukang tenung*; *ahli nujum* | 1:20; 2:2; 2:27 |
 | Daniel | Chaldeans (the class of wise men) | *orang Kasdim* (L, B); *ahli perbintangan* (R) | 2:2 |
 | Daniel | Arioch | Ariokh | 2:14 |
 | Daniel | O king, live forever | *Ya raja, hiduplah untuk selamanya* (L); *Ya Tuanku Raja, kiranya Tuanku hidup untuk selamanya* (B); *Baginda Raja, panjang umur Baginda* (R) | 2:4 |
@@ -2398,7 +2395,7 @@ in different books. They are now one form each, by these rules:
 | Micah | Beth-leaphrah; Shaphir; Zaanan; Beth-ezel; Maroth | Bet-Leafra; Syafir; Zaanan; Bet-Ezel; Marot; Readable adds the meanings (*Rumah Debu*, *Kota Indah*, *Kota Keluar*, *Kota Pahit*, *Kota Dusta* for Akhzib) | 1:10–14 |
 | Micah | Mareshah | Maresya, as Joshua 15:44, 1 Chronicles and 2 Chronicles (see "One form per name" in section 13) | 1:15 |
 | Micah | preach (*nataf*, "drip") | *bernubuat* (L, B); *berkhotbah*, *pengkhotbah* (R) | 2:6, 11 |
-| Micah | seers; diviners; divination | *pelihat*; *tukang tenung*; *tenung* | 3:6–7 |
+| Micah | seers; diviners (*qosem*); divination | *pelihat*; *tukang tenung*; *tenung* | 3:6–7; Joshua 13:22; 1 Samuel 6:2; Zechariah 10:2 |
 | Micah | tower of the flock (*migdal-'eder*) | *menara kawanan ternak* (L), *menara jaga kawanan ternak* (B), translated, not the place name Migdal-Eder | 4:8 |
 | Micah | love of *hesed* | *mencintai kasih setia* (L); *mencintai kesetiaan* (B); *suka berbuat baik serta setia* (R), the founder's ruling for this verse | 6:8 |
 | Micah | walk humbly with your God | *berjalan dengan rendah hati bersama Allahmu* (L); *hidup dengan rendah hati bersama Allahmu* (B); *hidup dengan rendah hati, menaati Allahmu* (R) | 6:8 |

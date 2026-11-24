@@ -1125,3 +1125,278 @@ For reviewers:
 - 3:8: is شماس familiar to Persian readers, or should Literal also say
   خادم?
 - 1:10: is the wording for arsenokoitai clear without being crude?
+
+### 2 Timothy
+
+- Follows 1 Timothy: Paul says تو to Timothy; فرزند / پسر for teknon; سخنان
+  سالم / تعلیم سالم / تعلیم راستین; این سخن امین است (2:11); وجدان.
+- Doulos kyriou (2:24): بردهٔ خداوند (Literal) / خادم خداوند (Balanced,
+  Readable).
+- 2:11-13 keeps the English poetry breaks.
+- Theopneustos (3:16): از نفس خدا صادر شده (Literal, Balanced) / از نفس
+  خدا آمده است (Readable).
+- 4:6 spendomai: همچون هدیهٔ ریختنی ریخته می‌شوم. 4:7: جنگ نیکو (Literal)
+  / مسابقهٔ نیکو (Balanced), as in 1 Timothy 6:12.
+- Vessels (2:20-21): ظرف, کاربرد آبرومند / پست (Literal).
+
+Names: لوئیس, اونیکی, فیجلوس, هرموجنس, اونیسیفوروس, هیمینائوس, فیلیتوس,
+ینیس, یمبریس, انطاکیه, قونیه, لستره, دیماس, کریسکیس, غلاطیه, تیتوس,
+دلماطیه, لوقا, مرقس, تیخیکوس, تروآس, کارپس, اسکندر, پریسکا, آکیلا,
+اراستوس, تروفیموس, میلیتوس, یوبولوس, پودنس, لینوس, کلودیا.
+
+For reviewers:
+
+- 3:16 «از نفس خدا صادر شده»: is this clear, or is the familiar «الهام
+  خدا» better at Balanced?
+- 2:17 «خوره» for gangrene: is it understood, or should it be «قانقاریا»?
+- 2:24: does «بردهٔ خداوند» at Literal sound harsh next to the common
+  «بندهٔ خداوند»?
+
+### Titus
+
+- Follows 1-2 Timothy: Paul says تو to Titus; مشایخ (1:5) and ناظر (1:7)
+  at Literal and Balanced, رهبر کلیسا at Readable; تعلیم سالم; این سخن
+  امین است (3:8).
+- Doulos theou (1:1): بردهٔ خدا (Literal) / خادم خدا (Balanced, Readable).
+  Slaves and masters (2:9): برده, ارباب.
+- 2:13 keeps one phrase for "our great God and Savior Jesus Christ":
+  خدای بزرگ و نجات‌دهندهٔ ما عیسی مسیح.
+- 3:5: شست‌وشوی تولد تازه و نو شدن به روح‌القدس. Philanthrōpia (3:4):
+  انسان‌دوستی (Literal).
+- Nomikos (3:13): فقیه.
+
+Names: تیتوس, کریت / کریتیان, آرتیماس, تیخیکوس, نیکوپولیس, زیناس, اپلس.
+
+For reviewers:
+
+- 2:13: does the Persian read as one person (Jesus is God and Savior), as
+  the English does?
+- 2:5 «کدبانو» at Literal: natural, or too old-fashioned?
+- 1:12: is «شکم‌پرستان تنبل» right for the Cretan proverb?
+
+### Philemon
+
+- Paul says تو to Philemon and شما where the Greek is plural (verses 3, 22,
+  25: the church in his house).
+- Doulos (16): برده at every level, since Paul sets slave against brother.
+- The wordplay on Onesimus (11, 20): بی‌فایده / سودمند; Readable explains
+  that the name means «سودمند».
+- 12 splanchna: پارهٔ دل من.
+
+Names: فیلیمون, اپفیه, آرخیپوس, اونیسیموس, اپافراس, مرقس, آریستارخوس,
+دیماس, لوقا.
+
+For reviewers:
+
+- 11: does the بی‌فایده / سودمند pair carry the pun for readers who do not
+  know Greek, without the Readable note?
+- 19: is «جان خود را به من مدیونی» natural for "you owe me your very self"?
+
+### Hebrews
+
+- The author says شما to the hearers and ما for the author with them.
+  Adelphoi: {{gender:برادران و خواهران|برادران}}.
+- Old Testament quotations follow the Persian of Acts, Romans and the
+  Gospels: Psalm 2:7 (1:5, 5:5), Psalm 110:1 (1:13, 10:13), Psalm 110:4
+  «تو تا ابد کاهنی هستی، به رتبهٔ ملکیصدق» (5:6, 7:17, 7:21), Deuteronomy
+  32:35 as Romans 12:19 (10:30), Habakkuk 2:4 as Romans 1:17 (10:38),
+  Genesis 21:12 as Romans 9:7 (11:18). Jeremiah 31 (8:8-12) is reused in
+  10:16-17.
+- Quoted speech inside a quotation takes “ ” inside «», as in Acts 28.
+- Kept the same through the book: کاهن اعظم, عهد / عهدی تازه, واسطه
+  (mesitēs), ضامن (engyos 7:22), پیشوا (archēgos 2:10, 12:2), کامل ساختن
+  (teleioō), آرامی (katapausis, chapters 3-4), آرامی سبت (4:9), امروز.
+- Tabernacle terms: خیمه, قدس (outer room), قدس‌الاقداس (inner room),
+  پرده, چراغدان, نان تقدمه, مذبح زرین بخور, صندوق عهد, کروبیان, کرسی رحمت
+  (hilastērion), منّ, زوفا, پسح (11:28, as in the Gospels).
+- Diathēkē as a will (9:16-17): وصیت‌نامه, so the wordplay with عهد is lost.
+- Pistei (chapter 11): «به ایمان» at Literal and Balanced; «چون ... ایمان
+  داشت» at Readable.
+- Huioi as God's children (2:10, 12:5-8): {{gender:فرزندان|پسران}}.
+- Moses is خادم (therapōn, 3:5), not برده.
+
+Names: ملکیصدق, سالیم, هارون, لاوی, یهودا, یوشع (4:8), هابیل, قائن, خنوخ,
+نوح, ابراهیم, سارا, اسحاق, یعقوب, عیسو, یوسف, فرعون, راحاب, اریحا, جدعون,
+باراق, شمشون, یفتاح, سموئیل, تیموتائوس, ایتالیا.
+
+For reviewers:
+
+- 2:9: «جدا از خدا» follows SBLGNT (chōris theou), as the English does.
+  Readers of the Old Persian Version know «به فیض خدا»; does the verse
+  need a footnote on the other reading?
+- 7:4 «پاتریارخ» at Literal: understood, or is «پدر قوم» better at every
+  level?
+- 9:4 «منّ» with a shadda: Persian John 6:31 writes «من» without it. Which
+  should both use?
+- 9:5 «کرسی رحمت» for the mercy seat: familiar, or would «تخت رحمت» or
+  «کفاره‌گاه» read better?
+
+### James
+
+- James says شما to the readers; {{gender:برادران و خواهران|برادران}}.
+  Anēr meaning any person (1:7-8, 1:12, 3:2): {{gender:شخصی|مردی}} or
+  {{gender:انسانی|مردی}} at Literal and Balanced, «کسی» at Readable.
+- Doulos (1:1): برده (Literal) / خادم (Balanced, Readable), as in Paul.
+- Peirasmos as trial (1:2, 1:12): آزمایش; peirazō as temptation to evil
+  (1:13-14): وسوسه.
+- Hypomonē: پایداری (1:3-4, 5:11); makrothymia: صبر (5:7-10).
+- Erga: عمل / اعمال at every level in 2:14-26, and dikaioō: پارسا شمرده شدن,
+  the words used in Romans, so readers can set James beside Paul. Genesis
+  15:6 (2:23) follows Romans 4:3; Leviticus 19:18 (2:8) follows Romans 13:9.
+- 2:3: the usher says polite شما to the rich man and تو to the poor man.
+- 5:12 follows Matthew 5:37.
+- Geenna (3:6): جهنم. Kyrios Sabaōth (5:4): خداوند صبایوت (Literal) /
+  خداوند لشکرها.
+
+Names: یعقوب, ابراهیم, اسحاق, راحاب, ایوب, الیاس.
+
+For reviewers:
+
+- 2:2 «کنیسه» at Literal for the believers' gathering: right, or does it
+  read as a Jewish synagogue only?
+- 4:4 «ای زنان زناکار» at Literal: is the prophets' picture clear, or
+  should Literal follow Balanced?
+- 5:7 «باران‌های اول و آخر» (Literal): clear to Iranian readers, whose rains
+  fall in the same seasons?
+
+### 1 Peter
+
+- Place names follow Acts 2:9 (پونتوس, غلاطیه, کاپادوکیه, آسیا, بیطینیا);
+  سیلوانس as 2 Corinthians 1:19; مرقس; بابل.
+- Parepidēmoi / paroikoi (1:1, 2:11): غریبان. Peirasmoi (1:6): آزمایش‌ها.
+- Philadelphia (1:22, 3:8): {{gender:برادران و خواهران|برادران}};
+  adelphotēs (2:17, 5:9): {{gender:جماعت برادران و خواهران|برادری}} or
+  {{gender:خانوادهٔ برادران و خواهران|جماعت برادران}} at Literal.
+- Oiketai (2:18): بردگان خانه at every level; theou douloi (2:16): بردگان خدا.
+- Xylon (2:24): دار (Literal) / صلیب. Episkopos (2:25): ناظر (Literal),
+  as in 1 Timothy 3. Presbyteroi (5:1, 5:5): مشایخ / رهبران کلیسا (Readable).
+- Quotations reuse earlier Persian: Isaiah 28:16 and 8:14 as Romans 9:33,
+  Psalm 118:22 as Matthew 21:42, Proverbs 3:34 (5:5) as James 4:6.
+- مسیحی (4:16) as Acts 11:26. Kyrios said of Abraham (3:6): سرور.
+
+For reviewers:
+
+- 2:24 «دار» at Literal for the tree: clear, or does it read only as a
+  gallows?
+- 3:6 Sarah calling Abraham «سرورم»: natural, or would «آقای من» be more
+  usual?
+- 5:13 «آن [زن] که در بابل است» (Literal), «آن که در بابل است» (Balanced),
+  «کلیسا» only at Readable: should Balanced name the church?
+
+### 2 Peter
+
+- شمعون پطرس (1:1) as Acts 15:14; the greeting (1:2) as 1 Peter 1:2; the
+  voice at the transfiguration (1:17) as Matthew 17:5.
+- Eusebeia: دینداری; philadelphia (1:7):
+  {{gender:محبت برادرانه و خواهرانه|محبت برادرانه}} at Literal.
+- Despotēs (2:1): ارباب, the owner who bought them.
+- Tartarus (2:4): تارتاروس at every level, with «ژرف‌ترین زندان» added at
+  Readable. Asebēs: بی‌دین; athesmos and anomos: بی‌قانون; adikos: ناپارسا.
+- Names: نوح, لوط, سدوم و عموره (as Romans 9:29), بلعام پسر بوسور, پولس.
+- 2:17 «تیرگی ظلمت» (Literal): Jude 13 should use the same words.
+- Metanoia (3:9): توبه.
+
+For reviewers:
+
+- 2:4 «تارتاروس»: keep the Greek name, or use «هاویه» or «ژرف‌ترین دوزخ»?
+- 2:13 «عیش [در] روز را لذت می‌شمارند» (Literal): clear enough?
+- 3:10 «آشکار خواهند شد» for heurethēsetai: right, or should a footnote give
+  the readings «سوخته خواهند شد» found in some manuscripts?
+
+### 1 John
+
+- John says شما to the readers. Teknia: «ای فرزندان کوچک» (Literal) /
+  «ای فرزندان عزیز»; agapētoi: «ای عزیزان» / «ای دوستان عزیز».
+- Words shared with John's Gospel kept the same: کلمه, حیات, حیات جاودان,
+  نور, تاریکی, پسر یگانه (4:9), مدافع for paraklētos (2:1, as John 14:16).
+- Koinōnia: مشارکت (Literal, Balanced). Hilasmos (2:2, 4:10): کفاره, as
+  Romans 3:25. Antichristos: ضدمسیح. Chrisma (2:20, 2:27): مسح.
+- Ton adelphon autou: {{gender:برادر یا خواهر خود|برادر خود}} at Literal and
+  Balanced, «هم‌ایمان» at Readable.
+- Present-tense sin (3:6-9, 5:18): «گناه نمی‌کند» at Literal, «به گناه کردن
+  ادامه نمی‌دهد» at Balanced and Readable.
+- قائن and هابیل (3:12) as Hebrews 11:4.
+
+For reviewers:
+
+- 1:3 «مشارکت» for koinōnia: does it carry the sense of shared life, or
+  should Balanced follow Readable («زندگی مشترک»)?
+- 3:12 «سر برید» (Literal) for esphaxen: too strong, or right for the Greek?
+- 5:16 «گناهی نه به سوی مرگ» (Literal): understandable, or should Literal
+  also say «که به مرگ نمی‌انجامد»?
+
+### 2 John
+
+- Ho presbyteros: «شیخ» (Literal, Balanced), «شیخ کلیسا» (Readable),
+  matching مشایخ in 1 Peter 5:1. Eklektē kyria: «بانوی برگزیده».
+- The Greek moves between singular and plural: تو where John speaks to the
+  lady (4-5, 13), شما for her and her children.
+- Planoi (7): فریبکاران; ضدمسیح as 1 John. Chairein (10-11): سلام.
+- 3 follows 1 Timothy 1:2 («فیض، رحمت و سلامتی»).
+
+For reviewers:
+
+- 1 «شیخ» for the elder: does it read as an Islamic title, and would «پیر»
+  or «رهبر کلیسا» be better here and in 1 Peter 5?
+- 1 «بانوی برگزیده»: clear that this may be a church, or should Readable
+  say so, as 1 Peter 5:13 does?
+
+### 3 John
+
+- شیخ as 2 John. Gaius is تو throughout (one reader, a friend).
+- Names: گایوس (as Romans 16:23), دیوتروفیس, دیمیتریوس (as Acts 19:24).
+- Adelphoi (3, 5, 10): {{gender:برادران و خواهران|برادران}}; «ایمانداران
+  مسافر» at Readable where they are the travelling teachers.
+- 7 «آن نام» at Literal and Balanced, «نام عیسی» at Readable.
+
+For reviewers:
+
+- 2 «کامیاب باشی ... چنان‌که جانت کامیاب است» (Literal): natural, or is
+  «خوب باشی» (Balanced) better at every level?
+
+### Jude
+
+- یهودا, brother of یعقوب; doulos: برده (Literal) / خادم, as James 1:1.
+- Shared with 2 Peter: هرزگی (4), جلال‌یافتگان / موجودات پرجلال (8),
+  داوری بدگویانه (9), تیرگی ظلمت (13), ریشخندکنندگان (18), سدوم و عموره.
+- 5 «عیسی» saved the people out of Egypt, following the source text.
+- Names: میکائیل فرشتهٔ اعظم, موسی, قائن, بلعام, قورح, خنوخ, آدم.
+- Agapai (12): ضیافت‌های محبت. Psychikoi (19): نفسانی (Literal) / دنیوی.
+
+For reviewers:
+
+- 5 «عیسی» where many readers know «خداوند»: keep, or add a footnote?
+- 9 «فرشتهٔ اعظم» for archangel: the usual term, or «رئیس فرشتگان»?
+- 12 «صخره‌های [پنهان]» for spilades: clear, or would «لکه‌ها» (another
+  sense of the word) be better at Literal?
+
+### Revelation
+
+- Kept the same through the book: وحش (thērion), اژدها, برّه, طومار,
+  موجود زنده, چراغدان, مجمر, جام (phialē), بلا, نشان (charagma), تمثال
+  (L/B) / مجسمه (R), نبی دروغین, دریاچهٔ آتش, مرگ دوم, دفتر حیات.
+- هاویه (L/B) / چاه بی‌انتها (R) for abyssos; عالم مردگان (L/B) / جای
+  مردگان (R) for Hades.
+- قادر مطلق for pantokratōr; الف و یا for Alpha and Omega (1:8, 21:6,
+  22:13); هللویاه (19:1-6); خوشا به حال for the seven blessings.
+- Elders: شیخ / مشایخ, as 1 Peter 5 and 2-3 John.
+- Seven cities: افسس, اسمیرنا, پرگاموم, طیاتیرا, سارد, فیلادلفیه,
+  لائودیکیه. Names: نیکولائیان, ایزابل, بالاق, آنتیپاس, ابدّون / اپولیون,
+  فرات, میکائیل, هارمجدون, جوج و ماجوج.
+- The refrain: «آن که گوش دارد، بشنود که روح به کلیساها چه می‌گوید.»
+- Numbers in words (صد و چهل و چهار هزار, هزار و دویست و شصت روز,
+  ششصد و شصت و شش). Units spans at B/R: خوینیکس and دینار (6:6),
+  ستادیون (14:20, 21:16), قنطار (16:21), ذراع (21:17).
+- doulos: برده (L) / خادم (B/R); syndoulos: هم‌برده / هم‌خدمت.
+
+For reviewers:
+
+- 1:8 «الف و یا»: clear to readers, or keep «آلفا و امگا» with a footnote?
+- 4:4 and throughout «مشایخ» for the twenty-four elders: right register,
+  or «پیران»?
+- 7:14 at Literal John says «سرورم، تو می‌دانی», while Balanced and
+  Readable use «آقا» with «شما»: should Literal also use «شما»?
+- 21:19-20 the twelve stones use traditional Persian gem names (یشم, یاقوت
+  کبود, عقیق سفید, زمرد, جزع, عقیق سرخ, زبرجد, یاقوت سبز, یاقوت زرد, عقیق
+  سبز, یاقوت آسمانی, جمست). Several ancient stones are uncertain; would a
+  reviewer prefer other names?
