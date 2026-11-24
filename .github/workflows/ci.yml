@@ -52,6 +52,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       OWB_VENDOR: ${{ github.workspace }}/vendor
+      # The downloads are a release's (downloads.yml), not built here.
+      OWB_DOWNLOADS_RELEASE: https://github.com/${{ github.repository }}/releases/download/downloads
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-python@v7
