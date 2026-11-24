@@ -1230,3 +1230,31 @@ For reviewers:
   should both use?
 - 9:5 «کرسی رحمت» for the mercy seat: familiar, or would «تخت رحمت» or
   «کفاره‌گاه» read better?
+
+### James
+
+- James says شما to the readers; {{gender:برادران و خواهران|برادران}}.
+  Anēr meaning any person (1:7-8, 1:12, 3:2): {{gender:شخصی|مردی}} or
+  {{gender:انسانی|مردی}} at Literal and Balanced, «کسی» at Readable.
+- Doulos (1:1): برده (Literal) / خادم (Balanced, Readable), as in Paul.
+- Peirasmos as trial (1:2, 1:12): آزمایش; peirazō as temptation to evil
+  (1:13-14): وسوسه.
+- Hypomonē: پایداری (1:3-4, 5:11); makrothymia: صبر (5:7-10).
+- Erga: عمل / اعمال at every level in 2:14-26, and dikaioō: پارسا شمرده شدن,
+  the words used in Romans, so readers can set James beside Paul. Genesis
+  15:6 (2:23) follows Romans 4:3; Leviticus 19:18 (2:8) follows Romans 13:9.
+- 2:3: the usher says polite شما to the rich man and تو to the poor man.
+- 5:12 follows Matthew 5:37.
+- Geenna (3:6): جهنم. Kyrios Sabaōth (5:4): خداوند صبایوت (Literal) /
+  خداوند لشکرها.
+
+Names: یعقوب, ابراهیم, اسحاق, راحاب, ایوب, الیاس.
+
+For reviewers:
+
+- 2:2 «کنیسه» at Literal for the believers' gathering: right, or does it
+  read as a Jewish synagogue only?
+- 4:4 «ای زنان زناکار» at Literal: is the prophets' picture clear, or
+  should Literal follow Balanced?
+- 5:7 «باران‌های اول و آخر» (Literal): clear to Iranian readers, whose rains
+  fall in the same seasons?
