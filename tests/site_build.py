@@ -90,3 +90,10 @@ def nav_menus_in(out, lang, whole=True):
     script = (out / f"nav-{lang}.js").read_text(encoding="utf-8")
     menus = json.loads(script[len("window.OWB_NAV="):script.index(";\n")])
     return "".join(menus.values()) if whole else menus
+
+
+def foot_data_in(out, lang):
+    """What the built nav-<lang>.js gives the footer (build_site.footer_data):
+    {"books": {code: name}, "chips": {testament: html}}."""
+    script = (out / f"nav-{lang}.js").read_text(encoding="utf-8")
+    return json.loads(script.split("window.OWB_FOOT=", 1)[1].split(";\n", 1)[0])
