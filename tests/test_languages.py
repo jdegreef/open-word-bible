@@ -162,6 +162,10 @@ class LanguagesTest(unittest.TestCase):
             if build_site.load_articles(lang):
                 keys += ("nav.all_articles",)
             cat = build_site.catalog(lang)
+            # The header's menus and the gear menu's settings ("Theme",
+            # "Night") come from the language's nav script, which every
+            # page loads, so they count as the page's own.
+            nav = self.read(f"nav-{lang}.js")
             for rel in self.english_pages():
                 # The passage data and the text written into the page may
                 # hold the same words as Bible text (Genesis 1:5 names the
@@ -176,7 +180,7 @@ class LanguagesTest(unittest.TestCase):
                 page = re.sub(r'<p class="term-(text|note|why-text)" lang="en"[^>]*>.*?</p>'
                               r'|<meta property="og:image:alt" content="[^"]*">'
                               r'|<script type="application/json" class="votd-data">.*?</script>'
-                              r'|<p class="votd-text"[^>]*>.*?</p>', "", page, flags=re.S)
+                              r'|<p class="votd-text"[^>]*>.*?</p>', "", page, flags=re.S) + nav
                 for key in keys:
                     # A whole word: English "Home" is inside Portuguese "Homem".
                     self.assertNotRegex(page, r"(?<!\w)" + re.escape(en[key]) + r"(?!\w)", (lang, rel, key))
