@@ -89,6 +89,11 @@
           "L": "Para sa punong mang-aawit. Isang salmo ni David. Isang awit.",
           "B": "Para sa punong mang-aawit. Isang salmo ni David. Isang awit.",
           "R": "Para sa tagapanguna ng musika. Isang awit ni David, upang awitin."
+        },
+        "zh": {
+          "L": "交给指挥。大卫的诗。一首歌。",
+          "B": "交给指挥。大卫的诗。一首歌。",
+          "R": "给诗班指挥的。大卫的歌，用来歌唱。"
         }
       },
       "decisions": [
@@ -532,6 +537,11 @@
           "L": "Para sa {{deity_pronoun:iyo|Iyo}} ay papuri ang katahimikan, O Diyos, sa Zion, \\q at sa {{deity_pronoun:iyo|Iyo}} ay tutuparin ang panata.",
           "B": "Para sa {{deity_pronoun:iyo|Iyo}}, O Diyos, sa Zion, ang katahimikan ay papuri, \\q at sa {{deity_pronoun:iyo|Iyo}} tutuparin ang mga panata.",
           "R": "O Diyos, sa Zion ay pinupuri {{deity_pronoun:ka|Ka}} namin, kahit sa tahimik na paghihintay. \\q Tutuparin namin ang mga pangakong ginawa namin sa {{deity_pronoun:iyo|Iyo}}."
+        },
+        "zh": {
+          "L": "{{god_term:神|上帝}}啊，在锡安，静默就是对{{deity_pronoun:你|祢}}的赞美； \\q 人要向{{deity_pronoun:你|祢}}还所许的愿。",
+          "B": "{{god_term:神|上帝}}啊，在锡安，静默就是献给{{deity_pronoun:你|祢}}的赞美， \\q 人要向{{deity_pronoun:你|祢}}信守所许的愿。",
+          "R": "{{god_term:神|上帝}}啊，我们在锡安赞美{{deity_pronoun:你|祢}}，即使在安静等候的时候也是如此。 \\q 我们要遵守向{{deity_pronoun:你|祢}}许下的诺言。"
         }
       },
       "decisions": [
@@ -729,6 +739,27 @@
           "choice": "\"tutuparin ang panata\"",
           "alternatives": [],
           "reason": "A vow paid: a promise kept with an offering (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190650020051"
+          ],
+          "choice": "\"神\" in a god_term span, \"上帝\" as the reader's alternative",
+          "alternatives": [
+            "\"上帝\" as the default"
+          ],
+          "reason": "Every word naming the one God is written with the Chinese god_term setting (style guide section 4).",
           "uncertain": false,
           "footnote": false
         }
@@ -976,6 +1007,11 @@
           "L": "[Ikaw na] dumirinig ng panalangin, \\q sa {{deity_pronoun:iyo|Iyo}} ay darating ang lahat ng laman.",
           "B": "Dinirinig {{deity_pronoun:mo|Mo}} ang panalangin; \\q ang lahat ng tao ay haharap sa {{deity_pronoun:iyo|Iyo}}.",
           "R": "Nakikinig {{deity_pronoun:ka|Ka}} sa panalangin, \\q kaya ang lahat ay lalapit sa {{deity_pronoun:iyo|Iyo}}."
+        },
+        "zh": {
+          "L": "垂听祷告的[那位]啊， \\q 一切血肉之躯都要到{{deity_pronoun:你|祢}}这里来。",
+          "B": "祷告都蒙垂听； \\q 所有的人都要来到{{deity_pronoun:你|祢}}面前。",
+          "R": "人的祷告都会被听见， \\q 所以人人都会到{{deity_pronoun:你|祢}}这里来。"
         }
       },
       "decisions": [
@@ -1074,6 +1110,45 @@
           "choice": "\"lahat ng laman\"",
           "alternatives": [],
           "reason": "All flesh: all people (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190650030041"
+          ],
+          "choice": "\"一切血肉之躯\" (all flesh)",
+          "alternatives": [
+            "\"所有的人\""
+          ],
+          "reason": "The glossary's Literal form for \"all flesh\"; Balanced and Readable say \"all people\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o190650030011"
+          ],
+          "choice": "\"祷告都蒙垂听\" (B); \"人的祷告都会被听见\" (R)",
+          "alternatives": [
+            "\"你垂听祷告\""
+          ],
+          "reason": "The English starts the line with an unmarked \"You\"; Chinese puts the line in the passive, so the one pronoun for God that the English marks is the one in the next line.",
           "uncertain": false,
           "footnote": false
         }
@@ -1267,6 +1342,11 @@
           "L": "Ang mga bagay ng kasamaan ay napakalakas para sa akin; \\q ang aming mga pagsalangsang, {{deity_pronoun:ikaw|Ikaw}} ang tumatakip sa mga iyon.",
           "B": "Dinadaig ako ng mga pagkakasala, \\q ngunit tinatakpan {{deity_pronoun:mo|Mo}} ang aming mga paghihimagsik.",
           "R": "Napakarami ng aking mga kasalanan para sa akin, \\q ngunit pinatatawad {{deity_pronoun:mo|Mo}} ang aming mga pagkakamali."
+        },
+        "zh": {
+          "L": "罪孽的事强过了我； \\q 我们的过犯——{{deity_pronoun:你|祢}}都遮盖了。",
+          "B": "种种过错压倒了我， \\q 但{{deity_pronoun:你|祢}}遮盖了我们的悖逆。",
+          "R": "我的罪多得我承受不了， \\q 但{{deity_pronoun:你|祢}}饶恕我们的过错。"
         }
       },
       "decisions": [
@@ -1686,6 +1766,11 @@
           "L": "Napakapalad [ng] pinili {{deity_pronoun:mo|Mo}} at inilapit; maninirahan siya [sa] {{deity_pronoun:iyong|Iyong}} mga bulwagan. \\q Masiyahan nawa kami sa kabutihan ng {{deity_pronoun:iyong|Iyong}} bahay, \\q ang banal [na dako] ng {{deity_pronoun:iyong|Iyong}} templo.",
           "B": "Napakapalad ng mga pinili {{deity_pronoun:mo|Mo}} at inilapit, upang manahan sa {{deity_pronoun:iyong|Iyong}} mga bulwagan! \\q Magpakabusog nawa kami sa kabutihan ng {{deity_pronoun:iyong|Iyong}} bahay, \\q ang {{deity_pronoun:iyong|Iyong}} banal na templo.",
           "R": "Tunay na mabuti ang buhay ng mga taong pinili {{deity_pronoun:mo|Mo}} at inilapit sa {{deity_pronoun:iyo|Iyo}}, upang tumira sa mga bulwagan ng {{deity_pronoun:iyong|Iyong}} templo. \\q Punuin nawa kami ng kagalakan ng mabubuting bagay sa {{deity_pronoun:iyong|Iyong}} banal na bahay."
+        },
+        "zh": {
+          "L": "蒙{{deity_pronoun:你|祢}}拣选、被带到近前的人何等有福；他要住在{{deity_pronoun:你|祢}}的院宇中。 \\q 愿我们因{{deity_pronoun:你|祢}}殿中的美善得着满足， \\q 就是{{deity_pronoun:你|祢}}圣殿的圣[所]。",
+          "B": "蒙{{deity_pronoun:你|祢}}拣选、被带到近前、住在{{deity_pronoun:你|祢}}院中的人何等有福！ \\q 愿我们饱享{{deity_pronoun:你|祢}}殿中的美物， \\q 就是{{deity_pronoun:你|祢}}圣洁的殿宇。",
+          "R": "被{{deity_pronoun:你|祢}}拣选、被带到{{deity_pronoun:你|祢}}身边、住在{{deity_pronoun:你|祢}}圣殿院子里的人，人生真是美好。 \\q 愿{{deity_pronoun:你|祢}}圣殿里的美好事物使我们满心喜乐。"
         }
       },
       "decisions": [
@@ -2072,6 +2157,25 @@
           "reason": "The goodness of your house: the blessings found there (m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190650050011"
+          ],
+          "choice": "\"何等有福\" (L, B); \"人生真是美好\" (R) for ashrei",
+          "alternatives": [],
+          "reason": "The Psalter's forms for \"how blessed\", as in the earlier psalms.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft",
@@ -2382,6 +2486,11 @@
           "L": "[Sa pamamagitan ng] kahanga-hangang mga bagay sa katuwiran ay sinasagot {{deity_pronoun:mo|Mo}} kami, O Diyos ng aming kaligtasan, \\q ang pinagtitiwalaan ng lahat ng dulo ng lupa \\q at ng malayong dagat,",
           "B": "Sa pamamagitan ng mga gawang nakapagpapamangha ay sinasagot {{deity_pronoun:mo|Mo}} kami sa katuwiran, O Diyos ng aming kaligtasan, \\q na pinagtitiwalaan ng lahat ng dulo ng lupa \\q at ng mga nasa malalayong dagat,",
           "R": "O Diyos, {{deity_pronoun:ikaw|Ikaw}} ang nagliligtas sa amin. Sinasagot {{deity_pronoun:mo|Mo}} kami sa paggawa ng kamangha-manghang mga bagay na tama at makatarungan. \\q Nagtitiwala sa {{deity_pronoun:iyo|Iyo}} ang mga tao saanman sa lupa, \\q pati ang mga nakatira sa malayo sa kabila ng dagat."
+        },
+        "zh": {
+          "L": "我们救恩的{{god_term:神|上帝}}啊，{{deity_pronoun:你|祢}}凭着公义，以可畏的事应允我们； \\q [是]全地四极的倚靠， \\q 也[是]远方海洋的倚靠，",
+          "B": "拯救我们的{{god_term:神|上帝}}啊，{{deity_pronoun:你|祢}}以令人敬畏的作为，凭公义应允我们； \\q 地极的万民都信靠这一位， \\q 远方海上的人也信靠这一位，",
+          "R": "{{god_term:神|上帝}}啊，{{deity_pronoun:你|祢}}拯救我们，用公正而奇妙的作为回应我们。 \\q 世上各处的人都信靠{{deity_pronoun:你|祢}}， \\q 连住在远方海外的人也一样。"
         }
       },
       "decisions": [
@@ -2819,6 +2928,11 @@
           "L": "na nagtatatag ng mga bundok sa pamamagitan ng {{deity_pronoun:kaniyang|Kaniyang}} lakas, \\q na nabibigkisan ng kapangyarihan,",
           "B": "na naglagay sa mga bundok sa kanilang puwesto sa pamamagitan ng {{deity_pronoun:kaniyang|Kaniyang}} kapangyarihan, \\q na nagsusuot ng lakas na parang sinturon,",
           "R": "Sa pamamagitan ng {{deity_pronoun:kaniyang|Kaniyang}} kapangyarihan ay itinatag ng Diyos nang matatag ang mga bundok. \\q Nadaramtan {{deity_pronoun:siya|Siya}} ng lakas."
+        },
+        "zh": {
+          "L": "凭着{{deity_pronoun:他|祂}}的力量使群山坚立， \\q 以大能束腰，",
+          "B": "凭{{deity_pronoun:他|祂}}的大能将群山安定在原处， \\q 以力量为腰带，",
+          "R": "{{god_term:神|上帝}}凭着{{deity_pronoun:他|祂}}的能力，把群山稳稳地安放在原处。 \\q 大能就像衣服一样穿在身上。"
         }
       },
       "decisions": [
@@ -3174,6 +3288,11 @@
           "L": "na nagpapatahimik sa ugong ng mga dagat, sa ugong ng kanilang mga alon, \\q at sa kaguluhan ng mga bayan.",
           "B": "na nagpapatahimik sa dagundong ng mga dagat at sa hampas ng kanilang mga alon, \\q at sa ingay ng mga bansa.",
           "R": "Pinatatahimik {{deity_pronoun:niya|Niya}} ang umuugong na mga dagat at ang humahampas na mga alon. \\q Pinatatahimik din {{deity_pronoun:niya|Niya}} ang maiingay at galit na mga bansa."
+        },
+        "zh": {
+          "L": "使诸海的咆哮、海浪的轰响平静， \\q 也使万民的喧哗平静。",
+          "B": "平息海洋的怒吼和波浪的拍击， \\q 也平息万民的骚动。",
+          "R": "怒吼的大海和汹涌的波浪，都平静下来。 \\q 吵闹又愤怒的各族的人，也安静下来。"
         }
       },
       "decisions": [
@@ -3470,6 +3589,11 @@
           "L": "At ang mga naninirahan sa mga dulo [ng lupa] ay natatakot dahil sa {{deity_pronoun:iyong|Iyong}} mga tanda; \\q ang mga labasan ng umaga at gabi ay pinasisigaw {{deity_pronoun:mo|Mo}} sa galak.",
           "B": "Ang mga nakatira sa malalayong gilid ng daigdig ay namamangha sa {{deity_pronoun:iyong|Iyong}} mga kababalaghan; \\q pinaaawit {{deity_pronoun:mo|Mo}} sa galak ang mga lupain ng sikatan at lubugan ng araw.",
           "R": "Ang mga taong nakatira sa malayo ay namamangha sa kahanga-hangang mga bagay na ginagawa {{deity_pronoun:mo|Mo}}. \\q Mula sa sinisikatan ng araw hanggang sa nilulubugan nito, pinasisigaw {{deity_pronoun:mo|Mo}} sa galak ang mga tao."
+        },
+        "zh": {
+          "L": "住在[地]极的人因{{deity_pronoun:你|祢}}的征兆而惧怕； \\q 早晨和晚上的出处，{{deity_pronoun:你|祢}}使它们欢呼。",
+          "B": "居住在大地边缘的人，因{{deity_pronoun:你|祢}}的奇妙作为而敬畏； \\q {{deity_pronoun:你|祢}}使太阳升起和落下的地方都欢声歌唱。",
+          "R": "住在远方的人，看见{{deity_pronoun:你|祢}}所做的奇事都很惊奇。 \\q 从日出之地到日落之处，{{deity_pronoun:你|祢}}使人人欢呼。"
         }
       },
       "decisions": [
@@ -3851,6 +3975,11 @@
           "L": "Dinalaw {{deity_pronoun:mo|Mo}} ang lupa at pinaapaw ito; lubos {{deity_pronoun:mo|Mo}} itong pinayayaman; \\q ang batis ng Diyos ay puno ng tubig; \\q inilalaan {{deity_pronoun:mo|Mo}} ang kanilang butil, \\q sapagkat gayon {{deity_pronoun:mo|Mo}} ito inihahanda.",
           "B": "Dinadalaw {{deity_pronoun:mo|Mo}} ang lupa at binababad ito ng ulan; ginagawa {{deity_pronoun:mo|Mo}} itong lubhang mataba. \\q Umaapaw sa tubig ang daluyan ng Diyos; \\q binibigyan {{deity_pronoun:mo|Mo}} ng butil ang mga tao, \\q sapagkat ganito {{deity_pronoun:mo|Mo}} inihanda ang lupain.",
           "R": "Inaalagaan {{deity_pronoun:mo|Mo}} ang lupa at pinauulanan ito. Pinatataba {{deity_pronoun:mo|Mo}} ang lupa. \\q Puno ng tubig ang mga ilog ng Diyos sa langit. \\q Binibigyan {{deity_pronoun:mo|Mo}} ang mga tao ng butil na makakain, sapagkat ganoon {{deity_pronoun:mo|Mo}} ginawa ang lupain."
+        },
+        "zh": {
+          "L": "{{deity_pronoun:你|祢}}眷顾了大地，使它水流满溢，大大地使它丰饶； \\q {{god_term:神|上帝}}的河道充满了水； \\q {{deity_pronoun:你|祢}}预备他们的五谷， \\q 因为{{deity_pronoun:你|祢}}原是这样预备大地的。",
+          "B": "{{deity_pronoun:你|祢}}来眷顾大地，用雨水浇透它，使它十分肥沃。 \\q {{god_term:神|上帝}}的水道满溢着水； \\q {{deity_pronoun:你|祢}}供应人们五谷， \\q 因为{{deity_pronoun:你|祢}}就是这样预备了土地。",
+          "R": "{{god_term:神|上帝}}照顾大地，降下雨水，使土壤肥沃。 \\q 天上的河流满满都是水。 \\q 人有五谷可吃，因为{{deity_pronoun:你|祢}}就是这样造了大地。"
         }
       },
       "decisions": [
@@ -4056,6 +4185,25 @@
           "choice": "\"kanilang butil... inihahanda\"",
           "alternatives": [],
           "reason": "Their grain ... prepare it: people's grain, the land prepared (m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o190650100011"
+          ],
+          "choice": "\"神\" named in the first line, \"天上的河流\" in the second",
+          "alternatives": [
+            "\"你照顾大地\"; \"神在天上的河流\""
+          ],
+          "reason": "The English Readable begins with an unmarked \"You\" and names God in the second line; Chinese names God where the subject is needed and lets the rivers in the sky stand alone.",
           "uncertain": false,
           "footnote": false
         }
@@ -4418,6 +4566,11 @@
           "L": "Dinidilig nang sagana ang mga tudling nito, pinapantay ang mga pilapil nito, \\q sa pamamagitan ng mga ambon ay pinalalambot {{deity_pronoun:mo|Mo}} ito; \\q pinagpapala {{deity_pronoun:mo|Mo}} ang pagtubo nito.",
           "B": "Binubuhusan {{deity_pronoun:mo|Mo}} ng tubig ang mga tudling nito at dinidiinan ang mga pilapil nito, \\q pinalalambot {{deity_pronoun:mo|Mo}} ang lupa sa mga ambon \\q at pinagpapala ang lahat ng sumisibol mula rito.",
           "R": "Binubuhusan {{deity_pronoun:mo|Mo}} ng ulan ang mga binungkal na bukid at pinapantay ang mga tipak ng lupa. \\q Pinalalambot {{deity_pronoun:mo|Mo}} ang lupa sa ulan, at pinagpapala {{deity_pronoun:mo|Mo}} ang mga halaman habang lumalaki ang mga ito."
+        },
+        "zh": {
+          "L": "浇透它的犁沟，压平它的土埂， \\q {{deity_pronoun:你|祢}}用阵雨使它松软； \\q {{deity_pronoun:你|祢}}赐福给它所长出来的。",
+          "B": "将水灌进它的犁沟，压平它的土垄， \\q {{deity_pronoun:你|祢}}用阵雨使土壤松软， \\q 又赐福给一切从地里长出来的。",
+          "R": "雨水浇在犁过的田里，抚平了土块。 \\q 雨水使地变软，{{deity_pronoun:你|祢}}赐福给生长的庄稼。"
         }
       },
       "decisions": [
@@ -4728,6 +4881,11 @@
           "L": "Kinoronahan {{deity_pronoun:mo|Mo}} ang taon ng {{deity_pronoun:iyong|Iyong}} kabutihan, \\q at ang {{deity_pronoun:iyong|Iyong}} mga bakas ay tumutulo [ng] katabaan.",
           "B": "Pinuputungan {{deity_pronoun:mo|Mo}} ng korona ang taon ng {{deity_pronoun:iyong|Iyong}} kabutihan, \\q at ang mga bakas ng {{deity_pronoun:iyong|Iyong}} karuwahe ay tumutulo sa kasaganaan.",
           "R": "Nagbibigay {{deity_pronoun:ka|Ka}} ng isang buong taon ng mabubuting bagay, na parang korona. \\q Saanman {{deity_pronoun:ka|Ka}} pumunta, nag-iiwan {{deity_pronoun:ka|Ka}} ng saganang pagkain."
+        },
+        "zh": {
+          "L": "这满有{{deity_pronoun:你|祢}}恩惠的一年，已被戴上冠冕， \\q {{deity_pronoun:你|祢}}的足迹滴下脂油。",
+          "B": "这一年满有{{deity_pronoun:你|祢}}的美善，被戴上了冠冕， \\q {{deity_pronoun:你|祢}}战车的车辙滴下丰盛的油脂。",
+          "R": "一整年都满了美好的事物，好像冠冕一样。 \\q {{deity_pronoun:你|祢}}走到哪里，{{deity_pronoun:你|祢}}就在哪里留下丰富的食物。"
         }
       },
       "decisions": [
@@ -5111,6 +5269,11 @@
           "L": "Tumutulo ang mga pastulan ng ilang, \\q at ang mga burol ay nagbibigkis ng kagalakan.",
           "B": "Pati ang mga pastulan sa parang ay tumutulo sa kasaganaan, \\q at ang mga burol ay nagsusuot ng kagalakan na parang sinturon.",
           "R": "Pati ang damo sa tuyong lupain ay basa sa ulan. \\q Ang mga burol ay tila nadaramtan ng kagalakan."
+        },
+        "zh": {
+          "L": "旷野的草场滴[下丰盛]， \\q 冈陵以欢乐束腰。",
+          "B": "连旷野的草场也滴下丰盛， \\q 冈陵以欢乐为腰带。",
+          "R": "连干旱地方的草也被雨水滋润。 \\q 小山好像穿上了快乐的衣服。"
         }
       },
       "decisions": [
@@ -5412,6 +5575,11 @@
           "L": "Ang mga pastulan ay nadaramtan ng mga kawan, \\q at ang mga lambak ay nababalot ng butil; \\q sumisigaw sila sa galak; oo, umaawit sila.",
           "B": "Tinatakpan ng mga kawan ang mga pastulan na parang damit, \\q at binabalot ng butil ang mga lambak; \\q sumisigaw sila sa tagumpay, oo, umaawit sila!",
           "R": "Pinupuno ng mga tupa ang mga bukid na parang balabal. \\q Natatakpan ng butil ang mga lambak. \\q Ang lahat ay sumisigaw at umaawit sa galak!"
+        },
+        "zh": {
+          "L": "草场披上羊群[为衣]， \\q 山谷以五谷裹住自己； \\q 它们都欢呼，它们也歌唱。",
+          "B": "羊群覆盖草场，如同衣裳， \\q 五谷包裹山谷； \\q 它们都高声欢呼，是的，它们都在歌唱！",
+          "R": "羊群布满草场，好像一件外衣。 \\q 山谷里长满了五谷。 \\q 万物都欢呼歌唱！"
         }
       },
       "decisions": [
