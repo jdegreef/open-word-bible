@@ -101,6 +101,11 @@
           "L": "May kasamaang nakita ko sa ilalim ng araw, at mabigat ito sa sangkatauhan:",
           "B": "Nakakita ako ng kasawian sa ilalim ng araw na nakapagpapabigat sa mga tao:",
           "R": "Nakakita ako ng malungkot na bagay dito sa lupa na nagpapabigat sa mga tao:"
+        },
+        "zh": {
+          "L": "有一件恶事是我在日光之下所见的，它对人类是沉重的：",
+          "B": "我在日光之下看见一件不幸，它叫人不堪重负：",
+          "R": "我在这世上看见一件令人难过的事，它让人心里很沉重："
         }
       },
       "decisions": [
@@ -540,6 +545,11 @@
           "L": "isang taong binibigyan ng Diyos ng kayamanan at ari-arian at karangalan, kaya walang kulang sa kaniyang kaluluwa sa lahat ng kaniyang ninanasa; gayunma'y hindi siya binibigyan ng Diyos ng kakayahang kumain mula rito, kundi isang dayuhan ang kumakain nito. Ito ay hininga at isang masamang sakit.",
           "B": "Binibigyan ng Diyos ang ilang tao ng kayamanan, ari-arian at karangalan, kaya wala silang kulang sa anumang ninanasa nila, gayunma'y hindi sila binibigyang-kakayahan ng Diyos na tamasahin ito; sa halip ay isang dayuhan ang nagtatamasa nito. Ito ay hininga lamang at isang mabigat na sakit.",
           "R": "Binibigyan ng Diyos ang ilang tao ng kayamanan, ari-arian at karangalan. Nasa kanila ang lahat ng gusto nila. Ngunit hindi sila hinahayaan ng Diyos na masiyahan dito. Sa halip, isang dayuhan ang nasisiyahan dito. Ito ay parang hiningang nauuwi sa wala, at masakit na bagay, gaya ng isang sakit."
+        },
+        "zh": {
+          "L": "就是这样的人：{{god_term:神|上帝}}赐给他财富、资产和尊荣，凡他灵魂所渴望的，他一样都不欠缺；{{god_term:神|上帝}}却没有赐他能力从中吃用，反倒是一个陌生人吃用了。这是气息，是恶毒的病。",
+          "B": "{{god_term:神|上帝}}赐给一些人财富、产业和尊荣，他们想要的一样也不缺，{{god_term:神|上帝}}却不让他们享受，反倒是一个陌生人享受了。这不过是一口气，是一种令人痛苦的病。",
+          "R": "{{god_term:神|上帝}}给一些人财富、产业和尊荣。他们想要的都有了。可是{{god_term:神|上帝}}不让他们享受这一切，反而让一个陌生人享受了。这就像一口气，最后什么也没有，而且是一件让人痛苦的事，像一场病一样。"
         }
       },
       "decisions": [
@@ -941,6 +951,54 @@
           "choice": "\"hininga\"",
           "alternatives": [],
           "reason": "Breath (hebel): what is fleeting and beyond grasp, not worthless (m4).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o210060020161",
+            "o210060020162"
+          ],
+          "choice": "\"{{god_term:神|上帝}}\", default 神",
+          "alternatives": [
+            "\"上帝\""
+          ],
+          "reason": "The Chinese god_term setting: every word naming the one God is written as a span, 神 by default and 上帝 as the reader's alternative.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o210060020011",
+            "o210060020091",
+            "o210060020092",
+            "o210060020093",
+            "o210060020113",
+            "o210060020141",
+            "o210060020161",
+            "o210060020162"
+          ],
+          "choice": "\"人\" ... \"他\", no gender span",
+          "alternatives": [
+            "a gender span \"人\" / \"男人\""
+          ],
+          "reason": "Chinese \"人\" and the generic \"他\" already include everyone, so the inclusive default the English spans needs no Chinese span (style guide section 8); likewise in the rest of this chapter.",
           "uncertain": false,
           "footnote": false
         }
@@ -1424,6 +1482,11 @@
           "L": "Kung ang isang lalaki ay magkaanak ng isandaan at mabuhay nang maraming taon, at marami ang mga araw ng kaniyang mga taon, ngunit hindi nasisiyahan ang kaniyang kaluluwa sa mabubuting bagay, at wala rin siyang libing, sinasabi ko: mas mabuti pa ang patay nang isilang kaysa sa kaniya.",
           "B": "Maaaring magkaanak ang isang lalaki ng isandaan at mabuhay nang maraming taon; ngunit gaano man karami ang mga araw ng kaniyang mga taon, kung hindi nasisiyahan ang kaniyang kaluluwa sa mabubuting bagay, at hindi man lamang siya nailibing, sinasabi kong mas mapalad pa ang batang patay nang isilang kaysa sa kaniya.",
           "R": "Maaaring magkaroon ang isang lalaki ng isandaang anak at mabuhay nang napakatagal. Ngunit kung hindi siya nasisiyahan sa mabubuting bagay sa buhay, at walang naglibing man lamang sa kaniya nang mamatay siya, sinasabi kong mas mabuti pa ang kalagayan ng sanggol na patay nang isilang kaysa sa kaniya."
+        },
+        "zh": {
+          "L": "假如一个人生育了一百[个孩子]，活了许多年，他岁月的日子多而又多，然而他的灵魂没有因美好的事物而满足，并且他也没有被埋葬，我说：死胎比他更好。",
+          "B": "一个人也许生了一百个孩子，活了很多年；但无论他活多少岁，若是他的心不能从美好的事物中得到满足，甚至死后连埋葬也没有，我说，一个生下来就死了的孩子都比他好。",
+          "R": "一个人可能有一百个孩子，又活得很长久。可是如果他不能享受人生中美好的事，死了以后连埋葬他的人都没有，我说，一个一出生就死了的婴儿都比他好。"
         }
       },
       "decisions": [
@@ -2098,6 +2161,11 @@
           "L": "Sapagkat sa hininga ito dumating, at sa kadiliman ito umaalis, at sa kadiliman ay natatakpan ang pangalan nito.",
           "B": "Sapagkat dumarating ito bilang hininga at umaalis sa kadiliman, at sa kadiliman ay natatago ang pangalan nito.",
           "R": "Dumarating ito na gaya ng hininga at saka naglalaho sa kadiliman. Walang sinumang nakaaalam ng pangalan nito."
+        },
+        "zh": {
+          "L": "因为它在气息中来，在黑暗中去，在黑暗中它的名字被掩盖。",
+          "B": "因为它像一口气那样来，又走进黑暗，它的名字也隐没在黑暗里。",
+          "R": "它像一口气一样来，然后就消失在黑暗中。从来没有人知道它的名字。"
         }
       },
       "decisions": [
@@ -2438,6 +2506,11 @@
           "L": "Hindi rin nito nakita ang araw ni nakilala ito; ito ay may higit na kapahingahan kaysa sa isa.",
           "B": "Hindi nito kailanman nakita ang araw o nakilala ang anuman, gayunma'y mas may kapahingahan ito kaysa sa lalaking iyon.",
           "R": "Hindi nito kailanman nakita ang araw o nakilala ang anuman. Ngunit mas may kapahingahan ito kaysa sa lalaking iyon."
+        },
+        "zh": {
+          "L": "它没有看见太阳，也没有知道[它]；这一个比那一个更有安息。",
+          "B": "它从来没有见过太阳，也什么都不知道，可是它比那人得到更多的安息。",
+          "R": "它从来没有见过太阳，什么也不知道。可是它比那个人得到的安息更多。"
         }
       },
       "decisions": [
@@ -2788,6 +2861,11 @@
           "L": "At kahit mabuhay siya nang makalawang libong taon, ngunit hindi nakakita ng mabuti, hindi ba't ang lahat ay pumupunta sa iisang dako?",
           "B": "Kahit mabuhay pa siya nang makalawang libong taon ngunit hindi nasiyahan sa mabuti, hindi ba't ang lahat ay pumupunta sa iisang dako?",
           "R": "Kahit mabuhay pa siya nang dalawang libong taon ngunit hindi kailanman nasiyahan sa mabubuting bagay ng buhay, pupunta pa rin siya sa pinupuntahan ng lahat."
+        },
+        "zh": {
+          "L": "即使他活了一千年的两倍，却没有享受美好——不是所有人都往同一个地方去吗？",
+          "B": "即使他活了一千年的两倍，却没有享受到美好的事，所有的人不都是去同一个地方吗？",
+          "R": "即使他活了两千年，却从来没有享受过人生中美好的事，他最后还是会去每个人都要去的地方。"
         }
       },
       "decisions": [
@@ -3188,6 +3266,11 @@
           "L": "Ang lahat ng pagpapagal ng tao ay para sa kaniyang bibig, gayunma'y hindi napupuno ang kaniyang pita.",
           "B": "Ang lahat ng pagsisikap ng tao ay para sa kaniyang bibig, gayunma'y hindi kailanman napupuno ang kaniyang gana.",
           "R": "Nagsisikap ang mga tao upang may makain, ngunit hindi nila kailanman nadarama na sapat na ang mayroon sila."
+        },
+        "zh": {
+          "L": "人一切的劳碌都是为了自己的口，然而食欲却不得满足。",
+          "B": "人们辛苦工作都是为了糊口，可是他们的欲望永远填不满。",
+          "R": "人们辛苦工作是为了养活自己，可是他们总觉得不够。"
         }
       },
       "decisions": [
@@ -3534,6 +3617,11 @@
           "L": "Sapagkat ano ang kalamangan ng marunong sa mangmang? Ano ang sa dukha na marunong lumakad sa harap ng mga buháy?",
           "B": "Ano ang kalamangan ng marurunong sa mga mangmang? At ano ang napapala ng dukha sa pagkaalam kung paano kumilos sa harap ng iba?",
           "R": "Ano ang naitutulong ng pagiging marunong kaysa sa pagiging mangmang? At ano ang naitutulong sa mahihirap ng pagkaalam kung paano kumilos sa harap ng iba?"
+        },
+        "zh": {
+          "L": "因为智慧人胜过愚昧人的优势在哪里？穷人懂得在活人面前行走，[又有]什么[优势]？",
+          "B": "智慧人比愚昧人有什么优势呢？一个穷人懂得在别人面前得体地行事，又能收获什么呢？",
+          "R": "有智慧而不愚蠢，有什么好处呢？穷人懂得在别人面前怎样做人，对他们又有什么好处呢？"
         }
       },
       "decisions": [
@@ -3684,6 +3772,27 @@
           "choice": "\"lumakad sa harap ng mga buháy\"",
           "alternatives": [],
           "reason": "Walk before the living: conduct oneself among people (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210060080031"
+          ],
+          "choice": "motar \"优势\" (L, B); \"好处\" (R)",
+          "alternatives": [
+            "\"长处\"",
+            "\"益处\""
+          ],
+          "reason": "Motar (\"advantage\") is kept apart from yitron (\"gain\", \"益处\") at Literal and Balanced, as the English keeps \"advantage\" and \"gain\" apart; Readable has \"what good it does\" for both.",
           "uncertain": false,
           "footnote": false
         }
@@ -3950,6 +4059,11 @@
           "L": "Mas mabuti ang nakikita ng mga mata kaysa sa paggala ng kaluluwa. Ito man ay hininga at paghahabol sa hangin.",
           "B": "Mas mabuting tamasahin ang nasa harap ng iyong mga mata kaysa hayaang gumala ang pagnanasa. Ito man ay hininga lamang at paghahabol sa hangin.",
           "R": "Mas mabuting masiyahan sa kung ano ang mayroon ka kaysa patuloy na maghangad ng higit pa. Ito man ay parang hininga. Parang pagsisikap na hulihin ang hangin."
+        },
+        "zh": {
+          "L": "眼目所见的比灵魂四处游荡好。这也是气息，是追逐风。",
+          "B": "享受眼前所有的，胜过任凭欲望四处游荡。这也不过是一口气，都是在追风。",
+          "R": "享受你已经拥有的，比一直想要更多好。这也像一口气，像是想抓住风一样。"
         }
       },
       "decisions": [
@@ -4417,6 +4531,11 @@
           "L": "Anuman ang naging ay natawag na ang pangalan nito, at nalalaman kung ano ang tao: hindi niya kayang makipagtalo sa mas malakas kaysa sa kaniya.",
           "B": "Anumang umiiral ay napangalanan na, at alam na kung ano ang tao: hindi niya maipagtatanggol ang kaniyang usapin laban sa mas malakas sa kaniya.",
           "R": "Ang lahat ng umiiral ay nabigyan na ng pangalan. Alam ng lahat kung ano ang mga tao. Hindi nila kayang makipagtalo sa Diyos, na mas malakas kaysa sa kanila."
+        },
+        "zh": {
+          "L": "已经存在的一切，它的名字早已被宣告了；人是什么，也早已为人所知：他无法同那比他更强的争辩。",
+          "B": "一切存在的事物早已被命名了，人是什么也早已为人所知：他们无法与比他们更强的那一位争讼。",
+          "R": "存在的一切早就有了它的名字。人是什么样子，大家都知道。他们不能和比他们强大的{{god_term:神|上帝}}争辩。"
         }
       },
       "decisions": [
@@ -4931,6 +5050,11 @@
           "L": "Sapagkat maraming salitang nagpaparami ng hininga; ano ang kalamangan nito sa tao?",
           "B": "Habang dumarami ang mga salita, dumarami ang hininga; ano ang napapala ninuman doon?",
           "R": "Habang lalong nagsasalita ang mga tao, lalong nagiging parang hiningang walang naidaragdag ang kanilang mga salita. Ano ang naitutulong niyon kaninuman?"
+        },
+        "zh": {
+          "L": "话语多了，气息也就增多；人能从中得着什么益处？",
+          "B": "话越多，就越是一口气接着一口气；人能从中收获什么呢？",
+          "R": "人话说得越多，他们的话就越像一口气，什么也增加不了。这对人有什么好处呢？"
         }
       },
       "decisions": [
@@ -5232,6 +5356,11 @@
           "L": "Sapagkat sino ang nakaaalam kung ano ang mabuti para sa tao sa buhay, sa bilang ng mga araw ng kaniyang buhay na hininga, na dinaraanan niya na gaya ng anino? Sapagkat sino ang makapagsasabi sa tao kung ano ang mangyayari pagkatapos niya sa ilalim ng araw?",
           "B": "Sapagkat sino ang nakaaalam kung ano ang mabuti para sa mga tao sa iilang araw ng kanilang buhay, isang hininga lamang, na dinaraanan nila na gaya ng anino? At sino ang makapagsasabi sa kanila kung ano ang mangyayari sa ilalim ng araw pagkatapos nilang mawala?",
           "R": "Sino ang nakaaalam kung ano ang pinakamabuti para sa mga tao sa kanilang maikling buhay, na lumilipas na gaya ng hininga, gaya ng anino? Sino ang makapagsasabi sa kanila kung ano ang mangyayari dito sa lupa pagkatapos nilang mawala?"
+        },
+        "zh": {
+          "L": "因为谁知道人在一生之中，在他气息般生命的有数日子里——他像影子一样度过这些日子——什么对他是好的呢？谁能对人说明，在他以后日光之下会有什么事呢？",
+          "B": "人一生短短的日子，不过是一口气，他们像影子一样度过，谁知道在这些日子里什么对他们是好的呢？在他们走了以后，日光之下会发生什么事，又有谁能告诉他们呢？",
+          "R": "人的一生很短暂，像一口气，又像影子一样过去。谁知道在这段日子里，什么对他们最好呢？他们离世以后，在这世上会发生什么事，又有谁能告诉他们呢？"
         }
       },
       "decisions": [
