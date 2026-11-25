@@ -97,6 +97,11 @@
           "L": "Isang awit para sa mga pag-akyat. \\q Itinitingin ko ang aking mga mata sa mga bundok; \\q saan manggagaling ang aking saklolo?",
           "B": "Isang awit ng pag-akyat. \\q Tumitingala ako sa mga bundok. \\q Saan manggagaling ang aking saklolo?",
           "R": "Isang awit para sa paglalakbay paakyat sa Jerusalem. \\q Tumitingala ako sa mga burol. \\q Saan ako makahahanap ng tulong?"
+        },
+        "zh": {
+          "L": "上行之诗。 \\q 我抬起我的眼睛，望向群山； \\q 我的帮助会从哪里来？",
+          "B": "上行之诗。 \\q 我仰望群山。 \\q 帮助我的，会从哪里来？",
+          "R": "上耶路撒冷朝圣时唱的诗。 \\q 我抬头望着山岗。 \\q 我到哪里去找帮助呢？"
         }
       },
       "decisions": [
@@ -528,6 +533,56 @@
           "reason": "Help (m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191210010011",
+            "o191210010021",
+            "o191210010022"
+          ],
+          "choice": "\"上行之诗\" (L, B); \"上耶路撒冷朝圣时唱的诗\" (R), for \"A song of ascents\"",
+          "alternatives": [
+            "\"朝圣之歌\"",
+            "\"登殿之歌\""
+          ],
+          "reason": "The glossary's forms for shir hamma'alot, kept through Psalms 120-134: Literal and Balanced keep the title as it stands; Readable says what it most likely means, as the English Readable does (see the meaning decision on \"ascents\").",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191210010031",
+            "o191210010041",
+            "o191210010042",
+            "o191210010081",
+            "o191210010091",
+            "o191210010092"
+          ],
+          "choice": "The psalm drafted afresh from the Hebrew at every level",
+          "alternatives": [
+            "\"我要向山举目\""
+          ],
+          "reason": "Psalm 121 is among the best-known psalms in Chinese; following the style guide (section 1), it is drafted from the Hebrew, the gloss and the English levels, and no clause repeats the wording of the familiar Chinese Bibles (verses 6-7 were redrafted where a line came out close to it). The Literal title keeps the glossary's \"上行之诗\", though the Hebrew here reads \"a song for the ascents\" (m3).",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft",
@@ -768,6 +823,11 @@
           "L": "Ang aking saklolo ay mula {{divine_name:sa PANGINOON|kay Yahweh}}, \\q na gumawa ng langit at lupa.",
           "B": "Ang aking saklolo ay mula {{divine_name:sa PANGINOON|kay Yahweh}}, \\q ang gumawa ng langit at lupa.",
           "R": "{{divine_name:Ang PANGINOON|Si Yahweh}} ang tumutulong sa akin. \\q Siya ang gumawa ng kalangitan at ng lupa."
+        },
+        "zh": {
+          "L": "我的帮助[来]自{{divine_name:上主|雅威}}， \\q 天和地的创造者。",
+          "B": "我的帮助来自{{divine_name:上主|雅威}}， \\q 就是创造天地的那一位。",
+          "R": "帮助我的是{{divine_name:上主|雅威}}。 \\q 天空和大地都是{{divine_name:上主|雅威}}造的。"
         }
       },
       "decisions": [
@@ -885,6 +945,25 @@
           "choice": "\"gumawa ng langit at lupa\"",
           "alternatives": [],
           "reason": "Maker of heaven and earth (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191210020031"
+          ],
+          "choice": "\"{{divine_name:上主|雅威}}\" repeated in the second line, with no deity_pronoun span",
+          "alternatives": [
+            "\"他\""
+          ],
+          "reason": "The English Readable starts the second line with \"He\" and no span; Chinese has no capital to show whose \"he\" it is, so it names the LORD again, as the task's pronoun rule allows.",
           "uncertain": false,
           "footnote": false
         }
@@ -1102,6 +1181,11 @@
           "L": "Huwag nawang hayaan {{deity_pronoun:niyang|Niyang}} madulas ang iyong paa; \\q huwag nawang maidlip ang iyong tagapag-ingat.",
           "B": "Huwag nawang hayaan {{deity_pronoun:niyang|Niyang}} matisod ang iyong paa; \\q huwag nawang mapaidlip ang nagbabantay sa iyo.",
           "R": "Ingatan ka nawa {{deity_pronoun:niya|Niya}} mula sa pagkahulog. \\q Manatili nawang gising ang nag-iingat sa iyo."
+        },
+        "zh": {
+          "L": "愿{{deity_pronoun:他|祂}}不让你的脚滑倒； \\q 愿看守你的那一位不打瞌睡。",
+          "B": "愿{{deity_pronoun:他|祂}}永不让你的脚绊跌； \\q 愿守护你的那一位永不打瞌睡。",
+          "R": "愿{{deity_pronoun:他|祂}}使你不跌倒。 \\q 愿保护你的那一位一直醒着。"
         }
       },
       "decisions": [
@@ -1577,6 +1661,29 @@
           "reason": "Keeper: guardian (m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191210030071",
+            "o191210030072"
+          ],
+          "choice": "\"看守\" (L); \"守护\" (B); \"保护\" (R), for shamar through verses 3-8",
+          "alternatives": [
+            "\"保守\"",
+            "\"看顾\""
+          ],
+          "reason": "One verb per level for the word that comes six times in the psalm, as the English keeps \"keep\", \"guard\" and \"protect\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft",
@@ -1788,6 +1895,11 @@
           "L": "Narito, hindi {{deity_pronoun:siya|Siya}} iidlip at hindi {{deity_pronoun:siya|Siya}} matutulog, \\q ang tagapag-ingat ng Israel.",
           "B": "Tunay na ang nagbabantay sa Israel \\q ay hindi kailanman naiidlip at hindi kailanman natutulog.",
           "R": "Ang nag-iingat sa Israel ay hindi kailanman inaantok. \\q Hindi siya kailanman natutulog."
+        },
+        "zh": {
+          "L": "看哪，{{deity_pronoun:他|祂}}不打瞌睡，也不睡觉， \\q 就是以色列的看守者。",
+          "B": "的确，守护以色列的那一位 \\q 从不打瞌睡，也从不睡着。",
+          "R": "保护以色列的那一位从来不会困倦。 \\q 也从来不睡觉。"
         }
       },
       "decisions": [
@@ -2087,6 +2199,11 @@
           "L": "{{divine_name:Ang PANGINOON|Si Yahweh}} ang iyong tagapag-ingat; \\q {{divine_name:ang PANGINOON|si Yahweh}} ang iyong lilim sa iyong kanan.",
           "B": "{{divine_name:Ang PANGINOON|Si Yahweh}} ang nagbabantay sa iyo; \\q {{divine_name:ang PANGINOON|si Yahweh}} ang lilim sa iyong kanang tagiliran.",
           "R": "Iniingatan ka {{divine_name:ng PANGINOON|ni Yahweh}}. \\q Nakatayo {{divine_name:ang PANGINOON|si Yahweh}} sa tabi mo na parang lilim na humahadlang sa init."
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}[是]你的看守者； \\q {{divine_name:上主|雅威}}[是]你右手边的荫凉。",
+          "B": "{{divine_name:上主|雅威}}是守护你的那一位； \\q {{divine_name:上主|雅威}}在你右边，作你的遮荫。",
+          "R": "{{divine_name:上主|雅威}}保护你。 \\q {{divine_name:上主|雅威}}站在你身边，像树荫一样替你挡住炎热。"
         }
       },
       "decisions": [
@@ -2430,6 +2547,11 @@
           "L": "Sa araw ay hindi ka sasaktan ng araw, \\q ni ng buwan sa gabi.",
           "B": "Sa araw ay hindi ka papasuin ng araw, \\q at sa gabi ay hindi ka pipinsalain ng buwan.",
           "R": "Hindi ka sasaktan ng araw sa umaga. \\q Hindi ka sasaktan ng buwan sa gabi."
+        },
+        "zh": {
+          "L": "白天太阳不会击打你， \\q 夜里月亮也不会。",
+          "B": "白天烈日不会晒伤你， \\q 到了夜晚，月亮也不能使你受害。",
+          "R": "白天的太阳伤害不了你。 \\q 夜里的月亮也伤害不了你。"
         }
       },
       "decisions": [
@@ -2696,6 +2818,11 @@
           "L": "Iingatan ka {{divine_name:ng PANGINOON|ni Yahweh}} mula sa lahat ng kasamaan; \\q iingatan {{deity_pronoun:niya|Niya}} ang iyong kaluluwa.",
           "B": "Babantayan ka {{divine_name:ng PANGINOON|ni Yahweh}} laban sa bawat pinsala; \\q babantayan {{deity_pronoun:niya|Niya}} ang iyong buhay.",
           "R": "Iingatan ka {{divine_name:ng PANGINOON|ni Yahweh}} mula sa bawat panganib. \\q Iingatan niya ang iyong buhay."
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}要看守你，使你远离一切灾祸； \\q {{deity_pronoun:他|祂}}要看守你的灵魂。",
+          "B": "{{divine_name:上主|雅威}}要守护你，抵挡一切祸害； \\q 你的性命有{{deity_pronoun:他|祂}}守护。",
+          "R": "任何危险临到，{{divine_name:上主|雅威}}都会保护你。 \\q {{divine_name:上主|雅威}}会保住你的性命。"
         }
       },
       "decisions": [
@@ -2854,6 +2981,27 @@
           "choice": "\"iingatan\"",
           "alternatives": [],
           "reason": "To keep: guard (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191210070071",
+            "o191210070072"
+          ],
+          "choice": "\"灵魂\" (L) for nefesh; \"我\", \"我们\" or \"性命\" at B and R, as the English",
+          "alternatives": [
+            "\"心\"",
+            "\"生命\""
+          ],
+          "reason": "The glossary's form for nefesh at Literal, as in Psalms 1-41; Balanced and Readable follow the English levels, which say \"me\", \"us\" or \"life\" because the word means the whole living person.",
           "uncertain": false,
           "footnote": false
         }
@@ -3073,6 +3221,11 @@
           "L": "Iingatan {{divine_name:ng PANGINOON|ni Yahweh}} ang iyong paglabas at ang iyong pagpasok \\q mula ngayon at magpakailanman.",
           "B": "Babantayan ka {{divine_name:ng PANGINOON|ni Yahweh}} sa iyong pag-alis at sa iyong pagbabalik, \\q mula ngayon at sa lahat ng panahon.",
           "R": "Iingatan ka {{divine_name:ng PANGINOON|ni Yahweh}} kapag umaalis ka at kapag bumabalik ka, \\q ngayon at magpakailanman."
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}要看守你的出和你的入， \\q 从现在直到永远。",
+          "B": "你出发的时候，你回来的时候，{{divine_name:上主|雅威}}都要守护你， \\q 从今以后，永永远远。",
+          "R": "你离家的时候，你回家的时候，{{divine_name:上主|雅威}}都会保护你， \\q 现在是这样，永远都是这样。"
         }
       },
       "decisions": [

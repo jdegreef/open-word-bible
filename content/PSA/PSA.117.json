@@ -93,6 +93,11 @@
           "L": "Purihin ninyo {{divine_name:ang PANGINOON|si Yahweh}}, lahat ng bansa; \\q dakilain ninyo {{deity_pronoun:siya|Siya}}, lahat ng bayan!",
           "B": "Purihin ninyo {{divine_name:ang PANGINOON|si Yahweh}}, bawat bansa! \\q Awitin ninyo ang papuri sa {{deity_pronoun:kaniya|Kaniya}}, lahat kayong mga bayan!",
           "R": "Kayong lahat ng bansa, purihin ninyo {{divine_name:ang PANGINOON|si Yahweh}}! \\q Mga tao saanman, parangalan ninyo {{deity_pronoun:siya|Siya}}!"
+        },
+        "zh": {
+          "L": "列国啊，你们都要赞美{{divine_name:上主|雅威}}； \\q 万民哪，你们都要颂赞{{deity_pronoun:他|祂}}！",
+          "B": "万国啊，要赞美{{divine_name:上主|雅威}}！ \\q 万民哪，要歌颂{{deity_pronoun:他|祂}}！",
+          "R": "各国的人哪，要赞美{{divine_name:上主|雅威}}！ \\q 普天下的人哪，要尊崇{{deity_pronoun:他|祂}}！"
         }
       },
       "decisions": [
@@ -383,6 +388,51 @@
           "reason": "To extol (m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191170010011",
+            "o191170010031",
+            "o191170010041",
+            "o191170010051"
+          ],
+          "choice": "translated from the Hebrew, with the LORD's name and two commands",
+          "alternatives": [
+            "Romans 15:11 \"所有的外邦人哪，你们要赞美主；愿万民都赞美他\""
+          ],
+          "reason": "Paul quotes the line from the Greek (m2), which has \"the Lord\" and \"let all the peoples praise him\"; the Hebrew has the divine name and a second command. The Chinese follows the Hebrew, keeping Romans' words where they agree (\"各国的人哪，要赞美……\" R; \"歌颂\" B).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191170010011"
+          ],
+          "choice": "\"列国……都\" (L); \"万国\" (B); \"各国的人\" (R)",
+          "alternatives": [
+            "\"万国\" (L)"
+          ],
+          "reason": "\"All nations\" in the Psalter's forms for the goyim: Literal says \"all\" with 都, Balanced's \"万国\" already has it, Readable keeps Romans 15:11; \"万民\" for all the peoples (L, B).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft",
@@ -582,6 +632,11 @@
           "L": "Sapagkat makapangyarihan sa atin ang {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig, \\q at ang katapatan {{divine_name:ng PANGINOON|ni Yahweh}} ay magpakailanman. Purihin {{divine_name:ang PANGINOON|si Yah}}!",
           "B": "Sapagkat nag-uumapaw ang {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig sa atin, \\q at nananatiling tapat {{divine_name:ang PANGINOON|si Yahweh}} magpakailanman. Purihin {{divine_name:ang PANGINOON|si Yah}}!",
           "R": "Napakadakila ng tapat na pag-ibig niya sa atin, \\q at laging magiging tapat {{divine_name:ang PANGINOON|si Yahweh}}. Purihin {{divine_name:ang PANGINOON|si Yah}}!"
+        },
+        "zh": {
+          "L": "因为{{deity_pronoun:他|祂}}向我们的慈爱何等大， \\q {{divine_name:上主|雅威}}的信实存到永远。你们要赞美{{divine_name:上主|雅}}！",
+          "B": "因为{{deity_pronoun:他|祂}}向我们的慈爱浩大无比， \\q {{divine_name:上主|雅威}}永远信实。你们要赞美{{divine_name:上主|雅}}！",
+          "R": "{{god_term:神|上帝}}对我们始终不变的爱极其伟大， \\q {{divine_name:上主|雅威}}永远信实。要赞美{{divine_name:上主|雅}}！"
         }
       },
       "decisions": [
@@ -726,6 +781,47 @@
           "choice": "\"Purihin {{divine_name:ang PANGINOON|si Yah}}\"",
           "alternatives": [],
           "reason": "Hallelujah (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191170020041"
+          ],
+          "choice": "\"{{god_term:神|上帝}}\"",
+          "alternatives": [
+            "\"他\" outside the setting"
+          ],
+          "reason": "The English Readable begins with an unspanned \"His\"; Chinese names God, in the god_term setting (\"神\" by default, \"上帝\" as the alternative).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191170020081",
+            "o191170020091"
+          ],
+          "choice": "\"你们要赞美上主\" (L, B); \"要赞美上主\" (R), with \"雅\" as the setting's alternative",
+          "alternatives": [
+            "\"哈利路亚\""
+          ],
+          "reason": "Hallelu Yah (m4) in the glossary's form, as through the Hallel.",
           "uncertain": false,
           "footnote": false
         }
