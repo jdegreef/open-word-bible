@@ -97,6 +97,11 @@
           "L": "Purihin mo {{divine_name:ang PANGINOON|si Yahweh}}, O kaluluwa ko. \\q O {{divine_name:PANGINOON|Yahweh}} kong Diyos, {{deity_pronoun:ikaw|Ikaw}} ay lubhang dakila; \\q [ng] karangalan at kamahalan ay nararamtan {{deity_pronoun:ka|Ka}},",
           "B": "Purihin mo {{divine_name:ang PANGINOON|si Yahweh}}, O kaluluwa ko. \\q O {{divine_name:PANGINOON|Yahweh}} kong Diyos, kay dakila {{deity_pronoun:mo|Mo}}! \\q Karangalan at kamahalan ang mga balabal na suot {{deity_pronoun:mo|Mo}},",
           "R": "Sa buo kong pagkatao ay pinupuri ko {{divine_name:ang PANGINOON|si Yahweh}}. \\q O {{divine_name:PANGINOON|Yahweh}} kong Diyos, napakadakila {{deity_pronoun:mo|Mo}}! \\q Ang kaluwalhatian at maharlikang karangalan ay gaya ng damit na suot {{deity_pronoun:mo|Mo}}."
+        },
+        "zh": {
+          "L": "我的灵魂哪，要称颂{{divine_name:上主|雅威}}。 \\q {{divine_name:上主|雅威}}我的{{god_term:神|上帝}}啊，{{deity_pronoun:你|祢}}极其伟大； \\q {{deity_pronoun:你|祢}}身穿光辉和威荣，",
+          "B": "我的灵魂啊，称颂{{divine_name:上主|雅威}}吧。 \\q {{divine_name:上主|雅威}}我的{{god_term:神|上帝}}啊，{{deity_pronoun:你|祢}}是多么伟大！ \\q 光辉和威严是{{deity_pronoun:你|祢}}所穿的袍子，",
+          "R": "我要用我的全部生命赞美{{divine_name:上主|雅威}}。 \\q {{divine_name:上主|雅威}}我的{{god_term:神|上帝}}啊，{{deity_pronoun:你|祢}}真伟大！ \\q 荣耀和君王的尊贵，就像{{deity_pronoun:你|祢}}穿的衣服。"
         }
       },
       "decisions": [
@@ -464,6 +469,50 @@
           "reason": "A sentence that runs on (m4).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191040010011",
+            "o191040010021"
+          ],
+          "choice": "\"我的灵魂哪，要称颂{{divine_name:上主|雅威}}\" (L); \"我的灵魂啊，称颂{{divine_name:上主|雅威}}吧\" (B); \"我要用我的全部生命赞美{{divine_name:上主|雅威}}\" (R)",
+          "alternatives": [
+            "—"
+          ],
+          "reason": "The refrain of Psalm 103:1, in the same form at each level.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191040010061",
+            "o191040010062"
+          ],
+          "choice": "\"{{god_term:神|上帝}}\" in a god_term span (神 by default, 上帝 as the reader's alternative)",
+          "alternatives": [
+            "神"
+          ],
+          "reason": "Every word naming the one God is written with the Chinese-only god_term setting; the reader can choose 上帝.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft",
@@ -727,6 +776,11 @@
           "L": "na binabalot ang {{deity_pronoun:iyong|Iyong}} sarili ng liwanag na gaya ng damit, \\q na inilaladlad ang kalangitan na parang tabing ng tolda,",
           "B": "binabalot {{deity_pronoun:mo|Mo}} ang {{deity_pronoun:iyong|Iyong}} sarili ng liwanag na parang balabal \\q at inilalatag ang langit na parang tela ng tolda,",
           "R": "Isinusuot mo ang liwanag na parang amerikana. \\q Inilalatag mo ang langit na parang tolda."
+        },
+        "zh": {
+          "L": "以光裹住{{deity_pronoun:你|祢}}自己，如同裹着衣服， \\q 把诸天展开，像展开帐幕的幔子，",
+          "B": "{{deity_pronoun:你|祢}}用光包裹{{deity_pronoun:你|祢}}自己，像裹上斗篷， \\q 又把天空铺开，像铺开帐篷的布，",
+          "R": "穿上光，好像穿上外衣； \\q 又铺开天空，像搭起帐篷。"
         }
       },
       "decisions": [
@@ -871,6 +925,25 @@
           "choice": "\"tabing ng tolda\"",
           "alternatives": [],
           "reason": "A curtain: the cloth of a tent (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o191040020011"
+          ],
+          "choice": "no subject (R)",
+          "alternatives": [
+            "你"
+          ],
+          "reason": "The English Readable starts each line with an unspanned \"You\"; the Chinese carries on the \"{{deity_pronoun:你|祢}}\" of verse 1 as the subject.",
           "uncertain": false,
           "footnote": false
         }
@@ -1078,6 +1151,11 @@
           "L": "na naglalagay ng mga biga ng {{deity_pronoun:kaniyang|Kaniyang}} mga silid sa itaas sa mga tubig, \\q na ginagawang {{deity_pronoun:kaniyang|Kaniyang}} karwahe ang mga ulap, \\q na lumalakad sa mga pakpak ng hangin,",
           "B": "na nagtatayo ng {{deity_pronoun:kaniyang|Kaniyang}} mga silid sa itaas na may mga bigang nakatayo sa mga tubig sa itaas, \\q na ginagawang {{deity_pronoun:kaniyang|Kaniyang}} karwahe ang mga ulap \\q at naglalakbay sa mga pakpak ng hangin,",
           "R": "Itinayo niya ang {{deity_pronoun:kaniyang|Kaniyang}} tahanan sa itaas, sa mga tubig sa ibabaw ng langit. \\q Ginagamit niya ang mga ulap bilang {{deity_pronoun:kaniyang|Kaniyang}} karwahe. \\q Naglalakbay siya sa mga pakpak ng hangin."
+        },
+        "zh": {
+          "L": "那位在水中安放{{deity_pronoun:他|祂}}楼阁梁木的， \\q 那位使云彩作{{deity_pronoun:他|祂}}战车的， \\q 那位在风的翅膀上行走的，",
+          "B": "在上面的众水中架起梁木，建造{{deity_pronoun:他|祂}}的楼阁， \\q 把云彩变成{{deity_pronoun:他|祂}}的战车， \\q 乘着风的翅膀往来，",
+          "R": "{{divine_name:上主|雅威}}在高处、在天空上面的水上建造{{deity_pronoun:他|祂}}的居所， \\q 把云彩当作{{deity_pronoun:他|祂}}的战车， \\q 乘着风的翅膀飞行。"
         }
       },
       "decisions": [
@@ -1259,6 +1337,27 @@
           "choice": "\"mga pakpak ng hangin\"",
           "alternatives": [],
           "reason": "The wings of the wind: the swift wind (m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191040030032"
+          ],
+          "choice": "\"{{deity_pronoun:他|祂}}\" in verse 3 after \"{{deity_pronoun:你|祢}}\" in verses 1-2",
+          "alternatives": [
+            "—"
+          ],
+          "reason": "The psalm turns from speaking to God to speaking of him (m2); Chinese follows the change of person, as the English does.",
           "uncertain": false,
           "footnote": false
         }
@@ -1524,6 +1623,11 @@
           "L": "na ginagawang hangin ang {{deity_pronoun:kaniyang|Kaniyang}} mga sugo, \\q ang {{deity_pronoun:kaniyang|Kaniyang}} mga lingkod na naglalagablab na apoy.",
           "B": "na ginagawang {{deity_pronoun:kaniyang|Kaniyang}} mga sugo ang mga hangin \\q at {{deity_pronoun:kaniyang|Kaniyang}} mga lingkod ang mga liyab ng apoy.",
           "R": "Isinusugo niya ang mga hangin bilang {{deity_pronoun:kaniyang|Kaniyang}} mga mensahero. \\q Naglilingkod sa {{deity_pronoun:kaniya|Kaniya}} ang naglalagablab na apoy."
+        },
+        "zh": {
+          "L": "使{{deity_pronoun:他|祂}}的使者成为风， \\q 使{{deity_pronoun:他|祂}}的仆役成为火焰。",
+          "B": "以风为{{deity_pronoun:他|祂}}的使者， \\q 以火焰为{{deity_pronoun:他|祂}}的仆役。",
+          "R": "{{divine_name:上主|雅威}}差遣风作{{deity_pronoun:他|祂}}的使者。 \\q 熊熊的火焰事奉{{deity_pronoun:他|祂}}。"
         }
       },
       "decisions": [
@@ -1772,6 +1876,47 @@
           "reason": "A blazing fire: lightning (m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191040040021",
+            "o191040040041"
+          ],
+          "choice": "\"使{{deity_pronoun:他|祂}}的……成为风，使{{deity_pronoun:他|祂}}的仆役成为火焰\" (L)",
+          "alternatives": [
+            "天使"
+          ],
+          "reason": "Hebrews 1:7 quotes the verse in the Literal's order, and its Chinese wording is kept there; Literal says \"使者\" for the messengers, as the English Literal does, where Hebrews has \"天使\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o191040040021",
+            "o191040040031"
+          ],
+          "choice": "\"以风为{{deity_pronoun:他|祂}}的使者\" (B); \"差遣风作{{deity_pronoun:他|祂}}的使者\" (R)",
+          "alternatives": [
+            "使{{deity_pronoun:他|祂}}的天使成为风"
+          ],
+          "reason": "Balanced and Readable read the line as the English Balanced and Readable do: God makes the winds his messengers (m1). Hebrews 1:7 has the other order, from the Greek.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft",
@@ -1965,6 +2110,11 @@
           "L": "Itinatag niya ang lupa sa mga saligan nito; \\q hindi ito matitinag magpakailanman.",
           "B": "Inilagay niya ang lupa sa mga patungan nito, \\q na hindi kailanman maibubuwal, sa lahat ng panahong darating.",
           "R": "Itinayo niya ang lupa sa matibay na saligan. \\q Wala nang makapagpapagalaw dito kailanman."
+        },
+        "zh": {
+          "L": "把大地安置在它的根基上， \\q 它永永远远不会摇动。",
+          "B": "把大地固定在它的根基上， \\q 让它永远不会倾倒。",
+          "R": "{{divine_name:上主|雅威}}把大地建造在坚固的基础上。 \\q 什么也不能使它移动。"
         }
       },
       "decisions": [
@@ -2000,6 +2150,27 @@
           "choice": "\"saligan\"",
           "alternatives": [],
           "reason": "The earth on foundations (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o191040050011"
+          ],
+          "choice": "no subject (L, B); \"{{divine_name:上主|雅威}}\" (R)",
+          "alternatives": [
+            "他"
+          ],
+          "reason": "The English starts with an unspanned \"He\"; Literal and Balanced carry God on as the subject, and Readable names the LORD.",
           "uncertain": false,
           "footnote": false
         }
@@ -2211,6 +2382,11 @@
           "L": "[Ng] kalaliman na gaya [ng] damit ay tinakpan {{deity_pronoun:mo|Mo}} ito; \\q sa itaas ng mga bundok ay nakatayo ang mga tubig.",
           "B": "Ang kalaliman ang balabal na ipinatong {{deity_pronoun:mo|Mo}} rito; \\q tumaas ang mga tubig at tumayo sa itaas ng mga bundok.",
           "R": "Tinakpan mo ang lupa ng malalim na tubig na parang kumot. \\q Mas mataas ang tubig kaysa sa mga bundok."
+        },
+        "zh": {
+          "L": "{{deity_pronoun:你|祢}}用深渊遮盖它，如同用衣服； \\q 水立在群山之上。",
+          "B": "深渊是{{deity_pronoun:你|祢}}盖在它上面的袍子； \\q 众水涨起，高过群山。",
+          "R": "深水覆盖了大地，好像盖着被子。 \\q 水比山还高。"
         }
       },
       "decisions": [
@@ -2575,6 +2751,11 @@
           "L": "Sa {{deity_pronoun:iyong|Iyong}} saway ay tumakas ang mga iyon; \\q sa tunog ng {{deity_pronoun:iyong|Iyong}} kulog ay nagmadali silang umalis,",
           "B": "Nang sawayin {{deity_pronoun:mo|Mo}} ang mga iyon, tumakbo ang mga tubig; \\q sa dagundong ng {{deity_pronoun:iyong|Iyong}} kulog ay nagmamadali silang umalis,",
           "R": "Sinigawan mo ang mga tubig, at tumakbo ang mga iyon. \\q Nang marinig nila ang {{deity_pronoun:iyong|Iyong}} kulog, nagmadali silang umalis."
+        },
+        "zh": {
+          "L": "因{{deity_pronoun:你|祢}}的斥责，它们逃跑； \\q 因{{deity_pronoun:你|祢}}雷轰的声音，它们急忙奔逃，",
+          "B": "{{deity_pronoun:你|祢}}一斥责，众水就逃跑； \\q {{deity_pronoun:你|祢}}的雷声一响，它们就急忙退去，",
+          "R": "一声大喝，众水就逃跑了。 \\q 它们听见{{deity_pronoun:你|祢}}的雷声，就急忙退去。"
         }
       },
       "decisions": [
@@ -2897,6 +3078,11 @@
           "L": "umakyat sila sa mga bundok, bumaba sila sa mga lambak, \\q sa lugar na itinatag {{deity_pronoun:mo|Mo}} para sa kanila.",
           "B": "umakyat sila sa mga bundok at bumaba sa mga lambak, \\q sa lugar na itinakda {{deity_pronoun:mo|Mo}} para sa kanila.",
           "R": "Umagos ang tubig sa ibabaw ng mga bundok at pababa sa mga lambak, \\q sa lugar na ginawa {{deity_pronoun:mo|Mo}} para rito."
+        },
+        "zh": {
+          "L": "它们越过群山，下到山谷， \\q 去到{{deity_pronoun:你|祢}}为它们所奠定的地方。",
+          "B": "它们漫过山岭，流入山谷， \\q 到了{{deity_pronoun:你|祢}}为它们定好的地方。",
+          "R": "水流过山岭，流进山谷， \\q 流到{{deity_pronoun:你|祢}}为它安排的地方。"
         }
       },
       "decisions": [
@@ -3019,6 +3205,30 @@
           "choice": "\"sa lugar na itinatag {{deity_pronoun:mo|Mo}} para sa kanila\"",
           "alternatives": [],
           "reason": "The place you founded for them: the seas (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191040080011",
+            "o191040080021",
+            "o191040080031",
+            "o191040080041"
+          ],
+          "choice": "the waters go up the mountains and down the valleys",
+          "alternatives": [
+            "山升上，谷沉下"
+          ],
+          "reason": "The meaning decision reads the waters as the subject (m1).",
           "uncertain": false,
           "footnote": false
         }
@@ -3238,6 +3448,11 @@
           "L": "Isang hangganan ang inilagay {{deity_pronoun:mo|Mo}} [na] hindi nila tatawirin; \\q hindi na sila babalik upang takpan ang lupa.",
           "B": "Naglagay ka ng hangganang hindi nila malalampasan; \\q hindi na sila babalik upang takpan ang lupain.",
           "R": "Gumuhit ka ng linyang hindi matatawid ng tubig. \\q Hindi na nito kailanman babahain ang buong lupa."
+        },
+        "zh": {
+          "L": "{{deity_pronoun:你|祢}}设下它们不能越过的界线； \\q 它们不能再回来淹没大地。",
+          "B": "设定了它们不可越过的界限； \\q 它们不会再回来覆盖大地。",
+          "R": "划了一条水不能越过的界线。 \\q 水再也不会淹没整个大地。"
         }
       },
       "decisions": [
@@ -3481,6 +3696,11 @@
           "L": "[Ikaw ang] nagpapadaloy ng mga bukal sa mga lambak; \\q sa pagitan ng mga bundok sila umaagos.",
           "B": "Pinakakawalan mo ang mga bukal sa mga daluyan ng batis; \\q nakahahanap sila ng daan sa pagitan ng mga bundok.",
           "R": "Pinaaagos mo ang mga bukal ng tubig sa mga lambak. \\q Umaagos ang tubig pababa sa pagitan ng mga burol."
+        },
+        "zh": {
+          "L": "那使泉源涌入谷中的， \\q [泉水]就在群山之间流淌。",
+          "B": "使泉水奔流到溪谷里， \\q 在群山之间蜿蜒流淌。",
+          "R": "使泉水流进山谷。 \\q 水从山间流下来。"
         }
       },
       "decisions": [
@@ -3627,6 +3847,27 @@
           "choice": "\"[Ikaw ang] nagpapadaloy\"",
           "alternatives": [],
           "reason": "The one who sends: God, spoken to (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o191040100012"
+          ],
+          "choice": "no pronoun for the subject",
+          "alternatives": [
+            "[你是]"
+          ],
+          "reason": "The English supplies an unspanned \"You (are)\" (m2); Chinese carries God, spoken to in verses 6-9, on as the subject.",
           "uncertain": false,
           "footnote": false
         }
@@ -3838,6 +4079,11 @@
           "L": "Pinaiinom nila ang bawat hayop sa parang; \\q pinapawi ng mga mailap na asno ang kanilang uhaw.",
           "B": "Umiinom sa kanila ang bawat nilalang sa kaparangan; \\q doon pinapawi ng mga mailap na asno ang kanilang uhaw.",
           "R": "Umiinom sa kanila ang lahat ng mababangis na hayop. \\q Pati ang mga mailap na asno ay nakasusumpong doon ng tubig na maiinom."
+        },
+        "zh": {
+          "L": "它们给田野所有的动物喝水； \\q 野驴解了它们的渴。",
+          "B": "旷野的各种动物都从泉中喝水； \\q 野驴在那里止渴。",
+          "R": "所有的野生动物都来喝水。 \\q 连野驴也在那里找到水喝。"
         }
       },
       "decisions": [
@@ -4157,6 +4403,11 @@
           "L": "Sa tabi nila ay naninirahan ang mga ibon sa himpapawid; \\q mula sa gitna ng mga dahon ay itinataas nila [ang kanilang] tinig.",
           "B": "Malapit sa kanila ay dumadapo ang mga ibon sa himpapawid \\q at humuhuni mula sa madahong mga sanga.",
           "R": "Gumagawa ng pugad ang mga ibon malapit sa mga batis. \\q Umaawit sila mula sa mga sanga ng mga puno."
+        },
+        "zh": {
+          "L": "天空的飞鸟在它们旁边栖息， \\q 在枝叶中发出[它们的]声音。",
+          "B": "空中的鸟儿在溪边栖落， \\q 在繁茂的枝头鸣叫。",
+          "R": "鸟儿在溪水旁边做窝， \\q 在树枝上唱歌。"
         }
       },
       "decisions": [
@@ -4429,6 +4680,11 @@
           "L": "Dinidilig niya ang mga bundok mula sa {{deity_pronoun:kaniyang|Kaniyang}} mga silid sa itaas; \\q sa bunga ng {{deity_pronoun:iyong|Iyong}} mga gawa ay nabubusog ang lupa.",
           "B": "Mula sa {{deity_pronoun:kaniyang|Kaniyang}} mga silid sa kaitaasan ay dinidilig {{deity_pronoun:niya|Niya}} ang mga bundok, \\q at nabubusog ang lupa sa bunga ng {{deity_pronoun:iyong|Iyong}} gawa.",
           "R": "Mula sa {{deity_pronoun:kaniyang|Kaniyang}} tahanan sa itaas ay nagpapaulan ang Diyos sa mga bundok. \\q Napupuno ang lupa ng mabubuting bagay na ginawa {{deity_pronoun:mo|Mo}}."
+        },
+        "zh": {
+          "L": "从{{deity_pronoun:他|祂}}的楼阁浇灌群山， \\q 大地因{{deity_pronoun:你|祢}}工作的果实而饱足。",
+          "B": "{{deity_pronoun:他|祂}}从高处的居所浇灌群山， \\q 大地因{{deity_pronoun:你|祢}}作为的果实而饱足。",
+          "R": "{{god_term:神|上帝}}从{{deity_pronoun:他|祂}}在天上的居所降雨在群山上。 \\q 大地充满了{{deity_pronoun:你|祢}}所造的美好事物。"
         }
       },
       "decisions": [
@@ -4661,6 +4917,28 @@
           "reason": "His, your: speaking of God and to God (m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191040130032",
+            "o191040130052"
+          ],
+          "choice": "\"{{deity_pronoun:他|祂}}\" then \"{{deity_pronoun:你|祢}}\"",
+          "alternatives": [
+            "—"
+          ],
+          "reason": "The verse speaks of God and then to God (m3); Chinese keeps the change of person.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft",
@@ -4888,6 +5166,11 @@
           "L": "Pinatutubo niya ang damo para sa mga baka, at ang mga halaman para sa paggawa ng tao, \\q upang maglabas ng tinapay mula sa lupa,",
           "B": "Pinasisibol niya ang damo para sa mga kawan at mga halamang aalagaan ng mga tao, \\q upang lumabas ang pagkain mula sa lupa,",
           "R": "Pinatutubo niya ang damo para sa mga baka. Nagbibigay siya ng mga halaman na itatanim ng mga tao sa kanilang bukid, \\q upang makakuha sila ng pagkain mula sa lupa."
+        },
+        "zh": {
+          "L": "使青草生长给牲畜吃，使菜蔬[生长]供人耕种， \\q 好从地里生出粮食，",
+          "B": "使青草为牛群长出，使植物生长让人栽种， \\q 好让食物从地里出来，",
+          "R": "{{divine_name:上主|雅威}}让青草长出来给牛吃，也给人各种植物在田里种植， \\q 好让人从地里得到食物。"
         }
       },
       "decisions": [
@@ -5048,6 +5331,25 @@
           "choice": "\"mula sa lupa,\"",
           "alternatives": [],
           "reason": "A sentence that runs on (m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191040140081"
+          ],
+          "choice": "\"粮食\" (L); \"食物\" (B, R)",
+          "alternatives": [
+            "饼"
+          ],
+          "reason": "Bread here means food (m2).",
           "uncertain": false,
           "footnote": false
         }
@@ -5319,6 +5621,11 @@
           "L": "at ng alak [na] nagpapasaya sa puso ng tao, \\q upang pakinangin ng langis ang mukha, \\q at ng tinapay [na] nagpapalakas sa puso ng tao.",
           "B": "ang alak na nagdudulot ng kagalakan sa puso ng tao, \\q ang langis na nagpapakinang sa mga mukha, \\q at ang tinapay na nagpapanatiling malakas sa mga tao.",
           "R": "Nagbibigay siya ng alak na nagpapasaya sa mga tao, \\q ng langis ng olibo na nagpapakinang sa kanilang mukha, \\q at ng tinapay na nagbibigay sa kanila ng lakas."
+        },
+        "zh": {
+          "L": "又有酒使人心欢喜， \\q 使人的脸因油发光， \\q 又有粮食坚固人心。",
+          "B": "有酒使人心快乐， \\q 有油使人脸上发光， \\q 有粮食使人有力量。",
+          "R": "{{divine_name:上主|雅威}}赐下酒，使人快乐， \\q 赐下橄榄油，使他们的脸发亮， \\q 又赐下食物，使他们有力气。"
         }
       },
       "decisions": [
@@ -5706,6 +6013,11 @@
           "L": "Nabubusog ang mga punungkahoy {{divine_name:ng PANGINOON|ni Yahweh}}, \\q ang mga sedro sa Lebanon na itinanim {{deity_pronoun:niya|Niya}},",
           "B": "May sapat na tubig ang lahat ng punungkahoy {{divine_name:ng PANGINOON|ni Yahweh}}, \\q ang mga sedrong itinanim {{deity_pronoun:niya|Niya}} sa Lebanon,",
           "R": "Binibigyan {{divine_name:ng PANGINOON|ni Yahweh}} ng saganang tubig ang malalaking punong itinanim {{deity_pronoun:niya|Niya}}, \\q ang mga sedro sa Lebanon."
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}的树木都饱足， \\q 就是{{deity_pronoun:他|祂}}所栽种的黎巴嫩香柏树。",
+          "B": "{{divine_name:上主|雅威}}的树木水分充足， \\q 就是{{deity_pronoun:他|祂}}栽在黎巴嫩的香柏树。",
+          "R": "{{divine_name:上主|雅威}}给{{deity_pronoun:他|祂}}所栽种的大树充足的水， \\q 就是黎巴嫩的香柏树。"
         }
       },
       "decisions": [
@@ -6041,6 +6353,11 @@
           "L": "na doon gumagawa ng pugad ang mga ibon; \\q ang tagak, mga puno ng abeto [ang] tahanan nito.",
           "B": "kung saan gumagawa ng pugad ang mga ibon, \\q at nakatira ang tagak sa mataas na mga puno ng sipres.",
           "R": "Gumagawa ng pugad ang mga ibon sa mga iyon. \\q Nakatira ang mga tagak sa matataas na puno ng sipres."
+        },
+        "zh": {
+          "L": "鸟儿在那里筑巢； \\q 鹳鸟——以松树为它的居所。",
+          "B": "鸟儿在那里筑巢， \\q 鹳鸟住在高高的柏树上。",
+          "R": "鸟儿在树上做窝。 \\q 鹳鸟住在高高的柏树上。"
         }
       },
       "decisions": [
@@ -6216,6 +6533,27 @@
           "alternatives": [],
           "reason": "Fir trees: tall evergreens (m2).",
           "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191040170061"
+          ],
+          "choice": "\"松树\" (L); \"柏树\" (B, R)",
+          "alternatives": [
+            "—"
+          ],
+          "reason": "Tall evergreens (m2), as the English levels have fir (L) and cypress (B, R).",
+          "uncertain": true,
           "footnote": false
         }
       ],
@@ -6415,6 +6753,11 @@
           "L": "Ang mga bundok, ang matataas, [ay] para sa mga mailap na kambing; \\q [ang] mga bangin [ay] kanlungan ng mga koneho sa bato.",
           "B": "Sa mga mailap na kambing ang matataas na bundok, \\q at kumukubli ang mga koneho sa bato sa mga bangin.",
           "R": "Nakatira ang mga mailap na kambing sa matataas na bundok. \\q Ang maliliit na hayop na tinatawag na koneho sa bato ay nagtatago sa gitna ng mga bato."
+        },
+        "zh": {
+          "L": "群山，那些高的，属于野山羊； \\q 岩石作蹄兔的避难所。",
+          "B": "野山羊拥有高高的群山， \\q 蹄兔在岩石间藏身。",
+          "R": "野山羊住在高山上。 \\q 一种叫岩獾的小动物躲在岩石中间。"
         }
       },
       "decisions": [
@@ -6698,6 +7041,27 @@
           "reason": "Hyraxes: small animals of the rocks (m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191040180062"
+          ],
+          "choice": "\"蹄兔\" (L, B); \"一种叫岩獾的小动物\" (R)",
+          "alternatives": [
+            "沙番"
+          ],
+          "reason": "The hyrax (m2): \"蹄兔\" is its modern Chinese name; Readable uses a plainer name and says what it is, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft",
@@ -6896,6 +7260,11 @@
           "L": "Ginawa niya ang buwan para sa mga takdang panahon; \\q alam ng araw ang paglubog nito.",
           "B": "Ginawa niya ang buwan para sa pagdiriwang ng mga kapistahan at mga panahon; \\q alam ng araw ang oras ng paglubog nito.",
           "R": "Ginawa niya ang buwan upang ipakita kung kailan darating ang mga kapistahan. \\q Alam ng araw kung kailan ito dapat lumubog."
+        },
+        "zh": {
+          "L": "造了月亮来定时节， \\q 太阳知道它何时落下。",
+          "B": "造了月亮，以定节期和季节； \\q 太阳知道它该落下的时刻。",
+          "R": "{{divine_name:上主|雅威}}造了月亮，好让人知道节期什么时候来到。 \\q 太阳知道什么时候该落下。"
         }
       },
       "decisions": [
@@ -7225,6 +7594,11 @@
           "L": "Gumagawa ka ng kadiliman, at nagiging gabi; \\q doon gumagapang ang bawat hayop sa gubat.",
           "B": "Nagpapadala ka ng dilim, dumarating ang gabi, \\q at palihim na lumalabas ang bawat hayop sa kagubatan.",
           "R": "Pinadidilim mo, at dumarating ang gabi. \\q Pagkatapos ay lumalabas at gumagala ang lahat ng hayop sa gubat."
+        },
+        "zh": {
+          "L": "造出黑暗，就成了夜晚， \\q 树林里的各种动物都在夜里悄悄走动。",
+          "B": "黑暗降下，夜晚来临， \\q 森林中的每种动物都悄悄出来。",
+          "R": "天黑了，夜晚来了。 \\q 森林里所有的动物都出来走动。"
         }
       },
       "decisions": [
@@ -7481,6 +7855,11 @@
           "L": "Umaatungal ang mga batang leon para sa biktima, \\q at upang hanapin sa Diyos ang kanilang pagkain.",
           "B": "Umaatungal ang mga batang leon habang nangangaso, \\q na humihingi sa Diyos ng kanilang pagkain.",
           "R": "Umaatungal ang mga batang leon habang nangangaso. \\q Humihingi sila ng pagkain sa Diyos."
+        },
+        "zh": {
+          "L": "幼壮的狮子为猎物咆哮， \\q 要从{{god_term:神|上帝}}那里寻找它们的食物。",
+          "B": "幼壮的狮子一面猎食一面吼叫， \\q 向{{god_term:神|上帝}}求它们的饭食。",
+          "R": "年轻的狮子一边打猎一边吼叫。 \\q 它们在向{{god_term:神|上帝}}要食物。"
         }
       },
       "decisions": [
@@ -7801,6 +8180,11 @@
           "L": "Sumisikat ang araw; \\q umuurong sila, at sa kanilang mga lungga ay nahihiga sila.",
           "B": "Pagsikat ng araw ay sama-sama silang umuurong \\q at nagpapahinga sa kanilang mga lungga.",
           "R": "Kapag sumikat ang araw, \\q umuuwi sila at natutulog sa kanilang mga lungga."
+        },
+        "zh": {
+          "L": "太阳升起， \\q 它们就聚集退回，在它们的窝里躺下。",
+          "B": "日出的时候，它们一同退回， \\q 在自己的窝里安歇。",
+          "R": "太阳出来的时候， \\q 它们就回家，在窝里睡觉。"
         }
       },
       "decisions": [
@@ -8020,6 +8404,11 @@
           "L": "Lumalabas ang tao sa kaniyang gawain \\q at sa kaniyang pagpapagal hanggang sa gabi.",
           "B": "Saka lumalabas ang mga tao sa kanilang trabaho \\q at nagpapatuloy sa kanilang mga gawain hanggang gabi.",
           "R": "Saka lumalabas ang mga tao upang magtrabaho. \\q Ginagawa nila ang kanilang trabaho hanggang sa gabi."
+        },
+        "zh": {
+          "L": "人出门去做自己的工， \\q 干自己的活，直到傍晚。",
+          "B": "于是人们出去工作， \\q 一直忙到傍晚。",
+          "R": "然后人们出去工作。 \\q 他们做自己的事，一直到傍晚。"
         }
       },
       "decisions": [
@@ -8212,6 +8601,25 @@
           "choice": "\"hanggang sa gabi\"",
           "alternatives": [],
           "reason": "The day for people, the night for animals (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191040230021"
+          ],
+          "choice": "\"人\", \"自己\" with no gender span (L)",
+          "alternatives": [
+            "—"
+          ],
+          "reason": "The English Literal spans \"a person / man\" and \"their / his\"; Chinese \"人\" and \"自己\" already mean anyone (m1), so no span is needed.",
           "uncertain": false,
           "footnote": false
         }
@@ -8416,6 +8824,11 @@
           "L": "Kay rami ng {{deity_pronoun:iyong|Iyong}} mga gawa, {{divine_name:PANGINOON|Yahweh}}! Ang lahat ng iyon ay ginawa {{deity_pronoun:mo|Mo}} sa karunungan; \\q puno ang lupa ng {{deity_pronoun:iyong|Iyong}} mga pag-aari.",
           "B": "{{divine_name:PANGINOON|Yahweh}}, kay rami at kay iba-iba ng {{deity_pronoun:iyong|Iyong}} mga gawa! Ginawa mo ang lahat ng iyon nang may husay at karunungan; \\q punong-puno ang lupa ng mga ginawa {{deity_pronoun:mo|Mo}}.",
           "R": "{{divine_name:PANGINOON|Yahweh}}, napakaraming bagay ang ginawa {{deity_pronoun:mo|Mo}}! Ginawa mo ang lahat ng iyon nang may dakilang karunungan. \\q Puno ang lupa ng mga nilalang na ginawa {{deity_pronoun:mo|Mo}}."
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}啊，{{deity_pronoun:你|祢}}的作品真是众多！它们全是{{deity_pronoun:你|祢}}凭智慧所造； \\q 大地满是{{deity_pronoun:你|祢}}的所有物。",
+          "B": "{{divine_name:上主|雅威}}啊，{{deity_pronoun:你|祢}}的作为何等繁多，何等多样！全都是凭技巧和智慧造成的； \\q 大地挤满了{{deity_pronoun:你|祢}}所造的一切。",
+          "R": "{{divine_name:上主|雅威}}啊，{{deity_pronoun:你|祢}}造了这么多东西！全都是用极大的智慧造的。 \\q 大地充满了{{deity_pronoun:你|祢}}所造的生物。"
         }
       },
       "decisions": [
@@ -8801,6 +9214,11 @@
           "L": "Narito ang dagat, malaki at malawak sa magkabilang kamay; \\q naroon ang mga gumagalaw na hindi mabilang, \\q mga buháy na nilalang, maliliit at malalaki.",
           "B": "Tingnan ang dagat, napakalawak at umaabot sa bawat panig! \\q Punong-puno ito ng di-mabilang na mga nilalang, \\q mga buháy na bagay, maliliit at napakalalaki.",
           "R": "Tingnan ang dagat! Napakalaki at napakalawak nito. \\q Puno ito ng mga buháy na nilalang na higit pa sa kayang bilangin ninuman, \\q maliliit man at malalaki."
+        },
+        "zh": {
+          "L": "这是海，又大又宽阔，向两边伸展； \\q 那里有爬动的东西，不可胜数， \\q 有小的活物，也有大的。",
+          "B": "看那海，多么浩瀚，向四面八方伸展！ \\q 其中挤满了数不清的生物， \\q 有极小的，也有庞大的。",
+          "R": "看那大海！它又大又宽。 \\q 海里的生物多得数不清， \\q 有小的，也有大的。"
         }
       },
       "decisions": [
@@ -9205,6 +9623,11 @@
           "L": "Naroon naglalayag ang mga barko; \\q ang Leviatan, ito ay hinubog {{deity_pronoun:mo|Mo}} upang maglaro roon.",
           "B": "Naglalayag doon ang mga barko, \\q gayundin ang Leviatan, ang nilalang na hinubog {{deity_pronoun:mo|Mo}} upang maglaro sa mga alon nito.",
           "R": "Naglalayag dito ang mga barko. \\q Naroon din ang dakilang halimaw sa dagat na si Leviatan. Ginawa mo ito upang maglaro sa dagat."
+        },
+        "zh": {
+          "L": "船只在那里往来； \\q 还有利维坦，就是{{deity_pronoun:你|祢}}所造、要在海中嬉戏的。",
+          "B": "船只在海面航行， \\q 利维坦也在那里，就是{{deity_pronoun:你|祢}}所造、在浪中嬉戏的生物。",
+          "R": "船在海上航行。 \\q 巨大的海怪利维坦也在那里。你造了它，让它在海里玩耍。"
         }
       },
       "decisions": [
@@ -9437,6 +9860,27 @@
           "reason": "To play in it: in the sea (m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191040260041"
+          ],
+          "choice": "\"利维坦\"",
+          "alternatives": [
+            "鳄鱼"
+          ],
+          "reason": "The great sea creature (m1), named as in Isaiah 27:1; Readable adds what it is, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft",
@@ -9659,6 +10103,11 @@
           "L": "Ang lahat ng iyon ay umaasa sa {{deity_pronoun:iyo|Iyo}} \\q na ibigay [sa kanila] ang kanilang pagkain sa takdang panahon nito.",
           "B": "Ang bawat isa sa kanila ay naghihintay \\q na bigyan {{deity_pronoun:mo|Mo}} sila ng pagkain kapag kailangan nila.",
           "R": "Umaasa ang lahat ng nilalang na ito \\q sa {{deity_pronoun:iyo|Iyo}} upang pakainin sila kapag kailangan nila."
+        },
+        "zh": {
+          "L": "它们都向{{deity_pronoun:你|祢}}盼望， \\q 盼望在适当的时候得到食物。",
+          "B": "它们每一个都在等候， \\q 等{{deity_pronoun:你|祢}}在需要时给它们食物。",
+          "R": "所有这些生物都依靠 \\q {{deity_pronoun:你|祢}}在它们需要的时候喂养它们。"
         }
       },
       "decisions": [
@@ -9959,6 +10408,11 @@
           "L": "Nagbibigay ka sa kanila, tinitipon nila [ito]; \\q binubuksan {{deity_pronoun:mo|Mo}} ang {{deity_pronoun:iyong|Iyong}} kamay, nabubusog sila [ng] mabuti.",
           "B": "Ipinamimigay mo ito at pinupulot nila; \\q binubuksan {{deity_pronoun:mo|Mo}} ang {{deity_pronoun:iyong|Iyong}} kamay, at nabubusog sila sa mabubuting bagay.",
           "R": "Binibigyan mo sila ng pagkain, at tinitipon nila ito. \\q Binubuksan mo ang {{deity_pronoun:iyong|Iyong}} kamay, at marami silang mabubuting bagay na makakain."
+        },
+        "zh": {
+          "L": "一赐下，它们就收集； \\q {{deity_pronoun:你|祢}}一张开{{deity_pronoun:你|祢}}的手，它们就因美好的东西而饱足。",
+          "B": "分发下来，它们就拾取； \\q {{deity_pronoun:你|祢}}张开{{deity_pronoun:你|祢}}的手，它们就饱享美物。",
+          "R": "它们得到食物，就把它收集起来。 \\q {{deity_pronoun:你|祢}}的手一张开，它们就有许多好东西吃。"
         }
       },
       "decisions": [
@@ -10240,6 +10694,11 @@
           "L": "Itinatago {{deity_pronoun:mo|Mo}} ang {{deity_pronoun:iyong|Iyong}} mukha, nasisindak sila; \\q binabawi {{deity_pronoun:mo|Mo}} ang kanilang hininga, nalalagutan sila ng hininga, \\q at sa kanilang alabok sila bumabalik.",
           "B": "Kapag inilayo {{deity_pronoun:mo|Mo}} ang {{deity_pronoun:iyong|Iyong}} mukha, nagugulumihanan sila; \\q kapag binawi {{deity_pronoun:mo|Mo}} ang kanilang hininga, \\q nalalagutan sila ng hininga at bumabalik sa alabok na pinagmulan nila.",
           "R": "Kapag tinalikuran {{deity_pronoun:mo|Mo}} sila, natatakot sila. \\q Kapag kinuha {{deity_pronoun:mo|Mo}} ang kanilang hininga, \\q namamatay sila at muling nagiging alabok."
+        },
+        "zh": {
+          "L": "隐藏{{deity_pronoun:你|祢}}的面，它们就惊惶； \\q {{deity_pronoun:你|祢}}收回它们的气息，它们就断气， \\q 回到它们的尘土中。",
+          "B": "{{deity_pronoun:你|祢}}若转开{{deity_pronoun:你|祢}}的脸，它们就惊慌； \\q {{deity_pronoun:你|祢}}若收回它们的气息， \\q 它们就断了气，回到它们原来的尘土中。",
+          "R": "{{deity_pronoun:你|祢}}若不理它们，它们就害怕。 \\q {{deity_pronoun:你|祢}}若取走它们的气息， \\q 它们就死了，又变回尘土。"
         }
       },
       "decisions": [
@@ -10670,6 +11129,11 @@
           "L": "Isinusugo {{deity_pronoun:mo|Mo}} ang {{deity_pronoun:iyong|Iyong}} espiritu, nalilikha sila, \\q at binabago {{deity_pronoun:mo|Mo}} ang mukha ng lupa.",
           "B": "Kapag isinugo {{deity_pronoun:mo|Mo}} ang {{deity_pronoun:iyong|Iyong}} espiritu, nagkakaroon sila ng buhay, \\q at pinababago {{deity_pronoun:mo|Mo}} ang mukha ng lupain.",
           "R": "Pagkatapos ay isinusugo {{deity_pronoun:mo|Mo}} ang {{deity_pronoun:iyong|Iyong}} hininga ng buhay, at nalilikha ang mga bagong nilalang. \\q Ginagawa mong sariwa at bago muli ang lupain."
+        },
+        "zh": {
+          "L": "差出{{deity_pronoun:你|祢}}的灵，它们就被造成； \\q 并且{{deity_pronoun:你|祢}}更新大地的面貌。",
+          "B": "{{deity_pronoun:你|祢}}一差出{{deity_pronoun:你|祢}}的灵，它们就有了生命， \\q {{deity_pronoun:你|祢}}使大地的面貌焕然一新。",
+          "R": "然后{{deity_pronoun:你|祢}}送出{{deity_pronoun:你|祢}}生命的气息，新的生物就被造出来。 \\q 大地又变得清新。"
         }
       },
       "decisions": [
@@ -10878,6 +11342,26 @@
           "choice": "\"nalilikha sila\"",
           "alternatives": [],
           "reason": "They are created: new life comes (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191040300021"
+          ],
+          "choice": "\"{{deity_pronoun:你|祢}}的灵\" (L, B); \"{{deity_pronoun:你|祢}}生命的气息\" (R)",
+          "alternatives": [
+            "—"
+          ],
+          "reason": "God's life-giving breath (m1); Readable keeps the link with \"breath\" in verse 29, as the English Readable does.",
           "uncertain": false,
           "footnote": false
         }
@@ -11103,6 +11587,11 @@
           "L": "Manatili nawa magpakailanman ang kaluwalhatian {{divine_name:ng PANGINOON|ni Yahweh}}; \\q magalak nawa {{divine_name:ang PANGINOON|si Yahweh}} sa {{deity_pronoun:kaniyang|Kaniyang}} mga gawa,",
           "B": "Manatili nawa magpakailanman ang kaluwalhatian {{divine_name:ng PANGINOON|ni Yahweh}}; \\q matuwa nawa {{divine_name:ang PANGINOON|si Yahweh}} sa mga bagay na ginawa {{deity_pronoun:niya|Niya}},",
           "R": "Manatili nawa magpakailanman ang kaluwalhatian {{divine_name:ng PANGINOON|ni Yahweh}}! \\q Maging masaya nawa {{divine_name:ang PANGINOON|si Yahweh}} sa lahat ng ginawa {{deity_pronoun:niya|Niya}}."
+        },
+        "zh": {
+          "L": "愿{{divine_name:上主|雅威}}的荣耀永远长存； \\q 愿{{divine_name:上主|雅威}}以{{deity_pronoun:他|祂}}的作为为乐，",
+          "B": "愿{{divine_name:上主|雅威}}的荣耀永远坚立； \\q 愿{{divine_name:上主|雅威}}因{{deity_pronoun:他|祂}}所造的而欢喜，",
+          "R": "愿{{divine_name:上主|雅威}}的荣耀直到永远！ \\q 愿{{divine_name:上主|雅威}}因{{deity_pronoun:他|祂}}所造的一切而快乐。"
         }
       },
       "decisions": [
@@ -11432,6 +11921,11 @@
           "L": "na tumitingin sa lupa at ito ay nanginginig; \\q hinihipo {{deity_pronoun:niya|Niya}} ang mga bundok at umuusok ang mga iyon.",
           "B": "na sumusulyap sa lupa at ito ay nayayanig, \\q na humihipo sa mga bundok at nagbubuga ang mga iyon ng usok.",
           "R": "Kapag tumingin {{deity_pronoun:siya|Siya}} sa lupa, nayayanig ito. \\q Kapag hinipo {{deity_pronoun:niya|Niya}} ang mga bundok, nagbubuga ang mga iyon ng usok."
+        },
+        "zh": {
+          "L": "那位看大地，大地就震动的； \\q {{deity_pronoun:他|祂}}一触碰群山，群山就冒出烟来。",
+          "B": "只要望一眼大地，大地就震动； \\q 只要触摸群山，群山就冒烟。",
+          "R": "{{deity_pronoun:他|祂}}看着大地，大地就摇动。 \\q {{deity_pronoun:他|祂}}一碰群山，山就冒出烟来。"
         }
       },
       "decisions": [
@@ -11747,6 +12241,11 @@
           "L": "Aawit ako {{divine_name:sa PANGINOON|kay Yahweh}} habang ako ay nabubuhay; \\q tutugtog ako para sa aking Diyos habang ako ay [naririto pa].",
           "B": "Sa buong buhay ko ay aawit ako {{divine_name:sa PANGINOON|kay Yahweh}}; \\q habang naririto pa ako ay tutugtog ako para sa aking Diyos.",
           "R": "Sa buong buhay ko ay aawit ako {{divine_name:sa PANGINOON|kay Yahweh}}. \\q Tutugtog ako para sa aking Diyos hangga't ako ay nabubuhay."
+        },
+        "zh": {
+          "L": "我要在我的生命中向{{divine_name:上主|雅威}}歌唱； \\q 只要我还存在，我就向我的{{god_term:神|上帝}}奏乐。",
+          "B": "我一辈子都要向{{divine_name:上主|雅威}}歌唱； \\q 只要我还在世，我就要向我的{{god_term:神|上帝}}奏乐。",
+          "R": "我一生一世都要向{{divine_name:上主|雅威}}唱歌。 \\q 只要我活着，我就要为我的{{god_term:神|上帝}}奏乐。"
         }
       },
       "decisions": [
@@ -11990,6 +12489,11 @@
           "L": "Maging kalugud-lugod nawa sa {{deity_pronoun:kaniya|Kaniya}} ang aking pagbubulay; \\q ako, ako ay magagalak {{divine_name:sa PANGINOON|kay Yahweh}}.",
           "B": "Magdulot nawa sa {{deity_pronoun:kaniya|Kaniya}} ng kasiyahan ang aking pinagbubulayan; \\q sa ganang akin, ang aking kagalakan ay {{divine_name:sa PANGINOON|kay Yahweh}}.",
           "R": "Umaasa akong nalulugod {{deity_pronoun:siya|Siya}} sa sinasabi ko tungkol sa {{deity_pronoun:kaniya|Kaniya}}. \\q Pinasasaya ako {{divine_name:ng PANGINOON|ni Yahweh}}."
+        },
+        "zh": {
+          "L": "愿我的默想使{{deity_pronoun:他|祂}}喜悦； \\q 至于我，我要在{{divine_name:上主|雅威}}里喜乐。",
+          "B": "愿我所思想的令{{deity_pronoun:他|祂}}喜悦； \\q 至于我，我的喜乐在于{{divine_name:上主|雅威}}。",
+          "R": "我希望{{deity_pronoun:他|祂}}喜欢我所说关于{{deity_pronoun:他|祂}}的话。 \\q {{divine_name:上主|雅威}}使我快乐。"
         }
       },
       "decisions": [
@@ -12319,6 +12823,11 @@
           "L": "Mawala nawa sa lupa ang mga makasalanan, at ang masasama ay mawala na. \\q Purihin mo {{divine_name:ang PANGINOON|si Yahweh}}, O kaluluwa ko. Purihin {{divine_name:ang PANGINOON|si Yah}}.",
           "B": "Mapuksa nawa sa lupa ang mga makasalanan, at wala nang matirang masama. \\q Purihin mo {{divine_name:ang PANGINOON|si Yahweh}}, O kaluluwa ko. Purihin {{divine_name:ang PANGINOON|si Yah}}!",
           "R": "Mawala nawa sa lupa ang mga makasalanan. Mawala na nawa ang masasamang tao. \\q Sa buo kong pagkatao ay pinupuri ko {{divine_name:ang PANGINOON|si Yahweh}}. Purihin {{divine_name:ang PANGINOON|si Yah}}!"
+        },
+        "zh": {
+          "L": "愿罪人在地上灭尽，恶人也不再有。 \\q 我的灵魂哪，要称颂{{divine_name:上主|雅威}}。你们要赞美{{divine_name:上主|雅}}。",
+          "B": "愿罪人从地上被除灭，愿恶人一个也不留。 \\q 我的灵魂啊，称颂{{divine_name:上主|雅威}}吧。你们要赞美{{divine_name:上主|雅}}！",
+          "R": "愿罪人从地上消失，愿再也没有坏人。 \\q 我要用我的全部生命赞美{{divine_name:上主|雅威}}。要赞美{{divine_name:上主|雅}}！"
         }
       },
       "decisions": [
@@ -12724,6 +13233,49 @@
           "choice": "\"Purihin mo {{divine_name:ang PANGINOON|si Yahweh}}, O kaluluwa ko\"",
           "alternatives": [],
           "reason": "The psalm ends as it began (m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191040350121",
+            "o191040350131"
+          ],
+          "choice": "\"你们要赞美{{divine_name:上主|雅}}\" (L, B); \"要赞美{{divine_name:上主|雅}}\" (R)",
+          "alternatives": [
+            "哈利路亚"
+          ],
+          "reason": "The glossary's form for Hallelu-yah (m2), with Yah in the divine_name span.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191040350052"
+          ],
+          "choice": "\"恶人\" (L, B); \"坏人\" (R)",
+          "alternatives": [
+            "—"
+          ],
+          "reason": "The Psalter's forms for the wicked, set in Psalms 1-14.",
           "uncertain": false,
           "footnote": false
         }

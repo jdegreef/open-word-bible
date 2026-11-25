@@ -100,6 +100,11 @@
           "L": "Isang panalangin ni Moises, ang tao ng Diyos. \\q Panginoon ko, {{deity_pronoun:ikaw|Ikaw}} ay naging tahanan namin \\q sa sali't salinlahi.",
           "B": "Isang panalangin ni Moises, ang tao ng Diyos. \\q Panginoon, {{deity_pronoun:ikaw|Ikaw}} ang naging tahanan namin sa bawat salinlahi.",
           "R": "Isang panalangin ni Moises, ang lingkod ng Diyos. \\q Panginoon, {{deity_pronoun:ikaw|Ikaw}} ang lagi naming naging tahanan, \\q mula sa isang salinlahi hanggang sa susunod."
+        },
+        "zh": {
+          "L": "{{god_term:神|上帝}}的人摩西的祷告。 \\q 我的主啊，{{deity_pronoun:你|祢}}向来是我们的住处， \\q 一代又一代。",
+          "B": "{{god_term:神|上帝}}的人摩西的祷告。 \\q 主啊，代代以来，{{deity_pronoun:你|祢}}都是我们的家。",
+          "R": "{{god_term:神|上帝}}的人摩西作的祷告。 \\q 主啊，{{deity_pronoun:你|祢}}一直是我们的家， \\q 从这一代到下一代。"
         }
       },
       "decisions": [
@@ -545,6 +550,71 @@
           "reason": "Dwelling place: a home and a refuge (m4).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190900010042"
+          ],
+          "choice": "\"{{god_term:神|上帝}}\" in a god_term span (神 by default, 上帝 as the reader's alternative)",
+          "alternatives": [
+            "\"神\" fixed"
+          ],
+          "reason": "Every word naming the one God is written with the Chinese-only god_term setting; the reader can choose 上帝.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190900010061"
+          ],
+          "choice": "\"住处\" (L); \"家\" (B, R)",
+          "alternatives": [
+            "\"居所\""
+          ],
+          "reason": "The word is a dwelling, a home and a shelter (m4). The psalm is drafted afresh from the Hebrew; Literal keeps the plain word for a place to live, Balanced and Readable say \"home\" as the English levels do.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-3",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190900010022",
+            "o190900010031",
+            "o190900010042"
+          ],
+          "choice": "\"{{god_term:神|上帝}}的人摩西\"",
+          "alternatives": [
+            "\"摩西，神的人\""
+          ],
+          "reason": "Chinese puts the title before the name; \"神的人\" is the glossary's form for \"the man of God\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft",
@@ -817,6 +887,11 @@
           "L": "Bago ipinanganak ang mga bundok, \\q at bago {{deity_pronoun:mo|Mo}} iniluwal ang lupa at ang sanlibutan, \\q mula sa walang pasimula hanggang sa walang hanggan ay {{deity_pronoun:ikaw|Ikaw}} [ang] Diyos.",
           "B": "Bago isinilang ang mga bundok, \\q bago {{deity_pronoun:mo|Mo}} ipinanganak sa paghihirap ang lupa at ang buong sanlibutan, \\q mula sa walang katapusang nakaraan hanggang sa walang katapusang hinaharap ay {{deity_pronoun:ikaw|Ikaw}} ang Diyos.",
           "R": "Bago nilikha ang mga bundok, \\q bago {{deity_pronoun:mo|Mo}} pinairal ang lupa at ang sanlibutan, \\q {{deity_pronoun:ikaw|Ikaw}} na ang Diyos. Ikaw ay laging naging Diyos, at lagi {{deity_pronoun:kang|Kang}} magiging Diyos."
+        },
+        "zh": {
+          "L": "在众山出生以前， \\q 在{{deity_pronoun:你|祢}}生出大地和世界以前， \\q 从永远到永远，{{deity_pronoun:你|祢}}[就]是{{god_term:神|上帝}}。",
+          "B": "在群山诞生以前， \\q 在{{deity_pronoun:你|祢}}忍着产痛生出大地和整个世界以前， \\q 从无尽的过去到无尽的将来，{{deity_pronoun:你|祢}}都是{{god_term:神|上帝}}。",
+          "R": "在山岭被造出来以前， \\q 在{{deity_pronoun:你|祢}}使大地和世界出现以前， \\q {{deity_pronoun:你|祢}}就是{{god_term:神|上帝}}。一向如此，{{deity_pronoun:你|祢}}也永远如此。"
         }
       },
       "decisions": [
@@ -1025,6 +1100,25 @@
           "choice": "\"mula sa walang pasimula hanggang sa walang hanggan\"",
           "alternatives": [],
           "reason": "From everlasting to everlasting: without beginning or end (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190900020042"
+          ],
+          "choice": "\"忍着产痛生出\"",
+          "alternatives": [
+            "\"生出\", \"造成\""
+          ],
+          "reason": "The verb is giving birth in labor (m1); Balanced keeps the picture of labor pains, as the English Balanced does.",
           "uncertain": false,
           "footnote": false
         }
@@ -1343,6 +1437,11 @@
           "L": "Ibinabalik {{deity_pronoun:mo|Mo}} ang tao sa alabok, \\q at sinasabi, \"Bumalik kayo, mga anak ni Adan.\"",
           "B": "Pinababalik {{deity_pronoun:mo|Mo}} sa alabok ang mga mortal; \\q sinasabi {{deity_pronoun:mo|Mo}}, \"Bumalik kayo, mga anak ni Adan.\"",
           "R": "Ibinabalik {{deity_pronoun:mo|Mo}} sa alabok ang mga tao. \\q Sinasabi mo, \"Bumalik kayo, kayong mga tao.\""
+        },
+        "zh": {
+          "L": "你使必死的人回到压碎的[尘土]里， \\q 又说：“亚当的子孙哪，回去吧。”",
+          "B": "你让必死的人回到尘土中； \\q {{deity_pronoun:你|祢}}说：“亚当的子孙哪，回去吧。”",
+          "R": "你让人重新变成尘土。 \\q 你说：“人哪，回去吧。”"
         }
       },
       "decisions": [
@@ -1670,6 +1769,48 @@
           "reason": "Return: back to the dust (m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190900030021",
+            "o190900030071",
+            "o190900030081"
+          ],
+          "choice": "\"必死的人\", \"亚当的子孙\", with no gender span",
+          "alternatives": [
+            "\"{{gender:必死的人|人}}\", \"{{gender:亚当的子孙|亚当的儿子}}\""
+          ],
+          "reason": "The English Literal gives inclusive words with \"man\" and \"sons of Adam\" as the alternatives. Chinese \"人\" and \"子孙\" already take in women and men, so no setting is needed (style guide section 8).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190900030011"
+          ],
+          "choice": "\"你\" without a deity_pronoun span",
+          "alternatives": [
+            "\"{{deity_pronoun:你|祢}}\""
+          ],
+          "reason": "Where the English starts a sentence with an unspanned \"You\" for God, Chinese leaves the pronoun plain, so each level has the same pronoun spans as the English level. The same holds through these psalms.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft",
@@ -1904,6 +2045,11 @@
           "L": "Sapagkat ang sanlibong taon sa {{deity_pronoun:iyong|Iyong}} paningin \\q [ay] gaya ng kahapon kapag lumipas na, \\q at [gaya ng] isang pagbabantay sa gabi.",
           "B": "Sapagkat sa {{deity_pronoun:iyong|Iyong}} paningin ang sanlibong taon ay gaya ng kahapon na lumipas na, \\q o gaya ng isang pagbabantay sa gabi.",
           "R": "Para sa {{deity_pronoun:iyo|Iyo}}, ang isang libong taon ay gaya ng isang araw na lumipas na, \\q o gaya ng ilang oras sa gabi."
+        },
+        "zh": {
+          "L": "因为一千年在{{deity_pronoun:你|祢}}眼中 \\q 就像昨天的一日，当它过去之后， \\q 又像夜里守望的一班。",
+          "B": "因为在{{deity_pronoun:你|祢}}眼中，一千年就像昨天，一转眼就过去了， \\q 又像夜里守更的一段时间。",
+          "R": "对{{deity_pronoun:你|祢}}来说，一千年就像已经过去的一天， \\q 又像夜里的几个钟头。"
         }
       },
       "decisions": [
@@ -2113,6 +2259,26 @@
           "choice": "\"sanlibong taon\"",
           "alternatives": [],
           "reason": "A thousand years like a day: 2 Peter 3:8 (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190900040092"
+          ],
+          "choice": "\"守望的一班\" (L); \"守更的一段时间\" (B)",
+          "alternatives": [
+            "\"一更\""
+          ],
+          "reason": "A watch is one of the parts into which the night was divided for the guards (m1); the words say so rather than use the later Chinese night-watch \"更\" alone.",
           "uncertain": false,
           "footnote": false
         }
@@ -2398,6 +2564,11 @@
           "L": "Tinatangay {{deity_pronoun:mo|Mo}} sila [na parang baha]; sila ay [gaya ng] pagtulog; \\q sa umaga [sila ay] gaya ng damong muling sumisibol.",
           "B": "Tinatangay {{deity_pronoun:mo|Mo}} sila na parang baha. Sila ay gaya ng panandaliang pagtulog. \\q Pagdating ng umaga ay gaya sila ng damong muling tumutubo.",
           "R": "Tinatangay {{deity_pronoun:mo|Mo}} ang mga tao gaya ng baha. Ang kanilang buhay ay kasing-ikli ng pagtulog sa isang gabi. \\q Sila ay gaya ng damong sariwang tumutubo sa umaga."
+        },
+        "zh": {
+          "L": "你把他们冲走[如同洪水]；他们[如]一场睡眠； \\q 早晨[他们]像重新长出的草。",
+          "B": "你像洪水一样把他们卷走。他们不过是一场短暂的睡眠， \\q 早晨来到，他们像再次冒出的青草。",
+          "R": "你像洪水一样把人冲走。人的一生短得像一夜的睡眠。 \\q 他们像早晨新长出来的青草。"
         }
       },
       "decisions": [
@@ -2802,6 +2973,11 @@
           "L": "Sa umaga ay namumukadkad ito at muling sumisibol; \\q pagsapit ng gabi ay nalalanta ito at natutuyo.",
           "B": "Sa umaga ay namumulaklak ito at sariwang lumalago; \\q pagsapit ng gabi ay lumalaylay ito at natutuyo.",
           "R": "Sa umaga ay luntian ito at lumalago. \\q Pagsapit ng gabi ay lanta na ito at tuyo."
+        },
+        "zh": {
+          "L": "早晨它茂盛而重新发芽； \\q 到傍晚就凋萎而枯干。",
+          "B": "早晨它开花，长得鲜嫩； \\q 到傍晚就垂下、干枯。",
+          "R": "早晨它青翠茂盛。 \\q 到晚上已经蔫了，干了。"
         }
       },
       "decisions": [
@@ -3058,6 +3234,11 @@
           "L": "Sapagkat nauubos kami sa {{deity_pronoun:iyong|Iyong}} galit, \\q at sa {{deity_pronoun:iyong|Iyong}} poot kami ay nasisindak.",
           "B": "Sapagkat inuubos kami ng {{deity_pronoun:iyong|Iyong}} galit \\q at sinisindak kami ng {{deity_pronoun:iyong|Iyong}} poot.",
           "R": "Winawasak kami ng {{deity_pronoun:iyong|Iyong}} galit. \\q Pinupuno kami ng takot ng {{deity_pronoun:iyong|Iyong}} poot."
+        },
+        "zh": {
+          "L": "因为我们在{{deity_pronoun:你|祢}}的怒气中走到尽头， \\q 在{{deity_pronoun:你|祢}}的烈怒下惊慌失措。",
+          "B": "因为{{deity_pronoun:你|祢}}的怒气使我们日渐消耗， \\q {{deity_pronoun:你|祢}}的狂怒使我们惊恐万分。",
+          "R": "你的怒气正在毁灭我们。 \\q 你的烈怒使我们充满恐惧。"
         }
       },
       "decisions": [
@@ -3402,6 +3583,11 @@
           "L": "Inilagay {{deity_pronoun:mo|Mo}} ang aming mga kasamaan sa harap {{deity_pronoun:mo|Mo}}, \\q ang aming mga lihim [na kasalanan] sa liwanag ng {{deity_pronoun:iyong|Iyong}} mukha.",
           "B": "Inilantad {{deity_pronoun:mo|Mo}} sa harap {{deity_pronoun:mo|Mo}} ang aming mga kasalanan; \\q ang aming itinago ay naliliwanagan ng liwanag ng {{deity_pronoun:iyong|Iyong}} mukha.",
           "R": "Nakikita {{deity_pronoun:mo|Mo}} ang lahat ng aming mga kasalanan. \\q Pati ang mga kasalanang itinago namin ay kasinlinaw sa {{deity_pronoun:iyo|Iyo}} ng mga bagay na nasa maliwanag."
+        },
+        "zh": {
+          "L": "你已把我们的罪孽陈列在{{deity_pronoun:你|祢}}眼前， \\q 我们隐秘的[罪]也在{{deity_pronoun:你|祢}}面容的光照之下。",
+          "B": "你把我们的过错摊开在{{deity_pronoun:你|祢}}面前； \\q 我们所隐藏的，被{{deity_pronoun:你|祢}}脸上的光照亮。",
+          "R": "你看见我们所有的罪。 \\q 连我们藏起来的罪，在{{deity_pronoun:你|祢}}看来也像在亮光下一样清楚。"
         }
       },
       "decisions": [
@@ -3846,6 +4032,11 @@
           "L": "Sapagkat lumilipas ang lahat ng aming mga araw sa {{deity_pronoun:iyong|Iyong}} poot; \\q tinatapos namin ang aming mga taon na parang buntong-hininga.",
           "B": "Lumilipas ang lahat ng aming mga araw sa ilalim ng {{deity_pronoun:iyong|Iyong}} poot; \\q nagwawakas ang aming mga taon na parang buntong-hininga.",
           "R": "Dahil galit {{deity_pronoun:ka|Ka}}, lumilipas ang aming mga araw. \\q Nagwawakas ang aming mga taon na kasimbilis ng isang hininga."
+        },
+        "zh": {
+          "L": "因为我们所有的日子都在{{deity_pronoun:你|祢}}的愤怒中衰退， \\q 我们结束我们的年岁，如同一声低叹。",
+          "B": "我们一生的日子都在{{deity_pronoun:你|祢}}的忿怒下溜走； \\q 我们的年岁像一声轻叹般结束。",
+          "R": "因为{{deity_pronoun:你|祢}}发怒，我们的日子悄悄溜走。 \\q 我们的年岁转眼就完，像呼一口气那么快。"
         }
       },
       "decisions": [
@@ -4256,6 +4447,11 @@
           "L": "Ang mga araw ng aming mga taon, ang mga iyon [ay] pitumpung taon, o kung [may] lakas, walumpung taon; \\q at ang kanilang ipinagmamalaki [ay] pagpapagal at kapighatian, \\q sapagkat mabilis itong lumilipas, at kami ay lumilipad.",
           "B": "Pitumpung taon ang haba ng aming buhay, o walumpu para sa malalakas; \\q ngunit kahit ang pinakamabuti rito ay pagpapagal at kalungkutan, \\q sapagkat mabilis itong lumilipas, at kami ay lumilipad palayo.",
           "R": "Nabubuhay kami nang pitumpung taon, o marahil walumpu kung may lakas kami. \\q Ngunit kahit ang pinakamabubuting taon namin ay puno ng mabigat na trabaho at kaguluhan. \\q Mabilis itong lumilipas, at pagkatapos ay wala na kami."
+        },
+        "zh": {
+          "L": "我们年岁的日子——其中有七十年，若[有]力气，八十年； \\q 而它们的夸耀[是]劳苦和患难， \\q 因为它很快过去，我们就飞走了。",
+          "B": "我们的一生是七十年，强健的可活八十年； \\q 但其中最好的也只是辛劳和忧伤， \\q 因为日子匆匆过去，我们就飞逝了。",
+          "R": "我们能活七十年，若身体强壮，也许能活八十年。 \\q 但即使是最好的年日，也充满辛苦和麻烦。 \\q 岁月很快就过去，然后我们就离开了。"
         }
       },
       "decisions": [
@@ -4438,6 +4634,28 @@
           "choice": "\"kami ay lumilipad\"",
           "alternatives": [],
           "reason": "We fly away: we die (m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190900100162",
+            "o190900100163"
+          ],
+          "choice": "\"我们就飞走了\" (L); \"我们就飞逝了\" (B); \"我们就离开了\" (R)",
+          "alternatives": [
+            "\"我们便如飞而去\""
+          ],
+          "reason": "\"We fly away\" means we die (m3). Literal keeps the picture, Balanced gives it as passing away, and Readable says it plainly as the English Readable does.",
           "uncertain": false,
           "footnote": false
         }
@@ -4780,6 +4998,11 @@
           "L": "Sino ang nakaaalam ng lakas ng {{deity_pronoun:iyong|Iyong}} galit, \\q at [sino ang nakaaalam ng] {{deity_pronoun:iyong|Iyong}} poot [na] gaya ng takot [na nararapat] sa {{deity_pronoun:iyo|Iyo}}?",
           "B": "Sino ang nakaaalam ng tindi ng {{deity_pronoun:iyong|Iyong}} galit? \\q Ang {{deity_pronoun:iyong|Iyong}} poot ay katumbas ng paggalang na nararapat sa {{deity_pronoun:iyo|Iyo}}.",
           "R": "Walang sinumang tunay na nakaaalam kung gaano kalakas ang {{deity_pronoun:iyong|Iyong}} galit. \\q Kasindakila ng takot at paggalang na nararapat sa {{deity_pronoun:iyo|Iyo}} ang {{deity_pronoun:iyong|Iyong}} galit."
+        },
+        "zh": {
+          "L": "谁知道{{deity_pronoun:你|祢}}怒气的威力？ \\q [谁知道]{{deity_pronoun:你|祢}}的愤怒[正]如[人对]{{deity_pronoun:你|祢}}当有的敬畏？",
+          "B": "谁能知道{{deity_pronoun:你|祢}}怒气的威力？ \\q 那愤怒正与{{deity_pronoun:你|祢}}所配得的敬畏相称。",
+          "R": "没有人真正知道{{deity_pronoun:你|祢}}的怒气有多强。 \\q 那怒气之大，正如{{deity_pronoun:你|祢}}所配得的敬畏和尊重。"
         }
       },
       "decisions": [
@@ -5129,6 +5352,11 @@
           "L": "Kaya turuan {{deity_pronoun:mo|Mo}} [kami] na bilangin ang aming mga araw, \\q upang magtamo kami ng pusong may karunungan.",
           "B": "Kung gayon ay turuan {{deity_pronoun:mo|Mo}} kami na bilangin nang tama ang aming mga araw, \\q upang maging marunong ang aming mga puso.",
           "R": "Turuan {{deity_pronoun:mo|Mo}} kaming maunawaan kung gaano kaikli ang aming buhay, \\q upang mamuhay kami nang may karunungan."
+        },
+        "zh": {
+          "L": "就这样教[我们]计算我们的日子， \\q 使我们[能]收进一颗智慧的心。",
+          "B": "所以，请教导我们好好计算自己的年日， \\q 使我们的心渐渐变得有智慧。",
+          "R": "请教我们明白人生多么短暂， \\q 好让我们过有智慧的生活。"
         }
       },
       "decisions": [
@@ -5308,6 +5536,25 @@
           "choice": "\"magtamo kami ng pusong may karunungan\"",
           "alternatives": [],
           "reason": "Bring a heart of wisdom: gain a wise heart (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190900120052"
+          ],
+          "choice": "\"收进\"",
+          "alternatives": [
+            "\"得着\", \"带来\""
+          ],
+          "reason": "The verb is to bring in, perhaps as a harvest is gathered (m2); Literal keeps that picture.",
           "uncertain": false,
           "footnote": false
         }
@@ -5527,6 +5774,11 @@
           "L": "Bumalik {{deity_pronoun:ka|Ka}}, {{divine_name:PANGINOON|Yahweh}}! Hanggang kailan? \\q At mahabag {{deity_pronoun:ka|Ka}} sa {{deity_pronoun:iyong|Iyong}} mga lingkod.",
           "B": "Manumbalik {{deity_pronoun:ka|Ka}} sa amin, {{divine_name:PANGINOON|Yahweh}}! Hanggang kailan kami maghihintay? \\q Kaawaan {{deity_pronoun:mo|Mo}} ang {{deity_pronoun:iyong|Iyong}} mga lingkod.",
           "R": "{{divine_name:PANGINOON|Yahweh}}, bumalik {{deity_pronoun:ka|Ka}} sa amin! Hanggang kailan {{deity_pronoun:ka|Ka}} mananatiling malayo? \\q Maging mabuti {{deity_pronoun:ka|Ka}} sa {{deity_pronoun:iyong|Iyong}} mga lingkod."
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}啊，回来吧！到几时呢？ \\q 又求怜悯{{deity_pronoun:你|祢}}的仆人。",
+          "B": "{{divine_name:上主|雅威}}啊，转回到我们这里吧！我们要等到几时呢？ \\q 求怜恤{{deity_pronoun:你|祢}}的仆人。",
+          "R": "{{divine_name:上主|雅威}}啊，回到我们这里来吧！{{deity_pronoun:你|祢}}还要离开我们多久？ \\q 请善待{{deity_pronoun:你|祢}}的仆人。"
         }
       },
       "decisions": [
@@ -5901,6 +6153,11 @@
           "L": "Busugin {{deity_pronoun:mo|Mo}} kami sa umaga [ng] {{deity_pronoun:iyong|Iyong}} tapat na pag-ibig, \\q upang kami ay sumigaw sa galak at magsaya sa lahat ng aming mga araw.",
           "B": "Punuin {{deity_pronoun:mo|Mo}} kami ng {{deity_pronoun:iyong|Iyong}} tapat na pag-ibig sa pagbubukang-liwayway, \\q at sisigaw kami sa galak at magsasaya habang kami ay nabubuhay.",
           "R": "Tuwing umaga, punuin {{deity_pronoun:mo|Mo}} ang aming buhay ng {{deity_pronoun:iyong|Iyong}} tapat na pag-ibig. \\q Kung magkagayon ay aawit kami sa galak at magiging masaya sa buong buhay namin."
+        },
+        "zh": {
+          "L": "早晨[用]{{deity_pronoun:你|祢}}的慈爱使我们满足， \\q 好让我们在我们所有的日子里欢呼、快乐。",
+          "B": "天亮时，求用{{deity_pronoun:你|祢}}的慈爱充满我们， \\q 我们就要高声欢呼，终生欢喜。",
+          "R": "每天早晨，用{{deity_pronoun:你|祢}}始终不变的爱充满我们的生命。 \\q 这样，我们一辈子都会快乐地歌唱。"
         }
       },
       "decisions": [
@@ -6051,6 +6308,28 @@
           "choice": "\"sa umaga\"",
           "alternatives": [],
           "reason": "In the morning: after the night is over (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190900140031",
+            "o190900140032"
+          ],
+          "choice": "\"慈爱\" (L, B); \"始终不变的爱\" (R)",
+          "alternatives": [
+            "\"坚定的爱\""
+          ],
+          "reason": "The glossary's forms for God's chesed (m1), kept through these psalms.",
           "uncertain": false,
           "footnote": false
         }
@@ -6297,6 +6576,11 @@
           "L": "Pagalakin {{deity_pronoun:mo|Mo}} kami ayon sa mga araw na pinahirapan {{deity_pronoun:mo|Mo}} kami, \\q sa mga taon na nakakita kami ng kasamaan.",
           "B": "Tumbasan {{deity_pronoun:mo|Mo}} ng mga araw ng kagalakan ang mga araw na ibinaba {{deity_pronoun:mo|Mo}} kami, \\q at ng mga taon ng kaligayahan ang mga taon ng kahirapang naranasan namin.",
           "R": "Pasayahin {{deity_pronoun:mo|Mo}} kami nang kasintagal ng pagpapahirap {{deity_pronoun:mo|Mo}} sa amin. \\q Bigyan {{deity_pronoun:mo|Mo}} kami ng mabubuting taon bilang kapalit ng masasamang taong pinagdaanan namin."
+        },
+        "zh": {
+          "L": "按{{deity_pronoun:你|祢}}苦待我们的日数，使我们欢喜， \\q [按]我们经历灾祸的年数。",
+          "B": "{{deity_pronoun:你|祢}}使我们卑微多少日子，就求赐我们多少欢乐的日子； \\q 我们经历多少艰难的年岁，就赐我们多少喜乐的年岁。",
+          "R": "{{deity_pronoun:你|祢}}使我们受苦多久，就请使我们快乐多久。 \\q 我们经历了多少苦日子，就请赐我们多少好年头。"
         }
       },
       "decisions": [
@@ -6649,6 +6933,11 @@
           "L": "Makita nawa ng {{deity_pronoun:iyong|Iyong}} mga lingkod ang {{deity_pronoun:iyong|Iyong}} gawa, \\q at ang {{deity_pronoun:iyong|Iyong}} kamahalan sa kanilang mga anak.",
           "B": "Makita nawa ng {{deity_pronoun:iyong|Iyong}} mga lingkod ang {{deity_pronoun:iyong|Iyong}} mga gawa, \\q at makita ng kanilang mga anak ang {{deity_pronoun:iyong|Iyong}} karilagan.",
           "R": "Makita nawa ng {{deity_pronoun:iyong|Iyong}} mga lingkod ang mga dakilang bagay na ginagawa {{deity_pronoun:mo|Mo}}. \\q Makita nawa ng kanilang mga anak kung gaano {{deity_pronoun:ka|Ka}} kaluwalhati."
+        },
+        "zh": {
+          "L": "让{{deity_pronoun:你|祢}}的工作显明给{{deity_pronoun:你|祢}}的仆人看， \\q 让{{deity_pronoun:你|祢}}的威严临到他们的儿女。",
+          "B": "愿{{deity_pronoun:你|祢}}的仆人看见{{deity_pronoun:你|祢}}的作为， \\q 愿他们的儿女看见{{deity_pronoun:你|祢}}的荣美。",
+          "R": "让{{deity_pronoun:你|祢}}的仆人看见{{deity_pronoun:你|祢}}所行的大事。 \\q 让他们的孩子看见{{deity_pronoun:你|祢}}是多么荣耀。"
         }
       },
       "decisions": [
@@ -7019,6 +7308,11 @@
           "L": "At sumaamin nawa ang kagandahang-loob ng Panginoon naming Diyos, \\q at patatagin {{deity_pronoun:mo|Mo}} para sa amin ang gawa ng aming mga kamay; \\q oo, ang gawa ng aming mga kamay, patatagin {{deity_pronoun:mo|Mo}} ito.",
           "B": "Ipakita nawa sa amin ng Panginoon naming Diyos ang {{deity_pronoun:kaniyang|Kaniyang}} kagandahang-loob. \\q Bigyan {{deity_pronoun:mo|Mo}} ng pangmatagalang halaga ang gawa ng aming mga kamay; \\q oo, bigyan {{deity_pronoun:mo|Mo}} ng pangmatagalang halaga ang gawa ng aming mga kamay.",
           "R": "Maging mabuti nawa sa amin ang Panginoon naming Diyos. \\q Pagtagumpayin {{deity_pronoun:mo|Mo}} at patagalin ang aming mga gawain. \\q Oo, patagalin {{deity_pronoun:mo|Mo}} ang aming mga gawain!"
+        },
+        "zh": {
+          "L": "愿主我们{{god_term:神|上帝}}的美善临到我们； \\q 我们手中的工作，求为我们坚立； \\q 是的，我们手中的工作，求使它坚立。",
+          "B": "愿主我们的{{god_term:神|上帝}}向我们显出{{deity_pronoun:他|祂}}的恩慈。 \\q 求使我们手中的工作有长久的价值； \\q 是的，求使我们手中的工作有长久的价值。",
+          "R": "愿主我们的{{god_term:神|上帝}}善待我们。 \\q 求使我们所做的事成功，并且长久。 \\q 是的，求使我们的工作长久存留！"
         }
       },
       "decisions": [
@@ -7203,6 +7497,25 @@
           "choice": "\"oo, ang gawa ng aming mga kamay\"",
           "alternatives": [],
           "reason": "The repeated request (m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190900170021"
+          ],
+          "choice": "\"美善\"",
+          "alternatives": [
+            "\"荣美\", \"恩宠\""
+          ],
+          "reason": "The word is what is pleasant and lovely, God's goodness resting on his people (m1).",
           "uncertain": false,
           "footnote": false
         }
