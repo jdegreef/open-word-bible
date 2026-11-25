@@ -6,7 +6,7 @@ from django.contrib.auth import get_user_model
 from django.core.cache import cache
 from django.core.management import call_command
 
-from staff import consistency
+from staff import checks, consistency
 from staff.management.commands import warm_admin
 
 from .test_admin import AdminTestCase, sentence
@@ -30,6 +30,9 @@ class WarmAdminTest(AdminTestCase):
         self.assertFalse(get_user_model().objects.filter(username=warm_admin.USERNAME).exists())
         # What it opened is kept for the first person in.
         self.assertIsNotNone(cache.get(f"staff.terms.{consistency.TERMS_DIGEST}.{consistency._stamp()}"))
+        # Each language's content checks too, which take seconds to measure.
+        self.assertIn("checks/?lang=fr", warm_admin.pages())
+        self.assertIsNotNone(cache.get(f"staff.checks.fr.{checks._stamp()}.{checks._files_stamp('fr')}"))
 
     def test_starts_nothing_after_the_deadline(self):
         out = self.run_warm(deadline=time.time() - 1)
