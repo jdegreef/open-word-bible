@@ -92,6 +92,11 @@
           "L": "Halikayo, umawit tayo nang may galak {{divine_name:sa PANGINOON|kay Yahweh}}; \\q sumigaw tayo nang malakas sa bato ng ating kaligtasan.",
           "B": "Halikayo, umawit tayo nang masaya {{divine_name:sa PANGINOON|kay Yahweh}} \\q at magsigawan sa galak sa Bato na nagliligtas sa atin.",
           "R": "Halikayo at umawit nang may kagalakan {{divine_name:sa PANGINOON|kay Yahweh}}! \\q Sumigaw kayo nang masaya sa Diyos, ang ating Bato, na sumasagip sa atin."
+        },
+        "zh": {
+          "L": "来，让我们向{{divine_name:上主|雅威}}欢喜歌唱， \\q 让我们向我们救恩的磐石高声呼喊。",
+          "B": "来吧，让我们满心欢喜地向{{divine_name:上主|雅威}}歌唱， \\q 向那位救我们的磐石欢声高呼。",
+          "R": "来吧，带着喜乐向{{divine_name:上主|雅威}}唱歌！ \\q 高高兴兴地向我们的磐石{{god_term:神|上帝}}欢呼，是{{god_term:神|上帝}}救了我们。"
         }
       },
       "decisions": [
@@ -348,6 +353,47 @@
           "reason": "The rock of our salvation: God who saves us (m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190950010052"
+          ],
+          "choice": "\"{{god_term:神|上帝}}\" in a god_term span (神 by default, 上帝 as the reader's alternative)",
+          "alternatives": [
+            "\"神\" fixed"
+          ],
+          "reason": "Every word naming the one God is written with the Chinese-only god_term setting; the reader can choose 上帝.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190950010052",
+            "o190950010061"
+          ],
+          "choice": "\"我们救恩的磐石\" (L); \"那位救我们的磐石\" (B)",
+          "alternatives": [
+            "\"拯救我们的磐石\""
+          ],
+          "reason": "The rock that saves (m2). The psalm's opening is among the best-known lines of the Psalter, so it is drafted afresh: Literal keeps the Hebrew's \"rock of our salvation\", Balanced says who the rock is.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft",
@@ -556,6 +602,11 @@
           "L": "Lumapit tayo sa harap ng {{deity_pronoun:kaniyang|Kaniyang}} mukha na may pasasalamat; \\q sa mga awit ay sumigaw tayo nang malakas sa {{deity_pronoun:kaniya|Kaniya}}.",
           "B": "Salubungin natin {{deity_pronoun:siya|Siya}} nang may pasasalamat, \\q at ipagsigawan natin {{deity_pronoun:siya|Siya}} sa galak sa ating mga awit.",
           "R": "Lumapit tayo sa {{deity_pronoun:kaniya|Kaniya}} at pasalamatan {{deity_pronoun:siya|Siya}}. \\q Umawit tayo ng mga awit at magbunyi para sa {{deity_pronoun:kaniya|Kaniya}}."
+        },
+        "zh": {
+          "L": "让我们带着称谢来到{{deity_pronoun:他|祂}}面前， \\q 让我们伴着乐歌向{{deity_pronoun:他|祂}}高声呼喊。",
+          "B": "让我们带着称谢出去迎见{{deity_pronoun:他|祂}}， \\q 在我们的歌声中向{{deity_pronoun:他|祂}}欢呼。",
+          "R": "让我们到{{deity_pronoun:他|祂}}面前感谢{{deity_pronoun:他|祂}}。 \\q 让我们唱歌，为{{deity_pronoun:他|祂}}欢呼。"
         }
       },
       "decisions": [
@@ -870,6 +921,11 @@
           "L": "Sapagkat dakilang Diyos {{divine_name:ang PANGINOON|si Yahweh}}, \\q at dakilang Hari sa itaas ng lahat ng diyos,",
           "B": "Sapagkat makapangyarihang Diyos {{divine_name:ang PANGINOON|si Yahweh}}, \\q makapangyarihang Hari na mataas sa lahat ng diyos,",
           "R": "Sapagkat {{divine_name:ang PANGINOON|si Yahweh}} ay dakilang Diyos. \\q Siya ang dakilang Hari, na higit na mataas sa anumang tinatawag ng mga tao na diyos."
+        },
+        "zh": {
+          "L": "因为{{divine_name:上主|雅威}}是伟大的{{god_term:神|上帝}}， \\q 是超越一切神明的伟大君王，",
+          "B": "因为{{divine_name:上主|雅威}}是大能的{{god_term:神|上帝}}， \\q 是高过一切神明的大能君王，",
+          "R": "因为{{divine_name:上主|雅威}}是伟大的{{god_term:神|上帝}}。 \\q 是伟大的君王，远远超过人们称为神明的任何东西。"
         }
       },
       "decisions": [
@@ -1045,6 +1101,27 @@
           "choice": "\"lahat ng diyos,\"",
           "alternatives": [],
           "reason": "A sentence that runs on (m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190950030091"
+          ],
+          "choice": "\"神明\", with no god_term span",
+          "alternatives": [
+            "\"{{god_term:神|上帝}}\""
+          ],
+          "reason": "The gods of the nations (m1) are not the one God, so they take the plain word, as the glossary says.",
           "uncertain": false,
           "footnote": false
         }
@@ -1276,6 +1353,11 @@
           "L": "na nasa kamay {{deity_pronoun:niya|Niya}} ang kalaliman ng lupa, \\q at ang mga taluktok ng mga bundok [ay] {{deity_pronoun:kaniya|Kaniya}},",
           "B": "na hawak {{deity_pronoun:niya|Niya}} sa {{deity_pronoun:kaniyang|Kaniyang}} kamay ang malalalim na dako ng lupa; \\q ang mga tuktok ng mga bundok ay {{deity_pronoun:kaniya|Kaniya}} rin,",
           "R": "Hawak {{deity_pronoun:niya|Niya}} sa {{deity_pronoun:kaniyang|Kaniyang}} kamay ang pinakamalalalim na dako ng lupa. \\q Pag-aari {{deity_pronoun:niya|Niya}} ang pinakamatataas na bundok."
+        },
+        "zh": {
+          "L": "在[这位君王]手中的是大地的深处， \\q 群山的峰顶[也]是{{deity_pronoun:他|祂}}的，",
+          "B": "{{deity_pronoun:他|祂}}手中握着大地的深处； \\q 众山的顶峰也都归{{deity_pronoun:他|祂}}，",
+          "R": "大地最深的地方都握在{{deity_pronoun:他|祂}}手里。 \\q 最高的山也属于{{deity_pronoun:他|祂}}。"
         }
       },
       "decisions": [
@@ -1651,6 +1733,11 @@
           "L": "na sa {{deity_pronoun:kaniya|Kaniya}} ang dagat, sapagkat {{deity_pronoun:siya|Siya}} ang gumawa nito, \\q at ang tuyong lupa ay hinubog ng {{deity_pronoun:kaniyang|Kaniyang}} mga kamay.",
           "B": "sa {{deity_pronoun:kaniya|Kaniya}} ang dagat sapagkat ginawa {{deity_pronoun:niya|Niya}} ito, \\q at hinubog ng {{deity_pronoun:kaniyang|Kaniyang}} mga kamay ang tuyong lupa.",
           "R": "Ginawa {{deity_pronoun:niya|Niya}} ang dagat, kaya ito ay sa {{deity_pronoun:kaniya|Kaniya}}. \\q Sa pamamagitan ng {{deity_pronoun:kaniyang|Kaniyang}} sariling mga kamay ay hinubog {{deity_pronoun:niya|Niya}} ang tuyong lupa."
+        },
+        "zh": {
+          "L": "海洋归[那位]所有，因为是{{deity_pronoun:他|祂}}造的， \\q 干地是{{deity_pronoun:他|祂}}的手所塑成的。",
+          "B": "大海属于{{deity_pronoun:他|祂}}，因为{{deity_pronoun:他|祂}}创造了它； \\q 干燥的陆地是{{deity_pronoun:他|祂}}亲手塑造的。",
+          "R": "大海是他造的，所以属于{{deity_pronoun:他|祂}}。 \\q {{deity_pronoun:他|祂}}用{{deity_pronoun:他|祂}}自己的手塑造了陆地。"
         }
       },
       "decisions": [
@@ -1989,6 +2076,11 @@
           "L": "Halikayo, yumukod tayo at yumuko; \\q lumuhod tayo sa harap {{divine_name:ng PANGINOON|ni Yahweh}} na ating Manlilikha.",
           "B": "Halikayo, yumukod tayo hanggang sa lupa at yumuko; \\q lumuhod tayo sa harap {{divine_name:ng PANGINOON|ni Yahweh}}, ang lumikha sa atin.",
           "R": "Halikayo, yumukod tayo hanggang sa lupa. \\q Lumuhod tayo sa harap {{divine_name:ng PANGINOON|ni Yahweh}} na lumikha sa atin."
+        },
+        "zh": {
+          "L": "来，让我们俯伏、弯腰， \\q 让我们跪在{{divine_name:上主|雅威}}我们的创造者面前。",
+          "B": "来吧，让我们伏地下拜，弯身俯首； \\q 让我们跪在{{divine_name:上主|雅威}}——那造我们的一位——面前。",
+          "R": "来吧，让我们俯身到地。 \\q 让我们双膝跪下，来到创造我们的{{divine_name:上主|雅威}}面前。"
         }
       },
       "decisions": [
@@ -2356,6 +2448,11 @@
           "L": "Sapagkat {{deity_pronoun:siya|Siya}} [ang] ating Diyos, \\q at tayo [ang] bayan ng {{deity_pronoun:kaniyang|Kaniyang}} pastulan at ang kawan ng {{deity_pronoun:kaniyang|Kaniyang}} kamay. \\q Ngayon, kung makikinig lamang kayo sa {{deity_pronoun:kaniyang|Kaniyang}} tinig!",
           "B": "Sapagkat {{deity_pronoun:siya|Siya}} ang ating Diyos, \\q at tayo ang bayang pinapastulan {{deity_pronoun:niya|Niya}}, ang kawang inaalagaan {{deity_pronoun:niya|Niya}} ng {{deity_pronoun:kaniyang|Kaniyang}} sariling kamay. \\q O, kung makikinig sana kayo ngayon sa {{deity_pronoun:kaniyang|Kaniyang}} tinig!",
           "R": "Siya ang ating Diyos. \\q Tayo ang {{deity_pronoun:kaniyang|Kaniyang}} bayan, gaya ng mga tupang pinakakain {{deity_pronoun:niya|Niya}} at inaakay. \\q Kung makikinig lamang sana kayo sa {{deity_pronoun:kaniyang|Kaniyang}} tinig ngayon!"
+        },
+        "zh": {
+          "L": "因为{{deity_pronoun:他|祂}}[是]我们的{{god_term:神|上帝}}， \\q 我们[是]{{deity_pronoun:他|祂}}牧场的子民、{{deity_pronoun:他|祂}}手中的羊群。 \\q 今天，你们若听见{{deity_pronoun:他|祂}}的声音！",
+          "B": "因为正是{{deity_pronoun:他|祂}}是我们的{{god_term:神|上帝}}， \\q 我们是{{deity_pronoun:他|祂}}所牧养的子民，是{{deity_pronoun:他|祂}}用{{deity_pronoun:他|祂}}自己的手照料的羊群。 \\q 但愿你们今天就听从{{deity_pronoun:他|祂}}的声音！",
+          "R": "我们的{{god_term:神|上帝}}就是这一位。 \\q 我们是{{deity_pronoun:他|祂}}的百姓，像{{deity_pronoun:他|祂}}喂养、带领的羊。 \\q 但愿你们今天就听从{{deity_pronoun:他|祂}}的声音！"
         }
       },
       "decisions": [
@@ -2659,6 +2756,28 @@
           "choice": "\"Ngayon\"",
           "alternatives": [],
           "reason": "Hebrews 3:7-11; 4:3-7 (m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190950070091",
+            "o190950070092"
+          ],
+          "choice": "\"今天，你们若听见他的声音\" (L, as Hebrews 3:7 and 4:7); \"但愿你们今天就听从他的声音\" (B, R)",
+          "alternatives": [
+            "\"今天，你们若听见他的声音\" at every level"
+          ],
+          "reason": "Hebrews quotes verses 7-11 (m3), so Literal keeps its Chinese where the Hebrew says the same. Balanced and Readable give the line as a wish, as the English does (m2); Hebrews has \"今天，你们若听见他的声音\" at Balanced and \"今天，如果你们听见他的声音\" at Readable.",
           "uncertain": false,
           "footnote": false
         }
@@ -2984,6 +3103,11 @@
           "L": "\"Huwag ninyong patigasin ang inyong puso gaya [sa] Meriba, \\q gaya [sa] araw ng Masah sa ilang,",
           "B": "\"Huwag ninyong hayaang tumigas ang inyong mga puso gaya ng nangyari sa Meriba, \\q noong araw ng Masah sa disyerto,",
           "R": "\"Huwag kayong maging matigas ang ulo gaya ng inyong mga ninuno sa Meriba, ang lugar ng pagtatalo. \\q Alalahanin ninyo ang araw na iyon sa Masah, ang lugar ng pagsubok, sa disyerto."
+        },
+        "zh": {
+          "L": "“不要使你们的心刚硬，像在米利巴那样， \\q 像在旷野玛撒的那日，",
+          "B": "“不要使你们的心刚硬，像在米利巴发生的那样， \\q 像在旷野中玛撒的那一天，",
+          "R": "“不要像你们的祖先在米利巴那样固执，米利巴就是争吵之地。 \\q 要记得在旷野玛撒的那一天，玛撒就是试探之地。"
         }
       },
       "decisions": [
@@ -3330,6 +3454,47 @@
           "reason": "Harden your heart: refuse to trust and obey (m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190950080042",
+            "o190950080061"
+          ],
+          "choice": "\"米利巴\", \"玛撒\", as at Exodus 17:7",
+          "alternatives": [
+            "\"背叛\", \"试探\" (Hebrews 3:8)"
+          ],
+          "reason": "The Hebrew names the two places of Exodus 17:1-7 (m2). Hebrews 3:8 follows the ancient Greek, which translates the names as \"the rebellion\" and \"the testing\" (\"像在背叛的时候那样，就是在旷野试探的日子\"); here the names are kept from the Hebrew, and Readable says what they mean, as the English Readable does. \"不要使你们的心刚硬\" is Hebrews' Chinese, the same Hebrew.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190950080021"
+          ],
+          "choice": "\"你们的祖先\", with no gender span",
+          "alternatives": [
+            "\"{{gender:祖先|列祖}}\""
+          ],
+          "reason": "The English Readable says \"your ancestors\" without a setting here, so the Chinese has none; Hebrews 3:9 spans the word because its English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft",
@@ -3536,6 +3701,11 @@
           "L": "nang subukin ako ng inyong mga ninuno; \\q sinubok nila ako, bagaman nakita nila ang aking gawa.",
           "B": "nang ilagay ako ng inyong mga ninuno sa pagsubok \\q at hamunin ako, kahit napanood na nila ang aking gawa.",
           "R": "Doon ay sinubok ako ng inyong mga ninuno \\q at patuloy akong sinubok, bagaman nakita nila ang lahat ng ginawa ko."
+        },
+        "zh": {
+          "L": "那时你们的列祖试探我， \\q 他们考验我，虽然他们看见了我的作为。",
+          "B": "那时你们的祖先试探我、考验我， \\q 虽然他们亲眼看见了我的作为。",
+          "R": "在那里，你们的祖先试探我， \\q 一再考验我，虽然他们已经看见了我所做的一切。"
         }
       },
       "decisions": [
@@ -3707,6 +3877,28 @@
           "choice": "\"aking gawa\"",
           "alternatives": [],
           "reason": "My work: what God had done for them (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190950090022",
+            "o190950090042"
+          ],
+          "choice": "\"试探我、考验我\" (B), \"看见了我的作为\" (L, B), as Hebrews 3:9",
+          "alternatives": [
+            "\"试验\""
+          ],
+          "reason": "The same two verbs as in Hebrews' Greek (m1), so its Chinese is kept: Balanced has Hebrews' \"试探我、考验我\", Literal keeps the Hebrew's two clauses with the same verbs, and Readable follows its English. Hebrews joins \"forty years\" to the seeing of the works; the Hebrew puts it with God's loathing (verse 10), which is followed here.",
           "uncertain": false,
           "footnote": false
         }
@@ -3928,6 +4120,11 @@
           "L": "Apatnapung taon akong nasuklam sa [salinlahing iyon], \\q at sinabi ko, '[Sila ay] bayang naliligaw ang puso, \\q at hindi nila nalalaman ang aking mga daan.'",
           "B": "Sa loob ng apatnapung taon ay napagod ako at nasuklam sa salinlahing iyon. \\q Sinabi ko, 'Ito ay mga taong ang puso ay lumilihis; \\q hindi nila kailanman natutuhan ang aking mga daan.'",
           "R": "Sa loob ng apatnapung taon ay nasuklam ako sa kanila. \\q Sinabi ko, 'Patuloy na lumalayo sa akin ang kanilang mga puso. \\q Hindi nila alam kung paano ko gustong mamuhay sila.'"
+        },
+        "zh": {
+          "L": "我厌恶那世代有四十年， \\q 我说：‘[他们是]心里走错路的百姓， \\q 他们不认识我的道路。’",
+          "B": "整整四十年，我对那个世代既厌倦又厌恶。 \\q 我说：‘这百姓的心总是在游荡， \\q 他们从来没有认识我的道路。’",
+          "R": "整整四十年，他们使我厌烦。 \\q 我说：‘他们的心总是走偏，离开我。 \\q 他们不知道我要他们怎样生活。’"
         }
       },
       "decisions": [
@@ -4135,6 +4332,28 @@
           "choice": "\"nalalaman ang aking mga daan\"",
           "alternatives": [],
           "reason": "Know my ways: understand and follow how God acts and what he asks (m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190950100031",
+            "o190950100042"
+          ],
+          "choice": "\"厌恶那世代\" (L); \"对那个世代既厌倦又厌恶\" (B)",
+          "alternatives": [
+            "\"向这个世代发怒\" (Hebrews 3:10)"
+          ],
+          "reason": "The Hebrew verb is loathing (m2) and the generation is \"that\" one; Hebrews follows the Greek \"I was angry with this generation\". Its Chinese is kept where the words are the same: \"他们不认识我的道路\" (L), \"他们的心总是在游荡，他们从来没有认识我的道路\" (B).",
           "uncertain": false,
           "footnote": false
         }
@@ -4433,6 +4652,11 @@
           "L": "Kaya sumumpa ako sa aking galit, \\q 'Hindi sila papasok sa aking kapahingahan!'\"",
           "B": "Kaya sa aking galit ay sumumpa ako: \\q 'Hindi sila kailanman papasok sa aking lugar ng kapahingahan.'\"",
           "R": "Kaya sa aking galit ay taimtim akong nanumpa: \\q 'Hindi sila kailanman papasok sa lupain ng kapahingahan na ipinangako ko sa kanila!'\""
+        },
+        "zh": {
+          "L": "所以我在怒气中起誓： \\q ‘他们绝不会进入我的安息！’”",
+          "B": "所以我在怒气中起了誓： \\q ‘他们绝不能进入我的安息。’”",
+          "R": "所以我在怒气中郑重起誓： \\q ‘他们永远不能进入我应许给他们的安息之地！’”"
         }
       },
       "decisions": [
@@ -4658,6 +4882,31 @@
           "choice": "\"kapahingahan!'\"\"",
           "alternatives": [],
           "reason": "God's words end here (m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190950110021",
+            "o190950110051",
+            "o190950110052",
+            "o190950110071",
+            "o190950110072"
+          ],
+          "choice": "Hebrews 3:11 kept at Literal and Balanced (\"他们绝不会进入我的安息\", \"他们绝不能进入我的安息\"); Readable follows its English",
+          "alternatives": [
+            "\"他们永远不能进入我的安息\" (Hebrews 3:11, Readable)"
+          ],
+          "reason": "The oath means \"they will never enter\" (m1), as Hebrews has it. Readable says what the rest was, the land God promised (m2), as the English Readable does.",
           "uncertain": false,
           "footnote": false
         }
