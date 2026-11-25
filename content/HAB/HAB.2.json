@@ -110,6 +110,11 @@
           "L": "Sa aking bantayan ay tatayo ako, \\q at pupuwesto ako sa muog; \\q at magmamasid ako upang makita kung ano ang sasabihin {{deity_pronoun:niya|Niya}} sa akin, \\q at kung ano ang isasagot ko tungkol sa aking hinaing.",
           "B": "Tatayo ako sa aking bantayan \\q at pupuwesto sa muog. \\q Magmamasid ako upang malaman kung ano ang sasabihin {{deity_pronoun:niya|Niya}} sa akin, \\q at kung paano ako sasagot tungkol sa aking hinaing.",
           "R": "Magbabantay ako sa aking puwesto \\q at maghihintay sa pader ng lunsod. \\q Magmamasid ako upang makita kung ano ang sasabihin sa akin {{divine_name:ng PANGINOON|ni Yahweh}}, \\q at kung ano ang dapat kong sabihin tungkol sa aking hinaing."
+        },
+        "zh": {
+          "L": "我要站在我的守望所， \\q 立在城墙上； \\q 我要观望，看{{deity_pronoun:他|祂}}要对我说什么， \\q 我要怎样回应我的申诉。",
+          "B": "我要站在我的守望所， \\q 在城墙上坚守岗位。 \\q 我要观望，要知道{{deity_pronoun:他|祂}}会对我说什么， \\q 我该怎样回答我的申诉。",
+          "R": "我要在岗位上站岗， \\q 在城墙上等候。 \\q 我要看{{divine_name:上主|雅威}}会对我说什么， \\q 关于我的申诉，我该说些什么。"
         }
       },
       "decisions": [
@@ -524,6 +529,11 @@
           "L": "At sumagot sa akin {{divine_name:ang PANGINOON|si Yahweh}} at sinabi: \\q Isulat mo ang pangitain; gawin mong malinaw sa mga tapyas, \\q upang makatakbo ang bumabasa nito.",
           "B": "Pagkatapos ay sumagot sa akin {{divine_name:ang PANGINOON|si Yahweh}}: \\q Isulat mo ang pangitain; gawin mong malinaw sa mga tapyas, \\q upang makatakbo ang sinumang bumabasa nito.",
           "R": "Pagkatapos ay sumagot sa akin {{divine_name:ang PANGINOON|si Yahweh}}: \\q Isulat mo ang pangitain. Gawin mong malinaw sa mga tapyas \\q upang makatakbo dala ang mensahe ang sinumang bumabasa nito."
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}回答我说： \\q 你要写下[这]异象，清楚地刻在版上， \\q 使读它的人可以奔跑。",
+          "B": "于是{{divine_name:上主|雅威}}回答我： \\q 你要写下这异象，清楚地刻在版上， \\q 好让读到的人能够奔跑。",
+          "R": "于是{{divine_name:上主|雅威}}回答我： \\q 你要把这异象写下来。要把它清楚地写在版上， \\q 好让读的人能带着这信息快跑。"
         }
       },
       "decisions": [
@@ -938,6 +948,11 @@
           "L": "Sapagkat ang pangitain ay para pa sa takdang panahon; \\q nagmamadali ito patungo sa wakas, at hindi ito magsisinungaling. \\q Kung magtagal ito, hintayin mo; \\q sapagkat tiyak na darating ito; hindi ito maaantala.",
           "B": "Sapagkat naghihintay pa ang pangitain sa takdang panahon nito; \\q nagmamadali ito patungo sa wakas at hindi magiging huwad. \\q Kahit magtagal ito, hintayin mo; \\q tiyak na darating ito at hindi maaantala.",
           "R": "Ang pangitain ay para sa panahong itinakda ng Diyos. \\q Nagmamadali ito patungo sa wakas, at hindi ito mabibigo. \\q Kung tila matagal itong dumating, hintayin mo. \\q Tiyak na darating ito. Hindi ito maaantala."
+        },
+        "zh": {
+          "L": "因为[这]异象还要等候所定的时候； \\q 它急速奔向终局，绝不虚假。 \\q 它若耽延，你要等候它； \\q 因为它一定会来，不会迟到。",
+          "B": "因为这异象仍在等候它所定的时候； \\q 它向着终局疾行，必不落空。 \\q 它即使耽搁，你也要等候它； \\q 它必定会来，不会迟误。",
+          "R": "这异象是为{{god_term:神|上帝}}定好的时候。 \\q 它正快速奔向终点，绝不会落空。 \\q 如果它好像来得很慢，你要等候它。 \\q 它一定会来。它不会来迟。"
         }
       },
       "decisions": [
@@ -1182,6 +1197,48 @@
           "reason": "Sure to come (m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o350020030042"
+          ],
+          "choice": "{{god_term:神|上帝}} (god_term)",
+          "alternatives": [
+            "\"神\" fixed",
+            "\"上帝\" fixed"
+          ],
+          "reason": "Every word naming the one God is written in the god_term setting: \"神\" by default, \"上帝\" as the reader's choice (style guide section 4). Readable names God as the one who set the time, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o350020030151",
+            "o350020030171"
+          ],
+          "choice": "\"它一定会来，不会迟到\" (L); \"它必定会来，不会迟误\" (B)",
+          "alternatives": [
+            "the familiar wording of this verse"
+          ],
+          "reason": "A well-known verse, drafted afresh from the Hebrew; Hebrews 10:37 echoes it from the Greek (\"he who is coming\"), which is not followed here.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -1288,6 +1345,11 @@
           "L": "Narito, mapagmataas, hindi matuwid ang kaniyang kaluluwa sa loob niya; \\q ngunit ang matuwid ay mabubuhay sa pamamagitan ng kaniyang katapatan.",
           "B": "Tingnan mo ang mapagmataas: hindi matuwid ang kaniyang mga hangarin sa loob niya; \\q ngunit ang matuwid ay mabubuhay sa pamamagitan ng kaniyang katapatan.",
           "R": "Tingnan mo ang mapagmataas na kaaway. Hindi tama ang kaniyang puso. \\q Ngunit ang taong gumagawa ng tama ay mabubuhay sa pamamagitan ng pagiging tapat."
+        },
+        "zh": {
+          "L": "看哪，[他]自高自大，他里面的心不正直； \\q 但义人却要凭着自己的信实活下去。",
+          "B": "看那骄傲的人，他里面的欲望不正直； \\q 但义人要凭自己的信实生活。",
+          "R": "看看那骄傲的敌人吧，他的心不正。 \\q 但义人会凭着忠心活着。"
         }
       },
       "decisions": [
@@ -1959,6 +2021,69 @@
           "reason": "Right with God (m4).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o350020040082",
+            "o350020040083"
+          ],
+          "choice": "\"凭着自己的信实\" (L); \"凭自己的信实\" (B); \"凭着忠心\" (R); Romans 1:17's frame kept",
+          "alternatives": [
+            "\"凭着信心\" (Romans 1:17; Galatians 3:11)"
+          ],
+          "reason": "Romans 1:17 and Galatians 3:11 quote this line from the Greek as \"义人却要凭着信心活下去\" (L), \"义人要凭信心生活\" (B), \"义人会凭着信心活着\" (R). The Hebrew word means steady loyalty, faithfulness (m2), so \"信实\" (the glossary's word for ʾemunah) stands at Literal and Balanced and \"忠心\" (being faithful) at Readable; the rest of each level keeps Romans' Chinese, since the Hebrew says the same. The Hebrew also has \"his\" (his faithfulness), which Romans leaves out with the Greek: \"自己的\" adds it at Literal and Balanced.",
+          "uncertain": false,
+          "footnote": true
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o350020040083"
+          ],
+          "choice": "\"自己的\", no gender span",
+          "alternatives": [
+            "\"他们的\" / \"他的\" in a gender span"
+          ],
+          "reason": "The English spans \"their / his\" for the righteous person. Chinese \"自己的\" (one's own) refers to the righteous whoever they are, so there is no wording to choose between and no span.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-3",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o350020040072"
+          ],
+          "choice": "\"义人\" (the righteous), not \"我的义人\"",
+          "alternatives": [
+            "\"我的义人\" (Hebrews 10:38)"
+          ],
+          "reason": "Hebrews 10:38 follows the Greek Old Testament, \"my righteous one\", and its Chinese has \"我的义人\". The Hebrew has no \"my\", so the line keeps Romans' \"义人\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2089,6 +2214,11 @@
           "L": "At bukod dito, mapanlinlang ang alak; \\q hindi mananatiling payapa ang taong mapagmataas, \\q na pinalalapad ang kaniyang lalamunan na gaya ng Sheol, at gaya siya ng kamatayan at hindi nasisiyahan; \\q tinitipon niya para sa kaniyang sarili ang lahat ng bansa \\q at pinipisan para sa kaniyang sarili ang lahat ng bayan.",
           "B": "Bukod dito, ipinagkakanulo ng alak ang taong mapagmataas; \\q hindi siya kailanman napapahinga. \\q Ibinubuka niya ang kaniyang lalamunan na kasinlapad ng Sheol; gaya ng kamatayan, hindi siya kailanman nasisiyahan. \\q Tinitipon niya ang lahat ng bansa para sa kaniyang sarili \\q at pinipisan ang lahat ng bayan bilang kaniyang pag-aari.",
           "R": "Nililinlang ng alak ang mapagmataas na tao, \\q at hindi siya kailanman nagpapahinga. \\q Kasinlaki ng libingan ang kaniyang gana. Gaya ng kamatayan, lagi siyang naghahangad ng higit pa. \\q Tinitipon niya ang lahat ng bansa para sa kaniyang sarili \\q at inaangkin ang lahat ng bayan bilang kaniyang pag-aari."
+        },
+        "zh": {
+          "L": "况且，酒是诡诈的； \\q 狂傲的人不得安息， \\q 他张开喉咙如同阴间，他像死亡，永不满足； \\q 他为自己聚集列国， \\q 为自己收集万民。",
+          "B": "况且，酒使狂傲的人背信； \\q 他永不安歇。 \\q 他张大喉咙如同阴间；他像死亡一样，永不满足。 \\q 他为自己聚集各国， \\q 把万民都收归己有。",
+          "R": "酒欺骗了骄傲的人， \\q 他永远不肯停下来。 \\q 他的胃口像死亡之地一样大。他像死亡一样，总是要得更多。 \\q 他为自己聚集各国， \\q 把各族的人都占为己有。"
         }
       },
       "decisions": [
@@ -2457,6 +2587,27 @@
           "reason": "Endless greed (m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o350020050112"
+          ],
+          "choice": "\"阴间\" (L, B); \"死亡之地\" (R) for Sheol",
+          "alternatives": [
+            "\"坟墓\" (R)"
+          ],
+          "reason": "The glossary's words for Sheol, as Isaiah has them; the English Readable's \"the grave\" is given with the Readable form \"死亡之地\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -2578,6 +2729,11 @@
           "L": "Hindi ba ang lahat ng ito ay magsasalita ng panunuya laban sa kaniya, \\q ng tulang pangungutya at mga bugtong tungkol sa kaniya, at magsasabi: \\q Kahabag-habag ang nagpaparami ng hindi kaniya! Hanggang kailan? \\q At ang nagpapasan sa sarili ng mga sangla!",
           "B": "Hindi ba silang lahat ay aawit ng awit ng pangungutya laban sa kaniya, \\q na may panunuya at mga bugtong tungkol sa kaniya, at magsasabi: \\q Kahabag-habag ang nagbubunton ng hindi kaniya! Hanggang kailan ito magpapatuloy? \\q Pinabibigatan niya ang kaniyang sarili ng mga ari-ariang kinuha bilang sangla!",
           "R": "Ang lahat ng bansang sinakop niya ay aawit ng mga awit upang pagtawanan siya. \\q Kukutyain nila siya sa pamamagitan ng mga bugtong at sasabihin: \\q Nakakaawa ang sasapitin ng kumukuha ng hindi kaniya! Hanggang kailan ito tatagal? \\q Yumayaman siya sa kinukuha niya sa mga taong may utang sa kaniya."
+        },
+        "zh": {
+          "L": "这些人岂不都要作诗讽刺他， \\q 用嘲弄的诗和谜语讥讽他，说： \\q 有祸了，那增添不属于自己之物的人！要到几时呢？ \\q 他又使自己满载抵押之物！",
+          "B": "他们岂不都要唱起嘲讽他的歌， \\q 用讥诮和谜语讽刺他，说： \\q 那积聚不属于自己之物的人有祸了！这要持续到几时呢？ \\q 他用抵押来的财物压在自己身上！",
+          "R": "被他征服的各国都会唱歌来取笑他。 \\q 他们会用谜语嘲笑他，说： \\q 那夺取不属于自己东西的人真是可悲！这样的事还能持续多久？ \\q 他靠着向欠他债的人强取财物而发财。"
         }
       },
       "decisions": [
@@ -2999,6 +3155,28 @@
           "reason": "Ruthless creditor (m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o350020060111"
+          ],
+          "choice": "\"有祸了，那……的人\" (L); \"那……的人有祸了！\" (B); \"那……的人真是可悲！\" (R)",
+          "alternatives": [
+            "\"祸哉\"",
+            "\"……将会多么悲惨！\""
+          ],
+          "reason": "The prophets' one form for the cry hoy, as the glossary, Isaiah and Jeremiah 22:13 have it: \"有祸了\" at Literal (the cry first) and Balanced (the cry last), and \"真是可悲\" at Readable for the English Readable's \"How terrible it will be for\". Kept through the five woes of this chapter (2:6, 9, 12, 15, 19). As in the English, the taunt opens with no quotation marks.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3107,6 +3285,11 @@
           "L": "Hindi ba biglang babangon ang mga kumakagat sa iyo, \\q at gigising ang mga nagpapanginig sa iyo? \\q At magiging samsam ka nila.",
           "B": "Hindi ba biglang babangon ang iyong mga pinagkakautangan, \\q at gigising ang mga magpapanginig sa iyo? \\q Pagkatapos ay magiging samsam ka nila.",
           "R": "Biglang darating ang mga taong pinagkakautangan mo upang maningil, \\q at gigising sila at pangangatugin ka. \\q Pagkatapos ay nanakawan ka nila ng lahat."
+        },
+        "zh": {
+          "L": "咬你的岂不忽然起来， \\q 使你战兢的岂不醒来？ \\q 你就要成为他们的掠物。",
+          "B": "你的债主岂不会突然起来， \\q 使你战兢的人岂不会醒来？ \\q 那时你就要成为他们的掠物。",
+          "R": "你欠债的那些人会突然来讨债， \\q 他们会醒来，使你发抖。 \\q 然后他们会抢走你的一切。"
         }
       },
       "decisions": [
@@ -3450,6 +3633,11 @@
           "L": "Sapagkat sinamsaman mo ang maraming bansa, \\q sasamsamin ka ng lahat ng nalabi sa mga bayan, \\q dahil sa dugo ng tao at sa karahasan sa lupain, \\q sa lunsod at sa lahat ng naninirahan doon.",
           "B": "Yamang nilooban mo ang maraming bansa, \\q looban ka ng lahat ng bayang natira, \\q dahil sa dugo ng taong ibinubo mo at sa karahasan laban sa lupain, \\q laban sa lunsod at sa lahat ng naninirahan doon.",
           "R": "Ninakawan mo ang maraming bansa, \\q kaya nanakawan ka ng mga bayang natira. \\q Pumatay ka ng maraming tao. Naging marahas ka sa lupain, \\q sa lunsod at sa lahat ng naninirahan doon."
+        },
+        "zh": {
+          "L": "因你掠夺了许多国家， \\q 万民中所有剩下的都必掠夺你， \\q 因为人的血，和[向]这地所行的暴力， \\q [向]城和城里一切居民[所行的]。",
+          "B": "因为你抢掠了许多国家， \\q 万民中剩下的人都要抢掠你， \\q 因为你流了人的血，向这地施行暴力， \\q 向城和城里所有的居民施行暴力。",
+          "R": "你抢劫了许多国家， \\q 所以剩下的各族人都要抢劫你。 \\q 你杀了很多人。你对这地施行暴力， \\q 也对这城和城里所有的人施行暴力。"
         }
       },
       "decisions": [
@@ -3797,6 +3985,26 @@
           "reason": "Land, city, people (m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o350020080102",
+            "o350020080161"
+          ],
+          "choice": "one wording per level for the line repeated in verse 17",
+          "alternatives": [],
+          "reason": "The second half of this verse comes again word for word in verse 17; each level gives it the same Chinese in both places.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3907,6 +4115,11 @@
           "L": "Kahabag-habag ang nagtatamo ng masamang pakinabang para sa kaniyang sambahayan, \\q upang ilagay sa itaas ang kaniyang pugad, \\q upang maligtas mula sa kamay ng kapahamakan!",
           "B": "Kahabag-habag ang nagkakamit ng masamang pakinabang para sa kaniyang sambahayan, \\q upang ilagay sa mataas ang kaniyang pugad, \\q upang maligtas mula sa kamay ng kapahamakan!",
           "R": "Nakakaawa ang sasapitin ng yumayaman sa pandaraya upang gawing dakila ang kaniyang pamilya! \\q Itinatayo niya sa mataas ang kaniyang tahanan na gaya ng pugad ng ibon, \\q upang walang kaguluhang makaabot sa kaniya."
+        },
+        "zh": {
+          "L": "有祸了，那为自己的家谋取不义之财的人， \\q 为要在高处搭窝， \\q 好脱离灾祸之手！",
+          "B": "那为自己的家牟取不义之利、 \\q 要把窝筑在高处、 \\q 好躲避灾祸之手的人有祸了！",
+          "R": "那靠欺诈致富、想使自己家族显赫的人真是可悲！ \\q 他把家建在高处，像鸟窝一样， \\q 好让任何灾祸都碰不到他。"
         }
       },
       "decisions": [
@@ -4140,6 +4353,11 @@
           "L": "Nagbalak ka ng kahihiyan para sa iyong sambahayan, \\q na nililipol ang maraming bayan, at nagkakasala laban sa iyong kaluluwa.",
           "B": "Nagdala ng kahihiyan sa iyong sambahayan ang iyong mga pakana; \\q sa paglipol mo sa maraming bayan ay naiwala mo ang sarili mong buhay.",
           "R": "Nagdala ng kahihiyan sa iyong pamilya ang iyong mga plano. \\q Winasak mo ang maraming bansa, kaya naiwala mo ang sarili mong buhay."
+        },
+        "zh": {
+          "L": "你为你的家谋划了羞耻， \\q 剪除多国的民，[得罪]了你自己的生命。",
+          "B": "你的计谋给你的家带来羞辱； \\q 你剪除许多民族，就赔上了自己的性命。",
+          "R": "你的计划使你的家族蒙羞。 \\q 你毁灭了许多国家，因此你也失去了自己的性命。"
         }
       },
       "decisions": [
@@ -4367,6 +4585,11 @@
           "L": "Sapagkat sisigaw ang bato mula sa pader, \\q at sasagot dito ang biga mula sa kahuyan.",
           "B": "Sisigaw ang mismong mga bato mula sa pader, \\q at sasagot sa kanila ang isang biga mula sa kahuyan.",
           "R": "Sisigaw laban sa iyo ang mga bato sa mga pader ng iyong bahay, \\q at sasagot sa kanila ang mga bigang kahoy."
+        },
+        "zh": {
+          "L": "因为石头必从墙里呼叫， \\q 梁木必从木架中应和它。",
+          "B": "连墙上的石头也要呼喊， \\q 木结构中的横梁也要回应它们。",
+          "R": "你房子墙里的石头要大声控诉你， \\q 木梁也会回应它们。"
         }
       },
       "decisions": [
@@ -4574,6 +4797,11 @@
           "L": "Kahabag-habag ang nagtatayo ng lunsod sa pamamagitan ng pagbububo ng dugo \\q at nagtatatag ng bayan sa pamamagitan ng kalikuan!",
           "B": "Kahabag-habag ang nagtatayo ng lunsod sa pamamagitan ng pagbububo ng dugo \\q at nagtatatag ng bayan sa pamamagitan ng kasamaan!",
           "R": "Nakakaawa ang sasapitin ng nagtatayo ng lunsod sa pamamagitan ng pagpatay \\q at nagtatayo ng bayan sa pamamagitan ng paggawa ng masama!"
+        },
+        "zh": {
+          "L": "有祸了，那以流血建造城市、 \\q 以不义建立城镇的人！",
+          "B": "那以流人血建造城市、 \\q 以恶行建立城镇的人有祸了！",
+          "R": "那靠杀人建造城市、 \\q 靠作恶建立城镇的人真是可悲！"
         }
       },
       "decisions": [
@@ -4896,6 +5124,25 @@
           "reason": "Micah 3:10 (m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o350020120021",
+            "o350020120042"
+          ],
+          "choice": "\"以流血建造\" (L), \"以流人血建造\" (B)",
+          "alternatives": [],
+          "reason": "The words are shared with Micah 3:10, which is not yet drafted in Chinese; they are worded here so that Micah can keep the same \"建造……以流血\" frame. The cry follows verse 6.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5007,6 +5254,11 @@
           "L": "Hindi ba, narito, mula {{divine_name:sa PANGINOON|kay Yahweh}} ng mga hukbo \\q na nagpapagal ang mga bayan para lamang sa apoy, \\q at nagpapakapagod ang mga bansa para sa wala?",
           "B": "Hindi ba itinakda {{divine_name:ng PANGINOON|ni Yahweh}} ng mga hukbo \\q na nagpapagal ang mga bayan para lamang sa apoy \\q at pinapagod ng mga bansa ang kanilang sarili para sa wala?",
           "R": "Ipinasya {{divine_name:ng PANGINOON|ni Yahweh}} ng mga hukbo \\q na susunugin lamang ang lahat ng pinaghirapang itayo ng mga bansa. \\q Napapagod sila para sa wala."
+        },
+        "zh": {
+          "L": "看哪，这岂不是出于万军之{{divine_name:上主|雅威}}： \\q 万民劳碌，只为火焚， \\q 列国疲乏，归于虚空？",
+          "B": "万军之{{divine_name:上主|雅威}}岂不是已经定意： \\q 万民劳碌，只为火所焚烧； \\q 列国筋疲力尽，归于虚空？",
+          "R": "统领万军的{{divine_name:上主|雅威}}已经决定， \\q 各国的人辛辛苦苦建造的一切，都只会被烧光。 \\q 他们累得筋疲力尽，却都是白费力气。"
         }
       },
       "decisions": [
@@ -5400,6 +5652,48 @@
           "reason": "God decrees (m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o350020130041",
+            "o350020130051"
+          ],
+          "choice": "\"万军之{{divine_name:上主|雅威}}\" (L, B); \"统领万军的{{divine_name:上主|雅威}}\" (R)",
+          "alternatives": [
+            "\"万军的{{divine_name:上主|雅威}}\""
+          ],
+          "reason": "The glossary's form for the LORD of hosts through the Prophets.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o350020130091",
+            "o350020130121"
+          ],
+          "choice": "Jeremiah 51:58's Chinese: \"万民劳碌\", \"归于虚空\", \"只为火所焚烧\", \"筋疲力尽\"",
+          "alternatives": [],
+          "reason": "Jeremiah 51:58 says the same with the two halves the other way round (peoples for nothing, nations for fire). Each level reuses Jeremiah's Chinese for each phrase and follows Habakkuk's order: peoples for the fire, nations for nothing (m1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5506,6 +5800,11 @@
           "L": "Sapagkat ang lupa ay mapupuno ng kaalaman sa kaluwalhatian {{divine_name:ng PANGINOON|ni Yahweh}} \\q gaya ng tubig na tumatakip sa dagat.",
           "B": "Sapagkat ang lupa ay mapupuno ng kaalaman sa kaluwalhatian {{divine_name:ng PANGINOON|ni Yahweh}} \\q gaya ng dagat na puno ng tubig.",
           "R": "Makikilala ng lahat ng tao sa lupa ang kaluwalhatian {{divine_name:ng PANGINOON|ni Yahweh}}. \\q Mapupuno ang lupa ng kaalamang ito, gaya ng mga karagatang puno ng tubig."
+        },
+        "zh": {
+          "L": "因为大地要充满对{{divine_name:上主|雅威}}荣耀的认识， \\q 如同众水遮盖大海。",
+          "B": "因为大地要充满对{{divine_name:上主|雅威}}荣耀的认识， \\q 就像大海充满了水。",
+          "R": "世上每一个人都会认识{{divine_name:上主|雅威}}的荣耀。 \\q 大地要充满这样的认识，就像海洋充满了水一样。"
         }
       },
       "decisions": [
@@ -5920,6 +6219,26 @@
           "reason": "Recognizing him (m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o350020140042",
+            "o350020140061"
+          ],
+          "choice": "Isaiah 11:9's Chinese at each level, with \"荣耀\" added",
+          "alternatives": [],
+          "reason": "Isaiah 11:9 has the same line without \"the glory of\": \"因为大地要充满对{{divine_name:上主|雅威}}的认识，如同众水遮盖大海\" (L), \"……就像大海充满了水\" (B), \"世上每一个人都会认识{{divine_name:上主|雅威}}。大地要充满这样的认识，就像海洋充满了水一样\" (R). Habakkuk keeps it and adds \"荣耀\" (m1).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6027,6 +6346,11 @@
           "L": "Kahabag-habag ang nagpapainom sa kaniyang kapwa, \\q na hinahaluan ng iyong poot at nilalasing sila, \\q upang mamasdan ang kanilang kahubaran!",
           "B": "Kahabag-habag ang nagpapainom sa kaniyang mga kapwa, \\q na ibinubuhos ang kaniyang poot hanggang malasing sila, \\q upang matitigan niya ang kanilang kahubaran!",
           "R": "Nakakaawa ang sasapitin ng naglalasing sa kaniyang mga kapwa, \\q na nagbubuhos ng alak na hinaluan ng kaniyang galit, \\q upang matingnan niya ang kanilang hubad na katawan!"
+        },
+        "zh": {
+          "L": "有祸了，那叫他邻舍喝[酒]的人， \\q 掺入你的愤怒，使[他们]喝醉， \\q 好看他们的赤身露体！",
+          "B": "那叫邻舍喝酒、 \\q 倾出自己的烈怒、直到他们喝醉、 \\q 好看他们赤身露体的人有祸了！",
+          "R": "那把邻居灌醉的人真是可悲！ \\q 他倒出掺着自己怒气的酒， \\q 好看他们赤身露体的样子！"
         }
       },
       "decisions": [
@@ -6316,6 +6640,11 @@
           "L": "Nabusog ka ng kahihiyan sa halip na kaluwalhatian; \\q uminom ka rin, at malantad bilang di-tuli! \\q Iikot sa iyo ang kopa ng kanang kamay {{divine_name:ng PANGINOON|ni Yahweh}}, \\q at lubos na kadustaan ang mapapasa iyong kaluwalhatian.",
           "B": "Mapupuno ka ng kahihiyan sa halip na kaluwalhatian. \\q Uminom ka rin, at malantad bilang di-tuli! \\q Iikot sa iyo ang kopa sa kanang kamay {{divine_name:ng PANGINOON|ni Yahweh}}, \\q at tatakpan ng kahihiyan ang iyong kaluwalhatian.",
           "R": "Tatakpan ka ng kahihiyan sa halip na karangalan. \\q Ngayon ay ikaw naman ang iinom at ilalantad na hubad at kahiya-hiya! \\q May hawak {{divine_name:ang PANGINOON|si Yahweh}} na kopa ng parusa sa {{deity_pronoun:kaniyang|Kaniyang}} kanang kamay, at ipapasa ito sa iyo. \\q Magiging kahihiyan ang iyong kaluwalhatian."
+        },
+        "zh": {
+          "L": "你饱受羞辱，而非荣耀； \\q 你也喝吧，显出你是未受割礼的！ \\q {{divine_name:上主|雅威}}右手中的杯必轮到你， \\q 极大的羞辱必[落]在你的荣耀上。",
+          "B": "你必满受羞辱，而不是荣耀。 \\q 你也喝吧，露出你未受割礼的样子！ \\q {{divine_name:上主|雅威}}右手中的杯必传到你这里， \\q 羞辱必遮盖你的荣耀。",
+          "R": "你必蒙受羞辱，而不是尊荣。 \\q 现在轮到你喝了，你要被人看见赤身露体，受尽羞辱！ \\q {{divine_name:上主|雅威}}在{{deity_pronoun:他|祂}}的右手中拿着惩罚的杯，这杯要传到你手里。 \\q 你的荣耀要变成羞耻。"
         }
       },
       "decisions": [
@@ -6651,6 +6980,11 @@
           "L": "Sapagkat tatakpan ka ng karahasan sa Lebanon, \\q at ng pagkawasak ng mga hayop na tumakot sa kanila, \\q dahil sa dugo ng tao at sa karahasan sa lupain, \\q sa lunsod at sa lahat ng naninirahan doon.",
           "B": "Gugupuin ka ng karahasang ginawa mo sa Lebanon, \\q at gayundin ng pagpatay na tumakot sa mga hayop nito, \\q dahil sa dugo ng taong ibinubo mo at sa karahasan laban sa lupain, \\q laban sa lunsod at sa lahat ng naninirahan doon.",
           "R": "Pinutol mo ang mga kagubatan ng Lebanon at pinatay ang mga hayop nito. Ngayon ay babalik sa iyo ang karahasang iyon. \\q Tatabunan ka ng pagpatay sa mga hayop na tumakot sa kanila. \\q Pumatay ka ng maraming tao. Naging marahas ka sa lupain, \\q sa lunsod at sa lahat ng naninirahan doon."
+        },
+        "zh": {
+          "L": "因为[向]黎巴嫩所行的暴力必淹没你， \\q 那使野兽惊恐的毁灭[也必如此]， \\q 因为人的血，和[向]这地所行的暴力， \\q [向]城和城里一切居民[所行的]。",
+          "B": "你向黎巴嫩所行的暴力必压倒你， \\q 那使野兽惊恐的杀戮也必如此， \\q 因为你流了人的血，向这地施行暴力， \\q 向城和城里所有的居民施行暴力。",
+          "R": "你砍伐了黎巴嫩的森林，杀死了那里的动物。现在那暴力要回到你身上。 \\q 那使动物惊恐的杀戮要把你埋葬。 \\q 你杀了很多人。你对这地施行暴力， \\q 也对这城和城里所有的人施行暴力。"
         }
       },
       "decisions": [
@@ -6907,6 +7241,26 @@
           "reason": "Repeats verse 8 (m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o350020170082",
+            "o350020170141"
+          ],
+          "choice": "the Chinese of verse 8 repeated",
+          "alternatives": [],
+          "reason": "The second half repeats verse 8 word for word in the Hebrew (m3), and keeps its Chinese at each level. Lebanon is \"黎巴嫩\", as the glossary.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -7022,6 +7376,11 @@
           "L": "Ano ang pakinabang ng inukit na larawan, na inukit ito ng gumawa nito, \\q ng hinulmang larawan at guro ng kasinungalingan? \\q Sapagkat nagtitiwala ang humubog nito sa sarili niyang likha \\q kapag gumagawa siya ng mga piping diyus-diyosan.",
           "B": "Ano ang silbi ng diyus-diyosan kapag naukit na ito ng gumawa nito, \\q o ng larawang metal, isang guro ng kasinungalingan? \\q Nagtitiwala ang gumawa nito sa sarili niyang hinubog \\q kapag gumagawa siya ng mga diyus-diyosang hindi makapagsalita.",
           "R": "Ano ang buti ng diyus-diyosang inukit ng isang tao, \\q o ng rebultong metal? Kasinungalingan lamang ang itinuturo nito. \\q Nagtitiwala ang mga gumagawa ng diyus-diyosan sa ginawa nila, \\q ngunit hindi man lamang makapagsalita ang kanilang mga diyus-diyosan."
+        },
+        "zh": {
+          "L": "雕刻的偶像有什么益处，以致制造它的人把它雕刻出来？ \\q 铸造的像和教人谎言的[又有什么益处]？ \\q 因为造它的人倚靠自己所造的， \\q 就是他制作哑巴偶像的时候。",
+          "B": "偶像被匠人雕刻出来，又有什么用处？ \\q 金属铸像也是如此，它只教导谎言。 \\q 造它的人信靠他亲手所造的， \\q 制作出不能说话的偶像。",
+          "R": "一个被人雕刻出来的偶像有什么用？ \\q 一个金属像又有什么用？它只教人谎言。 \\q 制造偶像的人信靠他们自己所做的东西， \\q 但他们的偶像连话都不会说。"
         }
       },
       "decisions": [
@@ -7293,6 +7652,11 @@
           "L": "Kahabag-habag ang nagsasabi sa kahoy, \"Gumising ka!\" \\q \"Bumangon ka!\" sa batong pipi. \\q Magtuturo ba ito? \\q Narito, nababalot ito ng ginto at pilak, \\q at walang anumang hininga sa loob nito.",
           "B": "Kahabag-habag ang nagsasabi sa isang piraso ng kahoy, \"Gumising ka!\" \\q o sa walang buhay na bato, \"Bumangon ka!\" \\q Makapagtuturo ba ito? \\q Nababalutan ito ng ginto at pilak, \\q ngunit walang anumang hininga sa loob nito.",
           "R": "Nakakaawa ang sasapitin ng sinumang nagsasabi sa isang piraso ng kahoy, \"Gumising ka!\" \\q o nagsasabi sa batong hindi makapagsalita, \"Bumangon ka!\" \\q May maituturo ba ang diyus-diyosan kaninuman? \\q Maaaring nababalutan ito ng ginto at pilak, \\q ngunit wala itong buhay."
+        },
+        "zh": {
+          "L": "有祸了，那对木头说：“醒来吧！” \\q 对无声的石头说：“起来吧！”的人。 \\q 它能教导吗？ \\q 看哪，它包着金银， \\q 里面却毫无气息。",
+          "B": "那对一块木头说“醒来吧！” \\q 或对无生命的石头说“起来吧！”的人有祸了！ \\q 它能教导人吗？ \\q 它包着金银， \\q 里面却毫无气息。",
+          "R": "任何对一块木头说“醒过来！” \\q 或对一块不会说话的石头说“起来！”的人，都真是可悲！ \\q 偶像能教人什么吗？ \\q 它也许包着金银， \\q 里面却一点生命也没有。"
         }
       },
       "decisions": [
@@ -7534,6 +7898,11 @@
           "L": "Ngunit {{divine_name:ang PANGINOON|si Yahweh}} ay nasa {{deity_pronoun:kaniyang|Kaniyang}} banal na templo; \\q tumahimik kayo sa harap {{deity_pronoun:niya|Niya}}, buong lupa!",
           "B": "Ngunit {{divine_name:ang PANGINOON|si Yahweh}} ay nasa {{deity_pronoun:kaniyang|Kaniyang}} banal na templo; \\q tumahimik ka sa harap {{deity_pronoun:niya|Niya}}, O buong lupa.",
           "R": "Ngunit {{divine_name:ang PANGINOON|si Yahweh}} ay nasa {{deity_pronoun:kaniyang|Kaniyang}} banal na templo. \\q Dapat tumahimik ang lahat ng tao sa lupa sa {{deity_pronoun:kaniyang|Kaniyang}} harapan."
+        },
+        "zh": {
+          "L": "但{{divine_name:上主|雅威}}在{{deity_pronoun:他|祂}}的圣殿中； \\q 全地都要在{{deity_pronoun:他|祂}}面前肃静！",
+          "B": "但{{divine_name:上主|雅威}}在{{deity_pronoun:他|祂}}的圣殿里； \\q 全地都当在{{deity_pronoun:他|祂}}面前静默。",
+          "R": "但{{divine_name:上主|雅威}}在{{deity_pronoun:他|祂}}的圣殿里。 \\q 世上所有的人都应当在{{deity_pronoun:他|祂}}面前安静下来。"
         }
       },
       "decisions": [
@@ -7914,6 +8283,26 @@
           "alternatives": [],
           "reason": "Silent awe (m2).",
           "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o350020200022",
+            "o350020200041"
+          ],
+          "choice": "\"{{divine_name:上主|雅威}}在{{deity_pronoun:他|祂}}的圣殿中\" (L); \"肃静\" (L), \"静默\" (B), \"安静下来\" (R)",
+          "alternatives": [],
+          "reason": "The first line shares its words with Psalm 11:4, which is not yet drafted in Chinese; \"圣殿\" for the holy temple, as the glossary. Literal and Balanced keep the solemn \"hush\"; Readable says \"be quiet\".",
+          "uncertain": true,
           "footnote": false
         }
       ],
