@@ -47,8 +47,8 @@ Decision text stays in English, quoting the French, Spanish or Swahili words.
   Where the English has no units span, neither does the translation. Use the
   same values as the English conversion, in metric: cubit 45 cm (a
   "handbreadth" 7.5 cm), shekel 11.5 g, beka 5.7 g, gerah 0.6 g, talent 34
-  kg, mina 0.6 kg, ephah 22 litres (a tenth of an ephah 2.2 litres), omer 2.2
-  litres, seah 7 litres, hin 3.7 litres, homer 220 litres, cor 220 litres.
+  kg, mina 0.6 kg, ephah 22 litres (a tenth of an ephah 2.2 litres, two tenths
+  4.4, three tenths 6.6), omer 2.2 litres, seah 7.3 litres (a third of an ephah: one seah 7, two 15, three 22, five 37), hin 3.7 litres, homer 220 litres, cor 220 litres.
   Round as the English rounds ("about 4 ounces" → "about 115 g"). French and
   Spanish write decimals with a comma (1,10 m) and thousands with a space
   (1 000); Swahili writes decimals with a point and thousands with a comma.

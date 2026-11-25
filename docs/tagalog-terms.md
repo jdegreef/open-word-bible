@@ -1466,7 +1466,7 @@ names the book where the form was first used.
 | 1 Kings 17:9 | Zarephath | Zarefat | ph > f |
 | 1 Kings 18:3 | Obadiah | Obadias | Spanish-derived -ias |
 | 1 Kings 18:19 | Mount Carmel; Asherah | Bundok Carmelo; Ashera |  |
-| 1 Kings 18:32 | two seahs | {{units:mga 14 litro\|dalawang seah}} | as other books' seah spans |
+| 1 Kings 18:32 | two seahs | {{units:mga 15 litro\|dalawang seah}} | as other books' seah spans |
 | 1 Kings 18:40 | the wadi Kishon | wadi ng Kison (L); Ilog Kison (B, R) |  |
 | 1 Kings 19:3 | Beersheba; broom tree | Beer-seba; *punong retama* |  |
 | 1 Kings 19:12 | a sound of thin silence | *tunog ng manipis na katahimikan* | not "still small voice" |

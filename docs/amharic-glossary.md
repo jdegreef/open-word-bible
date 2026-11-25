@@ -274,7 +274,7 @@ were confirmed, and the variants named were harmonised in this pass.
 - Values: cubit ክንድ 45 ሳንቲ ሜትር (a "long cubit" keeps the English value);
   span ስንዝር 23 ሳንቲ ሜትር; handbreadth መዳፍ 7.5 ሳንቲ ሜትር; shekel ሰቅል 11.5 ግራም;
   beka ቤካ 5.7 ግራም; gerah ጌራ 0.6 ግራም; mina ምናን 0.6 ኪሎ; talent መክሊት 34 ኪሎ;
-  ephah ኢፍ 22 ሊትር; bath ባዶስ 22 ሊትር; omer ጎሞር 2.2 ሊትር; seah ሲዓ 7 ሊትር; hin
+  ephah ኢፍ 22 ሊትር; bath ባዶስ 22 ሊትር; omer ጎሞር 2.2 ሊትር; seah ሲዓ 7.3 ሊትር (two 15, three 22, five 37); hin
   ኢን 3.7 ሊትር; homer and kor ቆሮስ 220 ሊትር.
 - Coins (New Testament): a `units` span gives the value in wages with the coin
   as the alternative (`{{units:የአንድ ቀን ደመወዝ|አንድ ዲናር}}`); silver pieces

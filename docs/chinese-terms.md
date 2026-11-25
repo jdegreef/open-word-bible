@@ -303,7 +303,7 @@ the English conversion, written in Arabic digits in the modern option.
 | shekel; beka; gerah | 舍客勒; 比加; 季拉 | 11.5克; 5.7克; 0.6克 |
 | talent; mina | 他连得; 弥那 | as money, in wages, as the denarius: a talent about twenty years' wages (`{{units:约二十年的工钱\|一他连得}}`, five talents 约一百年的工钱), a mina about a hundred days' wages; the weight (34公斤; 0.6公斤) only where the text weighs it |
 | ephah (a tenth of an ephah); omer | 伊法 (伊法的十分之一); 俄梅珥 | 22升 (2.2升); 2.2升 |
-| seah; hin; bath | 细亚; 欣; 罢特 | 7升; 3.7升; 22升 |
+| seah; hin; bath | 细亚; 欣; 罢特 | 7.3升 (一细亚 约7升, 两细亚 约15升, 三细亚 约22升, 五细亚 约37升); 3.7升; 22升 |
 | homer; cor | 贺梅珥; 柯珥 | 220升 |
 | stadion (*stadia*) | 斯塔迪亚 | 约185米 (十五个斯塔迪亚: 约3公里) |
 | Roman mile | 罗马里 | 约1.5公里 |
@@ -2047,7 +2047,7 @@ Terms settled in Genesis:
 | pronouns for God | every Chinese pronoun for God in a `deity_pronoun` span, also where the English pronoun opens a sentence (its capital hides the span) or where Chinese adds one (求`{{deity_pronoun:你\|祢}}`, 32:12); God is not named instead of the pronoun; God's "I" is 我 |
 | address (您) | 你 at L everywhere, 我主 for "my lord". 您 at B and R: servants to their master (24; 39:8-9; 40), sons to Isaac (27; 22:7), hosts and strangers in courtesy (18:3; 19:18-20; 23; 24), Jacob to Esau (32-33), Rachel to Laban (31:35), subjects to Pharaoh (40-41; 46:34-47:9; 50:5), the brothers and the Egyptians to Joseph and his steward with 大人 (42-44; 47:15-25) until 45:4. 你 between Jacob and Laban, from Esau to Jacob, and from the brothers to Joseph after 45:4. Strangers addressed as "sir" at R: 先生 (18:3; 19:18; 23) |
 | Sheol (37:35; 42:38; 44:29, 31) | 阴间 (L, B); 死亡之地 (R), where the English Balanced and Readable say "the grave" |
-| units | shekel 舍客勒 (L; 11.5克 in `units` spans at B and R: 十舍客勒 约115克, 二十舍客勒银子 约230克银子, 四百舍客勒 约4.6公斤, 一千舍客勒 约11.5公斤); beka 比加 (约5.7克); cubit 肘 (约45厘米); seah 细亚 (三细亚 约21升) |
+| units | shekel 舍客勒 (L; 11.5克 in `units` spans at B and R: 十舍客勒 约115克, 二十舍客勒银子 约230克银子, 四百舍客勒 约4.6公斤, 一千舍客勒 约11.5公斤); beka 比加 (约5.7克); cubit 肘 (约45厘米); seah 细亚 (三细亚 约22升) |
 | Noah's ark; gopher wood | 方舟 (as Hebrews 11:7); 歌斐木 (L, B) |
 | the Negev | 内盖夫 at every level |
 | Nephilim | 拿非利人 (R: 巨人，叫作拿非利人) |
