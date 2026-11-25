@@ -100,6 +100,11 @@
           "L": "Isang papuri ni David. \\q Dadakilain ko {{deity_pronoun:ikaw|Ikaw}}, aking Diyos, ang Hari, \\q at pupurihin ko ang {{deity_pronoun:iyong|Iyong}} pangalan magpakailanman.",
           "B": "Isang awit ng papuri. Ni David. \\q Aking Diyos, ang Hari, \\q itataas ko {{deity_pronoun:ikaw|Ikaw}} sa papuri at pupurihin ko ang {{deity_pronoun:iyong|Iyong}} pangalan magpakailanman.",
           "R": "Isang awit ng papuri. Ni David. \\q Aking Diyos, {{deity_pronoun:ikaw|Ikaw}} ang Hari! Sasabihin ko kung gaano {{deity_pronoun:ka|Ka}} kadakila. \\q Lagi kong pupurihin ang {{deity_pronoun:iyong|Iyong}} pangalan magpakailanman."
+        },
+        "zh": {
+          "L": "大卫的赞美。 \\q 我要高举{{deity_pronoun:你|祢}}，我的{{god_term:神|上帝}}，[那]王， \\q 我要称颂{{deity_pronoun:你|祢}}的名，直到永永远远。",
+          "B": "一首赞美诗。大卫的。 \\q 我的{{god_term:神|上帝}}，作王的那一位啊， \\q 我要高声赞美、高举{{deity_pronoun:你|祢}}，世世代代称颂{{deity_pronoun:你|祢}}的名。",
+          "R": "一首赞美的歌。大卫作。 \\q 我的{{god_term:神|上帝}}啊，{{deity_pronoun:你|祢}}是王！我要述说{{deity_pronoun:你|祢}}有多么伟大。 \\q 我要永远赞美{{deity_pronoun:你|祢}}的名，直到永永远远。"
         }
       },
       "decisions": [
@@ -561,6 +566,67 @@
           "reason": "An acrostic: each verse in Hebrew begins with the next letter of the alphabet (m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o191450010031"
+          ],
+          "choice": "the alphabet poem is not imitated: each verse keeps its own content, in the English lines",
+          "alternatives": [],
+          "reason": "Psalm 145 is an alphabet poem (m3): its verses begin with the letters of the Hebrew alphabet in order. Chinese has no alphabet whose order the verses could follow, and any imitation (pinyin initials, a character series) would force the wording. As at Lamentations 1:1, the meaning decisions record the form, and each verse keeps the lines of the English level. The missing nun line after verse 13 is not supplied (13, m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191450010011"
+          ],
+          "choice": "\"赞美\" (L); \"一首赞美诗\" (B); \"一首赞美的歌\" (R) for tehillah",
+          "alternatives": [
+            "\"诗\""
+          ],
+          "reason": "The only title that calls a psalm \"a praise\" (m2): Literal keeps the bare word, Balanced and Readable say it is a song of praise, as the English does; \"诗\" stays the word for mizmor.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-3",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191450010011"
+          ],
+          "choice": "\"{{god_term:神|上帝}}\" in a god_term span",
+          "alternatives": [
+            "\"神\" fixed"
+          ],
+          "reason": "Every word naming the one God is written with the Chinese god_term setting: 神 by default, 上帝 as the reader's alternative.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft",
@@ -851,6 +917,11 @@
           "L": "Araw-araw ay pupurihin ko {{deity_pronoun:ikaw|Ikaw}}, \\q at pupurihin ko ang {{deity_pronoun:iyong|Iyong}} pangalan magpakailanman.",
           "B": "Araw-araw ay pupurihin ko {{deity_pronoun:ikaw|Ikaw}} \\q at magbibigay-papuri ako sa {{deity_pronoun:iyong|Iyong}} pangalan magpakailanman.",
           "R": "Pupurihin ko {{deity_pronoun:ikaw|Ikaw}} sa bawat araw. \\q Patuloy kong pupurihin ang {{deity_pronoun:iyong|Iyong}} pangalan magpakailanman."
+        },
+        "zh": {
+          "L": "每一天我都要称颂{{deity_pronoun:你|祢}}， \\q 我要赞美{{deity_pronoun:你|祢}}的名，直到永永远远。",
+          "B": "我要日复一日地称颂{{deity_pronoun:你|祢}}， \\q 世世代代赞美{{deity_pronoun:你|祢}}的名。",
+          "R": "我要每一天都赞美{{deity_pronoun:你|祢}}。 \\q 我要一直赞美{{deity_pronoun:你|祢}}的名，直到永永远远。"
         }
       },
       "decisions": [
@@ -1146,6 +1217,11 @@
           "L": "Dakila {{divine_name:ang PANGINOON|si Yahweh}} at lubhang karapat-dapat purihin, \\q at ang {{deity_pronoun:kaniyang|Kaniyang}} kadakilaan ay hindi masaliksik.",
           "B": "Dakila {{divine_name:ang PANGINOON|si Yahweh}}, karapat-dapat sa pinakamataas na papuri, \\q at hindi masasaliksik ang lalim ng {{deity_pronoun:kaniyang|Kaniyang}} kadakilaan.",
           "R": "Dakila {{divine_name:ang PANGINOON|si Yahweh}}! Karapat-dapat Siya sa lahat ng ating papuri. \\q Walang sinumang makatutuklas kung hanggang saan ang {{deity_pronoun:kaniyang|Kaniyang}} kadakilaan."
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}伟大，极当受赞美， \\q {{deity_pronoun:他|祂}}的伟大[是]无从探寻的。",
+          "B": "{{divine_name:上主|雅威}}伟大，配得最高的赞美； \\q {{deity_pronoun:他|祂}}的伟大深不可测，无人能探究到底。",
+          "R": "{{divine_name:上主|雅威}}多么伟大！值得我们所有的赞美。 \\q {{deity_pronoun:他|祂}}有多么伟大，没有人能找到尽头。"
         }
       },
       "decisions": [
@@ -1511,6 +1587,11 @@
           "L": "Ang bawat salinlahi ay magpupuri sa {{deity_pronoun:iyong|Iyong}} mga gawa sa susunod na salinlahi, \\q at ang {{deity_pronoun:iyong|Iyong}} makapangyarihang mga gawa ay ipahahayag nila.",
           "B": "Ang bawat salinlahi ay magpupuri sa {{deity_pronoun:iyong|Iyong}} mga gawa sa salinlahing susunod dito \\q at magpapahayag ng {{deity_pronoun:iyong|Iyong}} makapangyarihang mga gawa.",
           "R": "Sasabihin ng mga magulang sa kanilang mga anak ang mga bagay na ginawa {{deity_pronoun:mo|Mo}}. \\q Ikukuwento nila ang {{deity_pronoun:iyong|Iyong}} makapangyarihang mga gawa."
+        },
+        "zh": {
+          "L": "世代对世代要称扬{{deity_pronoun:你|祢}}的工作， \\q 他们要宣告{{deity_pronoun:你|祢}}大能的事。",
+          "B": "每一代人都要向下一代称颂{{deity_pronoun:你|祢}}的作为， \\q 宣扬{{deity_pronoun:你|祢}}大能的事迹。",
+          "R": "父母要把{{deity_pronoun:你|祢}}所做的事告诉儿女。 \\q 他们要讲述{{deity_pronoun:你|祢}}大能的作为。"
         }
       },
       "decisions": [
@@ -1805,6 +1886,11 @@
           "L": "Ang marilag na kaluwalhatian ng {{deity_pronoun:iyong|Iyong}} kamahalan, \\q at ang mga salaysay ng {{deity_pronoun:iyong|Iyong}} mga kababalaghan ay bubulay-bulayin ko.",
           "B": "Bubulay-bulayin ko ang {{deity_pronoun:iyong|Iyong}} kamahalan, ang kaluwalhatian at karilagan nito, \\q at ang salaysay ng {{deity_pronoun:iyong|Iyong}} mga kababalaghan.",
           "R": "Iisipin ko kung gaano {{deity_pronoun:ka|Ka}} kaluwalhati at kamarilag. \\q Iisipin ko ang mga kamangha-manghang bagay na ginawa {{deity_pronoun:mo|Mo}}."
+        },
+        "zh": {
+          "L": "{{deity_pronoun:你|祢}}威严的荣耀的光辉， \\q 和{{deity_pronoun:你|祢}}奇妙的事，我要默想。",
+          "B": "我要思想{{deity_pronoun:你|祢}}的威严，它的荣耀和光彩， \\q 也要思想{{deity_pronoun:你|祢}}奇妙作为的事迹。",
+          "R": "我要想一想{{deity_pronoun:你|祢}}是多么荣耀、多么威严。 \\q 我要想一想{{deity_pronoun:你|祢}}所做的奇妙的事。"
         }
       },
       "decisions": [
@@ -1950,6 +2036,27 @@
           "choice": "\"kamahalan\"",
           "alternatives": [],
           "reason": "Majesty: royal splendor (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191450050061"
+          ],
+          "choice": "\"我要默想\" (L); \"我要思想\" (B); \"我要想一想\" (R)",
+          "alternatives": [
+            "\"他们要述说\""
+          ],
+          "reason": "The Hebrew text has \"I will meditate\" (m4); the ancient Greek \"they will speak\" is not followed.",
           "uncertain": false,
           "footnote": false
         }
@@ -2167,6 +2274,11 @@
           "L": "At ang kapangyarihan ng {{deity_pronoun:iyong|Iyong}} kakila-kilabot na mga gawa ay sasabihin nila, \\q at ang {{deity_pronoun:iyong|Iyong}} kadakilaan ay isasalaysay ko.",
           "B": "Magsasalita ang mga tao tungkol sa kapangyarihan ng {{deity_pronoun:iyong|Iyong}} kahanga-hangang mga gawa, \\q at isasalaysay ko ang {{deity_pronoun:iyong|Iyong}} kadakilaan.",
           "R": "Pag-uusapan ng mga tao ang makapangyarihan at nakasisindak na mga bagay na ginawa {{deity_pronoun:mo|Mo}}, \\q at sasabihin ko kung gaano {{deity_pronoun:ka|Ka}} kadakila."
+        },
+        "zh": {
+          "L": "他们要讲论{{deity_pronoun:你|祢}}那令人畏惧之事的威力， \\q {{deity_pronoun:你|祢}}的伟大，我要将它细述。",
+          "B": "人们要谈论{{deity_pronoun:你|祢}}可怕作为的大能， \\q 我也要讲述{{deity_pronoun:你|祢}}的伟大。",
+          "R": "人们会谈论{{deity_pronoun:你|祢}}所做的那些有能力又可怕的事， \\q 我要讲述{{deity_pronoun:你|祢}}多么伟大。"
         }
       },
       "decisions": [
@@ -2514,6 +2626,11 @@
           "L": "Ang alaala ng {{deity_pronoun:iyong|Iyong}} saganang kabutihan ay ibubulalas nila, \\q at dahil sa {{deity_pronoun:iyong|Iyong}} katuwiran ay sisigaw sila sa kagalakan.",
           "B": "Mag-uumapaw sila sa alaala ng {{deity_pronoun:iyong|Iyong}} dakilang kabutihan \\q at aawit sa kagalakan dahil sa {{deity_pronoun:iyong|Iyong}} katuwiran.",
           "R": "Maaalala ng mga tao kung gaano {{deity_pronoun:ka|Ka}} kabuti, at hindi sila mapipigilang magkuwento tungkol dito. \\q Masaya silang aawit tungkol sa kung paanong lagi {{deity_pronoun:mong|Mong}} ginagawa ang tama."
+        },
+        "zh": {
+          "L": "他们要涌流出对{{deity_pronoun:你|祢}}丰盛美善的记忆， \\q 并为{{deity_pronoun:你|祢}}的公义欢呼。",
+          "B": "他们要满怀记忆，滔滔述说{{deity_pronoun:你|祢}}的大美善， \\q 并为{{deity_pronoun:你|祢}}的公义高声欢唱。",
+          "R": "人们会记起{{deity_pronoun:你|祢}}有多么美善，说个不停。 \\q 他们会快乐地歌唱，因为{{deity_pronoun:你|祢}}总是做对的事。"
         }
       },
       "decisions": [
@@ -2661,6 +2778,24 @@
           "choice": "\"ibubulalas\"",
           "alternatives": [],
           "reason": "Pour forth: speak eagerly, like a bubbling spring (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191450070041"
+          ],
+          "choice": "\"涌流出\" (L); \"滔滔述说\" (B)",
+          "alternatives": [],
+          "reason": "The verb is a spring gushing (m2); Literal keeps the flow, Balanced the flood of words.",
           "uncertain": false,
           "footnote": false
         }
@@ -2856,6 +2991,11 @@
           "L": "Mapagbiyaya at mahabagin {{divine_name:ang PANGINOON|si Yahweh}}, \\q mabagal sa pagkagalit at sagana sa tapat na pag-ibig.",
           "B": "Puspos ng biyaya at habag {{divine_name:ang PANGINOON|si Yahweh}}, \\q mabagal magalit at dakila sa tapat na pag-ibig.",
           "R": "Mabait at magiliw {{divine_name:ang PANGINOON|si Yahweh}}. \\q Hindi Siya madaling magalit, at dakila ang {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig."
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}是有恩惠、怜恤的， \\q 迟于发怒，慈爱极大。",
+          "B": "{{divine_name:上主|雅威}}满有恩惠和慈悲， \\q 发怒迟缓，慈爱浩大。",
+          "R": "{{divine_name:上主|雅威}}满有仁慈和慈悲。 \\q 不容易生气，{{deity_pronoun:他|祂}}始终不变的爱十分伟大。"
         }
       },
       "decisions": [
@@ -3127,6 +3267,29 @@
           "reason": "Echoes Exodus 34:6 (m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191450080011",
+            "o191450080022",
+            "o191450080041",
+            "o191450080051",
+            "o191450080071"
+          ],
+          "choice": "the Chinese of Exodus 34:6 and Jonah 4:2: \"有恩惠、怜恤\" (L), \"满有恩惠和慈悲\" (B), \"满有仁慈和慈悲\" (R); \"迟于发怒\" (L), \"发怒迟缓\" (B), \"不容易生气\" (R)",
+          "alternatives": [],
+          "reason": "The LORD's description of himself in Exodus 34:6 (m1), with \"gracious\" first, as in Jonah 4:2; each level keeps that Chinese. The psalm says \"great in loyal love\" where Exodus says \"abundant\", so \"慈爱极大\" (L), \"慈爱浩大\" (B), \"始终不变的爱十分伟大\" (R) differ from Exodus' \"满有慈爱\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft",
@@ -3336,6 +3499,11 @@
           "L": "Mabuti {{divine_name:ang PANGINOON|si Yahweh}} sa lahat, \\q at ang {{deity_pronoun:kaniyang|Kaniyang}} mga habag ay nasa lahat ng {{deity_pronoun:kaniyang|Kaniyang}} mga gawa.",
           "B": "Mabuti {{divine_name:ang PANGINOON|si Yahweh}} sa lahat; \\q ang {{deity_pronoun:kaniyang|Kaniyang}} habag ay sumasaklaw sa lahat ng {{deity_pronoun:kaniyang|Kaniyang}} ginawa.",
           "R": "Mabuti {{divine_name:ang PANGINOON|si Yahweh}} sa lahat. \\q Nagpapakita Siya ng magiliw na pag-ibig sa lahat ng {{deity_pronoun:kaniyang|Kaniyang}} ginawa."
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}对众人都好， \\q {{deity_pronoun:他|祂}}的怜悯在{{deity_pronoun:他|祂}}一切的作为之上。",
+          "B": "{{divine_name:上主|雅威}}善待所有的人， \\q {{deity_pronoun:他|祂}}的怜悯临到{{deity_pronoun:他|祂}}所造的一切。",
+          "R": "{{divine_name:上主|雅威}}对每一个人都好。 \\q {{deity_pronoun:他|祂}}所造的一切，{{god_term:神|上帝}}都温柔地爱护。"
         }
       },
       "decisions": [
@@ -3404,6 +3572,25 @@
           "choice": "\"mga habag\"",
           "alternatives": [],
           "reason": "Compassions: tender mercies (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191450090011"
+          ],
+          "choice": "\"{{god_term:神|上帝}}\" for the English Readable's unspanned \"He\"",
+          "alternatives": [
+            "\"他\""
+          ],
+          "reason": "Where the English Readable starts a sentence with \"He\" and no deity_pronoun span, Readable names God, so the pronoun spans match the English.",
           "uncertain": false,
           "footnote": false
         }
@@ -3624,6 +3811,11 @@
           "L": "Magpapasalamat sa {{deity_pronoun:iyo|Iyo}} ang lahat ng {{deity_pronoun:iyong|Iyong}} mga gawa, O {{divine_name:PANGINOON|Yahweh}}, \\q at pupurihin {{deity_pronoun:ka|Ka}} ng {{deity_pronoun:iyong|Iyong}} mga tapat.",
           "B": "O {{divine_name:PANGINOON|Yahweh}}, magpapasalamat sa {{deity_pronoun:iyo|Iyo}} ang lahat ng {{deity_pronoun:iyong|Iyong}} mga gawa, \\q at pupurihin {{deity_pronoun:ka|Ka}} ng {{deity_pronoun:iyong|Iyong}} tapat na bayan.",
           "R": "O {{divine_name:PANGINOON|Yahweh}}, magpapasalamat sa {{deity_pronoun:iyo|Iyo}} ang lahat ng ginawa {{deity_pronoun:mo|Mo}}. \\q Pupurihin {{deity_pronoun:ka|Ka}} ng {{deity_pronoun:iyong|Iyong}} tapat na bayan."
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}啊，凡{{deity_pronoun:你|祢}}所造的，都要向{{deity_pronoun:你|祢}}献上称谢， \\q {{deity_pronoun:你|祢}}忠信的人要称颂{{deity_pronoun:你|祢}}。",
+          "B": "{{divine_name:上主|雅威}}啊，{{deity_pronoun:你|祢}}所造的万物都要称谢{{deity_pronoun:你|祢}}， \\q {{deity_pronoun:你|祢}}忠心的子民都要称颂{{deity_pronoun:你|祢}}。",
+          "R": "{{divine_name:上主|雅威}}啊，{{deity_pronoun:你|祢}}所造的一切都要感谢{{deity_pronoun:你|祢}}。 \\q 你忠心的子民要赞美{{deity_pronoun:你|祢}}。"
         }
       },
       "decisions": [
@@ -3731,6 +3923,29 @@
           "choice": "\"mga tapat\"",
           "alternatives": [],
           "reason": "Faithful ones: those loyal to God's covenant (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191450100052"
+          ],
+          "choice": "\"忠信的人\" (L); \"忠心的子民\" (B, R) for chasidim",
+          "alternatives": [
+            "\"圣民\"",
+            "\"虔诚的人\"",
+            "\"忠心的百姓\" (R)"
+          ],
+          "reason": "The faithful are people of loyal love (m2): Literal keeps the form of Psalms 4:4, 30:5 and 31:24, \"忠信的人\"; Balanced and Readable say \"忠心的子民\" for \"faithful people\", as 2 Chronicles 6:41 and Psalm 132:9 (\"忠于……的人\" where the English says \"loyal to\"). One form per level through Psalms 145-149.",
           "uncertain": false,
           "footnote": false
         }
@@ -3935,6 +4150,11 @@
           "L": "Ang kaluwalhatian ng {{deity_pronoun:iyong|Iyong}} kaharian ay sasabihin nila, \\q at ang {{deity_pronoun:iyong|Iyong}} kapangyarihan ay pag-uusapan nila,",
           "B": "Magsasalita sila tungkol sa {{deity_pronoun:iyong|Iyong}} maluwalhating paghahari \\q at ikukuwento nila ang {{deity_pronoun:iyong|Iyong}} kapangyarihan,",
           "R": "Pag-uusapan nila kung gaano kaluwalhati ang {{deity_pronoun:iyong|Iyong}} kaharian. \\q Ikukuwento nila ang {{deity_pronoun:iyong|Iyong}} kapangyarihan."
+        },
+        "zh": {
+          "L": "他们要讲说{{deity_pronoun:你|祢}}国度的荣耀， \\q 并要谈论{{deity_pronoun:你|祢}}的能力，",
+          "B": "他们要讲述{{deity_pronoun:你|祢}}统治的荣耀， \\q 述说{{deity_pronoun:你|祢}}的权能，",
+          "R": "他们会谈论{{deity_pronoun:你|祢}}的国度多么荣耀。 \\q 他们会讲述{{deity_pronoun:你|祢}}的力量。"
         }
       },
       "decisions": [
@@ -4039,6 +4259,25 @@
           "choice": "\"kaharian\"",
           "alternatives": [],
           "reason": "Kingdom: God's royal rule (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191450110021"
+          ],
+          "choice": "\"国度\" (L, R); \"统治\" (B)",
+          "alternatives": [],
+          "reason": "God's royal rule (m1): \"国度\" at Literal and Readable for the kingdom, Balanced \"统治\" where the English says \"reign\".",
           "uncertain": false,
           "footnote": false
         }
@@ -4230,6 +4469,11 @@
           "L": "upang ipaalam sa mga anak ng tao ang {{deity_pronoun:kaniyang|Kaniyang}} makapangyarihang mga gawa \\q at ang kaluwalhatian ng karilagan ng {{deity_pronoun:kaniyang|Kaniyang}} kaharian.",
           "B": "upang ipakilala sa lahat ng tao ang {{deity_pronoun:kaniyang|Kaniyang}} makapangyarihang mga gawa \\q at ang maluwalhating karilagan ng {{deity_pronoun:kaniyang|Kaniyang}} paghahari.",
           "R": "Nais nilang malaman ng lahat ng tao ang makapangyarihang mga bagay na ginawa ng Diyos \\q at kung gaano kaluwalhati at kahanga-hanga ang {{deity_pronoun:kaniyang|Kaniyang}} kaharian."
+        },
+        "zh": {
+          "L": "好让人的子孙知道{{deity_pronoun:他|祂}}大能的作为， \\q 和{{deity_pronoun:他|祂}}国度的威荣之光辉。",
+          "B": "使所有的人都知道{{deity_pronoun:他|祂}}大能的事迹， \\q 以及{{deity_pronoun:他|祂}}统治的荣耀和威严。",
+          "R": "他们要让所有的人知道{{god_term:神|上帝}}所做的大能的事， \\q 也知道{{deity_pronoun:他|祂}}的国度多么荣耀、多么美好。"
         }
       },
       "decisions": [
@@ -4583,6 +4827,11 @@
           "L": "Ang {{deity_pronoun:iyong|Iyong}} kaharian ay kaharian ng lahat ng panahon, \\q at ang {{deity_pronoun:iyong|Iyong}} pamamahala ay nasa bawat salinlahi.",
           "B": "Ang {{deity_pronoun:iyong|Iyong}} kaharian ay kaharian para sa lahat ng panahon, \\q at ang {{deity_pronoun:iyong|Iyong}} paghahari ay nananatili sa bawat salinlahi.",
           "R": "Hindi magwawakas ang {{deity_pronoun:iyong|Iyong}} kaharian. \\q Maghahari {{deity_pronoun:ka|Ka}} sa mga tao sa bawat panahong darating."
+        },
+        "zh": {
+          "L": "你的国[是]万古的国， \\q {{deity_pronoun:你|祢}}的权柄[存]于世世代代。",
+          "B": "你的国度是存到万世的国度， \\q {{deity_pronoun:你|祢}}的统治代代长存。",
+          "R": "你的国度永远不会结束。 \\q 你要统治每一个时代的人。"
         }
       },
       "decisions": [
@@ -4686,6 +4935,25 @@
           "choice": "\"pamamahala\"",
           "alternatives": [],
           "reason": "Dominion: rule (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_order",
+          "tokens": [
+            "o191450130011"
+          ],
+          "choice": "no line added after this verse",
+          "alternatives": [],
+          "reason": "The line for the letter nun is missing from the Hebrew text (m1); the Chinese follows the Hebrew, as the English does, and supplies no line from the ancient Greek or the Qumran scroll.",
           "uncertain": false,
           "footnote": false
         }
@@ -4905,6 +5173,11 @@
           "L": "Inaalalayan {{divine_name:ng PANGINOON|ni Yahweh}} ang lahat ng nabubuwal, \\q at ibinabangon ang lahat ng nakayuko.",
           "B": "Inaalalayan {{divine_name:ng PANGINOON|ni Yahweh}} ang bawat natitisod \\q at ibinabangon ang lahat ng nakabaluktot sa hirap.",
           "R": "Tinutulungan {{divine_name:ng PANGINOON|ni Yahweh}} ang bawat nabubuwal. \\q Ibinabangon {{deity_pronoun:niya|Niya}} ang bawat isang pinabibigatan ng kaguluhan."
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}扶持一切跌倒的， \\q 扶起一切被压弯的。",
+          "B": "{{divine_name:上主|雅威}}扶住所有跌跌撞撞的人， \\q 扶起所有弯下腰的人。",
+          "R": "{{divine_name:上主|雅威}}帮助每一个跌倒的人， \\q 扶起每一个被苦难压垮的人。"
         }
       },
       "decisions": [
@@ -5249,6 +5522,11 @@
           "L": "Ang mga mata ng lahat ay umaasang nakatingin sa {{deity_pronoun:iyo|Iyo}}, \\q at ibinibigay {{deity_pronoun:mo|Mo}} sa kanila ang kanilang pagkain sa takdang panahon.",
           "B": "Ang lahat ng mata ay umaasang nakatuon sa {{deity_pronoun:iyo|Iyo}}, \\q at ibinibigay {{deity_pronoun:mo|Mo}} ang kanilang pagkain kapag ito ay kailangan.",
           "R": "Ang bawat may buhay ay tumitingin sa {{deity_pronoun:iyo|Iyo}} at naghihintay. \\q Ibinibigay {{deity_pronoun:mo|Mo}} sa kanila ang kanilang pagkain sa tamang panahon."
+        },
+        "zh": {
+          "L": "众人的眼睛都仰望{{deity_pronoun:你|祢}}， \\q {{deity_pronoun:你|祢}}在适当的时候把食物赐给他们。",
+          "B": "所有的眼睛都盼望地转向{{deity_pronoun:你|祢}}， \\q {{deity_pronoun:你|祢}}在需要的时候供应他们的食物。",
+          "R": "所有的生物都仰望{{deity_pronoun:你|祢}}，等候着。 \\q 你在最恰当的时候给它们食物。"
         }
       },
       "decisions": [
@@ -5639,6 +5917,11 @@
           "L": "Binubuksan {{deity_pronoun:mo|Mo}} ang {{deity_pronoun:iyong|Iyong}} kamay \\q at binibigyang-kasiyahan ang nais ng bawat may buhay.",
           "B": "Binubuksan {{deity_pronoun:mo|Mo}} ang {{deity_pronoun:iyong|Iyong}} kamay \\q at ibinibigay sa bawat nilalang na may buhay ang hinahangad nito.",
           "R": "Binubuksan {{deity_pronoun:mo|Mo}} nang maluwang ang {{deity_pronoun:iyong|Iyong}} kamay \\q at ibinibigay sa bawat nilalang na may buhay ang lahat ng gusto nito."
+        },
+        "zh": {
+          "L": "[你]张开{{deity_pronoun:你|祢}}的手， \\q 使一切活物的心愿得到满足。",
+          "B": "你张开{{deity_pronoun:你|祢}}的手， \\q 使每一个活物得到它所渴望的。",
+          "R": "你把{{deity_pronoun:你|祢}}的手张得大大的， \\q 使每一个活物得到它想要的一切。"
         }
       },
       "decisions": [
@@ -5928,6 +6211,11 @@
           "L": "Matuwid {{divine_name:ang PANGINOON|si Yahweh}} sa lahat ng {{deity_pronoun:kaniyang|Kaniyang}} mga daan, \\q at tapat sa lahat ng {{deity_pronoun:kaniyang|Kaniyang}} mga gawa.",
           "B": "Sa lahat ng {{deity_pronoun:kaniyang|Kaniyang}} mga daan ay matuwid {{divine_name:ang PANGINOON|si Yahweh}}; \\q sa lahat ng {{deity_pronoun:kaniyang|Kaniyang}} mga gawa ay tapat {{deity_pronoun:siya|Siya}}.",
           "R": "Ginagawa {{divine_name:ng PANGINOON|ni Yahweh}} ang tama sa lahat ng {{deity_pronoun:kaniyang|Kaniyang}} ginagawa. \\q Mapagmahal at tapat Siya sa lahat ng {{deity_pronoun:kaniyang|Kaniyang}} mga gawa."
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}在{{deity_pronoun:他|祂}}一切的道路上[是]公义的， \\q 在{{deity_pronoun:他|祂}}一切的作为上[是]忠信的。",
+          "B": "{{divine_name:上主|雅威}}在{{deity_pronoun:他|祂}}一切的道路上都是公义的； \\q {{deity_pronoun:他|祂}}在{{deity_pronoun:他|祂}}一切的作为上都是忠信的。",
+          "R": "{{divine_name:上主|雅威}}在{{deity_pronoun:他|祂}}所做的每一件事上，都做得对。 \\q 在{{deity_pronoun:他|祂}}一切的作为中，满有慈爱，忠心可靠。"
         }
       },
       "decisions": [
@@ -6079,6 +6367,27 @@
           "choice": "\"tapat\"",
           "alternatives": [],
           "reason": "Faithful: or loving, loyal (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191450170052"
+          ],
+          "choice": "\"忠信的\" (L, B); \"满有慈爱，忠心可靠\" (R)",
+          "alternatives": [
+            "\"慈爱的\""
+          ],
+          "reason": "The word for God's faithful people in verse 10, used of God (m1): he acts with loyal love. \"忠信\" keeps the link with \"忠信的人\" in verse 10.",
           "uncertain": false,
           "footnote": false
         }
@@ -6276,6 +6585,11 @@
           "L": "Malapit {{divine_name:ang PANGINOON|si Yahweh}} sa lahat ng tumatawag sa {{deity_pronoun:kaniya|Kaniya}}, \\q sa lahat ng tumatawag sa {{deity_pronoun:kaniya|Kaniya}} nang may katotohanan.",
           "B": "Malapit {{divine_name:ang PANGINOON|si Yahweh}} sa bawat tumatawag sa {{deity_pronoun:kaniya|Kaniya}}, \\q sa lahat ng tumatawag sa {{deity_pronoun:kaniya|Kaniya}} nang tapat.",
           "R": "Malapit {{divine_name:ang PANGINOON|si Yahweh}} sa bawat nananalangin sa {{deity_pronoun:kaniya|Kaniya}}. \\q Malapit Siya sa lahat ng nananalangin sa {{deity_pronoun:kaniya|Kaniya}} nang taos-puso."
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}靠近一切呼求{{deity_pronoun:他|祂}}的， \\q 就是一切在真实中呼求{{deity_pronoun:他|祂}}的人。",
+          "B": "{{divine_name:上主|雅威}}亲近所有向{{deity_pronoun:他|祂}}呼求的人， \\q 亲近所有真心向{{deity_pronoun:他|祂}}呼求的人。",
+          "R": "{{divine_name:上主|雅威}}接近每一个向{{deity_pronoun:他|祂}}祷告的人。 \\q 所有真心向{{deity_pronoun:他|祂}}祷告的人，{{god_term:神|上帝}}都在他们身边。"
         }
       },
       "decisions": [
@@ -6586,6 +6900,11 @@
           "L": "Ang nais ng mga may takot sa {{deity_pronoun:kaniya|Kaniya}} ay ginagawa {{deity_pronoun:niya|Niya}}, \\q at ang kanilang daing ay dinirinig {{deity_pronoun:niya|Niya}}, at inililigtas {{deity_pronoun:niya|Niya}} sila.",
           "B": "Ibinibigay {{deity_pronoun:niya|Niya}} ang nais ng mga may takot sa {{deity_pronoun:kaniya|Kaniya}}; \\q dinirinig {{deity_pronoun:niya|Niya}} ang kanilang daing at sila ay sinasagip {{deity_pronoun:niya|Niya}}.",
           "R": "Ibinibigay {{deity_pronoun:niya|Niya}} sa mga gumagalang sa {{deity_pronoun:kaniya|Kaniya}} ang gusto nila. \\q Kapag dumaraing sila ng tulong, dinirinig {{deity_pronoun:niya|Niya}} at inililigtas {{deity_pronoun:niya|Niya}} sila."
+        },
+        "zh": {
+          "L": "敬畏{{deity_pronoun:他|祂}}之人的愿望，{{deity_pronoun:他|祂}}要实现， \\q {{deity_pronoun:他|祂}}要垂听他们的呼救，{{deity_pronoun:他|祂}}要拯救他们。",
+          "B": "敬畏{{deity_pronoun:他|祂}}的人所渴望的，{{god_term:神|上帝}}都赐给他们； \\q {{deity_pronoun:他|祂}}听见他们的呼救，就救他们。",
+          "R": "尊敬{{deity_pronoun:他|祂}}的人想要什么，{{god_term:神|上帝}}都给他们。 \\q 他们呼求帮助的时候，{{deity_pronoun:他|祂}}就垂听，并且救他们。"
         }
       },
       "decisions": [
@@ -6908,6 +7227,11 @@
           "L": "Iniingatan {{divine_name:ng PANGINOON|ni Yahweh}} ang lahat ng umiibig sa {{deity_pronoun:kaniya|Kaniya}}, \\q ngunit ang lahat ng masasama ay lilipulin {{deity_pronoun:niya|Niya}}.",
           "B": "Binabantayan {{divine_name:ng PANGINOON|ni Yahweh}} ang bawat umiibig sa {{deity_pronoun:kaniya|Kaniya}}, \\q ngunit lilipulin {{deity_pronoun:niya|Niya}} ang lahat ng masasama.",
           "R": "Iniingatan {{divine_name:ng PANGINOON|ni Yahweh}} ang bawat umiibig sa {{deity_pronoun:kaniya|Kaniya}}. \\q Ngunit wawasakin {{deity_pronoun:niya|Niya}} ang lahat ng masasamang tao."
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}看守所有爱{{deity_pronoun:他|祂}}的人， \\q 但所有的恶人，{{deity_pronoun:他|祂}}都要毁灭。",
+          "B": "{{divine_name:上主|雅威}}守护每一个爱{{deity_pronoun:他|祂}}的人， \\q {{deity_pronoun:他|祂}}却要除尽所有的恶人。",
+          "R": "{{divine_name:上主|雅威}}保守每一个爱{{deity_pronoun:他|祂}}的人。 \\q 但{{deity_pronoun:他|祂}}要消灭所有的坏人。"
         }
       },
       "decisions": [
@@ -7216,6 +7540,11 @@
           "L": "Ang papuri {{divine_name:ng PANGINOON|ni Yahweh}} ay sasabihin ng aking bibig, \\q at purihin nawa ng lahat ng laman ang {{deity_pronoun:kaniyang|Kaniyang}} banal na pangalan magpakailanman.",
           "B": "Sa sarili kong bibig ay magpupuri ako {{divine_name:sa PANGINOON|kay Yahweh}}; \\q purihin nawa ng lahat ng nilalang ang {{deity_pronoun:kaniyang|Kaniyang}} banal na pangalan sa lahat ng panahong darating.",
           "R": "Magsasalita ako ng mga salita ng papuri {{divine_name:sa PANGINOON|kay Yahweh}}. \\q Purihin nawa ng bawat may buhay ang {{deity_pronoun:kaniyang|Kaniyang}} banal na pangalan magpakailanman!"
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}的赞美，我的口要述说， \\q 愿一切血肉之躯称颂{{deity_pronoun:他|祂}}的圣名，直到永永远远。",
+          "B": "我要亲口向{{divine_name:上主|雅威}}说出赞美的话； \\q 愿一切受造之物称颂{{deity_pronoun:他|祂}}的圣名，直到万代。",
+          "R": "我要说出赞美{{divine_name:上主|雅威}}的话。 \\q 愿所有活着的都赞美{{deity_pronoun:他|祂}}的圣名，直到永永远远！"
         }
       },
       "decisions": [
@@ -7366,6 +7695,28 @@
           "choice": "\"lahat ng laman\"",
           "alternatives": [],
           "reason": "All flesh: every living creature (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191450210061",
+            "o191450210071"
+          ],
+          "choice": "\"一切血肉之躯\" (L); \"一切受造之物\" (B); \"所有活着的\" (R)",
+          "alternatives": [
+            "\"所有的人\""
+          ],
+          "reason": "The glossary's Literal form for \"all flesh\"; Balanced and Readable say every living creature, as the English levels read it here (m1).",
           "uncertain": false,
           "footnote": false
         }

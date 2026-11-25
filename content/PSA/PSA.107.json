@@ -93,6 +93,11 @@
           "L": "Magpasalamat kayo {{divine_name:sa PANGINOON|kay Yahweh}}, sapagkat {{deity_pronoun:siya|Siya}} ay mabuti, \\q sapagkat ang {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig ay magpakailanman.",
           "B": "Pasalamatan ninyo {{divine_name:ang PANGINOON|si Yahweh}}, sapagkat {{deity_pronoun:siya|Siya}} ay mabuti; \\q ang {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig ay nananatili magpakailanman.",
           "R": "Pasalamatan ninyo {{divine_name:ang PANGINOON|si Yahweh}}, dahil {{deity_pronoun:siya|Siya}} ay mabuti! \\q Ang tapat na pag-ibig niya ay mananatili magpakailanman."
+        },
+        "zh": {
+          "L": "你们要称谢{{divine_name:上主|雅威}}，因为{{deity_pronoun:他|祂}}是美善的， \\q {{deity_pronoun:他|祂}}的慈爱永不止息。",
+          "B": "要称谢{{divine_name:上主|雅威}}，因为{{deity_pronoun:他|祂}}是美善的； \\q {{deity_pronoun:他|祂}}的慈爱永不止息。",
+          "R": "要感谢{{divine_name:上主|雅威}}，因为{{deity_pronoun:他|祂}}真好！ \\q 他的爱永远不变。"
         }
       },
       "decisions": [
@@ -438,6 +443,50 @@
           "reason": "Loyal love: hesed (m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191070010011",
+            "o191070010041",
+            "o191070010071"
+          ],
+          "choice": "the refrain exactly as 1 Chronicles 16:34: \"他的慈爱永不止息\" (L, B); \"他的爱永远不变\" (R)",
+          "alternatives": [
+            "the Union Version's wording of the refrain"
+          ],
+          "reason": "This is the temple song's refrain (m2), word for word the Hebrew of 1 Chronicles 16:34 and Psalm 106:1, so each level copies the Chinese already set there; the refrain keeps these words in 118:1-4, 29 and through Psalm 136. A pronoun for God takes the deity_pronoun span only where the English level has one, as in every Chinese book: Literal and Balanced span the 他 of both lines, as their English does, and Readable writes the second line's 他 plainly because the English Readable's \"His faithful love\" has no span (1 Chronicles 16:34 spans it, following its own English).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191070010071"
+          ],
+          "choice": "\"慈爱\" (L, B); \"爱\" in the refrain, \"始终不变的爱\" elsewhere (R)",
+          "alternatives": [
+            "\"坚定的爱\""
+          ],
+          "reason": "God's hesed (m3), as the glossary: \"慈爱\" at Literal and Balanced; Readable says \"始终不变的爱\" for \"faithful love\", shortened to \"爱……永远不变\" inside the refrain.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft",
@@ -647,6 +696,11 @@
           "L": "Ganito ang sabihin ng mga tinubos {{divine_name:ng PANGINOON|ni Yahweh}}, \\q na {{deity_pronoun:kaniyang|Kaniyang}} tinubos mula sa kamay ng kalaban,",
           "B": "Sabihin ito ng mga tinubos {{divine_name:ng PANGINOON|ni Yahweh}}, \\q ang mga pinalaya {{deity_pronoun:niya|Niya}} mula sa hawak ng kaaway,",
           "R": "Dapat itong sabihin ng lahat ng taong pinalaya {{divine_name:ng PANGINOON|ni Yahweh}}! \\q Iniligtas niya sila mula sa kapangyarihan ng kanilang mga kaaway."
+        },
+        "zh": {
+          "L": "愿{{divine_name:上主|雅威}}所救赎的人这样说， \\q 就是{{deity_pronoun:他|祂}}从敌人手中救赎出来的人，",
+          "B": "愿{{divine_name:上主|雅威}}赎回的人都这样说， \\q 就是{{deity_pronoun:他|祂}}从敌人的掌握中救出来的人；",
+          "R": "所有被{{divine_name:上主|雅威}}救出来的人都应当这样说！ \\q 是{{divine_name:上主|雅威}}把他们从敌人的手中救了出来。"
         }
       },
       "decisions": [
@@ -852,6 +906,47 @@
           "choice": "\"tinubos\"",
           "alternatives": [],
           "reason": "Redeemed: bought back (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191070020021",
+            "o191070020031"
+          ],
+          "choice": "\"赎回\" (B); \"救赎\" (L); \"救出来\" (R)",
+          "alternatives": [
+            "\"救赎\" at every level"
+          ],
+          "reason": "The redeemed are those bought back and set free (m1): Literal keeps the church word \"救赎\", Balanced the plain picture of buying back, \"赎回\", Readable the result, \"救出来\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o191070020041",
+            "o191070020051",
+            "o191070020052"
+          ],
+          "choice": "\"是上主把他们……救了出来\"",
+          "alternatives": [
+            "\"他把他们……救了出来\""
+          ],
+          "reason": "The English Readable begins a new sentence with \"He\" for God and no setting span; Chinese names God again instead of writing a pronoun outside the setting.",
           "uncertain": false,
           "footnote": false
         }
@@ -1061,6 +1156,11 @@
           "L": "at mula sa mga lupain ay tinipon {{deity_pronoun:niya|Niya}} sila, \\q mula sa silangan at mula sa kanluran, \\q mula sa hilaga at mula sa dagat.",
           "B": "at tinipon sila mula sa ibang mga lupain, \\q mula sa silangan at sa kanluran, \\q sa hilaga at sa timog.",
           "R": "Tinipon niya sila mula sa malalayong bansa, \\q mula sa silangan, sa kanluran, \\q sa hilaga at sa timog."
+        },
+        "zh": {
+          "L": "从各地把他们聚集回来， \\q 从东从西， \\q 从北从海。",
+          "B": "从各地把他们领回来， \\q 从东方和西方， \\q 从北方和南方。",
+          "R": "是{{divine_name:上主|雅威}}把他们从远方各国聚集回来， \\q 从东方、西方， \\q 从北方和南方。"
         }
       },
       "decisions": [
@@ -1209,6 +1309,26 @@
           "choice": "\"mula sa dagat\"",
           "alternatives": [],
           "reason": "From the sea: likely the south (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191070030063"
+          ],
+          "choice": "\"南方\" (B, R); \"海\" (L)",
+          "alternatives": [
+            "\"海\" at every level"
+          ],
+          "reason": "The sea here completes the four directions and means the south (m2): Literal keeps \"海\", Balanced and Readable say \"南方\".",
           "uncertain": false,
           "footnote": false
         }
@@ -1450,6 +1570,11 @@
           "L": "Naglagalag sila sa ilang, sa tiwangwang na daan; \\q hindi sila nakasumpong ng lungsod na matitirhan.",
           "B": "Ang ilan ay naligaw sa ilang, sa tigang na landas, \\q at walang natagpuang bayang matitirhan.",
           "R": "Ang ilang tao ay naligaw sa disyerto. \\q Naglakbay sila sa walang-taong lupain at walang makitang bayang matitirhan."
+        },
+        "zh": {
+          "L": "他们在旷野、在荒凉的路上飘流， \\q 找不到可以居住的城。",
+          "B": "有些人在旷野中迷路，走在荒芜的小道上， \\q 找不到可以定居的城镇。",
+          "R": "有些人在沙漠中迷了路。 \\q 他们走过荒无人烟的地方，找不到一个可以住下来的城镇。"
         }
       },
       "decisions": [
@@ -1612,6 +1737,26 @@
           "choice": "\"Naglagalag\"",
           "alternatives": [],
           "reason": "To wander (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o191070040011"
+          ],
+          "choice": "\"有些人\"",
+          "alternatives": [
+            "no subject"
+          ],
+          "reason": "The psalm now describes four groups of people in trouble (m1); Balanced and Readable mark the start of each group with \"有些人\", as the English says \"Some\".",
           "uncertain": false,
           "footnote": false
         }
@@ -1822,6 +1967,11 @@
           "L": "Nagugutom, nauuhaw rin, \\q nanghihina ang kanilang kaluluwa sa loob nila.",
           "B": "Gutom na gutom at uhaw na uhaw, \\q nadama nilang nauubos ang kanilang buhay.",
           "R": "Wala silang pagkain at walang tubig, \\q at malapit na silang mamatay."
+        },
+        "zh": {
+          "L": "他们又饥又渴， \\q 他们的灵魂在里面发昏。",
+          "B": "他们饥饿干渴， \\q 觉得生命正从身上一点点流走。",
+          "R": "他们没有吃的，也没有喝的， \\q 眼看就要死了。"
         }
       },
       "decisions": [
@@ -2119,6 +2269,11 @@
           "L": "Nang magkagayo'y dumaing sila {{divine_name:sa PANGINOON|kay Yahweh}} sa kanilang kagipitan; \\q mula sa kanilang mga kabagabagan ay iniligtas {{deity_pronoun:niya|Niya}} sila.",
           "B": "Sa kanilang kagipitan ay tumawag sila {{divine_name:sa PANGINOON|kay Yahweh}}, \\q at sinagip {{deity_pronoun:niya|Niya}} sila mula sa kanilang mga kabagabagan.",
           "R": "Sa kanilang kaguluhan ay dumaing sila {{divine_name:sa PANGINOON|kay Yahweh}} upang humingi ng tulong, \\q at sinagip {{deity_pronoun:niya|Niya}} sila mula sa kanilang paghihirap."
+        },
+        "zh": {
+          "L": "于是他们在急难中向{{divine_name:上主|雅威}}呼求； \\q {{deity_pronoun:他|祂}}从他们的祸患中搭救了他们。",
+          "B": "他们在急难中向{{divine_name:上主|雅威}}呼求， \\q {{deity_pronoun:他|祂}}就搭救他们脱离困境。",
+          "R": "他们遇到困难，就向{{divine_name:上主|雅威}}呼求帮助， \\q {{deity_pronoun:他|祂}}就救他们脱离痛苦。"
         }
       },
       "decisions": [
@@ -2370,6 +2525,27 @@
           "reason": "Refrain verb (m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191070060012"
+          ],
+          "choice": "one wording per level for the first refrain (verses 6, 13, 19, 28), only the last verb changing with the Hebrew: \"搭救\" (delivered), \"拯救\" (saved), \"领……出来\" (brought out)",
+          "alternatives": [
+            "a different wording each time"
+          ],
+          "reason": "The refrain is the same four times except for its verb (m1); Chinese keeps the frame word for word so the reader hears it return.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft",
@@ -2581,6 +2757,11 @@
           "L": "At inakay {{deity_pronoun:niya|Niya}} sila sa tuwid na daan, \\q upang makarating sa lungsod na matitirhan.",
           "B": "Ginabayan niya sila sa patag na daan \\q hanggang sa makarating sila sa bayang matitirhan.",
           "R": "Inakay niya sila nang tuwiran sa isang bayan \\q kung saan sila makapagtatayo ng kanilang mga tahanan."
+        },
+        "zh": {
+          "L": "{{deity_pronoun:他|祂}}又领他们走直路， \\q 到可以居住的城去。",
+          "B": "引导他们走平坦的大路， \\q 直到他们来到可以定居的城镇。",
+          "R": "然后又一直把他们领到一个城镇， \\q 让他们在那里安家。"
         }
       },
       "decisions": [
@@ -2829,6 +3010,11 @@
           "L": "Magpasalamat sila {{divine_name:sa PANGINOON|kay Yahweh}} dahil sa {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig, \\q at dahil sa {{deity_pronoun:kaniyang|Kaniyang}} mga kababalaghan sa mga anak ng tao.",
           "B": "Pasalamatan nila {{divine_name:ang PANGINOON|si Yahweh}} dahil sa {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig \\q at dahil sa mga kababalaghang ginagawa {{deity_pronoun:niya|Niya}} para sa sangkatauhan.",
           "R": "Dapat nilang pasalamatan {{divine_name:ang PANGINOON|si Yahweh}} dahil sa {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig \\q at dahil sa kamangha-manghang mga bagay na ginagawa {{deity_pronoun:niya|Niya}} para sa mga tao."
+        },
+        "zh": {
+          "L": "愿他们为{{deity_pronoun:他|祂}}的慈爱称谢{{divine_name:上主|雅威}}， \\q 为{{deity_pronoun:他|祂}}向人的子孙所行的奇事[称谢]。",
+          "B": "愿他们为{{deity_pronoun:他|祂}}的慈爱， \\q 也为{{deity_pronoun:他|祂}}向世人所行的奇事，称谢{{divine_name:上主|雅威}}。",
+          "R": "他们应当为{{deity_pronoun:他|祂}}始终不变的爱感谢{{divine_name:上主|雅威}}， \\q 也为{{deity_pronoun:他|祂}}为人们所做的奇妙的事感谢。"
         }
       },
       "decisions": [
@@ -3210,6 +3396,48 @@
           "reason": "Children of humankind: people (m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191070080011"
+          ],
+          "choice": "one wording per level for the second refrain (verses 8, 15, 21, 31)",
+          "alternatives": [
+            "a varied wording"
+          ],
+          "reason": "The second refrain recurs word for word in the Hebrew (m1), and the Chinese does too.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191070080051",
+            "o191070080052",
+            "o191070080061"
+          ],
+          "choice": "\"人的子孙\" (L); \"世人\" (B); \"人们\" (R)",
+          "alternatives": [
+            "\"人类\""
+          ],
+          "reason": "The children of humankind are people (m4): Literal keeps the Hebrew's picture, Balanced and Readable say people plainly.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft",
@@ -3422,6 +3650,11 @@
           "L": "Sapagkat binusog {{deity_pronoun:niya|Niya}} ang nananabik na kaluluwa, \\q at ang gutom na kaluluwa ay pinuno {{deity_pronoun:niya|Niya}} ng mabuti.",
           "B": "Sapagkat pinaiinom {{deity_pronoun:niya|Niya}} ang mga nauuhaw \\q at binubusog ng mabuting pagkain ang mga nagugutom.",
           "R": "Binibigyan niya ng tubig ang mga taong nauuhaw, \\q at ng mabuting pagkain ang mga taong nagugutom."
+        },
+        "zh": {
+          "L": "因为{{deity_pronoun:他|祂}}使渴慕的灵魂得到满足， \\q 使饥饿的灵魂饱享美物。",
+          "B": "因为{{deity_pronoun:他|祂}}使干渴的人有水喝， \\q 用美好的食物使饥饿的人饱足。",
+          "R": "{{divine_name:上主|雅威}}给口渴的人水喝， \\q 给饥饿的人好东西吃。"
         }
       },
       "decisions": [
@@ -3809,6 +4042,11 @@
           "L": "Ang mga nakaupo sa kadiliman at sa malalim na dilim, \\q mga bilanggo sa kapighatian at sa bakal,",
           "B": "Ang ilan ay nanirahan sa kadiliman, sa pinakamaitim na dilim, \\q nakagapos sa paghihirap at sa bakal,",
           "R": "Ang ilang tao ay nakaupo sa kadiliman, sa pinakamalalim na dilim. \\q Mga bilanggo sila, nakagapos sa mga kadenang bakal at sa paghihirap."
+        },
+        "zh": {
+          "L": "那些坐在黑暗和死荫中的人， \\q 被困苦和铁[链]捆锁的囚犯，",
+          "B": "有些人住在黑暗里，住在最深的幽暗中， \\q 被苦难和铁链牢牢锁住；",
+          "R": "有些人坐在黑暗中，坐在最深的幽暗里。 \\q 他们是囚犯，戴着铁链，受尽痛苦。"
         }
       },
       "decisions": [
@@ -4057,6 +4295,25 @@
           "reason": "In iron: in chains (m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191070100032"
+          ],
+          "choice": "\"死荫\" (L); \"最深的幽暗\" (B, R)",
+          "alternatives": [
+            "\"幽暗\""
+          ],
+          "reason": "The Hebrew word for deep darkness (m2) is read by many as \"the shadow of death\"; Literal keeps that picture in two characters, Balanced and Readable say how dark it is.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft",
@@ -4268,6 +4525,11 @@
           "L": "sapagkat naghimagsik sila laban sa mga salita ng Diyos, \\q at ang payo ng Kataas-taasan ay kanilang hinamak.",
           "B": "sapagkat sinuway nila ang sinabi ng Diyos \\q at hinamak ang layunin ng Kataas-taasan.",
           "R": "Nangyari ito dahil nilabanan nila ang sinabi ng Diyos. \\q Ayaw nilang makinig sa payo ng Diyos na nasa itaas ng lahat."
+        },
+        "zh": {
+          "L": "因为他们违背了{{god_term:神|上帝}}的话， \\q 藐视了至高者的旨意。",
+          "B": "因为他们违抗{{god_term:神|上帝}}所说的话， \\q 轻视至高者的计划。",
+          "R": "这是因为他们反抗{{god_term:神|上帝}}说的话。 \\q 他们不肯听从那位至高无上的{{god_term:神|上帝}}的劝告。"
         }
       },
       "decisions": [
@@ -4450,6 +4712,48 @@
           "choice": "\"payo\"",
           "alternatives": [],
           "reason": "Counsel: purpose (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191070110041"
+          ],
+          "choice": "\"{{god_term:神|上帝}}\"",
+          "alternatives": [
+            "\"神\" or \"上帝\" fixed"
+          ],
+          "reason": "Every word for the one God is written in the god_term setting: \"神\" by default, \"上帝\" as the reader's alternative.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191070110061"
+          ],
+          "choice": "\"至高者\" (L, B); \"那位至高无上的神\" (R)",
+          "alternatives": [
+            "\"至高的\""
+          ],
+          "reason": "The Most High (m3), in the Psalter's forms; Readable says what the title means, as the English does.",
           "uncertain": false,
           "footnote": false
         }
@@ -4665,6 +4969,11 @@
           "L": "Kaya ibinaba {{deity_pronoun:niya|Niya}} ang kanilang puso sa pamamagitan ng pagpapagal; \\q natisod sila, at walang tumulong.",
           "B": "Kaya binali {{deity_pronoun:niya|Niya}} ang kanilang kapalaluan sa mabigat na paggawa; \\q bumagsak sila, at walang dumating upang tumulong.",
           "R": "Kaya pinagpakumbaba {{deity_pronoun:niya|Niya}} sila sa pamamagitan ng mabigat na trabaho. \\q Bumagsak sila, at walang tumulong sa kanila."
+        },
+        "zh": {
+          "L": "所以{{deity_pronoun:他|祂}}用劳苦使他们的心降卑； \\q 他们跌倒，也没有人帮助。",
+          "B": "所以{{deity_pronoun:他|祂}}用苦工挫折他们的骄傲； \\q 他们倒下，也没有人来帮助。",
+          "R": "所以{{deity_pronoun:他|祂}}让他们做苦工，使他们谦卑下来。 \\q 他们跌倒了，也没有人帮他们。"
         }
       },
       "decisions": [
@@ -4967,6 +5276,11 @@
           "L": "Nang magkagayo'y dumaing sila {{divine_name:sa PANGINOON|kay Yahweh}} sa kanilang kagipitan; \\q mula sa kanilang mga kabagabagan ay iniligtas {{deity_pronoun:niya|Niya}} sila.",
           "B": "Sa kanilang kagipitan ay tumawag sila {{divine_name:sa PANGINOON|kay Yahweh}}, \\q at iniligtas {{deity_pronoun:niya|Niya}} sila mula sa kanilang mga kabagabagan.",
           "R": "Sa kanilang kaguluhan ay dumaing sila {{divine_name:sa PANGINOON|kay Yahweh}} upang humingi ng tulong, \\q at iniligtas {{deity_pronoun:niya|Niya}} sila mula sa kanilang paghihirap."
+        },
+        "zh": {
+          "L": "于是他们在急难中向{{divine_name:上主|雅威}}呼求； \\q {{deity_pronoun:他|祂}}从他们的祸患中拯救了他们。",
+          "B": "他们在急难中向{{divine_name:上主|雅威}}呼求， \\q {{deity_pronoun:他|祂}}就拯救他们脱离困境。",
+          "R": "他们遇到困难，就向{{divine_name:上主|雅威}}呼求帮助， \\q {{deity_pronoun:他|祂}}就拯救他们脱离痛苦。"
         }
       },
       "decisions": [
@@ -5280,6 +5594,11 @@
           "L": "Inilabas niya sila mula sa kadiliman at sa malalim na dilim, \\q at pinatid {{deity_pronoun:niya|Niya}} ang kanilang mga tali.",
           "B": "Inakay niya sila palabas sa kadiliman at sa pinakamaitim na dilim \\q at nilagot ang mga kadenang gumagapos sa kanila.",
           "R": "Inakay niya sila palabas sa kadiliman at sa malalim na dilim. \\q Pinagputul-putol niya ang kanilang mga kadena."
+        },
+        "zh": {
+          "L": "领他们出了黑暗和死荫， \\q {{deity_pronoun:他|祂}}扯断了他们的捆绑。",
+          "B": "把他们从黑暗和最深的幽暗中领出来， \\q 又扭断捆锁他们的锁链。",
+          "R": "把他们从黑暗和最深的幽暗中领出来， \\q 又把他们的锁链打断。"
         }
       },
       "decisions": [
@@ -5329,6 +5648,27 @@
           "choice": "\"pinatid\"",
           "alternatives": [],
           "reason": "To tear apart (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o191070140011"
+          ],
+          "choice": "the verse goes on with no pronoun",
+          "alternatives": [
+            "\"他\" outside the setting"
+          ],
+          "reason": "The English begins with \"He\" for God and no setting span at these levels; Chinese carries the subject on from verse 13 instead of writing a pronoun.",
           "uncertain": false,
           "footnote": false
         }
@@ -5549,6 +5889,11 @@
           "L": "Magpasalamat sila {{divine_name:sa PANGINOON|kay Yahweh}} dahil sa {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig, \\q at dahil sa {{deity_pronoun:kaniyang|Kaniyang}} mga kababalaghan sa mga anak ng tao.",
           "B": "Pasalamatan nila {{divine_name:ang PANGINOON|si Yahweh}} dahil sa {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig \\q at dahil sa mga kababalaghang ginagawa {{deity_pronoun:niya|Niya}} para sa sangkatauhan.",
           "R": "Dapat nilang pasalamatan {{divine_name:ang PANGINOON|si Yahweh}} dahil sa {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig \\q at dahil sa kamangha-manghang mga bagay na ginagawa {{deity_pronoun:niya|Niya}} para sa mga tao."
+        },
+        "zh": {
+          "L": "愿他们为{{deity_pronoun:他|祂}}的慈爱称谢{{divine_name:上主|雅威}}， \\q 为{{deity_pronoun:他|祂}}向人的子孙所行的奇事[称谢]。",
+          "B": "愿他们为{{deity_pronoun:他|祂}}的慈爱， \\q 也为{{deity_pronoun:他|祂}}向世人所行的奇事，称谢{{divine_name:上主|雅威}}。",
+          "R": "他们应当为{{deity_pronoun:他|祂}}始终不变的爱感谢{{divine_name:上主|雅威}}， \\q 也为{{deity_pronoun:他|祂}}为人们所做的奇妙的事感谢。"
         }
       },
       "decisions": [
@@ -5883,6 +6228,11 @@
           "L": "Sapagkat dinurog {{deity_pronoun:niya|Niya}} ang mga pintuang tanso, \\q at ang mga barang bakal ay pinutol {{deity_pronoun:niya|Niya}}.",
           "B": "Sapagkat winawasak {{deity_pronoun:niya|Niya}} ang mga pintong tanso \\q at tinatabas ang mga barang bakal.",
           "R": "Kaya niyang gibain ang mga pintuang tanso \\q at putulin ang mga barang bakal."
+        },
+        "zh": {
+          "L": "因为{{deity_pronoun:他|祂}}打碎了铜门， \\q 砍断了铁闩。",
+          "B": "因为{{deity_pronoun:他|祂}}打碎铜门， \\q 砍断铁闩。",
+          "R": "{{divine_name:上主|雅威}}能打破铜做的城门， \\q 砍断铁做的门闩。"
         }
       },
       "decisions": [
@@ -6198,6 +6548,11 @@
           "L": "Ang mga hangal, dahil sa daan ng kanilang paghihimagsik \\q at dahil sa kanilang mga kasamaan, ay pinahirapan.",
           "B": "Ang ilan ay mga hangal, \\q at ang kanilang mapaghimagsik na mga lakad at kanilang kasamaan ang nagdala ng paghihirap sa kanila.",
           "R": "Ang ilang tao ay naging hangal. \\q Dahil nilabanan nila ang Diyos at gumawa ng masama, nagkasakit sila at naghirap."
+        },
+        "zh": {
+          "L": "愚昧人因自己悖逆的道路， \\q 又因自己的罪孽，就受了苦。",
+          "B": "有些人愚昧无知， \\q 他们悖逆的行为和罪过给他们带来了苦难。",
+          "R": "有些人很愚蠢。 \\q 他们反抗{{god_term:神|上帝}}，做了坏事，所以生了病，受了苦。"
         }
       },
       "decisions": [
@@ -6379,6 +6734,27 @@
           "choice": "\"hangal\"",
           "alternatives": [],
           "reason": "Fools (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191070170011"
+          ],
+          "choice": "\"愚昧人\" (L); \"愚昧无知\" (B); \"很愚蠢\" (R)",
+          "alternatives": [
+            "\"糊涂人\""
+          ],
+          "reason": "The fools here are people who ignore God (m2), as the glossary's word for the fool: \"愚昧人\" (L, B), \"愚蠢\" (R).",
           "uncertain": false,
           "footnote": false
         }
@@ -6570,6 +6946,11 @@
           "L": "Kinasuklaman ng kanilang kaluluwa ang lahat ng pagkain, \\q at lumapit sila sa mga pintuan ng kamatayan.",
           "B": "Hindi nila matagalan ang makakita ng pagkain, \\q at napalapit sila sa mga pintuan ng kamatayan.",
           "R": "Hindi na sila makakain ng anuman, \\q at malapit na silang mamatay."
+        },
+        "zh": {
+          "L": "他们的灵魂厌恶一切食物， \\q 就临近死亡的门。",
+          "B": "他们看见食物就厌烦， \\q 已经走近死亡的门口。",
+          "R": "他们什么都吃不下， \\q 眼看就要死了。"
         }
       },
       "decisions": [
@@ -6868,6 +7249,11 @@
           "L": "Nang magkagayo'y dumaing sila {{divine_name:sa PANGINOON|kay Yahweh}} sa kanilang kagipitan; \\q mula sa kanilang mga kabagabagan ay iniligtas {{deity_pronoun:niya|Niya}} sila.",
           "B": "Sa kanilang kagipitan ay tumawag sila {{divine_name:sa PANGINOON|kay Yahweh}}, \\q at iniligtas {{deity_pronoun:niya|Niya}} sila mula sa kanilang mga kabagabagan.",
           "R": "Sa kanilang kaguluhan ay dumaing sila {{divine_name:sa PANGINOON|kay Yahweh}} upang humingi ng tulong, \\q at iniligtas {{deity_pronoun:niya|Niya}} sila mula sa kanilang paghihirap."
+        },
+        "zh": {
+          "L": "于是他们在急难中向{{divine_name:上主|雅威}}呼求； \\q {{deity_pronoun:他|祂}}从他们的祸患中拯救了他们。",
+          "B": "他们在急难中向{{divine_name:上主|雅威}}呼求， \\q {{deity_pronoun:他|祂}}就拯救他们脱离困境。",
+          "R": "他们遇到困难，就向{{divine_name:上主|雅威}}呼求帮助， \\q {{deity_pronoun:他|祂}}就拯救他们脱离痛苦。"
         }
       },
       "decisions": [
@@ -7182,6 +7568,11 @@
           "L": "Ipinadala niya ang {{deity_pronoun:kaniyang|Kaniyang}} salita at pinagaling sila, \\q at iniligtas {{deity_pronoun:niya|Niya}} sila mula sa kanilang mga hukay.",
           "B": "Ipinadala niya ang {{deity_pronoun:kaniyang|Kaniyang}} salita at pinagaling sila; \\q hinango {{deity_pronoun:niya|Niya}} sila mula sa hukay ng kamatayan.",
           "R": "Nagsalita lamang siya, at sila ay gumaling. \\q Iningatan niya sila mula sa kamatayan."
+        },
+        "zh": {
+          "L": "发出{{deity_pronoun:他|祂}}的话，医治了他们， \\q {{deity_pronoun:他|祂}}又救他们脱离他们的坑。",
+          "B": "发出{{deity_pronoun:他|祂}}的话，使他们痊愈； \\q {{deity_pronoun:他|祂}}把他们从死亡的深坑里拉了上来。",
+          "R": "只要一句话，他们就得了医治。 \\q 是{{divine_name:上主|雅威}}救他们免于一死。"
         }
       },
       "decisions": [
@@ -7350,6 +7741,46 @@
           "choice": "\"mga hukay\"",
           "alternatives": [],
           "reason": "Pits: the grave (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191070200052"
+          ],
+          "choice": "\"坑\" (L); \"死亡的深坑\" (B); \"免于一死\" (R)",
+          "alternatives": [
+            "\"毁灭\""
+          ],
+          "reason": "Their pits are most likely the grave (m2); the words follow the glossary's Pit (坑 / 深坑), with Balanced and Readable saying it is death.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o191070200011",
+            "o191070200021"
+          ],
+          "choice": "\"是上主救他们\"",
+          "alternatives": [
+            "\"他\" outside the setting"
+          ],
+          "reason": "The English Readable starts both lines with an unspanned \"He\"; Chinese leaves the first subject unspoken and names God in the second.",
           "uncertain": false,
           "footnote": false
         }
@@ -7550,6 +7981,11 @@
           "L": "Magpasalamat sila {{divine_name:sa PANGINOON|kay Yahweh}} dahil sa {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig, \\q at dahil sa {{deity_pronoun:kaniyang|Kaniyang}} mga kababalaghan sa mga anak ng tao.",
           "B": "Pasalamatan nila {{divine_name:ang PANGINOON|si Yahweh}} dahil sa {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig \\q at dahil sa mga kababalaghang ginagawa {{deity_pronoun:niya|Niya}} para sa sangkatauhan.",
           "R": "Dapat nilang pasalamatan {{divine_name:ang PANGINOON|si Yahweh}} dahil sa {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig \\q at dahil sa kamangha-manghang mga bagay na ginagawa {{deity_pronoun:niya|Niya}} para sa mga tao."
+        },
+        "zh": {
+          "L": "愿他们为{{deity_pronoun:他|祂}}的慈爱称谢{{divine_name:上主|雅威}}， \\q 为{{deity_pronoun:他|祂}}向人的子孙所行的奇事[称谢]。",
+          "B": "愿他们为{{deity_pronoun:他|祂}}的慈爱， \\q 也为{{deity_pronoun:他|祂}}向世人所行的奇事，称谢{{divine_name:上主|雅威}}。",
+          "R": "他们应当为{{deity_pronoun:他|祂}}始终不变的爱感谢{{divine_name:上主|雅威}}， \\q 也为{{deity_pronoun:他|祂}}为人们所做的奇妙的事感谢。"
         }
       },
       "decisions": [
@@ -7886,6 +8322,11 @@
           "L": "At maghandog sila ng mga handog ng pasasalamat, \\q at isalaysay nila ang {{deity_pronoun:kaniyang|Kaniyang}} mga gawa nang may mga sigaw ng kagalakan.",
           "B": "Magdala sila ng mga handog ng pasasalamat \\q at may masasayang sigaw na isalaysay ang ginawa {{deity_pronoun:niya|Niya}}.",
           "R": "Maghandog sila ng mga alay upang pasalamatan {{deity_pronoun:siya|Siya}}, \\q at sumigaw sa tuwa habang isinasalaysay ang ginawa {{deity_pronoun:niya|Niya}}."
+        },
+        "zh": {
+          "L": "愿他们献上感谢的祭， \\q 欢呼述说{{deity_pronoun:他|祂}}的作为。",
+          "B": "愿他们献上感谢祭， \\q 高声欢呼，述说{{deity_pronoun:他|祂}}所做的事。",
+          "R": "他们应当献祭感谢{{deity_pronoun:他|祂}}， \\q 一边欢呼，一边讲述{{deity_pronoun:他|祂}}所做的事。"
         }
       },
       "decisions": [
@@ -7975,6 +8416,27 @@
           "choice": "\"handog ng pasasalamat\"",
           "alternatives": [],
           "reason": "Thanksgiving sacrifices (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191070220012",
+            "o191070220031"
+          ],
+          "choice": "\"感谢的祭\" (L); \"感谢祭\" (B)",
+          "alternatives": [
+            "\"酬恩祭\""
+          ],
+          "reason": "The thank offering (m1), in the word Leviticus uses for it.",
           "uncertain": false,
           "footnote": false
         }
@@ -8171,6 +8633,11 @@
           "L": "Ang mga bumababa sa dagat sa mga barko, \\q na nangangalakal sa maraming tubig,",
           "B": "Ang ilan ay naglayag sa dagat sakay ng mga barko, \\q na nangangalakal sa malawak na karagatan,",
           "R": "Ang ilang tao ay naglayag sa dagat sakay ng mga barko. \\q Mga mangangalakal sila na nagdadala ng mga kalakal sa malawak na karagatan."
+        },
+        "zh": {
+          "L": "那些坐船下海、 \\q 在大水上经商的人，",
+          "B": "有些人坐船出海， \\q 在浩瀚的水上做买卖；",
+          "R": "有些人坐船在海上航行。 \\q 他们是商人，载着货物越过辽阔的大海。"
         }
       },
       "decisions": [
@@ -8477,6 +8944,11 @@
           "L": "ay nakakita ng mga gawa {{divine_name:ng PANGINOON|ni Yahweh}}, \\q at ng {{deity_pronoun:kaniyang|Kaniyang}} mga kababalaghan sa kalaliman.",
           "B": "ay nakita nila mismo ang ginagawa {{divine_name:ng PANGINOON|ni Yahweh}}, \\q ang {{deity_pronoun:kaniyang|Kaniyang}} mga kababalaghan sa laot.",
           "R": "Nakita ng kanilang sariling mga mata ang kayang gawin {{divine_name:ng PANGINOON|ni Yahweh}}, \\q at ang kamangha-manghang mga bagay na ginagawa {{deity_pronoun:niya|Niya}} sa malalim na dagat."
+        },
+        "zh": {
+          "L": "他们看见了{{divine_name:上主|雅威}}的作为， \\q 和{{deity_pronoun:他|祂}}在深海中的奇事。",
+          "B": "他们亲眼看见{{divine_name:上主|雅威}}的作为， \\q 看见{{deity_pronoun:他|祂}}在深海上行的奇事。",
+          "R": "他们亲眼看见{{divine_name:上主|雅威}}能做什么， \\q 也看见{{deity_pronoun:他|祂}}在深海上所做的奇妙的事。"
         }
       },
       "decisions": [
@@ -8738,6 +9210,11 @@
           "L": "At nagsalita {{deity_pronoun:siya|Siya}} at nagpaihip ng unos, \\q at itinaas nito ang mga alon.",
           "B": "Sa salita {{deity_pronoun:niya|Niya}} ay umihip ang malakas na hangin at itinaas nang mataas ang mga alon ng dagat.",
           "R": "Nag-utos siya, at umihip ang malakas na hangin. \\q Lumikha ito ng malalaking alon sa dagat."
+        },
+        "zh": {
+          "L": "{{deity_pronoun:他|祂}}一说话，就刮起狂风， \\q 海浪就高高扬起。",
+          "B": "{{deity_pronoun:他|祂}}一发话，狂风大作，把海浪高高掀起。",
+          "R": "{{divine_name:上主|雅威}}一下命令，就刮起了大风。 \\q 风在海上掀起了巨浪。"
         }
       },
       "decisions": [
@@ -8839,6 +9316,25 @@
           "choice": "\"unos\"",
           "alternatives": [],
           "reason": "Storm wind (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o191070250012"
+          ],
+          "choice": "\"上主一下命令\"",
+          "alternatives": [
+            "\"他一下命令\""
+          ],
+          "reason": "The English Readable begins with an unspanned \"He\"; Chinese names God.",
           "uncertain": false,
           "footnote": false
         }
@@ -9051,6 +9547,11 @@
           "L": "Umakyat sila hanggang sa langit, bumaba sila hanggang sa kalaliman; \\q natunaw ang kanilang kaluluwa sa kapahamakan.",
           "B": "Itinaas sila hanggang sa langit, at ibinaba sa kalaliman; \\q sa ganoong panganib ay naglaho ang kanilang tapang.",
           "R": "Ang mga mandaragat ay itinapon pataas sa langit at pababa sa kalaliman. \\q Labis silang natakot kaya nawala ang lahat nilang tapang."
+        },
+        "zh": {
+          "L": "他们上到天空，下到深渊； \\q 他们的灵魂因患难而融化。",
+          "B": "他们被抛上天空，又落入深渊； \\q 处境如此危险，他们都丧了胆。",
+          "R": "水手们一会儿被抛向天空，一会儿又落进深海。 \\q 他们害怕极了，一点勇气都没有了。"
         }
       },
       "decisions": [
@@ -9373,6 +9874,11 @@
           "L": "Sumuray-suray sila at gumiray na parang lasing, \\q at nilamon ang lahat ng kanilang kasanayan.",
           "B": "Gumiwang-giwang sila at sumuray na parang taong lasing, \\q at nauwi sa wala ang lahat ng kanilang kasanayan sa dagat.",
           "R": "Sumuray-suray sila at natisod na parang mga taong lasing, \\q at walang naitulong ang anumang alam nilang gawin."
+        },
+        "zh": {
+          "L": "他们摇摇晃晃，东倒西歪，像醉酒的人， \\q 他们一切的智慧都被吞灭了。",
+          "B": "他们像醉汉一样东倒西歪， \\q 航海的本领全都没了用处。",
+          "R": "他们像喝醉了的人一样，摇来摇去，站都站不稳。 \\q 他们会的本领，一样也帮不了他们。"
         }
       },
       "decisions": [
@@ -9670,6 +10176,11 @@
           "L": "Nang magkagayo'y dumaing sila {{divine_name:sa PANGINOON|kay Yahweh}} sa kanilang kagipitan; \\q mula sa kanilang mga kabagabagan ay inilabas {{deity_pronoun:niya|Niya}} sila.",
           "B": "Sa kanilang kagipitan ay tumawag sila {{divine_name:sa PANGINOON|kay Yahweh}}, \\q at inilabas {{deity_pronoun:niya|Niya}} sila mula sa kanilang mga kabagabagan.",
           "R": "Sa kanilang kaguluhan ay dumaing sila {{divine_name:sa PANGINOON|kay Yahweh}} upang humingi ng tulong, \\q at ligtas na inilabas {{deity_pronoun:niya|Niya}} sila mula sa kanilang paghihirap."
+        },
+        "zh": {
+          "L": "于是他们在急难中向{{divine_name:上主|雅威}}呼求； \\q {{deity_pronoun:他|祂}}从他们的祸患中领出了他们。",
+          "B": "他们在急难中向{{divine_name:上主|雅威}}呼求， \\q {{deity_pronoun:他|祂}}就领他们脱离困境。",
+          "R": "他们遇到困难，就向{{divine_name:上主|雅威}}呼求帮助， \\q {{deity_pronoun:他|祂}}就平安地领他们脱离痛苦。"
         }
       },
       "decisions": [
@@ -9990,6 +10501,11 @@
           "L": "Ginawa niyang bulong ang unos, \\q at tumahimik ang kanilang mga alon.",
           "B": "Ginawa niyang marahang hininga ang malakas na hangin, \\q at tumahimik ang mga alon sa palibot nila.",
           "R": "Pinatahimik niya ang unos na parang isang bulong, \\q at kumalma ang mga alon."
+        },
+        "zh": {
+          "L": "使狂风变为细语， \\q 海浪就平静了。",
+          "B": "把狂风变成轻柔的气息， \\q 他们四周的海浪都静了下来。",
+          "R": "使狂风变得像轻声细语一样安静， \\q 海浪也平静了。"
         }
       },
       "decisions": [
@@ -10075,6 +10591,27 @@
           "choice": "\"bulong\"",
           "alternatives": [],
           "reason": "Whisper: calm (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o191070290011"
+          ],
+          "choice": "the verse goes on with no pronoun",
+          "alternatives": [
+            "\"他\" outside the setting"
+          ],
+          "reason": "The English begins with an unspanned \"He\" at these levels; Chinese carries the subject on from verse 28.",
           "uncertain": false,
           "footnote": false
         }
@@ -10277,6 +10814,11 @@
           "L": "At nagalak sila sapagkat tumahimik ang mga ito, \\q at ginabayan {{deity_pronoun:niya|Niya}} sila sa daungang kanilang ninanais.",
           "B": "Kay saya nila nang tumahimik ang lahat! \\q At dinala {{deity_pronoun:niya|Niya}} sila sa daungang kanilang pinananabikan.",
           "R": "Natuwa ang mga mandaragat nang kumalma ang lahat, \\q at inakay {{deity_pronoun:niya|Niya}} sila nang ligtas sa daungang nais nilang puntahan."
+        },
+        "zh": {
+          "L": "他们因平静而欢喜， \\q {{deity_pronoun:他|祂}}就引导他们到所渴想的港口。",
+          "B": "一切平静下来，他们多么欢喜！ \\q {{deity_pronoun:他|祂}}把他们带到他们渴望的港口。",
+          "R": "风平浪静了，水手们非常高兴。 \\q {{deity_pronoun:他|祂}}把他们平安地带到了他们想去的港口。"
         }
       },
       "decisions": [
@@ -10644,6 +11186,11 @@
           "L": "Magpasalamat sila {{divine_name:sa PANGINOON|kay Yahweh}} dahil sa {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig, \\q at dahil sa {{deity_pronoun:kaniyang|Kaniyang}} mga kababalaghan sa mga anak ng tao.",
           "B": "Pasalamatan nila {{divine_name:ang PANGINOON|si Yahweh}} dahil sa {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig \\q at dahil sa mga kababalaghang ginagawa {{deity_pronoun:niya|Niya}} para sa sangkatauhan.",
           "R": "Dapat nilang pasalamatan {{divine_name:ang PANGINOON|si Yahweh}} dahil sa {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig \\q at dahil sa kamangha-manghang mga bagay na ginagawa {{deity_pronoun:niya|Niya}} para sa mga tao."
+        },
+        "zh": {
+          "L": "愿他们为{{deity_pronoun:他|祂}}的慈爱称谢{{divine_name:上主|雅威}}， \\q 为{{deity_pronoun:他|祂}}向人的子孙所行的奇事[称谢]。",
+          "B": "愿他们为{{deity_pronoun:他|祂}}的慈爱， \\q 也为{{deity_pronoun:他|祂}}向世人所行的奇事，称谢{{divine_name:上主|雅威}}。",
+          "R": "他们应当为{{deity_pronoun:他|祂}}始终不变的爱感谢{{divine_name:上主|雅威}}， \\q 也为{{deity_pronoun:他|祂}}为人们所做的奇妙的事感谢。"
         }
       },
       "decisions": [
@@ -10982,6 +11529,11 @@
           "L": "At dakilain nila {{deity_pronoun:siya|Siya}} sa kapulungan ng bayan, \\q at sa upuan ng matatanda ay purihin nila {{deity_pronoun:siya|Siya}}.",
           "B": "Itanghal nila {{deity_pronoun:siya|Siya}} kung saan nagtitipon ang bayan \\q at purihin {{deity_pronoun:siya|Siya}} kung saan nagpupulong ang matatanda.",
           "R": "Parangalan nila {{deity_pronoun:siya|Siya}} kapag nagtitipon ang buong bayan, \\q at purihin {{deity_pronoun:siya|Siya}} sa harap ng mga pinuno."
+        },
+        "zh": {
+          "L": "愿他们在民众的会中尊崇{{deity_pronoun:他|祂}}， \\q 在长老的座位上赞美{{deity_pronoun:他|祂}}。",
+          "B": "愿他们在百姓聚集的地方高举{{deity_pronoun:他|祂}}， \\q 在长老议事的地方赞美{{deity_pronoun:他|祂}}。",
+          "R": "当众人聚在一起的时候，他们应当尊崇{{deity_pronoun:他|祂}}， \\q 也应当在首领们面前赞美{{deity_pronoun:他|祂}}。"
         }
       },
       "decisions": [
@@ -11238,6 +11790,11 @@
           "L": "Ginagawa niyang ilang ang mga ilog, \\q at tuyong lupa ang mga bukal ng tubig,",
           "B": "Kaya niyang tuyuin ang mga ilog hanggang maging disyerto \\q at gawing tigang na lupa ang mga bukal ng tubig,",
           "R": "Kaya ng Diyos na patuyuin ang mga ilog at gawing disyerto. \\q Kaya niyang gawing tuyo at uhaw na lupa ang mga bukal ng tubig."
+        },
+        "zh": {
+          "L": "{{god_term:神|上帝}}使江河变为旷野， \\q 使水泉变为干渴之地，",
+          "B": "{{god_term:神|上帝}}能使江河干涸，变成荒漠， \\q 使水泉变成干旱的土地，",
+          "R": "{{god_term:神|上帝}}能使江河干涸，变成沙漠。 \\q {{god_term:神|上帝}}能把水泉变成干旱的地。"
         }
       },
       "decisions": [
@@ -11336,6 +11893,27 @@
           "choice": "\"ilang\"",
           "alternatives": [],
           "reason": "Wilderness (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o191070330011"
+          ],
+          "choice": "\"神\" (L, B, R)",
+          "alternatives": [
+            "\"他\" outside the setting"
+          ],
+          "reason": "A new section begins (m1) with an unspanned \"He\" in the English Literal and Balanced and \"God\" in the Readable; Chinese names God at every level.",
           "uncertain": false,
           "footnote": false
         }
@@ -11560,6 +12138,11 @@
           "L": "ang mabungang lupain ay ginagawang maalat na kaparangan, \\q dahil sa kasamaan ng mga naninirahan doon.",
           "B": "at ang matabang bukirin ay ginagawang maalat na kapatagan, \\q dahil sa kasamaang ginagawa ng mga nakatira roon.",
           "R": "Kaya niyang gawing walang-silbi ang matabang bukirin, \\q maalat na lupa, dahil masama ang mga taong nakatira roon."
+        },
+        "zh": {
+          "L": "使肥沃之地变为盐碱地， \\q 都因住在其中的人的恶。",
+          "B": "使肥沃的田地变成盐碱滩， \\q 都因为住在那里的人所行的恶。",
+          "R": "能把肥沃的田地变成没有用的 \\q 盐碱地，因为住在那里的人很邪恶。"
         }
       },
       "decisions": [
@@ -11833,6 +12416,11 @@
           "L": "Ginagawa niyang lawa ng tubig ang ilang, \\q at mga bukal ng tubig ang tuyong lupain.",
           "B": "Ginagawa niyang lawa ng tubig ang disyerto \\q at bumubukal na mga batis ang tuyong lupain.",
           "R": "Kaya rin niyang gawing lawa ang disyerto, \\q at mga bukal ng tubig ang tuyong lupa."
+        },
+        "zh": {
+          "L": "使旷野变为水池， \\q 使干旱之地变为水泉。",
+          "B": "使荒漠变成水池， \\q 使干旱之地涌出泉水。",
+          "R": "也能把沙漠变成湖泊， \\q 把干旱的地变成水泉。"
         }
       },
       "decisions": [
@@ -11870,6 +12458,26 @@
           "choice": "\"lawa\"",
           "alternatives": [],
           "reason": "Pool (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o191070350011"
+          ],
+          "choice": "the verse goes on with no pronoun at Balanced and Readable",
+          "alternatives": [
+            "\"他\" outside the setting"
+          ],
+          "reason": "The English begins with an unspanned \"He\" at these levels; Chinese carries the subject on.",
           "uncertain": false,
           "footnote": false
         }
@@ -12089,6 +12697,11 @@
           "L": "At pinatitira {{deity_pronoun:niya|Niya}} roon ang mga nagugutom, \\q at nagtatayo sila ng lungsod na matitirhan.",
           "B": "Doon ay pinatitira {{deity_pronoun:niya|Niya}} ang mga nagugutom, \\q at nagtatayo sila ng bayang matitirhan.",
           "R": "Dinadala niya roon ang mga taong nagugutom upang manirahan, \\q at nagtatayo sila ng bayan para sa kanilang mga tahanan."
+        },
+        "zh": {
+          "L": "{{deity_pronoun:他|祂}}使饥饿的人住在那里， \\q 他们就建立可以居住的城。",
+          "B": "{{deity_pronoun:他|祂}}让饥饿的人在那里安居， \\q 他们就建造可以定居的城镇。",
+          "R": "带饥饿的人到那里居住， \\q 他们就建造城镇，在那里安家。"
         }
       },
       "decisions": [
@@ -12351,6 +12964,11 @@
           "L": "At naghahasik sila sa mga bukid at nagtatanim ng mga ubasan, \\q at umaani sila ng bunga.",
           "B": "Hinahasikan nila ang mga bukid at tinataniman ng ubas, \\q at umaani ng masaganang ani.",
           "R": "Nagtatanim sila ng mga pananim sa mga bukid at ng mga puno ng ubas sa mga ubasan, \\q at umaani sila ng malaking ani."
+        },
+        "zh": {
+          "L": "他们撒种在田里，栽种葡萄园， \\q 就得到丰收的果实。",
+          "B": "他们在田里播种，栽种葡萄树， \\q 收成丰富。",
+          "R": "他们在田里种庄稼，在园子里种葡萄， \\q 收获很多。"
         }
       },
       "decisions": [
@@ -12606,6 +13224,11 @@
           "L": "At pinagpapala {{deity_pronoun:niya|Niya}} sila, at sila ay dumarami nang lubos, \\q at ang kanilang mga hayop ay hindi {{deity_pronoun:niya|Niya}} hinahayaang umunti.",
           "B": "Pinagpapala niya sila, at lalo pang dumarami ang kanilang bilang; \\q hindi {{deity_pronoun:niya|Niya}} hinahayaang umunti ang kanilang mga kawan.",
           "R": "Pinagpapala niya sila, at lalong lumalaki ang kanilang mga pamilya. \\q Iniingatan niya ang kanilang mga kawan ng baka upang hindi umunti."
+        },
+        "zh": {
+          "L": "{{deity_pronoun:他|祂}}赐福给他们，他们就大大增多； \\q {{deity_pronoun:他|祂}}也不使他们的牲畜减少。",
+          "B": "{{god_term:神|上帝}}赐福给他们，他们的人数不断增加； \\q {{deity_pronoun:他|祂}}也不让他们的牛群减少。",
+          "R": "{{god_term:神|上帝}}赐福给他们，使他们的家族越来越大， \\q 也不让他们的牛群变少。"
         }
       },
       "decisions": [
@@ -12871,6 +13494,11 @@
           "L": "Pagkatapos ay umuunti sila at napapayukod dahil sa pang-aapi, \\q kasamaan, at kapighatian.",
           "B": "Pagkatapos ay umuunti sila at ibinabagsak ng malupit na pamamahala, \\q ng sakuna at ng dalamhati.",
           "R": "Ngunit pagkatapos ay umuunti sila, \\q at nadudurog sila ng malupit na pagtrato, ng kaguluhan at ng kalungkutan."
+        },
+        "zh": {
+          "L": "后来他们又减少，又因欺压、 \\q 祸患和愁苦而降卑。",
+          "B": "后来他们又减少，被暴虐的统治、 \\q 灾祸和忧伤压倒。",
+          "R": "可是后来他们的人数减少了， \\q 被残酷的对待、患难和忧伤压垮了。"
         }
       },
       "decisions": [
@@ -13192,6 +13820,11 @@
           "L": "Ibinubuhos niya ang paghamak sa mga maharlika, \\q at pinaglalagalag {{deity_pronoun:niya|Niya}} sila sa kaparangang walang daan.",
           "B": "Nagbubunton siya ng paghamak sa mga makapangyarihan \\q at iniiwan silang ligaw sa kaparangang walang daan.",
           "R": "Ipinapahiya niya ang mapagmataas na mga pinuno \\q at pinaglalagalag sila sa disyertong walang daan."
+        },
+        "zh": {
+          "L": "[{{god_term:神|上帝}}]把羞辱倾倒在权贵身上， \\q {{deity_pronoun:他|祂}}使他们在无路的荒地上飘流。",
+          "B": "{{god_term:神|上帝}}使权贵受尽羞辱， \\q 让他们在没有道路的荒野中迷失。",
+          "R": "{{god_term:神|上帝}}使骄傲的统治者蒙羞， \\q 让他们在没有路的沙漠里迷路。"
         }
       },
       "decisions": [
@@ -13486,6 +14119,11 @@
           "L": "Ngunit itinataas {{deity_pronoun:niya|Niya}} ang nangangailangan mula sa kapighatian, \\q at ginagawang parang kawan ang kanilang mga angkan.",
           "B": "Ngunit itinataas {{deity_pronoun:niya|Niya}} ang nangangailangan mula sa kanilang paghihirap \\q at pinararami ang kanilang mga pamilya na parang kawan ng tupa.",
           "R": "Ngunit iniaahon {{deity_pronoun:niya|Niya}} ang mga dukha mula sa kanilang kaguluhan at binibigyan sila ng malalaking pamilya, \\q na kasindami ng kawan ng tupa."
+        },
+        "zh": {
+          "L": "{{deity_pronoun:他|祂}}却把贫穷的人从困苦中安置在高处， \\q 使[他们的]家族多如羊群。",
+          "B": "{{deity_pronoun:他|祂}}却使贫穷的人脱离苦难，得到高举， \\q 使他们的家族像羊群一样增多。",
+          "R": "{{deity_pronoun:他|祂}}却把穷人从困境中救出来，使他们的家庭人丁兴旺， \\q 像一大群羊那么多。"
         }
       },
       "decisions": [
@@ -13817,6 +14455,11 @@
           "L": "Nakikita ito ng mga matuwid at sila ay nagagalak, \\q at itinitikom ng lahat ng kalikuan ang bibig nito.",
           "B": "Ang mga namumuhay nang matuwid ay nanonood nang may kagalakan, \\q at ang lahat ng kasamaan ay wala nang masabi.",
           "R": "Nakikita ito ng mga tapat na tao at sila ay natutuwa, \\q at wala nang masabi ang masasamang tao."
+        },
+        "zh": {
+          "L": "正直的人看见就欢喜， \\q 一切的不义都闭口无言。",
+          "B": "行事正直的人看见就欢喜， \\q 一切的邪恶都无话可说。",
+          "R": "正直诚实的人看见了就高兴， \\q 坏人再也无话可说。"
         }
       },
       "decisions": [
@@ -14107,6 +14750,11 @@
           "L": "Sinumang marunong ay ingatan ang mga bagay na ito, \\q at unawain nila ang mga gawa ng tapat na pag-ibig {{divine_name:ng PANGINOON|ni Yahweh}}.",
           "B": "Ang sinumang marunong ay dapat magtanda ng mga bagay na ito \\q at pagnilayan ang tapat na pag-ibig na paulit-ulit na ipinakita {{divine_name:ng PANGINOON|ni Yahweh}}.",
           "R": "Ang sinumang marunong ay magsasapuso ng lahat ng ito \\q at mag-iisip sa maraming pagkakataong ipinakita {{divine_name:ng PANGINOON|ni Yahweh}} ang {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig."
+        },
+        "zh": {
+          "L": "凡有智慧的，就当谨守这些[事]， \\q 也当思想{{divine_name:上主|雅威}}所行的慈爱。",
+          "B": "有智慧的人应当留心这些事， \\q 细想{{divine_name:上主|雅威}}一次又一次所显明的慈爱。",
+          "R": "有智慧的人会把这一切放在心上， \\q 也会想一想{{divine_name:上主|雅威}}有多少次显出{{deity_pronoun:他|祂}}始终不变的爱。"
         }
       },
       "decisions": [
@@ -14427,6 +15075,25 @@
           "choice": "\"mga gawa ng tapat na pag-ibig\"",
           "alternatives": [],
           "reason": "Acts of loyal love: plural hesed (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191070430011"
+          ],
+          "choice": "\"凡有智慧的\" with no gender span",
+          "alternatives": [
+            "\"他\" for the wise person"
+          ],
+          "reason": "The English Literal has \"them / him\" for any wise person; Chinese says \"凡有智慧的\" and needs no pronoun, so no gender span is written.",
           "uncertain": false,
           "footnote": false
         }

@@ -93,6 +93,11 @@
           "L": "Magpasalamat kayo {{divine_name:sa PANGINOON|kay Yahweh}}, sapagkat {{deity_pronoun:siya|Siya}} ay mabuti, \\q sapagkat ang {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig ay magpakailanman.",
           "B": "Pasalamatan ninyo {{divine_name:ang PANGINOON|si Yahweh}}, sapagkat {{deity_pronoun:siya|Siya}} ay mabuti; \\q sapagkat ang {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig ay nananatili magpakailanman.",
           "R": "Pasalamatan ninyo {{divine_name:ang PANGINOON|si Yahweh}}, dahil {{deity_pronoun:siya|Siya}} ay mabuti! \\q Ang tapat na pag-ibig niya ay mananatili magpakailanman."
+        },
+        "zh": {
+          "L": "你们要称谢{{divine_name:上主|雅威}}，因为{{deity_pronoun:他|祂}}是美善的， \\q {{deity_pronoun:他|祂}}的慈爱永不止息。",
+          "B": "要称谢{{divine_name:上主|雅威}}，因为{{deity_pronoun:他|祂}}是美善的； \\q {{deity_pronoun:他|祂}}的慈爱永不止息。",
+          "R": "要感谢{{divine_name:上主|雅威}}，因为{{deity_pronoun:他|祂}}真好！ \\q 他的爱永远不变。"
         }
       },
       "decisions": [
@@ -598,6 +603,56 @@
           "reason": "Loyal love: hesed; the refrain repeats in every verse (m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191360010011",
+            "o191360010021",
+            "o191360010022",
+            "o191360010031",
+            "o191360010041",
+            "o191360010051",
+            "o191360010061",
+            "o191360010062",
+            "o191360010071",
+            "o191360010072"
+          ],
+          "choice": "The wording of 1 Chronicles 16:34 at each level, and its refrain in all 26 verses: \"因为{{deity_pronoun:他|祂}}的慈爱永不止息\" (L, B), \"他的爱永远不变\" (R)",
+          "alternatives": [
+            "\"因他的慈爱永远长存\""
+          ],
+          "reason": "The refrain has one wording per level through the Psalter and Chronicles (glossary, Hesed); verse 1 repeats 1 Chronicles 16:34 word for word, and verses 2-26 keep its refrain with \"因为\" where the English Literal and Balanced say \"for\", as 1 Chronicles 16:41 and 2 Chronicles 7:3 do.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191360010071",
+            "o191360010072"
+          ],
+          "choice": "\"他的爱永远不变\" with a plain \"他\" and no deity_pronoun span, in all 26 verses",
+          "alternatives": [
+            "\"{{deity_pronoun:他|祂}}的爱永远不变\" (1 Chronicles 16:34, R)"
+          ],
+          "reason": "The English Readable starts the refrain \"His faithful love ...\" with no span. A pronoun for God takes the deity_pronoun span only where the English level has one, as in every Chinese book, so the Readable refrain keeps 1 Chronicles' words with a plain 他, as at 107:1 and 118:1-4, 29. A reviewer may prefer the span, as in Chronicles, whose English spans it.",
+          "uncertain": true,
+          "footnote": false
         }
       ],
       "status": "ai_draft",
@@ -799,6 +854,11 @@
           "L": "Magpasalamat kayo sa Diyos ng mga diyos, \\q sapagkat ang {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig ay magpakailanman.",
           "B": "Magpasalamat kayo sa Diyos ng mga diyos, \\q sapagkat ang {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig ay nananatili magpakailanman.",
           "R": "Pasalamatan ninyo ang Diyos na higit na dakila kaysa lahat ng diyos. \\q Ang tapat na pag-ibig niya ay mananatili magpakailanman."
+        },
+        "zh": {
+          "L": "你们要称谢众神之{{god_term:神|上帝}}， \\q 因为{{deity_pronoun:他|祂}}的慈爱永不止息。",
+          "B": "要称谢超越众神的{{god_term:神|上帝}}， \\q 因为{{deity_pronoun:他|祂}}的慈爱永不止息。",
+          "R": "要感谢比一切神明都伟大的{{god_term:神|上帝}}。 \\q 他的爱永远不变。"
         }
       },
       "decisions": [
@@ -992,6 +1052,50 @@
           "choice": "\"Diyos ng mga diyos\"",
           "alternatives": [],
           "reason": "God of gods: the supreme God (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191360020021",
+            "o191360020022",
+            "o191360020031",
+            "o191360020032"
+          ],
+          "choice": "\"众神之{{god_term:神|上帝}}\" (L); \"超越众神的{{god_term:神|上帝}}\" (B)",
+          "alternatives": [
+            "-"
+          ],
+          "reason": "As Daniel 2:47 (L) and Deuteronomy 10:17 (B); the gods take no span.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191360020022"
+          ],
+          "choice": "\"{{god_term:神|上帝}}\": 神 by default, 上帝 as the reader's alternative",
+          "alternatives": [
+            "\"上帝\" as the default"
+          ],
+          "reason": "Every word naming the one God is written with the Chinese god_term setting (style guide section 4); the English has no such setting.",
           "uncertain": false,
           "footnote": false
         }
@@ -1189,6 +1293,11 @@
           "L": "Magpasalamat kayo sa Panginoon ng mga panginoon, \\q sapagkat ang {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig ay magpakailanman.",
           "B": "Magpasalamat kayo sa Panginoon ng mga panginoon, \\q sapagkat ang {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig ay nananatili magpakailanman.",
           "R": "Pasalamatan ninyo ang Panginoong namumuno sa lahat ng panginoon. \\q Ang tapat na pag-ibig niya ay mananatili magpakailanman."
+        },
+        "zh": {
+          "L": "你们要称谢万主之主， \\q 因为{{deity_pronoun:他|祂}}的慈爱永不止息。",
+          "B": "要称谢超越一切主的主， \\q 因为{{deity_pronoun:他|祂}}的慈爱永不止息。",
+          "R": "要感谢统管一切主的主。 \\q 他的爱永远不变。"
         }
       },
       "decisions": [
@@ -1325,6 +1434,29 @@
           "choice": "\"Panginoon ng mga panginoon\"",
           "alternatives": [],
           "reason": "Lord of lords: the supreme Lord (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191360030021",
+            "o191360030022",
+            "o191360030031",
+            "o191360030032"
+          ],
+          "choice": "\"万主之主\" (L); \"超越一切主的主\" (B)",
+          "alternatives": [
+            "-"
+          ],
+          "reason": "As Deuteronomy 10:17.",
           "uncertain": false,
           "footnote": false
         }
@@ -1524,6 +1656,11 @@
           "L": "Sa kaniya na tanging gumagawa ng mga dakilang kababalaghan, \\q sapagkat ang {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig ay magpakailanman.",
           "B": "Sa kaniya na tanging gumagawa ng mga dakilang kababalaghan, \\q sapagkat ang {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig ay nananatili magpakailanman.",
           "R": "Siya lamang ang gumagawa ng mga dakilang kababalaghan. \\q Ang tapat na pag-ibig niya ay mananatili magpakailanman."
+        },
+        "zh": {
+          "L": "[称谢]那独自施行伟大奇事的， \\q 因为{{deity_pronoun:他|祂}}的慈爱永不止息。",
+          "B": "称谢那唯一能行伟大奇事的那一位， \\q 因为{{deity_pronoun:他|祂}}的慈爱永不止息。",
+          "R": "只有{{god_term:神|上帝}}能行伟大的奇事。 \\q 他的爱永远不变。"
         }
       },
       "decisions": [
@@ -1777,6 +1914,26 @@
           "reason": "Wonders (m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o191360040011",
+            "o191360040012"
+          ],
+          "choice": "\"只有{{god_term:神|上帝}}\" for \"He alone\"; no pronoun in the lines that follow (verses 6-25) where the English Readable starts with an unspanned \"He\"",
+          "alternatives": [
+            "\"他\""
+          ],
+          "reason": "Readable makes each line its own sentence (English r-en-1); Chinese names God once and carries the subject on, with 又 where it lists another deed, rather than an unmarked \"他\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft",
@@ -1999,6 +2156,11 @@
           "L": "Sa kaniya na gumawa ng kalangitan sa pamamagitan ng unawa, \\q sapagkat ang {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig ay magpakailanman.",
           "B": "Sa kaniya na gumawa ng kalangitan nang may kahusayan at karunungan, \\q sapagkat ang {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig ay nananatili magpakailanman.",
           "R": "Sa malaking kahusayan ay ginawa {{deity_pronoun:niya|Niya}} ang kalangitan. \\q Ang tapat na pag-ibig niya ay mananatili magpakailanman."
+        },
+        "zh": {
+          "L": "[称谢]那以聪明造诸天的， \\q 因为{{deity_pronoun:他|祂}}的慈爱永不止息。",
+          "B": "称谢那运用技巧和智慧创造诸天的， \\q 因为{{deity_pronoun:他|祂}}的慈爱永不止息。",
+          "R": "{{deity_pronoun:他|祂}}以高超的技巧创造了天。 \\q 他的爱永远不变。"
         }
       },
       "decisions": [
@@ -2307,6 +2469,11 @@
           "L": "Sa kaniya na naglatag ng lupa sa ibabaw ng tubig, \\q sapagkat ang {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig ay magpakailanman.",
           "B": "Sa kaniya na naglatag ng lupain sa ibabaw ng tubig, \\q sapagkat ang {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig ay nananatili magpakailanman.",
           "R": "Inilatag niya ang tuyong lupa sa ibabaw ng tubig. \\q Ang tapat na pag-ibig niya ay mananatili magpakailanman."
+        },
+        "zh": {
+          "L": "[称谢]那在众水之上铺展大地的， \\q 因为{{deity_pronoun:他|祂}}的慈爱永不止息。",
+          "B": "称谢那在水面上铺开陆地的， \\q 因为{{deity_pronoun:他|祂}}的慈爱永不止息。",
+          "R": "又在水的上面铺开了干地。 \\q 他的爱永远不变。"
         }
       },
       "decisions": [
@@ -2628,6 +2795,11 @@
           "L": "Sa kaniya na gumawa ng mga dakilang tanglaw, \\q sapagkat ang {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig ay magpakailanman.",
           "B": "Sa kaniya na gumawa ng mga dakilang tanglaw, \\q sapagkat ang {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig ay nananatili magpakailanman.",
           "R": "Ginawa niya ang mga dakilang tanglaw sa langit. \\q Ang tapat na pag-ibig niya ay mananatili magpakailanman."
+        },
+        "zh": {
+          "L": "[称谢]那造了大光体的， \\q 因为{{deity_pronoun:他|祂}}的慈爱永不止息。",
+          "B": "称谢那造了众大光体的， \\q 因为{{deity_pronoun:他|祂}}的慈爱永不止息。",
+          "R": "又造了天上的大光体。 \\q 他的爱永远不变。"
         }
       },
       "decisions": [
@@ -2913,6 +3085,11 @@
           "L": "ang araw upang mamahala sa araw, \\q sapagkat ang {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig ay magpakailanman.",
           "B": "ang araw upang mamahala sa araw, \\q sapagkat ang {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig ay nananatili magpakailanman.",
           "R": "Ginawa niya ang araw upang mamahala sa maghapon. \\q Ang tapat na pag-ibig niya ay mananatili magpakailanman."
+        },
+        "zh": {
+          "L": "太阳管理白天， \\q 因为{{deity_pronoun:他|祂}}的慈爱永不止息。",
+          "B": "就是太阳，让它管理白天， \\q 因为{{deity_pronoun:他|祂}}的慈爱永不止息。",
+          "R": "又造了太阳管理白天。 \\q 他的爱永远不变。"
         }
       },
       "decisions": [
@@ -3222,6 +3399,11 @@
           "L": "ang buwan at mga bituin upang mamahala sa gabi, \\q sapagkat ang {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig ay magpakailanman.",
           "B": "ang buwan at ang mga bituin upang mamahala sa gabi, \\q sapagkat ang {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig ay nananatili magpakailanman.",
           "R": "Ginawa niya ang buwan at ang mga bituin upang mamahala sa gabi. \\q Ang tapat na pag-ibig niya ay mananatili magpakailanman."
+        },
+        "zh": {
+          "L": "月亮和星星管理黑夜， \\q 因为{{deity_pronoun:他|祂}}的慈爱永不止息。",
+          "B": "就是月亮和星星，让它们管理黑夜， \\q 因为{{deity_pronoun:他|祂}}的慈爱永不止息。",
+          "R": "又造了月亮和星星管理黑夜。 \\q 他的爱永远不变。"
         }
       },
       "decisions": [
@@ -3524,6 +3706,11 @@
           "L": "Sa kaniya na sumakit sa Egipto sa pamamagitan ng kanilang mga panganay, \\q sapagkat ang {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig ay magpakailanman.",
           "B": "Sa kaniya na sumakit sa Egipto sa pamamagitan ng kanilang mga panganay, \\q sapagkat ang {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig ay nananatili magpakailanman.",
           "R": "Pinarusahan niya ang Egipto sa pagpatay sa kanilang mga panganay na anak. \\q Ang tapat na pag-ibig niya ay mananatili magpakailanman."
+        },
+        "zh": {
+          "L": "[称谢]那在埃及头生的身上击打埃及的， \\q 因为{{deity_pronoun:他|祂}}的慈爱永不止息。",
+          "B": "称谢那借着击杀埃及的长子来打击埃及的， \\q 因为{{deity_pronoun:他|祂}}的慈爱永不止息。",
+          "R": "又惩罚埃及，杀了他们的长子。 \\q 他的爱永远不变。"
         }
       },
       "decisions": [
@@ -3842,6 +4029,11 @@
           "L": "at inilabas {{deity_pronoun:niya|Niya}} ang Israel mula sa gitna nila, \\q sapagkat ang {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig ay magpakailanman.",
           "B": "at inakay {{deity_pronoun:niya|Niya}} ang Israel palabas mula sa gitna nila, \\q sapagkat ang {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig ay nananatili magpakailanman.",
           "R": "Inilabas niya ang Israel mula sa gitna ng mga Egipcio. \\q Ang tapat na pag-ibig niya ay mananatili magpakailanman."
+        },
+        "zh": {
+          "L": "{{deity_pronoun:他|祂}}又把以色列从他们中间领出来， \\q 因为{{deity_pronoun:他|祂}}的慈爱永不止息。",
+          "B": "{{deity_pronoun:他|祂}}带领以色列从他们中间出来， \\q 因为{{deity_pronoun:他|祂}}的慈爱永不止息。",
+          "R": "把以色列人从埃及人中间领了出来。 \\q 他的爱永远不变。"
         }
       },
       "decisions": [
@@ -4136,6 +4328,11 @@
           "L": "sa pamamagitan ng malakas na kamay at unat na bisig, \\q sapagkat ang {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig ay magpakailanman.",
           "B": "sa pamamagitan ng malakas na kamay at nakaunat na bisig, \\q sapagkat ang {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig ay nananatili magpakailanman.",
           "R": "Ginawa niya ito sa dakilang kapangyarihan, iniunat ang {{deity_pronoun:kaniyang|Kaniyang}} malakas na bisig. \\q Ang tapat na pag-ibig niya ay mananatili magpakailanman."
+        },
+        "zh": {
+          "L": "用大能的手和伸出的膀臂， \\q 因为{{deity_pronoun:他|祂}}的慈爱永不止息。",
+          "B": "用大能的手和伸出的膀臂， \\q 因为{{deity_pronoun:他|祂}}的慈爱永不止息。",
+          "R": "用大能做成这事，伸出{{deity_pronoun:他|祂}}有力的膀臂。 \\q 他的爱永远不变。"
         }
       },
       "decisions": [
@@ -4446,6 +4643,11 @@
           "L": "Sa kaniya na humati sa Dagat ng mga Tambo, \\q sapagkat ang {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig ay magpakailanman.",
           "B": "Sa kaniya na humati sa Dagat na Pula, \\q sapagkat ang {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig ay nananatili magpakailanman.",
           "R": "Hinati niya ang Dagat na Pula. \\q Ang tapat na pag-ibig niya ay mananatili magpakailanman."
+        },
+        "zh": {
+          "L": "[称谢]那把芦苇海劈成碎块的， \\q 因为{{deity_pronoun:他|祂}}的慈爱永不止息。",
+          "B": "称谢那把红海劈开的， \\q 因为{{deity_pronoun:他|祂}}的慈爱永不止息。",
+          "R": "又把红海劈成两半。 \\q 他的爱永远不变。"
         }
       },
       "decisions": [
@@ -4769,6 +4971,28 @@
           "reason": "Sea of Reeds: yam suf; Red Sea in B, R (m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191360130021",
+            "o191360130031"
+          ],
+          "choice": "\"芦苇海\" (L); \"红海\" (B, R)",
+          "alternatives": [
+            "-"
+          ],
+          "reason": "As Joshua 4:23 and 24:6: Literal translates the Hebrew name, Balanced and Readable use the familiar one, as the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft",
@@ -4960,6 +5184,11 @@
           "L": "at pinaraan {{deity_pronoun:niya|Niya}} ang Israel sa gitna nito, \\q sapagkat ang {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig ay magpakailanman.",
           "B": "at dinala {{deity_pronoun:niya|Niya}} ang Israel sa gitna nito, \\q sapagkat ang {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig ay nananatili magpakailanman.",
           "R": "Inakay niya ang Israel sa mismong gitna ng dagat. \\q Ang tapat na pag-ibig niya ay mananatili magpakailanman."
+        },
+        "zh": {
+          "L": "{{deity_pronoun:他|祂}}又使以色列从它中间经过， \\q 因为{{deity_pronoun:他|祂}}的慈爱永不止息。",
+          "B": "{{deity_pronoun:他|祂}}带领以色列从海中间走过去， \\q 因为{{deity_pronoun:他|祂}}的慈爱永不止息。",
+          "R": "领以色列人从海中间走过去。 \\q 他的爱永远不变。"
         }
       },
       "decisions": [
@@ -5237,6 +5466,11 @@
           "L": "at ipinagpag {{deity_pronoun:niya|Niya}} si Faraon at ang kaniyang hukbo sa Dagat ng mga Tambo, \\q sapagkat ang {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig ay magpakailanman.",
           "B": "at ipinagpag {{deity_pronoun:niya|Niya}} si Faraon at ang kaniyang hukbo sa Dagat na Pula, \\q sapagkat ang {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig ay nananatili magpakailanman.",
           "R": "Itinapon niya si Faraon at ang kaniyang hukbo sa Dagat na Pula. \\q Ang tapat na pag-ibig niya ay mananatili magpakailanman."
+        },
+        "zh": {
+          "L": "{{deity_pronoun:他|祂}}又把法老和他的军队甩进芦苇海， \\q 因为{{deity_pronoun:他|祂}}的慈爱永不止息。",
+          "B": "{{deity_pronoun:他|祂}}把法老和他的军队甩进红海， \\q 因为{{deity_pronoun:他|祂}}的慈爱永不止息。",
+          "R": "把法老和他的军队抛进红海。 \\q 他的爱永远不变。"
         }
       },
       "decisions": [
@@ -5400,6 +5634,27 @@
           "choice": "\"ipinagpag\"",
           "alternatives": [],
           "reason": "Shook off: as one shakes off dust (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191360150012"
+          ],
+          "choice": "\"甩进\" (L, B); \"抛进\" (R)",
+          "alternatives": [
+            "-"
+          ],
+          "reason": "The verb of Exodus 14:27, worded as its Chinese there (m1).",
           "uncertain": false,
           "footnote": false
         }
@@ -5663,6 +5918,11 @@
           "L": "Sa kaniya na umakay sa {{deity_pronoun:kaniyang|Kaniyang}} bayan sa ilang, \\q sapagkat ang {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig ay magpakailanman.",
           "B": "Sa kaniya na gumabay sa {{deity_pronoun:kaniyang|Kaniyang}} bayan sa ilang, \\q sapagkat ang {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig ay nananatili magpakailanman.",
           "R": "Inakay niya ang {{deity_pronoun:kaniyang|Kaniyang}} bayan sa disyerto. \\q Ang tapat na pag-ibig niya ay mananatili magpakailanman."
+        },
+        "zh": {
+          "L": "[称谢]那在旷野引领{{deity_pronoun:他|祂}}子民的， \\q 因为{{deity_pronoun:他|祂}}的慈爱永不止息。",
+          "B": "称谢那带领{{deity_pronoun:他|祂}}的子民走过旷野的， \\q 因为{{deity_pronoun:他|祂}}的慈爱永不止息。",
+          "R": "带领{{deity_pronoun:他|祂}}的子民走过荒野。 \\q 他的爱永远不变。"
         }
       },
       "decisions": [
@@ -5951,6 +6211,11 @@
           "L": "Sa kaniya na sumakit sa mga dakilang hari, \\q sapagkat ang {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig ay magpakailanman.",
           "B": "Sa kaniya na nagpabagsak sa mga dakilang hari, \\q sapagkat ang {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig ay nananatili magpakailanman.",
           "R": "Tinalo niya ang mga dakilang hari. \\q Ang tapat na pag-ibig niya ay mananatili magpakailanman."
+        },
+        "zh": {
+          "L": "[称谢]那击打伟大君王的， \\q 因为{{deity_pronoun:他|祂}}的慈爱永不止息。",
+          "B": "称谢那击倒伟大君王的， \\q 因为{{deity_pronoun:他|祂}}的慈爱永不止息。",
+          "R": "打败了伟大的君王。 \\q 他的爱永远不变。"
         }
       },
       "decisions": [
@@ -6216,6 +6481,11 @@
           "L": "at pinatay {{deity_pronoun:niya|Niya}} ang makapangyarihang mga hari, \\q sapagkat ang {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig ay magpakailanman.",
           "B": "at pinatay {{deity_pronoun:niya|Niya}} ang makapangyarihang mga hari, \\q sapagkat ang {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig ay nananatili magpakailanman.",
           "R": "Pinatay niya ang makapangyarihang mga hari. \\q Ang tapat na pag-ibig niya ay mananatili magpakailanman."
+        },
+        "zh": {
+          "L": "{{deity_pronoun:他|祂}}又杀了强大的君王， \\q 因为{{deity_pronoun:他|祂}}的慈爱永不止息。",
+          "B": "{{deity_pronoun:他|祂}}又杀了强大的君王， \\q 因为{{deity_pronoun:他|祂}}的慈爱永不止息。",
+          "R": "杀了强大的君王。 \\q 他的爱永远不变。"
         }
       },
       "decisions": [
@@ -6476,6 +6746,11 @@
           "L": "si Sihon na hari ng mga Amorreo, \\q sapagkat ang {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig ay magpakailanman.",
           "B": "si Sihon na hari ng mga Amorreo, \\q sapagkat ang {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig ay nananatili magpakailanman.",
           "R": "Pinatay niya si Sihon, na hari ng mga Amorreo. \\q Ang tapat na pag-ibig niya ay mananatili magpakailanman."
+        },
+        "zh": {
+          "L": "亚摩利人的王西宏， \\q 因为{{deity_pronoun:他|祂}}的慈爱永不止息。",
+          "B": "亚摩利王西宏， \\q 因为{{deity_pronoun:他|祂}}的慈爱永不止息。",
+          "R": "杀了亚摩利人的王西宏。 \\q 他的爱永远不变。"
         }
       },
       "decisions": [
@@ -6623,6 +6898,28 @@
           "choice": "\"Sihon\"",
           "alternatives": [],
           "reason": "Numbers 21:21-24 (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191360190012",
+            "o191360190032"
+          ],
+          "choice": "\"西宏\", \"亚摩利人\"",
+          "alternatives": [
+            "-"
+          ],
+          "reason": "As 135:11 and Numbers 21.",
           "uncertain": false,
           "footnote": false
         }
@@ -6821,6 +7118,11 @@
           "L": "at si Og na hari ng Basan, \\q sapagkat ang {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig ay magpakailanman.",
           "B": "at si Og na hari ng Basan, \\q sapagkat ang {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig ay nananatili magpakailanman.",
           "R": "Pinatay niya si Og, na hari ng Basan. \\q Ang tapat na pag-ibig niya ay mananatili magpakailanman."
+        },
+        "zh": {
+          "L": "和巴珊王噩， \\q 因为{{deity_pronoun:他|祂}}的慈爱永不止息。",
+          "B": "还有巴珊王噩， \\q 因为{{deity_pronoun:他|祂}}的慈爱永不止息。",
+          "R": "杀了巴珊王噩。 \\q 他的爱永远不变。"
         }
       },
       "decisions": [
@@ -6891,6 +7193,28 @@
           "choice": "\"Og\"",
           "alternatives": [],
           "reason": "Numbers 21:33-35 (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191360200013",
+            "o191360200032"
+          ],
+          "choice": "\"噩\", \"巴珊\"",
+          "alternatives": [
+            "-"
+          ],
+          "reason": "As 135:11 and Numbers 21:33.",
           "uncertain": false,
           "footnote": false
         }
@@ -7105,6 +7429,11 @@
           "L": "at ibinigay {{deity_pronoun:niya|Niya}} ang kanilang lupain bilang mana, \\q sapagkat ang {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig ay magpakailanman.",
           "B": "at ipinamigay {{deity_pronoun:niya|Niya}} ang kanilang lupain bilang pamana, \\q sapagkat ang {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig ay nananatili magpakailanman.",
           "R": "Ibinigay niya ang kanilang lupain sa {{deity_pronoun:kaniyang|Kaniyang}} bayan upang maging kanilang sariling pag-aari. \\q Ang tapat na pag-ibig niya ay mananatili magpakailanman."
+        },
+        "zh": {
+          "L": "{{deity_pronoun:他|祂}}又把他们的地赐下作产业， \\q 因为{{deity_pronoun:他|祂}}的慈爱永不止息。",
+          "B": "{{deity_pronoun:他|祂}}又把他们的地赐给人作产业， \\q 因为{{deity_pronoun:他|祂}}的慈爱永不止息。",
+          "R": "把他们的土地赐给{{deity_pronoun:他|祂}}的子民，让他们永远拥有。 \\q 他的爱永远不变。"
         }
       },
       "decisions": [
@@ -7407,6 +7736,11 @@
           "L": "mana sa Israel na {{deity_pronoun:kaniyang|Kaniyang}} lingkod, \\q sapagkat ang {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig ay magpakailanman.",
           "B": "pamana para sa Israel na {{deity_pronoun:kaniyang|Kaniyang}} lingkod, \\q sapagkat ang {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig ay nananatili magpakailanman.",
           "R": "Naging tahanan ito ng Israel, na {{deity_pronoun:kaniyang|Kaniyang}} lingkod. \\q Ang tapat na pag-ibig niya ay mananatili magpakailanman."
+        },
+        "zh": {
+          "L": "作{{deity_pronoun:他|祂}}仆人以色列的产业， \\q 因为{{deity_pronoun:他|祂}}的慈爱永不止息。",
+          "B": "作{{deity_pronoun:他|祂}}仆人以色列的产业， \\q 因为{{deity_pronoun:他|祂}}的慈爱永不止息。",
+          "R": "那地成了{{deity_pronoun:他|祂}}的仆人以色列的家园。 \\q 他的爱永远不变。"
         }
       },
       "decisions": [
@@ -7678,6 +8012,11 @@
           "L": "na sa ating abang kalagayan ay inalala tayo, \\q sapagkat ang {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig ay magpakailanman.",
           "B": "na umalala sa atin nang tayo ay ibaba, \\q sapagkat ang {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig ay nananatili magpakailanman.",
           "R": "Inalala niya tayo noong tayo ay mahina at walang magawa. \\q Ang tapat na pag-ibig niya ay mananatili magpakailanman."
+        },
+        "zh": {
+          "L": "那在我们卑微时记念我们的， \\q 因为{{deity_pronoun:他|祂}}的慈爱永不止息。",
+          "B": "那在我们被贬低时记念我们的， \\q 因为{{deity_pronoun:他|祂}}的慈爱永不止息。",
+          "R": "我们软弱无助时，{{god_term:神|上帝}}记得我们。 \\q 他的爱永远不变。"
         }
       },
       "decisions": [
@@ -8017,6 +8356,11 @@
           "L": "at inagaw {{deity_pronoun:niya|Niya}} tayo mula sa ating mga kalaban, \\q sapagkat ang {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig ay magpakailanman.",
           "B": "at hinila {{deity_pronoun:niya|Niya}} tayo palaya mula sa ating mga kaaway, \\q sapagkat ang {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig ay nananatili magpakailanman.",
           "R": "Inilayo niya tayo sa ating mga kaaway. \\q Ang tapat na pag-ibig niya ay mananatili magpakailanman."
+        },
+        "zh": {
+          "L": "{{deity_pronoun:他|祂}}又把我们从我们的敌人那里夺回， \\q 因为{{deity_pronoun:他|祂}}的慈爱永不止息。",
+          "B": "{{deity_pronoun:他|祂}}又把我们从敌人那里解救出来， \\q 因为{{deity_pronoun:他|祂}}的慈爱永不止息。",
+          "R": "把我们从敌人手里拉了出来。 \\q 他的爱永远不变。"
         }
       },
       "decisions": [
@@ -8288,6 +8632,11 @@
           "L": "na nagbibigay ng pagkain sa lahat ng laman, \\q sapagkat ang {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig ay magpakailanman.",
           "B": "na nagbibigay ng pagkain sa bawat nilalang na may buhay, \\q sapagkat ang {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig ay nananatili magpakailanman.",
           "R": "Nagbibigay siya ng pagkain sa bawat may buhay. \\q Ang tapat na pag-ibig niya ay mananatili magpakailanman."
+        },
+        "zh": {
+          "L": "那赐食物给一切血肉之躯的， \\q 因为{{deity_pronoun:他|祂}}的慈爱永不止息。",
+          "B": "那赐食物给一切活物的， \\q 因为{{deity_pronoun:他|祂}}的慈爱永不止息。",
+          "R": "{{god_term:神|上帝}}供应食物给所有活着的生物。 \\q 他的爱永远不变。"
         }
       },
       "decisions": [
@@ -8432,6 +8781,26 @@
           "choice": "\"lahat ng laman\"",
           "alternatives": [],
           "reason": "All flesh: every living creature (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o191360250032",
+            "o191360250041"
+          ],
+          "choice": "\"一切血肉之躯\"",
+          "alternatives": [
+            "-"
+          ],
+          "reason": "The glossary's form for \"all flesh\" at Literal.",
           "uncertain": false,
           "footnote": false
         }
@@ -8650,6 +9019,11 @@
           "L": "Magpasalamat kayo sa Diyos ng kalangitan, \\q sapagkat ang {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig ay magpakailanman.",
           "B": "Magpasalamat kayo sa Diyos ng langit, \\q sapagkat ang {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig ay nananatili magpakailanman.",
           "R": "Pasalamatan ninyo ang Diyos ng langit. \\q Ang tapat na pag-ibig niya ay mananatili magpakailanman."
+        },
+        "zh": {
+          "L": "你们要称谢诸天的{{god_term:神|上帝}}， \\q 因为{{deity_pronoun:他|祂}}的慈爱永不止息。",
+          "B": "要称谢在天上的{{god_term:神|上帝}}， \\q 因为{{deity_pronoun:他|祂}}的慈爱永不止息。",
+          "R": "要感谢天上的{{god_term:神|上帝}}。 \\q 他的爱永远不变。"
         }
       },
       "decisions": [
