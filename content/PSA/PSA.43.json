@@ -102,6 +102,11 @@
           "L": "Hatulan {{deity_pronoun:mo|Mo}} ako, O Diyos, at ipagtanggol {{deity_pronoun:mo|Mo}} ang aking usapin laban sa isang bansang hindi tapat; \\q mula sa {{gender:taong|lalaking}} mapanlinlang at hindi makatarungan ay iligtas {{deity_pronoun:mo|Mo}} ako.",
           "B": "Hatulan {{deity_pronoun:mo|Mo}} ako nang pabor, O Diyos, at hawakan {{deity_pronoun:mo|Mo}} ang aking usapin laban sa isang bansang walang katapatan; \\q iligtas {{deity_pronoun:mo|Mo}} ako sa mga taong nagsisinungaling at gumagawa ng mali.",
           "R": "O Diyos, ipakita {{deity_pronoun:mong|Mong}} ako ay nasa tama. Ipagtanggol {{deity_pronoun:mo|Mo}} ako laban sa mga taong hindi tapat sa {{deity_pronoun:iyo|Iyo}}. \\q Iligtas {{deity_pronoun:mo|Mo}} ako sa mga taong nagsisinungaling at hindi patas."
+        },
+        "zh": {
+          "L": "{{god_term:神|上帝}}啊，审断我，为我申辩，对抗一个不忠的国民； \\q 从诡诈不公的人手中搭救我。",
+          "B": "{{god_term:神|上帝}}啊，请为我主持公道，接手我的案子，对抗那不讲信义的民族； \\q 救我脱离说谎行恶的人。",
+          "R": "{{god_term:神|上帝}}啊，请为我证明我是对的。保护我，抵挡那些对{{deity_pronoun:你|祢}}不忠的人。 \\q 救我脱离那些说谎、不公平的人。"
         }
       },
       "decisions": [
@@ -473,6 +478,46 @@
           "reason": "Not faithful: without loyal love (m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190430010011"
+          ],
+          "choice": "\"{{god_term:神|上帝}}\" in a god_term span (神 by default, 上帝 as the reader's alternative)",
+          "alternatives": [
+            "\"神\" fixed"
+          ],
+          "reason": "Every word naming the one God is written with the Chinese-only god_term setting; the reader can choose 上帝.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190430010011"
+          ],
+          "choice": "\"诡诈不公的人\" with no gender span",
+          "alternatives": [
+            "\"诡诈不公的男人\""
+          ],
+          "reason": "The English Literal spans \"person / man\"; Chinese 人 already means anyone, so there is nothing to offer.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft",
@@ -797,6 +842,11 @@
           "L": "Sapagkat {{deity_pronoun:ikaw|Ikaw}} [ang] Diyos ng aking moog; bakit {{deity_pronoun:mo|Mo}} ako itinakwil? \\q Bakit ako naglalakad na nagluluksa dahil sa pang-aapi ng kaaway?",
           "B": "Sapagkat {{deity_pronoun:ikaw|Ikaw}} ang Diyos, ang aking kuta. Bakit {{deity_pronoun:mo|Mo}} ako itinulak palayo? \\q Bakit ako naglalakad na nakadamit-panluksa habang mahigpit akong ginigipit ng kaaway?",
           "R": "Ikaw ang Diyos, at iniingatan {{deity_pronoun:mo|Mo}} akong ligtas. Kaya bakit {{deity_pronoun:mo|Mo}} ako itinaboy? \\q Bakit ako labis na nalulungkot? Bakit ako pinakikitunguhan nang napakasama ng aking mga kaaway?"
+        },
+        "zh": {
+          "L": "因为{{deity_pronoun:你|祢}}是我堡垒的{{god_term:神|上帝}}；{{deity_pronoun:你|祢}}为什么推开我？ \\q 我为什么要在仇敌的压迫之下，悲伤地走来走去？",
+          "B": "因为{{deity_pronoun:你|祢}}是{{god_term:神|上帝}}，是我的堡垒。{{deity_pronoun:你|祢}}为什么把我推开？ \\q 为什么我要披着哀伤走来走去，任仇敌苦苦相逼？",
+          "R": "身为{{god_term:神|上帝}}，{{deity_pronoun:你|祢}}保护我平安。那么{{deity_pronoun:你|祢}}为什么把我赶走呢？ \\q 我为什么这么难过？我的敌人为什么这样欺负我？"
         }
       },
       "decisions": [
@@ -1000,6 +1050,28 @@
           "choice": "\"itinakwil\"",
           "alternatives": [],
           "reason": "Rejected: pushed away (m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190430020072",
+            "o190430020111"
+          ],
+          "choice": "the second line as in 42:10 at each level",
+          "alternatives": [
+            "a new wording"
+          ],
+          "reason": "The line repeats 42:10 word for word in the Hebrew (m2), so the Chinese repeats it too.",
           "uncertain": false,
           "footnote": false
         }
@@ -1295,6 +1367,11 @@
           "L": "Ipadala {{deity_pronoun:mo|Mo}} ang {{deity_pronoun:iyong|Iyong}} liwanag at ang {{deity_pronoun:iyong|Iyong}} katotohanan; akayin nawa nila ako; \\q dalhin nawa nila ako sa {{deity_pronoun:iyong|Iyong}} banal na bundok at sa {{deity_pronoun:iyong|Iyong}} mga tahanan.",
           "B": "Lumabas nawa ang {{deity_pronoun:iyong|Iyong}} liwanag at ang {{deity_pronoun:iyong|Iyong}} katotohanan upang gabayan ako; \\q akayin nawa nila ako paakyat sa {{deity_pronoun:iyong|Iyong}} banal na bundok, sa dakong {{deity_pronoun:iyong|Iyong}} tinitirhan.",
           "R": "Ipadala {{deity_pronoun:mo|Mo}} ang {{deity_pronoun:iyong|Iyong}} liwanag at ang {{deity_pronoun:iyong|Iyong}} katotohanan upang ipakita sa akin ang daan. \\q Akayin nawa nila ako pabalik sa {{deity_pronoun:iyong|Iyong}} banal na bundok, sa lugar na {{deity_pronoun:iyong|Iyong}} tinitirhan."
+        },
+        "zh": {
+          "L": "发出{{deity_pronoun:你|祢}}的光和{{deity_pronoun:你|祢}}的真理，让它们引导我； \\q 让它们领我到{{deity_pronoun:你|祢}}圣洁的山，到{{deity_pronoun:你|祢}}所住的地方。",
+          "B": "愿{{deity_pronoun:你|祢}}的光和{{deity_pronoun:你|祢}}的真理发出，指引我， \\q 领我上{{deity_pronoun:你|祢}}的圣山，到{{deity_pronoun:你|祢}}居住的地方。",
+          "R": "差派{{deity_pronoun:你|祢}}的光和{{deity_pronoun:你|祢}}的真理来给我指路吧。 \\q 让它们领我回到{{deity_pronoun:你|祢}}的圣山，回到{{deity_pronoun:你|祢}}住的地方。"
         }
       },
       "decisions": [
@@ -1436,6 +1513,26 @@
           "choice": "\"{{deity_pronoun:iyong|Iyong}} mga tahanan\"",
           "alternatives": [],
           "reason": "Your dwellings: God's house (m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190430030081",
+            "o190430030091"
+          ],
+          "choice": "\"{{deity_pronoun:你|祢}}圣洁的山\" (L); \"{{deity_pronoun:你|祢}}的圣山\" (B, R)",
+          "alternatives": [
+            "\"{{deity_pronoun:你|祢}}的圣山\" at every level"
+          ],
+          "reason": "The Psalter's form: Literal keeps \"the mountain of your holiness\", Balanced and Readable say \"your holy mountain\", Zion (m2).",
           "uncertain": false,
           "footnote": false
         }
@@ -1737,6 +1834,11 @@
           "L": "At pupunta ako sa altar ng Diyos, \\q sa Diyos, ang kagalakan ng aking pagsasaya, \\q at pasasalamatan ko {{deity_pronoun:ikaw|Ikaw}} sa [saliw ng] lira, O Diyos, aking Diyos.",
           "B": "Kung magkagayon ay aakyat ako sa altar ng Diyos, \\q sa Diyos, na aking kaluguran at aking kagalakan, \\q at sa lira ay pasasalamatan ko {{deity_pronoun:ikaw|Ikaw}}, O Diyos, aking Diyos.",
           "R": "Kung magkagayon ay pupunta ako sa altar ng Diyos. \\q Labis akong pinasasaya ng Diyos! \\q Tutugtog ako ng alpa at pasasalamatan ko {{deity_pronoun:ikaw|Ikaw}}, O Diyos, aking Diyos."
+        },
+        "zh": {
+          "L": "我要来到{{god_term:神|上帝}}的坛前， \\q 到{{god_term:神|上帝}}那里，就是我欢腾的喜乐； \\q 我要用琴称谢{{deity_pronoun:你|祢}}，{{god_term:神|上帝}}啊，我的{{god_term:神|上帝}}。",
+          "B": "那时我要上到{{god_term:神|上帝}}的祭坛前， \\q 到使我欢欣快乐的{{god_term:神|上帝}}面前； \\q 我要弹琴称谢{{deity_pronoun:你|祢}}，{{god_term:神|上帝}}啊，我的{{god_term:神|上帝}}。",
+          "R": "然后我要到{{god_term:神|上帝}}的祭坛那里。 \\q {{god_term:神|上帝}}使我快乐极了！ \\q {{god_term:神|上帝}}啊，我的{{god_term:神|上帝}}，我要弹琴感谢{{deity_pronoun:你|祢}}。"
         }
       },
       "decisions": [
@@ -1886,6 +1988,27 @@
           "choice": "\"lira\"",
           "alternatives": [],
           "reason": "The lyre: a small stringed instrument (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190430040102"
+          ],
+          "choice": "\"琴\" at every level",
+          "alternatives": [
+            "\"竖琴\" (R)"
+          ],
+          "reason": "The lyre (kinnor, m2) is 琴 through the Psalter, as Psalm 33:2; Readable keeps it although the English Readable says \"harp\", since 瑟 is kept for the nevel.",
           "uncertain": false,
           "footnote": false
         }
@@ -2181,6 +2304,11 @@
           "L": "Bakit ka nanlulumo, kaluluwa ko, at [bakit] ka nagugulumihanan sa loob ko? \\q Umasa ka sa Diyos, sapagkat pasasalamatan ko pa {{deity_pronoun:siya|Siya}}, \\q ang pagliligtas ng aking mukha at aking Diyos.",
           "B": "Bakit ka nakayuko nang ganiyan kababa, kaluluwa ko? Bakit ganito ang ligalig sa loob ko? \\q Umasa ka sa Diyos; \\q pasasalamatan ko {{deity_pronoun:siyang|Siyang}} muli, ang nagliligtas sa akin, ang aking Diyos.",
           "R": "Sinasabi ko sa aking sarili: Bakit ka nalulungkot nang ganiyan? Bakit ka nababagabag nang ganiyan? \\q Patuloy kang umasa sa Diyos! Pupurihin ko {{deity_pronoun:siyang|Siyang}} muli. \\q Siya ang nagliligtas sa akin. Siya ang aking Diyos."
+        },
+        "zh": {
+          "L": "我的灵魂啊，你为何消沉？为何在我里面骚动不安？ \\q 要等候{{god_term:神|上帝}}，因为我还要称谢{{deity_pronoun:他|祂}}， \\q 我脸面的救恩，我的{{god_term:神|上帝}}。",
+          "B": "我的灵魂啊，你为何如此低沉？为何在我里面这样不安？ \\q 要在盼望中等候{{god_term:神|上帝}}； \\q 我还要再次称谢{{deity_pronoun:他|祂}}，那拯救我的，我的{{god_term:神|上帝}}。",
+          "R": "我对自己说：你为什么这么难过？为什么这么不安？ \\q 要继续盼望{{god_term:神|上帝}}！我还要再赞美{{deity_pronoun:他|祂}}。 \\q 那位救我的，就是我的{{god_term:神|上帝}}。"
         }
       },
       "decisions": [
@@ -2435,6 +2563,29 @@
           "choice": "\"Bakit ka nanlulumo\"",
           "alternatives": [],
           "reason": "The refrain closes the poem (m4).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190430050031",
+            "o190430050021",
+            "o190430050051"
+          ],
+          "choice": "the refrain of 42:12 at each level",
+          "alternatives": [
+            "a new wording"
+          ],
+          "reason": "The same Hebrew as 42:12, so the same Chinese; the refrain has one form through Psalms 42-43.",
           "uncertain": false,
           "footnote": false
         }
