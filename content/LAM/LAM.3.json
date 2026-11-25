@@ -97,6 +97,11 @@
           "L": "Ako ang lalaking nakakita ng kapighatian \\q sa ilalim ng pamalo ng {{deity_pronoun:kaniyang|Kaniyang}} poot.",
           "B": "Ako ang lalaking dumanas ng kapighatian \\q sa ilalim ng pamalo ng {{deity_pronoun:kaniyang|Kaniyang}} galit.",
           "R": "Ako ang lalaking labis na nagdusa, \\q na hinampas ng pamalo ng galit ng Diyos."
+        },
+        "zh": {
+          "L": "我[是]那见过苦难的人， \\q 在{{deity_pronoun:他|祂}}愤怒的杖下。",
+          "B": "我是经历过苦难的人， \\q 在{{deity_pronoun:他|祂}}怒气的杖下。",
+          "R": "我是受尽苦难的人， \\q 被{{god_term:神|上帝}}愤怒的杖击打。"
         }
       },
       "decisions": [
@@ -577,6 +582,45 @@
           "reason": "God, not yet named; R names him (m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o250030010062"
+          ],
+          "choice": "\"神\" / \"上帝\" in the god_term setting (神 by default)",
+          "alternatives": [
+            "\"上帝\""
+          ],
+          "reason": "Readable names God where the Hebrew says only \"his\" (m3), as its English does; every word naming the one God is written in the god_term setting, which changes the word only, never the meaning.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250030010021",
+            "o250030010022"
+          ],
+          "choice": "the man speaks as \"我\" with no quotation marks",
+          "alternatives": [],
+          "reason": "A new voice begins with no marks of quotation (m4), as in the English; the whole chapter is his speech, and only the words he quotes (verses 18, 24, 54, 56, 57) take quotation marks.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -678,6 +722,11 @@
           "L": "Itinaboy {{deity_pronoun:niya|Niya}} ako at pinalakad \\q sa kadiliman at hindi sa liwanag.",
           "B": "Inakay {{deity_pronoun:niya|Niya}} ako palayo at pinalakad \\q sa kadiliman, hindi sa liwanag.",
           "R": "Itinaboy {{deity_pronoun:niya|Niya}} ako na gaya ng isang hayop \\q sa kadiliman na walang liwanag."
+        },
+        "zh": {
+          "L": "{{deity_pronoun:他|祂}}驱赶我，使[我]行走 \\q 在黑暗中，不在光明中。",
+          "B": "{{deity_pronoun:他|祂}}领我离开，使我行走 \\q 在黑暗中，而不是在光明中。",
+          "R": "{{deity_pronoun:他|祂}}像赶牲口一样驱赶我， \\q 进入没有光的黑暗中。"
         }
       },
       "decisions": [
@@ -867,6 +916,11 @@
           "L": "Tunay na laban sa akin ay ibinabaling {{deity_pronoun:niya|Niya}} nang paulit-ulit ang {{deity_pronoun:kaniyang|Kaniyang}} kamay \\q sa buong araw.",
           "B": "Oo, ako ang hinahampas {{deity_pronoun:niya|Niya}} ng {{deity_pronoun:kaniyang|Kaniyang}} kamay, \\q paulit-ulit, sa buong araw.",
           "R": "Patuloy {{deity_pronoun:niya|Niya}} akong hinahampas ng {{deity_pronoun:kaniyang|Kaniyang}} kamay, \\q paulit-ulit, sa buong araw."
+        },
+        "zh": {
+          "L": "{{deity_pronoun:他|祂}}真是一再转过{{deity_pronoun:他|祂}}的手攻击我， \\q 终日[如此]。",
+          "B": "是的，{{deity_pronoun:他|祂}}用{{deity_pronoun:他|祂}}的手击打的正是我， \\q 一次又一次，终日不停。",
+          "R": "{{deity_pronoun:他|祂}}不断用{{deity_pronoun:他|祂}}的手击打我， \\q 一次又一次，整天都是这样。"
         }
       },
       "decisions": [
@@ -1069,6 +1123,11 @@
           "L": "Pinalaspag {{deity_pronoun:niya|Niya}} ang aking laman at ang aking balat; \\q binali {{deity_pronoun:niya|Niya}} ang aking mga buto.",
           "B": "Pinaluma {{deity_pronoun:niya|Niya}} ang aking laman at balat \\q at dinurog ang aking mga buto.",
           "R": "Pinapayat {{deity_pronoun:niya|Niya}} ang aking katawan hanggang sa manghina. \\q Binali {{deity_pronoun:niya|Niya}} ang aking mga buto."
+        },
+        "zh": {
+          "L": "{{deity_pronoun:他|祂}}使我的肉和我的皮衰残； \\q {{deity_pronoun:他|祂}}折断了我的骨头。",
+          "B": "{{deity_pronoun:他|祂}}使我的皮肉耗损， \\q 又打碎了我的骨头。",
+          "R": "{{deity_pronoun:他|祂}}使我的身体日渐消瘦。 \\q {{deity_pronoun:他|祂}}打断了我的骨头。"
         }
       },
       "decisions": [
@@ -1271,6 +1330,11 @@
           "L": "Nagtayo {{deity_pronoun:siya|Siya}} laban sa akin at pinalibutan ako \\q ng lason at hirap.",
           "B": "Nagtayo {{deity_pronoun:siya|Siya}} ng mga pader na pangubkob laban sa akin \\q at kinulong ako ng mapait na lason at hirap.",
           "R": "Sinalakay {{deity_pronoun:niya|Niya}} ako na gaya ng hukbong sumasalakay sa isang lungsod. \\q Pinalibutan {{deity_pronoun:niya|Niya}} ako ng mapait na pagdurusa at kaguluhan."
+        },
+        "zh": {
+          "L": "{{deity_pronoun:他|祂}}筑[垒]攻击我，又围困[我]， \\q [用]毒物和艰难。",
+          "B": "{{deity_pronoun:他|祂}}筑起攻城的土垒攻击我， \\q 用苦毒和艰难把我围困。",
+          "R": "{{deity_pronoun:他|祂}}攻击我，就像军队攻打一座城。 \\q {{deity_pronoun:他|祂}}用痛苦和苦难把我包围。"
         }
       },
       "decisions": [
@@ -1518,6 +1582,11 @@
           "L": "Sa madidilim na lugar ay pinatira {{deity_pronoun:niya|Niya}} ako, \\q gaya ng mga patay noong unang panahon.",
           "B": "Pinatira {{deity_pronoun:niya|Niya}} ako sa madidilim na lugar \\q gaya ng mga namatay noong unang panahon.",
           "R": "Pinatira {{deity_pronoun:niya|Niya}} ako sa kadiliman, \\q gaya ng mga taong matagal nang patay."
+        },
+        "zh": {
+          "L": "{{deity_pronoun:他|祂}}使我住在黑暗之处， \\q 像久已死去的人一样。",
+          "B": "{{deity_pronoun:他|祂}}使我住在黑暗的地方， \\q 像那些早已死去的人。",
+          "R": "{{deity_pronoun:他|祂}}使我住在黑暗里， \\q 像死了很久的人一样。"
         }
       },
       "decisions": [
@@ -1859,6 +1928,11 @@
           "L": "Binakuran {{deity_pronoun:niya|Niya}} ako, at hindi ako makalabas; \\q pinabigat {{deity_pronoun:niya|Niya}} ang aking mga tansong tanikala.",
           "B": "Kinulong {{deity_pronoun:niya|Niya}} ako, at hindi ako makalabas; \\q pinabigatan {{deity_pronoun:niya|Niya}} ako ng mga tanikala.",
           "R": "Nagtayo {{deity_pronoun:siya|Siya}} ng pader sa palibot ko, at hindi ako makalabas. \\q Nilagyan {{deity_pronoun:niya|Niya}} ako ng mabibigat na kadena."
+        },
+        "zh": {
+          "L": "{{deity_pronoun:他|祂}}用墙围住我，我不能出去； \\q {{deity_pronoun:他|祂}}使我的铜[链]沉重。",
+          "B": "{{deity_pronoun:他|祂}}把我围困，我无法出去； \\q {{deity_pronoun:他|祂}}用锁链压住我。",
+          "R": "{{deity_pronoun:他|祂}}在我四周筑墙，我出不去。 \\q {{deity_pronoun:他|祂}}给我戴上沉重的锁链。"
         }
       },
       "decisions": [
@@ -2078,6 +2152,11 @@
           "L": "Kahit sumisigaw ako at humihingi ng saklolo, \\q tinatakpan {{deity_pronoun:niya|Niya}} ang aking panalangin.",
           "B": "Kahit sumisigaw ako at nakikiusap ng tulong, \\q hinaharangan {{deity_pronoun:niya|Niya}} ang aking panalangin.",
           "R": "Sumisigaw ako at humihingi ng tulong, \\q ngunit tinatakpan {{deity_pronoun:niya|Niya}} ang {{deity_pronoun:kaniyang|Kaniyang}} mga tainga sa aking panalangin."
+        },
+        "zh": {
+          "L": "就是我呼喊求救的时候， \\q {{deity_pronoun:他|祂}}也挡住我的祷告。",
+          "B": "即使我大声呼求帮助， \\q {{deity_pronoun:他|祂}}也把我的祷告拒之门外。",
+          "R": "我呼喊求救， \\q {{deity_pronoun:他|祂}}却塞住{{deity_pronoun:他|祂}}的耳朵，不听我的祷告。"
         }
       },
       "decisions": [
@@ -2265,6 +2344,11 @@
           "L": "Binakuran {{deity_pronoun:niya|Niya}} ang aking mga daan ng tinabas na bato; \\q pinaliko-liko {{deity_pronoun:niya|Niya}} ang aking mga landas.",
           "B": "Hinarangan {{deity_pronoun:niya|Niya}} ang aking daan ng tinabas na bato; \\q pinaliko-liko {{deity_pronoun:niya|Niya}} ang aking mga landas.",
           "R": "Nagtayo {{deity_pronoun:siya|Siya}} ng pader na bato sa kabila ng aking daan. \\q Pinaliko-liko {{deity_pronoun:niya|Niya}} ang aking mga landas."
+        },
+        "zh": {
+          "L": "{{deity_pronoun:他|祂}}用凿过的石头堵住我的道路； \\q {{deity_pronoun:他|祂}}使我的路径弯曲。",
+          "B": "{{deity_pronoun:他|祂}}用凿好的石头挡住我的路， \\q {{deity_pronoun:他|祂}}使我的路径曲折。",
+          "R": "{{deity_pronoun:他|祂}}在我的路上筑起石墙。 \\q {{deity_pronoun:他|祂}}使我的路弯弯曲曲。"
         }
       },
       "decisions": [
@@ -2435,6 +2519,11 @@
           "L": "Isang osong nag-aabang {{deity_pronoun:siya|Siya}} sa akin, \\q isang leon sa mga taguan.",
           "B": "Sa akin ay gaya {{deity_pronoun:siya|Siya}} ng osong nag-aabang, \\q gaya ng leong nakakubli sa taguan.",
           "R": "Inaabangan {{deity_pronoun:niya|Niya}} ako upang salakayin na gaya ng isang oso, \\q gaya ng isang leong nagtatago sa mga palumpong."
+        },
+        "zh": {
+          "L": "{{deity_pronoun:他|祂}}对我[是]埋伏的熊， \\q [是]在隐密处的狮子。",
+          "B": "对我来说，{{deity_pronoun:他|祂}}像埋伏的熊， \\q 像蹲伏在隐密处的狮子。",
+          "R": "{{deity_pronoun:他|祂}}像熊一样等着袭击我， \\q 又像躲在树丛里的狮子。"
         }
       },
       "decisions": [
@@ -2638,6 +2727,11 @@
           "L": "Inilihis {{deity_pronoun:niya|Niya}} ang aking mga daan, at pinagluray-luray {{deity_pronoun:niya|Niya}} ako; \\q ginawa {{deity_pronoun:niya|Niya}} akong tiwangwang.",
           "B": "Kinaladkad {{deity_pronoun:niya|Niya}} ako palabas sa daan at pinagputul-putol ako; \\q iniwan {{deity_pronoun:niya|Niya}} akong wasak.",
           "R": "Kinaladkad {{deity_pronoun:niya|Niya}} ako palabas sa landas at pinagluray-luray ako. \\q Iniwan {{deity_pronoun:niya|Niya}} akong wasak at nag-iisa."
+        },
+        "zh": {
+          "L": "{{deity_pronoun:他|祂}}使我的道路偏离，{{deity_pronoun:他|祂}}把我撕碎； \\q {{deity_pronoun:他|祂}}使我荒凉。",
+          "B": "{{deity_pronoun:他|祂}}把我拖离道路，把我撕成碎片； \\q {{deity_pronoun:他|祂}}使我凄凉孤苦。",
+          "R": "{{deity_pronoun:他|祂}}把我拖离小路，把我撕碎。 \\q {{deity_pronoun:他|祂}}使我破败又孤单。"
         }
       },
       "decisions": [
@@ -2841,6 +2935,11 @@
           "L": "Tinapakan {{deity_pronoun:niya|Niya}} ang {{deity_pronoun:kaniyang|Kaniyang}} busog at inilagay ako \\q na gaya ng tudlaan ng palaso.",
           "B": "Hinila {{deity_pronoun:niya|Niya}} ang {{deity_pronoun:kaniyang|Kaniyang}} busog \\q at inilagay ako bilang tudlaan ng mga palaso.",
           "R": "Hinila {{deity_pronoun:niya|Niya}} ang bagting ng {{deity_pronoun:kaniyang|Kaniyang}} busog \\q at ginawa akong tudlaan ng {{deity_pronoun:kaniyang|Kaniyang}} mga palaso."
+        },
+        "zh": {
+          "L": "{{deity_pronoun:他|祂}}踏了{{deity_pronoun:他|祂}}的弓，把我立起， \\q 像箭的靶子。",
+          "B": "{{deity_pronoun:他|祂}}拉开{{deity_pronoun:他|祂}}的弓， \\q 把我当作箭靶。",
+          "R": "{{deity_pronoun:他|祂}}拉开{{deity_pronoun:他|祂}}的弓弦， \\q 把我当作{{deity_pronoun:他|祂}}箭的靶子。"
         }
       },
       "decisions": [
@@ -3045,6 +3144,11 @@
           "L": "Pinapasok {{deity_pronoun:niya|Niya}} sa aking mga bato \\q ang mga anak ng {{deity_pronoun:kaniyang|Kaniyang}} lalagyan ng palaso.",
           "B": "Itinusok {{deity_pronoun:niya|Niya}} nang malalim sa aking kaloob-looban \\q ang mga palaso mula sa {{deity_pronoun:kaniyang|Kaniyang}} lalagyan.",
           "R": "Pinana {{deity_pronoun:niya|Niya}} ako ng {{deity_pronoun:kaniyang|Kaniyang}} mga palaso \\q hanggang sa kaloob-looban ko."
+        },
+        "zh": {
+          "L": "{{deity_pronoun:他|祂}}射进我肾中的， \\q 是{{deity_pronoun:他|祂}}箭袋的众子。",
+          "B": "{{deity_pronoun:他|祂}}把{{deity_pronoun:他|祂}}箭袋中的箭 \\q 深深射入我的心腹。",
+          "R": "{{deity_pronoun:他|祂}}把{{deity_pronoun:他|祂}}的箭 \\q 射进我的身体深处。"
         }
       },
       "decisions": [
@@ -3313,6 +3417,11 @@
           "L": "Naging katatawanan ako sa buo kong bayan, \\q ang kanilang awit ng panunuya sa buong araw.",
           "B": "Naging biro ako sa buo kong bayan, \\q ang awit na ipinanunuya nila sa akin sa buong araw.",
           "R": "Pinagtatawanan ako ng buo kong bayan. \\q Sa buong araw ay umaawit sila ng mga awit na kumukutya sa akin."
+        },
+        "zh": {
+          "L": "我成了我众百姓的笑柄， \\q 终日[成了]他们讥讽的歌。",
+          "B": "我成了我所有同胞的笑话， \\q 他们终日唱歌嘲弄我。",
+          "R": "我所有的同胞都嘲笑我。 \\q 他们整天唱歌取笑我。"
         }
       },
       "decisions": [
@@ -3485,6 +3594,11 @@
           "L": "Pinuno {{deity_pronoun:niya|Niya}} ako ng mapapait na bagay; \\q pinainom {{deity_pronoun:niya|Niya}} ako hanggang sa mabusog sa ahenho.",
           "B": "Pinakain {{deity_pronoun:niya|Niya}} ako nang sagana ng mapapait na bagay \\q at pinainom ng ahenho hanggang hindi ko na makayanan.",
           "R": "Mapapait na bagay lamang ang ipinakain {{deity_pronoun:niya|Niya}} sa akin. \\q Pinainom {{deity_pronoun:niya|Niya}} ako ng mapait na ahenho."
+        },
+        "zh": {
+          "L": "{{deity_pronoun:他|祂}}使我充满苦楚， \\q {{deity_pronoun:他|祂}}使我饱饮苦艾。",
+          "B": "{{deity_pronoun:他|祂}}使我饱尝苦味， \\q 叫我喝苦艾，直到我无法承受。",
+          "R": "{{deity_pronoun:他|祂}}只给我吃苦的东西。 \\q {{deity_pronoun:他|祂}}叫我喝苦艾。"
         }
       },
       "decisions": [
@@ -3675,6 +3789,27 @@
           "reason": "A bitter plant, a picture of bitter suffering (m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250030150041"
+          ],
+          "choice": "\"苦艾\" for wormwood",
+          "alternatives": [
+            "\"茵陈\""
+          ],
+          "reason": "The same word as Deuteronomy 29:17 and Revelation 8:11 in this translation's Chinese: a bitter plant, a picture of bitter suffering (m1). Kept at 3:19.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -3777,6 +3912,11 @@
           "L": "Binali {{deity_pronoun:niya|Niya}} ang aking mga ngipin sa graba; \\q idiniin {{deity_pronoun:niya|Niya}} ako sa abo.",
           "B": "Pinabali {{deity_pronoun:niya|Niya}} ang aking mga ngipin sa graba; \\q niyapakan {{deity_pronoun:niya|Niya}} ako sa abo.",
           "R": "Pinabali {{deity_pronoun:niya|Niya}} ang aking mga ngipin sa mga bato. \\q Itinulak {{deity_pronoun:niya|Niya}} ako pababa sa abo."
+        },
+        "zh": {
+          "L": "{{deity_pronoun:他|祂}}用沙石折断我的牙齿； \\q {{deity_pronoun:他|祂}}把我压在灰中。",
+          "B": "{{deity_pronoun:他|祂}}使我的牙齿被沙石磕碎； \\q {{deity_pronoun:他|祂}}把我践踏在灰中。",
+          "R": "{{deity_pronoun:他|祂}}使我的牙齿被石头咯碎。 \\q {{deity_pronoun:他|祂}}把我推倒在灰里。"
         }
       },
       "decisions": [
@@ -3978,6 +4118,11 @@
           "L": "Itinakwil sa kapayapaan ang aking kaluluwa; \\q nakalimutan ko ang mabuti.",
           "B": "Inihiwalay sa kapayapaan ang aking kaluluwa; \\q nakalimutan ko na kung ano ang mabuti.",
           "R": "Wala na akong anumang kapayapaan. \\q Nakalimutan ko na kung ano ang pakiramdam ng maging masaya."
+        },
+        "zh": {
+          "L": "我的灵魂被丢弃，远离平安； \\q 我忘记了美好。",
+          "B": "我的灵魂失去了平安， \\q 我已忘记什么是美好。",
+          "R": "我一点平安也没有了。 \\q 我已经忘了快乐是什么滋味。"
         }
       },
       "decisions": [
@@ -4224,6 +4369,11 @@
           "L": "At sinabi ko, \"Naglaho na ang aking tibay, \\q at ang aking pag-asa mula {{divine_name:sa PANGINOON|kay Yahweh}}.\"",
           "B": "Kaya sinabi ko, \"Wala na ang aking lakas, \\q at gayundin ang lahat ng inaasahan ko mula {{divine_name:sa PANGINOON|kay Yahweh}}.\"",
           "R": "Kaya sinabi ko, \"Hindi na ako makapagpapatuloy. \\q Hindi na ako umaasa na tutulungan ako {{divine_name:ng PANGINOON|ni Yahweh}}.\""
+        },
+        "zh": {
+          "L": "我就说：“我持久的力量消失了， \\q 我从{{divine_name:上主|雅威}}那里所得的盼望也[消失了]。”",
+          "B": "所以我说：“我的力气没有了， \\q 我向{{divine_name:上主|雅威}}所盼望的也都落空了。”",
+          "R": "所以我说：“我撑不下去了。 \\q 我不再盼望{{divine_name:上主|雅威}}会帮助我。”"
         }
       },
       "decisions": [
@@ -4430,6 +4580,11 @@
           "L": "Alalahanin mo ang aking kapighatian at ang aking pagpapagala-gala, \\q ang ahenho at ang lason.",
           "B": "Alalahanin mo kung paano ako pinahihirapan at walang tahanan, \\q ang ahenho at ang mapait na lason.",
           "R": "Alalahanin mo kung paano ako nagdurusa at walang tahanan, \\q kung gaano ito kapait, gaya ng lason."
+        },
+        "zh": {
+          "L": "记念我的困苦和我的流离， \\q [记念]那苦艾和毒物。",
+          "B": "请记念我的困苦和流离， \\q 记念那苦艾和苦毒。",
+          "R": "请记得我多么痛苦，无家可归， \\q 那苦楚好像毒药一样。"
         }
       },
       "decisions": [
@@ -4771,6 +4926,11 @@
           "L": "Tunay na naaalala ito ng aking kaluluwa \\q at nanlulumo sa loob ko.",
           "B": "Patuloy itong naaalala ng aking kaluluwa \\q at nakayuko sa loob ko.",
           "R": "Lagi ko itong iniisip, \\q at labis akong nanlulumo."
+        },
+        "zh": {
+          "L": "我的灵魂确实记得， \\q 并且在我里面消沉。",
+          "B": "我的心一直记着这些， \\q 在我里面沉落。",
+          "R": "我一直想着这些事， \\q 心里非常沮丧。"
         }
       },
       "decisions": [
@@ -4943,6 +5103,11 @@
           "L": "Ito ang ibinabalik ko sa aking puso; \\q kaya nga ako ay aasa:",
           "B": "Gayunman ay inaalala kong muli ito, \\q at dahil dito ay maghihintay ako nang may pag-asa:",
           "R": "Ngunit pagkatapos ay may naiisip akong iba, \\q at binibigyan ako nito ng pag-asa:"
+        },
+        "zh": {
+          "L": "这事我回想在心； \\q 因此我要盼望：",
+          "B": "然而我想起这件事， \\q 因此我要存着盼望等候：",
+          "R": "可是我又想起另一件事， \\q 这件事给了我盼望："
         }
       },
       "decisions": [
@@ -5171,6 +5336,11 @@
           "L": "Dahil sa tapat na pag-ibig {{divine_name:ng PANGINOON|ni Yahweh}} kaya hindi tayo nalipol, \\q sapagkat hindi natatapos ang {{deity_pronoun:kaniyang|Kaniyang}} mga habag.",
           "B": "Dahil sa tapat na pag-ibig {{divine_name:ng PANGINOON|ni Yahweh}} kaya hindi tayo napuksa, \\q sapagkat hindi nauubos ang {{deity_pronoun:kaniyang|Kaniyang}} mga habag.",
           "R": "Buháy pa tayo dahil sa tapat na pag-ibig {{divine_name:ng PANGINOON|ni Yahweh}}. \\q Hindi kailanman nauubos ang {{deity_pronoun:kaniyang|Kaniyang}} mga habag."
+        },
+        "zh": {
+          "L": "[是]{{divine_name:上主|雅威}}的慈爱使我们没有灭绝， \\q 因为{{deity_pronoun:他|祂}}的怜悯没有穷尽。",
+          "B": "我们没有被除灭，全靠{{divine_name:上主|雅威}}的慈爱， \\q 因为{{deity_pronoun:他|祂}}的怜悯从未衰竭。",
+          "R": "我们还活着，是因为{{divine_name:上主|雅威}}始终不变的爱。 \\q {{deity_pronoun:他|祂}}的怜悯永远用不完。"
         }
       },
       "decisions": [
@@ -5695,6 +5865,48 @@
           "reason": "Tender compassion, kept distinct from loyal love (m4).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250030220011"
+          ],
+          "choice": "\"慈爱\" (Literal, Balanced); \"始终不变的爱\" (Readable) for the LORD's hesed",
+          "alternatives": [
+            "\"坚定的爱\""
+          ],
+          "reason": "The glossary's words for God's steadfast love (m3), here in the plural, the many acts of it; Chinese has no plural to show and keeps the one word. The same at 3:32.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250030220091"
+          ],
+          "choice": "\"怜悯\" for the mercies (rachamim), kept apart from \"慈爱\"",
+          "alternatives": [
+            "\"慈悲\""
+          ],
+          "reason": "The tender compassion of the second line (m4) is a different word from the loyal love of the first, so Chinese keeps two words; \"怜悯\" returns with the verb at 3:32. These verses are drafted fresh from the Hebrew, not in the wording of a familiar Chinese version.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -5793,6 +6005,11 @@
           "L": "Bago ang mga ito tuwing umaga; \\q dakila ang {{deity_pronoun:iyong|Iyong}} katapatan.",
           "B": "Bago ang mga ito tuwing umaga; \\q napakadakila ng {{deity_pronoun:iyong|Iyong}} katapatan!",
           "R": "Bago ang mga ito tuwing umaga. \\q Napakatapat {{deity_pronoun:mo|Mo}}!"
+        },
+        "zh": {
+          "L": "一个早晨接一个早晨，[它们]都是新的； \\q {{deity_pronoun:你|祢}}的信实[是]大的。",
+          "B": "每个清晨，它们都焕然一新； \\q {{deity_pronoun:你|祢}}的信实何等伟大！",
+          "R": "它们每天早上都是新的。 \\q {{deity_pronoun:你|祢}}多么信实！"
         }
       },
       "decisions": [
@@ -6076,6 +6293,27 @@
           "reason": "The time of rescue (m4).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250030230041"
+          ],
+          "choice": "\"信实\" for God's faithfulness (ʾemunah)",
+          "alternatives": [
+            "\"诚实\""
+          ],
+          "reason": "The glossary's word for God's firmness and reliability (m3); \"诚实\" would mean that he tells the truth, which is not the point here.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -6179,6 +6417,11 @@
           "L": "\"{{divine_name:Ang PANGINOON|Si Yahweh}} ang aking bahagi,\" sabi ng aking kaluluwa; \\q \"kaya nga ako ay aasa sa {{deity_pronoun:kaniya|Kaniya}}.\"",
           "B": "\"{{divine_name:Ang PANGINOON|Si Yahweh}} ang aking bahagi,\" sabi ko sa aking sarili, \\q \"kaya maghihintay ako sa {{deity_pronoun:kaniya|Kaniya}} nang may pag-asa.\"",
           "R": "Sinasabi ko sa aking sarili, \"{{divine_name:Ang PANGINOON|Si Yahweh}} lamang ang mayroon ako. \\q Kaya sa {{deity_pronoun:kaniya|Kaniya}} ako aasa.\""
+        },
+        "zh": {
+          "L": "“{{divine_name:上主|雅威}}[是]我的份，”我的灵魂说， \\q “因此我要仰望等候{{deity_pronoun:他|祂}}。”",
+          "B": "“{{divine_name:上主|雅威}}是我的份，”我对自己说， \\q “所以我要存着盼望等候{{deity_pronoun:他|祂}}。”",
+          "R": "我对自己说：“{{divine_name:上主|雅威}}是我所拥有的一切。 \\q 所以我要把盼望放在{{deity_pronoun:他|祂}}身上。”"
         }
       },
       "decisions": [
@@ -6544,6 +6787,11 @@
           "L": "Mabuti {{divine_name:ang PANGINOON|si Yahweh}} sa mga naghihintay sa {{deity_pronoun:kaniya|Kaniya}}, \\q sa kaluluwang naghahanap sa {{deity_pronoun:kaniya|Kaniya}}.",
           "B": "Mabuti {{divine_name:ang PANGINOON|si Yahweh}} sa lahat ng umaasang naghihintay sa {{deity_pronoun:kaniya|Kaniya}}, \\q sa sinumang naghahanap sa {{deity_pronoun:kaniya|Kaniya}}.",
           "R": "Mabuti {{divine_name:ang PANGINOON|si Yahweh}} sa bawat naghihintay na kumilos {{deity_pronoun:siya|Siya}}, \\q sa lahat ng lumalapit sa {{deity_pronoun:kaniya|Kaniya}} upang humingi ng tulong."
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}对等候{{deity_pronoun:他|祂}}的人[是]美善的， \\q 对寻求{{deity_pronoun:他|祂}}的灵魂[也是]。",
+          "B": "{{divine_name:上主|雅威}}善待所有怀着盼望等候{{deity_pronoun:他|祂}}的人， \\q 善待每一个寻求{{deity_pronoun:他|祂}}的人。",
+          "R": "{{divine_name:上主|雅威}}善待所有等候{{deity_pronoun:他|祂}}行事的人， \\q 善待所有来向{{deity_pronoun:他|祂}}求助的人。"
         }
       },
       "decisions": [
@@ -6758,6 +7006,11 @@
           "L": "Mabuti na ang isang tao ay maghintay, at nang tahimik, \\q sa pagliligtas {{divine_name:ng PANGINOON|ni Yahweh}}.",
           "B": "Mabuting maghintay nang tahimik \\q sa pagliligtas {{divine_name:ng PANGINOON|ni Yahweh}}.",
           "R": "Mabuting maghintay nang tahimik \\q na iligtas tayo {{divine_name:ng PANGINOON|ni Yahweh}}."
+        },
+        "zh": {
+          "L": "人等候，并且静默， \\q 等候{{divine_name:上主|雅威}}的救恩，[这是]好的。",
+          "B": "能静默地等候， \\q 等候{{divine_name:上主|雅威}}的救恩，这是好的。",
+          "R": "安安静静地等候 \\q {{divine_name:上主|雅威}}来拯救我们，这是好的。"
         }
       },
       "decisions": [
@@ -6946,6 +7199,11 @@
           "L": "Mabuti para sa isang lalaki na pasanin niya ang pamatok \\q sa kaniyang kabataan.",
           "B": "Mabuti para sa isang lalaki na pasanin ang pamatok \\q habang bata pa siya.",
           "R": "Mabuti para sa isang lalaki na matutong magpasan ng mabibigat na dalahin \\q habang bata pa siya."
+        },
+        "zh": {
+          "L": "人在年轻时负轭， \\q [这]对他是好的。",
+          "B": "人趁着年轻时负轭， \\q 是有益的。",
+          "R": "人在年轻的时候学习担重担， \\q 这对他是好的。"
         }
       },
       "decisions": [
@@ -7171,6 +7429,11 @@
           "L": "Maupo siyang mag-isa at manahimik, \\q sapagkat {{deity_pronoun:siya|Siya}} ang nag-atang nito sa kaniya.",
           "B": "Maupo siyang mag-isa at manahimik \\q kapag iniatang {{deity_pronoun:niya|Niya}} ito sa kaniya.",
           "R": "Kapag iniatang ng Diyos sa kaniya ang dalahing iyon, \\q dapat siyang maupong mag-isa at manahimik."
+        },
+        "zh": {
+          "L": "让他独自坐着，默不作声， \\q 因为{{deity_pronoun:他|祂}}把[轭]放在他身上。",
+          "B": "让他独自坐着，保持沉默， \\q 在{{deity_pronoun:他|祂}}把轭放在他身上的时候。",
+          "R": "当{{god_term:神|上帝}}把那重担放在他身上的时候， \\q 他应当独自坐着，保持安静。"
         }
       },
       "decisions": [
@@ -7409,6 +7672,11 @@
           "L": "Ilagay niya ang kaniyang bibig sa alabok; \\q baka sakaling may pag-asa.",
           "B": "Isubsob niya ang kaniyang mukha sa alabok; \\q baka may pag-asa pa para sa kaniya.",
           "R": "Dapat siyang yumukod na nakasubsob ang mukha sa lupa. \\q Baka may pag-asa pa."
+        },
+        "zh": {
+          "L": "让他把口贴在尘土中； \\q 或许还有盼望。",
+          "B": "让他脸伏尘土， \\q 或许还有盼望。",
+          "R": "他应当俯伏，脸贴在地上。 \\q 也许还有盼望。"
         }
       },
       "decisions": [
@@ -7595,6 +7863,11 @@
           "L": "Ibigay niya ang kaniyang pisngi sa humahampas sa kaniya; \\q mabusog siya sa kahihiyan.",
           "B": "Iharap niya ang kaniyang pisngi sa sumasampal sa kaniya \\q at tanggapin ang sukdulang pag-insulto.",
           "R": "Dapat niyang hayaang sampalin ng mga tao ang kaniyang mukha \\q at insultuhin siya hangga't gusto nila."
+        },
+        "zh": {
+          "L": "让他把脸颊转向打他的人； \\q 让他饱受羞辱。",
+          "B": "让他把脸颊送给打他的人， \\q 让他受尽侮辱。",
+          "R": "他应当让别人打他的脸， \\q 随便别人怎样侮辱他。"
         }
       },
       "decisions": [
@@ -7797,6 +8070,11 @@
           "L": "Sapagkat hindi magpakailanman \\q nagtatakwil ang Panginoon.",
           "B": "Sapagkat hindi nagtatakwil ang Panginoon \\q magpakailanman.",
           "R": "Hindi tatalikuran ng Panginoon ang {{deity_pronoun:kaniyang|Kaniyang}} bayan \\q magpakailanman."
+        },
+        "zh": {
+          "L": "因为主不会永远 \\q 丢弃。",
+          "B": "因为主不会永远 \\q 丢弃人。",
+          "R": "主不会转过{{deity_pronoun:他|祂}}的背不理我们， \\q 直到永远。"
         }
       },
       "decisions": [
@@ -7998,6 +8276,11 @@
           "L": "Sapagkat kung nagdulot {{deity_pronoun:siya|Siya}} ng dalamhati, mahahabag naman {{deity_pronoun:siya|Siya}} \\q ayon sa kasaganaan ng {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig.",
           "B": "Bagaman nagdudulot {{deity_pronoun:siya|Siya}} ng dalamhati, mahahabag {{deity_pronoun:siya|Siya}}, \\q sapagkat napakadakila ng {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig.",
           "R": "Maaaring magdulot {{deity_pronoun:siya|Siya}} ng kalungkutan, ngunit magpapakita rin {{deity_pronoun:siya|Siya}} ng awa, \\q sapagkat napakadakila ng {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig."
+        },
+        "zh": {
+          "L": "因为{{deity_pronoun:他|祂}}虽使人忧伤，{{deity_pronoun:他|祂}}也要怜悯， \\q 照着{{deity_pronoun:他|祂}}丰盛的慈爱。",
+          "B": "{{deity_pronoun:他|祂}}虽然使人忧伤，{{deity_pronoun:他|祂}}也要施怜悯， \\q 因为{{deity_pronoun:他|祂}}的慈爱何其丰盛。",
+          "R": "{{deity_pronoun:他|祂}}也许会带来悲伤，但{{deity_pronoun:他|祂}}也会施怜悯， \\q 因为{{deity_pronoun:他|祂}}始终不变的爱是那么大。"
         }
       },
       "decisions": [
@@ -8302,6 +8585,11 @@
           "L": "Sapagkat hindi mula sa {{deity_pronoun:kaniyang|Kaniyang}} puso {{deity_pronoun:siya|Siya}} nagpapahirap \\q o nagpapadalamhati sa mga anak ng tao.",
           "B": "Sapagkat hindi {{deity_pronoun:siya|Siya}} kusang nagpapahirap \\q o nagpapadalamhati sa mga tao.",
           "R": "Hindi {{deity_pronoun:niya|Niya}} gustong pagdusahin ang mga tao \\q o saktan sila."
+        },
+        "zh": {
+          "L": "因为{{deity_pronoun:他|祂}}不是从{{deity_pronoun:他|祂}}心里 \\q 苦待人的{{gender:儿女|儿子}}，使他们忧愁。",
+          "B": "因为{{deity_pronoun:他|祂}}并不甘心 \\q 使世人受苦、忧伤。",
+          "R": "{{deity_pronoun:他|祂}}并不想让人受苦， \\q 也不想伤害他们。"
         }
       },
       "decisions": [
@@ -8614,6 +8902,27 @@
           "reason": "Human beings (m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o250030330061",
+            "o250030330071"
+          ],
+          "choice": "\"世人\" (Balanced), \"人\" (Readable) with no gender span; Literal \"人的儿女\" (default) / \"人的儿子\" in the gender setting",
+          "alternatives": [
+            "a span at every level"
+          ],
+          "reason": "The sons of man are human beings (m2). Literal keeps the Hebrew's \"sons\" in the gender setting, as the English does; Balanced and Readable say \"世人\" and \"人\", which are already inclusive in Chinese, so they need no span where the English has one.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -8714,6 +9023,11 @@
           "L": "Ang durugin sa ilalim ng kaniyang mga paa \\q ang lahat ng bilanggo sa lupain,",
           "B": "Kapag ang lahat ng bilanggo sa lupain \\q ay dinudurog sa ilalim ng paa,",
           "R": "May mga taong dumudurog sa mga bilanggo \\q sa ilalim ng kanilang mga paa."
+        },
+        "zh": {
+          "L": "在脚下压碎 \\q 地上一切被囚的人，",
+          "B": "当地上所有被囚的人 \\q 被践踏在脚下，",
+          "R": "有人把囚犯 \\q 踩在脚下。"
         }
       },
       "decisions": [
@@ -8934,6 +9248,11 @@
           "L": "ang baluktutin ang katarungang nararapat sa isang tao \\q sa harap ng mukha ng Kataas-taasan,",
           "B": "kapag ipinagkakait sa sinuman ang katarungan \\q sa harapan ng Kataas-taasan,",
           "R": "May mga nagkakait sa iba ng kanilang karapatan \\q sa mismong harapan ng Kataas-taasang Diyos."
+        },
+        "zh": {
+          "L": "屈枉人应得的公理， \\q 在至高者的面前，",
+          "B": "当人在至高者面前 \\q 被剥夺公道，",
+          "R": "有人剥夺别人的权利， \\q 就在至高的{{god_term:神|上帝}}面前。"
         }
       },
       "decisions": [
@@ -9254,6 +9573,11 @@
           "L": "ang dayain ang isang tao sa kaniyang usapin, — \\q hindi ito sinasang-ayunan ng Panginoon.",
           "B": "kapag dinadaya ang isang tao sa paglilitis, — \\q hindi ito sinasang-ayunan ng Panginoon.",
           "R": "May mga nandaraya sa iba sa hukuman. \\q Hindi sinasang-ayunan ng Panginoon ang alinman dito."
+        },
+        "zh": {
+          "L": "在人的讼案上颠倒是非—— \\q 主不看[为好]。",
+          "B": "当人在诉讼中受冤屈—— \\q 主不喜悦这事。",
+          "R": "有人在法庭上欺骗别人。 \\q 主不赞同这一切。"
         }
       },
       "decisions": [
@@ -9480,6 +9804,11 @@
           "L": "Sino ito na nagsalita at nangyari, \\q kung hindi ito iniutos ng Panginoon?",
           "B": "Sino ang makapagsasalita at mapangyayari ito \\q kung hindi ito iniutos ng Panginoon?",
           "R": "Walang makapagsasabi kung ano ang mangyayari at makapagpapatotoo nito \\q malibang iniutos ito ng Panginoon."
+        },
+        "zh": {
+          "L": "谁说了话就成就了呢， \\q [若]主没有吩咐？",
+          "B": "谁能说了话就使它成就， \\q 若不是主下了命令？",
+          "R": "没有人能说出将要发生的事，又使它成就， \\q 除非主已经下令。"
         }
       },
       "decisions": [
@@ -9685,6 +10014,11 @@
           "L": "Mula sa bibig ng Kataas-taasan \\q hindi ba lumalabas ang mga kapahamakan at ang mabuti?",
           "B": "Hindi ba kapwa ang kapahamakan at ang mabuti \\q ay lumalabas sa bibig ng Kataas-taasan?",
           "R": "Hindi ba kapwa ang masasamang panahon at mabubuting panahon \\q ay dumarating sa salita ng Kataas-taasang Diyos?"
+        },
+        "zh": {
+          "L": "从至高者的口中， \\q 不是灾祸和福乐都出来吗？",
+          "B": "灾祸和福乐 \\q 不都是出于至高者的口吗？",
+          "R": "坏日子和好日子， \\q 不都是照着至高的{{god_term:神|上帝}}的话而来的吗？"
         }
       },
       "decisions": [
@@ -9959,6 +10293,11 @@
           "L": "Bakit magrereklamo ang taong buháy, \\q ang isang lalaki, dahil sa kaniyang mga kasalanan?",
           "B": "Bakit magrereklamo ang sinumang buháy, \\q ang sinumang pinarurusahan dahil sa kanilang mga kasalanan?",
           "R": "Bakit magrereklamo ang mga taong buháy pa \\q kapag pinarurusahan sila dahil sa kanilang mga kasalanan?"
+        },
+        "zh": {
+          "L": "活着的人为何抱怨， \\q 人为何为自己的罪[抱怨]？",
+          "B": "任何活着的人为何抱怨， \\q 为自己的罪受罚的人为何抱怨？",
+          "R": "还活着的人为什么要抱怨 \\q 自己因犯罪而受的惩罚呢？"
         }
       },
       "decisions": [
@@ -10189,6 +10528,11 @@
           "L": "Saliksikin natin ang ating mga lakad at suriin, \\q at manumbalik tayo {{divine_name:sa PANGINOON|kay Yahweh}}.",
           "B": "Tingnan nating mabuti ang ating pamumuhay at subukin ito, \\q at manumbalik tayo {{divine_name:sa PANGINOON|kay Yahweh}}.",
           "R": "Suriin nating mabuti kung paano tayo namumuhay \\q at bumalik tayo {{divine_name:sa PANGINOON|kay Yahweh}}."
+        },
+        "zh": {
+          "L": "我们要搜查我们的行为，并且察验， \\q 我们要回转归向{{divine_name:上主|雅威}}。",
+          "B": "让我们仔细省察我们的生活，加以检验， \\q 回转归向{{divine_name:上主|雅威}}。",
+          "R": "让我们仔细看看自己一直以来是怎样生活的， \\q 回到{{divine_name:上主|雅威}}那里。"
         }
       },
       "decisions": [
@@ -10514,6 +10858,11 @@
           "L": "Itaas natin ang ating puso kasama ng ating mga palad \\q sa Diyos na nasa langit.",
           "B": "Itaas natin ang ating mga puso at gayundin ang ating mga kamay \\q sa Diyos na nasa langit.",
           "R": "Itaas natin ang ating mga kamay sa Diyos na nasa langit \\q at ibigay rin natin sa {{deity_pronoun:kaniya|Kaniya}} ang ating mga puso."
+        },
+        "zh": {
+          "L": "我们要把我们的心连同[我们的]手 \\q 举向天上的{{god_term:神|上帝}}。",
+          "B": "让我们把我们的心和手一同举起， \\q 向天上的{{god_term:神|上帝}}。",
+          "R": "让我们向天上的{{god_term:神|上帝}}举手祷告， \\q 也把我们的心献给{{deity_pronoun:他|祂}}。"
         }
       },
       "decisions": [
@@ -10720,6 +11069,11 @@
           "L": "Kami ay sumalangsang at naghimagsik; \\q at {{deity_pronoun:ikaw|Ikaw}}, hindi {{deity_pronoun:ka|Ka}} nagpatawad.",
           "B": "Nagkasala kami at naghimagsik, \\q at hindi {{deity_pronoun:ka|Ka}} nagpatawad.",
           "R": "Nagkasala kami at tumalikod sa {{deity_pronoun:iyo|Iyo}}, \\q at hindi {{deity_pronoun:mo|Mo}} kami pinatawad."
+        },
+        "zh": {
+          "L": "至于我们，我们犯了过犯，我们悖逆了； \\q 至于{{deity_pronoun:你|祢}}，{{deity_pronoun:你|祢}}没有赦免。",
+          "B": "我们犯罪悖逆， \\q {{deity_pronoun:你|祢}}也没有赦免。",
+          "R": "我们犯了罪，背叛了{{deity_pronoun:你|祢}}， \\q {{deity_pronoun:你|祢}}也没有饶恕我们。"
         }
       },
       "decisions": [
@@ -11048,6 +11402,11 @@
           "L": "Binalot {{deity_pronoun:mo|Mo}} ang {{deity_pronoun:iyong|Iyong}} sarili ng galit at hinabol kami; \\q pumatay {{deity_pronoun:ka|Ka}}, hindi {{deity_pronoun:ka|Ka}} nahabag.",
           "B": "Dinamitan {{deity_pronoun:mo|Mo}} ang {{deity_pronoun:iyong|Iyong}} sarili ng galit at hinabol kami; \\q pumatay {{deity_pronoun:ka|Ka}} at hindi nahabag.",
           "R": "Galit na galit {{deity_pronoun:ka|Ka}}, at hinabol {{deity_pronoun:mo|Mo}} kami. \\q Pinatay {{deity_pronoun:mo|Mo}} kami at hindi {{deity_pronoun:ka|Ka}} nagpakita ng awa."
+        },
+        "zh": {
+          "L": "{{deity_pronoun:你|祢}}以怒气遮盖[{{deity_pronoun:你|祢}}自己]，追赶我们； \\q {{deity_pronoun:你|祢}}杀戮，{{deity_pronoun:你|祢}}没有顾惜。",
+          "B": "{{deity_pronoun:你|祢}}以怒气为衣，追杀我们； \\q {{deity_pronoun:你|祢}}杀戮，毫不顾惜。",
+          "R": "{{deity_pronoun:你|祢}}非常愤怒，{{deity_pronoun:你|祢}}追赶我们。 \\q {{deity_pronoun:你|祢}}杀了我们，毫不怜悯。"
         }
       },
       "decisions": [
@@ -11288,6 +11647,11 @@
           "L": "Binalot {{deity_pronoun:mo|Mo}} ang {{deity_pronoun:iyong|Iyong}} sarili ng ulap, \\q upang hindi makalusot ang panalangin.",
           "B": "Nagtago {{deity_pronoun:ka|Ka}} sa likod ng ulap \\q na hindi malulusutan ng anumang panalangin.",
           "R": "Binalot {{deity_pronoun:mo|Mo}} ang {{deity_pronoun:iyong|Iyong}} sarili ng ulap \\q kaya hindi makarating sa {{deity_pronoun:iyo|Iyo}} ang aming mga panalangin."
+        },
+        "zh": {
+          "L": "{{deity_pronoun:你|祢}}以云遮盖{{deity_pronoun:你|祢}}自己， \\q 使祷告不能透过。",
+          "B": "{{deity_pronoun:你|祢}}躲在云后， \\q 没有祷告能穿透。",
+          "R": "{{deity_pronoun:你|祢}}用云遮盖{{deity_pronoun:你|祢}}自己， \\q 使我们的祷告达不到{{deity_pronoun:你|祢}}那里。"
         }
       },
       "decisions": [
@@ -11458,6 +11822,11 @@
           "L": "Ginagawa {{deity_pronoun:mo|Mo}} kaming dumi at basura \\q sa gitna ng mga bayan.",
           "B": "Ginawa {{deity_pronoun:mo|Mo}} kaming dumi at basura \\q sa gitna ng mga bayan.",
           "R": "Ginawa {{deity_pronoun:mo|Mo}} kaming parang basura \\q sa paningin ng ibang mga bansa."
+        },
+        "zh": {
+          "L": "{{deity_pronoun:你|祢}}使我们成为渣滓和垃圾， \\q 在万民之中。",
+          "B": "{{deity_pronoun:你|祢}}使我们成了污秽和废物， \\q 在万民中间。",
+          "R": "{{deity_pronoun:你|祢}}使我们在别国眼中 \\q 好像垃圾一样。"
         }
       },
       "decisions": [
@@ -11727,6 +12096,11 @@
           "L": "Ibinuka nila ang kanilang bibig laban sa amin, \\q ang lahat ng aming mga kaaway.",
           "B": "Ang aming mga kaaway, bawat isa sa kanila, \\q ay nagbuka nang malaki ng kanilang bibig laban sa amin.",
           "R": "Ang lahat ng aming mga kaaway \\q ay nagbubuka ng kanilang bibig upang kutyain kami."
+        },
+        "zh": {
+          "L": "他们向我们张开他们的口， \\q 我们所有的仇敌。",
+          "B": "我们的仇敌，每一个都 \\q 向我们张大了口。",
+          "R": "我们所有的敌人 \\q 都张开嘴嘲笑我们。"
         }
       },
       "decisions": [
@@ -11937,6 +12311,11 @@
           "L": "Sindak at hukay ang dumating sa amin, \\q ang pagkawasak at ang pagkadurog.",
           "B": "Inabutan kami ng sindak at ng hukay, \\q ng pagkawasak at pagguho.",
           "R": "Takot na takot kami at nabitag, \\q wasak at durog."
+        },
+        "zh": {
+          "L": "惊恐和陷坑临到了我们， \\q 毁灭和破碎。",
+          "B": "惊慌和陷坑追上了我们， \\q 还有毁灭和崩溃。",
+          "R": "我们惊恐万分，陷入绝境， \\q 毁坏了，灭亡了。"
         }
       },
       "decisions": [
@@ -12209,6 +12588,25 @@
           "reason": "Ruin and breaking (m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250030470011",
+            "o250030470022"
+          ],
+          "choice": "\"惊恐和陷坑\" (Literal); \"惊慌和陷坑\" (Balanced)",
+          "alternatives": [],
+          "reason": "The prophets' saying (m1) in the words Isaiah 24:17 has in this translation's Chinese (\"惊恐、陷坑、网罗\"), so the echo can be heard.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -12311,6 +12709,11 @@
           "L": "Umaagos ang aking mata ng mga batis ng tubig \\q dahil sa pagkawasak ng anak na babae ng aking bayan.",
           "B": "Umaagos mula sa aking mga mata ang mga batis ng luha \\q dahil sa pagkawasak ng aking minamahal na bayan.",
           "R": "Bumubuhos ang luha sa aking mga mata na gaya ng mga ilog \\q dahil winasak ang aking bayan."
+        },
+        "zh": {
+          "L": "我的眼睛流下水的河流， \\q 因我百姓的女儿被毁灭。",
+          "B": "我的眼泪像溪水般流下， \\q 因为我亲爱的百姓被毁灭了。",
+          "R": "我的眼泪像河水一样流下， \\q 因为我的百姓被毁灭了。"
         }
       },
       "decisions": [
@@ -12576,6 +12979,11 @@
           "L": "Bumubuhos ang aking mata at hindi titigil, \\q sapagkat walang pahinga,",
           "B": "Bumubuhos ang luha sa aking mga mata at hindi tumitigil; \\q walang pahinga ang mga ito,",
           "R": "Patuloy na aagos ang aking mga luha. \\q Hindi titigil ang mga ito"
+        },
+        "zh": {
+          "L": "我的眼睛倾流，不会止息， \\q 没有间歇，",
+          "B": "我的眼泪涌流不停， \\q 没有歇息，",
+          "R": "我的眼泪会一直流， \\q 不会停止，"
         }
       },
       "decisions": [
@@ -12778,6 +13186,11 @@
           "L": "hanggang sa tumungo {{divine_name:ang PANGINOON|si Yahweh}} \\q at tumingin mula sa langit.",
           "B": "hanggang sa tumungo {{divine_name:ang PANGINOON|si Yahweh}} \\q at tumingin mula sa langit.",
           "R": "hanggang sa tumungo {{divine_name:ang PANGINOON|si Yahweh}} mula sa langit \\q at makita kami."
+        },
+        "zh": {
+          "L": "直到{{divine_name:上主|雅威}}垂顾， \\q 从天上观看。",
+          "B": "直到{{divine_name:上主|雅威}}俯视， \\q 从天上察看。",
+          "R": "直到{{divine_name:上主|雅威}}从天上往下看， \\q 看见我们。"
         }
       },
       "decisions": [
@@ -12949,6 +13362,11 @@
           "L": "Pinahihirapan ng aking mata ang aking kaluluwa \\q dahil sa lahat ng anak na babae ng aking lungsod.",
           "B": "Nagdudulot ng dalamhati sa aking kaluluwa ang nakikita ng aking mga mata \\q dahil sa lahat ng babae sa aking lungsod.",
           "R": "Nasasaktan ang aking puso sa nakikita ko \\q na nangyayari sa lahat ng babae sa aking lungsod."
+        },
+        "zh": {
+          "L": "我的眼使我的灵魂痛苦， \\q 因为我城中所有的女子。",
+          "B": "我眼所见的，使我的心灵忧伤， \\q 因为我城中所有的妇女。",
+          "R": "我看见的事使我心痛， \\q 那是发生在我城里所有妇女身上的事。"
         }
       },
       "decisions": [
@@ -13144,6 +13562,11 @@
           "L": "Hinuli nila ako na gaya ng ibon, \\q ang mga kaaway ko nang walang dahilan.",
           "B": "Ang mga taong walang dahilan upang maging kaaway ko \\q ay humuli sa akin na gaya ng ibon.",
           "R": "Walang dahilan ang aking mga kaaway upang kapootan ako, \\q ngunit hinuli nila ako na gaya ng ibon."
+        },
+        "zh": {
+          "L": "他们追捕我，像追捕鸟一样， \\q 就是那些无故与我为仇的人。",
+          "B": "那些无缘无故与我为敌的人， \\q 像捕鸟一样追捕我。",
+          "R": "我的敌人没有理由恨我， \\q 却像捕鸟一样追捕我。"
         }
       },
       "decisions": [
@@ -13363,6 +13786,11 @@
           "L": "Winakasan nila ang aking buhay sa hukay \\q at nagtapon sila ng bato sa akin.",
           "B": "Itinulak nila ako sa hukay upang wakasan ang aking buhay \\q at nagtakip sila ng bato sa ibabaw ko.",
           "R": "Inihulog nila ako sa isang hukay upang patayin ako \\q at tinakpan iyon ng bato."
+        },
+        "zh": {
+          "L": "他们在坑中断绝我的性命， \\q 又把石头扔在我身上。",
+          "B": "他们把我推进坑里，要断送我的性命， \\q 又用石头压住我。",
+          "R": "他们把我扔进坑里要害死我， \\q 还在坑口放上一块石头。"
         }
       },
       "decisions": [
@@ -13680,6 +14108,11 @@
           "L": "Umapaw ang tubig sa ibabaw ng aking ulo; \\q sinabi ko, \"Ako ay nahiwalay na.\"",
           "B": "Tumaas ang tubig hanggang sa ibabaw ng aking ulo, \\q at sinabi ko, \"Ako ay nahiwalay na!\"",
           "R": "Natakpan ng tubig ang aking ulo, \\q at naisip ko, \"Ito na ang aking wakas!\""
+        },
+        "zh": {
+          "L": "众水漫过我的头； \\q 我说：“我被剪除了。”",
+          "B": "水涨过我的头， \\q 我说：“我被剪除了！”",
+          "R": "水淹没了我的头， \\q 我心想：“这下我完了！”"
         }
       },
       "decisions": [
@@ -13867,6 +14300,11 @@
           "L": "Tinawagan ko ang {{deity_pronoun:iyong|Iyong}} pangalan, {{divine_name:PANGINOON|Yahweh}}, \\q mula sa pinakamababang hukay.",
           "B": "Tinawagan ko ang {{deity_pronoun:iyong|Iyong}} pangalan, {{divine_name:PANGINOON|Yahweh}}, \\q mula sa kailaliman ng hukay.",
           "R": "{{divine_name:PANGINOON|Yahweh}}, tumawag ako sa {{deity_pronoun:iyo|Iyo}} \\q mula sa kailaliman ng hukay."
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}啊，我求告{{deity_pronoun:你|祢}}的名， \\q 从极深的坑里。",
+          "B": "{{divine_name:上主|雅威}}啊，我求告{{deity_pronoun:你|祢}}的名， \\q 从深坑的底部。",
+          "R": "{{divine_name:上主|雅威}}啊，我向{{deity_pronoun:你|祢}}呼求， \\q 从深深的坑底。"
         }
       },
       "decisions": [
@@ -14110,6 +14548,11 @@
           "L": "Narinig {{deity_pronoun:mo|Mo}} ang aking tinig: \\q \"Huwag {{deity_pronoun:mong|Mong}} itago ang {{deity_pronoun:iyong|Iyong}} tainga sa aking paghingi ng ginhawa, sa aking pagsigaw ng saklolo!\"",
           "B": "Narinig {{deity_pronoun:mo|Mo}} ang aking tinig: \\q \"Huwag {{deity_pronoun:mong|Mong}} takpan ang {{deity_pronoun:iyong|Iyong}} mga tainga sa aking pakiusap na ginhawa, sa aking pagsigaw ng saklolo!\"",
           "R": "Narinig {{deity_pronoun:mo|Mo}} ako nang makiusap ako, \\q \"Huwag {{deity_pronoun:kang|Kang}} tumigil sa pakikinig kapag sumisigaw ako ng saklolo!\""
+        },
+        "zh": {
+          "L": "{{deity_pronoun:你|祢}}听见了我的声音： \\q “求{{deity_pronoun:你|祢}}不要掩耳不听我[求]舒解，不听我的呼救！”",
+          "B": "{{deity_pronoun:你|祢}}听见了我的声音： \\q “求{{deity_pronoun:你|祢}}不要掩耳不听我求解救、求帮助的呼声！”",
+          "R": "我哀求的时候，{{deity_pronoun:你|祢}}听见了： \\q “我呼救的时候，求{{deity_pronoun:你|祢}}不要停止倾听！”"
         }
       },
       "decisions": [
@@ -14318,6 +14761,11 @@
           "L": "Lumapit {{deity_pronoun:ka|Ka}} sa araw na tinawag kita; \\q sinabi {{deity_pronoun:mo|Mo}}, \"Huwag kang matakot!\"",
           "B": "Sa araw na tumawag ako sa {{deity_pronoun:iyo|Iyo}}, lumapit {{deity_pronoun:ka|Ka}} \\q at sinabi, \"Huwag kang matakot!\"",
           "R": "Nang tumawag ako sa {{deity_pronoun:iyo|Iyo}}, lumapit {{deity_pronoun:ka|Ka}} sa akin. \\q Sinabi {{deity_pronoun:mo|Mo}}, \"Huwag kang matakot!\""
+        },
+        "zh": {
+          "L": "我呼求{{deity_pronoun:你|祢}}的日子，{{deity_pronoun:你|祢}}就临近； \\q {{deity_pronoun:你|祢}}说：“不要怕！”",
+          "B": "我呼求{{deity_pronoun:你|祢}}的日子，{{deity_pronoun:你|祢}}就靠近我， \\q 说：“不要怕！”",
+          "R": "我向{{deity_pronoun:你|祢}}呼求的时候，{{deity_pronoun:你|祢}}来到我身边。 \\q {{deity_pronoun:你|祢}}说：“不要害怕！”"
         }
       },
       "decisions": [
@@ -14448,6 +14896,26 @@
           "reason": "God's presence answers the cry (m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o250030570051",
+            "o250030570061"
+          ],
+          "choice": "\"不要怕\" (Literal, Balanced); \"不要害怕\" (Readable)",
+          "alternatives": [],
+          "reason": "The style guide's one form for \"Fear not\", God's word of rescue (m1), as Isaiah 41:10 has it.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft"
@@ -14549,6 +15017,11 @@
           "L": "Ipinagtanggol {{deity_pronoun:mo|Mo}}, Panginoon, ang mga usapin ng aking kaluluwa; \\q tinubos {{deity_pronoun:mo|Mo}} ang aking buhay.",
           "B": "Panginoon, ipinagtanggol {{deity_pronoun:mo|Mo}} ang aking usapin \\q at tinubos ang aking buhay.",
           "R": "Panginoon, ipinagtanggol {{deity_pronoun:mo|Mo}} ako sa hukuman. \\q Iniligtas {{deity_pronoun:mo|Mo}} ang aking buhay."
+        },
+        "zh": {
+          "L": "主啊，{{deity_pronoun:你|祢}}为我的灵魂辩护讼案； \\q {{deity_pronoun:你|祢}}救赎了我的性命。",
+          "B": "主啊，{{deity_pronoun:你|祢}}为我申辩， \\q 救赎了我的性命。",
+          "R": "主啊，{{deity_pronoun:你|祢}}在法庭上为我辩护。 \\q {{deity_pronoun:你|祢}}救了我的性命。"
         }
       },
       "decisions": [
@@ -14927,6 +15400,11 @@
           "L": "Nakita {{deity_pronoun:mo|Mo}}, {{divine_name:PANGINOON|Yahweh}}, ang kamaliang ginawa sa akin; \\q hatulan mo ang aking usapin!",
           "B": "{{divine_name:PANGINOON|Yahweh}}, nakita {{deity_pronoun:mo|Mo}} kung paano ako ginawan ng mali; \\q hatulan mo ang aking usapin!",
           "R": "{{divine_name:PANGINOON|Yahweh}}, nakita {{deity_pronoun:mo|Mo}} kung paano ako ginawan ng mali. \\q Hatulan mo na ngayon ang aking usapin at itama ang mga bagay!"
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}啊，{{deity_pronoun:你|祢}}看见了我受的冤屈； \\q 求{{deity_pronoun:你|祢}}审判我的案件！",
+          "B": "{{divine_name:上主|雅威}}啊，{{deity_pronoun:你|祢}}看见了我所受的冤屈， \\q 求{{deity_pronoun:你|祢}}为我的案件主持公道！",
+          "R": "{{divine_name:上主|雅威}}啊，{{deity_pronoun:你|祢}}看见了我受的冤屈。 \\q 现在求{{deity_pronoun:你|祢}}审判我的案子，为我伸张正义！"
         }
       },
       "decisions": [
@@ -15115,6 +15593,11 @@
           "L": "Nakita {{deity_pronoun:mo|Mo}} ang lahat ng kanilang paghihiganti, \\q ang lahat ng kanilang mga balak laban sa akin.",
           "B": "Nakita {{deity_pronoun:mo|Mo}} ang lahat ng kanilang pagkamuhi, \\q ang lahat ng kanilang mga pakana laban sa akin.",
           "R": "Nakita {{deity_pronoun:mo|Mo}} kung paano nila gustong maghiganti sa akin \\q at ang lahat ng kanilang balak na saktan ako."
+        },
+        "zh": {
+          "L": "{{deity_pronoun:你|祢}}看见了他们一切的报复， \\q 他们一切攻击我的计谋。",
+          "B": "{{deity_pronoun:你|祢}}看见了他们一切的怨毒， \\q 和他们一切陷害我的诡计。",
+          "R": "{{deity_pronoun:你|祢}}看见了他们多么想报复我， \\q 和他们所有要害我的计划。"
         }
       },
       "decisions": [
@@ -15284,6 +15767,11 @@
           "L": "Narinig {{deity_pronoun:mo|Mo}} ang kanilang pagkutya, {{divine_name:PANGINOON|Yahweh}}, \\q ang lahat ng kanilang mga balak laban sa akin,",
           "B": "Narinig {{deity_pronoun:mo|Mo}} ang kanilang mga insulto, {{divine_name:PANGINOON|Yahweh}}, \\q ang lahat ng kanilang mga pakana laban sa akin,",
           "R": "{{divine_name:PANGINOON|Yahweh}}, narinig {{deity_pronoun:mo|Mo}} ang kanilang mga insulto \\q at ang lahat ng kanilang balak laban sa akin."
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}啊，{{deity_pronoun:你|祢}}听见了他们的辱骂， \\q 他们一切攻击我的计谋，",
+          "B": "{{divine_name:上主|雅威}}啊，{{deity_pronoun:你|祢}}听见了他们的侮辱， \\q 和他们一切陷害我的诡计，",
+          "R": "{{divine_name:上主|雅威}}啊，{{deity_pronoun:你|祢}}听见了他们的侮辱， \\q 和他们所有攻击我的计划。"
         }
       },
       "decisions": [
@@ -15487,6 +15975,11 @@
           "L": "ang mga labi ng mga tumitindig laban sa akin, \\q at ang kanilang bulung-bulungan laban sa akin sa buong araw.",
           "B": "ang sinasabi ng mga sumasalakay sa akin, \\q at kung paano sila nagbubulungan laban sa akin sa buong araw.",
           "R": "Narinig {{deity_pronoun:mo|Mo}} ang sinasabi ng mga sumasalakay sa akin \\q at kung paano sila nagbubulungan tungkol sa akin sa buong araw."
+        },
+        "zh": {
+          "L": "那些起来攻击我的人的嘴唇， \\q 和他们终日攻击我的低语。",
+          "B": "攻击我的人所说的话， \\q 和他们终日怎样窃窃私语地攻击我。",
+          "R": "{{deity_pronoun:你|祢}}听见了攻击我的人所说的话， \\q 和他们整天怎样在背后议论我。"
         }
       },
       "decisions": [
@@ -15676,6 +16169,11 @@
           "L": "Ang kanilang pag-upo at ang kanilang pagtayo, tingnan mo! \\q Ako ang kanilang awit ng panunuya.",
           "B": "Tingnan mo sila, umupo man sila o tumayo: \\q ako ang awit na ipinanunuya nila sa akin.",
           "R": "Tingnan mo sila! Umupo man sila o tumayo, \\q umaawit sila ng mga awit upang kutyain ako."
+        },
+        "zh": {
+          "L": "他们坐下，他们起来——请看！ \\q 我[成了]他们讥讽的歌。",
+          "B": "请看他们，无论坐下或起来： \\q 我都是他们用来嘲弄的歌。",
+          "R": "请看看他们！无论坐着还是站着， \\q 他们都唱歌取笑我。"
         }
       },
       "decisions": [
@@ -15865,6 +16363,11 @@
           "L": "Gantihan mo sila, {{divine_name:PANGINOON|Yahweh}}, \\q ayon sa gawa ng kanilang mga kamay.",
           "B": "Gantihan mo sila, {{divine_name:PANGINOON|Yahweh}}, ayon sa nararapat sa kanila, \\q dahil sa ginawa ng kanilang mga kamay.",
           "R": "{{divine_name:PANGINOON|Yahweh}}, gantihan mo sila \\q dahil sa masasamang bagay na ginawa nila."
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}啊，求{{deity_pronoun:你|祢}}向他们施行报应， \\q 照着他们手所做的。",
+          "B": "{{divine_name:上主|雅威}}啊，求{{deity_pronoun:你|祢}}照他们应得的报应他们， \\q 按他们手所做的。",
+          "R": "{{divine_name:上主|雅威}}啊，求{{deity_pronoun:你|祢}}报应他们， \\q 因为他们所做的种种恶事。"
         }
       },
       "decisions": [
@@ -16196,6 +16699,11 @@
           "L": "Bigyan mo sila ng pusong may takip; \\q ang {{deity_pronoun:iyong|Iyong}} sumpa ay mapasa kanila!",
           "B": "Bigyan mo sila ng pusong natatakpan at matigas; \\q mapasa kanila nawa ang {{deity_pronoun:iyong|Iyong}} sumpa!",
           "R": "Gawin mo silang matigas ang ulo at bulag. \\q Ilagay mo sa kanila ang {{deity_pronoun:iyong|Iyong}} sumpa!"
+        },
+        "zh": {
+          "L": "使他们的心蒙上帕子吧； \\q 愿{{deity_pronoun:你|祢}}的诅咒[临到]他们身上！",
+          "B": "使他们的心蒙蔽刚硬； \\q 愿{{deity_pronoun:你|祢}}的诅咒临到他们！",
+          "R": "使他们顽固又盲目。 \\q 让{{deity_pronoun:你|祢}}的诅咒临到他们！"
         }
       },
       "decisions": [
@@ -16388,6 +16896,11 @@
           "L": "Habulin mo sila sa galit at lipulin sila \\q mula sa ilalim ng langit {{divine_name:ng PANGINOON|ni Yahweh}}.",
           "B": "Habulin mo sila sa galit at lipulin sila \\q mula sa ilalim ng langit {{divine_name:ng PANGINOON|ni Yahweh}}.",
           "R": "Habulin mo sila sa {{deity_pronoun:iyong|Iyong}} galit at lipulin sila. \\q Puksain mo sila mula sa ilalim ng langit {{divine_name:ng PANGINOON|ni Yahweh}}."
+        },
+        "zh": {
+          "L": "在怒中追赶[他们]，把他们除灭， \\q [使他们]不在{{divine_name:上主|雅威}}的天下。",
+          "B": "在怒中追赶他们，把他们除灭， \\q 使他们从{{divine_name:上主|雅威}}的天下消失。",
+          "R": "在{{deity_pronoun:你|祢}}的怒气中追赶他们，消灭他们。 \\q 把他们从{{divine_name:上主|雅威}}的天空下除掉。"
         }
       },
       "decisions": [
