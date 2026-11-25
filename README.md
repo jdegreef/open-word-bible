@@ -103,9 +103,8 @@ sentence-opening "and" the English drops, a recitative "that" before a
 quotation. The article goes in the alignment of the word it belongs to
 ("the kingdom" ← article + noun; "Jesus's" ← article + name), and a setting
 span is always inside a span whole ("to {{deity_pronoun:him|Him}}"). The
-whole New Testament, the Pentateuch (Genesis to Deuteronomy), the poetry
-books (Job, Psalms, Proverbs, Ecclesiastes, Song of Songs) and the prophets
-(Isaiah to Malachi) are aligned in English and Japanese Balanced. In a script written without spaces (Japanese), a span may begin
+whole Bible, Old Testament and New, is aligned in English and Japanese
+Balanced. In a script written without spaces (Japanese), a span may begin
 or end beside another character: 言 is a word of 言は. Because every language
 is aligned to the same source tokens, the reader's Parallel view lights a
 word's partner in the other language through them; no two languages are
