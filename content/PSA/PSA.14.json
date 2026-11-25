@@ -100,6 +100,11 @@
           "L": "Para sa punong mang-aawit. Ni David. \\q Sinasabi ng hangal sa kaniyang puso, \"Walang Diyos.\" \\q Gumawa sila ng kabulukan, gumawa sila ng mga kasuklam-suklam na gawa; \\q walang gumagawa ng mabuti.",
           "B": "Para sa punong mang-aawit. Ni David. \\q Sinasabi ng mga hangal sa kanilang sarili, \"Walang Diyos.\" \\q Bulok sila hanggang kaibuturan; kasuklam-suklam ang kanilang ginagawa. \\q Wala ni isa man sa kanila ang gumagawa ng mabuti.",
           "R": "Para sa tagapanguna ng musika. Isinulat ni David. \\q Iniisip ng mga hangal, \"Walang Diyos.\" \\q Masasama sila, at gumagawa sila ng kakila-kilabot na mga bagay. \\q Wala sa kanila ang gumagawa ng mabuti."
+        },
+        "zh": {
+          "L": "交给指挥。大卫的。 \\q 愚昧人在他心里说：“没有{{god_term:神|上帝}}。” \\q 他们行事败坏，所做的事可憎； \\q 没有一个人行仁善。",
+          "B": "交给指挥。大卫的。 \\q 愚昧人对自己说：“没有{{god_term:神|上帝}}。” \\q 他们彻头彻尾地败坏，所做的事令人憎恶。 \\q 没有一个人行善。",
+          "R": "给诗班指挥的。大卫作。 \\q 愚蠢的人心里想：“根本没有{{god_term:神|上帝}}。” \\q 他们很邪恶，做可怕的事。 \\q 没有人做好事。"
         }
       },
       "decisions": [
@@ -651,6 +656,50 @@
           "reason": "Psalm 53 and Romans 3 (m4).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190140010061"
+          ],
+          "choice": "\"{{god_term:神|上帝}}\": 神 by default, 上帝 as the reader's alternative",
+          "alternatives": [
+            "\"神\" (fixed)"
+          ],
+          "reason": "Every word naming the God of Israel is written with the Chinese god_term setting (style guide section 4). Both name the same God; only the wording changes.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190140010041",
+            "o190140010121",
+            "o190140010131"
+          ],
+          "choice": "\"愚昧人\" (L, B); \"愚蠢的人\" (R); \"没有一个人行仁善\" (L), \"没有一个人行善\" (B), \"没有人做好事\" (R) as Romans 3:12",
+          "alternatives": [
+            "\"愚顽人\""
+          ],
+          "reason": "The fool, one who lives without regard for God (m2), in the glossary's forms for the fool (Proverbs). The last line is the line Romans 3:12 quotes (m4), and each level keeps Romans' Chinese for it. Psalm 53 repeats this psalm and is to copy it where the Hebrew is the same.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft",
@@ -971,6 +1020,11 @@
           "L": "{{divine_name:Ang PANGINOON|Si Yahweh}} mula sa langit ay tumitingin sa mga anak ng tao \\q upang makita kung may [sinumang] may unawa, \\q na humahanap sa Diyos.",
           "B": "Mula sa langit ay tumitingin {{divine_name:ang PANGINOON|si Yahweh}} sa sangkatauhan \\q upang makita kung may sinumang marunong, \\q sinumang naghahanap sa Diyos.",
           "R": "Binabantayan {{divine_name:ng PANGINOON|ni Yahweh}} ang lahat ng tao mula sa langit. \\q Gusto {{deity_pronoun:niyang|Niyang}} makita kung may sinumang marunong \\q at nagnanais na makilala ang Diyos."
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}从天上俯视人的子孙， \\q 要看是否有明白的人， \\q 是否有寻求{{god_term:神|上帝}}的人。",
+          "B": "{{divine_name:上主|雅威}}从天上俯看人类， \\q 要看是否有人明白， \\q 是否有人在寻求{{god_term:神|上帝}}。",
+          "R": "{{divine_name:上主|雅威}}从天上看着所有的人。 \\q 他要看看是否有人有智慧， \\q 想要认识{{god_term:神|上帝}}。"
         }
       },
       "decisions": [
@@ -1249,6 +1303,27 @@
           "reason": "Who turns to God (m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190140020091",
+            "o190140020101"
+          ],
+          "choice": "\"明白的人\", \"寻求{{god_term:神|上帝}}的人\" (L); \"有人明白\", \"有人在寻求{{god_term:神|上帝}}\" (B), as Romans 3:11",
+          "alternatives": [
+            "\"有智慧的人\""
+          ],
+          "reason": "Romans 3:11 draws on this verse; Literal and Balanced keep Romans' words for the one who has insight and seeks God (m2, m3). Readable follows the English Readable.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft",
@@ -1521,6 +1596,11 @@
           "L": "Lahat ay lumihis; sama-sama silang naging bulok; \\q walang gumagawa ng mabuti, \\q wala, kahit isa.",
           "B": "Lumihis ang lahat sa daan; \\q sama-samang nasira ang lahat. \\q Walang gumagawa ng mabuti, wala kahit isa.",
           "R": "Iniwan ng lahat ang tamang daan. Naging bulok silang lahat. \\q Walang gumagawa ng mabuti. \\q Wala kahit isang tao!"
+        },
+        "zh": {
+          "L": "众人都转离了，一起变得腐败； \\q 没有一个人行仁善， \\q 一个都没有。",
+          "B": "人人都离开了正道， \\q 全都变坏了。 \\q 没有人行善，一个也找不到。",
+          "R": "人人都离开了正路，全都腐烂了。 \\q 没有人做好事。 \\q 一个人也没有！"
         }
       },
       "decisions": [
@@ -1731,6 +1811,31 @@
           "choice": "\"wala, kahit isa\"",
           "alternatives": [],
           "reason": "The end of the verse (m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190140030021",
+            "o190140030041",
+            "o190140030061",
+            "o190140030101"
+          ],
+          "choice": "Romans 3:12's Chinese at each level, except \"变得腐败\" (L), \"变坏了\" (B), \"腐烂了\" (R)",
+          "alternatives": [
+            "\"一起变得毫无用处\" (Romans 3:12 L)",
+            "\"全都变得无用\" (Romans 3:12 B)"
+          ],
+          "reason": "Paul quotes this verse in Romans 3:12, and the Greek says what the Hebrew says, except that the Greek has \"become worthless\" where the Hebrew says \"gone sour\", rotten (m1). Each level keeps Romans' Chinese and translates the Hebrew for that one verb.",
           "uncertain": false,
           "footnote": false
         }
@@ -1970,6 +2075,11 @@
           "L": "Hindi ba nila alam, ang lahat ng gumagawa ng kasamaan, \\q na lumalamon sa aking bayan [habang] kumakain sila ng tinapay? \\q Hindi sila tumatawag {{divine_name:sa PANGINOON|kay Yahweh}}.",
           "B": "Wala bang natutuhan ang lahat ng gumagawa ng masamang ito? \\q Nilalamon nila ang aking bayan na parang kumakain ng tinapay, \\q at hindi sila kailanman tumatawag {{divine_name:sa PANGINOON|kay Yahweh}}.",
           "R": "Wala bang nauunawaan ang masasamang taong ito? \\q Winawasak nila ang aking bayan na kasindali ng pagkain nila. \\q Hindi sila kailanman nananalangin {{divine_name:sa PANGINOON|kay Yahweh}}."
+        },
+        "zh": {
+          "L": "难道他们不知道吗——所有作孽的人？ \\q 他们吃掉我的子民，[如同]他们吃饼， \\q 他们不向{{divine_name:上主|雅威}}呼求。",
+          "B": "这些作恶的人什么都没有学到吗？ \\q 他们吞噬我的子民，好像吃一顿饭， \\q 从不向{{divine_name:上主|雅威}}祷告呼求。",
+          "R": "这些做坏事的人什么都不明白吗？ \\q 他们毁灭我的百姓，就像吃一顿饭那么容易。 \\q 他们从不向{{divine_name:上主|雅威}}祷告。"
         }
       },
       "decisions": [
@@ -2232,6 +2342,27 @@
           "reason": "Pray to him (m4).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190140040072"
+          ],
+          "choice": "\"我的子民\" (L, B); \"我的百姓\" (R), with no deity_pronoun span",
+          "alternatives": [
+            "a reverent first person (Chinese has none)"
+          ],
+          "reason": "God speaking (m1): the glossary's forms for \"my people\". The English spans God's \"my\"; Chinese has no reverent first person, so \"我\" takes no span.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft",
@@ -2491,6 +2622,11 @@
           "L": "Doon ay sinindak sila [ng] sindak, \\q sapagkat ang Diyos [ay] kasama ng salinlahi ng matuwid.",
           "B": "Doon ay sasakmalin sila ng sindak, \\q sapagkat kasama ng Diyos ang mga taong matuwid.",
           "R": "Ngunit pagkatapos ay daratnan sila ng takot, \\q sapagkat kasama ng Diyos ang mga taong gumagawa ng tama."
+        },
+        "zh": {
+          "L": "他们在那里恐惧，[充满]恐惧， \\q 因为{{god_term:神|上帝}}与义人的世代同在。",
+          "B": "那时他们必被恐惧抓住， \\q 因为{{god_term:神|上帝}}与义人同在。",
+          "R": "可是到那时，恐惧会抓住他们， \\q 因为{{god_term:神|上帝}}与走正路的人同在。"
         }
       },
       "decisions": [
@@ -2825,6 +2961,11 @@
           "L": "Ang balak ng nagdurusa ay ipapahiya ninyo, \\q ngunit {{divine_name:ang PANGINOON|si Yahweh}} [ay] kaniyang kanlungan.",
           "B": "Kayong mga gumagawa ng masama, binibigo ninyo ang pag-asa ng mga dukha, \\q ngunit {{divine_name:ang PANGINOON|si Yahweh}} ang kanilang kanlungan.",
           "R": "Kayong masasamang tao, sinisikap ninyong sirain ang mga plano ng mga dukha. \\q Ngunit iniingatan sila {{divine_name:ng PANGINOON|ni Yahweh}}."
+        },
+        "zh": {
+          "L": "你们羞辱困苦人的筹划， \\q 但他的避难所[是]{{divine_name:上主|雅威}}。",
+          "B": "你们这些作恶的人想使困苦人的希望落空， \\q 但{{divine_name:上主|雅威}}是他们藏身的避难所。",
+          "R": "你们这些坏人想要破坏穷人的计划。 \\q 但是{{divine_name:上主|雅威}}会保护他们。"
         }
       },
       "decisions": [
@@ -3282,6 +3423,11 @@
           "L": "Sino ang magbibigay mula sa Zion ng pagliligtas sa Israel! \\q Kapag ibinalik {{divine_name:ng PANGINOON|ni Yahweh}} ang kasaganaan ng {{deity_pronoun:kaniyang|Kaniyang}} bayan, \\q magalak nawa si Jacob, matuwa nawa ang Israel.",
           "B": "Dumating nawa mula sa Zion ang pagliligtas sa Israel! \\q Kapag ibinalik {{divine_name:ng PANGINOON|ni Yahweh}} ang kasaganaan ng {{deity_pronoun:kaniyang|Kaniyang}} bayan, \\q sumigaw nawa sa galak si Jacob at matuwa ang Israel.",
           "R": "Sana ay dumating mula sa Zion ang tulong at iligtas ang Israel! \\q Kapag pinabuti {{divine_name:ng PANGINOON|ni Yahweh}} muli ang buhay ng {{deity_pronoun:kaniyang|Kaniyang}} bayan, \\q sisigaw sa galak ang lahi ni Jacob, at magdiriwang ang Israel."
+        },
+        "zh": {
+          "L": "谁能从锡安赐下以色列的救恩！ \\q 当{{divine_name:上主|雅威}}扭转{{deity_pronoun:他|祂}}子民的命运时， \\q 愿雅各欢跃，愿以色列喜乐。",
+          "B": "但愿拯救从锡安临到以色列！ \\q 当{{divine_name:上主|雅威}}使{{deity_pronoun:他|祂}}子民的境况好转时， \\q 愿雅各欢呼，愿以色列快乐。",
+          "R": "我多么希望帮助从锡安来，拯救以色列！ \\q 当{{divine_name:上主|雅威}}使{{deity_pronoun:他|祂}}的百姓重新过好日子的时候， \\q 雅各的子孙会欢呼，以色列会快乐。"
         }
       },
       "decisions": [

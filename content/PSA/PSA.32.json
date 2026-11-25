@@ -91,6 +91,11 @@
           "L": "Ni David. Isang Maskil. \\q Kay pinagpala [ng taong] pinatawad ang paglabag, \\q [na] tinakpan ang kasalanan!",
           "B": "Ni David. Isang Maskil. \\q Kay pinagpala ng taong pinatawad ang paghihimagsik, \\q na tinakpan ang kasalanan!",
           "R": "Isinulat ni David. Isang awit na nagtuturo. \\q Tunay na mabuti ang buhay ng mga taong pinatawad ng Diyos sa kanilang mga pagkakamali, \\q na ang mga kasalanan ay {{deity_pronoun:kaniyang|Kaniyang}} tinakpan."
+        },
+        "zh": {
+          "L": "大卫的。马斯基勒。 \\q 过犯蒙了赦免、 \\q 罪被遮盖的人有福了！",
+          "B": "大卫的。马斯基勒。 \\q 过犯蒙赦免、 \\q 罪被遮盖的人，是多么有福啊！",
+          "R": "大卫作。一首教导人的歌。 \\q {{god_term:神|上帝}}饶恕了他们的错， \\q {{deity_pronoun:他|祂}}遮盖了他们的罪，这些人是多么幸福啊！"
         }
       },
       "decisions": [
@@ -797,6 +802,70 @@
           "reason": "Quoted in Romans 4:7-8 (m5).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190320010031",
+            "o190320010041",
+            "o190320010051",
+            "o190320010061",
+            "o190320010071"
+          ],
+          "choice": "\"……罪被遮盖的人有福了\" (L); \"……罪被遮盖的人，是多么有福啊\" (B); \"{{god_term:神|上帝}}饶恕了他们的错，{{deity_pronoun:他|祂}}遮盖了他们的罪，这些人是多么幸福啊\" (R)",
+          "alternatives": [
+            "drafting the line afresh"
+          ],
+          "reason": "Paul quotes verses 1-2 in Romans 4:7-8 (m5). Where the Hebrew says the same, each level keeps the Chinese of Romans 4:7-8 at that level; where it differs, the Hebrew is followed: Romans has the plural and \"lawless deeds\", the Hebrew the singular \"the one\" and \"transgression\", so Literal and Balanced say \"过犯\" (the glossary's word for peshaʿ) with no plural \"那些\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190320010021"
+          ],
+          "choice": "\"马斯基勒\" (L, B); \"一首教导人的歌\" (R)",
+          "alternatives": [
+            "\"训诲诗\""
+          ],
+          "reason": "The glossary transliterates maskil where the English does; its meaning is probably a skilful or teaching song (m2), as the English Readable says.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-3",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190320010031"
+          ],
+          "choice": "\"{{god_term:神|上帝}}\" in a god_term span (神 by default, 上帝 as the reader's alternative)",
+          "alternatives": [
+            "\"神\" fixed"
+          ],
+          "reason": "Every word naming the one God is written with the Chinese-only god_term setting; the reader can choose 上帝.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft",
@@ -1014,6 +1083,11 @@
           "L": "Kay pinagpala ng tao na hindi pinaparatangan {{divine_name:ng PANGINOON|ni Yahweh}} ng kasamaan, \\q at sa kaniyang espiritu [ay] walang pandaraya!",
           "B": "Kay pinagpala ng sinumang ang pagkakasala ay hindi ibinibilang {{divine_name:ng PANGINOON|ni Yahweh}} laban sa kaniya, \\q na walang pandaraya sa kaniyang espiritu!",
           "R": "Tunay na mabuti ang buhay ng mga tao kapag hindi ibinibilang {{divine_name:ng PANGINOON|ni Yahweh}} laban sa kanila ang kanilang mga kasalanan, \\q at kapag wala silang sinisikap itago."
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}不把罪孽算在他身上的人有福了， \\q 就是灵里没有诡诈的人！",
+          "B": "{{divine_name:上主|雅威}}不把罪咎算在他身上的人，是多么有福啊， \\q 他的灵里没有诡诈！",
+          "R": "{{divine_name:上主|雅威}}不追究他们的罪，这些人是多么幸福啊！ \\q 他们也不想隐藏什么。"
         }
       },
       "decisions": [
@@ -1296,6 +1370,27 @@
           "reason": "A person: anyone (m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190320020051"
+          ],
+          "choice": "\"{{divine_name:上主|雅威}}\" for YHWH",
+          "alternatives": [
+            "\"主\""
+          ],
+          "reason": "Romans 4:8 has \"主\" because the Greek has kyrios; the Hebrew has the divine name, written with the divine_name span, while the rest of the line keeps Romans' Chinese.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft",
@@ -1564,6 +1659,11 @@
           "L": "Sapagkat nang ako'y manahimik, \\q nanghina ang aking mga buto sa aking pag-ungol buong araw.",
           "B": "Habang ako'y nananahimik, \\q nauupos ang aking mga buto sa aking pagdaing buong maghapon.",
           "R": "Nang itago ko sa aking sarili ang aking kasalanan, nanghina ang aking katawan. \\q Dumaraing ako buong araw."
+        },
+        "zh": {
+          "L": "因为我闭口不言的时候， \\q 我的骨头因我终日的吼叫而衰残。",
+          "B": "我保持沉默的时候， \\q 我的骨头因我整天的呻吟而日渐消损。",
+          "R": "我把罪藏在心里不说出来的时候，我的身体就衰弱了。 \\q 我整天都在呻吟。"
         }
       },
       "decisions": [
@@ -1946,6 +2046,11 @@
           "L": "Sapagkat araw at gabi ay mabigat sa akin ang {{deity_pronoun:iyong|Iyong}} kamay; \\q ang aking katas ay nabago [gaya] ng mga tagtuyot ng tag-araw. Sela",
           "B": "Araw at gabi ay mabigat na dumidiin sa akin ang {{deity_pronoun:iyong|Iyong}} kamay; \\q natuyo ang buhay sa akin gaya ng sa tagtuyot ng tag-araw. Sela",
           "R": "Araw at gabi ay nadarama kong mabigat {{deity_pronoun:mo|Mo}} akong dinidiinan. \\q Natuyo ang aking lakas gaya ng tubig sa init ng tag-araw. Sela"
+        },
+        "zh": {
+          "L": "因为昼夜{{deity_pronoun:你|祢}}的手重压在我身上； \\q 我的元气枯竭，好像经过夏日的干旱。细拉",
+          "B": "{{deity_pronoun:你|祢}}的手日日夜夜重重地压着我； \\q 我里面的生命力枯干了，像在夏天的旱灾中一样。细拉",
+          "R": "我日日夜夜都觉得{{deity_pronoun:你|祢}}的手重重地压着我。 \\q 我的力气都没了，像夏天烈日下的水被晒干了。细拉"
         }
       },
       "decisions": [
@@ -2319,6 +2424,28 @@
           "reason": "A word whose meaning is no longer known (m4).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190320040111"
+          ],
+          "choice": "\"细拉\" at the end of the verse, every level",
+          "alternatives": [
+            "\"(left out)\"",
+            "\"停顿\""
+          ],
+          "reason": "Selah's meaning is no longer known, probably a musical direction (m4); the glossary keeps the traditional transliteration and places it where the English does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft",
@@ -2615,6 +2742,11 @@
           "L": "Ang aking kasalanan ay ipinaalam ko sa {{deity_pronoun:iyo|Iyo}}, at ang aking kasamaan ay hindi ko tinakpan; \\q sinabi ko, \"Ipahahayag ko ang aking mga paglabag {{divine_name:sa PANGINOON|kay Yahweh}},\" \\q at pinatawad {{deity_pronoun:mo|Mo}} ang pagkakasala ng aking kasalanan. Sela",
           "B": "Ipinaalam ko sa {{deity_pronoun:iyo|Iyo}} ang aking kasalanan; hindi ko itinago ang aking kamalian. \\q Sinabi ko, \"Aaminin ko ang aking paghihimagsik sa harap {{divine_name:ng PANGINOON|ni Yahweh}},\" \\q at inalis {{deity_pronoun:mo|Mo}} ang aking kasalanan at ang pagkakasala nito. Sela",
           "R": "Sinabi ko sa {{deity_pronoun:iyo|Iyo}} ang aking kasalanan. Tumigil na ako sa pagtatago ng mga maling nagawa ko. \\q Sinabi ko, \"Aaminin ko {{divine_name:sa PANGINOON|kay Yahweh}} na naghimagsik ako.\" \\q At pinatawad {{deity_pronoun:mo|Mo}} ako sa lahat ng iyon. Sela"
+        },
+        "zh": {
+          "L": "我的罪，我让{{deity_pronoun:你|祢}}知道，我的罪孽，我没有遮盖； \\q 我说：“我要将我的过犯向{{divine_name:上主|雅威}}承认。” \\q {{deity_pronoun:你|祢}}就赦免了我罪的罪咎。细拉",
+          "B": "我向{{deity_pronoun:你|祢}}承认我的罪；我没有隐藏我的过错。 \\q 我说：“我要在{{divine_name:上主|雅威}}面前承认我的悖逆。” \\q {{deity_pronoun:你|祢}}就除去了我的罪和罪咎。细拉",
+          "R": "我把我的罪告诉{{deity_pronoun:你|祢}}。我不再隐藏我做过的错事。 \\q 我说：“我要向{{divine_name:上主|雅威}}承认我背叛了他。” \\q {{deity_pronoun:你|祢}}就饶恕了我的一切。细拉"
         }
       },
       "decisions": [
@@ -2813,6 +2945,27 @@
           "choice": "\"Sela\"",
           "alternatives": [],
           "reason": "A word whose meaning is no longer known (m4).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190320050121"
+          ],
+          "choice": "\"赦免\" (L); \"除去\" (B); \"饶恕\" (R)",
+          "alternatives": [
+            "\"原谅\""
+          ],
+          "reason": "The verb (nasa) is lifting off (m2): Literal uses the glossary's word for forgive, Balanced keeps the picture (\"took away\"), Readable the glossary's 饶恕.",
           "uncertain": false,
           "footnote": false
         }
@@ -3186,6 +3339,11 @@
           "L": "Dahil dito ay manalangin nawa sa {{deity_pronoun:iyo|Iyo}} ang bawat tapat sa panahong {{deity_pronoun:ikaw|Ikaw}} ay matatagpuan; \\q tiyak na sa baha ng malalaking tubig, \\q hindi siya aabutin ng mga ito.",
           "B": "Kaya manalangin nawa sa {{deity_pronoun:iyo|Iyo}} ang bawat tapat sa panahong matatagpuan {{deity_pronoun:ka|Ka}}. \\q Kahit dumagsa ang malalaking tubig, \\q hindi sila aabutin ng baha.",
           "R": "Kaya ang bawat tapat sa {{deity_pronoun:iyo|Iyo}} ay dapat manalangin sa {{deity_pronoun:iyo|Iyo}} habang may panahon pang matagpuan {{deity_pronoun:ka|Ka}}. \\q At kapag tumaas ang kaguluhan na parang baha, \\q hindi sila nito aabutin."
+        },
+        "zh": {
+          "L": "为此，愿每一个忠信的人在可寻见的时候向{{deity_pronoun:你|祢}}祷告； \\q 确实，在大水泛滥的时候， \\q 它们必达不到这人。",
+          "B": "所以，愿所有忠信的人趁{{deity_pronoun:你|祢}}可以被寻见的时候向{{deity_pronoun:你|祢}}祷告。 \\q 即使大水汹涌而来， \\q 洪水也淹不到他们。",
+          "R": "所以，所有忠于{{deity_pronoun:你|祢}}的人都应该趁着还有时间寻找{{deity_pronoun:你|祢}}的时候，向{{deity_pronoun:你|祢}}祷告。 \\q 这样，当患难像洪水一样涌来的时候， \\q 也淹不到他们。"
         }
       },
       "decisions": [
@@ -3468,6 +3626,26 @@
           "reason": "Overwhelming trouble (m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190320060131",
+            "o190320060132"
+          ],
+          "choice": "\"这人\" with no gender span",
+          "alternatives": [
+            "a gender span with \"他\" as the alternative"
+          ],
+          "reason": "The English Literal spans \"them / him\"; Chinese \"这人\" (\"this person\") covers anyone, so no span is needed.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft",
@@ -3734,6 +3912,11 @@
           "L": "Ikaw [ang] taguan ko; \\q sa kagipitan ay iingatan {{deity_pronoun:mo|Mo}} ako; \\q [ng] mga sigaw ng pagliligtas ay paliligiran {{deity_pronoun:mo|Mo}} ako. Sela",
           "B": "Ikaw ang aking kanlungan na mapagtataguan ko; \\q iniingatan {{deity_pronoun:mo|Mo}} ako sa kagipitan at pinalilibutan {{deity_pronoun:mo|Mo}} ako ng masasayang sigaw ng pagliligtas. Sela",
           "R": "Ikaw ang lugar na aking pinagtataguan. \\q Iniingatan {{deity_pronoun:mo|Mo}} ako sa kaguluhan. \\q Pinalilibutan {{deity_pronoun:mo|Mo}} ako ng masasayang sigaw dahil iniligtas {{deity_pronoun:mo|Mo}} ako. Sela"
+        },
+        "zh": {
+          "L": "你是我藏身的地方； \\q {{deity_pronoun:你|祢}}要守护我，使我不遭患难； \\q {{deity_pronoun:你|祢}}要用拯救的欢呼声围绕我。细拉",
+          "B": "你是我的庇护所，我可以藏在那里； \\q {{deity_pronoun:你|祢}}护卫我，不让我陷入苦难，使救恩的欢呼在我四周响起。细拉",
+          "R": "你是我藏身的地方。 \\q 你保护我不受患难。 \\q 你使我四周充满欢呼，因为{{deity_pronoun:你|祢}}救了我。细拉"
         }
       },
       "decisions": [
@@ -4147,6 +4330,11 @@
           "L": "Tuturuan kita at ituturo sa iyo ang daang dapat mong lakaran; \\q papayuhan kita, [ang] aking mata ay nasa iyo.",
           "B": "Bibigyan kita ng unawa at ituturo sa iyo ang daang dapat mong tahakin; \\q papayuhan kita at babantayan ka ng aking mata.",
           "R": "Tutulungan kitang makaunawa. Ituturo ko sa iyo ang paraan ng pamumuhay na dapat mong sundin. \\q Bibigyan kita ng payo at babantayan kita."
+        },
+        "zh": {
+          "L": "我要训诲你，在你当走的路上教导你； \\q 我要劝告[你]，我的眼目[看顾]你。",
+          "B": "我要使你明白，指示你该走的路； \\q 我要给你忠告，时时看顾你。",
+          "R": "我要帮助你明白。我要教导你该怎样生活。 \\q 我要给你劝告，一直看顾你。"
         }
       },
       "decisions": [
@@ -4464,6 +4652,30 @@
           "reason": "Watchful care (m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190320080071",
+            "o190320080072",
+            "o190320080081",
+            "o190320080082"
+          ],
+          "choice": "\"我的眼目\" (L) and \"我\" (B, R) with no span",
+          "alternatives": [
+            "a span on \"我\""
+          ],
+          "reason": "The English spans \"My\" because God is speaking (m1); Chinese has no reverent form of the first person, so God's \"我\" takes no span (style guide section 4). Balanced and Readable say \"keep my eye on you\" as \"看顾你\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft",
@@ -4692,6 +4904,11 @@
           "L": "Huwag kayong maging gaya ng kabayo, gaya ng mola, [na] walang pang-unawa; \\q sa busal at renda [ang] kaniyang gamit upang pigilan [ito], \\q [kung hindi ay] hindi lalapit sa iyo.",
           "B": "Huwag kayong maging gaya ng kabayo o mola na walang isip, \\q na nangangailangan ng gamit na busal at renda upang pigilan ito, \\q kung hindi ay hindi ito lalapit sa iyo.",
           "R": "Huwag kayong maging gaya ng kabayo o mola na hindi nakauunawa. \\q Kailangan itong kontrolin ng busal at renda, \\q kung hindi ay hindi ito lalapit sa iyo."
+        },
+        "zh": {
+          "L": "不要像马，像骡子，[那样]没有悟性； \\q 要用嚼环和缰绳作它的装备来约束[它]， \\q [否则它]就不会靠近你。",
+          "B": "不要像没有头脑的马或骡子， \\q 需要用嚼环和笼头来驾驭它， \\q 不然它就不肯走近你。",
+          "R": "不要像不明白事理的马或骡子。 \\q 必须用嚼子和缰绳来控制它， \\q 不然它就不肯到你这里来。"
         }
       },
       "decisions": [
@@ -5220,6 +5437,11 @@
           "L": "Marami [ang] mga hapis ng masama, \\q ngunit ang nagtitiwala {{divine_name:sa PANGINOON|kay Yahweh}}, \\q paliligiran siya ng tapat na pag-ibig.",
           "B": "Maraming kapighatian ang masasama, \\q ngunit ang sinumang nagtitiwala {{divine_name:sa PANGINOON|kay Yahweh}} ay pinalilibutan ng tapat na pag-ibig.",
           "R": "Maraming kaguluhan ang masasamang tao. \\q Ngunit ang mga taong nagtitiwala {{divine_name:sa PANGINOON|kay Yahweh}} ay palilibutan ng {{deity_pronoun:kaniyang|Kaniyang}} tapat na pag-ibig."
+        },
+        "zh": {
+          "L": "恶人的痛苦多， \\q 但信靠{{divine_name:上主|雅威}}的人， \\q 慈爱必环绕这人。",
+          "B": "恶人有许多愁苦， \\q 但信靠{{divine_name:上主|雅威}}的人，必被慈爱环绕。",
+          "R": "坏人有很多麻烦。 \\q 但信靠{{divine_name:上主|雅威}}的人，{{deity_pronoun:他|祂}}始终不变的爱会围绕着他们。"
         }
       },
       "decisions": [
@@ -5390,6 +5612,46 @@
           "choice": "\"tapat na pag-ibig\"",
           "alternatives": [],
           "reason": "Love that keeps its commitments (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190320100061"
+          ],
+          "choice": "\"慈爱\" (L, B); \"始终不变的爱\" (R), for God's chesed",
+          "alternatives": [
+            "\"坚定的爱\""
+          ],
+          "reason": "The glossary's forms for God's steadfast love, used through the Psalms.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190320100072"
+          ],
+          "choice": "\"这人\" with no gender span",
+          "alternatives": [
+            "a gender span with \"他\" as the alternative"
+          ],
+          "reason": "The English Literal spans \"them / him\"; Chinese \"这人\" covers anyone, so no span is needed.",
           "uncertain": false,
           "footnote": false
         }
@@ -5635,6 +5897,11 @@
           "L": "Matuwa kayo {{divine_name:sa PANGINOON|kay Yahweh}} at magalak, mga matuwid; \\q at sumigaw kayo sa kagalakan, lahat kayong matuwid ang puso.",
           "B": "Magdiwang kayo {{divine_name:sa PANGINOON|kay Yahweh}} at magsaya, kayong mga matuwid; \\q umawit kayo nang may galak, lahat kayong tapat ang puso!",
           "R": "Kayong mga gumagawa ng tama, matuwa kayo dahil {{divine_name:sa PANGINOON|kay Yahweh}} at magdiwang! \\q Lahat kayong may tapat na puso, sumigaw kayo sa kagalakan!"
+        },
+        "zh": {
+          "L": "义人哪，要在{{divine_name:上主|雅威}}里面欢喜，要快乐； \\q 你们所有心里正直的人哪，要欢呼。",
+          "B": "义人哪，要在{{divine_name:上主|雅威}}里欢庆，要喜乐； \\q 所有心里正直的人，都要高声欢唱！",
+          "R": "走正路的人哪，要因{{divine_name:上主|雅威}}欢喜庆祝！ \\q 所有正直诚实的人哪，要欢呼！"
         }
       },
       "decisions": [

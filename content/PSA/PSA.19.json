@@ -88,6 +88,11 @@
           "L": "Para sa punong mang-aawit. Awit ni David.",
           "B": "Para sa punong mang-aawit. Awit ni David.",
           "R": "Para sa tagapanguna ng musika. Isang awit na isinulat ni David."
+        },
+        "zh": {
+          "L": "交给指挥。大卫的诗。",
+          "B": "交给指挥。大卫的诗。",
+          "R": "给诗班指挥的。大卫的歌。"
         }
       },
       "decisions": [
@@ -219,6 +224,27 @@
           "choice": "\"punong mang-aawit\"",
           "alternatives": [],
           "reason": "The one who leads the music (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190190010011"
+          ],
+          "choice": "\"交给指挥\" (L, B); \"给诗班指挥的\" (R)",
+          "alternatives": [
+            "\"献给指挥\""
+          ],
+          "reason": "The glossary's title table for lamnatseach; \"诗\" (L, B) and \"歌\" (R) for mizmor.",
           "uncertain": false,
           "footnote": false
         }
@@ -381,6 +407,11 @@
           "L": "Isinasalaysay ng kalangitan ang kaluwalhatian ng Diyos, \\q at ang gawa ng {{deity_pronoun:kaniyang|Kaniyang}} mga kamay ay ipinahahayag ng kalawakan.",
           "B": "Paulit-ulit na sinasabi ng kalangitan kung gaano kaluwalhati ang Diyos; \\q ipinakikilala ng balantok ng langit ang ginawa ng {{deity_pronoun:kaniyang|Kaniyang}} mga kamay.",
           "R": "Patuloy na sinasabi ng langit kung gaano kadakila at kaluwalhati ang Diyos. \\q Ipinakikita ng lahat ng nasa itaas ang ginawa {{deity_pronoun:niya|Niya}}."
+        },
+        "zh": {
+          "L": "天正不断讲述{{god_term:神|上帝}}的荣耀， \\q {{deity_pronoun:他|祂}}手所做的，穹苍正在宣扬。",
+          "B": "天空一再诉说{{god_term:神|上帝}}何等荣耀； \\q 天穹显明{{deity_pronoun:他|祂}}亲手所造的。",
+          "R": "天空不停地讲述{{god_term:神|上帝}}多么伟大、多么荣耀。 \\q 天上的一切都显出{{deity_pronoun:他|祂}}所造的。"
         }
       },
       "decisions": [
@@ -653,6 +684,49 @@
           "reason": "The Creator of Genesis 1 (m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190190020041"
+          ],
+          "choice": "god_term setting: \"神\" by default, \"上帝\" as the reader's choice",
+          "alternatives": [
+            "\"神\" fixed",
+            " \"上帝\" fixed"
+          ],
+          "reason": "Every word naming the one God is written with the Chinese god_term setting (style guide section 4).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190190020082"
+          ],
+          "choice": "\"穹苍\" (L), \"天穹\" (B) for the expanse",
+          "alternatives": [
+            "\"空气\"",
+            " \"天空\""
+          ],
+          "reason": "The expanse is the dome of the sky (m2); \"穹\" keeps the picture of a vault, as the English Balanced does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft",
@@ -859,6 +933,11 @@
           "L": "Araw sa araw ay bumubukal ang pananalita, \\q at gabi sa gabi ay ipinakikilala ang kaalaman.",
           "B": "Ipinapasa ng bawat araw ang mensahe sa kasunod; \\q iniaabot ng bawat gabi ang kaniyang kaalaman sa gabing kasunod.",
           "R": "Ipinapasa ng bawat araw ang balita sa susunod na araw. \\q Ibinabahagi ng bawat gabi ang nalalaman nito sa susunod na gabi."
+        },
+        "zh": {
+          "L": "日与日之间涌流出言语， \\q 夜与夜之间显明知识。",
+          "B": "每一天都把信息传给下一天； \\q 每一夜都把知识交给接着来的夜。",
+          "R": "每一天都把消息传给第二天。 \\q 每一夜都把它知道的告诉下一夜。"
         }
       },
       "decisions": [
@@ -1181,6 +1260,11 @@
           "L": "Walang pananalita, at walang mga salita; \\q hindi naririnig ang kanilang tinig.",
           "B": "Walang pananalita, walang mga salita; \\q walang anuman sa kanilang tinig ang umaabot sa tainga.",
           "R": "Hindi sila nagsasalita o gumagamit ng mga salita. \\q Hindi mo maririnig ng iyong mga tainga ang kanilang tinig."
+        },
+        "zh": {
+          "L": "没有言语，也没有话； \\q 它们的声音听不见。",
+          "B": "没有言谈，没有话语； \\q 它们的声音，耳朵一点也听不到。",
+          "R": "它们不开口，也不用话语。 \\q 你用耳朵听不到它们的声音。"
         }
       },
       "decisions": [
@@ -1244,6 +1328,27 @@
           "choice": "\"Walang pananalita, at walang mga salita\"",
           "alternatives": [],
           "reason": "The sky's message is silent (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190190040071"
+          ],
+          "choice": "\"它们\" for the heavens, day and night",
+          "alternatives": [
+            "\"他们\""
+          ],
+          "reason": "The speakers are the heavens, the days and the nights, not people, so Chinese uses \"它们\" here and in verse 5.",
           "uncertain": false,
           "footnote": false
         }
@@ -1447,6 +1552,11 @@
           "L": "Sa buong lupa ay lumabas ang kanilang panukat, \\q at hanggang sa dulo ng sanlibutan ang kanilang mga salita. \\q Para sa araw ay naglagay {{deity_pronoun:siya|Siya}} ng tolda sa mga iyon,",
           "B": "Gayunman, umaabot sa buong lupa ang kanilang panukat, \\q ang kanilang mga salita hanggang sa malayong dulo ng sanlibutan. \\q Doon ay nagtayo {{deity_pronoun:siya|Siya}} ng tolda para sa araw,",
           "R": "Ngunit umaabot sa buong lupa ang kanilang mensahe. \\q Umaabot ang kanilang mga salita hanggang sa mga dulo ng sanlibutan. \\q Gumawa ang Diyos ng tahanan para sa araw sa langit."
+        },
+        "zh": {
+          "L": "它们的量线出到全地， \\q 它们的话语出到世界的边际。 \\q {{deity_pronoun:他|祂}}为太阳在它们中间支搭了帐篷，",
+          "B": "即便如此，它们的量线仍伸展到全地， \\q 它们的话语传到世界最远的地方。 \\q {{deity_pronoun:他|祂}}在那里为太阳搭起了帐篷，",
+          "R": "但它们的信息传遍全地。 \\q 它们的话语传到世界的尽头。 \\q {{god_term:神|上帝}}在天上为太阳安排了一个家。"
         }
       },
       "decisions": [
@@ -1766,6 +1876,27 @@
           "reason": "God; in them: in the heavens (m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190190050041"
+          ],
+          "choice": "\"量线\" (L, B), \"信息\" (R), with Romans 10:18's \"出到世界的边际\" (L) and \"传到世界最远的地方\" (B) for the second line",
+          "alternatives": [
+            "\"他们的声音出到全地\" as Romans 10:18"
+          ],
+          "reason": "Paul quotes these lines in Romans 10:18 from the Greek, which reads \"their voice\" where the Hebrew has \"their line\" (a measuring line, m1, m2). The Chinese follows the Hebrew in the first line and keeps Romans' Chinese in the second, where the Hebrew agrees, with \"它们\" for the heavens.",
+          "uncertain": false,
+          "footnote": true
         }
       ],
       "status": "ai_draft",
@@ -2038,6 +2169,11 @@
           "L": "at ito [ay] gaya ng lalaking ikakasal na lumalabas mula sa kaniyang silid; \\q nagagalak ito na gaya ng makapangyarihang [lalaki] na tumakbo sa [kaniyang] takbuhin.",
           "B": "at lumalabas ang araw na gaya ng lalaking ikakasal mula sa silid ng kasalan \\q at tinatakbo ang kaniyang takbuhin nang may galak ng isang malakas na mandirigma.",
           "R": "Sumisikat ang araw na gaya ng masayang lalaking ikakasal na lumalabas sa kaniyang silid sa araw ng kaniyang kasal. \\q Gaya ito ng malakas na mananakbo na mahilig makipagkarera sa buong langit."
+        },
+        "zh": {
+          "L": "它好像新郎从自己的新房出来， \\q 又如勇士欢欢喜喜地跑[它的]路程。",
+          "B": "太阳出来，好像新郎走出婚房， \\q 带着强壮战士的喜乐，奔跑它的路程。",
+          "R": "太阳升起，像一个快乐的新郎在结婚那天走出房间。 \\q 它像一个强壮的赛跑者，喜欢跑过整个天空。"
         }
       },
       "decisions": [
@@ -2395,6 +2531,11 @@
           "L": "Mula sa [isang] dulo ng kalangitan [ang] kaniyang paglabas, \\q at ang kaniyang pag-ikot [ay] hanggang sa [kabilang] dulo nila, \\q at walang natatago sa kaniyang init.",
           "B": "Lumalabas ito mula sa isang gilid ng kalangitan at umiikot hanggang sa kabila; \\q walang nakaliligtas sa kaniyang init.",
           "R": "Nagsisimula ito sa isang gilid ng langit at tumatawid hanggang sa kabila. \\q Walang makapagtatago sa init nito."
+        },
+        "zh": {
+          "L": "它的出发是从诸天的[一]端， \\q 它的运行直到[另一]端， \\q 没有什么能隐藏，躲开它的热气。",
+          "B": "它从天的一边启程，环行到另一边； \\q 没有什么能逃过它的炎热。",
+          "R": "它从天空的一边出发，一直走到另一边。 \\q 什么也躲不开它的热。"
         }
       },
       "decisions": [
@@ -2658,6 +2799,11 @@
           "L": "Ang kautusan {{divine_name:ng PANGINOON|ni Yahweh}} [ay] sakdal, nagpapanumbalik ng kaluluwa; \\q ang patotoo {{divine_name:ng PANGINOON|ni Yahweh}} [ay] maaasahan, \\q nagpapatalino sa musmos.",
           "B": "Ang kautusan {{divine_name:ng PANGINOON|ni Yahweh}} ay buo at walang kapintasan; nagbabalik ito ng buhay. \\q Mapagkakatiwalaan ang ipinahayag {{divine_name:ng PANGINOON|ni Yahweh}}; \\q ginagawa nitong marunong ang walang muwang.",
           "R": "Sakdal ang turo {{divine_name:ng PANGINOON|ni Yahweh}}. Nagbibigay ito ng bagong buhay sa mga tao. \\q Totoo at mapagkakatiwalaan ang sinasabi sa atin {{divine_name:ng PANGINOON|ni Yahweh}}. \\q Nagbibigay ito ng karunungan sa mga taong hindi pa natututo."
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}的律法是完全的，使灵魂回转； \\q {{divine_name:上主|雅威}}的见证是可靠的， \\q 使无知的人变得有智慧。",
+          "B": "{{divine_name:上主|雅威}}的律法完整无缺，使生命复苏。 \\q {{divine_name:上主|雅威}}的法度可以信靠， \\q 使无知的人得着智慧。",
+          "R": "{{divine_name:上主|雅威}}的教导是完美的，使人重新得力。 \\q {{divine_name:上主|雅威}}告诉我们的话真实可靠。 \\q 它使还没有学到的人有智慧。"
         }
       },
       "decisions": [
@@ -3111,6 +3257,28 @@
           "reason": "Perfect; the simple, the untaught (m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190190080011"
+          ],
+          "choice": "torah \"律法\" (L, B), \"教导\" (R); testimony \"见证\" (L), \"法度\" (B); precepts \"训示\" (L, B), commandment \"诫命\" (L, B), judgments \"判语\" (L, B) (verses 9-10), as Psalm 119",
+          "alternatives": [
+            " \"训词\"",
+            " \"典章\""
+          ],
+          "reason": "The glossary's words for God's torah in the Psalms and Psalm 119's set for the names of God's word (m1), so that the same Hebrew word has the same Chinese word through the Psalter.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft",
@@ -3371,6 +3539,11 @@
           "L": "Ang mga tuntunin {{divine_name:ng PANGINOON|ni Yahweh}} [ay] matuwid, nagpapagalak sa puso; \\q ang utos {{divine_name:ng PANGINOON|ni Yahweh}} [ay] dalisay, nagbibigay-liwanag sa mga mata.",
           "B": "Tama ang mga tagubiling itinakda {{divine_name:ng PANGINOON|ni Yahweh}} at pinupuno nila ng galak ang puso; \\q malinaw ang utos {{divine_name:ng PANGINOON|ni Yahweh}} at pinakikislap nito ang mga mata.",
           "R": "Tama ang mga tuntunin {{divine_name:ng PANGINOON|ni Yahweh}}, at pinasasaya nila ang mga tao. \\q Malinaw ang mga utos {{divine_name:ng PANGINOON|ni Yahweh}}. Nagbibigay sila ng bagong lakas, gaya ng liwanag na bumabalik sa pagod na mga mata."
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}的训示是正直的，使心欢喜； \\q {{divine_name:上主|雅威}}的诫命是纯净的，使眼目发光。",
+          "B": "{{divine_name:上主|雅威}}定下的训示正确无误，使人心里充满喜乐； \\q {{divine_name:上主|雅威}}的诫命清楚明白，使眼睛发亮。",
+          "R": "{{divine_name:上主|雅威}}的规定都是对的，使人快乐。 \\q {{divine_name:上主|雅威}}的命令清楚明白。它们使人重新有力量，好像疲倦的眼睛重新看见光。"
         }
       },
       "decisions": [
@@ -3755,6 +3928,11 @@
           "L": "Ang takot {{divine_name:sa PANGINOON|kay Yahweh}} [ay] malinis, nananatili magpakailanman; \\q ang mga hatol {{divine_name:ng PANGINOON|ni Yahweh}} [ay] katotohanan; \\q matuwid silang lahat.",
           "B": "Malinis ang takot {{divine_name:sa PANGINOON|kay Yahweh}} at nananatili sa lahat ng panahon; \\q totoo ang mga pasya {{divine_name:ng PANGINOON|ni Yahweh}}, \\q at makatarungan ang bawat isa sa mga ito.",
           "R": "Dalisay at mabuti ang paggalang {{divine_name:sa PANGINOON|kay Yahweh}} nang may pagkamangha, at nananatili ito magpakailanman. \\q Totoo ang mga pasya {{divine_name:ng PANGINOON|ni Yahweh}}. \\q Makatarungan ang bawat isa sa mga ito."
+        },
+        "zh": {
+          "L": "敬畏{{divine_name:上主|雅威}}的心是洁净的，永远长存； \\q {{divine_name:上主|雅威}}的判语是真理， \\q 完全合乎公义。",
+          "B": "敬畏{{divine_name:上主|雅威}}是纯洁的，永不改变； \\q {{divine_name:上主|雅威}}的判语都是真实的， \\q 每一条都公正。",
+          "R": "尊敬并畏惧{{divine_name:上主|雅威}}是纯洁美好的，永远长存。 \\q {{divine_name:上主|雅威}}的决定都是真实的。 \\q 每一个都公平。"
         }
       },
       "decisions": [
@@ -4030,6 +4208,27 @@
           "reason": "God's rulings (m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190190100011"
+          ],
+          "choice": "\"敬畏{{divine_name:上主|雅威}}\" (L, B); \"尊敬并畏惧{{divine_name:上主|雅威}}\" (R)",
+          "alternatives": [
+            "\"怕{{divine_name:上主|雅威}}\""
+          ],
+          "reason": "The glossary's forms for the fear of the LORD (m1); Readable says respect with awe, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft",
@@ -4296,6 +4495,11 @@
           "L": "[Sila ay] higit na kanais-nais kaysa sa ginto, at kaysa sa maraming dalisay na ginto, \\q at higit na matamis kaysa sa pulot at sa tumutulong pulot mula sa bahay-pukyutan.",
           "B": "Higit silang dapat hangarin kaysa sa ginto, higit pa sa napakaraming dalisay na ginto; \\q higit na matamis kaysa sa pulot, higit na matamis kaysa sa sariwang pulot mula sa bahay-pukyutan.",
           "R": "Higit ang halaga nila kaysa sa ginto, kahit sa pinakadalisay na ginto. \\q Higit silang matamis kaysa sa pulot, kahit sa pulot na kakukuha lamang sa bahay-pukyutan."
+        },
+        "zh": {
+          "L": "[它们]比金子、比大量的纯金更令人渴慕， \\q 比蜂蜜和蜂巢里滴出的蜜更甘甜。",
+          "B": "它们值得人渴望，胜过金子，胜过一大堆纯金； \\q 比蜂蜜还甜，比刚从蜂巢取出的蜜还甜。",
+          "R": "它们比金子更宝贵，比最纯的金子还宝贵。 \\q 它们尝起来比蜂蜜还甜，甚至比刚从蜂巢里流出来的蜜还甜。"
         }
       },
       "decisions": [
@@ -4584,6 +4788,11 @@
           "L": "Bukod dito, ang {{deity_pronoun:iyong|Iyong}} lingkod ay binabalaan ng mga ito; \\q sa pagsunod sa mga ito [ay may] malaking gantimpala.",
           "B": "Binabalaan din nila ang {{deity_pronoun:iyong|Iyong}} lingkod, \\q at may malaking gantimpala ang mga sumusunod sa kanila.",
           "R": "Binabalaan nila ako, na {{deity_pronoun:iyong|Iyong}} lingkod. \\q At may malaking gantimpala sa pagsunod sa kanila."
+        },
+        "zh": {
+          "L": "{{deity_pronoun:你|祢}}的仆人也因它们得到警告； \\q 谨守它们，[就有]丰厚的报偿。",
+          "B": "它们也警戒{{deity_pronoun:你|祢}}的仆人， \\q 谨守它们的人必得着丰厚的赏赐。",
+          "R": "它们警告我这{{deity_pronoun:你|祢}}的仆人。 \\q 遵行它们会得到很大的奖赏。"
         }
       },
       "decisions": [
@@ -4935,6 +5144,27 @@
           "reason": "The psalmist speaks to God (m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190190120021"
+          ],
+          "choice": "\"{{deity_pronoun:你|祢}}的仆人\" at every level",
+          "alternatives": [
+            "\"我\" (R)"
+          ],
+          "reason": "The psalmist's humble \"your servant\" (m3); the glossary has \"仆人\" at every level for the psalmist's \"your servant\", and Readable keeps it here, as the English Readable does (\"me, your servant\").",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft",
@@ -5129,6 +5359,11 @@
           "L": "Ang mga pagkakamali, sino ang makauunawa [sa mga iyon]? \\q Mula sa mga natatagong [kasalanan] ay ituring {{deity_pronoun:mo|Mo}} akong walang sala.",
           "B": "Sino ang makapapansin sa lahat ng sarili niyang pagkakamali? \\q Ituring {{deity_pronoun:mo|Mo}} akong malinis sa mga pagkakasalang lingid maging sa akin.",
           "R": "Walang makakikita sa lahat ng maling nagagawa niya. \\q Palayain {{deity_pronoun:mo|Mo}} ako sa pananagutan sa mga kasalanang hindi ko man lang alam."
+        },
+        "zh": {
+          "L": "错误，谁能察觉[它们]呢？ \\q 求你宣告我在隐藏的[过错]上无罪。",
+          "B": "谁能发现自己所有的过失呢？ \\q 求你使我脱离连我自己都不知道的过错。",
+          "R": "没有人能看出自己所做的一切错事。 \\q 我不知道自己犯了哪些罪，求你不要因这些罪怪我。"
         }
       },
       "decisions": [
@@ -5429,6 +5664,11 @@
           "L": "Gayundin mula sa mga palalong [kasalanan] ay pigilan {{deity_pronoun:mo|Mo}} ang {{deity_pronoun:iyong|Iyong}} lingkod; \\q huwag {{deity_pronoun:mong|Mong}} hayaang maghari sila sa akin. \\q Kung magkagayon ay magiging walang kapintasan ako, at magiging walang sala ako sa malaking pagsuway.",
           "B": "Pigilan {{deity_pronoun:mo|Mo}} rin ang {{deity_pronoun:iyong|Iyong}} lingkod sa mapagmataas na mga kasalanan; \\q huwag {{deity_pronoun:mong|Mong}} hayaang maging panginoon ko sila. \\q Kung magkagayon ay magiging buo ako at malaya sa anumang malaking paghihimagsik.",
           "R": "Ilayo {{deity_pronoun:mo|Mo}} ako, na {{deity_pronoun:iyong|Iyong}} lingkod, sa sinasadyang pagkakasala dahil sa kapalaluan. \\q Huwag {{deity_pronoun:mong|Mong}} hayaang kontrolin ako ng mga kasalanang iyon. \\q Kung magkagayon ay magiging walang kapintasan ako at malaya sa malaking paghihimagsik."
+        },
+        "zh": {
+          "L": "也求你拉住{{deity_pronoun:你|祢}}的仆人，远离狂傲的[罪]； \\q 不要让它们管辖我。 \\q 那时我就完全，在大过犯上清白无罪。",
+          "B": "也求你拦住{{deity_pronoun:你|祢}}的仆人，不犯傲慢的罪； \\q 别让它们作我的主人。 \\q 这样，我就毫无瑕疵，没有任何大的悖逆。",
+          "R": "求你保守我这{{deity_pronoun:你|祢}}的仆人，不因骄傲故意犯罪。 \\q 不要让那些罪控制我。 \\q 这样，我就没有可指责的地方，也不会犯大的悖逆的罪。"
         }
       },
       "decisions": [
@@ -5863,6 +6103,11 @@
           "L": "Maging kalugud-lugod nawa ang mga salita ng aking bibig at ang pagbubulay-bulay ng aking puso sa harap {{deity_pronoun:mo|Mo}}, \\q {{divine_name:PANGINOON|Yahweh}}, aking bato at aking Tagapagtubos.",
           "B": "Maging katanggap-tanggap nawa sa harap {{deity_pronoun:mo|Mo}} ang sinasabi ng aking bibig at ang pinagninilayan ng aking puso, \\q {{divine_name:PANGINOON|Yahweh}}, aking bato at aking Tagapagtubos.",
           "R": "{{divine_name:PANGINOON|Yahweh}}, {{deity_pronoun:ikaw|Ikaw}} ang aking bato, at {{deity_pronoun:ikaw|Ikaw}} ang nagliligtas sa akin. \\q Idinadalangin kong malugod {{deity_pronoun:ka|Ka}} sa aking mga salita at sa mga iniisip ng aking puso."
+        },
+        "zh": {
+          "L": "愿我嘴里的话和我心中的沉思，在{{deity_pronoun:你|祢}}面前被接纳， \\q {{divine_name:上主|雅威}}啊，我的磐石和我的救赎主。",
+          "B": "愿我口所说的、心所想的，都蒙{{deity_pronoun:你|祢}}欢喜接纳， \\q {{divine_name:上主|雅威}}啊，你是我的磐石，是我的救赎主。",
+          "R": "{{divine_name:上主|雅威}}啊，{{deity_pronoun:你|祢}}是我的磐石，{{deity_pronoun:你|祢}}是救我的那一位。 \\q 我求{{deity_pronoun:你|祢}}喜欢我所说的话和我心里所想的。"
         }
       },
       "decisions": [
@@ -6127,6 +6372,27 @@
           "choice": "\"pagbubulay-bulay\"",
           "alternatives": [],
           "reason": "What the heart turns over quietly (m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190190150091"
+          ],
+          "choice": "\"我的磐石，我的救赎主\" (L, B); \"救我的那一位\" (R)",
+          "alternatives": [
+            "\"我的保护者\""
+          ],
+          "reason": "The glossary's \"磐石\" for tsur and \"救赎主\" (L, B) / \"拯救……的那一位\" (R) for God as goʾel (m2).",
           "uncertain": false,
           "footnote": false
         }

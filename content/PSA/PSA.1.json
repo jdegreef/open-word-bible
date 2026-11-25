@@ -104,6 +104,11 @@
           "L": "Napakapalad ng {{gender:taong|lalaking}} hindi lumalakad sa payo ng masasama, \\q at sa daan ng mga makasalanan ay hindi tumatayo, \\q at sa upuan ng mga manunuya ay hindi umuupo!",
           "B": "Napakapalad ng {{gender:taong|lalaking}} hindi sumusunod sa payo ng masasama, \\q hindi tumatayo sa landas na nilalakaran ng mga makasalanan, \\q at hindi umuupo kung saan nagtitipon ang mga manunuya!",
           "R": "Tunay na mabuti ang buhay ng taong hindi sumusunod sa payo ng masasamang tao, \\q hindi tumatayo sa daan kasama ng mga makasalanan, \\q at hindi nakikiupo sa mga nanunuya."
+        },
+        "zh": {
+          "L": "何等有福啊，那不在恶人的谋划中行走、 \\q 不在罪人的路上站立、 \\q 不在讥笑者的座位上坐下的人！",
+          "B": "何等有福啊，那不照恶人的主意行事、 \\q 不站在罪人所走的路上、 \\q 不坐在讥笑者聚集之处的人！",
+          "R": "有一种人，他的人生真是美好： \\q 他不听从坏人的主意，不和罪人站在同一条路上， \\q 也不跟爱嘲笑别人的人坐在一起。"
         }
       },
       "decisions": [
@@ -982,6 +987,69 @@
           "reason": "People who scorn wisdom and correction (m5).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190010010011"
+          ],
+          "choice": "\"何等有福\" (L, B); \"人生真是美好\" (R)",
+          "alternatives": [
+            "\"有福了\"",
+            "\"多么幸福\""
+          ],
+          "reason": "The exclamation about a life that goes well (m1), set here for the Psalter and kept wherever \"How blessed\" returns (2:12; 32:1-2; 119:1), as Daniel 12:12 and Jeremiah 17:7 already have it. Readable follows the English Readable's \"Life is truly good for\", as Daniel 12:12 does. The Union Version's sentence is not followed: the three lines are drafted afresh.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190010010022"
+          ],
+          "choice": "\"人\", \"他\", with no gender span",
+          "alternatives": [
+            "\"{{gender:人|男人}}\""
+          ],
+          "reason": "The English gives \"the person\" / \"the one\" by default and \"the man\" as the alternative (m2). Chinese \"人\" and the general \"他\" after \"……的人\" already include women and men, so the Chinese needs no setting here or in verses 2-3 (style guide section 8).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-3",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190010010131"
+          ],
+          "choice": "\"讥笑者\" (L, B); \"爱嘲笑别人的人\" (R)",
+          "alternatives": [
+            "\"好讥笑人的\"",
+            "\"亵慢人\""
+          ],
+          "reason": "People who scorn wisdom and correction (m5). The glossary's \"好讥笑人的\" is shortened to \"讥笑者\" in the line; Readable says it plainly.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft",
@@ -1321,6 +1389,11 @@
           "L": "Kundi nasa kautusan {{divine_name:ng PANGINOON|ni Yahweh}} ang kaniyang kaluguran, \\q at sa {{deity_pronoun:kaniyang|Kaniyang}} kautusan ay nagbubulay-bulay siya araw at gabi.",
           "B": "Sa halip, ang kautusan {{divine_name:ng PANGINOON|ni Yahweh}} ang kaniyang kaluguran, \\q at binibigkas niya ito nang marahan sa kaniyang sarili araw at gabi.",
           "R": "Sa halip, mahal ng taong iyon ang turo {{divine_name:ng PANGINOON|ni Yahweh}} at inuulit-ulit niya ito, pinag-iisipan araw at gabi."
+        },
+        "zh": {
+          "L": "他倒是以{{divine_name:上主|雅威}}的律法为喜悦， \\q 他昼夜低声诵读{{deity_pronoun:他|祂}}的律法。",
+          "B": "相反，{{divine_name:上主|雅威}}的律法是他所喜爱的， \\q 他日日夜夜轻声背诵。",
+          "R": "相反，这人喜爱{{divine_name:上主|雅威}}的教导，无论白天黑夜，都反复念诵，用心思考。"
         }
       },
       "decisions": [
@@ -1972,6 +2045,51 @@
           "reason": "The strong contrast after three \"not\"s (m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190010020032",
+            "o190010020063"
+          ],
+          "choice": "\"律法\" (L, B); \"教导\" (R)",
+          "alternatives": [
+            "\"教训\"",
+            "\"训诲\""
+          ],
+          "reason": "The glossary's form for God's torah in the Psalms. The English says \"instruction\" to keep the wider sense (m1); Chinese \"律法\" is the church's word for the LORD's torah, and Readable's \"教导\" gives the wider sense.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190010020071"
+          ],
+          "choice": "\"低声诵读\" (L); \"轻声背诵\" (B); \"反复念诵，用心思考\" (R)",
+          "alternatives": [
+            "\"思想\"",
+            "\"默想\""
+          ],
+          "reason": "The verb is words said under the breath (m2), so each level keeps the voice; Readable adds the thinking, as the English Readable does. 2:1 uses the same Hebrew verb of the nations.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft",
@@ -2247,6 +2365,11 @@
           "L": "At siya ay gaya ng punongkahoy na inilipat sa tabi ng mga daluyan ng tubig, \\q na nagbibigay ng kaniyang bunga sa kapanahunan nito, \\q at ang dahon nito ay hindi nalalanta; \\q at ang lahat ng kaniyang ginagawa ay nagtatagumpay.",
           "B": "Siya ay gaya ng punongkahoy na itinanim sa tabi ng mga daluyan ng tubig, \\q na namumunga pagdating ng panahon nito, \\q at ang mga dahon ay hindi natutuyo. \\q Anuman ang kaniyang gawin ay nagiging mabuti.",
           "R": "Ang taong iyon ay gaya ng punongkahoy na nakatanim sa tabi ng mga batis. \\q Namumunga ito sa tamang panahon, \\q at hindi natutuyo ang mga dahon nito. \\q Nagiging mabuti ang lahat ng ginagawa ng taong iyon."
+        },
+        "zh": {
+          "L": "这人就像一棵移栽在水渠旁的树， \\q 在它的季节结出它的果子， \\q 它的叶子不凋零； \\q 他所做的一切都会成功。",
+          "B": "这人像一棵移植在水渠边的树， \\q 到了季节就结果实， \\q 叶子永不干枯。 \\q 他无论做什么，都有好结果。",
+          "R": "这样的人像一棵种在溪水边的树。 \\q 它在适当的时候结出果子， \\q 它的叶子不会干掉。 \\q 这人做什么事都顺顺利利。"
         }
       },
       "decisions": [
@@ -2509,6 +2632,27 @@
           "choice": "\"ang lahat ng kaniyang ginagawa\"",
           "alternatives": [],
           "reason": "The person, not the tree (m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190010030031"
+          ],
+          "choice": "\"移栽\" (L); \"移植\" (B); \"种\" (R)",
+          "alternatives": [
+            "\"栽\""
+          ],
+          "reason": "A tree planted on purpose where it will thrive (m1). The same words as Jeremiah 17:8, which echoes this verse, at each level.",
           "uncertain": false,
           "footnote": false
         }
@@ -2880,6 +3024,11 @@
           "L": "Hindi gayon ang masasama, \\q kundi [sila ay] gaya ng ipa na itinataboy ng hangin.",
           "B": "Hindi ganoon ang masasama. \\q Gaya sila ng ipa na tinatangay ng hangin.",
           "R": "Ibang-iba ang masasamang tao. \\q Gaya sila ng tuyong balat ng butil na tinatangay ng hangin."
+        },
+        "zh": {
+          "L": "恶人不是如此， \\q [他们]却像风所吹走的糠秕。",
+          "B": "恶人跟这毫不相同， \\q 他们像糠秕，一阵风就刮走了。",
+          "R": "坏人完全不是这样。 \\q 他们像谷子的干壳，风一吹就飞走了。"
         }
       },
       "decisions": [
@@ -3118,6 +3267,27 @@
           "reason": "The contrast comes first (m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190010040031"
+          ],
+          "choice": "\"恶人\" (L, B); \"坏人\" (R)",
+          "alternatives": [
+            "\"邪恶的人\""
+          ],
+          "reason": "The glossary's word for the wicked, kept through the Psalter; Readable uses the everyday \"坏人\", as the style guide allows.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft",
@@ -3323,6 +3493,11 @@
           "L": "Kaya hindi tatayo ang masasama sa paghuhukom, \\q ni ang mga makasalanan sa kapulungan ng mga matuwid.",
           "B": "Kaya hindi makatatayo ang masasama pagdating ng paghuhukom, \\q at walang lugar ang mga makasalanan sa pagtitipon ng mga matuwid.",
           "R": "Kaya kapag humatol ang Diyos, hindi makatatayo ang masasamang tao. \\q Walang lugar ang mga makasalanan sa piling ng mga gumagawa ng tama."
+        },
+        "zh": {
+          "L": "所以恶人在审判中起不来， \\q 罪人在义人的集会中也[起不来]。",
+          "B": "正因如此，审判来临时，恶人站立不稳； \\q 在义人的聚会中，罪人也没有地位。",
+          "R": "所以{{god_term:神|上帝}}审判的时候，坏人站不住脚。 \\q 在走正路的人中间，罪人没有位置。"
         }
       },
       "decisions": [
@@ -3591,6 +3766,47 @@
           "reason": "Those who live rightly before God (m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190010050031"
+          ],
+          "choice": "\"{{god_term:神|上帝}}\": 神 by default, 上帝 as the reader's alternative",
+          "alternatives": [
+            "\"神\" (fixed)"
+          ],
+          "reason": "Every word naming the God of Israel is written with the Chinese god_term setting (style guide section 4); here it is the God the English Readable names as judge. Both name the same God; only the wording changes.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190010050091"
+          ],
+          "choice": "\"义人\" (L, B); \"走正路的人\" (R)",
+          "alternatives": [
+            "\"好人\"",
+            "\"正直的人\""
+          ],
+          "reason": "Those who live rightly before God (m3). The glossary's \"义人\" at Literal and Balanced; Readable explains it with the picture of the way that runs through the psalm, and keeps \"正直的人\" for the upright.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft",
@@ -3835,6 +4051,11 @@
           "L": "Sapagkat nakikilala {{divine_name:ng PANGINOON|ni Yahweh}} ang daan ng mga matuwid, \\q ngunit ang daan ng masasama ay mapapahamak.",
           "B": "Sapagkat alam {{divine_name:ng PANGINOON|ni Yahweh}} ang landas ng mga matuwid at iniingatan {{deity_pronoun:niya|Niya}} ito, \\q ngunit ang landas ng masasama ay humahantong sa kapahamakan.",
           "R": "Binabantayan {{divine_name:ng PANGINOON|ni Yahweh}} ang buhay ng mga gumagawa ng tama. \\q Ngunit ang buhay ng masasamang tao ay mauuwi sa kapahamakan."
+        },
+        "zh": {
+          "L": "因为{{divine_name:上主|雅威}}认识着义人的路， \\q 而恶人的路将会消亡。",
+          "B": "因为义人所走的路，{{divine_name:上主|雅威}}都知道，并且看顾； \\q 恶人的路却以毁灭告终。",
+          "R": "{{divine_name:上主|雅威}}看顾走正路的人的生活。 \\q 坏人所过的生活却会以毁灭收场。"
         }
       },
       "decisions": [
