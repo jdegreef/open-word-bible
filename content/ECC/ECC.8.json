@@ -107,6 +107,11 @@
           "L": "Sino ang gaya ng marunong? At sino ang nakaaalam ng kahulugan ng isang bagay? Pinagliliwanag ng karunungan ng tao ang kaniyang mukha, at nababago ang tigas ng kaniyang mukha.",
           "B": "Sino ang gaya ng marunong? Sino ang nakaaalam kung paano ipaliwanag ang isang bagay? Pinagliliwanag ng karunungan ang mukha ng tao at pinalalambot ang matigas nitong anyo.",
           "R": "Sino ang gaya ng taong marunong? Sino pa ang nakaaalam kung ano talaga ang kahulugan ng mga bagay? Pinagliliwanag ng karunungan ang mukha ng tao at inaalis ang matigas nitong anyo."
+        },
+        "zh": {
+          "L": "有谁比得上智慧人？有谁懂得一件事的含义？一个人的智慧照亮他的面容，他面容的严厉也随之改变。",
+          "B": "谁能像智慧人一样？谁懂得解释事情？智慧使人容光焕发，使他严厉的神情变得柔和。",
+          "R": "谁能比得上有智慧的人呢？还有谁知道事情真正的意思呢？智慧使人的脸变得明亮，也除去他脸上严厉的表情。"
         }
       },
       "decisions": [
@@ -379,6 +384,43 @@
           "choice": "\"tigas ng kaniyang mukha\"",
           "alternatives": [],
           "reason": "Hardness of face: a stern, harsh look (m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o210080010011",
+            "o210080010021",
+            "o210080010022",
+            "o210080010023",
+            "o210080010031",
+            "o210080010032",
+            "o210080010041",
+            "o210080010051",
+            "o210080010061",
+            "o210080010071",
+            "o210080010081",
+            "o210080010091",
+            "o210080010101",
+            "o210080010102",
+            "o210080010111",
+            "o210080010112",
+            "o210080010121",
+            "o210080010122",
+            "o210080010131"
+          ],
+          "choice": "\"人\" ... \"他\", no gender span",
+          "alternatives": [
+            "a gender span \"人\" / \"男人\""
+          ],
+          "reason": "Chinese \"人\" and the generic \"他\" already include everyone, so the inclusive default the English spans needs no Chinese span (style guide section 8); likewise in the rest of this chapter.",
           "uncertain": false,
           "footnote": false
         }
@@ -709,6 +751,11 @@
           "L": "Sinasabi ko: sundin mo ang bibig ng hari, at iyon ay dahil sa sumpa sa Diyos.",
           "B": "Sinasabi ko: sundin mo ang utos ng hari, dahil sa sumpang ginawa mo sa harap ng Diyos.",
           "R": "Ito ang payo ko: Gawin mo ang iniuutos ng hari, dahil nangako ka sa Diyos."
+        },
+        "zh": {
+          "L": "我[说]：你要守住王的口，[这]是因为{{god_term:神|上帝}}的誓约。",
+          "B": "我说：要服从王的命令，因为你曾在{{god_term:神|上帝}}面前起誓。",
+          "R": "我的劝告是：王吩咐什么，你就做什么，因为你曾经向{{god_term:神|上帝}}许下承诺。"
         }
       },
       "decisions": [
@@ -885,6 +932,29 @@
           "choice": "\"sumpa sa Diyos\"",
           "alternatives": [],
           "reason": "The oath of God: an oath of loyalty sworn before God (m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o210080020061",
+            "o210080020071",
+            "o210080020081"
+          ],
+          "choice": "\"{{god_term:神|上帝}}\", default 神",
+          "alternatives": [
+            "\"上帝\""
+          ],
+          "reason": "The Chinese god_term setting: every word naming the one God is written as a span, 神 by default and 上帝 as the reader's alternative.",
           "uncertain": false,
           "footnote": false
         }
@@ -1111,6 +1181,11 @@
           "L": "Huwag kang magmadaling umalis sa kaniyang harapan; huwag kang manindigan sa masamang bagay, sapagkat ginagawa niya ang lahat ng kaniyang naisin.",
           "B": "Huwag kang magmadaling umalis sa kaniyang harapan, at huwag kang makibahagi sa masamang usapin, sapagkat ginagawa niya ang anumang naisin niya.",
           "R": "Huwag kang magmadaling umalis sa paglilingkod sa hari. Huwag mong ipagtanggol ang maling usapin, dahil magagawa ng hari ang anumang gusto niya."
+        },
+        "zh": {
+          "L": "不要匆忙从他面前离去；不要坚持恶事，因为凡他所喜悦的他都做。",
+          "B": "不要急于离开他的面前，也不要卷入恶事，因为他想做什么就做什么。",
+          "R": "不要急着离开为王效力的岗位。不要支持错误的事，因为王想做什么就可以做什么。"
         }
       },
       "decisions": [
@@ -1614,6 +1689,11 @@
           "L": "Yamang ang salita ng hari ay kapangyarihan, sino ang magsasabi sa kaniya, \"Ano ang ginagawa mo?\"",
           "B": "May pinakamataas na kapangyarihan ang salita ng hari; sino ang makapagsasabi sa kaniya, \"Ano ang ginagawa mo?\"",
           "R": "May kapangyarihan ang salita ng hari, at walang makapagsasabi sa kaniya, \"Ano ang ginagawa mo?\""
+        },
+        "zh": {
+          "L": "因为王的话就是权力，谁会对他说：“你在做什么？”",
+          "B": "王的话带有至高的权力，谁能对他说：“你在做什么？”",
+          "R": "王的话很有权力，没有人能对他说：“你在做什么？”"
         }
       },
       "decisions": [
@@ -2125,6 +2205,11 @@
           "L": "Ang tumutupad sa utos ay hindi makakikilala ng masamang bagay, at malalaman ng puso ng marunong ang panahon at ang paghatol.",
           "B": "Ang sumusunod sa utos ay hindi mapapahamak, at malalaman ng pusong marunong ang tamang panahon at ang tamang paraan.",
           "R": "Hindi mapapahamak ang sinumang sumusunod sa utos. Alam ng taong marunong na may tamang panahon at tamang paraan sa paggawa ng mga bagay."
+        },
+        "zh": {
+          "L": "那谨守命令的，不会尝到坏事；智慧人的心会懂得时机和判断。",
+          "B": "服从命令的人不会受害，有智慧的心会懂得恰当的时机和恰当的方法。",
+          "R": "服从命令的人不会惹上麻烦。有智慧的人知道，做事有合适的时候，也有合适的方法。"
         }
       },
       "decisions": [
@@ -2530,6 +2615,11 @@
           "L": "Sapagkat sa bawat bagay ay may panahon at paghatol, sapagkat mabigat sa tao ang kaniyang kasamaan.",
           "B": "Sapagkat may tamang panahon at tamang paraan sa bawat bagay, bagaman mabigat sa tao ang kaniyang kaguluhan.",
           "R": "May tamang panahon at tamang paraan sa paggawa ng lahat ng bagay, kahit mabigat ang pasan ng mga tao na kaguluhan."
+        },
+        "zh": {
+          "L": "因为每件事都有时机和判断，因为人的苦难沉沉地压在他身上。",
+          "B": "因为每件事都有恰当的时机和恰当的方法，虽然人的苦难沉重地压在他们身上。",
+          "R": "做每件事都有合适的时候和合适的方法，虽然人们背负着沉重的苦难。"
         }
       },
       "decisions": [
@@ -2951,6 +3041,11 @@
           "L": "Sapagkat hindi nila alam kung ano ang mangyayari; sapagkat kung paano ito mangyayari, sino ang makapagsasabi sa kanila?",
           "B": "Sapagkat walang nakaaalam ng darating, at sino ang makapagsasabi kaninuman kung paano ito mangyayari?",
           "R": "Hindi alam ng mga tao kung ano ang mangyayari. Walang makapagsasabi sa kanila kung paano matatapos ang mga bagay."
+        },
+        "zh": {
+          "L": "因为他不知道将要发生什么；它要怎样发生，有谁能对他说明？",
+          "B": "因为没有人知道将来会发生什么，谁又能告诉人事情会怎样发生呢？",
+          "R": "人不知道将来会发生什么事。没有人能告诉他们事情会怎样。"
         }
       },
       "decisions": [
@@ -3324,6 +3419,11 @@
           "L": "Walang taong may kapangyarihan sa hangin upang pigilan ang hangin, at walang kapangyarihan sa araw ng kamatayan; at walang pagpapalaya sa digmaan, at hindi ililigtas ng kasamaan ang mga panginoon nito.",
           "B": "Walang may kapangyarihan sa hangin upang pigilan ito, at walang may kapangyarihan sa araw ng kamatayan. Walang pagpapalaya mula sa digmaang iyon, at hindi ililigtas ng kasamaan ang mga gumagawa nito.",
           "R": "Walang makakokontrol sa hangin at makapipigil sa pag-ihip nito. Walang may kapangyarihan sa araw ng kamatayan. Walang makaliligtas kapag dumating ang digmaang iyon. At hindi maililigtas ng paggawa ng masama ang mga taong gumagawa nito."
+        },
+        "zh": {
+          "L": "没有人有权柄掌管风，能把风拦住；对死亡的日子也没有权柄；在战争中没有退役；邪恶也救不了它的主人。",
+          "B": "没有人能掌控风，把它拦住；也没有人能掌控死亡的日子。那场战争中无人能退出，邪恶也救不了那些行恶的人。",
+          "R": "没有人能控制风，叫它不吹。没有人能控制自己死亡的日子。那场战争来到时，没有人能免除。作恶也救不了作恶的人。"
         }
       },
       "decisions": [
@@ -4046,6 +4146,11 @@
           "L": "Ang lahat ng ito ay nakita ko, nang ibigay ko ang aking puso sa bawat gawang ginagawa sa ilalim ng araw, isang panahong may kapangyarihan ang isang tao sa iba sa kaniyang kapahamakan.",
           "B": "Ang lahat ng ito ay nakita ko nang itinuon ko ang aking isip sa lahat ng ginagawa sa ilalim ng araw, habang may kapangyarihan ang isang tao sa iba sa kapahamakan nito.",
           "R": "Nakita ko ang lahat ng ito habang pinag-iisipan ko ang lahat ng nangyayari sa mundong ito. Kung minsan ay may kapangyarihan ang mga tao sa iba, at ginagamit nila ito upang saktan sila."
+        },
+        "zh": {
+          "L": "我看见了这一切，就把我的心放在日光之下所做的每一件事上：有一段时候，一人掌权辖制另一人，害了对方。",
+          "B": "我专心观察日光之下所发生的一切事时，看见了这一切：一个人掌权管辖另一个人，结果害了那人。",
+          "R": "我思想在这世上发生的一切事时，看见了这一切。有时候人有权力管别人，就用这权力伤害他们。"
         }
       },
       "decisions": [
@@ -4539,6 +4644,11 @@
           "L": "At sa gayon ay nakita kong inilibing ang masasama, at sila ay nagparoo't parito; at mula sa banal na dako ay umaalis sila, at nalimutan sila sa lungsod na doon nila iyon ginawa. Ito man ay hininga.",
           "B": "Pagkatapos ay nakita kong inilibing ang masasama. Dati silang nagpaparoo't parito mula sa banal na dako, at nalimutan sila sa lungsod na doon nila ginawa ang gayong mga bagay. Ito man ay hininga lamang.",
           "R": "Nakita ko rin ang masasamang taong inilibing nang may karangalan. Dati silang nagpaparoo't parito mula sa banal na dako, ang templo. Pagkatapos, sa lungsod na doon nila ginawa ang gayong mga bagay, nalimutan sila. Ito man ay parang hiningang walang saysay."
+        },
+        "zh": {
+          "L": "这样，我看见恶人被埋葬，他们曾经来[去]；他们常从圣所离开，在他们这样行事的城里，他们被人忘记了。这也是气息。",
+          "B": "后来我看见恶人被埋葬。他们生前常在圣地进进出出，在他们做过这些事的城里，人们却把他们忘了。这也不过是一口气。",
+          "R": "我也看见坏人被体面地埋葬。他们以前常常进出圣地，就是圣殿。后来，在他们做过这些事的城里，他们被人忘记了。这也像一口气，叫人想不通。"
         }
       },
       "decisions": [
@@ -5190,6 +5300,11 @@
           "L": "Dahil hindi agad isinasagawa ang hatol laban sa masamang gawa, kaya ang puso ng mga anak ng tao ay puspos sa paggawa ng masama.",
           "B": "Dahil hindi agad isinasagawa ang hatol laban sa masamang gawa, nakatuon ang puso ng mga tao sa paggawa ng masama.",
           "R": "Kapag hindi agad pinarurusahan ang mga gumagawa ng mali, lumalakas ang loob ng iba at nagpapasiya rin silang gumawa ng mali."
+        },
+        "zh": {
+          "L": "因为对恶行的判决没有迅速执行，所以世人心中满怀作恶的心思。",
+          "B": "因为对恶行的判决没有迅速执行，人们就一心想要作恶。",
+          "R": "作恶的人如果没有很快受到惩罚，别人就会胆大起来，也一心想作恶。"
         }
       },
       "decisions": [
@@ -5702,6 +5817,11 @@
           "L": "Bagaman gumagawa ng masama ang makasalanan nang isandaang ulit at humahaba ang kaniyang buhay, alam ko rin na magiging mabuti para sa mga may takot sa Diyos, na natatakot sa harap {{deity_pronoun:niya|Niya}}.",
           "B": "Bagaman gumagawa ng masama ang makasalanan nang isandaang ulit at nabubuhay nang matagal, alam ko pa rin na mapapabuti ang mga may takot sa Diyos, dahil natatakot sila sa {{deity_pronoun:kaniya|Kaniya}}.",
           "R": "Maaaring gumawa ng masama ang makasalanan nang isandaang ulit at mabuhay pa rin nang matagal. Gayunma'y alam kong mapapabuti ang mga taong gumagalang sa Diyos nang may pagkamangha, dahil may pagkamangha sila sa harap {{deity_pronoun:niya|Niya}}."
+        },
+        "zh": {
+          "L": "一个罪人纵然行恶一百[次]，又延长[寿命]，我却也知道，敬畏{{god_term:神|上帝}}的人会得到好处，因为他们在{{deity_pronoun:他|祂}}面前心存敬畏。",
+          "B": "即使一个罪人作了一百次恶，还活得长久，我仍然知道，敬畏{{god_term:神|上帝}}的人会过得好，因为他们敬畏{{deity_pronoun:他|祂}}。",
+          "R": "一个罪人可能作了一百次恶，却还活得很长。可是我知道，尊敬并畏惧{{god_term:神|上帝}}的人，事情会顺利，因为他们在{{deity_pronoun:他|祂}}面前心存敬畏。"
         }
       },
       "decisions": [
@@ -6270,6 +6390,11 @@
           "L": "Ngunit hindi magiging mabuti para sa masama, at hindi hahaba ang kaniyang mga araw, gaya ng anino, sapagkat hindi siya natatakot sa harap ng Diyos.",
           "B": "Ngunit hindi mapapabuti ang masasama, at hindi hahaba ang kanilang mga araw; gaya sila ng anino, dahil hindi sila natatakot sa Diyos.",
           "R": "Ngunit hindi mapapabuti ang masasamang tao. Hindi magtatagal ang kanilang buhay; lumilipas sila na gaya ng anino, dahil hindi nila iginagalang ang Diyos nang may pagkamangha."
+        },
+        "zh": {
+          "L": "恶人却得不到好处，他也不能延长日子，[像]影子一样，因为他在{{god_term:神|上帝}}面前不存敬畏。",
+          "B": "但恶人不会过得好，他们的日子也不会长久；他们像影子一样，因为他们不敬畏{{god_term:神|上帝}}。",
+          "R": "可是坏人的事情不会顺利。他们的生命不会长久，像影子一样过去，因为他们不尊敬、不畏惧{{god_term:神|上帝}}。"
         }
       },
       "decisions": [
@@ -6696,6 +6821,11 @@
           "L": "May hininga na nangyayari sa lupa: na may mga matuwid na sinasapit ang ayon sa gawa ng masasama, at may mga masama na sinasapit ang ayon sa gawa ng matuwid. Sinabi kong ito man ay hininga.",
           "B": "May isang bagay sa lupa na hininga lamang: may mga matuwid na tumatanggap ng nararapat sa masasama, at may mga masama na tumatanggap ng nararapat sa matuwid. Sinabi kong ito man ay hininga lamang.",
           "R": "Narito ang isang bagay na nangyayari sa lupa na parang hiningang hindi mahawakan ninuman: Pinakikitunguhan ang mabubuting tao na para bang gumawa sila ng masama, at pinakikitunguhan ang masasamang tao na para bang gumawa sila ng mabuti. Sinabi kong ito man ay parang hiningang walang saysay."
+        },
+        "zh": {
+          "L": "地上发生着一件气息般的事：有些义人，临到他们的是恶人的作为所该得的；又有些恶人，临到他们的是义人的作为所该得的。我说过，这也是气息。",
+          "B": "地上有一件事，不过是一口气：有些义人得到的是恶人应得的，有些恶人得到的却是义人应得的。我说，这也不过是一口气。",
+          "R": "在这世上有一件事，像一口气一样，没有人能抓住：好人被当作作过恶一样对待，坏人却被当作行过善一样对待。我说，这也像一口气，叫人想不通。"
         }
       },
       "decisions": [
@@ -7328,6 +7458,11 @@
           "L": "At pinuri ko ang kagalakan, sapagkat walang mabuti para sa tao sa ilalim ng araw kundi ang kumain at uminom at magalak, at sasamahan siya nito sa kaniyang pagpapagal sa mga araw ng kaniyang buhay na ibinigay sa kaniya ng Diyos sa ilalim ng araw.",
           "B": "Kaya ipinapayo ko ang kagalakan, sapagkat walang mas mabuti para sa mga tao sa ilalim ng araw kaysa kumain at uminom at magalak. Mananatili iyon sa kanila sa kanilang pagsisikap sa mga araw ng buhay na ibinibigay sa kanila ng Diyos sa ilalim ng araw.",
           "R": "Kaya ipinapayo kong tamasahin ang buhay. Ang pinakamabuting magagawa ng mga tao dito sa lupa ay kumain at uminom at maging masaya. Mananatili sa kanila ang kagalakan sa kanilang pagsisikap sa lahat ng araw ng buhay na ibinibigay sa kanila ng Diyos sa mundong ito."
+        },
+        "zh": {
+          "L": "于是我颂扬喜乐，因为人在日光之下，除了吃、喝、欢乐以外，没有什么是好的；在{{god_term:神|上帝}}赐他在日光之下一生的年日中，这会在他的劳碌中伴随他。",
+          "B": "所以我推崇喜乐，因为在日光之下，人没有什么比吃喝、快乐更好的了。在{{god_term:神|上帝}}赐给他们日光之下的一生中，这喜乐会在辛苦工作中一直伴随他们。",
+          "R": "所以我劝人享受人生。人在这世上能做的最好的事，就是吃喝快乐。在{{god_term:神|上帝}}给他们在这世上的一生中，快乐会在他们辛苦工作时一直陪伴他们。"
         }
       },
       "decisions": [
@@ -7977,6 +8112,11 @@
           "L": "Nang ibigay ko ang aking puso sa pagkilala sa karunungan at sa pagtingin sa gawaing ginagawa sa lupa, sapagkat kahit araw at gabi ay walang tulog na nakikita ang tao sa kaniyang mga mata,",
           "B": "Nang itinuon ko ang aking isip upang makilala ang karunungan at makita ang gawaing ginagawa sa lupa, kung saan walang tulog ang mga tao araw man o gabi,",
           "R": "Sinikap kong maging marunong at unawain ang lahat ng ginagawa ng mga tao dito sa lupa. Napakaabala ng mga tao kaya hindi sila natutulog, araw man o gabi."
+        },
+        "zh": {
+          "L": "当我用心去认识智慧，去察看地上所发生的事务时，因为就连白天黑夜，人的眼睛也见不到睡眠，",
+          "B": "当我专心去认识智慧，去观察地上所做的工作时，看到人们昼夜不得睡眠，",
+          "R": "我努力想要得到智慧，明白人们在这世上所做的一切事。人们忙得白天晚上都不睡觉。"
         }
       },
       "decisions": [
@@ -8578,6 +8718,11 @@
           "L": "nakita ko ang lahat ng gawa ng Diyos, na hindi kayang matuklasan ng tao ang gawang ginagawa sa ilalim ng araw. Gaano man magpagal ang tao sa paghahanap, hindi niya ito matatagpuan; at kahit sabihin ng marunong na alam niya, hindi niya ito kayang matuklasan.",
           "B": "nakita ko ang lahat ng ginawa ng Diyos: walang makatutuklas ng gawang ginagawa sa ilalim ng araw. Gaano man magsikap ang mga tao na saliksikin ito, hindi nila ito matatagpuan. Kahit sabihin pa ng marurunong na alam nila ito, hindi nila ito matutuklasan.",
           "R": "Pagkatapos ay naunawaan ko ito tungkol sa lahat ng ginagawa ng Diyos: walang makauunawa sa lahat ng nangyayari sa mundong ito. Gaano man magsikap ang mga tao, hindi nila ito mauunawaan. Maaaring sabihin ng marurunong na alam nila, ngunit hindi nila ito talaga mauunawaan."
+        },
+        "zh": {
+          "L": "我就看到了{{god_term:神|上帝}}的一切作为：人无法找出日光之下所做的工作。不管人多么劳碌地去寻求，他还是找不着；就算智慧人说[自己知道]，他也无法找出。",
+          "B": "我就看到了{{god_term:神|上帝}}所做的一切：没有人能找出日光之下所做的工作。无论人多么努力去探求，都找不到。即使智慧人声称知道，他们也无法找出来。",
+          "R": "那时我明白了关于{{god_term:神|上帝}}所做的一切：没有人能明白在这世上发生的一切事。不管人多么努力，他们都不能明白。有智慧的人也许会说他们知道，可是他们并不真正明白。"
         }
       },
       "decisions": [

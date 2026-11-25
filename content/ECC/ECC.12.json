@@ -115,6 +115,11 @@
           "L": "At alalahanin mo ang iyong Maylalang sa mga araw ng iyong kabataan, \\q habang hindi pa dumarating ang mga araw ng kaguluhan \\q at hindi pa sumasapit ang mga taon na sasabihin mo, \\q \"Wala akong kasiyahan sa mga iyon,\"",
           "B": "Alalahanin mo ang iyong Maylalang sa mga araw ng iyong kabataan, \\q habang hindi pa dumarating ang mga araw ng kaguluhan \\q at hindi pa lumalapit ang mga taon na sasabihin mo, \\q \"Wala akong kasiyahan sa mga iyon,\"",
           "R": "Alalahanin mo ang Diyos na lumalang sa iyo habang bata ka pa, \\q bago dumating ang mahihirap na araw, \\q bago sumapit ang mga taon na sasabihin mo, \\q \"Hindi ko na tinatamasa ang buhay.\""
+        },
+        "zh": {
+          "L": "在你年轻的日子，要记得你的创造者， \\q 趁着困苦的日子还没有来到， \\q 那些年岁也还没有临近，[到那时]你会说： \\q “我在其中没有快乐”，",
+          "B": "在你年轻的时候，要记得你的创造者， \\q 趁着艰难的日子还没有来到， \\q 那些年岁还没有临近，那时你会说： \\q “我从中找不到任何乐趣”，",
+          "R": "趁你还年轻，要记得那位造你的{{god_term:神|上帝}}， \\q 要在艰难的日子来到以前， \\q 要在那些年岁来到以前；到那时你会说： \\q “我再也不享受人生了。”"
         }
       },
       "decisions": [
@@ -571,6 +576,51 @@
           "reason": "Creator: the one who formed you (m1).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210120010031",
+            "o210120010032",
+            "o210120010061",
+            "o210120010071",
+            "o210120010081"
+          ],
+          "choice": "verses 1-7 drafted fresh; \"要记得你的创造者\" (L, B); \"要记得那位造你的{{god_term:神|上帝}}\" (R)",
+          "alternatives": [
+            "\"记念造你的主\""
+          ],
+          "reason": "The poem on old age is drafted from the Hebrew and the English levels so that no line follows its familiar Chinese wording. Each \"before\" is \"趁着……还没有\" at Literal and Balanced, and \"在……以前\" at Readable.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o210120010031",
+            "o210120010032"
+          ],
+          "choice": "\"{{god_term:神|上帝}}\", default 神",
+          "alternatives": [
+            "\"上帝\""
+          ],
+          "reason": "The Chinese god_term setting: every word naming the one God is written as a span, 神 by default and 上帝 as the reader's alternative.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft",
@@ -926,6 +976,11 @@
           "L": "bago magdilim ang araw at ang liwanag, \\q at ang buwan at ang mga bituin, \\q at bumalik ang mga ulap pagkatapos ng ulan,",
           "B": "bago dumilim ang araw at ang liwanag, \\q at ang buwan at ang mga bituin, \\q at bumalik ang mga ulap pagkatapos ng ulan,",
           "R": "Alalahanin mo siya bago dumilim ang araw at ang liwanag nito \\q at ang buwan at ang mga bituin, \\q at bumalik ang mga ulap pagkatapos ng ulan."
+        },
+        "zh": {
+          "L": "趁着太阳、光、 \\q 月亮和星星还没有变黑， \\q 云还没有在雨后又回来，",
+          "B": "趁着太阳和亮光， \\q 月亮和星星还没有昏暗， \\q 雨过之后乌云还没有再来，",
+          "R": "要记得{{god_term:神|上帝}}，趁太阳和阳光、 \\q 月亮和星星还没有变暗， \\q 云还没有在雨后又回来。"
         }
       },
       "decisions": [
@@ -1135,6 +1190,25 @@
           "choice": "\"magdilim ang araw\"",
           "alternatives": [],
           "reason": "Darkening lights: the dimming of old age, like winter storms (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "R"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o210120020011"
+          ],
+          "choice": "\"要记得{{god_term:神|上帝}}\"",
+          "alternatives": [
+            "\"要记得{{deity_pronoun:他|祂}}\""
+          ],
+          "reason": "The English Readable repeats \"Remember him\" with a plain \"him\"; Chinese names God, since a pronoun for God would need a span the English does not have. Likewise at verse 6.",
           "uncertain": false,
           "footnote": false
         }
@@ -1468,6 +1542,11 @@
           "L": "sa araw na manginig ang mga tagapag-ingat ng bahay, \\q at manguba ang malalakas na lalaki, \\q at tumigil ang mga babaeng gumigiling dahil kakaunti na sila, \\q at dumilim ang mga babaeng tumitingin sa mga bintana,",
           "B": "sa araw na manginig ang mga bantay ng bahay \\q at manguba ang malalakas na lalaki, \\q kapag tumigil ang mga babaeng gumigiling dahil kakaunti na sila, \\q at malabo na ang nakikita ng mga babaeng tumitingin sa mga bintana,",
           "R": "Iyon ang panahon na manginginig ang mga bantay ng bahay \\q at mangunguba ang malalakas na lalaki. \\q Titigil ang mga babaeng gumigiling ng butil, dahil iilan na lamang sila, \\q at halos wala nang makita ang mga babaeng tumitingin sa mga bintana."
+        },
+        "zh": {
+          "L": "在那日，家里的看守者颤抖， \\q 强壮的男人弯曲， \\q 磨面的女子因为人少而停工， \\q 透过窗户观望的[女子]变得昏暗，",
+          "B": "到那天，守护房屋的人发抖， \\q 强壮的男人佝偻， \\q 推磨的女子因为人少而停下， \\q 从窗口往外看的女子也只能模糊地看见，",
+          "R": "那时，看守房子的人会发抖， \\q 强壮的男人会弯腰驼背。 \\q 磨麦子的女人会停下来，因为她们只剩下几个人。 \\q 从窗口往外看的女人几乎看不见了。"
         }
       },
       "decisions": [
@@ -2033,6 +2112,11 @@
           "L": "at masarhan ang mga pinto sa lansangan, \\q kapag humina ang ingay ng gilingan, \\q at bumangon ang tao sa huni ng ibon, \\q at mapababa ang lahat ng anak na babae ng awit,",
           "B": "kapag nasarhan ang mga pinto sa lansangan \\q at humina ang ingay ng gilingan, \\q kapag bumabangon ang mga tao sa huni ng ibon \\q at humihina ang lahat ng awit,",
           "R": "Masasarhan ang mga pinto sa lansangan, \\q at hihina ang tunog ng gilingan. \\q Magigising ang mga tao kapag umawit ang isang ibon, \\q at maglalaho ang lahat ng awit."
+        },
+        "zh": {
+          "L": "临街的门被关上， \\q 磨面的声音低下去， \\q 人随着鸟的声音起身， \\q 一切歌的女儿都低沉下来，",
+          "B": "临街的门关起来， \\q 磨面的声音渐渐消失， \\q 人一听见鸟叫就醒来， \\q 一切歌声都变得微弱，",
+          "R": "通往街上的门会关起来， \\q 磨坊的声音会变小。 \\q 人会在鸟一叫的时候就醒来， \\q 所有的歌声都会消失。"
         }
       },
       "decisions": [
@@ -2581,6 +2665,11 @@
           "L": "at matakot din sila sa matataas na lugar, at may mga sindak sa daan, \\q at mamulaklak ang punong almendro, at kumaladkad ang balang, \\q at mawalan ng bisa ang bunga ng alkaparra; \\q sapagkat pupunta ang tao sa kaniyang walang-hanggang tahanan, \\q at magpapalibot sa lansangan ang mga nagluluksa,",
           "B": "kapag natatakot ang mga tao sa matataas na lugar at sa mga panganib sa daan, \\q kapag namumulaklak ang punong almendro at kumakaladkad ang balang, \\q at hindi na pumupukaw ng pagnanasa ang bunga ng alkaparra, \\q sapagkat ang bawat isa ay pupunta sa kaniyang walang-hanggang tahanan, \\q at nagpapalibot sa mga lansangan ang mga nagluluksa,",
           "R": "Matatakot ang mga tao sa matataas na lugar at sa mga panganib sa lansangan. \\q Mamumulaklak ang punong almendro, at kakaladkad ang balang, \\q at mawawala na ang pagnanasa. \\q Nangyayari ang lahat ng ito dahil papunta na ang mga tao sa kanilang walang-hanggang tahanan, \\q at naglalakad sa mga lansangan ang mga nagluluksa."
+        },
+        "zh": {
+          "L": "他们也惧怕高处，路上[满是]恐怖， \\q 杏树开花，蚱蜢拖行， \\q 刺山柑也失效； \\q 因为人正走向他永久的居所， \\q 送丧的人在街上走来走去，",
+          "B": "那时人们害怕高处，也害怕路上的危险， \\q 杏树开花，蚱蜢拖着身子爬行， \\q 刺山柑再也激不起欲望， \\q 因为人人都要去他们永久的家， \\q 送丧的人在街上走来走去，",
+          "R": "人们会害怕高处，也害怕街上的危险。 \\q 杏树会开花，蚱蜢只能拖着身子爬。 \\q 欲望也都没有了。 \\q 这一切发生，是因为人正在走向他们永远的家， \\q 送丧的人在街上走来走去。"
         }
       },
       "decisions": [
@@ -3072,6 +3161,58 @@
           "reason": "Caper-berry: taken to stir appetite and desire (m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o210120050011",
+            "o210120050021",
+            "o210120050022",
+            "o210120050031",
+            "o210120050041",
+            "o210120050042",
+            "o210120050051",
+            "o210120050052",
+            "o210120050061",
+            "o210120050062",
+            "o210120050071",
+            "o210120050072",
+            "o210120050081",
+            "o210120050082",
+            "o210120050091",
+            "o210120050092",
+            "o210120050101",
+            "o210120050102",
+            "o210120050111",
+            "o210120050112",
+            "o210120050121",
+            "o210120050131",
+            "o210120050141",
+            "o210120050142",
+            "o210120050151",
+            "o210120050161",
+            "o210120050171",
+            "o210120050172",
+            "o210120050181",
+            "o210120050182",
+            "o210120050191",
+            "o210120050192",
+            "o210120050201",
+            "o210120050202"
+          ],
+          "choice": "\"人\" ... \"他\", no gender span",
+          "alternatives": [
+            "a gender span \"人\" / \"男人\""
+          ],
+          "reason": "Chinese \"人\" and the generic \"他\" already include everyone, so the inclusive default the English spans needs no Chinese span (style guide section 8); likewise at verse 13.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft",
@@ -3531,6 +3672,11 @@
           "L": "bago malagot ang pisi na pilak, \\q at madurog ang mangkok na ginto, \\q at mabasag ang banga sa bukal, \\q at madurog ang gulong sa balon,",
           "B": "bago malagot ang pising pilak \\q at mabasag ang mangkok na ginto, \\q bago madurog ang banga sa bukal \\q at mabasag ang gulong sa balon,",
           "R": "Alalahanin mo siya bago malagot ang pising pilak \\q at mabasag ang mangkok na ginto, \\q bago madurog ang banga sa bukal \\q at masira ang gulong sa balon."
+        },
+        "zh": {
+          "L": "趁着银的绳索还没有断开， \\q 金的碗还没有被压碎， \\q 罐子还没有在泉边摔碎， \\q 轮子还没有在蓄水池旁被压坏，",
+          "B": "趁着银绳还没有断裂， \\q 金碗还没有破损， \\q 水罐还没有在泉边碎裂， \\q 吊水的轮子还没有在井边毁坏，",
+          "R": "要记得{{god_term:神|上帝}}，趁银绳还没有断， \\q 金碗还没有破， \\q 水罐还没有在泉边打碎， \\q 井边的轮子还没有坏掉。"
         }
       },
       "decisions": [
@@ -4130,6 +4276,11 @@
           "L": "at bumalik ang alabok sa lupa gaya ng dati, \\q at bumalik ang espiritu sa Diyos na nagbigay nito.",
           "B": "at bumalik ang alabok sa lupang pinagmulan nito, \\q at bumalik ang espiritu sa Diyos, na nagbigay nito.",
           "R": "Pagkatapos ay babalik ang katawan sa alabok na pinagmulan nito, \\q at babalik ang espiritu sa Diyos, na nagbigay nito."
+        },
+        "zh": {
+          "L": "尘土就照它原来的样子回到地上， \\q 灵也回到那赐下它的{{god_term:神|上帝}}那里。",
+          "B": "尘土回到它所出的地里， \\q 灵回到{{god_term:神|上帝}}那里，因为灵是{{god_term:神|上帝}}所赐的。",
+          "R": "那时身体会回到它所出的尘土里， \\q 灵会回到{{god_term:神|上帝}}那里，因为是{{god_term:神|上帝}}把灵给人的。"
         }
       },
       "decisions": [
@@ -4401,6 +4552,28 @@
           "choice": "\"alabok\"",
           "alternatives": [],
           "reason": "Dust returning: echoes the forming of humankind from dust and breath (m1).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210120070063"
+          ],
+          "choice": "\"灵\" (spirit) for ruach, as at 3:19-21",
+          "alternatives": [
+            "\"气息\"",
+            "\"气\""
+          ],
+          "reason": "The breath of life that God gives is \"灵\" at every level, following the English \"spirit\", so that it is not confused with hevel in the next verse.",
           "uncertain": false,
           "footnote": false
         }
@@ -4678,6 +4851,11 @@
           "L": "Hininga ng mga hininga, sabi ni Kohelet; ang lahat ay hininga.",
           "B": "Hininga at hininga lamang, sabi ng Guro. Ang lahat ay hininga lamang.",
           "R": "Walang nananatili! sabi ng Guro. Lumilipas ang lahat na gaya ng hininga."
+        },
+        "zh": {
+          "L": "气息中的气息，柯希列说；一切都是气息。",
+          "B": "一口气，又一口气，传道者这样说。一切都不过是一口气。",
+          "R": "没有什么能长久！传道者这样说。一切都像一口气，转眼就散了。"
         }
       },
       "decisions": [
@@ -5096,6 +5274,32 @@
           "reason": "Breath of breaths: the utmost breath, a superlative (m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210120080011",
+            "o210120080021",
+            "o210120080031",
+            "o210120080042",
+            "o210120080052",
+            "o210120080061"
+          ],
+          "choice": "the same wording as 1:2 at each level",
+          "alternatives": [
+            "a new wording"
+          ],
+          "reason": "The cry that opened the book closes it (m1): each level repeats 1:2's Chinese.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft",
@@ -5295,6 +5499,11 @@
           "L": "At higit pa, bukod sa pagiging marunong ni Kohelet, tinuruan din niya ang bayan ng kaalaman; at tinimbang niya at sinaliksik at inayos ang maraming kawikaan.",
           "B": "Bukod sa pagiging marunong, tinuruan din ng Guro ang bayan ng kaalaman. Tinimbang niya, pinag-aralan at inayos ang maraming kawikaan.",
           "R": "Marunong ang Guro, at itinuro rin niya sa bayan ang kaniyang nalalaman. Pinakinggan niya ang maraming matatalinong kasabihan, pinag-aralan ang mga iyon, at inayos nang maayos."
+        },
+        "zh": {
+          "L": "再者，柯希列除了有智慧以外，还将知识教导百姓；他又衡量、查考，编排了许多箴言。",
+          "B": "传道者除了有智慧，还把知识教给百姓。他衡量、研究并整理了许多箴言。",
+          "R": "传道者很有智慧，他也把自己所知道的教给百姓。他听了许多智慧的话，研究它们，又把它们整理好。"
         }
       },
       "decisions": [
@@ -5923,6 +6132,11 @@
           "L": "Hinangad ni Kohelet na makasumpong ng mga salitang kalugud-lugod, at ng isinulat nang matuwid, mga salita ng katotohanan.",
           "B": "Hinangad ng Guro na makasumpong ng mga salitang kalugud-lugod, at isulat nang tapat ang mga salita ng katotohanan.",
           "R": "Sinikap ng Guro na makasumpong ng angkop na mga salita. Tapat at totoo ang kaniyang isinulat."
+        },
+        "zh": {
+          "L": "柯希列寻求找到令人喜悦的言语，就是正直写下的，真理的言语。",
+          "B": "传道者设法找到动听的言语，又诚实地写下真理的话。",
+          "R": "传道者努力去找最恰当的话。他所写的都是诚实、真实的。"
         }
       },
       "decisions": [
@@ -6268,6 +6482,11 @@
           "L": "Ang mga salita ng marurunong ay gaya ng mga tungkod na pantaboy, at gaya ng mga pakong matibay na nakabaon ang mga panginoon ng mga kalipunan; ibinigay ang mga iyon ng iisang pastol.",
           "B": "Ang mga salita ng marurunong ay gaya ng mga tungkod na pantaboy, at ang mga tinipong kasabihan ay gaya ng mga pakong matibay na nakabaon; ibinigay ang mga iyon ng iisang pastol.",
           "R": "Ang mga salita ng marurunong ay gaya ng matutulis na tungkod na ipinantataboy sa mga baka. Ang kanilang mga tinipong kasabihan ay gaya ng mga pakong matibay na nakabaon. Ibinigay ang mga iyon ng iisang pastol."
+        },
+        "zh": {
+          "L": "[那些]智慧人的话像刺棒，汇集[话语]的主人们像钉得牢牢的钉子；它们是从一位牧人那里赐下的。",
+          "B": "智慧人的话好像刺棒，收集起来的格言好像钉得牢固的钉子；它们都是从一位牧人那里来的。",
+          "R": "有智慧的人说的话，就像赶牛用的尖棍子。他们收集起来的格言，就像钉得很牢的钉子。这些话都是一位牧人所给的。"
         }
       },
       "decisions": [
@@ -6856,6 +7075,11 @@
           "L": "At higit pa sa mga ito, anak ko, mag-ingat ka: sa paggawa ng maraming aklat ay walang katapusan, at ang labis na pag-aaral ay pagod ng laman.",
           "B": "Bukod sa mga ito, anak ko, mag-ingat ka: walang katapusan ang paggawa ng maraming aklat, at nakapapagod sa katawan ang labis na pag-aaral.",
           "R": "Anak ko, mag-ingat ka sa anumang lampas sa mga salitang ito. Hindi titigil ang mga tao sa pagsusulat ng mga aklat, at pagagodin ka ng labis na pag-aaral."
+        },
+        "zh": {
+          "L": "还有，我儿，在这些之外，你要受警告：多多地造书，没有尽头；大量地钻研，使肉体疲乏。",
+          "B": "我儿，在这些话以外，你要谨慎：书是写不完的，过度钻研只会叫人筋疲力尽。",
+          "R": "孩子，对这些话以外的东西，你要小心。人们写书永远写不完。读书太多会让你很累。"
         }
       },
       "decisions": [
@@ -7116,6 +7340,28 @@
           "choice": "\"pagod ng laman\"",
           "alternatives": [],
           "reason": "Weariness of flesh: bodily exhaustion.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210120120031",
+            "o210120120032"
+          ],
+          "choice": "\"我儿\" (L, B); \"孩子\" (R)",
+          "alternatives": [
+            "\"我的儿子\""
+          ],
+          "reason": "The glossary's forms for \"my son\" in Proverbs, a teacher speaking to a pupil.",
           "uncertain": false,
           "footnote": false
         }
@@ -7396,6 +7642,11 @@
           "L": "Ang wakas ng bagay, yamang narinig na ang lahat: matakot ka sa Diyos at sundin mo ang {{deity_pronoun:kaniyang|Kaniyang}} mga utos, sapagkat ito ang kabuuan ng tao.",
           "B": "Ito ang wakas ng bagay, ngayong narinig na ang lahat: Matakot ka sa Diyos at sundin mo ang {{deity_pronoun:kaniyang|Kaniyang}} mga utos, sapagkat ito ang kabuuan ng pagiging tao.",
           "R": "Nasabi na ang lahat, at ito ang konklusyon: Igalang mo ang Diyos nang may pagkamangha at sundin mo ang {{deity_pronoun:kaniyang|Kaniyang}} mga utos. Iyan ang tunay na kahulugan ng buhay para sa bawat tao."
+        },
+        "zh": {
+          "L": "事情的结论，一切都已经听过了：要敬畏{{god_term:神|上帝}}，持守{{deity_pronoun:他|祂}}的诫命，因为这是人的全部。",
+          "B": "这就是事情的结论，一切都已经听过了：要敬畏{{god_term:神|上帝}}，遵行{{deity_pronoun:他|祂}}的诫命，因为这就是做人的全部意义。",
+          "R": "现在一切都说完了，结论是这样：要尊敬并畏惧{{god_term:神|上帝}}，遵守{{deity_pronoun:他|祂}}的诫命。这就是每个人一生的意义所在。"
         }
       },
       "decisions": [
@@ -7793,6 +8044,33 @@
           "reason": "All of humankind: the whole duty and meaning of a person.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o210120130061",
+            "o210120130062",
+            "o210120130071",
+            "o210120130121",
+            "o210120130131",
+            "o210120130141",
+            "o210120130142"
+          ],
+          "choice": "drafted fresh: \"要敬畏{{god_term:神|上帝}}，持守（遵行）{{deity_pronoun:他|祂}}的诫命\"; \"人的全部\" (L), \"做人的全部意义\" (B), \"每个人一生的意义所在\" (R)",
+          "alternatives": [
+            "\"人所当尽的本分\""
+          ],
+          "reason": "The book's last word keeps the book's form for \"fear God\" at each level; the rest is drafted from the Hebrew so that the line does not follow its familiar Chinese wording.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft",
@@ -8091,6 +8369,11 @@
           "L": "Sapagkat ang bawat gawa ay dadalhin ng Diyos sa paghatol, pati ang bawat bagay na nakatago, mabuti man o masama.",
           "B": "Sapagkat dadalhin ng Diyos sa paghatol ang bawat gawa, pati ang lahat ng nakatago, mabuti man o masama.",
           "R": "Hahatulan ng Diyos ang lahat ng ginagawa ng mga tao, kahit ang ginagawa nang lihim, mabuti man o masama."
+        },
+        "zh": {
+          "L": "因为每一件作为，{{god_term:神|上帝}}都要带进审判里，连同每一件隐藏的事，不管是好的还是恶的。",
+          "B": "因为{{god_term:神|上帝}}要审判每一件行为，包括一切隐秘的事，无论它是好是坏。",
+          "R": "{{god_term:神|上帝}}会审判人所做的一切，连暗中所做的也包括在内，不管是好事还是坏事。"
         }
       },
       "decisions": [
