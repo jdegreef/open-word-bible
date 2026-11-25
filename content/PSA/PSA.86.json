@@ -97,6 +97,11 @@
           "L": "Isang panalangin ni David. \\q Ikiling {{deity_pronoun:mo|Mo}}, {{divine_name:PANGINOON|Yahweh}}, ang {{deity_pronoun:iyong|Iyong}} tainga; sagutin {{deity_pronoun:mo|Mo}} ako, \\q sapagkat dukha at nangangailangan ako.",
           "B": "Isang panalangin ni David. \\q {{divine_name:PANGINOON|Yahweh}}, ikiling {{deity_pronoun:mo|Mo}} sa akin ang {{deity_pronoun:iyong|Iyong}} tainga at sumagot {{deity_pronoun:ka|Ka}}, \\q sapagkat ako ay naghihirap at nangangailangan.",
           "R": "Isang panalangin ni David. \\q {{divine_name:PANGINOON|Yahweh}}, pakinggan mo ako at sagutin mo ako. \\q Dukha ako, at kailangan ko ng tulong."
+        },
+        "zh": {
+          "L": "大卫的祷告。 \\q {{divine_name:上主|雅威}}啊，请把{{deity_pronoun:你|祢}}的耳朵转向我，回答我， \\q 因为我是困苦、贫穷的人。",
+          "B": "大卫的祷告。 \\q {{divine_name:上主|雅威}}啊，求{{deity_pronoun:你|祢}}转耳向我，回答我， \\q 因为我困苦又缺乏。",
+          "R": "大卫作的祷告。 \\q {{divine_name:上主|雅威}}啊，请听我说，回答我。 \\q 我很穷，我需要帮助。"
         }
       },
       "decisions": [
@@ -413,6 +418,50 @@
           "reason": "Poor and needy: helpless and dependent on God (m4).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190860010011",
+            "o190860010021",
+            "o190860010022"
+          ],
+          "choice": "\"大卫的祷告\" (L, B); \"大卫作的祷告\" (R)",
+          "alternatives": [
+            "\"大卫的诗\""
+          ],
+          "reason": "Tefillah \"a prayer\" as the glossary's title table and Psalm 17:1; Readable says \"by David\", so it takes the Psalter's \"大卫作\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190860010081",
+            "o190860010092"
+          ],
+          "choice": "\"困苦\" (L, B for \"afflicted\"); \"贫穷的人\" (L), \"缺乏\" (B)",
+          "alternatives": [
+            "\"穷乏\""
+          ],
+          "reason": "The Psalter's forms for the afflicted and the needy (m4).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft",
@@ -679,6 +728,11 @@
           "L": "Ingatan {{deity_pronoun:mo|Mo}} ang aking kaluluwa, sapagkat tapat ako; iligtas {{deity_pronoun:mo|Mo}} ang {{deity_pronoun:iyong|Iyong}} lingkod, {{deity_pronoun:ikaw|Ikaw}} [ang] aking Diyos, \\q ang nagtitiwala sa {{deity_pronoun:iyo|Iyo}}.",
           "B": "Ingatan {{deity_pronoun:mo|Mo}} ang aking buhay, sapagkat tapat ako sa {{deity_pronoun:iyo|Iyo}}. Ikaw ang aking Diyos; sagipin {{deity_pronoun:mo|Mo}} ako, ang {{deity_pronoun:iyong|Iyong}} lingkod, \\q sapagkat nagtitiwala ako sa {{deity_pronoun:iyo|Iyo}}.",
           "R": "Panatilihin {{deity_pronoun:mo|Mo}} akong buháy, sapagkat ako ay {{deity_pronoun:iyo|Iyo}} at tapat ako. Ikaw ang aking Diyos. Iligtas {{deity_pronoun:mo|Mo}} ako, ang {{deity_pronoun:iyong|Iyong}} lingkod. \\q Nagtitiwala ako sa {{deity_pronoun:iyo|Iyo}}."
+        },
+        "zh": {
+          "L": "守护我的灵魂，因为我是忠心的；拯救{{deity_pronoun:你|祢}}的仆人吧，{{deity_pronoun:你|祢}}[是]我的{{god_term:神|上帝}}， \\q [我是]信靠{{deity_pronoun:你|祢}}的人。",
+          "B": "保护我的性命，因为我对{{deity_pronoun:你|祢}}忠心。我的{{god_term:神|上帝}}啊，救救我——{{deity_pronoun:你|祢}}的仆人， \\q 因为我信靠{{deity_pronoun:你|祢}}。",
+          "R": "让我活下去，因为我属于{{deity_pronoun:你|祢}}，我是忠心的。我的{{god_term:神|上帝}}啊，救救我，{{deity_pronoun:你|祢}}的仆人。 \\q 我信靠{{deity_pronoun:你|祢}}。"
         }
       },
       "decisions": [
@@ -946,6 +1000,49 @@
           "choice": "\"{{deity_pronoun:ikaw|Ikaw}} [ang] aking Diyos\"",
           "alternatives": [],
           "reason": "You, my God: a confession inside the request (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190860020091"
+          ],
+          "choice": "\"{{god_term:神|上帝}}\"",
+          "alternatives": [
+            "\"神\" with no span"
+          ],
+          "reason": "Every word naming the one God is written with the Chinese god_term setting (style guide section 4): \"神\" by default, \"上帝\" as the reader's alternative.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190860020071",
+            "o190860020072"
+          ],
+          "choice": "\"{{deity_pronoun:你|祢}}的仆人\"",
+          "alternatives": [
+            "\"我\""
+          ],
+          "reason": "The psalmist calls himself \"your servant\" at every level, as the English does at every level here; so also verses 4 and 16.",
           "uncertain": false,
           "footnote": false
         }
@@ -1236,6 +1333,11 @@
           "L": "Maging mapagbiyaya {{deity_pronoun:ka|Ka}} sa akin, Panginoon ko, \\q sapagkat sa {{deity_pronoun:iyo|Iyo}} ako tumatawag buong araw.",
           "B": "Panginoon, ipakita {{deity_pronoun:mo|Mo}} sa akin ang {{deity_pronoun:iyong|Iyong}} kagandahang-loob; \\q patuloy akong tumatawag sa {{deity_pronoun:iyo|Iyo}} sa buong maghapon.",
           "R": "Panginoon, maging mabuti {{deity_pronoun:ka|Ka}} sa akin. \\q Tumatawag ako sa {{deity_pronoun:iyo|Iyo}} buong araw."
+        },
+        "zh": {
+          "L": "主啊，恩待我吧， \\q 因为我整天向{{deity_pronoun:你|祢}}呼求。",
+          "B": "主啊，向我显出{{deity_pronoun:你|祢}}的恩宠； \\q 我一整天不停地向{{deity_pronoun:你|祢}}呼求。",
+          "R": "主啊，恩待我吧。 \\q 我整天向{{deity_pronoun:你|祢}}呼求。"
         }
       },
       "decisions": [
@@ -1506,6 +1608,27 @@
           "reason": "Be gracious: show undeserved favor (m2).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190860030021"
+          ],
+          "choice": "\"主\"",
+          "alternatives": [
+            "\"我的主\""
+          ],
+          "reason": "Adonai, the title (m1): \"主\" with no span, kept apart from the divine name; so also verses 4, 5, 8, 9, 12 and 15.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft",
@@ -1697,6 +1820,11 @@
           "L": "Pasayahin {{deity_pronoun:mo|Mo}} ang kaluluwa ng {{deity_pronoun:iyong|Iyong}} lingkod, \\q sapagkat sa {{deity_pronoun:iyo|Iyo}}, Panginoon ko, itinataas ko ang aking kaluluwa.",
           "B": "Pagalakin {{deity_pronoun:mo|Mo}} ang {{deity_pronoun:iyong|Iyong}} lingkod, \\q sapagkat ang puso ko ay umaabot sa {{deity_pronoun:iyo|Iyo}}, Panginoon.",
           "R": "Panginoon, punuin {{deity_pronoun:mo|Mo}} ng kagalakan ako, ang {{deity_pronoun:iyong|Iyong}} lingkod. \\q Nananabik ako sa {{deity_pronoun:iyo|Iyo}} at buong puso akong umaasa sa {{deity_pronoun:iyo|Iyo}}."
+        },
+        "zh": {
+          "L": "使{{deity_pronoun:你|祢}}仆人的灵魂欢喜， \\q 因为主啊，我向{{deity_pronoun:你|祢}}举起我的灵魂。",
+          "B": "使{{deity_pronoun:你|祢}}的仆人欢喜， \\q 因为主啊，我的心切切向往{{deity_pronoun:你|祢}}。",
+          "R": "主啊，使我，{{deity_pronoun:你|祢}}的仆人，满心喜乐。 \\q 我全心渴慕{{deity_pronoun:你|祢}}，仰望{{deity_pronoun:你|祢}}。"
         }
       },
       "decisions": [
@@ -1808,6 +1936,27 @@
           "choice": "\"Panginoon ko\"",
           "alternatives": [],
           "reason": "My Lord: the title 'Adonai (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190860040071",
+            "o190860040072",
+            "o190860040081"
+          ],
+          "choice": "\"我向{{deity_pronoun:你|祢}}举起我的灵魂\" (L)",
+          "alternatives": [
+            "\"我的心仰望{{deity_pronoun:你|祢}}\""
+          ],
+          "reason": "The same words as Psalm 25:1, so Literal keeps that verse's Chinese.",
           "uncertain": false,
           "footnote": false
         }
@@ -2043,6 +2192,11 @@
           "L": "Sapagkat {{deity_pronoun:ikaw|Ikaw}}, Panginoon ko, [ay] mabuti at mapagpatawad, \\q at sagana sa tapat na pag-ibig sa lahat ng tumatawag sa {{deity_pronoun:iyo|Iyo}}.",
           "B": "Sapagkat {{deity_pronoun:ikaw|Ikaw}}, Panginoon, ay mabuti at handang magpatawad, \\q mayaman sa tapat na pag-ibig sa bawat tumatawag sa {{deity_pronoun:iyo|Iyo}}.",
           "R": "Panginoon, mabuti {{deity_pronoun:ka|Ka}}, at handa {{deity_pronoun:kang|Kang}} magpatawad. \\q Dakila ang {{deity_pronoun:iyong|Iyong}} tapat na pag-ibig sa lahat ng tumatawag sa {{deity_pronoun:iyo|Iyo}}."
+        },
+        "zh": {
+          "L": "因为主啊，{{deity_pronoun:你|祢}}美善，又肯赦免， \\q 对一切呼求{{deity_pronoun:你|祢}}的人大有慈爱。",
+          "B": "主啊，{{deity_pronoun:你|祢}}是美善的，随时饶恕人， \\q 以丰富的慈爱对待每一个向{{deity_pronoun:你|祢}}呼求的人。",
+          "R": "主啊，{{deity_pronoun:你|祢}}是美善的，{{deity_pronoun:你|祢}}愿意饶恕人。 \\q 对所有向{{deity_pronoun:你|祢}}呼求的人，那始终不变的爱是多么大。"
         }
       },
       "decisions": [
@@ -2168,6 +2322,27 @@
           "choice": "\"Panginoon ko\"",
           "alternatives": [],
           "reason": "My Lord: the title 'Adonai (m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190860050071"
+          ],
+          "choice": "\"慈爱\" (L, B); \"始终不变的爱\" (R)",
+          "alternatives": [
+            "\"恩慈\""
+          ],
+          "reason": "God's hesed (m2) in the glossary's words for each level; so also verses 13 and 15.",
           "uncertain": false,
           "footnote": false
         }
@@ -2423,6 +2598,11 @@
           "L": "Pakinggan mo, {{divine_name:PANGINOON|Yahweh}}, ang aking panalangin, \\q at pansinin mo ang tinig ng aking mga pagsamo.",
           "B": "{{divine_name:PANGINOON|Yahweh}}, ikiling {{deity_pronoun:mo|Mo}} ang {{deity_pronoun:iyong|Iyong}} tainga sa aking panalangin; \\q pakinggan mo ang aking tinig habang nagmamakaawa ako.",
           "R": "{{divine_name:PANGINOON|Yahweh}}, pakinggan mo ang aking panalangin. \\q Dinggin mo ako habang nagsusumamo ako sa {{deity_pronoun:iyo|Iyo}} na tulungan ako."
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}啊，侧耳听我的祷告， \\q 注意我哀求施恩的声音。",
+          "B": "{{divine_name:上主|雅威}}啊，求{{deity_pronoun:你|祢}}转耳听我的祷告； \\q 我哀求怜悯的时候，请留意我的声音。",
+          "R": "{{divine_name:上主|雅威}}啊，听我的祷告。 \\q 我求{{deity_pronoun:你|祢}}帮助的时候，请听我说。"
         }
       },
       "decisions": [
@@ -2682,6 +2862,11 @@
           "L": "Sa araw ng aking kagipitan ay tumatawag ako [sa] {{deity_pronoun:iyo|Iyo}}, \\q sapagkat sasagutin {{deity_pronoun:mo|Mo}} ako.",
           "B": "Sa araw ng aking kaguluhan ay dumaraing ako sa {{deity_pronoun:iyo|Iyo}}, \\q tiyak na sasagot {{deity_pronoun:ka|Ka}}.",
           "R": "Kapag ako ay nasa kagipitan, tumatawag ako sa {{deity_pronoun:iyo|Iyo}}. \\q Sasagutin mo ako."
+        },
+        "zh": {
+          "L": "在我遭难的日子，我呼求{{deity_pronoun:你|祢}}， \\q 因为{{deity_pronoun:你|祢}}会回答我。",
+          "B": "在我患难的日子，我向{{deity_pronoun:你|祢}}呼喊， \\q 深信{{deity_pronoun:你|祢}}会回答。",
+          "R": "我遇到困难的时候，就向{{deity_pronoun:你|祢}}呼求， \\q 也必得着回答。"
         }
       },
       "decisions": [
@@ -2946,6 +3131,11 @@
           "L": "Walang katulad {{deity_pronoun:mo|Mo}} sa mga diyos, Panginoon ko, \\q at walang katulad ng {{deity_pronoun:iyong|Iyong}} mga gawa.",
           "B": "Panginoon, walang diyos na katulad {{deity_pronoun:mo|Mo}}, \\q at walang sinumang gumawa ng mga gawang gaya ng sa {{deity_pronoun:iyo|Iyo}}.",
           "R": "Panginoon, walang diyos na katulad {{deity_pronoun:mo|Mo}}. \\q Walang ibang makagagawa ng mga ginagawa {{deity_pronoun:mo|Mo}}."
+        },
+        "zh": {
+          "L": "主啊，在众神明中没有像{{deity_pronoun:你|祢}}的， \\q 也没有[任何作为]像{{deity_pronoun:你|祢}}的作为。",
+          "B": "主啊，没有一位神明像{{deity_pronoun:你|祢}}， \\q 也没有谁做过像{{deity_pronoun:你|祢}}那样的事。",
+          "R": "主啊，没有任何神明像{{deity_pronoun:你|祢}}。 \\q 没有谁能做{{deity_pronoun:你|祢}}所做的事。"
         }
       },
       "decisions": [
@@ -3039,6 +3229,27 @@
           "choice": "\"Panginoon ko\"",
           "alternatives": [],
           "reason": "My Lord: the title 'Adonai (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190860080032"
+          ],
+          "choice": "\"神明\", with no god_term span",
+          "alternatives": [
+            "\"{{god_term:神|上帝}}\""
+          ],
+          "reason": "The gods of the nations (m1) are not the one God, so Chinese uses \"神明\" and no setting.",
           "uncertain": false,
           "footnote": false
         }
@@ -3262,6 +3473,11 @@
           "L": "Ang lahat ng bansang ginawa {{deity_pronoun:mo|Mo}} \\q ay darating at yuyukod sa harap {{deity_pronoun:mo|Mo}}, Panginoon ko, \\q at luluwalhatiin nila ang {{deity_pronoun:iyong|Iyong}} pangalan.",
           "B": "Ang bawat bansang hinubog {{deity_pronoun:mo|Mo}} ay darating at yuyukod sa harap {{deity_pronoun:mo|Mo}}, Panginoon, \\q at magbibigay ng kaluwalhatian sa {{deity_pronoun:iyong|Iyong}} pangalan.",
           "R": "Panginoon, ginawa {{deity_pronoun:mo|Mo}} ang lahat ng bansa. \\q Darating silang lahat at yuyukod sa {{deity_pronoun:iyo|Iyo}}. \\q Pararangalan nila ang {{deity_pronoun:iyong|Iyong}} pangalan."
+        },
+        "zh": {
+          "L": "{{deity_pronoun:你|祢}}所造的万国 \\q 都要来，在{{deity_pronoun:你|祢}}面前敬拜，主啊， \\q 他们要荣耀{{deity_pronoun:你|祢}}的名。",
+          "B": "主啊，{{deity_pronoun:你|祢}}所造的万国都要来，在{{deity_pronoun:你|祢}}面前敬拜， \\q 并要荣耀{{deity_pronoun:你|祢}}的名。",
+          "R": "主啊，万国都是{{deity_pronoun:你|祢}}造的。 \\q 他们都要来敬拜{{deity_pronoun:你|祢}}。 \\q 他们要荣耀{{deity_pronoun:你|祢}}的名。"
         }
       },
       "decisions": [
@@ -3439,6 +3655,35 @@
           "choice": "\"Panginoon ko\"",
           "alternatives": [],
           "reason": "My Lord: the title 'Adonai (m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190860090011",
+            "o190860090021",
+            "o190860090051",
+            "o190860090061",
+            "o190860090062",
+            "o190860090092",
+            "o190860090101",
+            "o190860090102",
+            "o190860090103"
+          ],
+          "choice": "\"万国都要来，在{{deity_pronoun:你|祢}}面前敬拜\" (L, B); \"都要来敬拜{{deity_pronoun:你|祢}}\" (R); \"荣耀{{deity_pronoun:你|祢}}的名\"",
+          "alternatives": [
+            "\"列国……下拜\""
+          ],
+          "reason": "Revelation 15:4 takes up this verse (m2), and its Greek says the same as the Hebrew here, so each level keeps Revelation's words at that level: \"万国\" for \"all the nations\" (rather than the Psalter's \"列国\" at Literal), \"敬拜\" for bowing down in worship, and Readable's \"都要来敬拜你\".",
           "uncertain": false,
           "footnote": false
         }
@@ -3701,6 +3946,11 @@
           "L": "Sapagkat {{deity_pronoun:ikaw|Ikaw}} [ay] dakila at gumagawa ng mga kababalaghan; \\q {{deity_pronoun:ikaw|Ikaw}} [ang] Diyos, {{deity_pronoun:ikaw|Ikaw}} lamang.",
           "B": "Sapagkat {{deity_pronoun:ikaw|Ikaw}} ay dakila, gumagawa ng mga kababalaghan; \\q {{deity_pronoun:ikaw|Ikaw}} lamang ang Diyos.",
           "R": "Dakila {{deity_pronoun:ka|Ka}}, at gumagawa {{deity_pronoun:ka|Ka}} ng mga kamangha-manghang bagay. \\q Ikaw lamang ang Diyos."
+        },
+        "zh": {
+          "L": "因为{{deity_pronoun:你|祢}}伟大，行奇事； \\q {{deity_pronoun:你|祢}}是{{god_term:神|上帝}}，惟独{{deity_pronoun:你|祢}}。",
+          "B": "因为{{deity_pronoun:你|祢}}伟大，是行奇事的那一位； \\q 只有{{deity_pronoun:你|祢}}是{{god_term:神|上帝}}。",
+          "R": "{{deity_pronoun:你|祢}}做奇妙的事，真是伟大。 \\q 只有{{deity_pronoun:你|祢}}是{{god_term:神|上帝}}。"
         }
       },
       "decisions": [
@@ -4017,6 +4267,11 @@
           "L": "Ituro {{deity_pronoun:mo|Mo}} sa akin, {{divine_name:PANGINOON|Yahweh}}, ang {{deity_pronoun:iyong|Iyong}} daan; \\q lalakad ako sa {{deity_pronoun:iyong|Iyong}} katotohanan; \\q pag-isahin {{deity_pronoun:mo|Mo}} ang aking puso upang matakot sa {{deity_pronoun:iyong|Iyong}} pangalan.",
           "B": "{{divine_name:PANGINOON|Yahweh}}, ituro {{deity_pronoun:mo|Mo}} sa akin ang {{deity_pronoun:iyong|Iyong}} daan, \\q at mamumuhay ako ayon sa {{deity_pronoun:iyong|Iyong}} katotohanan; \\q bigyan {{deity_pronoun:mo|Mo}} ako ng pusong iisa ang hangad, ang igalang ang {{deity_pronoun:iyong|Iyong}} pangalan.",
           "R": "{{divine_name:PANGINOON|Yahweh}}, ituro {{deity_pronoun:mo|Mo}} sa akin kung paano {{deity_pronoun:mo|Mo}} gustong mamuhay ako, at susundin ko ang {{deity_pronoun:iyong|Iyong}} katotohanan. \\q Gawin {{deity_pronoun:mong|Mong}} buo ang aking puso, upang buong puso akong magbigay-galang sa {{deity_pronoun:iyo|Iyo}}."
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}啊，教导我{{deity_pronoun:你|祢}}的道路， \\q 我要在{{deity_pronoun:你|祢}}的真理中行走； \\q 使我的心合一，来敬畏{{deity_pronoun:你|祢}}的名。",
+          "B": "{{divine_name:上主|雅威}}啊，教我走{{deity_pronoun:你|祢}}的道路， \\q 我就会照{{deity_pronoun:你|祢}}的真理生活； \\q 赐我一颗专一的心，来敬畏{{deity_pronoun:你|祢}}的名。",
+          "R": "{{divine_name:上主|雅威}}啊，教导我该怎样生活才合{{deity_pronoun:你|祢}}的心意，我就会遵行{{deity_pronoun:你|祢}}的真理。 \\q 使我的心完整，好全心全意尊敬{{deity_pronoun:你|祢}}。"
         }
       },
       "decisions": [
@@ -4208,6 +4463,26 @@
           "choice": "\"matakot sa {{deity_pronoun:iyong|Iyong}} pangalan\"",
           "alternatives": [],
           "reason": "Fear your name: revere God himself (m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190860110082"
+          ],
+          "choice": "\"敬畏\" (L, B); \"尊敬\" (R)",
+          "alternatives": [
+            "\"惧怕\""
+          ],
+          "reason": "The glossary's word for fearing God (m3); Readable says \"honor\", as the English Readable does.",
           "uncertain": false,
           "footnote": false
         }
@@ -4459,6 +4734,11 @@
           "L": "Magpapasalamat ako sa {{deity_pronoun:iyo|Iyo}}, Panginoon kong Diyos, nang buong puso, \\q at luluwalhatiin ko ang {{deity_pronoun:iyong|Iyong}} pangalan magpakailanman.",
           "B": "Panginoon kong Diyos, magpapasalamat ako sa {{deity_pronoun:iyo|Iyo}} nang buong puso \\q at pararangalan ang {{deity_pronoun:iyong|Iyong}} pangalan sa lahat ng panahon.",
           "R": "Panginoon kong Diyos, buong puso akong magpapasalamat sa {{deity_pronoun:iyo|Iyo}}. \\q Pararangalan ko ang {{deity_pronoun:iyong|Iyong}} pangalan magpakailanman."
+        },
+        "zh": {
+          "L": "我要全心向{{deity_pronoun:你|祢}}献上感谢，主我的{{god_term:神|上帝}}啊， \\q 我要永远荣耀{{deity_pronoun:你|祢}}的名。",
+          "B": "主我的{{god_term:神|上帝}}啊，我要用整个心感谢{{deity_pronoun:你|祢}}， \\q 世世代代尊崇{{deity_pronoun:你|祢}}的名。",
+          "R": "主我的{{god_term:神|上帝}}啊，我要全心感谢{{deity_pronoun:你|祢}}。 \\q 我要永远尊敬{{deity_pronoun:你|祢}}的名。"
         }
       },
       "decisions": [
@@ -4790,6 +5070,11 @@
           "L": "Sapagkat dakila ang {{deity_pronoun:iyong|Iyong}} tapat na pag-ibig sa akin, \\q at iniligtas {{deity_pronoun:mo|Mo}} ang aking kaluluwa mula sa kailaliman ng Sheol.",
           "B": "Sapagkat dakila ang {{deity_pronoun:iyong|Iyong}} tapat na pag-ibig para sa akin; \\q hinango {{deity_pronoun:mo|Mo}} ako mula sa pinakamalalim na Sheol.",
           "R": "Napakadakila ng {{deity_pronoun:iyong|Iyong}} tapat na pag-ibig sa akin. \\q Iniligtas {{deity_pronoun:mo|Mo}} ako mula sa kailaliman ng daigdig ng mga patay."
+        },
+        "zh": {
+          "L": "因为{{deity_pronoun:你|祢}}待我的慈爱是伟大的， \\q {{deity_pronoun:你|祢}}已经把我的灵魂从阴间的最深处救出来。",
+          "B": "因为{{deity_pronoun:你|祢}}对我的慈爱何等浩大； \\q {{deity_pronoun:你|祢}}已把我从阴间最深处拉了上来。",
+          "R": "你对我始终不变的爱是那么大！ \\q 你把我从死亡之地的深处救了出来。"
         }
       },
       "decisions": [
@@ -5095,6 +5380,27 @@
           "reason": "You have delivered: a rescue already given or as good as given (m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190860130072"
+          ],
+          "choice": "\"阴间\" (L, B); \"死亡之地\" (R)",
+          "alternatives": [
+            "\"坟墓\""
+          ],
+          "reason": "Sheol in the glossary's words for each level (m2).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft",
@@ -5325,6 +5631,11 @@
           "L": "O Diyos, ang mga palalo ay bumangon laban sa akin, \\q at isang pangkat ng malulupit ang nagtangka sa aking buhay, \\q at hindi {{deity_pronoun:ka|Ka}} nila inilagay sa harap nila.",
           "B": "O Diyos, sinasalakay ako ng mga mapagmataas, \\q at tinutugis ng isang pangkat ng malulupit ang aking buhay; \\q hindi {{deity_pronoun:ka|Ka}} nila isinasaalang-alang.",
           "R": "O Diyos, sinasalakay ako ng mga taong palalo. \\q Gusto akong patayin ng isang grupo ng malulupit na tao. \\q Wala silang pakialam sa {{deity_pronoun:iyo|Iyo}}."
+        },
+        "zh": {
+          "L": "{{god_term:神|上帝}}啊，骄傲的人起来攻击我， \\q 一伙残暴的人寻索我的生命； \\q 他们没有把{{deity_pronoun:你|祢}}摆在自己面前。",
+          "B": "{{god_term:神|上帝}}啊，骄傲的人起来攻击我， \\q 一伙凶暴的人追索我的性命； \\q 他们心中根本没有{{deity_pronoun:你|祢}}。",
+          "R": "{{god_term:神|上帝}}啊，骄傲的人在攻击我。 \\q 一伙残忍的人想要杀我。 \\q 他们一点也不在乎{{deity_pronoun:你|祢}}。"
         }
       },
       "decisions": [
@@ -5481,6 +5792,44 @@
           "choice": "\"hindi {{deity_pronoun:ka|Ka}} nila inilagay sa harap nila\"",
           "alternatives": [],
           "reason": "Not set you before them: give God no thought (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190860140011",
+            "o190860140021",
+            "o190860140031",
+            "o190860140041",
+            "o190860140042",
+            "o190860140051",
+            "o190860140052",
+            "o190860140061",
+            "o190860140071",
+            "o190860140081",
+            "o190860140082",
+            "o190860140091",
+            "o190860140092",
+            "o190860140101",
+            "o190860140102",
+            "o190860140111",
+            "o190860140112",
+            "o190860140113"
+          ],
+          "choice": "Psalm 54:5's Chinese, with \"骄傲的人\" and \"{{deity_pronoun:你|祢}}\"",
+          "alternatives": [
+            "\"外人\""
+          ],
+          "reason": "The verse is nearly the same as 54:5 (m1), so Chinese keeps that verse's wording at each level, differing only where the Hebrew does: \"the arrogant\" for \"strangers\", \"a band of\" ruthless ones, and God addressed as \"you\".",
           "uncertain": false,
           "footnote": false
         }
@@ -5755,6 +6104,11 @@
           "L": "Ngunit {{deity_pronoun:ikaw|Ikaw}}, Panginoon ko, [ay] Diyos na mahabagin at mapagbiyaya, \\q mabagal sa pagkagalit, \\q at sagana sa tapat na pag-ibig at katapatan.",
           "B": "Ngunit {{deity_pronoun:ikaw|Ikaw}}, Panginoon, ay Diyos na puspos ng habag at biyaya, \\q mabagal magalit, \\q umaapaw sa tapat na pag-ibig at katapatan.",
           "R": "Ngunit Panginoon, {{deity_pronoun:ikaw|Ikaw}} ay Diyos na nagmamalasakit at mabait. \\q Hindi {{deity_pronoun:ka|Ka}} madaling magalit. \\q Dakila at tapat ang {{deity_pronoun:iyong|Iyong}} pag-ibig, at tinutupad {{deity_pronoun:mo|Mo}} ang {{deity_pronoun:iyong|Iyong}} salita."
+        },
+        "zh": {
+          "L": "但主啊，{{deity_pronoun:你|祢}}是怜恤、有恩惠的{{god_term:神|上帝}}， \\q 迟于发怒， \\q 满有慈爱和信实。",
+          "B": "但主啊，{{deity_pronoun:你|祢}}是满有慈悲和恩惠的{{god_term:神|上帝}}， \\q 发怒迟缓， \\q 充满慈爱，又真实可信。",
+          "R": "但主啊，{{deity_pronoun:你|祢}}是满有慈悲和仁慈的{{god_term:神|上帝}}， \\q 不容易生气， \\q 那始终不变的爱多么伟大，{{deity_pronoun:你|祢}}也总是信守{{deity_pronoun:你|祢}}的话。"
         }
       },
       "decisions": [
@@ -6042,6 +6396,41 @@
           "choice": "\"tapat na pag-ibig\"",
           "alternatives": [],
           "reason": "Loyal love: faithful, covenant love (m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190860150011",
+            "o190860150012",
+            "o190860150021",
+            "o190860150022",
+            "o190860150031",
+            "o190860150041",
+            "o190860150051",
+            "o190860150052",
+            "o190860150061",
+            "o190860150071",
+            "o190860150081",
+            "o190860150082",
+            "o190860150091",
+            "o190860150101",
+            "o190860150102"
+          ],
+          "choice": "Exodus 34:6's Chinese at each level",
+          "alternatives": [
+            "\"有怜悯有恩典的{{god_term:神|上帝}}\""
+          ],
+          "reason": "The LORD's own description of himself (m1) in the same Hebrew words as Exodus 34:6, so each level keeps that verse's Chinese (\"怜恤、有恩惠\" L; \"满有慈悲和恩惠\" B; \"满有慈悲和仁慈\" R).",
           "uncertain": false,
           "footnote": false
         }
@@ -6351,6 +6740,11 @@
           "L": "Bumaling ka sa akin at maging mapagbiyaya {{deity_pronoun:ka|Ka}} sa akin; \\q ibigay {{deity_pronoun:mo|Mo}} ang {{deity_pronoun:iyong|Iyong}} lakas sa {{deity_pronoun:iyong|Iyong}} lingkod, \\q at iligtas {{deity_pronoun:mo|Mo}} ang anak ng {{deity_pronoun:iyong|Iyong}} aliping babae.",
           "B": "Bumaling ka sa akin at ipakita {{deity_pronoun:mo|Mo}} sa akin ang {{deity_pronoun:iyong|Iyong}} kagandahang-loob; \\q ipahiram {{deity_pronoun:mo|Mo}} sa {{deity_pronoun:iyong|Iyong}} lingkod ang {{deity_pronoun:iyong|Iyong}} lakas, \\q at sagipin {{deity_pronoun:mo|Mo}} ang anak ng {{deity_pronoun:iyong|Iyong}} lingkod na babae.",
           "R": "Bumaling ka sa akin at maging mabuti {{deity_pronoun:ka|Ka}} sa akin. \\q Palakasin {{deity_pronoun:mo|Mo}} ako, sapagkat naglilingkod ako sa {{deity_pronoun:iyo|Iyo}}. \\q Iligtas {{deity_pronoun:mo|Mo}} ako. Naglingkod din sa {{deity_pronoun:iyo|Iyo}} ang aking ina, kaya ako ay {{deity_pronoun:iyo|Iyo}} na mula nang ako ay ipanganak."
+        },
+        "zh": {
+          "L": "回过来看我，向我施恩吧； \\q 将{{deity_pronoun:你|祢}}的能力赐予{{deity_pronoun:你|祢}}的仆人， \\q 救{{deity_pronoun:你|祢}}使女的儿子。",
+          "B": "转向我，向我显出{{deity_pronoun:你|祢}}的恩宠； \\q 把{{deity_pronoun:你|祢}}的力量借给{{deity_pronoun:你|祢}}的仆人， \\q 拯救{{deity_pronoun:你|祢}}婢女的儿子。",
+          "R": "转向我，恩待我吧。 \\q 使我刚强，因为我事奉{{deity_pronoun:你|祢}}。 \\q 救救我吧。我母亲也事奉{{deity_pronoun:你|祢}}，所以我从出生就属于{{deity_pronoun:你|祢}}。"
         }
       },
       "decisions": [
@@ -6710,6 +7104,11 @@
           "L": "Gumawa {{deity_pronoun:ka|Ka}} para sa akin ng tanda ng kabutihan, \\q upang makita ng mga napopoot sa akin at mapahiya sila, \\q sapagkat {{deity_pronoun:ikaw|Ikaw}}, {{divine_name:PANGINOON|Yahweh}}, ay tumulong sa akin at umaliw sa akin.",
           "B": "Bigyan {{deity_pronoun:mo|Mo}} ako ng tanda na mabuti ang hangad {{deity_pronoun:mo|Mo}} para sa akin, \\q upang makita ito ng mga napopoot sa akin at mapahiya sila, \\q sapagkat {{deity_pronoun:ikaw|Ikaw}}, {{divine_name:PANGINOON|Yahweh}}, ay sumaklolo sa akin at umaliw sa akin.",
           "R": "Ipakita {{deity_pronoun:mo|Mo}} sa akin ang isang tanda na mabuti {{deity_pronoun:ka|Ka}} sa akin. \\q Kung magkagayon ay makikita ito ng mga napopoot sa akin at mapapahiya sila. \\q Malalaman nila na {{deity_pronoun:ikaw|Ikaw}}, {{divine_name:PANGINOON|Yahweh}}, ay tumulong sa akin at nagpagaan ng aking kalooban."
+        },
+        "zh": {
+          "L": "为我行一个赐福的记号， \\q 使那些恨我的人看见了，就蒙羞愧， \\q 因为{{deity_pronoun:你|祢}}，{{divine_name:上主|雅威}}啊，已扶助我，又安慰了我。",
+          "B": "给我一个记号，表明{{deity_pronoun:你|祢}}要善待我， \\q 好让恨我的人看见，就自觉羞愧， \\q 因为{{deity_pronoun:你|祢}}，{{divine_name:上主|雅威}}啊，已经来帮助我，给我安慰。",
+          "R": "给我一个记号，表明{{deity_pronoun:你|祢}}对我好。 \\q 那样，恨我的人看见了就会羞愧。 \\q 他们会知道，{{divine_name:上主|雅威}}啊，是{{deity_pronoun:你|祢}}帮助了我，使我得到安慰。"
         }
       },
       "decisions": [

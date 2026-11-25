@@ -95,6 +95,11 @@
           "L": "Isang salmo ni Asaf. \\q Ang Diyos ay nakatayo sa kapulungan ng Diyos; \\q sa gitna ng mga diyos ay humahatol {{deity_pronoun:siya|Siya}}.",
           "B": "Isang salmo ni Asaf. \\q Pumupuwesto ang Diyos sa {{deity_pronoun:kaniyang|Kaniyang}} banal na kapulungan; \\q humahatol {{deity_pronoun:siya|Siya}} sa gitna ng mga diyos.",
           "R": "Isang awit ni Asaf. \\q Tumatayo ang Diyos sa {{deity_pronoun:kaniyang|Kaniyang}} dakilang kapulungan sa langit. \\q Hinahatulan {{deity_pronoun:niya|Niya}} ang mga naroroon na tinatawag na mga diyos."
+        },
+        "zh": {
+          "L": "亚萨的诗。 \\q {{god_term:神|上帝}}站在{{god_term:神|上帝}}的会中， \\q {{deity_pronoun:他|祂}}在众神明中间施行审判。",
+          "B": "亚萨的诗。 \\q {{god_term:神|上帝}}在{{deity_pronoun:他|祂}}属天的会中就位； \\q {{deity_pronoun:他|祂}}在众神明中间宣判。",
+          "R": "亚萨的歌。 \\q {{god_term:神|上帝}}在天上{{deity_pronoun:他|祂}}的大议会中站起来， \\q 审判那里被称为神明的众位。"
         }
       },
       "decisions": [
@@ -512,6 +517,50 @@
           "reason": "Stands: takes his place as judge (m5).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190820010031",
+            "o190820010061"
+          ],
+          "choice": "\"{{god_term:神|上帝}}\" for God and for \"El\" in \"the assembly of God\"",
+          "alternatives": [
+            "\"神\" with no span"
+          ],
+          "reason": "Both words name the one God (m3), so both take the Chinese god_term setting: \"神\" by default, \"上帝\" as the reader's alternative.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190820010081"
+          ],
+          "choice": "\"众神明\" (L, B); \"被称为神明的众位\" (R), with no god_term span",
+          "alternatives": [
+            "\"众神\"",
+            "\"{{god_term:神|上帝}}\""
+          ],
+          "reason": "The \"gods\" are the members of God's council (m4), not the one God, so they take \"神明\" with no setting, the word John 10:34-35 uses when it quotes verse 6; Readable keeps the word, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft",
@@ -739,6 +788,11 @@
           "L": "\"Hanggang kailan kayo hahatol nang di-makatarungan \\q at magtataas ng mukha ng masasama? Sela",
           "B": "\"Hanggang kailan kayo hahatol nang hindi patas \\q at kakampihan ang masasama? Sela",
           "R": "\"Hanggang kailan kayo patuloy na hahatol nang hindi patas? \\q Hanggang kailan ninyo papaboran ang masasamang tao? Sela"
+        },
+        "zh": {
+          "L": "“你们审判不公正，抬举恶人的脸， \\q 到几时呢？细拉",
+          "B": "“你们不公正地审判， \\q 偏袒恶人，要到几时呢？细拉",
+          "R": "“你们还要多久继续不公正地审判？ \\q 你们还要多久偏袒坏人？细拉"
         }
       },
       "decisions": [
@@ -974,6 +1028,29 @@
           "reason": "Selah: a word whose meaning is no longer known (m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190820020011",
+            "o190820020021",
+            "o190820020061"
+          ],
+          "choice": "\"到几时\" (L), \"要到几时\" (B), \"还要多久\" (R); \"恶人\" (L, B), \"坏人\" (R)",
+          "alternatives": [
+            "\"何时\""
+          ],
+          "reason": "The Psalter's forms for \"how long\" and for the wicked.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft",
@@ -1173,6 +1250,11 @@
           "L": "Hatulan ninyo [nang tama ang] dukha at [ang] ulila; \\q ipagtanggol ninyo [ang] naaapi at [ang] salat.",
           "B": "Hatulan ninyo nang tapat ang mahihina at ang mga ulila; \\q ipahayag ninyong nasa tama ang naaapi at ang salat.",
           "R": "Ipagtanggol ninyo ang mga dukha at ang mga batang walang ama. \\q Gawin ninyo ang tama para sa mga taong naghihirap at nangangailangan."
+        },
+        "zh": {
+          "L": "要为软弱的人和孤儿伸冤； \\q 要为困苦的人和贫乏的人主持公道。",
+          "B": "要公正地为软弱的人和孤儿审断； \\q 要宣告困苦和贫乏的人有理。",
+          "R": "要为穷人和没有父母的孩子出头。 \\q 要为受苦和缺乏的人主持公道。"
         }
       },
       "decisions": [
@@ -1327,6 +1409,28 @@
           "choice": "\"ulila\"",
           "alternatives": [],
           "reason": "The poor and the fatherless (m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190820030032",
+            "o190820030041"
+          ],
+          "choice": "\"孤儿\" (L, B), \"没有父母的孩子\" (R); \"软弱的人\" (L, B) for dal; \"困苦的人\" (L, B), \"受苦……的人\" (R)",
+          "alternatives": [
+            "\"无父的\""
+          ],
+          "reason": "The Psalter's forms for the fatherless, the weak (as Psalm 41:2) and the afflicted; so also verse 4.",
           "uncertain": false,
           "footnote": false
         }
@@ -1562,6 +1666,11 @@
           "L": "Sagipin ninyo [ang] dukha at [ang] nangangailangan; \\q iligtas [sila] mula sa kamay ng masasama.",
           "B": "Dalhin ninyo sa kaligtasan ang mahihina at ang mga dukha; \\q agawin ninyo sila mula sa kapit ng masasama.",
           "R": "Iligtas ninyo ang mga dukha at ang mga nangangailangan. \\q Hanguin ninyo sila mula sa kapangyarihan ng masasamang tao."
+        },
+        "zh": {
+          "L": "要救援软弱的人和贫穷的人， \\q 救[他们]脱离恶人的手。",
+          "B": "要把软弱和贫穷的人救到安全之处， \\q 把他们从恶人手中夺出来。",
+          "R": "要救助穷人和有需要的人。 \\q 要把他们从坏人的权势下救出来。"
         }
       },
       "decisions": [
@@ -1846,6 +1955,11 @@
           "L": "Hindi sila nakaaalam at hindi nakauunawa; \\q sa kadiliman sila lumalakad; \\q nayayanig ang lahat ng saligan ng lupa.",
           "B": "Wala silang kaalaman at walang pang-unawa; \\q pagala-gala sila sa dilim, \\q at umuuga ang lahat ng saligan ng lupa.",
           "R": "Wala silang alam. Wala silang nauunawaan. \\q Naglalakad sila sa dilim, \\q at nayayanig ang lahat ng kinatatayuan ng mundo."
+        },
+        "zh": {
+          "L": "他们不知道，也不明白， \\q 在黑暗中走来走去； \\q 地的一切根基都摇动了。",
+          "B": "他们毫无知识，也毫无悟性； \\q 他们在黑暗中徘徊， \\q 大地的根基全都动摇。",
+          "R": "他们什么都不知道，什么都不明白。 \\q 他们在黑暗中走来走去， \\q 世界赖以存立的一切都在摇晃。"
         }
       },
       "decisions": [
@@ -2203,6 +2317,11 @@
           "L": "Sinabi ko, 'Kayo [ay] mga diyos, \\q at mga anak ng Kataas-taasan, kayong lahat.'",
           "B": "Ako mismo ang nagsabi, 'Kayo ay mga diyos; \\q bawat isa sa inyo ay anak ng Kataas-taasan.'",
           "R": "Sinabi ko, 'Kayo ay mga diyos. \\q Bawat isa sa inyo ay anak ng Kataas-taasan.'"
+        },
+        "zh": {
+          "L": "我说过：‘你们是神明， \\q 你们全都是至高者的儿子。’",
+          "B": "我说过：‘你们是神明； \\q 你们每一个都是至高者的儿子。’",
+          "R": "我说过：‘你们是神明。 \\q 你们每一个都是那位至高无上的{{god_term:神|上帝}}的儿子。’"
         }
       },
       "decisions": [
@@ -2502,6 +2621,51 @@
           "reason": "The Most High: God above all (m4).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190820060011",
+            "o190820060021",
+            "o190820060031",
+            "o190820060041"
+          ],
+          "choice": "\"我说过：‘你们是神明\" at every level",
+          "alternatives": [
+            "\"我亲口说过\" (B, for \"I myself said\")"
+          ],
+          "reason": "John 10:34 quotes these words (m2), and the Greek says the same as the Hebrew, so each level keeps John's Chinese, \"我说过\" and \"神明\" with no god_term span; Balanced's emphasis on \"I\" is left to the word order.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190820060061"
+          ],
+          "choice": "\"至高者\" (L, B); \"那位至高无上的{{god_term:神|上帝}}\" (R)",
+          "alternatives": [
+            "\"至高的\""
+          ],
+          "reason": "The Psalter's form for the Most High (m4); Readable says what the title means, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft",
@@ -2718,6 +2882,11 @@
           "L": "Gayunman, tulad ng tao ay mamamatay kayo, \\q at tulad ng isa sa mga pinuno ay mabubuwal kayo.\"",
           "B": "Gayunman ay mamamatay kayo gaya ng pagkamatay ng tao, \\q at mabubuwal gaya ng sinuman sa mga pinuno.\"",
           "R": "Ngunit mamamatay kayo gaya ng pagkamatay ng mga tao. \\q Mabubuwal kayo gaya ng sinumang pinuno.\""
+        },
+        "zh": {
+          "L": "然而你们要像世人一样死去， \\q 要像首领中的一位一样倒下。”",
+          "B": "但你们要像凡人一样死去， \\q 像任何一个首领那样倒下。”",
+          "R": "但你们会像普通人那样死去。 \\q 你们会像任何统治者一样倒下。”"
         }
       },
       "decisions": [
@@ -3070,6 +3239,11 @@
           "L": "Bumangon ka, O Diyos, hatulan mo ang lupa, \\q sapagkat mamanahin {{deity_pronoun:mo|Mo}} ang lahat ng bansa.",
           "B": "Tumindig ka, O Diyos, hatulan mo ang lupa, \\q sapagkat ang bawat bansa ay pag-aari {{deity_pronoun:mo|Mo}}.",
           "R": "Bumangon ka, O Diyos! Hatulan mo ang buong mundo, \\q sapagkat {{deity_pronoun:iyo|Iyo}} ang lahat ng bansa."
+        },
+        "zh": {
+          "L": "起来，{{god_term:神|上帝}}啊！审判全地吧， \\q 因为{{deity_pronoun:你|祢}}要得列国为业。",
+          "B": "{{god_term:神|上帝}}啊，起来吧！审判全地， \\q 因为万国都属于{{deity_pronoun:你|祢}}。",
+          "R": "{{god_term:神|上帝}}啊，快起来！审判全世界， \\q 因为各国都是{{deity_pronoun:你|祢}}的。"
         }
       },
       "decisions": [
@@ -3212,6 +3386,28 @@
           "choice": "\"hatulan mo ang lupa\"",
           "alternatives": [],
           "reason": "Judge the earth: God does what the gods failed to do (m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190820080011",
+            "o190820080092"
+          ],
+          "choice": "\"起来，……啊\" (L), \"……啊，起来吧\" (B), \"……啊，快起来\" (R); \"列国\" (L), \"万国\" (B), \"各国\" (R)",
+          "alternatives": [
+            "\"兴起\""
+          ],
+          "reason": "The Psalter's forms for \"Arise\" and for the nations, here with God in place of the LORD.",
           "uncertain": false,
           "footnote": false
         }

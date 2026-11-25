@@ -102,6 +102,11 @@
           "L": "Isang salmo ni Asaf. \\q O Diyos, ang mga bansa ay pumasok sa {{deity_pronoun:iyong|Iyong}} mana; \\q dinungisan nila ang {{deity_pronoun:iyong|Iyong}} banal na templo; \\q ginawa nilang bunton ng guho ang Jerusalem.",
           "B": "Isang salmo ni Asaf. \\q O Diyos, nilusob ng mga bansa ang lupaing {{deity_pronoun:iyong|Iyong}} sariling pag-aari; \\q dinumhan nila ang {{deity_pronoun:iyong|Iyong}} banal na templo \\q at ginawang bunton ng mga guho ang Jerusalem.",
           "R": "Isang awit ni Asaf. \\q O Diyos, sinalakay ng ibang mga bansa ang lupaing pag-aari {{deity_pronoun:mo|Mo}}. \\q Ginawa nilang hindi na angkop sa pagsamba ang {{deity_pronoun:iyong|Iyong}} banal na templo. \\q Iniwan nilang wasak ang Jerusalem."
+        },
+        "zh": {
+          "L": "亚萨的诗。 \\q {{god_term:神|上帝}}啊，列国进入了{{deity_pronoun:你|祢}}的产业， \\q 玷污了{{deity_pronoun:你|祢}}圣洁的殿， \\q 使耶路撒冷变成乱石堆。",
+          "B": "亚萨的诗。 \\q {{god_term:神|上帝}}啊，万国闯进了属{{deity_pronoun:你|祢}}自己的地， \\q 他们使{{deity_pronoun:你|祢}}的圣殿不洁净， \\q 把耶路撒冷变成一堆堆瓦砾。",
+          "R": "亚萨的歌。 \\q {{god_term:神|上帝}}啊，别的国家攻进了属于{{deity_pronoun:你|祢}}的土地。 \\q 他们使{{deity_pronoun:你|祢}}的圣殿不能再用来敬拜。 \\q 他们使耶路撒冷成了一片废墟。"
         }
       },
       "decisions": [
@@ -469,6 +474,54 @@
           "reason": "Defiled: made ritually unclean (m5).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190790010041",
+            "o190790010091",
+            "o190790010131",
+            "o190790010142"
+          ],
+          "choice": "god_term span: \"神\" by default, \"上帝\" as the reader's setting",
+          "alternatives": [
+            "神",
+            "上帝"
+          ],
+          "reason": "Every word naming the one God is written with the Chinese-only god_term setting; both name the same God and the setting changes only the word.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190790010041",
+            "o190790010091",
+            "o190790010131",
+            "o190790010142"
+          ],
+          "choice": "\"列国\" (L); \"万国\" (B) for the nations",
+          "alternatives": [
+            "外邦"
+          ],
+          "reason": "The Psalter's forms for goyim; Readable says \"other nations\", as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft",
@@ -779,6 +832,11 @@
           "L": "Ibinigay nila ang mga bangkay ng {{deity_pronoun:iyong|Iyong}} mga lingkod [na] pagkain sa mga ibon sa himpapawid, \\q ang laman ng {{deity_pronoun:iyong|Iyong}} mga tapat sa mga hayop sa lupa.",
           "B": "Itinapon nila ang mga bangkay ng {{deity_pronoun:iyong|Iyong}} mga lingkod upang kainin ng mga ibon sa himpapawid, \\q at ang laman ng {{deity_pronoun:iyong|Iyong}} tapat na bayan sa mga mababangis na hayop.",
           "R": "Nakahandusay sa labas ang mga bangkay ng {{deity_pronoun:iyong|Iyong}} mga lingkod, at kinakain sila ng mga ibon. \\q Kinakain ng mababangis na hayop ang mga bangkay ng mga taong tapat sa {{deity_pronoun:iyo|Iyo}}."
+        },
+        "zh": {
+          "L": "他们把{{deity_pronoun:你|祢}}仆人的尸首给天空的飞鸟作食物， \\q 把{{deity_pronoun:你|祢}}忠信之人的肉给地上的野兽。",
+          "B": "他们把{{deity_pronoun:你|祢}}仆人的尸体丢出去，给天空的飞鸟吃， \\q 把{{deity_pronoun:你|祢}}忠心子民的肉给野兽吃。",
+          "R": "{{deity_pronoun:你|祢}}仆人的尸体暴露在外面，被鸟吃掉。 \\q 野兽吃那些忠于{{deity_pronoun:你|祢}}的人的尸体。"
         }
       },
       "decisions": [
@@ -1241,6 +1299,11 @@
           "L": "Ibinuhos nila ang kanilang dugo na parang tubig sa palibot ng Jerusalem, \\q at walang naglilibing.",
           "B": "Pinadanak nila ang kanilang dugo na parang tubig sa bawat panig ng Jerusalem, \\q at walang natirang maglilibing sa kanila.",
           "R": "Umagos ang kanilang dugo na parang tubig sa palibot ng Jerusalem, \\q at walang natirang maglilibing sa mga bangkay."
+        },
+        "zh": {
+          "L": "他们在耶路撒冷四围倒出他们的血如水， \\q 并没有人埋葬。",
+          "B": "他们使人的血在耶路撒冷四周流淌如水， \\q 没有人留下来埋葬他们。",
+          "R": "他们的血像水一样流在耶路撒冷的四周， \\q 没有人剩下来埋葬尸体。"
         }
       },
       "decisions": [
@@ -1566,6 +1629,11 @@
           "L": "Kami ay naging kadustaan sa aming mga kapitbahay, \\q pagtuya at paglibak sa mga nasa palibot namin.",
           "B": "Naging kahihiyan kami sa paningin ng aming mga kapitbahay, \\q pinagtatawanan at hinahamak ng lahat ng malapit sa amin.",
           "R": "Iniinsulto kami ng mga bansang katabi namin. \\q Pinagtatawanan at kinukutya kami ng mga tao sa paligid namin."
+        },
+        "zh": {
+          "L": "我们成了邻国的羞辱， \\q 成了四围之人的嗤笑和讥讽。",
+          "B": "在邻国眼中我们成了耻辱， \\q 被周围所有的人嘲笑、讥讽。",
+          "R": "我们旁边的国家侮辱我们。 \\q 我们四周的人嘲笑我们，取笑我们。"
         }
       },
       "decisions": [
@@ -1930,6 +1998,11 @@
           "L": "Hanggang kailan, {{divine_name:PANGINOON|Yahweh}}? Magagalit {{deity_pronoun:ka|Ka}} ba magpakailanman? \\q Mag-aapoy ba na parang apoy ang {{deity_pronoun:iyong|Iyong}} panibugho?",
           "B": "Hanggang kailan, {{divine_name:PANGINOON|Yahweh}}? Magagalit {{deity_pronoun:ka|Ka}} ba nang walang katapusan? \\q Patuloy bang mag-aalab na parang apoy ang {{deity_pronoun:iyong|Iyong}} panibugho?",
           "R": "{{divine_name:PANGINOON|Yahweh}}, hanggang kailan ito magpapatuloy? Mananatili {{deity_pronoun:ka|Ka}} bang galit magpakailanman? \\q Patuloy bang mag-aalab na parang apoy ang {{deity_pronoun:iyong|Iyong}} nagseselos na galit?"
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}啊，到几时呢？{{deity_pronoun:你|祢}}要永远发怒吗？ \\q {{deity_pronoun:你|祢}}的妒忌要像火一样燃烧吗？",
+          "B": "{{divine_name:上主|雅威}}啊，要到几时呢？{{deity_pronoun:你|祢}}要不停地发怒吗？ \\q {{deity_pronoun:你|祢}}的妒忌要一直像火一样燃烧吗？",
+          "R": "{{divine_name:上主|雅威}}啊，这样的日子还要多久？{{deity_pronoun:你|祢}}要永远生气吗？ \\q {{deity_pronoun:你|祢}}妒忌的怒火要一直像火一样燃烧吗？"
         }
       },
       "decisions": [
@@ -2062,6 +2135,28 @@
           "choice": "\"panibugho\"",
           "alternatives": [],
           "reason": "Your jealousy: God's burning zeal for what is his (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190790050011",
+            "o190790050021"
+          ],
+          "choice": "\"到几时\" (L); \"要到几时\" (B); \"还要多久\" (R) for \"how long\"",
+          "alternatives": [
+            "要到几时"
+          ],
+          "reason": "The Psalter's forms for 'ad-mah, one per level.",
           "uncertain": false,
           "footnote": false
         }
@@ -2308,6 +2403,11 @@
           "L": "Ibuhos {{deity_pronoun:mo|Mo}} ang {{deity_pronoun:iyong|Iyong}} poot sa mga bansang hindi kumikilala sa {{deity_pronoun:iyo|Iyo}}, \\q at sa mga kaharian \\q na hindi tumatawag sa {{deity_pronoun:iyong|Iyong}} pangalan,",
           "B": "Ibuhos {{deity_pronoun:mo|Mo}} ang {{deity_pronoun:iyong|Iyong}} ngitngit sa mga bansang hindi nakakilala sa {{deity_pronoun:iyo|Iyo}}, \\q sa mga kaharian \\q na kailanman ay hindi tumatawag sa {{deity_pronoun:iyong|Iyong}} pangalan,",
           "R": "Ibuhos {{deity_pronoun:mo|Mo}} ang {{deity_pronoun:iyong|Iyong}} galit sa mga bansang hindi kumikilala sa {{deity_pronoun:iyo|Iyo}}. \\q Ibuhos {{deity_pronoun:mo|Mo}} ito sa mga kahariang hindi sumasamba sa {{deity_pronoun:iyo|Iyo}}."
+        },
+        "zh": {
+          "L": "把{{deity_pronoun:你|祢}}的烈怒倒在不认识{{deity_pronoun:你|祢}}的列国身上， \\q 倒在[那些]国度身上， \\q 就是不求告{{deity_pronoun:你|祢}}名的，",
+          "B": "把{{deity_pronoun:你|祢}}的烈怒倾倒在那些不认识{{deity_pronoun:你|祢}}的万国身上， \\q 倾倒在那些 \\q 从不求告{{deity_pronoun:你|祢}}名的王国身上，",
+          "R": "把{{deity_pronoun:你|祢}}的怒气倒在不认识{{deity_pronoun:你|祢}}的各国身上。 \\q 倒在不敬拜{{deity_pronoun:你|祢}}的王国身上。"
         }
       },
       "decisions": [
@@ -2486,6 +2586,30 @@
           "choice": "\"na hindi tumatawag sa {{deity_pronoun:iyong|Iyong}} pangalan,\"",
           "alternatives": [],
           "reason": "A sentence that runs on (m4).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190790060011",
+            "o190790060042",
+            "o190790060131"
+          ],
+          "choice": "Jeremiah 10:25's Chinese, with \"国度\" / \"王国\" for kingdoms",
+          "alternatives": [
+            "宗族",
+            "民族"
+          ],
+          "reason": "The verse is the same prayer as Jeremiah 10:25, so it keeps that verse's Chinese at each level; where the psalm has \"kingdoms\" and Jeremiah \"clans\", the words differ, and verse 7 is shorter than Jeremiah's.",
           "uncertain": false,
           "footnote": false
         }
@@ -2748,6 +2872,11 @@
           "L": "sapagkat nilamon niya ang Jacob, \\q at ang kaniyang pastulan ay winasak nila.",
           "B": "sapagkat nilamon nila ang Jacob \\q at iniwang tiwangwang ang kaniyang lupang tinubuan.",
           "R": "Winasak nila ang bayan ni Jacob \\q at sinira ang lupaing tinitirhan nila."
+        },
+        "zh": {
+          "L": "因为他吞吃了雅各， \\q 他们使他的草场荒凉。",
+          "B": "因为他们吞没了雅各， \\q 使他的家园荒凉。",
+          "R": "他们毁灭了雅各的子民， \\q 毁坏了他们居住的土地。"
         }
       },
       "decisions": [
@@ -3123,6 +3252,11 @@
           "L": "Huwag {{deity_pronoun:mong|Mong}} alalahanin laban sa amin ang mga kasamaan ng mga nauna; \\q agad nawang salubungin kami ng {{deity_pronoun:iyong|Iyong}} habag, \\q sapagkat kami ay lubhang ibinaba.",
           "B": "Huwag {{deity_pronoun:mong|Mong}} ibilang laban sa amin ang mga kasalanan ng mga nauna sa amin; \\q magmadali nawa ang {{deity_pronoun:iyong|Iyong}} habag na salubungin kami, \\q sapagkat ubos na ang aming lakas.",
           "R": "Huwag {{deity_pronoun:mo|Mo}} kaming parusahan dahil sa mga kasalanan ng mga taong nabuhay bago kami. \\q Agad {{deity_pronoun:mong|Mong}} ipakita sa amin ang {{deity_pronoun:iyong|Iyong}} mapagmahal na pagkalinga, \\q sapagkat wala na kaming magagawa."
+        },
+        "zh": {
+          "L": "不要记念[我们]先人的罪孽来与我们作对； \\q 愿{{deity_pronoun:你|祢}}的怜悯快快迎接我们， \\q 因为我们落到了极低之处。",
+          "B": "不要把前人的过错算在我们身上； \\q 愿{{deity_pronoun:你|祢}}的怜悯赶快临到我们， \\q 因为我们已经软弱到了极点。",
+          "R": "不要因为我们祖先的罪惩罚我们。 \\q 快来向我们显出{{deity_pronoun:你|祢}}怜爱的关怀， \\q 因为我们完全无助了。"
         }
       },
       "decisions": [
@@ -3610,6 +3744,11 @@
           "L": "Tulungan {{deity_pronoun:mo|Mo}} kami, O Diyos ng aming kaligtasan, \\q alang-alang sa kaluwalhatian ng {{deity_pronoun:iyong|Iyong}} pangalan; \\q at iligtas {{deity_pronoun:mo|Mo}} kami at tubusin ang aming mga kasalanan alang-alang sa {{deity_pronoun:iyong|Iyong}} pangalan.",
           "B": "O Diyos na nagliligtas sa amin, saklolohan {{deity_pronoun:mo|Mo}} kami para sa kaluwalhatian ng {{deity_pronoun:iyong|Iyong}} pangalan. \\q Sagipin {{deity_pronoun:mo|Mo}} kami at takpan ang aming mga kasalanan, upang parangalan ang {{deity_pronoun:iyong|Iyong}} pangalan.",
           "R": "O Diyos, {{deity_pronoun:ikaw|Ikaw}} ang nagliligtas sa amin. \\q Tulungan {{deity_pronoun:mo|Mo}} kami, upang makita ng mga tao kung gaano {{deity_pronoun:ka|Ka}} kadakila. \\q Iligtas {{deity_pronoun:mo|Mo}} kami at patawarin ang aming mga kasalanan, upang maparangalan ang {{deity_pronoun:iyong|Iyong}} pangalan."
+        },
+        "zh": {
+          "L": "我们救恩的{{god_term:神|上帝}}啊，帮助我们， \\q 为了{{deity_pronoun:你|祢}}名的荣耀； \\q 为了{{deity_pronoun:你|祢}}名的缘故，解救我们，为我们的罪赎罪。",
+          "B": "拯救我们的{{god_term:神|上帝}}啊，为了{{deity_pronoun:你|祢}}名的荣耀来帮助我们。 \\q 为了尊荣{{deity_pronoun:你|祢}}的名，救我们，遮盖我们的罪。",
+          "R": "{{god_term:神|上帝}}啊，{{deity_pronoun:你|祢}}是拯救我们的那一位。 \\q 帮助我们，让人们看见{{deity_pronoun:你|祢}}多么伟大。 \\q 拯救我们，饶恕我们的罪，好使{{deity_pronoun:你|祢}}的名得到尊崇。"
         }
       },
       "decisions": [
@@ -3847,6 +3986,25 @@
           "choice": "\"tubusin\"",
           "alternatives": [],
           "reason": "Atone for: cover and wipe away (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190790090092"
+          ],
+          "choice": "\"为我们的罪赎罪\" (L); \"遮盖我们的罪\" (B); \"饶恕我们的罪\" (R)",
+          "alternatives": [
+            "赦免"
+          ],
+          "reason": "Kipper is covering and wiping away (m2): Literal keeps the glossary's \"为……赎罪\", Balanced the picture of covering, Readable its plain result.",
           "uncertain": false,
           "footnote": false
         }
@@ -4144,6 +4302,11 @@
           "L": "Bakit sasabihin ng mga bansa, \"Nasaan ang kanilang Diyos?\" \\q Makilala nawa sa gitna ng mga bansa sa harap ng aming mga mata \\q ang paghihiganti sa dugo ng {{deity_pronoun:iyong|Iyong}} mga lingkod na ibinuhos.",
           "B": "Bakit pa makapagsasabi ang mga bansa, \"Nasaan ang kanilang Diyos?\" \\q Makita nawa ng mga bansa na pinagbabayad {{deity_pronoun:mo|Mo}} ang dumanak na dugo ng {{deity_pronoun:iyong|Iyong}} mga lingkod, \\q at makita namin ito ng sarili naming mga mata.",
           "R": "Huwag {{deity_pronoun:mong|Mong}} hayaang magtanong ang mga bansa, \"Nasaan ang kanilang Diyos?\" \\q Pinadanak ang dugo ng {{deity_pronoun:iyong|Iyong}} mga lingkod. \\q Makita nawa ng mga bansa na pinarurusahan {{deity_pronoun:mo|Mo}} ang mga gumawa nito, at makita rin namin."
+        },
+        "zh": {
+          "L": "为什么让列国说：“他们的{{god_term:神|上帝}}在哪里呢？” \\q 愿在我们眼前，使列国知道 \\q {{deity_pronoun:你|祢}}仆人流出的血已被伸冤。",
+          "B": "为什么让万国说：“他们的{{god_term:神|上帝}}在哪里？” \\q 愿万国看见{{deity_pronoun:你|祢}}为{{deity_pronoun:你|祢}}仆人所流的血讨回公道， \\q 也让我们亲眼看见。",
+          "R": "不要让各国问：“他们的{{god_term:神|上帝}}在哪里？” \\q 你仆人的血已经被人流了出来。 \\q 让各国看见{{deity_pronoun:你|祢}}惩罚那些行凶的人，也让我们亲眼看见。"
         }
       },
       "decisions": [
@@ -4624,6 +4787,11 @@
           "L": "Makarating nawa sa harap {{deity_pronoun:mo|Mo}} ang daing ng bilanggo; \\q ayon sa kadakilaan ng {{deity_pronoun:iyong|Iyong}} bisig, \\q ingatan {{deity_pronoun:mo|Mo}} ang mga anak ng kamatayan.",
           "B": "Umabot nawa sa {{deity_pronoun:iyo|Iyo}} ang daing ng mga bihag; \\q sa lakas ng {{deity_pronoun:iyong|Iyong}} bisig, \\q iligtas {{deity_pronoun:mo|Mo}} ang mga itinakda sa kamatayan.",
           "R": "Pakinggan {{deity_pronoun:mo|Mo}} ang daing ng mga bilanggo. \\q Dakila ang {{deity_pronoun:iyong|Iyong}} kapangyarihan. \\q Iligtas {{deity_pronoun:mo|Mo}} ang mga taong papatayin."
+        },
+        "zh": {
+          "L": "愿被囚之人的叹息达到{{deity_pronoun:你|祢}}面前； \\q 照{{deity_pronoun:你|祢}}膀臂的大能， \\q 保全那些注定要死的人。",
+          "B": "愿被俘之人的哀叹达到{{deity_pronoun:你|祢}}面前； \\q 用{{deity_pronoun:你|祢}}膀臂的大能， \\q 饶恕那些被定为死罪的人。",
+          "R": "听听囚犯的哀叹吧。 \\q 你的力量多么大！ \\q 救救那些就要被杀的人。"
         }
       },
       "decisions": [
@@ -4786,6 +4954,26 @@
           "choice": "\"bisig\"",
           "alternatives": [],
           "reason": "Your arm: your power (m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190790110081",
+            "o190790110091"
+          ],
+          "choice": "\"注定要死的人\" for \"the sons of death\"",
+          "alternatives": [
+            "死亡之子"
+          ],
+          "reason": "The phrase is an idiom for people condemned to die (m1); \"死亡之子\" would read in Chinese as a title, so even Literal gives its sense.",
           "uncertain": false,
           "footnote": false
         }
@@ -5025,6 +5213,11 @@
           "L": "At ibalik {{deity_pronoun:mo|Mo}} sa aming mga kapitbahay nang makapito sa kanilang kandungan \\q ang kanilang paglait na ipinanlait nila sa {{deity_pronoun:iyo|Iyo}}, Panginoon ko.",
           "B": "Pagbayarin {{deity_pronoun:mo|Mo}} ang aming mga kapitbahay nang makapito, mismo sa kanilang kandungan, \\q dahil sa paghamak na ibinunton nila sa {{deity_pronoun:iyo|Iyo}}, Panginoon.",
           "R": "Panginoon, nilait {{deity_pronoun:ka|Ka}} ng aming mga kapitbahay. \\q Pagbayarin {{deity_pronoun:mo|Mo}} sila nang lubos, nang makapito."
+        },
+        "zh": {
+          "L": "要七倍地归还到我们邻国的怀中， \\q 就是他们辱骂{{deity_pronoun:你|祢}}的辱骂，我的主啊。",
+          "B": "要七倍地报应我们的邻国，直报到他们怀里， \\q 因为他们向{{deity_pronoun:你|祢}}堆积嘲讽，主啊。",
+          "R": "主啊，我们的邻国侮辱了{{deity_pronoun:你|祢}}。 \\q 要完全地报应他们，报应七倍。"
         }
       },
       "decisions": [
@@ -5468,6 +5661,11 @@
           "L": "At kami na {{deity_pronoun:iyong|Iyong}} bayan at mga tupa ng {{deity_pronoun:iyong|Iyong}} pastulan ay magpapasalamat sa {{deity_pronoun:iyo|Iyo}} magpakailanman; \\q sa sali't salinlahi \\q ay isasalaysay namin ang {{deity_pronoun:iyong|Iyong}} papuri.",
           "B": "Kung magkagayon, kaming {{deity_pronoun:iyong|Iyong}} bayan, ang kawang {{deity_pronoun:iyong|Iyong}} inaalagaan, ay magpapasalamat sa {{deity_pronoun:iyo|Iyo}} sa lahat ng panahon; \\q sa bawat salinlahi \\q ay ihahayag namin ang {{deity_pronoun:iyong|Iyong}} papuri.",
           "R": "Kami ang {{deity_pronoun:iyong|Iyong}} bayan, ang mga tupang {{deity_pronoun:iyong|Iyong}} inaalagaan. \\q Magpapasalamat kami sa {{deity_pronoun:iyo|Iyo}} magpakailanman. \\q Sasabihin namin sa aming mga anak at sa kanilang mga anak kung gaano {{deity_pronoun:ka|Ka}} kadakila."
+        },
+        "zh": {
+          "L": "这样，我们，{{deity_pronoun:你|祢}}的子民和{{deity_pronoun:你|祢}}草场的羊，要永远称谢{{deity_pronoun:你|祢}}； \\q 世世代代 \\q 我们要述说{{deity_pronoun:你|祢}}的赞美。",
+          "B": "那时我们，{{deity_pronoun:你|祢}}的子民，{{deity_pronoun:你|祢}}所牧养的羊群，要永远感谢{{deity_pronoun:你|祢}}； \\q 我们要向世世代代 \\q 述说{{deity_pronoun:你|祢}}当得的赞美。",
+          "R": "我们是{{deity_pronoun:你|祢}}的百姓，是{{deity_pronoun:你|祢}}所照顾的羊。 \\q 我们要永远感谢{{deity_pronoun:你|祢}}。 \\q 我们要告诉我们的儿女和他们的儿女，{{deity_pronoun:你|祢}}多么伟大。"
         }
       },
       "decisions": [
