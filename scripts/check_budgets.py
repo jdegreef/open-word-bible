@@ -47,9 +47,11 @@ BUDGETS = {
     # languages and their word card, furigana and the spoken word lit].
     # Not admin.js or admin.css, which only signed-in staff load.
     "js_css_asset_gz": 58 * KB,
-    # The admin's script or style sheet (/admin/, staff only) [58 KB,
-    # admin.js, on 2026-11-22 with the review workspace, inbox paging and
-    # undo; it was counted with the readers' scripts until then].
+    # The admin's largest script or style sheet (/admin/, staff only) [58
+    # KB, admin.js, on 2026-11-22 with the review workspace, inbox paging
+    # and undo; it was counted with the readers' scripts until then; 34 KB
+    # on 2026-11-23 once the sections opened less often moved to
+    # admin-<module>.js, loaded when first opened].
     "admin_asset_gz": 80 * KB,
     # Every file in the site [703 MB; 909 MB on 2026-10-14 with Numbers to
     # Ruth; 1,150 MB later that day with 1 Samuel to 2 Chronicles; 1,810 MB
@@ -106,8 +108,9 @@ def is_reader_data(rel):
 
 
 def is_admin(rel):
-    """The admin's own script or style sheet, which only staff load."""
-    return len(rel.parts) == 1 and rel.stem == "admin"
+    """One of the admin's own scripts or style sheet (admin.js, admin-core.js,
+    admin-review.js, ...), which only staff load."""
+    return len(rel.parts) == 1 and (rel.stem == "admin" or rel.stem.startswith("admin-"))
 
 
 CHAPTER_DATA = re.compile(rb'<script src="/(chapter-data/[^"?]+\.js)\?v=[0-9a-f]+"></script>')

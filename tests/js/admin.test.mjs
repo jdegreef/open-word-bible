@@ -1,4 +1,4 @@
-// web/admin.js's page-free part, OWBAdminCore: which kept reads a change can
+// web/admin-core.js's page-free part, OWBAdminCore: which kept reads a change can
 // affect, packing kept reads for sessionStorage, and the review queue's next
 // and previous sentences.
 // Run: node --test tests/js/
@@ -11,7 +11,7 @@ import vm from "node:vm";
 const ROOT = new URL("../../", import.meta.url).pathname;
 // A browser script: with no #admin on the page, only OWBAdminCore is made.
 const context = vm.createContext({ document: { getElementById: () => null } });
-vm.runInContext(readFileSync(join(ROOT, "web/admin.js"), "utf-8"), context, { filename: "web/admin.js" });
+vm.runInContext(readFileSync(join(ROOT, "web/admin-core.js"), "utf-8"), context, { filename: "web/admin-core.js" });
 const C = context.OWBAdminCore;
 const A = "/api/admin/";
 const plain = (x) => JSON.parse(JSON.stringify(x));
