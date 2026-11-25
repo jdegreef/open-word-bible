@@ -99,6 +99,11 @@
           "L": "ਸਾਡੇ ਸਮਾਚਾਰ ਉੱਤੇ ਕਿਸ ਨੇ ਵਿਸ਼ਵਾਸ ਕੀਤਾ ਹੈ? \\q ਅਤੇ {{divine_name:ਪ੍ਰਭੂ|ਯਾਹਵੇ}} ਦੀ ਬਾਂਹ, ਉਹ ਕਿਸ ਉੱਤੇ ਪਰਗਟ ਹੋਈ ਹੈ?",
           "B": "ਜਿਹੜੀ ਖ਼ਬਰ ਸਾਡੇ ਤੱਕ ਪਹੁੰਚੀ, ਉਸ ਉੱਤੇ ਕਿਸ ਨੇ ਵਿਸ਼ਵਾਸ ਕੀਤਾ ਹੈ? \\q ਅਤੇ {{divine_name:ਪ੍ਰਭੂ|ਯਾਹਵੇ}} ਦੀ ਬਾਂਹ ਕਿਸ ਦੇ ਸਾਹਮਣੇ ਨੰਗੀ ਕੀਤੀ ਗਈ ਹੈ?",
           "R": "ਜਿਹੜਾ ਸੰਦੇਸ਼ ਅਸੀਂ ਸੁਣਿਆ, ਉਸ ਉੱਤੇ ਕਿਸ ਨੇ ਵਿਸ਼ਵਾਸ ਕੀਤਾ ਹੈ? \\q ਕਿਸ ਨੇ {{divine_name:ਪ੍ਰਭੂ|ਯਾਹਵੇ}} ਨੂੰ ਆਪਣੀ ਸ਼ਕਤੀ ਵਿਖਾਉਂਦੇ ਵੇਖਿਆ ਹੈ?"
+        },
+        "zh": {
+          "L": "有谁信了我们的报告呢？ \\q {{divine_name:上主|雅威}}的膀臂已经向谁显明了？",
+          "B": "谁信了我们的信息？ \\q {{divine_name:上主|雅威}}的臂膀向谁显明了呢？",
+          "R": "谁相信了我们听到的信息？ \\q 谁看见过{{divine_name:上主|雅威}}显出{{deity_pronoun:他|祂}}的能力呢？"
         }
       },
       "decisions": [
@@ -595,6 +600,54 @@
           "reason": "Book convention.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530010011",
+            "o230530010021",
+            "o230530010031",
+            "o230530010032",
+            "o230530010033",
+            "o230530010042",
+            "o230530010081"
+          ],
+          "choice": "John 12:38 and Romans 10:16 at each level, without \"主啊\"",
+          "alternatives": [
+            "主啊，有谁信了我们的报告呢？"
+          ],
+          "reason": "John and Paul quote this verse with the Hebrew's sense, so Literal and Balanced keep their Chinese; the Greek adds \"Lord\" as an address and has \"Lord\" for the divine name, so the address is left out here and the name is a divine_name span.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530010031",
+            "o230530010032",
+            "o230530010033"
+          ],
+          "choice": "\"我们听到的信息\"",
+          "alternatives": [
+            "我们带来的信息"
+          ],
+          "reason": "The English Readable takes the report as the news that reached the speakers (meaning m1, m2); John 12:38's Readable \"带来的\" reads it as the message they brought.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft",
@@ -844,6 +897,11 @@
           "L": "ਅਤੇ ਉਹ ਉਨ੍ਹਾਂ ਦੇ ਅੱਗੇ ਕੂਮਲ ਵਾਂਗ, ਅਤੇ ਸੁੱਕੀ ਧਰਤੀ ਵਿੱਚੋਂ ਜੜ੍ਹ ਵਾਂਗ ਵਧਿਆ; \\q ਉਸ ਦਾ ਨਾ ਕੋਈ ਰੂਪ [ਸੀ] ਨਾ ਸ਼ਾਨ, \\q ਕਿ ਅਸੀਂ ਉਸ ਵੱਲ ਤੱਕੀਏ, ਅਤੇ ਨਾ ਕੋਈ ਸੂਰਤ, ਕਿ ਅਸੀਂ ਉਸ ਨੂੰ ਚਾਹੀਏ।",
           "B": "ਉਹ ਉਨ੍ਹਾਂ ਦੇ ਸਾਹਮਣੇ ਇੱਕ ਨਿੱਕੀ ਜਿਹੀ ਕਰੂੰਬਲ ਵਾਂਗ, ਤਪੀ ਹੋਈ ਧਰਤੀ ਵਿੱਚੋਂ ਨਿੱਕਲਦੀ ਜੜ੍ਹ ਵਾਂਗ ਵੱਡਾ ਹੋਇਆ। \\q ਉਸ ਦਾ ਕੋਈ ਰੋਹਬਦਾਰ ਰੂਪ ਨਹੀਂ ਸੀ, ਕੋਈ ਸ਼ਾਨ ਨਹੀਂ ਸੀ ਜਿਹੜੀ ਸਾਡੀਆਂ ਨਜ਼ਰਾਂ ਨੂੰ ਖਿੱਚੇ, \\q ਨਾ ਕੋਈ ਸੋਹਣੀ ਸ਼ਕਲ ਜਿਹੜੀ ਸਾਨੂੰ ਉਸ ਲਈ ਤਰਸਾਵੇ।",
           "R": "ਉਹ {{divine_name:ਪ੍ਰਭੂ|ਯਾਹਵੇ}} ਦੀਆਂ ਨਜ਼ਰਾਂ ਸਾਹਮਣੇ ਇੱਕ ਛੋਟੀ ਹਰੀ ਕਰੂੰਬਲ ਵਾਂਗ, ਸੁੱਕੀ ਜ਼ਮੀਨ ਵਿੱਚੋਂ ਉੱਪਰ ਆਉਂਦੀ ਜੜ੍ਹ ਵਾਂਗ ਵੱਡਾ ਹੋਇਆ। \\q ਉਸ ਵਿੱਚ ਕੋਈ ਸ਼ਾਨਦਾਰ ਜਾਂ ਸ਼ਾਹੀ ਗੱਲ ਨਹੀਂ ਸੀ ਜਿਹੜੀ ਸਾਡਾ ਧਿਆਨ ਖਿੱਚਦੀ। \\q ਉਸ ਦੀ ਸ਼ਕਲ-ਸੂਰਤ ਅਜਿਹੀ ਨਹੀਂ ਸੀ ਕਿ ਅਸੀਂ ਉਸ ਦੇ ਨੇੜੇ ਹੋਣਾ ਚਾਹੁੰਦੇ।"
+        },
+        "zh": {
+          "L": "他在{{deity_pronoun:他|祂}}面前长起来，像一棵幼苗，又像出自干旱之地的根； \\q 他没有形貌，也没有威荣， \\q 好让我们注视他；也没有容貌，好让我们喜爱他。",
+          "B": "他在{{deity_pronoun:他|祂}}面前长大，像一株小小的幼苗，像一条从干裂的土里冒出来的根。 \\q 他没有威武的仪表，也没有吸引我们目光的光彩， \\q 也没有好看的样貌，叫我们向往他。",
+          "R": "他在{{divine_name:上主|雅威}}面前长大，像一棵小小的绿芽，像一条从干地里钻出来的根。 \\q 他一点也不高大，也不出众，没有什么让我们注意他的地方。 \\q 他的样子也没有让我们想要接近他。"
         }
       },
       "decisions": [
@@ -1060,6 +1118,29 @@
           "choice": "ਉਨ੍ਹਾਂ ਦੇ ਅੱਗੇ (honorific: before the LORD) at L and B",
           "alternatives": [],
           "reason": "The 'him' is God, not the onlookers.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530020031",
+            "o230530020032",
+            "o230530020033"
+          ],
+          "choice": "\"在{{deity_pronoun:他|祂}}面前\", the servant plain \"他\"",
+          "alternatives": [
+            "a deity_pronoun span on the servant"
+          ],
+          "reason": "\"Before him\" is before the LORD (m1), so that pronoun takes the span; the servant's \"他\" takes none, as in the English.",
           "uncertain": false,
           "footnote": false
         }
@@ -1422,6 +1503,11 @@
           "L": "[ਉਹ] {{gender:ਲੋਕਾਂ|ਮਨੁੱਖਾਂ}} ਦੁਆਰਾ ਤੁੱਛ ਜਾਣਿਆ ਅਤੇ ਤਿਆਗਿਆ ਗਿਆ, \\q ਦੁੱਖਾਂ ਦਾ ਮਨੁੱਖ ਅਤੇ ਰੋਗ ਨੂੰ ਜਾਣਨ ਵਾਲਾ; \\q ਅਤੇ ਜਿਵੇਂ ਕੋਈ ਉਸ ਤੋਂ ਮੂੰਹ ਲੁਕਾਉਂਦਾ ਹੈ, \\q [ਉਹ] ਤੁੱਛ ਜਾਣਿਆ ਗਿਆ, ਅਤੇ ਅਸੀਂ ਉਸ ਦਾ ਮੁੱਲ ਨਾ ਪਾਇਆ।",
           "B": "ਉਹ ਤੁੱਛ ਜਾਣਿਆ ਗਿਆ ਅਤੇ ਹਰ ਕਿਸੇ ਨੇ ਉਸ ਤੋਂ ਕਿਨਾਰਾ ਕੀਤਾ, \\q ਉਹ ਦੁੱਖਾਂ ਵਾਲਾ ਮਨੁੱਖ ਸੀ, ਬਿਮਾਰੀ ਉਸ ਲਈ ਓਪਰੀ ਨਹੀਂ ਸੀ। \\q ਲੋਕ ਉਸ ਤੋਂ ਆਪਣੇ ਮੂੰਹ ਫੇਰ ਲੈਂਦੇ ਸਨ; \\q ਉਸ ਨੂੰ ਤੁੱਛ ਜਾਣਿਆ ਗਿਆ, ਅਤੇ ਸਾਡੀ ਨਜ਼ਰ ਵਿੱਚ ਉਹ ਕੁਝ ਵੀ ਨਹੀਂ ਸੀ।",
           "R": "ਲੋਕ ਉਸ ਨੂੰ ਨੀਵਾਂ ਸਮਝਦੇ ਸਨ ਅਤੇ ਉਸ ਨਾਲ ਕੋਈ ਵਾਸਤਾ ਨਹੀਂ ਰੱਖਣਾ ਚਾਹੁੰਦੇ ਸਨ। \\q ਉਸ ਦਾ ਜੀਵਨ ਪੀੜ ਨਾਲ ਭਰਿਆ ਸੀ, ਅਤੇ ਬਿਮਾਰੀ ਉਸ ਲਈ ਕੋਈ ਨਵੀਂ ਗੱਲ ਨਹੀਂ ਸੀ। \\q ਲੋਕ ਉਸ ਵੱਲੋਂ ਆਪਣੇ ਮੂੰਹ ਮੋੜ ਲੈਂਦੇ ਸਨ। \\q ਉਹ ਉਸ ਨੂੰ ਨੀਵਾਂ ਸਮਝਦੇ ਸਨ, ਅਤੇ ਅਸੀਂ ਸੋਚਿਆ ਕਿ ਉਸ ਦੀ ਕੋਈ ਕੀਮਤ ਨਹੀਂ।"
+        },
+        "zh": {
+          "L": "[他]受轻视，被人离弃， \\q 是个满有痛苦、熟识疾病的人； \\q 又像[人们]向他遮起脸来， \\q [他]受轻视，我们也不看重他。",
+          "B": "他受人鄙视，被众人躲避， \\q 是个饱受痛苦的人，疾病对他并不陌生。 \\q 人们都把脸转开，不看他； \\q 他受人鄙视，我们也把他当作一文不值。",
+          "R": "人们看不起他，什么事都不想跟他有关系。 \\q 他的一生充满痛苦，疾病对他来说也不是新鲜事。 \\q 人们都转过脸去，不看他。 \\q 他们看不起他，我们也认为他一点价值也没有。"
         }
       },
       "decisions": [
@@ -1800,6 +1886,26 @@
           "reason": "Pains and sickness, as verse 4.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o230530030022",
+            "o230530030031"
+          ],
+          "choice": "\"人\" with no gender span",
+          "alternatives": [
+            "a gender span 人 / 男人"
+          ],
+          "reason": "The English Literal spans \"people / men\"; Chinese \"人\" already means people of both sexes, so no span is needed (style guide section 8).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft",
@@ -2093,6 +2199,11 @@
           "L": "ਫਿਰ ਵੀ ਸਾਡੇ ਰੋਗ ਉਸ ਨੇ ਆਪ ਚੁੱਕ ਲਏ, \\q ਅਤੇ ਸਾਡੇ ਦੁੱਖ, ਉਸ ਨੇ ਉਨ੍ਹਾਂ ਨੂੰ ਉਠਾਇਆ; \\q ਅਤੇ ਅਸੀਂ, ਅਸੀਂ ਉਸ ਨੂੰ ਮਾਰਿਆ ਹੋਇਆ, ਪਰਮੇਸ਼ੁਰ ਦਾ ਕੁੱਟਿਆ ਹੋਇਆ, ਅਤੇ ਦੁਖੀ ਕੀਤਾ ਹੋਇਆ ਸਮਝਿਆ।",
           "B": "ਪਰ ਇਹ ਸਾਡੇ ਰੋਗ ਸਨ ਜਿਹੜੇ ਉਸ ਨੇ ਝੱਲੇ, \\q ਸਾਡੀਆਂ ਪੀੜਾਂ ਸਨ ਜਿਹੜੀਆਂ ਉਸ ਨੇ ਆਪਣੇ ਮੋਢਿਆਂ ਉੱਤੇ ਲਈਆਂ, \\q ਜਦ ਕਿ ਅਸੀਂ ਉਸ ਨੂੰ ਬਵਾ ਦਾ ਮਾਰਿਆ, \\q ਪਰਮੇਸ਼ੁਰ ਦਾ ਕੁੱਟਿਆ ਅਤੇ ਨਿਵਾਇਆ ਹੋਇਆ ਆਦਮੀ ਸਮਝਿਆ।",
           "R": "ਪਰ ਅਸਲ ਵਿੱਚ ਉਹ ਸਾਡੀਆਂ ਬਿਮਾਰੀਆਂ ਚੁੱਕ ਰਿਹਾ ਸੀ। \\q ਉਹ ਸਾਡੀਆਂ ਪੀੜਾਂ ਦਾ ਭਾਰ ਚੁੱਕ ਰਿਹਾ ਸੀ। \\q ਅਤੇ ਅਸੀਂ ਸੋਚਿਆ ਕਿ ਪਰਮੇਸ਼ੁਰ ਨੇ ਉਸ ਨੂੰ ਮਾਰਿਆ, ਕੁੱਟ ਕੇ ਥੱਲੇ ਸੁੱਟਿਆ ਅਤੇ ਦੁੱਖ ਦਿੱਤਾ ਹੈ।"
+        },
+        "zh": {
+          "L": "然而我们的疾病，他亲自担负了， \\q 我们的痛苦，他背起来了； \\q 而我们，我们竟认为他是受了击打的、被{{god_term:神|上帝}}击打的、受苦的。",
+          "B": "然而他所担负的，其实是我们的疾病， \\q 他所扛起的，是我们的痛苦； \\q 我们却当他是遭了灾祸的人， \\q 被{{god_term:神|上帝}}击倒，受尽苦楚。",
+          "R": "其实，他是在背负我们的疾病。 \\q 他扛起了我们痛苦的重担。 \\q 我们却以为是{{god_term:神|上帝}}打击他，把他打倒，使他受苦。"
         }
       },
       "decisions": [
@@ -2438,6 +2549,52 @@
           "reason": "Isaiah keeps the servant's forms plain.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530040021",
+            "o230530040022",
+            "o230530040031",
+            "o230530040041",
+            "o230530040052",
+            "o230530040053"
+          ],
+          "choice": "\"疾病……担负\"; \"痛苦\"",
+          "alternatives": [
+            "我们的软弱……我们的疾病"
+          ],
+          "reason": "Matthew 8:17 quotes this line as \"he took our weaknesses and bore our diseases\" (\"软弱……疾病\"); the Hebrew has sicknesses and pains, so the Chinese translates it and keeps Matthew's verb \"担负\" for \"bore\".",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o230530040111"
+          ],
+          "choice": "\"{{god_term:神|上帝}}\"",
+          "alternatives": [
+            "神",
+            "上帝"
+          ],
+          "reason": "Every word naming the one God is a god_term span: 神 by default, 上帝 as the reader's alternative (style guide section 4).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft",
@@ -2772,6 +2929,11 @@
           "L": "ਪਰ ਉਹ ਸਾਡੇ ਅਪਰਾਧਾਂ ਦੇ ਕਾਰਨ ਵਿੰਨ੍ਹਿਆ ਗਿਆ, \\q ਸਾਡੀਆਂ ਬਦੀਆਂ ਦੇ ਕਾਰਨ ਕੁਚਲਿਆ ਗਿਆ; \\q ਸਾਡੀ ਸ਼ਾਂਤੀ ਦੀ ਤਾੜਨਾ ਉਸ ਉੱਤੇ [ਸੀ], \\q ਅਤੇ ਉਸ ਦੀਆਂ ਲਾਸਾਂ ਨਾਲ ਸਾਨੂੰ ਚੰਗਿਆਈ ਮਿਲਦੀ ਹੈ।",
           "B": "ਪਰ ਸਾਡੀਆਂ ਬਗ਼ਾਵਤਾਂ ਕਰਕੇ ਉਹ ਆਰ-ਪਾਰ ਵਿੰਨ੍ਹਿਆ ਗਿਆ, \\q ਸਾਡੇ ਦੋਸ਼ ਕਰਕੇ ਉਹ ਪੀਸਿਆ ਗਿਆ। \\q ਜਿਹੜੀ ਸਜ਼ਾ ਨੇ ਸਾਨੂੰ ਸ਼ਾਂਤੀ ਦਿਵਾਈ, ਉਹ ਉਸ ਉੱਤੇ ਪਈ, \\q ਅਤੇ ਜਿਹੜੀਆਂ ਲਾਸਾਂ ਉਸ ਨੇ ਖਾਧੀਆਂ, ਉਨ੍ਹਾਂ ਨੇ ਸਾਨੂੰ ਤੰਦਰੁਸਤੀ ਦਿੱਤੀ ਹੈ।",
           "R": "ਪਰ ਜਿਨ੍ਹਾਂ ਤਰੀਕਿਆਂ ਨਾਲ ਅਸੀਂ ਪਰਮੇਸ਼ੁਰ ਦੇ ਵਿਰੁੱਧ ਹੋਏ, ਉਨ੍ਹਾਂ ਲਈ ਉਸ ਨੂੰ ਜ਼ਖ਼ਮੀ ਕੀਤਾ ਗਿਆ। \\q ਸਾਡੇ ਪਾਪਾਂ ਲਈ ਉਸ ਨੂੰ ਕੁਚਲਿਆ ਗਿਆ। \\q ਜਿਹੜੀ ਸਜ਼ਾ ਨੇ ਸਾਨੂੰ ਸ਼ਾਂਤੀ ਦਿੱਤੀ, ਉਹ ਉਸ ਨੇ ਸਹਿ ਲਈ। \\q ਜਿਹੜੀ ਕੁੱਟ ਉਸ ਨੇ ਖਾਧੀ, ਉਸ ਨੇ ਸਾਨੂੰ ਚੰਗੇ ਕਰ ਦਿੱਤਾ ਹੈ।"
+        },
+        "zh": {
+          "L": "但他是因我们的过犯被刺透， \\q 因我们的罪孽被压碎； \\q 使我们得平安的惩戒落在他身上， \\q 借着他的伤痕，我们得了医治。",
+          "B": "但他被刺穿，是因为我们的悖逆； \\q 他被压碎，是因为我们的罪过。 \\q 那使我们得平安的管教落在他身上， \\q 借着他所受的伤，我们得了医治。",
+          "R": "但他受伤，是因为我们背叛了{{god_term:神|上帝}}。 \\q 他被压碎，是因为我们的罪。 \\q 他承受了刑罚，使我们得到平安。 \\q 因为他被打、受伤，我们就得了医治。"
         }
       },
       "decisions": [
@@ -3182,6 +3344,32 @@
           "reason": "Transgression and iniquity.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530050092",
+            "o230530050093",
+            "o230530050094",
+            "o230530050101",
+            "o230530050111",
+            "o230530050112"
+          ],
+          "choice": "\"借着他的伤痕\" (L); \"借着他所受的伤\" (B); \"因为他被打、受伤\" (R)",
+          "alternatives": [
+            "因他受的鞭伤"
+          ],
+          "reason": "1 Peter 2:24 quotes this line, and the Hebrew says the same, so each level keeps 1 Peter's Chinese, with \"我们\" for Peter's \"你们\".",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft",
@@ -3513,6 +3701,11 @@
           "L": "ਅਸੀਂ ਸਾਰੇ ਭੇਡਾਂ ਵਾਂਗ ਭਟਕ ਗਏ ਹਾਂ; \\q ਹਰੇਕ ਆਪਣੇ ਹੀ ਰਾਹ ਵੱਲ ਮੁੜ ਗਿਆ ਹੈ; \\q ਅਤੇ {{divine_name:ਪ੍ਰਭੂ|ਯਾਹਵੇ}} ਨੇ ਸਾਡੇ ਸਾਰਿਆਂ ਦੀ ਬਦੀ ਉਸ ਉੱਤੇ ਪਾ ਦਿੱਤੀ ਹੈ।",
           "B": "ਸਾਡੇ ਵਿੱਚੋਂ ਹਰੇਕ ਭੇਡਾਂ ਵਾਂਗ ਭਟਕ ਕੇ ਦੂਰ ਚਲਾ ਗਿਆ ਹੈ; \\q ਅਸੀਂ ਸਭ ਆਪੋ-ਆਪਣੇ ਰਾਹ ਮੁੜ ਗਏ ਹਾਂ, \\q ਅਤੇ {{divine_name:ਪ੍ਰਭੂ|ਯਾਹਵੇ}} ਨੇ ਸਾਡਾ ਸਾਰਾ ਦੋਸ਼ ਉਸ ਉੱਤੇ ਆ ਸੁੱਟਿਆ ਹੈ।",
           "R": "ਅਸੀਂ ਸਾਰੇ ਗੁਆਚੀਆਂ ਭੇਡਾਂ ਵਾਂਗ ਭਟਕ ਗਏ ਹਾਂ। \\q ਸਾਡੇ ਵਿੱਚੋਂ ਹਰ ਕੋਈ ਆਪਣੇ ਹੀ ਰਾਹ ਤੁਰ ਪਿਆ ਹੈ। \\q ਅਤੇ {{divine_name:ਪ੍ਰਭੂ|ਯਾਹਵੇ}} ਨੇ ਸਾਡੇ ਸਾਰਿਆਂ ਦੇ ਪਾਪ ਉਸ ਉੱਤੇ ਪਾ ਦਿੱਤੇ ਹਨ।"
+        },
+        "zh": {
+          "L": "我们都像羊一样迷失了路， \\q 各人转向自己的路； \\q 而{{divine_name:上主|雅威}}使我们所有人的罪孽都击中了他。",
+          "B": "我们每个人都像走失的羊一样四处游荡， \\q 各自转离，走上自己的路， \\q 而{{divine_name:上主|雅威}}使我们所有的罪过都落到他身上。",
+          "R": "我们大家都像走散的羊，迷了路。 \\q 我们每个人都走自己的路。 \\q {{divine_name:上主|雅威}}却使我们所有人的罪都落在他身上。"
         }
       },
       "decisions": [
@@ -3781,6 +3974,50 @@
           "choice": "ਉਸ ਉੱਤੇ ਪਾ ਦਿੱਤੀ ਹੈ (L); ਆ ਸੁੱਟਿਆ ਹੈ (B)",
           "alternatives": [],
           "reason": "Made to fall on him.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530060011",
+            "o230530060012",
+            "o230530060021",
+            "o230530060022",
+            "o230530060031"
+          ],
+          "choice": "\"像羊一样迷失了路\" (L); \"像走失的羊一样四处游荡\" (B); \"走散的羊\" (R)",
+          "alternatives": [
+            "如羊走迷"
+          ],
+          "reason": "1 Peter 2:25 takes up this line; each level keeps its Chinese for the straying sheep.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530060081"
+          ],
+          "choice": "\"击中了他\"",
+          "alternatives": [
+            "归在他身上"
+          ],
+          "reason": "The verb means to make something strike (m1); Literal keeps the picture.",
           "uncertain": false,
           "footnote": false
         }
@@ -4080,6 +4317,11 @@
           "L": "ਉਸ ਉੱਤੇ ਜ਼ੁਲਮ ਕੀਤਾ ਗਿਆ, ਅਤੇ ਉਹ ਦੁਖੀ ਕੀਤਾ ਗਿਆ, ਫਿਰ ਵੀ ਉਸ ਨੇ ਆਪਣਾ ਮੂੰਹ ਨਾ ਖੋਲ੍ਹਿਆ; \\q ਉਸ ਲੇਲੇ ਵਾਂਗ ਜਿਹੜਾ ਕੋਹੇ ਜਾਣ ਲਈ ਲਿਜਾਇਆ ਜਾਂਦਾ ਹੈ, \\q ਅਤੇ ਉਸ ਭੇਡ ਵਾਂਗ ਜਿਹੜੀ ਆਪਣੀ ਉੱਨ ਕਤਰਨ ਵਾਲਿਆਂ ਅੱਗੇ ਗੁੰਗੀ ਹੁੰਦੀ ਹੈ, \\q [ਉਸੇ ਤਰ੍ਹਾਂ] ਉਸ ਨੇ ਆਪਣਾ ਮੂੰਹ ਨਾ ਖੋਲ੍ਹਿਆ।",
           "B": "ਉਸ ਨੂੰ ਬੁਰੀ ਤਰ੍ਹਾਂ ਦਬਾਇਆ ਗਿਆ, ਅਤੇ ਉਹ ਉਸ ਹੇਠ ਨਿਵ ਗਿਆ, ਪਰ ਉਸ ਨੇ ਮੂੰਹ ਤੱਕ ਨਾ ਖੋਲ੍ਹਿਆ। \\q ਵੱਢੇ ਜਾਣ ਲਈ ਲਿਜਾਏ ਜਾਂਦੇ ਲੇਲੇ ਵਾਂਗ, \\q ਉੱਨ ਲਾਹੁਣ ਵਾਲਿਆਂ ਦੇ ਸਾਹਮਣੇ ਚੁੱਪ ਖੜ੍ਹੀ ਭੇਡ ਵਾਂਗ, \\q ਉਸ ਨੇ ਮੂੰਹ ਤੱਕ ਨਾ ਖੋਲ੍ਹਿਆ।",
           "R": "ਲੋਕਾਂ ਨੇ ਉਸ ਨਾਲ ਬੇਰਹਿਮੀ ਕੀਤੀ, ਅਤੇ ਉਸ ਨੇ ਉਨ੍ਹਾਂ ਨੂੰ ਆਪਣੇ ਆਪ ਨੂੰ ਦੁੱਖ ਦੇਣ ਦਿੱਤਾ। \\q ਪਰ ਉਸ ਨੇ ਇੱਕ ਸ਼ਬਦ ਵੀ ਨਾ ਆਖਿਆ। \\q ਉਹ ਉਸ ਲੇਲੇ ਵਰਗਾ ਸੀ ਜਿਸ ਨੂੰ ਮਾਰੇ ਜਾਣ ਲਈ ਲਿਜਾਇਆ ਜਾ ਰਿਹਾ ਹੋਵੇ। \\q ਉਹ ਉਸ ਭੇਡ ਵਰਗਾ ਸੀ ਜਿਹੜੀ ਉੱਨ ਲਾਹੇ ਜਾਣ ਵੇਲੇ ਕੋਈ ਅਵਾਜ਼ ਨਹੀਂ ਕੱਢਦੀ। \\q ਉਸ ਨੇ ਇੱਕ ਸ਼ਬਦ ਵੀ ਨਾ ਆਖਿਆ।"
+        },
+        "zh": {
+          "L": "他受欺压，他受苦，却不开他的口； \\q 像羊羔被带去屠宰， \\q 又像母羊在剪它毛的人面前默默无声， \\q [同样，]他不开他的口。",
+          "B": "他饱受压迫，俯首忍受，却始终没有开口。 \\q 他像一只羊羔被领去宰杀， \\q 像母羊在剪毛的人面前一声不响， \\q 他也始终没有开口。",
+          "R": "人们残酷地对待他，他也任由他们使他受苦。 \\q 可是他一句话也没有说。 \\q 他就像一只羊羔被人带去宰杀。 \\q 他像一只母羊，被人剪毛的时候一点声音也不出。 \\q 他一句话也没有说。"
         }
       },
       "decisions": [
@@ -4440,6 +4682,34 @@
           "reason": "Words shared with Acts 8:32 on main.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530070071",
+            "o230530070072",
+            "o230530070081",
+            "o230530070082",
+            "o230530070091",
+            "o230530070131",
+            "o230530070142",
+            "o230530070151"
+          ],
+          "choice": "Acts 8:32's words at each level: \"被带去屠宰……在剪它毛的人面前默默无声……不开他的口\" (L); \"被领去宰杀……一声不响……始终没有开口\" (B); \"带去宰杀……被人剪毛的时候，一点声音也不出\" (R)",
+          "alternatives": [
+            "像羊羔被牵到宰杀之地"
+          ],
+          "reason": "Acts 8:32 quotes this verse from the Greek, which says the same here except that it has a sheep and then a lamb; the Hebrew has a lamb and then a ewe, so the animals follow the Hebrew and the rest keeps Acts' Chinese.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft",
@@ -4796,6 +5066,11 @@
           "L": "ਜ਼ੁਲਮ ਨਾਲ ਅਤੇ ਨਿਆਂ ਨਾਲ ਉਹ ਲੈ ਜਾਇਆ ਗਿਆ; \\q ਅਤੇ ਉਸ ਦੀ ਪੀੜ੍ਹੀ, ਕਿਸ ਨੇ [ਇਸ ਉੱਤੇ] ਵਿਚਾਰ ਕੀਤਾ? \\q ਕਿਉਂਕਿ ਉਹ ਜੀਉਂਦਿਆਂ ਦੀ ਧਰਤੀ ਤੋਂ ਵੱਢਿਆ ਗਿਆ; \\q ਮੇਰੇ ਲੋਕਾਂ ਦੇ ਅਪਰਾਧ ਕਰਕੇ ਮਾਰ ਉਸ ਉੱਤੇ [ਪਈ]।",
           "B": "ਇੱਕ ਬੇਰਹਿਮ ਫ਼ੈਸਲੇ ਨਾਲ ਉਹ ਚੁੱਕ ਲਿਆ ਗਿਆ, \\q ਅਤੇ ਉਸ ਦੇ ਸਮੇਂ ਦੇ ਲੋਕਾਂ ਵਿੱਚੋਂ ਕਿਸ ਨੇ ਇਸ ਬਾਰੇ ਸੋਚਿਆ? \\q ਕਿਉਂਕਿ ਉਹ ਜੀਉਂਦਿਆਂ ਦੀ ਧਰਤੀ ਤੋਂ ਤੋੜ ਲਿਆ ਗਿਆ; \\q ਮੇਰੇ ਲੋਕਾਂ ਦੀ ਬਗ਼ਾਵਤ ਕਰਕੇ ਸੱਟ ਉਸ ਉੱਤੇ ਪਈ।",
           "R": "ਉਸ ਦਾ ਨਿਆਂ ਬੇਇਨਸਾਫ਼ੀ ਨਾਲ ਕੀਤਾ ਗਿਆ ਅਤੇ ਉਹ ਲੈ ਜਾਇਆ ਗਿਆ। \\q ਉਸ ਵੇਲੇ ਜੀਉਂਦੇ ਲੋਕਾਂ ਵਿੱਚੋਂ ਕਿਸੇ ਨੇ ਪਰਵਾਹ ਨਾ ਕੀਤੀ ਕਿ ਉਸ ਨਾਲ ਕੀ ਹੋਇਆ। \\q ਉਸ ਦਾ ਜੀਵਨ ਮੁਕਾ ਦਿੱਤਾ ਗਿਆ। \\q ਮੇਰੇ ਲੋਕਾਂ ਦੇ ਬੁਰੇ ਕੰਮਾਂ ਕਰਕੇ ਉਸ ਨੂੰ ਮਾਰ ਸੁੱਟਿਆ ਗਿਆ।"
+        },
+        "zh": {
+          "L": "他经过压迫和审判，被带走了； \\q 他那一代的人，有谁想过[这事]呢？ \\q 因为他从活人的地上被切断了， \\q 因我子民的过犯，[那]击打[落]在他身上。",
+          "B": "他被一场残酷的审判带走了， \\q 他那个时代的人，有谁把这事放在心上？ \\q 他从活人的世界里被夺去； \\q 因为我的子民背叛，那一击落在了他身上。",
+          "R": "他受到不公平的审判，被人带走了。 \\q 当时活着的人，没有一个关心他的遭遇。 \\q 他的生命被夺去了。 \\q 他被打倒，是因为我的百姓所犯的错。"
         }
       },
       "decisions": [
@@ -5157,6 +5432,32 @@
           "reason": "Acts follows the Greek, which differs here.",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530080011",
+            "o230530080012",
+            "o230530080021",
+            "o230530080031",
+            "o230530080051",
+            "o230530080052"
+          ],
+          "choice": "translated from the Hebrew",
+          "alternatives": [
+            "在他受屈辱的时候，他的公正审判被夺走了；他的世代，有谁会讲述呢？"
+          ],
+          "reason": "Acts 8:33 quotes this verse from the Greek Old Testament (\"in his humiliation justice was taken away; who will describe his generation?\"), which differs from the Hebrew, so the Chinese translates the Hebrew; \"他那一代的人\" are his contemporaries (m2).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft",
@@ -5513,6 +5814,11 @@
           "L": "ਅਤੇ [ਕਿਸੇ ਨੇ] ਦੁਸ਼ਟਾਂ ਨਾਲ ਉਸ ਦੀ ਕਬਰ ਠਹਿਰਾਈ, \\q ਅਤੇ ਆਪਣੀ ਮੌਤ ਵਿੱਚ ਇੱਕ ਧਨੀ [ਆਦਮੀ] ਨਾਲ, \\q ਭਾਵੇਂ ਉਸ ਨੇ ਕੋਈ ਜ਼ੁਲਮ ਨਹੀਂ ਕੀਤਾ ਸੀ, \\q ਅਤੇ ਉਸ ਦੇ ਮੂੰਹ ਵਿੱਚ ਕੋਈ ਛਲ ਨਹੀਂ [ਸੀ]।",
           "B": "ਉਸ ਦੀ ਕਬਰ ਦੁਸ਼ਟਾਂ ਦੇ ਵਿਚਕਾਰ ਠਹਿਰਾਈ ਗਈ, \\q ਅਤੇ ਮੌਤ ਵਿੱਚ ਉਹ ਇੱਕ ਅਮੀਰ ਆਦਮੀ ਨਾਲ ਪਿਆ, \\q ਭਾਵੇਂ ਉਸ ਨੇ ਕਦੇ ਹਿੰਸਾ ਨਹੀਂ ਕੀਤੀ ਸੀ ਨਾ ਕਦੇ ਧੋਖੇ ਦੀ ਗੱਲ ਆਖੀ ਸੀ।",
           "R": "ਉਸ ਨੂੰ ਦੁਸ਼ਟ ਲੋਕਾਂ ਵਿਚਕਾਰ ਦੱਬਿਆ ਗਿਆ। \\q ਜਦੋਂ ਉਹ ਮਰਿਆ, ਉਹ ਇੱਕ ਅਮੀਰ ਆਦਮੀ ਦੇ ਨਾਲ ਸੀ। \\q ਫਿਰ ਵੀ ਉਸ ਨੇ ਕਦੇ ਕਿਸੇ ਉੱਤੇ ਜ਼ੋਰ-ਜ਼ਬਰਦਸਤੀ ਨਹੀਂ ਕੀਤੀ ਸੀ, ਅਤੇ ਉਸ ਨੇ ਕਦੇ ਝੂਠ ਨਹੀਂ ਬੋਲਿਆ ਸੀ।"
+        },
+        "zh": {
+          "L": "[人]把他的坟墓定在恶人中间， \\q 他死的时候却与一个富人[同在]， \\q 虽然他没有行过强暴， \\q 他的口也未曾说过诡诈的话。",
+          "B": "他的葬地被安排在恶人中间， \\q 他死后与一个富人同在， \\q 虽然他从来没有行过强暴，也从来没有说过诡诈的话。",
+          "R": "他被埋葬在恶人中间。 \\q 他死的时候，跟一个富人在一起。 \\q 可是他从来没有用过暴力，也从来没有说过谎。"
         }
       },
       "decisions": [
@@ -5741,6 +6047,27 @@
           "choice": "ਜ਼ੁਲਮ (L), ਹਿੰਸਾ (B); ਉਸ ਦੇ ਮੂੰਹ ਵਿੱਚ ਕੋਈ ਛਲ ਨਹੀਂ (R: ਕਦੇ ਝੂਠ ਨਹੀਂ ਬੋਲਿਆ)",
           "alternatives": [],
           "reason": "As 1 Peter 2:22.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530090101",
+            "o230530090131"
+          ],
+          "choice": "\"强暴\"; \"诡诈\"",
+          "alternatives": [
+            "罪"
+          ],
+          "reason": "1 Peter 2:22 quotes this line from the Greek, which has \"sin\" where the Hebrew has \"violence\"; the Chinese translates the Hebrew and keeps 1 Peter's \"诡诈\" for deceit.",
           "uncertain": false,
           "footnote": false
         }
@@ -6082,6 +6409,11 @@
           "L": "ਫਿਰ ਵੀ {{divine_name:ਪ੍ਰਭੂ|ਯਾਹਵੇ}} ਨੂੰ ਉਸ ਨੂੰ ਕੁਚਲਣਾ ਭਾਇਆ; ਉਨ੍ਹਾਂ ਨੇ [ਉਸ ਨੂੰ] ਰੋਗੀ ਕੀਤਾ। \\q ਜੇ ਉਸ ਦੀ ਜਾਨ ਦੋਸ਼ ਦੀ ਬਲੀ ਚੜ੍ਹਾਵੇ, \\q ਤਾਂ ਉਹ ਅੰਸ ਵੇਖੇਗਾ, ਉਹ ਦਿਨ ਲੰਮੇ ਕਰੇਗਾ, \\q ਅਤੇ {{divine_name:ਪ੍ਰਭੂ|ਯਾਹਵੇ}} ਦੀ ਭਾਵਨਾ ਉਸ ਦੇ ਹੱਥ ਵਿੱਚ ਸਫਲ ਹੋਵੇਗੀ।",
           "B": "ਫਿਰ ਵੀ {{divine_name:ਪ੍ਰਭੂ|ਯਾਹਵੇ}} ਨੂੰ ਇਹ ਭਾਇਆ ਕਿ ਉਸ ਨੂੰ ਪੀਸਣ ਅਤੇ ਰੋਗੀ ਕਰਨ। \\q ਜੇ ਉਹ ਆਪਣੇ ਆਪ ਨੂੰ ਦੋਸ਼ ਦੀ ਬਲੀ ਵਜੋਂ ਚੜ੍ਹਾਵੇ, \\q ਤਾਂ ਉਹ ਆਪਣੇ ਬੱਚੇ ਵੇਖੇਗਾ ਅਤੇ ਲੰਮੀ ਉਮਰ ਭੋਗੇਗਾ, \\q ਅਤੇ ਉਸ ਦੇ ਹੱਥਾਂ ਰਾਹੀਂ ਉਹ ਗੱਲ ਵਧੇ-ਫੁੱਲੇਗੀ ਜੋ {{divine_name:ਪ੍ਰਭੂ|ਯਾਹਵੇ}} ਨੂੰ ਭਾਉਂਦੀ ਹੈ।",
           "R": "ਪਰ {{divine_name:ਪ੍ਰਭੂ|ਯਾਹਵੇ}} ਚਾਹੁੰਦੇ ਸਨ ਕਿ ਉਸ ਨੂੰ ਕੁਚਲਣ ਅਤੇ ਬਿਮਾਰ ਕਰਨ। \\q ਜੇ ਉਹ ਦੋਸ਼ ਦਾ ਮੁੱਲ ਤਾਰਨ ਲਈ ਆਪਣੀ ਜਾਨ ਦੇ ਦੇਵੇ, \\q ਤਾਂ ਉਹ ਆਪਣੀ ਸੰਤਾਨ ਵੇਖੇਗਾ। ਉਹ ਲੰਮੀ ਉਮਰ ਜੀਵੇਗਾ। \\q ਅਤੇ ਉਸ ਦੇ ਰਾਹੀਂ ਉਹ ਸਫਲ ਹੋਵੇਗਾ ਜੋ {{divine_name:ਪ੍ਰਭੂ|ਯਾਹਵੇ}} ਚਾਹੁੰਦੇ ਹਨ।"
+        },
+        "zh": {
+          "L": "然而{{divine_name:上主|雅威}}乐意压碎他；{{deity_pronoun:他|祂}}使[他]患病。 \\q 他的灵魂若献上赎过祭， \\q 他要看见子孙，他的年日要长久， \\q {{divine_name:上主|雅威}}的心意要借着他的手兴旺。",
+          "B": "然而{{divine_name:上主|雅威}}甘愿压碎他，使他患病。 \\q 他若把自己献上作赎过祭， \\q 他要看见儿女，享受长久的年日， \\q {{divine_name:上主|雅威}}所喜爱的事要借着他的手顺利成就。",
+          "R": "可是{{divine_name:上主|雅威}}想要压碎他，让他生病。 \\q 他若献上自己的生命来赔偿罪过， \\q 他就会看见他的孩子。他会活得很长久。 \\q {{divine_name:上主|雅威}}想要成就的事，要借着他顺利完成。"
         }
       },
       "decisions": [
@@ -6468,6 +6800,27 @@
           "choice": "ਦੋਸ਼ ਦੀ ਬਲੀ",
           "alternatives": [],
           "reason": "The asham of Leviticus 5.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530100071"
+          ],
+          "choice": "\"赎过祭\"",
+          "alternatives": [
+            "赎罪祭",
+            "赎愆祭"
+          ],
+          "reason": "The guilt offering in the glossary's word, kept apart from the sin offering \"赎罪祭\"; Readable says what it did, as the English does.",
           "uncertain": false,
           "footnote": false
         }
@@ -6859,6 +7212,11 @@
           "L": "ਆਪਣੀ ਜਾਨ ਦੀ ਮੁਸ਼ੱਕਤ ਤੋਂ ਉਹ ਵੇਖੇਗਾ; ਉਹ ਰੱਜ ਜਾਵੇਗਾ; \\q ਆਪਣੇ ਗਿਆਨ ਨਾਲ ਧਰਮੀ, ਮੇਰਾ ਦਾਸ, ਬਹੁਤਿਆਂ ਨੂੰ ਧਰਮੀ ਠਹਿਰਾਏਗਾ, \\q ਅਤੇ ਉਨ੍ਹਾਂ ਦੀਆਂ ਬਦੀਆਂ ਉਹ ਆਪ ਚੁੱਕੇਗਾ।",
           "B": "ਆਪਣੀ ਜਾਨ ਦੀ ਸਾਰੀ ਕਰੜੀ ਮਿਹਨਤ ਪਿੱਛੋਂ ਉਹ ਵੇਖੇਗਾ, ਅਤੇ ਉਹ ਤ੍ਰਿਪਤ ਹੋਵੇਗਾ। \\q ਮੇਰਾ ਦਾਸ, ਉਹ ਧਰਮੀ, ਆਪਣੇ ਗਿਆਨ ਨਾਲ ਬਹੁਤਿਆਂ ਨੂੰ ਧਰਮੀ ਬਣਾਵੇਗਾ, \\q ਅਤੇ ਉਨ੍ਹਾਂ ਦਾ ਦੋਸ਼ ਆਪਣੇ ਮੋਢਿਆਂ ਉੱਤੇ ਲਵੇਗਾ।",
           "R": "ਆਪਣੇ ਸਾਰੇ ਦੁੱਖਾਂ ਤੋਂ ਬਾਅਦ ਉਹ ਵੇਖੇਗਾ, ਅਤੇ ਉਸ ਦਾ ਮਨ ਭਰ ਜਾਵੇਗਾ। \\q ਮੇਰਾ ਦਾਸ ਜੋ ਠੀਕ ਹੈ ਉਹ ਕਰਦਾ ਹੈ, ਅਤੇ ਆਪਣੇ ਗਿਆਨ ਨਾਲ ਉਹ ਬਹੁਤ ਸਾਰੇ ਲੋਕਾਂ ਦਾ ਪਰਮੇਸ਼ੁਰ ਨਾਲ ਮੇਲ ਕਰਾਵੇਗਾ। \\q ਉਹ ਉਨ੍ਹਾਂ ਦੇ ਪਾਪਾਂ ਦਾ ਭਾਰ ਚੁੱਕੇਗਾ।"
+        },
+        "zh": {
+          "L": "因他灵魂的劳苦，他要看见，他要满足； \\q 我的仆人，那位义者，要借着他的知识使许多人称义， \\q 他们的罪孽，他要亲自背负。",
+          "B": "他灵魂受尽劳苦之后，要看见，并且得到满足。 \\q 我的仆人，那位义者，要借着他的知识使许多人称为义， \\q 他要扛起他们的罪过。",
+          "R": "他受尽了苦难之后，会看见，也会感到满足。 \\q 我的仆人做正直的事，他要借着他的知识，使许多人与{{god_term:神|上帝}}有正确的关系。 \\q 他要背起他们罪的重担。"
         }
       },
       "decisions": [
@@ -7137,6 +7495,49 @@
           "choice": "ਧਰਮੀ ਠਹਿਰਾਏਗਾ (L); ਧਰਮੀ ਬਣਾਵੇਗਾ (B)",
           "alternatives": [],
           "reason": "Justification of the many.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530110061"
+          ],
+          "choice": "\"称义\" (L); \"称为义\" (B); \"与{{god_term:神|上帝}}有正确的关系\" (R)",
+          "alternatives": [
+            "得称为义"
+          ],
+          "reason": "To put the many in the right with God (m3), in the words the glossary and Romans use for justify; Readable says it plainly, as the English does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o230530110081",
+            "o230530110082"
+          ],
+          "choice": "\"我\" with no deity_pronoun span",
+          "alternatives": [
+            "a deity_pronoun span on \"我\""
+          ],
+          "reason": "The English spans God's \"my\"; Chinese has no reverent first person, so God's \"我\" takes no span in this chapter.",
           "uncertain": false,
           "footnote": false
         }
@@ -7494,6 +7895,11 @@
           "L": "ਇਸ ਲਈ ਮੈਂ ਬਹੁਤਿਆਂ ਵਿੱਚ ਉਸ ਨੂੰ ਹਿੱਸਾ ਦਿਆਂਗਾ, ਅਤੇ ਬਲਵੰਤਾਂ ਨਾਲ ਉਹ ਲੁੱਟ ਵੰਡੇਗਾ, \\q ਕਿਉਂਕਿ ਉਸ ਨੇ ਆਪਣੀ ਜਾਨ ਮੌਤ ਤੱਕ ਡੋਲ੍ਹ ਦਿੱਤੀ, \\q ਅਤੇ ਉਹ ਅਪਰਾਧੀਆਂ ਨਾਲ ਗਿਣਿਆ ਗਿਆ; \\q ਅਤੇ ਉਸ ਨੇ ਆਪ ਬਹੁਤਿਆਂ ਦਾ ਪਾਪ ਚੁੱਕਿਆ, \\q ਅਤੇ ਅਪਰਾਧੀਆਂ ਲਈ ਉਹ ਬੇਨਤੀ ਕਰੇਗਾ।",
           "B": "ਸੋ ਮੈਂ ਬਹੁਤਿਆਂ ਦੇ ਵਿਚਕਾਰ ਉਸ ਨੂੰ ਹਿੱਸਾ ਦਿਆਂਗਾ, ਅਤੇ ਉਹ ਤਕੜਿਆਂ ਨਾਲ ਲੁੱਟ ਦਾ ਮਾਲ ਵੰਡੇਗਾ, \\q ਕਿਉਂਕਿ ਉਸ ਨੇ ਮੌਤ ਤੱਕ ਆਪਣੀ ਜਾਨ ਨੂੰ ਖ਼ਾਲੀ ਕਰ ਦਿੱਤਾ \\q ਅਤੇ ਬਾਗ਼ੀਆਂ ਵਿੱਚ ਗਿਣਿਆ ਗਿਆ। \\q ਉਹ ਉਹੀ ਸੀ ਜਿਸ ਨੇ ਬਹੁਤਿਆਂ ਦਾ ਪਾਪ ਚੁੱਕਿਆ, \\q ਅਤੇ ਉਹ ਬਾਗ਼ੀਆਂ ਦੀ ਖ਼ਾਤਰ ਸਿਫ਼ਾਰਸ਼ ਕਰਦਾ ਹੈ।",
           "R": "ਇਸ ਲਈ ਮੈਂ ਬਹੁਤਿਆਂ ਦੇ ਵਿਚਕਾਰ ਉਸ ਨੂੰ ਉਸ ਦਾ ਹਿੱਸਾ ਦਿਆਂਗਾ। ਉਹ ਤਕੜਿਆਂ ਨਾਲ ਜਿੱਤ ਦਾ ਇਨਾਮ ਵੰਡੇਗਾ। \\q ਇਹ ਇਸ ਲਈ ਹੈ ਕਿਉਂਕਿ ਉਸ ਨੇ ਮਰਨ ਤੱਕ ਆਪਣੀ ਜਾਨ ਦੇ ਦਿੱਤੀ। \\q ਲੋਕਾਂ ਨੇ ਉਸ ਨੂੰ ਬਾਗ਼ੀਆਂ ਵਿੱਚੋਂ ਇੱਕ ਗਿਣਿਆ। \\q ਪਰ ਉਸ ਨੇ ਬਹੁਤ ਸਾਰੇ ਲੋਕਾਂ ਦੇ ਪਾਪ ਚੁੱਕੇ, \\q ਅਤੇ ਉਹ ਬਾਗ਼ੀਆਂ ਲਈ ਪਰਮੇਸ਼ੁਰ ਅੱਗੇ ਤਰਲੇ ਕਰਦਾ ਹੈ।"
+        },
+        "zh": {
+          "L": "因此，我要在众人中分给他一份，他要与强者同分战利品， \\q 因为他倾倒了自己的灵魂，直到死亡， \\q 他被算在不法的人之列； \\q 他亲自担负了许多人的罪， \\q 又要为不法的人代求。",
+          "B": "所以我要在众人中给他一份产业，他要和强大的人分享战利品， \\q 因为他倾尽自己的生命，直到死亡， \\q 被列在不法的人中间。 \\q 背负许多人罪的正是他， \\q 他也为不法的人求情。",
+          "R": "所以，我要在众人中给他应得的一份。他要和强大的人一起分享胜利的奖赏。 \\q 这是因为他献出了自己的生命，直到死去。 \\q 人们把他当作罪犯看待。 \\q 但他背负了许多人的罪， \\q 也为那些罪犯向{{god_term:神|上帝}}求情。"
         }
       },
       "decisions": [
@@ -7785,6 +8191,29 @@
           "choice": "ਉਹ ਅਪਰਾਧੀਆਂ ਨਾਲ ਗਿਣਿਆ ਗਿਆ (L); ਬਾਗ਼ੀਆਂ ਵਿੱਚ ਗਿਣਿਆ ਗਿਆ (B); ਲੋਕਾਂ ਨੇ ਉਸ ਨੂੰ ਬਾਗ਼ੀਆਂ ਵਿੱਚੋਂ ਇੱਕ ਗਿਣਿਆ (R)",
           "alternatives": [],
           "reason": "Luke 22:37 quotes the line.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o230530120142",
+            "o230530120151",
+            "o230530120161"
+          ],
+          "choice": "\"他被算在不法的人之列\" (L); \"被列在不法的人中间\" (B); \"把他当作罪犯看待\" (R)",
+          "alternatives": [
+            "他也被列在罪犯之中"
+          ],
+          "reason": "Luke 22:37 quotes this line, and the Hebrew says the same, so each level keeps Luke's Chinese; the same word for the rebels is used again in the last line.",
           "uncertain": false,
           "footnote": false
         }
