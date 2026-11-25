@@ -90,6 +90,11 @@
           "L": "Isang awit. Awit para sa pagtatalaga ng bahay. Ni David.",
           "B": "Isang awit. Awit para sa pagtatalaga ng bahay. Ni David.",
           "R": "Isang awit para sa panahon nang italaga ang bahay sa Diyos. Isinulat ni David."
+        },
+        "zh": {
+          "L": "一首诗。为献殿而作的歌。大卫的。",
+          "B": "一首诗。为献殿而作的歌。大卫的。",
+          "R": "这首歌是为了把殿献给{{god_term:神|上帝}}的时候而写的。大卫作。"
         }
       },
       "decisions": [
@@ -395,6 +400,47 @@
           "reason": "A psalm, a song: two names for the piece (m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190300010031",
+            "o190300010041",
+            "o190300010042"
+          ],
+          "choice": "\"献殿\" (\"the dedication of the house\")",
+          "alternatives": [
+            "\"奉献房屋\""
+          ],
+          "reason": "The house is probably the temple (m2); \"献殿\" is the usual Chinese for dedicating a temple, and Readable says to whom, as the English Readable does.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "R"
+          ],
+          "category": "setting_alternative",
+          "tokens": [
+            "o190300010031"
+          ],
+          "choice": "\"{{god_term:神|上帝}}\" in a god_term span (神 by default, 上帝 as the reader's alternative)",
+          "alternatives": [
+            "\"神\" fixed"
+          ],
+          "reason": "Every word naming the one God is written with the Chinese-only god_term setting; the reader can choose 上帝.",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft",
@@ -581,6 +627,11 @@
           "L": "Itatanghal ko {{deity_pronoun:ikaw|Ikaw}}, {{divine_name:PANGINOON|Yahweh}}, sapagkat iniahon {{deity_pronoun:mo|Mo}} ako \\q at hindi {{deity_pronoun:mo|Mo}} hinayaang magalak sa akin ang aking mga kaaway.",
           "B": "Pupurihin ko {{deity_pronoun:ikaw|Ikaw}} bilang kataas-taasan sa lahat, {{divine_name:PANGINOON|Yahweh}}, sapagkat iniahon {{deity_pronoun:mo|Mo}} ako na parang mula sa balon \\q at hindi {{deity_pronoun:mo|Mo}} binigyan ang aking mga kaaway ng kagalakang makita akong bumagsak.",
           "R": "Pupurihin ko ang {{deity_pronoun:iyong|Iyong}} kadakilaan, {{divine_name:PANGINOON|Yahweh}}, sapagkat hinila {{deity_pronoun:mo|Mo}} ako mula sa malalim na hukay. \\q Hindi {{deity_pronoun:mo|Mo}} hinayaang pagtawanan ako ng aking mga kaaway."
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}啊，我要尊崇{{deity_pronoun:你|祢}}，因为{{deity_pronoun:你|祢}}把我拉了上来， \\q 没有让我的仇敌因我欢喜。",
+          "B": "{{divine_name:上主|雅威}}啊，我要尊{{deity_pronoun:你|祢}}为至高，因为{{deity_pronoun:你|祢}}把我从井里一样拉了上来， \\q 没有让我的仇敌看见我倒下而高兴。",
+          "R": "{{divine_name:上主|雅威}}啊，我要赞美{{deity_pronoun:你|祢}}的伟大，因为{{deity_pronoun:你|祢}}把我从深坑里拉了上来。 \\q 你没有让我的敌人嘲笑我。"
         }
       },
       "decisions": [
@@ -747,6 +798,26 @@
           "choice": "\"Itatanghal ko\"",
           "alternatives": [],
           "reason": "Exalt: praise as high (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "B"
+          ],
+          "category": "supplied_words",
+          "tokens": [
+            "o190300020041",
+            "o190300020042"
+          ],
+          "choice": "\"从井里一样\" (B); \"从深坑里\" (R)",
+          "alternatives": [
+            "\"把我拉了上来\" alone"
+          ],
+          "reason": "The verb (dillah) is drawing up a bucket from a well (m1); Balanced and Readable add the picture, as the English levels do.",
           "uncertain": false,
           "footnote": false
         }
@@ -1031,6 +1102,11 @@
           "L": "{{divine_name:PANGINOON|Yahweh}} aking Diyos, \\q dumaing ako sa {{deity_pronoun:iyo|Iyo}} para sa tulong, at pinagaling {{deity_pronoun:mo|Mo}} ako.",
           "B": "{{divine_name:PANGINOON|Yahweh}}, aking Diyos, \\q sumigaw ako sa {{deity_pronoun:iyo|Iyo}} para sa saklolo, at pinagaling {{deity_pronoun:mo|Mo}} ako.",
           "R": "{{divine_name:PANGINOON|Yahweh}} aking Diyos, \\q dumaing ako sa {{deity_pronoun:iyo|Iyo}} upang tulungan ako, at pinagaling {{deity_pronoun:mo|Mo}} akong muli."
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}我的{{god_term:神|上帝}}啊， \\q 我向{{deity_pronoun:你|祢}}呼救，{{deity_pronoun:你|祢}}就医治了我。",
+          "B": "{{divine_name:上主|雅威}}我的{{god_term:神|上帝}}啊， \\q 我向{{deity_pronoun:你|祢}}大声呼救，{{deity_pronoun:你|祢}}就使我痊愈。",
+          "R": "{{divine_name:上主|雅威}}我的{{god_term:神|上帝}}啊， \\q 我向{{deity_pronoun:你|祢}}呼喊求救，{{deity_pronoun:你|祢}}就使我重新健康起来。"
         }
       },
       "decisions": [
@@ -1308,6 +1384,11 @@
           "L": "{{divine_name:PANGINOON|Yahweh}}, iniahon {{deity_pronoun:mo|Mo}} ang aking kaluluwa mula sa Sheol; \\q iningatan {{deity_pronoun:mo|Mo}} akong buháy upang hindi bumaba [sa] hukay.",
           "B": "{{divine_name:PANGINOON|Yahweh}}, ibinalik {{deity_pronoun:mo|Mo}} ako mula sa Sheol; \\q iningatan {{deity_pronoun:mo|Mo}} akong buháy at hindi {{deity_pronoun:mo|Mo}} hinayaang lumubog ako sa hukay.",
           "R": "{{divine_name:PANGINOON|Yahweh}}, halos patay na ako, ngunit ibinalik {{deity_pronoun:mo|Mo}} ako mula sa daigdig ng mga patay. \\q Iningatan {{deity_pronoun:mo|Mo}} akong buháy at hindi {{deity_pronoun:mo|Mo}} hinayaang bumaba ako sa libingan."
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}啊，{{deity_pronoun:你|祢}}把我的灵魂从阴间带上来； \\q {{deity_pronoun:你|祢}}使我存活，不至下到坑里。",
+          "B": "{{divine_name:上主|雅威}}啊，{{deity_pronoun:你|祢}}把我从阴间领了上来； \\q {{deity_pronoun:你|祢}}使我存活，没有让我沉入深坑。",
+          "R": "{{divine_name:上主|雅威}}啊，我几乎死了，但{{deity_pronoun:你|祢}}把我从死亡之地带了回来。 \\q 你使我活着，没有让我下到坟墓里。"
         }
       },
       "decisions": [
@@ -1627,6 +1708,49 @@
           "reason": "The grave (m3).",
           "uncertain": false,
           "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190300040031",
+            "o190300040041"
+          ],
+          "choice": "\"阴间\" (L, B); \"死亡之地\" (R)",
+          "alternatives": [
+            "\"示阿勒\""
+          ],
+          "reason": "The glossary's forms for Sheol, the world of the dead (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-2",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190300040091"
+          ],
+          "choice": "\"坑\" (L); \"深坑\" (B); \"坟墓\" (R)",
+          "alternatives": [
+            "\"阴间\""
+          ],
+          "reason": "The glossary's forms for the Pit, the grave (m3).",
+          "uncertain": false,
+          "footnote": false
         }
       ],
       "status": "ai_draft",
@@ -1850,6 +1974,11 @@
           "L": "Umawit kayo ng papuri {{divine_name:sa PANGINOON|kay Yahweh}}, kayong {{deity_pronoun:kaniyang|Kaniyang}} mga tapat, \\q at magpasalamat kayo sa alaala ng {{deity_pronoun:kaniyang|Kaniyang}} kabanalan.",
           "B": "Tumugtog kayo para {{divine_name:sa PANGINOON|kay Yahweh}}, lahat kayong tapat sa {{deity_pronoun:kaniya|Kaniya}}; \\q magpasalamat kayo habang inaalala ninyo ang {{deity_pronoun:kaniyang|Kaniyang}} banal na pangalan.",
           "R": "Lahat kayong tapat {{divine_name:sa PANGINOON|kay Yahweh}}, umawit kayo ng papuri sa {{deity_pronoun:kaniya|Kaniya}}! \\q Pasalamatan ninyo {{deity_pronoun:siya|Siya}}, at alalahanin ninyong banal {{deity_pronoun:siya|Siya}}."
+        },
+        "zh": {
+          "L": "{{deity_pronoun:他|祂}}的忠信之人哪，要向{{divine_name:上主|雅威}}歌颂， \\q 要向{{deity_pronoun:他|祂}}圣洁的记念称谢。",
+          "B": "所有忠于{{deity_pronoun:他|祂}}的人哪，要为{{divine_name:上主|雅威}}奏乐； \\q 要在思想{{deity_pronoun:他|祂}}圣名的时候称谢他。",
+          "R": "所有忠于{{divine_name:上主|雅威}}的人哪，要歌颂{{deity_pronoun:他|祂}}！ \\q 要感谢{{deity_pronoun:他|祂}}，要记得{{deity_pronoun:他|祂}}是圣洁的。"
         }
       },
       "decisions": [
@@ -1995,6 +2124,27 @@
           "choice": "\"alaala\"",
           "alternatives": [],
           "reason": "The name by which God is remembered (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190300050041",
+            "o190300050042"
+          ],
+          "choice": "\"称谢\" (L, B); \"感谢\" (R)",
+          "alternatives": [
+            "\"感恩\""
+          ],
+          "reason": "The glossary's forms for giving thanks (hodu).",
           "uncertain": false,
           "footnote": false
         }
@@ -2224,6 +2374,11 @@
           "L": "Sapagkat sandali [lamang] ang {{deity_pronoun:kaniyang|Kaniyang}} galit, buhay [ang dulot ng] {{deity_pronoun:kaniyang|Kaniyang}} lugod; \\q sa gabi ay maaaring manuluyan ang pagtangis, ngunit sa umaga [ay dumarating] ang sigaw ng kagalakan.",
           "B": "Sapagkat ang {{deity_pronoun:kaniyang|Kaniyang}} galit ay natatapos sa isang saglit, ngunit sa {{deity_pronoun:kaniyang|Kaniyang}} lugod ay may buhay; \\q maaaring dumating ang pagtangis upang magpalipas ng gabi, ngunit sa bukang-liwayway ay may mga sigaw ng kagalakan.",
           "R": "Ang galit {{deity_pronoun:niya|Niya}} ay sandali lamang, ngunit ang {{deity_pronoun:kaniyang|Kaniyang}} kabutihan ay nagbibigay-buhay. \\q Maaaring umiyak ako buong gabi, ngunit sa umaga ay sisigaw ako sa galak."
+        },
+        "zh": {
+          "L": "因为{{deity_pronoun:他|祂}}的怒气只在片刻，{{deity_pronoun:他|祂}}的恩宠中有生命； \\q 晚上或许有哭泣留宿，早晨却有欢呼。",
+          "B": "因为{{deity_pronoun:他|祂}}的怒气转瞬即逝，{{deity_pronoun:他|祂}}的恩宠却带来生命； \\q 哭泣也许会来过夜，但黎明时就有欢呼。",
+          "R": "他的怒气只是一会儿，{{deity_pronoun:他|祂}}的恩待却给人生命。 \\q 我也许会哭一整夜，但到了早晨，我要欢喜呼喊。"
         }
       },
       "decisions": [
@@ -2378,6 +2533,27 @@
           "choice": "\"manuluyan ang pagtangis\"",
           "alternatives": [],
           "reason": "Sorrow stays only the night (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190300060061",
+            "o190300060062",
+            "o190300060071"
+          ],
+          "choice": "\"留宿\" (\"lodges\")",
+          "alternatives": [
+            "\"存在\""
+          ],
+          "reason": "Weeping is pictured as a guest who stays only the night (m2); Literal and Balanced keep the picture.",
           "uncertain": false,
           "footnote": false
         }
@@ -2665,6 +2841,11 @@
           "L": "Para sa akin, sinabi ko sa aking kaginhawahan, \\q \"Hindi ako kailanman matitinag.\"",
           "B": "Nang maayos ang lahat para sa akin, sinabi ko, \\q \"Walang makayayanig sa akin kailanman.\"",
           "R": "Nang madali ang aking buhay, sinabi ko sa aking sarili, \\q \"Walang masamang mangyayari sa akin kailanman.\""
+        },
+        "zh": {
+          "L": "至于我，我在安逸中说过： \\q “我永远不会动摇。”",
+          "B": "我顺利的时候曾经说： \\q “没有什么能使我动摇。”",
+          "R": "我生活安逸的时候，曾经对自己说： \\q “永远不会有坏事临到我。”"
         }
       },
       "decisions": [
@@ -2935,6 +3116,11 @@
           "L": "{{divine_name:PANGINOON|Yahweh}}, sa pamamagitan ng {{deity_pronoun:iyong|Iyong}} lugod ay pinatatag {{deity_pronoun:mo|Mo}} ang aking bundok; \\q ikinubli {{deity_pronoun:mo|Mo}} ang {{deity_pronoun:iyong|Iyong}} mukha; ako'y nasindak.",
           "B": "{{divine_name:PANGINOON|Yahweh}}, sa {{deity_pronoun:iyong|Iyong}} kabaitan ay ginawa {{deity_pronoun:mo|Mo}} akong matatag na gaya ng bundok; \\q pagkatapos ay ikinubli {{deity_pronoun:mo|Mo}} ang {{deity_pronoun:iyong|Iyong}} mukha, at nadaig ako ng takot.",
           "R": "{{divine_name:PANGINOON|Yahweh}}, nang maging mabait {{deity_pronoun:ka|Ka}} sa akin, pakiramdam ko'y kasinlakas ako ng bundok. \\q Ngunit nang tumalikod {{deity_pronoun:ka|Ka}} sa akin, nasindak ako."
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}啊，{{deity_pronoun:你|祢}}凭{{deity_pronoun:你|祢}}的恩宠使我的山站立坚固； \\q {{deity_pronoun:你|祢}}掩藏了{{deity_pronoun:你|祢}}的脸，我就惊惶。",
+          "B": "{{divine_name:上主|雅威}}啊，{{deity_pronoun:你|祢}}曾以{{deity_pronoun:你|祢}}的恩惠使我像山一样稳固； \\q 后来{{deity_pronoun:你|祢}}掩面不顾，我就被恐惧淹没。",
+          "R": "{{divine_name:上主|雅威}}啊，{{deity_pronoun:你|祢}}恩待我的时候，我觉得自己像山一样坚强。 \\q 但{{deity_pronoun:你|祢}}转身不理我的时候，我就非常害怕。"
         }
       },
       "decisions": [
@@ -3287,6 +3473,11 @@
           "L": "Sa {{deity_pronoun:iyo|Iyo}}, {{divine_name:PANGINOON|Yahweh}}, ako tumawag, \\q at sa Panginoon ay nagsumamo ako ng awa.",
           "B": "Tumawag ako sa {{deity_pronoun:iyo|Iyo}}, {{divine_name:PANGINOON|Yahweh}}; \\q nagmakaawa ako sa Panginoon.",
           "R": "{{divine_name:PANGINOON|Yahweh}}, tumawag ako sa {{deity_pronoun:iyo|Iyo}}. \\q Nagmakaawa ako sa Panginoon na kahabagan ako."
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}啊，我向{{deity_pronoun:你|祢}}呼求， \\q 我向主恳求怜悯：",
+          "B": "{{divine_name:上主|雅威}}啊，我向{{deity_pronoun:你|祢}}呼喊； \\q 我恳求主怜悯我：",
+          "R": "{{divine_name:上主|雅威}}啊，我向{{deity_pronoun:你|祢}}呼求。 \\q 我恳求主向我显出怜悯："
         }
       },
       "decisions": [
@@ -3439,6 +3630,29 @@
           "choice": "\"ako tumawag\"",
           "alternatives": [],
           "reason": "The psalmist tells what he prayed (m2).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190300090042",
+            "o190300090051",
+            "o190300090052"
+          ],
+          "choice": "\"主\" for ʾAdonai",
+          "alternatives": [
+            "\"{{divine_name:上主|雅威}}\""
+          ],
+          "reason": "The glossary keeps 主 (Lord, ʾAdonai) apart from the divine name, as the English keeps \"Lord\" apart from \"LORD\".",
           "uncertain": false,
           "footnote": false
         }
@@ -3643,6 +3857,11 @@
           "L": "\"Ano [ang] pakinabang sa aking dugo, sa aking pagbaba sa [hukay]? \\q Magpapasalamat ba sa {{deity_pronoun:iyo|Iyo}} [ang] alabok? \\q Ipahahayag ba nito ang {{deity_pronoun:iyong|Iyong}} katapatan?",
           "B": "\"Ano ang mapapala ng sinuman sa aking kamatayan, sa aking pagbaba sa hukay? \\q Makapagpapasalamat ba sa {{deity_pronoun:iyo|Iyo}} ang alabok? \\q Maisasalaysay ba nito kung gaano {{deity_pronoun:ka|Ka}} katapat?",
           "R": "\"Ano ang mabuting maidudulot kung mamatay ako at bumaba sa libingan? \\q Hindi makapagpapasalamat sa {{deity_pronoun:iyo|Iyo}} ang mga patay. \\q Hindi maisasalaysay ng kanilang alabok sa iba na tapat {{deity_pronoun:ka|Ka}}."
+        },
+        "zh": {
+          "L": "“在我的血中有什么益处，在我下到坑里[有什么益处]呢？ \\q 尘土会称谢{{deity_pronoun:你|祢}}吗？ \\q 它会传扬{{deity_pronoun:你|祢}}的信实吗？",
+          "B": "“我死了，下到深坑里，对谁有什么好处呢？ \\q 尘土能称谢{{deity_pronoun:你|祢}}吗？ \\q 它能述说{{deity_pronoun:你|祢}}是多么信实吗？",
+          "R": "“如果我死了，下到坟墓里，那有什么好处呢？ \\q 死人不能感谢{{deity_pronoun:你|祢}}。 \\q 他们的尘土不能告诉别人{{deity_pronoun:你|祢}}是信实的。"
         }
       },
       "decisions": [
@@ -3822,6 +4041,28 @@
           "choice": "\"\"Ano\"",
           "alternatives": [],
           "reason": "The words of his prayer (m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B",
+            "R"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190300100101",
+            "o190300100102"
+          ],
+          "choice": "\"信实\" for God's faithfulness",
+          "alternatives": [
+            "\"诚实\""
+          ],
+          "reason": "The glossary's word for ʾemet where it is God's.",
           "uncertain": false,
           "footnote": false
         }
@@ -4085,6 +4326,11 @@
           "L": "Dinggin {{deity_pronoun:mo|Mo}}, {{divine_name:PANGINOON|Yahweh}}, at mahabag {{deity_pronoun:ka|Ka}} sa akin; \\q {{divine_name:PANGINOON|Yahweh}}, {{deity_pronoun:ikaw|Ikaw}} nawa ang maging katulong ko.\"",
           "B": "Makinig {{deity_pronoun:ka|Ka}}, {{divine_name:PANGINOON|Yahweh}}, at kahabagan {{deity_pronoun:mo|Mo}} ako; \\q {{divine_name:PANGINOON|Yahweh}}, dumating {{deity_pronoun:ka|Ka}} at tulungan ako.\"",
           "R": "{{divine_name:PANGINOON|Yahweh}}, pakinggan {{deity_pronoun:mo|Mo}} ako at maging mabait {{deity_pronoun:ka|Ka}} sa akin. \\q {{divine_name:PANGINOON|Yahweh}}, tulungan {{deity_pronoun:mo|Mo}} ako!\""
+        },
+        "zh": {
+          "L": "{{divine_name:上主|雅威}}啊，求你听，恩待我； \\q {{divine_name:上主|雅威}}啊，求你作我的帮助。”",
+          "B": "{{divine_name:上主|雅威}}啊，求你垂听，向我施恩； \\q {{divine_name:上主|雅威}}啊，求你来帮助我。”",
+          "R": "{{divine_name:上主|雅威}}啊，求你听我，对我仁慈。 \\q {{divine_name:上主|雅威}}啊，求你帮助我！”"
         }
       },
       "decisions": [
@@ -4327,6 +4573,11 @@
           "L": "Pinalitan {{deity_pronoun:mo|Mo}} para sa akin ang aking panaghoy ng pagsasayaw; \\q kinalag {{deity_pronoun:mo|Mo}} ang aking telang-sako at binalot {{deity_pronoun:mo|Mo}} ako [ng] kagalakan,",
           "B": "Ginawa {{deity_pronoun:mong|Mong}} sayaw ang aking pagtangis; \\q hinubad {{deity_pronoun:mo|Mo}} ang aking telang-sako at dinamitan {{deity_pronoun:mo|Mo}} ako ng kagalakan,",
           "R": "Ginawa {{deity_pronoun:mong|Mong}} sayaw ang aking pag-iyak. \\q Inalis {{deity_pronoun:mo|Mo}} ang aking damit ng kalungkutan at binigyan {{deity_pronoun:mo|Mo}} ako ng kagalakang maisusuot."
+        },
+        "zh": {
+          "L": "你为我把我的哀号变作了舞蹈； \\q {{deity_pronoun:你|祢}}解开了我的麻衣，用喜乐束住我，",
+          "B": "你已把我的哀歌变为舞蹈； \\q {{deity_pronoun:你|祢}}脱下我的麻衣，让喜乐成为我的衣裳，",
+          "R": "你把我的哭泣变成了跳舞。 \\q 你拿走我悲伤时穿的衣服，让我穿上喜乐。"
         }
       },
       "decisions": [
@@ -4556,6 +4807,27 @@
           "choice": "\"kagalakan,\"",
           "alternatives": [],
           "reason": "A sentence that runs on (m3).",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
+          "id": "r-zh-1",
+          "layer": "rendering",
+          "language": "zh",
+          "levels": [
+            "L",
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o190300120061",
+            "o190300120062"
+          ],
+          "choice": "\"麻衣\" (L, B); \"悲伤时穿的衣服\" (R)",
+          "alternatives": [
+            "\"丧服\""
+          ],
+          "reason": "Sackcloth is the rough clothing of mourning (m1); Readable says what it is, as the English Readable does.",
           "uncertain": false,
           "footnote": false
         }
@@ -4798,6 +5070,11 @@
           "L": "upang umawit ng papuri sa {{deity_pronoun:iyo|Iyo}} [ang aking] kaluwalhatian at hindi manahimik; \\q {{divine_name:PANGINOON|Yahweh}} aking Diyos, magpakailanman ay magpapasalamat ako sa {{deity_pronoun:iyo|Iyo}}.",
           "B": "upang sa buong pagkatao ko ay makatugtog ako para sa {{deity_pronoun:iyo|Iyo}} at hindi manahimik. \\q {{divine_name:PANGINOON|Yahweh}} aking Diyos, magpapasalamat ako sa {{deity_pronoun:iyo|Iyo}} magpakailanman.",
           "R": "Ngayon ay makaaawit ako ng papuri sa {{deity_pronoun:iyo|Iyo}} nang buong puso at hindi titigil kailanman. \\q {{divine_name:PANGINOON|Yahweh}} aking Diyos, magpapasalamat ako sa {{deity_pronoun:iyo|Iyo}} magpakailanman."
+        },
+        "zh": {
+          "L": "好让[我的]荣耀歌颂{{deity_pronoun:你|祢}}，不至沉默； \\q {{divine_name:上主|雅威}}我的{{god_term:神|上帝}}啊，我要永远称谢{{deity_pronoun:你|祢}}。",
+          "B": "好让我以全心全意向{{deity_pronoun:你|祢}}奏乐，不再沉默。 \\q {{divine_name:上主|雅威}}我的{{god_term:神|上帝}}啊，我要永永远远称谢{{deity_pronoun:你|祢}}。",
+          "R": "现在我可以全心歌颂{{deity_pronoun:你|祢}}，永不停止。 \\q {{divine_name:上主|雅威}}我的{{god_term:神|上帝}}啊，我要永远感谢{{deity_pronoun:你|祢}}。"
         }
       },
       "decisions": [
