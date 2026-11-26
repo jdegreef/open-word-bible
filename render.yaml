@@ -88,7 +88,7 @@ services:
         value: application/manifest+json
       # Scripts, style sheets and reader data are always named with their
       # content hash (/reader.js?v=..., scripts/build_site.py asset,
-      # chapter_shared, reader_shared), so a deploy that changes one names a
+      # chapter_shared, reader_shared, menus_file), so a deploy that changes one names a
       # new URL and browsers may keep each copy a year. Named one by one, not
       # /*.js, which would take in /sw.js above; tests/test_headers.py keeps
       # the list in step with build_site.WEB_FILES and checks that the built
@@ -161,6 +161,9 @@ services:
         name: Cache-Control
         value: public, max-age=31536000, immutable
       - path: /chapter-data/*
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+      - path: /menus-*.json
         name: Cache-Control
         value: public, max-age=31536000, immutable
     # Renamed pages keep their old addresses working.

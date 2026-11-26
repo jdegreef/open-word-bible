@@ -95,10 +95,9 @@ def page_data(page):
 
 
 def nav_menus_in(out, lang, whole=True):
-    """The header's dropdown panels in lang, from the built nav-<lang>.js
-    (build_site.nav_script): {key: html}, or with whole all of them as one."""
-    script = (out / f"nav-{lang}.js").read_text(encoding="utf-8")
-    menus = json.loads(script[len("window.OWB_NAV="):script.index(";\n")])
+    """The header's dropdown panels in lang, from the built menus-<lang>.json
+    (build_site.menus_file): {key: html}, or with whole all of them as one."""
+    menus = json.loads((out / f"menus-{lang}.json").read_text(encoding="utf-8"))
     return "".join(menus.values()) if whole else menus
 
 

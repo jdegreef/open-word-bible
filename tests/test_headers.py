@@ -67,7 +67,8 @@ class HeadersTest(unittest.TestCase):
         # script, is named with its content hash, so browsers may keep it;
         # the offline worker is checked on every visit instead.
         keep = "public, max-age=31536000, immutable"
-        for path in [f"/{name}" for name in build_site.WEB_FILES] + ["/reader-*.js", "/chapter-data/*"]:
+        shared = ["/reader-*.js", "/chapter-data/*", "/menus-*.json"]
+        for path in [f"/{name}" for name in build_site.WEB_FILES] + shared:
             self.assertEqual(static_site_headers(path).get("Cache-Control"), keep, path)
         self.assertNotIn("sw.js", build_site.WEB_FILES)
         self.assertEqual(static_site_headers("/sw.js")["Cache-Control"], "no-cache")
@@ -107,7 +108,8 @@ class PagesFitPolicyTest(unittest.TestCase):
         # that named one without its ?v= would be served an old copy after a
         # deploy. ("web/site.js" in a comment is not a URL.)
         names = "|".join(re.escape(name) for name in build_site.WEB_FILES)
-        url = re.compile(r"(?<![\w.-])/(?:chapter-data/[\w/]+\.js|reader-[a-z]+\.js|(?:" + names + r"))"
+        url = re.compile(r"(?<![\w.-])/(?:chapter-data/[\w/]+\.js|reader-[a-z]+\.js|menus-[a-z]+\.json"
+                         r"|(?:" + names + r"))"
                          r"(?![\w.-])(\?v=[0-9a-f]+)?")
         for path in self.out.rglob("*"):
             if path.suffix not in (".html", ".js", ".json", ".xml", ".txt") or "chapter-data" in path.parts:

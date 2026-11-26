@@ -774,12 +774,12 @@ def site_header(lang, current, path=None, lang_path=None, translated=LANGUAGES):
         items.append(
             f'<li class="nav-item">'
             f'<button type="button" class="nav-link nav-trigger{" active" if on else ""}" '
-            f'aria-expanded="false" aria-controls="dd-{key}">'
+            f'aria-expanded="false" aria-controls="dd-{key}" data-href="{url(lang, href)}">'
             f'{icon(ICONS[ico])}<span>{label}</span>{icon(ICONS["chevron"], 15, "icon caret")}</button>'
             f'<div class="dropdown {cls}" id="dd-{key}" hidden></div></li>')
     return f"""<header class="site"><div class="wrap bar">
 <a class="brand" href="{home}"{" aria-current=page" if home_on else ""}>{MARK}<span class="brand-name">Open Word <em>Bible</em></span></a>
-<nav class="primary" id="site-nav" aria-label="{t(lang, "nav.main")}"><ul class="nav-list">{"".join(items)}</ul></nav>
+<nav class="primary" id="site-nav" aria-label="{t(lang, "nav.main")}" data-menus="{menus_file(lang)[1]}"><ul class="nav-list">{"".join(items)}</ul></nav>
 <div class="tools">
 <a class="tool-btn search-btn" href="{url(lang, "/search/")}" aria-label="{t(lang, "nav.search")}" title="{t(lang, "nav.search")}" aria-keyshortcuts="Control+K Meta+K">{icon(ICONS["search"])}<span class="search-label">{t(lang, "nav.search")}</span><kbd class="search-kbd" hidden>Ctrl K</kbd></a>
 {account_menu(lang)}
@@ -791,27 +791,21 @@ def site_header(lang, current, path=None, lang_path=None, translated=LANGUAGES):
 
 
 # The header's dropdowns are the same on every page in a language, and were
-# about a third of each page (the Read menu names every book). They come
-# instead from one script per language, nav-<lang>.js, which every page
-# loads (cached once, and by web/sw.js for offline reading) before
-# web/site.js. Without scripts the dropdowns could not open anyway.
+# about a third of each page (the Read menu names every book). They are one
+# file per language, menus-<lang>.json ({key: panel html}), that web/site.js
+# fetches the first time a reader reaches for the menus (a pointer over the
+# header's links, focus in them, or the narrow-screen menu button), so a
+# page that is only read never downloads or lays them out. web/sw.js keeps
+# it for offline reading. Without scripts the dropdowns could not open
+# anyway; each trigger's data-href is its section's page, where a reader is
+# sent if the file can't be fetched.
+#
+# nav-<lang>.js, which every page loads before web/site.js, carries what a
+# page shows at once: the gear menu's settings and the footer's book chips.
 NAV_SCRIPT = r"""(function () {
   "use strict";
-  var menus = window.OWB_NAV;
   var here = location.pathname.replace(/index\.html$/, "");
   var book = /\/([a-z0-9]{3})\/\d+\/$/.exec(here);
-  function esc(s) { return s.replace(/["\\]/g, "\\$&"); }
-  Object.keys(menus).forEach(function (key) {
-    var panel = document.getElementById("dd-" + key);
-    if (!panel || panel.firstChild) return;
-    panel.innerHTML = menus[key];
-    // The dropdown link to this page tells a screen reader; on a chapter
-    // page, its book in the Read menu is the current one.
-    panel.querySelectorAll('a.dd-item[href="' + esc(here) + '"], a.dd-all[href="' + esc(here) + '"]')
-      .forEach(function (a) { a.setAttribute("aria-current", "page"); });
-    if (book) panel.querySelectorAll('[data-book="' + book[1] + '"]')
-      .forEach(function (a) { a.setAttribute("aria-current", "true"); });
-  });
   // The gear menu's settings (build_site.colour_prefs), before its
   // languages; web/site.js, which runs after this, wires them up.
   var prefs = document.getElementById("colour-menu");
@@ -847,15 +841,22 @@ NAV_SCRIPT = r"""(function () {
 
 @functools.cache
 def nav_script(lang):
-    """The header's dropdown panels in lang (nav_menus) and the gear menu's
-    settings (colour_prefs), as a script that fills them in (NAV_SCRIPT),
-    and its URL. It carries the footer's book chips and the book names too
-    (footer_data), which were the largest part of every page's footer."""
-    text, _ = shared_script("OWB_NAV", {key: panel for key, _l, _i, _h, panel, _c in nav_menus(lang)})
-    text += shared_script("OWB_PREFS", colour_prefs(lang))[0]
+    """The gear menu's settings (colour_prefs) and the footer's book chips
+    and book names (footer_data), which were the largest part of every
+    page's footer, as a script that fills them in (NAV_SCRIPT), and its URL."""
+    text, _ = shared_script("OWB_PREFS", colour_prefs(lang))
     text += shared_script("OWB_FOOT", footer_data(lang))[0]
     text += NAV_SCRIPT
     return text, f"/nav-{lang}.js?v={hashlib.sha256(text.encode()).hexdigest()[:10]}"
+
+
+@functools.cache
+def menus_file(lang):
+    """The header's dropdown panels in lang (nav_menus) as JSON, {key: html},
+    and its URL, which web/site.js fetches when the menus are first wanted."""
+    text = json.dumps({key: panel for key, _l, _i, _h, panel, _c in nav_menus(lang)},
+                      ensure_ascii=False, separators=(",", ":"))
+    return text, f"/menus-{lang}.json?v={hashlib.sha256(text.encode()).hexdigest()[:10]}"
 
 
 CC0_DEED = "https://creativecommons.org/publicdomain/zero/1.0/"
@@ -2428,13 +2429,15 @@ def reader_shared(lang):
 
 def chapter_data_files():
     """{path: text} of every chapter's and every language's shared reader
-    data (chapter_shared, reader_shared) and header menus (nav_script)."""
+    data (chapter_shared, reader_shared), the header's menus (menus_file)
+    and the gear menu's and footer's shared parts (nav_script)."""
     files = {chapter_data_path(b, c).lstrip("/"): chapter_shared(b, c)[0] for b, c in chapters()}
     for b, c in chapters():
         for code in chapter_languages(load_chapter(b, c)[0]):
             files[chapter_data_path(b, c, code).lstrip("/")] = chapter_language_data(b, c, code)[0]
     files.update({f"reader-{lang}.js": reader_shared(lang)[0] for lang in LANGUAGES})
     files.update({f"nav-{lang}.js": nav_script(lang)[0] for lang in LANGUAGES})
+    files.update({f"menus-{lang}.json": menus_file(lang)[0] for lang in LANGUAGES})
     return files
 
 
@@ -7781,6 +7784,7 @@ def service_worker():
     current += [plans_json_url(lang) for lang in LANGUAGES]
     current += [reader_shared(lang)[1] for lang in LANGUAGES]
     current += [nav_script(lang)[1] for lang in LANGUAGES]
+    current += [menus_file(lang)[1] for lang in LANGUAGES]
     # The static search indexes the site no longer builds: copies kept
     # before are dropped.
     dropped = [f"/search-{lang}.json" for lang in LANGUAGES]

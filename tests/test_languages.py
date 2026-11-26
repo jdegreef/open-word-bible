@@ -162,10 +162,11 @@ class LanguagesTest(unittest.TestCase):
             if build_site.load_articles(lang):
                 keys += ("nav.all_articles",)
             cat = build_site.catalog(lang)
-            # The header's menus and the gear menu's settings ("Theme",
-            # "Night") come from the language's nav script, which every
-            # page loads, so they count as the page's own.
-            nav = self.read(f"nav-{lang}.js")
+            # The gear menu's settings ("Theme", "Night") come from the
+            # language's nav script, which every page loads, and the
+            # header's menus from its menus file, which every page fetches
+            # when they are opened, so they count as the page's own.
+            nav = self.read(f"nav-{lang}.js") + self.read(f"menus-{lang}.json")
             for rel in self.english_pages():
                 # The passage data and the text written into the page may
                 # hold the same words as Bible text (Genesis 1:5 names the
