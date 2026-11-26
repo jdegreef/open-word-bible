@@ -38,8 +38,9 @@ Decision text stays in English, quoting the Portuguese words.
   as the alternative; Literal keeps the original unit. Where the English has
   no units span, neither does the Portuguese. Use the English values in
   metric: cubit 45 cm (palmo 7,5 cm), shekel 11,5 g, beka 5,7 g, gerah
-  0,6 g, talent 34 kg, mina 0,6 kg, ephah 22 litros, omer 2,2 litros, seah
-  7 litros, hin 3,7 litros, homer and cor 220 litros. Decimals with a comma
+  0,6 g, talent 34 kg, mina 0,6 kg, ephah 22 litros (a tenth 2,2 litros, two
+  tenths 4,4, three tenths 6,6), omer 2,2 litros, seah 7,3 litros (one seah
+  7, two 15, three 22, five 37), hin 3,7 litros, homer and cor 220 litros. Decimals with a comma
   (1,10 m), thousands with a point (1.000).
 - Rendering decisions: zero to two per verse, only where Portuguese had to
   choose. A book-wide choice is recorded once, in its first passage of each

@@ -45,7 +45,7 @@ quoting the Amharic words.
   metric: cubit (ክንድ) 45 ሳንቲ ሜትር, span (ስንዝር) 23 ሳንቲ ሜትር, handbreadth (መዳፍ)
   7.5 ሳንቲ ሜትር; shekel (ሰቅል) 11.5 ግራም, beka (ቤካ) 5.7 ግራም, gerah (ጌራ)
   0.6 ግራም, talent (መክሊት) 34 ኪሎ, mina (ምናን) 0.6 ኪሎ; ephah (ኢፍ)
-  22 ሊትር, omer (ጎሞር) 2.2 ሊትር, seah 7 ሊትር, hin (ኢን) 3.7 ሊትር, homer and kor
+  22 ሊትር, omer (ጎሞር) 2.2 ሊትር, seah 7.3 ሊትር (one seah 7, two 15, three 22, five 37; a tenth of an ephah 2.2 ሊትር), hin (ኢን) 3.7 ሊትር, homer and kor
   (ቆሮስ) 220 ሊትር. Decimals with a point (1.10 ሜትር), as Ethiopian print
   does.
 - Rendering decisions: zero to two per verse, only where Amharic had to
