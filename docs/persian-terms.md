@@ -57,13 +57,13 @@ Below, *dn* is `{{divine_name:خداوند|یهوه}}`. Levels are L (تحت‌�
 | YHWH (the LORD) | *dn* |
 | YHWH *Elohim* (the LORD God) | *dn* خدا |
 | the LORD my God; your God; our God | *dn* خدای من; *dn* خدای تو (شما for the plural); *dn* خدای ما |
-| *ʾAdonai* YHWH (the Lord GOD) | `خداوند {{divine_name:خدا\|یهوه}}`. *alt.* `{{divine_name:خداوندگار\|خداوند یهوه}}` (style guide section 15) |
+| the Lord GOD (*ʾAdonai* YHWH) | `خداوند {{divine_name:خدا\|یهوه}}`. *alt.* `{{divine_name:خداوندگار\|خداوند یهوه}}` (style guide section 15) |
 | *ʾAdonai* (Lord); *ʾadon* of God | خداوند, no span |
 | *Elohim*, *El*, *Eloah* (God, of the God of Israel) | خدا |
 | *elohim* of other gods; idols | خدایان, خدایان دیگر; بت‌ها |
 | El Shaddai (God Almighty); *Shaddai* (the Almighty) | خدای قادر مطلق; قادر مطلق |
 | El Elyon (God Most High); *ʿElyon* (the Most High) | خدای متعال; متعال |
-| YHWH *tsevaot* (the LORD of hosts; of Armies at R) | *dn* لشکرها (L, B); *dn* فرماندهٔ لشکرهای آسمان (R) |
+| the LORD of hosts (YHWH *tsevaot*; the LORD of Armies at R) | *dn* لشکرها (L, B); *dn* فرماندهٔ لشکرهای آسمان (R) |
 | *Yah* | `{{divine_name:خداوند\|یاه}}` |
 | the angel of the LORD | فرشتهٔ *dn* |
 | the God of Israel; of Abraham, Isaac and Jacob | خدای اسرائیل; خدای ابراهیم، اسحاق و یعقوب |
@@ -224,7 +224,7 @@ The temple furnishings in Ezekiel 40-48 follow 1 Kings 6-7.
 | the Philistines | فلسطینیان (L, B, R). *alt.* فلستیان, to keep them apart from today's Palestinians, with a decision either way |
 | mighty men (*gibborim*) | دلاوران |
 | chariots; horsemen | ارابه‌ها; سواران |
-| governor (Persian); governor (Roman) | والی; فرماندار |
+| governor (Persian, *pechah*); governor (Roman, *hegemon*) | والی; فرماندار |
 | satrap (Esther, Daniel, Ezra) | ساتراپ (L, B: the Old Persian title, a word Iranian readers know from history); فرماندار ایالت (R) |
 | province (*medinah*) | ولایت (L, B); استان (R) |
 | eunuch, official (*saris*) | خواجه (L, B); مقام درباری (R) where the English level says official |
