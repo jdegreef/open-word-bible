@@ -8,7 +8,7 @@ from django.utils import timezone
 from backend_tests.test_admin import K, AdminTestCase, account, client_for, sentence
 from staff import bulk, review
 from staff.models import AdminAction, ReviewAssignment
-from translation.models import ReviewEvent, ReviewState, Sentence
+from translation.models import Rendering, ReviewEvent, ReviewState, Sentence
 
 
 class BulkTest(AdminTestCase):
@@ -75,11 +75,11 @@ class BulkTest(AdminTestCase):
         real = review.apply
         calls = []
 
-        def failing(user, s, layer, action, note):
+        def failing(user, s, layer, action, note, seen=None):
             calls.append(s.record_id)
             if len(calls) == 2:
                 raise RuntimeError("boom")
-            return real(user, s, layer, action, note)
+            return real(user, s, layer, action, note, seen=seen)
 
         with mock.patch.object(review, "apply", failing):
             r = self.post(self.french, layer="fr", action="approve", records=["JHN.3.1.s1", "JHN.3.2.s1", "JHN.3.3.s1"])
@@ -93,6 +93,15 @@ class BulkTest(AdminTestCase):
             r = self.post(self.french, layer="fr", action="approve", records=["JHN.3.1.s1", "JHN.3.2.s1", "JHN.3.3.s1"])
         self.assertEqual((r.status_code, r.json()["code"]), (400, "too_many"))
         self.assertFalse(ReviewEvent.objects.exists())
+
+    def test_rest_of_chapter_approves_only_what_the_preview_showed(self):
+        dry = self.post(self.french, layer="fr", action="approve", chapter="JHN.3", dry_run=True).json()
+        seen = {x["record"]: x["digest"] for x in dry["results"] if x["result"] == "would_apply"}
+        self.assertEqual(len(seen), 3)
+        Rendering.objects.filter(sentence__record_id="JHN.3.2.s1", language="fr").update(text="Autre chose")
+        r = self.post(self.french, layer="fr", action="approve", chapter="JHN.3", seen=seen)
+        self.assertEqual((r.status_code, r.json()["code"], r.json()["record"]), (409, "changed", "JHN.3.2.s1"))
+        self.assertFalse(ReviewEvent.objects.exists())   # none of the chapter, not just that one
 
     def test_rest_of_chapter_leaves_flags_and_other_chapters(self):
         self.post(self.french, layer="fr", action="flag", note="Check", records=["JHN.3.2.s1"])
