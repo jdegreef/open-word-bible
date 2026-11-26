@@ -5,7 +5,7 @@
 // is read and written as A.ME, A.FLASH, ... so both sides see one value.
 OWBAdmin.module(function (A) {
   "use strict";
-  var C = A.C, CHECKS = A.CHECKS, CHECK_KINDS = A.CHECK_KINDS, LEVEL_NAMES = A.LEVEL_NAMES, N = A.N, VIEWS = A.VIEWS,
+  var C = A.C, forget = A.forget, CHECKS = A.CHECKS, CHECK_KINDS = A.CHECK_KINDS, LEVEL_NAMES = A.LEVEL_NAMES, N = A.N, VIEWS = A.VIEWS,
       add = A.add, api = A.api, assignmentsManager = A.assignmentsManager, bar = A.bar, busy = A.busy,
       clearing = A.clearing, date = A.date, decision = A.decision, diffView = A.diffView, dueText = A.dueText,
       empty = A.empty, filtered = A.filtered, h = A.h, head = A.head, keepAddress = A.keepAddress, later = A.later,
@@ -100,7 +100,10 @@ OWBAdmin.module(function (A) {
           if (!n) { note(status, "Nothing left to approve in " + name + ". Flagged sentences are left to review one by one."); return; }
           var yes = h("button", { type: "button", class: "admin-btn primary" }, "Approve " + plural(n, "sentence"));
           var no = h("button", { type: "button", class: "admin-btn" }, "Cancel");
-          yes.addEventListener("click", function () { send({ action: "approve", chapter: id }, yes, finished("Approved")); });
+          // What the preview showed, so a sentence changed since isn't approved unread.
+          var seen = {};
+          r.results.forEach(function (x) { if (x.digest) seen[x.record] = x.digest; });
+          yes.addEventListener("click", function () { send({ action: "approve", chapter: id, seen: seen }, yes, finished("Approved")); });
           no.addEventListener("click", function () { ask.hidden = true; first.hidden = false; first.focus(); });
           ask.textContent = "";
           add(ask, [h("span", { class: "admin-sub" }, "Approve every sentence in " + name + " that isn't approved yet? Flagged ones are left."), yes, no]);
@@ -237,7 +240,11 @@ OWBAdmin.module(function (A) {
         if (busyNow) return;
         busyNow = true;
         busy(button, true);
-        api("/api/admin/review/" + encodeURIComponent(record) + "/", { method: "POST", body: { layer: layer, action: action, note: noteBox.value } })
+        // seen: the digest of what this page shows, so a sentence changed
+        // meanwhile isn't approved unread (409 "changed").
+        var body = { layer: layer, action: action, note: noteBox.value };
+        if (action === "approve") body.seen = d.digest;
+        api("/api/admin/review/" + encodeURIComponent(record) + "/", { method: "POST", body: body })
           .then(function (res) {
             var row = listed ? rows.filter(function (x) { return x.record === record; })[0] : null;
             if (row && action !== "comment") row.state = res.state;
@@ -258,7 +265,18 @@ OWBAdmin.module(function (A) {
             } }, 12);
             if (action === "comment") route();
             else location.hash = next ? "#review/" + layer + "/" + next : "#review/" + layer;
-          }, function (e) { busyNow = false; busy(button, false); note(status, e, true); });
+          }, function (e) {
+            busyNow = false;
+            busy(button, false);
+            note(status, e, true);
+            if (e.code === "changed") {
+              status.appendChild(document.createTextNode(" "));
+              status.appendChild(h("button", { type: "button", class: "admin-link", onclick: function () {
+                forget(C.drops("/api/admin/review/" + record + "/"));
+                route();
+              } }, "Show the new wording"));
+            }
+          });
       }
       var approveBtn = h("button", { type: "button", class: "admin-btn primary", onclick: function () { act("approve", this); } },
         kind === "meaning" ? "Approve the meaning" : "Approve the " + d.layer.name.replace(/ wording$/, "") + " wording");
@@ -345,8 +363,11 @@ OWBAdmin.module(function (A) {
   }
   // A link to the layer's review queue, showing one book (or every book)
   // and one state.
+  // The queue's filters are read from its address (OWBAdminNav), so a link
+  // to a book or state of it says them there.
   function queueLink(layer, book, state, text) {
-    return h("a", { href: "#review/" + layer, onclick: function () { rememberTab("review.book", book); rememberTab("review.state", state); } }, text);
+    var href = N.build("review", { layer: layer, book: book || "", state: state || "todo" }, { layer: "", book: "", state: "todo" });
+    return h("a", { href: href }, text);
   }
   VIEWS.workspace = function (arg) {
     var layer = arg || sessionTab("review.layer", "");

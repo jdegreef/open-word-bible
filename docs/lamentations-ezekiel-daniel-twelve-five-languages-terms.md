@@ -214,8 +214,8 @@ Volumes and weights (45–46), on the Pentateuch note's values: an ephah and a
 bath `{{units:environ 22 litres|un épha}}`, `{{units:environ 22 litres|un
 bath}}` (a tenth of a homer, the same); a homer or kor `{{units:environ 220
 litres|un homer}}` for grain and liquids alike; a hin and a sixth of an ephah
-« environ 4 litres »; a third of a hin « environ 1,2 litre »; a sixth of a hin
-« environ 0,6 litre »; a tenth of a bath « environ 2 litres »; a shekel 11,5 g
+« environ 3,7 litres »; a third of a hin « environ 1,2 litre »; a sixth of a hin
+« environ 0,6 litre »; a tenth of a bath « environ 2,2 litres »; a shekel 11,5 g
 (twenty shekels « environ 230 grammes », twenty-five « environ 290 grammes »,
 fifteen « environ 170 grammes », sixty « environ 700 grammes »). French has no
 conflict over the ephah: the published French already gives it as 22 litres,
@@ -1268,7 +1268,7 @@ the published 45 cm cubit. Where the English converts at the ordinary cubit
 | 4.500; 5.000; 10.000; 18.000; 25.000 cubits | 2,4 km; 2,65 km; 5,3 km; 9,5 km; 13,25 km |
 | ephah = bath (founder's ruling: about 6 gallons) | `{{units:khoảng 22 lít\|một ê-pha}}` / `{{units:khoảng 22 lít\|một bát}}` ✓ (both 22 lít, as published: *ê-pha*, and *bát* in 1 Kings 7:26). A tenth of a bath is *khoảng 2,2 lít*. |
 | homer, kor | `{{units:khoảng 220 lít\|một hô-me}}` for both liquid and grain; *cô-rơ* ✓. "A homer and a lethech of barley" is `{{units:khoảng 330 lít lúa mạch\|một hô-me và một lê-thết lúa mạch}}`. |
-| a hin; a sixth, a third of a hin | `{{units:khoảng 3,6 lít\|một hin}}`; 0,6 lít; 1,2 lít ✓ (the published quarter hin is 0,9 lít) |
+| a hin; a sixth, a third of a hin | `{{units:khoảng 3,7 lít\|một hin}}`; 0,6 lít; 1,2 lít ✓ (the quarter hin is 0,9 lít) |
 | shekels (45:12) | 11,5 g each: twenty shekels is *khoảng 230 g*, fifteen *khoảng 170 g*, twenty-five *khoảng 290 g*, sixty *khoảng 690 g* |
 
 **Daniel**
@@ -1514,8 +1514,8 @@ and the angels; *thưa ngài* at R for *'adoni*; *ngươi* through Ezekiel
 
 Known unevenness in the published Vietnamese that drafters should not copy:
 *'arbeh* is *cào cào* in Psalm 105:34 but *châu chấu* in 1 Kings 8:37 (Joel
-uses *châu chấu*). The quarter hin is published as both 0,9 lít and 1 lít
-(Ezekiel uses 3,6 lít for the hin).
+uses *châu chấu*). The hin is 3,7 lít and the quarter hin 0,9 lít everywhere
+(docs/adding-a-language.md, section 10, has the table of measures).
 
 ## Korean
 
