@@ -22,14 +22,15 @@ from .check_admin_speed import super_admin_client
 
 USERNAME = "admin-warm@localhost"
 # What the admin opens on, then what each reading language's reviewers do:
-# their language's review queue and consistency, as those pages first show.
+# their language's review queue and consistency, as those pages first show,
+# and its content checks (checks/ alone is English's).
 PAGES = ["overview/", "attention/", "coverage/", "languages/", "terms/", "consistency/", "review/",
          "checks/", "pace/", "decisions/"]
 
 
 def pages():
     return PAGES + [p for code in languages.READING if code != "en"
-                    for p in (f"review/?layer={code}", f"consistency/?lang={code}")]
+                    for p in (f"review/?layer={code}", f"consistency/?lang={code}", f"checks/?lang={code}")]
 
 
 class Command(BaseCommand):
