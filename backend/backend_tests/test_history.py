@@ -45,7 +45,8 @@ class SinceApprovalTest(AdminTestCase):
         event = self.approve(self.english, "en")
         self.assertEqual(event.snapshot["renderings"], {"L": "x", "B": "In the beginning was the Word", "R": "x"})
         self.assertEqual(event.snapshot["decisions"], {})
-        meaning = self.approve(self.admin, "grc")
+        scholar = client_for(account("grc@example.org", (K.SCHOLAR_REVIEWER, "grc")))
+        meaning = self.approve(scholar, "grc")
         self.assertEqual(meaning.snapshot, {"literal_gloss": "x", "decisions": {}})
         # Nothing has changed since.
         d = self.admin.get("/api/admin/history/verse/JHN.1.1/").json()
