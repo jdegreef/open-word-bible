@@ -244,7 +244,7 @@ class SiteTest(unittest.TestCase):
         # Arabic has no Genesis 30 yet: its page there is a stub (chapter_stub).
         self.assertFalse(build_site.chapter_has("GEN", 30, "ar"))
         page = (self.out / "gen" / "30" / "index.html").read_text(encoding="utf-8")
-        self.assertIn('<a href="/ar/gen/30/" hreflang="ar" rel="nofollow" data-lang="ar"', page)
+        self.assertIn('<a href="/ar/gen/30/" hreflang="ar" data-lang="ar" rel="nofollow">', page)
         self.assertRegex(page, r'<a href="/es/gen/30/" hreflang="es" data-lang="es"[^>]*>')
         self.assertNotRegex(page, r'<a href="/es/gen/30/"[^>]*rel="nofollow"')
 

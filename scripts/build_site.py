@@ -488,8 +488,9 @@ def language_menu(lang, path=None, translated=LANGUAGES):
     label = t(lang, "footer.languages")
     items = language_items(lang, path, translated, '<span class="check" aria-hidden="true">&#10003;</span>')
     for code in LANGUAGES:
-        items = items.replace(f'data-lang="{code}">', f'data-lang="{code}" data-offer="{html.escape(t(code, "lang.offer"))}" '
-                                                     f'data-offer-no="{html.escape(t(code, "lang.offer_no"))}">', 1)
+        # After data-lang, whatever follows it (rel on a link to a chapter stub).
+        items = items.replace(f'data-lang="{code}"', f'data-lang="{code}" data-offer="{html.escape(t(code, "lang.offer"))}" '
+                                                     f'data-offer-no="{html.escape(t(code, "lang.offer_no"))}"', 1)
     return ('<div class="lang-menu">'
             f'<button type="button" class="tool-btn lang-btn" aria-expanded="false" aria-controls="lang-pop" '
             f'aria-label="{label}" title="{label}">{icon(ICONS["languages"])}<span class="lang-code">{lang.upper()}</span></button>'
@@ -1078,7 +1079,7 @@ def language_items(lang, path, translated=LANGUAGES, mark="", complete=None):
 
     return "".join(
         f'<li><span lang="{code}" aria-current="true">{owb_languages.native(code)}{mark}</span></li>' if code == lang
-        else f'<li><a href="{url(code, target(code))}" hreflang="{code}"{rel(code)} data-lang="{code}">'
+        else f'<li><a href="{url(code, target(code))}" hreflang="{code}" data-lang="{code}"{rel(code)}>'
              f'<span lang="{code}">{owb_languages.native(code)}</span>{gloss(code)}{where(code)}</a></li>'
         for code in LANGUAGES)
 
