@@ -1933,6 +1933,22 @@ class VersePageTest(unittest.TestCase):
         self.assertIn("<h2>What does John 3:16 mean?</h2>", verse)
         self.assertRegex(verse, r'<a class="button ghost" href="/jhn/3/\d+/" rel="prev">')
 
+    def test_a_verse_page_shows_public_domain_bibles_for_comparison(self):
+        page = build_site.verse_page("JHN.3.16", "en")
+        self.assertIn("<h2>John 3:16 in other translations</h2>", page)
+        self.assertIn("<dt>World English Bible</dt>", page)
+        self.assertIn(html.escape(build_site.comparison_text("web")["JHN.3.16"], quote=False), page)
+        self.assertIn("<dt>Reina-Valera 1909</dt>", build_site.verse_page("JHN.3.16", "es"))
+
+    def test_english_chapter_and_verse_pages_have_markdown_copies(self):
+        for path in ("jhn/3", "jhn/3/16"):
+            page = (self.out / path / "index.html").read_text(encoding="utf-8")
+            self.assertIn(f'<link rel="alternate" type="text/markdown" href="/{path}/index.md">', page)
+            text = (self.out / path / "index.md").read_text(encoding="utf-8")
+            self.assertIn(f"Source: {build_site.SITE_URL}/{path}/", text)
+        self.assertIn("**16** For God", (self.out / "jhn/3/index.md").read_text(encoding="utf-8"))
+        self.assertFalse((self.out / "es/jhn/3/index.md").exists())
+
     def test_a_verse_page_shows_three_levels_the_original_and_the_reasoning(self):
         page = build_site.verse_page("JHN.3.16", "en")
         levels = build_site.verse_levels("JHN.3.16", "en")
