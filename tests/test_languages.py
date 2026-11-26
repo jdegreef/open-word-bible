@@ -82,7 +82,7 @@ class LanguagesTest(unittest.TestCase):
         return (self.out / rel).read_text(encoding="utf-8")
 
     def english_pages(self):
-        """Every English page but the articles, the reading plans, the
+        """Every English page but the articles, the reading plans, the topics, the
         books' pages and the verse pages, which a language has only once
         they are translated, and the admin and the people, places and
         glossary pages and the dictionary words' own pages and lists, which
@@ -91,7 +91,7 @@ class LanguagesTest(unittest.TestCase):
         books = {p.stem.lower() for p in build_site.INTROS.glob("*.md")}
         rels = (p.relative_to(self.out) for p in self.out.rglob("index.html"))
         return [rel for rel in rels if rel.parts[0] not in langs and rel.parts[0] not in ("admin", "names", "glossary")
-                and (rel.parts[0] not in ("articles", "plans") or len(rel.parts) == 2)
+                and (rel.parts[0] not in ("articles", "plans", "topics") or len(rel.parts) == 2)
                 and not (rel.parts[0] == "word" and len(rel.parts) > 2)
                 and not (rel.parts[0] in books and len(rel.parts) in (2, 4))]
 

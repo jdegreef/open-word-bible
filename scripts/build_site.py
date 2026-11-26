@@ -3423,7 +3423,7 @@ def topics_page(lang="en"):
 """
     have = tuple(code for code in LANGUAGES if topics_in(code))
     return page(lang, ui["title"], body, path=topic_url(), current="/read/", description=ui["index_dek"],
-                translated=have)
+                alternates=have, indexed=lang in have)
 
 
 def verse_topics_html(vid, lang):
@@ -8295,10 +8295,11 @@ def build(out):
         for p in NAMED_PASSAGES:
             if lang in passage_page_languages(p["id"]):
                 add(passage_url(p), passage_page(p, lang), sources=chapter_sources(p["book"], p["chapter"]))
-        if topics_in(lang):
-            add(topic_url(), topics_page(lang))
-            for topic in topics_in(lang):
-                add(topic_url(topic), topic_page(topic, lang))
+        # Like Articles, Topics is in every language, and indexed once it
+        # lists a topic there; a topic's own page waits for its translation.
+        add(topic_url(), topics_page(lang), index=bool(topics_in(lang)))
+        for topic in topics_in(lang):
+            add(topic_url(topic), topic_page(topic, lang))
         for book, _ in books():
             add(edition_url(book), edition_page(book, lang), index=False)
         articles = load_articles(lang)
