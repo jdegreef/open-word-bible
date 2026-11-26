@@ -794,7 +794,40 @@
   document.addEventListener("click", function () { closeNote(false); });
   window.addEventListener("resize", placeNote);
 
+  // The verses as one tab stop: the chosen verse, or else the first, takes
+  // Tab; the arrows move along (roveBy).
+  function rove() {
+    var all = document.querySelectorAll('#text .verse[role="button"]');
+    if (!all.length) return;
+    var on = document.querySelector('#text .verse[role="button"][aria-current="true"]') || all[0];
+    all.forEach(function (v) { v.tabIndex = v === on ? 0 : -1; });
+    var hint = document.getElementById("verse-hint");
+    if (!hint) {
+      hint = el("span", "sr-only", t("verse_label").replace(/^[^:\uff1a\u1366]*[:\uff1a\u1366]\s*/, ""));
+      hint.id = "verse-hint";
+      document.getElementById("text").parentNode.appendChild(hint);
+    }
+  }
+  function roveBy(from, by) {
+    var all = Array.prototype.slice.call(document.querySelectorAll('#text .verse[role="button"]'));
+    var to = all[all.indexOf(from) + by];
+    if (!to) return;
+    from.tabIndex = -1;
+    to.tabIndex = 0;
+    to.focus();
+  }
+  document.getElementById("text").addEventListener("focusin", function (e) {
+    var v = e.target.closest && e.target.closest('.verse[role="button"]');
+    if (!v || v.tabIndex === 0) return;
+    document.querySelectorAll('#text .verse[tabindex="0"]').forEach(function (o) { o.tabIndex = -1; });
+    v.tabIndex = 0;
+  });
+
   function drawText() {
+    drawTextOnly();
+    rove();
+  }
+  function drawTextOnly() {
     closeNote(false);
     var box = document.getElementById("text");
     box.textContent = "";
@@ -885,9 +918,13 @@
                            (poem ? " poem" : "") + (broad ? " unsure" : ""));
         if (lang !== settings.lang) span.lang = lang;
         if (!plain()) {
-          span.tabIndex = 0;
+          // One tab stop for the text (rove): Tab reaches the chapter once,
+          // the up and down arrows (or j and k) move between verses. The
+          // verse's own words are its name, so a screen reader reads the
+          // text; the hint says what pressing it does.
+          span.tabIndex = -1;
           span.setAttribute("role", "button");
-          span.setAttribute("aria-label", t("verse_label").replace("{v}", shownVerse(part[0])));
+          span.setAttribute("aria-describedby", "verse-hint");
         }
         span.dataset.v = part[0];
         if (part[0] === "0") span.classList.add("psalm-title");
@@ -1005,6 +1042,10 @@
         });
         span.addEventListener("keydown", function (e) {
           if (e.key === "Enter" || e.key === " ") { e.preventDefault(); select(r, part[0]); }
+          if ((e.key === "ArrowDown" || e.key === "ArrowUp") && !e.altKey && !e.ctrlKey && !e.metaKey) {
+            e.preventDefault();
+            roveBy(span, e.key === "ArrowDown" ? 1 : -1);
+          }
         });
         para.appendChild(span);
         para.appendChild(document.createTextNode(" "));
@@ -1677,6 +1718,15 @@
       box.appendChild(item);
       fillXref(body, x);
     });
+    // On a phone the preview is a sheet at the foot of the screen, with a
+    // way to close it.
+    if (narrow()) {
+      var shut = el("button", "sheet-close xr-close", "\u00d7");
+      shut.type = "button";
+      shut.setAttribute("aria-label", t("close"));
+      shut.addEventListener("click", function (e) { e.stopPropagation(); closeNote(true); });
+      box.insertBefore(shut, box.firstChild);
+    }
     box.addEventListener("click", function (e) { e.stopPropagation(); });
     box.addEventListener("mouseenter", function () { clearTimeout(xrefTimer); });
     box.addEventListener("mouseleave", leaveXrefs);
@@ -2186,12 +2236,45 @@
     return box;
   }
 
+  // Before a verse is chosen, the wide panel shows the chapter's sections
+  // as links, and where its notes are: a map of the chapter while reading.
+  function chapterOutline() {
+    var heads = Array.prototype.slice.call(document.querySelectorAll("#text .section-head"));
+    var notes = document.getElementById("notes");
+    if (!heads.length && (!notes || notes.hidden)) return null;
+    var box = el("nav", "outline");
+    box.setAttribute("aria-labelledby", "outline-title");
+    var h = el("h3", null, t("outline"));
+    h.id = "outline-title";
+    box.appendChild(h);
+    var list = el("ol");
+    heads.forEach(function (head, i) {
+      if (!head.id) head.id = "s" + (i + 1);
+      var next = head.nextElementSibling && head.nextElementSibling.querySelector(".verse[data-v]");
+      var li = el("li");
+      var a = el("a", null, head.textContent);
+      a.href = "#" + head.id;
+      if (next) li.appendChild(el("span", "outline-v", next.getAttribute("data-v")));
+      li.insertBefore(a, li.firstChild);
+      list.appendChild(li);
+    });
+    if (heads.length) box.appendChild(list);
+    if (notes && !notes.hidden) {
+      var n = el("a", "outline-notes", t("notes"));
+      n.href = "#notes";
+      box.appendChild(n);
+    }
+    return box;
+  }
+
   function drawPanel() {
     var panel = panelEl;
     panel.textContent = "";
     if (!current) {
       panel.appendChild(el("h2", null, t("empty_title")));
       panel.appendChild(el("p", "empty", t("empty_text")));
+      var outline = chapterOutline();
+      if (outline) panel.appendChild(outline);
       panel.appendChild(el("p", "keys", t("keys_hint")));
       return;
     }
@@ -4442,7 +4525,19 @@
     listen.utter = null;
     speech.cancel();
     if (i < 0) i = 0;
-    if (i >= DATA.records.length) { stopListening(); return; }
+    if (i >= DATA.records.length) {
+      // At the end of the chapter, go on to the next: its page opens with
+      // the player ready, one tap from carrying on (a browser will not
+      // start speaking on a new page by itself).
+      var nextCh = document.querySelector('.edge-turn[data-turn="next"]');
+      if (nextCh && jump === false) {
+        try { sessionStorage.setItem("owb-listen-next", nextCh.pathname); } catch (e) { /* ignore */ }
+        location.href = nextCh.href;
+        return;
+      }
+      stopListening();
+      return;
+    }
     listen.at = i;
     listen.paused = false;
     clearSpoken();
@@ -4632,6 +4727,24 @@
     window.addEventListener("pagehide", function () { speech.cancel(); });
     // Back to this page from the browser's cache: the voice has stopped.
     window.addEventListener("pageshow", function (e) { if (e.persisted && listen.on) stopListening(); });
+    // Arrived from the end of the last chapter while listening: the player
+    // is open at the first sentence, paused, so one tap reads on.
+    var cameFrom = null;
+    try {
+      cameFrom = sessionStorage.getItem("owb-listen-next");
+      sessionStorage.removeItem("owb-listen-next");
+    } catch (e) { /* ignore */ }
+    if (cameFrom && cameFrom === location.pathname) {
+      listen.on = true;
+      listen.paused = true;
+      listen.at = 0;
+      bar.hidden = false;
+      document.body.classList.add("listening");
+      startBtn.setAttribute("aria-pressed", "true");
+      voiceMenu();
+      drawBar();
+      playBtn.focus({ preventScroll: true });
+    }
   }
 
   // Marks and settings from the reader's other devices (site.js, after a
