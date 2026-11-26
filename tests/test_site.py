@@ -1917,6 +1917,16 @@ class SearchMetadataTest(unittest.TestCase):
         self.assertIn('<meta property="og:locale" content="en_US">', self.page("jhn/3"))
         self.assertIn('<meta property="og:locale" content="pt_BR">', self.page("pt/jhn/3"))
 
+    def test_english_chapter_and_verse_pages_have_markdown_copies(self):
+        for path in ("jhn/3", "jhn/3/16"):
+            page = (self.out / path / "index.html").read_text(encoding="utf-8")
+            self.assertIn(f'<link rel="alternate" type="text/markdown" href="/{path}/index.md">', page)
+            text = (self.out / path / "index.md").read_text(encoding="utf-8")
+            self.assertIn(f"Source: {build_site.SITE_URL}/{path}/", text)
+        self.assertIn("**16** For God", (self.out / "jhn/3/index.md").read_text(encoding="utf-8"))
+        self.assertFalse((self.out / "es/jhn/3/index.md").exists())
+
+
 class VersePageTest(unittest.TestCase):
     def test_every_verse_of_the_day_with_records_has_a_page(self):
         ids = build_site.verse_page_ids()
@@ -1939,15 +1949,6 @@ class VersePageTest(unittest.TestCase):
         self.assertIn("<dt>World English Bible</dt>", page)
         self.assertIn(html.escape(build_site.comparison_text("web")["JHN.3.16"], quote=False), page)
         self.assertIn("<dt>Reina-Valera 1909</dt>", build_site.verse_page("JHN.3.16", "es"))
-
-    def test_english_chapter_and_verse_pages_have_markdown_copies(self):
-        for path in ("jhn/3", "jhn/3/16"):
-            page = (self.out / path / "index.html").read_text(encoding="utf-8")
-            self.assertIn(f'<link rel="alternate" type="text/markdown" href="/{path}/index.md">', page)
-            text = (self.out / path / "index.md").read_text(encoding="utf-8")
-            self.assertIn(f"Source: {build_site.SITE_URL}/{path}/", text)
-        self.assertIn("**16** For God", (self.out / "jhn/3/index.md").read_text(encoding="utf-8"))
-        self.assertFalse((self.out / "es/jhn/3/index.md").exists())
 
     def test_a_verse_page_shows_three_levels_the_original_and_the_reasoning(self):
         page = build_site.verse_page("JHN.3.16", "en")
