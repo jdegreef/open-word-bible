@@ -658,8 +658,10 @@ class SiteTest(unittest.TestCase):
         self.assertIn("/jhn/3/", marks)
         self.assertIn("/word/g26-agape/", marks)
         self.assertNotIn("/search/", marks)
-        # Every page the sitemaps list, and nothing else.
-        listed = set(re.findall(r"<loc>https://openwordbible\.org([^<]*)</loc>", sitemap_text(self.out)))
+        # Every page the sitemaps list, and nothing else: but the pages the
+        # Worker draws, which are not files (build_site.WORKER_PAGES).
+        listed = {p for p in re.findall(r"<loc>https://openwordbible\.org([^<]*)</loc>", sitemap_text(self.out))
+                  if p in marks or not build_site.worker_draws(p)}
         self.assertEqual(set(marks), listed)
 
     def test_named_passages_have_pages_and_addresses_by_name(self):

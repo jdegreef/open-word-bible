@@ -4507,6 +4507,23 @@ def worker_files():
     return files
 
 
+_WORKER_PAGE = re.compile(r"/(?:([a-z]{2,3})/)?([0-9a-z]{3})/(\d+)/(?:(\d+)|(literal|readable))/")
+
+
+def worker_draws(href):
+    """Whether the Worker draws the page at href (a site path with its
+    language), as cloudflare/worker.js routes it."""
+    m = _WORKER_PAGE.fullmatch(href)
+    if not WORKER_PAGES or not m or m[1] == "en" or m[2].upper() not in refs.BOOK_CODES:
+        return False
+    lang, book, chapter = m[1] or "en", m[2].upper(), int(m[3])
+    if lang not in LANGUAGES or (book, chapter) not in chapter_set():
+        return False
+    if m[5]:
+        return chapter_indexed(book, chapter, lang)
+    return lang in chapter_verse_languages(book, chapter).get(f"{book}.{chapter}.{int(m[4])}", ())
+
+
 def worker_sitemap_entries(built):
     """The sitemap's rows for the pages the Worker draws: every verse in
     each language it is in, and every chapter wholly in a language at its
