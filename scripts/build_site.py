@@ -2015,12 +2015,15 @@ def section_id(record, chapter):
     return f"s{ref.verse}" if ref.chapter == chapter else f"s{ref.chapter}-{ref.verse}"
 
 
-def chapter_text(records, chapter, paragraphs, disputed_info, lang="en"):
+def chapter_text(records, chapter, paragraphs, disputed_info, lang="en", verse_pages=None):
     """The chapter as reader.js's drawText() first draws it: Balanced, every
     setting at its default, headings shown, Study view. Written into the
     page so it has its text without JavaScript (and for crawlers); the
     reader redraws the same markup in place. Each sentence is in lang, or
-    in English while it has no lang yet (text_lang)."""
+    in English while it has no lang yet (text_lang). verse_pages is {verse
+    number as shown: its page's address}: those numbers link to the verse's
+    page, so each verse page has a link from its chapter."""
+    verse_pages = verse_pages or {}
     def verse_of(vid):
         ref = refs.parse(vid)
         return str(ref.verse) if ref.chapter == chapter else f"{ref.chapter}:{ref.verse}"
@@ -2083,7 +2086,9 @@ def chapter_text(records, chapter, paragraphs, disputed_info, lang="en"):
         cls = "verse" if tl == lang else "verse fallback"
         for i, (v, text) in enumerate(verses):
             # A psalm's title is verse 0, unnumbered (reader.js shownVerse).
-            sup = f"<sup>{esc(v)}</sup>" if v != shown and v != "0" else ""
+            number = (f'<a class="vn-link" href="{esc(verse_pages[v])}">{esc(v)}</a>' if v in verse_pages
+                      else esc(v))
+            sup = f"<sup>{number}</sup>" if v != shown and v != "0" else ""
             # A verse's address (#v16), on its first sentence: the links
             # across the site lead there, and work before reader.js runs.
             anchor = f' id="v{esc(v)}"' if v != shown else ""
@@ -2169,13 +2174,16 @@ def chapter_ld(records, book, chapter, title, lang="en", summary=None):
     source = SOURCE_TEXTS[source_language(book)]
     own = SITE_URL + url(lang, chapter_url(book, chapter))
     whole = all(lang in r["renderings"] for r in records)
-    bible = {"@type": "Book", "name": SITE_NAME, "url": SITE_URL + url(lang, "/"), "license": CC0_URL}
+    bible = {"@type": "Book", "@id": bible_id(lang), "name": SITE_NAME, "url": SITE_URL + url(lang, "/"),
+             "license": CC0_URL}
     book_ld = {"@type": "Book", "name": BOOK_NAMES[book][lang], "isPartOf": bible}
     if lang in book_languages(book):
+        book_ld["@id"] = book_id(book, lang)
         book_ld["url"] = SITE_URL + url(lang, book_url(book))
     data = {
         "@context": "https://schema.org",
         "@type": "Chapter",
+        "@id": chapter_id(book, chapter, lang),
         "name": title,
         "url": own,
         "inLanguage": lang,
@@ -2207,7 +2215,26 @@ def ld_script(data):
     return f'<script type="application/ld+json">{text}</script>'
 
 
-ORGANIZATION = {"@type": "Organization", "name": SITE_NAME, "url": SITE_URL}
+ORGANIZATION = {"@type": "Organization", "@id": f"{SITE_URL}/#organization", "name": SITE_NAME, "url": SITE_URL}
+
+
+# Stable ids for the linked data, so a verse, its chapter, its book and the
+# translation join into one graph across pages: every page names the same
+# node by the same @id (the page's address and a fragment).
+def bible_id(lang):
+    return SITE_URL + url(lang, "/") + "#bible"
+
+
+def book_id(book, lang):
+    return SITE_URL + url(lang, book_url(book)) + "#book"
+
+
+def chapter_id(book, chapter, lang):
+    return SITE_URL + url(lang, chapter_url(book, chapter)) + "#chapter"
+
+
+def verse_id(vid, lang):
+    return SITE_URL + url(lang, verse_page_url(vid)) + "#verse"
 
 
 # The reader data that is the same on every language's page of a chapter,
@@ -2459,7 +2486,11 @@ def chapter_page(book, chapter, lang="en"):
     # "</" cannot appear inside a script element.
     blob = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     # Without JavaScript (and for crawlers) the page still has its text.
-    text = chapter_text(records, chapter, data["paragraphs"], data["disputed"], lang)
+    # The verses with a page of their own, by number as shown: their
+    # numbers link to it, here and as reader.js draws them (versePages).
+    data["versePages"] = {str(refs.parse(vid).verse): url(lang, verse_page_url(vid))
+                          for vid in verse_pages_in_chapter(book, chapter) if lang in verse_page_languages(vid)}
+    text = chapter_text(records, chapter, data["paragraphs"], data["disputed"], lang, data["versePages"])
     own_texts = "".join(f'<script src="{chapter_language_data(book, chapter, code)[1]}"></script>\n'
                         for code in page_texts(records, lang))
     partial = any(lang not in r["renderings"] for r in records)
@@ -2761,12 +2792,13 @@ def book_page(book, lang="en"):
 def book_ld(book, lang, intro, chaps):
     """schema.org data for a book's page: the book of the Bible, its
     introduction's summary, and its chapters."""
-    data = {"@context": "https://schema.org", "@type": "Book", "name": BOOK_NAMES[book][lang],
+    data = {"@context": "https://schema.org", "@type": "Book", "@id": book_id(book, lang), "name": BOOK_NAMES[book][lang],
             "url": SITE_URL + url(lang, book_url(book)), "inLanguage": lang,
             "abstract": intro["summary"], "license": CC0_URL, "creativeWorkStatus": "Draft",
-            "isPartOf": {"@type": "Book", "name": SITE_NAME, "url": SITE_URL + url(lang, "/"), "license": CC0_URL},
+            "isPartOf": {"@type": "Book", "@id": bible_id(lang), "name": SITE_NAME, "url": SITE_URL + url(lang, "/"),
+                         "license": CC0_URL},
             "translationOfWork": SOURCE_TEXTS[source_language(book)],
-            "hasPart": [{"@type": "Chapter", "position": p.chapter, "name": chapter_name(p.records, book, p.chapter, lang),
+            "hasPart": [{"@type": "Chapter", "@id": chapter_id(book, p.chapter, lang), "position": p.chapter, "name": chapter_name(p.records, book, p.chapter, lang),
                          "url": SITE_URL + url(lang, chapter_url(book, p.chapter))} for p in chaps]}
     modified = last_modified(intro_sources(book, lang))
     if modified:
@@ -2972,11 +3004,20 @@ def verse_page(vid, lang="en"):
                       if d["layer"] != "meaning" and d.get("language") == lang and about_verse(d))
     why = ""
     if meaning or wording:
-        why = (f'<section class="verse-section"><h2>{cui["why"]}</h2>'
+        # Headed with the question people search ("What does John 3:16
+        # mean?"); the decisions under it answer it.
+        why = (f'<section class="verse-section"><h2>{esc(ui["meaning_q"].format(ref=name), quote=False)}</h2>'
                + (f'<h3>{cui["meaning"]}</h3><ul class="verse-decisions">{meaning}</ul>' if meaning else "")
                + (f'<h3>{cui["wording"]}</h3><ul class="verse-decisions">{wording}</ul>' if wording else "")
                + "</section>")
     chapter_link = url(lang, chapter_url(book, chapter)) + f"#v{ref.verse}"
+    # The chapter's other verse pages before and after this one, so each is
+    # linked from its neighbours as well as from its chapter.
+    near = [v for v in verse_pages_in_chapter(book, chapter) if lang in verse_page_languages(v)]
+    at = near.index(vid)
+    turns = "".join(f'<a class="button ghost" href="{url(lang, verse_page_url(v))}" rel="{rel}">{esc(verse_ref_name(v, lang))}</a>'
+                    for v, rel in ((near[at - 1] if at else None, "prev"),
+                                   (near[at + 1] if at + 1 < len(near) else None, "next")) if v)
     body = f"""
 <article class="article verse-page">
 <header class="article-head">
@@ -2992,11 +3033,12 @@ def verse_page(vid, lang="en"):
 {why}
 <p class="actions"><a class="button" href="{chapter_link}">{cui["read"]}&nbsp;{forward(lang)}</a>
 <a class="button ghost" href="{url(lang, "/compare/")}?v={vid}">{esc(cui["title"].replace("{ref}", name))}</a></p>
+{f'<p class="actions verse-turns">{turns}</p>' if turns else ""}
 </article>
 {verse_ld(vid, lang, name, levels, rs)}
 {breadcrumb_ld(lang, book_crumbs(book, lang) + [(chapter_name(records, book, chapter, lang), chapter_url(book, chapter)), (name, verse_page_url(vid))])}
 """
-    return page(lang, ui["title"].format(ref=name), body, path=verse_page_url(vid), current="/read/",
+    return page(lang, ui["title" + suffix].format(ref=name), body, path=verse_page_url(vid), current="/read/",
                 description=shorten(f"{name}: {levels.get('B', '')}") if levels.get("B")
                 else ui["description" + suffix].format(ref=name),
                 translated=verse_page_languages(vid))
@@ -3007,11 +3049,12 @@ def verse_ld(vid, lang, name, levels, rs):
     Balanced text, part of its chapter, translated from the source text."""
     ref = refs.parse(vid)
     source = SOURCE_TEXTS[source_language(ref.book)]
-    data = {"@context": "https://schema.org", "@type": "CreativeWork", "name": name,
+    data = {"@context": "https://schema.org", "@type": "CreativeWork", "@id": verse_id(vid, lang), "name": name,
             "url": SITE_URL + url(lang, verse_page_url(vid)), "inLanguage": lang,
             "text": levels.get("B", ""), "license": CC0_URL,
             "creativeWorkStatus": "Draft" if any(r["status"] == "ai_draft" for r in rs) else "Published",
-            "isPartOf": {"@type": "Chapter", "name": f"{chapter_book(ref.book, lang)} {ref.chapter}",
+            "isPartOf": {"@type": "Chapter", "@id": chapter_id(ref.book, ref.chapter, lang),
+                         "name": f"{chapter_book(ref.book, lang)} {ref.chapter}",
                          "url": SITE_URL + url(lang, chapter_url(ref.book, ref.chapter))},
             "translationOfWork": source, "isBasedOn": source}
     return ld_script(data)
@@ -5352,7 +5395,9 @@ def home_page(lang="en"):
 """
     feed = (f'\n<link rel="alternate" type="application/atom+xml" '
             f'title="{html.escape(SITE_NAME + " · " + t(lang, "home.votd"))}" href="{votd_feed_url(lang)}">')
-    return page(lang, SITE_NAME, body + website_ld(lang), path="/", current="/", head=feed)
+    # Named for what people search ("free Bible in Spanish"), not only the
+    # site's name, which page() adds after it.
+    return page(lang, t(lang, "home.title"), body + website_ld(lang), path="/", current="/", head=feed)
 
 
 def website_ld(lang):
@@ -5360,8 +5405,11 @@ def website_ld(lang):
     publisher and search, so search engines can name it and offer a
     search box for it."""
     return ld_script({
-        "@context": "https://schema.org", "@type": "WebSite",
+        "@context": "https://schema.org", "@type": "WebSite", "@id": SITE_URL + url(lang, "/") + "#website",
         "name": SITE_NAME, "url": SITE_URL + url(lang, "/"), "inLanguage": lang,
+        # The translation the site publishes: the node every book and
+        # chapter page's data is part of (bible_id).
+        "mainEntity": {"@type": "Book", "@id": bible_id(lang), "name": SITE_NAME, "license": CC0_URL},
         "description": t(lang, "meta.description"), "license": CC0_URL,
         "publisher": {**ORGANIZATION, "sameAs": [GITHUB_URL]},
         "potentialAction": {"@type": "SearchAction",
@@ -7640,13 +7688,34 @@ def page_fingerprint(text):
     return hashlib.sha256(re.sub(r"\?v=[0-9a-f]+", "", body).encode("utf-8")).hexdigest()[:12]
 
 
-def sitemap_url(lang):
-    return f"/sitemap-{lang}.xml"
+def sitemap_url(lang, kind):
+    return f"/sitemap-{lang}-{kind}.xml"
+
+
+# The kinds of page each language's sitemaps are split into, so search
+# consoles report how many of each kind are indexed (a verse page and an
+# article are not the same question).
+SITEMAP_KINDS = ("chapters", "verses", "books", "words", "articles", "pages")
+_CHAPTER_PATH = re.compile(r"/([0-9a-z]{3})/(\d+)/(?:(\d+)/)?")
+
+
+def sitemap_kind(path):
+    """Which of SITEMAP_KINDS a page's path (without the language) is."""
+    m = _CHAPTER_PATH.fullmatch(path)
+    if m and m[1].upper() in refs.BOOK_CODES:
+        return "verses" if m[3] else "chapters"
+    if re.fullmatch(r"/([0-9a-z]{3})/", path) and path.strip("/").upper() in refs.BOOK_CODES:
+        return "books"
+    if path.startswith("/word/"):
+        return "words"
+    if path.startswith("/articles/"):
+        return "articles"
+    return "pages"
 
 
 def sitemaps(entries):
-    """{file: text}: sitemap.xml, an index of one sitemap per language, and
-    those sitemaps. Each page lists the same page in the other languages it
+    """{file: text}: sitemap.xml, an index of a sitemap for each language
+    and kind of page (sitemap_kind), and those sitemaps. Each page lists the same page in the other languages it
     is indexed in (hreflang alternates), and its last change where git
     knows it, so a crawler can tell which of some 20,000 pages to fetch
     again after a deploy."""
@@ -7655,9 +7724,9 @@ def sitemaps(entries):
     for e in entries:
         by_path.setdefault(e.path, []).append(e.lang)
     files, index = {}, []
-    for lang in LANGUAGES:
+    for lang, kind in ((lang, kind) for lang in LANGUAGES for kind in SITEMAP_KINDS):
         rows = []
-        for e in (e for e in entries if e.lang == lang):
+        for e in (e for e in entries if e.lang == lang and sitemap_kind(e.path) == kind):
             langs = by_path[e.path]
             alts = ""
             if len(langs) > 1:
@@ -7670,11 +7739,11 @@ def sitemaps(entries):
                         f"{f'<lastmod>{mod}</lastmod>' if mod else ''}{alts}</url>\n")
         if not rows:
             continue
-        files[sitemap_url(lang).lstrip("/")] = (
+        files[sitemap_url(lang, kind).lstrip("/")] = (
             '<?xml version="1.0" encoding="UTF-8"?>\n'
             '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
             f"{''.join(rows)}</urlset>\n")
-        index.append(f"<sitemap><loc>{esc(SITE_URL + sitemap_url(lang))}</loc></sitemap>\n")
+        index.append(f"<sitemap><loc>{esc(SITE_URL + sitemap_url(lang, kind))}</loc></sitemap>\n")
     files["sitemap.xml"] = ('<?xml version="1.0" encoding="UTF-8"?>\n'
                             '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
                             f"{''.join(index)}</sitemapindex>\n")
