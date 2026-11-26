@@ -2642,6 +2642,7 @@ def chapter_page(book, chapter, lang="en"):
                            verse=opening_verse(records, chapter, lang)),
                 description=shorten(summary) if summary else t(lang, "meta.chapter_description" + suffix, title=title),
                 alternates=complete, indexed=lang in complete,
+                head=markdown_alternate(chapter_url(book, chapter), lang) if lang in complete else "",
                 foot=chapter_in_languages(book, chapter, lang, complete))
 
 
@@ -3045,6 +3046,7 @@ def verse_page(vid, lang="en"):
     turns = "".join(f'<a class="button ghost" href="{url(lang, verse_page_url(v))}" rel="{rel}">{esc(verse_ref_name(v, lang))}</a>'
                     for v, rel in ((near[at - 1] if at else None, "prev"),
                                    (near[at + 1] if at + 1 < len(near) else None, "next")) if v)
+    others = verse_comparison_html(vid, lang, name)
     body = f"""
 <article class="article verse-page">
 <header class="article-head">
@@ -3058,6 +3060,7 @@ def verse_page(vid, lang="en"):
 <p class="verse-original" lang="{source}"{direction}>{esc(original, quote=False)}</p></section>
 {gloss}
 {why}
+{others}
 <p class="actions"><a class="button" href="{chapter_link}">{cui["read"]}&nbsp;{forward(lang)}</a>
 <a class="button ghost" href="{url(lang, "/compare/")}?v={vid}">{esc(cui["title"].replace("{ref}", name))}</a></p>
 {f'<p class="actions verse-turns">{turns}</p>' if turns else ""}
@@ -3068,7 +3071,88 @@ def verse_page(vid, lang="en"):
     return page(lang, ui["title" + suffix].format(ref=name), body, path=verse_page_url(vid), current="/read/",
                 description=shorten(f"{name}: {levels.get('B', '')}") if levels.get("B")
                 else ui["description" + suffix].format(ref=name),
-                translated=verse_page_languages(vid))
+                translated=verse_page_languages(vid), head=markdown_alternate(verse_page_url(vid), lang))
+
+
+# Plain Markdown copies of the English chapter and verse pages, beside each
+# page as index.md and named by its <link rel="alternate">: the text, its
+# three levels and its reasoning without the reader's interface, for AI
+# tools that quote a page (llms.txt says how to cite it). English only, to
+# keep within the host's file count.
+MARKDOWN_LANGS = ("en",)
+
+
+def markdown_alternate(path, lang):
+    """A page's <link> to its Markdown copy, where it has one."""
+    if lang not in MARKDOWN_LANGS:
+        return ""
+    return f'\n<link rel="alternate" type="text/markdown" href="{html.escape(url(lang, path))}index.md">'
+
+
+def chapter_markdown(book, chapter, lang="en"):
+    """A chapter as Markdown: its headings and Balanced text, verse by verse."""
+    records, _ = load_chapter(book, chapter)
+    title = chapter_name(records, book, chapter, lang)
+    out = [f"# {title} ({SITE_NAME}, draft)", ""]
+    summary = summaries().get((book, chapter), {}).get(lang)
+    if summary:
+        out += [summary, ""]
+    last = None
+    for r in records:
+        heading = headings().get(r["id"], {}).get(lang)
+        if heading:
+            out += [f"## {markup.flat(markup.render(heading))}", ""]
+        for vid, levels in record_verses(r).items():
+            text = levels.get(lang, {}).get("B")
+            ref = refs.parse(vid)
+            if not text or ref.chapter != chapter:
+                continue
+            # A verse of several sentences is one line; a psalm's title
+            # (verse 0) has no number.
+            if vid == last and out[-2:-1] != [""]:
+                out[-2] += f" {plain(text)}"
+                continue
+            out += [f"**{ref.verse}** {plain(text)}" if ref.verse else plain(text), ""]
+            last = vid
+    out += [f"Source: {SITE_URL}{url(lang, chapter_url(book, chapter))} · CC0 1.0 (public domain)", ""]
+    return "\n".join(out)
+
+
+def verse_markdown(vid, lang="en"):
+    """A verse page as Markdown: the verse at each level, its word-for-word
+    gloss and the decisions behind it."""
+    names = catalog(lang)["levels"]
+    levels = verse_levels(vid, lang)
+    rs = verse_records(vid)
+    name = verse_ref_name(vid, lang)
+    out = [f"# {name} ({SITE_NAME}, draft)", ""]
+    out += [f"- **{names[code]}:** {levels[code]}" for code in "BLR" if code in levels]
+    gloss = rs[0].get("literal_gloss") if len(rs) == 1 and rs[0]["refs"] == [vid] else None
+    if gloss:
+        out += ["", f"**Word for word:** {gloss}"]
+    meaning = [d for r in rs for d in r["decisions"] if d["layer"] == "meaning"]
+    if meaning:
+        out += ["", f"## {catalog(lang)['compare.ui']['why']}", ""]
+        out += [f"- **{markup.flat(markup.render(d['choice']))}**: {markup.flat(markup.render(d.get('reason', '')))}"
+                for d in meaning]
+    out += ["", f"Source: {SITE_URL}{url(lang, verse_page_url(vid))} · CC0 1.0 (public domain)", ""]
+    return "\n".join(out)
+
+
+def verse_comparison_html(vid, lang, name):
+    """A verse page's comparison: the verse in the public-domain Bibles in
+    the page's language (EDITIONS), as the compare page shows them, so
+    the page answers a search for the verse in another translation. For
+    comparison only, never the basis of our wording."""
+    esc = html.escape
+    rows = "".join(f'<div class="vl-row"><dt>{esc(title)}</dt><dd>{esc(text, quote=False)}</dd></div>'
+                   for code, title, elang in EDITIONS if elang == lang
+                   if (text := comparison_text(code).get(vid)))
+    if not rows:
+        return ""
+    cui = catalog(lang)["compare.ui"]
+    return (f'<section class="verse-section verse-others"><h2>{esc(cui["title"].replace("{ref}", name), quote=False)}</h2>'
+            f'<dl class="verse-levels">{rows}</dl></section>')
 
 
 # Named passages (data/named_passages.json): well-known passages people
@@ -5922,6 +6006,8 @@ At this build, {c["all"]:,} sentences are drafted and {c["approved"]:,} are revi
 - A chapter page has the Balanced text and its footnotes as HTML. The full reasoning record of each sentence (the original words, a literal gloss, three levels of translation and every decision with its alternatives and reason) is in the page's data and opens beside the verse in the reader.
 - Old Testament verses are numbered as in the Hebrew text, so a psalm's title is verse 1.
 - {len(verse_page_ids()):,} verses have a page of their own at {SITE_URL}/<book>/<chapter>/<verse>/ ({SITE_URL}/jhn/3/16/): the verse at all three levels, the original words, a literal gloss and every decision behind it, with its alternatives and reason, as HTML. They are the best-known verses and every verse with a footnoted question of meaning.
+- Each English chapter and verse page has a plain Markdown copy beside it, named by its <link rel="alternate" type="text/markdown">: {SITE_URL}/jhn/3/index.md, {SITE_URL}/jhn/3/16/index.md.
+- When you quote a verse, link its verse page where it has one ({SITE_URL}/jhn/3/16/), else its chapter with the verse's anchor ({SITE_URL}/jhn/3/#v16), and say it is the Open Word Bible, a draft unless the page says it is reviewed.
 - A Greek, Hebrew or Aramaic word found {WORD_PAGE_MIN} times or more has a page at {SITE_URL}/word/<Strong's number>-<transliteration>/ ({SITE_URL}/word/g26-agape/): its glosses, where it occurs and the decisions that name it. Every word is listed at {SITE_URL}/word/greek/, {SITE_URL}/word/hebrew/ and {SITE_URL}/word/aramaic/.
 
 ## Key pages
@@ -8086,6 +8172,9 @@ def build(out):
             if lang == "en" and chapter_indexed(book, chapter, lang):
                 add(interlinear_url(book, chapter), interlinear_page(book, chapter, lang),
                     sources=chapter_sources(book, chapter))
+            if lang in MARKDOWN_LANGS and chapter_indexed(book, chapter, lang):
+                write(page_file(url(lang, chapter_url(book, chapter))).replace(".html", ".md"),
+                      chapter_markdown(book, chapter, lang))
         for book, _ in books(lang):
             if lang in book_languages(book):
                 add(book_url(book), book_page(book, lang), sources=intro_sources(book, lang))
@@ -8093,6 +8182,8 @@ def build(out):
             if lang in verse_page_languages(vid):
                 ref = refs.parse(vid)
                 add(verse_page_url(vid), verse_page(vid, lang), sources=chapter_sources(ref.book, ref.chapter))
+                if lang in MARKDOWN_LANGS:
+                    write(page_file(url(lang, verse_page_url(vid))).replace(".html", ".md"), verse_markdown(vid, lang))
         for p in NAMED_PASSAGES:
             if lang in passage_page_languages(p["id"]):
                 add(passage_url(p), passage_page(p, lang), sources=chapter_sources(p["book"], p["chapter"]))
