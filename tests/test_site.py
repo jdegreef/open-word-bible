@@ -240,10 +240,20 @@ class SiteTest(unittest.TestCase):
         self.assertEqual(script.count("</"), 1)
         self.assertEqual(json.loads(script[script.index(">") + 1:-len("</script>")])["name"], title)
 
+    def test_links_to_a_chapter_stub_are_not_followed(self):
+        # Arabic has no Genesis 30 yet: its page there is a stub (chapter_stub).
+        self.assertFalse(build_site.chapter_has("GEN", 30, "ar"))
+        page = (self.out / "gen" / "30" / "index.html").read_text(encoding="utf-8")
+        self.assertIn('<a href="/ar/gen/30/" hreflang="ar" data-lang="ar" rel="nofollow">', page)
+        self.assertRegex(page, r'<a href="/es/gen/30/" hreflang="es" data-lang="es"[^>]*>')
+        self.assertNotRegex(page, r'<a href="/es/gen/30/"[^>]*rel="nofollow"')
+
     def test_footer_counts_the_books_not_started(self):
         # The chips come from nav-en.js (footer_data); the page has a list for each testament.
         page = (self.out / "1ti" / "5" / "index.html").read_text(encoding="utf-8")
-        self.assertIn('<ul class="book-chips" data-foot-chips="old_testament"></ul>', page)
+        # Without scripts the list has each book as a plain link.
+        self.assertIn('<ul class="book-chips" data-foot-chips="old_testament">'
+                      '<li><a class="book-chip" href="/gen/">Genesis</a></li>', page)
         index = foot_data_in(self.out, "en")["chips"]["old_testament"]
         ot = build_site.refs.OT_CODES
         have = {b for b, _ in build_site.books("en")}
