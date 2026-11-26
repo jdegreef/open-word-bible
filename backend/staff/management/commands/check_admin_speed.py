@@ -29,7 +29,7 @@ from translation.models import Sentence
 
 # Addresses with a query worth timing as well as the bare one.
 EXTRA = [
-    "search/?q=love", "verses/?q=JHN.3.16", "consistency/?lang=es", "decisions/?all=1",
+    "search/?q=love", "verses/?q=JHN.3.16", "consistency/?lang=es", "checks/?lang=id", "decisions/?all=1",
     "export/preview/?book=JHN", "review/?layer=en", "history/release-notes/?lang=en&since=2026-01-01",
 ]
 # Answers that may stream a large file, or that act; not timed.
@@ -76,7 +76,8 @@ class Command(BaseCommand):
         parser.add_argument("--limit", type=float, default=5.0,
                             help="Fail if an endpoint takes longer than this many seconds (default 5)")
         parser.add_argument("--cold", action="store_true",
-                            help="Empty the cache first, as after a deploy that changed the content")
+                            help="Empty the cache first, as after a deploy that changed the content "
+                                 "(the content checks precompute_checks keeps are in the database, not emptied)")
 
     def handle(self, *args, limit, cold, **options):
         # manage.py commands run without the web server's statement limit

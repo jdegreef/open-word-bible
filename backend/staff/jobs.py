@@ -40,7 +40,7 @@ from rest_framework.response import Response
 
 from owb import languages, refs
 
-from . import github
+from . import github, people
 from .github import GitHubError
 from .models import record
 from .permissions import admin_view
@@ -184,7 +184,7 @@ def _file_issue(user, book, wanted, coverage, note, bulk=False):
               "first, draft as `ai_draft` only, and open one pull request per book and language."]
     if note:
         lines += ["", "**Note from the admin:**", "", note]
-    lines += ["", f"Filed from the admin by {user.username}.", "",
+    lines += ["", f"Filed from the admin by {people.public_name(user)}.", "",
               "<!-- drafting-job " + json.dumps({"book": book, "languages": wanted}) + " -->"]
     issue = github.call("issues", "POST", {"title": f"Draft {book_name(book)} in {names}",
                                        "body": "\n".join(lines), "labels": [LABEL]})
