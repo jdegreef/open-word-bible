@@ -224,7 +224,7 @@ The temple furnishings in Ezekiel 40-48 follow 1 Kings 6-7.
 | the Philistines | فلسطینیان (L, B, R). *alt.* فلستیان, to keep them apart from today's Palestinians, with a decision either way |
 | mighty men (*gibborim*) | دلاوران |
 | chariots; horsemen | ارابه‌ها; سواران |
-| governor (Persian, *pechah*); governor (Roman, *hegemon*) | والی; فرماندار |
+| governor (*pechah*, the Persian governor; *hegemon*, the Roman governor) | والی at every level. The proconsul (*anthypatos*, Acts 13:7; 18:12; 19:38) is والی at L, B; Readable explains him as a Roman فرماندار (the Acts decisions). 2 Corinthians 11:32 (the ethnarch) keeps its own decision. |
 | satrap (Esther, Daniel, Ezra) | ساتراپ (L, B: the Old Persian title, a word Iranian readers know from history); فرماندار ایالت (R) |
 | province (*medinah*) | ولایت (L, B); استان (R) |
 | eunuch, official (*saris*) | خواجه (L, B); مقام درباری (R) where the English level says official |
@@ -641,9 +641,9 @@ level (28:26) uses « » again inside “ ”.
 
 For reviewers:
 
-- والی is used for both the proconsul (13:7, 18:12) and the governor
-  (Felix, Festus) at Literal and Balanced; Readable has فرماندار for the
-  governor. Should the proconsul be distinguished?
+- والی is used for the proconsul (13:7, 18:12) at Literal and Balanced and for
+  the governor (Felix, Festus) at every level (Readable once had فرماندار for the
+  governor; settled to the Gospels' form). Should the proconsul be distinguished?
 - یوزباشی for the centurion is the Old Version's word and may read as
   dated; Readable explains it in 27:1.
 - The Jewish leaders in Rome say شما to Paul (28:21); Hindi has the

@@ -878,7 +878,7 @@ names the book where the form was first used.
 | Leviticus 18:21 | Molech | Molec | R: *diyos na si Molec*. |
 | Leviticus 19:31 | mediums; spiritists | *mga nakikipag-usap sa patay*; *mga espiritista* |  |
 | Leviticus 20:9 | his blood is on him | *ang kaniyang dugo [ay] nasa kaniya* (L), *siya ang may pananagutan sa sarili niyang kamatayan* (B) |  |
-| Leviticus 21:7 | prostitute (*zonah*, the noun) | *babaeng nagbebenta ng aliw* |  |
+| Leviticus 21:7 | prostitute (*zonah*, the noun) | *patutot*, *mga patutot* | Every level, the word most books use (Rahab, Tamar, Tyre's song too). Not *babaeng nagbebenta ng aliw*; *bayarang babae* only in *bayarang babae ng templo*, the shrine woman (*qedeshah*, Genesis 38:21-22). Shrine prostitutes otherwise keep *bayaran sa dambana* (1 Kings 14:24; 2 Kings 23:7). |
 | Leviticus 21:17 | blemish, defect | *kapintasan* (L, B), *depekto* (R) |  |
 | Leviticus 23:2 | appointed times | *mga takdang panahon* (L), *mga takdang kapistahan* (B), *mga natatanging kapistahan* (R) |  |
 | Leviticus 23:10 | sheaf | *bigkis* |  |
