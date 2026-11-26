@@ -703,7 +703,7 @@ in different books. They are now one form each, by these rules:
 | 1 Samuel | Saul's servants to Saul; David to Saul and Achish | *tuanku* (L, B), *Baginda* (R); David *hambamu ini* (L), *saya* (B, R) | 16:15; 17:32; 27:5 |
 | 1 Samuel | Socoh; Azekah; Ephes-dammim; Valley of Elah; Shaaraim | Sokho; Azeka; Efes-Damim; Lembah Ela; Syaaraim | 17:1–2, 52 |
 | 1 Samuel | champion (man of the space between) | *jagoan* | 17:4 |
-| 1 Samuel | cubit and span; shekel; seah | `{{units:hampir tiga meter\|enam hasta sejengkal}}`; `{{units:sekitar 57 kilogram\|5.000 syikal}}`; `{{units:sekitar 36 liter\|lima sea}}` (B, R) | 17:4–5; 25:18 |
+| 1 Samuel | cubit and span; shekel; seah | `{{units:hampir tiga meter\|enam hasta sejengkal}}`; `{{units:sekitar 57 kilogram\|5.000 syikal}}`; `{{units:sekitar 37 liter\|lima sea}}` (B, R) | 17:4–5; 25:18 |
 | 1 Samuel | helmet; scale armor; greaves; javelin | *ketopong*; *baju zirah bersisik*; *pelindung kaki*; *lembing* | 17:5–6 |
 | 1 Samuel | sling | *umban* | 17:40 |
 | 1 Samuel | Adriel the Meholathite | Adriel, orang Mehola | 18:19 |
@@ -1074,7 +1074,7 @@ in different books. They are now one form each, by these rules:
 | Exodus | Marah; Elim | Mara; Elim | 15:23; 15:27 |
 | Exodus | grumble (*lun*) | *bersungut-sungut* (L, B); *mengomel* (R) | 15:24 |
 | Exodus | wilderness of Sin | padang gurun Sin | 16:1 |
-| Exodus | omer | *gomer* (L); `{{units:sekitar dua liter\|satu gomer}}` (B, R) | 16:16 |
+| Exodus | omer | *gomer* (L); `{{units:sekitar 2,2 liter\|satu gomer}}` (B, R) | 16:16 |
 | Exodus | jar (*tsintsenet*) | *buli-buli* | 16:33 |
 | Exodus | Rephidim | Rafidim | 17:1 |
 | Exodus | Massah; Meribah | Masa; Meriba | 17:7 |
@@ -1161,7 +1161,7 @@ in different books. They are now one form each, by these rules:
 | Numbers | scale disease (*tsara'at*) | *penyakit kulit* | 5:2 |
 | Numbers | contribution (*terumah*) | *persembahan khusus* | 5:9 |
 | Numbers | wave (*henif*) | *mengunjukkan* (L, B) | 5:25 |
-| Numbers | ephah (units setting) | about 22 litres: `{{units:sekitar dua liter\|sepersepuluh efa}}` (B, R) | 5:15 |
+| Numbers | ephah (units setting) | about 22 litres: `{{units:sekitar 2,2 liter\|sepersepuluh efa}}` (B, R) | 5:15 |
 | Numbers | turtledoves; young pigeons | *burung tekukur*; *anak burung merpati* | 6:10 |
 | Numbers | dedication of the altar | *pentahbisan mezbah* | 7:10 |
 | Numbers | trumpet (*hatsotsrah*); alarm (*teru'ah*) | *nafiri*; *tanda semboyan* (L, B) | 10:2; 10:5 |

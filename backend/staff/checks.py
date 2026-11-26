@@ -13,7 +13,9 @@ translated notes (data/notes/<lang>/) and the glossary
 (docs/<language>-terms.md) from the files the deploy carries, as the site
 reads them. These are heuristics for a person to look at, not rules: nothing
 here fails a build or changes a record. Answers are cached until a sentence,
-the language's notes or its glossary changes.
+the language's notes or its glossary changes, and the import job fills each
+language's answer after an import (warm_admin), so the page opens on a kept
+answer rather than measuring for 10-15 seconds.
 """
 import hashlib
 
@@ -37,8 +39,27 @@ def _stamp():
     return "{}.{}".format(s["n"], s["t"].timestamp() if s["t"] else 0)
 
 
+# Each file's digest, by where it is and its size and modification time, so
+# a request reads a file again only once it has changed.
+_digests = {}
+
+
+def _file_digest(path):
+    st = path.stat()
+    key = (str(path), st.st_size, st.st_mtime_ns)
+    digest = _digests.get(key)
+    if digest is None:
+        digest = hashlib.sha256(path.read_bytes()).hexdigest()
+        _digests[key] = digest
+    return digest
+
+
 def _files_stamp(lang):
-    """A digest of the language's note files and glossary as they are on disk."""
+    """A digest of the language's note files and glossary by what they hold.
+
+    By content, not modification time: the import job (warm_admin) and the
+    API each have their own checkout, with their own file times, and the
+    answer the job keeps must be the one the API looks for."""
     h = hashlib.sha256()
     folder = notes.NOTES / lang
     paths = sorted(folder.glob("*.json")) if folder.is_dir() else []
@@ -46,8 +67,7 @@ def _files_stamp(lang):
     if glossary.is_file():
         paths.append(glossary)
     for path in paths:
-        st = path.stat()
-        h.update(f"{path.name}:{st.st_size}:{st.st_mtime_ns};".encode())
+        h.update(f"{path.name}:{_file_digest(path)};".encode())
     return h.hexdigest()[:16]
 
 
