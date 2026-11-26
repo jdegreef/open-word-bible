@@ -692,6 +692,8 @@ class SiteTest(unittest.TestCase):
         self.assertTrue((self.out / "es/topics/anxiety/index.html").exists())
         self.assertFalse((self.out / "am/topics/anxiety/index.html").exists())
         self.assertIn('href="/topics/anxiety/"', (self.out / "topics/index.html").read_text(encoding="utf-8"))
+        # A passage with a named page of its own links there.
+        self.assertIn('href="/mat/6/25-34/"', page)
         for topic in build_site.TOPICS:
             self.assertEqual(topic["status"], "ai_draft")
             for ref in topic["passages"]:

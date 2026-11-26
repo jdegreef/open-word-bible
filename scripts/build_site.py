@@ -3377,7 +3377,10 @@ def topic_page(topic, lang="en"):
         book, chapter, vids = topic_passage(ref)
         first = refs.parse(vids[0]).verse
         label = verse_ref_name(vids[0], lang) + (f"\u2013{refs.parse(vids[-1]).verse}" if len(vids) > 1 else "")
-        if len(vids) == 1 and vids[0] in verse_page_ids() and lang in verse_page_languages(vids[0]):
+        named = next((p for p in NAMED_PASSAGES if passage_vids(p) == vids and lang in passage_page_languages(p["id"])), None)
+        if named:
+            href = url(lang, passage_url(named))
+        elif len(vids) == 1 and vids[0] in verse_page_ids() and lang in verse_page_languages(vids[0]):
             href = url(lang, verse_page_url(vids[0]))
         else:
             href = url(lang, chapter_url(book, chapter)) + f"#v{first}"
