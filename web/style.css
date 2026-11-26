@@ -537,13 +537,14 @@ header.site .tools { display: flex; align-items: center; gap: 8px; flex: none; }
    languages there. */
 @media (max-width: 560px) { .lang-menu { display: none; } }
 /* The offer to read in the browser's language, once. */
+/* A band under the header that pushes the page down, so it never covers
+   the text. */
 .lang-offer {
-  position: fixed; left: 50%; bottom: 16px; z-index: 40; transform: translateX(-50%);
-  display: flex; align-items: center; gap: 8px 14px; flex-wrap: wrap; justify-content: center;
-  width: max-content; max-width: calc(100vw - 32px); padding: 10px 12px;
-  background: var(--surface); border: 1px solid var(--line); border-radius: 999px; box-shadow: var(--shadow-pop);
+  display: flex; align-items: center; gap: 6px 14px; flex-wrap: wrap; justify-content: center;
+  padding: 8px max(16px, env(safe-area-inset-right, 0px)) 8px max(16px, env(safe-area-inset-left, 0px));
+  background: var(--accent-soft); border-bottom: 1px solid var(--accent-soft-border);
 }
-.lang-offer .button { padding: 8px 18px; font-size: 15px; }
+.lang-offer .button { padding: 6px 16px; font-size: 14.5px; }
 .lang-offer-no { border: 0; background: none; color: var(--muted); font: inherit; font-size: 14px; cursor: pointer; padding: 6px 10px; }
 .lang-offer-no:hover { color: var(--text); text-decoration: underline; }
 .prefs-menu {
@@ -3165,3 +3166,14 @@ html[dir="rtl"] .term-book:not([open]) summary::before { transform: translateY(-
 .topic-passage h2 { font-family: var(--display); font-weight: 600; font-size: 20px; margin: 0 0 6px; }
 .topic-passage h2 a { color: inherit; }
 .topic-passage p { margin: 0 0 4px; }
+
+/* Arabic and Persian: footnote marks upright, not slanted Latin italic. */
+[dir="rtl"] .verse .fn, [dir="rtl"] .notes .note-mark, [dir="rtl"] .fn-pop .note-mark { font-style: normal; font-family: var(--serif); }
+
+/* The phone menu's "Sign in" line (build_site site_header): the header's
+   own button gives way there, so the phone header is search, gear, menu. */
+.nav-signin { display: none; }
+@media (max-width: 560px) {
+  html:not(.signed-in) .nav-signin { display: block; }
+  html:not(.signed-in) header.site .account-menu { display: none; }
+}

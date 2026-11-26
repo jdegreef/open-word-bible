@@ -480,7 +480,15 @@
       var on = seg.querySelector('[aria-pressed="true"]');
       if (on && seg.children.length > 1) summary.push(on.textContent);
     });
-    document.getElementById("settings-summary").textContent = summary.join(" \u00b7 ");
+    // On the phone button, the level and the view: the wording choices
+    // (named one by one they ran off the button) are under Wording.
+    var brief = [];
+    document.querySelectorAll('.control:not([hidden]) .seg[data-setting="level"], .control:not([hidden]) .seg[data-setting="view"]')
+      .forEach(function (seg) {
+        var on = seg.querySelector('[aria-pressed="true"]');
+        if (on) brief.push(on.textContent);
+      });
+    document.getElementById("settings-summary").textContent = (brief.length ? brief : summary).join(" \u00b7 ");
     // The Wording button names the wording choices it holds.
     var wording = [];
     document.querySelectorAll("#wording " + shown).forEach(function (seg) {
@@ -563,9 +571,17 @@
     return DATA.languages.filter(function (l) { return r.renderings[l]; })[0];
   }
 
-  // Footnote letters: a..z, then aa, ab, ...
+  // Footnote letters: a..z, then aa, ab, ...; in Arabic the abjad
+  // letters Arabic books number notes with (\u0623, \u0628, \u062c, ...).
+  var ABJAD = ["\u0623", "\u0628", "\u062c", "\u062f", "\u0647\u0640", "\u0648", "\u0632", "\u062d", "\u0637", "\u064a",
+               "\u0643", "\u0644", "\u0645", "\u0646", "\u0633", "\u0639", "\u0641", "\u0635", "\u0642", "\u0631",
+               "\u0634", "\u062a", "\u062b", "\u062e", "\u0630", "\u0636", "\u0638", "\u063a"];
   function letter(n) {
     var out = "";
+    if (DATA.lang === "ar") {
+      for (n += 1; n > 0; n = Math.floor((n - 1) / ABJAD.length)) out = ABJAD[(n - 1) % ABJAD.length] + out;
+      return out;
+    }
     for (n += 1; n > 0; n = Math.floor((n - 1) / 26)) out = String.fromCharCode(97 + (n - 1) % 26) + out;
     return out;
   }
@@ -801,7 +817,9 @@
     var partial = DATA.records.some(function (r) { return !r.renderings[settings.lang]; });
     var note = document.getElementById("partial");
     note.hidden = !partial;
-    note.textContent = partial ? t("partial") : "";
+    // How many sentences are still in English, so the reader knows how much.
+    var missing = DATA.records.filter(function (r) { return !r.renderings[settings.lang]; }).length;
+    note.textContent = partial ? t("partial") + " (" + missing + "/" + DATA.records.length + ")" : "";
     document.getElementById("title").textContent = DATA.title;
     if (parallel()) { drawParallel(box); drawUnsureToggle(0); drawViewTools(); drawNotes([]); drawMargin(); return; }
     drawViewTools();

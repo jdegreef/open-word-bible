@@ -1247,6 +1247,8 @@ window.OWBRenumber = (function () {
   var asked = null;
   try { asked = localStorage.getItem("owb-lang") || localStorage.getItem("owb-lang-offer"); } catch (e) { return; }
   if (asked) return;
+  // A reader who came here from another page of the site chose this language.
+  try { if (document.referrer && new URL(document.referrer).origin === location.origin) return; } catch (e) { /* ignore */ }
   var page = document.documentElement.lang;
   var wanted = (navigator.languages || [navigator.language || ""]).map(function (l) { return String(l).slice(0, 2).toLowerCase(); });
   var link = null;
@@ -1277,7 +1279,10 @@ window.OWBRenumber = (function () {
   });
   bar.appendChild(go);
   bar.appendChild(no);
-  document.body.appendChild(bar);
+  // A band under the header, not a pill over the text.
+  var header = document.querySelector("header.site");
+  if (header && header.parentNode) header.parentNode.insertBefore(bar, header.nextSibling);
+  else document.body.appendChild(bar);
 })();
 
 // The 404 page (not_found_page in scripts/build_site.py): an address that
