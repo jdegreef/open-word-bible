@@ -66,6 +66,8 @@ def bulk(request):
         layer = review._layer(str(data.get("layer") or ""), review.layers(request.user))
     except review._Forbidden as e:
         return review._forbidden(e)
+    if layer not in review.reviewing(request.user):   # bulk is approving and flagging
+        return review._forbidden(review.NOT_A_REVIEWER)
     action = data.get("action")
     if action not in ("approve", "flag"):
         raise ValidationError({"action": "Choose approve or flag.", "code": "invalid_action"})
