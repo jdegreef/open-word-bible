@@ -202,6 +202,15 @@ Draft book by book with the `drafting-worker` skill or by hand, following
 the brief; run `check-book-before-translating` first. Records stay
 `ai_draft` until a named reviewer approves them.
 
+Metric `units` spans use the same values in every language, so a measure
+reads the same wherever it is printed. Dry and liquid measures: ephah and
+bath about 22 litres; a tenth of an ephah (and the omer, which is the same)
+2.2 litres, two tenths 4.4, three tenths 6.6; seah, a third of an ephah,
+7.3 litres, given as about 7 litres for one seah, 15 for two, 22 for three
+(Genesis 18:6) and 37 for five; hin 3.7 litres; homer and cor about
+220 litres. Ezekiel gives the ephah and the bath one figure, as 45:11 makes
+them equal. Write the figure with the language's own decimal mark.
+
 ## 11. Right to left (Arabic, Persian, Urdu)
 
 Arabic is the first reading language written right to left (November

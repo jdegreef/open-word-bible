@@ -151,7 +151,7 @@ used at every level unless a level is named.
 Metric by default where the English converts, the original unit as the
 alternative; Literal keeps the original unit with no span. The values are
 the English conversions: cubit 45 cm, shekel 11.5 g, talent 34 kg, mina
-0.6 kg, ephah 22 litres, omer 2.2 litres, hin 3.7 litres, homer 220 litres,
+0.6 kg, ephah 22 litres (a tenth 2.2 litres), omer 2.2 litres, seah 7.3 litres, hin 3.7 litres, homer 220 litres,
 stadion 185 m. Units: ਹੱਥ (cubit), ਗਿੱਠ (span), ਸ਼ੈਕਲ, ਤੋੜਾ (talent), ਮਾਨੇਹ
 (mina), ਏਫ਼ਾਹ, ਓਮਰ, ਹੀਨ, ਹੋਮਰ, ਦੀਨਾਰ, ਦਰਾਖਮਾ, ਸਟੇਡੀਆ. Coins under the setting
 give wages by default: `{{units:ਇੱਕ ਦਿਨ ਦੀ ਮਜ਼ਦੂਰੀ|ਇੱਕ ਦੀਨਾਰ}}`.
@@ -1598,7 +1598,7 @@ People and places: ਪੌਲੁਸ, ਤੁਖਿਕੁਸ; ਅਫ਼ਸੁਸ, �
   sarim ਸੈਨਾਪਤੀ; mediums and spiritists ਓਝੇ ਅਤੇ ਭੂਤ ਸਾਧਣ ਵਾਲੇ (as 2 Kings),
   the woman ਭੂਤ ਦੀ ਮਾਲਕਣ (L), ਓਝਾ (B); new moon ਨਵਾਂ ਚੰਨ (L), ਨਵੇਂ ਚੰਨ ਦਾ
   ਤਿਉਹਾਰ (B, R); covenant ਨੇਮ; nachalah ਵਿਰਾਸਤ (26:19, as Joshua); seah
-  `{{units:ਲਗਭਗ 35 ਲੀਟਰ|ਪੰਜ ਸਆਹ}}` (B, R).
+  `{{units:ਲਗਭਗ 37 ਲੀਟਰ|ਪੰਜ ਸਆਹ}}` (B, R).
 - Hesed: covenant loyalty ਅਟੱਲ ਪਿਆਰ at every level (20:8, 14-15), matching
   2 Samuel 9; kindness outside a covenant ਦਇਆ at B, R (15:6). The prophets
   (Hosea, Lamentations, Zechariah) now use ਅਟੱਲ ਪਿਆਰ too.
@@ -1670,7 +1670,7 @@ People and places: ਪੌਲੁਸ, ਤੁਖਿਕੁਸ; ਅਫ਼ਸੁਸ, �
   breastplate ਸੀਨਾਬੰਦ; a lying spirit ਝੂਠਾ ਆਤਮਾ, masculine as the Hebrew,
   although 1 Samuel's evil spirit is ਬੁਰੀ ਆਤਮਾ.
 - Units (B, R): talent `{{units:ਲਗਭਗ 34 ਕਿੱਲੋ ਚਾਂਦੀ|ਇੱਕ ਤੋੜਾ ਚਾਂਦੀ}}`; seah
-  about 7 litres. Large numbers use Indian grouping (1,00,000) in B and R and
+  about 7.3 litres (one seah 7, two 15, five 37). Large numbers use Indian grouping (1,00,000) in B and R and
   words (ਇੱਕ ਲੱਖ) in L.
 - Gender spans: sons of Israel at L only; fathers `{{gender:ਵੱਡ-ਵਡੇਰਿਆਂ|ਪਿਉ-ਦਾਦਿਆਂ}}`
   (19:4, B and R); sons `{{gender:ਬੱਚੇ|ਪੁੱਤਰ}}` (20:3-7).

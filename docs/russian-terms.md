@@ -59,8 +59,8 @@ words.
   Literal does. Where the English has no `units` span, neither does the
   Russian. Use the English conversion's values: cubit 45 cm (handbreadth
   7.5 cm), shekel 11.5 g, beka 5.7 g, gerah 0.6 g, talent 34 kg, mina
-  0.6 kg, ephah 22 litres (a tenth 2.2 litres), omer 2.2 litres, seah
-  7 litres, hin 3.7 litres, homer and cor 220 litres. Round as the English
+  0.6 kg, ephah 22 litres (a tenth 2.2 litres, two tenths 4.4, three tenths
+  6.6), omer 2.2 litres, seah 7.3 litres (a third of an ephah: one seah 7, two 15, three 22, five 37), hin 3.7 litres, homer and cor 220 litres. Round as the English
   rounds. Write a decimal comma and a thin no-break space in numbers of five
   digits or more (603 550), as Revelation does. Days, years, ages and counts
   are not units. Ezekiel's temple measurements (40-48) take `units` spans
