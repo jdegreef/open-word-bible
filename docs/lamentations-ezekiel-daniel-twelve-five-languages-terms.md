@@ -286,7 +286,7 @@ the same as the English's "about 6 gallons". One rendering decision at 40:5
 | transgression (*peshaʿ*, also the verb) | « transgression », « transgresser » (L) / « crime », « rébellion », « se révolter » (B) / « péché », « pécher » (R) |
 | justice and righteousness (*mishpat*, *tsedaqah*) | « le droit » and « la justice » (L, B), as Isaiah / « la justice » and « ce qui est juste » (R) |
 | knowledge of God (Hosea 4:1; 6:6) | « la connaissance de Dieu » (L, B) / « connaître Dieu » (R) |
-| a wife of prostitution (Hosea 1:2) | « une femme de prostitution » (L) / « une femme débauchée » (B) / « une femme qui te sera infidèle » (R) (B uncertain) |
+| a wife of prostitution (Hosea 1:2) | « une femme de prostitution » (L) / « une femme débauchée » (B) / « une femme infidèle » (R), not « qui te sera infidèle », which would decide when she became so (B uncertain) |
 | Jezreel; Lo-ruhamah; Lo-ammi | L keeps the Hebrew names: « Jizreël », « Lo-Rouhama », « Lo-Ammi », reversed as « Rouhama », « Ammi » (2:3); B and R translate them as proper names: « Jizreël », « Sans-Compassion », « Pas-Mon-Peuple », reversed as « Compassion-Reçue », « Mon-Peuple » (2:3, 25) (uncertain). Gender agrees: « Sans-Compassion » is a daughter. |
 | My husband / my baal (Hosea 2:18) | « Mon mari » / « Mon baal » (L), « Mon Baal » (B, R, R adding « ce qui veut dire “mon maître” ») |
 | the cutting, swarming, hopping and stripping locust (Joel 1:4; 2:25) | « la sauterelle qui ronge, la sauterelle en essaim, la sauterelle qui bondit, la sauterelle qui dévaste » (L, B) / « des nuées de sauterelles, l’une après l’autre » (R) (uncertain) |
@@ -638,7 +638,7 @@ Everything in the Spanish section of `docs/isaiah-jeremiah-ezra-five-languages-t
 
 | English | Spanish |
 |---|---|
-| a wife of prostitution (1:2) | L *una mujer de prostitución*, B *una esposa promiscua*, R *una esposa que te será infiel* |
+| a wife of prostitution (1:2) | L *una mujer de prostitución*, B *una esposa promiscua*, R *una mujer infiel* (not *que te será infiel*, which would decide when she became so) |
 | Lo-ruhamah / Ruhamah | L *Lo-ruhama* / *Ruhama*; B and R *No Compadecida* / *Compadecida* (uncertain). The names are not set in quotation marks after *ponle por nombre* [Isaiah 62:4 B, R *Mi Deleite Está en Ella*: capitals on every word] |
 | Lo-ammi / Ammi | L *Lo-ammi* / *Ammi*; B and R *No Es Mi Pueblo* / *Mi Pueblo* (uncertain; the alternative is *No Pueblo Mío*) |
 | Jezreel | *Jezreel* [published] |
@@ -950,7 +950,7 @@ and keeps the metric value the published Swahili already gives the ephah,
 
 | English (Hebrew) | Swahili |
 |---|---|
-| a wife of prostitution (Hosea 1:2) | *mke wa ukahaba* (L); *mke mwasherati* (B); *mke ambaye hatakuwa mwaminifu* (R) |
+| a wife of prostitution (Hosea 1:2) | *mke wa ukahaba* (L); *mke mwasherati* (B); *mwanamke asiye mwaminifu* (R; not *ambaye hatakuwa mwaminifu*, which would decide when she became so) |
 | *zanah* of Israel / of literal prostitution | as Ezekiel: *kufanya ukahaba* (L, B), *kutokuwa mwaminifu* (R); *kuwa kahaba* for literal prostitution |
 | Jezreel; Lo-ruhamah; Lo-ammi (Hosea 1:4, 6, 9) | *Yezreeli* at every level; *Lo-ruhama* (L) / *Asiyehurumiwa* (B, R); *Lo-ami* (L) / *Si Watu Wangu* (B, R). Inside the name, *Wangu* is part of the name and takes no `deity_pronoun` span. 2:3: *Ami*, *Ruhama* (L); *Watu Wangu*, *Aliyehurumiwa* (B, R). 2:25 uses the same names. Romans 9:25 (*si watu wangu*, *watu wangu*) is the allusion |
 | knowledge of God (Hosea 4:1; 6:6) | *kumjua Mungu* at every level. *Maarifa ya Mungu* would read as "God's knowledge" |
