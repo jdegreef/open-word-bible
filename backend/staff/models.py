@@ -79,3 +79,20 @@ def shown_actor(action, viewer, super_admin):
     if super_admin or (action.actor_id and action.actor_id == viewer.id):
         return action.actor_email
     return (action.actor.first_name if action.actor else "") or "A team member"
+
+
+class ChecksAnswer(models.Model):
+    """A language's content checks (staff/checks.py), as last measured, and
+    what they were measured from. The import job fills one per reading
+    language (precompute_checks), so the Checks page opens on it instead of
+    measuring for 10-15 seconds. Kept in the database rather than only the
+    cache, which may be emptied (Redis on the free plan); the page measures
+    again, and keeps that, once stamp no longer matches the content."""
+    language = models.CharField(max_length=8, unique=True)
+    stamp = models.CharField(max_length=100, help_text="The sentences and the language's note and glossary files")
+    answer = models.JSONField()
+    seconds = models.FloatField(default=0, help_text="How long measuring took")
+    measured_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f"{self.language} {self.stamp}"
