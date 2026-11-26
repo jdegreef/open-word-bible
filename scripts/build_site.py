@@ -3554,9 +3554,12 @@ def chapter_turns(book, chapter, lang="en"):
     def turn(p, rel, label):
         if p is None:
             return '<span class="turn-gap"></span>'
+        # The next chapter says what it is about, where it has a summary in lang.
+        about = summaries().get((p.book, p.chapter), {}).get(lang) if rel == "next" else None
+        dek = f'<span class="turn-dek">{html.escape(shorten(about, 110))}</span>' if about else ""
         return (f'<a class="turn {rel}" href="{url(lang, p.url)}" rel="{rel}">'
                 f'<span class="turn-label">{label}</span>'
-                f'<span class="turn-name">{display(chapter_name(p.records, p.book, p.chapter, lang))}</span></a>')
+                f'<span class="turn-name">{display(chapter_name(p.records, p.book, p.chapter, lang))}</span>{dek}</a>')
 
     return (f'<nav class="turns" aria-label="{t(lang, "reader.turns")}">'
             f'{turn(prev, "prev", t(lang, "reader.prev"))}{turn(nxt, "next", t(lang, "reader.next"))}</nav>')
