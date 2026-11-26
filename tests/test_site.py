@@ -683,6 +683,23 @@ class SiteTest(unittest.TestCase):
         self.assertIn("Hebrew interlinear", (self.out / "gen/1/interlinear/index.html").read_text(encoding="utf-8"))
         self.assertFalse((self.out / "es/jhn/1/interlinear").exists())
 
+    def test_topics_have_pages_in_the_languages_that_name_them(self):
+        page = (self.out / "topics/anxiety/index.html").read_text(encoding="utf-8")
+        self.assertIn("<title>What the Bible says about anxiety · Open Word Bible</title>", page)
+        self.assertIn('<link rel="canonical" href="https://openwordbible.org/topics/anxiety/">', page)
+        self.assertIn(html.escape(build_site.verse_levels("PHP.4.6", "en")["B"], quote=False), page)
+        self.assertIn(build_site.catalog("en")["topics"]["draft"], page)
+        self.assertTrue((self.out / "es/topics/anxiety/index.html").exists())
+        self.assertFalse((self.out / "am/topics/anxiety/index.html").exists())
+        self.assertIn('href="/topics/anxiety/"', (self.out / "topics/index.html").read_text(encoding="utf-8"))
+        # A passage with a named page of its own links there.
+        self.assertIn('href="/mat/6/25-34/"', page)
+        for topic in build_site.TOPICS:
+            self.assertEqual(topic["status"], "ai_draft")
+            for ref in topic["passages"]:
+                vids = build_site.topic_passage(ref)[2]
+                self.assertTrue(all(build_site.verse_records(v) for v in vids), ref)
+
     def test_a_page_fingerprint_ignores_asset_versions(self):
         a = "<head>x</head><main><p>Text</p><script src=\"/r.js?v=0123456789\"></script></main>"
         b = a.replace("0123456789", "abcdef0123").replace("<head>x", "<head>y")

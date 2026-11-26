@@ -3159,3 +3159,9 @@ html[dir="rtl"] .meter > span { background: linear-gradient(270deg, var(--accent
 html[dir="rtl"] .saved-item { box-shadow: inset -4px 0 0 var(--hl, transparent); }
 html[dir="rtl"] .term-book:not([open]) summary::before { transform: translateY(-2px) rotate(135deg); }
 @media print { html[dir="rtl"] .saved-item { box-shadow: none; } }
+/* Topic pages (build_site.topic_page): each passage, its reference over
+   its text. */
+.topic-passages { list-style: none; margin: 24px 0; padding: 0; display: grid; gap: 22px; }
+.topic-passage h2 { font-family: var(--display); font-weight: 600; font-size: 20px; margin: 0 0 6px; }
+.topic-passage h2 a { color: inherit; }
+.topic-passage p { margin: 0 0 4px; }
