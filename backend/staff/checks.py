@@ -12,12 +12,18 @@ The sentences, renderings and decisions come from the database; the
 translated notes (data/notes/<lang>/) and the glossary
 (docs/<language>-terms.md) from the files the deploy carries, as the site
 reads them. These are heuristics for a person to look at, not rules: nothing
-here fails a build or changes a record. Answers are cached until a sentence,
-the language's notes or its glossary changes, and the import job fills each
-language's answer after an import (warm_admin), so the page opens on a kept
-answer rather than measuring for 10-15 seconds.
+here fails a build or changes a record.
+
+Measuring a language takes 10-15 seconds on the whole Bible, so each answer
+is kept, under a stamp of what it was measured from (the sentences, the
+language's notes and its glossary): in the cache, and in a ChecksAnswer row,
+which outlives the cache being emptied. The import job measures every
+language after an import (precompute_checks), so the page opens on a kept
+answer; only when the content has changed since (a review, say) does a
+request measure again, as before, and keep what it found.
 """
 import hashlib
+import time
 
 from django.core.cache import cache
 from django.db.models import Count, Max
@@ -29,6 +35,7 @@ from owb import languages, notes, refs
 from translation.models import Decision, Rendering, Sentence
 
 from .inbox import verse_label
+from .models import ChecksAnswer
 from .permissions import admin_view
 
 LEVELS = ("L", "B", "R")
@@ -149,16 +156,56 @@ def measure(lang):
     }
 
 
+def content_stamp(lang):
+    """What lang's answer is measured from: the sentences, and its note and
+    glossary files by what they hold."""
+    return f"{_stamp()}.{_files_stamp(lang)}"
+
+
+def store(lang, stamp, answer, seconds=0.0):
+    ChecksAnswer.objects.update_or_create(language=lang,
+                                          defaults={"stamp": stamp, "answer": answer, "seconds": seconds})
+    cache.set(f"staff.checks.{lang}.{stamp}", answer, 86400)
+
+
+def precompute(lang, force=False):
+    """Measure lang and keep the answer, unless the one kept is for the
+    content as it is (and not force). Returns the seconds measuring took,
+    or None if the kept answer was current."""
+    stamp = content_stamp(lang)
+    if not force and ChecksAnswer.objects.filter(language=lang, stamp=stamp).exists():
+        return None
+    start = time.perf_counter()
+    answer = measure(lang)
+    took = time.perf_counter() - start
+    store(lang, stamp, answer, took)
+    return took
+
+
+def kept_answer(lang):
+    """lang's answer for the content as it is: from the cache, else the
+    ChecksAnswer row, else measured now (and kept in both)."""
+    stamp = content_stamp(lang)
+    key = f"staff.checks.{lang}.{stamp}"
+    answer = cache.get(key)
+    if answer is not None:
+        return answer
+    row = ChecksAnswer.objects.filter(language=lang, stamp=stamp).values_list("answer", flat=True).first()
+    if row is not None:
+        cache.set(key, row, 86400)
+        return row
+    start = time.perf_counter()
+    answer = measure(lang)
+    store(lang, stamp, answer, time.perf_counter() - start)
+    return answer
+
+
 @admin_view("overview")
 def checks(request):
     lang = request.query_params.get("lang", "en")
     if lang not in languages.READING:
         raise ValidationError({"lang": "Choose a reading language."})
-    key = f"staff.checks.{lang}.{_stamp()}.{_files_stamp(lang)}"
-    answer = cache.get(key)
-    if answer is None:
-        answer = measure(lang)
-        cache.set(key, answer, 86400)
+    answer = kept_answer(lang)
     return Response({**answer, "language": lang,
                      "languages": [{"code": c, "name": entry["name"],
                                     "glossary": cc.glossary_path(entry["name"]).is_file()}

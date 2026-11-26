@@ -161,6 +161,17 @@ class AlertsTest(AdminTestCase):
         self.assertIn("Would send: Open Word Bible: The last content import failed", out.getvalue())
         self.assertEqual(mail.outbox, [])
 
+    def test_health_lists_stalled_jobs_from_the_kept_work_list(self):
+        # The alert check reads GitHub and keeps what it read; Health uses
+        # that copy without asking GitHub (it read an old cache key once,
+        # and so never listed a stalled job).
+        self.run_alerts(issues=[issue(7, 30)])
+        with mock.patch("staff.progress._ci_status", return_value=GREEN), \
+                mock.patch("staff.github.call", side_effect=AssertionError("asked GitHub")):
+            alerts = {a["kind"]: a for a in self.admin.get("/api/admin/health/").json()["alerts"]}
+        self.assertEqual(alerts["stalled"]["title"], "1 job has stalled")
+        self.assertTrue(alerts["stalled"]["emailed_at"])
+
     def test_health_lists_the_alerts(self):
         ImportRun.objects.create().finish(error="boom")
         with mock.patch("staff.progress._ci_status", return_value=ci()):

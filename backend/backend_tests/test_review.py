@@ -60,6 +60,44 @@ class ReviewTest(AdminTestCase):
         self.assertFalse(ReviewState.objects.exists())
         self.assertEqual(self.admin.get("/api/admin/activity/").json()["actions"][0]["action"], "review.undo")
 
+    def test_an_approval_is_of_what_the_reviewer_was_shown(self):
+        shown = self.scholar.get("/api/admin/review/JHN.1.1.s1/?layer=grc").json()["digest"]
+        s = Sentence.objects.get(record_id="JHN.1.1.s1")
+        s.literal_gloss = "In [the] beginning was the Word, changed"
+        s.save()   # an import, say, while the page was open
+        r = self.scholar.post("/api/admin/review/JHN.1.1.s1/", {"layer": "grc", "action": "approve", "seen": shown},
+                              format="json")
+        self.assertEqual((r.status_code, r.json()["code"]), (409, "changed"))
+        self.assertFalse(ReviewEvent.objects.exists())
+        now = self.scholar.get("/api/admin/review/JHN.1.1.s1/?layer=grc").json()["digest"]
+        self.assertNotEqual(now, shown)
+        r = self.scholar.post("/api/admin/review/JHN.1.1.s1/", {"layer": "grc", "action": "approve", "seen": now},
+                              format="json")
+        self.assertEqual(r.status_code, 201)
+        self.assertEqual(ReviewEvent.objects.get().digest, now)
+
+    def test_the_status_follows_the_meaning_layer_now(self):
+        def status():
+            return Sentence.objects.get(record_id="JHN.1.1.s1").status
+        self.act(self.scholar, "JHN.1.1.s1", "grc")
+        self.assertEqual(status(), "meaning_reviewed")
+        self.act(self.scholar, "JHN.1.1.s1", "grc", "flag", "Wrong tense")
+        self.assertEqual(status(), "ai_draft")
+        self.act(self.scholar, "JHN.1.1.s1", "grc", "comment", "Looking again")
+        self.assertEqual(status(), "ai_draft")
+        self.act(self.scholar, "JHN.1.1.s1", "grc")
+        self.assertEqual(status(), "meaning_reviewed")
+        # Changed since the approval: no human approval stands behind it now.
+        s = Sentence.objects.get(record_id="JHN.1.1.s1")
+        s.literal_gloss = "Something else"
+        s.save()
+        review.refresh("grc")
+        self.assertEqual(ReviewState.objects.get(layer="grc").state, "changed")
+        self.assertEqual(status(), "ai_draft")
+        # A wording approval never moves the status.
+        self.act(self.french, "JHN.1.1.s1", "fr")
+        self.assertEqual(status(), "ai_draft")
+
     def test_an_earlier_approval_still_stands_after_taking_back_a_flag(self):
         self.act(self.scholar, "JHN.1.1.s1", "grc")
         flag = self.act(self.scholar, "JHN.1.1.s1", "grc", "flag", "Wrong tense").json()["event"]["id"]

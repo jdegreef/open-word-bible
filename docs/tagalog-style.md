@@ -492,7 +492,7 @@ needs a decision). The terms after them are settled for every book.
 | wisdom; knowledge | *karunungan*; *kaalaman* | |
 | fear of the LORD | *takot `{{divine_name:sa PANGINOON\|kay Yahweh}}`* | Write the span with its marker: *ang takot sa PANGINOON*. |
 | blessed (*makarios*); bless (*barak*, *eulogeō*) | *mapalad*; *pagpalain* | |
-| woe | *kawawa* (B, R); *sa aba* (L) | |
+| woe (*hoy*, *oy*, *ouai*) | *Sa aba* (L, B); *Kakila-kilabot ang mangyayari sa* (R) | *Sa aba ng ...*, *Sa aba ko*, *Sa aba mo*, *Sa aba natin*. A cry the English gives as "Alas!" may keep *Kahabag-habag*. As `docs/tagalog-terms.md`. |
 | Amen; Hallelujah; Hosanna | *Amen*; *Aleluya*; *Hosana* | |
 | Truly I tell you (*amēn legō hymin*) | *Amen, sinasabi ko sa inyo* (L); *Totoo ang sinasabi ko sa inyo* (B); *Tandaan ninyo ito* (R) | One decision per passage. John's doubled *amēn*: *Amen, amen* (L); *Totoong-totoo* (B). |
 | slave (*doulos*; *ʿeved*) | *alipin* (L, B, R) where slavery is the point; *lingkod* for a servant | *lingkod ng Diyos*, `lingkod {{divine_name:ng PANGINOON\|ni Yahweh}}` for God's servants at every level. |
@@ -718,7 +718,7 @@ notes it once. `[NG]` stands for `{{divine_name:ng PANGINOON|ni Yahweh}}`,
 | all the days of his life | *sa lahat ng araw ng kaniyang buhay* | *habang siya'y nabubuhay* | *habang siya ay nabubuhay* |
 | to this day | *hanggang sa araw na ito* | as L | *hanggang ngayon* |
 | Fear not | *Huwag kang matakot* | as L | as L |
-| Woe to you | *Sa aba ninyo* | *Kawawa kayo* | as B |
+| Woe to you | *Sa aba ninyo* | as L | *Kakila-kilabot ang mangyayari sa inyo* |
 | grace and peace to you | *Biyaya at kapayapaan sa inyo* | *Sumainyo nawa ang biyaya at kapayapaan* | *Pagpalain sana kayo at bigyan ng kapayapaan* |
 
 ## 12b. Drafting book by book
