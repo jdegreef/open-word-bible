@@ -71,7 +71,7 @@ recurring ones.
 | transgression; iniquity | *paglabag*; *kasamaan* | |
 | wicked; evil | *masama* | *ang masasama* for "the wicked" (plural). |
 | guilt; guilty | *pagkakasala*; *may sala* | |
-| judge; judgment | *hatulan*; *paghatol* | *hukom* for the person; *Araw ng Paghuhukom* for the day. |
+| judge (the verb, *shaphat*, *krino*); judgment (*mishpat*, *krisis*) | *hatulan*; *paghatol* | *hukom* for the person (section 5); *Araw ng Paghuhukom* for the day. |
 | wrath | *poot* | *galit* at R. |
 | hope; trust (*batakh*) | *pag-asa*; *magtiwala* | |
 | obey; disobey | *sumunod*; *sumuway* | |
@@ -269,7 +269,7 @@ The style guide, section 12a, holds the table of recurring formulas
 | Ruth | Ruth | Naomi | Noemi |
 | Boaz | Boaz | Hannah | Ana |
 | Eli | Eli | Samuel | Samuel |
-| Saul | Saul | Jonathan | Jonatan |
+| Saul (*Sha'ul*) | Saul | Jonathan | Jonatan |
 | Jesse | Jesse | David | David |
 | Goliath | Goliat | Michal | Mical |
 | Abigail | Abigail | Abner | Abner |
@@ -336,10 +336,10 @@ The style guide, section 12a, holds the table of recurring formulas
 | Gibeon | Gibeon | Ramah | Rama |
 | Bethlehem | Betlehem | Jerusalem | Jerusalem |
 | Zion | Zion | Samaria | Samaria |
-| Jezreel | Jezreel | Carmel | Carmel |
+| Jezreel | Jezreel | Carmel (the town in Judah); Mount Carmel | Carmel; Carmelo |
 | Gilead | Gilead | Bashan | Basan |
 | Moab | Moab | Edom | Edom |
-| Ammon | Ammon | Philistia | lupain ng mga Filisteo |
+| Ammon | Ammon | Philistia; land of the Philistines | Filistia; lupain ng mga Filisteo |
 | Gaza | Gaza | Ashdod | Ashdod |
 | Gath | Gat | Ekron | Ekron |
 | Ashkelon | Ashkelon | Tyre | Tiro |
@@ -388,7 +388,7 @@ Moabita* (Ruth).
 | Cleopas | Cleopas | Malchus | Malco |
 | Caesar Augustus | Cesar Augusto | Tiberius | Tiberio |
 | Quirinius | Quirinio | Beelzebul | Beelzebul |
-| Paul; Saul | Pablo; Saulo | Barnabas | Bernabe |
+| Paul; Saul (*Saulos*, Paul's own name) | Pablo; Saulo | Barnabas | Bernabe |
 | Stephen | Esteban | Ananias; Sapphira | Ananias; Safira |
 | Gamaliel | Gamaliel | Cornelius | Cornelio |
 | Tabitha; Dorcas | Tabita; Dorcas | Agabus | Agabo |
@@ -397,7 +397,7 @@ Moabita* (Ruth).
 | Timothy; Titus | Timoteo; Tito | Lydia | Lidia |
 | Sergius Paulus; Elymas | Sergio Paulo; Elimas | Gallio | Galion |
 | Apollos | Apolos | Priscilla, Prisca; Aquila | Priscila, Prisca; Aquila |
-| (John) Mark | (Juan) Marcos | Luke | Lucas |
+| Mark (John Mark) | Marcos (Juan Marcos) | Luke | Lucas |
 | Aristarchus | Aristarco | Demas | Demas |
 | Epaphras | Epafras | Epaphroditus | Epafrodito |
 | Euodia; Syntyche | Euodia; Sintique | Onesimus | Onesimo |
@@ -805,14 +805,13 @@ names the book where the form was first used.
 | Genesis 47:11 | Rameses | Rameses |  |
 | Genesis 48:7 | Paddan | Padan |  |
 | Genesis 49:11 | Binding | Magiging |  |
-| Genesis 49:21 | Naphtali | Nagsasalita |  |
 | Genesis 50:10 | Atad | Atad |  |
 | Genesis 50:11 | Abel-mizraim | Abel-mizraim |  |
 | Genesis 50:23 | Machir | Makir | ch > k (style §6, rule 4) |
 | Ruth | Elimelech | Elimelec | The Spanish-derived form (style guide section 2). |
 | Ruth | Mahlon; Chilion | Mahlon; Kilion | *ch* > *k* (section 6, rule 4). |
 | Ruth | Orpah | Orpah | Final *-ah* kept (rule 4). |
-| Ruth | Ephrathites; Ephrathah | *mga taga-Efrata*; Efrata | One form for Ephrath and Ephrathah. |
+| Ruth | Ephrathah | Efrata | One form for Ephrath and Ephrathah. Its people: see Ephrathite (1 Samuel 17:12). |
 | Ruth | Mara | Mara | |
 | Ruth | Perez | Perez | Spanish-derived, *z* kept. |
 | Ruth | Hezron; Ram | Hezron; Ram | |
@@ -846,7 +845,6 @@ names the book where the form was first used.
 | Exodus 13:4 | Abib | Abib | The month; *buwan ng Abib*. |
 | Exodus 13:20 | Etham | Etam |  |
 | Exodus 14:2 | Pi-hahiroth; Migdol; Baal-zephon | Pi-hahirot; Migdol; Baal-zefon |  |
-| Exodus 15:14 | Philistia | Filistia | People: *mga Filisteo*. |
 | Exodus 15:23 | Marah | Mara | Same form as Naomi's *Mara* (Ruth 1:20). |
 | Exodus 15:27 | Elim | Elim |  |
 | Exodus 16:1 | wilderness of Sin | ilang ng Sin |  |
@@ -880,7 +878,7 @@ names the book where the form was first used.
 | Leviticus 18:21 | Molech | Molec | R: *diyos na si Molec*. |
 | Leviticus 19:31 | mediums; spiritists | *mga nakikipag-usap sa patay*; *mga espiritista* |  |
 | Leviticus 20:9 | his blood is on him | *ang kaniyang dugo [ay] nasa kaniya* (L), *siya ang may pananagutan sa sarili niyang kamatayan* (B) |  |
-| Leviticus 21:7 | prostitute | *babaeng nagbebenta ng aliw* |  |
+| Leviticus 21:7 | prostitute (*zonah*, the noun) | *babaeng nagbebenta ng aliw* |  |
 | Leviticus 21:17 | blemish, defect | *kapintasan* (L, B), *depekto* (R) |  |
 | Leviticus 23:2 | appointed times | *mga takdang panahon* (L), *mga takdang kapistahan* (B), *mga natatanging kapistahan* (R) |  |
 | Leviticus 23:10 | sheaf | *bigkis* |  |
@@ -1018,7 +1016,7 @@ names the book where the form was first used.
 | Numbers 26:32 | Hepher | Hefer | ph > f (style §6, rule 4) |
 | Numbers 26:33 | Zelophehad | Zelofehad | ph > f (style §6, rule 4) |
 | Numbers 26:33 | Mahlah | Mahlah |  |
-| Numbers 26:33 | Noah | Noa | daughter of Zelophehad; not *Noe* (Noah of Genesis) |
+| Numbers 26:33 | Noah (*No'ah*, daughter of Zelophehad) | Noa | A woman's name, kept apart from Noe, the Noah of the flood (*Noach*). |
 | Numbers 26:33 | Hoglah | Hoglah |  |
 | Numbers 26:33 | Tirzah | Tirza | common Tagalog church form without final -h (rule 1); reviewer to confirm |
 | Numbers 26:35 | Shuthelah | Shutelah | th > t (style §6, rule 4) |
@@ -1111,7 +1109,7 @@ names the book where the form was first used.
 | Numbers 34:27 | Shelomi | Shelomi |  |
 | Numbers 34:28 | Pedahel | Pedahel |  |
 | Numbers 26:31 | Shechemites | Siquemita | from *Siquem* |
-| Numbers 12:1 | Cushite | Cushita | people name in -ita |
+| Numbers 12:1 | Cushite | *Cushita*, *mga Cushita* (L, B); *taga-Etiopia* (R) | People name in -ita, *sh* kept (style §6, rule 4). Readable names the land Etiopia, as for Cush. |
 | Deuteronomy 1:1 | Arabah | Araba |  |
 | Deuteronomy 1:1 | Tophel | Tofel | ph > f |
 | Deuteronomy 1:1 | Dizahab | Di-zahab |  |
@@ -1155,7 +1153,7 @@ names the book where the form was first used.
 | Joshua 10:1 | Adoni-zedek | Adoni-zedek |  |
 | Joshua 10:3 | Hoham; Piram; Japhia; Debir | Hoham; Piram; Jafia; Debir | ph > f |
 | Joshua 10:3 | Jarmuth; Lachish; Eglon | Jarmut; Laquis; Eglon |  |
-| Joshua 10:10 | Beth-horon; Azekah; Makkedah | Bet-horon; Azeca; Maceda |  |
+| Joshua 10:10 | Beth-horon; Azekah; Makkedah | Bet-horon; Azeca; Maceda | Azeca and Maceda are the established church forms. |
 | Joshua 10:12 | Aijalon | Ajalon |  |
 | Joshua 10:13 | Book of Jashar | Aklat ni Jaser |  |
 | Joshua 10:33 | Horam | Horam |  |
@@ -1300,13 +1298,13 @@ names the book where the form was first used.
 | 1 Samuel 14:3 | Ahijah; Ahitub | Ahias; Ahitub | Spanish-derived *Ahias* |
 | 1 Samuel 14:4 | Bozez; Seneh | Bozez; Seneh |  |
 | 1 Samuel 14:47 | Zobah | Zoba |  |
-| 1 Samuel 14:49 | Ishvi; Malchi-shua; Merab | Isvi; Malki-shua; Merab |  |
+| 1 Samuel 14:49 | Malchi-shua; Merab | Malki-shua; Merab | Ishvi as Genesis 46:17. |
 | 1 Samuel 14:50 | Ahinoam; Ahimaaz; Ner | Ahinoam; Ahimaaz; Ner |  |
 | 1 Samuel 15:4 | Telaim | Telaim |  |
 | 1 Samuel 15:7 | Havilah | Havilah | as Genesis |
-| 1 Samuel 17:1 | Socoh; Azekah; Ephes-dammim | Socoh; Azeka; Efes-dammim | Socoh as Joshua |
+| 1 Samuel 17:1 | Socoh; Ephes-dammim | Socoh; Efes-dammim | Socoh as Joshua; Azekah as Joshua 10:10 |
 | 1 Samuel 17:2 | Valley of Elah | Libis ng Elah |  |
-| 1 Samuel 17:12 | Ephrathite | Efrateo |  |
+| 1 Samuel 17:12 | Ephrathite | *taga-Efrata*, *mga taga-Efrata* | Of Ephrathah, the district of Bethlehem (Ruth 1:2): the people of a place are *taga-* and the place (style §6). Where the meaning decision reads a man of Ephraim (1 Samuel 1:1; 1 Kings 11:26), Efraimita. |
 | 1 Samuel 17:52 | Shaaraim | Shaaraim |  |
 | 1 Samuel 18:19 | Adriel the Meholathite | Adriel na taga-Mehola |  |
 | 1 Samuel 19:18 | Naioth | Naiot |  |
@@ -1329,7 +1327,6 @@ names the book where the form was first used.
 | 1 Samuel 26:6 | Abishai; Zeruiah | Abisai; Zeruia |  |
 | 1 Samuel 27:2 | Maoch | Maoc |  |
 | 1 Samuel 27:8 | Girzites | mga Gizrita |  |
-| 1 Samuel 27:10 | Jerahmeelites | mga Jerameelita |  |
 | 1 Samuel 28:4 | Gilboa | Gilboa |  |
 | 1 Samuel 28:7 | medium (woman who has a spirit) | L *babaeng may-ari ng espiritu*; B *babaeng nakikipag-usap sa patay*; R *babaeng nakatatawag ng mga espiritu ng patay* |  |
 | 1 Samuel 28:7 | Endor | Endor |  |
@@ -1471,7 +1468,7 @@ names the book where the form was first used.
 | 1 Kings 19:3 | Beersheba; broom tree | Beer-seba; *punong retama* |  |
 | 1 Kings 19:12 | a sound of thin silence | *tunog ng manipis na katahimikan* | not "still small voice" |
 | 1 Kings 19:15 | Hazael | Hazael |  |
-| 1 Kings 19:16 | Jehu son of Nimshi; Abel-meholah; Shaphat | Jehu na anak ni Nimsi; Abel-mehola; Safat |  |
+| 1 Kings 19:16 | Jehu son of Nimshi; Abel-meholah | Jehu na anak ni Nimsi; Abel-mehola | Shaphat as Numbers 13:5 |
 | 1 Kings 20:26 | Aphek | Afek |  |
 | 1 Kings 20:35 | sons of the prophets | *mga anak ng mga propeta* (L); *samahan ng mga propeta* (B); *pangkat ng mga propeta* (R) |  |
 | 1 Kings 20:39 | a talent of silver | {{units:mga 34 kilong pilak\|isang talentong pilak}} | talent = 34 kg |
@@ -1565,7 +1562,7 @@ names the book where the form was first used.
 | 2 Kings 25:23 | Ishmael son of Nethaniah; Johanan son of Kareah; Seraiah son of Tanhumeth; Jaazaniah | Ismael na anak ni Netanias; Johanan na anak ni Karea; Seraias na anak ni Tanhumet; Jaazanias |  |
 | 2 Kings 25:27 | Evil-merodach | Evil-merodac |  |
 | 1 Chronicles 2:6 | Dara | Dara |  |
-| 1 Chronicles 2:9 | Jerahmeel | Jerahmeel |  |
+| 1 Chronicles 2:9 | Jerahmeel; Jerahmeelites | Jerahmeel; mga Jerahmeelita | Every Jerahmeel (Jeremiah 36:26 too) and the clan of 1 Samuel 27:10; 30:29 |
 | 1 Chronicles 2:11 | Salma | Salma |  |
 | 1 Chronicles 2:15 | Ozem | Ozem |  |
 | 1 Chronicles 2:25 | Bunah; Oren | Bunah; Oren |  |
@@ -2062,7 +2059,7 @@ names the book where the form was first used.
 | Psalms 78:51 | the tents of Ham | *mga tolda ni Ham* | Ham stands for Egypt, home of his descendants |
 | Psalms 80:12 | the Mediterranean Sea (R) | *Dagat Mediteraneo* |  |
 | Psalms 84:7 | Valley of Baca | *lambak ng Baca* |  |
-| Psalms 119:1 | instruction (*torah*); testimonies; precepts; statutes; commands; judgments | *kautusan* (R *aral*); *mga patotoo* (R *ang ipinahayag mo*); *mga alituntunin* (R *mga tagubilin*); *mga tuntunin* (R *mga batas*); *mga utos*; *mga hatol* (R *mga pasya*) | the word for each stays fixed across the 176 verses |
+| Psalms 119:1 | instruction (*torah*); testimonies; precepts; statutes; commands; judgments (*mishpatim*, God's rulings) | *kautusan* (R *aral*); *mga patotoo* (R *ang ipinahayag mo*); *mga alituntunin* (R *mga tagubilin*); *mga tuntunin* (R *mga batas*); *mga utos*; *mga hatol* (R *mga pasya*) | the word for each stays fixed across the 176 verses |
 | Psalms 119:11 | saying (*imrah*) | *pangungusap* (L); *pangako* (B, R) |  |
 | Psalms 120:1 | song of ascents | *awit ng pag-akyat* (R *awit para sa paglalakbay paakyat sa Jerusalem*) | Psalms 120–134 |
 | Psalms 132:6 | Jaar | Jaar |  |
@@ -2089,7 +2086,7 @@ names the book where the form was first used.
 | Song of Songs 7:5 | Bath-rabbim | Bat-rabim |  |
 | Song of Songs 8:11 | Baal-hamon | Baal-hamon |  |
 | Isaiah 3:16 | daughter of Zion | *anak na babae ng Zion* (L); *Anak na Zion* (B); *mga mamamayan ng Zion* (R) |  |
-| Isaiah 5:8 | woe | *Sa aba* (L, B); R "Kakila-kilabot ang mangyayari sa" |  |
+| Isaiah 5:8 | woe (*hoy*, *oy*) | *Sa aba* (L, B); *Kakila-kilabot ang mangyayari sa* (R) | Every woe, the five of Habakkuk 2:6-19 too: *Sa aba ng ...*, *Sa aba ko*, *Sa aba mo*, *Sa aba natin*. A cry that English gives as "Alas!" may keep *Kahabag-habag*. |
 | Isaiah 6:2 | seraphim | *mga serafin* |  |
 | Isaiah 7:14 | Immanuel | Emmanuel |  |
 | Isaiah 8:1 | Maher-shalal-hash-baz | Maher-shalal-hash-baz |  |
@@ -2160,7 +2157,7 @@ names the book where the form was first used.
 | Jeremiah 36:12 | Delaiah; Elishama the secretary | Delaias; Elisama na kalihim |  |
 | Jeremiah 36:14 | Jehudi son of Nethaniah son of Shelemiah son of Cushi | Jehudi na anak ni Netanias na anak ni Selemias na anak ni Cusi |  |
 | Jeremiah 36:22 | winter house; brazier | *bahay na pantaglamig*; *kalan* |  |
-| Jeremiah 36:26 | Jerahmeel; Seraiah son of Azriel; Shelemiah son of Abdeel | Jerameel; Seraias na anak ni Azriel; Selemias na anak ni Abdeel |  |
+| Jeremiah 36:26 | Seraiah son of Azriel; Shelemiah son of Abdeel | Seraias na anak ni Azriel; Selemias na anak ni Abdeel | Jerahmeel as 1 Chronicles 2:9 |
 | Jeremiah 37:3 | Jehucal son of Shelemiah | Jehucal na anak ni Selemias |  |
 | Jeremiah 37:13 | Irijah son of Shelemiah; Gate of Benjamin | Irias na anak ni Selemias; Pintuan ng Benjamin |  |
 | Jeremiah 37:16 | cistern house | *bahay ng balon* |  |
@@ -2255,7 +2252,7 @@ names the book where the form was first used.
 | Daniel 2:27 | diviners | *mga manghuhula* |  |
 | Daniel 3:1 | Dura; cubit | Dura; *siko* (L), units span *mga 27 metro* for 60 cubits (B, R) | a 45 cm cubit |
 | Daniel 3:2 | satraps; prefects | *mga satrapa* (L, B), *mga gobernador ng mga rehiyon* (R); *mga prepekto* |  |
-| Daniel 3:5 | horn; pipe; lyre; trigon; harp; bagpipe | *tambuli*; *plauta*; *lira*; *trigon* (R *sitara*); *alpa*; *gaita* |  |
+| Daniel 3:5 | horn (*qarna*, the instrument); pipe; lyre; trigon; harp; bagpipe | *tambuli*; *plauta*; *lira*; *trigon* (R *sitara*); *alpa*; *gaita* |  |
 | Daniel 3:6 | blazing furnace | *hurno ng nagliliyab na apoy* (L); *nagliliyab na hurno* (B); *napakainit na hurno* (R) |  |
 | Daniel 3:26 | the Most High God; the Most High | *ang Kataas-taasang Diyos*; *ang Kataas-taasan* (R *ang Kataas-taasang Diyos*) |  |
 | Daniel 4:10 | watcher | *bantay* (L, B); *sugo mula sa langit* (R) | a heavenly being |
@@ -2273,9 +2270,9 @@ names the book where the form was first used.
 | Daniel 9:27 | abomination that makes desolate | *kasuklam-suklam na nagdudulot ng pagkawasak* (L, B); *kasuklam-suklam na bagay na nagdudulot ng pagkawasak* (R) | as Leviticus 11:10 *kasuklam-suklam* |
 | Daniel 10:13 | prince of Persia; Michael | *prinsipe ng kaharian ng Persia* (L, B), *naghaharing anghel* (R); Mikael | heavenly powers |
 | Daniel 11:5 | king of the south; king of the north | *hari ng timog*; *hari ng hilaga* |  |
-| Daniel 11:43 | Libyans; Cushites | *mga Libyo* (L, B), Libya (R); *mga Cusita* (L, B), Etiopia (R) |  |
+| Daniel 11:43 | Libyans | *mga Libyo* (L, B), Libya (R) | Cushites as Numbers 12:1 |
 | Hosea 1:1 | Uzziah; Hezekiah; Joash | Uzias; Hezekias; Joas | as in Kings and Isaiah |
-| Hosea 1:2 | wife of prostitution; prostitute (*zanah*) | *babaing mapagpatutot*; *magpatutot* (L, B), *hindi naging tapat* (R) | as Ezekiel 16:15 |
+| Hosea 1:2 | wife of prostitution; play the prostitute (*zanah*, the verb) | *babaing mapagpatutot*; *magpatutot* (L, B), *hindi naging tapat* (R) | as Ezekiel 16:15 |
 | Hosea 1:3 | Gomer daughter of Diblaim | Gomer na anak ni Diblaim |  |
 | Hosea 1:6 | Lo-ruhamah | Lo-ruhama (L); *Hindi Kinahabagan* (B, R) | B and R translate the name |
 | Hosea 1:9 | Lo-ammi | Lo-ammi (L); *Hindi Ko Bayan* (B, R) | B and R translate the name |
@@ -2351,7 +2348,7 @@ names the book where the form was first used.
 | Micah 6:8 | do justice, love loyal love, walk humbly | *gumawa ng katarungan at ibigin ang tapat na pag-ibig, at lumakad nang may kababaang-loob* |  |
 | Micah 6:16 | statutes of Omri | *mga tuntunin ni Omri* |  |
 | Micah 7:12 | the River | *ang Ilog* (L); *Eufrates* (B, R) |  |
-| Micah 7:14 | Carmel (the mountain range) | *Carmelo* | as Kings and Isaiah; the town of Carmel in Judah stays *Carmel* |
+| Micah 7:14 | Mount Carmel | *Carmelo* | Micah's "Carmel" is the mountain range, as in Joshua, Kings and Isaiah; the town of Carmel in Judah stays Carmel (section 9) |
 | Nahum 1:1 | Nahum the Elkoshite | Nahum na Elkosita (L); *taga-Elkos* (B, R) |  |
 | Nahum 1:1 | oracle | *pahayag* | as Isaiah 13:1 |
 | Nahum 1:2 | a jealous and avenging God | *Diyos na mapanibughuin at naghihiganti* |  |
@@ -2361,7 +2358,6 @@ names the book where the form was first used.
 | Nahum 3:14 | mortar; brick mold | *argamasa*; *hulmahan ng laryo* |  |
 | Habakkuk 2:2 | tablets | *mga tapyas* |  |
 | Habakkuk 2:4 | the righteous will live by his faithfulness | *ang matuwid ay mabubuhay sa pamamagitan ng kaniyang katapatan* | Romans 1:17 has *faith* |
-| Habakkuk 2:6 | Woe | *Kahabag-habag* (L, B); R *Nakakaawa ang sasapitin* | five woes in 2:6-19 |
 | Habakkuk 3:1 | shigionoth | *shigionot* | as *Shigaion* in Psalm 7 |
 | Habakkuk 3:7 | Cushan | Cushan |  |
 | Habakkuk 3:19 | GOD my Lord | *ang DIYOS na aking Panginoon* (L); *Panginoong DIYOS* (B, R) |  |
@@ -2379,7 +2375,7 @@ names the book where the form was first used.
 | Zechariah 1:7 | Shebat | Sebat | sh > s |
 | Zechariah 1:8 | myrtle; sorrel | *mirto*; *kayumanggi* | as Isaiah 55:13 |
 | Zechariah 1:9 | the angel who talked with me | *ang anghel na nakikipag-usap sa akin* | fixed through the visions |
-| Zechariah 2:1 | horns; craftsmen | *mga sungay*; *mga panday* (R *bihasang manggagawa*) |  |
+| Zechariah 2:1 | horns (*qeren*, animal horns); craftsmen | *mga sungay*; *mga panday* (R *bihasang manggagawa*) |  |
 | Zechariah 3:1 | the satan, the Accuser | *si Satanas* (L, B); *ang Tagapagparatang* (R) | as Job 1-2 |
 | Zechariah 3:5 | turban | *turbante* | as Exodus 28 |
 | Zechariah 3:8 | the Branch | *ang Sanga* | as Jeremiah 23:5; also 6:12 |
