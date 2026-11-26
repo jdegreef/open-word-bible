@@ -156,7 +156,8 @@ class SiteTest(unittest.TestCase):
             verses = [str(build_site.refs.parse(v).verse) for v in
                       dict.fromkeys(v for r in data["records"] for v in r["refs"])]
             self.assertEqual(list(dict.fromkeys(re.findall(r'data-v="([^"]+)"', text))), verses, path)
-            self.assertEqual(re.findall(r"<sup>([^<]+)</sup>", text), verses, path)
+            # A verse with a page of its own has its number as a link to it.
+            self.assertEqual(re.findall(r"<sup>(?:<a [^>]*>)?([^<]+)(?:</a>)?</sup>", text), verses, path)
             self.assertNotIn("{{", text)
             self.assertNotIn("\\v ", text)
             for r in data["records"]:
@@ -240,10 +241,20 @@ class SiteTest(unittest.TestCase):
         self.assertEqual(script.count("</"), 1)
         self.assertEqual(json.loads(script[script.index(">") + 1:-len("</script>")])["name"], title)
 
+    def test_links_to_a_chapter_stub_are_not_followed(self):
+        # Arabic has no Genesis 30 yet: its page there is a stub (chapter_stub).
+        self.assertFalse(build_site.chapter_has("GEN", 30, "ar"))
+        page = (self.out / "gen" / "30" / "index.html").read_text(encoding="utf-8")
+        self.assertIn('<a href="/ar/gen/30/" hreflang="ar" data-lang="ar" rel="nofollow">', page)
+        self.assertRegex(page, r'<a href="/es/gen/30/" hreflang="es" data-lang="es"[^>]*>')
+        self.assertNotRegex(page, r'<a href="/es/gen/30/"[^>]*rel="nofollow"')
+
     def test_footer_counts_the_books_not_started(self):
         # The chips come from nav-en.js (footer_data); the page has a list for each testament.
         page = (self.out / "1ti" / "5" / "index.html").read_text(encoding="utf-8")
-        self.assertIn('<ul class="book-chips" data-foot-chips="old_testament"></ul>', page)
+        # Without scripts the list has each book as a plain link.
+        self.assertIn('<ul class="book-chips" data-foot-chips="old_testament">'
+                      '<li><a class="book-chip" href="/gen/">Genesis</a></li>', page)
         index = foot_data_in(self.out, "en")["chips"]["old_testament"]
         ot = build_site.refs.OT_CODES
         have = {b for b, _ in build_site.books("en")}
@@ -1242,15 +1253,15 @@ class SiteTest(unittest.TestCase):
         self.assertEqual(psa3["records"][1]["refs"], ["PSA.3.1"])
         page = (self.out / "psa" / "3" / "index.html").read_text(encoding="utf-8")
         self.assertRegex(page, r'<span class="verse psalm-title" id="v0"[^>]*data-record="PSA\.3\.1\.s1">[^<]')
-        self.assertIn('<sup>1</sup>', page)
-        self.assertNotIn('<sup>0</sup>', page)
+        self.assertRegex(page, r'<sup>(<a [^>]*>)?1(</a>)?</sup>')
+        self.assertNotRegex(page, r'<sup>(<a [^>]*>)?0(</a>)?</sup>')
         # Two of our verses that are one NIV verse, and a sentence the NIV
         # numbers as a verse of its own.
         num26 = self.chapter_data("num/26")["records"]
         self.assertEqual([r["refs"] for r in num26[:2]], [["NUM.26.1"], ["NUM.26.1"]])
         # One of our verses that is two NIV verses (data/reader_verses.json).
         page = (self.out / "psa" / "13" / "index.html").read_text(encoding="utf-8")
-        self.assertIn("<sup>6</sup>I will sing", page)
+        self.assertRegex(page, r"<sup>(<a [^>]*>)?6(</a>)?</sup>I will sing")
         self.assertIn("ISA.64.1", {v for r in self.chapter_data("isa/64")["records"] for v in r["refs"]})
         acts = {r["id"]: r["refs"] for r in self.chapter_data("act/19")["records"]}
         self.assertEqual(acts["ACT.19.40.s2"], ["ACT.19.41"])
@@ -1823,8 +1834,9 @@ class SearchMetadataTest(unittest.TestCase):
     def test_sitemaps_list_each_language_and_its_alternates(self):
         index = (self.out / "sitemap.xml").read_text(encoding="utf-8")
         self.assertIn("<sitemapindex", index)
-        self.assertIn(f"<loc>{build_site.SITE_URL}/sitemap-en.xml</loc>", index)
-        en = (self.out / "sitemap-en.xml").read_text(encoding="utf-8")
+        self.assertIn(f"<loc>{build_site.SITE_URL}/sitemap-en-chapters.xml</loc>", index)
+        self.assertIn(f"<loc>{build_site.SITE_URL}/sitemap-en-verses.xml</loc>", index)
+        en = (self.out / "sitemap-en-chapters.xml").read_text(encoding="utf-8")
         row = re.search(rf"<url><loc>{build_site.SITE_URL}/jhn/3/</loc>.*?</url>", en)[0]
         self.assertIn(f'hreflang="es" href="{build_site.SITE_URL}/es/jhn/3/"', row)
         self.assertIn(f'hreflang="x-default" href="{build_site.SITE_URL}/jhn/3/"', row)
@@ -1834,9 +1846,16 @@ class SearchMetadataTest(unittest.TestCase):
         with mock.patch.object(build_site, "git_dates", return_value=dates):
             files = build_site.sitemaps([build_site.SitemapEntry("en", "/jhn/3/", tuple(dates)),
                                          build_site.SitemapEntry("en", "/about/")])
-        en = files["sitemap-en.xml"]
-        self.assertIn("<loc>https://openwordbible.org/jhn/3/</loc><lastmod>2026-11-03</lastmod>", en)
-        self.assertIn("<loc>https://openwordbible.org/about/</loc></url>", en)
+        self.assertIn("<loc>https://openwordbible.org/jhn/3/</loc><lastmod>2026-11-03</lastmod>",
+                      files["sitemap-en-chapters.xml"])
+        self.assertIn("<loc>https://openwordbible.org/about/</loc></url>", files["sitemap-en-pages.xml"])
+
+    def test_sitemaps_are_split_by_kind_of_page(self):
+        kinds = {"/jhn/3/": "chapters", "/jhn/3/16/": "verses", "/jhn/": "books", "/1co/13/": "chapters",
+                 "/word/g26-agape/": "words", "/word/greek/2/": "words", "/articles/the-niv/": "articles",
+                 "/for/preachers/": "pages", "/": "pages", "/plans/john-in-21-days/": "pages"}
+        for path, kind in kinds.items():
+            self.assertEqual(build_site.sitemap_kind(path), kind, path)
 
     def test_article_is_marked_as_an_article(self):
         article = next(a for a in build_site.load_articles("en") if a["slug"] == "how-reliable-is-the-text")
@@ -1884,12 +1903,19 @@ class VersePageTest(unittest.TestCase):
         self.assertIn("JHN.3.16", ids)
         self.assertEqual(build_site.verse_page_url("JHN.3.16"), "/jhn/3/16/")
 
+    def test_verse_numbers_link_to_their_verse_pages(self):
+        page = build_site.chapter_page("JHN", 3, "en")
+        self.assertIn('<sup><a class="vn-link" href="/jhn/3/16/">16</a></sup>', page)
+        verse = build_site.verse_page("JHN.3.16", "en")
+        self.assertIn("<h2>What does John 3:16 mean?</h2>", verse)
+        self.assertRegex(verse, r'<a class="button ghost" href="/jhn/3/\d+/" rel="prev">')
+
     def test_a_verse_page_shows_three_levels_the_original_and_the_reasoning(self):
         page = build_site.verse_page("JHN.3.16", "en")
         levels = build_site.verse_levels("JHN.3.16", "en")
         for code in "LBR":
             self.assertIn(html.escape(levels[code], quote=False), page)
-        self.assertIn("<title>John 3:16 at three levels, with the reasoning · Open Word Bible</title>", page)
+        self.assertIn("<title>John 3:16: meaning, Greek and translation · Open Word Bible</title>", page)
         # The Greek comes from the source data, word by word.
         _, words = build_site.load_chapter("JHN", 3)
         self.assertIn(words["JHN.3.16"][0]["text"], page)

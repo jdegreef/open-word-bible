@@ -1,11 +1,15 @@
 """The admin's content checks (staff/checks.py): footnotes whose verse words
 the alternative, and verses and glossary rows at odds with a language's
 terms glossary."""
+import os
+import tempfile
+from pathlib import Path
 from unittest import mock
 
 from accounts.models import Role
 from owb import content_checks as cc
 from owb import notes
+from staff import checks
 from translation.models import Decision, Rendering, Sentence
 
 from .test_admin import AdminTestCase, account, client_for, sentence
@@ -110,3 +114,18 @@ class ChecksTest(AdminTestCase):
         with mock.patch("staff.checks.measure", return_value=empty) as measure:
             self.assertEqual(self.get("?lang=id")["notes"]["total"], 0)
         measure.assert_called_once_with("id")
+
+    def test_files_stamp_follows_content_not_file_times(self):
+        # The import job keeps the answer under the key its own checkout
+        # gives; the API's checkout has other file times but the same files.
+        with tempfile.TemporaryDirectory() as tmp, mock.patch("owb.notes.NOTES", Path(tmp)):
+            folder = Path(tmp) / "id"
+            folder.mkdir()
+            path = folder / "JOL.json"
+            path.write_text('{"a": 1}')
+            before = checks._files_stamp("id")
+            os.utime(path, ns=(1, 1))
+            self.assertEqual(checks._files_stamp("id"), before)
+            path.write_text('{"a": 22}')
+            os.utime(path, ns=(1, 1))
+            self.assertNotEqual(checks._files_stamp("id"), before)

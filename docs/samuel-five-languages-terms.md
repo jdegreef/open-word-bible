@@ -47,7 +47,7 @@ Decision text stays in English, quoting the words of the language.
   choice: `divine_name` always, `deity_pronoun` on free pronouns, `units`
   where the English converts (same metric values as the Pentateuch note:
   cubit 45 cm, span 23 cm, shekel 11.5 g, talent 34 kg, ephah 22 litres,
-  seah 7 litres), `gender` only where the language really has two wordings,
+  seah 7.3 litres (a third of an ephah: one seah 7, two 15, three 22, five 37)), `gender` only where the language really has two wordings,
   and Spanish `plural_you` wherever a group is addressed. In the tables
   below, SEIGNEUR, SEÑOR, BWANA, CHÚA and 주 standing for YHWH are always the
   `divine_name` span of the earlier notes (French and Spanish take the
