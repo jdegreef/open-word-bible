@@ -32,6 +32,20 @@ class InboxTriageTest(AdminTestCase):
     def patch(self, client, m, body):
         return client.patch(f"/api/admin/inbox/{m.id}/", body, format="json")
 
+    def test_team_addresses_only_for_super_admins_and_oneself(self):
+        # An editor choosing whom to assign sees names; a super admin's
+        # address isn't handed to them (staff/people.py), their own is.
+        self.patch(self.admin, self.old, {"assigned_to": "me"})
+        team = {u["id"]: u for u in client_for(self.editor).get("/api/admin/inbox/").json()["team"]}
+        self.assertNotIn("email", team[self.boss.id])
+        self.assertTrue(team[self.boss.id]["name"])
+        self.assertEqual(team[self.editor.id]["email"], self.editor.username)
+        mine = client_for(self.editor).get("/api/admin/inbox/?status=new").json()["messages"]
+        assigned = next(m for m in mine if m["id"] == self.old.id)["assigned_to"]
+        self.assertEqual(set(assigned), {"id", "name"})
+        boss_view = self.admin.get("/api/admin/inbox/").json()["team"]
+        self.assertTrue(all("email" in u for u in boss_view))
+
     def test_assign_and_unassign(self):
         r = self.patch(self.admin, self.old, {"assigned_to": "me"})
         self.assertEqual(r.json()["assigned_to"]["email"], "boss@example.org")

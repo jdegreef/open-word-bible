@@ -8,7 +8,9 @@ description: Work one fix request from the admin's queue: a GitHub issue labelle
 The admin's verse inspector and reader inbox (`backend/staff/fixes.py`) file a
 GitHub issue labelled `fix-request` for each request. Its body names the
 sentence, the file, the language, the levels, the wording now, the change asked
-for and why, and sometimes the reader message that prompted it. It ends with a
+for and why, and sometimes the number of the reader message that prompted it
+(the message itself stays private in the admin; the editor's reason says what
+the reader pointed out). It ends with a
 machine-readable line:
 
     <!-- fix-request {"record": "JHN.1.1.s1", "verse": "JHN.1.1", "language": "fr", "levels": ["L", "B", "R"], "message": 12} -->
