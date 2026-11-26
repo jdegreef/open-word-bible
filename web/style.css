@@ -204,8 +204,8 @@
 
 /* Colour modes, shared with Ochorus: indigo with a gold accent. The reader
    picks one from the gear menu (web/site.js), which sets data-theme on
-   <html>; with no choice, the page is Paper (light). "Automatic"
-   (data-theme="auto") follows the device's light or dark setting. Every
+   <html>; with no choice (or "Automatic", data-theme="auto") the page
+   follows the device's light or dark setting. Every
    mode defines the same tokens. */
 :root, :root[data-theme="light"] {
   color-scheme: light;
@@ -220,7 +220,7 @@
   --accent-contrast: #ffffff;
   --accent-soft: #ecebf7;
   --accent-soft-border: #d9d7f0;
-  --gold: #b07d22;
+  --gold: #8a6114; /* 5.1:1 on --bg, AA for small text */
   --mark: #f8e6b8;
   --warn: #7d5815;
   --warn-bg: #f7ecd2;
@@ -229,7 +229,7 @@
   --shadow-pop: 0 14px 36px -8px rgb(90 70 40 / .25);
 }
 @media (prefers-color-scheme: dark) {
-  :root[data-theme="auto"] {
+  :root:not([data-theme]), :root[data-theme="auto"] {
     color-scheme: dark;
     --bg: #16130f;
     --surface: #201b15;
@@ -265,7 +265,7 @@
   --accent-contrast: #ffffff;
   --accent-soft: #e9e5f3;
   --accent-soft-border: #d7d2ec;
-  --gold: #9c6f1e;
+  --gold: #7f5a14; /* 5.3:1 on --bg */
   --mark: #f0d993;
   --warn: #775413;
   --warn-bg: #efe0c2;
@@ -1506,6 +1506,17 @@ body.plain .chapter-book { display: none; }
 }
 .why-mark:hover, .why-mark[aria-expanded="true"] { border-color: var(--accent); color: var(--accent); }
 .why-mark:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+/* Fingers need more room than the marks show: on a touch screen the
+   footnote letters grow a little and each mark, and each Why?, gets an
+   invisible ring that makes its target about 44px tall without moving the
+   text. */
+@media (pointer: coarse) {
+  .verse .fn { font-size: 13px; }
+  .fn-mark, .why-mark { position: relative; }
+  .fn-mark { padding-inline: 4px; }
+  .fn-mark::after, .why-mark::after { content: ""; position: absolute; inset: -12px -2px; }
+  .chap { min-width: 40px; height: 40px; }
+}
 .why-list { list-style: none; margin: 6px 0 0; padding: 0; display: grid; gap: 4px; }
 .why-item {
   display: block; width: calc(100% + 16px); text-align: start; padding: 6px 8px; margin: 0 -8px; border: 0; border-radius: 6px;
@@ -1647,9 +1658,10 @@ body.plain .echo-tags { display: none; }
 }
 /* Where the margin has no room: a small dot by the number of a verse with
    cross-references, which opens their previews. Its tap target is larger
-   than the dot. */
+   than the dot. Not on phones: nearly every verse has references, so a dot
+   by each number said nothing, and the verse's sheet lists them in full. */
 .xr-mark { display: none; }
-@media (max-width: 1179px) {
+@media (min-width: 861px) and (max-width: 1179px) {
   body.xr-on .xr-mark {
     display: inline-block; position: relative; width: 6px; height: 6px; margin-block: 0; margin-inline: 3px 1px; padding: 0;
     border: 0; border-radius: 50%; background: var(--accent); opacity: .5; vertical-align: .35em; cursor: pointer;
@@ -1981,6 +1993,10 @@ a.fn-pop-more { display: inline-block; text-decoration: none; }
   .settings-toggle > span:first-child { flex: none; }
   .settings-toggle[aria-expanded="false"] + .settings { display: none; }
   .settings .controls { padding-top: 12px; }
+  /* A choice wider than the sheet (View has five) wraps onto a second
+     line rather than running off the screen. */
+  .settings .control { flex-wrap: wrap; max-width: 100%; }
+  .settings .seg { flex-wrap: wrap; max-width: 100%; border-radius: 18px; }
 
   /* The reasoning panel becomes a bottom sheet over the text: tapping a
      verse slides it up and leaves the reader's place where it was. */
@@ -2148,7 +2164,7 @@ html.signed-in .sign-in-btn { visibility: hidden; }
 .danger { border-color: color-mix(in srgb, #b3261e 35%, var(--line)); }
 .danger h2 { color: #b3261e; }
 :root[data-theme="dark"] .danger h2, :root[data-theme="night"] .danger h2, :root[data-theme="contrast"] .danger h2 { color: #f2938c; }
-@media (prefers-color-scheme: dark) { :root[data-theme="auto"] .danger h2 { color: #f2938c; } }
+@media (prefers-color-scheme: dark) { :root:not([data-theme]) .danger h2, :root[data-theme="auto"] .danger h2 { color: #f2938c; } }
 .danger-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 20px; padding: 14px 0; border-top: 1px solid var(--line); }
 .danger-row:first-of-type { border-top: 0; padding-top: 0; }
 .danger-row h3 { font-size: 16px; margin: 0 0 4px; }
@@ -3165,3 +3181,16 @@ html[dir="rtl"] .term-book:not([open]) summary::before { transform: translateY(-
 .topic-passage h2 { font-family: var(--display); font-weight: 600; font-size: 20px; margin: 0 0 6px; }
 .topic-passage h2 a { color: inherit; }
 .topic-passage p { margin: 0 0 4px; }
+
+/* A short confirmation at the foot of the screen (web/reader.js toast). */
+.toast {
+  position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); z-index: 60;
+  transform: translate(-50%, 12px); opacity: 0; pointer-events: none;
+  padding: 9px 16px; border-radius: 999px; background: var(--text); color: var(--bg);
+  font-family: var(--sans); font-size: 14px; font-weight: 600; box-shadow: var(--shadow-pop);
+  transition: opacity var(--fast) ease, transform var(--fast) ease;
+}
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+.toast:empty { display: none; }
+@media (prefers-reduced-motion: reduce) { .toast { transition: none; } }
+@media print { .toast { display: none; } }

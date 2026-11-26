@@ -229,7 +229,7 @@ class ColourModesTest(unittest.TestCase):
 
     def test_paper_is_the_default(self):
         css = (ROOT / "web" / "style.css").read_text(encoding="utf-8")
-        self.assertIn('data-pref="theme" data-default="light"', build_site.colour_prefs("en"))
+        self.assertIn('data-pref="theme" data-default="auto"', build_site.colour_prefs("en"))
         # With no choice saved, nothing follows the device's dark setting.
         self.assertNotIn(":root:not([data-theme])", css)
 
