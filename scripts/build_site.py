@@ -3164,7 +3164,7 @@ def passage_page(p, lang="en"):
 </article>
 {breadcrumb_ld(lang, book_crumbs(book, lang) + [(chapter_name(load_chapter(book, chapter)[0], book, chapter, lang), chapter_url(book, chapter)), (name, passage_url(p))])}
 """
-    title = ui["title"].format(name=name, ref=ref) if name != ref else vui["title" + suffix].format(ref=ref)
+    title = ui["title"].format(name=name, ref=ref) if name != ref else vui.get("title" + suffix, vui["title"]).format(ref=ref)
     first = verse_levels(vids[0], lang).get("B", "")
     return page(lang, title, body, path=passage_url(p), current="/read/",
                 description=shorten(f"{ref}: {first}") if first else vui["description" + suffix].format(ref=ref),
