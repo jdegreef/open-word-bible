@@ -43,8 +43,15 @@ class WorkerTest(unittest.TestCase):
                 vids = build_site.chapter_verse_pages(book, chapter, lang)
                 cases += [(vid, lang) for vid in vids[:6] + vids[-2:]]
         self.assertGreater(len({lang for _, lang in cases}), 10)
-        paths = {build_site.url(lang, build_site.verse_page_url(vid)): (vid, lang) for vid, lang in cases}
+        # A verse page the build writes is a file, which is served before
+        # the Worker is asked.
+        paths = {path: (vid, lang) for vid, lang in cases
+                 if not (self.out / (path := build_site.url(lang, build_site.verse_page_url(vid))).lstrip("/")
+                         / "index.html").exists()}
+        self.assertGreater(len(paths), 100)
         got = worker(self.out, *paths)
+        # Among them, pages with the verse in the comparison Bibles.
+        self.assertTrue(any("verse-others" in got[p]["body"] for p in paths if paths[p][1] == "es"))
         for path, (vid, lang) in paths.items():
             with self.subTest(path=path):
                 self.assertEqual(got[path]["status"], 200)

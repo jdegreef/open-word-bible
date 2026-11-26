@@ -333,7 +333,7 @@ function decisionHtml(d, own, lang, cui) {
 
 // build_site.verse_page: the page of vid (a verse of book chapter) in lang.
 // Null when its sentences are not all in lang.
-export function versePage({ meta, words: w, shell, shared, texts, notes, lang, vid }) {
+export function versePage({ meta, words: w, shell, shared, texts, notes, editions, lang, vid }) {
   const ref = parseRef(vid);
   const { book, chapter } = ref;
   const rs = verseRecords(shared, vid);
@@ -398,6 +398,16 @@ export function versePage({ meta, words: w, shell, shared, texts, notes, lang, v
                 name: `${w.books[book]} ${chapter}`, url: site + url(lang, chapterUrl(book, chapter)) },
     translationOfWork: sourceText, isBasedOn: sourceText });
   const crumbs = breadcrumbLd(meta, lang, [...w.crumbs[book], [chapterName, chapterUrl(book, chapter)], [name, path]]);
+  // The verse in the public-domain Bibles in the page's language
+  // (build_site.verse_comparison_html), for comparison only.
+  const verse = String(ref.verse);
+  const others = meta.editions.filter(([code, , elang]) => elang === lang && editions?.[code]?.[verse])
+    .map(([code, title]) => `<div class="vl-row"><dt>${esc(title)}</dt><dd>${esc(editions[code][verse], false)}</dd></div>`)
+    .join("");
+  const compared = others
+    ? `<section class="verse-section verse-others"><h2>${esc(cui.title.replace("{ref}", name), false)}</h2>`
+      + `<dl class="verse-levels">${others}</dl></section>`
+    : "";
   const body = `
 <article class="article verse-page">
 <header class="article-head">
@@ -411,6 +421,7 @@ ${numbering}
 <p class="verse-original" lang="${source}"${dir}>${esc(original, false)}</p></section>
 ${gloss}
 ${why}
+${compared}
 <p class="actions"><a class="button" href="${chapterLink}">${cui.read}&nbsp;${w.forward}</a>
 <a class="button ghost" href="${url(lang, "/compare/")}?v=${vid}">${esc(cui.title.replace("{ref}", name))}</a></p>
 ${turns ? `<p class="actions verse-turns">${turns}</p>` : ""}

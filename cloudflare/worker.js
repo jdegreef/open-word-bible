@@ -62,13 +62,15 @@ async function draw(env, m) {
     const verses = await asset(env, `/verses/${book}/${chapter}.json`, "json");
     return verses && levelPage({ meta, words, shell, verses, lang, book, chapter, level });
   }
-  const [shared, texts, page] = await Promise.all([
+  const editionLangs = meta.editions.map(([, , elang]) => elang);
+  const [shared, texts, page, editions] = await Promise.all([
     asset(env, `/chapter-data${base}.js`, "text"),
     asset(env, `/chapter-data${base}.${lang}.js`, "text"),
-    asset(env, `${lang === "en" ? "" : `/${lang}`}${base}/`, "text")]);
+    asset(env, `${lang === "en" ? "" : `/${lang}`}${base}/`, "text"),
+    editionLangs.includes(lang) ? asset(env, `/editions/${book}/${chapter}.json`, "json") : null]);
   if (!shared || !texts || !page) return null;
   return versePage({ meta, words, shell, shared: scriptData(shared), texts: scriptData(texts),
-                     notes: pageNotes(page), lang, vid: `${book}.${chapter}.${Number(verseText)}` });
+                     notes: pageNotes(page), editions, lang, vid: `${book}.${chapter}.${Number(verseText)}` });
 }
 
 export default {

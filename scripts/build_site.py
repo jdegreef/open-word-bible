@@ -4489,6 +4489,8 @@ def worker_meta():
             "languages": list(LANGUAGES), "rtl": sorted(owb_languages.RTL), "rtlReading": bool(owb_languages.RTL_READING),
             "digits": owb_languages.DIGITS, "ot": list(refs.OT_CODES), "hebrewNumbers": hebrew_numbering(),
             "levelPaths": LEVEL_PATHS, "slots": WORKER_SLOTS,
+            # The comparison Bibles, whose verses are in editions/ (EDITIONS_DIR).
+            "editions": [list(e) for e in EDITIONS],
             # The languages each chapter is wholly in: those it has level pages in.
             "chapterLanguages": {f"{b}.{ch}": [c for c in LANGUAGES if chapter_indexed(b, ch, c)] for b, ch in chapters()},
             # Characters a search result shows twice as wide (text_width).
