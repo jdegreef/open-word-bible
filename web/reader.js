@@ -1765,7 +1765,19 @@
   // opens their previews; the style sheet shows it only there.
   function verseNumber(v) {
     if (v === "0") return document.createDocumentFragment();
-    var sup = el("sup", null, v);
+    var sup = el("sup", null);
+    var page = DATA.versePages && DATA.versePages[v];
+    if (page) {
+      // The verse's own page (build_site.chapter_text). A plain click does
+      // what a click on the verse does; a click to open it elsewhere (a
+      // new tab, a modifier key) goes to the page.
+      var a = el("a", "vn-link", v);
+      a.href = page;
+      a.addEventListener("click", function (e) {
+        if (!e.ctrlKey && !e.metaKey && !e.shiftKey && !e.altKey && e.button === 0) e.preventDefault();
+      });
+      sup.appendChild(a);
+    } else sup.textContent = v;
     var vid = verseId(v);
     if (!xrefsShown() || !DATA.crossrefs[vid]) return sup;
     var b = el("button", "xr-mark");
