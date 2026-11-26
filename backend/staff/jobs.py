@@ -40,7 +40,7 @@ from rest_framework.response import Response
 
 from owb import languages, refs
 
-from . import github, people
+from . import github, kept, people
 from .github import GitHubError
 from .models import record
 from .permissions import admin_view
@@ -101,7 +101,9 @@ def jobs(request):
               "books": [{**b, "testament": "ot" if b["code"] in refs.OT_CODES else "nt"} for b in books],
               "languages": langs, "coverage": coverage, "bulk_limit": BULK_LIMIT}
     try:
-        answer["jobs"] = open_jobs()
+        # Kept (two minutes); filing reads the open jobs afresh to refuse a
+        # duplicate.
+        answer["jobs"] = kept.kept("staff.kept.jobs", open_jobs, 120)
     except GitHubError:
         answer["jobs"], answer["error"] = [], "GitHub could not be reached, so open jobs aren't listed."
     answer["board"] = _board(coverage, answer["jobs"])

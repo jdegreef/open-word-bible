@@ -32,7 +32,7 @@ from rest_framework.exceptions import PermissionDenied, ValidationError
 from rest_framework.response import Response
 
 from accounts import auth
-from accounts.models import Role, SignInLink, SystemAccount
+from accounts.models import ApiToken, Mark, Role, SignInLink, SystemAccount
 from accounts.system import name_from_email, people
 from feedback.models import ReaderMessage
 
@@ -72,8 +72,7 @@ def _row(user):
 @admin_view("users")
 def user_list(request):
     params = request.query_params
-    users = get_user_model().objects.select_related("system_account").prefetch_related("roles").annotate(
-        n_marks=Count("marks", distinct=True), n_devices=Count("api_tokens", distinct=True))
+    users = get_user_model().objects.select_related("system_account").prefetch_related("roles")
     shown = params.get("system", "")
     hidden = 0
     if shown == "only":
@@ -94,7 +93,14 @@ def user_list(request):
     except ValueError:
         offset = 0
     total = users.count()
-    page = users.order_by("-date_joined")[offset:offset + PAGE]
+    page = list(users.order_by("-date_joined")[offset:offset + PAGE])
+    # Saved verses and devices counted for the accounts shown, not for every
+    # reader before the page is taken (it grew with what readers save).
+    marks = dict(Mark.objects.filter(user__in=page).values("user").annotate(n=Count("id")).values_list("user", "n"))
+    devices = dict(ApiToken.objects.filter(user__in=page).values("user").annotate(n=Count("id"))
+                   .values_list("user", "n"))
+    for u in page:
+        u.n_marks, u.n_devices = marks.get(u.id, 0), devices.get(u.id, 0)
     return Response({"users": [_row(u) for u in page], "total": total, "offset": offset, "page": PAGE,
                      "system_hidden": hidden,
                      "roles": [{"kind": k, "label": label} for k, label in Role.Kind.choices]})
