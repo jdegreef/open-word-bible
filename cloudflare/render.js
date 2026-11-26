@@ -404,6 +404,11 @@ export function versePage({ meta, words: w, shell, shared, texts, notes, edition
   const others = meta.editions.filter(([code, , elang]) => elang === lang && editions?.[code]?.[verse])
     .map(([code, title]) => `<div class="vl-row"><dt>${esc(title)}</dt><dd>${esc(editions[code][verse], false)}</dd></div>`)
     .join("");
+  // The topics whose passages include the verse (build_site.verse_topics_html).
+  const found = w.topics.filter((x) => x.verses.includes(vid));
+  const topics = found.length
+    ? `<p class="verse-pages">${w.topicsTitle}: ${found.map((x) => `<a href="${x.href}">${esc(x.name)}</a>`).join(" · ")}</p>`
+    : "";
   const compared = others
     ? `<section class="verse-section verse-others"><h2>${esc(cui.title.replace("{ref}", name), false)}</h2>`
       + `<dl class="verse-levels">${others}</dl></section>`
@@ -422,6 +427,7 @@ ${numbering}
 ${gloss}
 ${why}
 ${compared}
+${topics}
 <p class="actions"><a class="button" href="${chapterLink}">${cui.read}&nbsp;${w.forward}</a>
 <a class="button ghost" href="${url(lang, "/compare/")}?v=${vid}">${esc(cui.title.replace("{ref}", name))}</a></p>
 ${turns ? `<p class="actions verse-turns">${turns}</p>` : ""}

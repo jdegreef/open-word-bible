@@ -4450,7 +4450,13 @@ def worker_language(lang):
             "forward": forward(lang), "notTranslated": t(lang, "footer.not_translated"),
             "books": {b: chapter_book(b, lang) for b, _ in books()},
             "crumbs": {b: book_crumbs(b, lang) for b, _ in books()},
-            "chapters": {f"{b}.{ch}": chapter_name(load_chapter(b, ch)[0], b, ch, lang) for b, ch in chapters()}}
+            "chapters": {f"{b}.{ch}": chapter_name(load_chapter(b, ch)[0], b, ch, lang) for b, ch in chapters()},
+            # The topics listed in this language, with the verses of their
+            # passages, for a verse page's topic links (verse_topics_html).
+            "topicsTitle": c["topics"]["title"],
+            "topics": [{"href": url(lang, topic_url(x)), "name": topic_name(x, lang),
+                        "verses": [v for ref in x["passages"] for v in topic_passage(ref)[2]]}
+                       for x in topics_in(lang)]}
 
 
 def hebrew_numbering():
