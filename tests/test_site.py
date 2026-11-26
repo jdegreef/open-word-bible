@@ -577,7 +577,9 @@ class SiteTest(unittest.TestCase):
 
     def test_search_engines_and_ai_tools_may_read_everything(self):
         robots = (self.out / "robots.txt").read_text(encoding="utf-8")
-        self.assertNotIn("Disallow", robots)
+        # Only the Worker's own data is kept out (build_site.WORKER_PAGES).
+        kept_out = ["Disallow: /_worker/"] if build_site.WORKER_PAGES else []
+        self.assertEqual(re.findall(r"Disallow: \S*", robots), kept_out)
         for bot in ("GPTBot", "OAI-SearchBot", "ClaudeBot", "PerplexityBot", "Google-Extended"):
             self.assertIn(f"User-agent: {bot}\n", robots)
         self.assertIn("User-agent: *\nAllow: /\n", robots)
@@ -1992,6 +1994,10 @@ class VersePageTest(unittest.TestCase):
                 self.assertTrue(all(lang in r["renderings"] for r in build_site.verse_records(vid)), (vid, lang))
 
     def test_chapter_links_its_verse_pages(self):
+        if build_site.WORKER_PAGES:
+            # Every verse number links its page; under the text, the chapter's other levels.
+            self.assertIn('<a href="/jhn/3/literal/">Literal</a>', build_site.verse_page_links("JHN", 3, "en"))
+            return
         self.assertIn('<a href="/jhn/3/16/">John 3:16</a>', build_site.verse_page_links("JHN", 3, "en"))
         none = next((b, c) for b, c in build_site.chapters() if not build_site.verse_pages_in_chapter(b, c))
         self.assertEqual(build_site.verse_page_links(*none, "en"), "")
