@@ -248,7 +248,9 @@ are one measure, gives both as "about 6 gallons". "About 20 quarts" for an
 ephah is the same 22 litres, not 19.
 
 The New Testament's "three measures" of flour (Matthew 13:33; Luke 13:21)
-is given as a weight of flour, not a volume, so this table does not set it.
+is given as a weight of flour in every language (English "about 40 pounds"),
+not a volume. A decision that names the volume uses the table: three seahs
+are about 22 litres.
 
 ## 11. Right to left (Arabic, Persian, Urdu)
 
