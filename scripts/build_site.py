@@ -2614,6 +2614,8 @@ def chapter_page(book, chapter, lang="en"):
     {plan_bar(book, chapter, lang)}
     {chapter_turns(book, chapter, lang)}
     {verse_page_links(book, chapter, lang)}
+    {chapter_passage_links(book, chapter, lang)}
+    {interlinear_link(book, chapter, lang) if not partial else ""}
     {chapter_articles_html(book, chapter, lang)}
   </article>
   <aside class="panel" id="panel" aria-live="polite" tabindex="-1"></aside>
@@ -3067,6 +3069,178 @@ def verse_page(vid, lang="en"):
                 description=shorten(f"{name}: {levels.get('B', '')}") if levels.get("B")
                 else ui["description" + suffix].format(ref=name),
                 translated=verse_page_languages(vid))
+
+
+# Named passages (data/named_passages.json): well-known passages people
+# search for by name ("the Lord's Prayer") or by range ("1 Corinthians
+# 13:4-7"), each with a page at /<book>/<chapter>/<first>-<last>/ in every
+# language the whole passage is in, and in English an address by its name
+# that redirects there (render.yaml routes).
+NAMED_PASSAGES = json.loads((ROOT / "data" / "named_passages.json").read_text(encoding="utf-8"))["passages"]
+
+
+def passage_url(p):
+    return f"/{p['book'].lower()}/{p['chapter']}/{p['first']}-{p['last']}/"
+
+
+def passage_vids(p):
+    return [f"{p['book']}.{p['chapter']}.{v}" for v in range(p["first"], p["last"] + 1)]
+
+
+def passage_records(p):
+    vids = set(passage_vids(p))
+    return [r for r in chapter_records(p["book"], p["chapter"]) if vids & set(r["refs"])]
+
+
+@functools.cache
+def passage_page_languages(pid):
+    """The languages a named passage's page is built in: those every
+    sentence of it is in."""
+    p = next(x for x in NAMED_PASSAGES if x["id"] == pid)
+    rs = passage_records(p)
+    return tuple(code for code in LANGUAGES if rs and all(code in r["renderings"] for r in rs))
+
+
+def passage_ref_name(p, lang):
+    return f"{chapter_book(p['book'], lang)} {p['chapter']}:{p['first']}\u2013{p['last']}"
+
+
+def passage_page(p, lang="en"):
+    """A named passage's page: at each level, with its verses' numbers
+    linking to their pages where they have one, the original words, and
+    the meaning decisions behind it."""
+    esc = html.escape
+    book, chapter = p["book"], p["chapter"]
+    _, words = load_chapter(book, chapter)
+    vids = passage_vids(p)
+    rs = passage_records(p)
+    names = catalog(lang)["levels"]
+    ui, cui, vui = catalog(lang)["passage_page"], catalog(lang)["compare.ui"], catalog(lang)["verse_page"]
+    source = source_language(book)
+    suffix = "_hbo" if source == "hbo" else ""
+    ref = passage_ref_name(p, lang)
+    name = p["names"].get(lang) or ref
+    pages = {v for v in verse_pages_in_chapter(book, chapter) if lang in verse_page_languages(v)}
+
+    def level_text(code):
+        out = []
+        for vid in vids:
+            text = verse_levels(vid, lang).get(code)
+            if not text:
+                continue
+            n = esc(str(refs.parse(vid).verse))
+            number = f'<a href="{url(lang, verse_page_url(vid))}">{n}</a>' if vid in pages else n
+            out.append(f"<sup>{number}</sup>{esc(text, quote=False)}")
+        return " ".join(out)
+    level_rows = "".join(f'<div class="vl-row"><dt>{names[code]}</dt><dd>{level_text(code)}</dd></div>'
+                         for code in "BLR")
+    direction = ' dir="rtl"' if source == "hbo" else ""
+    original = " ".join("".join(w["text"] + (w.get("after", " ") if source == "hbo" or w.get("after", " ").endswith(" ")
+                                             else w["after"] + " ") for w in words.get(vid, [])).strip()
+                        for vid in vids)
+    translated = page_notes(rs, lang)
+    in_range = {w["id"] for vid in vids for w in words.get(vid, [])}
+    meaning = "".join(verse_decision_html(d, translated.get(r["id"], {}).get(d["id"]), lang)
+                      for r in rs for d in r["decisions"]
+                      if d["layer"] == "meaning" and (not d.get("tokens") or in_range & set(d["tokens"])))
+    why = (f'<section class="verse-section"><h2>{esc(vui["meaning_q"].format(ref=name), quote=False)}</h2>'
+           f'<ul class="verse-decisions">{meaning}</ul></section>' if meaning and "meaning_q" in vui else
+           f'<section class="verse-section"><h2>{cui["why"]}</h2><ul class="verse-decisions">{meaning}</ul></section>'
+           if meaning else "")
+    chapter_link = url(lang, chapter_url(book, chapter)) + f"#v{p['first']}"
+    body = f"""
+<article class="article verse-page passage-page">
+<header class="article-head">
+<p class="eyebrow"><a href="{url(lang, chapter_url(book, chapter))}">{esc(f"{chapter_book(book, lang)} {chapter}")}</a></p>
+<h1>{esc(name)}</h1>
+{f'<p class="dek">{esc(ref)}</p>' if name != ref else ""}
+<p class="notice">{vui["draft"]}</p>
+</header>
+<dl class="verse-levels">{level_rows}</dl>
+<section class="verse-section"><h2>{vui["original" + suffix]}</h2>
+<p class="verse-original" lang="{source}"{direction}>{esc(original, quote=False)}</p></section>
+{why}
+<p class="actions"><a class="button" href="{chapter_link}">{cui["read"]}&nbsp;{forward(lang)}</a></p>
+</article>
+{breadcrumb_ld(lang, book_crumbs(book, lang) + [(chapter_name(load_chapter(book, chapter)[0], book, chapter, lang), chapter_url(book, chapter)), (name, passage_url(p))])}
+"""
+    title = ui["title"].format(name=name, ref=ref) if name != ref else vui.get("title" + suffix, vui["title"]).format(ref=ref)
+    first = verse_levels(vids[0], lang).get("B", "")
+    return page(lang, title, body, path=passage_url(p), current="/read/",
+                description=shorten(f"{ref}: {first}") if first else vui["description" + suffix].format(ref=ref),
+                translated=passage_page_languages(p["id"]))
+
+
+def interlinear_link(book, chapter, lang):
+    """Under an English chapter: its interlinear page (interlinear_page)."""
+    if lang != "en":
+        return ""
+    records, _ = load_chapter(book, chapter)
+    suffix = "_hbo" if source_language(book) == "hbo" else ""
+    label = catalog(lang)["interlinear"]["title" + suffix].format(chapter=chapter_name(records, book, chapter, lang))
+    return f'<p class="verse-pages"><a href="{url(lang, interlinear_url(book, chapter))}">{html.escape(label)}</a></p>'
+
+
+def chapter_passage_links(book, chapter, lang):
+    """Under a chapter: links to its named passages' pages."""
+    links = " ".join(f'<a href="{url(lang, passage_url(p))}">{html.escape(p["names"].get(lang) or passage_ref_name(p, lang))}</a>'
+                     for p in NAMED_PASSAGES if (p["book"], p["chapter"]) == (book, chapter)
+                     and lang in passage_page_languages(p["id"]))
+    return f'<p class="verse-pages">{links}</p>' if links else ""
+
+
+# A chapter's interlinear page (/<book>/<chapter>/interlinear/): each verse
+# word by word, the original over its transliteration and English gloss,
+# each word linking to its page, and the verse in Balanced English under
+# it. English only, as the glosses are.
+def interlinear_url(book, chapter):
+    return chapter_url(book, chapter) + "interlinear/"
+
+
+def interlinear_page(book, chapter, lang="en"):
+    esc = html.escape
+    records, words = load_chapter(book, chapter)
+    source = source_language(book)
+    suffix = "_hbo" if source == "hbo" else ""
+    title = chapter_name(records, book, chapter, lang)
+    entries = word_entries()
+    direction = ' dir="rtl"' if source == "hbo" else ""
+    rows = []
+    for vid in dict.fromkeys(v for r in records for v in r["refs"] if refs.parse(v).chapter == chapter):
+        ws = transliterated(words.get(vid, []), source)
+        if not ws:
+            continue
+        cells = []
+        for w in ws:
+            e = entries.get(w["lemma"])
+            strong = entry_strong(e) if e else ""
+            word = (f'<a href="{url(lang, word_path(w["lemma"]))}">{esc(strong)}</a>' if e and word_has_page(e)
+                    else esc(strong))
+            cells.append(f'<span class="iw"><span class="iw-g" lang="{source}">{esc(w["text"])}</span>'
+                         f'<span class="iw-t">{esc(w["translit"])}</span>'
+                         f'<span class="iw-e">{esc(w.get("gloss", ""))}</span>'
+                         f'<span class="iw-e">{word}</span></span>')
+        v = refs.parse(vid).verse
+        text = verse_levels(vid, lang).get("B", "")
+        rows.append(f'<section class="verse-section" id="v{v}"><h2>{esc(verse_ref_name(vid, lang))}</h2>'
+                    f'<div class="interlinear"{direction}>{"".join(cells)}</div>'
+                    f'<p>{esc(text, quote=False)}</p></section>')
+    name = catalog(lang)["interlinear"]["title" + suffix].format(chapter=title)
+    body = f"""
+<article class="article interlinear-page">
+<header class="article-head">
+<p class="eyebrow"><a href="{url(lang, chapter_url(book, chapter))}">{esc(title)}</a></p>
+<h1>{esc(name)}</h1>
+<p class="notice">{catalog(lang)["verse_page"]["draft"]}</p>
+</header>
+{"".join(rows)}
+<p class="actions"><a class="button" href="{url(lang, chapter_url(book, chapter))}">{catalog(lang)["compare.ui"]["read"]}&nbsp;{forward(lang)}</a></p>
+</article>
+{breadcrumb_ld(lang, book_crumbs(book, lang) + [(title, chapter_url(book, chapter)), (name, interlinear_url(book, chapter))])}
+"""
+    return page(lang, name, body, path=interlinear_url(book, chapter), current="/read/",
+                description=catalog(lang)["interlinear"]["description"].format(chapter=title),
+                translated=("en",))
 
 
 def verse_ld(vid, lang, name, levels, rs):
@@ -7909,6 +8083,9 @@ def build(out):
                 continue
             add(chapter_url(book, chapter), chapter_page(book, chapter, lang),
                 index=chapter_indexed(book, chapter, lang), sources=chapter_sources(book, chapter))
+            if lang == "en" and chapter_indexed(book, chapter, lang):
+                add(interlinear_url(book, chapter), interlinear_page(book, chapter, lang),
+                    sources=chapter_sources(book, chapter))
         for book, _ in books(lang):
             if lang in book_languages(book):
                 add(book_url(book), book_page(book, lang), sources=intro_sources(book, lang))
@@ -7916,6 +8093,9 @@ def build(out):
             if lang in verse_page_languages(vid):
                 ref = refs.parse(vid)
                 add(verse_page_url(vid), verse_page(vid, lang), sources=chapter_sources(ref.book, ref.chapter))
+        for p in NAMED_PASSAGES:
+            if lang in passage_page_languages(p["id"]):
+                add(passage_url(p), passage_page(p, lang), sources=chapter_sources(p["book"], p["chapter"]))
         for book, _ in books():
             add(edition_url(book), edition_page(book, lang), index=False)
         articles = load_articles(lang)

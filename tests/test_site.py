@@ -660,6 +660,29 @@ class SiteTest(unittest.TestCase):
         listed = set(re.findall(r"<loc>https://openwordbible\.org([^<]*)</loc>", sitemap_text(self.out)))
         self.assertEqual(set(marks), listed)
 
+    def test_named_passages_have_pages_and_addresses_by_name(self):
+        prayer = next(p for p in build_site.NAMED_PASSAGES if p["id"] == "lords-prayer")
+        page = (self.out / "mat/6/9-13/index.html").read_text(encoding="utf-8")
+        self.assertIn("<h1>The Lord&#x27;s Prayer</h1>", page)
+        self.assertIn('<link rel="canonical" href="https://openwordbible.org/mat/6/9-13/">', page)
+        self.assertIn("<title>주기도문", (self.out / "ko/mat/6/9-13/index.html").read_text(encoding="utf-8"))
+        chapter = (self.out / "mat/6/index.html").read_text(encoding="utf-8")
+        self.assertIn(f'href="{build_site.passage_url(prayer)}"', chapter)
+        render = (build_site.ROOT / "render.yaml").read_text(encoding="utf-8")
+        for p in build_site.NAMED_PASSAGES:
+            self.assertIn(f"source: /{p['id']}/\n        destination: {build_site.passage_url(p)}\n", render)
+            # Every verse of the range is in the passage's chapter.
+            self.assertTrue(all(build_site.verse_records(v) for v in build_site.passage_vids(p)), p["id"])
+
+    def test_an_english_chapter_has_an_interlinear_page(self):
+        page = (self.out / "jhn/1/interlinear/index.html").read_text(encoding="utf-8")
+        self.assertIn("<h1>John 1 Greek interlinear</h1>", page)
+        _, words = build_site.load_chapter("JHN", 1)
+        self.assertIn(f'<span class="iw-g" lang="grc">{words["JHN.1.1"][0]["text"]}</span>', page)
+        self.assertIn('href="/jhn/1/interlinear/"', (self.out / "jhn/1/index.html").read_text(encoding="utf-8"))
+        self.assertIn("Hebrew interlinear", (self.out / "gen/1/interlinear/index.html").read_text(encoding="utf-8"))
+        self.assertFalse((self.out / "es/jhn/1/interlinear").exists())
+
     def test_a_page_fingerprint_ignores_asset_versions(self):
         a = "<head>x</head><main><p>Text</p><script src=\"/r.js?v=0123456789\"></script></main>"
         b = a.replace("0123456789", "abcdef0123").replace("<head>x", "<head>y")
