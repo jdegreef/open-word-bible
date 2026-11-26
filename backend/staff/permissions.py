@@ -32,6 +32,8 @@ from rest_framework.response import Response
 
 from accounts.models import Role
 
+from . import people
+
 try:
     import sentry_sdk
 except ImportError:   # pragma: no cover - it is in requirements.txt
@@ -110,6 +112,8 @@ def admin_view(area, methods=("GET",), once=False):
             if slot and not cache.add(slot, "sending", ONCE_SECONDS):
                 return Response({"detail": "This was sent a moment ago, so it wasn't sent again. Reload to see it.",
                                  "code": "duplicate"}, status=status.HTTP_409_CONFLICT)
+            # Who is asking, for how people are shown in the answer (people.py).
+            viewer = people.VIEWER.set((request.user, is_super_admin(request.user)))
             try:
                 response = view(request, *args, **kwargs)
             except (APIException, Http404, PermissionDenied):
@@ -118,6 +122,8 @@ def admin_view(area, methods=("GET",), once=False):
                 raise   # DRF answers these itself, as JSON
             except Exception as e:
                 response = failed(request, e)
+            finally:
+                people.VIEWER.reset(viewer)
             if slot and response.status_code >= 400:
                 cache.delete(slot)   # nothing was done: trying again may
             return response

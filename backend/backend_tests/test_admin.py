@@ -625,7 +625,12 @@ class FixTest(AdminTestCase):
         self.assertIn("**File:** `content/JHN/JHN.1.1-18.json`", body["body"])
         self.assertIn("- Balanced: x", body["body"])
         self.assertNotIn("- Literal:", body["body"])
-        self.assertIn("> La Parole, s'il vous plaît", body["body"])
+        # The issue is public: the reader's message is named, never quoted,
+        # and the editor is named without their address.
+        self.assertNotIn("La Parole, s'il vous plaît", body["body"])
+        self.assertIn(f"Prompted by a reader's suggestion (admin inbox #{message.id}).", body["body"])
+        self.assertIn("Requested in the admin by an editor.", body["body"])
+        self.assertNotIn("ed@example.org", body["body"])
         self.assertIn(f'"message": {message.id}', body["body"])
         message.refresh_from_db()
         self.assertEqual(message.note, "Fix requested: #9")
