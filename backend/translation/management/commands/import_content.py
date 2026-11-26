@@ -294,10 +294,48 @@ class Command(BaseCommand):
                                         before=old, after=new))
         return out
 
+    def unchanged(self, records, renderings, editions):
+        """The ids of records the database holds exactly as they are: the
+        sentence's fields, its renderings (renderings: what record_changes
+        read) and its decisions in order. Two queries for the file."""
+        ids = [r["id"] for r in records]
+        held = {row[0]: row[1:] for row in Sentence.objects.filter(record_id__in=ids).values_list(
+            "record_id", "book", "chapter", "verse", "number", "refs", "source_edition_id", "source_text_id",
+            "tokens", "source_text", "literal_gloss", "alignments")}
+        decisions = {}
+        for row in (Decision.objects.filter(sentence__record_id__in=ids).order_by("sentence_id", "order")
+                    .values_list("sentence__record_id", "key", "layer", "language", *DECISION_FIELDS)):
+            decisions.setdefault(row[0], []).append(tuple(row[1:]))
+        same = set()
+        for record in records:
+            if record["id"] not in held:
+                continue
+            first = refs.parse(record["refs"][0])
+            source = record["source"]
+            fields = (first.book, first.chapter, first.verse, int(record["id"].rsplit(".s", 1)[1]), record["refs"],
+                      editions[TEXT_ID_EDITION[source["text_id"]]].id, source["text_id"], source["tokens"],
+                      source.get("text", ""), record["literal_gloss"], record.get("alignments", []))
+            texts = {lang: levels for lang, levels in record["renderings"].items() if levels}
+            mine = [(d["id"], d["layer"], d["language"] or "", *(d.get(f, []) if f == "levels" else d[f]
+                                                                   for f in DECISION_FIELDS))
+                    for d in record["decisions"]]
+            if (held[record["id"]] == fields and renderings.get(record["id"], {}) == texts
+                    and decisions.get(record["id"], []) == mine):
+                same.add(record["id"])
+        return same
+
     def save(self, records, editions):
         """Save one file's records, a handful of queries for the whole file."""
         records = list({r["id"]: r for r in records}.values())
         was = self.record_changes(records)
+        # A record the database already holds exactly as it is is left
+        # alone: rewriting it would mark the sentence saved (updated_at),
+        # and everything kept against the content (the admin's counts, the
+        # review states' comparison) would be counted again for nothing.
+        same = self.unchanged(records, was, editions)
+        records = [r for r in records if r["id"] not in same]
+        if not records:
+            return
         # The drafted counts (DraftedCount) change by what this file adds or
         # drops; what was there comes from record_changes' one query.
         before = Counter((refs.parse(record["refs"][0]).book, lang) for record in records
