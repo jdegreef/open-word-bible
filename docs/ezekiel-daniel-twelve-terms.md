@@ -249,7 +249,7 @@ year" but does not convert to a modern calendar.
 
 | Hebrew | Literal | Balanced | Readable |
 |---|---|---|---|
-| *'eshet zenunim* (1:2) | a wife of prostitution | a promiscuous wife | a wife who will be unfaithful |
+| *'eshet zenunim* (1:2) | a wife of prostitution | a promiscuous wife | an unfaithful woman (not "a wife who will be unfaithful", which would decide when she became so) |
 | *zanah* | prostitute oneself | prostitute oneself | be unfaithful (as Judges 2:17) |
 | *Lo' ruchamah* (1:6) | Lo-ruhamah | No Compassion | No Compassion |
 | *Lo' 'ammi* (1:9) | Lo-ammi | Not My People | Not My People |
