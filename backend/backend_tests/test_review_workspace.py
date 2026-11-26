@@ -149,6 +149,9 @@ class AssignmentTest(AdminTestCase):
         self.assertEqual(self.assign(self.editor, layer="hbo", assignee=self.boss.id).json()["code"], "not_in_layer")
         self.assertEqual(self.assign(self.editor, chapter_from=3, chapter_to=2).status_code, 400)
         self.assertEqual(self.assign(self.editor, due="tomorrow").status_code, 400)
+        # A date typed digit by digit, sent part-way, is a slip, not a date.
+        r = self.assign(self.editor, due="0001-12-01")
+        self.assertEqual((r.status_code, r.json()["code"]), (400, "invalid_date"))
         # Editors change and close; reviewers can't.
         path = f"/api/admin/assignments/{a['id']}/"
         self.assertEqual(self.french.patch(path, {"closed": True}, format="json").status_code, 403)

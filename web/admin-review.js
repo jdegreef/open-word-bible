@@ -363,8 +363,11 @@ OWBAdmin.module(function (A) {
   }
   // A link to the layer's review queue, showing one book (or every book)
   // and one state.
+  // The queue's filters are read from its address (OWBAdminNav), so a link
+  // to a book or state of it says them there.
   function queueLink(layer, book, state, text) {
-    return h("a", { href: "#review/" + layer, onclick: function () { rememberTab("review.book", book); rememberTab("review.state", state); } }, text);
+    var href = N.build("review", { layer: layer, book: book || "", state: state || "todo" }, { layer: "", book: "", state: "todo" });
+    return h("a", { href: href }, text);
   }
   VIEWS.workspace = function (arg) {
     var layer = arg || sessionTab("review.layer", "");

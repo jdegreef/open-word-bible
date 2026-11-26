@@ -1904,7 +1904,20 @@
     }
     function row(a) {
       var dueIn = h("input", { type: "date", value: a.due || "", "aria-label": "Due date for " + a.label });
-      dueIn.addEventListener("change", function () { patch(a, { due: dueIn.value }); });
+      // Saved on leaving the field (or Enter), not on "change": typing a
+      // date digit by digit is a valid date part-way ("0001-12-01").
+      function saveDue() {
+        var v = dueIn.value;
+        if (v === (a.due || "")) return;
+        if (v && Number(v.slice(0, 4)) < 2000) {
+          dueIn.value = a.due || "";
+          note(status, "That date looks unfinished, so it wasn't saved. Type the whole date.", true);
+          return;
+        }
+        patch(a, { due: v });
+      }
+      dueIn.addEventListener("blur", saveDue);
+      dueIn.addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); saveDue(); } });
       var close = h("button", { type: "button", class: "admin-link" }, a.closed_at ? "Reopen" : "Close");
       close.addEventListener("click", function () { busy(close, true); patch(a, { closed: !a.closed_at }, close); });
       return h("tr", null,

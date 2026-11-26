@@ -190,9 +190,15 @@ def _due(data):
     if value in (None, ""):
         return None
     try:
-        return datetime.date.fromisoformat(str(value))
+        due = datetime.date.fromisoformat(str(value))
     except ValueError:
         raise ValidationError({"due": "Give the date as YYYY-MM-DD.", "code": "invalid_date"})
+    # A date typed digit by digit can be sent part-way ("0001-12-01"): a due
+    # date is within a few years of today, or it's a slip.
+    today = timezone.localdate()
+    if not today.replace(year=today.year - 1) <= due <= today.replace(year=today.year + 10):
+        raise ValidationError({"due": "Give a date from last year to ten years from now.", "code": "invalid_date"})
+    return due
 
 
 def _note(data):
