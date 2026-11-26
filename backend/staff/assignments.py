@@ -33,6 +33,7 @@ from owb import languages, refs
 from texts.models import Verse
 
 from .models import ReviewAssignment, record
+from . import people
 from .permissions import admin_view, is_super_admin
 from .review import STATES, _in_layer, _scope, layer_json
 
@@ -92,7 +93,7 @@ def range_label(a):
 
 
 def _person(user):
-    return {"id": user.id, "email": user.username, "name": user.get_full_name() or user.username} if user else None
+    return people.person(user)
 
 
 def assignment_json(a, today=None, counts=None):
@@ -189,9 +190,15 @@ def _due(data):
     if value in (None, ""):
         return None
     try:
-        return datetime.date.fromisoformat(str(value))
+        due = datetime.date.fromisoformat(str(value))
     except ValueError:
         raise ValidationError({"due": "Give the date as YYYY-MM-DD.", "code": "invalid_date"})
+    # A date typed digit by digit can be sent part-way ("0001-12-01"): a due
+    # date is within a few years of today, or it's a slip.
+    today = timezone.localdate()
+    if not today.replace(year=today.year - 1) <= due <= today.replace(year=today.year + 10):
+        raise ValidationError({"due": "Give a date from last year to ten years from now.", "code": "invalid_date"})
+    return due
 
 
 def _note(data):

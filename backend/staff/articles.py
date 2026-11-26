@@ -24,7 +24,7 @@ from rest_framework.response import Response
 
 from owb import languages
 
-from . import github, jobs
+from . import github, jobs, people
 from .models import record
 from .permissions import admin_view
 
@@ -122,7 +122,7 @@ def _file(request):
               "`python3 scripts/check_translations.py --stamp articles/<lang>/<slug>.md`."]
     if note:
         lines += ["", "**Note from the admin:**", "", note]
-    lines += ["", f"Filed from the admin by {request.user.username}.", "",
+    lines += ["", f"Filed from the admin by {people.public_name(request.user)}.", "",
               "<!-- article-job " + json.dumps({"language": lang, "slugs": slugs}) + " -->"]
     title = f"Articles in {name}: {len(slugs)} to translate or update" if len(slugs) > 1 else \
         f"Article in {name}: {titles[slugs[0]]}"
