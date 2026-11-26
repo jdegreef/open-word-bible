@@ -6,11 +6,11 @@
 #
 # Load any missing source texts, import the content/ files that changed and
 # update the search entries that changed, then email the super admins if the
-# import failed or left work (send_alerts), and fill the admin's counts
-# (warm_admin). import_content stops starting
-# files after BUDGET, search languages after SEARCH_BUDGET and writes nothing
-# after the deadline; what is left waits for the next run, which starts
-# where this one stopped. The deadline stays under the hourly schedule.
+# import failed or left work (send_alerts), measure each language's content
+# checks (precompute_checks) and fill the admin's counts (warm_admin).
+# import_content stops starting files after BUDGET, search languages after
+# SEARCH_BUDGET and writes nothing after the deadline; what is left waits for
+# the next run, which starts where this one stopped. The deadline stays under the hourly schedule.
 set -u
 cd "$(dirname "$0")/.."
 
@@ -30,6 +30,12 @@ python backend/manage.py import_content --if-texts-loaded --budget "$BUDGET" \
   --search-budget "$SEARCH_BUDGET" --deadline "$END" --separate-processes
 status=$?
 python backend/manage.py send_alerts
+# Each reading language's content checks, measured and kept in the database
+# (staff/checks.py), so the admin's Checks page opens on them rather than
+# measuring for 10-15 seconds a language. Only languages whose content
+# changed are measured (about 3-4 minutes when all have); warm_admin then
+# finds them kept. Never fails the job.
+python backend/manage.py precompute_checks --deadline "$END" || true
 # The admin's slow pages (coverage, key terms, consistency, the review
 # queues) opened once, so the first person in after an import doesn't wait
 # for every count; quick when nothing changed. Never fails the job.

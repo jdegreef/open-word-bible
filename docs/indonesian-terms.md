@@ -825,7 +825,7 @@ in different books. They are now one form each, by these rules:
 | 1 Kings | Elijah the Tishbite; settlers | Elia, orang Tisybe; *pendatang* | 17:1 |
 | 1 Kings | wadi Cherith; Zarephath; ravens | sungai Kerit (L, B), Kali Kerit (R); Sarfat; *burung gagak* | 17:3–9 |
 | 1 Kings | Obadiah (steward); troubler of Israel | Obaja; *pengacau Israel* (L, B) | 18:3, 17 |
-| 1 Kings | Mount Carmel; wadi Kishon; seah | gunung Karmel; sungai Kison (L, B), Kali Kison (R); *sukat* (L), `{{units:sekitar 7,3 liter\|satu sukat}}` (B, R) | 18:19–40 |
+| 1 Kings | Mount Carmel; wadi Kishon; seah | gunung Karmel; sungai Kison (L, B), Kali Kison (R); *sukat* (L), `{{units:sekitar lima belas liter\|dua sukat}}` (B, R) | 18:19–40 |
 | 1 Kings | prophesied (ecstatic raving) | *kerasukan* | 18:29 |
 | 1 Kings | broom tree; sound of thin silence | *pohon arar* (L, B), *semak arar* (R); *bunyi keheningan yang tipis* (L) | 19:4, 12 |
 | 1 Kings | God of hosts; very zealous | *Allah semesta alam*; *sangat giat bekerja* (uncertain; alternative *cemburu untuk*) | 19:10 |
@@ -2180,7 +2180,7 @@ in different books. They are now one form each, by these rules:
 | Ezra | Ecbatana | Ekbatana | 6:2 |
 | Ezra | Hilkiah; Amariah; Meraioth; Zerahiah; Uzzi; Bukki; Abishua | Hilkia; Amarya; Merayot; Zerahya; Uzi; Buki; Abisyua | 7:1–5 |
 | Ezra | scribe (Ezra's title) | *ahli kitab* (L, B); *guru hukum Taurat* (R) | 7:6 |
-| Ezra | talent; kor; bath | `{{units:sekitar 3,4 ton perak\|100 talenta perak}}`; `{{units:sekitar 21.000 liter gandum\|100 kor gandum}}`; `{{units:sekitar 2.200 liter anggur\|100 bat anggur}}` (B, R) | 7:22 |
+| Ezra | talent; kor; bath | `{{units:sekitar 3,4 ton perak\|100 talenta perak}}`; `{{units:sekitar 22.000 liter gandum\|100 kor gandum}}`; `{{units:sekitar 2.200 liter anggur\|100 bat anggur}}` (B, R) | 7:22 |
 | Ezra | Ezra's memoir "I" | *aku* (L, B); *saya* (R) | 7:27 |
 | Ezra | Gershom; Hattush; Shecaniah; Eliehoenai; Jahaziel; Ebed | Gersom; Hatusy; Syekhanya; Elyehoenai; Yahaziel; Ebed | 8:2–6 |
 | Ezra | Jeshaiah; Zebadiah; Jehiel; Josiphiah; Hakkatan; Eliphelet; Jeiel; Shemaiah; Uthai; Zaccur | Yesaya; Zebadya; Yehiel; Yosifya; Hakatan; Elifelet; Yeiel; Syemaya; Utai; Zakur | 8:7–14 |

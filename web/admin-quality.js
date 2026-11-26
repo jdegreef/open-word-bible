@@ -45,7 +45,8 @@ OWBAdmin.module(function (A) {
         (d.updated ? "; last changed " + when(d.updated) : "") + "." : "No sentence holds this verse yet."), verseSearch(d.label), nav];
       if (from) {
         out.push(h("div", { class: "admin-reply" }, h("p", { class: "admin-sub" }, "Requesting a fix for " + (from.from.name || from.from.email) +
-          "'s " + from.kind + " (" + from.language + "):"), h("p", null, from.text)));
+          "'s " + from.kind + " (" + from.language + "):"), h("p", null, from.text),
+          h("p", { class: "admin-sub" }, "The request is a public GitHub issue: it names this message by number but doesn't quote it. Put the reader's point in your own words under Why.")));
       }
       d.records.forEach(function (r) { out.push(recordCard(r, d, names, from)); });
       if (d.records.length) out.push(approvalHistory(d.verse));

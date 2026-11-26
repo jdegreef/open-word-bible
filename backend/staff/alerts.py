@@ -27,7 +27,6 @@ from datetime import timedelta
 
 from django.conf import settings
 from django.contrib.auth import get_user_model
-from django.core.cache import cache
 from django.core.mail import send_mail
 from django.utils import timezone
 
@@ -91,10 +90,11 @@ def _stalled_problem():
     if not settings.OWB_GITHUB_TOKEN:
         return False
     try:
-        items = work.fetch_work()
+        # Read afresh, and kept for the work page and the health page.
+        items = work.refresh()
     except github.GitHubError:
         return False
-    stalled = sorted((w for w in items if w["stale"]), key=lambda w: w["number"])
+    stalled = _stalled(items)
     if not stalled:
         return None
     listed = "\n".join(f"- {w['kind_label']} #{w['number']}: {w['title']} ({w['url']})" for w in stalled)
@@ -219,9 +219,13 @@ def current():
     return out
 
 
+def _stalled(items):
+    return sorted((w for w in items if w["stale"]), key=lambda w: w["number"])
+
+
 def _cached_stalled():
-    items = cache.get("staff.work") or []
-    stalled = sorted((w for w in items if w["stale"]), key=lambda w: w["number"])
+    """Stalled jobs from the work list kept by staff/work.py, if there is one."""
+    stalled = _stalled(work.kept_items())
     if not stalled:
         return None
     n = len(stalled)

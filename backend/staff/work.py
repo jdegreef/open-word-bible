@@ -89,6 +89,18 @@ def cached_work():
     return _kept()["items"]
 
 
+def kept_items():
+    """The work list kept, without asking GitHub; [] when none is kept."""
+    kept = cache.get(KEY)
+    return kept["items"] if kept else []
+
+
+def refresh():
+    """The work list read from GitHub now, and kept. Raises
+    github.GitHubError when GitHub can't be reached."""
+    return _refresh()["items"]
+
+
 def fetched_at():
     """When the copy cached_work gives was read from GitHub (epoch seconds)."""
     kept = cache.get(KEY)
