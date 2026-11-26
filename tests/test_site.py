@@ -250,8 +250,11 @@ class SiteTest(unittest.TestCase):
         self.assertNotRegex(page, r'<a href="/es/gen/30/"[^>]*rel="nofollow"')
 
     def test_footer_counts_the_books_not_started(self):
-        # The chips come from nav-en.js (footer_data); the page has a list for each testament.
-        page = (self.out / "1ti" / "5" / "index.html").read_text(encoding="utf-8")
+        # The chips come from nav-en.js (footer_data); the page has a list for each
+        # testament. Chapter pages have the slim footer without the list.
+        page = (self.out / "about" / "index.html").read_text(encoding="utf-8")
+        chapter = (self.out / "1ti" / "5" / "index.html").read_text(encoding="utf-8")
+        self.assertNotIn('data-foot-chips=', chapter)
         # Without scripts the list has each book as a plain link.
         self.assertIn('<ul class="book-chips" data-foot-chips="old_testament">'
                       '<li><a class="book-chip" href="/gen/">Genesis</a></li>', page)
