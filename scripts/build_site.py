@@ -2559,6 +2559,7 @@ def chapter_page(book, chapter, lang="en"):
     {chapter_turns(book, chapter, lang)}
     {verse_page_links(book, chapter, lang)}
     {chapter_articles_html(book, chapter, lang)}
+    {logia_chapter_html(book, chapter, lang)}
   </article>
   <aside class="panel" id="panel" aria-live="polite" tabindex="-1"></aside>
 </div>
@@ -2990,6 +2991,7 @@ def verse_page(vid, lang="en"):
 <p class="verse-original" lang="{source}"{direction}>{esc(original, quote=False)}</p></section>
 {gloss}
 {why}
+{logia_verse_html(vid, lang)}
 <p class="actions"><a class="button" href="{chapter_link}">{cui["read"]}&nbsp;{forward(lang)}</a>
 <a class="button ghost" href="{url(lang, "/compare/")}?v={vid}">{esc(cui["title"].replace("{ref}", name))}</a></p>
 </article>
@@ -6780,6 +6782,51 @@ def chapter_articles(lang):
         for b, c, _ in a["passages"]:
             found.setdefault((b, c), []).append(a)
     return found
+
+
+LOGIA_COVERAGE = ROOT / "data" / "logia_coverage.json"
+LOGIA_URL = "https://logia.faith"
+
+
+@functools.lru_cache(maxsize=1)
+def logia_coverage():
+    """Logia's commentary by chapter ({"JHN.3": {"voices": 12, "verses":
+    {"16": 12}}}: how many works comment on the chapter and on each verse
+    with a page there), a snapshot of logia.faith/api/v1/coverage.json (scripts/fetch_logia.py)."""
+    if not LOGIA_COVERAGE.exists():
+        return {}
+    return json.loads(LOGIA_COVERAGE.read_text(encoding="utf-8"))["chapters"]
+
+
+def logia_chapter_html(book, chapter, lang="en"):
+    """Under a chapter: what the church has said about it on Logia, the
+    commentary site built on this translation, with its most-discussed verses."""
+    here = logia_coverage().get(f"{book}.{chapter}")
+    if not here:
+        return ""
+    esc = html.escape
+    name = f"{chapter_book(book, lang)} {chapter}"
+    top = sorted(here["verses"].items(), key=lambda kv: (-kv[1], int(kv[0])))[:5]
+    most = " ".join(f'<a href="{LOGIA_URL}{chapter_url(book, chapter)}{v}/">{esc(verse_ref_name(f"{book}.{chapter}.{v}", lang))}</a>'
+                    for v, _n in sorted(top, key=lambda kv: int(kv[0])))
+    english = ' hreflang="en"' if lang != "en" else ""
+    return (f'<aside class="chapter-logia" aria-labelledby="ch-logia-h"><h2 id="ch-logia-h">{t(lang, "reader.logia")}</h2>'
+            f'<p><a href="{LOGIA_URL}{chapter_url(book, chapter)}"{english}>{esc(t(lang, "reader.logia_chapter", n=here["voices"], title=name))}</a>. '
+            f'{t(lang, "reader.logia_note")}</p>'
+            + (f'<p>{t(lang, "reader.logia_most")} {most}</p>' if len(top) > 1 else "") + "</aside>")
+
+
+def logia_verse_html(vid, lang="en"):
+    """On a verse page: the link to what Logia's commentators say on it."""
+    book, chapter, verse = vid.split(".")
+    voices = logia_coverage().get(f"{book}.{chapter}", {}).get("verses", {}).get(verse)
+    if not voices:
+        return ""
+    english = ' hreflang="en"' if lang != "en" else ""
+    return (f'<section class="verse-section"><h2>{t(lang, "reader.logia")}</h2>'
+            f'<p><a href="{LOGIA_URL}{chapter_url(book, int(chapter))}{verse}/"{english}>'
+            f'{html.escape(t(lang, "reader.logia_verse", n=voices, ref=verse_ref_name(vid, lang)))}</a>. '
+            f'{t(lang, "reader.logia_note")}</p></section>')
 
 
 def chapter_articles_html(book, chapter, lang="en"):
