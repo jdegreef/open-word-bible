@@ -86,6 +86,17 @@ def _stamp():
 
 
 def term_uses():
+    """_term_uses(), kept until the content changes: consistency measures
+    each language from it and Key terms counts from it."""
+    stamp = f"{TERMS_DIGEST}.{_stamp()}"
+    kept = cache.get("staff.term_uses")
+    if kept is None or kept.get("stamp") != stamp:
+        kept = {"stamp": stamp, "uses": _term_uses()}
+        cache.set("staff.term_uses", kept, 7 * 86400)
+    return kept["uses"]
+
+
+def _term_uses():
     """{term slug: [sentence rows]} for every key term, in two queries: the
     words by Strong's number (Greek ids start n, Hebrew o), then the
     sentences holding any of them."""
@@ -108,7 +119,7 @@ def term_uses():
     return out, ids
 
 
-def measure(lang, level, slug, least):
+def measure(lang, level):
     uses, _ = term_uses()
     sentence_ids = {r["id"] for rows in uses.values() for r in rows}
     texts = dict(Rendering.objects.filter(sentence_id__in=sentence_ids, language=lang, level=level)
@@ -125,8 +136,6 @@ def measure(lang, level, slug, least):
         aligned[sid] = [a for a in spans if a["language"] == lang and a["level"] == level]
     terms = []
     for t in TERMS:
-        if slug and t["slug"] != slug:
-            continue
         rows = uses[t["slug"]]
         forms = set()
         if lang == "en":
@@ -151,19 +160,32 @@ def measure(lang, level, slug, least):
             text = _plain(text)
             hit = next((f for f, p in patterns if p.search(text)), None)
             (found.setdefault(hit, []) if hit else other).append(r)
-        limit = TERM_EXAMPLES if slug else EXAMPLES
         listed = sorted(found.items(), key=lambda kv: (-len(kv[1]), kv[0]))
-        counted = [rows for _, rows in listed if len(rows) >= least]
         matched = sum(len(rows) for _, rows in listed)
         spread = round(1 - len(listed[0][1]) / matched, 3) if matched else 0
         terms.append({
             "slug": t["slug"], "strong": t["strong"], "lemma": t["lemma"], "sense": t["sense"],
-            "language": t.get("language", "grc"), "uses": len(rows), "rendered": rendered,
-            "split": len(counted) > 1, "spread": spread,
+            "language": t.get("language", "grc"), "uses": len(rows), "rendered": rendered, "spread": spread,
             "forms": [{"form": form, "sentences": len(rows), "books": _books(rows),
-                       "examples": [_example(r) for r in rows[:limit]]} for form, rows in listed],
-            "other": {"sentences": len(other), "examples": [_example(r) for r in other[:limit]]},
+                       "examples": [_example(r) for r in rows[:TERM_EXAMPLES]]} for form, rows in listed],
+            "other": {"sentences": len(other), "examples": [_example(r) for r in other[:TERM_EXAMPLES]]},
         })
+    return {"terms": terms}
+
+
+def shown(measured, slug, least):
+    """The answer for one term (slug) or all of them, from measure()'s:
+    a term is split when more than one form has at least least sentences,
+    split terms first; all terms show EXAMPLES examples a form, one term
+    TERM_EXAMPLES."""
+    limit = TERM_EXAMPLES if slug else EXAMPLES
+    terms = []
+    for t in measured["terms"]:
+        if slug and t["slug"] != slug:
+            continue
+        terms.append({**t, "split": sum(1 for f in t["forms"] if f["sentences"] >= least) > 1,
+                      "forms": [{**f, "examples": f["examples"][:limit]} for f in t["forms"]],
+                      "other": {**t["other"], "examples": t["other"]["examples"][:limit]}})
     terms.sort(key=lambda t: (not t["split"], -t["spread"], -t["rendered"]))
     return {"terms": terms}
 
@@ -196,10 +218,13 @@ def consistency(request):
         least = min(max(int(params.get("min", 2)), 1), 50)
     except ValueError:
         least = 2
-    key = f"staff.consistency.{lang}.{level}.{slug}.{least}.{TERMS_DIGEST}.{_stamp()}"
-    answer = cache.get(key)
-    if answer is None:
-        answer = measure(lang, level, slug, least)
-        cache.set(key, answer, 86400)
-    return Response({**answer, "language": lang, "level": level, "min": least,
+    # One measurement a language and level, whatever term or minimum is
+    # asked, kept under one key with the content it was measured from, so a
+    # new one replaces the old rather than piling up beside it.
+    key, stamp = f"staff.consistency.{lang}.{level}", f"{TERMS_DIGEST}.{_stamp()}"
+    kept = cache.get(key)
+    if kept is None or kept.get("stamp") != stamp:
+        kept = {"stamp": stamp, "measured": measure(lang, level)}
+        cache.set(key, kept, 7 * 86400)
+    return Response({**shown(kept["measured"], slug, least), "language": lang, "level": level, "min": least,
                      "languages": [{"code": c, "name": lang["name"]} for c, lang in languages.READING.items()]})

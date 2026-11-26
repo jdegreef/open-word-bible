@@ -691,7 +691,7 @@ def page(lang, query, kind, offset, limit, sort):
 REFERENCE = re.compile(r"^\s*(.+?)\.?\s*(\d+)(?:\s*[:.,\s]\s*(\d+)(?:\s*[-–]\s*(\d+))?)?\s*$")
 
 
-def reference(q, books, lang):
+def reference(q, books, lang, sentences=True):
     """The passage a query names, if it is a reference: "John 3:16",
     "jn 3 16", "Filipenses 4:6-7", "1 John 2". The same rules as the site's
     search.js: a book's names, codes and abbreviations; or the start of a
@@ -719,7 +719,9 @@ def reference(q, books, lang):
     if found:
         ref["shown"] = [v for v in found["verses"] if verse and verse <= v <= end]
         ref["url"] = found["url"] + (f"#v{ref['shown'][0]}" if ref["shown"] else "")
-        ref["sentences"] = sentences_for(ref, lang) if ref["shown"] else []
+        # sentences=False: only the reference is wanted (the admin's verse
+        # finder), not a search of the language's entries for its sentences.
+        ref["sentences"] = sentences_for(ref, lang) if ref["shown"] and sentences else []
     return ref
 
 
