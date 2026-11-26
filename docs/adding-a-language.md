@@ -211,6 +211,45 @@ bath about 22 litres; a tenth of an ephah (and the omer, which is the same)
 220 litres. Ezekiel gives the ephah and the bath one figure, as 45:11 makes
 them equal. Write the figure with the language's own decimal mark.
 
+The smaller measures and the fractions all come from the 22-litre ephah
+and bath, and every language writes the figure in this table:
+
+| Measure | Reckoned as | Figure in the span |
+|---|---|---|
+| ephah, bath; a tenth of a homer | | 22 litres |
+| homer, cor (kor) | ten ephahs or baths | 220 litres |
+| a homer and a lethech (Hosea 3:2) | a lethech is half a homer | 330 litres |
+| a tenth of an ephah, an omer; a tenth of a bath | | 2.2 litres |
+| two tenths, two omers; three tenths | | 4.4; 6.6 litres |
+| a sixth of an ephah | | 3.7 litres |
+| seah | a third of an ephah | one 7, two 15, three 22, five 37 litres |
+| kab; a quarter of a kab (2 Kings 6:25) | a sixth of a seah | 1.2; 0.3 litres |
+| hin | a sixth of a bath | 3.7 litres |
+| half, a third, a quarter, a sixth of a hin | | 1.8; 1.2; 0.9; 0.6 litres |
+| log | a twelfth of a hin | 0.3 litres |
+
+Larger amounts multiply these and keep the product (twenty cors 4,400
+litres, sixty 13,200, eighty 17,600; fifty baths 1,100, a hundred 2,200;
+two thousand baths 44,000), written the language's own way (44万, 4.4 लाख,
+4,4 millions). Below 10 litres the figure has one decimal; from 10 litres
+it is whole. A language may say "almost a litre" (*casi un litro*, *près
+d'un litre*) for the quarter hin, or "a third of a litre" for the log, but
+never "1 litre" for the quarter hin, "2 litres" for a tenth or a half hin,
+or "4 litres" for a hin. Rendering decisions and translated notes that
+quote a figure use these too.
+
+English gives US measures on the same base: dry measures in US dry quarts
+(1.1 litres) and bushels, so an ephah is "about 20 quarts", a tenth about
+2 quarts, a seah about 7 quarts, two seahs about 13, a homer about
+6 bushels; liquid measures in US liquid quarts and gallons, so a bath is
+"about 6 gallons", a hin "about a gallon", a quarter hin "about a quart", a
+log "about a third of a quart". Ezekiel 45–46, where the ephah and the bath
+are one measure, gives both as "about 6 gallons". "About 20 quarts" for an
+ephah is the same 22 litres, not 19.
+
+The New Testament's "three measures" of flour (Matthew 13:33; Luke 13:21)
+is given as a weight of flour, not a volume, so this table does not set it.
+
 ## 11. Right to left (Arabic, Persian, Urdu)
 
 Arabic is the first reading language written right to left (November
