@@ -914,6 +914,8 @@ def footer_links(lang):
     learn.append((url(lang, "/terms/"), t(lang, "nav.terms"), None))
     learn.append((url(lang, "/journeys/"), t(lang, "journeys.title"), None))
     learn.append((url(lang, "/quotations/"), t(lang, "quotations.title"), None))
+    learn.append((url(lang, "/topics/"), catalog(lang)["topics"]["title"], None) if topics_in(lang)
+                 else ("/topics/", catalog("en")["topics"]["title"], "en"))
     learn += [(section_path, t("en", f"entities.{section}_title") if lang != "en" else t(lang, f"entities.{section}_title"),
                None if lang == "en" else "en")
               for section, section_path in ENTITY_SECTIONS.items()]
@@ -3061,6 +3063,7 @@ def verse_page(vid, lang="en"):
 {gloss}
 {why}
 {others}
+{verse_topics_html(vid, lang)}
 <p class="actions"><a class="button" href="{chapter_link}">{cui["read"]}&nbsp;{forward(lang)}</a>
 <a class="button ghost" href="{url(lang, "/compare/")}?v={vid}">{esc(cui["title"].replace("{ref}", name))}</a></p>
 {f'<p class="actions verse-turns">{turns}</p>' if turns else ""}
@@ -3325,6 +3328,111 @@ def interlinear_page(book, chapter, lang="en"):
     return page(lang, name, body, path=interlinear_url(book, chapter), current="/read/",
                 description=catalog(lang)["interlinear"]["description"].format(chapter=title),
                 translated=("en",))
+
+
+# Topic pages (data/topics.json): what the Bible says about a subject people
+# search for, as its passages in the page's language, each linking to its
+# verse page or its place in the chapter. The choice of passages is a draft
+# until a named reviewer has checked it, and each page says so.
+TOPICS = json.loads((ROOT / "data" / "topics.json").read_text(encoding="utf-8"))["topics"]
+
+
+def topic_url(topic=None):
+    return f"/topics/{topic['id']}/" if topic else "/topics/"
+
+
+def topic_passage(ref):
+    """A topic's passage ("PHP.4.6-7") as (book, chapter, [verse ids])."""
+    book, chapter, verses = ref.split(".")
+    first, _, last = verses.partition("-")
+    return book, int(chapter), [f"{book}.{chapter}.{v}" for v in range(int(first), int(last or first) + 1)]
+
+
+@functools.cache
+def topic_languages(tid):
+    """The languages a topic has a page in: those with a name for it and
+    every verse of its passages."""
+    topic = next(x for x in TOPICS if x["id"] == tid)
+    vids = [v for ref in topic["passages"] for v in topic_passage(ref)[2]]
+    return tuple(code for code in LANGUAGES if code in topic["names"]
+                 and all(code in r["renderings"] for v in vids for r in verse_records(v)))
+
+
+def topics_in(lang):
+    return [x for x in TOPICS if lang in topic_languages(x["id"])]
+
+
+def topic_name(topic, lang):
+    name = topic["names"][lang]
+    return name[:1].upper() + name[1:]
+
+
+def topic_page(topic, lang="en"):
+    esc = html.escape
+    ui = catalog(lang)["topics"]
+    name = topic["names"][lang]
+    title = ui["page_title"].format(topic=name)
+    items = []
+    for ref in topic["passages"]:
+        book, chapter, vids = topic_passage(ref)
+        first = refs.parse(vids[0]).verse
+        label = verse_ref_name(vids[0], lang) + (f"\u2013{refs.parse(vids[-1]).verse}" if len(vids) > 1 else "")
+        if len(vids) == 1 and vids[0] in verse_page_ids() and lang in verse_page_languages(vids[0]):
+            href = url(lang, verse_page_url(vids[0]))
+        else:
+            href = url(lang, chapter_url(book, chapter)) + f"#v{first}"
+        text = " ".join(t_ for v in vids if (t_ := verse_levels(v, lang).get("B")))
+        items.append(f'<li class="topic-passage"><h2><a href="{esc(href)}">{esc(label)}</a></h2>'
+                     f'<p>{esc(text, quote=False)}</p>'
+                     f'<p class="fine"><a href="{url(lang, chapter_url(book, chapter))}#v{first}">'
+                     f'{catalog(lang)["compare.ui"]["read"]}&nbsp;{forward(lang)}</a></p></li>')
+    others = " · ".join(f'<a href="{url(lang, topic_url(x))}">{esc(topic_name(x, lang))}</a>'
+                        for x in topics_in(lang) if x["id"] != topic["id"])
+    body = f"""
+<article class="article topic-page">
+<header class="article-head">
+<p class="eyebrow"><a href="{url(lang, topic_url())}">{ui["title"]}</a></p>
+<h1>{esc(title)}</h1>
+<p class="dek">{esc(ui["dek"].format(n=len(topic["passages"]), topic=name))}</p>
+<p class="notice">{ui["draft"]}</p>
+</header>
+<ol class="topic-passages">{"".join(items)}</ol>
+<section class="more"><h2>{ui["title"]}</h2><p>{others}</p></section>
+</article>
+{breadcrumb_ld(lang, [(SITE_NAME, "/"), (ui["title"], topic_url()), (title, topic_url(topic))])}
+"""
+    first = verse_levels(topic_passage(topic["passages"][0])[2][0], lang).get("B", "")
+    return page(lang, title, body, path=topic_url(topic), current="/read/",
+                description=shorten(f'{ui["dek"].format(n=len(topic["passages"]), topic=name)} {first}'),
+                translated=topic_languages(topic["id"]), og=[("og:type", "article")])
+
+
+def topics_page(lang="en"):
+    esc = html.escape
+    ui = catalog(lang)["topics"]
+    rows = "".join(f'<li><a class="data-card" href="{url(lang, topic_url(x))}"><span><strong>{esc(topic_name(x, lang))}</strong>'
+                   f'<span>{esc(ui["dek"].format(n=len(x["passages"]), topic=x["names"][lang]))}</span></span></a></li>'
+                   for x in topics_in(lang))
+    body = f"""
+<header class="page-head">
+<h1>{ui["title"]}</h1>
+<p class="dek">{ui["index_dek"]}</p>
+<p class="notice">{ui["draft"]}</p>
+</header>
+<ul class="data-cards">{rows}</ul>
+"""
+    have = tuple(code for code in LANGUAGES if topics_in(code))
+    return page(lang, ui["title"], body, path=topic_url(), current="/read/", description=ui["index_dek"],
+                translated=have)
+
+
+def verse_topics_html(vid, lang):
+    """On a verse page: the topics whose passages include it."""
+    found = [x for x in topics_in(lang) if any(vid in topic_passage(ref)[2] for ref in x["passages"])]
+    if not found:
+        return ""
+    links = " · ".join(f'<a href="{url(lang, topic_url(x))}">{html.escape(topic_name(x, lang))}</a>' for x in found)
+    return f'<p class="verse-pages">{catalog(lang)["topics"]["title"]}: {links}</p>'
 
 
 def verse_ld(vid, lang, name, levels, rs):
@@ -8187,6 +8295,10 @@ def build(out):
         for p in NAMED_PASSAGES:
             if lang in passage_page_languages(p["id"]):
                 add(passage_url(p), passage_page(p, lang), sources=chapter_sources(p["book"], p["chapter"]))
+        if topics_in(lang):
+            add(topic_url(), topics_page(lang))
+            for topic in topics_in(lang):
+                add(topic_url(topic), topic_page(topic, lang))
         for book, _ in books():
             add(edition_url(book), edition_page(book, lang), index=False)
         articles = load_articles(lang)
