@@ -7,6 +7,8 @@ import re
 import zipfile
 import shutil
 import tempfile
+import threading
+import time
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
 from unittest import mock
@@ -15,6 +17,7 @@ from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.core import mail
 from django.core.cache import cache
+from django.core.cache.backends.locmem import LocMemCache
 from django.core.management import CommandError, call_command
 from django.db import OperationalError, connection
 from django.test import SimpleTestCase, TestCase, override_settings
@@ -886,6 +889,36 @@ class WorkTest(AdminTestCase):
             self.assertEqual(len(again["items"]), len(first["items"]))
             self.admin.get("/api/admin/work/")   # a second page doesn't start a second refresh
         self.assertEqual(started, [True])
+
+    def test_with_no_copy_kept_the_page_waits_on_github_only_so_long(self):
+        from staff import work as staff_work
+        answer = threading.Event()
+        # The thread asking GitHub has its own database connection, which
+        # doesn't see this test's transaction: a cache in memory instead.
+        kept = LocMemCache("work-test", {})
+
+        def slow(path, method="GET", body=None, stop=None):
+            answer.wait(5)
+            return []
+        with mock.patch("staff.github.call", side_effect=slow), mock.patch("staff.work.WAIT", 0.2), \
+                mock.patch("staff.work.cache", kept):
+            start = time.perf_counter()
+            data = self.admin.get("/api/admin/work/").json()
+            self.assertLess(time.perf_counter() - start, 2)
+            self.assertTrue(data["pending"])
+            self.assertIn("still being asked", data["error"])
+            self.assertEqual((data["items"], data["days"]), ([], 30))
+            # A second page doesn't start a second round of requests meanwhile.
+            self.assertTrue(self.admin.get("/api/admin/work/").json()["pending"])
+            answer.set()
+            for _ in range(100):
+                if kept.get(staff_work.KEY) and not kept.get(staff_work.KEY + ".refreshing"):
+                    break
+                time.sleep(0.05)
+            self.assertEqual(kept.get(staff_work.KEY)["items"], [])
+            data = self.admin.get("/api/admin/work/").json()
+        self.assertNotIn("pending", data)
+        self.assertTrue(data["fetched_at"])
 
     def test_github_out_of_reach_still_says_the_window(self):
         # The page's heading reads days and stale_hours ("the last undefined days" before).
