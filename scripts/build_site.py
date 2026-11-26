@@ -488,8 +488,9 @@ def language_menu(lang, path=None, translated=LANGUAGES):
     label = t(lang, "footer.languages")
     items = language_items(lang, path, translated, '<span class="check" aria-hidden="true">&#10003;</span>')
     for code in LANGUAGES:
-        items = items.replace(f'data-lang="{code}">', f'data-lang="{code}" data-offer="{html.escape(t(code, "lang.offer"))}" '
-                                                     f'data-offer-no="{html.escape(t(code, "lang.offer_no"))}">', 1)
+        # After data-lang, whatever follows it (rel on a link to a chapter stub).
+        items = items.replace(f'data-lang="{code}"', f'data-lang="{code}" data-offer="{html.escape(t(code, "lang.offer"))}" '
+                                                     f'data-offer-no="{html.escape(t(code, "lang.offer_no"))}"', 1)
     return ('<div class="lang-menu">'
             f'<button type="button" class="tool-btn lang-btn" aria-expanded="false" aria-controls="lang-pop" '
             f'aria-label="{label}" title="{label}">{icon(ICONS["languages"])}<span class="lang-code">{lang.upper()}</span></button>'
@@ -832,7 +833,10 @@ NAV_SCRIPT = r"""(function () {
   // chip is the current one.
   var foot = window.OWB_FOOT;
   if (foot) document.querySelectorAll("ul[data-foot-chips]").forEach(function (ul) {
-    if (ul.firstChild) return;
+    // The page's plain book links (build_site.book_index) give way to the
+    // chips, once.
+    if (ul.hasAttribute("data-filled")) return;
+    ul.setAttribute("data-filled", "");
     ul.innerHTML = foot.chips[ul.getAttribute("data-foot-chips")] || "";
     if (book) ul.querySelectorAll('a[href$="/' + book[1] + '/"], a[href$="#' + book[1] + '"]')
       .forEach(function (a) { a.setAttribute("aria-current", "true"); });
@@ -974,7 +978,8 @@ def book_index(lang):
     """The footer's books, by testament: how many chapters each testament
     has in lang, as a count and a bar, then the books' chips, which
     nav-<lang>.js fills in (footer_data; without scripts, the link to the
-    Read page lists them all), and the chapters most often read."""
+    Read page lists them all), and the chapters most often read. The page
+    has the books as plain links until the script fills in the chips."""
     have = dict(books(lang))
 
     def testament(key, codes):
@@ -985,7 +990,15 @@ def book_index(lang):
                 f'<h3 id="foot-{key}">{t(lang, "footer." + key)}</h3>'
                 f'<span>{t(lang, "progress.chapters", done=number(done, lang), total=number(total, lang))}</span></div>'
                 f'<span class="foot-bar" aria-hidden="true"><i style="width:{share:.1f}%"></i></span>'
-                f'<ul class="book-chips" data-foot-chips="{key}"></ul></div>')
+                f'<ul class="book-chips" data-foot-chips="{key}">{plain_chips(codes)}</ul></div>')
+
+    def plain_chips(codes):
+        # Each book as a plain link, so the page links every book's page
+        # for crawlers that do not run scripts (most but Google's) and for
+        # readers without them; nav-<lang>.js replaces them with the chips
+        # that show each book's progress (footer_data).
+        return "".join(f'<li><a class="book-chip" href="{book_href(b, lang)}">{book_name(b, lang)}</a></li>'
+                       for b in codes if b in have)
 
     key = "".join(f'<span><span class="book-chip{cls}" aria-hidden="true"></span>{t(lang, "footer.key_" + k)}</span>'
                   for k, cls in (("done", ""), ("part", " part"), ("none", " none")))
@@ -1047,6 +1060,18 @@ def language_items(lang, path, translated=LANGUAGES, mark="", complete=None):
     def gloss(code):
         return f' <span class="lang-gloss" lang="{lang}">({unbracket(names[code], lang)})</span>'
 
+    # A chapter not yet in a language is a short page there that leads to
+    # the English one (chapter_stub), not indexed. The links to it stay, for
+    # readers, but ask crawlers not to follow them, so a crawl of the site
+    # goes to pages that can be indexed instead of some 2,000 stubs.
+    chapter = re.fullmatch(r"/([0-9a-z]{3})/(\d+)/", path or "")
+    stubs = ({code for code in LANGUAGES if not chapter_has(chapter[1].upper(), int(chapter[2]), code)}
+             if chapter and chapter[1].upper() in refs.BOOK_CODES
+             and (chapter[1].upper(), int(chapter[2])) in chapter_set() else set())
+
+    def rel(code):
+        return ' rel="nofollow"' if code in stubs else ""
+
     def where(code):
         if complete is None or path is None or (code in complete and target(code) == path):
             return ""
@@ -1054,7 +1079,7 @@ def language_items(lang, path, translated=LANGUAGES, mark="", complete=None):
 
     return "".join(
         f'<li><span lang="{code}" aria-current="true">{owb_languages.native(code)}{mark}</span></li>' if code == lang
-        else f'<li><a href="{url(code, target(code))}" hreflang="{code}" data-lang="{code}">'
+        else f'<li><a href="{url(code, target(code))}" hreflang="{code}" data-lang="{code}"{rel(code)}>'
              f'<span lang="{code}">{owb_languages.native(code)}</span>{gloss(code)}{where(code)}</a></li>'
         for code in LANGUAGES)
 
