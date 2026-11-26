@@ -44,6 +44,7 @@ from feedback.models import ReaderMessage
 from owb import languages, refs
 
 from .models import record
+from . import people
 from .permissions import AREAS, admin_view
 
 log = logging.getLogger(__name__)
@@ -103,14 +104,14 @@ def inbox_team():
 
 
 def person(user):
-    return {"id": user.id, "email": user.username, "name": user.first_name} if user else None
+    return people.person(user)
 
 
 def message_json(m):
     age = timezone.now() - m.created_at
     return {"id": m.id, "kind": m.kind, "verse": m.verse, "verse_label": verse_label(m.verse),
             "language": m.language, "level": m.level, "text": m.text, "status": m.status,
-            "reply": m.reply, "replied_by": m.replied_by.username if m.replied_by else "",
+            "reply": m.reply, "replied_by": people.name(m.replied_by) if m.replied_by else "",
             "replied_at": m.replied_at, "note": m.note, "created_at": m.created_at,
             "fixed_at": m.fixed_at, "fix_url": m.fix_url,
             "from": {"id": m.user_id, "name": m.user.first_name, "email": m.user.username},

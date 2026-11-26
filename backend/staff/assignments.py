@@ -33,6 +33,7 @@ from owb import languages, refs
 from texts.models import Verse
 
 from .models import ReviewAssignment, record
+from . import people
 from .permissions import admin_view, is_super_admin
 from .review import STATES, _in_layer, _scope, layer_json
 
@@ -92,7 +93,7 @@ def range_label(a):
 
 
 def _person(user):
-    return {"id": user.id, "email": user.username, "name": user.get_full_name() or user.username} if user else None
+    return people.person(user)
 
 
 def assignment_json(a, today=None, counts=None):

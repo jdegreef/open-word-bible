@@ -63,6 +63,7 @@ from translation.models import Decision, Rendering, ReviewEvent, ReviewState, Se
 
 from .inbox import verse_label
 from .models import record
+from . import people
 from .permissions import admin_view, is_super_admin
 from .snapshot import snapshot
 
@@ -237,7 +238,7 @@ def _forbidden(e):
 def _event_json(e, current=None):
     """A review event; current is the layer's digest now, for an approval."""
     return {"id": e.id, "action": e.action, "label": e.get_action_display(), "language": e.language,
-            "by": e.user.get_full_name() or e.user.username, "note": e.note, "at": e.created_at,
+            "by": people.name(e.user), "note": e.note, "at": e.created_at,
             **({"changed": e.digest != current} if current is not None else {})}
 
 
