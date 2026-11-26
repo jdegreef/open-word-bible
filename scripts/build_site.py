@@ -1078,7 +1078,7 @@ def language_items(lang, path, translated=LANGUAGES, mark="", complete=None):
 
     return "".join(
         f'<li><span lang="{code}" aria-current="true">{owb_languages.native(code)}{mark}</span></li>' if code == lang
-        else f'<li><a href="{url(code, target(code))}" hreflang="{code}" data-lang="{code}"{rel(code)}>'
+        else f'<li><a href="{url(code, target(code))}" hreflang="{code}"{rel(code)} data-lang="{code}">'
              f'<span lang="{code}">{owb_languages.native(code)}</span>{gloss(code)}{where(code)}</a></li>'
         for code in LANGUAGES)
 
