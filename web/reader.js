@@ -1860,6 +1860,7 @@
     if (screenTab) { notesTab = screenTab; screenTab = null; drawText(); }
   });
 
+  var notesOpen = false, NOTES_FOLDED = 3;
   function drawNotes(notes) {
     var section = document.getElementById("notes");
     if (!section) return;
@@ -1890,7 +1891,11 @@
 
     if (notesTab === "foot") {
       var list = el("ol");
-      notes.forEach(function (n) {
+      // On phones a long list of notes is a wall after the text: the first
+      // few, then "Show all". Each letter in the text opens its own note.
+      var folded = narrow() && !notesOpen && notes.length > NOTES_FOLDED + 1;
+      notes.forEach(function (n, i) {
+        if (folded && i >= NOTES_FOLDED) return;
         var item = el("li");
         var button = el("button", "note");
         button.type = "button";
@@ -1904,6 +1909,17 @@
         list.appendChild(item);
       });
       section.appendChild(list);
+      if (folded) {
+        var all_ = el("button", "notes-more", t("uses_all").replace("{n}", notes.length));
+        all_.type = "button";
+        all_.addEventListener("click", function () {
+          notesOpen = true;
+          drawNotes(notes);
+          var items = section.querySelectorAll("li .note");
+          if (items[NOTES_FOLDED]) items[NOTES_FOLDED].focus({ preventScroll: true });
+        });
+        section.appendChild(all_);
+      }
       return;
     }
 
@@ -4256,12 +4272,126 @@
     });
   });
 
-  // On phones the chapter pills are one row that scrolls sideways; bring
-  // this chapter's pill into view.
-  var pills = document.querySelector(".chapstrip .chap-pills");
-  var here = pills && pills.querySelector("[aria-current]");
-  if (here && pills.scrollWidth > pills.clientWidth)
-    pills.scrollLeft = here.offsetLeft - pills.offsetLeft - pills.clientWidth / 2 + here.offsetWidth / 2;
+  // The chapter picker: the pills (a long book had rows of them above the
+  // text: Psalms eight) fold behind a button beside the title, and open as
+  // a grid under it. Without JavaScript they stay in the strip.
+  var strip = document.querySelector(".chapstrip");
+  var pills = strip && strip.querySelector(".chap-pills");
+  var titleEl = document.getElementById("title");
+  var picker = null;
+  if (pills && titleEl) {
+    var titleRow = el("div", "title-row");
+    titleEl.parentNode.insertBefore(titleRow, titleEl);
+    titleRow.appendChild(titleEl);
+    picker = el("button", "chap-pick");
+    picker.type = "button";
+    picker.id = "chap-pick";
+    picker.setAttribute("aria-expanded", "false");
+    pills.id = "chap-pills";
+    picker.setAttribute("aria-controls", "chap-pills");
+    picker.setAttribute("aria-label", strip.getAttribute("aria-label") || "");
+    picker.title = picker.getAttribute("aria-label");
+    picker.innerHTML = '<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 9l6 6 6-6" ' +
+      'fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    titleRow.appendChild(picker);
+    pills.classList.add("picker");
+    pills.hidden = true;
+    titleRow.appendChild(pills);
+    picker.addEventListener("click", function () { openPicker(pills.hidden); });
+    // It floats over the text, so a click elsewhere or Escape closes it.
+    document.addEventListener("click", function (e) {
+      if (!pills.hidden && !titleRow.contains(e.target) && !e.target.closest(".read-here")) openPicker(false);
+    });
+    titleRow.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !pills.hidden) { e.stopPropagation(); openPicker(false); picker.focus(); }
+    });
+  }
+  function openPicker(show) {
+    if (!picker) return;
+    pills.hidden = !show;
+    picker.setAttribute("aria-expanded", show ? "true" : "false");
+    if (show) {
+      var here = pills.querySelector("[aria-current]") || pills.querySelector("a");
+      if (here) here.focus({ preventScroll: true });
+    }
+  }
+
+  // On phones: the chapter's own details (its summary, the source line)
+  // stay short so the text starts on the first screen; a tap on the
+  // summary shows it whole.
+  var summaryEl = document.querySelector(".passage .chapter-summary");
+  if (summaryEl) {
+    summaryEl.tabIndex = 0;
+    summaryEl.setAttribute("role", "button");
+    summaryEl.setAttribute("aria-expanded", "false");
+    function toggleSummary() {
+      var open = summaryEl.getAttribute("aria-expanded") !== "true";
+      summaryEl.setAttribute("aria-expanded", open ? "true" : "false");
+    }
+    summaryEl.addEventListener("click", toggleSummary);
+    summaryEl.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggleSummary(); }
+    });
+  }
+
+  // On phones, a bar at the foot of the screen with the previous chapter,
+  // this one (which opens the picker) and the next, and a line for how far
+  // through the chapter the reader is. Scrolling down to read hides it and
+  // the header; scrolling back up, or reaching the end, brings them back.
+  (function readingBar() {
+    var prev = document.querySelector('.edge-turn[data-turn="prev"]');
+    var next = document.querySelector('.edge-turn[data-turn="next"]');
+    var bar = el("nav", "read-bar");
+    bar.setAttribute("aria-label", strip ? strip.getAttribute("aria-label") || "" : "");
+    var line = el("span", "read-progress");
+    line.setAttribute("aria-hidden", "true");
+    var fill = el("i");
+    line.appendChild(fill);
+    bar.appendChild(line);
+    function turn(a, cls, glyph) {
+      if (!a) { bar.appendChild(el("span", "read-turn " + cls + " gap")); return; }
+      var link = el("a", "read-turn " + cls, glyph);
+      link.href = a.href;
+      link.setAttribute("aria-label", a.getAttribute("aria-label") || "");
+      bar.appendChild(link);
+    }
+    turn(prev, "prev", RTL ? "\u203a" : "\u2039");
+    var name = el("button", "read-here");
+    name.type = "button";
+    name.appendChild(el("span", null, DATA.title));
+    if (picker) name.setAttribute("aria-controls", "chap-pills");
+    name.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: scrollMotion() });
+      openPicker(true);
+    });
+    bar.appendChild(name);
+    turn(next, "next", RTL ? "\u2039" : "\u203a");
+    document.body.appendChild(bar);
+    document.body.classList.add("has-read-bar");
+
+    var text = document.getElementById("text");
+    var lastY = window.scrollY, ticking = false;
+    function update() {
+      ticking = false;
+      var y = window.scrollY;
+      var top = text.getBoundingClientRect().top + y, height = text.offsetHeight || 1;
+      var done = Math.min(1, Math.max(0, (y + window.innerHeight * 0.5 - top) / height));
+      fill.style.width = (done * 100).toFixed(1) + "%";
+      var atEnd = y + window.innerHeight >= document.documentElement.scrollHeight - 80;
+      var down = y > lastY + 4, up = y < lastY - 4;
+      // Hidden while reading down, past the first screen, with no sheet open.
+      if (down && y > 160 && !document.body.classList.contains("sheet-open") && !atEnd) {
+        document.body.classList.add("reading-down");
+      } else if (up || atEnd || y <= 160) {
+        document.body.classList.remove("reading-down");
+      }
+      if (down || up) lastY = y;
+    }
+    window.addEventListener("scroll", function () {
+      if (!ticking) { ticking = true; requestAnimationFrame(update); }
+    }, { passive: true });
+    update();
+  })();
 
   // The reader's place, kept as owb.place for "Continue reading" on the
   // home and Read pages (site.js): the verse at the reading line, a quarter

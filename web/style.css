@@ -1029,7 +1029,7 @@ details[open] > .book-tile .book-tile-name::after { content: " \25B4"; }
 .chapstrip + h1 { margin-top: 14px; }
 .turns { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 40px 0 0; padding-top: 28px; border-top: 1px solid var(--line); }
 .turn {
-  display: grid; gap: 2px; padding: 16px 20px; border: 1px solid var(--line); border-radius: var(--radius);
+  display: grid; gap: 2px; align-content: start; padding: 16px 20px; border: 1px solid var(--line); border-radius: var(--radius);
   background: var(--surface); box-shadow: var(--shadow-card); text-decoration: none;
   transition: border-color var(--fast) ease, transform var(--fast) ease;
 }
@@ -3182,6 +3182,98 @@ html[dir="rtl"] .term-book:not([open]) summary::before { transform: translateY(-
 .topic-passage h2 { font-family: var(--display); font-weight: 600; font-size: 20px; margin: 0 0 6px; }
 .topic-passage h2 a { color: inherit; }
 .topic-passage p { margin: 0 0 4px; }
+
+/* The chapter picker (web/reader.js): a button beside the title opens the
+   book's chapters as a grid under it, instead of rows of pills above. */
+.title-row { position: relative; display: flex; align-items: center; gap: 6px; }
+.chapstrip + .title-row h1, .title-row h1 { margin-top: 14px; }
+.chap-pick {
+  display: grid; place-items: center; flex: none; width: 40px; height: 40px; margin-top: 10px;
+  border: 1px solid var(--line); border-radius: 50%; background: var(--surface); color: var(--accent); cursor: pointer;
+  transition: border-color var(--fast), transform var(--fast);
+}
+.chap-pick:hover { border-color: var(--accent); }
+.chap-pick[aria-expanded="true"] svg { transform: rotate(180deg); }
+.chap-pick:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.chap-pills.picker {
+  position: absolute; top: calc(100% + 4px); inset-inline: 0; z-index: 22;
+  display: flex; flex-wrap: wrap; gap: 6px; padding: 12px;
+  border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); box-shadow: var(--shadow-pop);
+  max-height: 50vh; overflow-y: auto; overscroll-behavior: contain;
+}
+.chap-pills.picker[hidden] { display: none; }
+
+/* Phones: the text starts on the first screen. The summary shows two lines
+   until tapped, the source line and the book's count give way, and the
+   reading text is a little smaller, so a line holds more than five words. */
+@media (max-width: 860px) {
+  .chapstrip { margin-top: 16px; }
+  .chapstrip .chap-progress { display: none; }
+  .passage h1 { margin-top: 0; }
+  .passage .chapter-summary {
+    font-size: 16px; cursor: pointer;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  }
+  .passage .chapter-summary[aria-expanded="true"] { display: block; -webkit-line-clamp: none; }
+  .passage .chapter-summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+  .passage .sub { display: none; }
+  .chapter-book { font-size: 14px; margin-bottom: 8px; }
+}
+@media (max-width: 600px) {
+  .text { font-size: calc(19.5px * var(--read-scale)); line-height: calc(1.7 * var(--read-leading)); }
+}
+
+/* Notes on phones: the first few, then "Show all" (web/reader.js drawNotes). */
+.notes-more {
+  margin: 8px 0 0; padding: 8px 14px; border: 1px solid var(--line-strong); border-radius: 999px; background: var(--surface);
+  color: var(--accent); font: inherit; font-size: 14px; font-weight: 600; cursor: pointer;
+}
+.notes-more:hover { border-color: var(--accent); }
+.notes-more:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* The phone reading bar (web/reader.js readingBar): previous chapter, this
+   one, next, with a line for how far through the chapter the reader is.
+   It and the header step aside while the reader scrolls down. */
+.read-bar { display: none; }
+@media (max-width: 860px) {
+  .read-bar {
+    display: flex; align-items: center; gap: 8px; position: fixed; left: 0; right: 0; bottom: 0; z-index: 25;
+    padding: 6px max(12px, env(safe-area-inset-right, 0px)) calc(6px + env(safe-area-inset-bottom, 0px)) max(12px, env(safe-area-inset-left, 0px));
+    background: var(--surface-2); background: color-mix(in srgb, var(--surface-2) 92%, transparent);
+    -webkit-backdrop-filter: saturate(1.4) blur(12px); backdrop-filter: saturate(1.4) blur(12px);
+    border-top: 1px solid var(--line); transition: transform .22s ease;
+  }
+  .read-progress { position: absolute; left: 0; right: 0; top: -1px; height: 2px; background: transparent; }
+  .read-progress i { display: block; height: 100%; width: 0; background: var(--accent); }
+  .read-turn, .read-turn.gap {
+    display: grid; place-items: center; flex: none; width: 44px; height: 44px; border-radius: 50%;
+    color: var(--accent); font-size: 30px; line-height: 1; text-decoration: none;
+  }
+  .read-turn:not(.gap) { border: 1px solid var(--line); background: var(--surface); }
+  .read-turn:focus-visible, .read-here:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .read-here {
+    flex: 1; min-width: 0; height: 44px; border: 0; background: none; color: var(--text); cursor: pointer;
+    font-family: var(--display); font-size: 17px; font-weight: 600;
+  }
+  .read-here span { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  body.has-read-bar main { padding-bottom: 64px; }
+  /* The confirmation toast sits above the bar rather than on it. */
+  body.has-read-bar .toast { bottom: calc(76px + env(safe-area-inset-bottom, 0px)); }
+  body.reading-down .read-bar { transform: translateY(calc(100% + 2px)); }
+  body.sheet-open .read-bar, body.listening .read-bar { display: none; }
+  header.site { transition: transform .22s ease; }
+  body.reading-down header.site { transform: translateY(-100%); }
+}
+@media (max-width: 860px) and (prefers-reduced-motion: reduce) {
+  .read-bar, header.site { transition: none; }
+}
+:root[data-motion="reduce"] .read-bar, :root[data-motion="reduce"] header.site { transition: none; }
+@media print { .read-bar, .chap-pick { display: none !important; } }
+
+/* Under the next chapter's name: what it is about, so the end of a
+   chapter invites the next one. */
+.turn-dek { font-family: var(--serif); font-style: italic; font-size: 14.5px; line-height: 1.45; color: var(--muted); margin-top: 4px; }
+
 
 /* Arabic and Persian: footnote marks upright, not slanted Latin italic. */
 [dir="rtl"] .verse .fn, [dir="rtl"] .notes .note-mark, [dir="rtl"] .fn-pop .note-mark { font-style: normal; font-family: var(--serif); }
