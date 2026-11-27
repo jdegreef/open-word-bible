@@ -42,7 +42,8 @@ says:
 - "avoided": a verse uses a form a row rules out ("Not *jemaah*", "never
   *kusta*", "(not *riba*)") where the English verse at that level has the
   row's English term. A row of "Added while drafting" counts in its book
-  only, since it often tells two books' uses apart.
+  only (its Book column, or the book heading it is under: "### Malachi"),
+  since it often tells two books' uses apart.
 - "alternative": the same for a form a row names as an alternative
   ("alternative *perunggu*", "a footnote gives *Penolong*"), when the verse
   has none of the row's own forms.
@@ -50,6 +51,20 @@ says:
   plurals and asides ignored) whose forms share no word, or one row using
   a form another row for that term rules out. Rows naming different source
   words in their asides (*pechah*, *hegemon*) are kept apart.
+
+Chinese and Japanese are written without spaces, and docs/chinese-terms.md
+writes its forms without italics: "番红花; 藏红花", "肢体 (L). Not 成员",
+"保障 is not used", "*alt.* 坚定的爱". A cell with Han or kana outside its
+italics is read by script (_cjk_entry): its forms are its runs of Han and
+kana (not those in an English aside, "(L: 一个银币, with a decision ...)"),
+the forms it rules out are the runs after "not" or "never" or before "is
+not used", and its alternatives the runs after *alt.* or "alternative".
+Such a form is found in a verse as a substring, not as a whole word
+(_form_in), and two such rows share a form when they share two characters
+in a row (_form_words). A ruled-out form of one character ("never 家") is
+not looked for in verses: it is in too many words. Abbreviations the file
+defines ("*dn* is `{{divine_name:上主|雅威}}`") are read as what they stand
+for.
 
 scripts/content_checks.py prints both lists; the admin shows them
 (backend/staff/checks.py).
@@ -362,6 +377,24 @@ _RULED_OUT = re.compile(r"\b(?:not|never)\b[^*|;.]{0,12}((?:\*[^*]+\*(?:\s*(?:,|
 _ALTERNATIVE = re.compile(r"\b(?:alternatives?|a footnote gives|footnote:)\s*((?:\*[^*]+\*(?:\s*(?:,|or|and)\s*)?)+)",
                           re.I)
 _ARTICLE = re.compile(r"^(?:the|a|an)\s+")
+_ABBREVIATION = re.compile(r"\*([a-z]{1,4})\* is `([^`]+)`")
+
+# Han and kana: scripts written without spaces between words. A run may
+# hold an ellipsis standing for words left out ("为……赎罪").
+_CJK = "぀-ヿ㐀-䶿一-鿿豈-﫿々"
+_CJK_CHAR = re.compile(f"[{_CJK}]")
+_CJK_RUN = re.compile(f"[{_CJK}]+(?:…+[{_CJK}]+)*")
+_CJK_LIST = rf"([{_CJK}…]+(?:\s*(?:,|、|/|\bor\b|\bnor\b|\band\b)\s*[{_CJK}…]+)*)"
+# Between "not" and the form, at most a few words naming whose form it is
+# ("not the CUV's 该撒利亚", "not Romans' Readable 非犹太人", "*alt.* the
+# transliteration 示阿勒"); not a clause ("does not read with 上帝").
+_GAP = (r"(?:\s*(?:the|familiar|transliteration|forms|[A-Z][A-Za-z-]*|[A-Za-z-]+(?:'s|’s|'|’))(?![\w'’])){0,3}"
+        r"\s*")
+_CJK_RULED_OUT = re.compile(rf"\b(?i:not|never)\b{_GAP}{_CJK_LIST}")
+_CJK_NOT_USED = re.compile(rf"{_CJK_LIST}(?:\s*\([^()]*\))?\s+(?:(?:is|are)\s+not\s+used|not\s+chosen)\b", re.I)
+_CJK_ALTERNATIVE = re.compile(rf"(?:\*alt\.\*|\b(?i:alternatives?)\b){_GAP}{_CJK_LIST}")
+# An aside in English, as against a level mark with a form ("(B, R: 公正)").
+_ENGLISH_ASIDE = re.compile(r"\(([^()]*)\)")
 
 
 def _cells(line):
@@ -431,7 +464,63 @@ def _singular(term):
                     for w in term.split())
 
 
+def _unspaced(text):
+    """Whether text has Han or kana, written without spaces."""
+    return _CJK_CHAR.search(text) is not None
+
+
+def _cjk_cell(cell):
+    """Whether a cell writes its forms in Han or kana without italics."""
+    italic = " ".join(_ITALIC.findall(cell))
+    return _unspaced(_ITALIC.sub(" ", cell)) and not _unspaced(italic)
+
+
+def _cjk_forms(text):
+    """The runs of Han and kana in text, without leading or trailing
+    ellipses ("……有时" -> "有时")."""
+    return [f.strip("…") for f in _CJK_RUN.findall(text) if f.strip("…")]
+
+
+def _cjk_list(pattern, text):
+    return [f for m in pattern.finditer(text) for f in _cjk_forms(m.group(1))]
+
+
+def _cjk_entry(cell, extra):
+    """forms, avoided and alternatives of a cell written in Han or kana
+    without italics: "肢体 (L); 部分 (B, R). Not 成员"."""
+    cell, extra = markup.render(cell), markup.render(extra)
+    both = cell + " " + extra
+    avoided = _cjk_list(_CJK_RULED_OUT, both) + [f for m in _CJK_NOT_USED.finditer(both)
+                                                 for f in _cjk_forms(m.group(1))]
+    alternatives = _cjk_list(_CJK_ALTERNATIVE, both)
+    rest = _CJK_NOT_USED.sub(" ", _CJK_ALTERNATIVE.sub(" ", _CJK_RULED_OUT.sub(" ", cell)))
+    # Runs inside an English aside are commentary, not forms.
+    rest = _ENGLISH_ASIDE.sub(lambda m: m[0] if not re.search(r"[A-Za-z]{3}", m[1]) else " ", rest)
+    rest = rest.replace("*", " ")
+    forms = []
+    for m in _CJK_RUN.finditer(rest):
+        form = m[0].strip("…")
+        if form and form not in [f for f, _ in forms]:
+            forms.append((form, _levels(rest[m.end():])))
+    # A form the row gives as its own is not ruled out by a remark about
+    # where it is not used ("约柜 where it does", "never 上主 named in its
+    # place").
+    own = [f for f, _ in forms]
+    avoided = list(dict.fromkeys(f for f in avoided if not any(f in x for x in own)))
+    alternatives = list(dict.fromkeys(f for f in alternatives if f not in own))
+    return forms, avoided, alternatives
+
+
 def _entry(number, section, book, source, cell, extra):
+    if _cjk_cell(cell):
+        forms, avoided, alternatives = _cjk_entry(cell, extra if _cjk_cell(extra) else "")
+        return {
+            "line": number, "section": section, "book": book, "source": source, "cell": cell,
+            "english": _english_terms(source),
+            "capital": source.lstrip("*_ ")[:1].isupper(),
+            "sources": _source_words(source),
+            "forms": forms, "avoided": avoided, "alternatives": alternatives, "cjk": True,
+        }
     return {
         "line": number, "section": section, "book": book, "source": source, "cell": cell,
         "english": _english_terms(source),
@@ -467,10 +556,20 @@ def glossary_rows(text, name):
     book (for "Added while drafting"), source, cell, english: [terms],
     sources (transliterated words in the English's asides), forms:
     [(form, levels or None)], avoided, alternatives}."""
-    rows, section, header = [], "", None
+    rows, section, header, heading_book = [], "", None, None
+    abbreviations = dict(_ABBREVIATION.findall(text))
+
+    def expand(cell):
+        for short, full in abbreviations.items():
+            cell = cell.replace(f"*{short}*", full)
+        return cell
+
     for number, line in enumerate(text.splitlines(), 1):
         if line.startswith("#"):
             section = line.lstrip("#").strip()
+            # A book's own heading ("### Malachi", "### Psalms 1-41") in a
+            # table of terms added while drafting.
+            heading_book = _BOOK_NAMES.get(re.sub(r"\s+\d+[-–]\d+$", "", section).lower())
             header = None
             continue
         cells = _cells(line)
@@ -485,7 +584,8 @@ def glossary_rows(text, name):
         targets = [i for i, h in enumerate(header) if h in (name.lower(), _base_name(name).lower())]
         book_col = header.index("book") if "book" in header else None
         notes_col = header.index("notes") if "notes" in header else None
-        book = _BOOK_NAMES.get(cells[book_col].lower()) if book_col is not None and book_col < len(cells) else None
+        book = _BOOK_NAMES.get(cells[book_col].lower()) if book_col is not None and book_col < len(cells) \
+            else heading_book
         extra = cells[notes_col] if notes_col is not None and notes_col < len(cells) else ""
         for target in targets:
             if target >= len(cells) or not cells[target]:
@@ -494,7 +594,7 @@ def glossary_rows(text, name):
                                if i not in (book_col, notes_col) and i not in targets), None)
             if source_col is None or not cells[source_col]:
                 continue
-            source, cell = cells[source_col], cells[target]
+            source, cell = cells[source_col], expand(cells[target])
             src_parts, cell_parts = _split_parts(source), _split_parts(cell)
             if len(src_parts) > 1 and len(src_parts) == len(cell_parts):
                 for s, c in zip(src_parts, cell_parts):
@@ -506,7 +606,11 @@ def glossary_rows(text, name):
 
 def _form_words(entry):
     """The words of an entry's forms and of the rest of its cell (names are
-    not in italics), four letters or more, hyphenated words in parts too."""
+    not in italics), four letters or more, hyphenated words in parts too.
+    For Han and kana, the pairs of characters in its forms, or a form of one
+    character itself."""
+    if entry.get("cjk"):
+        return {f[i:i + 2] for f, _ in entry["forms"] for i in range(max(1, len(f) - 1))}
     cell = _ALTERNATIVE.sub(" ", _RULED_OUT.sub(" ", entry["cell"]))
     text = flatten(cell + " " + " ".join(f for f, _ in entry["forms"]), every_option=True)
     out = set()
@@ -530,6 +634,17 @@ def _form_capital(entry):
     return re.sub(r"[\W\d_]", "", markup.render(entry["cell"]))[:1].isupper()
 
 
+def _both_cjk(a, b):
+    return bool(a.get("cjk") and b.get("cjk"))
+
+
+def _cjk_overlap(a, b):
+    """Whether a form of one entry is part of a form of the other (人 in
+    人子, 柏树 in 香柏树)."""
+    fa, fb = [f for f, _ in a["forms"]], [f for f, _ in b["forms"]]
+    return any(x in y or y in x for x in fa for y in fb)
+
+
 def glossary_conflicts(rows):
     """[conflict]: pairs of entries for one English term whose forms share
     no word ("different_forms"), or where one uses a form the other rules
@@ -549,15 +664,17 @@ def glossary_conflicts(rows):
                     continue
                 if a["sources"] and b["sources"] and not set(a["sources"]) & set(b["sources"]):
                     continue
-                if a["capital"] != b["capital"] and _form_capital(a) != _form_capital(b):
+                if a["capital"] != b["capital"] and (_form_capital(a) != _form_capital(b) or _both_cjk(a, b)):
                     continue
+                if _both_cjk(a, b) and a["line"] == b["line"]:
+                    continue  # one cell telling two senses apart: 王后; 女王 (示巴女王)
                 these = _uses_ruled_out(b, a) + _uses_ruled_out(a, b)
                 if these:
                     kinds.add("ruled_out")
                     ruled |= set(these)
                 elif len(a["english"]) == 1 and len(b["english"]) == 1:
                     wa, wb = _form_words(a), _form_words(b)
-                    if not wa or not wb or wa & wb:
+                    if not wa or not wb or wa & wb or (_both_cjk(a, b) and _cjk_overlap(a, b)):
                         continue
                     kinds.add("different_forms")
                 else:
@@ -594,7 +711,42 @@ def _form_in(form, text):
 @functools.lru_cache(maxsize=None)
 def _form_pattern(form):
     form = flatten(form)
+    if _unspaced(form):
+        # No spaces to mark a word: a substring, an ellipsis standing for a
+        # few characters left out.
+        pieces = [p for p in re.split("…+", form) if p]
+        return pieces[0] if pieces else "", re.compile(r".{0,20}?".join(re.escape(p) for p in pieces))
     return form, re.compile(r"(?<![\w-])" + re.escape(form) + r"[\w-]{0,4}(?![\w])")
+
+
+def _avoided_in(form, row, text):
+    """Whether a form a row rules out is in a verse. In Han or kana, not a
+    single character ("never 家"), and not where it is only part of the
+    row's own forms (咒诅 in 诅咒诅咒, 柏树 in 香柏树)."""
+    if not _unspaced(form):
+        return _form_in(form, text)
+    if len(form) < 2 or not _form_in(form, text):
+        return False
+    for own, _ in sorted(row["forms"], key=lambda f: -len(f[0])):
+        if len(own) > 1 and "…" not in own:
+            text = text.replace(own, "\0")
+    return _form_in(form, text)
+
+
+_VARIANTS = " ‖ "
+_SECOND = {name: 1 for name in markup.SETTINGS}
+
+
+def _verse_text(raw):
+    """A verse as glossary forms are looked for in it: every option of its
+    settings. Text in Han or kana, whose forms are matched as substrings,
+    has each option in place instead: the defaults, then the second
+    options ("永活神 ‖ 永活上帝"), so a form runs on into its span."""
+    text = flatten(raw, every_option=True)
+    if not _unspaced(text) or not markup.SPAN.search(raw):
+        return text
+    second = " ".join(fold(markup.flat(markup.render(raw, _SECOND))).split())
+    return _VARIANTS.join([flatten(raw), second, text])
 
 
 def glossary_hits(rows, records, lang):
@@ -627,8 +779,8 @@ def glossary_hits(rows, records, lang):
                 if term is None:
                     continue
                 if text is None:
-                    text = flatten(raw, every_option=True)
-                bad = [(f, "avoided") for f in row["avoided"] if _form_in(f, text)]
+                    text = _verse_text(raw)
+                bad = [(f, "avoided") for f in row["avoided"] if _avoided_in(f, row, text)]
                 if not bad and row["alternatives"]:
                     own = [f for f, lv in row["forms"] if not lv or level in lv]
                     if not any(_form_in(f, text) for f in own):
@@ -642,7 +794,8 @@ def glossary_hits(rows, records, lang):
                                     if x is not row and any(_form_in(form, flatten(f)) for f, _ in x["forms"])), None)
                     mine_hits[key] = {"record": r["id"], "verse": r["refs"][0], "language": lang, "level": level,
                                       "levels": [level], "kind": kind, "form": form, "term": term,
-                                      "row": _row_json(row), "allowed_by": allowed, "text": _snippet(text)}
+                                      "row": _row_json(row), "allowed_by": allowed,
+                                      "text": _snippet(text.split(_VARIANTS)[0])}
         hits += mine_hits.values()
     return hits
 
