@@ -812,7 +812,7 @@ in different books. They are now one form each, by these rules:
 | 1 Kings | terebinth | *pohon tarbantin* (L, B), as 1 Samuel; *pohon besar* (R) | 13:14 |
 | 1 Kings | rebelled against the mouth of the LORD | *memberontak terhadap titah {{divine_name:TUHAN\|Yahweh}}* (L); *melawan titah* (B); *menolak menaati* (R) | 13:21 |
 | 1 Kings | Abijah (son of Jeroboam); Tirzah; Nadab; Naamah; Abijam | Abia; Tirza; Nadab; Naama; Abiam | 14:1–31 |
-| 1 Kings | one who urinates against a wall; bond and free | *orang yang kencing ke dinding* (L), *setiap laki-laki* (B, R); *yang terkurung maupun yang bebas* (L), *budak maupun orang merdeka* (B, R) | 14:10 |
+| 1 Kings | one who urinates against a wall; bond and free | *orang yang kencing ke dinding* (L), *setiap laki-laki* (B, R); *yang terkurung maupun yang bebas* (L), *apa pun kedudukannya* (B), *siapa pun mereka* (R); not "slave and free" | 14:10 |
 | 1 Kings | the book of the chronicles of the kings of Israel / Judah | *Kitab Sejarah Raja-raja Israel* / *Yehuda* | 14:19, 29 |
 | 1 Kings | male cult prostitutes; abominations; the runners (guard) | *pelacur bakti laki-laki* (L, B); *kekejian*; *pasukan pelari* (L), *pasukan pengawal* (B, R) | 14:24, 27 |
 | 1 Kings | Maacah; Abishalom | Maakha; Abisyalom (uncertain, kept apart from *Absalom*) | 15:2 |
@@ -1687,7 +1687,7 @@ in different books. They are now one form each, by these rules:
 | Isaiah | Zoan; Noph | Zoan; Nof (L), Memfis (B, R) | 19:11, 13 |
 | Isaiah | City of Destruction | Kota Kebinasaan | 19:18 |
 | Isaiah | Sargon; commander-in-chief (*tartan*) | Sargon; Tartan (L), *panglima tertinggi* (B) | 20:1 |
-| Isaiah | wilderness of the sea | *padang gurun di tepi laut* | 21:1 |
+| Isaiah | wilderness of the sea | *padang gurun laut* (L, B); *negeri yang disebut Padang Gurun Laut* (R) | 21:1 |
 | Isaiah | Dumah; Dedan; Tema; Kedar | Duma; Dedan; Tema; Kedar | 21:11–16 |
 | Isaiah | valley of vision | Lembah Penglihatan | 22:1 |
 | Isaiah | House of the Forest | Gedung Hutan | 22:8 |
@@ -2445,7 +2445,7 @@ in different books. They are now one form each, by these rules:
 | Jeremiah | an execration (*'alah*) in the curse lists | *sumpah kutuk* (L); *nama yang dipakai orang untuk mengutuk* (B); *orang akan memakai nama kalian kalau mengutuk* (R) | 42:18 |
 | Jeremiah | Azariah son of Hoshaiah | Azarya anak Hosyaya | 43:2 |
 | Jeremiah | brick terrace; mortar | lantai batu bata; tanah liat | 43:9 |
-| Jeremiah | royal canopy | permadani kerajaan (L, B); tenda kerajaan (R) | 43:10 |
+| Jeremiah | royal canopy | *kanopi kerajaan* (L, B, R) | 43:10 |
 | Jeremiah | Beth-shemesh (in Egypt) | Bet-Syemesy (L, B); Heliopolis, kota matahari (R) | 43:13 |
 | Jeremiah | Pathros | Patros | 44:1 |
 | Jeremiah | LORD God of hosts | TUHAN, Allah semesta alam | 44:7 |
