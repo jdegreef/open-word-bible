@@ -3183,6 +3183,43 @@ html[dir="rtl"] .term-book:not([open]) summary::before { transform: translateY(-
 .topic-passage h2 a { color: inherit; }
 .topic-passage p { margin: 0 0 4px; }
 
+/* Study view, quieter: "Why?" is a small mark after a sentence rather
+   than a word in a pill, faint until its verse is pointed at or chosen, so
+   the reading line is not broken after every sentence. Its full label
+   stays for screen readers (web/reader.js why_label). */
+.text .why-mark {
+  display: inline-grid; place-items: center; width: 15px; height: 15px; padding: 0; margin-inline: 4px 3px;
+  border-color: var(--line-strong); color: var(--muted); font-size: 0; line-height: 1; vertical-align: 6px; opacity: .55;
+  transition: opacity var(--fast), border-color var(--fast), color var(--fast);
+}
+.text .why-mark::before { content: "?"; font-size: 10px; font-weight: 700; line-height: 1; }
+.text .verse:hover .why-mark, .text .verse[aria-current="true"] .why-mark, .text .why-mark:focus-visible,
+.text .why-mark[aria-expanded="true"] { opacity: 1; border-color: var(--accent); color: var(--accent); }
+@media (pointer: coarse) { .text .why-mark { width: 17px; height: 17px; } .text .why-mark::before { font-size: 11px; } }
+
+/* The wide panel before a verse is chosen: the chapter's sections as links
+   (web/reader.js chapterOutline). */
+.outline { margin: 16px 0 0; padding-top: 14px; border-top: 1px solid var(--line); display: grid; gap: 8px; }
+.outline h3 { margin: 0; font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.outline ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+.outline li { display: flex; align-items: baseline; gap: 10px; }
+.outline li a { flex: 1; padding: 4px 0; color: var(--text); text-decoration: none; font-family: var(--serif); font-size: 16px; line-height: 1.35; }
+.outline li a:hover { color: var(--accent); text-decoration: underline; }
+.outline-v { flex: none; font-size: 12.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.outline-notes { font-size: 14px; font-weight: 600; color: var(--accent); }
+.outline a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
+.panel .outline + .keys { margin-top: 16px; }
+
+/* A cross-reference preview on a phone: a sheet at the foot of the screen
+   with a close button, not a pop-up over the text. */
+@media (max-width: 860px) {
+  .fn-pop.xr-pop {
+    position: fixed; left: 0 !important; right: 0; top: auto !important; bottom: 0; width: auto; z-index: 45;
+    max-height: 60vh; max-height: 60dvh; border-radius: 16px 16px 0 0; border-bottom: 0;
+    padding: 18px 16px calc(18px + env(safe-area-inset-bottom, 0px)); box-shadow: 0 -10px 30px rgb(0 0 0 / .25);
+  }
+  .xr-pop .xr-close { position: sticky; top: 0; float: inline-end; margin: -6px -4px 0 8px; }
+
 /* The chapter picker (web/reader.js): a button beside the title opens the
    book's chapters as a grid under it, instead of rows of pills above. */
 .title-row { position: relative; display: flex; align-items: center; gap: 6px; }
