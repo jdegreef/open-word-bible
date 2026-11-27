@@ -17,6 +17,7 @@ from django.test import SimpleTestCase
 from django.test.utils import CaptureQueriesContext
 from django.utils import timezone
 
+from accounts.models import Role
 from backend_tests.test_admin import K, AdminTestCase, account, client_for, sentence
 from backend_tests.test_backend import CONTENT, import_content, load_extract_words
 from staff import review
@@ -162,7 +163,19 @@ class ReviewTest(AdminTestCase):
         self.assertEqual(self.act(self.scholar, "GEN.1.1.s1", "hbo").status_code, 403)
         self.assertEqual(self.act(self.scholar, "GEN.1.1.s1", "grc").status_code, 400)   # not in the NT layer
         self.assertEqual(self.act(self.french, "JHN.1.2.s1", "fr").status_code, 400)     # not drafted in French
-        # A super admin may review any layer, Hebrew meaning included.
+        # A super admin reads every layer, but approving and flagging take a
+        # reviewer role, for them too (the charter); commenting doesn't.
+        self.assertEqual(self.admin.get("/api/admin/review/GEN.1.1.s1/?layer=hbo").json()["may_review"], False)
+        self.assertFalse(self.admin.get("/api/admin/review/?layer=hbo").json()["may_review"])
+        for action in ("approve", "flag"):
+            r = self.act(self.admin, "GEN.1.1.s1", "hbo", action, "x")
+            self.assertEqual((r.status_code, r.json()["code"]), (403, "forbidden"))
+        r = self.admin.post("/api/admin/review/bulk/", {"layer": "hbo", "action": "approve", "records": ["GEN.1.1.s1"]},
+                            format="json")
+        self.assertEqual(r.status_code, 403)
+        self.assertEqual(self.act(self.admin, "GEN.1.1.s1", "hbo", "comment", "Worth a look").status_code, 201)
+        Role.objects.create(user=self.boss, kind=K.SCHOLAR_REVIEWER, language="hbo")
+        self.assertTrue(self.admin.get("/api/admin/review/GEN.1.1.s1/?layer=hbo").json()["may_review"])
         self.assertEqual(self.act(self.admin, "GEN.1.1.s1", "hbo").status_code, 201)
         self.assertFalse(ReviewEvent.objects.exclude(user__username="boss@example.org").exists())
 
@@ -187,6 +200,7 @@ class ReviewTest(AdminTestCase):
         self.assertEqual([s["record"] for s in todo], ["JHN.1.2.s1"])
 
     def test_wording_approval_is_per_language_and_goes_stale(self):
+        Role.objects.create(user=self.boss, kind=K.LANGUAGE_REVIEWER, language="en")
         self.assertEqual(self.act(self.french, "JHN.1.1.s1", "fr").status_code, 201)
         self.assertEqual(self.act(self.admin, "JHN.1.1.s1", "en").status_code, 201)
         self.assertEqual(Sentence.objects.get(record_id="JHN.1.1.s1").status, "ai_draft")

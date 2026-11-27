@@ -1304,7 +1304,7 @@ the published 45 cm cubit. Where the English converts at the ordinary cubit
 
 | English (Hebrew) | Vietnamese |
 |---|---|
-| a wife of prostitution (Hosea 1:2) | *một người vợ đàng điếm* / *một người vợ lăng loàn* / *một người vợ sẽ không chung thủy*. *Zanah* is as in Ezekiel above. |
+| a wife of prostitution (Hosea 1:2) | *một người vợ đàng điếm* / *một người vợ lăng loàn* / *một người đàn bà không chung thủy* (not "sẽ không chung thủy", which would decide when she became so). *Zanah* is as in Ezekiel above. |
 | Jezreel; Lo-ruhamah; Lo-ammi (Hosea 1:4–9) | *Gít-rê-ên* ✓ at every level. L: *Lô-Ru-ha-ma*, *Lô-Am-mi*, with the meaning in a footnote. B, R: ***Không Được Thương Xót***, ***Không Phải Dân Ta***. In 2:3 and 2:25 they become *Am-mi*, *Ru-ha-ma* (L) / *Dân Ta*, *Được Thương Xót* (B, R). The *Ta* inside a name is a capital with no span. |
 | "You are not my people … children of the living God" (Hosea 2:1, 25) | *Các ngươi không phải là dân Ta*; *con cái của Đức Chúa Trời hằng sống* ✓ Romans 9:26 |
 | "My husband" / "My Baal" (Hosea 2:18) | *"Chồng tôi"* / *"Ba-anh của tôi"*. R adds *nghĩa là "Chủ của tôi"*, as the English R does. |
@@ -1635,7 +1635,7 @@ This is why "declares the Lord GOD" at B and R below is no longer written the Is
 
 | English (Hebrew) | Korean |
 |---|---|
-| a wife of prostitution (Hos 1:2) | 음행하는 아내 / 음란한 아내 / 신실하지 않을 아내 |
+| a wife of prostitution (Hos 1:2) | 음행하는 아내 / 음란한 아내 / 신실하지 않은 여자 (not "신실하지 않을 아내", which would decide when she became so) |
 | Lo-ruhamah; Lo-ammi; Ruhamah; Ammi | L 로루하마, 로암미, 루하마, 암미 (footnote with the meaning); B, R 긍휼 없음, 내 백성 아님, 긍휼 받음, 내 백성, written as names: 그 아이의 이름을 '긍휼 없음'이라고 하여라. In 1:6, 2:3 and 2:25, B and R use the verb 긍휼히 여기다 so that the name stays linked to it (uncertain). Rom 9:25 has 사랑받지 못하던 여자 from the Greek; the allusion decision notes it |
 | Jezreel | 이스르엘 [Kings] |
 | my husband / my master (2:18) | 내 남편 / 내 주인, with a footnote that *ba'li* is "my Baal" |
