@@ -1695,7 +1695,8 @@
     "message.reply": "answered", "message.done": "marked done", "message.declined": "declined", "message.new": "reopened",
     "job.file": "filed drafting job", "article.job": "filed article job", "digest.send": "sent the weekly digest to", "message.fixed": "told the reader their message led to a change:", "email.send": "emailed the team:", "fix.request": "requested fix",
     "export.download": "downloaded", "review.assign": "assigned review to", "review.unassign": "took back a review assignment from",
-    "review.assignment": "changed a review assignment of", "review.undo": "took back"
+    "review.assignment": "changed a review assignment of", "review.undo": "took back",
+    "notify.reminder": "sent a due-date reminder for", "notify.week": "sent a reviewer their week:"
   };
   function activityList(actions) {
     return h("ul", { class: "admin-feed" }, actions.map(function (a) {
@@ -1706,7 +1707,7 @@
   }
   // The activity log, narrowed by who did it and what kind of thing.
   var ACTIVITY = { by: "", kind: "" };
-  var KIND_LABEL = { role: "Roles", user: "Accounts", message: "Reader messages", job: "Drafting jobs", article: "Article jobs",
+  var KIND_LABEL = { notify: "Reminders", role: "Roles", user: "Accounts", message: "Reader messages", job: "Drafting jobs", article: "Article jobs",
     fix: "Fix requests", email: "Team email", digest: "Digests", export: "Downloads", review: "Review steps taken back" };
   VIEWS.activity = function () {
     var f = ACTIVITY;
@@ -1935,7 +1936,8 @@
   // /api/admin/review/workspace/). Each item links to the view that deals
   // with it: the queue (a book's sentences to review), the sentence, the
   // verse inspector, Checks.
-  var STANDING = { overdue: ["Overdue", "bad"], open: ["Open", "info"], done: ["Done", "good"], closed: ["Closed", ""] };
+  var STANDING = { overdue: ["Overdue", "bad"], open: ["Open", "info"], reviewed: ["Reviewed, flags open", "warn"],
+    done: ["Done", "good"], closed: ["Closed", ""] };
   function standingPill(a) { return pill(STANDING[a.standing][0], STANDING[a.standing][1]); }
   function dueText(a) {
     if (!a.due) return "No date";
@@ -1975,9 +1977,22 @@
       });
       books();
     }
-    reviewerSel.addEventListener("change", layers);
-    layerSel.addEventListener("change", books);
+    // Split the book: the other reviewers of the layer to share its
+    // drafted chapters with, in runs of about the same size.
+    var share = h("select", { id: "assign-share", multiple: true, size: 3 });
+    function sharers() {
+      var was = Array.prototype.map.call(share.selectedOptions || [], function (o) { return o.value; });
+      share.textContent = "";
+      people.filter(function (p) {
+        return String(p.id) !== reviewerSel.value && (p.layers === "any" || p.layers.indexOf(layerSel.value) >= 0);
+      }).forEach(function (p) { share.appendChild(h("option", { value: String(p.id), selected: was.indexOf(String(p.id)) >= 0 }, p.name)); });
+      shareField.hidden = !share.options.length;
+    }
+    var shareField = h("label", { class: "admin-field", for: "assign-share" }, "Split the book with (optional)", share);
+    reviewerSel.addEventListener("change", function () { layers(); sharers(); });
+    layerSel.addEventListener("change", function () { books(); sharers(); });
     layers();
+    sharers();
     var submit = h("button", { type: "submit", class: "admin-btn primary", disabled: !people.length }, "Assign");
     var form = h("form", { class: "admin-form" },
       h("label", { class: "admin-field", for: "assign-reviewer" }, "Reviewer", reviewerSel),
@@ -1985,15 +2000,24 @@
       h("label", { class: "admin-field", for: "assign-book" }, "Book", bookSel),
       h("label", { class: "admin-field", for: "assign-from" }, "From chapter", from),
       h("label", { class: "admin-field", for: "assign-to" }, "To chapter", to),
+      shareField,
       h("label", { class: "admin-field", for: "assign-due" }, "Due (optional)", due),
       h("label", { class: "admin-field", for: "assign-note" }, "Note", noteBox), submit);
     form.addEventListener("submit", function (e) {
       e.preventDefault();
+      var others = Array.prototype.map.call(share.selectedOptions || [], function (o) { return Number(o.value); });
+      if (others.length && (from.value || to.value)) {
+        note(status, "A split shares the whole book: clear the chapters, or assign a range to one reviewer.", true);
+        return;
+      }
       busy(submit, true);
-      api("/api/admin/assignments/", { method: "POST", body: { assignee: Number(reviewerSel.value), layer: layerSel.value, book: bookSel.value,
-        chapter_from: from.value, chapter_to: to.value, due: due.value, note: noteBox.value } }).then(function (r) {
-        var a = r.assignment;
-        FLASH = "Assigned " + a.label + " (" + a.layer.name + ") to " + a.assignee.name + ".";
+      var body = { layer: layerSel.value, book: bookSel.value, due: due.value, note: noteBox.value };
+      if (others.length) body.assignees = [Number(reviewerSel.value)].concat(others);
+      else { body.assignee = Number(reviewerSel.value); body.chapter_from = from.value; body.chapter_to = to.value; }
+      api("/api/admin/assignments/", { method: "POST", body: body }).then(function (r) {
+        var made = r.assignments || [r.assignment];
+        FLASH = "Assigned " + made.map(function (a) { return a.label + " to " + a.assignee.name; }).join("; ") + " (" + made[0].layer.name + ")." +
+          (r.warnings && r.warnings.length ? " " + r.warnings.join(" ") : "");
         route();
       }, function (err) { busy(submit, false); note(status, err, true); });
     });

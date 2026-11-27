@@ -196,7 +196,9 @@ OWBAdmin.module(function (A) {
         rows.appendChild(h("tr", null, pick.box(s),
           h("th", { scope: "row" }, h("a", { href: "#review/" + layer + "/" + s.record }, s.label), h("div", { class: "admin-sub" }, s.record)),
           h("td", { class: "admin-wrap", lang: page.layer.kind === "meaning" ? "en" : layer }, rendering(s.preview)),
-          h("td", null, reviewPill(s.state)),
+          h("td", null, reviewPill(s.state), s.meaning && s.meaning !== "approved"
+            ? h("div", { class: "admin-sub" }, s.meaning === "flagged" ? "Meaning flagged" : s.meaning === "changed" ? "Meaning changed since approval" : "Meaning not reviewed")
+            : null),
           h("td", null, h("span", { class: "admin-sub" }, s.last ? s.last.label + ", " + s.last.by + ", " + when(s.last.at) : "—"))));
       });
       more.hidden = !page.more;
@@ -271,11 +273,29 @@ OWBAdmin.module(function (A) {
         return t === undefined ? next : t;
       }
       function sentencePath(rec) { return "/api/admin/review/" + encodeURIComponent(rec) + "/?layer=" + encodeURIComponent(layer); }
-      var busyNow = false, reviewBar = null;
+      var busyNow = false, reviewBar = null, overMeaning = false;
+      // Wording is read against the meaning: where its review stands, and
+      // whether this layer's approval stood on a meaning that has changed.
+      function meaningLine() {
+        if (!d.meaning) return null;
+        var m = d.meaning, last = d.trail.filter(function (e) { return e.action === "reviewed" && e.language === layer; }).pop();
+        var tone = m.state === "flagged" ? " bad" : m.state === "approved" ? "" : " warn";
+        return h("p", { class: "admin-meaning" + tone }, m.layer.name + ": ", reviewPill(m.state), " ",
+          h("a", { href: "#review/" + m.layer.code + "/" + record }, "Open the meaning review"),
+          m.state === "flagged" ? h("span", { class: "admin-sub" }, " The meaning is flagged; wording approved now may need another look once it is settled.") : null,
+          last && last.meaning_changed ? h("span", { class: "admin-sub" }, " The wording was approved before the meaning changed: read it against the meaning as it is now.") : null);
+      }
       function act(action, button) {
         if (busyNow) return;
         // A flag or comment says something: with the note empty (on a
         // phone, folded away), open it and ask for the words first.
+        // Approving wording over a flagged meaning asks first.
+        if (action === "approve" && d.meaning && d.meaning.state === "flagged" && !overMeaning) {
+          note(status, "The meaning of this sentence is flagged. Approve the wording anyway? ", true);
+          status.appendChild(h("button", { type: "button", class: "admin-link", onclick: function () { overMeaning = true; act("approve", button); } },
+            "Approve anyway"));
+          return;
+        }
         if (action !== "approve" && !noteBox.value.trim()) {
           reviewBar.classList.add("noting");
           if (action === "flag") { flagging = true; flagBtn.classList.add("armed"); }
@@ -392,7 +412,8 @@ OWBAdmin.module(function (A) {
       var trail = d.trail.length ? h("ul", { class: "admin-feed" }, d.trail.map(function (e) {
         return h("li", null, h("time", { datetime: e.at, title: new Date(e.at).toLocaleString("en-GB") }, when(e.at)),
           h("span", null, h("strong", null, e.by), " " + e.label.toLowerCase() + " (" + (e.language ? names[e.language] || e.language : "meaning") + ")",
-            e.changed ? [" ", pill("changed since", "warn")] : null, e.note ? h("span", { class: "admin-sub" }, ": " + e.note) : null));
+            e.changed ? [" ", pill(e.meaning_changed ? "meaning changed since" : "changed since", "warn")] : null,
+            e.note ? h("span", { class: "admin-sub" }, ": " + e.note) : null));
       })) : empty("No one has reviewed this sentence yet.");
       return [head("Review: " + d.layer.name, d.label, r.id + " · " + (r.status === "ai_draft" ? "AI-assisted" : r.status.replace(/_/g, " "))),
         h("div", { class: "admin-actions" }, h("a", { href: "#review/" + layer }, "‹ The queue"),
@@ -401,9 +422,10 @@ OWBAdmin.module(function (A) {
           }) : null,
           h("a", { href: "#verse/" + d.verse }, A.ME.admin.indexOf("inbox") >= 0 ? "Request a fix in the verse inspector" : "Verse inspector")),
         h("section", { class: "admin-block admin-record" }, h("header", { class: "admin-toolbar" }, h("h2", null, "State"), reviewPill(d.state)),
-          words, h("p", { class: "admin-gloss" }, "Literal gloss: " + r.literal_gloss), renderings,
+          meaningLine(), words, h("p", { class: "admin-gloss" }, "Literal gloss: " + r.literal_gloss), renderings,
           meaning.length ? [h("h3", { class: "admin-h3" }, "Meaning decisions"), h("div", { class: "admin-decisions" }, meaning.map(decision))] : null,
           mine.length ? [h("h3", { class: "admin-h3" }, (names[layer] || layer) + " decisions"), h("div", { class: "admin-decisions" }, mine.map(decision))] : null),
+        hintsBlock(d.hints, layer),
         // Kept at the foot of the window while the sentence above is read,
         // so approving never means scrolling past every language.
         reviewBar = h("section", { class: "admin-block admin-review-bar" + (noteBox.value ? " noting" : ""), "aria-label": "Your review" },
@@ -416,6 +438,44 @@ OWBAdmin.module(function (A) {
         h("div", { class: "admin-review-keys" }, hint, help),
         h("section", { class: "admin-block" }, h("h2", null, "Review trail"), trail)];
     });
+  }
+  // Start here, in My review: the layer's documents, and what approving
+  // and flagging mean (the charter's review rules, in short). Folded away
+  // once a reviewer has approved something in the layer.
+  function startHere(d) {
+    var meaning = d.layer.kind === "meaning";
+    var box = h("details", { class: "admin-block admin-start", open: !d.changes.last_approval },
+      h("summary", null, h("h2", null, "Start here")),
+      d.guide.length ? h("ul", { class: "admin-files" }, d.guide.map(function (g) {
+        return h("li", null, h("a", { href: A.ghFile(g.file), rel: "noopener" }, g.label), " ", h("span", { class: "admin-sub" }, g.file));
+      })) : null,
+      h("dl", { class: "admin-facts" },
+        h("div", null, h("dt", null, "Approve"), h("dd", null, meaning
+          ? "You have read the literal gloss and the meaning decisions against the " + d.layer.books + " and they say what it says. It moves the sentence on from AI-assisted."
+          : "You have read every level against the meaning and it says it well in " + d.layer.name.replace(/ wording$/, "") + ". It holds until the wording, or the meaning beneath it, changes.")),
+        h("div", null, h("dt", null, "Flag"), h("dd", null, "Something is wrong: say what in the note. An editor files the fix; the flag stays open until the layer is approved again.")),
+        h("div", null, h("dt", null, "Comment"), h("dd", null, "A note for the next reviewer. It changes nothing."))));
+    return box;
+  }
+  // Beside a sentence: its key terms with the form expected, any content
+  // check hit on it and any long run it shares with a reference Bible,
+  // from what those pages have kept (staff/hints.py).
+  function hintsBlock(hints, layer) {
+    if (!hints || (!hints.terms.length && !hints.checks.length && !hints.shared.length)) return null;
+    var items = [];
+    hints.terms.forEach(function (t) {
+      items.push(h("li", null, h("strong", null, t.sense), " ", h("span", { class: "admin-sub" }, t.lemma), t.expected.length
+        ? [": expected ", h("q", null, t.expected.join(", ")), t.found === false ? [" ", pill("not in Balanced", "warn")] : null]
+        : null));
+    });
+    hints.checks.forEach(function (c) {
+      items.push(h("li", null, pill(CHECK_KINDS[c.kind] || c.kind, "warn"), " ", c.term ? h("q", null, c.term) : null,
+        " (" + c.levels.join(", ") + ") ", h("a", { href: "#checks?lang=" + layer }, "Checks")));
+    });
+    hints.shared.forEach(function (r) {
+      items.push(h("li", null, pill(r.length + " words shared with " + r.edition, "info"), " (" + r.level + ") ", h("span", { class: "admin-sub" }, r.text)));
+    });
+    return h("section", { class: "admin-block" }, h("h2", null, "Worth checking"), h("ul", { class: "admin-checks" }, items));
   }
   // A link to the layer's review queue, showing one book (or every book)
   // and one state.
@@ -446,6 +506,7 @@ OWBAdmin.module(function (A) {
           queueLink(layer, "", "todo", "Open the queue ›")),
         h("div", { class: "admin-tiles" }, tile(num(c.not_reviewed), "not reviewed"), tile(num(c.approved), "approved", "good"),
           tile(num(c.changed), "changed since approval", c.changed ? "warn" : ""), tile(num(c.flagged), "flagged", c.flagged ? "bad" : ""))];
+      out.push(startHere(d));
 
       out.push(h("section", { class: "admin-block" }, h("h2", null, "Assigned to you"),
         d.assignments.length ? table(["Range", "Progress", "Due", "Standing"], d.assignments.map(function (a) {

@@ -35,6 +35,7 @@ from accounts.auth import site_url
 from accounts.models import Role
 from accounts.views import normalise_email
 
+from . import notify
 from .models import AdminAction, record
 from .permissions import admin_view
 from .progress import _action_json
@@ -55,6 +56,7 @@ GRANTABLE = {
 INVITATION = ("You've been added to the Open Word Bible team",
               "{inviter} has given you the role of {role} on Open Word Bible.\n\n"
               "Sign in with this address ({email}) to start:\n\n{url}\n\n"
+              "{reading}Once signed in, your work is here: {work}\n\n"
               "You can sign in with a link emailed to you, with Google, or with a password "
               "you choose. If you weren't expecting this, you can ignore this email.")
 
@@ -81,11 +83,12 @@ def invite(user, role, inviter):
     """Email user that they hold role, with a link to sign in. Returns
     False when the email could not be sent."""
     subject, body = INVITATION
+    work, reading = notify.where_to_start(role)
     try:
         send_mail(subject=subject,
                   message=body.format(inviter=inviter.first_name or inviter.username,
                                       role=role.as_json()["label"].lower(), email=user.username,
-                                      url=site_url("/login/", redirect="/admin/")),
+                                      url=site_url("/login/", redirect="/admin/"), work=work, reading=reading),
                   from_email=settings.DEFAULT_FROM_EMAIL, recipient_list=[user.username])
     except Exception:
         log.exception("invitation email failed")
@@ -133,6 +136,8 @@ def _grant(request):
     invited = invite(user, role, request.user) if user.last_login is None else None
     if invited:
         record(request.user, "role.invite", email)
+    elif invited is None:
+        notify.role_granted(user, role, request.user)   # an account in use hears of it too
     return Response({"member": _member(user), "invited": invited}, status=status.HTTP_201_CREATED)
 
 

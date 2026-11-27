@@ -306,6 +306,10 @@ form.admin-toolbar, .admin-toolbar.admin-filters { justify-content: flex-start; 
 .admin-review-progress i { display: block; width: 120px; height: 6px; border-radius: 99px; background: var(--line); overflow: hidden; }
 .admin-review-progress b { display: block; height: 100%; background: var(--accent); }
 .admin-review-keys { margin: 0 0 24px; }
+/* Where the meaning stands, on a wording review (admin-review.js meaningLine). */
+.admin-meaning { margin: 0 0 12px; padding: 8px 12px; border-radius: 10px; background: var(--surface-2); }
+.admin-meaning.bad { border: 1px solid var(--admin-danger); }
+.admin-meaning.warn { border: 1px solid var(--line-strong); }
 /* On a phone the bar keeps to one row of buttons, so the sentence has the
    screen: the note opens for a flag or a comment (admin-review.js act),
    and the keys hint, for a keyboard, is left out. */
@@ -325,3 +329,7 @@ form.admin-toolbar, .admin-toolbar.admin-filters { justify-content: flex-start; 
 .admin-spark { display: inline-flex; align-items: flex-end; gap: 2px; height: 28px; vertical-align: middle; }
 .admin-spark i { display: block; width: 7px; min-height: 1px; border-radius: 2px 2px 0 0; background: var(--accent); }
 .admin-pace .admin-bar { display: inline-block; width: 110px; vertical-align: middle; margin-inline-end: 8px; }
+/* Start here, in My review (admin-review.js startHere): folded once a reviewer has begun. */
+.admin-start > summary { cursor: pointer; }
+.admin-start > summary h2 { display: inline; }
+.admin-start .admin-files { margin: 12px 0 16px; }

@@ -20,7 +20,7 @@ from rest_framework.response import Response
 from owb import refs
 from translation.models import ReviewEvent, ReviewState, Sentence
 
-from . import assignments, history, review
+from . import assignments, hints, history, review
 from .inbox import verse_label
 from .models import ReviewAssignment
 from .permissions import admin_view
@@ -84,4 +84,5 @@ def workspace(request):
                     "items": [history.since_approval(e, sentences[e.sentence_id]) for e in shown]},
         "assignments": assigned,
         "checks": None if review._meaning(layer) else layer,
+        "guide": hints.guide(layer),
     })

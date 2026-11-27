@@ -99,6 +99,47 @@ class ReviewTest(AdminTestCase):
         self.act(self.french, "JHN.1.1.s1", "fr")
         self.assertEqual(status(), "ai_draft")
 
+    def test_wording_is_approved_over_the_meaning(self):
+        # The queue and the page say where the meaning stands.
+        self.act(self.scholar, "JHN.1.1.s1", "grc", "flag", "Wrong tense")
+        rows = {x["record"]: x for x in self.french.get("/api/admin/review/?layer=fr&state=").json()["sentences"]}
+        self.assertEqual(rows["JHN.1.1.s1"]["meaning"], "flagged")
+        page = self.french.get("/api/admin/review/JHN.1.1.s1/?layer=fr").json()
+        self.assertEqual((page["meaning"]["state"], page["meaning"]["layer"]["code"]), ("flagged", "grc"))
+        # A wording approval, then a change to the meaning alone: back for another look.
+        self.act(self.french, "JHN.1.1.s1", "fr")
+        s = Sentence.objects.get(record_id="JHN.1.1.s1")
+        s.literal_gloss = "In [the] beginning was the Word, newly glossed"
+        s.save()
+        review.refresh("fr")
+        self.assertEqual(ReviewState.objects.get(layer="fr").state, "changed")
+        trail = self.french.get("/api/admin/review/JHN.1.1.s1/?layer=fr").json()["trail"]
+        approval = [e for e in trail if e["action"] == "reviewed"][0]
+        self.assertEqual((approval["changed"], approval["meaning_changed"]), (True, True))
+
+    def test_an_approval_from_before_the_meaning_was_in_the_digest_still_holds(self):
+        self.act(self.french, "JHN.1.1.s1", "fr")
+        e = ReviewEvent.objects.get(language="fr")
+        s = review._with_texts(Sentence.objects, "fr").get(pk=e.sentence_id)
+        ReviewEvent.objects.filter(pk=e.pk).update(digest=review._wording_hash(s, "fr"))   # the old form
+        ReviewState.objects.filter(layer="fr").update(checked_at=None)
+        review.refresh("fr")
+        self.assertEqual(ReviewState.objects.get(layer="fr").state, "approved")
+
+    def test_where_to_start_and_hints_beside_the_sentence(self):
+        guide = self.french.get("/api/admin/review/workspace/?layer=fr").json()["guide"]
+        self.assertIn({"label": "Style brief", "file": "docs/french-style.md"}, guide)
+        page = self.french.get("/api/admin/review/JHN.1.1.s1/?layer=fr").json()
+        self.assertEqual(set(page["hints"]), {"terms", "checks", "shared"})
+        # A long shared run kept by Similarity shows beside the sentence.
+        from staff import overlap
+        from django.core.cache import cache
+        cache.set(overlap.cache_key("JHN", "fr", 6), {"longest_runs": [
+            {"record": "JHN.1.1.s1", "verse": "JHN.1.1", "level": "B", "edition": "LSG", "length": 9,
+             "text": "au commencement"}]})
+        page = self.french.get("/api/admin/review/JHN.1.1.s1/?layer=fr").json()
+        self.assertEqual(page["hints"]["shared"][0]["edition"], "LSG")
+
     def test_an_earlier_approval_still_stands_after_taking_back_a_flag(self):
         self.act(self.scholar, "JHN.1.1.s1", "grc")
         flag = self.act(self.scholar, "JHN.1.1.s1", "grc", "flag", "Wrong tense").json()["event"]["id"]
