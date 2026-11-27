@@ -34,19 +34,23 @@ OWBAdmin.module(function (A) {
   // (shift-click ticks the range from the last one ticked) to approve or
   // flag them together, or approve the rest of a chapter after a confirm
   // step that says how many that is. layerOf() is the queue's layer.
-  function queuePicker(layerOf, status) {
+  function queuePicker(layerOf, status, nameOf) {
     var boxes = [], last = -1, chapter = null;
     var count = h("strong");
     var noteBox = h("input", { type: "text", id: "bulk-note", maxlength: 4000, placeholder: "What is wrong (needed to flag)" });
     var approveBtn = h("button", { type: "button", class: "admin-btn primary" }, "Approve selected");
     var flagBtn = h("button", { type: "button", class: "admin-btn" }, "Flag selected");
     var clearBtn = h("button", { type: "button", class: "admin-link" }, "Clear");
+    // Approving a selection asks first, with the count and the layer, as
+    // approving the rest of a chapter does.
+    var ask = h("span", { class: "admin-confirm-ask", hidden: true });
     var bar = h("div", { class: "admin-bulk", hidden: true, role: "region", "aria-label": "Selected sentences" },
-      count, approveBtn, h("label", { class: "admin-bulk-note" }, "Note ", noteBox), flagBtn, clearBtn);
+      count, approveBtn, ask, h("label", { class: "admin-bulk-note" }, "Note ", noteBox), flagBtn, clearBtn);
     var all = h("input", { type: "checkbox", "aria-label": "Select every sentence listed" });
     function picked() { return boxes.filter(function (b) { return b.checked; }).map(function (b) { return b.value; }); }
     function update() {
       var n = picked().length;
+      if (!ask.hidden) { ask.hidden = true; approveBtn.hidden = false; }
       bar.hidden = !n;
       count.textContent = plural(n, "sentence") + " selected";
       all.checked = n > 0 && n === boxes.length;
@@ -59,6 +63,20 @@ OWBAdmin.module(function (A) {
       return function (r) {
         A.FLASH = verb + " " + plural(r.applied, "sentence") + "." +
           (r.skipped ? " " + num(r.skipped) + " already approved, left as they were." : "");
+        // The batch can be taken back for a while, as one approval can
+        // (all or nothing; the API allows it for ten minutes).
+        var events = {}, layer = layerOf();
+        (r.results || []).forEach(function (x) { if (x.result === "applied" && x.event) events[x.record] = x.event.id; });
+        if (r.applied) {
+          toast(verb + " " + plural(r.applied, "sentence") + ".", { label: "Undo", run: function (t, b) {
+            api("/api/admin/review/bulk/", { method: "POST", body: { layer: layer, action: "undo", events: events } })
+              .then(function (back) {
+                t.close();
+                toast("Taken back: " + plural(back.undone, "sentence") + ".", null, 5);
+                route();
+              }, function (e) { busy(b, false); t.close(); toast(e.message, null, 10); });
+          } }, 15);
+        }
         route();
       };
     }
@@ -70,7 +88,19 @@ OWBAdmin.module(function (A) {
         note(status, e, true);
       });
     }
-    approveBtn.addEventListener("click", function () { send({ action: "approve", records: picked() }, approveBtn, finished("Approved")); });
+    approveBtn.addEventListener("click", function () {
+      var records = picked();
+      var yes = h("button", { type: "button", class: "admin-btn primary" }, "Approve " + plural(records.length, "sentence"));
+      var no = h("button", { type: "button", class: "admin-btn" }, "Cancel");
+      yes.addEventListener("click", function () { send({ action: "approve", records: records }, yes, finished("Approved")); });
+      no.addEventListener("click", function () { ask.hidden = true; approveBtn.hidden = false; approveBtn.focus(); });
+      ask.textContent = "";
+      var name = nameOf ? nameOf() : "";
+      add(ask, [h("span", { class: "admin-sub" }, "Approve " + plural(records.length, "sentence") + (name ? " in " + name : "") + "?"), yes, no]);
+      approveBtn.hidden = true;
+      ask.hidden = false;
+      no.focus();
+    });
     flagBtn.addEventListener("click", function () {
       if (!noteBox.value.trim()) { note(status, "Say what is wrong in the note, then flag.", true); noteBox.focus(); return; }
       send({ action: "flag", note: noteBox.value, records: picked() }, flagBtn, finished("Flagged"));
@@ -136,7 +166,7 @@ OWBAdmin.module(function (A) {
   function reviewQueue(layer) {
     var filters = REVIEW;
     var body = h("div");
-    var more = h("button", { type: "button", class: "admin-btn", hidden: true }, "More");
+    var more = A.moreButton();
     var offset = 0, d = null, rows = null;
     function query() {
       return "/api/admin/review/?layer=" + encodeURIComponent(layer) + "&book=" + filters.book + "&state=" + filters.state + "&offset=" + offset;
@@ -180,7 +210,7 @@ OWBAdmin.module(function (A) {
       later(more, load().catch(function (e) { offset -= 50; throw e; }));   // so trying again asks for the same page
     });
     var status = h("p", { class: "admin-note", role: "status" });
-    var pick = queuePicker(function () { return layer; }, status);
+    var pick = queuePicker(function () { return layer; }, status, function () { return d && d.layer ? d.layer.name : ""; });
     function refilter() { offset = 0; rememberTab("review.book", filters.book); rememberTab("review.state", filters.state); keepAddress(true); later(more, load()); }
     // A layer remembered from before may no longer be the account's.
     return load().catch(function (e) {
@@ -241,9 +271,18 @@ OWBAdmin.module(function (A) {
         return t === undefined ? next : t;
       }
       function sentencePath(rec) { return "/api/admin/review/" + encodeURIComponent(rec) + "/?layer=" + encodeURIComponent(layer); }
-      var busyNow = false;
+      var busyNow = false, reviewBar = null;
       function act(action, button) {
         if (busyNow) return;
+        // A flag or comment says something: with the note empty (on a
+        // phone, folded away), open it and ask for the words first.
+        if (action !== "approve" && !noteBox.value.trim()) {
+          reviewBar.classList.add("noting");
+          if (action === "flag") { flagging = true; flagBtn.classList.add("armed"); }
+          noteBox.focus();
+          note(status, action === "flag" ? "Say what is wrong in the note, then flag." : "Write the comment in the note, then press Comment.");
+          return;
+        }
         busyNow = true;
         busy(button, true);
         // seen: the digest of what this page shows, so a sentence changed
@@ -304,13 +343,14 @@ OWBAdmin.module(function (A) {
         h("h3", { class: "admin-h3" }, "Keyboard shortcuts"),
         h("dl", null, [["a", "Approve, then open the next sentence to review"],
           ["f", "Flag a problem: write it in the note, then Ctrl Enter (⌘ Enter) to flag"],
+          ["u", "Take back the last approval, flag or comment (while its Undo shows)"],
           ["j", "Next sentence in the queue"], ["k", "Previous sentence in the queue"],
           ["/", "Search the admin"], ["?", "Show or hide these shortcuts"], ["Esc", "Leave the note"]].map(function (k) {
           return [h("dt", null, h("kbd", null, k[0])), h("dd", null, k[1])];
         })));
       function toggleHelp() { help.hidden = !help.hidden; helpBtn.setAttribute("aria-expanded", help.hidden ? "false" : "true"); }
       var helpBtn = h("button", { type: "button", class: "admin-link", "aria-controls": "review-keys", "aria-expanded": "false", onclick: toggleHelp }, "All shortcuts");
-      var hint = h("p", { class: "admin-keys" }, "Keys: ", h("kbd", null, "a"), " approve · ", h("kbd", null, "f"), " flag · ",
+      var hint = h("p", { class: "admin-keys" }, "Keys: ", h("kbd", null, "a"), " approve · ", h("kbd", null, "f"), " flag · ", h("kbd", null, "u"), " undo · ",
         h("kbd", null, "j"), " / ", h("kbd", null, "k"), " next / previous · ", h("kbd", null, "/"), " search · ",
         h("kbd", null, "?"), " ", helpBtn);
       function go(rec, none) {
@@ -324,6 +364,7 @@ OWBAdmin.module(function (A) {
           if (!mayReview) return;
           flagging = true;
           flagBtn.classList.add("armed");
+          reviewBar.classList.add("noting");
           noteBox.focus();
           note(status, "Say what is wrong in the note, then press Ctrl Enter (⌘ Enter) or Flag a problem.");
         },
@@ -365,9 +406,9 @@ OWBAdmin.module(function (A) {
           mine.length ? [h("h3", { class: "admin-h3" }, (names[layer] || layer) + " decisions"), h("div", { class: "admin-decisions" }, mine.map(decision))] : null),
         // Kept at the foot of the window while the sentence above is read,
         // so approving never means scrolling past every language.
-        h("section", { class: "admin-block admin-review-bar", "aria-label": "Your review" },
+        reviewBar = h("section", { class: "admin-block admin-review-bar" + (noteBox.value ? " noting" : ""), "aria-label": "Your review" },
           h("div", { class: "admin-review-bar-head" }, h("h2", null, "Your review"), progress),
-          h("label", { class: "admin-field" }, "Note", noteBox), buttons,
+          h("label", { class: "admin-field admin-review-note" }, "Note", noteBox), buttons,
           mayReview ? null : h("p", { class: "admin-sub" }, "You can read and comment here. Approving and flagging take a reviewer role for " +
             d.layer.name + ", for a super admin too, so the reviewed badge always means a qualified person checked it. Grant yourself one in ",
             h("a", { href: "#team" }, "Team & access"), " to review it."),
@@ -548,7 +589,8 @@ OWBAdmin.module(function (A) {
         return out;
       }
       var run = d.run, list = h("div"), offset = 0;
-      var more = h("button", { type: "button", class: "admin-btn", hidden: !d.more }, "More");
+      var more = A.moreButton();
+      more.hidden = !d.more;
       function draw(changes) {
         var byRecord = {}, order = [];
         changes.forEach(function (c) {
