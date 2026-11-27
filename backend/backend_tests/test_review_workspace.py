@@ -52,6 +52,26 @@ class BulkTest(AdminTestCase):
         self.assertEqual((again["applied"], again["skipped"]), (0, 1))
         self.assertEqual(ReviewEvent.objects.count(), 2)
 
+    def test_taking_back_a_batch(self):
+        r = self.post(self.scholar, layer="grc", action="approve", records=["JHN.3.1.s1", "JHN.3.2.s1"]).json()
+        events = {x["record"]: x["event"]["id"] for x in r["results"]}
+        self.assertEqual(Sentence.objects.filter(status="meaning_reviewed").count(), 2)
+        # Someone else's, or one acted on since, takes back nothing.
+        self.assertEqual(self.post(self.french, layer="grc", action="undo", events=events).status_code, 403)
+        later = self.admin.post("/api/admin/review/JHN.3.2.s1/", {"layer": "grc", "action": "comment",
+                                                                  "note": "Looks right"}, format="json")
+        self.assertEqual(later.status_code, 201)
+        r = self.post(self.scholar, layer="grc", action="undo", events=events)
+        self.assertEqual((r.status_code, r.json()["code"], r.json()["record"]), (400, "not_undone", "JHN.3.2.s1"))
+        self.assertEqual(ReviewEvent.objects.count(), 3)
+        ReviewEvent.objects.filter(action="comment").delete()
+        r = self.post(self.scholar, layer="grc", action="undo", events=events)
+        self.assertEqual(r.status_code, 200)
+        self.assertEqual((r.json()["undone"], {x["state"] for x in r.json()["results"]}), (2, {"not_reviewed"}))
+        self.assertFalse(ReviewEvent.objects.exists())
+        self.assertFalse(Sentence.objects.filter(status="meaning_reviewed").exists())
+        self.assertEqual(AdminAction.objects.filter(action="review.undo").count(), 1)
+
     def test_meaning_bulk_moves_status_on(self):
         r = self.post(self.scholar, layer="grc", action="approve", records=["JHN.3.1.s1", "JHN.3.4.s1"])
         self.assertEqual(r.status_code, 201)

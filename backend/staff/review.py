@@ -447,29 +447,40 @@ def settle_status(layer, ids=None):
 UNDO_MINUTES = 10
 
 
+def take_back(user, s, layer, event_id):
+    """Delete user's own latest step in s's trail, made in the last
+    UNDO_MINUTES, inside the caller's transaction. Deleting the event brings
+    the sentence's ReviewState back to what the trail now says; the caller
+    settles the status (settle_status). Returns the step's label; raises
+    ValidationError, or _Forbidden for someone else's step."""
+    Sentence.objects.select_for_update().filter(pk=s.pk).first()   # as apply() does
+    latest = (ReviewEvent.objects.filter(sentence=s)
+              .order_by("-created_at", "-id").first())
+    if latest is None or str(latest.id) != str(event_id):
+        raise ValidationError({"event": "Only the latest step on a sentence can be taken back; someone has "
+                                        "acted on it since.", "code": "not_latest"})
+    if latest.user_id != user.id:
+        raise _Forbidden("You can take back only your own steps.")
+    if latest.created_at < timezone.now() - timedelta(minutes=UNDO_MINUTES):
+        raise ValidationError({"event": f"A step can be taken back for {UNDO_MINUTES} minutes; this one is "
+                                        "older. Add a new one instead.", "code": "too_late"})
+    if (latest.language or s.source_edition.language) != layer:
+        raise ValidationError({"event": "That step is in another review layer.", "code": "not_in_layer"})
+    label = latest.get_action_display()
+    latest.delete()
+    return label
+
+
 def _undo(request, s, layer, event_id):
-    """Take back request.user's own latest step in s's trail, made in the
-    last UNDO_MINUTES. Deleting the event brings the sentence's ReviewState
-    back to what the trail now says, and the sentence's status with it
-    (settle_status)."""
-    with transaction.atomic():
-        Sentence.objects.select_for_update().filter(pk=s.pk).first()   # as apply() does
-        latest = (ReviewEvent.objects.filter(sentence=s)
-                  .order_by("-created_at", "-id").first())
-        if latest is None or str(latest.id) != str(event_id):
-            raise ValidationError({"event": "Only the latest step on a sentence can be taken back; someone has "
-                                            "acted on it since.", "code": "not_latest"})
-        if latest.user_id != request.user.id:
-            return _forbidden("You can take back only your own steps.")
-        if latest.created_at < timezone.now() - timedelta(minutes=UNDO_MINUTES):
-            raise ValidationError({"event": f"A step can be taken back for {UNDO_MINUTES} minutes; this one is "
-                                            "older. Add a new one instead.", "code": "too_late"})
-        if (latest.language or s.source_edition.language) != layer:
-            raise ValidationError({"event": "That step is in another review layer.", "code": "not_in_layer"})
-        label = latest.get_action_display()
-        latest.delete()
-        settle_status(layer, [s.pk])
-        record(request.user, "review.undo", f"{label} on {s.record_id}", layer=layer)
+    """Take back request.user's own latest step in s's trail (take_back),
+    and the sentence's status with it (settle_status)."""
+    try:
+        with transaction.atomic():
+            label = take_back(request.user, s, layer, event_id)
+            settle_status(layer, [s.pk])
+            record(request.user, "review.undo", f"{label} on {s.record_id}", layer=layer)
+    except _Forbidden as e:
+        return _forbidden(e)
     return Response({"state": state_of(layer, s.id), "next": _next(layer, s)})
 
 

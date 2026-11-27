@@ -114,12 +114,22 @@ OWBAdmin.module(function (A) {
   };
 
   // Similarity to the reference Bibles, per book (scripts/ngram_overlap.py).
-  var OVERLAP = { book: "JHN", lang: "en", min: 6 };
+  var OVERLAP = { book: "JHN", lang: "en", min: 6 }, LAST_BOOK = "";   // the last book compared
   VIEWS.overlap = function (arg) {
-    if (arg) OVERLAP.book = arg.toUpperCase();
-    var f = OVERLAP;
-    return api("/api/admin/overlap/" + f.book + "/?lang=" + f.lang + "&min=" + f.min).then(function (d) {
-      var book = h("input", { id: "overlap-book", value: f.book, size: 6, "aria-label": "Book code", placeholder: "JHN" });
+    var f = OVERLAP, asked = arg ? decodeURIComponent(arg) : f.book;
+    function get(code) { return api("/api/admin/overlap/" + encodeURIComponent(code) + "/?lang=" + f.lang + "&min=" + f.min); }
+    // A book the address names that isn't one (#overlap/Jon) is said beside
+    // the form, which shows the last book compared, not in place of it all.
+    var wrong = "";
+    return get(asked).catch(function (e) {
+      if (e.status !== 404) throw e;
+      wrong = e.message;
+      return get(LAST_BOOK && LAST_BOOK !== asked ? LAST_BOOK : "JHN");
+    }).then(function (d) {
+      f.book = d.book || asked.toUpperCase();   // after a wrong one, the book shown
+      LAST_BOOK = f.book;
+      var book = select("overlap-book", (d.books || [{ code: f.book, name: f.book }]).map(function (b) { return [b.code, b.name]; }), f.book);
+      book.setAttribute("aria-label", "Book");
       // Every reading language, from the API; one with no reference Bible loaded says so.
       var lang = select("overlap-lang", (d.languages || [{ code: f.lang, name: f.lang, references: 1 }]).map(function (l) {
         return [l.code, l.references ? l.name : l.name + " (no reference Bible loaded)"];
@@ -128,8 +138,9 @@ OWBAdmin.module(function (A) {
       var min = select("overlap-min", [["5", "5+ words"], ["6", "6+ words"], ["8", "8+ words"], ["10", "10+ words"]], String(f.min));
       min.setAttribute("aria-label", "Shortest run");
       var form = h("form", { class: "admin-toolbar" }, book, lang, min, h("button", { type: "submit", class: "admin-btn" }, "Compare"));
+      var problem = h("p", { class: "admin-note" + (wrong ? " bad" : ""), role: "status" }, wrong);
       form.addEventListener("submit", function (e) {
-        e.preventDefault(); f.book = book.value.trim().toUpperCase() || "JHN"; f.lang = lang.value; f.min = +min.value;
+        e.preventDefault(); f.book = book.value; f.lang = lang.value; f.min = +min.value;
         // A new address draws through hashchange; the same one needs route().
         if (location.hash === "#overlap/" + f.book) route();
         else location.hash = "#overlap/" + f.book;
@@ -142,7 +153,7 @@ OWBAdmin.module(function (A) {
           }), h("td", { class: "admin-num" }, num(e.longest) + " words"));
       });
       return [head("Text", "Similarity to reference Bibles", "The share of " + d.name + "'s drafted words that sit in runs of " + d.min + " or more words also found in the same verses of a public-domain Bible. Shared phrasing is often the common heritage of the language's Bible wording; a high share or long runs is where to check a draft wasn't built on a reference Bible."),
-        form,
+        form, problem,
         d.editions.length ? table(["Bible", ["Literal", { class: "admin-num" }], ["Balanced", { class: "admin-num" }], ["Readable", { class: "admin-num" }], ["Longest run", { class: "admin-num" }]], rows)
           : empty("No reference Bibles in this language are loaded, so there's nothing to compare against."),
         h("p", { class: "admin-sub" }, num(d.sentences) + " sentences; words compared: L " + num(d.words.L) + ", B " + num(d.words.B) + ", R " + num(d.words.R) + ". Copyrighted Bibles are compared locally with scripts/ngram_overlap.py --extra."),
@@ -435,8 +446,8 @@ OWBAdmin.module(function (A) {
     return api("/api/admin/emails/").then(function (d) {
       var status = h("p", { class: "admin-note", role: "status" });
       var audience = select("mail-audience", d.audiences.map(function (a) { return [a.key, a.label + " (" + a.count + ")"]; }), "team");
-      var subject = h("input", { id: "mail-subject", maxlength: 200, required: true });
-      var body = h("textarea", { id: "mail-body", rows: 10, required: true });
+      var subject = A.keepDraft(h("input", { id: "mail-subject", maxlength: 200, required: true }), "mail.subject");
+      var body = A.keepDraft(h("textarea", { id: "mail-body", rows: 10, required: true }), "mail.body");
       var test = h("button", { type: "button", class: "admin-btn" }, "Send a test to me");
       var count = function () { return d.audiences.filter(function (a) { return a.key === audience.value; })[0].count; };
       function payload(isTest) { return { subject: subject.value, body: body.value, audience: audience.value, test: isTest }; }
@@ -451,6 +462,7 @@ OWBAdmin.module(function (A) {
         sendWrap.textContent = "";
         sendWrap.appendChild(confirmButton("Send", "Send to " + plural(count(), "person", "people") + "?", function (b) {
           api("/api/admin/emails/", { method: "POST", body: payload(false) }).then(function (r) {
+            A.dropDraft("mail.subject", "mail.body");
             A.FLASH = "Sent to " + plural(r.sent, "person", "people") + (r.failed ? "; " + r.failed + " failed" : "") + ".";
             route();
           }, function (e) { busy(b, false); note(status, e, true); drawSend(); });

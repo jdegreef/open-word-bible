@@ -88,9 +88,9 @@ def measure(book, lang, n):
 
 @admin_view("overview")
 def overlap(request, code):
-    book = code.upper()
-    if book not in CHAPTERS:
-        raise NotFound(f"Unknown book {code!r}")
+    book = _book(code)
+    if book is None:
+        raise NotFound(f"There's no book called \u201c{code}\u201d. Choose one from the list.")
     lang = request.query_params.get("lang", "en")
     if lang not in EDITION_LANGUAGE:
         raise ValidationError({"lang": "Choose a reading language."})
@@ -106,7 +106,21 @@ def overlap(request, code):
     if answer is None:
         answer = measure(book, lang, n)
         cache.set(key, answer, 3600)
-    return Response({**answer, "languages": _languages()})
+    return Response({**answer, "languages": _languages(), "books": BOOKS})
+
+
+# Every book, in Bible order, for the page's list.
+BOOKS = [{"code": c, "name": book_name(c)} for c in CHAPTERS]
+
+
+def _book(text):
+    """A book's code from its code or its English name ("jhn", "John",
+    "1 john"), else None."""
+    key = " ".join(str(text).split()).casefold()
+    for c in CHAPTERS:
+        if key in (c.casefold(), book_name(c).casefold()):
+            return c
+    return None
 
 
 def _languages():

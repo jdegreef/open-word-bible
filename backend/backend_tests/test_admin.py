@@ -973,6 +973,11 @@ class OverlapTest(AdminTestCase):
         self.assertEqual(data["longest_runs"][0]["verse"], "JHN.1.1")
         self.assertEqual(self.admin.get("/api/admin/overlap/jhn/?lang=sw").json()["editions"], [])
         self.assertEqual(self.admin.get("/api/admin/overlap/xyz/").status_code, 404)
+        # A book by its English name too, and every book for the page's list.
+        by_name = self.admin.get("/api/admin/overlap/John/?lang=en&min=6").json()
+        self.assertEqual(by_name["book"], "JHN")
+        self.assertEqual((len(by_name["books"]), by_name["books"][0]), (66, {"code": "GEN", "name": "Genesis"}))
+        self.assertEqual(self.admin.get("/api/admin/overlap/1%20john/").json()["book"], "1JN")
         # Every reading language is offered, saying which have a Bible to compare with.
         offered = {lang["code"]: lang["references"] for lang in data["languages"]}
         self.assertEqual(set(offered), set(languages.CODES))
