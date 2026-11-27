@@ -86,8 +86,11 @@ class ConsistencyTest(AdminTestCase):
 
     def test_cached_until_sentences_change(self):
         self.grace("?lang=en&level=B")
+        # One measurement a language and level serves every term and minimum.
         with mock.patch("staff.consistency.measure", side_effect=AssertionError("measured again")):
             self.grace("?lang=en&level=B")
+            self.grace("?lang=en&level=B&term=grace&min=3")
+            self.grace("?lang=en&level=B&min=1")
         Sentence.objects.get(id=self.made[0][0].id).save()
         with mock.patch("staff.consistency.measure", return_value={"terms": []}) as measure:
             self.admin.get("/api/admin/consistency/?lang=en&level=B")

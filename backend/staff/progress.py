@@ -24,7 +24,7 @@ from datetime import timedelta
 from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.core.cache import cache
-from django.db.models import Count, Max, Q, Sum
+from django.db.models import CharField, Count, F, Func, Max, Q, Sum, Value
 from django.db.models.functions import TruncWeek
 from django.utils import timezone
 from rest_framework.exceptions import NotFound
@@ -38,7 +38,7 @@ from translation import counts
 from translation.models import (ContentFile, Decision, DraftedCount, ImportRun, Rendering, ReviewEvent, ReviewState,
                                 Sentence)
 
-from . import assignments, inbox
+from . import assignments, inbox, kept
 from .models import AdminAction
 from .permissions import admin_view
 from .review import open_flag_count
@@ -187,11 +187,23 @@ def book(request, code):
 
 
 def _ci_status():
-    """CI's checks on main's latest commit, from GitHub (cached five
-    minutes), or None when GitHub can't be reached."""
-    cached = cache.get("staff.ci")
-    if cached is not None:
-        return cached or None
+    """CI's checks on main's latest commit, from GitHub, or None when
+    GitHub can't be reached. Kept five minutes, then read again in the
+    background while the kept copy is shown (staff/kept.py)."""
+    if cache.get("staff.kept.ci.failed"):
+        return None   # GitHub failed a minute ago: don't make the page wait on it again
+    try:
+        return kept.kept("staff.kept.ci", _read_ci, 300)
+    except CIUnreachable:
+        cache.set("staff.kept.ci.failed", 1, 60)
+        return None
+
+
+class CIUnreachable(Exception):
+    pass
+
+
+def _read_ci():
     repo = settings.OWB_GITHUB_REPO
     headers = {"Accept": "application/vnd.github+json", "User-Agent": "open-word-bible-admin"}
     if settings.OWB_GITHUB_TOKEN:
@@ -206,8 +218,7 @@ def _ci_status():
         runs = get(f"commits/{commit['sha']}/check-runs?per_page=50")["check_runs"]
     except Exception:
         log.warning("GitHub status for main could not be fetched", exc_info=True)
-        cache.set("staff.ci", {}, 60)
-        return None
+        raise CIUnreachable
     status = {
         "sha": commit["sha"][:7], "url": commit["html_url"],
         "message": commit["commit"]["message"].splitlines()[0][:200],
@@ -215,7 +226,6 @@ def _ci_status():
         "checks": [{"name": r["name"], "status": r["status"], "conclusion": r["conclusion"],
                     "url": r["html_url"]} for r in runs],
     }
-    cache.set("staff.ci", status, 300)
     return status
 
 
@@ -260,10 +270,11 @@ def engagement(request):
     marks = Mark.objects.aggregate(bookmarks=Count("id", filter=Q(bookmark=True)),
                                    highlights=Count("id", filter=~Q(highlight="")),
                                    readers=Count("user", distinct=True))
-    by_book = {}
-    for row in Mark.objects.values("verse").annotate(n=Count("id")):
-        code = row["verse"].split(".", 1)[0]
-        by_book[code] = by_book.get(code, 0) + row["n"]
+    # Grouped by book in the database, not by verse here (that grew with
+    # every verse readers mark).
+    by_book = dict(Mark.objects.annotate(book=Func(F("verse"), Value("."), Value(1), function="split_part",
+                                                   output_field=CharField()))
+                   .order_by().values("book").annotate(n=Count("id")).values_list("book", "n"))
     places = ReadingPlace.objects.values("book").annotate(n=Count("id")).order_by("-n")[:12]
     return Response({
         "accounts": readers.count(),

@@ -15,9 +15,12 @@ roles open the inbox, since they carry the reader's name.
 import functools
 import json
 import re
+import time
 
 from django.conf import settings
 from django.db.models import Max
+from django.db.models.signals import post_delete, post_save
+from django.dispatch import receiver
 from rest_framework.exceptions import NotFound, ValidationError
 from rest_framework.response import Response
 
@@ -54,6 +57,33 @@ def content_file(book, chapter, verse):
     return next((p for p in sorted(paths) if covers(p, chapter, verse)), "")
 
 
+# Each site language's book names (SearchLanguage.books, 2.4 MB for them
+# all), kept in the process: read again when the search update marks a
+# language checked again, and at least every BOOK_NAMES_SECONDS.
+BOOK_NAMES_SECONDS = 600
+_names = {}
+
+
+@receiver(post_save, sender=SearchLanguage)
+@receiver(post_delete, sender=SearchLanguage)
+def _forget_book_names(**kwargs):
+    _names.clear()   # saved in this process (the tests, an import run here)
+
+
+def _book_names():
+    """[(language code, its books)] in code order."""
+    now = time.monotonic()
+    out = []
+    for code, checked in (SearchLanguage.objects.exclude(code=search.SHARED).order_by("code")
+                          .values_list("code", "checked")):
+        kept = _names.get(code)
+        if kept is None or kept[0] != checked or now - kept[2] > BOOK_NAMES_SECONDS:
+            books = SearchLanguage.objects.filter(code=code).values_list("books", flat=True).first() or []
+            kept = _names[code] = (checked, books, now)
+        out.append((code, kept[1]))
+    return out
+
+
 def verse_id(value):
     """A verse id ("JHN.1.1") from an id or a reference in any site
     language; None if it names no verse."""
@@ -63,8 +93,8 @@ def verse_id(value):
         return f"{ref.book}.{ref.chapter}.{ref.verse}"
     except ValueError:
         pass
-    for language in SearchLanguage.objects.exclude(code=search.SHARED).order_by("code"):
-        found = search.reference(value, language.books, language.code)
+    for code, books in _book_names():
+        found = search.reference(value, books, code, sentences=False)
         if found:
             return f"{found['book']}.{found['chapter']}.{found['verse'] or 1}"
     return _by_name(value)

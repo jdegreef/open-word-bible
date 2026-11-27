@@ -18,6 +18,9 @@ class AdminAction(models.Model):
 
     class Meta:
         ordering = ["-created_at"]
+        # The activity log's "what" filter and its list of kinds, and
+        # Health's last alert of each kind: all by action, newest first.
+        indexes = [models.Index(fields=["action", "-created_at"], name="admin_action_kind")]
 
     def __str__(self):
         return f"{self.actor_email} {self.action} {self.target}"

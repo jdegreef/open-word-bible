@@ -29,7 +29,7 @@ from feedback.models import ReaderMessage
 from owb import languages
 from translation.models import Sentence
 
-from . import github, jobs, people
+from . import github, jobs, kept, people
 from .inbox import verse_label, verse_url
 from .models import record
 from .permissions import admin_view
@@ -57,7 +57,7 @@ def fixes(request):
         return _file(request)
     answer = {"configured": bool(settings.OWB_GITHUB_TOKEN), "repo": settings.OWB_GITHUB_REPO}
     try:
-        answer["fixes"] = open_fixes()
+        answer["fixes"] = kept.kept("staff.kept.fixes", open_fixes, 120)
     except github.GitHubError:
         answer["fixes"], answer["error"] = [], "GitHub could not be reached, so open fix requests aren't listed."
     return Response(answer)

@@ -17,9 +17,12 @@ named at its default. The text comes from the database, which each deploy
 brings up to date from content/ on main. Each download is logged in the
 activity log.
 """
+import hashlib
+import json
 import os
 
-from django.db.models import Count
+from django.core.cache import cache
+from django.db.models import Count, Max
 from django.http import HttpResponse
 from django.utils import timezone
 from rest_framework.exceptions import ValidationError
@@ -32,7 +35,7 @@ from translation.models import ImportRun, Rendering
 from .models import AdminAction, record, shown_actor
 from .permissions import admin_view, is_super_admin
 from .inbox import verse_label
-from .progress import book_name
+from .progress import _stamps, book_name
 
 # Shown in the preview, where the export has them.
 SAMPLES = ("GEN.1.1", "PSA.23.1", "ISA.53.5", "JHN.3.16", "ROM.8.28", "PHP.4.6")
@@ -111,16 +114,30 @@ def options(request):
 @admin_view("export")
 def preview(request):
     lang, level, _, numbering, books, settings = _options(request.query_params)
+    # It reads every verse of the books and every rendering at the level:
+    # 1.7-2 s, so it is kept, per choice of options, until the content or
+    # the original texts change (one key per choice, replaced, not piled up).
+    key = "staff.export.preview." + hashlib.sha256(
+        json.dumps([lang, level, numbering, books, settings], sort_keys=True).encode()).hexdigest()[:16]
+    stamp = f"{_stamps()[0]}.{Edition.objects.aggregate(t=Max('imported_at'))['t']}"
+    kept = cache.get(key)
+    if kept is None or kept.get("stamp") != stamp:
+        kept = {"stamp": stamp, "answer": _preview(lang, level, numbering, books, settings)}
+        cache.set(key, kept, 7 * 86400)
+    return Response(kept["answer"])
+
+
+def _preview(lang, level, numbering, books, settings):
     records = _records(lang, level, books)
     *_, manifest = export.build(records, lang, level, "json", numbering, settings, books or None,
                                 expected=_expected(books))
     verses = export.verse_texts(records, lang, level, settings)
     shown = [v for v in SAMPLES if v in verses] or list(verses)[:3]
     missing = manifest.get("missing", {})
-    return Response({"verses": manifest["verses"], "books": manifest["books"], "status": manifest["status"],
-                     "missing": missing.get("count", 0), "missing_by_book": missing.get("by_book", {}),
-                     "combined": manifest["combined"], "settings": manifest["settings"],
-                     "samples": [{"verse": v, "label": verse_label(v), "text": verses[v]} for v in shown]})
+    return {"verses": manifest["verses"], "books": manifest["books"], "status": manifest["status"],
+            "missing": missing.get("count", 0), "missing_by_book": missing.get("by_book", {}),
+            "combined": manifest["combined"], "settings": manifest["settings"],
+            "samples": [{"verse": v, "label": verse_label(v), "text": verses[v]} for v in shown]}
 
 
 @admin_view("export")

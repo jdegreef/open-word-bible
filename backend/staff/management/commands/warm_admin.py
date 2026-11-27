@@ -14,6 +14,7 @@ reported and the next one is tried, and none is started after --deadline.
 """
 import time
 
+from django.conf import settings
 from django.core.management.base import BaseCommand
 
 from owb import languages
@@ -28,9 +29,20 @@ PAGES = ["overview/", "attention/", "coverage/", "languages/", "terms/", "consis
          "checks/", "pace/", "decisions/"]
 
 
+# Read from GitHub and kept (staff/kept.py, staff/work.py): with no copy
+# kept, Work in progress took 18.8 s. Only with a token, so tests and a
+# setup without one never ask GitHub.
+GITHUB_PAGES = ["work/", "jobs/", "fixes/", "articles/"]
+
+
 def pages():
-    return PAGES + [p for code in languages.READING if code != "en"
-                    for p in (f"review/?layer={code}", f"consistency/?lang={code}", f"checks/?lang={code}")]
+    """PAGES, every review layer's queue (the meaning in each original
+    language, the wording in each reading language), each other language's
+    consistency and checks, and the pages read from GitHub."""
+    out = PAGES + [f"review/?layer={code}" for code in [*languages.ORIGINAL, *languages.READING]]
+    out += [p for code in languages.READING if code != "en"
+            for p in (f"consistency/?lang={code}", f"checks/?lang={code}")]
+    return out + (GITHUB_PAGES if settings.OWB_GITHUB_TOKEN else [])
 
 
 class Command(BaseCommand):
