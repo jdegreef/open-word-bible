@@ -154,7 +154,7 @@ class InboxSearchTest(AdminTestCase):
         self.assertEqual(self.found("?q=grace&assigned=none"), [])
         self.assertEqual(self.found("?q=grace&kind=question"), [])
         data = self.admin.get("/api/admin/inbox/?q=grace").json()
-        self.assertEqual(data["counts"], {"new": 1, "answered": 0, "done": 1, "declined": 0})
+        self.assertEqual(data["counts"], {"new": 1, "answered": 0, "done": 1, "declined": 0, "fixing": 0})
         self.assertEqual(data["total"], 1)
         # Without q, the counts are of every message, as before.
         self.assertEqual(self.admin.get("/api/admin/inbox/").json()["counts"]["new"], 2)
