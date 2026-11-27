@@ -141,3 +141,23 @@ class ChecksAnswer(models.Model):
 
     def __str__(self):
         return f"{self.language} {self.stamp}"
+
+
+class Release(models.Model):
+    """A release of one language, cut in the admin (staff/releases.py): its
+    name, main's commit when it was cut, and what had changed since the
+    language's last release, so the next release's notes start from here."""
+    language = models.CharField(max_length=3)
+    name = models.CharField(max_length=80)
+    commit = models.CharField(max_length=40, blank=True, help_text="main's commit when it was cut, if known")
+    cut_at = models.DateTimeField(auto_now_add=True)
+    cut_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, related_name="+")
+    summary = models.JSONField(default=dict, blank=True,
+                               help_text="The totals of the release notes and the readiness when it was cut")
+
+    class Meta:
+        ordering = ["-cut_at", "-id"]
+        indexes = [models.Index(fields=["language", "-cut_at"], name="release_language")]
+
+    def __str__(self):
+        return f"{self.language} {self.name}"

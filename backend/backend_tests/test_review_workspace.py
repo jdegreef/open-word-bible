@@ -310,6 +310,35 @@ class NotifyTest(AdminTestCase):
         self.assertEqual(notify.send_due(now), 1)   # due today
 
 
+class ReleaseTest(AdminTestCase):
+    def setUp(self):
+        super().setUp()
+        for rid in ("JHN.1.1.s1", "JHN.1.2.s1"):
+            sentence(rid, ("en", "fr"))
+        self.french = client_for(account("fr@example.org", (K.LANGUAGE_REVIEWER, "fr")))
+        self.scholar = client_for(account("grc@example.org", (K.SCHOLAR_REVIEWER, "grc")))
+
+    def test_readiness_and_cutting_a_release(self):
+        self.french.post("/api/admin/review/JHN.1.2.s1/", {"layer": "fr", "action": "flag", "note": "x"}, format="json")
+        for c in (self.french, self.scholar):
+            c.post("/api/admin/review/JHN.1.1.s1/", {"layer": "fr" if c is self.french else "grc", "action": "approve"},
+                   format="json")
+        with mock.patch("staff.releases._ci_status", return_value={"sha": "abc1234", "checks": []}):
+            d = self.admin.get("/api/admin/releases/?lang=fr").json()
+            checks = {c["key"]: c for c in d["readiness"]}
+            self.assertEqual((checks["flags"]["count"], checks["flags"]["ok"]), (1, False))
+            self.assertFalse(d["ready"])
+            self.assertEqual((d["since"], d["fully_reviewed"]), (None, 1))
+            r = self.admin.post("/api/admin/releases/", {"lang": "fr", "name": "French NT preview"}, format="json")
+            self.assertEqual(r.status_code, 201)
+            rel = r.json()["release"]
+            self.assertEqual((rel["commit"], rel["summary"]["ready"], rel["summary"]["fully_reviewed"]),
+                             ("abc1234", False, 1))
+            d = self.admin.get("/api/admin/releases/?lang=fr").json()
+            self.assertEqual(([x["name"] for x in d["releases"]], d["fully_reviewed"]), (["French NT preview"], 0))
+            self.assertTrue(d["since"])
+
+
 class WorkspaceTest(AdminTestCase):
     def setUp(self):
         super().setUp()

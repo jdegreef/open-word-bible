@@ -787,11 +787,54 @@ OWBAdmin.module(function (A) {
 
   // Release notes: what changed in one language since a date.
   var RELEASES = { lang: "en", since: "", until: "" };
+  // A release of one language as a record (staff/releases.py): what stands
+  // in its way now, cutting one, and the ones cut before. The notes below
+  // start from the last release.
+  function releasePanel(r, lang) {
+    var status = h("p", { class: "admin-note", role: "status" });
+    var name = h("input", { type: "text", id: "release-name", maxlength: 80, placeholder: r.language.name + " " + new Date().toISOString().slice(0, 10) });
+    var cut = h("button", { type: "submit", class: "admin-btn primary" }, "Cut the release");
+    var form = h("form", { class: "admin-toolbar" }, h("label", { class: "admin-field", for: "release-name" }, "Name", name), cut);
+    var anyway = false;
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!r.ready && !anyway) {
+        note(status, "Not everything is ready (above). Cut it anyway? ", true);
+        status.appendChild(h("button", { type: "button", class: "admin-link", onclick: function () { anyway = true; form.requestSubmit(); } }, "Cut it anyway"));
+        return;
+      }
+      busy(cut, true);
+      api("/api/admin/releases/", { method: "POST", body: { lang: lang, name: name.value || name.placeholder } }).then(function (res) {
+        A.FLASH = "Cut " + res.release.name + (res.release.commit ? " at " + res.release.commit : "") + ". The next notes start from here.";
+        RELEASES.since = "";
+        route();
+      }, function (err) { busy(cut, false); note(status, err, true); });
+    });
+    return h("section", { class: "admin-block" }, h("h2", null, "Release " + r.language.name),
+      h("p", { class: "admin-sub" }, (r.since ? "The last release was cut " + when(r.since) + ". " : "No release of " + r.language.name + " has been cut yet. ") +
+        plural(r.fully_reviewed, "sentence") + " fully reviewed (meaning and wording) since."),
+      h("ul", { class: "admin-checks" }, r.readiness.map(function (c) {
+        return h("li", null, pill(c.ok ? "Ready" : c.count ? num(c.count) : "Not ready", c.ok ? "good" : "warn"), " ",
+          h("a", { href: c.href }, c.label), c.detail ? h("span", { class: "admin-sub" }, ": " + c.detail) : null);
+      })),
+      form, status,
+      h("p", { class: "admin-sub" }, h("a", { href: "#export?lang=" + lang }, "Export " + r.language.name), " for Bible software and apps, from the same text."),
+      r.releases.length ? table(["Release", "Cut", "Commit", "Since the one before"], r.releases.map(function (x) {
+        var t = (x.summary || {}).totals || {};
+        return h("tr", null, h("th", { scope: "row" }, x.name), h("td", null, date(x.cut_at), h("div", { class: "admin-sub" }, x.cut_by)),
+          h("td", null, x.commit ? h("code", null, x.commit) : "—"),
+          h("td", { class: "admin-sub" }, num(t.drafted || 0) + " drafted, " + num(t.renderings || 0) + " renderings changed, " +
+            num((x.summary || {}).fully_reviewed || 0) + " fully reviewed" + ((x.summary || {}).ready === false ? "; cut before ready" : "")));
+      })) : null);
+  }
   VIEWS.releases = function () {
     var f = RELEASES;
-    if (!f.since) f.since = new Date(Date.now() - 30 * 86400000).toISOString().slice(0, 10);
-    return api("/api/admin/export/").then(function (opts) {
+    return Promise.all([api("/api/admin/export/"), api("/api/admin/releases/?lang=" + encodeURIComponent(f.lang))]).then(function (both) {
+      var opts = both[0], rel = both[1];
+      // The notes start from the last release, else the last 30 days.
+      if (!f.since) f.since = (rel.since ? new Date(rel.since) : new Date(Date.now() - 30 * 86400000)).toISOString().slice(0, 10);
       var langSel = select("releases-lang", opts.languages.map(function (l) { return [l.code, l.name]; }), f.lang);
+      langSel.addEventListener("change", function () { f.lang = langSel.value; f.since = ""; keepAddress(true); route(); });
       var since = h("input", { type: "date", id: "releases-since", value: f.since, required: true });
       var until = h("input", { type: "date", id: "releases-until", value: f.until });
       var show = h("button", { type: "submit", class: "admin-btn primary" }, "Show");
@@ -856,9 +899,9 @@ OWBAdmin.module(function (A) {
         saveFile("/api/admin/history/release-notes/" + query() + "&file=md").then(function (name) { note(status, "Saved " + name + "."); },
           function (err) { note(status, err, true); }).then(function () { busy(download, false); });
       });
-      return [head("Text", "Release notes", "What changed in one language between two dates, from what each deploy's import recorded: sentences drafted, renderings changed word by word, decisions added or changed, and footnotes added, by book. Nothing here changes a sentence's review state."),
+      return [head("Text", "Releases", "Cut a release of one language once it is ready, and the notes of what changed since the last one, from what each deploy's import recorded: sentences drafted, renderings changed word by word, decisions added or changed, and footnotes added, by book. Nothing here changes a sentence's review state."),
         h("p", { class: "notice" }, "Every sentence is an AI-assisted draft until a named reviewer approves it. Imports before release notes existed recorded rendering changes and how many sentences were drafted, but not which sentences or decisions."),
-        form, result];
+        releasePanel(rel, f.lang), h("h2", null, "Notes"), form, result];
     });
   };
   filtered("review", REVIEW, { layer: "", book: "", state: "todo" }, function (arg, f) {

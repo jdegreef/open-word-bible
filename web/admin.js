@@ -457,7 +457,7 @@
     { id: "pace", label: "Review pace", area: "overview", group: "Progress" },
     { id: "articles", label: "Articles", area: "overview", group: "Publish" },
     { id: "export", label: "Export", area: "export", group: "Publish" },
-    { id: "releases", label: "Release notes", area: "export", group: "Publish" },
+    { id: "releases", label: "Releases", area: "export", group: "Publish" },
     { id: "users", label: "Users", area: "users", group: "People" },
     { id: "engagement", label: "Engagement", area: "overview", group: "People" },
     { id: "team", label: "Team & access", area: "team", group: "People" },

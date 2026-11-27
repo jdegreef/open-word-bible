@@ -1,7 +1,7 @@
 from django.urls import path
 
 from . import (articles, assignments, attention, bulk, changes, checks, consistency, emails, export, fixes, flags,
-               history, inbox, jobs, overlap, pace, progress, review, search, team, text, users, verses, work,
+               history, inbox, jobs, overlap, pace, progress, releases, review, search, team, text, users, verses, work,
                workspace)
 
 urlpatterns = [
@@ -55,5 +55,6 @@ urlpatterns = [
     path("activity/", team.activity),
     path("history/verse/<str:vid>/", history.verse),
     path("history/approvals/", history.approvals),
+    path("releases/", releases.releases),
     path("history/release-notes/", history.notes),
 ]
