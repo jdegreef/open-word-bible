@@ -134,7 +134,13 @@ under it, not one verse; raise it with the team.
   name; *Iblis* for *diabolos*; *Satan* where it is a name (1 Chronicles 21:1).
 - **sy for Hebrew "sh"** in names (*Syalum*, *Syemaya*) and **one spelling
   per name across books** (Terms §13); Hiram / Huram and Syama / Syimea stay
-  apart because the Hebrew differs.
+  apart because the Hebrew differs. Settled one way each: *Baasya* (not
+  *Baesa*), *Kamos*, *Efrata* (also Caleb's wife; *Efrat* is the
+  Euphrates), *Yope* (Ezra too), *Lo-Debar*, *Pua* (Issachar's son),
+  *Zelafehad*, *asarion*, *Bagian Kedua* (2 Chronicles 34:22). Kept apart
+  on purpose: *Selah* (son of Arpachshad) / *Syela* (son of Judah),
+  *Asytoret* (the goddess) / *Asytarot* (the city), *orang Syeba* /
+  *orang Seba*, *Saul* / *Saulus*, *Hana* / *Hanas*.
 - **Yunia** in Romans 16:7, a woman, as the meaning decision reads it.
 - **Isaiah 7:14 *perempuan muda*** for *almah*, footnoted: the note says
   the Septuagint and Matthew 1:23 read "virgin". Matthew 1:23 says *anak

@@ -121,8 +121,38 @@
   }
   function forgetAll() {
     reads = {};
-    try { sessionStorage.removeItem(STORE); } catch (e) { /* none */ }
+    DRAFTS = {};
+    try { sessionStorage.removeItem(STORE); sessionStorage.removeItem(DRAFT_STORE); } catch (e) { /* none */ }
   }
+
+  // Writing not sent yet (a reply, a fix request, a team email), kept by
+  // what it is for until it is sent, so a click on a tab, a filter, the
+  // pager or the rail loses nothing: keepDraft(field, key) fills the field
+  // with what was kept and keeps what is typed; dropDraft(key, ...) once it
+  // has gone. In this tab only (sessionStorage), and forgotten on signing
+  // out. Closing or reloading the tab with any kept asks first.
+  var DRAFT_STORE = "owb.admin.drafts", DRAFTS = {};
+  try { DRAFTS = JSON.parse(sessionStorage.getItem(DRAFT_STORE) || "{}") || {}; } catch (e) { DRAFTS = {}; }
+  function saveDrafts() {
+    try { sessionStorage.setItem(DRAFT_STORE, JSON.stringify(DRAFTS)); } catch (e) { /* full or blocked */ }
+  }
+  function keepDraft(field, key) {
+    if (!field.value && DRAFTS[key]) field.value = DRAFTS[key];
+    field.addEventListener("input", function () {
+      if (field.value.trim()) DRAFTS[key] = field.value; else delete DRAFTS[key];
+      saveDrafts();
+    });
+    return field;
+  }
+  function dropDraft() {
+    for (var i = 0; i < arguments.length; i++) delete DRAFTS[arguments[i]];
+    saveDrafts();
+  }
+  window.addEventListener("beforeunload", function (e) {
+    if (!Object.keys(DRAFTS).length) return;
+    e.preventDefault();
+    e.returnValue = "";
+  });
   function copy(data) { return JSON.parse(JSON.stringify(data)); }
 
   // The API, with the saved token. A 401 means the token is gone.
@@ -254,13 +284,22 @@
     var me = { close: function () { clearTimeout(timer); box.remove(); if (TOAST === me) TOAST = null; } };
     if (action) {
       var b = h("button", { type: "button", class: "admin-toast-action" }, action.label);
-      b.addEventListener("click", function () { busy(b, true); action.run(me, b); });
+      var ran = false;
+      var run = function () { if (ran) return; ran = true; busy(b, true); action.run(me, b); };
+      b.addEventListener("click", run);
       box.appendChild(b);
+      if (action.label === "Undo") me.undo = run;
     }
     var x = h("button", { type: "button", class: "admin-toast-close", "aria-label": "Dismiss" }, "\u00d7");
     x.addEventListener("click", me.close);
     box.appendChild(x);
     document.body.appendChild(box);
+    // Above the review bar at the foot of the window, not over its buttons.
+    var foot = document.querySelector(".admin-review-bar");
+    if (foot) {
+      var r = foot.getBoundingClientRect();
+      if (r.top < window.innerHeight && r.bottom > window.innerHeight - 4) box.style.bottom = Math.round(window.innerHeight - r.top + 12) + "px";
+    }
     timer = setTimeout(me.close, (seconds || 8) * 1000);
     // Kept while the pointer or focus is on it, so Undo isn't taken away mid-reach.
     box.addEventListener("mouseenter", function () { clearTimeout(timer); });
@@ -268,6 +307,31 @@
     box.addEventListener("mouseleave", function () { timer = setTimeout(me.close, 4000); });
     TOAST = me;
     return me;
+  }
+
+  // After an action redraws what it was done on: focus goes back to the
+  // control it was done with, or its row's (an id, or "h1"), and the result
+  // is said in the status line of that part of the page, else in a toast;
+  // never in a line drawn away or out of sight (landed). redrawThen does
+  // the same after route() draws the section again.
+  var AFTER = null;
+  function landed(text, focus) {
+    var el = focus === "h1" ? main.querySelector("h1") : focus ? document.getElementById(focus) : null;
+    if (el) {
+      if (el.tagName === "H1" || el.tagName === "H2") el.setAttribute("tabindex", "-1");
+      el.focus({ preventScroll: true });
+      if (el.getBoundingClientRect().bottom < 0 || el.getBoundingClientRect().top > window.innerHeight) el.scrollIntoView({ block: "center" });
+    }
+    if (!text) return;
+    var part = el && el.closest(".admin-message, .admin-block");
+    var line = part && part.querySelector(".admin-note");
+    var r = line && line.getBoundingClientRect();
+    if (line && r.top >= 0 && r.bottom <= window.innerHeight) note(line, text);
+    else toast(text, null, 6);
+  }
+  function redrawThen(text, focus) {
+    AFTER = { text: text, focus: focus };
+    route();
   }
 
   // Search as you type: run(the trimmed value) a quarter second after the
@@ -281,10 +345,27 @@
   }
   function stopLive() { clearTimeout(LIVE); }
 
+  // One pager for every paged list (the inbox, Users, Decisions): where
+  // the page is, "1–50 of 120", then Previous and Next. go(offset) draws
+  // that page. Lists that grow at the foot say "Show more" (moreButton).
+  function pager(d, shown, what, go) {
+    if (!(d.total > d.page || d.offset)) return null;
+    var first = d.offset + 1, last = d.offset + shown;
+    var prev = h("button", { type: "button", class: "admin-btn", disabled: !d.offset }, "\u2039 Previous");
+    var next = h("button", { type: "button", class: "admin-btn", disabled: last >= d.total }, "Next \u203a");
+    prev.addEventListener("click", function () { go(Math.max(0, d.offset - d.page)); });
+    next.addEventListener("click", function () { go(d.offset + d.page); });
+    return h("nav", { class: "admin-pager", "aria-label": "Pages of " + what },
+      h("span", { class: "admin-sub" }, num(first) + "\u2013" + num(last) + " of " + num(d.total)), prev, next);
+  }
+  function moreButton() { return h("button", { type: "button", class: "admin-btn", hidden: true }, "Show more"); }
+
   // A button that asks again before doing something hard to undo.
-  function confirmButton(label, ask, run, cls) {
+  // name: what a screen reader says for the first button when its label
+  // ("Remove") is one of a row of the same ("Remove Editor from Ana").
+  function confirmButton(label, ask, run, cls, name) {
     var wrap = h("span", { class: "admin-confirm" });
-    var first = h("button", { type: "button", class: cls || "admin-btn" }, label);
+    var first = h("button", { type: "button", class: cls || "admin-btn", "aria-label": name || null }, label);
     var yes = h("button", { type: "button", class: "admin-btn danger" }, ask);
     var no = h("button", { type: "button", class: "admin-btn" }, "Cancel");
     var second = h("span", { class: "admin-confirm-ask", hidden: true }, yes, no);
@@ -389,6 +470,15 @@
 
   function opens(section) { return !section.area || ME.admin.indexOf(section.area) >= 0; }
 
+  // Escape closes the phone's list of sections, and focus goes back to its
+  // button (the rail is drawn again on each move; this is set once).
+  rail.addEventListener("keydown", function (e) {
+    var toggle = rail.querySelector(".admin-rail-toggle");
+    if (e.key !== "Escape" || !toggle || !rail.classList.contains("open")) return;
+    rail.classList.remove("open");
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.focus();
+  });
   function drawRail(current) {
     var open = false;   // a new section closes the phone's list
     rail.textContent = "";
@@ -467,6 +557,8 @@
         h("a", { href: "#dashboard" }, "Go to the dashboard"))];
   }
 
+  var GENERIC_EYEBROWS = ["Admin", "Text", "Progress", "Readers", "Team"];
+
   // The section on the page stays, dimmed, until the next one is ready; a
   // loading line replaces it only if that takes a while.
   function route() {
@@ -475,8 +567,19 @@
     var wanted = N.parse(location.hash.replace(/^#/, "")).name;
     if (MODULE_OF[wanted] && !VIEWS[wanted] && !LOAD_ERROR[wanted]) {
       var waiting = ++drawing;
+      // The rail moves at once, and a loading line takes the old section's
+      // place if the download takes a while, as for any slow section.
+      var target = SECTIONS.filter(function (s) { return s.id === (PARENT[wanted] || wanted); })[0];
+      drawRail(wanted);
       main.setAttribute("aria-busy", "true");
       main.classList.add("admin-stale");
+      setTimeout(function () {
+        if (waiting !== drawing) return;
+        main.classList.remove("admin-stale");
+        main.textContent = "";
+        main.appendChild(head("Admin", target ? target.label : "Loading"));
+        main.appendChild(h("p", { class: "admin-loading" }, "Loading…"));
+      }, 300);
       loadModule(MODULE_OF[wanted]).catch(function (e) { LOAD_ERROR[wanted] = e; }).then(function () {
         if (waiting === drawing) route();
       });
@@ -522,9 +625,11 @@
       var was = moved ? null : typingIn();
       main.textContent = "";
       add(main, nodes);
-      // The eyebrow over the heading names the section's group in the rail.
+      // A generic eyebrow over the heading ("Text", "Progress") gives way
+      // to the section's group in the rail; one a page sets for itself
+      // ("Review: Meaning (Greek)", a book's testament, "Account") stays.
       var eyebrow = section.group && main.querySelector(".admin-head .eyebrow");
-      if (eyebrow) eyebrow.textContent = section.group;
+      if (eyebrow && GENERIC_EYEBROWS.indexOf(eyebrow.textContent) >= 0) eyebrow.textContent = section.group;
       drawn = mine;
       shown = hash;
       touched = false;
@@ -544,6 +649,7 @@
       var status = main.querySelector(".admin-note");
       if (FLASH && status) note(status, FLASH);
       FLASH = "";
+      if (AFTER) { var after = AFTER; AFTER = null; landed(after.text, after.focus); }
     }).catch(function (e) {
       if (mine !== drawing) return;
       show([head("Admin", section.label), errorPanel(e)]);
@@ -719,11 +825,15 @@
   // set by a view (the review sentence) and cleared by the next route().
   // Not while typing, and never "/" (the admin search's, below) or with
   // Ctrl, Cmd or Alt.
+  // "u" anywhere takes back the last step while its Undo toast shows
+  // (an approval, a flag, a batch), so a keyboard user needn't Tab to it.
   var KEYS = null;
   window.addEventListener("keydown", function (e) {
-    if (!KEYS || KEYS.at !== drawing || drawn !== drawing || e.ctrlKey || e.metaKey || e.altKey || e.defaultPrevented) return;
+    if (e.ctrlKey || e.metaKey || e.altKey || e.defaultPrevented) return;
     var t = e.target;
     if (t && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName))) return;
+    if (e.key === "u" && TOAST && TOAST.undo) { e.preventDefault(); TOAST.undo(); return; }
+    if (!KEYS || KEYS.at !== drawing || drawn !== drawing) return;
     var run = e.key !== "/" && Object.prototype.hasOwnProperty.call(KEYS, e.key) ? KEYS[e.key] : null;
     if (typeof run !== "function") return;
     e.preventDefault();
@@ -1173,16 +1283,7 @@
       });
       var list = h("div", { class: "admin-messages" }, cards);
       var filtered = f.kind || f.lang || f.book || f.assigned || f.q;
-      var pager = null;
-      if (d.total > d.page || d.offset) {
-        var first = d.offset + 1, last = d.offset + d.messages.length;
-        var newer = h("button", { type: "button", class: "admin-btn", disabled: !d.offset }, f.status === "new" ? "\u2039 Earlier" : "\u2039 Newer");
-        var older = h("button", { type: "button", class: "admin-btn", disabled: last >= d.total }, f.status === "new" ? "Later \u203a" : "Older \u203a");
-        newer.addEventListener("click", function () { f.offset = Math.max(0, d.offset - d.page); route(); });
-        older.addEventListener("click", function () { f.offset = d.offset + d.page; route(); });
-        pager = h("nav", { class: "admin-pager", "aria-label": "Pages of messages" },
-          h("span", { class: "admin-sub" }, num(first) + "\u2013" + num(last) + " of " + num(d.total)), newer, older);
-      }
+      var pages = pager(d, d.messages.length, "messages", function (o) { f.offset = o; route(); });
       return [head("Readers", "Reader inbox", "Suggestions and questions readers send from a verse. New messages come oldest first; assign one to say you're dealing with it. A reply is emailed to the reader once; mark a message done when it's dealt with."),
         h("div", { class: "admin-toolbar" }, tabs, whose), h("div", { class: "admin-toolbar admin-filters" }, kind, lang, book), form,
         bar,
@@ -1192,7 +1293,7 @@
           clear.addEventListener("click", function () { f.kind = f.lang = f.book = f.assigned = f.q = ""; refilter(); });
           return h("p", null, clear);
         })() : null,
-        pager];
+        pages];
     });
   };
   // team: whom the message can be assigned to, from the answer that listed
@@ -1203,7 +1304,6 @@
   function messageCard(m, team, opts) {
     opts = opts || {};
     var card = h("article", { class: "admin-message" });
-    var draft = "";   // the reply being written, kept when the card is drawn again
     function draw() {
       card.textContent = "";
       add(card, [
@@ -1229,7 +1329,8 @@
       card.appendChild(assignee(status));
       if (!m.reply) {
         var text = h("textarea", { rows: 3, id: "reply-" + m.id, maxlength: 4000, placeholder: "Reply to the reader (emailed to them)",
-          value: draft, oninput: function () { draft = text.value; } });
+        });
+        keepDraft(text, "reply." + m.id);
         var saved = select("saved-" + m.id, [["", "Start from a saved reply…"]].concat(m.replies.map(function (r) { return [r.key, r.label]; })), "");
         saved.setAttribute("aria-label", "Saved replies");
         saved.addEventListener("change", function () {
@@ -1243,7 +1344,7 @@
               var before = text.value.slice(0, at).replace(/\s*$/, ""), after = text.value.slice(at).replace(/^\s*/, "");
               text.value = before + "\n\n" + r.text + (after ? "\n\n" + after : "");
             }
-            draft = text.value;
+            text.dispatchEvent(new Event("input"));   // kept as typing is
             text.focus();
           }
           saved.value = "";
@@ -1270,7 +1371,7 @@
           });
           go.addEventListener("click", function () {
             busy(go, true); busy(back, true);
-            update({ reply: text.value }).catch(function (e) {
+            update({ reply: text.value }).then(function () { dropDraft("reply." + m.id); }, function (e) {
               busy(go, false); busy(back, false);
               note(status, e, true);
             });
@@ -1286,7 +1387,7 @@
       }
       var noteField = h("input", { id: "note-" + m.id, value: m.note, maxlength: 4000, placeholder: "A note for editors (not sent)" });
       noteField.addEventListener("change", function () {
-        update({ note: noteField.value }).then(function () { note(status, "Note saved."); }, function (e) { note(status, e, true); });
+        update({ note: noteField.value }).then(function () { landed("Note saved.", "note-" + m.id); }, function (e) { note(status, e, true); });
       });
       card.appendChild(h("label", { class: "admin-label", for: "note-" + m.id }, "Editors' note"));
       card.appendChild(noteField);
@@ -1427,14 +1528,12 @@
           h("td", null, date(u.joined)), h("td", null, when(u.signed_in)),
           h("td", { class: "admin-num" }, num(u.marks)), h("td", { class: "admin-num" }, num(u.devices)));
       });
-      var pager = h("div", { class: "admin-actions" });
-      if (d.offset > 0) pager.appendChild(h("button", { type: "button", class: "admin-btn", onclick: function () { USERS.offset = Math.max(0, d.offset - d.page); route(); } }, "‹ Newer"));
-      if (d.offset + d.page < d.total) pager.appendChild(h("button", { type: "button", class: "admin-btn", onclick: function () { USERS.offset = d.offset + d.page; route(); } }, "Older ›"));
+      var pages = pager(d, d.users.length, "accounts", function (o) { USERS.offset = o; route(); });
       return [head("Readers", "Users", num(d.total) + (d.total === 1 ? " account" : " accounts") + (USERS.q || USERS.role ? " match" : "") +
         (d.system_hidden ? " (" + plural(d.system_hidden, "system account") + " hidden)" : "") + ". Saved verses are counted, never listed: they are the reader's own."),
         form, d.users.length ? table(["Email", "Name", "Roles", "Joined", "Last sign-in", ["Saved", { class: "admin-num" }], ["Devices", { class: "admin-num" }]], rows)
           : empty("No accounts match" + (USERS.q ? " “" + USERS.q + "”" : "") + (USERS.role ? " with that role" : "") + ".", USERS.q || USERS.role ? [clearing("users")] : null),
-        pager];
+        pages];
     });
   };
 
@@ -1444,7 +1543,7 @@
       var actions = h("div", { class: "admin-actions" });
       if (u.devices.length && u.can_sign_out) {
         actions.appendChild(confirmButton("Sign out every device", "Sign out " + plural(u.devices.length, "device") + "?", function (b) {
-          api("/api/admin/users/" + u.id + "/sign-out/", { method: "POST" }).then(function () { route(); }, function (e) { busy(b, false); note(status, e, true); });
+          api("/api/admin/users/" + u.id + "/sign-out/", { method: "POST" }).then(function () { redrawThen("Signed out of every device.", "h1"); }, function (e) { busy(b, false); note(status, e, true); });
         }));
       }
       // Deactivating keeps the account (and its reviews and messages) but
@@ -1452,10 +1551,10 @@
       if (u.can_deactivate) {
         actions.appendChild(u.active
           ? confirmButton("Deactivate account", "Stop " + u.email + " signing in?", function (b) {
-            api("/api/admin/users/" + u.id + "/", { method: "PATCH", body: { active: false } }).then(function () { route(); }, function (e) { busy(b, false); note(status, e, true); });
+            api("/api/admin/users/" + u.id + "/", { method: "PATCH", body: { active: false } }).then(function () { redrawThen("Deactivated: " + u.email + " can't sign in now.", "h1"); }, function (e) { busy(b, false); note(status, e, true); });
           })
           : confirmButton("Reactivate account", "Let " + u.email + " sign in again?", function (b) {
-            api("/api/admin/users/" + u.id + "/", { method: "PATCH", body: { active: true } }).then(function () { route(); }, function (e) { busy(b, false); note(status, e, true); });
+            api("/api/admin/users/" + u.id + "/", { method: "PATCH", body: { active: true } }).then(function () { redrawThen("Reactivated: " + u.email + " can sign in again.", "h1"); }, function (e) { busy(b, false); note(status, e, true); });
           }));
       }
       if (u.can_delete) {
@@ -1502,17 +1601,17 @@
   // (a deploy's or a script's, not a person's).
   function userChanges(u) {
     var status = h("p", { class: "admin-note", role: "status" });
-    function send(body, button) {
+    function send(body, button, said) {
       busy(button, true);
-      api("/api/admin/users/" + u.id + "/", { method: "PATCH", body: body }).then(function () { route(); },
+      api("/api/admin/users/" + u.id + "/", { method: "PATCH", body: body }).then(function () { redrawThen(said, button.id); },
         function (e) { busy(button, false); note(status, e, true); });
     }
     var name = h("input", { id: "user-name", value: u.name || "", maxlength: 80, placeholder: u.display_name || "" });
-    var save = h("button", { type: "submit", class: "admin-btn" }, "Save name");
+    var save = h("button", { type: "submit", class: "admin-btn", id: "user-name-save" }, "Save name");
     var form = h("form", { class: "admin-toolbar" }, h("label", { class: "admin-field", for: "user-name" }, "Display name", name), save);
-    form.addEventListener("submit", function (e) { e.preventDefault(); send({ name: name.value.trim() }, save); });
-    var mark = h("button", { type: "button", class: "admin-btn" }, u.system ? "Mark as a person" : "Mark as a system account");
-    mark.addEventListener("click", function () { send({ system: !u.system }, mark); });
+    form.addEventListener("submit", function (e) { e.preventDefault(); send({ name: name.value.trim() }, save, name.value.trim() ? "Name saved." : "Name cleared."); });
+    var mark = h("button", { type: "button", class: "admin-btn", id: "user-kind" }, u.system ? "Mark as a person" : "Mark as a system account");
+    mark.addEventListener("click", function () { send({ system: !u.system }, mark, u.system ? "Marked as a person." : "Marked as a system account."); });
     return h("section", { class: "admin-block" }, h("h2", null, "Name and kind"),
       h("p", { class: "admin-sub" }, "Readers set their name on their account page; set it here if one asks. " +
         "A system account is one a deploy or a script made: Users and the reader counts leave it out." +
@@ -1560,9 +1659,11 @@
             var li = h("li", null, pill(r.label, r.kind === "super_admin" ? "warn" : "info"),
               h("span", { class: "admin-sub" }, r.granted_by ? " by " + r.granted_by + ", " + date(r.granted_at) : " " + date(r.granted_at)));
             if (r.kind !== "super_admin") {
-              li.appendChild(confirmButton("Remove", "Remove " + r.label + "?", function (b) {
-                api("/api/admin/team/roles/" + r.id + "/", { method: "DELETE" }).then(route, function (e) { busy(b, false); note(status, e, true); });
-              }, "admin-link"));
+              li.appendChild(confirmButton("Remove", "Remove " + r.label + " from " + (m.name || m.email) + "?", function (b) {
+                api("/api/admin/team/roles/" + r.id + "/", { method: "DELETE" }).then(function () {
+                  redrawThen("Removed " + r.label + " from " + (m.name || m.email) + ".", "team-list");
+                }, function (e) { busy(b, false); note(status, e, true); });
+              }, "admin-link", "Remove " + r.label + " from " + (m.name || m.email)));
             }
             return li;
           }))),
@@ -1571,7 +1672,7 @@
             b.addEventListener("click", function () {
               busy(b, true);
               api("/api/admin/team/invite/", { method: "POST", body: { email: m.email } }).then(function () {
-                note(status, "Invitation sent to " + m.email + ".");
+                toast("Invitation sent to " + m.email + ".", null, 6);
               }, function (e) { note(status, e, true); }).then(function () { busy(b, false); });
             });
             return b;
@@ -1579,7 +1680,7 @@
       });
       return [head("Team", "Team & access", "Grant the roles that open the admin and, when review starts, the reviewer roles. An address that has never signed in gets an invitation by email."),
         h("section", { class: "admin-block" }, h("h2", null, "Grant a role"), form, about, status),
-        h("section", { class: "admin-block" }, h("h2", null, "The team"),
+        h("section", { class: "admin-block" }, h("h2", { id: "team-list" }, "The team"),
           table(["Person", "Roles", "Last sign-in"], rows)),
         teamAssignments(),
         h("p", { class: "admin-sub" }, "Super admins aren't granted here: they're the addresses in " + d.super_admins_from +
@@ -1610,7 +1711,7 @@
   VIEWS.activity = function () {
     var f = ACTIVITY;
     var list = h("div");
-    var more = h("button", { type: "button", class: "admin-btn", hidden: true }, "Older");
+    var more = moreButton();
     var last = null, first = null;
     function load() {
       busy(more, true);
@@ -1896,14 +1997,16 @@
         route();
       }, function (err) { busy(submit, false); note(status, err, true); });
     });
-    function patch(a, body, button) {
-      return api("/api/admin/assignments/" + a.id + "/", { method: "PATCH", body: body }).then(route, function (e) {
+    function patch(a, body, button, said) {
+      return api("/api/admin/assignments/" + a.id + "/", { method: "PATCH", body: body }).then(function () {
+        redrawThen(said || "Saved.", button ? button.id : "assign-due-" + a.id);
+      }, function (e) {
         if (button) busy(button, false);
         note(status, e, true);
       });
     }
     function row(a) {
-      var dueIn = h("input", { type: "date", value: a.due || "", "aria-label": "Due date for " + a.label });
+      var dueIn = h("input", { type: "date", id: "assign-due-" + a.id, value: a.due || "", "aria-label": "Due date for " + a.label + ", " + a.assignee.name });
       // Saved on leaving the field (or Enter), not on "change": typing a
       // date digit by digit is a valid date part-way ("0001-12-01").
       function saveDue() {
@@ -1914,12 +2017,17 @@
           note(status, "That date looks unfinished, so it wasn't saved. Type the whole date.", true);
           return;
         }
-        patch(a, { due: v });
+        patch(a, { due: v }, null, v ? "Due date saved." : "Due date cleared.");
       }
       dueIn.addEventListener("blur", saveDue);
       dueIn.addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); saveDue(); } });
-      var close = h("button", { type: "button", class: "admin-link" }, a.closed_at ? "Reopen" : "Close");
-      close.addEventListener("click", function () { busy(close, true); patch(a, { closed: !a.closed_at }, close); });
+      var who = a.assignee.name + "'s " + a.label;
+      var close = h("button", { type: "button", class: "admin-link", id: "assign-close-" + a.id, "aria-label": (a.closed_at ? "Reopen " : "Close ") + who },
+        a.closed_at ? "Reopen" : "Close");
+      close.addEventListener("click", function () {
+        busy(close, true);
+        patch(a, { closed: !a.closed_at }, close, (a.closed_at ? "Reopened " : "Closed ") + who + ".");
+      });
       return h("tr", null,
         h("td", null, a.assignee.name, a.assignee.email && a.assignee.name !== a.assignee.email ? h("div", { class: "admin-sub" }, a.assignee.email) : null),
         h("td", null, a.layer.name),
@@ -1927,9 +2035,10 @@
         h("td", null, bar(a.progress.approved, a.progress.total), h("div", { class: "admin-sub" }, progressText(a.progress))),
         h("td", null, dueIn, a.due && a.standing !== "closed" && a.standing !== "done" ? h("div", { class: "admin-sub" }, dueText(a)) : null),
         h("td", null, standingPill(a)),
-        h("td", null, close, " ", confirmButton("Remove", "Remove this assignment?", function (b) {
-          api("/api/admin/assignments/" + a.id + "/", { method: "DELETE" }).then(route, function (e) { busy(b, false); note(status, e, true); });
-        }, "admin-link")));
+        h("td", null, close, " ", confirmButton("Remove", "Remove " + who + "?", function (b) {
+          api("/api/admin/assignments/" + a.id + "/", { method: "DELETE" }).then(function () { redrawThen("Removed " + who + ".", null); },
+            function (e) { busy(b, false); note(status, e, true); });
+        }, "admin-link", "Remove " + who)));
     }
     return {
       form: people.length ? form : empty("No one reviews yet: grant a scholar or language reviewer role in Team & access first."),
@@ -1998,7 +2107,7 @@
   }
   function approvalLog() {
     var list = h("div");
-    var more = h("button", { type: "button", class: "admin-btn", hidden: true }, "Older approvals");
+    var more = moreButton();
     var last = null;
     function load() {
       busy(more, true);
@@ -2047,19 +2156,32 @@
   var MODULE_URLS = {};
   try { MODULE_URLS = JSON.parse(root.getAttribute("data-modules") || "") || {}; } catch (e) { /* their plain names */ }
   var loading = {}, LOAD_ERROR = {}, rested = false;
+  var MODULE_WAIT = 20000;
   function loadModule(name) {
     if (!loading[name]) {
       loading[name] = new Promise(function (resolve, reject) {
         var s = document.createElement("script");
         s.src = MODULE_URLS[name] || "/admin-" + name + ".js";
-        s.onload = function () { resolve(); };
-        s.onerror = function () {
+        // A download that never finishes gives up after MODULE_WAIT, with
+        // Try again (errorPanel), rather than leaving the page waiting.
+        var gaveUp = setTimeout(function () {
+          fail("Loading this section took too long. Check your connection, then try again.", "timeout");
+        }, MODULE_WAIT);
+        function fail(text, code) {
+          clearTimeout(gaveUp);
+          if (loading[name] !== promise) return;
           delete loading[name];
+          s.onload = s.onerror = null;
           s.remove();
-          reject(new Error("This section couldn't be loaded. Check your connection, then try again."));
-        };
+          var e = new Error(text);
+          if (code) e.code = code;
+          reject(e);
+        }
+        s.onload = function () { clearTimeout(gaveUp); resolve(); };
+        s.onerror = function () { fail("This section couldn't be loaded. Check your connection, then try again."); };
         document.head.appendChild(s);
       });
+      var promise = loading[name];
     }
     return loading[name];
   }
@@ -2075,7 +2197,7 @@
     STATE_LABEL: STATE_LABEL, add: add, api: api, approvalHistory: approvalHistory,
     assignmentsManager: assignmentsManager, bar: bar, busy: busy, clearing: clearing, confirmButton: confirmButton,
     date: date, decision: decision, diffView: diffView, dueText: dueText, empty: empty, filtered: filtered,
-    forget: forget, ghFile: ghFile, h: h, head: head, keepAddress: keepAddress, langName: langName, later: later,
+    forget: forget, ghFile: ghFile, h: h, head: head, keepAddress: keepAddress, langName: langName, later: later, keepDraft: keepDraft, dropDraft: dropDraft, moreButton: moreButton, pager: pager,
     live: live, main: main, messageCard: messageCard, note: note, num: num, pill: pill, plural: plural,
     progressText: progressText, rememberTab: rememberTab, rendering: rendering, request: request, route: route,
     saveFile: saveFile, seg: seg, select: select, sessionTab: sessionTab, sinceApproval: sinceApproval,

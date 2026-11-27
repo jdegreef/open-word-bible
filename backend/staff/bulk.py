@@ -3,6 +3,10 @@ layer at once, from the review queue.
 
 POST /api/admin/review/bulk/  {layer, action, note, records: [record ids]}
         approve or flag the sentences named (at most MAX)
+POST /api/admin/review/bulk/  {layer, action: "undo", events: {record: event id}}
+        take back a batch just applied (the events its answer gave): each
+        must still be the reviewer's latest step, within ten minutes; all
+        or nothing
 POST /api/admin/review/bulk/  {layer, action: "approve", chapter: "JHN.3"}
         approve the rest of a chapter: its sentences in the layer that are
         not reviewed or changed since approval (flagged ones are left for
@@ -33,6 +37,7 @@ from translation.models import ReviewState, Sentence
 
 from . import review
 from .inbox import verse_label
+from .models import record
 from .permissions import admin_view
 
 RS = ReviewState.State
@@ -59,6 +64,42 @@ def _too_many(n):
     raise ValidationError({"detail": f"That is {n:,} sentences; act on at most {MAX} at once.", "code": "too_many"})
 
 
+def _undo(request, layer, events):
+    """Take back a batch this reviewer just applied ({record: event id},
+    from the answer's results): each must still be their latest step on
+    the sentence, within review.UNDO_MINUTES. All or nothing."""
+    if not isinstance(events, dict) or not events or not all(isinstance(v, (str, int)) for v in events.values()):
+        raise ValidationError({"events": "Send the steps to take back, by record.", "code": "invalid"})
+    if len(events) > MAX:
+        _too_many(len(events))
+    found = {s.record_id: s for s in
+             Sentence.objects.select_related("source_edition").filter(record_id__in=list(events))}
+    missing = [r for r in events if r not in found]
+    if missing:
+        raise ValidationError({"events": f"No sentence {missing[0]}.", "code": "not_found"})
+    s = None
+    try:
+        with transaction.atomic():
+            for record_id, event_id in events.items():
+                s = found[record_id]
+                review.take_back(request.user, s, layer, event_id)
+            review.settle_status(layer, [x.pk for x in found.values()])
+            record(request.user, "review.undo", f"{len(found)} steps in {review.layer_json(layer)['name']}",
+                   layer=layer)
+    except review._Forbidden as e:
+        return review._forbidden(e)
+    except ValidationError as e:
+        detail = e.detail.get("event") if isinstance(e.detail, dict) else None
+        text = str(detail[0] if isinstance(detail, list) else detail or e.detail)
+        return Response({"detail": f"{verse_label(s.refs[0])}: {text} Nothing was taken back.",
+                         "code": "not_undone", "record": s.record_id}, status=status.HTTP_400_BAD_REQUEST)
+    states = dict(ReviewState.objects.filter(layer=layer, sentence__in=found.values())
+                  .values_list("sentence_id", "state"))
+    return Response({"layer": review.layer_json(layer), "undone": len(found),
+                     "results": [_row(x, result="undone", state=states.get(x.id, "not_reviewed"))
+                                 for x in found.values()]})
+
+
 @admin_view("review", methods=("POST",))
 def bulk(request):
     data = request.data if isinstance(request.data, dict) else {}
@@ -69,6 +110,8 @@ def bulk(request):
     if layer not in review.reviewing(request.user):   # bulk is approving and flagging
         return review._forbidden(review.NOT_A_REVIEWER)
     action = data.get("action")
+    if action == "undo":
+        return _undo(request, layer, data.get("events"))
     if action not in ("approve", "flag"):
         raise ValidationError({"action": "Choose approve or flag.", "code": "invalid_action"})
     note = str(data.get("note") or "").strip()

@@ -191,5 +191,100 @@ class GlossaryTest(unittest.TestCase):
                                ("EXO.27.2.s1", "alternative", "perunggu", "bronze", None)])
 
 
+CHINESE = """# Chinese terms
+
+Below, *dn* is `{{divine_name:上主|雅威}}` and *gt* is `{{god_term:神|上帝}}`.
+
+## Key theological terms
+
+| Hebrew (English) | Chinese |
+|---|---|
+| curse | 诅咒 (verb and noun). 咒诅 (the CUV's order) is not used |
+| members | 肢体 (L); 部分, 身体的一部分 (B, R). Not 成员 or 会员 |
+| the living God | 永活*gt*, not the CUV's 永生神 |
+| your house | 殿 at every level, never 家 |
+| guilt offering | 赎过祭 (every level). *alt.* 赎愆祭 (the CUV's) |
+| the man of God | *gt*的人. 神人 is not used (does not read with 上帝) |
+| cedar; cypress | 香柏树; 柏树 |
+
+## Added while drafting
+
+### Hosea
+
+| English | Chinese |
+|---|---|
+| cypress (14:9) | 松树 (uncertain) |
+| offering (*minchah*) | 祭物 at every level, not 素祭 |
+"""
+
+
+class ChineseGlossaryTest(unittest.TestCase):
+    """docs/chinese-terms.md writes its forms without italics, and Chinese
+    has no spaces between words."""
+
+    def setUp(self):
+        self.rows = cc.glossary_rows(CHINESE, "Chinese (Simplified)")
+        self.by = {r["english"][0]: r for r in self.rows}
+
+    def test_forms_and_ruled_out_forms_in_prose(self):
+        curse = self.by["curse"]
+        self.assertEqual((curse["forms"], curse["avoided"]), ([("诅咒", None)], ["咒诅"]))
+        members = self.by["members"]
+        self.assertEqual(members["forms"], [("肢体", ["L"]), ("部分", None), ("身体的一部分", ["B", "R"])])
+        self.assertEqual(members["avoided"], ["成员", "会员"])
+        self.assertEqual(self.by["living god"]["avoided"], ["永生神"])
+        self.assertEqual(self.by["guilt offering"]["alternatives"], ["赎愆祭"])
+        # Not "上帝": a clause after "not", not a form it rules out.
+        self.assertEqual(self.by["man of god"]["avoided"], ["神人"])
+
+    def test_abbreviations_and_book_headings(self):
+        # *gt* stands for its span, read at its default.
+        self.assertEqual(self.by["living god"]["forms"], [("永活神", None)])
+        offering = self.by["offering"]
+        self.assertEqual((offering["book"], offering["avoided"]), ("HOS", ["素祭"]))
+        self.assertIsNone(self.by["curse"]["book"])
+
+    def test_substring_matching(self):
+        self.assertTrue(cc._form_in("咒诅", "他咒诅了那一天"))
+        self.assertTrue(cc._form_in("为……赎罪", "为他们赎罪"))
+        self.assertFalse(cc._form_in("咒诅", "他诅咒了那一天"))
+        # Spaced scripts still match whole words only.
+        self.assertTrue(cc._form_in("jemaah", "jemaahnya itu"))
+        self.assertFalse(cc._form_in("umat", "kumatikan"))
+
+    def test_verses(self):
+        recs = [
+            record("JOB.3.1.s1", {"en": {"L": "Job cursed his day"}, "zh": {"L": "约伯咒诅他的那一天"}}, []),
+            # 咒诅 only inside the row's own 诅咒诅咒: not a hit.
+            record("1KI.2.8.s1", {"en": {"L": "who cursed me"}, "zh": {"L": "他用狠毒的诅咒诅咒我"}}, []),
+            record("1CO.12.12.s1", {"en": {"L": "the members of the body"}, "zh": {"L": "身体的成员"}}, []),
+            # A form across a setting span: 永生 + {{god_term:神|上帝}}.
+            record("HEB.3.12.s1", {"en": {"L": "the living God"}, "zh": {"L": "永生{{god_term:神|上帝}}"}}, []),
+            # A one-character form ruled out ("never 家") is not looked for.
+            record("PSA.5.8.s1", {"en": {"L": "your house"}, "zh": {"L": "你的家"}}, []),
+            # A book's own row counts in that book only.
+            record("MAL.1.10.s1", {"en": {"L": "an offering"}, "zh": {"L": "素祭"}}, []),
+            record("HOS.9.4.s1", {"en": {"L": "an offering"}, "zh": {"L": "素祭"}}, []),
+            record("LEV.5.6.s1", {"en": {"L": "his guilt offering"}, "zh": {"L": "他的赎愆祭"}}, []),
+        ]
+        hits = cc.glossary_hits(self.rows, recs, "zh")
+        self.assertEqual([(h["record"], h["kind"], h["form"]) for h in hits],
+                         [("JOB.3.1.s1", "avoided", "咒诅"), ("1CO.12.12.s1", "avoided", "成员"),
+                          ("HEB.3.12.s1", "avoided", "永生神"), ("HOS.9.4.s1", "avoided", "素祭"),
+                          ("LEV.5.6.s1", "alternative", "赎愆祭")])
+        self.assertEqual(hits[2]["text"], "永生神")
+
+    def test_conflicts(self):
+        found = {c["term"]: c for c in cc.glossary_conflicts(self.rows)}
+        # 柏树 and 松树 share no two characters in a row.
+        self.assertEqual([r["line"] for r in found["cypress"]["rows"]], [15, 23])
+        # The commentary in a cell is not compared: "curse" has one row.
+        self.assertNotIn("curse", found)
+        rows = cc.glossary_rows(CHINESE.replace("松树 (uncertain)", "柏树 (uncertain)"), "Chinese")
+        self.assertNotIn("cypress", {c["term"] for c in cc.glossary_conflicts(rows)})
+        rows = cc.glossary_rows(CHINESE.replace("松树 (uncertain)", "香柏树的一种"), "Chinese")
+        self.assertNotIn("cypress", {c["term"] for c in cc.glossary_conflicts(rows)})
+
+
 if __name__ == "__main__":
     unittest.main()
