@@ -451,6 +451,7 @@
     { id: "checks", label: "Checks", area: "overview", group: "Quality" },
     { id: "overlap", label: "Similarity", area: "overview", group: "Quality" },
     { id: "changes", label: "Changes", area: "overview", group: "Quality" },
+    { id: "plan", label: "Plan", area: "overview", group: "Progress" },
     { id: "coverage", label: "Coverage", area: "overview", group: "Progress" },
     { id: "languages", label: "Languages", area: "overview", group: "Progress" },
     { id: "health", label: "Content health", area: "overview", group: "Progress" },
@@ -2184,7 +2185,7 @@
   // reassigned here (the account, the flash message, ...) it reads and
   // writes through A, so both sides see one value.
   var MODULE_OF = {};
-  [["review", ["review",  "workspace",  "assignments",  "flags",  "changes",  "releases"]],
+  [["review", ["review",  "workspace",  "assignments",  "flags",  "changes",  "releases",  "plan"]],
    ["quality", ["verse",  "fixes",  "decisions",  "terms",  "consistency",  "checks"]],
    ["publish", ["articles",  "work",  "overlap",  "export",  "jobs",  "emails"]]].forEach(function (m) {
     m[1].forEach(function (view) { MODULE_OF[view] = m[0]; });

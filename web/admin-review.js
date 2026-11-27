@@ -787,6 +787,56 @@ OWBAdmin.module(function (A) {
 
   // Release notes: what changed in one language since a date.
   var RELEASES = { lang: "en", since: "", until: "" };
+  // Plan: the month for one language on one page (staff/plan.py): books
+  // drafted that nobody reviews, books still to draft, idle reviewers,
+  // overdue assignments and books held up by flags, each with what to do.
+  var PLAN = { lang: "en" };
+  VIEWS.plan = function () {
+    var f = PLAN;
+    return api("/api/admin/plan/?lang=" + encodeURIComponent(f.lang)).then(function (d) {
+      var mayAssign = A.ME.admin.indexOf("inbox") >= 0, mayJob = A.ME.admin.indexOf("jobs") >= 0;
+      var langSel = select("plan-lang", d.languages.map(function (l) { return [l.code, l.name]; }), f.lang);
+      langSel.setAttribute("aria-label", "Language");
+      langSel.addEventListener("change", function () { f.lang = langSel.value; keepAddress(true); route(); });
+      var name = d.language.name;
+      function block(title, sub, rows, none) {
+        return h("section", { class: "admin-block" }, h("h2", null, title), sub ? h("p", { class: "admin-sub" }, sub) : null, rows.length ? rows : empty(none));
+      }
+      var idle = d.reviewers.filter(function (r) { return r.idle; });
+      return [head("Progress", "Plan: " + name, "What should happen next in " + name + ", from Coverage, Review assignments, Review pace, Drafting jobs and Reviewer flags on one page."),
+        h("div", { class: "admin-toolbar" }, langSel),
+        h("div", { class: "admin-tiles" }, tile(num(d.unassigned.length), "books drafted, nobody reviewing", d.unassigned.length ? "warn" : ""),
+          tile(num(idle.length) + " / " + num(d.reviewers.length), "reviewers with nothing assigned"),
+          tile(num(d.overdue.length), "assignments overdue", d.overdue.length ? "bad" : ""),
+          tile(num(d.blocked.length), "books with open flags", d.blocked.length ? "warn" : ""),
+          tile(num(d.undrafted.length), "books English has and " + name + " hasn't, in whole or part")),
+        block("Drafted, nobody reviewing", "Books drafted in " + name + " with no open review assignment and not every sentence approved.",
+          d.unassigned.length ? [table(["Book", "Approved", ""], d.unassigned.map(function (b) {
+            return h("tr", null, h("th", { scope: "row" }, b.name), h("td", null, bar(b.approved, b.drafted), " " + num(b.approved) + " of " + num(b.drafted)),
+              h("td", null, mayAssign ? h("a", { href: "#assignments" }, "Assign") : null, " ", queueLink(f.lang, b.code, "todo", "Queue")));
+          }))] : [], "Every book drafted in " + name + " is assigned or approved."),
+        block("Reviewers", null, d.reviewers.length ? [table(["Reviewer", "Assigned", "Last approval"], d.reviewers.map(function (r) {
+          return h("tr", null, h("th", { scope: "row" }, r.name, r.idle ? [" ", pill("nothing assigned", "warn")] : null),
+            h("td", null, r.assignments.length ? r.assignments.map(function (a) { return h("div", null, a.label + " ", standingPill(a)); }) : "—"),
+            h("td", null, r.last_approval ? when(r.last_approval) : "never"));
+        }))] : [], "No one reviews " + name + " yet. Grant a language reviewer role in Team & access."),
+        block("Overdue", null, d.overdue.length ? [table(["Assignment", "Reviewer", "Due", "Progress"], d.overdue.map(function (a) {
+          return h("tr", null, h("th", { scope: "row" }, a.label), h("td", null, a.assignee.name), h("td", null, dueText(a)),
+            h("td", null, bar(a.progress.approved, a.progress.total), " " + progressText(a.progress)));
+        }))] : [], "Nothing is overdue."),
+        block("Held up by flags", "Books with open flags in the " + name + " wording; those with a fix request filed are waiting on it.",
+          d.blocked.length ? [table(["Book", "Open flags", "Waiting on a fix"], d.blocked.map(function (b) {
+            return h("tr", null, h("th", { scope: "row" }, b.name), h("td", { class: "admin-num" }, num(b.flags)), h("td", { class: "admin-num" }, num(b.fixing)));
+          })), h("p", null, h("a", { href: "#flags" }, "Open the flags"))] : [], "No open flags in " + name + "."),
+        block("Still to draft", "Books English has that " + name + " hasn't, or has in part." + (d.jobs.length ? " Open drafting jobs: " + d.jobs.map(function (j) { return "#" + j.number; }).join(", ") + "." : ""),
+          d.undrafted.length ? [table(["Book", "Drafted", ""], d.undrafted.map(function (b) {
+            return h("tr", null, h("th", { scope: "row" }, b.name), h("td", null, bar(b.drafted, b.of), " " + num(b.drafted) + " of " + num(b.of)),
+              h("td", null, mayJob ? h("a", { href: "#jobs" }, "File a drafting job") : null));
+          }))] : [], name + " has every book English has.")];
+    });
+  };
+  filtered("plan", PLAN);
+
   // A release of one language as a record (staff/releases.py): what stands
   // in its way now, cutting one, and the ones cut before. The notes below
   // start from the last release.

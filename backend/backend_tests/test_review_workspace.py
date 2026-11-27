@@ -339,6 +339,32 @@ class ReleaseTest(AdminTestCase):
             self.assertTrue(d["since"])
 
 
+class PlanTest(AdminTestCase):
+    def setUp(self):
+        super().setUp()
+        for rid in ("JHN.1.1.s1", "JHN.1.2.s1", "ROM.1.1.s1"):
+            sentence(rid, ("en", "fr"))
+        sentence("ACT.1.1.s1", ("en",))   # not in French yet
+        self.fr_user = account("fr@example.org", (K.LANGUAGE_REVIEWER, "fr"))
+        self.fr2 = account("fr2@example.org", (K.LANGUAGE_REVIEWER, "fr"))
+        self.french = client_for(self.fr_user)
+
+    def test_the_month_on_one_page(self):
+        today = timezone.localdate()
+        ReviewAssignment.objects.create(layer="fr", book="JHN", assignee=self.fr_user,
+                                        due=today - datetime.timedelta(days=2))
+        self.french.post("/api/admin/review/ROM.1.1.s1/", {"layer": "fr", "action": "flag", "note": "x"},
+                         format="json")
+        d = self.admin.get("/api/admin/plan/?lang=fr").json()
+        self.assertEqual([b["code"] for b in d["unassigned"]], ["ROM"])     # JHN is assigned
+        self.assertEqual([b["code"] for b in d["undrafted"]], ["ACT"])
+        self.assertEqual([x["label"] for x in d["overdue"]], ["John"])
+        idle = {r["id"]: r["idle"] for r in d["reviewers"]}
+        self.assertEqual((idle[self.fr_user.id], idle[self.fr2.id]), (False, True))
+        self.assertEqual([(b["code"], b["flags"]) for b in d["blocked"]], [("ROM", 1)])
+        self.assertEqual(self.admin.get("/api/admin/plan/?lang=xx").status_code, 400)
+
+
 class WorkspaceTest(AdminTestCase):
     def setUp(self):
         super().setUp()
