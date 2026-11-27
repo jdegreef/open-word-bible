@@ -221,7 +221,7 @@ class Command(BaseCommand):
         renderings, {record id: {language: {level: text}}}."""
         before = {}
         for rid, lang, level, text in (Rendering.objects.filter(sentence__record_id__in=[r["id"] for r in records])
-                                       .values_list("sentence__record_id", "language", "level", "text")):
+                                       .order_by().values_list("sentence__record_id", "language", "level", "text")):
             before.setdefault(rid, {}).setdefault(lang, {})[level] = text
         Kind = SentenceChange.Kind
         changes = []
@@ -265,7 +265,7 @@ class Command(BaseCommand):
         import). A sentence new to a language is listed as drafted instead."""
         ids = [r["id"] for r in records]
         before = {}
-        for row in Decision.objects.filter(sentence__record_id__in=ids).values("sentence__record_id", "key",
+        for row in Decision.objects.filter(sentence__record_id__in=ids).order_by().values("sentence__record_id", "key",
                                                                                 "language", *DECISION_FIELDS):
             before.setdefault(row["sentence__record_id"], {})[row["key"]] = (
                 row["language"], {f: row[f] for f in DECISION_FIELDS})
@@ -302,10 +302,15 @@ class Command(BaseCommand):
         held = {row[0]: row[1:] for row in Sentence.objects.filter(record_id__in=ids).values_list(
             "record_id", "book", "chapter", "verse", "number", "refs", "source_edition_id", "source_text_id",
             "tokens", "source_text", "literal_gloss", "alignments")}
+        # Unordered, and put in order here: an ORDER BY makes the planner
+        # walk the decisions' sentence index, which on tables not yet
+        # analysed (a first import) is a nested loop over every row.
         decisions = {}
-        for row in (Decision.objects.filter(sentence__record_id__in=ids).order_by("sentence_id", "order")
-                    .values_list("sentence__record_id", "key", "layer", "language", *DECISION_FIELDS)):
-            decisions.setdefault(row[0], []).append(tuple(row[1:]))
+        for row in (Decision.objects.filter(sentence__record_id__in=ids).order_by()
+                    .values_list("sentence__record_id", "order", "key", "layer", "language", *DECISION_FIELDS)):
+            decisions.setdefault(row[0], []).append(row[1:])
+        decisions = {rid: [tuple(row[1:]) for row in sorted(rows, key=lambda row: row[0])]
+                     for rid, rows in decisions.items()}
         same = set()
         for record in records:
             if record["id"] not in held:
