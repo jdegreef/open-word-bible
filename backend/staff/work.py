@@ -10,6 +10,9 @@ A pull request belongs to a job when its title or body says "Fixes #N",
 them). A job open for more than STALE_HOURS with no pull request has
 stalled. GitHub is asked at most every FRESH seconds: a page in between
 uses the copy kept, saying when it was read, while a thread asks again.
+With no copy kept, a page waits at most WAIT seconds for GitHub and then
+says the work is still being read, rather than waiting the 12-16 seconds
+the twenty-odd requests take.
 """
 import re
 import threading
@@ -75,12 +78,17 @@ def fetch_work(days=DAYS):
 
 
 # Work is listed from GitHub, about twenty requests for 30 days of issues
-# and pull requests (12 s when measured). A copy younger than FRESH is used
-# as it is; an older one (kept up to KEEP) is used at once while a thread
-# asks GitHub again, so only the first page after a deploy waits.
+# and pull requests (12-16 s when measured). A copy younger than FRESH is
+# used as it is; an older one (kept up to KEEP) is used at once while a
+# thread asks GitHub again. With none kept (the first page after the cache
+# is emptied) a thread asks, and the page waits for it at most WAIT seconds.
 FRESH = 120
 KEEP = 86400
 KEY = "staff.work.v2"
+WAIT = 2.0
+# How long one thread's asking holds off another: longer than a refresh
+# takes, short enough that one cut off (a worker restarted) is soon retried.
+ASKING = 60
 
 
 def cached_work():
@@ -107,20 +115,66 @@ def fetched_at():
     return kept["at"] if kept else None
 
 
+class Pending(github.GitHubError):
+    """No copy is kept and GitHub hasn't answered within WAIT seconds: a
+    thread is still asking, and keeps what it reads."""
+
 
 def _kept():
     kept = cache.get(KEY)
-    if kept is None:
-        return _refresh()
-    if time.time() - kept["at"] > FRESH and cache.add(KEY + ".refreshing", 1, 300):
-        threading.Thread(target=_refresh_quietly, daemon=True).start()
-    return kept
+    if kept is not None:
+        if time.time() - kept["at"] > FRESH and cache.add(KEY + ".refreshing", 1, ASKING):
+            threading.Thread(target=_refresh_quietly, daemon=True).start()
+        return kept
+    if not cache.add(KEY + ".refreshing", 1, ASKING):
+        raise Pending   # another request's thread is asking
+    # A thread asks GitHub. If it answers within WAIT, this request keeps
+    # the answer; if not, the thread keeps it when it comes.
+    box = {"lock": threading.Lock(), "waiting": True}
+    thread = threading.Thread(target=_ask, args=(box,), daemon=True)
+    thread.start()
+    thread.join(WAIT)
+    with box["lock"]:
+        box["waiting"] = False
+        if "answer" not in box:
+            raise Pending
+    cache.delete(KEY + ".refreshing")
+    answer = box["answer"]
+    if isinstance(answer, Exception):
+        raise answer
+    cache.set(KEY, answer, KEEP)
+    return answer
+
+
+def _read():
+    """fetch_work as kept: when it was read, and the items without bodies."""
+    return {"at": time.time(), "items": [{k: v for k, v in item.items() if k != "body"} for item in fetch_work()]}
 
 
 def _refresh():
-    kept = {"at": time.time(), "items": [{k: v for k, v in item.items() if k != "body"} for item in fetch_work()]}
+    kept = _read()
     cache.set(KEY, kept, KEEP)
     return kept
+
+
+def _ask(box):
+    """_read in a thread, for a request waiting on it at most WAIT seconds:
+    the answer (or GitHub's error) goes in box while it waits, and is kept
+    here once it has stopped."""
+    try:
+        answer = _read()
+    except github.GitHubError as e:
+        answer = e
+    with box["lock"]:
+        if box["waiting"]:
+            box["answer"] = answer
+            return
+    try:
+        if not isinstance(answer, Exception):
+            cache.set(KEY, answer, KEEP)
+    finally:
+        cache.delete(KEY + ".refreshing")
+        connections.close_all()   # this thread's own database connection
 
 
 def _refresh_quietly():
@@ -137,6 +191,10 @@ def _refresh_quietly():
 def work(request):
     try:
         cached = cached_work()
+    except Pending:
+        return Response({"items": [], "pending": True,
+                         "error": "GitHub is still being asked for the work; open the page again in a moment.",
+                         "days": DAYS, "stale_hours": STALE_HOURS})
     except github.GitHubError:
         return Response({"items": [], "error": "GitHub could not be reached, so the work isn't listed.",
                          "days": DAYS, "stale_hours": STALE_HOURS})

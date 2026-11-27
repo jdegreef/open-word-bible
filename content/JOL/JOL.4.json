@@ -12332,17 +12332,17 @@
         },
         "vi": {
           "L": "Và {{deity_pronoun:ta|Ta}} sẽ kể là vô tội máu của họ [mà] {{deity_pronoun:ta|Ta}} chưa kể là vô tội, \\q và {{divine_name:CHÚA|Gia-vê}} ngự tại Si-ôn.",
-          "B": "Ta sẽ báo thù cho máu của họ, là máu {{deity_pronoun:ta|Ta}} chưa báo thù. \\q {{divine_name:CHÚA|Gia-vê}} ngự tại Si-ôn.",
+          "B": "Ta sẽ minh oan cho máu của họ, là máu {{deity_pronoun:ta|Ta}} chưa minh oan. \\q {{divine_name:CHÚA|Gia-vê}} ngự tại Si-ôn.",
           "R": "Ta sẽ trừng phạt những kẻ đã làm đổ máu họ, điều mà {{deity_pronoun:ta|Ta}} chưa làm. \\q {{divine_name:CHÚA|Gia-vê}} sống tại Si-ôn."
         },
         "ko": {
           "L": "내가 죄 없다 하지 않았던 그들의 피를 죄 없다 하겠다. \\q {{divine_name:주|야훼}}가 시온에 산다.",
-          "B": "내가 아직 갚아 주지 않았던 그들의 피를 갚아 주겠다. \\q {{divine_name:주|야훼}}가 시온에 산다.",
+          "B": "내가 아직 신원해 주지 않았던 그들의 피를 신원해 주겠다. \\q {{divine_name:주|야훼}}가 시온에 산다.",
           "R": "나는 그들의 피를 흘린 자들을 벌하겠다. 아직 벌하지 않았지만 이제 벌하겠다. \\q {{divine_name:주|야훼}}가 시온에 산다."
         },
         "am": {
           "L": "ንጹሕ ያላልኩትን ደማቸውን ንጹሕ እላለሁ፤ \\q {{divine_name:እግዚአብሔር|ያህዌ}}ም በጽዮን ይኖራል።",
-          "B": "ያልተበቀልኩትን ደማቸውን እበቀላለሁ። \\q {{divine_name:እግዚአብሔር|ያህዌ}} በጽዮን ይኖራል።",
+          "B": "ገና ያልፈረድኩለትን ደማቸውን እፈርድለታለሁ። \\q {{divine_name:እግዚአብሔር|ያህዌ}} በጽዮን ይኖራል።",
           "R": "ደማቸውን ያፈሰሱትን እቀጣለሁ፤ ይህን እስካሁን አላደረግኩም። \\q {{divine_name:እግዚአብሔር|ያህዌ}} በጽዮን ይኖራል።"
         },
         "hi": {
@@ -12357,7 +12357,7 @@
         },
         "ja": {
           "L": "わたしは、まだ罪なしとしていなかった彼らの血を、罪なしとする。 \\q {{divine_name:主|ヤハウェ}}はシオンに住まわれる。",
-          "B": "わたしは、これまで報いずにいた彼らの血の報復をする。 \\q {{divine_name:主|ヤハウェ}}はシオンに住んでおられる。",
+          "B": "わたしは、これまで晴らさずにいた彼らの血の無実を晴らす。 \\q {{divine_name:主|ヤハウェ}}はシオンに住んでおられる。",
           "R": "わたしは、彼らの血を流した者たちを罰する。まだしていなかったことを、わたしはする。 \\q {{divine_name:主|ヤハウェ}}はシオンに住んでおられる。"
         },
         "uk": {
@@ -12472,7 +12472,8 @@
           "layer": "rendering",
           "language": "vi",
           "levels": [
-            "L"
+            "L",
+            "B"
           ],
           "category": "word_choice",
           "tokens": [
@@ -12481,7 +12482,7 @@
             "o290040210022",
             "o290040210041"
           ],
-          "choice": "\"kể là vô tội\" (L)",
+          "choice": "\"kể là vô tội\" (L); \"minh oan\" (B)",
           "alternatives": [
             "\"làm sạch\"",
             "\"báo thù\" at Literal"
@@ -12514,11 +12515,34 @@
           "footnote": false
         },
         {
+          "id": "r-ko-2",
+          "layer": "rendering",
+          "language": "ko",
+          "levels": [
+            "B"
+          ],
+          "category": "word_choice",
+          "tokens": [
+            "o290040210012",
+            "o290040210021",
+            "o290040210022",
+            "o290040210041"
+          ],
+          "choice": "\"신원해 주다\" (B)",
+          "alternatives": [
+            "\"갚아 주다\""
+          ],
+          "reason": "m1: God will vindicate the innocent blood of Judah; \"I will avenge their blood\" is the footnote's Greek alternative. Balanced follows the English Balanced.",
+          "uncertain": false,
+          "footnote": false
+        },
+        {
           "id": "r-am-1",
           "layer": "rendering",
           "language": "am",
           "levels": [
-            "L"
+            "L",
+            "B"
           ],
           "category": "word_choice",
           "tokens": [
@@ -12528,9 +12552,9 @@
             "o290040210031",
             "o290040210041"
           ],
-          "choice": "\"ንጹሕ ያላልኩትን ደማቸውን ንጹሕ እላለሁ\" (I will hold innocent their blood that I had not held innocent) at Literal",
+          "choice": "\"ንጹሕ ያላልኩትን ደማቸውን ንጹሕ እላለሁ\" (I will hold innocent their blood that I had not held innocent) at Literal; \"ገና ያልፈረድኩለትን ደማቸውን እፈርድለታለሁ\" (I will vindicate their blood, which I had not yet vindicated) at Balanced",
           "alternatives": [
-            "ደማቸውን እበቀላለሁ (L)"
+            "\"እበቀላለሁ\" (I will avenge, B), the footnote's Greek alternative"
           ],
           "reason": "Literal keeps the Hebrew verb, \"hold innocent\", which the meaning decision reads as vindicating the innocent blood by bringing the guilty to account; Balanced and Readable say so plainly, as the English does.",
           "uncertain": false,
@@ -12590,9 +12614,11 @@
             "o290040210012",
             "o290040210041"
           ],
-          "choice": "niqqeti ... lo' niqqeti \"罪なしとする…罪なしとしていなかった\" (L), \"報復をする\" (B), \"罰する\" (R), as the English per level.",
-          "alternatives": [],
-          "reason": "The line is uncertain (m1); L keeps the Hebrew's one verb twice.",
+          "choice": "niqqeti ... lo' niqqeti \"罪なしとする…罪なしとしていなかった\" (L), \"無実を晴らす…晴らさずにいた\" (B), \"罰する\" (R), as the English per level.",
+          "alternatives": [
+            "\"報復をする\" (B), \"avenge\", the footnote's Greek alternative"
+          ],
+          "reason": "The line is uncertain (m1); L keeps the Hebrew's one verb twice, and Balanced says \"vindicate\", as the English Balanced does.",
           "uncertain": true,
           "footnote": false
         },
@@ -12784,7 +12810,7 @@
           ],
           "language": "ja",
           "level": "B",
-          "target_span": "これまで報いずにいた"
+          "target_span": "これまで晴らさずにいた"
         },
         {
           "tokens": [
@@ -12801,7 +12827,7 @@
           ],
           "language": "ja",
           "level": "B",
-          "target_span": "報復をする"
+          "target_span": "無実を晴らす"
         },
         {
           "tokens": [
