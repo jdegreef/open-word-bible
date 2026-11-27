@@ -398,7 +398,7 @@ style guide, section 12a. The regnal formulas of Kings and Chronicles:
 | Ruth | Rut | Naomi | Naomi |
 | Boaz | Boas | Hannah | Hana |
 | Eli | Eli | Samuel | Samuel |
-| Saul | Saul | Jonathan | Yonatan |
+| Saul (the king, *Shaul*) | Saul | Jonathan | Yonatan |
 | Jesse | Isai | David | Daud |
 | Goliath | Goliat | Michal | Mikhal |
 | Abigail | Abigail | Abner | Abner |
@@ -497,7 +497,7 @@ Kreti dan orang Pleti*.
 |---|---|---|---|
 | Jesus | Yesus | Mary | Maria |
 | Joseph | Yusuf | Elizabeth | Elisabet |
-| Zechariah | Zakharia | Simeon; Anna | Simeon; Hana |
+| Zechariah | Zakharia | Simeon; Anna (the prophetess, *Hanna*) | Simeon; Hana |
 | John the Baptist | Yohanes Pembaptis | John (apostle) | Yohanes |
 | Simon Peter; Cephas | Simon Petrus; Kefas | Andrew | Andreas |
 | James (son of Zebedee) | Yakobus anak Zebedeus | James (son of Alphaeus) | Yakobus anak Alfeus |
@@ -511,12 +511,12 @@ Kreti dan orang Pleti*.
 | Zacchaeus | Zakheus | Bartimaeus | Bartimeus |
 | Jairus | Yairus | Herod | Herodes |
 | Herodias; Salome | Herodias; Salome | Pilate | Pilatus |
-| Caiaphas; Annas | Kayafas; Hanas | Barabbas | Barabas |
+| Caiaphas; Annas (the high priest, *Hannas*) | Kayafas; Hanas | Barabbas | Barabas |
 | Simon of Cyrene | Simon dari Kirene | Joseph of Arimathea | Yusuf dari Arimatea |
 | Cleopas | Kleopas | Malchus | Malkhus |
 | Caesar Augustus | Kaisar Agustus | Tiberius | Tiberius |
 | Quirinius | Kirenius | Beelzebul | Beelzebul |
-| Paul; Saul | Paulus; Saulus | Barnabas | Barnabas |
+| Paul; Saul (Paul, *Saulos*) | Paulus; Saulus | Barnabas | Barnabas |
 | Stephen | Stefanus | Ananias; Sapphira | Ananias; Safira |
 | Gamaliel | Gamaliel | Cornelius | Kornelius |
 | Tabitha; Dorcas | Tabita; Dorkas | Agabus | Agabus |
@@ -671,7 +671,7 @@ in different books. They are now one form each, by these rules:
 | 1 Samuel | tumors (*ophalim*, *techorim*) | *benjolan-benjolan* | 5:6 |
 | 1 Samuel | rulers of the Philistines (*seranim*) | *raja kota*, as Joshua | 5:8 |
 | 1 Samuel | Abinadab | Abinadab | 7:1 |
-| 1 Samuel | Ashtaroth (goddesses) | *para Asytoret* (L, B); *dewi-dewi yang disebut para Asytoret* (R) | 7:3 |
+| 1 Samuel | Ashtaroth (the goddesses, plural of *ashtoret*) | *para Asytoret* (L, B); *dewi-dewi yang disebut para Asytoret* (R) | 7:3 |
 | 1 Samuel | Beth-car; Shen | Bet-Kar; Sen | 7:11–12 |
 | 1 Samuel | Joel; Abijah (Samuel's sons) | Yoel; Abia | 8:2 |
 | 1 Samuel | the way (rights) of the king | *hak raja* (L, B) | 8:9 |
@@ -817,7 +817,7 @@ in different books. They are now one form each, by these rules:
 | 1 Kings | male cult prostitutes; abominations; the runners (guard) | *pelacur bakti laki-laki* (L, B); *kekejian*; *pasukan pelari* (L), *pasukan pengawal* (B, R) | 14:24, 27 |
 | 1 Kings | Maacah; Abishalom | Maakha; Abisyalom (uncertain, kept apart from *Absalom*) | 15:2 |
 | 1 Kings | queen mother; horrid thing (*mifletset*) | *ibu suri*; *patung yang mengerikan* (L), *patung yang keji* (B), *patung berhala yang menjijikkan* (R) | 15:13 |
-| 1 Kings | Baasha; Ben-hadad; Tabrimmon; Hezion | Baasya (uncertain; alternative *Baesa*); Ben-Hadad; Tabrimon; Hezion | 15:16–18 |
+| 1 Kings | Baasha; Ben-hadad; Tabrimmon; Hezion | Baasya (in every book; *Baesa* is the older form a reviewer may prefer); Ben-Hadad; Tabrimon; Hezion | 15:16–18 |
 | 1 Kings | Ijon; Abel-beth-maacah; Chinneroth; Geba; Mizpah; Gibbethon | Iyon; Abel-Bet-Maakha; Kinerot; Geba; Mizpa; Gibeton | 15:20–27 |
 | 1 Kings | Hanani; Elah; Zimri; Arza; Tibni; Ginath; Shemer; Ethbaal | Hanani; Ela; Zimri; Arza; Tibni; Ginat; Syemer; Etbaal | 16:1–31 |
 | 1 Kings | redeemers (near kin); citadel; worthless idols | *kaum penebus* (L), *kaum kerabat yang wajib membela* (B, R); *puri*; *berhala-berhala yang sia-sia* (L, B), *yang tidak berguna* (R) | 16:11–18 |
@@ -921,7 +921,7 @@ in different books. They are now one form each, by these rules:
 | Genesis | Heth; Arkites; Sinites; Arvadites; Zemarites; Hamathites | Het; orang Arki; orang Sini; orang Arwad; orang Zemari; orang Hamat | 10:15–18 |
 | Genesis | Gerar; Admah; Zeboiim; Lasha | Gerar; Adma; Zeboim; Lasa | 10:19 |
 | Genesis | Eber; Asshur; Arpachshad; Lud | Eber; Asyur; Arpakhsad; Lud | 10:21–22 |
-| Genesis | Uz; Hul; Gether; Mash; Shelah | Us; Hul; Geter; Mas; Selah | 10:23–24 |
+| Genesis | Uz; Hul; Gether; Mash; Shelah (son of Arpachshad, *shelach*) | Us; Hul; Geter; Mas; Selah | 10:23–24 |
 | Genesis | Peleg; Joktan | Peleg; Yoktan | 10:25 |
 | Genesis | Almodad; Sheleph; Hazarmaveth; Jerah; Hadoram; Uzal; Diklah; Obal; Abimael; Jobab | Almodad; Selef; Hazarmawet; Yerah; Hadoram; Uzal; Dikla; Obal; Abimael; Yobab | 10:26–29 |
 | Genesis | Mesha; Sephar | Mesa; Sefar | 10:30 |
@@ -1006,7 +1006,7 @@ in different books. They are now one form each, by these rules:
 | Genesis | Ishmaelites; Medanites | orang Ismael; orang Medan | 37:25, 36 |
 | Genesis | sackcloth | *kain kabung* (L, B) | 37:34 |
 | Genesis | Adullam; Hirah; Shua | Adulam; Hira; Syua | 38:1–2 |
-| Genesis | Er; Onan; Shelah (son of Judah); Kezib | Er; Onan; Syela; Kezib | 38:3–5 |
+| Genesis | Er; Onan; Shelah (son of Judah, *shelah*); Kezib | Er; Onan; Syela; Kezib | 38:3–5 |
 | Genesis | Timnah; Enaim | Timna; Enaim | 38:12–14 |
 | Genesis | shrine woman (*qedeshah*) | *perempuan kuil* (L); *pelacur kuil* (B, R) | 38:21 |
 | Genesis | cupbearer; baker | *juru minuman*; *juru roti* | 40:1 |
@@ -1021,7 +1021,7 @@ in different books. They are now one form each, by these rules:
 | Genesis | Hanoch; Pallu; Carmi | Henokh; Palu; Karmi | 46:9 |
 | Genesis | Jemuel; Jamin; Ohad; Jachin; Shaul | Yemuel; Yamin; Ohad; Yakhin; Saul | 46:10 |
 | Genesis | Gershon; Kohath; Merari | Gerson; Kehat; Merari | 46:11 |
-| Genesis | Hamul; Tola; Puvah; Iob; Shimron | Hamul; Tola; Puwa; Yob; Syimron | 46:12–13 |
+| Genesis | Hamul; Tola; Puvah; Iob; Shimron | Hamul; Tola; Pua; Yob; Syimron | 46:12–13 |
 | Genesis | Sered; Jahleel | Sered; Yahleel | 46:14 |
 | Genesis | Ziphion; Haggi; Shuni; Ezbon; Eri; Arodi; Areli | Zifion; Hagi; Syuni; Ezbon; Eri; Arodi; Areli | 46:16 |
 | Genesis | Imnah; Ishvah; Ishvi; Beriah; Serah; Heber; Malkiel | Yimna; Yiswa; Yiswi; Beria; Serah; Heber; Malkiel | 46:17 |
@@ -1209,7 +1209,7 @@ in different books. They are now one form each, by these rules:
 | Numbers | covenant of peace | *perjanjian damai-{{deity_pronoun:ku\|Ku}}* | 25:12 |
 | Numbers | Pallu; Carmi; Nemuel; Jamin; Jachin; Zerah; Shaul | Palu; Karmi; Nemuel; Yamin; Yakhin; Zerah; Saul | 26:5-13 |
 | Numbers | Zephon; Haggi; Shuni; Ozni; Eri; Arod; Areli | Zefon; Hagi; Syuni; Ozni; Eri; Arod; Areli | 26:15-17 |
-| Numbers | Er; Onan; Shelah; Hamul; Tola; Puvah (Punites); Jashub; Shimron | Er; Onan; Syela; Hamul; Tola; Pua (*kaum Puni*); Yasyub; Syimron | 26:19-24 |
+| Numbers | Er; Onan; Shelah (*shelah*); Hamul; Tola; Puvah (Punites); Jashub; Shimron | Er; Onan; Syela; Hamul; Tola; Pua (*kaum Puni*); Yasyub; Syimron | 26:19-24 |
 | Numbers | Sered; Elon; Jahleel; Machir; Iezer; Helek; Asriel; Shechem; Shemida; Hepher | Sered; Elon; Yahleel; Makhir; Iezer; Helek; Asriel; Sikhem; Syemida; Hefer | 26:26-32 |
 | Numbers | Zelophehad; Mahlah; Noah; Hoglah; Milcah; Tirzah | Zelafehad; Mahla; Noa; Hogla; Milka; Tirza | 26:33 |
 | Numbers | Shuthelah; Becher; Tahan; Eran; Bela; Ashbel; Ahiram; Shephupham (Shuphamites); Hupham; Ard; Naaman | Sutelah; Bekher; Tahan; Eran; Bela; Asybel; Ahiram; Sefufam (*kaum Sufam*); Hufam; Ard; Naaman | 26:35-40 |
@@ -1273,7 +1273,7 @@ in different books. They are now one form each, by these rules:
 | 1 Thessalonians | the coming (*parousia*) | *kedatangan* | 2:19 |
 | Deuteronomy | Suph; Tophel; Laban; Hazeroth; Di-zahab | Suf; Tofel; Laban; Hazerot; Di-Zahab | 1:1 |
 | Deuteronomy | Kadesh-barnea; Seir | Kadesy-Barnea; Seir | 1:2 |
-| Deuteronomy | Sihon; Heshbon; Og; Ashtaroth; Edrei | Sihon; Hesybon; Og; Asytarot; Edrei | 1:4 |
+| Deuteronomy | Sihon; Heshbon; Og; Ashtaroth (the city, *ashtarot*); Edrei | Sihon; Hesybon; Og; Asytarot; Edrei | 1:4 |
 | Deuteronomy | take possession (*yarash*) | *menduduki* (L, B); *memiliki*, *menjadikan milik* (R) | 1:8 |
 | Deuteronomy | Valley of Eshcol | Lembah Eskol | 1:24 |
 | Deuteronomy | Anakim | orang Enak; keturunan Enak | 1:28 |
@@ -1372,7 +1372,7 @@ in different books. They are now one form each, by these rules:
 | Joshua | Mount Ebal; Mount Gerizim | gunung Ebal; gunung Gerizim | 8:30, 33 |
 | Joshua | Shephelah | Dataran Rendah (L, B); *perbukitan rendah di sebelah barat* (R) | 9:1 |
 | Joshua | wineskin | *kirbat* | 9:4 |
-| Joshua | Heshbon; Ashtaroth | Hesybon; Asytarot | 9:10 |
+| Joshua | Heshbon; Ashtaroth (the city, *ashtarot*) | Hesybon; Asytarot | 9:10 |
 | Joshua | Chephirah; Beeroth; Kiriath-jearim | Kefira; Beerot; Kiryat-Yearim | 9:17 |
 | Joshua | congregation (*edah*); its leaders (*nesi'im*) | *umat*; *para pemimpin umat* | 9:15 |
 | Joshua | woodcutters and water carriers | *tukang belah kayu dan tukang timba air* | 9:21 |
@@ -1426,7 +1426,7 @@ in different books. They are now one form each, by these rules:
 | Joshua | Michmethath; Taanath-shiloh; Janoah; Naarah; Wadi Kanah | Mikhmetat; Taanat-Silo; Yanoah; Naara; sungai Kana (L), Wadi Kana (B, R) | 16:6–8 |
 | Joshua | forced labor (*mas*) | *pekerja rodi* (L, B); *kerja paksa* (R) | 16:10 |
 | Joshua | Abiezer; Helek; Asriel; Hepher; Shemida | Abiezer; Helek; Asriel; Hefer; Syemida | 17:2 |
-| Joshua | Zelophehad; Mahlah; Noah; Hoglah; Milcah; Tirzah | Zelofehad; Mahla; Noa; Hogla; Milka; Tirza | 17:3 |
+| Joshua | Zelophehad; Mahlah; Noah; Hoglah; Milcah; Tirzah | Zelafehad; Mahla; Noa; Hogla; Milka; Tirza | 17:3 |
 | Joshua | En-tappuah; Beth-shean; Ibleam; En-dor; Valley of Jezreel | En-Tapuah; Bet-Syean; Yibleam; En-Dor; Lembah Yizreel | 17:7–16 |
 | Joshua | iron chariots | *kereta besi* | 17:16 |
 | Joshua | Gelilot; the Benjamin towns (18:21–28) | Gelilot; Emek-Kezis, Zemaraim, Awim, Para, Ofra, Kefar-Amona, Ofni, Geba, Moza, Rekem, Yirpeel, Tarala, Zela, Haelef, Yebus, Kiryat | 18:17–28 |
@@ -1607,7 +1607,7 @@ in different books. They are now one form each, by these rules:
 | Luke | Eliezer; Jorim; Jonam; Eliakim | Eliezer; Yorim; Yonam; Elyakim | 3:29–30 |
 | Luke | Melea; Menna; Mattatha | Melea; Mina; Matata | 3:31 |
 | Luke | Sala; Admin; Arni | Sala; Admin; Arni | 3:32–33 |
-| Luke | Nahor; Serug; Reu; Peleg; Eber; Shelah | Nahor; Serug; Rehu; Peleg; Eber; Selah | 3:34–35 |
+| Luke | Nahor; Serug; Reu; Peleg; Eber; Shelah (*Sala*, the *shelach* of Genesis 10:24) | Nahor; Serug; Rehu; Peleg; Eber; Selah | 3:34–35 |
 | Luke | Cainan; Arphaxad; Jared; Mahalalel; Enosh | Kenan; Arpakhsad; Yared; Mahalaleel; Enos | 3:36–38 |
 | Luke | Zarephath | Sarfat | 4:26 |
 | Luke | Nain | Nain | 7:11 |
@@ -1615,7 +1615,7 @@ in different books. They are now one form each, by these rules:
 | Luke | Joanna; Chuza; Susanna | Yohana; Khuza; Susana | 8:3 |
 | Luke | Legion | Legion | 8:30 |
 | Luke | mint; rue | *pudina*; *inggu* | 11:42 |
-| Luke | assarion (coin) | *assarion* | 12:6 |
+| Luke | assarion (coin) | *asarion*; {{units:dua keping uang receh\|dua asarion}} (B, R) | 12:6 |
 | Luke | cor (measure) | *kor* | 16:7 |
 | Luke | mammon | *Mamon* (L); *kekayaan*, *uang* (B, R) | 16:9 |
 | Luke | officers of the temple guard (*stratēgoi*) | *kepala-kepala pengawal (Bait Allah)* (L, B); *perwira pengawal rumah Allah* (R) | 22:4 |
@@ -1777,7 +1777,7 @@ in different books. They are now one form each, by these rules:
 | Judges | bramble | *semak duri* | 9:14 |
 | Judges | Gaal son of Ebed; Zebul; Arumah; Thebez; Mount Zalmon | Gaal anak Ebed; Zebul; Aruma; Tebes; gunung Zalmon | 9:26–50 |
 | Judges | Tola; Puah; Dodo; Jair; Havvoth-jair; Kamon; Maon | Tola; Pua; Dodo; Yair; Hawot-Yair; Kamon; Maon | 10:1–12 |
-| Judges | Tob; Chemosh; Minnith; Abel-keramim | Tob; Kemos; Minit; Abel-Keramim | 11:3–33 |
+| Judges | Tob; Chemosh; Minnith; Abel-keramim | Tob; Kamos; Minit; Abel-Keramim | 11:3–33 |
 | Judges | vow | *bernazar*, *nazar* (L, B); *membuat janji* (R) | 11:30 |
 | Judges | Shibboleth; Sibboleth | Syibolet; Sibolet | 12:6 |
 | Judges | Ibzan; Elon; Abdon son of Hillel; Pirathon | Ibzan; Elon; Abdon anak Hilel; Piraton | 12:8–15 |
@@ -1848,7 +1848,7 @@ in different books. They are now one form each, by these rules:
 | 2 Samuel | the Three; the Thirty | *Tiga Pahlawan*; *Tiga Puluh* | 23:9–24 |
 | 2 Samuel | Josheb-basshebeth the Tahchemonite; Adino the Eznite; Dodo; Ahohite | Yosyeb-Basyebet, orang Tahkemoni; Adino, orang Ezni; Dodo; orang Ahohi | 23:8–9 |
 | 2 Samuel | Shammah son of Agee the Hararite; Kabzeel | Syama anak Age, orang Harari; Kabzeel | 23:11, 20 |
-| 2 Samuel | the Thirty (23:24–39) | Elika, orang Harod; Heles, orang Palti; Ira anak Ikesy; Mebunai; Zalmon; Maharai, orang Netofa; Heleb; Itai anak Ribai; Hidai dari lembah-lembah Gaas; Abi-Albon, orang Araba; Azmawet, orang Barhum; Elyahba, orang Syaalbon; Yasen; Ahiam anak Sarar; Ahasbai; Hezrai; Paarai, orang Arbi; Yigal; Bani; Zelek; Naharai; Ira, Gareb, orang Yitri | 23:25–38 |
+| 2 Samuel | the members of the Thirty (23:24–39) | Elika, orang Harod; Heles, orang Palti; Ira anak Ikesy; Mebunai; Zalmon; Maharai, orang Netofa; Heleb; Itai anak Ribai; Hidai dari lembah-lembah Gaas; Abi-Albon, orang Araba; Azmawet, orang Barhum; Elyahba, orang Syaalbon; Yasen; Ahiam anak Sarar; Ahasbai; Hezrai; Paarai, orang Arbi; Yigal; Bani; Zelek; Naharai; Ira, Gareb, orang Yitri | 23:25–38 |
 | 2 Samuel | Tahtim-hodshi; Dan-jaan | Tahtim-Hodsi; Dan-Yaan | 24:6 |
 | 2 Samuel | pestilence | *penyakit sampar* | 24:13 |
 | 2 Samuel | Araunah the Jebusite | Arauna, orang Yebus | 24:16 |
@@ -1864,7 +1864,7 @@ in different books. They are now one form each, by these rules:
 | 2 Kings | Dothan; Ben-hadad | Dotan; Ben-Hadad | 6:13; 6:24 |
 | 2 Kings | Hazael | Hazael | 8:8 |
 | 2 Kings | Zair; Libnah | Zair; Libna | 8:21–22 |
-| 2 Kings | Nimshi; Baasha | Nimsyi; Baesa | 9:2; 9:9 |
+| 2 Kings | Nimshi; Baasha | Nimsyi; Baasya | 9:2; 9:9 |
 | 2 Kings | Naboth; Bidkar; Beth-haggan; Ibleam | Nabot; Bidkar; Bet-Hagan; Yibleam | 9:21–27 |
 | 2 Kings | Zimri | Zimri | 9:31 |
 | 2 Kings | Beth-eked of the Shepherds | Bet-Eked Para Gembala | 10:12 |
@@ -1928,7 +1928,7 @@ in different books. They are now one form each, by these rules:
 | 1 Chronicles | Jerahmeel; Chelubai | Yerahmeel; Kelubai | 2:9 |
 | 1 Chronicles | Shimea; Nethanel; Raddai; Ozem | Syimea; Netaneel; Radai; Osem | 2:13–15 |
 | 1 Chronicles | Azubah; Jerioth; Jesher; Shobab; Ardon | Azuba; Yeriot; Yesyer; Sobab; Ardon | 2:18 |
-| 1 Chronicles | Ephrath | Efrat | 2:19 |
+| 1 Chronicles | Ephrath | Efrata (Caleb's wife, as 2:50; *Efrat* is the Euphrates) | 2:19 |
 | 1 Chronicles | Segub | Segub | 2:21 |
 | 1 Chronicles | Caleb-ephrathah; Abijah (Hezron's wife); Ashhur; Tekoa | Kaleb-Efrata; Abia; Ashur; Tekoa | 2:24 |
 | 1 Chronicles | father (founder) of a town | *bapa* (L, B); *pendiri* (R) | 2:24 |
@@ -2116,7 +2116,7 @@ in different books. They are now one form each, by these rules:
 | 2 Chronicles | Mahalath; Jerimoth; Abihail; Shemariah; Zaham; Attai; Ziza | Mahalat; Yerimot; Abihail; Syemarya; Zaham; Atai; Ziza | 11:18–20 |
 | 2 Chronicles | Zerah the Cushite; Zephathah; Gerar | Zerah, orang Kush (L, B), orang Etiopia (R); Zefata; Gerar | 14:8–12 |
 | 2 Chronicles | Azariah son of Oded | Azarya anak Oded | 15:1 |
-| 2 Chronicles | Baasha; Ben-hadad; Ijon; Abel-maim; Hanani | Baesa; Ben-Hadad; Iyon; Abel-Maim; Hanani | 16:1–7 |
+| 2 Chronicles | Baasha; Ben-hadad; Ijon; Abel-maim; Hanani | Baasya; Ben-Hadad; Iyon; Abel-Maim; Hanani | 16:1–7 |
 | 2 Chronicles | the house of the stocks | *rumah pasungan* (L); *penjara* with *pasung* (B, R) | 16:10 |
 | 2 Chronicles | Jehoshaphat's teachers (17:7–8) | Ben-Hail, Obaja, Zakharia, Netaneel, Mikhaya; Syemaya, Netanya, Zebaja, Asael, Syemiramot, Yonatan, Adonia, Tobia, Tob-Adonia; Elisama, Yoram | 17:7–8 |
 | 2 Chronicles | Adnah; Jehohanan; Amasiah son of Zichri; Eliada; Jehozabad | Adna; Yehohanan; Amasia anak Zikhri; Elyada; Yehozabad | 17:14–18 |
@@ -2145,7 +2145,7 @@ in different books. They are now one form each, by these rules:
 | 2 Chronicles | Millo; Fish Gate; Hozai | Milo; Pintu Gerbang Ikan; Hozai | 32:5; 33:14, 19 |
 | 2 Chronicles | Thus says (a human king) | *Beginilah kata ...* (L, B); *Inilah yang dikatakan ...* (R) | 32:10 |
 | 2 Chronicles | Shaphan; Azaliah; Hilkiah; Jahath; Meshullam; Ahikam; Abdon; Asaiah | Safan; Azalya; Hilkia; Yahat; Mesyulam; Ahikam; Abdon; Asaya | 34:8–20 |
-| 2 Chronicles | Huldah the prophetess; Tokhath; Hasrah; the Second Quarter | Nabiah Hulda; Tokhat; Hasra; Kota Baru (B) | 34:22 |
+| 2 Chronicles | Huldah the prophetess; Tokhath; Hasrah; the Second Quarter | Nabiah Hulda; Tokhat; Hasra; Bagian Kedua | 34:22 |
 | 2 Chronicles | Neco; Carchemish; the Laments | Nekho; Karkemis; *kumpulan Ratapan* | 35:20, 25 |
 | 2 Chronicles | Eliakim; the God of heaven (Cyrus' decree) | Elyakim; *Allah semesta langit* | 36:4, 23 |
 | Ezra | God of heaven | *Allah langit* (L); *Allah semesta langit* (B); *Allah yang di surga* (R) | 1:2 |
@@ -2167,7 +2167,7 @@ in different books. They are now one form each, by these rules:
 | Ezra | daric; mina | *darik* (every level); `{{units:sekitar tiga ton\|5.000 mina}}` (B, R) | 2:69 |
 | Ezra | Jozadak; Shealtiel | Yozadak; Sealtiel | 3:2 |
 | Ezra | the peoples of the lands | *bangsa-bangsa negeri-negeri itu* (L); *bangsa-bangsa di negeri-negeri sekitar* (B); *orang-orang yang tinggal di negeri itu* (R) | 3:3 |
-| Ezra | Joppa (Old Testament) | Yafo | 3:7 |
+| Ezra | Joppa (Old Testament) | Yope (as Joshua 19:46 and Jonah 1:3; not *Yafo*) | 3:7 |
 | Ezra | Henadad | Henadad | 3:9 |
 | Ezra | Esarhaddon | Esarhadon | 4:2 |
 | Ezra | Bishlam; Tabeel; Shimshai | Bisylam; Tabeel; Syimsyai | 4:7–8 |
@@ -2198,7 +2198,7 @@ in different books. They are now one form each, by these rules:
 | Ezra | Shelemiah; Machnadebai; Shashai; Sharai; Azarel; Mattithiah; Zebina; Jaddai | Syelemya; Makhnadbai; Syasyai; Syarai; Azareel; Matitya; Zebina; Yadai | 10:39–43 |
 | Job | Uz | Us | 1:1 |
 | Job | blameless and upright | *tidak bercela dan jujur* (every level) | 1:1 |
-| Job | the Sabeans (Sheba); the Chaldeans | orang Syeba; orang Kasdim | 1:15; 1:17 |
+| Job | the Sabeans (of Sheba, *sheba*); the Chaldeans | orang Syeba; orang Kasdim | 1:15; 1:17 |
 | Job | integrity (*tummah*) | *ketulusan* (L, B); *ketulusan hati* (R) | 2:3 |
 | Job | the Temanite; the Shuhite; the Naamathite | orang Teman; orang Syuah; orang Naama | 2:11 |
 | Job | Leviathan | Lewiatan | 3:8 |
@@ -2365,7 +2365,7 @@ in different books. They are now one form each, by these rules:
 | Habakkuk | shigionoth | Syigionot (L, B); *untuk dinyanyikan sebagai lagu* (R) | 3:1 |
 | Habakkuk | Teman; Cushan | Teman; Kusyan | 3:3, 7 |
 | Zephaniah | Cushi; Amariah | Kusyi; Amarya | 1:1 |
-| Zephaniah | Fish Gate; Second Quarter; the Mortar | Gerbang Ikan; Bagian Kedua; Lesung | 1:10–11 |
+| Zephaniah | Fish Gate; Second Quarter; the Mortar (*makhtesh*) | Gerbang Ikan; Bagian Kedua; Lesung | 1:10–11 |
 | Zephaniah | Cherethites | orang Kreti | 2:5 |
 | Haggai | Jehozadak | Yehozadak (Ezra 3:2 has *Yozadak* for the shorter Hebrew form) | 1:1 |
 | Haggai | signet ring | *cincin meterai* | 2:23 |
@@ -2374,7 +2374,7 @@ in different books. They are now one form each, by these rules:
 | Joel | the day of the LORD | *hari TUHAN* | 1:15 |
 | Joel | the Almighty (*Shaddai*) | *Yang Mahakuasa* | 1:15 |
 | Joel | valley of Jehoshaphat; valley of decision | lembah Yosafat; *lembah keputusan* | 4:2; 4:14 |
-| Joel | Sabeans | orang Syeba | 4:8 |
+| Joel | Sabeans (of Sheba, *sheba*) | orang Syeba | 4:8 |
 | Joel | valley of Shittim | lembah Sitim | 4:18 |
 | Amos | For three transgressions ... and for four | *Karena tiga pelanggaran ..., bahkan empat* (L); *tiga kejahatan* (B); *telah berbuat dosa berulang-ulang* (R) | 1:3 |
 | Amos | Valley of Aven; Beth-eden | Lembah Awen; Bet-Eden | 1:5 |
@@ -2383,7 +2383,7 @@ in different books. They are now one form each, by these rules:
 | Amos | Nazirites | *orang nazir* | 2:11 |
 | Amos | Pleiades; Orion | *bintang Kartika*; *bintang Belantik* | 5:8 |
 | Amos | Sikkuth; Kiyyun | Sikut; Kiyun (uncertain) | 5:26 |
-| Amos | Calneh; Lo-debar; Karnaim | Kalne; Lodebar; Karnaim | 6:2; 6:13 |
+| Amos | Calneh; Lo-debar; Karnaim | Kalne; Lo-Debar; Karnaim | 6:2; 6:13 |
 | Amos | Wadi of the Arabah | Sungai Araba | 6:14 |
 | Amos | plumb line | *tali sipat* | 7:7 |
 | Amos | Amaziah the priest of Bethel | Amazia, imam di Betel | 7:10 |
@@ -2406,7 +2406,7 @@ in different books. They are now one form each, by these rules:
 | Isaiah | Jeshurun | Yesyurun (L, B); *Israel yang lurus hati* (R), as Deuteronomy 32:15 | 44:2 |
 | Isaiah | holm oak (*tirzah*); oak (*'allon*) | *pohon tarzah*; *pohon tarbantin* (L, B); *pohon yang keras kayunya* (R) (uncertain) | 44:14 |
 | Isaiah | his anointed (Cyrus) | *orang yang diurapi-Nya* (L, B); *orang yang telah Dia pilih* (R) | 45:1 |
-| Isaiah | the Sabeans (of Seba) | *orang Seba*, not *orang Syeba* (the Sabeans of Sheba, Joel 4:8) | 45:14 |
+| Isaiah | the Sabeans (of Seba, *seba*) | *orang Seba*, not *orang Syeba* (the Sabeans of Sheba, Joel 4:8) | 45:14 |
 | Isaiah | Bel; Nebo (gods of Babylon) | Bel; Nebo (L, B); *dewa Bel*, *dewa Nebo* (R) | 46:1 |
 | Isaiah | virgin daughter of Babylon; daughter of the Chaldeans | *perawan, putri Babel* (L), *Anak Dara, Putri Babel* (B); *putri Kasdim* (L), *Putri Kasdim* (B) | 47:1 |
 | Isaiah | land of Sinim | tanah Sinim | 49:12 |
@@ -2441,10 +2441,10 @@ in different books. They are now one form each, by these rules:
 | Jeremiah | Jezaniah (son of the Maacathite; son of Hoshaiah); Ephai the Netophathite; Tanhumeth | Yezanya (2 Kings 25:23 has Yaazanya); Hosyaya; Efai, orang Netofa; Tanhumet | 40:8; 42:1 |
 | Jeremiah | Baalis | Baalis | 40:14 |
 | Jeremiah | governor (Gedaliah, *hifqid*, "appointed over the land") | *kepala daerah* (B), *pemimpin* (R) | 41:2 |
-| Jeremiah | Baasha; Geruth Chimham | Baesa; Gerut-Kimham | 41:9, 17 |
+| Jeremiah | Baasha; Geruth Chimham | Baasya; Gerut-Kimham | 41:9, 17 |
 | Jeremiah | an execration (*'alah*) in the curse lists | *sumpah kutuk* (L); *nama yang dipakai orang untuk mengutuk* (B); *orang akan memakai nama kalian kalau mengutuk* (R) | 42:18 |
 | Jeremiah | Azariah son of Hoshaiah | Azarya anak Hosyaya | 43:2 |
-| Jeremiah | brick terrace; mortar | lantai batu bata; tanah liat | 43:9 |
+| Jeremiah | brick terrace; mortar (*melet*) | lantai batu bata; tanah liat | 43:9 |
 | Jeremiah | royal canopy | *kanopi kerajaan* (L, B, R) | 43:10 |
 | Jeremiah | Beth-shemesh (in Egypt) | Bet-Syemesy (L, B); Heliopolis, kota matahari (R) | 43:13 |
 | Jeremiah | Pathros | Patros | 44:1 |
