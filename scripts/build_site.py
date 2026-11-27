@@ -243,7 +243,8 @@ def served_web_file(name):
 
 # Colour modes (see web/style.css and web/site.js): value, and the
 # background and accent its swatch shows. Labels are in i18n/ (theme.*).
-# "light" (Paper) is the default; "auto" follows the device.
+# "auto" (follow the device: Paper by day, Lamplight by night) is the
+# default; "light" keeps Paper whatever the device says.
 COLOUR_MODES = (("auto", "#faf6ef", "#16130f"),
                 ("light", "#faf6ef", "#3f3d9a"),
                 ("sepia", "#f4ecd8", "#3f3d9a"),
@@ -524,7 +525,7 @@ def colour_prefs(lang):
                 f'<div role="radiogroup" aria-labelledby="prefs-{pref}" data-pref="{pref}" data-default="{default}">'
                 + "".join(option(v, default, face, name) for v, face, name in options) + '</div>')
 
-    theme = group("theme", t(lang, "tools.theme"), "light", [
+    theme = group("theme", t(lang, "tools.theme"), "auto", [
         (v, f'<span class="swatch" style="--sw-bg:{bg};--sw-accent:{accent}" aria-hidden="true"></span>',
          t(lang, "theme." + v)) for v, bg, accent in COLOUR_MODES])
     def sample(pref, value):
@@ -582,7 +583,8 @@ def og_locale(lang):
 
 
 def page(lang, title, body, path=None, current="", description="", card="site", card_alt=None,
-         translated=LANGUAGES, unlisted=None, head="", alternates=None, indexed=True, og=None, foot=""):
+         translated=LANGUAGES, unlisted=None, head="", alternates=None, indexed=True, og=None, foot="",
+         slim_footer=False):
     """A full HTML page in lang. path is the page's URL path without the
     language ("/read/"); pages with one get a canonical link, hreflang links
     to the page in each language in translated (the languages it exists in),
@@ -670,7 +672,7 @@ def page(lang, title, body, path=None, current="", description="", card="site", 
 <main class="wrap" id="main" tabindex="-1">
 {body}
 </main>
-{site_footer(lang, here, translated, alternates, foot)}
+{site_footer(lang, here, translated, alternates, foot, slim_footer)}
 {palette(lang)}
 </body>
 </html>
@@ -1033,15 +1035,18 @@ def review_share(lang):
 
 
 def review_status(lang):
-    """The footer's review line: the share of lang's sentences a named
-    reviewer has approved, as a bar and a count, and an invitation to help."""
+    """The footer's review line: what review means, the share of lang's
+    sentences a named reviewer has approved as a bar and a count, and an
+    invitation to help. The bar shows once there is something on it: an
+    empty bar on every page read as a failure rather than as the state of
+    a draft (the line above already says nothing is reviewed yet)."""
     total, approved = review_share(lang)
     pct = 100 * approved // total if total else 0
     pct = max(pct, 1) if approved else pct
+    meter = (f'<p class="foot-meter"><span class="foot-bar" aria-hidden="true"><i style="width:{pct}%"></i></span>'
+             f'<span>{t(lang, "footer.reviewed", pct=pct)}</span></p>') if approved else ""
     return (f'<div class="foot-review"><p>{t(lang, "footer.review")}</p>'
-            f'<p class="foot-meter"><span class="foot-bar" aria-hidden="true"><i style="width:{pct}%"></i></span>'
-            f'<span>{t(lang, "footer.reviewed", pct=pct)}</span></p>'
-            f'<p><a class="foot-reviewer" href="{url(lang, "/#help")}">{t(lang, "footer.reviewer_ask")}'
+            f'{meter}<p><a class="foot-reviewer" href="{url(lang, "/#help")}">{t(lang, "footer.reviewer_ask")}'
             f'{icon(ICONS["arrow"], 15)}</a></p></div>')
 
 
@@ -1117,25 +1122,19 @@ def chapter_in_languages(book, chapter, lang, complete):
             f'<p class="foot-chapter-langs">{links}</p></div>')
 
 
-def site_footer(lang, path=None, translated=LANGUAGES, alternates=None, foot=""):
+def site_footer(lang, path=None, translated=LANGUAGES, alternates=None, foot="", slim=False):
     """The footer on every page: on a chapter page, the chapter in the other
     languages (foot); the project and a box to go to a passage; the books;
     the first articles to read, the project's links and the language
     switch; then the review status and the licences. Its columns fold on a
     phone. After it, a line for print only: where the page was printed
-    from, its status and its licence."""
+    from, its status and its licence. A slim footer (chapter pages) leaves
+    out the passage box and the books: the reader has its own Go to and
+    chapter picker, and the full footer ran to three phone screens."""
     home = url(lang, "/")
     placeholder = html.escape(catalog(lang)["search.ui"]["palette_placeholder"])
     address = f'{SITE_URL.split("://")[-1]}{url(lang, path) if path is not None else ""}'
-    return f"""<footer class="site"><div class="wrap">
-{foot}<div class="foot-top">
-<div class="foot-about">
-<a class="brand" href="{home}">{mark_use()}<span class="brand-name">Open Word <em>Bible</em></span></a>
-<p>{t(lang, "footer.tagline")}</p>
-<details class="foot-licence"><summary><span class="pill">CC0</span> {t(lang, "footer.licence")}</summary>
-<p>{t(lang, "footer.cc0_more")} <a href="{CC0_DEED}" rel="license">{t(lang, "footer.cc0_deed")}</a></p></details>
-</div>
-<div class="foot-find">
+    find = "" if slim else f"""<div class="foot-find">
 <h2 id="foot-find">{t(lang, "footer.find")}</h2>
 <form class="foot-search" action="{url(lang, "/search/")}" method="get" role="search" aria-labelledby="foot-find">
 <span class="foot-q"><input type="search" name="q" id="foot-q" autocomplete="off" spellcheck="false" enterkeyhint="go" placeholder="{placeholder}" aria-labelledby="foot-find" aria-keyshortcuts="/">
@@ -1145,8 +1144,18 @@ def site_footer(lang, path=None, translated=LANGUAGES, alternates=None, foot="")
 <p class="foot-recent" hidden><span>{t(lang, "footer.recent")}</span></p>
 {resume_link(lang, "foot-resume")}
 </div>
+"""
+    books = "" if slim else book_index(lang)
+    return f"""<footer class="site{' slim' if slim else ''}"><div class="wrap">
+{foot}<div class="foot-top">
+<div class="foot-about">
+<a class="brand" href="{home}">{mark_use()}<span class="brand-name">Open Word <em>Bible</em></span></a>
+<p>{t(lang, "footer.tagline")}</p>
+<details class="foot-licence"><summary><span class="pill">CC0</span> {t(lang, "footer.licence")}</summary>
+<p>{t(lang, "footer.cc0_more")} <a href="{CC0_DEED}" rel="license">{t(lang, "footer.cc0_deed")}</a></p></details>
 </div>
-{book_index(lang)}
+{find}</div>
+{books}
 <div class="foot-grid">
 {footer_links(lang)}
 {language_links(lang, path, translated, alternates)}
@@ -2658,7 +2667,7 @@ def chapter_page(book, chapter, lang="en"):
                 description=shorten(summary) if summary else t(lang, "meta.chapter_description" + suffix, title=title),
                 alternates=complete, indexed=lang in complete,
                 head=markdown_alternate(chapter_url(book, chapter), lang) if lang in complete else "",
-                foot=chapter_in_languages(book, chapter, lang, complete))
+                foot=chapter_in_languages(book, chapter, lang, complete), slim_footer=True)
 
 
 # How many cross-references of each verse the chapter page lists as links
