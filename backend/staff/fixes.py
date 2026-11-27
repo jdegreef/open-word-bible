@@ -27,11 +27,11 @@ from rest_framework.response import Response
 
 from feedback.models import ReaderMessage
 from owb import languages
-from translation.models import Sentence
+from translation.models import ReviewEvent, Sentence
 
 from . import github, jobs, kept, people
 from .inbox import verse_label, verse_url
-from .models import record
+from .models import FlagReply, record
 from .permissions import admin_view
 from .verses import content_file
 
@@ -104,6 +104,13 @@ def _file(request):
         if not str(data["message"]).isdigit():
             raise ValidationError({"message": "That isn't a reader message's number.", "code": "invalid"})
         message = ReaderMessage.objects.select_related("user").filter(id=int(data["message"])).first()
+    # Filed from a reviewer's flag (staff/flags.py): the flag's thread says so.
+    flag = None
+    if data.get("flag"):
+        if not str(data["flag"]).isdigit():
+            raise ValidationError({"flag": "That isn't a flag's number.", "code": "invalid"})
+        flag = (ReviewEvent.objects.filter(id=int(data["flag"]), action=ReviewEvent.Action.FLAGGED,
+                                           sentence=sentence).select_related("user", "sentence").first())
     label = verse_label(vid)
     path = content_file(sentence.book, sentence.chapter, sentence.verse)
     name = languages.READING[lang]["name"]
@@ -135,6 +142,12 @@ def _file(request):
                          "code": "github"}, status=status.HTTP_503_SERVICE_UNAVAILABLE)
     record(request.user, "fix.request", f"#{issue['number']} {sentence.record_id}", verse=vid, language=lang,
            number=issue["number"], url=issue["html_url"])
+    if flag:
+        from . import flags   # flags imports review, which this module's importers need first
+        r = FlagReply.objects.create(flag=flag, user=request.user, kind=FlagReply.Kind.FIX, fix_issue=issue["number"],
+                                     text=change)
+        if flag.user_id != request.user.id:
+            flags.tell(flag, r)
     if message:
         note = f"Fix requested: #{issue['number']}"
         message.note = f"{message.note}\n{note}".strip() if message.note else note

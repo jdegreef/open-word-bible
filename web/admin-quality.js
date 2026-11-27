@@ -43,7 +43,10 @@ OWBAdmin.module(function (A) {
         h("a", { href: d.url, rel: "noopener" }, "Read it on the site"));
       var out = [head("Verse inspector", d.label, d.records.length ? plural(d.records.length, "sentence") + " hold this verse" +
         (d.updated ? "; last changed " + when(d.updated) : "") + "." : "No sentence holds this verse yet."), verseSearch(d.label), nav];
-      if (from) {
+      if (from && from.flag) {
+        out.push(h("div", { class: "admin-reply" }, h("p", { class: "admin-sub" }, "Requesting a fix from " + from.by + "'s flag:"), h("p", null, from.text),
+          h("p", { class: "admin-sub" }, "The fix request joins the flag's conversation, and " + from.by + " is told.")));
+      } else if (from) {
         out.push(h("div", { class: "admin-reply" }, h("p", { class: "admin-sub" }, "Requesting a fix for " + (from.from.name || from.from.email) +
           "'s " + from.kind + " (" + from.language + "):"), h("p", null, from.text),
           h("p", { class: "admin-sub" }, "The request is a public GitHub issue: it names this message by number but doesn't quote it. Put the reader's point in your own words under Why.")));
@@ -283,6 +286,7 @@ OWBAdmin.module(function (A) {
     }));
     var change = A.keepDraft(h("textarea", { id: "fix-change-" + r.id, rows: 3, maxlength: 2000, placeholder: "What should change, e.g. use “la Parole” for “le Verbe”" }), "fix." + r.id + ".change");
     var reason = A.keepDraft(h("textarea", { id: "fix-reason-" + r.id, rows: 3, maxlength: 4000, placeholder: "Why (optional): the source, the style brief, a reader's point" }), "fix." + r.id + ".reason");
+    if (from && from.flag && !reason.value) reason.value = "A reviewer flagged it: " + from.text;
     if (change.value || reason.value) {   // a request half-written: open, as it was left
       box.hidden = false;
       toggle.setAttribute("aria-expanded", "true");
@@ -300,7 +304,8 @@ OWBAdmin.module(function (A) {
       var picked = Array.prototype.map.call(levels.querySelectorAll("input:checked"), function (x) { return x.value; });
       busy(send, true);
       api("/api/admin/fixes/", { method: "POST", body: { record: r.id, verse: verse || location.hash.split("/")[1], language: lang.value,
-        levels: picked, change: change.value, reason: reason.value, message: from ? from.id : null } }).then(function (res) {
+        levels: picked, change: change.value, reason: reason.value, message: from && !from.flag ? from.id : null,
+        flag: from && from.flag ? from.id : null } }).then(function (res) {
         status.textContent = "";
         add(status, ["Filed as ", h("a", { href: res.url, rel: "noopener" }, "#" + res.number), "."]);
         status.className = "admin-note";

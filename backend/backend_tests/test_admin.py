@@ -102,7 +102,7 @@ class AccessTest(AdminTestCase):
         for pattern, view in admin_routes():
             path = "/api/admin/" + pattern.replace("<str:code>", "JHN").replace("<int:message_id>", "1") \
                 .replace("<int:user_id>", "1").replace("<int:role_id>", "1") \
-                .replace("<int:assignment_id>", "1")
+                .replace("<int:assignment_id>", "1").replace("<int:event_id>", "1")
             allowed = [m.lower() for m in view.cls().allowed_methods if m not in ("OPTIONS",)]
             method = allowed[0]
             self.assertEqual(getattr(APIClient(), method)(path).status_code, 401, path)

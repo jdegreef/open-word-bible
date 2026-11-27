@@ -49,6 +49,30 @@ class Broadcast(models.Model):
         return self.subject
 
 
+class FlagReply(models.Model):
+    """One step in the conversation a flag starts (staff/flags.py): a reply,
+    a fix request filed from it, or an editor declining or resolving it
+    (which closes the flag: ReviewEvent.closed_at)."""
+    class Kind(models.TextChoices):
+        REPLY = "reply", "Replied"
+        FIX = "fix", "Filed a fix request"
+        DECLINED = "declined", "Declined"
+        RESOLVED = "resolved", "Resolved"
+
+    flag = models.ForeignKey("translation.ReviewEvent", on_delete=models.CASCADE, related_name="replies")
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, related_name="+")
+    kind = models.CharField(max_length=10, choices=Kind.choices)
+    text = models.TextField(blank=True)
+    fix_issue = models.PositiveIntegerField(null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["created_at", "id"]
+
+    def __str__(self):
+        return f"{self.flag_id} {self.kind}"
+
+
 class ReviewAssignment(models.Model):
     """A book, or a range of its chapters, in one review layer that an
     editor has asked a reviewer to review, by a date or not

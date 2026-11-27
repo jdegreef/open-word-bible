@@ -14,7 +14,7 @@ POST /api/admin/review/<record_id>/  {layer, action: "undo", event}
         a key, say. The step goes from the trail and the activity log
         says it was taken back
 GET  /api/admin/review/flags/
-        open flags in every layer, for editors to act on
+        open flags in every layer, for editors to act on (staff/flags.py)
 
 A layer is the meaning of the sentences translated from one original
 language ("grc", the New Testament; "hbo", the Old), which scholar reviewers
@@ -545,24 +545,3 @@ def _undo(request, s, layer, event_id):
     except _Forbidden as e:
         return _forbidden(e)
     return Response({"state": state_of(layer, s.id), "next": _next(layer, s)})
-
-
-def open_flags():
-    """Flags not followed by an approval of the same layer, newest first."""
-    out = []
-    for row in (ReviewState.objects.filter(state=RS.FLAGGED)
-                .select_related("event__user", "sentence__source_edition")
-                .order_by("-event__created_at", "-event_id")):
-        row.event.sentence = row.sentence
-        out.append(row.event)
-    return out
-
-
-@admin_view("inbox")
-def flags(request):
-    out = []
-    for e in open_flags():
-        code = e.language or e.sentence.source_edition.language
-        out.append({**_event_json(e), "layer": layer_json(code), "record": e.sentence.record_id,
-                    "verse": e.sentence.refs[0], "label": verse_label(e.sentence.refs[0])})
-    return Response({"flags": out})

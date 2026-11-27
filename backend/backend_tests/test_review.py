@@ -278,6 +278,47 @@ class ReviewTest(AdminTestCase):
         self.assertEqual(self.editor.get("/api/admin/review/flags/").json()["flags"], [])
 
 
+    def test_a_flag_is_a_conversation_that_ends(self):
+        from django.core import mail
+        flag = self.act(self.scholar, "JHN.1.1.s1", "grc", "flag", "Wrong tense").json()["event"]["id"]
+        path = f"/api/admin/review/flags/{flag}/"
+        mail.outbox.clear()
+        # An editor replies; the reviewer hears of it and answers.
+        r = self.editor.post(path, {"action": "reply", "text": "Which verb?"}, format="json")
+        self.assertEqual((r.status_code, r.json()["flag"]["outcome"]), (201, "open"))
+        self.assertEqual(mail.outbox[-1].to, ["grc@example.org"])
+        self.assertIn("Which verb?", mail.outbox[-1].body)
+        r = self.scholar.post(path, {"action": "reply", "text": "The first one"}, format="json")
+        self.assertEqual(r.status_code, 201)
+        # Someone else can't reply, and only an editor settles it.
+        self.assertEqual(self.french.post(path, {"action": "reply", "text": "x"}, format="json").status_code, 403)
+        self.assertEqual(self.scholar.post(path, {"action": "decline", "text": "x"}, format="json").status_code, 403)
+        self.assertEqual(self.editor.post(path, {"action": "decline"}, format="json").json()["code"], "empty")
+        r = self.editor.post(path, {"action": "decline", "text": "The imperfect is right here."}, format="json")
+        self.assertEqual(r.json()["flag"]["outcome"], "declined")
+        self.assertEqual([t["kind"] for t in r.json()["flag"]["thread"]], ["reply", "reply", "declined"])
+        # Closed: the sentence is no longer flagged, and the list moves on.
+        self.assertFalse(ReviewState.objects.filter(layer="grc").exists())
+        self.assertEqual(self.editor.get("/api/admin/review/flags/").json()["flags"], [])
+        closed = self.editor.get("/api/admin/review/flags/?closed=1").json()["flags"]
+        self.assertEqual([f["outcome"] for f in closed], ["declined"])
+        # The reviewer sees how it ended in My review.
+        mine = self.scholar.get("/api/admin/review/workspace/?layer=grc").json()["flags"]
+        self.assertEqual([(f["outcome"], f["thread"][-1]["text"]) for f in mine],
+                         [("declined", "The imperfect is right here.")])
+
+    def test_a_fix_filed_from_a_flag_joins_its_thread(self):
+        flag = self.act(self.french, "JHN.1.1.s1", "fr", "flag", "Verbe is dated").json()["event"]["id"]
+        issue = {"number": 12, "html_url": "https://github.com/x/y/issues/12"}
+        with mock.patch("staff.github.call", return_value=issue), self.settings(OWB_GITHUB_TOKEN="t"):
+            r = self.editor.post("/api/admin/fixes/", {"record": "JHN.1.1.s1", "verse": "JHN.1.1", "language": "fr",
+                                                       "levels": ["B"], "change": "la Parole", "flag": flag},
+                                 format="json")
+        self.assertEqual(r.status_code, 201)
+        flags = self.editor.get("/api/admin/review/flags/").json()["flags"]
+        self.assertEqual((flags[0]["outcome"], flags[0]["thread"][0]["fix_issue"]), ("fix", 12))
+
+
 class QueueOrderTest(AdminTestCase):
     """The queue is put in Bible order, filtered and paged in the database;
     "next" is one query; ReviewState follows the trail without rebuilding a

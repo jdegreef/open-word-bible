@@ -518,12 +518,10 @@ OWBAdmin.module(function (A) {
             h("td", null, standingPill(a)));
         })) : empty("Nothing is assigned to you in this layer. Pick any book below to review, or ask a super admin for an assignment.")));
 
-      out.push(h("section", { class: "admin-block" }, h("h2", null, "Your open flags"),
-        d.flags.length ? h("ul", { class: "admin-feed" }, d.flags.map(function (f) {
-          return h("li", null, h("time", { datetime: f.at, title: new Date(f.at).toLocaleString("en-GB") }, when(f.at)), h("span", null,
-            h("a", { href: "#review/" + layer + "/" + f.record }, f.label), " ", h("span", { class: "admin-sub" }, f.record), " · ",
-            h("a", { href: "#verse/" + f.verse }, "Verse inspector"), h("br"), f.note));
-        })) : h("p", { class: "admin-ok" }, "You have no open flags in this layer.")));
+      out.push(h("section", { class: "admin-block" }, h("h2", null, "Your flags"),
+        h("p", { class: "admin-sub" }, "Open ones with what the editors have said, and those settled in the last 30 days."),
+        d.flags.length ? h("div", { class: "admin-messages" }, d.flags.map(function (f) { return flagCard(f, true); }))
+          : h("p", { class: "admin-ok" }, "You have no open flags in this layer.")));
 
       out.push(h("section", { class: "admin-block" }, h("h2", null, "Changed since you approved"),
         h("p", { class: "admin-sub" }, ch.last_approval ? "Your last approval in this layer was " + when(ch.last_approval) + "." : "You haven't approved anything in this layer yet."),
@@ -595,18 +593,72 @@ OWBAdmin.module(function (A) {
 
   // Reviewer flags: problems reviewers have raised, open until the layer is
   // approved again. Editors act on them with a fix request.
+  // A flag and its thread (staff/flags.py): replies, a fix filed from it,
+  // and how it ended. Editors reply, file a fix, decline (with why) or
+  // resolve; the reviewer who flagged it replies.
+  var FLAG_OUTCOME = { open: ["Open", "bad"], fix: ["Fix requested", "info"], declined: ["Declined", ""],
+    resolved: ["Resolved", "good"], approved: ["Approved again", "good"] };
+  function flagCard(f, mine) {
+    var editor = A.ME.admin.indexOf("inbox") >= 0;
+    var card = h("article", { class: "admin-message admin-flag" });
+    var status = h("p", { class: "admin-note", role: "status" });
+    var o = FLAG_OUTCOME[f.outcome] || FLAG_OUTCOME.open;
+    add(card, [
+      h("header", null, pill(o[0], o[1]), " ", h("a", { href: "#review/" + f.layer.code + "/" + f.record }, f.label), " ",
+        h("span", { class: "admin-sub" }, f.record + " · " + f.layer.name + " · " + when(f.at)), " ", h("a", { href: "#verse/" + f.verse }, "Verse inspector")),
+      h("blockquote", null, h("strong", null, f.by + ": "), f.note),
+      f.thread.length ? h("ul", { class: "admin-feed" }, f.thread.map(function (t) {
+        return h("li", null, h("time", { datetime: t.at, title: new Date(t.at).toLocaleString("en-GB") }, when(t.at)),
+          h("span", null, h("strong", null, t.by || "The admin"), " " + t.label.toLowerCase(), t.fix_issue ? " #" + t.fix_issue : "", t.text ? ": " + t.text : ""));
+      })) : null]);
+    var open = f.outcome === "open" || f.outcome === "fix";
+    if (open && (editor || mine)) {
+      var box = A.keepDraft(h("textarea", { id: "flag-reply-" + f.id, rows: 2, maxlength: 4000, placeholder: editor ? "A reply, or why the text stays as it is" : "A reply to the editors" }), "flag." + f.id);
+      var send = function (action, button, said) {
+        if ((action === "reply" || action === "decline") && !box.value.trim()) {
+          note(status, action === "decline" ? "Say why the text stays as it is, then decline." : "Write the reply first.", true);
+          box.focus();
+          return;
+        }
+        busy(button, true);
+        api("/api/admin/review/flags/" + f.id + "/", { method: "POST", body: { action: action, text: box.value } }).then(function () {
+          A.dropDraft("flag." + f.id);
+          A.FLASH = said;
+          route();
+        }, function (e) { busy(button, false); note(status, e, true); });
+      };
+      var reply = h("button", { type: "button", class: "admin-btn" }, "Reply");
+      reply.addEventListener("click", function () { send("reply", reply, "Reply sent; " + f.by + " is emailed it."); });
+      var buttons = [reply];
+      if (editor) {
+        var fix = h("button", { type: "button", class: "admin-btn" }, "File a fix from this flag");
+        fix.addEventListener("click", function () {
+          A.FIX_FROM = { flag: true, id: f.id, verse: f.verse, language: f.layer.kind === "meaning" ? null : f.layer.code, level: null, text: f.note, by: f.by };
+          location.hash = "#verse/" + f.verse;
+        });
+        var decline = h("button", { type: "button", class: "admin-btn" }, "Decline");
+        decline.addEventListener("click", function () { send("decline", decline, "Declined; the flag is closed and " + f.by + " is told why."); });
+        var resolve = h("button", { type: "button", class: "admin-btn" }, "Resolve");
+        resolve.addEventListener("click", function () { send("resolve", resolve, "Resolved; the flag is closed."); });
+        buttons.push(fix, decline, resolve);
+      }
+      add(card, [h("label", { class: "admin-label", for: "flag-reply-" + f.id }, "Reply"), box, h("div", { class: "admin-actions" }, buttons)]);
+    }
+    card.appendChild(status);
+    return card;
+  }
+  var FLAGS = { closed: "" };
   VIEWS.flags = function () {
-    return api("/api/admin/review/flags/").then(function (d) {
-      var reviews = A.ME.admin.indexOf("review") >= 0;
-      return [head("Text", "Reviewer flags", "Problems reviewers have flagged, newest first. A flag stays open until the layer is approved again; request a fix from the verse inspector."),
-        d.flags.length ? h("ul", { class: "admin-feed" }, d.flags.map(function (f) {
-          return h("li", null, h("time", { datetime: f.at }, when(f.at)), h("span", null,
-            h("a", { href: "#verse/" + f.verse }, f.label), " ", h("span", { class: "admin-sub" }, f.record + " · " + f.layer.name),
-            reviews ? [" ", h("a", { href: "#review/" + f.layer.code + "/" + f.record }, "Review")] : null,
-            h("br"), h("strong", null, f.by), ": " + f.note));
-        })) : h("p", { class: "admin-ok" }, "No open flags.")];
+    return api("/api/admin/review/flags/" + (FLAGS.closed ? "?closed=1" : "")).then(function (d) {
+      var shown = h("label", { class: "admin-check" }, h("input", { type: "checkbox", checked: !!FLAGS.closed, onchange: function () {
+        FLAGS.closed = this.checked ? "1" : ""; keepAddress(true); route();
+      } }), " Show flags settled in the last 30 days");
+      return [head("Text", "Reviewer flags", "Problems reviewers have flagged, newest first, each with its conversation. A flag ends when an editor files a fix that merges, declines it with a reason or resolves it, or when the layer is approved again. The reviewer hears each reply."),
+        h("div", { class: "admin-toolbar" }, shown),
+        d.flags.length ? h("div", { class: "admin-messages" }, d.flags.map(function (f) { return flagCard(f, false); })) : h("p", { class: "admin-ok" }, "No open flags.")];
     });
   };
+  A.filtered("flags", FLAGS);
 
   // Changes: what each import (each deploy) changed in sentences already
   // drafted, word by word.
