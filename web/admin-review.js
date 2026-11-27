@@ -75,7 +75,11 @@ OWBAdmin.module(function (A) {
       if (!noteBox.value.trim()) { note(status, "Say what is wrong in the note, then flag.", true); noteBox.focus(); return; }
       send({ action: "flag", note: noteBox.value, records: picked() }, flagBtn, finished("Flagged"));
     });
+    // Without a reviewer role for the layer (a super admin reading it), no
+    // boxes nor "approve the rest": the API refuses them (review.reviewing).
+    var allowed = true;
     function box(s) {
+      if (!allowed) return h("td", { class: "admin-pick" });
       var b = h("input", { type: "checkbox", value: s.record, "aria-label": "Select " + s.label });
       var i = boxes.length;
       boxes.push(b);
@@ -120,11 +124,12 @@ OWBAdmin.module(function (A) {
       if (id === chapter) return null;
       chapter = id;
       var name = s.label.replace(/:[^:]*$/, "");
-      return h("tr", { class: "admin-group" }, h("th", { colspan: 5, scope: "rowgroup" }, h("span", null, name), " ", rest(id, name)));
+      return h("tr", { class: "admin-group" }, h("th", { colspan: 5, scope: "rowgroup" }, h("span", null, name), allowed ? [" ", rest(id, name)] : null));
     }
     return {
       bar: bar, box: box, chapterRow: chapterRow,
-      head: function () { return h("th", { class: "admin-pick" }, all); },
+      head: function () { return h("th", { class: "admin-pick" }, allowed ? all : null); },
+      allow: function (v) { allowed = v; },
       reset: function () { boxes = []; last = -1; chapter = null; update(); }
     };
   }
@@ -140,6 +145,7 @@ OWBAdmin.module(function (A) {
       if (!offset) {
         body.textContent = "";
         rows = h("tbody");
+        pick.allow(page.may_review !== false);
         pick.reset();
         var c = page.counts;
         body.appendChild(h("div", { class: "admin-tiles" },
@@ -281,6 +287,10 @@ OWBAdmin.module(function (A) {
       var approveBtn = h("button", { type: "button", class: "admin-btn primary", onclick: function () { act("approve", this); } },
         kind === "meaning" ? "Approve the meaning" : "Approve the " + d.layer.name.replace(/ wording$/, "") + " wording");
       var flagBtn = h("button", { type: "button", class: "admin-btn", onclick: function () { act("flag", this); } }, "Flag a problem");
+      // Reading a layer without its reviewer role (a super admin): the
+      // charter keeps approving and flagging to reviewers.
+      var mayReview = d.may_review !== false;
+      approveBtn.disabled = flagBtn.disabled = !mayReview;
       var buttons = h("div", { class: "admin-actions" }, approveBtn, flagBtn,
         h("button", { type: "button", class: "admin-btn", onclick: function () { act("comment", this); } }, "Comment"),
         d.next ? h("a", { href: "#review/" + layer + "/" + d.next }, "Skip to the next ›") : null);
@@ -311,6 +321,7 @@ OWBAdmin.module(function (A) {
         at: drew,
         a: function () { if (!approveBtn.disabled) act("approve", approveBtn); },
         f: function () {
+          if (!mayReview) return;
           flagging = true;
           flagBtn.classList.add("armed");
           noteBox.focus();
@@ -356,7 +367,11 @@ OWBAdmin.module(function (A) {
         // so approving never means scrolling past every language.
         h("section", { class: "admin-block admin-review-bar", "aria-label": "Your review" },
           h("div", { class: "admin-review-bar-head" }, h("h2", null, "Your review"), progress),
-          h("label", { class: "admin-field" }, "Note", noteBox), buttons, status),
+          h("label", { class: "admin-field" }, "Note", noteBox), buttons,
+          mayReview ? null : h("p", { class: "admin-sub" }, "You can read and comment here. Approving and flagging take a reviewer role for " +
+            d.layer.name + ", for a super admin too, so the reviewed badge always means a qualified person checked it. Grant yourself one in ",
+            h("a", { href: "#team" }, "Team & access"), " to review it."),
+          status),
         h("div", { class: "admin-review-keys" }, hint, help),
         h("section", { class: "admin-block" }, h("h2", null, "Review trail"), trail)];
     });
