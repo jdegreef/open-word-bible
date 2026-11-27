@@ -107,13 +107,30 @@ def person(user):
     return people.person(user)
 
 
-def message_json(m):
+def fix_state(number, kept=None):
+    """Where a fix request stands, from the work list kept (never asking
+    GitHub): {number, state: "open" | "in_review" | "merged" | "declined",
+    url, pr}, or {number} when the list doesn't have it."""
+    from .work import kept_items   # work imports this module
+    item = next((w for w in (kept if kept is not None else kept_items()) if w["number"] == number), None)
+    if item is None:
+        return {"number": number}
+    merged = [p for p in item["prs"] if p["state"] == "merged"]
+    open_prs = [p for p in item["prs"] if p["state"] == "open"]
+    state = ("merged" if merged else "declined" if item["state"] == "closed"
+             else "in_review" if open_prs else "open")
+    pr = (merged or open_prs or [None])[0]
+    return {"number": number, "state": state, "url": item["url"], "pr": pr["url"] if pr else None}
+
+
+def message_json(m, kept=None):
     age = timezone.now() - m.created_at
     return {"id": m.id, "kind": m.kind, "verse": m.verse, "verse_label": verse_label(m.verse),
             "language": m.language, "level": m.level, "text": m.text, "status": m.status,
             "reply": m.reply, "replied_by": people.name(m.replied_by) if m.replied_by else "",
             "replied_at": m.replied_at, "note": m.note, "created_at": m.created_at,
             "fixed_at": m.fixed_at, "fix_url": m.fix_url,
+            "fix": fix_state(m.fix_issue, kept) if m.fix_issue else None, "follow_up": m.follow_up,
             "from": {"id": m.user_id, "name": m.user.first_name, "email": m.user.username},
             "url": verse_url(m.verse, m.language),
             "assigned_to": person(m.assigned_to), "assigned_at": m.assigned_at,
@@ -184,7 +201,9 @@ def inbox(request):
     except ValueError:
         offset = 0
     total = messages.count()
-    return Response({"messages": [message_json(m) for m in messages[offset:offset + PAGE]],
+    from .work import kept_items
+    kept = kept_items()
+    return Response({"messages": [message_json(m, kept) for m in messages[offset:offset + PAGE]],
                      "total": total, "offset": offset, "page": PAGE,
                      "counts": {s: counts.get(s, 0) for s in S.values},
                      "languages": [{"code": c, "name": lang["name"], "count": by_lang[c]}

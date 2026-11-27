@@ -40,7 +40,9 @@ def _verse(value):
 def messages(request):
     mine = ReaderMessage.objects.filter(user=request.user)
     if request.method == "GET":
-        return Response([{"id": m.id, "kind": m.kind, "verse": m.verse, "text": m.text, "status": m.status,
+        return Response([{"id": m.id, "kind": m.kind, "verse": m.verse, "text": m.text,
+                          # Awaiting a fix is still waiting, to the reader.
+                          "status": "new" if m.status == ReaderMessage.Status.FIXING else m.status,
                           "reply": m.reply, "replied_at": m.replied_at, "created_at": m.created_at}
                          for m in mine[:100]])
     data = request.data if isinstance(request.data, dict) else {}

@@ -637,6 +637,7 @@ class FixTest(AdminTestCase):
         self.assertIn(f'"message": {message.id}', body["body"])
         message.refresh_from_db()
         self.assertEqual(message.note, "Fix requested: #9")
+        self.assertEqual((message.status, message.fix_issue), ("fixing", 9))   # awaiting the fix, not an editor
         action = AdminAction.objects.get(action="fix.request")
         self.assertEqual((action.target, action.detail["verse"]), ("#9 JHN.1.1.s1", "JHN.1.1"))
         # The inspector lists it.
@@ -945,6 +946,34 @@ class WorkTest(AdminTestCase):
         self.assertEqual(len(mail.outbox), 1)
         inbox = self.admin.get("/api/admin/inbox/?status=done").json()["messages"]
         self.assertEqual(inbox[0]["fix_url"], "https://github.com/x/y/pull/30")
+
+    @override_settings(OWB_GITHUB_TOKEN="t")
+    def test_a_declined_fix_brings_the_message_back_with_a_reply_drafted(self):
+        m = ReaderMessage.objects.create(user=self.reader, kind="suggestion", verse="JHN.1.2", language="fr",
+                                         text="Plutôt « au commencement »", status="fixing", fix_issue=40)
+        issue = {"number": 40, "title": "Fix John 1:2 (French)", "html_url": "https://github.com/x/y/issues/40",
+                 "state": "closed", "state_reason": "not_planned", "labels": [{"name": "fix-request"}],
+                 "created_at": "2026-10-16T10:00:00Z", "closed_at": "2026-10-17T10:00:00Z", "assignees": [],
+                 "body": '<!-- fix-request {"record": "JHN.1.2.s1", "message": %d} -->' % m.id}
+
+        def github(path, method="GET", body=None, stop=None):
+            if path.startswith("issues/40/comments"):
+                return [{"body": "The wording follows the French style brief here. <!-- worker -->"}]
+            return [] if path.startswith("pulls") else [issue]
+        with mock.patch("staff.github.call", side_effect=github):
+            # The inbox shows the fix's state while it is open.
+            call_command("sync_fixes", stdout=io.StringIO())
+        m.refresh_from_db()
+        self.assertEqual(m.status, "new")
+        self.assertIn("The wording follows the French style brief here.", m.follow_up)
+        self.assertNotIn("worker", m.follow_up)
+        self.assertIn("Fix #40 closed without a change", m.note)
+        self.assertEqual(mail.outbox, [])   # an editor sends the reply, not the job
+        # The reader saw it as waiting all along.
+        m.status = "fixing"
+        m.save()
+        mine = client_for(self.reader).get("/api/messages").json()
+        self.assertEqual({x["status"] for x in mine if x["id"] == m.id}, {"new"})
 
     def test_sync_fixes_needs_a_token(self):
         out = io.StringIO()

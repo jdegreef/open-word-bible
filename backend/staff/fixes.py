@@ -138,7 +138,12 @@ def _file(request):
     if message:
         note = f"Fix requested: #{issue['number']}"
         message.note = f"{message.note}\n{note}".strip() if message.note else note
-        message.save(update_fields=["note"])
+        # Awaiting the fix, not an editor: out of the waiting count and the
+        # three-day alert until sync_fixes settles it.
+        if message.status == ReaderMessage.Status.NEW:
+            message.status = ReaderMessage.Status.FIXING
+        message.fix_issue = issue["number"]
+        message.save(update_fields=["note", "status", "fix_issue"])
     return Response({"number": issue["number"], "url": issue["html_url"]}, status=status.HTTP_201_CREATED)
 
 

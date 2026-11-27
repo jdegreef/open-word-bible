@@ -1201,6 +1201,7 @@
       function drawTabs() {
         tabs.textContent = "";
         tabs.appendChild(seg([["new", "New (" + counts.new + ")"], ["answered", "Answered (" + counts.answered + ")"],
+          ["fixing", "Awaiting a fix (" + (counts.fixing || 0) + ")"],
           ["done", "Done (" + counts.done + ")"], ["declined", "Declined (" + counts.declined + ")"]], f.status, function (v) {
           f.status = v; refilter();
         }));
@@ -1318,6 +1319,15 @@
             b.addEventListener("click", function () { FIX_FROM = m; location.hash = "#verse/" + m.verse; });
             return b;
           })())]);
+      // The fix request filed from it, as the work list last saw it.
+      var FIX_STATE = { open: ["Fix requested", "info"], in_review: ["Fix in review", "info"], merged: ["Fix merged", "good"],
+        declined: ["Fix declined", "warn"] };
+      if (m.fix && !m.fixed_at) {
+        var fs = FIX_STATE[m.fix.state] || ["Fix requested", "info"];
+        card.appendChild(h("p", null, pill(fs[0], fs[1]), " ", m.fix.url ? h("a", { href: m.fix.url, rel: "noopener" }, "#" + m.fix.number) : "#" + m.fix.number,
+          m.fix.pr ? [" · ", h("a", { href: m.fix.pr, rel: "noopener" }, "pull request")] : null,
+          m.status === "fixing" ? h("span", { class: "admin-sub" }, " The reader hears when it merges; if it is declined, this comes back here with a reply drafted.") : null));
+      }
       if (m.fixed_at) {
         card.appendChild(h("p", null, pill("Led to a change", "good"), " ", h("a", { href: m.fix_url, rel: "noopener" }, "the pull request"),
           h("span", { class: "admin-sub" }, " \u00b7 the reader was told " + when(m.fixed_at))));
@@ -1331,6 +1341,8 @@
         var text = h("textarea", { rows: 3, id: "reply-" + m.id, maxlength: 4000, placeholder: "Reply to the reader (emailed to them)",
         });
         keepDraft(text, "reply." + m.id);
+        // A fix declined: the reply drafted from why (sync_fixes), to read and change before sending.
+        if (!text.value && m.follow_up) text.value = m.follow_up;
         var saved = select("saved-" + m.id, [["", "Start from a saved reply…"]].concat(m.replies.map(function (r) { return [r.key, r.label]; })), "");
         saved.setAttribute("aria-label", "Saved replies");
         saved.addEventListener("change", function () {
@@ -1423,7 +1435,7 @@
         else draw();
       });
     }
-    var DONE_LABEL = { done: "Marked done", declined: "Declined", answered: "Answered", "new": "Back to new" };
+    var DONE_LABEL = { done: "Marked done", declined: "Declined", answered: "Answered", "new": "Back to new", fixing: "Awaiting a fix" };
     // The card once it has left the tab: what happened, and Undo (not for
     // a reply, which has been emailed).
     function folded(was, replied) {

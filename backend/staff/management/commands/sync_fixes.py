@@ -9,12 +9,19 @@ it ("Fixes #N") has merged, the reader is emailed a thank-you with a link
 to the verse, and the message is marked done with the pull request's link.
 Each message is told once (ReaderMessage.fixed_at).
 
+A fix request closed without a merged change (declined: the session or an
+editor decided the wording stays) puts its message back among the new
+ones, with a reply to the reader drafted from the issue's closing comment
+for an editor to read, change and send (ReaderMessage.follow_up). Nothing
+is sent to the reader without an editor.
+
 It runs on every deploy (render.yaml's preDeployCommand), since a merged
 fix is what triggers one; without OWB_GITHUB_TOKEN, or when GitHub can't be
 reached, it says so and exits cleanly, so it never blocks a deploy.
 """
 import json
 import logging
+import re
 
 from django.conf import settings
 from django.core.mail import send_mail
@@ -38,6 +45,46 @@ THANKS = ("Your {kind} about {verse} changed Open Word Bible",
           "Every sentence is still an AI-assisted draft until a reviewer approves it, "
           "so the wording may change again in review.\n\n"
           "This is about the message you sent from the site; we won't email you otherwise.")
+
+
+FOLLOW_UP = ("Thank you for writing to Open Word Bible about {verse}. An editor asked for the change you "
+             "suggested to be looked at against the Hebrew or Greek and our style guide, and the wording is "
+             "staying as it is for now. {reason}\n\nWe read every message, and yours is kept with the verse "
+             "for when it is reviewed again.")
+
+
+def _fix_number(item):
+    for line in item.get("body", "").splitlines():
+        if line.startswith("<!-- fix-request "):
+            try:
+                return json.loads(line[len("<!-- fix-request "):-len(" -->")])
+            except ValueError:
+                return None
+    return None
+
+
+def declined_messages(work):
+    """(message id, issue number) for each fix request closed with no merged
+    pull request that names a reader message."""
+    for item in work:
+        if item["kind"] != "fix-request" or item["state"] != "closed":
+            continue
+        if any(p["state"] == "merged" for p in item["prs"]):
+            continue
+        data = _fix_number(item)
+        if data and data.get("message"):
+            yield data["message"], item["number"]
+
+
+def closing_reason(number):
+    """The issue's last comment, in short: why the fix was declined."""
+    try:
+        comments = github.call(f"issues/{number}/comments?per_page=100")
+    except github.GitHubError:
+        return ""
+    text = " ".join((comments[-1].get("body") or "").split()) if comments else ""
+    text = re.sub(r"<!--.*?-->", "", text).strip()
+    return text[:600] + ("…" if len(text) > 600 else "")
 
 
 def fixed_messages(work):
@@ -102,3 +149,23 @@ class Command(BaseCommand):
             record(None, "message.fixed", f"{m.get_kind_display()} on {m.verse}", message=m.id, url=pr_url)
             told += 1
         self.stdout.write(f"{told} reader(s) told their suggestion led to a change.")
+        back = 0
+        for message_id, number in declined_messages(work):
+            m = ReaderMessage.objects.filter(id=message_id, status=ReaderMessage.Status.FIXING,
+                                             fix_issue=number).first()
+            if m is None:
+                continue
+            if dry_run:
+                self.stdout.write(f"would put message {m.id} back: fix #{number} was declined")
+                continue
+            reason = closing_reason(number)
+            m.status = ReaderMessage.Status.NEW
+            m.follow_up = FOLLOW_UP.format(verse=verse_label(m.verse),
+                                           reason=f"The editors' note: {reason}" if reason else "")
+            note = f"Fix #{number} closed without a change; a reply is drafted."
+            m.note = f"{m.note}\n{note}".strip() if m.note else note
+            m.save(update_fields=["status", "follow_up", "note"])
+            record(None, "message.fix_declined", f"{m.get_kind_display()} on {m.verse}", message=m.id,
+                   number=number)
+            back += 1
+        self.stdout.write(f"{back} message(s) back in the inbox: their fix was declined.")
