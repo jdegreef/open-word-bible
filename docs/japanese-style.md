@@ -304,6 +304,13 @@ hold for the later books.
   the reader setting, as the English has LORD / Yahweh. Particles go outside
   the span (`{{divine_name:主|ヤハウェ}}は`). *Adonai* ("Lord") is 主 with no
   span; *Elohim* is 神. エホバ is not used.
+- **A supplied 主 for YHWH** takes the span too. Japanese supplies 主 where the
+  Hebrew has only "he", "his" or a verb with no named subject (God is never
+  彼, §4). When that 主 continues a YHWH reference, it is
+  `{{divine_name:主|ヤハウェ}}`, so a reader who chooses ヤハウェ sees one name
+  throughout (2 Kings 17:15 has three). When it continues an *Adonai* reference
+  ("the Lord", as in Isaiah 6 or Amos 9:1), it stays plain 主, like the
+  *Adonai* it repeats. Titles (造り主, 贖い主, 裁き主) and human lords stay plain.
 - **Requests to God** take 〜てください (〜ないでください) in every book, inside
   plain-style verse as in prose: the Psalter's form (Psalm 3:8, Numbers 10:35),
   now also in the prophets' prayers, Lamentations, Job's words to God and
