@@ -17,6 +17,7 @@ from django.test import SimpleTestCase
 from django.test.utils import CaptureQueriesContext
 from django.utils import timezone
 
+from accounts.models import Role
 from backend_tests.test_admin import K, AdminTestCase, account, client_for, sentence
 from backend_tests.test_backend import CONTENT, import_content, load_extract_words
 from staff import review
@@ -59,6 +60,44 @@ class ReviewTest(AdminTestCase):
         self.assertFalse(ReviewEvent.objects.exists())
         self.assertFalse(ReviewState.objects.exists())
         self.assertEqual(self.admin.get("/api/admin/activity/").json()["actions"][0]["action"], "review.undo")
+
+    def test_an_approval_is_of_what_the_reviewer_was_shown(self):
+        shown = self.scholar.get("/api/admin/review/JHN.1.1.s1/?layer=grc").json()["digest"]
+        s = Sentence.objects.get(record_id="JHN.1.1.s1")
+        s.literal_gloss = "In [the] beginning was the Word, changed"
+        s.save()   # an import, say, while the page was open
+        r = self.scholar.post("/api/admin/review/JHN.1.1.s1/", {"layer": "grc", "action": "approve", "seen": shown},
+                              format="json")
+        self.assertEqual((r.status_code, r.json()["code"]), (409, "changed"))
+        self.assertFalse(ReviewEvent.objects.exists())
+        now = self.scholar.get("/api/admin/review/JHN.1.1.s1/?layer=grc").json()["digest"]
+        self.assertNotEqual(now, shown)
+        r = self.scholar.post("/api/admin/review/JHN.1.1.s1/", {"layer": "grc", "action": "approve", "seen": now},
+                              format="json")
+        self.assertEqual(r.status_code, 201)
+        self.assertEqual(ReviewEvent.objects.get().digest, now)
+
+    def test_the_status_follows_the_meaning_layer_now(self):
+        def status():
+            return Sentence.objects.get(record_id="JHN.1.1.s1").status
+        self.act(self.scholar, "JHN.1.1.s1", "grc")
+        self.assertEqual(status(), "meaning_reviewed")
+        self.act(self.scholar, "JHN.1.1.s1", "grc", "flag", "Wrong tense")
+        self.assertEqual(status(), "ai_draft")
+        self.act(self.scholar, "JHN.1.1.s1", "grc", "comment", "Looking again")
+        self.assertEqual(status(), "ai_draft")
+        self.act(self.scholar, "JHN.1.1.s1", "grc")
+        self.assertEqual(status(), "meaning_reviewed")
+        # Changed since the approval: no human approval stands behind it now.
+        s = Sentence.objects.get(record_id="JHN.1.1.s1")
+        s.literal_gloss = "Something else"
+        s.save()
+        review.refresh("grc")
+        self.assertEqual(ReviewState.objects.get(layer="grc").state, "changed")
+        self.assertEqual(status(), "ai_draft")
+        # A wording approval never moves the status.
+        self.act(self.french, "JHN.1.1.s1", "fr")
+        self.assertEqual(status(), "ai_draft")
 
     def test_an_earlier_approval_still_stands_after_taking_back_a_flag(self):
         self.act(self.scholar, "JHN.1.1.s1", "grc")
@@ -124,7 +163,19 @@ class ReviewTest(AdminTestCase):
         self.assertEqual(self.act(self.scholar, "GEN.1.1.s1", "hbo").status_code, 403)
         self.assertEqual(self.act(self.scholar, "GEN.1.1.s1", "grc").status_code, 400)   # not in the NT layer
         self.assertEqual(self.act(self.french, "JHN.1.2.s1", "fr").status_code, 400)     # not drafted in French
-        # A super admin may review any layer, Hebrew meaning included.
+        # A super admin reads every layer, but approving and flagging take a
+        # reviewer role, for them too (the charter); commenting doesn't.
+        self.assertEqual(self.admin.get("/api/admin/review/GEN.1.1.s1/?layer=hbo").json()["may_review"], False)
+        self.assertFalse(self.admin.get("/api/admin/review/?layer=hbo").json()["may_review"])
+        for action in ("approve", "flag"):
+            r = self.act(self.admin, "GEN.1.1.s1", "hbo", action, "x")
+            self.assertEqual((r.status_code, r.json()["code"]), (403, "forbidden"))
+        r = self.admin.post("/api/admin/review/bulk/", {"layer": "hbo", "action": "approve", "records": ["GEN.1.1.s1"]},
+                            format="json")
+        self.assertEqual(r.status_code, 403)
+        self.assertEqual(self.act(self.admin, "GEN.1.1.s1", "hbo", "comment", "Worth a look").status_code, 201)
+        Role.objects.create(user=self.boss, kind=K.SCHOLAR_REVIEWER, language="hbo")
+        self.assertTrue(self.admin.get("/api/admin/review/GEN.1.1.s1/?layer=hbo").json()["may_review"])
         self.assertEqual(self.act(self.admin, "GEN.1.1.s1", "hbo").status_code, 201)
         self.assertFalse(ReviewEvent.objects.exclude(user__username="boss@example.org").exists())
 
@@ -149,6 +200,7 @@ class ReviewTest(AdminTestCase):
         self.assertEqual([s["record"] for s in todo], ["JHN.1.2.s1"])
 
     def test_wording_approval_is_per_language_and_goes_stale(self):
+        Role.objects.create(user=self.boss, kind=K.LANGUAGE_REVIEWER, language="en")
         self.assertEqual(self.act(self.french, "JHN.1.1.s1", "fr").status_code, 201)
         self.assertEqual(self.act(self.admin, "JHN.1.1.s1", "en").status_code, 201)
         self.assertEqual(Sentence.objects.get(record_id="JHN.1.1.s1").status, "ai_draft")

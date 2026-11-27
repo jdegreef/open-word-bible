@@ -63,6 +63,7 @@ from translation.models import Decision, Rendering, ReviewEvent, ReviewState, Se
 
 from .inbox import verse_label
 from .models import record
+from . import people
 from .permissions import admin_view, is_super_admin
 from .snapshot import snapshot
 
@@ -89,13 +90,27 @@ def layer_json(code):
 
 
 def layers(user):
-    """The layers user may review: originals first, then reading languages."""
-    every = [*languages.ORIGINAL, *languages.READING]
+    """The layers user may open in review (queues, sentences, trails):
+    every layer for a super admin, otherwise those user reviews.
+    Originals first, then reading languages."""
     if is_super_admin(user):
-        return every
+        return [*languages.ORIGINAL, *languages.READING]
+    return reviewing(user)
+
+
+def reviewing(user):
+    """The layers user may approve and flag in: those of user's scholar
+    and language reviewer roles, for a super admin too (the charter: the
+    reviewed badge always means someone qualified checked it; a super
+    admin who reviews grants themselves the role)."""
     mine = set(user.roles.filter(kind__in=[Role.Kind.SCHOLAR_REVIEWER, Role.Kind.LANGUAGE_REVIEWER])
                .values_list("language", flat=True))
-    return [code for code in every if code in mine]
+    return [code for code in [*languages.ORIGINAL, *languages.READING] if code in mine]
+
+
+NOT_A_REVIEWER = ("Approving and flagging take a reviewer role for this layer, for a super admin too, so the "
+                  "reviewed badge always means a qualified person checked it. A super admin can grant one in "
+                  "Team & access.")
 
 
 def _scope(layer):
@@ -170,6 +185,7 @@ def refresh(layer):
             # Only rows still on the approval compared: one made meanwhile
             # has reset its row, to be compared next time.
             ReviewState.objects.filter(reduce(or_, rows)).update(state=state, checked_at=checked)
+        settle_status(layer, [row[1] for row in chunk])
     # Every sentence saved by then has been compared.
     done = min(newest, began - SLACK) if newest else None
     if done is not None and (since is None or done > since + timedelta(minutes=1)):
@@ -237,7 +253,7 @@ def _forbidden(e):
 def _event_json(e, current=None):
     """A review event; current is the layer's digest now, for an approval."""
     return {"id": e.id, "action": e.action, "label": e.get_action_display(), "language": e.language,
-            "by": e.user.get_full_name() or e.user.username, "note": e.note, "at": e.created_at,
+            "by": people.name(e.user), "note": e.note, "at": e.created_at,
             **({"changed": e.digest != current} if current is not None else {})}
 
 
@@ -291,6 +307,7 @@ def queue(request):
     books = _books(layer)
     return Response({
         "layer": layer_json(layer), "layers": [layer_json(code) for code in allowed],
+        "may_review": layer in reviewing(request.user),
         "books": [{"code": b, "name": refs.BOOK_NAMES.get(b, b)} for b in books],
         "counts": {**counts, "total": total},
         "offset": offset, "more": offset + PAGE < matching, "matching": matching,
@@ -340,6 +357,10 @@ def sentence(request, record_id):
         "record": record_json(s), "verse": s.refs[0], "label": verse_label(s.refs[0]), "words": words,
         "languages": [{"code": c, "name": lang["name"]} for c, lang in languages.READING.items()],
         "state": state_of(layer, s.id),
+        "may_review": layer in reviewing(request.user),
+        # What an approval from this page approves: sent back as "seen", so
+        # a sentence changed while it was being read isn't approved unread.
+        "digest": digest(s, layer),
         "trail": [_event_json(e, currents.get(e.language or s.source_edition.language)
                               if e.action in (A.MEANING_REVIEWED, A.REVIEWED) else None) for e in trail],
         "next": _next(layer, s),
@@ -352,35 +373,75 @@ def _act(request, s, layer, data):
         return _undo(request, s, layer, data.get("event"))
     if action not in ("approve", "flag", "comment"):
         raise ValidationError({"action": "Choose approve, flag or comment.", "code": "invalid_action"})
+    if action != "comment" and layer not in reviewing(request.user):
+        return _forbidden(NOT_A_REVIEWER)
     note = str(data.get("note") or "").strip()
     if action != "approve" and not note:
         raise ValidationError({"note": "Say what you noticed.", "code": "empty"})
     if len(note) > 4000:
         raise ValidationError({"note": "Keep it under 4,000 characters.", "code": "too_long"})
-    event = apply(request.user, s, layer, action, note)
+    seen = data.get("seen") if action == "approve" else None
+    if seen is not None and not isinstance(seen, str):
+        raise ValidationError({"seen": "Send the digest the sentence was shown with.", "code": "invalid"})
+    try:
+        event = apply(request.user, s, layer, action, note, seen=seen)
+    except Changed:
+        return Response({"detail": "This sentence changed while you were reading it, so it wasn't approved. "
+                                   "Read the new wording, then approve.", "code": "changed"},
+                        status=status.HTTP_409_CONFLICT)
     return Response({"event": _event_json(event), "state": state_of(layer, s.id),
                      "next": _next(layer, s)}, status=status.HTTP_201_CREATED)
 
 
-def apply(user, s, layer, action, note):
+class Changed(Exception):
+    """The sentence isn't what the reviewer was shown (apply's seen)."""
+
+
+def apply(user, s, layer, action, note, seen=None):
     """Record user's action ("approve", "flag" or "comment", already
     checked) on s in layer, which user may review and s is in: one
     ReviewEvent, with the digest and snapshot of what an approval approves.
-    staff/bulk.py applies it a sentence at a time."""
+    seen, for an approval, is the digest of what the reviewer was shown:
+    Changed is raised if the sentence no longer matches it. staff/bulk.py
+    applies it a sentence at a time."""
     kind = {"approve": _approve(layer), "flag": A.FLAGGED, "comment": A.COMMENT}[action]
     with transaction.atomic():
+        # One step at a time on a sentence (two reviewers at once, an
+        # undo, an import saving it): the row is locked until this commits.
+        Sentence.objects.select_for_update().filter(pk=s.pk).first()
+        if action == "approve":
+            # What is approved is the sentence as it is now, read under the lock.
+            s = _with_texts(Sentence.objects.filter(pk=s.pk), layer).select_related("source_edition").get()
+            now = digest(s, layer)
+            if seen is not None and seen != now:
+                raise Changed
         # Saving the event brings the sentence's ReviewState up to date.
         event = ReviewEvent.objects.create(sentence=s, user=user, action=kind, note=note,
                                            language="" if _meaning(layer) else layer,
-                                           digest=digest(s, layer) if action == "approve" else "",
+                                           digest=now if action == "approve" else "",
                                            snapshot=snapshot(s, layer) if action == "approve" else {})
         if action == "approve":
-            # The digest was just taken from s as loaded: no need to compare again.
+            # The digest was just taken from s as it is: no need to compare again.
             ReviewState.objects.filter(sentence=s, layer=layer, event=event).update(checked_at=s.updated_at)
-        if kind == A.MEANING_REVIEWED:
-            # update(), not save(): updated_at says when the text last changed.
-            Sentence.objects.filter(pk=s.pk, status=Status.AI_DRAFT).update(status=Status.MEANING_REVIEWED)
+        settle_status(layer, [s.pk])
     return event
+
+
+def settle_status(layer, ids=None):
+    """A sentence's status says "meaning reviewed" while, and only while,
+    its meaning layer is approved now: not flagged since, not changed since
+    the approval, not taken back. (ids: just these sentences.) Only the
+    meaning layer moves the status; "reviewed" and "revised" come from the
+    content and are left alone."""
+    if not _meaning(layer):
+        return
+    sentences = Sentence.objects.filter(source_edition__language=layer)
+    if ids is not None:
+        sentences = sentences.filter(pk__in=ids)
+    approved = ReviewState.objects.filter(layer=layer, state=RS.APPROVED).values("sentence_id")
+    # update(), not save(): updated_at says when the text last changed.
+    sentences.filter(status=Status.AI_DRAFT, pk__in=approved).update(status=Status.MEANING_REVIEWED)
+    sentences.filter(status=Status.MEANING_REVIEWED).exclude(pk__in=approved).update(status=Status.AI_DRAFT)
 
 
 UNDO_MINUTES = 10
@@ -389,10 +450,11 @@ UNDO_MINUTES = 10
 def _undo(request, s, layer, event_id):
     """Take back request.user's own latest step in s's trail, made in the
     last UNDO_MINUTES. Deleting the event brings the sentence's ReviewState
-    back to what the trail now says; a meaning approval taken back returns
-    the sentence to ai_draft unless another meaning approval stands."""
+    back to what the trail now says, and the sentence's status with it
+    (settle_status)."""
     with transaction.atomic():
-        latest = (ReviewEvent.objects.select_for_update().filter(sentence=s)
+        Sentence.objects.select_for_update().filter(pk=s.pk).first()   # as apply() does
+        latest = (ReviewEvent.objects.filter(sentence=s)
                   .order_by("-created_at", "-id").first())
         if latest is None or str(latest.id) != str(event_id):
             raise ValidationError({"event": "Only the latest step on a sentence can be taken back; someone has "
@@ -406,9 +468,7 @@ def _undo(request, s, layer, event_id):
             raise ValidationError({"event": "That step is in another review layer.", "code": "not_in_layer"})
         label = latest.get_action_display()
         latest.delete()
-        if (latest.action == A.MEANING_REVIEWED
-                and not s.review_events.filter(action=A.MEANING_REVIEWED, language="").exists()):
-            Sentence.objects.filter(pk=s.pk, status=Status.MEANING_REVIEWED).update(status=Status.AI_DRAFT)
+        settle_status(layer, [s.pk])
         record(request.user, "review.undo", f"{label} on {s.record_id}", layer=layer)
     return Response({"state": state_of(layer, s.id), "next": _next(layer, s)})
 

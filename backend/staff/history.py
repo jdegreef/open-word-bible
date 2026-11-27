@@ -40,6 +40,7 @@ from owb import languages, refs
 from translation.models import ImportRun, RecordChange, Rendering, ReviewEvent, Sentence, SentenceChange
 
 from .inbox import verse_label
+from . import people
 from .permissions import admin_view
 from .review import A, digest, layer_json
 from .snapshot import snapshot
@@ -160,7 +161,7 @@ def since_approval(event, sentence):
     return {
         "id": event.id, "record": sentence.record_id, "verse": sentence.refs[0], "label": verse_label(sentence.refs[0]),
         "layer": layer_json(layer), "action": event.action, "label_action": event.get_action_display(),
-        "by": event.user.get_full_name() or event.user.username, "note": event.note, "at": event.created_at,
+        "by": people.name(event.user), "note": event.note, "at": event.created_at,
         "changed": known != "unchanged", "known": known, "texts": texts, "decisions": decisions,
     }
 

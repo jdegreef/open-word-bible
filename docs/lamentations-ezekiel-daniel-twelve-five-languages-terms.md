@@ -214,8 +214,8 @@ Volumes and weights (45–46), on the Pentateuch note's values: an ephah and a
 bath `{{units:environ 22 litres|un épha}}`, `{{units:environ 22 litres|un
 bath}}` (a tenth of a homer, the same); a homer or kor `{{units:environ 220
 litres|un homer}}` for grain and liquids alike; a hin and a sixth of an ephah
-« environ 4 litres »; a third of a hin « environ 1,2 litre »; a sixth of a hin
-« environ 0,6 litre »; a tenth of a bath « environ 2 litres »; a shekel 11,5 g
+« environ 3,7 litres »; a third of a hin « environ 1,2 litre »; a sixth of a hin
+« environ 0,6 litre »; a tenth of a bath « environ 2,2 litres »; a shekel 11,5 g
 (twenty shekels « environ 230 grammes », twenty-five « environ 290 grammes »,
 fifteen « environ 170 grammes », sixty « environ 700 grammes »). French has no
 conflict over the ephah: the published French already gives it as 22 litres,
@@ -286,7 +286,7 @@ the same as the English's "about 6 gallons". One rendering decision at 40:5
 | transgression (*peshaʿ*, also the verb) | « transgression », « transgresser » (L) / « crime », « rébellion », « se révolter » (B) / « péché », « pécher » (R) |
 | justice and righteousness (*mishpat*, *tsedaqah*) | « le droit » and « la justice » (L, B), as Isaiah / « la justice » and « ce qui est juste » (R) |
 | knowledge of God (Hosea 4:1; 6:6) | « la connaissance de Dieu » (L, B) / « connaître Dieu » (R) |
-| a wife of prostitution (Hosea 1:2) | « une femme de prostitution » (L) / « une femme débauchée » (B) / « une femme qui te sera infidèle » (R) (B uncertain) |
+| a wife of prostitution (Hosea 1:2) | « une femme de prostitution » (L) / « une femme débauchée » (B) / « une femme infidèle » (R), not « qui te sera infidèle », which would decide when she became so (B uncertain) |
 | Jezreel; Lo-ruhamah; Lo-ammi | L keeps the Hebrew names: « Jizreël », « Lo-Rouhama », « Lo-Ammi », reversed as « Rouhama », « Ammi » (2:3); B and R translate them as proper names: « Jizreël », « Sans-Compassion », « Pas-Mon-Peuple », reversed as « Compassion-Reçue », « Mon-Peuple » (2:3, 25) (uncertain). Gender agrees: « Sans-Compassion » is a daughter. |
 | My husband / my baal (Hosea 2:18) | « Mon mari » / « Mon baal » (L), « Mon Baal » (B, R, R adding « ce qui veut dire “mon maître” ») |
 | the cutting, swarming, hopping and stripping locust (Joel 1:4; 2:25) | « la sauterelle qui ronge, la sauterelle en essaim, la sauterelle qui bondit, la sauterelle qui dévaste » (L, B) / « des nuées de sauterelles, l’une après l’autre » (R) (uncertain) |
@@ -638,7 +638,7 @@ Everything in the Spanish section of `docs/isaiah-jeremiah-ezra-five-languages-t
 
 | English | Spanish |
 |---|---|
-| a wife of prostitution (1:2) | L *una mujer de prostitución*, B *una esposa promiscua*, R *una esposa que te será infiel* |
+| a wife of prostitution (1:2) | L *una mujer de prostitución*, B *una esposa promiscua*, R *una mujer infiel* (not *que te será infiel*, which would decide when she became so) |
 | Lo-ruhamah / Ruhamah | L *Lo-ruhama* / *Ruhama*; B and R *No Compadecida* / *Compadecida* (uncertain). The names are not set in quotation marks after *ponle por nombre* [Isaiah 62:4 B, R *Mi Deleite Está en Ella*: capitals on every word] |
 | Lo-ammi / Ammi | L *Lo-ammi* / *Ammi*; B and R *No Es Mi Pueblo* / *Mi Pueblo* (uncertain; the alternative is *No Pueblo Mío*) |
 | Jezreel | *Jezreel* [published] |
@@ -950,7 +950,7 @@ and keeps the metric value the published Swahili already gives the ephah,
 
 | English (Hebrew) | Swahili |
 |---|---|
-| a wife of prostitution (Hosea 1:2) | *mke wa ukahaba* (L); *mke mwasherati* (B); *mke ambaye hatakuwa mwaminifu* (R) |
+| a wife of prostitution (Hosea 1:2) | *mke wa ukahaba* (L); *mke mwasherati* (B); *mwanamke asiye mwaminifu* (R; not *ambaye hatakuwa mwaminifu*, which would decide when she became so) |
 | *zanah* of Israel / of literal prostitution | as Ezekiel: *kufanya ukahaba* (L, B), *kutokuwa mwaminifu* (R); *kuwa kahaba* for literal prostitution |
 | Jezreel; Lo-ruhamah; Lo-ammi (Hosea 1:4, 6, 9) | *Yezreeli* at every level; *Lo-ruhama* (L) / *Asiyehurumiwa* (B, R); *Lo-ami* (L) / *Si Watu Wangu* (B, R). Inside the name, *Wangu* is part of the name and takes no `deity_pronoun` span. 2:3: *Ami*, *Ruhama* (L); *Watu Wangu*, *Aliyehurumiwa* (B, R). 2:25 uses the same names. Romans 9:25 (*si watu wangu*, *watu wangu*) is the allusion |
 | knowledge of God (Hosea 4:1; 6:6) | *kumjua Mungu* at every level. *Maarifa ya Mungu* would read as "God's knowledge" |
@@ -1268,7 +1268,7 @@ the published 45 cm cubit. Where the English converts at the ordinary cubit
 | 4.500; 5.000; 10.000; 18.000; 25.000 cubits | 2,4 km; 2,65 km; 5,3 km; 9,5 km; 13,25 km |
 | ephah = bath (founder's ruling: about 6 gallons) | `{{units:khoảng 22 lít\|một ê-pha}}` / `{{units:khoảng 22 lít\|một bát}}` ✓ (both 22 lít, as published: *ê-pha*, and *bát* in 1 Kings 7:26). A tenth of a bath is *khoảng 2,2 lít*. |
 | homer, kor | `{{units:khoảng 220 lít\|một hô-me}}` for both liquid and grain; *cô-rơ* ✓. "A homer and a lethech of barley" is `{{units:khoảng 330 lít lúa mạch\|một hô-me và một lê-thết lúa mạch}}`. |
-| a hin; a sixth, a third of a hin | `{{units:khoảng 3,6 lít\|một hin}}`; 0,6 lít; 1,2 lít ✓ (the published quarter hin is 0,9 lít) |
+| a hin; a sixth, a third of a hin | `{{units:khoảng 3,7 lít\|một hin}}`; 0,6 lít; 1,2 lít ✓ (the quarter hin is 0,9 lít) |
 | shekels (45:12) | 11,5 g each: twenty shekels is *khoảng 230 g*, fifteen *khoảng 170 g*, twenty-five *khoảng 290 g*, sixty *khoảng 690 g* |
 
 **Daniel**
@@ -1304,7 +1304,7 @@ the published 45 cm cubit. Where the English converts at the ordinary cubit
 
 | English (Hebrew) | Vietnamese |
 |---|---|
-| a wife of prostitution (Hosea 1:2) | *một người vợ đàng điếm* / *một người vợ lăng loàn* / *một người vợ sẽ không chung thủy*. *Zanah* is as in Ezekiel above. |
+| a wife of prostitution (Hosea 1:2) | *một người vợ đàng điếm* / *một người vợ lăng loàn* / *một người đàn bà không chung thủy* (not "sẽ không chung thủy", which would decide when she became so). *Zanah* is as in Ezekiel above. |
 | Jezreel; Lo-ruhamah; Lo-ammi (Hosea 1:4–9) | *Gít-rê-ên* ✓ at every level. L: *Lô-Ru-ha-ma*, *Lô-Am-mi*, with the meaning in a footnote. B, R: ***Không Được Thương Xót***, ***Không Phải Dân Ta***. In 2:3 and 2:25 they become *Am-mi*, *Ru-ha-ma* (L) / *Dân Ta*, *Được Thương Xót* (B, R). The *Ta* inside a name is a capital with no span. |
 | "You are not my people … children of the living God" (Hosea 2:1, 25) | *Các ngươi không phải là dân Ta*; *con cái của Đức Chúa Trời hằng sống* ✓ Romans 9:26 |
 | "My husband" / "My Baal" (Hosea 2:18) | *"Chồng tôi"* / *"Ba-anh của tôi"*. R adds *nghĩa là "Chủ của tôi"*, as the English R does. |
@@ -1514,8 +1514,8 @@ and the angels; *thưa ngài* at R for *'adoni*; *ngươi* through Ezekiel
 
 Known unevenness in the published Vietnamese that drafters should not copy:
 *'arbeh* is *cào cào* in Psalm 105:34 but *châu chấu* in 1 Kings 8:37 (Joel
-uses *châu chấu*). The quarter hin is published as both 0,9 lít and 1 lít
-(Ezekiel uses 3,6 lít for the hin).
+uses *châu chấu*). The hin is 3,7 lít and the quarter hin 0,9 lít everywhere
+(docs/adding-a-language.md, section 10, has the table of measures).
 
 ## Korean
 
@@ -1635,7 +1635,7 @@ This is why "declares the Lord GOD" at B and R below is no longer written the Is
 
 | English (Hebrew) | Korean |
 |---|---|
-| a wife of prostitution (Hos 1:2) | 음행하는 아내 / 음란한 아내 / 신실하지 않을 아내 |
+| a wife of prostitution (Hos 1:2) | 음행하는 아내 / 음란한 아내 / 신실하지 않은 여자 (not "신실하지 않을 아내", which would decide when she became so) |
 | Lo-ruhamah; Lo-ammi; Ruhamah; Ammi | L 로루하마, 로암미, 루하마, 암미 (footnote with the meaning); B, R 긍휼 없음, 내 백성 아님, 긍휼 받음, 내 백성, written as names: 그 아이의 이름을 '긍휼 없음'이라고 하여라. In 1:6, 2:3 and 2:25, B and R use the verb 긍휼히 여기다 so that the name stays linked to it (uncertain). Rom 9:25 has 사랑받지 못하던 여자 from the Greek; the allusion decision notes it |
 | Jezreel | 이스르엘 [Kings] |
 | my husband / my master (2:18) | 내 남편 / 내 주인, with a footnote that *ba'li* is "my Baal" |

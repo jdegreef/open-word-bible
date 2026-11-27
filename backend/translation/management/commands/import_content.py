@@ -73,6 +73,16 @@ IMPORT_VERSION = 1
 DECISION_FIELDS = ("category", "levels", "tokens", "choice", "alternatives", "reason", "uncertain", "footnote")
 
 
+def held_sentences(record_ids):
+    """{sentence pk: record id} for the records the database already holds.
+
+    The import reads a file's renderings and decisions by these keys rather
+    than by joining the sentences: on tables not yet analysed (a first
+    import, a test) the planner takes them for empty and joins with a
+    nested loop over every row, minutes for one file."""
+    return dict(Sentence.objects.filter(record_id__in=record_ids).values_list("pk", "record_id"))
+
+
 class Command(BaseCommand):
     help = "Import the sentence records in content/ into the database."
 
@@ -220,9 +230,10 @@ class Command(BaseCommand):
         database, in one query, before save() replaces them. Returns those
         renderings, {record id: {language: {level: text}}}."""
         before = {}
-        for rid, lang, level, text in (Rendering.objects.filter(sentence__record_id__in=[r["id"] for r in records])
-                                       .values_list("sentence__record_id", "language", "level", "text")):
-            before.setdefault(rid, {}).setdefault(lang, {})[level] = text
+        held = held_sentences([r["id"] for r in records])
+        for sid, lang, level, text in (Rendering.objects.filter(sentence_id__in=held).order_by()
+                                       .values_list("sentence_id", "language", "level", "text")):
+            before.setdefault(held[sid], {}).setdefault(lang, {})[level] = text
         Kind = SentenceChange.Kind
         changes = []
         others = self.decision_changes(records, before)
@@ -265,11 +276,12 @@ class Command(BaseCommand):
         import). A sentence new to a language is listed as drafted instead."""
         ids = [r["id"] for r in records]
         before = {}
-        for row in Decision.objects.filter(sentence__record_id__in=ids).values("sentence__record_id", "key",
-                                                                                "language", *DECISION_FIELDS):
-            before.setdefault(row["sentence__record_id"], {})[row["key"]] = (
+        held = held_sentences(ids)
+        for row in Decision.objects.filter(sentence_id__in=held).order_by().values("sentence_id", "key",
+                                                                                   "language", *DECISION_FIELDS):
+            before.setdefault(held[row["sentence_id"]], {})[row["key"]] = (
                 row["language"], {f: row[f] for f in DECISION_FIELDS})
-        existing = set(Sentence.objects.filter(record_id__in=ids).values_list("record_id", flat=True))
+        existing = set(held.values())
         Kind = RecordChange.Kind
         out = []
         for record in records:
@@ -294,10 +306,51 @@ class Command(BaseCommand):
                                         before=old, after=new))
         return out
 
+    def unchanged(self, records, renderings, editions):
+        """The ids of records the database holds exactly as they are: the
+        sentence's fields, its renderings (renderings: what record_changes
+        read) and its decisions in order. Two queries for the file."""
+        ids = [r["id"] for r in records]
+        held = {row[0]: row[1:] for row in Sentence.objects.filter(record_id__in=ids).values_list(
+            "record_id", "book", "chapter", "verse", "number", "refs", "source_edition_id", "source_text_id",
+            "tokens", "source_text", "literal_gloss", "alignments")}
+        by_pk = held_sentences(ids)
+        decisions = {}
+        for row in (Decision.objects.filter(sentence_id__in=by_pk).order_by()
+                    .values_list("sentence_id", "order", "key", "layer", "language", *DECISION_FIELDS)):
+            decisions.setdefault(by_pk[row[0]], []).append(row[1:])
+        decisions = {rid: [tuple(row[1:]) for row in sorted(rows, key=lambda row: row[0])]
+                     for rid, rows in decisions.items()}
+        same = set()
+        for record in records:
+            if record["id"] not in held:
+                continue
+            first = refs.parse(record["refs"][0])
+            source = record["source"]
+            fields = (first.book, first.chapter, first.verse, int(record["id"].rsplit(".s", 1)[1]), record["refs"],
+                      editions[TEXT_ID_EDITION[source["text_id"]]].id, source["text_id"], source["tokens"],
+                      source.get("text", ""), record["literal_gloss"], record.get("alignments", []))
+            texts = {lang: levels for lang, levels in record["renderings"].items() if levels}
+            mine = [(d["id"], d["layer"], d["language"] or "", *(d.get(f, []) if f == "levels" else d[f]
+                                                                   for f in DECISION_FIELDS))
+                    for d in record["decisions"]]
+            if (held[record["id"]] == fields and renderings.get(record["id"], {}) == texts
+                    and decisions.get(record["id"], []) == mine):
+                same.add(record["id"])
+        return same
+
     def save(self, records, editions):
         """Save one file's records, a handful of queries for the whole file."""
         records = list({r["id"]: r for r in records}.values())
         was = self.record_changes(records)
+        # A record the database already holds exactly as it is is left
+        # alone: rewriting it would mark the sentence saved (updated_at),
+        # and everything kept against the content (the admin's counts, the
+        # review states' comparison) would be counted again for nothing.
+        same = self.unchanged(records, was, editions)
+        records = [r for r in records if r["id"] not in same]
+        if not records:
+            return
         # The drafted counts (DraftedCount) change by what this file adds or
         # drops; what was there comes from record_changes' one query.
         before = Counter((refs.parse(record["refs"][0]).book, lang) for record in records

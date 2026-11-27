@@ -66,6 +66,18 @@ class ConsistencyTest(AdminTestCase):
         unknown = self.grace("?lang=es&level=B&min=1")
         self.assertEqual((unknown["rendered"], unknown["forms"], unknown["other"]["sentences"]), (0, [], 0))
 
+    def test_an_alignment_names_a_form_for_its_language_and_level(self):
+        s, wid = self.made[0]
+        Rendering.objects.filter(sentence=s, language="fr").update(text="la bienveillance")
+        Sentence.objects.filter(id=s.id).update(alignments=[
+            {"language": "fr", "level": "B", "tokens": [wid], "target_span": "bienveillance"},
+            {"language": "fr", "level": "L", "tokens": [wid], "target_span": "charité"},
+            {"language": "en", "level": "B", "tokens": [wid], "target_span": "favour"}])
+        forms = {f["form"] for f in self.grace("?lang=fr&level=B&min=1")["forms"]}
+        self.assertEqual(forms, {"grâce", "bienveillance"})
+        forms = {f["form"] for f in self.grace("?lang=fr&level=R&min=1")["forms"]}
+        self.assertEqual(forms, {"faveur"})
+
     def test_unmatched_sentences_are_other(self):
         Rendering.objects.filter(sentence=self.made[0][0], language="en").update(text="something else")
         grace = self.grace("?lang=en&level=B&min=1&term=grace")
@@ -74,8 +86,11 @@ class ConsistencyTest(AdminTestCase):
 
     def test_cached_until_sentences_change(self):
         self.grace("?lang=en&level=B")
+        # One measurement a language and level serves every term and minimum.
         with mock.patch("staff.consistency.measure", side_effect=AssertionError("measured again")):
             self.grace("?lang=en&level=B")
+            self.grace("?lang=en&level=B&term=grace&min=3")
+            self.grace("?lang=en&level=B&min=1")
         Sentence.objects.get(id=self.made[0][0].id).save()
         with mock.patch("staff.consistency.measure", return_value={"terms": []}) as measure:
             self.admin.get("/api/admin/consistency/?lang=en&level=B")

@@ -1,15 +1,21 @@
 """The admin's content checks (staff/checks.py): footnotes whose verse words
 the alternative, and verses and glossary rows at odds with a language's
 terms glossary."""
+import io
 import os
 import tempfile
+import time
 from pathlib import Path
 from unittest import mock
+
+from django.core.cache import cache
+from django.core.management import CommandError, call_command
 
 from accounts.models import Role
 from owb import content_checks as cc
 from owb import notes
 from staff import checks
+from staff.models import ChecksAnswer
 from translation.models import Decision, Rendering, Sentence
 
 from .test_admin import AdminTestCase, account, client_for, sentence
@@ -36,7 +42,10 @@ CHOICE = "I will hold innocent their blood: I will vindicate it"
 ALTERNATIVES = ["the Greek translation: \"I will avenge their blood\""]
 
 
-class ChecksTest(AdminTestCase):
+class ChecksBase(AdminTestCase):
+    """Two sentences in English and Indonesian, a footnoted decision, its
+    translated note and an Indonesian glossary."""
+
     def setUp(self):
         super().setUp()
         s = sentence("JOL.4.21.s1", ("en", "id"))
@@ -70,6 +79,8 @@ class ChecksTest(AdminTestCase):
         self.assertEqual(response.status_code, 200, response.content)
         return response.json()
 
+
+class ChecksTest(ChecksBase):
     def test_note_mismatches(self):
         d = self.get("?lang=id")
         self.assertEqual(d["language"], "id")
@@ -129,3 +140,85 @@ class ChecksTest(AdminTestCase):
             path.write_text('{"a": 22}')
             os.utime(path, ns=(1, 1))
             self.assertNotEqual(checks._files_stamp("id"), before)
+
+
+EMPTY = {"notes": {"total": 0, "kinds": {}, "hits": []},
+         "glossary": {"file": None, "verses": {"total": 0, "kinds": {}, "hits": []}, "rows": []}}
+
+
+class KeptAnswerTest(ChecksBase):
+    """The answer kept in the database (precompute_checks, or a request that
+    measured), which outlives the cache being emptied."""
+
+    def test_a_request_keeps_its_answer_in_the_database(self):
+        cache.clear()
+        d = self.get("?lang=id")
+        row = ChecksAnswer.objects.get(language="id")
+        self.assertEqual(row.stamp, checks.content_stamp("id"))
+        self.assertEqual(row.answer["notes"]["total"], d["notes"]["total"])
+
+    def test_reads_the_kept_answer_when_the_cache_is_empty(self):
+        checks.precompute("id")
+        cache.clear()
+        with mock.patch("staff.checks.measure", side_effect=AssertionError("measured again")):
+            d = self.get("?lang=id")
+        self.assertEqual(d["notes"]["total"], 1)
+        self.assertEqual(d["language"], "id")
+        # And puts it back in the cache.
+        self.assertIsNotNone(cache.get(f"staff.checks.id.{checks.content_stamp('id')}"))
+
+    def test_measures_again_once_the_content_has_changed(self):
+        checks.precompute("id")
+        cache.clear()
+        Sentence.objects.get(id=self.sentence.id).save()
+        with mock.patch("staff.checks.measure", return_value=EMPTY) as measure:
+            self.assertEqual(self.get("?lang=id")["notes"]["total"], 0)
+        measure.assert_called_once_with("id")
+        row = ChecksAnswer.objects.get(language="id")
+        self.assertEqual((row.stamp, row.answer), (checks.content_stamp("id"), EMPTY))
+        self.assertEqual(ChecksAnswer.objects.filter(language="id").count(), 1)
+
+
+class PrecomputeChecksTest(ChecksBase):
+    def run_command(self, *args, **options):
+        out = io.StringIO()
+        call_command("precompute_checks", *args, stdout=out, **options)
+        return out.getvalue()
+
+    def test_measures_every_reading_language_then_only_what_changed(self):
+        out = self.run_command()
+        n = len(checks.languages.READING)
+        self.assertIn(f"Content checks: {n} measured, 0 already current", out)
+        self.assertEqual(set(ChecksAnswer.objects.values_list("language", flat=True)),
+                         set(checks.languages.READING))
+        self.assertEqual(ChecksAnswer.objects.get(language="id").answer["notes"]["total"], 1)
+        with mock.patch("staff.checks.measure", side_effect=AssertionError("measured again")):
+            self.assertIn(f"0 measured, {n} already current", self.run_command())
+        # A sentence changed: every language is measured again.
+        Sentence.objects.get(id=self.sentence.id).save()
+        with mock.patch("staff.checks.measure", return_value=EMPTY) as measure:
+            self.assertIn(f"{n} measured, 0 already current", self.run_command())
+        self.assertEqual(measure.call_count, n)
+        self.assertEqual(ChecksAnswer.objects.count(), n)
+
+    def test_languages_force_and_the_deadline(self):
+        self.run_command(lang=["id", "en"])
+        self.assertEqual(set(ChecksAnswer.objects.values_list("language", flat=True)), {"id", "en"})
+        with mock.patch("staff.checks.measure", return_value=EMPTY) as measure:
+            self.assertIn("1 measured", self.run_command(lang=["id"], force=True))
+        measure.assert_called_once_with("id")
+        out = self.run_command(deadline=time.time() - 1)
+        self.assertIn("Stopped at the deadline before en", out)
+        with self.assertRaises(CommandError):
+            self.run_command(lang=["xx"])
+
+    def test_a_failing_language_does_not_stop_the_rest(self):
+        def measure(lang):
+            if lang == "es":
+                raise RuntimeError("broken")
+            return EMPTY
+        with mock.patch("staff.checks.measure", side_effect=measure):
+            out = self.run_command(lang=["es", "id"])
+        self.assertIn("FAIL es: RuntimeError: broken", out)
+        self.assertIn("1 measured, 0 already current, 1 failed", out)
+        self.assertEqual(list(ChecksAnswer.objects.values_list("language", flat=True)), ["id"])

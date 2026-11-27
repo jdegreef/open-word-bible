@@ -263,7 +263,7 @@ form.admin-toolbar, .admin-toolbar.admin-filters { justify-content: flex-start; 
 /* A section that couldn't be drawn (admin.js errorPanel). */
 :root { --admin-danger: #a63a29; --admin-good: #2f7a45; }
 :root[data-theme="dark"], :root[data-theme="night"] { --admin-danger: #f0a093; --admin-good: #8fd19e; }
-@media (prefers-color-scheme: dark) { :root[data-theme="auto"] { --admin-danger: #f0a093; --admin-good: #8fd19e; } }
+@media (prefers-color-scheme: dark) { :root:not([data-theme]), :root[data-theme="auto"] { --admin-danger: #f0a093; --admin-good: #8fd19e; } }
 .admin-error { border: 1px solid var(--admin-danger); background: color-mix(in srgb, var(--admin-danger) 8%, var(--surface)); border-radius: var(--radius); padding: 16px 18px; display: grid; gap: 10px; max-width: 70ch; }
 .admin-error h2 { margin: 0; font-size: 18px; color: var(--admin-danger); }
 .admin-error p { margin: 0; }

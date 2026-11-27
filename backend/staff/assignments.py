@@ -33,7 +33,8 @@ from owb import languages, refs
 from texts.models import Verse
 
 from .models import ReviewAssignment, record
-from .permissions import admin_view, is_super_admin
+from . import people
+from .permissions import admin_view
 from .review import STATES, _in_layer, _scope, layer_json
 
 K = Role.Kind
@@ -92,7 +93,7 @@ def range_label(a):
 
 
 def _person(user):
-    return {"id": user.id, "email": user.username, "name": user.get_full_name() or user.username} if user else None
+    return people.person(user)
 
 
 def assignment_json(a, today=None, counts=None):
@@ -126,24 +127,21 @@ def attention(user):
 
 
 def reviews(user, layer):
-    """Whether user holds a role that reviews layer."""
-    if is_super_admin(user):
-        return True
+    """Whether user holds a role that reviews layer (a super admin too
+    needs one: review.reviewing)."""
     kind = K.SCHOLAR_REVIEWER if layer in languages.ORIGINAL else K.LANGUAGE_REVIEWER
     return user.roles.filter(kind=kind, language=layer).exists()
 
 
 def reviewers():
-    """Everyone who reviews something: [{id, email, name, layers: [codes]
-    or "any"}]."""
+    """Everyone who reviews something: [{id, email, name, layers: [codes]}].
+    A super admin is one of them only through a reviewer role."""
     User = get_user_model()
     out = []
-    for u in (User.objects.filter(roles__kind__in=[K.SUPER_ADMIN, K.SCHOLAR_REVIEWER, K.LANGUAGE_REVIEWER])
+    for u in (User.objects.filter(roles__kind__in=[K.SCHOLAR_REVIEWER, K.LANGUAGE_REVIEWER])
               .distinct().prefetch_related("roles").order_by("username")):
-        kinds = {r.kind for r in u.roles.all()}
         codes = [r.language for r in u.roles.all() if r.kind in (K.SCHOLAR_REVIEWER, K.LANGUAGE_REVIEWER)]
-        out.append({**_person(u), "layers": "any" if K.SUPER_ADMIN in kinds
-                    else [c for c in EVERY_LAYER if c in codes]})
+        out.append({**_person(u), "layers": [c for c in EVERY_LAYER if c in codes]})
     return out
 
 
@@ -189,9 +187,15 @@ def _due(data):
     if value in (None, ""):
         return None
     try:
-        return datetime.date.fromisoformat(str(value))
+        due = datetime.date.fromisoformat(str(value))
     except ValueError:
         raise ValidationError({"due": "Give the date as YYYY-MM-DD.", "code": "invalid_date"})
+    # A date typed digit by digit can be sent part-way ("0001-12-01"): a due
+    # date is within a few years of today, or it's a slip.
+    today = timezone.localdate()
+    if not today.replace(year=today.year - 1) <= due <= today.replace(year=today.year + 10):
+        raise ValidationError({"due": "Give a date from last year to ten years from now.", "code": "invalid_date"})
+    return due
 
 
 def _note(data):
@@ -224,7 +228,7 @@ def _assign(request):
     if assignee is None:
         raise ValidationError({"assignee": "Choose a reviewer.", "code": "invalid_assignee"})
     if not reviews(assignee, layer):
-        raise ValidationError({"assignee": f"{assignee.username} doesn't review {layer_json(layer)['name']}.",
+        raise ValidationError({"assignee": f"{people.name(assignee)} doesn't review {layer_json(layer)['name']}.",
                                "code": "not_a_reviewer"})
     a = ReviewAssignment.objects.create(layer=layer, book=book, chapter_from=lo, chapter_to=hi, assignee=assignee,
                                         assigned_by=request.user, due=_due(data), note=_note(data))

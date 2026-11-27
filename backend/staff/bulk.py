@@ -7,7 +7,9 @@ POST /api/admin/review/bulk/  {layer, action: "approve", chapter: "JHN.3"}
         approve the rest of a chapter: its sentences in the layer that are
         not reviewed or changed since approval (flagged ones are left for
         a reviewer to look at one by one)
-        dry_run: true answers what would be done, saving nothing
+        dry_run: true answers what would be done, saving nothing, with each
+        sentence's digest; sent back as seen: {record: digest}, a sentence
+        that has changed since then stops the whole approval (409 "changed")
 
 Each sentence goes through the same steps as the single action
 (staff/review.py apply): the layer must be one the reviewer reviews and
@@ -64,6 +66,8 @@ def bulk(request):
         layer = review._layer(str(data.get("layer") or ""), review.layers(request.user))
     except review._Forbidden as e:
         return review._forbidden(e)
+    if layer not in review.reviewing(request.user):   # bulk is approving and flagging
+        return review._forbidden(review.NOT_A_REVIEWER)
     action = data.get("action")
     if action not in ("approve", "flag"):
         raise ValidationError({"action": "Choose approve or flag.", "code": "invalid_action"})
@@ -117,11 +121,22 @@ def bulk(request):
     if data.get("dry_run"):
         return Response({"layer": review.layer_json(layer), "applied": 0, "skipped": len(sentences) - len(todo),
                          "results": [_row(s, result="would_apply" if s in todo else "skipped",
-                                          state=before.get(s.id, "not_reviewed")) for s in sentences]})
+                                          state=before.get(s.id, "not_reviewed"),
+                                          **({"digest": review.digest(s, layer)} if s in todo else {}))
+                                     for s in sentences]})
+    seen = data.get("seen") if action == "approve" else None
+    if seen is not None and not (isinstance(seen, dict) and all(isinstance(v, str) for v in seen.values())):
+        raise ValidationError({"seen": "Send the digests the preview gave, by record.", "code": "invalid"})
     events = {}
-    with transaction.atomic():
-        for s in todo:
-            events[s.id] = review.apply(request.user, s, layer, action, note)
+    try:
+        with transaction.atomic():
+            for s in todo:
+                events[s.id] = review.apply(request.user, s, layer, action, note,
+                                            seen=seen.get(s.record_id) if seen else None)
+    except review.Changed:
+        return Response({"detail": f"{verse_label(s.refs[0])} changed after the preview, so nothing was approved. "
+                                   "Preview again to see what is there now.", "code": "changed",
+                         "record": s.record_id}, status=status.HTTP_409_CONFLICT)
     after = dict(ReviewState.objects.filter(layer=layer, sentence__in=sentences).values_list("sentence_id", "state"))
     results = []
     for s in sentences:
