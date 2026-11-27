@@ -661,7 +661,9 @@ services:
 
   # Imports content/ into the database and updates search, every hour
   # (backend/import_job.sh): what owb-api's pre-deploy used to do on every
-  # deploy. It then opens the admin's slow pages once (warm_admin). A run with nothing changed takes a minute or so; one after a
+  # deploy. It then measures each language's content checks for the admin
+  # (precompute_checks) and opens the admin's slow pages once (warm_admin).
+  # A run with nothing changed takes a minute or so; one after a
   # big merge may take most of the hour, and leaves what it could not
   # finish for the next. Billed by the minute it runs, at the plan's rate,
   # rather than as pipeline minutes. Standard (2 GB) for the search

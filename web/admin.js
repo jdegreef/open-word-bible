@@ -1293,7 +1293,8 @@
       card.appendChild(status);
       function assignee(status) {
         var pick = select("assign-" + m.id, [["", "Nobody"]].concat((team || []).map(function (u) {
-          return [String(u.id), (u.name ? u.name + " (" + u.email + ")" : u.email) + (u.email === ME.email ? " — you" : "")];
+          // An address only for a super admin, or one's own (staff/people.py).
+          return [String(u.id), (u.email && u.email !== u.name ? u.name + " (" + u.email + ")" : u.name) + (u.email === ME.email ? " — you" : "")];
         })), m.assigned_to ? String(m.assigned_to.id) : "");
         pick.addEventListener("change", function () {
           update({ assigned_to: pick.value ? Number(pick.value) : null }).catch(function (e) {
@@ -1849,7 +1850,7 @@
   function assignmentsManager(d, status) {
     var people = d.reviewers || [];
     var reviewerSel = select("assign-reviewer", people.map(function (p) {
-      return [String(p.id), p.name === p.email ? p.email : p.name + " (" + p.email + ")"];
+      return [String(p.id), p.email && p.email !== p.name ? p.name + " (" + p.email + ")" : p.name];
     }), people.length ? String(people[0].id) : "");
     var layerSel = h("select", { id: "assign-layer" });
     var bookSel = h("select", { id: "assign-book" });
@@ -1903,11 +1904,24 @@
     }
     function row(a) {
       var dueIn = h("input", { type: "date", value: a.due || "", "aria-label": "Due date for " + a.label });
-      dueIn.addEventListener("change", function () { patch(a, { due: dueIn.value }); });
+      // Saved on leaving the field (or Enter), not on "change": typing a
+      // date digit by digit is a valid date part-way ("0001-12-01").
+      function saveDue() {
+        var v = dueIn.value;
+        if (v === (a.due || "")) return;
+        if (v && Number(v.slice(0, 4)) < 2000) {
+          dueIn.value = a.due || "";
+          note(status, "That date looks unfinished, so it wasn't saved. Type the whole date.", true);
+          return;
+        }
+        patch(a, { due: v });
+      }
+      dueIn.addEventListener("blur", saveDue);
+      dueIn.addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); saveDue(); } });
       var close = h("button", { type: "button", class: "admin-link" }, a.closed_at ? "Reopen" : "Close");
       close.addEventListener("click", function () { busy(close, true); patch(a, { closed: !a.closed_at }, close); });
       return h("tr", null,
-        h("td", null, a.assignee.name, a.assignee.name !== a.assignee.email ? h("div", { class: "admin-sub" }, a.assignee.email) : null),
+        h("td", null, a.assignee.name, a.assignee.email && a.assignee.name !== a.assignee.email ? h("div", { class: "admin-sub" }, a.assignee.email) : null),
         h("td", null, a.layer.name),
         h("td", null, a.label, a.note ? h("div", { class: "admin-sub" }, a.note) : null),
         h("td", null, bar(a.progress.approved, a.progress.total), h("div", { class: "admin-sub" }, progressText(a.progress))),

@@ -6,12 +6,17 @@ one list to keep.
     python3 scripts/build_site.py
     python3 scripts/cloudflare_config.py [site]
 
+Also writes site/_worker/headers.json, the headers of every page ("/*"),
+for the pages cloudflare/worker.js draws: Cloudflare sends _headers with
+files only.
+
 Reads render.yaml with a small parser for the one shape used there (as
 tests/test_headers.py does), so CI needs no YAML library. Fails if
 Cloudflare's limits would be passed: 100 header rules, 2,000 characters a
 header line, 2,000 static redirects.
 """
 import argparse
+import json
 import re
 import sys
 from pathlib import Path
@@ -88,6 +93,8 @@ def main():
     out = Path(args.site)
     (out / "_headers").write_text(headers_file(rules), encoding="utf-8")
     (out / "_redirects").write_text(redirects_file(routes), encoding="utf-8")
+    (out / "_worker").mkdir(exist_ok=True)
+    (out / "_worker" / "headers.json").write_text(json.dumps(dict(rules).get("/*", [])), encoding="utf-8")
     print(f"{len(rules)} header rules, {len(routes)} redirects written to {out}")
 
 

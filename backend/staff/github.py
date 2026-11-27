@@ -15,6 +15,8 @@ import urllib.request
 from django.conf import settings
 from django.core.cache import cache
 
+from . import kept
+
 log = logging.getLogger(__name__)
 
 
@@ -68,4 +70,5 @@ def _request(url, method, body):
     if method != "GET":
         # An issue filed or changed: the rail's counts (staff/attention.py) ask again.
         cache.delete("staff.attention.github")
+        kept.forget_lists()   # the open lists the admin keeps
     return answer, link[1] if link else None

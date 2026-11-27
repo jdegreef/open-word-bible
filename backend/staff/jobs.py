@@ -40,7 +40,7 @@ from rest_framework.response import Response
 
 from owb import languages, refs
 
-from . import github
+from . import github, kept, people
 from .github import GitHubError
 from .models import record
 from .permissions import admin_view
@@ -101,7 +101,9 @@ def jobs(request):
               "books": [{**b, "testament": "ot" if b["code"] in refs.OT_CODES else "nt"} for b in books],
               "languages": langs, "coverage": coverage, "bulk_limit": BULK_LIMIT}
     try:
-        answer["jobs"] = open_jobs()
+        # Kept (two minutes); filing reads the open jobs afresh to refuse a
+        # duplicate.
+        answer["jobs"] = kept.kept("staff.kept.jobs", open_jobs, 120)
     except GitHubError:
         answer["jobs"], answer["error"] = [], "GitHub could not be reached, so open jobs aren't listed."
     answer["board"] = _board(coverage, answer["jobs"])
@@ -184,7 +186,7 @@ def _file_issue(user, book, wanted, coverage, note, bulk=False):
               "first, draft as `ai_draft` only, and open one pull request per book and language."]
     if note:
         lines += ["", "**Note from the admin:**", "", note]
-    lines += ["", f"Filed from the admin by {user.username}.", "",
+    lines += ["", f"Filed from the admin by {people.public_name(user)}.", "",
               "<!-- drafting-job " + json.dumps({"book": book, "languages": wanted}) + " -->"]
     issue = github.call("issues", "POST", {"title": f"Draft {book_name(book)} in {names}",
                                        "body": "\n".join(lines), "labels": [LABEL]})

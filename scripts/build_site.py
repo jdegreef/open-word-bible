@@ -72,6 +72,15 @@ SITE_NAME = "Open Word Bible"
 # The site's home (Render serves it on openwordbible.org and redirects www).
 # Canonical links, the sitemap and link previews use it.
 SITE_URL = "https://openwordbible.org"
+# On Cloudflare (cloudflare/worker.js), a Worker draws the pages a static
+# site has no room for: every verse's page in every language, and each
+# chapter at its Literal and Readable levels (WORKER_LANGS). Static files
+# could not hold them (some 430,000 pages, past Cloudflare's 100,000 files a
+# version). With OWB_WORKER_PAGES=1 (CI's build, which deploys to
+# Cloudflare) the build links to them, lists them in the sitemaps and writes
+# what the Worker draws them from (worker_files); without it (Render, which
+# cannot run the Worker) none of that is there and pages are as before.
+WORKER_PAGES = os.environ.get("OWB_WORKER_PAGES") == "1"
 GITHUB_URL = "https://github.com/jdegreef/open-word-bible"
 # The Django API (backend/), for accounts and search. OWB_API_URL points a
 # local build at a local API.
@@ -234,7 +243,8 @@ def served_web_file(name):
 
 # Colour modes (see web/style.css and web/site.js): value, and the
 # background and accent its swatch shows. Labels are in i18n/ (theme.*).
-# "light" (Paper) is the default; "auto" follows the device.
+# "auto" (follow the device: Paper by day, Lamplight by night) is the
+# default; "light" keeps Paper whatever the device says.
 COLOUR_MODES = (("auto", "#faf6ef", "#16130f"),
                 ("light", "#faf6ef", "#3f3d9a"),
                 ("sepia", "#f4ecd8", "#3f3d9a"),
@@ -515,7 +525,7 @@ def colour_prefs(lang):
                 f'<div role="radiogroup" aria-labelledby="prefs-{pref}" data-pref="{pref}" data-default="{default}">'
                 + "".join(option(v, default, face, name) for v, face, name in options) + '</div>')
 
-    theme = group("theme", t(lang, "tools.theme"), "light", [
+    theme = group("theme", t(lang, "tools.theme"), "auto", [
         (v, f'<span class="swatch" style="--sw-bg:{bg};--sw-accent:{accent}" aria-hidden="true"></span>',
          t(lang, "theme." + v)) for v, bg, accent in COLOUR_MODES])
     def sample(pref, value):
@@ -573,7 +583,8 @@ def og_locale(lang):
 
 
 def page(lang, title, body, path=None, current="", description="", card="site", card_alt=None,
-         translated=LANGUAGES, unlisted=None, head="", alternates=None, indexed=True, og=None, foot=""):
+         translated=LANGUAGES, unlisted=None, head="", alternates=None, indexed=True, og=None, foot="",
+         slim_footer=False):
     """A full HTML page in lang. path is the page's URL path without the
     language ("/read/"); pages with one get a canonical link, hreflang links
     to the page in each language in translated (the languages it exists in),
@@ -661,7 +672,7 @@ def page(lang, title, body, path=None, current="", description="", card="site", 
 <main class="wrap" id="main" tabindex="-1">
 {body}
 </main>
-{site_footer(lang, here, translated, alternates, foot)}
+{site_footer(lang, here, translated, alternates, foot, slim_footer)}
 {palette(lang)}
 </body>
 </html>
@@ -1024,15 +1035,18 @@ def review_share(lang):
 
 
 def review_status(lang):
-    """The footer's review line: the share of lang's sentences a named
-    reviewer has approved, as a bar and a count, and an invitation to help."""
+    """The footer's review line: what review means, the share of lang's
+    sentences a named reviewer has approved as a bar and a count, and an
+    invitation to help. The bar shows once there is something on it: an
+    empty bar on every page read as a failure rather than as the state of
+    a draft (the line above already says nothing is reviewed yet)."""
     total, approved = review_share(lang)
     pct = 100 * approved // total if total else 0
     pct = max(pct, 1) if approved else pct
+    meter = (f'<p class="foot-meter"><span class="foot-bar" aria-hidden="true"><i style="width:{pct}%"></i></span>'
+             f'<span>{t(lang, "footer.reviewed", pct=pct)}</span></p>') if approved else ""
     return (f'<div class="foot-review"><p>{t(lang, "footer.review")}</p>'
-            f'<p class="foot-meter"><span class="foot-bar" aria-hidden="true"><i style="width:{pct}%"></i></span>'
-            f'<span>{t(lang, "footer.reviewed", pct=pct)}</span></p>'
-            f'<p><a class="foot-reviewer" href="{url(lang, "/#help")}">{t(lang, "footer.reviewer_ask")}'
+            f'{meter}<p><a class="foot-reviewer" href="{url(lang, "/#help")}">{t(lang, "footer.reviewer_ask")}'
             f'{icon(ICONS["arrow"], 15)}</a></p></div>')
 
 
@@ -1108,25 +1122,19 @@ def chapter_in_languages(book, chapter, lang, complete):
             f'<p class="foot-chapter-langs">{links}</p></div>')
 
 
-def site_footer(lang, path=None, translated=LANGUAGES, alternates=None, foot=""):
+def site_footer(lang, path=None, translated=LANGUAGES, alternates=None, foot="", slim=False):
     """The footer on every page: on a chapter page, the chapter in the other
     languages (foot); the project and a box to go to a passage; the books;
     the first articles to read, the project's links and the language
     switch; then the review status and the licences. Its columns fold on a
     phone. After it, a line for print only: where the page was printed
-    from, its status and its licence."""
+    from, its status and its licence. A slim footer (chapter pages) leaves
+    out the passage box and the books: the reader has its own Go to and
+    chapter picker, and the full footer ran to three phone screens."""
     home = url(lang, "/")
     placeholder = html.escape(catalog(lang)["search.ui"]["palette_placeholder"])
     address = f'{SITE_URL.split("://")[-1]}{url(lang, path) if path is not None else ""}'
-    return f"""<footer class="site"><div class="wrap">
-{foot}<div class="foot-top">
-<div class="foot-about">
-<a class="brand" href="{home}">{mark_use()}<span class="brand-name">Open Word <em>Bible</em></span></a>
-<p>{t(lang, "footer.tagline")}</p>
-<details class="foot-licence"><summary><span class="pill">CC0</span> {t(lang, "footer.licence")}</summary>
-<p>{t(lang, "footer.cc0_more")} <a href="{CC0_DEED}" rel="license">{t(lang, "footer.cc0_deed")}</a></p></details>
-</div>
-<div class="foot-find">
+    find = "" if slim else f"""<div class="foot-find">
 <h2 id="foot-find">{t(lang, "footer.find")}</h2>
 <form class="foot-search" action="{url(lang, "/search/")}" method="get" role="search" aria-labelledby="foot-find">
 <span class="foot-q"><input type="search" name="q" id="foot-q" autocomplete="off" spellcheck="false" enterkeyhint="go" placeholder="{placeholder}" aria-labelledby="foot-find" aria-keyshortcuts="/">
@@ -1136,8 +1144,18 @@ def site_footer(lang, path=None, translated=LANGUAGES, alternates=None, foot="")
 <p class="foot-recent" hidden><span>{t(lang, "footer.recent")}</span></p>
 {resume_link(lang, "foot-resume")}
 </div>
+"""
+    books = "" if slim else book_index(lang)
+    return f"""<footer class="site{' slim' if slim else ''}"><div class="wrap">
+{foot}<div class="foot-top">
+<div class="foot-about">
+<a class="brand" href="{home}">{mark_use()}<span class="brand-name">Open Word <em>Bible</em></span></a>
+<p>{t(lang, "footer.tagline")}</p>
+<details class="foot-licence"><summary><span class="pill">CC0</span> {t(lang, "footer.licence")}</summary>
+<p>{t(lang, "footer.cc0_more")} <a href="{CC0_DEED}" rel="license">{t(lang, "footer.cc0_deed")}</a></p></details>
 </div>
-{book_index(lang)}
+{find}</div>
+{books}
 <div class="foot-grid">
 {footer_links(lang)}
 {language_links(lang, path, translated, alternates)}
@@ -2297,7 +2315,11 @@ def chapter_shared(book, chapter):
     source = source_language(book)
     text, digest = shared_script("OWB_CHAPTER", {
         "records": [{**{k: v for k, v in r.items() if k not in ("renderings", "links")},
-                     "decisions": [d for d in r["decisions"] if d["language"] is None]} for r in records],
+                     "decisions": [d for d in r["decisions"] if d["language"] is None],
+                     # The languages it is in, for the Worker's verse pages
+                     # (a verse's page is in each language all its sentences are).
+                     **({"languages": [c for c in LANGUAGES if c in r["renderings"]]} if WORKER_PAGES else {})}
+                    for r in records],
         "words": {vid: transliterated(words[vid], source) for r in records for vid in r["refs"]},
         "crossrefs": chapter_crossrefs(records)})
     return text, f"{chapter_data_path(book, chapter)}?v={digest}"
@@ -2516,7 +2538,7 @@ def chapter_page(book, chapter, lang="en"):
     # The verses with a page of their own, by number as shown: their
     # numbers link to it, here and as reader.js draws them (versePages).
     data["versePages"] = {str(refs.parse(vid).verse): url(lang, verse_page_url(vid))
-                          for vid in verse_pages_in_chapter(book, chapter) if lang in verse_page_languages(vid)}
+                          for vid in chapter_verse_pages(book, chapter, lang)}
     text = chapter_text(records, chapter, data["paragraphs"], data["disputed"], lang, data["versePages"])
     own_texts = "".join(f'<script src="{chapter_language_data(book, chapter, code)[1]}"></script>\n'
                         for code in page_texts(records, lang))
@@ -2645,7 +2667,7 @@ def chapter_page(book, chapter, lang="en"):
                 description=shorten(summary) if summary else t(lang, "meta.chapter_description" + suffix, title=title),
                 alternates=complete, indexed=lang in complete,
                 head=markdown_alternate(chapter_url(book, chapter), lang) if lang in complete else "",
-                foot=chapter_in_languages(book, chapter, lang, complete))
+                foot=chapter_in_languages(book, chapter, lang, complete), slim_footer=True)
 
 
 # How many cross-references of each verse the chapter page lists as links
@@ -2917,6 +2939,28 @@ def verse_page_url(vid):
     return f"/{ref.book.lower()}/{ref.chapter}/{ref.verse}/"
 
 
+# A chapter at its Literal and Readable levels, each a page of its own that
+# the Worker draws (WORKER_PAGES): "John 3 in easy-to-read English" and "John
+# 3, word for word" are searches of their own, and the texts differ, so each
+# is indexed. The chapter's own page is its Balanced text; its level control
+# stays a setting.
+LEVEL_PATHS = {"L": "literal", "R": "readable"}
+
+
+def level_page_url(book, chapter, level):
+    return f"{chapter_url(book, chapter)}{LEVEL_PATHS[level]}/"
+
+
+def level_page_links(book, chapter, lang):
+    """Under a chapter wholly in lang: links to it at the other levels."""
+    if not WORKER_PAGES or not chapter_indexed(book, chapter, lang):
+        return ""
+    names = catalog(lang)["levels"]
+    links = " ".join(f'<a href="{url(lang, level_page_url(book, chapter, code))}">{html.escape(names[code])}</a>'
+                     for code in LEVEL_PATHS)
+    return f'<p class="level-pages">{catalog(lang)["level_page"]["links"]} {links}</p>'
+
+
 def verse_records(vid):
     """The records with a sentence in a verse."""
     ref = refs.parse(vid)
@@ -2933,6 +2977,36 @@ def verse_page_languages(vid):
     if vid in verse_of_the_day_ids():
         return langs
     return tuple(code for code in langs if code == "en")
+
+
+@functools.cache
+def chapter_verse_languages(book, chapter):
+    """{verse id: the languages every sentence of it is in} for a chapter's
+    own verses, in reading order: the languages the Worker draws its page
+    in (WORKER_PAGES)."""
+    out = {}
+    for r in chapter_records(book, chapter):
+        for vid in r["refs"]:
+            if refs.parse(vid).chapter == chapter:
+                have = set(r["renderings"])
+                out[vid] = have if vid not in out else out[vid] & have
+    return {vid: tuple(code for code in LANGUAGES if code in have) for vid, have in out.items()}
+
+
+def verse_languages(vid):
+    """The languages a verse has a page in: built (verse_page_languages),
+    or with WORKER_PAGES, drawn by the Worker in every language it is in."""
+    if not WORKER_PAGES:
+        return verse_page_languages(vid)
+    ref = refs.parse(vid)
+    return chapter_verse_languages(ref.book, ref.chapter).get(vid, ())
+
+
+def chapter_verse_pages(book, chapter, lang):
+    """The verses of a chapter with a page in lang, in order."""
+    if WORKER_PAGES:
+        return [vid for vid, langs in chapter_verse_languages(book, chapter).items() if lang in langs]
+    return [vid for vid in verse_pages_in_chapter(book, chapter) if lang in verse_page_languages(vid)]
 
 
 def verse_levels(vid, lang):
@@ -2960,7 +3034,11 @@ def verse_pages_in_chapter(book, chapter):
 
 def verse_page_links(book, chapter, lang):
     """Under a chapter: links to the pages of its verses that have one."""
-    vids = [vid for vid in verse_pages_in_chapter(book, chapter) if lang in verse_page_languages(vid)]
+    # With every verse a page (WORKER_PAGES), every verse number links to
+    # one, and the chapter links its Literal and Readable pages instead.
+    if WORKER_PAGES:
+        return level_page_links(book, chapter, lang)
+    vids = chapter_verse_pages(book, chapter, lang)
     if not vids:
         return ""
     links = " ".join(f'<a href="{url(lang, verse_page_url(vid))}">{html.escape(verse_ref_name(vid, lang))}</a>'
@@ -3043,7 +3121,7 @@ def verse_page(vid, lang="en"):
     chapter_link = url(lang, chapter_url(book, chapter)) + f"#v{ref.verse}"
     # The chapter's other verse pages before and after this one, so each is
     # linked from its neighbours as well as from its chapter.
-    near = [v for v in verse_pages_in_chapter(book, chapter) if lang in verse_page_languages(v)]
+    near = chapter_verse_pages(book, chapter, lang)
     at = near.index(vid)
     turns = "".join(f'<a class="button ghost" href="{url(lang, verse_page_url(v))}" rel="{rel}">{esc(verse_ref_name(v, lang))}</a>'
                     for v, rel in ((near[at - 1] if at else None, "prev"),
@@ -3074,7 +3152,8 @@ def verse_page(vid, lang="en"):
     return page(lang, ui["title" + suffix].format(ref=name), body, path=verse_page_url(vid), current="/read/",
                 description=shorten(f"{name}: {levels.get('B', '')}") if levels.get("B")
                 else ui["description" + suffix].format(ref=name),
-                translated=verse_page_languages(vid), head=markdown_alternate(verse_page_url(vid), lang))
+                card=og_card_chapter(book, chapter), translated=verse_languages(vid),
+                head=markdown_alternate(verse_page_url(vid), lang) if vid in verse_page_ids() else "")
 
 
 # Plain Markdown copies of the English chapter and verse pages, beside each
@@ -4359,6 +4438,128 @@ def verse_files():
             entry.setdefault("c", {}).setdefault(code, {})[str(ref.verse)] = text
     return {f"{VERSES_DIR}/{book}/{chapter}.json": json.dumps(entry, ensure_ascii=False, separators=(",", ":"))
             for (book, chapter), entry in by_chapter.items()}
+
+
+# What the Worker (cloudflare/worker.js, WORKER_PAGES) draws its pages
+# from, besides the chapter data, verse files and chapter pages it reads
+# like the reader does: each language's page shell (a page with slots for
+# the title, description, address and body, so its header, footer and menus
+# are the build's own), each language's words and names, and what is the
+# same in every language.
+WORKER_DIR = "_worker"
+WORKER_SLOTS = {"title": "OWBSLOTTITLE", "description": "OWBSLOTDESC", "body": "OWBSLOTBODY", "path": "OWBPATH"}
+
+
+def worker_shell(lang):
+    s = WORKER_SLOTS
+    return page(lang, s["title"], s["body"], path=f"/{s['path']}/", current="/read/", description=s["description"])
+
+
+def worker_language(lang):
+    """A language's words for the Worker's pages."""
+    c = catalog(lang)
+    return {"ui": c["verse_page"], "cui": c["compare.ui"], "levels": c["levels"], "levelPage": c["level_page"],
+            "forward": forward(lang), "notTranslated": t(lang, "footer.not_translated"),
+            "books": {b: chapter_book(b, lang) for b, _ in books()},
+            "crumbs": {b: book_crumbs(b, lang) for b, _ in books()},
+            "chapters": {f"{b}.{ch}": chapter_name(load_chapter(b, ch)[0], b, ch, lang) for b, ch in chapters()},
+            # The topics listed in this language, with the verses of their
+            # passages, for a verse page's topic links (verse_topics_html).
+            "topicsTitle": c["topics"]["title"],
+            "topics": [{"href": url(lang, topic_url(x)), "name": topic_name(x, lang),
+                        "verses": [v for ref in x["passages"] for v in topic_passage(ref)[2]]}
+                       for x in topics_in(lang)]}
+
+
+def hebrew_numbering():
+    """{verse id: its number in Hebrew Bibles} where that differs (Malachi
+    4:1 is their 3:19), as verse_page finds it."""
+    out = {}
+    for book, chapter in chapters():
+        if source_language(book) != "hbo":
+            continue
+        for r in chapter_records(book, chapter):
+            for vid in r["refs"]:
+                if vid in out:
+                    continue
+                other = [v for v in r.get("source_refs", []) if vid in versification.reader_ids(v) and v != vid]
+                if other:
+                    out[vid] = other[0]
+    return out
+
+
+def wide_ranges():
+    """[[first, last], ...] code points East Asian Wide or Fullwidth, which
+    text_width counts as two: for the Worker's shorten."""
+    out = []
+    for cp in range(0x110000):
+        if unicodedata.east_asian_width(chr(cp)) in "WF":
+            if out and out[-1][1] == cp - 1:
+                out[-1][1] = cp
+            else:
+                out.append([cp, cp])
+    return out
+
+
+def worker_meta():
+    """What is the same in every language."""
+    return {"siteUrl": SITE_URL, "siteName": SITE_NAME, "cc0": CC0_URL, "sources": SOURCE_TEXTS,
+            "languages": list(LANGUAGES), "rtl": sorted(owb_languages.RTL), "rtlReading": bool(owb_languages.RTL_READING),
+            "digits": owb_languages.DIGITS, "ot": list(refs.OT_CODES), "hebrewNumbers": hebrew_numbering(),
+            "levelPaths": LEVEL_PATHS, "slots": WORKER_SLOTS,
+            # The comparison Bibles, whose verses are in editions/ (EDITIONS_DIR).
+            "editions": [list(e) for e in EDITIONS],
+            # The languages each chapter is wholly in: those it has level pages in.
+            "chapterLanguages": {f"{b}.{ch}": [c for c in LANGUAGES if chapter_indexed(b, ch, c)] for b, ch in chapters()},
+            # Characters a search result shows twice as wide (text_width).
+            "wide": wide_ranges(),
+            "cards": sorted(og_card_chapter(b, ch) for b, ch in chapters()
+                            if (OG / f"{og_card_chapter(b, ch)}.jpg").is_file())}
+
+
+def worker_files():
+    """{path: text} of the Worker's own data (see WORKER_DIR)."""
+    files = {f"{WORKER_DIR}/meta.json": json.dumps(worker_meta(), ensure_ascii=False, separators=(",", ":"))}
+    for lang in LANGUAGES:
+        files[f"{WORKER_DIR}/shell-{lang}.html"] = worker_shell(lang)
+        files[f"{WORKER_DIR}/{lang}.json"] = json.dumps(worker_language(lang), ensure_ascii=False,
+                                                        separators=(",", ":"))
+    return files
+
+
+_WORKER_PAGE = re.compile(r"/(?:([a-z]{2,3})/)?([0-9a-z]{3})/(\d+)/(?:(\d+)|(literal|readable))/")
+
+
+def worker_draws(href):
+    """Whether the Worker draws the page at href (a site path with its
+    language), as cloudflare/worker.js routes it."""
+    m = _WORKER_PAGE.fullmatch(href)
+    if not WORKER_PAGES or not m or m[1] == "en" or m[2].upper() not in refs.BOOK_CODES:
+        return False
+    lang, book, chapter = m[1] or "en", m[2].upper(), int(m[3])
+    if lang not in LANGUAGES or (book, chapter) not in chapter_set():
+        return False
+    if m[5]:
+        return chapter_indexed(book, chapter, lang)
+    return lang in chapter_verse_languages(book, chapter).get(f"{book}.{chapter}.{int(m[4])}", ())
+
+
+def worker_sitemap_entries(built):
+    """The sitemap's rows for the pages the Worker draws: every verse in
+    each language it is in, and every chapter wholly in a language at its
+    Literal and Readable levels. built is the (lang, path) pages already
+    listed."""
+    out = []
+    for book, chapter in chapters():
+        sources = chapter_sources(book, chapter)
+        for vid, langs in chapter_verse_languages(book, chapter).items():
+            for lang in langs:
+                if (lang, verse_page_url(vid)) not in built:
+                    out.append(SitemapEntry(lang, verse_page_url(vid), sources))
+        for lang in LANGUAGES:
+            if chapter_indexed(book, chapter, lang):
+                out += [SitemapEntry(lang, level_page_url(book, chapter, code), sources) for code in LEVEL_PATHS]
+    return out
 
 
 # Dictionary-word pages (/word/?w=<lemma>, web/word.js): each dictionary
@@ -6119,8 +6320,8 @@ At this build, {c["all"]:,} sentences are drafted and {c["approved"]:,} are revi
 - A chapter is at {SITE_URL}/<book>/<chapter>/, with the book's three-letter code in lower case: {SITE_URL}/jhn/3/ is John 3, and {SITE_URL}/jhn/3/#v16 is its verse 16. Other languages have a prefix ({other}).
 - A chapter page has the Balanced text and its footnotes as HTML. The full reasoning record of each sentence (the original words, a literal gloss, three levels of translation and every decision with its alternatives and reason) is in the page's data and opens beside the verse in the reader.
 - Old Testament verses are numbered as in the Hebrew text, so a psalm's title is verse 1.
-- {len(verse_page_ids()):,} verses have a page of their own at {SITE_URL}/<book>/<chapter>/<verse>/ ({SITE_URL}/jhn/3/16/): the verse at all three levels, the original words, a literal gloss and every decision behind it, with its alternatives and reason, as HTML. They are the best-known verses and every verse with a footnoted question of meaning.
-- Each English chapter and verse page has a plain Markdown copy beside it, named by its <link rel="alternate" type="text/markdown">: {SITE_URL}/jhn/3/index.md, {SITE_URL}/jhn/3/16/index.md.
+- {"Every verse has" if WORKER_PAGES else f"{len(verse_page_ids()):,} verses have"} a page of their own at {SITE_URL}/<book>/<chapter>/<verse>/ ({SITE_URL}/jhn/3/16/){", in each language it is translated into" if WORKER_PAGES else ""}: the verse at all three levels, the original words, a literal gloss and every decision behind it, with its alternatives and reason, as HTML. They are the best-known verses and every verse with a footnoted question of meaning.
+- {"Each English chapter page and the English page of each best-known verse have" if WORKER_PAGES else "Each English chapter and verse page has"} a plain Markdown copy beside it, named by its <link rel="alternate" type="text/markdown">: {SITE_URL}/jhn/3/index.md, {SITE_URL}/jhn/3/16/index.md.
 - When you quote a verse, link its verse page where it has one ({SITE_URL}/jhn/3/16/), else its chapter with the verse's anchor ({SITE_URL}/jhn/3/#v16), and say it is the Open Word Bible, a draft unless the page says it is reviewed.
 - A Greek, Hebrew or Aramaic word found {WORD_PAGE_MIN} times or more has a page at {SITE_URL}/word/<Strong's number>-<transliteration>/ ({SITE_URL}/word/g26-agape/): its glosses, where it occurs and the decisions that name it. Every word is listed at {SITE_URL}/word/greek/, {SITE_URL}/word/hebrew/ and {SITE_URL}/word/aramaic/.
 
@@ -8059,6 +8260,10 @@ CRAWLERS = ("Googlebot", "Bingbot", "Applebot", "DuckDuckBot", "Google-Extended"
             "PerplexityBot", "Perplexity-User", "CCBot", "Meta-ExternalAgent", "Amazonbot", "MistralAI-User")
 
 
+# The Worker's own data (worker_files) is not for search results.
+WORKER_DISALLOW = f"Disallow: /{WORKER_DIR}/\n" if WORKER_PAGES else ""
+
+
 def robots_txt():
     """/robots.txt: every crawler may read every page; the pages that are
     not worth listing say so with a robots meta tag. AI crawlers are named
@@ -8066,7 +8271,7 @@ def robots_txt():
     named = "".join(f"User-agent: {bot}\n" for bot in CRAWLERS)
     return (f"# {SITE_NAME} is in the public domain (CC0 1.0): read, quote, index and reuse it.\n"
             f"# A guide for AI tools: {SITE_URL}/llms.txt\n\n"
-            f"{named}Allow: /\n\nUser-agent: *\nAllow: /\n\nSitemap: {SITE_URL}/sitemap.xml\n")
+            f"{named}Allow: /\n\nUser-agent: *\nAllow: /\n{WORKER_DISALLOW}\nSitemap: {SITE_URL}/sitemap.xml\n")
 
 
 class SitemapEntry(NamedTuple):
@@ -8095,7 +8300,7 @@ def sitemap_url(lang, kind):
 # consoles report how many of each kind are indexed (a verse page and an
 # article are not the same question).
 SITEMAP_KINDS = ("chapters", "verses", "books", "words", "articles", "pages")
-_CHAPTER_PATH = re.compile(r"/([0-9a-z]{3})/(\d+)/(?:(\d+)/)?")
+_CHAPTER_PATH = re.compile(r"/([0-9a-z]{3})/(\d+)/(?:(\d+)/|(?:literal|readable)/)?")
 
 
 def sitemap_kind(path):
@@ -8122,13 +8327,19 @@ def sitemaps(entries):
     by_path = {}
     for e in entries:
         by_path.setdefault(e.path, []).append(e.lang)
+    buckets = {}
+    for e in entries:
+        buckets.setdefault((e.lang, sitemap_kind(e.path)), []).append(e)
     files, index = {}, []
     for lang, kind in ((lang, kind) for lang in LANGUAGES for kind in SITEMAP_KINDS):
         rows = []
-        for e in (e for e in entries if e.lang == lang and sitemap_kind(e.path) == kind):
+        for e in buckets.get((lang, kind), ()):
             langs = by_path[e.path]
             alts = ""
-            if len(langs) > 1:
+            # Every verse in every language (WORKER_PAGES) is some 430,000
+            # rows: their alternates would pass a sitemap's 50 MB, and each
+            # page names them in its own hreflang links.
+            if len(langs) > 1 and not (WORKER_PAGES and kind == "verses"):
                 alts = "".join(f'<xhtml:link rel="alternate" hreflang="{code}" href="{esc(SITE_URL + url(code, e.path))}"/>'
                                for code in langs)
                 default = "en" if "en" in langs else langs[0]
@@ -8339,6 +8550,8 @@ def build(out):
             indexed.append(SitemapEntry(code, path))
             fingerprints[url(code, path)] = page_fingerprint(text)
     stage.end()
+    if WORKER_PAGES:
+        indexed += worker_sitemap_entries({(e.lang, e.path) for e in indexed})
     files = {}
     files["404.html"] = not_found_page()
     files.update(sitemaps(indexed))
@@ -8355,7 +8568,7 @@ def build(out):
     with stage("site files"):
         for rel, text in files.items():
             write(rel, text)
-    for made in (verse_files, editions_files, word_files, chapter_data_files):
+    for made in (verse_files, editions_files, word_files, chapter_data_files) + ((worker_files,) if WORKER_PAGES else ()):
         with stage(made.__name__.replace("_", " ")):
             for rel, text in made().items():
                 write(rel, text)

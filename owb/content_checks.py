@@ -343,9 +343,16 @@ def _decision_hits(r, d, note, lang, stop, en_stop):
 
 # -------------------------------------------------------------- glossary
 
+def _base_name(name):
+    """A language name without its parenthesised variety: "Chinese
+    (Simplified)" -> "Chinese", the name its terms file and column use."""
+    return re.sub(r"\s*\([^()]*\)\s*$", "", name).strip()
+
+
 def glossary_path(name):
-    """docs/<english name>-terms.md for a language name ("Indonesian")."""
-    return DOCS / f"{name.lower()}-terms.md"
+    """docs/<english name>-terms.md for a language name ("Indonesian";
+    "Chinese (Simplified)" -> chinese-terms.md)."""
+    return DOCS / f"{_base_name(name).lower()}-terms.md"
 
 
 _BOOK_NAMES = {name.lower(): code for code, name in refs.BOOK_NAMES.items()}
@@ -475,7 +482,7 @@ def glossary_rows(text, name):
             continue
         if all(set(c) <= set("-: ") for c in cells):
             continue
-        targets = [i for i, h in enumerate(header) if h == name.lower()]
+        targets = [i for i, h in enumerate(header) if h in (name.lower(), _base_name(name).lower())]
         book_col = header.index("book") if "book" in header else None
         notes_col = header.index("notes") if "notes" in header else None
         book = _BOOK_NAMES.get(cells[book_col].lower()) if book_col is not None and book_col < len(cells) else None

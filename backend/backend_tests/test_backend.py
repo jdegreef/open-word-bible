@@ -173,6 +173,28 @@ class ImportContentTest(TestCase):
             import_content(str(path))
         self.assertNotEqual(Sentence.objects.get(record_id="JHN.1.12.s1").literal_gloss, "changed")
 
+    def test_a_changed_file_saves_only_its_changed_records(self):
+        # Saving a record unchanged marked its sentence saved (updated_at),
+        # which made every count kept against the content recount.
+        john = content_files("JHN/JHN.1.1-18.json")
+        import_content(*john)
+        saved = dict(Sentence.objects.values_list("record_id", "updated_at"))
+        data = json.loads(Path(john[0]).read_text())
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "JHN.1.1-18.json"
+            path.write_text(json.dumps(data))   # a new file, the same records
+            import_content(str(path))
+            self.assertEqual(dict(Sentence.objects.values_list("record_id", "updated_at")), saved)
+            first = data["records"][0]
+            lang = next(iter(first["renderings"]))
+            first["renderings"][lang]["B"] += " (edited)"
+            path.write_text(json.dumps(data))
+            import_content(str(path))
+        now = dict(Sentence.objects.values_list("record_id", "updated_at"))
+        self.assertEqual([rid for rid in saved if now[rid] != saved[rid]], [first["id"]])
+        self.assertTrue(Rendering.objects.filter(sentence__record_id=first["id"], language=lang, level="B",
+                                                 text__endswith=" (edited)").exists())
+
     def test_budget_leaves_the_rest_for_the_next_run(self):
         # A deploy stops starting files after --budget seconds, so it finishes
         # inside Render's 30-minute pre-deploy limit and the next one catches up.

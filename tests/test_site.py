@@ -250,8 +250,11 @@ class SiteTest(unittest.TestCase):
         self.assertNotRegex(page, r'<a href="/es/gen/30/"[^>]*rel="nofollow"')
 
     def test_footer_counts_the_books_not_started(self):
-        # The chips come from nav-en.js (footer_data); the page has a list for each testament.
-        page = (self.out / "1ti" / "5" / "index.html").read_text(encoding="utf-8")
+        # The chips come from nav-en.js (footer_data); the page has a list for each
+        # testament. Chapter pages have the slim footer without the list.
+        page = (self.out / "about" / "index.html").read_text(encoding="utf-8")
+        chapter = (self.out / "1ti" / "5" / "index.html").read_text(encoding="utf-8")
+        self.assertNotIn('data-foot-chips=', chapter)
         # Without scripts the list has each book as a plain link.
         self.assertIn('<ul class="book-chips" data-foot-chips="old_testament">'
                       '<li><a class="book-chip" href="/gen/">Genesis</a></li>', page)
@@ -577,7 +580,9 @@ class SiteTest(unittest.TestCase):
 
     def test_search_engines_and_ai_tools_may_read_everything(self):
         robots = (self.out / "robots.txt").read_text(encoding="utf-8")
-        self.assertNotIn("Disallow", robots)
+        # Only the Worker's own data is kept out (build_site.WORKER_PAGES).
+        kept_out = ["Disallow: /_worker/"] if build_site.WORKER_PAGES else []
+        self.assertEqual(re.findall(r"Disallow: \S*", robots), kept_out)
         for bot in ("GPTBot", "OAI-SearchBot", "ClaudeBot", "PerplexityBot", "Google-Extended"):
             self.assertIn(f"User-agent: {bot}\n", robots)
         self.assertIn("User-agent: *\nAllow: /\n", robots)
@@ -656,8 +661,10 @@ class SiteTest(unittest.TestCase):
         self.assertIn("/jhn/3/", marks)
         self.assertIn("/word/g26-agape/", marks)
         self.assertNotIn("/search/", marks)
-        # Every page the sitemaps list, and nothing else.
-        listed = set(re.findall(r"<loc>https://openwordbible\.org([^<]*)</loc>", sitemap_text(self.out)))
+        # Every page the sitemaps list, and nothing else: but the pages the
+        # Worker draws, which are not files (build_site.WORKER_PAGES).
+        listed = {p for p in re.findall(r"<loc>https://openwordbible\.org([^<]*)</loc>", sitemap_text(self.out))
+                  if p in marks or not build_site.worker_draws(p)}
         self.assertEqual(set(marks), listed)
 
     def test_named_passages_have_pages_and_addresses_by_name(self):
@@ -1992,6 +1999,10 @@ class VersePageTest(unittest.TestCase):
                 self.assertTrue(all(lang in r["renderings"] for r in build_site.verse_records(vid)), (vid, lang))
 
     def test_chapter_links_its_verse_pages(self):
+        if build_site.WORKER_PAGES:
+            # Every verse number links its page; under the text, the chapter's other levels.
+            self.assertIn('<a href="/jhn/3/literal/">Literal</a>', build_site.verse_page_links("JHN", 3, "en"))
+            return
         self.assertIn('<a href="/jhn/3/16/">John 3:16</a>', build_site.verse_page_links("JHN", 3, "en"))
         none = next((b, c) for b, c in build_site.chapters() if not build_site.verse_pages_in_chapter(b, c))
         self.assertEqual(build_site.verse_page_links(*none, "en"), "")

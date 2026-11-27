@@ -20,6 +20,39 @@ What is in the repository:
 - The "Deploy to Cloudflare" step at the end of CI's content job, on main
   only, after every check passed. Wrangler uploads only changed files.
 
+## The Worker: pages no file holds
+
+`cloudflare/worker.js` answers only requests no file matches. It draws
+two kinds of page the static site has no room for (some 430,000 of them,
+past the 100,000 files a version may have):
+
+- every verse's page, `/<book>/<chapter>/<verse>/`, in each language all
+  its sentences are in (the build writes only the verses of the day, in
+  every language, and in English the verses with a footnoted question of
+  meaning);
+- each chapter at its Literal and Readable levels,
+  `/<book>/<chapter>/literal/` and `/readable/`, in each language the
+  chapter is wholly in.
+
+It draws them from files the site already has (`chapter-data/`, `verses/`,
+the chapter pages) and from `_worker/`, which the build writes when
+`OWB_WORKER_PAGES=1` (CI's build, the one deployed here): a page shell per
+language, each language's interface text and names, and what is the same in
+all of them. `cloudflare/render.js` holds the drawing, and
+`tests/test_worker.py` checks that its verse pages are, byte for byte, the
+ones `build_site.py verse_page` writes. With the same flag the chapters
+link every verse number and their level pages, and the sitemaps list every
+page the Worker draws.
+
+Render's build leaves the flag off, so the site Render serves has none of
+these links and nothing changes there. The pages appear for readers once the
+domain moves (below).
+
+Requests the Worker answers are billed as Worker requests (the paid plan
+includes 10 million a month); files are still served free without it.
+The `assets_navigation_has_no_effect` flag in `wrangler.jsonc` is what
+lets a browser's visit to a missing file reach the Worker at all.
+
 ## Setting it up
 
 1. A Cloudflare account on the **Workers Paid** plan ($5 a month). The site
