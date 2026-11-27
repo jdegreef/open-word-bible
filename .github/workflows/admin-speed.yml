@@ -73,5 +73,10 @@ jobs:
       # since no admin endpoint reads them.
       - name: All of content/
         run: python backend/manage.py import_content --search-budget 0 > import.log
+      # As the owb-import job does after an import: the Checks page reads
+      # these rather than measuring each language (10-15 s on Render). --cold
+      # below empties the cache, not these.
+      - name: Content checks for every language
+        run: python backend/manage.py precompute_checks
       - name: Every admin endpoint
         run: python backend/manage.py check_admin_speed --cold --limit 5

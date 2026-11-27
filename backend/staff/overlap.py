@@ -24,10 +24,9 @@ from django.db.models import Count, Max
 from rest_framework.exceptions import NotFound, ValidationError
 from rest_framework.response import Response
 
-from api.views import record_json
 from owb import languages
 from texts.models import Edition, Verse
-from translation.models import Sentence
+from translation.models import Rendering, Sentence
 
 from .permissions import admin_view
 from .progress import CHAPTERS, book_name
@@ -46,9 +45,16 @@ TOP = 25
 
 
 def measure(book, lang, n):
-    sentences = list(Sentence.objects.filter(book=book).select_related("source_edition")
-                     .prefetch_related("renderings", "decisions").order_by("chapter", "verse", "number"))
-    records = [record_json(s) for s in sentences]
+    # What compare() reads, for the one language compared: its id, refs and
+    # renderings. Building whole records loaded every language's renderings
+    # and every decision (Psalms: 3.8 s for a 5.5 KB answer).
+    records = [{"id": rid, "refs": verse_ids, "renderings": {lang: {}}}
+               for rid, verse_ids in Sentence.objects.filter(book=book).order_by("chapter", "verse", "number")
+               .values_list("record_id", "refs")]
+    by_id = {r["id"]: r for r in records}
+    for rid, level, text in (Rendering.objects.filter(sentence__book=book, language=lang)
+                             .values_list("sentence__record_id", "level", "text")):
+        by_id[rid]["renderings"][lang][level] = text
     editions = list(Edition.objects.filter(kind=Edition.Kind.REFERENCE, language=EDITION_LANGUAGE.get(lang, ""))
                     .order_by("code"))
     texts = {e.code: {} for e in editions}

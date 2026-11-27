@@ -209,7 +209,8 @@ class SiteChromeTest(unittest.TestCase):
             self.assertIn('id="main"', text, path)
             self.assertIn('class="tool-btn menu-btn"', text, path)
             self.assertIn('aria-controls="site-nav"', text, path)
-            self.assertIn('<footer class="site">', text, path)
+            # Chapter pages carry the slim footer ('site slim').
+            self.assertRegex(text, r'<footer class="site( slim)?">', path)
         # Links stay in the page's language: /es/ pages link to /es/. The
         # footer's book chips, from nav-<lang>.js, list the books translated
         # into it: Matthew, in every language that has it.
@@ -227,11 +228,11 @@ class ColourModesTest(unittest.TestCase):
     def test_five_colour_modes_plus_automatic(self):
         self.assertEqual(self.MODES, ["auto", "light", "sepia", "dark", "night", "contrast"])
 
-    def test_paper_is_the_default(self):
+    def test_automatic_is_the_default(self):
         css = (ROOT / "web" / "style.css").read_text(encoding="utf-8")
-        self.assertIn('data-pref="theme" data-default="light"', build_site.colour_prefs("en"))
-        # With no choice saved, nothing follows the device's dark setting.
-        self.assertNotIn(":root:not([data-theme])", css)
+        self.assertIn('data-pref="theme" data-default="auto"', build_site.colour_prefs("en"))
+        # With no choice saved, the page follows the device's dark setting.
+        self.assertIn(':root:not([data-theme]), :root[data-theme="auto"]', css)
 
     def test_every_mode_is_styled_and_known_to_the_scripts(self):
         css = (ROOT / "web" / "style.css").read_text(encoding="utf-8")

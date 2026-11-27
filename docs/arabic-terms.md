@@ -51,8 +51,8 @@ file settles only the Arabic wording.
 | Father (God) | *الآب* (the Father); *أبانا*, *أبي* | *الآب* with the long *ā*, as the church writes the Father, distinct from *الأب* (a father). *Abba*: *أبّا، يا أبي*. |
 | the Son | *الابن* | |
 | Holy Spirit; Spirit of God | *الروح القدس*; *روح الله* | |
-| Son of Man (title) | *ابن الإنسان* | Never under the gender setting. |
-| son of man (Ezekiel, Daniel 8:17) | *يا ابن آدم* (L, B); *يا إنسان* (R) | Daniel 7:13: *مثل ابن إنسان*. |
+| Son of Man (title, *huios tou anthropou*) | *ابن الإنسان* | Never under the gender setting. |
+| son of man (*ben adam*: Ezekiel, Daniel 8:17) | *يا ابن آدم* (L, B); *يا إنسان* (R) | Daniel 7:13: *مثل ابن إنسان*. |
 | Son of God; Son of David | *ابن الله*; *ابن داود* | |
 | Christ | *المسيح* | No span (style §8). |
 | Messiah (*Messias*) | *مسيّا* | John 1:41; 4:25. |
@@ -157,7 +157,7 @@ rest.
 | Jubilee | *سنة اليوبيل* | |
 | synagogue | *المجمع* | |
 | circumcise; circumcision | *ختن*; *الختان* | |
-| idol; idols | *الصنم*, *الأصنام*; *الأوثان* | |
+| idol, idols | *الصنم*, *الأصنام*; *الأوثان* | Singular and plural: both plurals are in use; for idolaters see the style guide (the words that draw a line between religions). |
 | high places | *المرتفعات* | |
 | Asherah | *عشتاروت* for the goddess, *أعمدة عشيرة* for the poles | By meaning decision. |
 | Baal | *البعل* | |
@@ -341,7 +341,7 @@ Names and terms a drafter added, in the book where they first appear.
 | James | Lord of hosts (Greek *Sabaōth*) | *ربّ الصباؤوت* (L); *ربّ الجنود* (B, R) | James 5:4. No divine-name span: the Greek has *Kyrios*. |
 | James | if the Lord wills | *إن شاء الرب* | James 4:15. Not *إن شاء الله*. |
 | James | friend of God | *خليل الله* (L, B); *صديق الله* (R) | James 2:23. |
-| Mark | kingdom (of God); kingdom (of David, of the earth) | *ملكوت الله*; *مملكة* | Mark 1:15; 3:24; 11:10. *ملكوت* for God's reign only. |
+| Mark | kingdom of God; kingdom (of David, of the earth) | *ملكوت الله*; *مملكة* | Mark 1:15; 3:24; 11:10. *ملكوت* for God's reign only. |
 | Mark | scribes; chief priests; disciples | *الكتبة* (L, B), *معلّمو الشريعة* (R); *رؤساء الكهنة* (L, B), *كبار الكهنة* (R); *التلاميذ* (L, B), *الأتباع* (R) | Readable says what the role is. |
 | Mark | Herodians; Sadducees | *الهيرودسيّون*; *الصدّوقيّون* | Mark 3:6; 12:18. |
 | Mark | Idumea; Boanerges; Thaddaeus; Simon the Cananaean | *أدوميّة*; *بوانرجس*; *تدّاوس*; *سمعان القانويّ* | Mark 3:8, 17-18. |

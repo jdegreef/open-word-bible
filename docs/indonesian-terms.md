@@ -812,7 +812,7 @@ in different books. They are now one form each, by these rules:
 | 1 Kings | terebinth | *pohon tarbantin* (L, B), as 1 Samuel; *pohon besar* (R) | 13:14 |
 | 1 Kings | rebelled against the mouth of the LORD | *memberontak terhadap titah {{divine_name:TUHAN\|Yahweh}}* (L); *melawan titah* (B); *menolak menaati* (R) | 13:21 |
 | 1 Kings | Abijah (son of Jeroboam); Tirzah; Nadab; Naamah; Abijam | Abia; Tirza; Nadab; Naama; Abiam | 14:1–31 |
-| 1 Kings | one who urinates against a wall; bond and free | *orang yang kencing ke dinding* (L), *setiap laki-laki* (B, R); *yang terkurung maupun yang bebas* (L), *budak maupun orang merdeka* (B, R) | 14:10 |
+| 1 Kings | one who urinates against a wall; bond and free | *orang yang kencing ke dinding* (L), *setiap laki-laki* (B, R); *yang terkurung maupun yang bebas* (L), *apa pun kedudukannya* (B), *siapa pun mereka* (R); not "slave and free" | 14:10 |
 | 1 Kings | the book of the chronicles of the kings of Israel / Judah | *Kitab Sejarah Raja-raja Israel* / *Yehuda* | 14:19, 29 |
 | 1 Kings | male cult prostitutes; abominations; the runners (guard) | *pelacur bakti laki-laki* (L, B); *kekejian*; *pasukan pelari* (L), *pasukan pengawal* (B, R) | 14:24, 27 |
 | 1 Kings | Maacah; Abishalom | Maakha; Abisyalom (uncertain, kept apart from *Absalom*) | 15:2 |
@@ -825,7 +825,7 @@ in different books. They are now one form each, by these rules:
 | 1 Kings | Elijah the Tishbite; settlers | Elia, orang Tisybe; *pendatang* | 17:1 |
 | 1 Kings | wadi Cherith; Zarephath; ravens | sungai Kerit (L, B), Kali Kerit (R); Sarfat; *burung gagak* | 17:3–9 |
 | 1 Kings | Obadiah (steward); troubler of Israel | Obaja; *pengacau Israel* (L, B) | 18:3, 17 |
-| 1 Kings | Mount Carmel; wadi Kishon; seah | gunung Karmel; sungai Kison (L, B), Kali Kison (R); *sukat* (L), `{{units:sekitar 7,3 liter\|satu sukat}}` (B, R) | 18:19–40 |
+| 1 Kings | Mount Carmel; wadi Kishon; seah | gunung Karmel; sungai Kison (L, B), Kali Kison (R); *sukat* (L), `{{units:sekitar lima belas liter\|dua sukat}}` (B, R) | 18:19–40 |
 | 1 Kings | prophesied (ecstatic raving) | *kerasukan* | 18:29 |
 | 1 Kings | broom tree; sound of thin silence | *pohon arar* (L, B), *semak arar* (R); *bunyi keheningan yang tipis* (L) | 19:4, 12 |
 | 1 Kings | God of hosts; very zealous | *Allah semesta alam*; *sangat giat bekerja* (uncertain; alternative *cemburu untuk*) | 19:10 |
@@ -1687,7 +1687,7 @@ in different books. They are now one form each, by these rules:
 | Isaiah | Zoan; Noph | Zoan; Nof (L), Memfis (B, R) | 19:11, 13 |
 | Isaiah | City of Destruction | Kota Kebinasaan | 19:18 |
 | Isaiah | Sargon; commander-in-chief (*tartan*) | Sargon; Tartan (L), *panglima tertinggi* (B) | 20:1 |
-| Isaiah | wilderness of the sea | *padang gurun di tepi laut* | 21:1 |
+| Isaiah | wilderness of the sea | *padang gurun laut* (L, B); *negeri yang disebut Padang Gurun Laut* (R) | 21:1 |
 | Isaiah | Dumah; Dedan; Tema; Kedar | Duma; Dedan; Tema; Kedar | 21:11–16 |
 | Isaiah | valley of vision | Lembah Penglihatan | 22:1 |
 | Isaiah | House of the Forest | Gedung Hutan | 22:8 |
@@ -2180,7 +2180,7 @@ in different books. They are now one form each, by these rules:
 | Ezra | Ecbatana | Ekbatana | 6:2 |
 | Ezra | Hilkiah; Amariah; Meraioth; Zerahiah; Uzzi; Bukki; Abishua | Hilkia; Amarya; Merayot; Zerahya; Uzi; Buki; Abisyua | 7:1–5 |
 | Ezra | scribe (Ezra's title) | *ahli kitab* (L, B); *guru hukum Taurat* (R) | 7:6 |
-| Ezra | talent; kor; bath | `{{units:sekitar 3,4 ton perak\|100 talenta perak}}`; `{{units:sekitar 21.000 liter gandum\|100 kor gandum}}`; `{{units:sekitar 2.200 liter anggur\|100 bat anggur}}` (B, R) | 7:22 |
+| Ezra | talent; kor; bath | `{{units:sekitar 3,4 ton perak\|100 talenta perak}}`; `{{units:sekitar 22.000 liter gandum\|100 kor gandum}}`; `{{units:sekitar 2.200 liter anggur\|100 bat anggur}}` (B, R) | 7:22 |
 | Ezra | Ezra's memoir "I" | *aku* (L, B); *saya* (R) | 7:27 |
 | Ezra | Gershom; Hattush; Shecaniah; Eliehoenai; Jahaziel; Ebed | Gersom; Hatusy; Syekhanya; Elyehoenai; Yahaziel; Ebed | 8:2–6 |
 | Ezra | Jeshaiah; Zebadiah; Jehiel; Josiphiah; Hakkatan; Eliphelet; Jeiel; Shemaiah; Uthai; Zaccur | Yesaya; Zebadya; Yehiel; Yosifya; Hakatan; Elifelet; Yeiel; Syemaya; Utai; Zakur | 8:7–14 |
@@ -2445,7 +2445,7 @@ in different books. They are now one form each, by these rules:
 | Jeremiah | an execration (*'alah*) in the curse lists | *sumpah kutuk* (L); *nama yang dipakai orang untuk mengutuk* (B); *orang akan memakai nama kalian kalau mengutuk* (R) | 42:18 |
 | Jeremiah | Azariah son of Hoshaiah | Azarya anak Hosyaya | 43:2 |
 | Jeremiah | brick terrace; mortar | lantai batu bata; tanah liat | 43:9 |
-| Jeremiah | royal canopy | permadani kerajaan (L, B); tenda kerajaan (R) | 43:10 |
+| Jeremiah | royal canopy | *kanopi kerajaan* (L, B, R) | 43:10 |
 | Jeremiah | Beth-shemesh (in Egypt) | Bet-Syemesy (L, B); Heliopolis, kota matahari (R) | 43:13 |
 | Jeremiah | Pathros | Patros | 44:1 |
 | Jeremiah | LORD God of hosts | TUHAN, Allah semesta alam | 44:7 |

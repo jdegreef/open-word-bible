@@ -136,8 +136,8 @@
 // scripts/build_site.py): the colour mode, then the reading text's size,
 // typeface and line spacing. Each radiogroup is one setting (data-pref); a
 // choice is kept in localStorage as owb-<pref> and applied as data-<pref> on
-// <html>, and the default (data-default; "light", Paper, for the colour mode)
-// removes both. "auto" is a choice like any other: it follows the device. The inline boot script in each page
+// <html>, and the default (data-default; "auto" for the colour mode, which
+// follows the device) removes both. The inline boot script in each page
 // applies saved choices before paint.
 (function () {
   "use strict";

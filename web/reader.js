@@ -324,6 +324,22 @@
     return n;
   }
 
+  // A short note at the foot of the screen that an action worked ("Link
+  // copied", "Bookmarked"), for when the button that did it is out of view
+  // or in a sheet. One polite live region, so screen readers hear it too.
+  var toastEl = null, toastTimer = null;
+  function toast(text) {
+    if (!toastEl) {
+      toastEl = el("div", "toast");
+      toastEl.setAttribute("role", "status");
+      document.body.appendChild(toastEl);
+    }
+    toastEl.textContent = text;
+    toastEl.classList.add("show");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { toastEl.classList.remove("show"); }, 2200);
+  }
+
   function save() {
     var kept = {};
     for (var k in settings) if (k !== "lang") kept[k] = settings[k];
@@ -2436,7 +2452,10 @@
     var b = el("button", "mark-bookmark", t(m.b ? "bookmarked" : "bookmark"));
     b.type = "button";
     b.setAttribute("aria-pressed", m.b ? "true" : "false");
-    b.addEventListener("click", function () { setMark(v, { b: !m.b }); });
+    b.addEventListener("click", function () {
+      setMark(v, { b: !m.b });
+      if (!m.b) toast(t("bookmarked"));
+    });
     return b;
   }
 
@@ -3314,6 +3333,7 @@
     function done(ok) {
       button.textContent = t(ok ? "cite_copied" : "copy_failed");
       button.classList.toggle("done", ok);
+      toast(t(ok ? "cite_copied" : "copy_failed"));
       setTimeout(function () { button.textContent = label; button.classList.remove("done"); }, 1600);
     }
     function fallback() {
@@ -3384,6 +3404,7 @@
       function done(ok) {
         label.textContent = t(ok ? "copied" : "copy_failed");
         b.classList.toggle("done", ok);
+        toast(t(ok ? "copied" : "copy_failed"));
         setTimeout(function () { label.textContent = t("copy_link"); b.classList.remove("done"); }, 2000);
       }
       if (share) {

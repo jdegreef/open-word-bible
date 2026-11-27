@@ -18,13 +18,15 @@ form matching as a whole word or with a short ending (plurals, particles).
 A sentence with none of them is counted as "other". Answers are cached
 until a sentence changes.
 """
+import functools
 import hashlib
 import json
 import re
 
 from django.conf import settings
 from django.core.cache import cache
-from django.db.models import Count, Max
+from django.db.models import Count, JSONField, Max
+from django.db.models.expressions import RawSQL
 from rest_framework.exceptions import ValidationError
 from rest_framework.response import Response
 
@@ -76,6 +78,7 @@ def _choice_forms(choice, levels):
     return out
 
 
+@functools.lru_cache(maxsize=4096)
 def _pattern(form):
     return re.compile(r"(?<!\w)" + re.escape(form) + r"\w{0,%d}(?!\w)" % ENDING)
 
@@ -86,6 +89,17 @@ def _stamp():
 
 
 def term_uses():
+    """_term_uses(), kept until the content changes: consistency measures
+    each language from it and Key terms counts from it."""
+    stamp = f"{TERMS_DIGEST}.{_stamp()}"
+    kept = cache.get("staff.term_uses")
+    if kept is None or kept.get("stamp") != stamp:
+        kept = {"stamp": stamp, "uses": _term_uses()}
+        cache.set("staff.term_uses", kept, 7 * 86400)
+    return kept["uses"]
+
+
+def _term_uses():
     """{term slug: [sentence rows]} for every key term, in two queries: the
     words by Strong's number (Greek ids start n, Hebrew o), then the
     sentences holding any of them."""
@@ -102,31 +116,41 @@ def term_uses():
     rows = counts.using(every).values("id", "record_id", "book", "chapter", "verse", "number", "refs", "tokens")
     order = {code: i for i, code in enumerate(refs.BOOK_CODES)}
     rows = sorted(rows, key=lambda r: (order.get(r["book"], len(order)), r["chapter"], r["verse"], r["number"]))
+    # Each sentence's tokens are looked at once, not once a term.
+    terms_of = {}
     for t in TERMS:
-        mine = ids.get((t.get("language", "grc"), t["strong"]), set())
-        out[t["slug"]] = [{**r, "term_tokens": mine & set(r["tokens"])} for r in rows if mine & set(r["tokens"])]
+        for wid in ids.get((t.get("language", "grc"), t["strong"]), ()):
+            terms_of.setdefault(wid, []).append(t["slug"])
+    for r in rows:
+        mine = {}
+        for token in r["tokens"]:
+            for slug in terms_of.get(token, ()):
+                mine.setdefault(slug, set()).add(token)
+        for slug, tokens in mine.items():
+            out[slug].append({**r, "term_tokens": tokens})
     return out, ids
 
 
-def measure(lang, level, slug, least):
+def measure(lang, level):
     uses, _ = term_uses()
     sentence_ids = {r["id"] for rows in uses.values() for r in rows}
-    texts = dict(Rendering.objects.filter(sentence_id__in=sentence_ids, language=lang, level=level)
-                 .values_list("sentence_id", "text"))
+    # As searchable text once, though a sentence may use several terms.
+    texts = {sid: _plain(text) for sid, text in Rendering.objects.filter(
+        sentence_id__in=sentence_ids, language=lang, level=level).values_list("sentence_id", "text")}
     decisions = {}
     for sid, tokens, choice, levels in (Decision.objects
                                         .filter(sentence_id__in=sentence_ids, layer="rendering", language=lang,
                                                 category="word_choice")
                                         .values_list("sentence_id", "tokens", "choice", "levels")):
         decisions.setdefault(sid, []).append((set(tokens), choice, levels))
-    aligned = {}
-    rows = Sentence.objects.filter(id__in=sentence_ids).exclude(alignments=[]).values_list("id", "alignments")
-    for sid, spans in rows:
-        aligned[sid] = [a for a in spans if a["language"] == lang and a["level"] == level]
+    # Only this language's spans at this level leave the database: every
+    # language's alignments for 9,000 sentences took a second to read.
+    mine = RawSQL("jsonb_path_query_array(alignments, '$[*] ? (@.language == $l && @.level == $v)', %s::jsonb)",
+                  (json.dumps({"l": lang, "v": level}),), output_field=JSONField())
+    aligned = dict(Sentence.objects.filter(id__in=sentence_ids).exclude(alignments=[])
+                   .annotate(mine=mine).exclude(mine=[]).values_list("id", "mine"))
     terms = []
     for t in TERMS:
-        if slug and t["slug"] != slug:
-            continue
         rows = uses[t["slug"]]
         forms = set()
         if lang == "en":
@@ -148,22 +172,36 @@ def measure(lang, level, slug, least):
             if text is None:
                 continue
             rendered += 1
-            text = _plain(text)
-            hit = next((f for f, p in patterns if p.search(text)), None)
+            # A form is only searched for where it is in the text at all:
+            # the regular expressions were most of the time (2 million searches).
+            hit = next((f for f, p in patterns if f in text and p.search(text)), None)
             (found.setdefault(hit, []) if hit else other).append(r)
-        limit = TERM_EXAMPLES if slug else EXAMPLES
         listed = sorted(found.items(), key=lambda kv: (-len(kv[1]), kv[0]))
-        counted = [rows for _, rows in listed if len(rows) >= least]
         matched = sum(len(rows) for _, rows in listed)
         spread = round(1 - len(listed[0][1]) / matched, 3) if matched else 0
         terms.append({
             "slug": t["slug"], "strong": t["strong"], "lemma": t["lemma"], "sense": t["sense"],
-            "language": t.get("language", "grc"), "uses": len(rows), "rendered": rendered,
-            "split": len(counted) > 1, "spread": spread,
+            "language": t.get("language", "grc"), "uses": len(rows), "rendered": rendered, "spread": spread,
             "forms": [{"form": form, "sentences": len(rows), "books": _books(rows),
-                       "examples": [_example(r) for r in rows[:limit]]} for form, rows in listed],
-            "other": {"sentences": len(other), "examples": [_example(r) for r in other[:limit]]},
+                       "examples": [_example(r) for r in rows[:TERM_EXAMPLES]]} for form, rows in listed],
+            "other": {"sentences": len(other), "examples": [_example(r) for r in other[:TERM_EXAMPLES]]},
         })
+    return {"terms": terms}
+
+
+def shown(measured, slug, least):
+    """The answer for one term (slug) or all of them, from measure()'s:
+    a term is split when more than one form has at least least sentences,
+    split terms first; all terms show EXAMPLES examples a form, one term
+    TERM_EXAMPLES."""
+    limit = TERM_EXAMPLES if slug else EXAMPLES
+    terms = []
+    for t in measured["terms"]:
+        if slug and t["slug"] != slug:
+            continue
+        terms.append({**t, "split": sum(1 for f in t["forms"] if f["sentences"] >= least) > 1,
+                      "forms": [{**f, "examples": f["examples"][:limit]} for f in t["forms"]],
+                      "other": {**t["other"], "examples": t["other"]["examples"][:limit]}})
     terms.sort(key=lambda t: (not t["split"], -t["spread"], -t["rendered"]))
     return {"terms": terms}
 
@@ -196,10 +234,13 @@ def consistency(request):
         least = min(max(int(params.get("min", 2)), 1), 50)
     except ValueError:
         least = 2
-    key = f"staff.consistency.{lang}.{level}.{slug}.{least}.{TERMS_DIGEST}.{_stamp()}"
-    answer = cache.get(key)
-    if answer is None:
-        answer = measure(lang, level, slug, least)
-        cache.set(key, answer, 86400)
-    return Response({**answer, "language": lang, "level": level, "min": least,
+    # One measurement a language and level, whatever term or minimum is
+    # asked, kept under one key with the content it was measured from, so a
+    # new one replaces the old rather than piling up beside it.
+    key, stamp = f"staff.consistency.{lang}.{level}", f"{TERMS_DIGEST}.{_stamp()}"
+    kept = cache.get(key)
+    if kept is None or kept.get("stamp") != stamp:
+        kept = {"stamp": stamp, "measured": measure(lang, level)}
+        cache.set(key, kept, 7 * 86400)
+    return Response({**shown(kept["measured"], slug, least), "language": lang, "level": level, "min": least,
                      "languages": [{"code": c, "name": lang["name"]} for c, lang in languages.READING.items()]})

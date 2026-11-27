@@ -29,7 +29,7 @@ from feedback.models import ReaderMessage
 from owb import languages
 from translation.models import Sentence
 
-from . import github, jobs
+from . import github, jobs, kept, people
 from .inbox import verse_label, verse_url
 from .models import record
 from .permissions import admin_view
@@ -57,7 +57,7 @@ def fixes(request):
         return _file(request)
     answer = {"configured": bool(settings.OWB_GITHUB_TOKEN), "repo": settings.OWB_GITHUB_REPO}
     try:
-        answer["fixes"] = open_fixes()
+        answer["fixes"] = kept.kept("staff.kept.fixes", open_fixes, 120)
     except github.GitHubError:
         answer["fixes"], answer["error"] = [], "GitHub could not be reached, so open fix requests aren't listed."
     return Response(answer)
@@ -118,12 +118,12 @@ def _file(request):
     if reason:
         lines += ["", "**Why:**", "", reason]
     if message:
-        quoted = "\n".join("> " + line for line in message.text.splitlines())
-        lines += ["", f"**Prompted by a reader's {message.get_kind_display().lower()}** "
-                  f"(admin inbox #{message.id}):", "", quoted]
+        # Readers write to us privately and the repository is public: the
+        # message stays in the admin, and the editor's reason says the point.
+        lines += ["", f"Prompted by a reader's {message.get_kind_display().lower()} (admin inbox #{message.id})."]
     lines += ["", "Follow `.claude/skills/fix-worker/SKILL.md`: weigh the request against the source and "
               "the style brief, keep the record `ai_draft`, and open a pull request or say here why not.",
-              "", f"Requested in the admin by {request.user.username}.", "",
+              "", f"Requested in the admin by {people.public_name(request.user)}.", "",
               "<!-- fix-request " + json.dumps({"record": sentence.record_id, "verse": vid, "language": lang,
                                                "levels": levels, "message": message.id if message else None})
               + " -->"]
@@ -160,7 +160,7 @@ def _file_links(request, sentence, vid, lang, level, links, reason):
               f"{lang} --level {level}` (the block above is the spec), check they link what the words "
               "say, run `owb.validate`, keep the record `ai_draft`, and open a pull request or say here why not. "
               "Follow `.claude/skills/fix-worker/SKILL.md`.",
-              "", f"Requested in the admin by {request.user.username}.", "",
+              "", f"Requested in the admin by {people.public_name(request.user)}.", "",
               "<!-- fix-request " + json.dumps({"record": sentence.record_id, "verse": vid, "language": lang,
                                                "levels": [level], "kind": "links", "message": None}) + " -->"]
     try:

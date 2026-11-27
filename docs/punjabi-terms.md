@@ -1655,7 +1655,9 @@ People and places: ਪੌਲੁਸ, ਤੁਖਿਕੁਸ; ਅਫ਼ਸੁਸ, �
   - Jeroboam refrain: ਜਿਸ ਨੇ ਇਸਰਾਏਲ ਤੋਂ ਪਾਪ ਕਰਵਾਇਆ (L, B), ਇਸਰਾਏਲ ਨੂੰ ਪਾਪ
     ਵਿੱਚ ਪਾਇਆ (R).
   - Every male: ਕੰਧ ਉੱਤੇ ਮੂਤਰਨ ਵਾਲਾ (L), ਹਰ ਪੁਰਖ (B), ਹਰ ਆਦਮੀ ਅਤੇ ਮੁੰਡਾ
-    (R); bond and free ਕੀ ਬੰਧੂਆ ਕੀ ਅਜ਼ਾਦ (L).
+    (R); the pair "restrained and left free" ਕੀ ਰੋਕਿਆ ਹੋਇਆ ਕੀ ਖੁੱਲ੍ਹਾ ਛੱਡਿਆ ਹੋਇਆ
+    (L, 14:10), ਕੀ ਬੰਦ ਕੀਤਾ ਹੋਇਆ ਕੀ ਛੱਡਿਆ ਹੋਇਆ (L, 21:21), ਚਾਹੇ ਉਸ ਦੀ ਹੈਸੀਅਤ
+    ਕੋਈ ਵੀ ਹੋਵੇ (B), ਚਾਹੇ ਉਹ ਕੋਈ ਵੀ ਹੋਣ (R); not "slave and free".
 - Terms: house of the LORD ਭਵਨ (L, B) / ਮੰਦਰ (R), and the headings use ਭਵਨ;
   the house of Baal ਘਰ (L) / ਮੰਦਰ (B, R); a king's throne ਗੱਦੀ, but
   ਸਿੰਘਾਸਣ in 22:10 and 22:19 where the two thrones answer each other;

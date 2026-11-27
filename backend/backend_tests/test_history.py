@@ -7,7 +7,7 @@ from pathlib import Path
 from django.test import SimpleTestCase
 from django.utils import timezone
 
-from backend_tests.test_admin import K, AdminTestCase, account, client_for, sentence
+from backend_tests.test_admin import K, AdminTestCase, User, account, client_for, sentence
 from backend_tests.test_backend import CONTENT, import_content, load_extract_words
 from staff.history import release_notes, word_diff
 from translation.models import ImportRun, RecordChange, ReviewEvent, Sentence, SentenceChange
@@ -45,7 +45,8 @@ class SinceApprovalTest(AdminTestCase):
         event = self.approve(self.english, "en")
         self.assertEqual(event.snapshot["renderings"], {"L": "x", "B": "In the beginning was the Word", "R": "x"})
         self.assertEqual(event.snapshot["decisions"], {})
-        meaning = self.approve(self.admin, "grc")
+        scholar = client_for(account("grc@example.org", (K.SCHOLAR_REVIEWER, "grc")))
+        meaning = self.approve(scholar, "grc")
         self.assertEqual(meaning.snapshot, {"literal_gloss": "x", "decisions": {}})
         # Nothing has changed since.
         d = self.admin.get("/api/admin/history/verse/JHN.1.1/").json()
@@ -62,8 +63,10 @@ class SinceApprovalTest(AdminTestCase):
         reporter = client_for(account("rep@example.org", (K.REPORTING,)))
         d = reporter.get("/api/admin/history/verse/JHN.1.1/").json()
         a = d["sentences"][0]["approvals"][0]
+        # A reviewer with no name is named by number, never by address.
+        en = User.objects.get(username="en@example.org")
         self.assertEqual((a["layer"]["code"], a["changed"], a["known"], a["by"]),
-                         ("en", True, "snapshot", "en@example.org"))
+                         ("en", True, "snapshot", f"Team member {en.id}"))
         balanced = next(t for t in a["texts"] if t["level"] == "B")
         self.assertTrue(balanced["changed"])
         self.assertIn({"op": "del", "text": "was "}, balanced["segments"])

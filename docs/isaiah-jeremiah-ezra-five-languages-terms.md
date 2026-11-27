@@ -150,7 +150,7 @@ SEIGNEUR|Yahvé}}` (`du SEIGNEUR|de Yahvé`, `au SEIGNEUR|à Yahvé`); the Lord 
 - 7:14: « la jeune femme » (L, B), « une jeune femme » (R), with the English meaning decision and its footnote citing
   Matthew 1:23 « la vierge »; « elle l’appellera Emmanuel »; R adds « ce qui veut dire “Dieu est avec nous” », as
   Matthew 1:23 R.
-- 9:5: L « Merveille de conseiller, Dieu puissant, Père d’éternité, Prince de paix »; B « Celui qui conçoit des
+- 9:5: L « Merveille de conseiller, Dieu puissant, Père à jamais, Prince de paix »; B « Celui qui conçoit des
   merveilles, Dieu le Guerrier puissant, Père pour toujours, Chef de la paix »; R the same names, « Chef qui apporte
   la paix ». 10:21 « le Dieu puissant » (L, B), as the English.
 - The Branch (*tsemach*, Jeremiah 23:5; 33:15): « un Germe juste » at every level (R adds « un roi de sa famille »);
@@ -264,7 +264,7 @@ Published forms win; evidence in brackets. Where one form is given it holds at L
 - The young woman (7:14): *la joven* (L, B), *una joven* (R), never *la virgen*. A decision cites Matthew 1:23 (*la virgen*, from the Greek).
 - Immanuel: *Emanuel*. At R add *que significa «Dios está con nosotros»* [Matthew 1:23].
 - 9:5:
-  - L *Consejero Maravilla, Dios Poderoso, Padre de Eternidad, Príncipe de Paz*.
+  - L *Consejero Maravilla, Dios Poderoso, Padre para Siempre, Príncipe de Paz* (*Padre de Eternidad* would read as the footnote's other sense).
   - B *Autor de planes maravillosos, Dios Guerrero Poderoso, Padre para siempre, Gobernante de paz*.
   - R *... Padre para siempre y Gobernante que trae la paz*.
   - Rewrite anything that drifts toward RV or NVI (*Admirable Consejero, Dios fuerte, Padre eterno*).
@@ -392,10 +392,10 @@ Bwana `{{divine_name:MUNGU|Yahwe}}`. One wording at every level unless L / B
 - 7:14: *msichana*, every level, with an uncertain decision naming *mwanamwali*
   and Matthew 1:23's *bikira* (from the Greek). *Imanueli* (Matthew 1:23); R
   adds *maana yake "Mungu yuko pamoja nasi"*.
-- 9:5, as the English levels: L *Mshauri-Ajabu, Mungu Shujaa, Baba wa Milele,
+- 9:5, as the English levels: L *Mshauri-Ajabu, Mungu Shujaa, Baba wa Nyakati Zote,
   Mkuu wa Amani*; B *Mpangaji wa Maajabu, Mungu Shujaa Mwenye Nguvu, Baba wa
-  Nyakati Zote, Mtawala wa Amani*; R the same with *Baba wa Milele, Mtawala
-  Aletaye Amani*. This keeps clear of the Union Version's four names.
+  Nyakati Zote, Mtawala wa Amani*; R the same with *Baba wa Nyakati Zote, Mtawala
+  Aletaye Amani* (*Baba wa Milele* is the footnote's other sense, "Everlasting Father"). This keeps clear of the Union Version's four names.
 - Branch: *Chipukizi* as a title (Jeremiah 23:5; 33:15 *Chipukizi la haki*);
   *chipukizi la BWANA* (Isaiah 4:2); 11:1 *chipukizi* and *tawi*; 11:10 *shina
   la Yese*, near Romans 15:12 *mzizi wa Yese*.

@@ -7,9 +7,10 @@ database becomes the master and content/ the published export.
 """
 from django.conf import settings
 from django.contrib.postgres.fields import ArrayField
-from django.contrib.postgres.indexes import GinIndex
+from django.contrib.postgres.indexes import GinIndex, OpClass
 from django.contrib.postgres.search import SearchVectorField
 from django.db import models
+from django.db.models.functions import Upper
 from django.db.models.signals import post_delete, post_save
 from django.dispatch import receiver
 from django.utils import timezone
@@ -78,7 +79,11 @@ class Rendering(models.Model):
         # One language's renderings (export, the wording review queue)
         # without reading the other languages' 90%.
         indexes = [models.Index(fields=["language", "sentence"], name="rendering_language")]
-        ordering = ["sentence", "language", "level"]
+        # sentence_id, not sentence: "sentence" sorts by the Sentence's own
+        # ordering (Bible order), which joins the sentences table into every
+        # query of renderings, even counts. A sentence's renderings stay
+        # together; a list across sentences says its own order.
+        ordering = ["sentence_id", "language", "level"]
 
     def __str__(self):
         return f"{self.sentence} {self.language}/{self.level}"
@@ -127,8 +132,14 @@ class Decision(models.Model):
             # The admin's uncertain decisions, by language.
             models.Index(fields=["language"], condition=models.Q(uncertain=True),
                          name="decision_uncertain"),
+            # Words in a decision's choice or reason (the admin's search and
+            # Uncertain decisions): icontains is UPPER(...) LIKE, so the
+            # trigram indexes are on UPPER. A search finding nothing read all
+            # 336,000 decisions (650 ms); with them, under a millisecond.
+            GinIndex(OpClass(Upper("choice"), name="gin_trgm_ops"), name="decision_choice_trgm"),
+            GinIndex(OpClass(Upper("reason"), name="gin_trgm_ops"), name="decision_reason_trgm"),
         ]
-        ordering = ["sentence", "order"]
+        ordering = ["sentence_id", "order"]   # as Rendering's: no join to sentences
 
     def __str__(self):
         return f"{self.sentence} {self.key}"
