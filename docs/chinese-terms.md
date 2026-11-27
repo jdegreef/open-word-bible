@@ -4582,7 +4582,7 @@ Hosea keeps the glossary's forms for every name and term above, the prophets' fo
 | Ammi, Ruhamah / My People, Shown Compassion (2:3) | 阿米, 路哈玛 (L); 我的子民, 蒙怜悯 (B, R) |
 | have compassion (*raḥam*) | 怜悯 at every level, the word of the names, as 1 Peter 2:10 (未蒙怜悯 / 已蒙怜悯); 2:25 does not take Romans 9:25's 蒙爱的 (footnoted decision) |
 | prostitute oneself; prostitution (*zanah*, *zenunim*) | 行淫 / 淫行 (L), 行淫 / 淫乱 (B); 不忠, 对我不忠 (R), as Ezekiel 16 |
-| a wife of prostitution; children of prostitution (1:2) | 行淫的妻子, 淫行所生的儿女 (L); 淫乱的妻子, 淫乱所生的儿女 (B); 会对你不忠的妻子, 因不忠而生的儿女 (R); never 妓女 for Gomer |
+| a wife of prostitution; children of prostitution (1:2) | 行淫的妻子, 淫行所生的儿女 (L); 淫乱的妻子, 淫乱所生的儿女 (B); 不忠的女子, 因不忠而生的儿女 (R); never 妓女 for Gomer |
 | adultery; adulterers (*naʾaf*) | 淫乱 (2:4, beside 淫行); 犯奸淫, 行奸淫的 |
 | lovers; prostitute; a prostitute's pay | 情人; 妓女; 酬劳 (2:14), 妓女的酬劳 (9:1) |
 | cult prostitutes (4:14) | 庙妓 (L, B); 在神庙里作妓女的女人 (R) |
