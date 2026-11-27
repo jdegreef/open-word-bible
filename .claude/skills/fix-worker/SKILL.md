@@ -69,6 +69,17 @@ run `owb.validate`, and open a pull request as above. A link that cannot be
 right (the wrong source word, a span that is not the word) is left out and
 named on the issue.
 
+## Batches
+
+A request whose machine line has `"kind": "batch"` asks for the same change
+in many sentences of one language (`"records"`), filed from Consistency,
+Checks or Decisions. Weigh it in each sentence on its own, as above: a
+change right in most may be wrong in one. Make it where it holds, leave the
+rest, and open **one** pull request that lists each sentence changed and
+each left as it is with the reason. A change to a key term itself is not a
+batch: it is proposed to the founder (issues labelled `key-term`), and a
+worker doesn't take those.
+
 ## Meaning changes
 
 A request whose machine line has `"kind": "meaning"` comes from the meaning

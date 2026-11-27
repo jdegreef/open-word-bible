@@ -95,6 +95,18 @@ class ChecksTest(ChecksBase):
         self.assertEqual([(h["record"], h["level"]) for h in en["notes"]["hits"]], [("JOL.4.21.s1", "B")])
         self.assertIsNone(en["glossary"]["file"])
 
+    def test_a_hit_found_fine_stays_away_until_its_text_changes(self):
+        hit = self.get("?lang=id")["notes"]["hits"][0]
+        r = self.admin.post("/api/admin/checks/dismiss/", {"lang": "id", "signature": hit["signature"]}, format="json")
+        self.assertEqual(r.status_code, 201)
+        d = self.get("?lang=id")
+        self.assertEqual((d["notes"]["total"], d["dismissed"]), (0, 1))
+        # The verse changes: the hit (if still found) has a new signature and shows again.
+        from staff.checks import signature
+        self.assertNotEqual(signature({**hit, "text": hit["text"] + " baru"}), hit["signature"])
+        bad = self.admin.post("/api/admin/checks/dismiss/", {"lang": "id", "signature": "0" * 64}, format="json")
+        self.assertEqual(bad.json()["code"], "not_found")
+
     def test_glossary(self):
         g = self.get("?lang=id")["glossary"]
         self.assertEqual(g["file"], "docs/indonesian-terms.md")

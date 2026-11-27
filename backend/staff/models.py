@@ -49,6 +49,24 @@ class Broadcast(models.Model):
         return self.subject
 
 
+class CheckDismissal(models.Model):
+    """A content check hit a person has looked at and found fine
+    (staff/checks.py dismiss). Kept by the hit's signature, which includes
+    the verse text it flagged: once the rendering changes the hit has a new
+    signature and shows again."""
+    language = models.CharField(max_length=3)
+    signature = models.CharField(max_length=64)
+    record_id = models.CharField(max_length=40)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, related_name="+")
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        constraints = [models.UniqueConstraint(fields=["language", "signature"], name="one_dismissal_per_hit")]
+
+    def __str__(self):
+        return f"{self.language} {self.record_id}"
+
+
 class FlagReply(models.Model):
     """One step in the conversation a flag starts (staff/flags.py): a reply,
     a fix request filed from it, or an editor declining or resolving it

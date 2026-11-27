@@ -948,6 +948,26 @@ class WorkTest(AdminTestCase):
         self.assertEqual(inbox[0]["fix_url"], "https://github.com/x/y/pull/30")
 
     @override_settings(OWB_GITHUB_TOKEN="t")
+    def test_one_request_for_many_sentences_and_a_term_change_for_the_founder(self):
+        for rid in ("JHN.2.1.s1", "JHN.2.2.s1"):
+            sentence(rid, ("en", "fr"))
+        issue = {"number": 50, "html_url": "https://github.com/x/y/issues/50"}
+        with mock.patch("staff.github.call", return_value=issue) as call:
+            r = self.admin.post("/api/admin/fixes/batch/", {"language": "fr", "records": ["JHN.2.1.s1", "JHN.2.2.s1"],
+                                                           "levels": ["B"], "change": "la Parole"}, format="json")
+            self.assertEqual(r.status_code, 201)
+            filed = call.call_args.args[2]
+            self.assertEqual(filed["labels"], ["fix-request"])
+            self.assertIn('"kind": "batch"', filed["body"])
+            self.assertIn("`JHN.2.2.s1`", filed["body"])
+            r = self.admin.post("/api/admin/fixes/term/", {"slug": "grace", "change": "favour at R"}, format="json")
+            self.assertEqual(r.status_code, 201)
+            self.assertEqual(call.call_args.args[2]["labels"], ["key-term"])
+        bad = self.admin.post("/api/admin/fixes/batch/", {"language": "fr", "records": ["NOPE.1.1.s1"],
+                                                         "change": "x"}, format="json")
+        self.assertEqual(bad.json()["code"], "invalid_records")
+
+    @override_settings(OWB_GITHUB_TOKEN="t")
     def test_a_declined_fix_brings_the_message_back_with_a_reply_drafted(self):
         m = ReaderMessage.objects.create(user=self.reader, kind="suggestion", verse="JHN.1.2", language="fr",
                                          text="Plutôt « au commencement »", status="fixing", fix_issue=40)

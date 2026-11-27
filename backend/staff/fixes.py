@@ -25,6 +25,14 @@ POST /api/admin/fixes/meaning/  {record, decision, change, reason}
                             well as editors. The worker changes the decision
                             and every language's renderings it moves, in one
                             pull request (fix-worker, "Meaning changes").
+POST /api/admin/fixes/batch/  {language, records, levels, change, reason}
+                            one request for the same change in many
+                            sentences (a split term in Consistency, a run of
+                            Checks hits, a set of Decisions), at most BATCH
+POST /api/admin/fixes/term/  {slug, change, reason}
+                            propose a change to a key term (data/key_terms.json):
+                            a change for every use, so it is filed labelled
+                            key-term for the founder, not as a fix request
 """
 import json
 
@@ -35,7 +43,7 @@ from rest_framework.response import Response
 
 from feedback.models import ReaderMessage
 from owb import languages
-from translation.models import ReviewEvent, Sentence
+from translation.models import Rendering, ReviewEvent, Sentence
 
 from . import github, jobs, kept, people
 from .inbox import verse_label, verse_url
@@ -219,6 +227,102 @@ def meaning(request):
                          "code": "github"}, status=status.HTTP_503_SERVICE_UNAVAILABLE)
     record(request.user, "fix.request", f"#{issue['number']} {sentence.record_id}", verse=vid, kind="meaning",
            decision=decision.key, number=issue["number"], url=issue["html_url"])
+    return Response({"number": issue["number"], "url": issue["html_url"]}, status=status.HTTP_201_CREATED)
+
+
+BATCH = 100
+TERM_LABEL = "key-term"
+
+
+def _issue(title, lines, labels):
+    try:
+        return github.call("issues", "POST", {"title": title, "body": "\n".join(lines), "labels": labels}), None
+    except github.GitHubError:
+        return None, Response({"detail": "GitHub refused the request. Check OWB_GITHUB_TOKEN can create issues.",
+                               "code": "github"}, status=status.HTTP_503_SERVICE_UNAVAILABLE)
+
+
+def _not_configured():
+    return Response({"detail": "Set OWB_GITHUB_TOKEN on the API service to file requests from here.",
+                     "code": "not_configured"}, status=status.HTTP_503_SERVICE_UNAVAILABLE)
+
+
+@admin_view("inbox", methods=("POST",), once=True)
+def batch(request):
+    """One fix request for the same change in many sentences."""
+    if not settings.OWB_GITHUB_TOKEN:
+        return _not_configured()
+    data = request.data if isinstance(request.data, dict) else {}
+    lang = data.get("language")
+    if lang not in languages.READING:
+        raise ValidationError({"language": "Choose a language.", "code": "invalid_language"})
+    ids = data.get("records")
+    if not isinstance(ids, list) or not ids or not all(isinstance(r, str) for r in ids):
+        raise ValidationError({"records": "Choose the sentences.", "code": "invalid_records"})
+    ids = list(dict.fromkeys(ids))
+    if len(ids) > BATCH:
+        raise ValidationError({"records": f"At most {BATCH} sentences in one request.", "code": "too_many"})
+    found = {s.record_id: s for s in Sentence.objects.filter(record_id__in=ids)}
+    missing = [r for r in ids if r not in found]
+    if missing:
+        raise ValidationError({"records": f"No sentence {missing[0]}.", "code": "invalid_records"})
+    levels = [lv for lv in LEVELS if lv in (data.get("levels") or [])] or list(LEVELS)
+    change = _text(data, "change", 2000)
+    reason = _text(data, "reason", 4000, required=False)
+    name = languages.READING[lang]["name"]
+    texts = {}
+    for sid, level, text in (Rendering.objects.filter(sentence__in=found.values(), language=lang, level__in=levels)
+                             .order_by().values_list("sentence_id", "level", "text")):
+        texts.setdefault(sid, {})[level] = text
+    lines = [f"**Language:** {name}, {', '.join(LEVELS[lv] for lv in levels)}", "",
+             "**Change requested in each sentence below:**", "", change]
+    if reason:
+        lines += ["", "**Why:**", "", reason]
+    lines += ["", f"**Sentences ({len(ids)}):**", ""]
+    for rid in ids:
+        s = found[rid]
+        lines.append(f"- `{rid}` ({verse_label(s.refs[0])}), `{content_file(s.book, s.chapter, s.verse) or '?'}`")
+        lines += [f"  - {LEVELS[lv]}: {texts.get(s.id, {}).get(lv, '(none)')}" for lv in levels]
+    lines += ["", "Follow `.claude/skills/fix-worker/SKILL.md` (Batches): weigh the change in each sentence on its "
+              "own, make it where it holds, keep the records `ai_draft`, and open one pull request, naming any "
+              "sentence left as it is and why.", "",
+              f"Requested in the admin by {people.public_name(request.user)}.", "",
+              "<!-- fix-request " + json.dumps({"records": ids, "language": lang, "levels": levels, "kind": "batch",
+                                               "message": None}) + " -->"]
+    issue, failed = _issue(f"Fix {len(ids)} sentences ({name}): {change[:60]}", lines, [LABEL])
+    if failed:
+        return failed
+    record(request.user, "fix.request", f"#{issue['number']} {len(ids)} sentences", language=lang, kind="batch",
+           number=issue["number"], url=issue["html_url"])
+    return Response({"number": issue["number"], "url": issue["html_url"]}, status=status.HTTP_201_CREATED)
+
+
+@admin_view("inbox", methods=("POST",), once=True)
+def term(request):
+    """A proposed change to a key term, for the founder."""
+    if not settings.OWB_GITHUB_TOKEN:
+        return _not_configured()
+    from .consistency import TERMS
+    data = request.data if isinstance(request.data, dict) else {}
+    t = next((t for t in TERMS if t["slug"] == data.get("slug")), None)
+    if t is None:
+        raise ValidationError({"slug": "Choose a key term.", "code": "invalid_term"})
+    change = _text(data, "change", 2000)
+    reason = _text(data, "reason", 4000, required=False)
+    english = t["english"] if isinstance(t["english"], list) else "; ".join(
+        f"{lv}: {', '.join(words)}" for lv, words in t["english"].items())
+    lines = [f"**Key term:** `{t['slug']}` (Strong's {t['strong']}), {t['sense']}",
+             f"**English now:** {english}", f"**Note now:** {t.get('note', '')}", "",
+             "**Change proposed:**", "", change]
+    if reason:
+        lines += ["", "**Why:**", "", reason]
+    lines += ["", "A key term is settled for every use (`data/key_terms.json`, held by `owb.validate`), so this is "
+              "for the founder to decide, not a fix request: if it is accepted, the term and every sentence using "
+              "it change together.", "", f"Proposed in the admin by {people.public_name(request.user)}."]
+    issue, failed = _issue(f"Key term {t['slug']}: {change[:60]}", lines, [TERM_LABEL])
+    if failed:
+        return failed
+    record(request.user, "fix.term", f"#{issue['number']} {t['slug']}", number=issue["number"], url=issue["html_url"])
     return Response({"number": issue["number"], "url": issue["html_url"]}, status=status.HTTP_201_CREATED)
 
 
