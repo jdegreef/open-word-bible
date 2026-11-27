@@ -788,6 +788,10 @@ def site_header(lang, current, path=None, lang_path=None, translated=LANGUAGES):
             f'aria-expanded="false" aria-controls="dd-{key}">'
             f'{icon(ICONS[ico])}<span>{label}</span>{icon(ICONS["chevron"], 15, "icon caret")}</button>'
             f'<div class="dropdown {cls}" id="dd-{key}" hidden></div></li>')
+    # On a phone the header keeps search, the gear and the menu; signing in
+    # is the menu's last line (style.css hides the header's button there).
+    items.append(f'<li class="nav-signin"><a class="nav-link" href="{url(lang, "/login/")}">'
+                 f'{icon(ICONS["user"])}<span>{t(lang, "tools.sign_in")}</span></a></li>')
     return f"""<header class="site"><div class="wrap bar">
 <a class="brand" href="{home}"{" aria-current=page" if home_on else ""}>{MARK}<span class="brand-name">Open Word <em>Bible</em></span></a>
 <nav class="primary" id="site-nav" aria-label="{t(lang, "nav.main")}"><ul class="nav-list">{"".join(items)}</ul></nav>
@@ -2561,6 +2565,14 @@ def chapter_page(book, chapter, lang="en"):
     else:
         title_setting = "christos"
         title_control = control("title", "christos", [("0", t(lang, "reader.christ")), ("1", t(lang, "reader.messiah"))])
+    # Only where the text shown has the choice: Arabic writes one word for
+    # Christ and Messiah (docs/arabic-style.md), so its pages had a switch
+    # in English that changed nothing. Sentences not yet in lang show in
+    # English, so their spans count.
+    if not any("{{" + title_setting + ":" in text for r in records
+               for text in r["renderings"].get(lang, r["renderings"].get("en", {})).values()):
+        title_control = ""
+    title_hint = f'<span id="hint-{title_setting}"></span>' if title_control else ""
     levels = catalog(lang)["levels"]
     # Reader settings whose control only some languages have (data/languages.json).
     own = owb_languages.settings(lang)
@@ -2619,7 +2631,7 @@ def chapter_page(book, chapter, lang="en"):
                             ("4", t(lang, "reader.recall"))], " view-control")}
   {control("verse_numbers", "verse_numbers", [("1", t(lang, "reader.show")), ("0", t(lang, "reader.hide"))], " numbers-control")}
 </div>
-<p class="hint"><span id="hint-presets"></span> <span id="hint-level"></span> <span id="hint-gender"></span> <span id="hint-{title_setting}"></span> <span id="hint-deity_pronoun"></span> <span id="hint-units"></span> <span id="hint-plural_you"></span> <span id="hint-god_term"></span> <span id="hint-headings"></span> <span id="hint-crossrefs"></span> <span id="hint-red_letter"></span> <span id="hint-view"></span> <span id="hint-verse_numbers"></span></p>
+<p class="hint"><span id="hint-presets"></span> <span id="hint-level"></span> <span id="hint-gender"></span> {title_hint} <span id="hint-deity_pronoun"></span> <span id="hint-units"></span> <span id="hint-plural_you"></span> <span id="hint-god_term"></span> <span id="hint-headings"></span> <span id="hint-crossrefs"></span> <span id="hint-red_letter"></span> <span id="hint-view"></span> <span id="hint-verse_numbers"></span></p>
 </div>
 <div class="reader">
   <article class="passage">
@@ -5962,6 +5974,7 @@ def home_page(lang="en"):
 </ul>
 </section>
 {verse_of_the_day(lang)}
+{home_plans(lang)}
 {example_html(lang)}
 <section class="points-wrap" aria-labelledby="points-h">
 {sec_head("points-h", "info", t(lang, "home.points"))}
@@ -5972,10 +5985,10 @@ def home_page(lang="en"):
 {point("check", 4)}
 </ul>
 </section>
-{home_audiences(lang)}{home_plans(lang)}
-{progress_html(lang)}
+{latest}{home_audiences(lang)}
 {home_terms(lang)}
-{latest}<section class="involve" id="help" aria-labelledby="involve-h">
+{progress_html(lang)}
+<section class="involve" id="help" aria-labelledby="involve-h">
 <div class="involve-text">
 <h2 id="involve-h">{t(lang, "home.involve")}</h2>
 <p>{t(lang, "home.involve_text")}</p>

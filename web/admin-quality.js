@@ -129,9 +129,13 @@ OWBAdmin.module(function (A) {
 
   function linksEditor(r, d, names) {
     var langs = Object.keys(r.renderings);
-    var box = h("div", { class: "admin-links", hidden: true });
-    var toggle = h("button", { type: "button", class: "admin-btn" }, "Edit word links");
-    toggle.addEventListener("click", function () { box.hidden = !box.hidden; if (!box.hidden) draw(); });
+    var box = h("div", { class: "admin-links", hidden: true, id: "links-" + r.id });
+    var toggle = h("button", { type: "button", class: "admin-btn", "aria-expanded": "false", "aria-controls": "links-" + r.id }, "Edit word links");
+    toggle.addEventListener("click", function () {
+      box.hidden = !box.hidden;
+      toggle.setAttribute("aria-expanded", box.hidden ? "false" : "true");
+      if (!box.hidden) draw();
+    });
     var lang = select("links-lang-" + r.id, langs.map(function (c) { return [c, names[c] || c]; }), langs.indexOf("ja") >= 0 ? "ja" : langs[0]);
     var level = select("links-level-" + r.id, [["L", "Literal"], ["B", "Balanced"], ["R", "Readable"]], "B");
     var tokens = h("p", { class: "admin-source admin-link-tokens", lang: r.source.language, dir: r.source.language === "hbo" ? "rtl" : null });
@@ -265,16 +269,24 @@ OWBAdmin.module(function (A) {
 
   function fixForm(r, langs, names, from, verse) {
     var open = !!from;
-    var box = h("div", { class: "admin-fix", hidden: !open });
-    var toggle = h("button", { type: "button", class: "admin-btn" }, "Request a fix");
-    toggle.addEventListener("click", function () { box.hidden = !box.hidden; if (!box.hidden) change.focus(); });
+    var box = h("div", { class: "admin-fix", hidden: !open, id: "fix-" + r.id });
+    var toggle = h("button", { type: "button", class: "admin-btn", "aria-expanded": open ? "true" : "false", "aria-controls": "fix-" + r.id }, "Request a fix");
+    toggle.addEventListener("click", function () {
+      box.hidden = !box.hidden;
+      toggle.setAttribute("aria-expanded", box.hidden ? "false" : "true");
+      if (!box.hidden) change.focus();
+    });
     var lang = select("fix-lang-" + r.id, langs.map(function (c) { return [c, names[c] || c]; }),
       from && langs.indexOf(from.language) >= 0 ? from.language : langs[0]);
     var levels = h("fieldset", { class: "admin-checks-row" }, h("legend", null, "Levels"), ["L", "B", "R"].map(function (lv) {
       return h("label", null, h("input", { type: "checkbox", value: lv, checked: !from || !from.level || from.level === lv }), " " + LEVEL_NAMES[lv]);
     }));
-    var change = h("textarea", { id: "fix-change-" + r.id, rows: 3, maxlength: 2000, placeholder: "What should change, e.g. use “la Parole” for “le Verbe”" });
-    var reason = h("textarea", { id: "fix-reason-" + r.id, rows: 3, maxlength: 4000, placeholder: "Why (optional): the source, the style brief, a reader's point" });
+    var change = A.keepDraft(h("textarea", { id: "fix-change-" + r.id, rows: 3, maxlength: 2000, placeholder: "What should change, e.g. use “la Parole” for “le Verbe”" }), "fix." + r.id + ".change");
+    var reason = A.keepDraft(h("textarea", { id: "fix-reason-" + r.id, rows: 3, maxlength: 4000, placeholder: "Why (optional): the source, the style brief, a reader's point" }), "fix." + r.id + ".reason");
+    if (change.value || reason.value) {   // a request half-written: open, as it was left
+      box.hidden = false;
+      toggle.setAttribute("aria-expanded", "true");
+    }
     var send = h("button", { type: "submit", class: "admin-btn primary" }, "File fix request");
     var status = h("p", { class: "admin-note", role: "status" });
     var form = h("form", { class: "admin-form stacked" },
@@ -293,6 +305,7 @@ OWBAdmin.module(function (A) {
         add(status, ["Filed as ", h("a", { href: res.url, rel: "noopener" }, "#" + res.number), "."]);
         status.className = "admin-note";
         change.value = reason.value = "";
+        A.dropDraft("fix." + r.id + ".change", "fix." + r.id + ".reason");
         busy(send, false);
       }, function (err) { busy(send, false); note(status, err, true); });
     });
@@ -303,6 +316,7 @@ OWBAdmin.module(function (A) {
       if (langs.indexOf(code) >= 0) lang.value = code;
       levels.querySelectorAll("input").forEach(function (x) { x.checked = x.value === level; });
       box.hidden = false;
+      toggle.setAttribute("aria-expanded", "true");
       note(status, "");
       wrap.scrollIntoView({ block: "nearest", behavior: "smooth" });
       change.focus({ preventScroll: true });
@@ -353,9 +367,7 @@ OWBAdmin.module(function (A) {
         search, h("button", { type: "submit", class: "admin-btn" }, "Search"));
       form.addEventListener("submit", function (e) { e.preventDefault(); stopLive(); f.q = search.value.trim(); f.offset = 0; route(); });
       live(search, function (v) { if (v !== f.q) { f.q = v; f.offset = 0; route(); } });
-      var pager = h("div", { class: "admin-actions" });
-      if (d.offset > 0) pager.appendChild(h("button", { type: "button", class: "admin-btn", onclick: function () { f.offset = Math.max(0, d.offset - d.page); route(); } }, "\u2039 Earlier"));
-      if (d.offset + d.page < d.total) pager.appendChild(h("button", { type: "button", class: "admin-btn", onclick: function () { f.offset = d.offset + d.page; route(); } }, "Later \u203a"));
+      var pages = A.pager(d, d.decisions.length, "decisions", function (o) { f.offset = o; route(); });
       var names = {};
       d.layers.forEach(function (l) { names[l.code] = l.name; });
       return [head("Text", "Uncertain decisions", num(d.total) + " decisions the drafts mark uncertain" + (f.layer || f.category || f.book || f.q ? " match" : "") +
@@ -368,8 +380,7 @@ OWBAdmin.module(function (A) {
             h("p", null, h("strong", null, x.choice), x.alternatives.length ? h("span", { class: "admin-sub" }, " not: " + x.alternatives.join("; ")) : null),
             h("p", { class: "admin-sub" }, x.reason));
         })) : empty("No decisions match these filters.", [clearing("decisions")]),
-        h("p", { class: "admin-sub" }, d.total ? "Showing " + num(d.offset + 1) + "\u2013" + num(d.offset + d.decisions.length) + " of " + num(d.total) + "." : ""),
-        pager];
+        pages];
     });
   };
 
