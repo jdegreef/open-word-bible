@@ -90,13 +90,27 @@ def layer_json(code):
 
 
 def layers(user):
-    """The layers user may review: originals first, then reading languages."""
-    every = [*languages.ORIGINAL, *languages.READING]
+    """The layers user may open in review (queues, sentences, trails):
+    every layer for a super admin, otherwise those user reviews.
+    Originals first, then reading languages."""
     if is_super_admin(user):
-        return every
+        return [*languages.ORIGINAL, *languages.READING]
+    return reviewing(user)
+
+
+def reviewing(user):
+    """The layers user may approve and flag in: those of user's scholar
+    and language reviewer roles, for a super admin too (the charter: the
+    reviewed badge always means someone qualified checked it; a super
+    admin who reviews grants themselves the role)."""
     mine = set(user.roles.filter(kind__in=[Role.Kind.SCHOLAR_REVIEWER, Role.Kind.LANGUAGE_REVIEWER])
                .values_list("language", flat=True))
-    return [code for code in every if code in mine]
+    return [code for code in [*languages.ORIGINAL, *languages.READING] if code in mine]
+
+
+NOT_A_REVIEWER = ("Approving and flagging take a reviewer role for this layer, for a super admin too, so the "
+                  "reviewed badge always means a qualified person checked it. A super admin can grant one in "
+                  "Team & access.")
 
 
 def _scope(layer):
@@ -293,6 +307,7 @@ def queue(request):
     books = _books(layer)
     return Response({
         "layer": layer_json(layer), "layers": [layer_json(code) for code in allowed],
+        "may_review": layer in reviewing(request.user),
         "books": [{"code": b, "name": refs.BOOK_NAMES.get(b, b)} for b in books],
         "counts": {**counts, "total": total},
         "offset": offset, "more": offset + PAGE < matching, "matching": matching,
@@ -342,6 +357,7 @@ def sentence(request, record_id):
         "record": record_json(s), "verse": s.refs[0], "label": verse_label(s.refs[0]), "words": words,
         "languages": [{"code": c, "name": lang["name"]} for c, lang in languages.READING.items()],
         "state": state_of(layer, s.id),
+        "may_review": layer in reviewing(request.user),
         # What an approval from this page approves: sent back as "seen", so
         # a sentence changed while it was being read isn't approved unread.
         "digest": digest(s, layer),
@@ -357,6 +373,8 @@ def _act(request, s, layer, data):
         return _undo(request, s, layer, data.get("event"))
     if action not in ("approve", "flag", "comment"):
         raise ValidationError({"action": "Choose approve, flag or comment.", "code": "invalid_action"})
+    if action != "comment" and layer not in reviewing(request.user):
+        return _forbidden(NOT_A_REVIEWER)
     note = str(data.get("note") or "").strip()
     if action != "approve" and not note:
         raise ValidationError({"note": "Say what you noticed.", "code": "empty"})
