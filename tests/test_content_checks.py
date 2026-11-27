@@ -148,6 +148,14 @@ class GlossaryTest(unittest.TestCase):
         joshua = next(r for r in self.rows if r["book"] == "JOS")
         self.assertEqual(joshua["forms"], [("jemaah", ["L", "B"]), ("perkumpulan", ["R"])])
 
+    def test_language_with_variety(self):
+        # The reading language is "Chinese (Simplified)"; its file and its
+        # column are named "Chinese".
+        self.assertEqual(cc.glossary_path("Chinese (Simplified)").name, "chinese-terms.md")
+        self.assertEqual(cc.glossary_path("Indonesian").name, "indonesian-terms.md")
+        text = "## Terms\n\n| Hebrew (English) | Chinese |\n|---|---|\n| bronze | 铜 |\n"
+        self.assertEqual([r["forms"] for r in cc.glossary_rows(text, "Chinese (Simplified)")], [[("铜", None)]])
+
     def test_conflicts(self):
         found = {c["term"]: c for c in cc.glossary_conflicts(self.rows)}
         self.assertEqual(found["assembly"]["kind"], "ruled_out")
