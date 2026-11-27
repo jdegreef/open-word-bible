@@ -68,3 +68,19 @@ books passed to `--skip`). A category the heuristic cannot judge (a New
 Testament manuscript difference whose reason does not say what it changes;
 a hard text with no other reading) is left to the writer. The site lists
 every footnoted variant, book by book, at `/variants/`.
+
+## Checking the evidence
+
+`python3 scripts/apparatus_check.py` reads what each New Testament note says
+about witnesses ("many later manuscripts add ...", "Codex Vaticanus lacks
+...", "the King James Version has ...") and compares it with the pinned
+data: the SBLGNT apparatus (WH, Tregelles, NIV, Robinson-Pierpont, NA28) and
+the CNTR transcriptions of the early manuscripts, of the Robinson-Pierpont
+text and of the King James Version's Greek. "Later" or "most manuscripts" is
+checked against the Robinson-Pierpont Byzantine text; "the earliest" against
+the papyri, Sinaiticus and Vaticanus; "early" against all of CNTR's class 1.
+Ancient translations, church writers and minuscules are not pinned, so a
+note that names them keeps a narrowed "reviewers should check ... against a
+full apparatus". `--status contradicted --list` shows mismatches; the reading
+of a note is a heuristic, so read the note and the data before changing it.
+

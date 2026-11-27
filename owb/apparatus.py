@@ -336,7 +336,7 @@ def _resolve(sbl, wit, extra=()):
     return out
 
 
-def compare(ref, positions, siglum, hand="first", extra=()):
+def compare(ref, positions, siglum, hand="first", extra=(), whole=False):
     """Does the witness have the SBLGNT words at these word positions
     (1-based) of the verse? An addition just after the last position or just
     before the first counts as a difference."""
@@ -377,8 +377,8 @@ def compare(ref, positions, siglum, hand="first", extra=()):
         lost_ends = not blocks or blocks[0].a > lo or blocks[-1].a + blocks[-1].size < hi
         if uncertain or lost_ends or any(t == "delete" for t, *_ in touched):
             return Comparison("lacuna")
-    if hi - lo >= 6:
-        # A passage: words added at either end, or is it there at all?
+    if whole and hi - lo >= 6:
+        # A passage: words added after it, or is it there at all?
         if any(t == "insert" and i1 == hi and j2 - j1 >= 3 for t, i1, _, j1, j2 in touched):
             return Comparison("differ", "adds")
         matched = sum(max(0, min(hi, b.a + b.size) - max(lo, b.a)) for b in blocks)
@@ -416,14 +416,14 @@ def compare_gap(ref, unit, adds, siglum, hand="first"):
     after = sbl[unit.end:unit.end + 2]          # the words after the gap
     before = sbl[max(0, unit.end - 2):unit.end]  # the lemma's last words
     spots = []
-    if after:
-        n = len(after)
-        spots = [("before", j) for j in range(len(keys) - n + 1) if keys[j:j + n] == after]
-        if not spots and len(after) == 2:
-            spots = [("before", j) for j in range(len(keys)) if keys[j] == after[0]]
-    if not spots and before:
-        n = len(before)
-        spots = [("after", j + n) for j in range(len(keys) - n + 1) if keys[j:j + n] == before]
+    for anchor, where in ((after, "before"), (before, "after")):
+        n = len(anchor)
+        found = [j for j in range(len(keys) - n + 1) if n and keys[j:j + n] == anchor]
+        if not found and n == 2:     # one word of it will do
+            word = anchor[0] if where == "before" else anchor[-1]
+            found = [j + (0 if where == "before" else -1) for j in range(len(keys)) if keys[j] == word]
+            n = 1
+        spots += [(where, j if where == "before" else j + n) for j in found]
     if not spots:
         return Comparison("lacuna")
     for where, j in spots:
@@ -467,6 +467,11 @@ def evidence(ref, positions, whole=False):
                 editions[e] = "differ"
     # Where the apparatus marks the place, compare there; otherwise at the
     # words the decision is about.
+    if not found:
+        # No apparatus note here: read the Byzantine text itself.
+        rp = compare(ref, positions, "RP")
+        if rp.status == "differ":
+            editions["RP"] = "order" if rp.detail == "order" else "differ"
     places = [positions] if whole else ([u for u in found] or [positions])
     extra = [w for u in found for r in u.others for w in r.words]
 
@@ -483,7 +488,7 @@ def evidence(ref, positions, whole=False):
                 # decision about one word of it: compare that word.
                 inside = sorted(set(span) & set(positions))
                 p = inside if inside and len(inside) < len(span) else span
-            results.append(compare(ref, p, siglum, hand, extra))
+            results.append(compare(ref, p, siglum, hand, extra, whole))
         for status in ("differ", "agree", "absent"):
             for c in results:
                 if c.status == status:
@@ -556,6 +561,11 @@ def _named_missing(decision, positions):
     return out
 
 
+def _differs(ev):
+    return any(v != "agree" for v in ev["editions"].values()) or any(
+        c.status == "differ" for c in ev["witnesses"].values())
+
+
 def decision_evidence(decision):
     """evidence() over all the verses a decision's tokens touch. A witness
     differs if it differs in any verse, agrees if it agrees in all of them;
@@ -569,6 +579,11 @@ def decision_evidence(decision):
         per_verse = [verse_evidence(r) for r in missing]
     else:
         per_verse = [evidence(ref, pos, whole) for ref, pos in positions.items()]
+        if not any(_differs(e) for e in per_verse):
+            # Nothing differs at the decision's own words: an addition may sit
+            # just beside them ("the crumbs" before "that fell").
+            wider = {ref: list(range(max(1, min(pos) - 2), max(pos) + 3)) for ref, pos in positions.items()}
+            per_verse = [evidence(ref, pos, whole) for ref, pos in wider.items()]
     out = {"units": [u for e in per_verse for u in e["units"]],
            "editions": {e: "agree" for e in EDITIONS}, "witnesses": {}}
     for e in per_verse:
@@ -658,9 +673,22 @@ _NEGATED = re.compile(r"\b(?:lack|lacks|lacking|omit|omits|omitted|omitting|leav
 _SHORT = re.compile(r"\b(?:shorter|short|only|alone|end(?:s)? (?:the \w+ )?(?:here|with|at)|end the verse|"
                     r"go(?:es)? straight (?:on|from)|"
                     r"stop(?:s)? (?:here|at))\b", re.I)
-_ELSEWHERE = re.compile(r"(?<!as )(?<!from )(?<!like )\b(?:in|at) (?:verses? )?(?:[1-3] )?(?:[A-Z][a-z]+ )?\d+:\d+")
+# "Nearly all manuscripts have it in Mark 13:32": a claim about another verse.
+_ELSEWHERE = re.compile(r"\b(?:have|has|read|reads|lack|lacks|omit|omits|add|adds|include|includes)\b[^,;]{0,25}?"
+                        r"\b(?:in|at) (?:verses? )?(?:[1-3] )?(?:[A-Z][a-z]+ )?\d+:\d+")
 _QUOTE = re.compile(r"[\"“]([^\"”]+)[\"”]")
 _HEDGE = re.compile(r"apparatus|[Rr]eviewers? (?:should|must)|to be checked|general knowledge|from memory")
+# "From general knowledge: many later manuscripts read ...": the claim after it stands.
+_KNOWLEDGE = re.compile(r"(?:^|(?<=[;,] ))[Ff]rom general knowledge(?: of the manuscripts)?[,:;]\s*")
+
+
+def without_knowledge(text):
+    """The text with "From general knowledge, " and the like taken out of
+    sentences that go on to make a claim."""
+    def fix(m):
+        return ""
+    out = _KNOWLEDGE.sub(fix, text)
+    return re.sub(r"(^|[.!?]\s+)([a-z])", lambda m: m.group(1) + m.group(2).upper(), out)
 _STOP = {"the", "a", "an"}
 # Words that describe witnesses or variants, not a reading.
 _GENERIC = {"manuscript", "manuscripts", "reading", "readings", "read", "reads", "text", "early", "earlier",
@@ -686,6 +714,10 @@ _VERB_SPLIT = (r",?\s+and\s+(?=(?:is|are|was|were|has|have|had|read|reads|add|ad
                r"leave|leaves|missing|absent|it is|they are)\b)")
 
 
+_VERB = re.compile(r"\b(?:read|reads|have|has|had|add|adds|lack|lacks|omit|omits|leave|leaves|left|include|"
+                   r"includes|put|puts|give|gives|keep|keeps|end|ends|is|are|was|were|place|places)\b")
+
+
 def _sentences(text):
     """Split at a full stop, question or exclamation mark that is not inside
     quotation marks."""
@@ -696,6 +728,10 @@ def _sentences(text):
         elif ch in ".!?" and not inside and i + 1 < len(text) and text[i + 1] == " ":
             out.append(text[start:i + 1])
             start = i + 2
+        if ch in "\"”" and not inside and i > 0 and text[i - 1] in ".!?" and text[i + 1:i + 3].strip()[:1].isupper() \
+                and text[i + 1:i + 2] == " ":
+            out.append(text[start:i + 1])     # '... "Do you not yet have faith?" Reviewers ...'
+            start = i + 2
     out.append(text[start:])
     return [x for x in out if x.strip()]
 
@@ -703,8 +739,19 @@ def _sentences(text):
 def _clauses(reason):
     reason = re.sub(r"\((?:From general knowledge[^)]*)\)", "", reason)
     for sentence in _sentences(reason):
-        for clause in re.split(r";\s+|,?\s+(?:but|while|whereas)\s+|:\s+(?=[A-Z])|" + _VERB_SPLIT, sentence):
-            if clause and clause.strip():
+        parts = [p for p in re.split(r";\s+|,?\s+(?:but|while|whereas)\s+|:\s+(?=[A-Z])|" + _VERB_SPLIT, sentence)
+                 if p and p.strip()]
+        for part in parts:
+            # "Codex B adds it, and Codex D lacks it": two claims, when both halves have a verb.
+            pieces = re.split(r",\s+and\s+(?=(?:the |a |some |many |most |several |few |other |Codex |P\d|"
+                              r"papyrus |[A-Z][a-z]+us\b))", part)
+            merged = [pieces[0]]
+            for piece in pieces[1:]:
+                if _VERB.search(merged[-1]) and _VERB.search(piece):
+                    merged.append(piece)
+                else:
+                    merged[-1] += ", and " + piece
+            for clause in merged:
                 yield clause.strip()
 
 
@@ -889,8 +936,8 @@ def read_claims(reason, readings=None, direction=None):
     direction is "sblgnt_shorter", "sblgnt_longer" or None: which reading is
     the longer, from the data, so that "add" and "lack" can be put on a side."""
     claims = []
-    for clause in _clauses(reason):
-        if _HEDGE.search(clause) or _ELSEWHERE.search(clause) or _GENERAL.search(clause):
+    for clause in _clauses(without_knowledge(reason)):
+        if _HEDGE.search(clause) or _ELSEWHERE.search(clause) or _GENERAL.search(_QUOTE.sub('""', clause)):
             continue
         found = []
         for pattern, code in _MS_NAMES:
