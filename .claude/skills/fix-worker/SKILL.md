@@ -1,6 +1,6 @@
 ---
 name: fix-worker
-description: Work one fix request from the admin's queue: a GitHub issue labelled fix-request, filed from openwordbible.org/admin (the verse inspector or the reader inbox), asking for a sentence's wording to change in one language. Use when asked to "work the fix queue", "take a fix request", or handle a fix-request issue. One request per run, end to end.
+description: Work one fix request from the admin's queue: a GitHub issue labelled fix-request, filed from openwordbible.org/admin (the verse inspector or the reader inbox), asking for a sentence's wording to change in one language, or (a meaning-change request) for one meaning decision to change across every language. Use when asked to "work the fix queue", "take a fix request", or handle a fix-request issue. One request per run, end to end.
 ---
 
 # Work a fix request
@@ -36,8 +36,10 @@ judge the request against:
 - the three levels' aims (Literal follows the original closely; Balanced is
   accurate and natural; Readable is plain).
 
-A change of **meaning** is a meaning decision, shared by every language: say
-so on the issue and stop; don't change one language's wording to carry it.
+A change of **meaning** in a wording request is a meaning decision, shared by
+every language: say so on the issue and stop; don't change one language's
+wording to carry it. A scholar or editor can file it as a meaning-change
+request from the meaning review page (below).
 A disagreement a reader setting already covers (`{{setting:a|b}}`) needs no
 change.
 
@@ -66,6 +68,31 @@ word's gloss, the rendering), apply it with
 run `owb.validate`, and open a pull request as above. A link that cannot be
 right (the wrong source word, a span that is not the word) is left out and
 named on the issue.
+
+## Meaning changes
+
+A request whose machine line has `"kind": "meaning"` comes from the meaning
+review page, filed by a scholar reviewer of that original language or an
+editor, against one meaning decision (`"decision"`, its key). It changes
+what the sentence means, so it moves every language at once.
+
+- Weigh it against the source first: the words the decision covers, their
+  lemmas and morphology (from the pinned data, never typed), the literal
+  gloss and the decision's alternatives. A meaning change needs the text
+  to bear it; a preference of wording is not one.
+- If it holds, change the decision (choice, alternatives, reason, and
+  `uncertain`/`footnote` if they change) and the literal gloss if it says
+  the old meaning. Then, in every language the machine line lists, change
+  the renderings the new meaning moves at each level, and their rendering
+  decisions and alignments with them. A language whose wording already
+  fits the new meaning is left as it is; say so in the pull request.
+- Keep every record `ai_draft`. Run `owb.validate` and
+  `scripts/check.sh --fast`, then open **one** pull request for the whole
+  change, titled "Meaning change" with the verse, with "Fixes #N". Its
+  merge sends every wording approval of the sentence back for another look
+  (the admin's approvals cover the meaning beneath the wording).
+- If it doesn't hold, comment with the reasoning from the source and close
+  the issue as not planned.
 
 ## 4. Close the loop
 

@@ -17,6 +17,14 @@ POST /api/admin/fixes/  {verse, record, language, levels: [level], links, reason
 
 For editors and super admins (the inbox area). Filing needs
 OWB_GITHUB_TOKEN, as drafting jobs do.
+
+POST /api/admin/fixes/meaning/  {record, decision, change, reason}
+                            a meaning-change request against one meaning
+                            decision (its key): for the sentence's meaning
+                            reviewers (scholars of its original language) as
+                            well as editors. The worker changes the decision
+                            and every language's renderings it moves, in one
+                            pull request (fix-worker, "Meaning changes").
 """
 import json
 
@@ -157,6 +165,60 @@ def _file(request):
             message.status = ReaderMessage.Status.FIXING
         message.fix_issue = issue["number"]
         message.save(update_fields=["note", "status", "fix_issue"])
+    return Response({"number": issue["number"], "url": issue["html_url"]}, status=status.HTTP_201_CREATED)
+
+
+@admin_view("review", methods=("POST",), once=True)
+def meaning(request):
+    """A meaning-change request, from the meaning review page."""
+    if not settings.OWB_GITHUB_TOKEN:
+        return Response({"detail": "Set OWB_GITHUB_TOKEN on the API service to file requests from here.",
+                         "code": "not_configured"}, status=status.HTTP_503_SERVICE_UNAVAILABLE)
+    from . import review   # review imports what imports this module
+    data = request.data if isinstance(request.data, dict) else {}
+    sentence = (Sentence.objects.filter(record_id=str(data.get("record", ""))).select_related("source_edition")
+                .first())
+    if sentence is None:
+        raise ValidationError({"record": "Choose a sentence.", "code": "invalid_record"})
+    layer = sentence.source_edition.language
+    if "inbox" not in request.admin_areas and layer not in review.reviewing(request.user):
+        return Response({"detail": f"Editors and the {review.layer_json(layer)['name']} reviewers ask for meaning "
+                                   "changes.", "code": "forbidden"}, status=status.HTTP_403_FORBIDDEN)
+    decision = sentence.decisions.filter(layer="meaning", key=str(data.get("decision", ""))).first()
+    if decision is None:
+        raise ValidationError({"decision": "Choose one of the sentence's meaning decisions.", "code": "invalid"})
+    change = _text(data, "change", 2000)
+    reason = _text(data, "reason", 4000, required=False)
+    vid = sentence.refs[0]
+    label = verse_label(vid)
+    path = content_file(sentence.book, sentence.chapter, sentence.verse)
+    drafted = sorted(set(sentence.renderings.values_list("language", flat=True)))
+    lines = [f"**Sentence:** `{sentence.record_id}` ({label})",
+             f"**File:** `{path or 'not found'}`",
+             f"**Meaning decision:** `{decision.key}` ({decision.category})", "",
+             "**Now:**", "", f"- Choice: {decision.choice}",
+             f"- Alternatives: {'; '.join(decision.alternatives) or '(none)'}",
+             f"- Reason: {decision.reason}", "",
+             "**Change requested:**", "", change]
+    if reason:
+        lines += ["", "**Why:**", "", reason]
+    lines += ["", f"**Languages drafted:** {', '.join(drafted)}. Each one's renderings that the change moves "
+              "change with it, in the same pull request.", "",
+              "Follow `.claude/skills/fix-worker/SKILL.md` (Meaning changes): weigh it against the source, change "
+              "the decision and the renderings it moves in every language, keep the record `ai_draft`, and open "
+              "one pull request or say here why not.", "",
+              f"Requested in the admin by {people.public_name(request.user)}.", "",
+              "<!-- fix-request " + json.dumps({"record": sentence.record_id, "verse": vid, "kind": "meaning",
+                                               "decision": decision.key, "languages": drafted, "message": None})
+              + " -->"]
+    try:
+        issue = github.call("issues", "POST", {"title": f"Meaning change {label}: {change[:60]}",
+                                                "body": "\n".join(lines), "labels": [LABEL]})
+    except github.GitHubError:
+        return Response({"detail": "GitHub refused the request. Check OWB_GITHUB_TOKEN can create issues.",
+                         "code": "github"}, status=status.HTTP_503_SERVICE_UNAVAILABLE)
+    record(request.user, "fix.request", f"#{issue['number']} {sentence.record_id}", verse=vid, kind="meaning",
+           decision=decision.key, number=issue["number"], url=issue["html_url"])
     return Response({"number": issue["number"], "url": issue["html_url"]}, status=status.HTTP_201_CREATED)
 
 

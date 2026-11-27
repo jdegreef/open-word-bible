@@ -319,6 +319,30 @@ class ReviewTest(AdminTestCase):
         self.assertEqual((flags[0]["outcome"], flags[0]["thread"][0]["fix_issue"]), ("fix", 12))
 
 
+    def test_a_meaning_change_request_from_the_meaning_review(self):
+        from translation.models import Decision
+        s = Sentence.objects.get(record_id="JHN.1.1.s1")
+        Decision.objects.create(sentence=s, key="d1", layer="meaning", category="sense", order=0, choice="Word",
+                                alternatives=["Reason"], reason="The usual sense here.", levels=["L", "B", "R"])
+        body = {"record": "JHN.1.1.s1", "decision": "d1", "change": "Reason, not Word", "reason": "The context."}
+        issue = {"number": 14, "html_url": "https://github.com/x/y/issues/14"}
+        with mock.patch("staff.github.call", return_value=issue) as call, self.settings(OWB_GITHUB_TOKEN="t"):
+            # A language reviewer can't; a scholar of the language and an editor can.
+            self.assertEqual(self.french.post("/api/admin/fixes/meaning/", body, format="json").status_code, 403)
+            r = self.scholar.post("/api/admin/fixes/meaning/", body, format="json")
+            self.assertEqual(r.status_code, 201)
+            filed = call.call_args.args[2]
+            self.assertTrue(filed["title"].startswith("Meaning change John 1:1"))
+            self.assertIn('"kind": "meaning"', filed["body"])
+            self.assertIn('"languages": ["en", "fr"]', filed["body"])
+            self.assertIn("- Choice: Word", filed["body"])
+            self.assertEqual(self.post_meaning_missing(body), "invalid")
+
+    def post_meaning_missing(self, body):
+        r = self.scholar.post("/api/admin/fixes/meaning/", {**body, "decision": "nope"}, format="json")
+        return r.json()["code"]
+
+
 class QueueOrderTest(AdminTestCase):
     """The queue is put in Bible order, filtered and paged in the database;
     "next" is one query; ReviewState follows the trail without rebuilding a

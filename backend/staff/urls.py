@@ -30,6 +30,7 @@ urlpatterns = [
     path("review/<str:record_id>/", review.sentence),
     path("verses/", verses.find),
     path("verses/<str:vid>/", verses.verse),
+    path("fixes/meaning/", fixes.meaning),
     path("fixes/", fixes.fixes),
     path("decisions/", text.decisions),
     path("terms/", text.terms),

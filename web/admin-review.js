@@ -423,7 +423,9 @@ OWBAdmin.module(function (A) {
           h("a", { href: "#verse/" + d.verse }, A.ME.admin.indexOf("inbox") >= 0 ? "Request a fix in the verse inspector" : "Verse inspector")),
         h("section", { class: "admin-block admin-record" }, h("header", { class: "admin-toolbar" }, h("h2", null, "State"), reviewPill(d.state)),
           meaningLine(), words, h("p", { class: "admin-gloss" }, "Literal gloss: " + r.literal_gloss), renderings,
-          meaning.length ? [h("h3", { class: "admin-h3" }, "Meaning decisions"), h("div", { class: "admin-decisions" }, meaning.map(decision))] : null,
+          meaning.length ? [h("h3", { class: "admin-h3" }, "Meaning decisions"), h("div", { class: "admin-decisions" }, meaning.map(function (x) {
+            return kind === "meaning" && (mayReview || A.ME.admin.indexOf("inbox") >= 0) ? meaningChange(r, x) : decision(x);
+          }))] : null,
           mine.length ? [h("h3", { class: "admin-h3" }, (names[layer] || layer) + " decisions"), h("div", { class: "admin-decisions" }, mine.map(decision))] : null),
         hintsBlock(d.hints, layer),
         // Kept at the foot of the window while the sentence above is read,
@@ -438,6 +440,43 @@ OWBAdmin.module(function (A) {
         h("div", { class: "admin-review-keys" }, hint, help),
         h("section", { class: "admin-block" }, h("h2", null, "Review trail"), trail)];
     });
+  }
+  // A meaning decision with "Request a meaning change" (staff/fixes.py
+  // meaning): for the layer's scholars and editors. The worker changes the
+  // decision and every language's renderings it moves in one pull request.
+  function meaningChange(r, x) {
+    var node = decision(x);
+    var change = A.keepDraft(h("textarea", { id: "meaning-change-" + x.id, rows: 2, maxlength: 2000, placeholder: "What the meaning should be" }), "meaning." + r.id + "." + x.id);
+    var reason = A.keepDraft(h("textarea", { id: "meaning-reason-" + x.id, rows: 2, maxlength: 4000, placeholder: "Why, from the text: the words, their forms, the context" }), "meaning." + r.id + "." + x.id + ".why");
+    var status = h("p", { class: "admin-note", role: "status" });
+    var send = h("button", { type: "submit", class: "admin-btn primary" }, "File the request");
+    var form = h("form", { class: "admin-form stacked", hidden: !(change.value || reason.value), id: "meaning-form-" + x.id },
+      h("label", { class: "admin-field", for: "meaning-change-" + x.id }, "Change", change),
+      h("label", { class: "admin-field", for: "meaning-reason-" + x.id }, "Reason", reason),
+      h("p", { class: "admin-sub" }, "A public GitHub issue. A Claude session weighs it against the source and, if it holds, changes this decision and the wording in every language in one pull request; wording approvals then come back for another look."),
+      send, status);
+    var toggle = h("button", { type: "button", class: "admin-link", "aria-expanded": form.hidden ? "false" : "true", "aria-controls": "meaning-form-" + x.id }, "Request a meaning change");
+    toggle.addEventListener("click", function () {
+      form.hidden = !form.hidden;
+      toggle.setAttribute("aria-expanded", form.hidden ? "false" : "true");
+      if (!form.hidden) change.focus();
+    });
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!change.value.trim()) { note(status, "Say what the meaning should be.", true); change.focus(); return; }
+      busy(send, true);
+      api("/api/admin/fixes/meaning/", { method: "POST", body: { record: r.id, decision: x.id, change: change.value, reason: reason.value } }).then(function (res) {
+        A.dropDraft("meaning." + r.id + "." + x.id, "meaning." + r.id + "." + x.id + ".why");
+        change.value = reason.value = "";
+        status.textContent = "";
+        add(status, ["Filed as ", h("a", { href: res.url, rel: "noopener" }, "#" + res.number), "."]);
+        status.className = "admin-note";
+        busy(send, false);
+      }, function (err) { busy(send, false); note(status, err, true); });
+    });
+    node.appendChild(h("p", null, toggle));
+    node.appendChild(form);
+    return node;
   }
   // Start here, in My review: the layer's documents, and what approving
   // and flagging mean (the charter's review rules, in short). Folded away
