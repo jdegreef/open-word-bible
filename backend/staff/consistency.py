@@ -18,13 +18,15 @@ form matching as a whole word or with a short ending (plurals, particles).
 A sentence with none of them is counted as "other". Answers are cached
 until a sentence changes.
 """
+import functools
 import hashlib
 import json
 import re
 
 from django.conf import settings
 from django.core.cache import cache
-from django.db.models import Count, Max
+from django.db.models import Count, JSONField, Max
+from django.db.models.expressions import RawSQL
 from rest_framework.exceptions import ValidationError
 from rest_framework.response import Response
 
@@ -76,6 +78,7 @@ def _choice_forms(choice, levels):
     return out
 
 
+@functools.lru_cache(maxsize=4096)
 def _pattern(form):
     return re.compile(r"(?<!\w)" + re.escape(form) + r"\w{0,%d}(?!\w)" % ENDING)
 
@@ -102,27 +105,39 @@ def term_uses():
     rows = counts.using(every).values("id", "record_id", "book", "chapter", "verse", "number", "refs", "tokens")
     order = {code: i for i, code in enumerate(refs.BOOK_CODES)}
     rows = sorted(rows, key=lambda r: (order.get(r["book"], len(order)), r["chapter"], r["verse"], r["number"]))
+    # Each sentence's tokens are looked at once, not once a term.
+    terms_of = {}
     for t in TERMS:
-        mine = ids.get((t.get("language", "grc"), t["strong"]), set())
-        out[t["slug"]] = [{**r, "term_tokens": mine & set(r["tokens"])} for r in rows if mine & set(r["tokens"])]
+        for wid in ids.get((t.get("language", "grc"), t["strong"]), ()):
+            terms_of.setdefault(wid, []).append(t["slug"])
+    for r in rows:
+        mine = {}
+        for token in r["tokens"]:
+            for slug in terms_of.get(token, ()):
+                mine.setdefault(slug, set()).add(token)
+        for slug, tokens in mine.items():
+            out[slug].append({**r, "term_tokens": tokens})
     return out, ids
 
 
 def measure(lang, level, slug, least):
     uses, _ = term_uses()
     sentence_ids = {r["id"] for rows in uses.values() for r in rows}
-    texts = dict(Rendering.objects.filter(sentence_id__in=sentence_ids, language=lang, level=level)
-                 .values_list("sentence_id", "text"))
+    # As searchable text once, though a sentence may use several terms.
+    texts = {sid: _plain(text) for sid, text in Rendering.objects.filter(
+        sentence_id__in=sentence_ids, language=lang, level=level).values_list("sentence_id", "text")}
     decisions = {}
     for sid, tokens, choice, levels in (Decision.objects
                                         .filter(sentence_id__in=sentence_ids, layer="rendering", language=lang,
                                                 category="word_choice")
                                         .values_list("sentence_id", "tokens", "choice", "levels")):
         decisions.setdefault(sid, []).append((set(tokens), choice, levels))
-    aligned = {}
-    rows = Sentence.objects.filter(id__in=sentence_ids).exclude(alignments=[]).values_list("id", "alignments")
-    for sid, spans in rows:
-        aligned[sid] = [a for a in spans if a["language"] == lang and a["level"] == level]
+    # Only this language's spans at this level leave the database: every
+    # language's alignments for 9,000 sentences took a second to read.
+    mine = RawSQL("jsonb_path_query_array(alignments, '$[*] ? (@.language == $l && @.level == $v)', %s::jsonb)",
+                  (json.dumps({"l": lang, "v": level}),), output_field=JSONField())
+    aligned = dict(Sentence.objects.filter(id__in=sentence_ids).exclude(alignments=[])
+                   .annotate(mine=mine).exclude(mine=[]).values_list("id", "mine"))
     terms = []
     for t in TERMS:
         if slug and t["slug"] != slug:
@@ -148,8 +163,9 @@ def measure(lang, level, slug, least):
             if text is None:
                 continue
             rendered += 1
-            text = _plain(text)
-            hit = next((f for f, p in patterns if p.search(text)), None)
+            # A form is only searched for where it is in the text at all:
+            # the regular expressions were most of the time (2 million searches).
+            hit = next((f for f, p in patterns if f in text and p.search(text)), None)
             (found.setdefault(hit, []) if hit else other).append(r)
         limit = TERM_EXAMPLES if slug else EXAMPLES
         listed = sorted(found.items(), key=lambda kv: (-len(kv[1]), kv[0]))
