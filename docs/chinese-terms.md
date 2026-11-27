@@ -245,12 +245,14 @@ promise 应许; R as the English Readable groups them. The CUV's set (律法, �
 | firstfruits; firstborn | 初熟的果子; 头生的 (animals), 长子 (sons) |
 | tithe | 十分之一 |
 | the Sabbath; the Jubilee | 安息日; 禧年 |
+| the new moon (*ḥodesh*, the feast day) | 月朔 (L, B), as Colossians 2:16; 新月节 (R), 初一的新月节 where the English Readable gives the day. The moon itself beside the full moon (Psalm 81:4) 新月 |
 | the Passover; Unleavened Bread | 逾越节 (as the New Testament); 除酵节 |
 | the Feast of Weeks; of Booths; of Ingathering | 七七节; 住棚节 (as John 7:2); 收藏节 |
 | the Day of Atonement; the day of trumpet blasts | 赎罪日; 吹号的日子 |
 | serious skin disease (*tsaraʿat*) | 严重的皮肤病 at every level, with 麻风 (the traditional word, and leprosy in modern Chinese) named in a decision |
 | the house of the LORD; the temple (*hekhal*) | *dn*的殿 at every level (家 would read as a dwelling); *hekhal* 殿 / 圣殿; the temple in Jerusalem as a whole 圣殿 |
 | the high places (*bamot*) | 丘坛 (L, B); 山上的祭坛 (R) |
+| standing stone (*matsevah*) | 立石 (L, B; not 柱像, and not 柱子, a building's pillar); 敬拜用的石柱 (R). Where the English says "sacred pillar" or "sacred stone": 石柱, 敬拜用的石柱 (Hosea 3:4; 10:1-2), 神圣石柱 (Micah 5:12 B) |
 | Baal, the Baals; Asherah, the Asherim | 巴力, 众巴力; 亚舍拉, 亚舍拉木柱 |
 | Molech; Chemosh; Dagon | 摩洛; 基抹; 大衮 |
 | household gods (*teraphim*) | 家中的神像 |
@@ -283,7 +285,8 @@ The temple furnishings in Ezekiel 40-48 follow 1 Kings 6-7.
 | the Three; the Thirty (David's men) | 那三个勇士; 那三十个勇士 |
 | Cherethites and Pelethites | 基利提人和比利提人 |
 | chariots; horsemen | 战车; 骑兵 |
-| governor (Persian); governor (Roman) | 省长; 总督 |
+| governor (Persian, *pechah*); governor (Roman, *hēgemōn*) | 省长; 总督 |
+| satrap (*ʾaḥashdarpan*, Ezra, Esther, Daniel) | 大区总督 (L, B); 各大区总督 (R), kept apart from the governors 省长 under them and from 总督, the Roman governor |
 | eunuch, official (*saris*) | 宦官 (L, B); 官员 (R) where the English level says official |
 | the poor, the afflicted, the needy | 穷人, 困苦的人, 贫穷的人 |
 | widow, orphan | 寡妇, 孤儿 |
@@ -935,7 +938,7 @@ Terms settled in Acts:
 | the Council (synedrion) | 公会 (L); 最高公会 (B, R). Festus's council of advisers (25:12): 议事会 (L), 顾问们 (B, R) |
 | the captain of the temple (4:1; 5:24, 26) | 圣殿的官长 (L); 圣殿卫队的长官 (B, R) |
 | proconsul (anthypatos; 13:7-12; 18:12; 19:38) | 行省总督 (L, B, and R where the English Readable says "proconsul"); 总督 at R in 13:7-12, where the English Readable says "governor" |
-| governor (hēgemōn: Felix, Festus) | 总督, as Pilate in the Gospels |
+| governor (*hēgemōn*: Felix, Festus) | 总督, as Pilate in the Gospels |
 | tribune; centurion; cohort | 千夫长; 百夫长 (R 罗马军官 where the English Readable says "officer"); 营 |
 | the magistrates of Philippi (16:20-38); their lictors | 长官 (L, B), 城里的官员 (R); 执棒的人 (L), 执法吏 (B), 差役 (R) |
 | politarchs (17:6, 8); Asiarchs (19:31); the town clerk (19:35) | 城官 (L), 城里的官员 (B), 城里的领袖 (R); 亚细亚的官长 (L), 亚细亚官长 (B), 省里的重要官员 (R); 书记 |
@@ -1147,7 +1150,7 @@ Terms settled in Galatians:
 | guardian (paidagōgos, 3:24-25; epitropos, 4:2) | 监护人, explained at R as 负责照管孩子的仆人 (3:24); guardians and managers 监护人和管理人 (4:2) |
 | the elements of the world (stoicheia; 4:3, 9) | 世界的基本元素 (L); 世上的基本势力 (B); 管辖这世界的势力和规条 (R) |
 | the present evil age (aiōn, 1:4) | 这现今邪恶的时代 (L); 现在这个邪恶的时代 (B, R); "forever and ever" (1:5) 直到永永远远 |
-| anathema (1:8-9) | 就让那人受咒诅 (L); 那人该落在`{{god_term:神\|上帝}}`的咒诅之下 (B); 愿`{{god_term:神\|上帝}}`的咒诅临到那人 (R) |
+| anathema (1:8-9) | 就让那人受诅咒 (L); 那人该落在`{{god_term:神\|上帝}}`的诅咒之下 (B); 愿`{{god_term:神\|上帝}}`的诅咒临到那人 (R), with the glossary's 诅咒 (also 3:10-13) |
 | hanged on a tree (3:13) | 挂在木头上 |
 | Judaism (1:13-14) | 犹太教, explained at R as 犹太人的生活方式 |
 | the fruit of the Spirit (5:22-23) | 爱、喜乐、平安、忍耐、仁慈、善良、忠信、温和、自制 (L, B); R 爱、快乐和平安；对人有耐心、仁慈和善良；忠诚、温和与自制. Drafted fresh; not the older versions' list |
@@ -1327,7 +1330,7 @@ Terms settled in Colossians:
 | the elements of the world (stoicheia, 2:8, 20) | 世界的基本元素 (L); 世上的基本势力 (B); 统治这个世界的势力和规条 (R) |
 | the body of the flesh (2:11) | 肉体的身体 (L); 受肉体支配的旧生命 (B); 被罪控制的旧生命 (R). His physical body (1:22): 肉体的身体 (L), 肉身 (B), 人的身体 (R) |
 | bond of debt (cheirographon, 2:14) | 手写债据 (L); 债据 (B); explained at R |
-| new moon (2:16) | 月朔 (L, B); 每月初一的节期 (R) |
+| new moon (2:16) | 月朔 (L, B); 每月初一的节期 (R, as the English Readable "monthly feasts"); 新月节 where the English Readable names the new moon festival |
 | shadow and body (2:17) | 影子; 身体 (L), 实体 (B, R) |
 | disqualify (2:18) | 判……失格 (L); 判……失去奖赏 (B) |
 | self-humbling (2:18, 23) | 谦卑 (L); 刻苦己身 (B) |
@@ -1439,7 +1442,7 @@ Terms settled in 1 Timothy:
 | godliness (eusebeia: 2:2; 3:16; 4:7-8; 6:3-11; the verb 5:4) | 敬虔 (L, B); R as the English Readable (尊敬`{{god_term:神\|上帝}}`, 过讨`{{god_term:神\|上帝}}`喜悦的生活, 为`{{god_term:神\|上帝}}`而活, 服事`{{god_term:神\|上帝}}`). theosebeia (2:10) 敬畏`{{god_term:神\|上帝}}` |
 | sound teaching, words (1:10; 6:3) | 纯正的教导 / 话语 (L, B); 正确的教导 / 话 (R), as Titus 1:9 and 2 Timothy 4:3; the sick craving (6:4) 病态的 (L), 不健康的 (B) |
 | a different doctrine (heterodidaskaleō, 1:3; 6:3) | 教导不同的教义 (L, B); 教导不真实的东西 (R). Not 异教, 异端 |
-| myths; genealogies (1:4; 4:7) | 无稽的传说 (L), 荒诞的传说 (B), 编造的故事 (R), as 2 Timothy and Titus; not 神话. 无止境的家谱 (L), 没完没了的祖先名单 (B, R) |
+| myths; genealogies (1:4; 4:7) | 无稽的传说 (L), 荒诞的传说 (B), 编造的故事 (R), as 2 Timothy and Titus, not 神话; 无止境的家谱 (L), 没完没了的祖先名单 (B, R) |
 | stewardship of God (oikonomia, 1:4) | 管家职分 (L, as Ephesians 3:2); 计划 (B); 工作 (R) |
 | teachers of the law (1:7) | 律法教师, as Luke 5:17 |
 | men who lie with males (1:10) | 与男人同寝的男人 (L); 与男人发生性关系的男人 (B, R); not 同性恋者 |
@@ -1781,7 +1784,7 @@ Terms settled in 2 Peter:
 | affection for brothers and sisters (philadelphia, 1:7) | 对{{gender:弟兄姐妹\|弟兄}}的爱 (L); 对一同信主的人的关爱 (B); 对其他信徒的爱 (R) |
 | tent = body (1:13-14) | 帐棚 (L, B); 帐篷 (R) |
 | coming (parousia; 1:16; 3:4, 12) | 来临 (L, B); 再来 / 回来 (R) |
-| myths (1:16) | 神话 (L, no span); 编造出来的巧妙故事 (B, R) |
+| myths (1:16) | 精心编造的无稽传说 (L), as 1 Timothy 1:4 and Titus 1:14, not 神话 (2 Timothy 4:4); 编造出来的巧妙故事 (B, R) |
 | Majestic Glory (1:17) | 威严的荣耀 |
 | morning star (1:19) | 启明星 |
 | false teachers; heresies (2:1) | 假教师; 异端 (L), 导致灭亡的教导 (B), 害人灭亡的假教导 (R) |
@@ -2382,7 +2385,7 @@ the Hebrew says the same, its Chinese is kept at each level, with
 6:13 (Matthew 4:10, with the Hebrew "fear"), 6:16 (Matthew 4:7: 试验, where
 Exodus 17:2, 7 has 试探), 8:3 (Matthew 4:4), 18:15 (Acts 3:22), 19:15
 (Matthew 18:16; 2 Corinthians 13:1), 21:23 (Galatians 3:13's frame, with the
-glossary's 诅咒 for Galatians' 咒诅 and the Hebrew's "of God"), 25:4
+glossary's 诅咒, as Galatians, and the Hebrew's "of God"), 25:4
 (1 Corinthians 9:9), 27:26 (Galatians 3:10), 30:12, 14 (Romans 10:6, 8; 30:13
 keeps the Hebrew "beyond the sea"), 31:6 (Hebrews 13:5's verbs), 32:35
 (Romans 12:19; Hebrews 10:30), 32:43 (Romans 15:10's frame). 18:19 follows
@@ -3370,8 +3373,8 @@ Terms settled in Ezra:
 
 | English | Chinese |
 |---|---|
-| satraps (8:36) | 总督, kept apart from the governors 省长 under them |
-| governor (pechah: Tattenai, Sheshbazzar, Zerubbabel) | 省长 |
+| satraps (8:36) | 大区总督 (L, B), 在各地区的总督 (R, as the English Readable "regional governors"), kept apart from the governors 省长 under them |
+| governor (*pechah*: Tattenai, Sheshbazzar, Zerubbabel) | 省长 |
 | Nethinim (2:43-58, 70; 7:7, 24; 8:17-20) | 尼提宁 (L); 圣殿仆役 (B, R). Nehemiah 7:46-60 and 1 Chronicles 9:2 R still have 在圣殿里做杂役的仆人 |
 | singers; gatekeepers | 歌手; 守门人, every level |
 | the slaves of Solomon (2:55, 58) | 所罗门奴隶 (L); 所罗门仆人 (B, R) |
@@ -3449,7 +3452,7 @@ Terms settled in Nehemiah:
 |---|---|
 | cupbearer (1:11) | 酒政 |
 | address to Artaxerxes (2:3-8) | 你 and 王 (L); 您 (B); 您 and 陛下 (R) |
-| governor (pechah: Nehemiah; the governors of Beyond the River) | 省长; his allowance 省长的俸禄 (L, B), 省长有权征收的粮食 (R) |
+| governor (*pechah*: Nehemiah; the governors of Beyond the River) | 省长; his allowance 省长的俸禄 (L, B), 省长有权征收的粮食 (R) |
 | Nethinim (3:26, 31; 7:46-60, 72; 10:29; 11:3, 21) | 尼提宁 (L); 圣殿仆役 (B, R), as Ezra |
 | the slaves of Solomon (7:57-60; 11:3) | 所罗门奴隶 (L); 所罗门仆人 (B, R) |
 | singers; gatekeepers | 歌手; 守门人, every level, as Ezra (1 Chronicles' Literal 歌唱的 is not used here) |
@@ -3528,7 +3531,7 @@ Esther keeps the glossary's forms for every name and term above (亚哈随鲁, �
 | Pur, the lot (3:7; 9:24, 26); Purim (9:26-32) | 普珥, 抽签 / 签; 普珥节 |
 | annihilate, kill, destroy (3:13; 7:4; 8:11) | 剪除、杀戮、灭绝 (L); 消灭、杀死、灭绝 (B, R); hashmid alone 剪除 (L), 消灭 (B, R); ʾabad alone 灭绝 (L, B), 消灭 (R) |
 | little ones and women (3:13; 8:11) | 孩童和妇女 (L); 孩子和妇女 (B, R) |
-| satraps; governors; doers of the king's work (3:12; 8:9; 9:3) | 总督 (L, B), 各大区总督 (R); 省长 (L, B, R; 地方省长 R 9:3); 办理王事务的人 (L), 主管王事务的官员 (B), 王的官员 (R) |
+| satraps; governors; doers of the king's work (3:12; 8:9; 9:3) | 大区总督 (L, B), 各大区总督 (R); 省长 (L, B, R; 地方省长 R 9:3); 办理王事务的人 (L), 主管王事务的官员 (B), 王的官员 (R) |
 | the king's scribes (3:12; 8:9) | 王的书记 |
 | couriers, runners (3:13, 15; 8:10, 14) | 驿卒 (L); 信差 (B); 送信的人 (R) |
 | signet ring (3:10, 12; 8:2, 8, 10) | 印戒 |
@@ -3554,7 +3557,7 @@ Esther keeps the glossary's forms for every name and term above (亚哈随鲁, �
 | Haman's ten sons (9:7-9) | 巴珊大他, 达分, 亚斯帕他, 破拉他, 亚大利雅, 亚利大他, 帕玛斯他, 亚利赛, 亚利代, 瓦耶撒他 |
 | each to his neighbor (9:19, 22); his brothers (10:3) | 各人……邻舍, no span (Chinese is already inclusive; the English Literal's gender span is noted in a decision); `{{gender:同胞\|弟兄}}` (L), 同胞 (B, R) |
 | a day of feasting and joy (9:17-19) | 设筵欢乐的日子 (L); 设宴欢乐的日子 (B, R) |
-| tribute; the coastlands (10:1) | 贡物 / 贡赋; 海中的沿岸地区 (L), 沿海地区 (B) |
+| tribute; the coastlands (10:1) | 贡物 / 贡赋; 海中的众海岛 (L, B), as Isaiah 11:11 (*iyyim*) |
 
 ### Job
 
@@ -4464,7 +4467,7 @@ formula 就会明白 against Isaiah's 就知道 wording.
 
 Daniel keeps the glossary's forms for every name and term above, the forms
 of Genesis to 2 Chronicles and of Ezra, Nehemiah and Esther for the Persian
-court (satraps 总督 as Esther, Cyrus 古列, Ahasuerus 亚哈随鲁), and the
+court (satraps 大区总督 as Esther, Cyrus 古列, Ahasuerus 亚哈随鲁), and the
 prophets' vocabulary of Isaiah. 2:4b-7:28 is Aramaic; the meaning decisions
 say so, and the Chinese is drafted the same way. Chapter 9 is the only chapter
 with the divine name (9:2-20), with `divine_name` spans exactly where the
@@ -4483,8 +4486,8 @@ return:
 | English | Literal | Balanced | Readable |
 |---|---|---|---|
 | magicians, enchanters, sorcerers, Chaldeans, diviners, wise men (1:20; 2:2, 10, 27; 4:4 [4:7], 6 [4:9]; 5:7, 11, 15), in the order each verse gives | 术士、念咒的人、巫师、迦勒底人、占卜的人; 智者 | as L | 术士、念咒的人、巫师、占星家、占卜的人; 智者 (Chaldeans as a class of experts 占星家, as the English Readable "astrologers"; the people 迦勒底人 at every level) |
-| satraps, prefects, governors, counselors, treasurers, judges, magistrates, and all the officials of the provinces (3:2-3, 27) | 总督、长官、省长、谋士、司库、审判官、执法官和各省所有掌权的人 | ……和各省所有的官员 | 各大区总督、长官、省长、顾问、司库、审判官、执法官和各省其他所有的官员 |
-| the three overseers over the satraps (6:3-8 [6:2-7]) | 总长; 总督 | 总长; 总督 | 领袖; 各大区总督 |
+| satraps, prefects, governors, counselors, treasurers, judges, magistrates, and all the officials of the provinces (3:2-3, 27) | 大区总督、长官、省长、谋士、司库、审判官、执法官和各省所有掌权的人 | ……和各省所有的官员 | 各大区总督、长官、省长、顾问、司库、审判官、执法官和各省其他所有的官员 |
+| the three overseers over the satraps (6:3-8 [6:2-7]) | 总长; 大区总督 | 总长; 大区总督 | 领袖; 各大区总督 |
 | horn, pipe, lyre, trigon, harp, bagpipe and every kind of music (3:5, 7, 10, 15; 3:7 without the bagpipe) | 角、笛、琴、三角琴、竖琴、风笛和各样乐器 | 号角、笛、琴、三角琴、竖琴、风笛和各样乐器 | 号角、笛子、琴、筝、竖琴、风笛和其他各种乐器 |
 | fall down and worship; serve (a god) | 俯伏敬拜; 事奉 | 俯伏敬拜; 事奉 | 跪下敬拜 / 跪在地上敬拜; 事奉 |
 | the furnace of burning fire (3:6-26) | 烈火的窑 | 熊熊燃烧的火窑 | 极热的火窑 |
@@ -4583,7 +4586,7 @@ Hosea keeps the glossary's forms for every name and term above, the prophets' fo
 | have compassion (*raḥam*) | 怜悯 at every level, the word of the names, as 1 Peter 2:10 (未蒙怜悯 / 已蒙怜悯); 2:25 does not take Romans 9:25's 蒙爱的 (footnoted decision) |
 | prostitute oneself; prostitution (*zanah*, *zenunim*) | 行淫 / 淫行 (L), 行淫 / 淫乱 (B); 不忠, 对我不忠 (R), as Ezekiel 16 |
 | a wife of prostitution; children of prostitution (1:2) | 行淫的妻子, 淫行所生的儿女 (L); 淫乱的妻子, 淫乱所生的儿女 (B); 不忠的女子, 因不忠而生的儿女 (R); never 妓女 for Gomer |
-| adultery; adulterers (*naʾaf*) | 淫乱 (2:4, beside 淫行); 犯奸淫, 行奸淫的 |
+| adultery; adulterers (*naʾaf*) | 奸淫 (2:4, beside 淫行), 犯奸淫, as Ezekiel, not 淫乱 (the Balanced word for prostitution, above); 行奸淫的 |
 | lovers; prostitute; a prostitute's pay | 情人; 妓女; 酬劳 (2:14), 妓女的酬劳 (9:1) |
 | cult prostitutes (4:14) | 庙妓 (L, B); 在神庙里作妓女的女人 (R) |
 | a spirit of prostitution (4:12; 5:4) | 淫乱的灵 (L, B); 想要不忠的欲望 (R) |
@@ -4598,7 +4601,7 @@ Hosea keeps the glossary's forms for every name and term above, the prophets' fo
 | the Baals; Baal | 众巴力; 巴力 |
 | Baal of Peor; the Shameful One (9:10) | 巴力毗珥 (L), 毗珥的巴力 (B), 巴力——毗珥的神明 (R); 那可耻的 (L), 那可耻的神明 (B, R) |
 | the grain, the new wine and the fresh oil | 五谷、新酒和新油 (L); 五谷、新酒和橄榄油 (B); 五谷、酒和橄榄油 (R) |
-| new moon (2:13; 5:7) | 月朔 (L, B), 月朔节; 每月初一的节日 (R) |
+| new moon (2:13; 5:7) | 月朔 (L, B); 新月节 (R) |
 | return (*shuv*); stumble | 回转 (L, B), 回 / 回来 (R); 跌倒 |
 | torah (4:6; 8:1, 12) | 教导 |
 | my people | 我的子民 (L, B); 我的百姓 (R); the priest's "your people" (4:4) 你的百姓 |
@@ -4610,7 +4613,7 @@ Hosea keeps the glossary's forms for every name and term above, the prophets' fo
 | the great king (5:13; 10:6); the king of princes (8:10) | 大王; 诸侯之王 |
 | Shalman; Beth-arbel (10:14) | 沙勒幔; 伯亚比勒 (new) |
 | fifteen shekels; a homer and a lethech of barley (3:2) | L 十五[舍客勒]银子, 一贺梅珥大麦和一利帖大麦; B, R `{{units:约170克银子\|十五舍客勒银子}}`, `{{units:约330升大麦\|一贺梅珥又一利帖大麦}}`; lethech 利帖 (new) |
-| terebinth (4:13); cypress (14:9) | 笃耨香树; 松树 (uncertain) |
+| terebinth (4:13); cypress (14:9) | 笃耨香树; 柏树 (uncertain; as Song of Songs 1:17, where the English says cypress) |
 | the Holy One (11:9; 12:1) | 那圣者 / 圣者 |
 | the God of hosts (12:6) | 万军之*gt* (L, B); 统领万军的*gt* (R) |
 | his Maker (8:14) | 造他的那一位 (L, B); 造他们的*gt* (R) |
@@ -4722,7 +4725,7 @@ Amos keeps the glossary's forms for every name and term above, the prophets' for
 | seer (7:12) | 先见 (L, B), 先知 (R) |
 | herdsman; dresser of sycamore figs (7:14) | 牧人 (L, B), 养牲畜的 (R); 野无花果树 (L, B), 无花果树 (R); "son of a prophet" 先知的儿子 (L), 先知门徒 (B) |
 | summer fruit / end (8:1-2) | 夏天的果子 / 结局; R explains the Hebrew sound-play in the text, L and B in a footnoted decision |
-| the new moon (8:5) | 月朔 (L), 新月节 (B, R); ephah and shekel kept without units spans, as the English |
+| the new moon (8:5) | 月朔 (L, B), 新月节 (R); ephah and shekel kept without units spans, as the English |
 | the pride of Jacob (8:7) | 雅各所引以为傲的 (keeping both readings); 6:8 雅各的骄傲 |
 | "As your god lives, Dan" (8:14) | 但哪，我们指着你永活的神明起誓 (no god_term span) |
 | the Cushites; Caphtor (9:7) | 古实人; 迦斐托 (L, B), 克里特 (R) |
@@ -4836,7 +4839,7 @@ Micah keeps the glossary's forms for every name and term above, the prophets' fo
 | ruler (5:1); his origins | 掌权者 (L), 治理 (B), 统治 (R); 他的出处是从古时、从远古的日子 (L); the ruler takes no deity_pronoun span |
 | Nimrod (5:5) | 宁录 |
 | "I will cut off" (5:9-12) | 剪除 (L, B) each time; 除掉 / 毁灭 (R) |
-| standing stones; Asherah poles (5:12-13) | 柱像 (L), 神圣石柱 (B), 所拜的石柱 (R); 亚舍拉木柱 (L, B), 为敬拜亚舍拉女神而立的木柱 (R) |
+| standing stones; Asherah poles (5:12-13) | 立石 (L, as Kings and Leviticus 26:1; not 柱像), 神圣石柱 (B), 所拜的石柱 (R); 亚舍拉木柱 (L, B), 为敬拜亚舍拉女神而立的木柱 (R) |
 | Balak, Balaam son of Beor, Shittim, Gilgal (6:5) | 巴勒; 比珥的儿子巴兰; 什亭; 吉甲 |
 | the house of slaves (6:4) | 奴隶之家 (L); 你作奴隶的地方 (B); 你们曾在那里作奴隶 (R), as Exodus 20:2 |
 | 6:8 | drafted fresh, no Union Version clause: 人哪，什么是善，已经告诉了你……行出公平，喜爱慈爱，并且谦卑地与你的*gt*一同行走 (L); 秉行公正、热爱忠诚……一同前行 (B); 人们哪……做公正的事，乐意以仁慈和忠诚待人，谦卑地过日子，顺服你们的*gt* (R). "mortal / man" has no gender span in Chinese (人 is already inclusive) |
