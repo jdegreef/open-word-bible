@@ -1,5 +1,6 @@
 """scripts/cloudflare_config.py: the _headers and _redirects Cloudflare
 serves the site with say what render.yaml says, within Cloudflare's limits."""
+import json
 import sys
 import tempfile
 import unittest
@@ -37,9 +38,12 @@ class CloudflareConfigTest(unittest.TestCase):
             cloudflare_config.main()
             headers = (Path(out) / "_headers").read_text(encoding="utf-8")
             redirects = (Path(out) / "_redirects").read_text(encoding="utf-8")
+            worker = json.loads((Path(out) / "_worker" / "headers.json").read_text(encoding="utf-8"))
         self.assertTrue(headers.startswith("/*\n  X-Content-Type-Options: nosniff\n"))
         self.assertIn("/sw.js\n  Cache-Control: no-cache\n", headers)
         self.assertIn("/about/status /about/ 301\n", redirects)
+        # The Worker's pages get every page's headers (cloudflare/worker.js).
+        self.assertEqual(dict(worker), static_site_headers("/*"))
 
 
 if __name__ == "__main__":

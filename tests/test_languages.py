@@ -322,7 +322,9 @@ class LanguagesTest(unittest.TestCase):
         for path in (p for lang in OTHERS for p in (self.out / lang).rglob("index.html")):
             for href in re.findall(r'href="(/[^"#?]*)', path.read_text(encoding="utf-8")):
                 target = self.out / href.lstrip("/")
-                self.assertTrue(target.is_file() or (target / "index.html").is_file(), (path, href))
+                # Or a page the Worker draws (build_site.WORKER_PAGES): a verse's or a level's.
+                self.assertTrue(target.is_file() or (target / "index.html").is_file()
+                                or build_site.worker_draws(href), (path, href))
 
     def test_account_page_speaks_the_page_language(self):
         page = self.read("es/account/index.html")

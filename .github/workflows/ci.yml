@@ -54,6 +54,10 @@ jobs:
       OWB_VENDOR: ${{ github.workspace }}/vendor
       # The downloads are a release's (downloads.yml), not built here.
       OWB_DOWNLOADS_RELEASE: https://github.com/${{ github.repository }}/releases/download/downloads
+      # This build is the one Cloudflare serves, where cloudflare/worker.js
+      # draws every verse's page and the level pages (build_site.py
+      # WORKER_PAGES); Render's own build, without the Worker, leaves them out.
+      OWB_WORKER_PAGES: "1"
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-python@v7
