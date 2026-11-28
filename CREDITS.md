@@ -11,6 +11,23 @@ International License (CC BY 4.0). Copyright 2010 by the Society of Biblical
 Literature and Logos Bible Software.
 <https://github.com/LogosBible/SBLGNT>
 
+Its apparatus (`data/sblgntapp`, same licence and commit), which gives the
+readings of Westcott and Hort, Tregelles, the NIV's Greek text,
+Robinson-Pierpont and NA28 wherever they differ from the SBLGNT, is read by
+`scripts/apparatus_check.py` to check the English notes on textual variants.
+Nothing from it is published.
+
+## CNTR electronic transcriptions
+
+Electronic transcriptions of the early New Testament manuscripts (the papyri
+and the great codices of CNTR's "class 1") and of the Robinson-Pierpont and
+King James Textus Receptus texts, by Alan Bunning, Center for New Testament
+Restoration, licensed under CC BY-SA 4.0.
+<https://github.com/Center-for-New-Testament-Restoration/transcriptions>
+They are used only to check what the English notes say about manuscripts
+(`owb/apparatus.py`); nothing derived from them is written to `content/` or
+`data/` or published.
+
 ## MACULA Greek Linguistic Datasets
 
 MACULA Greek Linguistic Datasets, available at
