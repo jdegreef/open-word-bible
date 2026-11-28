@@ -1003,11 +1003,17 @@ class SiteTest(unittest.TestCase):
         header = re.search(r'<header class="site">(.*?)</header>', home, re.S)[1]
         for key in ("read", "articles", "about"):
             self.assertIn(f'aria-controls="dd-{key}"', header)
-            # The panels are empty in the page: nav-<lang>.js fills them.
+            # The panels are empty in the page: web/site.js fetches them
+            # from menus-<lang>.json when they are first wanted, and a
+            # trigger leads to its section's page if it can't.
             self.assertIn(f'id="dd-{key}" hidden></div>', header)
+        self.assertIn('data-href="/read/"', header)
+        self.assertIn(f'data-menus="{build_site.menus_file("en")[1]}"', header)
+        self.assertNotIn('class="dd-item', home)
         script_url = build_site.nav_script("en")[1]
         self.assertIn(f'<script src="{script_url}" defer></script>\n<script src="{build_site.asset("site.js")}"', home)
-        script = (self.out / "nav-en.js").read_text(encoding="utf-8")
+        self.assertNotIn("dd-item", (self.out / "nav-en.js").read_text(encoding="utf-8"))
+        site_js = (ROOT / "web" / "site.js").read_text(encoding="utf-8")
         menus = nav_menus_in(self.out, "en", whole=False)
         self.assertEqual(list(menus), ["read", "articles", "about"])
         # A line per book, linking to its chapters on the Read page.
@@ -1041,13 +1047,15 @@ class SiteTest(unittest.TestCase):
         # ...and the script marks the dropdown link to the page itself, and
         # a chapter's book, for a screen reader (data-book).
         self.assertIn('data-book="jhn"', read)
-        self.assertIn('aria-current", "true"', script)
-        self.assertIn('aria-current", "page"', script)
+        self.assertIn('aria-current", "true"', site_js)
+        self.assertIn('aria-current", "page"', site_js)
         # Every language has its own, kept for offline reading.
         sw = (self.out / "sw.js").read_text(encoding="utf-8")
         for lang in build_site.LANGUAGES:
             self.assertTrue((self.out / f"nav-{lang}.js").is_file(), lang)
             self.assertIn(build_site.nav_script(lang)[1], sw)
+            self.assertTrue((self.out / f"menus-{lang}.json").is_file(), lang)
+            self.assertIn(build_site.menus_file(lang)[1], sw)
 
     def test_interface_fonts_are_self_hosted_with_their_licences(self):
         css = (self.out / "style.css").read_text(encoding="utf-8")

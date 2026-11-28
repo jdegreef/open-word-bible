@@ -227,6 +227,63 @@
 
   function panel(t) { return document.getElementById(t.getAttribute("aria-controls")); }
 
+  // The panels come empty in the page: they are one file per language,
+  // named in the nav's data-menus (menus_file in scripts/build_site.py),
+  // fetched the first time a reader reaches for the menus (a pointer over
+  // them, focus in them, the menu button), so it is usually here before the
+  // click. The link to this page is marked for a screen reader, and on a
+  // chapter page its book in the Read menu.
+  var source = nav.getAttribute("data-menus");
+  var loading = null;
+
+  function fill(menus) {
+    var here = location.pathname.replace(/index\.html$/, "");
+    var book = /\/([a-z0-9]{3})\/\d+\/$/.exec(here);
+    triggers.forEach(function (t) {
+      var p = panel(t), html = menus[p.id.replace(/^dd-/, "")];
+      if (p.firstChild || !html) return;
+      p.innerHTML = html;
+      p.querySelectorAll("a.dd-item, a.dd-all").forEach(function (a) {
+        if (a.getAttribute("href") === here) a.setAttribute("aria-current", "page");
+      });
+      if (book) p.querySelectorAll('[data-book="' + book[1] + '"]').forEach(function (a) {
+        a.setAttribute("aria-current", "true");
+      });
+    });
+    // For the scripts that fill links in the panels (Continue reading).
+    document.dispatchEvent(new CustomEvent("owb:menus"));
+  }
+
+  // Resolves true once the panels are in, or false if they couldn't be
+  // fetched (the next try fetches again).
+  function load() {
+    if (!source) return Promise.resolve(true);
+    if (!loading) {
+      loading = fetch(source).then(function (r) {
+        if (!r.ok) throw new Error("menus: " + r.status);
+        return r.json();
+      }).then(function (menus) { fill(menus); return true; }, function () {
+        loading = null;
+        return false;
+      });
+    }
+    return loading;
+  }
+
+  // Runs then() with the trigger's panel filled. Without it, the trigger
+  // leads to its section's page instead (data-href).
+  function withPanel(t, then) {
+    if (panel(t).firstChild) { then(); return; }
+    load().then(function (ok) {
+      if (ok && panel(t).firstChild) then();
+      else if (t.getAttribute("data-href")) location.href = t.getAttribute("data-href");
+    });
+  }
+
+  ["pointerover", "focusin", "touchstart"].forEach(function (type) {
+    nav.addEventListener(type, load, { passive: true });
+  });
+
   function setOpen(t, show) {
     var p = panel(t);
     p.hidden = !show;
@@ -265,15 +322,17 @@
   triggers.forEach(function (t) {
     t.addEventListener("click", function () {
       if (t.getAttribute("aria-expanded") === "true") setOpen(t, false);
-      else openOne(t);
+      else withPanel(t, function () { openOne(t); });
     });
     // Down arrow on a closed trigger opens it and moves into the panel.
     t.addEventListener("keydown", function (e) {
       if (e.key !== "ArrowDown") return;
       e.preventDefault();
-      openOne(t);
-      var first = panel(t).querySelector("a");
-      if (first) first.focus();
+      withPanel(t, function () {
+        openOne(t);
+        var first = panel(t).querySelector("a");
+        if (first) first.focus();
+      });
     });
     // Leaving an open item by keyboard closes its panel.
     t.parentNode.addEventListener("focusout", function (e) {
@@ -283,8 +342,10 @@
   });
 
   if (menuBtn) {
+    menuBtn.addEventListener("pointerover", load, { passive: true });
     menuBtn.addEventListener("click", function () {
       var show = !nav.classList.contains("open");
+      if (show) load();
       showMenu(show);
       if (show) nav.querySelector(".nav-link").focus();
     });
@@ -419,6 +480,8 @@
   fill();
   // A place from the reader's other devices (the sync below).
   document.addEventListener("owb:synced", fill);
+  // The Read menu's link, once the header's menus are fetched.
+  document.addEventListener("owb:menus", fill);
 })();
 
 // The Read page's books open in place; a link to one (/read/#jhn), from the
