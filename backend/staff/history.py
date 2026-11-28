@@ -42,7 +42,7 @@ from translation.models import ImportRun, RecordChange, Rendering, ReviewEvent, 
 from .inbox import verse_label
 from . import people
 from .permissions import admin_view
-from .review import A, digest, layer_json
+from .review import A, layer_json, text_unchanged
 from .snapshot import snapshot
 
 LEVELS = ("L", "B", "R")
@@ -103,7 +103,7 @@ def _approved_texts(event, sentence, current):
     "reconstructed", "unchanged" or "unknown"). current is the same parts
     now: {"gloss": ...} for a meaning layer, {level: text} for wording."""
     layer = _layer_of(event)
-    if event.digest and event.digest == digest(sentence, layer):
+    if event.digest and text_unchanged(event.digest, sentence, layer):
         return dict(current), "unchanged"
     snap = event.snapshot or {}
     if layer in languages.ORIGINAL:

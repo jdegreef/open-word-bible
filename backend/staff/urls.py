@@ -1,10 +1,12 @@
 from django.urls import path
 
-from . import (articles, assignments, attention, bulk, changes, checks, consistency, emails, export, fixes, history,
-               inbox, jobs, overlap, pace, progress, review, search, team, text, users, verses, work, workspace)
+from . import (articles, assignments, attention, bulk, changes, checks, consistency, emails, export, fixes, flags,
+               history, inbox, jobs, overlap, pace, plan, progress, releases, review, search, team, text, users,
+               verses, work, workspace)
 
 urlpatterns = [
     path("overview/", progress.overview),
+    path("plan/", plan.plan),
     path("pace/", pace.pace),
     path("search/", search.find),
     path("attention/", attention.attention),
@@ -20,7 +22,8 @@ urlpatterns = [
     path("users/<int:user_id>/sign-out/", users.sign_out),
     path("changes/", changes.changes),
     path("review/", review.queue),
-    path("review/flags/", review.flags),
+    path("review/flags/", flags.flags),
+    path("review/flags/<int:event_id>/", flags.flag),
     path("review/bulk/", bulk.bulk),
     path("review/workspace/", workspace.workspace),
     path("assignments/", assignments.assignments),
@@ -28,10 +31,14 @@ urlpatterns = [
     path("review/<str:record_id>/", review.sentence),
     path("verses/", verses.find),
     path("verses/<str:vid>/", verses.verse),
+    path("fixes/batch/", fixes.batch),
+    path("fixes/term/", fixes.term),
+    path("fixes/meaning/", fixes.meaning),
     path("fixes/", fixes.fixes),
     path("decisions/", text.decisions),
     path("terms/", text.terms),
     path("consistency/", consistency.consistency),
+    path("checks/dismiss/", checks.dismiss),
     path("checks/", checks.checks),
     path("articles/", articles.articles),
     path("export/", export.options),
@@ -49,5 +56,6 @@ urlpatterns = [
     path("activity/", team.activity),
     path("history/verse/<str:vid>/", history.verse),
     path("history/approvals/", history.approvals),
+    path("releases/", releases.releases),
     path("history/release-notes/", history.notes),
 ]

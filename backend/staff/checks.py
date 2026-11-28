@@ -6,7 +6,12 @@ prints the same lists).
 GET /api/admin/checks/?lang=id
         {language, languages: [{code, name, glossary}],
          notes: {total, kinds, hits: [...]},
-         glossary: {file, verses: {total, kinds, hits}, rows: [...]}}
+         glossary: {file, verses: {total, kinds, hits}, rows: [...]},
+         dismissed}
+POST /api/admin/checks/dismiss/  {lang, signature}
+        "This is fine": a hit someone has looked at is left out of the
+        lists until the verse text it flagged changes. Each hit carries its
+        signature; dismissed counts those left out.
 
 The sentences, renderings and decisions come from the database; the
 translated notes (data/notes/<lang>/) and the glossary
@@ -23,10 +28,12 @@ answer; only when the content has changed since (a review, say) does a
 request measure again, as before, and keep what it found.
 """
 import hashlib
+import json
 import time
 
 from django.core.cache import cache
 from django.db.models import Count, Max
+from rest_framework import status
 from rest_framework.exceptions import ValidationError
 from rest_framework.response import Response
 
@@ -35,7 +42,7 @@ from owb import languages, notes, refs
 from translation.models import Decision, Rendering, Sentence
 
 from .inbox import verse_label
-from .models import ChecksAnswer
+from .models import CheckDismissal, ChecksAnswer, record
 from .permissions import admin_view
 
 LEVELS = ("L", "B", "R")
@@ -200,12 +207,58 @@ def kept_answer(lang):
     return answer
 
 
+def signature(hit):
+    """A hit by what it flags, the verse text included: a dismissal holds
+    only while the text is as it was."""
+    key = [hit.get("record"), hit.get("kind"), hit.get("decision") or hit.get("term") or "", hit.get("form", ""),
+           sorted(hit.get("levels") or [hit.get("level")]), hit.get("text", "")]
+    return hashlib.sha256(json.dumps(key, ensure_ascii=False).encode()).hexdigest()
+
+
+def _without_dismissed(lang, answer):
+    gone = set(CheckDismissal.objects.filter(language=lang).values_list("signature", flat=True))
+    dropped = 0
+
+    def keep(hits):
+        nonlocal dropped
+        out = []
+        for h in hits:
+            sig = signature(h)
+            if sig in gone:
+                dropped += 1
+            else:
+                out.append({**h, "signature": sig})
+        return out
+    notes_hits, verse_hits = keep(answer["notes"]["hits"]), keep(answer["glossary"]["verses"]["hits"])
+    return {**answer,
+            "notes": {**answer["notes"], "hits": notes_hits, "total": len(notes_hits), "kinds": _kinds(notes_hits)},
+            "glossary": {**answer["glossary"], "verses": {**answer["glossary"]["verses"], "hits": verse_hits,
+                                                          "total": len(verse_hits), "kinds": _kinds(verse_hits)}},
+            "dismissed": dropped}
+
+
+@admin_view("overview", methods=("POST",))
+def dismiss(request):
+    data = request.data if isinstance(request.data, dict) else {}
+    lang, sig = data.get("lang"), str(data.get("signature") or "")
+    if lang not in languages.READING:
+        raise ValidationError({"lang": "Choose a reading language."})
+    answer = kept_answer(lang)
+    hit = next((h for h in answer["notes"]["hits"] + answer["glossary"]["verses"]["hits"] if signature(h) == sig), None)
+    if hit is None:
+        raise ValidationError({"signature": "That hit isn't in the list now.", "code": "not_found"})
+    CheckDismissal.objects.get_or_create(language=lang, signature=sig,
+                                         defaults={"record_id": hit["record"], "user": request.user})
+    record(request.user, "check.dismiss", f"{hit['record']} ({lang})", kind=hit["kind"])
+    return Response({"dismissed": True}, status=status.HTTP_201_CREATED)
+
+
 @admin_view("overview")
 def checks(request):
     lang = request.query_params.get("lang", "en")
     if lang not in languages.READING:
         raise ValidationError({"lang": "Choose a reading language."})
-    answer = kept_answer(lang)
+    answer = _without_dismissed(lang, kept_answer(lang))
     return Response({**answer, "language": lang,
                      "languages": [{"code": c, "name": entry["name"],
                                     "glossary": cc.glossary_path(entry["name"]).is_file()}

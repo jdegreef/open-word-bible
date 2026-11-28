@@ -49,6 +49,48 @@ class Broadcast(models.Model):
         return self.subject
 
 
+class CheckDismissal(models.Model):
+    """A content check hit a person has looked at and found fine
+    (staff/checks.py dismiss). Kept by the hit's signature, which includes
+    the verse text it flagged: once the rendering changes the hit has a new
+    signature and shows again."""
+    language = models.CharField(max_length=3)
+    signature = models.CharField(max_length=64)
+    record_id = models.CharField(max_length=40)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, related_name="+")
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        constraints = [models.UniqueConstraint(fields=["language", "signature"], name="one_dismissal_per_hit")]
+
+    def __str__(self):
+        return f"{self.language} {self.record_id}"
+
+
+class FlagReply(models.Model):
+    """One step in the conversation a flag starts (staff/flags.py): a reply,
+    a fix request filed from it, or an editor declining or resolving it
+    (which closes the flag: ReviewEvent.closed_at)."""
+    class Kind(models.TextChoices):
+        REPLY = "reply", "Replied"
+        FIX = "fix", "Filed a fix request"
+        DECLINED = "declined", "Declined"
+        RESOLVED = "resolved", "Resolved"
+
+    flag = models.ForeignKey("translation.ReviewEvent", on_delete=models.CASCADE, related_name="replies")
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, related_name="+")
+    kind = models.CharField(max_length=10, choices=Kind.choices)
+    text = models.TextField(blank=True)
+    fix_issue = models.PositiveIntegerField(null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["created_at", "id"]
+
+    def __str__(self):
+        return f"{self.flag_id} {self.kind}"
+
+
 class ReviewAssignment(models.Model):
     """A book, or a range of its chapters, in one review layer that an
     editor has asked a reviewer to review, by a date or not
@@ -99,3 +141,23 @@ class ChecksAnswer(models.Model):
 
     def __str__(self):
         return f"{self.language} {self.stamp}"
+
+
+class Release(models.Model):
+    """A release of one language, cut in the admin (staff/releases.py): its
+    name, main's commit when it was cut, and what had changed since the
+    language's last release, so the next release's notes start from here."""
+    language = models.CharField(max_length=3)
+    name = models.CharField(max_length=80)
+    commit = models.CharField(max_length=40, blank=True, help_text="main's commit when it was cut, if known")
+    cut_at = models.DateTimeField(auto_now_add=True)
+    cut_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, related_name="+")
+    summary = models.JSONField(default=dict, blank=True,
+                               help_text="The totals of the release notes and the readiness when it was cut")
+
+    class Meta:
+        ordering = ["-cut_at", "-id"]
+        indexes = [models.Index(fields=["language", "-cut_at"], name="release_language")]
+
+    def __str__(self):
+        return f"{self.language} {self.name}"

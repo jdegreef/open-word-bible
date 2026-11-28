@@ -14,7 +14,7 @@ POST /api/admin/review/<record_id>/  {layer, action: "undo", event}
         a key, say. The step goes from the trail and the activity log
         says it was taken back
 GET  /api/admin/review/flags/
-        open flags in every layer, for editors to act on
+        open flags in every layer, for editors to act on (staff/flags.py)
 
 A layer is the meaning of the sentences translated from one original
 language ("grc", the New Testament; "hbo", the Old), which scholar reviewers
@@ -61,6 +61,7 @@ from owb import languages, refs
 from texts.models import Word
 from translation.models import Decision, Rendering, ReviewEvent, ReviewState, Sentence, Status
 
+from . import hints
 from .inbox import verse_label
 from .models import record
 from . import people
@@ -79,6 +80,9 @@ STATES = ("not_reviewed", "approved", "changed", "flagged")
 
 def _meaning(layer):
     return layer in languages.ORIGINAL
+
+
+ORIGINAL_LAYERS = tuple(languages.ORIGINAL)
 
 
 def layer_json(code):
@@ -129,23 +133,62 @@ def _decision(d):
     return [d.key, d.category, d.levels, d.tokens, d.choice, d.alternatives, d.reason, d.uncertain, d.footnote]
 
 
+def _hash(parts):
+    return hashlib.sha256(json.dumps(parts, ensure_ascii=False).encode()).hexdigest()
+
+
+def _meaning_hash(sentence):
+    return _hash([sentence.literal_gloss, [_decision(d) for d in sentence.decisions.all() if d.layer == "meaning"]])
+
+
+def _wording_hash(sentence, layer):
+    return _hash([sorted((r.level, r.text) for r in sentence.renderings.all() if r.language == layer),
+                  [_decision(d) for d in sentence.decisions.all() if d.layer == "rendering" and d.language == layer]])
+
+
 def digest(sentence, layer):
     """What a reviewer of layer approves in sentence (renderings and
-    decisions prefetched), as a hash."""
+    decisions prefetched, the meaning's too: _with_texts), as a hash.
+
+    Wording is approved over the meaning it says: "w:<wording>:<meaning>",
+    so a change to the meaning alone (a merged meaning-change request)
+    sends a wording approval back for another look, and says that it was
+    the meaning that moved (meaning_moved). Approvals made before kept
+    the wording's hash alone, and are compared the old way (matches)."""
     if _meaning(layer):
-        parts = [sentence.literal_gloss, [_decision(d) for d in sentence.decisions.all() if d.layer == "meaning"]]
-    else:
-        parts = [sorted((r.level, r.text) for r in sentence.renderings.all() if r.language == layer),
-                 [_decision(d) for d in sentence.decisions.all()
-                  if d.layer == "rendering" and d.language == layer]]
-    return hashlib.sha256(json.dumps(parts, ensure_ascii=False).encode()).hexdigest()
+        return _meaning_hash(sentence)
+    return f"w:{_wording_hash(sentence, layer)[:30]}:{_meaning_hash(sentence)[:30]}"
+
+
+def matches(approved, sentence, layer):
+    """Whether an approval's digest still holds for sentence as it is."""
+    if not _meaning(layer) and not approved.startswith("w:"):
+        return approved == _wording_hash(sentence, layer)
+    return approved == digest(sentence, layer)
+
+
+def text_unchanged(approved, sentence, layer):
+    """Whether what the layer's reviewer reads (the gloss, or the wording)
+    is as approved, whatever the meaning beneath it has done."""
+    if _meaning(layer):
+        return approved == digest(sentence, layer)
+    if approved.startswith("w:"):
+        return approved.split(":")[1] == _wording_hash(sentence, layer)[:30]
+    return approved == _wording_hash(sentence, layer)
+
+
+def meaning_moved(approved, sentence, layer):
+    """A wording approval whose wording stands but whose meaning has changed."""
+    return (not _meaning(layer) and approved.startswith("w:") and text_unchanged(approved, sentence, layer)
+            and approved.split(":")[2] != _meaning_hash(sentence)[:30])
 
 
 def _with_texts(queryset, layer):
     if _meaning(layer):
         return queryset.prefetch_related(Prefetch("decisions", Decision.objects.filter(layer="meaning")))
     return queryset.prefetch_related(Prefetch("renderings", Rendering.objects.filter(language=layer)),
-                                     Prefetch("decisions", Decision.objects.filter(language=layer)))
+                                     Prefetch("decisions", Decision.objects.filter(Q(language=layer) |
+                                                                                   Q(layer="meaning"))))
 
 
 def _in_layer(sentences, layer):
@@ -179,7 +222,7 @@ def refresh(layer):
         groups = {}
         for pk, sentence_id, event_id, approved in chunk:
             s = sentences[sentence_id]
-            state = RS.APPROVED if digest(s, layer) == approved else RS.CHANGED
+            state = RS.APPROVED if matches(approved, s, layer) else RS.CHANGED
             groups.setdefault((state, s.updated_at), []).append(Q(pk=pk, event_id=event_id))
         for (state, checked), rows in groups.items():
             # Only rows still on the approval compared: one made meanwhile
@@ -250,11 +293,25 @@ def _forbidden(e):
     return Response({"detail": str(e), "code": "forbidden"}, status=status.HTTP_403_FORBIDDEN)
 
 
-def _event_json(e, current=None):
-    """A review event; current is the layer's digest now, for an approval."""
-    return {"id": e.id, "action": e.action, "label": e.get_action_display(), "language": e.language,
-            "by": people.name(e.user), "note": e.note, "at": e.created_at,
-            **({"changed": e.digest != current} if current is not None else {})}
+def _event_json(e, sentence=None):
+    """A review event; with its sentence (texts prefetched), for an
+    approval, whether it still holds ("changed") and, for wording, whether
+    only the meaning beneath it moved ("meaning_changed")."""
+    out = {"id": e.id, "action": e.action, "label": e.get_action_display(), "language": e.language,
+           "by": people.name(e.user), "note": e.note, "at": e.created_at}
+    if sentence is not None and e.action in (A.MEANING_REVIEWED, A.REVIEWED):
+        code = e.language or sentence.source_edition.language
+        out["changed"] = not matches(e.digest, sentence, code)
+        if not _meaning(code):
+            out["meaning_changed"] = meaning_moved(e.digest, sentence, code)
+    return out
+
+
+def meaning_state(sentence):
+    """The meaning's state for a sentence (its original language's layer)."""
+    code = sentence.source_edition.language
+    refresh(code)
+    return {"layer": layer_json(code), "state": state_of(code, sentence.id)}
 
 
 @admin_view("review")
@@ -295,6 +352,14 @@ def queue(request):
     page = list(rows.order_by(*BIBLE_ORDER)
                 .values_list("id", "record_id", "book", "chapter", "verse", "st", "last_id")[offset:offset + PAGE])
     ids = [r[0] for r in page]
+    # For wording, where each sentence's meaning stands (its original
+    # language's layer), so a flagged or unreviewed meaning shows in the list.
+    meaning = {}
+    if not _meaning(layer):
+        for code in ORIGINAL_LAYERS:
+            refresh(code)
+        meaning = dict(ReviewState.objects.filter(sentence_id__in=ids, layer__in=ORIGINAL_LAYERS)
+                       .values_list("sentence_id", "state"))
     if _meaning(layer):
         preview = dict(Sentence.objects.filter(id__in=ids).values_list("id", "literal_gloss"))
     else:
@@ -314,6 +379,7 @@ def queue(request):
         "sentences": [{
             "record": r[1], "verse": f"{r[2]}.{r[3]}.{r[4]}", "label": verse_label(f"{r[2]}.{r[3]}.{r[4]}"),
             "state": r[5], "preview": preview.get(r[0], ""),
+            **({"meaning": meaning.get(r[0], "not_reviewed")} if not _meaning(layer) else {}),
             "last": _event_json(latest[r[6]]) if r[6] in latest else None,
         } for r in page],
     })
@@ -344,12 +410,6 @@ def sentence(request, record_id):
     if request.method == "POST":
         return _act(request, s, layer, data)
     trail = list(s.review_events.select_related("user"))
-    currents = {}
-    for e in trail:
-        if e.action in (A.MEANING_REVIEWED, A.REVIEWED):
-            code = e.language or s.source_edition.language
-            if code not in currents:
-                currents[code] = digest(s, code)
     words = {w.id: {"text": w.text, "lemma": w.lemma, "gloss": w.gloss, "morph": w.morph}
              for w in Word.objects.filter(id__in=s.tokens)}
     return Response({
@@ -361,8 +421,11 @@ def sentence(request, record_id):
         # What an approval from this page approves: sent back as "seen", so
         # a sentence changed while it was being read isn't approved unread.
         "digest": digest(s, layer),
-        "trail": [_event_json(e, currents.get(e.language or s.source_edition.language)
-                              if e.action in (A.MEANING_REVIEWED, A.REVIEWED) else None) for e in trail],
+        "trail": [_event_json(e, s) for e in trail],
+        # Wording is read against the meaning: where its review stands, and
+        # whether this layer's approval stands only on a meaning since changed.
+        **({"meaning": meaning_state(s)} if not _meaning(layer) else {}),
+        "hints": hints.sentence_hints(s, layer),
         "next": _next(layer, s),
     })
 
@@ -482,24 +545,3 @@ def _undo(request, s, layer, event_id):
     except _Forbidden as e:
         return _forbidden(e)
     return Response({"state": state_of(layer, s.id), "next": _next(layer, s)})
-
-
-def open_flags():
-    """Flags not followed by an approval of the same layer, newest first."""
-    out = []
-    for row in (ReviewState.objects.filter(state=RS.FLAGGED)
-                .select_related("event__user", "sentence__source_edition")
-                .order_by("-event__created_at", "-event_id")):
-        row.event.sentence = row.sentence
-        out.append(row.event)
-    return out
-
-
-@admin_view("inbox")
-def flags(request):
-    out = []
-    for e in open_flags():
-        code = e.language or e.sentence.source_edition.language
-        out.append({**_event_json(e), "layer": layer_json(code), "record": e.sentence.record_id,
-                    "verse": e.sentence.refs[0], "label": verse_label(e.sentence.refs[0])})
-    return Response({"flags": out})

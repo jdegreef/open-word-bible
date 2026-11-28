@@ -102,7 +102,7 @@ class AccessTest(AdminTestCase):
         for pattern, view in admin_routes():
             path = "/api/admin/" + pattern.replace("<str:code>", "JHN").replace("<int:message_id>", "1") \
                 .replace("<int:user_id>", "1").replace("<int:role_id>", "1") \
-                .replace("<int:assignment_id>", "1")
+                .replace("<int:assignment_id>", "1").replace("<int:event_id>", "1")
             allowed = [m.lower() for m in view.cls().allowed_methods if m not in ("OPTIONS",)]
             method = allowed[0]
             self.assertEqual(getattr(APIClient(), method)(path).status_code, 401, path)
@@ -637,6 +637,7 @@ class FixTest(AdminTestCase):
         self.assertIn(f'"message": {message.id}', body["body"])
         message.refresh_from_db()
         self.assertEqual(message.note, "Fix requested: #9")
+        self.assertEqual((message.status, message.fix_issue), ("fixing", 9))   # awaiting the fix, not an editor
         action = AdminAction.objects.get(action="fix.request")
         self.assertEqual((action.target, action.detail["verse"]), ("#9 JHN.1.1.s1", "JHN.1.1"))
         # The inspector lists it.
@@ -945,6 +946,54 @@ class WorkTest(AdminTestCase):
         self.assertEqual(len(mail.outbox), 1)
         inbox = self.admin.get("/api/admin/inbox/?status=done").json()["messages"]
         self.assertEqual(inbox[0]["fix_url"], "https://github.com/x/y/pull/30")
+
+    @override_settings(OWB_GITHUB_TOKEN="t")
+    def test_one_request_for_many_sentences_and_a_term_change_for_the_founder(self):
+        for rid in ("JHN.2.1.s1", "JHN.2.2.s1"):
+            sentence(rid, ("en", "fr"))
+        issue = {"number": 50, "html_url": "https://github.com/x/y/issues/50"}
+        with mock.patch("staff.github.call", return_value=issue) as call:
+            r = self.admin.post("/api/admin/fixes/batch/", {"language": "fr", "records": ["JHN.2.1.s1", "JHN.2.2.s1"],
+                                                           "levels": ["B"], "change": "la Parole"}, format="json")
+            self.assertEqual(r.status_code, 201)
+            filed = call.call_args.args[2]
+            self.assertEqual(filed["labels"], ["fix-request"])
+            self.assertIn('"kind": "batch"', filed["body"])
+            self.assertIn("`JHN.2.2.s1`", filed["body"])
+            r = self.admin.post("/api/admin/fixes/term/", {"slug": "grace", "change": "favour at R"}, format="json")
+            self.assertEqual(r.status_code, 201)
+            self.assertEqual(call.call_args.args[2]["labels"], ["key-term"])
+        bad = self.admin.post("/api/admin/fixes/batch/", {"language": "fr", "records": ["NOPE.1.1.s1"],
+                                                         "change": "x"}, format="json")
+        self.assertEqual(bad.json()["code"], "invalid_records")
+
+    @override_settings(OWB_GITHUB_TOKEN="t")
+    def test_a_declined_fix_brings_the_message_back_with_a_reply_drafted(self):
+        m = ReaderMessage.objects.create(user=self.reader, kind="suggestion", verse="JHN.1.2", language="fr",
+                                         text="Plutôt « au commencement »", status="fixing", fix_issue=40)
+        issue = {"number": 40, "title": "Fix John 1:2 (French)", "html_url": "https://github.com/x/y/issues/40",
+                 "state": "closed", "state_reason": "not_planned", "labels": [{"name": "fix-request"}],
+                 "created_at": "2026-10-16T10:00:00Z", "closed_at": "2026-10-17T10:00:00Z", "assignees": [],
+                 "body": '<!-- fix-request {"record": "JHN.1.2.s1", "message": %d} -->' % m.id}
+
+        def github(path, method="GET", body=None, stop=None):
+            if path.startswith("issues/40/comments"):
+                return [{"body": "The wording follows the French style brief here. <!-- worker -->"}]
+            return [] if path.startswith("pulls") else [issue]
+        with mock.patch("staff.github.call", side_effect=github):
+            # The inbox shows the fix's state while it is open.
+            call_command("sync_fixes", stdout=io.StringIO())
+        m.refresh_from_db()
+        self.assertEqual(m.status, "new")
+        self.assertIn("The wording follows the French style brief here.", m.follow_up)
+        self.assertNotIn("worker", m.follow_up)
+        self.assertIn("Fix #40 closed without a change", m.note)
+        self.assertEqual(mail.outbox, [])   # an editor sends the reply, not the job
+        # The reader saw it as waiting all along.
+        m.status = "fixing"
+        m.save()
+        mine = client_for(self.reader).get("/api/messages").json()
+        self.assertEqual({x["status"] for x in mine if x["id"] == m.id}, {"new"})
 
     def test_sync_fixes_needs_a_token(self):
         out = io.StringIO()

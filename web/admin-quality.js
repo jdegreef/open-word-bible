@@ -11,7 +11,7 @@ OWBAdmin.module(function (A) {
       h = A.h, head = A.head, langName = A.langName, live = A.live, messageCard = A.messageCard, note = A.note,
       num = A.num, pill = A.pill, plural = A.plural, rendering = A.rendering, route = A.route, seg = A.seg,
       select = A.select, stopLive = A.stopLive, table = A.table, tile = A.tile, verseName = A.verseName,
-      when = A.when;
+      toast = A.toast, when = A.when;
 
   function verseSearch(value) {
     var input = h("input", { type: "search", id: "verse-q", value: value || "", placeholder: "John 1:1, jn 3 16, Juan 3:16 or JHN.1.1",
@@ -43,7 +43,10 @@ OWBAdmin.module(function (A) {
         h("a", { href: d.url, rel: "noopener" }, "Read it on the site"));
       var out = [head("Verse inspector", d.label, d.records.length ? plural(d.records.length, "sentence") + " hold this verse" +
         (d.updated ? "; last changed " + when(d.updated) : "") + "." : "No sentence holds this verse yet."), verseSearch(d.label), nav];
-      if (from) {
+      if (from && from.flag) {
+        out.push(h("div", { class: "admin-reply" }, h("p", { class: "admin-sub" }, "Requesting a fix from " + from.by + "'s flag:"), h("p", null, from.text),
+          h("p", { class: "admin-sub" }, "The fix request joins the flag's conversation, and " + from.by + " is told.")));
+      } else if (from) {
         out.push(h("div", { class: "admin-reply" }, h("p", { class: "admin-sub" }, "Requesting a fix for " + (from.from.name || from.from.email) +
           "'s " + from.kind + " (" + from.language + "):"), h("p", null, from.text),
           h("p", { class: "admin-sub" }, "The request is a public GitHub issue: it names this message by number but doesn't quote it. Put the reader's point in your own words under Why.")));
@@ -283,6 +286,7 @@ OWBAdmin.module(function (A) {
     }));
     var change = A.keepDraft(h("textarea", { id: "fix-change-" + r.id, rows: 3, maxlength: 2000, placeholder: "What should change, e.g. use “la Parole” for “le Verbe”" }), "fix." + r.id + ".change");
     var reason = A.keepDraft(h("textarea", { id: "fix-reason-" + r.id, rows: 3, maxlength: 4000, placeholder: "Why (optional): the source, the style brief, a reader's point" }), "fix." + r.id + ".reason");
+    if (from && from.flag && !reason.value) reason.value = "A reviewer flagged it: " + from.text;
     if (change.value || reason.value) {   // a request half-written: open, as it was left
       box.hidden = false;
       toggle.setAttribute("aria-expanded", "true");
@@ -300,7 +304,8 @@ OWBAdmin.module(function (A) {
       var picked = Array.prototype.map.call(levels.querySelectorAll("input:checked"), function (x) { return x.value; });
       busy(send, true);
       api("/api/admin/fixes/", { method: "POST", body: { record: r.id, verse: verse || location.hash.split("/")[1], language: lang.value,
-        levels: picked, change: change.value, reason: reason.value, message: from ? from.id : null } }).then(function (res) {
+        levels: picked, change: change.value, reason: reason.value, message: from && !from.flag ? from.id : null,
+        flag: from && from.flag ? from.id : null } }).then(function (res) {
         status.textContent = "";
         add(status, ["Filed as ", h("a", { href: res.url, rel: "noopener" }, "#" + res.number), "."]);
         status.className = "admin-note";
@@ -370,11 +375,15 @@ OWBAdmin.module(function (A) {
       var pages = A.pager(d, d.decisions.length, "decisions", function (o) { f.offset = o; route(); });
       var names = {};
       d.layers.forEach(function (l) { names[l.code] = l.name; });
+      // Ticking for one request: decisions in one reading language's wording.
+      var reading = f.layer && f.layer !== "meaning" && A.ME.admin.indexOf("inbox") >= 0 ? f.layer : "";
+      var batch = reading ? batchPicker(reading) : null;
       return [head("Text", "Uncertain decisions", num(d.total) + " decisions the drafts mark uncertain" + (f.layer || f.category || f.book || f.q ? " match" : "") +
-        ", in Bible order. Open one in the inspector to read the sentence whole or request a fix."), form,
+        ", in Bible order. Open one in the inspector to read the sentence whole or request a fix." +
+        (batch ? " Tick several to ask for one change in all of them." : "")), form, batch ? batch.bar : null,
         d.decisions.length ? h("div", { class: "admin-decisions" }, d.decisions.map(function (x) {
           return h("div", { class: "admin-decision uncertain" },
-            h("p", null, h("a", { href: "#verse/" + x.verse }, x.label), " ", h("code", null, x.record + " " + x.key), " ",
+            h("p", null, batch ? [batch.pick(x.record, x.label), " "] : null, h("a", { href: "#verse/" + x.verse }, x.label), " ", h("code", null, x.record + " " + x.key), " ",
               h("span", { class: "admin-sub" }, (x.layer === "meaning" ? "meaning" : names[x.language] || x.language) + " \u00b7 " + x.category.replace(/_/g, " ") +
                 (x.levels.length ? " \u00b7 " + x.levels.join("") : "")), x.footnote ? [" ", pill("footnote", "info")] : null),
             h("p", null, h("strong", null, x.choice), x.alternatives.length ? h("span", { class: "admin-sub" }, " not: " + x.alternatives.join("; ")) : null),
@@ -385,6 +394,63 @@ OWBAdmin.module(function (A) {
   };
 
   // Key terms: the settled words, and where the drafts use them.
+  // One fix request for the same change in many sentences
+  // (POST /api/admin/fixes/batch/): tick them in Consistency, Checks or
+  // Decisions, say the change once. pick(record) is a sentence's box;
+  // bar is the form, shown once one is ticked. For editors (the inbox area).
+  function batchPicker(lang, level) {
+    var picked = {}, n = 0;
+    var count = h("strong");
+    var change = h("textarea", { id: "batch-change", rows: 2, maxlength: 2000, placeholder: "The change to make in each sentence ticked" });
+    var reason = h("input", { type: "text", id: "batch-reason", maxlength: 4000, placeholder: "Why (optional)" });
+    var status = h("p", { class: "admin-note", role: "status" });
+    var send = h("button", { type: "button", class: "admin-btn primary" }, "File one request");
+    var bar = h("div", { class: "admin-bulk", hidden: true, role: "region", "aria-label": "Sentences ticked for one fix request" },
+      count, h("label", { class: "admin-bulk-note", for: "batch-change" }, "Change ", change), h("label", { class: "admin-bulk-note", for: "batch-reason" }, "Why ", reason), send, status);
+    function update() { n = Object.keys(picked).length; bar.hidden = !n; count.textContent = plural(n, "sentence") + " ticked"; }
+    send.addEventListener("click", function () {
+      if (!change.value.trim()) { note(status, "Say the change to make.", true); change.focus(); return; }
+      busy(send, true);
+      api("/api/admin/fixes/batch/", { method: "POST", body: { language: typeof lang === "function" ? lang() : lang, records: Object.keys(picked),
+        levels: level ? [level] : [], change: change.value, reason: reason.value } }).then(function (res) {
+        busy(send, false);
+        status.textContent = "";
+        add(status, ["Filed as ", h("a", { href: res.url, rel: "noopener" }, "#" + res.number), "."]);
+        status.className = "admin-note";
+        change.value = reason.value = "";
+      }, function (e) { busy(send, false); note(status, e, true); });
+    });
+    return {
+      bar: bar,
+      pick: function (record, label) {
+        var b = h("input", { type: "checkbox", value: record, checked: !!picked[record], "aria-label": "Tick " + (label || record) + " for one fix request" });
+        b.addEventListener("change", function () { if (b.checked) picked[record] = true; else delete picked[record]; update(); });
+        return b;
+      }
+    };
+  }
+  // A proposed change to a key term (POST /api/admin/fixes/term/), for the
+  // founder: filed labelled key-term, never worked as a fix request.
+  function termProposal(t) {
+    var change = h("textarea", { id: "term-change-" + t.slug, rows: 2, maxlength: 2000, placeholder: "The English it should have, at which levels" });
+    var reason = h("textarea", { id: "term-reason-" + t.slug, rows: 2, maxlength: 4000, placeholder: "Why: the sense, the verses it fails in" });
+    var status = h("p", { class: "admin-note", role: "status" });
+    var send = h("button", { type: "submit", class: "admin-btn primary" }, "Propose it");
+    var form = h("form", { class: "admin-form stacked" },
+      h("label", { class: "admin-field", for: "term-change-" + t.slug }, "Change", change),
+      h("label", { class: "admin-field", for: "term-reason-" + t.slug }, "Reason", reason), send, status);
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      busy(send, true);
+      api("/api/admin/fixes/term/", { method: "POST", body: { slug: t.slug, change: change.value, reason: reason.value } }).then(function (res) {
+        busy(send, false);
+        status.textContent = "";
+        add(status, ["Proposed as ", h("a", { href: res.url, rel: "noopener" }, "#" + res.number), ", for the founder."]);
+        status.className = "admin-note";
+      }, function (err) { busy(send, false); note(status, err, true); });
+    });
+    return h("details", null, h("summary", { class: "admin-link" }, "Propose a term change"), form);
+  }
   VIEWS.terms = function () {
     return api("/api/admin/terms/").then(function (d) {
       var rows = d.terms.map(function (t) {
@@ -399,7 +465,8 @@ OWBAdmin.module(function (A) {
             return l.code + " " + num(t.by_language[l.code]);
           }).join(" \u00b7 ")),
           h("td", { class: "admin-wrap" }, t.first.map(function (v) { return [h("a", { href: "#verse/" + v.verse }, v.label), " "]; }),
-            h("a", { href: SITE + "/terms/" + t.slug + "/", rel: "noopener" }, "All on the site")));
+            h("a", { href: SITE + "/terms/" + t.slug + "/", rel: "noopener" }, "All on the site"),
+            A.ME.admin.indexOf("inbox") >= 0 ? termProposal(t) : null));
       });
       return [head("Text", "Key terms", "Greek and Hebrew words whose English is settled at every level (data/key_terms.json); owb.validate holds the English to them. Changing one is a change for every use, so it goes to the founder, not a single fix request."),
         table(["Term", "English", ["Sentences", { class: "admin-num" }], "In other languages", "First uses"], rows)];
@@ -416,9 +483,10 @@ OWBAdmin.module(function (A) {
       langSel.setAttribute("aria-label", "Language");
       langSel.addEventListener("change", function () { f.lang = langSel.value; route(); });
       var fixes = A.ME.admin.indexOf("inbox") >= 0;
+      var batch = batchPicker(f.lang, f.level);
       function examples(list) {
         return h("ul", { class: "admin-examples" }, list.map(function (e) {
-          return h("li", null, h("a", { href: "#verse/" + e.verse }, e.label), " ", h("span", { class: "admin-sub" }, e.record),
+          return h("li", null, fixes ? [batch.pick(e.record, e.label), " "] : null, h("a", { href: "#verse/" + e.verse }, e.label), " ", h("span", { class: "admin-sub" }, e.record),
             fixes ? [" \u00b7 ", h("a", { href: "#verse/" + e.verse }, "File a fix request")] : null);
         }));
       }
@@ -437,7 +505,9 @@ OWBAdmin.module(function (A) {
       return [head("Text", "Consistency", "How each key term is worded across the sentences that use it, from the wordings the records give it (alignments, decisions and, for English, the key term list). A term worded two ways in two or more sentences each is split; open a wording for its sentences."),
         h("div", { class: "admin-toolbar" }, langSel,
           seg([["L", "Literal"], ["B", "Balanced"], ["R", "Readable"]], f.level, function (v) { f.level = v; route(); })),
-        h("p", null, plural(split, "key term") + " split in " + langSel.selectedOptions[0].textContent + " at this level."),
+        h("p", null, plural(split, "key term") + " split in " + langSel.selectedOptions[0].textContent + " at this level." +
+          (fixes ? " Tick sentences under a wording to ask for one change in all of them." : "")),
+        fixes ? batch.bar : null,
         blocks.length ? blocks : empty("No sentence that uses a key term is drafted in this language yet.")];
     });
   };
@@ -458,6 +528,22 @@ OWBAdmin.module(function (A) {
         return h("a", { href: ghFile(file) + "#L" + line, rel: "noopener" }, "line " + line);
       }
 
+      var editor = A.ME.admin.indexOf("inbox") >= 0;
+      var batch = batchPicker(d.language);
+      // "This is fine": the hit is left out until the verse text changes.
+      function fine(x) {
+        var b = h("button", { type: "button", class: "admin-link", "aria-label": "This is fine: " + x.label + " " + levels(x) }, "This is fine");
+        b.addEventListener("click", function () {
+          busy(b, true);
+          api("/api/admin/checks/dismiss/", { method: "POST", body: { lang: d.language, signature: x.signature } }).then(function () {
+            var row = b.closest("tr");
+            if (row) row.remove();
+            toast("Left out until " + x.label + " changes.", null, 5);
+          }, function (e) { busy(b, false); toast(e.message, null, 8); });
+        });
+        return b;
+      }
+      function tickCell(x) { return editor ? h("td", { class: "admin-pick" }, batch.pick(x.record, x.label)) : h("td", { class: "admin-pick" }); }
       var notes = d.notes.hits.filter(function (x) { return f.kind === "all" || x.kind === f.kind; });
       var kindSeg = seg([["all", "All (" + num(d.notes.total) + ")"],
         ["alternative", CHECK_KINDS.alternative + " (" + num(d.notes.kinds.alternative) + ")"],
@@ -469,8 +555,8 @@ OWBAdmin.module(function (A) {
           tags.push(h("div", { class: "admin-sub" }, x.contrast === "english" ? "The English words the choice" : "Another level words the choice"));
         }
         if (x.english_too) tags.push(" ", pill("English too", "bad"));
-        return h("tr", null,
-          h("td", null, verseLink(x)),
+        return h("tr", null, tickCell(x),
+          h("td", null, verseLink(x), h("div", null, fine(x))),
           h("td", null, levels(x), h("div", { class: "admin-sub" }, x.decision)),
           h("td", null, tags),
           h("td", { class: "admin-wrap" }, h("div", { lang: d.language }, x.choice),
@@ -482,7 +568,7 @@ OWBAdmin.module(function (A) {
         h("h2", null, "Footnotes and verses"),
         h("p", { class: "admin-sub" }, "Footnoted meaning decisions whose translated note says one thing while the verse says another: at some level the verse has an alternative's distinctive words and none of the choice's (while the English at that level, or another level of this language, words the choice), or it has none of a short choice's words where the English has them. Text variants, grammar and punctuation are left out. “English too”: the English verse words the alternative as well, so a fix may start there."),
         h("div", { class: "admin-toolbar" }, kindSeg),
-        noteRows.length ? table(["Verse", "Levels", "Signal", "Note", "Verse text"], noteRows)
+        noteRows.length ? table(["", "Verse", "Levels", "Signal", "Note", "Verse text"], noteRows)
           : empty(d.notes.total ? "None of this kind." : "No footnote and verse at odds in " + name + "."));
 
       var g = d.glossary, glossBlock;
@@ -492,8 +578,8 @@ OWBAdmin.module(function (A) {
             name + " has no terms glossary (docs/" + name.toLowerCase() + "-terms.md)."));
       } else {
         var verseRows = g.verses.hits.map(function (x) {
-          return h("tr", null,
-            h("td", null, verseLink(x)),
+          return h("tr", null, tickCell(x),
+            h("td", null, verseLink(x), h("div", null, fine(x))),
             h("td", null, levels(x)),
             h("td", null, pill(x.kind === "avoided" ? "Ruled out" : "Alternative only", x.kind === "avoided" ? "bad" : "warn")),
             h("td", null, h("b", { lang: d.language }, x.form), h("div", { class: "admin-sub" }, "for “" + x.term + "”")),
@@ -515,7 +601,7 @@ OWBAdmin.module(function (A) {
           h("h2", null, "Terms glossary"),
           h("p", { class: "admin-sub" }, "From ", h("a", { href: ghFile(g.file), rel: "noopener" }, g.file),
             ": verses that use a form the glossary rules out (“Not *x*”, “never *x*”) or names only as an alternative, where the English verse has the entry's English term. An “Added while drafting” entry counts in its own book only."),
-          verseRows.length ? table(["Verse", "Levels", "Signal", "Form", "Glossary entry", "Verse text"], verseRows)
+          verseRows.length ? table(["", "Verse", "Levels", "Signal", "Form", "Glossary entry", "Verse text"], verseRows)
             : empty("No verse uses a form the glossary rules out."),
           h("h3", { class: "admin-h3" }, "Entries at odds"),
           h("p", { class: "admin-sub" }, "Entries for one English term (articles, plurals and asides aside) whose forms share no word, or where one uses a form another rules out. Entries naming different source words are kept apart. Some differences are deliberate (two senses, two people of one name): read the entries' notes."),
@@ -524,6 +610,8 @@ OWBAdmin.module(function (A) {
       }
       return [head("Text", "Checks", "Content checks from the database and the files the deploy carries (data/notes/, docs/*-terms.md). They are heuristics for a reviewer and never block a merge; scripts/content_checks.py prints the same lists."),
         h("div", { class: "admin-toolbar" }, langSel),
+        d.dismissed ? h("p", { class: "admin-sub" }, plural(d.dismissed, "hit") + " found fine and left out until their verse changes.") : null,
+        editor ? batch.bar : null,
         h("div", { class: "admin-tiles" },
           tile(num(d.notes.total), "footnote and verse mismatches"),
           tile(g.file ? num(g.verses.total) : "—", "verses against the glossary"),

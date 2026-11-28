@@ -99,6 +99,47 @@ class ReviewTest(AdminTestCase):
         self.act(self.french, "JHN.1.1.s1", "fr")
         self.assertEqual(status(), "ai_draft")
 
+    def test_wording_is_approved_over_the_meaning(self):
+        # The queue and the page say where the meaning stands.
+        self.act(self.scholar, "JHN.1.1.s1", "grc", "flag", "Wrong tense")
+        rows = {x["record"]: x for x in self.french.get("/api/admin/review/?layer=fr&state=").json()["sentences"]}
+        self.assertEqual(rows["JHN.1.1.s1"]["meaning"], "flagged")
+        page = self.french.get("/api/admin/review/JHN.1.1.s1/?layer=fr").json()
+        self.assertEqual((page["meaning"]["state"], page["meaning"]["layer"]["code"]), ("flagged", "grc"))
+        # A wording approval, then a change to the meaning alone: back for another look.
+        self.act(self.french, "JHN.1.1.s1", "fr")
+        s = Sentence.objects.get(record_id="JHN.1.1.s1")
+        s.literal_gloss = "In [the] beginning was the Word, newly glossed"
+        s.save()
+        review.refresh("fr")
+        self.assertEqual(ReviewState.objects.get(layer="fr").state, "changed")
+        trail = self.french.get("/api/admin/review/JHN.1.1.s1/?layer=fr").json()["trail"]
+        approval = [e for e in trail if e["action"] == "reviewed"][0]
+        self.assertEqual((approval["changed"], approval["meaning_changed"]), (True, True))
+
+    def test_an_approval_from_before_the_meaning_was_in_the_digest_still_holds(self):
+        self.act(self.french, "JHN.1.1.s1", "fr")
+        e = ReviewEvent.objects.get(language="fr")
+        s = review._with_texts(Sentence.objects, "fr").get(pk=e.sentence_id)
+        ReviewEvent.objects.filter(pk=e.pk).update(digest=review._wording_hash(s, "fr"))   # the old form
+        ReviewState.objects.filter(layer="fr").update(checked_at=None)
+        review.refresh("fr")
+        self.assertEqual(ReviewState.objects.get(layer="fr").state, "approved")
+
+    def test_where_to_start_and_hints_beside_the_sentence(self):
+        guide = self.french.get("/api/admin/review/workspace/?layer=fr").json()["guide"]
+        self.assertIn({"label": "Style brief", "file": "docs/french-style.md"}, guide)
+        page = self.french.get("/api/admin/review/JHN.1.1.s1/?layer=fr").json()
+        self.assertEqual(set(page["hints"]), {"terms", "checks", "shared"})
+        # A long shared run kept by Similarity shows beside the sentence.
+        from staff import overlap
+        from django.core.cache import cache
+        cache.set(overlap.cache_key("JHN", "fr", 6), {"longest_runs": [
+            {"record": "JHN.1.1.s1", "verse": "JHN.1.1", "level": "B", "edition": "LSG", "length": 9,
+             "text": "au commencement"}]})
+        page = self.french.get("/api/admin/review/JHN.1.1.s1/?layer=fr").json()
+        self.assertEqual(page["hints"]["shared"][0]["edition"], "LSG")
+
     def test_an_earlier_approval_still_stands_after_taking_back_a_flag(self):
         self.act(self.scholar, "JHN.1.1.s1", "grc")
         flag = self.act(self.scholar, "JHN.1.1.s1", "grc", "flag", "Wrong tense").json()["event"]["id"]
@@ -235,6 +276,71 @@ class ReviewTest(AdminTestCase):
         self.assertEqual(len(self.editor.get("/api/admin/review/flags/").json()["flags"]), 1)
         self.act(self.french, "JHN.1.1.s1", "fr")
         self.assertEqual(self.editor.get("/api/admin/review/flags/").json()["flags"], [])
+
+
+    def test_a_flag_is_a_conversation_that_ends(self):
+        from django.core import mail
+        flag = self.act(self.scholar, "JHN.1.1.s1", "grc", "flag", "Wrong tense").json()["event"]["id"]
+        path = f"/api/admin/review/flags/{flag}/"
+        mail.outbox.clear()
+        # An editor replies; the reviewer hears of it and answers.
+        r = self.editor.post(path, {"action": "reply", "text": "Which verb?"}, format="json")
+        self.assertEqual((r.status_code, r.json()["flag"]["outcome"]), (201, "open"))
+        self.assertEqual(mail.outbox[-1].to, ["grc@example.org"])
+        self.assertIn("Which verb?", mail.outbox[-1].body)
+        r = self.scholar.post(path, {"action": "reply", "text": "The first one"}, format="json")
+        self.assertEqual(r.status_code, 201)
+        # Someone else can't reply, and only an editor settles it.
+        self.assertEqual(self.french.post(path, {"action": "reply", "text": "x"}, format="json").status_code, 403)
+        self.assertEqual(self.scholar.post(path, {"action": "decline", "text": "x"}, format="json").status_code, 403)
+        self.assertEqual(self.editor.post(path, {"action": "decline"}, format="json").json()["code"], "empty")
+        r = self.editor.post(path, {"action": "decline", "text": "The imperfect is right here."}, format="json")
+        self.assertEqual(r.json()["flag"]["outcome"], "declined")
+        self.assertEqual([t["kind"] for t in r.json()["flag"]["thread"]], ["reply", "reply", "declined"])
+        # Closed: the sentence is no longer flagged, and the list moves on.
+        self.assertFalse(ReviewState.objects.filter(layer="grc").exists())
+        self.assertEqual(self.editor.get("/api/admin/review/flags/").json()["flags"], [])
+        closed = self.editor.get("/api/admin/review/flags/?closed=1").json()["flags"]
+        self.assertEqual([f["outcome"] for f in closed], ["declined"])
+        # The reviewer sees how it ended in My review.
+        mine = self.scholar.get("/api/admin/review/workspace/?layer=grc").json()["flags"]
+        self.assertEqual([(f["outcome"], f["thread"][-1]["text"]) for f in mine],
+                         [("declined", "The imperfect is right here.")])
+
+    def test_a_fix_filed_from_a_flag_joins_its_thread(self):
+        flag = self.act(self.french, "JHN.1.1.s1", "fr", "flag", "Verbe is dated").json()["event"]["id"]
+        issue = {"number": 12, "html_url": "https://github.com/x/y/issues/12"}
+        with mock.patch("staff.github.call", return_value=issue), self.settings(OWB_GITHUB_TOKEN="t"):
+            r = self.editor.post("/api/admin/fixes/", {"record": "JHN.1.1.s1", "verse": "JHN.1.1", "language": "fr",
+                                                       "levels": ["B"], "change": "la Parole", "flag": flag},
+                                 format="json")
+        self.assertEqual(r.status_code, 201)
+        flags = self.editor.get("/api/admin/review/flags/").json()["flags"]
+        self.assertEqual((flags[0]["outcome"], flags[0]["thread"][0]["fix_issue"]), ("fix", 12))
+
+
+    def test_a_meaning_change_request_from_the_meaning_review(self):
+        from translation.models import Decision
+        s = Sentence.objects.get(record_id="JHN.1.1.s1")
+        Decision.objects.create(sentence=s, key="d1", layer="meaning", category="sense", order=0, choice="Word",
+                                alternatives=["Reason"], reason="The usual sense here.", levels=["L", "B", "R"])
+        body = {"record": "JHN.1.1.s1", "decision": "d1", "change": "Reason, not Word", "reason": "The context."}
+        issue = {"number": 14, "html_url": "https://github.com/x/y/issues/14"}
+        with mock.patch("staff.github.call", return_value=issue) as call, self.settings(OWB_GITHUB_TOKEN="t"):
+            # A language reviewer can't; a scholar of the language and an editor can.
+            self.assertEqual(self.french.post("/api/admin/fixes/meaning/", body, format="json").status_code, 403)
+            r = self.scholar.post("/api/admin/fixes/meaning/", body, format="json")
+            self.assertEqual(r.status_code, 201)
+            filed = call.call_args.args[2]
+            self.assertTrue(filed["title"].startswith("Meaning change John 1:1"))
+            self.assertIn('"kind": "meaning"', filed["body"])
+            self.assertIn('"languages": ["en", "fr"]', filed["body"])
+            self.assertIn("- Choice: Word", filed["body"])
+            self.assertEqual(self.post_meaning_missing(body), "invalid")
+
+    def post_meaning_missing(self, body):
+        r = self.scholar.post("/api/admin/fixes/meaning/", {**body, "decision": "nope"}, format="json")
+        return r.json()["code"]
 
 
 class QueueOrderTest(AdminTestCase):

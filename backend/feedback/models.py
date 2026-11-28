@@ -15,6 +15,10 @@ class ReaderMessage(models.Model):
         ANSWERED = "answered", "Answered"
         DONE = "done", "Done"
         DECLINED = "declined", "Declined"
+        # A fix request was filed from it and is not settled yet: not
+        # waiting on an editor, so not counted or alerted as waiting. The
+        # reader still sees it as waiting (feedback/views.py).
+        FIXING = "fixing", "Awaiting a fix"
 
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="reader_messages")
     kind = models.CharField(max_length=10, choices=Kind.choices)
@@ -34,6 +38,9 @@ class ReaderMessage(models.Model):
     fixed_at = models.DateTimeField(null=True, blank=True,
                                     help_text="When a fix it led to was merged and the reader was told")
     fix_url = models.URLField(blank=True, help_text="The pull request that made the change")
+    fix_issue = models.PositiveIntegerField(null=True, blank=True,
+                                            help_text="The fix request filed from it (a GitHub issue number)")
+    follow_up = models.TextField(blank=True, help_text="A reply drafted for an editor when the fix was declined")
     created_at = models.DateTimeField(auto_now_add=True, db_index=True)
 
     class Meta:

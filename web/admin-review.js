@@ -196,7 +196,9 @@ OWBAdmin.module(function (A) {
         rows.appendChild(h("tr", null, pick.box(s),
           h("th", { scope: "row" }, h("a", { href: "#review/" + layer + "/" + s.record }, s.label), h("div", { class: "admin-sub" }, s.record)),
           h("td", { class: "admin-wrap", lang: page.layer.kind === "meaning" ? "en" : layer }, rendering(s.preview)),
-          h("td", null, reviewPill(s.state)),
+          h("td", null, reviewPill(s.state), s.meaning && s.meaning !== "approved"
+            ? h("div", { class: "admin-sub" }, s.meaning === "flagged" ? "Meaning flagged" : s.meaning === "changed" ? "Meaning changed since approval" : "Meaning not reviewed")
+            : null),
           h("td", null, h("span", { class: "admin-sub" }, s.last ? s.last.label + ", " + s.last.by + ", " + when(s.last.at) : "—"))));
       });
       more.hidden = !page.more;
@@ -271,11 +273,29 @@ OWBAdmin.module(function (A) {
         return t === undefined ? next : t;
       }
       function sentencePath(rec) { return "/api/admin/review/" + encodeURIComponent(rec) + "/?layer=" + encodeURIComponent(layer); }
-      var busyNow = false, reviewBar = null;
+      var busyNow = false, reviewBar = null, overMeaning = false;
+      // Wording is read against the meaning: where its review stands, and
+      // whether this layer's approval stood on a meaning that has changed.
+      function meaningLine() {
+        if (!d.meaning) return null;
+        var m = d.meaning, last = d.trail.filter(function (e) { return e.action === "reviewed" && e.language === layer; }).pop();
+        var tone = m.state === "flagged" ? " bad" : m.state === "approved" ? "" : " warn";
+        return h("p", { class: "admin-meaning" + tone }, m.layer.name + ": ", reviewPill(m.state), " ",
+          h("a", { href: "#review/" + m.layer.code + "/" + record }, "Open the meaning review"),
+          m.state === "flagged" ? h("span", { class: "admin-sub" }, " The meaning is flagged; wording approved now may need another look once it is settled.") : null,
+          last && last.meaning_changed ? h("span", { class: "admin-sub" }, " The wording was approved before the meaning changed: read it against the meaning as it is now.") : null);
+      }
       function act(action, button) {
         if (busyNow) return;
         // A flag or comment says something: with the note empty (on a
         // phone, folded away), open it and ask for the words first.
+        // Approving wording over a flagged meaning asks first.
+        if (action === "approve" && d.meaning && d.meaning.state === "flagged" && !overMeaning) {
+          note(status, "The meaning of this sentence is flagged. Approve the wording anyway? ", true);
+          status.appendChild(h("button", { type: "button", class: "admin-link", onclick: function () { overMeaning = true; act("approve", button); } },
+            "Approve anyway"));
+          return;
+        }
         if (action !== "approve" && !noteBox.value.trim()) {
           reviewBar.classList.add("noting");
           if (action === "flag") { flagging = true; flagBtn.classList.add("armed"); }
@@ -392,7 +412,8 @@ OWBAdmin.module(function (A) {
       var trail = d.trail.length ? h("ul", { class: "admin-feed" }, d.trail.map(function (e) {
         return h("li", null, h("time", { datetime: e.at, title: new Date(e.at).toLocaleString("en-GB") }, when(e.at)),
           h("span", null, h("strong", null, e.by), " " + e.label.toLowerCase() + " (" + (e.language ? names[e.language] || e.language : "meaning") + ")",
-            e.changed ? [" ", pill("changed since", "warn")] : null, e.note ? h("span", { class: "admin-sub" }, ": " + e.note) : null));
+            e.changed ? [" ", pill(e.meaning_changed ? "meaning changed since" : "changed since", "warn")] : null,
+            e.note ? h("span", { class: "admin-sub" }, ": " + e.note) : null));
       })) : empty("No one has reviewed this sentence yet.");
       return [head("Review: " + d.layer.name, d.label, r.id + " · " + (r.status === "ai_draft" ? "AI-assisted" : r.status.replace(/_/g, " "))),
         h("div", { class: "admin-actions" }, h("a", { href: "#review/" + layer }, "‹ The queue"),
@@ -401,9 +422,12 @@ OWBAdmin.module(function (A) {
           }) : null,
           h("a", { href: "#verse/" + d.verse }, A.ME.admin.indexOf("inbox") >= 0 ? "Request a fix in the verse inspector" : "Verse inspector")),
         h("section", { class: "admin-block admin-record" }, h("header", { class: "admin-toolbar" }, h("h2", null, "State"), reviewPill(d.state)),
-          words, h("p", { class: "admin-gloss" }, "Literal gloss: " + r.literal_gloss), renderings,
-          meaning.length ? [h("h3", { class: "admin-h3" }, "Meaning decisions"), h("div", { class: "admin-decisions" }, meaning.map(decision))] : null,
+          meaningLine(), words, h("p", { class: "admin-gloss" }, "Literal gloss: " + r.literal_gloss), renderings,
+          meaning.length ? [h("h3", { class: "admin-h3" }, "Meaning decisions"), h("div", { class: "admin-decisions" }, meaning.map(function (x) {
+            return kind === "meaning" && (mayReview || A.ME.admin.indexOf("inbox") >= 0) ? meaningChange(r, x) : decision(x);
+          }))] : null,
           mine.length ? [h("h3", { class: "admin-h3" }, (names[layer] || layer) + " decisions"), h("div", { class: "admin-decisions" }, mine.map(decision))] : null),
+        hintsBlock(d.hints, layer),
         // Kept at the foot of the window while the sentence above is read,
         // so approving never means scrolling past every language.
         reviewBar = h("section", { class: "admin-block admin-review-bar" + (noteBox.value ? " noting" : ""), "aria-label": "Your review" },
@@ -416,6 +440,81 @@ OWBAdmin.module(function (A) {
         h("div", { class: "admin-review-keys" }, hint, help),
         h("section", { class: "admin-block" }, h("h2", null, "Review trail"), trail)];
     });
+  }
+  // A meaning decision with "Request a meaning change" (staff/fixes.py
+  // meaning): for the layer's scholars and editors. The worker changes the
+  // decision and every language's renderings it moves in one pull request.
+  function meaningChange(r, x) {
+    var node = decision(x);
+    var change = A.keepDraft(h("textarea", { id: "meaning-change-" + x.id, rows: 2, maxlength: 2000, placeholder: "What the meaning should be" }), "meaning." + r.id + "." + x.id);
+    var reason = A.keepDraft(h("textarea", { id: "meaning-reason-" + x.id, rows: 2, maxlength: 4000, placeholder: "Why, from the text: the words, their forms, the context" }), "meaning." + r.id + "." + x.id + ".why");
+    var status = h("p", { class: "admin-note", role: "status" });
+    var send = h("button", { type: "submit", class: "admin-btn primary" }, "File the request");
+    var form = h("form", { class: "admin-form stacked", hidden: !(change.value || reason.value), id: "meaning-form-" + x.id },
+      h("label", { class: "admin-field", for: "meaning-change-" + x.id }, "Change", change),
+      h("label", { class: "admin-field", for: "meaning-reason-" + x.id }, "Reason", reason),
+      h("p", { class: "admin-sub" }, "A public GitHub issue. A Claude session weighs it against the source and, if it holds, changes this decision and the wording in every language in one pull request; wording approvals then come back for another look."),
+      send, status);
+    var toggle = h("button", { type: "button", class: "admin-link", "aria-expanded": form.hidden ? "false" : "true", "aria-controls": "meaning-form-" + x.id }, "Request a meaning change");
+    toggle.addEventListener("click", function () {
+      form.hidden = !form.hidden;
+      toggle.setAttribute("aria-expanded", form.hidden ? "false" : "true");
+      if (!form.hidden) change.focus();
+    });
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!change.value.trim()) { note(status, "Say what the meaning should be.", true); change.focus(); return; }
+      busy(send, true);
+      api("/api/admin/fixes/meaning/", { method: "POST", body: { record: r.id, decision: x.id, change: change.value, reason: reason.value } }).then(function (res) {
+        A.dropDraft("meaning." + r.id + "." + x.id, "meaning." + r.id + "." + x.id + ".why");
+        change.value = reason.value = "";
+        status.textContent = "";
+        add(status, ["Filed as ", h("a", { href: res.url, rel: "noopener" }, "#" + res.number), "."]);
+        status.className = "admin-note";
+        busy(send, false);
+      }, function (err) { busy(send, false); note(status, err, true); });
+    });
+    node.appendChild(h("p", null, toggle));
+    node.appendChild(form);
+    return node;
+  }
+  // Start here, in My review: the layer's documents, and what approving
+  // and flagging mean (the charter's review rules, in short). Folded away
+  // once a reviewer has approved something in the layer.
+  function startHere(d) {
+    var meaning = d.layer.kind === "meaning";
+    var box = h("details", { class: "admin-block admin-start", open: !d.changes.last_approval },
+      h("summary", null, h("h2", null, "Start here")),
+      d.guide.length ? h("ul", { class: "admin-files" }, d.guide.map(function (g) {
+        return h("li", null, h("a", { href: A.ghFile(g.file), rel: "noopener" }, g.label), " ", h("span", { class: "admin-sub" }, g.file));
+      })) : null,
+      h("dl", { class: "admin-facts" },
+        h("div", null, h("dt", null, "Approve"), h("dd", null, meaning
+          ? "You have read the literal gloss and the meaning decisions against the " + d.layer.books + " and they say what it says. It moves the sentence on from AI-assisted."
+          : "You have read every level against the meaning and it says it well in " + d.layer.name.replace(/ wording$/, "") + ". It holds until the wording, or the meaning beneath it, changes.")),
+        h("div", null, h("dt", null, "Flag"), h("dd", null, "Something is wrong: say what in the note. An editor files the fix; the flag stays open until the layer is approved again.")),
+        h("div", null, h("dt", null, "Comment"), h("dd", null, "A note for the next reviewer. It changes nothing."))));
+    return box;
+  }
+  // Beside a sentence: its key terms with the form expected, any content
+  // check hit on it and any long run it shares with a reference Bible,
+  // from what those pages have kept (staff/hints.py).
+  function hintsBlock(hints, layer) {
+    if (!hints || (!hints.terms.length && !hints.checks.length && !hints.shared.length)) return null;
+    var items = [];
+    hints.terms.forEach(function (t) {
+      items.push(h("li", null, h("strong", null, t.sense), " ", h("span", { class: "admin-sub" }, t.lemma), t.expected.length
+        ? [": expected ", h("q", null, t.expected.join(", ")), t.found === false ? [" ", pill("not in Balanced", "warn")] : null]
+        : null));
+    });
+    hints.checks.forEach(function (c) {
+      items.push(h("li", null, pill(CHECK_KINDS[c.kind] || c.kind, "warn"), " ", c.term ? h("q", null, c.term) : null,
+        " (" + c.levels.join(", ") + ") ", h("a", { href: "#checks?lang=" + layer }, "Checks")));
+    });
+    hints.shared.forEach(function (r) {
+      items.push(h("li", null, pill(r.length + " words shared with " + r.edition, "info"), " (" + r.level + ") ", h("span", { class: "admin-sub" }, r.text)));
+    });
+    return h("section", { class: "admin-block" }, h("h2", null, "Worth checking"), h("ul", { class: "admin-checks" }, items));
   }
   // A link to the layer's review queue, showing one book (or every book)
   // and one state.
@@ -446,6 +545,7 @@ OWBAdmin.module(function (A) {
           queueLink(layer, "", "todo", "Open the queue ›")),
         h("div", { class: "admin-tiles" }, tile(num(c.not_reviewed), "not reviewed"), tile(num(c.approved), "approved", "good"),
           tile(num(c.changed), "changed since approval", c.changed ? "warn" : ""), tile(num(c.flagged), "flagged", c.flagged ? "bad" : ""))];
+      out.push(startHere(d));
 
       out.push(h("section", { class: "admin-block" }, h("h2", null, "Assigned to you"),
         d.assignments.length ? table(["Range", "Progress", "Due", "Standing"], d.assignments.map(function (a) {
@@ -457,12 +557,10 @@ OWBAdmin.module(function (A) {
             h("td", null, standingPill(a)));
         })) : empty("Nothing is assigned to you in this layer. Pick any book below to review, or ask a super admin for an assignment.")));
 
-      out.push(h("section", { class: "admin-block" }, h("h2", null, "Your open flags"),
-        d.flags.length ? h("ul", { class: "admin-feed" }, d.flags.map(function (f) {
-          return h("li", null, h("time", { datetime: f.at, title: new Date(f.at).toLocaleString("en-GB") }, when(f.at)), h("span", null,
-            h("a", { href: "#review/" + layer + "/" + f.record }, f.label), " ", h("span", { class: "admin-sub" }, f.record), " · ",
-            h("a", { href: "#verse/" + f.verse }, "Verse inspector"), h("br"), f.note));
-        })) : h("p", { class: "admin-ok" }, "You have no open flags in this layer.")));
+      out.push(h("section", { class: "admin-block" }, h("h2", null, "Your flags"),
+        h("p", { class: "admin-sub" }, "Open ones with what the editors have said, and those settled in the last 30 days."),
+        d.flags.length ? h("div", { class: "admin-messages" }, d.flags.map(function (f) { return flagCard(f, true); }))
+          : h("p", { class: "admin-ok" }, "You have no open flags in this layer.")));
 
       out.push(h("section", { class: "admin-block" }, h("h2", null, "Changed since you approved"),
         h("p", { class: "admin-sub" }, ch.last_approval ? "Your last approval in this layer was " + when(ch.last_approval) + "." : "You haven't approved anything in this layer yet."),
@@ -534,18 +632,72 @@ OWBAdmin.module(function (A) {
 
   // Reviewer flags: problems reviewers have raised, open until the layer is
   // approved again. Editors act on them with a fix request.
+  // A flag and its thread (staff/flags.py): replies, a fix filed from it,
+  // and how it ended. Editors reply, file a fix, decline (with why) or
+  // resolve; the reviewer who flagged it replies.
+  var FLAG_OUTCOME = { open: ["Open", "bad"], fix: ["Fix requested", "info"], declined: ["Declined", ""],
+    resolved: ["Resolved", "good"], approved: ["Approved again", "good"] };
+  function flagCard(f, mine) {
+    var editor = A.ME.admin.indexOf("inbox") >= 0;
+    var card = h("article", { class: "admin-message admin-flag" });
+    var status = h("p", { class: "admin-note", role: "status" });
+    var o = FLAG_OUTCOME[f.outcome] || FLAG_OUTCOME.open;
+    add(card, [
+      h("header", null, pill(o[0], o[1]), " ", h("a", { href: "#review/" + f.layer.code + "/" + f.record }, f.label), " ",
+        h("span", { class: "admin-sub" }, f.record + " · " + f.layer.name + " · " + when(f.at)), " ", h("a", { href: "#verse/" + f.verse }, "Verse inspector")),
+      h("blockquote", null, h("strong", null, f.by + ": "), f.note),
+      f.thread.length ? h("ul", { class: "admin-feed" }, f.thread.map(function (t) {
+        return h("li", null, h("time", { datetime: t.at, title: new Date(t.at).toLocaleString("en-GB") }, when(t.at)),
+          h("span", null, h("strong", null, t.by || "The admin"), " " + t.label.toLowerCase(), t.fix_issue ? " #" + t.fix_issue : "", t.text ? ": " + t.text : ""));
+      })) : null]);
+    var open = f.outcome === "open" || f.outcome === "fix";
+    if (open && (editor || mine)) {
+      var box = A.keepDraft(h("textarea", { id: "flag-reply-" + f.id, rows: 2, maxlength: 4000, placeholder: editor ? "A reply, or why the text stays as it is" : "A reply to the editors" }), "flag." + f.id);
+      var send = function (action, button, said) {
+        if ((action === "reply" || action === "decline") && !box.value.trim()) {
+          note(status, action === "decline" ? "Say why the text stays as it is, then decline." : "Write the reply first.", true);
+          box.focus();
+          return;
+        }
+        busy(button, true);
+        api("/api/admin/review/flags/" + f.id + "/", { method: "POST", body: { action: action, text: box.value } }).then(function () {
+          A.dropDraft("flag." + f.id);
+          A.FLASH = said;
+          route();
+        }, function (e) { busy(button, false); note(status, e, true); });
+      };
+      var reply = h("button", { type: "button", class: "admin-btn" }, "Reply");
+      reply.addEventListener("click", function () { send("reply", reply, "Reply sent; " + f.by + " is emailed it."); });
+      var buttons = [reply];
+      if (editor) {
+        var fix = h("button", { type: "button", class: "admin-btn" }, "File a fix from this flag");
+        fix.addEventListener("click", function () {
+          A.FIX_FROM = { flag: true, id: f.id, verse: f.verse, language: f.layer.kind === "meaning" ? null : f.layer.code, level: null, text: f.note, by: f.by };
+          location.hash = "#verse/" + f.verse;
+        });
+        var decline = h("button", { type: "button", class: "admin-btn" }, "Decline");
+        decline.addEventListener("click", function () { send("decline", decline, "Declined; the flag is closed and " + f.by + " is told why."); });
+        var resolve = h("button", { type: "button", class: "admin-btn" }, "Resolve");
+        resolve.addEventListener("click", function () { send("resolve", resolve, "Resolved; the flag is closed."); });
+        buttons.push(fix, decline, resolve);
+      }
+      add(card, [h("label", { class: "admin-label", for: "flag-reply-" + f.id }, "Reply"), box, h("div", { class: "admin-actions" }, buttons)]);
+    }
+    card.appendChild(status);
+    return card;
+  }
+  var FLAGS = { closed: "" };
   VIEWS.flags = function () {
-    return api("/api/admin/review/flags/").then(function (d) {
-      var reviews = A.ME.admin.indexOf("review") >= 0;
-      return [head("Text", "Reviewer flags", "Problems reviewers have flagged, newest first. A flag stays open until the layer is approved again; request a fix from the verse inspector."),
-        d.flags.length ? h("ul", { class: "admin-feed" }, d.flags.map(function (f) {
-          return h("li", null, h("time", { datetime: f.at }, when(f.at)), h("span", null,
-            h("a", { href: "#verse/" + f.verse }, f.label), " ", h("span", { class: "admin-sub" }, f.record + " · " + f.layer.name),
-            reviews ? [" ", h("a", { href: "#review/" + f.layer.code + "/" + f.record }, "Review")] : null,
-            h("br"), h("strong", null, f.by), ": " + f.note));
-        })) : h("p", { class: "admin-ok" }, "No open flags.")];
+    return api("/api/admin/review/flags/" + (FLAGS.closed ? "?closed=1" : "")).then(function (d) {
+      var shown = h("label", { class: "admin-check" }, h("input", { type: "checkbox", checked: !!FLAGS.closed, onchange: function () {
+        FLAGS.closed = this.checked ? "1" : ""; keepAddress(true); route();
+      } }), " Show flags settled in the last 30 days");
+      return [head("Text", "Reviewer flags", "Problems reviewers have flagged, newest first, each with its conversation. A flag ends when an editor files a fix that merges, declines it with a reason or resolves it, or when the layer is approved again. The reviewer hears each reply."),
+        h("div", { class: "admin-toolbar" }, shown),
+        d.flags.length ? h("div", { class: "admin-messages" }, d.flags.map(function (f) { return flagCard(f, false); })) : h("p", { class: "admin-ok" }, "No open flags.")];
     });
   };
+  A.filtered("flags", FLAGS);
 
   // Changes: what each import (each deploy) changed in sentences already
   // drafted, word by word.
@@ -635,11 +787,104 @@ OWBAdmin.module(function (A) {
 
   // Release notes: what changed in one language since a date.
   var RELEASES = { lang: "en", since: "", until: "" };
+  // Plan: the month for one language on one page (staff/plan.py): books
+  // drafted that nobody reviews, books still to draft, idle reviewers,
+  // overdue assignments and books held up by flags, each with what to do.
+  var PLAN = { lang: "en" };
+  VIEWS.plan = function () {
+    var f = PLAN;
+    return api("/api/admin/plan/?lang=" + encodeURIComponent(f.lang)).then(function (d) {
+      var mayAssign = A.ME.admin.indexOf("inbox") >= 0, mayJob = A.ME.admin.indexOf("jobs") >= 0;
+      var langSel = select("plan-lang", d.languages.map(function (l) { return [l.code, l.name]; }), f.lang);
+      langSel.setAttribute("aria-label", "Language");
+      langSel.addEventListener("change", function () { f.lang = langSel.value; keepAddress(true); route(); });
+      var name = d.language.name;
+      function block(title, sub, rows, none) {
+        return h("section", { class: "admin-block" }, h("h2", null, title), sub ? h("p", { class: "admin-sub" }, sub) : null, rows.length ? rows : empty(none));
+      }
+      var idle = d.reviewers.filter(function (r) { return r.idle; });
+      return [head("Progress", "Plan: " + name, "What should happen next in " + name + ", from Coverage, Review assignments, Review pace, Drafting jobs and Reviewer flags on one page."),
+        h("div", { class: "admin-toolbar" }, langSel),
+        h("div", { class: "admin-tiles" }, tile(num(d.unassigned.length), "books drafted, nobody reviewing", d.unassigned.length ? "warn" : ""),
+          tile(num(idle.length) + " / " + num(d.reviewers.length), "reviewers with nothing assigned"),
+          tile(num(d.overdue.length), "assignments overdue", d.overdue.length ? "bad" : ""),
+          tile(num(d.blocked.length), "books with open flags", d.blocked.length ? "warn" : ""),
+          tile(num(d.undrafted.length), "books English has and " + name + " hasn't, in whole or part")),
+        block("Drafted, nobody reviewing", "Books drafted in " + name + " with no open review assignment and not every sentence approved.",
+          d.unassigned.length ? [table(["Book", "Approved", ""], d.unassigned.map(function (b) {
+            return h("tr", null, h("th", { scope: "row" }, b.name), h("td", null, bar(b.approved, b.drafted), " " + num(b.approved) + " of " + num(b.drafted)),
+              h("td", null, mayAssign ? h("a", { href: "#assignments" }, "Assign") : null, " ", queueLink(f.lang, b.code, "todo", "Queue")));
+          }))] : [], "Every book drafted in " + name + " is assigned or approved."),
+        block("Reviewers", null, d.reviewers.length ? [table(["Reviewer", "Assigned", "Last approval"], d.reviewers.map(function (r) {
+          return h("tr", null, h("th", { scope: "row" }, r.name, r.idle ? [" ", pill("nothing assigned", "warn")] : null),
+            h("td", null, r.assignments.length ? r.assignments.map(function (a) { return h("div", null, a.label + " ", standingPill(a)); }) : "—"),
+            h("td", null, r.last_approval ? when(r.last_approval) : "never"));
+        }))] : [], "No one reviews " + name + " yet. Grant a language reviewer role in Team & access."),
+        block("Overdue", null, d.overdue.length ? [table(["Assignment", "Reviewer", "Due", "Progress"], d.overdue.map(function (a) {
+          return h("tr", null, h("th", { scope: "row" }, a.label), h("td", null, a.assignee.name), h("td", null, dueText(a)),
+            h("td", null, bar(a.progress.approved, a.progress.total), " " + progressText(a.progress)));
+        }))] : [], "Nothing is overdue."),
+        block("Held up by flags", "Books with open flags in the " + name + " wording; those with a fix request filed are waiting on it.",
+          d.blocked.length ? [table(["Book", "Open flags", "Waiting on a fix"], d.blocked.map(function (b) {
+            return h("tr", null, h("th", { scope: "row" }, b.name), h("td", { class: "admin-num" }, num(b.flags)), h("td", { class: "admin-num" }, num(b.fixing)));
+          })), h("p", null, h("a", { href: "#flags" }, "Open the flags"))] : [], "No open flags in " + name + "."),
+        block("Still to draft", "Books English has that " + name + " hasn't, or has in part." + (d.jobs.length ? " Open drafting jobs: " + d.jobs.map(function (j) { return "#" + j.number; }).join(", ") + "." : ""),
+          d.undrafted.length ? [table(["Book", "Drafted", ""], d.undrafted.map(function (b) {
+            return h("tr", null, h("th", { scope: "row" }, b.name), h("td", null, bar(b.drafted, b.of), " " + num(b.drafted) + " of " + num(b.of)),
+              h("td", null, mayJob ? h("a", { href: "#jobs" }, "File a drafting job") : null));
+          }))] : [], name + " has every book English has.")];
+    });
+  };
+  filtered("plan", PLAN);
+
+  // A release of one language as a record (staff/releases.py): what stands
+  // in its way now, cutting one, and the ones cut before. The notes below
+  // start from the last release.
+  function releasePanel(r, lang) {
+    var status = h("p", { class: "admin-note", role: "status" });
+    var name = h("input", { type: "text", id: "release-name", maxlength: 80, placeholder: r.language.name + " " + new Date().toISOString().slice(0, 10) });
+    var cut = h("button", { type: "submit", class: "admin-btn primary" }, "Cut the release");
+    var form = h("form", { class: "admin-toolbar" }, h("label", { class: "admin-field", for: "release-name" }, "Name", name), cut);
+    var anyway = false;
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!r.ready && !anyway) {
+        note(status, "Not everything is ready (above). Cut it anyway? ", true);
+        status.appendChild(h("button", { type: "button", class: "admin-link", onclick: function () { anyway = true; form.requestSubmit(); } }, "Cut it anyway"));
+        return;
+      }
+      busy(cut, true);
+      api("/api/admin/releases/", { method: "POST", body: { lang: lang, name: name.value || name.placeholder } }).then(function (res) {
+        A.FLASH = "Cut " + res.release.name + (res.release.commit ? " at " + res.release.commit : "") + ". The next notes start from here.";
+        RELEASES.since = "";
+        route();
+      }, function (err) { busy(cut, false); note(status, err, true); });
+    });
+    return h("section", { class: "admin-block" }, h("h2", null, "Release " + r.language.name),
+      h("p", { class: "admin-sub" }, (r.since ? "The last release was cut " + when(r.since) + ". " : "No release of " + r.language.name + " has been cut yet. ") +
+        plural(r.fully_reviewed, "sentence") + " fully reviewed (meaning and wording) since."),
+      h("ul", { class: "admin-checks" }, r.readiness.map(function (c) {
+        return h("li", null, pill(c.ok ? "Ready" : c.count ? num(c.count) : "Not ready", c.ok ? "good" : "warn"), " ",
+          h("a", { href: c.href }, c.label), c.detail ? h("span", { class: "admin-sub" }, ": " + c.detail) : null);
+      })),
+      form, status,
+      h("p", { class: "admin-sub" }, h("a", { href: "#export?lang=" + lang }, "Export " + r.language.name), " for Bible software and apps, from the same text."),
+      r.releases.length ? table(["Release", "Cut", "Commit", "Since the one before"], r.releases.map(function (x) {
+        var t = (x.summary || {}).totals || {};
+        return h("tr", null, h("th", { scope: "row" }, x.name), h("td", null, date(x.cut_at), h("div", { class: "admin-sub" }, x.cut_by)),
+          h("td", null, x.commit ? h("code", null, x.commit) : "—"),
+          h("td", { class: "admin-sub" }, num(t.drafted || 0) + " drafted, " + num(t.renderings || 0) + " renderings changed, " +
+            num((x.summary || {}).fully_reviewed || 0) + " fully reviewed" + ((x.summary || {}).ready === false ? "; cut before ready" : "")));
+      })) : null);
+  }
   VIEWS.releases = function () {
     var f = RELEASES;
-    if (!f.since) f.since = new Date(Date.now() - 30 * 86400000).toISOString().slice(0, 10);
-    return api("/api/admin/export/").then(function (opts) {
+    return Promise.all([api("/api/admin/export/"), api("/api/admin/releases/?lang=" + encodeURIComponent(f.lang))]).then(function (both) {
+      var opts = both[0], rel = both[1];
+      // The notes start from the last release, else the last 30 days.
+      if (!f.since) f.since = (rel.since ? new Date(rel.since) : new Date(Date.now() - 30 * 86400000)).toISOString().slice(0, 10);
       var langSel = select("releases-lang", opts.languages.map(function (l) { return [l.code, l.name]; }), f.lang);
+      langSel.addEventListener("change", function () { f.lang = langSel.value; f.since = ""; keepAddress(true); route(); });
       var since = h("input", { type: "date", id: "releases-since", value: f.since, required: true });
       var until = h("input", { type: "date", id: "releases-until", value: f.until });
       var show = h("button", { type: "submit", class: "admin-btn primary" }, "Show");
@@ -704,9 +949,9 @@ OWBAdmin.module(function (A) {
         saveFile("/api/admin/history/release-notes/" + query() + "&file=md").then(function (name) { note(status, "Saved " + name + "."); },
           function (err) { note(status, err, true); }).then(function () { busy(download, false); });
       });
-      return [head("Text", "Release notes", "What changed in one language between two dates, from what each deploy's import recorded: sentences drafted, renderings changed word by word, decisions added or changed, and footnotes added, by book. Nothing here changes a sentence's review state."),
+      return [head("Text", "Releases", "Cut a release of one language once it is ready, and the notes of what changed since the last one, from what each deploy's import recorded: sentences drafted, renderings changed word by word, decisions added or changed, and footnotes added, by book. Nothing here changes a sentence's review state."),
         h("p", { class: "notice" }, "Every sentence is an AI-assisted draft until a named reviewer approves it. Imports before release notes existed recorded rendering changes and how many sentences were drafted, but not which sentences or decisions."),
-        form, result];
+        releasePanel(rel, f.lang), h("h2", null, "Notes"), form, result];
     });
   };
   filtered("review", REVIEW, { layer: "", book: "", state: "todo" }, function (arg, f) {

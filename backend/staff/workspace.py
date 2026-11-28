@@ -20,8 +20,8 @@ from rest_framework.response import Response
 from owb import refs
 from translation.models import ReviewEvent, ReviewState, Sentence
 
-from . import assignments, history, review
-from .inbox import verse_label
+from . import assignments, hints, history, review
+from . import flags as flagging
 from .models import ReviewAssignment
 from .permissions import admin_view
 
@@ -56,12 +56,12 @@ def workspace(request):
     in_progress = {a["book"] for a in assigned}
     in_progress |= {b for b, c in books.items() if c["not_reviewed"] < c["total"] and c["approved"] < c["total"]}
 
-    flags = []
-    for row in (ReviewState.objects.filter(layer=layer, state=RS.FLAGGED, event__user=me)
-                .select_related("event__user", "sentence").order_by("-event__created_at", "-event_id")):
-        vid = row.sentence.refs[0]
-        flags.append({**review._event_json(row.event), "record": row.sentence.record_id, "verse": vid,
-                      "label": verse_label(vid)})
+    # Your flags still open, with their threads, then those settled in the
+    # last weeks, so you hear how each ended.
+    mine_open = ReviewState.objects.filter(layer=layer, state=RS.FLAGGED, event__user=me).values("event_id")
+    lang = "" if review._meaning(layer) else layer
+    flags = (flagging.listed(ReviewEvent.objects.filter(id__in=mine_open).order_by("-created_at", "-id"))
+             + flagging.listed(flagging.closed_recently(me).filter(language=lang)))
 
     changed = (ReviewState.objects.filter(layer=layer, state=RS.CHANGED, event__user=me)
                .select_related("event__user", "event__sentence__source_edition")
@@ -84,4 +84,5 @@ def workspace(request):
                     "items": [history.since_approval(e, sentences[e.sentence_id]) for e in shown]},
         "assignments": assigned,
         "checks": None if review._meaning(layer) else layer,
+        "guide": hints.guide(layer),
     })

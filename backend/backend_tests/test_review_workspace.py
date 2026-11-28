@@ -7,6 +7,7 @@ from django.utils import timezone
 
 from backend_tests.test_admin import K, AdminTestCase, account, client_for, sentence
 from staff import bulk, review
+from staff.assignments import split as staff_split
 from staff.models import AdminAction, ReviewAssignment
 from translation.models import Rendering, ReviewEvent, ReviewState, Sentence
 
@@ -214,6 +215,154 @@ class AssignmentTest(AdminTestCase):
         # Editors don't review, so they get no assignment chips.
         chips = {c["key"] for c in self.editor.get("/api/admin/overview/").json()["attention"]}
         self.assertNotIn("assigned", chips)
+
+
+class FinishableAssignmentTest(AdminTestCase):
+    def setUp(self):
+        super().setUp()
+        for rid in ("JHN.1.1.s1", "JHN.1.2.s1", "JHN.2.1.s1", "JHN.3.1.s1", "JHN.3.2.s1"):
+            sentence(rid, ("en", "fr"))
+        sentence("JHN.4.1.s1", ("en",))   # drafted in English only
+        self.fr_user = account("fr@example.org", (K.LANGUAGE_REVIEWER, "fr"))
+        self.fr2 = account("fr2@example.org", (K.LANGUAGE_REVIEWER, "fr"))
+        self.french = client_for(self.fr_user)
+        self.editor = client_for(account("ed@example.org", (K.EDITOR,)))
+
+    def assign(self, **body):
+        return self.editor.post("/api/admin/assignments/", {"layer": "fr", "book": "JHN", **body}, format="json")
+
+    def test_flags_open_is_reviewed_not_stuck(self):
+        a = self.assign(assignee=self.fr_user.id, chapter_from=1, chapter_to=1).json()["assignment"]
+        for rid, action in (("JHN.1.1.s1", "approve"), ("JHN.1.2.s1", "flag")):
+            self.french.post(f"/api/admin/review/{rid}/", {"layer": "fr", "action": action, "note": "Tense"},
+                             format="json")
+        listed = self.french.get("/api/admin/assignments/").json()["assignments"]
+        self.assertEqual([x["standing"] for x in listed if x["id"] == a["id"]], ["reviewed"])
+        chips = {c["key"] for c in self.french.get("/api/admin/overview/").json()["attention"]}
+        self.assertNotIn("assigned", chips)   # the reviewer's part is finished
+
+    def test_nothing_drafted_is_refused_and_overlaps_are_named(self):
+        r = self.assign(assignee=self.fr_user.id, chapter_from=4, chapter_to=4)
+        self.assertEqual((r.status_code, r.json()["code"]), (400, "not_drafted"))
+        r = self.assign(assignee=self.fr_user.id, chapter_from=1, chapter_to=4)
+        self.assertEqual(r.status_code, 201)
+        self.assertEqual(r.json()["warnings"], ["Not drafted in French wording yet: chapter 4."])
+        r = self.assign(assignee=self.fr2.id, chapter_from=2, chapter_to=3)
+        self.assertEqual(len(r.json()["warnings"]), 1)
+        self.assertTrue(r.json()["warnings"][0].startswith("Overlaps "))
+
+    def test_splitting_a_book(self):
+        r = self.assign(assignees=[self.fr_user.id, self.fr2.id], due="2030-01-01")
+        self.assertEqual(r.status_code, 201)
+        got = [(a["assignee"]["id"], a["chapter_from"], a["chapter_to"]) for a in r.json()["assignments"]]
+        self.assertEqual(got, [(self.fr_user.id, 1, 1), (self.fr2.id, 2, 3)])   # 2 sentences, then 3
+        self.assertEqual(ReviewAssignment.objects.count(), 2)
+        self.assertEqual(staff_split({1: 5, 2: 5, 3: 5, 4: 5}, 3), [(1, 1), (2, 3), (4, 4)])
+        self.assertEqual(staff_split({1: 9, 2: 1, 3: 1, 4: 9}, 2), [(1, 2), (3, 4)])
+        self.assertEqual(staff_split({1: 1}, 3), [(1, 1)])
+
+
+class NotifyTest(AdminTestCase):
+    def setUp(self):
+        super().setUp()
+        for rid in ("JHN.1.1.s1", "JHN.1.2.s1"):
+            sentence(rid, ("en", "fr"))
+        self.fr_user = account("fr@example.org", (K.LANGUAGE_REVIEWER, "fr"))
+        self.fr_user.last_login = timezone.now()
+        self.fr_user.save()
+        self.editor = client_for(account("ed@example.org", (K.EDITOR,)))
+
+    def test_assigning_emails_the_reviewer(self):
+        from django.core import mail
+        mail.outbox.clear()
+        self.editor.post("/api/admin/assignments/", {"layer": "fr", "book": "JHN", "assignee": self.fr_user.id,
+                                                     "due": "2030-01-01", "note": "Start with chapter 1"},
+                         format="json")
+        self.assertEqual(mail.outbox[-1].to, ["fr@example.org"])
+        self.assertIn("John", mail.outbox[-1].subject)
+        self.assertIn("/admin/#workspace/fr", mail.outbox[-1].body)
+        self.assertIn("Start with chapter 1", mail.outbox[-1].body)
+
+    def test_a_role_on_an_account_in_use_is_told(self):
+        from django.core import mail
+        mail.outbox.clear()
+        self.admin.post("/api/admin/team/", {"email": "fr@example.org", "kind": "language_reviewer", "language": "es"},
+                        format="json")
+        self.assertEqual(mail.outbox[-1].to, ["fr@example.org"])
+        self.assertIn("/admin/#workspace/es", mail.outbox[-1].body)
+        self.assertIn("Review checklist", mail.outbox[-1].body)
+
+    def test_reminders_and_the_week_are_sent_once(self):
+        from django.core import mail
+        from staff import notify
+        today = timezone.localdate()
+        monday = today - datetime.timedelta(days=today.weekday())
+        a = ReviewAssignment.objects.create(layer="fr", book="JHN", assignee=self.fr_user,
+                                            due=monday + datetime.timedelta(days=notify.REMIND_BEFORE))
+        now = timezone.make_aware(datetime.datetime.combine(monday, datetime.time(9)))
+        mail.outbox.clear()
+        self.assertEqual(notify.send_due(now), 2)   # the reminder, and the week (a Monday)
+        self.assertEqual(sorted(m.subject.split(":")[0] for m in mail.outbox),
+                         ["Due in 3 days", "Your review this week on Open Word Bible"])
+        self.assertEqual(notify.send_due(now), 0)   # once
+        a.due = monday
+        a.save()
+        self.assertEqual(notify.send_due(now), 1)   # due today
+
+
+class ReleaseTest(AdminTestCase):
+    def setUp(self):
+        super().setUp()
+        for rid in ("JHN.1.1.s1", "JHN.1.2.s1"):
+            sentence(rid, ("en", "fr"))
+        self.french = client_for(account("fr@example.org", (K.LANGUAGE_REVIEWER, "fr")))
+        self.scholar = client_for(account("grc@example.org", (K.SCHOLAR_REVIEWER, "grc")))
+
+    def test_readiness_and_cutting_a_release(self):
+        self.french.post("/api/admin/review/JHN.1.2.s1/", {"layer": "fr", "action": "flag", "note": "x"}, format="json")
+        for c in (self.french, self.scholar):
+            c.post("/api/admin/review/JHN.1.1.s1/", {"layer": "fr" if c is self.french else "grc", "action": "approve"},
+                   format="json")
+        with mock.patch("staff.releases._ci_status", return_value={"sha": "abc1234", "checks": []}):
+            d = self.admin.get("/api/admin/releases/?lang=fr").json()
+            checks = {c["key"]: c for c in d["readiness"]}
+            self.assertEqual((checks["flags"]["count"], checks["flags"]["ok"]), (1, False))
+            self.assertFalse(d["ready"])
+            self.assertEqual((d["since"], d["fully_reviewed"]), (None, 1))
+            r = self.admin.post("/api/admin/releases/", {"lang": "fr", "name": "French NT preview"}, format="json")
+            self.assertEqual(r.status_code, 201)
+            rel = r.json()["release"]
+            self.assertEqual((rel["commit"], rel["summary"]["ready"], rel["summary"]["fully_reviewed"]),
+                             ("abc1234", False, 1))
+            d = self.admin.get("/api/admin/releases/?lang=fr").json()
+            self.assertEqual(([x["name"] for x in d["releases"]], d["fully_reviewed"]), (["French NT preview"], 0))
+            self.assertTrue(d["since"])
+
+
+class PlanTest(AdminTestCase):
+    def setUp(self):
+        super().setUp()
+        for rid in ("JHN.1.1.s1", "JHN.1.2.s1", "ROM.1.1.s1"):
+            sentence(rid, ("en", "fr"))
+        sentence("ACT.1.1.s1", ("en",))   # not in French yet
+        self.fr_user = account("fr@example.org", (K.LANGUAGE_REVIEWER, "fr"))
+        self.fr2 = account("fr2@example.org", (K.LANGUAGE_REVIEWER, "fr"))
+        self.french = client_for(self.fr_user)
+
+    def test_the_month_on_one_page(self):
+        today = timezone.localdate()
+        ReviewAssignment.objects.create(layer="fr", book="JHN", assignee=self.fr_user,
+                                        due=today - datetime.timedelta(days=2))
+        self.french.post("/api/admin/review/ROM.1.1.s1/", {"layer": "fr", "action": "flag", "note": "x"},
+                         format="json")
+        d = self.admin.get("/api/admin/plan/?lang=fr").json()
+        self.assertEqual([b["code"] for b in d["unassigned"]], ["ROM"])     # JHN is assigned
+        self.assertEqual([b["code"] for b in d["undrafted"]], ["ACT"])
+        self.assertEqual([x["label"] for x in d["overdue"]], ["John"])
+        idle = {r["id"]: r["idle"] for r in d["reviewers"]}
+        self.assertEqual((idle[self.fr_user.id], idle[self.fr2.id]), (False, True))
+        self.assertEqual([(b["code"], b["flags"]) for b in d["blocked"]], [("ROM", 1)])
+        self.assertEqual(self.admin.get("/api/admin/plan/?lang=xx").status_code, 400)
 
 
 class WorkspaceTest(AdminTestCase):

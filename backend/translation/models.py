@@ -167,6 +167,14 @@ class ReviewEvent(models.Model):
                                 help_text="What was approved (staff/snapshot.py), so the admin can show what has "
                                           "changed since word by word. Empty for approvals made before it was kept")
     created_at = models.DateTimeField(auto_now_add=True)
+    # A flag an editor has settled without a new approval: declined (the
+    # text stays as it is, for the reason given) or resolved (dealt with
+    # another way). A closed flag no longer decides the sentence's state
+    # (ReviewState.sync); its thread is staff.FlagReply.
+    closed_at = models.DateTimeField(null=True, blank=True)
+    closed_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True,
+                                  related_name="+")
+    closed_as = models.CharField(max_length=10, blank=True, help_text="declined or resolved, for a closed flag")
 
     class Meta:
         indexes = [models.Index(fields=["sentence", "created_at"], name="review_event_trail"),
@@ -223,7 +231,8 @@ class ReviewState(models.Model):
         if original is None:   # the sentence is being deleted
             return
         layer = language or original
-        latest = (ReviewEvent.objects.filter(sentence_id=sentence_id, language=language, action__in=cls.DECIDING)
+        latest = (ReviewEvent.objects.filter(sentence_id=sentence_id, language=language, action__in=cls.DECIDING,
+                                             closed_at__isnull=True)
                   .order_by("-created_at", "-id").first())
         if latest is None:
             cls.objects.filter(sentence_id=sentence_id, layer=layer).delete()

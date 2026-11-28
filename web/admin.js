@@ -451,13 +451,14 @@
     { id: "checks", label: "Checks", area: "overview", group: "Quality" },
     { id: "overlap", label: "Similarity", area: "overview", group: "Quality" },
     { id: "changes", label: "Changes", area: "overview", group: "Quality" },
+    { id: "plan", label: "Plan", area: "overview", group: "Progress" },
     { id: "coverage", label: "Coverage", area: "overview", group: "Progress" },
     { id: "languages", label: "Languages", area: "overview", group: "Progress" },
     { id: "health", label: "Content health", area: "overview", group: "Progress" },
     { id: "pace", label: "Review pace", area: "overview", group: "Progress" },
     { id: "articles", label: "Articles", area: "overview", group: "Publish" },
     { id: "export", label: "Export", area: "export", group: "Publish" },
-    { id: "releases", label: "Release notes", area: "export", group: "Publish" },
+    { id: "releases", label: "Releases", area: "export", group: "Publish" },
     { id: "users", label: "Users", area: "users", group: "People" },
     { id: "engagement", label: "Engagement", area: "overview", group: "People" },
     { id: "team", label: "Team & access", area: "team", group: "People" },
@@ -1201,6 +1202,7 @@
       function drawTabs() {
         tabs.textContent = "";
         tabs.appendChild(seg([["new", "New (" + counts.new + ")"], ["answered", "Answered (" + counts.answered + ")"],
+          ["fixing", "Awaiting a fix (" + (counts.fixing || 0) + ")"],
           ["done", "Done (" + counts.done + ")"], ["declined", "Declined (" + counts.declined + ")"]], f.status, function (v) {
           f.status = v; refilter();
         }));
@@ -1318,6 +1320,15 @@
             b.addEventListener("click", function () { FIX_FROM = m; location.hash = "#verse/" + m.verse; });
             return b;
           })())]);
+      // The fix request filed from it, as the work list last saw it.
+      var FIX_STATE = { open: ["Fix requested", "info"], in_review: ["Fix in review", "info"], merged: ["Fix merged", "good"],
+        declined: ["Fix declined", "warn"] };
+      if (m.fix && !m.fixed_at) {
+        var fs = FIX_STATE[m.fix.state] || ["Fix requested", "info"];
+        card.appendChild(h("p", null, pill(fs[0], fs[1]), " ", m.fix.url ? h("a", { href: m.fix.url, rel: "noopener" }, "#" + m.fix.number) : "#" + m.fix.number,
+          m.fix.pr ? [" · ", h("a", { href: m.fix.pr, rel: "noopener" }, "pull request")] : null,
+          m.status === "fixing" ? h("span", { class: "admin-sub" }, " The reader hears when it merges; if it is declined, this comes back here with a reply drafted.") : null));
+      }
       if (m.fixed_at) {
         card.appendChild(h("p", null, pill("Led to a change", "good"), " ", h("a", { href: m.fix_url, rel: "noopener" }, "the pull request"),
           h("span", { class: "admin-sub" }, " \u00b7 the reader was told " + when(m.fixed_at))));
@@ -1331,6 +1342,8 @@
         var text = h("textarea", { rows: 3, id: "reply-" + m.id, maxlength: 4000, placeholder: "Reply to the reader (emailed to them)",
         });
         keepDraft(text, "reply." + m.id);
+        // A fix declined: the reply drafted from why (sync_fixes), to read and change before sending.
+        if (!text.value && m.follow_up) text.value = m.follow_up;
         var saved = select("saved-" + m.id, [["", "Start from a saved reply…"]].concat(m.replies.map(function (r) { return [r.key, r.label]; })), "");
         saved.setAttribute("aria-label", "Saved replies");
         saved.addEventListener("change", function () {
@@ -1423,7 +1436,7 @@
         else draw();
       });
     }
-    var DONE_LABEL = { done: "Marked done", declined: "Declined", answered: "Answered", "new": "Back to new" };
+    var DONE_LABEL = { done: "Marked done", declined: "Declined", answered: "Answered", "new": "Back to new", fixing: "Awaiting a fix" };
     // The card once it has left the tab: what happened, and Undo (not for
     // a reply, which has been emailed).
     function folded(was, replied) {
@@ -1695,7 +1708,8 @@
     "message.reply": "answered", "message.done": "marked done", "message.declined": "declined", "message.new": "reopened",
     "job.file": "filed drafting job", "article.job": "filed article job", "digest.send": "sent the weekly digest to", "message.fixed": "told the reader their message led to a change:", "email.send": "emailed the team:", "fix.request": "requested fix",
     "export.download": "downloaded", "review.assign": "assigned review to", "review.unassign": "took back a review assignment from",
-    "review.assignment": "changed a review assignment of", "review.undo": "took back"
+    "review.assignment": "changed a review assignment of", "review.undo": "took back",
+    "notify.reminder": "sent a due-date reminder for", "notify.week": "sent a reviewer their week:"
   };
   function activityList(actions) {
     return h("ul", { class: "admin-feed" }, actions.map(function (a) {
@@ -1706,7 +1720,7 @@
   }
   // The activity log, narrowed by who did it and what kind of thing.
   var ACTIVITY = { by: "", kind: "" };
-  var KIND_LABEL = { role: "Roles", user: "Accounts", message: "Reader messages", job: "Drafting jobs", article: "Article jobs",
+  var KIND_LABEL = { notify: "Reminders", role: "Roles", user: "Accounts", message: "Reader messages", job: "Drafting jobs", article: "Article jobs",
     fix: "Fix requests", email: "Team email", digest: "Digests", export: "Downloads", review: "Review steps taken back" };
   VIEWS.activity = function () {
     var f = ACTIVITY;
@@ -1935,7 +1949,8 @@
   // /api/admin/review/workspace/). Each item links to the view that deals
   // with it: the queue (a book's sentences to review), the sentence, the
   // verse inspector, Checks.
-  var STANDING = { overdue: ["Overdue", "bad"], open: ["Open", "info"], done: ["Done", "good"], closed: ["Closed", ""] };
+  var STANDING = { overdue: ["Overdue", "bad"], open: ["Open", "info"], reviewed: ["Reviewed, flags open", "warn"],
+    done: ["Done", "good"], closed: ["Closed", ""] };
   function standingPill(a) { return pill(STANDING[a.standing][0], STANDING[a.standing][1]); }
   function dueText(a) {
     if (!a.due) return "No date";
@@ -1975,9 +1990,22 @@
       });
       books();
     }
-    reviewerSel.addEventListener("change", layers);
-    layerSel.addEventListener("change", books);
+    // Split the book: the other reviewers of the layer to share its
+    // drafted chapters with, in runs of about the same size.
+    var share = h("select", { id: "assign-share", multiple: true, size: 3 });
+    function sharers() {
+      var was = Array.prototype.map.call(share.selectedOptions || [], function (o) { return o.value; });
+      share.textContent = "";
+      people.filter(function (p) {
+        return String(p.id) !== reviewerSel.value && (p.layers === "any" || p.layers.indexOf(layerSel.value) >= 0);
+      }).forEach(function (p) { share.appendChild(h("option", { value: String(p.id), selected: was.indexOf(String(p.id)) >= 0 }, p.name)); });
+      shareField.hidden = !share.options.length;
+    }
+    var shareField = h("label", { class: "admin-field", for: "assign-share" }, "Split the book with (optional)", share);
+    reviewerSel.addEventListener("change", function () { layers(); sharers(); });
+    layerSel.addEventListener("change", function () { books(); sharers(); });
     layers();
+    sharers();
     var submit = h("button", { type: "submit", class: "admin-btn primary", disabled: !people.length }, "Assign");
     var form = h("form", { class: "admin-form" },
       h("label", { class: "admin-field", for: "assign-reviewer" }, "Reviewer", reviewerSel),
@@ -1985,15 +2013,24 @@
       h("label", { class: "admin-field", for: "assign-book" }, "Book", bookSel),
       h("label", { class: "admin-field", for: "assign-from" }, "From chapter", from),
       h("label", { class: "admin-field", for: "assign-to" }, "To chapter", to),
+      shareField,
       h("label", { class: "admin-field", for: "assign-due" }, "Due (optional)", due),
       h("label", { class: "admin-field", for: "assign-note" }, "Note", noteBox), submit);
     form.addEventListener("submit", function (e) {
       e.preventDefault();
+      var others = Array.prototype.map.call(share.selectedOptions || [], function (o) { return Number(o.value); });
+      if (others.length && (from.value || to.value)) {
+        note(status, "A split shares the whole book: clear the chapters, or assign a range to one reviewer.", true);
+        return;
+      }
       busy(submit, true);
-      api("/api/admin/assignments/", { method: "POST", body: { assignee: Number(reviewerSel.value), layer: layerSel.value, book: bookSel.value,
-        chapter_from: from.value, chapter_to: to.value, due: due.value, note: noteBox.value } }).then(function (r) {
-        var a = r.assignment;
-        FLASH = "Assigned " + a.label + " (" + a.layer.name + ") to " + a.assignee.name + ".";
+      var body = { layer: layerSel.value, book: bookSel.value, due: due.value, note: noteBox.value };
+      if (others.length) body.assignees = [Number(reviewerSel.value)].concat(others);
+      else { body.assignee = Number(reviewerSel.value); body.chapter_from = from.value; body.chapter_to = to.value; }
+      api("/api/admin/assignments/", { method: "POST", body: body }).then(function (r) {
+        var made = r.assignments || [r.assignment];
+        FLASH = "Assigned " + made.map(function (a) { return a.label + " to " + a.assignee.name; }).join("; ") + " (" + made[0].layer.name + ")." +
+          (r.warnings && r.warnings.length ? " " + r.warnings.join(" ") : "");
         route();
       }, function (err) { busy(submit, false); note(status, err, true); });
     });
@@ -2148,7 +2185,7 @@
   // reassigned here (the account, the flash message, ...) it reads and
   // writes through A, so both sides see one value.
   var MODULE_OF = {};
-  [["review", ["review",  "workspace",  "assignments",  "flags",  "changes",  "releases"]],
+  [["review", ["review",  "workspace",  "assignments",  "flags",  "changes",  "releases",  "plan"]],
    ["quality", ["verse",  "fixes",  "decisions",  "terms",  "consistency",  "checks"]],
    ["publish", ["articles",  "work",  "overlap",  "export",  "jobs",  "emails"]]].forEach(function (m) {
     m[1].forEach(function (view) { MODULE_OF[view] = m[0]; });

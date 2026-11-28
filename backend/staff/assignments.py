@@ -8,14 +8,22 @@ GET    /api/admin/assignments/?layer=&mine=1&closed=1
         For those who may assign, also the reviewers and their layers.
 POST   /api/admin/assignments/  {layer, book, chapter_from, chapter_to,
                                  assignee, due, note}
-        assign (editors and super admins)
+        assign (editors and super admins). A range with nothing drafted in
+        the layer is refused (it could never be done); the answer's
+        warnings name chapters in it not drafted yet and open assignments
+        it overlaps.
+        {layer, book, assignees: [ids], due, note} splits the book's
+        drafted chapters between several reviewers, in runs of about the
+        same number of sentences: {"assignments": [...], "warnings"}
 PATCH  /api/admin/assignments/<id>/  {due, note, closed}
         change the date or note, close or reopen (editors and super admins)
 DELETE /api/admin/assignments/<id>/
         take it back (editors and super admins)
 
 An assignment is done when every sentence in its range is approved in the
-layer, and overdue when its date has passed before that. Closing one is an
+layer; "reviewed" when every one has been looked at but some are flagged
+(the reviewer's part is finished; the flags are an editor's to act on); and
+overdue when its date has passed before either. Closing one is an
 editor's: an assignment done stays listed until closed. Nothing here
 approves anything or changes a sentence.
 """
@@ -33,7 +41,7 @@ from owb import languages, refs
 from texts.models import Verse
 
 from .models import ReviewAssignment, record
-from . import people
+from . import notify, people
 from .permissions import admin_view
 from .review import STATES, _in_layer, _scope, layer_json
 
@@ -72,11 +80,14 @@ def progress(a):
 
 
 def standing(a, counts, today):
-    """"closed", "done" (every sentence in range approved), "overdue" or "open"."""
+    """"closed", "done" (every sentence in range approved), "reviewed"
+    (every one approved or flagged, some flagged), "overdue" or "open"."""
     if a.closed_at:
         return "closed"
     if counts["total"] and counts["approved"] == counts["total"]:
         return "done"
+    if counts["total"] and counts["flagged"] and counts["approved"] + counts["flagged"] == counts["total"]:
+        return "reviewed"
     if a.due and a.due < today:
         return "overdue"
     return "open"
@@ -112,7 +123,7 @@ def listed(assignments):
     today = timezone.localdate()
     out = [assignment_json(a, today) for a in assignments.select_related("assignee", "assigned_by")]
     # Overdue first, then by date (none last), then oldest first.
-    rank = {"overdue": 0, "open": 1, "done": 2, "closed": 3}
+    rank = {"overdue": 0, "open": 1, "reviewed": 2, "done": 3, "closed": 4}
     out.sort(key=lambda x: (rank[x["standing"]], x["due"] is None, x["due"] or datetime.date.max))
     return out
 
@@ -205,8 +216,60 @@ def _note(data):
     return note
 
 
+def drafted_chapters(layer, book):
+    """{chapter: sentences} of book drafted in layer, in order."""
+    rows = (_in_layer(_scope(layer).filter(book=book), layer).order_by()
+            .values("chapter").annotate(n=Count("id")).values_list("chapter", "n"))
+    return dict(sorted(rows))
+
+
+def split(chapters, k):
+    """chapters ({chapter: sentences}, in order) in k runs of about the same
+    number of sentences: [(first, last)], fewer when there are fewer chapters."""
+    items = list(chapters.items())
+    k = max(1, min(k, len(items)))
+    total = sum(n for _, n in items)
+    runs, start, done = [], 0, 0
+    for i in range(k):
+        if i == k - 1:
+            end = len(items)
+        else:
+            # The run ends where the running total comes closest to its
+            # share, leaving at least one chapter for each run to come.
+            target = total * (i + 1) / k
+            end, cum = start + 1, done + items[start][1]
+            while end < len(items) - (k - i - 1) and abs(cum + items[end][1] - target) < abs(cum - target):
+                cum += items[end][1]
+                end += 1
+        runs.append((items[start][0], items[end - 1][0]))
+        done += sum(n for _, n in items[start:end])
+        start = end
+    return runs
+
+
+def _warnings(a, chapters):
+    """What to know about a new assignment: chapters in its range not drafted
+    in the layer yet, and open assignments of the same layer it overlaps."""
+    out = []
+    last = max(chapters) if chapters else 0
+    lo, hi = a.chapter_from or 1, a.chapter_to or last
+    missing = [c for c in range(lo, hi + 1) if c not in chapters]
+    if missing:
+        shown = ", ".join(map(str, missing[:8])) + ("…" if len(missing) > 8 else "")
+        word = "chapters" if len(missing) > 1 else "chapter"
+        out.append(f"Not drafted in {layer_json(a.layer)['name']} yet: {word} {shown}.")
+    for other in (ReviewAssignment.objects.filter(layer=a.layer, book=a.book, closed_at__isnull=True)
+                  .exclude(pk=a.pk).select_related("assignee")):
+        o_lo, o_hi = other.chapter_from or 1, other.chapter_to or 10_000
+        if o_lo <= hi and lo <= o_hi:
+            out.append(f"Overlaps {people.name(other.assignee)}'s {range_label(other)}.")
+    return out
+
+
 def _assign(request):
     data = request.data if isinstance(request.data, dict) else {}
+    if data.get("assignees") is not None:
+        return _assign_split(request, data)
     layer = str(data.get("layer") or "")
     if layer not in EVERY_LAYER:
         raise ValidationError({"layer": "Choose a layer.", "code": "invalid_layer"})
@@ -230,11 +293,57 @@ def _assign(request):
     if not reviews(assignee, layer):
         raise ValidationError({"assignee": f"{people.name(assignee)} doesn't review {layer_json(layer)['name']}.",
                                "code": "not_a_reviewer"})
-    a = ReviewAssignment.objects.create(layer=layer, book=book, chapter_from=lo, chapter_to=hi, assignee=assignee,
-                                        assigned_by=request.user, due=_due(data), note=_note(data))
+    a = ReviewAssignment(layer=layer, book=book, chapter_from=lo, chapter_to=hi, assignee=assignee,
+                         assigned_by=request.user, due=_due(data), note=_note(data))
+    chapters = drafted_chapters(layer, book)
+    if not progress(a)["total"]:
+        raise ValidationError({"detail": f"Nothing in {range_label(a)} is drafted in {layer_json(layer)['name']} yet, "
+                                         "so it could never be done. Assign it once it is drafted.",
+                               "code": "not_drafted"})
+    warnings = _warnings(a, chapters)
+    a.save()
     record(request.user, "review.assign", assignee.username, layer=layer, range=range_label(a),
            due=a.due.isoformat() if a.due else None)
-    return Response({"assignment": assignment_json(a)}, status=status.HTTP_201_CREATED)
+    notify.assigned(a)
+    return Response({"assignment": assignment_json(a), "warnings": warnings}, status=status.HTTP_201_CREATED)
+
+
+def _assign_split(request, data):
+    """One book's drafted chapters between several reviewers."""
+    layer = str(data.get("layer") or "")
+    if layer not in EVERY_LAYER:
+        raise ValidationError({"layer": "Choose a layer.", "code": "invalid_layer"})
+    book = str(data.get("book") or "").upper()
+    if book not in refs.BOOK_NAMES:
+        raise ValidationError({"book": "Choose a book.", "code": "invalid_book"})
+    ids = data.get("assignees")
+    if not isinstance(ids, list) or not ids or not all(str(i).isdigit() for i in ids):
+        raise ValidationError({"assignees": "Choose the reviewers to share it.", "code": "invalid_assignee"})
+    ids = list(dict.fromkeys(int(i) for i in ids))
+    users = {u.id: u for u in get_user_model().objects.filter(id__in=ids)}
+    if len(users) != len(ids):
+        raise ValidationError({"assignees": "Choose reviewers from the list.", "code": "invalid_assignee"})
+    for u in users.values():
+        if not reviews(u, layer):
+            raise ValidationError({"assignees": f"{people.name(u)} doesn't review {layer_json(layer)['name']}.",
+                                   "code": "not_a_reviewer"})
+    chapters = drafted_chapters(layer, book)
+    if not chapters:
+        raise ValidationError({"detail": f"Nothing in {refs.BOOK_NAMES[book]} is drafted in "
+                                         f"{layer_json(layer)['name']} yet.", "code": "not_drafted"})
+    due, note = _due(data), _note(data)
+    made, warnings = [], []
+    for (lo, hi), uid in zip(split(chapters, len(ids)), ids):
+        a = ReviewAssignment(layer=layer, book=book, chapter_from=lo, chapter_to=hi, assignee=users[uid],
+                             assigned_by=request.user, due=due, note=note)
+        warnings += [w for w in _warnings(a, chapters) if w.startswith("Overlaps") and w not in warnings]
+        a.save()
+        record(request.user, "review.assign", users[uid].username, layer=layer, range=range_label(a),
+               due=due.isoformat() if due else None)
+        notify.assigned(a)
+        made.append(a)
+    return Response({"assignments": [assignment_json(a) for a in made], "warnings": warnings},
+                    status=status.HTTP_201_CREATED)
 
 
 @admin_view("overview", methods=("PATCH", "DELETE"))

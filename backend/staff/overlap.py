@@ -86,6 +86,14 @@ def measure(book, lang, n):
     }
 
 
+def cache_key(book, lang, n):
+    """Where book's answer is kept: fresh when its sentences change or a
+    reference Bible is re-imported."""
+    changed = Sentence.objects.filter(book=book).aggregate(t=Max("updated_at"))["t"]
+    loaded = Edition.objects.filter(kind=Edition.Kind.REFERENCE).aggregate(t=Max("imported_at"))["t"]
+    return "staff.overlap.{}.{}.{}.{}.{}".format(book, lang, n, *(t.timestamp() if t else 0 for t in (changed, loaded)))
+
+
 @admin_view("overview")
 def overlap(request, code):
     book = _book(code)
@@ -98,10 +106,7 @@ def overlap(request, code):
         n = min(max(int(request.query_params.get("min", 6)), 4), 12)
     except ValueError:
         n = 6
-    # Fresh when the book's sentences change or a reference Bible is re-imported.
-    changed = Sentence.objects.filter(book=book).aggregate(t=Max("updated_at"))["t"]
-    loaded = Edition.objects.filter(kind=Edition.Kind.REFERENCE).aggregate(t=Max("imported_at"))["t"]
-    key = "staff.overlap.{}.{}.{}.{}.{}".format(book, lang, n, *(t.timestamp() if t else 0 for t in (changed, loaded)))
+    key = cache_key(book, lang, n)
     answer = cache.get(key)
     if answer is None:
         answer = measure(book, lang, n)
